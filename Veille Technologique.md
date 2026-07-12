@@ -1,10 +1,7 @@
 ---
 title: "L'interopérabilité agentique en entreprise : protocoles ouverts, normalisation, identité et sécurité"
-subtitle: "Une revue structurée et vérifiée par sources primaires"
 author:
-  - name: "André-Guy Bruneau"
-    email: "agbruneau@gmail.com"
-date: "12 juillet 2026"
+  - "André-Guy Bruneau · agbruneau@gmail.com · 12 juillet 2026"
 lang: fr
 region: CA
 papersize: us-letter
@@ -12,7 +9,7 @@ fontsize: 11pt
 mainfont: "New Computer Modern"
 margin:
   x: 2.8cm
-  y: 3.2cm
+  y: 2.6cm
 section-numbering: "1.1.1"
 abstract-title: "Résumé"
 abstract: |
