@@ -24,6 +24,7 @@ header-includes: |
   #show figure: set block(breakable: true)
   #show figure.where(kind: table): set block(above: 1.2em, below: 1.2em)
   #show figure.caption: set block(sticky: true)
+  #show table.cell: set align(center + horizon)
   ```
 ---
 
