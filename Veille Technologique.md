@@ -2,7 +2,9 @@
 title: "L'interopérabilité agentique en entreprise : protocoles ouverts, normalisation, identité et sécurité"
 subtitle: "Une revue structurée et vérifiée par sources primaires"
 author:
-  - "André-Guy Bruneau, agbruneau@gmail.com, 2 juillet 2026 ; version bonifiée (couche événementielle et standard CloudEvents), 4 juillet 2026 ; édition mise à jour et revérifiée, 7 juillet 2026 ; édition bonifiée (couches transactionnelle et sémantique), 12 juillet 2026"
+  - name: "André-Guy Bruneau"
+    email: "agbruneau@gmail.com"
+date: "12 juillet 2026"
 lang: fr
 region: CA
 papersize: us-letter
@@ -26,6 +28,8 @@ header-includes: |
 ---
 
 **Mots-clés —** interopérabilité des agents ; IA agentique ; Model Context Protocol (MCP) ; Agent2Agent (A2A) ; Agent Network Protocol (ANP) ; systèmes multi-agents ; architecture événementielle ; CloudEvents ; event mesh ; agent mesh ; paiements agentiques ; AP2 ; x402 ; commerce agentique ; interopérabilité sémantique ; OASF ; ontologie de capacités ; identité des agents ; normalisation ; sécurité ; gouvernance.
+
+*Historique des éditions — 2 juillet 2026 (édition initiale) ; 4 juillet 2026 (version bonifiée : couche événementielle et standard CloudEvents) ; 7 juillet 2026 (édition mise à jour et revérifiée) ; 12 juillet 2026 (édition bonifiée : couches transactionnelle et sémantique).*
 
 ```{=typst}
 #pagebreak(weak: true)
