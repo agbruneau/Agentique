@@ -21,6 +21,9 @@ header-includes: |
     let n = counter(page).get().first()
     if n > 1 { align(center)[#n] }
   })
+  #show figure: set block(breakable: true)
+  #show figure.where(kind: table): set block(above: 1.2em, below: 1.2em)
+  #show figure.caption: set block(sticky: true)
   ```
 ---
 
@@ -109,7 +112,7 @@ Trois revues de littérature publiées sur arXiv en 2025 structurent le champ se
 Du croisement de ces taxonomies, nous retenons pour la suite une grille à trois niveaux, chacun porté par un protocole structurant en juillet 2026 :
 
 | Niveau d'interopérabilité | Interface | Protocole structurant | Portée typique en entreprise |
-|---|---|---|---|
+|:---:|:---:|:---:|:---:|
 | Accès aux outils et au contexte | agent-environnement | MCP | intégration des agents au SI (données, API, applications) |
 | Collaboration entre agents | agent-agent | A2A | délégation de tâches entre agents de fournisseurs différents |
 | Découverte en réseau ouvert | agent-agent (inter-organisations) | ANP | identification et collaboration décentralisées à l'échelle du Web |
@@ -151,7 +154,7 @@ Au-delà du triptyque MCP-A2A-ANP, le corpus recensé par Kong et al. [3] compre
 Le tableau 2 synthétise les caractéristiques vérifiées des trois protocoles structurants au 12 juillet 2026.
 
 | | **MCP** | **A2A** | **ANP** |
-|---|---|---|---|
+|:---:|:---:|:---:|:---:|
 | Interface | agent-environnement (outils, données) | agent-agent (délégation de tâches) | agent-agent, inter-organisations, réseau ouvert |
 | Créateur / gouvernance (juil. 2026) | Anthropic / projet ouvert (cf. §5) | Google / Linux Foundation | communauté ANP / incubation W3C (CG) |
 | Format et transport | JSON-RPC 2.0 ; stdio, HTTP | JSON-RPC 2.0, gRPC, REST sur HTTP(S), SSE (`a2a.proto` normatif en v1.0) | négociation par méta-protocole ; JSON-LD |
@@ -262,7 +265,7 @@ Un développement de la couche transactionnelle (section 4.8) donne à cette sec
 ## Synthèse
 
 | Enceinte | Objet (juillet 2026) | Statut normatif |
-|---|---|---|
+|:---:|:---:|:---:|
 | Linux Foundation | projet A2A ; AAIF (MCP, Goose, AGENTS.md, agentgateway, agentregistry) ; AGNTCY ; kagent (CNCF Sandbox) — *agent mesh* | gouvernance open source ; pas de norme *de jure* |
 | W3C | AI Agent Protocol CG (ANP) ; Agent Identity CG | incubation communautaire, hors filière Recommandation |
 | IETF | brouillons individuels (cadre protocoles, identité d'agents) ; WG WIMSE (identité de charge de travail) | pré-normatif ; aucun RFC agentique |
