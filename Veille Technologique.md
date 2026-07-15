@@ -1,5 +1,5 @@
 ---
-title: "Interopérabilité agentique et orchestration des processus d'affaires en entreprise : protocoles ouverts, normalisation, identité et sécurité"
+title: "Interopérabilité agentique et orchestration des processus d'affaires en entreprise"
 author:
   - "André-Guy Bruneau · agbruneau@gmail.com · 15 juillet 2026"
 lang: fr
