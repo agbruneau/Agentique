@@ -4,12 +4,12 @@
 
 | Champ | Valeur |
 |---|---|
-| Version | **mono-v1.0** |
+| Version | millésime **`mono-v1.0`** — ⚠ millésime éditorial, l'**étiquette git n'a pas été posée** ([`CLAUDE.md`](../CLAUDE.md)) |
 | Date de publication | 17 juillet 2026 |
 | Dates de gel | 16 juillet 2026 (22 pièces) ; 17 juillet 2026 (7 pièces) — registre : [`99-registre-gel.md`](99-registre-gel.md) |
-| Volumétrie | **92 059 mots** sur 29 pièces — mesure du 17 juillet 2026, après la passe corrective de l'audit (méthode et commande de référence : [PRDPlan §4.2](../PRDPlan.md), dont le défaut connu y est documenté) |
-| Socle factuel | **46 entrées** F-01 à F-48 ([PRD §7](../PRD.md)) |
-| Conformité | **CA-1 à CA-8 : 8/8** ([`verification/relecture-CA.md`](../verification/relecture-CA.md)) |
+| Volumétrie | **92 059 mots** sur 29 pièces — mesure du 17 juillet 2026, après la passe corrective de l'[audit global](../doc/audit.md) (méthode et commande de référence : [PRDPlan §4.2](../doc/PRDPlan.md), dont le défaut connu y est documenté) |
+| Socle factuel | **46 entrées** F-01 à F-48 ([PRD §7](../doc/PRD.md)) |
+| Conformité | **CA-1 à CA-8 : 8/8** — ⚠ **partiellement démenti** par l'audit du 17 juillet 2026 (CA-1 et CA-7 portaient des écarts, depuis corrigés) : voir l'addendum de [`verification/relecture-CA.md`](../verification/relecture-CA.md) |
 | Revalidation | 17 juillet 2026 ([`verification/revalidation-2026-07-17.md`](../verification/revalidation-2026-07-17.md)) |
 
 **Commencer par l'[avant-propos](00-avant-propos.md).** Il expose la méthode, les niveaux de preuve, la convention de datation et les avertissements — sans lesquels les chapitres se lisent mal. Le **[chapitre 13](03-partie-III/ch-13-pont-frames.md)** est le pivot de l'ouvrage : c'est le chapitre à contester en premier.
@@ -73,10 +73,12 @@ Ils sont développés dans l'[avant-propos](00-avant-propos.md) ; en voici la su
 
 Chaque affirmation factuelle centrale renvoie à une entrée du socle (F-xx), et chaque entrée porte son niveau de preuve : **[A]** vote adversarial 3-0, **[B]** source primaire lue et extraite sans vote, **[C]** repérage à confirmer. **[A] > [B] > [C]** — le niveau ne mesure pas la qualité de la source, mais **ce que l'affirmation a subi**.
 
-Les 29 pièces ont chacune passé la boucle qualité de [PRDPlan §4.2](../PRDPlan.md), dont une **relecture adversariale par un relecteur distinct du rédacteur**. La grille [CA-1..CA-8](../verification/relecture-CA.md) consigne les contrôles exécutés — et les écarts qu'ils ont trouvés, corrigés plutôt qu'absorbés.
+Les 29 pièces ont chacune passé la boucle qualité de [PRDPlan §4.2](../doc/PRDPlan.md), dont une **relecture adversariale par un relecteur distinct du rédacteur**. La grille [CA-1..CA-8](../verification/relecture-CA.md) consigne les contrôles exécutés — et les écarts qu'ils ont trouvés, corrigés plutôt qu'absorbés.
 
 Un résultat de cette vérification mérite d'être donné au lecteur, parce qu'il dit ce que vaut le reste : **tous les défauts lourds trouvés à la publication l'ont été par des relecteurs adversariaux, aucun par l'auto-contrôle de leur rédacteur.**
 
 ## Gouvernance
 
-[`PRD.md`](../PRD.md) (autorité de contenu — socle, garde-fous, critères) · [`PRDPlan.md`](../PRDPlan.md) (exécution) · [`TOC.md`](../TOC.md) (découpage, thèses, volumétrie) · [`CLAUDE.md`](../CLAUDE.md) (conventions). En cas de conflit, **le PRD prime**.
+[`doc/PRD.md`](../doc/PRD.md) (autorité de contenu — socle, garde-fous, critères) · [`doc/PRDPlan.md`](../doc/PRDPlan.md) (exécution) · [`doc/TOC.md`](../doc/TOC.md) (découpage, thèses, volumétrie) · [`CLAUDE.md`](../CLAUDE.md) (conventions). En cas de conflit, **le PRD prime**.
+
+Ce fichier est l'**index de lecture** des 29 pièces, et rien d'autre : la gouvernance, le pipeline de rendu et la procédure de reprise sont au [`README.md`](../README.md) et au [`CLAUDE.md`](../CLAUDE.md) du volume ; la place du volume dans le corpus est au [README du dépôt](../../../README.md).

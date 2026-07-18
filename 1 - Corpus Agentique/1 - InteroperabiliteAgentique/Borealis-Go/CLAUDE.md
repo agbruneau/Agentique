@@ -1,8 +1,12 @@
 # CLAUDE.md — Borealis (code)
 
-Démonstrateur Go d'interopérabilité agentique (**MCP + A2A**), cas de pré-qualification de crédit,
-dans le répertoire `Borealis-Go/` du dépôt d'écriture. Matérialise le PRD (`PRD-Borealis.md`) et son
-plan d'exécution (`PRDPlan-Borealis.md`). **Source de vérité = le PRD.**
+Démonstrateur Go d'interopérabilité agentique (**MCP + A2A**), cas de pré-qualification de crédit.
+Vit sous `1 - Corpus Agentique/1 - InteroperabiliteAgentique/Borealis-Go/` dans le dépôt d'écriture
+*Monographies* : c'est le livrable **de code** du volume I. Matérialise le PRD (`PRD-Borealis.md`) et
+son plan d'exécution (`PRDPlan-Borealis.md`). **Source de vérité = le PRD.**
+
+Ce fichier prime dans ce répertoire : le `CLAUDE.md` du volume I régit la **rédaction**, celui-ci le
+**code**. Rien ici ne concerne la monographie, ses bibliographies ou son pipeline PDF.
 
 ## Règles non négociables (PRDPlan §2)
 

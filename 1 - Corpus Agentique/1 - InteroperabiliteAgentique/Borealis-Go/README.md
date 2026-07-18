@@ -2,8 +2,9 @@
 
 > ⚠ **Fiction pédagogique.** *Coopérative financière Boréalis* est une entreprise fictive ;
 > toutes les données sont **100 % synthétiques**, aucun système réel, **jamais de PII**.
-> Ce dépôt matérialise l'**Annexe B** et le **chapitre 6** de la monographie
-> *Interopérabilité agentique* (au sein du dépôt d'écriture *InteroperabiliteAgentique*).
+> Ce répertoire matérialise l'**Annexe B** et le **chapitre 6** de la monographie
+> *Interopérabilité agentique* — le **volume I** du dépôt d'écriture
+> [*Monographies*](../../../README.md), sous `1 - Corpus Agentique/1 - InteroperabiliteAgentique/`.
 
 Démonstrateur Go : **5 agents A2A** + **4 serveurs MCP** orchestrant une **pré-qualification de crédit**
 (jamais un octroi ferme). Illustre l'invariant transversal de la monographie — *découplage, contrat, évolution* —
@@ -11,7 +12,8 @@ et la triade d'identité **KYA / KYH / KYC** avec journal d'audit **WORM** véri
 
 ## Démarrage rapide (< 15 min depuis un clone)
 
-**Prérequis :** Go ≥ 1.22 (dév. sous 1.26) et **GNU Make** (pour les cibles ci-dessous).
+**Prérequis :** **Go ≥ 1.26** (`go.mod` déclare `go 1.26`, sans directive `toolchain`) et
+**GNU Make** (pour les cibles ci-dessous).
 Pour la voie conteneurisée : Docker + compose.
 
 > **Windows sans `make`** : le gate passe par `scripts/check.ps1` ; les autres
@@ -43,8 +45,9 @@ docker compose -f deploy/docker-compose.yml up   # orchestrateur + 4 agents + 4 
 
 > **Extraire un patron en < 1 h** (persona David) : un serveur MCP autonome vit
 > dans `internal/mcpserver/*.go` + `cmd/mcp-*/main.go` ; un agent A2A dans
-> `internal/a2aserver` + `cmd/agent-*`. Les deux se lancent en stdio (défaut) ou
-> HTTP (`MCP_HTTP_ADDR` / `ADDR`).
+> `internal/a2aserver` + `cmd/agent-*`. **Les transports diffèrent** : un serveur MCP
+> se lance en stdio (défaut) ou en HTTP si `MCP_HTTP_ADDR` est défini ; un agent A2A
+> est **HTTP seulement** (`ADDR`, défaut `:8080`) — il n'a aucun chemin stdio.
 
 ## Ce que le démonstrateur prouve
 
@@ -78,9 +81,12 @@ internal/       cœur : agent, a2aserver, mcpserver, orchestrator, audit,
                 conformance, hitl, pep, resilience, observability, webhook,
                 idpmock, security, creditdomain, fixtures, auditexport, ...
 pkg/            a2a (cards JWS/JCS), mcpcontract (compat BACKWARD)
+api/            réservé (vide, .gitkeep)
 deploy/         docker-compose, Dockerfile reproductible, otel
-docs/           ARCHITECTURE, TRACEABILITY, REPRODUCIBILITY, adr/ (11 ADR)
-test/e2e/       6 scénarios + golden canonique
+docs/           ARCHITECTURE, TRACEABILITY, REPRODUCIBILITY, RAPPORT-FINAL,
+                verification-p01, adr/ (12 ADR numérotés 0001-0012 + gabarit 0000)
+test/e2e/       6 scénarios PRD §12.4 + 1 e2e d'identité
+test/golden/    trace-approved.json (golden canonique)
 scripts/        check.{sh,ps1} (gate local)
 ```
 
@@ -95,4 +101,7 @@ Construction pilotée par `PRDPlan-Borealis.md` (phases P0 → M5, vérification
 
 ## Licences
 
-Code sous **Apache 2.0** (`LICENSE`) ; documentation et données synthétiques sous **CC BY 4.0**.
+Code sous **Apache 2.0** — [`LICENSE`](LICENSE), seul fichier de licence présent. L'intention
+d'une double licence (documentation et données synthétiques sous **CC BY 4.0**) est **déclarée
+mais non matérialisée** : aucun texte CC BY n'est versionné et aucun fichier ne porte d'en-tête de
+licence. À déposer, ou à retirer de cette section.
