@@ -23,9 +23,9 @@ Les trois volumes vivent sous [`1 - Corpus Agentique/`](1%20-%20Corpus%20Agentiq
 | **Rôle** | État de l'art vérifié, mis à jour par éditions | Cadre général, mondial et théorique | Cas canadien réglementé, instruit au grain du droit | Le verrou commun : identité, maillage, exploitation | Omnibus terminal : absorbe et remplace les trois volumes |
 | **Portée** | Mondiale | Mondiale (UE / É.-U. / R.-U. / Asie) | Canada-Québec (E-23, AMF, Loi 25, ACVM, Lynx/RTR) | Organisation et cycle de vie (NHI, *agent mesh*, AgentOps) | Les trois portées réunies (2024-2032) |
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
-| **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Reconduction des deux méthodes (annoncée) | Méthode unifiée, gel unique (annoncée) |
-| **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (proposition) | — (à fixer au lancement) |
-| **État** | Publiée (107 p., 218 références) | Rédaction terminée (569 p. + synthèse 69 p.) | Publiée, millésime `mono-v1.0` (387 p. + synthèse 66 p.) | **Cadrage seul** — table des matières v0.4 | **Cadrage seul** — table des matières v0.2 |
+| **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
+| **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | — (à fixer au lancement) |
+| **État** | Publiée (107 p., 218 références) | Rédaction terminée (569 p. + synthèse 69 p.) | Publiée, millésime `mono-v1.0` (387 p. + synthèse 66 p.) | **Cadrage seul** — gouvernance complète (PRD v0.1, TOC v0.4, PRDPlan v0.1), 0 chapitre | **Cadrage seul** — table des matières v0.2 |
 
 ## Veille technologique — le document transversal
 
@@ -94,13 +94,28 @@ huit garde-fous de formulation, onze lacunes exposées plutôt que comblées.
 
 ## Vol. III — L'entreprise agentique
 
-**Au stade du cadrage seul.** Le dossier ne contient à ce jour qu'une table des matières commentée
-([`TOC.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/TOC.md), v0.4 du 18 juillet 2026,
-statut *proposition*) : aucun chapitre rédigé, **aucun socle factuel constitué** — les « socles
-candidats » y sont des repérages [C] à instruire. Cadrage annoncé : 28 chapitres en 9 parties,
-≈ 100 000 mots, autour de trois capacités — *émettre* une identité opposable (le passeport
-d'agent), l'*appliquer* au maillage d'agents, l'*exploiter* dans la durée (AgentOps) — sous
-l'horloge post-quantique.
+**Au stade du cadrage seul, mais désormais gouverné.** Aucun chapitre n'est rédigé et **aucun socle
+factuel propre n'est constitué** — 0 entrée propre, 33 entrées héritées (H-01 à H-33), 15 lots
+d'instruction ouverts, 0 clos. Cadrage annoncé : 28 chapitres en 9 parties, ≈ 100 000 mots, autour
+de trois capacités — *émettre* une identité opposable (le passeport d'agent), l'*appliquer* au
+maillage d'agents, l'*exploiter* dans la durée (AgentOps) — sous l'horloge post-quantique.
+
+Le dossier porte quatre fichiers, et rien d'autre : trois documents de gouvernance dans `doc/`,
+plus un [`CLAUDE.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/CLAUDE.md) à l'agent
+qui édite. Par ordre d'autorité :
+
+1. [`doc/PRD.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/doc/PRD.md) **v0.1** —
+   contenu, héritage du socle, quatorze garde-fous, critères d'acceptation ; **prime en cas de
+   conflit**, y compris sur le TOC ;
+2. [`doc/TOC.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/doc/TOC.md) **v0.4** du
+   18 juillet 2026, statut *proposition* — autorité sur le découpage ;
+3. [`doc/PRDPlan.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/doc/PRDPlan.md)
+   **v0.1** — plan d'exécution (phases P0 à P5).
+
+⚠ **Règle cardinale : aucun chapitre n'est rédigeable aujourd'hui** (PRD §7.0) — aucun ne s'écrit
+avant la clôture du lot d'instruction dont il dépend. Deux décisions de cadrage restent à l'auteur
+et bloquent la suite ; l'une d'elles, le dépôt d'un corpus d'appui de trois ouvrages annoncés
+« déposés » mais **absents du dépôt**, bloque à elle seule sept sections et une annexe entière.
 
 Le volume naît des lacunes des deux précédents : identité non humaine et délégation multi-saut
 (verrou identifié au Vol. I), mécanique des attaques et valeur cryptographique des Agent Cards
@@ -163,8 +178,8 @@ consigné à son Annexe C. Tant que le compendium n'est pas rédigé, **cet arbi
 d'autorité** : les volumes sources font foi et la divergence reste ouverte.
 
 > ⚠ Le fichier `commun/faits-partages.md`, évoqué par le cadrage du Vol. III comme source unique
-> de vérité pour les faits partagés, **n'existe pas encore** (marqué « à créer » dans sa TOC).
-> En son absence, chaque volume porte ses propres faits datés.
+> de vérité pour les faits partagés, **n'existe pas et ne sera pas créé** : son PRD §7.5 a tranché
+> de porter lui-même ces divergences. Chaque volume porte donc ses propres faits datés.
 
 ## Structure du dépôt
 
@@ -190,15 +205,16 @@ d'autorité** : les volumes sources font foi et la divergence reste ouverte.
 │   │   ├── Synthese Monographie.md / .pdf     article de synthèse (66 p.)
 │   │   └── index.html                         page de présentation (GitHub Pages)
 │   └── 3 - EntrepriseAgentique/             Vol. III
-│       └── TOC.md                             table des matières commentée (v0.4) — seul livrable
+│       ├── CLAUDE.md                          conventions du volume
+│       └── doc/                               PRD v0.1, TOC v0.4, PRDPlan v0.1 — gouvernance seule
 └── 2 - Compendium Agentique/              ← Vol. IV
     └── TOC.md                               table des matières commentée (v0.2) — seul livrable
 ```
 
 **Où sont les `CLAUDE.md`.** Un par périmètre, sans recouvrement : la racine porte les conventions
-communes et celles de la veille ; chaque volume rédigé porte les siennes ; le démonstrateur Go a
-les siennes, qui priment dans son répertoire. Les Vol. III et IV, à l'état de cadrage, n'en ont pas
-— leur `TOC.md` tient lieu de spécification.
+communes et celles de la veille ; les Vol. I, II et III portent chacun les siennes ; le
+démonstrateur Go a les siennes, qui priment dans son répertoire. Seul le Vol. IV n'en a pas — son
+`TOC.md` tient lieu de spécification.
 
 ## Construire les PDF
 
@@ -267,10 +283,18 @@ avant toute réutilisation ou publication :
 
 ## Notes de maintenance
 
-Les `README.md` et `CLAUDE.md` du dépôt ont été resynchronisés sur l'arborescence réelle
-(`1 - Corpus Agentique/`, `2 - Compendium Agentique/`), sur le déplacement de la veille à la racine
-et sur les décomptes vérifiés. **Restent ouverts, signalés et non corrigés** — ce sont des fichiers
-de code ou de contenu, hors du périmètre de cette passe documentaire :
+Les `README.md` et `CLAUDE.md` de la racine ont été resynchronisés le 18 juillet 2026 sur
+l'arborescence réelle, sur l'accession du Vol. III à une gouvernance complète (`CLAUDE.md` +
+`doc/`) et sur les décomptes **re-mesurés** — veille 107 p. / 218 réf. / 13 sections, Vol. I
+569 p. / 69 p. / 28 diagrammes / 12 ADR, Vol. II 387 p. / 66 p. / 29 pièces / 46 entrées de socle,
+tous inchangés.
+
+⚠ Le décompte des diagrammes du Vol. I se mesure avec un motif **ancré** :
+`grep -c '^```mermaid'` donne 28. Le motif non ancré en retourne 29 — il attrape une ligne de prose
+de la note de production qui cite la balise.
+
+**Restent ouverts, signalés et non corrigés** — ce sont des fichiers de code ou de contenu, hors du
+périmètre de cette passe documentaire :
 
 | Fichier | Reliquat |
 |---|---|
@@ -278,20 +302,24 @@ de code ou de contenu, hors du périmètre de cette passe documentaire :
 | `…/2 - OrchestrationAgentique/doc/PRDPlan.md` | renvoi `](CLAUDE.md)` → `../CLAUDE.md` |
 | `…/2 - OrchestrationAgentique/doc/audit.md` | renvois `](monographie/…)` → `../monographie/…` |
 | `…/2 - OrchestrationAgentique/verification/relecture-CA.md` | renvois `](../PRD.md)`, `](../PRDPlan.md)`, `](../audit.md)` → `../doc/…` |
-| `…/1 - InteroperabiliteAgentique/Borealis-Go/docs/ARCHITECTURE.md` | annonce « les 11 ADR » ; le dossier `docs/adr/` en compte 12 (0001-0012) |
+| `…/1 - InteroperabiliteAgentique/Borealis-Go/docs/ARCHITECTURE.md` | ligne 906 : annonce « les 11 ADR » ; le dossier `docs/adr/` en compte 12 (0001-0012, hors gabarit) |
+| `…/3 - EntrepriseAgentique/doc/PRDPlan.md` | deux renvois cassés par le déplacement vers `doc/` : `](../../CLAUDE.md)` → `../../../CLAUDE.md`, et `](../../TOC.md)` → `../../doc/TOC.md` |
+| `…/2 - OrchestrationAgentique/build/__pycache__/` | bytecode Python (`.pyc`) versionné par mégarde — à retirer du suivi et à ignorer |
 
 Le `monographie/` du Vol. II concentre à lui seul **48 de ces renvois cassés**, sur 28 de ses
 29 pièces : voir le tableau et la commande de contrôle du [`CLAUDE.md`](1%20-%20Corpus%20Agentique/2%20-%20OrchestrationAgentique/CLAUDE.md) du volume.
 
-⚠ `…/1 - InteroperabiliteAgentique/index.html` porte une **modification non committée** qui a
-résorbé ses propres reliquats (liens vers la veille déplacée, URL de l'ancien dépôt). Elle n'a pas
-été produite par cette passe documentaire : **la relire avant de committer.**
+⚠ **Le second renvoi du Vol. III est le plus coûteux du dépôt, et il ne coûte encore rien.** Il vit
+dans le *gabarit de pièce* que les 34 pièces à venir recopieront : non corrigé, il reproduit
+mécaniquement le gisement du Vol. II. Le corriger aujourd'hui coûte un caractère ; après rédaction,
+34 éditions.
 
-⚠ **Publication GitHub Pages non confirmée.** Les deux volumes annoncent une adresse « Lire en
-ligne » sous `https://agbruneau.github.io/Monographies/…`, forme déduite du nom du dépôt et des
-balises `canonical` des pages. Les sondages effectués depuis cet environnement ont retourné 404,
-tant sur ces adresses que sur la racine du site : **à vérifier depuis un navigateur**, et à activer
-si Pages ne l'est pas encore pour ce dépôt.
+⚠ **Publication GitHub Pages : les adresses annoncées sont fausses.** Les deux volumes annoncent
+« Lire en ligne » sous `https://agbruneau.github.io/Monographies/…`, et leurs balises `canonical`,
+`og:url` et liens « Dépôt GitHub » nomment tous `Monographies`. **Le dépôt s'appelle `Agentique`**
+(`github.com/agbruneau/Agentique`) : la base correcte est `https://agbruneau.github.io/Agentique/`.
+C'est la cause des 404 relevés, et non un simple défaut d'activation — reste à vérifier, une fois
+les URL rectifiées, que Pages est bien activé pour ce dépôt.
 
 Conventions de rédaction et règles de travail : voir le [`CLAUDE.md`](CLAUDE.md) du dépôt, puis
 celui de chaque volume.

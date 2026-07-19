@@ -1,6 +1,11 @@
-# CLAUDE.md — dépôt *Monographies*
+# CLAUDE.md — dépôt *Agentique*
 
 Guide pour Claude Code (claude.ai/code) à la **racine** du dépôt.
+
+⚠ **Le dépôt s'appelle `Agentique`** (`github.com/agbruneau/Agentique`), pas « Monographies ». Ce
+nom-là survit dans du contenu gelé — les références [217] et [218] de la veille, les URL des deux
+`index.html` — et **il n'est pas corrigé en silence** : la veille est publiée, les `index.html` sont
+un reliquat consigné au [`README.md`](README.md).
 
 ## Ce que ce fichier régit — et ce qu'il ne régit pas
 
@@ -15,7 +20,8 @@ divergent volontairement. Ce fichier régit deux choses seulement — la **racin
 | Vol. I — *Interopérabilité agentique* (rédaction) | [`1 - Corpus Agentique/1 - InteroperabiliteAgentique/CLAUDE.md`](1%20-%20Corpus%20Agentique/1%20-%20InteroperabiliteAgentique/CLAUDE.md) |
 | Démonstrateur Go du Vol. I (code) | [`…/1 - InteroperabiliteAgentique/Borealis-Go/CLAUDE.md`](1%20-%20Corpus%20Agentique/1%20-%20InteroperabiliteAgentique/Borealis-Go/CLAUDE.md) — **prime dans son répertoire** |
 | Vol. II — *L'autonomie encadrée* (rédaction, gouvernance PRD) | [`1 - Corpus Agentique/2 - OrchestrationAgentique/CLAUDE.md`](1%20-%20Corpus%20Agentique/2%20-%20OrchestrationAgentique/CLAUDE.md) |
-| Vol. III et Vol. IV | pas de `CLAUDE.md` — leur `TOC.md` tient lieu de spécification |
+| Vol. III — *L'entreprise agentique* (cadrage, gouvernance PRD) | [`1 - Corpus Agentique/3 - EntrepriseAgentique/CLAUDE.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/CLAUDE.md) |
+| Vol. IV — *La somme agentique* | pas de `CLAUDE.md` — son `TOC.md` tient lieu de spécification |
 
 **Le fichier le plus spécifique gagne.** En travaillant dans un dossier de volume, appliquer son
 `CLAUDE.md`, pas celui-ci.
@@ -33,7 +39,13 @@ croisées ou l'historique d'un volume.
 | Pipeline PDF | FESP (Mermaid → Pandoc → Typst) | **copie** du FESP + `assemble.py` en amont |
 
 Les deux pipelines PDF sont des copies indépendantes : **un correctif à l'un ne se propage pas à
-l'autre.** La veille, elle, n'utilise ni l'un ni l'autre (voir plus bas).
+l'autre.** La veille, elle, n'utilise ni l'un ni l'autre (voir plus bas). Le Vol. III n'a **aucun
+pipeline** : en créer un serait une troisième copie — le savoir avant de le faire.
+
+Le Vol. III prolonge l'appareil du Vol. II mais s'en écarte sur quatre points (motifs de balayage,
+commande de décompte, escalade de gouvernance, numérotation des garde-fous). Ces écarts sont
+consignés et motivés dans [son propre `CLAUDE.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/CLAUDE.md) —
+**les y lire avant d'appliquer une règle du Vol. II de mémoire.**
 
 ## Veille technologique — le livrable de la racine
 
