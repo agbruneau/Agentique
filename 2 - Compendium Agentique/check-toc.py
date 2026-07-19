@@ -150,6 +150,26 @@ def erreurs(txt):
         if "*Fusion :" not in c and "*Chapitre neuf" not in c:
             err.append(f"chapitre {n} sans ligne « Fusion » ni « Chapitre neuf »")
 
+    # 11. Garde-fous nommés dans les chapitres touchant le Vol. III (décision 7) :
+    #     la série R-1…R-8 (un chiffre) appartient au Vol. II, la série
+    #     R-01…R-14 (deux chiffres) au Vol. III. Dans un chapitre qui consomme
+    #     le Vol. III, un « R-N » à un chiffre sans « Vol. II » à portée de
+    #     phrase résout contre les deux séries.
+    #     Le dernier chapitre n'a pas de « ### Chapitre » suivant : la zone des
+    #     chapitres est bornée aux annexes, sinon le journal et les risques —
+    #     qui parlent légitimement de garde-fous nus — entrent dans son corps.
+    zone_ch = txt.split("\n## Annexes")[0]
+    for c in re.split(r"^### Chapitre ", zone_ch, flags=re.M)[1:]:
+        num = re.match(r"(\d+)", c).group(1)
+        if "Vol. III" not in c:
+            continue
+        for mm in re.finditer(r"\bR-\d\b", c):
+            # « Vol. II » est une sous-chaîne de « Vol. III » : l'anticipation
+            # négative est obligatoire, sinon un « Vol. III » voisin valide à tort.
+            if not re.search(r"Vol\.\s*II(?!I)", c[mm.start():mm.start() + 100]):
+                err.append(f"chapitre {num} : garde-fou « {mm.group()} » sans volume "
+                           "nommé dans un chapitre consommant le Vol. III (décision 7)")
+
     return err
 
 
