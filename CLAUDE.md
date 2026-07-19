@@ -49,7 +49,7 @@ consignés et motivés dans [son propre `CLAUDE.md`](1%20-%20Corpus%20Agentique/
 
 ## Veille technologique — le livrable de la racine
 
-`Veille Technologique.md` → `Veille Technologique.pdf` (**139 p.**, 14 sections numérotées,
+`Veille Technologique.md` → `Veille Technologique.pdf` (**140 p.**, 14 sections numérotées,
 **244 références**, 14 tableaux — **édition intégrale du 18 juillet 2026**). Document **autonome** :
 il n'est repris dans aucune monographie, et il est le seul à citer les volumes du dépôt.
 

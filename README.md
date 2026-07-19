@@ -25,11 +25,11 @@ Les trois volumes vivent sous [`1 - Corpus Agentique/`](1%20-%20Corpus%20Agentiq
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | — (à fixer au lancement) |
-| **État** | Publiée (139 p., 244 références) | Rédaction terminée (569 p. + synthèse 69 p.) | Publiée, millésime `mono-v1.0` (387 p. + synthèse 66 p.) | **Cadrage seul** — gouvernance complète (PRD v0.1, TOC v0.4, PRDPlan v0.1), 0 chapitre | **Cadrage seul** — table des matières v0.2 |
+| **État** | Publiée (140 p., 244 références) | Rédaction terminée (569 p. + synthèse 69 p.) | Publiée, millésime `mono-v1.0` (387 p. + synthèse 66 p.) | **Cadrage seul** — gouvernance complète (PRD v0.1, TOC v0.4, PRDPlan v0.1), 0 chapitre | **Cadrage seul** — table des matières v0.2 |
 
 ## Veille technologique — le document transversal
 
-[`Veille Technologique.md`](Veille%20Technologique.md) → `Veille Technologique.pdf` (**139 p.**,
+[`Veille Technologique.md`](Veille%20Technologique.md) → `Veille Technologique.pdf` (**140 p.**,
 14 sections numérotées, **244 références**, 14 tableaux). Revue vérifiée où chaque énoncé factuel
 est adossé à une source primaire consultée et soumis à contradiction — vérificateurs indépendants
 chargés de *réfuter*, contre-vérification directe sinon. Elle couvre les trois protocoles
@@ -208,7 +208,7 @@ volumes sources font foi et la divergence reste ouverte — le cadrage le dit lu
 .
 ├── README.md                              ← ce fichier (avant-propos croisé)
 ├── CLAUDE.md                              ← conventions du dépôt + conventions de la veille
-├── Veille Technologique.md / .pdf         ← veille autonome, 18 juillet 2026 (139 p., 244 réf.)
+├── Veille Technologique.md / .pdf         ← veille autonome, 18 juillet 2026 (140 p., 244 réf.)
 ├── 1 - Corpus Agentique/                  ← le triptyque
 │   ├── 1 - InteroperabiliteAgentique/       Vol. I
 │   │   ├── Chapitres/                         7 chapitres + 7 bibliographies + Annexe B (ADS)
@@ -306,7 +306,7 @@ avant toute réutilisation ou publication :
 
 Les `README.md` et `CLAUDE.md` de la racine ont été resynchronisés le 18 juillet 2026 sur
 l'arborescence réelle, sur l'accession du Vol. III à une gouvernance complète (`CLAUDE.md` +
-`doc/`) et sur les décomptes **re-mesurés** — veille 139 p. / 244 réf. / 14 sections, Vol. I
+`doc/`) et sur les décomptes **re-mesurés** — veille 140 p. / 244 réf. / 14 sections, Vol. I
 569 p. / 69 p. / 28 diagrammes / 12 ADR, Vol. II 387 p. / 66 p. / 29 pièces / 46 entrées de socle,
 tous inchangés.
 
