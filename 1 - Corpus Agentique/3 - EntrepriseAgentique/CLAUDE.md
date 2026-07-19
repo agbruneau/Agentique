@@ -19,13 +19,15 @@ Ce `CLAUDE.md` ne régit que le **volume III**, sous `1 - Corpus Agentique/3 - E
 
 Projet documentaire, **au stade du cadrage**. Livrable visé : une monographie exhaustive — « L'entreprise agentique : identité non humaine, délégation vérifiable, maillage d'agents et AgentOps » — sur ce qu'une entreprise doit tenir pour que des agents y opèrent sous mandat vérifiable. Objet choisi parce que les Vol. I et II le désignent l'un et l'autre comme leur verrou résiduel : « identité non humaine et délégation multi-saut » (Vol. I, `Synthese Monographie.md` §11.6) et les questions Q2, Q3, Q5 du Vol. II (ch. 21 §21.2).
 
-**Le dossier contient trois fichiers de gouvernance et rien d'autre.** Aucun chapitre, aucune arborescence de rédaction, aucun pipeline de rendu, aucune source déposée.
+**Le dossier contient trois fichiers de gouvernance dans `doc/`, et rien d'autre.** Aucun chapitre, aucune arborescence de rédaction, aucun pipeline de rendu, aucune source déposée.
 
 Documents de gouvernance, par ordre d'autorité :
 
-1. [PRD.md](PRD.md) **v0.1** — contenu, héritage du socle, garde-fous, critères d'acceptation (**prime en cas de conflit**, y compris sur le TOC) ;
-2. [TOC.md](TOC.md) **v0.4** — **autorité sur le découpage** : toute modification du nombre ou de l'ordre des chapitres passe par lui (version++), et se répercute au PRD ;
-3. [PRDPlan.md](PRDPlan.md) **v0.1** — plan d'exécution (phases P0 à P5, boucle qualité §5.2, formulations imposées §5.5). Il **ordonnance** le PRD, il ne le redéfinit pas.
+1. [PRD.md](doc/PRD.md) **v0.1** — contenu, héritage du socle, garde-fous, critères d'acceptation (**prime en cas de conflit**, y compris sur le TOC) ;
+2. [TOC.md](doc/TOC.md) **v0.4** — **autorité sur le découpage** : toute modification du nombre ou de l'ordre des chapitres passe par lui (version++), et se répercute au PRD ;
+3. [PRDPlan.md](doc/PRDPlan.md) **v0.1** — plan d'exécution (phases P0 à P5, boucle qualité §5.2, formulations imposées §5.5). Il **ordonnance** le PRD, il ne le redéfinit pas.
+
+⚠ **Emplacement tranché le 18 juillet 2026 : `doc/`**, comme au Vol. II — l'activité **P0.3** du PRDPlan est close par ce déplacement. Le plan lui-même n'en a pas encore été amendé : son §1.3 décrit toujours une arborescence à la racine du volume et argumente en sa faveur. **Le disque fait foi, pas le §1.3.**
 
 ## ⚠ Aucun chapitre n'est rédigeable aujourd'hui
 
@@ -33,13 +35,14 @@ Documents de gouvernance, par ordre d'autorité :
 
 État du socle : **0 entrée propre**. 33 entrées héritées (H-01 à H-33), **15 lots d'instruction ouverts** (L-01 à L-15), **0 clos**. Aucune passe de recherche n'a été menée par ce volume.
 
-Trois décisions de cadrage sont **à l'auteur, pas à l'agent**, et bloquent la suite (PRDPlan §2, phase P0) :
+Deux décisions de cadrage restent **à l'auteur, pas à l'agent**, et bloquent la suite (PRDPlan §2, phase P0) :
 
 | # | Décision | Ce qu'elle bloque |
 |---|---|---|
 | **P0.2** | **Corpus d'appui** — déposer les trois ouvrages annoncés, ou retirer la filiation livresque | L-15, **sept sections** (§4.4, §9.4, §25.1, §25.5, §27.4, §27.5, §28.4) et **l'annexe E entière**. Le TOC les annonce « déposé au dépôt » ; vérification du 18 juillet 2026 : **aucun des trois n'est présent** (PRD §7.7) |
-| **P0.3** | Emplacement des documents de gouvernance — racine du volume ou `doc/` | Rien aujourd'hui, tout après P3. Le Vol. II a tranché après coup et porte **48 renvois cassés, encore ouverts** |
 | **P0.1** | Révision du TOC sur les **neuf écarts** constatés (PRD §7.4) | La cohérence de tous les renvois vers les Vol. I et II |
+
+*(**P0.3** — emplacement des documents de gouvernance — est close : `doc/`, tranchée le 18 juillet 2026.)*
 
 **Ne jamais rédiger l'une des sept sections bloquées « de mémoire ».** Écrire ce que ces livres contiennent sans les avoir ouverts serait la faute même que le volume documente au ch. 5 — qualifier par la promesse plutôt que par la démonstration.
 
@@ -68,19 +71,33 @@ CA-10 les impose, et ils viennent des neuf écarts de PRD §7.4 — tous constat
 
 ## Divergences volontaires avec le Vol. II — à ne pas uniformiser
 
-Ce volume prolonge l'appareil du Vol. II mais s'en écarte sur cinq points, chacun pour un motif consigné. Les « corriger pour la cohérence » ferait régresser le volume.
+Ce volume prolonge l'appareil du Vol. II mais s'en écarte sur quatre points, chacun pour un motif consigné. Les « corriger pour la cohérence » ferait régresser le volume.
 
 | | Vol. II | Vol. III | Motif |
 |---|---|---|---|
 | **Motifs de balayage** | PRDPlan §4.3 | **PRD, Annexe A §A.6** | Ils sont l'instrument déclaré de CA-02 ; un critère et son outil de contrôle ne se séparent pas |
 | **Commande de décompte** | locale `C` — sous-compte de **1,3 %**, assumé | **`LC_ALL=C.UTF-8`** (PRDPlan §1.5) | Le Vol. II ne pouvait plus corriger sans invalider tous ses chiffres publiés ; le Vol. III n'en a aucun, le coût est nul |
-| **Documents de gouvernance** | `doc/` (déplacés le 17 juill. 2026) | **racine du volume** — à confirmer en P0.3 | Le déplacement du Vol. II a cassé 48 renvois |
 | **Règle d'escalade de gouvernance** | apprise en P2 | **posée avant la première rédaction** (PRDPlan §5.3) | Au Vol. II, un chapitre pivot a dû trancher seul une remontée que personne n'avait arbitrée |
 | **Numérotation des garde-fous** | R-1 à R-8 | R-01 à R-14 | Voir ci-dessus |
+
+**L'emplacement des documents de gouvernance n'est plus une divergence** : les deux volumes tiennent leur gouvernance dans `doc/`. La différence est de **date** — le Vol. II a déplacé après vingt-neuf pièces rédigées et porte 48 renvois cassés ; le Vol. III a déplacé avant la première, au prix de deux renvois (ci-dessous).
 
 ⚠ **Corollaire du décompte** : les volumétries du Vol. II et du Vol. III **ne sont pas comparables** sans re-mesure par une commande unique. Toute comparaison inter-volumes commence par une re-mesure.
 
 ⚠ **Il n'existe aucun pipeline de rendu dans ce dossier.** Celui du Vol. II est une copie de celui du Vol. I, et les deux évoluent séparément. **Un troisième serait une troisième copie** — le savoir avant de le créer (PRDPlan §7, P5.4).
+
+### Séquelles du déplacement vers `doc/` — deux renvois, ouverts
+
+Le déplacement du 18 juillet 2026 a cassé deux liens, tous deux dans `doc/PRDPlan.md`. Les liens frères (`](PRD.md)`, `](TOC.md)`) résolvent toujours : les trois fichiers sont restés ensemble.
+
+| Fichier | Renvoi cassé | Cible réelle |
+|---|---|---|
+| `doc/PRDPlan.md` §1 (en-tête) | `](../../CLAUDE.md)` — vise la racine du dépôt, résout aujourd'hui dans `1 - Corpus Agentique/` | `../../../CLAUDE.md` |
+| `doc/PRDPlan.md` §5.4 (**gabarit de pièce**) | `](../../TOC.md)` — relatif à un futur chapitre sous `monographie/<partie>/` | `../../doc/TOC.md` |
+
+⚠ **Le second est le plus coûteux des deux, et de loin.** Il vit dans le **gabarit** que les 34 pièces recopieront : non corrigé, il produit mécaniquement 34 renvois cassés — la reproduction exacte du gisement de 47 du Vol. II, à ceci près qu'ici **aucune pièce n'est encore écrite**. Corriger le gabarit maintenant coûte un caractère ; le corriger après P4 coûtera 34 éditions.
+
+Le PRDPlan §1.3 (structure cible) et son activité **P0.3** décrivent encore l'arborescence antérieure et argumentent pour la racine du volume : **à amender, comme la clôture de P0.3.**
 
 ## Divergences non arbitrées — signalées, jamais tranchées
 
