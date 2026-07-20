@@ -1,0 +1,104 @@
+# Conspectus — La somme agentique
+
+## Interopérabilité, autonomie encadrée et fabrique de confiance : déployer des agents en services financiers réglementés (2024-2032)
+
+| Champ | Valeur |
+|---|---|
+| Nature | **Conspectus** : vue synoptique du compendium intégral (Vol. IV) — l'argument de l'ouvrage, livre par livre, en lecture continue. Ce document ne porte aucune décision de fusion, aucun socle, aucun garde-fou nouveau : tout ce qu'il énonce est tenu par le [`TOC.md`](TOC.md), qui seul fait autorité |
+| Source | [`TOC.md`](TOC.md) **v0.8** (20 juillet 2026) — 57 chapitres en 13 livres, avant-propos, 9 annexes, ≈ 369 000–394 000 mots projetés |
+| Date | 20 juillet 2026 |
+| Statut | Le compendium **n'est pas rédigé** : tant qu'il ne l'est pas, les trois volumes sources font foi, et ce conspectus décrit un *plan*, non un ouvrage. En cas d'écart entre ce document et le `TOC.md`, **c'est le `TOC.md` qui prime** ; un conspectus n'est pas une source, pas plus qu'une thèse de plan n'est une entrée de socle (décision 8 du TOC) |
+| Régénération | À chaque nouvelle version du `TOC.md`, ce document se réaligne ou déclare son retard en tête |
+
+---
+
+## L'objet et la thèse
+
+Déployer des agents non humains qui engagent la responsabilité d'une institution financière réglementée est **un seul problème d'ingénierie continu** — non trois. Les trois volumes sources le prouvaient chacun à demi : le Vol. I posait la théorie de l'interopérabilité mais s'arrêtait au seuil du droit applicable ; le Vol. II instruisait le droit canadien mais présupposait la théorie ; le Vol. III isolait le verrou commun — l'identité — mais le traitait comme un ouvrage à part. La somme tient les trois ensemble, sur quatre plans qui sont des coupes du même objet :
+
+1. **Coopérer** — l'interopérabilité : protocoles, sémantique, maillage (Livres I, II, IX) ;
+2. **Encadrer** — l'autonomie sous contrôle de finalité que la réglementation impose : orchestration déterministe, frames normatifs (Livres VI, VII, VIII) ;
+3. **Faire confiance** — ce que la coopération encadrée présuppose sans jamais le produire : identité non humaine, délégation vérifiable, exploitation dans la durée (Livres III, IV, V, X) ;
+4. **Livrer** *(quatrième plan, ajout v0.8 — matière neuve sans socle hérité, déclarée telle)* — l'agent comme artefact logiciel qui se compose, se met en service et produit des effets (Livre XII).
+
+Le tout est tendu par une horloge datée : convergence protocolaire (2024-2026), entrées en vigueur réglementaires canadiennes (1ᵉʳ mai 2027), jalons post-quantiques du NIST (dépréciation **visée** 2030, retrait **visé** 2035).
+
+Deux armatures héritées structurent l'ensemble. **L'invariant à quatre termes** du Vol. I — découplage, contrat, évolution, *exploitation* — traverse l'ouvrage : posé à l'avant-propos, éprouvé au ch. 1, appliqué à la couche cryptographique au ch. 24 (trois premiers termes), refermé au Livre X (le quatrième). **Les trois capacités** du Vol. III — *émettre* une identité opposable, l'*appliquer* là où elle est vérifiée, *exploiter* le comportement dans la durée — expliquent la séparation des Livres III, IX et X ; tout contenu de maillage ou d'exploitation sans lien à l'identité ou à la délégation est hors périmètre.
+
+---
+
+## Parcours de l'ouvrage
+
+### Avant-propos et note méthodologique unifiée
+
+Pose la définition de travail (l'**agent d'entreprise** : système non humain à qui une organisation délègue des tâches engageant sa responsabilité), le patron directeur « autonomie graduée sous contrôle de finalité » avec ses quatre durcisseurs financiers, les deux armatures, et la méthode unifiée : socle factuel daté et cité, niveaux de preuve [A]/[B]/[C], tri PROGRAMMÉ/PROJETÉ/SPÉCULATIF, attribution systématique des métriques auto-déclarées, distinction lien documenté / inférence d'auteur.
+
+### Livre I — Fondements : interopérabilité et ingénierie agentique *(ch. 1-6)*
+
+Le socle pré-agentique, posé une seule fois. L'interopérabilité comme propriété à maintenir dans le temps et problème économique avant d'être technique (ch. 1) ; l'accord sur le sens que les protocoles présupposent sans savoir l'établir (ch. 2) ; l'héritage IAM et zero-trust — identité fédérée, OAuth/OIDC, SPIFFE/SPIRE — que la fabrique de confiance étirera jusqu'à rupture (ch. 3, chapitre-charnière auquel les Livres III et IX renvoient sans le reconstruire). Puis l'ingénierie agentique proprement dite : l'agent comme LLM augmenté d'une boucle perception-raisonnement-action-observation (ch. 4) ; l'ancrage informationnel — mémoire, contexte, RAG gouverné (ch. 5) ; le multi-agent, son surcoût, son évaluation et sa sûreté (ch. 6).
+
+### Livre II — Couche protocolaire agentique *(ch. 7-11)*
+
+En dix-sept mois, la couche protocolaire s'est consolidée sous gouvernance neutre — condition **nécessaire et non suffisante** de sa crédibilité en entreprise réglementée (ch. 7). Anatomie des deux spécifications maîtresses : MCP côté agent-outil, A2A côté agent-agent — « MCP dans les agents, A2A entre les agents », doctrine déclarée par le projet A2A, non un accord des deux (ch. 8) ; ⚠ la révision MCP dont la ratification est **annoncée** pour le 28 juillet 2026 (cœur sans état, extensions, politique de dépréciation) périmera cette anatomie et donne au Livre II sa première échéance de péremption datée. Suivent la découverte, les registres et la portabilité (ch. 9) ; AP2 et AGNTCY, deux objets aux statuts inégaux — lecture d'auteur pour la centralité financière d'AP2, positionnement déclaré pour AGNTCY (ch. 10 ; le don d'AP2 à la FIDO Alliance, annoncé en avril 2026, reste **à instruire à la source primaire**) ; et les modes d'échec protocolaires, nommés par les protocoles mais ni datés ni outillés au socle (ch. 11).
+
+### Livre III — Identité, délégation et fabrique de confiance *(ch. 12-19)* — capacité : **émettre**
+
+Le cœur doctrinal du plan « confiance ». L'identité machine précède l'agent : un demi-siècle de comptes de service et de clés mal gouvernés (ch. 12) ; la première vague agentique étire les RFC existantes — OAuth, OIDC, SCIM — et chaque extension révèle l'hypothèse d'un humain au bout du flux (ch. 13) ; le corpus W3C (VC, DID) fournit le vocabulaire du portable, l'adoption financière restant à démontrer (ch. 14). La **grille des cinq questions** — *qui es-tu, qui t'a créé, pour qui agis-tu, que peux-tu faire, qui en répond* — devient l'instrument de lecture de tout mécanisme d'identité : aucun n'y répond en entier en 2026 (ch. 15). Sur cette grille : l'émission (Agent Card signée, annuaires commerciaux, registres gouvernés — ch. 16, chapitre déclaré à plus haut risque de surinterprétation) ; le **passeport d'agent**, objet de synthèse qui n'existe dans aucune spécification — normalisation 2027-2028 en statut PROJETÉ (ch. 17) ; la **chaîne de mandat** et le problème des deux sauts — les mécanismes prouvent qu'un agent *a* une identité, presque aucun *au nom de qui* il agit (ch. 18) ; et le KYA, transposition du KYC sans l'infrastructure institutionnelle qui rend le KYC possible (ch. 19).
+
+### Livre IV — Confiance hostile : attaques et défense *(ch. 20-22)*
+
+Le versant adverse. Une taxonomie des attaques d'identité et de délégation — dont la thèse quantitative (« une part majoritaire ») est **à instruire par dénombrement avant rédaction**, le socle hérité ne portant aucune attaque documentée propre à A2A (ch. 20) ; l'asymétrie émission soignée / révocation négligée, qui rejoue l'histoire des PKI, et le rug-pull après admission (ch. 21) ; la défense qui s'agentifie elle-même — les agents défensifs, premiers porteurs du passeport (ch. 22).
+
+### Livre V — Horloge post-quantique *(ch. 23-24)*
+
+Toute la fabrique d'émission repose sur des signatures classiques. Les jalons du NIST IR 8547 — dépréciation **visée** 2030, retrait **visé** 2035, document au statut de brouillon — tombent dans la durée de vie des architectures conçues aujourd'hui (ch. 23) ; la crypto-agilité est l'application des trois premiers termes de l'invariant à la couche cryptographique, avec une dette de migration réelle mais non chiffrée — méthode d'estimation plutôt que chiffre, fenêtre d'action 2026-2029 (ch. 24).
+
+### Livre VI — Autonomie encadrée : orchestration en entreprise *(ch. 25-28)*
+
+Le plan « encadrer » commence par un choix objectivable : la taxonomie OO1-OO4 place toute architecture agentique sur un continuum d'encadrement (ch. 25) ; le paradigme APM distingue l'autonomie de l'automatisation et la gouverne par frames normatifs et opérationnels (ch. 26) ; l'offre s'est industrialisée en 2025-2026, avec un support protocolaire répandu mais inégalement établi (ch. 27) ; le passage à l'échelle intègre les agents au tissu existant — sans dupliquer l'IAM ni l'observabilité en place (ch. 28).
+
+### Livre VII — Cadre réglementaire canadien *(ch. 29-34)*
+
+E-23 couvre l'IA agentique *par inférence*, via sa définition de « modèle », avec échéance au 1ᵉʳ mai 2027 — et ses attentes s'écrivent « **attendues** », jamais « exigées » (ch. 29). La mort de la LIAD laisse un vide fédéral que C-36 ne comble pas (ch. 30). Le Québec porte le cadre le plus explicite : ligne directrice IA de l'AMF (finale le 30 mars 2026, en vigueur le 1ᵉʳ mai 2027 — seules ses *dates* sont au socle, jamais son *contenu*) et l'article 12.1 de la Loi 25, en friction directe avec la décision agentique autonome (ch. 31). Les ACVM confirment que les lois existantes s'appliquent (ch. 32). Le **pont** — chapitre-pivot — traduit les exigences canadiennes en frames déterministes d'architecture (ch. 33) ; le maillage international (AI Act, ISO 42001, RGPD) et la normalisation institutionnelle ferment le tour (ch. 34).
+
+### Livre VIII — Terrain canadien : interopérabilité financière et adoption *(ch. 35-40)*
+
+Le vertical financier durcit l'agentique par des contraintes qui préexistent à l'agent (ch. 35). Le cadre des services bancaires axés sur le consommateur est légiféré, supervisé, réglementairement en cours — et son standard technique n'est **pas** désigné, fait négatif vérifié (ch. 36). La couche sémantique des paiements est en place : Lynx accompli, RTR **visé** au T4 2026 — quatre cibles successives, à attribuer, jamais à affirmer au futur catégorique (ch. 37). Suivent les sous-domaines — banque, assurance, patrimoine (ch. 38) ; les études de cas de la production agentique canadienne 2025-2026, documentées par sources primaires et inégalement documentables (ch. 39) ; et la prospective AP2 sur les rails canadiens — chapitre explicitement prospectif : aucune source ne documente l'articulation, le chapitre pose les conditions de possibilité sans affirmer (ch. 40).
+
+### Livre IX — AgentMesh : le maillage d'agents comme patron d'infrastructure *(ch. 41-42)* — capacité : **appliquer**
+
+« AgentMesh » désigne ici le **patron d'infrastructure** — plan de données médiatisant chaque arête, plan de contrôle centralisant la politique — et rien d'autre (désambiguïsation imposée en tête de livre). Généalogie et anatomie : le maillage d'agents comme réinstanciation du *service mesh*, filiation qui trie le réel du marketing (ch. 41) ; puis le maillage comme lieu où le passeport devient opposable — PEP/PDP, zero trust transposé au graphe d'agents, jamais de confiance héritée de la topologie (ch. 42). Le maillage est à l'identité ce que le tribunal est à la loi.
+
+### Livre X — AgentOps : exploiter la confiance dans la durée *(ch. 43-45)* — capacité : **exploiter**
+
+Le quatrième terme de l'invariant, refermé. L'observabilité agentique repose sur des conventions OpenTelemetry encore au statut *Development* à la mi-2026 — et tracer un *appel* n'est pas tracer une *délégation* : la corrélation trace ↔ chaîne de mandat est le chaînon manquant (ch. 43). Le cycle de vie opérationnel — évaluer, détecter la dérive, répondre à l'incident, réviser le mandat — est la boucle sans laquelle le passeport certifie un comportement passé, jamais courant (ch. 44). La discipline n'a pas ses indicateurs de référence : grille minimale en construction d'auteur, FinOps des agents comme contrainte de premier ordre (ch. 45).
+
+### Livre XI — Synthèse architecturale et blueprint *(ch. 46-51)*
+
+La composition. La matrice protocoles × exigences réglementaires révèle où les standards suffisent et où l'architecture compense — quinze croisements sans lien documenté à date (ch. 46). L'architecture de référence unifiée étage protocoles, identité/registre, orchestration, maillage, exploitation et gouvernance, structurée par OO1-OO4 (ch. 47). La formalisation ArchiMate affronte son verrou : **aucun élément natif** pour les concepts agentiques, seule extension défendable Specialization + stéréotype + Profiles — version de référence ArchiMate 4 (C260), dont la refonte du métamodèle impose une re-vérification préalable (ch. 48). Le blueprint s'instancie deux fois — ADS Boréalis (Vol. I) et portefeuille IBM (Vol. II), présentés comme deux réalisations d'une même architecture de référence (ch. 49) — puis se prouve par le parcours : naissance, vie et mort d'un agent d'entreprise, trois flux financiers de bout en bout (ch. 50). L'instrumentation et la feuille de route se séquencent sur le 1ᵉʳ mai 2027 (ch. 51).
+
+### Livre XII — L'agent comme livrable logiciel *(ch. 52-54)* — plan : **livrer** ⚠ matière neuve
+
+Seul livre sans volume source ni socle hérité — statut déclaré en tête de livre, rédaction en dernier, retrait prévu si le socle ne se constitue pas (décision 9, risque 13 du TOC). Les trois volumes traitent l'agent comme un *interlocuteur* ; ce livre le traite comme un *artefact*. La provenance des composants — nomenclatures logicielles et d'IA, signature d'artefacts — comme chaînon entre passeport et intégrité, front le plus mûr des trois (ch. 52) ; la mise en service d'un artefact non reproductible — jeux d'essai de référence, barrière d'évaluation, versionnement à quatre horloges (ch. 53) ; la sémantique d'effet — idempotence, compensation, réconciliation : ce qui advient quand un virement réussit à moitié, silence maximal en finance (ch. 54).
+
+### Livre XIII — Horizon et frontière de la connaissance vérifiable *(ch. 55-57)*
+
+La clôture. L'horizon 2027-2032 : une grappe d'échéances datées en PROGRAMMÉ, des trajectoires en PROJETÉ, jamais de SPÉCULATIF déguisé en certitude (ch. 55). La frontière : ce que l'on ne sait pas encore, dit honnêtement — les onze lacunes héritées du PRD du Vol. II reprises par identifiant, les questions de recherche transmises, le problème des deux sauts (ch. 56). Enfin la péremption : le compendium est daté et le dit — événements qui le périment (dont la ratification MCP annoncée au 28 juillet 2026, première à porter une date), protocole de revalidation, registre de gel par chapitre (ch. 57).
+
+---
+
+## Appareil
+
+Neuf annexes ferment l'ouvrage : **A** — méthode unifiée (fusion des trois systèmes de preuve) ; **B** — socle factuel consolidé sous numérotation unique (la tâche technique centrale : sans elle, les renvois F-xx ne résolvent pas) ; **C** — faits partagés, divergences tranchées et registre des onze lacunes héritées ; **D** — chronologie fusionnée 2023-2032 à quatre statuts (annoncé / visé / attendu / incertain) ; **E** — glossaire bilingue avec statut épistémique de chaque terme ; **F** — matrice des mécanismes, table de navigation de l'ouvrage ; **G** — catalogue de patrons de la confiance agentique ; **H** — ADS Boréalis intégrale (20 655 mots mesurés) ; **I** — bibliographie générale consolidée (plancher mesuré : 37 104 mots et 1 270 entrées pour le seul Vol. I).
+
+## Régimes de preuve — ce que le lecteur doit savoir tenir séparé
+
+La somme porte **trois régimes de preuve**, et les déclare plutôt que de les lisser :
+
+1. **Vérifié** — les livres dérivés des Vol. I et II, rédigés, adossés à un socle F-xx daté et cité ;
+2. **Planifié** — les Livres III, IV, V, IX et X (≈ 26 % du corps), dérivés du Vol. III, proposition non rédigée dont les socles candidats sont des repérages [C] à instruire (risque 11 du TOC) ;
+3. **À constituer** — le Livre XII, matière neuve sans aucun socle, même hérité (risque 13 du TOC).
+
+## Horloge de l'ouvrage
+
+2024-2026 : convergence protocolaire sous fondations neutres • 28 juillet 2026 : ratification MCP **annoncée** (premier événement de péremption daté) • T4 2026 : lancement RTR **visé** • 1ᵉʳ mai 2027 : entrée en vigueur commune E-23 / ligne directrice AMF • 2027-2028 : normalisation du passeport d'agent (**PROJETÉ**) • 2030 / 2035 : dépréciation puis retrait des signatures classiques (**visés**, NIST IR 8547, brouillon).
