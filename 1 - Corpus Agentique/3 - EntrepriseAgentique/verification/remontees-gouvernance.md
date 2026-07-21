@@ -142,8 +142,46 @@ Le TOC (thèse d'ensemble) et le PRD (objectif **O6**) posent que « **la majori
 
 ---
 
+## R-G-04 — « Trancher » ou « instruire » la divergence AP2 : le plan et le PRD ne disent pas la même chose ☑
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, **à l'ouverture de P2**, en rédigeant la consigne du lot L-06 |
+| Ouverte par | L'instance d'exécution de la phase |
+| Bloque | **L-06** et **ch. 9 §9.1** — la consigne du lot ne pouvait pas être écrite sans trancher |
+| Siège de la faute | **Le PRDPlan §4**, en contradiction avec le PRD §7.5 |
+| Tranchée par | L'instance d'exécution de la phase (PRDPlan §5.3) — **relève de sa compétence** : qualification d'une tâche de lot, ni thèse, ni objectif, ni garde-fou, ni découpage |
+| Statut | ☑ **tranchée le 21 juillet 2026** |
+
+### Le conflit
+
+**PRDPlan §4** : « **L-06 doit trancher la divergence de gouvernance d'AP2** […] c'est un **arbitrage** interne à celui-là. »
+
+**PRD §7.5** : « Le Vol. III les **porte** et ne les tranche pas ; le Vol. IV projette de le faire. » Et pour AP2 : « Le chapitre expose les deux positions, les attribue, et **instruit la divergence** (lot L-06). »
+
+**Trancher et instruire ne sont pas synonymes**, et l'écart n'est pas verbal : *trancher* désignerait le choix entre deux livrables du dépôt — ce que le PRD interdit et réserve au Vol. IV ; *instruire* désigne l'établissement, sur sources primaires, de l'état réel.
+
+### Arbitrage — tranché le 21 juillet 2026
+
+**Le PRD prime**, comme le PRDPlan le déclare lui-même en tête (« En cas de conflit, le PRD prime »). **L-06 instruit, il n'arbitre pas.** Le régime, en trois temps qui lèvent l'ambiguïté :
+
+1. **L-06 établit ce que les sources primaires portent aujourd'hui** — communiqués de la FIDO Alliance, de la Linux Foundation, de Google, page de gouvernance du projet — avec leurs dates.
+2. **Si une source primaire établit un fait daté**, la divergence entre les deux volumes **se résout par le fait**, et non par un arbitrage entre livrables : le Vol. III n'a alors choisi aucun camp, il a lu une source que ni l'un ni l'autre n'avait lue. ⚠ **Il le dit dans ces termes** — écrire « le Vol. I avait raison » serait exactement l'arbitrage interdit.
+3. **Si les sources primaires sont muettes ou contradictoires**, la divergence demeure, se porte au PRD §7.5, et le ch. 9 expose les deux positions en les attribuant.
+
+⚠ **L'arbitrage par chronologie reste interdit dans les trois cas** : ici le livrable le plus récent est le **plus réservé**, et la prudence d'un volume n'est pas une erreur à corriger par la date de l'autre.
+
+### Report — fait le 21 juillet 2026
+
+- **PRDPlan §4** : la phrase « doit trancher » est remplacée par « doit **instruire** », avec renvoi au présent arbitrage.
+- **Consigne du lot L-06** : le régime en trois temps y est porté en toutes lettres avant instruction.
+
+*Motif de traiter cette remontée avant d'instruire plutôt qu'après* : la relecture P1.4 a constaté que deux documents de gouvernance donnaient, le même jour, des instructions contradictoires pour les deux mêmes sections — et que c'est l'artefact de clôture qui portait la mauvaise. **Une contradiction repérée à l'ouverture d'une phase coûte une phrase ; repérée à sa clôture, elle coûte le lot.**
+
+---
+
 ## Remontées ouvertes
 
-*Aucune à ce jour.* Les trois remontées de P1 sont tranchées et reportées.
+*Aucune à ce jour.* Les quatre remontées (trois de P1, une de P2) sont tranchées et reportées.
 
 ⚠ **Un registre vide n'est pas un registre inutile** : c'est l'endroit où P3 et P4 déposeront les leurs, et la règle qui compte est qu'une remontée bloquante **arrête la pièce qu'elle bloque** jusqu'à son arbitrage.

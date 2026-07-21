@@ -23,19 +23,21 @@ Projet documentaire, **au stade du cadrage**. Livrable visé : une monographie e
 
 Documents de gouvernance, par ordre d'autorité :
 
-1. [PRD.md](doc/PRD.md) **v0.2** — contenu, héritage du socle, garde-fous, critères d'acceptation (**prime en cas de conflit**, y compris sur le TOC) ;
-2. [TOC.md](doc/TOC.md) **v0.5** — **autorité sur le découpage** : toute modification du nombre ou de l'ordre des chapitres passe par lui (version++), et se répercute au PRD. Il porte en outre, depuis la v0.5, la **table de couverture** (§6.2 ↔ TOC) et la **table d'assignation** des garde-fous et des lacunes ;
-3. [PRDPlan.md](doc/PRDPlan.md) **v0.2** — plan d'exécution (phases P0 à P5, boucle qualité §5.2, formulations imposées §5.5). Il **ordonnance** le PRD, il ne le redéfinit pas.
+1. [PRD.md](doc/PRD.md) **v1.0** — contenu, héritage du socle, garde-fous, critères d'acceptation (**prime en cas de conflit**, y compris sur le TOC) ;
+2. [TOC.md](doc/TOC.md) **v0.6** — **autorité sur le découpage** : toute modification du nombre ou de l'ordre des chapitres passe par lui (version++), et se répercute au PRD. Il porte en outre, depuis la v0.5, la **table de couverture** (§6.2 ↔ TOC) et la **table d'assignation** des garde-fous et des lacunes ;
+3. [PRDPlan.md](doc/PRDPlan.md) **v0.4** — plan d'exécution (phases P0 à P5, boucle qualité §5.2, formulations imposées §5.5). Il **ordonnance** le PRD, il ne le redéfinit pas.
 
 ⚠ **Emplacement `doc/` : tranché sur disque le 18 juillet 2026, amendé au plan le 21.** L'activité **P0.3** est close, le §1.3 du PRDPlan est réécrit, et **les deux renvois relatifs qu'il portait à faux sont corrigés** — dont celui du **gabarit §5.4**, qui aurait produit mécaniquement 34 renvois cassés une fois recopié dans les pièces. Chemin correct vers le TOC : `../doc/TOC.md` depuis `monographie/`, `../../doc/TOC.md` depuis un dossier de partie ou `90-annexes/`.
 
-## ⚠ Aucun chapitre n'est rédigeable aujourd'hui
+## La règle cardinale ne bloque plus — et c'est le moment où elle protège le moins
 
 **Règle cardinale (PRD §7.0)** — *aucun chapitre n'est rédigé avant la clôture du lot d'instruction dont il dépend.* Un chapitre écrit sur un socle vide n'est pas un chapitre en avance : c'est une inférence longue, et le volume qui prend l'identité pour objet ne peut pas se permettre d'en produire.
 
-État du socle : **0 entrée propre**. 33 entrées héritées (H-01 à H-33), 15 lots d'instruction, **1 clos** — **L-15, par échec documenté** (voir ci-dessous) ; **14 ouverts**. **Aucune passe d'instruction n'a été menée par ce volume.**
+État du socle au 21 juillet 2026 : **78 entrées propres re-mesurées** (F-01 à F-78), 33 entrées héritées (H-01 à H-33), **15 lots clos sur 15** — quatorze par instruction aboutie, **L-15 par échec documenté**. **Aucune pièce n'est rédigée.**
 
-⚠ **Deux choses ne sont pas des passes d'instruction, et il ne faut pas les compter comme telles** : la clôture de L-15 (une vérification d'absence, aboutie) et la revalidation d'ouverture des faits chauds du 21 juillet 2026 ([`verification/revalidation-2026-07-21.md`](verification/revalidation-2026-07-21.md)). **Ni l'une ni l'autre ne crée d'entrée F-xx.** Une revalidation constate l'état d'une source à une date ; elle ne vaut ni extraction citée [B] ni vote [A].
+⚠ **Ce qui demeure après la levée de la règle cardinale, ce sont les dépendances éditoriales** du PRDPlan §5.1, et elles ne se déduisent pas du socle : le **ch. 4** ouvre l'ouvrage et conditionne toute application de la grille ; le **ch. 8 se rédige après le ch. 9**, en travers des parties ; les **six chapitres de composition** attendent leurs chapitres amont et sont **plus** exposés qu'un chapitre de socle, pas moins. *Un socle constitué autorise la rédaction ; il ne la planifie pas.*
+
+⚠ **Trois choses ne sont pas des passes d'instruction, et il ne faut pas les compter comme telles** : la clôture de **L-15** (vérification d'absence aboutie), la **revalidation d'ouverture** des faits chauds ([`revalidation-2026-07-21.md`](verification/revalidation-2026-07-21.md)) et les **contrôles de bornage** de P2. Aucune ne crée d'entrée F-xx. ⚠ **Et la revalidation d'ouverture s'est trompée deux fois**, corrigée depuis par les sources primaires des lots L-05 et L-14 (PRD §8.3) : *une revalidation constate l'état d'une source à une date, et si elle le fait sur du secondaire, elle se trompe comme du secondaire.*
 
 **Les décisions d'auteur de la phase P0 sont prises (21 juillet 2026).** L'état antérieur — deux décisions bloquantes en attente — est clos :
 
@@ -142,14 +144,14 @@ Chaque pièce porte sa propre date de gel, consignée au registre [`monographie/
 
 | | État |
 |---|---|
-| Pièces rédigées | **0 sur 34** (28 chapitres + avant-propos + 5 annexes) — les 34 existent **au gabarit**, corps vide. **Deux sont désormais rédigeables** : ch. 5 et ch. 12 |
+| Pièces rédigées | **0 sur 34** (28 chapitres + avant-propos + 5 annexes) — les 34 existent **au gabarit**, corps vide. **Toutes sont désormais rédigeables** au regard de la règle cardinale |
 | Volumétrie cible | **102 500 mots** — re-sommée le 21 juillet 2026 depuis les cibles par bloc, **concordante** entre TOC, PRD §6.1 et registre de gel ; **indicative et non normative**. ⚠ Le README du dépôt porte encore « ≈ 100 000 » : réalignement en **P5.3**, avec les autres porteurs |
-| Socle propre | **26 entrées** — F-01 à F-12 (lot L-03), F-13 à F-26 (lot L-08). **52 affirmations soumises au vote adversarial, 14 écartées**, 41 échecs de source consignés |
+| Socle propre | **78 entrées re-mesurées** — F-01 à F-26 (P1), F-27 à F-78 (P2). **180 affirmations instruites, 80 soumises au vote, 17 écartées** ; **53 corrections de bornage** ; **106 échecs de source consignés** |
 | Socle hérité | **33 entrées** — H-01 à H-16 (Vol. II), H-17 à H-33 (Vol. I) |
-| Lots d'instruction | **3 clos sur 15** — **L-03** et **L-08** par instruction aboutie, **L-15** par échec documenté. **Douze ouverts.** ⚠ **L-05 est à réinstruire** avant le ch. 7 (brouillon CSA évolué) |
-| Jalons | **J-0, J-1 et J-2 faits** ; J-3 à J-6 à faire |
-| Phases | **P0 ☑, P1 ☑** ; P2 à P5 ☐ — suivi au grain de la phase : [PRDPlan §1.6](doc/PRDPlan.md) |
-| Remontées de gouvernance | **3 tranchées** (R-G-01 à R-G-03) — [registre](verification/remontees-gouvernance.md). ⚠ **Deux d'entre elles corrigent le cadrage lui-même** |
+| Lots d'instruction | **15 clos sur 15** — quatorze par instruction aboutie, **L-15** par échec documenté. ⚠ **La règle cardinale §7.0 ne bloque plus aucun chapitre** ; les dépendances éditoriales du PRDPlan §5.1 demeurent |
+| Jalons | **J-0 à J-3 faits** ; J-4 à J-6 à faire |
+| Phases | **P0 ☑, P1 ☑, P2 ☑** ; P3 à P5 ☐ — suivi au grain de la phase : [PRDPlan §1.6](doc/PRDPlan.md) |
+| Remontées de gouvernance | **4 tranchées** (R-G-01 à R-G-04) — [registre](verification/remontees-gouvernance.md). ⚠ **Trois d'entre elles corrigent le cadrage lui-même** |
 | Lacunes documentées | **14** (PRD §10) — **2 closes** : la 11 (corpus d'appui, instruite et infructueuse) et la 12 (`commun/faits-partages.md`, close par décision) ; 12 non instruites |
 | Écarts TOC constatés | **9** (PRD §7.4), **tous corrigés au TOC v0.5** ; **1 dixième** trouvé à l'exécution, siégeant dans le PRD (§7.4.10), corrigé |
 | Assignations | **14 garde-fous sur 14** et **14 lacunes sur 14** assignés à une pièce porteuse — tables au TOC ; **34 pièces sur 34** couvertes par la bijection §6.2 ↔ TOC |
