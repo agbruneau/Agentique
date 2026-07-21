@@ -142,13 +142,14 @@ Chaque pièce porte sa propre date de gel, consignée au registre [`monographie/
 
 | | État |
 |---|---|
-| Pièces rédigées | **0 sur 34** (28 chapitres + avant-propos + 5 annexes) — les 34 existent **au gabarit**, corps vide |
+| Pièces rédigées | **0 sur 34** (28 chapitres + avant-propos + 5 annexes) — les 34 existent **au gabarit**, corps vide. **Deux sont désormais rédigeables** : ch. 5 et ch. 12 |
 | Volumétrie cible | **102 500 mots** — re-sommée le 21 juillet 2026 depuis les cibles par bloc, **concordante** entre TOC, PRD §6.1 et registre de gel ; **indicative et non normative**. ⚠ Le README du dépôt porte encore « ≈ 100 000 » : réalignement en **P5.3**, avec les autres porteurs |
-| Socle propre | **0 entrée** |
+| Socle propre | **26 entrées** — F-01 à F-12 (lot L-03), F-13 à F-26 (lot L-08). **52 affirmations soumises au vote adversarial, 14 écartées**, 41 échecs de source consignés |
 | Socle hérité | **33 entrées** — H-01 à H-16 (Vol. II), H-17 à H-33 (Vol. I) |
-| Lots d'instruction | **1 clos sur 15** — L-15, par **échec documenté** ; deux bloquants au sens fort demeurent : **L-03** (ch. 5) et **L-08** (ch. 12). ⚠ **L-05 est à réinstruire** avant le ch. 7 (brouillon CSA évolué) |
-| Jalons | **J-0 et J-1 faits** ; J-2 à J-6 à faire |
-| Phases | **P0 ☑** ; P1 à P5 ☐ |
+| Lots d'instruction | **3 clos sur 15** — **L-03** et **L-08** par instruction aboutie, **L-15** par échec documenté. **Douze ouverts.** ⚠ **L-05 est à réinstruire** avant le ch. 7 (brouillon CSA évolué) |
+| Jalons | **J-0, J-1 et J-2 faits** ; J-3 à J-6 à faire |
+| Phases | **P0 ☑, P1 ☑** ; P2 à P5 ☐ — suivi au grain de la phase : [PRDPlan §1.6](doc/PRDPlan.md) |
+| Remontées de gouvernance | **3 tranchées** (R-G-01 à R-G-03) — [registre](verification/remontees-gouvernance.md). ⚠ **Deux d'entre elles corrigent le cadrage lui-même** |
 | Lacunes documentées | **14** (PRD §10) — **2 closes** : la 11 (corpus d'appui, instruite et infructueuse) et la 12 (`commun/faits-partages.md`, close par décision) ; 12 non instruites |
 | Écarts TOC constatés | **9** (PRD §7.4), **tous corrigés au TOC v0.5** ; **1 dixième** trouvé à l'exécution, siégeant dans le PRD (§7.4.10), corrigé |
 | Assignations | **14 garde-fous sur 14** et **14 lacunes sur 14** assignés à une pièce porteuse — tables au TOC ; **34 pièces sur 34** couvertes par la bijection §6.2 ↔ TOC |
