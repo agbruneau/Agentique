@@ -2,10 +2,10 @@
 
 | Champ | Valeur |
 |---|---|
-| Version | **0.1 — premier plan d'exécution du volume III** (18 juillet 2026). Établi contre [`PRD.md`](PRD.md) v0.1 et [`TOC.md`](TOC.md) v0.4. Deux décisions de méthode y sont prises et justifiées plutôt qu'héritées : la **commande de décompte de volumétrie** est fixée en locale UTF-8 dès l'origine (§1.5 — le Vol. II a dû assumer un défaut de 1,3 % qu'il ne pouvait plus corriger sans invalider tous ses chiffres publiés), et la **règle d'escalade de gouvernance** est posée *avant* la première rédaction et non après (§5.3 — le Vol. II l'a apprise en P2, au prix d'un chapitre pivot qui a dû trancher seul). |
-| Date | 18 juillet 2026 |
-| Statut | **Aucune phase exécutée.** P0 à P5 sont toutes ☐. Le volume ne possède ni socle propre, ni chapitre, ni arborescence de rédaction. |
-| Documents de gouvernance | [`PRD.md`](PRD.md) v0.1 — autorité de contenu, socle, garde-fous, critères d'acceptation ; [`TOC.md`](TOC.md) v0.4 — autorité de découpage ; [`CLAUDE.md`](../../CLAUDE.md) racine — conventions du dépôt |
+| Version | **0.2 — plan amendé à la clôture de P0** (21 juillet 2026). Trois amendements, tous constatés sur pièce : (1) **§1.3 refait** — les documents de gouvernance vivent dans `doc/`, la structure cible qui les plaçait à la racine du volume est périmée et l'activité **P0.3 est close** ; (2) **deux renvois relatifs corrigés** — celui de l'en-tête vers le `CLAUDE.md` racine, et surtout celui du **gabarit §5.4**, qui aurait produit mécaniquement 34 renvois cassés en P3-P4 ; (3) **tableau de suivi §1.4 mis à jour au même commit que les activités qu'il décrit**. Historique : **0.1 — premier plan d'exécution du volume III** (18 juillet 2026). Établi contre [`PRD.md`](PRD.md) v0.1 et [`TOC.md`](TOC.md) v0.4. Deux décisions de méthode y sont prises et justifiées plutôt qu'héritées : la **commande de décompte de volumétrie** est fixée en locale UTF-8 dès l'origine (§1.5 — le Vol. II a dû assumer un défaut de 1,3 % qu'il ne pouvait plus corriger sans invalider tous ses chiffres publiés), et la **règle d'escalade de gouvernance** est posée *avant* la première rédaction et non après (§5.3 — le Vol. II l'a apprise en P2, au prix d'un chapitre pivot qui a dû trancher seul). |
+| Date | 21 juillet 2026 (v0.1 : 18 juillet 2026) |
+| Statut | **P0 exécutée et close (jalon J-1).** P1 à P5 restent ☐. Le volume possède désormais son arborescence de rédaction et son gabarit ; il ne possède toujours **ni socle propre, ni chapitre rédigé**. |
+| Documents de gouvernance | [`PRD.md`](PRD.md) v0.2 — autorité de contenu, socle, garde-fous, critères d'acceptation ; [`TOC.md`](TOC.md) v0.5 — autorité de découpage ; [`CLAUDE.md`](../../../CLAUDE.md) racine — conventions du dépôt |
 | Objet | Opérationnaliser les jalons J-1 à J-6 du PRD (§12) : phases, dépendances, boucle qualité, formulations imposées, contrôles, artefacts |
 
 Ce plan ne redéfinit ni le contenu (PRD §6), ni le socle (PRD §7), ni les garde-fous (PRD §8), ni les critères d'acceptation (PRD §11) — il les **ordonnance**. En cas de conflit, le PRD prime.
@@ -24,7 +24,7 @@ Monographie en **neuf parties, 28 chapitres, 34 pièces** (PRD §6.1 — 28 chap
 
 | Phase | Jalon PRD | Contenu | Prédécesseur |
 |---|---|---|---|
-| **P0** — Assainissement du cadrage | J-1 | Révision du TOC sur les neuf écarts (PRD §7.4) ; **décision sur le corpus d'appui** ; arborescence ; gabarit de pièce | — |
+| **P0** — Assainissement du cadrage ☑ | J-1 | Révision du TOC sur les neuf écarts (PRD §7.4) ; **décision sur le corpus d'appui** ; arborescence ; gabarit de pièce | — |
 | **P1** — Lots bloquants | J-2 | Instruction de L-03, L-08, L-15 (PRD §7.6) ; premières entrées F-xx du socle propre | P0 |
 | **P2** — Reste du socle | J-3 | Instruction des douze autres lots ; PRD porté en v1.0 | P1 |
 | **P3** — Rédaction du tronc | J-4 | Parties I à VI (ch. 1 à 21) | P2 (par lot : un chapitre démarre dès que **son** lot est clos) |
@@ -37,7 +37,9 @@ Monographie en **neuf parties, 28 chapitres, 34 pièces** (PRD §6.1 — 28 chap
 
 ```
 3 - EntrepriseAgentique/
-├── PRD.md, PRDPlan.md, TOC.md              # gouvernance (racine du volume)
+├── CLAUDE.md                               # consignes d'édition du volume
+├── doc/                                    # gouvernance — emplacement tranché (P0.3)
+│   ├── PRD.md, PRDPlan.md, TOC.md
 ├── monographie/
 │   ├── 00-avant-propos.md
 │   ├── 01-partie-I/ … 09-partie-IX/        # un fichier .md par chapitre
@@ -47,10 +49,12 @@ Monographie en **neuf parties, 28 chapitres, 34 pièces** (PRD §6.1 — 28 chap
 │   ├── lot-L-xx-<slug>.md                  # rapport par lot d'instruction (P1, P2)
 │   ├── revalidation-YYYY-MM-DD.md          # revalidations temporelles (P0.6, P5.1)
 │   └── relecture-CA.md                     # grille CA-01..CA-14 remplie (P5)
-└── sources/                                # corpus d'appui, SI déposé (P0.2) — sinon absent
+└── (pas de sources/)                       # corpus d'appui : filiation retirée (P0.2, 21 juill. 2026)
 ```
 
-⚠ **Les documents de gouvernance restent à la racine du volume, pas dans `doc/`.** Le Vol. II les y a déplacés le 17 juillet 2026 et a cassé **48 renvois, encore ouverts à ce jour**. Rien ne pointe encore vers les fichiers du Vol. III : le déplacement reste gratuit tant qu'il est fait avant la première pièce rédigée. Après P3, il coûtera le même prix qu'au Vol. II. **À trancher en P0, ou jamais.**
+⚠ **P0.3 est close : la gouvernance vit dans `doc/`, comme au Vol. II.** La v0.1 de ce plan décrivait une arborescence à la racine du volume et argumentait en sa faveur ; le disque a tranché autrement le 18 juillet 2026, et **le disque fait foi, pas le §1.3**. Le §1.3 est amendé ici plutôt que laissé en contradiction — *un plan qui décrit une arborescence que le dépôt ne porte plus est un plan qu'on cesse de lire.*
+
+**Ce que le déplacement a coûté, et ce qu'il a évité.** Le Vol. II a déplacé sa gouvernance **après vingt-neuf pièces rédigées** et porte **48 renvois cassés, encore ouverts**. Le Vol. III a déplacé **avant la première**, au prix de **deux** renvois — tous deux dans le présent fichier, tous deux **corrigés le 21 juillet 2026** : l'en-tête pointait `](../../CLAUDE.md)` au lieu de `](../../../CLAUDE.md)`, et le **gabarit du §5.4** pointait `](../../TOC.md)` au lieu de `](../../doc/TOC.md)`. ⚠ **Le second était le coûteux** : il vit dans le gabarit que les 34 pièces recopient — non corrigé, il aurait produit mécaniquement 34 renvois cassés, reproduction exacte du gisement du Vol. II. Corrigé avant la première pièce, il a coûté six caractères.
 
 **Commits** : messages en anglais, format Conventional Commits — convention du Vol. II, retenue ici parce que ce volume prolonge son appareil (`docs(prd): …`, `docs(mono): draft chapter N — <slug anglais court>`, sujet ≤ 50 caractères quand possible, plafond 72). ⚠ Le Vol. I emploie des messages courts en français : vérifier le dossier de travail avant de rédiger le message.
 
@@ -60,19 +64,19 @@ Monographie en **neuf parties, 28 chapitres, 34 pièces** (PRD §6.1 — 28 chap
 
 | Activité | Livrable / sortie | Statut | Date | Trace |
 |---|---|---|---|---|
-| **P0.1** Révision du TOC sur les neuf écarts (PRD §7.4) | TOC v0.5 | ☐ | | Dont : numérotation du Vol. I, siège de Boréalis, §7.0/§7.0.1, KYA §5.5.4, formule de non-compositionnalité, homonymie Q1-Q5, risques 9(a) et 9(b) |
-| **P0.2** **Décision sur le corpus d'appui** (PRD §7.7) | `sources/` peuplé **ou** filiation retirée | ☐ | | **Bloque L-15, sept sections et l'annexe E.** Décision d'auteur, non délégable |
-| **P0.3** Décision sur l'emplacement des documents de gouvernance (§1.3) | Arborescence arrêtée | ☐ | | Racine ou `doc/` — gratuit avant P3, coûteux après |
-| **P0.4** Arborescence `monographie/` et `verification/` | Arborescence commitée | ☐ | | 34 gabarits + registre de gel |
-| **P0.5** Gabarit de pièce (§5.4) | Gabarit commité | ☐ | | En-tête à cinq champs + thèse citée du TOC |
-| **P0.6** Revalidation d'ouverture des faits chauds (PRD §8.3) | `verification/revalidation-<date>.md` | ☐ | | ⚠ **La révision MCP du 28 juillet 2026 tombe dix jours après ce plan** |
-| **P0.7** Repointage des renvois `commun/faits-partages.md` | TOC v0.5 | ☐ | | Le fichier n'est pas créé (PRD §7.5) ; renvois hors volume signalés, non corrigés |
-| **P0.8** Contrôle de couverture bijective §6.2 ↔ TOC (34 pièces) | Section « Contrôle de couverture » du TOC | ☐ | | Livrable de PRD §12 J-1 |
-| **P0.9** Assignation des garde-fous et des lacunes aux pièces porteuses | Table d'assignation au TOC | ☐ | | Livrable de PRD §12 J-1 ; conditionne CA-02 et CA-06 |
-| **P0.10** Report des décisions P0.1 à P0.9 au PRD | **PRD v0.2** | ☐ | | Critère de sortie J-1 |
+| **P0.1** Révision du TOC sur les neuf écarts (PRD §7.4) | TOC v0.5 | ☑ | 21 juill. 2026 | **Les neuf traités, tous revérifiés sur pièce avant correction.** Point instruit au passage : la **quatrième pièce du passeport** (attestations de conformité) est assignée aux ch. 7 §7.3 et 19 §19.2, **sans création de chapitre** |
+| **P0.2** **Décision sur le corpus d'appui** (PRD §7.7) | `sources/` peuplé **ou** filiation retirée | ☑ | 21 juill. 2026 | **Décision d'auteur : filiation livresque retirée.** L-15 clos par **échec documenté** ; les sept sections et l'annexe E bloquées sont réaffectées au socle (table au TOC). Décision **réversible** au premier dépôt |
+| **P0.3** Décision sur l'emplacement des documents de gouvernance (§1.3) | Arborescence arrêtée | ☑ | 21 juill. 2026 | `doc/` — tranché sur disque le 18 juill., **§1.3 amendé** ici. Deux renvois cassés corrigés, dont celui du **gabarit** (34 renvois évités) |
+| **P0.4** Arborescence `monographie/` et `verification/` | Arborescence commitée | ☑ | 21 juill. 2026 | **34 pièces**, 9 dossiers de partie + `90-annexes/`, registre de gel initialisé. Contrôle exécuté : 34 fichiers, **40 liens relatifs, 40 résolus**, somme des cibles **102 500** |
+| **P0.5** Gabarit de pièce (§5.4) | Gabarit commité | ☑ | 21 juill. 2026 | Appliqué aux 34 fichiers. **Thèse extraite du TOC par script**, jamais retranscrite : le verbatim de CA-05 est garanti par construction, et les deux pièces d'appareil **déclarent ne revendiquer aucun verbatim** |
+| **P0.6** Revalidation d'ouverture des faits chauds (PRD §8.3) | `verification/revalidation-<date>.md` | ☑ | 21 juill. 2026 | [`revalidation-2026-07-21.md`](../verification/revalidation-2026-07-21.md) — **2 faits évolués** (brouillon CSA, conventions OTel), **1 confirmé en substance sans l'être en date** (révision MCP), 4 inchangés |
+| **P0.7** Repointage des renvois `commun/faits-partages.md` | TOC v0.5 | ☑ | 21 juill. 2026 | **Trois renvois** repointés vers PRD §7.5. Renvois du README racine et du TOC du Vol. IV **signalés, non corrigés** (hors périmètre) |
+| **P0.8** Contrôle de couverture bijective §6.2 ↔ TOC (34 pièces) | Section « Contrôle de couverture » du TOC | ☑ | 21 juill. 2026 | **34 contrôlées, 34 assignées.** Un orphelin trouvé et corrigé — **ACVM 11-348**, exigé par l'objectif O8, sans siège au TOC v0.4 ; quatre apports du TOC à reporter au PRD |
+| **P0.9** Assignation des garde-fous et des lacunes aux pièces porteuses | Table d'assignation au TOC | ☑ | 21 juill. 2026 | **14 garde-fous sur 14, 14 lacunes sur 14.** Deux mentions portées : R-10 **sans objet à date mais armé** ; R-12 **sans instrument outillé** |
+| **P0.10** Report des décisions P0.1 à P0.9 au PRD | **PRD v0.2** | ☑ | 21 juill. 2026 | Critère de sortie J-1. Dont un **écart nouveau** : PRD §7.4.6 nommait le dépôt `Monographies` — il s'appelle **`Agentique`** |
 | **P1.1** Lot **L-03** — valeur probante de la carte signée (Q3) | `verification/lot-L-03-agent-card.md` + entrées F-xx | ☐ | | **Bloquant ch. 5.** Niveau visé [A] |
 | **P1.2** Lot **L-08** — taxonomie des attaques (Q2) | `verification/lot-L-08-attaques.md` + entrées F-xx | ☐ | | **Bloquant ch. 12.** Niveau visé [A] ; R-12 dès l'instruction |
-| **P1.3** Lot **L-15** — corpus d'appui | Extractions citées **ou** échec documenté | ☐ | | Conditionné par P0.2 |
+| **P1.3** Lot **L-15** — corpus d'appui | Extractions citées **ou** échec documenté | ☑ | 21 juill. 2026 | **Clos par échec documenté** (décision P0.2) : les trois ouvrages n'ont jamais été déposés. Reste à faire en P3-P4 : la **réécriture effective** des sept sections et de l'annexe E réaffectées |
 | **P1.4** Relecture adversariale de la clôture P1 | Constats consignés | ☐ | | Deux relecteurs indépendants |
 | **P2.1** à **P2.12** Lots L-01, L-02, L-04 à L-07, L-09 à L-14 | Un rapport par lot + entrées F-xx | ☐ | | Parallélisables ; chacun clôt les chapitres de sa colonne « Bloque » |
 | **P2.13** PRD porté en v1.0 (socle propre constitué) | PRD v1.0 | ☐ | | Cardinal du socle propre recompté, jamais dérivé d'une borne |
@@ -83,7 +87,9 @@ Monographie en **neuf parties, 28 chapitres, 34 pièces** (PRD §6.1 — 28 chap
 | **P5.3** Cohérence globale (décomptes, renvois) | Balayage + relecture | ☐ | | Dont synchronisation des chiffres publiés (§7, risque « décompte désynchronisé ») |
 | **P5.4** Assemblage, PDF, publication | `Monographie.md` + `Monographie.pdf` | ☐ | | PDF versionné **avec** sa source (règle du dépôt) |
 
-**Décompte de contrôle (18 juillet 2026)** : 34 unités de rédaction — **0 rédigée, 0 relue, 34 en attente**. Socle propre : **0 entrée**. Lots clos : **0 sur 15**.
+**Décompte de contrôle (21 juillet 2026)** : 34 unités de rédaction — **0 rédigée, 0 relue, 34 au gabarit**. Socle propre : **0 entrée**. Lots clos : **1 sur 15** — **L-15, par échec documenté** (décision P0.2) ; *un échec instruit est un résultat, une lacune non instruite n'en est pas un*. Phases : **P0 close**, P1 à P5 ☐.
+
+⚠ **Le passage de « 34 en attente » à « 34 au gabarit » n'est pas un progrès de rédaction.** Un gabarit est un fichier vide muni de son en-tête ; il ne vaut ni brouillon ni ébauche. La règle cardinale (PRD §7.0) reste entière : aucune de ces 34 pièces n'est rédigeable avant la clôture du lot dont elle dépend.
 
 ### 1.5 Commande de référence du décompte de volumétrie
 
@@ -115,9 +121,11 @@ Sont **hors décompte** : l'en-tête (tableau de champs, thèse citée), les not
 
 ---
 
-## 2. Phase P0 — Assainissement du cadrage (J-1)
+## 2. Phase P0 — Assainissement du cadrage (J-1) — ☑ **close le 21 juillet 2026**
 
 **Aucune rédaction, aucune recherche.** P0 met le cadrage en état d'être exécuté.
+
+⚠ **Le tableau ci-dessous est conservé tel qu'il prescrivait**, et non réécrit à la lumière de ce qui a été fait : un plan qu'on récrit après coup cesse d'être vérifiable. Ce qui a effectivement été exécuté est consigné au tableau de suivi §1.4, avec sa date et sa trace ; les écarts entre la prescription et l'exécution sont relevés en fin de section.
 
 | # | Tâche | Vérification de sortie |
 |---|---|---|
@@ -137,6 +145,18 @@ Sont **hors décompte** : l'en-tête (tableau de champs, thèse citée), les not
 
 **Critère de sortie J-1** : TOC v0.5 **et PRD v0.2** ; décision corpus d'appui consignée ; bijection §6.2 ↔ TOC vérifiée sur les **34 pièces** ; **chaque garde-fou R-01 à R-14 et chaque lacune §10 assignés à une pièce porteuse**. *Un garde-fou non assigné est un garde-fou non appliqué.*
 
+### 2.1 Constat de clôture — ce que l'exécution a trouvé que la prescription n'avait pas prévu
+
+**Cinq écarts entre le plan et le terrain**, consignés parce qu'ils qualifient la suite :
+
+1. **P0.2 a été tranchée par le retrait, non par le dépôt.** Le rejeu de la vérification (21 juillet 2026) a confirmé l'absence des trois ouvrages jusque dans l'historique git. **L-15 est le premier lot clos du volume — par échec documenté.** Huit pièces sont réaffectées ; le risque bascule de la *filiation empruntée* vers la **compensation par l'inférence**, et c'est CA-07 qui le tient.
+2. **Le contrôle de couverture a trouvé un orphelin que personne n'attendait** : l'avis **ACVM 11-348**, exigé par l'objectif O8 du PRD, n'avait de siège dans aucune pièce du TOC v0.4. Assigné au ch. 20 §20.1. *Le contrôle qui ne trouve rien n'a pas été fait.*
+3. **Un dixième écart est apparu, et il siège dans le PRD, non dans le TOC** : §7.4.6 nomme le dépôt `Monographies`. Il s'appelle **`Agentique`**. Corrigé au PRD v0.2 — et l'ironie est consignée : c'est le paragraphe qui traite d'une homonymie qui en portait une.
+4. **Une proposition du PRD §7.7 s'est révélée à moitié fausse à l'exécution** : la filiation de repli « GoF/EIP que le Vol. I mobilise déjà » ne tient que pour **EIP**. Le Vol. I ne mobilise pas GoF et ne porte aucun gabarit de patron ; le gabarit de l'annexe E est donc une **construction d'auteur**, et il le dit.
+5. **La revalidation d'ouverture a fait bouger deux faits chauds sur sept**, dont un — le brouillon CSA — que le socle hérité donnait pour l'état de mars 2026 et qui a été mis à jour en mai. **L-05 réinstruit avant le ch. 7 ; H-03 s'amende au socle, pas dans la pièce.**
+
+⚠ **Ce que P0 n'a pas fait, et ne pouvait pas faire.** Elle n'a créé **aucune entrée de socle**, clos **aucun lot d'instruction** hors L-15, arbitré **aucune divergence** (AP2, date de la ligne directrice de l'AMF) et rédigé **aucune ligne** des 34 pièces. *Un cadrage assaini n'est pas un ouvrage commencé.*
+
 ---
 
 ## 3. Phase P1 — Les trois lots bloquants (J-2)
@@ -147,7 +167,7 @@ Ces trois lots ne se contournent pas par une reformulation prudente : leur éche
 |---|---|---|---|
 | P1.1 | **L-03** — carte d'agent signée (Q3 du Vol. II ch. 21) | Ancrage de confiance, régime de révocation, gouvernance des clés — **ou l'établissement que la spécification ne les documente pas** | Le ch. 5 devient un chapitre de lacune instruite, et **le ch. 8 perd une de ses quatre pièces** : le passeport se construit alors sur trois, et le dit |
 | P1.2 | **L-08** — taxonomie des attaques (Q2 du Vol. II ch. 21) | Identifiants de vulnérabilité, incidents publics datés, littérature académique | La Partie IV se réduit à une reprise du Vol. I. **Le ch. 12 §12.4 devient le cœur du chapitre** — « ce que la recension ne trouve pas » —, sous R-08 |
-| P1.3 | **L-15** — corpus d'appui | Extraction citée, chapitre par chapitre | Sept sections et l'annexe E se réécrivent sans lui (P0.2) |
+| P1.3 | **L-15** — corpus d'appui ☑ | Extraction citée, chapitre par chapitre | **C'est l'issue survenue** : sept sections et l'annexe E se réécrivent sans lui (P0.2, 21 juill. 2026) |
 
 **Un échec instruit est un résultat ; une lacune non instruite n'en est pas un.** Le rapport de lot consigne ce qui a été tenté, avec quelles sources et pourquoi cela échoue — c'est ce qui autorise le gabarit « passe conduite et infructueuse » plutôt que « aucune passe conduite » (§5.5).
 
@@ -257,12 +277,12 @@ En-tête à cinq champs, avant le premier séparateur, suivi de la thèse citée
 | Garde-fous à surveiller (PRD §8) | R-xx… |
 | Volumétrie cible | ~N mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : <thèse du chapitre, citée>
+> **Thèse ([TOC.md](../../doc/TOC.md))** : <thèse du chapitre, citée>
 
 ---
 ```
 
-⚠ **Le chemin relatif vers le TOC dépend de la profondeur du fichier** (`../TOC.md` depuis `monographie/`, `../../TOC.md` depuis `monographie/01-partie-I/`). Le Vol. II porte **48 renvois cassés** pour avoir recopié le même chemin partout puis déplacé la cible. Vérifier le chemin à la création de chaque gabarit, pas à la fin.
+⚠ **Chemin relatif corrigé le 21 juillet 2026, et il dépend de la profondeur du fichier.** La gouvernance vivant dans `doc/` (§1.3), le chemin est **`../doc/TOC.md`** depuis `monographie/` (avant-propos, registre de gel) et **`../../doc/TOC.md`** depuis `monographie/01-partie-I/` … `monographie/90-annexes/`. La v0.1 portait `../../TOC.md` — juste pour une gouvernance à la racine du volume, faux depuis le déplacement, et **recopié 34 fois** si personne ne l'attrapait avant P3. Le Vol. II porte 48 renvois cassés pour avoir recopié le même chemin partout puis déplacé la cible. **Vérifier le chemin à la création de chaque gabarit, pas à la fin** — et le vérifier en l'ouvrant, pas en le relisant.
 
 ### 5.5 Formulations types
 
