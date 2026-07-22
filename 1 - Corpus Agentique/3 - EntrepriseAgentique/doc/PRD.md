@@ -786,12 +786,27 @@ R-07    conforme à E-23|conformité.*E-23|B-13|conform\w+.*(AMF|ligne directric
 R-08    aucun incident|pas d'incident
 R-09    Community Group|\bCG\b|W3C.*normalis
 R-10    Arsanjani|Bustos|Nagasubramanian|Ranjan|Chembachere|Lobo
-R-11    2030|2035|post-quantique|IR 8547
-R-13    autonomie graduée|copilote|niveaux 0 à 5|L0|L1|L2|L3
-R-14    le socle ne documente|n'existe pas|aucun
-CA-03   [0-9]+ ?%|selon|déclare
+R-11    2030|2035|post-quantique|(NIST )?(Internal Report )?\(?IR\)? ?8547
+R-13    autonomie graduée|copilote|niveaux 0 à 5|\bL[0-3]\b
+R-14    le socle ne documente|n'existe pas|aucun          ← à balayer avec -i
+CA-03   [0-9]+ ?%|selon|déclare|précise|attache|consigne
 CA-11   PROGRAMMÉ|PROJETÉ|SPÉCULATIF|\[A\]|\[B\]|\[C\]
 ```
+
+⚠ **Quatre motifs corrigés le 21 juillet 2026 — remontée R-G-40, arbitrage délégué.** Sept pièces avaient constaté, chacune de son côté, que l'instrument les desservait. Les corrections et ce qu'elles réparent :
+
+| Motif | Défaut | Correction |
+|---|---|---|
+| **R-13** | Les branches `L0` à `L3` captaient **tout identifiant d'affirmation** des séries `L01` à `L14` — six occurrences de bruit au ch. 7, neuf au ch. 16, onze au ch. 17, **aucune visant une échelle d'autonomie** | Ancrage par limite de mot : **`\bL[0-3]\b`** |
+| **R-11** | La branche `IR 8547` ne voyait pas la forme verbatim de la source, « NIST Internal Report (IR) 8547 », que **CA-05 impose pourtant de citer telle quelle** | Alternance élargie. *Un motif qui perd la citation exacte au profit de son abrégé contrôle l'abrégé, non le fait* |
+| **R-14** | **Sensible à la casse** : les négatifs en tête de phrase lui échappaient | **Balayage avec `-i`**, obligatoire |
+| **CA-03** | Ne relevait aucune attribution formulée avec « précise », « attache », « consigne » | Alternance étendue |
+
+☑ **Validation par mutation exécutée le 21 juillet 2026**, sur un banc d'essai portant pour chaque motif **ce qu'il doit voir** et **ce qu'il ne doit pas voir** — chaque forme corrigée éprouvée sur le texte intact, puis la forme actuelle sur le même texte. Résultats reproductibles, détaillés en R-G-40 du [registre des remontées](../verification/remontees-gouvernance.md) : R-13 ancré voit les quatre paliers et ignore les dix identifiants de lot ; R-13 non ancré rend **deux lignes de bruit sur quatre** ; **R-14 sensible à la casse ne voit aucun des trois négatifs** du bloc témoin, et trois sur trois avec `-i` ; CA-03 étendu voit quatre verbes d'attribution sur quatre ; R-11 élargi voit la forme verbatim **et** l'abrégé.
+
+⚠ **Le résultat de R-14 est le plus sérieux, et il excède ce que la remontée estimait.** Elle l'évaluait à « quatre occurrences manquées sur trente-quatre » ; sur un bloc de trois négatifs tous en tête de phrase, le motif actuel n'en voit **aucun**. Le sous-compte dépend donc entièrement de la position de la phrase, ce qu'aucun bilan ne contrôle — *et R-14 est le motif le plus sollicité du volume*.
+
+⚠ **Les bilans §A.6 publiés dans les vingt et une pièces rédigées ont été mesurés à l'instrument défectueux.** Leur **rejeu est dû** et il est ordonnancé en **P5.2**, où CA-02 impose déjà un balayage exhaustif sur les **trente-quatre** pièces : l'y rattacher fait porter le rejeu sur le corpus entier plutôt que sur vingt et une. *Jusque-là, aucun de ces bilans ne vaut attestation.*
 
 ☑ **Complétée à la clôture de J-1, le 21 juillet 2026 — et complétée par une assignation, non par des motifs supplémentaires.** L'assignation de chaque garde-fou à sa **pièce de siège** et à ses **pièces de surveillance** vit au [TOC](TOC.md), section « Assignation des garde-fous et des lacunes ». C'est elle qui rend la liste ci-dessus exploitable : un motif qui ressort dans une pièce où le garde-fou n'a rien à faire est du bruit ; le même motif dans sa pièce de siège est un point d'inspection. ⚠ **Un seul motif a été modifié, et il l'a été plus tard dans la journée, à la relecture P1.4** : `copilote` est ajouté à **R-13**, parce que la remontée R-G-01 a créé une interdiction nouvelle — « copilote » ne s'emploie jamais seul — que rien ne détectait. *Une interdiction de terme sans son terme au motif n'est contrôlée par rien* ; R-04 porte bien `\bACP\b` pour la même raison. Hors ce cas, **aucun motif n'a été ajouté ni modifié** — la liste est éprouvée pour ce qu'elle attrape, et l'élargir avant la première pièce rédigée reviendrait à la calibrer sur rien. ⚠ **R-10 conserve son motif alors qu'il est sans objet à date** (filiation livresque retirée, §7.7) : il reste armé, et un motif qui ne ressort jamais coûte moins cher qu'un garde-fou qu'on aurait désarmé.
 
@@ -850,6 +865,8 @@ Spécification de l'architecture de référence que les ch. 27 et 28 doivent dé
 | Loi 25, art. 12.1 | E1 : le point d'arrêt humain comme acte de délégation daté et signé ; E3 : trace d'instance produite par le cadre | H-06, H-15 | **Inférence d'auteur** ; nuance Fasken [C] à porter ; **Q4 prolongée, non tranchée** |
 | ACVM 11-348 — autonomie et adaptativité après déploiement | E3 : détection de la dérive d'autonomie ; séparation adaptation/évolution | H-07, H-11 | **Inférence d'auteur** |
 | Cadre bancaire — standard technique | E2 : passerelles conformes au standard **à venir** | H-08 | **Attente réglementaire — ne rien anticiper** (R-5 du Vol. II reconduit) |
+
+⚠ **Ce qu'« anticiper » veut dire, et ce qu'il ne veut pas dire** *(lecture établie le 21 juillet 2026 — remontée **R-G-42**, arbitrage délégué)*. **Un scénario porte sur les corpus de départ, jamais sur le contenu d'un texte à venir.** Décrire quelles instances, quels corpus et quels précédents une normalisation mobiliserait **n'anticipe rien** : ce sont des faits présents, documentés et datables. Écrire ce qu'un texte non publié **dira** est une anticipation, et elle demeure proscrite. *La frontière est entre l'état d'un champ et le contenu d'un document qui n'existe pas.* C'est ce qui autorise le §21.2 (« Scénarios ») sans lever l'attente ci-dessus — et cette lecture était à l'œuvre dans le ch. 21 sans qu'aucun document d'autorité ne la porte.
 | Jalons post-quantiques | E1 : crypto-agilité du mécanisme de signature | H-17 | **Inférence d'auteur** ; ⚠ un jalon NIST n'est pas une obligation légale (R-11) |
 
 ### B.4 Parcours à jouer contre l'architecture (ch. 28)
@@ -886,9 +903,11 @@ Ce sont les questions que l'entreprise doit pouvoir poser à chacun de ses agent
 
 1. **La grille s'applique par mécanisme, pas par produit.** Un même produit peut répondre à Q-A et laisser Q-C sans réponse.
 2. **Une réponse partielle est une réponse partielle.** Trois verdicts seulement : *répond*, *répond partiellement — et on dit à quoi*, *ne répond pas*. Aucun quatrième verdict de complaisance.
-3. **La thèse du ch. 4 est falsifiable, et c'est voulu** : « aucun mécanisme de 2026 ne répond aux cinq ». Un mécanisme qui répondrait aux cinq la réfute — **et la réfutation doit être écrite si elle survient**, pas contournée.
+3. **La thèse du ch. 4 est falsifiable, et c'est voulu** : « **aucun des mécanismes instruits par ce volume ne répond aux cinq** ». Un mécanisme instruit qui répondrait aux cinq la réfute — **et la réfutation doit être écrite si elle survient**, pas contournée. ⚠ **La thèse ne porte pas sur l'état du domaine** : elle porte sur l'échantillon que ce volume a réellement ouvert, et le §4.2 en nomme les trois membres. Un quatrième mécanisme non instruit ne la réfute ni ne la confirme. *(Formulation bornée le 21 juillet 2026 — remontée **R-G-15**, arbitrage délégué. La forme antérieure, « aucun mécanisme de 2026 ne répond aux cinq », était un **quantificateur universel négatif sur un corpus non balayé et non balayable** : exactement ce que R-14 et §8.6 proscrivent. Elle vivait aux deux sièges — ici et au TOC —, et corriger le TOC seul aurait laissé le document d'autorité porter la forme proscrite. ⚠ **Le coût est réel et assumé** : le ch. 4 n'affirme plus rien de l'état du domaine en 2026.)*
 4. **Le ch. 8 §8.4 est le seul endroit où les cinq reçoivent une réponse** — et le passeport y étant une construction d'auteur, la réponse est « sur le papier ». R-01 s'applique intégralement à ce paragraphe.
 5. **La grille est appliquée en Parties II (§5.4, §6.4, §8.4), IV (§12.2), VI (§19.1) et VII (§22.4)**, et sert de colonne à l'annexe B de l'ouvrage (matrice des mécanismes). **La Partie III ne porte aucun verdict par la grille** : elle *instruit* la question Q-C — pour qui agis-tu ? — au lieu de l'appliquer mécanisme par mécanisme, et le ch. 9 le déclare à son ouverture. Toute autre partie qui ne l'appliquerait pas s'en explique de même.
+
+   ⚠ **Le §19.1 applique la grille en lecture inversée, et c'est le seul siège dans ce cas.** Un texte normatif n'est **pas un mécanisme** (règle 1) : il n'est donc **jamais jugé par la grille** et ne reçoit **aucun verdict**. Il est **lu à travers elle** — on demande ce que le texte **attend** de l'entreprise sur chacune des cinq questions, non ce qu'il y répond. *La grille sert ici d'instrument de lecture, pas de barème.* **E-23 et la ligne directrice de l'AMF sont des textes, pas des mécanismes** — la lecture inversée est ce qui empêche la règle 5 de contredire la règle 1. *(Lecture établie le 21 juillet 2026 — remontée **R-G-42**, arbitrage délégué. Elle était déjà à l'œuvre dans le ch. 19, sans qu'aucun document d'autorité ne la porte : une section qui s'autorise elle-même.)*
 
 ### C.3 Croisement avec la maturité
 
