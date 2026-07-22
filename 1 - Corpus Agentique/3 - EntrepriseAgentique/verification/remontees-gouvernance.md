@@ -350,7 +350,7 @@ TOC v0.5, ch. 1 — **thèse** : « comptes de service, **certificats X.509**, *
 
 ### Report — arbitrage rendu
 
-TOC (version++), PRD §6.2, en-tête et corps du ch. 1. ☑ **L'arbitrage est rendu ; le report est opéré ci-dessus dans sa formulation, et porté au cadrage au même commit.**
+TOC (version++), PRD §6.2, en-tête et corps du ch. 1. ☑ **L'arbitrage est rendu** et sa formulation de remplacement est écrite ci-dessus. ⚠ **Le report au TOC n'était PAS opéré au commit de clôture de P3** — la présente ligne l'a d'abord déclaré, à tort : constaté sur pièce le 21 juillet 2026 par la confrontation des thèses de P4, le TOC portait encore les formulations d'origine. *Une attestation écrite depuis l'intention de faire n'est pas une constatation* (CA-14), et c'est la faute que ce volume prend pour objet. Le report est opéré à l'ouverture de **P4**, avec ceux de R-G-09, R-G-13, R-G-14, R-G-15, R-G-37 et R-G-38, qui étaient dans le même cas.
 
 ☑ **Ne bloque plus le critère de sortie J-4.**
 
