@@ -7,7 +7,7 @@ pas répétées.
 
 ## Les livrables — un plan et sa vue synoptique, pas un ouvrage
 
-Deux fichiers. [`TOC.md`](TOC.md) (**v0.9, 20 juillet 2026 — 57 chapitres en 10 livres,
+Deux fichiers. [`TOC.md`](TOC.md) (**v0.10, 21 juillet 2026 — 57 chapitres en 10 livres,
 projection ≈ 369 000–394 000 mots**) est la *spécification* du compendium ; **aucun chapitre
 n'est rédigé**. Tant que la somme n'est pas écrite, les trois volumes sources font foi (champ
 Statut du TOC), et une thèse de ce plan n'est pas une source (sa propre décision 8).
@@ -53,8 +53,12 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
   réintroduirait l'erreur en croyant la corriger (décision 7 et risque 10 du TOC).
 - ⚠ **Corpus d'appui du Vol. III introuvable au dépôt** (lacune L-15, décision P0.2 non tranchée) :
   aucun chapitre consommateur ne se rédige en s'appuyant sur ces trois ouvrages.
-- ⚠ **Relèves v0.7** : marquées « à instruire à la source primaire » — aucune n'entre au socle, ne
-  re-tranche une divergence ni ne clôt une lacune sans extraction de la source primaire.
+- ⚠ **Relèves v0.7 et v0.10** : marquées « à instruire à la source primaire » — aucune n'entre au
+  socle, ne re-tranche une divergence ni ne clôt une lacune sans extraction de la source primaire.
+- ⚠ **L'angle mort du harnais est déclaré, non comblé** (risque 14, v0.10) : la couche d'exécution
+  n'a de chapitre nulle part, et trois des huit relèves v0.10 atterrissent dans le Livre IX. **Ne
+  pas en tirer un chapitre ni un livre** — la somme porte déjà un livre sans socle (risque 13), et
+  l'arbitrage est une décision d'auteur, pas une décision de passe.
 
 ## Éditer le TOC — protocole de passe
 
@@ -66,7 +70,7 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
    champ Contrôles est une spécification sans exécutable. Le reconstruire (domaine : chapitres
    1-57, dix livres) et le valider **par mutation** après constat qu'il passe sur le document
    intact est un préalable à toute publication. En attendant, chaque passe exécute au minimum le
-   balayage ad hoc des journaux v0.8-v0.9 — chapitres 1-57 contigus et uniques ; dix livres I-X ;
+   balayage ad hoc des journaux v0.8-v0.10 — chapitres 1-57 contigus et uniques ; dix livres I-X ;
    somme des enveloppes `~N 000 mots)*` = 305 (301 corps + 4 avant-propos ; 394 000 avec les
    89 000 d'annexes ; l'enveloppe est toujours en **fin** d'en-tête de livre, sinon le motif ne la
    voit plus) ; aucun renvoi `ch. N` hors de 1-57 ; aucune occurrence normative des anciennes

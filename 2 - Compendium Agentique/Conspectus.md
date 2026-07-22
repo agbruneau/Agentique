@@ -5,8 +5,8 @@
 | Champ | Valeur |
 |---|---|
 | Nature | **Conspectus** : vue synoptique du compendium intégral (Vol. IV) — l'argument de l'ouvrage, livre par livre, en lecture continue. Ce document ne porte aucune décision de fusion, aucun socle, aucun garde-fou nouveau : tout ce qu'il énonce est tenu par le [`TOC.md`](TOC.md), qui seul fait autorité |
-| Source | [`TOC.md`](TOC.md) **v0.9** (20 juillet 2026) — 57 chapitres en 10 livres, avant-propos, 9 annexes, ≈ 369 000–394 000 mots projetés |
-| Date | 20 juillet 2026 |
+| Source | [`TOC.md`](TOC.md) **v0.10** (21 juillet 2026) — 57 chapitres en 10 livres, avant-propos, 9 annexes, ≈ 369 000–394 000 mots projetés. La v0.10 n'ajoute aucune structure : elle porte huit relèves datées sur la **couche d'exécution** et déclare l'angle mort correspondant (risque 14 du TOC), repris en fin de ce document |
+| Date | 21 juillet 2026 |
 | Statut | Le compendium **n'est pas rédigé** : tant qu'il ne l'est pas, les trois volumes sources font foi, et ce conspectus décrit un *plan*, non un ouvrage. En cas d'écart entre ce document et le `TOC.md`, **c'est le `TOC.md` qui prime** ; un conspectus n'est pas une source, pas plus qu'une thèse de plan n'est une entrée de socle (décision 8 du TOC) |
 | Régénération | À chaque nouvelle version du `TOC.md`, ce document se réaligne ou déclare son retard en tête |
 
@@ -92,6 +92,10 @@ La somme porte **trois régimes de preuve**, et les déclare plutôt que de les 
 1. **Vérifié** — les livres dérivés des Vol. I et II, rédigés, adossés à un socle F-xx daté et cité ;
 2. **Planifié** — les Livres III et VII (≈ 26 % du corps), dérivés du Vol. III, proposition non rédigée dont les socles candidats sont des repérages [C] à instruire (risque 11 du TOC) ;
 3. **À constituer** — le Livre IX, matière neuve sans aucun socle, même hérité (risque 13 du TOC).
+
+## L'angle mort déclaré — la couche d'exécution *(v0.10)*
+
+La somme décrit l'agent sur quatre plans : ce qui le fait coopérer, ce qui l'encadre, ce qui l'accrédite, ce qui le livre. Elle ne décrit nulle part le **harnais** — le programme qui héberge la boucle et porte, en propre, la persistance de session, les modes d'exécution, les sous-agents, la chaîne d'approbation d'outils, l'admission d'extensions et la compression de contexte. Ce n'est ni le protocole (un harnais est un client, pas une spécification), ni le cadriciel d'orchestration du ch. 27 (qui compose des graphes, ne tient pas une session), ni le maillage (le harnais est en deçà de l'arête). L'écart est **déclaré plutôt que comblé** : ajouter un livre à la somme avant que le Livre IX ait constitué le sien aggraverait le défaut qu'elle annonce. Huit relèves datées du 21 juillet 2026, toutes **[C] et à instruire à la source primaire**, sont rattachées à onze chapitres d'accueil (ch. 20, 21, 22, 26, 43, 44, 52, 53, 54, 55, 57) ; l'arbitrage — chapitre neuf, sections dans l'existant, ou périmètre assumé — appartient à l'auteur et se prend avant la rédaction des Livres VII et IX. Détail au risque 14 et au journal v0.10 du [`TOC.md`](TOC.md).
 
 ## Horloge de l'ouvrage
 
