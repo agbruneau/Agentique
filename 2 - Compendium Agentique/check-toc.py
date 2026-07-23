@@ -32,7 +32,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 TOC = HERE / "TOC.md"
-CONSPECTUS = HERE / "Conspectus.md"
+CONSPECTUS = HERE / "README.md"   # vue synoptique dérivée (le « conspectus »), renommée README.md
 
 N_CHAPTERS = 57
 BOOKS = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"]

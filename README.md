@@ -144,7 +144,7 @@ Le volume naît des lacunes des deux précédents : identité non humaine et dé
 commentée ([`TOC.md`](2%20-%20Compendium%20Agentique/TOC.md), **v0.14 du 23 juillet 2026**), son
 **PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium%20Agentique/PRD.md), v0.1 du
 23 juillet 2026 — portes de lancement, régimes de preuve, critères d'acceptation, jalons), sa vue
-synoptique dérivée ([`Conspectus.md`](2%20-%20Compendium%20Agentique/Conspectus.md)), son exécutable
+synoptique dérivée ([`README.md`](2%20-%20Compendium%20Agentique/README.md)), son exécutable
 de contrôle ([`check-toc.py`](2%20-%20Compendium%20Agentique/check-toc.py), avec son harnais de
 validation par mutation) et un
 [`CLAUDE.md`](2%20-%20Compendium%20Agentique/CLAUDE.md) de conventions —
@@ -242,7 +242,7 @@ volumes sources font foi et la divergence reste ouverte — le cadrage le dit lu
 └── 2 - Compendium Agentique/              ← Vol. IV
     ├── CLAUDE.md                            conventions du volume
     ├── TOC.md                               table des matières commentée (v0.14) — spécification
-    └── Conspectus.md                        vue synoptique dérivée du TOC
+    └── README.md                            vue synoptique dérivée du TOC (le « conspectus » du volume)
 ```
 
 **Où sont les `CLAUDE.md`.** Un par périmètre, sans recouvrement : la racine porte les conventions
@@ -341,7 +341,7 @@ la publication arXiv) porte la pagination à **145 p.**, références inchangée
 
 Le même 23 juillet 2026, une passe de cohérence a réaligné les `README.md` et `CLAUDE.md` sur l'état
 réel du dépôt : Vol. IV porté à **TOC v0.11** (57 chapitres, 10 livres, ≈ 369 000–394 000 mots
-projetés) avec son `Conspectus.md` et son `CLAUDE.md` ; renommage `doc/` → `prd/` (Vol. II) et
+projetés) avec son `README.md` et son `CLAUDE.md` ; renommage `doc/` → `prd/` (Vol. II) et
 suppressions des articles de synthèse et des `index.html` (Vol. I et II) constatés **committés**
 (commit `fd8f1be`, arbre de travail propre) ; création du pipeline FESP du Vol. III (troisième copie
 indépendante) enregistrée ; nom du dépôt corrigé de « Monographies » en `Agentique` dans les

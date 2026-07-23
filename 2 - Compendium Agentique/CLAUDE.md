@@ -15,7 +15,7 @@ projection ≈ 369 000–394 000 mots**) reste la *spécification de contenu* du
 sur le découpage et sur chaque chapitre (thèse, sections, ligne Fusion, socle, garde-fous) ;
 **aucun chapitre n'est rédigé**. Tant que la somme n'est pas écrite, les trois volumes sources
 font foi (champ Statut du TOC), et une thèse de ce plan n'est pas une source (sa propre
-décision 8). [`Conspectus.md`](Conspectus.md) est la **vue synoptique dérivée** du TOC (même
+décision 8). [`README.md`](README.md) est la **vue synoptique dérivée** du TOC (le « conspectus » du volume, même
 version en tête) : il ne porte aucune décision, aucun socle, aucun garde-fou propre — en cas
 d'écart, **le TOC prime**, et toute passe qui modifie le TOC réaligne le conspectus (version,
 faits touchés) ou y déclare le retard en tête.

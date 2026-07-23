@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """check-toc-mutations.py — validation par mutation de check-toc.py (Vol. IV).
 
-Pour chaque mutation : copie TOC.md, Conspectus.md et check-toc.py dans un
+Pour chaque mutation : copie TOC.md, README.md et check-toc.py dans un
 dossier temporaire, applique la faute, exécute le script et exige un échec
 portant le contrôle attendu. Préalable vérifié d'abord : le script passe sur
 le document intact. Sortie 0 si toutes les mutations sont détectées, 1 sinon.
@@ -50,7 +50,7 @@ MUTATIONS = [
     ("M12", "TOC.md", "*Fusion : Vol. III ch. 12 + Vol. I* Monographie",
      "*Fusion : Vol. III *TOC* §12.1 + Vol. I* Monographie", "C12"),
     ("M13", "TOC.md", "d'un ouvrage à 57 chapitres", "d'un ouvrage à 54 chapitres", "C13"),
-    ("M14", "Conspectus.md", "**v0.14** (23 juillet 2026)", "**v0.10** (21 juillet 2026)", "C14"),
+    ("M14", "README.md", "**v0.14** (23 juillet 2026)", "**v0.10** (21 juillet 2026)", "C14"),
 ]
 
 
@@ -65,7 +65,7 @@ def main():
         base = Path(td)
         intact = base / "intact"
         intact.mkdir()
-        for f in ("TOC.md", "Conspectus.md", "check-toc.py"):
+        for f in ("TOC.md", "README.md", "check-toc.py"):
             shutil.copy(SRC / f, intact / f)
         r = run_in(intact)
         if r.returncode != 0:
@@ -77,7 +77,7 @@ def main():
         for mid, fname, old, new, ctrl in MUTATIONS:
             d = base / mid
             d.mkdir()
-            for f in ("TOC.md", "Conspectus.md", "check-toc.py"):
+            for f in ("TOC.md", "README.md", "check-toc.py"):
                 shutil.copy(SRC / f, d / f)
             target = d / fname
             content = target.read_text(encoding="utf-8")
