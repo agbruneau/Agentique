@@ -1,0 +1,76 @@
+// ===================== Gabarit FESP — monographie =====================
+#set document(title: "L'entreprise agentique — la fabrique de confiance : identité non humaine, délégation vérifiable, maillage d'agents et AgentOps", author: "André-Guy Bruneau")
+
+// ---- Page : Lettre US, marges 2,5 cm (haut/bas) et 3 cm (gauche/droite) ----
+#set page(
+  paper: "us-letter",
+  margin: (top: 2.5cm, bottom: 2.5cm, left: 3cm, right: 3cm),
+  numbering: none,
+  number-align: center,
+)
+
+// ---- Texte : Arial (Liberation Sans) + replis DejaVu / Segoe UI Symbol pour symboles (⚠ → ≥ ≤) ----
+#set text(
+  font: ("Liberation Sans", "Arial", "DejaVu Sans", "Segoe UI Symbol"),
+  size: 11pt,
+  lang: "fr",
+  region: "ca",
+  hyphenate: true,
+)
+#set par(justify: true, leading: 0.7em, spacing: 0.95em, first-line-indent: 0pt)
+#set smartquote(enabled: false)
+
+// ---- Listes ----
+#set list(indent: 0.6em, spacing: 0.7em)
+#set enum(indent: 0.6em, spacing: 0.7em)
+
+// ---- Titres : Arial gras ; H1 sur nouvelle page ----
+#set heading(numbering: none)
+#show heading: set text(font: ("Liberation Sans", "Arial"), weight: "bold")
+#show heading.where(level: 1): it => [
+  #pagebreak(weak: true)
+  #v(0.2em)
+  #set text(size: 17pt)
+  #block(below: 0.9em, width: 100%, it)
+  #v(0.1em)
+]
+#show heading.where(level: 2): it => [ #set text(size: 13.5pt); #block(above: 1.1em, below: 0.55em, it) ]
+#show heading.where(level: 3): it => [ #set text(size: 12pt);  #block(above: 0.95em, below: 0.5em, it) ]
+#show heading.where(level: 4): it => [ #set text(size: 11pt, style: "italic"); #block(above: 0.8em, below: 0.4em, it) ]
+
+// ---- Tableaux : RUPTURE entre pages (corrige le débordement) + en-tête répété ----
+#show figure: set block(breakable: true)
+#set figure(gap: 0.8em)
+#set table(
+  inset: (x: 7pt, y: 5pt),
+  align: left + top,
+  stroke: (x, y) => (top: 0.5pt + rgb("#9aa0aa"), bottom: 0.5pt + rgb("#9aa0aa")),
+  fill: (x, y) => if y == 0 { rgb("#eef0f4") },
+)
+#show table: set par(justify: false)
+#show table.cell.where(y: 0): set text(weight: "bold")
+#show figure.where(kind: table): set figure.caption(position: top)
+
+// ---- Encadrés « Perspective recherche » / « Mise en œuvre » ----
+#show quote.where(block: true): it => block(
+  width: 100%,
+  breakable: true,
+  fill: rgb("#f5f6f8"),
+  stroke: (left: 2.5pt + rgb("#5b6b8c")),
+  inset: (left: 11pt, right: 10pt, top: 8pt, bottom: 8pt),
+  above: 1.0em, below: 1.0em,
+  radius: (right: 2pt),
+  it.body,
+)
+
+// ---- Filet horizontal markdown ----
+#let horizontalrule = align(center, line(length: 38%, stroke: 0.5pt + rgb("#9aa0aa")))
+
+// ---- Liens en noir (lisibilité d'impression) ----
+#show link: set text(fill: black)
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+$body$

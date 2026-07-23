@@ -1,29 +1,53 @@
----
-title: "L'entreprise agentique"
-subtitle: "Identité non humaine, délégation vérifiable, maillage d'agents et AgentOps"
-author: "André-Guy Bruneau"
-date: "22 juillet 2026"
-lang: fr
-mainfont: "New Computer Modern"
-toc-title: "Table des matières"
----
+```{=typst}
+#[
+#set par(justify: false, leading: 0.72em)
+#align(center)[
+  #v(3.2cm)
+  #text(size: 25pt, weight: "bold")[L'entreprise agentique]
 
-::: {}
-**VERSION DE TRAVAIL — NON PUBLIABLE.** Ce rendu assemble les trente-quatre
-pièces rédigées et relues adversarialement du volume III au 22 juillet 2026.
-La phase de finalisation (P5) est en cours : la revalidation temporelle et le
-rejeu des motifs de balayage sont faits, mais **quinze remontées de gouvernance
-demeurent ouvertes** (R-G-43 à R-G-57), dont plusieurs relèvent d'un arbitrage
-d'auteur — notamment un vote adversarial dû sur deux entrées du socle, une
-section sans socle, et le grain de deux critères d'acceptation. L'appareil
-éditorial (tables d'en-tête, journaux de relecture, bilans de balayage) n'est
-pas reproduit ici ; il vit dans les fichiers source sous `monographie/` et
-`verification/`. *Un ouvrage complet n'est pas un ouvrage publiable.*
-:::
+  #v(0.8cm)
+  #text(size: 12.5pt, style: "italic")[La fabrique de confiance : identité non humaine, délégation vérifiable, maillage d'agents et AgentOps à l'horloge post-quantique (2026-2030)]
+
+  #v(3cm)
+  #text(size: 13pt)[Monographie en science et génie informatique]
+
+  #v(3cm)
+  #text(size: 14pt, weight: "bold")[André-Guy Bruneau, M.Sc. IT]
+
+  #v(0.8cm)
+  #text(size: 13pt)[Juillet 2026]
+]
+]
+#pagebreak()
+```
+
+> **État de finalisation.** Cet exemplaire assemble les trente-quatre pièces rédigées et relues adversarialement du volume au 22 juillet 2026. La finalisation (phase P5) est en cours : quinze remontées de gouvernance demeurent ouvertes (R-G-43 à R-G-57), dont certaines relèvent d'un arbitrage d'auteur. L'appareil éditorial interne — tableaux d'en-tête, journaux de relecture, bilans de balayage — n'est pas reproduit ici ; il vit dans les fichiers source sous `monographie/` et `verification/`.
+
+# Résumé {.unnumbered}
+
+L'entreprise agentique — celle qui confie à des agents non humains des tâches qui engagent sa responsabilité — n'existe pas encore comme discipline : les protocoles savent faire coopérer les agents (Vol. I), les cadres savent les encadrer (Vol. II), mais l'organisation qui les déploie ne sait pas répondre à la question préalable — *qui est cet agent, pour le compte de qui agit-il, et jusqu'où sa délégation est-elle vérifiable ?* La thèse défendue : **l'entreprise agentique se construit sur une fondation identitaire, et cette fondation ne sera pas une invention mais une extension gouvernée** — les standards existants (OAuth/OIDC, SCIM, X.509, VC/DID) sont étirés jusqu'à leur point de rupture, et c'est la localisation exacte de ce point de rupture, strate par strate, qui constitue l'apport de l'ouvrage. Corollaire structurant : l'identité est la **fondation de la défense** — ⚠ **thèse réarticulée le 21 juillet 2026, à la clôture du lot L-08 qui devait l'établir et l'a réfutée sous sa forme initiale** (remontée R-G-03). La justification n'est **pas quantitative** : sur les dix intitulés du référentiel OWASP de 2026, un seul porte « Identity » et aucun ne porte « Delegation » (F-18, fait négatif vérifié). Elle est **architecturale**, et les référentiels du domaine la portent eux-mêmes : **l'absence d'identité propre et gouvernée d'un agent rend inapplicable le moindre privilège** et prive l'organisation de toute attribution (F-19), au point que l'identité y est traitée comme le **nouveau plan de contrôle** (F-20). C'est ce qui permet d'absorber la taxonomie des menaces (Q2 du Vol. II, ch. 21 §21.2) dans le cadre identitaire plutôt que d'en faire un ouvrage séparé — **verrou portant, non catégorie majoritaire**. L'ensemble est tendu par une horloge datée : la migration post-quantique (jalons NIST 2030/2035), qui transforme la crypto-agilité de vertu en exigence de conception.
+
+Trois capacités font l'entreprise agentique, et elles ordonnent l'ouvrage. La première est d'**émettre** : donner à chaque agent une identité opposable — le passeport (Parties I-III). La deuxième est d'**appliquer** : une identité ne vaut que là où elle est vérifiée, et ce lieu est le **maillage d'agents** (*agent mesh*), transposition agentique du *service mesh* qui médiatise chaque arête du graphe d'interaction (Partie VII) — le mesh est à l'identité ce que le tribunal est à la loi : l'endroit où elle devient opposable. La troisième est d'**exploiter** : une identité vérifiée à l'admission ne dit rien du comportement en exploitation, et c'est l'**AgentOps** — observabilité, évaluation continue, cycle de vie, réponse à incident (Partie VIII) — qui referme la boucle, en prolongeant le quatrième terme que le Vol. I avait ajouté à l'invariant : l'*exploitation*. Les menaces (Partie IV), l'horloge cryptographique (Partie V) et le droit (Partie VI) traversent les trois capacités ; le blueprint (Partie IX) les compose en une organisation — car l'entreprise agentique est d'abord une entreprise : des rôles, des responsabilités, une trajectoire de maturité, pas seulement une pile technique.
+
+```{=typst}
+#pagebreak()
+#outline(title: [Table des matières], depth: 2)
+#pagebreak()
+```
+
+# Note sur les tableaux et les figures
+
+Le corps de cette monographie ne comporte aucune figure ni illustration. Les tableaux
+d'analyse — taxonomies, grilles de correspondance, matrices de décision — sont présentés
+*en place*, au fil des sections où ils appuient le propos, plutôt que rassemblés en une
+liste distincte : ce sont des outils de comparaison locaux, indissociables de leur
+contexte d'argumentation. L'Annexe B rassemble la matrice détaillée des mécanismes, et
+l'Annexe D le glossaire qui tient lieu de liste d'abréviations.
+
 
 # Avant-propos et note méthodologique
 
-> **Thèse ([TOC.md](../prd/TOC.md))** : pièce d'appareil — son contenu obligatoire est imposé par [PRD.md](../prd/PRD.md) §6.2. ⚠ Le TOC ne lui assigne pas de thèse : **aucune revendication de verbatim n'est faite ici** (CA-05).
+> **Thèse** : pièce d'appareil — son contenu obligatoire est imposé par [PRD.md](../prd/PRD.md) §6.2. ⚠ Le TOC ne lui assigne pas de thèse : **aucune revendication de verbatim n'est faite ici** (CA-05).
 
 Cet avant-propos ouvre l'ouvrage et il a été rédigé en dernier. Ce n'est pas une commodité d'ordonnancement : il porte la définition d'auteur du terme qui donne son titre au volume, et l'annonce de ses lacunes — deux choses qu'on ne connaît exactement qu'une fois les trente-trois autres pièces écrites. Ce qui suit dit d'où vient l'ouvrage, à quelles règles il s'astreint, et — c'est le point auquel il tient le plus — ce qu'il ne fait pas.
 
@@ -127,13 +151,12 @@ Deux clés de lecture. La **grille des cinq questions** du ch. 4 — *Qui es-tu 
 
 ⚠ Un dernier avertissement, parce qu'il coûte cher au lecteur qui l'ignore. Le Vol. I vit en **trois numérotations concurrentes** — `Synthese Monographie.md`, `Monographie.md`, et son Annexe B, qui numérote pour son propre compte —, et les sections §3 à §7 existent dans plusieurs d'entre elles : **tout renvoi au Vol. I nomme donc son fichier**. Toute question du Vol. II nomme son chapitre. Et tout garde-fou nomme son volume : **R-01 à R-14** ici, **R-1 à R-8** au Vol. II (CA-10).
 
-```{=typst}
-#pagebreak(weak: true)
-```
+# Partie I — L'héritage : l'identité machine avant l'entreprise agentique
+
 
 # Chapitre 1 — Un demi-siècle d'identités non humaines
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** *(reformulée le 21 juillet 2026 — remontée **R-G-08**, arbitrage rendu en P3, porté au TOC v0.7 et **reporté dans la pièce le 22 juillet 2026**)* : un demi-siècle d'identités machines a légué à l'entreprise un passif que le socle de cet ouvrage ne documente qu'à partir de 2012 : comptes de service, clés d'API et secrets d'atelier logiciel y sont **nommés sans être décrits**, et la généalogie vérifiable s'ouvre au RFC 6749 (F-27, [B]). Ce que l'ouvrage établit, c'est la **rupture** entre cette identité machine héritée et l'identité d'agent, non l'ampleur du passif.
+> **Thèse** *(reformulée le 21 juillet 2026 — remontée **R-G-08**, arbitrage rendu en P3, porté au TOC v0.7 et **reporté dans la pièce le 22 juillet 2026**)* : un demi-siècle d'identités machines a légué à l'entreprise un passif que le socle de cet ouvrage ne documente qu'à partir de 2012 : comptes de service, clés d'API et secrets d'atelier logiciel y sont **nommés sans être décrits**, et la généalogie vérifiable s'ouvre au RFC 6749 (F-27, [B]). Ce que l'ouvrage établit, c'est la **rupture** entre cette identité machine héritée et l'identité d'agent, non l'ampleur du passif.
 
 L'organisation qui délègue à des agents non humains n'ouvre pas un chantier vierge : elle ajoute une strate à un empilement d'identités machines déjà en place, et dont elle a rarement l'inventaire. Le terme d'« entreprise agentique » lui-même circule au marché sans définition normative ; il reçoit sa définition d'auteur à l'avant-propos, siège unique (R-03 du présent volume), et n'est pas employé ici comme une catégorie établie.
 
@@ -189,13 +212,9 @@ Ce que ces deux textes nomment, chacun dans son ordre, c'est un comportement qui
 
 La suite de la Partie I instruit les trois conséquences de ce constat, dans l'ordre où l'entreprise les rencontre : ce que les RFC existants supportent d'étirement avant de céder (ch. 2), ce que le corpus d'identité décentralisée fournit comme vocabulaire de rechange et ce qu'il n'a pas encore démontré en production (ch. 3), et la grille des cinq questions qui sert à trancher, mécanisme par mécanisme, laquelle de ces questions reçoit une réponse (ch. 4).
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 2 — Les standards étirés : OAuth et SCIM face à l'agent
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : la première vague de l'identité agentique est une extension des RFC existantes, non une rupture — et chaque extension révèle une hypothèse implicite du standard d'origine (un humain au bout du flux) qui cesse de tenir.
+> **Thèse** : la première vague de l'identité agentique est une extension des RFC existantes, non une rupture — et chaque extension révèle une hypothèse implicite du standard d'origine (un humain au bout du flux) qui cesse de tenir.
 
 L'organisation qui met des agents en production n'invente pas d'abord une identité pour eux. Elle emploie ce qu'elle exploite déjà : un serveur d'autorisation OAuth, un annuaire alimenté par SCIM, une chaîne de certificats. Les deux textes qui portent cette pile ont plus d'une décennie — RFC 6749 date d'octobre 2012, RFC 7643 de septembre 2015 (F-27, **[B]** ; F-28, **[B]**, degré 1). Ni l'un ni l'autre n'a été écrit contre l'agent ; ni l'un ni l'autre n'a été écrit pour lui. Ce chapitre localise, texte en main, où la reprise tient et où elle cède.
 
@@ -269,13 +288,9 @@ Le même produit fournit pourtant l'observation qui ferme le chapitre. Microsoft
 
 L'ordre des faits est donc celui-ci, et il est daté du 21 juillet 2026 : un produit en disponibilité générale étend des RFC (H-02, **[A]** ; F-33, **[B]**) ; un document de groupe de travail en appel de dernière relecture propose un mécanisme de propagation du contexte (F-29, **[A]**) ; une spécification de laboratoire à l'état de brouillon, publiée le 27 mars 2026, cite toujours une extension expirée le 19 avril 2026 — vingt-trois jours après sa propre publication (H-03, **[A]** ; F-41, **[B]**, degré 2) ; et la consolidation présentée à l'IETF 125 a été renvoyée à ses cas d'usage (F-42, **[B]**, degré 2). Ce qui manque à cet inventaire n'est pas une pièce, c'est l'objet qui les tiendrait ensemble. **Le passeport d'agent ne figure dans aucune spécification à date : c'est un objet de synthèse construit par cet ouvrage** en assemblant une carte signée, une inscription au registre, une chaîne de mandat et des attestations de conformité — il est construit au ch. 8, et jusque-là il n'existe pas.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 3 — L'identité décentralisée : VC, DID et la promesse du portable
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : le corpus W3C (Verifiable Credentials, DID) fournit le vocabulaire conceptuel du « passeport d'agent », mais son adoption en entreprise financière reste à démontrer — la distinction promesse/production est le fil du chapitre.
+> **Thèse** : le corpus W3C (Verifiable Credentials, DID) fournit le vocabulaire conceptuel du « passeport d'agent », mais son adoption en entreprise financière reste à démontrer — la distinction promesse/production est le fil du chapitre.
 
 **Régime de traçabilité de ce chapitre, posé d'entrée parce qu'il commande la lecture.** Chaque entrée porte son niveau **[A]/[B]/[C]** à sa première mobilisation, et son degré d'absence quand elle en porte un ; le tri prospectif ne s'y substitue jamais, les deux instruments étant orthogonaux (CA-11, PRD §7.1). Trois entrées du socle propre proviennent du lot d'instruction qui débloque ce chapitre — F-30, F-31 et F-32 (L-02) —, et **cinq s'y sont ajoutées le 21 juillet 2026 par amendement du socle** : F-79 à F-83 (PRD §7.10), qui portent les stades des quatre documents du W3C et l'état du premier groupe communautaire agentique. ⚠ **Ces cinq extractions vivaient au rapport du lot sans être au socle**, et le premier jet de ce chapitre les citait par leur identifiant de lot, sous des formules où le lecteur lit une garantie de socle ; la relecture adversariale l'a réfuté, le versement a été opéré au cadrage par amendement, et **le présent texte ne fait porter aucune affirmation par un identifiant `Lxx-Ay`**. Deux entrées héritées du volume I encadrent enfin le chapitre : H-18 et H-20, toutes deux en **[C]**, c'est-à-dire en repérage documentaire, et qui à ce titre ne portent aucun fait central (PRD §A.2, CA-01) — l'amendement en élève **deux points précis, et deux seulement** : le stade de DID v1.1 (F-82) et le premier groupe communautaire (F-83), le reste de ces deux entrées demeurant en [C] (PRD §A.5). *Un chapitre qui citerait un rapport de lot comme s'il citait le socle effacerait exactement la distinction que ce volume prend pour objet.*
 
@@ -342,13 +357,9 @@ Ces échecs bornent le chapitre autant que ses résultats, et le volume les expo
 
 La valeur probante de la carte signée revient au ch. 5, le registre comme pièce de conformité au ch. 7, et l'assemblage du passeport au ch. 8.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 4 — Grille d'analyse : les cinq questions que l'entreprise pose à son agent
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : cinq questions — *qui es-tu, qui t'a créé, pour qui agis-tu, que peux-tu faire, qui en répond* — forment la grille de lecture de tout mécanisme d'identité agentique ; ce sont les questions que l'entreprise doit pouvoir poser à chacun de ses agents, et **aucun des trois mécanismes instruits par ce volume ne répond aux cinq** *(thèse bornée le 21 juillet 2026 — remontée **R-G-15**, arbitrage rendu en P3, porté au TOC v0.7 et au PRD Annexe C §C.2 règle 3, et **reporté dans la pièce le 22 juillet 2026** : la forme antérieure — « aucun mécanisme de 2026 » — était un quantificateur universel négatif sur un corpus non balayé, que R-14 et le PRD §8.6 proscrivent)*.
+> **Thèse** : cinq questions — *qui es-tu, qui t'a créé, pour qui agis-tu, que peux-tu faire, qui en répond* — forment la grille de lecture de tout mécanisme d'identité agentique ; ce sont les questions que l'entreprise doit pouvoir poser à chacun de ses agents, et **aucun des trois mécanismes instruits par ce volume ne répond aux cinq** *(thèse bornée le 21 juillet 2026 — remontée **R-G-15**, arbitrage rendu en P3, porté au TOC v0.7 et au PRD Annexe C §C.2 règle 3, et **reporté dans la pièce le 22 juillet 2026** : la forme antérieure — « aucun mécanisme de 2026 » — était un quantificateur universel négatif sur un corpus non balayé, que R-14 et le PRD §8.6 proscrivent)*.
 
 ## 4.1 L'inspiration de la grille — et ce qu'elle n'autorise pas
 
@@ -428,13 +439,12 @@ L'ordonnancement proposé est le suivant. Au palier *assistance*, l'humain engag
 
 Ce que le croisement ne fait pas se dit avec la même netteté : il ne rend aucun mécanisme suffisant à un palier bas. Un fait borné ne varie pas avec le palier — la §8.4 de la spécification A2A ne comporte pas plus de moyen d'établir le statut d'une clé pour un agent d'assistance que pour un agent en autonomie bornée (F-06, **[A]**, degré 1). Le palier change le **coût** du défaut, non le défaut ; et une entreprise qui ordonnerait ses exigences d'identité par palier accepterait, en connaissance de cause, de porter aux paliers bas une dette dont l'échéance est le palier suivant.
 
-```{=typst}
-#pagebreak(weak: true)
-```
+# Partie II — Les mécanismes émergents : émettre l'identité
+
 
 # Chapitre 5 — L'Agent Card signée : anatomie et valeur probante
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** *(instruit Q3 du Vol. II, ch. 21 §21.2)* : la signature d'une Agent Card vaut exactement ce que valent son ancrage de confiance, son régime de révocation et sa gouvernance des clés — trois éléments que la spécification A2A v1.x documente inégalement.
+> **Thèse** *(instruit Q3 du Vol. II, ch. 21 §21.2)* : la signature d'une Agent Card vaut exactement ce que valent son ancrage de confiance, son régime de révocation et sa gouvernance des clés — trois éléments que la spécification A2A v1.x documente inégalement.
 
 Le volume précédent a nommé la question sans pouvoir y répondre. Son entrée sur A2A porte la réserve en toutes lettres : le socle du Vol. II **ne documente ni l'ancrage de confiance, ni la révocation, ni la gouvernance des clés** des cartes d'agent signées (*signed agent cards*) — et c'est de cette réserve que naît la troisième question de recherche de son chapitre 21 (H-01, [A ; ligne v1.0.1 [B]]). Le présent chapitre l'instruit sur le texte, et le résultat est défavorable au mécanisme sans être défavorable à son format.
 
@@ -524,13 +534,9 @@ Deux des cinq règles d'emploi de la grille commandent directement le verdict re
 
 Reste un dernier fait, et il est gênant pour une institution qui devrait inscrire ce mécanisme à un dossier de diligence raisonnable. La documentation du projet énonce que le dispositif « enables cryptographic verification of Agent Card **integrity** » ; un communiqué de la Linux Foundation daté du 9 avril 2026 en parle, lui, comme d'une « cryptographic **identity** verification » (source primaire ouverte et citée **hors socle** — rapport L-03, affirmation `L03-A4-05`, [B], **non versée au socle**). Les deux registres ne sont pas équivalents, et l'écart entre eux tient en un mot. C'est ce mot que R-02 du présent volume interdit de franchir : ce que la spécification démontre est une vérification d'intégrité relative à une clé, et **rien de ce qui est établi ici ne permet d'en faire une vérification d'identité**.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 6 — Les annuaires d'agents commerciaux : Entra Agent ID et ses pairs
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : la GA d'Entra Agent ID fait exister l'identité d'agent gérée en production avant tout standard — précédent qui structure le marché et préempte partiellement la normalisation.
+> **Thèse** : la GA d'Entra Agent ID fait exister l'identité d'agent gérée en production avant tout standard — précédent qui structure le marché et préempte partiellement la normalisation.
 
 Le chapitre précédent a instruit un mécanisme de spécification. Celui-ci instruit des produits, et le changement d'objet impose un changement de discipline. Une spécification se lit ; un produit se date. Quatre choses y sont distinctes et se confondent en une phrase de brochure : l'**annonce**, la **feuille de route**, la **préversion** (*preview*) et la **disponibilité générale documentée** (*general availability*, GA). Le présent volume les tient séparées à chaque énoncé (PRD §8.4), et la discipline y coûte cher, parce que la matière est ici presque entièrement fournie par la documentation des éditeurs eux-mêmes.
 
@@ -623,13 +629,9 @@ Quatre verdicts partiels et une case vide au degré 3 : un mécanisme en disponi
 
 ⚠ **Écart de trace avec le ch. 4 §4.2, et il n'est pas arbitré ici.** La table d'application-témoin du ch. 4 rend, pour la ligne « Annuaires commerciaux », le **même verdict que le présent chapitre sur Q-B — « répond partiellement »** —, mais il le trace ailleurs : vers **F-87**, la spécification SPIFFE-ID, avec F-36 **[C]** portée « en corroboration ». Le présent chapitre le trace vers le type de ressource d'annuaire lui-même, spécifié et hérité (F-37, §6.4, ligne Q-B). Les deux traces convergent sur le même motif — le second terme de Q-B, l'ancrage de confiance de l'autorité d'émission, n'est établi ni chez l'un ni chez l'autre. **Constaté sur pièce le 21 juillet 2026 dans `monographie/01-partie-I/ch-04-grille-cinq-questions.md`** : aucun verdict « répond » ne subsiste dans la grille du ch. 4, la remontée **R-G-12** ayant été tranchée *et* opérée au socle (PRD §7.9, F-36 ramenée à [C]). Il n'y a donc **aucune divergence de verdict à remonter** ; l'harmonisation des deux traces relève de l'auteur.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 7 — Les registres gouvernés : de la spécification CSA aux registres A2A
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** *(reformulée le 21 juillet 2026 — remontée **R-G-37**, arbitrage rendu en P3, porté au TOC v0.7 et **reporté dans la pièce le 22 juillet 2026**)* : le registre d'agents **tend à devenir — mouvement SPÉCULATIF, qu'aucune entrée du socle ne date** — la pièce de conformité maîtresse de l'entreprise agentique (intuition du ch. 8 du Vol. II), mais trois modèles concurrents — registre d'entreprise, registre de fédération, annuaire protocolaire — répondent à des questions différentes de la grille.
+> **Thèse** *(reformulée le 21 juillet 2026 — remontée **R-G-37**, arbitrage rendu en P3, porté au TOC v0.7 et **reporté dans la pièce le 22 juillet 2026**)* : le registre d'agents **tend à devenir — mouvement SPÉCULATIF, qu'aucune entrée du socle ne date** — la pièce de conformité maîtresse de l'entreprise agentique (intuition du ch. 8 du Vol. II), mais trois modèles concurrents — registre d'entreprise, registre de fédération, annuaire protocolaire — répondent à des questions différentes de la grille.
 
 Une organisation qui met des agents en production doit d'abord répondre à une question de tenue de livres : lesquels possède-t-elle. Le Vol. II a formulé le manque en termes de dossier de conformité — « Un architecte qui chercherait aujourd'hui, pour son dossier de conformité, la norme d'identité et de registre des agents ne la trouverait pas : elle n'existe pas » (Vol. II, ch. 8 §8.4, repris au PRD §2). L'énoncé est une **thèse d'un volume antérieur, à attribuer** ; il n'entre pas ici comme fait de socle. Ce chapitre le confronte à ce que le lot d'instruction a ouvert le 21 juillet 2026, et le résultat n'est pas un vide : c'est un encombrement. **Quatre dispositifs** prescrivent quelque chose du registre — le brouillon de laboratoire de la Cloud Security Alliance, la famille d'extensions SCIM pour agents déposée à l'IETF, la découverte du protocole A2A, le service d'annuaire d'AGNTCY —, et le lot d'instruction rappelle qu'ils ne se qualifient pas les uns comme les autres : brouillon de laboratoire, soumissions individuelles actives, brouillons expirés et archivés — chacun appelant sa propre formulation. Les quatre reviennent au §7.4, où chacun est confronté à son degré d'absence — et où trois se rangent ensemble quand le quatrième, A2A, relève d'un degré distinct.
 
@@ -703,13 +705,9 @@ Un second point de non-couverture est consigné pour que nul ne le prenne pour u
 
 Ce que cet inventaire laisse voir n'est pas l'absence d'un registre : c'est l'absence de l'objet qui relierait une inscription à une décision d'admission. **Le passeport d'agent ne figure dans aucune spécification à date : c'est un objet de synthèse construit par cet ouvrage** en assemblant la carte signée du ch. 5, l'inscription au registre instruite ici, la chaîne de mandat du ch. 9 et les attestations de conformité dont le §7.3 vient de montrer qu'elles n'ont, dans ce corpus, qu'un nom de champ facultatif. Il est construit au ch. 8, et jusque-là il n'existe pas.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 8 — Le passeport d'agent : synthèse d'un objet encore virtuel
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** *(reformulée le 21 juillet 2026 — remontée **R-G-37**, arbitrage rendu en P3, porté au TOC v0.7 et **reporté dans la pièce le 22 juillet 2026**)* : le « passeport d'agent » n'existe dans aucune spécification de 2026 — c'est un objet de synthèse que l'ouvrage construit en assemblant carte signée, inscription au registre, chaîne de mandat et attestations de conformité, et dont il projette la normalisation **à une échéance que le socle ne date pas** — l'agenda dont elle relèverait est porté par **H-18, entrée [C]** (Vol. I, `Monographie.md` §7.4.2), et le relevé propre du volume — F-80, F-82, F-85 — **n'en confirme aucune échéance** ; statut PROJETÉ. ⚠ Le terme « passeport d'agent » figure au **titre** de cette section du Vol. I sans y être ni défini ni réemployé : le Vol. I fournit l'agenda, pas l'objet (H-18). Pour l'entreprise agentique, le passeport est la pièce d'admission : rien n'entre au maillage sans lui.
+> **Thèse** *(reformulée le 21 juillet 2026 — remontée **R-G-37**, arbitrage rendu en P3, porté au TOC v0.7 et **reporté dans la pièce le 22 juillet 2026**)* : le « passeport d'agent » n'existe dans aucune spécification de 2026 — c'est un objet de synthèse que l'ouvrage construit en assemblant carte signée, inscription au registre, chaîne de mandat et attestations de conformité, et dont il projette la normalisation **à une échéance que le socle ne date pas** — l'agenda dont elle relèverait est porté par **H-18, entrée [C]** (Vol. I, `Monographie.md` §7.4.2), et le relevé propre du volume — F-80, F-82, F-85 — **n'en confirme aucune échéance** ; statut PROJETÉ. ⚠ Le terme « passeport d'agent » figure au **titre** de cette section du Vol. I sans y être ni défini ni réemployé : le Vol. I fournit l'agenda, pas l'objet (H-18). Pour l'entreprise agentique, le passeport est la pièce d'admission : rien n'entre au maillage sans lui.
 
 Trois chapitres ont instruit trois matières séparément, et chacune s'est arrêtée au même seuil. La carte d'agent signée (*signed agent card*) démontre l'intégrité d'un contenu canonicalisé au regard d'une clé, et renvoie l'ancrage de confiance (*trust anchor*) hors du protocole (ch. 5 §5.2). Le registre prescrit des champs obligatoires et un cycle de vie, dans un corpus dont le ch. 7 §7.4 recense quatre dispositifs, trois portant eux-mêmes leur réserve de statut — fait négatif **ÉTABLI**, jamais vérifié. La chaîne de mandat spécifie un format versionné et laisse le modèle de confiance au déploiement (ch. 9 §9.1). Chacune établit ce qu'elle établit sans dire à quoi elle se rattache. Le présent chapitre demande ce que produirait leur composition — et il ne le demande pas à une source : il n'y en a pas.
 
@@ -808,13 +806,12 @@ Le siège de cette règle est le ch. 4 §4.3 et le PRD, Annexe C §C.2 (règle d
 
 **Ce que le chapitre transmet à l'aval.** Le volet *révocable* de Q-A — et l'apport que l'inscription au registre y ferait, qui n'est documenté qu'en [C] — revient au **ch. 14**, siège de l'inventaire de la révocation par mécanisme ; l'interrogeabilité de la chaîne au-delà de deux sauts, au **ch. 10**, qui la borne plutôt qu'il ne la comble ; l'opposabilité des bornes de privilège au point d'application, au **ch. 23** — le maillage d'agents (*agent mesh*) est un terme de fournisseur dont la définition d'auteur a son siège unique au ch. 22 §22.1 (R-03 du présent volume), et le présent chapitre ne l'emploie pas comme catégorie établie ; la crypto-agilité du mécanisme de signature, au **ch. 17 §17.2**. Enfin, le principe que la thèse citée en tête énonce — rien n'entre au maillage sans passeport — est un **principe du blueprint** (PRD, Annexe B §B.1, principe 1) : **Lecture de l'auteur**, décision d'architecture de cet ouvrage et non constat de source. Ce que le socle établit, ce sont les quatre matières et leurs bornes ; ce qu'il n'établit pas, c'est qu'une organisation doive conditionner l'admission à un artefact que personne ne délivre.
 
-```{=typst}
-#pagebreak(weak: true)
-```
+# Partie III — La délégation : le mandat dans l'entreprise
+
 
 # Chapitre 9 — La chaîne de mandat : de l'humain à l'agent, de l'agent à l'agent
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** *(reformulée le 21 juillet 2026 — remontée **R-G-37**, arbitrage rendu en P3, porté au TOC v0.7 et **reporté dans la pièce le 22 juillet 2026** : le classement non balayé disparaît, et le verbe proscrit par **R-02** avec lui)* : la délégation est le maillon faible — les mécanismes instruits par ce volume documentent qu'un agent *a* une identité, **aucun des mécanismes instruits ne documente** *au nom de qui* il agit à l'instant t ; or c'est précisément ce que l'entreprise doit pouvoir démontrer à son auditeur.
+> **Thèse** *(reformulée le 21 juillet 2026 — remontée **R-G-37**, arbitrage rendu en P3, porté au TOC v0.7 et **reporté dans la pièce le 22 juillet 2026** : le classement non balayé disparaît, et le verbe proscrit par **R-02** avec lui)* : la délégation est le maillon faible — les mécanismes instruits par ce volume documentent qu'un agent *a* une identité, **aucun des mécanismes instruits ne documente** *au nom de qui* il agit à l'instant t ; or c'est précisément ce que l'entreprise doit pouvoir démontrer à son auditeur.
 
 La Partie II portait sur l'émission : ce qu'une organisation délivre à un agent pour qu'il soit reconnaissable. Celle-ci porte sur ce qui ne s'en déduit pas. Un identifiant vérifiable répond de ce qu'un agent **est** ; il ne dit ni pour qui cet agent agit, ni depuis quand, ni jusqu'où. L'entreprise réglementée, elle, doit pouvoir produire cette seconde réponse devant un auditeur, et la produire pour un instant donné — non pour le moment de l'admission.
 
@@ -898,13 +895,9 @@ Reste le fait qui donne à cette section son urgence, et il vient de la spécifi
 
 Ce que le chapitre ne peut pas écrire est aussi clair. Le **socle ne documente pas** de typologie des patrons d'interaction humain-agent : c'est une **absence de documentation dans le corpus de cet ouvrage**, non un fait négatif vérifié (PRD §8.6, degré 3 ; R-14). La section réaffectée au socle le 21 juillet 2026 (PRD §7.7) s'en tient donc à ce que H-15/PC3 et F-89 permettent, et déclare le reste plutôt que de l'emprunter.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 10 — Le problème des deux sauts : traçabilité de la délégation multi-saut
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** *(instruit le front ouvert du Vol. I, `Synthese Monographie.md` §11.5)* : au-delà de deux sauts de délégation, **aucun des mécanismes instruits par ce volume ne documente** une traçabilité opposable de bout en bout — c'est la frontière de la connaissance vérifiable de l'ouvrage, exposée plutôt que comblée *(thèse bornée le 21 juillet 2026 — remontée **R-G-37**, même forme et même motif que **R-G-15** : un quantificateur universel négatif sur un corpus non balayé ; arbitrage porté au TOC v0.7 et **reporté dans la pièce le 22 juillet 2026**)*.
+> **Thèse** *(instruit le front ouvert du Vol. I, `Synthese Monographie.md` §11.5)* : au-delà de deux sauts de délégation, **aucun des mécanismes instruits par ce volume ne documente** une traçabilité opposable de bout en bout — c'est la frontière de la connaissance vérifiable de l'ouvrage, exposée plutôt que comblée *(thèse bornée le 21 juillet 2026 — remontée **R-G-37**, même forme et même motif que **R-G-15** : un quantificateur universel négatif sur un corpus non balayé ; arbitrage porté au TOC v0.7 et **reporté dans la pièce le 22 juillet 2026**)*.
 
 Le chapitre précédent a montré ce que trois mécanismes portent du mandat, et ce que chacun laisse au déploiement. Celui-ci pose la question que cette exposition rend inévitable : ce que ces mécanismes documentent tient-il quand le mandat passe de main en main ? La réponse de l'ouvrage n'est pas un dispositif ; c'est une frontière, et le chapitre s'emploie à la décrire exactement plutôt qu'à la franchir.
 
@@ -974,13 +967,9 @@ La question se décompose en cinq, chacune assortie du corpus à ouvrir et du cr
 
 Reste ce que le chapitre peut affirmer, et qui n'est pas rien. La frontière est **localisée** : elle passe là où le vérificateur cesse d'être celui qui a ancré le mandat, ou cesse d'appartenir au domaine où le contexte se propage. Elle est **datée** au 21 juillet 2026. Et elle est **instruisible** : les cinq questions ci-dessus nomment leur corpus et leur critère de clôture, ce qui les distingue d'un constat d'ignorance. C'est ce que le socle permettait de produire sur un objet que les Vol. I et II désignent l'un et l'autre comme leur verrou résiduel — et le produire sans le combler est ce que la méthode du volume impose ici.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 11 — Know Your Agent : la vérification d'agent tiers inter-domaines
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : le KYA transpose au domaine agentique la logique du KYC — vérifier avant d'admettre —, mais sans l'infrastructure institutionnelle (registres publics, obligations légales) qui rend le KYC possible ; la *trust fabric* inter-entreprises reste une construction privée et fragmentée — et c'est pourtant elle qui décide si l'entreprise agentique s'arrête à ses murs.
+> **Thèse** : le KYA transpose au domaine agentique la logique du KYC — vérifier avant d'admettre —, mais sans l'infrastructure institutionnelle (registres publics, obligations légales) qui rend le KYC possible ; la *trust fabric* inter-entreprises reste une construction privée et fragmentée — et c'est pourtant elle qui décide si l'entreprise agentique s'arrête à ses murs.
 
 Une organisation qui admet chez elle l'agent d'une autre organisation prend une décision dont elle ne maîtrise ni l'émission, ni le mandant, ni le cycle de vie. Elle ne peut pas auditer la fabrique d'identité d'un tiers ; elle ne peut pas révoquer ce qu'elle n'a pas émis ; et elle ne dispose, pour trancher, que de ce que le tiers veut bien lui présenter. C'est le point où la question de l'identité cesse d'être interne et devient une question de frontière. C'est aussi le point où le vocabulaire du domaine devance ses institutions, et le chapitre commence par poser cet écart plutôt que de l'employer.
 
@@ -1056,13 +1045,12 @@ Ce que ces trois pièces ont en commun se laisse nommer : une autorité désign�
 
 Une conséquence pratique se dégage, et elle est le motif pour lequel ce chapitre existe. Une institution qui veut admettre l'agent d'un partenaire aujourd'hui ne peut pas déléguer sa décision à un cadre externe : **aucune des propositions que l'instruction a consultées n'est ratifiée ni adoptée** (F-50, degré 2, borné à ses trois composantes). Elle doit donc écrire son propre régime d'admission — quelles autorités d'émission elle reconnaît, à quelle fréquence elle les réévalue, et ce qu'elle fait lorsqu'une signature ne peut pas être rattachée à un ancrage qu'elle contrôle (F-09). Ce régime est une construction privée ; il n'est opposable qu'à ceux qui y consentent par contrat ; et il ne compose pas avec celui du partenaire suivant. C'est en ce sens, et en ce sens seulement, que « l'entreprise agentique » — terme de fournisseur avant d'être terme de norme, dont la définition d'auteur a son siège à l'avant-propos (R-03 du présent volume) — s'arrête à ses murs : non parce qu'une frontière technique l'y contraint, mais parce qu'aucune des instances relevées au §11.1 n'a pris en charge, à la date de gel de ce chapitre, ce qu'elle aimerait cesser de vérifier elle-même. ⚠ Cette borne n'est pas une précaution de style : le socle **ne documente pas** l'existence ou l'absence d'un tel dispositif hors des pages ouvertes par l'instruction — c'est une **absence de documentation dans le corpus de cet ouvrage, non un fait négatif vérifié** (§8.6 ; R-14 du présent volume).
 
-```{=typst}
-#pagebreak(weak: true)
-```
+# Partie IV — La confiance hostile : l'identité comme fondation de la défense
+
 
 # Chapitre 12 — Taxonomie des attaques sur l'identité et la délégation agentiques
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** *(instruit Q2 du Vol. II, ch. 21 §21.2 — **lot L-08 clos le 21 juillet 2026**)* : l'identité est le **verrou architectural** de la sécurité agentique — un agent dépourvu d'identité propre et gouvernée opère dans un écart d'attribution qui rend le moindre privilège inapplicable (F-19) —, et les référentiels du domaine la traitent désormais comme un plan de contrôle à part entière (F-20). ⚠ **Ce n'est pas une thèse de dénombrement**, et le chapitre le dit : le relevé des référentiels **ne soutient pas** que la majorité des attaques documentées seraient des attaques d'identité ou de délégation (F-18). Ce qu'il soutient, c'est que **l'écart d'autorité entre mandant et mandataire est nommé comme technique d'attaque** (F-14, F-24) et que **la défaillance documentée à l'échelle que le socle porte est** une défaillance d'identité **non humaine** (F-21) — ⚠ **singulier rétabli le 21 juillet 2026, remontée R-G-37**, arbitrage porté au TOC v0.7 et **reporté dans la pièce le 22 juillet 2026** : F-21 verse **un** incident, et sa réserve le donne pour « le plus proche » d'une défaillance à l'échelle ; le pluriel n'était pas soutenu.
+> **Thèse** *(instruit Q2 du Vol. II, ch. 21 §21.2 — **lot L-08 clos le 21 juillet 2026**)* : l'identité est le **verrou architectural** de la sécurité agentique — un agent dépourvu d'identité propre et gouvernée opère dans un écart d'attribution qui rend le moindre privilège inapplicable (F-19) —, et les référentiels du domaine la traitent désormais comme un plan de contrôle à part entière (F-20). ⚠ **Ce n'est pas une thèse de dénombrement**, et le chapitre le dit : le relevé des référentiels **ne soutient pas** que la majorité des attaques documentées seraient des attaques d'identité ou de délégation (F-18). Ce qu'il soutient, c'est que **l'écart d'autorité entre mandant et mandataire est nommé comme technique d'attaque** (F-14, F-24) et que **la défaillance documentée à l'échelle que le socle porte est** une défaillance d'identité **non humaine** (F-21) — ⚠ **singulier rétabli le 21 juillet 2026, remontée R-G-37**, arbitrage porté au TOC v0.7 et **reporté dans la pièce le 22 juillet 2026** : F-21 verse **un** incident, et sa réserve le donne pour « le plus proche » d'une défaillance à l'échelle ; le pluriel n'était pas soutenu.
 
 Une taxonomie d'attaques vaut par le principe qui la trie. Celle-ci trie par **le maillon de la chaîne d'identité ou de mandat qui cède**, et non par la technique employée ou par la cible atteinte. Le traitement est défensif et se tient au niveau architectural : chaque entrée nomme le maillon et la raison pour laquelle il cède, cite l'identifiant de vulnérabilité ou l'incident, et s'arrête là (R-12 du présent volume).
 
@@ -1147,13 +1135,9 @@ Le contre-exemple est dans le texte même. La spécification reconnaît, en sect
 
 Ce qu'une institution peut inscrire dans un dossier de diligence raisonnable tient en trois lignes, et la distinction entre elles est le contenu, non la nuance. Une menace **nommée** par une spécification y est traitée ou ne l'est pas, et le texte le dit. Une menace **non nommée** dans un texte balayé est un fait négatif borné à ce texte. Une menace dont aucun identifiant ne ressort d'un registre n'est **pas** un fait négatif : c'est un silence du corpus consulté, et l'inscrire comme une preuve de sûreté reviendrait à inscrire une inférence à la place d'un fait.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 13 — L'usurpation et le *rug-pull* : quand l'identité vérifiée trahit
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : la vérification à l'admission ne protège pas contre la dérive après admission — le *rug-pull* d'un serveur MCP ou d'un agent tiers est une attaque de confiance temporelle que l'identité statique ne voit pas.
+> **Thèse** : la vérification à l'admission ne protège pas contre la dérive après admission — le *rug-pull* d'un serveur MCP ou d'un agent tiers est une attaque de confiance temporelle que l'identité statique ne voit pas.
 
 Le chapitre précédent a trié les attaques par le maillon de la chaîne d'identité qui cède. Celui-ci en isole une classe dont la particularité n'est pas le maillon mais le **moment** : l'attaque ne défait pas la vérification, elle attend qu'elle soit faite. Le mécanisme d'admission a fonctionné, le verdict a été rendu, et c'est ensuite que l'objet vérifié change. Le retournement d'un serveur d'outils (*rug-pull*) en est la forme nommée par le corpus ; la question qu'il pose est celle de la durée de validité d'un verdict que rien, dans les mécanismes examinés en Partie II, ne date ni ne réexamine.
 
@@ -1223,13 +1207,9 @@ Reste la question que le verrou du Vol. I formule et que le présent volume doit
 
 **Ce que le chapitre transmet à l'aval.** Trois conséquences sortent de ce chapitre et sont reprises ailleurs. La première va au ch. 14 : un verdict d'admission sans terme exprimé ne se retire pas davantage qu'il ne se date, et l'inventaire de la révocation y montre la même asymétrie sur d'autres mécanismes. La deuxième va au ch. 25 §25.2, où le *rug-pull* se relit comme **dérive d'outil**, c'est-à-dire comme un signal d'exploitation à détecter plutôt que comme une attaque à prévenir. La troisième va au ch. 8, et elle est une contrainte plutôt qu'un apport : **le passeport d'agent ne figure dans aucune spécification à date — c'est un objet de synthèse construit par cet ouvrage** en assemblant une carte signée, une inscription au registre, une chaîne de mandat et des attestations de conformité (R-01 du présent volume). **Lecture de l'auteur** — la lecture proposée est qu'un tel assemblage hérite des propriétés temporelles de ses pièces : aucune des trois pièces issues de chapitres ne porte de paramètre qui daterait sa propre vérification, de sorte que le passeport ne documenterait pas davantage qu'un comportement passé. Ce que le socle établit : l'absence de paramètre temporel dans l'en-tête protégé et dans la carte (F-03, F-05), l'absence de délai de propagation aux sections consultées du brouillon de registre (F-55, [C]), et l'absence de champ d'intégrité dans le type décrivant un outil (F-52). Ce qu'il n'établit pas : que ces absences se composent, ni qu'un assemblage ne puisse pas ajouter ce que ses pièces ne portent pas. Le report est une lecture, et il est réfutable par la production d'un mécanisme qui daterait sa propre vérification.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 14 — La révocation : ce que les spécifications instruites en disent, et ce qu'elles n'en disent pas
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : chaque mécanisme d'identité examiné en Partie II spécifie l'émission avec soin et la révocation avec négligence — asymétrie qui reproduit l'histoire des PKI, et dont le coût se paiera à l'incident.
+> **Thèse** : chaque mécanisme d'identité examiné en Partie II spécifie l'émission avec soin et la révocation avec négligence — asymétrie qui reproduit l'histoire des PKI, et dont le coût se paiera à l'incident.
 
 Émettre une identité et la retirer sont deux gestes d'inégale dignité éditoriale. Le premier occupe des sections entières de spécification : formats, canonicalisation, algorithmes, ordre des opérations de vérification. Le second, quand il figure, tient en une phrase de recommandation ou en une valeur d'énumération. Ce chapitre relève cet écart mécanisme par mécanisme, à même les textes que le socle a ouverts, puis le confronte au précédent que la cryptographie à clé publique a déjà instruit — et dont l'enseignement n'est pas celui qu'on attend.
 
@@ -1305,13 +1285,9 @@ La frontière des deux sauts est exposée au ch. 10, qui en fait son objet ; la 
 
 > **Lecture de l'auteur** — la lecture proposée est qu'un mécanisme dont on ne peut pas établir le retrait relève de l'inscription plutôt que de l'identité gouvernée. Ce que le socle établit : l'interdiction d'employer une clé révoquée sans moyen d'en établir le statut (F-07, F-06, [A]), la rotation outillée sans procédure de retrait (F-10, [B]), et des états de registre prescrits sans délai de propagation (F-55, [C], en corroboration). Ce qu'il n'établit pas : aucune entrée ne définit l'« identité gouvernée », et la distinction proposée ici entre gouvernance et inscription est une construction de cet ouvrage, non un critère repris d'une source.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 15 — L'*agentic SOC* et la boucle défensive
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : la défense s'agentifie elle-même (Vol. I, `Monographie.md` §7.5.2) — et l'identité est ce qui distingue un SOC agentique gouvernable d'un système auto-organisé ingouvernable : les agents défensifs de l'entreprise sont les premiers à devoir porter le passeport du ch. 8.
+> **Thèse** : la défense s'agentifie elle-même (Vol. I, `Monographie.md` §7.5.2) — et l'identité est ce qui distingue un SOC agentique gouvernable d'un système auto-organisé ingouvernable : les agents défensifs de l'entreprise sont les premiers à devoir porter le passeport du ch. 8.
 
 Un centre des opérations de sécurité (*security operations center*) qui outille son tri d'alertes avec des mandataires logiciels ne change pas seulement d'outillage : il ajoute à son parc des entités qui lisent des alertes, interrogent des systèmes et, selon le périmètre consenti, agissent — c'est-à-dire des agents, au sens exact que les chapitres précédents ont donné au terme. La question du volume s'y retourne d'un coup : l'organisation qui déploie des agents pour surveiller ses agents doit d'abord répondre, pour les premiers, à ce qu'elle exige des seconds.
 
@@ -1393,13 +1369,12 @@ Un dernier élément documente l'intention de l'organisme sans documenter son r�
 
 **Trois foyers, trois régimes, une conclusion commune.** Un corpus versionné dont le chemin de distribution historique est déprécié ; un document publié dont le millésime et la date de publication ne coïncident pas ; une initiative annoncée dont la pièce d'identité est à l'état de projet et n'a pas été ouverte. Aucun des trois n'est une norme ratifiée, et l'un d'eux — le corpus ATLAS — a changé à la fois de chemin de distribution et de convention de libellé de version : la publication v5.6.0 du 4 mai 2026 portait encore une numérotation sémantique, les suivantes un millésime (v2026.05, puis v2026.06), et le fichier de distribution historique porte au 21 juillet 2026 un avis de dépréciation. Le rapport du lot ne situe aucun de ces deux changements par rapport au gel de juin 2026 du Vol. I, et le chapitre n'en tire donc aucune chronologie. La conséquence pour l'exploitation est celle que la Partie VIII développera pour l'observabilité : **un référentiel se consomme avec sa version et sa date, ou il se consomme faux**. Ce qui appartient à ce chapitre est le constat que la défense agentique s'outille contre des référentiels qui, au 21 juillet 2026, n'engagent aucun organisme de normalisation.
 
-```{=typst}
-#pagebreak(weak: true)
-```
+# Partie V — L'horloge post-quantique
+
 
 # Chapitre 16 — La menace quantique appliquée à la pile identitaire agentique
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : toute la Partie II repose sur des signatures classiques ; les jalons de migration (NIST IR 8547 : dépréciation ~2030, retrait ~2035) tombent à l'intérieur de la durée de vie des architectures que les lecteurs conçoivent aujourd'hui — la PQC n'est pas un chapitre d'annexe, c'est une contrainte de conception de l'entreprise agentique.
+> **Thèse** : toute la Partie II repose sur des signatures classiques ; les jalons de migration (NIST IR 8547 : dépréciation ~2030, retrait ~2035) tombent à l'intérieur de la durée de vie des architectures que les lecteurs conçoivent aujourd'hui — la PQC n'est pas un chapitre d'annexe, c'est une contrainte de conception de l'entreprise agentique.
 
 L'entreprise qui met aujourd'hui des agents en production arrête des mécanismes d'identité pour une architecture dont elle attend plusieurs années de service. Les mécanismes que la Partie II examine et que le socle documente au grain de la cryptographie reposent sur des signatures numériques classiques : la carte d'agent A2A est signée au format JWS (*JSON Web Signature*, RFC 7515), son contenu étant canonicalisé selon le RFC 8785 avant signature (F-01, [A]) ; les mandats d'AP2 — **version v0.2.0, publiée le 28 avril 2026** — sont sérialisés en SD-JWT (RFC 9901), avec attributs temporels `iat` et `exp` (F-46, [B]) ; et le précédent auquel le ch. 14 rapporte la révocation est celui des certificats X.509 du RFC 5280 (F-53, [B]).
 
@@ -1483,13 +1458,9 @@ Trois enseignements se tirent de ce tableau, et aucun n'exige de date.
 
 Reste le « quand », que le titre de la section annonce et que le socle ne fournit pas au grain de l'artefact. **Le socle ne documente pas l'incidence des jalons post-quantiques sur les artefacts d'identité agentique** : c'est une **absence de documentation dans le corpus de cet ouvrage**, non un fait négatif vérifié (PRD §8.6, degré 3). Le lot d'instruction le déclare en clôture, et le chapitre ne comble pas ce trou par une chronologie inventée. Ce qui peut s'écrire sans le combler tient en une phrase, et c'est la matière du ch. 18 : un artefact que rien ne borne dans le temps traverse par construction les deux jalons de la §16.1 — celui de 2030-2031, **PROGRAMMÉ**, et celui de 2035, **PROJETÉ** —, de sorte que la variable qu'une institution contrôle n'est pas la date mais la durée de vie qu'elle consent à ses propres artefacts.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 17 — La crypto-agilité comme propriété d'architecture
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : la crypto-agilité est l'application de l'invariant du Vol. I (découplage, contrat, évolution) à la couche cryptographique — le mécanisme de signature doit être un contrat versionné, pas une hypothèse câblée.
+> **Thèse** : la crypto-agilité est l'application de l'invariant du Vol. I (découplage, contrat, évolution) à la couche cryptographique — le mécanisme de signature doit être un contrat versionné, pas une hypothèse câblée.
 
 Les deux chapitres qui encadrent celui-ci posent l'un l'horloge, l'autre la facture. Le ch. 16 §16.1 établit quelles échéances existent, dans quels documents et à quel statut ; le ch. 18 §18.2 en tire une méthode d'inventaire dont le cinquième relevé renvoie ici. Entre les deux se loge une question de propriété plutôt que de calendrier : qu'est-ce qui, dans un mécanisme d'identité, rend un changement d'algorithme possible sans rupture du contrat qui le porte ?
 
@@ -1570,13 +1541,9 @@ Reste à nommer la rupture que le titre de la section vise. Une chaîne de confi
 
 C'est la matière que ce chapitre transmet à l'aval : au **ch. 18 §18.2**, pour le cinquième relevé de sa méthode d'inventaire ; et à l'**annexe B de l'ouvrage** — matrice des mécanismes —, dont la colonne « état PQC » croise les mécanismes des Parties II et III et les composants de maillage de la Partie VII avec la grille du ch. 4. ⚠ **À ne pas confondre avec l'Annexe B du PRD**, qui est la spécification du blueprint : c'est elle qui pose, en son §B.1, le principe 7 — « le mécanisme de signature est un contrat versionné, pas une hypothèse câblée ». Ce principe est une **décision d'architecture de cet ouvrage**, non un constat de source, et le présent chapitre en fournit l'instruction plutôt que la preuve.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 18 — La dette de migration : chiffrer ce qui peut l'être, dater le reste
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : la dette de migration PQC de la couche agentique est réelle mais largement non chiffrée à date — le chapitre établit ce que les sources portent, refuse d'extrapoler, et fournit au lecteur la méthode d'estimation plutôt qu'un chiffre.
+> **Thèse** : la dette de migration PQC de la couche agentique est réelle mais largement non chiffrée à date — le chapitre établit ce que les sources portent, refuse d'extrapoler, et fournit au lecteur la méthode d'estimation plutôt qu'un chiffre.
 
 Les deux chapitres précédents ont posé l'horloge et l'architecture : quelles échéances existent, dans quels documents, à quel statut (ch. 16 §16.1, siège de R-11 du présent volume) ; quels mécanismes de la Partie II supportent un changement d'algorithme sans rupture du contrat qui les porte (ch. 17). Reste la question que toute direction pose ensuite, et qui est la seule à laquelle ce chapitre puisse répondre honnêtement par une méthode plutôt que par un nombre : *combien coûte le passage, et quand faut-il l'engager ?*
 
@@ -1673,13 +1640,12 @@ C'est aussi le point où le quatrième terme de l'invariant hérité du Vol. I t
 
 **Ce que ce chapitre refuse d'écrire, et pourquoi il le déclare.** Il ne convertit pas en coût unitaire, en ratio ou en fourchette d'entreprise les 7,1 milliards de dollars de 2024 que l'**Office of the National Cyber Director** projette au rapport de l'**Office of Management and Budget** au Congrès de juillet 2024, prescrit par le *Quantum Computing Cybersecurity Preparedness Act* (Public Law 117-260) : le périmètre du chiffre exclut l'objet. Il n'attribue aucune échéance sectorielle au Quantum Safe Financial Forum, dont le balayage n'en relève aucune. Il ne présente aucun des quatre jalons comme liant d'office une institution canadienne : les périmètres que le socle porte sont fédéraux et américains, et le rattachement éventuel d'un exploitant à l'un d'eux se constate, il ne se présume pas. Et il ne comble pas la lacune canadienne par transposition d'un calendrier étranger — un calendrier qu'on transpose devient, en trois citations, une échéance.
 
-```{=typst}
-#pagebreak(weak: true)
-```
+# Partie VI — Le droit de l'entreprise agentique
+
 
 # Chapitre 19 — L'agent devant E-23 et l'AMF : l'identité comme condition d'inventaire
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : les cadres en vigueur au 1ᵉʳ mai 2027 (E-23 ; ligne directrice IA de l'AMF, finale depuis mars 2026) exigent un inventaire des modèles et une imputabilité — deux obligations qui présupposent, sans le nommer, un registre d'agents identifiés : l'identité agentique est le prérequis technique d'obligations qui ne la mentionnent pas.
+> **Thèse** : les cadres en vigueur au 1ᵉʳ mai 2027 (E-23 ; ligne directrice IA de l'AMF, finale depuis mars 2026) exigent un inventaire des modèles et une imputabilité — deux obligations qui présupposent, sans le nommer, un registre d'agents identifiés : l'identité agentique est le prérequis technique d'obligations qui ne la mentionnent pas.
 
 Deux textes prennent effet le même jour, et ce n'est pas leur seul point commun. La ligne directrice E-23 du Bureau du surintendant des institutions financières, publiée le 11 septembre 2025, entre en vigueur le **1ᵉʳ mai 2027** (H-04, **[A/B mixte]**) ; la ligne directrice de l'Autorité des marchés financiers sur l'utilisation de l'intelligence artificielle prend effet à la même date (F-68, **[B]**). Échéance réglementaire datée, donc **PROGRAMMÉE** au tri prospectif (CA-11 ; H-33, **[C]**, Vol. I, `Monographie.md` §7.0.2). L'une et l'autre attendent de l'institution qu'elle sache ce qu'elle exploite, et l'une et l'autre portent sur ce qui varie après le déploiement — mais à deux titres distincts : E-23 par une surveillance continue visant expressément « autonomous decision making, autonomous re-parametrization » (H-04, **[A/B mixte]** ; F-65, **[B]**), la ligne directrice de l'AMF par la définition du système d'intelligence artificielle qu'elle reprend de l'OCDE (2024), laquelle inclut « degrés variables d'autonomie et d'adaptabilité après déploiement » (F-68, **[B]**). **E-23 ne nomme ni l'agentique, ni les agents, ni l'orchestration** — vérification mécanique sur le texte intégral, en anglais et en français (H-04). Du côté de l'AMF, **le socle ne documente pas que la ligne directrice sur l'utilisation de l'intelligence artificielle nomme les agents ou l'agentique : c'est une absence de documentation dans le corpus de cet ouvrage, non un fait négatif vérifié** (PRD §8.6, degré 3 ; R-14 du présent volume).
 
@@ -1751,13 +1717,9 @@ Ce que ces décomptes autorisent s'arrête là où ils s'arrêtent. E-23 ne nomm
 
 > **Lecture de l'auteur** — ce que le socle établit : deux cadres datés, une modalité au conditionnel du côté d'E-23 et sur le mode de l'attente du côté de l'AMF, un inventaire d'entreprise sous condition de matérialité, deux définitions qui visent ce qui varie après le déploiement (F-64, F-65, F-66, F-68, H-04). Ce qu'il n'établit pas : que l'un ou l'autre de ces textes appelle une identité d'agent, ni qu'un registre en soit le moyen. La lecture proposée est celle du titre du chapitre, et elle se tient sur une seule question : **un inventaire d'entreprise attendu à l'échéance du 1ᵉʳ mai 2027 — échéance datée, donc PROGRAMMÉE (CA-11) — suppose que chaque entrée désigne un objet identifiable et durable, et le socle ne documente, dans ni l'un ni l'autre texte, ce qui produirait cette identification.** C'est un prérequis technique lu dans une attente qui ne le nomme pas — une inférence, opposable comme telle et pas autrement. ⚠ Le TOC déclare par ailleurs une filiation directe avec le ch. 13 du Vol. II ; **aucune entrée du socle n'en porte le contenu**, et le présent chapitre ne s'en réclame donc pas.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 20 — Loi 25 et l'agent : qui traite, qui décide, qui répond
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** *(prolonge Q4 du Vol. II, ch. 21 §21.2 — l'applicabilité de l'art. 12.1 à la décision multi-agents avec humain-dans-la-boucle — sans la trancher)* : le droit des renseignements personnels **raisonne par exploitant d'entreprise** (F-89) — la chaîne de délégation agentique met cette catégorie sous tension, et l'état de la doctrine ne permet qu'une cartographie des lectures possibles *(thèse reformulée le 21 juillet 2026 — remontée **R-G-37** : aucune entrée ne porte la dichotomie « responsable / mandataire » pour la loi P-39.1, qui désigne « toute personne qui exploite une entreprise » ; report opéré dans la pièce le 22 juillet 2026)*.
+> **Thèse** *(prolonge Q4 du Vol. II, ch. 21 §21.2 — l'applicabilité de l'art. 12.1 à la décision multi-agents avec humain-dans-la-boucle — sans la trancher)* : le droit des renseignements personnels **raisonne par exploitant d'entreprise** (F-89) — la chaîne de délégation agentique met cette catégorie sous tension, et l'état de la doctrine ne permet qu'une cartographie des lectures possibles *(thèse reformulée le 21 juillet 2026 — remontée **R-G-37** : aucune entrée ne porte la dichotomie « responsable / mandataire » pour la loi P-39.1, qui désigne « toute personne qui exploite une entreprise » ; report opéré dans la pièce le 22 juillet 2026)*.
 
 Un agent qui refuse un financement, ajuste une prime ou ferme un dossier produit une décision, et cette décision est prise à partir de renseignements personnels. L'article 12.1 de la *Loi sur la protection des renseignements personnels dans le secteur privé* attache à certaines de ces décisions des obligations d'information et une occasion de révision. Le présent chapitre établit ce que le texte porte, recense les lectures qui circulent sur son application à une chaîne d'agents, et s'arrête là. Il ne rend **aucun avis juridique** : chaque lecture y est attribuée nommément à sa source, avec le niveau de preuve que le socle lui reconnaît, et aucune n'est retenue contre les autres.
 
@@ -1870,13 +1832,9 @@ Le chapitre s'achève sur la distinction que le volume impose partout, appliqué
 
 > **Lecture de l'auteur** — le socle établit ce que l'article demande à qui rend une décision fondée exclusivement sur un traitement automatisé : les renseignements utilisés, les raisons et les principaux facteurs et paramètres, le droit de rectification, et l'occasion de présenter des observations à un membre du personnel en mesure de réviser la décision (F-89). Il **n'établit pas** qu'une chaîne d'agents produise ce matériau, ni qu'elle ne le produise pas : **le socle ne documente pas le lien entre une trace d'exécution multi-agents et les quatre éléments que l'article nomme — c'est une absence de documentation dans le corpus de cet ouvrage, non un fait négatif vérifié** (PRD §8.6, degré 3). La lecture proposée est donc une lecture de conséquence, non de droit : quelle que soit l'issue de Q4, le matériau que l'article désigne n'est produit à la demande que s'il a été retenu à l'exécution, et cette rétention est une question d'architecture — instruite au ch. 9 pour la chaîne de mandat, au ch. 24 pour la journalisation probatoire. Le présent chapitre ne conclut rien de plus, et n'a pas de quoi conclure davantage.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 21 — La normalisation institutionnelle et le cadre bancaire canadien
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** *(instruit Q5 du Vol. II, ch. 21 §21.2)* : la désignation de l'organisme de normalisation technique du cadre des services bancaires axés sur le consommateur fixera qui écrit les règles d'identité des agents financiers au Canada — événement à date incertaine mais à conséquences architecturales certaines.
+> **Thèse** *(instruit Q5 du Vol. II, ch. 21 §21.2)* : la désignation de l'organisme de normalisation technique du cadre des services bancaires axés sur le consommateur fixera qui écrit les règles d'identité des agents financiers au Canada — événement à date incertaine mais à conséquences architecturales certaines.
 
 Les deux chapitres qui précèdent lisent des textes publiés. Celui-ci porte sur un texte qui n'est pas écrit, et sur la question préalable de savoir qui l'écrira. Le cadre canadien des services bancaires axés sur les consommateurs prévoit une norme technique **unique**, établie par un organisme de normalisation technique qu'un arrêté ministériel doit désigner (H-08, [A]). Tant que l'arrêté n'est pas pris, l'institution qui conçoit aujourd'hui sa pile d'identité agentique conçoit contre une inconnue dont le socle n'établit qu'une seule propriété : l'**unicité**.
 
@@ -1952,13 +1910,12 @@ Une remarque d'attribution, enfin, pour un chiffre qui circule. Au relevé du 21
 
 Ce que ce chapitre laisse à la suite de l'ouvrage est donc un état, non un pronostic. La norme technique canadienne sera **unique** — **PROGRAMMÉ sans date d'engagement** (H-08, CA-11) ; son auteur n'est désigné par **aucune des quatre chaînes cherchées dans les trois textes balayés** ; les corpus internationaux auxquels il pourrait s'adosser sur l'identité d'agent sont, à la date de ce relevé, antérieurs à l'adoption. Les deux cadres prudentiels que le ch. 19 relit — dont les attentes prennent effet le 1ᵉʳ mai 2027, **PROGRAMMÉ** avec sa source et sa date (H-04, H-05) — prendront effet à cette date, que l'inconnue soit levée ou non d'ici là. C'est cette asymétrie de calendrier, et non le contenu d'une norme que personne n'a écrite, qui commande à l'architecture d'être révisable.
 
-```{=typst}
-#pagebreak(weak: true)
-```
+# Partie VII — Le maillage d'agents : où l'entreprise applique la confiance
+
 
 # Chapitre 22 — Du *service mesh* à l'*agent mesh* : généalogie et anatomie
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : le présent ouvrage **définit** le maillage d'agents par filiation avec le patron *service mesh* — un plan de données qui médiatise chaque arête du graphe d'interaction, un plan de contrôle qui en centralise la politique. **Cette définition est celle de l'ouvrage, et le terme n'en a pas d'autre qui fasse autorité** : le socle établit qu'« agent mesh » désigne **au moins deux objets distincts**, documentés chacun par son éditeur — une couche de connectivité chez l'un, un cadriciel applicatif multi-agent chez l'autre (**F-72**, [B], degré 1). La filiation retenue fournit l'instrument de tri des offres **que ce volume a ouvertes** : cinq réalisations relevées le 21 juillet 2026, réparties entre **annonce seule**, **disponibilité générale documentée par le fournisseur**, **disponibilité restreinte** et **préversion** (**F-70**, [B]). La quatrième catégorie du tri — la **production attestée par un tiers indépendant** — reste **vide faute de passe dédiée** : c'est une absence de documentation dans le corpus de cet ouvrage, non un fait négatif vérifié. **L'énumération n'est pas exhaustive et ne se présente pas comme telle.** ⚠ **Coût déclaré** : la thèse n'affirme rien de l'écart entre le discours des fournisseurs et leurs réalisations ; elle affirme un tri par statut, sur cinq offres nommées.
+> **Thèse** : le présent ouvrage **définit** le maillage d'agents par filiation avec le patron *service mesh* — un plan de données qui médiatise chaque arête du graphe d'interaction, un plan de contrôle qui en centralise la politique. **Cette définition est celle de l'ouvrage, et le terme n'en a pas d'autre qui fasse autorité** : le socle établit qu'« agent mesh » désigne **au moins deux objets distincts**, documentés chacun par son éditeur — une couche de connectivité chez l'un, un cadriciel applicatif multi-agent chez l'autre (**F-72**, [B], degré 1). La filiation retenue fournit l'instrument de tri des offres **que ce volume a ouvertes** : cinq réalisations relevées le 21 juillet 2026, réparties entre **annonce seule**, **disponibilité générale documentée par le fournisseur**, **disponibilité restreinte** et **préversion** (**F-70**, [B]). La quatrième catégorie du tri — la **production attestée par un tiers indépendant** — reste **vide faute de passe dédiée** : c'est une absence de documentation dans le corpus de cet ouvrage, non un fait négatif vérifié. **L'énumération n'est pas exhaustive et ne se présente pas comme telle.** ⚠ **Coût déclaré** : la thèse n'affirme rien de l'écart entre le discours des fournisseurs et leurs réalisations ; elle affirme un tri par statut, sur cinq offres nommées.
 
 Les Parties I à III ont instruit l'**émission** : ce qu'un mécanisme produit pour répondre aux cinq questions du ch. 4, et ce qu'il laisse sans réponse. Une identité émise ne vaut cependant que là où elle est vérifiée, et ce lieu porte un nom de marché avant de porter un nom de norme. La Partie VII instruit ce lieu ; le présent chapitre en fixe le vocabulaire et en date les réalisations, le ch. 23 en instruit la fonction d'application.
 
@@ -2049,13 +2006,9 @@ Un seul membre de la généalogie est documenté, et c'est celui qui touche à l
 
 Le ch. 23 reprend le dossier au point exact où celui-ci s'arrête : non pas *ce que le maillage est*, mais *ce qu'il applique*. Il y instruit l'architecture de confiance zéro (*zero trust*) dont le socle normatif date d'août 2020 et dont la déclinaison agentique se présente, au 5 février 2026, comme un document de concept à l'état de projet public initial (F-73, **[B]**) — statuts dits à la mention (R-09), et transposition à traiter comme une construction d'auteur, le document de 2020 ne traitant pas des agents logiciels autonomes.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 23 — Le maillage comme point d'application : PEP, politiques et *zero trust* agentique
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** *(reformulée le 21 juillet 2026 — confrontation P4.0, écarts **ÉC-05**, **ÉC-06** et **ÉC-07**)* : **Lecture de l'auteur** — la lecture proposée est que le maillage est **un** lieu où le passeport du ch. 8 pourrait devenir opposable, et le seul que cet ouvrage instruise. **Ce que le socle établit** : une autorisation par arête a une syntaxe documentée dans **un** mécanisme ouvert — politique propre à MCP, écrite en *Common Expression Language*, évaluée contre des invocations de méthodes (**F-71**, [B]), mécanisme dont la dernière publication est signalée **pré-version** (F-70) ; et un **écart de couverture entre deux plans d'identité est déclaré par l'éditeur lui-même** (**F-35**, [A], degré 2). **Ce qu'il n'établit pas** : qu'un maillage vérifie un passeport — le passeport ne figure dans aucune spécification à date (**R-01**) —, ni qu'un tel dispositif couvre l'ensemble des arêtes d'un graphe, ni qu'un moteur de politique généraliste y soit raccordé : aucun lien de ce type n'a été ouvert. Le maillage applique au graphe d'agents une architecture *zero trust* dont le socle normatif date d'**août 2020** (SP 800-207) et dont **la déclinaison agentique est, à date, un document de concept à l'état de projet public initial**, publié le **5 février 2026** par le NCCoE (**F-73**, [B]) : la transposition est **PROGRAMMÉE** pour le document, son aboutissement en spécification demeure **SPÉCULATIF**. Vérifier **chaque arête**, à chaque interaction, sans confiance héritée de la topologie, est un **principe d'architecture posé par cet ouvrage**, non une propriété relevée d'un maillage déployé.
+> **Thèse** *(reformulée le 21 juillet 2026 — confrontation P4.0, écarts **ÉC-05**, **ÉC-06** et **ÉC-07**)* : **Lecture de l'auteur** — la lecture proposée est que le maillage est **un** lieu où le passeport du ch. 8 pourrait devenir opposable, et le seul que cet ouvrage instruise. **Ce que le socle établit** : une autorisation par arête a une syntaxe documentée dans **un** mécanisme ouvert — politique propre à MCP, écrite en *Common Expression Language*, évaluée contre des invocations de méthodes (**F-71**, [B]), mécanisme dont la dernière publication est signalée **pré-version** (F-70) ; et un **écart de couverture entre deux plans d'identité est déclaré par l'éditeur lui-même** (**F-35**, [A], degré 2). **Ce qu'il n'établit pas** : qu'un maillage vérifie un passeport — le passeport ne figure dans aucune spécification à date (**R-01**) —, ni qu'un tel dispositif couvre l'ensemble des arêtes d'un graphe, ni qu'un moteur de politique généraliste y soit raccordé : aucun lien de ce type n'a été ouvert. Le maillage applique au graphe d'agents une architecture *zero trust* dont le socle normatif date d'**août 2020** (SP 800-207) et dont **la déclinaison agentique est, à date, un document de concept à l'état de projet public initial**, publié le **5 février 2026** par le NCCoE (**F-73**, [B]) : la transposition est **PROGRAMMÉE** pour le document, son aboutissement en spécification demeure **SPÉCULATIF**. Vérifier **chaque arête**, à chaque interaction, sans confiance héritée de la topologie, est un **principe d'architecture posé par cet ouvrage**, non une propriété relevée d'un maillage déployé.
 
 Le ch. 8 a construit un objet et l'a laissé sans lieu. Il assemble quatre pièces documentées séparément, constate qu'aucune ne fournit à une autre l'ancrage qui lui manque, et renvoie explicitement au présent chapitre l'une des deux propriétés que la grille du ch. 4 exige de Q-D : l'**opposabilité** des bornes de privilège au point d'application (ch. 8 §8.4). **Lecture de l'auteur** — déclarer une borne et l'opposer sont deux actes distincts. **Ce que le socle établit** : le caractère obligatoire de `toolAccessList` et de `permissionBoundaries` au schéma de profil d'agent (**F-40, [B]**) et le périmètre du brouillon qui les porte — brouillon de laboratoire, non une norme ratifiée (**H-03, [A, statut BROUILLON]**). **Ce qu'il n'établit pas** : qu'un point d'application consomme ces champs. La distinction a son siège au **ch. 4 §4.2**, où elle porte ce même marquage ; celui-ci est le chapitre du second acte. Il n'en découle pas qu'il soit le chapitre d'une réponse.
 
@@ -2141,13 +2094,12 @@ Cette section a deux fonctions, et le PRD les distingue : la latence, le coût e
 
 **Ce que ce chapitre transmet à l'aval.** La trace produite au point d'application et sa corrélation au mandat protocolaire reviennent au **ch. 24 §24.4**, qui en porte l'encadré de lacune. Le confinement par le maillage, en réponse à incident, revient au **ch. 25 §25.3**, dont le présent chapitre est une dépendance déclarée (PRDPlan §6). L'étage du maillage et ses contrats mutuels avec la fabrique d'identité et l'exploitation reviennent au **ch. 27 §27.1** (PRD, Annexe B §B.2, étage E2). Et le principe qui ouvre le blueprint — rien n'entre au maillage sans passeport (PRD, Annexe B §B.1, principe 1) — reste ce que le ch. 8 en a dit : **Lecture de l'auteur**, décision d'architecture de cet ouvrage, et non constat de source.
 
-```{=typst}
-#pagebreak(weak: true)
-```
+# Partie VIII — AgentOps : exploiter la confiance dans la durée
+
 
 # Chapitre 24 — L'observabilité agentique : voir ce que fait un agent identifié
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** *(reformulée le 21 juillet 2026 — confrontation P4.0, écarts **ÉC-08**, **ÉC-09** et **ÉC-10**)* : l'AgentOps commence par l'observabilité, et l'observabilité agentique dispose d'un **candidat unique à la standardisation** — les conventions sémantiques GenAI et agents d'OpenTelemetry, telles que portées par leur dépôt dédié au 21 juillet 2026. **Leur état interdit de parler d'un socle acquis** : les deux fichiers agentiques relevés affichent le statut ***Development***, **premier des cinq échelons** de l'échelle des groupes de conventions sémantiques (**F-76**, **F-77**, [B]), et **aucune version ne leur est citable** — liste des publications et liste des étiquettes vides, « Schema URL » à « TODO » (**F-75**, [B], degré 2) ; le déplacement qui a créé ce dépôt est daté du **12 juin 2026** et déclaré comme rupture (**F-74**, [B]). Tracer un *appel* n'est pas tracer une *délégation*, **et l'énoncé se borne à ce qui a été relevé** : sur les **deux fichiers agentiques ouverts par ce volume**, les quatre attributs d'agent, les deux de conversation, les sept d'outil et les quatre d'évaluation (F-77) **n'expriment aucune chaîne de mandat protocolaire** — neuf des onze fichiers du répertoire n'ont pas été ouverts, et **aucun constat ne vaut pour l'ensemble du corpus**. Enfin, la corrélation entre trace d'exécution et chaîne de mandat protocolaire est le chaînon manquant, et **l'ouvrage l'expose plutôt qu'il ne le documente** : la seule pièce de jonction identifiée n'a été ouverte **que sur sa section de métriques** (**F-95**, [B], degré 1), son volet de corrélation demeurant non instruit. Le **§24.4** porte l'encadré de lacune du **cas 2** — aucune passe de recherche n'a été conduite sur ce point.
+> **Thèse** *(reformulée le 21 juillet 2026 — confrontation P4.0, écarts **ÉC-08**, **ÉC-09** et **ÉC-10**)* : l'AgentOps commence par l'observabilité, et l'observabilité agentique dispose d'un **candidat unique à la standardisation** — les conventions sémantiques GenAI et agents d'OpenTelemetry, telles que portées par leur dépôt dédié au 21 juillet 2026. **Leur état interdit de parler d'un socle acquis** : les deux fichiers agentiques relevés affichent le statut ***Development***, **premier des cinq échelons** de l'échelle des groupes de conventions sémantiques (**F-76**, **F-77**, [B]), et **aucune version ne leur est citable** — liste des publications et liste des étiquettes vides, « Schema URL » à « TODO » (**F-75**, [B], degré 2) ; le déplacement qui a créé ce dépôt est daté du **12 juin 2026** et déclaré comme rupture (**F-74**, [B]). Tracer un *appel* n'est pas tracer une *délégation*, **et l'énoncé se borne à ce qui a été relevé** : sur les **deux fichiers agentiques ouverts par ce volume**, les quatre attributs d'agent, les deux de conversation, les sept d'outil et les quatre d'évaluation (F-77) **n'expriment aucune chaîne de mandat protocolaire** — neuf des onze fichiers du répertoire n'ont pas été ouverts, et **aucun constat ne vaut pour l'ensemble du corpus**. Enfin, la corrélation entre trace d'exécution et chaîne de mandat protocolaire est le chaînon manquant, et **l'ouvrage l'expose plutôt qu'il ne le documente** : la seule pièce de jonction identifiée n'a été ouverte **que sur sa section de métriques** (**F-95**, [B], degré 1), son volet de corrélation demeurant non instruit. Le **§24.4** porte l'encadré de lacune du **cas 2** — aucune passe de recherche n'a été conduite sur ce point.
 
 La Partie VIII s'ouvre sur un terme qu'un volume antérieur a ajouté à un invariant, et que celui-ci doit rendre opérant. Le Vol. I écrit, verbatim : « *Découplage, contrat, évolution* deviennent ainsi *découplage, contrat, évolution, exploitation* » (`Synthese Monographie.md` §10.3 ; **H-27, [C]**). ⚠ **C'est une entrée de repérage, et elle entre ici comme thèse d'un volume antérieur, à attribuer** : sa vérification a porté sur la référence, non sur le contenu de l'affirmation (PRD §7.1), et elle ne porte donc aucun fait central de ce chapitre (CA-01). Ce que ce volume en fait est le sujet de la partie : si un parc d'agents n'est conforme qu'aussi longtemps qu'il demeure observable et remédiable, encore faut-il savoir ce que l'observabilité voit — et de qui.
 
@@ -2235,13 +2187,9 @@ Un troisième texte est plus exigeant sur le contenu, et il l'est sans ambiguït
 
 > **Lecture de l'auteur — et c'est la clôture du chapitre, marquée en totalité.** **Ce que le socle établit** : quatre attributs d'agent et deux de conversation définis au premier échelon (F-77, **[B]**), *sous la réserve de provenance du premier constat — leur identité, dont `gen_ai.agent.id`, est portée par `L14-A5` et non versée au socle* ; un document de jonction nommé, ouvert sur ses seules métriques (F-95, **[B], degré 1**). **Ce qu'il n'établit pas** : que la chaîne de mandat protocolaire soit interrogeable à l'instant t — **non-établissement** posé au ch. 9 §9.2 et repris au ch. 8 §8.1, **jamais une absence établie** ; qu'une clé de jointure (*join key*) existe entre une trace et un mandat protocolaire, ni qu'elle soit propagée, ni qu'un vérificateur puisse la contrôler. La lecture proposée est que **l'identité serait la clé de jointure de l'observabilité agentique, et que rien dans le corpus ouvert par ce volume ne la constitue** : d'un côté un identifiant d'agent qui n'est rattaché à aucun émetteur, de l'autre une chaîne de mandat protocolaire dont l'interrogeabilité n'est établie par aucune entrée de ce corpus. Le chaînon manquant n'est donc pas un mécanisme qu'il faudrait mieux chercher : c'est **une lacune ouverte, déclarée au cas 2**, et le chapitre l'expose plutôt qu'il ne la comble. *L'exposer est le résultat ; la combler par inférence serait la faute que ce volume prend pour objet.*
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 25 — Le cycle de vie opérationnel : évaluation continue, dérive et incident
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** *(reformulée le 21 juillet 2026 — confrontation P4.0, écarts **ÉC-11** et **ÉC-12**)* : **Lecture de l'auteur** — la lecture proposée est que l'exploitation d'un parc d'agents forme une boucle — évaluer en continu, détecter la dérive, répondre à l'incident, réviser le **mandat protocolaire** — et que cette boucle réalise opérationnellement le quatrième terme que le Vol. I ajoute à l'invariant. **Ce que le socle établit** : l'énoncé de l'invariant à quatre termes, verbatim — « *Découplage, contrat, évolution* deviennent ainsi *découplage, contrat, évolution, exploitation* » (**H-27**, **[C]**, `Synthese Monographie.md` §10.3) —, entrée venue d'un volume dont la vérification porte sur les références et non sur le contenu, et qui entre donc comme **thèse à attribuer**. **Ce qu'il n'établit pas** : que la boucle décrite dans ce chapitre en soit la réalisation — le Vol. I ne décrit aucune boucle d'exploitation. Sans cette boucle, le passeport n'assemble que des pièces **datées à leur émission**, et rien de ce qu'il assemble ne porte sur le comportement courant : le passeport d'agent ne figure dans aucune spécification à date, c'est un objet de synthèse construit par cet ouvrage (**R-01**).
+> **Thèse** *(reformulée le 21 juillet 2026 — confrontation P4.0, écarts **ÉC-11** et **ÉC-12**)* : **Lecture de l'auteur** — la lecture proposée est que l'exploitation d'un parc d'agents forme une boucle — évaluer en continu, détecter la dérive, répondre à l'incident, réviser le **mandat protocolaire** — et que cette boucle réalise opérationnellement le quatrième terme que le Vol. I ajoute à l'invariant. **Ce que le socle établit** : l'énoncé de l'invariant à quatre termes, verbatim — « *Découplage, contrat, évolution* deviennent ainsi *découplage, contrat, évolution, exploitation* » (**H-27**, **[C]**, `Synthese Monographie.md` §10.3) —, entrée venue d'un volume dont la vérification porte sur les références et non sur le contenu, et qui entre donc comme **thèse à attribuer**. **Ce qu'il n'établit pas** : que la boucle décrite dans ce chapitre en soit la réalisation — le Vol. I ne décrit aucune boucle d'exploitation. Sans cette boucle, le passeport n'assemble que des pièces **datées à leur émission**, et rien de ce qu'il assemble ne porte sur le comportement courant : le passeport d'agent ne figure dans aucune spécification à date, c'est un objet de synthèse construit par cet ouvrage (**R-01**).
 
 Le chapitre précédent a traité la première capacité de la partie — **voir** — et s'est arrêté sur un constat qu'il n'a pas comblé : l'identité serait la clé de jointure de l'observabilité agentique, et rien dans le corpus ouvert par ce volume ne la constitue (ch. 24 §24.4). Celui-ci traite la deuxième : **agir sur ce qu'on voit**. Évaluer en continu, détecter la dérive (*drift*), répondre à l'incident, réviser le mandat protocolaire — quatre gestes que l'exploitation d'un parc enchaîne, et dont ce chapitre demande, un à un, ce que le socle en documente.
 
@@ -2326,13 +2274,9 @@ Le chapitre précédent a traité la première capacité de la partie — **voir
 
 > **Lecture de l'auteur — clôture du chapitre, et elle porte sur sa thèse.** **Ce que le socle établit** : l'énoncé de l'invariant à quatre termes, verbatim, comme thèse d'un volume antérieur à attribuer (**H-27, [C]**, `Synthese Monographie.md` §10.3) ; la scission de l'auto-modification en adaptation éphémère et évolution persistante (**H-11, [B]**) ; les trois absences temporelles des pièces du passeport (F-03, F-05, **[A]** ; F-55, **[C]**) ; l'exigence de vérification continue énoncée par un référentiel daté (**F-20, [A]**). **Ce qu'il n'établit pas** : que la boucle décrite dans ce chapitre soit la réalisation de ce quatrième terme — le Vol. I ne décrit aucune boucle d'exploitation —, ni qu'elle soit la seule forme possible d'exploitation d'un parc, ni qu'aucun de ses quatre gestes soit outillé de bout en bout. La lecture proposée est que **les quatre gestes de la boucle sont documentés très inégalement, et que leur inégalité suit une règle** : plus un geste engage le retrait d'un droit plutôt que l'observation d'un état, moins le socle en documente le mécanisme. Un lecteur qui refuse cette lecture ne perd aucun des faits cités.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 26 — Les indicateurs de l'AgentOps : mesurer un parc d'agents sans fabriquer de chiffres
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** *(réécrite le 21 juillet 2026 sur le socle versé par le lot complémentaire **L-14b** — PRD §7.11 ; confrontation P4.0, écarts **ÉC-13** à **ÉC-16**)* : la discipline naissante n'a pas d'indicateur de référence **dans le corpus que ce volume a ouvert**, et le relevé le montre par le détail : les **seize métriques** relevées dans les deux documents agentiques du dépôt de conventions sont des **histogrammes** d'une opération, d'une invocation ou d'une session unitaire, toutes au **premier des cinq échelons** de maturité, et **aucune n'est un compteur ni une jauge portant sur un ensemble d'agents** (**F-90**, **F-95**, **F-96**, [B]) ; leur seule dimension d'agent est un **nom lisible fourni par l'application**, non l'identifiant stable que le registre définit par ailleurs (**F-92**, [B]) ; et aucune ne porte de dimension d'identité, de mandat protocolaire, de conversation ni de révocation (**F-93**, [B]). ⚠ **Énoncés bornés à trois fichiers nommés et à cette date** : ils n'établissent pas qu'une telle métrique n'existe nulle part (**R-14**). L'**horizon de tâche déléguée** n'est **pas** une métrique publiée : le Vol. I le range parmi ses manques structurants — l'horizon mesuré porte sur un agent isolé (**H-23**, **H-28**, **[C]**) — et c'est la **lacune 7** de l'ouvrage, que L-14b **n'a pas instruite**. Le chapitre ne recense donc pas des métriques de parc : il **construit** une grille minimale à partir de ce que les cadres de la Partie VI **attendent** ou **imposent — et les deux régimes ne se confondent pas** (R-06) — et des points d'application que la Partie VII documente. **Lecture de l'auteur** : la grille est une construction de cet ouvrage en totalité, marquée à l'ouverture de la pièce (CA-07).
+> **Thèse** *(réécrite le 21 juillet 2026 sur le socle versé par le lot complémentaire **L-14b** — PRD §7.11 ; confrontation P4.0, écarts **ÉC-13** à **ÉC-16**)* : la discipline naissante n'a pas d'indicateur de référence **dans le corpus que ce volume a ouvert**, et le relevé le montre par le détail : les **seize métriques** relevées dans les deux documents agentiques du dépôt de conventions sont des **histogrammes** d'une opération, d'une invocation ou d'une session unitaire, toutes au **premier des cinq échelons** de maturité, et **aucune n'est un compteur ni une jauge portant sur un ensemble d'agents** (**F-90**, **F-95**, **F-96**, [B]) ; leur seule dimension d'agent est un **nom lisible fourni par l'application**, non l'identifiant stable que le registre définit par ailleurs (**F-92**, [B]) ; et aucune ne porte de dimension d'identité, de mandat protocolaire, de conversation ni de révocation (**F-93**, [B]). ⚠ **Énoncés bornés à trois fichiers nommés et à cette date** : ils n'établissent pas qu'une telle métrique n'existe nulle part (**R-14**). L'**horizon de tâche déléguée** n'est **pas** une métrique publiée : le Vol. I le range parmi ses manques structurants — l'horizon mesuré porte sur un agent isolé (**H-23**, **H-28**, **[C]**) — et c'est la **lacune 7** de l'ouvrage, que L-14b **n'a pas instruite**. Le chapitre ne recense donc pas des métriques de parc : il **construit** une grille minimale à partir de ce que les cadres de la Partie VI **attendent** ou **imposent — et les deux régimes ne se confondent pas** (R-06) — et des points d'application que la Partie VII documente. **Lecture de l'auteur** : la grille est une construction de cet ouvrage en totalité, marquée à l'ouverture de la pièce (CA-07).
 
 > **Lecture de l'auteur — marquage porté à l'ouverture de la pièce, et il régit le chapitre entier** (CA-07 ; PRD §7.0, corollaire 4 ; critère de sortie J-5, PRDPlan §6). **Ce que le socle établit** : un relevé daté et borné de seize métriques normalisées, de leurs types, de leurs unités, de leur statut de maturité et de leurs dimensions, plus deux catalogues d'éditeurs nommés et datés (F-90 à F-98, **[B]**). **Ce qu'il n'établit pas** : la moindre grandeur de parc. **Aucune des quatre grandeurs que ce chapitre retient au §26.2 — disponibilité du parc, couverture de traçabilité, délai de révocation, fraîcheur des évaluations — n'a de répondant dans les seize métriques relevées** ; elles sont dérivées, dans cette pièce et par elle, de ce que les cadres de la Partie VI attendent ou imposent et de ce que la Partie VII documente au point d'application. **La grille du §26.2 est donc une construction d'auteur en totalité** : elle n'est ni une norme, ni un référentiel, ni la restitution d'un état du domaine, et rien ne l'oppose à quiconque. Le lecteur peut la refuser sans qu'aucun des faits du §26.1 ne tombe — c'est la propriété que le chapitre revendique, et la seule.
 
@@ -2395,13 +2339,12 @@ Le chapitre porte enfin une règle qu'il s'applique à lui-même, et qui est son
 
 > **Lecture de l'auteur — clôture du chapitre.** **Ce que le socle établit** : seize métriques d'opération, leur type, leur statut, leurs dimensions et leurs bornes (F-90 à F-96) ; deux catalogues d'éditeurs nommés, datés et auto-déclarés (F-97, F-98). **Ce qu'il n'établit pas** : une seule grandeur de parc, une seule dimension d'identité ou de mandat protocolaire dans une métrique, un seul délai de révocation, un seul horodatage d'évaluation exportable. La lecture proposée tient en une phrase : **la couche de mesure ne sait pas de quel agent elle parle au sens où l'entend la Partie II** — elle agrège par un libellé applicatif renommable et facultatif, quand l'entreprise doit répondre d'un mandataire identifié. Ce chapitre ne comble pas cet écart ; il le mesure, au seul sens où il est mesurable aujourd'hui — en énumérant ce qui manquerait pour que chacune des quatre grandeurs se calcule. *Exposer un instrument qui ne mesure pas ce dont on doit répondre est un résultat ; fabriquer le chiffre qui manque serait la faute que ce volume prend pour objet.*
 
-```{=typst}
-#pagebreak(weak: true)
-```
+# Partie IX — Blueprint : l'entreprise agentique de confiance
+
 
 # Chapitre 27 — Architecture de référence : la fabrique de confiance et son organisation
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : les Parties I-VIII se composent en une architecture de référence à trois étages — la fabrique d'identité (émission, registre, vérification, révocation), le maillage qui l'applique (PEP/PDP, passerelles), l'AgentOps qui l'exploite (observabilité, évaluation, incident) — formalisée en **ArchiMate**, notation retenue par le présent ouvrage pour la lisibilité de ses vues. ⚠ **Attribution retirée le 21 juillet 2026 (ÉC-17)** : **aucune entrée du socle ne documente la notation d'architecture employée par le Vol. I** — la filiation de méthode n'est pas revendiquée, et le choix de notation est celui de ce volume ; la lacune est consignée au **PRD §10** au gabarit du **cas 2**. Mais l'architecture ne suffit pas. **Lecture de l'auteur** — la lecture proposée est que l'entreprise agentique est autant une structure de rôles et une trajectoire de maturité qu'une pile technique, et le chapitre traite les deux. ⚠ **La parité est de traitement, non de preuve** (ÉC-18) : les trois étages sont tracés au socle et à la spécification du PRD (Annexe B) ; la trajectoire de maturité s'adosse à l'échelle à **quatre paliers non numérotés** — *assistance → copilote → orchestration sous revue → autonomie bornée* (`Monographie.md` §5.0.2, siège du patron §5.1.1 ; **H-31**, **[C]**, thèse d'un volume antérieur à attribuer) — et **la répartition des rôles est une inférence d'auteur intégrale, que rien du socle ne documente**.
+> **Thèse** : les Parties I-VIII se composent en une architecture de référence à trois étages — la fabrique d'identité (émission, registre, vérification, révocation), le maillage qui l'applique (PEP/PDP, passerelles), l'AgentOps qui l'exploite (observabilité, évaluation, incident) — formalisée en **ArchiMate**, notation retenue par le présent ouvrage pour la lisibilité de ses vues. ⚠ **Attribution retirée le 21 juillet 2026 (ÉC-17)** : **aucune entrée du socle ne documente la notation d'architecture employée par le Vol. I** — la filiation de méthode n'est pas revendiquée, et le choix de notation est celui de ce volume ; la lacune est consignée au **PRD §10** au gabarit du **cas 2**. Mais l'architecture ne suffit pas. **Lecture de l'auteur** — la lecture proposée est que l'entreprise agentique est autant une structure de rôles et une trajectoire de maturité qu'une pile technique, et le chapitre traite les deux. ⚠ **La parité est de traitement, non de preuve** (ÉC-18) : les trois étages sont tracés au socle et à la spécification du PRD (Annexe B) ; la trajectoire de maturité s'adosse à l'échelle à **quatre paliers non numérotés** — *assistance → copilote → orchestration sous revue → autonomie bornée* (`Monographie.md` §5.0.2, siège du patron §5.1.1 ; **H-31**, **[C]**, thèse d'un volume antérieur à attribuer) — et **la répartition des rôles est une inférence d'auteur intégrale, que rien du socle ne documente**.
 
 Vingt-six chapitres ont instruit des objets, et chacun s'est arrêté sur une frontière qu'il a déclarée plutôt que franchie. La carte d'agent signée démontre l'intégrité d'un contenu canonicalisé au regard d'une clé et renvoie l'ancrage de confiance (*trust anchor*) hors du protocole (ch. 5 §5.2). Le registre prescrit des champs et un cycle de vie dans un corpus dont trois dispositifs sur quatre portent eux-mêmes leur réserve de statut (ch. 7 §7.4). La chaîne de mandat protocolaire exprime la délégation et laisse le modèle de confiance au déploiement (ch. 9 §9.1). Le maillage d'agents fournit une syntaxe d'autorisation par arête et ne fournit pas la chaîne qu'il évaluerait (ch. 23 §23.3). L'observabilité nomme des segments et des attributs sans clé de jointure vers un mandat protocolaire (ch. 24 §24.4). Les indicateurs mesurent des opérations et pas un parc (ch. 26 §26.1).
 
@@ -2579,13 +2522,9 @@ L'entreprise qui déploie des agents n'ouvre pas un chantier vierge. Elle exploi
 
 **Ce que ce chapitre transmet à l'aval.** Le blueprint ainsi posé est **joué contre le parcours** au ch. 28 — naissance, vie, mort d'un agent (PRD §B.4), au grain du cas fil rouge du Vol. I (**H-32, [C]**), dont le §28.4 déclare que la confrontation, devenue interne au corpus, **ne vaut pas réfutation externe**. Le PRD §B.4 y désigne la troisième transition — la mort — comme la plus instructive, au motif que c'est là que le volume expose ce qu'il nomme le mécanisme le moins spécifié de la pile : la révocation cesse d'y être une case de tableau pour devenir une étape de parcours. ⚠ **La qualification est celle du document de cadrage, reprise et attribuée, non un classement mesuré par cette pièce.** Et l'origine déclarée de l'ouvrage se referme ici : le verrou dominant que le Vol. I assignait à la strate entreprise — « **identité non humaine et délégation multi-saut** » (`Synthese Monographie.md` §11.6, tableau 15 ; **H-29, [C]**, thèse attribuée, siège de l'avant-propos) — est exactement ce que les trois contrats du §27.1 laissent ouvert. L'architecture ne le lève pas ; elle en donne la carte.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Chapitre 28 — Instanciation et clôture : le cycle de vie complet d'un agent d'entreprise
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : le blueprint **s'éprouve** par le parcours — de l'enregistrement d'un agent à sa révocation, chaque transition est **jouée contre** l'architecture du ch. 27 (PRD §B.4), au grain d'un cas financier canadien fictif. **L'épreuve est interne au corpus** : le cas fil rouge est celui du Vol. I (**H-32**, **[C]**), et la confrontation **ne vaut donc pas réfutation externe** — le §28.4 le déclare. Puis l'ouvrage se clôt par la discipline du Vol. II : lacunes exposées, péremption datée, revalidation protocolée.
+> **Thèse** : le blueprint **s'éprouve** par le parcours — de l'enregistrement d'un agent à sa révocation, chaque transition est **jouée contre** l'architecture du ch. 27 (PRD §B.4), au grain d'un cas financier canadien fictif. **L'épreuve est interne au corpus** : le cas fil rouge est celui du Vol. I (**H-32**, **[C]**), et la confrontation **ne vaut donc pas réfutation externe** — le §28.4 le déclare. Puis l'ouvrage se clôt par la discipline du Vol. II : lacunes exposées, péremption datée, revalidation protocolée.
 
 Le ch. 27 a posé une architecture de référence et a déclaré, contrat par contrat, ce qui la tient et ce qui ne la tient pas. Il l'a fait dans l'ordre des étages. Le présent chapitre la reprend dans un autre ordre — celui du **temps d'un agent** —, et cet ordre n'est pas une commodité de présentation : il déplace ce qui est visible. Une architecture rangée par étages montre où chaque fonction habite ; un parcours montre **à quel moment une fonction manquante devient une décision qu'il faut prendre quand même**.
 
@@ -2754,13 +2693,12 @@ Un ouvrage daté se clôt en disant ce qui le périmera. La liste qui suit n'est
 
 > **Lecture de l'auteur — clôture de l'ouvrage.** **Ce que le socle établit** : chacun des événements du tableau ci-dessus, à son entrée, à son niveau, à son degré et à sa date. **Ce qu'il n'établit pas** : qu'ils surviendront, qu'ils surviendront dans cet ordre, ni qu'aucun autre ne surviendrait. La lecture proposée tient en une phrase, et elle est celle que le parcours a rendue visible : **des trois moments de la vie d'un agent, celui que l'entreprise sait le mieux documenter est celui où elle l'admet, et celui qu'elle doit le mieux savoir prouver est celui où elle le retire.** L'ouvrage ne comble pas cet écart ; il en donne la carte, transition par transition, avec l'état de la preuve de chaque case. L'origine déclarée du volume se referme exactement là : le verrou que le Vol. I assignait à la strate entreprise — « **identité non humaine et délégation multi-saut** » (`Synthese Monographie.md` §11.6, tableau 15 ; **H-29, [C]**, thèse attribuée, siège de l'avant-propos) — est ce que le parcours retrouve à chacune de ses trois transitions, et ce qu'aucune ne lève. *Un ouvrage qui refermerait ce verrou par inférence aurait commis, à sa dernière page, la faute qu'il a passé vingt-sept chapitres à documenter.*
 
-```{=typst}
-#pagebreak(weak: true)
-```
+# Annexes
+
 
 # Annexe A — Méthodologie
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : pièce d'appareil — son contenu obligatoire est imposé par [PRD.md](../../prd/PRD.md) §6.2. ⚠ Le TOC ne lui assigne pas de thèse : **aucune revendication de verbatim n'est faite ici** (CA-05).
+> **Thèse** : pièce d'appareil — son contenu obligatoire est imposé par [PRD.md](../../prd/PRD.md) §6.2. ⚠ Le TOC ne lui assigne pas de thèse : **aucune revendication de verbatim n'est faite ici** (CA-05).
 
 Cette annexe reporte, à l'usage du lecteur, la méthode que le volume a **réellement suivie**. Elle n'est pas le cahier des charges de cette méthode : celui-ci vit au PRD, et il prime. Elle en diffère sur un point que l'ouvrage a intérêt à écrire plutôt qu'à taire — **la méthode prescrite et la méthode appliquée ne coïncident pas partout**, et les écarts sont consignés ici avec ce qui les a produits.
 
@@ -2870,13 +2808,9 @@ Le volume documente **vingt-deux lacunes** (PRD §10), et **CA-06 exige qu'elles
 
 **La lacune 12 est d'une autre espèce, et la différence est méthodologique.** Un fichier de faits partagés entre volumes — `commun/faits-partages.md` — est cité par trois documents du dépôt et **absent du disque**. Il n'a pas été instruit : il a été **tranché**. Le volume a décidé de ne pas le créer, et de porter au PRD §7.5 les deux divergences datées qu'il devait accueillir — la gouvernance d'un protocole de paiement et la date d'une ligne directrice sectorielle —, **signalées et jamais uniformisées**. Les renvois du TOC de ce volume sont repointés ; ceux d'autres livrables demeurent, **hors périmètre : signalés, non corrigés**. ⚠ **Une lacune close par décision n'est pas une lacune close par instruction** : la seconde produit un résultat vérifiable, la première produit une décision révocable. Les confondre reviendrait à créditer d'une passe de recherche un acte qui n'en est pas un — et c'est le genre exact de crédit que le présent volume prend pour objet.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Annexe B — Matrice des mécanismes
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : pièce d'appareil — son contenu obligatoire est imposé par [PRD.md](../../prd/PRD.md) §6.2. ⚠ Le TOC ne lui assigne pas de thèse : **aucune revendication de verbatim n'est faite ici** (CA-05).
+> **Thèse** : pièce d'appareil — son contenu obligatoire est imposé par [PRD.md](../../prd/PRD.md) §6.2. ⚠ Le TOC ne lui assigne pas de thèse : **aucune revendication de verbatim n'est faite ici** (CA-05).
 
 ## B.1 Règles d'emploi, et ce que cette matrice ne fait pas
 
@@ -2960,13 +2894,9 @@ Le terme de **maillage d'agents** (*agent mesh*) est un terme de fournisseur san
 
 **Lecture de l'auteur** — ce que le socle établit : chacune des entrées mobilisées ici documente un objet, et les huit entrées d'observabilité mobilisées au §B.5 n'en rattachent aucune à un mécanisme d'identité ou de mandat protocolaire (relevé entrée par entrée). Ce qu'il n'établit pas : que le socle soit dépourvu de toute entrée relationnelle — F-41, F-43 et H-03 en portent —, ni qu'aucune passe d'instruction ne puisse combler ces croisements ; aucun balayage du socle entier n'a été mené. La lecture proposée est que ces deux manques sont des lacunes de croisement plutôt que de recherche.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Annexe C — Chronologie de la pile identitaire agentique : antécédents, 2024-2027, jalons visés en 2030 et 2035
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : pièce d'appareil — son contenu obligatoire est imposé par [PRD.md](../../prd/PRD.md) §6.2. ⚠ Le TOC ne lui assigne pas de thèse : **aucune revendication de verbatim n'est faite ici** (CA-05).
+> **Thèse** : pièce d'appareil — son contenu obligatoire est imposé par [PRD.md](../../prd/PRD.md) §6.2. ⚠ Le TOC ne lui assigne pas de thèse : **aucune revendication de verbatim n'est faite ici** (CA-05).
 
 ## C.1 Ce que porte cette chronologie — et les six règles qui la bornent
 
@@ -3145,13 +3075,9 @@ Le format a produit des constats que la prose des chapitres absorbait sans les s
 3. **Aucun jalon canadien de migration post-quantique ne figure au §C.8.** Le lot d'instruction déclare n'avoir rien instruit hors du couple États-Unis / Union européenne, et le ch. 16 §16.1 porte la lacune au gabarit « aucune passe de recherche n'a été conduite » — **c'est ce même lot qui signale que la lacune canadienne est la plus coûteuse pour un volume canadien**, et l'appréciation est la sienne. **Le socle ne documente pas d'instrument canadien équivalent : c'est une absence de documentation dans le corpus de cet ouvrage, non un fait négatif vérifié** (PRD §8.6, degré 3 ; R-14 du présent volume).
 4. **Les jalons du Vol. II ne sont pas des faits, et la frise ne peut donc pas les porter.** H-16 énumère cinq jalons externes, dont quatre datés — 28 juillet 2026, 24 août 2026, 26 août 2026, date inconnue, 1ᵉʳ mai 2027. **Trois d'entre eux ne sont soutenus par aucune entrée factuelle du présent volume** : le 24 août 2026 (règlement administratif) et le 26 août 2026 (clôture des commentaires du cadre bancaire) ne figurent qu'à cette entrée, qui n'a **ni niveau ni provenance F-xx** ; le 28 juillet 2026 est au registre du §C.6 ; seule l'entrée en vigueur du 1ᵉʳ mai 2027 est adossée à des entrées propres (H-04, F-68). Ces deux dates d'août 2026 sont donc **citées ici comme jalons repris du ch. 20 du Vol. II, attribués à ce volume, et non comme faits établis par celui-ci**.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Annexe D — Glossaire
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : pièce d'appareil — son contenu obligatoire est imposé par [PRD.md](../../prd/PRD.md) §6.2. ⚠ Le TOC ne lui assigne pas de thèse : **aucune revendication de verbatim n'est faite ici** (CA-05).
+> **Thèse** : pièce d'appareil — son contenu obligatoire est imposé par [PRD.md](../../prd/PRD.md) §6.2. ⚠ Le TOC ne lui assigne pas de thèse : **aucune revendication de verbatim n'est faite ici** (CA-05).
 
 Un glossaire est la pièce d'un ouvrage que l'on consulte sans lire le reste, et c'est ce qui l'expose. Un lecteur pressé y cherche une définition ; s'il la trouve nue, il en repart avec un objet que l'ouvrage a construit et qu'il croira documenté. Le présent glossaire est donc bâti autour d'une colonne que les glossaires ordinaires omettent : **le statut épistémique du terme** — terme de norme ou de spécification, terme de marché, ou construction d'auteur du présent volume (R-03 du présent volume ; les garde-fous cités ici portent la numérotation à deux chiffres du Vol. III, R-01 à R-14, à ne pas confondre avec les R-1 à R-8 du Vol. II).
 
@@ -3223,13 +3149,9 @@ Les niveaux **[A] / [B] / [C]**, le tri **PROGRAMMÉ / PROJETÉ / SPÉCULATIF**,
 
 ⚠ **Ce que le format a fait apparaître, et qui n'est pas une coquille de rédaction.** Un glossaire exige, par construction, une **définition** par terme ; l'ouvrage dispose, pour plusieurs des siens, d'un **statut** et d'un **siège** sans définition qu'il puisse restituer. Trois cas, consignés plutôt que comblés : *(1)* « entreprise agentique » — la définition existe au découpage, **pas encore au texte** (§D.2) ; *(2)* PEP et PDP — employés dans deux chapitres, définis par aucune entrée du socle (§D.4) ; *(3)* *zero trust* — sans rendu français versé, alors que CA-08 en impose un (§D.4). **Aucun des trois ne se résout par une définition écrite ici** : ce serait ouvrir un second siège, ce que R-03 et le §D.1 interdisent. Les trois sont remontés.
 
-```{=typst}
-#pagebreak(weak: true)
-```
-
 # Annexe E — Catalogue de patrons de la confiance agentique
 
-> **Thèse ([TOC.md](../../prd/TOC.md))** : pièce d'appareil — son contenu obligatoire est imposé par [PRD.md](../../prd/PRD.md) §6.2. ⚠ Le TOC ne lui assigne pas de thèse : **aucune revendication de verbatim n'est faite ici** (CA-05).
+> **Thèse** : pièce d'appareil — son contenu obligatoire est imposé par [PRD.md](../../prd/PRD.md) §6.2. ⚠ Le TOC ne lui assigne pas de thèse : **aucune revendication de verbatim n'est faite ici** (CA-05).
 
 ## E.1 Ce qu'est ce catalogue, et à quel titre chaque patron y figure
 
