@@ -25,7 +25,7 @@ Les trois volumes vivent sous [`1 - Corpus Agentique/`](1%20-%20Corpus%20Agentiq
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | — (à fixer au lancement) |
-| **État** | Publiée (142 p., 244 références) | Rédaction terminée (569 p. + synthèse 69 p.) | Publiée, millésime `mono-v1.0` (387 p. + synthèse 66 p.) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 400 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours, aucun PDF | **Cadrage seul** — table des matières v0.2 |
+| **État** | Publiée (142 p., 244 références) | Rédaction terminée (569 p. + synthèse 69 p.) | Publiée, millésime `mono-v1.0` (387 p. + synthèse 66 p.) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 400 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours ; **PDF assemblé le 23 juillet 2026** (428 p., gabarit FESP), non publiable en l'état | **Cadrage seul** — table des matières v0.2 |
 
 ## Veille technologique — le document transversal
 
@@ -114,9 +114,10 @@ trois capacités — *émettre* une identité opposable (le passeport d'agent), 
 maillage d'agents, l'*exploiter* dans la durée (AgentOps) — sous l'horloge post-quantique.
 
 ⚠ **Rédigé ne vaut pas publiable.** La phase de finalisation (**P5**) est en cours : revalidation
-temporelle finale, rejeu des motifs de balayage sur les 34 pièces, question du pipeline de rendu
-(aucun n'existe encore dans le dossier) ; **quinze remontées de gouvernance demeurent ouvertes**
-(R-G-43 à R-G-57), dont plusieurs relèvent de l'auteur. **Aucun PDF n'est assemblé.**
+temporelle finale, rejeu des motifs de balayage sur les 34 pièces ; le pipeline de rendu a été
+créé le 23 juillet 2026 (copie du FESP du Vol. II) et **quinze remontées de gouvernance demeurent
+ouvertes** (R-G-43 à R-G-57), dont plusieurs relèvent de l'auteur. **Le PDF est assemblé
+(428 p., gabarit FESP) ; rédigé ne vaut pas publiable.**
 
 Le dossier porte trois répertoires — la gouvernance dans `prd/`, la rédaction dans `monographie/`,
 les rapports de vérification dans `verification/` —, plus un
@@ -232,7 +233,9 @@ volumes sources font foi et la divergence reste ouverte — le cadrage le dit lu
 │       ├── CLAUDE.md                          conventions du volume
 │       ├── prd/                               PRD v1.3, TOC v0.8, PRDPlan v0.5 — gouvernance
 │       ├── monographie/                       34 pièces rédigées + registre des gels
-│       └── verification/                      29 rapports (lots, relectures, revalidations)
+│       ├── verification/                      29 rapports (lots, relectures, revalidations)
+│       ├── build/                             pipeline FESP (copie du Vol. II) + assemble.py
+│       └── Monographie.md / .pdf              assemblage (428 p., gabarit FESP) — non publiable
 └── 2 - Compendium Agentique/              ← Vol. IV
     └── TOC.md                               table des matières commentée (v0.2) — seul livrable
 ```
@@ -244,7 +247,7 @@ démonstrateur Go a les siennes, qui priment dans son répertoire. Seul le Vol. 
 
 ## Construire les PDF
 
-Trois chaînes distinctes, à lancer depuis le dossier concerné.
+Quatre chaînes distinctes, à lancer depuis le dossier concerné.
 
 **Veille technologique** (racine) — invocation Pandoc directe, gabarit Typst par défaut :
 
@@ -272,9 +275,22 @@ bash   build/build-pdf.sh Monographie.md    # → Monographie.pdf
 **l'assemblage du Vol. II échoue en l'état.** Les deux copies du pipeline évoluent séparément ;
 un correctif au Vol. I ne se propage pas au Vol. II.
 
+**Vol. III** — assemblage des 34 pièces, puis une **troisième copie** du même pipeline
+(créée le 23 juillet 2026, au gabarit des monographies) ; depuis
+`1 - Corpus Agentique/3 - EntrepriseAgentique/` :
+
+```bash
+python build/assemble.py                    # monographie/ → Monographie.md
+bash   build/build-pdf.sh Monographie.md    # → Monographie.pdf (428 p.)
+```
+
+Les trois copies du pipeline évoluent séparément. Le PDF porte une **note d'état** en tête :
+rédigé, **non publiable** tant que les quinze remontées ouvertes (R-G-43 à R-G-57) ne sont pas
+tranchées.
+
 **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, `python3` + `pypdf` ; polices Liberation Sans et
 DejaVu Sans (pipeline FESP), New Computer Modern (veille) ; pour les diagrammes, Node ≥ 18 +
-[`@mermaid-js/mermaid-cli`](https://github.com/mermaid-js/mermaid-cli) et un Chromium. Les deux
+[`@mermaid-js/mermaid-cli`](https://github.com/mermaid-js/mermaid-cli) et un Chromium. Les trois
 `build-pdf.sh` exportent eux-mêmes `PYTHONUTF8=1` — inutile de le faire à la main sous Windows.
 **Règle permanente :** régénérer et versionner le PDF avec sa source — jamais la source seule.
 
