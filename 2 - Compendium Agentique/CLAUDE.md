@@ -7,7 +7,7 @@ pas répétées.
 
 ## Les livrables — un plan et sa vue synoptique, pas un ouvrage
 
-Deux fichiers. [`TOC.md`](TOC.md) (**v0.11, 23 juillet 2026 — 57 chapitres en 10 livres,
+Deux fichiers. [`TOC.md`](TOC.md) (**v0.12, 23 juillet 2026 — 57 chapitres en 10 livres,
 projection ≈ 369 000–394 000 mots**) est la *spécification* du compendium ; **aucun chapitre
 n'est rédigé**. Tant que la somme n'est pas écrite, les trois volumes sources font foi (champ
 Statut du TOC), et une thèse de ce plan n'est pas une source (sa propre décision 8).
@@ -68,15 +68,17 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
    rangée Historique, verbatim), champ Date mis à jour, **journal daté ajouté en fin de fichier**.
    Les journaux sont en ajout seul — un journal publié ne se réécrit pas, ses écarts se consignent
    dans la passe suivante.
-2. **Contrôles** : `check-toc.py` est **introuvable au dépôt** (constat v0.7, reconduit v0.8) — le
-   champ Contrôles est une spécification sans exécutable. Le reconstruire (domaine : chapitres
-   1-57, dix livres) et le valider **par mutation** après constat qu'il passe sur le document
-   intact est un préalable à toute publication. En attendant, chaque passe exécute au minimum le
-   balayage ad hoc des journaux v0.8-v0.10 — chapitres 1-57 contigus et uniques ; dix livres I-X ;
-   somme des enveloppes `~N 000 mots)*` = 305 (301 corps + 4 avant-propos ; 394 000 avec les
-   89 000 d'annexes ; l'enveloppe est toujours en **fin** d'en-tête de livre, sinon le motif ne la
-   voit plus) ; aucun renvoi `ch. N` hors de 1-57 ; aucune occurrence normative des anciennes
-   numérotations (chapitres et livres) hors zones gelées — et **déclare dans son journal** que le
-   script n'a pas tourné.
+2. **Contrôles** : `python check-toc.py` (versionné dans ce dossier depuis la v0.12 du 23 juillet
+   2026 — contrôles C1-C14, domaine : chapitres 1-57, dix livres) **avant toute publication** ;
+   sortie 0 exigée, et le journal de la passe déclare son exécution. ⚠ **Ce script est du
+   contenu : il se vérifie comme le reste** (même règle que `check-veille.py` au `CLAUDE.md`
+   racine). Toute modification se valide par mutation avec `check-toc-mutations.py` (versionné
+   ici) : constat de passage sur le document intact, puis chaque classe de faute détectée. Des
+   faux positifs y sont déjà neutralisés — zones gelées (rangées Historique, journaux) exemptées
+   des contrôles de motifs, spans « … » et `` ` … ` `` retirés, marqueurs de correspondance des
+   anciens numéraux de livres (Nature, décisions 9-10, risques 1 et 13) — les réintroduire en
+   « simplifiant » un motif rendrait le contrôle bruyant donc ignoré. L'exécutable des passes
+   v0.3-v0.6 (« contrôles 1-17 ») demeure perdu : les journaux gelés se lisent dans leur
+   numérotation d'origine, correspondances en commentaire du script (C7 ≈ 17, C8 ≈ 11).
 3. **Git** : messages courts en français, par livrable (« TOC v0.8 — … »), comme l'historique du
    dossier ; chemins explicites à l'ajout.
