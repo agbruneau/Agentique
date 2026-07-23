@@ -25,12 +25,12 @@ Les trois volumes vivent sous [`1 - Corpus Agentique/`](1%20-%20Corpus%20Agentiq
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | — (à fixer au lancement) |
-| **État** | Publiée (145 p., 256 références) | Rédaction terminée (569 p. ; synthèse retirée le 22 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 400 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours ; **PDF assemblé le 23 juillet 2026** (428 p., gabarit FESP), non publiable en l'état | **Cadrage seul** — TOC v0.14 (+ conspectus) |
+| **État** | Publiée (146 p., 257 références) | Rédaction terminée (569 p. ; synthèse retirée le 22 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 400 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours ; **PDF assemblé le 23 juillet 2026** (428 p., gabarit FESP), non publiable en l'état | **Cadrage seul** — TOC v0.14 (+ conspectus) |
 
 ## Veille technologique — le document transversal
 
-[`Veille Technologique.md`](Veille%20Technologique.md) → `Veille Technologique.pdf` (**145 p.**,
-14 sections numérotées, **256 références**, 15 tableaux). Revue vérifiée où chaque énoncé factuel
+[`Veille Technologique.md`](Veille%20Technologique.md) → `Veille Technologique.pdf` (**146 p.**,
+14 sections numérotées, **257 références**, 15 tableaux). Revue vérifiée où chaque énoncé factuel
 est adossé à une source primaire consultée et soumis à contradiction — vérificateurs indépendants
 chargés de *réfuter*, contre-vérification directe sinon. Elle couvre les trois protocoles
 structurants (MCP, A2A, ANP), leur gouvernance, l'adoption documentée, la sécurité, et **sept
@@ -219,7 +219,7 @@ volumes sources font foi et la divergence reste ouverte — le cadrage le dit lu
 .
 ├── README.md                              ← ce fichier (avant-propos croisé)
 ├── CLAUDE.md                              ← conventions du dépôt + conventions de la veille
-├── Veille Technologique.md / .pdf         ← veille autonome, 18 juillet 2026, passe du 23 juillet 2026 (145 p., 256 réf.)
+├── Veille Technologique.md / .pdf         ← veille autonome, 18 juillet 2026, passe du 23 juillet 2026 (146 p., 257 réf.)
 ├── 1 - Corpus Agentique/                  ← le triptyque
 │   ├── 1 - InteroperabiliteAgentique/       Vol. I
 │   │   ├── Chapitres/                         7 chapitres + 7 bibliographies + Annexe B (ADS)
@@ -341,7 +341,10 @@ tous inchangés. Le 23 juillet 2026, la passe complémentaire de la veille (sous
 l'après-agentique en préimpression) porte ses décomptes à **144 p. / 256 réf.**, re-mesurés sur le
 PDF régénéré ; les chiffres du 18 juillet ci-dessus décrivent l'état de cette date-là. La passe de
 révision du même 23 juillet (corrections vérifiées et aération des sections 4.10 et 10, en vue de
-la publication arXiv) porte la pagination à **145 p.**, références inchangées.
+la publication arXiv) porte la pagination à **145 p.**, références inchangées. Une dernière passe du
+même 23 juillet — révision interne à six dimensions (retrait du saut de page avant la section 13,
+34 correctifs vérifiés) puis correction du sourcing du cas d'adoption de Block (§6.4, référence [257]
+ajoutée) — porte les décomptes à **146 p. / 257 réf.**, re-mesurés sur le PDF régénéré.
 
 Le même 23 juillet 2026, une passe de cohérence a réaligné les `README.md` et `CLAUDE.md` sur l'état
 réel du dépôt : Vol. IV porté à **TOC v0.11** (57 chapitres, 10 livres, ≈ 369 000–394 000 mots

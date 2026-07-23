@@ -32,7 +32,7 @@ Projet d'**écriture** en **français canadien** autour de l'**interopérabilit�
 - ne pas rétablir de renvoi vers ces fichiers ni de chaîne de rendu qui les vise ;
 - les renvois **entrants** des volumes aval qui résolvaient contre `Synthese Monographie.md` (§10, §11.5 et tableau 15 — voir [`Chapitres/TOC.md`](Chapitres/TOC.md) §Filiation) n'ont plus de cible dans le dépôt. Les corriger relève des volumes émetteurs, pas d'ici.
 
-⚠ **La veille technologique n'est plus un livrable de ce dossier.** Elle a été déplacée à la racine du dépôt (`Veille Technologique.md`), couvre désormais les quatre volumes et porte sa propre édition (édition intégrale du 18 juillet 2026, passe complémentaire du 23 juillet 2026, **145 p., 256 références**) : ses conventions et sa chaîne de rendu sont au [`CLAUDE.md` du dépôt](../../CLAUDE.md). Ne pas la traiter ici.
+⚠ **La veille technologique n'est plus un livrable de ce dossier.** Elle a été déplacée à la racine du dépôt (`Veille Technologique.md`), couvre désormais les quatre volumes et porte sa propre édition (édition intégrale du 18 juillet 2026, passe complémentaire du 23 juillet 2026, **146 p., 257 références**) : ses conventions et sa chaîne de rendu sont au [`CLAUDE.md` du dépôt](../../CLAUDE.md). Ne pas la traiter ici.
 
 **État : rédaction terminée, démonstrateur clos** (audit 27/27, gate vert à 96,2 %). Le travail courant est la finalisation et la maintenance — corrections, vérification adverse des citations, régénération des PDF. Outillage : `git`, le pipeline de rendu (voir *Commandes*) et la chaîne Go du démonstrateur (voir `Borealis-Go/CLAUDE.md`).
 

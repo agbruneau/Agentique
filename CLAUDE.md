@@ -51,10 +51,12 @@ consignés et motivés dans [son propre `CLAUDE.md`](1%20-%20Corpus%20Agentique/
 
 ## Veille technologique — le livrable de la racine
 
-`Veille Technologique.md` → `Veille Technologique.pdf` (**145 p.**, 14 sections numérotées,
-**256 références**, 15 tableaux — **édition intégrale du 18 juillet 2026, passe complémentaire du
+`Veille Technologique.md` → `Veille Technologique.pdf` (**146 p.**, 14 sections numérotées,
+**257 références**, 15 tableaux — **édition intégrale du 18 juillet 2026, passe complémentaire du
 23 juillet 2026** : sous-section 12.4, l'après-agentique en préimpression, références [245] à [256],
-régime déclaré — résumés arXiv seuls consultés, sans vérification adverse). Document **autonome** :
+régime déclaré — résumés arXiv seuls consultés, sans vérification adverse ; la 257e, ajoutée le même
+jour, réattribue les métriques du cas Block du playbook [62] à l'exposé public qui les porte [257],
+sous réserve de régime). Document **autonome** :
 il n'est repris dans aucune monographie, et il est le seul à citer les volumes du dépôt.
 
 ⚠ **Depuis l'édition intégrale, la veille cite les quatre volumes — mais à deux régimes distincts,
