@@ -25,7 +25,7 @@ Les trois volumes vivent sous [`1 - Corpus Agentique/`](1%20-%20Corpus%20Agentiq
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | — (à fixer au lancement) |
-| **État** | Publiée (146 p., 257 références) | Rédaction terminée (569 p. ; synthèse retirée le 22 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Cadrage seul** — TOC v0.14 (+ conspectus) |
+| **État** | Publiée (146 p., 257 références) | Rédaction terminée (569 p. ; synthèse retirée le 22 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Cadrage seul** — TOC v0.15 (+ conspectus) |
 
 ## Veille technologique — le document transversal
 
@@ -141,9 +141,9 @@ Le volume naît des lacunes des deux précédents : identité non humaine et dé
 
 **Au stade du cadrage seul, lui aussi.** Le dossier
 [`2 - Compendium Agentique/`](2%20-%20Compendium%20Agentique/) porte une table des matières
-commentée ([`TOC.md`](2%20-%20Compendium%20Agentique/PRD/TOC.md), **v0.14 du 23 juillet 2026**), son
-**PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium%20Agentique/PRD/PRD.md), v0.2 du
-23 juillet 2026 — portes de lancement, régimes de preuve, critères d'acceptation, jalons), sa vue
+commentée ([`TOC.md`](2%20-%20Compendium%20Agentique/PRD/TOC.md), **v0.15 du 24 juillet 2026**), son
+**PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium%20Agentique/PRD/PRD.md), v0.3 du
+24 juillet 2026 — portes de lancement, régimes de preuve, critères d'acceptation, jalons), sa vue
 synoptique dérivée ([`README.md`](2%20-%20Compendium%20Agentique/README.md)), son exécutable
 de contrôle ([`check-toc.py`](2%20-%20Compendium%20Agentique/PRD/check-toc.py), avec son harnais de
 validation par mutation) et un
@@ -243,8 +243,8 @@ volumes sources font foi et la divergence reste ouverte — le cadrage le dit lu
     ├── CLAUDE.md                            conventions du volume
     ├── README.md                            vue synoptique dérivée du TOC (le « conspectus » du volume)
     └── PRD/                                 gouvernance de la rédaction (sous-dossier)
-        ├── PRD.md                           v0.2 — portes, régimes de preuve, jalons
-        ├── TOC.md                           table des matières commentée (v0.14) — spécification
+        ├── PRD.md                           v0.3 — portes, régimes de preuve, jalons
+        ├── TOC.md                           table des matières commentée (v0.15) — spécification
         ├── check-toc.py                     contrôles C1-C14 (python PRD/check-toc.py)
         └── check-toc-mutations.py           validation par mutation
 ```

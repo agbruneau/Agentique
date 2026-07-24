@@ -12,10 +12,10 @@ désormais dans le sous-dossier [`PRD/`](PRD/) ; le README (conspectus) et ce `C
 la racine du dossier. Les chemins ci-dessous et la commande de contrôle (§ protocole) en tiennent
 compte.
 
-Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.2, 23 juillet 2026**) régit la
+Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.3, 24 juillet 2026**) régit la
 **gouvernance de la rédaction** — portes de lancement, ordre, régimes de preuve, seuil de vote,
 critères CA-IV, jalons, décisions d'auteur — et **prime en cas de conflit sur la gouvernance, le
-socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.14, 23 juillet 2026 — 57 chapitres en 10 livres,
+socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.15, 24 juillet 2026 — 57 chapitres en 10 livres,
 projection ≈ 369 000–394 000 mots**) reste la *spécification de contenu* du compendium — autorité
 sur le découpage et sur chaque chapitre (thèse, sections, ligne Fusion, socle, garde-fous) ;
 **aucun chapitre n'est rédigé**. Tant que la somme n'est pas écrite, les trois volumes sources
@@ -24,6 +24,8 @@ décision 8). [`README.md`](README.md) est la **vue synoptique dérivée** du TO
 version en tête) : il ne porte aucune décision, aucun socle, aucun garde-fou propre — en cas
 d'écart, **le TOC prime**, et toute passe qui modifie le TOC réaligne le conspectus (version,
 faits touchés) ou y déclare le retard en tête.
+
+⚠ **`audit.md` n'est pas un quatrième livrable.** C'est un rapport de couverture daté (24 juillet 2026), **sans autorité** : ni source, ni socle, ni décision. Ne jamais le citer à l'appui d'un énoncé ni s'en servir pour modifier le plan — ses constats retenus ont été portés là où ils font foi (risque 15 du TOC, décision D-7 du PRD, passe v0.15) ; ce qu'il porte encore n'a pas été retenu. Un audit ultérieur suit la même règle : il **remonte**, il ne tranche pas.
 
 **Pas de pipeline PDF ici.** Le Vol. I et le Vol. II ont chacun leur copie du FESP ; en créer une
 pour ce dossier serait une troisième copie — même interdit que celui consigné pour le Vol. III au
