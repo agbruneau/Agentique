@@ -1,6 +1,7 @@
 # CLAUDE.md — Vol. IV, *La somme agentique* (compendium intégral)
 
-Guide pour Claude Code (claude.ai/code) dans le dossier `2 - Compendium Agentique`. **Le fichier le
+Guide pour Claude Code (claude.ai/code) dans le dossier `2 - Compendium` (renommé le 25 juillet 2026,
+`2 - Compendium Agentique` auparavant, commit `60f57f6`). **Le fichier le
 plus spécifique gagne** : ici, celui-ci ; les règles valant pour tout le dépôt (langue, décomptes,
 faits datés, périmètre des fichiers de doc) sont au [`CLAUDE.md` racine](../CLAUDE.md) et ne sont
 pas répétées.
@@ -27,9 +28,11 @@ faits touchés) ou y déclare le retard en tête.
 
 ⚠ **`audit.md` n'est pas un quatrième livrable.** C'est un rapport de couverture daté (24 juillet 2026), **sans autorité** : ni source, ni socle, ni décision. Ne jamais le citer à l'appui d'un énoncé ni s'en servir pour modifier le plan — ses constats retenus ont été portés là où ils font foi (risque 15 du TOC, décision D-7 du PRD, passe v0.15) ; ce qu'il porte encore n'a pas été retenu. Un audit ultérieur suit la même règle : il **remonte**, il ne tranche pas.
 
-**Pas de pipeline PDF ici.** Le Vol. I et le Vol. II ont chacun leur copie du FESP ; en créer une
-pour ce dossier serait une troisième copie — même interdit que celui consigné pour le Vol. III au
-`CLAUDE.md` racine.
+**Pas de pipeline PDF ici.** Les Vol. I, II et III ont chacun leur copie du FESP — celle du Vol. III
+créée le 23 juillet 2026, sur demande de l'auteur ; en créer une pour ce dossier serait une
+**quatrième** copie, et il n'y a rien à rendre : aucun chapitre n'est rédigé. ⚠ *L'interdit initial
+disait « troisième copie » ; le Vol. III a pris ce rang, décidé et daté. Le motif ne change pas —
+chaque copie évolue seule, un correctif à l'une ne se propage à aucune autre.*
 
 ## L'appareil interne du TOC fait loi
 
@@ -62,6 +65,14 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
 - ⚠ **Erreur documentée des TOC sources** : la *Synthèse* du Vol. I est numérotée **§1-§12** ; les
   TOC des Vol. I et III portent encore « §3-§12 », qui est faux. Une collation contre eux
   réintroduirait l'erreur en croyant la corriger (décision 7 et risque 10 du TOC).
+- ⚠ **Deux sources citées par le plan ne sont plus au dépôt, et la collation doit le savoir avant
+  de la lancer.** *(a)* `Synthese Monographie.md` (Vol. I et Vol. II) a été supprimée le 22 juillet
+  2026, commit `fd8f1be` ; *(b)* le démonstrateur `Borealis-Go/` (Vol. I) l'a été le 25 juillet
+  2026, commit `60f57f6`. Toute collation de fond qui les vise se fait **contre l'historique git ou
+  contre rien** — la décision 7 (« tout renvoi nomme son document ») ne suffit plus : elle désigne
+  un document, elle ne dit pas s'il est présent. *Le plan ne se réécrit pas pour autant : ses
+  renvois sont exacts, ils cessent d'être opposables.* La distinction se déclare à la passe qui
+  ouvrira le Livre III ou le Livre VIII (l'ADS Boréalis y siège, annexe H).
 - ⚠ **Corpus d'appui du Vol. III : filiation retirée** (P0.2 tranchée le 21 juillet 2026, L-15
   close par échec documenté — **réversible** par dépôt ultérieur) : les mentions « corpus
   d'appui » des chapitres consommateurs sont des marqueurs conditionnels de réouverture, jamais

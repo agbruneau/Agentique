@@ -8,6 +8,30 @@ nom-là ne survit plus que dans le contenu gelé de la veille — les référenc
 d'anciennes URL `…/Monographies/…` ont été supprimés du dépôt le 22 juillet 2026 (commit `fd8f1be`) ;
 ce reliquat est clos.
 
+## Restructuration du 25 juillet 2026 — deux renommages et une suppression
+
+Le commit **`60f57f6`** (« restructuration du repo ») a fait trois choses, et il faut les tenir
+séparées :
+
+| Geste | Avant | Après |
+|---|---|---|
+| Renommage | `1 - Corpus Agentique/` | **`1 - Corpus/`** |
+| Renommage | `2 - Compendium Agentique/` | **`2 - Compendium/`** |
+| Suppression | `…/1 - InteroperabiliteAgentique/Borealis-Go/` (démonstrateur Go, 12 ADR) | **retiré du dépôt** — 151 fichiers, 13 981 lignes supprimées, seule modification de contenu du commit |
+
+⚠ **Le démonstrateur `Borealis-Go` n'est plus au dépôt, et la veille le cite toujours.** La
+référence **[217]** (§4.12, « De la spécification au code ») désigne un corpus compagnon dont le
+code n'est plus dans l'arbre de travail : il ne se lit plus que dans l'historique git
+(`git show 60f57f6~1:'1 - Corpus Agentique/1 - InteroperabiliteAgentique/Borealis-Go/…'`).
+*Un renvoi exact vers un fichier absent reste exact ; il cesse d'être opposable.* **Ne pas
+« corriger » la veille** — elle est publiée, et son régime d'auto-citation est déclaré. **Ne pas
+restaurer le dossier** non plus : la suppression est un geste d'auteur, daté et committé. Le fait
+est consigné ici et au [`README.md`](README.md), et il n'est pas arbitré.
+
+⚠ **Aucun `CLAUDE.md` de code ne subsiste dans le dépôt.** Celui du démonstrateur, qui primait
+dans son répertoire, est parti avec lui : les quatre volumes n'ont plus que des `CLAUDE.md` de
+rédaction, plus celui-ci.
+
 ## Ce que ce fichier régit — et ce qu'il ne régit pas
 
 Ce dépôt réunit cinq livrables de périmètres distincts (voir le [`README.md`](README.md)). Les
@@ -18,11 +42,10 @@ divergent volontairement. Ce fichier régit deux choses seulement — la **racin
 | Périmètre | Fichier qui fait autorité |
 |---|---|
 | Racine, veille technologique, arbitrages inter-volumes | **ce fichier** |
-| Vol. I — *Interopérabilité agentique* (rédaction) | [`1 - Corpus Agentique/1 - InteroperabiliteAgentique/CLAUDE.md`](1%20-%20Corpus%20Agentique/1%20-%20InteroperabiliteAgentique/CLAUDE.md) |
-| Démonstrateur Go du Vol. I (code) | [`…/1 - InteroperabiliteAgentique/Borealis-Go/CLAUDE.md`](1%20-%20Corpus%20Agentique/1%20-%20InteroperabiliteAgentique/Borealis-Go/CLAUDE.md) — **prime dans son répertoire** |
-| Vol. II — *L'autonomie encadrée* (rédaction, gouvernance PRD) | [`1 - Corpus Agentique/2 - OrchestrationAgentique/CLAUDE.md`](1%20-%20Corpus%20Agentique/2%20-%20OrchestrationAgentique/CLAUDE.md) |
-| Vol. III — *L'entreprise agentique* (cadrage, gouvernance PRD) | [`1 - Corpus Agentique/3 - EntrepriseAgentique/CLAUDE.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/CLAUDE.md) |
-| Vol. IV — *La somme agentique* (compendium, cadrage) | [`2 - Compendium Agentique/CLAUDE.md`](2%20-%20Compendium%20Agentique/CLAUDE.md) — le `TOC.md` du dossier reste la spécification de contenu |
+| Vol. I — *Interopérabilité agentique* (rédaction) | [`1 - Corpus/1 - InteroperabiliteAgentique/CLAUDE.md`](1%20-%20Corpus/1%20-%20InteroperabiliteAgentique/CLAUDE.md) |
+| Vol. II — *L'autonomie encadrée* (rédaction, gouvernance PRD) | [`1 - Corpus/2 - OrchestrationAgentique/CLAUDE.md`](1%20-%20Corpus/2%20-%20OrchestrationAgentique/CLAUDE.md) |
+| Vol. III — *L'entreprise agentique* (rédaction, gouvernance PRD) | [`1 - Corpus/3 - EntrepriseAgentique/CLAUDE.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/CLAUDE.md) |
+| Vol. IV — *La somme agentique* (compendium, cadrage) | [`2 - Compendium/CLAUDE.md`](2%20-%20Compendium/CLAUDE.md) — le `TOC.md` du dossier reste la spécification de contenu |
 
 **Le fichier le plus spécifique gagne.** En travaillant dans un dossier de volume, appliquer son
 `CLAUDE.md`, pas celui-ci.
@@ -46,7 +69,7 @@ gabarit FESP des monographies : c'était bien une troisième copie, décidée et
 
 Le Vol. III prolonge l'appareil du Vol. II mais s'en écarte sur quatre points (motifs de balayage,
 commande de décompte, escalade de gouvernance, numérotation des garde-fous). Ces écarts sont
-consignés et motivés dans [son propre `CLAUDE.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/CLAUDE.md) —
+consignés et motivés dans [son propre `CLAUDE.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/CLAUDE.md) —
 **les y lire avant d'appliquer une règle du Vol. II de mémoire.**
 
 ## Veille technologique — le livrable de la racine
@@ -62,12 +85,20 @@ il n'est repris dans aucune monographie, et il est le seul à citer les volumes 
 ⚠ **Depuis l'édition intégrale, la veille cite les quatre volumes — mais à deux régimes distincts,
 et l'écart est la règle qui compte.** Les Vol. I et II sont **rédigés** et fournissent des faits :
 §4.12 pour le démonstrateur `Borealis-Go` (réf. [217]), §8.4 pour le croisement canadien
-(réf. [218]). Les Vol. III et IV sont des **cadrages** — zéro chapitre, zéro entrée de socle propre
-— et ne fournissent **aucun fait** : ils prêtent des instruments d'analyse (la grille des cinq
-questions, les décisions de fusion), marqués comme constructions d'auteur, et leurs entrées
+(réf. [218]). Les Vol. III et IV y sont des **cadrages** — zéro chapitre, zéro entrée de socle
+propre — et ne fournissent **aucun fait** : ils prêtent des instruments d'analyse (la grille des
+cinq questions, les décisions de fusion), marqués comme constructions d'auteur, et leurs entrées
 bibliographiques [219] et [220] portent cette réserve en toutes lettres. **Ne jamais élever un
 cadrage au rang de source de fait** en le citant à l'appui d'un énoncé : c'est la faute que ces deux
 cadrages prennent eux-mêmes pour objet. Le régime est posé en §13.1 et tenu à chaque occurrence.
+
+⚠ **Ce régime est celui de la veille à sa date, et deux faits l'ont dépassé sans le périmer.**
+*(a)* Le **Vol. III est rédigé depuis le 22 juillet 2026** — 34 pièces, socle propre de 98 entrées —
+alors que la réf. [219] le décrit comme un cadrage sans chapitre ; *(b)* le **démonstrateur de la
+réf. [217] a été retiré du dépôt le 25 juillet 2026**. Les deux écarts se **signalent ici, jamais
+dans la veille** : une revue publiée décrit l'état de ses sources à son gel, et la rattraper
+après coup effacerait la seule information qu'elle porte — sa date. Une future édition les reprendra
+comme faits nouveaux, sous son propre régime de vérification.
 
 ⚠ **La section 13 porte une date propre.** Elle est passée sur la **v0.3 du `TOC.md` du Vol. IV,
 datée du 19 juillet 2026** — soit le lendemain de la date d'édition de la veille. L'écart est
@@ -75,7 +106,7 @@ assumé et déclaré dans le texte (§13.5 et §2.2) ; les sections 1 à 12 rest
 Ne pas « harmoniser » cette date : un cadrage qui se révise plus vite que la revue ne se gèle est
 un constat de la §10, pas une incohérence à lisser.
 
-La section 13 (« Le corpus compagnon : quatre volumes, un même objet ») est le siège de ce rendu
+La section 13 (« Le corpus compagnon : quatre volumes, un compendium, un même objet ») est le siège de ce rendu
 de compte ; la Conclusion est devenue la section **14**. L'auto-citation est assumée et divulguée ;
 ses limites — dont le risque de circularité, quatre volumes partageant un auteur — sont exposées
 en section 10.
@@ -165,12 +196,11 @@ occurrence ; un statut *preview* n'est jamais présenté comme une disponibilit�
   (pas de marketing, pas de première personne). Terminologie technique anglaise entre parenthèses à
   la première occurrence ; citations verbatim en langue originale.
 - **PDF versionné avec sa source.** Régénérer et pousser le `.pdf` avec le `.md` — jamais la source
-  seule. Vaut pour la veille comme pour les deux monographies.
+  seule. Vaut pour la veille comme pour les **trois** monographies.
 - **Décomptes.** Toute pagination, tout compte de références, de chapitres ou de pièces annoncé
   dans un `README.md` ou un `CLAUDE.md` doit être **re-mesuré** avant d'être modifié, jamais
   recopié d'un autre document. Un même chiffre vit souvent à plusieurs endroits (README du dépôt,
-  README du volume, `CLAUDE.md`, JSON-LD et compteur `data-count` de l'`index.html`) : les mettre à
-  jour ensemble.
+  README du volume, `CLAUDE.md`, PRD, TOC, registre de gel) : les mettre à jour ensemble.
 - **Faits datés.** Le domaine se périme par trimestres. Les échéances à revalider sont tenues dans
   la section « Ce qui reste vivant » du [`README.md`](README.md) ; chaque volume porte en plus ses
   propres dates de gel. Deux faits datés divergent entre la veille et le Vol. II : ils sont

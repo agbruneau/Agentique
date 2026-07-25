@@ -38,9 +38,13 @@ page de présentation ni de publication GitHub Pages — voir « Structure du do
 | `build/` | Pipeline de rendu PDF (assemblage + Pandoc → Typst) |
 | `Monographie.md` / `Monographie.pdf` | Assemblage versionné des 29 pièces et son rendu (387 p.) |
 
-⚠ **`doc/` s'appelle désormais `prd/`** (renommage du 22 juillet 2026). Les renvois vers `doc/…` qui
-subsistent ailleurs dans le volume sont cassés ; leur inventaire et la commande de contrôle sont
-dans [`CLAUDE.md`](CLAUDE.md).
+⚠ **`doc/` s'appelle désormais `prd/`** (renommage du 22 juillet 2026). Les deux déplacements du
+dossier de gouvernance — racine → `doc/` le 17 juillet, `doc/` → `prd/` le 22 — ont laissé des
+renvois relatifs cassés dans le volume : **48 dans `monographie/`** (bandeaux de thèse vers
+`TOC.md`), un dans `build/assemble.py`, un dans `prd/PRDPlan.md`, quinze dans `prd/audit.md` et
+trois dans `verification/relecture-CA.md`. Inventaire, décomptes datés et commandes de contrôle
+dans [`CLAUDE.md`](CLAUDE.md). *(L'index de lecture [`monographie/README.md`](monographie/README.md)
+a été repointé le 25 juillet 2026.)*
 
 ⚠ **Ni `index.html`, ni article de synthèse, ni publication GitHub Pages.** La page de présentation
 et `Synthese Monographie.md` / `.pdf` (12 sections, 19 tableaux, ~26 500 mots ; 66 p.) ont été

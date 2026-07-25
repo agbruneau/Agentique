@@ -4,7 +4,7 @@ Guide pour Claude Code (claude.ai/code) **dans ce dossier**.
 
 ## Périmètre de ce fichier
 
-Ce `CLAUDE.md` ne régit que le **volume II**, sous `1 - Corpus Agentique/2 - OrchestrationAgentique/`. Il ne dit rien des autres livrables du dépôt *Agentique* (`github.com/agbruneau/Agentique` — **pas** « Monographies », nom qui ne survit que dans le contenu gelé de la veille) :
+Ce `CLAUDE.md` ne régit que le **volume II**, sous `1 - Corpus/2 - OrchestrationAgentique/` (dossier parent renommé le 25 juillet 2026, `1 - Corpus Agentique/` auparavant, commit `60f57f6`). Il ne dit rien des autres livrables du dépôt *Agentique* (`github.com/agbruneau/Agentique` — **pas** « Monographies », nom qui ne survit que dans le contenu gelé de la veille) :
 
 | Ce que vous cherchez | Où |
 |---|---|
@@ -25,7 +25,7 @@ Projet documentaire. Livrable : une monographie exhaustive — « L'autonomie en
 |---|---|---|---|
 | `monographie/**` — **le plus gros gisement** | renvois vers `TOC.md` répartis sur **28 des 29 pièces** (bandeaux de thèse) : 47 en `](../../TOC.md)`, 1 en `](../TOC.md)` | `../../prd/TOC.md` (resp. `../prd/TOC.md`) | **48** |
 | `build/assemble.py` | `ROOT / "TOC.md"` (racine du volume, ligne 78) — **pipeline PDF hors service** | `prd/TOC.md` | 1 |
-| `monographie/README.md` | `](../doc/PRD.md)`, `](../doc/PRDPlan.md)` (×2), `](../doc/TOC.md)`, `](../doc/audit.md)` — rectifiés vers `doc/` en juillet, **re-cassés par le renommage** | `../prd/…` | 4 lignes |
+| ~~`monographie/README.md`~~ | ~~`](../doc/PRD.md)`, `](../doc/PRDPlan.md)` (×2), `](../doc/TOC.md)`, `](../doc/audit.md)`~~ | `../prd/…` | ☑ **corrigés le 25 juillet 2026** |
 | `prd/PRDPlan.md` | `](CLAUDE.md)` | `../CLAUDE.md` | 1 |
 | `prd/audit.md` | `](monographie/…)` | `../monographie/…` | 15 |
 | `verification/relecture-CA.md` | `](../PRD.md)`, `](../PRDPlan.md)`, `](../audit.md)` | `../prd/…` | 3 |
@@ -33,13 +33,13 @@ Projet documentaire. Livrable : une monographie exhaustive — « L'autonomie en
 Commandes de contrôle, à relancer **sur tout le dossier** avant de déclarer le gisement résorbé :
 
 ```bash
-grep -rn '](\.\./\(\.\./\)\?TOC\.md' monographie/ | wc -l              # 48 au 22 juillet 2026
+grep -rn '](\.\./\(\.\./\)\?TOC\.md' monographie/ | wc -l              # 48 au 25 juillet 2026 (inchangé)
 grep -rn 'doc/\(PRD\|PRDPlan\|TOC\|audit\)\.md' --include=*.md --include=*.py . | wc -l   # renvois vers l'ancien doc/
 ```
 
-⚠ La seconde commande se compte elle-même : le tableau ci-dessus **cite** les formes cassées (`](../doc/PRD.md)`…), qu'elle attrape comme des renvois réels. La lire fichier par fichier — `| sed 's/:.*//' | sort | uniq -c` — et retrancher ce `CLAUDE.md`, jamais comme un total brut.
+⚠ La seconde commande se compte elle-même : le tableau ci-dessus **cite** les formes cassées (`](../doc/PRD.md)`…), qu'elle attrape comme des renvois réels. La lire fichier par fichier — `| sed 's/:.*//' | sort | uniq -c` — et retrancher ce `CLAUDE.md`, jamais comme un total brut. **Au 25 juillet 2026, elle ne rend plus que ce fichier** : les quatre lignes de `monographie/README.md` ont été repointées.
 
-**Pipeline de rendu PDF** *(ajouté le 17 juillet 2026)* : `build/` contient un pipeline Pandoc → Typst **copié** de celui du volume I (`1 - Corpus Agentique/1 - InteroperabiliteAgentique/build/`), augmenté d'une étape d'assemblage propre à ce volume. Les deux copies évoluent séparément : un correctif là-bas ne se propage pas ici. `build/assemble.py` concatène les 29 pièces de `monographie/` en `Monographie.md` (retrait de l'appareil de rédaction interne — tableaux d'en-tête, bandeaux de correctif, blocs de gouvernance HTML ; préfixage des notes ; pages de garde de partie), puis `bash build/build-pdf.sh Monographie.md` produit `Monographie.pdf` (US-letter, Liberation Sans/Arial, gabarit `build/fesp.template`). **Régénérer après toute modification des chapitres** — sous réserve du renvoi `TOC.md` cassé signalé ci-dessus, qu'il faut corriger avant de pouvoir relancer l'assemblage. Le PDF et le `Monographie.md` assemblé sont versionnés ; les artefacts intermédiaires du build sont ignorés (`.gitignore`).
+**Pipeline de rendu PDF** *(ajouté le 17 juillet 2026)* : `build/` contient un pipeline Pandoc → Typst **copié** de celui du volume I (`1 - Corpus/1 - InteroperabiliteAgentique/build/`), augmenté d'une étape d'assemblage propre à ce volume. Le volume III en a reçu une troisième copie le 23 juillet 2026. Les trois évoluent séparément : un correctif là-bas ne se propage pas ici. `build/assemble.py` concatène les 29 pièces de `monographie/` en `Monographie.md` (retrait de l'appareil de rédaction interne — tableaux d'en-tête, bandeaux de correctif, blocs de gouvernance HTML ; préfixage des notes ; pages de garde de partie), puis `bash build/build-pdf.sh Monographie.md` produit `Monographie.pdf` (US-letter, Liberation Sans/Arial, gabarit `build/fesp.template`). **Régénérer après toute modification des chapitres** — sous réserve du renvoi `TOC.md` cassé signalé ci-dessus, qu'il faut corriger avant de pouvoir relancer l'assemblage. Le PDF et le `Monographie.md` assemblé sont versionnés ; les artefacts intermédiaires du build sont ignorés (`.gitignore`).
 
 ⚠ **Ni page de présentation, ni article de synthèse, ni publication GitHub Pages.** `index.html` et `Synthese Monographie.md` / `.pdf` (66 p.) ont été retirés du dossier (**suppression committée le 22 juillet 2026**, commit `fd8f1be`, arbre de travail propre). Ne pas rétablir de renvoi vers eux. Les adresses `https://agbruneau.github.io/Monographies/…` qui circulaient étaient fausses de surcroît — le dépôt s'appelle `Agentique`. Le seul rendu du volume est `Monographie.pdf` (**387 p.**, vérifié le 22 juillet 2026).
 

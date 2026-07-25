@@ -4,16 +4,17 @@ Guide pour Claude Code (claude.ai/code) **dans ce dossier**.
 
 ## Périmètre de ce fichier
 
-Ce `CLAUDE.md` ne régit que le **volume I**, sous `1 - Corpus Agentique/1 - InteroperabiliteAgentique/`. Il ne dit rien des autres livrables du dépôt *Agentique* :
+Ce `CLAUDE.md` ne régit que le **volume I**, sous `1 - Corpus/1 - InteroperabiliteAgentique/`
+(dossier parent renommé le 25 juillet 2026, `1 - Corpus Agentique/` auparavant). Il ne dit rien des
+autres livrables du dépôt *Agentique* :
 
 | Ce que vous cherchez | Où |
 |---|---|
 | Place du volume I dans le corpus, ordre de lecture, divergences entre volumes | [README du dépôt](../../README.md) |
 | Conventions communes et **conventions de la veille technologique** (à la racine) | [`CLAUDE.md` du dépôt](../../CLAUDE.md) |
 | Volume II — *L'autonomie encadrée* (cas canadien) | [`2 - OrchestrationAgentique/CLAUDE.md`](../2%20-%20OrchestrationAgentique/CLAUDE.md) |
-| Volume III — *L'entreprise agentique* (cadrage) | [`3 - EntrepriseAgentique/CLAUDE.md`](../3%20-%20EntrepriseAgentique/CLAUDE.md) |
-| Volume IV — *La somme agentique* (compendium, cadrage) | [`2 - Compendium Agentique/`](../../2%20-%20Compendium%20Agentique/) |
-| Démonstrateur Go | [`Borealis-Go/CLAUDE.md`](Borealis-Go/CLAUDE.md) — **prime dans ce répertoire** |
+| Volume III — *L'entreprise agentique* (rédigé, non publiable) | [`3 - EntrepriseAgentique/CLAUDE.md`](../3%20-%20EntrepriseAgentique/CLAUDE.md) |
+| Volume IV — *La somme agentique* (compendium, cadrage) | [`2 - Compendium/`](../../2%20-%20Compendium/) |
 
 ⚠ **Le dépôt s'appelle `Agentique`** (`github.com/agbruneau/Agentique`), pas « Monographies ». Ce
 nom-là ne survit que dans du contenu gelé (les références [217]-[218] de la veille) ; partout
@@ -21,11 +22,29 @@ ailleurs il se corrige.
 
 ## Nature du volume
 
-Projet d'**écriture** en **français canadien** autour de l'**interopérabilité agentique** : **deux livrables rédigés** rendus dans un même PDF, plus un **démonstrateur de code** qui les accompagne ([`Borealis-Go/`](Borealis-Go/), régi par son propre [`CLAUDE.md`](Borealis-Go/CLAUDE.md)) :
+Projet d'**écriture** en **français canadien** autour de l'**interopérabilité agentique** : **deux livrables rédigés**, rendus dans un même PDF, et rien d'autre depuis le 25 juillet 2026 :
 
 1. **Monographie** de science et génie informatique, à double public — **recherche** (modèles, formalismes, état de l'art) et **praticien-architecte** (normes, protocoles, mises en œuvre). Sept chapitres en spirale du général au spécifique ; **socle des sources arrêté à juin 2026** ; invariant transversal rappelé à chaque couche : *découplage, contrat, évolution*.
 2. **Architecture détaillée de solution (ADS)**, intégrée comme **Annexe B** de la monographie — source [`Chapitres/Annexe B - Architecture de Solutions.md`](Chapitres/Annexe%20B%20-%20Architecture%20de%20Solutions.md). Elle projette la monographie (surtout ch. 5-6) sur une entreprise fictive (*Coopérative financière Boréalis*) et une pile **IBM** consolidée : livrable d'ingénierie *prêt au déploiement* (diagrammes, contrats, NFR, topologie, runbooks), de nature distincte du corps doctrinal mais rendu dans le même PDF.
-3. **Démonstrateur Boréalis** — code Go (**MCP + A2A**, pré-qualification de crédit) matérialisant le PRD, dans [`Borealis-Go/`](Borealis-Go/). Livrable de nature distincte : conventions, commandes (`make check`, gate ≥ 90 %) et règles non négociables dans [`Borealis-Go/CLAUDE.md`](Borealis-Go/CLAUDE.md), qui prime dans ce répertoire.
+
+### ⚠ Le démonstrateur `Borealis-Go/` a été retiré du dépôt le 25 juillet 2026 — fait daté, consigné et non corrigé
+
+**Constat sur le dépôt.** Le commit **`60f57f6`** (« restructuration du repo ») supprime le dossier
+`Borealis-Go/` en entier — code Go des 5 agents A2A et 4 serveurs MCP, 12 ADR, PRD et plan
+d'exécution, journaux de vérification, présentation PDF. Il ne se lit plus que dans l'historique
+git : `git show 60f57f6~1:'1 - Corpus Agentique/1 - InteroperabiliteAgentique/Borealis-Go/…'`
+(chemin de l'arbre **avant** le renommage du dossier parent, opéré au même commit).
+
+**Trois conséquences pour qui édite ici.**
+
+- Ne **pas** rétablir de renvoi vers `Borealis-Go/`, ni de chaîne d'outillage Go (`make check`, gate
+  de couverture) : il n'y a plus qu'une chaîne dans ce dossier, le pipeline FESP.
+- Le **`CLAUDE.md` du démonstrateur est parti avec lui.** La règle « il prime dans son répertoire »
+  n'a plus d'objet ; ce fichier est désormais le seul du dossier.
+- Les renvois **entrants** perdent leur cible : la **référence [217] de la veille** (§4.12, « De la
+  spécification au code ») et les mentions du Vol. III (ch. 28, PRD, TOC, confrontation des thèses).
+  *Un renvoi exact vers un fichier absent reste exact ; il cesse d'être opposable.* **Les corriger
+  relève des documents émetteurs, pas d'ici** — et la veille, publiée, ne se corrige pas après coup.
 
 ⚠ **L'article de synthèse et la page `index.html` ne sont plus dans ce dossier.** `Synthese Monographie.md`, son PDF (69 p.) et `index.html` ont été retirés — **suppression committée le 22 juillet 2026** (commit `fd8f1be`), arbre de travail propre. Deux conséquences pour qui édite ici :
 
@@ -34,7 +53,7 @@ Projet d'**écriture** en **français canadien** autour de l'**interopérabilit�
 
 ⚠ **La veille technologique n'est plus un livrable de ce dossier.** Elle a été déplacée à la racine du dépôt (`Veille Technologique.md`), couvre désormais les quatre volumes et porte sa propre édition (édition intégrale du 18 juillet 2026, passe complémentaire du 23 juillet 2026, **146 p., 257 références**) : ses conventions et sa chaîne de rendu sont au [`CLAUDE.md` du dépôt](../../CLAUDE.md). Ne pas la traiter ici.
 
-**État : rédaction terminée, démonstrateur clos** (audit 27/27, gate vert à 96,2 %). Le travail courant est la finalisation et la maintenance — corrections, vérification adverse des citations, régénération des PDF. Outillage : `git`, le pipeline de rendu (voir *Commandes*) et la chaîne Go du démonstrateur (voir `Borealis-Go/CLAUDE.md`).
+**État : rédaction terminée.** Le travail courant est la finalisation et la maintenance — corrections, vérification adverse des citations, régénération du PDF. Outillage : `git` et le pipeline de rendu (voir *Commandes*) — plus de chaîne Go dans ce dossier.
 
 ## Organisation
 
@@ -47,10 +66,9 @@ Contenu rédigé dans [`Chapitres/`](Chapitres/), deux fichiers par chapitre, pl
 | `Annexe B - Architecture de Solutions.md` | corps de l'ADS, repris tel quel dans `Monographie.md` |
 | `TOC.md` | table des matières commentée, **v1.0 du 18 juillet 2026** — rétro-documentation relevée sur le texte livré, non spécification d'un ouvrage à écrire (à la différence des `TOC.md` des Vol. III et IV) |
 
-Assemblages et livrables à la racine :
+Assemblage et livrable à la racine :
 
 - [`Monographie.md`](Monographie.md) → `Monographie.pdf` (**569 p.**) — **source unique** du PDF : liminaires (page titre Typst, résumé, table des matières, abréviations) + 7 chapitres + Bibliographie générale + **Annexe A** (documents d'accompagnement) + **Annexe B** (l'ADS : 18 sections + vues *blueprint* §0.1-0.2, 6 sous-annexes, 28 diagrammes Mermaid). Rendu FESP (Pandoc → Typst), diagrammes pré-rendus.
-- [`Borealis-Go/`](Borealis-Go/) — démonstrateur Go (voir livrable 3 ci-dessus) : `cmd/` (9 binaires : 4 `agent-*`, 4 `mcp-*`, `orchestrator`), `internal/`, `pkg/`, `docs/adr/` (**12 ADR**, 0001-0012), PRD et plan d'exécution inclus.
 
 ⚠ **Plus de page de présentation ni de publication GitHub Pages pour ce volume** : `index.html` a été retiré (voir *Nature du volume*). Les adresses `https://agbruneau.github.io/Monographies/…` qui circulaient étaient de toute façon fausses — le dépôt s'appelle `Agentique`. Ne pas réintroduire de renvoi « Lire en ligne » sans avoir d'abord constaté que Pages est activé sur le bon dépôt.
 
@@ -66,7 +84,7 @@ Progression de la monographie (chaque chapitre suppose les précédents) :
 
 ## Commandes
 
-Une seule chaîne de rendu dans ce dossier : le **pipeline FESP** (`build/build-pdf.sh`). Se lance depuis `1 - Corpus Agentique/1 - InteroperabiliteAgentique/`.
+Une seule chaîne de rendu dans ce dossier : le **pipeline FESP** (`build/build-pdf.sh`). Se lance depuis `1 - Corpus/1 - InteroperabiliteAgentique/`.
 
 ```bash
 bash build/build-pdf.sh                            # Monographie.pdf (défaut ; pré-rend les 28 diagrammes Mermaid)
@@ -74,7 +92,7 @@ bash build/build-pdf.sh                            # Monographie.pdf (défaut ; 
 
 Le script prend un `.md` source en argument (défaut `Monographie.md`) et en déduit le `.pdf` ; depuis le retrait de l'article de synthèse, `Monographie.md` est la **seule** source de ce dossier. Les blocs ` ```mermaid ` sont pré-rendus en SVG (mermaid-cli) puis injectés avant Pandoc→Typst ; si `mmdc` est absent, ils restent en bloc de code (mode dégradé, sans échec). La pagination liminaire romaine→arabe ne s'applique qu'à `Monographie.md`. Gabarit : `build/fesp.template` (police Liberation Sans, repli Arial).
 
-Le volume II possède une **copie** de ce pipeline, précédée d'une étape d'assemblage qui lui est propre (`build/assemble.py`) : les deux évoluent séparément, ne pas présumer qu'un correctif ici s'y propage. La veille de la racine, elle, n'utilise **pas** FESP (voir le [`CLAUDE.md` du dépôt](../../CLAUDE.md)).
+Les volumes II et III possèdent chacun une **copie** de ce pipeline, précédée d'une étape d'assemblage qui leur est propre (`build/assemble.py`) — celle du Vol. III créée le 23 juillet 2026, en troisième copie. Les trois évoluent séparément : ne pas présumer qu'un correctif ici s'y propage. La veille de la racine, elle, n'utilise **pas** FESP (voir le [`CLAUDE.md` du dépôt](../../CLAUDE.md)).
 
 **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, `python3` + `pypdf`, polices Liberation Sans + DejaVu Sans (repli déclaré dans le gabarit FESP : Arial + Segoe UI Symbol). Diagrammes : Node ≥ 18 + `@mermaid-js/mermaid-cli` (`mmdc`) + un Chromium (surcharges `MMDC=…`, `PUPPETEER_CONFIG=…`).
 

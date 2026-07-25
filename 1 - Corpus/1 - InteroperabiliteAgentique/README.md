@@ -13,7 +13,7 @@ Monographie de science et génie informatique, rédigée en **français canadien
 
 **Auteur :** André-Guy Bruneau, M. Sc. IT — Juin 2026
 
-Le volume réunit **deux livrables rédigés** rendus dans un même PDF — la monographie (7 chapitres) et l'**architecture détaillée de solution** (Annexe B) — **accompagnés d'un démonstrateur de code** ([`Borealis-Go/`](Borealis-Go/)).
+Le volume réunit **deux livrables**, rendus dans un même PDF : la monographie (7 chapitres) et l'**architecture détaillée de solution** (Annexe B). *(Le démonstrateur de code qui les accompagnait a été retiré du dépôt le 25 juillet 2026 — voir plus bas.)*
 
 ## Les sept chapitres
 
@@ -53,9 +53,17 @@ propre édition — **édition intégrale du 18 juillet 2026 (passe complémenta
 citent explicitement ce volume et le volume II, et dont la section 13 rend compte des quatre volumes. Les mentions « 7 juillet 2026, 48 p., 116 références »
 qui figuraient ici décrivaient une édition antérieure.
 
-## Démonstrateur Borealis (code)
+## Démonstrateur Borealis (code) — retiré du dépôt
 
-Un **démonstrateur Go** exécutable — [`Borealis-Go/`](Borealis-Go/) — matérialise l'Annexe B (surtout le ch. 6) : **5 agents A2A** et **4 serveurs MCP** orchestrant une **pré-qualification de crédit** (jamais un octroi ferme), au calibre d'un projet-étalon d'ingénierie interne (couverture ≥ 90 %, tests golden immuables, **12 ADR**, gate local). Livrable de nature distincte, régi par son propre [`Borealis-Go/CLAUDE.md`](Borealis-Go/CLAUDE.md) et documenté dans [`Borealis-Go/README.md`](Borealis-Go/README.md). Présentation synthèse : [`Borealis-Go/Présentation Borealis-Go.pdf`](Borealis-Go/Pr%C3%A9sentation%20Borealis-Go.pdf). C'est lui qui fournit la §4.12 de la veille.
+Un **démonstrateur Go** exécutable — `Borealis-Go/` — matérialisait l'Annexe B (surtout le ch. 6) :
+**5 agents A2A** et **4 serveurs MCP** orchestrant une **pré-qualification de crédit** (jamais un
+octroi ferme), au calibre d'un projet-étalon d'ingénierie interne (couverture déclarée 96,2 %,
+tests golden immuables, **12 ADR**, gate local). Il a été **retiré du dépôt le 25 juillet 2026**
+(commit `60f57f6`) et ne se lit plus que dans l'historique git.
+
+⚠ C'est lui qui fournissait la **§4.12 de la veille** (référence [217]) : la citation reste exacte,
+elle cesse d'être vérifiable sur l'arbre courant. La veille est publiée et **n'est pas corrigée
+après coup** ; le Vol. III, qui le cite lui aussi, relève de sa propre charge éditoriale.
 
 ## Structure du dossier
 
@@ -67,7 +75,8 @@ Chapitres/
   TOC.md                                   table des matières commentée (v1.0, rétro-documentation)
 Monographie.md / .pdf                      assemblage : 7 chapitres + liminaires + Annexes A et B (569 p.)
 build/                                     pipeline de rendu PDF (Mermaid → Pandoc → Typst)
-Borealis-Go/                               démonstrateur Go (MCP + A2A) — livrable de code distinct
+CLAUDE.md                                  conventions du volume (seul CLAUDE.md du dossier)
+LICENSE
 ```
 
 ⚠ **Ni `index.html` ni publication GitHub Pages.** La page de présentation a été retirée le
@@ -99,6 +108,7 @@ La chaîne de la veille (racine) et celle du volume II sont **distinctes** de ce
 - **2026-07-14** — audit intégral de l'**article de synthèse** (bibliographie portée à 211 entrées, terminologie harmonisée ; article depuis retiré du dossier) puis de la **monographie** : 3 054 renvois vérifiés (aucun brisé), bilans des sept bibliographies recomptés, fidélité source ↔ PDF contrôlée. Correctifs : terminologie et typographie du corps, **143 identifiants stables ajoutés** aux bibliographies des ch. 1, 3 et 4 (URL de source primaire vérifiées sur le web), entrée ISO/IEC 27001:2022 créée. PDF régénérés (**569 p.**).
 - **2026-07-18** — `Chapitres/TOC.md` v1.0 : rétro-documentation du volume achevé (thèses, sections et décomptes relevés sur le texte livré, non projetés).
 - **2026-07-22** — retrait de l'article de synthèse et de la page `index.html` ; `README.md` et `CLAUDE.md` resynchronisés sur l'arborescence réelle (569 p. et 28 diagrammes re-mesurés, 12 ADR).
+- **2026-07-25** — **retrait du démonstrateur `Borealis-Go/`** et renommage du dossier parent (`1 - Corpus Agentique/` → `1 - Corpus/`), commit `60f57f6` ; `README.md` et `CLAUDE.md` resynchronisés. Décomptes re-mesurés sur pièce et **inchangés** : `Monographie.pdf` **569 p.**, **28 diagrammes** (motif ancré `grep -c '^```mermaid'`).
 
 Les ressources marquées ⚠ (*preview*, specs versionnées, acquisitions annoncées) restent à re-confirmer à la date exacte de citation avant toute diffusion formelle.
 

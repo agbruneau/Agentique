@@ -4,7 +4,7 @@ Guide pour Claude Code (claude.ai/code) **dans ce dossier**.
 
 ## Périmètre de ce fichier
 
-Ce `CLAUDE.md` ne régit que le **volume III**, sous `1 - Corpus Agentique/3 - EntrepriseAgentique/`. Il ne dit rien des autres livrables du dépôt *Agentique* :
+Ce `CLAUDE.md` ne régit que le **volume III**, sous `1 - Corpus/3 - EntrepriseAgentique/` (dossier parent renommé le 25 juillet 2026, `1 - Corpus Agentique/` auparavant, commit `60f57f6`). Il ne dit rien des autres livrables du dépôt *Agentique* :
 
 | Ce que vous cherchez | Où |
 |---|---|
@@ -136,6 +136,17 @@ CA-10 les impose, et ils viennent des neuf écarts de PRD §7.4 — tous constat
 
 ⚠ **Ce qui est interdit ici.** Ne **pas** restaurer les fichiers, ne **pas** modifier quoi que ce soit hors du volume III, ne **pas** réécrire les citations. *Les Vol. I et II ne sont pas sous la charge éditoriale de ce volume* — on ne corrige pas le livrable d'autrui. Le fait est **remonté à l'auteur** ([registre](verification/remontees-gouvernance.md), **R-G-52**) et n'est **pas tranché ici**.
 
+### ⚠ Le démonstrateur `Borealis-Go` a été retiré du dépôt le 25 juillet 2026 — même régime, seconde occurrence
+
+**Constat sur le dépôt, 25 juillet 2026.** Le commit **`60f57f6`** (« restructuration du repo »)
+supprime le dossier `Borealis-Go/` du **Vol. I** en entier — code Go, 12 ADR, PRD, journaux de
+vérification —, et renomme au passage les deux dossiers de tête du dépôt
+(`1 - Corpus Agentique/` → `1 - Corpus/`, `2 - Compendium Agentique/` → `2 - Compendium/`).
+
+**Ce que le volume III y perd.** Il cite « Borealis-Go » **six fois sur cinq fichiers** — mesure prise le 25 juillet 2026 sur l'arbre de travail, **ce fichier-ci exclu** (la consignation compte la chaîne qu'elle écrit, piège déjà rencontré à l'encadré précédent) : `monographie/09-partie-IX/ch-28-instanciation-cloture.md` (×2), `Monographie.md` (assemblage), `prd/PRD.md`, `prd/TOC.md`, `verification/theses-P4-confrontation.md`. Ces renvois sont **exacts et ne sont plus opposables** : le corpus qu'ils désignent ne se lit que dans l'historique git.
+
+⚠ **Le régime est celui de `Synthese Monographie.md`, et il ne se rejoue pas différemment** : ne pas restaurer, ne pas réécrire les citations, ne rien modifier hors du volume III. La leçon de l'encadré précédent vaut telle quelle — *un renvoi exact vers un fichier absent est un renvoi exact ; il cesse seulement d'être opposable.* ⚠ **Et elle se répète une seconde fois en trois jours**, ce qui la déplace : la dépendance d'un volume à des fichiers dont il n'a pas la charge éditoriale n'est pas un accident, c'est une propriété de sa méthode d'héritage. À remonter à l'auteur avec les quinze remontées ouvertes.
+
 ## Divergences volontaires avec le Vol. II — à ne pas uniformiser
 
 Ce volume prolonge l'appareil du Vol. II mais s'en écarte sur quatre points, chacun pour un motif consigné. Les « corriger pour la cohérence » ferait régresser le volume.
@@ -177,7 +188,7 @@ Deux faits datés divergent entre les livrables du dépôt. Le CLAUDE.md racine 
 - **Gouvernance d'AP2** — Vol. I et veille : transfert à la FIDO Alliance le 28 avril 2026, donné pour fait établi. Vol. II (gel postérieur) : aucun transfert documenté, position tenue en quatre endroits concordants et rangée parmi les **ignorances déclarées**. → ch. 9, lot L-06. **L'arbitrage par chronologie est interdit** : le volume le plus récent est ici le plus réservé.
 - **Date de la ligne directrice IA de l'AMF** — Vol. II : 30 mars 2026 (avec dette de vérification déclarée). Veille : 7 avril 2026. → ch. 19. L'entrée en vigueur au 1er mai 2027 est, elle, concordante.
 
-⚠ **P4 n'en a arbitré aucune, et n'a rouvert aucun lot.** Le fichier prévu pour les porter — `commun/faits-partages.md` — **n'existe pas** et n'est pas créé par ce volume (décision, PRD §7.5). ☑ **Les trois renvois du TOC sont repointés vers §7.5** (P0.7). ⚠ Les renvois du **README racine** et du **TOC du Vol. IV** demeurent : **hors périmètre de ce volume, signalés et non corrigés** — on ne corrige pas le renvoi d'un livrable dont on n'a pas la charge éditoriale.
+⚠ **P4 n'en a arbitré aucune, et n'a rouvert aucun lot.** Le fichier prévu pour les porter — `commun/faits-partages.md` — **n'existe pas** et n'est pas créé par ce volume (décision, PRD §7.5). ☑ **Les trois renvois du TOC sont repointés vers §7.5** (P0.7). ☑ Le **README racine** a été repris par son propre mainteneur : il déclare depuis que le fichier n'existe pas et ne sera pas créé (constaté sur pièce le 25 juillet 2026). ⚠ Le renvoi du **TOC du Vol. IV** demeure : **hors périmètre de ce volume, signalé et non corrigé** — on ne corrige pas le renvoi d'un livrable dont on n'a pas la charge éditoriale.
 
 ## Sensibilité temporelle
 
@@ -224,7 +235,7 @@ Chaque pièce porte sa propre date de gel, consignée au registre [`monographie/
 |---|---|
 | Pièces rédigées | **34 sur 34**, au statut **« Rédigé et relu adversarialement »** — avant-propos, ch. 1 à 28, annexes A à E : relues par un relecteur distinct du rédacteur (CA-14) **et corrigées**, l'étape 6 de la boucle qualité tenue dans le pipeline ; **six pièces ont reçu deux relectures** (ch. 22 à 27). **Aucun gabarit ne subsiste.** ⚠ **La distinction rédacteur / relecteur n'est pas constatable sur disque** — réserve 1 de R-G-19, non levée |
 | Volumétrie | **160 890 mots réels** pour **102 500** de cible cumulée — **+57,0 %**. Mesure prise **en une passe unique** par la commande de PRDPlan §1.5, sur les **34 pièces** et non sur un échantillon, **le 24 juillet 2026 après la relecture de révision** — les valeurs antérieures, **160 427** (fin de chaîne P5.3, 22 juillet) puis **160 447** (clôture de P4), sont conservées et périmées au registre de gel ; l'ajout net de 463 mots vient des marquages et déclarations posés par les correctifs, non d'un ajout de matière. Par bloc — cible, réel, écart : avant-propos 2 500 / **3 947** / +57,9 % ; I 11 000 / **13 911** / +26,5 % ; II 12 000 / **18 392** / +53,3 % ; III 9 500 / **13 041** / +37,3 % ; IV 12 000 / **16 982** / +41,5 % ; V 9 000 / **13 176** / +46,4 % ; VI 9 500 / **11 695** / +23,1 % ; VII 7 000 / **11 526** / +64,7 % ; VIII 10 000 / **16 917** / +69,2 % ; IX 11 000 / **21 722** / +97,5 % ; annexes A à E 9 000 / **19 581** / +117,6 %. Par phase : **tronc 87 197 mots (+38,4 %)** pour 63 000 de cible, **appareil 73 693 mots (+86,6 %)** pour 39 500. Le relevé sous forme de table vit au [registre de gel](monographie/99-registre-gel.md) et à [`relecture-P4.md`](verification/relecture-P4.md) §1.2 — une cellule de tableau ne peut pas en porter une. ⚠ **L'écart vient des bornes rétablies, pas d'un ajout de matière : il se documente, il ne s'ampute pas** — *amputer une borne et couper un hors-périmètre sont deux gestes opposés qui produisent le même chiffre*. Remonté sous **R-G-47**, ouverte ; la projection de 140 800 mots inscrite par **R-G-39** est dépassée de **20 090 mots**. ⚠ **Aucun de ces chiffres ne se recopie d'un autre document** : quatre passes parallèles en ont publié des valeurs différentes le 22 juillet 2026, chacune vraie à son instant |
-| Volumétrie cible | **102 500 mots** pour les 34 pièces — **concordante** entre TOC, PRD §6.1 et registre de gel ; **indicative et non normative**. ⚠ Le README du dépôt porte encore « ≈ 100 000 » : réalignement en **P5.3**, avec les autres porteurs |
+| Volumétrie cible | **102 500 mots** pour les 34 pièces — **concordante** entre TOC, PRD §6.1 et registre de gel ; **indicative et non normative**. ☑ Le README du dépôt portait « ≈ 100 000 » ; il porte **≈ 102 500** depuis P5.3 (constaté sur pièce le 25 juillet 2026) |
 | Socle propre | **98 entrées re-mesurées** — F-01 à F-26 (P1, §7.8), F-27 à F-78 (P2, §7.9), F-79 à F-89 (P3, §7.10), **F-90 à F-98 (P4, §7.11)**. Les neuf entrées de §7.11 viennent du lot complémentaire **L-14b**, toutes en **[B]**, chacune dans la **forme corrigée** par le contrôle de bornage de son rapport. ⚠ **F-92 et F-96 portent une dette de vote** |
 | Socle hérité | **33 entrées** — H-01 à H-16 (Vol. II), H-17 à H-33 (Vol. I) — **inchangé** |
 | Lots d'instruction | **15 clos sur 15** — treize par instruction aboutie, **L-15** par échec documenté, **L-14 clos le 21 juillet 2026 par son lot complémentaire L-14b**. **P4 n'a rouvert aucun lot** |
