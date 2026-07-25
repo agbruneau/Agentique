@@ -4,9 +4,7 @@ Guide pour Claude Code (claude.ai/code) **dans ce dossier**.
 
 ## Périmètre de ce fichier
 
-Ce `CLAUDE.md` régit le **dossier `1 - Corpus/`** lui-même : son [`README.md`](README.md) (la synthèse
-consolidée des trois monographies) et les arbitrages de cohérence entre volumes. Il ne régit
-**aucun des trois volumes** — chacun a son propre `CLAUDE.md`, qui prime dans son périmètre.
+Ce `CLAUDE.md` régit le **dossier `1 - Corpus/`** lui-même : son [`README.md`](README.md) (la synthèse consolidée des trois monographies) et les arbitrages de cohérence entre volumes. Il ne régit **aucun des trois volumes** — chacun a son propre `CLAUDE.md`, qui prime dans son périmètre.
 
 | Ce que vous cherchez | Où |
 |---|---|
@@ -25,16 +23,13 @@ consolidée des trois monographies) et les arbitrages de cohérence entre volume
 
 ## Ce que ce dossier contient — et ne contient pas
 
-Le dossier `1 - Corpus/` est un **conteneur** : il ne porte aucun chapitre, aucun socle factuel,
-aucun pipeline de rendu. Il contient :
+Le dossier `1 - Corpus/` est un **conteneur** : il ne porte aucun chapitre, aucun socle factuel, aucun pipeline de rendu. Il contient :
 
 - **Trois sous-dossiers** — un par volume du triptyque (`1 - InteroperabiliteAgentique/`, `2 - OrchestrationAgentique/`, `3 - EntrepriseAgentique/`) ;
 - **Un `README.md`** — la synthèse consolidée des trois monographies ;
 - **Ce `CLAUDE.md`** — les conventions du conteneur.
 
-Aucun livrable rédigé ne vit à ce niveau. Le `README.md` est un **document dérivé** : il
-synthétise les trois monographies mais ne leur ajoute aucun fait, aucune thèse ni aucune
-recommandation qui ne figure déjà dans au moins un volume.
+Aucun livrable rédigé ne vit à ce niveau. Le `README.md` est un **document dérivé** : il synthétise les trois monographies mais ne leur ajoute aucun fait, aucune thèse ni aucune recommandation qui ne figure déjà dans au moins un volume.
 
 ---
 
@@ -42,49 +37,35 @@ recommandation qui ne figure déjà dans au moins un volume.
 
 ### Nature
 
-Le `README.md` de ce dossier est une **synthèse consolidée** des trois monographies, destinée
-au lecteur qui souhaite comprendre le corpus dans son ensemble avant d'entrer dans un volume.
-Il articule les trois thèses, les concepts transversaux, les protocoles et standards, les
-recommandations consolidées et les parcours de lecture.
+Le `README.md` de ce dossier est une **synthèse consolidée** des trois monographies, destinée au lecteur qui souhaite comprendre le corpus dans son ensemble avant d'entrer dans un volume. Il articule les trois thèses, les concepts transversaux, les protocoles et standards, les recommandations consolidées et les parcours de lecture.
 
 ### Règles de rédaction
 
-- **Document dérivé, jamais source.** Le `README.md` ne crée pas de faits : il les extrait
-  des trois monographies. Toute affirmation qui y figure doit être traçable à au moins un volume.
-  Ne jamais y ajouter une thèse, un concept ou une recommandation sans siège dans un volume.
-- **Cohérence avec les volumes.** Les décomptes (pages, pièces, mots, entrées de socle) sont
-  ceux annoncés par chaque volume dans son propre `README.md`. En cas de divergence, le chiffre
-  du volume source fait foi — corriger le `README.md` du corpus, pas celui du volume.
-- **Cohérence avec le `README.md` du dépôt.** Le [`README.md` du dépôt](../README.md) porte
-  ses propres décomptes, re-mesurés sur pièce. Les deux fichiers peuvent diverger de formulation
-  mais pas de chiffres : si un décompte change dans un volume, le reporter dans les deux
-  `README.md` (dépôt et corpus).
-- **Pas de doublon avec le `README.md` du dépôt.** Le `README.md` du dépôt situe les volumes,
-  traite les divergences factuelles, l'ordre de lecture, les pipelines de rendu et la maintenance.
-  Le `README.md` du corpus se concentre sur le **contenu intellectuel** : thèses, concepts,
-  protocoles, recommandations. Ne pas y dupliquer les sections de maintenance, de construction
-  PDF ou de divergences factuelles.
-- **Langue.** Français canadien soutenu, ton professionnel et neutre — mêmes conventions que
-  le reste du dépôt. Terminologie technique anglaise entre parenthèses à la première occurrence.
+- **Document dérivé, jamais source.** Le `README.md` ne crée pas de faits : il les extrait des trois monographies. Toute affirmation qui y figure doit être traçable à au moins un volume. Ne jamais y ajouter une thèse, un concept ou une recommandation sans siège dans un volume.
+- **Cohérence avec les volumes.** Les décomptes (pages, pièces, mots, entrées de socle) sont ceux annoncés par chaque volume dans son propre `README.md` ou `CLAUDE.md`. En cas de divergence, le chiffre du volume source fait foi — corriger le `README.md` du corpus, pas celui du volume.
+- **Cohérence avec le `README.md` du dépôt.** Le [`README.md` du dépôt](../README.md) porte ses propres décomptes, re-mesurés sur pièce. Les deux fichiers peuvent diverger de formulation mais pas de chiffres : si un décompte change dans un volume, le reporter dans les deux `README.md` (dépôt et corpus).
+- **Pas de doublon avec le `README.md` du dépôt.** Le `README.md` du dépôt situe les volumes, traite les divergences factuelles, l'ordre de lecture, les pipelines de rendu et la maintenance. Le `README.md` du corpus se concentre sur le **contenu intellectuel** : thèses, concepts, protocoles, recommandations. Ne pas y dupliquer les sections de maintenance, de construction PDF ou de divergences factuelles.
+- **Langue.** Français canadien soutenu, ton professionnel et neutre — mêmes conventions que le reste du dépôt. Terminologie technique anglaise entre parenthèses à la première occurrence.
 - **Diagrammes Mermaid.** Le `README.md` contient des diagrammes Mermaid pour visualiser les relations entre volumes et le flux identitaire. Ils sont rendus nativement par GitHub ; aucun pré-rendu n'est nécessaire.
 
 ### Décomptes à tenir synchronisés
 
-Les chiffres suivants sont annoncés dans le `README.md` du corpus et doivent être **re-mesurés**
-(jamais recopiés) à chaque modification d'un volume. Sources de vérité, par ordre :
+Les chiffres suivants sont annoncés dans le `README.md` du corpus et doivent être **re-mesurés** (jamais recopiés) à chaque modification d'un volume. Sources de vérité, par ordre :
 
 | Décompte | Source de vérité | Sièges dérivés |
 |---|---|---|
 | Pages du Vol. I (569 p.) | `Monographie.pdf` du Vol. I | README corpus, README dépôt |
 | Pages du Vol. II (387 p.) | `Monographie.pdf` du Vol. II | README corpus, README dépôt |
 | Pages du Vol. III (427 p.) | `Monographie.pdf` du Vol. III | README corpus, README dépôt |
+| Mots du Vol. I (≈ 263 600) | `Monographie.md` du Vol. I (re-mesuré, aucun `CLAUDE.md` ne le porte) | README corpus, README dépôt |
 | Mots du Vol. II (92 059) | `CLAUDE.md` du Vol. II | README corpus, README dépôt |
 | Mots du Vol. III (≈ 160 900) | `CLAUDE.md` du Vol. III | README corpus, README dépôt |
 | Pièces du Vol. II (29) | `monographie/` du Vol. II | README corpus, README dépôt |
 | Pièces du Vol. III (34) | `monographie/` du Vol. III | README corpus, README dépôt |
-| Entrées de socle Vol. II (46) | `prd/PRD.md` du Vol. II | README corpus, README dépôt |
-| Entrées de socle Vol. III (98 + 33 héritées) | `prd/PRD.md` du Vol. III | README corpus, README dépôt |
+| Entrées de socle Vol. II (46) | `prd/PRD.md` du Vol. II (F-01 à F-48, F-12–F-14 non attribués, + F-23b) | README corpus, README dépôt |
+| Entrées de socle Vol. III (98 propres + 33 héritées) | `prd/PRD.md` du Vol. III (F-01 à F-98 propres + H-01 à H-33) | README corpus, README dépôt |
 | Diagrammes Mermaid Vol. I (28) | `grep -c '^```mermaid' Monographie.md` (motif **ancré**) | README corpus, README dépôt |
+| **Total du corpus (1 383 p. / ≈ 516 500 mots / 70 pièces / 144 entrées codifiées)** | Re-mesure combinée | README corpus, README dépôt |
 
 > [!NOTE]
 > **Règle de comptage des diagrammes**
@@ -96,9 +77,7 @@ Les chiffres suivants sont annoncés dans le `README.md` du corpus et doivent ê
 
 ### Divergences de conventions entre volumes — ne pas uniformiser
 
-Les volumes portent des conventions qui **divergent volontairement**. Les corriger « pour la
-cohérence » casserait des références croisées ou l'historique d'un volume. Voir le
-[`CLAUDE.md` du dépôt](../CLAUDE.md) pour le tableau complet.
+Les volumes portent des conventions qui **divergent volontairement**. Les corriger « pour la cohérence » casserait des références croisées ou l'historique d'un volume. Voir le [`CLAUDE.md` du dépôt](../CLAUDE.md) pour le tableau complet.
 
 | | Vol. I | Vol. II | Vol. III |
 |---|---|---|---|
@@ -114,42 +93,32 @@ cohérence » casserait des références croisées ou l'historique d'un volume. 
 
 ### États au 25 juillet 2026
 
-| Volume | État | Pages |
-|---|---|---|
-| **Vol. I** | Rédaction terminée, PDF final | **569 p.** |
-| **Vol. II** | Publié (millésime éditorial `mono-v1.0`, étiquette git **non posée**) | **387 p.** |
-| **Vol. III** | Rédigé, **non publiable** — 15 remontées ouvertes (R-G-43 à R-G-57) | **427 p.** |
+| Volume | État | Pages | Mots |
+|---|---|---|---|
+| **Vol. I** | Rédaction terminée, PDF final | **569 p.** | **≈ 263 600** |
+| **Vol. II** | Publié (millésime éditorial `mono-v1.0`, étiquette git **non posée**) | **387 p.** | **92 059** |
+| **Vol. III** | Rédigé, **non publiable** — 15 remontées ouvertes (R-G-43 à R-G-57) | **427 p.** | **≈ 160 900** |
 
 ### Filiation et héritage entre volumes
 
 Le Vol. III hérite du socle des deux précédents, à deux régimes distincts :
 
 - **Du Vol. II** : 16 entrées, à niveau conservé (même méthode de vérification).
-- **Du Vol. I** : 17 entrées, abaissées à [C] (la vérification du Vol. I porte sur les
-  références, non sur le contenu des affirmations).
+- **Du Vol. I** : 17 entrées, abaissées à [C] (la vérification du Vol. I porte sur les références, non sur le contenu des affirmations).
 
-⚠ **Ne pas confondre les deux régimes d'héritage** : une entrée du Vol. II conserve son [A]/[B]/[C] ;
-une entrée du Vol. I entre systématiquement en [C].
+⚠ **Ne pas confondre les deux régimes d'héritage** : une entrée du Vol. II conserve son [A]/[B]/[C] ; une entrée du Vol. I entre systématiquement en [C].
 
 ---
 
 ## Règles transversales
 
-Ces rules valent pour le dossier `1 - Corpus/` et son `README.md`. Les règles communes à
-**tout le dépôt** sont au [`CLAUDE.md` du dépôt](../CLAUDE.md) ; celles de chaque volume, dans
-son propre `CLAUDE.md`.
+Ces règles valent pour le dossier `1 - Corpus/` et son `README.md`. Les règles communes à **tout le dépôt** sont au [`CLAUDE.md` du dépôt](../CLAUDE.md) ; celles de chaque volume, dans son propre `CLAUDE.md`.
 
-- **PDF versionné avec sa source.** Vaut pour les trois volumes : régénérer et pousser le `.pdf`
-  avec le `.md` — jamais la source seule.
-- **Décomptes re-mesurés, jamais recopiés.** Un même chiffre vit à plusieurs endroits (README du
-  dépôt, README du corpus, README et CLAUDE.md du volume, PRD, TOC). Les mettre à jour ensemble.
-- **Divergences factuelles signalées, non arbitrées.** Deux faits datés divergent entre la
-  veille et le Vol. II (date de la ligne directrice IA de l'AMF, gouvernance d'AP2) : le
-  [`README.md` du dépôt](../README.md) les documente. **Ne pas les uniformiser en silence** ici.
-- **Lacunes exposées, non comblées.** Aucune lacune déclarée d'un volume ne se comble par une
-  source de moindre qualité — dans aucun document, y compris le `README.md` du corpus.
-- **Langue.** Français canadien soutenu ; ton professionnel et neutre. Terminologie technique
-  anglaise entre parenthèses à la première occurrence ; citations verbatim en langue originale.
+- **PDF versionné avec sa source.** Vaut pour les trois volumes : régénérer et pousser le `.pdf` avec le `.md` — jamais la source seule.
+- **Décomptes re-mesurés, jamais recopiés.** Un même chiffre vit à plusieurs endroits (README du dépôt, README du corpus, README et CLAUDE.md du volume, PRD, TOC). Les mettre à jour ensemble.
+- **Divergences factuelles signalées, non arbitrées.** Deux faits datés divergent entre la veille et le Vol. II (date de la ligne directrice IA de l'AMF, gouvernance d'AP2) : le [`README.md` du dépôt](../README.md) les documente. **Ne pas les uniformiser en silence** ici.
+- **Lacunes exposées, non comblées.** Aucune lacune déclarée d'un volume ne se comble par une source de moindre qualité — dans aucun document, y compris le `README.md` du corpus.
+- **Langue.** Français canadien soutenu ; ton professionnel et neutre. Terminologie technique anglaise entre parenthèses à la première occurrence ; citations verbatim en langue originale.
 
 ---
 
@@ -181,9 +150,12 @@ python -c "import pypdf; [print(f'{f}: {len(pypdf.PdfReader(f).pages)} p.') for 
 # En Bash / Linux / macOS :
 grep -c '^```mermaid' "1 - InteroperabiliteAgentique/Monographie.md"
 
-# En Python (cross-platform Windows / Linux / macOS) :
-python -c "import sys; sys.stdout.reconfigure(encoding='utf-8'); print(sum(1 for line in open('1 - InteroperabiliteAgentique/Monographie.md', encoding='utf-8') if line.strip().startswith('\x60\x60\x60mermaid')))"
+# En Python (cross-platform Windows PowerShell / Linux / macOS) :
+python -c "import sys; sys.stdout.reconfigure(encoding='utf-8'); print(sum(1 for line in open('1 - InteroperabiliteAgentique/Monographie.md', encoding='utf-8') if line.startswith(chr(96)*3 + 'mermaid')))"
 
 # Compter les pièces des Vol. II (29) et Vol. III (34)
 python -c "import glob, os; print('Vol. II pièces:', sum(1 for f in glob.glob('2 - OrchestrationAgentique/monographie/**/*.md', recursive=True) if not os.path.basename(f).startswith(('README', '99-')))); print('Vol. III pièces:', sum(1 for f in glob.glob('3 - EntrepriseAgentique/monographie/**/*.md', recursive=True) if not os.path.basename(f).startswith(('README', '99-'))))"
+
+# Mesurer le nombre total de mots du corpus (Python cross-platform)
+python -c "import glob, re, os; print('Vol. I mots:', len(re.findall(r'\w+', open('1 - InteroperabiliteAgentique/Monographie.md', encoding='utf-8').read())))"
 ```

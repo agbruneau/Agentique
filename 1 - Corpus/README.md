@@ -27,7 +27,7 @@ sont complémentaires et forment un triptyque cohérent :
 | **Dossier** | [`1 - InteroperabiliteAgentique/`](1%20-%20InteroperabiliteAgentique/) | [`2 - OrchestrationAgentique/`](2%20-%20OrchestrationAgentique/) | [`3 - EntrepriseAgentique/`](3%20-%20EntrepriseAgentique/) |
 | **Thèse** | *Autonomie graduée sous contrôle de finalité* | *Autonomie encadrée (framed autonomy)* | *La confiance ne se décrète pas, elle se fabrique* |
 | **Portée** | Mondiale (UE, É.-U., R.-U., Asie) | Canada-Québec (cadre réglementaire) | Organisation et cycle de vie (NHI, AgentOps) |
-| **Volumétrie** | **569 p.** (7 chapitres + Annexe B) | **387 p.** (29 pièces, 92 059 mots) | **427 p.** (34 pièces, ≈ 160 900 mots) |
+| **Volumétrie** | **569 p.** (7 chapitres + Annexe B, ≈ 263 600 mots) | **387 p.** (29 pièces, 92 059 mots) | **427 p.** (34 pièces, ≈ 160 900 mots) |
 | **Méthode** | Formalisme d'ingénierie (ArchiMate 4, ADS) | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié + socle propre (98 entrées) |
 | **Gel** | Juin 2026 | 16–17 juillet 2026 | Hérite des deux gels + pièces propres |
 
@@ -127,7 +127,7 @@ puisse démontrer la teneur devant un tiers.
 
 ### Rigueur méthodologique
 
-- **Socle factuel** de 46 entrées (F-01 à F-48), cotées par niveau de preuve :
+- **Socle factuel** de 46 entrées (F-01 à F-48 ; F-12 à F-14 non attribués ; plus F-23b), cotées par niveau de preuve :
   **[A]** vote adversarial 3-0 > **[B]** source primaire extraite > **[C]** repérage.
 - **Huit garde-fous** de formulation (R-1 à R-8).
 - **Onze lacunes** exposées plutôt que comblées.
@@ -313,13 +313,13 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 
 ## Volumétrie du corpus
 
-| | Vol. I | Vol. II | Vol. III | **Total** |
+| | Vol. I | Vol. II | Vol. III | **Total du corpus** |
 |---|---|---|---|---|
-| **Pages** | 569 | 387 | 427 | **≈ 1 383 p.** |
-| **Mots** | — | 92 059 | ≈ 160 900 | **> 250 000** |
-| **Pièces** | 7 chap. + Annexe B | 29 (24 chap. + annexes) | 34 (28 chap. + annexes) | **≈ 70** |
-| **Socle factuel** | — | 46 entrées (F-01–F-48) | 98 entrées (F-01–F-98) + 33 héritées | **> 140 entrées** |
-| **Diagrammes** | 28 Mermaid | — | — | **28+** |
+| **Pages** | 569 | 387 | 427 | **1 383 p.** |
+| **Mots** | ≈ 263 600 | 92 059 | ≈ 160 900 | **≈ 516 500 (> 500 000)** |
+| **Pièces** | 7 chap. + Annexe B | 29 (24 chap. + annexes) | 34 (28 chap. + annexes) | **70 pièces rédigées** |
+| **Socle factuel** | Vérification adverse | 46 entrées (F-01–F-48) | 98 entrées (F-01–F-98) + 33 héritées | **144 entrées codifiées (46 + 98)** |
+| **Diagrammes** | 28 Mermaid | — | — | **28+ diagrammes** |
 
 ---
 
@@ -339,17 +339,17 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 1 - Corpus/
 ├── README.md                                ← ce fichier (synthèse consolidée)
 ├── CLAUDE.md                                ← guide pour Claude Code dans ce dossier
-├── 1 - InteroperabiliteAgentique/           Vol. I (569 p.)
+├── 1 - InteroperabiliteAgentique/           Vol. I (569 p., ≈ 263 600 mots)
 │   ├── Chapitres/                             7 chapitres + 7 bibliographies + Annexe B (ADS)
 │   ├── Monographie.md / .pdf                  assemblage
 │   └── build/                                 pipeline FESP (Mermaid → Pandoc → Typst)
-├── 2 - OrchestrationAgentique/              Vol. II (387 p.)
+├── 2 - OrchestrationAgentique/              Vol. II (387 p., 92 059 mots)
 │   ├── monographie/                           29 pièces (parties I-VII, annexes, registre des gels)
 │   ├── prd/                                   PRD, PRDPlan, TOC, audit — gouvernance
 │   ├── verification/                          revalidations et grille de conformité
 │   ├── build/                                 assemblage + pipeline Pandoc → Typst
 │   └── Monographie.md / .pdf                  assemblage
-└── 3 - EntrepriseAgentique/                 Vol. III (427 p.)
+└── 3 - EntrepriseAgentique/                 Vol. III (427 p., ≈ 160 900 mots)
     ├── monographie/                           34 pièces rédigées + registre des gels
     ├── prd/                                   PRD v1.3, TOC v0.8, PRDPlan v0.5 — gouvernance
     ├── verification/                          30 rapports de vérification
