@@ -1,9 +1,0 @@
-# Normalisation des fins de ligne
-* text=auto eol=lf
-*.go text eol=lf
-*.md text eol=lf
-*.sh text eol=lf
-*.ps1 text eol=crlf
-
-# Git LFS pour les gros lots de fixtures (activé en M1.1 si > 100 Mo)
-# test/fixtures/history.jsonl filter=lfs diff=lfs merge=lfs -text
