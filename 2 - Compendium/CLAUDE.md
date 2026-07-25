@@ -28,6 +28,8 @@ faits touchés) ou y déclare le retard en tête.
 
 ⚠ **`audit.md` n'est pas un quatrième livrable.** C'est un rapport de couverture daté (24 juillet 2026), **sans autorité** : ni source, ni socle, ni décision. Ne jamais le citer à l'appui d'un énoncé ni s'en servir pour modifier le plan — ses constats retenus ont été portés là où ils font foi (risque 15 du TOC, décision D-7 du PRD, passe v0.15) ; ce qu'il porte encore n'a pas été retenu. Un audit ultérieur suit la même règle : il **remonte**, il ne tranche pas.
 
+⚠ **`TOCAll.md` n'est pas non plus un livrable.** Copie de travail de [`PRD/TOC.md`](PRD/TOC.md) (créée le 25 juillet 2026), augmentée pour le seul chapitre 1 d'une table des matières détaillée dérivée de `Monographie.md` §1.0-1.6 (Vol. I) — chaque sous-section porte sa provenance. **Elle n'a pas d'autorité propre** : en cas d'écart avec la ligne Fusion du ch. 1 dans `PRD/TOC.md`, celle-ci prime. Elle n'est **pas couverte par `check-toc.py`** (hors de son domaine, `PRD/`) et se **désynchronise** à la prochaine passe du TOC si elle n'est pas reportée à la main. Si l'exercice s'étend aux 56 autres chapitres, le repenser comme annexe du TOC plutôt que comme copie parallèle.
+
 **Pas de pipeline PDF ici.** Les Vol. I, II et III ont chacun leur copie du FESP — celle du Vol. III
 créée le 23 juillet 2026, sur demande de l'auteur ; en créer une pour ce dossier serait une
 **quatrième** copie, et il n'y a rien à rendre : aucun chapitre n'est rédigé. ⚠ *L'interdit initial
