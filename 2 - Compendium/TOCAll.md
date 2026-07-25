@@ -1307,11 +1307,71 @@ Sections : gouvernance et conformité d'entreprise (AI Act, ISO 42001, RGPD, sec
 Sections : positionnement du vertical et rappel des quatre durcisseurs (posés à l'avant-propos) ; standards de données financières (substrat sémantique) ; risque-modèle, auditabilité, explicabilité ; sécurité, fraude, AML-KYC et identité d'agent ; données, résidence et souveraineté.
 *Fusion : Vol. I* Monographie *§5.1-5.6 **hors §5.3** (maillage réglementaire transversal), consolidé au ch. 34 — double affectation relevée à la collation contre les volumes complets. ⚠ Le **§5.1.4 est le SIÈGE déclaré** de la double-qualification (l'agent comme modèle *et* comme tiers TIC) : il se traite ici en entier, le ch. 34 ne faisant que l'instancier, comme le §5.3 lui-même le pose. Le §5.0 (orientation, durcisseurs, convention de sourçage) est **acheminé à l'avant-propos**, dont il fournit le mode d'emploi de lecture. Le §5.5.4 (KYA) est déjà consolidé au ch. 19 — les §5.5.1-5.5.3 (triade létale, fraude, AML-KYC) restent ici ; cadrage financier transverse.*
 
+#### Table des matières détaillée du chapitre 35
+
+*Dérivée du texte rédigé de `Monographie.md` §5.1-5.6 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 35.1 — Le vertical financier : positionnement**
+  - 35.1.1 Irréversibilité et finalité du règlement comme contrainte de conception — *← §5.1.1 (**SIÈGE du patron**)*
+  - 35.1.2 Capital, risque systémique et agents corrélés — *← §5.1.2 (**SIÈGE du risque systémique**)*
+  - 35.1.3 Confiance, responsabilité et conduite — *← §5.1.3*
+  - 35.1.4 **La double-qualification : l'agent comme MODÈLE et comme TIERS TIC** — *← §5.1.4 (**SIÈGE du patron-signature**).* ⚠ **Se traite ici en entier** : le ch. 34 ne fait que l'instancier, comme le §5.3 le pose lui-même.
+- **§ 35.2 — Standards de données financières : le substrat sémantique**
+  - 35.2.1 Le découpage en trois couches : messagerie / modèle-capacité / ontologie — *← §5.2.1*
+  - 35.2.2 ISO 20022 : la bascule de novembre 2025 comme événement structurant — *← §5.2.2 ; détail au ch. 37*
+  - 35.2.3 BIAN, FIBO et l'ontologie comme garde-fou déterministe — *← §5.2.3*
+  - 35.2.4 CDM/DRR et FIX Orchestra : du standard de donnée au standard de **logique exécutable** — *← §5.2.4*
+  - 35.2.5 ACORD, FDX et MISMO — *← §5.2.5 ; le cadre bancaire est au ch. 36*
+  - 35.2.6 État réel des serveurs MCP et connecteurs sectoriels — *← §5.2.6 (**SIÈGE du critère anti-hype**)*
+- **§ 35.3 — Risque-modèle, auditabilité et explicabilité appliqués aux agents**
+  - 35.3.1 « Si l'agent décide, c'est un modèle » : l'inventaire comme premier contrôle — *← §5.4.1 ; pont vers E-23, ch. 29*
+  - 35.3.2 Piste d'audit infalsifiable et *e-discovery* réglementaire — *← §5.4.2*
+  - 35.3.3 Le standard ouvert de référence : FINOS AI Governance Framework v2.0 — *← §5.4.3*
+  - 35.3.4 Ségrégation des tâches, *four-eyes* et indépendance anti-collusion — *← §5.4.4 (**SIÈGE du four-eyes**)*
+- **§ 35.4 — Sécurité, fraude, AML-KYC et identité d'agent**
+  - 35.4.1 La triade létale rencontre l'irréversibilité financière — *← §5.5.1 ; la triade est posée au ch. 20*
+  - 35.4.2 Fraude amplifiée par l'IA : *deepfakes*, *APP fraud* et rails instantanés — *← §5.5.2*
+  - 35.4.3 AML/KYC exécutés par des agents : le cas d'usage tête de pont — *← §5.5.3 (**SIÈGE du patron AML**)*
+  ⚠ *Le §5.5.4 (**SIÈGE unique du KYA**) est **déjà consolidé au ch. 19** et n'est pas repris ici.*
+- **§ 35.5 — Données, résidence et souveraineté en finance régulée**
+  - 35.5.1 La résidence doit couvrir l'inférence, les *embeddings*, les traces **et** les journaux d'audit — *← §5.6.1*
+  - 35.5.2 Offres de cloud souverain et risque de concentration — *← §5.6.2*
+
+**Table de couverture (décision 6)**
+
+| Source Vol. I *Monographie* | Destination | Régime |
+| --- | --- | --- |
+| §5.0 | **avant-propos** | acheminé (durcisseurs, patron directeur, sourçage) |
+| §5.1 | § 35.1 | condensé — §5.1.4 en entier, siège |
+| §5.2 | § 35.2 | condensé |
+| §5.3 | ch. 34 | hors périmètre (maillage réglementaire) |
+| §5.4 | § 35.3 | condensé |
+| §5.5.1-5.5.3 | § 35.4 | condensé |
+| §5.5.4 | ch. 19 | hors périmètre (siège du KYA) |
+| §5.6 | § 35.5 | condensé |
+
 ### Chapitre 36 — Le cadre des services bancaires axés sur le consommateur
 
 **Thèse** : le cadre est légiféré (C-15), supervisé par la Banque du Canada, réglementairement en cours — et son standard technique n'est **pas** désigné (fait négatif vérifié).
 Sections : de 2024 à C-15 (mobilité des données) ; supervision Banque du Canada, accréditation, registre ; règlement prépublié (27 juin 2026, entrée échelonnée) ; le standard technique (organisme à désigner par arrêté — FDX = anticipation d'industrie).
 *Fusion : Vol. II ch. 14. Socle : F-11, F-23, F-34, F-35. Garde-fou : R-5. **Lacune héritée portée : PRD Vol. II §10.11** — F-11 attribue au Budget fédéral 2025 un fait structurant du cadre sans le dater ; lacune ouverte le 17 juillet 2026 à la construction de la frise, donc **après** la table de couverture du TOC du Vol. II, ce qui explique qu'elle en soit absente ; renvoi Annexe D.*
+
+#### Table des matières détaillée du chapitre 36
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 14 (Vol. II) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 36.1 — De la loi partielle de 2024 à C-15 : abrogation, remplacement, mobilité des données** — *← Vol. II §14.1.*
+- **§ 36.2 — La Banque du Canada, l'accréditation et le registre** — *← Vol. II §14.2 ; le registre d'agents du ch. 16 en est distinct — ne pas les confondre.*
+- **§ 36.3 — Le règlement prépublié : ce qui est écrit, ce qui peut encore changer** — *← Vol. II §14.3 (prépublication du 27 juin 2026, entrée échelonnée).*
+- **§ 36.4 — Le standard technique : un fait négatif, **vérifié*** — *← Vol. II §14.4.* ⚠ L'organisme reste **à désigner par arrêté** ; **FDX est une anticipation d'industrie**, non une désignation. **Garde-fou R-5.** Distinguer ce *fait négatif vérifié* de la simple absence de documentation (échelle R-14 du Vol. III).
+
+⚠ **Lacune héritée portée (PRD Vol. II §10.11)** : F-11 attribue au **Budget fédéral 2025** un fait structurant du cadre **sans le dater**. Lacune ouverte le 17 juillet 2026 à la construction de la frise — donc **après** la table de couverture du TOC du Vol. II, ce qui explique qu'elle en soit absente ; renvoi Annexe D.
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §14.1-14.4 | § 36.1-36.4 | condensé |
 
 ### Chapitre 37 — ISO 20022 : Lynx accompli, RTR visé
 
@@ -1319,11 +1379,51 @@ Sections : de 2024 à C-15 (mobilité des données) ; supervision Banque du Cana
 Sections : Lynx (fin de coexistence MT/MX, 22 nov. 2025, alignée CBPR+) ; RTR (chronologie vérifiée, partenaires, cible T4 2026 ; ⚠ **formulation imposée — « la cible a été successivement reportée : 2019, puis 2022, puis 2023, puis 2026 » : ce sont quatre *cibles successives*, non quatre reports ni les dates auxquelles les reports ont été décidés** — PRDPlan Vol. II §4.4) ; By-law no 10 ; ce que la couche sémantique change — et ce que le socle n'en dit pas.
 *Fusion : Vol. II ch. 15. Socle : F-28, F-29, F-45. Garde-fous : R-4 (la cible T4 2026 *est* officiellement annoncée) et réserve F-29 (ne jamais écrire « lancé » ni « en production »).*
 
+#### Table des matières détaillée du chapitre 37
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 15 (Vol. II) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 37.1 — Lynx : une migration achevée, et ce que cela veut dire** — *← Vol. II §15.1 ; fin de coexistence MT/MX le 22 novembre 2025, alignée CBPR+.*
+- **§ 37.2 — RTR : une chronologie vérifiée, une cible annoncée, une cible reportée** — *← Vol. II §15.2.*
+  ⚠ **Formulation imposée (PRDPlan Vol. II §4.4)** : écrire « la cible a été successivement reportée : 2019, puis 2022, puis 2023, puis 2026 » — ce sont **quatre cibles successives**, ni quatre reports, ni les dates auxquelles les reports ont été décidés.
+  ⚠ **Garde-fou R-4** : la cible T4 2026 *est* officiellement annoncée — l'attribuer, ne pas l'affirmer au futur catégorique. ⚠ **Réserve F-29** : ne **jamais** écrire « lancé » ni « en production ».
+- **§ 37.3 — By-law no 10 : l'instrument juridique précède le rail** — *← Vol. II §15.3.*
+- **§ 37.4 — Ce que la couche sémantique commune change — et ce que le socle n'en dit pas** — *← Vol. II §15.4 ; le substrat sémantique est au ch. 35 § 35.2, le flux instancié au ch. 50.*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §15.1-15.4 | § 37.1-37.4 | condensé |
+
 ### Chapitre 38 — Les sous-domaines financiers : banque, assurance, patrimoine
 
 **Thèse** : l'agentique se décline différemment selon le sous-domaine — bancaire, IARD, assurance de personne, gestion de patrimoine, services TI financiers — chacun avec sa maturité et ses points de durcissement propres.
 Sections : bancaire (détail, gros, paiements, crédit, core banking) ; assurance dommage (IARD/P&C) ; assurance de personne (vie & santé) ; gestion de patrimoine & d'actifs ; services TI dans le domaine financier ; synthèse par sous-domaine (études de cas datées, bancs d'essai sectoriels, questions ouvertes, bacs à sable réglementaires) ; **synthèse et transition du bloc financier** (Vol. I *Monographie* §5.14).
 *Fusion : Vol. I* Monographie *§5.7-5.11 + §5.12.4-5.12.7 + §5.14 (synthèse de chapitre — **rattachement corrigé en v0.3** : le §5.14 est la clôture du ch. 5, non un développement sur les paiements agentiques). Les §5.12.1-5.12.3 (architecture de référence, maturité, grille de décision) sont consolidés au ch. 47 ; le §5.13 (interop B2B, commerce et paiements agentiques) au ch. 40.*
+
+#### Table des matières détaillée du chapitre 38
+
+*Dérivée du texte rédigé de `Monographie.md` §5.7-5.12 et §5.14 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 38.1 — Bancaire : détail, gros, paiements, crédit, *core banking*** — *← §5.7.1-5.7.7 : tri « productivité assistée » vs « autonomie transactionnelle » ; copilotes employés et revirement HITL ; KYC/AML et crime financier ; crédit et octroi (haut-risque AI Act 5(b), origination hypothécaire) ; paiements temps réel et irréversibilité ; encapsulation du core et du mainframe COBOL ; banque ouverte — l'agent comme destinataire accrédité (cadre au ch. 36).*
+- **§ 38.2 — Assurance dommage (IARD / P&C)** — *← §5.8.1-5.8.4 : le tournant ACORD-MCP ; les PAS/core comme plateformes d'agents — « agent-dans-le-cœur » vs « cœur-comme-outil » (**SIÈGE des plateformes P&C**) ; sinistres et fraude, chaîne FNOL → règlement → subrogation ; souscription, tarification, distribution, télématique.*
+- **§ 38.3 — Assurance de personne (vie & santé)** — *← §5.9.1-5.9.5 : souscription accélérée comme chaîne d'orchestration régulée ; « donnée de santé comme contexte d'agent » (FHIR/HL7 + MCP) ; prestations et* prior authorization *; distribution, conseil, rentes ; régime propre — haut-risque, équité/biais, donnée sensible.*
+- **§ 38.4 — Gestion de patrimoine et d'actifs** — *← §5.10.1-5.10.7 : copilote du conseiller comme orchestrateur d'interop ; architecture fédérée à registre de plugins ; plateformes wealthtech ;* robo-advisor *classique vs agent LLM (**désambiguïsation impérative**) ; cadre fiduciaire,* suitability *et explicabilité ; trading et recherche augmentée ; opérations* buy-side.
+- **§ 38.5 — Services TI dans le domaine financier** — *← §5.11.1-5.11.6 : résilience opérationnelle (*exit-by-design*, concentration) ; modernisation du core, le serveur MCP comme façade gouvernée du* legacy *; AI gateway et iPaaS régulés ; identité des agents et NHI en finance (doctrine au Livre III) ; cloud souverain et résidence ; observabilité et FinOps réglementaire (discipline au Livre VII).*
+- **§ 38.6 — Synthèse par sous-domaine** — *← §5.12.4-5.12.7 : études de cas datées (tableau-synthèse) ; bancs d'essai sectoriels — la fiabilité de* workflow *prime sur le raisonnement ; questions ouvertes propres à la finance ; bacs à sable réglementaires.*
+- **§ 38.7 — Synthèse et transition du bloc financier** — *← §5.14.1-5.14.4 : le patron directeur ; la signature du vertical (double-qualification, **siège au ch. 35 § 35.1.4**) ; les standards de données comme garde-fou déterministe ; l'horizon réglementaire 2026-2027.*
+  ⚠ **Rattachement corrigé en v0.3** : le §5.14 est la **clôture du ch. 5**, non un développement sur les paiements agentiques — les v0.1-v0.2 l'acheminaient au chapitre prospectif AP2.
+
+**Table de couverture (décision 6)**
+
+| Source Vol. I *Monographie* | Destination | Régime |
+| --- | --- | --- |
+| §5.7-5.11 | § 38.1-38.5 | condensé |
+| §5.12.1-5.12.3 | ch. 47 | hors périmètre (architecture, maturité, grille) |
+| §5.12.4-5.12.7 | § 38.6 | condensé |
+| §5.13 | ch. 40 | hors périmètre (interop B2B, commerce) |
+| §5.14 | § 38.7 | condensé — rattachement corrigé en v0.3 |
 
 ### Chapitre 39 — Études de cas : la production agentique canadienne (2025-2026)
 
@@ -1331,11 +1431,57 @@ Sections : bancaire (détail, gros, paiements, crédit, core banking) ; assuranc
 Sections : TD (Layer 6, pré-adjudication RESL) ; Scotiabank (AIDox ; consortium Agentic Control Plane) ; RBC (AI Group, FINOS) ; Manuvie (runtime Akka, Global CAIO) ; Desjardins (plan 2026-2029) ; CIBC (assistive — ne pas surqualifier) ; Intact (~600 modèles, sans terminologie agentique) ; BMO et Sun Life (élevés en P0) ; gouvernances comparées et code de conduite volontaire.
 *Fusion : Vol. II ch. 17 (conservé intact). Socle : F-17 à F-23b (F-18, F-19, F-20, F-21 et F-22 à nommer un à un à la rédaction, la plage seule ne les désignant pas), F-30, F-31, F-47, F-48. Garde-fous : **PRD Vol. II §7.5** (métriques institutionnelles auto-déclarées, attribution à chaque occurrence), R-8. **Lacune héritée portée : PRD Vol. II §10.2** — réduite après P0, mais résidus [C] et absence documentée de sources primaires pour la BNC subsistent, en encadrés.*
 
+#### Table des matières détaillée du chapitre 39
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 17 (Vol. II) le 25 juillet 2026 — **chapitre conservé intact**. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 39.1 — TD : la pré-adjudication hypothécaire, ou l'agentique dans la chaîne d'octroi** — *← Vol. II §17.1 (Layer 6).*
+- **§ 39.2 — Scotiabank : AIDox, ou le volume comme terrain d'expérimentation** — *← Vol. II §17.2.* ⚠ Le consortium *Agentic Control Plane* relève de la **branche (b) de R-8** — ne jamais l'agréger aux trois autres emplois du sigle (encadré au ch. 7).
+- **§ 39.3 — RBC : la structure avant l'application** — *← Vol. II §17.3 (AI Group, FINOS).*
+- **§ 39.4 — Manuvie : le *runtime* nommé, la cible chiffrée** — *← Vol. II §17.4 (Akka, Global CAIO).*
+- **§ 39.5 — Desjardins : la stratégie avant le système** — *← Vol. II §17.5 (plan 2026-2029).*
+- **§ 39.6 — CIBC : ce que le communiqué ne dit pas** — *← Vol. II §17.6.* ⚠ **Assistif — ne pas surqualifier.**
+- **§ 39.7 — Intact : l'industrialisation sans le vocabulaire** — *← Vol. II §17.7 (~600 modèles, sans terminologie agentique).*
+- **§ 39.8 — BMO, Sun Life, Banque Nationale : la frontière du documentable** — *← Vol. II §17.8 ; BMO et Sun Life élevés en P0 (F-47, F-48).* ⚠ **Lacune héritée portée (PRD Vol. II §10.2)** : réduite après P0, mais **résidus [C] et absence documentée de sources primaires pour la BNC** subsistent — en encadrés, non comblés.
+- **§ 39.9 — Gouvernances comparées : ce que cinq dispositifs ont en commun** — *← Vol. II §17.9 ; code de conduite volontaire.*
+
+⚠ **Garde-fou (PRD Vol. II §7.5)** : les métriques institutionnelles sont **auto-déclarées et non auditées indépendamment** — attribution obligatoire **à chaque occurrence**. **Socle** : F-17 à F-23b — **F-18, F-19, F-20, F-21 et F-22 à nommer un à un à la rédaction, la plage seule ne les désignant pas** —, F-30, F-31, F-47, F-48.
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §17.1-17.9 | § 39.1-39.9 | **intact** |
+
 ### Chapitre 40 — Prospective : AP2 sur les rails canadiens ?
 
 **Thèse** *(explicitement prospectif)* : aucune source ne documente l'articulation AP2 ↔ rails canadiens — le chapitre pose le cadre d'analyse et les conditions de possibilité, sans affirmer (énumérer des conditions n'est pas prédire).
 Sections : état de la question (lacune assumée) ; interopérabilité B2B, commerce et paiements agentiques en finance (Vol. I *Monographie* §5.13) ; conditions de possibilité ; questions de recherche (série AP2/RTR — Vol. II *Monographie* ch. 16 §16.3, Q1-Q5) ; ⚠ **relève v0.11 — l'économie d'agents existe déjà, sur d'autres rails que ceux qu'instruit ce chapitre** : une étude empirique de juin 2026 (arXiv 2606.25876) mesure des millions de transactions machine-à-machine quotidiennes sur des rails de micropaiement natifs du web (x402) et d'enregistrement sur chaîne (ERC-8004), et en établit la fragilité — identité, autorisation et paiement non interopérables ; deux analyses datées relèvent des vulnérabilités du rail de paiement (arXiv 2605.30998) et la manipulabilité de la réputation du registre (arXiv 2606.26028) ; un cadre d'encadrement — l'« économie bac à sable », axes de perméabilité et d'intentionnalité — est proposé par des chercheurs d'un laboratoire industriel (arXiv 2509.10147). Préimpressions, à instruire : ces rails parallèles sont un contre-scénario aux conditions de possibilité du chapitre, pas un fait canadien.
 *Fusion : Vol. II ch. 16 + Vol. I* Monographie *§5.13. Socle : F-04, F-29. **Lacune héritée portée : PRD Vol. II §10.5** (AP2 ↔ rails canadiens, ouverte) — c'est le sujet même du chapitre ; renvoi ch. 56. Garde-fou : ne pas combler la lacune par de la fiction.*
+
+#### Table des matières détaillée du chapitre 40
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 16 (Vol. II) et §5.13 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 40.1 — État de la question** — *← Vol. II §16.1.* ⚠ **Lacune héritée portée (PRD Vol. II §10.5)** : aucune source ne documente l'articulation AP2 ↔ rails canadiens — **c'est le sujet même du chapitre** ; renvoi ch. 56. **Garde-fou : ne pas combler la lacune par de la fiction.**
+- **§ 40.2 — Interopérabilité B2B, commerce et paiements agentiques en finance** — *← Vol. I* Monographie *§5.13.1-5.13.7 :*
+  - 40.2.1 La pile à trois couches : intention/orchestration vs autorisation/règlement — *← §5.13.1*
+  - 40.2.2 Le mandat vérifiable comme exigence issue de l'irréversibilité — *← §5.13.2 ; la chaîne de mandat est au ch. 18*
+  - 40.2.3 Rails réseaux de cartes : l'insertion de la banque émettrice via les *agentic tokens* — *← §5.13.3*
+  - 40.2.4 Protocoles ouverts de mandat et de commerce : AP2/FIDO, ACP, UCP, x402 — *← §5.13.4 ; anatomie au ch. 10*
+  - 40.2.5 Règlement M2M, stablecoins régulés et dépôts tokenisés — *← §5.13.5*
+  - 40.2.6 Litige, *chargeback* et réconciliation : le trou de responsabilité — *← §5.13.6 ; la sémantique d'effet est au ch. 54*
+  - 40.2.7 Angle Canada/Québec : RTR, stablecoins CAD, insertion des institutions — *← §5.13.7*
+- **§ 40.3 — Conditions de possibilité** — *← Vol. II §16.2.* ⚠ **Énumérer des conditions n'est pas prédire** — le chapitre pose le cadre d'analyse, il n'affirme pas.
+- **§ 40.4 — Questions de recherche (série AP2/RTR, Q1-Q5)** — *← Vol. II §16.3.* ⚠ **Décision 7** : le Vol. II porte **deux** séries « Q n » indépendantes — celle-ci (*Monographie* ch. 16 §16.3, cinq questions AP2/RTR) et celle d'agenda (ch. 21 §21.2, six questions). Nommer la série à chaque renvoi.
+- **§ 40.5 — ⚠ Relève v0.11, à instruire : l'économie d'agents existe déjà, sur d'autres rails** — une étude empirique de juin 2026 (arXiv 2606.25876) mesure des millions de transactions machine-à-machine quotidiennes sur des rails de micropaiement natifs du web (x402) et d'enregistrement sur chaîne (ERC-8004), et en établit la **fragilité** — identité, autorisation et paiement non interopérables ; deux analyses datées relèvent des vulnérabilités du rail de paiement (arXiv 2605.30998) et la manipulabilité de la réputation du registre (arXiv 2606.26028) ; un cadre d'encadrement — l'« économie bac à sable », axes de perméabilité et d'intentionnalité — est proposé par des chercheurs d'un laboratoire industriel (arXiv 2509.10147). **Préimpressions, résumés seuls consultés** : ces rails parallèles sont un **contre-scénario** aux conditions de possibilité du § 40.3, **pas un fait canadien**.
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §16.1-16.3 | § 40.1, § 40.3-40.4 | condensé |
+| Vol. I *Monographie* §5.13 | § 40.2 | **arrivée** depuis le ch. 38 |
 
 ---
 
@@ -1353,11 +1499,48 @@ Sections : état de la question (lacune assumée) ; interopérabilité B2B, comm
 Sections : généalogie (sidecar, passerelle, plan de contrôle/données ; mTLS, SPIFFE/SPIRE transposables — repris du ch. 1) ; anatomie du maillage agentique (passerelles d'outils, courtage A2A, transport SLIM, routage sémantique) ; ce que l'arête change (la sûreté n'est pas compositionnelle) ; grille du ch. 15 appliquée.
 *Fusion : Vol. III ch. 22 + Vol. I* Monographie *§1.3.4. Garde-fous : « agent mesh » terme de fournisseur ; désambiguïsation R-8 du Vol. II (« control plane » — le patron décrit ici comporte un plan de contrôle, terme dont les quatre branches de la collision sont le siège de ce garde-fou) ; la désambiguïsation d'« AgentMesh » lui-même relève de R-04 du Vol. III, branche (f), imposée en tête de livre.*
 
+#### Table des matières détaillée du chapitre 41
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 22 (Vol. III) et §1.3.4 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 41.1 — Généalogie et définition : ce que la filiation apporte, ce que le socle en porte** — *← Vol. III* Monographie *§22.1 + Vol. I* Monographie *§1.3.4 (sidecar, plan de contrôle/données, maillage sans sidecar et eBPF, Gateway API,* event mesh*) — **socle transposable repris du ch. 1**, avec mTLS et SPIFFE/SPIRE.* ⚠ **Garde-fou** : « agent mesh » est un **terme de fournisseur** avant d'être un terme d'architecture.
+- **§ 41.2 — Anatomie du maillage agentique, à l'état daté** — *← Vol. III* Monographie *§22.2 : passerelles d'outils, courtage A2A, transport SLIM, routage sémantique.* ⚠ **Désambiguïsation R-8 du Vol. II** : le patron décrit ici **comporte un plan de contrôle** — terme dont les quatre branches de la collision siègent au ch. 7 § 7.5.
+- **§ 41.3 — Ce que l'arête change : la non-compositionnalité de la sûreté** — *← Vol. III* Monographie *§22.3.*
+- **§ 41.4 — La grille du ch. 15 appliquée au maillage : ce qu'il vérifie, ce qu'il transporte, ce qu'il ignore** — *← Vol. III* Monographie *§22.4.*
+
+⚠ **Rappel du garde-fou R-04 du Vol. III, branche (f)** (imposé en tête de livre) : « AgentMesh » désigne ici le **patron d'infrastructure**, jamais une équipe plateforme, un produit commercial ou une couche de courtage. Le glossaire (Annexe E) porte les six emplois.
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §22.1-22.4 | § 41.1-41.4 | condensé |
+| Vol. I *Monographie* §1.3.4 | § 41.1 | **arrivée** (déclinaison agentique, scindée au ch. 1) |
+
 ### Chapitre 42 — Le maillage comme point d'application : PEP/PDP et zero trust agentique
 
 **Thèse** : le maillage est le lieu où le passeport du ch. 17 devient opposable — PEP adossé à un PDP, transposition du zero trust au graphe d'agents : vérifier chaque arête, sans confiance héritée de la topologie.
 Sections : PEP/PDP agentiques (langages de politique, état des mécanismes) ; garde-fous d'exécution au grain de l'arête (application des principes de défense architecturale du ch. 6) ; zero trust transposé (« jamais confiance au graphe ») ; le maillage et la chaîne de mandat (ce qu'il trace du problème des deux sauts, ch. 18 — et ce qu'il ne résout pas) ; coûts (latence, complexité, point de défaillance — conditions qui renversent la recommandation).
 *Fusion : Vol. III ch. 23 + Vol. I* Monographie *§2.10.3-2.10.4 (défense architecturale et garde-fous, appliqués ici, posés au ch. 6). ⚠ Le socle zero-trust pré-agentique (§1.9.3) **reste au ch. 3** et n'est pas reconstruit ici. Socle : NIST SP 800-207. Prolonge les points de contrôle obligatoires (Vol. II ch. 19 §19.3) au grain de l'infrastructure.*
+
+#### Table des matières détaillée du chapitre 42
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 23 (Vol. III) et §2.10.3-2.10.4 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 42.1 — PEP et PDP agentiques : où se prend et où s'applique la décision d'autorisation** — *← Vol. III* Monographie *§23.1 (langages de politique, état des mécanismes).* Le maillage est **le lieu où le passeport du ch. 17 devient opposable**.
+- **§ 42.2 — Garde-fous d'exécution au grain de l'arête** — *← Vol. I* Monographie *§2.10.3-2.10.4 (référentiels et patrons de défense architecturale ; garde-fous d'exécution et chaîne d'approvisionnement) — **appliqués ici, posés au ch. 6** : partage déclaré, sans reconstruction.*
+- **§ 42.3 — *Zero trust* transposé : de « jamais confiance au réseau » à « jamais confiance au graphe »** — *← Vol. III* Monographie *§23.2 ; socle NIST SP 800-207.* ⚠ Le **socle zero-trust pré-agentique (Vol. I §1.9.3) reste au ch. 3** et n'est pas reconstruit ici.
+- **§ 42.4 — Le maillage et la chaîne de mandat protocolaire** — *← Vol. III* Monographie *§23.3 : ce que le point d'application **peut tracer** du problème des deux sauts (ch. 18), **et ce qu'il ne résout pas**.*
+- **§ 42.5 — Coûts, latence, complexité, point de défaillance** — *← Vol. III* Monographie *§23.4 : **les conditions qui renverseraient ce que ce chapitre avance** — à écrire comme telles, non comme réserves de style.*
+
+⚠ *Prolonge les **points de contrôle obligatoires** (Vol. II ch. 19 §19.3, repris au ch. 47) au grain de l'infrastructure.*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §23.1-23.4 | § 42.1, § 42.3-42.5 | condensé |
+| Vol. I *Monographie* §2.10.3-2.10.4 | § 42.2 | **partagé déclaré** avec le ch. 6 |
 
 **Second mouvement — exploiter (ch. 43-45)** *(anciennement Livre X ; provenance intégrée à l'en-tête du livre)*
 
@@ -1367,17 +1550,82 @@ Sections : PEP/PDP agentiques (langages de politique, état des mécanismes) ; g
 Sections : de l'APM à l'AgentOps (non-déterminisme, coût par jeton, horizon de tâche) ; état des conventions OTel (stable/expérimental — **daté en v0.7** : à la mi-2026, les conventions GenAI et MCP restent au statut *Development* — semconv 1.40.0, avril 2026 —, seuls des attributs d'exécution de base étant tenus pour stables ; leur migration vers un dépôt dédié est une ressource vivante, à re-dater au gel) ; journalisation probatoire (pont vers E-23, ch. 29 ; ⚠ **relève v0.10** : une préimpression adverse de mai 2026 pose que la propriété porteuse d'un runtime agentique n'est pas la richesse de la trace mais la **détection de la divergence entre l'action effectuée et son enregistrement d'audit**, et propose le journal chaîné par empreintes comme parade — matériau candidat, à instruire ; le versant *effet* est au ch. 54) ; corréler la trace au passeport (l'identité comme clé de jointure).
 *Fusion : Vol. III ch. 24 + Vol. I* Monographie *§2.9.6 (observabilité, OTel GenAI — **seule affectation**, le ch. 6 ne la conserve pas), §3.12.3 (propagation de trace inter-agents) et §4.9.1-4.9.2 (OTel étagé, journal d'audit probatoire). Garde-fou : « AgentOps » désigne la discipline, non un produit homonyme.*
 
+#### Table des matières détaillée du chapitre 43
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 24 (Vol. III) et §2.9.6/§3.12.3/§4.9.1-4.9.2 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 43.1 — De l'APM à l'AgentOps : ce que l'observabilité classique couvre et où l'agent la déborde** — *← Vol. III* Monographie *§24.1 (non-déterminisme, coût par jeton, horizon de tâche).* ⚠ **Garde-fou** : « AgentOps » désigne **la discipline**, non un produit homonyme.
+- **§ 43.2 — État des conventions sémantiques OpenTelemetry pour l'IA générative et les agents** — *← Vol. III* Monographie *§24.2 + Vol. I* Monographie *§2.9.6 (**seule affectation** — le ch. 6 ne la conserve pas) et §4.9.1 (OTel étagé, traces inter-agents/inter-org).*
+  ⚠ **Daté en v0.7** : à la mi-2026, les conventions GenAI **et MCP** restent au statut *Development* (semconv 1.40.0, avril 2026), seuls des attributs d'exécution de base étant tenus pour stables. Leur migration vers un dépôt dédié est une **ressource vivante**, à re-dater au gel.
+- **§ 43.3 — Propagation de trace à travers les frontières d'agents** — *← Vol. I* Monographie *§3.12.3 (W3C Trace Context) — **prélevé au ch. 9**, qui garde le reste du §3.12.*
+- **§ 43.4 — La journalisation probatoire : quand la trace devient pièce de conformité** — *← Vol. III* Monographie *§24.3 + Vol. I* Monographie *§4.9.2 (journal d'audit réglementaire, conservation probante, admissibilité) ; pont vers E-23 (ch. 29).*
+  ⚠ **Relève v0.10, à instruire** : une préimpression adverse de mai 2026 pose que la propriété porteuse d'un *runtime* agentique n'est pas la richesse de la trace mais la **détection de la divergence entre l'action effectuée et son enregistrement d'audit**, et propose le journal chaîné par empreintes comme parade. **Matériau candidat** ; le versant *effet* est au ch. 54.
+- **§ 43.5 — Corréler la trace au passeport : l'identité comme clé de jointure** — *← Vol. III* Monographie *§24.4.* **Tracer un *appel* n'est pas tracer une *délégation*** : la corrélation trace ↔ chaîne de mandat (ch. 18) est le **chaînon manquant**.
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §24.1-24.4 | § 43.1-43.2, § 43.4-43.5 | condensé |
+| Vol. I *Monographie* §2.9.6 | § 43.2 | **seule affectation** |
+| Vol. I *Monographie* §3.12.3 | § 43.3 | prélevé au ch. 9 |
+| Vol. I *Monographie* §4.9.1-4.9.2 | § 43.2, § 43.4 | condensé |
+
 ### Chapitre 44 — Le cycle de vie opérationnel : évaluation continue, dérive et incident
 
 **Thèse** : l'exploitation d'un parc d'agents est une boucle — évaluer, détecter la dérive, répondre à l'incident, réviser le mandat — réalisation opérationnelle du quatrième terme de l'invariant ; sans elle, le passeport certifie un comportement passé, jamais le comportement courant.
 Sections : évaluation en production (des jeux d'essai à l'évaluation continue) ; dérive agentique (modèle, outil — rug-pull du ch. 21 relu en signal —, autonomie ; ⚠ **relève v0.10** : une quatrième source de dérive, **la mémoire**, quand le contexte de travail est continûment réécrit par des modèles auxiliaires — un observateur qui extrait des observations structurées, un réflecteur qui les compresse, déclenchés à seuil de jetons et à l'inactivité. Le dispositif est décrit par son éditeur comme parade au pourrissement de contexte ; **aucune propriété de conservation n'est publiquement établie**, et un état de mémoire produit par un autre modèle est un artefact dérivé et daté — à instruire, avec le ch. 5) ; réponse à incident (révocation d'urgence ch. 21, confinement par le maillage ch. 42, agentic SOC ch. 22) ; GitOps du parc ; l'agent qui apprend (revalidation après apprentissage) ; **cycle de vie et modèles de maturité — corpus d'appui, cadrage et non preuve** ; ⚠ **relève v0.11 — l'auto-évolution fait de la dérive une fonctionnalité** : deux relevés de synthèse de 2025, tenus à jour en 2026 (arXiv 2508.07407 ; arXiv 2507.21046), décrivent des agents qui optimisent en production leurs invites, outils et mémoires — la dérive que ce chapitre veut détecter y devient un comportement recherché, et la revalidation après apprentissage cesse d'être un cas limite pour devenir le régime nominal ; une préimpression de juillet 2026 propose d'encadrer l'auto-modification par des certificats à garanties d'erreur auditables (arXiv 2607.00871). À instruire ; la distinction adaptation éphémère / évolution persistante du ch. 26 est le point d'ancrage, et le versant versionnement est au ch. 53 — un artefact qui se modifie en production n'a plus d'horloge fixe du tout.
 *Fusion : Vol. III ch. 25 + Vol. I* Monographie *§2.11.4-2.11.5 (HITL opérationnel, réponse aux incidents, AIOps agentique). ⚠ Le §2.9 n'est **pas** repris ici : ses fondements restent au ch. 6, son versant observabilité va au ch. 43. **Le « quatrième terme de l'invariant » que la thèse invoque est posé à l'avant-propos** et vient du Vol. I* Monographie *§4.12.4 (élargi §7.0) — que le Vol. I qualifie de legs explicite au Vol. III, lequel en fait le fondement de sa Partie VIII : c'est la filiation exacte de ce livre, et elle se nomme plutôt qu'elle ne s'invoque. La section « l'agent qui apprend » **renvoie au ch. 26** (capacité d'auto-modification du paradigme APM, Vol. II ch. 6 §6.3) pour la distinction adaptation éphémère / évolution persistante, sans la reconstruire. Chapitre de synthèse refermant les fils du Livre III.*
 
+#### Table des matières détaillée du chapitre 44
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 25 (Vol. III) et §2.11.4-2.11.5 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 44.1 — L'évaluation en production : des jeux d'essai à l'évaluation continue** — *← Vol. III* Monographie *§25.1.* ⚠ Les **fondements** de l'évaluation restent au ch. 6 (le §2.9 du Vol. I n'est pas repris ici) ; la barrière d'évaluation au déploiement est au ch. 53.
+- **§ 44.2 — La dérive agentique : modèle, outil, autonomie** — *← Vol. III* Monographie *§25.2 ; le rug-pull du ch. 21 relu en **signal**.*
+  ⚠ **Relève v0.10, à instruire** — une **quatrième source de dérive : la mémoire**, quand le contexte de travail est continûment réécrit par des modèles auxiliaires (un observateur qui extrait des observations structurées, un réflecteur qui les compresse, déclenchés à seuil de jetons et à l'inactivité). Le dispositif est décrit par son éditeur comme parade au pourrissement de contexte ; **aucune propriété de conservation n'est publiquement établie**, et un état de mémoire produit par un autre modèle est un **artefact dérivé et daté**. À instruire avec le ch. 5.
+- **§ 44.3 — La réponse à incident agentique : révoquer, confiner, imputer** — *← Vol. III* Monographie *§25.3 + Vol. I* Monographie *§2.11.4 (fiabilité opérationnelle, HITL, réponse aux incidents) ; révocation d'urgence ch. 21, confinement par le maillage ch. 42,* agentic SOC *ch. 22.*
+- **§ 44.4 — GitOps du parc d'agents : versionner le mandat protocolaire, promouvoir, revenir en arrière** — *← Vol. III* Monographie *§25.4 + Vol. I* Monographie *§2.11.5 (AIOps agentique) ; le grain du déploiement est au ch. 53.*
+- **§ 44.5 — L'agent qui apprend : ce que le passeport date, et ce qu'il ne date pas** — *← Vol. III* Monographie *§25.5.* ⚠ **Renvoie au ch. 26** (capacité d'auto-modification du paradigme APM, Vol. II ch. 6 §6.3) pour la distinction **adaptation éphémère / évolution persistante**, sans la reconstruire.
+  ⚠ **Relève v0.11, à instruire — l'auto-évolution fait de la dérive une fonctionnalité** : deux relevés de synthèse de 2025 tenus à jour en 2026 (arXiv 2508.07407 ; arXiv 2507.21046) décrivent des agents qui optimisent **en production** leurs invites, outils et mémoires — la dérive que le § 44.2 veut détecter y devient un comportement **recherché**, et la revalidation après apprentissage cesse d'être un cas limite pour devenir le régime nominal ; une préimpression de juillet 2026 propose d'encadrer l'auto-modification par des certificats à garanties d'erreur auditables (arXiv 2607.00871). Le versant versionnement est au ch. 53 — **un artefact qui se modifie en production n'a plus d'horloge fixe du tout**.
+- **§ 44.6 — Cycle de vie et modèles de maturité** — ⚠ **corpus d'appui, cadrage et non preuve** (filiation retirée par P0.2 le 21 juill. 2026, réversible).
+
+⚠ **Le « quatrième terme de l'invariant » que la thèse invoque est posé à l'avant-propos** et vient du Vol. I *Monographie* §4.12.4 (élargi §7.0) — que le Vol. I qualifie de **legs explicite au Vol. III**, lequel en fait le fondement de sa Partie VIII. C'est la filiation exacte de ce livre : **elle se nomme plutôt qu'elle ne s'invoque**. Chapitre de synthèse refermant les fils du Livre III.
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §25.1-25.5 | § 44.1-44.5 | condensé |
+| Vol. I *Monographie* §2.11.4-2.11.5 | § 44.3-44.4 | **arrivée** depuis le ch. 6 |
+| Vol. I *Monographie* §2.9 | ch. 6 / ch. 43 | hors périmètre — non repris ici |
+
 ### Chapitre 45 — Les indicateurs de l'AgentOps et le FinOps des agents
 
 **Thèse** : la discipline naissante n'a pas ses indicateurs de référence ; les métriques publiées sont hétérogènes et auto-déclarées — grille minimale dérivée des obligations des Livres V-VII, présentée comme construction d'auteur ; le modèle de coût agentique est une contrainte d'ingénierie de premier ordre.
 Sections : recension critique des métriques publiées ; grille minimale (disponibilité du parc, couverture de traçabilité, délai de révocation, fraîcheur des évaluations) ; métrique d'horizon de tâche déléguée ; **indicateurs de la supervision humaine** (délai médian de révision, taux de renversement — proxies imparfaits du tamponnage, ch. 18) ; FinOps des agents (coût par résolution, budget par jeton, routage de modèles et mise en cache comme leviers, latence comme contrainte d'usage).
 *Fusion : Vol. III ch. 26 + Vol. I* Monographie *§4.9.3-4.9.5 et **§2.11.1** (modèle de coût agentique — **seule affectation**, le ch. 43 ne la revendique plus). Garde-fou : chaque indicateur marqué construction d'auteur, chaque chiffre attribué.*
+
+#### Table des matières détaillée du chapitre 45
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 26 (Vol. III) et §2.11.1/§4.9.3-4.9.5 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 45.1 — Recension critique des métriques relevées : ce qui a été ouvert, et ce que cela compte** — *← Vol. III* Monographie *§26.1.* La discipline naissante **n'a pas ses indicateurs de référence** ; les métriques publiées sont **hétérogènes et auto-déclarées**.
+- **§ 45.2 — La grille minimale : ce que l'architecte doit pouvoir répondre à l'auditeur** — *← Vol. III* Monographie *§26.2 : disponibilité du parc, couverture de traçabilité, délai de révocation, fraîcheur des évaluations.* ⚠ **Construction d'auteur**, dérivée des obligations des Livres V-VII — marquée telle.
+- **§ 45.3 — La métrique d'horizon de tâche déléguée** — *← Vol. III* Monographie *§26.3 (front ouvert hérité du Vol. I).* ⚠ Le §26.3 est **aussi** cité par le ch. 56 (questions transmises) — partage à déclarer : la métrique ici, l'énoncé de recherche là.
+- **§ 45.4 — Indicateurs de la supervision humaine** — délai médian de révision, taux de renversement. ⚠ **Proxies imparfaits du tamponnage** (ch. 18 § 18.5) : mesurer la révision n'est pas mesurer le discernement.
+- **§ 45.5 — Le modèle de coût agentique comme contrainte d'ingénierie de premier ordre** — *← Vol. I* Monographie *§2.11.1 (**seule affectation** — le ch. 43 ne la revendique plus).*
+- **§ 45.6 — FinOps des agents** — *← Vol. I* Monographie *§4.9.3-4.9.5 : évaluation en production à l'échelle de flotte, SLO/SLI, fiabilité et dérive (§4.9.3) ; allocation, showback, chargeback et coût par résultat (§4.9.4) ; pré-production gouvernée — staging, shadow deployment, non-régression (§4.9.5, pont vers le ch. 53).* Coût par résolution, budget par jeton, routage de modèles et mise en cache comme leviers, latence comme contrainte d'usage.
+
+⚠ **Garde-fou** : chaque indicateur marqué **construction d'auteur**, chaque chiffre **attribué**.
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §26.1-26.3 | § 45.1-45.3 | condensé ; §26.3 partagé avec le ch. 56 |
+| Vol. I *Monographie* §2.11.1 | § 45.5 | **seule affectation** |
+| Vol. I *Monographie* §4.9.3-4.9.5 | § 45.6 | condensé |
 
 ---
 
@@ -1391,11 +1639,54 @@ Sections : recension critique des métriques publiées ; grille minimale (dispon
 Sections : construction de la matrice ; lecture par protocole ; lecture par exigence ; zones de compensation architecturale.
 *Fusion : Vol. II ch. 18 + Vol. II ***Monographie*** Annexe B (matrice détaillée protocoles × réglementation — source des quinze croisements) + Vol. III Annexe B (matrice des mécanismes). Socle **transversal** (Livres II-VIII), **construit par la rédaction avec sa contrepartie obligatoire** : l'en-tête énumère les entrées effectivement mobilisées et les garde-fous effectivement balayés, y compris à zéro occurrence (règle de l'avant-propos, héritée du Vol. II). C'est ce dispositif — et non une relecture — qui a permis au Vol. II de contrôler la traçabilité de son ch. 18, et c'est ce chapitre qui y a détecté une erreur de marquage de son socle.*
 
+#### Table des matières détaillée du chapitre 46
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 18 et Annexe B (Vol. II) et de l'Annexe B (Vol. III) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 46.1 — Construction de la matrice** — *← Vol. II §18.1 + Vol. II* Monographie *Annexe B (matrice détaillée protocoles × réglementation — **source des quinze croisements**) + Vol. III Annexe B (matrice des mécanismes).* Croise la pile protocolaire (MCP/A2A/AP2), les exigences canadiennes (E-23, AMF, art. 12.1, 11-348, cadre bancaire) et la **grille des cinq questions** (ch. 15).
+- **§ 46.2 — Lecture par protocole** — *← Vol. II §18.2.*
+- **§ 46.3 — Lecture par exigence** — *← Vol. II §18.3.*
+- **§ 46.4 — Les zones de compensation architecturale** — *← Vol. II §18.4 : où les standards suffisent, où l'architecture doit compenser.* ⚠ **Quinze croisements sans lien documenté** à date — cardinal du Vol. II, **à re-mesurer** contre la matrice consolidée (Annexe F), non à recopier.
+
+⚠ **Socle transversal (Livres II-VIII), construit par la rédaction — avec sa contrepartie obligatoire et non négociable** : l'en-tête du chapitre **énumère les entrées effectivement mobilisées et les garde-fous effectivement balayés, y compris ceux à zéro occurrence** (règle de l'avant-propos, héritée du Vol. II). C'est ce dispositif — **et non une relecture** — qui a permis au Vol. II de contrôler la traçabilité de son ch. 18, et c'est ce chapitre qui y a détecté une erreur de marquage de son socle. Homologue de méthode du ch. 15.
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §18.1-18.4 | § 46.1-46.4 | condensé |
+| Vol. II *Monographie* Annexe B | § 46.1 | source des quinze croisements |
+| Vol. III Annexe B | § 46.1 | matrice des mécanismes |
+
 ### Chapitre 47 — L'architecture de référence unifiée par couches
 
 **Thèse** : les Livres I-VII se composent en une architecture cible neutre à couches (protocoles, identité/registre, orchestration, maillage, exploitation, gouvernance), structurée par OO1-OO4, avec OO3/OO4 et la fabrique d'identité imposés sous exigence réglementaire stricte.
 Sections : couches et responsabilités (fabrique d'identité, maillage, AgentOps — les trois étages) ; positionnement OO par cas d'usage et grille « quand agentifier » ; points de contrôle obligatoires ; le plan de contrôle d'agents comme architecture de référence ; le modèle de maturité de l'entreprise agentique (confrontation des trois modèles de maturité — **corpus d'appui**, cadrage et non preuve, filiation retirée par P0.2 le 21 juill. 2026, réversible : voir le bloc Corpus d'appui — et de l'échelle **assistance → copilote → orchestration sous revue → autonomie bornée** ; ⚠ **garde-fou R-13 du Vol. III** : ne jamais écrire « l'autonomie graduée du Vol. I » sans autre précision, ce volume portant trois échelles distinctes — celle-ci, le continuum 0-5 du *Monographie* §2.2.4 et la graduation L0-L3 de son Annexe B §1.3) ; alternatives et variantes.
 *Fusion : Vol. II ch. 19 + Vol. III ch. 27 §27.1/§27.4 + Vol. I* Monographie *§5.12.1-5.12.3, §6.10 (maturité et feuille de route par plateaux — **prélevé au ch. 6 du Vol. I, que le ch. 48 traite par ailleurs en bloc**), §4.12 (plan de contrôle d'agents) et §2.13.1 (grille « quand agentifier »). Socle : F-36, F-37, F-46 + Livre IV.*
+
+#### Table des matières détaillée du chapitre 47
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 19 (Vol. II), ch. 27 (Vol. III) et §5.12.1-5.12.3/§6.10/§4.12/§2.13.1 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 47.1 — Les couches et leurs responsabilités** — *← Vol. II §19.1 + Vol. III* Monographie *§27.1 (les trois étages et leurs contrats mutuels : fabrique d'identité, maillage, AgentOps) ; protocoles, identité/registre, orchestration, maillage, exploitation, gouvernance.*
+- **§ 47.2 — Le positionnement des options d'orchestration par cas d'usage** — *← Vol. II §19.2 + Vol. I* Monographie *§2.13.1 (grille « **quand agentifier, quand s'abstenir** » — **prélevée au ch. 6**).* OO3/OO4 et la fabrique d'identité **imposés sous exigence réglementaire stricte**.
+- **§ 47.3 — Les points de contrôle obligatoires** — *← Vol. II §19.3 ; prolongés au grain de l'infrastructure au ch. 42.*
+- **§ 47.4 — Le plan de contrôle d'agents comme architecture de référence** — *← Vol. I* Monographie *§4.12.1 + §5.12.1 (architecture de référence en finance régulée).* ⚠ **Désambiguïsation R-8** : « plan de contrôle d'agents » au sens du patron — l'encadré des quatre branches siège au ch. 7 § 7.5.
+- **§ 47.5 — Le modèle de maturité de l'entreprise agentique** — *← Vol. III* Monographie *§27.4 + Vol. I* Monographie *§5.12.2 et §6.10 (maturité et feuille de route par plateaux — **prélevé au ch. 6 du Vol. I, que le ch. 48 traite par ailleurs en bloc**).*
+  Confrontation des trois modèles de maturité (⚠ **corpus d'appui**, cadrage et non preuve — filiation retirée par P0.2 le 21 juill. 2026, réversible) et de l'échelle **assistance → copilote → orchestration sous revue → autonomie bornée**.
+  ⚠ **Garde-fou R-13 du Vol. III** : ne jamais écrire « l'autonomie graduée du Vol. I » sans autre précision — ce volume porte **trois échelles distinctes** : celle-ci, le **continuum 0-5** (*Monographie* §2.2.4, au ch. 4 § 4.1.4) et la **graduation L0-L3** (son Annexe B §1.3, à l'Annexe H).
+- **§ 47.6 — Alternatives, variantes et frontières d'abstraction** — *← Vol. II §19.4 + Vol. I* Monographie *§5.12.3 (grille de décision / RFP de l'architecte FS).*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §19.1-19.4 | § 47.1-47.3, § 47.6 | condensé |
+| Vol. III *Monographie* §27.1, §27.4 | § 47.1, § 47.5 | condensé ; §27.2 au ch. 48, §27.3/§27.5 au ch. 49 |
+| Vol. I *Monographie* §5.12.1-5.12.3 | § 47.4-47.6 | **arrivée** depuis le ch. 38 |
+| Vol. I *Monographie* §6.10 | § 47.5 | **prélevé au ch. 48** |
+| Vol. I *Monographie* §4.12 | § 47.4 | **arrivée** depuis le ch. 28 |
+| Vol. I *Monographie* §2.13.1 | § 47.2 | **arrivée** depuis le ch. 6 |
 
 ### Chapitre 48 — La formalisation ArchiMate
 
@@ -1405,11 +1696,76 @@ Sections : primer ArchiMate et patrons pour concepts agentiques ; **registre des
 *⚠ **Ancrage de version, absent des v0.1-v0.4 alors que le Vol. I le porte** : version de référence **ArchiMate 4** (The Open Group, doc **C260**, 27 avr. 2026), équivalents **3.2** (oct. 2022) en notes de transition. **Ressources vivantes à recouper au gel** : la liste définitive des éléments retirés ou renommés de C260 — ⚠ **relève v0.7 : l'ampleur est confirmée par l'éditeur de la norme** (réduction d'environ 30 % du nombre d'éléments, de plus de soixante à une quarantaine ; les couches remplacées par des **domaines**, dont un domaine commun ; multiplicité sur les relations), soit la refonte de métamodèle la plus profonde depuis la création du langage : la re-vérification du mécanisme Specialization + stéréotype + Profiles **tel que C260 le porte** est un préalable au registre des stéréotypes, non une note de transition ; l'état du support outils — à la mi-2026, la quasi-totalité des outils d'architecture d'entreprise n'exporte et n'importe encore que 3.2 nativement, ce qui rend le blueprint des ch. 49-50 non échangeable en v4 dans la plupart des ateliers ; le format d'échange v4 ; les programmes de certification en cours de mise à jour.*
 *⚠ **Garde-fou de non-redondance, hérité du Vol. I §6.0.1 et plus nécessaire ici qu'à sa source** : « si l'on retire le mot ArchiMate et que la phrase tient encore comme un exposé des chapitres amont, c'est une redondance à renvoyer ». Au Vol. I, ce chapitre en suivait cinq ; ici il en suit quarante-sept.*
 
+#### Table des matières détaillée du chapitre 48
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 6 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 48.0 — Primer ArchiMate et convention de version** — *← §6.0.2-6.0.8 : pourquoi un blueprint et pourquoi ArchiMate ; langage / méthode / cadre / outil / modèle de référence ; cadre, domaines et aspects ; éléments et relations ; vues, points de vue et mécanismes d'extension ; relation ArchiMate ↔ TOGAF ADM.* Le §6.0.1 (contrat de lecture) est refondu en apparat.
+- **§ 48.1 — Le problème de modélisation : patrons pour concepts agentiques** — *← §6.1.1-6.1.9 :*
+  - 48.1.1 Le verrou méthodologique : **aucun élément natif**, le recours à la spécialisation — *← §6.1.1*
+  - 48.1.2 Patron « agent » : Application Component vs Role vs Collaboration — *← §6.1.2*
+  - 48.1.3 Patron « appel d'outil MCP » : Application Service + Interface + Serving — *← §6.1.3*
+  - 48.1.4 Patron « interaction A2A » : Collaboration + Flow + Triggering — *← §6.1.4*
+  - 48.1.5 Patron « identité non humaine » : Role + Active Structure + overlay sécurité — *← §6.1.5*
+  - 48.1.6 Patron « plan de contrôle d'agents » et limite « découverte dynamique » — *← §6.1.6*
+  - 48.1.7 Patron « humain-agent » : HITL, *four-eyes*, autonomie graduée — *← §6.1.7*
+  - 48.1.8 Patron « mémoire, RAG et *grounding* gouverné » — *← §6.1.8*
+  - 48.1.9 **Registre des stéréotypes du blueprint** — *← §6.1.9.* ⚠ **Point d'appui aval dont dépendent les ch. 49-50 et l'Annexe H : il se tient ici, en un seul lieu.**
+- **§ 48.2 — Motivation : exigences réglementaires traçables** — *← §6.2.1-6.2.5 (Stakeholder, Driver, Assessment, Goal/Outcome, Principle/Requirement ; amorce de la conformité traçable, dont le **siège est au §6.6.3**).*
+- **§ 48.3 — Strategy : capacités agentiques et chaînes de valeur financières** — *← §6.3.1-6.3.4.*
+- **§ 48.4 — Business : rôles, collaborations humain-agent et objets financiers** — *← §6.4.1-6.4.5.*
+- **§ 48.5 — Application et Technology : agents, protocoles, runtime, résidence** — *← §6.5.x.*
+- **§ 48.6 — Points de vue transverses** — *← §6.6.1-6.6.4 : Sécurité/Risque (RSO appliqué au parc) ; zéro-trust, NHI et segmentation ; **conformité traçable exigence → contrôle → élément (SIÈGE)** ; audit/observabilité et ségrégation des tâches.*
+- **§ 48.7 — Gouvernance des vues et organisation du blueprint** — *← §6.7.1-6.7.4.*
+- **§ 48.8 — Bibliothèque de patrons et anti-patrons** — *← §6.9.1-6.9.2.*
+- **§ 48.9 — Questions ouvertes : ArchiMate face aux systèmes autonomes** — *← §6.11.1-6.11.4 (adéquation aux systèmes non déterministes ; modèles vivants et synchronisation ; overlay vs extension de langage).*
+- ⚠ **Consolide** les fonctions d'identité, points d'application du maillage et boucle d'exploitation — *← Vol. III* TOC *§27.2* — **dans le formalisme ArchiMate**, sans reprendre leur fond (posé aux Livres III et VII).
+
+⚠ **Ancrage de version** : **ArchiMate 4** (The Open Group, doc **C260**, 27 avr. 2026), équivalents **3.2** (oct. 2022) en notes de transition. **Relève v0.7 — ampleur confirmée par l'éditeur** : réduction d'environ 30 % du nombre d'éléments (de plus de soixante à une quarantaine), couches remplacées par des **domaines**, multiplicité sur les relations — la refonte de métamodèle la plus profonde depuis la création du langage. **La re-vérification du mécanisme Specialization + stéréotype + Profiles tel que C260 le porte est un préalable au registre des stéréotypes**, non une note de transition. À la mi-2026, la quasi-totalité des outils n'exporte et n'importe encore que **3.2** nativement — le blueprint des ch. 49-50 n'est donc **pas échangeable en v4** dans la plupart des ateliers.
+
+⚠ **Garde-fou de non-redondance (hérité du Vol. I §6.0.1, plus nécessaire ici qu'à sa source)** : « si l'on retire le mot ArchiMate et que la phrase tient encore comme un exposé des chapitres amont, c'est une redondance à renvoyer ». **Au Vol. I ce chapitre en suivait cinq ; ici il en suit quarante-sept.** Ce que le chapitre apporte est une **traduction structurelle**, jamais une reprise du fond conceptuel.
+
+**Table de couverture (décision 6)**
+
+| Source Vol. I *Monographie* | Destination | Régime |
+| --- | --- | --- |
+| §6.0 | § 48.0 | condensé ; §6.0.1 refondu en apparat |
+| §6.1-6.7 | § 48.1-48.7 | condensé |
+| §6.8 | **ch. 50** | prélevé (exemple de bout en bout) |
+| §6.9 | § 48.8 | condensé |
+| §6.10 | **ch. 47** | prélevé (maturité par plateaux) |
+| §6.11 | § 48.9 | condensé |
+| Vol. III *TOC* §27.2 | § 48 (transverse) | formalisation seule |
+
 ### Chapitre 49 — Le blueprint instancié : de Boréalis au portefeuille IBM à la fabrique de confiance
 
 **Thèse** : le blueprint applique les principes directeurs à un portefeuille réel documenté ; chaque couche porte son positionnement OO, son statut de preuve et son point d'intégration avec l'IAM et l'observabilité en place — étendre, jamais dupliquer.
 Sections : principes directeurs (dont « aucune interaction IA non gouvernée ») ; C1-C8 avec composants IBM datés (GA/préversion/déprécié ; pivot Confluent clôturé le 17 mars 2026 — écrire au passé) ; correspondance réglementaire (statuts explicites — **aucune conformité E-23/B-13 revendiquée par IBM : fait négatif *établi*, non *vérifié***, garde-fou R-07 du Vol. III et échelle des trois degrés d'absence) ; l'organisation de la fabrique (rôles entre plateforme, IAM, sécurité, exploitation ; préparation organisationnelle — **corpus d'appui**, cadrage et non preuve, filiation retirée par P0.2 le 21 juill. 2026, réversible : voir le bloc Corpus d'appui ; facteur humain et conduite du changement).
 *Fusion : Vol. II ch. 22 (**repris en entier** : principes, couches C1-C8 et neutralité fournisseur — ce chapitre ne porte aucun flux) + Vol. II ch. 23 **§23.1 seul** (le tableau B.3 développé : quatre statuts, sept liens) + Vol. III ch. 27 §27.3/§27.5 + Vol. I Annexe B (ADS Boréalis, résumée ici, complète en Annexe H). **Décision de fusion** : les deux instanciations (Boréalis du Vol. I, portefeuille IBM du Vol. II) sont présentées comme deux réalisations de la même architecture de référence, non comme deux blueprints concurrents. Socle : F-38 à F-46 (F-39, F-40 et F-42 à nommer un à un, la plage seule ne les désignant pas) ; **PRD** Vol. II Annexe B §B.1-B.2 (blueprint d'architecture). Garde-fous : **CA-8** (chaque composant tracé au socle, chaque lien réglementaire marqué « documenté » ou « inférence »), PRD Vol. II §8.4 (neutralité fournisseur), **lacune héritée portée : PRD Vol. II §10.6** (portefeuille IBM — Gartner MQ iPaaS sous R-6 du Vol. II, FTM/ISO 20022 en [C] après élévation tentée et échouée, annonces canadiennes ouvertes ; renvoi ch. 57), **R-5, R-6, R-7 et R-8 du Vol. II** — nommés par volume, ce chapitre consommant aussi du Vol. III, dont les R-05…R-08 portent sur d'autres objets (décision 7).*
+
+#### Table des matières détaillée du chapitre 49
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 22 et ch. 23 §23.1 (Vol. II), ch. 27 (Vol. III) et Annexe B (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 49.1 — Les principes directeurs** — *← Vol. II §22.1 (les six principes, dont « **aucune interaction IA non gouvernée** »).*
+- **§ 49.2 — La vue en couches C1-C8, avec statuts datés** — *← Vol. II §22.2 ; composants IBM datés GA / préversion / déprécié.* ⚠ **Pivot Confluent clôturé le 17 mars 2026 — écrire au passé.**
+- **§ 49.3 — La neutralité fournisseur en pratique** — *← Vol. II §22.3 + PRD Vol. II §8.4.*
+- **§ 49.4 — Correspondance réglementaire : le tableau B.3 développé** — *← Vol. II §23.1 (**§23.1 seul** : quatre statuts, sept liens).*
+  ⚠ **Aucune conformité E-23/B-13 revendiquée par IBM : fait négatif *établi*, non *vérifié*** — garde-fou **R-07 du Vol. III** et échelle des trois degrés d'absence (R-14). **CA-8** : chaque lien réglementaire marqué « documenté » ou « inférence ».
+- **§ 49.5 — Points d'intégration avec l'existant : étendre, ne pas dupliquer** — *← Vol. III* Monographie *§27.3 ; IAM et observabilité en place (Livres III et VII).*
+- **§ 49.6 — L'organisation de la fabrique : qui opère quoi** — *← Vol. III* Monographie *§27.5 ; rôles entre plateforme, IAM, sécurité, exploitation.* ⚠ **Préparation organisationnelle : corpus d'appui, cadrage et non preuve** (filiation retirée par P0.2, réversible). Facteur humain et conduite du changement.
+- **§ 49.7 — L'ADS Boréalis, résumée** — *← Vol. I Annexe B ; **intégrale à l'Annexe H**.* ⚠ **Décision de fusion** : les deux instanciations — Boréalis (Vol. I) et portefeuille IBM (Vol. II) — sont présentées comme **deux réalisations de la même architecture de référence**, non comme deux blueprints concurrents.
+
+⚠ **Ce chapitre ne porte aucun flux** : le ch. 22 du Vol. II est repris **en entier** (principes, couches, neutralité) ; les trois flux sont au ch. 50. ⚠ **Socle** : F-38 à F-46 — **F-39, F-40 et F-42 à nommer un à un, la plage seule ne les désignant pas** ; **PRD** Vol. II Annexe B §B.1-B.2. **Lacune héritée portée (PRD Vol. II §10.6)** : portefeuille IBM — Gartner MQ iPaaS sous **R-6**, FTM/ISO 20022 en [C] après élévation tentée et échouée, annonces canadiennes ouvertes ; renvoi ch. 57. **Garde-fous R-5, R-6, R-7 et R-8 du Vol. II** — nommés par volume (décision 7), ce chapitre consommant aussi du Vol. III, dont les R-05…R-08 portent sur d'autres objets.
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §22.1-22.3 | § 49.1-49.3 | **repris en entier** |
+| Vol. II §23.1 | § 49.4 | **§23.1 seul** — §23.2-23.4 au ch. 50 |
+| Vol. III *Monographie* §27.3, §27.5 | § 49.5-49.6 | condensé |
+| Vol. I Annexe B (ADS) | § 49.7 | résumée ; intégrale à l'Annexe H |
 
 ### Chapitre 50 — Instanciation : le cycle de vie complet d'un agent d'entreprise
 
@@ -1417,11 +1773,52 @@ Sections : principes directeurs (dont « aucune interaction IA non gouvernée »
 Sections : naissance (enregistrement, émission du passeport, admission au maillage) ; vie (délégations, vérifications par arête, traces d'exploitation, évaluations continues, migration PQC) ; mort (révocation, cascade dans la chaîne de mandat, retrait, archivage probatoire) ; trois flux de bout en bout (décision de crédit, **OO3 ou OO4 — le positionnement est une inférence d'auteur, le socle n'établissant pas la conscience du processus qui les sépare** ; ⚠ le flux outille un **point d'arrêt humain**, **jamais la révision de l'article 12.1** — le ch. 23 du Vol. II écrit que « le blueprint ne doit pas prétendre le contraire » ; paiement ISO 20022 vers Lynx ; accès cadre bancaire sous passerelle d'outils) ; confrontation externe (cas fil rouge *loan processing* — **corpus d'appui**, cadrage et non preuve).
 *Fusion : Vol. III ch. 28 (**hors §28.5 et §28.6**, prélevés par les ch. 56 et ch. 57) + Vol. II ch. 23 **§23.2-23.4** (les trois flux ; son §23.1 va au ch. 49 — ⚠ **c'est le ch. 23 qui est scindé, non le ch. 22** : les v0.1-v0.5 attribuaient la scission au mauvais chapitre, le ch. 22 ne portant aucun flux) + Vol. I* Monographie *§6.8 (exemple de bout en bout : souscription vie augmentée et variante FNOL — **prélevé au ch. 6**). Socle : **F-39 à F-42 et F-44 à F-46** (plage relevée sur l'en-tête du ch. 23 du Vol. II : ni F-38 ni F-43 n'y figurent, contrairement à ce qu'annonçaient les v0.1-v0.5), F-27, F-28, F-34, F-35 ; **PRD** Vol. II Annexe B §B.3-B.4 (blueprint d'architecture). Garde-fou : **CA-8**.*
 
+#### Table des matières détaillée du chapitre 50
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 28 (Vol. III), ch. 23 §23.2-23.4 (Vol. II) et §6.8 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 50.1 — Naissance : enregistrement, émission du passeport, admission au maillage** — *← Vol. III* Monographie *§28.1 ; ch. 16-17 et ch. 41-42 joués contre l'architecture.*
+- **§ 50.2 — Vie : délégations, vérifications par arête, traces, évaluations continues, renouvellements, migration post-quantique** — *← Vol. III* Monographie *§28.2 ; ch. 18, 42, 43, 44 et 23-24.*
+- **§ 50.3 — Mort : révocation, cascade dans la chaîne de mandat, retrait du maillage, archivage probatoire** — *← Vol. III* Monographie *§28.3 ; la révocation en cascade reste un **problème ouvert** (ch. 21 § 21.6).*
+- **§ 50.4 — Flux 1 — la décision de crédit assistée par agents : le processus commande, OO3 ou OO4** — *← Vol. II §23.2.*
+  ⚠ **Le positionnement OO3/OO4 est une inférence d'auteur** — le socle n'établit pas la conscience du processus qui les sépare. ⚠ **Le flux outille un point d'arrêt humain, jamais la révision de l'article 12.1** : le ch. 23 du Vol. II écrit que « le blueprint ne doit pas prétendre le contraire ».
+- **§ 50.5 — Flux 2 — le paiement ISO 20022 vers Lynx : l'agent observe, le rail exécute** — *← Vol. II §23.3 ; ch. 37.*
+- **§ 50.6 — Flux 3 — l'accès au cadre bancaire : concevoir contre une norme qui n'existe pas encore** — *← Vol. II §23.4 ; ch. 36 (standard technique non désigné, fait négatif vérifié).*
+- **§ 50.7 — Exemple de bout en bout : souscription vie augmentée (et variante FNOL P&C)** — *← Vol. I* Monographie *§6.8.1-6.8.5 (**prélevé au ch. 6**) : Motivation, Strategy, Business (point HITL sur l'irréversible), Application (agent orchestrateur, serveurs MCP-FHIR), Technology & Implementation.*
+- **§ 50.8 — Confrontation externe** — *← Vol. III* Monographie *§28.4 (confrontation interne au corpus).* ⚠ Cas fil rouge *loan processing* : **corpus d'appui, cadrage et non preuve**.
+
+⚠ **C'est le ch. 23 du Vol. II qui est scindé, non le ch. 22** : les v0.1-v0.5 attribuaient la scission au mauvais chapitre, le ch. 22 ne portant aucun flux. ⚠ **Socle : F-39 à F-42 et F-44 à F-46** — plage relevée sur l'en-tête du ch. 23 du Vol. II : **ni F-38 ni F-43 n'y figurent**, contrairement à ce qu'annonçaient les v0.1-v0.5 —, plus F-27, F-28, F-34, F-35 ; **PRD** Vol. II Annexe B §B.3-B.4. **Garde-fou CA-8.**
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §28.1-28.4 | § 50.1-50.3, § 50.8 | condensé |
+| Vol. III *Monographie* §28.5 | ch. 56 | prélevé (questions transmises) |
+| Vol. III *Monographie* §28.6 | ch. 57 | prélevé (péremption) |
+| Vol. II §23.2-23.4 | § 50.4-50.6 | condensé ; §23.1 au ch. 49 |
+| Vol. I *Monographie* §6.8 | § 50.7 | **prélevé au ch. 48** |
+
 ### Chapitre 51 — Instrumentation et feuille de route vers le 1ᵉʳ mai 2027
 
 **Thèse** : les métriques d'évaluation des orchestrations (correction, réactivité, traçabilité) sont l'instrumentation candidate des programmes E-23/AMF ; la feuille de route se séquence sur l'entrée en vigueur commune (inventaire → encadrement → surveillance).
 Sections : des métriques académiques aux indicateurs de risque de modèle ; feuille de route type par plateaux ; jalons externes à surveiller.
 *Fusion : Vol. II ch. 20. Socle : F-09, F-25, F-37, F-44. Garde-fou : **R-7 du Vol. II** (instrumentation d'E-23 par watsonx.governance = inférence d'auteur) — à ne pas confondre avec le R-07 du Vol. III, qui porte lui aussi sur l'inférence produit ↔ réglementation : le renvoi nu était plausible dans les deux lectures, donc indécidable (décision 7).*
+
+#### Table des matières détaillée du chapitre 51
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 20 (Vol. II) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 51.1 — Des métriques académiques aux indicateurs de risque de modèle** — *← Vol. II §20.1 ; correction, réactivité, traçabilité (ch. 25 § 25.2) comme **instrumentation candidate** des programmes E-23/AMF.*
+  ⚠ **Garde-fou R-7 du Vol. II** : l'instrumentation d'E-23 par watsonx.governance est une **inférence d'auteur**. **Ne pas confondre avec le R-07 du Vol. III**, qui porte lui aussi sur l'inférence produit ↔ réglementation — le renvoi nu était plausible dans les deux lectures, donc **indécidable** (décision 7).
+- **§ 51.2 — Feuille de route type : inventaire, encadrement, surveillance** — *← Vol. II §20.2 ; séquencée sur l'entrée en vigueur commune du 1ᵉʳ mai 2027 (ch. 29 et ch. 31).*
+- **§ 51.3 — Les jalons externes à surveiller** — *← Vol. II §20.3 ; recoupe les événements de péremption du ch. 57, sans les reconstruire.*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §20.1-20.3 | § 51.1-51.3 | condensé |
 
 ---
 
@@ -1437,17 +1834,80 @@ Sections : des métriques académiques aux indicateurs de risque de modèle ; fe
 Sections : l'agent comme artefact composé (inventaire des composants et de leurs horloges) ; nomenclatures logicielles et d'IA — état des normes et de l'outillage ; signature et attestation d'artefacts (modèles, serveurs d'outils, invites) ; le rug-pull du ch. 21 relu comme défaut de provenance ; la provenance comme pièce candidate du passeport du ch. 17 (construction d'auteur, marquée telle) ; les divulgations de chaîne d'approvisionnement du 1ᵉʳ semestre 2026 (relève 7 de la v0.7 — candidates, à instruire à sources primaires) ; ⚠ **relève v0.10 — l'extension déclarative, composant que la nomenclature ne voit pas** : les harnais admettent des extensions par simple configuration — fichiers d'instructions réutilisables, serveurs d'outils déclarés en JSON —, dont l'installation n'est ni une compilation ni un déploiement et échappe donc aux nomenclatures logicielles classiques ; des chercheurs d'un éditeur de sécurité ont relevé fin janvier 2026 une extension tierce d'un runtime largement déployé pratiquant exfiltration de données et injection d'invite à l'insu de l'utilisateur. **Incident candidat, relevé en sources ouvertes, aucune source primaire extraite** : il ne fonde rien tant qu'il n'est pas instruit, et il confirme sans le prouver le jugement « front le plus mûr ».
 *Fusion : aucune — front neuf, sans socle hérité (journal v0.3, rouvert en v0.8). Adossements internes : ch. 17, ch. 21, ch. 22, Livre VII. Sources primaires à constituer avant rédaction (risque 13).*
 
+#### Table des matières détaillée du chapitre 52
+
+*⚠ **Table sans provenance externe, et c'est le fait à retenir.** Les ch. 52-54 sont de la **matière neuve** : « Fusion : aucune » (décision 9). Aucune sous-section ci-dessous ne peut porter de renvoi `←` vers un volume source — il n'y en a pas. Les seuls appuis sont **internes** (chapitres de la somme) et tout énoncé est **au mieux un repérage [C] à instruire**. Table de travail dérivée de la liste de sections du TOC, non d'un texte rédigé.*
+
+- **§ 52.1 — L'agent comme artefact composé** — inventaire des composants et de leurs horloges (poids de modèle, serveurs d'outils, bibliothèques, invites). *Construction d'auteur.*
+- **§ 52.2 — Nomenclatures logicielles et d'IA : état des normes et de l'outillage** — *sources primaires à constituer.*
+- **§ 52.3 — Signature et attestation d'artefacts** — modèles, serveurs d'outils, invites ; adossement ch. 21 § 21.3 (attestation d'intégrité à l'exécution), sans le reconstruire.
+- **§ 52.4 — Le *rug-pull* du ch. 21 relu comme défaut de provenance** — adossement ch. 21 § 21.1.
+- **§ 52.5 — La provenance comme pièce candidate du passeport du ch. 17** — ⚠ **construction d'auteur, marquée telle** : le passeport n'existe dans aucune spécification de 2026, et lui ajouter une cinquième pièce est un geste d'auteur sur un objet déjà virtuel.
+- **§ 52.6 — Les divulgations de chaîne d'approvisionnement du 1ᵉʳ semestre 2026** — *relève 7 de la v0.7 : **candidates, à instruire à sources primaires**.*
+- **§ 52.7 — ⚠ Relève v0.10 : l'extension déclarative, composant que la nomenclature ne voit pas** — les harnais admettent des extensions par **simple configuration** (fichiers d'instructions réutilisables, serveurs d'outils déclarés en JSON), dont l'installation n'est **ni une compilation ni un déploiement** et échappe donc aux nomenclatures logicielles classiques. Des chercheurs d'un éditeur de sécurité ont relevé fin janvier 2026 une extension tierce d'un *runtime* largement déployé pratiquant exfiltration de données et injection d'invite à l'insu de l'utilisateur.
+  ⚠ **Incident candidat, relevé en sources ouvertes, aucune source primaire extraite** : il **ne fonde rien** tant qu'il n'est pas instruit, et il **confirme sans le prouver** le jugement « front le plus mûr ».
+
+**Table de couverture (décision 6)** — *sans objet : la décision 6 (couverture tracée) ne s'applique pas à un chapitre sans source. La **décision 8 s'y applique doublement** : aucune thèse ne peut se recopier telle quelle dans le bandeau du chapitre rédigé.*
+
+| Appui | Nature |
+| --- | --- |
+| ch. 17, ch. 21, ch. 22, Livre VII | **adossements internes** — renvois, jamais sources |
+| relèves v0.7 (relève 7) et v0.10 | repérages [C] à instruire |
+| — | **aucun volume source, aucune entrée F-xx, aucun garde-fou hérité** |
+
 ### Chapitre 53 — La mise en service d'un artefact non reproductible
 
 **Thèse** *(construction d'auteur, socle à constituer)* : mettre en service un agent dont le comportement n'est pas reproductible à l'identique exige une discipline propre — jeux d'essai de référence, barrière d'évaluation au déploiement, versionnement à quatre horloges (modèle, invites, outils, politique) — sans laquelle l'évaluation continue du ch. 44 mesure un artefact que l'organisation ne sait pas même désigner.
 Sections : le versionnement à quatre horloges (ce que « version d'un agent » veut dire) ; jeux d'essai de référence et barrière d'évaluation au déploiement (pont : évaluation du ch. 6, évaluation continue du ch. 44) ; promotion par environnements et GitOps du parc (le ch. 44 au grain du déploiement, sans le reconstruire) ; retour arrière d'un artefact à état (ce que le rollback ne restaure pas — mémoire, délégations en cours) ; l'enregistrement de version au registre du ch. 16 (construction d'auteur).
 *Fusion : aucune — front neuf, sans socle hérité (journal v0.3, rouvert en v0.8). Adossements internes : ch. 6, ch. 16, ch. 44, ch. 50. Sources primaires à constituer avant rédaction (risque 13). ⚠ **Relève v0.10 — la thèse compte peut-être une horloge de trop peu.** Les pièces écrites de 2026 exhibent un cinquième porteur de version, autonome des quatre : le **harnais lui-même**, versionné par son éditeur, et dont le changement modifie le comportement observable à modèle, invites, outils et politique constants (modes, seuils de compression de contexte, ordre des règles d'approbation, format d'événements). Si la relève s'instruit, la thèse est **sous-spécifiée, non fausse** ; elle n'est **pas réécrite ici** — la décision 8 veut que le chapitre corrige le plan, non que le plan anticipe sur l'instruction.*
 
+#### Table des matières détaillée du chapitre 53
+
+*⚠ Matière neuve — « Fusion : aucune ». Aucun renvoi `←` vers un volume source : il n'y en a pas. Appuis internes seulement ; tout énoncé est un repérage [C] à instruire. Table dérivée de la liste de sections du TOC.*
+
+- **§ 53.1 — Le versionnement à quatre horloges** — ce que « version d'un agent » veut dire : modèle, invites, outils, politique. *Construction d'auteur.*
+  ⚠ **Relève v0.10 — la thèse compte peut-être une horloge de trop peu.** Les pièces écrites de 2026 exhibent un **cinquième porteur de version, autonome des quatre : le harnais lui-même**, versionné par son éditeur, dont le changement modifie le comportement observable **à modèle, invites, outils et politique constants** (modes, seuils de compression de contexte, ordre des règles d'approbation, format d'événements). Si la relève s'instruit, la thèse est **sous-spécifiée, non fausse** ; elle **n'est pas réécrite ici** — la décision 8 veut que le chapitre corrige le plan, non que le plan anticipe sur l'instruction.
+- **§ 53.2 — Jeux d'essai de référence et barrière d'évaluation au déploiement** — ponts : évaluation du ch. 6 (fondements), évaluation continue du ch. 44 § 44.1.
+- **§ 53.3 — Promotion par environnements et GitOps du parc** — le ch. 44 § 44.4 **au grain du déploiement**, sans le reconstruire ; pré-production gouvernée au ch. 45 § 45.6.
+- **§ 53.4 — Retour arrière d'un artefact à état** — **ce que le *rollback* ne restaure pas** : mémoire, délégations en cours. Adossement ch. 18 (chaîne de mandat) et ch. 44 § 44.2 (dérive de mémoire).
+- **§ 53.5 — L'enregistrement de version au registre du ch. 16** — ⚠ **construction d'auteur** : le registre gouverné n'enregistre pas de version dans les spécifications relevées.
+
+**Table de couverture (décision 6)** — *sans objet (chapitre sans source). Décision 8 applicable doublement.*
+
+| Appui | Nature |
+| --- | --- |
+| ch. 6, ch. 16, ch. 44, ch. 50 | **adossements internes** — renvois, jamais sources |
+| relève v0.10 (cinquième horloge) | repérage [C] à instruire ; thèse **sous-spécifiée, non fausse** |
+| — | **aucun volume source, aucune entrée F-xx, aucun garde-fou hérité** |
+
 ### Chapitre 54 — La sémantique d'effet : idempotence, compensation, réconciliation
 
 **Thèse** *(construction d'auteur, socle à constituer)* : une action d'agent produit des effets dans des systèmes d'enregistrement, et ce qui advient quand elle réussit à moitié — idempotence, compensation, réconciliation — n'est spécifié ni par les protocoles (Livre II) ni par l'encadrement (Livre VI) ; c'est en finance que le coût de ce silence est maximal (un virement à moitié réussi n'est pas un incident d'observabilité, c'est un écart comptable).
 Sections : taxonomie des effets d'une action d'agent (lecture, écriture, engagement) ; idempotence et rejouabilité des appels d'outils (ce que les spécifications protocolaires en disent — à instruire, jamais présumé) ; compensation et sagas au grain de l'agent (héritage EIP du ch. 1 et exécution durable du ch. 25, appliqués, non reconstruits) ; réconciliation des flux financiers (pont : flux ISO 20022 des ch. 37 et ch. 50) ; tracer l'effet, pas seulement l'appel (prolonge le chaînon manquant du ch. 43 ; ⚠ **relève v0.10 — une taxonomie candidate existe déjà, en vocabulaire de sûreté** : une préimpression adverse de mai 2026 tient la détection des divergences entre l'action effectuée et son enregistrement d'audit pour la propriété porteuse d'un runtime agentique, et en énumère quatre — contournement de garde, falsification du journal, échec silencieux de l'hôte, cible erronée. C'est, dit autrement, la question de ce chapitre. **Deux réserves** : la préimpression n'est pas révisée par les pairs, et elle propose une implémentation concurrente de l'objet qu'elle mesure — son intérêt est inverse de celui de l'éditeur, ce qui ne le neutralise pas. Taxonomie à instruire ; aucun de ses résultats chiffrés n'est repris).
 *Fusion : aucune — front neuf, sans socle hérité (journal v0.3, rouvert en v0.8). Adossements internes : ch. 1, ch. 25, ch. 37, ch. 43, ch. 50. Sources primaires à constituer avant rédaction (risque 13).*
+
+#### Table des matières détaillée du chapitre 54
+
+*⚠ Matière neuve — « Fusion : aucune ». Aucun renvoi `←` vers un volume source : il n'y en a pas. Appuis internes seulement ; tout énoncé est un repérage [C] à instruire. Table dérivée de la liste de sections du TOC.*
+
+- **§ 54.1 — Taxonomie des effets d'une action d'agent** — lecture, écriture, engagement. *Construction d'auteur.*
+- **§ 54.2 — Idempotence et rejouabilité des appels d'outils** — ce que les spécifications protocolaires en disent : **à instruire, jamais présumé** (Livre II).
+- **§ 54.3 — Compensation et sagas au grain de l'agent** — héritage EIP du ch. 1 § 1.6.2 et exécution durable du ch. 25 § 25.5, **appliqués, non reconstruits**.
+  ⚠ *C'est la **seule occurrence de « sagas »** de toute la zone des chapitres, au grain d'une action unique — le constat qui fonde le **risque 15** (accord entre agents sous asynchronie et défaillance partielle : angle mort déclaré, non comblé).*
+- **§ 54.4 — Réconciliation des flux financiers** — ponts : flux ISO 20022 des ch. 37 et ch. 50 § 50.5 ; le trou de responsabilité du ch. 40 § 40.2.6.
+- **§ 54.5 — Tracer l'effet, pas seulement l'appel** — prolonge le **chaînon manquant** du ch. 43 § 43.5.
+  ⚠ **Relève v0.10 — une taxonomie candidate existe déjà, en vocabulaire de sûreté** : une préimpression adverse de mai 2026 tient la **détection des divergences entre l'action effectuée et son enregistrement d'audit** pour la propriété porteuse d'un *runtime* agentique, et en énumère quatre — contournement de garde, falsification du journal, échec silencieux de l'hôte, cible erronée. **C'est, dit autrement, la question de ce chapitre.**
+  ⚠ **Deux réserves** : la préimpression **n'est pas révisée par les pairs**, et elle **propose une implémentation concurrente de l'objet qu'elle mesure** — son intérêt est inverse de celui de l'éditeur, *ce qui ne le neutralise pas*. Taxonomie à instruire ; **aucun de ses résultats chiffrés n'est repris**.
+
+⚠ *Thèse à retenir pour le vertical : **un virement à moitié réussi n'est pas un incident d'observabilité, c'est un écart comptable** — c'est en finance que le coût du silence des protocoles (Livre II) et de l'encadrement (Livre IV) est maximal.*
+
+**Table de couverture (décision 6)** — *sans objet (chapitre sans source). Décision 8 applicable doublement.*
+
+| Appui | Nature |
+| --- | --- |
+| ch. 1, ch. 25, ch. 37, ch. 43, ch. 50 | **adossements internes** — renvois, jamais sources |
+| relève v0.10 (quatre divergences) | repérage [C] à instruire ; chiffres non repris |
+| — | **aucun volume source, aucune entrée F-xx, aucun garde-fou hérité** |
 
 ---
 
@@ -1461,17 +1921,99 @@ Sections : taxonomie des effets d'une action d'agent (lecture, écriture, engage
 Sections : la grappe d'échéances 2027-2032 (squelette daté) ; trajectoire des protocoles (coexistence stratifiée gouvernée, souveraineté) ; bifurcation de la gouvernance par couche (AAIF, FIDO, W3C, IETF, DIF) ; identité vérifiable et PQC (l'horloge — renvoi ch. 23-24) ; trajectoire de la menace (agentic SOC — renvoi ch. 22) ; programme de recherche (sémantique, garanties composables, science de l'évaluation) ; trajectoire macro (capacité, coût, soutenabilité, souveraineté) ; prospective d'entreprise et finance ; responsabilité, assurabilité, gouvernance de l'émergence ; scénarios 2027-2032.
 *Fusion : Vol. I* Monographie *ch. 7 (**hors §7.4.1-§7.4.4, prélevés par le Livre III — §7.4.2/§7.4.3 côté émission, §7.4.1/§7.4.4 côté horloge post-quantique**) + §3.13.2-3.13.4 (coexistence et souveraineté, programme de recherche sémantique, synthèse — **seule affectation du reste de §3.13**, le ch. 7 ne recevant que §3.13.1). Garde-fou : tri PROGRAMMÉ/PROJETÉ/SPÉCULATIF systématique. ⚠ **Relève v0.10** : une thèse de trajectoire sur la couche d'exécution est candidate à ce chapitre — « tout harnais s'étend jusqu'à devenir un *claw* », décalque de la loi de Zawinski, énoncée en conférence le 21 juillet 2026. Si elle y entre, elle y entre en **PROJETÉ**, attribuée nommément à son auteur, jamais en PROGRAMMÉ ; sa forme d'origine est une loi d'humour d'ingénierie — ce qui n'en fait pas une prédiction fausse, mais interdit de la citer comme une régularité établie. Le régime qu'elle décrit — agent hors session, déclenché par événement, sollicitant l'humain sur ses propres canaux — touche aussi les ch. 42, 44 et 45 (journal v0.10, relève 7). ⚠ **Relèves v0.11 — deux objets pour deux sections.** (1) *Responsabilité, assurabilité* : une préimpression de juillet 2026 (arXiv 2607.11999) propose une pile d'assurance des agents à huit composantes, à l'horizon 2030 — première architecture candidate pour une section jusqu'ici sans objet instruit ; à l'entrée, en PROJETÉ, l'horizon 2030 étant celui des auteurs, pas un jalon. (2) *Trajectoire macro* : la littérature de prépublication 2025-2026 se donne des échelles au-delà de l'agentique — niveaux croisant performance, généralité et autonomie (arXiv 2311.02462) et « chemin vers la superintelligence artificielle » assumé jusque dans les titres (arXiv 2507.21046). Si ces échelles entrent au chapitre, la trajectoire d'infrastructure s'écrit en PROJETÉ et la visée superintelligence en **SPÉCULATIF** — le tri du chapitre existe pour ce cas exact ; l'autonomie graduée du plan (ch. 26) y trouve un vis-à-vis publié, jamais une validation.*
 
+#### Table des matières détaillée du chapitre 55
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 7 et §3.13.2-3.13.4 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 55.0 — Orientation : lire un chapitre prospectif sans céder à la prédiction** — *← §7.0.2 (**SIÈGE de la discipline** : les trois statuts PROGRAMMÉ / PROJETÉ / SPÉCULATIF), §7.0.3 (cône d'incertitude, frise) et §7.0.4 (ni feuille de route produit, ni prédiction d'AGI). Le §7.0.1 est refondu en apparat.*
+- **§ 55.1 — La grappe d'échéances 2027-2032 : le squelette daté (PROGRAMMÉ)** — *← §7.1.1-7.1.4 : la concentration de 2027 ; échéances d'identité et de standards ; échéances financières et de règlement ; **le caractère mouvant du « programmé » — discipline de re-datation**.*
+- **§ 55.2 — Trajectoire des protocoles : vers la coexistence stratifiée gouvernée** — *← §7.2.1-7.2.4 + §3.13.2 (coexistence vs convergence, agentic web, souveraineté — **seule affectation du reste de §3.13**, le ch. 7 ne recevant que §3.13.1).*
+- **§ 55.3 — La bifurcation de la gouvernance par couche : AAIF, FIDO, W3C, IETF, DIF** — *← §7.3.1-7.3.4 : cartographie de la fragmentation ; Community Groups du W3C comme signal faible ; **neutralité contestée — la « standardisation » peut renforcer les dominants** ; normalisation institutionnelle (ISO/IEC SC 42, CEN-CENELEC JTC 21, NIST CAISI).* ⚠ Le §7.3 est **prélevé au ch. 7**, qui ne reçoit que §3.13.1.
+- **§ 55.4 — Identité vérifiable et PQC : l'horloge** — renvoi ch. 23-24. ⚠ **Les §7.4.1-§7.4.4 sont prélevés par le Livre III** (§7.4.2/§7.4.3 côté émission, §7.4.1/§7.4.4 côté horloge) : **ce chapitre y renvoie sans les reconstruire**.
+- **§ 55.5 — Trajectoire de la menace** — renvoi ch. 22. ⚠ Le §7.5 est **prélevé par le ch. 22** : renvoi, pas reprise.
+- **§ 55.6 — Le programme de recherche** — *← §7.6.1-7.6.6 : le **verrou sémantique et pragmatique (SIÈGE)** + §3.13.3 (programme de recherche sémantique) ; garanties composables sur acteurs probabilistes ; renaissance critique de l'héritage AAMAS ; science de l'évaluation et certification inter-fournisseurs ; sécurité formelle des frontières ; visions « Internet of Agents » / « Agentic Web ».*
+- **§ 55.7 — Trajectoire technologique et macro** — *← §7.7.1-7.7.x : courbe de capacité d'autonomie (ce que mesurent et ne mesurent pas les horizons de tâche) ; économie de l'inférence et viabilité des flottes ; coût, soutenabilité, souveraineté.*
+  ⚠ **Relève v0.11** : la littérature de prépublication 2025-2026 se donne des échelles **au-delà de l'agentique** — niveaux croisant performance, généralité et autonomie (arXiv 2311.02462) ; « chemin vers la superintelligence artificielle » assumé jusque dans les titres (arXiv 2507.21046). Si ces échelles entrent, la trajectoire d'infrastructure s'écrit en **PROJETÉ** et la visée superintelligence en **SPÉCULATIF** — le tri existe pour ce cas exact ; l'autonomie graduée du ch. 26 y trouve **un vis-à-vis publié, jamais une validation**.
+- **§ 55.8 — Prospective d'entreprise** — *← §7.8.1-7.8.6 : sortie du « pilot purgatory » ; assainissement du marché et « agent washing » ; **lecture critique des projections de taille de marché** ; l'organisation agentique à maturité ; recomposition du travail ; **N×M → N+M comme moteur de marché : un pari, pas un chiffre**.*
+- **§ 55.9 — La finance à l'horizon** — *← §7.9.1-7.9.6 : fenêtre où les exigences deviennent contraignantes ; course aux rails de mandat ; monnaie programmable et règlement agentique ; **risque systémique des agents corrélés — monoculture, herding, « AI monitoring AI »** ; migration des standards de données vers le code exécutable ; maturation de l'autonomie bornée.*
+- **§ 55.10 — Responsabilité, assurabilité et gouvernance de l'émergence** — *← §7.10.1-7.10.5 : vide de responsabilité (retrait de l'AILD, PLD 2024) ; la piste d'audit comme substitut ; **l'assurabilité comme régulateur de fait** ; gouvernance de l'émergence ; risques de second ordre.*
+  ⚠ **Relève v0.11** : une préimpression de juillet 2026 (arXiv 2607.11999) propose une **pile d'assurance des agents à huit composantes** à l'horizon 2030 — première architecture candidate pour une section jusqu'ici sans objet instruit ; à l'entrée, en **PROJETÉ**, l'horizon 2030 étant celui des auteurs, **pas un jalon**.
+- **§ 55.11 — Scénarios 2027-2032 et synthèse** — *← §7.11.1-7.11.6 + §3.13.4 (synthèse) : tenir le cône d'incertitude ; scénarios croisés (convergence/fragmentation × régulé/dérégulé × souverain/ouvert) ; **wildcards** ; conditions pour que l'interop agentique tienne ses promesses ; questions ouvertes consolidées.*
+
+⚠ **Relève v0.10** : « tout harnais s'étend jusqu'à devenir un *claw* » — décalque de la loi de Zawinski, énoncée en conférence le 21 juillet 2026. Si elle entre, **en PROJETÉ, attribuée nommément**, jamais en PROGRAMMÉ : sa forme d'origine est une **loi d'humour d'ingénierie** — ce qui n'en fait pas une prédiction fausse, mais interdit de la citer comme une régularité établie. Le régime décrit touche aussi les ch. 42, 44 et 45.
+
+**Table de couverture (décision 6)**
+
+| Source Vol. I *Monographie* | Destination | Régime |
+| --- | --- | --- |
+| §7.0 | § 55.0 | condensé ; §7.0.1 refondu en apparat |
+| §7.1-7.3 | § 55.1-55.3 | condensé |
+| §7.4 | ch. 14, 17, 19, 23, 24 | **prélevé par le Livre III** — renvoi seul ici |
+| §7.5 | ch. 22 | prélevé — renvoi seul ici |
+| §7.6-7.11 | § 55.6-55.11 | condensé |
+| §3.13.2-3.13.4 | § 55.2, § 55.6, § 55.11 | **seule affectation du reste de §3.13** |
+
 ### Chapitre 56 — La frontière de la connaissance vérifiable
 
 **Thèse** : ce que l'on ne sait pas encore, dit honnêtement — lacunes du socle consolidé, questions ouvertes, agenda de recherche, dont le problème des deux sauts (ch. 18) et les indicateurs manquants (ch. 45).
 Sections : lacunes résiduelles du socle unifié — **les onze du PRD Vol. II reprises une à une, par leur identifiant** (registre à l'Annexe C), dont §10.4 (contenu de la ligne AMF), §10.7 (composante ACP d'AGNTCY, **quatrième branche de R-8 du Vol. II**), §10.8 (absence d'attaque documentée propre à A2A), §10.9 (anatomie et gouvernance d'AP2) et §10.10 (sous-caractérisation de F-36 et F-37) ; questions de recherche transmises (les deux séries du Vol. II, nommées — *Monographie* ch. 16 §16.3 et ch. 21 §21.2) ; frontières de la fabrique de confiance.
 *Fusion : Vol. II ch. 21 (Socle : PRD Vol. II §10, §8.3 ; **garde-fou R-8 du Vol. II, branche (d)** — le Vol. II assigne cette branche à son ch. 21, et les v0.1-v0.4 la perdaient avec la lacune §10.7) + Vol. III *TOC* §10.3, §26.3 et §28.5 (**questions transmises seules** — la mécanique du problème des deux sauts reste au ch. 18, qui reçoit les ch. 9-10 **du Vol. III** ; ici, l'énoncé de recherche qui en sort) + Vol. I* Monographie *§2.13.2 (questions ouvertes : horizon long, fiabilité, sécurité, apprentissage continu). ⚠ **Renvoi corrigé en v0.5** : les versions antérieures citaient « Vol. III §10.4 », qui ne résout pas — le ch. 10 du Vol. III s'arrête à §10.3 (*Question de recherche formulée pour instruction*), qui est bien la section visée par la glose. Regroupe en un seul lieu les lacunes des trois volumes ; **socle construit par la rédaction, avec la contrepartie d'énumération de l'avant-propos.***
 
+#### Table des matières détaillée du chapitre 56
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 21 (Vol. II), §10.3/§26.3/§28.5 (Vol. III) et §2.13.2 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 56.1 — Les lacunes résiduelles du socle unifié** — *← Vol. II §21.1 ; **les onze du PRD Vol. II reprises une à une, par leur identifiant** (registre à l'Annexe C) :* §10.1 (organisme de normalisation, ch. 34), §10.2 (institutions sans socle complet, ch. 39), §10.3 (frameworks, ch. 27), §10.4 (**contenu de la ligne AMF — la plus coûteuse**, ch. 31), §10.5 (AP2 ↔ rails canadiens, ch. 40), §10.6 (portefeuille IBM, ch. 49), §10.7 (**composante ACP d'AGNTCY, quatrième branche de R-8**, ch. 7), §10.8 (**aucune attaque documentée propre à A2A**, ch. 11 et ch. 20), §10.9 (anatomie et gouvernance d'AP2, ch. 8 et ch. 10), §10.10 (sous-caractérisation de F-36 et F-37, ch. 25), §10.11 (datation du Budget 2025, ch. 36).
+  ⚠ **Garde-fou R-8 du Vol. II, branche (d)** : le Vol. II assigne cette branche à son ch. 21 — les v0.1-v0.4 la perdaient avec la lacune §10.7.
+  ⚠ **À compléter des lacunes du Vol. III**, dont la **lacune 16 (RGPD)**, non enregistrée au registre — voir l'écart signalé au ch. 34.
+- **§ 56.2 — Les questions de recherche transmises** — *← Vol. II §21.2 + Vol. III* Monographie *§10.3 (question de recherche formulée pour instruction), §26.3 (horizon de tâche déléguée — **partagé avec le ch. 45**) et §28.5 (questions transmises) + Vol. I* Monographie *§2.13.2 (horizon long, fiabilité, sécurité, apprentissage continu).*
+  ⚠ **Décision 7** : les **deux séries « Q n » du Vol. II** se nomment — *Monographie* ch. 16 §16.3 (cinq questions AP2/RTR, ch. 40) et ch. 21 §21.2 (six questions d'agenda, dont Q2 au ch. 20, Q3 au ch. 16, Q4 au ch. 31, Q5 au ch. 34).
+  ⚠ **Questions transmises seules** : la **mécanique** du problème des deux sauts reste au **ch. 18**, qui reçoit les ch. 9-10 du Vol. III ; ici, **l'énoncé de recherche qui en sort**.
+  ⚠ **Renvoi corrigé en v0.5** : les versions antérieures citaient « Vol. III §10.4 », qui **ne résout pas** — le ch. 10 du Vol. III s'arrête à **§10.3**, qui est bien la section visée par la glose.
+- **§ 56.3 — Les frontières de la fabrique de confiance** — *← Vol. II §21.3 en partie ; dont le problème des deux sauts (ch. 18) et les **indicateurs manquants** (ch. 45 § 45.1).*
+
+⚠ **Socle construit par la rédaction, avec la contrepartie d'énumération de l'avant-propos** : l'en-tête énumère les entrées mobilisées et les garde-fous balayés, **y compris à zéro occurrence**. Regroupe en un seul lieu les lacunes des **trois** volumes.
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §21.1-21.2 | § 56.1-56.2 | condensé |
+| Vol. II §21.3 | ch. 57 + § 56.3 | **partagé** : péremption au ch. 57 |
+| Vol. III *Monographie* §10.3, §26.3, §28.5 | § 56.2 | questions transmises seules |
+| Vol. I *Monographie* §2.13.2 | § 56.2 | **arrivée** depuis le ch. 6 |
+
 ### Chapitre 57 — Péremption et protocole de revalidation
 
 **Thèse** : le compendium est daté et le dit — événements qui le périment, protocole de revalidation, conditions de gel des chapitres périssables.
 Sections : événements de péremption (désignation du standard technique par arrêté, lancement effectif du RTR, révisions de MCP et d'A2A — la couche protocolaire entière du Livre II se périme au rythme de ses deux spécifications, non de la seule première ; ⚠ relève v0.7 : la ratification MCP annoncée pour le **28 juillet 2026** est le premier de ces événements à porter une date, neuf jours après ce fichier —, transfert de gouvernance d'AP2 (⚠ relève v0.7 : **candidat survenu**, don à la FIDO Alliance annoncé au 28 avril 2026 — voir ch. 10), normalisation du passeport, stabilisation OTel, premier incident public d'identité agentique (⚠ relève v0.7 : des candidats du 1ᵉʳ semestre 2026 existent — compromissions de plateformes d'agents, divulgations en conférence de sécurité — à instruire à sources primaires avant de déclarer l'événement survenu), jalons PQC 2030/2035, entrées en vigueur du 1ᵉʳ mai 2027 ; ⚠ **relève v0.10** : la **couche d'exécution** — le harnais — n'a aucun événement dans cette liste, alors qu'elle se révise au rythme d'un produit d'éditeur (versions, politique d'approbation, admission d'extensions), soit une horloge plus rapide que celle des protocoles ; l'y inscrire suppose d'avoir tranché le risque 14) ; protocole de revalidation ; registre de gel par chapitre.
 *Fusion : Vol. II ch. 24 + Vol. III *TOC* §28.6. Garde-fous : R-4, R-5 et R-6 du Vol. II et réserve F-29 (balayés ensemble à chaque revalidation). Clôt l'ouvrage par la discipline évidentiaire du Vol. II.*
+
+#### Table des matières détaillée du chapitre 57
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 24 (Vol. II) et §28.6 (Vol. III) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 57.1 — Les lacunes propres au blueprint** — *← Vol. II §24.1 ; renvoi ch. 49 (lacune PRD Vol. II §10.6).*
+- **§ 57.2 — Les événements de péremption** — *← Vol. II §24.2 + Vol. III* Monographie *§28.6 :*
+  - désignation du standard technique par arrêté (ch. 36) ;
+  - lancement effectif du RTR (ch. 37 — ⚠ **réserve F-29** : ne jamais écrire « lancé » avant) ;
+  - **révisions de MCP *et* d'A2A** — ⚠ *la couche protocolaire entière du Livre II se périme au rythme de **ses deux** spécifications, non de la seule première* ; ⚠ **relève v0.7** : la ratification MCP annoncée pour le **28 juillet 2026** est le premier de ces événements à porter une date, **neuf jours après la date du fichier** ;
+  - transfert de gouvernance d'AP2 — ⚠ **relève v0.7 : candidat survenu**, don à la FIDO Alliance annoncé au 28 avril 2026 (ch. 10) ;
+  - normalisation du passeport (ch. 17) ; stabilisation OTel (ch. 43) ;
+  - **premier incident public d'identité agentique** — ⚠ **relève v0.7** : des candidats du 1ᵉʳ semestre 2026 existent (compromissions de plateformes d'agents, divulgations en conférence), **à instruire à sources primaires avant de déclarer l'événement survenu** ;
+  - jalons PQC 2030/2035 (ch. 23 — ⚠ **R-11 : « visés »**, jamais « fixés ») ; entrées en vigueur du 1ᵉʳ mai 2027 (ch. 29, ch. 31).
+  ⚠ **Relève v0.10 — un angle mort de cette liste même** : la **couche d'exécution (le harnais)** n'y a **aucun événement**, alors qu'elle se révise au rythme d'un produit d'éditeur (versions, politique d'approbation, admission d'extensions) — une horloge **plus rapide que celle des protocoles**. L'y inscrire suppose d'avoir tranché le **risque 14**, qui est une décision d'auteur.
+- **§ 57.3 — Le protocole de revalidation** — *← Vol. II §24.3 ; **garde-fous R-4, R-5 et R-6 du Vol. II et réserve F-29 balayés ensemble à chaque revalidation**.*
+- **§ 57.4 — Le registre de gel par chapitre** — convention de datation de l'avant-propos : **gel unique de l'ouvrage + date de gel par chapitre** pour les faits périssables.
+
+⚠ *Clôt l'ouvrage par la **discipline évidentiaire du Vol. II**. Le compendium est daté **et le dit**.*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §24.1-24.3 | § 57.1-57.3 | condensé |
+| Vol. III *Monographie* §28.6 | § 57.2 | prélevé au ch. 50 |
 
 ---
 
