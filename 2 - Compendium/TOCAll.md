@@ -171,11 +171,85 @@ Sections : définition et taxonomie des niveaux (LCIM) ; couplage, découplage, 
 Sections : formats, sérialisation, schémas et registres ; transformation, modèle canonique, contrats de données, formats de table ; pile du Web sémantique, médiation ontologique, graphe de connaissances d'entreprise ; LLM et automatisation de l'interopérabilité sémantique.
 *Fusion : Vol. I* Monographie *§1.7-1.8. Aval agentique (§3.5) consolidé au Livre II (ch. 9).*
 
+#### Table des matières détaillée du chapitre 2
+
+*Dérivée de `Monographie.md` §1.7-1.8 (Vol. I) le 25 juillet 2026 — chaque section porte sa provenance. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 2.1 — Formats d'échange, sérialisation, schémas et registres**
+  - 2.1.1 Taxonomie des formats : texte vs binaire, document vs flux, *schema-on-read* / *schema-on-write* — *← §1.7.1.1*
+  - 2.1.2 Formats textuels et binaires : XML, JSON, YAML ; Protobuf, Avro — *← §1.7.1.2*
+  - 2.1.3 Formats analytiques et protocoles de connexion : Parquet, ORC, Arrow ; Flight SQL, ADBC — *← §1.7.1.3*
+  - 2.1.4 Schémas et validation : XSD, JSON Schema, IDL — *← §1.7.2.1*
+  - 2.1.5 Évolution et compatibilité : *backward*, *forward*, *full*, *transitive* — *← §1.7.2.2*
+  - 2.1.6 Registres de schémas dans l'architecture événementielle — *← §1.7.2.3*
+- **§ 2.2 — Transformation, modèle canonique, contrats de données et formats de table**
+  - 2.2.1 Transformation et ponts inter-formats — *← §1.7.3.1*
+  - 2.2.2 Contrats de données et produits de données (*data mesh*) — *← §1.7.3.2*
+  - 2.2.3 Formats de table et catalogues interopérables : Iceberg, Delta, REST Catalog — *← §1.7.3.3*
+- **§ 2.3 — Pile du Web sémantique, médiation ontologique et graphe de connaissances d'entreprise**
+  - 2.3.1 RDF, RDFS, OWL et JSON-LD — *← §1.8.1.1*
+  - 2.3.2 SPARQL et la fédération de sources — *← §1.8.1.2*
+  - 2.3.3 Validation et contrats sémantiques : SHACL et ShEx — *← §1.8.1.3*
+  - 2.3.4 Alignement ontologique et architectures de médiation — *← §1.8.2.1*
+  - 2.3.5 Graphe de connaissances, OBDA et MDM — *← §1.8.2.2*
+- **§ 2.4 — LLM et automatisation de l'interopérabilité sémantique**
+  - 2.4.1 LLM pour la construction d'ontologies et l'appariement de schémas — *← §1.8.3.1*
+  - 2.4.2 GraphRAG : graphes au service de l'IA générative d'entreprise — *← §1.8.3.2*
+
+⚠ *Le versant agentique de la sémantique (§3.5 du Vol. I : écart accord-de-protocole / compréhension, sémantique lue-par-le-modèle, ontologies de capacités, modes d'échec sémantiques) n'est pas repris ici — il est consolidé au ch. 9.*
+
+**Table de couverture (décision 6)**
+
+| Source Vol. I *Monographie* | Destination | Régime |
+| --- | --- | --- |
+| §1.7.1 | § 2.1.1-2.1.3 | condensé |
+| §1.7.2 | § 2.1.4-2.1.6 | condensé |
+| §1.7.3 | § 2.2 | condensé |
+| §1.8.1 | § 2.3.1-2.3.3 | condensé |
+| §1.8.2 | § 2.3.4-2.3.5 | condensé |
+| §1.8.3 | § 2.4 | condensé |
+| §3.5 | ch. 9 | hors périmètre (aval agentique) |
+
 ### Chapitre 3 — Sécurité, identité et gouvernance de l'interopérabilité
 
 **Thèse** : le passage du périmètre réseau à la confiance par échange, et l'identité fédérée à autorisation déléguée, sont l'héritage IAM que la fabrique de confiance agentique (Livre III) étire jusqu'à rupture.
 Sections : du périmètre à la confiance par échange ; identité fédérée, OAuth/OIDC, autorisation déléguée (**socle pré-agentique** — sa transposition aux agents est au ch. 13) ; zero-trust, identité de charge de travail (SPIFFE/SPIRE), confiance décentralisée ; gouvernance de l'intégration, cycle de vie des contrats, test/certification, observabilité comme condition opérationnelle.
 *Fusion : Vol. I* Monographie *§1.9-1.10. **Chapitre-charnière dédoublonné** : pose le socle IAM classique une seule fois. Les ch. 13 (Livre III) et ch. 42 (Livre VII) **y renvoient sans le reconstruire** — ils n'héritent donc pas de §1.9.2 ni de §1.9.3, qui restent ici en entier. C'est la principale économie de la fusion côté identité, et elle n'a lieu que si ces deux chapitres s'y tiennent.*
+
+#### Table des matières détaillée du chapitre 3
+
+*Dérivée de `Monographie.md` §1.9-1.10 (Vol. I) le 25 juillet 2026 — chaque section porte sa provenance. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 3.1 — Du périmètre réseau à la confiance par échange**
+  - 3.1.1 Modèle de menace de l'intégration — *← §1.9.1.1*
+  - 3.1.2 OWASP API Security Top 10 et contrôles — *← §1.9.1.2*
+- **§ 3.2 — Identité fédérée et autorisation déléguée** — **socle pré-agentique, posé ici une seule fois**
+  - 3.2.1 SAML, OAuth 2.x/2.1 et OpenID Connect — *← §1.9.2.1*
+  - 3.2.2 Jetons, anti-rejeu et profils à haute sécurité — *← §1.9.2.2*
+  - 3.2.3 Provisionnement et propagation de contexte — *← §1.9.2.3*
+- **§ 3.3 — Zero-trust, identité de charge de travail et confiance décentralisée** — **socle pré-agentique, posé ici une seule fois**
+  - 3.3.1 Zero-trust et identité de charge de travail : SPIFFE/SPIRE, WIMSE — *← §1.9.3.1*
+  - 3.3.2 Identité décentralisée, eIDAS 2.0 et cryptographie post-quantique — *← §1.9.3.2*
+- **§ 3.4 — Gouvernance, test et observabilité de l'interopérabilité**
+  - 3.4.1 Modèles de gouvernance et *policy-as-code* — *← §1.10.1.1*
+  - 3.4.2 Cycle de vie des contrats, SLA/SLO/SLI et application à l'exécution — *← §1.10.1.2*
+  - 3.4.3 Conformité vs interopérabilité ; *contract testing* piloté par le consommateur — *← §1.10.2.1*
+  - 3.4.4 Suites de certification et organismes de normalisation — *← §1.10.2.2*
+  - 3.4.5 Traçage distribué : OpenTelemetry et W3C Trace Context — *← §1.10.3.1*
+  - 3.4.6 Auditabilité et conformité réglementaire des intégrations — *← §1.10.3.2*
+
+⚠ **L'économie de fusion tient à ce que les §3.2 et §3.3 ne soient reconstruits nulle part ailleurs.** Renvois entrants attendus, sans reprise : ch. 13 (transposition d'OAuth/OIDC/SCIM aux agents), ch. 14 (identité décentralisée agentique : VC, DID), ch. 42 (zero-trust au grain de l'infrastructure), ch. 23-24 (horloge post-quantique — le §3.3.2 n'en pose que le socle pré-agentique), ch. 43 (observabilité agentique, OTel GenAI).
+
+**Table de couverture (décision 6)**
+
+| Source Vol. I *Monographie* | Destination | Régime |
+| --- | --- | --- |
+| §1.9.1 | § 3.1 | condensé |
+| §1.9.2 | § 3.2 | **en entier — non hérité par les ch. 13 et 42** |
+| §1.9.3 | § 3.3 | **en entier — non hérité par les ch. 13 et 42** |
+| §1.10.1 | § 3.4.1-3.4.2 | condensé |
+| §1.10.2 | § 3.4.3-3.4.4 | condensé |
+| §1.10.3 | § 3.4.5-3.4.6 | condensé |
 
 ### Chapitre 4 — L'ingénierie des systèmes agentiques : anatomie, raisonnement, outils
 
@@ -183,17 +257,140 @@ Sections : du périmètre à la confiance par échange ; identité fédérée, O
 Sections : de l'agent conversationnel à l'agent qui agit ; cadre de l'agent rationnel (PEAS, BDI, MAS) ; architectures de boucle mono-agent, séparation contrôleur/exécuteur ; raisonnement, planification, test-time compute ; utilisation d'outils et **MCP comme protocole agent-outil** (anatomie détaillée reportée au ch. 8).
 *Fusion : Vol. I* Monographie *§2.1-2.5. L'anatomie protocolaire de MCP (§2.5.4) est **consolidée au ch. 8** ; ici, seul l'usage d'outils au niveau ingénierie.*
 
+#### Table des matières détaillée du chapitre 4
+
+*Dérivée de `Monographie.md` §2.1-2.5 et §2.8.5 (Vol. I) le 25 juillet 2026 — chaque section porte sa provenance. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 4.0 — Introduction : de l'agent conversationnel à l'agent qui agit**
+  - 4.0.1 Du LLM conversationnel à l'agent qui agit sur le monde — *← §2.1.1*
+  - 4.0.2 Le double public et l'angle d'ingénierie dominant — *← §2.1.2 ; les encadrés* Perspective recherche *et* Mise en œuvre *sont l'instrument de ce double public (avant-propos)*
+  - *§2.1.3 (carte du chapitre source) : apparat de navigation, refondu à l'échelle de la somme — pas de section propre.*
+- **§ 4.1 — Fondements et définitions de l'IA agentique**
+  - 4.1.1 Qu'est-ce qu'un agent ? Définition canonique, boucle perception-action-but ; agent vs IA agentique — *← §2.2.1.1-2.2.1.2*
+  - 4.1.2 Le cadre de l'agent rationnel : PEAS et typologies — *← §2.2.2*
+  - 4.1.3 Héritages théoriques : BDI ; MAS classiques, MDP/POMDP et lignée RL — *← §2.2.3.1-2.2.3.2*
+  - 4.1.4 Agent, workflow, automatisation : régimes de contrôle et niveaux d'autonomie — *← §2.2.4* ⚠ **garde-fou R-13 du Vol. III** : c'est le **continuum 0-5**, l'une des trois échelles distinctes du Vol. I — ne jamais écrire « l'autonomie graduée du Vol. I » sans préciser laquelle
+  - 4.1.5 La frontière des capacités 2024-2026 : cadrage qualitatif — *← §2.2.5*
+- **§ 4.2 — Architectures d'agent et boucle agentique**
+  - 4.2.1 Le LLM augmenté et la boucle perception-raisonnement-action-observation — *← §2.3.1*
+  - 4.2.2 Architectures cognitives en héritage : SOAR, ACT-R, CoALA — *← §2.3.2*
+  - 4.2.3 Patrons de boucle mono-agent : ReAct ; Plan-and-Execute et ReWOO ; Reflexion ; CodeAct — *← §2.3.3.1-2.3.3.4*
+  - 4.2.4 Séparation contrôleur/exécuteur et critères de choix d'architecture — *← §2.3.4*
+- **§ 4.3 — Raisonnement, planification et calcul à l'inférence**
+  - 4.3.1 Du raisonnement linéaire à la recherche structurée — *← §2.4.1*
+  - 4.3.2 Recherche guidée et vérificateurs à l'inférence — *← §2.4.2*
+  - 4.3.3 Décomposition et planification : PDDL et limites des LLM planificateurs ; approches hybrides — *← §2.4.3.1-2.4.3.2*
+  - 4.3.4 Modèles de raisonnement et *test-time compute* : contrôler le budget ; fidélité et monitorabilité de la chaîne — *← §2.4.4.1-2.4.4.2*
+  - 4.3.5 Entraînement et auto-amélioration des agents — *← §2.4.5*
+- **§ 4.4 — Utilisation d'outils et accès aux outils**
+  - 4.4.1 Appel de fonctions et apprentissage de l'usage d'outils — *← §2.5.1*
+  - 4.4.2 Sélection, orchestration et conception d'outils fiables — *← §2.5.2*
+  - 4.4.3 Outils universels : exécution de code, *computer use* et agents GUI ; ancrage visuel ; agents de navigateur — *← §2.5.3.1-2.5.3.2*
+  - 4.4.4 Robustesse de la boucle d'outillage et évaluation — *← §2.5.5*
+- **§ 4.5 — Choix et service du modèle comme décision d'ingénierie** — *← §2.8.5, **arrivée depuis le ch. 6** (seule perte silencieuse trouvée à la collation v0.5)*
+
+⚠ *Le §2.5.4 (protocole agent-outil : primitives, transports, révisions ; registres, passerelles et découverte d'entreprise) n'est **pas** traité ici — il part en entier au ch. 8. Ce chapitre s'arrête à l'usage d'outils au niveau ingénierie.*
+
+**Table de couverture (décision 6)**
+
+| Source Vol. I *Monographie* | Destination | Régime |
+| --- | --- | --- |
+| §2.1 | § 4.0 | condensé ; §2.1.3 refondu en apparat |
+| §2.2 | § 4.1 | condensé |
+| §2.3 | § 4.2 | condensé |
+| §2.4 | § 4.3 | condensé |
+| §2.5.1-2.5.3, §2.5.5 | § 4.4 | condensé |
+| §2.5.4 | ch. 8 | déplacé en entier |
+| §2.8.5 | § 4.5 | **arrivée**, déclarée au ch. 6 |
+
+⚠ **Écart constaté** — l'arrivée du §2.8.5 est déclarée à son **départ** (ligne Fusion du ch. 6) mais n'est glosée ni dans le titre, ni dans la phrase « Sections : … » du ch. 4. Un chapitre rédigé sur la seule liste de sections de ce chapitre perdrait la section que la v0.5 avait précisément sauvée.
+
 ### Chapitre 5 — Ancrage informationnel : mémoire, contexte, RAG agentique
 
 **Thèse** : l'agent persistant se construit par l'ingénierie du contexte et une pile de récupération gouvernée. ⚠ **L'empoisonnement de la mémoire et des sources n'est pas traité ici** : les §2.6-2.7 du Vol. I n'en portent aucune occurrence — la matière vit au §2.10.2, déjà affectée au ch. 20, qui la relit comme un risque d'identité des *sources*. Ce chapitre pose l'ancrage ; le ch. 20 en pose le versant hostile.
 Sections : taxonomie de la mémoire, ingénierie du contexte ; architectures de mémoire long terme ; RAG agentique (planifier-récupérer-critiquer-itérer) ; données structurées, accès d'entreprise, gouvernance d'ancrage.
 *Fusion : Vol. I* Monographie *§2.6-2.7. Le versant sécurité (empoisonnement) renvoie au ch. 20 (Livre III, versant hostile).*
 
+#### Table des matières détaillée du chapitre 5
+
+*Dérivée de `Monographie.md` §2.6-2.7 (Vol. I) le 25 juillet 2026 — chaque section porte sa provenance. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 5.1 — Du LLM sans état à l'agent persistant : mémoire et ingénierie du contexte**
+  - 5.1.1 Taxonomie de la mémoire — *← §2.6.1*
+  - 5.1.2 L'ingénierie du contexte comme discipline — *← §2.6.2*
+  - 5.1.3 Compaction réversible, résumé et oubli actif — *← §2.6.2.1*
+  - 5.1.4 Mémoire procédurale et fichiers de configuration d'agent — *← §2.6.2.2*
+- **§ 5.2 — Architectures de mémoire long terme et pile de récupération**
+  - 5.2.1 Architectures de mémoire long terme et pile de récupération — *← §2.6.3*
+  - 5.2.2 Consolidation, ancrage et évaluation de la mémoire — *← §2.6.4*
+- **§ 5.3 — RAG agentique : planifier-récupérer-critiquer-itérer**
+  - 5.3.1 Du RAG statique au RAG agentique — *← §2.7.1*
+  - 5.3.2 Stratégies de récupération, ingestion et structures — *← §2.7.2*
+- **§ 5.4 — Données structurées, accès d'entreprise et gouvernance d'ancrage**
+  - 5.4.1 Données structurées et accès d'entreprise — *← §2.7.3*
+  - 5.4.2 Gouvernance d'accès, ancrage et évaluation — *← §2.7.4*
+
+⚠ **Aucune sous-section d'empoisonnement ici, et c'est un constat de source, non un oubli.** Les §2.6-2.7 du Vol. I n'en portent aucune occurrence ; la matière vit au §2.10.2.2 (empoisonnement d'outils, de données et de mémoire), déjà affecté au ch. 20, qui la relit comme un risque d'identité des *sources*. Ce chapitre pose l'ancrage ; le ch. 20 en pose le versant hostile.
+
+**Table de couverture (décision 6)**
+
+| Source Vol. I *Monographie* | Destination | Régime |
+| --- | --- | --- |
+| §2.6.1-2.6.2 | § 5.1 | condensé |
+| §2.6.3-2.6.4 | § 5.2 | condensé |
+| §2.7.1-2.7.2 | § 5.3 | condensé |
+| §2.7.3-2.7.4 | § 5.4 | condensé |
+| §2.10.2.2 | ch. 20 | hors périmètre (versant hostile) |
+
 ### Chapitre 6 — Systèmes multi-agents, évaluation et sûreté
 
 **Thèse** : le multi-agent a un surcoût que seuls certains gains justifient ; son évaluation (succès de tâche vs trajectoire) et sa sûreté (triade létale, vecteurs d'attaque) sont les deux fronts encore ouverts.
 Sections : pourquoi le multi-agent, topologies, raisonnement collectif ; communication inter-agents (A2A/ACP — anatomie au ch. 8) ; frameworks d'orchestration et frontière déterministe/agentique (**consolidé au ch. 27**) ; évaluation, LLM-comme-juge, bancs d'essai, red-teaming (la mise en œuvre en production est au ch. 44) ; modèle de menace, vecteurs d'attaque, défense architecturale, alignement.
 *Fusion : Vol. I* Monographie *§2.8-2.10, **partagé explicitement** : §2.8.1-2.8.3 et §2.9.1-2.9.5 restent ici ; §2.8.4 (frameworks) fusionne au ch. 27 ; **§2.8.5 (choix et service du modèle comme décision d'ingénierie) part au ch. 4** — section restée sans destination ni coupe assumée jusqu'à la v0.5, seule perte silencieuse trouvée à la collation contre les volumes complets ; §2.9.6 (observabilité, OTel GenAI) part au ch. 43 ; §2.10.1-2.10.2 (modèle de menace, vecteurs) partent au ch. 20 ; §2.10.3-2.10.5 (défense architecturale, garde-fous d'exécution, alignement) restent ici, le ch. 42 les reprenant au grain de l'infrastructure. Le §2.11.3 (gouvernance par les normes) part au ch. 34, les §2.11.4-2.11.5 (HITL opérationnel, réponse aux incidents, AIOps agentique) au ch. 44, le §2.13.1 (grille « quand agentifier ») au ch. 47 et le §2.13.2 (questions ouvertes) au ch. 56. Coupe assumée : §2.12 (applications et tendances 2024-2026 — remplacé par les Livres VI et X).*
+
+#### Table des matières détaillée du chapitre 6
+
+*Dérivée de `Monographie.md` §2.8-2.10 (Vol. I) le 25 juillet 2026 — chaque section porte sa provenance. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 6.1 — Pourquoi le multi-agent : gains, surcoût, topologies**
+  - 6.1.1 Gains, surcoût et fondements classiques — *← §2.8.1*
+  - 6.1.2 Topologies, rôles et raisonnement collectif — *← §2.8.2*
+- **§ 6.2 — Communication inter-agents : A2A, ACP et pile d'interopérabilité** — *← §2.8.3 ; l'anatomie protocolaire est au ch. 8, la pile au ch. 9*
+- **§ 6.3 — Évaluation et bancs d'essai**
+  - 6.3.1 Pourquoi évaluer un agent est difficile : succès de tâche vs trajectoire — *← §2.9.1*
+  - 6.3.2 LLM-comme-juge : principes, biais et *reward hacking* — *← §2.9.2*
+  - 6.3.3 Bancs d'essai de capacité : codage, web et bureautique ; raisonnement général, outils et tâches d'entreprise — *← §2.9.3.1-2.9.3.2*
+- **§ 6.4 — Sûreté, red-teaming et taxonomie d'échecs**
+  - 6.4.1 Évaluation de la sûreté et red-teaming agentique — *← §2.9.4*
+  - 6.4.2 Fiabilité, coût et taxonomie d'échecs — *← §2.9.5*
+- **§ 6.5 — Défense architecturale, garde-fous et alignement**
+  - 6.5.1 Référentiels et patrons de défense architecturale — *← §2.10.3 ; **posés ici**, appliqués au grain de l'infrastructure au ch. 42*
+  - 6.5.2 Garde-fous d'exécution et chaîne d'approvisionnement — *← §2.10.4 ; même partage déclaré avec le ch. 42*
+  - 6.5.3 Alignement, comportement déviant et asymétrie attaquant/défenseur — *← §2.10.5*
+
+**Table de couverture (décision 6)** — ce chapitre est le dernier à consommer le ch. 2 du Vol. I ; sa ligne Fusion porte la ventilation de tout le reste du chapitre source.
+
+| Source Vol. I *Monographie* | Destination | Régime |
+| --- | --- | --- |
+| §2.8.1-2.8.2 | § 6.1 | condensé |
+| §2.8.3 | § 6.2 | condensé |
+| §2.8.4 | ch. 27 | déplacé (frameworks d'orchestration) |
+| §2.8.5 | ch. 4 | déplacé (§ 4.5) |
+| §2.9.1-2.9.3 | § 6.3 | condensé |
+| §2.9.4-2.9.5 | § 6.4 | condensé |
+| §2.9.6 | ch. 43 | déplacé — **seule affectation**, non conservé ici |
+| §2.10.1-2.10.2 | ch. 20 | déplacé (modèle de menace, vecteurs) |
+| §2.10.3-2.10.4 | § 6.5.1-6.5.2 + ch. 42 | **partagé déclaré** : posés ici, appliqués là |
+| §2.10.5 | § 6.5.3 | condensé |
+| §2.11.1 | Livre VII | hors périmètre (modèle de coût) |
+| §2.11.2 | ch. 18 | hors périmètre (chaînes multi-saut) |
+| §2.11.3 | ch. 34 | hors périmètre (gouvernance par les normes) |
+| §2.11.4-2.11.5 | ch. 44 | hors périmètre (HITL, incidents, AIOps) |
+| §2.12 | — | coupe assumée (Livres VI et X) |
+| §2.13.1 | ch. 47 | hors périmètre (grille « quand agentifier ») |
+| §2.13.2 | ch. 56 | hors périmètre (questions ouvertes) |
+
+⚠ **Écart constaté** — la phrase « Sections : … » du ch. 6 annonce « modèle de menace, vecteurs d'attaque, défense architecturale, alignement », alors que sa propre ligne Fusion envoie **§2.10.1-2.10.2 (modèle de menace et vecteurs) au ch. 20**. Seuls la défense architecturale et l'alignement restent ici. Même classe d'écart que « exécution durable » au ch. 1 : la ligne Fusion a été corrigée, la liste de sections ne l'a pas été.
 
 ---
 
@@ -207,11 +404,104 @@ Sections : pourquoi le multi-agent, topologies, raisonnement collectif ; communi
 Sections : définition et niveaux de l'interopérabilité agentique (LCIM appliqué aux agents, taxonomie des quatre axes) ; chronologie 2024-2026 (⚠ **par protocole, non par date** : MCP nov. 2024 ; **AGNTCY mars 2025, antérieur à A2A avril 2025** ; passages sous fondation dans l'ordre inverse — A2A juin 2025, AGNTCY 29 juill. 2025, MCP déc. 2025. La flèche « MCP → A2A → AGNTCY » des v0.1-v0.5 était fausse dans les deux lectures) ; gouvernance comparée des fondations ; **encadré de désambiguïsation R-8** (collision « (agentic) control plane » à quatre branches) ; lecture critique des métriques d'adoption (**PRD Vol. II §8.2.1** : « soutien ≠ production »).
 *Fusion : Vol. II ch. 1 (charpente) + Vol. I* Monographie *§3.0-3.1 (fondements et quatre axes — socle amont de la grille du ch. 15) + §3.13.1 (fondations neutres : AAIF, FIDO). ⚠ Le reste du §3.13 (coexistence/souveraineté, programme de recherche sémantique, synthèse) et le §7.3 (bifurcation de la gouvernance par couche : AAIF, FIDO, W3C, IETF, DIF) vont au **ch. 55** — ne pas les traiter deux fois. Socle : F-01, F-02, F-04, F-05, F-43. Garde-fous : R-1, R-8. **Lacune héritée portée : PRD Vol. II §10.7** — la quatrième branche de R-8 (composante ACP d'AGNTCY) n'est établie par le socle ni dans son intitulé complet ni dans son identité avec l'ACP d'IBM Research : encadré, sans la combler ; renvoi ch. 56.*
 
+#### Table des matières détaillée du chapitre 7
+
+*Dérivée de `Monographie.md` §3.0-3.1 et §3.13.1 (Vol. I) et de `Monographie.md` ch. 1 (Vol. II) le 25 juillet 2026 — chaque section porte sa provenance. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 7.0 — Introduction : de l'échange de données à l'échange d'intentions** — *← Vol. I §3.0.1 (positionnement et proposition directrice). Les §3.0.2 (mode d'emploi, conventions, nomenclature) et §3.0.3 (double public, fil analytique) sont absorbés à l'avant-propos de la somme — apparat de chapitre source, sans section propre ici.*
+- **§ 7.1 — Définir l'interopérabilité agentique et ses niveaux**
+  - 7.1.1 Définition de travail — *← Vol. I §3.1.1*
+  - 7.1.2 Les niveaux LCIM appliqués aux agents : technique, syntaxique, sémantique, pragmatique, dynamique — *← Vol. I §3.1.2*
+  - 7.1.3 Pragmatique (L4) et dynamique (L5) : niveaux existants devenus verrous opérationnels — *← Vol. I §3.1.2.1*
+  - 7.1.4 Ce qui change quand les acteurs sont autonomes, non déterministes et pilotés par LLM — *← Vol. I §3.1.3*
+  - 7.1.5 Reformuler la triade contrat / découplage / évolution pour des acteurs probabilistes — *← Vol. I §3.1.4 ; l'invariant est posé à l'avant-propos et éprouvé au ch. 1*
+  - 7.1.6 Pourquoi l'interop classique (RPC/API/ESB) ne suffit pas : l'argument de l'étagement — *← Vol. I §3.1.5 ; le socle classique est aux ch. 1 et 3*
+- **§ 7.2 — Filiation historique et taxonomie des quatre axes**
+  - 7.2.1 KQML, FIPA-ACL, actes de langage et protocoles à engagements — *← Vol. I §3.1.6*
+  - 7.2.2 Taxonomie structurante des quatre axes d'interopérabilité — *← Vol. I §3.1.7 ; **socle amont de la grille des cinq questions du ch. 15***
+  - 7.2.3 Panorama introductif des modes d'échec — *← Vol. I §3.1.8 ; la taxonomie complète est au ch. 11*
+- **§ 7.3 — Chronologie 2024-2026 : dix-sept mois de consolidation** — *← Vol. II §1.1.* ⚠ **Ordonner par protocole, non par date de lancement** : MCP nov. 2024 ; **AGNTCY mars 2025, antérieur à A2A avril 2025** ; passages sous fondation dans l'ordre inverse (A2A juin 2025, AGNTCY 29 juill. 2025, MCP déc. 2025). La flèche « MCP → A2A → AGNTCY » des v0.1-v0.5 était fausse dans les deux lectures.
+- **§ 7.4 — Gouvernance comparée : ce que « neutre » veut dire**
+  - 7.4.1 Gouvernance comparée des fondations — *← Vol. II §1.2*
+  - 7.4.2 Les fondations neutres : AAIF (Linux Foundation) et FIDO Alliance — *← Vol. I §3.13.1 — **seule part du §3.13 reçue ici** ; §3.13.2-3.13.4 vont au ch. 55*
+- **§ 7.5 — Encadré de désambiguïsation R-8 : la collision « (agentic) control plane » à quatre branches** — *← Vol. II ch. 3 §3.4 (versant protocolaire).* ⚠ **Lacune héritée portée (PRD Vol. II §10.7)** : la quatrième branche (composante ACP d'AGNTCY) n'est établie par le socle ni dans son intitulé complet ni dans son identité avec l'ACP d'IBM Research — encadrer sans combler ; renvoi ch. 56.
+- **§ 7.6 — Lecture critique des métriques d'adoption : « soutien » n'est pas « production »** — *← Vol. II §1.3 + son bloc « Ce que ce chapitre établit, et ce qu'il ne dit pas » (PRD Vol. II §8.2.1).*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. I §3.0 | § 7.0 | condensé ; §3.0.2-3.0.3 absorbés à l'avant-propos |
+| Vol. I §3.1.1-3.1.5 | § 7.1 | condensé |
+| Vol. I §3.1.6-3.1.8 | § 7.2 | condensé |
+| Vol. I §3.13.1 | § 7.4.2 | seule part du §3.13 reçue ici |
+| Vol. I §3.13.2-3.13.4 | ch. 55 | hors périmètre |
+| Vol. I §7.3 | ch. 55 | hors périmètre (bifurcation de la gouvernance par couche) |
+| Vol. II §1.1 | § 7.3 | condensé |
+| Vol. II §1.2 | § 7.4.1 | condensé |
+| Vol. II §1.3 + clôture | § 7.6 | condensé |
+| Vol. II §3.4 | § 7.5 | **siège de l'encadré R-8** (voir écart) |
+
+⚠ **Écart constaté** — le §3.4 du ch. 3 du Vol. II (*Le versant protocolaire de la désambiguïsation (R-8)*) est revendiqué implicitement par **deux** chapitres : le ch. 10 absorbe « Vol. II ch. 3 » en bloc, et le ch. 7 porte l'encadré R-8 dans sa liste de sections. Le siège est ici (l'encadré est nommé au ch. 7) ; le ch. 10 devrait y renvoyer sans le reconstruire. À trancher explicitement dans une passe du TOC — c'est la classe de double affectation que la décision 6 proscrit.
+
 ### Chapitre 8 — Anatomie : MCP (agent-outil) et A2A (agent-agent)
 
 **Thèse** : « MCP dans les agents, A2A entre les agents » — doctrine de complémentarité **déclarée par le projet A2A** (non un accord des deux projets) qui fournit le premier critère de découpage architectural, sans le contraindre.
 Sections : MCP (JSON-RPC 2.0, cadre d'autorisation OAuth — « cadre », jamais « sécurisé » ; révision 2025-11-25 ; ⚠ **RC 2026-07-28, relève v0.7** : gelée le 21 mai 2026, ratification annoncée pour le 28 juillet 2026 — cœur **sans état** (fin de la poignée de main et de l'en-tête de session), extensions (Tasks, MCP Apps), durcissement de l'autorisation aligné OAuth/OIDC, politique de dépréciation à cycle de vie (Active/Deprecated/Removed, ≥ 12 mois entre dépréciation et retrait) ; rupture **annoncée** portant des changements cassants — l'anatomie décrite ici est celle de 2025-11-25, à revalider en bloc au gel, sources primaires à extraire) ; A2A v1.0 (Agent Cards signées, multi-protocole, multi-location) ; MCP comme couche de contrat, A2A et fusion d'ACP-agent ; intégrations infonuagiques (Azure/AWS/Google Cloud).
 *Fusion : Vol. I* Monographie *§3.2-3.3 + §2.5.4 + Vol. II ch. 2. Socle : F-01, F-02, F-03, F-16. Garde-fous : réserve F-01. **Lacune héritée portée : PRD Vol. II §10.9** — ancrage de confiance des *Signed Agent Cards*, date de la v1.0, multi-location et inventaire infonuagique de MCP ne sont pas au socle ; renvoi ch. 56.*
+
+#### Table des matières détaillée du chapitre 8
+
+*Dérivée de `Monographie.md` §3.2-3.3 et §2.5.4 (Vol. I) et de `Monographie.md` ch. 2 (Vol. II) le 25 juillet 2026 — chaque section porte sa provenance. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 8.1 — MCP comme couche de contrat : problème N×M, primitives, transports**
+  - 8.1.1 Le problème N×M et la critique du slogan « USB-C » — *← Vol. I §3.2.1*
+  - 8.1.2 Architecture et primitives, sous l'angle de la bidirectionnalité négociée — *← Vol. I §3.2.2 + §2.5.4.1*
+  - 8.1.3 Transports et trajectoire du couplage vers le découplage : de stdio au cœur sans état — *← Vol. I §3.2.3*
+  - 8.1.4 Une interface d'outillage assortie d'un **cadre** d'autorisation — *← Vol. II §2.1 ; **réserve F-01** : « cadre d'autorisation », jamais « sécurisé »*
+- **§ 8.2 — MCP : jalons datés, autorisation et sémantique des résultats**
+  - 8.2.1 Les cinq jalons datés : trajectoire de maturation d'un standard — *← Vol. I §3.2.4*
+  - 8.2.2 Autorisation et identité : OAuth 2.1 et le serveur MCP comme *Resource Server* — *← Vol. I §3.2.5*
+  - 8.2.3 Vers une sémantique des résultats : sorties structurées, schémas et *Tasks* (expérimental) — *← Vol. I §3.2.6*
+  ⚠ **Relève v0.7 — la RC 2026-07-28 périme cette anatomie** : gelée le 21 mai 2026, ratification annoncée pour le 28 juillet 2026 — cœur **sans état**, extensions (Tasks, MCP Apps), durcissement de l'autorisation, politique de dépréciation à cycle de vie. L'anatomie décrite ici est celle de **2025-11-25**, à revalider en bloc au gel, sources primaires à extraire.
+- **§ 8.3 — MCP : conformité, registre, dépréciation et gouvernance**
+  - 8.3.1 Du projet Anthropic à l'AAIF : conformité, registre, dépréciation — *← Vol. I §3.2.7*
+  - 8.3.2 Registres, passerelles et découverte d'entreprise — *← Vol. I §2.5.4.2 ; **versant outillage seul** — la pile protocolaire est au ch. 9, les registres gouvernés au ch. 16*
+- **§ 8.4 — A2A v1.0 : la délégation entre pairs**
+  - 8.4.1 Du Contract Net à FIPA-ACL : patrons d'interaction transposés aux agents LLM — *← Vol. I §3.3.1*
+  - 8.4.2 A2A v1.0 : Agent Card signée, modèle de tâche et structure des messages — *← Vol. I §3.3.2 + Vol. II §2.2*
+  - 8.4.3 Délégation de tâches et collaboration inter-cadriciels ; multi-protocole et multi-location — *← Vol. I §3.3.3*
+- **§ 8.5 — ACP-agent, ANP et l'état de la standardisation**
+  - 8.5.1 ACP-agent (IBM/BeeAI) et sa fusion dans A2A : la convergence par fusion — *← Vol. I §3.3.4* ⚠ voir écart
+  - 8.5.2 ANP : identité décentralisée, sémantique web et négociation méta-protocole — *← Vol. I §3.3.5* ⚠ voir écart
+  - 8.5.3 Comparaison, convergence et état de la standardisation (juin 2026) — *← Vol. I §3.3.6*
+- **§ 8.6 — La frontière MCP/A2A : une complémentarité déclarée, et par qui**
+  - 8.6.1 Limites de MCP et frontière avec A2A ; modes d'échec de MCP — *← Vol. I §3.2.8*
+  - 8.6.2 Négociation, coordination et modes d'échec propres à l'agent-agent — *← Vol. I §3.3.7 ; taxonomie complète au ch. 11*
+  - 8.6.3 « MCP dans les agents, A2A entre les agents » : doctrine **déclarée par le projet A2A**, non accord des deux projets — *← Vol. II §2.4*
+- **§ 8.7 — Les intégrations infonuagiques : lire le statut, pas la présence** — *← Vol. II §2.3 (Azure, AWS, Google Cloud) + le bloc « Ce que ce chapitre établit, et ce qu'il ne dit pas ».*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. I §3.2.1-3.2.3 | § 8.1 | condensé |
+| Vol. I §3.2.4-3.2.6 | § 8.2 | condensé |
+| Vol. I §3.2.7 | § 8.3.1 | condensé |
+| Vol. I §3.2.8 | § 8.6.1 | condensé |
+| Vol. I §3.3.1-3.3.3 | § 8.4 | condensé |
+| Vol. I §3.3.4-3.3.6 | § 8.5 | condensé |
+| Vol. I §3.3.7 | § 8.6.2 | condensé |
+| Vol. I §2.5.4 | § 8.1.2 et § 8.3.2 | **arrivée** depuis le ch. 4 |
+| Vol. II §2.1 | § 8.1.4 | condensé |
+| Vol. II §2.2 | § 8.4.2 | condensé |
+| Vol. II §2.3 | § 8.7 | condensé |
+| Vol. II §2.4 | § 8.6.3 | condensé |
+| Vol. I §3.6 | Livre III | hors périmètre (en-tête du Livre II : « hors §3.6 ») |
+
+⚠ **Deux écarts constatés.**
+1. **La fusion d'ACP est revendiquée par deux chapitres.** Le ch. 8 reçoit Vol. I §3.3.4 (« ACP-agent et sa fusion dans A2A ») et l'annonce dans sa liste de sections ; le ch. 10 reçoit Vol. II §3.3 (« Le destin de l'ACP protocolaire ») et l'annonce aussi (« le destin d'ACP — plus haut risque R-1 »). Même objet, deux sources, deux chapitres : c'est exactement ce que la **décision 2 (déduplication)** proscrit. Le partage doit être déclaré (p. ex. mécanique de la fusion ici, portée de risque au ch. 10) ou l'un des deux doit renvoyer à l'autre.
+2. **ANP n'est nommé ni au titre ni à la liste de sections** du ch. 8, alors que le §3.3.5 y arrive par l'intervalle « §3.2-3.3 » de la ligne Fusion. Même classe que le §1.2 au ch. 1 : couvert sans être glosé.
 
 ### Chapitre 9 — Découverte, registres, portabilité et pile protocolaire
 
@@ -219,17 +509,125 @@ Sections : MCP (JSON-RPC 2.0, cadre d'autorisation OAuth — « cadre », jamais
 Sections : découverte, registres et nommage (pont vers ch. 16) ; la pile de protocoles agentiques et son étagement ; portabilité inter-modèles et inter-cadriciels ; interopérabilité sémantique des agents (de l'accord-de-protocole à la compréhension) ; test de conformité et certification des protocoles ; ⚠ **relève v0.11 — la généralisation de la pile a un nom de scène et un programme normatif** : une préimpression de juillet 2025 nomme « web agentique » le régime où l'interaction machine-à-machine devient le cas nominal du web et l'ordonne en trois dimensions — intelligence, interaction, économie (arXiv 2507.21206) ; une préimpression de juin 2026 soutient que ce régime exige une infrastructure **normative** neuve, l'accès des agents aux plateformes pour le compte d'utilisateurs n'étant réglé ni par le droit ni par les mécanismes de gouvernance existants (arXiv 2606.10711). Préimpressions non révisées par les pairs, résumés seuls consultés : cadre de nommage candidat pour la trajectoire du ch. 55, jamais un fait d'adoption.
 *Fusion : Vol. I* Monographie *§3.4, §3.5, §3.7-3.8 + §3.12 (conformité protocolaire ; la propagation de trace inter-agents §3.12.3 part au ch. 43). Les registres gouvernés (versant identité/conformité) sont **consolidés au ch. 16** ; ici, le versant protocolaire seul.*
 
+#### Table des matières détaillée du chapitre 9
+
+*Dérivée de `Monographie.md` §3.4, §3.5, §3.7-3.8 et §3.12 (Vol. I) le 25 juillet 2026 — chaque section porte sa provenance. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 9.1 — Découverte, registres et nommage des agents et des outils** — **versant protocolaire seul**
+  - 9.1.1 La leçon d'UDDI : la récurrence annuaire → registre de services → registre d'agents — *← §3.4.1*
+  - 9.1.2 Le problème de découverte propre aux agents : trois moments — *← §3.4.2*
+  - 9.1.3 Auto-description et catalogues fédérés : Agent Card, OASF, MCP Registry — *← §3.4.3*
+  - 9.1.4 Annuaires, services de noms et registres d'identité : AGNTCY ADS, ANS, W3C Agent Identity Registry — *← §3.4.4*
+  - 9.1.5 Marketplaces, gouvernance et modes d'échec des registres — *← §3.4.5*
+  ⚠ *Le §3.4 est **partagé déclaré** avec le ch. 16, qui prend le versant identité/conformité (registres gouvernés). Pont, pas reprise.*
+- **§ 9.2 — La pile de protocoles agentiques et son étagement**
+  - 9.2.1 Pourquoi une « pile » : du protocole isolé au modèle en couches — *← §3.7.1*
+  - 9.2.2 Analogie OSI/TCP-IP et ses limites : propositions Agent-OSI — *← §3.7.2*
+  - 9.2.3 Les couches transversales : positionnement par renvoi (anti-catalogue) — *← §3.7.3*
+  - 9.2.4 Composition de la pile : comment MCP, A2A, agent-humain et règlement s'emboîtent — *← §3.7.4*
+  - 9.2.5 Matrice de maturité et de décision (livrable praticien, juin 2026) — *← §3.7.5*
+- **§ 9.3 — Portabilité inter-modèles et inter-cadriciels**
+  - 9.3.1 L'API « compatible OpenAI » comme standard de fait et le paradoxe du *lock-in* inverse — *← §3.8.1*
+  - 9.3.2 Fragmentation des formats et passerelles de médiation (LiteLLM, gateways) — *← §3.8.2*
+  - 9.3.3 Interopérabilité des cadriciels par protocoles partagés — *← §3.8.3*
+  - 9.3.4 Portabilité de la configuration et de la définition d'agent : AGENTS.md, Agent Spec — *← §3.8.4*
+  - 9.3.5 Neutralité par fondation : l'AAIF comme mécanisme anti-fragmentation — *← §3.8.5 ; la gouvernance comparée est au ch. 7*
+- **§ 9.4 — Interopérabilité sémantique des agents : de l'accord-de-protocole à la compréhension**
+  - 9.4.1 L'écart accord-de-protocole vs compréhension-sémantique — *← §3.5.1*
+  - 9.4.2 La sémantique lue-par-le-modèle : descriptions d'outils et écart description/comportement — *← §3.5.2*
+  - 9.4.3 Ontologies de capacités, d'intentions et de tâches ; ancrage (*grounding*) — *← §3.5.3*
+  - 9.4.4 Le LLM comme couche de médiation sémantique : appariement d'ontologies — *← §3.5.4 ; le socle pré-agentique est au ch. 2*
+  - 9.4.5 Modes d'échec d'origine sémantique — *← §3.5.5 ; taxonomie complète au ch. 11*
+- **§ 9.5 — Test de conformité et certification des protocoles**
+  - 9.5.1 Du test de conformité d'API à la conformité des protocoles d'agents : définir « interopérable » — *← §3.12.1*
+  - 9.5.2 Suites de conformité MCP, validation d'Agent Cards et test de la négociation — *← §3.12.2*
+  - 9.5.3 Bancs inter-agents et vers une certification des protocoles — *← §3.12.4*
+
+⚠ **Relève v0.11, à instruire à la source primaire** — la généralisation de la pile a un nom de scène et un programme normatif : « web agentique » comme régime où l'interaction machine-à-machine devient le cas nominal (arXiv 2507.21206, trois dimensions : intelligence, interaction, économie) ; exigence d'une infrastructure **normative** neuve (arXiv 2606.10711). **Préimpressions non révisées par les pairs, résumés seuls consultés** : cadre de nommage candidat pour la trajectoire du ch. 55, jamais un fait d'adoption.
+
+**Table de couverture (décision 6)**
+
+| Source Vol. I *Monographie* | Destination | Régime |
+| --- | --- | --- |
+| §3.4 | § 9.1 + ch. 16 | **partagé déclaré** : protocolaire ici, gouverné là |
+| §3.5 | § 9.4 | condensé |
+| §3.7 | § 9.2 | condensé |
+| §3.8 | § 9.3 | condensé |
+| §3.12.1-3.12.2, §3.12.4 | § 9.5 | condensé |
+| §3.12.3 | ch. 43 | déplacé (propagation W3C Trace Context) |
+
 ### Chapitre 10 — Transaction et infrastructure : AP2 et AGNTCY
 
 **Thèse** *(deux énoncés de statut inégal, à ne pas fondre)* : que la transaction pilotée par agents (AP2) soit l'**aboutissement financier** de la pile est une **lecture d'auteur** — le socle établit qu'AP2 est un protocole compagnon d'A2A, rien de plus sur sa centralité ; qu'AGNTCY soit une couche d'infrastructure **et non un concurrent** est le **positionnement officiel déclaré du projet**, une déclaration et non un fait vérifié, que des analyses tierces nuancent.
 Sections : AP2 (60+ organisations financières — endossement, pas production ; anatomie non documentée au socle, lacune assumée) ; AGNTCY (annuaires, transport SLIM) ; interopérabilité du commerce et des paiements agentiques ; le destin d'ACP (fusion dans A2A — plus haut risque R-1) ; **les feuilles de route de séquencement protocolaire comme jalon historiographique, jamais comme prescription** (réserve F-06 : la séquence MCP → ACP → A2A → ANP est périmée du fait même de la fusion d'ACP).
 *Fusion : Vol. I* Monographie *§3.9 + Vol. II ch. 3. **Divergence tranchée** : gouvernance d'AP2 — aucun transfert documenté à date de gel ; **cette absence ne vaut pas fait négatif vérifié** (PRD Vol. II §10.9e), et la lacune reste ouverte au registre de l'Annexe C. ⚠ **Fait nouveau candidat, relève v0.7** : des annonces publiques d'avril-mai 2026 font état du don d'AP2 (v0.2, 28 avril 2026) à la **FIDO Alliance**, sous deux groupes de travail (authentification agentique ; paiements) — si la source primaire (annonce FIDO/Google) est extraite et datée, c'est la « source primaire nouvelle datée » que l'Annexe C exige, et la lacune §10.9e s'instruit du même mouvement. Statut à date : **annoncé**, non vérifié au socle — le chapitre ne s'écrit pas comme si le transfert était acquis. Socle : F-04, F-05, F-43 ; **réserve F-06**. Garde-fous : R-1, R-8.*
 
+#### Table des matières détaillée du chapitre 10
+
+*Dérivée de `Monographie.md` §3.9 (Vol. I) et de `Monographie.md` ch. 3 (Vol. II) le 25 juillet 2026 — chaque section porte sa provenance. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 10.1 — AP2 : la transaction pilotée par agents** — *← Vol. II §3.1 + Vol. I §3.9.2 (volet AP2).* ⚠ **Thèse à statut déclaré** : qu'AP2 soit l'« aboutissement financier » de la pile est une **lecture d'auteur** — le socle établit qu'AP2 est un protocole compagnon d'A2A, rien de plus sur sa centralité. Les 60+ organisations financières sont un **endossement**, pas une mise en production ; l'anatomie du protocole n'est pas documentée au socle (lacune assumée).
+  ⚠ **Divergence tranchée + fait nouveau candidat (relève v0.7)** : aucun transfert de gouvernance documenté à la date de gel — **et cette absence ne vaut pas fait négatif vérifié** (PRD Vol. II §10.9e) ; des annonces d'avril-mai 2026 font état du don d'AP2 (v0.2, 28 avril 2026) à la **FIDO Alliance**. Statut : **annoncé**, non vérifié au socle.
+- **§ 10.2 — AGNTCY : la couche d'infrastructure** — *← Vol. II §3.2 (annuaires, transport SLIM).* ⚠ Le positionnement « couche d'infrastructure et non concurrent » est le **positionnement officiel déclaré du projet** — une déclaration, non un fait vérifié, que des analyses tierces nuancent.
+- **§ 10.3 — Interopérabilité du commerce et des paiements agentiques**
+  - 10.3.1 Le problème d'interop propre au commerce agentique — *← Vol. I §3.9.1*
+  - 10.3.2 Checkout et mandats : ACP-commerce (OpenAI/Stripe), UCP (Google) — *← Vol. I §3.9.2, hors volet AP2 (§ 10.1)*
+  - 10.3.3 Rails de cartes et authentification d'agent (tableau daté) — *← Vol. I §3.9.3*
+  - 10.3.4 Paiements machine-natifs : x402, MPP, KYA — *← Vol. I §3.9.4 ; le **siège du KYA** est au ch. 19*
+- **§ 10.4 — Responsabilité, litiges et non-répudiation : l'interop organisationnelle** — *← Vol. I §3.9.5.*
+- **§ 10.5 — Le destin de l'ACP protocolaire : une fusion, non un abandon** — *← Vol. II §3.3 ; **plus haut risque R-1**.* ⚠ voir écart
+- **§ 10.6 — Les feuilles de route de séquencement protocolaire : jalon historiographique, jamais prescription** — *← **réserve F-06** : la séquence MCP → ACP → A2A → ANP est périmée du fait même de la fusion d'ACP + le bloc « Ce que ce chapitre établit, et ce qu'il ne dit pas » du Vol. II.*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. I §3.9.1 | § 10.3.1 | condensé |
+| Vol. I §3.9.2 | § 10.1 et § 10.3.2 | scindé (volet AP2 / autres mandats) |
+| Vol. I §3.9.3-3.9.4 | § 10.3.3-10.3.4 | condensé |
+| Vol. I §3.9.5 | § 10.4 | condensé |
+| Vol. II §3.1 | § 10.1 | condensé |
+| Vol. II §3.2 | § 10.2 | condensé |
+| Vol. II §3.3 | § 10.5 | condensé (voir écart) |
+| Vol. II §3.4 | ch. 7 § 7.5 | **siège de l'encadré R-8** — renvoi, pas reprise |
+
+⚠ **Écart constaté (contrepartie de celui du ch. 8)** — la fusion d'ACP est traitée ici (Vol. II §3.3) **et** au ch. 8 (Vol. I §3.3.4), les deux chapitres l'annonçant dans leur liste de sections. Décision 2 (déduplication) : le partage doit être déclaré ou l'un des deux doit renvoyer à l'autre. Même remarque pour le §3.4 du Vol. II, dont le siège est au ch. 7.
+
 ### Chapitre 11 — Modes d'échec et taxonomie des risques protocolaires
 
 **Thèse** : la sécurité des protocoles dépend de l'implémentation ; empoisonnement d'outils et injection d'invites sont **nommés par les protocoles comme risques attachés**, sans que le socle en date la documentation ni en établisse la mécanique.
 Sections : surface d'attaque (outils, invites, mémoire) ; modes d'échec propres à l'interopérabilité agentique ; réponses protocolaires (Signed Agent Cards, autorisation) ; ce que les protocoles ne couvrent pas (renvoi passerelles ch. 42, taxonomie d'identité ch. 20).
 *Fusion : Vol. I* Monographie *§3.10-3.11 + Vol. II ch. 4. Socle : F-01, F-02, F-36. Garde-fou : réserve F-01 (« cadre d'autorisation », jamais « sécurisé »). **Lacune héritée portée : PRD Vol. II §10.8** — les risques sont nommés par les protocoles, jamais datés ni outillés d'une source dédiée, et aucune attaque propre à A2A n'est au socle ; renvoi ch. 56.*
+
+#### Table des matières détaillée du chapitre 11
+
+*Dérivée de `Monographie.md` §3.10-3.11 (Vol. I) et de `Monographie.md` ch. 4 (Vol. II) le 25 juillet 2026 — chaque section porte sa provenance. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 11.1 — La surface d'attaque : outils, invites, mémoire**
+  - 11.1.1 Cadrage : l'interopérabilité crée une surface d'attaque **non composable** — *← Vol. I §3.10.1*
+  - 11.1.2 Modèle de menace de la pile (MCP/A2A/ANP) et triade létale amplifiée — *← Vol. I §3.10.2 ; la triade est posée au ch. 20*
+  - 11.1.3 Attaques sur les frontières : empoisonnement d'outils, *rug-pull*, injection inter-agents — *← Vol. I §3.10.3 + Vol. II §4.1*
+  ⚠ **Garde-fou** : empoisonnement d'outils et injection d'invites sont **nommés par les protocoles comme risques attachés**, sans que le socle en date la documentation ni en établisse la mécanique.
+- **§ 11.2 — Modes d'échec propres à l'interopérabilité agentique**
+  - 11.2.1 Taxonomie des échecs émergents (non réductibles à un agent) — *← Vol. I §3.11.1*
+  - 11.2.2 Défaillances en cascade, incidents de production et *compounding* à long horizon — *← Vol. I §3.11.2*
+- **§ 11.3 — Les réponses protocolaires : ce que les spécifications apportent**
+  - 11.3.1 Signed Agent Cards et autorisation — *← Vol. II §4.2 ; **réserve F-01** : « cadre d'autorisation », jamais « sécurisé »*
+  - 11.3.2 Durcissement par couche et intégrité/provenance des registres — *← Vol. I §3.10.4*
+  - 11.3.3 Défenses par conception et red-teaming inter-agents — *← Vol. I §3.10.5*
+- **§ 11.4 — Ce que les protocoles ne couvrent pas** — *← Vol. II §4.3 + le bloc « Ce que ce chapitre établit, et ce qu'il ne dit pas ».* Renvois : passerelles et durcissement d'infrastructure au **ch. 42** ; taxonomie des risques d'identité au **ch. 20**.
+  ⚠ **Lacune héritée portée (PRD Vol. II §10.8)** : les risques sont nommés par les protocoles, jamais datés ni outillés d'une source dédiée, et **aucune attaque propre à A2A n'est au socle** ; renvoi ch. 56.
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. I §3.10.1-3.10.3 | § 11.1 | condensé |
+| Vol. I §3.10.4-3.10.5 | § 11.3.2-11.3.3 | condensé |
+| Vol. I §3.11 | § 11.2 | condensé |
+| Vol. II §4.1 | § 11.1.3 | condensé |
+| Vol. II §4.2 | § 11.3.1 | condensé |
+| Vol. II §4.3 + clôture | § 11.4 | condensé |
 
 ---
 
