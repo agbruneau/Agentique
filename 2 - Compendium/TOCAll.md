@@ -643,11 +643,55 @@ Sections : surface d'attaque (outils, invites, mémoire) ; modes d'échec propre
 Sections : généalogie (comptes de service → workload identity) ; l'écart de gouvernance NHI (ratio machines/humains, prolifération des secrets — illustration, jamais preuve) ; pourquoi l'agent casse le modèle (identité stable vs comportement non déterministe).
 *Fusion : Vol. III ch. 1, adossé au ch. 3 (socle IAM déjà posé, non repris). Garde-fou : chiffres de prolifération auto-déclarés.*
 
+#### Table des matières détaillée du chapitre 12
+
+*Dérivée du **texte rédigé** de `Monographie.md` ch. 1 (Vol. III) le 25 juillet 2026. ⚠ **Convention de renvoi propre à ce livre** (décision 7) : le Vol. III vit en numérotation multiple — un renvoi au texte s'écrit `Vol. III `*Monographie*` §N.M`, un renvoi au plan `Vol. III `*TOC*` §N.x`. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 12.1 — Généalogie : de l'hypothèse humaine à l'identité de charge de travail** — *← Vol. III* Monographie *§1.1 (comptes de service, X.509, clés d'API → workload identity).*
+- **§ 12.2 — L'écart de gouvernance des identités non humaines** — *← Vol. III* Monographie *§1.2.* ⚠ **Garde-fou** : ratio machines/humains et prolifération des secrets sont des chiffres **auto-déclarés** — illustration, jamais preuve.
+- **§ 12.3 — Pourquoi l'agent casse le modèle : identité stable et comportement variable** — *← Vol. III* Monographie *§1.3.*
+
+⚠ *Le socle IAM pré-agentique (Vol. I §1.9.2-§1.9.3) est **posé au ch. 3** et n'est pas repris ici : ce chapitre s'y adosse. C'est la contrepartie de l'économie de fusion déclarée au ch. 3.*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §1.1 | § 12.1 | condensé |
+| Vol. III *Monographie* §1.2 | § 12.2 | condensé |
+| Vol. III *Monographie* §1.3 | § 12.3 | condensé |
+
 ### Chapitre 13 — Les standards étirés : OAuth, OIDC, SCIM face à l'agent
 
 **Thèse** : la première vague de l'identité agentique est une extension des RFC existantes, non une rupture — et chaque extension révèle une hypothèse implicite (un humain au bout du flux) qui cesse de tenir.
 Sections : OAuth 2.x et l'agent (client ou resource owner ?) ; drafts IETF (délégation, transaction tokens, identité de charge de travail appliquée aux agents) ; SCIM et provisionnement d'agents ; Entra Agent ID **comme extension des RFC** (GA, licences — son traitement comme annuaire commercial est au ch. 16, et n'est pas repris ici) ; ce que les RFC ne disent pas.
 *Fusion : Vol. III ch. 2 + Vol. II ch. 8 §8.1/§8.3 + Vol. I* Monographie *§3.6.1-3.6.2 (OAuth 2.1/OIDC appliqués aux agents, Token Exchange). ⚠ Le socle IAM pré-agentique (§1.9.2) **reste au ch. 3** et n'est pas repris ici. Socle : F-07, F-08. Garde-fou : **PRD Vol. II §8.2.5** — statuts pré-normatifs : un brouillon IETF n'est pas une norme, et celui de SCIM-agents est **expiré depuis le 19 avril 2026**. ⚠ **Relève v0.7 — la filière ne s'est pas éteinte** : brouillons successeurs actifs à mi-2026 (applicabilité de WIMSE aux agents d'IA, expirant le 1ᵉʳ septembre 2026 ; cadre composant WIMSE, SPIFFE et OAuth 2.0, version du 1ᵉʳ juin 2026 ; extension SCIM d'éditeur pour le provisionnement d'agents), tous **pré-normatifs** — à recenser au gel, le garde-fou §8.2.5 demeurant inchangé, sources primaires (datatracker) à extraire. (R-2 et R-3 ne sont pas portés ici : ils vivent au §8.4 et au §8.2 du Vol. II, donc aux ch. 17 et ch. 16.)*
+
+#### Table des matières détaillée du chapitre 13
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 2 (Vol. III), ch. 8 (Vol. II) et §3.6 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 13.1 — OAuth 2.x et l'agent : *client* ou détenteur de ressource ?** — *← Vol. III* Monographie *§2.1 + Vol. I* Monographie *§3.6.1 (pourquoi NHI et OAuth ne suffisent plus).*
+- **§ 13.2 — Les brouillons de l'IETF : quatre statuts, et ce que leurs dates disent ou ne disent pas** — *← Vol. III* Monographie *§2.2 + Vol. II §8.3 (un ancrage dont le point d'ancrage a expiré) + Vol. I* Monographie *§3.6.2 (délégation multi-saut, Token Exchange).*
+  ⚠ **Garde-fou (PRD Vol. II §8.2.5)** : un brouillon IETF n'est pas une norme ; celui de SCIM-agents est **expiré depuis le 19 avril 2026**.
+  ⚠ **Relève v0.7, à instruire à la source primaire** : brouillons successeurs actifs à mi-2026 (applicabilité de WIMSE aux agents d'IA, expirant le 1ᵉʳ septembre 2026 ; cadre composant WIMSE/SPIFFE/OAuth 2.0, version du 1ᵉʳ juin 2026 ; extension SCIM d'éditeur), tous **pré-normatifs**.
+- **§ 13.3 — SCIM et le provisionnement d'agents** — *← Vol. III* Monographie *§2.3.*
+- **§ 13.4 — Entra Agent ID comme extension des RFC** — *← Vol. II §8.1 (GA, licences).* ⚠ **Son traitement comme annuaire commercial est au ch. 16** et n'est pas repris ici.
+- **§ 13.5 — Ce que les RFC ne disent pas — et à quel degré** — *← Vol. III* Monographie *§2.4 ; l'échelle des trois degrés d'absence (R-14 du Vol. III) s'applique.*
+
+⚠ *Le socle IAM pré-agentique (Vol. I §1.9.2) **reste au ch. 3**. R-2 et R-3 ne sont pas portés ici : leurs sièges sont le §8.4 (ch. 17) et le §8.2 (ch. 16) du Vol. II.*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §2.1 | § 13.1 | condensé |
+| Vol. III *Monographie* §2.2 | § 13.2 | condensé |
+| Vol. III *Monographie* §2.3 | § 13.3 | condensé |
+| Vol. III *Monographie* §2.4 | § 13.5 | condensé |
+| Vol. II §8.1 | § 13.4 | condensé (volet RFC seul) |
+| Vol. II §8.3 | § 13.2 | condensé |
+| Vol. I *Monographie* §3.6.1-3.6.2 | § 13.1-13.2 | condensé |
 
 ### Chapitre 14 — L'identité décentralisée : VC, DID et la promesse du portable
 
@@ -655,11 +699,50 @@ Sections : OAuth 2.x et l'agent (client ou resource owner ?) ; drafts IETF (dél
 Sections : VC Data Model et DID Core ; DIF et profils d'interopérabilité ; Community Groups agentiques du W3C (signal faible, état 2026) ; le fossé adoption (qui vérifie quoi, en production).
 *Fusion : Vol. III ch. 3 + Vol. I* Monographie *§3.6.4 (SPIFFE/SPIRE, DID, WIMSE) et **§7.4.3** (identité vérifiable inter-domaines — le §7.4 est partagé : §7.4.1 et §7.4.4 vont aux ch. 23-24, §7.4.2 au ch. 17, §7.4.3 se partage entre ici et le ch. 19). Garde-fou : une charte de groupe n'est pas un standard.*
 
+#### Table des matières détaillée du chapitre 14
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 3 (Vol. III) et §3.6.4/§7.4.3 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 14.1 — VC Data Model et DID Core : à quel stade en sont les recommandations** — *← Vol. III* Monographie *§3.1.*
+- **§ 14.2 — Les profils d'interopérabilité : une lacune de couverture assumée** — *← Vol. III* Monographie *§3.2 (DIF).*
+- **§ 14.3 — Les Community Groups agentiques du W3C** — *← Vol. III* Monographie *§3.3 (signal faible, état 2026).* ⚠ **Garde-fou** : une charte de groupe n'est pas un standard.
+- **§ 14.4 — Identité de charge et identité décentralisée : SPIFFE/SPIRE, DID, WIMSE** — *← Vol. I* Monographie *§3.6.4 ; le socle zero-trust pré-agentique (§1.9.3) reste au ch. 3.*
+- **§ 14.5 — Le fossé d'adoption : qui vérifie quoi, en production, à date** — *← Vol. III* Monographie *§3.4 + Vol. I* Monographie *§7.4.3 (identité vérifiable inter-domaines — **partagé déclaré avec le ch. 19**, qui en prend le versant* trust fabric*).*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §3.1-3.3 | § 14.1-14.3 | condensé |
+| Vol. III *Monographie* §3.4 | § 14.5 | condensé |
+| Vol. I *Monographie* §3.6.4 | § 14.4 | condensé |
+| Vol. I *Monographie* §7.4.3 | § 14.5 + ch. 19 | **partagé déclaré** |
+| Vol. I *Monographie* §7.4.1, §7.4.4 | ch. 23-24 | hors périmètre (horloge PQC) |
+| Vol. I *Monographie* §7.4.2 | ch. 17 | hors périmètre (passeport) |
+
 ### Chapitre 15 — La grille des cinq questions
 
 **Thèse** : cinq questions — *qui es-tu, qui t'a créé, pour qui agis-tu, que peux-tu faire, qui en répond* — forment la grille de lecture de tout mécanisme d'identité agentique ; aucun mécanisme de 2026 ne répond aux cinq.
 Sections : dérivation depuis les axes du Vol. I (*Monographie* §3.1.7, repris au ch. 7) ; application-témoin à trois mécanismes ; la grille comme critère de structure des chapitres suivants ; croisement grille × maturité (corpus d'appui — construction d'auteur).
 *Fusion : Vol. III ch. 4 (chapitre de méthode transversal, homologue de la matrice du ch. 46).*
+
+#### Table des matières détaillée du chapitre 15
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 4 (Vol. III) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 15.1 — L'inspiration de la grille — et ce qu'elle n'autorise pas** — *← Vol. III* Monographie *§4.1 ; dérivation depuis les quatre axes du Vol. I (*Monographie* §3.1.7, repris au ch. 7 § 7.2.2).*
+- **§ 15.2 — Application-témoin à trois mécanismes** — *← Vol. III* Monographie *§4.2.*
+- **§ 15.3 — La grille comme critère de structure des chapitres suivants** — *← Vol. III* Monographie *§4.3 (Parties II-IV de la source = ch. 16-24 ici).*
+- **§ 15.4 — Grille et maturité** — *← Vol. III* Monographie *§4.4.* ⚠ **Corpus d'appui : filiation retirée** (P0.2, 21 juill. 2026, L-15 close par échec documenté, **réversible**) — le croisement grille × maturité se rebâtit sur l'autonomie graduée et la grille elle-même ; le Vol. III rédigé a comblé cet emplacement par **construction d'auteur sous CA-07** (« Lecture de l'auteur » en tête d'énoncé), à reprendre avec son marquage, jamais comme un fait de corpus.
+
+⚠ *Les cinq questions — **qui es-tu, qui t'a créé, pour qui agis-tu, que peux-tu faire, qui en répond** — structurent les verdicts des ch. 16 à 24 ; le ch. 17 est le seul endroit où les cinq reçoivent une réponse, et elle est sur le papier.*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §4.1-4.4 | § 15.1-15.4 | condensé |
+| Vol. I *Monographie* §3.1.7 | ch. 7 § 7.2.2 | socle amont, non repris ici |
 
 ### Chapitre 16 — Émettre : Agent Card signée, annuaires, registres gouvernés
 
@@ -667,11 +750,67 @@ Sections : dérivation depuis les axes du Vol. I (*Monographie* §3.1.7, repris 
 Sections : Agent Card signée (format, chaîne, ancrage, révocation, valeur probante) ; annuaires commerciaux (Entra Agent ID et pairs — GA/annonce/feuille de route) ; registres gouvernés (spécification CSA `toolAccessList`/`permissionBoundaries`, registres A2A/AGNTCY) ; **le risque de standard de fait** (Vol. III *TOC* §6.3 : un annuaire commercial dominant fixe la norme sans passer par une norme) ; le registre comme objet réglementaire (pont vers Livre V).
 *Fusion : Vol. III ch. 5-7 + Vol. II ch. 8 §8.2 + Vol. I* Monographie *§3.4 (découverte) et §3.6.3 (preuve cryptographique : Agent Cards signées et VC). Chapitre à plus haut risque de surinterprétation — relecture adversariale prioritaire. Socle : F-07, F-08 + spécifications A2A/CSA/AGNTCY. Garde-fous : **R-3 du Vol. II** (la spécification CSA s'appuie sur SPIFFE/SPIRE comme fondation ; l'exigence stricte n'est pas établie) et **PRD Vol. II §8.2.5** (la spécification CSA est un brouillon de laboratoires, pas une norme).*
 
+#### Table des matières détaillée du chapitre 16
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 5-7 (Vol. III), ch. 8 §8.2 (Vol. II) et §3.4/§3.6.3 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 16.1 — L'Agent Card signée : anatomie et valeur probante**
+  - 16.1.1 Le format et la chaîne de signature — *← Vol. III* Monographie *§5.1 + Vol. I* Monographie *§3.6.3 (preuve cryptographique : Agent Cards signées et VC)*
+  - 16.1.2 Ancrage : qui signe les signataires ? — *← Vol. III* Monographie *§5.2*
+  - 16.1.3 Révocation et durée de vie — *← Vol. III* Monographie *§5.3 ; l'inventaire complet de la révocation est au ch. 21*
+  - 16.1.4 Verdict par la grille du ch. 15 : ce que la carte prouve, ce qu'elle affirme, ce qu'elle tait — *← Vol. III* Monographie *§5.4*
+- **§ 16.2 — Les annuaires commerciaux : Entra Agent ID et ses pairs**
+  - 16.2.1 Ce que la disponibilité générale couvre, et ce qu'elle ne couvre pas — *← Vol. III* Monographie *§6.1 ; **le versant « extension des RFC » est au ch. 13** et n'est pas repris ici*
+  - 16.2.2 Les mécanismes documentés chez les autres fournisseurs infonuagiques : un état daté — *← Vol. III* Monographie *§6.2*
+  - 16.2.3 **Le risque de standard de fait** : un annuaire commercial dominant fixe la norme sans passer par une norme — *← Vol. III* Monographie *§6.3*
+  - 16.2.4 La grille du ch. 15 appliquée — *← Vol. III* Monographie *§6.4*
+- **§ 16.3 — Les registres gouvernés : de la spécification CSA aux registres A2A**
+  - 16.3.1 La spécification CSA (`toolAccessList`, `permissionBoundaries`) : ce qu'un brouillon de laboratoire prescrit, et ce qu'il traîne — *← Vol. III* Monographie *§7.1 + Vol. II §8.2*
+  - 16.3.2 Registres et découverte : A2A normalise le chemin, AGNTCY spécifie le magasin — *← Vol. III* Monographie *§7.2 + Vol. I* Monographie *§3.4 (**partagé déclaré avec le ch. 9**, qui en prend le versant protocolaire)*
+  - 16.3.3 Le registre comme objet réglementaire — et la quatrième pièce du passeport — *← Vol. III* Monographie *§7.3 ; pont vers le Livre V (ch. 29)*
+
+⚠ **Garde-fous** : **R-3 du Vol. II** — la spécification CSA s'appuie sur SPIFFE/SPIRE comme *fondation* ; l'exigence stricte n'est pas établie. **PRD Vol. II §8.2.5** — la spécification CSA est un brouillon de laboratoires, pas une norme. **Chapitre à plus haut risque de surinterprétation : relecture adversariale prioritaire.**
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §5.1-5.4 | § 16.1 | condensé |
+| Vol. III *Monographie* §6.1-6.4 | § 16.2 | condensé |
+| Vol. III *Monographie* §7.1-7.3 | § 16.3 | condensé |
+| Vol. III *Monographie* §7.4 | **ch. 17** | prélevé, déclaré au ch. 17 (voir écart) |
+| Vol. II §8.2 | § 16.3.1 | condensé |
+| Vol. I *Monographie* §3.4 | § 16.3.2 + ch. 9 | **partagé déclaré** |
+| Vol. I *Monographie* §3.6.3 | § 16.1.1 | condensé |
+
+⚠ **Écart constaté** — la ligne Fusion absorbe « Vol. III ch. 5-**7** » en bloc, mais le §7.4 de la source (*Ce qui n'existe toujours pas — et à quel degré*) est **nommément prélevé par le ch. 17**. Le bloc et le prélèvement se contredisent à la lettre : c'est la classe de double revendication que la décision 6 proscrit, et le contrôle C-« double revendication d'une Partie » ne l'attrape pas, l'un des deux renvois étant au grain du chapitre et l'autre au grain de la section. À trancher par un « hors §7.4 » explicite au ch. 16.
+
 ### Chapitre 17 — Le passeport d'agent : synthèse d'un objet encore virtuel
 
 **Thèse** : le « passeport d'agent » n'existe dans aucune spécification de 2026 — objet de synthèse assemblant carte signée, inscription au registre, chaîne de mandat et attestations ; sa normalisation 2027-2028 est projetée en statut PROJETÉ. Pour l'entreprise, rien n'entre au maillage sans lui.
 Sections : les quatre pièces du passeport ; **ce qui n'existe toujours pas** (Vol. III *TOC* §7.4 — inventaire des manques côté émission, prolongé ici par le §8.4 du Vol. II) ; qui l'émettrait, qui le vérifierait ; trois scénarios de normalisation (PROGRAMMÉ/PROJETÉ/SPÉCULATIF) ; le passeport par la grille du ch. 15 — la seule construction qui répond aux cinq questions, sur le papier.
 *Fusion : Vol. III ch. 8 (chapitre-pivot) + Vol. III *TOC* §7.4 + Vol. II ch. 8 §8.4 (« ce qui n'existe pas encore ») + Vol. I* Monographie *§7.4.2 (de l'identité au passeport : la normalisation 2027-2028 — siège du statut PROJETÉ ici repris). Garde-fous : **R-2 et R-3**, dont le §8.4 du Vol. II est le siège (encadré « Affirmations écartées »). Inférences d'auteur marquées systématiquement.*
+
+#### Table des matières détaillée du chapitre 17
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 8 et §7.4 (Vol. III), ch. 8 §8.4 (Vol. II) et §7.4.2 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 17.1 — Assemblage : les quatre pièces du passeport** — *← Vol. III* Monographie *§8.1 (carte signée, inscription au registre, chaîne de mandat, attestations).*
+- **§ 17.2 — Ce qui n'existe toujours pas — et à quel degré** — *← Vol. III* Monographie *§7.4 (inventaire des manques côté émission) **prolongé par** Vol. II §8.4 (« Ce qui n'existe pas encore »).* ⚠ **Siège des garde-fous R-2 et R-3** (encadré « Affirmations écartées » du Vol. II) ; l'échelle des trois degrés d'absence (R-14 du Vol. III) s'applique — *fait négatif vérifié* > *fait négatif établi* > *absence de documentation*, jamais interchangeables.
+- **§ 17.3 — Qui l'émettrait, qui le vérifierait** — *← Vol. III* Monographie *§8.2.*
+- **§ 17.4 — Trois scénarios de normalisation, et ce que leur tri prospectif interdit d'écrire** — *← Vol. III* Monographie *§8.3 + Vol. I* Monographie *§7.4.2 (de l'identité au passeport : la normalisation 2027-2028, **siège du statut PROJETÉ** ici repris).* Tri PROGRAMMÉ / PROJETÉ / SPÉCULATIF obligatoire.
+- **§ 17.5 — Le passeport par la grille du ch. 15** — *← Vol. III* Monographie *§8.4 : **le seul endroit de l'ouvrage où les cinq questions reçoivent une réponse, et elle est sur le papier**.*
+
+⚠ *Le « passeport d'agent » **n'existe dans aucune spécification de 2026** : objet de synthèse, pas mécanisme documenté. Inférences d'auteur marquées systématiquement (décision 8).*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §8.1-8.4 | § 17.1, 17.3-17.5 | condensé |
+| Vol. III *Monographie* §7.4 | § 17.2 | **prélevé au ch. 16** (voir écart au ch. 16) |
+| Vol. II §8.4 | § 17.2 | condensé — siège de R-2 et R-3 |
+| Vol. I *Monographie* §7.4.2 | § 17.4 | condensé — siège du statut PROJETÉ |
 
 ### Chapitre 18 — La chaîne de mandat et le problème des deux sauts
 
@@ -679,11 +818,54 @@ Sections : les quatre pièces du passeport ; **ce qui n'existe toujours pas** (V
 Sections : le mandat dans les protocoles (AP2, on-behalf-of OAuth, transaction tokens) ; **ce que le droit civil du mandat éclaire — et où l'analogie casse** (Vol. III *TOC* §9.3, seule occurrence : le versant québécois du mandat est au ch. 31, l'analyse de la limite de l'analogie est ici) ; chaîne de délégation comme objet de première classe ; l'humain premier et dernier maillon (approbation/escalade/HITL relus comme actes de délégation datés ; **patrons d'interaction humain-agent — corpus d'appui, cadrage et non preuve**) ; **le biais d'automatisation et la supervision de façade** — le tamponnage comme mode d'échec documenté de la révision humaine, et le paradoxe de l'explicabilité (une justification mieux rédigée augmente la déférence, pas le discernement) : c'est la limite empirique de la parade sur laquelle reposent l'art. 12.1 (ch. 31) et la supervision E-23 (ch. 29) ; le problème des deux sauts (où chaque mécanisme perd le fil, pistes et limites, question de recherche).
 *Fusion : Vol. III ch. 9-10 + Vol. I* Monographie *§2.11.2 (chaînes multi-saut) et §3.6.6 (l'axe agent-humain : HITL négocié). Socle : spécification AP2 (**divergence de gouvernance déjà tranchée au ch. 10**) ; **le versant biais d'automatisation est un front neuf — aucun des trois volumes ne le porte, sources primaires à établir.** Frontière de la connaissance vérifiable exposée, non comblée.*
 
+#### Table des matières détaillée du chapitre 18
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 9-10 (Vol. III) et §2.11.2/§3.6.6 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 18.1 — Le mandat dans les protocoles** — *← Vol. III* Monographie *§9.1 (AP2, on-behalf-of OAuth, transaction tokens).* ⚠ La divergence de gouvernance d'AP2 est **déjà tranchée au ch. 10** — ne pas la rouvrir ici.
+- **§ 18.2 — La chaîne de délégation comme objet de première classe** — *← Vol. III* Monographie *§9.2 + Vol. I* Monographie *§2.11.2 (chaînes multi-saut).*
+- **§ 18.3 — Ce que le droit civil du mandat éclaire — et où l'analogie casse** — *← Vol. III* Monographie *§9.3, **seule occurrence** : le versant québécois du mandat est au ch. 31 (Vol. III* Monographie *§20.2), l'analyse de la limite de l'analogie est ici.*
+- **§ 18.4 — L'humain, premier et dernier maillon** — *← Vol. III* Monographie *§9.4 + Vol. I* Monographie *§3.6.6 (l'axe agent-humain : HITL négocié, modalités,* elicitation *MCP, MCP Apps, AG-UI).* Approbation, escalade et HITL relus comme **actes de délégation datés**. ⚠ **Patrons d'interaction humain-agent : corpus d'appui, cadrage et non preuve** (filiation retirée par P0.2, réversible).
+- **§ 18.5 — Le biais d'automatisation et la supervision de façade** — le tamponnage comme mode d'échec documenté de la révision humaine ; le **paradoxe de l'explicabilité** (une justification mieux rédigée augmente la déférence, pas le discernement).
+  ⚠ **Front neuf — aucun des trois volumes ne le porte** : sources primaires à établir avant rédaction. C'est la **limite empirique de la parade** sur laquelle reposent l'art. 12.1 (ch. 31) et la supervision attendue par E-23 (ch. 29) : la section est structurante pour le Livre V, et son socle est à constituer depuis rien.
+- **§ 18.6 — Le problème des deux sauts**
+  - 18.6.1 Pourquoi deux sauts : où chaque mécanisme perd le fil — *← Vol. III* Monographie *§10.1*
+  - 18.6.2 Trois pistes, et ce que le socle établit de chacune — *← Vol. III* Monographie *§10.2*
+  - 18.6.3 Question de recherche formulée pour instruction — *← Vol. III* Monographie *§10.3*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §9.1-9.4 | § 18.1-18.4 | condensé |
+| Vol. III *Monographie* §10.1-10.3 | § 18.6 | condensé |
+| Vol. I *Monographie* §2.11.2 | § 18.2 | condensé |
+| Vol. I *Monographie* §3.6.6 | § 18.4 | condensé |
+| — (front neuf) | § 18.5 | **socle à constituer**, déclaré |
+
 ### Chapitre 19 — Know Your Agent : la vérification d'agent tiers inter-domaines
 
 **Thèse** : le KYA transpose la logique du KYC — vérifier avant d'admettre — sans l'infrastructure institutionnelle qui rend le KYC possible ; la *trust fabric* inter-entreprises reste privée et fragmentée, et c'est elle qui décide si l'entreprise agentique s'arrête à ses murs.
 Sections : état des propositions KYA ; admission d'un agent tiers (point de contact identité/frontières) ; fédérations de confiance (eIDAS, FIDO) et transposabilité ; ⚠ **relève v0.11 — l'agent mutable prive la réputation de son ancrage** : une préimpression révisée en mai 2026 (arXiv 2605.30169) soutient que les architectures d'agents à poids, invites et mémoire mutables n'offrent pas la persistance d'identité que tout mécanisme de réputation présuppose — l'objet vérifié à l'admission peut cesser d'être l'objet admis. À instruire ; si la thèse tient, elle pèse sur la cinquième question de la grille (ch. 15) et sur la révocation (ch. 21) autant que sur l'admission.
 *Fusion : Vol. III ch. 11 + Vol. I* Monographie *§5.5.4 (SIÈGE du KYA), §3.6.5 et §7.4.3 (trust fabric inter-domaines, partagé avec le ch. 14). Garde-fou : « KYA » est un terme de marché avant d'être un terme de norme.*
+
+#### Table des matières détaillée du chapitre 19
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 11 (Vol. III) et §5.5.4/§3.6.5/§7.4.3 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 19.1 — État des propositions KYA** — *← Vol. III* Monographie *§11.1 (neuf chantiers, six organisations, **zéro texte ratifié**) + Vol. I* Monographie *§5.5.4 (**SIÈGE unique du KYA** : KYA, NHI et jetons de paiement agentiques).* ⚠ **Garde-fou** : « KYA » est un terme de **marché** avant d'être un terme de norme.
+- **§ 19.2 — Admettre un agent tiers : ce que les protocoles remettent à celui qui décide** — *← Vol. III* Monographie *§11.2 (point de contact identité/frontières).*
+- **§ 19.3 — Fédérations de confiance : ce que trois précédents portent d'institutionnel** — *← Vol. III* Monographie *§11.3 (eIDAS, FIDO) + Vol. I* Monographie *§3.6.5 (trust fabric inter-domaines, profils d'interop et angles morts) et §7.4.3 (**partagé déclaré avec le ch. 14**).* Le KYA transpose la logique du KYC **sans l'infrastructure institutionnelle qui rend le KYC possible**.
+- **§ 19.4 — ⚠ Relève v0.11, à instruire : l'agent mutable prive la réputation de son ancrage** — une préimpression révisée en mai 2026 (arXiv 2605.30169) soutient que les architectures à poids, invites et mémoire **mutables** n'offrent pas la persistance d'identité que tout mécanisme de réputation présuppose : *l'objet vérifié à l'admission peut cesser d'être l'objet admis*. **Préimpression non révisée par les pairs, résumé seul consulté — repérage [C], jamais un fait.** Si la thèse tient, elle pèse sur la cinquième question de la grille (ch. 15) et sur la révocation (ch. 21) autant que sur l'admission.
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §11.1-11.3 | § 19.1-19.3 | condensé |
+| Vol. I *Monographie* §5.5.4 | § 19.1 | **siège unique du KYA** |
+| Vol. I *Monographie* §3.6.5 | § 19.3 | condensé |
+| Vol. I *Monographie* §7.4.3 | § 19.3 + ch. 14 | **partagé déclaré** |
 
 **Deuxième mouvement — la confiance hostile (ch. 20-22)** *(anciennement Livre IV ; provenance intégrée à l'en-tête du livre)*
 
@@ -693,17 +875,78 @@ Sections : état des propositions KYA ; admission d'un agent tiers (point de con
 Sections : recension (identifiants de vulnérabilité, incidents datés — dont les divulgations du 1ᵉʳ semestre 2026 relevées en v0.7, corpus candidat du dénombrement exigé par la décision 8, à qualifier pièce par pièce avant usage —, littérature ; ⚠ **relève v0.10** : une classe dont le vecteur est le **harnais** — extension tierce admise par simple configuration — et non le protocole ni le mécanisme d'identité (voir ch. 52) ; si elle s'instruit, elle entre au dénombrement **contre** la thèse d'absorption de ce chapitre, non à son appui) ; taxonomie par la grille du ch. 15 ; empoisonnement de la mémoire et des sources (provenance RAG comme problème d'identité des sources — reprend le ch. 5) ; ce que la recension ne trouve pas.
 *Fusion : Vol. III ch. 12 + Vol. I* Monographie *§2.10.1-2.10.2. ⚠ **La thèse de ce chapitre est le premier énoncé à instruire avant rédaction** : le Vol. II pose Q2 précisément parce que son socle ne porte **aucune** attaque propre à A2A (PRD §10.8 — absence de documentation, non fait négatif vérifié). La proportion affirmée doit être établie par dénombrement sur un corpus déclaré, ou l'énoncé retombe à « une part notable » sans quantificateur. Traitement défensif exclusif : mécanique au niveau architectural, sans recette d'exploitation.*
 
+#### Table des matières détaillée du chapitre 20
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 12 (Vol. III) et §2.10.1-2.10.2 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 20.1 — Recension : identifiants, incidents datés, littérature** — *← Vol. III* Monographie *§12.1.*
+  ⚠ **Relève v0.7** : les divulgations du 1ᵉʳ semestre 2026 forment le **corpus candidat** du dénombrement qu'exige la décision 8 — à qualifier pièce par pièce avant usage.
+  ⚠ **Relève v0.10** : une classe d'attaques dont le vecteur est le **harnais** (extension tierce admise par simple configuration), et non le protocole ni le mécanisme d'identité — voir ch. 52. Si elle s'instruit, elle entre au dénombrement **contre** la thèse d'absorption de ce chapitre, non à son appui.
+- **§ 20.2 — Modèle de menace agentique, triade létale et impossibilité architecturale** — *← Vol. I* Monographie *§2.10.1 ; **siège de la triade létale**, que le ch. 11 § 11.1.2 invoque sans la reconstruire.*
+- **§ 20.3 — Vecteurs d'attaque** — *← Vol. I* Monographie *§2.10.2 : injection d'invite directe et indirecte (§2.10.2.1) ; exfiltration, egress et agence excessive (§2.10.2.3).*
+- **§ 20.4 — Taxonomie par la grille du ch. 15** — *← Vol. III* Monographie *§12.2.*
+- **§ 20.5 — L'empoisonnement de la mémoire et des sources** — *← Vol. III* Monographie *§12.3 + Vol. I* Monographie *§2.10.2.2.* La provenance RAG relue comme **problème d'identité des sources** : c'est le versant hostile de l'ancrage posé au ch. 5, qui n'en porte aucune occurrence.
+- **§ 20.6 — Ce que la recension ne trouve pas** — *← Vol. III* Monographie *§12.4 ; échelle des trois degrés d'absence (R-14 du Vol. III).*
+
+⚠ **La thèse de ce chapitre est le premier énoncé à instruire avant rédaction.** Le Vol. II pose Q2 précisément parce que son socle ne porte **aucune** attaque propre à A2A (PRD Vol. II §10.8 — *absence de documentation*, non fait négatif vérifié). La proportion affirmée (« une part majoritaire ») doit être établie **par dénombrement sur un corpus déclaré**, ou l'énoncé retombe à « une part notable » sans quantificateur (décision 8). **Traitement défensif exclusif** : mécanique au niveau architectural, sans recette d'exploitation.
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §12.1-12.4 | § 20.1, 20.4-20.6 | condensé |
+| Vol. I *Monographie* §2.10.1 | § 20.2 | **arrivée** depuis le ch. 6 |
+| Vol. I *Monographie* §2.10.2 | § 20.3, § 20.5 | **arrivée** depuis le ch. 6 |
+| Vol. I *Monographie* §2.10.3-2.10.5 | ch. 6 (+ ch. 42) | hors périmètre — défense et alignement |
+
 ### Chapitre 21 — Usurpation, rug-pull et révocation
 
 **Thèse** : la vérification à l'admission ne protège pas contre la dérive après admission (rug-pull d'un serveur d'outils ou d'un agent tiers) ; et chaque mécanisme spécifie l'émission avec soin et la révocation avec négligence — asymétrie qui reproduit l'histoire des PKI.
 Sections : le rug-pull documenté ; vérification continue vs à l'admission ; attestation d'intégrité à l'exécution ; inventaire de la révocation par mécanisme ; précédent PKI (CRL, OCSP) ; révocation en cascade dans une chaîne de délégation (problème ouvert).
 *Fusion : Vol. III ch. 13-14. Renvoi ch. 44 (dérive en exploitation) et ch. 50 (révocation dans le cycle de vie). ⚠ **Relève v0.10** : le rug-pull a un grain de plus fin que le serveur d'outils — l'**extension déclarative** du harnais (fichier d'instructions, serveur ajouté par configuration), dont l'installation n'est pas un acte de compilation et dont la révocation n'a, à cette date, aucun mécanisme relevé. À instruire à la source primaire ; l'incident public candidat est décrit au ch. 52.*
 
+#### Table des matières détaillée du chapitre 21
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 13-14 (Vol. III) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 21.1 — Le *rug-pull* documenté : ce que le corpus nomme, et à quel niveau de preuve** — *← Vol. III* Monographie *§13.1.*
+  ⚠ **Relève v0.10, à instruire** : le *rug-pull* a un grain plus fin que le serveur d'outils — l'**extension déclarative** du harnais (fichier d'instructions, serveur ajouté par configuration), dont l'installation n'est pas un acte de compilation et dont la révocation n'a, à cette date, **aucun mécanisme relevé**. Incident public candidat décrit au ch. 52.
+- **§ 21.2 — Vérification continue et vérification à l'admission** — *← Vol. III* Monographie *§13.2.* La vérification à l'admission ne protège pas contre la **dérive après admission** ; renvoi ch. 44 (dérive en exploitation).
+- **§ 21.3 — L'attestation d'intégrité à l'exécution : état des mécanismes** — *← Vol. III* Monographie *§13.3.*
+- **§ 21.4 — L'inventaire de la révocation, mécanisme par mécanisme** — *← Vol. III* Monographie *§14.1.* Chaque mécanisme spécifie **l'émission avec soin et la révocation avec négligence**.
+- **§ 21.5 — Le précédent PKI : ce que les listes de révocation et le statut en ligne ont déjà appris** — *← Vol. III* Monographie *§14.2 (CRL, OCSP).*
+- **§ 21.6 — La révocation en cascade dans une chaîne de délégation** — *← Vol. III* Monographie *§14.3 ; **problème ouvert**, adossé au ch. 18 ; renvoi ch. 50 (révocation dans le cycle de vie).*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §13.1-13.3 | § 21.1-21.3 | condensé |
+| Vol. III *Monographie* §14.1-14.3 | § 21.4-21.6 | condensé |
+
 ### Chapitre 22 — L'agentic SOC et la boucle défensive
 
 **Thèse** : la défense s'agentifie elle-même, et l'identité distingue un SOC agentique gouvernable d'un système auto-organisé ingouvernable — les agents défensifs sont les premiers à devoir porter le passeport du ch. 17.
 Sections : état de l'agentic SOC (offres datées, périmètres réels) ; symétrie attaque/défense relue par l'identité ; référentiels de sécurité agentique en mouvement (état 2026 ; ⚠ **relève v0.10** : une préimpression adverse de mai 2026 propose un durcissement structurel du runtime agentique — barrière d'admission des extensions, journal d'audit chaîné, garde de sortie, racine de confiance de signature de modules —, matériau candidat pour ce chapitre, à instruire et à ne pas confondre avec un référentiel adopté).
 *Fusion : Vol. III ch. 15 + Vol. I* Monographie *§7.5 (trajectoire de la menace).*
+
+#### Table des matières détaillée du chapitre 22
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 15 (Vol. III) et §7.5 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 22.1 — Le seuil franchi : l'attaque largement autonome est démontrée** — *← Vol. I* Monographie *§7.5.1.* Tri PROGRAMMÉ / PROJETÉ / SPÉCULATIF obligatoire — un seuil démontré n'est pas une généralisation.
+- **§ 22.2 — État de l'*agentic SOC* : offres datées, périmètres réels** — *← Vol. III* Monographie *§15.1 + Vol. I* Monographie *§7.5.2.*
+- **§ 22.3 — La symétrie attaque/défense relue par l'identité** — *← Vol. III* Monographie *§15.2 + Vol. I* Monographie *§7.5.2.* L'identité distingue un SOC agentique **gouvernable** d'un système auto-organisé ingouvernable : les agents défensifs sont les premiers à devoir porter le passeport du ch. 17.
+- **§ 22.4 — Référentiels de sécurité agentique en mouvement (état 2026)** — *← Vol. III* Monographie *§15.3 + Vol. I* Monographie *§7.5.3.*
+  ⚠ **Relève v0.10, à instruire** : une préimpression adverse de mai 2026 propose un durcissement structurel du *runtime* agentique — barrière d'admission des extensions, journal d'audit chaîné, garde de sortie, racine de confiance de signature de modules. **Matériau candidat, à ne pas confondre avec un référentiel adopté.**
+- **§ 22.5 — Vérification d'intégrité continue et confiance composable : l'agenda de recherche** — *← Vol. I* Monographie *§7.5.4 ; prolonge le § 21.3.*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §15.1-15.3 | § 22.2-22.4 | condensé |
+| Vol. I *Monographie* §7.5.1-7.5.4 | § 22.1-22.5 | condensé |
 
 **Troisième mouvement — l'horloge post-quantique (ch. 23-24)** *(anciennement Livre V ; provenance intégrée à l'en-tête du livre)*
 
@@ -713,11 +956,47 @@ Sections : état de l'agentic SOC (offres datées, périmètres réels) ; symét
 Sections : échéances et sources (⚠ **garde-fou R-11 du Vol. III** : écrire « visée », jamais « fixée » ni « ~2030 » ; et porter le **statut du document** — IR 8547 est au socle hérité un *Initial Public Draft*, avec réserve « dates à re-vérifier ». Les quatre statuts de l'Annexe D — annoncé / visé / attendu / incertain — s'appliquent ici comme ailleurs ; ⚠ **relève v0.7** : IR 8547 demeure un brouillon à mi-2026, mais des instruments fédéraux américains de juin 2026 — décret exécutif et directive OMB alignant les systèmes fédéraux sur les jalons 2030/2035 — en font une échéance **opposable** outre-frontière : enrichissement déclaré, sources primaires à extraire, qui durcit la contrainte de conception sans changer le statut du document ni la formulation « visée ») ; *harvest now, decrypt later* appliqué aux artefacts d'identité longue durée ; inventaire (quels artefacts cassent, et quand).
 *Fusion : Vol. III ch. 16 + Vol. I* Monographie *§7.4.1.*
 
+#### Table des matières détaillée du chapitre 23
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 16 (Vol. III) et §7.4.1 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 23.1 — Les échéances exactes et leurs sources** — *← Vol. III* Monographie *§16.1 + Vol. I* Monographie *§7.4.1 (**SIÈGE de l'horloge** : la migration post-quantique comme contrainte de conception).*
+  ⚠ **Garde-fou R-11 du Vol. III** : écrire « **visée** », jamais « fixée » ni « ~2030 » — dépréciation **visée** pour 2030, retrait **visé** pour 2035. Porter le **statut du document** : NIST IR 8547 est au socle hérité un *Initial Public Draft*, avec réserve « dates à re-vérifier ». Les quatre statuts de l'Annexe D — *annoncé / visé / attendu / incertain* — s'appliquent ici comme ailleurs.
+  ⚠ **Relève v0.7, à instruire à la source primaire** : IR 8547 demeure un brouillon à mi-2026, mais des instruments fédéraux américains de juin 2026 (décret exécutif, directive OMB) alignent les systèmes fédéraux sur les jalons 2030/2035 — l'échéance devient **opposable outre-frontière**. Cela **durcit la contrainte de conception sans changer le statut du document ni la formulation « visée »**.
+- **§ 23.2 — *Harvest now, decrypt later* appliqué aux artefacts d'identité longue durée** — *← Vol. III* Monographie *§16.2.*
+- **§ 23.3 — Inventaire : quels artefacts de la pile agentique cassent, et quand** — *← Vol. III* Monographie *§16.3 ; porte sur la fabrique d'émission des ch. 12-19, qui repose entièrement sur des signatures classiques.*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §16.1-16.3 | § 23.1-23.3 | condensé |
+| Vol. I *Monographie* §7.4.1 | § 23.1 | **siège de l'horloge** |
+
 ### Chapitre 24 — Crypto-agilité et dette de migration
 
 **Thèse** : la crypto-agilité est l'application des **trois premiers termes de l'invariant** (découplage, contrat, évolution — le quatrième, l'exploitation, est refermé au Livre VII) à la couche cryptographique ; la dette de migration PQC est réelle mais largement non chiffrée — méthode d'estimation plutôt que chiffre.
 Sections : définition opérationnelle, état des recommandations NIST ; audit de crypto-agilité des mécanismes d'émission du présent livre (ch. 12-19) ; **méthode d'inventaire pour une institution** (Vol. III *TOC* §18.2 — la section qui porte la « méthode d'estimation plutôt que chiffre » annoncée à la thèse) ; patrons de migration sans rupture de chaîne de confiance ; ce que les études de coût couvrent (et pas) ; fenêtre d'action 2026-2029.
 *Fusion : Vol. III ch. 17-18 + Vol. I* Monographie *§7.4.4 (l'horloge de l'horizon ; §7.4.2 et §7.4.3 sont aux ch. 17, ch. 14 et ch. 19). Garde-fou : refus d'extrapoler un chiffre non porté par le socle.*
+
+#### Table des matières détaillée du chapitre 24
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 17-18 (Vol. III) et §7.4.4 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 24.1 — Définition opérationnelle et état des recommandations NIST** — *← Vol. III* Monographie *§17.1.* La crypto-agilité est l'application des **trois premiers termes de l'invariant** — découplage, contrat, évolution — à la couche cryptographique ; **le quatrième, l'exploitation, est refermé au Livre VII** et n'est pas invoqué ici.
+- **§ 24.2 — Audit de crypto-agilité des mécanismes d'émission et du mandat** — *← Vol. III* Monographie *§17.2 ; porte sur les ch. 12-19 du présent livre.*
+- **§ 24.3 — Patrons de migration sans rupture de la chaîne de confiance** — *← Vol. III* Monographie *§17.3.*
+- **§ 24.4 — Ce que les études de coût publiées couvrent (et ne couvrent pas)** — *← Vol. III* Monographie *§18.1 + Vol. I* Monographie *§7.4.4 (crypto-agilité et coût : la dette de migration de la couche agentique).* ⚠ **Garde-fou** : refus d'extrapoler un chiffre non porté par le socle — la dette est **réelle mais largement non chiffrée**.
+- **§ 24.5 — Méthode d'inventaire pour une institution** — *← Vol. III* Monographie *§18.2 : c'est la section qui porte la « **méthode d'estimation plutôt que chiffre** » annoncée à la thèse.*
+- **§ 24.6 — Fenêtre d'action 2026-2029 : le calendrier inverse** — *← Vol. III* Monographie *§18.3.*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §17.1-17.3 | § 24.1-24.3 | condensé |
+| Vol. III *Monographie* §18.1-18.3 | § 24.4-24.6 | condensé |
+| Vol. I *Monographie* §7.4.4 | § 24.4 | condensé |
 
 ---
 
@@ -731,11 +1010,50 @@ Sections : définition opérationnelle, état des recommandations NIST ; audit d
 Sections : OO1-OO4 ; cinq propriétés (autonomie, spécificité, réactivité, correction, traçabilité) ; critères de sélection ; métriques quantitatives (illustration — préprint) ; exécution durable et pipelines (du ch. 1).
 *Fusion : Vol. II ch. 5 + Vol. I* Monographie *§1.6.3. Socle : F-37. Garde-fou : source unique (préprint v1). **Lacune héritée portée : PRD Vol. II §10.10** — OO1-OO4 repose sur une source unique et le *frame* opérationnel n'est pas caractérisé ; renvoi ch. 56.*
 
+#### Table des matières détaillée du chapitre 25
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 5 (Vol. II) et §1.6.3 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 25.1 — Les quatre options d'orchestration (OO1-OO4)** — *← Vol. II §5.1.*
+- **§ 25.2 — Les cinq propriétés d'évaluation** — *← Vol. II §5.2 (autonomie, spécificité, réactivité, correction, traçabilité).*
+- **§ 25.3 — Les sept critères de sélection** — *← Vol. II §5.3.*
+- **§ 25.4 — Les métriques quantitatives et les résultats expérimentaux** — *← Vol. II §5.4.* ⚠ **Garde-fou : source unique (préprint v1)** — illustration, jamais preuve.
+- **§ 25.5 — Exécution durable, pipelines et orchestration agentique** — *← Vol. I* Monographie *§1.6.3, **reçu en entier du ch. 1** :*
+  - 25.5.1 Moteurs BPMN et *workflow-as-code* à exécution durable — *← §1.6.3.1*
+  - 25.5.2 Continuum batch/streaming et orchestration de pipelines — *← §1.6.3.2*
+  - 25.5.3 Orchestration déterministe vs orchestration agentique — *← §1.6.3.3 ; charnière avec le § 25.1*
+
+⚠ **Lacune héritée portée (PRD Vol. II §10.10)** : OO1-OO4 repose sur une **source unique** et le *frame* opérationnel n'est pas caractérisé ; renvoi ch. 56. La relève v0.10 signalée au ch. 26 (chaîne de règles à premier appariement gagnant) est un **cas**, jamais un fondement de cette taxonomie.
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §5.1-5.4 | § 25.1-25.4 | condensé |
+| Vol. I *Monographie* §1.6.3 | § 25.5 | **arrivée en entier** depuis le ch. 1 |
+
 ### Chapitre 26 — Le paradigme APM : l'autonomie encadrée
 
 **Thèse** : l'autonomie n'est pas l'automatisation ; elle se gouverne par des frames normatifs et opérationnels et quatre capacités (encadrement, explicabilité, actionnabilité conversationnelle, auto-modification).
 Sections : système APM, distinction autonomie/automatisation ; frames normatifs vs opérationnels ; quatre capacités ; frames locaux comme frontière de sécurité ; « responsibility gap » (préparé ici, exploité au ch. 33).
 *Fusion : Vol. II ch. 6. Socle : F-36. Garde-fou : R-1 (mention ACP du manifeste antérieure à la fusion). ⚠ **Relève v0.10** : les harnais documentés en 2026 résolvent les permissions par une **chaîne ordonnée de règles à premier appariement gagnant** (refus par outil, auto-approbation globale, politique par outil, octrois de session par outil puis par catégorie, politique par catégorie, défaut : demander), avec des octrois **persistant d'une session à l'autre**. C'est la première réalisation concrète et datée d'un frame opérationnel — à instruire comme **cas**, jamais comme fondement de la taxonomie du ch. 25, dont le socle est déjà sous lacune §10.10 ; deux points à verser au ch. 18 et au ch. 29 : un octroi de catégorie qui survit à la session est un élargissement de mandat sans acte de délégation, et un mode d'auto-approbation globale n'est pas un contrôle au sens de la supervision attendue par E-23.*
+
+#### Table des matières détaillée du chapitre 26
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 6 (Vol. II) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 26.1 — Le système APM et la ligne de partage entre autonomie et automatisation** — *← Vol. II §6.1.* ⚠ **Garde-fou R-1** : la mention ACP du manifeste est **antérieure à la fusion** — ne pas l'agréger aux autres emplois du sigle (encadré R-8, ch. 7).
+- **§ 26.2 — Frames normatifs, frames opérationnels, trois scénarios** — *← Vol. II §6.2.*
+  ⚠ **Relève v0.10, à instruire comme cas** : les harnais documentés en 2026 résolvent les permissions par une **chaîne ordonnée de règles à premier appariement gagnant** (refus par outil, auto-approbation globale, politique par outil, octrois de session par outil puis par catégorie, politique par catégorie, défaut : demander), avec des octrois **persistant d'une session à l'autre**. Première réalisation concrète et datée d'un *frame* opérationnel — **jamais un fondement de la taxonomie du ch. 25**, dont le socle est déjà sous lacune §10.10. Deux points à verser ailleurs : un **octroi de catégorie qui survit à la session est un élargissement de mandat sans acte de délégation** (ch. 18) ; un **mode d'auto-approbation globale n'est pas un contrôle** au sens de la supervision attendue par E-23 (ch. 29).
+- **§ 26.3 — Les quatre capacités requises** — *← Vol. II §6.3 (encadrement, explicabilité, actionnabilité conversationnelle, auto-modification).*
+- **§ 26.4 — Les frames locaux comme frontière de sécurité** — *← Vol. II §6.4.*
+- **§ 26.5 — L'écart de responsabilité, ou qui répond de ce que personne n'a décidé** — *← Vol. II §6.5 ; **préparé ici, exploité au ch. 33** (imputabilité du comportement émergent).*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §6.1-6.5 | § 26.1-26.5 | condensé |
 
 ### Chapitre 27 — Les frameworks d'orchestration d'entreprise
 
@@ -743,11 +1061,66 @@ Sections : système APM, distinction autonomie/automatisation ; frames normatifs
 Sections : Microsoft Agent Framework ; LangGraph Platform (A2A pour la plateforme commerciale seulement) ; orchestration événementielle (Streaming Agents, A2A sur Kafka ; Confluent acquise par IBM, clôture 17 mars 2026) ; encadrés Temporal [C] et **CrewAI, à trois niveaux de preuve tenus séparés** (A2A élevé [B] sur source primaire extraite ; **MCP au repérage [C]** ; métriques d'adoption auto-déclarées) — ⚠ l'étiquette unique « CrewAI [B] » des v0.1-v0.5 écrase la distinction dont dépend le décompte « deux offres sur cinq de première main » qui fonde la thèse ; grille OO1-OO4 des patrons.
 *Fusion : Vol. II ch. 7 + Vol. I* Monographie *§2.8.4. Socle : F-15, F-16, F-32, F-33, F-41. Garde-fou : PRD Vol. II §8.2.3 (chiffres d'éditeurs auto-déclarés). **Lacune héritée portée : PRD Vol. II §10.3** — réduite en P0, ne subsiste que Temporal, maintenu en [C].*
 
+#### Table des matières détaillée du chapitre 27
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 7 (Vol. II) et §2.8.4 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 27.1 — Microsoft Agent Framework : la succession assumée** — *← Vol. II §7.1 + Vol. I* Monographie *§2.8.4.2 (frameworks des grands fournisseurs : couplage, exécution, interop).*
+- **§ 27.2 — LangGraph Platform : la GA la plus ancienne, la frontière plateforme/bibliothèque** — *← Vol. II §7.2 + Vol. I* Monographie *§2.8.4.1 (LangGraph et le graphe d'états).* ⚠ **A2A pour la plateforme commerciale seulement** — périmètre à ne pas élargir.
+- **§ 27.3 — L'orchestration événementielle : le journal avant le cadre** — *← Vol. II §7.3 + Vol. I* Monographie *§2.8.4.3 (CrewAI Flows, LlamaIndex Workflows).* *Streaming Agents*, A2A sur Kafka ; **Confluent acquise par IBM, clôture le 17 mars 2026**.
+- **§ 27.4 — Deux cas en encadré : Temporal et CrewAI** — *← Vol. II §7.4 + Vol. I* Monographie *§2.8.4.4 (exécution durable, garde-fous structurels, observabilité native).*
+  ⚠ **CrewAI se tient à trois niveaux de preuve séparés** : A2A élevé **[B]** sur source primaire extraite ; **MCP au repérage [C]** ; métriques d'adoption **auto-déclarées**. L'étiquette unique « CrewAI [B] » des v0.1-v0.5 écrase la distinction dont dépend le décompte « **deux offres sur cinq de première main** » qui fonde la thèse. Temporal reste **[C]** (lacune PRD Vol. II §10.3, réduite en P0).
+- **§ 27.5 — Grille de lecture : ce que les patrons livrés positionnent, et ce qu'ils ne positionnent pas** — *← Vol. II §7.5 ; grille OO1-OO4 du ch. 25 appliquée aux patrons.*
+
+⚠ **Garde-fou (PRD Vol. II §8.2.3)** : chiffres d'éditeurs **auto-déclarés** — attribution à chaque occurrence. Le support MCP est **répandu et inégalement établi**, le support A2A **de périmètre inégal** : la thèse tient à cette double nuance.
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §7.1-7.5 | § 27.1-27.5 | condensé |
+| Vol. I *Monographie* §2.8.4 | § 27.1-27.4 | **arrivée** depuis le ch. 6 |
+
 ### Chapitre 28 — Le passage à l'échelle de l'entreprise
 
 **Thèse** : de la dette d'intégration à la prolifération d'agents, l'entreprise doit intégrer les agents à son tissu existant, gouverner le parc à l'échelle et instruire sa maturité — sans dupliquer l'IAM et l'observabilité en place.
 Sections : intégrer les agents au tissu d'intégration existant ; plateformes d'agents d'entreprise et stratégie de standards ouverts ; **identité et accès des agents à l'échelle du parc** (application du Livre III au grain de la plateforme, sans reconstruire leur doctrine) ; accès aux données d'entreprise et ancrage gouverné ; orchestration/collaboration humain-agent inter-équipes et B2B ; sécurité du parc à l'échelle ; capacité d'inférence, budget de latence et contention comme contraintes de dimensionnement ; adoption organisationnelle, modèle opérationnel, maturité.
 *Fusion : Vol. I* Monographie *ch. 4 (§4.1-4.7, §4.10-4.11), le §4.4 (identité et accès à l'échelle) recevant enfin une section d'accueil. Le §4.8 (gouvernance/conformité) part au Livre V ; le §4.9 (observabilité/FinOps) au Livre VII ; le §4.12 (architectures de référence) au Livre VIII.*
+
+#### Table des matières détaillée du chapitre 28
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 4 (Vol. I) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 28.0 — L'enjeu d'entreprise : de la dette d'intégration à la prolifération d'agents** — *← §4.1.1-4.1.4 (continuité et rupture de la dette ;* agent sprawl *et explosion des identités non humaines ; pilotes d'affaires et coût du statu quo).* ⚠ *L'encadré méthodologique §4.1.6 (« comment lire les chiffres de ce chapitre ») passe à la méthode unifiée (Annexe A) ; le mode d'emploi §4.1.5 est refondu en apparat.*
+- **§ 28.1 — Intégrer les agents au tissu d'intégration existant** — *← §4.2.1-4.2.6 : modèle de référence de l'intégration agentique ; iPaaS comme fabrique de serveurs MCP ; API management, AI gateway et passerelle LLM (**domicile mécanique**) ; encapsuler le* legacy *par MCP ; event mesh et EDI agentiques ; catalogue et coexistence des serveurs MCP à l'échelle.*
+- **§ 28.2 — Plateformes d'agents d'entreprise et stratégie de standards ouverts** — *← §4.3.1-4.3.5 : modèle de référence ; plateformes infusées dans la suite métier ; plateformes cloud horizontales ; jardins clos vs standards ouverts et anti-*lock-in* ; portabilité du modèle, TCO et ROI.*
+- **§ 28.3 — Identité et accès des agents à l'échelle du parc** — *← §4.4.1-4.4.4 : cycle de vie de l'identité à l'échelle ; délégation multi-saut, autorisation fine, gestion des secrets ; plateformes d'identité d'agents et zero-trust ; **OWASP Non-Human Identities Top 10 (2025) comme grille de risque — domicile**.*
+  ⚠ **Application du Livre III au grain de la plateforme, sans reconstruire sa doctrine** : la chaîne de mandat est au ch. 18, l'émission aux ch. 16-17. Le §4.4 **reçoit enfin une section d'accueil** — il n'en avait aucune avant la v0.5.
+- **§ 28.4 — Accès aux données d'entreprise et ancrage gouverné** — *← §4.5.1-4.5.5 : du RAG-jouet à la connaissance d'entreprise gouvernée ; récupération consciente des permissions et mémoire de flotte (**domicile permissions**) ; couche sémantique, graphe de connaissances,* text-to-SQL *gouverné ; MCP gouverné et contrats de données pour agents ; observabilité de l'ancrage.*
+- **§ 28.5 — Orchestration et collaboration humain-agent inter-équipes et B2B** — *← §4.6.1-4.6.4 : quand le multi-agent aide ou nuit à l'échelle ; trois échelles d'orchestration ; collaboration inter-organisations via A2A ; exécution durable et gestion des exceptions.*
+- **§ 28.6 — Sécurité du parc d'agents à l'échelle** — *← §4.7.1-4.7.3 : modèle de menace du parc ; injection indirecte via les données d'entreprise et fuites zéro-clic ; DLP/egress, chaîne d'approvisionnement MCP et confinement.*
+- **§ 28.7 — Interopérabilité inter-entreprises (B2B), commerce agentique et écosystème** — *← §4.10.1-4.10.4 : confiance inter-organisationnelle (KYA) et registres inter-firmes (**le siège du KYA est au ch. 19**) ; commerce et paiement agentiques B2B (**la pile est au ch. 10**) ;* data spaces *souverains et marketplaces ; responsabilité et modes d'échec à la frontière.*
+- **§ 28.8 — Capacité d'inférence, budget de latence et contention** — contraintes de dimensionnement du parc.
+- **§ 28.9 — Adoption organisationnelle, modèle opérationnel et maturité** — *← §4.11.1-4.11.4 : CdE agentique et* hub-and-spoke *; transposition LCIM → agents (**propriétaire**) ; conduite du changement, compétences, droit social ; gouvernance socio-technique, redevabilité et déqualification.*
+
+**Table de couverture (décision 6)**
+
+| Source Vol. I *Monographie* | Destination | Régime |
+| --- | --- | --- |
+| §4.1 | § 28.0 | condensé ; §4.1.5-4.1.6 refondus en apparat |
+| §4.2 | § 28.1 | condensé |
+| §4.3 | § 28.2 | condensé |
+| §4.4 | § 28.3 | condensé — **section d'accueil obtenue en v0.5** |
+| §4.5 | § 28.4 | condensé |
+| §4.6 | § 28.5 | condensé |
+| §4.7 | § 28.6 | condensé |
+| §4.8 | ch. 34 (Livre V) | hors périmètre |
+| §4.9 | Livre VII | hors périmètre (observabilité, FinOps) |
+| §4.10 | § 28.7 | condensé |
+| §4.11 | § 28.9 | condensé |
+| §4.12 | Livre VIII | hors périmètre (architectures de référence) |
+
+⚠ **Écart mineur constaté** — le § 28.8 (capacité d'inférence, budget de latence, contention) figure dans la phrase « Sections : … » du ch. 28 mais **ne correspond à aucune sous-section nommée du ch. 4 du Vol. I** ; la matière la plus proche est le §4.3.5 (TCO) et le §4.6.1. À rattacher explicitement à une source, ou à marquer construction d'auteur (décision 8) à la rédaction.
 
 ---
 
@@ -761,11 +1134,48 @@ Sections : intégrer les agents au tissu d'intégration existant ; plateformes d
 Sections : genèse et calendrier ; définition de « modèle » et anticipation des systèmes autonomes ; l'inférence agentique ; le registre du ch. 16 comme condition d'inventaire ; la surveillance continue **attendue** par E-23 et la limite empirique de la supervision humaine (ch. 18) — ⚠ **formulation imposée, PRD Vol. II §7.3 et PRDPlan §4.4** : écrire « attendu par E-23 », **jamais** « exigé par E-23 » ni « E-23 impose » (ligne fondée sur des principes, rédigée au conditionnel) ; et les cinq attentes au socle sont cycle de vie, inventaire, cotation, documentation et surveillance continue — **la « supervision humaine » n'en est pas une** ; **ce que les cadres n'exigent pas — ne pas leur faire dire plus** (Vol. III *TOC* §19.3) ; rapport BSIF-ACFC (risque de causalité indéterminable).
 *Fusion : Vol. II ch. 9 + Vol. III ch. 19, **volet E-23 seul** — la relecture de la ligne directrice AMF par la grille des cinq questions (§19.1, seconde moitié) va au ch. 31, qui est son siège. Socle : F-09 (les deux strates), F-10. Garde-fous : PRD Vol. II §8.2.4 (couverture E-23 = inférence d'analystes) et PRD Vol. II §8.2.6 (projections).*
 
+#### Table des matières détaillée du chapitre 29
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 9 (Vol. II) et ch. 19 (Vol. III) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 29.1 — Genèse et calendrier** — *← Vol. II §9.1 ; entrée en vigueur au 1ᵉʳ mai 2027.*
+- **§ 29.2 — La définition de « modèle » et l'anticipation des systèmes autonomes** — *← Vol. II §9.2.*
+- **§ 29.3 — L'inférence agentique** — *← Vol. II §9.3.* ⚠ **Garde-fou (PRD Vol. II §8.2.4)** : la couverture agentique d'E-23 est une **inférence d'analystes juridiques** — écrire « couverture implicite via la définition de modèle », **jamais** « le BSIF exige pour l'IA agentique ».
+- **§ 29.4 — Relecture d'E-23 par la grille des cinq questions** — *← Vol. III* Monographie *§19.1, **moitié E-23 seule** — la moitié AMF va au ch. 31, qui en est le siège.*
+- **§ 29.5 — Le registre du ch. 16 comme pièce de conformité** — *← Vol. III* Monographie *§19.2 ; l'identité agentique est le **prérequis technique d'obligations qui ne la mentionnent pas**.*
+- **§ 29.6 — La surveillance continue attendue par E-23, et la limite empirique de la supervision humaine** — renvoi au ch. 18 § 18.5 (biais d'automatisation).
+  ⚠ **Formulation imposée (PRD Vol. II §7.3 et PRDPlan §4.4)** : écrire « **attendu** par E-23 », **jamais** « exigé par E-23 » ni « E-23 impose » — ligne fondée sur des principes, rédigée au conditionnel.
+  ⚠ **Les cinq attentes au socle sont : cycle de vie, inventaire, cotation, documentation, surveillance continue. La « supervision humaine » n'en est pas une** — ne pas l'ajouter à la liste.
+- **§ 29.7 — Ce que les cadres n'exigent pas — ne pas leur faire dire plus** — *← Vol. III* Monographie *§19.3.*
+- **§ 29.8 — Le rapport BSIF-ACFC : une trajectoire déclarée et une causalité indéterminable** — *← Vol. II §9.4.*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §9.1-9.4 | § 29.1-29.3, § 29.8 | condensé |
+| Vol. III *Monographie* §19.1 | § 29.4 | **moitié E-23** — moitié AMF au ch. 31 |
+| Vol. III *Monographie* §19.2-19.3 | § 29.5, § 29.7 | condensé |
+
 ### Chapitre 30 — Le vide fédéral : de C-27 à C-36
 
 **Thèse** : la mort de la LIAD laisse le Canada sans régulation fédérale spécifique de l'IA ; C-36 (loi sur la vie privée, non loi IA autonome) ne comble pas ce vide — la couverture effective passe par les régulateurs sectoriels.
 Sections : prorogation du 6 janvier 2025, mort de C-27 ; ministre de l'IA et C-36 (réforme LPRPDE, *Digital Safety and Data Protection Commission*) ; conséquences pour les institutions financières.
 *Fusion : Vol. II ch. 10. Socle : F-24 [B, revalidé].*
+
+#### Table des matières détaillée du chapitre 30
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 10 (Vol. II) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 30.1 — La prorogation du 6 janvier 2025 et la mort de C-27** — *← Vol. II §10.1 ; fin de la LIAD.*
+- **§ 30.2 — Le ministre de l'IA et le projet de loi C-36** — *← Vol. II §10.2 : réforme de la LPRPDE,* Digital Safety and Data Protection Commission. ⚠ **C-36 est une loi sur la vie privée, non une loi IA autonome** — elle ne comble pas le vide.
+- **§ 30.3 — Conséquences : le vide persiste, la charge est sectorielle** — *← Vol. II §10.3 ; la couverture effective passe par les régulateurs sectoriels (ch. 29, 31, 32).*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §10.1-10.3 | § 30.1-30.3 | condensé |
 
 ### Chapitre 31 — Québec : la ligne directrice IA de l'AMF et l'article 12.1 de la Loi 25
 
@@ -773,11 +1183,50 @@ Sections : prorogation du 6 janvier 2025, mort de C-27 ; ministre de l'IA et C-3
 Sections : ligne directrice AMF (**finale le 30 mars 2026** — divergence tranchée, voir Annexe C ; en vigueur 1ᵉʳ mai 2027 ; ⚠ **seules ses dates sont au socle, jamais son contenu** — lacune PRD Vol. II §10.4, la plus coûteuse du volume, à rouvrir par extraction de la source primaire avant rédaction ; ne jamais écrire « en attente », réserve F-25) ; art. 12.1 (trois obligations, texte officiel) ; critère « exclusivement » et HITL (nuance Fasken vs CAI ; le biais d'automatisation du ch. 18 comme limite empirique de la parade) ; la ligne directrice AMF relue par la grille des cinq questions (Vol. III *TOC* §19.1) ; le mandat en droit civil québécois (Vol. III *TOC* §20.2 ; la limite de l'analogie est au ch. 18) ; le droit des renseignements personnels et la chaîne de délégation (qui traite, qui décide, qui répond).
 *Fusion : Vol. II ch. 11 + Vol. III ch. 20 (**volet Loi 25 seul** — le volet RGPD va au ch. 34) + Vol. III ch. 19 §19.1 (moitié AMF). ⚠ **Siège de Q4** : le Vol. III déclare que son ch. 20 « prolonge Q4 du Vol. II — l'applicabilité de l'art. 12.1 à la décision multi-agents avec humain-dans-la-boucle — sans la trancher » ; les v0.1-v0.4 nommaient Q2, Q3 et Q5 de la même série et **laissaient Q4 sans chapitre d'accueil**, alors que sa matière arrivait ici avec le ch. 20 du Vol. III. La question est instruite, non tranchée : le §20.3 du Vol. III est une « cartographie des lectures, sans verdict », et cette forme est reconduite. Socle : F-25, F-27. Garde-fou renforcé : aucun avis juridique ; ⚠ la position « finale le 30 mars 2026 » porte une **dette de vérification déclarée** au Vol. II (source primaire renvoyant 403 aux outils employés le 17 juillet 2026) — la divergence est tranchée, la vérification reste due.*
 
+#### Table des matières détaillée du chapitre 31
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 11 (Vol. II) et ch. 19-20 (Vol. III) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 31.1 — La ligne directrice IA de l'AMF : chronologie et convergence** — *← Vol. II §11.1.*
+  ⚠ **Divergence tranchée (Annexe C)** : **finale le 30 mars 2026**, en vigueur le 1ᵉʳ mai 2027 — ne **jamais** écrire « en attente » (réserve F-25). ⚠ **Dette de vérification déclarée** : la source primaire renvoyait 403 aux outils employés le 17 juillet 2026 — la divergence est tranchée, la vérification reste **due**.
+  ⚠ **Seules ses dates sont au socle, jamais son contenu** — lacune **PRD Vol. II §10.4**, la plus coûteuse du volume, à rouvrir par extraction de la source primaire **avant rédaction**.
+- **§ 31.2 — L'article 12.1 : trois obligations, un texte** — *← Vol. II §11.2 (texte officiel).*
+- **§ 31.3 — Le critère « exclusivement » et l'humain-dans-la-boucle** — *← Vol. II §11.3 (nuance Fasken vs CAI) ; le biais d'automatisation du ch. 18 § 18.5 en est la **limite empirique**.*
+- **§ 31.4 — L'article 12.1 et la décision automatisée multi-agents : état des positions** — *← Vol. III* Monographie *§20.1.*
+- **§ 31.5 — La ligne directrice AMF relue par la grille des cinq questions** — *← Vol. III* Monographie *§19.1, **moitié AMF — ce chapitre en est le siège** ; la moitié E-23 est au ch. 29. Le Vol. III désigne le §19.1 comme **seul siège d'application de la grille pour sa Partie VI**.*
+- **§ 31.6 — Le mandat agentique en droit civil québécois : ce que l'analogie porte** — *← Vol. III* Monographie *§20.2 ; **la limite de l'analogie est au ch. 18** § 18.3.*
+- **§ 31.7 — Cartographie des lectures, sans verdict** — *← Vol. III* Monographie *§20.3.* ⚠ **Siège de Q4** de la série d'agenda du Vol. II (*Monographie* ch. 21 §21.2) : la question est **instruite, non tranchée**, et cette forme est reconduite.
+- **§ 31.8 — Conséquences d'architecture** — *← Vol. II §11.4 ; qui traite, qui décide, qui répond.*
+
+⚠ **Garde-fou renforcé : aucun avis juridique.** ⚠ **Thèse du Vol. III amendée le 22 juillet 2026 (R-G-37)** : le droit des renseignements personnels **raisonne par exploitant d'entreprise** (F-89 du Vol. III, [B]) — la dichotomie « responsable / mandataire » n'est portée par aucune entrée du socle et se traite comme **construction à instruire**, non comme acquis.
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §11.1-11.4 | § 31.1-31.3, § 31.8 | condensé |
+| Vol. III *Monographie* §19.1 | § 31.5 | **moitié AMF** — siège de la grille |
+| Vol. III *Monographie* §20.1-20.3 | § 31.4, § 31.6-31.7 | condensé — **chapitre 20 en entier** (voir écart au ch. 34) |
+
 ### Chapitre 32 — Valeurs mobilières : l'avis ACVM 11-348
 
 **Thèse** : les lois existantes s'appliquent — la définition retenue des systèmes d'IA (autonomie et adaptativité variables) capture nativement l'agentique.
 Sections : portée et doctrine (« ne crée ni ne modifie aucune exigence ») ; attentes (gouvernance, explicabilité, supervision) ; suites de la consultation.
 *Fusion : Vol. II ch. 12. Socle : F-26.*
+
+#### Table des matières détaillée du chapitre 32
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 12 (Vol. II) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 32.1 — Portée et doctrine : ce que l'avis dit qu'il ne fait pas** — *← Vol. II §12.1.* L'avis « **ne crée ni ne modifie aucune exigence** » : les lois existantes s'appliquent.
+- **§ 32.2 — La définition comme accroche : autonomie et adaptativité** — *← Vol. II §12.2 ; la définition retenue (autonomie et adaptativité **variables**) capture nativement l'agentique.*
+- **§ 32.3 — Les suites de la consultation** — *← Vol. II §12.3 ; attentes de gouvernance, explicabilité et supervision.*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §12.1-12.3 | § 32.1-32.3 | condensé |
 
 ### Chapitre 33 — Le pont : des contraintes réglementaires aux frames déterministes
 
@@ -785,11 +1234,66 @@ Sections : portée et doctrine (« ne crée ni ne modifie aucune exigence ») ; 
 Sections : table de traduction exigences → frames (**onze entrées au Vol. II, dont neuf produisent une contrainte** ; ⚠ la ligne AMF y est la seule qui n'en produit **aucune**, faute de contenu au socle — l'écrire, ne pas la combler ; ⚠ **ces deux cardinaux sont ceux du Vol. II et ne se recopient pas** : la refonte du socle à l'Annexe B peut en changer, et le chapitre pose lui-même que « la densité de contraintes dérivables d'un texte mesure ce que le socle en a extrait, non son exigence propre » — le compte se re-mesure à la rédaction) ; verdict empirique (F-37) et convergence à trois sources (F-36, F-37, F-46) ; imputabilité (qui répond du comportement émergent) ; énoncé du principe directeur repris aux Livres VIII et X.
 *Fusion : Vol. II ch. 13 (chapitre-pivot conservé intact). Socle : F-09 (deux strates), F-25, F-26, F-27, F-36, F-37, F-46 ; F-10, F-35 en renvoi.*
 
+#### Table des matières détaillée du chapitre 33
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 13 (Vol. II) le 25 juillet 2026. **Chapitre-pivot conservé intact** — la structure du Vol. II est reprise sans redécoupage. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 33.1 — La table de traduction : ce que les exigences imposent aux frames** — *← Vol. II §13.1.*
+  ⚠ **Onze entrées au Vol. II, dont neuf produisent une contrainte** ; **la ligne AMF est la seule qui n'en produit aucune**, faute de contenu au socle — l'écrire, **ne pas la combler**.
+  ⚠ **Ces deux cardinaux sont ceux du Vol. II et ne se recopient pas** : la refonte du socle à l'Annexe B peut en changer, et le chapitre pose lui-même que « la densité de contraintes dérivables d'un texte mesure ce que le socle en a extrait, non son exigence propre ». **Le compte se re-mesure à la rédaction.**
+- **§ 33.2 — Le verdict empirique et la convergence à trois sources** — *← Vol. II §13.2 (F-37 ; convergence F-36, F-37, F-46).* ⚠ **Trois sources non indépendantes** — le socle n'établit l'application ni au Canada ni à la finance canadienne : c'est la **portée** de la convergence, pas son autorité majorée.
+- **§ 33.3 — L'imputabilité : qui répond du comportement émergent ?** — *← Vol. II §13.3 ; exploite l'écart de responsabilité préparé au ch. 26 § 26.5.*
+- **§ 33.4 — Le principe directeur** — *← Vol. II §13.4 ; énoncé repris aux Livres VIII et X.*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. II §13.1-13.4 | § 33.1-33.4 | **intact** (chapitre-pivot) |
+
 ### Chapitre 34 — Le maillage réglementaire international et la normalisation institutionnelle
 
 **Thèse** : hors Canada, l'AI Act, ISO 42001, le RGPD et les cadres sectoriels dessinent le maillage transversal que l'agent en finance régulée doit satisfaire ; et la désignation de l'organisme de normalisation technique du cadre bancaire canadien fixera qui écrit les règles d'identité des agents financiers.
 Sections : gouvernance et conformité d'entreprise (AI Act, ISO 42001, RGPD, sectoriel — du Vol. I *Monographie* §4.8) ; maillage réglementaire UE/US/Canada-Québec et double-qualification agent = modèle + tiers TIC (Vol. I *Monographie* §5.3) ; normalisation institutionnelle du cadre bancaire (Q5 de la série d'agenda du Vol. II — *Monographie* ch. 21 §21.2) ; normalisation internationale (ISO/IEC SC 42, CEN-CENELEC, NIST) appliquée à l'identité d'agent.
 *Fusion : Vol. III ch. 21 + Vol. III ch. 20 (**volet RGPD** — le volet Loi 25 est au ch. 31) + Vol. I* Monographie *§4.8/§5.3/§2.11.3 (gouvernance par les normes) + Vol. II ch. 21 §21.2 (Q5). Instruit la lacune PRD Vol. II §10.1 (aucun arrêté au 16 juill. 2026). Garde-fou : R-5 du Vol. II.*
+
+#### Table des matières détaillée du chapitre 34
+
+*Dérivée du texte rédigé de `Monographie.md` ch. 21 (Vol. III), §4.8/§5.3/§2.11.3 (Vol. I) et ch. 21 §21.2 (Vol. II) le 25 juillet 2026. Table de travail, non normative : la ligne Fusion ci-dessus prime en cas d'écart.*
+
+- **§ 34.1 — Gouvernance et conformité d'entreprise** — *← Vol. I* Monographie *§4.8 + §2.11.3 (gouvernance par les normes et réglementation) :*
+  - 34.1.1 Qualification des agents sous l'AI Act et calendrier d'application — *← §4.8.1*
+  - 34.1.2 Normes volontaires : ISO/IEC 42001, famille 42000, NIST AI RMF — *← §4.8.2*
+  - 34.1.3 Inventaire/registre d'agents et *policy-as-code* — *← §4.8.3 ; le registre comme pièce de conformité est au ch. 29 § 29.5*
+  - 34.1.4 **RGPD pour agents autonomes** et réglementation sectorielle — *← §4.8.4* ⚠ voir écart
+  - 34.1.5 Résidence/souveraineté, responsabilité, *e-discovery* et modèle opérationnel de gouvernance — *← §4.8.5*
+- **§ 34.2 — Maillage réglementaire transversal UE / US / Canada-Québec** — *← Vol. I* Monographie *§5.3 :*
+  - 34.2.1 La grille de qualification multiple : système TIC / modèle / décision automatisée — *← §5.3.1.* ⚠ **Le SIÈGE de la double-qualification est le §5.1.4, au ch. 35** ; le §5.3 déclare lui-même ne faire que l'**instancier** — ne pas la reposer ici.
+  - 34.2.2 DORA et la résilience opérationnelle : l'agent comme service TIC — *← §5.3.2*
+  - 34.2.3 AI Act Annexe III : haut-risque ciblé et report adopté — *← §5.3.3*
+  - 34.2.4 Risque-modèle : la divergence transatlantique — *← §5.3.4 ; à lire contre le ch. 29 (E-23)*
+  - 34.2.5 Conduite et marchés : MiFID II, *suitability*, MiCA — *← §5.3.5*
+  - 34.2.6 AML/CTF et capital : *single rulebook* 2027, AMLA, Bâle III — *← §5.3.6*
+  - 34.2.7 L'axe Canada / Québec (couverture explicite imposée) — *← §5.3.7 ; renvois ch. 29-32*
+- **§ 34.3 — La normalisation institutionnelle et le cadre bancaire canadien**
+  - 34.3.1 État de la désignation — *← Vol. III* Monographie *§21.1 + **Q5** de la série d'agenda du Vol. II (*Monographie* ch. 21 §21.2).* ⚠ **Instruit la lacune PRD Vol. II §10.1** : aucun arrêté ministériel au 16 juillet 2026 — l'écrire, ne pas la combler. **Garde-fou R-5 du Vol. II.**
+  - 34.3.2 Scénarios et leurs conséquences sur la pile identitaire — *← Vol. III* Monographie *§21.2.* La désignation fixera **qui écrit les règles d'identité des agents financiers**.
+  - 34.3.3 Normalisation internationale appliquée à l'identité d'agent — *← Vol. III* Monographie *§21.3 (ISO/IEC SC 42, CEN-CENELEC, NIST).*
+
+**Table de couverture (décision 6)**
+
+| Source | Destination | Régime |
+| --- | --- | --- |
+| Vol. III *Monographie* §21.1-21.3 | § 34.3 | condensé |
+| Vol. III *Monographie* ch. 20 | **ch. 31 en entier** | voir écart — le « volet RGPD » n'existe plus |
+| Vol. I *Monographie* §4.8 | § 34.1 | condensé |
+| Vol. I *Monographie* §5.3 | § 34.2 | condensé ; siège de la double-qualification au ch. 35 |
+| Vol. I *Monographie* §2.11.3 | § 34.1 | **arrivée** depuis le ch. 6 |
+| Vol. II ch. 21 §21.2 (Q5) | § 34.3.1 | condensé |
+
+⚠ **Écart constaté, et c'est le plus lourd de ce livre — le « volet RGPD » du ch. 20 du Vol. III n'existe plus.** La ligne Fusion répartit le ch. 20 du Vol. III entre le ch. 31 (« volet Loi 25 seul ») et ce chapitre (« volet RGPD »). Or le Vol. III **rédigé** a retiré le RGPD de ce chapitre le **22 juillet 2026**, par l'arbitrage **R-G-38** : son titre nommait le RGPD jusqu'à cette date, et l'avertissement de portée du §20 pose désormais que « **le socle ne documente pas le règlement général sur la protection des données ni aucun de ses articles** » — *absence de documentation* (degré 3), **non** fait négatif vérifié —, que « **aucun rapprochement entre le régime québécois et le régime européen n'est donc opéré ici** », et que la lacune est portée au PRD du Vol. III **sous le numéro 16** (« non instruite — absent du socle et du programme de constitution »).
+
+**Conséquences, à trancher par une passe du TOC, non ici :** *(a)* le ch. 31 reçoit le ch. 20 du Vol. III **en entier**, et sa mention « volet Loi 25 **seul** » est sans objet ; *(b)* la matière RGPD de ce chapitre est portée par le **Vol. I** (§4.8.4 et §5.3), qui est intact — le chapitre ne perd rien, mais **sa ligne de provenance désigne une source vide** ; *(c)* la lacune 16 du Vol. III est une **lacune héritée non enregistrée** au registre de l'Annexe C du compendium. C'est la classe d'écart que la **collation de fond** contre le Vol. III rédigé — préalable déclaré, dont la v0.14 n'a levé que le volet structurel — a précisément pour objet de trouver.
 
 ---
 
