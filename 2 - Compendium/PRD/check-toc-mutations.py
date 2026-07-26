@@ -34,31 +34,46 @@ def _src(f):
 
 MUTATIONS = [
     # (id, fichier, ancien, nouveau, contrôle attendu)
+    # ⚠ Réancrage v0.20 : la condensation à cinq livres et cinquante chapitres a
+    # périmé six motifs (M2, M3a, M4, M5, M9b, M13). Réancrés sur le texte courant,
+    # jamais supprimés — c'est la règle posée en tête de ce fichier.
     ("M1",  "TOC.md", "### Chapitre 30 —", "### Chapitre 99 —", "C1"),
-    ("M2",  "TOC.md", "# LIVRE X —", "# LIVRE XI —", "C2"),
-    ("M3a", "TOC.md", "~40 000 mots)*", "~45 000 mots)*", "C3"),
+    ("M2",  "TOC.md", "# LIVRE V — Livrer", "# LIVRE VI — Livrer", "C2"),
+    ("M3a", "TOC.md", "~65 000 mots)*", "~70 000 mots)*", "C3"),
     ("M3b", "TOC.md",
      "Sections : généalogie (comptes de service → workload identity)",
      "Sections (~5 000 mots) : généalogie (comptes de service → workload identity)", "C3"),
-    ("M4",  "TOC.md", "renvoi ch. 56", "renvoi ch. 58", "C4"),
-    ("M5",  "TOC.md", "obligations des Livres V-VII", "obligations des Livres V-XII", "C5"),
+    ("M4",  "TOC.md", "renvoi ch. 39 (d", "renvoi ch. 58 (d", "C4"),
+    ("M5",  "TOC.md", "obligations des Livres III-IV,", "obligations des Livres III-XII,", "C5"),
     ("M6",  "TOC.md", "(Vol. III *TOC* §6.3", "(Vol. III §6.3", "C6"),
     ("M7",  "TOC.md", "Vol. II ***Monographie*** Annexe B (matrice détaillée",
      "Vol. II Annexe B (matrice détaillée", "C7"),
     ("M8",  "TOC.md", "Garde-fou : R-5 du Vol. II.*", "Garde-fou : R-5.*", "C8"),
     ("M9a", "TOC.md", "| §10.7 ", "| §10.77 ", "C9"),
-    ("M9b", "TOC.md", "**Lacune héritée portée : PRD Vol. II §10.2** — réduite",
-     "**Lacune héritée portée** — réduite", "C9"),
+    # M9b teste la seconde branche de C9 — « le chapitre désigné nomme-t-il la
+    # lacune ? » — en détournant la cellule du registre vers un chapitre muet.
+    # L'ancien motif (retrait de la mention dans le chapitre porteur) ne mord plus
+    # depuis la v0.16 : les tables détaillées la répètent, et C9 trouve la copie.
+    ("M9b", "TOC.md", "| §10.3               | Frameworks — réduite en P0, ne subsiste que Temporal"
+     "                                                                       | ch. 23",
+     "| §10.3               | Frameworks — réduite en P0, ne subsiste que Temporal"
+     "                                                                       | ch. 2", "C9"),
     ("M10", "TOC.md", "croisement grille × maturité (corpus d'appui — construction d'auteur)",
      "croisement grille × maturité (construction d'auteur)", "C10"),
-    ("M11a", "TOC.md", "⚠ **relève v0.11 — la généralisation de la pile a un nom de scène",
-     "⚠ **note — la généralisation de la pile a un nom de scène", "C11"),
+    # M11a teste le décompte du journal v0.10 ; M11b celui du journal v0.11.
+    # ⚠ La branche « la marque de relève est présente dans le chapitre » n'est plus
+    # testable par substitution unique : depuis la v0.16, chaque marque figure au
+    # moins deux fois par chapitre (entrée + table détaillée), de sorte qu'en
+    # retirer une laisse la seconde satisfaire le contrôle. Lacune du harnais,
+    # déclarée au journal v0.20 plutôt que masquée par une mutation qui ne mord pas.
+    ("M11a", "TOC.md", "**1. Le harnais est un objet que la somme ne nomme nulle part.**",
+     "**Première relève — Le harnais est un objet que la somme ne nomme nulle part.**", "C11"),
     ("M11b", "TOC.md", "**6. L'après-agentique se donne des échelles",
      "**Sixième relève — L'après-agentique se donne des échelles", "C11"),
     ("M12", "TOC.md", "*Fusion : Vol. III ch. 12 + Vol. I* Monographie",
      "*Fusion : Vol. III *TOC* §12.1 + Vol. I* Monographie", "C12"),
-    ("M13", "TOC.md", "d'un ouvrage à 57 chapitres", "d'un ouvrage à 54 chapitres", "C13"),
-    ("M14", "README.md", "**v0.14** (23 juillet 2026)", "**v0.10** (21 juillet 2026)", "C14"),
+    ("M13", "TOC.md", "d'un ouvrage à 50 chapitres", "d'un ouvrage à 54 chapitres", "C13"),
+    ("M14", "README.md", "**v0.20** (26 juillet 2026)", "**v0.10** (21 juillet 2026)", "C14"),
 ]
 
 

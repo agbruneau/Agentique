@@ -36,17 +36,19 @@ CONSPECTUS = HERE / "README.md"   # vue synoptique dérivée (le « conspectus �
 if not CONSPECTUS.exists():        # layout PRD/ : le README (conspectus) vit à la racine du dossier
     CONSPECTUS = HERE.parent / "README.md"
 
-N_CHAPTERS = 57
-BOOKS = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"]
+N_CHAPTERS = 50             # v0.20 : 57 → 50, sept paires fusionnées (décision 11)
+BOOKS = ["I", "II", "III", "IV", "V"]           # v0.20 : dix livres → cinq
 ROMAN_OK = set(BOOKS)
+N_HEAD_ENVELOPES = 6        # cinq livres + avant-propos
 ENVELOPE_SUM = 305          # 301 corps + 4 avant-propos (enveloppes de tête)
 ANNEX_ENVELOPE = 89
 TOTAL_HIGH = 394            # 305 + 89
 VOL3_TOC_REFS = 11          # « onze renvois » — décision 7 (re-mesuré 23 juill. 2026)
 LACUNES = [f"§10.{i}" for i in range(1, 12)]   # onze lacunes du PRD Vol. II
-CORPUS_CONSUMERS = [15, 18, 44, 47, 49, 50]     # + Annexe G, contrôlée à part
-RELEVE_V10 = [20, 21, 22, 26, 43, 44, 52, 53, 54, 55, 57]
-RELEVE_V11 = [9, 19, 40, 44, 55]
+# listes remappées par la décision 11 ; les doublons de fusion sont résorbés
+CORPUS_CONSUMERS = [14, 17, 39, 42, 44]         # + Annexe G, contrôlée à part
+RELEVE_V10 = [19, 20, 22, 38, 39, 46, 47, 48, 49, 50]
+RELEVE_V11 = [9, 18, 36, 39, 49]
 JOURNAL_RELEVES = {"v0.10": 8, "v0.11": 6}
 CORRESPONDENCE_MARKERS = re.compile(
     r"ancien|anciennement|aujourd'hui|entrée en|depuis la|v0\.8|v0\.9|→")
@@ -134,8 +136,9 @@ def main():
             for m in re.finditer(r"~(\d+) 000 mots\)\*", norm_text)]
     if sum(envs) != ENVELOPE_SUM:
         fail("C3", f"somme des enveloppes de tête = {sum(envs)}, attendu {ENVELOPE_SUM} ({envs})")
-    if len(envs) != 11:
-        fail("C3", f"{len(envs)} enveloppes de tête trouvées, attendu 11 (10 livres + avant-propos)")
+    if len(envs) != N_HEAD_ENVELOPES:
+        fail("C3", f"{len(envs)} enveloppes de tête trouvées, attendu {N_HEAD_ENVELOPES} "
+                   f"({len(BOOKS)} livres + avant-propos)")
     if f"~{ANNEX_ENVELOPE} 000 mots" not in norm_text:
         fail("C3", "enveloppe des annexes (~89 000 mots) absente")
     if ENVELOPE_SUM + ANNEX_ENVELOPE != TOTAL_HIGH:
@@ -148,11 +151,18 @@ def main():
                 l.startswith("#") or l.startswith("*(") or "*(" in l):
             fail("C3", f"ligne {i+1} : forme « ~N 000 mots » hors enveloppe de tête")
 
-    # C4 — aucun renvoi « ch. N » hors 1-57 (fichier entier)
-    for m in re.finditer(r"\bch\. (\d+)", text):
-        n = int(m.group(1))
-        if not 1 <= n <= N_CHAPTERS:
-            fail("C4", f"renvoi pendant « ch. {n} »")
+    # C4 — aucun renvoi « ch. N » hors 1-50 en zone normative.
+    # Deux exemptions, toutes deux nécessaires depuis la condensation v0.20 :
+    # les zones gelées citent la numérotation de leur passe (journaux, rangées
+    # Historique), et une ligne portant un marqueur de correspondance cite un
+    # ancien numéro à dessein (« *(ancien ch. 55)* », « anciens ch. 55 et 56 »).
+    for i, l in norm_lines:
+        if CORRESPONDENCE_MARKERS.search(l):
+            continue
+        for m in re.finditer(r"\bch\. (\d+)", l):
+            n = int(m.group(1))
+            if not 1 <= n <= N_CHAPTERS:
+                fail("C4", f"ligne {i+1} : renvoi pendant « ch. {n} »")
 
     # C5 — aucun numéral de livre hors I-X en zone normative, sauf correspondance annotée
     for i, l in norm_lines:
@@ -228,11 +238,17 @@ def main():
         fail("C12", f"{refs} renvois « Vol. III *TOC* §N.x » en zone normative, "
                     f"le cardinal annoncé (onze = {VOL3_TOC_REFS}) est périmé — re-mesurer et reporter")
 
-    # C13 — cardinal « 57 chapitres » cohérent en zone normative
-    for m in re.finditer(r"\b(\d\d) chapitres", norm_text):
-        n = int(m.group(1))
-        if 40 <= n <= 99 and n != N_CHAPTERS:
-            fail("C13", f"« {n} chapitres » en zone normative (attendu {N_CHAPTERS})")
+    # C13 — cardinal « 50 chapitres » cohérent en zone normative. Exemption des
+    # lignes à marqueur de correspondance : un constat daté cite le cardinal de
+    # sa passe (« aucun cardinal ne bouge (57 chapitres, dix livres) », v0.13).
+    for i, l in norm_lines:
+        if CORRESPONDENCE_MARKERS.search(l):
+            continue
+        for m in re.finditer(r"\b(\d\d) chapitres", l):
+            n = int(m.group(1))
+            if 40 <= n <= 99 and n != N_CHAPTERS:
+                fail("C13", f"ligne {i+1} : « {n} chapitres » en zone normative "
+                            f"(attendu {N_CHAPTERS})")
 
     # C14 — alignement du conspectus : version identique, ou mention explicite
     # « retard déclaré » en tête. Le mot « retard » seul ne suffit pas — la
