@@ -153,9 +153,11 @@ Le volume naît des lacunes des deux précédents : identité non humaine et dé
 
 **Au stade du cadrage seul.** Le dossier
 [`2 - Compendium/`](2%20-%20Compendium/) porte une table des matières
-commentée ([`TOC.md`](2%20-%20Compendium/PRD/TOC.md), **v0.15 du 24 juillet 2026**), son
-**PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium/PRD/PRD.md), v0.3 du
-24 juillet 2026 — portes de lancement, régimes de preuve, critères d'acceptation, jalons), sa vue
+commentée ([`TOC.md`](2%20-%20Compendium/PRD/TOC.md), **v0.17 du 25 juillet 2026** — chaque
+entrée de chapitre y est désormais suivie de sa **table des matières détaillée**, provenance par
+sous-section et table de couverture), son
+**PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium/PRD/PRD.md), v0.4 du
+25 juillet 2026 — portes de lancement, régimes de preuve, critères d'acceptation, jalons), sa vue
 synoptique dérivée ([`README.md`](2%20-%20Compendium/README.md)), son exécutable
 de contrôle ([`check-toc.py`](2%20-%20Compendium/PRD/check-toc.py), avec son harnais de
 validation par mutation) et un
@@ -255,7 +257,7 @@ volumes sources font foi et la divergence reste ouverte — le cadrage le dit lu
     ├── README.md                            vue synoptique dérivée du TOC (le « conspectus » du volume)
     └── PRD/                                 gouvernance de la rédaction (sous-dossier)
         ├── PRD.md                           v0.3 — portes, régimes de preuve, jalons
-        ├── TOC.md                           table des matières commentée (v0.15) — spécification
+        ├── TOC.md                           table des matières commentée (v0.17) — spécification
         ├── check-toc.py                     contrôles C1-C14 (python PRD/check-toc.py)
         └── check-toc-mutations.py           validation par mutation
 ```

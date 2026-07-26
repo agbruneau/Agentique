@@ -13,10 +13,10 @@ désormais dans le sous-dossier [`PRD/`](PRD/) ; le README (conspectus) et ce `C
 la racine du dossier. Les chemins ci-dessous et la commande de contrôle (§ protocole) en tiennent
 compte.
 
-Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.3, 24 juillet 2026**) régit la
+Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.4, 25 juillet 2026**) régit la
 **gouvernance de la rédaction** — portes de lancement, ordre, régimes de preuve, seuil de vote,
 critères CA-IV, jalons, décisions d'auteur — et **prime en cas de conflit sur la gouvernance, le
-socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.16, 25 juillet 2026 — 57 chapitres en 10 livres,
+socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.17, 25 juillet 2026 — 57 chapitres en 10 livres,
 projection ≈ 369 000–394 000 mots**) reste la *spécification de contenu* du compendium — autorité
 sur le découpage et sur chaque chapitre (thèse, sections, ligne Fusion, socle, garde-fous) ;
 **aucun chapitre n'est rédigé**. Tant que la somme n'est pas écrite, les trois volumes sources
@@ -36,21 +36,15 @@ faits touchés) ou y déclare le retard en tête.
 
 ⚠ **Convention de renvoi (décision 7), appliquée par les tables détaillées** : le Vol. III vit en numérotation multiple, et **ses chapitres sont désormais rédigés** — un renvoi au texte s'y écrit `Vol. III `*Monographie*` §N.M`, un renvoi au plan `Vol. III `*TOC*` §N.x`. ⚠ Le **TOC du Vol. III n'a pas de titres `§N.M`** : il nomme ses sections en prose sous des `### Chapitre N`, comme celui du compendium — un renvoi « Vol. III *TOC* §N.M » ne s'y vérifie donc pas par titre, et c'est contre la *Monographie* rédigée qu'il résout, à numérotation et titre concordants (constat de la collation v0.14, re-vérifié le 25 juillet 2026 sur les sept renvois de ce domaine).
 
-⚠ **Un « PRDPlan §N » nu est indécidable entre deux documents** — collision relevée au balayage du 25 juillet 2026, de la classe même que la décision 7 proscrit (« un R-7 nu est indécidable »). Le TOC emploie la forme nue pour **deux** PRDPlan : §4.2 et §4.4 désignent celui du **Vol. II** (formulations types, boucle qualité), §1.5 et §5.3 celui du **Vol. III** (commande de décompte, règle d'escalade). Le contexte tranche à la lecture, jamais le renvoi. À nommer — `PRDPlan Vol. II §4.4` — à la prochaine passe.
+⚠ **Un « PRDPlan §N » nu est indécidable entre deux documents** — collision relevée au balayage du 25 juillet 2026, de la classe même que la décision 7 proscrit (« un R-7 nu est indécidable »). Le TOC emploie la forme nue pour **deux** PRDPlan : §4.2 et §4.4 désignent celui du **Vol. II** (formulations types, boucle qualité), §1.5 et §5.3 celui du **Vol. III** (commande de décompte, règle d'escalade). Le contexte tranche à la lecture, jamais le renvoi. **L'occurrence en zone normative est nommée depuis la v0.17** (`PRDPlan Vol. II §4.4`, ch. 29) ; celles de l'avant-propos et des journaux gelés gardent leur forme d'origine. **Nommer le volume à toute occurrence neuve.**
 
-⚠ **Ce que la dérivation a fait remonter — treize écarts déclarés, aucun arbitré.** Ils sont consignés dans les blocs des chapitres concernés et au journal v0.16. **Ne pas les « corriger » en passant** : l'arbitrage est une décision d'auteur, même régime que les risques 14 et 15.
+⚠ **Les treize écarts relevés par la v0.16 sont soldés par la v0.17** — chacun par une règle que le plan porte déjà (décisions 2, 6, 7 et 8), **jamais par un choix de contenu neuf**. Détail au journal v0.17 du TOC. Trois d'entre eux valent d'être connus avant d'éditer :
 
-- **Le plus lourd — une source vide.** Le ch. 34 tire un « **volet RGPD** » du ch. 20 du Vol. III, et le ch. 31 se déclare « volet Loi 25 **seul** » en conséquence. Or le Vol. III rédigé a **retiré le RGPD de ce chapitre le 22 juillet 2026** (arbitrage **R-G-38**) : son socle « ne documente pas le règlement général sur la protection des données ni aucun de ses articles » — *absence de documentation*, degré 3 —, « aucun rapprochement entre le régime québécois et le régime européen n'est donc opéré », et la lacune est portée au PRD du Vol. III **sous le numéro 16**. Trois conséquences : le ch. 31 reçoit le ch. 20 **en entier** ; la matière RGPD du ch. 34 est portée par le **Vol. I** (§4.8.4, §5.3), qui est intact ; et la **lacune 16 du Vol. III n'est pas enregistrée** au registre des lacunes héritées (Annexe C). C'est exactement ce que la **collation de fond** contre le Vol. III rédigé — préalable déclaré dont la v0.14 n'a levé que le volet structurel — a pour objet de trouver.
-- **Sections couvertes par un intervalle de la ligne Fusion mais absentes de la phrase « Sections : … »** : §1.2 du Vol. I au ch. 1 (cadres de référence, ISO 11354, EIF/EIRA, modèles de maturité — zéro occurrence dans tout le TOC) ; §2.8.5 au ch. 4 (déclaré à son départ au ch. 6, jamais à son arrivée) ; ANP au ch. 8.
-- **Listes de sections non réalignées sur une ligne Fusion corrigée** : « exécution durable » au ch. 1 ; « modèle de menace, vecteurs d'attaque » au ch. 6 (partis au ch. 20).
-- **Doubles revendications que la décision 2 ou la décision 6 proscrit** : la fusion d'ACP, annoncée par le ch. 8 (Vol. I §3.3.4) *et* par le ch. 10 (Vol. II §3.3) ; le §3.4 du ch. 3 du Vol. II, pris en bloc par le ch. 10 alors que l'encadré R-8 siège au ch. 7 ; le **§7.4 du Vol. III**, absorbé en bloc par le ch. 16 (« Vol. III ch. 5-**7** ») et nommément prélevé par le ch. 17 — à trancher par un « hors §7.4 » explicite au ch. 16.
-- **Section sans source nommée** : le « budget de latence et contention » du ch. 28 ne correspond à aucune sous-section du ch. 4 du Vol. I — à rattacher, ou à marquer construction d'auteur (décision 8).
+- **Une source vide, corrigée par la décision 8.** Le « volet RGPD » que les ch. 31 et 34 se partageaient n'existe plus : le Vol. III rédigé l'a retiré de son ch. 20 le 22 juillet 2026 (arbitrage **R-G-38**), son socle ne documentant « ni le règlement général sur la protection des données ni aucun de ses articles » — *absence de documentation*, degré 3, **non** fait négatif vérifié. Le ch. 31 reçoit ce chapitre **en entier**, le ch. 34 garde sa matière RGPD par le **Vol. I** (§4.8.4, §5.3). ⚠ **La lacune 16 du Vol. III est entrée au registre de l'Annexe C, dans une SECONDE table** : les lacunes du Vol. III forment une série distincte des onze du Vol. II, et les fondre périmerait un cardinal contrôlé. **Cette seconde table se déclare incomplète** — une entrée, non un inventaire ; le dresser est un préalable de la collation de fond (porte G-4).
+- **Une classe de double revendication qu'aucun contrôle n'attrape.** Quand une ligne Fusion absorbe un **intervalle de chapitres** (« Vol. III ch. 5-7 ») pendant qu'un autre chapitre en prélève **une section** nommée (« §7.4 »), les deux renvois sont valides isolément et vivent à des grains différents : `check-toc.py` ne les rapproche pas. **Collation manuelle, à refaire à chaque révision d'une ligne Fusion citant un intervalle.**
+- **Une arrivée se déclare aux deux bouts.** Le §2.8.5 du Vol. I était déclaré à son *départ* (ch. 6) et nulle part à son *arrivée* (ch. 4) : un chapitre rédigé sur sa seule liste de sections aurait perdu la section que la v0.5 avait sauvée.
 
-**Pas de pipeline PDF ici.** Les Vol. I, II et III ont chacun leur copie du FESP — celle du Vol. III
-créée le 23 juillet 2026, sur demande de l'auteur ; en créer une pour ce dossier serait une
-**quatrième** copie, et il n'y a rien à rendre : aucun chapitre n'est rédigé. ⚠ *L'interdit initial
-disait « troisième copie » ; le Vol. III a pris ce rang, décidé et daté. Le motif ne change pas —
-chaque copie évolue seule, un correctif à l'une ne se propage à aucune autre.*
+⚠ **Ce que la v0.17 n'a pas touché, et qu'une passe de cohérence ne doit jamais toucher** : les **risques 13, 14 et 15** (Livre IX sans socle, couche d'exécution sans chapitre, accord entre agents sous défaillance) portent sur du **contenu manquant**, non sur une incohérence — leur arbitrage est une décision d'auteur (**D-7** du PRD). De même la thèse forte du ch. 20, à instruire par dénombrement.
 
 ## L'appareil interne du TOC fait loi
 
