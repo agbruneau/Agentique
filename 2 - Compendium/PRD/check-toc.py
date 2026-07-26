@@ -9,7 +9,7 @@ Sortie 0 si tout passe, 1 sinon. À exécuter avant toute publication de TOC.md.
 
 Zones gelées (exemptées des contrôles de motifs, jamais des lectures) :
   - rangées « | Historique » du bandeau ;
-  - sections de journal (## Corrections apportées / ## Révision / ## Actualisation).
+  - sections de journal (### Corrections apportées / ### Révision / ### Actualisation).
 Les spans entre guillemets « … » sont retirés avant les contrôles de motifs :
 la décision 7 et le champ Contrôles citent les formes fautives en exemple.
 
@@ -70,11 +70,11 @@ def load():
     frozen = [False] * len(lines)
     in_journal = False
     for i, line in enumerate(lines):
-        if re.match(r"^## (Corrections apportées en|Révision|Actualisation) v0\.\d+", line):
+        if re.match(r"^### (Corrections apportées en|Révision|Actualisation) v0\.\d+", line):
             in_journal = True
-        elif line.startswith("## Risques"):
+        elif line.startswith("### Risques"):
             in_journal = False
-        elif line.startswith("# ") and in_journal:
+        elif line.startswith("## ") and in_journal:
             in_journal = False
         if in_journal or line.startswith("| Historique"):
             frozen[i] = True
@@ -125,7 +125,7 @@ def main():
         fail("C1", f"chapitres non contigus/uniques 1-{N_CHAPTERS} : {nums}")
 
     # C2 — dix livres I-X dans l'ordre
-    books = re.findall(r"^# LIVRE ([IVX]+) ", text, re.M)
+    books = re.findall(r"^## LIVRE ([IVX]+) ", text, re.M)
     if books != BOOKS:
         fail("C2", f"livres attendus {BOOKS}, trouvés {books}")
 
@@ -213,7 +213,7 @@ def main():
             if not re.search(r"relèves? " + re.escape(version), bodies.get(n, ""), re.I):
                 fail("C11", f"ch. {n} : marque « relève {version} » absente")
     for version, expected in JOURNAL_RELEVES.items():
-        m = re.search(r"^## (?:Actualisation|Révision) " + re.escape(version) + r".*?(?=^## |\Z)",
+        m = re.search(r"^### (?:Actualisation|Révision) " + re.escape(version) + r".*?(?=^### |\Z)",
                       text, re.M | re.S)
         if not m:
             fail("C11", f"journal {version} introuvable")

@@ -30,9 +30,9 @@
 
 ## Titre
 
-# La somme agentique
+### La somme agentique
 
-## Interopérabilité, autonomie encadrée et fabrique de confiance : déployer des agents en services financiers réglementés (2024-2032)
+#### Interopérabilité, autonomie encadrée et fabrique de confiance : déployer des agents en services financiers réglementés (2024-2032)
 
 *Justification du titre : les trois volumes portaient chacun une thèse partielle — « autonomie graduée sous contrôle de finalité » (I), « autonomie encadrée / framed autonomy » (II), « la confiance se fabrique » (III). Le compendium ne les juxtapose pas : il montre qu'elles sont trois coupes d'un même objet. « La somme agentique » revendique le genre — une* summa*, non une anthologie — et le sous-titre énumère les trois plans (interopérabilité, encadrement, confiance) et borne le domaine (services financiers réglementés) et l'horloge (2024-2032, des premiers protocoles ouverts aux jalons PQC).*
 
@@ -99,7 +99,7 @@ Origine : la refonte des trois volumes en une somme, motivée par leur continuit
 
 ---
 
-# LIVRE I — Fondements : interopérabilité et ingénierie agentique
+## LIVRE I — Fondements : interopérabilité et ingénierie agentique
 
 *(absorbe Vol. I ch. 1-2 ; ~40 000 mots)*
 
@@ -396,7 +396,7 @@ Sections : pourquoi le multi-agent, topologies, raisonnement collectif ; communi
 
 ---
 
-# LIVRE II — Couche protocolaire agentique
+## LIVRE II — Couche protocolaire agentique
 
 *(fusionne Vol. I ch. 3 — hors §3.6, consolidé au Livre III — + Vol. II Partie I ; ~25 000 mots)*
 
@@ -633,7 +633,7 @@ Sections : surface d'attaque (outils, invites, mémoire) ; modes d'échec propre
 
 ---
 
-# LIVRE III — Identité, délégation et fabrique de confiance : émission, confiance hostile, horloge post-quantique
+## LIVRE III — Identité, délégation et fabrique de confiance : émission, confiance hostile, horloge post-quantique
 
 *(fusionne Vol. III Parties I-V + Vol. I §2.11.2/§3.6/§5.5.4/§7.4.2 + §2.10.1-2.10.2/§7.5 + §7.4.1/§7.4.4 + Vol. II ch. 8 — condensation v0.9 : absorbe les anciens Livres IV et V, décision 10 ; trois mouvements — émettre, ch. 12-19 ; le versant hostile, ch. 20-22 ; l'horloge post-quantique, ch. 23-24 ; ~50 000 mots)*
 
@@ -1002,7 +1002,7 @@ Sections : définition opérationnelle, état des recommandations NIST ; audit d
 
 ---
 
-# LIVRE IV — Autonomie encadrée : orchestration en entreprise
+## LIVRE IV — Autonomie encadrée : orchestration en entreprise
 
 *(fusionne Vol. II Partie II **hors ch. 8** — scindé au Livre III — + Vol. I ch. 4 **hors §4.8, §4.9 et §4.12** — partis aux Livres V, VII et VIII — + §1.6.3/§2.8.4 ; ~30 000 mots)*
 
@@ -1126,7 +1126,7 @@ Sections : intégrer les agents au tissu d'intégration existant ; plateformes d
 
 ---
 
-# LIVRE V — Cadre réglementaire canadien
+## LIVRE V — Cadre réglementaire canadien
 
 *(fusionne Vol. II Partie III + Vol. III Partie VI + Vol. I §4.8/§5.3 ; ~25 000 mots)*
 
@@ -1299,7 +1299,7 @@ Sections : gouvernance et conformité d'entreprise (AI Act, ISO 42001, RGPD, sec
 
 ---
 
-# LIVRE VI — Terrain canadien : interopérabilité financière et adoption
+## LIVRE VI — Terrain canadien : interopérabilité financière et adoption
 
 *(fusionne Vol. II Parties IV-V + Vol. I ch. 5 **hors §5.0, §5.3, §5.5.4 et §5.12.1-5.12.3** — partis à l'avant-propos et aux ch. 34, ch. 19 et ch. 47 ; ~35 000 mots)*
 
@@ -1487,7 +1487,7 @@ Sections : état de la question (lacune assumée) ; interopérabilité B2B, comm
 
 ---
 
-# LIVRE VII — AgentMesh et AgentOps : appliquer et exploiter la confiance
+## LIVRE VII — AgentMesh et AgentOps : appliquer et exploiter la confiance
 
 *(fusionne Vol. III Parties VII-VIII + Vol. I §1.3.4 + §2.9.6/§2.11.1/§2.11.4-2.11.5/§4.9 — condensation v0.9 : absorbe l'ancien Livre X, décision 10 ; deux mouvements — appliquer, ch. 41-42 ; exploiter, ch. 43-45 ; ~27 000 mots)*
 
@@ -1631,7 +1631,7 @@ Sections : recension critique des métriques publiées ; grille minimale (dispon
 
 ---
 
-# LIVRE VIII — Synthèse architecturale et blueprint
+## LIVRE VIII — Synthèse architecturale et blueprint
 
 *(fusionne Vol. I ch. 6 + Annexe B ADS + Vol. II Partie VI **hors ch. 21** + ch. 22-23 — le ch. 21 et le ch. 24 du Vol. II vont au Livre X — + Vol. III Partie IX ; ~35 000 mots)*
 
@@ -1824,7 +1824,7 @@ Sections : des métriques académiques aux indicateurs de risque de modèle ; fe
 
 ---
 
-# LIVRE IX — L'agent comme livrable logiciel : provenance, mise en service, sémantique d'effet
+## LIVRE IX — L'agent comme livrable logiciel : provenance, mise en service, sémantique d'effet
 
 *(matière neuve — aucun volume source ; réouverture v0.8 de la décision de périmètre v0.3, sur instruction d'auteur du 20 juillet 2026 ; ~14 000 mots)*
 
@@ -1913,7 +1913,7 @@ Sections : taxonomie des effets d'une action d'agent (lecture, écriture, engage
 
 ---
 
-# LIVRE X — Horizon et frontière de la connaissance vérifiable
+## LIVRE X — Horizon et frontière de la connaissance vérifiable
 
 *(fusionne Vol. I ch. 7 + §3.13.2-3.13.4 + Vol. II ch. 21/24 + Vol. III clôture ; ~20 000 mots)*
 
@@ -2019,7 +2019,7 @@ Sections : événements de péremption (désignation du standard technique par a
 
 ---
 
-# Annexes *(~89 000 mots, dont l'ADS Boréalis et la bibliographie consolidée — ventilation à la Volumétrie)*
+## Annexes *(~89 000 mots, dont l'ADS Boréalis et la bibliographie consolidée — ventilation à la Volumétrie)*
 
 - **Annexe A — Méthode unifiée** : la fusion des trois systèmes de preuve en un seul — niveaux [A]/[B]/[C] (Vol. II), tri PROGRAMMÉ/PROJETÉ/SPÉCULATIF (Vol. I), vote adversarial multi-juges, attribution des métriques auto-déclarées, distinction lien documenté/inférence. Table de correspondance des trois méthodes d'origine. Porte aussi ce que la v0.2 laissait hors méthode : la convention de qualification cryptographique (R-02 du Vol. III), l'échelle des trois degrés d'absence (R-14), la commande de décompte de référence, la règle d'escalade et les **motifs de balayage** propres à la somme — un critère d'acceptation sans motif qui le contrôle n'est pas vérifiable. **Ajouts de la v0.5, tous hérités du Vol. II et jusque-là non repris** : (a) **le socle des chapitres de synthèse est construit par la rédaction**, avec sa contrepartie obligatoire d'énumération en en-tête, garde-fous à zéro occurrence compris (règle posée à l'avant-propos, applicable aux ch. 46, ch. 47, ch. 51, ch. 55, ch. 56 et ch. 57 et aux annexes de méthode ou de table) ; (b) **une thèse de plan n'est pas une entrée de socle** et le plan s'aligne sur le chapitre, jamais l'inverse (décision 8) ; (c) **une déviation fondée se déclare**, faute de quoi elle est indiscernable d'un oubli ; (d) la **commande de décompte se valide sur son domaine entier** avant d'être publiée comme référence. Les deux dispositifs (a) et (b) sont ceux qui ont permis au Vol. II de détecter ses propres erreurs de marquage et de thèse : ils ne sont pas de la prose de méthode, ce sont les instruments qui rendent le reste vérifiable. *Fusion : Vol. II Annexe A (méthodologie de constitution du socle) + **Vol. III Annexe A** (méthodologie, dont PRD Annexe A §A.6 pour les motifs) + méthode déclarée du Vol. I.*
 - **Annexe B — Socle factuel consolidé** : refonte de F-01…F-48 + F-23b (Vol. II) enrichie des faits datés du Vol. I et **du socle propre du Vol. III — F-01…F-98 constituées du 21 au 22 juillet 2026, plus H-01…H-33 héritées — qui a remplacé les « repérages [C] » que les versions antérieures à la v0.13 lui prêtaient**, sous une numérotation unique. *La refonte du socle est la tâche technique centrale du compendium — sans elle, les renvois F-xx des trois volumes ne résolvent pas. Livrable inclus : table de correspondance ancienne numérotation → numérotation unique. ⚠ Le Vol. II n'attribue pas F-12 à F-14 : la renumérotation ne doit pas combler ce trou en décalant les suivants sans table. ⚠ **La renumérotation ne vise que les F-xx.** Le Vol. III pose que ses identifiants ne sont **jamais** renumérotés (PRD §7.1) parce qu'ils vivent en références croisées — les R-xx, CA-xx, L-xx et H-xx des deux volumes sont donc **cités tels quels, préfixés de leur volume** (décision 7), jamais fondus dans une série unique. Les quatorze garde-fous R-01…R-14 du Vol. III, absents de la v0.2, entrent ici au même titre que les R-1…R-8 du Vol. II. ⚠ **Extension v0.13** : la refonte résout aussi la **collision des deux séries F-xx** (Vol. II : F-01…F-48 + F-23b ; Vol. III : F-01…F-98) — deux tables de correspondance, une par volume source — ; et les deux entrées du Vol. III à dette de vote déclarée (F-92 et F-96 du Vol. III, PRD du Vol. III §7.11) n'entrent pas au socle consolidé avant résorption de la dette ou reprise de la parade ⚖ que le Vol. III leur attache.*
@@ -2063,7 +2063,7 @@ Sections : événements de péremption (désignation du standard technique par a
 
 ---
 
-## Corrections apportées en v0.3
+### Corrections apportées en v0.3
 
 Trois audits de couverture, un par volume source, ont collationné chaque ligne « Fusion » contre les documents réels. Ce qu'ils ont trouvé, et ce que cette version en fait :
 
@@ -2095,7 +2095,7 @@ Trois audits de couverture, un par volume source, ont collationné chaque ligne 
 
 ---
 
-## Corrections apportées en v0.4
+### Corrections apportées en v0.4
 
 Passe de cohérence interne sur le fichier v0.3, pilotée par contrôle : chaque défaut a d'abord été couvert par un contrôle exécutable qui échoue sur le document fautif, puis corrigé, puis le contrôle a été validé par mutation.
 
@@ -2115,7 +2115,7 @@ Passe de cohérence interne sur le fichier v0.3, pilotée par contrôle : chaque
 
 ---
 
-## Corrections apportées en v0.5
+### Corrections apportées en v0.5
 
 Passe de **collation contre les trois tables des matières sources** (`Tocs/1 - TOC IDEA.md`, `2 - TOC BPA.md`, `3 - TOC IA.md`). Les audits de la v0.3 collationnaient ce fichier contre les *volumes* ; celui-ci le collationne contre les *plans* de ces volumes, ce qui expose une classe distincte de défauts — les règles de gouvernance que les plans sources ont apprises et que la fusion n'avait pas reprises.
 
@@ -2152,7 +2152,7 @@ Passe de **collation contre les trois tables des matières sources** (`Tocs/1 - 
 
 ---
 
-## Corrections apportées en v0.6
+### Corrections apportées en v0.6
 
 Passe de **collation contre les volumes sources complets** — le texte rédigé du Vol. I (`Monographie.md`, 233 257 mots, y compris son Annexe B/ADS) et du Vol. II (29 pièces sous `monographie/`), plus son `PRD.md`. Les v0.3 à v0.5 collationnaient contre des *plans* ; celle-ci confronte au *texte*. Trois lectures adverses indépendantes, chacune chargée de **réfuter** les affirmations de ce fichier, puis vérification directe de chaque écart à la source avant reprise.
 
@@ -2176,7 +2176,7 @@ Passe de **collation contre les volumes sources complets** — le texte rédigé
 
 ---
 
-## Actualisation v0.7 — l'état de l'art de juillet 2026
+### Actualisation v0.7 — l'état de l'art de juillet 2026
 
 Passe d'un genre distinct des collations v0.3-v0.6 : celles-ci confrontaient ce fichier à ses **sources** (plans, puis textes) ; celle-ci confronte ses **faits vivants** à l'état du monde de juillet 2026, par balayage de sources ouvertes (presse spécialisée, annonces d'éditeurs et de fondations, dépôts de normalisation). **Règle de la passe, opposée à elle-même avant tout autre usage** : un balayage de sources ouvertes n'est pas une instruction au socle — aucun des faits relevés ici n'entre en F-xx, aucun ne re-tranche une divergence, aucun ne clôt une lacune. Chaque relève est marquée « à instruire à la source primaire » et désigne son point d'atterrissage. Sept relèves, deux constats de dépôt.
 
@@ -2200,7 +2200,7 @@ Passe d'un genre distinct des collations v0.3-v0.6 : celles-ci confrontaient ce 
 
 ---
 
-## Révision v0.8 — validation de cohérence et réouverture du périmètre
+### Révision v0.8 — validation de cohérence et réouverture du périmètre
 
 Passe menée sur instruction d'auteur du 20 juillet 2026 : analyser les douze livres, en valider la cohérence, et identifier s'il y a lieu les livres supplémentaires qui couvriraient le domaine agentique holistiquement.
 
@@ -2218,7 +2218,7 @@ Passe menée sur instruction d'auteur du 20 juillet 2026 : analyser les douze li
 
 ---
 
-## Révision v0.9 — condensation à dix livres
+### Révision v0.9 — condensation à dix livres
 
 Passe menée sur instruction d'auteur du 20 juillet 2026 : « condenser les 13 livres en 10 livres total ».
 
@@ -2238,7 +2238,7 @@ Passe menée sur instruction d'auteur du 20 juillet 2026 : « condenser les 13 l
 
 ---
 
-## Actualisation v0.10 — la couche d'exécution : le harnais
+### Actualisation v0.10 — la couche d'exécution : le harnais
 
 Passe du genre de la v0.7 — confrontation des **faits vivants** du plan à l'état du monde —, déclenchée par une conférence datée du 21 juillet 2026 et instruite sur pièces écrites. **Règle de la passe, opposée à elle-même avant tout autre usage** : aucune des huit relèves n'entre au socle, ne re-tranche une divergence ni ne clôt une lacune ; chacune est marquée « à instruire à la source primaire » et désigne son point d'atterrissage. Aucun chapitre, aucun livre, aucune enveloppe n'est ajouté.
 
@@ -2270,7 +2270,7 @@ Passe du genre de la v0.7 — confrontation des **faits vivants** du plan à l'�
 
 ---
 
-## Actualisation v0.11 — l'après-agentique : quatre trajectoires relevées sur dépôt de prépublications
+### Actualisation v0.11 — l'après-agentique : quatre trajectoires relevées sur dépôt de prépublications
 
 Passe du genre des v0.7 et v0.10 — confrontation des **faits vivants** du plan à l'état du monde —, menée sur instruction d'auteur du 23 juillet 2026 : instruire ce qui se dessine **après** l'agentique telle que la somme la traite, sur sources vérifiables exclusivement, dépôt de prépublications arXiv en tête. **Règle de la passe, opposée à elle-même avant tout autre usage** : aucune des six relèves n'entre au socle, ne re-tranche une divergence ni ne clôt une lacune ; chacune est marquée « à instruire à la source primaire » et désigne son point d'atterrissage. Aucun chapitre, aucun livre, aucune enveloppe n'est ajouté.
 
@@ -2294,7 +2294,7 @@ Passe du genre des v0.7 et v0.10 — confrontation des **faits vivants** du plan
 
 ---
 
-## Révision v0.12 — l'exécutable de contrôle reconstruit, le préalable levé
+### Révision v0.12 — l'exécutable de contrôle reconstruit, le préalable levé
 
 Passe d'appareil menée le 23 juillet 2026, en préparation du PRD du Vol. IV (gouvernance de la rédaction des chapitres). Aucun chapitre, aucun livre, aucune enveloppe, aucune relève : la structure est strictement inchangée, et la passe ne touche que le champ Contrôles, la Filiation et le risque 8.
 
@@ -2314,7 +2314,7 @@ Passe d'appareil menée le 23 juillet 2026, en préparation du PRD du Vol. IV (g
 
 ---
 
-## Révision v0.13 — collation d'état contre le Vol. III rédigé : la filiation change de régime
+### Révision v0.13 — collation d'état contre le Vol. III rédigé : la filiation change de régime
 
 Passe de faits de dépôt, du genre de la v0.12 — constats pris sur pièces du dépôt et vérifiés à leur siège, non relèves externes. Déclencheur : la préparation du PRD du Vol. IV a confronté la Filiation de ce fichier à l'état réel du dossier `3 - EntrepriseAgentique`, et l'écart est massif — le bandeau décrivait un Vol. III que trois jours de son exécution ont périmé. Constats pris le 23 juillet 2026 dans les en-têtes du PRD v1.3 (champs Version, Statut, Corpus), du TOC v0.8 et du `CLAUDE.md` du volume, chacun ouvert et lu ; les cardinaux cités (34 pièces, 98 entrées, 15 lots, 160 427 mots) sont ceux que ces pièces portent, recoupés entre elles, jamais recopiés d'un seul site.
 
@@ -2334,7 +2334,7 @@ Passe de faits de dépôt, du genre de la v0.12 — constats pris sur pièces du
 
 ---
 
-## Révision v0.14 — collation d'appui structurelle contre les trois monographies rédigées
+### Révision v0.14 — collation d'appui structurelle contre les trois monographies rédigées
 
 **Genre.** Passe de collation, de la famille de la v0.6 (confrontation au texte rédigé), mais bornée à son **volet structurel** — couverture et résolution des renvois. Elle **n'est pas** la collation de fond que le PRD réserve en porte G-4 : aucune glose, aucune thèse n'a été confrontée adversarialement au texte. Ce que cette passe établit, c'est que la *carte* du plan tient contre le texte rédigé des trois sources ; ce qu'elle laisse à G-4, c'est que chaque *lecture* que le plan fait de ces sections est fidèle.
 
@@ -2354,7 +2354,7 @@ Passe de faits de dépôt, du genre de la v0.12 — constats pris sur pièces du
 
 ---
 
-## Révision v0.15 — la coordination sous défaillance : un audit externe consommé, un angle mort déclaré
+### Révision v0.15 — la coordination sous défaillance : un audit externe consommé, un angle mort déclaré
 
 **Genre.** Passe de déclaration, de la famille de la v0.10 (le harnais) : elle **n'ajoute ni chapitre, ni livre, ni enveloppe**, et ne re-tranche rien. Elle consomme un audit de couverture externe daté du 24 juillet 2026 — `audit.md`, à la racine du dossier, un rapport sans autorité au sens du `CLAUDE.md` du dossier : ni source, ni décision, ni socle.
 
@@ -2378,7 +2378,7 @@ Passe de faits de dépôt, du genre de la v0.12 — constats pris sur pièces du
 
 ---
 
-## Révision v0.16 — les tables des matières détaillées : le plan déplié chapitre par chapitre
+### Révision v0.16 — les tables des matières détaillées : le plan déplié chapitre par chapitre
 
 **Genre.** Passe d'**expansion**, d'un genre neuf dans ce fichier : ni collation (v0.6, v0.13, v0.14), ni relève de faits vivants (v0.7, v0.10, v0.11), ni déclaration d'angle mort (v0.10, v0.15), ni appareil (v0.12). Elle ne re-tranche rien et n'ajoute aucune matière : elle **déplie** ce que les lignes Fusion décidaient déjà, au grain de la sous-section.
 
@@ -2404,7 +2404,7 @@ Passe de faits de dépôt, du genre de la v0.12 — constats pris sur pièces du
 
 ---
 
-## Révision v0.17 — finalisation : les écarts de la v0.16 soldés par les règles du fichier
+### Révision v0.17 — finalisation : les écarts de la v0.16 soldés par les règles du fichier
 
 **Genre.** Passe de **résolution**. La v0.16 avait déplié le plan et relevé treize écarts sans les arbitrer ; celle-ci les solde. **Aucun n'a été tranché par un choix de contenu neuf** : chacun l'a été par une règle que le fichier porte déjà — décision 2 (déduplication), décision 6 (couverture tracée), décision 7 (renvoi nommé), décision 8 (le plan s'aligne sur le chapitre rédigé). C'est la condition pour qu'une passe de cohérence ne devienne pas une passe d'auteur.
 
@@ -2426,7 +2426,7 @@ Passe de faits de dépôt, du genre de la v0.12 — constats pris sur pièces du
 
 ---
 
-## Risques de cadrage propres au compendium
+### Risques de cadrage propres au compendium
 
 1. **Explosion volumétrique et non-lecture** *(aggravé en v0.5 : la re-mesure porte la projection de 300 000-326 000 à **355 000-380 000 mots**, non par ajout de contenu mais par correction d'un budget d'annexes sous-évalué de moitié ; re-aggravé en v0.8 : l'ajout du Livre XII (aujourd'hui Livre IX) — 14 000 mots de matière neuve — porte la projection à **369 000-394 000 mots**, cette fois par ajout de contenu, assumé en décision 9)* : une somme de cette taille est un ouvrage de référence, pas un ouvrage de lecture linéaire. Parade obligatoire : parcours différenciés annoncés (les « contrats de lecture » des trois volumes conservés), renvois internes denses, et l'Annexe F comme table de navigation. Sans cela, le compendium est moins utile que les trois volumes séparés — ce qui invaliderait sa raison d'être.
 2. **Déduplication infidèle** : fusionner deux traitements d'un même sujet (ex. identité au ch. 3 vs Livre III ; blueprint Boréalis vs IBM au ch. 49) risque d'effacer une nuance que la séparation préservait. Parade : la ligne « Fusion » de chaque chapitre trace la décision ; toute coupe de contenu est un acte documenté, pas un silence.
