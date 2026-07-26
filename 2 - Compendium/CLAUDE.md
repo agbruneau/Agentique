@@ -16,7 +16,7 @@ compte.
 Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.4, 25 juillet 2026**) régit la
 **gouvernance de la rédaction** — portes de lancement, ordre, régimes de preuve, seuil de vote,
 critères CA-IV, jalons, décisions d'auteur — et **prime en cas de conflit sur la gouvernance, le
-socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.18, 26 juillet 2026 — 57 chapitres en 10 livres,
+socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.19, 26 juillet 2026 — 57 chapitres en 10 livres,
 projection ≈ 369 000–394 000 mots**) reste la *spécification de contenu* du compendium — autorité
 sur le découpage et sur chaque chapitre (thèse, sections, ligne Fusion, socle, garde-fous) ;
 **aucun chapitre n'est rédigé**. Tant que la somme n'est pas écrite, les trois volumes sources
@@ -98,10 +98,21 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
   a levé le volet structurel** (couverture complète et résolution des renvois de section, zéro écart —
   seul le volet de fond reste dû) ; et un « F-xx » nu
   est désormais **indécidable entre deux socles** — convention transitoire en décision 7 du TOC.
-- ⚠ **Relèves v0.7, v0.10 et v0.11** : marquées « à instruire à la source primaire » — aucune
+- ⚠ **Relèves v0.7, v0.10, v0.11 et v0.19** : marquées « à instruire à la source primaire » — aucune
   n'entre au socle, ne re-tranche une divergence ni ne clôt une lacune sans extraction de la
   source primaire. Les relèves v0.11 (l'après-agentique) citent des préimpressions arXiv dont
-  seuls les résumés ont été consultés : repérages [C], jamais des faits.
+  seuls les résumés ont été consultés : repérages [C], jamais des faits. ⚠ **Les huit relèves
+  v0.19** (couverture en science et génie informatique — ch. 6, 18, 20, 28, 42, 52 et 53) citent
+  au contraire des **documents normatifs et des articles de revue consultés à leur source**
+  (RFC 8693 et 9334, SLSA v1.2, in-toto, CycloneDX 1.7 / ECMA-424, SPDX 3.0, NIST SP 800-218A,
+  NIST AI 100-2 E2025, OPA/Rego, FLP, Gilbert-Lynch, Castro-Liskov, Dean-Barroso, test
+  métamorphique). **Le régime ne change pas pour autant** : un document lu à la source reste une
+  **relève**, jamais une entrée de socle — la refonte du socle est la porte G-3 du PRD, pas le
+  produit d'une passe de plan. ⚠ **Trois réserves de relevé sont portées dans le texte** (date
+  d'approbation de SLSA v1.2, version de SPDX que fixe l'ISO/IEC 5962:2021, DOI de Castro-Liskov) :
+  ne pas les « compléter » de mémoire — ce qui n'a pas été vu à la source ne s'écrit pas comme vu.
+  ⚠ **Et ces marques ne sont pas contrôlées** : C11 ne connaît que les listes v0.10 et v0.11,
+  inscrites dans le script ; y ajouter la v0.19 est une **passe d'appareil** à valider par mutation.
 - ⚠ **L'angle mort du harnais est déclaré, non comblé** (risque 14, v0.10) : la couche d'exécution
   n'a de chapitre nulle part, et trois des huit relèves v0.10 atterrissent dans le Livre IX. **Ne
   pas en tirer un chapitre ni un livre** — la somme porte déjà un livre sans socle (risque 13), et
