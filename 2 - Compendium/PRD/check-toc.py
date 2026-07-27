@@ -3,9 +3,15 @@
 
 Reconstruction du 23 juillet 2026 (le script historique des passes v0.3-v0.6 est
 introuvable au dépôt — constat v0.7, reconduit v0.8-v0.11). Domaine : chapitres
-1-50, cinq livres I-V (condensation v0.20, décision 11 ; le docstring disait
-encore « 1-57, dix livres » après la v0.20 — réancré en v0.21), conformément au
-protocole du CLAUDE.md du dossier.
+1-51, cinq livres I-V (condensation v0.20, décision 11 ; insertion du ch. 41 en
+v0.22, décision 12 ; le docstring disait encore « 1-57, dix livres » après la
+v0.20 — réancré en v0.21), conformément au protocole du CLAUDE.md du dossier.
+
+⚠ Ce que ce script ne voit pas d'une renumérotation (constat v0.22) : il contrôle
+la contiguïté (C1), les renvois pendants (C4) et les cardinaux (C3, C13), jamais
+qu'un renvoi décalé désigne encore le bon objet — un « ch. 45 » qui aurait dû
+rester « ch. 45 » passe C4 sans bruit. Les contrôles de fidélité d'un remappage
+sont externes (relecture du diff, invariance des renvois aux volumes sources).
 
 Sortie 0 si tout passe, 1 sinon. À exécuter avant toute publication de TOC.md.
 
@@ -38,20 +44,23 @@ CONSPECTUS = HERE / "README.md"   # vue synoptique dérivée (le « conspectus �
 if not CONSPECTUS.exists():        # layout PRD/ : le README (conspectus) vit à la racine du dossier
     CONSPECTUS = HERE.parent / "README.md"
 
-N_CHAPTERS = 50             # v0.20 : 57 → 50, sept paires fusionnées (décision 11)
+N_CHAPTERS = 51             # v0.20 : 57 → 50 (décision 11) ; v0.22 : + le ch. 41 (décision 12)
 BOOKS = ["I", "II", "III", "IV", "V"]           # v0.20 : dix livres → cinq
 ROMAN_OK = set(BOOKS)
 N_HEAD_ENVELOPES = 6        # cinq livres + avant-propos
-ENVELOPE_SUM = 305          # 301 corps + 4 avant-propos (enveloppes de tête)
+ENVELOPE_SUM = 312          # 308 corps + 4 avant-propos (v0.22 : Livre IV 62 → 69)
 ANNEX_ENVELOPE = 89
-TOTAL_HIGH = 394            # 305 + 89
+TOTAL_HIGH = 401            # 312 + 89
 VOL3_TOC_REFS = 11          # « onze renvois » — décision 7 (re-mesuré 23 juill. 2026)
 LACUNES = [f"§10.{i}" for i in range(1, 12)]   # onze lacunes du PRD Vol. II
 # listes remappées par la décision 11 ; les doublons de fusion sont résorbés
-CORPUS_CONSUMERS = [14, 17, 39, 42, 44]         # + Annexe G, contrôlée à part
-RELEVE_V10 = [19, 20, 22, 38, 39, 46, 47, 48, 49, 50]
-RELEVE_V11 = [9, 18, 36, 39, 49]
-RELEVE_V19 = [6, 17, 19, 24, 37, 46, 47]   # ajout v0.21 — dette déclarée au journal v0.19
+# ⚠ listes remappées une seconde fois par la décision 12 (v0.22) : tout chapitre
+# de numéro ≥ 41 y a pris +1. Un décalage oublié dans l'une d'elles ferait
+# « détecter » une marque de relève absente d'un chapitre qui la porte.
+CORPUS_CONSUMERS = [14, 17, 39, 43, 45]         # + Annexe G, contrôlée à part
+RELEVE_V10 = [19, 20, 22, 38, 39, 47, 48, 49, 50, 51]
+RELEVE_V11 = [9, 18, 36, 39, 50]
+RELEVE_V19 = [6, 17, 19, 24, 37, 47, 48]   # ajout v0.21 — dette déclarée au journal v0.19
 JOURNAL_RELEVES = {"v0.10": 8, "v0.11": 6, "v0.19": 8}
 CORRESPONDENCE_MARKERS = re.compile(
     r"ancien|anciennement|aujourd'hui|entrée en|depuis la|v0\.8|v0\.9|→")
@@ -124,7 +133,7 @@ def main():
     norm_clean = strip_guillemets(norm_text)
     bodies = chapter_bodies(lines)
 
-    # C1 — chapitres 1-57 contigus et uniques
+    # C1 — chapitres 1-51 contigus et uniques
     nums = [int(m.group(1)) for m in re.finditer(r"^### Chapitre (\d+) ", text, re.M)]
     if nums != list(range(1, N_CHAPTERS + 1)):
         fail("C1", f"chapitres non contigus/uniques 1-{N_CHAPTERS} : {nums}")
@@ -145,16 +154,16 @@ def main():
     if f"~{ANNEX_ENVELOPE} 000 mots" not in norm_text:
         fail("C3", "enveloppe des annexes (~89 000 mots) absente")
     if ENVELOPE_SUM + ANNEX_ENVELOPE != TOTAL_HIGH:
-        fail("C3", "arithmétique 305 + 89 != 394")
-    if not re.search(r"369\s?000[–-]394\s?000", norm_text):
-        fail("C3", "fourchette « 369 000–394 000 » absente des zones normatives")
+        fail("C3", "arithmétique 312 + 89 != 401")
+    if not re.search(r"376\s?000[–-]401\s?000", norm_text):
+        fail("C3", "fourchette « 376 000–401 000 » absente des zones normatives")
     # forme ~N 000 mots hors ligne d'en-tête (en-tête = ligne italique *(...)* ou titre #)
     for i, l in norm_lines:
         if re.search(r"~\d+ 000 mots", l) and not (
                 l.startswith("#") or l.startswith("*(") or "*(" in l):
             fail("C3", f"ligne {i+1} : forme « ~N 000 mots » hors enveloppe de tête")
 
-    # C4 — aucun renvoi « ch. N » hors 1-50 en zone normative.
+    # C4 — aucun renvoi « ch. N » hors 1-51 en zone normative.
     # Deux exemptions, toutes deux nécessaires depuis la condensation v0.20 :
     # les zones gelées citent la numérotation de leur passe (journaux, rangées
     # Historique), et une ligne portant un marqueur de correspondance cite un
@@ -249,7 +258,7 @@ def main():
         fail("C12", f"{refs} renvois « Vol. III *TOC* §N.x » en zone normative, "
                     f"le cardinal annoncé (onze = {VOL3_TOC_REFS}) est périmé — re-mesurer et reporter")
 
-    # C13 — cardinal « 50 chapitres » cohérent en zone normative. Exemption des
+    # C13 — cardinal « 51 chapitres » cohérent en zone normative. Exemption des
     # lignes à marqueur de correspondance : un constat daté cite le cardinal de
     # sa passe (« aucun cardinal ne bouge (57 chapitres, dix livres) », v0.13).
     for i, l in norm_lines:
