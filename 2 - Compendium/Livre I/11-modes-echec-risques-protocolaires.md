@@ -6,11 +6,11 @@ dernier chapitre du Livre.***
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Chapitre où la réserve F-01 est la plus exposée de tout le Livre** : le mot « sécurisé » n'y est appliqué à aucun protocole, à aucune occurrence |
-| **Date de gel** | **Aucune** (D-1 non prise). Gels de source : **juin 2026** (Vol. I) et **16 juillet 2026** (Vol. II). ⚠ **Les identifiants de vulnérabilité et les incidents datés du § 11.1.3 se périment par publication de correctif** ; ils sont cités comme **jalons datés**, jamais comme état courant d'exposition |
+| **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Chapitre où la réserve F-01 est la plus exposée de tout le Livre** : le mot « sécurisé » n'y est appliqué à aucun protocole, à aucune occurrence ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
+| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Gels de source : **juin 2026** (Vol. I) et **16 juillet 2026** (Vol. II). ⚠ **Les identifiants de vulnérabilité et les incidents datés du § 11.1.3 se périment par publication de correctif** ; ils sont cités comme **jalons datés**, jamais comme état courant d'exposition |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. I *Monographie* §3.10-3.11** (régime **[C]**) et contre le **Vol. II *Monographie* ch. 4**, dont les entrées **F-01** (et sa réserve), **F-02** et **F-36** conservent leurs niveaux **[A]**, **[A]** et **[B]**. **Aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | Vol. II — **réserve F-01 : sept occurrences**, § 11.0, § 11.1.3, § 11.3.1 (trois), § 11.3.2 et § 11.4.1, la formule « cadre d'autorisation » employée partout et « sécurisé » **nulle part** ; **§8.2 (attribution des auto-qualifications) : une occurrence**, § 11.3.1, la qualification de maturité attribuée à l'annonce du projet ; **R-1 : une occurrence**, § 11.1.1, l'ACP protocolaire jamais présenté comme un standard vivant ; **R-8 : une occurrence**, § 11.1.1. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 : cinq occurrences**, § 11.1.2, § 11.1.4, § 11.3.1, § 11.3.2 et § 11.3.3 ; **R-13 : une occurrence**, § 11.1.1 ; **R-14 : sept occurrences**, toutes de **degré 3** — § 11.1.3, § 11.1.4 (deux), § 11.2.2, § 11.3.2, § 11.3.3 et § 11.4.2 —, **le plus grand nombre du Livre**. R-01, R-03 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 6 000 mots de corps (§ 11.0 à § 11.4), **mesurés et non estimés** — le plus court du second mouvement, et c'est une conséquence du plan : quatre objets majeurs de ce chapitre (triade de conditions, passerelles, taxonomie d'identité, inventaire gouverné) siègent **ailleurs** et n'y sont que renvoyés. ⚠ **Aucun décompte n'est publiable** tant que G-2 est ouverte |
+| **Volumétrie cible** | ≈ 6 000 mots de corps (§ 11.0 à § 11.4), **mesurés et non estimés** — le plus court du second mouvement, et c'est une conséquence du plan : quatre objets majeurs de ce chapitre (triade de conditions, passerelles, taxonomie d'identité, inventaire gouverné) siègent **ailleurs** et n'y sont que renvoyés. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 748 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−4,2 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 611 mots, soit −0,6 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 11)* — la sécurité des protocoles dépend de l'implémentation ; empoisonnement d'outils et injection d'invites sont **nommés par les protocoles comme risques attachés**, sans que le socle en date la documentation ni en établisse la mécanique.
 
@@ -668,3 +668,32 @@ démontre pas ; la **qualification de maturité** du § 11.3.1 est attribuée à
 **R-1 est tenu au § 11.1.1**. ⚠ **Et le contrôle qui compte le plus dans ce chapitre : le mot
 « sécurisé » n'est appliqué à aucun protocole, à aucune occurrence** — la formule « cadre
 d'autorisation » est employée à ses sept occurrences (réserve F-01 du Vol. II).
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-13 — close par réalignement du plan (décision 8), sur ses trois demandes.** *(a)* La **thèse
+  du ch. 11 est requalifiée au TOC v0.24** : « sans que **le socle du Vol. II** en date la
+  documentation », sa seconde moitié étant vraie du Vol. II et **fausse de la somme**. *(b)* La
+  **lacune §10.8 est requalifiée** au registre de l'Annexe C — trois de ses quatre volets sont
+  comblés au régime **[C]** par le Vol. I *Monographie* §3.10-3.11, l'autre source de la même ligne
+  Fusion. *(c)* Le **volet agent-agent reste ouvert** : le Vol. I verse une modélisation de menace et
+  une analyse comparée, **non une attaque** — distinction de R-02 du Vol. III —, et c'est toujours la
+  seule ligne vide du tableau du § 11.4.2.
+- ⚠ **Requalifier n'est pas instruire, et la différence est écrite en règle.** Aucune source nouvelle
+  n'est entrée pour §10.8 : c'est sa **couverture** qui a changé, pas son **état de preuve** —
+  au contraire de §10.9e (ch. 10), qui a reçu une source primaire datée. *Une lacune requalifiée
+  reste une lacune ; elle change de motif, pas d'état.* ⚠ Et **comblée au régime [C] ne vaut pas
+  comblée** : ces entrées ne porteront aucun fait central tant que G-3 n'est pas franchie.
+
+⚠ **Ce que la clôture ne change pas.** La porte **G-3** demeure ouverte : le socle consolidé compte
+**zéro entrée**, l'Annexe B n'existe pas, et **aucun énoncé de cette pièce n'est central au sens de
+CA-IV-01**. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
+pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
+tranchée.*

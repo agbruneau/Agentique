@@ -5,11 +5,11 @@ Premier mouvement — les fondements (ch. 1-6).*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes G-1, G-2 et G-3 du [PRD](../PRD/PRD.md) §5 |
-| **Date de gel** | **Aucune.** Gel unique non fixé (décision d'auteur D-1). Matière condensée au gel de sa source — **juin 2026** (Vol. I). ⚠ **Deux fonctions produit citées y sont en bêta à cette date**, avec une version d'interface datée que la source prescrit de fixer au moment d'intégrer ; elles sont citées comme telles et non comme disponibilité générale |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes G-1, G-2 et G-3 du [PRD](../PRD/PRD.md) §5 ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
+| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Matière condensée au gel de sa source — **juin 2026** (Vol. I). ⚠ **Deux fonctions produit citées y étaient en bêta à cette date ; il n'en reste qu'une au gel unique** — l'**édition de contexte** (§ 5.1.3) est toujours en bêta, en-tête d'activation daté inchangé ; l'**outil de mémoire** (§ 5.1.4) est passé en **disponibilité générale**. Constats pris à la source primaire le 27 juillet 2026 (registre du gel, faits 9 et 10). *Le seul écart que la re-datation du Livre I ait trouvé va dans le sens favorable : la pièce était trop prudente, non fausse* |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (Annexe B non constituée, porte G-3 ouverte). Les énoncés résolvent contre le **Vol. I *Monographie* §2.6-2.7**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | **Les deux séries, intégralement.** Vol. II — R-1 à R-8 : **zéro occurrence** ; ⚠ **une réserve d'usage tenue** : deux fonctions produit en bêta sont nommées comme telles, jamais présentées comme disponibles en général — c'est la doctrine que R-4 impose au RTR, appliquée ici par analogie hors de son domaine propre. Vol. III — R-01 à R-13 : **zéro occurrence** ; **R-14 (trois degrés d'absence) : deux occurrences**, § 5.0 et § 5.2.2 — la première est un **fait négatif vérifié**, cas rare dans ce Livre, établi par le balayage documenté que le TOC porte sous l'entrée de ce chapitre |
-| **Volumétrie cible** | ≈ 7 500 mots de corps (§ 5.1 à § 5.4). Enveloppe **dérivée, non prescrite**. ⚠ **Aucun décompte n'est publiable** tant que G-2 est ouverte |
+| **Garde-fous balayés** | **Les deux séries, intégralement.** Vol. II — R-1 à R-8 : **zéro occurrence** ; ⚠ **une réserve d'usage tenue** : les fonctions produit non généralement disponibles sont nommées comme telles, jamais présentées comme disponibles en général — c'est la doctrine que R-4 impose au RTR, appliquée ici par analogie hors de son domaine propre. ⚠ **Elles étaient deux au gel de la source, il n'en reste qu'une au gel unique** (§ 5.1.3) ; la réserve **est levée pour la seconde** (§ 5.1.4), sur constat à la source primaire — *une réserve se lève sur pièce, comme elle se pose.* Vol. III — R-01 à R-13 : **zéro occurrence** ; **R-14 (trois degrés d'absence) : deux occurrences**, § 5.0 et § 5.2.2 — la première est un **fait négatif vérifié**, cas rare dans ce Livre, établi par le balayage documenté que le TOC porte sous l'entrée de ce chapitre |
+| **Volumétrie cible** | ≈ 7 500 mots de corps (§ 5.1 à § 5.4). Enveloppe **dérivée, non prescrite**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 4 397 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−41,4 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 611 mots, soit −0,6 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 5)* — l'agent persistant se construit par l'ingénierie du contexte et une pile de récupération gouvernée.
 
@@ -155,9 +155,11 @@ tours détaillés par une synthèse compacte. Une fonction produit apparentée �
 contexte** — permet de retirer ou de condenser des éléments devenus inutiles, par exemple des
 observations d'outils volumineuses dont **seul le verdict importe encore**.
 
-⚠ **Cette fonction est en bêta à la date d'arrêt des sources**, avec une version d'interface datée
-que la source prescrit de fixer au moment d'intégrer, son comportement et son contrat pouvant
-évoluer. Elle est citée comme telle et **jamais présentée comme une disponibilité générale**.
+⚠ **Cette fonction est en bêta**, avec une version d'interface datée que la source prescrit de fixer
+au moment d'intégrer, son comportement et son contrat pouvant évoluer. Elle est citée comme telle et
+**jamais présentée comme une disponibilité générale**. ⚠ **Statut re-vérifié à la source primaire le
+27 juillet 2026, au gel unique : toujours en bêta**, en-tête d'activation daté inchangé (registre du
+gel, fait 9). *C'est la seule des deux fonctions produit de ce chapitre à l'être encore.*
 
 L'enjeu de conception est la **réversibilité**. Une compaction agressive risque d'effacer un détail
 qui redeviendra pertinent ; une compaction trop prudente ne libère pas assez de budget. La bonne
@@ -185,7 +187,11 @@ La mémoire procédurale se matérialise par une stratification claire entre tro
 
 Un outil de mémoire dédié instrumente ce dernier plan en tant que primitive, offrant à l'agent des
 opérations explicites pour écrire, relire et mettre à jour une mémoire externe. ⚠ **Cette fonction
-est elle aussi en bêta à la date d'arrêt** et se cite avec la même réserve.
+était en bêta au gel de la source (juin 2026) ; elle est en disponibilité générale au gel unique de
+la somme** — constat pris à la documentation du fournisseur le 27 juillet 2026, qui déclare
+l'absence de tout en-tête d'activation de bêta (registre du gel, fait 10). Son identifiant de type
+reste daté, et c'est **lui** qui fixe le contrat : une fonction généralement disponible n'est pas
+une fonction dont l'interface a cessé de se versionner.
 
 Au-dessus de cette mécanique, une convention s'est imposée pour la mémoire procédurale **durable** :
 les **fichiers de configuration d'agent** relus au démarrage. Un format contribué à une fondation
@@ -481,7 +487,7 @@ remonte.*
 instruction d'auteur du 27 juillet 2026. Conséquences :
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01** — régime **[C]** hérité du Vol. I.
-2. **Aucun décompte n'est publiable** (G-2).
+2. **Les décomptes sont publiables depuis le 27 juillet 2026** — G-2 franchie, `PRD/decompte.sh` versionnée et éprouvée sur les trois corpus entiers.
 3. **Les renvois « ch. N » sont des renvois de plan, non de texte** — ch. 6, 7, 8, 17, 19, 39 non
    rédigés.
 
@@ -507,3 +513,27 @@ La table de couverture est respectée, y compris la sortie de périmètre du §2
 **aucune sous-section d'empoisonnement n'est écrite ici**, le § 5.4.2 se bornant à marquer le point
 de jonction. Les deux séries de garde-fous sont balayées et déclarées ; les deux occurrences de R-14
 sont marquées avec leur **degré** ; les fonctions en bêta portent leur réserve d'usage.
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-07 — close par le franchissement de G-1 (volet Livre I), et c'est la seule remontée du Livre
+  dont la re-datation ait changé un fait.** Les deux fonctions produit ont été reprises à la source
+  primaire le 27 juillet 2026 (registre du gel, faits 9 et 10) : l'**édition de contexte** (§ 5.1.3)
+  est **toujours en bêta**, en-tête d'activation daté inchangé ; l'**outil de mémoire** (§ 5.1.4) est
+  passé en **disponibilité générale**. Le § 5.1.4, l'en-tête et le champ des garde-fous sont corrigés.
+  ⚠ **L'écart va dans le sens favorable** : une fonction qui passe en disponibilité générale rendait
+  la pièce **trop prudente**, non fausse — elle ne l'avait jamais présentée comme disponible. *C'est
+  le mode de péremption le moins coûteux, et le seul que la re-datation du Livre I ait rencontré.*
+
+⚠ **Ce que la clôture ne change pas.** La porte **G-3** demeure ouverte : le socle consolidé compte
+**zéro entrée**, l'Annexe B n'existe pas, et **aucun énoncé de cette pièce n'est central au sens de
+CA-IV-01**. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
+pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
+tranchée.*

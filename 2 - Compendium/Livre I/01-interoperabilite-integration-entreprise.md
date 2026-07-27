@@ -5,11 +5,11 @@ Premier mouvement — les fondements (ch. 1-6).*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** le franchissement des portes G-1 (gel unique), G-2 (commande de décompte) et G-3 (refonte du socle) du [PRD](../PRD/PRD.md) §5. La règle cardinale du volume — *un chapitre écrit sur un socle vide n'est pas un chapitre en avance, c'est une inférence longue* — n'est pas levée ; elle est **déclarée enfreinte**, avec ses conséquences énumérées en note de clôture (§ 1.8) |
-| **Date de gel** | **Aucune.** Le gel unique du compendium relève de la décision d'auteur D-1, non prise. La matière condensée ici porte le gel de sa source — **juin 2026** (Vol. I) —, qui n'est pas le gel de la somme et ne peut en tenir lieu |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** le franchissement des portes G-1 (gel unique), G-2 (commande de décompte) et G-3 (refonte du socle) du [PRD](../PRD/PRD.md) §5. La règle cardinale du volume — *un chapitre écrit sur un socle vide n'est pas un chapitre en avance, c'est une inférence longue* — n'est pas levée ; elle est **déclarée enfreinte**, avec ses conséquences énumérées en note de clôture (§ 1.8) ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
+| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. La matière condensée ici porte le gel de sa source — **juin 2026** (Vol. I) —, qui n'est pas le gel de la somme et ne peut en tenir lieu |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** : l'Annexe B n'est pas constituée (porte G-3 ouverte, socle à 0 entrée au PRD v0.7). Les énoncés factuels du chapitre résolvent contre le **Vol. I *Monographie* §1.0-1.6**, dont le régime d'héritage est **[C]** (PRD §7.1 : les faits du Vol. I entrent en [C], sa vérification portant sur les références et non sur le contenu des affirmations). **Aucun énoncé de ce chapitre n'est donc central au sens de CA-IV-01** tant que l'élévation en [B] par lecture des sources primaires citées par le Vol. I n'est pas faite |
 | **Garde-fous balayés** | **Séries héritées, balayées intégralement, y compris à zéro occurrence.** Vol. II — R-1 à R-8 : **zéro occurrence** (aucune matière réglementaire canadienne, aucune métrique d'adoption, aucun énoncé sur E-23, le RTR ou MCP). Vol. III — R-01 à R-14 : **zéro occurrence** pour R-01 à R-13 (aucune qualification cryptographique, aucun emploi d'« AgentMesh », de « control plane », d'« ACP » ni d'« autonomie graduée » ; ⚠ « plan de contrôle » y figure au sens du maillage de services **pré-agentique**, § 1.3.4, où il n'est pas un terme de la série) ; **R-14 (trois degrés d'absence) : deux occurrences**, § 1.2.2.3 et § 1.3.1.2, marquées en toutes lettres |
-| **Volumétrie cible** | ≈ 11 000 mots de corps (§ 1.0 à § 1.7). Enveloppe **dérivée, non prescrite** : le TOC ne donne d'enveloppe qu'au Livre (~65 000 mots pour onze chapitres) ; le présent chapitre étant le socle pré-agentique que neuf chapitres aval citent sans le reconstruire, il pèse plus que la moyenne — le solde reste ≈ 54 000 pour les ch. 2-11. ⚠ **Aucun décompte n'est publiable** : la commande de décompte de référence est la porte G-2, non franchie (leçon du Vol. II — quatre mesures successives avant d'arrêter un chiffre). Toute mesure prise ici est indicative et se refera à G-2 |
+| **Volumétrie cible** | ≈ 11 000 mots de corps (§ 1.0 à § 1.7). Enveloppe **dérivée, non prescrite** : le TOC ne donne d'enveloppe qu'au Livre (~65 000 mots pour onze chapitres) ; le présent chapitre étant le socle pré-agentique que neuf chapitres aval citent sans le reconstruire, il pèse plus que la moyenne — le solde reste ≈ 54 000 pour les ch. 2-11. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 10 724 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−2,5 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 611 mots, soit −0,6 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 1)* — l'interopérabilité n'est pas un attribut mais une propriété à maintenir dans le temps ; la dette d'intégration et le coût de la non-interopérabilité en font un problème économique avant d'être technique.
 
@@ -356,7 +356,7 @@ Le patron **saga** renonce à l'atomicité globale au profit d'une suite de tran
 
 > **Perspective recherche.** Ce renoncement assumé s'inscrit dans un cadre de cohérence alternatif, posé face aux propriétés transactionnelles classiques : la cohérence éventuelle devient un **choix de conception explicite**, où l'on échange la garantie d'isolation immédiate contre la disponibilité et le découplage, en reportant la réconciliation sur des mécanismes compensatoires.
 
-⚠ **Ces résultats sont des résultats d'impossibilité, et la somme les traite comme tels.** Ils ne se périment pas avec les technologies qui les rencontrent : un agent qui coordonne deux institutions y est soumis exactement comme un service qui coordonne deux bases. Le ch. 48 en tire les conséquences pour la sémantique d'effet ; l'**accord entre agents sous asynchronie et défaillance partielle** — ce que deux agents tiennent pour vrai quand le réseau se partitionne — est en revanche un angle mort **déclaré** du plan de la somme (risque 15 du TOC), dont l'arbitrage est une décision d'auteur non prise. Le présent chapitre pose les résultats ; il ne comble pas cet écart et ne prétend pas le faire.
+⚠ **Ces résultats sont des résultats d'impossibilité, et la somme les traite comme tels.** Ils ne se périment pas avec les technologies qui les rencontrent : un agent qui coordonne deux institutions y est soumis exactement comme un service qui coordonne deux bases. Le ch. 48 en tire les conséquences pour la sémantique d'effet ; l'**accord entre agents sous asynchronie et défaillance partielle** — ce que deux agents tiennent pour vrai quand le réseau se partitionne — est en revanche **hors du périmètre de la somme**, et cela se dit ici plutôt que de se laisser découvrir. ⚠ **La décision d'auteur D-7 est prise le 27 juillet 2026 : périmètre assumé et déclaré** (risque 15 du TOC). La somme **ne traitera pas** cette matière — ni ici, ni au ch. 6, ni au ch. 37, ni au ch. 48, les trois points d'atterrissage que le plan avait nommés étant **fermés** par la même décision. Le présent chapitre pose les résultats d'impossibilité **au grain pré-agentique**, et c'est le seul endroit de l'ouvrage où ils figurent. ⚠ **Ce que le lecteur doit en tirer, et que la somme lui doit** : les architectures inter-institutions qu'elle prescrit plus loin — maillage inter-domaines, vérification d'agent tiers, rails de paiement — **opèrent sous un régime de défaillance que l'ouvrage ne caractérise pas**. *Un périmètre assumé n'est pas un angle mort résorbé : c'est un angle mort dont le lecteur est prévenu.* Le ch. 49 en enregistre l'état final.
 
 #### 1.6.2.3 Modélisation des processus
 
@@ -406,3 +406,31 @@ Une remarque de méthode, enfin. Rien de ce chapitre n'est neuf : tout y est hé
    - **R-IV-02 — non bloquant.** Le TOC signale, sous l'entrée du ch. 1, **deux écarts constatés et non corrigés** : le § 1.2 (cadres et modèles de maturité) est absent de la phrase « Sections : … » bien que couvert par la ligne Fusion ; et l'« exécution durable » y reste nommée alors que la ligne Fusion la retire. Le présent chapitre s'aligne sur la **ligne Fusion** dans les deux cas — § 1.2 est rédigé, l'exécution durable ne l'est pas — conformément à la primauté de la ligne Fusion sur la liste de sections. La correction de la liste relève d'une passe du `TOC.md`, hors mandat d'un rédacteur.
 
 **Ce qui n'est pas enfreint.** La structure du chapitre suit la table détaillée du TOC section par section ; la table de couverture (décision 6) est respectée, y compris les trois sorties de périmètre (§1.7-1.8 → ch. 2 ; §1.9-1.10 → ch. 3 ; §1.6.3 → ch. 22) et les deux coupes assumées (§1.11 et §1.12 de la source, la seconde absorbée en § 1.7) ; les deux séries de garde-fous sont balayées et déclarées, y compris à zéro occurrence ; les constructions d'auteur portent « Lecture de l'auteur » (CA-IV-07).
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-01 — close par décision d'auteur.** **D-7 est tranchée le 27 juillet 2026 : périmètre assumé
+  et déclaré** (PRD v0.8, Annexe A ; TOC v0.24, risque 15). La somme ne traite pas l'accord entre
+  agents sous asynchronie et défaillance partielle. **Aucune addition n'est due à ce chapitre**, et
+  le § 1.6.2.2 est amendé pour porter la décision plutôt que l'attente. Les trois points
+  d'atterrissage — ch. 6, 37 et 48 — sont **fermés**.
+- **R-IV-02 — close sans correction, sur constat.** Ses deux écarts sont **soldés au plan depuis la
+  v0.23**, constat pris sur le fichier le 27 juillet 2026 : la phrase « Sections : … » de l'entrée du
+  ch. 1 porte bien **« cadres de référence et modèles de maturité »**, et n'y nomme **pas**
+  l'exécution durable — la ligne Fusion précise même que ce sont les v0.1-v0.5 qui le laissaient
+  entendre. ⚠ **La remontée reportait une note historique du plan comme un écart vivant.** *On ne
+  corrige pas ce qu'on n'a pas d'abord ouvert* — c'est CA-IV-14 appliqué à une remontée plutôt qu'à
+  une attestation.
+
+⚠ **Ce que la clôture ne change pas.** La porte **G-3** demeure ouverte : le socle consolidé compte
+**zéro entrée**, l'Annexe B n'existe pas, et **aucun énoncé de cette pièce n'est central au sens de
+CA-IV-01**. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
+pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
+tranchée.*

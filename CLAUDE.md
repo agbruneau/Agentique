@@ -58,14 +58,21 @@ situe et renvoie).
 27 juillet 2026, sur instruction d'auteur, `2 - Compendium/Livre I/` a été créé et **ses onze
 chapitres** y ont été rédigés en `.md` et en `.html`, **avant** les portes G-1, G-2 et G-3 du PRD du
 volume. Trois conséquences pour qui édite au niveau de la racine. *(a)* Le **statut du volume est
-inchangé** — cadrage, socle à zéro entrée, sept portes ouvertes, **treize remontées ouvertes** : ne
-pas requalifier le Vol. IV en « rédigé » dans les décomptes ni dans les tableaux d'état, un brouillon
-hors portes ne franchissant aucune porte. *(b)* **Le régime de la veille ne bouge pas non plus** :
+inchangé** — cadrage, **socle à zéro entrée** : ne pas requalifier le Vol. IV en « rédigé » dans les
+décomptes ni dans les tableaux d'état, un brouillon hors portes ne franchissant aucune porte.
+⚠ **Une passe d'arbitrage du 27 juillet 2026 a fait bouger trois chiffres de ce constat, et trois
+seulement** (PRD v0.8, TOC v0.24) : les **treize remontées R-IV-01 à R-IV-13 sont soldées** — il n'en
+reste **aucune d'ouverte** —, **deux portes sur sept sont franchies** (G-2 entièrement ; G-1 pour le
+seul volet du Livre I) et **trois décisions d'auteur sur huit sont prises** (D-1, D-6, D-7). ⚠ **Rien
+de cela ne requalifie le volume** : **G-3 n'est pas entamée**, le socle consolidé compte toujours zéro
+entrée, aucun énoncé n'est central au sens de CA-IV-01, et *deux portes franchies sur sept ne font pas
+un volume recevable*. *(b)* **Le régime de la veille ne bouge pas non plus** :
 sa réf. [220] décrit le Vol. IV comme un cadrage sans chapitre, et cela reste vrai *à sa date* — c'est
 un troisième écart de la même famille que les deux déjà consignés plus bas (Vol. III rédigé,
-démonstrateur retiré), **signalé ici, jamais corrigé dans la veille**. *(c)* Le détail, les remontées
-ouvertes et le régime des deux rendus vivent au [`CLAUDE.md` du dossier](2%20-%20Compendium/CLAUDE.md)
-et au `README.md` de `Livre I/` — ils ne sont pas repris ici.
+démonstrateur retiré), **signalé ici, jamais corrigé dans la veille**. *(c)* Le détail, l'issue de
+chacune des treize remontées et le régime des deux rendus vivent au
+[`CLAUDE.md` du dossier](2%20-%20Compendium/CLAUDE.md) et au `README.md` de `Livre I/` — ils ne sont
+pas repris ici.
 
 ⚠ **Un fait de méthode se signale ici parce qu'il vaut au-delà du Vol. IV.** La rédaction des ch. 10
 et 11 a révélé deux fois la même classe de défaut : une **lacune déclarée du socle d'un volume**

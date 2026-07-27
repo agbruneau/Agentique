@@ -253,10 +253,28 @@ Dans cet ordre, et sans en sauter :
 # 1. Contrôles mécaniques de la pièce : structure HTML, ancres, liens, parité md/html
 python .claude/skills/chapitre-compendium/scripts/verifier-piece.py "2 - Compendium/Livre I/01-slug"
 
-# 2. Contrôles du dépôt — même si on croit n'avoir pas touché à leur domaine
+# 2. Contrôle inter-pièces : qu'un siège déclaré ne soit pas reconstruit ailleurs
+python "2 - Compendium/PRD/check-sieges.py"  # S1-S5, sortie 0 exigée
+
+# 3. Contrôles du dépôt — même si on croit n'avoir pas touché à leur domaine
 python "2 - Compendium/PRD/check-toc.py"    # C1-C15, sortie 0 exigée
 python check-veille.py                       # sortie 0 exigée
 ```
+
+⚠ **`check-sieges.py` est le seul qui lise plusieurs pièces à la fois, et c'est pour cela qu'il
+existe.** L'économie qui justifie la refonte des trois volumes en un ouvrage repose sur des
+**sièges** — une matière posée **une seule fois** —, et jusqu'à la v0.24 aucun instrument ne
+vérifiait l'abstention : `check-toc.py` ne lit pas les pièces, `verifier-piece.py` n'en connaît
+qu'une. Trois sièges y sont déclarés (socle IAM au ch. 3 ; encadré R-8 au ch. 7 § 7.5 ; mécanique de
+la fusion au ch. 8 § 8.5.1). **Un siège neuf s'ajoute à la table `SIEGES` du script**, et la pièce
+qui le porte doit écrire son marqueur `SIÈGE DE … POUR TOUTE LA SOMME` — sans quoi aucun rédacteur
+aval ne peut savoir qu'il doit s'abstenir. *Ce qu'aucun outil ne regarde finit par diverger.*
+
+⚠ **Décompte** : depuis le franchissement de **G-2** (27 juillet 2026), les décomptes **sont
+publiables**, et [`PRD/decompte.sh`](../../../2%20-%20Compendium/PRD/decompte.sh) en est la **seule
+autorité** — jamais `wc -w`, qui sur-compte la ponctuation de balisage d'environ 3,5 %. Écrire le
+réel à côté de la cible dans le champ *Volumétrie cible*, et **ne jamais corriger un écart par
+amputation ni par gonflement**.
 
 Puis **regarder la page**. Un rendu qui passe les contrôles peut être illisible : une valeur CSS
 invalide, un encadré qui déborde, une légende collée au paragraphe suivant. Chromium est disponible

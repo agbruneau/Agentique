@@ -5,11 +5,11 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11).*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes ; instruction d'auteur du 27 juillet 2026 |
-| **Date de gel** | **Aucune** (D-1 non prise). Gels de source **inégaux et l'écart est ici décisif** : **juin 2026** (Vol. I) et **16 juillet 2026** (Vol. II). ⚠ Le **tableau daté du § 10.3.3** est un instantané qui **se périme en bloc** ; le **statut de gouvernance du § 10.1.3** est le point du Livre où les deux gels **ne disent pas la même chose** |
+| **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
+| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Gels de source **inégaux et l'écart est ici décisif** : **juin 2026** (Vol. I) et **16 juillet 2026** (Vol. II). ⚠ Le **tableau daté du § 10.3.3** est un instantané qui **se périme en bloc** ; le **statut de gouvernance du § 10.1.3** est le point du Livre où les deux gels **ne disent pas la même chose** |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. I *Monographie* §3.9** (régime **[C]**, PRD §7.1) et contre le **Vol. II *Monographie* ch. 3**, dont les entrées **F-04**, **F-05** et **F-43** conservent leurs niveaux **[A]**, **[A]** et **[B]**, et la **réserve F-06** son régime de préimpression. **Aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | Vol. II — **R-1 : deux occurrences**, § 10.5.1 et § 10.6.2, l'ACP protocolaire jamais présenté comme un standard vivant ; **R-8 : cinq occurrences**, § 10.3.2 (deux), § 10.5.1, § 10.5.3 et § 10.6.2, le sigle jamais nu, le siège de l'encadré restant au **ch. 7 § 7.5** ; **métriques auto-déclarées : quatre occurrences**, § 10.1.2 (deux), § 10.2.1 et § 10.2.2, toutes attribuées et toutes porteuses de la clause « soutien ≠ production » ; **réserve F-01 : deux occurrences**, § 10.3.3 et § 10.4.2 ; **réserve F-06 : une occurrence**, § 10.6. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 : trois occurrences**, § 10.1.4, § 10.3.4 et § 10.4.3 ; **R-13 : cinq occurrences**, mêmes que R-8 ; **R-14 : six occurrences** — § 10.1.3, § 10.1.4 (deux), § 10.2.2, § 10.3.4 et § 10.4.2 —, dont **la plus lourde du Livre**, celle du § 10.1.3, qui porte une **divergence entre deux volumes rédigés**. R-01, R-03 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 7 000 mots de corps (§ 10.1 à § 10.6) — **mesurés, non estimés**, la mesure valant ici plus que la cible : deux des six sections sont bornées par un **partage déclaré** (§ 10.5 avec le ch. 8, § 10.3.4 avec le ch. 18) et deux autres par une **lacune assumée** (§ 10.1.4). ⚠ **Aucun décompte n'est publiable** tant que G-2 est ouverte, faute de commande de décompte arrêtée |
+| **Volumétrie cible** | ≈ 7 000 mots de corps (§ 10.1 à § 10.6) — **mesurés, non estimés**, la mesure valant ici plus que la cible : deux des six sections sont bornées par un **partage déclaré** (§ 10.5 avec le ch. 8, § 10.3.4 avec le ch. 18) et deux autres par une **lacune assumée** (§ 10.1.4). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 7 004 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **+0,1 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 611 mots, soit −0,6 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 10 — **deux énoncés de statut inégal, à ne pas fondre**)* — que la transaction pilotée par agents (AP2) soit l'**aboutissement financier** de la pile est une **lecture d'auteur** ; qu'AGNTCY soit une couche d'infrastructure **et non un concurrent** est le **positionnement officiel déclaré du projet**, une déclaration et non un fait vérifié, que des analyses tierces nuancent.
 
@@ -757,3 +757,31 @@ couche de règlement exige. Les **six occurrences de R-14** portent leur degré 
 sont attribuées **et** porteuses de la clause « soutien ≠ production » ; **R-1 est tenu aux § 10.5.1 et
 § 10.6.2** ; la **réserve F-06** est appliquée au § 10.6 ; la **réserve F-01** l'est aux § 10.3.3 et
 § 10.4.2.
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-12 — close par réalignement du plan (décision 8) et instruction de l'Annexe C.** Ses trois
+  demandes sont exécutées. *(a)* L'entrée du ch. 10 au **TOC v0.24** est réalignée : la relève v0.7
+  est **consommée par extraction**, comme l'Annexe C l'exigeait — *jamais sur annonce*. *(b)*
+  L'énoncé du Vol. II **n'est pas corrigé** : il reste exact dans son périmètre, et le registre porte
+  désormais les deux états datés côte à côte. *(c)* La distinction **lacune de couverture /
+  contradiction** est **posée en règle** à l'Annexe C et s'impose à la collation de fond (porte G-4),
+  qui balaiera systématiquement les lacunes déclarées d'un volume contre le texte rédigé des deux
+  autres. ⚠ **Aucun contrôle outillé ne le fera** : c'est un contrôle de fond, pas de forme, et il
+  est déclaré tel plutôt que promis à un script.
+- ⚠ **La lacune §10.9e est instruite, ce qui n'est pas la même chose que requalifiée** (voir le ch. 11) :
+  elle a reçu une **source primaire nouvelle datée**, qui est le seul régime sous lequel l'Annexe C
+  admet qu'une divergence se retranche.
+
+⚠ **Ce que la clôture ne change pas.** La porte **G-3** demeure ouverte : le socle consolidé compte
+**zéro entrée**, l'Annexe B n'existe pas, et **aucun énoncé de cette pièce n'est central au sens de
+CA-IV-01**. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
+pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
+tranchée.*

@@ -5,11 +5,11 @@ Premier mouvement — les fondements (ch. 1-6).*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes G-1, G-2 et G-3 du [PRD](../PRD/PRD.md) §5. ⚠ **Ce chapitre est le plus exposé du premier mouvement**, à double titre : il est le **chapitre-charnière** dont dépend l'économie de fusion côté identité (§ 3.2 et § 3.3 ne sont reconstruits nulle part ailleurs), et il porte de la matière **cryptographique**, où le garde-fou R-02 du Vol. III s'applique pleinement |
-| **Date de gel** | **Aucune.** Gel unique non fixé (décision d'auteur D-1). Matière condensée au gel de sa source — **juin 2026** (Vol. I) —, qui n'est pas celui de la somme. ⚠ Trois faits datés y appellent une re-vérification à G-1 : la finalisation d'un profil de haute sécurité (22 février 2025), une recommandation du W3C sur les attestations vérifiables (15 mai 2025), et le statut d'un projet de cadre d'autorisation **encore à l'état de projet à la mi-2026** |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes G-1, G-2 et G-3 du [PRD](../PRD/PRD.md) §5. ⚠ **Ce chapitre est le plus exposé du premier mouvement**, à double titre : il est le **chapitre-charnière** dont dépend l'économie de fusion côté identité (§ 3.2 et § 3.3 ne sont reconstruits nulle part ailleurs), et il porte de la matière **cryptographique**, où le garde-fou R-02 du Vol. III s'applique pleinement ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
+| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Matière condensée au gel de sa source — **juin 2026** (Vol. I) —, qui n'est pas celui de la somme. ⚠ Trois faits datés y appellent une re-vérification à G-1 : la finalisation d'un profil de haute sécurité (22 février 2025), une recommandation du W3C sur les attestations vérifiables (15 mai 2025), et le statut d'un projet de cadre d'autorisation **encore à l'état de projet à la mi-2026** |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (Annexe B non constituée, porte G-3 ouverte). Les énoncés résolvent contre le **Vol. I *Monographie* §1.9-1.10**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ Réserve renforcée pour ce chapitre : la matière cryptographique est celle où un énoncé [C] non élevé fait le plus de dégâts, puisqu'elle est citée comme garantie |
 | **Garde-fous balayés** | **Les deux séries, intégralement.** Vol. II — R-1 à R-8 : **zéro occurrence** (aucune matière réglementaire canadienne, aucune métrique d'adoption auto-déclarée, aucun énoncé sur E-23, le RTR ou MCP). Vol. III — **R-02 (qualification cryptographique) : cinq occurrences**, § 3.2.2 (deux), § 3.3.1, § 3.3.2 (deux) — chaque mécanisme y est qualifié par ce que sa spécification **démontre**, jamais par ce qu'elle promet ; **R-11 (jalons NIST « visés », jamais « fixés ») : une occurrence**, § 3.3.2, avec statut du document porté ; **R-14 (trois degrés d'absence) : deux occurrences**, § 3.1.1 et § 3.4.3. R-01, R-03 à R-10, R-12, R-13 : **zéro occurrence** — ⚠ « point d'application de politique » y figure au sens **pré-agentique** du zero-trust, où il n'est pas le terme que R-13 vise |
-| **Volumétrie cible** | ≈ 9 000 mots de corps (§ 3.1 à § 3.4). Enveloppe **dérivée, non prescrite** ; ce chapitre pèse plus que la moyenne parce qu'il est **posé une seule fois pour cinq chapitres aval**. ⚠ **Aucun décompte n'est publiable** tant que G-2 est ouverte |
+| **Volumétrie cible** | ≈ 9 000 mots de corps (§ 3.1 à § 3.4). Enveloppe **dérivée, non prescrite** ; ce chapitre pèse plus que la moyenne parce qu'il est **posé une seule fois pour cinq chapitres aval**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 056 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−43,8 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 611 mots, soit −0,6 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 3)* — le passage du périmètre réseau à la confiance par échange, et l'identité fédérée à autorisation déléguée, sont l'héritage IAM que la fabrique de confiance agentique (Livre II) étire jusqu'à rupture.
 
@@ -103,10 +103,13 @@ périmètre.
 
 ## § 3.2 — Identité fédérée et autorisation déléguée
 
-> **Socle pré-agentique, posé ici une seule fois.** Le ch. 12 transpose ces mécanismes aux agents et
-> **n'en reconstruit aucun**. Ce qui suit est donc l'état de l'art *avant* que l'agent n'entre en
-> scène — c'est délibérément une photographie, et sa valeur pour la somme tient à ce qu'elle serve de
-> point de comparaison.
+> ⚠ **SIÈGE DU SOCLE IAM POUR TOUTE LA SOMME.** Ce socle pré-agentique est **posé ici une seule
+> fois**, au § 3.2 et au § 3.3. Les **ch. 12, 13, 21, 37 et 38** le transposent aux agents et **n'en
+> reconstruisent aucun mécanisme** — ils y renvoient. C'est la principale économie de la fusion côté
+> identité, et elle n'a lieu que si ces chapitres s'y tiennent ; l'abstention est contrôlée par
+> `PRD/check-sieges.py`. Ce qui suit est donc l'état de l'art *avant* que l'agent n'entre en scène —
+> c'est délibérément une photographie, et sa valeur pour la somme tient à ce qu'elle serve de point
+> de comparaison.
 
 ### 3.2.1 SAML, OAuth 2.x/2.1 et OpenID Connect
 
@@ -231,8 +234,10 @@ déchargeant l'authentification mutuelle vers l'infrastructure plutôt que vers 
 ⚠ **Précision de vocabulaire, à tenir pour tout le Livre.** « Point d'application de politique » et
 « point de décision » sont ici employés au sens **pré-agentique** de cette architecture de référence.
 Ils ne sont pas les termes que le garde-fou R-13 du Vol. III proscrit nus — celui-ci vise
-« AgentMesh », « control plane », « ACP » et « autonomie graduée ». Le ch. 37 reprendra la paire au
-grain de l'agent, et c'est **là** que la vigilance terminologique s'impose.
+« AgentMesh », « control plane », « ACP » et « autonomie graduée ». Le dernier de ces sigles désigne
+à lui seul au moins quatre objets distincts ; l'encadré de désambiguïsation qui les sépare est au
+**ch. 7 § 7.5**, siège unique pour toute la somme, et n'est pas reconstruit ici. Le ch. 37 reprendra
+la paire au grain de l'agent, et c'est **là** que la vigilance terminologique s'impose.
 
 L'application du zero-trust aux services exige une **identité pour les acteurs non humains**, à durée
 de vie courte et vérifiable. Un cadre normalisé et son implémentation de référence fournissent à
@@ -534,7 +539,7 @@ instruction d'auteur du 27 juillet 2026. Quatre conséquences, plus une propre �
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01.** Les faits résolvent contre le Vol. I
    *Monographie* §1.9-1.10, en régime **[C]**.
-2. **Aucun décompte n'est publiable** (G-2).
+2. **Les décomptes sont publiables depuis le 27 juillet 2026** — G-2 franchie, `PRD/decompte.sh` versionnée et éprouvée sur les trois corpus entiers.
 3. **Les renvois « ch. N » sont des renvois de plan, non de texte** — ch. 7, 12, 13, 16, 17, 19, 21,
    25-36, 37, 38 non rédigés.
 4. **⚠ Conséquence propre à ce chapitre, et la plus sérieuse du Livre I à ce jour.** Le régime **[C]**
@@ -564,3 +569,31 @@ instruction d'auteur du 27 juillet 2026. Quatre conséquences, plus une propre �
 §1.9.2 et §1.9.3 non hérités par les ch. 12 et 37 ; les deux séries de garde-fous sont balayées et
 déclarées, avec cinq occurrences de R-02, une de R-11 et deux de R-14 marquées en toutes lettres ;
 les constructions d'auteur portent « Lecture de l'auteur » (CA-IV-07).
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-04 — close par le franchissement de G-1 (volet Livre I).** Les trois faits datés sont
+  **confirmés à leur source primaire le 27 juillet 2026** (registre du gel, faits 6 à 8) : le profil
+  de haute sécurité au **22 février 2025**, la recommandation sur les attestations vérifiables au
+  **15 mai 2025**, et le cadre d'autorisation de nouvelle génération **toujours à l'état de projet**
+  — version 15 du document, publiée le 2 mars 2026, expirant le 3 septembre 2026, aucun RFC. Le
+  § 3.2.1 n'a donc **pas** à être repris : il le présente comme un projet, et c'en est un.
+- **R-IV-05 — close par versement d'appareil.** Le motif de balayage inter-pièces qu'elle réclamait
+  existe : [`PRD/check-sieges.py`](../PRD/check-sieges.py), cinq contrôles S1-S5 sur une table
+  déclarative de sièges, **validé par mutation**. ⚠ **Il a mordu au premier passage sur cette pièce
+  même** : le § 3.3 énumérait les termes proscrits sans renvoyer à l'encadré du ch. 7 § 7.5 — corrigé.
+  Et le **siège du socle IAM ne portait aucun marqueur** : il en porte un désormais, au § 3.2, sans
+  lequel aucun rédacteur aval ne pouvait savoir qu'il devait s'abstenir.
+
+⚠ **Ce que la clôture ne change pas.** La porte **G-3** demeure ouverte : le socle consolidé compte
+**zéro entrée**, l'Annexe B n'existe pas, et **aucun énoncé de cette pièce n'est central au sens de
+CA-IV-01**. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
+pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
+tranchée.*

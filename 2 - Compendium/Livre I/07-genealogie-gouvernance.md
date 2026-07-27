@@ -5,11 +5,11 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11). **Premier chap
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes ; rédaction sur instruction d'auteur du 27 juillet 2026. ⚠ **Premier chapitre du Livre I à consommer le Vol. II**, dont le régime de preuve diffère : ses faits portent des niveaux **[A]/[B]/[C]** explicites et conservent leur niveau d'origine (PRD §7.1), là où ceux du Vol. I entrent en [C] |
-| **Date de gel** | **Aucune.** Gel unique non fixé (D-1). ⚠ **Ce chapitre porte deux gels de source distincts** — **juin 2026** (Vol. I) et **16 juillet 2026** (Vol. II) — et c'est le premier du Livre où l'écart compte : la chronologie qu'il établit s'arrête au bilan public d'avril 2026, et une révision protocolaire majeure était attendue **douze jours après** le gel du Vol. II |
+| **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes ; rédaction sur instruction d'auteur du 27 juillet 2026. ⚠ **Premier chapitre du Livre I à consommer le Vol. II**, dont le régime de preuve diffère : ses faits portent des niveaux **[A]/[B]/[C]** explicites et conservent leur niveau d'origine (PRD §7.1), là où ceux du Vol. I entrent en [C] ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
+| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. ⚠ **Ce chapitre porte deux gels de source distincts** — **juin 2026** (Vol. I) et **16 juillet 2026** (Vol. II) — et c'est le premier du Livre où l'écart compte : la chronologie qu'il établit s'arrête au bilan public d'avril 2026, et une révision protocolaire majeure était attendue **douze jours après** le gel du Vol. II |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. I *Monographie* §3.0-3.1 et §3.13.1** (régime **[C]**) et le **Vol. II *Monographie* ch. 1** — dont le TOC assigne à ce chapitre les entrées **F-01, F-02, F-04, F-05, F-43**, à niveau conservé. ⚠ **Tant que G-3 n'est pas franchie, ces identifiants restent préfixés de leur volume** : un « F-01 » nu est indécidable entre deux socles |
 | **Garde-fous balayés** | **Les deux séries — et ce chapitre est le siège d'un garde-fou.** Vol. II — **R-1 (l'ACP protocolaire n'est pas un standard vivant) : trois occurrences**, § 7.3, § 7.4.2 et § 7.5 ; **R-8 (sigle jamais nu, quatre branches) : le § 7.5 en est le SIÈGE** pour toute la somme — huit occurrences, toutes qualifiées ; **métriques auto-déclarées : quatre occurrences**, § 7.6 (trois) et § 7.3, chacune attribuée. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-13 : deux occurrences**, § 7.5, mêmes termes ; **R-14 : trois occurrences**, § 7.4.2, § 7.5 et § 7.6. R-01 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 8 000 mots de corps (§ 7.0 à § 7.6). ⚠ **Aucun décompte n'est publiable** tant que G-2 est ouverte |
+| **Volumétrie cible** | ≈ 8 000 mots de corps (§ 7.0 à § 7.6). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 4 881 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−39,0 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 611 mots, soit −0,6 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 7)* — en dix-sept mois, la couche protocolaire agentique s'est consolidée sous gouvernance neutre (Linux Foundation) — condition **nécessaire et non suffisante** de sa crédibilité en entreprise réglementée ; mais « soutien ≠ production » et AP2 n'a aucun transfert de gouvernance documenté.
 
@@ -540,7 +540,7 @@ d'établir tout ce qu'il faut y ajouter.
 d'auteur du 27 juillet 2026. Conséquences habituelles, plus deux propres à ce chapitre :
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01.**
-2. **Aucun décompte n'est publiable** (G-2).
+2. **Les décomptes sont publiables depuis le 27 juillet 2026** — G-2 franchie, `PRD/decompte.sh` versionnée et éprouvée sur les trois corpus entiers.
 3. **Les renvois « ch. N » sont des renvois de plan** — ch. 8-11, 14, 49 et le Livre III non rédigés.
 4. **⚠ Deux régimes de socle coexistent dans ce chapitre, et G-3 devra les fondre.** C'est le premier
    du Livre I à consommer le Vol. II : ses entrées **conservent leur niveau** [A]/[B]/[C], là où
@@ -584,3 +584,33 @@ forme intégrale**, restriction « et non suffisante » comprise. La chronologie
 protocole**, avec les deux séquences inverses explicitées. Les **quatre métriques auto-déclarées sont
 attribuées**, R-1 est tenu à ses trois occurrences, le sigle à quatre branches est **toujours
 qualifié**, et la lacune héritée est **encadrée sans être comblée**.
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-08 — close par réalignement du plan (décision 8).** La **thèse du ch. 7 est amendée au TOC
+  v0.24** : sa dernière clause tenait qu'AP2 n'avait aucun transfert de gouvernance documenté ; le
+  transfert est **établi à la source primaire** (28 avril 2026, v0.2, cas *Human-Not-Present*, deux
+  groupes de travail techniques — registre du gel, fait 12). ⚠ **La clause n'est pas effacée mais
+  située** : exacte du point de vue du socle du Vol. II, périmée du point de vue du Vol. I. *Le
+  volume le plus ancien ne se corrige pas ; sa lacune de couverture est une information datée.* Le
+  § 7.4.2 et le § 7.6 de cette pièce, déjà corrigés, résolvent désormais contre un plan qui dit la
+  même chose qu'eux.
+- **R-IV-09 — close par versement d'appareil**, du même mouvement que R-IV-05 :
+  [`PRD/check-sieges.py`](../PRD/check-sieges.py) vérifie qu'aucune pièce ne reconstruit l'encadré du
+  § 7.5 et que toute pièce touchant la matière y renvoie. ⚠ **Il a trouvé un défaut réel au premier
+  passage** — le ch. 6 § 6.2 développait le sigle sans pointer vers l'encadré —, corrigé. *Le
+  contrôle qui manquait n'était pas un contrôle de plus : c'était le seul qui lisait les pièces
+  ensemble.*
+
+⚠ **Ce que la clôture ne change pas.** La porte **G-3** demeure ouverte : le socle consolidé compte
+**zéro entrée**, l'Annexe B n'existe pas, et **aucun énoncé de cette pièce n'est central au sens de
+CA-IV-01**. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
+pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
+tranchée.*

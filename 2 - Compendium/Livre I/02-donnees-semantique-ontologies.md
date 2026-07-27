@@ -5,11 +5,11 @@ Premier mouvement — les fondements (ch. 1-6).*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes G-1, G-2 et G-3 du [PRD](../PRD/PRD.md) §5. Même régime que le ch. 1 : l'écart est déclaré, non dissimulé ; ses conséquences sont énumérées en § 2.5 |
-| **Date de gel** | **Aucune.** Gel unique non fixé (décision d'auteur D-1). La matière condensée porte le gel de sa source — **juin 2026** (Vol. I) —, qui n'est pas celui de la somme et ne peut en tenir lieu. ⚠ Ce chapitre est particulièrement exposé à la péremption : **quatre spécifications qu'il cite étaient en cours au gel de la source** (SPARQL 1.2, SHACL 1.2, RDF 1.2/RDF-star, et la refonte majeure d'OpenAPI), et une graduation de projet y est datée de février 2026 |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes G-1, G-2 et G-3 du [PRD](../PRD/PRD.md) §5. Même régime que le ch. 1 : l'écart est déclaré, non dissimulé ; ses conséquences sont énumérées en § 2.5 ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
+| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. La matière condensée porte le gel de sa source — **juin 2026** (Vol. I) —, qui n'est pas celui de la somme et ne peut en tenir lieu. ⚠ Ce chapitre est particulièrement exposé à la péremption : **quatre spécifications qu'il cite étaient en cours au gel de la source** (SPARQL 1.2, SHACL 1.2, RDF 1.2/RDF-star, et la refonte majeure d'OpenAPI), et une graduation de projet y est datée de février 2026 |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (Annexe B non constituée, porte G-3 ouverte). Les énoncés résolvent contre le **Vol. I *Monographie* §1.7-1.8**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01** avant élévation en [B] par lecture des sources primaires que le Vol. I cite |
 | **Garde-fous balayés** | **Les deux séries, intégralement, y compris les zéros.** Vol. II — R-1 à R-8 : **zéro occurrence** (aucune matière réglementaire canadienne, aucun énoncé sur E-23, le RTR ou MCP). Vol. III — R-01 à R-13 : **zéro occurrence** ; ⚠ le § 2.4 approche R-02 (qualification par ce que la spécification démontre) sans le déclencher, l'objet n'étant pas cryptographique — la règle y est néanmoins appliquée par analogie à la fiabilité des correspondances produites par modèle. **R-14 (trois degrés d'absence) : trois occurrences**, § 2.1.5, § 2.3.3 et § 2.4.1, marquées en toutes lettres |
-| **Volumétrie cible** | ≈ 8 000 mots de corps (§ 2.1 à § 2.4). Enveloppe **dérivée, non prescrite** — le TOC n'en donne qu'au Livre (~65 000 mots pour onze chapitres). ⚠ **Aucun décompte n'est publiable** tant que G-2 est ouverte |
+| **Volumétrie cible** | ≈ 8 000 mots de corps (§ 2.1 à § 2.4). Enveloppe **dérivée, non prescrite** — le TOC n'en donne qu'au Livre (~65 000 mots pour onze chapitres). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 245 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−34,4 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 611 mots, soit −0,6 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 2)* — l'interopérabilité sémantique — accord sur le sens, pas seulement sur le format — est le niveau que les protocoles agentiques présupposent et que peu savent établir.
 
@@ -550,7 +550,7 @@ d'auteur du 27 juillet 2026. Quatre conséquences :
 1. **Aucun énoncé n'est central au sens de CA-IV-01.** Les faits résolvent contre le Vol. I
    *Monographie* §1.7-1.8, en régime **[C]** ; l'élévation en [B] passe par la lecture des sources
    primaires que le Vol. I cite.
-2. **Aucun décompte n'est publiable** (G-2).
+2. **Les décomptes sont publiables depuis le 27 juillet 2026** — G-2 franchie, `PRD/decompte.sh` versionnée et éprouvée sur les trois corpus entiers.
 3. **Les renvois « ch. N » sont des renvois de plan, non de texte.** Les ch. 3, 9, 17, 37 et 43 ne
    sont pas rédigés ; chaque renvoi résout contre l'entrée du TOC v0.23 et se re-vérifiera contre le
    texte lorsqu'il existera.
@@ -558,8 +558,12 @@ d'auteur du 27 juillet 2026. Quatre conséquences :
    **R-IV-03 — non bloquante, mais à échéance G-1.** Ce chapitre est le plus exposé du Livre I à la
    péremption : **quatre spécifications qu'il cite étaient en cours au gel de la source** (juin 2026)
    — la révision du langage de requête sémantique, celle du langage de validation, celle du modèle de
-   graphe et son extension d'assertions qualifiées —, et il porte **un fait daté de février 2026**
-   (graduation d'un projet de catalogue). La re-datation de G-1 doit les reprendre une à une. Le
+   graphe **avec** son extension d'assertions qualifiées, et la refonte majeure du langage de
+   description d'API —, et il porte **un fait daté de février 2026** (graduation d'un projet de
+   catalogue). ⚠ *Cette énumération divergeait de celle de l'en-tête, qui est la bonne : les deux
+   annonçaient « quatre » et n'en nommaient pas les mêmes, le modèle de graphe et son extension
+   comptant ici pour deux et la refonte du langage de description d'API étant omise. Aligné le
+   27 juillet 2026 — un cardinal juste sur une liste fausse reste une liste fausse.* La re-datation de G-1 doit les reprendre une à une. Le
    chapitre les signale toutes en réserve ⚠ et **n'en présente aucune comme acquise** ; il n'y a donc
    pas de faute à corriger, mais une échéance à tenir.
 
@@ -568,3 +572,27 @@ d'auteur du 27 juillet 2026. Quatre conséquences :
 est respectée, y compris la sortie de périmètre du §3.5 vers le ch. 9 ; les deux séries de garde-fous
 sont balayées et déclarées, y compris à zéro occurrence ; les trois occurrences de R-14 sont marquées
 en toutes lettres ; les constructions d'auteur portent « Lecture de l'auteur » (CA-IV-07).
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-03 — close par le franchissement de G-1 (volet Livre I).** Les cinq objets périssables ont
+  été **repris un à un à leur source primaire le 27 juillet 2026** (registre du gel, faits 1 à 5) :
+  la graduation du projet de catalogue est **confirmée au 19 février 2026** ; les révisions du
+  langage de requête, du langage de validation et du modèle de graphe sont **toujours en cours**, la
+  dernière ayant avancé d'un palier sans atteindre la recommandation ; la refonte du langage de
+  description d'API n'a **toujours aucune date**. ⚠ **Aucune réserve de ce chapitre n'est levée** —
+  elles sont toutes **confirmées et datées**, ce qui les rend opposables au lieu de simplement
+  prudentes.
+
+⚠ **Ce que la clôture ne change pas.** La porte **G-3** demeure ouverte : le socle consolidé compte
+**zéro entrée**, l'Annexe B n'existe pas, et **aucun énoncé de cette pièce n'est central au sens de
+CA-IV-01**. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
+pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
+tranchée.*

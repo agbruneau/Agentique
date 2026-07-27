@@ -5,11 +5,11 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11).*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes ; rédaction sur instruction d'auteur du 27 juillet 2026 |
-| **Date de gel** | **Aucune** (D-1 non prise). Deux gels de source : **juin 2026** (Vol. I), **16 juillet 2026** (Vol. II). ⚠ **Ce chapitre porte la péremption la plus courte de toute la somme, et elle se compte en heures.** L'anatomie décrite est celle de la **révision 2025-11-25** ; une **révision candidate, gelée le 21 mai 2026, a sa ratification annoncée pour le 28 juillet 2026** — soit **le lendemain de la date de rédaction de ce chapitre**. Si elle est ratifiée, l'anatomie du § 8.1 et du § 8.2 est **à revalider en bloc**, sources primaires à extraire |
+| **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes ; rédaction sur instruction d'auteur du 27 juillet 2026. ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
+| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Deux gels de source : **juin 2026** (Vol. I), **16 juillet 2026** (Vol. II). ⚠ **Ce chapitre porte la péremption la plus courte de toute la somme, et elle se compte en heures.** L'anatomie décrite est celle de la **révision 2025-11-25** ; une **révision candidate, gelée le 21 mai 2026, a sa ratification annoncée pour le 28 juillet 2026** — soit **le lendemain de la date de rédaction de ce chapitre**. Si elle est ratifiée, l'anatomie du § 8.1 et du § 8.2 est **à revalider en bloc**, sources primaires à extraire |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. I *Monographie* §3.2-3.3 et §2.5.4** (régime **[C]**) et le **Vol. II *Monographie* ch. 2** — entrées assignées par le TOC : **F-01, F-02, F-03, F-16**, à niveau conservé, **préfixées de leur volume** tant que G-3 n'a pas renuméroté |
 | **Garde-fous balayés** | Vol. II — **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : six occurrences**, § 8.1.4, § 8.2.2 (deux), § 8.3.1, § 8.6.1 et § 8.7, chacune tenue ; **R-1 : une occurrence**, § 8.5.1 ; **R-8 (sigle jamais nu) : cinq occurrences**, § 8.5.1 — le siège de l'encadré est au **ch. 7 § 7.5**, auquel ce chapitre renvoie **sans le reconstruire** ; **métriques auto-déclarées : trois occurrences**, § 8.4.2, § 8.6.3 et § 8.7, attribuées. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 (qualification par ce que la spécification démontre) : trois occurrences**, § 8.2.2 et § 8.4.2 (deux) ; **R-13 : cinq occurrences**, mêmes que R-8 ; **R-14 : quatre occurrences**, § 8.2.3, § 8.6.1, § 8.7 et § 8.8. R-01, R-03 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 10 000 mots de corps (§ 8.1 à § 8.7) — le plus lourd du Livre I, sept sections contre quatre à six ailleurs. ⚠ **Aucun décompte n'est publiable** tant que G-2 est ouverte |
+| **Volumétrie cible** | ≈ 10 000 mots de corps (§ 8.1 à § 8.7) — le plus lourd du Livre I, sept sections contre quatre à six ailleurs. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 134 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−48,7 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 611 mots, soit −0,6 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 8)* — « MCP dans les agents, A2A entre les agents » — doctrine de complémentarité **déclarée par le projet A2A** (non un accord des deux projets) qui fournit le premier critère de découpage architectural, sans le contraindre.
 
@@ -345,6 +345,10 @@ pas cette tension ; elle est proposée comme lecture, et le ch. 29 l'instruit.
 
 ### 8.5.1 La convergence par fusion — mécanique
 
+> ⚠ **SIÈGE DE LA MÉCANIQUE DE LA FUSION POUR TOUTE LA SOMME.** Elle est **posée ici une seule
+> fois** ; sa **portée de risque** siège au **ch. 10 § 10.5**. Aucun autre chapitre ne refait l'un ni
+> l'autre — l'abstention est contrôlée par `PRD/check-sieges.py`.
+
 ⚠ **Partage déclaré avec le ch. 10 (décision 2 du TOC).** La **mécanique** de la convergence se traite
 **ici**, sur la source du Vol. I ; la **portée de risque** de cette fusion se traite **au ch. 10
 § 10.5**, sur la source du Vol. II. *Ni l'un ni l'autre ne reconstruit ce que porte son voisin* — et ce
@@ -608,3 +612,35 @@ retoucher un titre cité en clair dans huit chapitres. Le **siège de l'encadré
 § 7.5** : ce chapitre y renvoie et **ne le reconstruit pas**. La **lacune héritée du PRD Vol. II §10.9
 est portée, encadrée et non comblée**. Les trois métriques auto-déclarées sont attribuées ; R-1, R-8,
 R-13, R-02 et R-14 sont tenus à toutes leurs occurrences.
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-10 — close par le franchissement de G-1 (volet Livre I) : la réserve est confirmée, et
+  l'échéance est désormais datée au lieu d'être ouverte.** Constat à la source primaire le 27 juillet
+  2026 (registre du gel, fait 11) : la révision est **toujours candidate**, verrouillée depuis le
+  21 mai 2026, et sa publication finale est fixée au **28 juillet 2026**. Le chapitre est donc
+  **exact à sa date**, et périmé le lendemain. ⚠ **Le gel unique ne s'avance pas d'un jour pour
+  absorber l'événement** — *une révision annoncée pour demain reste une révision annoncée* : les
+  § 8.1.3, § 8.2.1, § 8.2.2 et § 8.3.1 sont à **revalider en bloc dès le 28 juillet 2026**, sources
+  primaires à extraire et non à retoucher. La portée du changement est relevée au registre du gel
+  pour que la revalidation sache quoi chercher.
+- ⚠ **Un contrôle de méthode a été payé sur cette pièce, et il vaut d'être connu.** Le billet
+  d'annonce de la révision décrit un *durcissement* du mécanisme d'enregistrement de client et ne
+  mentionne aucune dépréciation ; le **journal des changements de la spécification** la porte
+  explicitement, au profit de documents de métadonnées d'identifiant client. L'énoncé de cette pièce
+  — « dépréciation … de l'enregistrement dynamique de client » — est **exact**, et une correction
+  fondée sur le seul billet d'annonce l'aurait **cassé**. *Une source secondaire qui résume une
+  source normative n'en est pas un substitut, même quand elle émane du même émetteur.*
+
+⚠ **Ce que la clôture ne change pas.** La porte **G-3** demeure ouverte : le socle consolidé compte
+**zéro entrée**, l'Annexe B n'existe pas, et **aucun énoncé de cette pièce n'est central au sens de
+CA-IV-01**. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
+pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
+tranchée.*

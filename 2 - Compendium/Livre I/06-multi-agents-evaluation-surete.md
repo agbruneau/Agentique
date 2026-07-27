@@ -5,11 +5,11 @@ Premier mouvement — les fondements (ch. 1-6). **Dernier chapitre du mouvement.
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable — et rédigé malgré une remontée bloquante.** Aux portes G-1, G-2 et G-3 ouvertes s'ajoute ici une **seconde infraction, distincte et plus grave** : la remontée **R-IV-01**, ouverte par le ch. 1, est marquée *bloquante pour le ch. 6*, et la règle d'escalade du [PRD](../PRD/PRD.md) pose qu'une remontée bloquante **interdit de lancer le chapitre**. Elle est enfreinte sur instruction d'auteur du 27 juillet 2026 ; le détail et ses conséquences sont en § 6.6 |
-| **Date de gel** | **Aucune.** Gel unique non fixé (D-1). Matière condensée au gel de sa source — **juin 2026** (Vol. I). ⚠ Trois faits datés y appellent une re-vérification : le passage d'un protocole agent-agent sous fondation, la création d'une fondation neutre en décembre 2025, et un chiffre d'adoption **auto-déclaré** relevé à un anniversaire |
+| **Statut** | **Brouillon de rédaction, non publiable — et rédigé malgré une remontée bloquante.** Aux portes G-1, G-2 et G-3 ouvertes s'ajoute ici une **seconde infraction, distincte et plus grave** : la remontée **R-IV-01**, ouverte par le ch. 1, est marquée *bloquante pour le ch. 6*, et la règle d'escalade du [PRD](../PRD/PRD.md) pose qu'une remontée bloquante **interdit de lancer le chapitre**. Elle est enfreinte sur instruction d'auteur du 27 juillet 2026 ; le détail et ses conséquences sont en § 6.6 ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
+| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Matière condensée au gel de sa source — **juin 2026** (Vol. I). ⚠ Trois faits datés y appellent une re-vérification : le passage d'un protocole agent-agent sous fondation, la création d'une fondation neutre en décembre 2025, et un chiffre d'adoption **auto-déclaré** relevé à un anniversaire |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (Annexe B non constituée, G-3 ouverte). Les énoncés résolvent contre le **Vol. I *Monographie* §2.8.1-2.8.3, §2.9.1-2.9.5 et §2.10.3-2.10.5**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | **Les deux séries, intégralement — et c'est le chapitre du Livre I où ils mordent le plus.** Vol. II — **R-8 (« ACP » jamais nu) : deux occurrences**, § 6.2, où le sigle est développé à sa première apparition et jamais employé seul ; **métriques auto-déclarées (PRD Vol. II §7.5) : quatre occurrences**, § 6.1.1 (deux), § 6.2 et § 6.5.2, **chacune attribuée à sa source, sans exception d'usage illustratif**. R-1 à R-7 : **zéro occurrence**. Vol. III — **R-13 (mêmes termes jamais nus) : deux occurrences**, § 6.2, les mêmes ; **R-14 : trois occurrences**, § 6.4.1, § 6.5.1 et § 6.5.3. R-01 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 8 500 mots de corps (§ 6.1 à § 6.5). Enveloppe **dérivée, non prescrite**. ⚠ **Aucun décompte n'est publiable** tant que G-2 est ouverte |
+| **Volumétrie cible** | ≈ 8 500 mots de corps (§ 6.1 à § 6.5). Enveloppe **dérivée, non prescrite**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 3 751 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−55,9 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 611 mots, soit −0,6 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 6)* — le multi-agent a un surcoût que seuls certains gains justifient ; son évaluation (succès de tâche vs trajectoire) et sa sûreté (triade létale, vecteurs d'attaque) sont les deux fronts encore ouverts.
 
@@ -114,8 +114,10 @@ signée prolonge directement l'invariant du Livre au niveau de l'orchestration e
 **inter-organisationnelles** (ch. 1 § 1.6.2).
 
 La pile s'est consolidée. L'**Agent Communication Protocol** — ACP, sigle développé ici à sa première
-occurrence et jamais employé seul, conformément aux garde-fous R-8 du Vol. II et R-13 du Vol. III —
-a été lancé en mars 2025 puis **a convergé dans A2A**. Un troisième effort vise une interopérabilité
+occurrence et jamais employé seul, conformément aux garde-fous R-8 du Vol. II et R-13 du Vol. III ;
+⚠ **le sigle désigne au moins quatre objets distincts, et l'encadré de désambiguïsation qui en fait
+le partage est au ch. 7 § 7.5, siège unique pour toute la somme, auquel ce chapitre renvoie sans le
+reconstruire** — a été lancé en mars 2025 puis **a convergé dans A2A**. Un troisième effort vise une interopérabilité
 d'échelle réseau alignée sur les deux précédents. Plusieurs revues comparent ces protocoles émergents.
 
 Le fait marquant de **gouvernance** est la création, en **décembre 2025**, d'une fondation neutre qui
@@ -466,6 +468,21 @@ trancher le périmètre, **et** reprendre ce chapitre pour y insérer la section
 La différence de coût entre les deux scénarios est précisément ce que la règle d'escalade visait à
 éviter.
 
+⚠ **Clôture du 27 juillet 2026 — D-7 est tranchée, et l'issue retenue est celle qui ne coûte rien à
+ce chapitre.** L'auteur retient le **périmètre assumé et déclaré** : la somme **ne traite pas**
+l'accord entre agents sous asynchronie et défaillance partielle. **Aucune section n'est donc à
+insérer ici**, et la place marquée au § 6.1 le reste **définitivement** — le ch. 6 est **fermé** à
+cette matière, comme les ch. 37 et 48. **R-IV-01 est close** (PRD v0.8, Annexe A ; TOC v0.24,
+risque 15).
+
+⚠ **La clôture ne rétroagit pas sur l'infraction, et il faut le dire clairement.** Ce chapitre a été
+rédigé **avant** que la décision soit prise, en violation d'une remontée bloquante : le fait est
+daté, consigné, et **il n'est pas effacé par le fait que l'issue lui ait été favorable**. *Que le
+tirage soit bon ne valide pas le pari.* La règle d'escalade visait à éviter un coût de reprise ; il
+se trouve qu'il aurait été nul, et cela ne se savait pas au moment d'écrire. Le second scénario —
+D-7 tranchant pour des sections dans l'existant — aurait imposé la reprise de ce chapitre **et** du
+ch. 1, et c'est le risque qui a été couru.
+
 **Ce qui n'est pas enfreint.** La structure suit la table détaillée du TOC section par section
 (§ 6.1 à § 6.5) ; la table de couverture est respectée, y compris ses **six sorties de périmètre** —
 frameworks d'orchestration au ch. 23, choix du modèle au ch. 4 (**arrivée déclarée aux deux bouts**),
@@ -474,3 +491,24 @@ ch. 30, questions ouvertes au ch. 49 — ainsi que la **coupe assumée** des app
 Les deux séries de garde-fous sont balayées : **les quatre métriques auto-déclarées sont attribuées à
 leur source**, le sigle du protocole de communication est **développé et jamais employé nu** (R-8,
 R-13), et les trois occurrences de R-14 portent leur degré.
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-01 — close par décision d'auteur, et son issue ne coûte rien à ce chapitre.** Voir le
+  développement ci-dessus : **D-7 retient le périmètre assumé et déclaré**, aucune section n'est à
+  insérer, et le ch. 6 est **fermé** à cette matière. ⚠ **L'infraction reste consignée** : ce
+  chapitre a été rédigé avant la décision, en violation d'une remontée bloquante. *Que le tirage
+  soit bon ne valide pas le pari.*
+
+⚠ **Ce que la clôture ne change pas.** La porte **G-3** demeure ouverte : le socle consolidé compte
+**zéro entrée**, l'Annexe B n'existe pas, et **aucun énoncé de cette pièce n'est central au sens de
+CA-IV-01**. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
+pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
+tranchée.*

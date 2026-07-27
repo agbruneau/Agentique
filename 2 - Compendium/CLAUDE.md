@@ -13,10 +13,10 @@ désormais dans le sous-dossier [`PRD/`](PRD/) ; le README (conspectus) et ce `C
 la racine du dossier. Les chemins ci-dessous et la commande de contrôle (§ protocole) en tiennent
 compte.
 
-Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.7, 27 juillet 2026** — réancré sur le TOC v0.23, gouvernance inchangée, décision d'auteur **D-8** ajoutée en v0.6) régit la
+Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.8, 27 juillet 2026** — passe d'arbitrage : **D-1, D-6 et D-7 prises**, **G-2 et le volet Livre I de G-1 franchis**, treize remontées soldées ; c'est la première version qui **consomme** de la gouvernance au lieu d'en poser) régit la
 **gouvernance de la rédaction** — portes de lancement, ordre, régimes de preuve, seuil de vote,
 critères CA-IV, jalons, décisions d'auteur — et **prime en cas de conflit sur la gouvernance, le
-socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.23, 27 juillet 2026 — 50 chapitres en 5 livres,
+socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.24, 27 juillet 2026 — arbitrage : structure inchangée, risque 15 tranché, quatre réalignements au titre de la décision 8 ; 50 chapitres en 5 livres,
 projection ≈ 376 000–401 000 mots ; plafond de cinquante chapitres posé en décision 13 et contrôlé par C15 ;
 le ch. 41, la fabrique d'agents, entré en v0.22, est payé par la fusion des ch. 47 et 48**) reste la *spécification de contenu* du compendium — autorité
 sur le découpage et sur chaque chapitre (thèse, sections, ligne Fusion, socle, garde-fous) ;
@@ -32,23 +32,41 @@ arbitré.** Le **27 juillet 2026, sur instruction d'auteur**, le répertoire [`L
 été créé et **ses onze chapitres** y ont été rédigés en deux rendus chacun (`.md` source, `.html` de
 lecture à thème sombre), **avant** le franchissement des portes **G-1, G-2 et G-3** que le PRD §5
 pose comme préalables à toute rédaction. Quatre choses à savoir avant d'y toucher.
-*(a)* **Le statut de gouvernance n'a pas bougé** : chaque pièce se déclare elle-même *brouillon, non
-publiable*, le socle consolidé reste à **0 entrée**, les sept portes restent ouvertes et les huit
-décisions d'auteur **D-1 à D-8** restent à prendre. Un brouillon écrit hors portes ne franchit
-aucune porte — il en documente le coût.
-*(b)* **Ni le TOC, ni le PRD, ni le conspectus n'ont été touchés**, conformément à la règle
-d'escalade du PRD (Annexe A) : *un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il
-remonte.* Leurs champs Statut décrivent donc encore « zéro pièce rédigée », et **c'est correct au
-sens où ils l'entendent** : zéro pièce **recevable**. Ne pas les « corriger » pour ces pièces.
-*(c)* **Treize remontées sont ouvertes par cette rédaction — R-IV-01 à R-IV-13** —, portées par les
-notes de statut hors plan de chaque pièce, à retirer à la publication. **Le tableau complet est au
-[`README.md` de `Livre I/`](Livre%20I/README.md)** et n'est pas repris ici. Trois sont à connaître au
-niveau du dossier : **R-IV-01**, *bloquante pour le ch. 6* — la décision **D-7** (risque 15, l'accord
-sous défaillance) est due avant la rédaction du Livre I, et le ch. 6 a été rédigé quand même, en
-déclarant cette seconde infraction ; **R-IV-05**, *bloquante pour cinq chapitres* — le socle IAM est
-posé une seule fois au ch. 3 et ne se reconstruit pas, sans qu'aucun contrôle outillé ne vérifie
-l'abstention ; **R-IV-12 et R-IV-13**, non bloquantes mais **de même classe et consécutives** — voir
-ci-dessous.
+*(a)* ⚠ **Le statut de gouvernance a partiellement bougé le 27 juillet 2026 — passe d'arbitrage,
+PRD v0.8 et TOC v0.24.** Chaque pièce se déclare toujours *brouillon, non publiable*, et **le socle
+consolidé reste à 0 entrée** : **G-3 n'est pas entamée**, aucun énoncé n'est central au sens de
+CA-IV-01. Ce qui a changé : **deux portes sur sept sont franchies** — **G-2** entièrement
+([`PRD/decompte.sh`](PRD/decompte.sh), éprouvée sur les trois corpus entiers) et **G-1 pour le seul
+volet du Livre I** ([`PRD/gel-2026-07-27.md`](PRD/gel-2026-07-27.md)) — et **trois décisions d'auteur
+sur huit sont prises** : **D-1** (gel unique au 27 juillet 2026), **D-6** (l'instance d'arbitrage est
+l'auteur, sans délégation), **D-7** (risque 15 : **périmètre assumé et déclaré**). **D-2, D-3, D-4,
+D-5 et D-8 restent ouvertes**, les risques 13, 14 et 16 restent déclarés non comblés. ⚠ **Ne pas en
+tirer une requalification du volume** : *deux portes franchies sur sept ne font pas un volume
+recevable*, et un brouillon écrit hors portes ne franchit aucune porte — il en documente le coût.
+*(b)* ⚠ **Le TOC, le PRD et le conspectus n'ont pas été touchés PAR LA RÉDACTION — ils l'ont été par
+la passe d'arbitrage qui a suivi, et la distinction est toute la règle d'escalade.** À la rédaction,
+aucun des trois n'a bougé, conformément au PRD (Annexe A) : *un rédacteur ne corrige jamais le TOC,
+ce PRD ni le Conspectus — il **remonte**.* Ce sont les **remontées** qui ont ensuite été traitées, par
+une passe de plan et de gouvernance distincte (TOC v0.24, PRD v0.8, conspectus réaligné) — jamais une
+pièce corrigeant son propre cahier des charges. **Leurs champs Statut disent toujours zéro pièce
+**recevable**, et c'est correct** : onze brouillons hors portes n'en font aucune. Ne pas les
+« corriger » pour ces pièces.
+*(c)* ⚠ **Les treize remontées ouvertes par cette rédaction — R-IV-01 à R-IV-13 — sont SOLDÉES depuis
+le 27 juillet 2026 ; il n'en reste aucune d'ouverte.** Chacune a été **portée là où elle fait foi**,
+jamais close sur place : au **PRD** pour une décision d'auteur, au **TOC** pour un réalignement de
+plan (décision 8), à **l'appareil** pour une dette d'outillage. **Le tableau des issues est au
+[`README.md` de `Livre I/`](Livre%20I/README.md)** et n'est pas repris ici. Quatre points sont à
+connaître au niveau du dossier. **(1)** **R-IV-01 est close par D-7 — périmètre assumé et déclaré** :
+la somme ne traite pas l'accord entre agents sous défaillance, et les **ch. 6, 37 et 48 sont fermés**
+à cette matière — les rouvrir rouvrirait la décision. **(2)** **R-IV-05 et R-IV-09 sont closes par
+versement d'appareil** : [`PRD/check-sieges.py`](PRD/check-sieges.py) vérifie **inter-pièces** qu'un
+siège déclaré n'est pas reconstruit ailleurs et que toute pièce touchant sa matière y renvoie —
+validé par mutation, il a trouvé **quatre défauts réels** au premier passage — dont **deux sièges sur
+trois ne portaient aucun marqueur** dans le texte. **(3)** **R-IV-12 et R-IV-13 sont closes par
+réalignement du TOC**, et la classe qu'elles nommaient est désormais **écrite en règle à l'Annexe C**
+— voir ci-dessous. **(4)** ⚠ **Une remontée close ne rend pas la pièce recevable** : *zéro remontée
+ouverte veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée*, rien de
+plus.
 *(d)* **Le `.html` est un rendu, jamais une seconde source** : toute correction se fait au `.md` et
 se reporte au même commit. Le compendium n'a **pas** de pipeline de rendu — les trois copies du
 FESP appartiennent aux Vol. I, II et III, et aucune n'a été copiée ici. Le rendu et ses huit
@@ -64,11 +82,17 @@ du socle d'un volume** est **comblée par le texte rédigé d'un autre volume** 
 exact dans son périmètre** — il ne se corrige pas après coup, sa lacune de couverture étant une
 information datée. **Trois conséquences.** *(1)* Une pièce se rédige sur **l'intégralité de son
 périmètre de fusion**, jamais sur la seule source que le plan met en avant — le ch. 7 a dû être
-corrigé pour avoir manqué cette règle. *(2)* La **collation de fond (porte G-4)** devrait poser la
-distinction *lacune de couverture / contradiction* **en règle**, et balayer systématiquement les
-lacunes déclarées d'un volume contre le texte rédigé des deux autres. *(3)* **Aucun contrôle outillé
-ne le fait aujourd'hui**, et le vérificateur du skill ne le fera pas — c'est un contrôle de fond, pas
-de forme.
+corrigé pour avoir manqué cette règle. *(2)* ☑ **La règle est écrite depuis la v0.24 du TOC**, au
+registre de l'**Annexe C** : la **collation de fond (porte G-4)** pose la distinction *lacune de
+couverture / contradiction* et balaie systématiquement les lacunes déclarées d'un volume contre le
+texte rédigé des deux autres. ⚠ **Elle oblige aussi à ne pas confondre deux verbes** : **instruire**
+une lacune, c'est lui verser une **source primaire nouvelle datée** (cas de §10.9e) ; **requalifier**
+une lacune, c'est constater que sa **couverture** a changé sans qu'aucune source nouvelle soit entrée
+(cas de §10.8). *Une lacune requalifiée reste une lacune ; elle change de motif, pas d'état.*
+*(3)* **Aucun contrôle outillé ne le fait, et aucun ne le fera** — c'est un contrôle de fond, pas de
+forme, et le vérificateur du skill ne s'y substituera pas. ⚠ **Ne pas le confondre avec
+`PRD/check-sieges.py`**, qui est bien inter-pièces mais **de forme** : il vérifie qu'un siège n'est
+pas reconstruit, non qu'une lacune est bien qualifiée.
 
 **Un skill de projet porte la procédure de rédaction.** Depuis le 27 juillet 2026,
 [`.claude/skills/chapitre-compendium/`](../.claude/skills/chapitre-compendium/SKILL.md) tient la
@@ -104,7 +128,7 @@ jour quand une passe change une convention, plutôt que de laisser diverger la p
 - **Une classe de double revendication qu'aucun contrôle n'attrape.** Quand une ligne Fusion absorbe un **intervalle de chapitres** (« Vol. III ch. 5-7 ») pendant qu'un autre chapitre en prélève **une section** nommée (« §7.4 »), les deux renvois sont valides isolément et vivent à des grains différents : `check-toc.py` ne les rapproche pas. **Collation manuelle, à refaire à chaque révision d'une ligne Fusion citant un intervalle.**
 - **Une arrivée se déclare aux deux bouts.** Le §2.8.5 du Vol. I était déclaré à son *départ* (ch. 6) et nulle part à son *arrivée* (ch. 4) : un chapitre rédigé sur sa seule liste de sections aurait perdu la section que la v0.5 avait sauvée.
 
-⚠ **Ce que la v0.17 n'a pas touché, et qu'une passe de cohérence ne doit jamais toucher** : les **risques 13, 14, 15 et 16** (Livre V sans socle, couche d'exécution sans chapitre, accord entre agents sous défaillance, et — depuis la v0.22 — un chapitre sans socle dans un livre qui en a un) portent sur du **contenu manquant**, non sur une incohérence — leur arbitrage est une décision d'auteur (**D-7** du PRD). De même la thèse forte du ch. 19, à instruire par dénombrement.
+⚠ **Ce que la v0.17 n'a pas touché, et qu'une passe de cohérence ne doit jamais toucher** : les **risques 13, 14 et 16** (Livre V sans socle, couche d'exécution sans chapitre, et — depuis la v0.22 — un chapitre sans socle dans un livre qui en a un) portent sur du **contenu manquant**, non sur une incohérence — leur arbitrage est une décision d'auteur (**D-2**, **D-3**, **D-8** du PRD), et **une passe de cohérence ne les tranche pas**. De même la thèse forte du ch. 19, à instruire par dénombrement. ⚠ **Le risque 15 sort de cette liste depuis la v0.24, et il faut lire comment** : il est **tranché par D-7 — périmètre assumé et déclaré** —, ce qui **ne le comble pas** mais le **borne**. Les ch. 6, 37 et 48 sont **fermés** à l'accord entre agents sous défaillance ; y ajouter une section rouvrirait la décision d'auteur, non le seul chapitre. *Un périmètre assumé n'est pas un angle mort résorbé : c'est un angle mort dont le lecteur est prévenu.*
 
 ## ⚠ Plafond dur : cinquante chapitres, jamais plus
 
@@ -134,6 +158,13 @@ sans payer ne l'est pas.
    chapitre neuf en ajoute une. Ne pas « compenser » un ajout de mots par une fusion — les deux
    gestes sont indépendants (décision 13b).
 6. **Exécuter `python PRD/check-toc.py`** : **C15** refuse le dépassement, **C1** la discontinuité.
+
+⚠ **Trois contrôles vivent désormais dans `PRD/`, et ils ne se tuyautent jamais l'un dans l'autre** —
+le code de sortie du dernier maillon masquerait l'échec des précédents : `check-toc.py` (C1-C15, le
+plan), **`check-sieges.py` (S1-S5, inter-pièces — qu'un siège déclaré ne soit pas reconstruit
+ailleurs, et que toute pièce touchant sa matière y renvoie)**, et `decompte.sh --verifier` (la
+volumétrie, quatre points d'ancrage sur les trois corpus sources). Chacun a son harnais de mutation
+et se vérifie comme le reste : *un script de contrôle est du contenu.*
 
 ⚠ **Ce que le plafond n'autorise pas : retirer un chapitre pour faire de la place.** Une somme qui
 perd de la matière pour tenir un décompte a échangé un défaut visible — un chapitre de trop —
