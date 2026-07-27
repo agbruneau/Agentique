@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 8 — Anatomie : MCP (agent-outil) et A2A (agent-agent) · La somme agentique</title>
+<meta name="description" content="« MCP dans les agents, A2A entre les agents » — doctrine de complémentarité déclarée par le projet A2A (non un accord des deux projets) qui fournit le premier critère de découpage architectural, sans le contraindre.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre I · Chapitre 8</div>
+  <ol>
+    <li><a href="#s81"><span class="num">8.1</span>MCP comme couche de contrat : problème N×M, primitives, transports</a></li>
+    <li><a href="#s82"><span class="num">8.2</span>Jalons datés, autorisation et sémantique des résultats</a></li>
+    <li><a href="#s83"><span class="num">8.3</span>Conformité, registre, dépréciation et gouvernance</a></li>
+    <li><a href="#s84"><span class="num">8.4</span>A2A v1.0 : la délégation entre pairs</a></li>
+    <li><a href="#s85"><span class="num">8.5</span>L&#x27;ACP protocolaire, l&#x27;alternative décentralisée et l&#x27;état de la standardisation</a></li>
+    <li><a href="#s86"><span class="num">8.6</span>La frontière : une complémentarité déclarée, et par qui</a></li>
+    <li><a href="#s87"><span class="num">8.7</span>Les intégrations infonuagiques : lire le statut, pas la présence</a></li>
+    <li><a href="#s88"><span class="num">8.8</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.23 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="08-anatomie-mcp-a2a.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique</div>
+  <h1><span class="chap">Chapitre 8</span>Anatomie : MCP (agent-outil) et A2A (agent-agent)</h1>
+  <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11)</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — portes G-1, G-2 et G-3 ouvertes ; rédaction sur instruction d'auteur du 27 juillet 2026</dd>
+    <dt>Date de gel</dt>
+    <dd><strong>Aucune</strong> (D-1 non prise). Deux gels de source : <strong>juin 2026</strong> (Vol. I), <strong>16 juillet 2026</strong> (Vol. II). ⚠ <strong>Ce chapitre porte la péremption la plus courte de toute la somme, et elle se compte en heures.</strong> L'anatomie décrite est celle de la <strong>révision 2025-11-25</strong> ; une <strong>révision candidate, gelée le 21 mai 2026, a sa ratification annoncée pour le 28 juillet 2026</strong> — soit <strong>le lendemain de la date de rédaction de ce chapitre</strong>. Si elle est ratifiée, l'anatomie du § 8.1 et du § 8.2 est <strong>à revalider en bloc</strong>, sources primaires à extraire</dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte). Résolution contre le <strong>Vol. I <em>Monographie</em> §3.2-3.3 et §2.5.4</strong> (régime <strong>[C]</strong>) et le <strong>Vol. II <em>Monographie</em> ch. 2</strong> — entrées assignées par le TOC : <strong>F-01, F-02, F-03, F-16</strong>, à niveau conservé, <strong>préfixées de leur volume</strong> tant que G-3 n'a pas renuméroté</dd>
+    <dt>Garde-fous balayés</dt>
+    <dd>Vol. II — <strong>réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : six occurrences</strong>, § 8.1.4, § 8.2.2 (deux), § 8.3.1, § 8.6.1 et § 8.7, chacune tenue ; <strong>R-1 : une occurrence</strong>, § 8.5.1 ; <strong>R-8 (sigle jamais nu) : cinq occurrences</strong>, § 8.5.1 — le siège de l'encadré est au <strong>ch. 7 § 7.5</strong>, auquel ce chapitre renvoie <strong>sans le reconstruire</strong> ; <strong>métriques auto-déclarées : trois occurrences</strong>, § 8.4.2, § 8.6.3 et § 8.7, attribuées. R-2 à R-7 : <strong>zéro occurrence</strong>. Vol. III — <strong>R-02 (qualification par ce que la spécification démontre) : trois occurrences</strong>, § 8.2.2 et § 8.4.2 (deux) ; <strong>R-13 : cinq occurrences</strong>, mêmes que R-8 ; <strong>R-14 : quatre occurrences</strong>, § 8.2.3, § 8.6.1, § 8.7 et § 8.8. R-01, R-03 à R-12 : <strong>zéro occurrence</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ 10 000 mots de corps (§ 8.1 à § 8.7) — le plus lourd du Livre I, sept sections contre quatre à six ailleurs. ⚠ <strong>Aucun décompte n'est publiable</strong> tant que G-2 est ouverte</dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>« MCP dans les agents, A2A entre les agents » — doctrine de complémentarité <strong>déclarée par le projet A2A</strong> (non un accord des deux projets) qui fournit le premier critère de découpage architectural, sans le contraindre.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.23, entrée du chapitre 8.</span>
+</div>
+
+<h2 id="s81"><span class="sig">§ 8.1</span>MCP comme couche de contrat : problème N×M, primitives, transports</h2>
+
+<h3>8.1.1 Le problème N×M et la critique du slogan</h3>
+
+<p>Ce que le protocole agent-outil standardise <strong>n'est pas l'appel d'outil en lui-même</strong> — la façon dont un modèle émet une invocation relève de l'ingénierie et a été traitée au ch. 4 § 4.4 — mais le <strong>contrat</strong> entre un client, hébergé par l'hôte agentique, et un serveur, exposé par un fournisseur de capacités.</p>
+
+<p>Le problème traité est combinatoire et <strong>familier de l'intégration d'entreprise</strong> (ch. 1 § 1.3.1) : faire dialoguer <em>N</em> agents avec <em>M</em> outils sans standard impose <em>N</em>×<em>M</em> intégrations point-à-point ; une couche de contrat partagée ramène ce coût à <em>N</em>+<em>M</em>. C'est exactement le geste du modèle de données canonique (ch. 1 § 1.6.1), transposé à l'axe agent-outil — et il vaut d'être reconnu comme tel plutôt que présenté comme une nouveauté.</p>
+
+<div class="avert">
+  <p><strong>Le slogan promotionnel d'un « port universel de l'IA » capture l'ambition, mais reste un objet de critique légitime, et la critique est précise.</strong> Un port universel <strong>négocie électriquement ses modes</strong> ; ce protocole, lui, <strong>ne porte pas de couche riche de négociation de capacités ni de confiance établie</strong> entre les parties. L'appariement est conforme <strong>au transport et au schéma, non au sens</strong> : un client peut se brancher sur un serveur <strong>sans qu'aucun mécanisme ne garantisse que l'intention de l'agent corresponde au comportement réel de l'outil</strong>.</p>
+</div>
+
+<p><em>Le contrat est donc réel mais étroit : il fixe la forme de l'échange, pas son interprétation.</em> C'est le verrou que le ch. 9 § 9.4 prend pour objet, et la première illustration concrète de la thèse du ch. 2 — les protocoles agentiques <strong>présupposent</strong> l'accord sémantique et ne le fournissent pas.</p>
+
+<h3>8.1.2 Architecture et primitives, sous l'angle de la bidirectionnalité négociée</h3>
+
+<p>L'architecture repose sur un triangle <strong>hôte / client / serveur</strong> communiquant par appels de procédure en JSON : l'hôte instancie <strong>un client par serveur connecté</strong>, et chaque serveur expose ses capacités.</p>
+
+<p>L'apport propre à l'analyse d'interopérabilité tient moins à l'inventaire des primitives — outils, ressources, gabarits d'invite, déjà décrits au ch. 4 § 4.4 — qu'à la <strong>grille de contrôle</strong> qui les distingue :</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Primitive</th><th>Contrôlée par</th><th>Ce que cela prescrit</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Outils</strong></td><td>le <strong>modèle</strong></td><td>c'est le modèle qui décide de les invoquer</td></tr>
+    <tr><td><strong>Ressources</strong></td><td>l'<strong>application</strong></td><td>l'hôte décide quel contexte injecter</td></tr>
+    <tr><td><strong>Gabarits d'invite</strong></td><td>l'<strong>utilisateur</strong></td><td>déclenchement explicite</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 8.1 — La répartition du contrôle entre primitives : une clause du contrat, non un détail d'implémentation.</p>
+
+<div class="avert">
+  <p><strong>Cette répartition est elle-même une clause du contrat</strong> : elle prescrit <strong>qui, dans la chaîne, est autorisé à mettre une primitive en mouvement</strong>. La lire comme un simple classement fonctionnel fait manquer ce qu'elle porte de gouvernance.</p>
+</div>
+
+<p>Le trait le plus distinctif au regard d'une API REST classique est l'existence de <strong>primitives client</strong>, qui <strong>inversent le sens du dialogue</strong> :</p>
+
+<ul class="puces">
+  <li>l'<strong>échantillonnage</strong> — le serveur peut demander à l'hôte une complétion du modèle ;</li>
+  <li>la <strong>sollicitation</strong> — le serveur peut demander une information structurée manquante, en cours d'exécution ;</li>
+  <li>les <strong>racines</strong> — l'hôte délimite le périmètre de système de fichiers accessible.</li>
+</ul>
+
+<p>Ces canaux instaurent une interopérabilité <strong>négociée et interactive, bidirectionnelle</strong>, absente du modèle requête-réponse unidirectionnel. <em>Le contrat n'est plus un appel et son retour, mais un échange où le serveur peut, à son tour, interroger l'hôte.</em></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> c'est le premier endroit de la somme où un contrat d'interface autorise explicitement l'appelé à solliciter l'appelant. Le ch. 1 § 1.1.3 posait le contrat comme publication de ce qu'un système offre et exige ; ici, il devient un <strong>protocole de conversation</strong>. Le socle n'établit pas cette lecture ; elle est proposée comme telle.</p>
+
+<h3>8.1.3 Transports : une trajectoire du couplage vers le découplage</h3>
+
+<p>L'histoire des transports <strong>se lit comme une décroissance progressive du couplage</strong>, et c'est l'illustration la plus nette de l'invariant du Livre dans tout le mouvement.</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Étape</th><th>Mécanisme</th><th>Couplage résiduel</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Entrée-sortie standard</strong></td><td>le serveur est un sous-processus local de l'hôte</td><td><strong>fort</strong> — cycle de vie et machine partagés</td></tr>
+    <tr><td><strong>HTTP à deux points d'accès</strong></td><td>un point pour les requêtes, un pour le flux d'événements</td><td>déprécié dès la révision suivante</td></tr>
+    <tr><td><strong>HTTP diffusable à point unique</strong></td><td>un seul point d'accès</td><td><strong>résiduel</strong> — un identifiant de session épingle un client à une instance</td></tr>
+    <tr><td><strong>Cœur sans état</strong> <em>(candidat)</em></td><td>suppression de la poignée de main et de l'identifiant de session</td><td><strong>aucun</strong> — serveur déployable derrière un répartiteur à tourniquet</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 8.2 — La trajectoire des transports : quatre étapes, un couplage qui décroît jusqu'à l'absence d'état partagé.</p>
+
+<div class="avert">
+  <p><strong>La dernière étape est une cible architecturale, non un acquis déployé.</strong> Elle relève d'une <strong>révision candidate</strong> ; le § 8.2.1 en donne le statut exact.</p>
+</div>
+
+<h3>8.1.4 Une interface d'outillage assortie d'un cadre d'autorisation</h3>
+
+<div class="avert">
+  <p><strong>Formulation imposée, tenue ici et à ses cinq autres occurrences (réserve F-01 du Vol. II) : ce protocole est assorti d'un <em>cadre d'autorisation</em>, jamais d'un protocole « sécurisé ».</strong> La distinction n'est pas de style. Un cadre fournit les mécanismes ; <strong>la sécurité dépend de l'implémentation qui les met en œuvre</strong>, et le ch. 11 expose ce que le socle nomme comme risques attachés. Écrire « protocole sécurisé » attribuerait à la spécification une propriété que seule une mise en œuvre peut porter — et c'est exactement ce que le garde-fou R-02 du Vol. III proscrit en matière cryptographique.</p>
+</div>
+
+<h2 id="s82"><span class="sig">§ 8.2</span>Jalons datés, autorisation et sémantique des résultats</h2>
+
+<h3>8.2.1 Les cinq jalons : trajectoire de maturation d'un standard</h3>
+
+<p>La succession des révisions constitue une <strong>étude de cas de gouvernance d'un standard</strong> (ch. 1 § 1.2.2), où chaque jalon ajoute une couche au contrat.</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Révision</th><th>Date</th><th>Apports majeurs pour le contrat</th></tr></thead>
+  <tbody>
+    <tr><td><strong>2024-11-05</strong></td><td>5 nov. 2024</td><td>version initiale ; primitives de base ; transports local et HTTP à deux points d'accès</td></tr>
+    <tr><td><strong>2025-03-26</strong></td><td>26 mars 2025</td><td>transport diffusable à point unique ; <strong>cadre</strong> d'autorisation</td></tr>
+    <tr><td><strong>2025-06-18</strong></td><td>18 juin 2025</td><td>sorties structurées ; sollicitation ; racines ; serveur qualifié serveur de ressources</td></tr>
+    <tr><td><strong>2025-11-25</strong></td><td>25 nov. 2025</td><td>découverte d'identité ; schémas 2020-12 ; tâches asynchrones <strong>expérimentales</strong></td></tr>
+    <tr><td><strong>2026-07-28</strong> <em>(candidate)</em></td><td>gelée le 21 mai 2026</td><td>cœur sans état ; cadre d'extensions à nommage inversé ; <strong>politique de dépréciation formelle</strong> ; dépréciation de trois primitives et de l'enregistrement dynamique de client</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 8.3 — Cinq jalons en moins de deux ans, et un cinquième qui n'est pas acquis.</p>
+
+<div class="avert">
+  <p><strong>Trois précisions de statut, et la première est la plus importante de tout le chapitre.</strong></p>
+</div>
+
+<p><em>(a)</em> <strong>Le cinquième jalon est une révision candidate, non une révision publiée.</strong> Elle a été <strong>gelée le 21 mai 2026</strong> et sa <strong>ratification est annoncée pour le 28 juillet 2026</strong>. À la date de rédaction de ce chapitre — le 27 juillet 2026 —, <strong>elle n'est pas ratifiée</strong>, et l'anatomie décrite aux § 8.1 et § 8.2 est celle de la <strong>révision 2025-11-25</strong>. Sa portée reste susceptible d'ajustement avant publication.</p>
+
+<p><em>(b)</em> <strong>Cette révision porte des changements cassants</strong>, et non seulement des ajouts : suppression de la poignée de main et de l'identifiant de session, dépréciation de trois primitives, remplacement du mécanisme d'enregistrement de client. Une ratification <strong>périmerait l'anatomie en bloc</strong>, et non par retouches.</p>
+
+<p><em>(c)</em> <strong>La cadence elle-même est un fait d'interopérabilité</strong> : cinq jalons en moins de deux ans témoignent d'un standard <strong>en maturation rapide</strong>, où la rétrocompatibilité et la dépréciation deviennent des objets de spécification à part entière. C'est un signe de maturité — et, simultanément, un coût pour qui doit épingler une version.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>La densité de révisions millésimées rejoint une critique adressée à l'écosystème : <em>un protocole d'interopérabilité ne vaut que par la stabilité de son contrat dans le temps</em>, et <strong>la profusion de spécifications versionnées par date constitue elle-même une source de fragmentation</strong>. Une grille d'analyse sémantique situe ces gains <strong>essentiellement aux niveaux technique et syntaxique</strong> — transports, schémas, autorisation. Le niveau sémantique reste <strong>repoussé vers la couche applicative</strong> (ch. 9 § 9.4).</p>
+</div>
+
+<h3>8.2.2 Autorisation et identité : le serveur comme serveur de ressources</h3>
+
+<p>L'autorisation est <strong>un cas d'étagement plutôt que de réinvention</strong> : elle réutilise massivement la pile d'identité classique posée au ch. 3 § 3.2.</p>
+
+<p>Une révision qualifie le serveur de <strong>serveur de ressources</strong>, en lui imposant la <strong>validation d'audience</strong> des jetons et la <strong>découverte de ses métadonnées</strong> par des mécanismes normalisés. ⚠ <strong>La validation d'audience est ici décisive, et sa fonction mérite d'être nommée précisément : elle confine un jeton à un destinataire et bloque la classe d'attaque du mandataire confus</strong> — celle-là même que le ch. 3 § 3.1.1 identifiait comme défaut structurel des architectures déléguées. C'est l'un des rares endroits du mouvement où un mécanisme protocolaire ferme une classe d'attaque nommée.</p>
+
+<p>Une révision ultérieure ajoute la découverte d'identité, des documents de métadonnées de client, et le <strong>consentement incrémental</strong> — élargir le périmètre d'accès au fil des besoins plutôt que d'exiger d'emblée une autorisation large. C'est le moindre privilège du ch. 6 § 6.5.2, porté par le protocole plutôt que par l'exploitant.</p>
+
+<div class="avert">
+  <p><strong>Qualification, au sens de R-02 du Vol. III, et rappel de la réserve F-01.</strong> Ce que ce cadre <strong>démontre</strong> : qu'un jeton présenté est confiné à l'audience déclarée, et que les métadonnées du serveur sont découvrables par un chemin normalisé. Ce qu'il <strong>ne démontre pas</strong> : que l'implémentation valide effectivement l'audience, que le serveur est digne de confiance, ni que l'outil invoqué se comporte comme sa description l'annonce. <strong>Cadre d'autorisation, jamais « sécurisé ».</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>Une réserve de statut sur le socle sous-jacent</strong> : le cadre d'autorisation de nouvelle génération sur lequel s'appuie cette pile <strong>demeure un projet à la date d'arrêt des sources</strong>, la version antérieure restant la base normative en vigueur. Le ch. 3 § 3.2.1 porte la même réserve, et les deux doivent être levées ensemble à G-1.</p>
+</div>
+
+<h3>8.2.3 Vers une sémantique des résultats : sorties structurées et tâches</h3>
+
+<p>L'effort pour donner un <strong>sens machine-vérifiable</strong> aux résultats d'outils progresse par étapes : des <strong>sorties structurées</strong> et des <strong>liens de ressources</strong> permettent à un serveur de renvoyer non plus un bloc de texte libre mais une <strong>charge utile typée</strong> ; une révision ultérieure adopte un dialecte de schéma normalisé pour les décrire.</p>
+
+<p>S'y ajoutent les <strong>tâches asynchrones</strong>, ⚠ <strong>expérimentales</strong> : un appel d'outil peut renvoyer un identifiant de tâche — logique « appeler maintenant, récupérer plus tard » — au lieu d'un résultat immédiat. Ce mécanisme <strong>se rapproche, sans s'y identifier</strong>, de l'exécution durable de l'intégration d'entreprise : il gère la longue durée, mais <strong>ne fournit pas les garanties de reprise et d'idempotence</strong> d'un moteur durable. Leur contrat <strong>ne saurait être présenté comme stable</strong>.</p>
+
+<div class="avert">
+  <p><strong>Une limite de fond demeure, et elle est la plus importante de la section : un schéma n'est pas une ontologie.</strong> Un dialecte de schéma contraint la <strong>forme</strong> d'une sortie, <strong>non son interprétation</strong> ; il ne dit ni ce que les valeurs signifient, ni comment elles se relient à un vocabulaire partagé. Que ce verrou n'ait pas de réponse protocolaire relève d'une <strong>absence de documentation</strong> au sens de R-14 : le socle n'en recense pas, ce qui n'établit pas qu'il n'en existe aucune. Le ch. 9 § 9.4 l'instruit.</p>
+</div>
+
+<h2 id="s83"><span class="sig">§ 8.3</span>Conformité, registre, dépréciation et gouvernance</h2>
+
+<h3>8.3.1 Du projet d'éditeur à la fondation : l'appareil de gouvernance</h3>
+
+<p>La maturation en standard interopérable passe par un <strong>appareil qui dépasse la spécification</strong>.</p>
+
+<p>Le <strong>registre officiel</strong> fournit un catalogue de serveurs reposant sur un descripteur normalisé et une <strong>vérification de propriété d'espace de noms</strong> ; il distingue la <strong>découverte</strong> (registre) de la <strong>distribution</strong> (place de marché) — distinction que le ch. 9 § 9.1 approfondit.</p>
+
+<p>Le versant <strong>conformité</strong> s'appuie sur un cadre dédié et un outil d'inspection, qui <strong>ciblent les révisions datées</strong>. ⚠ Conformément à la réserve F-01, ces outils valident qu'une implémentation <strong>respecte une révision</strong> ; ils ne la déclarent pas sécurisée.</p>
+
+<p>La <strong>politique de dépréciation formelle</strong> introduite par la révision candidate — statuts <em>actif</em>, <em>déprécié</em>, <em>retiré</em>, assortis d'un préavis d'au moins douze mois entre dépréciation et retrait — constitue un mécanisme de maturité <strong>comparable à ceux des organismes de normalisation classiques</strong> (ch. 3 § 3.4.4) : <em>elle rend l'évolution du contrat prévisible</em>. C'est, de toutes les nouveautés annoncées, celle qui intéresse le plus une institution réglementée — et celle dont le ch. 7 § 7.1.5 faisait le troisième terme de l'invariant.</p>
+
+<p>La bascule la plus significative reste le <strong>passage du projet d'un éditeur à une fondation neutre</strong>, en décembre 2025 (ch. 7 § 7.4) : le standard est soustrait au contrôle d'un acteur unique.</p>
+
+<h3>8.3.2 Registres, passerelles et découverte d'entreprise — versant outillage</h3>
+
+<div class="avert">
+  <p><strong>Cette sous-section traite le versant <em>outillage</em> seul.</strong> La <strong>pile protocolaire</strong> est au ch. 9 § 9.2 ; les <strong>registres gouvernés</strong>, au versant identité et conformité, sont au <strong>ch. 15</strong> (Livre II). Trois traitements distincts d'un même objet, et le partage est déclaré au plan.</p>
+</div>
+
+<p>À mesure que les serveurs se multiplient, <strong>la découverte et la gouvernance deviennent des problèmes d'ingénierie distincts</strong>. L'écosystème dépasse les <strong>dix mille serveurs publics</strong> — ordre de grandeur qui <strong>change la nature du risque</strong> plutôt que son intensité.</p>
+
+<p>En entreprise, une <strong>passerelle</strong> s'interpose entre les agents et les serveurs pour centraliser l'authentification, l'autorisation à granularité fine, la journalisation et l'application de politiques — jouant le rôle qu'une passerelle d'API tient dans l'intégration classique (ch. 1 § 1.4.3). ⚠ <strong>Cette médiation est aussi une nécessité de sécurité</strong> : un catalogue ouvert de plusieurs milliers de serveurs constitue <strong>une surface de chaîne d'approvisionnement de premier plan</strong>.</p>
+
+<p>Un serveur peut être <strong>malveillant dès l'origine</strong> ou <strong>le devenir par mise à jour silencieuse</strong>, et une description d'outil piégée peut détourner l'agent. Ces vecteurs sont analysés au <strong>ch. 11</strong>.</p>
+
+<p>La découverte d'entreprise impose donc une posture de <strong>liste d'admission</strong>, d'<strong>épinglage de versions</strong> et de <strong>revue des serveurs admis</strong> — par analogie avec la gestion d'un registre d'artefacts logiciels. <em>Le contrat d'outil ne suffit pas si sa provenance n'est pas garantie : l'évolution non maîtrisée d'un serveur est elle-même un risque.</em></p>
+
+<h2 id="s84"><span class="sig">§ 8.4</span>A2A v1.0 : la délégation entre pairs</h2>
+
+<h3>8.4.1 Du Contract Net aux patrons transposés</h3>
+
+<p>La coordination par appel d'offres <strong>précède de plusieurs décennies</strong> l'ère des grands modèles. Un protocole formalisait dès 1980 un cycle d'allocation de tâches entre nœuds d'un solveur distribué : <strong>annonce → appel d'offres → soumissions → attribution</strong>. Ce schéma a été repris et standardisé, aux côtés d'un langage de communication à performatifs (ch. 7 § 7.2.1).</p>
+
+<p>Transposé aux essaims d'agents, le patron <strong>reste pertinent</strong> : un coordinateur peut solliciter plusieurs agents spécialisés et retenir celui dont la réponse, le coût ou la disponibilité conviennent le mieux.</p>
+
+<div class="avert">
+  <p><strong>Mais le constat d'état est net et il vaut d'être posé sans détour : aucun protocole majeur — ni agent-outil, ni agent-agent, ni l'alternative décentralisée — ne normalise un cycle d'enchères complet à la manière historique.</strong> La négociation y demeure soit <strong>implicite</strong>, portée par le langage naturel dans l'invite, soit <strong>ad hoc</strong>, codée au cas par cas dans la logique applicative.</p>
+</div>
+
+<p>La leçon d'adoption de la lignée historique — <strong>l'échec relatif d'un formalisme lourd</strong> (ch. 7 § 7.2.1) — pèse manifestement sur les choix de conception actuels, qui privilégient des <strong>contrats minimaux</strong>. C'est un arbitrage assumé, dont le § 8.6.2 mesure le prix.</p>
+
+<h3>8.4.2 Agent Card signée, modèle de tâche et structure des messages</h3>
+
+<p>Le protocole agent-agent constitue la <strong>référence de l'axe horizontal</strong>. Sa version 1.0 en fixe les structures essentielles.</p>
+
+<p>L'<strong>auto-description</strong> repose sur l'<strong>Agent Card</strong> : un document publié à un emplacement <strong>bien connu</strong>, conforme à un mécanisme normalisé, qui déclare <strong>l'identité, les capacités et les modalités d'interaction</strong> de l'agent.</p>
+
+<p>L'unité de travail est la <strong>tâche</strong>, objet à état traversant un cycle de vie défini — soumise, en cours, requérant une entrée ou une authentification, puis achevée, échouée, annulée ou rejetée. Les échanges s'articulent autour d'une hiérarchie <strong>message / partie / artefact</strong>.</p>
+
+<p>Trois consolidations de la version 1.0 méritent d'être relevées :</p>
+
+<ol class="numeros">
+  <li>la <strong>signature des Agent Cards</strong>, qui lie l'authenticité de la carte <strong>à son domaine d'origine</strong> ;</li>
+  <li>la prise en charge de la <strong>multi-location</strong> ;</li>
+  <li>la <strong>pluralité de liaisons de transport</strong> — JSON sur HTTP, appels de procédure en JSON, appels de procédure binaires.</li>
+</ol>
+
+<div class="avert">
+  <p><strong>La troisième illustre l'argument d'étagement du ch. 7 § 7.1.6</strong> : ce protocole <strong>ne réinvente pas la couche de transport</strong>, il réemploie la pile classique.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Qualification, au sens de R-02 du Vol. III — et la nuance porte sur ce qu'une signature établit.</strong> Une Agent Card signée <strong>démontre</strong> que la carte a été émise par le détenteur de la clé associée au domaine déclaré, et qu'elle n'a pas été altérée. Elle <strong>ne démontre pas</strong> que l'agent se comporte conformément aux capacités qu'il déclare, ni que le domaine est digne de confiance. <em>Signer une déclaration l'authentifie ; cela ne la rend pas vraie.</em> Le ch. 16 rencontrera la même limite sur le passeport d'agent.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Lacune héritée, portée et non comblée</strong> <em>(PRD du Vol. II §10.9)</em>. Quatre objets <strong>ne sont pas au socle</strong> : l'<strong>ancrage de confiance</strong> des Agent Cards signées — c'est-à-dire à quelle autorité remonte la chaîne —, la <strong>date exacte de la v1.0</strong>, la <strong>multi-location</strong>, et l'<strong>inventaire infonuagique</strong> du protocole agent-outil (§ 8.7). Ils sont <strong>signalés ici, encadrés, et renvoyés au ch. 49</strong>. Les combler par une source de moindre qualité serait la faute que la règle du dépôt proscrit.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Métrique auto-déclarée, attribuée</strong> : le franchissement d'un seuil de <strong>plus de 150 organisations contributrices</strong> en avril 2026 est <strong>rapporté par la fondation gestionnaire</strong>. La réserve du ch. 7 § 7.6 s'applique intégralement — <em>soutien n'est pas production</em>.</p>
+</div>
+
+<h3>8.4.3 Délégation de tâches et collaboration inter-cadriciels</h3>
+
+<p>La valeur propre de ce protocole réside dans la <strong>délégation</strong> : un agent client confie une tâche à un agent distant — relevant d'un autre cadriciel, d'un autre fournisseur, <strong>voire d'une autre organisation</strong> — qui exécute le travail et renvoie des artefacts.</p>
+
+<p>Le mécanisme franchit ainsi la <strong>frontière organisationnelle</strong>, c'est-à-dire <strong>le niveau le plus élevé de l'interopérabilité conceptuelle</strong> (ch. 1 § 1.1.2) : deux systèmes développés indépendamment collaborent <strong>sans intégration préalable</strong>, sur la seule base du contrat exposé par la carte et du cycle de vie de la tâche.</p>
+
+<div class="avert">
+  <p><strong>Une caractéristique de conception mérite d'être soulignée parce qu'elle est contre-intuitive : l'opacité voulue.</strong> L'agent distant <strong>n'expose ni son raisonnement interne, ni les outils qu'il mobilise, ni son modèle sous-jacent</strong> ; il ne présente qu'une interface de tâche et ses résultats.</p>
+</div>
+
+<p>Cette opacité est <strong>le pendant agentique du découplage</strong> : elle protège l'autonomie et la confidentialité du fournisseur <strong>tout en garantissant la substituabilité</strong> de l'agent délégataire derrière son contrat. Elle marque aussi la frontière avec l'axe vertical : <em>là où un serveur d'outils expose des capacités à contrôler finement par le client, un agent expose une capacité encapsulée à déléguer en bloc.</em></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> cette opacité est une force pour le découplage et une difficulté pour tout ce que le Livre III exigera. Un exploitant tenu de démontrer devant un tiers <strong>ce qui s'est passé</strong> ne peut pas produire l'état d'un traitement qu'il a délégué en bloc à un agent opaque. Le socle n'établit pas cette tension ; elle est proposée comme lecture, et le ch. 29 l'instruit.</p>
+
+<h2 id="s85"><span class="sig">§ 8.5</span>L'ACP protocolaire, l'alternative décentralisée et l'état de la standardisation</h2>
+
+<h3>8.5.1 La convergence par fusion — mécanique</h3>
+
+<div class="avert">
+  <p><strong>Partage déclaré avec le ch. 10 (décision 2 du TOC).</strong> La <strong>mécanique</strong> de la convergence se traite <strong>ici</strong>, sur la source du Vol. I ; la <strong>portée de risque</strong> de cette fusion se traite <strong>au ch. 10 § 10.5</strong>, sur la source du Vol. II. <em>Ni l'un ni l'autre ne reconstruit ce que porte son voisin</em> — et ce partage est l'un des deux écarts que la révision v0.17 du plan a soldés, l'objet ayant été revendiqué par les deux chapitres.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Convention de nomenclature, rappelée ici comme à chaque occurrence (R-8 du Vol. II, R-13 du Vol. III).</strong> L'<strong>ACP protocolaire</strong> désigne l'<em>Agent Communication Protocol</em> d'un centre de recherche et de son projet ouvert, sur l'axe agent-agent — <strong>à ne pas confondre</strong> avec l'<strong>ACP commercial</strong>, sur l'axe du commerce, traité au ch. 10 § 10.3.2. <strong>Le siège de l'encadré des quatre branches est au ch. 7 § 7.5</strong> ; il n'est pas reconstruit ici.</p>
+</div>
+
+<p>Conçu au début de 2025, l'ACP protocolaire reposait sur une approche <strong>résolument classique</strong> : une interface REST sur HTTP, des messages multipartites, des modes synchrone et asynchrone, et une découverte <strong>fonctionnant même hors ligne</strong>.</p>
+
+<p><strong>Sa trajectoire constitue l'enseignement central de cette sous-section.</strong> Le 29 août 2025, il <strong>a rejoint le protocole agent-agent</strong> sous l'égide de la fondation, accompagné de <strong>guides de migration</strong>. Plutôt qu'une concurrence prolongée entre standards homologues — qui aurait fragmenté l'écosystème et <strong>reproduit la dispersion qu'avait connue le monde des services web</strong> —, l'industrie a opté pour une <strong>convergence par fusion</strong>.</p>
+
+<p>Cette issue, où un protocole <strong>se fond dans un autre</strong> sous une fondation neutre, illustre un mode de <strong>standardisation par consolidation institutionnelle</strong>. Elle conforte la proposition du ch. 7 § 7.4 : la neutralité de gouvernance agit comme <strong>mécanisme anti-fragmentation</strong>.</p>
+
+<div class="avert">
+  <p><strong>Garde-fou R-1 du Vol. II</strong> : <strong>l'ACP protocolaire n'est pas un standard vivant.</strong> Son développement actif a cessé ; il ne subsiste qu'à travers le protocole absorbant et des adaptateurs.</p>
+</div>
+
+<h3>8.5.2 L'alternative décentralisée</h3>
+
+<div class="avert">
+  <p><strong>Un écart de titre est assumé et déclaré par le plan.</strong> Le protocole décentralisé arrive dans ce chapitre <strong>par l'intervalle</strong> de sa ligne Fusion, et il <strong>n'est pas nommé au titre</strong> — lequel reste « MCP (agent-outil) et A2A (agent-agent) ». Retoucher ce titre <strong>déplacerait un renvoi cité en clair dans huit chapitres</strong>, et cet objet y est traité <strong>comme un tiers comparé, non comme un objet du même rang</strong>. L'écart est déclaré, non oublié — c'est la même classe que le § 1.2 du ch. 1, couvert par l'intervalle sans être glosé au titre.</p>
+</div>
+
+<p>Ce protocole emprunte une voie <strong>résolument distincte</strong> : décentralisée, pair-à-pair. Son architecture s'organise en <strong>trois couches</strong> :</p>
+
+<ul class="puces">
+  <li>à la base, une couche d'<strong>identité</strong> fondée sur des <strong>identifiants décentralisés</strong>, déclinés dans une méthode propre, assortie de chiffrement et d'une authentification par signatures de message ;</li>
+  <li>au sommet, une couche de <strong>protocole applicatif</strong> ;</li>
+  <li>entre les deux, <strong>l'élément le plus original</strong> : un <strong>négociateur de méta-protocole</strong>, capable de négocier dynamiquement <strong>le protocole d'échange lui-même</strong>, à l'exécution.</li>
+</ul>
+
+<p>La sémantique des messages s'appuie sur des formats du Web sémantique (ch. 2 § 2.3.1).</p>
+
+<div class="avert">
+  <p><strong>Cette négociation de méta-protocole constitue la réponse la plus aboutie au problème de la négociation de capacités</strong>, en cela qu'elle relève du <strong>niveau dynamique</strong> du modèle LCIM (ch. 7 § 7.1.3) — celui où <em>le protocole lui-même devient objet d'accord à l'exécution</em>. C'est, dans tout ce mouvement, la seule proposition qui attaque ce niveau frontalement.</p>
+</div>
+
+<p>Sa <strong>maturité reste néanmoins conditionnée</strong> à celle de l'infrastructure d'identité décentralisée sous-jacente, dont l'adoption à large échelle <strong>n'est pas attendue avant 2027 environ</strong> — projection à traiter comme telle, non comme un fait daté.</p>
+
+<h3>8.5.3 Comparaison et état de la standardisation</h3>
+
+<p>L'état à la mi-2026 se laisse résumer par la confrontation de trois familles : le protocole agent-agent, <strong>stable et largement adopté</strong>, occupe le centre de gravité de l'axe horizontal ; l'ACP protocolaire y est <strong>désormais fusionné</strong> ; l'alternative décentralisée demeure <strong>plus expérimentale et tributaire</strong> de son socle d'identité.</p>
+
+<p>Au-delà des trois protocoles, <strong>plusieurs forums travaillent à coordonner l'ensemble</strong> — groupes communautaires de normalisation du Web, projets de spécification à l'organisme des protocoles d'Internet, initiatives de fondation autour d'un langage de définition d'agent.</p>
+
+<div class="avert">
+  <p><strong>Une perspective doit être maniée au conditionnel, et l'avertissement est explicite dans la source</strong> : une <strong>spécification conjointe</strong> rapprochant formellement l'axe vertical et l'axe horizontal <strong>est attendue mais ne fait l'objet d'aucun projet public</strong> à la date d'arrêt. <em>Toute affirmation sur son contenu ou son calendrier relève de la projection.</em></p>
+</div>
+
+<h2 id="s86"><span class="sig">§ 8.6</span>La frontière : une complémentarité déclarée, et par qui</h2>
+
+<h3>8.6.1 Limites et modes d'échec de l'axe vertical</h3>
+
+<p>Le contrat agent-outil présente des modes d'échec <strong>qui lui sont propres</strong> et tiennent à la nature <strong>lue-par-le-modèle</strong> de ses descriptions :</p>
+
+<ul class="puces">
+  <li><strong>l'empoisonnement d'outils</strong> — injecter des instructions malveillantes dans la <strong>description</strong> d'un outil, ingérée par le modèle <strong>comme si elle émanait d'une source de confiance</strong> ;</li>
+  <li><strong>le mandataire confus et le vol de jeton</strong> — exploiter une autorisation mal confinée, ce à quoi répond précisément la validation d'audience (§ 8.2.2) ;</li>
+  <li><strong>l'absence de versionnement sémantique des outils</strong> — <em>le contrat ne signale pas qu'un outil a changé de comportement</em> ;</li>
+  <li><strong>une découverte pauvre</strong>, qui ne permet pas un appariement fin entre tâche et outil (ch. 9 § 9.1).</li>
+</ul>
+
+<p>Le troisième point mérite d'être souligné : c'est <strong>l'évolution</strong>, troisième terme de l'invariant, qui manque ici. Un schéma stable peut recouvrir un comportement changé, et rien ne le signale.</p>
+
+<div class="avert">
+  <p><strong>Deux faits datés, et une qualification contestée qu'il faut rapporter comme telle.</strong> Une note sectorielle a fait le point sur l'accumulation de vulnérabilités ; une divulgation d'avril 2026 a <strong>estimé à environ 200 000 le nombre d'instances exposées</strong> par un comportement de transport par défaut. ⚠ <strong>La qualification de ce comportement comme « défaut de conception » demeure contestée</strong>, l'éditeur le tenant pour <strong>un choix intentionnel documenté</strong>. La somme <strong>rapporte le désaccord et ne le tranche pas</strong> — et le chiffre est une estimation d'un tiers, attribuée à sa source. Que ce désaccord n'ait pas été arbitré publiquement relève d'une <strong>absence de documentation</strong> au sens de R-14.</p>
+</div>
+
+<div class="avert">
+  <p>Et la réserve F-01 tient jusque dans la description des échecs : ce sont des <strong>risques attachés à un cadre d'autorisation</strong>, non la démonstration qu'un protocole « sécurisé » aurait failli.</p>
+</div>
+
+<h3>8.6.2 Modes d'échec propres à l'axe horizontal</h3>
+
+<p>La coordination agent-agent se déploie <strong>sur un spectre</strong>. À une extrémité, la <strong>négociation implicite</strong>, portée par le langage naturel dans l'invite — elle <strong>domine la pratique</strong>, au prix d'une <strong>absence de garantie vérifiable</strong> sur l'accord conclu. À l'autre, la <strong>négociation explicite</strong> — plus rigoureuse, <strong>peu déployée</strong>.</p>
+
+<p>Cette gradation détermine les modes d'échec :</p>
+
+<ul class="puces">
+  <li>un <strong>transport syntaxiquement valide n'exclut pas un désaccord sémantique</strong> sur l'intention : deux agents peuvent « s'entendre » sur des messages bien formés tout en <strong>interprétant divergemment la tâche</strong> ;</li>
+  <li>la délégation introduit ses pathologies — <strong>boucles et interblocages</strong> lorsque des agents se renvoient indéfiniment une tâche, <strong>ambiguïté des capacités annoncées</strong>, <strong>perte de l'engagement</strong> en cours de chaîne ;</li>
+  <li>multiplier les arêtes du graphe d'interaction <strong>élargit d'autant la surface d'attaque</strong>.</li>
+</ul>
+
+<p>Ces défaillances, <strong>irréductibles à un agent isolé</strong>, sont caractéristiques des systèmes composés, et le <strong>ch. 11</strong> en donne la taxonomie unifiée.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Les protocoles à <strong>engagements sociaux observables</strong> (ch. 7 § 7.2.1) offrent une réponse théorique à la non-vérifiabilité de la sémantique mentaliste, en ancrant l'accord dans des <strong>engagements publics</strong> plutôt que dans des états mentaux supposés — pont direct vers les contrats comportementaux probabilistes du ch. 7 § 7.1.5. La nécessité, pour les systèmes multi-agents, de <strong>poser des questions de clarification</strong> plutôt que de présumer l'accord est étayée empiriquement.</p>
+</div>
+
+<h3>8.6.3 « Dans les agents, entre les agents » : une doctrine déclarée par une partie</h3>
+
+<p>Reste la doctrine qui donne son titre au chapitre et porte sa thèse.</p>
+
+<p>Elle est <strong>explicite</strong> : le protocole agent-agent se déclare <strong>complémentaire du protocole agent-outil et non un remplacement</strong>. La répartition est énoncée sans ambiguïté — <em>l'un pour l'intégration des outils et du contexte au niveau de l'agent individuel, l'autre pour la communication et la coordination entre agents</em> —, et se résume dans la formule « <strong>dans les agents, entre les agents</strong> ».</p>
+
+<div class="avert">
+  <p><strong>Deux précisions d'attribution s'imposent, et elles sont le cœur de cette section.</strong></p>
+</div>
+
+<p><strong>Première : cette doctrine est celle du projet agent-agent.</strong> Le socle la trace <strong>au site de ce protocole</strong>, dans l'annonce de sa version 1.0. Elle <strong>n'est pas un accord conjoint publié par les deux projets</strong>, et la somme <strong>ne dispose d'aucune source établissant que l'autre projet l'a endossée dans ces termes</strong>. Cela n'en diminue pas la valeur — une déclaration publique de non-remplacement est un engagement que les spécifications ultérieures pourront confirmer ou démentir — <strong>mais cela en fixe le statut : une position déclarée par une partie, non un traité entre deux parties.</strong></p>
+
+<p><strong>Seconde : la formule « de nombreux systèmes utilisent les deux » n'est pas une métrique.</strong> Elle n'est ni chiffrée, ni datée, ni définie, et <strong>elle émane du même projet</strong>. Elle établit que la combinaison est <strong>prévue et revendiquée par les mainteneurs</strong> ; elle n'établit <strong>aucun volume de déploiement</strong>. ⚠ Le lecteur reconnaîtra ici la réserve centrale du ch. 7 § 7.6 — <em>le soutien déclaré ne vaut pas déploiement</em> — <strong>dans une variante plus discrète, et pour cela plus insidieuse</strong>.</p>
+
+<p>Ces réserves posées, que retenir ? <span class="auteur">Lecture de l'auteur</span> <strong>sa valeur n'est pas descriptive mais prescriptive</strong>. Elle fournit un <strong>critère de découpage</strong> — l'accès aux outils d'un côté, la délégation entre agents de l'autre —, et un critère de découpage est ce dont <strong>manque cruellement une organisation qui débute</strong>.</p>
+
+<div class="avert">
+  <p><strong>Mais un critère n'est pas une contrainte, et c'est le troisième terme de la thèse.</strong> Rien, dans les protocoles eux-mêmes tels que le socle les documente, <strong>n'empêche une équipe de faire transiter par des appels d'outils ce qui est en réalité une délégation entre agents</strong>, ou l'inverse. <em>La frontière entre les deux axes est une décision d'architecture que l'organisation doit prendre, documenter et défendre — elle n'est pas donnée par la technique.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Et la frontière est floue en pratique</strong>, ce que le plan tient pour un fait et non pour une opinion : les <strong>tâches asynchrones</strong> de l'axe vertical (§ 8.2.3) <strong>empiètent sur le terrain de la délégation</strong> de l'axe horizontal — recouvrement <strong>postérieur</strong> aux revues d'interopérabilité de l'écosystème, qui ne pouvaient donc pas en tenir compte. Mieux vaut retenir un <strong>critère de choix pragmatique</strong> qu'une frontière nette : <em>l'axe vertical lorsqu'on consomme une capacité bien délimitée sous le contrôle de l'hôte ; l'axe horizontal lorsqu'on délègue une tâche à un acteur opaque et autonome.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Il serait enfin malhonnête de laisser croire que cette doctrine est le seul découpage disponible.</strong> Le socle en documente <strong>au moins deux autres</strong> : une feuille de route séquentielle antérieure, <strong>dont le ch. 7 § 7.3 a montré que la deuxième étape est devenue obsolète comme prescription</strong> ; et le positionnement d'une couche d'infrastructure articulant l'espace <strong>par les couches plutôt que par les axes</strong>, que le ch. 10 § 10.2 examine. Que ces découpages soient moins commodes ou datés est défendable ; <strong>qu'ils n'existent pas ne l'est pas.</strong></p>
+</div>
+
+<h2 id="s87"><span class="sig">§ 8.7</span>Les intégrations infonuagiques : lire le statut, pas la présence</h2>
+
+<p>Un protocole ouvert <strong>ne vaut, pour une institution, que par les plateformes qui l'implémentent</strong>. Sur ce point, le socle documente l'axe horizontal avec précision — ⚠ <strong>et il faut d'abord relever une asymétrie : cette précision ne porte que sur lui.</strong></p>
+
+<p>L'état documenté au printemps 2026 est le suivant. Chez un premier fournisseur, le protocole est intégré à une plateforme d'atelier en <strong>préversion</strong>, et à un produit d'assistant en <strong>disponibilité générale depuis avril 2026</strong>. Chez un deuxième, l'intégration est portée par un environnement d'exécution d'agents. Chez le troisième, elle est <strong>d'origine</strong>, le protocole y étant né. ⚠ <strong>Ces statuts sont documentés par des sources d'avril 2026 et non revalidés à la date de gel.</strong></p>
+
+<p>Cet inventaire dit <strong>deux choses</strong>.</p>
+
+<p><strong>La première</strong> : les trois grands fournisseurs d'infonuagique public implémentent le protocole, et les trois <strong>siègent au comité de pilotage technique</strong> (ch. 7 § 7.4.1). <span class="auteur">Lecture de l'auteur</span> le socle établit les intégrations et la composition du comité ; <strong>la convergence qu'on y lit, et son caractère peu commun dans un marché disputé, est une inférence d'architecture</strong>, non un fait documenté.</p>
+
+<p><strong>La seconde est plus utile encore à qui prépare un dossier : les statuts diffèrent, et c'est la différence qui compte.</strong> Une <strong>préversion</strong> et une <strong>disponibilité générale</strong> n'engagent pas le fournisseur au même degré. <span class="auteur">Lecture de l'auteur</span> ⚠ le socle établit <strong>les statuts</strong>, <strong>pas ce qu'ils emportent</strong> : la somme ne documente ni les garanties de service attachées à chaque statut, ni leur réception par une seconde ligne de défense. Ce qui découle du fait tient en une consigne : <em>l'architecte prudent lit le statut avant de lire la marque.</em></p>
+
+<div class="avert">
+  <p><strong>Il faut enfin nommer une limite de ce chapitre plutôt que la laisser se combler par le silence.</strong> Le socle fournit cet inventaire pour l'axe horizontal ; <strong>il ne fournit pas d'inventaire équivalent, plateforme par plateforme et statut par statut, pour l'axe vertical</strong>. Ce qu'il documente de ce dernier se trouve du côté des <strong>cadriciels d'orchestration</strong>, et relève du ch. 23.</p>
+</div>
+
+<div class="avert">
+  <p><strong>L'absence d'un inventaire infonuagique de l'axe vertical dans le socle n'établit pas l'absence d'un tel support</strong> : elle établit que <strong>la somme ne peut pas en dresser la carte</strong>. C'est, au sens de R-14 du Vol. III, une <strong>absence de documentation</strong> — degré 3, qui n'autorise aucune conclusion. <em>La distinction est celle entre ce qui n'existe pas et ce qui n'a pas été vérifié ; la somme s'astreint à ne jamais la franchir.</em></p>
+</div>
+
+<section class="statut" id="s88">
+
+<h2><span class="sig">§ 8.8</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong></p>
+</div>
+
+<p><strong>Ce qui est enfreint</strong> — portes <strong>G-1</strong>, <strong>G-2</strong>, <strong>G-3</strong> ouvertes ; instruction d'auteur du 27 juillet 2026. Conséquences habituelles : aucun énoncé central au sens de CA-IV-01, aucun décompte publiable, renvois de plan et non de texte (ch. 9, 10, 11, 15, 16, 23, 29, 49 non rédigés).</p>
+
+<p><strong>Remontée ouverte par ce chapitre — et c'est la plus urgente de tout le Livre I :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-10 — non bloquante, mais d'échéance immédiate.</strong> La <strong>révision candidate</strong> du protocole agent-outil a sa <strong>ratification annoncée pour le 28 juillet 2026</strong>, soit <strong>le lendemain de la rédaction de ce chapitre</strong>. Elle porte des <strong>changements cassants</strong> : cœur sans état, dépréciation de trois primitives, remplacement du mécanisme d'enregistrement de client. <strong>Si elle est ratifiée, les § 8.1.3, § 8.2.1, § 8.2.2 et § 8.3.1 sont à revalider en bloc</strong>, sources primaires à extraire — et non à retoucher.</li>
+</ul>
+
+<p>Le chapitre a paré ce risque de la seule manière défendable : <strong>en déclarant que l'anatomie décrite est celle de la révision 2025-11-25</strong>, et en portant le statut de candidate à chacune de ses mentions. ⚠ <strong>Il ne l'a pas anticipée</strong> : décrire comme acquis un contrat non ratifié aurait été la faute exacte que le régime de preuve de la somme proscrit. <em>Une révision annoncée pour demain reste une révision annoncée.</em></p>
+
+<p><strong>Une observation de méthode, sans remontée.</strong> Ce chapitre est celui où la <strong>réserve F-01</strong> du Vol. II mord le plus — six occurrences —, et la répétition est délibérée. La formulation « cadre d'autorisation, jamais sécurisé » n'est pas une précaution de langage : elle sépare <strong>ce qu'une spécification fournit</strong> de <strong>ce qu'une implémentation garantit</strong>, et c'est la même distinction que R-02 du Vol. III impose en matière cryptographique. Les deux garde-fous, venus de volumes différents, disent la même chose — et G-3 devrait examiner s'ils se fondent.</p>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la table détaillée (§ 8.1 à § 8.7). La table de couverture est respectée, dont <strong>l'arrivée du §2.5.4 depuis le ch. 4</strong> — déclarée aux deux bouts — et la sortie du §3.6 vers le Livre II. Les <strong>deux écarts que la v0.17 du plan a soldés sont tenus</strong> : le <strong>partage déclaré</strong> sur la fusion de l'ACP protocolaire — mécanique ici, portée de risque au ch. 10 — et l'<strong>écart de titre assumé</strong> sur le protocole décentralisé, nommé à la liste de sections sans retoucher un titre cité en clair dans huit chapitres. Le <strong>siège de l'encadré R-8 reste au ch. 7 § 7.5</strong> : ce chapitre y renvoie et <strong>ne le reconstruit pas</strong>. La <strong>lacune héritée du PRD Vol. II §10.9 est portée, encadrée et non comblée</strong>. Les trois métriques auto-déclarées sont attribuées ; R-1, R-8, R-13, R-02 et R-14 sont tenus à toutes leurs occurrences.</p>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 8. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.23, entrée du chapitre 8, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>
