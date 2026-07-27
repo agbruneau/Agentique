@@ -27,6 +27,12 @@ ensemble qu'ils se versionnent. Huit contrôles, chacun fermant un défaut qu'au
 ⚠ **Ce que le script ne fait pas, et qui reste à la relecture** : la fidélité au TOC, le régime de
 preuve, le marquage des inférences, la justesse des renvois « ch. N ». Un script ne lit pas un plan.
 
+⚠ **Ne jamais tuyauter le vérificateur dans un enchaînement `&&`.** `verifier-piece.py … | tail -2 &&
+git commit` renvoie le code de sortie de `tail`, **pas celui du contrôle** : un écart signalé à
+l'écran laisse passer le commit. La faute a déjà été commise sur le ch. 6, dont le rendu portait un
+gras non converti et qui a été poussé quand même. Exécuter le contrôle **seul**, lire sa sortie, puis
+committer — ou tester `$?` explicitement.
+
 ### Si le script est modifié
 
 Il est du contenu, comme le reste du dépôt : il se valide **par mutation**.

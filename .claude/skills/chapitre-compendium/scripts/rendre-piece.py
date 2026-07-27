@@ -117,7 +117,10 @@ def decouper(md):
             while i < len(lignes) and lignes[i].strip():
                 bloc.append(lignes[i].strip())
                 i += 1
-            situation = " ".join(bloc).strip("*")
+            # ⚠ Retirer UN seul astérisque de chaque bout, non tous : `strip("*")` mangeait les
+            # trois d'une ligne finissant par un gras (« … **fin.*** »), laissant un gras ouvert
+            # sans fermeture, que le contrôle [8] attrape après coup.
+            situation = re.sub(r"^\*|\*$", "", re.sub(r"^\*|\*$", "", " ".join(bloc), count=1), count=1)
             continue
         if l.startswith("| **") and "|" in l[3:]:
             m = re.match(r"\|\s*\*\*(.+?)\*\*\s*\|\s*(.*?)\s*\|\s*$", l)
