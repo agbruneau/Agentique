@@ -47,6 +47,13 @@ divergent volontairement. Ce fichier régit deux choses seulement — la **racin
 | Vol. III — *L'entreprise agentique* (rédaction, gouvernance PRD) | [`1 - Corpus/3 - EntrepriseAgentique/CLAUDE.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/CLAUDE.md) |
 | Vol. IV — *La somme agentique* (compendium, cadrage) | [`2 - Compendium/CLAUDE.md`](2%20-%20Compendium/CLAUDE.md) — le `TOC.md` du dossier reste la spécification de contenu |
 
+⚠ **Une règle de portée du Vol. IV se signale ici parce qu'elle borne le livrable, pas seulement sa
+rédaction** : depuis le 27 juillet 2026, le compendium compte **au plus cinquante chapitres**, et
+toute insertion se paie par une fusion dans la même passe. La règle, son protocole et son contrôle
+exécutable (`C15`) vivent au [`CLAUDE.md` du dossier](2%20-%20Compendium/CLAUDE.md) et en décision 13
+de son `TOC.md` — **ils ne sont pas repris ici** (périmètre des fichiers de doc : le niveau supérieur
+situe et renvoie).
+
 **Le fichier le plus spécifique gagne.** En travaillant dans un dossier de volume, appliquer son
 `CLAUDE.md`, pas celui-ci.
 

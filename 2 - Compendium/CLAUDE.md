@@ -13,12 +13,12 @@ désormais dans le sous-dossier [`PRD/`](PRD/) ; le README (conspectus) et ce `C
 la racine du dossier. Les chemins ci-dessous et la commande de contrôle (§ protocole) en tiennent
 compte.
 
-Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.6, 27 juillet 2026** — réancré sur le TOC v0.22, gouvernance inchangée, décision d'auteur **D-8** ajoutée) régit la
+Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.7, 27 juillet 2026** — réancré sur le TOC v0.23, gouvernance inchangée, décision d'auteur **D-8** ajoutée en v0.6) régit la
 **gouvernance de la rédaction** — portes de lancement, ordre, régimes de preuve, seuil de vote,
 critères CA-IV, jalons, décisions d'auteur — et **prime en cas de conflit sur la gouvernance, le
-socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.22, 27 juillet 2026 — 51 chapitres en 5 livres,
-projection ≈ 376 000–401 000 mots ; insertion du ch. 41, la fabrique d'agents, sur instruction d'auteur —
-les ch. 41-50 de la v0.21 deviennent 42-51, décision 12**) reste la *spécification de contenu* du compendium — autorité
+socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.23, 27 juillet 2026 — 50 chapitres en 5 livres,
+projection ≈ 376 000–401 000 mots ; plafond de cinquante chapitres posé en décision 13 et contrôlé par C15 ;
+le ch. 41, la fabrique d'agents, entré en v0.22, est payé par la fusion des ch. 47 et 48**) reste la *spécification de contenu* du compendium — autorité
 sur le découpage et sur chaque chapitre (thèse, sections, ligne Fusion, socle, garde-fous) ;
 **aucun chapitre n'est rédigé**. Tant que la somme n'est pas écrite, les trois volumes sources
 font foi (champ Statut du TOC), et une thèse de ce plan n'est pas une source (sa propre
@@ -35,9 +35,11 @@ faits touchés) ou y déclare le retard en tête.
 
 ⚠ **Insertion v0.22 (27 juillet 2026), sur instruction d'auteur : un chapitre neuf au Livre IV — et une seconde renumérotation à chaîner.** Le **ch. 41, « La fabrique d'agents : produire, certifier et réémettre le parc »**, entre comme **troisième mouvement du Livre IV** (*produire*), entre *exploiter* (ch. 38-40) et *composer* (ch. 42-46) : la somme décrivait le maillage qui **admet** les agents et l'AgentOps qui les **mesure**, et ne nommait nulle part le plan qui les **produit** (balayage mesuré de la zone des chapitres, zéro occurrence). ⚠ **Rien n'est soustrait ni réécrit** — les 57 entrées conservées en mouvements le restent —, mais **les ch. 41-50 deviennent 42-51** (décision 12). Quatre points à connaître avant d'éditer. **(a) Les correspondances se chaînent, elles ne se réécrivent pas** : la carte de la décision 11 se lit en numérotation v0.21, celle de la décision 12 par-dessus — un « ch. 57 » gelé désigne le ch. 50 de la v0.21, donc le **ch. 51** courant. **(b) Le ch. 41 est de la matière neuve dans un livre qui a un socle** : « Fusion : aucune », thèse en construction d'auteur, table détaillée **sans marqueur `←`**, table de couverture remplacée par une table d'appuis — régime de la décision 9 étendu hors du Livre V, et **risque 16** ouvert avec son issue de retrait. **(c) Un garde-fou de désambiguïsation est ouvert (décision 12c)** : « fabrique » désigne quatre objets, dont **deux vivent déjà dans ce fichier** — la fabrique d'identité du ch. 43 § 43.1 et la fabrique d'agents du ch. 41 ; ne jamais employer le mot sans que le sens soit déterminable de la phrase. **(d) Le ch. 41 ne comble ni le risque 14 ni le risque 15** : produire n'est pas exécuter, le harnais reste sans chapitre, et **D-7 comme D-8 restent ouvertes**. ⚠ **Le défaut de la passe est consigné plutôt que tu** : le remappage ne voyait que la borne gauche des intervalles de sections et a produit **14 formes fautives** du genre `§ 51.1-50.3`, qu'**aucun des quatorze contrôles ne signale** — seule la relecture du diff les a montrées. **Toute renumérotation future relit son diff ligne à ligne** ; le script ne le fera pas à sa place.
 
+⚠ **Plafond v0.23 (27 juillet 2026), sur instruction d'auteur : la fusion qui paie l'insertion de la v0.22.** Le plan étant passé à 51 chapitres, la règle du plafond (section ci-dessous) est posée et **payée dans la même passe** : les **ch. 47 et 48 de la v0.22** — provenance des composants ; mise en service d'un artefact non reproductible — sont fusionnés en **ch. 47, « L'artefact livré »**, et les **ch. 49-51 deviennent 48-50** (décision 13d). ⚠ **Trois choses à savoir avant d'éditer.** **(a) Les trois fronts de l'audit v0.3 restent trois** : deux mouvements au ch. 47, un chapitre au ch. 48 — la fusion supprime un en-tête, jamais une matière. **(b) Les sections du second mouvement sont passées de § 48.1-48.5 à § 47.8-47.12**, à la suite de celles du premier : tout renvoi entrant « ch. 48 § 48.x » se lit désormais « ch. 47 § 47.(x+7) ». **(c) La paire n'a pas été choisie à l'estime** : c'est la seule du plan dont la fusion ne touche **aucun** renvoi de provenance (les deux chapitres n'en portent pas), et le critère est écrit en décision 13c pour la prochaine fois. ⚠ **Le défaut propre de cette passe est le plus silencieux rencontré jusqu'ici, et il est consigné** : le remappage avait **réécrit trois correspondances gelées** — la carte de la décision 12b et la rangée Version de la v0.22, qui se cite verbatim en descendant à l'historique. Une carte réécrite **reste cohérente à la lecture** et fait résoudre les renvois gelés au mauvais chapitre. Restaurées ; règle en décision 13d. **Trois passes de structure consécutives ont vu leur défaut échapper au script (v0.18, v0.22, v0.23) : une passe de structure se relit ligne à ligne.**
+
 ⚠ **Depuis la v0.18 (26 juillet 2026), ces tables sont en titres markdown, et la hiérarchie de niveaux fait convention.** `## LIVRE N` → `### Chapitre N` → `#### § N.M` : les sections sont les **enfants directs** du chapitre, ce qui expose le plan complet du fichier dans tout afficheur de plan (éditeur, forge, table des matières Pandoc). Trois corollaires, qu'une passe ultérieure ne doit pas « corriger » en croyant réparer une anomalie : **(a)** « Table des matières détaillée du chapitre N » et « Table de couverture (décision 6) » sont des **paragraphes gras, pas des titres** — les promouvoir en `####` les interposerait entre le chapitre et ses sections ; **(b)** les **sous-sections restent en listes**, délibérément — ce sont des phrases descriptives portant leur provenance, non des intitulés, et les promouvoir produirait un plan de plus de mille entrées, donc illisible ; **(c)** il n'y a **aucun index de tête**, et il n'en faut pas — un index serait un cardinal de plus à tenir à jour (risque 1) là où les titres se dérivent d'eux-mêmes. ⚠ **Et le point qui compte le plus : `check-toc.py` ne voit rien de cette forme.** Ses quatorze contrôles portent sur des motifs de ligne (titre de chapitre, titre de livre, rangées du bandeau, enveloppes de tête, registre des lacunes) ; aucun ne connaît les tables détaillées. Un reformatage passe donc **sans être validé par l'appareil versionné**, et le seul contrôle qui en prouve la fidélité est la comparaison du **flux de mots** avant/après (v0.18 : 72 764 mots, séquence identique) — à refaire, et à déclarer au journal, à toute passe qui touche à la forme.
 
-⚠ **Les ch. 47-49 (Livre V) et le ch. 41 (Livre IV) n'ont aucune table de provenance, et c'est un fait, non un manque.** Matière neuve, « Fusion : aucune » (décision 9) : aucun renvoi `←` n'y est possible, les seuls appuis sont **internes** (chapitres de la somme) et tout énoncé y est au mieux un **repérage [C] à instruire**. La décision 6 (couverture tracée) y est sans objet ; la **décision 8 s'y applique doublement**.
+⚠ **Les ch. 47-48 (Livre V) et le ch. 41 (Livre IV) n'ont aucune table de provenance, et c'est un fait, non un manque.** Matière neuve, « Fusion : aucune » (décision 9) : aucun renvoi `←` n'y est possible, les seuls appuis sont **internes** (chapitres de la somme) et tout énoncé y est au mieux un **repérage [C] à instruire**. La décision 6 (couverture tracée) y est sans objet ; la **décision 8 s'y applique doublement**.
 
 ⚠ **Ajouter du contenu à un chapitre peut périmer un identifiant qu'on n'a pas touché** — leçon de la v0.16, et le piège le plus contre-intuitif de ce fichier. Le ch. 32 ne consommait que le Vol. II : son garde-fou « R-5 » nu était décidable. La table détaillée y a introduit une mention de l'**échelle R-14 du Vol. III**, ce qui en a fait un **chapitre mixte** et rendu ce « R-5 » indécidable (C8). Le défaut n'était pas dans la ligne ancienne mais dans son **voisinage neuf**, et seule l'exécution de `check-toc.py` l'a montré — la relecture ne l'attrape pas. Même classe au ch. 43 (« R-8 »). **Exécuter le contrôle après toute addition, même quand on n'a rien retiré ni renuméroté.**
 
@@ -51,7 +53,46 @@ faits touchés) ou y déclare le retard en tête.
 - **Une classe de double revendication qu'aucun contrôle n'attrape.** Quand une ligne Fusion absorbe un **intervalle de chapitres** (« Vol. III ch. 5-7 ») pendant qu'un autre chapitre en prélève **une section** nommée (« §7.4 »), les deux renvois sont valides isolément et vivent à des grains différents : `check-toc.py` ne les rapproche pas. **Collation manuelle, à refaire à chaque révision d'une ligne Fusion citant un intervalle.**
 - **Une arrivée se déclare aux deux bouts.** Le §2.8.5 du Vol. I était déclaré à son *départ* (ch. 6) et nulle part à son *arrivée* (ch. 4) : un chapitre rédigé sur sa seule liste de sections aurait perdu la section que la v0.5 avait sauvée.
 
-⚠ **Ce que la v0.17 n'a pas touché, et qu'une passe de cohérence ne doit jamais toucher** : les **risques 13, 14 et 15** (Livre V sans socle, couche d'exécution sans chapitre, accord entre agents sous défaillance) portent sur du **contenu manquant**, non sur une incohérence — leur arbitrage est une décision d'auteur (**D-7** du PRD). De même la thèse forte du ch. 19, à instruire par dénombrement.
+⚠ **Ce que la v0.17 n'a pas touché, et qu'une passe de cohérence ne doit jamais toucher** : les **risques 13, 14, 15 et 16** (Livre V sans socle, couche d'exécution sans chapitre, accord entre agents sous défaillance, et — depuis la v0.22 — un chapitre sans socle dans un livre qui en a un) portent sur du **contenu manquant**, non sur une incohérence — leur arbitrage est une décision d'auteur (**D-7** du PRD). De même la thèse forte du ch. 19, à instruire par dénombrement.
+
+## ⚠ Plafond dur : cinquante chapitres, jamais plus
+
+**Règle d'auteur du 27 juillet 2026, sans exception.** Le compendium compte **au plus cinquante
+chapitres** — avant-propos et annexes non comptés. Ce n'est pas une cible mais une **borne** : elle
+prime sur l'opportunité éditoriale d'un chapitre neuf, et **un plan qui la dépasse n'est pas
+publiable**. La règle est posée en **décision 13** du TOC et **appliquée par `check-toc.py`,
+contrôle C15** — une règle de plan sans motif exécutable qui la contrôle n'en est pas une (même
+doctrine que pour les cardinaux, et que pour `check-veille.py` à la racine).
+
+**Protocole d'insertion, à suivre dans l'ordre.** Ajouter un chapitre reste possible ; le faire
+sans payer ne l'est pas.
+
+1. **Vérifier le plafond avant d'écrire quoi que ce soit** : le plan est plein (50/50). Toute
+   insertion est donc **conditionnée** à une fusion.
+2. **Choisir la paire à fusionner par le critère de la décision 13c**, dans cet ordre : deux
+   chapitres **adjacents**, du **même mouvement**, de **même régime de preuve**, sous la même porte
+   et la même décision d'auteur ; à égalité, celle dont la fusion touche le **moins de renvois de
+   provenance `←`**. Le motif du choix **s'écrit au journal** — une fusion non motivée est
+   indiscernable d'une coupe arbitraire.
+3. **Fusionner sans rien soustraire** (règle 11a, reconduite) : les deux entrées sont conservées
+   **intégralement**, en **deux mouvements** portant chacun son ancien titre et son ancien numéro ;
+   les sections du second mouvement se renumérotent **à la suite** de celles du premier.
+4. **Insertion et fusion dans la même passe.** Ne jamais laisser la dette à une passe ultérieure :
+   elle aurait à choisir sous contrainte ce que la passe fautive a choisi librement.
+5. **Enveloppes** : une fusion ne retire rien, donc **aucune enveloppe ne bouge** ; seul le
+   chapitre neuf en ajoute une. Ne pas « compenser » un ajout de mots par une fusion — les deux
+   gestes sont indépendants (décision 13b).
+6. **Exécuter `python PRD/check-toc.py`** : **C15** refuse le dépassement, **C1** la discontinuité.
+
+⚠ **Ce que le plafond n'autorise pas : retirer un chapitre pour faire de la place.** Une somme qui
+perd de la matière pour tenir un décompte a échangé un défaut visible — un chapitre de trop —
+contre un défaut invisible — une matière disparue. C'est exactement ce que la condensation v0.20
+s'était interdit, et le plafond ne rouvre pas cette porte.
+
+⚠ **Et le plafond ne vaut pas dispense d'arbitrage.** Les risques 14, 15 et 16 nomment des objets
+que la somme ne traite pas ou traite sans socle ; le plafond **ne les tranche pas** — il rend
+seulement explicite le coût de les combler par un chapitre. L'arbitrage reste une décision
+d'auteur (D-7, D-8 du PRD).
 
 ## L'appareil interne du TOC fait loi
 
@@ -61,6 +102,11 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
   (deux séries « Q n » au Vol. II) et son volume (R-1…R-8 du Vol. II ≠ R-01…R-14 du Vol. III).
 - **Décision 8** — le plan s'aligne sur le chapitre rédigé, jamais l'inverse ; une déviation fondée
   se déclare.
+- **Décisions 11, 12 et 13 (v0.20, v0.22, v0.23)** — les trois cartes de renumérotation **se chaînent et ne se
+  réécrivent jamais** : un « ch. 57 » gelé désigne le ch. 50 de la v0.21, le ch. 51 de la v0.22, le **ch. 50**
+  courant. La **13a** pose le plafond de cinquante chapitres, la **13b** que toute insertion se paie par une
+  fusion dans la même passe, la **13c** le critère de choix de la paire, la **13d** qu'un remappage ne touche
+  jamais une carte de correspondance ni une rangée qui se cite verbatim.
 - **Décisions 9 et 10 (v0.8-v0.9)** — la matière neuve se déclare (Livre IX : « Fusion : aucune »,
   thèses marquées construction d'auteur) ; **le second mouvement du Livre V (clôture) reste terminal** — toute
   insertion se fait avant lui, renvois corrigés ; la décision 10 fixe la carte des dix livres, à
@@ -77,7 +123,7 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
   un « Livre IX » de journal gelé désigne l'AgentMesh, non le livre de matière neuve. Les journaux
   et les rangées d'historique du bandeau citent la numérotation de leur passe — ne jamais les
   « corriger ».
-- ⚠ **Cardinaux multi-sites** : tout décompte annoncé (51 chapitres, cinq livres, enveloppes,
+- ⚠ **Cardinaux multi-sites** : tout décompte annoncé (50 chapitres, cinq livres, enveloppes,
   fourchette, « onze lacunes »…) vit en plusieurs endroits — rangée Version, Volumétrie, champ
   Contrôles, risques 1 et 11 — et se **re-mesure** avant d'être modifié, jamais recopié. La forme
   `~N 000 mots` est **réservée aux enveloppes de tête** (elle entre dans la somme contrôlée).
@@ -107,7 +153,8 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
   n'entre au socle, ne re-tranche une divergence ni ne clôt une lacune sans extraction de la
   source primaire. Les relèves v0.11 (l'après-agentique) citent des préimpressions arXiv dont
   seuls les résumés ont été consultés : repérages [C], jamais des faits. ⚠ **Les huit relèves
-  v0.19** (couverture en science et génie informatique — ch. 6, 17, 19, 24, 37, 46 et 47) citent
+  v0.19** (couverture en science et génie informatique — ch. 6, 17, 19, 24, 37 et 47 depuis la
+  fusion v0.23, qui a réuni sur ce dernier deux chapitres marqués : **six chapitres, huit relèves**) citent
   au contraire des **documents normatifs et des articles de revue consultés à leur source**
   (RFC 8693 et 9334, SLSA v1.2, in-toto, CycloneDX 1.7 / ECMA-424, SPDX 3.0, NIST SP 800-218A,
   NIST AI 100-2 E2025, OPA/Rego, FLP, Gilbert-Lynch, Castro-Liskov, Dean-Barroso, test
@@ -131,7 +178,8 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
    Les journaux sont en ajout seul — un journal publié ne se réécrit pas, ses écarts se consignent
    dans la passe suivante.
 2. **Contrôles** : `python PRD/check-toc.py` (versionné dans `PRD/` depuis la v0.12 du 23 juillet
-   2026 — contrôles C1-C14, domaine : chapitres 1-51 depuis la v0.22, cinq livres depuis la v0.20) **avant toute publication** ;
+   2026 — contrôles **C1-C15** depuis la v0.23, domaine : chapitres 1-50, cinq livres depuis la v0.20 ;
+   **C15 est le plafond dur** de la décision 13a) **avant toute publication** ;
    sortie 0 exigée, et le journal de la passe déclare son exécution. ⚠ **Ce script est du
    contenu : il se vérifie comme le reste** (même règle que `check-veille.py` au `CLAUDE.md`
    racine). Toute modification se valide par mutation avec `PRD/check-toc-mutations.py` (versionné

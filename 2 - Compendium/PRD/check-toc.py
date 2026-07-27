@@ -3,9 +3,16 @@
 
 Reconstruction du 23 juillet 2026 (le script historique des passes v0.3-v0.6 est
 introuvable au dépôt — constat v0.7, reconduit v0.8-v0.11). Domaine : chapitres
-1-51, cinq livres I-V (condensation v0.20, décision 11 ; insertion du ch. 41 en
-v0.22, décision 12 ; le docstring disait encore « 1-57, dix livres » après la
-v0.20 — réancré en v0.21), conformément au protocole du CLAUDE.md du dossier.
+1-50, cinq livres I-V (condensation v0.20, décision 11 ; insertion du ch. 41 en
+v0.22, décision 12 ; fusion des ch. 47 et 48 en v0.23, décision 13 ; le docstring
+disait encore « 1-57, dix livres » après la v0.20 — réancré en v0.21),
+conformément au protocole du CLAUDE.md du dossier.
+
+⚠ C15 applique le PLAFOND DUR de cinquante chapitres (décision 13a) : le plan ne
+le dépasse jamais, et toute insertion se paie par une fusion dans la même passe.
+N_CHAPTERS est à la fois le cardinal attendu (C1) et ce plafond (C15) — les deux
+coïncident tant que le plan est plein ; ils cessent de coïncider si l'auteur
+descend sous cinquante, et c'est pourquoi les contrôles restent distincts.
 
 ⚠ Ce que ce script ne voit pas d'une renumérotation (constat v0.22) : il contrôle
 la contiguïté (C1), les renvois pendants (C4) et les cardinaux (C3, C13), jamais
@@ -44,7 +51,8 @@ CONSPECTUS = HERE / "README.md"   # vue synoptique dérivée (le « conspectus �
 if not CONSPECTUS.exists():        # layout PRD/ : le README (conspectus) vit à la racine du dossier
     CONSPECTUS = HERE.parent / "README.md"
 
-N_CHAPTERS = 51             # v0.20 : 57 → 50 (décision 11) ; v0.22 : + le ch. 41 (décision 12)
+N_CHAPTERS = 50             # v0.20 : 57 → 50 (déc. 11) ; v0.22 : +ch. 41 (déc. 12) ; v0.23 : 47+48 → 47 (déc. 13)
+CHAPTER_CAP = 50            # plafond dur, décision 13a — ne jamais relever sans instruction d'auteur
 BOOKS = ["I", "II", "III", "IV", "V"]           # v0.20 : dix livres → cinq
 ROMAN_OK = set(BOOKS)
 N_HEAD_ENVELOPES = 6        # cinq livres + avant-propos
@@ -54,13 +62,16 @@ TOTAL_HIGH = 401            # 312 + 89
 VOL3_TOC_REFS = 11          # « onze renvois » — décision 7 (re-mesuré 23 juill. 2026)
 LACUNES = [f"§10.{i}" for i in range(1, 12)]   # onze lacunes du PRD Vol. II
 # listes remappées par la décision 11 ; les doublons de fusion sont résorbés
-# ⚠ listes remappées une seconde fois par la décision 12 (v0.22) : tout chapitre
-# de numéro ≥ 41 y a pris +1. Un décalage oublié dans l'une d'elles ferait
-# « détecter » une marque de relève absente d'un chapitre qui la porte.
+# ⚠ listes remappées une seconde fois par la décision 12 (v0.22, +1 au-delà du
+# ch. 40), puis une troisième par la décision 13 (v0.23 : 47+48 → 47, 49-51 →
+# 48-50). ⚠ La fusion DÉDOUBLONNE en plus de décaler — les deux chapitres fusionnés
+# portaient chacun des marques de relève, et leurs entrées se rejoignent sur le
+# ch. 47 : RELEVE_V19 passe de sept à six chapitres, RELEVE_V10 de dix à neuf. Un
+# décalage sans dédoublonnage ferait échouer C11 sur un chapitre inexistant.
 CORPUS_CONSUMERS = [14, 17, 39, 43, 45]         # + Annexe G, contrôlée à part
-RELEVE_V10 = [19, 20, 22, 38, 39, 47, 48, 49, 50, 51]
-RELEVE_V11 = [9, 18, 36, 39, 50]
-RELEVE_V19 = [6, 17, 19, 24, 37, 47, 48]   # ajout v0.21 — dette déclarée au journal v0.19
+RELEVE_V10 = [19, 20, 22, 38, 39, 47, 48, 49, 50]
+RELEVE_V11 = [9, 18, 36, 39, 49]
+RELEVE_V19 = [6, 17, 19, 24, 37, 47]   # ajout v0.21 — dette déclarée au journal v0.19
 JOURNAL_RELEVES = {"v0.10": 8, "v0.11": 6, "v0.19": 8}
 CORRESPONDENCE_MARKERS = re.compile(
     r"ancien|anciennement|aujourd'hui|entrée en|depuis la|v0\.8|v0\.9|→")
@@ -133,7 +144,7 @@ def main():
     norm_clean = strip_guillemets(norm_text)
     bodies = chapter_bodies(lines)
 
-    # C1 — chapitres 1-51 contigus et uniques
+    # C1 — chapitres 1-50 contigus et uniques
     nums = [int(m.group(1)) for m in re.finditer(r"^### Chapitre (\d+) ", text, re.M)]
     if nums != list(range(1, N_CHAPTERS + 1)):
         fail("C1", f"chapitres non contigus/uniques 1-{N_CHAPTERS} : {nums}")
@@ -163,7 +174,7 @@ def main():
                 l.startswith("#") or l.startswith("*(") or "*(" in l):
             fail("C3", f"ligne {i+1} : forme « ~N 000 mots » hors enveloppe de tête")
 
-    # C4 — aucun renvoi « ch. N » hors 1-51 en zone normative.
+    # C4 — aucun renvoi « ch. N » hors 1-50 en zone normative.
     # Deux exemptions, toutes deux nécessaires depuis la condensation v0.20 :
     # les zones gelées citent la numérotation de leur passe (journaux, rangées
     # Historique), et une ligne portant un marqueur de correspondance cite un
@@ -258,7 +269,7 @@ def main():
         fail("C12", f"{refs} renvois « Vol. III *TOC* §N.x » en zone normative, "
                     f"le cardinal annoncé (onze = {VOL3_TOC_REFS}) est périmé — re-mesurer et reporter")
 
-    # C13 — cardinal « 51 chapitres » cohérent en zone normative. Exemption des
+    # C13 — cardinal « 50 chapitres » cohérent en zone normative. Exemption des
     # lignes à marqueur de correspondance : un constat daté cite le cardinal de
     # sa passe (« aucun cardinal ne bouge (57 chapitres, dix livres) », v0.13).
     for i, l in norm_lines:
@@ -285,12 +296,20 @@ def main():
         if (not src or src.group(1) != toc_version) and "retard déclaré" not in head:
             fail("C14", f"Conspectus non aligné sur {toc_version} et sans « retard déclaré » en tête")
 
+    # C15 — plafond dur de cinquante chapitres (décision 13a). Distinct de C1 :
+    # C1 exige la contiguïté au cardinal annoncé, C15 refuse le dépassement du
+    # plafond, quel que soit ce cardinal. Une insertion se paie par une fusion
+    # dans la même passe (décision 13b) — jamais en laissant la dette.
+    if len(nums) > CHAPTER_CAP:
+        fail("C15", f"{len(nums)} chapitres — le plafond de la décision 13a est {CHAPTER_CAP} ; "
+                    f"toute insertion se paie par une fusion dans la même passe (décision 13b)")
+
     if failures:
         print(f"ÉCHEC — {len(failures)} défaut(s) :")
         for f_ in failures:
             print("  " + f_)
         return 1
-    print("OK — tous les contrôles passent (C1-C14).")
+    print("OK — tous les contrôles passent (C1-C15).")
     return 0
 
 

@@ -40,9 +40,14 @@ MUTATIONS = [
     # ⚠ Réancrage v0.22 : l'insertion du ch. 41 (décision 12) a décalé les chapitres
     # 41-50 en 42-51 et périmé M13 (« 50 chapitres » → « 51 chapitres »). M1b est
     # ajoutée pour la borne haute du domaine, que M1 seule ne testait pas.
+    # ⚠ Réancrage v0.23 : la fusion des ch. 47 et 48 (décision 13) ramène le plan à
+    # cinquante chapitres — M1b et M13 réancrés, et M15 ajoutée pour le plafond dur.
+    # M15 duplique un titre de chapitre : le plan passe alors à 51 entrées, ce qui
+    # doit faire échouer C15 (et non C1 seul — l'ordre des contrôles le garantit,
+    # le harnais n'exigeant que la PRÉSENCE du contrôle attendu dans la sortie).
     ("M1",  "TOC.md", "### Chapitre 30 —", "### Chapitre 99 —", "C1"),
     # M1b — borne haute du domaine : retirer le dernier chapitre doit rompre C1.
-    ("M1b", "TOC.md", "### Chapitre 51 — Péremption", "### Chapitre 52 — Péremption", "C1"),
+    ("M1b", "TOC.md", "### Chapitre 50 — Péremption", "### Chapitre 51 — Péremption", "C1"),
     ("M2",  "TOC.md", "# LIVRE V — Livrer", "# LIVRE VI — Livrer", "C2"),
     ("M3a", "TOC.md", "~65 000 mots)*", "~70 000 mots)*", "C3"),
     ("M3b", "TOC.md",
@@ -89,8 +94,11 @@ MUTATIONS = [
      "Relevé v0.19 — le « au nom de qui »", "C11"),
     ("M12", "TOC.md", "*Fusion : Vol. III ch. 12 + Vol. I* Monographie",
      "*Fusion : Vol. III *TOC* §12.1 + Vol. I* Monographie", "C12"),
-    ("M13", "TOC.md", "d'un ouvrage à 51 chapitres", "d'un ouvrage à 54 chapitres", "C13"),
-    ("M14", "README.md", "**v0.22** (27 juillet 2026)", "**v0.10** (21 juillet 2026)", "C14"),
+    ("M13", "TOC.md", "d'un ouvrage à 50 chapitres", "d'un ouvrage à 54 chapitres", "C13"),
+    ("M14", "README.md", "**v0.23** (27 juillet 2026)", "**v0.10** (21 juillet 2026)", "C14"),
+    # M15 — plafond dur (décision 13a) : un chapitre de plus doit être refusé.
+    ("M15", "TOC.md", "### Chapitre 50 — Péremption",
+     "### Chapitre 51 — Chapitre de test du plafond\n\n### Chapitre 50 — Péremption", "C15"),
 ]
 
 
