@@ -27,7 +27,7 @@ Les trois volumes vivent sous [`1 - Corpus/`](1%20-%20Corpus/) ; la veille est
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | — (à fixer au lancement) |
-| **État** | Publiée (146 p., 257 références) | Rédaction terminée (569 p., ≈ 263 600 mots ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Cadrage seul** — TOC v0.23 (+ conspectus et PRD v0.7) ; ⚠ **un livre entier hors portes** depuis le 27 juillet 2026 — `Livre I/`, onze chapitres, brouillons déclarés non publiables, treize remontées ouvertes |
+| **État** | Publiée (146 p., 257 références) | Rédaction terminée (569 p., ≈ 263 600 mots ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Cadrage seul** — TOC v0.24 (+ conspectus et PRD v0.8) ; ⚠ **deux livres entiers hors portes** depuis le 27 juillet 2026 — `Livre I/` (onze chapitres, 64 611 mots) et `Livre II/` (dix chapitres, 61 165 mots), brouillons déclarés non publiables ; les treize remontées du Livre I sont soldées, **les vingt-quatre du Livre II sont ouvertes**, dont deux bloquantes |
 
 ## Veille technologique — le document transversal
 
@@ -153,11 +153,11 @@ Le volume naît des lacunes des deux précédents : identité non humaine et dé
 
 **Au stade du cadrage seul.** Le dossier
 [`2 - Compendium/`](2%20-%20Compendium/) porte une table des matières
-commentée ([`TOC.md`](2%20-%20Compendium/PRD/TOC.md), **v0.23 du 27 juillet 2026** — chaque
+commentée ([`TOC.md`](2%20-%20Compendium/PRD/TOC.md), **v0.24 du 27 juillet 2026** — chaque
 entrée de chapitre y est désormais suivie de sa **table des matières détaillée**, provenance par
 sous-section et table de couverture, **portée en titres markdown depuis la v0.18** : le plan du
 fichier expose la hiérarchie livre → chapitre → section), son
-**PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium/PRD/PRD.md), v0.7 du
+**PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium/PRD/PRD.md), v0.8 du
 27 juillet 2026 — portes de lancement, régimes de preuve, critères d'acceptation, jalons), sa vue
 synoptique dérivée ([`README.md`](2%20-%20Compendium/README.md)), son exécutable
 de contrôle ([`check-toc.py`](2%20-%20Compendium/PRD/check-toc.py), avec son harnais de
@@ -165,18 +165,23 @@ validation par mutation) et un
 [`CLAUDE.md`](2%20-%20Compendium/CLAUDE.md) de conventions —
 **c'est un plan de refonte, pas une nouvelle thèse.**
 
-⚠ **Un livre entier y est rédigé, et il est hors portes.** Le 27 juillet 2026, sur instruction
-d'auteur, le répertoire [`Livre I/`](2%20-%20Compendium/Livre%20I/) a été créé et **ses onze
-chapitres** — des fondements de l'interopérabilité (ch. 1-6) à la couche protocolaire agentique
-(ch. 7-11) — y ont été rédigés en deux rendus chacun (`.md` source, `.html` de lecture à thème
-sombre), **avant** le franchissement des portes G-1 (gel unique), G-2 (commande de décompte) et G-3
-(refonte du socle) que le PRD pose comme préalables à toute rédaction. Chaque pièce se déclare
-elle-même **brouillon, non publiable** et porte, en section hors plan, les conséquences de cet écart
-et les remontées qu'elle ouvre — **treize au total, R-IV-01 à R-IV-13**, dont deux bloquantes. **Le
-statut du volume n'en est pas changé** : socle consolidé à zéro entrée, sept portes ouvertes, huit
-décisions d'auteur à prendre — et le TOC, le PRD et le conspectus n'ont pas été touchés, la règle
-d'escalade du PRD interdisant à un rédacteur de les corriger. *Un brouillon écrit hors portes ne
-franchit aucune porte.*
+⚠ **Deux livres entiers y sont rédigés, et ils sont hors portes.** Le 27 juillet 2026, sur
+instruction d'auteur, les répertoires [`Livre I/`](2%20-%20Compendium/Livre%20I/) et
+[`Livre II/`](2%20-%20Compendium/Livre%20II/) ont été créés et **leurs vingt et un chapitres** — les
+fondements et la couche protocolaire (ch. 1-11), puis l'identité, la délégation et la fabrique de
+confiance (ch. 12-21) — y ont été rédigés en deux rendus chacun (`.md` source, `.html` de lecture à
+thème sombre), **avant** le franchissement des portes que le PRD pose comme préalables. Chaque pièce
+se déclare elle-même **brouillon, non publiable** et porte, en section hors plan, les conséquences de
+cet écart et les remontées qu'elle ouvre. ⚠ **Les deux écarts ne sont pas du même ordre** : le Livre I
+a été écrit avant G-1, G-2 et G-3 ; le **Livre II** l'est avant **G-3 et G-4** — et G-4, la collation
+de fond contre le Vol. III rédigé, est le préalable que le PRD nomme **pour ce Livre précisément**, sa
+source se déclarant elle-même non publiable. Les **treize remontées du Livre I sont soldées** ; le
+Livre II en ouvre **vingt-quatre, R-IV-14 à R-IV-37**, dont **deux bloquantes** — l'une pour un front
+neuf rédigé sans les sources que le plan exigeait, l'autre pour une thèse dont le dénombrement n'a pas
+été conduit. **Le statut du volume n'en est pas changé** : socle consolidé à zéro entrée, cinq portes
+sur sept ouvertes, cinq décisions d'auteur sur huit à prendre — et le TOC, le PRD et le conspectus
+n'ont été touchés par aucune rédaction, la règle d'escalade du PRD interdisant à un rédacteur de les
+corriger. *Un brouillon écrit hors portes ne franchit aucune porte.*
 
 Sa nature le distingue des trois autres : ce n'est ni un quatrième panneau ni un méta-index, mais
 un **omnibus qui absorbe les Vol. I, II et III** en un seul ouvrage réordonné et dédoublonné, à
@@ -275,12 +280,17 @@ volumes sources font foi et la divergence reste ouverte — le cadrage le dit lu
     ├── CLAUDE.md                            conventions du volume
     ├── README.md                            vue synoptique dérivée du TOC (le « conspectus » du volume)
     ├── Livre I/                             ⚠ rédaction hors portes — 11 pièces sur 11, brouillons
-    │   ├── README.md                          état du livre, 13 remontées, régime des deux rendus
+    │   ├── README.md                          état du livre, 13 remontées soldées, deux rendus
     │   └── 01-… à 11-….md / .html             chapitres 1 à 11 — source + page à thème sombre
+    ├── Livre II/                            ⚠ rédaction hors portes — 10 pièces sur 10, brouillons
+    │   ├── README.md                          état du livre, 24 remontées, 4 sièges, volumétrie
+    │   └── 12-… à 21-….md / .html             chapitres 12 à 21 — source + page à thème sombre
     └── PRD/                                 gouvernance de la rédaction (sous-dossier)
-        ├── PRD.md                           v0.7 — portes, régimes de preuve, jalons
-        ├── TOC.md                           table des matières commentée (v0.23) — spécification
+        ├── PRD.md                           v0.8 — portes, régimes de preuve, jalons
+        ├── TOC.md                           table des matières commentée (v0.24) — spécification
         ├── check-toc.py                     contrôles C1-C15 (python PRD/check-toc.py)
+        ├── check-sieges.py                  contrôles S1-S5 inter-pièces — 7 sièges, 21 pièces
+        ├── decompte.sh                      commande de décompte de référence (porte G-2)
         └── check-toc-mutations.py           validation par mutation
 ```
 

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 14 — La grille des cinq questions · La somme agentique</title>
+<meta name="description" content="cinq questions — qui es-tu, qui t&#x27;a créé, pour qui agis-tu, que peux-tu faire, qui en répond — forment la grille de lecture de tout mécanisme d&#x27;identité agentique ; aucun mécanisme de 2026 ne répond aux cinq.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre II · Chapitre 14</div>
+  <ol>
+    <li><a href="#s140"><span class="num">14.0</span>Introduction : pourquoi un instrument, et pourquoi cinq questions</a></li>
+    <li><a href="#s141"><span class="num">14.1</span>L&#x27;inspiration de la grille — et ce qu&#x27;elle n&#x27;autorise pas</a></li>
+    <li><a href="#s142"><span class="num">14.2</span>Application-témoin à trois mécanismes</a></li>
+    <li><a href="#s143"><span class="num">14.3</span>La grille comme critère de structure des chapitres suivants</a></li>
+    <li><a href="#s144"><span class="num">14.4</span>Grille et maturité</a></li>
+    <li><a href="#s145"><span class="num">14.5</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.24 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="14-grille-cinq-questions.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre II — Faire confiance : identité, délégation et fabrique de confiance</div>
+  <h1><span class="chap">Chapitre 14</span>La grille des cinq questions</h1>
+  <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). Troisième chapitre du mouvement, et <strong>chapitre de méthode transversal</strong> : il ne verse aucun fait, il fournit l'instrument par lequel les six chapitres suivants rendent leurs verdicts</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — portes <strong>G-3</strong> et <strong>G-4</strong> ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ <strong>Ce chapitre est le seul du Livre dont le régime de preuve ne dépend d'aucun fait</strong> : la grille est une <strong>construction d'auteur</strong> du Vol. III, spécifiée à son PRD et <strong>dérivée d'aucun socle</strong> — sa recevabilité tient à son rendement, non à sa filiation. <strong>R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre</strong> et ne sont pas rouvertes</dd>
+    <dt>Date de gel</dt>
+    <dd><strong>27 juillet 2026</strong> — gel unique, <strong>D-1 prise</strong> (registre : <a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Volet résiduel de G-1 non instruit.</strong> Gels de source : <strong>juin 2026</strong> (Vol. I), <strong>21 juillet 2026</strong> (Vol. III). ⚠ <strong>Un instrument ne se périme pas comme un fait</strong> : ce qui se périme ici est l'<strong>application-témoin</strong> du § 14.2, dont chaque verdict est daté du 21 juillet 2026 et se rejouera à chaque révision des trois mécanismes qu'elle éprouve</dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte), <strong>et aucune entrée n'est requise pour la grille elle-même</strong> : elle est spécifiée au <strong>PRD du Vol. III, Annexe C</strong>, document de cadrage, non versée par un lot d'instruction. Les <strong>verdicts</strong> du § 14.2 résolvent, eux, contre le <strong>Vol. III <em>Monographie</em> ch. 4</strong>, dont les entrées <strong>F-01</strong> à <strong>F-11</strong>, <strong>F-14</strong>, <strong>F-15</strong>, <strong>F-19</strong>, <strong>F-21</strong>, <strong>F-33</strong> à <strong>F-43</strong>, <strong>F-47</strong>, <strong>F-48</strong>, <strong>F-50</strong>, <strong>F-55</strong>, <strong>F-87</strong> et l'entrée héritée <strong>H-03</strong> conservent leurs niveaux d'origine ; l'échelle d'autonomie du § 14.4 vient du <strong>Vol. I <em>Monographie</em> §5.0.2</strong>, portée par <strong>H-31</strong>, en <strong>[C]</strong> et <strong>non élevable</strong>. <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd>Vol. III — <strong>R-14 (trois degrés d'absence) : neuf occurrences</strong>, § 14.2 (sept, une par case vide) et § 14.3 (deux) ; <strong>R-02 : quatre occurrences</strong>, § 14.2 ; <strong>R-09 : trois occurrences</strong>, § 14.2 ; <strong>R-13 (échelles d'autonomie jamais nues) : quatre occurrences</strong>, § 14.4, où trois échelles homonymes du Vol. I sont nommées par leur cardinal et leur numérotation ; <strong>R-01 : deux occurrences</strong>, § 14.3 et § 14.4. <strong>R-03 à R-08, R-10 à R-12 : zéro occurrence.</strong> Vol. II — <strong>§8.2 : une occurrence</strong>, § 14.2 ; <strong>R-1 à R-8 : zéro occurrence</strong> — leurs sièges sont les ch. 15 et 16. ⚠ <strong>Faux ami déclaré</strong> : le « corpus d'appui » nommé au § 14.4 est un <strong>marqueur conditionnel de réouverture</strong>, jamais une source</dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ <strong>3 000 mots</strong> de corps (§ 14.0 à § 14.4), <strong>cible dérivée</strong> de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — <strong>la plus basse du Livre</strong>, ce chapitre ne portant que quatre sections et aucun corpus propre. ☑ <strong>Décompte publiable depuis G-2</strong> ; <strong>réel : 3 514 mots</strong> par <a class="lien" href="../PRD/decompte.sh"> 0 </a> — <strong>+17,1 %</strong>. ⚠ La volumétrie du Livre est relevée au <a class="lien" href="README.md"> 1 </a> du dossier et alimente <strong>D-4</strong> par <strong>R-IV-17</strong></dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>cinq questions — <em>qui es-tu, qui t'a créé, pour qui agis-tu, que peux-tu faire, qui en répond</em> — forment la grille de lecture de tout mécanisme d'identité agentique ; aucun mécanisme de 2026 ne répond aux cinq.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.24, entrée du chapitre 14.</span>
+</div>
+
+<h2 id="s140"><span class="sig">§ 14.0</span>Introduction : pourquoi un instrument, et pourquoi cinq questions</h2>
+
+<p>Les deux chapitres précédents ont produit un inventaire : des RFC étirés d'un côté (ch. 12), un vocabulaire portable dont l'adoption reste à démontrer de l'autre (ch. 13). L'inventaire ne suffit pas. Une organisation qui doit décider si elle admet un agent — le sien ou celui d'un tiers — n'a pas besoin de savoir <strong>quels mécanismes existent</strong> ; elle a besoin de savoir <strong>ce que chacun lui permet d'établir</strong>.</p>
+
+<p>C'est l'objet du présent chapitre, et il est de méthode : il ne verse aucun fait, il fournit l'<strong>instrument</strong> par lequel les ch. 15 à 21 rendront leurs verdicts. Son homologue dans le Livre IV est la <strong>matrice protocoles × exigences réglementaires du ch. 42</strong> ; les deux jouent le même rôle — un critère explicite, opposable, que chaque chapitre consommateur applique sans le redécider.</p>
+
+<div class="avert">
+  <p><strong>Le chapitre porte donc, de bout en bout, le régime des constructions d'auteur</strong> (CA-IV-07), et c'est ce qui lui interdit de s'autoriser de lui-même. Une grille qui tirerait argument de son existence serait précisément l'objet que la somme prend pour cible : <em>un instrument d'analyse se juge à son rendement, jamais à sa provenance.</em></p>
+</div>
+
+<p><strong>Le chapitre se lit en quatre temps.</strong> D'où vient la grille et ce que son inspiration n'autorise pas (§ 14.1) ; ce qu'elle donne quand on l'éprouve sur trois mécanismes documentés (§ 14.2) ; comment elle structure les six chapitres suivants (§ 14.3) ; et ce qu'elle devient croisée avec une échelle d'autonomie (§ 14.4).</p>
+
+<h2 id="s141"><span class="sig">§ 14.1</span>L'inspiration de la grille — et ce qu'elle n'autorise pas</h2>
+
+<p><span class="auteur">Lecture de l'auteur</span> la grille des cinq questions est une <strong>construction d'auteur du Vol. III</strong>. Elle est spécifiée à son PRD, Annexe C — le document qui fait autorité sur son contenu —, et <strong>non dérivée d'un socle qui la porterait</strong>. <strong>Ce que le socle établit</strong> : les faits sur lesquels chaque verdict du § 14.2 repose, entrée par entrée. <strong>Ce qu'il n'établit pas</strong> : la grille elle-même, son cardinal de cinq, l'ordre de ses questions, le partage qu'elle opère entre elles ; aucune entrée, propre ou héritée, ne les porte, et aucune source primaire n'en est l'extraction.</p>
+
+<div class="avert">
+  <p><strong>La différence avec l'instrument équivalent du Vol. II est structurante et vaut d'être écrite</strong> : la taxonomie d'orchestration OO1-OO4 du Vol. II venait <strong>d'une source</strong> ; la grille n'en vient <strong>d'aucune</strong>. Elle relève du régime des constructions d'auteur, ce qui interdit d'en tirer un argument d'autorité et impose qu'elle soit <strong>falsifiable</strong>.</p>
+</div>
+
+<p><strong>L'inspiration, elle, est nommée.</strong> Le Vol. I emploie une grille d'analyse <strong>par axes</strong> — découverte, sémantique, identité et confiance, gouvernance des frontières —, présentée comme le moyen de comparer des spécifications hétérogènes et d'anticiper leurs recouvrements et leurs manques. Deux de ces quatre axes — <em>identité et confiance</em>, <em>gouvernance des frontières</em> — fournissent l'<strong>inspiration</strong> des cinq questions ; ils n'en fournissent <strong>pas la dérivation</strong>.</p>
+
+<div class="avert">
+  <p><strong>La distinction n'est pas de politesse.</strong> Un élément du Vol. I entre dans la somme en <strong>[C]</strong> — repérage documentaire —, parce que sa vérification porte sur ses références et non sur le contenu de ses affirmations (PRD §7.1) ; et <strong>une entrée [C] ne porte jamais un fait central</strong>. <em>Adosser la grille aux axes du Vol. I l'aurait rendue inutilisable au moment même où l'on prétendait la fonder.</em> ⚠ <strong>Les quatre axes sont posés au ch. 7 § 7.2.2</strong> et ne sont pas reconstruits ici.</p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> le changement d'objet justifie le changement d'instrument : les <strong>axes</strong> comparent des spécifications <em>entre elles</em> ; les <strong>cinq questions</strong> demandent ce qu'une entreprise doit pouvoir <strong>établir</strong> d'un agent qu'elle héberge ou qu'elle admet. <strong>Ce que le socle établit</strong> : la formulation des axes et leur fonction déclarée. <strong>Ce qu'il n'établit pas</strong> : que ce passage soit correct, complet ou nécessaire — <em>il se juge à son rendement en § 14.2, non à sa filiation.</em></p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>#</th><th>Question</th><th>Ce qu'un mécanisme doit produire pour y répondre</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Q-A</strong></td><td><strong>Qui es-tu ?</strong></td><td>Un identifiant <strong>stable</strong>, <strong>vérifiable</strong>, <strong>résistant à l'usurpation</strong> et <strong>révocable</strong></td></tr>
+    <tr><td><strong>Q-B</strong></td><td><strong>Qui t'a créé ?</strong></td><td>Une chaîne de provenance jusqu'à une autorité d'émission, <strong>avec son ancrage de confiance</strong></td></tr>
+    <tr><td><strong>Q-C</strong></td><td><strong>Pour qui agis-tu ?</strong></td><td>Une chaîne de mandat interrogeable <strong>à l'instant t</strong>, et non seulement à l'admission</td></tr>
+    <tr><td><strong>Q-D</strong></td><td><strong>Que peux-tu faire ?</strong></td><td>Des bornes de privilège <strong>explicites</strong> <em>et</em> <strong>opposables au point d'application</strong></td></tr>
+    <tr><td><strong>Q-E</strong></td><td><strong>Qui en répond ?</strong></td><td>Une imputabilité traçable jusqu'à une personne ou une entité juridique</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 14.1 — La grille des cinq questions et ce que chacune exige d'un mécanisme.</p>
+
+<p><strong>Quatre règles d'emploi commandent tout ce qui suit</strong>, et elles sont reprises du cadrage du Vol. III sans être modifiées.</p>
+
+<ol class="numeros">
+  <li><strong>La grille s'applique par mécanisme, non par produit.</strong> Un même produit peut répondre à Q-A et laisser Q-C sans réponse ; le noter globalement effacerait précisément ce que la grille sert à voir.</li>
+  <li><strong>Une réponse partielle est une réponse partielle.</strong> Trois verdicts seulement — <em>répond</em>, <em>répond partiellement — et on dit à quoi</em>, <em>ne répond pas</em> —, <strong>aucun quatrième verdict de complaisance</strong>.</li>
+  <li><strong>La thèse est falsifiable, et c'est voulu.</strong> Un mécanisme qui répondrait aux cinq la réfute, et <em>la réfutation s'écrit si elle survient plutôt qu'elle ne se contourne</em>.</li>
+  <li><strong>Le ch. 16 § 16.5 est le seul endroit de la somme où les cinq reçoivent une réponse</strong>, et cette réponse y est explicitement <strong>sur le papier</strong> — elle décrit ce qu'un assemblage produirait, non ce qu'une implémentation produit.</li>
+</ol>
+
+<div class="avert">
+  <p><strong>Une cinquième règle vient du régime d'absence, et elle n'est pas dans la liste ci-dessus parce qu'elle ne porte pas sur la grille mais sur ce qu'on écrit dans ses cases.</strong> Là où le corpus est muet, <strong>la case reste vide</strong> : <em>le socle ne documente pas X — absence de documentation, non fait négatif vérifié</em> (R-14 du Vol. III, degré 3). <strong>Une case vide n'est pas un quatrième verdict</strong> : ce n'est pas le mécanisme qui reçoit une note intermédiaire, c'est <strong>l'état de la preuve</strong> qui est déclaré.</p>
+</div>
+
+<h2 id="s142"><span class="sig">§ 14.2</span>Application-témoin à trois mécanismes</h2>
+
+<p>Trois mécanismes ont été instruits à un degré qui permet de les soumettre à la grille : la <strong>carte d'agent signée</strong>, les <strong>annuaires d'agents commerciaux</strong>, les <strong>registres gouvernés</strong>. ⚠ <strong>Cette section est une application-témoin, non le verdict du Livre</strong> : chacun des trois reçoit son verdict complet à son propre chapitre — ch. 15 § 15.1.4, § 15.2.4 et, pour le registre, § 15.3. Ce qui se joue ici est l'<strong>épreuve de l'instrument</strong>, et le résultat qui compte est ce que la grille permet ou ne permet pas de dire.</p>
+
+<p><strong>La carte d'agent signée.</strong> Sur <strong>Q-A</strong>, elle <strong>répond partiellement</strong> : au volet <em>vérifiable</em>, non au volet <em>révocable</em>. Ce que la signature <strong>démontre</strong> est l'intégrité du contenu canonicalisé au regard d'une clé donnée (Vol. III F-01, F-02, <strong>[A]</strong>) — et rien de plus (R-02). Elle est en outre <strong>facultative</strong> : apposition en <strong>MAY</strong>, vérification en <strong>SHOULD</strong>, de sorte qu'une chaîne entièrement conforme peut ne comporter <strong>aucune signature apposée ni aucune vérification effectuée</strong> (Vol. III F-04, <strong>[A]</strong>). Le volet <em>révocable</em> n'est pas outillé : le message normatif de la carte compte <strong>quatorze champs</strong>, dont aucun n'exprime une date d'émission, une expiration, une fenêtre de validité ni un indicateur de révocation (Vol. III F-05, <strong>[A]</strong>, fait négatif <strong>vérifié</strong>, degré 1) ; et l'interdiction est pourtant posée au niveau normatif le plus fort — « Expired or revoked keys <strong>MUST NOT</strong> be used for verification » — <strong>sans aucun moyen d'établir l'expiration ou la révocation</strong> (Vol. III F-07, <strong>[A]</strong>). ⚠ <strong>L'interdiction porte sur la clé de signature, non sur la carte</strong>, et la borne change ce qu'on peut en tirer.</p>
+
+<p>Sur <strong>Q-B</strong>, elle <strong>ne répond pas</strong> : l'ancrage est renvoyé <strong>hors du protocole</strong> — clé récupérée par identifiant et adresse de jeu de clés, ou depuis un magasin de clés de confiance que les clients « <strong>MAY</strong> maintain », dispositif facultatif et non spécifié (Vol. III F-09, <strong>[B]</strong>). Deux documents de projet ont été balayés et ni l'un ni l'autre ne rattrape l'ancrage (Vol. III F-08, <strong>[A]</strong>, degré 1 ; F-11, <strong>[B]</strong>). Sur <strong>Q-C</strong>, <strong>Q-D</strong> et <strong>Q-E</strong>, <strong>les cases restent vides au degré 3</strong> : aucun balayage ne couvre ce que la carte porte du mandat, du privilège ou de l'imputabilité.</p>
+
+<p><strong>Les annuaires d'agents commerciaux.</strong> ⚠ <strong>Le statut se dit à chaque mention, et l'éditeur se nomme</strong> — <em>la neutralité fournisseur interdit de recommander, non de nommer, et un statut non attribué n'est pas revalidable au gel suivant.</em> La <strong>disponibilité générale</strong> d'Entra Agent ID, produit de Microsoft, est datée d'<strong>avril 2026</strong> par les notes de version de son éditeur (Vol. III F-33, <strong>[B]</strong>) — mais <strong>elle ne vaut pas disponibilité générale de ses capacités</strong> : plusieurs capacités nommées demeuraient étiquetées <em>Preview</em> au 21 juillet 2026 (Vol. III F-34, <strong>[A]</strong>).</p>
+
+<p>Sur <strong>Q-A</strong>, <strong>répond partiellement</strong> : le type de ressource d'annuaire est défini et publié, héritant du type <code>application</code> (Vol. III F-37, <strong>[B]</strong>), mais l'identité y vit sur <strong>deux plans</strong> — une politique d'accès conditionnel ciblant des identités d'agent <strong>ne s'applique pas</strong> au compte d'utilisateur de l'agent, et une politique ciblant « tous les utilisateurs » <strong>n'inclut pas</strong> les identités d'agent (Vol. III F-35, <strong>[A]</strong>, fait négatif <strong>établi</strong>, degré 2). <em>Un identifiant qui n'est pas unique au point d'application ne répond qu'à moitié à « qui es-tu ».</em> Sur <strong>Q-B</strong>, <strong>répond partiellement</strong> : ce qui se cite en <strong>[B]</strong> est la spécification elle-même — un SVID est valide s'il a été signé par une autorité du domaine de confiance de l'identité qu'il porte (Vol. III F-87) —, et ce qu'elle <strong>démontre</strong> est une vérification de signature dans un domaine, <strong>non l'ancrage de confiance de cette autorité</strong> (R-02). Sur <strong>Q-C</strong>, <strong>répond partiellement</strong> : le mandat s'exprime, mais qu'il soit interrogeable <strong>à l'instant t</strong> n'est pas établi (degré 3). Sur <strong>Q-D</strong>, même verdict et même cause : les bornes sont opposables au point d'application d'<strong>un</strong> des deux plans (F-35). Sur <strong>Q-E</strong>, <strong>case vide au degré 3</strong>.</p>
+
+<p><strong>Les registres gouvernés.</strong> Statut, dit à chaque mention : la spécification de registre d'agents est un <strong>brouillon de laboratoire</strong> et son en-tête le dit — « White Paper | 2026-03-27 | Status: draft », l'espace qui l'héberge se décrivant comme accueillant des travaux qui ne sont <strong>pas encore</strong> un projet officiel de l'organisme (Vol. III F-38, <strong>[A]</strong>). Sur <strong>Q-A</strong>, <strong>répond partiellement</strong> : l'identifiant est <strong>spécifié et administrable</strong>, dans un brouillon de laboratoire (Vol. III H-03 ; F-38). Sur <strong>Q-D</strong>, la déclaration des bornes est explicitement outillée — <code>toolAccessList</code> et <code>permissionBoundaries</code> sont des champs <strong>obligatoires</strong> (Vol. III F-40, <strong>[B]</strong>) —, mais le verdict reste <strong>partiel</strong> : <em>déclarer une borne et l'opposer sont deux actes distincts, et la grille est faite pour les séparer.</em> Sur <strong>Q-B</strong>, <strong>Q-C</strong> et <strong>Q-E</strong>, <strong>cases vides au degré 3</strong>.</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th></th><th>Q-A <em>qui es-tu</em></th><th>Q-B <em>qui t'a créé</em></th><th>Q-C <em>pour qui agis-tu</em></th><th>Q-D <em>que peux-tu faire</em></th><th>Q-E <em>qui en répond</em></th></tr></thead>
+  <tbody>
+    <tr><td><strong>Carte d'agent signée</strong></td><td>partiellement — vérifiable oui, révocable non (F-04, F-05, F-06, F-07)</td><td><strong>ne répond pas</strong> (F-08, F-09, F-11)</td><td><em>case vide, degré 3</em></td><td><em>case vide, degré 3</em></td><td><em>case vide, degré 3</em></td></tr>
+    <tr><td><strong>Annuaires commerciaux</strong></td><td>partiellement — deux plans d'identité (F-35, F-37)</td><td>partiellement — validité par signature dans un domaine (F-87), ancrage de l'autorité non établi</td><td>partiellement — mandat exprimé, non interrogeable à l'instant t (H-02, F-47)</td><td>partiellement — un plan couvert sur deux (F-35)</td><td><em>case vide, degré 3</em></td></tr>
+    <tr><td><strong>Registres gouvernés</strong></td><td>partiellement — identifiant spécifié et administrable, brouillon de laboratoire (H-03, F-38)</td><td><em>case vide, degré 3</em></td><td><em>case vide, degré 3</em></td><td>partiellement — bornes déclarées, opposabilité non établie (F-40, H-03)</td><td><em>case vide, degré 3</em></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 14.2 — Application-témoin de la grille à trois mécanismes, au 21 juillet 2026. Toutes les entrées citées appartiennent au socle du Vol. III.</p>
+
+<p><strong>Décompte re-mesuré sur le tableau : huit verdicts rendus sur quinze cases</strong> — <strong>aucun « répond »</strong>, <strong>un</strong> « ne répond pas », <strong>sept</strong> « répond partiellement » — et <strong>sept cases</strong> où le corpus consulté est muet. ⚠ Un verdict plein figurait au premier jet du Vol. III et <strong>est tombé le 21 juillet 2026</strong>, non qu'un fait ait changé, mais parce que le <strong>niveau</strong> de l'entrée qui le portait est passé en <strong>[C]</strong> : <em>une entrée [C] ne porte jamais un fait central, et un verdict de grille en est un.</em></p>
+
+<p><strong>Aucun des trois mécanismes ne répond aux cinq : la thèse n'est pas réfutée.</strong> ⚠ <strong>Elle n'est pas non plus établie, et il faut l'écrire aussi nettement</strong> : trois mécanismes ne sont pas le corpus des mécanismes de 2026, et conclure de trois verdicts à « aucun mécanisme de 2026 ne répond aux cinq » serait un <strong>fait négatif de corpus</strong>, la forme même que le régime des trois degrés refuse. <em>La thèse se tient donc comme hypothèse falsifiable, éprouvée mécanisme par mécanisme aux endroits recensés au § 14.3, et sa portée reste bornée aux mécanismes réellement instruits.</em></p>
+
+<h2 id="s143"><span class="sig">§ 14.3</span>La grille comme critère de structure des chapitres suivants</h2>
+
+<p>La grille n'est pas un ornement méthodologique : <strong>elle décide de ce qu'un chapitre doit produire.</strong> Elle est appliquée, verdict à l'appui, au <strong>ch. 15 § 15.1.4</strong> (la carte signée), <strong>§ 15.2.4</strong> (les annuaires), <strong>ch. 16 § 16.5</strong> (l'objet de synthèse), <strong>ch. 19 § 19.4</strong> (la taxonomie des attaques) et, hors du présent Livre, aux <strong>ch. 25 § 25.1</strong> et <strong>ch. 37 § 37.4</strong>. Elle sert enfin de colonne à l'annexe des mécanismes. <em>Toute pièce qui ne l'applique pas s'en explique.</em></p>
+
+<p><strong>Le ch. 17 est l'exception, et c'est la plus instructive.</strong> Il ne porte <strong>aucun verdict</strong> : il <strong>instruit Q-C</strong> — <em>pour qui agis-tu ?</em> — au lieu de l'appliquer mécanisme par mécanisme, et il le déclare à son ouverture. La raison tient au constat du § 14.2 : <strong>Q-C n'y a reçu qu'un seul verdict, et encore partiel</strong>. <em>Une question à laquelle deux mécanismes sur trois ne permettent même pas de répondre n'appelle pas un verdict de plus ; elle appelle un chapitre.</em></p>
+
+<p><strong>Au ch. 19, la grille change de fonction</strong> : elle devient l'<strong>axe de la taxonomie</strong>, chaque attaque étant rangée selon <strong>le maillon de la chaîne d'identité ou de mandat qui cède</strong> — traitement défensif exclusif, au niveau architectural, sans recette d'exploitation. Le socle montre que le tri fonctionne : dans la campagne de compromission de jetons du <strong>8 au 18 août 2025 au moins</strong>, le maillon qui cède est le <strong>jeton porteur</strong>, lié ni à l'appelant, ni à un appareil, ni à une session — <em>quiconque le détient est l'intégration</em> (Vol. III F-21, <strong>[A]</strong>) : <strong>défaut de Q-A</strong>. Dans la technique du corpus de techniques adverses où un agent dispose d'outils inaccessibles aux utilisateurs, ce n'est pas l'authentification qui cède mais <strong>l'absence de réduction de portée entre mandant et mandataire</strong> (Vol. III F-14, <strong>[A]</strong>) : <strong>défaut de Q-D</strong>, que la contre-mesure correspondante vise en posant qu'un agent agissant pour un utilisateur ne doit pas recevoir de permissions que cet utilisateur n'a pas (Vol. III F-15, <strong>[A]</strong>).</p>
+
+<p>Une entrée d'un référentiel de sécurité applicative énonce le lien que la grille formalise : « Without a distinct, governed identity of its own, an agent operates in an attribution gap that makes enforcing true least privilege impossible. » (Vol. III F-19, <strong>[A]</strong>).</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> l'énoncé soutient <strong>l'ordre</strong> des questions : sans réponse à Q-A, Q-D et Q-E deviennent <strong>inapplicables</strong> plutôt que difficiles — une borne de privilège suppose un porteur identifié, et une imputabilité suppose quelqu'un à qui imputer. <strong>Ce que le socle établit</strong> : l'énoncé cité, au niveau [A]. <strong>Ce qu'il n'établit pas</strong> : que cet ordre soit le seul possible, ni qu'il ait une valeur autre qu'organisatrice.</p>
+
+<div class="avert">
+  <p><strong>Le ch. 16 § 16.5 est le seul endroit de la somme où les cinq questions reçoivent une réponse, et la nature de cet endroit décide de ce qu'on peut en conclure.</strong> Ce qui y est soumis à la grille n'est <strong>pas un mécanisme de 2026</strong> : c'est le <strong>passeport d'agent</strong>, objet de synthèse que la somme construit en assemblant une carte signée, une inscription au registre, une chaîne de mandat et des attestations. <em>Le passeport reçoit une réponse aux cinq questions parce qu'il a été construit pour en recevoir une : c'est la propriété d'un objet de synthèse, pas un résultat.</em> ⚠ <strong>Confondre les deux ferait de la construction d'auteur le contre-exemple de la thèse qu'elle sert à éprouver.</strong></p>
+</div>
+
+<h2 id="s144"><span class="sig">§ 14.4</span>Grille et maturité</h2>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>la présente section est une construction d'auteur en totalité.</strong> Le croisement des cinq questions avec une échelle de maturité n'est porté par aucune entrée du socle, non plus que l'ordonnancement des exigences par palier qui en découle. <strong>Ce que le socle établit</strong> : l'existence et le contenu de l'échelle mobilisée, à son niveau et sous ses réserves. <strong>Ce qu'il n'établit pas</strong> : que le coût d'une question sans réponse croisse avec le palier d'autonomie — proposition de la somme, à lire comme telle.</p>
+
+<div class="avert">
+  <p><strong>Cette section a été réaffectée le 21 juillet 2026, et le motif se déclare plutôt qu'il ne se masque.</strong> Elle mobilisait le spectre de maturité d'un <strong>corpus d'appui</strong> dont aucun des trois ouvrages n'a jamais été déposé ; la filiation livresque a été <strong>retirée</strong> — arbitrage clos par <strong>échec documenté, et réversible par dépôt ultérieur</strong> —, et le croisement se refait sur l'échelle d'autonomie du Vol. I. ⚠ <strong>Les mentions de « corpus d'appui » sont des marqueurs conditionnels de réouverture, jamais des sources</strong> : aucun chapitre ne se rédige en s'appuyant sur ces ouvrages sans dépôt effectif.</p>
+</div>
+
+<p><strong>L'échelle se cite au complet, et la contrainte n'est pas de forme.</strong> Selon la proposition du Vol. I, l'<strong>échelle à quatre paliers non numérotés</strong> — <em>assistance → copilote → orchestration sous revue → autonomie bornée</em> — indexe l'autonomie consentie sur le produit <strong>matérialité × réversibilité</strong>, non sur la capacité brute du modèle ; l'entrée héritée <strong>H-31 [C]</strong> en rapporte le principe : <em>un agent ne doit jamais exécuter une action irréversible sans garde-fou structurel ; la règle est la préparation par l'agent et la libération humaine sur l'action irréversible.</em></p>
+
+<div class="avert">
+  <p><strong>Trois échelles coexistent au Vol. I et partagent leurs libellés — les nommer nues est proscrit.</strong> « Copilote » est un palier de l'échelle à <strong>quatre paliers non numérotés</strong>, le <strong>niveau 2</strong> du continuum à <strong>six niveaux numérotés de 0 à 5</strong>, et le <strong>niveau L0</strong> de la graduation à <strong>quatre niveaux préfixés L, L0-L3</strong>. <em>Le terme ne s'emploie jamais seul</em>, et l'indexation sur matérialité × réversibilité ne discrimine pas davantage — la graduation L0-L3 indexe deux de ses niveaux sur les mêmes critères. <strong>Seuls le cardinal et la numérotation discriminent.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>H-31 est une entrée [C] non élevable, et la conséquence est nette.</strong> L'échelle est une <strong>construction d'auteur du Vol. I</strong>, introduite par « La proposition de l'ouvrage… », non la reprise d'une source primaire tierce : l'élévation en [B] par lecture de la source est <strong>sans objet</strong>. Elle entre comme <strong>thèse d'un volume antérieur, à attribuer à chaque emploi</strong>, jamais comme fait. <em>Le croisement qui suit ne peut donc rien établir ; il ordonne.</em></p>
+</div>
+
+<p><strong>L'ordonnancement proposé est le suivant.</strong> Au palier <em>assistance</em>, l'humain engage chaque action : <strong>Q-E</strong> est portée par la personne qui engage et <strong>Q-D</strong> bornée par ce qu'elle valide ; reste <strong>Q-A</strong>, sans laquelle la trace ne s'impute à rien. Au palier que l'échelle à quatre paliers non numérotés nomme <em>copilote</em>, l'agent produit des actes que l'humain contresigne sans les reconstruire : <strong>Q-B</strong> devient exigible — <em>contresigner ce qu'on n'a pas produit suppose de savoir qui l'a produit</em>. À l'<em>orchestration sous revue</em>, la revue porte sur une <strong>chaîne</strong> et non sur un acte : <strong>Q-C</strong> devient centrale, et <em>une chaîne de mandat qui ne s'interroge qu'à l'admission ne soutient pas une revue portant sur l'exécution</em>. À l'<em>autonomie bornée</em>, les cinq deviennent simultanément exigibles, et le défaut le plus coûteux est celui que le § 14.2 a trouvé à la carte signée : un identifiant vérifiable dont la <strong>clé de signature</strong> ne peut être ni expirée ni révoquée en usage, sans qu'aucun moyen ne permette d'établir ce statut (Vol. III F-07, <strong>[A]</strong>).</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Palier <em>(échelle à quatre paliers non numérotés du Vol. I)</em></th><th>Question qui devient exigible</th><th>Motif</th></tr></thead>
+  <tbody>
+    <tr><td><strong>assistance</strong></td><td><strong>Q-A</strong></td><td>l'humain engage chaque acte ; sans identifiant, la trace ne s'impute à rien</td></tr>
+    <tr><td><strong>copilote</strong></td><td><strong>Q-B</strong> s'ajoute</td><td>contresigner ce qu'on n'a pas produit suppose de savoir qui l'a produit</td></tr>
+    <tr><td><strong>orchestration sous revue</strong></td><td><strong>Q-C</strong> s'ajoute</td><td>la revue porte sur une chaîne, non sur un acte isolé</td></tr>
+    <tr><td><strong>autonomie bornée</strong></td><td><strong>les cinq</strong>, simultanément</td><td>plus aucun acte n'est contresigné à l'unité</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 14.3 — Croisement de la grille et de l'échelle d'autonomie du Vol. I — <strong>construction d'auteur en totalité</strong>, aucun palier n'étant porté par une entrée de socle.</p>
+
+<p><strong>Ce que le croisement ne fait pas se dit avec la même netteté : il ne rend aucun mécanisme suffisant à un palier bas.</strong> Un fait borné <strong>ne varie pas avec le palier</strong> — la section de la spécification qui ne comporte aucun moyen d'établir le statut d'une clé n'en comporte pas plus pour un agent d'assistance que pour un agent en autonomie bornée (Vol. III F-06, <strong>[A]</strong>, degré 1). <em>Le palier change le coût du défaut, non le défaut</em> ; et une entreprise qui ordonnerait ses exigences d'identité par palier accepterait, <strong>en connaissance de cause</strong>, de porter aux paliers bas une dette dont l'échéance est le palier suivant.</p>
+
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
+
+<p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
+
+<ol class="numeros">
+  <li><strong>L'instrument, et ses quatre règles d'emploi.</strong> Par mécanisme et non par produit ; trois verdicts et pas un quatrième ; falsifiabilité assumée ; un seul lieu où les cinq reçoivent réponse. Les <strong>ch. 15, 16, 19, 25 et 37</strong> l'appliquent sans le redécider.</li>
+  <li><strong>La cinquième règle, qui n'est pas dans la grille.</strong> Une <strong>case vide</strong> déclare l'état de la preuve, jamais une note intermédiaire. C'est le point où la grille et le régime des trois degrés d'absence se rejoignent, et il est posé ici une fois pour la somme.</li>
+  <li><strong>L'ordre des questions.</strong> Sans Q-A, Q-D et Q-E sont <strong>inapplicables</strong> et non difficiles. Le <strong>ch. 19</strong> en fait l'axe de sa taxonomie.</li>
+  <li><strong>Le croisement avec l'autonomie, et sa borne.</strong> Le palier change <strong>le coût</strong> du défaut, non le défaut. Le <strong>ch. 25</strong> rencontre la même distinction du côté réglementaire, et le <strong>ch. 20</strong> du côté défensif.</li>
+</ol>
+
+<div class="avert">
+  <p><strong>Ce que le chapitre ne lègue pas.</strong> Il ne verse aucun fait, aucune entrée de socle, aucune date. Il ne tranche pas la thèse qu'il porte : <strong>elle reste une hypothèse falsifiable</strong>, et le § 14.2 dit exactement sur quel échantillon elle a été éprouvée.</p>
+</div>
+
+<section class="statut" id="s145">
+
+<h2><span class="sig">§ 14.5</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A).</p>
+</div>
+
+<p><strong>Ce qui est enfreint.</strong> Portes <strong>G-3</strong> et <strong>G-4</strong> ; volet résiduel de <strong>G-1</strong> non instruit ; ordre de rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026.</p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01</strong> — et ce chapitre est le seul du Livre où cela ne change presque rien : <strong>la grille n'est pas un fait</strong>, elle est un instrument, et son admissibilité tient à son rendement. Ce qui souffre de G-3, ce sont les <strong>verdicts</strong> du § 14.2, qui résolvent contre un socle non refondu.</li>
+  <li><strong>Les décomptes sont publiables</strong> (G-2). Écart de <strong>+17,1 %</strong> ; il alimente <strong>D-4</strong> par <strong>R-IV-17</strong>.</li>
+  <li><strong>Les renvois « ch. N » vers les Livres III à V sont des renvois de plan</strong> : ch. 25 § 25.1, ch. 37 § 37.4 et ch. 42 ne sont pas rédigés. Les renvois vers le <strong>ch. 7 § 7.2.2</strong> résolvent contre du texte ; ceux vers les <strong>ch. 15, 16, 17, 19 et 20</strong> résolvent contre du texte au terme de la présente passe.</li>
+  <li><strong>Les sept cases vides du § 14.2 sont des états de preuve, non des verdicts</strong> ; elles se rempliront ou non selon ce que G-3 et G-4 versent, et <strong>pas selon ce qu'une relecture jugera plausible</strong>.</li>
+</ol>
+
+<p><strong>Remontées ouvertes par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-20 — non bloquante, de thèse, et déjà tranchée à la source.</strong> La thèse du ch. 14 au TOC v0.24 porte « <strong>aucun mécanisme de 2026</strong> ne répond aux cinq ». Le Vol. III a <strong>borné cette forme le 21 juillet 2026</strong> — arbitrage rendu, porté à son TOC et à son PRD, et <strong>reporté dans sa pièce le 22 juillet 2026</strong> — en « aucun des <strong>trois mécanismes instruits par ce volume</strong> », au motif que la première est un <strong>quantificateur universel négatif sur un corpus non balayé</strong>. <strong>Le TOC du compendium porte encore la forme large.</strong> La pièce cite la thèse <strong>verbatim</strong>, comme le PRD l'exige, et écrit son corps sous la forme bornée — le § 14.2 déclare explicitement que la thèse n'est pas établie et que sa portée reste bornée à l'échantillon. <strong>Demande remontée</strong> : réalignement de la thèse au titre de la <strong>décision 8</strong> du TOC, l'arbitrage étant déjà rendu à la source et le plan n'ayant pas suivi. ⚠ <strong>Ce n'est pas une divergence à arbitrer, c'est un report qui n'a pas été fait</strong> : le rédacteur ne le fait pas à la place du plan.</li>
+  <li><strong>R-IV-21 — non bloquante, de renumérotation de renvoi.</strong> Le §4.3 du Vol. III, dont dérive le § 14.3, énumère les sièges d'application de la grille <strong>dans la numérotation du Vol. III</strong> : ses §5.4, §6.4, §8.4, §12.2, §19.1 et §22.4. Le TOC du compendium donne la correspondance pour quatre d'entre eux (ch. 15, ch. 16, ch. 19) mais <strong>pas pour les deux derniers</strong>, qui atterrissent au <strong>Livre III</strong> et au <strong>Livre IV</strong> — chapitres non rédigés. Le § 14.3 les nomme « ch. 25 § 25.1 » et « ch. 37 § 37.4 » <strong>d'après la table de correspondance du TOC</strong>, et non d'après un texte. <strong>Demande remontée</strong> : que la table de couverture du ch. 14 porte explicitement ces deux arrivées, qu'elle ne mentionne pas. ⚠ <strong>Une arrivée se déclare aux deux bouts</strong> — c'est la classe de défaut que la v0.17 du TOC a soldée sur le §2.8.5 du Vol. I, et elle se reproduit ici à l'identique.</li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.24</strong> — § 14.1 à § 14.4, dans l'ordre exact —, et le § 14.0 est une introduction de chapitre. La <strong>table de couverture est respectée pour ses deux lignes</strong>, y compris la seconde, qui déclare le §3.1.7 du Vol. I <strong>socle amont non repris ici</strong> : les quatre axes restent au <strong>ch. 7 § 7.2.2</strong>, et le § 14.1 y renvoie sans les reconstruire. <strong>Les cinq questions ne sont pas re-décidées</strong> : leur formulation, leur ordre et leurs règles d'emploi sont repris du cadrage du Vol. III <strong>sans modification</strong>. Les <strong>quatre échelles d'autonomie et de certification</strong> que la somme croise sont nommées par leur cardinal et leur numérotation, jamais nues (R-13 du Vol. III). Le <strong>marqueur « corpus d'appui » est conservé</strong> au § 14.4, comme marqueur conditionnel de réouverture et jamais comme source. Les <strong>neuf occurrences de R-14</strong> portent leur degré, et <strong>les sept cases vides du tableau 14.2 sont déclarées degré 3</strong> une par une. Enfin, les <strong>six occurrences de « Lecture de l'auteur »</strong> sont suivies de ce que le socle établit et n'établit pas — dont <strong>deux sections entières</strong>, le § 14.1 et le § 14.4, marquées à l'ouverture.</p>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre II, chapitre 14. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.24, entrée du chapitre 14, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>

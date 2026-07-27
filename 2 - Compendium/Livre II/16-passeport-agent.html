@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 16 — Le passeport d&#x27;agent : synthèse d&#x27;un objet encore virtuel · La somme agentique</title>
+<meta name="description" content="le « passeport d&#x27;agent » n&#x27;existe dans aucune spécification de 2026 — objet de synthèse assemblant carte signée, inscription au registre, chaîne de mandat et attestations ; sa normalisation 2027-2028 est projetée en statut PROJETÉ. Pour l&#x27;entreprise, rien n&#x27;entre au maillage sans lui.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre II · Chapitre 16</div>
+  <ol>
+    <li><a href="#s160"><span class="num">16.0</span>Introduction : ce que trois chapitres d&#x27;instruction ne composent pas</a></li>
+    <li><a href="#s161"><span class="num">16.1</span>Assemblage : les quatre pièces du passeport</a></li>
+    <li><a href="#s162"><span class="num">16.2</span>Ce qui n&#x27;existe toujours pas — et à quel degré</a></li>
+    <li><a href="#s163"><span class="num">16.3</span>Qui l&#x27;émettrait, qui le vérifierait</a></li>
+    <li><a href="#s164"><span class="num">16.4</span>Trois scénarios de normalisation, et ce que leur tri prospectif interdit d&#x27;écrire</a></li>
+    <li><a href="#s165"><span class="num">16.5</span>Le passeport par la grille du ch. 14</a></li>
+    <li><a href="#s166"><span class="num">16.6</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.24 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="16-passeport-agent.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre II — Faire confiance : identité, délégation et fabrique de confiance</div>
+  <h1><span class="chap">Chapitre 16</span>Le passeport d&#x27;agent : synthèse d&#x27;un objet encore virtuel</h1>
+  <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). Cinquième chapitre du mouvement, et <strong>chapitre-pivot</strong> : il compose ce que les trois précédents ont instruit séparément, et il n'a pas de source propre</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — portes <strong>G-3</strong> et <strong>G-4</strong> ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ <strong>Ce chapitre est un chapitre de composition, et il est de ce fait plus exposé qu'un chapitre de socle, non moins</strong> : chaque affirmation y est soit tracée vers un chapitre amont <strong>nommé par son numéro et sa section</strong> et vers l'entrée que ce chapitre mobilise, soit marquée « Lecture de l'auteur ». <em>Il n'y a pas de troisième cas, et un vide entre deux chapitres amont se décrit plutôt qu'il ne se comble.</em> <strong>R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre</strong></dd>
+    <dt>Date de gel</dt>
+    <dd><strong>27 juillet 2026</strong> — gel unique, <strong>D-1 prise</strong> (registre : <a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Volet résiduel de G-1 non instruit.</strong> Gels de source : <strong>juin 2026</strong> (Vol. I), <strong>16 juillet 2026</strong> (Vol. II), <strong>21 juillet 2026</strong> (Vol. III). ⚠ <strong>Un objet de synthèse ne se périme pas comme un fait, mais ses pièces le font</strong> : les cinq faits datés du § 16.4 — trois scénarios de normalisation — sont ceux dont la péremption est la plus proche</dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte). <strong>Aucun lot d'instruction propre</strong> : ce chapitre compose. Résolution contre le <strong>Vol. III <em>Monographie</em> ch. 8 et §7.4</strong>, dont les entrées <strong>F-01</strong> à <strong>F-11</strong>, <strong>F-29</strong>, <strong>F-33</strong> à <strong>F-51</strong>, <strong>F-55</strong>, <strong>F-64</strong> à <strong>F-69</strong>, <strong>F-79</strong> à <strong>F-89</strong> et les entrées héritées <strong>H-01</strong>, <strong>H-03</strong>, <strong>H-04</strong>, <strong>H-07</strong>, <strong>H-18</strong>, <strong>H-19</strong>, <strong>H-33</strong> conservent leurs niveaux d'origine ; contre le <strong>Vol. II <em>Monographie</em> §8.4</strong>, dont <strong>Vol. II F-07</strong> à <strong>Vol. II F-09</strong> et <strong>Vol. II F-25</strong> conservent leurs niveaux ; et contre le <strong>Vol. I <em>Monographie</em> §7.4.2</strong>, en <strong>[C]</strong>. ⚠ <strong>Cinq entrées mobilisées ici sont en [C]</strong> — Vol. III F-31, F-36, F-55, H-18, H-19, H-33 : elles corroborent, elles ne portent pas. <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd>Vol. II — <strong>R-2 et R-3 : ce chapitre en est le SIÈGE</strong> (§ 16.2, encadré « Affirmations écartées ») — <strong>deux occurrences chacun</strong>, l'affirmation écartée et sa forme imposée ; <strong>PRD Vol. II §8.2.5 : neuf occurrences</strong> ; <strong>§8.2 : deux occurrences</strong>, § 16.3 ; <strong>R-4 (« quatre cibles successives », jamais « quatre reports », jamais « lancé ») : zéro occurrence</strong> — le RTR n'est pas cité ; <strong>R-1, R-5 à R-8 : zéro occurrence</strong>. Vol. III — <strong>R-01 (le passeport est un objet de synthèse, jamais un mécanisme documenté) : ce chapitre en est le lieu d'application le plus dense — dix occurrences</strong>, dont l'ouverture et chacune des cinq sections ; <strong>R-14 : treize occurrences</strong>, dont <strong>neuf de degré 3</strong> ; <strong>R-02 : six occurrences</strong> ; <strong>R-09 : dix occurrences</strong> ; <strong>R-06 : deux occurrences</strong>, § 16.1 ; <strong>R-05 : une occurrence</strong>, § 16.3 ; <strong>R-13 : une occurrence</strong>, § 16.3, le sigle du maillage jamais nu. <strong>R-03, R-04, R-07, R-08, R-10 à R-12 : zéro occurrence</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ <strong>4 500 mots</strong> de corps (§ 16.0 à § 16.5), <strong>cible dérivée</strong> de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ <strong>Décompte publiable depuis G-2</strong> ; <strong>réel : 4 771 mots</strong> par <a class="lien" href="../PRD/decompte.sh"> 0 </a> — <strong>+6,0 %</strong>. ⚠ La volumétrie du Livre est relevée au <a class="lien" href="README.md"> 1 </a> du dossier et alimente <strong>D-4</strong> par <strong>R-IV-17</strong></dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>le « passeport d'agent » n'existe dans aucune spécification de 2026 — objet de synthèse assemblant carte signée, inscription au registre, chaîne de mandat et attestations ; sa normalisation 2027-2028 est projetée en statut PROJETÉ. Pour l'entreprise, rien n'entre au maillage sans lui.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.24, entrée du chapitre 16.</span>
+</div>
+
+<h2 id="s160"><span class="sig">§ 16.0</span>Introduction : ce que trois chapitres d'instruction ne composent pas</h2>
+
+<p>Trois chapitres ont instruit trois matières séparément, et <strong>chacune s'est arrêtée au même seuil</strong>. La <strong>carte signée</strong> démontre l'intégrité d'un contenu canonicalisé au regard d'une clé, et renvoie l'ancrage de confiance <strong>hors du protocole</strong> (ch. 15 § 15.1.2). Le <strong>registre</strong> prescrit des champs obligatoires et un cycle de vie, dans un corpus dont <strong>trois dispositifs sur quatre portent eux-mêmes leur réserve de statut</strong> (ch. 15 § 15.3). La <strong>chaîne de mandat</strong> spécifie un format versionné et laisse le modèle de confiance au déploiement (ch. 17 § 17.1). <em>Chacune établit ce qu'elle établit sans dire à quoi elle se rattache.</em></p>
+
+<p><strong>Le présent chapitre demande ce que produirait leur composition — et il ne le demande pas à une source : il n'y en a pas.</strong></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>la pièce entière est une construction d'auteur, et le marquage se porte ici plutôt qu'au paragraphe.</strong> ⚠ <strong>Le passeport d'agent ne figure dans aucune spécification à date : c'est un objet de synthèse construit par la somme</strong>, en assemblant la carte signée (ch. 15 § 15.1), l'inscription au registre (ch. 15 § 15.3), la chaîne de mandat (ch. 17) et les attestations de conformité (ch. 15 § 15.3.3). <strong>Ce que le socle établit</strong> : l'état, la date, le statut et le contenu prescriptif de chacune de ces quatre matières, entrée par entrée, aux chapitres qui les instruisent. <strong>Ce qu'il n'établit pas</strong> : qu'elles se composent ; qu'un artefact unique les porte ; qu'un émetteur les délivre ensemble ; qu'un vérificateur les lise ensemble ; que leur composition produise autre chose que leur juxtaposition. <strong>Le socle ne documente pas d'objet composé de ces quatre pièces — absence de documentation, non fait négatif vérifié</strong> (degré 3). <em>Le lecteur peut refuser l'assemblage sans qu'aucun des faits cités ne tombe — c'est la propriété que R-01 protège, et elle vaut mieux qu'un assentiment obtenu par confusion.</em></p>
+
+<div class="avert">
+  <p><strong>Ce que ce chapitre ne traite pas.</strong> La <strong>valeur probante</strong> de chaque pièce est instruite au <strong>ch. 15</strong> et n'est pas rejouée. L'<strong>inventaire de la révocation</strong> est au <strong>ch. 20 § 20.4</strong>. L'<strong>interrogeabilité de la chaîne au-delà du premier vérificateur</strong> est au <strong>ch. 17 § 17.6</strong>, qui la borne plutôt qu'il ne la comble. L'<strong>admission d'un agent tiers</strong> est au <strong>ch. 18</strong>. Et la <strong>seconde moitié de la quatrième pièce</strong> — le registre comme pièce de conformité relu depuis un cadre prudentiel — est au <strong>ch. 25 § 25.2</strong>, non rédigé : le § 16.1 en déclare l'attente plutôt que d'en préjuger.</p>
+</div>
+
+<h2 id="s161"><span class="sig">§ 16.1</span>Assemblage : les quatre pièces du passeport</h2>
+
+<p>Un passeport, au sens ordinaire, tient <strong>quatre choses ensemble</strong> : il identifie son porteur, il nomme l'autorité qui l'a délivré, il dit ce que son porteur est autorisé à faire, et il s'inscrit dans un <strong>régime de reconnaissance mutuelle</strong> qui le rend opposable ailleurs qu'à son lieu d'émission. <em>L'analogie s'arrête là où commence ce chapitre</em> : l'artefact qui réunirait ces quatre fonctions relève de l'absence de documentation déclarée à l'ouverture.</p>
+
+<p><strong>La première pièce — la carte signée — apporte une intégrité, non une origine.</strong> Ce que la spécification démontre est borné (ch. 15 § 15.1.1) : signature sur une forme canonicalisée, champ de signatures exclu du contenu signé, charge reconstruite par le vérificateur (Vol. III F-01, F-02, <strong>[A]</strong>). <em>L'apport à l'assemblage s'arrête là</em> : la signature ne dit rien de l'appartenance de la clé à une organisation, l'ancrage étant renvoyé hors du protocole vers un magasin facultatif et non spécifié (F-09, <strong>[B]</strong>). Le régime d'obligation achève de le borner — apposition en <strong>MAY</strong>, vérification en <strong>SHOULD</strong> (F-04, <strong>[A]</strong>). <em>Une pièce dont l'apposition est facultative et le contrôle recommandé ne fonde pas une admission ; elle fonde une faculté.</em></p>
+
+<p><strong>La deuxième pièce — l'inscription au registre — apporte une administration, non une opposabilité.</strong> Deux champs obligatoires portent les outils invocables et les limites de portée (F-40, <strong>[B]</strong> ; ch. 15 § 15.3.1), et le socle hérité rattache au dispositif l'inventaire, la découverte, le cycle de vie et la conformité (H-03, <strong>[A, statut BROUILLON]</strong>). <em>Son statut, dit à chaque mention, est celui d'un brouillon de laboratoire</em> (F-38, <strong>[A]</strong>), et <strong>son ancrage protocolaire est non entretenu</strong> (F-41, F-42, <strong>[B, degré 2]</strong>). Du côté du protocole agent-agent, <strong>la voie du registre est déclinée en toutes lettres</strong> (F-43, <strong>[B, degré 2]</strong>, fait négatif <strong>ÉTABLI</strong>). <em>L'inscription existe comme objet administrable, non comme point d'ancrage opposable.</em></p>
+
+<p><strong>La troisième pièce — la chaîne de mandat — apporte une déclaration de délégation, non son interrogeabilité.</strong> La spécification de paiement agentique en <strong>v0.2.0 du 28 avril 2026</strong> — <em>spécification de projet, non texte normatif d'un organisme de normalisation</em> — définit deux types de mandats sérialisés, porteurs d'un attribut de type <strong>versionné</strong> et des attributs temporels d'émission et d'échéance (F-46, <strong>[B]</strong> ; ch. 17 § 17.1). Le <strong>RFC 8693</strong> définit l'attribut qui exprime qu'une délégation a eu lieu et identifie la partie agissante, et <strong>place explicitement hors de son périmètre</strong> la syntaxe, la sémantique et les caractéristiques de sécurité des jetons eux-mêmes (F-47, <strong>[A]</strong>). Le mécanisme de propagation adopté par un groupe de travail <strong>borne sa portée à l'intérieur d'un domaine de confiance</strong> (F-29, <strong>[A]</strong> ; ch. 17 § 17.1). ⚠ Les dates d'expiration d'<em>Internet-Drafts</em> citées dans ce chapitre sont l'<strong>échéance automatique de six mois</strong> : <strong>PROGRAMMÉES au sens mécanique</strong>, elles ne disent rien d'une adoption. <em>Le ch. 17 § 17.6 en tire la conséquence que le présent chapitre reprend sans y ajouter : le socle n'établit pas qu'une chaîne ainsi formée soit interrogeable à un instant quelconque.</em></p>
+
+<p><strong>La quatrième pièce — les attestations de conformité — n'a pas de chapitre, et la somme le déclare plutôt que de le masquer.</strong> Elle est portée par <strong>deux sections seulement</strong> — ch. 15 § 15.3.3 et ch. 25 § 25.2. Du côté du registre, le relevé ne fait apparaître <strong>qu'un nom de champ facultatif</strong>, <em>source primaire ouverte hors socle et non versée</em> : <strong>le socle ne documente ni son format, ni ce qu'une attestation y porterait, ni qui l'émettrait — degré 3</strong>. Du côté réglementaire, ce à quoi une attestation se rapporterait est <strong>daté et borné</strong> : la ligne directrice <strong>attend</strong> — modalité au <em>should</em>, douze énoncés numérotés, aucune occurrence de <em>must</em> dans le corps balayé (F-64, <strong>[B, degré 1]</strong>) —, et le registre de l'attente est autorisé par le <strong>document d'information</strong> du même jour (F-66, <strong>[B, degré 1]</strong>). ⚠ <strong>On écrit « attendu par », jamais « exigé par ».</strong> ⚠ Et le texte qui attend l'inventaire <strong>ne nomme ni l'agentique, ni les agents, ni l'orchestration</strong> (H-04) : sa couverture de son porteur est une <strong>inférence d'analystes, jamais une disposition du texte</strong>.</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Pièce</th><th>Siège</th><th>Ce que le socle établit</th><th>Ce qu'il n'établit pas</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Carte signée</strong></td><td>ch. 15 § 15.1</td><td>intégrité d'un contenu canonicalisé au regard d'une clé (F-01, F-02, <strong>[A]</strong>) ; apposition <strong>MAY</strong>, vérification <strong>SHOULD</strong> (F-04, <strong>[A]</strong>)</td><td>l'appartenance de la clé à une organisation — ancrage renvoyé hors protocole (F-09, <strong>[B]</strong>)</td></tr>
+    <tr><td><strong>Inscription au registre</strong></td><td>ch. 15 § 15.3</td><td>champs obligatoires d'accès aux outils et de bornes de permission (F-40, <strong>[B]</strong>) ; brouillon de laboratoire, statut déclaré (F-38, <strong>[A]</strong>)</td><td>l'opposabilité de ces bornes au point d'application ; aucune interface de registre prescrite par le protocole (F-43, <strong>[B, degré 2]</strong>)</td></tr>
+    <tr><td><strong>Chaîne de mandat</strong></td><td>ch. 17</td><td>format versionné, attributs temporels (F-46, <strong>[B]</strong>) ; expression de la délégation, sécurité du jeton hors périmètre (F-47, <strong>[A]</strong>)</td><td>l'interrogeabilité de la chaîne à l'instant t (ch. 17 § 17.6)</td></tr>
+    <tr><td><strong>Attestations de conformité</strong></td><td>ch. 15 § 15.3.3 et ch. 25 § 25.2</td><td>un nom de champ <strong>facultatif</strong>, hors socle ; ce que les cadres canadiens <strong>attendent</strong> (F-65, F-68, <strong>[B]</strong> ; H-04)</td><td>le format, le contenu et l'émetteur d'une attestation — <strong>degré 3</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 16.1 — Les quatre pièces du passeport d'agent, objet de synthèse construit par la somme, au 21 juillet 2026.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : chacune des quatre matières, avec son statut, sa date et ses bornes. <strong>Ce qu'il n'établit pas</strong> : que la composition produise un objet, ni que les manques de l'une soient comblés par une autre. <em>La lecture proposée est que <strong>l'assemblage n'est pas une somme</strong> : sur les quatre pièces, aucune ne fournit à une autre l'ancrage qui lui manque</em> — constat <strong>borné à ces quatre matières nommées</strong>. <strong>Et la quatrième est, des quatre, la moins documentée</strong> — même borne : chacune des trois autres est adossée à au moins une spécification instruite, tandis que l'attestation n'a qu'un nom de champ facultatif, relevé hors socle.</p>
+
+<div class="avert">
+  <p><strong>Un écart de disponibilité est déclaré, non contourné.</strong> Des deux sièges de la quatrième pièce, <strong>un seul est rédigé</strong> : le <strong>ch. 25 est au plan</strong>, non au texte. Le présent chapitre <strong>ne préjuge donc de rien</strong> de ce que le ch. 25 § 25.2 établira du registre comme pièce de conformité ; il compose sur ce que le ch. 15 § 15.3.3 porte, et <strong>déclare l'autre moitié en attente</strong>.</p>
+</div>
+
+<h2 id="s162"><span class="sig">§ 16.2</span>Ce qui n'existe toujours pas — et à quel degré</h2>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>SIÈGE DE L'ENCADRÉ DES AFFIRMATIONS ÉCARTÉES POUR TOUTE LA SOMME.</strong> Les garde-fous <strong>R-2 et R-3 du Vol. II</strong> sont <strong>posés ici une seule fois</strong>. Les <strong>ch. 12 § 12.0, ch. 15 § 15.3.1 et ch. 25</strong> les <strong>appliquent</strong> et y renvoient ; ils <strong>ne reconstruisent pas cet encadré</strong>. C'est l'économie de la fusion côté « affirmations plausibles et non vérifiées », et elle n'a lieu que si ces chapitres s'y tiennent.</p>
+</div>
+
+<p>Une absence ne vaut que par <strong>la manière dont elle a été établie</strong>. Cette section est le lieu où la somme rend compte de ce qui manque <strong>côté émission</strong>, et elle le fait à trois degrés.</p>
+
+<p><strong>Deux affirmations, en particulier, sont assez plausibles pour qu'un dossier d'architecture les reprenne sans les vérifier ; les passes de vérification du Vol. II les ont l'une et l'autre écartées.</strong></p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p><strong>Affirmations écartées — garde-fous R-2 et R-3 du Vol. II.</strong> <strong>(1) Un registre d'agents centralisé administré dans l'annuaire de l'éditeur.</strong> L'affirmation selon laquelle le produit d'identité d'agent comporterait un <strong>registre d'agents centralisé</strong>, administré depuis le centre d'administration de l'annuaire, <strong>n'a pas été confirmée</strong> par les passes de vérification du Vol. II. Elle est <strong>non vérifiée</strong>, et la somme s'en tient à ce que la documentation de l'éditeur établit — <strong>des identités d'agents et des gabarits</strong>. <strong>Forme imposée</strong> : parler d'identités et de gabarits, <strong>jamais de « registre centralisé »</strong>. <em>La question reste ouverte ; aucune inférence n'est proposée.</em> <strong>(2) Une identité de charge de travail obligatoire dans la spécification de registre.</strong> Rien au socle n'établit que cette spécification — <strong>brouillon de laboratoire</strong> — <strong>exigerait</strong> une identité de type SPIFFE, ni sous forme d'identifiant en URI, ni sous forme de justificatif. <strong>Elle s'appuie sur SPIFFE et SPIRE comme <em>fondation</em> ; l'exigence stricte n'est pas établie.</strong> <strong>Forme imposée</strong> : « s'appuie sur … comme fondation », <strong>jamais « impose »</strong>. <em>En l'absence de source primaire l'attestant, la question reste ouverte.</em> ⚠ Ces deux points <strong>ne figurent pas parmi les lacunes recensées</strong> du Vol. II : ils relèvent de ses garde-fous R-2 et R-3, et sont exposés ici au titre du siège que le plan leur assigne.</p>
+</div>
+
+<p><strong>Aux deux réserves nommées s'en ajoute une troisième, plus structurelle.</strong> Le socle du Vol. II ne documente <strong>aucune norme ratifiée de registre d'agents, à quelque niveau que ce soit</strong>. Ce qu'il documente, c'est un <strong>produit d'éditeur en disponibilité générale dont les flux étendent les RFC</strong>, une <strong>spécification sectorielle à l'état de brouillon</strong>, et une <strong>extension IETF expirée en cours de consolidation</strong> (Vol. II F-07, F-08 ; ch. 12 § 12.5). <em>Un architecte qui chercherait aujourd'hui, pour son dossier de conformité, la norme d'identité et de registre des agents ne la trouverait pas : elle n'existe pas.</em></p>
+
+<p><strong>Et l'inventaire du Vol. III, prélevé ici, produit un exemple de chacun des trois degrés.</strong></p>
+
+<p><strong>Fait négatif VÉRIFIÉ, borné.</strong> La page du brouillon de registre, telle que rendue le 21 juillet 2026, <strong>ne fait apparaître aucune chaîne de date postérieure au 27 mars 2026</strong>, ni section de révision, ni mention de mise à jour (Vol. III F-39, <strong>[B, degré 1]</strong>). <em>Le balayage est documenté : deux ouvertures distinctes le même jour, sept chaînes cherchées, relevé exhaustif des treize chaînes de date de la page.</em> ⚠ <strong>Sa borne est ce qui le rend tenable</strong> : il porte sur le <strong>texte rendu</strong>, non sur les en-têtes du transport ni sur les métadonnées du système de publication — <em>une édition sur place sans changement d'en-tête n'y laisserait aucune trace</em>. La conclusion s'écrit donc « <strong>le relevé ne soutient pas</strong> » une mise à jour ultérieure, <strong>jamais « la mise à jour n'a pas eu lieu »</strong>. ⚠ Le point vaut au-delà de son objet : <strong>c'est un cas où la source primaire corrige la recherche secondaire</strong>.</p>
+
+<p><strong>Fait négatif ÉTABLI.</strong> <strong>Trois</strong> des quatre dispositifs portent <strong>leur propre réserve de statut</strong>, et c'est sur elles que repose l'absence de ratification — non sur un balayage des actes de normalisation. Le brouillon de registre se donne à lui-même le statut « draft » dans un espace que son hébergeur dit n'être <strong>pas encore</strong> un projet officiel (F-38, <strong>[A]</strong>) ; l'extension SCIM est un <em>Internet-Draft</em> <strong>expiré</strong>, sans flux ni groupe adoptant (F-41, <strong>[B, degré 2]</strong> ; H-03, <strong>[A]</strong>), la session de l'IETF 125 s'étant close sur une demande de cas d'usage (F-42) ; et le service d'annuaire demeure une <strong>soumission individuelle</strong> (F-43). ⚠ <strong>Pour le protocole agent-agent, ce que le socle porte est autre chose</strong> : une première spécification stable hébergée par une fondation (H-01, <strong>[A]</strong>) et la déclaration explicite qu'<strong>aucune interface de registre n'y est prescrite</strong> (F-43) — <em>absence d'interface de registre, non absence de ratification, et les deux ne s'échangent pas.</em></p>
+
+<p><strong>Absence de documentation.</strong> Le <strong>régime de gouvernance et de révocation</strong> des registres du protocole agent-agent n'est pas relevé : la spécification ne prescrivant aucune interface, <strong>il n'y a rien à en extraire sans passer à des mises en œuvre particulières</strong>, ce que le lot n'a pas fait. Et le <strong>statut normatif de la spécification elle-même</strong> est au même degré : <em>il ne se déduit ni de la stabilité déclarée d'une version, ni de l'hébergement par une fondation.</em></p>
+
+<div class="avert">
+  <p><strong>Un second point de non-couverture est consigné pour que nul ne le prenne pour un silence</strong> : deux brouillons de registre ou d'annuaire d'agents ont été <strong>aperçus au fil des recherches et non ouverts</strong> — niveau <strong>[C]</strong>, repérage. <em>Le chapitre n'écrit donc pas que les registres instruits épuisent le champ.</em> De même, des annonces institutionnelles de mai 2026 ne sont connues que par <strong>presse secondaire</strong> et <strong>aucune n'est portée en affirmation</strong> : elles auraient renseigné sur la trajectoire du brouillon ; <em>la somme s'en abstient plutôt que de l'inférer.</em></p>
+</div>
+
+<h2 id="s163"><span class="sig">§ 16.3</span>Qui l'émettrait, qui le vérifierait</h2>
+
+<p>Un passeport suppose <strong>deux rôles</strong> que l'assemblage du § 16.1 ne distribue pas : celui qui le <strong>délivre</strong> et celui qui l'<strong>accepte</strong>.</p>
+
+<p><strong>Côté émission, les quatre pièces relèvent de quatre émetteurs distincts, et le socle n'en documente aucun qui les délivre ensemble.</strong> La carte est signée par le détenteur d'une clé que la spécification <strong>ne rattache à aucune organisation</strong> (F-09) ; l'inscription est tenue par l'exploitant d'un registre dont le texte prescriptif se déclare brouillon (F-38) et dont le protocole décline l'interface (F-43) ; le mandat est émis par la partie qui délègue, selon un format dont la spécification <strong>renvoie l'ancrage au déploiement</strong> (F-46 ; ch. 17 § 17.1) ; <strong>l'attestation n'a pas d'émetteur documenté</strong> (degré 3).</p>
+
+<p><strong>Un émetteur unique existe au niveau du produit, et le ch. 15 l'établit avec ses bornes</strong> : disponibilité générale de la plateforme datée d'avril 2026 (F-33, <strong>[B]</strong>), type de ressource d'annuaire spécifié dans la version stable de l'interface de l'éditeur (F-37, <strong>[B]</strong>), et <strong>disponibilité générale du produit qui ne vaut pas disponibilité générale de ses capacités</strong> (F-34, <strong>[A]</strong>). ⚠ <em>Cas documenté, jamais recommandé</em>, et il porte sa propre réserve de couverture, <strong>énoncée par l'éditeur</strong> : une politique d'accès conditionnel ciblant des identités d'agent ne s'applique pas au compte d'utilisateur de l'agent (F-35, <strong>[A, degré 2]</strong>, fait négatif <strong>ÉTABLI</strong>). <em>Un émetteur qui tient l'agent sur deux plans ne délivre pas un passeport ; il délivre deux pièces qui ne se recouvrent pas.</em></p>
+
+<p><strong>Côté vérification, le socle documente l'absence de ce dont le vérificateur aurait besoin.</strong> Il <strong>ne peut pas établir le statut d'une clé</strong> — aucune liste de révocation, aucun protocole d'état en ligne, aucun point de terminaison de statut, et <strong>aucune étape de contrôle de fraîcheur</strong> dans la procédure en six étapes (F-06, <strong>[A, degré 1]</strong>) —, alors même que <strong>l'emploi d'une clé expirée ou révoquée est interdit au niveau normatif le plus fort</strong> (F-07, <strong>[A]</strong>). Il ne peut pas davantage s'appuyer sur une gouvernance de projet : deux documents nommés balayés, <strong>aucune disposition de gouvernance des clés</strong> (F-08, <strong>[A, degré 1]</strong> ; F-11, <strong>[B]</strong>). <em>Le reste du corpus du projet n'a pas été balayé, et le chapitre n'en conclut rien.</em></p>
+
+<p><strong>Et lorsque le vérificateur appartient à une autre organisation, ce n'est plus un mécanisme qui manque, c'est une institution.</strong> Le <strong>ch. 18 § 18.1</strong> l'établit sur <strong>neuf chantiers et six organisations</strong> : <strong>aucune des propositions consultées n'était ratifiée ni adoptée</strong> (F-50, <strong>[B, degré 2]</strong>, fait négatif <strong>ÉTABLI</strong>, borné aux propositions consultées). ⚠ L'instance qui a compilé le livre blanc de référence le dit d'elle-même : sa charte <strong>place hors de son périmètre</strong> le développement de protocoles de normalisation mondiaux liés à l'identité des agents, <strong>et renvoie ce travail à un groupe de travail</strong> (F-48, <strong>[A, degré 2]</strong>). ⚠ <strong>Le vocabulaire lui-même est équivoque</strong> — le sigle de la connaissance de l'agent désigne <strong>au moins deux objets distincts</strong> (F-49, <strong>[B, degré 3]</strong>) —, et <em>le KYA n'est pas un standard établi ; les initiatives existantes relèvent du positionnement fournisseur</em> (Vol. I <em>Monographie</em> §5.5.4). ⚠ <strong>Le siège unique du KYA est le ch. 18 § 18.1</strong> : le sigle est nommé ici, <strong>il n'y est pas instruit</strong>.</p>
+
+<p><strong>Ce que le socle documente hors du champ agentique et ne documente pas dedans a un nom.</strong> Un règlement européen inscrit un <strong>audit des prestataires qualifiés au moins tous les vingt-quatre mois, à leurs frais</strong>, et une alliance industrielle exploite un <strong>programme de certification par laboratoires accrédités</strong> ainsi qu'un <strong>service de métadonnées</strong> (F-51, <strong>[B]</strong>). <em>Ce sont des dispositifs de reconnaissance mutuelle — ce qui rend un passeport opposable hors de son lieu d'émission.</em> ⚠ <strong>Ils sont instruits au ch. 18 § 18.3</strong>, qui en est le siège, et <strong>ne sont pas transposés ici</strong>.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : quatre émetteurs distincts pour quatre pièces ; un émetteur unique au niveau du produit, avec sa réserve de couverture ; l'absence de moyen de vérification du statut d'une clé ; l'état non ratifié des propositions consultées et l'aiguillage institutionnel déclaré ; deux précédents de reconnaissance mutuelle hors du champ agentique. <strong>Ce qu'il n'établit pas</strong> : qu'un émetteur unique soit <strong>nécessaire</strong>, ni qu'une autorité d'accréditation soit la <strong>seule</strong> forme possible de reconnaissance, ni qu'aucune organisation n'en ait constitué une hors des pages ouvertes. <em>La lecture proposée est que la pièce manquante du passeport est <strong>institutionnelle avant d'être technique</strong></em> — proposition cohérente avec le contrepoint du ch. 13 § 13.5 et avec ce que le ch. 18 § 18.3 instruit, et <strong>réfutable par la production d'un dispositif d'accréditation agentique opérant</strong>.</p>
+
+<div class="avert">
+  <p><strong>Une lacune est ouverte ici et n'est pas comblée</strong> : quelle instance délivrerait un passeport assemblé, et selon quel régime d'accréditation serait-elle elle-même reconnue ? <strong>Aucune passe de recherche n'a été conduite</strong> — le passeport étant une construction de la somme, <strong>aucun lot n'a pris pour objet son émission</strong>. <em>Source à retrouver : un texte, quel qu'en soit le statut, décrivant l'accréditation d'un émetteur d'identité d'agent.</em> La question reste ouverte ; aucune inférence n'est proposée.</p>
+</div>
+
+<h2 id="s164"><span class="sig">§ 16.4</span>Trois scénarios de normalisation, et ce que leur tri prospectif interdit d'écrire</h2>
+
+<p>Trois voies sont concevables pour qu'un objet de ce type cesse d'être une construction d'auteur. <em>Les décrire n'est pas les prédire</em>, et le tri prospectif sert précisément à empêcher la confusion.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>SIÈGE DU STATUT PROJETÉ DE LA NORMALISATION DU PASSEPORT POUR TOUTE LA SOMME.</strong> L'agenda 2027-2028 que le Vol. I dressait est <strong>repris ici une seule fois</strong>, et <strong>à son régime [C]</strong>. Les chapitres aval qui en ont besoin y renvoient ; ils ne le re-datent pas.</p>
+</div>
+
+<p><strong>L'état daté des matériaux se pose d'abord, parce qu'il borne les trois scénarios.</strong> Au W3C, le modèle de données des accréditations vérifiables porte le stade de <strong>Recommandation depuis le 15 mai 2025</strong>, sans entrée postérieure à son historique (F-79, <strong>[B]</strong>) ; sa version 2.1 est un <strong>brouillon de travail</strong> du 11 mai 2026, et <strong>toute affirmation sur son aboutissement est SPÉCULATIVE</strong> (F-80, <strong>[B]</strong>) ; la version 1.1 des identifiants décentralisés en reste à l'<strong>instantané de recommandation candidate du 5 mars 2026</strong>, la date que le document s'était lui-même donnée étant <strong>dépassée sans transition constatée</strong> (F-82, <strong>[A]</strong>). À l'IETF, <strong>sept</strong> <em>Internet-Drafts</em> de groupe de travail étaient recensés, <strong>aucune date de publication en RFC n'étant annoncée pour aucun des sept</strong> (F-85, <strong>[B]</strong>), et une section d'architecture range les intermédiaires d'IA parmi les charges de travail déléguées — <em>énoncé d'un brouillon en cours, qui ne fait autorité sur rien</em> (F-86, <strong>[B]</strong> ; établi au ch. 12 § 12.1).</p>
+
+<div class="avert">
+  <p><strong>L'entrée héritée qui porte l'agenda 2027-2028 est une entrée de repérage</strong> (H-18, <strong>[C]</strong>) : <em>elle n'établit pas les échéances qu'elle liste</em> — <strong>PROJETÉES</strong>, puisqu'elles viennent d'un agenda dressé par un volume antérieur <strong>sans engagement daté de l'organisme qui les porterait</strong>. ⚠ Et c'est elle, précisément, dont le titre porte le syntagme « passeport d'agent » <strong>sans le définir ni le réemployer dans le corps de la section</strong> : <em>le Vol. I fournit l'agenda, pas l'objet.</em></p>
+</div>
+
+<p><strong>Scénario 1 — normalisation par extension d'un texte en procédure à l'IETF. Tri : PROJETÉ.</strong> Le chemin existe et il est ouvert : un groupe de travail traite déjà l'identité de charge de travail — <strong>socle posé au ch. 3</strong>, non reconstruit ici — et son document d'architecture range explicitement les intermédiaires d'IA parmi les charges déléguées (F-86) ; un mécanisme de propagation du contexte est en appel de dernière relecture (F-29). ⚠ <strong>Ce qui interdit d'écrire PROGRAMMÉ est un fait, non une prudence</strong> : le tri PROGRAMMÉ exige un <strong>engagement daté réel</strong>, et aucune date de publication en RFC n'est annoncée pour aucun des sept documents relevés (F-85). <em>Le scénario est une intention lisible dans l'état d'une procédure, sans jalon.</em></p>
+
+<p><strong>Scénario 2 — assemblage par une fondation ou une alliance industrielle. Tri : PROJETÉ pour la pièce du mandat, SPÉCULATIF pour l'assemblage.</strong> Un précédent est documenté, <strong>et il est instructif par son inachèvement</strong> : le billet officiel du 28 avril 2026, signé d'un dirigeant nommé, annonce la donation de la spécification de paiement agentique à une alliance et qualifie l'opération de « Transitioning ownership to the FIDO Alliance » (F-44, <strong>[A]</strong>) ; <strong>trois mois après, le transfert n'est pas matérialisé</strong> sur les deux relevés bornés du lot, et la normalisation est annoncée dans deux groupes de travail <strong>sans échéance</strong> (F-45, <strong>[B, degré 1]</strong>). <em>Une normalisation annoncée sans jalon relève du PROJETÉ.</em> Que cette voie porte ensuite les trois autres pièces <strong>n'est adossé à aucune source</strong> : c'est du <strong>SPÉCULATIF</strong>. ⚠ Et la voie n'est pas dégagée : le brouillon de registre se déclare lui-même brouillon (F-38), et son ancrage protocolaire a été <strong>renvoyé à la production de cas d'usage</strong> (F-42).</p>
+
+<p><strong>Scénario 3 — préemption par le produit, cadrage par le régulateur. Tri : deux ancrages PROGRAMMÉS, un résultat SPÉCULATIF.</strong> <em>Ce scénario n'est pas une normalisation au sens propre, et c'est ce qui le rend plausible</em> : un produit en disponibilité générale fait exister l'identité d'agent gérée en production <strong>avant tout standard</strong> (F-33, F-34, F-37 — thèse du ch. 15 § 15.2.3), tandis que <strong>deux cadres prudentiels entrent en vigueur au 1ᵉʳ mai 2027</strong>, échéance réglementaire datée donc <strong>PROGRAMMÉE</strong> (F-65, F-66, F-68 ; H-04). S'y ajoute une <strong>désignation institutionnelle dont l'issue est ouverte</strong> : au 27 juin 2026, un résumé d'étude d'impact réglementaire écrivait encore que l'organisme de normalisation technique « <strong>sera désigné</strong> » conformément aux facteurs et processus établis par la loi (F-69, <strong>[A, degré 3]</strong> ; siège au <strong>ch. 32 § 32.1</strong>). ⚠ <em>C'est le libellé d'un texte à une date</em>, et <strong>le relevé ne porte aucun jalon daté</strong>. ⚠ <strong>Ce que ces ancrages datent, ce sont des entrées en vigueur et une procédure, non un format d'identité d'agent</strong> : conclure de l'un à l'autre serait exactement l'inférence proscrite du côté réglementaire — <em>on écrit « attendu par », jamais « exigé par ».</em></p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Scénario</th><th>Tri</th><th>Ce sur quoi il s'appuie</th><th>Ce qui le réfuterait</th></tr></thead>
+  <tbody>
+    <tr><td><strong>1 — extension d'un texte de l'IETF</strong></td><td><strong>PROJETÉ</strong></td><td>sept brouillons de groupe de travail, aucun publié en RFC, <strong>aucune date annoncée</strong> (F-85) ; intermédiaires d'IA rangés parmi les charges déléguées (F-86) ; appel de dernière relecture sur la propagation de contexte (F-29)</td><td>l'adoption d'un document couvrant l'assemblage des quatre pièces, ou au contraire l'expiration de la série sans reprise</td></tr>
+    <tr><td><strong>2 — fondation ou alliance</strong></td><td><strong>PROJETÉ</strong> (mandat) / <strong>SPÉCULATIF</strong> (assemblage)</td><td>donation annoncée le 28 avril 2026 (F-44, <strong>[A]</strong>) ; transfert <strong>non matérialisé</strong> à trois mois, normalisation annoncée sans échéance (F-45, <strong>[B, degré 1]</strong>)</td><td>la publication, par le cessionnaire, d'une spécification d'identité ou de paiement agentiques ; la matérialisation documentée du transfert</td></tr>
+    <tr><td><strong>3 — préemption par le produit, cadrage par le régulateur</strong></td><td>ancrages <strong>PROGRAMMÉS</strong> (1ᵉʳ mai 2027) / résultat <strong>SPÉCULATIF</strong></td><td>disponibilité générale datée et bornée (F-33, F-34) ; attentes de deux cadres au 1ᵉʳ mai 2027 (F-65, F-68) ; désignation <strong>écrite au futur</strong> au 27 juin 2026 (F-69)</td><td>un cadre prudentiel qui nommerait un format d'identité d'agent ; ou l'inverse — une normalisation ouverte qui précéderait l'échéance</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 16.2 — Trois scénarios de normalisation du passeport d'agent, avec leur tri prospectif, au 21 juillet 2026.</p>
+
+<p><strong>Aucun des trois n'est PROGRAMMÉ, et c'est le résultat de la section.</strong> ⚠ Ce qui est PROGRAMMÉ dans ce dossier <strong>ne concerne pas le passeport</strong> : les expirations d'<em>Internet-Drafts</em>, qui découlent mécaniquement de la règle des six mois, et <strong>deux entrées en vigueur réglementaires qui ne nomment pas les agents</strong> (H-04).</p>
+
+<div class="avert">
+  <p><strong>La thèse citée en tête projette la normalisation « 2027-2028 » et la range en statut PROJETÉ ; la seconde moitié de cet énoncé est exacte, la première est empruntée.</strong> L'agenda vient d'une entrée <strong>[C]</strong> (H-18), et <strong>le relevé propre du Vol. III ne confirme aucune de ses échéances</strong> (F-80, F-82, F-85). <em>La pièce écrit donc le statut sans re-dater l'échéance</em>, et remonte l'écart plutôt que de le corriger.</p>
+</div>
+
+<h2 id="s165"><span class="sig">§ 16.5</span>Le passeport par la grille du ch. 14</h2>
+
+<div class="avert">
+  <p><strong>R-01 s'applique intégralement à cette section</strong> : ce qui est soumis à la grille <strong>n'est pas un mécanisme de 2026</strong>, c'est une construction de la somme. <strong>La réponse est sur le papier, au sens strict</strong> — elle décrit ce qu'un assemblage <strong>produirait</strong>, non ce qu'une implémentation produit. Les règles d'emploi du ch. 14 § 14.1 demeurent, et une case laissée vide déclare l'état de la preuve, non une note intermédiaire.</p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Question</th><th>Réponse <strong>sur le papier</strong></th><th>Pièce répondante</th><th>Ce que le socle établit aujourd'hui</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Q-A</strong> <em>qui es-tu</em></td><td><strong>répond partiellement</strong></td><td>carte signée + inscription</td><td><em>vérifiable</em> oui (F-01, F-02) ; <strong>résistance à l'usurpation non établie</strong> (F-09) ; <em>révocable</em> non (F-05, F-06, F-07) — l'apport de l'inscription n'est documenté qu'en <strong>[C]</strong>, hors verdict ; <em>stable</em> : <strong>degré 3</strong></td></tr>
+    <tr><td><strong>Q-B</strong> <em>qui t'a créé</em></td><td><strong>répond partiellement</strong></td><td>inscription + attestation</td><td><strong>aucune autorité d'émission documentée — degré 3</strong> ; ancrage renvoyé hors protocole (F-08, F-09, F-11, F-43)</td></tr>
+    <tr><td><strong>Q-C</strong> <em>pour qui agis-tu</em></td><td><strong>répond</strong></td><td>chaîne de mandat</td><td>format et attributs temporels (F-46, <strong>[B]</strong>) ; délégation exprimée (F-47, <strong>[A]</strong>) ; ⚠ <strong>interrogeabilité à l'instant t non établie</strong> (ch. 17 § 17.6)</td></tr>
+    <tr><td><strong>Q-D</strong> <em>que peux-tu faire</em></td><td><strong>répond partiellement</strong></td><td>inscription au registre</td><td>bornes déclarées en champs obligatoires (F-40, <strong>[B]</strong>) ; ⚠ <strong>opposabilité au point d'application non établie</strong> — second terme de la question (ch. 14 § 14.2 ; F-35, <strong>[A, degré 2]</strong>)</td></tr>
+    <tr><td><strong>Q-E</strong> <em>qui en répond</em></td><td><strong>répond partiellement</strong></td><td>attestations de conformité</td><td><strong>degré 3</strong> ; une obligation légale ouvre l'occasion d'être entendu par <strong>un membre du personnel en mesure de réviser</strong> (F-89, <strong>[B]</strong>), dans un <strong>alinéa distinct</strong> et <strong>sans prescription sur la trace</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 16.3 — Le passeport d'agent soumis à la grille du ch. 14 — réponse sur le papier et état du socle, au 21 juillet 2026.</p>
+
+<p><strong>Ce que ce tableau autorise à conclure est étroit, et il faut l'écrire.</strong> <em>Le passeport reçoit une réponse aux cinq questions parce qu'il a été construit pour en recevoir une : c'est la propriété d'un objet de synthèse, pas un résultat.</em> <strong>Une</strong> réponse est pleine sur le papier et <strong>bornée sur le socle</strong> ; <strong>quatre</strong> sont partielles <strong>jusque sur le papier</strong> — et <strong>la seule des cinq dont la pièce répondante n'a pas de chapitre est Q-E, celle de l'imputabilité</strong>.</p>
+
+<div class="avert">
+  <p><strong>La thèse du ch. 14 n'est ni confirmée ni réfutée par cette section</strong> : elle porte sur les mécanismes de 2026, et <strong>le passeport n'en est pas un</strong>. <em>Confondre les deux ferait de la construction d'auteur le contre-exemple de la thèse qu'elle sert à éprouver.</em></p>
+</div>
+
+<p><strong>Un dernier énoncé de la thèse appelle son propre marquage.</strong> <em>« Rien n'entre au maillage sans lui »</em> est un <strong>principe d'architecture de la somme</strong>, non un constat de source. ⚠ Le maillage d'agents est un terme dont la définition d'auteur a son siège au <strong>ch. 37 § 37.1</strong>, et il n'est <strong>jamais employé nu</strong> ; le présent chapitre ne l'emploie pas comme catégorie établie. <span class="auteur">Lecture de l'auteur</span> ce que le socle établit, ce sont <strong>les quatre matières et leurs bornes</strong> ; <strong>ce qu'il n'établit pas</strong>, c'est qu'une organisation <strong>doive</strong> conditionner l'admission à un artefact que personne ne délivre.</p>
+
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
+
+<p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
+
+<ol class="numeros">
+  <li><strong>L'objet, et sa nature déclarée.</strong> Le passeport est une <strong>construction d'auteur</strong>, et chaque chapitre qui le cite doit le dire. Les <strong>ch. 20, 21 et 37</strong> l'invoquent ; <strong>aucun ne le traite comme un mécanisme existant</strong>.</li>
+  <li><strong>Le siège des affirmations écartées.</strong> R-2 et R-3 du Vol. II sont posés <strong>ici une seule fois</strong>, avec leurs formes imposées. Les ch. 12, 15 et 25 y renvoient.</li>
+  <li><strong>Le siège du statut PROJETÉ de la normalisation.</strong> L'agenda 2027-2028 est repris <strong>une seule fois</strong>, en <strong>[C]</strong>, et <strong>n'est re-daté nulle part</strong>.</li>
+  <li><strong>La conclusion la plus utile du chapitre, et c'est une conclusion négative.</strong> <em>L'assemblage n'est pas une somme</em> : aucune des quatre pièces ne fournit à une autre l'ancrage qui lui manque, et la pièce manquante est <strong>institutionnelle avant d'être technique</strong>. Le <strong>ch. 18</strong> instruit cette hypothèse ; le <strong>ch. 21</strong> en tire la conséquence cryptographique.</li>
+</ol>
+
+<section class="statut" id="s166">
+
+<h2><span class="sig">§ 16.6</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong></p>
+</div>
+
+<p><strong>Ce qui est enfreint.</strong> Portes <strong>G-3</strong> et <strong>G-4</strong> ; volet résiduel de <strong>G-1</strong> non instruit ; ordre de rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026.</p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01</strong> — et <strong>ce chapitre est celui où la conséquence est la plus paradoxale</strong> : il ne verse aucun fait, il compose ; mais <strong>un chapitre de composition est plus exposé qu'un chapitre de socle</strong>, puisque chacune de ses phrases dépend de la fidélité de la trace vers un chapitre amont. <strong>Six entrées mobilisées sont en [C]</strong> et corroborent sans porter.</li>
+  <li><strong>Les décomptes sont publiables</strong> (G-2). Écart de <strong>+6,0 %</strong> ; la volumétrie du Livre alimente <strong>D-4</strong> par <strong>R-IV-17</strong>.</li>
+  <li><strong>Les renvois « ch. N » vers les Livres III à V sont des renvois de plan</strong>, et ce chapitre en porte <strong>trois</strong> : <strong>ch. 25 § 25.2</strong> (seconde moitié de la quatrième pièce), <strong>ch. 32 § 32.1</strong> (siège de la désignation institutionnelle) et <strong>ch. 37 § 37.1</strong> (siège de la définition du maillage). ⚠ <strong>Le premier est structurant</strong> : le § 16.1 déclare <strong>explicitement</strong> qu'il ne préjuge de rien de ce que le ch. 25 établira, et cette déclaration devra être <strong>relue quand le ch. 25 existera</strong>.</li>
+  <li><strong>Un siège neuf est posé par cette pièce et il n'est contrôlé par aucun outil au moment où elle est écrite</strong> : l'encadré des affirmations écartées (§ 16.2). Voir <strong>R-IV-24</strong>, ouverte au ch. 15.</li>
+</ol>
+
+<p><strong>Remontées ouvertes par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-25 — non bloquante, de thèse et de tri.</strong> La thèse du ch. 16 au TOC v0.24 énonce que la normalisation du passeport « <strong>est projetée en statut PROJETÉ</strong> » à l'horizon <strong>2027-2028</strong>. Le § 16.4 établit que <strong>l'agenda 2027-2028 vient d'une entrée [C]</strong> du Vol. I et que <strong>le relevé propre du Vol. III ne confirme aucune de ses échéances</strong>. Le Vol. III a d'ailleurs <strong>borné sa propre thèse le 21 juillet 2026</strong> — « à une échéance que le socle ne date pas ». <strong>Demande remontée</strong> : réalignement au titre de la <strong>décision 8</strong>, la thèse du compendium citant une échéance que son propre socle ne porte pas. ⚠ <strong>Troisième occurrence de la même classe</strong> — après R-IV-20 (ch. 14) et R-IV-23 (ch. 15) : <em>le TOC porte trois thèses que leur source a bornées après coup, et les trois reports n'ont pas été faits.</em> <strong>La demande n'est plus qu'un cas d'espèce : elle appelle une passe de réalignement systématique des thèses du Livre II contre le texte rédigé du Vol. III</strong>, qui est précisément l'objet du <strong>volet de fond de G-4</strong>.</li>
+  <li><strong>R-IV-26 — non bloquante, de couverture, et elle porte sur une pièce qui n'existe pas.</strong> La <strong>quatrième pièce du passeport</strong> n'a <strong>pas de chapitre</strong> et repose sur <strong>deux sections</strong>, dont une seule est rédigée (ch. 15 § 15.3.3) ; l'autre est au <strong>ch. 25 § 25.2</strong>, dans un Livre non rédigé. ⚠ <strong>Le déséquilibre est structurel, non conjoncturel</strong> : les trois autres pièces ont chacune au moins un chapitre entier. <strong>Demande remontée</strong> : que le plan <strong>déclare cette asymétrie</strong> au registre des risques plutôt que de la laisser se lire entre les lignes de deux tables de couverture — <em>une pièce d'un objet à quatre pièces qui n'a ni chapitre ni socle est un angle mort du même ordre que ceux que les risques 13 à 16 nomment.</em></li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.24</strong> — § 16.1 à § 16.5, dans l'ordre exact —, et le § 16.0 est une introduction de chapitre. La <strong>table de couverture est respectée pour ses quatre lignes</strong>, y compris la ligne « <strong>prélevé au ch. 15</strong> » : le §7.4 de la source est instruit <strong>ici</strong> et le ch. 15 porte son « hors §7.4 » — <em>la double revendication que la v0.17 du TOC avait relevée est donc levée dans le texte comme elle l'est au plan</em>. Le <strong>siège de l'encadré R-2/R-3 est posé et marqué</strong> (§ 16.2) ; le <strong>siège du statut PROJETÉ</strong> l'est aussi (§ 16.4). Le <strong>siège du KYA reste au ch. 18 § 18.1</strong> : le § 16.3 nomme le sigle sans l'instruire. Le <strong>socle IAM reste au ch. 3</strong>, l'<strong>encadré de désambiguïsation au ch. 7 § 7.5</strong>, l'<strong>inventaire de la révocation au ch. 20 § 20.4</strong>, les <strong>précédents de fédération au ch. 18 § 18.3</strong>. Les <strong>treize occurrences de R-14</strong> portent leur degré, dont <strong>neuf au degré 3</strong>. Les <strong>dix occurrences de R-01</strong> rappellent que le passeport est un objet de synthèse, <strong>y compris dans le titre de chaque tableau</strong>. Les <strong>deux occurrences de R-06</strong> écrivent « attendu par ». Et le chapitre porte <strong>son marquage d'inférence à l'ouverture</strong> (§ 16.0), la pièce étant une construction d'auteur de bout en bout, plus <strong>huit occurrences ponctuelles</strong> de « Lecture de l'auteur ».</p>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre II, chapitre 16. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.24, entrée du chapitre 16, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>

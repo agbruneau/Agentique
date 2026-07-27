@@ -27,11 +27,22 @@ version en tête) : il ne porte aucune décision, aucun socle, aucun garde-fou p
 d'écart, **le TOC prime**, et toute passe qui modifie le TOC réaligne le conspectus (version,
 faits touchés) ou y déclare le retard en tête.
 
-⚠ **Un livre entier existe pourtant dans le dossier, et il est hors portes — fait signalé ici, non
-arbitré.** Le **27 juillet 2026, sur instruction d'auteur**, le répertoire [`Livre I/`](Livre%20I/) a
-été créé et **ses onze chapitres** y ont été rédigés en deux rendus chacun (`.md` source, `.html` de
-lecture à thème sombre), **avant** le franchissement des portes **G-1, G-2 et G-3** que le PRD §5
-pose comme préalables à toute rédaction. Quatre choses à savoir avant d'y toucher.
+⚠ **Deux livres entiers existent pourtant dans le dossier, et ils sont hors portes — fait signalé
+ici, non arbitré.** Le **27 juillet 2026, sur instruction d'auteur**, les répertoires
+[`Livre I/`](Livre%20I/) et [`Livre II/`](Livre%20II/) ont été créés et **leurs vingt et un
+chapitres** — onze au Livre I, dix au Livre II — y ont été rédigés en deux rendus chacun (`.md`
+source, `.html` de lecture à thème sombre), **avant** le franchissement des portes que le PRD §5 pose
+comme préalables. ⚠ **Les deux écarts ne sont pas du même ordre, et les confondre effacerait le
+second.** Le Livre I a été écrit avant **G-1, G-2 et G-3** ; le **Livre II** l'est avant **G-3 et
+G-4** — et **G-4, la collation de fond contre le Vol. III rédigé, est le préalable que le PRD nomme
+pour ce Livre précisément**, sa source se déclarant elle-même *non publiable*. Il enfreint en outre
+**l'ordre de rédaction du PRD §6**, qui le plaçait en troisième position. ⚠ **Le Livre II ouvre
+vingt-quatre remontées — R-IV-14 à R-IV-37, dont deux bloquantes et deux soldées par versement
+d'appareil** ; leur tableau est au [`README.md` de `Livre II/`](Livre%20II/README.md) et **n'est pas
+repris ici**. ⚠ **Sa volumétrie réelle est de 61 165 mots pour une enveloppe de 50 000 — soit
++22,3 %**, et c'est la **mesure que la décision d'auteur D-4 attendait** : *la somme des dix cibles
+dérivées avait pourtant été additionnée avant rédaction et valait exactement 50 000 — le dépassement
+vient de la matière, non de la dérivation.* Quatre choses à savoir avant d'y toucher.
 *(a)* ⚠ **Le statut de gouvernance a partiellement bougé le 27 juillet 2026 — passe d'arbitrage,
 PRD v0.8 et TOC v0.24.** Chaque pièce se déclare toujours *brouillon, non publiable*, et **le socle
 consolidé reste à 0 entrée** : **G-3 n'est pas entamée**, aucun énoncé n'est central au sens de
@@ -165,6 +176,17 @@ plan), **`check-sieges.py` (S1-S5, inter-pièces — qu'un siège déclaré ne s
 ailleurs, et que toute pièce touchant sa matière y renvoie)**, et `decompte.sh --verifier` (la
 volumétrie, quatre points d'ancrage sur les trois corpus sources). Chacun a son harnais de mutation
 et se vérifie comme le reste : *un script de contrôle est du contenu.*
+
+⚠ **La table des sièges est passée de trois à sept le 27 juillet 2026, avec la rédaction du
+Livre II** (remontées R-IV-24 et R-IV-37) : aux trois du Livre I s'ajoutent le **KYA** (ch. 18
+§ 18.1), la **triade létale** (ch. 19 § 19.2), l'**horloge post-quantique** (ch. 21 § 21.1) et
+l'**encadré des affirmations écartées**, qui porte R-2 et R-3 du Vol. II (ch. 16 § 16.2). Elle
+s'éprouve désormais sur **21 pièces**. ⚠ **Le versement a trouvé un défaut réel au premier passage,
+et il était dans le siège lui-même** : la signature de la triade létale **ne résolvait pas contre sa
+propre pièce** (contrôle **S3**), un retour à la ligne coupant l'un des trois sommets — *une signature
+qui ne voit pas son propre siège ne verrait pas non plus une copie.* ⚠ **Un siège neuf s'ajoute à la
+table `SIEGES`, la pièce porteuse écrit son marqueur, et le harnais de mutation se rejoue** — les
+trois gestes, jamais deux sur trois.
 
 ⚠ **Ce que le plafond n'autorise pas : retirer un chapitre pour faire de la place.** Une somme qui
 perd de la matière pour tenir un décompte a échangé un défaut visible — un chapitre de trop —

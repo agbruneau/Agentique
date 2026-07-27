@@ -96,6 +96,76 @@ SIEGES = [
         "declencheur": r"convergence par fusion|fusion de l'ACP protocolaire",
         "renvoi": r"ch\.\s*8\s*§\s*8\.5\.1",
     },
+    # ---------------------------------------------------------------- Livre II
+    # Quatre sièges versés le 27 juillet 2026 avec la rédaction du Livre II
+    # (remontées R-IV-24 et R-IV-37). Trois d'entre eux étaient déjà nommés
+    # « SIÈGE » par le TOC v0.24 sans qu'aucun instrument ne les contrôle ;
+    # le quatrième — l'encadré des affirmations écartées — l'est parce que
+    # deux chapitres APPLIQUENT R-2 et R-3 sans devoir les re-siéger.
+    {
+        "id": "siège unique du KYA (connaissance de l'agent)",
+        "fichier": "Livre II/18-know-your-agent.md",
+        "section": "ch. 18 § 18.1",
+        "marqueur": r"SIÈGE UNIQUE DU KYA POUR TOUTE LA SOMME",
+        # Reconstruire le siège, c'est refaire son inventaire d'instances — donc
+        # ses rangées de tableau, non citer le sigle. D'où l'ancrage sur deux
+        # rangées nommées : « KYA » nu est un renvoi, une table d'instances est
+        # un siège bis.
+        "signature": [
+            r"^\|\s*\*\*Fondation d'identité décentralisée\*\*",
+            r"^\|\s*\*\*Fondation d'identité ouverte\*\*",
+        ],
+        "declencheur": r"\bKYA\b",
+        "renvoi": r"ch\.\s*18\b",
+    },
+    {
+        "id": "siège de la triade létale (modèle de menace agentique)",
+        "fichier": "Livre II/19-taxonomie-attaques-identite-delegation.md",
+        "section": "ch. 19 § 19.2",
+        "marqueur": r"SIÈGE DE LA TRIADE LÉTALE POUR TOUTE LA SOMME",
+        # Les trois sommets énoncés ensemble : c'est la reconstruction du modèle.
+        # Un seul d'entre eux — « canal de sortie » — vit légitimement au ch. 5
+        # (ancrage) et au ch. 11 (amplification) ; exiger les trois évite ce bruit.
+        "signature": [
+            r"accès à des données privées",
+            r"exposition à du contenu non fiable",
+            r"canal de sortie vers l'extérieur",
+        ],
+        "declencheur": r"triade létale",
+        "renvoi": r"ch\.\s*19\b",
+    },
+    {
+        "id": "siège de l'horloge post-quantique (jalons, statuts, origines)",
+        "fichier": "Livre II/21-horloge-post-quantique.md",
+        "section": "ch. 21 § 21.1",
+        "marqueur": r"SIÈGE DE L'HORLOGE POST-QUANTIQUE POUR TOUTE LA SOMME",
+        # Re-dater les jalons, c'est reproduire leurs libellés verbatim et la
+        # clause qui les rattache à un document successeur. Citer « PQC » ou
+        # « post-quantique » est un renvoi ; réécrire ces trois chaînes est un
+        # siège bis — et c'est exactement ce que R-11 proscrit.
+        "signature": [
+            r"Deprecated after 2030",
+            r"Disallowed after 2035",
+            r"or successor document",
+        ],
+        "declencheur": r"post-quantique",
+        "renvoi": r"ch\.\s*21\b",
+    },
+    {
+        "id": "encadré des affirmations écartées (garde-fous R-2 et R-3 du Vol. II)",
+        "fichier": "Livre II/16-passeport-agent.md",
+        "section": "ch. 16 § 16.2",
+        "marqueur": r"SIÈGE DE L'ENCADRÉ DES AFFIRMATIONS ÉCARTÉES POUR TOUTE LA SOMME",
+        # ⚠ Le motif « l'exigence stricte n'est pas établie » ne suffit PAS seul :
+        # le ch. 15 § 15.3.1 l'écrit en APPLIQUANT R-3, ce qui est correct. Ce qui
+        # signe l'encadré, c'est le couple affirmation-écartée + forme imposée.
+        "signature": [
+            r"registre d'agents centralisé",
+            r"\*\*Forme imposée\*\*",
+        ],
+        "declencheur": r"Affirmations écartées",
+        "renvoi": r"ch\.\s*16\s*§\s*16\.2",
+    },
 ]
 
 # Les deux zones où un motif ne compte pas, et le motif du second n'est pas

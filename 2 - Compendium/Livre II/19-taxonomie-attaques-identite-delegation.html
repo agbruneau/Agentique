@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 19 — Taxonomie des attaques d&#x27;identité et de délégation · La somme agentique</title>
+<meta name="description" content="une part majoritaire des attaques propres aux systèmes multi-agents documentées à date sont des attaques d&#x27;identité (usurpation, confusion de délégué) ou de délégation (élévation par chaîne de mandat) — ce qui justifie d&#x27;absorber la sécurité dans le cadre identitaire.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre II · Chapitre 19</div>
+  <ol>
+    <li><a href="#s190"><span class="num">19.0</span>Introduction : ce que ce chapitre ne peut pas affirmer, et pourquoi il le dit d&#x27;abord</a></li>
+    <li><a href="#s191"><span class="num">19.1</span>Recension : identifiants, incidents datés, littérature</a></li>
+    <li><a href="#s192"><span class="num">19.2</span>Modèle de menace agentique, triade létale et impossibilité architecturale</a></li>
+    <li><a href="#s193"><span class="num">19.3</span>Vecteurs d&#x27;attaque</a></li>
+    <li><a href="#s194"><span class="num">19.4</span>Taxonomie par la grille du ch. 14</a></li>
+    <li><a href="#s195"><span class="num">19.5</span>L&#x27;empoisonnement de la mémoire et des sources</a></li>
+    <li><a href="#s196"><span class="num">19.6</span>Ce que la recension ne trouve pas</a></li>
+    <li><a href="#s197"><span class="num">19.7</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.24 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="19-taxonomie-attaques-identite-delegation.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre II — Faire confiance : identité, délégation et fabrique de confiance</div>
+  <h1><span class="chap">Chapitre 19</span>Taxonomie des attaques d&#x27;identité et de délégation</h1>
+  <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Deuxième mouvement — la confiance hostile (ch. 19-20). <strong>Premier chapitre du mouvement.</strong></p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — portes <strong>G-3</strong> et <strong>G-4</strong> ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ <strong>Deux obligations propres à ce chapitre ne sont pas satisfaites, et elles sont d'ordres différents.</strong> <em>(a)</em> Le TOC déclare que <strong>la thèse de ce chapitre est le premier énoncé à instruire avant rédaction</strong> : sa proportion doit être <strong>établie par dénombrement sur un corpus déclaré</strong> — <strong>le dénombrement n'a pas été conduit</strong>, et le corps du chapitre <strong>n'écrit aucune proportion</strong> (voir § 19.0 et <strong>R-IV-32</strong>). <em>(b)</em> <strong>CA-IV-11 exige une relecture dédiée par un relecteur distinct, dont le compte rendu est déposé et nommé dans la pièce, l'attestation auto-délivrée étant proscrite même exacte</strong> : <strong>aucune relecture dédiée n'a eu lieu</strong>, et <strong>rien dans cette pièce ne doit être lu comme une attestation</strong>. <strong>R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre</strong></dd>
+    <dt>Date de gel</dt>
+    <dd><strong>27 juillet 2026</strong> — gel unique, <strong>D-1 prise</strong> (registre : <a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Volet résiduel de G-1 non instruit.</strong> Gels de source : <strong>juin 2026</strong> (Vol. I), <strong>21 juillet 2026</strong> (Vol. III). ⚠ <strong>Les identifiants de vulnérabilité et les incidents datés se périment par publication de correctif</strong> : ils sont cités comme <strong>jalons datés</strong>, jamais comme état courant d'exposition — et <strong>quatre des identifiants mobilisés portent un vote adversarial incomplet</strong></dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte). Résolution contre le <strong>Vol. III <em>Monographie</em> ch. 12</strong>, dont les entrées <strong>F-13</strong> à <strong>F-26</strong>, <strong>F-03</strong>, <strong>F-04</strong>, <strong>F-56</strong> et les entrées héritées <strong>H-09</strong>, <strong>H-11</strong>, <strong>H-24</strong>, <strong>H-25</strong>, <strong>H-26</strong> conservent leurs niveaux d'origine — <strong>treize en [A]</strong>, <strong>une en [B]</strong>, les héritées en <strong>[B]</strong> ou <strong>[C]</strong> ; et contre le <strong>Vol. I <em>Monographie</em> §2.10.1 et §2.10.2</strong>, en <strong>[C]</strong>. ⚠ <strong>F-26 porte un vote adversarial incomplet</strong>, et <em>un vote incomplet n'est pas un vote favorable</em> : ses quatre identifiants <strong>illustrent</strong> et ne portent aucun énoncé central. <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd>Vol. III — <strong>R-12 (traitement défensif exclusif, au niveau architectural, aucune recette d'exploitation) : quatorze occurrences</strong>, dont <strong>chacune des six lignes du tableau 19.2</strong>, chaque entrée nommant <strong>le maillon qui cède</strong> et s'arrêtant là ; <strong>R-08 (l'absence porte sur l'usurpation du justificatif propre d'un agent, et sur cela seul) : ce chapitre en est le SIÈGE — quatre occurrences</strong>, § 19.6 ; <strong>R-14 : douze occurrences</strong>, dont <strong>sept de degré 3</strong> ; <strong>R-02 : quatre occurrences</strong> ; <strong>R-04 : deux occurrences</strong>, § 19.1, la formule laissée en langue originale et renvoyée à son siège ; <strong>R-09 : trois occurrences</strong>. <strong>R-01, R-03, R-05 à R-07, R-10, R-11, R-13 : zéro occurrence.</strong> Vol. II — <strong>§8.2 (métriques auto-déclarées) : trois occurrences</strong>, § 19.1 et § 19.5 (deux) ; <strong>réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : deux occurrences</strong>, § 19.1 et § 19.6 ; <strong>R-1 à R-8 : zéro occurrence</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ <strong>5 000 mots</strong> de corps (§ 19.0 à § 19.6), <strong>cible dérivée</strong> de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ <strong>Décompte publiable depuis G-2</strong> ; <strong>réel : 5 467 mots</strong> par <a class="lien" href="../PRD/decompte.sh"> 0 </a> — <strong>+9,3 %</strong>. ⚠ La volumétrie du Livre est relevée au <a class="lien" href="README.md"> 1 </a> du dossier et alimente <strong>D-4</strong> par <strong>R-IV-17</strong></dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>une part majoritaire des attaques propres aux systèmes multi-agents documentées à date sont des attaques d'identité (usurpation, confusion de délégué) ou de délégation (élévation par chaîne de mandat) — ce qui justifie d'absorber la sécurité dans le cadre identitaire.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.24, entrée du chapitre 19.</span>
+</div>
+
+<h2 id="s190"><span class="sig">§ 19.0</span>Introduction : ce que ce chapitre ne peut pas affirmer, et pourquoi il le dit d'abord</h2>
+
+<div class="avert">
+  <p><strong>La thèse citée ci-dessus porte une proportion, et cette proportion n'est pas établie.</strong> Le TOC la déclare lui-même <strong>le premier énoncé à instruire avant rédaction</strong> : <em>la proportion affirmée doit être établie par <strong>dénombrement sur un corpus déclaré</strong>, ou l'énoncé retombe sans quantificateur.</em> <strong>Le dénombrement n'a pas été conduit</strong> — la porte <strong>G-1</strong> dont il relèverait n'a pas été ouverte pour ce Livre —, et <strong>aucun corpus n'a été déclaré</strong>.</p>
+</div>
+
+<p><strong>La conséquence est écrite avant la première ligne de recension : le corps de ce chapitre n'écrit aucune proportion, ni majoritaire, ni notable, ni d'aucune autre forme.</strong> <em>Ce qu'il soutient est architectural et non statistique</em>, et c'est exactement la position que la source de ce chapitre a elle-même adoptée après avoir vu sa forme quantitative <strong>réfutée au vote adversarial</strong>.</p>
+
+<div class="avert">
+  <p><strong>La source est plus nette encore que le plan, et l'écart se déclare.</strong> Le Vol. III écrit en tête de son chapitre correspondant : <em>« Ce n'est pas une thèse de dénombrement, et le chapitre le dit : le relevé des référentiels <strong>ne soutient pas</strong> que la majorité des attaques documentées seraient des attaques d'identité ou de délégation. »</em> Sa thèse rectifiée porte que <strong>l'identité est le verrou architectural</strong> de la sécurité agentique. ⚠ <strong>Le TOC du compendium porte encore la forme quantitative</strong> ; la pièce <strong>cite la thèse verbatim, comme le PRD l'exige</strong>, et <strong>écrit son corps sous la forme architecturale</strong>. L'écart est remonté (<strong>R-IV-32</strong>), non arbitré ici.</p>
+</div>
+
+<p><strong>Ce que ce chapitre soutient, et ce que le socle en porte.</strong> <span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : l'énoncé d'imputation architecturale d'un référentiel de sécurité applicative (F-19, <strong>[A]</strong>) ; la qualification de l'identité d'agent en nouveau plan de contrôle par un rapport daté de juin 2026 (F-20, <strong>[A]</strong>) ; l'existence de techniques et de contre-mesures nommant <strong>l'écart d'autorité entre mandant et mandataire</strong> (F-14, F-15, F-24) ; et <strong>un</strong> incident public daté de défaillance d'identité <strong>non humaine</strong> (F-21, <strong>[A]</strong>). <strong>Ce qu'il n'établit pas</strong> : que l'identité soit <em>le</em> verrou de la sécurité agentique <strong>plutôt qu'un verrou parmi d'autres</strong>, ni qu'un tri par maillon d'identité <strong>épuise</strong> les attaques recensées. ⚠ <em>La lecture proposée s'éprouve au § 19.4, où elle rencontre un cas qu'elle ne range pas.</em></p>
+
+<div class="avert">
+  <p><strong>Une taxonomie d'attaques vaut par le principe qui la trie</strong>, et celui-ci est déclaré : <strong>le maillon de la chaîne d'identité ou de mandat qui cède</strong>, et non la technique employée ni la cible atteinte. ⚠ <strong>Traitement défensif exclusif</strong> : chaque entrée nomme <strong>le maillon et la raison pour laquelle il cède</strong>, cite l'identifiant de vulnérabilité ou l'incident, <strong>et s'arrête là</strong> — <em>aucune recette d'exploitation n'est reproduite, à aucune ligne, sous aucune forme.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Ce que ce chapitre ne traite pas.</strong> L'<strong>usurpation après admission</strong> — le retournement d'un serveur d'outils déjà approuvé — est au <strong>ch. 20 § 20.1</strong>. La <strong>révocation</strong> est au <strong>ch. 20 § 20.4</strong>. Les <strong>défenses architecturales et l'alignement</strong> restent au <strong>ch. 6</strong>, qui en est le siège, et <strong>ne sont pas repris ici</strong> : la table de couverture les déclare hors périmètre. Et l'<strong>amplification par la composabilité</strong>, propre à la couche d'interopérabilité, est au <strong>ch. 11 § 11.1.2</strong>, qui <strong>invoque la triade létale sans la reconstruire</strong> — <em>elle est reconstruite ici, une seule fois.</em></p>
+</div>
+
+<h2 id="s191"><span class="sig">§ 19.1</span>Recension : identifiants, incidents datés, littérature</h2>
+
+<p>Le Vol. II a fermé son chapitre de clôture sur six questions, dont la deuxième porte sur <strong>la mécanique des risques protocolaires nommés</strong> et sur <strong>l'existence d'attaques propres au protocole agent-agent</strong>. <em>Elle appelait un socle ; la présente section est ce socle, avec ses bornes.</em></p>
+
+<p><strong>Le référentiel de techniques adverses.</strong> Le corpus est versionné — <strong>collection 2026.06</strong>, format 6.0.0, modifiée le 27 mai 2026 et publiée le 30 juin 2026 (F-56, <strong>[B]</strong>). Il fournit trois des éléments mobilisés ici. Une technique d'<strong>empoisonnement d'outil à la publication</strong> relève d'une tactique de développement de ressources, est déclarée sur la plateforme agentique, de maturité <em>Realized</em>, créée le 30 janvier 2026 (F-13, <strong>[A]</strong>) : <em>l'outil est empoisonné <strong>à la publication</strong>, dans des registres que la description qualifie de largement non réglementés.</em> ⚠ <strong>Le maillon qui cède est en amont de toute vérification d'identité</strong> — <em>l'agent qui installe cet outil n'a aucun élément d'identité à contrôler.</em> Une seconde technique, l'<strong>invocation d'outils inaccessibles à l'utilisateur</strong>, énonce que des agents peuvent disposer d'outils que les utilisateurs n'atteignent pas et que l'abus de l'accès à l'agent confère des privilèges supérieurs (F-14, <strong>[A]</strong>) : ⚠ <em>ce n'est pas l'authentification de l'agent qui cède, c'est <strong>l'absence de réduction de portée entre le mandant et le mandataire</strong>.</em> La contre-mesure correspondante pose le plafond : <strong>un agent agissant pour un utilisateur ne doit pas recevoir de permissions que cet utilisateur n'a pas</strong> (F-15, <strong>[A]</strong>).</p>
+
+<div class="avert">
+  <p><strong>Prescription de configuration, non mécanisme démontré</strong> : le référentiel énonce ce qu'il faut faire, <em>il n'établit aucune propriété cryptographique de mandat</em> (R-02).</p>
+</div>
+
+<p><strong>Les référentiels de sécurité applicative.</strong> Le référentiel agentique porte la mention de version <strong>2026</strong> et la date de publication <strong>décembre 2025</strong> — ⚠ <em>millésime et date diffèrent : ils se citent ensemble</em> —, compte 57 pages, et son balayage de statut n'y relève <strong>aucune mention de brouillon, de version candidate ni de préversion</strong> (F-16, <strong>[A]</strong>). Ses dix entrées vont d'une numérotation d'ouverture à une numérotation de clôture (F-17, <strong>[A]</strong>) — ⚠ <em>le document n'étant pas typographiquement constant d'une page à l'autre, aucune revendication de verbatim n'est portée sur ces intitulés sans nommer la page.</em></p>
+
+<p><strong>Deux d'entre elles portent le propos.</strong> La troisième impute le risque à une <strong>inadéquation architecturale</strong> entre des systèmes d'identité conçus pour des utilisateurs humains et la conception agentique, et formule le manque en une phrase : « Without a distinct, governed identity of its own, an agent operates in an attribution gap that makes enforcing true least privilege impossible » (F-19, <strong>[A]</strong>). Le rapport d'état de la sécurité agentique, <strong>version 2.01 de juin 2026</strong>, érige l'identité d'agent en chapitre propre et la qualifie de nouveau plan de contrôle, en distinguant l'identité non humaine — qui « verifies that a credential is authorized to connect » — de l'identité d'agent — qui « has to verify what the holder is doing with that authorization, <strong>continuously</strong> » (F-20, <strong>[A]</strong>).</p>
+
+<div class="avert">
+  <p><strong>Homonymie</strong> : l'expression relève du <strong>garde-fou d'homonymie à quatre branches, dont le siège est le ch. 7 § 7.5</strong>, et <em>le socle ne caractérise pas laquelle le rapport vise</em> — la formule est <strong>laissée en langue originale</strong>. ⚠ <strong>Attribution</strong> : ce rapport reprend par ailleurs <strong>des métriques auto-déclarées d'éditeur</strong> ; <em>le présent chapitre n'en reprend aucune, et sa thèse ne dépend d'aucun ratio de prolifération.</em></p>
+</div>
+
+<p><strong>Les incidents datés.</strong> L'incident porté au socle en <strong>[A]</strong> est une campagne suivie sous une désignation d'acteur : entre le <strong>8 août 2025</strong> et <strong>au moins le 18 août 2025</strong>, un acteur a accédé à des instances d'un service infonuagique <strong>au moyen de jetons OAuth compromis</strong> associés à une application tierce, et <strong>l'ensemble des jetons a été révoqué le 20 août 2025</strong> (F-21, <strong>[A]</strong>).</p>
+
+<div class="avert">
+  <p><strong>L'entrée écrit « application tierce » ; l'affirmation qui la fonde et sa source primaire la nomment</strong>, et le nom est reporté par la source plutôt qu'effacé — <em>un éditeur anonymisé rend le fait non revalidable au gel suivant.</em> <strong>Le maillon qui cède est le jeton porteur délivré à une identité non humaine</strong> : il n'est lié ni à l'appelant, ni à un appareil, ni à une session, de sorte que <strong>quiconque le détient <em>est</em> l'intégration</strong> aux yeux du fournisseur, et que <strong>la révocation est le remède — et elle est collective</strong>.</p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : les trois dates, le mécanisme d'accès, la révocation. <strong>Ce qu'il n'établit pas</strong> : <strong>que l'application compromise soit un agent</strong> au sens de la somme. <em>L'avis primaire ne la qualifie pas ainsi ; le rattachement de cet incident au périmètre agentique est une lecture, et il vaut pour ce qu'il éclaire — la structure du justificatif —, non pour une équivalence de catégorie.</em></p>
+
+<p><strong>Quatre identifiants de vulnérabilité complètent la recension</strong> (F-26, <strong>[B]</strong>). ⚠ <strong>Leur vote adversarial n'a pas pu être complété, et un vote incomplet n'est pas un vote favorable</strong> : <em>ils illustrent, ils ne portent aucun énoncé central de ce chapitre, et ils sont à revalider avant tout emploi de ce rang.</em></p>
+
+<p><strong>La littérature.</strong> Des trois entrées versées, <strong>une seule est une publication revue par les pairs en actes de piste principale</strong> : elle démontre l'<strong>empoisonnement de la mémoire à long terme ou de la base de connaissances interrogée par récupération</strong> d'agents fondés sur des modèles de langue (F-23, <strong>[A]</strong>). Les deux autres sont des <strong>préimpressions non revues par les pairs</strong> : l'une range la <strong>confusion de délégué</strong> parmi cinq vecteurs d'élévation de privilège et l'identifie à l'instruction directe transmise par message inter-agents (F-24, <strong>[A]</strong>) ; l'autre rapporte que le <strong>détournement du contrôle et de la communication interne d'un système multi-agents réussit même lorsque les agents pris isolément ne sont pas vulnérables</strong> à l'injection et refusent les actions nuisibles (F-25, <strong>[A]</strong>).</p>
+
+<div class="avert">
+  <p><em>Les deux régimes de preuve ne se fondent pas : cinq vecteurs posés par des auteurs dans leur propre modèle de menace ne sont pas une taxonomie consensuelle du domaine.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Trois bornes de méthode ferment cette recension, et elles sont déclarées par le lot lui-même.</strong> <em>(1)</em> Les bases bibliographiques sous abonnement <strong>n'ont pas été interrogées</strong>, faute d'accès authentifié : <strong>la proportion de littérature revue par les pairs de ce relevé est structurellement sous-estimée</strong>, et <em>il n'en découle pas que le domaine soit surtout préimpression</em>. <em>(2)</em> Le lot recense des techniques, des référentiels et des incidents ; <strong>il ne mesure aucune prévalence</strong> — <em>c'est le motif direct du § 19.0.</em> <em>(3)</em> Le relevé est <strong>arrêté au 21 juillet 2026 et se périme par trimestres</strong> : une <strong>révision majeure du protocole agent-outil est annoncée au brouillon</strong>, dont la revalidation confirme la substance <strong>et non la date</strong>, de sorte qu'<strong>aucun tri prospectif n'y est arrêté</strong> et que <strong>les décomptes portant sur ce protocole sont à rejouer</strong>. ⚠ Ce protocole porte un <strong>cadre d'autorisation</strong> (H-09, <strong>[A]</strong>) — <em>formule imposée ; on n'écrit jamais « sécurisé ».</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Un incident de méthode est consigné, et il appartient au propos de la somme</strong> : une recherche documentaire <strong>secondaire</strong> a rattaché au protocole agent-agent un identifiant de vulnérabilité qui, <strong>fiche primaire ouverte, désigne un tout autre produit</strong>. <em>Un identifiant plausible attribué par un intermédiaire à un objet qu'il ne désigne pas, et que seule l'ouverture de la source a arrêté.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Deux relèves du plan atterrissent ici, et aucune n'est consommée.</strong> <em>(1)</em> Les <strong>divulgations du premier semestre 2026</strong> forment le <strong>corpus candidat</strong> du dénombrement — <em>à qualifier pièce par pièce avant usage</em>, et <strong>aucune qualification n'a été conduite</strong>. <em>(2)</em> Une <strong>classe d'attaques dont le vecteur est le harnais</strong> — extension tierce admise par simple configuration —, <strong>et non le protocole ni le mécanisme d'identité, est repérée</strong> ; ⚠ <strong>si elle s'instruit, elle entre au dénombrement <em>contre</em> la thèse d'absorption de ce chapitre, non à son appui.</strong> <em>Son incident public candidat est décrit au ch. 47, non rédigé.</em> ⚠ <strong>Ces deux relèves ne sont pas instruites ici</strong>, le volet résiduel de G-1 n'ayant pas été ouvert.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Une troisième relève porte une taxonomie d'organisme, et sa portée exacte est plus étroite qu'il n'y paraît.</strong> Un institut national publie une <strong>taxonomie et terminologie des attaques et atténuations en apprentissage automatique adverse</strong>, <strong>finale, de mars 2025</strong>, structurée par types de méthodes d'apprentissage, étapes du cycle de vie et objectifs de l'attaquant. ⚠ <strong>Deux réserves, à tenir ensemble.</strong> <em>(a)</em> La page relevée <strong>ne mentionne pas l'injection d'invite par son nom</strong> : <em>la couverture de ce vecteur est à vérifier dans le document lui-même, jamais à présumer.</em> <em>(b)</em> ⚠ <strong>Une taxonomie ne dénombre pas</strong> : <em>elle n'apporte aucun appui à la thèse quantitative, qui reste entière et à instruire — s'en servir pour la soutenir serait exactement la faute que le § 19.0 refuse.</em> <strong>Elle n'entre pas au socle.</strong></p>
+</div>
+
+<h2 id="s192"><span class="sig">§ 19.2</span>Modèle de menace agentique, triade létale et impossibilité architecturale</h2>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>SIÈGE DE LA TRIADE LÉTALE POUR TOUTE LA SOMME.</strong> Le modèle de menace qui suit est <strong>posé ici une seule fois</strong>. Le <strong>ch. 11 § 11.1.2</strong> l'<strong>invoque sans le reconstruire</strong> — il n'en traite que l'<strong>amplification</strong> par la composabilité, propre à la couche d'interopérabilité —, et le <strong>ch. 20</strong> s'y adosse. <em>C'est l'économie de la fusion côté menace, et elle n'a lieu que si ces chapitres s'y tiennent.</em></p>
+</div>
+
+<p><strong>Le cadre de menace le plus opérant pour les agents tient en une conjonction.</strong> Un agent devient dangereusement exploitable lorsqu'il combine <strong>simultanément trois propriétés</strong> : l'<strong>accès à des données privées</strong> ; l'<strong>exposition à du contenu non fiable</strong> — courriel, page web, document récupéré, sortie d'outil — ; et la disposition d'un <strong>canal de sortie vers l'extérieur</strong>. <em>Prise isolément, chacune est anodine ; réunies, elles permettent à une instruction dissimulée dans le contenu non fiable de détourner l'agent pour exfiltrer les données privées par le canal de sortie.</em></p>
+
+<div class="avert">
+  <p><strong>Régime de cet apport</strong> : la matière vient du <strong>Vol. I <em>Monographie</em> §2.10.1</strong>, et les faits du Vol. I entrent dans la somme en <strong>[C]</strong> — <em>sa vérification porte sur ses références, non sur le contenu de ses affirmations.</em> <strong>Aucun énoncé de cette section n'est central</strong>, et l'élévation en [B] supposerait la lecture des sources primaires que le Vol. I cite.</p>
+</div>
+
+<p><strong>Le diagnostic n'est pas marginal</strong>, et le Vol. I le note : <em>il est admis par les fournisseurs eux-mêmes, qui qualifient l'injection d'invite de <strong>problème de sécurité de frontière non résolu</strong> et estiment improbable qu'il soit un jour pleinement résolu.</em></p>
+
+<p><strong>La racine est architecturale.</strong> Dans un agent fondé sur un modèle de langue, <strong>les instructions du concepteur et les données ingérées partagent le même flux de jetons</strong>, sans séparation de privilège analogue à celle d'un canal de commande distinct d'un canal de données. ⚠ <em>Aucune barrière interne au modèle ne distingue de façon fiable « ce qu'on me dit de faire » de « ce que je lis ».</em> La compromission par <strong>injection indirecte</strong> a été démontrée expérimentalement sur des applications réelles intégrant un modèle de langue.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>⚠ <strong>L'impossibilité dont il est question ici n'est pas un théorème</strong> : c'est un <strong>constat d'ingénierie de sécurité</strong>. <em>Tant qu'instructions et données coexistent dans un espace de jetons indifférencié, un classifieur parfait de l'intention hostile équivaudrait à résoudre le problème de l'alignement sémantique en boucle ouverte.</em> Les travaux de défense par conception contournent la difficulté en imposant une séparation de privilège <strong>à l'extérieur</strong> du modèle plutôt qu'en cherchant à durcir le modèle lui-même — <em>un déplacement du problème de la couche cognitive vers la couche système</em>. ⚠ <strong>Leur instruction est au ch. 6</strong>, qui en est le siège ; elle n'est pas reprise ici.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Deux conséquences de méthode se tirent, et elles commandent le reste du mouvement.</strong> <em>(1)</em> <strong>Aucun patron de défense n'est présenté comme une solution</strong>, mais comme <strong>une mesure de réduction de risque dont les limites doivent être quantifiées</strong>. <em>(2)</em> <strong>La conclusion du chapitre en dépend directement</strong> : si l'injection n'est pas résoluble au niveau du modèle, alors <em>ce qui borne le dommage est la portée de ce que l'agent peut atteindre</em> — c'est-à-dire <strong>une question d'identité et de mandat</strong>, et non de filtrage. ⚠ <span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : la conjonction des trois propriétés et son caractère architectural, en <strong>[C]</strong>. <strong>Ce qu'il n'établit pas</strong> : que la réponse doive être identitaire <strong>plutôt qu'autre chose</strong>. <em>C'est la lecture que la thèse de ce chapitre propose, et le § 19.4 est l'endroit où elle s'éprouve.</em></p>
+</div>
+
+<h2 id="s193"><span class="sig">§ 19.3</span>Vecteurs d'attaque</h2>
+
+<p><strong>La surface d'attaque d'un agent épouse exactement son anatomie</strong> : chaque entrée de sa boucle, chaque outil branché et chaque écriture en mémoire ouvre un vecteur. ⚠ <strong>Régime</strong> : cette section vient du <strong>Vol. I <em>Monographie</em> §2.10.2</strong>, en <strong>[C]</strong> ; elle <strong>situe</strong> les vecteurs, elle ne les établit pas.</p>
+
+<div class="avert">
+  <p><strong>Traitement défensif</strong> : la mécanique est exposée <strong>au niveau du maillon</strong>, et <strong>aucune recette n'est reproduite</strong>.</p>
+</div>
+
+<p><strong>Injection d'invite directe et indirecte.</strong> L'injection figure <strong>en tête</strong> d'un référentiel de sécurité des applications à modèle de langue, <em>signe de sa centralité</em>. La forme <strong>directe</strong> consiste pour un utilisateur à formuler une entrée qui subvertit les consignes système ; la forme <strong>indirecte</strong>, propre aux agents, <strong>place l'instruction hostile dans un contenu que l'agent récupérera de lui-même</strong> — un courriel, une page, un passage extrait, la sortie d'un outil. ⚠ <em>La forme indirecte est caractérisée comme la menace dominante des applications intégrant un modèle de langue, précisément parce que <strong>la victime n'a aucune interaction directe avec l'attaquant</strong>.</em> Les <strong>navigateurs agentiques</strong> en constituent la surface la plus exposée : <em>tout site visité devient un canal d'injection potentiel.</em> ⚠ <strong>Les mécanismes de confinement proposés relèvent de la limitation du dommage, non de la prévention de l'injection</strong>, qui demeure non résoluble au niveau du modèle (§ 19.2).</p>
+
+<p><strong>Exfiltration, sortie et agence excessive.</strong> Le troisième sommet de la triade — <strong>le canal de sortie</strong> — est lui-même un vecteur : <em>une URL construite avec un secret en paramètre, un appel d'outil réseau, un champ de formulaire.</em> Un incident d'<strong>exfiltration sans clic</strong>, depuis un environnement de productivité et <strong>sans action de la victime</strong>, démontre la triade en conditions réelles — <em>contenu non fiable ingéré, données privées accessibles, canal de sortie exploité.</em> ⚠ L'identifiant correspondant figure parmi <strong>les quatre à vote incomplet</strong> du socle propre (F-26) : <em>il illustre, il ne porte pas.</em></p>
+
+<p>L'<strong>agence excessive</strong> désigne, distinctement, le <strong>sur-dimensionnement des permissions</strong> accordées à l'agent : portée d'accès trop large, outils trop puissants, absence de plafond sur les actions. ⚠ <em>Plus l'agence est large, plus le dommage d'une injection réussie est grand ; minimiser la surface agentique et appliquer le moindre privilège <strong>réduit l'amplitude du risque indépendamment de la probabilité d'attaque</strong>.</em> Le <strong>contrôle des destinations réseau</strong> apparaît comme le complément naturel : <em>couper le canal de sortie casse la triade même si l'injection réussit.</em></p>
+
+<div class="avert">
+  <p><strong>Deux familles du chapitre source ne sont pas reprises ici, et ce n'est pas un oubli.</strong> Les <strong>référentiels et patrons de défense architecturale</strong> et l'<strong>alignement et le comportement déviant</strong> sont <strong>hors périmètre</strong> de ce chapitre par décision de la table de couverture : leur siège est le <strong>ch. 6</strong>. <em>Le présent chapitre traite ce qui cède, non ce qui protège.</em></p>
+</div>
+
+<h2 id="s194"><span class="sig">§ 19.4</span>Taxonomie par la grille du ch. 14</h2>
+
+<p><strong>La grille des cinq questions change ici de fonction.</strong> Au premier mouvement, elle rend un verdict sur un mécanisme. Ici, elle devient <strong>l'axe du tri</strong> : chaque attaque est rangée selon <strong>la question qui, restée sans réponse, rend l'attaque possible ou l'attribution impossible</strong>.</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Attaque ou incident, avec sa borne</th><th>Maillon qui cède</th><th>Question en défaut</th><th>Trace</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Empoisonnement d'outil à la publication</strong> (corpus 2026.06, maturité <em>Realized</em>, créée le 30 janv. 2026)</td><td>empoisonnement à la publication, <strong>en amont de toute vérification d'identité</strong></td><td><strong>Q-B des sources</strong> — extension de la grille, ci-dessous</td><td>F-13 <strong>[A]</strong></td></tr>
+    <tr><td><strong>Invocation d'outils inaccessibles à l'utilisateur</strong> (même corpus ; la matrice la range sous deux tactiques)</td><td><strong>absence de réduction de portée</strong> entre mandant et mandataire</td><td><strong>Q-D</strong> — bornes de privilège non opposables</td><td>F-14 <strong>[A]</strong> ; contre-mesure F-15 <strong>[A]</strong></td></tr>
+    <tr><td><strong>Compromission de jetons d'application tierce</strong>, 8 au 18 août 2025 au moins, révocation le 20 août 2025</td><td>jeton porteur <strong>non lié</strong> à l'appelant, à l'appareil ni à la session</td><td><strong>Q-A</strong> — l'identifiant n'est pas résistant à la détention par un tiers</td><td>F-21 <strong>[A]</strong></td></tr>
+    <tr><td><strong>Confusion de délégué</strong>, quatrième de cinq vecteurs d'une préimpression non revue</td><td>l'instruction inter-agents fait agir le mandataire <strong>hors du mandat qu'il détient</strong></td><td><strong>Q-C</strong> — chaîne de mandat non interrogeable à l'exécution</td><td>F-24 <strong>[A]</strong>, préimpression</td></tr>
+    <tr><td><strong>Empoisonnement de la mémoire et de la base interrogée</strong>, actes revus par les pairs</td><td>l'entrée de mémoire ou le document récupéré <strong>n'a pas d'origine vérifiable</strong></td><td><strong>Q-B des sources</strong></td><td>F-23 <strong>[A]</strong></td></tr>
+    <tr><td><strong>Détournement d'un système multi-agents</strong>, préimpression non revue, configurations données</td><td><strong>la composition, non un agent</strong> : le détournement réussit <strong>même lorsque</strong> les agents pris isolément ne sont pas vulnérables et <strong>même lorsqu'ils</strong> refusent les actions nuisibles</td><td>⚠ <strong>aucune — cas non rangé par la grille</strong></td><td>F-25 <strong>[A]</strong>, préimpression</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 19.1 — Tri des entrées du socle par le maillon qui cède, au 21 juillet 2026. Chaque cellule porte la borne de son entrée ; la colonne « Question en défaut » est un <strong>tri d'auteur</strong>. <strong>La dernière ligne est le cas que le tri ne range pas.</strong></p>
+
+<p><strong>Trois enseignements se tirent de ce tableau, et le troisième est celui qui compte.</strong></p>
+
+<p><strong>Le premier est l'ordre des questions.</strong> L'énoncé d'imputation architecturale le formule en une phrase (F-19). <span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : l'énoncé cité, au niveau [A]. <strong>Ce qu'il n'établit pas</strong> : que Q-A commande les autres questions <strong>par nécessité logique</strong>. <em>La lecture proposée est que Q-D et Q-E ne deviennent pas <strong>difficiles</strong> en l'absence de réponse à Q-A, elles deviennent <strong>inapplicables</strong> — une borne de privilège suppose un porteur identifié, et une imputabilité suppose quelqu'un à qui imputer.</em></p>
+
+<p><strong>Le deuxième est l'extension de la grille aux sources.</strong> Les cinq questions sont, au ch. 14, celles que l'entreprise pose à ses <strong>agents</strong> ; deux entrées du tableau les font porter sur autre chose — <strong>un outil publié dans un registre</strong> (F-13), <strong>une entrée de mémoire ou un document récupéré</strong> (F-23). <span class="auteur">Lecture de l'auteur</span> <strong>cette extension est une construction de la somme.</strong> <strong>Ce que le socle établit</strong> : la mécanique des deux attaques et le point de la chaîne où elles opèrent. <strong>Ce qu'il n'établit pas</strong> : que la grille soit applicable à un objet qui n'est pas un agent, ni qu'un mécanisme de provenance des sources soit spécifié quelque part. <em>Elle est proposée parce qu'elle rend le tri cohérent, non parce qu'une source l'autorise</em> — et elle est l'objet du § 19.5.</p>
+
+<p><strong>Le troisième est le cas que la grille ne range pas, et il vaut plus qu'un tri réussi.</strong> Le détournement du contrôle et de la communication interne d'un système multi-agents <strong>réussit même lorsque les agents pris isolément ne sont pas vulnérables</strong> (F-25). <span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : cette observation expérimentale, <strong>sur des cadriciels et des configurations donnés</strong>. <strong>Ce qu'il n'établit pas</strong> : que la grille soit <strong>inapte</strong> à la ranger. <em>La lecture proposée l'est : une taxonomie par maillon d'identité interroge les agents <strong>un à un</strong>, et laisse donc échapper la classe où le défaut est <strong>dans la composition</strong>.</em> ⚠ Le Vol. I porte l'énoncé qui la nomme — <em>« un agent sûr et un outil sûr, une fois composés, ne donnent pas un système sûr ; la sûreté n'est pas une propriété compositionnelle »</em> (H-24, <strong>[C]</strong>, corroboration et non appui). ⚠ <strong>La préimpression n'établit pas ce théorème et ne s'y substitue pas</strong> : la formule reste adossée au Vol. I, et <strong>son siège dans la somme est le ch. 37 § 37.3</strong>.</p>
+
+<p><strong>Reste ce que la taxonomie ne dit pas.</strong> ⚠ <strong>Elle ne dénombre rien.</strong> Sur les dix intitulés du référentiel agentique, <strong>un seul comporte le mot « Identity » et aucun ne comporte « Delegation »</strong> (F-18, <strong>[A]</strong>, fait négatif <strong>vérifié</strong>, degré 1). ⚠ <strong>L'énoncé porte sur les intitulés, non sur les contenus</strong> : la délégation est traitée <strong>dans le corps de deux des dix entrées</strong>, et <em>transformer ce fait négatif de titre en fait négatif de contenu serait une faute.</em> ⚠ <strong>Aucune entrée du socle ne tranche la question quantitative dans un sens ni dans l'autre</strong>, et le lot chargé de l'établir a <strong>réfuté la forme quantitative</strong> que le cadrage prêtait au chapitre.</p>
+
+<p><strong><em>La justification d'absorber la sécurité dans le cadre identitaire est donc architecturale et non statistique : verrou portant, non catégorie majoritaire.</strong></em></p>
+
+<h2 id="s195"><span class="sig">§ 19.5</span>L'empoisonnement de la mémoire et des sources</h2>
+
+<p>Les attaques précédentes visent <strong>l'agent</strong>. Celles-ci visent <strong>ce dont l'agent se nourrit</strong>, et elles déplacent la question d'identité d'un cran : <em>non plus <strong>qui es-tu ?</strong> posée au mandataire, mais posée au document, à l'entrée de mémoire, au serveur d'outils.</em></p>
+
+<p><strong>Le fait porteur est établi et revu par les pairs</strong> : l'empoisonnement de la mémoire à long terme ou de la base de connaissances interrogée par récupération est <strong>démontré par une publication en actes de piste principale</strong> (F-23, <strong>[A]</strong>). ⚠ <strong>Les taux qu'elle rapporte — un taux de succès moyen élevé pour un taux d'empoisonnement très faible — sont mesurés et déclarés par les auteurs sur leurs trois configurations expérimentales</strong> ; <em>ils ne sont pas une propriété générale des agents à mémoire persistante, et l'attribution est due à chaque occurrence.</em> <strong>Le maillon qui cède n'est ni l'authentification de l'agent ni son mandat : c'est l'absence d'origine vérifiable de l'entrée retenue en mémoire.</strong></p>
+
+<p><strong>Un manifeste de recherche prolonge le constat au grain de l'exploitation</strong> (H-11, <strong>[B]</strong>). Il tient l'empoisonnement de mémoire pour un <strong>défi ouvert</strong>, oppose deux patrons d'architecture, scinde l'auto-modification en <strong>adaptation éphémère</strong> et <strong>évolution persistante</strong>, et fait de l'opérationnalisation <strong>locale</strong> des cadres normatifs une <strong>frontière de sécurité</strong> — <em>restreindre le contexte et les capacités limite l'impact d'un agent compromis.</em> Il nomme enfin un <strong>écart de responsabilité</strong> entre le développeur, l'organisation qui impose le cadre, le fournisseur de modèle et le comportement émergent. ⚠ <strong>Réserve héritée</strong> : le cadre <strong>opérationnel</strong> n'est <strong>pas caractérisé par le socle</strong> — seul le normatif l'est —, et <em>aucun développement de ce chapitre ne s'y adosse.</em></p>
+
+<p><strong>La filiation vient du Vol. I et entre en repérage</strong> (H-26, <strong>[C]</strong>) : injection d'invite directe et <strong>indirecte</strong> ; <strong>empoisonnement d'outils par les descriptions en langage naturel</strong> ; le <strong>retournement d'un serveur</strong> comme <strong>variante temporelle</strong> ; et la <strong>transitivité de la confiance</strong>. ⚠ <em>Le Vol. I y pose que l'injection n'est pas résoluble au niveau du modèle et que la parade relève du confinement.</em></p>
+
+<div class="avert">
+  <p><strong>Deux scores coexistent pour l'un des identifiants cités selon l'autorité qui les publie, et l'écart n'est pas arbitré ici.</strong></p>
+</div>
+
+<p><strong>L'identité des sources a un troisième visage, celui de l'éditeur.</strong> Un paquet publié sous le nom d'un éditeur, <strong>par un tiers sans aucun lien avec lui</strong>, ajoutait dans une de ses versions une <strong>mise en copie invisible de tout courriel sortant vers un serveur externe</strong>. <em>(Source primaire ouverte et citée hors socle par le Vol. III, non versée.)</em> ⚠ <strong>Le maillon qui cède est en amont de la chaîne de mandat</strong> : <em>le serveur contrefait reçoit <strong>légitimement</strong> le mandat de l'agent et les habilitations d'envoi de l'organisation, la confiance reposant sur <strong>l'homonymie d'un identifiant de registre</strong>.</em> <strong>C'est le même maillon que l'empoisonnement à la publication, décrit depuis un cas plutôt que depuis une technique.</strong></p>
+
+<div class="avert">
+  <p><strong>Ce que le socle permet de conclure s'arrête ici.</strong> <strong>Le socle ne documente pas de mécanisme normalisé de provenance des entrées de mémoire longue ni des documents récupérés — absence de documentation, degré 3.</strong> Une préimpression porte bien la réserve qu'<strong>aucun cadre d'évaluation du risque centré sur les protocoles de communication d'agents n'était établi à sa date</strong> — ⚠ <em>réserve d'auteurs, datée et périssable, dont il ne se tire rien sur le contenu des spécifications</em>, et <strong>non versée au socle</strong>.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Ce versant hostile est le pendant de l'ancrage informationnel posé au ch. 5</strong>, qui n'en porte <strong>aucune occurrence</strong> : <em>la provenance des sources y est traitée comme une propriété de qualité, ici comme un problème d'identité.</em> Le ch. 5 n'est pas rejoué, et sa matière n'est pas reconstruite.</p>
+</div>
+
+<h2 id="s196"><span class="sig">§ 19.6</span>Ce que la recension ne trouve pas</h2>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>SIÈGE DE LA RESTRICTION DU GARDE-FOU R-08 POUR TOUTE LA SOMME.</strong> La formulation de l'absence d'usurpation est <strong>posée ici une seule fois</strong>, dans sa forme restreinte du 21 juillet 2026. Les <strong>ch. 12 § 12.2 et ch. 20 § 20.0</strong> y renvoient ; <strong>ils ne la reformulent pas</strong>.</p>
+</div>
+
+<p><strong>La formulation a changé sur constat d'instruction, et le changement est le contenu de cette section.</strong> L'affirmation soumise au vote portait déjà sur un objet étroit — <em>le corpus consulté ne documente aucun incident public majeur d'usurpation de l'identité propre d'un agent en production</em> — et elle a été <strong>écartée 3-0</strong>, l'un des juges opposant <strong>un contre-exemple tiré de la source même qu'elle invoquait</strong>.</p>
+
+<div class="avert">
+  <p><strong>Des incidents de défaillance d'identité <em>non humaine</em> sont publics, datés et documentés par source primaire</strong> (F-21) : <em>la somme ne peut écrire l'absence ni en général, ni sans dire ce qui l'en sépare.</em> <strong>Ce qui l'en sépare est la réserve du socle elle-même</strong> : <em>l'avis primaire ne qualifie pas d'agent l'application dont les jetons ont été compromis</em> (§ 19.1).</p>
+</div>
+
+<p><strong>Sous cette réserve, et sous elle seule</strong> : <strong>le socle ne documente pas l'usurpation du justificatif propre d'un agent — c'est-à-dire la présentation par un attaquant d'un justificatif délivré à un agent afin de se faire passer pour cet agent auprès d'un autre agent ou d'un service — ; c'est une absence de documentation, non un fait négatif vérifié.</strong> ⚠ <strong>Elle s'interprète avec prudence</strong> — surface encore peu déployée, détection immature, divulgation non publique — <strong>et elle ne constitue pas une preuve de sûreté.</strong></p>
+
+<p><strong>Du côté du protocole agent-agent, deux énoncés coexistent, de degrés différents, et les fondre en un seul serait la faute que R-14 proscrit.</strong></p>
+
+<p><strong>Degré 1, fait négatif vérifié.</strong> Le texte intégral de la page de spécification en v1.0.0 <strong>ne contient aucune occurrence</strong> de neuf chaînes relatives à l'usurpation, au rejeu, à l'injection d'invite, à la confusion de délégué, à la non-répudiation, au multi-saut, à la provenance et à l'interception (F-22, <strong>[A]</strong>). <em>Le balayage a porté sur le texte rendu, mesuré, et a été <strong>rejoué indépendamment par un juge</strong>.</em> ⚠ <strong>C'est un fait négatif de vocabulaire, borné à un document et à une version</strong> : <em>il établit que la spécification ne <strong>nomme</strong> pas ces menaces, non que le protocole y soit vulnérable — un texte peut traiter un risque sans employer le mot.</em> ⚠ Il ne porte pas davantage sur les documents de sujet du même site, <strong>que le lot déclare n'avoir pas ouverts</strong>.</p>
+
+<p><strong>Le contre-exemple est dans le texte même.</strong> La spécification <strong>reconnaît</strong> que l'échange de justificatifs en bande <strong>expose ces justificatifs à chacun des agents d'une chaîne de requêtes</strong>, et n'oppose à ce risque que des recommandations de niveau <em>SHOULD</em>. <em>(Source primaire ouverte et citée hors socle, non versée.)</em> ⚠ <strong>Le maillon qui cède est nommé par la spécification elle-même</strong> : <em>la chaîne formée par des tâches successives n'a pas de porteur d'identité propre, de sorte que le justificatif circule tel quel et que chaque intermédiaire le lit.</em></p>
+
+<p>La page de bonnes pratiques du protocole agent-outil fait de même, <strong>à une réserve de statut près qui se dit à chaque occurrence</strong> : elle <strong>ne siège pas dans l'arbre normatif</strong> et se présente elle-même comme un <strong>complément</strong> de la spécification d'autorisation. Elle reconnaît <strong>huit familles d'attaque</strong>, dont la confusion de délégué et le détournement de session, <strong>sans employer</strong> les termes de délégation, de multi-saut, d'identité d'agent ni de non-humain — <em>balayage borné à cette page et à l'index normatif d'une révision nommée</em>. ⚠ <strong>Les menaces sont donc traitées par un document d'accompagnement ; le texte d'autorisation de cette révision, lui, n'a pas été ouvert</strong>, et le décompte ne vaut pas pour lui.</p>
+
+<p><strong>Degré 3, absence de documentation.</strong> Le corpus consulté <strong>ne documente aucun identifiant de vulnérabilité visant le protocole agent-agent lui-même</strong> : les identifiants relevés visent des <strong>bibliothèques tierces portant son nom</strong>. ⚠ <strong>La règle qui l'impose a été payée au vote : un registre interrogé par mot-clé n'établit aucune absence, son rappel étant inconnu.</strong> <em>Trois formulations plus fortes ont été écartées et ne doivent pas resurgir</em> — deux clauses d'exclusivité et un fait négatif de registre. ⚠ <strong>Un dénombrement de fiches par registre ne mesure pas davantage une sûreté comparée entre deux protocoles</strong> : <em>il mesure une <strong>attribution</strong>, et deux lectures concurrentes restent ouvertes — exposition réelle moindre, ou surface d'attribution moindre faute de déploiements et de chercheurs.</em></p>
+
+<p><strong>La technique publiée qui nomme le protocole appelle une décision, et le lot l'a prise.</strong> Une publication d'une unité de recherche en sécurité, <strong>datée du 31 octobre 2025 et signée</strong>, décrit une technique de <strong>contrebande de session entre agents</strong> ; ⚠ <em>ses auteurs déclarent eux-mêmes qu'elle ne révèle <strong>aucune vulnérabilité du protocole</strong> et qu'elle <strong>n'a pas été observée en usage réel</strong>.</em></p>
+
+<div class="avert">
+  <p><strong>L'affirmation qui la portait a été écartée 3-0 sur sa clause d'exclusivité, et son entrée au socle est refusée en l'état.</strong> Elle est donc caractérisée <strong>au seul niveau architectural</strong> : <em>le maillon qui cède est <strong>la confiance implicite entre agents sur une session avec état, qu'aucune re-vérification du mandat ne rafraîchit en cours de session</strong>.</em> ⚠ <strong>Le rapprochement avec le premier mouvement est direct et il est, lui, au socle</strong> : l'en-tête protégé de la carte signée <strong>ne porte aucun paramètre de validité temporelle</strong> (F-03), et sa signature est <strong>facultative</strong> comme sa vérification n'est que <strong>recommandée</strong> (F-04).</p>
+</div>
+
+<p><strong>Ce qu'une institution peut inscrire dans un dossier de diligence raisonnable tient en trois lignes, et la distinction entre elles est le contenu, non la nuance.</strong></p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Ce que le corpus montre</th><th>Ce que cela autorise à écrire</th></tr></thead>
+  <tbody>
+    <tr><td>Une menace <strong>nommée</strong> par une spécification</td><td>elle y est traitée ou ne l'est pas, <strong>et le texte le dit</strong></td></tr>
+    <tr><td>Une menace <strong>non nommée</strong> dans un texte <strong>balayé</strong></td><td>un <strong>fait négatif borné à ce texte</strong> — jamais au protocole</td></tr>
+    <tr><td>Une menace dont <strong>aucun identifiant ne ressort d'un registre</strong></td><td>⚠ <strong>pas un fait négatif</strong> : un <strong>silence du corpus consulté</strong> — <em>l'inscrire comme une preuve de sûreté reviendrait à inscrire une inférence à la place d'un fait</em></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 19.2 — Trois régimes d'absence côté protocolaire, et ce que chacun autorise à écrire, au 21 juillet 2026.</p>
+
+<div class="avert">
+  <p><strong>Et le mot que ce chapitre n'emploie à aucune occurrence</strong> : <em>sécurisé</em>. Le protocole agent-outil porte un <strong>cadre d'autorisation</strong> — formule imposée par la réserve du socle du Vol. II —, <em>parce que la sécurité dépend de l'implémentation.</em></p>
+</div>
+
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
+
+<p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
+
+<ol class="numeros">
+  <li><strong>Le siège de la triade létale</strong> (§ 19.2), avec sa nature exacte : <em>un constat d'ingénierie, non un théorème.</em> Le <strong>ch. 11 § 11.1.2</strong> l'invoque pour son amplification ; le <strong>ch. 20</strong> s'y adosse.</li>
+  <li><strong>Le principe de tri</strong> : par <strong>le maillon qui cède</strong>, non par la technique ni par la cible. Le <strong>ch. 20</strong> le reconduit sur la classe temporelle.</li>
+  <li><strong>Le siège de la restriction du garde-fou sur l'usurpation</strong> (§ 19.6), dans sa forme restreinte — <em>l'usurpation du justificatif propre d'un agent, et de cela seul.</em></li>
+  <li><strong>Le cas que la grille ne range pas.</strong> <em>Une taxonomie par maillon d'identité interroge les agents un à un et laisse échapper la classe où le défaut est dans la composition.</em> C'est la limite déclarée de l'instrument, et le <strong>ch. 37 § 37.3</strong> en porte le siège théorique.</li>
+  <li>⚠ <strong>Et un legs négatif</strong> : <strong>aucune proportion n'est établie</strong>. <em>La justification d'absorber la sécurité dans le cadre identitaire est architecturale ; quiconque la citera comme statistique citera ce que la somme n'a pas écrit.</em></li>
+</ol>
+
+<section class="statut" id="s197">
+
+<h2><span class="sig">§ 19.7</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong></p>
+</div>
+
+<p><strong>Ce qui est enfreint.</strong> Portes <strong>G-3</strong> et <strong>G-4</strong> ; volet résiduel de <strong>G-1</strong> non instruit ; ordre de rédaction du PRD §6. ⚠ <strong>Et deux obligations propres à ce chapitre</strong> : <em>(a)</em> le <strong>dénombrement</strong> que le TOC exige <strong>avant rédaction</strong> n'a pas été conduit ; <em>(b)</em> <strong>CA-IV-11</strong> — relecture dédiée par un relecteur distinct, compte rendu déposé et nommé — <strong>n'est pas satisfaite</strong>. ⚠ <em>L'attestation auto-délivrée est proscrite même exacte : rien dans cette pièce, y compris la présente note, ne doit être lu comme une attestation de traitement défensif conforme.</em> Instruction d'auteur du 27 juillet 2026.</p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01.</strong> ⚠ <strong>Et quatre identifiants de vulnérabilité portent un vote adversarial incomplet</strong> (F-26) : <em>un vote incomplet n'est pas un vote favorable</em>, et ils sont employés en illustration seule, jamais comme appui.</li>
+  <li><strong>Les décomptes sont publiables</strong> (G-2). Écart de <strong>+9,3 %</strong> ; la volumétrie du Livre alimente <strong>D-4</strong> par <strong>R-IV-17</strong>.</li>
+  <li><strong>Les renvois « ch. N » vers les Livres III à V sont des renvois de plan</strong> : <strong>ch. 37 § 37.3</strong> — siège de la non-compositionnalité, invoqué <strong>deux fois</strong> — et <strong>ch. 47</strong>, où l'incident public candidat de la relève sur le harnais est décrit. Les renvois vers les <strong>ch. 5, 6, 7 § 7.5, 11 § 11.1.2</strong> résolvent contre du texte ; ceux vers les <strong>ch. 12, 14, 15, 20</strong> résolvent contre du texte au terme de la présente passe.</li>
+  <li><strong>Deux relèves atterrissent ici et ne sont pas consommées</strong> : le corpus candidat du dénombrement, et la classe d'attaques dont le vecteur est le harnais. ⚠ <em>La seconde entrerait <strong>contre</strong> la thèse de ce chapitre, non à son appui</em> — et <strong>c'est le motif pour lequel elle est nommée plutôt que passée sous silence.</strong></li>
+</ol>
+
+<p><strong>Remontées ouvertes par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-32 — BLOQUANTE pour la thèse, et cinquième occurrence d'une classe désormais installée.</strong> La thèse du ch. 19 au TOC v0.24 porte « <strong>une part majoritaire</strong> ». ⚠ <strong>Sa source a réfuté cette forme au vote adversarial et a réécrit sa propre thèse en énoncé architectural</strong> — <em>« ce n'est pas une thèse de dénombrement »</em>. Le TOC lui-même déclare que la proportion <strong>doit être établie par dénombrement sur un corpus déclaré, ou que l'énoncé retombe sans quantificateur</strong> ; <strong>le dénombrement n'a pas eu lieu</strong>. La pièce cite la thèse verbatim et <strong>n'écrit aucune proportion</strong>. <strong>Demande remontée</strong> : <em>(a)</em> réalignement de la thèse au titre de la <strong>décision 8</strong>, sur la forme architecturale que la source porte ; <em>(b)</em> à défaut, ouverture d'un <strong>lot de dénombrement</strong> avec le corpus candidat que le § 19.1 nomme — les divulgations du premier semestre 2026 —, <strong>et la qualification pièce par pièce que ce corpus exige</strong>. ⚠ <strong>Le rédacteur ne tranche ni ne dénombre</strong> : <em>écrire une proportion sur un corpus non balayé est la faute exacte que ce chapitre a pour objet de décrire.</em></li>
+  <li><strong>R-IV-33 — non bloquante, d'appareil et de contrôle.</strong> <strong>CA-IV-11 exige, pour les ch. 19 et 20, une relecture dédiée par un relecteur distinct, avec compte rendu déposé et nommé dans la pièce.</strong> ⚠ <strong>Aucun compte rendu n'existe, et la pièce le déclare plutôt que de se certifier elle-même.</strong> Le PRD §8 ajoute que <em>la dualité d'usage de ces deux chapitres n'a pas de motif de balayage et n'en aura pas : relecture dédiée seule, l'absence déclarée plutôt que subie.</em> <strong>Demande remontée</strong> : ordonnancement de cette relecture <strong>avant toute publication du deuxième mouvement</strong>, et <strong>désignation du relecteur</strong> — l'instance d'arbitrage étant désormais nommée (décision <strong>D-6</strong>). ⚠ <em>Un chapitre de dualité d'usage relu par son rédacteur est le cas où l'attestation auto-délivrée est le plus tentante et le plus nocive.</em></li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.24</strong> — § 19.1 à § 19.6, dans l'ordre exact —, et le § 19.0 est une introduction de chapitre. La <strong>table de couverture est respectée pour ses quatre lignes</strong>, y compris la quatrième, qui déclare les défenses architecturales et l'alignement <strong>hors périmètre</strong> : ils restent au <strong>ch. 6</strong>, et le § 19.3 s'en abstient explicitement. Les <strong>deux arrivées depuis le ch. 6</strong> — le modèle de menace et les vecteurs — sont <strong>déclarées et reçues</strong> : le § 19.2 et le § 19.3 les portent, et le ch. 11 § 11.1.2 n'en traite que l'amplification. Le <strong>siège de la triade létale est posé et marqué</strong> (§ 19.2) ; le <strong>siège de la restriction du garde-fou sur l'usurpation</strong> l'est aussi (§ 19.6). L'<strong>encadré de désambiguïsation reste au ch. 7 § 7.5</strong> ; l'<strong>ancrage informationnel reste au ch. 5</strong> ; la <strong>non-compositionnalité reste au ch. 37 § 37.3</strong>. ⚠ <strong>Le traitement est défensif à ses quatorze occurrences</strong> : chaque entrée nomme le maillon et la raison pour laquelle il cède, cite son identifiant, <strong>et s'arrête là</strong> — <em>aucune recette d'exploitation n'est reproduite, et aucune mécanique n'est décrite au grain de l'exécution.</em> Les <strong>douze occurrences de R-14</strong> portent leur degré, dont <strong>sept au degré 3</strong>, et le § 19.6 en produit <strong>un de chaque des trois régimes protocolaires</strong>. Les <strong>trois métriques auto-déclarées</strong> sont attribuées à leur source, <strong>y compris les taux expérimentaux du § 19.5</strong>, rapportés aux trois configurations qui les portent. Le mot <strong>« sécurisé » n'est appliqué à aucun protocole, à aucune occurrence</strong>. Et les <strong>sept occurrences de « Lecture de l'auteur »</strong> sont suivies de ce que le socle établit et n'établit pas.</p>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre II, chapitre 19. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.24, entrée du chapitre 19, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 17 — La chaîne de mandat et le problème des deux sauts · La somme agentique</title>
+<meta name="description" content="la délégation est le maillon faible — les mécanismes de 2026 prouvent qu&#x27;un agent a une identité, presque aucun ne prouve au nom de qui il agit ; au-delà de deux sauts, aucun mécanisme documenté ne maintient une traçabilité opposable de bout en bout.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre II · Chapitre 17</div>
+  <ol>
+    <li><a href="#s170"><span class="num">17.0</span>Introduction : ce qui ne se déduit pas d&#x27;un identifiant</a></li>
+    <li><a href="#s171"><span class="num">17.1</span>Le mandat dans les protocoles</a></li>
+    <li><a href="#s172"><span class="num">17.2</span>La chaîne de délégation comme objet de première classe</a></li>
+    <li><a href="#s173"><span class="num">17.3</span>Ce que le droit civil du mandat éclaire — et où l&#x27;analogie casse</a></li>
+    <li><a href="#s174"><span class="num">17.4</span>L&#x27;humain, premier et dernier maillon</a></li>
+    <li><a href="#s175"><span class="num">17.5</span>Le biais d&#x27;automatisation et la supervision de façade</a></li>
+    <li><a href="#s176"><span class="num">17.6</span>Le problème des deux sauts</a></li>
+    <li><a href="#s177"><span class="num">17.7</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.24 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="17-chaine-mandat-deux-sauts.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre II — Faire confiance : identité, délégation et fabrique de confiance</div>
+  <h1><span class="chap">Chapitre 17</span>La chaîne de mandat et le problème des deux sauts</h1>
+  <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). Sixième chapitre du mouvement. <strong>Il ne rend aucun verdict de grille</strong> : il instruit <strong>Q-C</strong> — <em>pour qui agis-tu ?</em> — au lieu de l'appliquer mécanisme par mécanisme</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — portes <strong>G-3</strong> et <strong>G-4</strong> ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ <strong>Une section de ce chapitre est en outre rédigée contre une consigne explicite du plan</strong> : le TOC déclare le § 17.5 « <strong>front neuf — aucun des trois volumes ne le porte : sources primaires à établir avant rédaction</strong> », et <strong>ces sources n'ont pas été établies</strong>. Le § 17.5 <strong>expose donc le vide au lieu de le combler</strong>, et ouvre la remontée <strong>R-IV-27</strong>. <strong>R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre</strong></dd>
+    <dt>Date de gel</dt>
+    <dd><strong>27 juillet 2026</strong> — gel unique, <strong>D-1 prise</strong> (registre : <a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Volet résiduel de G-1 non instruit.</strong> Gels de source : <strong>juin 2026</strong> (Vol. I), <strong>21 juillet 2026</strong> (Vol. III). ⚠ <strong>Une relève du plan porte une date postérieure au gel de sa source</strong> — un document normatif consulté le <strong>26 juillet 2026</strong> — et elle est <strong>reprise comme relève, jamais comme entrée de socle</strong> (§ 17.1)</dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte). Résolution contre le <strong>Vol. III <em>Monographie</em> ch. 9-10</strong>, dont les entrées <strong>F-14</strong>, <strong>F-15</strong>, <strong>F-29</strong>, <strong>F-31</strong>, <strong>F-44</strong> à <strong>F-47</strong>, <strong>F-53</strong>, <strong>F-74</strong> à <strong>F-82</strong>, <strong>F-89</strong> et les entrées héritées <strong>H-01</strong>, <strong>H-06</strong>, <strong>H-12</strong>, <strong>H-19</strong>, <strong>H-28</strong>, <strong>H-29</strong>, <strong>H-33</strong> conservent leurs niveaux d'origine ; et contre le <strong>Vol. I <em>Monographie</em> §2.11.2 et §3.6.6</strong>, en <strong>[C]</strong>. ⚠ <strong>Six entrées mobilisées sont en [C]</strong> — F-31, H-19, H-28, H-29, H-33, plus H-15/PC3 du Vol. II, construction d'auteur hors socle factuel : elles <strong>situent</strong>, elles ne portent pas. ⚠ <strong>Le § 17.5 ne mobilise aucun socle</strong> : il n'en a pas. <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd>Vol. III — <strong>R-14 : quinze occurrences</strong>, dont <strong>douze de degré 3</strong> — <strong>le plus grand nombre du Livre</strong>, et c'est une conséquence du sujet : <em>un chapitre qui prend une frontière pour objet écrit surtout des absences</em> ; <strong>R-02 : sept occurrences</strong>, § 17.1 (quatre), § 17.2, § 17.3 et § 17.6 ; <strong>R-09 : huit occurrences</strong> ; <strong>R-01 : deux occurrences</strong>, § 17.2 et § 17.6 ; <strong>R-12 (traitement défensif au niveau du maillon, aucune recette) : deux occurrences</strong>, § 17.6.1 ; <strong>R-13 : une occurrence</strong>, § 17.4, l'échelle d'autonomie jamais nue. <strong>R-03 à R-08, R-10, R-11 : zéro occurrence.</strong> Vol. II — <strong>§8.2 : une occurrence</strong>, § 17.6.2 ; <strong>R-1 à R-8 : zéro occurrence</strong>. ⚠ <strong>Un faux ami est déclaré</strong> : le « point de contrôle » du glossaire du Vol. II traduit une notion de reprise sur incident et <strong>n'est pas</strong> le « point de contrôle obligatoire » de son ch. 19 ; la collision est <strong>signalée et non résolue</strong> (§ 17.4)</dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ <strong>5 700 mots</strong> de corps (§ 17.0 à § 17.6), <strong>cible dérivée</strong> de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — six sections dont une à trois sous-sections. ☑ <strong>Décompte publiable depuis G-2</strong> ; <strong>réel : 6 745 mots</strong> par <a class="lien" href="../PRD/decompte.sh"> 0 </a> — <strong>+18,3 %</strong>. ⚠ La volumétrie du Livre est relevée au <a class="lien" href="README.md"> 1 </a> du dossier et alimente <strong>D-4</strong> par <strong>R-IV-17</strong></dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>la délégation est le maillon faible — les mécanismes de 2026 prouvent qu'un agent <em>a</em> une identité, presque aucun ne prouve <em>au nom de qui</em> il agit ; au-delà de deux sauts, aucun mécanisme documenté ne maintient une traçabilité opposable de bout en bout.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.24, entrée du chapitre 17.</span>
+</div>
+
+<h2 id="s170"><span class="sig">§ 17.0</span>Introduction : ce qui ne se déduit pas d'un identifiant</h2>
+
+<p>Le mouvement portait jusqu'ici sur l'<strong>émission</strong> : ce qu'une organisation délivre à un agent pour qu'il soit reconnaissable. Ce chapitre porte sur <strong>ce qui ne s'en déduit pas</strong>. <em>Un identifiant vérifiable répond de ce qu'un agent <strong>est</strong> ; il ne dit ni pour qui cet agent agit, ni depuis quand, ni jusqu'où.</em> L'entreprise réglementée, elle, doit pouvoir produire cette seconde réponse devant un auditeur, et <strong>la produire pour un instant donné</strong> — non pour le moment de l'admission.</p>
+
+<div class="avert">
+  <p><strong>Règle d'emploi déclarée à l'ouverture, et elle vaut pour tout le chapitre.</strong> La grille du ch. 14 s'applique par mécanisme et ne rend que trois verdicts. <strong>Ce chapitre n'en rend aucun</strong> : il <em>instruit</em> <strong>Q-C</strong> au lieu de l'appliquer. Le motif est au ch. 14 § 14.3 — <em>Q-C n'a reçu qu'un seul verdict à l'application-témoin, et encore partiel ; une question à laquelle deux mécanismes sur trois ne permettent même pas de répondre n'appelle pas un verdict de plus, elle appelle un chapitre.</em></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>la thèse citée en tête est une construction du plan, et deux de ses termes excèdent ce que le socle établit.</strong> <strong>Ce que le socle établit</strong> : la spécification d'un format de mandat versionné et de ses attributs temporels (Vol. III F-46, <strong>[B]</strong>) ; la définition d'un attribut de délégation dans un jeton et l'exclusion explicite de la sécurité de ce jeton hors du périmètre du même document (F-47, <strong>[A]</strong>) ; le statut pré-normatif d'un mécanisme de propagation de contexte (F-29, <strong>[A]</strong>). <strong>Ce qu'il n'établit ni ne permet d'écrire</strong> : <em>(a)</em> un <strong>classement</strong> des mécanismes de 2026 — « presque aucun » suppose un balayage qu'aucun rapport de lot ne revendique ; <em>(b)</em> qu'un mécanisme cryptographique « <strong>prouve</strong> » quoi que ce soit, verbe que R-02 proscrit ; <em>(c)</em> le quantificateur universel négatif de la seconde moitié — « aucun mécanisme documenté » —, forme que le régime des trois degrés d'absence refuse. ⚠ <strong>Le corps de ce chapitre n'emploie aucun des trois</strong>, et <strong>le Vol. III a lui-même borné les deux thèses correspondantes le 21 juillet 2026</strong> ; l'écart est remonté (<strong>R-IV-28</strong>), non arbitré ici.</p>
+
+<p><strong>Le chapitre se lit en six temps.</strong> Ce que trois mécanismes portent du mandat (§ 17.1) ; le rang que chacun accorde à la <strong>chaîne</strong> (§ 17.2) ; ce qu'un régime civil du mandat éclaire, et où l'analogie casse (§ 17.3) ; l'humain comme premier et dernier maillon (§ 17.4) ; <strong>la limite empirique de la parade humaine, dont le socle n'existe pas</strong> (§ 17.5) ; et le problème des deux sauts, exposé plutôt que franchi (§ 17.6).</p>
+
+<h2 id="s171"><span class="sig">§ 17.1</span>Le mandat dans les protocoles</h2>
+
+<p>Trois mécanismes documentés portent quelque chose du mandat. <em>Ils n'en portent ni la même part, ni au même statut, et les additionner serait la première faute possible de ce chapitre.</em> ⚠ <strong>Bornage</strong> : l'énumération est celle des lots d'instruction du Vol. III ; <strong>elle ne prétend recenser ni les mécanismes du marché, ni ceux qu'aucun lot n'a ouverts.</strong></p>
+
+<p><strong>Les mandats du protocole de paiement agentique : un format, une contrainte de vérification, un ancrage renvoyé au déploiement.</strong> La spécification, en <strong>version v0.2.0 publiée le 28 avril 2026</strong> — <em>spécification de projet, non texte normatif d'un organisme de normalisation</em> —, définit <strong>deux types de mandats</strong> sérialisés en SD-JWT, porteurs d'un attribut de type <strong>versionné</strong> ainsi que des attributs temporels d'émission et d'échéance (Vol. III F-46, <strong>[B]</strong>). Le rapport de lot porte deux éléments que le résumé de l'entrée ne porte pas encore, et qui décident du reste : pour les mandats dits ouverts, la spécification prévoit un attribut de <strong>confirmation</strong> contenant la clé publique de l'agent, ainsi que des <strong>champs de portée</strong> — marchands autorisés, ensemble de lignes d'articles. La contrainte de vérification est explicite dans le texte : « implementations MUST match the exact <code>vct</code> string, including the version suffix ».</p>
+
+<div class="avert">
+  <p><strong>Ce que cette spécification démontre est donc un format, un jeu d'attributs et une obligation d'appariement exact du type</strong> ; <em>elle ne documente pas ce qu'une vérification de mandat établit en pratique</em>, puisqu'elle <strong>renvoie l'ancrage de confiance au déploiement</strong> en proposant <strong>deux modèles alternatifs</strong> — croire l'émetteur du justificatif de l'utilisateur, ou croire directement le fournisseur d'agent. <strong>R-02 est ici la règle opérante</strong> : <em>un mécanisme se qualifie par ce que sa spécification démontre, jamais par ce qu'elle promet.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>La divergence de gouvernance de cette spécification est déjà tranchée au ch. 10 et n'est pas rouverte ici.</strong> Le fait est acquis, daté et consommé par extraction au gel du 27 juillet 2026 ; ce chapitre n'y revient pas, et <strong>une pièce qui rouvrirait une divergence close en ferait une divergence ouverte</strong>.</p>
+</div>
+
+<p><strong>L'agissement pour le compte d'autrui : la délégation est nommée, le jeton est décliné.</strong> Le <strong>RFC 8693</strong> définit en sa §4.1 l'attribut d'acteur comme « a means within a JWT to express that delegation has occurred and identify the acting party to whom authority has been delegated » ; sa §1 place <strong>explicitement hors périmètre</strong> « the specific syntax, semantics, and security characteristics of the tokens themselves », et <strong>n'impose aucune exigence sur le modèle de confiance du déploiement</strong> (Vol. III F-47, <strong>[A]</strong>). Le document distingue par ailleurs <strong>délégation</strong> et <strong>usurpation d'identité</strong> : « With delegation semantics, principal A still has its own identity separate from B ».</p>
+
+<div class="avert">
+  <p><strong>La conséquence se formule avec prudence</strong> : le mécanisme <strong>nomme</strong> la partie agissante et le sujet ; <em>il n'attache à cet attribut aucune assertion sur le consentement du mandant, sur la portée matérielle du mandat ni sur sa durée</em> — ces éléments relevant de la politique du serveur d'autorisation, que la RFC laisse hors de son texte. <strong>Il ne faut donc pas écrire qu'OAuth ne permettrait pas d'établir le mandant : il ne le spécifie pas, ce qui est autre chose.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>Relève du plan, à instruire à la source primaire, et elle vise la thèse de ce chapitre.</strong> Le TOC signale que le « au nom de qui » <strong>a une spécification normative que la thèse ne nomme pas</strong> : le RFC 8693 est un document de la voie des normes (<em>Standards Track</em>) de <strong>janvier 2020</strong>, il distingue <strong>nommément</strong> délégation et usurpation d'identité, et il porte <strong>les deux véhicules de la chaîne</strong> — un paramètre qui nomme la partie agissante, et une revendication par laquelle une partie est déclarée autorisée à agir pour une autre. ⚠ <strong>Portée exacte, et rien de plus</strong> : <em>la RFC <strong>modélise</strong> la chaîne ; elle n'établit ni son déploiement, ni sa suffisance au second saut.</em> La thèse en sort <strong>possiblement sous-spécifiée, non fausse</strong>. ⚠ <strong>Cette relève n'entre pas au socle</strong> : elle est <strong>repérage</strong>, le document ayant été consulté à l'éditeur de RFC le 26 juillet 2026 sans passer par une extraction versée. <em>Le § 17.1 en est le siège désigné ; aucun énoncé du chapitre ne s'y adosse comme à un fait.</em></p>
+</div>
+
+<p><strong>Les jetons de transaction : un mécanisme de propagation, borné à un domaine de confiance.</strong> Le document en est, au 21 juillet 2026, à sa <strong>révision -09 du 6 juillet 2026</strong>, expirant le <strong>7 janvier 2027</strong>, à l'état d'appel de dernière relecture du groupe de travail OAuth : <em>Internet-Draft</em> en cours, <strong>non un RFC</strong> (Vol. III F-29, <strong>[A]</strong> ; statut et expiration dits à chaque mention). ⚠ <strong>La date du 7 janvier 2027 est l'expiration automatique du document — PROGRAMMÉE au sens mécanique</strong>, elle ne dit rien d'une adoption ni d'un calendrier de publication. Son abrégé énonce l'objet et <strong>la clause qui compte pour ce chapitre est la borne de périmètre</strong> : la propagation vaut <strong>within a trusted domain</strong>. <em>Le § 17.6 y revient.</em></p>
+
+<div class="avert">
+  <p><strong>Le socle IAM pré-agentique — dont l'autorisation déléguée fait partie — est posé au ch. 3</strong> et n'est pas reconstruit ici : ce chapitre s'y adosse, et n'instruit que ce que les trois mécanismes <strong>ajoutent</strong> au patron hérité.</p>
+</div>
+
+<h2 id="s172"><span class="sig">§ 17.2</span>La chaîne de délégation comme objet de première classe</h2>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>la mise en rang qui suit est une construction de la somme.</strong> <strong>Ce que le socle établit</strong> : trois faits séparés, un par mécanisme (F-46, <strong>[B]</strong> ; F-47, <strong>[A]</strong> ; F-29, <strong>[A]</strong>). <strong>Ce qu'il n'établit pas</strong> : un <strong>classement</strong> entre eux — aucun lot n'a balayé de corpus de mécanismes, et « énoncer la chaîne comme structure propre » est un <strong>critère d'auteur</strong>, non un attribut documenté.</p>
+
+<p><em>Les trois mécanismes se distinguent moins par leur maturité que par le rang qu'ils accordent à la chaîne.</em></p>
+
+<p>Des trois, le <strong>document d'autorisation d'agent</strong> de la spécification de paiement est celui qui décrit la chaîne <strong>comme l'objet qu'il spécifie</strong>. Il la formule ainsi — <em>source primaire ouverte et citée hors socle par le Vol. III</em> : « Mandates form a cryptographically verifiable chain from the original user-approved Mandate through to the closed Mandate used to authorize a particular Verifier's action. » ⚠ <strong>Le même balayage, borné à ce seul fichier, relève que ce document n'invoque pas OAuth</strong> : les chaînes correspondantes n'y figurent pas, les références externes relevées étant d'un autre corpus. ⚠ <em>Ce constat ne réfute aucune compatibilité : il établit que <strong>ce fichier</strong> ne l'invoque pas, à cette date.</em></p>
+
+<p>Le <strong>RFC 8693</strong>, à l'inverse, traite la chaîne comme un <strong>attribut d'un jeton dont il décline expressément la sécurité</strong> (F-47). Les <strong>jetons de transaction</strong> nomment eux aussi une chaîne d'appels, mais <strong>la bornent</strong> : ils la situent <strong>à l'intérieur d'un domaine de confiance</strong> — <em>ce qui est précisément la frontière que l'entreprise franchit dès qu'un agent tiers entre en jeu</em>, objet du <strong>ch. 18</strong>.</p>
+
+<div class="avert">
+  <p><strong>Aucun des trois n'est un mécanisme d'émission, et c'est ce qui sépare ce chapitre du § 15.1.</strong> La carte d'agent signée — dont le socle hérité <strong>ne documente ni l'ancrage de confiance, ni la révocation, ni la gouvernance des clés</strong> (Vol. III H-01, <strong>[A]</strong>) — porte une <strong>identité</strong>, non un <strong>mandat</strong>. <em>Les deux objets se vérifient séparément, et l'un ne se déduit pas de l'autre.</em></p>
+</div>
+
+<p><strong>Ce que le Vol. I ajoute en régime [C], et qui nomme le patron sans l'établir.</strong> Son §2.11.2 pose que l'agent en production est une <strong>identité non humaine à part entière</strong>, et que la chaîne multi-saut est le cœur du problème opérationnel : <em>un agent qui délègue à un sous-agent ou appelle un outil distant <strong>ne doit pas transmettre tel quel</strong> le jeton du mandant, sous peine de surface d'attaque et de privilèges propagés.</em> L'échange de jetons y répond en émettant, <strong>à chaque saut</strong>, un jeton dérivé à <strong>portée réduite</strong> et à <strong>audience explicite</strong>, de sorte que chaque maillon ne reçoive que l'habilitation strictement nécessaire et que la révocation reste granulaire. ⚠ <strong>Régime</strong> : entrée en <strong>[C]</strong>, <em>repérage</em> — <strong>aucun énoncé de ce paragraphe n'est central</strong>, et le patron y entre comme <strong>thèse d'un volume antérieur, à attribuer</strong>.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> traiter la chaîne de délégation en <strong>objet de première classe</strong> est une construction de la somme, non un résultat du socle. <strong>Ce que le socle établit</strong> : un format de mandat versionné et ses attributs temporels ; un attribut qui exprime qu'une délégation a eu lieu et identifie la partie agissante ; un mécanisme de propagation pré-normatif, daté et borné à un domaine de confiance. <strong>Ce qu'il n'établit pas</strong> : <em>qu'une chaîne ainsi formée soit interrogeable à un instant quelconque</em>, ni <em>qu'un vérificateur situé au troisième maillon puisse remonter au mandant d'origine</em>, ni <em>qu'un mandat révoqué en amont cesse d'être opposable en aval</em>. ⚠ <strong>L'exigence d'interrogeabilité à l'instant t vient de la grille du ch. 14, qui est elle-même une construction d'auteur</strong> : ce chapitre l'instruit, il ne la tire d'aucune source.</p>
+
+<div class="avert">
+  <p><strong>Ce que les deux volumes antérieurs disent de cette frontière, ils le disent au titre de repérage.</strong> L'entrée qui recense les verrous de l'admission inter-domaines nomme parmi eux la <strong>fraîcheur d'autorité à chaque saut</strong> (H-19, <strong>[C]</strong>) ; celle qui porte le front ouvert le formule ainsi : <em>« l'identité non humaine et la traçabilité de bout en bout des décisions déléguées au-delà de deux sauts restent des problèmes ouverts, dont l'urgence croît avec le degré d'autonomie consenti »</em> (H-28, <strong>[C]</strong>). <strong>Deux entrées [C] : elles situent la question, elles ne portent aucun fait central.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>Une pièce inter-domaines existe, et ce chapitre la signale sans l'exploiter.</strong> Un texte de l'IETF traite nommément le <strong>chaînage d'identité et d'autorisation entre domaines</strong> — révision <strong>-17 du 19 juillet 2026</strong>, <em>Internet-Draft</em> actif du groupe de travail OAuth <strong>soumis à l'IESG pour publication</strong>, expirant le 20 janvier 2027. ⚠ « <strong>Soumis à l'IESG pour publication</strong> » est un <strong>état de procédure, non une publication</strong>, et <strong>aucun jalon daté n'est relevé</strong> : le chapitre n'écrit donc aucune date d'aboutissement. <strong>Son contenu n'a pas été extrait</strong> — consigné au titre du « consulté mais non retenu », sans affirmation ni citation. <em>Rien n'est écrit ici de ce que ce document prescrit ou omet.</em></p>
+</div>
+
+<h2 id="s173"><span class="sig">§ 17.3</span>Ce que le droit civil du mandat éclaire — et où l'analogie casse</h2>
+
+<div class="avert">
+  <p><strong>Le titre de cette section annonce une confrontation que le socle ne permet pas de conduire, et il faut le dire avant d'écrire quoi que ce soit d'autre.</strong> <strong>Le socle ne documente pas le droit civil du mandat — absence de documentation, non fait négatif vérifié</strong> (degré 3). Le rapport du lot correspondant le déclare lui-même : l'analogie figure parmi ce qu'il <strong>n'a pas instruit</strong>, faute de source primaire relevant de son périmètre documentaire.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Cette section est la seule occurrence de la matière dans toute la somme, et le partage est écrit au plan</strong> : le <strong>versant québécois du mandat</strong> — ce que le droit positif d'une juridiction donnée prescrit — est au <strong>ch. 27</strong> ; <strong>l'analyse de la limite de l'analogie</strong> est ici. <em>Les deux ne se recouvrent pas, et ce chapitre ne préjuge de rien de ce que le ch. 27 établira.</em></p>
+</div>
+
+<p><strong>Ce qui peut s'écrire sans ce corpus est d'un autre ordre</strong> : non pas ce que le droit dit, mais <strong>ce que les mécanismes du § 17.1 portent des attributs qu'un régime de mandat suppose</strong>. <em>Et c'est là que la comparaison rend son service, à condition d'être marquée.</em></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>la mise en regard qui suit est une construction d'auteur.</strong> <strong>Ce que le socle établit</strong> : les mandats du protocole de paiement portent une <strong>durée</strong>, sous la forme d'attributs temporels (F-46, <strong>[B]</strong>) ; le rapport de lot y ajoute, hors socle, une <strong>portée</strong> — marchands autorisés, ensemble de lignes d'articles ; l'attribut d'acteur du RFC 8693 <strong>identifie la partie agissante</strong> mais n'emporte <strong>aucune assertion</strong> sur le consentement du mandant, sur la portée matérielle du mandat ni sur sa durée (F-47, <strong>[A]</strong>). <strong>Ce qu'il n'établit pas</strong> : <em>qu'un mandat protocolaire soit <strong>révocable avant son terme</strong>, ni ce qu'une révocation produit sur les actes déjà accomplis, ni <strong>qui répond</strong> des actes du mandataire.</em> ⚠ <strong>Ces trois questions sont celles qu'un régime civil traite en propre ; le socle n'en porte aucune réponse.</strong></p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Ce qu'un régime de mandat suppose</th><th>Ce que les mécanismes du § 17.1 portent</th><th>État de la preuve</th></tr></thead>
+  <tbody>
+    <tr><td>Une <strong>durée</strong> du mandat</td><td>attributs temporels d'émission et d'échéance (F-46, <strong>[B]</strong>)</td><td>établi, borné à ce format</td></tr>
+    <tr><td>Une <strong>portée</strong> matérielle</td><td>champs de portée pour les mandats ouverts</td><td><strong>hors socle</strong> — rapport de lot, non versé</td></tr>
+    <tr><td>L'identité du <strong>mandataire agissant</strong></td><td>attribut d'acteur du RFC 8693 (F-47, <strong>[A]</strong>)</td><td>établi ; <strong>aucune assertion sur le consentement</strong></td></tr>
+    <tr><td>La <strong>révocabilité avant terme</strong></td><td>—</td><td><strong>absence de documentation, degré 3</strong></td></tr>
+    <tr><td>L'effet d'une révocation sur les <strong>actes déjà accomplis</strong></td><td>—</td><td><strong>absence de documentation, degré 3</strong></td></tr>
+    <tr><td><strong>Qui répond</strong> des actes du mandataire</td><td>—</td><td><strong>absence de documentation, degré 3</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 17.1 — Ce qu'un régime de mandat suppose, ce que les mécanismes portent, au 21 juillet 2026.</p>
+
+<p><strong>La révocation est le point où la comparaison rend le plus, et il n'est pas nécessaire de sortir du socle pour le montrer.</strong> Le précédent des infrastructures à clés publiques <strong>n'offre pas ce qu'on lui prête</strong> : le RFC 7009 ne fait de l'invalidation des jetons d'accès qu'une <strong>recommandation</strong> ; le RFC 5280 borne la granularité de la révocation à la <strong>période d'émission de la liste</strong> — <em>jusqu'à une heure, un jour ou une semaine</em> ; et le RFC 6960 énonce que l'état « good » <strong>ne signifie pas nécessairement</strong> que le certificat ait jamais été émis (Vol. III F-53, <strong>[B]</strong>). ⚠ <em>Un régime qui laisse la révocation à une recommandation et sa fraîcheur à une période d'émission ne fournit pas, au vérificateur du troisième maillon, de quoi savoir si le mandat qu'il honore est encore en vigueur.</em> <strong>L'inventaire complet est au ch. 20 § 20.4</strong> ; il est cité ici <strong>pour ce qu'il retire à l'analogie</strong>, non pour ce qu'il établit du droit.</p>
+
+<h2 id="s174"><span class="sig">§ 17.4</span>L'humain, premier et dernier maillon</h2>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>cette section est une construction d'auteur en totalité, et elle porte son marquage à l'ouverture.</strong> <strong>Ce que le socle établit</strong> : une obligation légale de révision par une personne, dans un texte daté et en vigueur (F-89, <strong>[B]</strong> ; H-06, <strong>[B]</strong>) ; l'existence d'un <strong>point d'arrêt humain</strong> comme <strong>thèse d'un volume antérieur</strong>, à attribuer et non à recevoir comme fait ; le format et les attributs des mandats (F-46, <strong>[B]</strong>). <strong>Ce qu'il n'établit pas</strong> : qu'une approbation humaine <strong>doive</strong> s'inscrire dans une chaîne de mandat, ni qu'une approbation non inscrite soit sans valeur, ni qu'une <strong>typologie des points d'intervention humaine</strong> existe dans une source. <em>La condition probatoire énoncée ci-dessous est la proposition de la somme ; le lecteur peut la refuser sans qu'aucun fait cité ne tombe.</em></p>
+
+<p><strong>L'humain occupe deux positions dans la chaîne, et la somme soutient qu'elles se traitent par le même instrument.</strong> En <strong>amont</strong>, il est le <strong>mandant</strong> : l'origine de l'autorité que l'agent invoque. En <strong>aval</strong>, il est le <strong>réviseur</strong> : celui devant qui une décision automatisée doit pouvoir être reprise.</p>
+
+<p><strong>Des deux positions, l'aval est celle que le socle adosse à un texte de droit.</strong> L'article 12.1 de la loi provinciale sur la protection des renseignements personnels dans le secteur privé impose à qui rend une décision « <strong>fondée exclusivement sur un traitement automatisé</strong> » d'en informer la personne concernée au plus tard au moment où elle l'informe de la décision, puis, <strong>à sa demande</strong>, de l'informer de <strong>trois choses</strong> — les renseignements personnels utilisés, « des raisons, ainsi que des principaux facteurs et paramètres, ayant mené à la décision », et « de son droit de faire rectifier les renseignements personnels utilisés ». S'y ajoute, <strong>dans un alinéa distinct</strong>, l'occasion de présenter ses observations à <strong>un membre du personnel en mesure de réviser la décision</strong> (F-89, <strong>[B]</strong>, texte extrait de la source officielle ; cette entrée <strong>corrige</strong> une énumération héritée qui omettait le droit de rectification).</p>
+
+<div class="avert">
+  <p><strong>Le siège de cet article est le ch. 27</strong>, qui cartographie les lectures sans les trancher ; ce qui appartient ici est <strong>le point de raccord avec la chaîne</strong> : <em>la loi désigne une <strong>personne en mesure de réviser</strong>, et le texte extrait n'y attache <strong>aucune prescription sur la trace</strong> que cette révision laisse.</em> ⚠ <strong>On n'écrit jamais « la révision de l'article 12.1 »</strong> : le flux outille <strong>un point d'arrêt humain</strong>, et la formule imposée ne se relâche pas.</p>
+</div>
+
+<p><strong>La position amont est nommée par une thèse du Vol. II et non par une source</strong> : le <strong>point d'arrêt humain</strong> figure parmi les cinq points de contrôle obligatoires de son ch. 19, où il porte lui-même le marquage « Lecture de l'auteur ». <em>Il entre donc ici comme thèse d'un volume antérieur, à prolonger et à attribuer, jamais comme acquis.</em> ⚠ <strong>Collision terminologique héritée, signalée et non résolue</strong> : le glossaire du Vol. II réserve « point de contrôle » à la traduction d'une notion de reprise sur incident, et « point de contrôle obligatoire » y désigne autre chose.</p>
+
+<p><strong>Ce que le Vol. I ajoute en régime [C] : l'interaction elle-même devient un objet à négocier.</strong> Son §3.6.6 pose que la confiance ne se joue pas seulement entre systèmes mais <strong>à l'interface où un humain valide, corrige ou consent</strong> — quand demander une validation, par quelle modalité, à quel point du flux insérer le contrôle, comment recueillir un consentement granulaire. Trois mécanismes datés y instrumentent cet axe : une primitive de <strong>sollicitation structurée</strong> introduite dans une révision du protocole agent-outil, qui transforme l'interaction en primitive du protocole plutôt qu'en hors-bande applicatif ; une extension d'<strong>interfaces interactives en bac à sable</strong> dont les actions transitent par <strong>le même chemin d'audit et de consentement</strong> que les appels d'outils — <em>préservant la propriété de traçabilité au lieu d'ouvrir un canal latéral non gouverné</em> ; et un <strong>schéma d'événements</strong> normalisé entre frontal et dorsal agentique. ⚠ <strong>Régime et statut</strong> : entrée en <strong>[C]</strong>, et l'une des trois extensions relevait, au gel du Vol. I, d'une <strong>révision candidate non publiée comme stable</strong> — <em>sa présentation reste conditionnelle</em>.</p>
+
+<div class="avert">
+  <p><strong>Le socle ne documente pas de typologie des patrons d'interaction humain-agent — absence de documentation, degré 3.</strong> ⚠ <strong>Et les patrons que le plan nommait relèvent d'un corpus d'appui dont la filiation a été retirée</strong> : <em>marqueur conditionnel de réouverture, jamais une source.</em> La section s'en tient donc à ce que les deux entrées permettent, et <strong>déclare le reste plutôt que de l'emprunter</strong>.</p>
+</div>
+
+<p><strong>Reste le fait qui donne à cette section son urgence</strong>, et il vient de la spécification même dont le § 17.1 a détaillé les mandats. La version publiée le 28 avril 2026 se présente elle-même ainsi — <em>source primaire ouverte et citée hors socle</em> : « This is the second release of AP2. It focuses on providing Human Not Present flows. » ⚠ <strong>Le mécanisme qui formalise le mandat est donc, dans sa version courante, orienté vers les flux sans présence humaine.</strong> <em>Ce n'est pas un défaut de la spécification : c'est l'énoncé de ce qu'elle traite, et il indique où l'approbation humaine doit être portée <strong>par autre chose que la présence</strong>.</em></p>
+
+<p><strong>La proposition de la somme tient en une phrase.</strong> <em>Une approbation humaine qui ne s'inscrit pas dans la chaîne de mandat — qui ne porte ni identifiant du mandant, ni horodatage, ni portée, ni lien vérifiable vers le mandat qu'elle autorise — n'est pas un contrôle : c'est un rituel, et il est indistinguable, dans un journal, d'une absence de contrôle.</em> Le corollaire est également d'auteur : <strong>un point d'arrêt humain se conçoit comme un acte de délégation daté et signé</strong>, versé à la chaîne au même titre que les maillons machine, et <strong>non comme un événement d'interface</strong>.</p>
+
+<div class="avert">
+  <p><strong>Le socle ne porte cette proposition ni ne la contredit.</strong> Ce qu'il fournit, ce sont <strong>deux des attributs qui la rendraient vérifiable</strong> — un horodatage d'émission et une échéance (F-46) — et <strong>l'obligation légale qui la rend opposable devant un tiers</strong> (F-89). ⚠ <strong>Et l'échelle d'autonomie que le ch. 14 § 14.4 croise avec la grille ne s'emploie jamais nue</strong> : trois échelles homonymes coexistent au Vol. I, et seuls le cardinal et la numérotation les discriminent.</p>
+</div>
+
+<h2 id="s175"><span class="sig">§ 17.5</span>Le biais d'automatisation et la supervision de façade</h2>
+
+<div class="avert">
+  <p><strong>Cette section n'a pas de socle, et elle ne peut pas en avoir un au moment où elle est écrite.</strong> Le TOC v0.24 la déclare <strong>front neuf</strong> en toutes lettres : <em>aucun des trois volumes ne la porte, sources primaires à établir <strong>avant rédaction</strong></em>. La porte <strong>G-1</strong> dont relèverait cette constitution <strong>n'a pas été ouverte pour le Livre II</strong> — son volet résiduel est explicitement dû —, et <strong>l'instruction d'auteur du 27 juillet 2026 n'a versé aucune source pour cette matière</strong>.</p>
+</div>
+
+<p><strong>La section expose donc le vide, et refuse de le combler.</strong> <em>Il serait aisé d'écrire ici deux pages plausibles sur le tamponnage et le paradoxe de l'explicabilité ; ce serait exactement la faute que la somme prend pour objet.</em> Trois motifs l'interdisent, et le troisième est le plus fort.</p>
+
+<ol class="numeros">
+  <li><strong>Le régime de preuve du volume l'interdit.</strong> Le PRD pose que toute affirmation factuelle centrale est adossée à une entrée du socle consolidé ou à une source primaire nouvelle de qualité équivalente (CA-IV-01). Il n'y a ici <strong>ni l'une ni l'autre</strong>.</li>
+  <li><strong>La règle du dépôt l'interdit.</strong> <em>Aucune lacune déclarée d'un volume ne se comble par une source de moindre qualité.</em> Une section écrite de mémoire sur une littérature qu'on n'a pas ouverte est la source de moindre qualité par excellence.</li>
+  <li><strong>Et une construction d'auteur produite à l'endroit exact où le socle est muet est celle qu'aucune relecture ne peut réfuter, faute de fait auquel la confronter.</strong> <em>C'est le motif que le Vol. III oppose à lui-même au terme de son ch. 10, et il vaut ici mot pour mot.</em></li>
+</ol>
+
+<p><strong>Ce qui peut s'écrire sans socle est ce qui rend la lacune instruisible</strong>, et c'est le seul contenu que cette section porte.</p>
+
+<p><strong>L'objet de la section, formulé pour instruction.</strong> Deux phénomènes distincts sont visés par le plan, et ils ne se confondent pas. Le premier est <strong>le tamponnage</strong> : le mode d'échec par lequel une révision humaine formellement présente cesse d'exercer un discernement, l'approbateur validant par défaut ce que le système propose. Le second est <strong>le paradoxe de l'explicabilité</strong> : l'hypothèse qu'une justification <strong>mieux rédigée</strong> augmente la <strong>déférence</strong> du réviseur plutôt que son discernement — <em>plus l'explication est convaincante, moins elle est contestée, indépendamment de sa justesse.</em></p>
+
+<div class="avert">
+  <p><strong>Ni l'un ni l'autre n'est établi ici, à aucun degré.</strong> Le socle des trois volumes n'en porte <strong>aucune occurrence</strong> : c'est une <strong>absence de documentation dans le corpus de la somme, non un fait négatif vérifié</strong> — et il ne s'ensuit <strong>ni</strong> que ces phénomènes soient documentés ailleurs, <strong>ni</strong> qu'ils ne le soient pas.</p>
+</div>
+
+<p><strong>Pourquoi cette lacune est structurante, et pour quel Livre.</strong> <span class="auteur">Lecture de l'auteur</span> <em>ce que le socle établit</em> : l'article 12.1 ouvre l'occasion d'être entendu par <strong>un membre du personnel en mesure de réviser</strong> (F-89, <strong>[B]</strong>) ; la ligne directrice prudentielle <strong>attend</strong> une surveillance visant nommément la prise de décision autonome et la reparamétrisation autonome (Vol. III F-65, <strong>[B]</strong> ; H-04). <em>Ce qu'il n'établit pas</em> : <strong>que cette révision humaine soit effective</strong>. ⚠ <strong>La parade sur laquelle reposent l'article 12.1 (ch. 27) et la supervision attendue par E-23 (ch. 25) est une parade humaine, et sa limite empirique n'est documentée nulle part dans la somme.</strong> <em>Un cadre réglementaire dont la parade est un humain qui révise suppose que cet humain révise ; et c'est précisément ce que le socle ne dit pas.</em></p>
+
+<div class="avert">
+  <p><strong>Ce n'est pas un argument contre ces cadres, et il ne faut pas le lire ainsi.</strong> C'est un <strong>angle mort déclaré</strong> du même ordre que ceux que les risques du plan nomment : <em>la somme prescrit un point d'arrêt humain (§ 17.4) et le Livre III en fera une condition de conformité, sans qu'aucune entrée n'établisse à quelles conditions un point d'arrêt humain arrête effectivement quelque chose.</em></p>
+</div>
+
+<p><strong>Question formulée pour instruction</strong>, avec son corpus et son critère de clôture : <em>existe-t-il une littérature revue par les pairs établissant, sur des systèmes de décision assistée en contexte professionnel, (a) la prévalence de la validation par défaut d'une recommandation automatisée, et (b) l'effet de la qualité rédactionnelle d'une justification sur le taux de contestation de cette recommandation ?</em> <strong>Corpus à ouvrir</strong> : la littérature d'ergonomie cognitive et de facteurs humains sur la confiance dans l'automatisation ; les études d'aide à la décision clinique et aéronautique ; les travaux d'évaluation des interfaces d'explicabilité. <strong>Critère de clôture</strong> : au moins un résultat <strong>revu par les pairs</strong>, avec son protocole, sa population et sa taille d'effet — <em>et non une revue de littérature secondaire, ni un billet d'éditeur.</em> <strong>La question reste ouverte ; aucune inférence n'est proposée ici.</strong></p>
+
+<h2 id="s176"><span class="sig">§ 17.6</span>Le problème des deux sauts</h2>
+
+<h3>17.6.1 Pourquoi deux sauts : où chaque mécanisme perd le fil</h3>
+
+<p><strong>D'où vient le nombre, et ce qu'il vaut.</strong> Le « deux sauts » <strong>n'est pas une mesure</strong> : c'est la formulation d'un front ouvert par le Vol. I (H-28, <strong>[C]</strong>), qui range par ailleurs le verrou parmi les dominants de la strate entreprise (H-29, <strong>[C]</strong>). ⚠ <strong>Deux entrées de repérage : elles situent la question, elles ne portent aucun fait central.</strong> <em>Aucune entrée du socle propre ne compte de sauts, n'en fixe le seuil, ni ne définit le terme.</em></p>
+
+<p>Faute de définition héritée, le chapitre en emploie une <strong>et la déclare</strong> : <strong>un saut de délégation est le transfert, d'un détenteur à un autre, de l'autorité d'agir pour le compte d'un mandant d'origine.</strong> Le premier saut mène du mandant au premier mandataire ; le deuxième mène de celui-ci à un troisième acteur, <strong>qui n'a jamais été en présence du mandant</strong>. <em>C'est cette configuration, et non un décompte, qui est examinée.</em></p>
+
+<p><strong>Le mandat protocolaire perd le fil à l'ancrage.</strong> Ce que la spécification <strong>démontre</strong> est un format et un jeu d'attributs (F-46, <strong>[B]</strong>). Ce qu'elle <strong>laisse au déploiement</strong> — l'obligation d'appariement exact du type, la remise de l'ancrage de confiance, les deux modèles alternatifs — <strong>n'est pas porté par le socle</strong> : ces éléments vivent dans le rapport de lot, et sont attribués ici à ce titre. ⚠ <em>La vérifiabilité de la chaîne est celle de sa <strong>sérialisation</strong> ; l'autorité à laquelle un vérificateur situé loin du mandant doit se fier reste une <strong>décision de déploiement</strong>.</em></p>
+
+<p><strong>Le mécanisme d'échange perd le fil au périmètre qu'il s'est lui-même donné.</strong> Le RFC 8693 définit l'attribut qui exprime la délégation, et <strong>place explicitement hors périmètre</strong> la sécurité des jetons (F-47, <strong>[A]</strong>). ⚠ <strong>Ce que ce texte prévoit ou tait de la composition de plusieurs délégations successives n'est pas documenté par le socle — degré 3.</strong> <em>Il ne s'ensuit ni qu'une telle composition soit prévue, ni qu'elle ne le soit pas.</em></p>
+
+<p><strong>Le mécanisme de propagation perd le fil à la frontière du domaine — et c'est lui qui l'écrit.</strong> La clause décisive de son abrégé est <strong>within a trusted domain</strong> : <em>le mécanisme borne son propre périmètre à un domaine de confiance.</em> L'entreprise franchit cette frontière <strong>dès qu'un agent tiers entre en jeu</strong> — objet du <strong>ch. 18 § 18.2</strong>, dont l'établissement est que, <strong>du côté du protocole agent-agent et de lui seul</strong>, l'admission d'un agent tiers <strong>ne dispose d'aucun plancher normatif</strong>.</p>
+
+<p><strong>Et l'identité elle-même ne se revérifie pas en chemin.</strong> La carte signée pose au niveau normatif le plus fort que les clés expirées ou révoquées <strong>MUST NOT</strong> servir à la vérification, <strong>sans fournir de mécanisme</strong> permettant au client d'établir cette expiration ou cette révocation (F-07, <strong>[A]</strong> ; siège au ch. 15 § 15.1.3, inventaire au ch. 20 § 20.4). ⚠ <strong>L'interdiction porte sur la clé, non sur la carte</strong> — borne de l'entrée, et <em>elle change ce qu'un vérificateur aval peut en tirer.</em></p>
+
+<p><strong>Ce que la littérature d'attaque nomme, et qui est le même point vu de l'autre côté.</strong> Le corpus de techniques adverses range parmi ses entrées l'invocation d'outils par un agent : <em>un agent peut disposer d'outils inaccessibles aux utilisateurs, de sorte que l'abus de l'accès à l'agent confère des privilèges supérieurs</em> (F-14, <strong>[A]</strong>) ; <strong>le maillon qui cède n'est pas l'authentification de l'agent, mais l'absence de réduction de portée entre mandant et mandataire.</strong> La contre-mesure correspondante pose la condition inverse : <em>un agent agissant pour un utilisateur ne doit pas recevoir de permissions que cet utilisateur n'a pas</em> (F-15, <strong>[A]</strong>). ⚠ <strong>Traitement défensif</strong> : la mécanique est exposée <strong>au niveau du maillon</strong>, l'identifiant de technique est cité, et <strong>aucune recette n'est reproduite</strong> ; le siège de la taxonomie est le <strong>ch. 19</strong>. ⚠ <em>Ces deux entrées énoncent une <strong>condition d'atténuation</strong> ; elles ne décrivent pas le mécanisme qui l'appliquerait à un maillon situé au-delà du premier.</em></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : quatre <strong>périmètres déclarés</strong>, chacun par sa source. <strong>Ce qu'il n'établit pas</strong> : que ces quatre périmètres <strong>se composent</strong> en une frontière unique, ni qu'ils se referment <strong>au deuxième saut</strong>. <em>La lecture proposée est que la perte ne se produit pas à un rang numéroté, mais <strong>au premier changement de régime</strong> — lorsque le vérificateur cesse d'être celui qui a ancré le mandat, ou cesse d'appartenir au domaine où le contexte se propage. Sous cette lecture, « deux sauts » nomme le premier cas de figure où ce changement devient inévitable, non un seuil mesuré.</em></p>
+
+<h3>17.6.2 Trois pistes, et ce que le socle établit de chacune</h3>
+
+<div class="avert">
+  <p><strong>Le terme « limites démontrées » mérite d'être borné avant d'écrire quoi que ce soit</strong> : <strong>aucune des trois pistes n'a fait l'objet d'une démonstration</strong> au sens où R-02 l'entend. <em>Ce que le socle porte, ce sont des <strong>statuts datés</strong> et des <strong>périmètres déclarés</strong></em> — ce qui suffit à situer chaque piste, et ne suffit pas à la réfuter.</p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Piste</th><th>Ce que le socle établit</th><th>Le périmètre déclaré, et ce qui n'est pas documenté</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Jetons imbriqués</strong></td><td>l'attribut d'acteur exprime qu'une délégation a eu lieu et identifie la partie agissante (F-47, <strong>[A]</strong>) ; jetons de transaction en révision -09 du 6 juillet 2026, en appel de dernière relecture (F-29, <strong>[A]</strong>)</td><td>le RFC 8693 <strong>exclut</strong> la sécurité du jeton (F-47) ; l'abrégé des jetons de transaction <strong>borne</strong> la chaîne à un domaine de confiance. <strong>La composition sur plus d'un saut : absence de documentation, degré 3</strong></td></tr>
+    <tr><td><strong>Accréditations vérifiables chaînées</strong></td><td>modèle de données v2.0, Recommandation du 15 mai 2025, historique sans entrée postérieure (F-79, <strong>[B]</strong>) ; v2.1 en brouillon de travail du 11 mai 2026 (F-80, <strong>[B]</strong>) ; identifiants décentralisés v1.1 à l'instantané de recommandation candidate du 5 mars 2026 (F-82, <strong>[A]</strong>)</td><td>le corpus documenté est celui d'un <strong>format d'attestation</strong>, non d'un mécanisme de chaînage de mandat. L'aboutissement de la v2.1 est <strong>SPÉCULATIF</strong>. <strong>Un mécanisme de chaînage pour la délégation multi-saut : degré 3</strong></td></tr>
+    <tr><td><strong>Journalisation corrélée</strong></td><td>conventions sémantiques pour l'IA générative déplacées vers un dépôt dédié par une rupture déclarée du 12 juin 2026 (F-74, <strong>[B]</strong>) ; échelle de maturité <strong>des groupes de conventions</strong> à cinq échelons (F-76, <strong>[B]</strong>) ; deux fichiers agentiques relevés au <strong>premier échelon</strong> (F-77, <strong>[B]</strong>)</td><td>le dépôt dédié ne porte <strong>ni publication ni étiquette</strong>, et son adresse de schéma indique « TODO » : <strong>aucun numéro de version propre n'est citable</strong> (F-75, <strong>[B, degré 2]</strong>). <strong>La corrélation d'une trace avec une chaîne de mandat : degré 3</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 17.2 — Trois pistes pour la traçabilité multi-saut, leur statut et leur périmètre déclaré, au 21 juillet 2026.</p>
+
+<p><strong>Première piste — imbriquer les jetons.</strong> Les deux textes qui la portent <strong>posent eux-mêmes leur borne</strong> : l'un <strong>exclut</strong> de son champ la sécurité du jeton qui porte la délégation, l'autre <strong>borne</strong> la propagation du contexte à un domaine de confiance. Un troisième texte de l'IETF traite nommément le chaînage <strong>entre domaines</strong> : il a été <strong>repéré, son contenu n'a pas été extrait</strong> (§ 17.2).</p>
+
+<p><strong>Deuxième piste — chaîner les accréditations vérifiables.</strong> Le corpus est daté, et son état ne se résume pas à un adjectif (siège : <strong>ch. 13 § 13.1</strong>, non rejoué ici). ⚠ <strong>Ce qui appartient à ce paragraphe est l'écart entre l'objet documenté et l'objet cherché</strong> : <em>ce corpus spécifie un format d'attestation ; le socle ne documente pas de mécanisme par lequel des accréditations s'enchaîneraient pour porter une délégation d'un maillon au suivant — degré 3.</em> ⚠ Deux constats <strong>bornent la piste sans la fermer</strong> : un groupe communautaire annonce parmi ses livrables une méthode d'identifiant et un format d'accréditation d'agent (F-30, <strong>[B]</strong>) — mais <strong>un groupe communautaire ne produit pas de Recommandation et n'engage aucun calendrier</strong>, et ce groupe n'avait <strong>publié ni rapport ni brouillon</strong> au relevé (F-50) ; et le rapport d'interopérabilité du modèle de données énumère dix implémentations dont <strong>aucun intitulé</strong> ne désigne un acteur financier — ⚠ <em>fait négatif borné aux intitulés, non à la nature des organisations</em>, entrée en <strong>[C]</strong>, corroboration seule (F-31).</p>
+
+<p><strong>Troisième piste — corréler les journaux.</strong> Le relevé est d'une autre nature que les deux précédents : <em>il ne décrit pas ce qu'une spécification prescrit, mais l'état d'un jeu de conventions d'instrumentation.</em> ⚠ <strong>Une conformité annoncée peut pointer un millésime périmé</strong> : la documentation d'un éditeur nommé énonce sa conformité par référence à un millésime du <strong>dépôt principal</strong> publié le 25 août 2025, <strong>antérieur au déplacement</strong> (F-78, <strong>[B]</strong>). <em>Le siège de ce dossier est le ch. 38 ; il n'est pas instruit ici.</em> ⚠ <strong>Deux réserves achèvent de borner la piste</strong> : le rapport de lot <strong>déclare lui-même</strong> n'avoir pas ouvert le document du dépôt dédié qu'il désigne comme <strong>la pièce de jonction de cette corrélation</strong>, et qualifie ce manque de <strong>lacune la plus coûteuse</strong> du lot ; et le cadre empirique hérité du Vol. II enseigne que <strong>la journalisation confiée aux agents « n'est généralement pas recommandée »</strong> (H-12, <strong>[B]</strong>) — ⚠ <em>source unique, préimpression non révisée par les pairs, sans reproduction indépendante</em>, réserve que le socle porte expressément.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>le classement des trois pistes en un ordre de promesse n'est pas proposé.</strong> <strong>Ce que le socle établit</strong> : trois objets documentés de nature différente — un attribut de jeton et un mécanisme de propagation pré-normatif, un format d'attestation avec son historique, un jeu de conventions au premier échelon de son échelle et sans version citable. <strong>Ce qu'il n'établit pas</strong> : qu'aucune des trois ne puisse porter une traçabilité multi-saut, ni qu'une combinaison des trois y parviendrait. <em>La lecture proposée est qu'<strong>aucune des trois n'a été conçue pour l'objet cherché</strong> — deux spécifient autre chose, la troisième <strong>observe</strong> au lieu d'<strong>attester</strong> — et que les traiter en solutions candidates suppose une transposition dont personne n'a écrit les conditions.</em></p>
+
+<h3>17.6.3 Question de recherche formulée pour instruction</h3>
+
+<p><strong>Ce que ce chapitre produit n'est pas une réponse : c'est une question instruisible.</strong> <em>La distinction est la thèse du Livre appliquée à lui-même — un ouvrage qui prend la traçabilité pour objet et comble ses trous par construction se réfute lui-même.</em></p>
+
+<div class="avert">
+  <p><strong>La lacune est ouverte et non instruite</strong> : <em>existe-t-il un mécanisme documenté par lequel un vérificateur situé au-delà du premier maillon établisse, à l'instant où il agit, l'identité du mandant d'origine, la portée du mandat et sa validité courante ?</em> <strong>Aucune passe de recherche n'a été conduite</strong> — le lot du mandat déclare le problème hors de son périmètre, et le lot vers lequel il renvoie a porté sur la vérification d'agent tiers, non sur la délégation multi-saut. <strong>Sources à retrouver</strong> : le texte de l'IETF sur le chaînage entre domaines, dont le contenu reste non extrait ; les dispositions de propagation d'état des spécifications de registre dans leurs révisions courantes ; les mécanismes d'atténuation de portée entre maillons, que la contre-mesure du § 17.6.1 pose <strong>en condition sans les documenter</strong>.</p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>la décomposition qui suit est une construction de la somme.</strong> <strong>Ce que le socle établit</strong> : les quatre périmètres déclarés du § 17.6.1 et les trois états de piste du § 17.6.2. <strong>Ce qu'il n'établit pas</strong> : que ces cinq sous-questions soient les bonnes, ni qu'elles épuisent le problème, ni qu'une réponse à chacune <strong>composerait</strong> une réponse à l'ensemble — <em>c'est précisément la présomption de composition que la non-compositionnalité de la sûreté invite à traiter avec méfiance</em> (siège : <strong>ch. 37 § 37.3</strong>). <em>Elles valent comme programme, non comme résultat.</em></p>
+
+<ol class="numeros">
+  <li><strong>L'atténuation.</strong> Un mécanisme documenté impose-t-il que la portée d'un mandat <strong>décroisse</strong>, ou au moins ne croisse pas, d'un maillon au suivant ? <em>Corpus</em> : textes de l'IETF sur le chaînage entre domaines, spécifications de mandat, langages de politique. <em>Critère de clôture</em> : un énoncé <strong>normatif</strong> nommant la portée transmise, cité et daté — <strong>non une atténuation posée en principe</strong>.</li>
+  <li><strong>La fraîcheur.</strong> Un vérificateur au-delà du premier maillon dispose-t-il d'un moyen documenté d'établir qu'un mandat amont est <strong>encore en vigueur</strong> à l'instant où il agit ? <em>Corpus</em> : mécanismes de révocation et de statut, dispositions de propagation d'état des registres. <em>Critère</em> : un <strong>budget de fraîcheur</strong> ou un <strong>délai de propagation</strong> écrit dans un texte. ⚠ Le Vol. I nommait déjà ce verrou (H-19, <strong>[C]</strong>, repérage seul) ; le <strong>ch. 20 § 20.6</strong> établit que le socle n'en documente pas la cascade.</li>
+  <li><strong>L'ancrage transitif.</strong> Lorsque l'ancrage de confiance est renvoyé au déploiement, <strong>quelle règle documentée</strong> permet à un vérificateur d'accepter l'ancrage retenu par un maillon amont qu'il ne connaît pas ? <em>Corpus</em> : modèles de confiance des spécifications de mandat, précédents institutionnels de fédération (<strong>ch. 18 § 18.3</strong>). <em>Critère</em> : une <strong>procédure écrite</strong>, non un modèle laissé au choix de l'intégrateur.</li>
+  <li><strong>La preuve.</strong> Que faut-il produire, et sous quelle forme, pour qu'une chaîne de mandat soit <strong>opposable devant un tiers</strong> — auditeur, régulateur, contrepartie ? <em>Corpus</em> : cadres de conformité du Livre III, journalisation probatoire du <strong>ch. 38</strong>. <em>Critère</em> : l'énoncé, par une source, de <strong>ce qui fait d'une trace une preuve</strong> — le socle n'en porte aucun à date.</li>
+  <li><strong>L'imputabilité.</strong> Au troisième maillon, <strong>qui répond de l'acte</strong> ? La cinquième question de la grille appelle une imputabilité traçable jusqu'à une personne ou une entité juridique. <em>Corpus</em> : régimes de responsabilité, obligations de révision humaine. <em>Critère</em> : le <strong>rattachement documenté</strong> d'un acte de maillon terminal à une entité juridique nommée.</li>
+</ol>
+
+<p><strong>Ce que le chapitre refuse de faire, et pourquoi il l'écrit.</strong> <em>Il serait aisé de proposer ici un dispositif — un jeton portant la chaîne complète, un registre interrogeable à chaque saut, une accréditation par maillon.</em> <strong>Trois motifs l'interdisent.</strong> Le premier : <em>l'absence de mécanisme documenté n'est pas une preuve d'impossibilité, et elle n'est pas davantage un mandat de conception.</em> Le second : <strong>le passeport d'agent est déjà un objet de synthèse construit par la somme</strong> (ch. 16) ; en ajouter un second, non assemblé de pièces documentées, reviendrait à <strong>fabriquer le standard que la somme prétend décrire</strong>. Le troisième est de méthode, et il est le même qu'au § 17.5 : <em>une construction d'auteur produite à l'endroit exact où le socle est muet est celle qu'aucune relecture ne peut réfuter.</em></p>
+
+<p><strong>Reste ce que le chapitre peut affirmer, et qui n'est pas rien.</strong> La frontière est <strong>localisée</strong> : elle passe là où le vérificateur cesse d'être celui qui a ancré le mandat, ou cesse d'appartenir au domaine où le contexte se propage. Elle est <strong>datée</strong>. Et elle est <strong>instruisible</strong> : <em>les cinq questions ci-dessus nomment leur corpus et leur critère de clôture, ce qui les distingue d'un constat d'ignorance.</em></p>
+
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
+
+<p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
+
+<ol class="numeros">
+  <li><strong>La définition du saut de délégation</strong>, déclarée faute d'être héritée. Les <strong>ch. 18, 20 et 21</strong> la citent ; aucun ne la redéfinit.</li>
+  <li><strong>La localisation de la frontière</strong> : <em>au premier changement de régime</em>, non à un rang numéroté. C'est ce qui transforme « deux sauts » d'un décompte en un critère.</li>
+  <li><strong>Le point d'arrêt humain comme acte de délégation daté et signé</strong> — proposition de la somme, qui descend au <strong>ch. 27</strong> et au <strong>ch. 25</strong> comme condition, et qui <strong>suppose</strong> ce que le § 17.5 déclare non établi.</li>
+  <li><strong>Cinq questions instruisibles</strong>, avec leur corpus et leur critère de clôture. Le <strong>ch. 49</strong> les reprendra à l'état final des lacunes.</li>
+  <li>⚠ <strong>Et un legs négatif, qui est le plus important</strong> : le § 17.5 <strong>n'a pas de socle</strong>, et la parade sur laquelle le Livre III fonde deux de ses obligations n'a <strong>aucune limite empirique documentée dans la somme</strong>.</li>
+</ol>
+
+<section class="statut" id="s177">
+
+<h2><span class="sig">§ 17.7</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong></p>
+</div>
+
+<p><strong>Ce qui est enfreint.</strong> Portes <strong>G-3</strong> et <strong>G-4</strong> ; volet résiduel de <strong>G-1</strong> non instruit ; ordre de rédaction du PRD §6. ⚠ <strong>Et une consigne explicite du plan est enfreinte</strong> : le § 17.5 est déclaré <strong>front neuf, sources primaires à établir avant rédaction</strong>, et il a été rédigé <strong>sans elles</strong> — voir <strong>R-IV-27</strong>. Instruction d'auteur du 27 juillet 2026.</p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01.</strong> ⚠ <strong>Et le § 17.5 est un cas à part dans tout le Livre</strong> : il ne mobilise <strong>aucune entrée</strong>, à aucun niveau. <em>Il ne s'agit pas d'un énoncé faible, mais d'une section qui n'en porte aucun.</em></li>
+  <li><strong>Les décomptes sont publiables</strong> (G-2). Écart de <strong>+18,3 %</strong> ; la volumétrie du Livre alimente <strong>D-4</strong> par <strong>R-IV-17</strong>.</li>
+  <li><strong>Les renvois « ch. N » vers les Livres III à V sont des renvois de plan</strong> : <strong>ch. 25</strong>, <strong>ch. 27</strong>, <strong>ch. 37 § 37.3</strong>, <strong>ch. 38</strong> et <strong>ch. 49</strong>. ⚠ Deux d'entre eux sont <strong>structurants</strong> — le ch. 27 est le <strong>siège du versant québécois du mandat</strong>, dont ce chapitre déclare ne pas préjuger, et le ch. 25 porte la supervision dont le § 17.5 déclare la limite non documentée. Les renvois vers les <strong>ch. 3, 10</strong> résolvent contre du texte ; ceux vers les <strong>ch. 13, 14, 15, 16, 18, 19, 20, 21</strong> résolvent contre du texte au terme de la présente passe.</li>
+  <li><strong>Une relève porte une date postérieure au gel de sa source</strong> (§ 17.1, document consulté le 26 juillet 2026) : elle est reprise <strong>comme relève</strong>, jamais comme entrée de socle, et <strong>n'appuie aucun énoncé</strong>.</li>
+</ol>
+
+<p><strong>Remontées ouvertes par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-27 — BLOQUANTE pour la publication du § 17.5, et structurante pour le Livre III.</strong> Le TOC déclare cette section <strong>front neuf</strong> et exige que ses <strong>sources primaires soient établies avant rédaction</strong> ; elles ne l'ont pas été, et la section <strong>expose le vide au lieu de le combler</strong>. ⚠ <strong>La conséquence excède ce chapitre</strong> : la section est la <strong>limite empirique de la parade</strong> sur laquelle reposent l'art. 12.1 (<strong>ch. 27</strong>) et la supervision attendue par E-23 (<strong>ch. 25</strong>). <em>Un cadre dont la parade est un humain qui révise suppose que cet humain révise ; la somme le suppose et ne l'établit pas.</em> <strong>Demande remontée</strong> : ouverture d'un <strong>lot d'instruction dédié</strong> avec le corpus et le critère de clôture que le § 17.5 formule, <strong>avant</strong> la rédaction du Livre III — faute de quoi deux chapitres du Livre III s'appuieront sur une parade dont la somme déclare elle-même ne rien savoir. ⚠ <strong>Le rédacteur n'écrit pas la section sur une littérature qu'il n'a pas ouverte</strong> : c'est le seul geste qui rendrait la lacune invisible.</li>
+  <li><strong>R-IV-28 — non bloquante, de thèse ; quatrième occurrence d'une même classe.</strong> La thèse du ch. 17 au TOC v0.24 porte <strong>trois termes</strong> que le Vol. III a <strong>lui-même bornés le 21 juillet 2026</strong> : le verbe « <strong>prouvent</strong> », que R-02 proscrit ; le classement « <strong>presque aucun</strong> », quantificateur sur un corpus non balayé ; et « <strong>aucun mécanisme documenté</strong> », quantificateur universel négatif que le régime des trois degrés refuse. Ses thèses rectifiées portent « aucun des mécanismes <strong>instruits par ce volume</strong> ne documente ». <strong>Le TOC du compendium porte encore les formes larges.</strong> La pièce cite la thèse verbatim et écrit son corps aux formes bornées. <strong>Demande remontée</strong> : la <strong>passe de réalignement systématique</strong> déjà demandée en R-IV-25 — <em>quatre thèses du Livre II sur dix portent une forme que leur source a corrigée après coup, et c'est exactement l'objet du volet de fond de G-4.</em></li>
+  <li><strong>R-IV-29 — non bloquante, de siège.</strong> Le § 17.1 est désigné par le TOC comme le <strong>siège de la relève sur le RFC 8693</strong>, dont le plan dit qu'elle rend la thèse « <strong>possiblement sous-spécifiée, non fausse</strong> ». ⚠ <strong>Or une relève n'entre pas au socle, et un siège de relève n'est pas un siège de fait</strong> : la pièce l'a donc portée <strong>comme relève</strong>, sans qu'aucun énoncé ne s'y adosse. <strong>Demande remontée</strong> : que <strong>G-1</strong> consomme cette relève <strong>par extraction</strong> — la RFC est un document de la voie des normes, publiquement accessible, et son extraction est <strong>le moins coûteux des versements que le Livre appelle</strong>. <em>Tant qu'elle n'est pas faite, la thèse du chapitre reste sous-spécifiée et la pièce l'écrit.</em></li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.24</strong> — § 17.1 à § 17.6, avec ses trois sous-sections, dans l'ordre exact —, et le § 17.0 est une introduction de chapitre. La <strong>table de couverture est respectée pour ses cinq lignes</strong>, y compris la cinquième, qui déclare le § 17.5 <strong>socle à constituer</strong> : <em>la pièce l'a laissé à constituer plutôt que de le simuler.</em> <strong>Aucun verdict de grille n'est rendu</strong>, conformément à la règle d'emploi 5 : le chapitre <strong>instruit Q-C</strong>. La <strong>divergence de gouvernance de la spécification de paiement n'est pas rouverte</strong> : elle reste tranchée au <strong>ch. 10</strong>. Le <strong>socle IAM reste au ch. 3</strong> ; l'<strong>inventaire de la révocation au ch. 20 § 20.4</strong> ; la <strong>taxonomie des attaques au ch. 19</strong> ; le <strong>versant québécois du mandat au ch. 27</strong>. Les <strong>quinze occurrences de R-14</strong> portent leur degré, dont <strong>douze au degré 3</strong>. Les <strong>sept occurrences de R-02</strong> énoncent ce que le mécanisme démontre <strong>et</strong> ne démontre pas. Le <strong>traitement défensif du § 17.6.1</strong> est tenu <strong>au niveau du maillon</strong>, identifiants cités, <strong>aucune recette reproduite</strong>. La <strong>collision terminologique du Vol. II est signalée et non résolue</strong>. Et les <strong>dix occurrences de « Lecture de l'auteur »</strong> sont suivies de ce que le socle établit et n'établit pas — dont <strong>une section entière</strong>, le § 17.4, marquée à l'ouverture.</p>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre II, chapitre 17. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.24, entrée du chapitre 17, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>

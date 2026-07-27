@@ -50,7 +50,7 @@ il ne se lisse pas.
 
 Aucune ne se saute — chacune ferme une classe d'erreur que les autres ne voient pas.
 
-1. **L'entrée du chapitre au [`PRD/TOC.md`](../../../2%20-%20Compendium/PRD/TOC.md)** (v0.23) :
+1. **L'entrée du chapitre au [`PRD/TOC.md`](../../../2%20-%20Compendium/PRD/TOC.md)** (v0.24) :
    thèse, phrase « Sections : … », **ligne Fusion**, table des matières détaillée, table de
    couverture (décision 6), et les écarts que le TOC signale parfois sous l'entrée. C'est le cahier
    des charges ; il ne se résume pas, il se suit.
@@ -69,6 +69,13 @@ Aucune ne se saute — chacune ferme une classe d'erreur que les autres ne voien
    §3.0-3.1 **et §3.13.1** en plus du Vol. II ch. 1 : la pièce a repris du plan « transfert de
    gouvernance annoncé, non vérifié au socle » alors que le §3.13.1 — sa propre source — portait le
    fait daté et sourcé. Corrigé au ch. 10 § 10.1.3, remontée R-IV-12.
+
+   ⚠ **Comparer la thèse du TOC au texte rédigé de sa source AVANT d'écrire.** La thèse se cite
+   **verbatim**, le PRD l'exige — mais elle peut avoir été **bornée à la source après la passe de plan
+   qui l'a reprise**. Le Livre II l'a payé cinq fois sur dix chapitres : quantificateur universel
+   négatif, verbe que R-02 proscrit, proportion non dénombrée, échéance empruntée à une entrée [C].
+   *La pièce cite verbatim et **écrit son corps sous la forme bornée**, puis remonte l'écart* — mais le
+   repérage se fait **avant la rédaction**, pas au moment de la relecture.
 
    ⚠ **Et quand deux volumes divergent, vérifier d'abord que c'en est une.** « Le socle de A ne
    documente pas X » et « B documente X » sont **logiquement compatibles** : c'est une **lacune de
@@ -150,6 +157,15 @@ Quand une section pose un socle que des chapitres aval réutiliseront, le nommer
 un point d'application de l'identité ; il ne redémontre pas le patron ». C'est l'économie qui
 justifie la refonte des trois volumes en un ouvrage ; chaque chapitre aval qui reconstruit annule
 cette économie.
+
+⚠ **Ne jamais écrire une section dont le plan déclare le socle « à établir avant rédaction ».** Le
+TOC marque certaines sections « front neuf — sources primaires à établir **avant rédaction** ». Quand
+ces sources ne l'ont pas été, **le seul geste admissible est d'exposer le vide et de formuler la
+question instruisible** — corpus à ouvrir, critère de clôture — sans écrire une ligne de contenu
+plausible. Trois motifs : le régime de preuve l'interdit (CA-IV-01) ; *une lacune déclarée ne se comble
+pas par une source de moindre qualité* ; et **une construction d'auteur produite à l'endroit exact où
+le socle est muet est celle qu'aucune relecture ne peut réfuter, faute de fait auquel la confronter**.
+Le § 17.5 du ch. 17 en est le cas de référence (remontée R-IV-27).
 
 Symétriquement, **déclarer ce qui n'est pas traité et pourquoi**. Les sorties de périmètre sont
 écrites dans la table de couverture ; les répéter dans le corps, au moment où le lecteur les

@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 21 — L&#x27;horloge post-quantique : menace sur la pile identitaire, crypto-agilité et dette de migration · La somme agentique</title>
+<meta name="description" content="toute la fabrique d&#x27;émission (ch. 12-18) repose sur des signatures classiques ; les jalons du NIST IR 8547 — dépréciation visée pour 2030, retrait visé pour 2035 — tombent dans la durée de vie des architectures conçues aujourd&#x27;hui, la PQC est donc une contrainte de conception et non une annexe.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre II · Chapitre 21</div>
+  <ol>
+    <li><a href="#s210"><span class="num">21.0</span>Introduction : la seule échéance datée du Livre</a></li>
+    <li><a href="#s211"><span class="num">21.1</span>Les échéances exactes et leurs sources</a></li>
+    <li><a href="#s212"><span class="num">21.2</span>Harvest now, decrypt later appliqué aux artefacts d&#x27;identité longue durée</a></li>
+    <li><a href="#s213"><span class="num">21.3</span>Inventaire : quels artefacts de la pile agentique cassent, et quand</a></li>
+    <li><a href="#s214"><span class="num">21.4</span>Définition opérationnelle et état des recommandations</a></li>
+    <li><a href="#s215"><span class="num">21.5</span>Audit de crypto-agilité des mécanismes d&#x27;émission et du mandat</a></li>
+    <li><a href="#s216"><span class="num">21.6</span>Patrons de migration sans rupture de la chaîne de confiance</a></li>
+    <li><a href="#s217"><span class="num">21.7</span>Ce que les études de coût publiées couvrent (et ne couvrent pas)</a></li>
+    <li><a href="#s218"><span class="num">21.8</span>Méthode d&#x27;inventaire pour une institution</a></li>
+    <li><a href="#s219"><span class="num">21.9</span>Fenêtre d&#x27;action 2026-2029 : le calendrier inverse</a></li>
+    <li><a href="#s2110"><span class="num">21.10</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.24 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="21-horloge-post-quantique.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre II — Faire confiance : identité, délégation et fabrique de confiance</div>
+  <h1><span class="chap">Chapitre 21</span>L&#x27;horloge post-quantique : menace sur la pile identitaire, crypto-agilité et dette de migration</h1>
+  <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Troisième mouvement — l'horloge post-quantique (ch. 21). <strong>Chapitre unique du mouvement, et dernier chapitre du Livre.</strong> Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 23 et 24</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — portes <strong>G-3</strong> et <strong>G-4</strong> ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ <strong>Ce chapitre porte le SIÈGE DE L'HORLOGE pour toute la somme</strong> (§ 21.1) : les ch. 15, 16, 20 et, hors du Livre, les ch. 45 et 49 y renvoient et <strong>ne re-datent aucun jalon</strong>. ⚠ <strong>Il porte aussi le garde-fou le plus mécanique du Livre</strong> : <em>on écrit « <strong>visée</strong> », jamais « fixée », jamais « ~2030 »</em> — et le <strong>statut du document</strong> se dit à chaque mention. <strong>R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre</strong></dd>
+    <dt>Date de gel</dt>
+    <dd><strong>27 juillet 2026</strong> — gel unique, <strong>D-1 prise</strong> (registre : <a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Volet résiduel de G-1 non instruit.</strong> Gels de source : <strong>juin 2026</strong> (Vol. I), <strong>21 juillet 2026</strong> (Vol. III). ⚠ <strong>Une entrée héritée est périmée sur un point précis, et le fait se déclare plutôt qu'il ne se lisse</strong> : les cibles que le Vol. I prêtait à un forum sectoriel <strong>ne se retrouvent dans aucun des deux documents de ce forum</strong>, dans les bornes du balayage du Vol. III (§ 21.7)</dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte). Résolution contre le <strong>Vol. III <em>Monographie</em> ch. 16-18</strong>, dont les entrées <strong>F-01</strong> à <strong>F-07</strong>, <strong>F-10</strong>, <strong>F-36</strong>, <strong>F-38</strong>, <strong>F-40</strong>, <strong>F-46</strong>, <strong>F-52</strong> à <strong>F-55</strong>, <strong>F-59</strong> à <strong>F-63</strong>, <strong>F-87</strong> et les entrées héritées <strong>H-03</strong>, <strong>H-17</strong>, <strong>H-27</strong>, <strong>H-33</strong> conservent leurs niveaux d'origine ; et contre le <strong>Vol. I <em>Monographie</em> §7.4.1 et §7.4.4</strong>, en <strong>[C]</strong>. ⚠ <strong>Quatre entrées mobilisées sont en [C]</strong> — F-36, F-55, H-17, H-27, H-33 : elles corroborent, elles ne portent pas. ⚠ <strong>H-27 est une thèse d'un volume antérieur, à attribuer à chaque emploi</strong> : l'invariant qu'elle porte <strong>n'est pas un fait</strong>. <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd>Vol. III — <strong>R-11 (jalons « visés », jamais « fixés » ; statut du document porté à chaque mention ; les origines ne se fusionnent pas) : ce chapitre en est le SIÈGE — dix-sept occurrences</strong>, § 21.1 (huit), § 21.4 (trois), § 21.7 (deux), § 21.8 et § 21.9 (trois) ; <strong>R-14 : quatorze occurrences</strong>, dont <strong>douze de degré 3</strong> ; <strong>R-02 : neuf occurrences</strong>, § 21.4 (deux), § 21.5 (cinq) et § 21.6 (deux) ; <strong>R-09 : quatre occurrences</strong> ; <strong>R-01 : trois occurrences</strong>, § 21.3 et § 21.5 ; <strong>R-13 : une occurrence</strong>, § 21.4, l'invariant nommé par ses termes. <strong>R-03 à R-08, R-10, R-12 : zéro occurrence.</strong> Vol. II — <strong>§8.2 : deux occurrences</strong>, § 21.7, la projection de coût attribuée à son auteur, à son millésime et à son périmètre ; <strong>PRD Vol. II §8.2.5 : cinq occurrences</strong> ; <strong>R-1 à R-8 : zéro occurrence</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ <strong>5 800 mots</strong> de corps (§ 21.0 à § 21.9), <strong>cible dérivée</strong> de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — <strong>neuf sections pour deux mouvements</strong>. ☑ <strong>Décompte publiable depuis G-2</strong> ; <strong>réel : 8 342 mots</strong> par <a class="lien" href="../PRD/decompte.sh"> 0 </a> — <strong>+43,8 %</strong>, <strong>le plus fort écart du Livre</strong>. ⚠ <strong>La volumétrie du Livre entier est relevée au <a class="lien" href="README.md"> 1 </a> du dossier</strong>, et c'est elle — non les écarts individuels — qui alimente <strong>D-4</strong> par <strong>R-IV-17</strong></dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>toute la fabrique d'émission (ch. 12-18) repose sur des signatures classiques ; les jalons du NIST IR 8547 — dépréciation <strong>visée</strong> pour 2030, retrait <strong>visé</strong> pour 2035 — tombent dans la durée de vie des architectures conçues aujourd'hui, la PQC est donc une contrainte de conception et non une annexe.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.24, entrée du chapitre 21.</span>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p><strong>Thèse du second mouvement</strong>, citée depuis le TOC v0.24, entrée du chapitre 21 — la crypto-agilité est l'application des trois premiers termes de l'invariant (découplage, contrat, évolution) à la couche cryptographique ; la dette de migration PQC est réelle mais largement non chiffrée — méthode d'estimation plutôt que chiffre.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Deux thèses pour un chapitre : le ch. 21 est issu de la fusion v0.20 des anciens ch. 23 et 24</strong> (décision 11 du TOC), et les deux entrées y sont conservées <strong>intégralement</strong>.</p>
+</div>
+
+<h2 id="s210"><span class="sig">§ 21.0</span>Introduction : la seule échéance datée du Livre</h2>
+
+<p>Les six chapitres du premier mouvement ont établi ce qu'une organisation peut <strong>émettre</strong>, et les deux du deuxième ce qui peut <strong>céder</strong>. Aucun des deux n'a rencontré de <strong>date</strong> : les statuts de normalisation relevés au ch. 13 sont des stades, les propositions du ch. 18 sont <strong>sans jalon</strong>, et les trois scénarios du ch. 16 § 16.4 sont <strong>tous PROJETÉS ou SPÉCULATIFS</strong>.</p>
+
+<p><strong>Ce chapitre est le seul du Livre à porter des échéances datées, et c'est ce qui lui donne sa fonction.</strong> L'entreprise qui met aujourd'hui des agents en production <strong>arrête des mécanismes d'identité pour une architecture dont elle attend plusieurs années de service</strong> ; et les mécanismes que le premier mouvement a examinés <strong>reposent, au grain de la cryptographie, sur des signatures numériques classiques</strong>.</p>
+
+<div class="avert">
+  <p><strong>Ce chapitre ne traite pas de la cryptographie post-quantique pour elle-même.</strong> Il établit d'abord <strong>quelle horloge les documents publics fixent — avec, pour chacun, le statut réel du texte qui la porte</strong> —, puis examine <strong>ce que cette horloge fait à des artefacts d'identité dont le socle documente précisément la longévité</strong> (§ 21.3), <strong>ce qui rend un changement d'algorithme possible sans rupture du contrat</strong> (§ 21.4 à § 21.6), et <strong>ce que coûte le passage</strong> (§ 21.7 à § 21.9).</p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>les deux thèses citées sont des constructions d'auteur.</strong> <strong>Ce que le socle établit</strong> : le statut d'un document et le libellé de ses jalons (F-59, F-60) ; l'existence d'une obligation fédérale datée qui s'ancre sur ce même document (F-61) ; l'écart de statut entre les algorithmes normalisés et le calendrier de retrait (F-62) ; l'absence d'échéance calendaire dans un rapport sectoriel (F-63) ; et le format cryptographique et les bornes temporelles de trois artefacts d'identité (F-01, F-03, F-05, F-46, F-53). <strong>Ce qu'il n'établit pas</strong> : que ces jalons <strong>s'appliquent à la pile identitaire agentique</strong>, ni <strong>quelle durée de service</strong> les architectures conçues en 2026 atteindront, ni qu'une échéance soit <strong>atteignable ou manquée</strong>. ⚠ <em>Le lot d'instruction le déclare lui-même : <strong>il fournit l'horloge, non son incidence</strong>.</em></p>
+
+<h2 id="s211"><span class="sig">§ 21.1</span>Les échéances exactes et leurs sources</h2>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>SIÈGE DE L'HORLOGE POST-QUANTIQUE POUR TOUTE LA SOMME.</strong> Les jalons, leurs sources et leur statut sont <strong>posés ici une seule fois</strong>. Les <strong>ch. 15, 16, 20</strong> et, hors du Livre, les <strong>ch. 45 et 49</strong> y renvoient ; <strong>ils ne re-datent aucun jalon, et ne fusionnent aucune origine</strong>. <em>C'est l'économie de la fusion côté horloge, et elle n'a lieu que si ces chapitres s'y tiennent.</em></p>
+</div>
+
+<p><strong>Trois origines documentaires sont examinées pour leurs dates.</strong> ⚠ <strong>Elles ne relèvent ni du même auteur, ni du même régime, ni du même périmètre, et les fondre en un calendrier unique — ce que la littérature de vulgarisation fait couramment — produit un énoncé faux dans les trois cas.</strong> <em>Elles sont donc tenues sur trois lignes distinctes, et cette section est le siège de cette discipline pour toute la somme.</em></p>
+
+<p><strong>Première origine : l'institut national de normalisation.</strong> Il <strong>vise</strong> une <strong>dépréciation en 2030</strong> des mécanismes à clé publique vulnérables au quantique <strong>au niveau de sécurité de 112 bits</strong>, et une <strong>interdiction en 2035</strong> de ces mêmes mécanismes <strong>tous niveaux de sécurité confondus</strong>. Le projet écrit littéralement « <strong>Deprecated after 2030</strong> » et « <strong>Disallowed after 2035</strong> » (F-60, <strong>[B]</strong>), dans les tableaux de deux sections nommées — l'une pour les signatures, l'autre pour l'établissement de clés.</p>
+
+<div class="avert">
+  <p><strong>Le statut du document n'est pas un détail de procédure</strong> : sa fiche affiche, à la consultation du 21 juillet 2026, <strong>une entrée d'historique unique</strong> de novembre 2024 et <strong>une période de commentaires publics close en janvier 2025</strong> ; <strong>aucune version finale n'y figure</strong> (F-59, <strong>[B]</strong>, fait négatif <strong>VÉRIFIÉ</strong> par énumération de l'historique, <strong>borné à cette fiche et à cette date</strong>).</p>
+</div>
+
+<div class="avert">
+  <p><strong>Deux précisions décident de la portée de ces deux mots, et l'une comme l'autre s'écrit contre l'usage courant.</strong> <em>(1)</em> Le vocabulaire du projet donne à <em>deprecated</em> <strong>un sens qui n'est pas celui d'une interdiction</strong> : l'algorithme <em>« may be used, but there is some security risk »</em>, et <strong>il revient au propriétaire des données d'examiner ce risque et de décider s'il continue</strong>. <em>(2)</em> Le projet <strong>permet aux normes d'algorithmes de continuer à spécifier des techniques vulnérables jusqu'en 2035</strong> tout en laissant <strong>des transitions sectorielles plus précoces possibles</strong> (F-60). ⚠ <em>Un lecteur pressé lit dans « Disallowed after 2035 » une date d'extinction générale ; <strong>le texte dit l'inverse</strong> — une borne supérieure à ce que ces normes toléreront, sous laquelle des contraintes sectorielles peuvent s'installer plus tôt.</em> ⚠ <strong>La qualification de 2035 en « plafond et non plancher » est portée par le texte de l'entrée, mais le contrôle de bornage du lot l'a rangée en lecture d'auteur</strong> : elle est reprise <strong>à ce titre</strong>.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Un troisième élément achève de qualifier cette ligne, et il ne figure pas au socle</strong> : le <strong>véhicule normatif</strong> que le projet désigne pour porter ces échéances est <strong>lui-même à l'état de projet public initial</strong>, sa période de commentaires étant close depuis décembre 2024. <em>(Source primaire ouverte et citée hors socle, non versée.)</em> ⚠ <strong><em>Un projet qui renvoie ses échéances à un second projet ne devient pas exécutoire par accumulation.</strong></em></p>
+</div>
+
+<p><strong>Deuxième origine : l'exécutif fédéral américain.</strong> Un décret présidentiel, <strong>signé le 22 juin 2026 et publié au registre fédéral du 25 juin 2026</strong>, charge le bureau de la gestion et du budget de publier <strong>sous 90 jours</strong> une directive de migration visant les <strong>actifs de grande valeur</strong> et les systèmes à impact élevé, <strong>selon le périmètre que le décret définit</strong>, avec échéance au <strong>31 décembre 2030 pour l'établissement de clés</strong> et au <strong>31 décembre 2031 pour les signatures numériques</strong> (F-61, <strong>[B, degré 1]</strong>). ⚠ <strong>Tri : PROGRAMMÉ</strong> — <em>engagement daté porté par un texte signé et publié.</em> Le décret prévoit en outre la publication d'une <strong>règle proposée</strong> modifiant la réglementation fédérale des acquisitions, qui viserait les contractants couverts à la même échéance ; ⚠ <strong><em>une règle proposée n'est pas une règle en vigueur</strong>, et le socle n'établit rien de son adoption.</em></p>
+
+<p><strong>La note d'application, du 24 juin 2026, ordonne aux agences d'aligner leur plan de migration sur le projet « <em>or successor document</em> »</strong>, sa note de bas de page renvoyant explicitement à l'adresse du projet (F-61). ⚠ <strong>C'est le fait qui commande la lecture de cette deuxième ligne : une obligation fédérale datée s'ancre sur un document qui est encore un projet public initial.</strong> <em>La clause « ou un document successeur » est précisément ce qui évite d'en conclure que le projet devient une norme — elle transfère au futur la désignation du texte qui fera foi.</em> ⚠ <strong>La note distingue par ailleurs deux registres qu'il ne faut pas confondre</strong> : <strong>la remise du plan est prescrite au mode obligatoire, sous 120 jours</strong>, tandis que <strong>les cinq phases de son calendrier — dont une phase de migration complète à horizon 2035 — sont formulées au mode de la recommandation</strong>. <em>Le tri porte sur l'énoncé prospectif, non sur le support qui l'imprime</em> : l'horizon de 2035 est <strong>PROJETÉ</strong>, la remise du plan sous 120 jours relevant seule du <strong>PROGRAMMÉ</strong>.</p>
+
+<div class="avert">
+  <p><strong>Périmètre, et il commande la lecture d'un volume canadien.</strong> <em>Cette obligation vise des agences fédérales américaines et un ensemble de systèmes que le décret nomme. <strong>Elle ne s'étend d'elle-même ni aux institutions financières canadiennes, ni à leurs fournisseurs.</strong></em> <strong>Le socle ne documente pas d'instrument canadien équivalent — absence de documentation, non fait négatif vérifié</strong> (degré 3), et la lacune est déclarée au § 21.8.</p>
+</div>
+
+<p><strong>Troisième origine : le secteur financier européen.</strong> Un rapport conjoint de 2026 <strong>ordonne ses activités de migration par le risque plutôt que par un calendrier daté</strong> : le balayage du texte extrait de ses 26 pages <strong>ne relève aucune occurrence</strong> des trois chaînes cherchées — les deux millésimes et l'identifiant du projet de l'institut (F-63, <strong>[B]</strong>, fait négatif <strong>VÉRIFIÉ</strong>, <strong>borné à ces trois chaînes, à ce fichier et à cette extraction</strong> — ⚠ <em>ce qui serait rendu en image y échappe</em>). Un second document, antérieur, porte au titre le nom d'un forum sectoriel. ⚠ <strong>Le socle ne documente pas de lien institutionnel entre ce document et le rapport conjoint — degré 3</strong> : <em>le rattachement des deux textes est porté par des communiqués que le lot n'a pas pu ouvrir.</em> ⚠ Ce second document <strong>ne porte pas davantage d'échéance sectorielle</strong> : ses cinq recommandations sont énoncées <strong>sans date</strong>, et <strong>la seule échéance datée relevée au balayage est attribuée à l'administration américaine</strong>. <em>(Source primaire ouverte et citée hors socle, non versée.)</em></p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Origine</th><th>Ce que le document écrit</th><th>Statut réel du document</th><th>Périmètre</th><th>Tri prospectif</th></tr></thead>
+  <tbody>
+    <tr><td>Projet de l'institut national (F-59, F-60)</td><td>« Deprecated after 2030 » (112 bits) ; « Disallowed after 2035 » (tous niveaux) ; 2035 comme <strong>borne de spécification</strong> — <em>lecture d'auteur</em></td><td><strong>projet public initial</strong> ; <strong>une seule entrée d'historique</strong>, de novembre 2024 ; commentaires clos en janvier 2025</td><td>les normes d'algorithmes de cet institut</td><td><strong>PROJETÉ</strong> — <em>intention annoncée dans un projet ; tri d'auteur, motivé ci-dessous</em></td></tr>
+    <tr><td>Décret et note d'application (F-61)</td><td>migration au <strong>31 déc. 2030</strong> (établissement de clés) et au <strong>31 déc. 2031</strong> (signatures) ; alignement des plans sur le projet « <strong>or successor document</strong> »</td><td>décret <strong>signé et publié</strong> ; note d'application du 24 juin 2026</td><td>actifs de grande valeur et systèmes fédéraux <strong>américains</strong> à impact élevé ; règle d'acquisition <strong>proposée</strong>, non adoptée</td><td><strong>PROGRAMMÉ</strong> — <em>engagement daté porté par un texte publié</em></td></tr>
+    <tr><td>Rapport sectoriel européen (F-63) et appel à l'action d'un forum (hors socle) — ⚠ <strong>deux documents, lien institutionnel non documenté</strong></td><td>priorisation <strong>par le risque</strong> ; <strong>aucune échéance sectorielle</strong> relevée au balayage ; l'échéance citée dans le second est <strong>attribuée à l'administration américaine</strong></td><td>rapport de praticiens, portant <strong>un avertissement de non-obligation</strong></td><td>secteur financier, <strong>sans force contraignante</strong></td><td><em>sans échéance propre à trier</em></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 21.1 — Trois origines de l'horloge post-quantique, leurs statuts et leurs périmètres, au 21 juillet 2026.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : les jalons figurent <strong>dans un projet</strong> et y sont formulés <strong>comme une intention</strong> — le texte écrit que l'institut <em>« intends to »</em> déprécier (F-60) —, et <strong>le véhicule normatif censé les porter est lui aussi un projet</strong>. <strong>Ce que le socle n'établit pas</strong> : <strong>un tri prospectif de ces jalons</strong> — ni F-59 ni F-60 n'en porte. <em>La lecture proposée est qu'un engagement institutionnel <strong>annoncé sans être en vigueur</strong> relève du <strong>PROJETÉ</strong>, non du PROGRAMMÉ.</em> <strong>Le tri de la deuxième ligne, lui, se déduit du fait</strong> : <em>un texte signé, publié et portant des dates est un engagement daté réel.</em></p>
+
+<p><strong>Quatrième constat, et il ferme la section.</strong> ⚠ <strong>Les algorithmes de remplacement, eux, ne sont pas en projet</strong> : deux normes d'encapsulation de clé et de signature sont <strong>finales, publiées le 13 août 2024</strong> (F-62, <strong>[B]</strong>). <strong><em>Les algorithmes sont normalisés ; le calendrier de retrait des algorithmes classiques ne l'est pas.</strong></em> ⚠ <strong>L'asymétrie est le cœur de l'horloge</strong> : <em>une organisation qui attendrait « la norme » pour agir attendrait un document dont <strong>rien, dans le corpus consulté, ne date la finalisation</strong>.</em> ⚠ <strong>Et un statut final ne vaut pas texte figé</strong> : les fiches des deux normes portent <strong>l'une et l'autre un avis d'errata</strong> annonçant des corrections dans une révision future — <em>matière du § 21.4.</em></p>
+
+<div class="avert">
+  <p><strong>La lacune du statut réel du projet est ouverte et non close</strong> : <strong>le socle ne documente pas de calendrier de finalisation — degré 3</strong>, et <em>il ne s'en déduit rien sur les intentions de l'institut.</em></p>
+</div>
+
+<h2 id="s212"><span class="sig">§ 21.2</span><em>Harvest now, decrypt later</em> appliqué aux artefacts d'identité longue durée</h2>
+
+<div class="avert">
+  <p><strong>Le socle ne documente pas la collecte anticipée en vue d'un déchiffrement ultérieur — absence de documentation, non fait négatif vérifié</strong> (degré 3). <em>Le lot ne l'a pas traitée, et aucune des entrées mobilisées n'en porte la mécanique ni n'en date la faisabilité.</em> <strong>La section ne peut donc pas s'écrire comme un chapitre de fait ; elle s'écrit comme un raisonnement d'architecture appuyé sur des faits qui, eux, sont établis — et elle dit à quel endroit exact le raisonnement quitte le socle.</strong></p>
+</div>
+
+<p><strong>Ce que le socle établit porte sur la longévité des artefacts, et c'est la variable qui décide.</strong> Trois faits, tous en <strong>[A]</strong> et tous bornés à la spécification de la carte signée :</p>
+
+<ul class="puces">
+  <li>l'<strong>en-tête protégé</strong> énumère trois paramètres obligatoires et un seul facultatif nommé, et <strong>ne porte aucun paramètre temporel</strong> — <em>la signature ne périme que par sa clé</em> (F-03, degré 1) ;</li>
+  <li>la <strong>carte</strong> compte quatorze champs, <strong>dont aucun n'exprime une date d'émission, une expiration, une fenêtre de validité ni un indicateur de révocation</strong> (F-05, degré 1) ;</li>
+  <li>la <strong>procédure de vérification</strong> ne comporte <strong>aucune étape de contrôle de statut ou de fraîcheur</strong>, et la section balayée <strong>ne mentionne aucun dispositif de statut</strong> (F-06) — alors même que l'interdiction d'employer une clé expirée ou révoquée est posée <strong>au niveau normatif le plus fort</strong>, <strong>sans le moyen de l'établir</strong> (F-07).</li>
+</ul>
+
+<p><strong>Le contraste avec un artefact voisin est instructif</strong> : les mandats de paiement agentique, eux, <strong>portent des attributs temporels d'émission et d'échéance</strong> (F-46, <strong>[B]</strong>). ⚠ <em>Deux artefacts de la même pile, <strong>deux régimes de péremption</strong> — l'un borné par le temps, l'autre suspendu au statut d'une clé que la procédure spécifiée ne permet pas d'établir.</em></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle n'établit pas</strong> : <em>qu'un adversaire collecte aujourd'hui des artefacts signés, qu'une capacité de cryptanalyse existe ou soit datable, ni qu'un tel artefact conserve une valeur opérationnelle après la dépréciation de son algorithme.</em> <strong>La lecture proposée est la suivante, et elle est réfutable.</strong> <em>Un artefact d'identité se distingue d'un message chiffré sur un point : <strong>le risque n'est pas qu'il soit lu plus tard, c'est qu'il soit forgé plus tard</strong>. Un artefact dont rien ne fixe la fin de validité, et dont le retrait suppose un mécanisme de statut que sa spécification ne fournit pas, <strong>ne dispose d'aucun moyen documenté d'être sorti de circulation avant l'horizon de dépréciation de son algorithme</strong>. Le risque de collecte anticipée porte donc, pour cette classe d'artefacts, <strong>moins sur la confidentialité que sur la non-répudiation rétroactive</strong> : ce qui a été signé sous un algorithme déprécié <strong>perd, à terme, la capacité d'être opposé</strong>.</em> ⚠ <strong>Le socle ne documente ni procédure de re-signature ni horodatage d'appoint pour les mécanismes examinés — degré 3.</strong></p>
+
+<div class="avert">
+  <p><strong>Une borne doit être posée sur la date, et elle écarte une fenêtre plutôt qu'elle ne l'invoque.</strong> Une entrée héritée situe entre 2029 et 2032 la fenêtre d'apparition d'un calculateur quantique cryptographiquement pertinent, <strong>et le Vol. I trie lui-même cet énoncé SPÉCULATIF</strong> (H-17, <strong>[C]</strong>). <strong>Une entrée [C] ne porte jamais un fait central</strong> : <em>cette fenêtre est mentionnée pour être écartée du raisonnement, non pour l'appuyer.</em> ⚠ <strong>Ce qui tient sans elle suffit</strong> : les deux jalons publics du § 21.1 tombent en 2030-2031 — <strong>PROGRAMMÉ</strong> — et en 2035 — <strong>PROJETÉ</strong> — ; et — <span class="auteur">Lecture de l'auteur</span> <em>l'horizon de conception d'une pile d'identité d'entreprise n'est vraisemblablement pas plus court.</em></p>
+</div>
+
+<h2 id="s213"><span class="sig">§ 21.3</span>Inventaire : quels artefacts de la pile agentique cassent, et quand</h2>
+
+<p><em>Un inventaire de migration se dresse <strong>par artefact, non par produit</strong>.</em> ⚠ <strong>C'est la colonne de droite qui dit où une institution ne peut pas encore inscrire de plan.</strong></p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Artefact</th><th>Ce que le socle documente de sa cryptographie</th><th>Ce qui décide de sa longévité</th><th>Ce que le socle ne porte pas — <strong>degré 3</strong>, sauf mention</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Carte d'agent signée</strong></td><td>signature au format JWS ; canonicalisation avant signature ; champ de signatures exclu du contenu signé (F-01, <strong>[A]</strong>)</td><td><strong>aucune borne temporelle</strong> dans l'en-tête protégé (F-03) ; <strong>ni validité ni statut</strong> parmi les quatorze champs (F-05) ; <strong>statut de clé non établissable</strong> (F-06, F-07)</td><td>l'ancrage de confiance, la révocation et la gouvernance des clés — <strong>réserve capitale de l'entrée héritée</strong> H-01, <strong>[A]</strong></td></tr>
+    <tr><td><strong>Mandats de paiement agentique</strong></td><td>sérialisation SD-JWT, attribut de type <strong>versionné</strong>, version v0.2.0 du 28 avril 2026 (F-46, <strong>[B]</strong>)</td><td>attributs temporels d'émission et d'échéance portés par le mandat</td><td><strong>l'agilité du mécanisme de signature sous-jacent</strong> ; le socle ne porte que le format et ses attributs</td></tr>
+    <tr><td><strong>Certificats et statut</strong></td><td>granularité de la révocation bornée à la période d'émission de la liste ; l'état « good » <strong>ne signifie pas nécessairement</strong> qu'un certificat ait jamais été émis (F-53, <strong>[B]</strong>)</td><td>fraîcheur de la liste ou du répondeur ; <strong>un exploitant a arrêté ses répondeurs le 6 août 2025</strong> (F-54, <strong>[B]</strong>)</td><td><strong>toute application de ces textes à un artefact d'identité d'agent</strong></td></tr>
+    <tr><td><strong>Entrées de registre gouverné</strong></td><td>brouillon de laboratoire, en-tête du 27 mars 2026 (F-38, <strong>[A]</strong>) ; profil ancré sur SCIM 2.0 (H-03)</td><td>quatre états prescrits, ⚠ <strong>sans délai de propagation ni budget de fraîcheur</strong> (F-55, <strong>[C]</strong> : repérage, non fait central)</td><td><strong>tout élément cryptographique du registre lui-même</strong> ; le socle ne porte, pour cet artefact, que des états et un statut de document</td></tr>
+    <tr><td><strong>Autorisation du protocole agent-outil</strong></td><td>—</td><td>la page balayée <strong>ne prescrit aucun mécanisme de révocation</strong> : chaînes absentes, RFC de révocation non citée (F-52, <strong>[B]</strong>, fait négatif <strong>VÉRIFIÉ</strong>, borné à cette page et à cette révision)</td><td>ce que <strong>d'autres pages</strong> de la spécification prévoient ; le balayage porte sur <strong>deux pages nommées</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 21.2 — Inventaire de migration par artefact, au 21 juillet 2026.</p>
+
+<p><strong>Trois enseignements se tirent, et aucun n'exige de date.</strong></p>
+
+<p><strong>Le premier porte sur l'agilité.</strong> Dans l'énumération normative de l'en-tête protégé, <strong>un seul paramètre nomme l'algorithme</strong> (F-03). <em>Le mécanisme dispose donc d'un point où l'algorithme est déclaré et peut, à ce titre, changer.</em> ⚠ <strong>Ce que la spécification démontre est qu'un algorithme est nommé et que la vérification reconstruit la charge en re-canonicalisant la carte reçue</strong> (F-01, F-02) ; <strong>elle ne documente ni procédure de transition d'un algorithme à un autre, ni politique d'acceptation des algorithmes par le vérificateur</strong> (R-02). ⚠ <em>La capacité de porter plusieurs signatures est spécifiée pour permettre <strong>la rotation des clés</strong>, mais <strong>aucune procédure de retrait d'une clé compromise ne l'est</strong></em> (F-10, <strong>[B]</strong>) — <strong>la rotation est outillée, le retrait ne l'est pas.</strong> <em>L'audit est au § 21.5.</em></p>
+
+<p><strong>Le deuxième porte sur l'ordre des travaux.</strong> ⚠ <em>Ce qui décide de la difficulté d'une migration n'est pas la force de l'algorithme employé, <strong>c'est la capacité à sortir de circulation ce qui a été émis sous l'ancien</strong>.</em> <strong>Or c'est le point où quatre des cinq lignes du tableau convergent</strong>, chacune dans sa borne : la carte signée n'a ni expiration ni indicateur de révocation, et le vérificateur n'a pas le moyen d'établir le statut d'une clé qu'il lui est pourtant interdit d'employer si elle est révoquée ; le registre prescrit un état de révocation <strong>sans fixer de délai de propagation</strong> ; l'autorisation du protocole agent-outil <strong>ne prescrit, sur la page balayée, aucun mécanisme de révocation</strong> ; et le précédent des certificats converge par sa borne propre. ⚠ <strong>La cinquième fait exception</strong> : les mandats portent des attributs temporels — <em>une péremption par le temps, qui n'est pas une révocation mais qui borne la circulation.</em> ⚠ <strong>Et le précédent ne console pas</strong> : <em>là même où la révocation est spécifiée, sa granularité est bornée à la période d'émission de la liste.</em> <strong>L'inventaire complet est au ch. 20 § 20.4</strong> ; il n'est pas refait ici.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce qu'il n'établit pas</strong> : que ces manques soient <strong>liés entre eux</strong>, qu'ils tiennent à une <strong>cause commune</strong>, ni qu'ils <strong>empêchent</strong> une migration. <em>La lecture proposée est qu'<strong>une migration cryptographique est d'abord une opération de retrait</strong>, et qu'elle ordonne donc les travaux d'une institution — <strong>instrumenter le retrait avant de choisir l'algorithme de remplacement</strong>. Elle est réfutable : un mécanisme de retrait spécifié ailleurs, dans un corpus non balayé, la ferait tomber.</em></p>
+
+<p><strong>Le troisième porte sur l'objet composite.</strong> ⚠ <strong>Le passeport d'agent ne figure dans aucune spécification de 2026 : c'est un objet de synthèse construit par la somme</strong> (ch. 16). <span class="auteur">Lecture de l'auteur</span> <strong>ce qu'il n'établit pas</strong> : que ces pièces composent un objet unique, ni <strong>qu'une propriété de migration se transporte d'une pièce à l'assemblage</strong> — <em>aucune entrée mobilisée ici ne porte sur des assemblages.</em> <em>La lecture proposée est que <strong>la migration de cet assemblage ne vaudra pas mieux que celle de sa pièce la moins agile</strong>, le tableau montrant que ces pièces n'ont ni le même format, ni le même régime de péremption, ni le même degré de documentation.</em></p>
+
+<div class="avert">
+  <p><strong>Reste le « quand », que le titre annonce et que le socle ne fournit pas au grain de l'artefact.</strong> <strong>Le socle ne documente pas l'incidence des jalons post-quantiques sur les artefacts d'identité agentique — degré 3</strong> ; <em>le lot le déclare en clôture, et le chapitre ne comble pas ce trou par une chronologie inventée.</em> <strong>Ce qui peut s'écrire sans le combler tient en une phrase</strong> : <em>un artefact que rien ne borne dans le temps <strong>traverse par construction les deux jalons du § 21.1</strong> — de sorte que la variable qu'une institution contrôle <strong>n'est pas la date, mais la durée de vie qu'elle consent à ses propres artefacts</strong>.</em></p>
+</div>
+
+<h2 id="s214"><span class="sig">§ 21.4</span>Définition opérationnelle et état des recommandations</h2>
+
+<div class="avert">
+  <p><strong>La réponse ne se lit pas dans le socle, et il faut l'écrire avant tout le reste.</strong> <strong>Le socle ne documente ni définition de la crypto-agilité, ni recommandation portant sur elle — absence de documentation, non fait négatif vérifié</strong> (degré 3). <em>Le programme d'instruction nommait pourtant les « recommandations de crypto-agilité » parmi les objets du lot ; <strong>la clôture du lot énumère six points couverts, et la crypto-agilité n'est aucun des six</strong>.</em> <strong>La lacune est déclarée et non comblée.</strong></p>
+</div>
+
+<p><strong>Ce chapitre fait donc trois choses qu'il ne mélange pas</strong> : il <strong>construit</strong> une définition opérationnelle, marquée comme construction d'auteur ; il <strong>audite</strong> contre elle les mécanismes d'émission et le mandat, en ne retenant de chacun que <strong>ce que sa spécification démontre</strong> (§ 21.5) ; et il <strong>propose</strong> des patrons de migration, <strong>constructions d'auteur en totalité</strong> (§ 21.6).</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : que l'algorithme de signature est <strong>un paramètre nommé</strong> dans au moins un mécanisme (F-03) ; qu'un format de mandat porte <strong>un attribut de type versionné</strong> (F-46) ; que les algorithmes de remplacement sont normalisés tandis que le calendrier de retrait ne l'est pas (F-62, F-59). <strong>Ce qu'il n'établit pas</strong> : <strong>les trois conditions énoncées ci-dessous, qui ne sont endossées par aucune source.</strong> <em>La somme appelle <strong>crypto-agile</strong> un mécanisme dont la spécification satisfait trois conditions</em> : <strong>(1)</strong> l'algorithme y est <strong>un paramètre nommé du contrat</strong>, et non une hypothèse implicite du format — c'est le <strong>découplage</strong> ; <strong>(2)</strong> le contrat porte <strong>une version vérifiable</strong>, de sorte qu'un vérificateur puisse constater à quel régime il a affaire — c'est le <strong>contrat</strong> ; <strong>(3)</strong> la spécification documente <strong>le passage d'une valeur du paramètre à la suivante, retrait de l'ancienne compris</strong> — c'est l'<strong>évolution</strong>. ⚠ <em>Le quatrième terme de l'invariant, l'<strong>exploitation</strong>, en fait <strong>une charge qui se réévalue</strong> plutôt qu'un travail qui s'achève</em> (H-27, <strong>[C]</strong>, thèse attribuée). ⚠ <strong>La troisième condition est celle qui décide, et c'est contre elle que ce chapitre doit se tenir en garde</strong> : <em>une spécification qui ne documente pas cette procédure <strong>n'est pas convaincue de défaut</strong> — elle est <strong>muette</strong>, et le silence se qualifie à son degré.</em></p>
+
+<div class="avert">
+  <p><strong>L'invariant n'est pas employé nu, et sa forme se cite exactement.</strong> Il est <strong>une thèse d'un volume antérieur, à attribuer</strong> : <em>« découplage, contrat, évolution » deviennent « découplage, contrat, évolution, exploitation »</em> (H-27, <strong>[C]</strong>). <strong>Une entrée [C] ne porte jamais un fait central</strong> : <em>elle fournit ici un cadre, non une preuve</em>, et <strong>le quatrième terme est refermé au Livre IV</strong>, non invoqué ici.</p>
+</div>
+
+<p><strong>L'état des recommandations, tel que le socle le porte, se résume à un écart de statut</strong> — <strong>algorithmes normalisés, calendrier de retrait non normalisé</strong> (F-62 ; F-59). <em>Le § 21.1 en est le siège ; il n'est pas rejoué.</em></p>
+
+<div class="avert">
+  <p><strong>Deux précisions se rattachent directement à l'objet de ce mouvement, et l'une comme l'autre nuance ce qu'un statut « final » autorise à croire.</strong> <em>(1)</em> <strong>Les fiches des deux normes finales portent l'une et l'autre un avis d'errata</strong> annonçant des corrections dans une révision future, et l'une porte en outre une <strong>note de planification</strong> signalant plusieurs points mineurs à corriger. ⚠ <strong>Le socle ne documente aucune date pour la révision annoncée — degré 3</strong> ; <strong>tri : PROJETÉ</strong> — <em>intention publiée sans échéance relevée.</em> <strong><em>Un statut final ne vaut pas texte figé : le paramètre vers lequel on migre bouge lui aussi, ce qui est un argument pour l'agilité et non contre elle.</strong></em> <em>(2)</em> <strong>Le véhicule normatif désigné pour porter les échéances est lui-même à l'état de projet</strong> (§ 21.1) : <em>le document institutionnel qui a la transition pour objet est, à la date de consultation, dans le même état que celui qui la date.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Une clause du dossier réglementaire intéresse la crypto-agilité au niveau où on l'attend le moins.</strong> La note d'application ordonne aux agences d'aligner leur plan sur le projet <strong>« ou un document successeur »</strong> (F-61). <span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : le libellé de cette clause. <strong>Ce qu'il n'établit pas</strong> : l'intention de son rédacteur, ni l'effet de la clause sur un plan d'agence. <em>La lecture proposée est que <strong>cette clause est un patron d'agilité appliqué non au format mais au texte</strong> : une obligation qui s'ancre sur <strong>une classe de documents</strong> plutôt que sur <strong>une instance</strong> survit au remplacement de l'instance. C'est, transposé à la gouvernance, exactement ce que la première condition ci-dessus demande d'un format.</em> <strong>Elle est réfutable</strong> : <em>un texte d'application qui nommerait un successeur précis la ferait tomber.</em></p>
+</div>
+
+<h2 id="s215"><span class="sig">§ 21.5</span>Audit de crypto-agilité des mécanismes d'émission et du mandat</h2>
+
+<p>L'audit demande à chaque mécanisme <strong>les trois questions de la définition</strong>, et <strong>il n'en tire que ce que la spécification démontre</strong>. ⚠ <strong>Trois précautions le bornent, et elles ne sont pas de forme.</strong> <em>(1)</em> <strong>Un mécanisme dont la spécification est muette sur un point reçoit un degré d'absence, non un verdict défavorable</strong> — <em>c'est la faute que R-02 proscrit, et c'est elle que ce paragraphe risque à chaque ligne de son tableau.</em> <em>(2)</em> <strong>Deux des entrées mobilisées sont en [C]</strong> et <strong>ne portent aucune affirmation centrale</strong>. <em>(3)</em> <strong>La dernière ligne ne porte pas sur un mécanisme</strong> : <em>le passeport d'agent est un objet de synthèse construit par la somme</em> — <strong>en auditer la crypto-agilité, c'est auditer une construction</strong>, et le tableau le dit à sa dernière ligne plutôt que de le taire.</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Mécanisme</th><th>Où l'algorithme est déclaré, et ce que la spécification en <strong>démontre</strong></th><th>Ce que le socle ne porte pas sur son changement — <strong>degré 3</strong> pour chaque cellule</th><th>Trace</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Carte d'agent signée</strong> (v1.0.0)</td><td>un paramètre <strong>obligatoire</strong> de l'en-tête protégé nomme l'algorithme, parmi trois imposés et un seul facultatif nommé (F-03, <strong>[A, degré 1]</strong>) ; <strong>la charge n'est pas transportée</strong> et le vérificateur la <strong>reconstruit</strong> par re-canonicalisation (F-01 ; F-02, <strong>[A]</strong>)</td><td>procédure de transition d'un algorithme à un autre ; politique d'acceptation par le vérificateur ; <strong>existence d'un profil cryptographique obligatoire ou d'une liste fermée</strong> — <em>le lot déclare n'avoir recherché aucun profil de ce type</em></td><td>ch. 15 § 15.1.1, § 15.1.4</td></tr>
+    <tr><td><strong>Rotation sur ce même mécanisme</strong></td><td>plusieurs signatures <strong>MAY</strong> coexister « to support key rotation » ; <strong>c'est le seul dispositif de rotation</strong> que la section prévoie (F-10, <strong>[B]</strong>)</td><td><strong>procédure de retrait d'une clé compromise</strong> ; emploi du dispositif pour une transition d'<strong>algorithme</strong> plutôt que de <strong>clé</strong></td><td>ch. 15 § 15.1.3 ; ch. 20 § 20.4</td></tr>
+    <tr><td><strong>Mandat de paiement agentique</strong> (v0.2.0)</td><td>sérialisation et <strong>attribut de type versionné</strong> (F-46, <strong>[B]</strong>) ; la spécification impose <strong>l'appariement exact de la chaîne de type, suffixe de version compris</strong></td><td>mécanisme de retrait d'un mandat ; procédure de passage d'une version de type à la suivante ; <strong>régime de compatibilité entre deux versions</strong></td><td>ch. 17 § 17.1 ; ch. 20 § 20.4</td></tr>
+    <tr><td><strong>Identité de charge de travail</strong></td><td>la spécification énonce qu'un justificatif est <strong>considéré valide s'il a été signé par une autorité du domaine de confiance</strong> de l'identité qu'il porte (F-87, <strong>[B]</strong>)</td><td><strong>tout élément d'algorithme, de profil ou de transition</strong> ; le profil et la version mis en œuvre chez un fournisseur ne sont pas documentés sur la page consultée</td><td>ch. 3 (socle) ; ch. 15 § 15.2.2 ; <strong>F-36, [C]</strong>, corroboration seule</td></tr>
+    <tr><td><strong>Registre gouverné</strong></td><td><strong>deux champs obligatoires</strong> du profil d'agent (F-40, <strong>[B]</strong>, borné à ces deux champs) ; ce que le document décrit par là est <strong>un régime de champs et d'invalidation</strong>, et il <strong>ne démontre par ce seul fait aucune propriété cryptographique</strong> (R-02) ; côté annuaire, l'adressage par contenu est <strong>présenté</strong> comme fondant l'intégrité, <strong>sans démonstration</strong> (F-55, <strong>[C, degré 1]</strong>)</td><td>la présence ou l'absence d'un élément cryptographique <strong>parmi les autres champs du schéma</strong> — <em>le socle ne porte pas l'inventaire complet</em> ; la fonction de hachage employée et sa substituabilité ; ⚠ le balayage porte sur une <strong>révision supplantée, non rebalayée</strong></td><td>ch. 15 § 15.3.1, § 15.3.2</td></tr>
+    <tr><td><strong>Passeport d'agent</strong></td><td><em>néant</em> — <strong>objet de synthèse sans spécification</strong>, donc <strong>sans contrat porteur d'un paramètre d'algorithme</strong></td><td><strong>le socle ne documente pas d'objet composé de ces quatre pièces</strong></td><td>ch. 16, ouverture</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 21.3 — Audit de crypto-agilité, mécanisme par mécanisme, au 21 juillet 2026 — ce que chaque spécification démontre, et ce que le socle ne porte pas.</p>
+
+<p><strong>Deux résultats se dégagent, et ils tirent en sens contraire.</strong></p>
+
+<p><strong>Le premier est favorable, et il faut le borner tout de suite.</strong> La carte signée dispose d'un point où l'algorithme est déclaré, <strong>et ce point est obligatoire</strong> (F-03). <em>Comme la charge n'est pas transportée et que le vérificateur la reconstruit à partir de la carte reçue, <strong>un changement de valeur de ce paramètre n'oblige pas à changer le format de l'artefact</strong>.</em> ⚠ <strong>Ce que la spécification démontre est donc qu'un algorithme est nommé par signature et que la vérification est reproductible à partir du document ; elle ne documente ni la procédure de passage d'un algorithme à un autre, ni la politique par laquelle un vérificateur accepte ou refuse une valeur</strong> (R-02). ⚠ <em>La spécification illustre d'ailleurs ce paramètre par <strong>deux valeurs données en exemple</strong>, sans liste fermée, et le lot déclare expressément n'avoir recherché <strong>aucun profil cryptographique obligatoire</strong> — <strong>il ne faut pas conclure de ces deux exemples à une restriction</strong>.</em></p>
+
+<div class="avert">
+  <p><strong>Une qualification du rapport de lot n'est pas reprise ici, et le motif est déclaré.</strong> Ce rapport écrit, à l'adresse de ce chapitre, que « la crypto-agilité de la carte est <strong>structurellement présente</strong> ». ⚠ <strong>Cette qualification excède ce que le lot a balayé</strong> : <em>elle porte sur ce que le mécanisme <strong>permettrait</strong>, non sur ce que la spécification <strong>démontre</strong>, et le rapport déclare lui-même n'avoir recherché aucun profil obligatoire.</em> <strong>Elle n'est ni une affirmation votée, ni une entrée de socle. Le chapitre retient le fait positif et borné, et laisse le reste au degré 3.</strong></p>
+</div>
+
+<p><strong>Le second est défavorable, et il porte sur la version plutôt que sur l'algorithme.</strong> Le mandat est, des mécanismes relevés, <strong>le seul dont le contrat soit explicitement versionné</strong> : l'attribut de type porte sa version, et la spécification <strong>exige que les mises en œuvre apparient la chaîne exacte, suffixe compris</strong> (F-46). <em>La deuxième condition de la définition est donc satisfaite — mais elle l'est d'une manière qui <strong>déplace le coût</strong>.</em></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce qu'il n'établit pas</strong> : ce qu'il advient d'un vérificateur confronté à une version qu'il ne connaît pas, ni qu'aucun régime de compatibilité n'existe ailleurs dans la spécification. <em>La lecture proposée est qu'<strong>un appariement exact transforme le changement de version en bascule coordonnée plutôt qu'en transition progressive</strong> : émetteurs et vérificateurs doivent changer ensemble, ou la vérification échoue.</em> <strong><em>Une version explicite rend le changement détectable ; elle ne le rend pas graduel.</strong></em></p>
+
+<div class="avert">
+  <p><strong>Reste le constat qui vaut pour le tableau entier, et il s'écrit à la formule imposée plutôt qu'en généralité.</strong> <strong>Le socle ne documente, pour aucun des mécanismes inventoriés dans ce paragraphe, de procédure de transition d'un algorithme à un autre — absence de documentation, non fait négatif vérifié.</strong> <em>L'énoncé porte sur les six lignes du tableau et sur elles seules ; il ne dit rien des mécanismes qu'aucun lot n'a ouverts, ni des sections que les lots déclarent n'avoir pas atteintes.</em></p>
+</div>
+
+<h2 id="s216"><span class="sig">§ 21.6</span>Patrons de migration sans rupture de la chaîne de confiance</h2>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce paragraphe entier est une construction d'auteur, et le marquage se porte à son ouverture.</strong> <strong>Ce que le socle établit</strong> : le dispositif de signatures multiples et son objet déclaré (F-10), le régime temporel des mandats (F-46), l'énumération de l'en-tête protégé et l'absence de validité dans la carte (F-03, F-05), et la clause d'ancrage sur un document successeur (F-61). <strong>Ce qu'il n'établit pas</strong> : <strong>qu'il existe des patrons de migration, qu'ils soient au nombre de quatre, ni qu'aucun d'eux préserve une chaîne de confiance.</strong> ⚠ <strong>Le socle ne documente aucun patron de migration cryptographique — degré 3.</strong> <em>Ce qui suit est proposé par la somme et adossé, patron par patron, à ce que le socle porte ; chacun est assorti de ce qui le réfuterait.</em></p>
+
+<p><strong>Patron 1 — la coexistence de signatures pendant la transition.</strong> <em>Le véhicule structurel existe</em> : plusieurs signatures <strong>MAY</strong> être portées par une même carte, et la spécification en déclare l'objet — <em>la rotation des clés</em> (F-10) ; et le paramètre d'algorithme est déclaré dans l'en-tête protégé de <strong>chaque</strong> signature (F-03) — <strong>il est donc porté au grain de la signature, non au grain de la carte</strong>.</p>
+
+<div class="avert">
+  <p><strong>Ce que le socle n'établit pas est précisément l'emploi visé</strong> : <em>le dispositif est spécifié pour la rotation des <strong>clés</strong>, et <strong>le socle ne documente pas son emploi pour une transition d'algorithme</strong> — degré 3.</em> <strong>Ce qui le réfuterait</strong> : <em>une clause restreignant les signatures multiples à une même valeur du paramètre.</em> ⚠ <strong>Et une limite en borne d'avance la portée</strong> : les cartes <strong>MAY</strong> être signées et les clients <strong>SHOULD</strong> vérifier (F-04) — <em>un régime facultatif ne permet pas d'imposer une transition, il permet de l'offrir.</em></p>
+</div>
+
+<p><strong>Patron 2 — l'hybride comme mesure temporaire, et non comme état stable.</strong> Le projet de l'institut énonce que, lorsqu'elles sont employées, <strong>les solutions hybrides sont « typically expected to be temporary measures that lead to a second transition »</strong> vers des outils n'employant que des algorithmes post-quantiques. <em>(Source citée à la réserve d'une affirmation versée, que le texte de l'entrée ne reprend pas.)</em> <strong>Le patron consiste donc à compter deux transitions et non une.</strong> ⚠ <strong>Réserve portée par le lot et reprise telle quelle</strong> : <em>le projet <strong>ne dit pas</strong> que les modes hybrides restent admis au-delà de 2035, et lui prêter cette autorisation serait lui faire dire ce qu'il n'écrit pas.</em> <strong>Tri de la seconde transition : PROJETÉ.</strong> <strong>Ce qui le réfuterait</strong> : <em>une révision du document abandonnant l'hybride, ou en faisant un régime cible.</em></p>
+
+<p><strong>Patron 3 — la brièveté de l'artefact plutôt que sa révocation.</strong> <em>Un artefact dont la durée de vie est bornée migre par son renouvellement ordinaire : il n'y a rien à retirer, seulement à cesser d'émettre.</em> Le socle documente ce régime <strong>pour les mandats</strong>, qui portent leurs attributs temporels (F-46) ; en corroboration seulement, l'identité d'agent d'un fournisseur repose sur des certificats <strong>de vingt-quatre heures</strong> (F-36, <strong>[C]</strong> — <em>repérage, non fait central ; cas documenté, jamais recommandation</em>). ⚠ <strong>Le patron est indisponible pour la carte signée</strong> : <em>elle ne porte aucun paramètre temporel dans son en-tête protégé (F-03) et aucun champ de validité ni de statut parmi ses quatorze (F-05, <strong>[A, degré 1]</strong>) — <strong>elle ne périme que par sa clé</strong>, dont le ch. 15 § 15.1.3 établit que le statut n'est pas établissable.</em> <strong>Ce qui le réfuterait</strong> : <em>une prescription de fraîcheur portée par une section normative non ouverte — et le ch. 15 § 15.1.3 en nomme deux, restées inaccessibles par troncature.</em></p>
+
+<p><strong>Patron 4 — l'ancrage sur une classe de document plutôt que sur une instance.</strong> Le § 21.4 l'a relevé au niveau de la gouvernance : <em>une obligation qui vise un document « <strong>ou un document successeur</strong> » ne devient pas caduque au remplacement du document</em> (F-61). <strong>Transposé au format, le patron consiste à faire pointer un artefact vers un profil nommé et versionné plutôt que vers un algorithme littéral.</strong></p>
+
+<div class="avert">
+  <p><strong>Le socle ne documente, pour aucun des mécanismes du § 21.5, l'existence d'un tel profil — degré 3</strong> ; <em>le lot déclarant, pour la carte signée, n'en avoir recherché aucun.</em> <strong>Ce qui le réfuterait</strong> : <em>la publication d'un profil cryptographique obligatoire pour l'un de ces mécanismes.</em></p>
+</div>
+
+<p><strong>Ce qu'aucun de ces quatre patrons ne règle, et qui décide de l'ordre des travaux.</strong> ⚠ <em>Une migration est une opération de <strong>retrait</strong> autant que d'ajout, et c'est le point où les entrées mobilisées s'arrêtent.</em> <strong>La rotation est outillée, le retrait ne l'est pas</strong> (F-10) ; <strong>l'inventaire de la révocation est au ch. 20 § 20.4</strong>, qui en dégage trois formes — <em>le silence, l'interdiction sans le moyen, l'état sans la fraîcheur.</em> S'y ajoute ce que le § 21.2 a déclaré : <strong>ni procédure de re-signature ni horodatage d'appoint — degré 3</strong>.</p>
+
+<p><strong>Reste à nommer la rupture que le titre vise.</strong> ⚠ <strong><em>Une chaîne de confiance ne se rompt pas au moment où l'algorithme change : elle se rompt lorsqu'un vérificateur ne peut plus établir, pour un artefact déjà émis, sous quel régime il l'a été.</strong></em></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce qu'il n'établit pas</strong> : qu'une chaîne de confiance se rompe, ni qu'une migration l'expose. <em>La lecture proposée est que <strong>la crypto-agilité et la révocabilité sont la même propriété vue de deux côtés</strong> : un mécanisme qui ne sait pas retirer ce qu'il a émis <strong>ne peut pas achever une migration</strong> — il peut seulement en ajouter une couche.</em> <strong>Elle est réfutable</strong> : <em>un mécanisme documentant une transition d'algorithme sans dispositif de retrait la ferait tomber.</em></p>
+
+<h2 id="s217"><span class="sig">§ 21.7</span>Ce que les études de coût publiées couvrent (et ne couvrent pas)</h2>
+
+<p>Le lot a cherché des études de coût de migration. ⚠ <strong>Il en a ouvert une</strong>, et l'énoncé de ce résultat <strong>porte sa borne dans sa formulation même</strong> : <em>la seule étude de coût commanditée par une autorité publique <strong>que cette passe a ouverte</strong>.</em> ⚠ <strong>Le lot déclare expressément n'avoir mené aucun balayage de la littérature sur ce point, et refuse d'en tirer une affirmation d'unicité</strong> — <em>les chiffres circulant dans la presse spécialisée n'ont pas été instruits et ne sont pas rapportés.</em></p>
+
+<p>Cette étude est un <strong>rapport de juillet 2024 au législateur fédéral américain</strong>, prescrit par une loi de préparation à la cybersécurité quantique. Selon ce rapport, un bureau de la présidence déclare que <strong>le coût total, à l'échelle du gouvernement, de la migration des systèmes d'information prioritaires entre 2025 et 2035 s'établirait à environ 7,1 milliards de dollars de 2024</strong>. ⚠ <strong>Cette donnée est auto-déclarée</strong> — <em>elle est produite à partir des estimations remises par les agences elles-mêmes</em> — <strong>et n'a fait l'objet d'aucune vérification indépendante</strong> ; le rapport porte lui-même sa réserve d'incertitude — <em>« a high, but expected, level of uncertainty »</em> — et <strong>impose une mise à jour annuelle</strong>. ⚠ <strong>Tri : PROJETÉ</strong> — <em>projection d'une institution, avec sa source nominative, son millésime et son périmètre, <strong>jamais un coût constaté</strong>.</em> <em>(Source primaire ouverte et citée hors socle, non versée ; le chapitre n'écrit donc nulle part que « le socle porte » ce chiffre.)</em></p>
+
+<div class="avert">
+  <p><strong>Le périmètre de ce chiffre est ce qui décide de son usage, et il est étroit sur quatre plans.</strong> Il porte sur les <strong>systèmes fédéraux civils prioritaires</strong> des États-Unis, entre 2025 et 2035 ; <strong>les systèmes de sécurité nationale en sont exclus</strong> ; il ne porte <strong>ni sur une entreprise, ni sur une institution financière, ni sur une juridiction canadienne</strong> ; et <strong>il ne porte pas davantage sur la couche identitaire agentique</strong> — <em>le lot déclare n'avoir rien instruit sur l'application de ces jalons aux signatures de cartes, aux chaînes de mandat ou aux jetons.</em> ⚠ <strong><em>Un chiffre dont le périmètre exclut l'objet de la somme ne devient pas applicable parce qu'on le divise.</strong></em></p>
+</div>
+
+<p><strong>Le déplacement européen : de l'échéance vers le risque.</strong> Deux documents prennent la question par l'autre bout, et <strong>leur intérêt tient moins à ce qu'ils chiffrent qu'à ce qu'ils ne chiffrent pas</strong>. Le rapport conjoint de 2026 <strong>ordonne ses activités par le risque plutôt que par un calendrier daté</strong> (F-63, <strong>[B, degré 1]</strong>), et <strong>porte son propre avertissement de non-obligation</strong> — <em>c'est un document de praticiens, non un acte d'autorité</em>. Le second n'énonce <strong>aucune échéance calendaire propre au secteur</strong> : ses cinq recommandations sont <strong>sans date</strong>, et la seule échéance datée relevée est <strong>attribuée à l'administration américaine</strong>. ⚠ <em>Réserve : la date de publication de ce second document n'a pas pu être établie sur une page de son éditeur.</em></p>
+
+<div class="avert">
+  <p><strong>Ce relevé a une conséquence directe sur l'héritage, et elle est désagréable : une entrée héritée est périmée sur ce point</strong> (F-63). Le Vol. I prête à un forum sectoriel des cibles propres ; <strong>la source primaire ouverte par la passe n'en porte pas</strong>, dans les bornes de son balayage. ⚠ <strong><em>Une cible attribuée à un forum qui ne l'énonce pas est exactement ce que R-11 proscrit en interdisant de fusionner des jalons d'origines distinctes.</strong></em></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : que le rapport européen ne porte aucune des trois chaînes relevées, et que le balayage hors socle du second n'y relève aucune échéance sectorielle. <strong>Ce qu'il n'établit pas</strong> : <strong>par quel chemin l'entrée héritée en est venue à prêter ces cibles à ce forum</strong>. <em>Tout au plus se constate-t-il que deux des millésimes concernés sont les deux échéances du décret ; <strong>aucune source du socle ne relie ce texte à l'entrée héritée</strong>.</em> ⚠ <strong><em>Seul l'écart est documenté ; sa provenance ne l'est pas, et la somme ne la reconstitue pas.</strong></em></p>
+
+<div class="avert">
+  <p><strong>Le versant du Vol. I, en [C], ajoute un verrou d'ingénierie que le socle propre ne porte pas.</strong> Son §7.4.4 nomme <strong>deux propriétés qui s'opposent</strong> — <em>la longévité requise d'un justificatif d'autorité et la nature jetable d'une identité d'agent instanciée pour une tâche</em> — et une <strong>soutenabilité de performance non établie</strong> : <em>les signatures et échanges post-quantiques, dont les tailles d'artefacts sont sensiblement accrues, doivent être soutenus sur des charges éphémères à fort débit de poignées de main, profil de trafic caractéristique des flottes d'agents.</em> ⚠ <strong>Régime</strong> : entrée en <strong>[C]</strong>, et le Vol. I trie lui-même ce verrou <strong>SPÉCULATIF</strong> ; <em>aucune mesure publique ne le valide à son gel, et aucun énoncé de ce paragraphe n'est central.</em></p>
+</div>
+
+<h2 id="s218"><span class="sig">§ 21.8</span>Méthode d'inventaire pour une institution</h2>
+
+<p><em>Puisqu'aucun nombre n'est transposable, ce qui se transmet est une méthode.</em> <span class="auteur">Lecture de l'auteur</span> <strong>elle est construite ici, et elle est une construction d'auteur en totalité.</strong> <strong>Ce que le socle établit</strong> : les quatre contraintes du § 21.1 et du § 21.4. <strong>Il n'établit pas de méthode d'inventaire, pas de nomenclature d'artefacts, pas de pondération de risque, pas d'ordre de grandeur de charge.</strong> <em>Les cinq relevés qui suivent sont proposés par la somme ; <strong>ils ne sont endossés par aucune source</strong>.</em></p>
+
+<p><em>Le point de départ n'est pas une liste d'algorithmes mais <strong>une liste d'artefacts qui portent une signature ou un établissement de clés</strong> dans la chaîne d'identité et de mandat.</em> <strong>Le § 21.3 en dresse l'inventaire ; ce paragraphe propose ce qu'il faut relever sur chacun.</strong></p>
+
+<ol class="numeros">
+  <li><strong>Le mécanisme et ses paramètres.</strong> <em>Quel algorithme, quelle longueur de clé, quel niveau de sécurité déclaré.</em> ⚠ <strong>C'est le seul relevé pour lequel les jalons publiés fournissent une grille directement applicable</strong> : le projet écrit « Deprecated after 2030 » au niveau 112 bits et « Disallowed after 2035 » tous niveaux confondus (F-60).</li>
+  <li><strong>La durée de vie de ce que l'artefact protège.</strong> <em>Un jeton d'accès de dix minutes et une chaîne de mandat archivée dix ans ne portent pas le même risque devant la même échéance.</em> <strong>C'est le relevé qui décide de l'ordre de traitement</strong>, et c'est la logique que le rapport sectoriel met en avant en croisant le risque quantique et le temps de migration (F-63).</li>
+  <li><strong>L'autorité qui peut faire tourner la clé.</strong> <em>Qui la détient, selon quelle procédure, avec quel délai constaté.</em> ⚠ <strong><em>Un artefact dont l'autorité de rotation n'est pas identifiée n'est pas migrable à échéance : il est à re-gouverner d'abord.</strong></em></li>
+  <li><strong>Le régime qui lie l'artefact — s'il en existe un.</strong> ⚠ <strong>C'est ici que la discipline de R-11 se paie.</strong> Les jalons relevés viennent de <strong>quatre origines distinctes qui ne se fusionnent pas</strong> : le projet de l'institut, <strong>qui vise sans prescrire</strong> ; le décret, <strong>qui fixe des échéances pour le périmètre fédéral qu'il définit</strong> ; la note d'application, <strong>qui échelonne</strong> ; et une cible générale citée par le projet lui-même — <em>cette quatrième origine est <strong>hors socle</strong>, et son versement est remonté.</em> <strong>Le relevé consiste à nommer laquelle des quatre s'applique, à quel titre et sur quel périmètre.</strong> ⚠ <em>La confrontation ne se saute pas au motif que l'exploitant est canadien</em> : le décret charge par ailleurs de publier une <strong>règle proposée</strong> d'acquisition visant les contractants couverts — <em>une règle proposée n'est ni une règle en vigueur ni une obligation constatée, et son périmètre se lit avant de conclure.</em></li>
+  <li><strong>L'agilité du contrat qui porte l'artefact.</strong> <em>Le mécanisme de signature est-il un paramètre versionné du contrat, ou une hypothèse câblée ?</em> <strong>C'est l'objet du § 21.5, et c'est le relevé qui transforme une migration en changement de configuration plutôt qu'en réécriture.</strong></li>
+</ol>
+
+<div class="avert">
+  <p><strong>Ce que la méthode interdit.</strong> <em>(1)</em> <strong>Dériver une charge d'entreprise d'un agrégat fédéral</strong> : <em>le rapport projette un coût pour un périmètre nommé, et ce périmètre exclut ce que la somme prend pour objet.</em> <em>(2)</em> <strong>Convertir une échéance en obligation</strong> : <em>« Deprecated » n'est pas une interdiction — le projet écrit lui-même que l'algorithme peut être employé et que la décision revient au propriétaire des données</em> (F-60).</p>
+</div>
+
+<div class="avert">
+  <p><strong>Reste ce qui ne se relève pas, et qui doit être écrit plutôt que comblé.</strong> <strong>Le socle ne documente ni le coût unitaire de migration d'un artefact d'identité d'agent, ni aucun ordre de grandeur de charge applicable à un parc d'entreprise — degré 3.</strong> <strong><em>Le chapitre ne propose donc aucun ratio, aucune fourchette et aucune règle de trois — et ce refus est le résultat de la passe, non un pis-aller.</strong></em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Une lacune est ouverte ici et elle est la plus coûteuse du chapitre pour un volume canadien</strong> : <em>quelles échéances les autorités canadiennes énoncent-elles, et sous quel régime ?</em> <strong>Aucune passe de recherche n'a été conduite</strong> — le lot déclare n'avoir rien instruit hors du couple États-Unis / Union européenne, <strong>et signale lui-même que cette lacune est la plus coûteuse de celles qu'il laisse.</strong> <em>Sources à retrouver : les publications de l'autorité nationale de cybersécurité et les travaux du groupe de travail sectoriel canadien, dont le rapport précise que <strong>la mention ne repose que sur des communiqués de presse</strong> — le sigle comptant <strong>zéro occurrence</strong> dans le texte extrait du rapport européen.</em> <strong>La question reste ouverte ; aucune inférence n'est proposée.</strong></p>
+</div>
+
+<h2 id="s219"><span class="sig">§ 21.9</span>Fenêtre d'action 2026-2029 : le calendrier inverse</h2>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>la fenêtre qui donne son titre à ce paragraphe est une construction de la somme</strong>, développée et bornée en fin de section. <em>Le socle porte des échéances datées ; <strong>il ne porte aucun délai de mise en œuvre applicable à une institution</strong>.</em></p>
+
+<p><em>Un calendrier de migration ne se lit pas dans le sens de la lecture. <strong>Il se lit à rebours</strong>, depuis la date la plus contraignante qui s'applique réellement à l'institution, en remontant vers l'instant présent.</em> ⚠ <strong>Encore faut-il savoir laquelle des dates publiées s'applique — et le socle établit qu'elles ne sont ni de même nature, ni de même force, ni de même statut</strong> (§ 21.1).</p>
+
+<p><strong>Trois lectures se tirent du tableau du § 21.1, et deux d'entre elles sont des constructions d'auteur : la première seule est un fait.</strong></p>
+
+<p><strong>La première est un fait, et c'est le cœur de l'horloge</strong> : <em>les algorithmes de remplacement sont normalisés depuis le 13 août 2024, tandis que le calendrier de retrait demeure, à la fiche consultée, à l'état de projet public initial</em> (F-62 ; F-59). ⚠ <strong><em>Une institution n'attend donc rien du côté de ces deux primitives — elle attend du côté des dates.</strong></em></p>
+
+<p><strong>La deuxième appelle une lecture, et elle est contre-intuitive.</strong> Le projet écrit que ses normes d'algorithmes <strong>peuvent</strong> continuer de spécifier des techniques vulnérables jusqu'en 2035, et annonce que <strong>des guides propres à une application pourront imposer des transitions plus précoces</strong> (F-60). <span class="auteur">Lecture de l'auteur</span> <em>2035 y fonctionne donc <strong>comme un plafond et non comme un plancher</strong>.</em> <strong>Ce qu'il n'établit pas</strong> : que 2035 vaille plafond <strong>pour un exploitant donné</strong>, ni qu'un guide sectoriel plus précoce existe pour la couche agentique. ⚠ <strong><em>Une institution qui lirait 2035 comme sa propre échéance lirait le plafond d'un autre.</strong></em></p>
+
+<div class="avert">
+  <p><strong>Conformément à R-11</strong> : l'institut <strong>vise</strong> une dépréciation en 2030 au niveau de sécurité de 112 bits et une interdiction en 2035 tous niveaux confondus, <strong>dans un document à l'état de projet public initial</strong> — <em>aucune de ces deux lignes n'est formulée en obligation, et <strong>un jalon de cet institut n'est pas une obligation légale</strong>.</em></p>
+</div>
+
+<p><strong>La troisième est une lecture d'auteur, et elle porte la borne de droite du titre.</strong> <span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : une date d'obligation applicable à un périmètre fédéral américain nommé, le 31 décembre 2030 pour l'établissement de clés (F-61) ; que l'institut vise 2030 et 2035 <strong>dans un projet</strong> ; et que la clause « ou un document successeur » <strong>est précisément ce qui empêche ce projet de devenir la norme sur laquelle une obligation se fonderait</strong>. <strong>Ce qu'il n'établit pas</strong> : <strong>aucun délai de conception, aucun cycle de renouvellement d'infrastructure, aucune durée de migration d'un parc — degré 3.</strong> <em>La fenêtre <strong>2026-2029</strong> est donc une construction de la somme : elle borne à droite l'intervalle qui précède la première échéance datée du socle, et <strong>elle vaut ce que vaut l'hypothèse — non sourcée — qu'un parc d'agents ne se migre pas dans l'année de son échéance</strong>.</em></p>
+
+<div class="avert">
+  <p><strong><em>Le lecteur qui juge cette hypothèse fausse doit refaire le calcul, non ajuster le résultat.</strong></em></p>
+</div>
+
+<p><strong>Ce que le calendrier inverse produit concrètement n'est pas un plan de migration : c'est un ordre de travaux.</strong> <span class="auteur">Lecture de l'auteur</span> <em>les artefacts <strong>dont l'autorité de rotation n'est pas identifiée</strong> passent en premier, parce qu'ils ne sont pas migrables tant qu'ils ne sont pas gouvernés — et <strong>cette gouvernance est un travail d'identité, pas de cryptographie</strong>. Viennent ensuite les artefacts <strong>dont le contrat n'expose pas son mécanisme de signature comme un paramètre versionné</strong> (§ 21.5). Viennent en dernier <strong>les artefacts agiles</strong>, dont la migration est un changement de configuration à échéance.</em></p>
+
+<div class="avert">
+  <p><strong>C'est aussi le point où le quatrième terme de l'invariant hérité trouve une application littérale</strong> (H-27, <strong>[C]</strong>, thèse attribuée) : <strong><em>une dette de migration n'est pas un problème d'architecture qu'on résout une fois ; c'est une charge d'exploitation qui se réévalue à chaque révision du document qui porte l'horloge</strong></em> — et ce document est, à la date de gel, <strong>un projet</strong> (F-59). ⚠ <strong>Aucun calendrier de finalisation n'a été relevé — degré 3</strong> ; <em>il ne s'en déduit rien sur les intentions de l'institut.</em></p>
+</div>
+
+<p><strong>Ce que ce chapitre refuse d'écrire, et pourquoi il le déclare.</strong> <em>(1)</em> Il <strong>ne convertit pas</strong> en coût unitaire, en ratio ou en fourchette d'entreprise la projection de coût du § 21.7 : <em>le périmètre du chiffre exclut l'objet.</em> <em>(2)</em> Il <strong>n'attribue aucune échéance sectorielle</strong> au forum dont le balayage n'en relève aucune. <em>(3)</em> Il <strong>ne présente aucun des quatre jalons comme liant d'office une institution canadienne</strong> : <em>les périmètres que le socle porte sont fédéraux et américains, et le rattachement éventuel d'un exploitant à l'un d'eux <strong>se constate, il ne se présume pas</strong>.</em> <em>(4)</em> Et il <strong>ne comble pas la lacune canadienne par transposition d'un calendrier étranger</strong> — ⚠ <strong><em>un calendrier qu'on transpose devient, en trois citations, une échéance.</strong></em></p>
+
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
+
+<p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
+
+<ol class="numeros">
+  <li><strong>Le siège de l'horloge</strong> (§ 21.1), avec ses trois origines <strong>qui ne se fusionnent pas</strong> et le statut réel de chaque texte. Les <strong>ch. 45 et 49</strong> y renvoient ; <strong>aucun ne re-date un jalon</strong>.</li>
+  <li><strong>La formulation imposée</strong> : « <strong>visée</strong> », jamais « fixée », jamais un ordre de grandeur approché ; et <strong>le statut du document porté à chaque mention</strong>. <em>C'est le garde-fou le plus mécanique du Livre, et le plus facile à casser d'inadvertance.</em></li>
+  <li><strong>La définition opérationnelle de la crypto-agilité en trois conditions</strong>, marquée construction d'auteur, et <strong>le constat que sa troisième condition n'est satisfaite par aucun mécanisme inventorié</strong>.</li>
+  <li><strong>Le renversement qui ferme le Livre</strong> : <strong><em>la crypto-agilité et la révocabilité sont la même propriété vue de deux côtés.</strong></em> Le <strong>ch. 20 § 20.4</strong> avait établi l'asymétrie émission/révocation ; le § 21.6 en montre le coût à l'échéance.</li>
+  <li>⚠ <strong>Et un legs négatif, qui est celui du Livre entier</strong> : <em>la fabrique d'émission des ch. 12 à 18 repose sur des signatures classiques, et <strong>aucun de ses mécanismes ne documente comment en sortir</strong>.</em></li>
+</ol>
+
+<section class="statut" id="s2110">
+
+<h2><span class="sig">§ 21.10</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong></p>
+</div>
+
+<p><strong>Ce qui est enfreint.</strong> Portes <strong>G-3</strong> et <strong>G-4</strong> ; volet résiduel de <strong>G-1</strong> non instruit ; ordre de rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026.</p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01.</strong> ⚠ <strong>Et ce chapitre est celui du Livre où l'écart entre la précision apparente et le régime de preuve est le plus grand</strong> : <em>il porte des dates au quantième, des libellés verbatim et des numéros de section — et <strong>tout cela résout contre un socle que G-3 n'a pas refondu et que G-4 n'a pas collationné</strong>.</em></li>
+  <li><strong>Les décomptes sont publiables</strong> (G-2). Écart de <strong>+43,8 %</strong> — <strong>le plus fort du Livre</strong> ; <strong>la volumétrie du Livre entier</strong> alimente <strong>D-4</strong> par <strong>R-IV-17</strong>.</li>
+  <li><strong>Les renvois « ch. N » vers les Livres III à V sont des renvois de plan</strong> : <strong>ch. 45</strong> et <strong>ch. 49</strong>. Les renvois vers le <strong>ch. 3</strong> résolvent contre du texte ; ceux vers les <strong>ch. 15, 16, 17, 20</strong> résolvent contre du texte au terme de la présente passe.</li>
+  <li><strong>Une entrée héritée est déclarée périmée sur un point précis</strong> (§ 21.7), <strong>et la pièce ne la corrige pas</strong> : <em>c'est le socle propre du Vol. III qui le porte, et la correction relève de <strong>G-3</strong>.</em></li>
+</ol>
+
+<p><strong>Remontées ouvertes par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-36 — non bloquante, et elle constate qu'une relève du plan est déjà consommée à la source.</strong> Le TOC porte, pour ce chapitre, une relève « <strong>à instruire à la source primaire</strong> » : <em>des instruments fédéraux américains de juin 2026 — décret exécutif et directive — alignant les systèmes fédéraux sur les jalons de 2030 et 2035, ce qui rendrait l'échéance opposable outre-frontière.</em> ⚠ <strong>Or ces deux instruments sont </strong>déjà au socle du Vol. III<strong>, versés en F-61 avec leurs dates, leur périmètre et leur tri</strong> — le § 21.1 les porte à ce titre. <strong>Demande remontée</strong> : que <strong>G-1</strong> enregistre cette relève comme <strong>consommée par la source elle-même</strong>, plutôt que comme due. ⚠ <em>La relève n'est pas fausse : elle est <strong>datée d'avant l'instruction du Vol. III</strong>, et le plan ne l'a pas rapprochée de son propre socle.</em> <strong>Le constat vaut au-delà</strong> : <em>une relève du plan et une entrée de socle peuvent porter le même objet sans que rien ne les rapproche — c'est un défaut de collation, et il est du ressort du volet de fond de G-4.</em></li>
+  <li><strong>R-IV-37 — non bloquante, de siège et de formulation.</strong> Le TOC assigne à ce chapitre <strong>le siège de l'horloge</strong> et le garde-fou R-11, mais <strong>le siège du statut PROJETÉ de la normalisation du passeport est au ch. 16 § 16.4</strong>, et <strong>le tri prospectif lui-même</strong> — les trois statuts et leur définition — est posé au <strong>Vol. I §7.0.2</strong>, hérité en <strong>[C]</strong> et <strong>sans siège désigné dans la somme</strong>. ⚠ <em>Trois chapitres du Livre II trient donc des énoncés prospectifs contre une définition qu'aucun d'eux ne porte, et qu'aucun contrôle ne vérifie.</em> <strong>Demande remontée</strong> : <strong>désignation d'un siège unique du tri prospectif</strong> — vraisemblablement au Livre I, où il est déjà employé —, et <strong>versement du siège de l'horloge à la table de <a class="lien" href="../PRD/check-sieges.py"> 0 </a></strong>, avec les trois autres sièges que ce Livre pose (voir <strong>R-IV-24</strong>, ouverte au ch. 15).</li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.24</strong> — § 21.1 à § 21.9, dans l'ordre exact, les deux mouvements dans leur ordre —, et le § 21.0 est une introduction de chapitre. Les <strong>deux tables de couverture sont respectées pour leurs cinq lignes</strong>. Le <strong>siège de l'horloge est posé et marqué</strong> (§ 21.1). Le <strong>socle IAM et l'identité de charge de travail restent au ch. 3</strong> ; l'<strong>inventaire de la révocation reste au ch. 20 § 20.4</strong> ; l'<strong>assemblage du passeport reste au ch. 16</strong> ; le <strong>quatrième terme de l'invariant reste refermé au Livre IV</strong>. ⚠ <strong>Les dix-sept occurrences de R-11 portent la formulation imposée</strong> : <em>« visée », jamais « fixée »</em>, <strong>aucun ordre de grandeur approché n'est écrit</strong>, le <strong>statut du document est dit à chaque mention</strong>, et <strong>les quatre origines de jalons ne sont fusionnées à aucun endroit</strong>. Les <strong>quatorze occurrences de R-14</strong> portent leur degré, dont <strong>douze au degré 3</strong>. Les <strong>neuf occurrences de R-02</strong> énoncent ce que la spécification démontre <strong>et</strong> ne démontre pas — dont le <strong>refus explicite de reprendre la qualification de « crypto-agilité structurellement présente »</strong> que le rapport de lot proposait. La <strong>projection de coût est attribuée à son auteur, à son millésime et à son périmètre à chacune de ses deux occurrences</strong>, et <strong>aucun ratio n'en est dérivé</strong>. Enfin, les <strong>quinze occurrences de « Lecture de l'auteur »</strong> sont suivies de ce que le socle établit et n'établit pas — dont <strong>deux paragraphes entiers</strong>, le § 21.6 et le § 21.8, marqués à l'ouverture.</p>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre II, chapitre 21. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.24, entrée du chapitre 21, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>
