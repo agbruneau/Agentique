@@ -50,6 +50,14 @@ Fusion**, la liste de sections restant à réaligner par une passe du `TOC.md`.
 se reporte au même commit. Le compendium n'a **pas** de pipeline de rendu — les trois copies du
 FESP appartiennent aux Vol. I, II et III, et aucune n'a été copiée ici.
 
+**Un skill de projet porte la procédure de rédaction.** Depuis le 27 juillet 2026,
+[`.claude/skills/chapitre-compendium/`](../.claude/skills/chapitre-compendium/SKILL.md) tient la
+marche à suivre pour rédiger une pièce : état des portes, quatre lectures préalables, squelette et
+en-tête à cinq champs, conventions de renvoi et pièges datés, gabarit HTML commun aux pièces, et un
+vérificateur validé par mutation (`scripts/verifier-piece.py`). Il **ne porte aucune décision** —
+le TOC reste la spécification, le PRD la gouvernance ; il exécute, il n'arbitre pas. Le mettre à
+jour quand une passe change une convention, plutôt que de laisser diverger la pratique et la règle.
+
 ⚠ **`audit.md` n'est pas un quatrième livrable.** C'est un rapport de couverture daté (24 juillet 2026), **sans autorité** : ni source, ni socle, ni décision. Ne jamais le citer à l'appui d'un énoncé ni s'en servir pour modifier le plan — ses constats retenus ont été portés là où ils font foi (risque 15 du TOC, décision D-7 du PRD, passe v0.15) ; ce qu'il porte encore n'a pas été retenu. Un audit ultérieur suit la même règle : il **remonte**, il ne tranche pas.
 
 ⚠ **Le TOC porte, depuis la v0.16 (25 juillet 2026), une table des matières détaillée par chapitre — et ces tables sont subordonnées.** Chaque entrée de chapitre est suivie du dépliage de ses sections et sous-sections, chacune portant sa **provenance** (`← Vol. N` *document* `§N.M`), plus une **table de couverture** par chapitre (décision 6). Les 57 entrées en sont pourvues, dérivées du **texte rédigé** des trois monographies. ⚠ **Une exception depuis la v0.22** : le **ch. 41** porte une table détaillée **sans aucun marqueur `←`** — matière neuve, il n'a pas de texte source à déplier, et l'absence de provenance y est rendue visible **par la forme**, pas seulement par une mention. ⚠ **Une table déplie une ligne Fusion, elle ne la re-décide pas** : en cas d'écart, **la ligne Fusion prime**, et quand le chapitre sera rédigé, c'est **lui** qui corrigera la table (décision 8). *Le travail a vécu dans un fichier séparé, `TOCAll.md`, renommé sur le TOC à sa complétion ; ce fichier n'existe plus, ses quatre commits restent à l'historique.*
