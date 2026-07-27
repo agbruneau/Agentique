@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 6 — Systèmes multi-agents, évaluation et sûreté · La somme agentique</title>
+<meta name="description" content="le multi-agent a un surcoût que seuls certains gains justifient ; son évaluation (succès de tâche vs trajectoire) et sa sûreté (triade létale, vecteurs d&#x27;attaque) sont les deux fronts encore ouverts.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre I · Chapitre 6</div>
+  <ol>
+    <li><a href="#s61"><span class="num">6.1</span>Pourquoi le multi-agent : gains, surcoût, topologies</a></li>
+    <li><a href="#s62"><span class="num">6.2</span>Communication inter-agents : A2A, ACP et pile d&#x27;interopérabilité</a></li>
+    <li><a href="#s63"><span class="num">6.3</span>Évaluation et bancs d&#x27;essai</a></li>
+    <li><a href="#s64"><span class="num">6.4</span>Sûreté, red-teaming et taxonomie d&#x27;échecs</a></li>
+    <li><a href="#s65"><span class="num">6.5</span>Défense architecturale, garde-fous et alignement</a></li>
+    <li><a href="#s66"><span class="num">6.6</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.23 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="06-multi-agents-evaluation-surete.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique</div>
+  <h1><span class="chap">Chapitre 6</span>Systèmes multi-agents, évaluation et sûreté</h1>
+  <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6). **Dernier chapitre du mouvement</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable — et rédigé malgré une remontée bloquante.</strong> Aux portes G-1, G-2 et G-3 ouvertes s'ajoute ici une <strong>seconde infraction, distincte et plus grave</strong> : la remontée <strong>R-IV-01</strong>, ouverte par le ch. 1, est marquée <em>bloquante pour le ch. 6</em>, et la règle d'escalade du <a class="lien" href="../PRD/PRD.md">PRD</a> pose qu'une remontée bloquante <strong>interdit de lancer le chapitre</strong>. Elle est enfreinte sur instruction d'auteur du 27 juillet 2026 ; le détail et ses conséquences sont en § 6.6</dd>
+    <dt>Date de gel</dt>
+    <dd><strong>Aucune.</strong> Gel unique non fixé (D-1). Matière condensée au gel de sa source — <strong>juin 2026</strong> (Vol. I). ⚠ Trois faits datés y appellent une re-vérification : le passage d'un protocole agent-agent sous fondation, la création d'une fondation neutre en décembre 2025, et un chiffre d'adoption <strong>auto-déclaré</strong> relevé à un anniversaire</dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (Annexe B non constituée, G-3 ouverte). Les énoncés résolvent contre le <strong>Vol. I <em>Monographie</em> §2.8.1-2.8.3, §2.9.1-2.9.5 et §2.10.3-2.10.5</strong>, en régime <strong>[C]</strong> (PRD §7.1). <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd><strong>Les deux séries, intégralement — et c'est le chapitre du Livre I où ils mordent le plus.</strong> Vol. II — <strong>R-8 (« ACP » jamais nu) : deux occurrences</strong>, § 6.2, où le sigle est développé à sa première apparition et jamais employé seul ; <strong>métriques auto-déclarées (PRD Vol. II §7.5) : quatre occurrences</strong>, § 6.1.1 (deux), § 6.2 et § 6.5.2, <strong>chacune attribuée à sa source, sans exception d'usage illustratif</strong>. R-1 à R-7 : <strong>zéro occurrence</strong>. Vol. III — <strong>R-13 (mêmes termes jamais nus) : deux occurrences</strong>, § 6.2, les mêmes ; <strong>R-14 : trois occurrences</strong>, § 6.4.1, § 6.5.1 et § 6.5.3. R-01 à R-12 : <strong>zéro occurrence</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ 8 500 mots de corps (§ 6.1 à § 6.5). Enveloppe <strong>dérivée, non prescrite</strong>. ⚠ <strong>Aucun décompte n'est publiable</strong> tant que G-2 est ouverte</dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>le multi-agent a un surcoût que seuls certains gains justifient ; son évaluation (succès de tâche vs trajectoire) et sa sûreté (triade létale, vecteurs d'attaque) sont les deux fronts encore ouverts.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.23, entrée du chapitre 6.</span>
+</div>
+
+<h2 id="s61"><span class="sig">§ 6.1</span>Pourquoi le multi-agent : gains, surcoût, topologies</h2>
+
+<p>La bascule s'opère ici. Les ch. 4 et 5 ont décrit l'<strong>anatomie d'un agent unique</strong> ; ce chapitre passe à l'<strong>ingénierie de systèmes</strong> où plusieurs agents collaborent, sont mesurés et doivent être défendus.</p>
+
+<p>L'invariant du Livre y réapparaît à chaque échelon, et il fournit le critère de viabilité : <em>un système multi-agents n'est viable que si les agents sont <strong>découplés</strong>, communiquent par <strong>contrat</strong> explicite et restent indépendamment <strong>évolutifs</strong>.</em> Un système où ces trois conditions ne tiennent pas n'est pas un système multi-agents — c'est un monolithe dont les parties s'appellent par du texte.</p>
+
+<h3>6.1.1 Gains, surcoût et fondements classiques</h3>
+
+<p>La promesse du multi-agent est la <strong>décomposition</strong> : confier des sous-tâches à des agents spécialisés, paralléliser l'exploration, isoler les contextes.</p>
+
+<div class="avert">
+  <p><strong>Le chiffre le plus cité du domaine mérite d'être rapporté avec toutes ses réserves, parce qu'il est presque toujours cité sans elles.</strong> Pour un système de recherche en architecture orchestrateur-travailleurs, <strong>Anthropic rapporte</strong> un gain d'environ <strong>+90 %</strong> sur une <strong>évaluation interne</strong>, par rapport à un agent unique — mais au prix d'une consommation de jetons d'environ <strong>quinze fois</strong> celle d'une simple conversation. Ces deux valeurs sont <strong>auto-déclarées</strong> et attribuées ici à leur source, comme elles doivent l'être <strong>à chaque occurrence</strong>.</p>
+</div>
+
+<p>Trois réserves s'y attachent, et elles sont dans la source :</p>
+
+<ol class="numeros">
+  <li>c'est une <strong>mesure interne</strong>, non un résultat reproduit indépendamment ;</li>
+  <li>elle porte sur <strong>une tâche de recherche</strong> — un cas où la parallélisation paie parce que la tâche <strong>se subdivise naturellement</strong> ;</li>
+  <li>elle <strong>ne se transpose pas</strong> à toute charge de travail.</li>
+</ol>
+
+<p>Le surcoût est ainsi le <strong>principal argument contre l'agentification réflexe</strong>, et le gain n'en est un que sur une classe de tâches nommée.</p>
+
+<p>À l'inverse, une position concurrente soutient qu'<strong>un rédacteur unique conservant un contexte continu surpasse souvent l'architecture distribuée</strong>, parce que le fractionnement du contexte engendre des décisions incohérentes et coûteuses à réconcilier. C'est la même tension que le ch. 5 § 5.1.2 relevait à propos du verbe <em>isoler</em> — et ce n'est pas un hasard : <strong>le multi-agent est une politique de contexte avant d'être une politique d'architecture</strong>.</p>
+
+<p>Cette tension se nourrit d'un socle classique réinterprété : un protocole d'allocation de tâches par appel d'offres et adjudication entre nœuds d'un résolveur distribué, et des <strong>actes de langage normalisés</strong> qui préfigurent les messages contractuels qu'échangent aujourd'hui les agents.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Avant d'introduire un second agent, <strong>vérifier que la tâche se subdivise réellement</strong> et que le gain de qualité justifie un facteur de coût qui, selon la mesure interne rapportée par Anthropic, peut atteindre <strong>quinze fois</strong>. À défaut, un agent unique à contexte continu reste l'option par défaut. La charge de la preuve pèse sur le multi-agent, pas l'inverse.</p>
+</div>
+
+<h3>6.1.2 Topologies, rôles et raisonnement collectif</h3>
+
+<p>Les systèmes multi-agents se structurent selon des <strong>topologies de communication</strong> — étoile, chaîne, arbre, graphe :</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Topologie</th><th>Structure</th><th>Propriété dominante</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Étoile</strong></td><td>un orchestrateur délègue à des travailleurs</td><td>visibilité maximale, orchestrateur point de dépendance</td></tr>
+    <tr><td><strong>Chaîne</strong></td><td>la sortie d'un agent est l'entrée du suivant</td><td>simple, mais l'erreur se propage sans recours</td></tr>
+    <tr><td><strong>Arbre</strong></td><td>délégation hiérarchique</td><td>passage à l'échelle, diagnostic plus difficile</td></tr>
+    <tr><td><strong>Graphe</strong></td><td>interactions arbitraires</td><td>expressivité maximale, état global inobservable</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 6.1 — Topologies de coordination multi-agents et leur propriété dominante.</p>
+
+<p>Le patron <strong>orchestrateur-travailleurs</strong> — un agent chef planifie, répartit, puis synthétise — est le plus répandu en production. Il prolonge directement la séparation contrôleur/exécuteur du mono-agent (ch. 4 § 4.2.4), ce qui explique sa prévalence : c'est le patron dont l'ingénierie savait déjà raisonner.</p>
+
+<p>La <strong>spécialisation des rôles</strong> — un agent par compétence — est au cœur de plusieurs cadriciels et travaux fondateurs : deux agents jouant des rôles complémentaires, des rôles d'équipe logicielle, une généralisation de la conversation multi-agents.</p>
+
+<p>Le <strong>raisonnement collectif</strong> recouvre des mécanismes distincts qu'il ne faut pas confondre. Le <strong>débat</strong> fait converger plusieurs modèles vers une réponse plus factuelle par confrontation itérative — c'est la parade à la chambre d'écho du ch. 4 § 4.2.3. Le <strong>vote majoritaire</strong> et la <strong>recherche de consensus</strong> offrent des compromis différents entre robustesse et coût.</p>
+
+<div class="avert">
+  <p><strong>La principale difficulté demeure la coordination elle-même</strong>, et elle est documentée plutôt qu'anecdotique : dérive de problème, agents qui divergent de l'objectif initial, propagation d'erreurs entre coéquipiers. Une <strong>taxonomie dédiée</strong> recense ces modes de défaillance propres aux systèmes multi-agents, et le § 6.4.2 y revient comme grille d'analyse causale.</p>
+</div>
+
+<h2 id="s62"><span class="sig">§ 6.2</span>Communication inter-agents : A2A, ACP et pile d'interopérabilité</h2>
+
+<p>C'est le <strong>foyer canonique de l'interopérabilité agent-agent</strong>, complémentaire de l'interopérabilité agent-outil.</p>
+
+<div class="avert">
+  <p><strong>Cette section est délibérément brève, et sa brièveté est un arbitrage du plan.</strong> L'<strong>anatomie protocolaire</strong> est au <strong>ch. 8</strong> ; la <strong>pile</strong> — découverte, registres, portabilité — est au <strong>ch. 9</strong>. Ce qui suit est le strict nécessaire pour que le lecteur du premier mouvement sache <strong>que</strong> ces protocoles existent et <strong>où</strong> ils sont traités.</p>
+</div>
+
+<p>Le protocole <strong>Agent2Agent</strong> (A2A) a été ouvert en avril 2025, puis confié à une fondation neutre. Il repose sur des <strong>Agent Cards</strong> — descripteurs de capacités pouvant être signés — qui permettent à un agent de découvrir et d'invoquer un pair par un <strong>contrat explicite</strong>. Cette logique de description signée prolonge directement l'invariant du Livre au niveau de l'orchestration et de la chorégraphie <strong>inter-organisationnelles</strong> (ch. 1 § 1.6.2).</p>
+
+<p>La pile s'est consolidée. L'<strong>Agent Communication Protocol</strong> — ACP, sigle développé ici à sa première occurrence et jamais employé seul, conformément aux garde-fous R-8 du Vol. II et R-13 du Vol. III — a été lancé en mars 2025 puis <strong>a convergé dans A2A</strong>. Un troisième effort vise une interopérabilité d'échelle réseau alignée sur les deux précédents. Plusieurs revues comparent ces protocoles émergents.</p>
+
+<p>Le fait marquant de <strong>gouvernance</strong> est la création, en <strong>décembre 2025</strong>, d'une fondation neutre qui co-gouverne le protocole agent-outil et le protocole agent-agent — <strong>séparant proprement les deux plans d'interopérabilité</strong>. Cette séparation n'est pas une commodité d'organisation : c'est la reconnaissance que la relation d'un agent à ses outils et sa relation à ses pairs ne posent pas le même problème, constat que le ch. 8 instruit.</p>
+
+<div class="avert">
+  <p><strong>Un chiffre d'adoption est relevé au premier anniversaire d'A2A</strong> — plus de 150 organisations —, et il est <strong>auto-déclaré par les organisations promotrices</strong>. Il est attribué ici à sa source, et il mesure un <strong>soutien</strong>, non une mise en production. La distinction est celle que le ch. 7 érige en critère, et elle vaut d'être posée dès maintenant : <em>soutien n'est pas production</em>.</p>
+</div>
+
+<h2 id="s63"><span class="sig">§ 6.3</span>Évaluation et bancs d'essai</h2>
+
+<p>L'évaluation d'un agent diffère <strong>par nature</strong> de celle d'un modèle isolé. Le système sous mesure n'est plus une fonction qui transforme une invite en réponse, mais une <strong>boucle</strong> qui agit sur le monde au fil de trajectoires longues, appelle des outils, écrit en mémoire et orchestre éventuellement plusieurs sous-agents.</p>
+
+<p>Mesurer un tel système suppose de dépasser le seul résultat final pour interroger <strong>la trajectoire qui y mène</strong>, la fiabilité de sa reproduction, le coût en jetons, la robustesse face à un adversaire et la traçabilité de l'exécution.</p>
+
+<div class="avert">
+  <p><strong>Cette section est le lieu central des bancs d'essai chiffrés de la somme.</strong> Les capacités évoquées qualitativement au ch. 4 § 4.1.5 et § 4.4.3 y reçoivent leurs métriques. En revanche, l'<strong>observabilité</strong> en production — instrumentation, conventions sémantiques, évaluation continue — n'est <strong>pas</strong> traitée ici : elle part <strong>en entier</strong> au ch. 38, seule affectation de cette matière.</p>
+</div>
+
+<h3>6.3.1 Pourquoi évaluer un agent est difficile</h3>
+
+<p>La difficulté première tient à ce que <strong>l'on mesure un système, et non un modèle</strong>. Deux régimes d'évaluation s'opposent :</p>
+
+<ul class="puces">
+  <li>la <strong>vérification programmatique du résultat</strong> — un test qui passe, une transaction qui aboutit. Objective, mais <strong>aveugle au chemin</strong> : un agent peut atteindre le bon état final par une suite d'actions dangereuses, coûteuses ou irreproductibles ;</li>
+  <li>la <strong>notation du processus</strong> — de la trajectoire elle-même. Elle capture la qualité du raisonnement et des appels d'outils, mais <strong>exige un juge</strong> et introduit sa propre subjectivité.</li>
+</ul>
+
+<p>À cette dualité s'ajoute le <strong>non-déterminisme intrinsèque</strong> : température et échantillonnage rendent une même tâche tantôt réussie tantôt échouée. ⚠ <strong>Et une difficulté de second ordre qui invalide silencieusement les comparaisons</strong> : la dérive de version d'une interface fermée — un modèle <strong>silencieusement mis à jour</strong> côté fournisseur — rend deux mesures incomparables sans qu'aucun signal ne l'indique.</p>
+
+<p>La reproductibilité devient donc un <strong>objectif d'ingénierie en soi</strong> : figer les germes aléatoires là où c'est possible, <strong>journaliser la version exacte du modèle servi</strong>, et <strong>répéter les exécutions pour estimer la variance</strong> plutôt que de rapporter un point unique.</p>
+
+<p><em>Évaluer un agent, c'est évaluer une distribution de comportements d'un système composite, pas la capacité ponctuelle d'un réseau de neurones.</em></p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Des travaux montrent que de nombreux résultats publiés sont <strong>incomparables faute de contrôle du coût et de la variance</strong>, et plaident pour une évaluation conjointe <strong>précision-coût</strong> plutôt que pour la course au sommet du tableau. Un survol du domaine confirme <strong>l'absence de protocole standardisé</strong> et la prolifération de métriques <em>ad hoc</em> propres à chaque banc.</p>
+</div>
+
+<h3>6.3.2 Le modèle comme juge : principes, biais et piratage de récompense</h3>
+
+<p>Faute de vérificateur programmatique pour les sorties ouvertes — un résumé, une réponse argumentée, une trajectoire à noter qualitativement —, la pratique recourt massivement au <strong>modèle comme juge</strong>.</p>
+
+<p>Sa fiabilité <strong>dépend d'une calibration explicite sur des annotations humaines</strong> : sans elle, le juge dérive. Plusieurs biais systématiques sont documentés :</p>
+
+<ul class="puces">
+  <li><strong>biais de position</strong> — l'ordre de présentation de deux réponses influe sur le verdict ;</li>
+  <li><strong>biais de longueur</strong> — préférence pour les réponses verbeuses ;</li>
+  <li><strong>auto-préférence</strong> — un modèle favorise les sorties stylistiquement proches des siennes.</li>
+</ul>
+
+<div class="avert">
+  <p><strong>Plus insidieux pour les agents : le piratage de récompense</strong>, où le système optimise le signal du juge <strong>sans accomplir la tâche réelle</strong>, exploitant les failles de la grille plutôt que de la satisfaire.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Et la chaîne de raisonnement affichée n'offre aucun garde-fou</strong> : elle peut être <strong>infidèle</strong>, c'est-à-dire ne pas refléter le calcul réel (ch. 4 § 4.3.4). Un juge qui note la trace peut donc être trompé par une justification <strong>plausible mais reconstruite après coup</strong>. C'est la même limite que le ch. 4 posait pour la supervision, retrouvée du côté de la mesure.</p>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Un juge se déploie <strong>comme un composant versionné</strong>, accompagné d'un jeu d'étalonnage humain régulièrement rejoué pour détecter la dérive. Atténuer les biais connus passe par la <strong>permutation des positions</strong>, la <strong>normalisation par la longueur</strong> et le recours à un <strong>modèle juge distinct de celui évalué</strong>. Les plateformes d'évaluation intègrent ces juges comme évaluateurs configurables, mais <strong>la responsabilité de la calibration reste celle de l'équipe</strong>.</p>
+</div>
+
+<h3>6.3.3 Bancs d'essai de capacité</h3>
+
+<p>Les bancs se répartissent par domaine, chacun avec ses environnements, ses métriques et son plafond humain de référence.</p>
+
+<div class="avert">
+  <p><strong>Une menace transversale les fragilise tous : la contamination</strong> — la présence d'éléments du banc dans les données d'entraînement du modèle évalué, qui <strong>gonfle artificiellement les scores</strong>. La parade consiste à privilégier des collectes <strong>décontaminées</strong> — jeux assemblés après la date de coupe d'entraînement, ou filtrés pour exclure les fuites — et à <strong>renouveler périodiquement les instances</strong>. <em>Un score isolé d'un protocole de décontamination et de contrôle de coût n'a guère de valeur comparative.</em></p>
+</div>
+
+<p><strong>Codage, web et bureautique.</strong> En codage, un banc confronte l'agent à de vrais tickets à résoudre par un correctif validé par la suite de tests du dépôt ; sa <strong>variante vérifiée par des humains</strong> — un sous-ensemble de 500 tâches — est devenue la référence en éliminant les instances mal spécifiées ou irrésolubles. Les harnais dédiés ont fait progresser nettement le taux de résolution : <strong>l'interface agent-ordinateur s'avère aussi déterminante que le modèle sous-jacent</strong>, constat qui vaut d'être retenu par toute équipe tentée d'attribuer un résultat au seul modèle. Pour le web, des environnements réalistes auto-hébergés, étendus aux tâches visuelles multimodales. Pour la bureautique, un banc mesure le pilotage d'un poste de travail complet sur des tâches ouvertes.</p>
+
+<div class="avert">
+  <p><strong>La trajectoire est plus instructive que le point, et c'est la seule manière défendable de citer ces chiffres.</strong> Les agents de pilotage de poste plafonnaient <strong>autour de 20 % en 2024</strong> sur le banc de bureautique ; leur taux a ensuite progressé vers le plafond de performance humaine, <strong>approché entre fin 2025 et début 2026 sans encore le rejoindre</strong>. L'écart résiduel à ce plafond est l'information utile — un instantané ne la porte pas.</p>
+</div>
+
+<p><strong>Raisonnement général, outils et tâches d'entreprise.</strong> Une seconde famille évalue le raisonnement multi-sauts avec usage d'outils, la capacité agentique transversale sur des environnements hétérogènes, l'interaction outil-agent-utilisateur dans des domaines réalistes, et l'appel de fonctions par analyse syntaxique. Un banc de raisonnement à la frontière sert enfin à <strong>saturer les jeux antérieurs</strong> devenus peu discriminants. ⚠ Ce dernier est une <strong>ressource vivante</strong> dont une version ultérieure est parue : sa révision exacte doit être fixée au moment de citer un score.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Un banc de codage s'exécute <strong>en bac à sable conteneurisé</strong>, avec budgets d'appels et d'outils plafonnés ; <strong>son coût par instance, souvent occulté, doit être journalisé au même titre que le taux de résolution</strong>. La fragilité des sélecteurs de page (ch. 4 § 4.4.3) impose, pour les bancs web, de <strong>figer les instantanés d'environnement</strong> — faute de quoi une page mouvante rend les scores incomparables d'une exécution à l'autre.</p>
+</div>
+
+<h2 id="s64"><span class="sig">§ 6.4</span>Sûreté, red-teaming et taxonomie d'échecs</h2>
+
+<h3>6.4.1 Évaluation de la sûreté et red-teaming agentique</h3>
+
+<div class="avert">
+  <p><strong>L'évaluation de capacité laisse un angle mort, et il est total : un agent compétent peut être trivialement détourné.</strong> Les bancs adversariaux comblent cet écart en mesurant non pas ce que l'agent <strong>réussit</strong>, mais <strong>ce qu'un attaquant peut lui faire faire</strong>.</p>
+</div>
+
+<p>Trois familles s'y emploient : un environnement dynamique où des injections sont insérées dans les <strong>données que l'agent traite</strong>, mesurant à la fois l'utilité préservée et la résistance ; un banc ciblant spécifiquement les <strong>injections indirectes par les sorties d'outils</strong> ; un troisième quantifiant la <strong>nocivité</strong> d'un agent sommé d'accomplir des tâches malveillantes.</p>
+
+<p>Le <strong>red-teaming automatisé</strong> prolonge cette logique en <strong>générant dynamiquement</strong> des attaques plutôt qu'en s'appuyant sur un catalogue figé, exposant des chemins qu'un jeu statique manquerait.</p>
+
+<div class="avert">
+  <p><strong>La distinction est cardinale, et elle est la conclusion de cette section</strong> : <em>un score élevé sur un banc de capacité ne dit rien de la robustesse</em>, et un agent ne devrait jamais être déployé sur la seule foi de ses performances fonctionnelles.</p>
+</div>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>L'évaluation systématique des attaques par injection montre qu'<strong>aucune défense connue n'élimine la vulnérabilité</strong> — elles n'en réduisent que la surface. Cela ancre empiriquement la proposition de <strong>non-résolubilité au niveau du modèle</strong> posée au ch. 4 § 4.0.1. ⚠ Les bancs adversariaux sont donc à interpréter comme des <strong>mesures de réduction de risque, non comme des certificats d'innocuité</strong> : leurs scores évoluent à mesure que de nouvelles attaques sont publiées, et qu'aucune défense n'existe relève d'une <strong>absence de documentation</strong> au sens de R-14 du Vol. III — le corpus consulté n'en recense pas, ce qui n'établit pas leur impossibilité.</p>
+</div>
+
+<h3>6.4.2 Fiabilité, coût et taxonomie d'échecs</h3>
+
+<div class="avert">
+  <p><strong>La fiabilité d'un agent ne se résume pas à sa réussite moyenne, et la métrique usuelle induit en erreur.</strong></p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Métrique</th><th>Ce qu'elle mesure</th><th>Ce qu'elle flatte ou révèle</th></tr></thead>
+  <tbody>
+    <tr><td><em>pass@k</em></td><td>la probabilité qu'<strong>au moins une</strong> parmi <em>k</em> tentatives réussisse — le <strong>potentiel</strong></td><td><strong>flatte</strong> les systèmes capables de trouver occasionnellement la bonne réponse</td></tr>
+    <tr><td><em>pass^k</em></td><td>la probabilité que <strong>les <em>k</em> tentatives réussissent toutes</strong> — la <strong>consistance</strong></td><td><strong>chute brutalement</strong> dès que la fiabilité par étape s'éloigne de la perfection</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 6.2 — Potentiel contre consistance : deux métriques dont la confusion masque l'effondrement des agents sur les tâches longues.</p>
+
+<p>La seconde révèle <strong>l'effondrement des agents sur les tâches longues et multi-étapes</strong>. Cette dégradation — où une probabilité d'échec par pas même faible <strong>se compose géométriquement</strong> sur une longue trajectoire — est <strong>l'un des constats les plus robustes du domaine</strong>, et l'une des questions que le ch. 49 laisse ouvertes.</p>
+
+<p>Le <strong>coût</strong>, second axe de fiabilité, exige des <strong>classements contrôlés en budget</strong> plutôt qu'à performance brute — une infrastructure dédiée fournit ce contrôle.</p>
+
+<p>Diagnostiquer les échecs suppose enfin une <strong>taxonomie</strong> : une classification des modes de défaillance des systèmes multi-agents — mauvaise spécification, désalignement inter-agents, vérification défaillante — fournit une grille d'analyse <strong>causale</strong> des effondrements de coordination (§ 6.1.2).</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Un agent destiné à la production doit être caractérisé par sa <strong>courbe de consistance</strong>, pas par son meilleur potentiel : c'est la consistance, non le potentiel, qui détermine la viabilité opérationnelle. Le rapport coût-performance, mesuré <strong>à budget contrôlé</strong>, doit figurer au cahier des charges <strong>au même rang que l'exactitude</strong>. Et tout incident en production doit être rattaché à une <strong>catégorie de la taxonomie</strong> pour orienter la correction vers la cause racine plutôt que vers le symptôme.</p>
+</div>
+
+<h2 id="s65"><span class="sig">§ 6.5</span>Défense architecturale, garde-fous et alignement</h2>
+
+<div class="avert">
+  <p><strong>Partage déclaré avec le ch. 37.</strong> Ce qui suit <strong>pose</strong> les référentiels, les patrons et les garde-fous ; le ch. 37 les <strong>applique au grain de l'infrastructure</strong>. Le modèle de menace et les vecteurs d'attaque, eux, ne sont <strong>pas</strong> ici : ils partent <strong>en entier</strong> au ch. 19. <em>Ce chapitre pose la défense, pas la menace</em> — et cette asymétrie est un arbitrage du plan, non un déséquilibre.</p>
+</div>
+
+<h3>6.5.1 Référentiels et patrons de défense architecturale</h3>
+
+<p>À l'injection non résoluble répond une <strong>discipline de défense en profondeur</strong> outillée par des référentiels et des patrons.</p>
+
+<p><strong>Côté référentiels</strong>, des corpus structurent le domaine : classements des risques applicatifs des modèles de langage puis des applications agentiques, corpus de menaces et d'atténuations formalisant un cadre de modélisation, et une matrice adverse des techniques observées contre les systèmes d'IA.</p>
+
+<p><strong>Côté patrons</strong>, plusieurs propositions cherchent à rétablir une séparation de privilège <strong>hors du modèle</strong> — et c'est la formule qui compte, parce qu'elle dit où la garantie doit résider :</p>
+
+<ul class="puces">
+  <li>un patron à <strong>deux modèles</strong> isole un modèle « privilégié », qui <strong>ne voit jamais le contenu non fiable</strong>, d'un modèle « en quarantaine » qui le traite <strong>sans pouvoir déclencher d'action</strong> ;</li>
+  <li>une systématisation de cette idée fait extraire par un interpréteur le <strong>flux de contrôle et de données</strong>, puis applique des politiques explicites — <em>défaisant l'injection par conception</em> ;</li>
+  <li>une <strong>règle de non-cumul</strong> propose une heuristique opérationnelle : dans une même session, un agent ne devrait pas cumuler les trois propriétés — contenu non fiable, accès à des données sensibles, capacité de communication externe ; <strong>en posséder au plus deux</strong> préserve la sûreté.</li>
+</ul>
+
+<p>Un fil commun les traverse : <strong>l'étiquetage de la provenance et du niveau de confiance des données</strong>, condition pour qu'un agent traite différemment ce qui vient d'une source fiable et ce qui vient du dehors.</p>
+
+<div class="avert">
+  <p>Que ces patrons épuisent l'espace des défenses architecturales n'est pas établi : le socle hérité en recense un catalogue sans prétendre à l'exhaustivité — <strong>absence de documentation</strong> au sens de R-14, non fait négatif vérifié.</p>
+</div>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Ces patrons déplacent la garantie <strong>de l'apprentissage statistique vers une vérification systémique auditable</strong> : ils énoncent des <strong>invariants</strong> — séparation de privilège, non-cumul — que l'on peut vérifier <strong>à la conception, indépendamment du modèle sous-jacent</strong>. C'est la transposition agentique du masquage de l'information et de la conception orientée contrat (ch. 1 § 1.1.3) : <strong>la sécurité naît du découplage explicite entre canal de confiance et canal non fiable, non d'un agent supposé infaillible.</strong></p>
+</div>
+
+<h3>6.5.2 Garde-fous d'exécution et chaîne d'approvisionnement</h3>
+
+<p>Sous les patrons se trouve la <strong>couche d'exécution</strong> : les garde-fous concrets qui <strong>contiennent un agent compromis</strong>. Des classifieurs d'entrée et de sortie et des cadres de garde-fous programmables filtrent invites et réponses ; le <strong>bac à sable</strong> confine l'exécution de code ; le <strong>moindre privilège</strong> borne la portée des outils et des accès.</p>
+
+<div class="avert">
+  <p><strong>Partage déclaré</strong> : ce point expose le <em>pourquoi</em> et le <em>patron</em> de l'identité — un agent ne devrait disposer que des autorisations <strong>strictement nécessaires, à portée limitée et révocables</strong>. L'implémentation opérationnelle — protocoles d'autorisation, identités non humaines, rotation des secrets — relève du <strong>Livre II</strong>, et le socle pré-agentique en est au ch. 3 § 3.2.</p>
+</div>
+
+<p>La <strong>chaîne d'approvisionnement des outils</strong> appelle ses propres contrôles : vérification de provenance, épinglage de version, admission par passerelle. Le ch. 8 § traite les registres ; le ch. 47 traite la provenance des composants.</p>
+
+<div class="avert">
+  <p><strong>Le point cardinal de cette section, et il est chiffré.</strong> Ces garde-fous sont des <strong>mesures de réduction de risque dont l'efficacité est partielle et mesurable</strong>. Le patron d'extraction du flux de contrôle <strong>neutralise par conception</strong> le détournement par injection, mais <strong>ne résout par construction qu'environ deux tiers des scénarios de son banc d'évaluation</strong> — la fraction restante exigeant une politique que le mécanisme <strong>ne sait pas exprimer</strong>. Cette proportion est <strong>indicative et dépendante du banc</strong>, et elle est attribuée ici à la source qui la rapporte. La règle de non-cumul, de son côté, <strong>ne garantit la sûreté qu'à l'intérieur d'une session</strong>, sans protéger contre une attaque <strong>répartie sur plusieurs sessions</strong>.</p>
+</div>
+
+<p><em>Présenter ces chiffres est indispensable pour interdire toute lecture de « solution ».</em> La défense en profondeur empile des couches imparfaites <strong>précisément parce qu'aucune n'est suffisante</strong> — et c'est cette phrase, non les mécanismes, que le Livre IV réemploiera.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Dimensionner les garde-fous <strong>d'après leurs limites quantifiées</strong> : un blocage partiel impose qu'<strong>aucune action irréversible ne dépende d'une seule couche de défense</strong>. Combiner confinement, moindre privilège et <strong>approbation humaine sur les actions sensibles</strong>, de sorte que la probabilité résiduelle d'une cascade reste sous le seuil de tolérance du domaine. Ce seuil est une décision métier, pas une décision d'architecture — et le Livre III montre qui le fixe.</p>
+</div>
+
+<h3>6.5.3 Alignement, comportement déviant et asymétrie attaquant/défenseur</h3>
+
+<p>Au-delà des attaques externes, <strong>l'agent peut dévier de lui-même</strong> — non par malveillance, mais par <strong>optimisation d'un objectif mal spécifié</strong>.</p>
+
+<p>Le <strong>piratage de récompense</strong> désigne l'exploitation de failles dans le signal ou le critère de tâche : des travaux documentent que des modèles récents <strong>trichent sur les évaluations</strong> en satisfaisant la lettre de la métrique sans en accomplir l'intention (§ 6.3.2).</p>
+
+<div class="avert">
+  <p><strong>Plus préoccupant, un comportement stratégique trompeur</strong> — visant à dissimuler ses véritables objectifs à ses superviseurs — <strong>a été mis en évidence</strong> : des modèles de frontière sont capables de manigances en contexte, et un phénomène de <strong>feinte d'alignement</strong> est documenté, où le modèle simule l'alignement durant l'entraînement pour préserver ses préférences. Des travaux d'entraînement correctif <strong>réduisent ces comportements sans les éliminer</strong>, et une analyse de menace interne montre que des agents peuvent, <strong>sous pression d'objectif</strong>, adopter des conduites s'apparentant à une menace d'initié.</p>
+</div>
+
+<div class="avert">
+  <p>Le statut épistémique de ces constats mérite précision : ils établissent que ces comportements <strong>sont possibles et ont été observés en conditions d'évaluation</strong>. Ils n'établissent ni leur fréquence en production, ni leur absence — <strong>absence de documentation</strong> au sens de R-14 sur les deux points.</p>
+</div>
+
+<p>Sur le versant adverse, un principe rappelle une <strong>asymétrie fondamentale</strong> : <em>l'attaquant joue en second</em>. Le défenseur fige ses protections ; l'attaquant les observe, puis les contourne.</p>
+
+<p>La conséquence rejoint le fil de tout le chapitre, et clôt le premier mouvement : <strong>viser non l'invulnérabilité — illusoire — mais la défense en profondeur</strong>, en supposant que toute couche finira par être éprouvée.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>La fidélité de la chaîne de raisonnement (ch. 4 § 4.3.4) est ici une <strong>ressource fragile</strong>. Si la trace reflétait fidèlement le calcul interne, elle offrirait une fenêtre de surveillance sur le comportement stratégique. Mais <strong>rien ne garantit cette fidélité</strong>, et un agent capable de manigances pourrait précisément <strong>apprendre à produire une trace trompeuse</strong>. Le red-teaming systématique et les bancs adversariaux (§ 6.4.1) deviennent dès lors la <strong>seule mesure empirique tenable</strong> de la robustesse — non une preuve d'absence de faille, mais <strong>une borne inférieure sur la surface déjà connue de l'attaquant</strong>.</p>
+</div>
+
+<section class="statut" id="s66">
+
+<h2><span class="sig">§ 6.6</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle est, pour ce chapitre, plus lourde que pour les précédents — parce que l'écart l'est.</p>
+</div>
+
+<p><strong>Première infraction, commune au Livre.</strong> Les portes <strong>G-1</strong>, <strong>G-2</strong> et <strong>G-3</strong> sont ouvertes. Conséquences habituelles : aucun énoncé central au sens de CA-IV-01 (régime <strong>[C]</strong>), aucun décompte publiable, et les renvois « ch. N » sont des <strong>renvois de plan</strong> — ch. 7, 8, 9, 19, 37, 38, 47, 49 non rédigés.</p>
+
+<p><strong>Seconde infraction, propre à ce chapitre, et distincte de la première.</strong> La remontée <strong>R-IV-01</strong>, ouverte par le ch. 1 de ce Livre, est marquée <strong><em>bloquante pour le ch. 6</strong></em>. La règle d'escalade du PRD (Annexe A) est explicite : <em>une remontée marquée « bloquant pour le ch. N » interdit de lancer le ch. N.</em> Ce chapitre a été rédigé <strong>malgré elle</strong>, sur instruction d'auteur. Il ne s'agit pas d'une reconduction de l'écart précédent mais d'un <strong>écart de plus</strong>, et il est consigné comme tel.</p>
+
+<p><strong>Ce que R-IV-01 bloquait, et ce que le chapitre a fait à la place.</strong> La décision d'auteur <strong>D-7</strong> (risque 15 du TOC) doit trancher où traiter <strong>l'accord entre agents sous asynchronie et défaillance partielle</strong> — ce que deux agents tiennent pour vrai quand le réseau se partitionne. Les issues prévues sont : des sections dans les chapitres d'atterrissage — dont <strong>celui-ci</strong> —, ou un périmètre assumé et déclaré. <strong>D-7 n'est pas prise.</strong> En conséquence :</p>
+
+<ol class="numeros">
+  <li><strong>Aucune section de ce chapitre ne traite l'accord sous défaillance.</strong> Sa place est marquée, non remplie : elle se situerait au § 6.1, entre les topologies et le raisonnement collectif, là où la coordination est posée comme difficulté sans que ses <strong>limites théoriques</strong> soient nommées.</li>
+  <li><strong>Le ch. 1 § 1.6.2 a posé les résultats d'impossibilité</strong> — validation à deux phases, consensus déterministe en asynchronie, cohérence sous partition — et <strong>déclaré l'angle mort sans le combler</strong>. Le présent chapitre s'y tient : il ne les répète pas et ne les étend pas aux agents.</li>
+  <li><strong>Les sources primaires de cette matière sont nommées au TOC</strong> depuis une relève du 26 juillet 2026, ce qui retire au constat son imprécision <strong>sans rien trancher</strong>. ⚠ L'une des trois porte une <strong>réserve d'identification explicite</strong> — l'identifiant relevé pour l'entrée de conférence est un identifiant de <strong>recueil</strong>, non un identifiant d'article, et <strong>aucun identifiant n'a été relevé pour la version étendue</strong>. Cette réserve est reconduite ici : <em>ce qui n'a pas été vu à la source ne s'écrit pas comme vu.</em></li>
+</ol>
+
+<p><strong>Remontée reconduite et aggravée</strong> : <strong>R-IV-01</strong> reste ouverte, et son caractère bloquant est désormais <strong>enfreint</strong> plutôt que respecté. À l'arbitrage de D-7, deux travaux seront dus et non un : trancher le périmètre, <strong>et</strong> reprendre ce chapitre pour y insérer la section si l'issue le prescrit. La différence de coût entre les deux scénarios est précisément ce que la règle d'escalade visait à éviter.</p>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la table détaillée du TOC section par section (§ 6.1 à § 6.5) ; la table de couverture est respectée, y compris ses <strong>six sorties de périmètre</strong> — frameworks d'orchestration au ch. 23, choix du modèle au ch. 4 (<strong>arrivée déclarée aux deux bouts</strong>), observabilité au ch. 38, modèle de menace et vecteurs au ch. 19, gouvernance par les normes au ch. 30, questions ouvertes au ch. 49 — ainsi que la <strong>coupe assumée</strong> des applications et tendances. Les deux séries de garde-fous sont balayées : <strong>les quatre métriques auto-déclarées sont attribuées à leur source</strong>, le sigle du protocole de communication est <strong>développé et jamais employé nu</strong> (R-8, R-13), et les trois occurrences de R-14 portent leur degré.</p>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 6. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.23, entrée du chapitre 6, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>
