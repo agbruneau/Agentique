@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 9 — Découverte, registres, portabilité et pile protocolaire · La somme agentique</title>
+<meta name="description" content="la découverte et le nommage des agents, et la portabilité inter-modèles/inter-cadriciels, sont les propriétés que l&#x27;étagement de la pile protocolaire rend possibles — ou trahit.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre I · Chapitre 9</div>
+  <ol>
+    <li><a href="#s91"><span class="num">9.1</span>Découverte, registres et nommage des agents et des outils</a></li>
+    <li><a href="#s92"><span class="num">9.2</span>La pile de protocoles agentiques et son étagement</a></li>
+    <li><a href="#s93"><span class="num">9.3</span>Portabilité inter-modèles et inter-cadriciels</a></li>
+    <li><a href="#s94"><span class="num">9.4</span>Interopérabilité sémantique des agents : de l&#x27;accord de protocole à la compréhension</a></li>
+    <li><a href="#s95"><span class="num">9.5</span>Test de conformité et certification des protocoles</a></li>
+    <li><a href="#s96"><span class="num">9.6</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.23 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="09-decouverte-registres-pile.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique</div>
+  <h1><span class="chap">Chapitre 9</span>Découverte, registres, portabilité et pile protocolaire</h1>
+  <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11)</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — portes G-1, G-2 et G-3 ouvertes ; instruction d'auteur du 27 juillet 2026</dd>
+    <dt>Date de gel</dt>
+    <dd><strong>Aucune</strong> (D-1 non prise). Gel de source : <strong>juin 2026</strong> (Vol. I). ⚠ La <strong>matrice de maturité</strong> du § 9.2.5 est un <strong>livrable daté</strong> : son intérêt tient à ce qu'elle situe chaque protocole à une date, et elle <strong>se périme en bloc</strong> — c'est un instantané, non un classement durable</dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte). Résolution contre le <strong>Vol. I <em>Monographie</em> §3.4, §3.5, §3.7-3.8 et §3.12</strong>, en régime <strong>[C]</strong> (PRD §7.1). <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd>Vol. II — <strong>R-1 : une occurrence</strong>, § 9.2.1 ; <strong>R-8 : trois occurrences</strong>, § 9.2.1 et § 9.3.5, toujours qualifiées, le siège de l'encadré restant au <strong>ch. 7 § 7.5</strong> ; <strong>réserve F-01 : une occurrence</strong>, § 9.5.2 ; <strong>métriques auto-déclarées : une occurrence</strong>, § 9.2.5, attribuée. R-2 à R-7 : <strong>zéro occurrence</strong>. Vol. III — <strong>R-02 : deux occurrences</strong>, § 9.1.5 et § 9.4.4 ; <strong>R-13 : trois occurrences</strong>, mêmes que R-8 ; <strong>R-14 : cinq occurrences</strong> — § 9.1.1, § 9.3.4, § 9.4.4, § 9.5.3 et § 9.6 —, ce qui en fait le chapitre du Livre le plus dense en énoncés d'absence. R-01, R-03 à R-12 : <strong>zéro occurrence</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ 9 000 mots de corps (§ 9.1 à § 9.5). ⚠ <strong>Aucun décompte n'est publiable</strong> tant que G-2 est ouverte</dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>la découverte et le nommage des agents, et la portabilité inter-modèles/inter-cadriciels, sont les propriétés que l'étagement de la pile protocolaire rend possibles — ou trahit.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.23, entrée du chapitre 9.</span>
+</div>
+
+<h2 id="s91"><span class="sig">§ 9.1</span>Découverte, registres et nommage des agents et des outils</h2>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p><strong>Versant protocolaire seul.</strong> ⚠ Le §3.4 de la source est <strong>partagé déclaré</strong> avec le <strong>ch. 15</strong> (Livre II), qui en prend le <strong>versant identité et conformité</strong> — les registres <em>gouvernés</em>. Ce qui suit est un <strong>pont, pas une reprise</strong> : le ch. 15 ne reconstruira pas ce chapitre, et ce chapitre ne préempte pas le sien.</p>
+</div>
+
+<p>La pile décrite jusqu'ici suppose résolu un problème qu'elle <strong>ne traite pourtant pas de front</strong> : avant qu'un agent puisse appeler un outil ou déléguer une tâche, il doit d'abord <strong>savoir que cet outil ou ce pair existe</strong>, <strong>juger qu'il convient</strong> à la tâche du moment, puis <strong>obtenir une adresse</strong> pour l'atteindre.</p>
+
+<div class="avert">
+  <p><strong>La proposition organisatrice de cette section mérite d'être posée d'emblée, parce qu'elle contredit une lecture naturelle.</strong> La vraie nouveauté agentique <strong>ne tient pas à la découverte prise isolément</strong> — l'intégration d'entreprise la pratique depuis longtemps (ch. 1 § 1.4.3) — mais au <strong>couplage indissociable de la découverte, de l'identité et de la confiance</strong>. <em>Trouver un agent ne sert à rien si l'on ne peut établir qui il est ni se fier à ce qu'il prétend offrir.</em> Ce triptyque reformule l'invariant du Livre à l'échelle d'un <strong>réseau ouvert d'acteurs auto-descriptifs</strong>.</p>
+</div>
+
+<h3>9.1.1 La leçon d'UDDI : une récurrence en trois temps</h3>
+
+<p>L'écosystème agentique <strong>rejoue un cycle déjà observé</strong>, et le ch. 1 § 1.3.1 en avait posé le premier temps.</p>
+
+<p>Au début des années 2000, l'architecture des services web reposait sur une trinité où un langage décrivait les interfaces et où un <strong>annuaire universel et public</strong> ambitionnait de recenser les services. ⚠ <strong>Cet annuaire a échoué relativement</strong>, et le diagnostic est précis : trop ambitieux dans sa portée mondiale, il supposait une découverte <strong>au temps de conception</strong> — un développeur consulte le registre, choisit un service, code l'intégration — là où le besoin réel d'appariement <strong>à l'exécution</strong> restait marginal. Les grands annuaires publics ont fermé.</p>
+
+<p><strong>La leçon n'est pas que les registres sont inutiles</strong>, et c'est le contresens le plus fréquent. Elle est que <strong>la curation et la fédération l'emportent sur le tout-dynamique et la centralisation</strong>. Le pendule est revenu, par les registres d'API d'entreprise, vers des catalogues <strong>gouvernés et de portée maîtrisée</strong>.</p>
+
+<p>Le passage aux registres d'agents prolonge cette récurrence, et les premières taxonomies des solutions — centralisées, d'entreprise, distribuées — <strong>retrouvent le même arbitrage</strong>. Deux propositions en découlent et structurent la suite :</p>
+
+<ol class="numeros">
+  <li><strong>la découverte sous curation surpasse le tout-dynamique</strong> ;</li>
+  <li><strong>la fédération surpasse la centralisation</strong>.</li>
+</ol>
+
+<p><em>L'enjeu agentique n'est donc pas de réinventer l'annuaire, mais d'éviter de répéter l'erreur tout en ajoutant ce que les services web n'avaient pas : un appariement sémantique à l'exécution et une couche de confiance native.</em></p>
+
+<div class="avert">
+  <p>Que ces deux propositions valent au-delà du cas historique dont elles sont tirées n'est pas établi : elles sont <strong>inférées d'une récurrence observée</strong>, non démontrées. C'est, au sens de R-14 du Vol. III, une <strong>absence de documentation</strong> sur leur généralité.</p>
+</div>
+
+<h3>9.1.2 Trois moments qu'il ne faut pas confondre</h3>
+
+<p>La découverte agentique se décompose en <strong>trois moments distincts</strong> :</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Moment</th><th>Question</th><th>Nature</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Découverte</strong></td><td><em>qui existe ?</em></td><td>énumérer les agents et outils accessibles dans un périmètre</td></tr>
+    <tr><td><strong>Sélection</strong></td><td><em>qui convient à <strong>cette</strong> tâche ?</em></td><td>choisir parmi les candidats celui dont les capacités répondent à l'intention</td></tr>
+    <tr><td><strong>Résolution</strong></td><td><em>où et comment l'atteindre ?</em></td><td>obtenir adresse, transport et paramètres de connexion</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 9.1 — Les trois moments de la découverte agentique, que le monde des services web réduisait à un seul.</p>
+
+<p>Dans le monde des services web, ces trois moments <strong>se réduisaient pour l'essentiel à une recherche d'adresse exacte au temps de conception</strong>.</p>
+
+<div class="avert">
+  <p><strong>La spécificité agentique tient à ce que les capacités sont décrites en langage naturel assorti de schémas, et que la sélection devient un appariement sémantique — non une résolution exacte.</strong> Un agent client formule un besoin <strong>en intention, pas en signature de méthode</strong> ; le système doit donc rapprocher une <em>description de tâche</em> d'une <em>description de capacité</em> — opération <strong>intrinsèquement probabiliste et lue par le modèle à l'inférence</strong>.</p>
+</div>
+
+<p>Ce déplacement explique pourquoi <strong>le deuxième moment concentre la difficulté</strong> : il recoupe directement l'interopérabilité sémantique du § 9.4, et <strong>ne peut, en l'état des protocoles, s'appuyer sur aucune garantie déterministe d'adéquation</strong>.</p>
+
+<h3>9.1.3 Auto-description et catalogues fédérés</h3>
+
+<p>Le premier moment s'appuie sur des <strong>artefacts d'auto-description</strong> publiés par chaque acteur et agrégés en <strong>catalogues fédérés</strong>.</p>
+
+<p>Côté agent-agent, la <strong>carte d'agent</strong> est exposée à un emplacement <strong>bien connu</strong>, de sorte que tout client peut récupérer la description d'un agent <strong>à partir de son seul domaine</strong> (ch. 8 § 8.4.2). Côté schématisation des capacités, un <strong>cadre de schéma ouvert</strong> propose un format normalisé pour décrire ce qu'un agent sait faire. Côté agent-outil, un <strong>registre</strong> fournit un catalogue assorti d'une interface décrite formellement, selon un <strong>modèle fédéré plutôt que centralisé</strong>, un nommage en domaine inversé, et <strong>plusieurs voies de vérification de propriété</strong>.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>⚠ <strong>Distinguer un <em>registre</em> d'une <em>place de marché</em> est opérationnel, non rhétorique.</strong> Le registre sert la <strong>découverte technique</strong> — résoudre un nom vers une description et une adresse <strong>vérifiables</strong> ; la place de marché sert la <strong>distribution commerciale</strong> — vitrine, monétisation, curation éditoriale (§ 9.1.5). Et <em>un catalogue est lui-même un contrat</em>, soumis à versionnage et dépréciation <strong>comme les protocoles qu'il indexe</strong> : l'invariant du Livre s'applique au registre autant qu'à l'outil qu'il décrit.</p>
+</div>
+
+<h3>9.1.4 Annuaires, services de noms et registres d'identité</h3>
+
+<p>Au-delà du catalogue, une couche d'<strong>annuaires et de services de noms</strong> vise à résoudre un <strong>identifiant stable</strong> d'agent vers une <strong>identité vérifiable</strong> et une <strong>adresse courante</strong> — fonction analogue à celle du système de noms de domaine, <strong>mais adossée à une preuve cryptographique</strong>.</p>
+
+<p>Trois familles d'initiatives coexistent : un <strong>annuaire fédéré centré sur les capacités</strong>, à adressage par contenu, signature de provenance et distribution par table de hachage ; un <strong>service de noms</strong> proposant une résolution analogue au système de noms de domaine doublée d'une infrastructure à clés publiques, dont une seconde version est ancrée au domaine ; et un <strong>groupe communautaire de normalisation</strong> cherchant à coordonner les efforts épars autour d'<strong>attestations vérifiables liant un agent à son organisation</strong>.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>⚠ <strong>Le verrou conceptuel commun à ces initiatives est de distinguer trois objets que le système de noms de domaine confond</strong> : l'<strong>identifiant stable</strong> — qui désigne durablement l'agent —, l'<strong>adresse</strong> — où le joindre, <strong>mutable</strong> — et la <strong>capacité</strong> — ce qu'il sait faire, <strong>versionnée</strong>. Des travaux poussent cette séparation jusqu'à une couche de <strong>faits attestés</strong> au-delà du système de noms, tandis que des explorations natives testent <strong>l'hypothèse inverse</strong> : réutiliser l'infrastructure existante. <em>Un service de noms n'est fiable que si l'identité résolue est elle-même attestée</em> — et c'est le ch. 15 qui en traite le versant gouverné.</p>
+</div>
+
+<h3>9.1.5 Places de marché, gouvernance et modes d'échec des registres</h3>
+
+<p>Par-dessus la couche technique se greffe une <strong>couche commerciale</strong>, où coexistent jardins clos propriétaires et standards ouverts. Cette couche pose des exigences que la simple résolution n'impose pas : <strong>vérification de propriété, signatures et provenance, mécanismes de révocation</strong>.</p>
+
+<div class="avert">
+  <p><strong>Or l'introduction d'un registre crée des modes d'échec qui lui sont propres</strong>, distincts de ceux d'un agent isolé :</p>
+</div>
+
+<ul class="puces">
+  <li>une <strong>carte d'agent ou une description d'outil peut mentir</strong> sur ses capacités réelles ;</li>
+  <li>le nommage ouvre la porte au <strong>typosquattage</strong> et à l'<strong>appropriation d'espaces de noms</strong> ;</li>
+  <li>le <strong>registre lui-même peut être empoisonné</strong>, et la résolution <strong>diriger un client vers un imposteur</strong> ;</li>
+  <li>la <strong>dépendance à un registre central recrée le point unique de défaillance</strong> que l'échec historique du § 9.1.1 illustrait — et que la fédération vise précisément à éviter.</li>
+</ul>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>La parade tient à <strong>l'attestation à chaque étage</strong> plutôt qu'à la confiance dans un opérateur unique : provenance cryptographique et adressage par contenu contre la carte mensongère et le squattage ; <strong>révocation coordonnée</strong> et signature des descriptions contre la résolution vers imposteur. ⚠ <strong>Qualification, au sens de R-02 du Vol. III</strong> : une signature de provenance <strong>démontre</strong> qu'un artefact provient de la clé déclarée et n'a pas été altéré ; elle <strong>ne démontre pas</strong> que la description est exacte, ni que l'outil se comporte comme elle l'annonce. <em>Signer une carte mensongère produit une carte mensongère authentifiée.</em></p>
+</div>
+
+<p>La gouvernance d'une place de marché — curation, examen, retrait — relève de <strong>l'interopérabilité organisationnelle, non du seul protocole</strong> : c'est un contrat de confiance entre opérateur, fournisseur et consommateur.</p>
+
+<h2 id="s92"><span class="sig">§ 9.2</span>La pile de protocoles agentiques et son étagement</h2>
+
+<h3>9.2.1 Pourquoi une « pile » : du protocole isolé au modèle en couches</h3>
+
+<p>L'écosystème <strong>n'a pas émergé comme un protocole unique</strong> mais comme une <strong>famille de spécifications apparues en moins de deux ans</strong>.</p>
+
+<div class="avert">
+  <p><strong>L'observation structurante est que ces spécifications n'occupent pas le même emplacement fonctionnel</strong> : le protocole agent-outil régit le contrat <strong>vertical</strong>, le protocole agent-agent le contrat <strong>horizontal</strong>, les protocoles de règlement la <strong>couche économique</strong>. <em>Elles s'étagent davantage qu'elles ne se concurrencent.</em></p>
+</div>
+
+<p>Cette lecture doit toutefois être nuancée par un fait établi au ch. 8 § 8.6.3 : <strong>la frontière entre les deux axes principaux reste floue</strong>, les tâches asynchrones de l'un empiétant sur le terrain de la délégation de l'autre.</p>
+
+<div class="avert">
+  <p><strong>Deux registres se distinguent, et les confondre est la faute de cette section.</strong> La pile <strong>descriptive</strong>, <em>de facto</em>, retenue ici <strong>parce qu'elle décrit ce que les architectes assemblent effectivement</strong> ; et les propositions <strong>normatives</strong>, qui prétendent <strong>prescrire</strong> un ordonnancement strict des couches. C'est la première qui structure la suite.</p>
+</div>
+
+<div class="avert">
+  <p>Parmi les spécifications de cette famille figure l'<strong>ACP protocolaire</strong>, dont le ch. 8 § 8.5.1 a établi qu'il <strong>a fusionné</strong> et <strong>n'est pas un standard vivant</strong> (R-1 du Vol. II). Il figure à la généalogie de la pile, <strong>jamais à son état courant</strong> — et son sigle, comme les trois autres branches de la collision, n'est <strong>jamais employé nu</strong> (R-8, R-13 ; siège de l'encadré au ch. 7 § 7.5).</p>
+</div>
+
+<h3>9.2.2 L'analogie en couches et ses limites</h3>
+
+<p>La métaphore d'une pile en couches <strong>s'est imposée comme outil pédagogique</strong>, et plusieurs travaux la formalisent en modèles explicites.</p>
+
+<div class="avert">
+  <p><strong>Le décompte de couches diffère d'une proposition à l'autre, ce qui suffit à signaler qu'aucune n'a été adoptée comme référence</strong> : ces modèles restent des <strong>contributions académiques concurrentes</strong>, et les citer comme un cadre canonique serait une faute de statut.</p>
+</div>
+
+<p>L'analogie capture utilement l'idée d'<strong>emplacements fonctionnels distincts</strong> et d'<strong>encapsulation</strong>, mais elle <strong>masque trois traits propres au domaine</strong> :</p>
+
+<ol class="numeros">
+  <li><strong>la négociation dynamique de capacités à l'exécution n'a pas d'équivalent</strong> dans le modèle d'origine, où les couches sont fixées à la conception — l'alternative décentralisée du ch. 8 § 8.5.2 en fait pourtant une primitive ;</li>
+  <li><strong>les dépendances inter-couches ne sont pas strictes</strong> — un agent peut combiner les deux axes <strong>sans hiérarchie imposée</strong> ;</li>
+  <li><strong>le contenu transporté n'est pas un format binaire mais des intentions sémantiques</strong>, dont l'interprétation <strong>déborde toute couche de transport</strong>.</li>
+</ol>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Ces propositions illustrent une <strong>tension méthodologique</strong> : transposer un modèle conçu pour des <strong>canaux déterministes</strong> à des <strong>acteurs probabilistes et auto-descriptifs</strong>. Une grille d'analyse en trois plans suggère pourquoi <strong>aucune ne fait consensus</strong> : une pile en couches modélise bien le transport et la syntaxe, mais <strong>le niveau sémantique-pragmatique résiste à la stratification</strong>, car <em>l'alignement d'intentions traverse l'ensemble de la pile plutôt que d'y occuper une couche</em>.</p>
+</div>
+
+<h3>9.2.3 Les couches transversales : positionnement par renvoi</h3>
+
+<p>Cette sous-section <strong>ne réintroduit aucun protocole déjà traité</strong> ; elle se borne à les <strong>positionner les uns par rapport aux autres</strong>. C'est un choix délibéré contre le catalogue redondant, et il est conforme à la doctrine de la somme : <em>une notion posée une fois se cite, elle ne se répète pas.</em></p>
+
+<p>Quatre strates fonctionnelles structurent la pile descriptive :</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Strate</th><th>Ce qu'elle couvre</th><th>Où elle est traitée</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Transport et session</strong></td><td>trajectoire vers le découplage, liaisons multiples</td><td>ch. 8 § 8.1.3</td></tr>
+    <tr><td><strong>Découverte et capacités</strong></td><td>trouver, sélectionner, résoudre</td><td>§ 9.1</td></tr>
+    <tr><td><strong>Sémantique et orchestration</strong></td><td>l'écart entre accord de protocole et compréhension</td><td>§ 9.4</td></tr>
+    <tr><td><strong>Identité et confiance</strong></td><td>⚠ <strong>transversale</strong> — ne s'empile pas, <strong>traverse tout</strong></td><td>ch. 3, Livre II</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 9.2 — Quatre strates, dont une seule n'est pas empilable.</p>
+
+<div class="avert">
+  <p><strong>La strate d'identité est résolument transversale, et ce fait est décisif</strong> : elle <strong>ne s'empile pas au-dessus des autres mais les traverse toutes</strong>, puisque <strong>chaque arête du graphe d'interaction</strong> — appel d'outil, délégation de tâche, traversée de frontière organisationnelle — <strong>requiert authentification, autorisation et provenance</strong>. <em>Ce caractère non stratifiable de l'identité est précisément l'une des limites de l'analogie relevée au § 9.2.2</em> — et la raison pour laquelle le Livre II est un livre entier plutôt qu'une couche.</p>
+</div>
+
+<h3>9.2.4 Composition : des protocoles simultanés, non alternatifs</h3>
+
+<div class="avert">
+  <p><strong>Le point décisif, souvent mécompris lorsqu'on présente ces protocoles comme rivaux, est qu'ils sont <em>simultanés</em> et non <em>alternatifs</em>.</strong></p>
+</div>
+
+<p>Un scénario de référence le rend tangible. Un agent assistant traitant une demande utilisateur invoque, <strong>dans une même session</strong> : le protocole <strong>agent-outil</strong> pour accéder à ses outils et ressources ; le protocole <strong>agent-agent</strong> pour déléguer un sous-objectif à un agent spécialisé d'un autre fournisseur ; une <strong>couche d'interface</strong> pour solliciter une validation ou un complément d'information de l'humain ; puis, si la tâche aboutit à un achat, une <strong>couche de règlement</strong> pour autoriser et exécuter le paiement (ch. 10).</p>
+
+<p>La <strong>configuration de référence</strong> observable en production combine d'abord <strong>les deux axes principaux</strong> : c'est le <strong>socle minimal</strong> d'un système agentique interopérable franchissant les frontières de cadriciel et d'organisation. Les couches agent-humain et règlement <strong>s'ajoutent selon le besoin applicatif</strong>.</p>
+
+<p>Cet emboîtement <strong>matérialise l'invariant</strong> : chaque couche est un <strong>contrat distinct</strong>, ce qui <strong>découple</strong> les préoccupations — <em>un changement de moyen de paiement n'affecte pas le contrat agent-outil</em> — et permet une <strong>évolution indépendante des strates</strong>.</p>
+
+<div class="avert">
+  <p>Le flou entre les deux axes principaux rappelle toutefois que <strong>l'emboîtement n'est pas étanche</strong> : la composition réelle relève d'un <strong>choix d'ingénierie</strong>, non d'une prescription protocolaire.</p>
+</div>
+
+<h3>9.2.5 Matrice de maturité et de décision</h3>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>⚠ <strong>Ce tableau est un instantané daté, et c'est sa valeur comme sa limite.</strong> Il croise, pour chaque protocole, l'axe couvert, le statut de maturité, la gouvernance et la recommandation d'usage. <strong>Les statuts reprennent strictement les qualifications des sections amont</strong> : <em>ce qui est marqué candidat ou expérimental ne doit pas être déployé comme acquis.</em></p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Protocole</th><th>Axe</th><th>Statut</th><th>Gouvernance</th><th>Usage recommandé</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Agent-outil</strong></td><td>vertical</td><td>production ; révision stable, <strong>candidate à venir</strong></td><td>fondation dédiée</td><td>socle pour exposer outils et ressources ; adopter la <strong>révision datée stable</strong>, traiter le cœur sans état comme <strong>cible</strong></td></tr>
+    <tr><td><strong>Agent-agent</strong></td><td>horizontal</td><td>production ; version 1.0 stable, écosystème large</td><td>fondation faîtière</td><td>standard de fait pour la délégation ; <strong>combiner</strong> avec le précédent</td></tr>
+    <tr><td><strong>Décentralisé</strong></td><td>horizontal + identité</td><td><strong>émergent</strong> ; conditionné à la maturité de son socle d'identité</td><td>communauté et groupe de normalisation</td><td>topologies pair-à-pair et négociation de méta-protocole ; <strong>horizon ≈ 2027</strong></td></tr>
+    <tr><td><strong>Règlement (mandat)</strong></td><td>économique</td><td><strong>émergent</strong> ; version préliminaire</td><td>⚠ <strong>fondation distincte</strong> du reste de la pile</td><td>couche de mandat vérifiable ; suivre la trajectoire (ch. 10)</td></tr>
+    <tr><td><strong>Règlement (machine-natif)</strong></td><td>économique</td><td>émergent <strong>à traction réelle</strong></td><td>fondation dédiée</td><td>micropaiements ; <strong>la plus forte traction de production</strong> de sa couche</td></tr>
+    <tr><td><strong>Commerce (paiement)</strong></td><td>commercial</td><td>émergent ; spécification <strong>mouvante</strong></td><td>consortium d'éditeurs</td><td>achat agentique ; <strong>à suivre par révision datée</strong></td></tr>
+    <tr><td><strong>Interface agent-humain</strong></td><td>agent-humain</td><td><strong>expérimental</strong></td><td>fondation dédiée / communauté</td><td>validation et interfaces riches ; <strong>hors production critique</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 9.3 — Matrice de maturité et de décision, à la date d'arrêt des sources. Instantané, non classement durable.</p>
+
+<div class="avert">
+  <p><strong>Métrique auto-déclarée, attribuée</strong> : le jalon d'adoption cité pour le protocole agent-agent est <strong>rapporté par la fondation gestionnaire</strong>, et la réserve du ch. 7 § 7.6 s'applique — <em>soutien n'est pas production</em>.</p>
+</div>
+
+<p><strong>La logique de décision se résume ainsi.</strong> Pour un système interopérable de production, <strong>les deux axes principaux constituent le socle minimal</strong> ; la couche agent-humain s'ajoute dès qu'un point de validation ou une interface riche est requis ; la couche de règlement n'intervient que pour les cas commerciaux et reste <strong>le segment le moins stabilisé</strong>, avec <strong>une gouvernance distincte du reste de la pile</strong>. Les protocoles marqués émergents appellent <strong>une veille active plutôt qu'un engagement architectural irréversible</strong>.</p>
+
+<h2 id="s93"><span class="sig">§ 9.3</span>Portabilité inter-modèles et inter-cadriciels</h2>
+
+<p>La portabilité est une <strong>dimension d'interopérabilité distincte</strong> de celles examinées jusqu'ici. Là où les sections précédentes traitent de la capacité de systèmes hétérogènes à <strong>dialoguer</strong>, celle-ci traite de la capacité d'une application à <strong>changer de modèle sous-jacent ou de cadriciel d'exécution sans réécriture</strong> — c'est-à-dire de la lutte contre la <strong>dépendance captive</strong>.</p>
+
+<h3>9.3.1 Le standard de fait et le paradoxe du verrouillage inverse</h3>
+
+<p>Une interface d'invocation de modèles <strong>s'est imposée comme norme de fait, sans qu'aucun organisme de normalisation ne l'ait spécifiée</strong>. Sa diffusion procède de <strong>l'adoption en masse plutôt que d'un processus délibératif</strong> : les serveurs d'inférence ouverts et les passerelles tierces l'émulent <strong>précisément parce qu'elle est le format que la plupart des outils savent déjà parler</strong>.</p>
+
+<p>On retrouve ici la distinction classique entre standard <strong>de fait</strong> et standard <strong>de droit</strong> (ch. 1 § 1.1.1) : <em>la conformité n'est pas certifiée mais constatée à l'usage</em>.</p>
+
+<div class="avert">
+  <p><strong>Le paradoxe propre à ce cas tient à un double mouvement de couplage, et il mérite d'être suivi pas à pas.</strong> D'un côté, l'interface <strong>découple</strong> l'application du fournisseur : un client écrit pour elle peut, en principe, <strong>pointer vers un autre fournisseur compatible sans modifier son code</strong>. De l'autre, <strong>cette même portabilité instaure un verrouillage inverse</strong> — non plus à un fournisseur mais à un <strong>schéma</strong> : l'écosystème entier se conforme à la forme de ce contrat, et <strong>toute capacité qui s'en écarte devient, par construction, non portable</strong>.</p>
+</div>
+
+<p><em>Le découplage à l'égard du fournisseur se paie donc d'un couplage à l'égard d'une grammaire d'échange que personne ne gouverne formellement et dont l'évolution échappe à tout contrat public.</em> C'est, dans tout le Livre, l'illustration la plus nette de ce que le ch. 1 § 1.3 posait : le couplage ne disparaît pas, il se déplace.</p>
+
+<h3>9.3.2 Fragmentation des formats et passerelles de médiation</h3>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Trois familles de contrats coexistent : la plus portable, <strong>sans état</strong> ; une interface unifiée à <strong>primitives agentiques et à état</strong>, dont une variante antérieure porte une <strong>dépréciation annoncée et un retrait visé</strong> ; et un format <strong>sans état</strong> de référence chez un autre éditeur, souvent émulé par les passerelles. ⚠ <strong>La fragmentation n'est pas tant dans le tronc commun que dans les capacités avancées</strong> — appel d'outils, sorties structurées, gestion d'état serveur — <strong>qui divergent d'un fournisseur à l'autre et brisent la substituabilité</strong>.</p>
+</div>
+
+<p>La réponse de l'industrie est une <strong>couche d'adaptation</strong> qui normalise ces formats derrière une interface unique : bibliothèques et mandataires traduisant des centaines d'interfaces, plans de contrôle multi-fournisseurs, routage et repli.</p>
+
+<div class="avert">
+  <p><strong>Ces passerelles instancient des patrons déjà catalogués au ch. 1</strong> : le traducteur de message, le modèle de données canonique, la passerelle d'API (ch. 1 § 1.6.1 et § 1.4.3). <em>Le domaine agentique réemploie ici son propre passé sans toujours le savoir.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>La limite est structurelle et non conjoncturelle : la médiation converge vers le plus petit dénominateur commun</strong>, c'est-à-dire les fonctions que <strong>tous</strong> les fournisseurs partagent. Les capacités propres à un modèle <strong>restent inaccessibles ou doivent être traversées par des extensions non portables</strong> — <em>rouvrant la dépendance que la passerelle prétendait fermer</em>. C'est exactement le piège du modèle canonique que le ch. 1 § 1.6.1 décrivait : un pivot négligé dégénère en dénominateur appauvri.</p>
+</div>
+
+<h3>9.3.3 Interopérabilité des cadriciels par protocoles partagés</h3>
+
+<div class="avert">
+  <p><strong>L'interopérabilité entre cadriciels d'orchestration ne s'obtient pas par une norme d'agent unique qui les coifferait tous, mais par l'adoption commune de protocoles transversaux.</strong> C'est un fait de structure, et il vaut d'être opposé à l'intuition inverse.</p>
+</div>
+
+<p>Dès lors qu'un cadriciel parle ces protocoles, il devient <strong>capable de consommer les outils et de déléguer les tâches d'un autre</strong>, indépendamment de son modèle interne d'agent. <strong>La couverture demeure inégale</strong> : certains environnements annoncent une prise en charge native des deux axes, d'autres les couvrent à des degrés variables.</p>
+
+<p>La conséquence d'architecture est nette et conforme à l'invariant : <strong>le cadriciel devient un détail d'implémentation derrière un contrat protocolaire stable</strong>.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Cette convergence <strong>par protocoles partagés plutôt que par standard d'agent unique</strong> répond à un besoin qu'une prise de position érige en programme : l'interopérabilité <strong>inter-écosystèmes</strong> reste un chantier ouvert <strong>que l'adoption de protocoles communs amorce sans le clore</strong>. Des propositions de couche d'échange neutre entre agents hétérogènes explorent le même principe de découplage par médiation.</p>
+</div>
+
+<h3>9.3.4 Portabilité de la configuration et de la définition d'agent</h3>
+
+<div class="avert">
+  <p><strong>La portabilité du contrat d'invocation ne suffit pas : encore faut-il pouvoir transporter la définition d'un agent</strong> — ses instructions, ses conventions de projet, sa configuration.</p>
+</div>
+
+<p>Un <strong>manifeste en texte structuré, indépendant de l'outil</strong>, propose à cet effet un format dont l'adoption inter-environnements en a fait une convention largement reprise — c'est celui que le ch. 5 § 5.1.4 décrivait comme <strong>mémoire procédurale et spécification d'agent à la fois</strong>. D'autres approches visent une <strong>définition de plus haut niveau</strong>, neutre vis-à-vis du modèle.</p>
+
+<div class="avert">
+  <p><strong>La portabilité des invites, en revanche, demeure fragile</strong> : une invite optimisée pour un modèle <strong>se dégrade lors d'un transfert vers un autre</strong> — effondrement de format, perte de structure —, problème que des travaux de transfert inter-modèles tentent de circonscrire.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Et ce qui manque est plus profond que ce qui existe.</strong> Il <strong>n'existe pas de format d'agent portable et neutre</strong> comparable à ce que les notations de processus ont été pour les processus métier (ch. 1 § 1.6.2), <strong>ni de portabilité de l'état et de l'exécution durable</strong>, l'un comme l'autre restant liés à l'environnement d'origine.</p>
+</div>
+
+<p><em>La définition voyage ; l'exécution, elle, reste captive.</em> ⚠ Que ce format n'existe pas relève d'une <strong>absence de documentation</strong> au sens de R-14 : le socle n'en recense aucun, ce qui n'établit pas qu'aucune initiative n'y travaille.</p>
+
+<h3>9.3.5 Neutralité par fondation : un mécanisme anti-fragmentation, et ses deux limites</h3>
+
+<p>Le dernier levier contre la fragmentation est <strong>organisationnel plutôt que technique</strong>. Une fondation dédiée offre un <strong>foyer neutre</strong> où des artefacts d'<strong>origines concurrentes</strong> sont placés sous gouvernance commune, transposant à l'agentique le rôle qu'ont joué les organismes de normalisation pour l'interopérabilité classique (ch. 3 § 3.4.4) : <strong>neutraliser l'incitation d'un acteur dominant à verrouiller l'écosystème à son avantage</strong>.</p>
+
+<div class="avert">
+  <p><strong>Deux nuances s'imposent, et elles sont le contrepoids de cette section.</strong></p>
+</div>
+
+<p><strong>Première : le modèle n'est pas monolithique.</strong> La couche de paiement et d'identité commerciale <strong>ne converge pas vers la même fondation</strong> que le reste de la pile, mais vers une fondation d'authentification (ch. 10 § 10.1). <em>La pluralité des fondations neutres est une donnée structurelle, non un accident de transition.</em></p>
+
+<p><strong>Seconde, et surtout : la neutralité de gouvernance n'équivaut pas à l'interopérabilité technique acquise.</strong> Qu'un standard soit hébergé par une fondation indépendante garantit <strong>la maîtrise partagée de son évolution</strong> — <em>non que deux implémentations conformes se comprendront effectivement</em>. C'est exactement la distinction que le § 9.5 reprend, et elle est le pendant, au plan institutionnel, de la restriction que le ch. 7 portait à sa thèse : <em>la fondation règle le problème de la propriété du contrat ; elle ne dispense pas d'en éprouver l'exécution.</em></p>
+
+<h2 id="s94"><span class="sig">§ 9.4</span>Interopérabilité sémantique des agents : de l'accord de protocole à la compréhension</h2>
+
+<p>Les sections précédentes ont montré que les protocoles <strong>stabilisent rapidement le transport et la syntaxe</strong>, mais laissent ouverte la question décisive : <strong>deux agents qui échangent des messages valides partagent-ils la même interprétation de ce qu'ils s'échangent ?</strong></p>
+
+<p>C'est ici que se referme la thèse du ch. 2 — <em>les protocoles agentiques présupposent l'accord sémantique et ne le fournissent pas</em> — et que s'en mesure le prix.</p>
+
+<h3>9.4.1 L'écart entre accord de protocole et compréhension</h3>
+
+<div class="avert">
+  <p><strong>Un agent peut respecter scrupuleusement un protocole — émettre des messages bien formés, honorer le cycle de vie des tâches, signer sa carte — sans interpréter de la même manière que son interlocuteur l'intention véhiculée.</strong> <em>L'accord sur le protocole garantit que les octets transitent et se décodent ; il ne garantit pas que le sens transite.</em></p>
+</div>
+
+<p>Une grille d'analyse à trois plans — communication, syntaxique, sémantique — appliquée à dix-huit protocoles établit ce diagnostic : les protocoles dominants atteignent <strong>une bonne maturité aux plans de la communication et de la syntaxe</strong>, mais demeurent <strong>pauvres en mécanismes de clarification, d'alignement et de vérification du sens</strong>, lesquels sont <strong>repoussés vers la couche applicative</strong>.</p>
+
+<div class="avert">
+  <p><strong>Ce diagnostic recoupe la filiation du ch. 7 § 7.2.1 : le problème n'est pas neuf, il ressurgit sous une forme déplacée.</strong> Le socle théorique de la compréhension partagée est <strong>ancien et robuste</strong> — principe coopératif et maximes conversationnelles, terrain commun construit par étapes successives, théorie de la pertinence posant que l'interprétation mobilise des <strong>inférences contextuelles au-delà du contenu littéral</strong>.</p>
+</div>
+
+<p><em>Ces cadres rappellent que comprendre n'est jamais purement syntaxique : c'est inférer une intention en contexte, ce qu'aucune poignée de main protocolaire ne réalise à elle seule.</em></p>
+
+<h3>9.4.2 La sémantique lue par le modèle et l'écart description/comportement</h3>
+
+<p>Dans la pile agentique, <strong>la description d'un outil est, pour l'essentiel, du texte libre en langage naturel</strong>, lu par le modèle à l'inférence pour décider s'il convoque cet outil et avec quels arguments.</p>
+
+<div class="avert">
+  <p><strong>Cette sémantique lue par le modèle se distingue radicalement de celle d'un contrat d'API</strong> (ch. 1 § 1.4.2) : le schéma <strong>type formellement la forme</strong> des paramètres et de la sortie, mais <strong>c'est la prose descriptive — non vérifiable et non contraignante — qui porte le sens de l'opération et son effet réel</strong>.</p>
+</div>
+
+<p>Il en résulte un <strong>écart de sémantique</strong> entre ce que la description annonce et ce que le code exécute effectivement : <em>rien n'oblige le comportement à se conformer à la promesse textuelle.</em> Les sorties structurées et les schémas plus expressifs (ch. 8 § 8.2.3) <strong>resserrent la garantie sur la forme des résultats, mais ne comblent pas l'écart sur le sens de l'action</strong>.</p>
+
+<p>Les implications sont <strong>doubles</strong>, et la seconde est la plus grave :</p>
+
+<ol class="numeros">
+  <li>un <strong>défaut de description bénin</strong> produit un <strong>mauvais choix d'outil</strong> — le modèle convoque la mauvaise capacité parce que la prose ne reflète pas le comportement ;</li>
+  <li><strong>cette surface est exploitable</strong> : une description peut être rédigée <strong>pour induire le modèle en erreur</strong> — empoisonnement de description, traité au ch. 11.</li>
+</ol>
+
+<p><em>La description devient ainsi à la fois le contrat d'interopérabilité de l'outil et son point de vulnérabilité.</em></p>
+
+<h3>9.4.3 Ontologies de capacités et ancrage</h3>
+
+<p>Pour dépasser la prose libre, <strong>deux familles de solutions s'opposent</strong> — et le ch. 2 § 2.3 en a posé le socle pré-agentique.</p>
+
+<p>La première, <strong>symbolique et formelle</strong>, hérite des langages d'agents et des ontologies lourdes : <strong>expressives et vérifiables</strong>, mais <strong>rigides et coûteuses à maintenir</strong>, et dont l'échec d'adoption a marqué la lignée historique. La seconde s'en remet à des <strong>descriptions légères en langage naturel</strong> : souples, <strong>sans garantie de sens partagé</strong>.</p>
+
+<p>Une <strong>convergence par l'ontologie</strong> est venue rééquilibrer ce compromis : des cadres structurant agents, compétences, intentions, contextes, politiques et résultats ; un effort de standardisation d'une couche sémantique partagée entre analytique et IA ; un cadre de schéma relié à la découverte (§ 9.1.3). <strong>L'ancrage</strong> consiste alors à associer une intention exprimée à des <strong>classes explicites</strong> et à produire une <strong>spécification de tâche vérifiable par machine</strong> — pont vers les contrats comportementaux du ch. 7 § 7.1.5.</p>
+
+<div class="avert">
+  <p><strong>Le compromis demeure structurant, et aucune des deux voies ne le dissout</strong> : <em>plus la spécification est expressive et vérifiable, plus elle est coûteuse à produire et fragile à l'évolution ; plus elle est légère, moins elle garantit l'accord de sens.</em></p>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Recommandation d'architecture : <strong>réserver l'ancrage ontologique formel aux capacités critiques et inter-organisationnelles</strong>, où le coût de spécification se justifie, et <strong>tolérer les descriptions en langage naturel pour les outils internes à faible enjeu</strong>. Une gradation de l'effort, cohérente avec la matrice du § 9.2.5.</p>
+</div>
+
+<h3>9.4.4 Le modèle comme couche de médiation sémantique : une prise de position</h3>
+
+<p>Une voie alternative au modèle canonique formel du ch. 2 consiste à <strong>confier la réconciliation sémantique au modèle de langage lui-même</strong> : plutôt que de définir <em>a priori</em> un schéma pivot, demander au modèle d'<strong>apparier dynamiquement</strong> deux vocabulaires.</p>
+
+<p>Ses avantages sont réels : <strong>flexibilité, tolérance aux désalignements de surface, absence de modèle canonique à maintenir</strong>. ⚠ <strong>Ses risques le sont tout autant, et ils sont de nature différente</strong> : <strong>hallucination d'alignement</strong> — le modèle « invente » une correspondance <strong>plausible mais fausse</strong> —, <strong>non-déterminisme de la médiation</strong>, et <strong>dette technique déplacée du schéma vers les invites</strong>, plus difficile à versionner et à auditer.</p>
+
+<div class="avert">
+  <p><strong>La prise de position défendue est la suivante, et le plan la porte comme une position, non comme un fait : la médiation par modèle complète, mais ne remplace pas, l'interopérabilité sémantique formelle.</strong> <em>La souplesse probabiliste traite les cas que la spécification formelle n'avait pas anticipés ; la spécification formelle, en retour, contraint et vérifie les propositions du modèle.</em></p>
+</div>
+
+<p>Cette <strong>synthèse neuro-symbolique</strong> — un raisonnement <strong>contraint par l'ontologie</strong> — est argumentée dans une architecture où le raisonnement neuronal opère <strong>sous la contrainte d'une ontologie de domaine</strong>. <em>C'est cette articulation, et non l'un ou l'autre pôle isolé, qui répond au verrou tout en préservant le découplage : la couche formelle stabilise le contrat, la couche neuronale absorbe l'évolution.</em></p>
+
+<div class="avert">
+  <p><strong>Qualification, au sens de R-02 du Vol. III, et rappel du ch. 2 § 2.4.1</strong> : un appariement produit par modèle <strong>démontre une plausibilité lexicale</strong> ; il <strong>ne démontre pas une équivalence sémantique</strong>. Que la fiabilité de ces appariements n'ait pas de mesure établie hors bancs dédiés relève d'une <strong>absence de documentation</strong> au sens de R-14.</p>
+</div>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Le débat oppose <strong>deux régimes de garantie</strong> : la médiation purement neuronale <strong>maximise le rappel au prix de la précision vérifiable</strong> ; l'architecture contrainte par l'ontologie <strong>borne l'espace des alignements admissibles</strong>. <strong>La question ouverte est celle de la mesure</strong> : comment évaluer la fidélité d'un appariement autrement que sur des bancs dédiés, et <strong>comment propager une garantie de correction à travers une chaîne de délégations probabilistes ?</strong> Le ch. 49 la reprend.</p>
+</div>
+
+<h3>9.4.5 Modes d'échec d'origine sémantique</h3>
+
+<p>Les dispositifs précédents délimitent <strong>en creux</strong> une famille d'échecs propres au plan sémantique, <strong>distincts des défaillances de transport ou de syntaxe</strong> :</p>
+
+<ul class="puces">
+  <li><strong>le faux accord sémantique</strong> — deux agents convergent syntaxiquement sur une intention qu'ils interprètent différemment. ⚠ <em>La poignée de main réussit, le protocole valide les messages, et l'échec se manifeste en aval, dans le résultat de la tâche</em> — jamais au point d'échange ;</li>
+  <li><strong>la dérive de vocabulaire entre versions</strong> — une capacité change de sens d'une révision à l'autre <strong>sans que le contrat formel ne le signale</strong>, brisant le troisième terme de l'invariant ;</li>
+  <li><strong>la description trompeuse ou empoisonnée</strong> — prolongement direct du § 9.4.2, pont vers le ch. 11 ;</li>
+  <li><strong>l'absence de vérification de postconditions</strong> — <em>rien ne contrôle, après l'exécution, que l'effet obtenu correspond à l'intention initiale</em>.</li>
+</ul>
+
+<div class="avert">
+  <p><strong>Ces modes ont une signature commune, et c'est elle qui les rend difficiles à outiller : l'erreur transite en langage naturel, échappe donc aux contrôles de schéma, et se propage le long des chaînes de délégation.</strong> Le ch. 11 en donne la taxonomie unifiée.</p>
+</div>
+
+<h2 id="s95"><span class="sig">§ 9.5</span>Test de conformité et certification des protocoles</h2>
+
+<h3>9.5.1 Définir « interopérable » de façon mesurable</h3>
+
+<p>Le ch. 3 § 3.4.3 a posé la distinction : <strong>la conformité</strong> atteste qu'une implémentation respecte une spécification ; <strong>l'interopérabilité</strong> atteste que deux implémentations <strong>échangent et utilisent effectivement</strong> ce qu'elles s'échangent.</p>
+
+<div class="avert">
+  <p><strong>La couche agentique hérite de cette distinction mais en aggrave la portée</strong>, parce que les acteurs y sont <strong>non déterministes</strong> : <em>le succès d'un échange ne se réduit plus à la validité d'un message, il s'évalue à la réussite d'une tâche déléguée.</em></p>
+</div>
+
+<p>Définir « interopérable » de façon opérationnelle suppose donc de le <strong>mesurer par des indicateurs propres au régime agentique</strong> : <strong>taux de réussite de la tâche déléguée</strong> et <strong>fidélité du transfert d'intention</strong> d'un agent à l'autre — <em>et non le seul succès de la poignée de main</em>.</p>
+
+<p>Une <strong>pyramide d'évaluation à trois étages</strong> se dégage :</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Étage</th><th>Ce qu'il mesure</th><th>Nature</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Conformité protocolaire</strong></td><td>un message est-il valide ? une transition d'état légale ?</td><td><strong>déterministe et automatisable</strong></td></tr>
+    <tr><td><strong>Interopérabilité entre implémentations</strong></td><td>deux implémentations distinctes du même protocole se comprennent-elles ?</td><td>déterministe, plus coûteux</td></tr>
+    <tr><td><strong>Bancs de tâches inter-agents</strong></td><td>la collaboration produit-elle le résultat attendu ?</td><td>⚠ <strong>intrinsèquement non déterministe</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 9.4 — La pyramide d'évaluation de l'interopérabilité agentique : trois étages, aucun ne subsumant le suivant.</p>
+
+<div class="avert">
+  <p><strong>Chaque étage couvre une fraction du problème sans subsumer le suivant</strong> : <em>franchir la poignée de main n'implique pas l'accord sémantique sur l'intention.</em></p>
+</div>
+
+<h3>9.5.2 Suites de conformité et test de la négociation</h3>
+
+<p>L'écosystème a produit un <strong>outillage de conformité dédié</strong>, qui <strong>cible explicitement les révisions datées</strong> — organisation des vérifications par domaines, validation d'implémentations sur les différents transports, outils d'inspection visuelle. Côté agent-agent, une trousse de compatibilité couvre les liaisons de transport et <strong>filtre les exigences selon leur force normative</strong>, et la validation de carte devient un point de contrôle propre depuis l'introduction des cartes signées.</p>
+
+<div class="avert">
+  <p><strong>Rappel de la réserve F-01</strong> : ces outils attestent qu'une implémentation <strong>respecte une révision datée</strong>. Ils ne la déclarent pas sécurisée, et le ch. 11 traite ce qui leur échappe.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Le test le plus spécifique à l'interopérabilité agentique porte sur la négociation</strong> — de version et de capacités —, où il s'agit de vérifier <strong>la rétrocompatibilité et la dégradation gracieuse</strong> lorsque deux pairs n'annoncent pas le même jeu de fonctionnalités.</p>
+</div>
+
+<p>Cet enjeu <strong>devient crucial</strong> avec le cœur sans état et le cadre d'extensions de la révision candidate du ch. 8 § 8.2.1 : <em>un client doit pouvoir interagir avec un serveur ignorant une extension sans rompre l'échange.</em></p>
+
+<p>S'y ajoutent les <strong>tests aller-retour</strong>, qui éprouvent la <strong>fidélité de traduction</strong> d'un message lorsqu'il franchit la frontière entre deux écosystèmes — <strong>première mesure concrète, quoique partielle</strong>, de la fidélité de transfert d'intention posée au § 9.5.1.</p>
+
+<h3>9.5.3 Bancs inter-agents et vers une certification</h3>
+
+<p>Au sommet de la pyramide, les <strong>bancs inter-agents</strong> évaluent, <strong>en régime non déterministe</strong>, la collaboration entre agents issus de <strong>fournisseurs différents</strong> — par opposition aux bancs mono-agent du ch. 6 § 6.3. Les métriques pertinentes y sont propres à l'interopérabilité : <strong>taux de réussite de la tâche déléguée</strong>, <strong>fidélité du transfert d'intention</strong>, et <strong>surcoût de coordination</strong> — latence, jetons et messages consommés par la négociation.</p>
+
+<div class="avert">
+  <p><strong>Des travaux balisent ce terrain, mais aucun banc standardisé véritablement inter-fournisseurs ne s'impose</strong> à la date d'arrêt des sources. C'est une <strong>absence de documentation</strong> au sens de R-14, et non un fait négatif vérifié : le socle n'en recense pas.</p>
+</div>
+
+<p><strong>La certification est plus embryonnaire encore.</strong> L'attestation par un <strong>tiers indépendant</strong> — qui validerait qu'une implémentation est <strong>non seulement conforme mais interopérable au sens mesurable</strong> du § 9.5.1 — <strong>n'existe qu'à l'état d'amorce</strong>, l'outillage de conformité en fournissant tout au plus le <strong>premier étage</strong>.</p>
+
+<p>La trajectoire plausible <strong>reprend le patron des modèles de maturité</strong> du ch. 1 § 1.2.2 : <em>une échelle graduée allant de la simple conformité protocolaire jusqu'à l'interopérabilité sémantique et pragmatique vérifiée</em>, qui permettrait de <strong>situer une implémentation sur un continuum</strong> plutôt que de la déclarer binairement conforme. ⚠ <strong>Une telle échelle reste à construire</strong> — et le ch. 1 § 1.2.2 avait précisément identifié les limites des modèles à paliers qu'elle devrait éviter de reproduire.</p>
+
+<div class="avert">
+  <p><strong>Ce chapitre ne traite pas la propagation du contexte de trace à travers la frontière protocolaire.</strong> C'est le seul fait d'observabilité véritablement propre à l'interopérabilité, et il part <strong>en entier au ch. 38</strong> — seule affectation de cette matière. Le socle pré-agentique du traçage distribué est au ch. 3 § 3.4.5.</p>
+</div>
+
+<section class="statut" id="s96">
+
+<h2><span class="sig">§ 9.6</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong></p>
+</div>
+
+<p><strong>Ce qui est enfreint</strong> — portes <strong>G-1</strong>, <strong>G-2</strong>, <strong>G-3</strong> ouvertes ; instruction d'auteur du 27 juillet 2026. Conséquences habituelles : aucun énoncé central au sens de CA-IV-01 (régime <strong>[C]</strong>), aucun décompte publiable, renvois de plan et non de texte (ch. 10, 11, 15, 38, 49 non rédigés).</p>
+
+<p><strong>Remontée ouverte par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-11 — non bloquante, de régime.</strong> Le TOC porte, sous l'entrée de ce chapitre, une <strong>relève v0.11</strong> nommant deux préimpressions qui généralisent la pile sous le nom de <strong>« web agentique »</strong> — régime où l'interaction machine-à-machine deviendrait le cas nominal du web, ordonné en trois dimensions — et soutenant que ce régime <strong>exigerait une infrastructure normative neuve</strong>, l'accès des agents aux plateformes pour le compte d'utilisateurs n'étant réglé <strong>ni par le droit ni par les mécanismes de gouvernance existants</strong>.</li>
+</ul>
+
+<div class="avert">
+  <p><strong>Ce chapitre ne les a pas intégrées, et c'est délibéré.</strong> Leur régime est explicite au plan : <strong>préimpressions non révisées par les pairs, résumés seuls consultés</strong> — donc <strong>repérages [C], jamais des faits</strong>, et <strong>cadre de nommage candidat pour la trajectoire du ch. 49, jamais un fait d'adoption</strong>. Les faire entrer dans le corps de ce chapitre les élèverait par la seule contiguïté avec de la matière mieux établie. Elles sont <strong>signalées ici, à leur régime</strong>, et leur instruction à la source primaire relève de <strong>G-1</strong>.</p>
+</div>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la table détaillée (§ 9.1 à § 9.5). La table de couverture est respectée, dont le <strong>partage déclaré du §3.4 avec le ch. 15</strong> — versant protocolaire ici, gouverné là-bas — et la <strong>sortie du §3.12.3 vers le ch. 38</strong>, seule affectation de la propagation de trace. Le <strong>siège de l'encadré R-8 reste au ch. 7 § 7.5</strong> : ce chapitre y renvoie et <strong>ne le reconstruit pas</strong>. Les cinq occurrences de <strong>R-14</strong> portent leur degré ; les deux de <strong>R-02</strong> énoncent ce que le mécanisme démontre <strong>et</strong> ne démontre pas ; la métrique auto-déclarée du § 9.2.5 est attribuée ; R-1 est tenu au § 9.2.1.</p>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 9. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.23, entrée du chapitre 9, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>
