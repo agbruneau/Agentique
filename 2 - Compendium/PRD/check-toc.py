@@ -3,7 +3,9 @@
 
 Reconstruction du 23 juillet 2026 (le script historique des passes v0.3-v0.6 est
 introuvable au dépôt — constat v0.7, reconduit v0.8-v0.11). Domaine : chapitres
-1-57, dix livres I-X, conformément au protocole du CLAUDE.md du dossier.
+1-50, cinq livres I-V (condensation v0.20, décision 11 ; le docstring disait
+encore « 1-57, dix livres » après la v0.20 — réancré en v0.21), conformément au
+protocole du CLAUDE.md du dossier.
 
 Sortie 0 si tout passe, 1 sinon. À exécuter avant toute publication de TOC.md.
 
@@ -49,7 +51,8 @@ LACUNES = [f"§10.{i}" for i in range(1, 12)]   # onze lacunes du PRD Vol. II
 CORPUS_CONSUMERS = [14, 17, 39, 42, 44]         # + Annexe G, contrôlée à part
 RELEVE_V10 = [19, 20, 22, 38, 39, 46, 47, 48, 49, 50]
 RELEVE_V11 = [9, 18, 36, 39, 49]
-JOURNAL_RELEVES = {"v0.10": 8, "v0.11": 6}
+RELEVE_V19 = [6, 17, 19, 24, 37, 46, 47]   # ajout v0.21 — dette déclarée au journal v0.19
+JOURNAL_RELEVES = {"v0.10": 8, "v0.11": 6, "v0.19": 8}
 CORRESPONDENCE_MARKERS = re.compile(
     r"ancien|anciennement|aujourd'hui|entrée en|depuis la|v0\.8|v0\.9|→")
 
@@ -126,7 +129,7 @@ def main():
     if nums != list(range(1, N_CHAPTERS + 1)):
         fail("C1", f"chapitres non contigus/uniques 1-{N_CHAPTERS} : {nums}")
 
-    # C2 — dix livres I-X dans l'ordre
+    # C2 — cinq livres I-V dans l'ordre
     books = re.findall(r"^## LIVRE ([IVX]+) ", text, re.M)
     if books != BOOKS:
         fail("C2", f"livres attendus {BOOKS}, trouvés {books}")
@@ -164,12 +167,18 @@ def main():
             if not 1 <= n <= N_CHAPTERS:
                 fail("C4", f"ligne {i+1} : renvoi pendant « ch. {n} »")
 
-    # C5 — aucun numéral de livre hors I-X en zone normative, sauf correspondance annotée
+    # C5 — aucun numéral de livre hors I-V en zone normative, sauf correspondance
+    # annotée. ⚠ Étendu en v0.21 aux numéraux joints par « et »/« ou » : « Livres
+    # II et VII » ne déclenchait rien — « II » est licite et « VII », non précédé
+    # de « Livre », échappait au motif. C'est l'angle mort qui a laissé seize
+    # renvois vivants traverser les exécutions de la v0.20 sans bruit.
     for i, l in norm_lines:
-        for m in re.finditer(r"\bLivres? ([IVX]+(?:[-,][IVX]+)*)\b", strip_guillemets(l)):
-            for token in re.split(r"[-,]", m.group(1)):
+        for m in re.finditer(r"\bLivres? ([IVX]+(?:(?:[-,] ?| et | ou )[IVX]+)*)\b",
+                             strip_guillemets(l)):
+            for token in re.split(r"[-,]| et | ou ", m.group(1)):
+                token = token.strip()
                 if token and token not in ROMAN_OK and not CORRESPONDENCE_MARKERS.search(l):
-                    fail("C5", f"ligne {i+1} : « Livre {token} » hors I-X sans marqueur de correspondance")
+                    fail("C5", f"ligne {i+1} : « Livre {token} » hors I-V sans marqueur de correspondance")
 
     # C6 — renvoi « Vol. III § » sans document nommé (décision 7)
     for i, l in norm_lines:
@@ -217,8 +226,10 @@ def main():
     if not annexe_g or "corpus d'appui" not in annexe_g.group(0):
         fail("C10", "Annexe G : mention « corpus d'appui » absente")
 
-    # C11 — marques de relève et décomptes des journaux v0.10/v0.11
-    for version, chapters in (("v0.10", RELEVE_V10), ("v0.11", RELEVE_V11)):
+    # C11 — marques de relève et décomptes des journaux v0.10/v0.11/v0.19
+    # (v0.19 ajoutée en v0.21 — le journal v0.19 déclarait cette lacune)
+    for version, chapters in (("v0.10", RELEVE_V10), ("v0.11", RELEVE_V11),
+                              ("v0.19", RELEVE_V19)):
         for n in chapters:
             if not re.search(r"relèves? " + re.escape(version), bodies.get(n, ""), re.I):
                 fail("C11", f"ch. {n} : marque « relève {version} » absente")

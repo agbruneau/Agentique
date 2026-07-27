@@ -45,6 +45,10 @@ MUTATIONS = [
      "Sections (~5 000 mots) : généalogie (comptes de service → workload identity)", "C3"),
     ("M4",  "TOC.md", "renvoi ch. 39 (d", "renvoi ch. 58 (d", "C4"),
     ("M5",  "TOC.md", "obligations des Livres III-IV,", "obligations des Livres III-XII,", "C5"),
+    # M5b teste la branche « et » de C5, ajoutée en v0.21 : « Livres II et VII »
+    # ne déclenchait rien avant elle (angle mort constaté au journal v0.21 du TOC).
+    ("M5b", "TOC.md", "IAM et observabilité en place (Livres II et IV)",
+     "IAM et observabilité en place (Livres II et VII)", "C5"),
     ("M6",  "TOC.md", "(Vol. III *TOC* §6.3", "(Vol. III §6.3", "C6"),
     ("M7",  "TOC.md", "Vol. II ***Monographie*** Annexe B (matrice détaillée",
      "Vol. II Annexe B (matrice détaillée", "C7"),
@@ -70,10 +74,18 @@ MUTATIONS = [
      "**Première relève — Le harnais est un objet que la somme ne nomme nulle part.**", "C11"),
     ("M11b", "TOC.md", "**6. L'après-agentique se donne des échelles",
      "**Sixième relève — L'après-agentique se donne des échelles", "C11"),
+    # M11c teste le décompte du journal v0.19 ; M11d la présence de la marque de
+    # relève v0.19 au ch. 17 — branche testable ici par substitution unique, à la
+    # différence des marques v0.10-v0.11 : chaque marque v0.19 figure une seule
+    # fois par chapitre (ajouts v0.21, avec l'extension de C11).
+    ("M11c", "TOC.md", "**8. Ch. 20 — NIST AI 100-2 E2025**",
+     "**Huitième relève — Ch. 20 — NIST AI 100-2 E2025**", "C11"),
+    ("M11d", "TOC.md", "Relève v0.19 — le « au nom de qui »",
+     "Relevé v0.19 — le « au nom de qui »", "C11"),
     ("M12", "TOC.md", "*Fusion : Vol. III ch. 12 + Vol. I* Monographie",
      "*Fusion : Vol. III *TOC* §12.1 + Vol. I* Monographie", "C12"),
     ("M13", "TOC.md", "d'un ouvrage à 50 chapitres", "d'un ouvrage à 54 chapitres", "C13"),
-    ("M14", "README.md", "**v0.20** (26 juillet 2026)", "**v0.10** (21 juillet 2026)", "C14"),
+    ("M14", "README.md", "**v0.21** (27 juillet 2026)", "**v0.10** (21 juillet 2026)", "C14"),
 ]
 
 

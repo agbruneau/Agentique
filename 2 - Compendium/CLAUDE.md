@@ -13,11 +13,12 @@ désormais dans le sous-dossier [`PRD/`](PRD/) ; le README (conspectus) et ce `C
 la racine du dossier. Les chemins ci-dessous et la commande de contrôle (§ protocole) en tiennent
 compte.
 
-Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.4, 25 juillet 2026**) régit la
+Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.5, 27 juillet 2026** — réancré sur la numérotation à cinq livres, gouvernance inchangée) régit la
 **gouvernance de la rédaction** — portes de lancement, ordre, régimes de preuve, seuil de vote,
 critères CA-IV, jalons, décisions d'auteur — et **prime en cas de conflit sur la gouvernance, le
-socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.20, 26 juillet 2026 — 50 chapitres en 5 livres,
-projection ≈ 369 000–394 000 mots**) reste la *spécification de contenu* du compendium — autorité
+socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.21, 27 juillet 2026 — 50 chapitres en 5 livres,
+projection ≈ 369 000–394 000 mots ; finalisation post-condensation : seize renvois vivants réalignés,
+un erratum v0.20 consigné — 57 tables détaillées et 57 tables de couverture mesurées, non 58**) reste la *spécification de contenu* du compendium — autorité
 sur le découpage et sur chaque chapitre (thèse, sections, ligne Fusion, socle, garde-fous) ;
 **aucun chapitre n'est rédigé**. Tant que la somme n'est pas écrite, les trois volumes sources
 font foi (champ Statut du TOC), et une thèse de ce plan n'est pas une source (sa propre
@@ -113,8 +114,9 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
   produit d'une passe de plan. ⚠ **Trois réserves de relevé sont portées dans le texte** (date
   d'approbation de SLSA v1.2, version de SPDX que fixe l'ISO/IEC 5962:2021, DOI de Castro-Liskov) :
   ne pas les « compléter » de mémoire — ce qui n'a pas été vu à la source ne s'écrit pas comme vu.
-  ⚠ **Et ces marques ne sont pas contrôlées** : C11 ne connaît que les listes v0.10 et v0.11,
-  inscrites dans le script ; y ajouter la v0.19 est une **passe d'appareil** à valider par mutation.
+  ⚠ **Ces marques sont contrôlées depuis la v0.21** : C11 couvre les listes v0.10, v0.11 et v0.19,
+  inscrites dans le script et validées par mutation (M11c, M11d) — la dette d'appareil que le
+  journal v0.19 déclarait est payée.
 - ⚠ **L'angle mort du harnais est déclaré, non comblé** (risque 14, v0.10) : la couche d'exécution
   n'a de chapitre nulle part, et trois des huit relèves v0.10 atterrissent dans le Livre V. **Ne
   pas en tirer un chapitre ni un livre** — la somme porte déjà un livre sans socle (risque 13), et
