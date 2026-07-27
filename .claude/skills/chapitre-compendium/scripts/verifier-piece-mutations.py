@@ -40,8 +40,14 @@ MUTATIONS = [
                                    '<a href="ailleurs.txt">Version Markdown</a>')),
     ("M2a", "[2]", "html",
      lambda s: _remplacer_une_fois(s, r"</section>", "")),
+    # ⚠ Le motif est générique EXPRÈS. Il portait `<h2 id="s11">` en dur — l'ancre de la § N.1 d'un
+    # chapitre à un chiffre —, et il est devenu inapplicable au ch. 11, dont les ancres vont de
+    # `s110` à `s115`. Une mutation inapplicable ne fait pas passer le harnais (elle lève), mais
+    # elle le rend inutilisable sur la moitié du plan : ancrer sur la FORME de l'ancre, jamais sur
+    # sa valeur. Renommer n'importe quelle ancre de section suffit — le contrôle [2] vérifie que
+    # tout `href="#…"` de la navigation résout.
     ("M2b", "[2]", "html",
-     lambda s: _remplacer_une_fois(s, r'<h2 id="s11">', '<h2 id="s11-renomme">')),
+     lambda s: _remplacer_une_fois(s, r'<h2 id="(s[\w.-]+)">', r'<h2 id="\1-renomme">')),
     ("M3a", "[3]", "html",
      lambda s: _remplacer_une_fois(
          s, r"<style>", '<link rel="stylesheet" href="https://exemple.invalid/a.css">\n<style>')),

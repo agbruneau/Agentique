@@ -54,17 +54,27 @@ exécutable (`C15`) vivent au [`CLAUDE.md` du dossier](2%20-%20Compendium/CLAUDE
 de son `TOC.md` — **ils ne sont pas repris ici** (périmètre des fichiers de doc : le niveau supérieur
 situe et renvoie).
 
-⚠ **Le Vol. IV n'est plus tout à fait un cadrage nu : une pièce y est rédigée, hors portes.** Le
-27 juillet 2026, sur instruction d'auteur, `2 - Compendium/Livre I/` a été créé et le **chapitre 1**
-y a été rédigé en `.md` et en `.html`, **avant** les portes G-1, G-2 et G-3 du PRD du volume. Trois
-conséquences pour qui édite au niveau de la racine. *(a)* Le **statut du volume est inchangé** —
-cadrage, socle à zéro entrée, sept portes ouvertes : ne pas requalifier le Vol. IV en « rédigé » dans
-les décomptes ni dans les tableaux d'état. *(b)* **Le régime de la veille ne bouge pas non plus** :
+⚠ **Le Vol. IV n'est plus tout à fait un cadrage nu : un livre entier y est rédigé, hors portes.** Le
+27 juillet 2026, sur instruction d'auteur, `2 - Compendium/Livre I/` a été créé et **ses onze
+chapitres** y ont été rédigés en `.md` et en `.html`, **avant** les portes G-1, G-2 et G-3 du PRD du
+volume. Trois conséquences pour qui édite au niveau de la racine. *(a)* Le **statut du volume est
+inchangé** — cadrage, socle à zéro entrée, sept portes ouvertes, **treize remontées ouvertes** : ne
+pas requalifier le Vol. IV en « rédigé » dans les décomptes ni dans les tableaux d'état, un brouillon
+hors portes ne franchissant aucune porte. *(b)* **Le régime de la veille ne bouge pas non plus** :
 sa réf. [220] décrit le Vol. IV comme un cadrage sans chapitre, et cela reste vrai *à sa date* — c'est
 un troisième écart de la même famille que les deux déjà consignés plus bas (Vol. III rédigé,
 démonstrateur retiré), **signalé ici, jamais corrigé dans la veille**. *(c)* Le détail, les remontées
 ouvertes et le régime des deux rendus vivent au [`CLAUDE.md` du dossier](2%20-%20Compendium/CLAUDE.md)
 et au `README.md` de `Livre I/` — ils ne sont pas repris ici.
+
+⚠ **Un fait de méthode se signale ici parce qu'il vaut au-delà du Vol. IV.** La rédaction des ch. 10
+et 11 a révélé deux fois la même classe de défaut : une **lacune déclarée du socle d'un volume**
+comblée par le **texte rédigé d'un autre volume** du dépôt. *Ce n'est pas une contradiction entre
+volumes* — « le socle de A ne documente pas X » et « B documente X » sont logiquement compatibles —,
+et **le volume le plus ancien ne se corrige pas** : sa lacune de couverture est une information
+datée, du même ordre que la date d'une revue publiée. La règle générale du dépôt (« deux faits datés
+divergent entre la veille et le Vol. II : ils sont **signalés, non arbitrés** ») s'y applique
+intégralement.
 
 **Le fichier le plus spécifique gagne.** En travaillant dans un dossier de volume, appliquer son
 `CLAUDE.md`, pas celui-ci.

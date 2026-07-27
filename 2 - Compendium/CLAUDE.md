@@ -27,28 +27,48 @@ version en tête) : il ne porte aucune décision, aucun socle, aucun garde-fou p
 d'écart, **le TOC prime**, et toute passe qui modifie le TOC réaligne le conspectus (version,
 faits touchés) ou y déclare le retard en tête.
 
-⚠ **Une pièce existe pourtant dans le dossier, et elle est hors portes — fait signalé ici, non
+⚠ **Un livre entier existe pourtant dans le dossier, et il est hors portes — fait signalé ici, non
 arbitré.** Le **27 juillet 2026, sur instruction d'auteur**, le répertoire [`Livre I/`](Livre%20I/) a
-été créé et le **chapitre 1** y a été rédigé en deux rendus (`.md` source, `.html` de lecture à
-thème sombre), **avant** le franchissement des portes **G-1, G-2 et G-3** que le PRD §5 pose comme
-préalables à toute rédaction. Quatre choses à savoir avant d'y toucher.
-*(a)* **Le statut de gouvernance n'a pas bougé** : la pièce se déclare elle-même *brouillon, non
+été créé et **ses onze chapitres** y ont été rédigés en deux rendus chacun (`.md` source, `.html` de
+lecture à thème sombre), **avant** le franchissement des portes **G-1, G-2 et G-3** que le PRD §5
+pose comme préalables à toute rédaction. Quatre choses à savoir avant d'y toucher.
+*(a)* **Le statut de gouvernance n'a pas bougé** : chaque pièce se déclare elle-même *brouillon, non
 publiable*, le socle consolidé reste à **0 entrée**, les sept portes restent ouvertes et les huit
 décisions d'auteur **D-1 à D-8** restent à prendre. Un brouillon écrit hors portes ne franchit
 aucune porte — il en documente le coût.
 *(b)* **Ni le TOC, ni le PRD, ni le conspectus n'ont été touchés**, conformément à la règle
 d'escalade du PRD (Annexe A) : *un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il
 remonte.* Leurs champs Statut décrivent donc encore « zéro pièce rédigée », et **c'est correct au
-sens où ils l'entendent** : zéro pièce **recevable**. Ne pas les « corriger » pour cette pièce.
-*(c)* **Deux remontées sont ouvertes par cette rédaction**, portées par la § 1.8 de la pièce (une
-section hors plan, à retirer à la publication) : **R-IV-01**, *bloquante pour le ch. 6* — la
-décision **D-7** (risque 15, l'accord sous défaillance) est due avant la rédaction du Livre I et le
-§ 1.6.2 de la pièce déclare l'angle mort sans le combler ; **R-IV-02**, non bloquante — les deux
-écarts que le TOC signale sous l'entrée du ch. 1, tranchés dans la pièce **en faveur de la ligne
-Fusion**, la liste de sections restant à réaligner par une passe du `TOC.md`.
+sens où ils l'entendent** : zéro pièce **recevable**. Ne pas les « corriger » pour ces pièces.
+*(c)* **Treize remontées sont ouvertes par cette rédaction — R-IV-01 à R-IV-13** —, portées par les
+notes de statut hors plan de chaque pièce, à retirer à la publication. **Le tableau complet est au
+[`README.md` de `Livre I/`](Livre%20I/README.md)** et n'est pas repris ici. Trois sont à connaître au
+niveau du dossier : **R-IV-01**, *bloquante pour le ch. 6* — la décision **D-7** (risque 15, l'accord
+sous défaillance) est due avant la rédaction du Livre I, et le ch. 6 a été rédigé quand même, en
+déclarant cette seconde infraction ; **R-IV-05**, *bloquante pour cinq chapitres* — le socle IAM est
+posé une seule fois au ch. 3 et ne se reconstruit pas, sans qu'aucun contrôle outillé ne vérifie
+l'abstention ; **R-IV-12 et R-IV-13**, non bloquantes mais **de même classe et consécutives** — voir
+ci-dessous.
 *(d)* **Le `.html` est un rendu, jamais une seconde source** : toute correction se fait au `.md` et
 se reporte au même commit. Le compendium n'a **pas** de pipeline de rendu — les trois copies du
-FESP appartiennent aux Vol. I, II et III, et aucune n'a été copiée ici.
+FESP appartiennent aux Vol. I, II et III, et aucune n'a été copiée ici. Le rendu et ses huit
+contrôles sont outillés par le skill (voir plus bas) ; ⚠ **le vérificateur ne se tuyaute jamais dans
+un enchaînement `&&`**, le code de sortie du dernier maillon masquant son échec — faute déjà commise
+sur le ch. 6, poussé avec un défaut de rendu alors que le contrôle échouait.
+
+⚠ **Une classe de défaut propre à la somme s'est révélée en rédigeant les ch. 10 et 11, et elle est
+consignée ici parce qu'elle vaut pour tout le compendium.** Dans les deux cas, une **lacune déclarée
+du socle d'un volume** est **comblée par le texte rédigé d'un autre volume** — l'autre source de la
+**même ligne Fusion**. *Ce ne sont pas des contradictions* : « le socle de A ne documente pas X » et
+« B documente X » sont **logiquement compatibles**, et l'énoncé du volume le plus ancien **reste
+exact dans son périmètre** — il ne se corrige pas après coup, sa lacune de couverture étant une
+information datée. **Trois conséquences.** *(1)* Une pièce se rédige sur **l'intégralité de son
+périmètre de fusion**, jamais sur la seule source que le plan met en avant — le ch. 7 a dû être
+corrigé pour avoir manqué cette règle. *(2)* La **collation de fond (porte G-4)** devrait poser la
+distinction *lacune de couverture / contradiction* **en règle**, et balayer systématiquement les
+lacunes déclarées d'un volume contre le texte rédigé des deux autres. *(3)* **Aucun contrôle outillé
+ne le fait aujourd'hui**, et le vérificateur du skill ne le fera pas — c'est un contrôle de fond, pas
+de forme.
 
 **Un skill de projet porte la procédure de rédaction.** Depuis le 27 juillet 2026,
 [`.claude/skills/chapitre-compendium/`](../.claude/skills/chapitre-compendium/SKILL.md) tient la
