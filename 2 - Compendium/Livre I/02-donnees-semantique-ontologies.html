@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 2 — Données, sémantique et ontologies · La somme agentique</title>
+<meta name="description" content="l&#x27;interopérabilité sémantique — accord sur le sens, pas seulement sur le format — est le niveau que les protocoles agentiques présupposent et que peu savent établir.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre I · Chapitre 2</div>
+  <ol>
+    <li><a href="#s21"><span class="num">2.1</span>Formats d&#x27;échange, sérialisation, schémas et registres</a></li>
+    <li><a href="#s22"><span class="num">2.2</span>Transformation, modèle canonique, contrats de données et formats de table</a></li>
+    <li><a href="#s23"><span class="num">2.3</span>Pile du Web sémantique, médiation ontologique et graphe de connaissances d&#x27;entreprise</a></li>
+    <li><a href="#s24"><span class="num">2.4</span>LLM et automatisation de l&#x27;interopérabilité sémantique</a></li>
+    <li><a href="#s25"><span class="num">2.5</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.23 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="02-donnees-semantique-ontologies.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique</div>
+  <h1><span class="chap">Chapitre 2</span>Données, sémantique et ontologies</h1>
+  <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6)</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — rédigé sur instruction d'auteur du 27 juillet 2026, <strong>avant</strong> les portes G-1, G-2 et G-3 du <a class="lien" href="../PRD/PRD.md">PRD</a> §5. Même régime que le ch. 1 : l'écart est déclaré, non dissimulé ; ses conséquences sont énumérées en § 2.5</dd>
+    <dt>Date de gel</dt>
+    <dd><strong>Aucune.</strong> Gel unique non fixé (décision d'auteur D-1). La matière condensée porte le gel de sa source — <strong>juin 2026</strong> (Vol. I) —, qui n'est pas celui de la somme et ne peut en tenir lieu. ⚠ Ce chapitre est particulièrement exposé à la péremption : <strong>quatre spécifications qu'il cite étaient en cours au gel de la source</strong> (SPARQL 1.2, SHACL 1.2, RDF 1.2/RDF-star, et la refonte majeure d'OpenAPI), et une graduation de projet y est datée de février 2026</dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (Annexe B non constituée, porte G-3 ouverte). Les énoncés résolvent contre le <strong>Vol. I <em>Monographie</em> §1.7-1.8</strong>, en régime <strong>[C]</strong> (PRD §7.1). <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong> avant élévation en [B] par lecture des sources primaires que le Vol. I cite</dd>
+    <dt>Garde-fous balayés</dt>
+    <dd><strong>Les deux séries, intégralement, y compris les zéros.</strong> Vol. II — R-1 à R-8 : <strong>zéro occurrence</strong> (aucune matière réglementaire canadienne, aucun énoncé sur E-23, le RTR ou MCP). Vol. III — R-01 à R-13 : <strong>zéro occurrence</strong> ; ⚠ le § 2.4 approche R-02 (qualification par ce que la spécification démontre) sans le déclencher, l'objet n'étant pas cryptographique — la règle y est néanmoins appliquée par analogie à la fiabilité des correspondances produites par modèle. <strong>R-14 (trois degrés d'absence) : trois occurrences</strong>, § 2.1.5, § 2.3.3 et § 2.4.1, marquées en toutes lettres</dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ 8 000 mots de corps (§ 2.1 à § 2.4). Enveloppe <strong>dérivée, non prescrite</strong> — le TOC n'en donne qu'au Livre (~65 000 mots pour onze chapitres). ⚠ <strong>Aucun décompte n'est publiable</strong> tant que G-2 est ouverte</dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>l'interopérabilité sémantique — accord sur le sens, pas seulement sur le format — est le niveau que les protocoles agentiques présupposent et que peu savent établir.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.23, entrée du chapitre 2.</span>
+</div>
+
+<h2 id="s21"><span class="sig">§ 2.1</span>Formats d'échange, sérialisation, schémas et registres</h2>
+
+<p>Le chapitre précédent a établi que la pile d'interopérabilité est <strong>cumulative</strong> : le niveau sémantique présuppose le syntaxique, qui présuppose le technique (ch. 1 § 1.1.2). Ce chapitre descend aux deux paliers que cette cumulativité rend indissociables — la forme sous laquelle l'information est sérialisée, validée et transformée, puis le sens qu'elle est censée porter. Il faut les traiter ensemble parce que c'est leur <strong>écart</strong> qui constitue la thèse : deux systèmes peuvent échanger des messages parfaitement bien formés, validés contre un schéma partagé, et se méprendre entièrement sur ce qu'ils signifient.</p>
+
+<p>À ce niveau, l'invariant du Livre prend sa forme la plus tangible. Le <strong>format</strong> est le support physique du contrat ; le <strong>schéma</strong> en est la spécification machine-lisible ; les <strong>règles de compatibilité</strong> déterminent si producteur et consommateur peuvent être déployés indépendamment. Rien d'abstrait ici : ce sont ces règles, et elles seules, qui font la différence entre deux équipes qui livrent quand elles veulent et deux équipes qui doivent se coordonner à chaque version.</p>
+
+<h3>2.1.1 Taxonomie des formats : texte ou binaire, document ou flux, schéma à l'écriture ou à la lecture</h3>
+
+<p>Tout choix de format engage un compromis multidimensionnel qu'il vaut mieux expliciter avant d'arrêter une technologie, faute de quoi la décision se prend par habitude et se paie en dette.</p>
+
+<p>Un premier axe oppose les formats <strong>textuels</strong>, lisibles et tolérants à l'inspection directe, aux formats <strong>binaires</strong>, plus denses et plus rapides à sérialiser mais opaques sans outillage. Un deuxième distingue le traitement <strong>document</strong> — l'unité d'échange est un message complet, autonome et borné — du traitement <strong>flux</strong>, où les enregistrements s'écoulent en continu et où la densité et le débit priment sur la lisibilité. Un troisième, le plus structurant, sépare le régime <em>schema-on-write</em>, qui impose la conformité au moment de l'écriture et garantit une donnée propre en aval, du régime <em>schema-on-read</em>, qui repousse l'interprétation à la lecture et privilégie la souplesse d'ingestion au prix d'une validation différée.</p>
+
+<p>Les critères de décision se déclinent alors concrètement : lisibilité et facilité de débogage, densité d'encodage et coût réseau, caractère <strong>auto-descriptif</strong> — le message porte-t-il son propre schéma ? —, latence de sérialisation, débit soutenu, et surtout <strong>évolutivité</strong>, la capacité du format à absorber l'ajout ou le retrait de champs sans rupture.</p>
+
+<p>Aucun format n'optimise simultanément tous ces axes, et c'est le point à retenir : l'architecte arbitre en fonction du <strong>couplage visé</strong>, non de la performance brute. Un format auto-descriptif réduit le couplage de format au prix de la densité ; un format binaire à schéma externe maximise la densité mais <strong>reporte le couplage sur la disponibilité du schéma</strong> — d'où l'importance des registres traités en § 2.1.6. Le couplage ne disparaît pas, il se déplace : c'est la leçon que le ch. 1 tirait des architectures d'intégration, et elle vaut telle quelle un niveau plus bas.</p>
+
+<h3>2.1.2 Formats textuels et binaires</h3>
+
+<p>Côté textuel, <strong>JSON</strong> s'est imposé comme <em>lingua franca</em> des API web : auto-descriptif, trivialement projeté sur les structures des langages courants, il privilégie la simplicité et l'ubiquité sur la richesse typologique. <strong>XML</strong> conserve sa pertinence dans les échanges B2B et le monde SOAP, où les espaces de noms, la validation par grammaire et l'outillage normatif — signatures, transformations — restent des atouts qu'aucun successeur n'a répliqués. <strong>YAML</strong>, surensemble lisible de JSON, domine la configuration plus que l'échange inter-systèmes proprement dit. Ces trois formats partagent une faiblesse de densité et de débit qui devient prohibitive aux volumes élevés.</p>
+
+<p>Côté binaire, deux familles structurent la pratique, et leur différence n'est pas de performance mais de <strong>doctrine d'évolution</strong>.</p>
+
+<p><strong>Protocol Buffers</strong> repose sur un langage de description d'interface compilé, un encodage compact à étiquettes numériques, et une compatibilité fondée sur la <strong>stabilité des numéros de champ</strong> : un champ retiré laisse son numéro réservé à jamais. Il sert de format de charge utile à gRPC et convient au trafic interservices à faible latence.</p>
+
+<p><strong>Apache Avro</strong> adopte une philosophie distincte : le schéma, exprimé en JSON, accompagne ou référence chaque jeu de données, et la <strong>résolution de schéma à la lecture</strong> confronte explicitement schéma d'écriture et schéma de lecture. Cette confrontation explicite en fait le format de prédilection de la sérialisation dense dans les flux.</p>
+
+<p>Le choix entre les deux illustre l'invariant : tous deux externalisent le schéma pour gagner en densité, mais gèrent l'évolution par des mécanismes différents — numéros figés contre résolution à la lecture —, ce qui conditionne les règles de compatibilité applicables (§ 2.1.5). Choisir un format binaire, c'est donc choisir un régime d'évolution avant de choisir un encodage.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Une règle pragmatique répandue : JSON sur HTTP pour les API externes et l'interopérabilité maximale ; Protobuf et gRPC pour le trafic interne dense entre microservices ; Avro pour les sujets de flux adossés à un registre de schémas (§ 2.1.6). XML demeure imposé dès qu'un partenaire B2B ou une norme sectorielle — facturation électronique, échanges réglementés — l'exige, et cette contrainte ne se négocie pas au niveau de l'architecture.</p>
+</div>
+
+<h3>2.1.3 Formats analytiques et protocoles de connexion</h3>
+
+<p>Le plan analytique impose des formats orientés <strong>colonne</strong> plutôt que ligne, optimisés pour la compression et la lecture sélective de larges volumes. <strong>Parquet</strong> et <strong>ORC</strong> sont des formats de fichier sur disque qui stockent les données par colonne, exploitent l'encodage et la compression par bloc, et embarquent des statistiques de prédicat permettant d'élaguer la lecture.</p>
+
+<p><strong>Arrow</strong> joue un rôle complémentaire et qu'il importe de ne pas confondre avec le précédent : il définit un format colonnaire <strong>en mémoire</strong>, conçu pour le partage <em>zéro-copie</em> entre processus et moteurs, supprimant les coûts répétés de sérialisation aux frontières entre composants analytiques. Arrow se positionne comme couche d'interopérabilité du <strong>traitement</strong>, là où Parquet et ORC servent la <strong>persistance</strong>.</p>
+
+<p>Au-delà des fichiers, l'enjeu est le protocole <em>filaire</em> d'accès. Les interfaces historiques JDBC/ODBC, orientées ligne et coûteuses en conversion, sont concurrencées par la pile Arrow : <strong>Arrow Flight SQL</strong> définit un protocole bâti sur gRPC qui transporte des résultats directement au format colonnaire, éliminant la transposition ligne-vers-colonne et exploitant le parallélisme du transport ; <strong>ADBC</strong> offre par-dessus une interface client uniforme, indépendante du pilote, qui restitue nativement des lots Arrow.</p>
+
+<p>Du point de vue de l'invariant, ces standards <strong>découplent le client analytique du système de stockage</strong> par un contrat de transport stable. C'est la même opération que celle du contrat d'API au ch. 1 § 1.4.2, transposée à un plan où elle était historiquement absente.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>La proposition du <em>lakehouse</em> consiste précisément à unifier l'entreposage et l'analytique avancée sur un substrat de formats ouverts. Arrow comme format mémoire et Flight SQL comme protocole filaire en sont les pièces d'interopérabilité : ils dissocient le moteur d'exécution de la couche de stockage, autorisant la coexistence de moteurs hétérogènes sur un même corpus. La question ouverte n'est plus la faisabilité mais la <strong>gouvernance</strong> de cette coexistence, traitée en § 2.2.3.</p>
+</div>
+
+<h3>2.1.4 Schémas et validation</h3>
+
+<p>Le schéma est la spécification machine-lisible du <strong>contrat syntaxique</strong> : il définit la structure attendue, les types, les contraintes et les champs obligatoires, et permet de rejeter <strong>aux frontières</strong> du système les messages non conformes plutôt que de propager des données malformées en profondeur. Cette localisation du rejet n'est pas un détail d'implémentation : une donnée malformée détectée à la frontière coûte un message ; détectée trois systèmes plus loin, elle coûte une enquête.</p>
+
+<p>Dans le monde XML, <strong>XSD</strong> remplit ce rôle avec une grammaire expressive et un outillage de validation mature. Les langages de description des formats binaires — fichiers <code>.proto</code>, schémas Avro — jouent une fonction analogue côté sérialisation dense : ils servent à la fois de contrat et de source de génération de code.</p>
+
+<p>Pour JSON, <strong>JSON Schema</strong> s'est établi comme standard de fait. Son alignement avec <strong>OpenAPI 3.1.0</strong> est le fait le plus conséquent de cette sous-section : à partir de cette version, l'objet Schema d'OpenAPI est un surensemble strict du vocabulaire JSON Schema, ce qui réconcilie la description d'API et la validation de charge utile sous un même formalisme et <strong>supprime une divergence historiquement coûteuse</strong>. Deux dialectes qui décrivaient la même chose de deux manières incompatibles obligeaient chaque organisation à maintenir deux vérités ; il n'en reste qu'une.</p>
+
+<p>La validation aux frontières concrétise le principe de moindre confiance : un consommateur valide ce qu'il reçoit, un producteur valide ce qu'il émet, et le schéma partagé fait foi. La <strong>conception</strong> du schéma — champs optionnels par défaut, refus de l'interdiction implicite de champs additionnels — prépare directement l'évolution traitée ci-après. Un schéma trop strict est un schéma qu'on ne pourra pas faire évoluer.</p>
+
+<h3>2.1.5 Évolution et compatibilité</h3>
+
+<p>L'interopérabilité dans le temps repose sur des règles formelles qui déterminent quelles modifications de schéma sont sûres. Elles sont peu nombreuses et se retiennent.</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Régime</th><th>Garantie</th><th>Ce qu'il autorise et interdit</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Ascendante</strong> (<em>backward</em>)</td><td>un consommateur mis à jour lit des données produites selon l'ancien schéma</td><td>ajout de champs porteurs d'une valeur par défaut ; suppression de champs optionnels</td></tr>
+    <tr><td><strong>Descendante</strong> (<em>forward</em>)</td><td>un consommateur resté sur l'ancien schéma lit des données produites selon le nouveau</td><td><strong>interdit</strong> l'ajout de champs obligatoires sans défaut</td></tr>
+    <tr><td><strong>Complète</strong> (<em>full</em>)</td><td>les deux à la fois</td><td>autorise la mise à jour des deux parties <strong>dans un ordre quelconque</strong></td></tr>
+    <tr><td><strong>Transitive</strong></td><td>la garantie s'étend à <strong>toutes</strong> les versions antérieures, non à la seule précédente</td><td>interdit la dérive cumulative que des sauts successifs compatibles deux à deux peuvent produire</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 2.1 — Les quatre régimes de compatibilité de schéma et ce que chacun rend possible.</p>
+
+<p>Ces règles ne sont pas académiques : elles sont la <strong>condition même du déploiement découplé</strong>. Tant qu'une évolution respecte la compatibilité requise, producteur et consommateur peuvent être livrés indépendamment, sans coordination de version ni fenêtre de rupture — l'invariant du Livre, décliné au niveau du schéma.</p>
+
+<p>Le pendant pratique côté lecture est le <em>tolerant reader</em> (ch. 1 § 1.1.4) : un consommateur qui ignore les champs qu'il ne connaît pas et ne suppose pas l'absence de champs futurs absorbe une part de l'évolution sans modification. La résolution de schéma d'Avro institutionnalise ce raisonnement en confrontant explicitement les deux schémas plutôt qu'en espérant leur coïncidence.</p>
+
+<div class="avert">
+  <p><strong>Une garantie de compatibilité n'est pas une garantie de sens.</strong> Un champ peut rester structurellement compatible tout en changeant de signification — une même colonne « montant » qui passe des dollars aux cents satisfait toutes les règles ci-dessus et casse tous les consommateurs. Le fait que les registres n'attrapent pas cette classe de rupture relève d'une <strong>absence de documentation</strong> au sens de R-14 : le socle hérité ne documente aucun mécanisme de contrôle sémantique automatique à ce niveau, ce qui ne dit rien de l'existence d'approches non recensées. C'est précisément l'écart que les § 2.3 et § 2.4 prennent pour objet.</p>
+</div>
+
+<h3>2.1.6 Registres de schémas dans l'architecture événementielle</h3>
+
+<p>Dans une architecture événementielle, les schémas ne peuvent rester implicites : producteurs et consommateurs sont découplés dans le temps <strong>et</strong> dans l'espace, et rien ne garantit qu'ils partagent une vue à jour du contrat. Le <strong>registre de schémas</strong> résout ce problème en agissant comme autorité du contrat : chaque schéma y est enregistré, versionné et identifié par un identifiant compact que le producteur encode dans l'enregistrement plutôt que d'y embarquer le schéma complet. Le consommateur résout cet identifiant auprès du registre, ce qui réduit la taille des messages tout en garantissant l'accès au schéma <strong>exact</strong> ayant servi à l'écriture.</p>
+
+<p>La fonction décisive du registre n'est pourtant pas le stockage : c'est l'<strong>application automatique des règles de compatibilité</strong>. À l'enregistrement d'une nouvelle version, le registre rejette toute évolution qui violerait le mode configuré sur le sujet. Une règle de gouvernance devient ainsi un <strong>garde-fou exécutable au moment de l'évolution</strong>, et non une recommandation qu'une relecture pourrait laisser passer.</p>
+
+<p>C'est le même principe que celui qui gouverne ce dépôt et que le ch. 1 § 1.2.2 identifiait dans la lignée LISI : <em>une règle sans motif exécutable qui la contrôle n'en est pas une</em>. Un registre de schémas est l'instrument par lequel une organisation rend non négociable, à l'échelle de centaines de sujets, le contrat d'évolution qui autorise le déploiement indépendant.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Plusieurs implémentations coexistent — registres adossés aux courtiers, catalogues gérés des fournisseurs infonuagiques —, prenant typiquement en charge Avro, Protobuf et JSON Schema. Le critère de choix n'est pas la couverture de formats, largement banalisée, mais la <strong>granularité du mode de compatibilité</strong> : pouvoir le fixer par sujet plutôt que globalement est ce qui permet à un domaine critique d'exiger la compatibilité complète pendant qu'un domaine exploratoire se contente de l'ascendante.</p>
+</div>
+
+<h2 id="s22"><span class="sig">§ 2.2</span>Transformation, modèle canonique, contrats de données et formats de table</h2>
+
+<h3>2.2.1 Transformation et ponts inter-formats</h3>
+
+<p>L'hétérogénéité des formats étant irréductible (ch. 1 § 1.1.3), l'intégration suppose presque toujours une médiation entre représentations. Le patron <strong>Message Translator</strong> en est la formalisation : un composant transforme la structure et la sémantique d'un message d'un format source vers un format cible <strong>sans coupler producteur et consommateur à la connaissance l'un de l'autre</strong>. Les outils varient selon le monde — XSLT pour les transformations XML, langages de projection pour JSON — et les ponts les plus courants concernent les conversions REST/SOAP et JSON/Avro, où une passerelle traduit entre les conventions des deux univers.</p>
+
+<p>Ces transformations ne sont <strong>pas neutres</strong>, et c'est le point que la pratique oublie. La conversion entre modèles de richesse inégale entraîne des pertes : un type absent dans le format cible, une contrainte non exprimable, une structure imbriquée aplatie. Ces pertes doivent être <strong>identifiées et réconciliées explicitement au point de médiation</strong>, plutôt que subies silencieusement en aval.</p>
+
+<p>Le traducteur préserve donc le découplage en localisant la connaissance des deux formats en un seul endroit, mais il introduit <strong>un point où le contrat peut se dégrader</strong>. Sa conception relève de la même rigueur contractuelle que les interfaces qu'il relie — et il est le plus souvent traité comme un détail d'implémentation, ce qui est l'erreur.</p>
+
+<h3>2.2.2 Contrats de données et produits de données</h3>
+
+<p>Le mouvement du <strong>maillage de données</strong> (<em>data mesh</em>) transpose au domaine des données les principes de découplage et de propriété décentralisée déjà appliqués aux services. Sa pièce maîtresse est le <strong>contrat de données</strong> : une spécification exécutable, machine-lisible, qui fixe le schéma, les garanties de qualité, les attentes sémantiques et les engagements de service entre un fournisseur et ses consommateurs. Une formalisation ouverte en est portée par l'<em>Open Data Contract Standard</em>, maintenu sous fondation, qui succède à une spécification antérieure désormais dépréciée à son profit. Le complément structurel est le <strong>produit de données</strong> doté de ports de sortie explicites.</p>
+
+<p>Le contrat joue ici exactement le rôle que le Livre attribue au contrat d'interface : il rend l'évolution gouvernable et le couplage explicite. Sa nouveauté tient à ce qu'il porte des <strong>garanties de qualité</strong> — fraîcheur, complétude, distribution attendue — que le contrat d'API ne porte pas, et qui sont vérifiables en continu.</p>
+
+<p>L'échange <strong>inter-organisationnel</strong> de données souveraines ajoute une couche de protocole. Le <em>Dataspace Protocol</em> normalise la négociation de contrat, le catalogage et le transfert entre espaces de données autonomes, en s'appuyant sur un modèle de référence et des implémentations de référence. L'objectif est le partage contrôlé entre organisations <strong>qui ne se font pas mutuellement confiance</strong>, en encodant l'usage autorisé dans le contrat lui-même.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> c'est la première fois, dans la progression du Livre, qu'un contrat prétend porter non seulement la <strong>forme</strong> et le <strong>sens</strong> de ce qui est échangé, mais l'<strong>usage autorisé</strong> de ce qui a été transféré. Cette prétention est exactement celle que le Livre II retrouvera sous le nom de délégation, et le Livre IV sous celui de politique appliquée à l'exécution. Le socle n'établit pas cette filiation ; elle est proposée comme lecture, et son instruction relève des ch. 17 et 37.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Le contrat de données exécutable déplace la question de l'interopérabilité sémantique du plan documentaire vers le plan opérationnel : les attentes de schéma et de qualité deviennent vérifiables en continu, et leur violation détectable automatiquement. La gouvernance souveraine pose en outre une question <strong>encore ouverte</strong> : l'application machinale des politiques d'usage <strong>au-delà du point de transfert</strong>. Rien, dans le socle hérité, n'établit qu'un tel mécanisme existe et fonctionne à l'échelle.</p>
+</div>
+
+<h3>2.2.3 Formats de table et catalogues interopérables</h3>
+
+<p>Les formats de fichier colonnaires (§ 2.1.3) ne suffisent pas à rendre un lac de données interopérable : sans couche de cohérence, une collection de fichiers n'offre ni transaction, ni évolution de schéma, ni isolation des lectures. Les <strong>formats de table</strong> comblent ce manque. Ils ajoutent au-dessus des fichiers une couche de métadonnées qui apporte les garanties transactionnelles, le voyage dans le temps, l'évolution de schéma et de partitionnement, et l'isolation par instantané.</p>
+
+<p>C'est cette couche qui rend un <em>lakehouse</em> réellement interopérable : un même corpus tabulaire devient lisible et modifiable par des moteurs hétérogènes <strong>sans recopie ni format propriétaire</strong>.</p>
+
+<p>Le contrat se déplace alors vers le <strong>catalogue</strong>, qui suit les tables, leurs versions et leurs métadonnées — et c'est là que se joue désormais le verrouillage. Une spécification REST de catalogue standardise l'interface entre moteurs et catalogue, transformant celui-ci d'un couplage propriétaire en un contrat ouvert et interchangeable. Plusieurs implémentations se disputent ce rôle, dont l'une a gradué au rang de projet de premier niveau de sa fondation le <strong>19 février 2026</strong>.</p>
+
+<div class="avert">
+  <p><strong>Cette date est un fait daté, et le seul de ce chapitre qui appelle une re-vérification à G-1</strong> : une graduation de projet est un événement de gouvernance, non une propriété technique, et la carte des implémentations en concurrence bouge par trimestres.</p>
+</div>
+
+<p>Cette convergence vers un protocole de catalogue commun est l'extension la plus récente de l'invariant au plan analytique : en découplant le moteur du catalogue par un contrat stable, elle préserve la liberté de substitution des moteurs et la portabilité du patrimoine de données. Le ch. 43 en reprend le principe pour l'architecture de référence.</p>
+
+<h2 id="s23"><span class="sig">§ 2.3</span>Pile du Web sémantique, médiation ontologique et graphe de connaissances d'entreprise</h2>
+
+<p>La couche du sens se superpose à la couche syntaxique traitée jusqu'ici. Deux systèmes peuvent échanger des messages bien formés, validés contre un schéma (§ 2.1.4), et néanmoins se méprendre sur ce que ces messages signifient. L'interopérabilité sémantique vise précisément ce hiatus — le troisième palier de la pile canonique (ch. 1 § 1.1.2) : faire en sorte que l'information reçue soit interprétée par le destinataire <strong>avec le sens que l'émetteur lui prêtait</strong>.</p>
+
+<p>L'invariant reste identique, et c'est ce qui rend cette section lisible : un vocabulaire partagé est un <strong>contrat</strong> ; une ontologie — spécification explicite d'une conceptualisation — est une <strong>interface</strong> qui découple les producteurs de sens des consommateurs ; et ces deux artefacts doivent <strong>évoluer</strong> sans rompre les correspondances établies.</p>
+
+<h3>2.3.1 RDF, RDFS, OWL et JSON-LD</h3>
+
+<p>Le socle du Web sémantique est un modèle de données en <strong>graphe</strong> : RDF représente toute connaissance comme un ensemble de triplets sujet-prédicat-objet, où chaque ressource est identifiée par un identifiant globalement résolvable. Cette granularité atomique confère au modèle une propriété rare pour l'intégration : <strong>deux graphes provenant de sources hétérogènes fusionnent par simple union de leurs triplets</strong>, sans réconciliation préalable de schémas, pourvu qu'ils partagent des identifiants.</p>
+
+<p>C'est une propriété qu'aucun format tabulaire ne possède, et elle explique la persistance de RDF malgré une adoption industrielle modeste : là où fusionner deux schémas relationnels exige un projet, fusionner deux graphes RDF exige un accord sur des identifiants.</p>
+
+<p>Au-dessus de RDF s'échelonne une gradation de pouvoir expressif. <strong>RDFS</strong> introduit un vocabulaire léger — classes, propriétés, hiérarchies, domaines et co-domaines —, auquel <strong>SKOS</strong> adjoint l'outillage des systèmes de concepts. À l'autre extrémité, <strong>OWL 2</strong> offre une ontologie formelle adossée à la logique de description, avec restrictions de cardinalité, propriétés transitives ou inverses et axiomes de disjonction permettant l'<strong>inférence automatique</strong>.</p>
+
+<p>L'adoption de cet appareil a longtemps buté sur la lourdeur perçue de la sérialisation RDF/XML. <strong>JSON-LD</strong> lève cet obstacle : il habille des documents JSON ordinaires d'un contexte qui projette leurs clés sur des identifiants, faisant d'une charge utile REST un graphe RDF <strong>sans rupture de l'outillage existant</strong>. JSON-LD constitue ainsi le pont par lequel la sémantique pénètre les API synchrones décrites par OpenAPI (ch. 1 § 1.4.2), réalisant le découplage entre le format de transport et l'engagement de sens.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Un point d'API qui sert déjà du JSON peut devenir sémantiquement interopérable par l'ajout d'un seul contexte pointant un vocabulaire partagé, <strong>sans modifier ni les consommateurs existants ni le schéma JSON validant la syntaxe</strong>. Le contrat syntaxique et le contrat de sens coexistent alors sur la même charge utile — c'est le chemin d'adoption le moins coûteux que ce chapitre puisse recommander, et il reste peu emprunté.</p>
+</div>
+
+<h3>2.3.2 SPARQL et la fédération de sources</h3>
+
+<p>Là où REST expose des ressources et GraphQL un graphe typé propriétaire (ch. 1 § 1.4.1), <strong>SPARQL</strong> interroge directement le graphe RDF par appariement de motifs de triplets. Le langage dépasse la simple lecture : il couvre la mise à jour des graphes, l'agrégation, les sous-requêtes et les chemins de propriété, ce qui en fait une <strong>API sémantique standardisée</strong> plutôt qu'un langage de consultation cantonné.</p>
+
+<p>Pour l'intégration, sa contribution décisive est la <strong>fédération</strong> : une clause dédiée délègue une portion de requête à un service distant et recompose les résultats localement, autorisant une interrogation transversale de sources autonomes <strong>sans entreposage préalable ni copie des données</strong>. Cette capacité instancie au niveau sémantique le découplage de localisation : le consommateur raisonne sur un graphe logique unifié tandis que les données demeurent réparties et sous le contrôle de leurs propriétaires.</p>
+
+<div class="avert">
+  <p><strong>La fédération présuppose toutefois que les sources aient aligné leurs vocabulaires</strong>, faute de quoi la jointure échoue <strong>silencieusement</strong> sur des identifiants divergents. Ce mode d'échec est le plus pernicieux de la section : une requête fédérée mal alignée ne lève pas d'erreur, elle retourne un résultat vide ou partiel qui a toutes les apparences d'un résultat. Le préalable renvoie aux mécanismes d'alignement du § 2.3.4.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Une révision du langage était en cours au gel de la source</strong> (juin 2026), alignée sur une révision du modèle RDF et sur son extension permettant d'interroger les assertions portant sur des assertions. Ces travaux <strong>ne sont pas cités comme acquis</strong> : leur ancre de version se fixe au moment de citer, et cette réserve est reconduite ici sans être levée.</p>
+</div>
+
+<h3>2.3.3 Validation et contrats sémantiques : SHACL et ShEx</h3>
+
+<p>Un graphe RDF est, par construction, <strong>ouvert et sans schéma</strong> : tout triplet est licite, l'absence d'information n'est pas une faute, et rien n'interdit a priori d'attribuer une date de naissance à une facture. Pour l'intégration, cette permissivité est intenable ; il faut un pendant sémantique aux schémas qui gardent les frontières des API.</p>
+
+<p><strong>SHACL</strong> remplit ce rôle : il décrit des <em>formes</em> contraignant la structure attendue d'un nœud — propriétés obligatoires, cardinalités, types de valeurs, motifs — et produit un rapport de validation circonstancié lorsqu'un graphe les viole. SHACL devient ainsi le <strong>contrat sémantique vérifiable aux points d'échange</strong>, transposant au graphe la discipline du contrat-d'abord. <strong>ShEx</strong> poursuit le même objectif avec une grammaire de patrons d'inspiration régulière, souvent jugée plus concise.</p>
+
+<div class="avert">
+  <p><strong>La distinction conceptuelle qui suit est la plus mal comprise de ce chapitre, et la plus coûteuse.</strong> OWL sert l'<strong>inférence</strong> sous hypothèse de <strong>monde ouvert</strong> — déduire des faits implicites ; SHACL sert la <strong>validation</strong> sous hypothèse de <strong>monde clos</strong> — constater qu'un fait requis manque. Confondre les deux produit des contrôles qui <strong>ne se déclenchent jamais</strong> : une contrainte exprimée en OWL sur un graphe incomplet n'est pas violée, elle est simplement non satisfaite, et le raisonneur conclut que le fait manquant est peut-être vrai ailleurs. Une organisation qui croit valider alors qu'elle infère ne s'en aperçoit qu'à l'incident.</p>
+</div>
+
+<p>L'alignement de SHACL sur la révision du modèle RDF — <strong>lui aussi en cours au gel de la source</strong> — vise à contraindre aussi les assertions qualifiées, étendant la portée du contrat à la <strong>provenance</strong> des données échangées, exigence récurrente de l'auditabilité (ch. 3 § 3.4).</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>SHACL et OWL relèvent de logiques distinctes dont la cohabitation sur un même graphe demeure un sujet ouvert : un axiome OWL peut rendre satisfiable un graphe qu'une forme SHACL rejette, et inversement. La spécification d'une sémantique unifiée du raisonnement et de la validation, et la décidabilité des fragments combinés, restent des questions vives. ⚠ Que ces questions soient « ouvertes » relève ici d'une <strong>absence de documentation</strong> au sens de R-14 : le socle hérité ne recense aucune solution, ce qui n'établit pas qu'aucune n'existe.</p>
+</div>
+
+<h3>2.3.4 Alignement ontologique et architectures de médiation</h3>
+
+<p>L'hétérogénéité sémantique — désigner la même entité par des termes différents, ou des entités différentes par le même terme — est l'obstacle irréductible que ni la syntaxe ni la validation ne résolvent. Lorsque deux ontologies autonomes décrivent un domaine recouvrant, l'interopérabilité exige de <strong>découvrir les correspondances</strong> entre leurs concepts : c'est l'appariement d'ontologies, dont la production est un ensemble de relations d'équivalence, de subsomption ou de chevauchement. Une campagne d'évaluation comparative fournit à ce champ sa référence empirique, en évaluant les systèmes d'appariement sur des paires d'ontologies de référence — jalon stable pour mesurer tout progrès, y compris celui des approches récentes (§ 2.4.1).</p>
+
+<p>Une fois les correspondances établies, deux architectures de médiation s'opposent classiquement. Dans l'approche <strong>entrepôt</strong>, les sources sont matérialisées et transformées vers un schéma global unique. Dans l'approche <strong>médiateur</strong>, un schéma virtuel réécrit à la volée les requêtes vers les sources, qui restent en place.</p>
+
+<p>Le formalisme distingue ici deux régimes de correspondance, et le choix entre eux est structurant :</p>
+
+<ul class="puces">
+  <li><strong>GAV</strong> (<em>Global-As-View</em>) — chaque concept global est défini comme une vue sur les sources. Réécriture de requête simple ; <strong>ajout de source coûteux</strong>, puisqu'il faut revoir les définitions globales.</li>
+  <li><strong>LAV</strong> (<em>Local-As-View</em>) — chaque source est décrite comme une vue sur le schéma global. Extensibilité supérieure — ajouter une source n'affecte pas les autres — au prix d'une <strong>réécriture de requête plus complexe</strong>.</li>
+</ul>
+
+<p>Ce choix rejoue, au niveau du sens, l'arbitrage entre couplage et évolutivité qui structure tout le Livre : GAV optimise le présent, LAV optimise l'arrivée du prochain participant.</p>
+
+<h3>2.3.5 Graphe de connaissances, OBDA et gestion des données de référence</h3>
+
+<p>Le <strong>graphe de connaissances d'entreprise</strong> concrétise la médiation à grande échelle, et deux régimes y coexistent. Le graphe <strong>matérialisé</strong> importe et fusionne effectivement les données dans un magasin de graphe ; le graphe <strong>virtuel</strong> les laisse dans leurs bases d'origine et expose une couche sémantique par-dessus. Une spécification dédiée standardise cette projection, en décrivant comment lignes et colonnes d'un schéma relationnel se traduisent en triplets. Cette projection est le cœur de l'<strong>accès aux données fondé sur les ontologies</strong> (OBDA), où l'ontologie sert d'interface de requête de haut niveau au-dessus de sources dont la complexité reste masquée — application directe du masquage d'information au plan sémantique.</p>
+
+<p>Un débat structurant oppose les modèles de graphe, et il s'est déplacé récemment. RDF, normalisé et conçu pour la fédération sur le Web, côtoie le modèle des <strong>graphes de propriétés</strong> (LPG), longtemps propriétaire mais désormais doté d'un langage de requête <strong>normalisé internationalement en avril 2024</strong>. RDF privilégie l'interopérabilité inter-organisationnelle et le raisonnement ; LPG privilégie la performance d'attribution sur les arêtes et l'ergonomie applicative.</p>
+
+<p>Parallèlement, la convergence entre <strong>gestion des données de référence</strong> et graphe s'affirme : le graphe offre un substrat naturel pour réconcilier identités et hiérarchies dispersées, faisant du référentiel partagé non plus une table maîtresse figée, mais <strong>un graphe vivant gouverné dans le temps</strong>.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Le choix entre les deux modèles ne se tranche pas dans l'abstrait. Un cas d'usage d'intégration ouverte et de fédération inter-domaines penche vers RDF et SPARQL (§ 2.3.2) ; un cas d'usage interne à forte densité de relations attribuées et à requêtes de parcours penche vers un graphe de propriétés. La normalisation du langage de requête a substantiellement réduit le verrouillage fournisseur qui pesait historiquement sur le second — ce qui rend le critère technique, désormais, réellement décisif.</p>
+</div>
+
+<h2 id="s24"><span class="sig">§ 2.4</span>LLM et automatisation de l'interopérabilité sémantique</h2>
+
+<h3>2.4.1 Modèles de langage pour la construction d'ontologies et l'appariement de schémas</h3>
+
+<p>Le goulet d'étranglement historique de l'interopérabilité sémantique est le <strong>coût humain</strong> : construire une ontologie et établir les correspondances entre schémas relève d'un travail expert, lent et difficilement automatisable. C'est ce coût, plus qu'un défaut technique, qui explique que la pile du § 2.3 soit restée minoritaire malgré trente ans de maturité.</p>
+
+<p>Les grands modèles de langage ouvrent ici une piste <strong>exploratoire</strong>. Des travaux évaluent la capacité d'un modèle à induire des éléments d'ontologie — termes, hiérarchies, relations — à partir de corpus, en mesurant les résultats contre des bancs d'essai établis. D'autres approches ciblent l'appariement de schémas et d'ontologies proprement dit, confrontées à la référence exigeante de la campagne d'évaluation citée en § 2.3.4.</p>
+
+<p>Ces résultats appellent une lecture prudente, et la prudence porte ici sur un point précis. La promesse est réelle : les modèles capturent une connaissance lexicale et contextuelle qui leur permet de proposer des correspondances qu'un appariement purement structurel manquerait. Mais la limite est <strong>structurelle et non conjoncturelle</strong> : <em>une correspondance générée n'est pas vérifiée</em>. Elle peut être plausible et fausse — et une correspondance plausible et fausse est très exactement ce qu'un appariement manuel, lent et coûteux, ne produit pas.</p>
+
+<p>La gouvernance du sens en environnement distribué impose donc de traiter la sortie du modèle comme une <strong>proposition soumise à validation</strong> — par SHACL (§ 2.3.3), par revue experte, par confrontation aux axiomes ontologiques — et non comme un contrat établi. Le découplage producteur-consommateur de sens ne tolère pas qu'une correspondance erronée s'installe silencieusement dans la chaîne d'intégration : elle n'y produira pas une panne, mais une divergence lente.</p>
+
+<div class="avert">
+  <p><strong>La fiabilité des correspondances produites par modèle est un front de recherche explicitement ouvert.</strong> Que le socle hérité n'en recense pas de solution éprouvée est une <strong>absence de documentation</strong> au sens de R-14, non un fait négatif vérifié.</p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> le régime à appliquer ici est celui que le Vol. III impose aux mécanismes cryptographiques (R-02) : qualifier un dispositif par ce que sa spécification <strong>démontre</strong>, jamais par ce qu'elle <strong>promet</strong>. Un appariement produit par modèle démontre une plausibilité lexicale ; il ne démontre pas une équivalence sémantique. L'analogie n'est pas dans le socle ; elle est proposée comme lecture, et elle vaut avertissement pour toute la suite du Livre, où la tentation d'attribuer à un agent la compétence qu'on souhaiterait qu'il ait sera constante.</p>
+
+<h3>2.4.2 GraphRAG : les graphes au service de l'IA générative d'entreprise</h3>
+
+<p>La relation entre graphes et modèles se renverse aussi : le graphe de connaissances n'est plus seulement une cible que le modèle aide à construire, il devient une <strong>ressource qui discipline le modèle</strong>. C'est l'objet de GraphRAG, qui adosse la génération augmentée par récupération non à un index vectoriel plat mais à un <strong>graphe structuré</strong> extrait des sources, permettant un raisonnement multi-sauts et une synthèse à l'échelle d'un corpus que la récupération par fragments isolés ne sait pas produire. Des approches apparentées cherchent à rendre cette construction plus économique pour un déploiement d'entreprise.</p>
+
+<p>L'apport pour l'interopérabilité opérationnelle est <strong>triple</strong>, et les trois volets intéressent directement la suite du Livre.</p>
+
+<p><strong>La réduction des hallucinations.</strong> Ancrer les réponses sur des entités et relations attestées du graphe contraint le modèle à puiser dans un référentiel vérifié plutôt que dans sa mémoire paramétrique.</p>
+
+<p><strong>La traçabilité.</strong> Chaque assertion générée peut être rattachée aux nœuds et arêtes qui la fondent — exigence d'auditabilité impérative en contexte réglementé, et que le Livre III retrouvera comme condition, non comme confort.</p>
+
+<p><strong>L'ontologie comme garde-fou.</strong> En imposant que le graphe respecte un schéma de classes et de relations défini, l'organisation <strong>circonscrit l'espace des inférences admissibles</strong> et fait du contrat sémantique une frontière de sûreté pour le système génératif.</p>
+
+<p>Ce troisième volet est le plus important pour la thèse du chapitre, et il opère un renversement qu'il faut nommer. Jusqu'ici, la sémantique servait à ce que deux systèmes se comprennent ; ici, elle sert à <strong>borner ce qu'un système a le droit de conclure</strong>. Le contrat de sens cesse d'être un instrument de coopération pour devenir un instrument de contrainte — et c'est sous cette seconde forme que les Livres II et IV le réemploieront.</p>
+
+<div class="avert">
+  <p><strong>Ce que ce chapitre ne traite pas, et où cela se trouve.</strong> Le versant proprement <strong>agentique</strong> de la sémantique — l'écart entre accord de protocole et compréhension, la sémantique lue-par-le-modèle, les ontologies de capacités, les modes d'échec sémantiques propres aux échanges entre agents — n'est pas repris ici. Il est <strong>consolidé au ch. 9</strong>, où la découverte et la pile protocolaire le prennent pour objet. La thèse du présent chapitre en est la prémisse : les protocoles agentiques <strong>présupposent</strong> l'accord sémantique et ne le fournissent pas. C'est au ch. 9 qu'on mesure le prix de cette présupposition, non ici.</p>
+</div>
+
+<section class="statut" id="s25">
+
+<h2><span class="sig">§ 2.5</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel ce chapitre a été rédigé, conformément à la règle d'escalade du <a class="lien" href="../PRD/PRD.md">PRD</a> Annexe A : <em>un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il remonte.</em></p>
+</div>
+
+<p><strong>Ce qui est enfreint</strong> — identique au ch. 1 : les portes <strong>G-1</strong>, <strong>G-2</strong> et <strong>G-3</strong> sont ouvertes, et le PRD §5 pose qu'aucun chapitre ne se rédige avant leur franchissement. Rédaction sur instruction d'auteur du 27 juillet 2026. Quatre conséquences :</p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01.</strong> Les faits résolvent contre le Vol. I <em>Monographie</em> §1.7-1.8, en régime <strong>[C]</strong> ; l'élévation en [B] passe par la lecture des sources primaires que le Vol. I cite.</li>
+  <li><strong>Aucun décompte n'est publiable</strong> (G-2).</li>
+  <li><strong>Les renvois « ch. N » sont des renvois de plan, non de texte.</strong> Les ch. 3, 9, 17, 37 et 43 ne sont pas rédigés ; chaque renvoi résout contre l'entrée du TOC v0.23 et se re-vérifiera contre le texte lorsqu'il existera.</li>
+  <li><strong>Une remontée est ouverte par ce chapitre</strong>, à l'instance d'arbitrage (D-6, non désignée) : <strong>R-IV-03 — non bloquante, mais à échéance G-1.</strong> Ce chapitre est le plus exposé du Livre I à la péremption : <strong>quatre spécifications qu'il cite étaient en cours au gel de la source</strong> (juin 2026) — la révision du langage de requête sémantique, celle du langage de validation, celle du modèle de graphe et son extension d'assertions qualifiées —, et il porte <strong>un fait daté de février 2026</strong> (graduation d'un projet de catalogue). La re-datation de G-1 doit les reprendre une à une. Le chapitre les signale toutes en réserve ⚠ et <strong>n'en présente aucune comme acquise</strong> ; il n'y a donc pas de faute à corriger, mais une échéance à tenir.</li>
+</ol>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la table détaillée du TOC section par section (§ 2.1 à § 2.4, aucune section de synthèse n'étant prévue pour ce chapitre) ; la table de couverture est respectée, y compris la sortie de périmètre du §3.5 vers le ch. 9 ; les deux séries de garde-fous sont balayées et déclarées, y compris à zéro occurrence ; les trois occurrences de R-14 sont marquées en toutes lettres ; les constructions d'auteur portent « Lecture de l'auteur » (CA-IV-07).</p>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 2. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.23, entrée du chapitre 2, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>

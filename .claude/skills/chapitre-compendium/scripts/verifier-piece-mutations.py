@@ -58,6 +58,8 @@ MUTATIONS = [
      lambda s: _remplacer_une_fois(s, r"\*\*Volumétrie cible\*\*", "**Longueur**")),
     ("M6b", "[6]", "html",
      lambda s: _remplacer_une_fois(s, r"<dt>Garde-fous balayés</dt>", "<dt>Garde-fous</dt>")),
+    ("M8", "[8]", "html",
+     lambda s: _remplacer_une_fois(s, r"<h3>", "<h3>**")),
     ("M7", "[7]", "md",
      lambda s: _remplacer_une_fois(s, r"\]\(\.\./PRD/TOC\.md\)", "](../PRD/ABSENT.md)")),
 ]

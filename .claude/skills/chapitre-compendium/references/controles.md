@@ -11,7 +11,7 @@ python .claude/skills/chapitre-compendium/scripts/verifier-piece.py \
 ```
 
 L'argument est le chemin **sans extension** : les deux rendus se contrôlent ensemble, parce que c'est
-ensemble qu'ils se versionnent. Sept contrôles, chacun fermant un défaut qu'aucun rendu ne signale :
+ensemble qu'ils se versionnent. Huit contrôles, chacun fermant un défaut qu'aucun rendu ne signale :
 
 | | Contrôle | Ce qu'il attrape |
 |---|---|---|
@@ -22,6 +22,7 @@ ensemble qu'ils se versionnent. Sept contrôles, chacun fermant un défaut qu'au
 | `[5]` | légendes | une table sans légende — elle consomme quand même un numéro |
 | `[6]` | en-tête | l'un des cinq champs du PRD §6 omis, ou la thèse absente |
 | `[7]` | renvois | un lien relatif sans cible |
+| `[8]` | résidus | du Markdown resté littéral dans le rendu — la faute propre au générateur |
 
 ⚠ **Ce que le script ne fait pas, et qui reste à la relecture** : la fidélité au TOC, le régime de
 preuve, le marquage des inférences, la justesse des renvois « ch. N ». Un script ne lit pas un plan.
@@ -35,7 +36,7 @@ python .claude/skills/chapitre-compendium/scripts/verifier-piece-mutations.py \
   "2 - Compendium/Livre I/01-interoperabilite-integration-entreprise"
 ```
 
-Douze mutations, une par classe de faute. Le harnais constate **d'abord** que le contrôle passe sur
+Treize mutations, une par classe de faute. Le harnais constate **d'abord** que le contrôle passe sur
 la pièce intacte, **puis** que chaque faute est détectée par le bon contrôle. Le premier constat
 compte davantage que le second : un script cassé « détecte » toutes les mutations sans rien
 contrôler du tout.

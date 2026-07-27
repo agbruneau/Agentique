@@ -16,6 +16,7 @@ Ce que ce script couvre — sept défauts qu'aucun rendu ne signale :
     [5] légendes         toute table porte une légende, des deux côtés
     [6] en-tête          les cinq champs du PRD §6, aucun omis
     [7] renvois          les liens relatifs pointent vers des cibles existantes
+    [8] résidus          du Markdown resté littéral dans le rendu (faute de générateur)
 
 Ce qu'il ne couvre pas, et qui reste à la relecture : la fidélité au TOC, le régime de preuve, le
 marquage des inférences, la justesse des renvois « ch. N ». Un script ne lit pas un plan.
@@ -137,6 +138,23 @@ def controle_entete(md, html, ecarts):
         ecarts.append("[6] .md : la thèse citée depuis le TOC est absente")
 
 
+def controle_residus(html, ecarts):
+    """Balisage Markdown resté littéral dans le rendu — la faute que produit un générateur, jamais
+    une écriture à la main. Elle ne casse rien : elle s'affiche, et c'est pire."""
+    corps = _sans_commentaires(html)
+    corps = re.sub(r"<style>.*?</style>", "", corps, flags=re.S)
+    corps = re.sub(r"<script>.*?</script>", "", corps, flags=re.S)
+    residus = [
+        (r"\*\*", "gras Markdown non converti (**)"),
+        (r"\]\(", "lien Markdown non converti ]("),
+        (r"(?m)^\s*#{2,4}\s", "titre Markdown non converti (##)"),
+    ]
+    for motif, libelle in residus:
+        n = len(re.findall(motif, corps))
+        if n:
+            ecarts.append("[8] %s : %d occurrence(s)" % (libelle, n))
+
+
 def controle_renvois(base, md, html, ecarts):
     dossier = os.path.dirname(base) or "."
     liens = set(re.findall(r"\]\(([^)#][^)]*)\)", md))
@@ -164,6 +182,7 @@ def main(argv):
         controle_cesure(html, ecarts)
         controle_legendes(md, html, ecarts)
         controle_entete(md, html, ecarts)
+        controle_residus(html, ecarts)
         controle_renvois(base, md, html, ecarts)
 
     nom = os.path.basename(base)
@@ -180,6 +199,7 @@ def main(argv):
     print("  [5] légendes des tables               -> OK")
     print("  [6] en-tête à cinq champs et thèse    -> OK")
     print("  [7] renvois relatifs                  -> OK")
+    print("  [8] balisage Markdown résiduel        -> OK")
     print("\nTous les contrôles passent.")
     return 0
 

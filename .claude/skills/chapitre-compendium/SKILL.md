@@ -169,7 +169,19 @@ règle « PDF versionné avec sa source » du dépôt. Le compendium n'a **pas**
 trois copies du FESP appartiennent aux Vol. I, II et III, et aucune n'a été copiée ici — le `.html`
 s'écrit à la main depuis le gabarit.
 
-Partir de [`assets/gabarit.html`](assets/gabarit.html) : thème sombre orange, CSS et script
+**Le rendu se génère, il ne se recopie pas** :
+
+```bash
+python .claude/skills/chapitre-compendium/scripts/rendre-piece.py "2 - Compendium/Livre I/NN-slug.md"
+```
+
+Le script projette le `.md` sur [`assets/gabarit.html`](assets/gabarit.html) — sections, ancres,
+navigation, encadrés, tables et légendes, marquage « Lecture de l'auteur ». Écrire les dix pages
+d'un livre à la main garantit qu'elles divergeront : une classe oubliée sur un encadré, une ancre
+qui ne suit plus son titre, une légende perdue. Le générateur ne produit pas ces défauts ; il en
+produit d'autres, du balisage resté littéral, que le contrôle [8] attrape.
+
+Le gabarit porte : thème sombre orange, CSS et script
 intégrés, **aucune ressource externe** (ni police, ni image, ni script distant), prose justifiée avec
 césure, navigation de chapitre, barre de progression, styles d'impression. Les marqueurs du corpus y
 ont déjà leur traitement — `.avert` pour les ⚠, `.encadre--recherche`, `.encadre--oeuvre`,
@@ -262,5 +274,6 @@ les contrôles exécutés avec leur résultat. Puis pousser sur `main`, selon la
 | [`references/gabarit-piece.md`](references/gabarit-piece.md) | au moment de créer le `.md` — squelette commenté à copier |
 | [`references/controles.md`](references/controles.md) | au moment de vérifier — commandes de contrôle et de capture |
 | [`assets/gabarit.html`](assets/gabarit.html) | au moment de créer le `.html` — thème et structure, à substituer |
-| [`scripts/verifier-piece.py`](scripts/verifier-piece.py) | à chaque passe — sept contrôles mécaniques sur les deux rendus |
+| [`scripts/rendre-piece.py`](scripts/rendre-piece.py) | à chaque passe — génère le `.html` depuis le `.md`, sur le gabarit |
+| [`scripts/verifier-piece.py`](scripts/verifier-piece.py) | à chaque passe — huit contrôles mécaniques sur les deux rendus |
 | [`scripts/verifier-piece-mutations.py`](scripts/verifier-piece-mutations.py) | **seulement si le vérificateur est modifié** — douze mutations, à repasser avant de publier le changement |
