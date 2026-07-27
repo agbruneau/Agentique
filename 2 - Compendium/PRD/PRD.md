@@ -2,14 +2,15 @@
 
 | Champ | Valeur |
 |---|---|
-| Version | **0.4 — réancrage sur le TOC v0.17 : les entrées du plan portent désormais leur table détaillée** (25 juillet 2026). Révise la v0.3 **sans toucher à la gouvernance** — portes, régimes de preuve, seuil de vote, critères CA-IV, jalons et décisions d'auteur **strictement inchangés**. Deux constats seulement. **(1) Le cahier des charges par chapitre s'est épaissi** : depuis la v0.16 du TOC, chaque entrée est suivie d'une **table des matières détaillée** dérivée du texte rédigé des trois monographies — sections et sous-sections, provenance de chacune, table de couverture (décision 6 du TOC). L'énoncé « chaque entrée du TOC **est** le cahier des charges du chapitre » en sort renforcé, non modifié ; ⚠ **ces tables sont subordonnées à leur ligne Fusion** et se corrigeront sur le chapitre rédigé (décision 8 du TOC), jamais l'inverse. **(2) La v0.17 du TOC a soldé treize écarts de cohérence** par les seules règles du plan — dont une **source vide** (le « volet RGPD » du ch. 20 du Vol. III, retiré de la source le 22 juillet 2026) dont la lacune entre au registre de l'Annexe C du TOC, **dans une seconde table** distincte des onze du Vol. II. ⚠ **Aucun de ces gestes ne touche les décisions d'auteur en attente** : **D-2, D-3, D-4 et D-7 restent ouvertes**, et les risques 13, 14 et 15 du TOC demeurent déclarés non comblés — une passe de cohérence du plan ne consomme aucune porte de ce PRD. |
+| Version | **0.5 — réancrage sur le TOC v0.21 : cinq livres, cinquante chapitres, gouvernance inchangée** (27 juillet 2026). Révise la v0.4 **sans toucher à la gouvernance** — portes, régimes de preuve, seuil de vote, critères CA-IV, jalons et décisions d'auteur **strictement inchangés en leur fond**. Deux objets. **(1) Réancrage sur la condensation v0.20 du TOC** (décision 11, sur instruction d'auteur — finalisée par la v0.21) : les dix livres sont devenus **cinq**, les 57 chapitres **50**, sans rien soustraire — les sept paires fusionnées conservent leurs deux entrées en deux mouvements, et chaque entrée du TOC reste le cahier des charges de son chapitre. Ce PRD traduit donc sa propre numérotation dans la correspondance de la décision 11, l'objet de chaque règle restant identique : les anciens Livres III et VII sont le **Livre II et le premier mouvement du Livre IV** (ch. 12-21 et 37-40) ; l'ancien Livre VIII est le **second mouvement du Livre IV** (ch. 41-45) ; l'ancien Livre IX est le **premier mouvement du Livre V** (ch. 46-48) ; l'ancien Livre X est sa **clôture** (ch. 49-50). Le décompte des pièces passe de 67 à **60** (50 chapitres, avant-propos, 9 annexes) — même matière, moins d'en-têtes ; les cardinaux dépendants sont re-mesurés (26 chapitres à J-IV-4, onze pièces de synthèse). **(2) Les relèves v0.19 du TOC entrent au périmètre de G-1** au même titre que les v0.7, v0.10 et v0.11 : huit relèves adossées à des sources primaires consultées, toutes « à instruire à la source primaire », aucune n'entrant au socle avant extraction — le régime de preuve ne change pas. ⚠ **Les constats datés gardent la version sous laquelle ils ont été faits** (J-IV-0 sur le TOC v0.14, levée du volet structurel de G-4, état des sources §2) ; ⚠ **aucune porte n'est franchie, aucune décision d'auteur n'est consommée** : D-1 à D-7 restent ouvertes, et les risques 13, 14 et 15 du TOC restent déclarés non comblés |
+| Historique v0.4 | **0.4 — réancrage sur le TOC v0.17 : les entrées du plan portent désormais leur table détaillée** (25 juillet 2026). Révise la v0.3 **sans toucher à la gouvernance** — portes, régimes de preuve, seuil de vote, critères CA-IV, jalons et décisions d'auteur **strictement inchangés**. Deux constats seulement. **(1) Le cahier des charges par chapitre s'est épaissi** : depuis la v0.16 du TOC, chaque entrée est suivie d'une **table des matières détaillée** dérivée du texte rédigé des trois monographies — sections et sous-sections, provenance de chacune, table de couverture (décision 6 du TOC). L'énoncé « chaque entrée du TOC **est** le cahier des charges du chapitre » en sort renforcé, non modifié ; ⚠ **ces tables sont subordonnées à leur ligne Fusion** et se corrigeront sur le chapitre rédigé (décision 8 du TOC), jamais l'inverse. **(2) La v0.17 du TOC a soldé treize écarts de cohérence** par les seules règles du plan — dont une **source vide** (le « volet RGPD » du ch. 20 du Vol. III, retiré de la source le 22 juillet 2026) dont la lacune entre au registre de l'Annexe C du TOC, **dans une seconde table** distincte des onze du Vol. II. ⚠ **Aucun de ces gestes ne touche les décisions d'auteur en attente** : **D-2, D-3, D-4 et D-7 restent ouvertes**, et les risques 13, 14 et 15 du TOC demeurent déclarés non comblés — une passe de cohérence du plan ne consomme aucune porte de ce PRD. |
 | Historique v0.3 | **0.3 — réancrage sur le TOC v0.15 et septième décision d'auteur** (24 juillet 2026). Révise la v0.2 **sans toucher à la gouvernance** — sept portes, régimes de preuve, seuil de vote, critères CA-IV et jalons inchangés. Deux objets. **(1)** Réancrage des renvois au plan sur le **TOC v0.15** — les constats **datés** (état des sources au 23 juillet, levée du volet structurel de G-4, jalon J-IV-0) gardent la version sous laquelle ils ont été faits —, TOC qui déclare un second angle mort : l'**accord entre agents sous asynchronie et défaillance partielle** n'a de lieu nulle part (risque 15 du TOC, sur audit de couverture externe du 24 juillet 2026). **(2)** Inscription de la décision d'auteur correspondante, **D-7** (Annexe A) — sections dans les chapitres d'atterrissage (ch. 6, 42, 54) ou périmètre assumé et déclaré. ⚠ **Aucune porte nouvelle** : à la différence du risque 14, ce constat ne conditionne aucun livre entier, et la carte des chapitres reste close. Le reste de l'audit est soit déjà porté (risques 11, 13, 14 ; portes G-1 et G-3 à G-6), soit corrigé chez lui — le rapport `audit.md` n'a et n'acquiert aucune autorité : ni source, ni socle, ni décision |
 | Historique v0.2 | **0.2 — audit et réancrage sur le TOC v0.14** (23 juillet 2026). Révise la v0.1 (gouvernance posée le 23 juillet 2026, établie sur le TOC v0.13) **sans toucher à la gouvernance** — portes, régimes de preuve, seuil de vote, critères CA-IV, jalons et décisions d'auteur inchangés. Deux objets. **(1)** Réancrage de tous les renvois au plan sur le **TOC v0.14** : cette version du TOC est sa *collation d'appui structurelle* contre les trois monographies rédigées — couverture complète des sources, onze renvois de section au Vol. III résolus contre son texte rédigé, structure des 57 chapitres en dix livres intacte. **(2)** La porte **G-4** enregistre que son **volet structurel** (couverture et résolution des renvois) est **levé** par cette collation, à zéro écart ; **reste dû** son volet de fond — la confrontation adversariale de chaque glose et thèse au texte, par lectures indépendantes chargées de réfuter. ⚠ **Toujours aucune passe d'instruction, aucun socle constitué, aucun chapitre rédigé** : la refonte du socle (G-3) reste ouverte, et un PRD écrit avant elle fournit son inventaire d'héritage, jamais des faits (leçon du PRD du Vol. III, §1). |
 | Historique v0.1 | **0.1 — gouvernance de la rédaction posée avant la première pièce** (23 juillet 2026). Établi sur le [`TOC.md`](TOC.md) **v0.13** et sur l'état réel des trois volumes sources, constaté sur pièces le 23 juillet 2026 (PRD v1.3 / TOC v0.8 / `CLAUDE.md` du Vol. III lus dans leurs en-têtes ; gels des Vol. I et II relevés à leurs sièges). ⚠ **Aucune passe d'instruction n'est menée par cette version, aucun socle n'est constitué, aucun chapitre n'est rédigé** : un PRD écrit avant la refonte du socle fournit son inventaire d'héritage et son plan d'acquisition, jamais des faits — leçon du PRD du Vol. III (son §1), reprise ici mot pour mot |
-| Date | 24 juillet 2026 |
-| Statut | **Gouvernance posée, exécution non commencée.** Zéro pièce rédigée sur 67 (57 chapitres, avant-propos, 9 annexes) ; socle consolidé à **0 entrée** (la refonte est la porte G-3) ; sept portes de lancement, toutes ouvertes ; sept décisions d'auteur requises (Annexe A) |
-| Livrable encadré | Compendium intégral — 57 chapitres en 10 livres, avant-propos, 9 annexes ; ≈ 369 000–394 000 mots projetés (fourchette indicative, non normative — TOC, Volumétrie) |
-| Autorité | **Ce PRD prime en cas de conflit sur la gouvernance, le socle et les lacunes** — la règle que le compendium applique déjà à ses sources (« sur le socle et les lacunes, le PRD d'un volume prime son TOC », TOC v0.17, Filiation — champ inchangé depuis la v0.15, vérifié) vaut pour lui-même. Le **TOC conserve l'autorité sur le découpage et sur le contenu de chaque chapitre** : ses entrées (thèse, sections, ligne Fusion, socle, garde-fous) sont la spécification par chapitre, et ce PRD ne les duplique pas (périmètre des fichiers de doc, `CLAUDE.md` racine). Le Conspectus reste une vue dérivée sans autorité |
+| Date | 27 juillet 2026 |
+| Statut | **Gouvernance posée, exécution non commencée.** Zéro pièce rédigée sur 60 (50 chapitres — les 57 entrées conservées en mouvements, décision 11 du TOC —, avant-propos, 9 annexes) ; socle consolidé à **0 entrée** (la refonte est la porte G-3) ; sept portes de lancement, toutes ouvertes ; sept décisions d'auteur requises (Annexe A) |
+| Livrable encadré | Compendium intégral — 50 chapitres en 5 livres (57 entrées conservées, décision 11 du TOC), avant-propos, 9 annexes ; ≈ 369 000–394 000 mots projetés (fourchette indicative, non normative — TOC, Volumétrie) |
+| Autorité | **Ce PRD prime en cas de conflit sur la gouvernance, le socle et les lacunes** — la règle que le compendium applique déjà à ses sources (« sur le socle et les lacunes, le PRD d'un volume prime son TOC », TOC v0.21, Filiation — champ inchangé depuis la v0.15, re-vérifié le 27 juillet 2026) vaut pour lui-même. Le **TOC conserve l'autorité sur le découpage et sur le contenu de chaque chapitre** : ses entrées (thèse, sections, ligne Fusion, socle, garde-fous) sont la spécification par chapitre, et ce PRD ne les duplique pas (périmètre des fichiers de doc, `CLAUDE.md` racine). Le Conspectus reste une vue dérivée sans autorité |
 | Méthodologie | Méthode unifiée du TOC (avant-propos et Annexe A du plan) : niveaux [A]/[B]/[C], tri PROGRAMMÉ/PROJETÉ/SPÉCULATIF, vote adversarial à seuil déclaré (§7), attribution des métriques auto-déclarées à chaque occurrence, trois degrés d'absence. **À exécuter, non exécutée** |
 | Contrôles | `python check-toc.py` (C1-C14) avant toute publication du TOC ; `check-toc-mutations.py` après toute modification du script ; les contrôles de rédaction (§9) sont **une spécification sans exécutable** tant que `check-compendium.py` n'est pas construit et validé par mutation — le construire est un préalable à la première pièce publiée |
 
@@ -17,9 +18,9 @@
 
 ## 1. Objet du document
 
-Ce PRD définit le **processus** qui rend la rédaction des 67 pièces du compendium possible et vérifiable : les portes de lancement (§5), l'ordre de rédaction (§6), les régimes de preuve et le seuil de vote (§7), les garde-fous et leur outillage (§8), les contrôles (§9), le régime des lacunes (§10), les critères d'acceptation (§11), les jalons (§12) et les risques d'exécution (§13).
+Ce PRD définit le **processus** qui rend la rédaction des 60 pièces du compendium possible et vérifiable : les portes de lancement (§5), l'ordre de rédaction (§6), les régimes de preuve et le seuil de vote (§7), les garde-fous et leur outillage (§8), les contrôles (§9), le régime des lacunes (§10), les critères d'acceptation (§11), les jalons (§12) et les risques d'exécution (§13).
 
-**Ce qu'il ne fait pas.** Il ne spécifie pas le contenu des chapitres — le TOC v0.17 le fait, entrée par entrée — chaque entrée étant désormais suivie de sa table des matières détaillée, et chaque entrée du TOC **est** le cahier des charges de son chapitre : thèse, sections, ligne « Fusion » (provenance et arbitrages), socle assigné, garde-fous assignés, lacunes portées. Il ne fournit pas non plus de socle : la refonte (Annexe B du plan) est une porte de ce PRD, pas son contenu. Un §7 qui énumérerait des faits consolidés que personne n'a refondus serait la faute exacte que le Vol. III a nommée dans son propre PRD.
+**Ce qu'il ne fait pas.** Il ne spécifie pas le contenu des chapitres — le TOC v0.21 le fait, entrée par entrée — chaque entrée étant désormais suivie de sa table des matières détaillée, et chaque entrée du TOC **est** le cahier des charges de son chapitre : thèse, sections, ligne « Fusion » (provenance et arbitrages), socle assigné, garde-fous assignés, lacunes portées. Il ne fournit pas non plus de socle : la refonte (Annexe B du plan) est une porte de ce PRD, pas son contenu. Un §7 qui énumérerait des faits consolidés que personne n'a refondus serait la faute exacte que le Vol. III a nommée dans son propre PRD.
 
 ## 2. Contexte — l'état réel des trois sources au 23 juillet 2026
 
@@ -37,26 +38,26 @@ Tant que la somme n'est pas rédigée, **les trois volumes font foi** (TOC, Stat
 
 ### Objectifs
 
-- **O1.** Rédiger les 57 chapitres et l'appareil en démontrant la thèse d'ensemble — un seul problème d'ingénierie continu sur quatre plans — sans diluer les thèses partielles absorbées (risque 6).
+- **O1.** Rédiger les 50 chapitres (57 entrées en mouvements) et l'appareil en démontrant la thèse d'ensemble — un seul problème d'ingénierie continu sur quatre plans — sans diluer les thèses partielles absorbées (risque 6).
 - **O2.** **Refondre les trois socles en un** (Annexe B du plan) : numérotation unique, deux tables de correspondance F-xx (Vol. II et Vol. III), re-datation au gel unique — le chemin critique du projet (risque 4).
 - **O3.** Tenir la **couverture totale tracée** (décision 6) : chaque section source affectée ou coupée explicitement, la collation contre le Vol. III rédigé faite avant la fusion de ses livres (G-4).
-- **O4.** Constituer le **socle propre du Livre IX** depuis des sources primaires, ou constater son échec et exécuter le retrait prévu (décision 9, risque 13).
+- **O4.** Constituer le **socle propre du premier mouvement du Livre V** (ch. 46-48 — l'ancien Livre IX) depuis des sources primaires, ou constater son échec et exécuter le retrait prévu (décision 9, risque 13).
 - **O5.** Faire arbitrer et exécuter les **décisions d'auteur** que le TOC déclare hors de portée d'une passe (Annexe A de ce PRD).
 
 ### Non-objectifs
 
-- Ne pas produire de thèse nouvelle hors du Livre IX (Nature du TOC : une somme, pas un cinquième volume).
+- Ne pas produire de thèse nouvelle hors du premier mouvement du Livre V (ch. 46-48 ; Nature du TOC : une somme, pas un cinquième volume).
 - Ne pas corriger les volumes sources ni leurs TOC — leurs erreurs documentées (« §3-§12 », etc.) sont signalées chez eux, jamais lissées ici (risque 10).
 - Ne pas re-trancher ce que les journaux gelés du TOC consignent, ni réécrire ces journaux.
-- Ne pas émettre de conseil juridique ; ne pas recommander de fournisseur ; ne pas fournir de recette d'exploitation (héritages R-12/CA-12 du Vol. III pour les ch. 20-22).
+- Ne pas émettre de conseil juridique ; ne pas recommander de fournisseur ; ne pas fournir de recette d'exploitation (héritages R-12/CA-12 du Vol. III pour les ch. 19-20).
 
 ## 4. Portée — le test d'appartenance
 
 Trois critères, opposables et vérifiés par CA-IV-08 :
 
 1. **Les quatre plans** : tout contenu se rattache à coopérer, encadrer, faire confiance ou livrer (thèse d'ensemble ; risque 6).
-2. **Le critère des capacités** (Livres III et VII, hérité du Vol. III) : tout contenu de maillage ou d'exploitation sans lien à l'identité ou à la délégation est hors périmètre (risque 12).
-3. **Le critère du Livre IX** : tout contenu sans rattachement aux livres amont (identité, encadrement, exploitation, blueprint) est hors périmètre (en-tête du Livre IX).
+2. **Le critère des capacités** (Livres II et IV, hérité du Vol. III) : tout contenu de maillage ou d'exploitation sans lien à l'identité ou à la délégation est hors périmètre (risque 12).
+3. **Le critère de la matière neuve** : tout contenu sans rattachement aux livres amont (identité, encadrement, exploitation, blueprint) est hors périmètre (en-tête du premier mouvement du Livre V).
 
 ⚠ Leçon du Vol. III (CA-09, R-G-46) : le **grain** du test — section ou développement — a produit chez lui deux coupes invisibles au grain prescrit. Ce PRD fixe le grain d'emblée : **le développement**, une section qui passe n'immunisant pas ses développements.
 
@@ -66,26 +67,26 @@ Aucun chapitre ne se rédige avant que **G-1, G-2 et G-3** soient franchies ; le
 
 | Porte | Objet | Conditionne |
 |---|---|---|
-| **G-1** | **Gel unique** (décision 5 du TOC) : date fixée par l'auteur (D-1) ; re-datation de tout fait périssable ; instruction à la source primaire des relèves v0.7, v0.10 et v0.11 consommées, chacune à son point d'atterrissage ; re-vérification des deux divergences de l'Annexe C (dont AP2/FIDO — réouverture déclenchée en v0.7, à consommer par extraction, jamais sur annonce) | tout |
+| **G-1** | **Gel unique** (décision 5 du TOC) : date fixée par l'auteur (D-1) ; re-datation de tout fait périssable ; instruction à la source primaire des relèves v0.7, v0.10, v0.11 et v0.19 consommées, chacune à son point d'atterrissage ; re-vérification des deux divergences de l'Annexe C (dont AP2/FIDO — réouverture déclenchée en v0.7, à consommer par extraction, jamais sur annonce) | tout |
 | **G-2** | **Commande de décompte de référence** : `LC_ALL=C.UTF-8` (héritage PRDPlan du Vol. III §1.5), **validée sur les trois corpus entiers avant toute mesure publiée** — jamais sur un échantillon (leçon du Vol. II, quatre mesures successives ; leçon v0.5 du TOC, deux chiffres faux d'un facteur) | tout décompte publié |
 | **G-3** | **Refonte du socle** (Annexe B du plan) : détail en §7. Sortie : socle consolidé numéroté, deux tables de correspondance, re-daté au gel — et `check-compendium.py` construit et validé par mutation (§9) | toute rédaction |
-| **G-4** | **Collation contre le Vol. III rédigé** — l'homologue de la v0.6 du TOC pour les Vol. I-II : chaque ligne « Fusion », chaque glose et chaque thèse citant le Vol. III confrontée au texte final des 34 pièces, par lectures adverses indépendantes chargées de réfuter, écarts corrigés au TOC (version++) avant fusion. ⚠ **Volet structurel levé par la v0.14 du TOC** (collation d'appui : couverture complète et onze renvois de section résolus contre le texte rédigé, zéro écart) ; **reste dû le volet de fond** — confrontation adversariale des gloses et thèses au texte, lectures indépendantes chargées de réfuter | Livres III et VII, et toute entrée citant le Vol. III |
-| **G-5** | **Arbitrage du risque 14** (la couche d'exécution — le harnais) : chapitre neuf, sections dans l'existant, ou périmètre assumé et déclaré — décision d'auteur (D-2) | Livres VII et IX |
-| **G-6** | **Sort du Livre IX** : socle propre constitué depuis des sources primaires, ou retrait (décision 9, issue prévue ; renumérotation inverse 55-57 → 52-54 assumée) — décision d'auteur (D-3) | Livre IX |
+| **G-4** | **Collation contre le Vol. III rédigé** — l'homologue de la v0.6 du TOC pour les Vol. I-II : chaque ligne « Fusion », chaque glose et chaque thèse citant le Vol. III confrontée au texte final des 34 pièces, par lectures adverses indépendantes chargées de réfuter, écarts corrigés au TOC (version++) avant fusion. ⚠ **Volet structurel levé par la v0.14 du TOC** (collation d'appui : couverture complète et onze renvois de section résolus contre le texte rédigé, zéro écart) ; **reste dû le volet de fond** — confrontation adversariale des gloses et thèses au texte, lectures indépendantes chargées de réfuter | Livre II et premier mouvement du Livre IV, et toute entrée citant le Vol. III |
+| **G-5** | **Arbitrage du risque 14** (la couche d'exécution — le harnais) : chapitre neuf, sections dans l'existant, ou périmètre assumé et déclaré — décision d'auteur (D-2) | Livre IV et premier mouvement du Livre V |
+| **G-6** | **Sort du premier mouvement du Livre V** (ch. 46-48 — l'ancien Livre IX) : socle propre constitué depuis des sources primaires, ou retrait (décision 9, issue prévue ; renumérotation inverse 49-50 → 46-47 assumée, décision 11) — décision d'auteur (D-3) | Premier mouvement du Livre V |
 | **G-7** | **Seuil de vote adversarial** : fixé en §7 de ce PRD — le TOC remettait cette décision « au lancement » ; elle est prise ici et ne se rediscute pas en cours de rédaction | toute entrée du socle consolidé |
 
 ## 6. Structure et ordre de rédaction
 
-**Structure** : celle du TOC v0.17 — inchangée depuis la v0.14 —, sans reprise ici. Chaque pièce porte en tête le tableau à cinq champs hérité (Statut ; Date de gel ; Socle mobilisé — **chaque identifiant préfixé de son volume d'origine tant que la renumérotation G-3 n'est pas publiée** ; Garde-fous balayés — **y compris ceux à zéro occurrence**, contrepartie obligatoire des douze pièces de synthèse ; Volumétrie cible), suivi de la thèse citée depuis le TOC.
+**Structure** : celle du TOC v0.21 — 50 chapitres en cinq livres depuis la condensation v0.20 (décision 11), carte des 57 entrées inchangée de la v0.14 à la v0.19 puis conservée en mouvements —, sans reprise ici. Chaque pièce porte en tête le tableau à cinq champs hérité (Statut ; Date de gel ; Socle mobilisé — **chaque identifiant préfixé de son volume d'origine tant que la renumérotation G-3 n'est pas publiée** ; Garde-fous balayés — **y compris ceux à zéro occurrence**, contrepartie obligatoire des onze pièces de synthèse (ch. 41, 42, 45, 49 et 50, plus les six annexes de méthode ou de table) ; Volumétrie cible), suivi de la thèse citée depuis le TOC.
 
 **Ordre de rédaction**, dicté par les portes et l'état des sources :
 
-1. **Livres I, II, IV, V, VI** (sources : Vol. I et II, gelés et vérifiés) — après G-1/G-2/G-3.
-2. **Livre VIII** (synthèse architecturale — consomme les précédents ; le ch. 48 attend en outre la re-vérification C260, préalable déclaré à son registre des stéréotypes).
-3. **Livres III et VII** — après G-4 en plus ; leurs pièces re-vérifient l'état des remontées ouvertes du Vol. III qui les touchent.
-4. **Livre IX** — dernier des livres de matière (décision 9c), après G-5 et G-6.
-5. **Livre X** — la clôture ferme l'ouvrage : le ch. 56 enregistre l'état final des lacunes, le ch. 57 le registre de gel par chapitre.
-6. **Appareil** : l'Annexe B vit dès G-3 et s'amende en cours de rédaction (régime des versements du Vol. III, PRD §7.10-§7.11 : une affirmation requise mais non versée se **verse au socle**, jamais citée depuis un rapport ni dans la pièce seule) ; les autres annexes se finalisent après le Livre X ; l'avant-propos en dernier.
+1. **Livres I et III** (ch. 1-11 et 22-36 — sources : Vol. I et II, gelés et vérifiés) — après G-1/G-2/G-3.
+2. **Second mouvement du Livre IV** (ch. 41-45, synthèse architecturale — consomme les précédents ; le ch. 43 attend en outre la re-vérification C260, préalable déclaré à son registre des stéréotypes).
+3. **Livre II et premier mouvement du Livre IV** (ch. 12-21 et 37-40) — après G-4 en plus ; leurs pièces re-vérifient l'état des remontées ouvertes du Vol. III qui les touchent.
+4. **Premier mouvement du Livre V** (ch. 46-48) — dernière matière rédigée (décision 9c), après G-5 et G-6.
+5. **Second mouvement du Livre V** (ch. 49-50) — la clôture ferme l'ouvrage : le ch. 49 enregistre l'état final des lacunes, le ch. 50 le registre de gel par chapitre.
+6. **Appareil** : l'Annexe B vit dès G-3 et s'amende en cours de rédaction (régime des versements du Vol. III, PRD §7.10-§7.11 : une affirmation requise mais non versée se **verse au socle**, jamais citée depuis un rapport ni dans la pièce seule) ; les autres annexes se finalisent après la clôture ; l'avant-propos en dernier.
 
 **Déviation** : le plan s'aligne sur le chapitre, jamais l'inverse, et une déviation fondée **se déclare** (décision 8 du TOC, corollaires a-c). Toute modification du découpage passe par le TOC (version++), jamais par ce PRD.
 
@@ -94,7 +95,7 @@ Aucun chapitre ne se rédige avant que **G-1, G-2 et G-3** soient franchies ; le
 ### 7.1 La refonte (porte G-3)
 
 - **Vol. II — F-01…F-48 + F-23b** : niveaux conservés avec provenance (méthode identique, rien à re-subir). ⚠ Le Vol. II n'attribue pas F-12 à F-14 : le trou ne se comble pas en décalant (TOC, Annexe B).
-- **Vol. III — F-01…F-98 et H-01…H-33** : niveaux conservés (méthode héritée du Vol. II) ; les H-xx se dédupliquent contre les entrées Vol. I/II dont elles proviennent. **F-92 et F-96 du Vol. III n'entrent pas** avant résorption de leur dette de vote ou reprise de la parade ⚖ (TOC v0.17, Annexe B — champ inchangé depuis la v0.15, vérifié).
+- **Vol. III — F-01…F-98 et H-01…H-33** : niveaux conservés (méthode héritée du Vol. II) ; les H-xx se dédupliquent contre les entrées Vol. I/II dont elles proviennent. **F-92 et F-96 du Vol. III n'entrent pas** avant résorption de leur dette de vote ou reprise de la parade ⚖ (TOC v0.21, Annexe B — champ inchangé depuis la v0.15, re-vérifié le 27 juillet 2026).
 - **Vol. I** : les faits datés entrent **en [C]** — sa vérification porte sur les références, non sur le contenu des affirmations (régime du PRD du Vol. III, §7.1) ; élévation en [B] **par lecture de la source primaire que le Vol. I cite**, obligatoire avant tout fait central ; une entrée sans source primaire tierce (construction d'auteur du Vol. I) reste une thèse attribuée et ne porte jamais un fait central.
 - **Renumérotation** : unique pour les F-xx, avec **deux tables de correspondance** (une par série source) ; les R-xx, CA-xx, L-xx, H-xx et R-G-xx ne se renumérotent **jamais** et se citent préfixés de leur volume (décision 7).
 - **Re-datation** : chaque entrée porte sa date de péremption re-vérifiée au gel unique (risque 3 — trois gels sources non synchrones).
@@ -105,15 +106,15 @@ Trois régimes, déclarés au lecteur (Conspectus, « Régimes de preuve ») et 
 
 | Régime | Livres | Vote adversarial (trois juges, charge de réfuter) | Plancher |
 |---|---|---|---|
-| Sources gelées et vérifiées | I, II, IV, V, VI, VIII, X | réservé aux affirmations qui portent à elles seules la thèse d'un chapitre, et aux faits vivants re-datés en G-1 | [B] par extraction citée pour tout fait central nouveau |
-| Source rédigée non publiable | III, VII | idem, **plus** toute affirmation issue d'une pièce du Vol. III touchée par une remontée ouverte ou un arbitrage délégué révocable (l'option écartée se relit avant reprise) | niveau d'origine conservé, sous G-4 |
-| Matière neuve | IX | **toutes les affirmations centrales** — le régime le plus dur, pour le livre le plus nu | sources primaires seules ; échec documenté = résultat (retrait, G-6) |
+| Sources gelées et vérifiées | I, III, second mouvement du IV, second mouvement du V | réservé aux affirmations qui portent à elles seules la thèse d'un chapitre, et aux faits vivants re-datés en G-1 | [B] par extraction citée pour tout fait central nouveau |
+| Source rédigée non publiable | II, premier mouvement du IV | idem, **plus** toute affirmation issue d'une pièce du Vol. III touchée par une remontée ouverte ou un arbitrage délégué révocable (l'option écartée se relit avant reprise) | niveau d'origine conservé, sous G-4 |
+| Matière neuve | premier mouvement du V (ch. 46-48) | **toutes les affirmations centrales** — le régime le plus dur, pour la matière la plus nue | sources primaires seules ; échec documenté = résultat (retrait, G-6) |
 
 *Seuil fixé avant la première pièce, non rediscuté en cours de route.*
 
-**Motif, hérité du Vol. III (§A.4) et adapté** : sur les livres à sources vérifiées, voter ce que personne ne conteste gaspille le budget de réfutation ; sur le Livre IX, tout est contestable par construction. Conséquence assumée : la proportion d'entrées [A] variera par livre, et chaque tête de livre la déclare (parade du risque 11).
+**Motif, hérité du Vol. III (§A.4) et adapté** : sur les livres à sources vérifiées, voter ce que personne ne conteste gaspille le budget de réfutation ; sur la matière neuve du Livre V, tout est contestable par construction. Conséquence assumée : la proportion d'entrées [A] variera par livre, et chaque tête de livre la déclare (parade du risque 11).
 
-**Relèves v0.7, v0.10, v0.11** : repérages [C] — aucune n'entre au socle consolidé sans extraction de la source primaire (G-1) ; leur point d'atterrissage est celui que les journaux du TOC désignent.
+**Relèves v0.7, v0.10, v0.11 et v0.19** : repérages [C] — aucune n'entre au socle consolidé sans extraction de la source primaire (G-1) ; leur point d'atterrissage est celui que les journaux du TOC désignent. Les huit relèves v0.19 citent des documents normatifs et des articles de revue consultés à leur source, ce qui n'en change pas le régime (journal v0.19 du TOC).
 
 ## 8. Garde-fous rédactionnels
 
@@ -129,7 +130,7 @@ Trois régimes, déclarés au lecteur (Conspectus, « Régimes de preuve ») et 
 - qualification cryptographique : par ce que la spécification **démontre**, jamais ce qu'elle promet (R-02) ;
 - « AgentMesh », « control plane », « ACP », « autonomie graduée » : jamais nus (R-04 branche (f), R-8 du Vol. II, R-13 du Vol. III).
 
-**Motifs de balayage** : la somme se dote des siens **à la clôture de G-3** — un critère d'acceptation sans motif qui le contrôle n'est pas vérifiable (PRD Vol. III §A.6, le gabarit) —, chaque motif **validé par mutation avant emploi** (voir-doit / ne-doit-pas-voir), assignation par pièce portée par le TOC. La dualité d'usage (ch. 20-22) n'a pas de motif et n'en aura pas : relecture dédiée seule (CA-IV-11), l'absence déclarée plutôt que subie.
+**Motifs de balayage** : la somme se dote des siens **à la clôture de G-3** — un critère d'acceptation sans motif qui le contrôle n'est pas vérifiable (PRD Vol. III §A.6, le gabarit) —, chaque motif **validé par mutation avant emploi** (voir-doit / ne-doit-pas-voir), assignation par pièce portée par le TOC. La dualité d'usage (ch. 19-20) n'a pas de motif et n'en aura pas : relecture dédiée seule (CA-IV-11), l'absence déclarée plutôt que subie.
 
 ## 9. Contrôles outillés
 
@@ -137,7 +138,7 @@ Trois régimes, déclarés au lecteur (Conspectus, « Régimes de preuve ») et 
 |---|---|---|
 | `check-toc.py` (C1-C14) | ☑ versionné, validé par mutation (v0.12) | le TOC — avant toute publication du fichier |
 | `check-toc-mutations.py` | ☑ versionné | le script lui-même — après toute modification |
-| `check-compendium.py` | ☐ **à construire en G-3, valider par mutation avant la première pièce publiée** | les pièces : en-têtes à cinq champs, renvois « ch. N » 1-57, identifiants du socle consolidé résolvant contre l'Annexe B, identifiants préfixés de leur volume, registre de gel aligné pièce à pièce, motifs de balayage §8 |
+| `check-compendium.py` | ☐ **à construire en G-3, valider par mutation avant la première pièce publiée** | les pièces : en-têtes à cinq champs, renvois « ch. N » 1-50, identifiants du socle consolidé résolvant contre l'Annexe B, identifiants préfixés de leur volume, registre de gel aligné pièce à pièce, motifs de balayage §8 |
 
 *Un contrôle dont l'exécutable n'est pas versionné est une spécification, pas un contrôle (constat v0.7 du TOC — cinq passes l'ont payé).*
 
@@ -159,13 +160,13 @@ L'**Annexe C du plan est le siège unique**. Règles :
 - **CA-IV-03 Attribution.** §8, métriques auto-déclarées : à chaque occurrence.
 - **CA-IV-04 Datation.** Chaque pièce porte sa date de gel au registre, au même commit ; revalidation finale datée de moins de trente jours à la publication.
 - **CA-IV-05 Fidélité des citations.** Verbatim réservé aux reprises littérales vérifiées contre le texte actuel de la source — ou contre **l'arbre gelé `fd8f1be~1`** pour la *Synthèse* du Vol. I, retirée du dépôt (§13) ; une reprise en substance se déclare telle.
-- **CA-IV-06 Honnêteté des lacunes.** Toutes les lacunes du registre (§10) apparaissent, aucune silencieusement omise ; le ch. 56 les reprend une à une par identifiant.
-- **CA-IV-07 Marquage des inférences.** Toute construction d'auteur porte « Lecture de l'auteur », suivi de ce que le socle établit et n'établit pas ; les trois chapitres du Livre IX le portent à l'ouverture ; les passages du Vol. III issus des réaffectations P0.2 conservent leur marquage CA-07 d'origine.
+- **CA-IV-06 Honnêteté des lacunes.** Toutes les lacunes du registre (§10) apparaissent, aucune silencieusement omise ; le ch. 49 les reprend une à une par identifiant.
+- **CA-IV-07 Marquage des inférences.** Toute construction d'auteur porte « Lecture de l'auteur », suivi de ce que le socle établit et n'établit pas ; les trois chapitres de matière neuve (ch. 46-48) le portent à l'ouverture ; les passages du Vol. III issus des réaffectations P0.2 conservent leur marquage CA-07 d'origine.
 - **CA-IV-08 Périmètre.** Test d'appartenance (§4) vérifié au grain du **développement**, coupes consignées.
 - **CA-IV-09 Qualification des renvois.** Décision 7 du TOC, intégralement : document nommé (Vol. I triple numérotation ; §8.x/§10.x du Vol. II ; TOC/PRD/PRDPlan du Vol. III ; les deux « Annexe B » du Vol. II), série nommée (deux séries « Q n »), volume nommé (R-N, et **F-xx depuis la v0.13**).
 - **CA-IV-10 Statut épistémique double.** Niveau [A]/[B]/[C] et tri prospectif : deux instruments, jamais l'un pour l'autre.
-- **CA-IV-11 Traitement défensif.** Ch. 20-22 : mécanique au niveau architectural, identifiants cités, aucune recette reproduite ; relecture dédiée par un relecteur distinct, compte rendu déposé et nommé dans la pièce ; l'attestation auto-délivrée est proscrite **même exacte**.
-- **CA-IV-12 Traçabilité du blueprint.** Ch. 49-50 : chaque composant et lien réglementaire tracé au socle ou marqué inférence (CA-8 hérité du Vol. II) ; contrôle par confrontation à la spécification de cadrage, pas par relecture seule (leçon du ch. 27 du Vol. III : un découpage refait sans marquage survit aux relectures).
+- **CA-IV-11 Traitement défensif.** Ch. 19-20 : mécanique au niveau architectural, identifiants cités, aucune recette reproduite ; relecture dédiée par un relecteur distinct, compte rendu déposé et nommé dans la pièce ; l'attestation auto-délivrée est proscrite **même exacte**.
+- **CA-IV-12 Traçabilité du blueprint.** Ch. 44 (blueprint et cycle de vie) : chaque composant et lien réglementaire tracé au socle ou marqué inférence (CA-8 hérité du Vol. II) ; contrôle par confrontation à la spécification de cadrage, pas par relecture seule (leçon du ch. 27 du Vol. III : un découpage refait sans marquage survit aux relectures).
 - **CA-IV-13 Relecture adversariale.** Chaque pièce, par un relecteur distinct du rédacteur, chargé de réfuter ; les correctifs s'appliquent **dans le pipeline de la passe**, jamais après (leçon P3 du Vol. III) ; si la faute siège au socle, on amende le socle d'abord, jamais la pièce seule.
 - **CA-IV-14 Attestation sur pièce.** « Conforme », « vérifié », « résolu » s'écrivent depuis une constatation sur pièce, jamais depuis un document amont ni un souvenir ; un jalon s'atteste par un seuil, pas par son propre récit.
 
@@ -177,14 +178,14 @@ L'**Annexe C du plan est le siège unique**. Règles :
 | **J-IV-1** | Portes G-1 et G-2 : gel unique, relèves instruites, divergences re-vérifiées, commande validée | date de gel publiée ; chaque relève consommée ou reconduite avec motif ; commande exécutée sur les trois corpus entiers, résultats reproduits |
 | **J-IV-2** | Porte G-3 : socle consolidé (Annexe B), tables de correspondance, `check-compendium.py` | 100 % des F-xx cités par le TOC résolvent contre l'Annexe B ; deux tables publiées ; script validé par mutation ; motifs de balayage publiés et mutés |
 | **J-IV-3** | Portes G-4 à G-6 : collation Vol. III (**volet structurel levé par la v0.14, zéro écart** ; reste le volet de fond), arbitrages D-2/D-3 — et **D-7** (risque 15), dû avant J-IV-4 | écarts de collation corrigés au TOC (version++) ; décisions consignées à l'Annexe A avec date |
-| **J-IV-4** | Livres I, II, IV, V, VI (28 chapitres) | chaque pièce : CA-IV-01 à 14 constatés, registre de gel aligné |
-| **J-IV-5** | Livre VIII (ch. 46-51) | idem + re-vérification C260 consignée au ch. 48 |
-| **J-IV-6** | Livres III et VII (ch. 12-24, 41-45) | idem + G-4 close |
-| **J-IV-7** | Livre IX (ch. 52-54) — ou son retrait | socle propre publié et voté, ou retrait exécuté (renumérotation inverse, journaux) |
-| **J-IV-8** | Livre X (ch. 55-57) + appareil complet | registre des lacunes intégral au ch. 56 ; registre de gel au ch. 57 ; 9 annexes livrées |
+| **J-IV-4** | Livres I et III (26 chapitres) | chaque pièce : CA-IV-01 à 14 constatés, registre de gel aligné |
+| **J-IV-5** | Second mouvement du Livre IV (ch. 41-45) | idem + re-vérification C260 consignée au ch. 43 |
+| **J-IV-6** | Livre II et premier mouvement du Livre IV (ch. 12-21, 37-40) | idem + G-4 close |
+| **J-IV-7** | Premier mouvement du Livre V (ch. 46-48) — ou son retrait | socle propre publié et voté, ou retrait exécuté (renumérotation inverse, journaux) |
+| **J-IV-8** | Second mouvement du Livre V (ch. 49-50) + appareil complet | registre des lacunes intégral au ch. 49 ; registre de gel au ch. 50 ; 9 annexes livrées |
 | **J-IV-9** | Revalidation finale, publication | revalidation < 30 jours ; grille CA-IV intégralement constatée ; décomptes concordants entre PRD, TOC, README du volume et README du dépôt ; **la somme se substitue aux volumes** (levée du risque 7) |
 
-**Définition de « terminé »** : les 67 pièces rédigées, relues adversarialement et tracées ; grille CA-IV conforme par constatation ; lacunes toutes exposées ; décomptes re-mesurés et concordants entre porteurs ; le statut du TOC (« les volumes font foi ») retourné.
+**Définition de « terminé »** : les 60 pièces rédigées, relues adversarialement et tracées ; grille CA-IV conforme par constatation ; lacunes toutes exposées ; décomptes re-mesurés et concordants entre porteurs ; le statut du TOC (« les volumes font foi ») retourné.
 
 ## 13. Risques du projet éditorial
 
@@ -193,10 +194,10 @@ Les **quinze risques de cadrage** vivent au TOC et n'y sont pas dupliqués. Risq
 | Risque | Impact | Parade |
 |---|---|---|
 | **La *Synthèse* du Vol. I est hors dépôt** (supprimée au commit `fd8f1be`, 22 juill. 2026 — constat direct, `git show --name-status` ; remontée R-G-52 du Vol. III à l'auteur, non tranchée) | les renvois « *Synthèse* §N » du TOC — exacts — ne sont plus opposables sur l'arbre courant ; la collation et CA-IV-05 perdent leur pièce | vérifier contre l'arbre gelé `fd8f1be~1` tant que R-G-52 n'est pas arbitrée ; ne pas restaurer le fichier (hors charge éditoriale) ; décision d'auteur D-5 |
-| **Les remontées ouvertes du Vol. III bougent des passages déjà fusionnés** | re-travail des Livres III/VII | G-4 tardive (au plus près de la rédaction de ces livres) ; état des 15 remontées re-vérifié au gel |
-| **Volumétrie : condensation réelle ~52 % sur les Livres III/VII** (TOC v0.17, Volumétrie) | enveloppes intenables ou coupes de bornes | décision d'auteur D-4 (re-calibrage éventuel) ; l'écart se documente, ne s'ampute pas — *amputer une borne et couper un hors-périmètre produisent le même chiffre* (leçon du Vol. III) |
+| **Les remontées ouvertes du Vol. III bougent des passages déjà fusionnés** | re-travail du Livre II et du premier mouvement du Livre IV | G-4 tardive (au plus près de la rédaction de ces livres) ; état des 15 remontées re-vérifié au gel |
+| **Volumétrie : condensation réelle ~52 % sur les enveloppes héritées des anciens Livres III et VII** — le Livre II et le premier mouvement du Livre IV — (TOC, Volumétrie) | enveloppes intenables ou coupes de bornes | décision d'auteur D-4 (re-calibrage éventuel) ; l'écart se documente, ne s'ampute pas — *amputer une borne et couper un hors-périmètre produisent le même chiffre* (leçon du Vol. III) |
 | **Réversibilité de P0.2** (dépôt ultérieur des trois ouvrages) | huit emplacements + Annexe G à rouvrir | marqueurs « corpus d'appui » conservés (contrôle C10) ; réouverture = acte déclaré, jamais silencieux |
-| **Péremption en cours de rédaction** — MCP 2026-07-28 ratifiée pendant le projet, RTR, arrêté du cadre bancaire | Livre II et ch. 36-37 périmés avant publication | événements de péremption du ch. 57 surveillés à chaque jalon ; re-datation G-1 ; un fait qui bascule se traite au socle d'abord |
+| **Péremption en cours de rédaction** — MCP 2026-07-28 ratifiée pendant le projet, RTR, arrêté du cadre bancaire | second mouvement du Livre I et ch. 32-33 périmés avant publication | événements de péremption du ch. 50 surveillés à chaque jalon ; re-datation G-1 ; un fait qui bascule se traite au socle d'abord |
 | **Attestations non rejouables** — le projet vient d'en payer deux (script perdu des passes v0.3-v0.6 ; chemins `Tocs/` du journal v0.5) | contrôles fictifs, collations non rejouables | tout exécutable versionné et muté ; toute mesure ancrée à un commit ou une date ; CA-IV-14 |
 
 ---
@@ -206,11 +207,11 @@ Les **quinze risques de cadrage** vivent au TOC et n'y sont pas dupliqués. Risq
 | # | Décision | Échéance | État |
 |---|---|---|---|
 | **D-1** | Date du **gel unique** | J-IV-1 | ☐ |
-| **D-2** | **Risque 14** (harnais) : chapitre neuf, sections, ou périmètre déclaré | avant J-IV-6 (Livre VII) | ☐ |
-| **D-3** | **Livre IX** : constitution du socle ou retrait | avant J-IV-7 | ☐ |
-| **D-4** | **Re-calibrage éventuel** des enveloppes des Livres III/VII (condensation mesurée ~52 %) | J-IV-1 | ☐ |
+| **D-2** | **Risque 14** (harnais) : chapitre neuf, sections, ou périmètre déclaré | avant J-IV-6 (premier mouvement du Livre IV) | ☐ |
+| **D-3** | **Premier mouvement du Livre V** (ch. 46-48) : constitution du socle ou retrait | avant J-IV-7 | ☐ |
+| **D-4** | **Re-calibrage éventuel** des enveloppes héritées (Livre II et premier mouvement du Livre IV ; condensation mesurée ~52 %) | J-IV-1 | ☐ |
 | **D-5** | Régime des renvois à la ***Synthèse* du Vol. I** (R-G-52 : restauration, ancrage à `fd8f1be~1`, ou repointage vers `Monographie.md`) | avant G-4 | ☐ |
 | **D-6** | **Instance d'arbitrage** désignée pour les remontées réservées à l'auteur — la lacune que le Vol. III a constatée deux fois sans la combler (son PRDPlan §5.3) | J-IV-1 | ☐ |
-| **D-7** | **Risque 15** (l'accord entre agents sous défaillance) : sections dans les chapitres d'atterrissage (ch. 6, 42, 54), ou périmètre assumé et déclaré. ⚠ **Sans porte dédiée** — à la différence du risque 14 (G-5), ce constat ne conditionne aucun livre entier ; il conditionne le ch. 6, donc la rédaction du Livre I | avant J-IV-4 | ☐ |
+| **D-7** | **Risque 15** (l'accord entre agents sous défaillance) : sections dans les chapitres d'atterrissage (ch. 6, 37, 48), ou périmètre assumé et déclaré. ⚠ **Sans porte dédiée** — à la différence du risque 14 (G-5), ce constat ne conditionne aucun livre entier ; il conditionne le ch. 6, donc la rédaction du Livre I | avant J-IV-4 | ☐ |
 
 **Règle d'escalade — posée avant la première rédaction** (héritage PRDPlan du Vol. III §5.3, avec sa correction) : un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il **remonte**, et une remontée marquée « bloquant pour le ch. N » interdit de lancer le ch. N. L'instance d'exécution arbitre les remontées de renvoi, de siège, de cardinal ou de niveau, avec champ « Tranchée par » ; **remontent à l'auteur sans exception** : thèse d'ensemble, découpage, enveloppes, garde-fous, critères d'acceptation, et les sept décisions D-1 à D-7. Les remontées se tranchent **entre les lots, jamais en fin de phase**.
