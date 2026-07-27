@@ -211,6 +211,20 @@ occurrence ; un statut *preview* n'est jamais présenté comme une disponibilit�
 
 ## Règles valant pour tout le dépôt
 
+- **Flux git — committer tout et pousser sur `main`.** *(Consigne d'auteur du 27 juillet 2026.)*
+  Le travail terminé se **committe en entier** — jamais de fichier laissé de côté — et se **pousse
+  directement sur `main`**, sans passer par une branche de travail ni par une *pull request*.
+  Ne pas demander confirmation à chaque fois : la consigne vaut autorisation permanente. Trois
+  précisions qui la bornent sans l'affaiblir. *(a)* **Rien ne dispense des contrôles** : `check-veille.py`
+  et `PRD/check-toc.py` s'exécutent **avant** le commit qui touche leur domaine, et un contrôle en
+  échec interdit de pousser — pousser vite n'est pas pousser n'importe quoi. *(b)* **La règle du PDF
+  versionné avec sa source tient** (voir ci-dessous) : un `.md` poussé sans son `.pdf` régénéré est un
+  commit incomplet, quelle que soit la hâte. *(c)* **La consigne ne couvre pas le destructif** :
+  réécriture d'historique, poussée forcée, suppression de branche ou de fichier versionné se
+  demandent, comme avant. ⚠ Cette règle est un **choix de flux, pas une doctrine de qualité** : elle
+  supprime l'étape de revue, elle ne supprime pas la relecture.
+  L'allègement des invites correspondant est au [`.claude/settings.json`](.claude/settings.json),
+  versionné pour survivre au reclonage du dépôt.
 - **Langue.** Livrables et prose en **français canadien** soutenu ; ton professionnel et neutre
   (pas de marketing, pas de première personne). Terminologie technique anglaise entre parenthèses à
   la première occurrence ; citations verbatim en langue originale.
