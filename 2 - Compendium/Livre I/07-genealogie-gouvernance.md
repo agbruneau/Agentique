@@ -8,7 +8,7 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11). **Premier chap
 | **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes ; rédaction sur instruction d'auteur du 27 juillet 2026. ⚠ **Premier chapitre du Livre I à consommer le Vol. II**, dont le régime de preuve diffère : ses faits portent des niveaux **[A]/[B]/[C]** explicites et conservent leur niveau d'origine (PRD §7.1), là où ceux du Vol. I entrent en [C] |
 | **Date de gel** | **Aucune.** Gel unique non fixé (D-1). ⚠ **Ce chapitre porte deux gels de source distincts** — **juin 2026** (Vol. I) et **16 juillet 2026** (Vol. II) — et c'est le premier du Livre où l'écart compte : la chronologie qu'il établit s'arrête au bilan public d'avril 2026, et une révision protocolaire majeure était attendue **douze jours après** le gel du Vol. II |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. I *Monographie* §3.0-3.1 et §3.13.1** (régime **[C]**) et le **Vol. II *Monographie* ch. 1** — dont le TOC assigne à ce chapitre les entrées **F-01, F-02, F-04, F-05, F-43**, à niveau conservé. ⚠ **Tant que G-3 n'est pas franchie, ces identifiants restent préfixés de leur volume** : un « F-01 » nu est indécidable entre deux socles |
-| **Garde-fous balayés** | **Les deux séries — et ce chapitre est le siège d'un garde-fou.** Vol. II — **R-1 (l'ACP protocolaire n'est pas un standard vivant) : trois occurrences**, § 7.3, § 7.4.2 et § 7.5 ; **R-8 (sigle jamais nu, quatre branches) : le § 7.5 en est le SIÈGE** pour toute la somme — huit occurrences, toutes qualifiées ; **métriques auto-déclarées : quatre occurrences**, § 7.6 (trois) et § 7.3, chacune attribuée. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-13 : deux occurrences**, § 7.5, mêmes termes ; **R-14 : deux occurrences**, § 7.5 et § 7.6. R-01 à R-12 : **zéro occurrence** |
+| **Garde-fous balayés** | **Les deux séries — et ce chapitre est le siège d'un garde-fou.** Vol. II — **R-1 (l'ACP protocolaire n'est pas un standard vivant) : trois occurrences**, § 7.3, § 7.4.2 et § 7.5 ; **R-8 (sigle jamais nu, quatre branches) : le § 7.5 en est le SIÈGE** pour toute la somme — huit occurrences, toutes qualifiées ; **métriques auto-déclarées : quatre occurrences**, § 7.6 (trois) et § 7.3, chacune attribuée. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-13 : deux occurrences**, § 7.5, mêmes termes ; **R-14 : trois occurrences**, § 7.4.2, § 7.5 et § 7.6. R-01 à R-12 : **zéro occurrence** |
 | **Volumétrie cible** | ≈ 8 000 mots de corps (§ 7.0 à § 7.6). ⚠ **Aucun décompte n'est publiable** tant que G-2 est ouverte |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 7)* — en dix-sept mois, la couche protocolaire agentique s'est consolidée sous gouvernance neutre (Linux Foundation) — condition **nécessaire et non suffisante** de sa crédibilité en entreprise réglementée ; mais « soutien ≠ production » et AP2 n'a aucun transfert de gouvernance documenté.
@@ -395,9 +395,13 @@ c'est ce découplage institutionnel qui **rend crédible** la politique de dépr
 ch. 8 § 8.3.
 
 Une seconde fondation, spécialisée dans l'authentification, prend une importance qui n'apparaîtra
-qu'au ch. 10 : c'est elle que des annonces d'avril-mai 2026 désignent comme destinataire du protocole
-de transaction. ⚠ **Ce transfert est annoncé, non vérifié au socle**, et le § 7.6 en tire la
-conséquence pour la thèse.
+qu'au ch. 10 : c'est elle qui a reçu le **protocole de transaction**, le **28 avril 2026**.
+
+⚠ **Ce fait est porté par le Vol. I *Monographie* §3.13.1, au régime [C], et le socle du Vol. II ne
+le documentait pas** — *absence de documentation*, **degré 3 de l'échelle R-14 du Vol. III**, et non
+une négation. Les deux énoncés sont **compatibles**, et le **ch. 10 § 10.1.3** en instruit l'écart. ⚠ **Une version antérieure de ce passage écrivait « annoncé, non vérifié au socle »** : la
+formule suivait le plan et le Vol. II sans lire jusqu'au bout le §3.13.1 du Vol. I, qui est pourtant
+l'une des sources de ce chapitre. **Corrigé ; remontée R-IV-12 ouverte au ch. 10 § 10.7.**
 
 L'analogie volontiers invoquée est celle d'un projet d'infrastructure antérieur donné tôt à une
 fondation : **un projet d'éditeur dominant attire des contributeurs concurrents précisément parce que
@@ -505,12 +509,14 @@ décide, non combien applaudissent.*
 **Ce que ce chapitre établit — trois acquis pour la suite du mouvement.** *(1)* La couche protocolaire
 agentique **est sortie du régime propriétaire** : aucun des quatre protocoles retenus ici n'est
 gouverné par son créateur seul. ⚠ **La restriction est importante et elle est celle de la thèse** :
-elle **ne s'étend pas au protocole de transaction**, dont le socle **ne documente à ce jour aucun
-transfert de gouvernance**. Des annonces d'avril-mai 2026 font état d'un don à une fondation
-d'authentification ; **statut à date : annoncé, non vérifié au socle**. Le ch. 10 instruit ce statut,
-et **la thèse de ce chapitre sera à réviser si la source primaire se confirme**. ⚠ Cette absence de
-transfert documenté **ne vaut pas fait négatif vérifié** — c'est une lacune ouverte au registre, non
-une propriété établie. *(2)* La consolidation ne s'est pas faite par coexistence polie **mais par
+elle **s'étend au protocole de transaction, mais par une seconde fondation** — celle qui est
+spécialisée dans l'authentification, et qui l'a reçu le **28 avril 2026** (Vol. I *Monographie*
+§3.13.1, régime **[C]** ; ch. 10 § 10.1.3). ⚠ **Le socle du Vol. II, lui, n'en documentait aucun
+transfert** — *absence de documentation*, et **non un fait négatif vérifié** : une lacune de
+couverture ouverte à son registre, non une propriété établie. Les deux énoncés sont **compatibles**,
+et le ch. 10 § 10.1.3 en tire la règle de lecture. ⚠ **La conséquence pour la thèse n'est pas une
+révision mais une précision** : la couche protocolaire est sortie du régime propriétaire **par
+plusieurs fondations distinctes, organisées par axe**, non par une seule. *(2)* La consolidation ne s'est pas faite par coexistence polie **mais par
 fusion réelle**. *(3)* Les métriques publiées mesurent **l'attention, non la production**.
 
 **Ce que ce chapitre ne dit pas mérite d'être énoncé aussi clairement.** Il ne dit pas que ces
@@ -547,12 +553,25 @@ d'auteur du 27 juillet 2026. Conséquences habituelles, plus deux propres à ce 
 
 **Remontées ouvertes par ce chapitre :**
 
-- **R-IV-08 — non bloquante, à échéance G-1, et de conséquence thétique.** Le statut du transfert de
-  gouvernance du protocole de transaction est **annoncé, non vérifié au socle**. Si la source
-  primaire se confirme et se date, c'est la « source primaire nouvelle datée » que le registre des
-  lacunes exige, la lacune correspondante s'instruit du même mouvement — **et la thèse de ce chapitre
-  doit être révisée**, puisqu'elle porte aujourd'hui « AP2 n'a aucun transfert de gouvernance
-  documenté ». Le ch. 10 est le siège de cette instruction.
+- **R-IV-08 — non bloquante, à échéance G-1, et de conséquence thétique. ⚠ INSTRUITE PAR LE CH. 10,
+  ET LE DÉFAUT ÉTAIT ICI.** *Rédaction d'origine :* le statut du transfert de gouvernance du protocole
+  de transaction était donné pour **annoncé, non vérifié au socle**, à instruire si une source
+  primaire datée était extraite.
+
+  ⚠ **Elle ne l'était pas : la source était déjà dans le périmètre de fusion de ce chapitre.** Le
+  **Vol. I *Monographie* §3.13.1** — l'une des trois sources assignées à ce chapitre — porte le
+  transfert comme **fait daté et sourcé** (28 avril 2026). Ce chapitre l'avait manqué en suivant le
+  plan et le Vol. II sans lire jusqu'au bout sa propre source du Vol. I. **Le § 7.4.2 et le § 7.6 sont
+  corrigés** ; l'instruction complète est au **ch. 10 § 10.1.3**, et la **remontée R-IV-12** y porte
+  la demande de réalignement du plan au titre de la décision 8.
+
+  ⚠ **La thèse citée en tête reste inchangée, et c'est délibéré** : elle est **citée verbatim depuis
+  le TOC v0.23**, et un rédacteur ne corrige pas le TOC — il remonte. Sa dernière clause (« AP2 n'a
+  aucun transfert de gouvernance documenté ») est **exacte du point de vue du socle du Vol. II** et
+  **périmée du point de vue du Vol. I** ; l'écart est exposé au § 7.6 et instruit au ch. 10.
+
+  *Leçon de méthode, portée au skill de rédaction : une pièce ne se rédige pas sur la seule source que
+  le plan met en avant, mais sur l'intégralité de son périmètre de fusion.*
 - **R-IV-09 — non bloquante.** Le § 7.5 est le **siège** de l'encadré de désambiguïsation pour toute
   la somme, et le ch. 10 doit s'y **renvoyer sans le reconstruire**. Aucun contrôle outillé ne
   vérifie cette abstention — même classe que R-IV-05, ouverte au ch. 3 pour le socle IAM. **Un motif

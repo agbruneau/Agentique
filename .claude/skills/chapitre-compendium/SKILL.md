@@ -62,6 +62,19 @@ Aucune ne se saute — chacune ferme une classe d'erreur que les autres ne voien
    III sous `1 - Corpus/`. **Condenser suppose d'avoir lu.** Une pièce écrite de mémoire sur un
    corpus qu'on n'a pas ouvert produit du plausible, pas du fidèle.
 
+   ⚠ **Lire l'INTÉGRALITÉ du périmètre de fusion, pas la source que le plan met en avant.** Une ligne
+   Fusion cite souvent deux ou trois provenances, et le TOC ne commente d'ordinaire que celle qui
+   porte la thèse. Lire l'autre **jusqu'au bout** : c'est là que se logent les faits qui périment un
+   énoncé du plan. **La faute a déjà été commise sur le ch. 7**, dont la ligne Fusion cite le Vol. I
+   §3.0-3.1 **et §3.13.1** en plus du Vol. II ch. 1 : la pièce a repris du plan « transfert de
+   gouvernance annoncé, non vérifié au socle » alors que le §3.13.1 — sa propre source — portait le
+   fait daté et sourcé. Corrigé au ch. 10 § 10.1.3, remontée R-IV-12.
+
+   ⚠ **Et quand deux volumes divergent, vérifier d'abord que c'en est une.** « Le socle de A ne
+   documente pas X » et « B documente X » sont **logiquement compatibles** : c'est une **lacune de
+   couverture**, pas une contradiction, et elle se traite en exposant les deux états datés — jamais
+   en corrigeant le volume le plus ancien, dont l'énoncé reste exact dans son périmètre.
+
 Puis lire [`references/conventions.md`](references/conventions.md) de ce skill : renvois, marqueurs,
 garde-fous, et les pièges qui ont déjà coûté une passe.
 

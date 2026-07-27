@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 10 — Transaction et infrastructure : AP2 et AGNTCY · La somme agentique</title>
+<meta name="description" content="que la transaction pilotée par agents (AP2) soit l&#x27;aboutissement financier de la pile est une lecture d&#x27;auteur ; qu&#x27;AGNTCY soit une couche d&#x27;infrastructure et non un concurrent est le positionnement officiel déclaré du projet, une déclaration et non un fait vérifié, que des analyses tierces nuancent">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre I · Chapitre 10</div>
+  <ol>
+    <li><a href="#s101"><span class="num">10.1</span>AP2 : la transaction pilotée par agents</a></li>
+    <li><a href="#s102"><span class="num">10.2</span>AGNTCY : la couche d&#x27;infrastructure</a></li>
+    <li><a href="#s103"><span class="num">10.3</span>Interopérabilité du commerce et des paiements agentiques</a></li>
+    <li><a href="#s104"><span class="num">10.4</span>Responsabilité, litiges et non-répudiation : l&#x27;interopérabilité organisationnelle</a></li>
+    <li><a href="#s105"><span class="num">10.5</span>Le destin de l&#x27;ACP protocolaire : la portée de risque</a></li>
+    <li><a href="#s106"><span class="num">10.6</span>Les feuilles de route de séquencement : jalon historiographique, jamais prescription</a></li>
+    <li><a href="#s107"><span class="num">10.7</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.23 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="10-transaction-infrastructure.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique</div>
+  <h1><span class="chap">Chapitre 10</span>Transaction et infrastructure : AP2 et AGNTCY</h1>
+  <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11)</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — portes G-1, G-2 et G-3 ouvertes ; instruction d'auteur du 27 juillet 2026</dd>
+    <dt>Date de gel</dt>
+    <dd><strong>Aucune</strong> (D-1 non prise). Gels de source <strong>inégaux et l'écart est ici décisif</strong> : <strong>juin 2026</strong> (Vol. I) et <strong>16 juillet 2026</strong> (Vol. II). ⚠ Le <strong>tableau daté du § 10.3.3</strong> est un instantané qui <strong>se périme en bloc</strong> ; le <strong>statut de gouvernance du § 10.1.3</strong> est le point du Livre où les deux gels <strong>ne disent pas la même chose</strong></dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte). Résolution contre le <strong>Vol. I <em>Monographie</em> §3.9</strong> (régime <strong>[C]</strong>, PRD §7.1) et contre le <strong>Vol. II <em>Monographie</em> ch. 3</strong>, dont les entrées <strong>F-04</strong>, <strong>F-05</strong> et <strong>F-43</strong> conservent leurs niveaux <strong>[A]</strong>, <strong>[A]</strong> et <strong>[B]</strong>, et la <strong>réserve F-06</strong> son régime de préimpression. <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd>Vol. II — <strong>R-1 : deux occurrences</strong>, § 10.5.1 et § 10.6.2, l'ACP protocolaire jamais présenté comme un standard vivant ; <strong>R-8 : cinq occurrences</strong>, § 10.3.2 (deux), § 10.5.1, § 10.5.3 et § 10.6.2, le sigle jamais nu, le siège de l'encadré restant au <strong>ch. 7 § 7.5</strong> ; <strong>métriques auto-déclarées : quatre occurrences</strong>, § 10.1.2 (deux), § 10.2.1 et § 10.2.2, toutes attribuées et toutes porteuses de la clause « soutien ≠ production » ; <strong>réserve F-01 : deux occurrences</strong>, § 10.3.3 et § 10.4.2 ; <strong>réserve F-06 : une occurrence</strong>, § 10.6. R-2 à R-7 : <strong>zéro occurrence</strong>. Vol. III — <strong>R-02 : trois occurrences</strong>, § 10.1.4, § 10.3.4 et § 10.4.3 ; <strong>R-13 : cinq occurrences</strong>, mêmes que R-8 ; <strong>R-14 : six occurrences</strong> — § 10.1.3, § 10.1.4 (deux), § 10.2.2, § 10.3.4 et § 10.4.2 —, dont <strong>la plus lourde du Livre</strong>, celle du § 10.1.3, qui porte une <strong>divergence entre deux volumes rédigés</strong>. R-01, R-03 à R-12 : <strong>zéro occurrence</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ 7 000 mots de corps (§ 10.1 à § 10.6) — <strong>mesurés, non estimés</strong>, la mesure valant ici plus que la cible : deux des six sections sont bornées par un <strong>partage déclaré</strong> (§ 10.5 avec le ch. 8, § 10.3.4 avec le ch. 18) et deux autres par une <strong>lacune assumée</strong> (§ 10.1.4). ⚠ <strong>Aucun décompte n'est publiable</strong> tant que G-2 est ouverte, faute de commande de décompte arrêtée</dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>que la transaction pilotée par agents (AP2) soit l'<strong>aboutissement financier</strong> de la pile est une <strong>lecture d'auteur</strong> ; qu'AGNTCY soit une couche d'infrastructure <strong>et non un concurrent</strong> est le <strong>positionnement officiel déclaré du projet</strong>, une déclaration et non un fait vérifié, que des analyses tierces nuancent.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.23, entrée du chapitre 10.</span>
+</div>
+
+<p>Une institution ne s'intéresse vraiment à un protocole d'interopérabilité que le jour où celui-ci touche à <strong>l'argent</strong> ou à <strong>l'infrastructure</strong>. Les deux objets de ce chapitre occupent précisément ces deux extrémités. Le protocole de paiement agentique se tient au point où la délégation à un agent cesse d'être une affaire d'ingénierie pour devenir une affaire de <strong>responsabilité</strong> : la transaction. La couche d'infrastructure se tient à l'autre bout, là où des agents se découvrent et s'échangent des messages <strong>avant même de savoir ce qu'ils feront ensemble</strong>. Entre les deux se glisse un troisième objet, dont ce chapitre tire la <strong>portée de risque</strong> — l'ACP protocolaire, dont le ch. 8 § 8.5.1 a raconté la mécanique de disparition.</p>
+
+<div class="avert">
+  <p><strong>La thèse de ce chapitre doit être décomposée avant d'être employée, car ses deux moitiés n'ont pas le même statut de preuve, et les fondre serait la faute que ce chapitre prend pour objet.</strong> Que la transaction agentique constitue l'<strong>aboutissement financier</strong> de la pile protocolaire est une <strong>lecture d'auteur</strong> : les sources établissent que le protocole de paiement est un <strong>protocole compagnon</strong> de l'axe agent-agent, dédié aux transactions pilotées par agents, et <strong>rien de plus sur sa centralité</strong>. Qu'AGNTCY soit une <strong>couche d'infrastructure et non un concurrent</strong> est, pour sa part, le <strong>positionnement officiel déclaré du projet</strong> — une déclaration, non un fait vérifié, et que des analyses tierces viennent nuancer. <em>Une lecture d'auteur et une déclaration de partie intéressée ne sont pas du même ordre, et aucune des deux n'est un fait établi.</em></p>
+</div>
+
+<p>Ce chapitre porte en outre la <strong>densité d'énoncés d'absence la plus forte du Livre</strong> — six occurrences de l'échelle à trois degrés du Vol. III —, et l'une d'elles est d'un genre que les neuf chapitres précédents n'ont pas rencontré : <strong>deux volumes rédigés du corpus n'y disent pas la même chose</strong>. Le § 10.1.3 lui est consacré.</p>
+
+<h2 id="s101"><span class="sig">§ 10.1</span>AP2 : la transaction pilotée par agents</h2>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>Thèse à statut déclaré.</strong> Ce qui suit <strong>n'établit pas</strong> qu'AP2 soit central dans la pile. Il établit qu'un protocole compagnon existe, qu'il a une date, un décompte de soutiens déclarés et un dossier de gouvernance discuté. <em>La centralité, elle, est une lecture — celle de la thèse, marquée comme telle.</em></p>
+</div>
+
+<h3>10.1.1 Les faits et l'intervalle</h3>
+
+<p>Les faits sont <strong>peu nombreux</strong>, et il faut résister à la tentation de les étoffer. Le protocole de paiement agentique — AP2, <em>Agent Payments Protocol</em> — a été <strong>lancé en septembre 2025</strong>, l'annonce publique du fournisseur infonuagique qui le porte étant datée du <strong>16 septembre 2025</strong>, comme <strong>protocole compagnon</strong> du protocole agent-agent, dédié aux transactions pilotées par agents.</p>
+
+<p>La <strong>filiation est explicite</strong> et elle éclaire le découpage du Livre : là où le protocole agent-agent régit la <strong>délégation de tâches</strong> entre pairs (ch. 8 § 8.4), AP2 s'attache à ce qui se passe lorsque <strong>la tâche déléguée engage un paiement</strong>. Ce n'est pas un protocole concurrent ; c'est un protocole qui prend le relais <strong>au point où la délégation cesse d'être réversible</strong>.</p>
+
+<div class="avert">
+  <p><strong>Posons l'intervalle, car il est la seule quantité que les sources permettent de calculer ici.</strong> De l'annonce du <strong>16 septembre 2025</strong> au communiqué de la fondation faîtière du <strong>9 avril 2026</strong> qui en publie les soutiens, il s'écoule <strong>moins de sept mois</strong>. Moins de sept mois après son annonce, un protocole de paiement compte plus de soixante déclarations de soutien — <em>si l'on en croit le communiqué qui les rapporte</em>.</p>
+</div>
+
+<p><em>Lecture d'auteur.</em> Les sources <strong>n'enregistrent aucun décompte au lancement</strong> d'AP2 — à la différence du protocole agent-agent, dont le ch. 7 § 7.6 a pu donner <strong>les deux bornes</strong>, plus de cinquante au départ et plus de cent cinquante en avril 2026. <strong>Aucune dynamique de croissance ne peut donc être tirée de ce chiffre unique</strong> : un décompte sans point de départ mesure un état, jamais une pente. <em>C'est la différence entre « soixante organisations soutiennent » et « soixante organisations se sont ralliées ».</em> La seconde formule est indue et ce chapitre ne l'emploie pas.</p>
+
+<h3>10.1.2 La métrique des soixante : un endossement, pas une production</h3>
+
+<p>Sur l'adoption, les sources fournissent <strong>un chiffre et une liste</strong>. Selon le communiqué de la fondation faîtière du <strong>9 avril 2026</strong>, <strong>plus de soixante organisations des paiements et des services financiers déclarent leur soutien</strong> au protocole.</p>
+
+<div class="avert">
+  <p><strong>Ce chiffre est auto-déclaré et il est attribué ici à sa source, comme il doit l'être à chaque occurrence</strong> (PRD du Vol. II §8.2.1). <strong>Le soutien déclaré ne vaut pas déploiement en production.</strong> La réserve attachée à l'entrée du socle est explicite sur ce point : il s'agit d'un <strong>endossement déclaré</strong>, non d'une <strong>adoption en production vérifiée</strong>. Le ch. 7 § 7.6 a posé la règle de lecture pour toute la somme ; ce chapitre l'applique sans l'assouplir.</p>
+</div>
+
+<p>Le grief central que le ch. 7 adressait aux décomptes d'« organisations de soutien » — <strong>l'unité n'en est pas définie</strong> — vaut <strong>intégralement</strong> ici. Une organisation qui a signé un communiqué et une organisation qui a livré une intégration comptent pour un, et le communiqué ne les distingue pas.</p>
+
+<p><strong>Mais un élément que les sources fournissent change la portée de la lecture, et il mérite d'être posé sans être durci.</strong> <strong>Sept</strong> de ces organisations sont <strong>nommées</strong> par le communiqué, et ce sont des <strong>réseaux de paiement et des émetteurs</strong> — c'est-à-dire, précisément, les acteurs sans lesquels aucune transaction agentique ne peut aboutir.</p>
+
+<p><em>Lecture d'auteur.</em> Sept noms d'infrastructures de paiement sont <strong>qualitativement plus informatifs qu'un décompte entièrement anonyme</strong> — non parce qu'ils prouvent un déploiement, mais parce qu'ils <strong>identifient qui aurait à bouger</strong>. ⚠ <strong>La restriction est stricte</strong> : les sources établissent <strong>ces sept noms</strong> ; elles n'établissent <strong>ni la liste complète</strong> des soutiens déclarés, <strong>ni que ces organisations aient bougé</strong>. <em>Cinquante-trois soutiens ne sont pas identifiables, et un chapitre qui écrirait « liste nominative » aurait embelli sa source.</em></p>
+
+<div class="avert">
+  <p><strong>Un second décompte auto-déclaré traverse ce chapitre, et il n'est pas comparable au premier</strong> : celui de la couche d'infrastructure, examiné au § 10.2.1. <strong>Plus de huit mois séparent les deux relevés</strong> — juillet 2025 pour l'un, avril 2026 pour l'autre. Les mettre côte à côte dans un tableau produirait un classement que rien ne fonde. <em>Deux métriques auto-déclarées à des dates différentes ne forment pas une comparaison ; elles forment deux instantanés.</em></p>
+</div>
+
+<h3>10.1.3 La gouvernance : le point où deux volumes rédigés ne disent pas la même chose</h3>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>Section d'arbitrage de provenance.</strong> C'est le passage le plus délicat du chapitre, et peut-être du Livre. Il ne tranche pas un fait : il <strong>expose deux états de connaissance datés</strong> et en tire une règle de lecture. <em>Un compendium qui lisserait cette divergence en choisirait une — silencieusement.</em></p>
+</div>
+
+<p><strong>Ce que le Vol. II établit.</strong> Ses sources, <strong>gelées au 16 juillet 2026</strong>, <strong>ne documentent aucun transfert de gouvernance</strong> du protocole de paiement vers une fondation. Le volume qualifie lui-même cet énoncé avec une précision qui mérite d'être reprise mot à mot : ce n'est <strong>pas un fait négatif vérifié</strong> — lequel exigerait une <strong>recherche exhaustive et infructueuse dans les textes officiels</strong> — mais une <strong>absence de documentation dans le socle</strong>, ce qui est <strong>plus faible</strong>, et doit se dire tel quel.</p>
+
+<div class="avert">
+  <p><strong>Échelle à trois degrés du Vol. III (R-14), degré 3.</strong> <em>Absence de documentation</em> — le degré le plus faible des trois. Ni <em>fait négatif vérifié</em>, ni <em>fait négatif établi</em>. La distinction n'est pas rhétorique : <strong>elle décide de ce qu'une institution peut inscrire dans un dossier de diligence raisonnable.</strong> « Nous n'avons pas trouvé » et « il n'y en a pas » n'engagent pas la même responsabilité.</p>
+</div>
+
+<p><strong>Ce que le Vol. I établit.</strong> Ses sources, <strong>gelées en juin 2026</strong> — donc <strong>antérieures</strong> à celles du Vol. II —, portent le transfert comme un <strong>fait daté et sourcé</strong> : le protocole de paiement a été <strong>transféré à la FIDO Alliance le 28 avril 2026</strong>, dans une <strong>version v0.2</strong> prenant en charge le cas <em>Human-Not-Present</em>, avec un standard d'<strong>intention vérifiable</strong> codéveloppé avec un réseau de cartes, et <strong>non</strong> vers la fondation faîtière qui héberge les protocoles agent-outil et agent-agent. Le même volume ajoute que la fondation d'authentification a <strong>constitué deux groupes de travail techniques dédiés</strong> — l'un sur l'authentification agentique, l'autre sur les paiements —, dont la coprésidence du second revient à <strong>deux réseaux de cartes</strong>.</p>
+
+<div class="avert">
+  <p><strong>Ces deux énoncés ne se contredisent pas, et c'est le point.</strong> « Le socle du Vol. II ne documente pas X » et « le Vol. I documente X » sont <strong>logiquement compatibles</strong> : le premier décrit un <strong>corpus de sources</strong>, le second décrit un <strong>événement</strong>. Une absence de documentation dans un socle donné n'est pas une négation. <em>C'est exactement pourquoi le Vol. II a pris soin d'écrire « absence de documentation » et non « aucun transfert n'a eu lieu » — la formulation faible avait raison.</em></p>
+</div>
+
+<p><strong>Trois conséquences, dans l'ordre où un lecteur en a besoin.</strong></p>
+
+<p><em>(1) Ce que ce chapitre écrit.</em> Le transfert est <strong>porté ici comme fait documenté par le Vol. I</strong>, au <strong>régime [C]</strong> que la refonte du socle (porte G-3) imposera à toute entrée venue de ce volume — donc <strong>à instruire à la source primaire</strong>, jamais comme un acquis de niveau [A]. Il n'est <strong>pas</strong> écrit comme une propriété générale du protocole (« AP2 est gouverné par une fondation neutre ») mais comme un <strong>événement daté attribué à son volume d'origine</strong>.</p>
+
+<p><em>(2) Ce que devient l'énoncé du Vol. II.</em> Il <strong>reste exact à sa date et dans son périmètre</strong> : son socle, tel que constitué, n'en portait pas la documentation. ⚠ <strong>Un socle qui ne documente pas un événement antérieur à son propre gel signale une lacune de couverture, non une erreur de fait</strong> — et c'est ainsi que la lacune est déjà enregistrée au registre du Vol. II. <em>Le corriger après coup effacerait l'information que cette lacune porte : ce que le volume savait, au moment où il l'a écrit.</em></p>
+
+<p><em>(3) Ce que ce chapitre corrige de sa propre série.</em> ⚠ Le <strong>ch. 7 § 7.4.2 et § 7.6</strong> ont écrit, sur ce même objet, « <strong>annoncé, non vérifié au socle</strong> », en suivant le plan et le Vol. II — <strong>alors que le §3.13.1 du Vol. I, qui est l'une des sources de ce chapitre-là, portait déjà le transfert comme fait daté</strong>. C'est un <strong>défaut de couverture de source du ch. 7, non une divergence entre volumes</strong>, et il est corrigé à sa place ; la <strong>remontée R-IV-12</strong> du § 10.7 en porte la trace.</p>
+
+<p><em>Lecture d'auteur.</em> Le raisonnement du ch. 7 § 7.4 — <em>la gouvernance neutre transforme la question de diligence en question de constat</em> — <strong>s'étend donc bien au protocole de paiement</strong>, mais <strong>par une seconde fondation</strong>, spécialisée dans l'authentification, et non par la faîtière. ⚠ <strong>La conséquence n'est pas décorative</strong> : elle confirme que l'écosystème se fédère autour de <strong>plusieurs pôles de gouvernance distincts, organisés par axe</strong>, ce que le ch. 7 § 7.4.2 avait déjà posé comme trait structurant. <em>La question de diligence ne devient pas « ce protocole est-il sous fondation ? » mais « sous laquelle, et cette fondation a-t-elle compétence sur l'axe concerné ? ».</em></p>
+
+<h3>10.1.4 Ce que ce chapitre ne peut pas écrire : l'anatomie absente</h3>
+
+<p>Il faut dire, avec autant de netteté que le reste, <strong>ce que ce chapitre est hors d'état d'écrire</strong>.</p>
+
+<div class="avert">
+  <p><strong>Aucune anatomie technique complète du protocole de paiement n'est portée par le socle du Vol. II</strong> : ni structure des messages, ni mécanique de mandat, ni modèle de preuve d'intention. <strong>R-14, degré 3</strong> — <em>absence de documentation</em>. Le ch. 8 peut décrire le protocole agent-outil et le protocole agent-agent <strong>parce que la matière y est</strong> ; ce chapitre ne le peut pas au même grain pour AP2, et <strong>s'y refuse plutôt que d'emprunter à une connaissance non tracée</strong>. <em>C'est une lacune assumée, et le plan la déclare comme telle.</em></p>
+</div>
+
+<p><strong>Le Vol. I comble partiellement cette lacune, et la mesure de ce « partiellement » importe.</strong> Il porte la <strong>chaîne de mandats</strong> — <em>Intent Mandate</em>, <em>Cart Mandate</em>, <em>Payment Mandate</em> — matérialisés comme <strong>attestations vérifiables signées</strong> au sens de la recommandation du consortium du web. ⚠ <strong>R-02 du Vol. III</strong> : cette chaîne <strong>démontre</strong> qu'un consentement peut être <strong>matérialisé en objet portable et signé</strong>, séparément du rail qui le règlera ; elle <strong>ne démontre pas</strong> que le consentement ainsi matérialisé <strong>corresponde à l'intention réelle du mandant</strong> — le § 10.3.4 y revient, et c'est le verrou du domaine.</p>
+
+<p><strong>Le découplage prend ici une forme concrète, et c'est l'invariant du Livre qui se rejoue.</strong> Un mandat de panier signé est <strong>portable indépendamment du rail de règlement aval</strong> : émis dans un contexte, il peut être présenté à des réseaux de paiement distincts. <em>Le contrat de consentement est découplé du contrat de mouvement de fonds</em> — ce qui prépare l'interopérabilité avec les rails de cartes (§ 10.3.3) et les paiements machine-natifs (§ 10.3.4).</p>
+
+<div class="avert">
+  <p><strong>Une seconde lacune, et elle n'est pas du même degré.</strong> L'articulation du protocole de paiement avec les <strong>rails de paiement nationaux</strong> d'un marché donné — le cas canadien est celui que le Vol. II instruit — <strong>n'est documentée par aucune source de son socle</strong> : <em>absence de documentation</em> (<strong>R-14, degré 3</strong>), traitée par ce volume dans un chapitre <strong>explicitement prospectif</strong>. La somme héritera cette lacune telle quelle ; <strong>elle ne se comble pas par une source de moindre qualité.</strong></p>
+</div>
+
+<h2 id="s102"><span class="sig">§ 10.2</span>AGNTCY : la couche d'infrastructure</h2>
+
+<h3>10.2.1 Faits, dates et le décompte de juillet 2025</h3>
+
+<p>La couche d'infrastructure agentique — AGNTCY — a été <strong>ouverte en mars 2025</strong> par un équipementier de réseau, avec un éditeur de cadriciel d'orchestration et un éditeur d'outillage d'évaluation, puis <strong>placée sous la fondation faîtière le 29 juillet 2025</strong> — soit <strong>quatre mois plus tard</strong>. Ses <strong>membres formateurs</strong> sont cinq : l'équipementier initiateur, un constructeur de matériel, la division infonuagique d'un grand fournisseur de recherche et de services, un éditeur de bases de données et un éditeur de distribution ouverte.</p>
+
+<p>Le communiqué de la fondation faîtière du <strong>29 juillet 2025</strong> fait état de <strong>plus de soixante-cinq entreprises déclarant leur soutien au projet</strong>. ⚠ <strong>Chiffre auto-déclaré, attribué ici à ce communiqué et daté de juillet 2025 ; il ne vaut pas plus déploiement en production que celui du § 10.1.2</strong> (PRD du Vol. II §8.2.1). ⚠ <strong>Les sources n'enregistrent aucune actualisation ultérieure de ce décompte</strong> — <em>absence de documentation</em>, <strong>R-14 degré 3</strong>, et non un plafonnement constaté.</p>
+
+<div class="avert">
+  <p><strong>Il serait donc fautif de comparer ce chiffre à ceux d'avril 2026</strong>, examinés au ch. 7 § 7.6 et au § 10.1.2 : <strong>plus de huit mois séparent les relevés</strong>, et <strong>aucune évolution du décompte de la couche d'infrastructure n'est documentée</strong>. <em>Un tableau qui alignerait « 65+ », « 60+ » et « 150+ » sur une même colonne suggérerait une hiérarchie que les dates interdisent de lire.</em></p>
+</div>
+
+<h3>10.2.2 Annuaires et transport : un vocabulaire d'infrastructure</h3>
+
+<p>Le contenu du projet, tel que les sources le portent, tient en <strong>deux capacités</strong> :</p>
+
+<ul class="puces">
+  <li>des <strong>annuaires de découverte</strong> (<em>discovery directories</em>) ;</li>
+  <li>un <strong>transport</strong> nommé <strong>SLIM</strong>.</li>
+</ul>
+
+<p><em>C'est un vocabulaire d'infrastructure, non d'application</em> : <strong>découvrir quels agents existent</strong>, et <strong>acheminer ce qu'ils s'envoient</strong>. Ces deux capacités atterrissent respectivement dans les deux sections que le Livre leur a déjà réservées — la découverte au <strong>ch. 9 § 9.1.4</strong>, qui traite les annuaires et services de noms sur son versant protocolaire, et le transport au <strong>ch. 9 § 9.2</strong>, qui pose l'étagement de la pile.</p>
+
+<div class="avert">
+  <p><strong>Les sources n'en disent pas davantage</strong> : ni spécification, ni statut de maturité, ni version. <em>Absence de documentation</em> (<strong>R-14, degré 3</strong>). Ce chapitre s'en tient là, et ne complète pas de mémoire. <em>Une couche d'infrastructure dont on ne connaît ni la version ni le statut de maturité n'est pas évaluable au sens de la matrice du ch. 9 § 9.2.5 — et c'est une information en soi.</em></p>
+</div>
+
+<h3>10.2.3 Le positionnement déclaré, et ce qui le nuance</h3>
+
+<p>Le <strong>positionnement officiel</strong> du projet est celui d'une couche <strong>interopérable avec les protocoles agent-outil et agent-agent, non concurrente</strong>.</p>
+
+<div class="avert">
+  <p><strong>Cette formule est une déclaration du projet, et doit être lue comme telle.</strong> Elle relève de la <strong>même catégorie que les métriques auto-déclarées</strong> du § 10.2.1, et les sources <strong>ne la valident pas</strong>. <em>Un projet qui déclare ne concurrencer personne énonce une intention, pas une propriété observable.</em></p>
+</div>
+
+<p><strong>Un élément de contexte se lit dans le rapprochement de deux faits, et il mérite d'être posé avec son pas d'inférence rendu visible.</strong> La division infonuagique qui figure parmi les <strong>membres formateurs</strong> de la couche d'infrastructure appartient au <strong>même groupe</strong> que l'organisation qui a <strong>lancé le protocole agent-agent puis le protocole de paiement</strong>. ⚠ <strong>Les sources nomment ces deux entités séparément et n'établissent pas formellement leur rattachement</strong> ; l'identification est un <strong>pas d'auteur</strong>, et il est marqué comme tel.</p>
+
+<p><em>Lecture d'auteur.</em> En tenant la division pour une composante du groupe, <strong>un même groupe se trouve des deux côtés</strong> : <strong>créateur des protocoles d'échange</strong>, <strong>membre formateur de la couche d'infrastructure</strong>. Cette double présence est <strong>cohérente avec la thèse de la complémentarité</strong>, et c'est ainsi qu'on la lira dans les documents promotionnels. ⚠ <strong>Mais la cohérence n'est pas une preuve.</strong> Les sources établissent une <strong>composition de membres</strong> et un <strong>positionnement déclaré</strong> ; elles n'établissent <strong>ni que les deux couches soient effectivement complémentaires dans les faits</strong>, <strong>ni qu'elles le resteront</strong>.</p>
+
+<p><strong>Et les sources portent un second élément, qui va dans l'autre sens.</strong> Des <strong>analyses tierces relèvent un chevauchement</strong> entre la composante ACP d'AGNTCY et le protocole agent-agent.</p>
+
+<div class="avert">
+  <p><strong>Cette observation n'est pas endossée par le socle</strong> : c'est un <strong>constat de tiers</strong>, attribué comme tel et <strong>non vérifié en source primaire</strong>. Elle <strong>ne permet pas d'endosser le chevauchement comme un fait</strong> ; elle suffit à rappeler que le positionnement « non concurrent » demeure une <strong>position déclarée du projet, que des analyses tierces viennent nuancer</strong>. ⚠ <strong>Que ces analyses contestent le positionnement lui-même n'est pas établi</strong> — <em>relever un chevauchement et contester une déclaration sont deux gestes distincts, et la source ne porte que le premier.</em></p>
+</div>
+
+<p>Cette observation ouvre le dossier terminologique le plus délicat de la somme, dont <strong>le siège est au ch. 7 § 7.5</strong> ; le § 10.5.3 en tire ce qui revient à ce chapitre.</p>
+
+<h2 id="s103"><span class="sig">§ 10.3</span>Interopérabilité du commerce et des paiements agentiques</h2>
+
+<h3>10.3.1 Le problème d'interopérabilité propre au commerce agentique</h3>
+
+<p>La couche économique de la pile constitue une <strong>nouveauté propre à cette génération</strong> : elle est <strong>absente du premier mouvement du Livre</strong>, qui supposait l'achat <strong>médié par une interface humaine porteuse de ses propres signaux de confiance</strong>. Lorsque l'acteur déclencheur d'une transaction devient un <strong>agent autonome</strong>, la chaîne <em>découverte → autorisation → règlement</em> doit être <strong>reconstruite sur des fondations machine-vérifiables</strong>.</p>
+
+<div class="avert">
+  <p><strong>La proposition organisatrice de cette section tient en une dissociation.</strong> Le commerce agentique <strong>disjoint trois rôles</strong> que le commerce électronique classique <strong>fusionnait dans une seule présence à l'écran</strong> :</p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Rôle</th><th>Ce qu'il détient</th><th>Ce qu'il n'a plus</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Mandant humain</strong></td><td>l'<strong>intention</strong> et l'<strong>autorité de payer</strong></td><td>la présence à l'écran au moment de l'achat</td></tr>
+    <tr><td><strong>Agent exécutant</strong></td><td>la <strong>délégation</strong> et l'<strong>opération</strong> de la transaction</td><td>tout signal perceptuel prouvant qu'un humain agit</td></tr>
+    <tr><td><strong>Commerçant</strong></td><td>la <strong>livraison</strong> du bien ou du service</td><td>la capacité d'observer un parcours humain</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Les trois rôles que le commerce agentique dissocie, et ce que la dissociation fait disparaître de chaque côté.</p>
+
+<p>Cette dissociation fait <strong>disparaître les signaux de confiance hérités du parcours humain</strong> — le défi d'authentification forte à trois domaines, l'épreuve de reconnaissance, la frappe au clavier observable — <strong>qui présupposaient tous une personne présente</strong>.</p>
+
+<p>Le problème d'interopérabilité devient alors celui de <strong>prouver de façon machine-vérifiable trois propriétés distinctes</strong> :</p>
+
+<ol class="numeros">
+  <li>l'<strong>intention</strong> — <em>le mandant a-t-il voulu cet achat ?</em> ;</li>
+  <li>l'<strong>autorité</strong> — <em>l'agent a-t-il le droit de l'engager, et dans quelles limites ?</em> ;</li>
+  <li>l'<strong>identité</strong> — <em>l'agent est-il bien celui qu'il prétend être ?</em></li>
+</ol>
+
+<div class="avert">
+  <p><strong>Ces trois propriétés sont l'identité composite à trois entités que le Livre II reprendra</strong>, et elles ne sont pas nouvelles ici : le ch. 9 § 9.1 les a rencontrées sous l'angle de la découverte, où <em>trouver un agent ne sert à rien si l'on ne peut établir qui il est</em>. Le commerce en fait la <strong>condition de la transaction</strong>, ce qui en durcit l'exigence : une erreur d'identité y a un <strong>coût libellé</strong>.</p>
+</div>
+
+<p>L'architecture qui se dégage décompose le besoin en <strong>trois sous-couches</strong>, que les sections suivantes parcourent dans l'ordre : la <strong>découverte et le paiement en caisse</strong> (trouver le produit, constituer un panier interopérable), l'<strong>autorisation et le mandat</strong> (matérialiser le consentement vérifiable), et le <strong>règlement</strong> (mouvementer la valeur).</p>
+
+<p><em>Cette stratification reprend, dans le registre marchand, la logique d'étagement défendue par tout le Livre</em> (ch. 9 § 9.2) : <strong>aucun protocole ne couvre seul les trois couches</strong>, et <strong>leur composition est l'enjeu d'interopérabilité</strong>.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p><strong>Perspective de recherche.</strong> Une position publiée cadre le commerce comme <strong>cas limite de coordination économique entre acteurs autonomes</strong> : la confiance n'y serait plus une <strong>propriété d'interface</strong> mais une <strong>propriété de protocole</strong>, à reconstruire par des <strong>preuves portables</strong> — attestations vérifiables, mandats signés — puisque les signaux perceptuels du parcours humain ne sont plus disponibles. ⚠ <strong>Cadre d'analyse, non fait établi.</strong></p>
+</div>
+
+<h3>10.3.2 Paiement en caisse et mandats : l'ACP commercial et le protocole de commerce universel</h3>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>Convention de nomenclature, rappelée ici comme à chaque occurrence</strong> (R-8 du Vol. II, R-13 du Vol. III). L'<strong>ACP commercial</strong> désigne le protocole de commerce agentique publié en septembre 2025 par un éditeur de modèles et un fournisseur de paiement — <strong>à ne pas confondre</strong> avec l'<strong>ACP protocolaire</strong>, sur l'axe agent-agent, dont le ch. 8 § 8.5.1 a traité la mécanique de fusion et dont le § 10.5 tire la portée de risque. <strong>Le siège de l'encadré des quatre branches est au ch. 7 § 7.5</strong> ; il n'est pas reconstruit ici.</p>
+</div>
+
+<p><strong>L'ACP commercial.</strong> Publié sous <strong>licence permissive le 29 septembre 2025</strong>, il spécifie une <strong>interface de paiement en caisse</strong> et un mécanisme de <strong>paiement délégué</strong> reposant sur un <strong>jeton de paiement partagé</strong>. Il a sous-tendu une fonction d'<strong>achat immédiat</strong> dans un assistant conversationnel grand public, dont la spécification connaît <strong>plusieurs révisions datées successives</strong>.</p>
+
+<div class="avert">
+  <p><strong>La trajectoire ultérieure illustre la volatilité des contrats commerciaux agentiques, et c'est l'enseignement de la sous-section.</strong> L'orientation produit de l'éditeur a <strong>évolué vers un modèle davantage centré sur les applications</strong> — signe que <strong>la couche commerce reste mouvante là où la couche protocolaire se stabilise</strong>. <em>Le ch. 7 § 7.3 a montré dix-sept mois de consolidation protocolaire ; la couche marchande, elle, n'a pas connu cette consolidation, et rien n'indique qu'elle la connaîtra au même rythme.</em></p>
+</div>
+
+<p><strong>Le protocole de commerce universel.</strong> Annoncé en <strong>janvier 2026</strong> avec des distributeurs majeurs, il couvre <strong>découverte, panier, achat et suivi</strong> sur les transports d'interface applicative classique, du protocole agent-agent et du protocole agent-outil, <strong>en compatibilité affichée</strong> avec le protocole de paiement du § 10.1. ⚠ <strong>« Compatibilité affichée » est une déclaration de projet</strong>, du même ordre que celle du § 10.2.3 ; il est mentionné ici <strong>en renvoi</strong>, comme <strong>couche de découverte et de paiement en caisse complémentaire des mandats</strong>, et non comme un objet dont ce chapitre porterait l'anatomie.</p>
+
+<p><em>Lecture d'auteur.</em> <strong>Trois protocoles de commerce coexistent sur la même fonction</strong> — constituer un panier et le faire payer par un agent — <strong>sans qu'aucune source n'établisse de convergence entre eux</strong>, à la différence de ce que le ch. 8 § 8.5.1 a documenté sur l'axe agent-agent. ⚠ <strong>Cette absence de convergence documentée n'est pas une prédiction de fragmentation durable</strong> : c'est un <strong>état à une date</strong>, et le Livre a vu, sur l'axe protocolaire, une fusion survenir en cinq mois.</p>
+
+<h3>10.3.3 Rails de cartes et authentification d'agent : un tableau daté</h3>
+
+<div class="avert">
+  <p><strong>Le tableau de cette sous-section est un instantané et se périme en bloc.</strong> Son intérêt tient à ce qu'il <strong>situe chaque initiative à une date</strong> ; il ne constitue <strong>ni un classement ni une recommandation</strong>. <em>Même régime que la matrice de maturité du ch. 9 § 9.2.5.</em></p>
+</div>
+
+<p><strong>La proposition d'ensemble est celle de l'étagement, et elle se vérifie ici mieux qu'ailleurs.</strong> Les réseaux de cartes ont <strong>étendu leurs schémas existants plutôt que d'en créer de nouveaux</strong> — <em>étagement, et non remplacement</em>.</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Initiative</th><th>Porteur</th><th>Date</th><th>Mécanique, telle que les sources la portent</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Protocole d'agent de confiance</strong> (TAP)</td><td>un réseau de cartes, avec un fournisseur d'infrastructure de périphérie</td><td><strong>14 octobre 2025</strong></td><td><strong>signe l'identité de l'agent dans des en-têtes HTTP</strong>, au moyen des signatures de message HTTP normalisées et d'une mécanique d'authentification de robot, sur des clés à courbe elliptique</td></tr>
+    <tr><td><strong>Paiement d'agent</strong> et jetons agentiques</td><td>un second réseau de cartes</td><td><strong>2025</strong></td><td><strong>prolonge l'infrastructure de tokenisation existante</strong> en liant le jeton à un <strong>périmètre marchand</strong> et à un <strong>consentement</strong></td></tr>
+    <tr><td><strong>Groupe de travail paiements</strong> de la fondation d'authentification</td><td><strong>coprésidé par les deux réseaux de cartes</strong></td><td><strong>2026</strong></td><td><strong>bâtit sur le protocole de paiement du § 10.1</strong> et sur un cadre d'<strong>intention vérifiable</strong></td></tr>
+    <tr><td><strong>Authentification de robot par le web</strong></td><td>un fournisseur d'infrastructure de périphérie, en cours de spécification à l'organisme de normalisation d'Internet</td><td><strong>en cours, 2026</strong></td><td>l'agent <strong>signe ses requêtes</strong> par les signatures de message HTTP et <strong>publie sa clé publique</strong> sous un chemin de découverte normalisé</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Rails de cartes et authentification d'agent — instantané daté, ni classement ni recommandation ; le tableau se périme en bloc.</p>
+
+<p><strong>Deux lectures se dégagent, et il faut les tenir séparées.</strong></p>
+
+<p><em>(1) La convergence institutionnelle est documentée.</em> Que le groupe de travail paiements soit <strong>coprésidé par les deux réseaux de cartes</strong> et <strong>bâtisse sur le protocole du § 10.1</strong> confirme que <strong>la couche paiement gravite vers la fondation d'authentification</strong> — ce que le § 10.1.3 a établi par la voie du transfert de gouvernance, et que le ch. 7 § 7.4.2 avait annoncé comme trait structurant. <em>Deux voies indépendantes mènent au même constat, et c'est ce qui lui donne son poids.</em></p>
+
+<p><em>(2) Le mécanisme transversal est une primitive, pas une garantie.</em> L'authentification de robot par le web repose sur une combinaison <strong>déployable sans rupture</strong> : clé publique publiée sous un chemin normalisé et signature de requête réutilisant la pile HTTP standard. ⚠ <strong>Ce que ce mécanisme apporte doit être énoncé avec sa borne</strong> (R-02 du Vol. III implicite ici, explicité au § 10.3.4) : il permet à un commerçant de <strong>distinguer un agent identifiable d'un trafic automatisé indistinct</strong> et d'<strong>appliquer une politique différenciée à la frontière</strong>. ⚠ <strong>Il ne rend le trafic ni légitime ni sûr</strong> : une requête signée est <strong>attribuable</strong>, et l'attribution est un <strong>cadre d'autorisation</strong>, jamais une propriété de sécurité (réserve F-01 du Vol. II).</p>
+
+<p><em>Ce patron recoupe directement la preuve cryptographique d'identité agentique</em> que le Livre II instruira : <strong>la signature de requête est l'analogue, côté transport, des cartes d'agent signées</strong> du ch. 8 § 8.4.2 et des attestations vérifiables du § 10.1.4.</p>
+
+<h3>10.3.4 Paiements machine-natifs : x402, MPP, KYA</h3>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>Le siège du KYA est au ch. 18</strong> (Livre II), qui en traite la <strong>liaison d'autorité</strong> et la <strong>piste d'audit</strong> sur le versant identité. Ce qui suit est un <strong>pont</strong>, borné à ce que la couche de règlement en exige.</p>
+</div>
+
+<p>Au-delà des rails de cartes, <strong>une famille de protocoles vise un règlement natif de la machine</strong>.</p>
+
+<p><strong>x402.</strong> Le protocole ressuscite un <strong>code de statut HTTP resté inutilisé</strong> — <em>402, « Payment Required »</em> : un serveur répond 402, l'agent présente un <strong>en-tête de paiement</strong> réglant en jeton indexé, puis <strong>rejoue la requête</strong>. ⚠ <strong>La chronologie de sa gouvernance porte un enseignement propre au Livre.</strong> Annoncé conjointement le <strong>23 septembre 2025</strong> par un fournisseur d'infrastructure de périphérie et une plateforme d'actifs numériques, il a vu sa gouvernance <strong>formalisée par la constitution d'une fondation dédiée sous l'égide de la fondation faîtière le 2 avril 2026</strong> — <em>l'annonce d'intention précédant ainsi de plus de six mois la mise sous fondation neutre</em>. Une révision de deuxième génération prolonge le mécanisme, et une <strong>intégration par un fournisseur de paiement</strong> lui confère, selon les sources, <strong>la plus forte traction de production parmi les rails machine-natifs</strong> ; un <strong>pont</strong> avec le protocole de paiement du § 10.1 articule <strong>mandats vérifiables</strong> et <strong>règlement en chaîne</strong>.</p>
+
+<p><strong>MPP.</strong> Le protocole de paiements machine, lancé le <strong>18 mars 2026</strong> par un fournisseur de paiement et une infrastructure de règlement associée, propose un <strong>standard ouvert de facturation des agents sur HTTP</strong>. Il conjugue trois modes : des <strong>jetons indexés réglés en chaîne</strong> sur plusieurs réseaux, des <strong>cartes via jetons de paiement partagés</strong>, et le <strong>paiement échelonné</strong>. ⚠ <strong>x402 y figure comme flux compatible, et non comme rail de règlement</strong> — la nuance est de la source, et l'effacer ferait de deux protocoles concurrents un empilement qu'ils ne forment pas.</p>
+
+<p><strong>KYA.</strong> La <strong>connaissance de l'agent</strong> transpose à l'agent la logique de connaissance du client. Elle lie <strong>trois choses</strong> : une <strong>identité vérifiée</strong>, une <strong>liaison d'autorité</strong> — <em>au nom de qui, dans quelles limites</em> — et une <strong>piste d'audit</strong>, via un document d'identité d'agent. ⚠ <strong>R-02 du Vol. III</strong> : ce dispositif <strong>démontre</strong> qu'un agent peut être <strong>rattaché à un mandant et à un périmètre déclaré</strong> ; il <strong>ne démontre pas</strong> que le mandant ait <strong>voulu</strong> l'action particulière que l'agent exécute — <em>la liaison d'autorité borne, elle n'atteste pas.</em> Le <strong>ch. 18</strong> en porte le siège.</p>
+
+<p><strong>Dans la pile du ch. 9 § 9.2, ces mécanismes occupent la couche de règlement et son authentification</strong>, sous les couches de découverte (ch. 9 § 9.1) et de mandat (§ 10.3.2) — <em>ce qui illustre que le commerce agentique compose plusieurs protocoles distincts plutôt qu'il n'en impose un seul.</em></p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p><strong>Perspective de recherche — et c'est le verrou du domaine.</strong> Une évaluation dédiée soumet le protocole de paiement du § 10.1 à un <strong>exercice d'attaque par injection d'invite</strong>, et montre que <strong>la signature des mandats ne neutralise pas l'amont</strong> : <em>un agent dont l'intention est détournée signera un mandat malveillant parfaitement valide.</em>  ⚠ <strong>C'est l'énoncé le plus important de ce chapitre pour la suite de la somme, et il faut le poser exactement.</strong> Le verrou <strong>n'est pas la vérifiabilité cryptographique du mandat</strong> — elle fonctionne — <strong>mais l'intégrité du raisonnement qui le produit</strong>. ⚠ <strong>R-14, degré 3</strong> : les sources <strong>nomment</strong> ce mode d'échec ; elles <strong>n'en datent pas la documentation</strong> ni <strong>n'en établissent la fréquence en production</strong>. Le <strong>ch. 11</strong> en dresse la taxonomie ; le ch. 5 § 5.4 en avait posé le versant ancrage.</p>
+</div>
+
+<h2 id="s104"><span class="sig">§ 10.4</span>Responsabilité, litiges et non-répudiation : l'interopérabilité organisationnelle</h2>
+
+<h3>10.4.1 Trois questions qu'aucun message valide ne résout</h3>
+
+<p><strong>L'interopérabilité de la couche commerce ne se réduit pas à des messages valides.</strong> Elle exige un <strong>accord sur l'imputation de responsabilité</strong> — c'est-à-dire l'<strong>interopérabilité de niveau organisationnel et juridique</strong> au sens du modèle de niveaux que le ch. 7 § 7.1.2 a posé et que le ch. 1 § 1.2 avait introduit.</p>
+
+<div class="avert">
+  <p><strong>C'est le point où le Livre boucle sur son propre invariant.</strong> Les neuf chapitres précédents ont montré que <strong>l'accord de protocole ne fait pas la compréhension</strong> (ch. 9 § 9.4) ; celui-ci montre que <strong>la compréhension ne fait pas l'imputation</strong>. <em>Trois agents peuvent parfaitement se comprendre et laisser un litige sans destinataire.</em></p>
+</div>
+
+<p><strong>Trois questions se posent dès qu'un agent transige :</strong></p>
+
+<ol class="numeros">
+  <li><strong>Qui est le commerçant de référence</strong> — le rôle juridique qui porte la vente ? <em>Les montages observés le conservent généralement tel quel.</em></li>
+  <li><strong>Comment trancher un litige ou un impayé contesté</strong> lorsque l'acheteur n'était pas présent ?</li>
+  <li><strong>Comment garantir la non-répudiation</strong> d'une transaction <strong>déclenchée par une machine</strong> ?</li>
+</ol>
+
+<h3>10.4.2 La réponse architecturale : le mandat comme couche de preuve opposable</h3>
+
+<p><strong>La réponse que les sources documentent consiste à faire des mandats tokenisés et des attestations vérifiables la couche de preuve opposable.</strong> La chaîne <em>intention → panier → paiement</em> du § 10.1.4, <strong>signée et horodatée</strong>, fournit l'<strong>élément probant</strong> qui <strong>rattache une transaction contestée à un consentement antérieur du mandant</strong>.</p>
+
+<div class="avert">
+  <p><strong>Réserve F-01 du Vol. II, et elle mord ici plus qu'ailleurs.</strong> Un mandat signé est un <strong>cadre d'autorisation opposable</strong> ; il n'est <strong>jamais</strong> un dispositif « sécurisé ». <em>Il prouve qu'un consentement a été émis, pas qu'il était éclairé, ni que l'agent qui l'a sollicité était intègre</em> — c'est exactement la borne posée par le § 10.3.4.</p>
+</div>
+
+<p><strong>Sur le plan réglementaire</strong>, le règlement européen sur l'intelligence artificielle encadre notamment les <strong>modèles à usage général</strong>, dont les obligations s'appliquent <strong>depuis août 2025</strong>, la mise en conformité générale se poursuivant <strong>jusqu'au 2 août 2027</strong>. ⚠ <strong>Il fournit une partie du contexte de conformité</strong> dans lequel s'inscrit la responsabilité des transactions agentiques, <strong>sans en épuiser le régime de litige</strong> — et les sources <strong>ne documentent aucun régime de litige propre à la transaction agentique</strong> : <em>absence de documentation</em>, <strong>R-14 degré 3</strong>.</p>
+
+<h3>10.4.3 L'enjeu d'évolution, et la borne de ce que l'architecture peut faire</h3>
+
+<p><strong>L'enjeu d'évolution est manifeste</strong> : le <strong>contrat de responsabilité devra absorber des cas</strong> — agent défaillant, mandat périmé, délégation multi-saut contestée — <strong>que les régimes de litige actuels n'anticipaient pas</strong>.</p>
+
+<div class="avert">
+  <p><strong>R-02 du Vol. III, appliqué à la conception plutôt qu'à une spécification.</strong> Tracer, pour chaque transaction, le <strong>lien vérifiable entre le mandat signé du mandant et l'action de l'agent</strong> <strong>démontre</strong> qu'une <strong>piste probante existe</strong> en cas de contestation ; cela <strong>ne démontre pas</strong> que le <strong>régime de litige sache quoi en faire</strong> — <em>une preuve technique n'a de valeur que devant une procédure qui l'admet.</em></p>
+</div>
+
+<p><em>Lecture d'auteur.</em> La <strong>conservation du commerçant de référence existant</strong> réduit la perturbation des chaînes de responsabilité établies : <strong>l'interopérabilité s'obtient par étagement sur les rôles juridiques en place plutôt que par leur refonte</strong> — cohérent avec le principe de découplage qui structure tout le Livre, et avec la leçon des rails de cartes du § 10.3.3, qui ont étendu plutôt que remplacé.</p>
+
+<div class="avert">
+  <p><strong>Renvoi de plan, non de texte</strong> : la gouvernance interne et la conformité sectorielle relèvent du <strong>Livre III</strong> ; la délégation multi-saut et sa taxonomie d'identité, du <strong>ch. 19</strong>.</p>
+</div>
+
+<h2 id="s105"><span class="sig">§ 10.5</span>Le destin de l'ACP protocolaire : la portée de risque</h2>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>Partage déclaré avec le ch. 8 (décision 2 du TOC).</strong> La <strong>mécanique</strong> de la convergence se traite <strong>au ch. 8 § 8.5.1</strong>, sur la source du Vol. I ; la <strong>portée de risque</strong> se traite <strong>ici</strong>, sur la source du Vol. II. <em>Ni l'un ni l'autre ne reconstruit ce que porte son voisin.</em> Ce partage est l'un des deux écarts que la révision v0.17 du plan a soldés, l'objet ayant d'abord été revendiqué par les deux chapitres.</p>
+</div>
+
+<h3>10.5.1 Les intervalles, et la règle de rédaction qui en découle</h3>
+
+<p>Ce qui suit <strong>ne redit pas la fusion</strong> ; il <strong>mesure ce qu'elle a coûté à qui l'avait prise pour un standard</strong>.</p>
+
+<p><strong>Trois dates suffisent, et les sources les portent toutes trois.</strong> Le <strong>17 mars 2025</strong>, un centre de recherche industriel lance une plateforme ouverte d'agents et, avec elle, l'<strong>ACP protocolaire</strong> — en version <strong>pré-alpha</strong>, d'abord conçu comme <strong>extension du protocole agent-outil</strong>, et confié à la fondation faîtière <strong>dès ce mois-là</strong>. Le <strong>28 mai 2025</strong>, un billet en précise la doctrine et affiche l'ambition d'en faire <em>le HTTP de la communication entre agents</em>. Le <strong>29 août 2025</strong>, la fusion dans le protocole agent-agent est actée.</p>
+
+<p><strong>Les intervalles, calculés à partir de ces seules dates :</strong></p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>De</th><th>À</th><th>Durée</th></tr></thead>
+  <tbody>
+    <tr><td>lancement (17 mars 2025)</td><td>fusion (29 août 2025)</td><td><strong>cinq mois et douze jours</strong></td></tr>
+    <tr><td>billet doctrinal (28 mai 2025)</td><td>fusion (29 août 2025)</td><td><strong>trois mois et un jour</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Les deux intervalles du dossier ACP protocolaire, calculés à partir des seules dates portées par les sources.</p>
+
+<div class="avert">
+  <p><strong>Garde-fou R-1 du Vol. II — le risque terminologique le plus élevé du corpus source, et ce chapitre est l'un des deux où il est maximal.</strong> <strong>L'ACP protocolaire ne doit jamais être présenté comme un standard vivant.</strong> Son <strong>développement actif a cessé</strong> le 29 août 2025 ; il <strong>ne subsiste qu'à travers le protocole absorbant et des adaptateurs</strong>. ⚠ <strong>Tout emploi au présent, toute mise en parallèle avec les protocoles agent-outil ou agent-agent comme s'il s'agissait de trois options ouvertes, est une erreur de fait</strong> — et le présent de narration n'est conservé, dans ce chapitre, <strong>que pour les événements datés</strong>, qui ne présentent pas un standard vivant.</p>
+</div>
+
+<h3>10.5.2 Ce que la fusion enseigne — et ce qu'elle n'établit pas</h3>
+
+<p><strong>Le versant de risque tient en trois faits que les sources portent</strong> : <strong>actifs versés</strong>, <strong>adaptateurs livrés</strong>, <strong>guides de migration fournis</strong>.</p>
+
+<p><em>Lecture d'auteur.</em> Ce sont <strong>les gestes d'une transition organisée, non ceux d'un projet qu'on éteint</strong>. <strong>La fusion n'a pas été un abandon.</strong></p>
+
+<p><em>Lecture d'auteur, et l'inférence est ici substantielle.</em> Ce que cet épisode enseigne à un architecte <strong>n'est pas que la gouvernance neutre protège un protocole de l'obsolescence</strong> — <em>elle ne l'a manifestement pas fait</em> : l'ACP protocolaire avait été confié à la fondation faîtière en mars 2025, et son développement a cessé <strong>cinq mois et douze jours après son lancement</strong>. Ce qu'il enseigne est plus fin : <strong>l'obsolescence a été ordonnée plutôt que subie</strong>, et l'on <strong>peut y lire</strong> l'effet de la gouvernance neutre.</p>
+
+<div class="avert">
+  <p><strong>La borne de cette lecture est stricte</strong> : les sources établissent <strong>les faits de la transition</strong> ; elles <strong>n'établissent pas que la gouvernance en soit la cause</strong>. <em>Une corrélation entre neutralité et transition ordonnée, observée sur un cas, n'est pas un mécanisme.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Mais la distinction que cet épisode installe, elle, est robuste, et elle vaut d'être portée dans tout dossier de risque de tiers</strong> — où elle est rarement faite :</p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Risque</th><th>Ce qu'il vise</th><th>Ce que la gouvernance neutre en fait, dans ce cas</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Le protocole peut mourir</strong></td><td>la <strong>pérennité de la spécification</strong></td><td><strong>rien</strong> — le développement a cessé malgré la fondation</td></tr>
+    <tr><td><strong>L'utilisateur peut être abandonné</strong></td><td>la <strong>continuité d'exploitation</strong> de qui l'avait adopté</td><td><strong>actifs versés, adaptateurs, guides de migration</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Les deux risques que la fusion de l'ACP protocolaire permet de séparer — et que les dossiers de risque de tiers confondent d'ordinaire.</p>
+
+<p><em>Lecture d'auteur.</em> <strong>Un architecte n'achète pas la survie d'un protocole ; il achète une sortie ordonnée si le protocole ne survit pas.</strong> C'est la seule chose que ce cas documente, et c'est déjà beaucoup plus que ce que promettent les argumentaires d'adoption.</p>
+
+<h3>10.5.3 Le versant protocolaire de la collision terminologique</h3>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>Le siège de l'encadré des quatre branches est au ch. 7 § 7.5.</strong> Il <strong>n'est pas reproduit ici</strong>. La règle qu'il fixe vaut pour toute la somme et <strong>sans exception</strong> : <strong>le sigle « ACP » employé seul est proscrit</strong>, chaque emploi portant son qualificatif complet.</p>
+</div>
+
+<p>Ce chapitre en développe <strong>le versant qui le concerne</strong>, et il tient en une observation.</p>
+
+<p><strong>Sur les quatre objets que l'encadré distingue, deux au moins ne relèvent pas du champ protocolaire</strong> : le programme phare d'un consortium d'institutions et de télécommunications, et un <strong>positionnement marketing</strong> qu'un fournisseur applique à l'un de ses produits — attribué à ce fournisseur à chaque occurrence. ⚠ <strong>Ni l'un ni l'autre n'est un protocole</strong> ; ni l'un ni l'autre n'a le moindre rapport avec la matière de ce chapitre. <strong>Les sources les tiennent pour des objets distincts</strong> ; elles <strong>ne disent rien de l'origine de leurs dénominations</strong> — <em>et un chapitre qui écrirait « homonymie fortuite » aurait affirmé ce que rien n'établit.</em></p>
+
+<p><strong>Restent deux objets, et c'est entre eux que la confusion est à la fois la plus facile et la plus dommageable</strong> : l'<strong>ACP protocolaire</strong>, dont le § 10.5.1 vient de rappeler la fusion ; et la <strong>composante ACP</strong> de la couche d'infrastructure, dont le § 10.2.3 a rapporté que des analyses tierces lui prêtent un chevauchement avec le protocole agent-agent. ⚠ <strong>Les sources n'établissent, de cette seconde, ni l'intitulé complet, ni la nature, ni l'identité avec la première.</strong></p>
+
+<p><em>Deux objets nommés du même sigle, tous deux mis en rapport avec le protocole agent-agent par les sources.</em> <strong>La coïncidence est telle qu'un lecteur pressé conclura à l'identité — et les sources ne permettent pas de le suivre.</strong> ⚠ <strong>La nature de la composante n'est jamais prédiquée ici</strong> : elle est <em>mise en rapport avec</em> le protocole agent-agent par des tiers, ce qui n'en fait pas un protocole.</p>
+
+<p><strong>L'enjeu de cette prudence n'est pas cosmétique, et les deux branches de l'alternative conduisent à des conclusions d'architecture opposées :</strong></p>
+
+<ul class="puces">
+  <li><strong>si les deux objets n'en font qu'un</strong>, la fusion d'août 2025 <strong>vaut pour la couche d'infrastructure</strong>, et le chevauchement relevé par les tiers est <strong>le vestige d'un protocole éteint</strong> ;</li>
+  <li><strong>s'ils sont deux</strong>, la couche d'infrastructure <strong>porte une composante active</strong> dont le rapport au protocole agent-agent <strong>reste à qualifier</strong>.</li>
+</ul>
+
+<div class="avert">
+  <p><strong>Les sources ne tranchent pas, et aucune inférence n'est proposée ici.</strong> <em>Un ouvrage qui trancherait gagnerait en fluidité ce qu'il perdrait en droit d'être cru.</em> La question est ouverte au registre des lacunes du Vol. II, et la somme la portera <strong>telle quelle</strong> jusqu'au <strong>ch. 21</strong>, où sa reprise est prévue.</p>
+</div>
+
+<h2 id="s106"><span class="sig">§ 10.6</span>Les feuilles de route de séquencement : jalon historiographique, jamais prescription</h2>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>Réserve F-06 du Vol. II — régime de préimpression.</strong> La source de cette section est une <strong>préimpression non révisée par les pairs</strong>. Elle est reprise <strong>à titre de jalon historiographique</strong> et <strong>jamais comme guidance</strong>. <em>Ce n'est pas une précaution de forme : la section démontre précisément ce que coûte de l'avoir prise pour une prescription.</em></p>
+</div>
+
+<h3>10.6.1 Une prescription périmée par un événement postérieur de moins de quatre mois</h3>
+
+<p>Le <strong>survey de référence de la période</strong>, publié en <strong>mai 2025</strong>, prescrivait une <strong>adoption séquentielle en quatre temps</strong> : d'abord le protocole agent-outil, puis l'ACP protocolaire, puis le protocole agent-agent, puis le protocole décentralisé.</p>
+
+<p><strong>La fusion du 29 août 2025 a vidé la deuxième étape de sa substance moins de quatre mois après la publication.</strong></p>
+
+<div class="avert">
+  <p><strong>L'énoncé exact importe, et il est plus fort qu'une simple péremption de contenu : la séquence est périmée du fait même de la fusion.</strong> Ce n'est pas qu'une meilleure séquence soit apparue ; c'est que <strong>l'un de ses quatre termes a cessé d'exister comme objet à adopter</strong>. <em>Une feuille de route dont une étape s'évanouit n'est pas à réviser — elle est sans objet sur ce segment.</em></p>
+</div>
+
+<p><strong>Une institution qui aurait bâti sa feuille de route protocolaire sur ce document au printemps 2025 aurait, à l'été, investi dans une étape devenue sans objet.</strong></p>
+
+<h3>10.6.2 Ce qu'on en retient, et ce qu'on n'en généralise pas</h3>
+
+<p><strong>Le ch. 7 en a tiré la leçon de méthode</strong> — sur la lecture des sources et le régime des préimpressions. Ce chapitre en retient <strong>la leçon d'architecture</strong>.</p>
+
+<p><em>Lecture d'auteur.</em> <strong>Dans ce cas au moins, une prescription protocolaire s'est périmée plus vite qu'un cycle budgétaire.</strong> ⚠ <strong>Les sources n'établissent pas que ce soit la règle du domaine</strong>, et la généralisation est explicitement refusée ici. <em>Un cas ne fait pas une cadence.</em></p>
+
+<div class="avert">
+  <p><strong>Garde-fou R-1, dernière occurrence du chapitre.</strong> La séquence est citée <strong>au passé et comme jalon</strong> : l'ACP protocolaire y <strong>figurait</strong> comme étape, il <strong>n'y figure plus comme option</strong>. Le qualificatif accompagne le sigle <strong>à cette occurrence comme à toutes les autres</strong> (R-8 du Vol. II, R-13 du Vol. III).</p>
+</div>
+
+<p><strong>Ce que ce chapitre établit — trois acquis, et leurs bornes.</strong></p>
+
+<p><em>(1)</em> <strong>La transaction agentique dispose d'un protocole dédié</strong>, compagnon de l'axe agent-agent, lancé en septembre 2025, auquel <strong>plus de soixante organisations des paiements et des services financiers déclarent leur soutien</strong> selon le communiqué de la fondation faîtière du 9 avril 2026 — ⚠ <strong>un endossement déclaré, dont sept organisations seulement sont nommées, non une adoption en production vérifiée</strong>. Sa <strong>gouvernance a été transférée</strong> à une fondation d'authentification le <strong>28 avril 2026</strong> — ⚠ <strong>fait porté par le Vol. I au régime [C], que le socle du Vol. II ne documentait pas (§ 10.1.3)</strong>.</p>
+
+<p><em>(2)</em> <strong>La couche d'infrastructure se déclare interopérable et non concurrente</strong> ; ⚠ <strong>c'est le positionnement du projet</strong>, que des analyses tierces nuancent en relevant un chevauchement entre sa composante ACP et le protocole agent-agent.</p>
+
+<p><em>(3)</em> <strong>L'ACP protocolaire n'existe plus comme standard vivant depuis le 29 août 2025</strong> ; sa fusion fut <strong>organisée</strong> — actifs versés, adaptateurs, guides de migration —, ce qui sépare deux risques que les dossiers de tiers confondent (§ 10.5.2).</p>
+
+<p><strong>Ce que ce chapitre ne dit pas, énoncé avec la même netteté.</strong> Il <strong>ne décrit pas l'anatomie technique complète</strong> du protocole de paiement : le socle du Vol. II ne la porte pas, et le Vol. I n'en donne que la chaîne de mandats (§ 10.1.4). Il <strong>ne dit pas</strong> que ce protocole s'articule aux rails de paiement nationaux d'un marché donné : <strong>aucune source ne le documente</strong>. Il <strong>ne dit pas</strong> que la composante ACP de la couche d'infrastructure <strong>soit, ou ne soit pas</strong>, l'ACP protocolaire. Il <strong>ne dit rien</strong> de la <strong>sûreté</strong> de ces protocoles : <strong>le ch. 11 en dresse la taxonomie des risques</strong>, et c'est délibérément le chapitre suivant.</p>
+
+<p><em>La pile protocolaire est désormais posée, de ses fondements à sa couche marchande. Reste à savoir ce qu'elle laisse à découvert.</em></p>
+
+<section class="statut" id="s107">
+
+<h2><span class="sig">§ 10.7</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong></p>
+</div>
+
+<p><strong>Ce qui est enfreint</strong> — portes <strong>G-1</strong>, <strong>G-2</strong>, <strong>G-3</strong> ouvertes ; instruction d'auteur du 27 juillet 2026. Conséquences habituelles : aucun énoncé central au sens de CA-IV-01 (régime <strong>[C]</strong> pour la matière du Vol. I ; niveaux <strong>[A]</strong>, <strong>[A]</strong>, <strong>[B]</strong> conservés pour F-04, F-05 et F-43 du Vol. II), aucun décompte publiable, renvois de plan et non de texte (ch. 11, 15, 18, 19, 21 non rédigés).</p>
+
+<p><strong>Remontée ouverte par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-12 — non bloquante, de couverture de source.</strong> Le TOC porte, sous l'entrée de ce chapitre, une <strong>divergence tranchée</strong> — « gouvernance d'AP2 : aucun transfert documenté à date de gel » — et un <strong>fait nouveau candidat (relève v0.7)</strong> présentant le don à la fondation d'authentification comme <strong>annoncé, non vérifié au socle</strong>, à instruire si une source primaire datée est extraite.</li>
+</ul>
+
+<div class="avert">
+  <p><strong>La source primaire n'est pas à extraire : elle est déjà dans un volume rédigé du corpus.</strong> Le <strong>Vol. I <em>Monographie</em> §3.9.2 et §3.13.1</strong> portent le transfert comme <strong>fait daté et sourcé</strong> — 28 avril 2026, version v0.2, cas <em>Human-Not-Present</em>, deux groupes de travail techniques constitués. Les deux sections appartiennent aux périmètres de fusion <strong>du ch. 10 et du ch. 7</strong> respectivement.</p>
+</div>
+
+<p><strong>Trois conséquences remontées, aucune tranchée ici.</strong> <em>(a)</em> L'entrée du ch. 10 au TOC demande une <strong>passe de réalignement</strong> au titre de la <strong>décision 8</strong> — le plan s'aligne sur le chapitre rédigé —, la relève v0.7 pouvant y être requalifiée de « candidat » à « porté par le Vol. I, régime [C] ». <em>(b)</em> L'énoncé du Vol. II <strong>reste exact dans son périmètre</strong> et <strong>ne se corrige pas</strong> : sa lacune de couverture est une information datée, et le registre de l'Annexe C la porte déjà. <em>(c)</em> Le rapport entre les deux volumes est ici <strong>une lacune de couverture, non une contradiction</strong> — et la distinction devrait être <strong>posée en règle</strong> pour la collation de fond (porte G-4), qui rencontrera d'autres cas de la même classe.</p>
+
+<p><strong>Correction apportée à une pièce déjà rédigée de ce Livre.</strong> ⚠ <strong>Le ch. 7 § 7.4.2 et § 7.6 écrivaient « annoncé, non vérifié au socle » sur cet objet, alors que le §3.13.1 du Vol. I — l'une de ses propres sources — portait déjà le fait daté.</strong> Le défaut est <strong>une couverture de source incomplète du ch. 7</strong>, non une divergence entre volumes ; il est <strong>corrigé au ch. 7</strong>, dont les deux passages renvoient désormais au § 10.1.3 pour l'instruction. <em>La leçon est portée au skill de rédaction : une pièce ne se rédige pas sur la seule source que le plan met en avant, mais sur l'intégralité de son périmètre de fusion.</em></p>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la table détaillée (§ 10.1 à § 10.6). La table de couverture est respectée, dont <strong>le partage déclaré avec le ch. 8</strong> — mécanique de la fusion là-bas, <strong>portée de risque ici</strong> — et le <strong>renvoi au ch. 7 § 7.5</strong> pour l'encadré des quatre branches, qui <strong>n'est pas reconstruit</strong>. Le <strong>siège du KYA reste au ch. 18</strong> : le § 10.3.4 n'en prend que ce que la couche de règlement exige. Les <strong>six occurrences de R-14</strong> portent leur degré ; les <strong>trois de R-02</strong> énoncent ce que le mécanisme démontre <strong>et</strong> ne démontre pas ; les <strong>quatre métriques auto-déclarées</strong> sont attribuées <strong>et</strong> porteuses de la clause « soutien ≠ production » ; <strong>R-1 est tenu aux § 10.5.1 et § 10.6.2</strong> ; la <strong>réserve F-06</strong> est appliquée au § 10.6 ; la <strong>réserve F-01</strong> l'est aux § 10.3.3 et § 10.4.2.</p>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 10. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.23, entrée du chapitre 10, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>
