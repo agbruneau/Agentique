@@ -2,30 +2,44 @@
 
 Répertoire de rédaction du **Livre II** du compendium *La somme agentique* (Vol. IV). Il ne porte
 aucune décision, aucun socle et aucun garde-fou propre : la spécification de contenu est le
-[`PRD/TOC.md`](../PRD/TOC.md) v0.24, la gouvernance de la rédaction le [`PRD/PRD.md`](../PRD/PRD.md)
-v0.8. En cas d'écart entre une pièce de ce dossier et le TOC, **le TOC prime** — sauf déviation
+[`PRD/TOC.md`](../PRD/TOC.md) v0.25, la gouvernance de la rédaction le [`PRD/PRD.md`](../PRD/PRD.md)
+v0.9. En cas d'écart entre une pièce de ce dossier et le TOC, **le TOC prime** — sauf déviation
 fondée, qui se déclare (décision 8 du TOC) et **se remonte, jamais se corrige au plan depuis ici**.
 
-## ⚠ État : le Livre est rédigé, il enfreint une porte de plus que le Livre I, et il n'est pas publiable
+## ⚠ État : le Livre est rédigé, arbitré, et toujours non publiable
 
 Le Livre II compte **dix chapitres** au plan (ch. 12-21), en **trois mouvements** — émettre
 (ch. 12-18), la confiance hostile (ch. 19-20), l'horloge post-quantique (ch. 21). **Les dix sont
 rédigés** ; ils l'ont été **hors portes**, et ils restent en **brouillon non publiable**.
 
-⚠ **L'écart est plus large que celui du Livre I, et il faut le lire exactement.** Le Livre I a été
-écrit avant **G-1, G-2 et G-3**. Le Livre II l'est avant **G-3 et G-4** — et **G-4, la collation de
-fond contre le Vol. III rédigé, est le préalable que le PRD §5 nomme pour ce Livre précisément**. Il
-enfreint en outre **l'ordre de rédaction du PRD §6**, qui le plaçait en troisième position.
+⚠ **Ce qui a changé le 27 juillet 2026, et ce qui n'a pas changé.** La passe d'arbitrage du même jour
+(TOC v0.25, PRD v0.9) a **soldé les vingt-quatre remontées** que la rédaction avait ouvertes,
+**réaligné cinq thèses**, pris **deux décisions d'auteur** — dont une neuve — et **franchi aucune
+porte**. Le tableau ci-dessous se lit dans les deux sens.
 
-| | État au terme de la passe |
+⚠ **L'écart de portes reste plus large que celui du Livre I, et il faut le lire exactement.** Le
+Livre I a été écrit avant **G-1, G-2 et G-3**. Le Livre II l'est avant **G-3 et G-4** — et **G-4, la
+collation de fond contre le Vol. III rédigé, est le préalable que le PRD §5 nomme pour ce Livre
+précisément**. Il enfreint en outre **l'ordre de rédaction du PRD §6**, qui le plaçait en troisième
+position. *L'arbitrage n'efface aucune des trois infractions ; il en solde les conséquences.*
+
+| | État au terme de la passe d'arbitrage |
 |---|---|
-| **Portes franchies** | **deux sur sept** — **G-2** entièrement ; **G-1 pour le seul volet du Livre I**, dont ce Livre ne bénéficie pas |
-| **Volet résiduel de G-1** | ⚠ **dû** — **aucun fait de ce Livre n'a été repris à la source primaire** |
-| **Porte G-4** | ⚠ **volet structurel levé, volet de fond dû** — c'est le préalable déclaré de ce Livre |
+| **Remontées ouvertes** | **zéro** — R-IV-14 à R-IV-37 closes, chacune là où elle fait foi |
+| **Décisions d'auteur prises** | **cinq sur neuf** — D-1, D-6, D-7 (Livre I), plus **D-4** (enveloppes) et **D-9** (neuve : le lot du § 17.5) |
+| **Thèses réalignées** | **cinq sur treize** — ch. 14, 15, 16, 17, 19 (décisions 8 et 14 du TOC). ⚠ *Treize thèses pour dix chapitres : les ch. 12, 20 et 21 en portent deux chacun, fusions v0.20* |
+| **Portes franchies** | **deux sur sept** — inchangé : **G-2** entièrement ; **G-1 pour le seul volet du Livre I**, dont ce Livre ne bénéficie pas |
+| **Volet résiduel de G-1** | ⚠ **dû** — **aucun fait périssable de ce Livre n'a été repris à la source primaire**, hors la RFC 8693 |
+| **Porte G-4** | ⚠ **volet structurel levé, volet de fond dû** — c'est le préalable déclaré de ce Livre, et *cinq thèses collationnées n'en sont pas un acompte* |
 | **Socle consolidé** | ⚠ **zéro entrée** — **G-3 n'est pas entamée** |
 | **Énoncés centraux au sens de CA-IV-01** | ⚠ **aucun**, dans aucune des dix pièces |
-| **Remontées ouvertes par ce Livre** | **vingt-quatre** — R-IV-14 à R-IV-37, dont **deux bloquantes** et **deux soldées par versement d'appareil** |
-| **Statut des pièces** | **brouillon non publiable** |
+| **Statut des pièces** | **brouillon non publiable** — inchangé |
+
+*Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune question n'attend
+plus de réponse qui ne soit déjà tranchée.* ⚠ **Et une condition de publication n'est satisfaisable
+par aucune passe de ce volume en l'état** : **CA-IV-11 et CA-IV-13 exigent un relecteur distinct du
+rédacteur**, que **D-6 ne fournit pas** — *arbitrer n'est pas relire*. L'écart est déclaré au PRD §11.
+*Une lacune de socle se comble par une source ; celle-ci ne se comble que par une seconde personne.*
 
 ⚠ **Deux obligations d'acceptation ne sont pas satisfaites, et elles sont d'ordres différents.**
 **CA-IV-13** — relecture adversariale par un relecteur distinct du rédacteur — n'est satisfaite pour
@@ -33,7 +47,10 @@ enfreint en outre **l'ordre de rédaction du PRD §6**, qui le plaçait en trois
 que la rédaction. Et **CA-IV-11**, propre aux **ch. 19 et 20**, exige une **relecture dédiée dont le
 compte rendu est déposé et nommé dans la pièce**, l'attestation auto-délivrée étant **proscrite même
 exacte** : elle n'a pas eu lieu, et les deux pièces le déclarent en tête. *Un contrôle mécanique n'est
-pas une réfutation, et se relire soi-même n'est pas être relu.*
+pas une réfutation, et se relire soi-même n'est pas être relu.* ☑ **Elle est ordonnancée depuis le
+27 juillet 2026** — au jalon **J-IV-6**, avant toute publication du second mouvement, **son absence
+valant empêchement de publier et non réserve à porter** (PRD v0.9). ⚠ **Mais le relecteur n'est pas
+désignable en l'état**, et c'est la limite que l'arbitrage a rencontrée plutôt que contournée.
 
 ⚠ **Le Vol. IV n'est pas requalifié pour autant.** Il demeure un cadrage au regard du dépôt : ni son
 `CLAUDE.md` racine, ni la veille technologique ne le décrivent autrement, et **la veille ne se corrige
@@ -41,9 +58,16 @@ jamais** — sa réf. [220] décrit un cadrage sans chapitre, et **cela reste vr
 
 ## Volumétrie réelle — et la leçon du Livre I appliquée sans effet
 
-**61 165 mots** de corps pour les dix pièces, mesurés le 27 juillet 2026 par
+**61 677 mots** de corps pour les dix pièces, mesurés le 27 juillet 2026 par
 [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — contre une enveloppe
-de Livre de **50 000** au TOC, soit **+22,3 %**.
+de Livre de **50 000** au TOC, soit **+23,4 %**.
+
+⚠ **Le chiffre a été re-mesuré au terme de la passe d'arbitrage, et il a bougé** : il valait **61 165**
+à la rédaction. **Quatre** corrections de la passe touchent le **corps** de leur pièce — la réserve de
+titre reconduite au § 12.8, la note du § 15.1.4, l'extraction du RFC 8693 au § 17.1, le renvoi au
+siège du tri au § 21.1 — et **un décompte
+ne se recopie pas d'une passe à l'autre**. *Les blocs de clôture des remontées, eux, sont hors corps :
+la commande s'arrête à la note de statut.*
 
 ⚠ **La leçon du Livre I a été appliquée, et elle n'a pas suffi — c'est le constat qui compte.** Le
 Livre I avait vu **onze cibles dérivées totaliser 93 000 mots pour une enveloppe de 65 000**, faute
@@ -51,24 +75,24 @@ que personne n'additionne les dérivations. **Ici, la somme des dix cibles a ét
 première ligne et vaut exactement 50 000.** *Le dépassement ne vient donc pas de la dérivation : il
 vient de la matière.* ⚠ **Et c'est précisément ce que la décision d'auteur D-4 attendait** — le
 PRD §13 déclare pour ce Livre une « condensation réelle d'environ **52 %** sur les enveloppes
-héritées », avec pour parade un **re-calibrage éventuel**, toujours ouvert. **La passe fournit à D-4
-une mesure plutôt qu'un avis** (remontée **R-IV-17**).
+héritées », avec pour parade un **re-calibrage éventuel**. **La passe a fourni à D-4 une mesure plutôt
+qu'un avis** (remontée **R-IV-17**). ☑ **D-4 est tranchée depuis le 27 juillet 2026, sur cette mesure** : **enveloppes maintenues**, re-calibrage remis à une **passe unique de clôture** portant sur les cinq Livres — jamais Livre par Livre, un Livre sur cinq étant un échantillon. ⚠ **La partie opérante de la décision est une interdiction** : aucun rédacteur des Livres III à V ne traite son enveloppe comme un plafond à couper — *amputer une borne et couper un hors-périmètre produisent le même chiffre*, et seule la seconde coupe est légitime.
 
 | Pièce | Cible dérivée | Réel | Écart |
 |---|---|---|---|
-| [Ch. 12](12-heritage-standards-etires.md) | 6 200 | **7 301** | +17,8 % |
+| [Ch. 12](12-heritage-standards-etires.md) | 6 200 | **7 372** | +18,9 % |
 | [Ch. 13](13-identite-decentralisee-vc-did.md) | 4 000 | **3 947** | **−1,3 %** |
 | [Ch. 14](14-grille-cinq-questions.md) | 3 000 | **3 514** | +17,1 % |
-| [Ch. 15](15-emettre-carte-annuaires-registres.md) | 5 800 | **8 021** | +38,3 % |
+| [Ch. 15](15-emettre-carte-annuaires-registres.md) | 5 800 | **8 152** | +40,6 % |
 | [Ch. 16](16-passeport-agent.md) | 4 500 | **4 771** | +6,0 % |
-| [Ch. 17](17-chaine-mandat-deux-sauts.md) | 5 700 | **6 745** | +18,3 % |
+| [Ch. 17](17-chaine-mandat-deux-sauts.md) | 5 700 | **6 933** | +21,6 % |
 | [Ch. 18](18-know-your-agent.md) | 3 800 | **4 202** | +10,6 % |
 | [Ch. 19](19-taxonomie-attaques-identite-delegation.md) | 5 000 | **5 467** | +9,3 % |
 | [Ch. 20](20-usurpation-revocation-boucle-defensive.md) | 6 200 | **8 855** | **+42,8 %** |
-| [Ch. 21](21-horloge-post-quantique.md) | 5 800 | **8 342** | **+43,8 %** |
-| **Livre** | **50 000** | **61 165** | **+22,3 %** |
+| [Ch. 21](21-horloge-post-quantique.md) | 5 800 | **8 464** | **+45,9 %** |
+| **Livre** | **50 000** | **61 677** | **+23,4 %** |
 
-: Volumétrie du Livre II, mesurée le 27 juillet 2026. *L'écart se documente ; il ne se corrige ni par amputation ni par gonflement.*
+: Volumétrie du Livre II, re-mesurée le 27 juillet 2026 au terme de la passe d'arbitrage. *L'écart se documente ; il ne se corrige ni par amputation ni par gonflement.*
 
 ⚠ **Les trois plus forts écarts ont la même cause, et elle est structurelle** : les ch. 15, 20 et 21
 sont les trois pièces qui portent **le plus de bornes** — quinze occurrences de R-02 au ch. 15, seize
@@ -112,64 +136,75 @@ mutation `check-sieges-mutations.py` **passe sur le corpus intact et attrape ses
 contre lui-même** (contrôle **S3**), un retour à la ligne coupant l'un des trois sommets — *une
 signature qui ne voit pas son propre siège ne verrait pas non plus une copie.*
 
-## Les vingt-quatre remontées
+## Les vingt-quatre remontées — soldées le 27 juillet 2026
 
-⚠ **Aucune n'est close sur place.** Une remontée se solde **là où elle fait foi** : au
+Chacune a été **portée là où elle fait foi**, jamais déclarée close sur place : au
 [PRD](../PRD/PRD.md) pour une décision d'auteur, au [TOC](../PRD/TOC.md) pour un réalignement de plan,
-à l'appareil pour une dette d'outillage. **Deux seulement le sont au terme de cette passe** — celles
-qui relevaient de l'appareil.
+à l'appareil pour une dette d'outillage. Le détail de chaque clôture vit dans la **note de statut de
+la pièce** qui l'avait ouverte.
 
-| Remontée | Ouverte au | Objet | État |
-|---|---|---|---|
-| **R-IV-14** | ch. 12 | ratio des identités machines : lacune du Vol. III **illustrée** par un chiffre auto-déclaré du Vol. I | ☐ **G-4** |
-| **R-IV-15** | ch. 12 | le titre du second mouvement porte « OIDC », mot que la source a retiré du sien | ☐ **TOC** |
-| **R-IV-16** | ch. 12 | ⚠ **dirimante pour le Livre** : neuf pièces sur dix reposent sur un volume **déclaré non publiable**, avant **G-4** | ☐ **G-4** |
-| **R-IV-17** | ch. 12 | **volumétrie** : +22,3 % sur l'enveloppe, mesure versée à **D-4** | ☐ **D-4** |
-| **R-IV-18** | ch. 13 | contenu technique du corpus W3C : lacune du Vol. III **couverte en [C]** par le Vol. I | ☐ **G-4** |
-| **R-IV-19** | ch. 13 | **partage déclaré sans critère** entre les ch. 13 et 18 — tranché par un critère d'auteur, déclaré | ☐ **TOC** |
-| **R-IV-20** | ch. 14 | thèse : « aucun mécanisme de 2026 » — forme **déjà bornée à la source** | ☐ **TOC, décision 8** |
-| **R-IV-21** | ch. 14 | deux **arrivées non déclarées** à la table de couverture (ch. 25, ch. 37) | ☐ **TOC** |
-| **R-IV-22** | ch. 15 | verdict **Q-C** de la carte signée : case vide au degré 3 contre « ne répond pas » | ☐ **TOC** |
-| **R-IV-23** | ch. 15 | thèse : « le registre **devient** la pièce maîtresse » — **SPÉCULATIF non trié** | ☐ **TOC, décision 8** |
-| **R-IV-24** | ch. 15 | ⚠ **appareil** : aucun siège du Livre II n'était contrôlé | ☑ **soldée — versement d'appareil** |
-| **R-IV-25** | ch. 16 | thèse : échéance 2027-2028 **empruntée à une entrée [C]** ; appelle une **passe de réalignement systématique** | ☐ **TOC, décision 8** |
-| **R-IV-26** | ch. 16 | la **quatrième pièce du passeport** n'a ni chapitre ni socle | ☐ **TOC, registre des risques** |
-| **R-IV-27** | ch. 17 | ⚠ **BLOQUANTE** : le § 17.5 est un **front neuf** dont les sources devaient être établies **avant rédaction** ; elles ne l'ont pas été, et **le Livre III en dépend** | ☐ **G-1, lot dédié** |
-| **R-IV-28** | ch. 17 | thèse : trois termes **déjà bornés à la source** — « prouvent », « presque aucun », « aucun mécanisme documenté » | ☐ **TOC, décision 8** |
-| **R-IV-29** | ch. 17 | la relève sur le RFC 8693 est **le moins coûteux des versements** que le Livre appelle | ☐ **G-1** |
-| **R-IV-30** | ch. 18 | le **siège du KYA** est partagé entre deux volumes, à deux dates et deux régimes | ☐ **TOC** |
-| **R-IV-31** | ch. 18 | le cardinal « **neuf chantiers** » est fragile et doit être **re-mesuré au gel de publication** | ☐ **G-1** |
-| **R-IV-32** | ch. 19 | ⚠ **BLOQUANTE** : la thèse porte une **proportion** que **le dénombrement exigé n'a pas établie** | ☐ **TOC ou lot de dénombrement** |
-| **R-IV-33** | ch. 19 | **CA-IV-11** : relecture dédiée des ch. 19-20, **non conduite** | ☐ **avant publication** |
-| **R-IV-34** | ch. 20 | un **intitulé de socle** excède ce que son rapport de lot autorise | ☐ **G-3** |
-| **R-IV-35** | ch. 20 | chaîne d'approvisionnement : lacune du Vol. III **couverte en [C]** par le Vol. I | ☐ **G-4** |
-| **R-IV-36** | ch. 21 | une **relève du plan est déjà consommée par le socle de sa source**, sans que rien ne les rapproche | ☐ **G-4** |
-| **R-IV-37** | ch. 21 | le **tri prospectif** n'a **aucun siège désigné** dans la somme ; volet appareil du siège de l'horloge | ☑ **volet appareil soldé** ; ☐ **siège du tri : TOC** |
+| Remontée | Ouverte au | Issue |
+|---|---|---|
+| **R-IV-14** | ch. 12 | ☑ **TOC v0.25, Annexe C** — lacune qualifiée *illustrée par le Vol. I en [C], non instruite* ; entrée dans une **troisième table**, les absences au degré 3 n'étant pas numérotées à leur source |
+| **R-IV-15** | ch. 12 | ☑ **TOC v0.25** — le titre **conserve « OIDC »** (décision 11a : une entrée fusionnée ne se réécrit pas) et porte sa réserve ; ⚠ **la lacune 19 du Vol. III entre au registre**, qui la fonde |
+| **R-IV-16** | ch. 12 | ☑ **PRD v0.9 §13** — les **quinze remontées du Vol. III relevées pièce par pièce** : **six touchent ce Livre**, neuf non ; le relevé devient **condition de sortie de G-4** |
+| **R-IV-17** | ch. 12 | ☑ **D-4 tranchée** — enveloppes maintenues, re-calibrage remis à une passe unique de clôture, ⚠ **amputation interdite** |
+| **R-IV-18** | ch. 13 | ☑ **TOC v0.25, Annexe C** — *couverte en [C] par le Vol. I, à instruire pour élévation* |
+| **R-IV-19** | ch. 13 | ☑ **TOC v0.25** — critère du partage écrit aux deux tables : *déploiements ici, institutions au ch. 18* |
+| **R-IV-20** | ch. 14 | ☑ **TOC v0.25, décisions 8 et 14** — thèse réalignée sur la forme bornée de la source |
+| **R-IV-21** | ch. 14 | ☑ **TOC v0.25** — les deux arrivées (ch. 25 § 25.1, ch. 37 § 37.4) déclarées à la table de couverture |
+| **R-IV-22** | ch. 15 | ☑ **TOC v0.25** — **case vide au degré 3** retenue aux deux sièges ; ⚠ **un second défaut trouvé en instruisant** : l'intitulé portait le verbe que **R-02 proscrit**, corrigé |
+| **R-IV-23** | ch. 15 | ☑ **TOC v0.25, décisions 8 et 14** — « tend à devenir — mouvement SPÉCULATIF, qu'aucune entrée du socle ne date » |
+| **R-IV-24** | ch. 15 | ☑ **appareil** — table `SIEGES` portée de trois à **sept**, éprouvée sur **21 pièces** ; un défaut réel trouvé au premier passage |
+| **R-IV-25** | ch. 16 | ☑ **TOC v0.25, décisions 8 et 14** — l'échéance empruntée à une entrée [C] tombe ; ⚠ **la passe systématique demandée devient la décision 14** |
+| **R-IV-26** | ch. 16 | ☑ **TOC v0.25, risque 17 neuf** — asymétrie déclarée ; ⚠ **aucune parade prise** : le choix engage le découpage |
+| **R-IV-27** | ch. 17 | ☑ **D-9 prise (neuve)** — **lot d'instruction ouvert**, ⚠ **bloquant nommément pour les ch. 25 et 27** ; l'issue « périmètre assumé » examinée et **écartée** |
+| **R-IV-28** | ch. 17 | ☑ **TOC v0.25, décisions 8 et 14** — les trois termes tombent ensemble |
+| **R-IV-29** | ch. 17 | ☑ **G-1 — relève consommée PAR EXTRACTION** à la source primaire ; ⚠ **l'extraction établit l'inverse de ce qu'elle supposait** et **renforce** la thèse |
+| **R-IV-30** | ch. 18 | ☑ **TOC v0.25** — le siège reprend le **Vol. III pour la matière**, le **Vol. I pour le statut du terme, en [C]** ; l'écart est daté, non contradictoire |
+| **R-IV-31** | ch. 18 | ☑ **PRD v0.9, volet résiduel de G-1** — cardinal **re-mesuré au gel de publication**, titre du tableau daté |
+| **R-IV-32** | ch. 19 | ☑ **TOC v0.25, décisions 8 et 14** — thèse réalignée sur la **forme architecturale** ; ⚠ **le lot de dénombrement n'est PAS ouvert**, la source ayant **réfuté** la proportion au vote adversarial |
+| **R-IV-33** | ch. 19 | ☑ **PRD v0.9** — relecture **ordonnancée à J-IV-6**, son absence valant empêchement de publier ; ⚠ **le relecteur ne peut pas être désigné** : D-6 ne fournit pas de tiers, l'écart est déclaré au §11 |
+| **R-IV-34** | ch. 20 | ☑ **PRD v0.9, registre des corrections dues de G-3** — intitulé et niveau contesté corrigés **au socle**, jamais depuis la pièce |
+| **R-IV-35** | ch. 20 | ☑ **TOC v0.25, Annexe C** — *couverte en [C] par le Vol. I, à instruire pour élévation* |
+| **R-IV-36** | ch. 21 | ☑ **TOC v0.25** — relève **consommée par le socle de sa propre source** (F-61) ; ⚠ elle portait une **réserve que le plan ignorait** |
+| **R-IV-37** | ch. 21 | ☑ **close SUR CONSTAT** — ⚠ **la remontée était fausse pour moitié** : le siège du tri **existe** au ch. 49 § 49.0 ; ce qui manquait, ce sont les **renvois**, ajoutés. ☐ **Versement à l'appareil dû** — le ch. 49 n'est pas rédigé |
 
-: Les vingt-quatre remontées du Livre II et leur destinataire, au 27 juillet 2026.
+: Les vingt-quatre remontées du Livre II et leur issue, au 27 juillet 2026.
 
-### Ce que ces remontées font apparaître, et qui n'est pas dans le détail
+### Ce que la clôture a coûté, et ce qu'elle a trouvé
 
-**Trois motifs se dégagent, et aucun n'était visible pièce à pièce.**
+**Quatre constats méritent d'être retenus avant d'ouvrir le Livre suivant.**
 
-1. ⚠ **Cinq thèses sur dix portent une forme que leur source a corrigée après coup.** Les ch. 14, 15,
-   16, 17 et 19 citent verbatim, comme le PRD l'exige, une thèse dont le Vol. III a **borné
-   l'équivalent le 21 juillet 2026** — quantificateur universel négatif, verbe proscrit par R-02,
-   proportion non dénombrée, échéance empruntée à une entrée **[C]**. *Ce ne sont pas cinq divergences
-   à arbitrer : ce sont **cinq reports qui n'ont pas été faits**, et c'est exactement l'objet du volet
-   de fond de **G-4**.* **Aucun rédacteur ne les a corrigés ; les cinq pièces écrivent leur corps sous
-   la forme bornée et remontent l'écart.**
-2. ⚠ **La classe « lacune de couverture comblée par un autre volume » compte trois occurrences de
-   plus** — R-IV-14, R-IV-18, R-IV-35 —, après les trois du Livre I. *La règle est écrite à l'Annexe C
-   du TOC depuis la v0.24 ; ces trois cas en sont des **applications**, non des demandes de règle
-   nouvelle.* ⚠ **Et aucun ne comble quoi que ce soit** : dans les trois, la matière du Vol. I entre en
-   **[C]**, ou est une **métrique auto-déclarée** — *couverte au régime [C] ne vaut pas comblée.*
-3. ⚠ **Deux remontées sont bloquantes, et elles ne le sont pas pour ce Livre.** **R-IV-27** bloque la
-   **rédaction du Livre III**, dont deux chapitres reposeront sur une parade humaine **dont la somme
-   déclare ne rien savoir**. **R-IV-32** bloque la **thèse du ch. 19**, faute du dénombrement que le
-   plan exige avant rédaction. *Les deux ont été **exposées plutôt que comblées** — écrire deux pages
-   plausibles à l'endroit exact où le socle est muet aurait produit ce qu'aucune relecture ne peut
-   réfuter.*
+1. ⚠ **Cinq des treize thèses du Livre portaient une forme que leur source avait corrigée après coup —
+   et aucune pièce ne pouvait le voir seule.** Les ch. 14, 15, 16, 17 et 19 citaient verbatim, comme le
+   PRD l'exige, une thèse dont le Vol. III avait **borné l'équivalent le 21 juillet 2026** et
+   **reporté l'arbitrage dans ses pièces le 22**. *Ce n'étaient pas cinq divergences à arbitrer : cinq
+   reports qui n'avaient pas été faits* — et **chaque pièce était cohérente isolément**, ce qui rendait
+   le défaut invisible au grain du chapitre. Les cinq sont réalignées ; la **décision 14** en fait une
+   obligation de passe, **avec son domaine de balayage déclaré** — **treize thèses examinées, cinq
+   réalignées** ; *le Livre compte dix chapitres mais treize thèses, les ch. 12, 20 et 21 en portant
+   deux chacun au titre des fusions v0.20.* *Un cardinal d'écarts sans domaine de balayage est un relevé, pas une couverture.*
+2. ⚠ **Instruire les remontées en a trouvé une qui n'avait pas été ouverte, et en a réfuté une qui
+   l'avait été.** Le § 15.1.4 portait « ce que la carte **prouve** » — verbe que **R-02 proscrit** et
+   que le plan assigne pourtant en garde-fou à ce chapitre : *le plan proscrivait le verbe dans le
+   corps et le portait dans son propre intitulé*. À l'inverse, **R-IV-37 était fausse pour moitié** :
+   le siège du tri prospectif **existait**. *Une passe d'arbitrage qui exécute ses remontées sans les
+   vérifier fabrique le défaut qu'elle croit corriger.*
+3. ⚠ **La classe « lacune de couverture couverte par un autre volume » atteint six occurrences en deux
+   Livres** — R-IV-12 et R-IV-13 au Livre I, R-IV-14, R-IV-18 et R-IV-35 ici. *Six occurrences font
+   d'une classe de défaut une propriété du corpus, pas un accident de chapitre.* Elles entrent dans
+   une **troisième table** de l'Annexe C, séparée parce que **le PRD du Vol. III ne numérote pas ces
+   absences**. ⚠ **Et aucune ne comble quoi que ce soit** : *couverte au régime [C] ne vaut pas
+   comblée.*
+4. ⚠ **Les deux remontées bloquantes ont reçu deux réponses opposées, et l'écart est le résultat.**
+   **R-IV-32** est close **sans lot** : la source avait **réfuté** la proportion au vote adversarial,
+   et *dénombrer pour établir un énoncé que la source tient pour non soutenu aurait produit un chiffre
+   sans thèse à porter*. **R-IV-27** est close **par un lot ouvert et un blocage maintenu** : deux
+   chapitres du Livre III **prescriront** une parade dont ce § 17.5 est la limite empirique, et
+   *assumer le périmètre reviendrait à prescrire la parade en déclarant ne rien savoir de son
+   efficacité*. **La différence n'est pas de gravité mais de dépendance** : la première portait un
+   énoncé dont rien ne dépendait, la seconde porte un vide dont deux chapitres dépendront.
 
 ## Ce que le Livre couvre — et ce qu'il ne couvre pas
 
@@ -183,12 +218,12 @@ cassent une table de couverture si on les défait.**
 | Encadré de désambiguïsation à quatre branches | **ch. 7 § 7.5** (Livre I) | **siège amont** — le Livre II y renvoie à chaque emploi du sigle |
 | Découverte et registres, **versant protocolaire** | **ch. 9** (Livre I) | **partage déclaré** avec le ch. 15 § 15.3.2 |
 | « Ce qui n'existe toujours pas » côté émission | **ch. 16 § 16.2** | **prélevé** au ch. 15, dont la ligne Fusion porte son « hors §7.4 » |
-| *Trust fabric* inter-domaines (Vol. I §7.4.3) | **ch. 13 § 13.5** et **ch. 18 § 18.3** | **partage déclaré** — versant *adoption* / versant *institutions* ⚠ **sans critère écrit au plan** (R-IV-19) |
+| *Trust fabric* inter-domaines (Vol. I §7.4.3) | **ch. 13 § 13.5** et **ch. 18 § 18.3** | **partage déclaré, critère écrit au TOC v0.25** (R-IV-19) : *ce qui se mesure en déploiements reste au ch. 13, ce qui se mesure en institutions va au ch. 18* |
 | Défenses architecturales, alignement, comportement déviant | **ch. 6** (Livre I) | **hors périmètre** du ch. 19, qui traite ce qui cède et non ce qui protège |
 
 ⚠ **Et une matière que le Livre déclare sans la traiter** : la **quatrième pièce du passeport** — les
 attestations de conformité — n'a **pas de chapitre**, et repose sur **deux sections** dont **une seule
-est rédigée** ; l'autre est au **ch. 25 § 25.2**, dans un Livre qui n'existe pas encore (R-IV-26).
+est rédigée** ; l'autre est au **ch. 25 § 25.2**, dans un Livre qui n'existe pas encore. ☑ **L'asymétrie est déclarée au registre des risques du TOC v0.25, sous le risque 17** (R-IV-26) ; ⚠ **aucune parade n'est prise** — le choix engage le découpage, donc l'auteur, et *un chapitre neuf serait interdit sans la fusion qui le paie*.
 
 ## Les deux formats
 
@@ -238,12 +273,12 @@ a payés**.
    [`TOC.md`](../PRD/TOC.md) : thèse, sections, ligne Fusion, table détaillée, table de couverture.
 2. **Lire l'intégralité du périmètre de fusion** — leçon de R-IV-12 et R-IV-13, et **confirmée trois
    fois de plus par ce Livre**.
-3. ⚠ **Comparer la thèse du TOC au texte rédigé de sa source avant d'écrire.** *Cinq thèses sur dix
+3. ⚠ **Comparer la thèse du TOC au texte rédigé de sa source avant d'écrire.** *Cinq thèses sur treize
    portaient une forme que leur source avait corrigée* : la pièce cite verbatim et **écrit son corps
    sous la forme bornée**, mais le repérage se fait **avant**, pas au moment de la relecture.
 4. ⚠ **Ne jamais écrire une section dont le plan déclare le socle « à établir avant rédaction ».**
    *Exposer le vide et formuler la question instruisible est le seul geste admissible* — c'est ce que
-   le § 17.5 fait, et c'est le motif de R-IV-27.
+   le § 17.5 fait, et c'est le motif de R-IV-27. ☑ **D-9 a depuis ouvert le lot d'instruction et maintenu le blocage** : les ch. 25 et 27 ne se lancent pas avant sa clôture.
 5. Porter l'en-tête à cinq champs du PRD §6, **garde-fous à zéro occurrence compris**, puis la thèse
    citée depuis le TOC.
 6. **Un siège neuf s'ajoute à la table `SIEGES` de [`PRD/check-sieges.py`](../PRD/check-sieges.py)**,

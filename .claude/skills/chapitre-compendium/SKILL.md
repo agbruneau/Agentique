@@ -50,7 +50,7 @@ il ne se lisse pas.
 
 Aucune ne se saute — chacune ferme une classe d'erreur que les autres ne voient pas.
 
-1. **L'entrée du chapitre au [`PRD/TOC.md`](../../../2%20-%20Compendium/PRD/TOC.md)** (v0.24) :
+1. **L'entrée du chapitre au [`PRD/TOC.md`](../../../2%20-%20Compendium/PRD/TOC.md)** (v0.25) :
    thèse, phrase « Sections : … », **ligne Fusion**, table des matières détaillée, table de
    couverture (décision 6), et les écarts que le TOC signale parfois sous l'entrée. C'est le cahier
    des charges ; il ne se résume pas, il se suit.

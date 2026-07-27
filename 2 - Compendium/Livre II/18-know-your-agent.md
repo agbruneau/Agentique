@@ -12,7 +12,7 @@ frontière de l'organisation, là où l'émission cesse d'être un acte interne.
 | **Garde-fous balayés** | Vol. III — **R-05 (le KYA n'est pas un standard établi ; « terme de marché » est une construction d'auteur, non une formule du Vol. I) : ce chapitre en est le SIÈGE — cinq occurrences**, § 18.0, § 18.1 (trois) et § 18.3 ; **R-09 : onze occurrences**, dont la clause du groupe communautaire **répétée à chaque mention** ; **R-14 : dix occurrences**, dont **huit de degré 3** ; **R-02 : cinq occurrences**, § 18.2 (trois) et § 18.3 (deux) ; **R-03 (« entreprise agentique », jamais une catégorie établie) : une occurrence**, § 18.3 ; **R-13 : une occurrence**, § 18.3, les niveaux de certification jamais confondus avec une échelle d'autonomie. **R-01, R-04, R-06 à R-08, R-10 à R-12 : zéro occurrence.** Vol. II — **§8.2 : une occurrence**, § 18.1, le décompte de participants attribué à la page qui l'affiche ; **PRD Vol. II §8.2.5 : six occurrences** ; **R-1 à R-8 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **3 800 mots** de corps (§ 18.0 à § 18.4), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 4 202 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+10,6 %**. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.24, entrée du chapitre 18)* — le KYA transpose la logique du KYC — vérifier avant d'admettre — sans l'infrastructure institutionnelle qui rend le KYC possible ; la *trust fabric* inter-entreprises reste privée et fragmentée, et c'est elle qui décide si l'entreprise agentique s'arrête à ses murs.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 18)* — le KYA transpose la logique du KYC — vérifier avant d'admettre — sans l'infrastructure institutionnelle qui rend le KYC possible ; la *trust fabric* inter-entreprises reste privée et fragmentée, et c'est elle qui décide si l'entreprise agentique s'arrête à ses murs.
 
 ---
 
@@ -415,3 +415,35 @@ dont **huit au degré 3**. Les **onze occurrences de R-09** répètent la clause
 attribué à la page qui l'affiche**. Les **niveaux de certification du § 18.3 ne sont confondus avec
 aucune échelle d'autonomie**. Et les **six occurrences de « Lecture de l'auteur »** sont suivies de ce
 que le socle établit et n'établit pas — dont **le § 18.3 entier**, marqué à l'ouverture.
+
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-30 — close par désignation au TOC v0.25, et le siège ne bouge pas.** Le plan écrit désormais
+  lequel des deux textes le § 18.1 reprend : **le Vol. III** *Monographie* **§11.1 pour la matière** —
+  l'instruction datée du 21 juillet 2026, neuf chantiers, six organisations, zéro texte ratifié —, et
+  **le Vol. I** *Monographie* **§5.5.4 pour le statut du terme, au régime [C]**, à son gel de juin
+  2026. ⚠ **Les deux ne se contredisent pas et l'écart est daté** : le second pose un état, le premier
+  en relève un autre un mois plus tard. *Le volume le plus ancien ne se corrige pas* — c'est la règle
+  de l'Annexe C, appliquée ici à un siège plutôt qu'à une lacune.
+- **R-IV-31 — close par inscription au volet résiduel de G-1 (PRD v0.9).** Le cardinal « **neuf
+  chantiers, six organisations** » **se re-mesure au gel de publication**, et le titre du tableau 18.1
+  **porte sa date**. ⚠ **L'obligation est inscrite parce que sa fragilité est datée** : deux des neuf
+  lignes reposent sur des *Internet-Drafts* qui expirent les **27 septembre** et **24 novembre 2026** —
+  après le gel, avant toute publication vraisemblable. *Un cardinal annoncé en toutes lettres ne se met
+  pas à jour tout seul ; c'est le premier risque du plan.* ⚠ **Le cardinal n'est pas corrigé
+  aujourd'hui** : il est exact à sa date, et *le re-mesurer avant l'échéance ne prouverait rien.*
+
+⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle
+consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation de fond contre le Vol. III
+rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**.
+**CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur. Cette
+pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
+cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*

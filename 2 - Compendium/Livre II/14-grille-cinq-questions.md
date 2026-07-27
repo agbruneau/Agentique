@@ -13,7 +13,9 @@ rendent leurs verdicts.*
 | **Garde-fous balayés** | Vol. III — **R-14 (trois degrés d'absence) : neuf occurrences**, § 14.2 (sept, une par case vide) et § 14.3 (deux) ; **R-02 : quatre occurrences**, § 14.2 ; **R-09 : trois occurrences**, § 14.2 ; **R-13 (échelles d'autonomie jamais nues) : quatre occurrences**, § 14.4, où trois échelles homonymes du Vol. I sont nommées par leur cardinal et leur numérotation ; **R-01 : deux occurrences**, § 14.3 et § 14.4. **R-03 à R-08, R-10 à R-12 : zéro occurrence.** Vol. II — **§8.2 : une occurrence**, § 14.2 ; **R-1 à R-8 : zéro occurrence** — leurs sièges sont les ch. 15 et 16. ⚠ **Faux ami déclaré** : le « corpus d'appui » nommé au § 14.4 est un **marqueur conditionnel de réouverture**, jamais une source |
 | **Volumétrie cible** | ≈ **3 000 mots** de corps (§ 14.0 à § 14.4), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — **la plus basse du Livre**, ce chapitre ne portant que quatre sections et aucun corpus propre. ☑ **Décompte publiable depuis G-2** ; **réel : 3 514 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+17,1 %**. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.24, entrée du chapitre 14)* — cinq questions — *qui es-tu, qui t'a créé, pour qui agis-tu, que peux-tu faire, qui en répond* — forment la grille de lecture de tout mécanisme d'identité agentique ; aucun mécanisme de 2026 ne répond aux cinq.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 14)* — cinq questions — *qui es-tu, qui t'a créé, pour qui agis-tu, que peux-tu faire, qui en répond* — forment la grille de lecture de tout mécanisme d'identité agentique ; ce sont les questions que l'entreprise doit pouvoir poser à chacun de ses agents, et **aucun des trois mécanismes instruits par le Vol. III ne répond aux cinq**.
+>
+> ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-20** ouverte par cette pièce. La forme citée par la version antérieure — « aucun mécanisme de 2026 ne répond aux cinq » — était un **quantificateur universel négatif sur un corpus non balayé**. **Le corps du chapitre n'a pas changé** : il était déjà écrit sous la forme bornée, et le § 14.2 déclarait la portée limitée à l'échantillon.
 
 ⚠ **La thèse citée ci-dessus porte une forme que sa source a elle-même bornée le 21 juillet 2026, et
 l'écart se déclare plutôt qu'il ne se lisse.** Le Vol. III a remplacé « aucun mécanisme de 2026 » par
@@ -370,7 +372,9 @@ rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026.
 
 **Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.24** — § 14.1 à
 § 14.4, dans l'ordre exact —, et le § 14.0 est une introduction de chapitre. La **table de couverture
-est respectée pour ses deux lignes**, y compris la seconde, qui déclare le §3.1.7 du Vol. I **socle
+est respectée pour ses trois lignes** — ⚠ *elle en portait deux à la rédaction : la v0.25 y a ajouté
+la ligne des **deux arrivées** du § 14.3, sur la remontée **R-IV-21** de cette pièce* —, y compris la
+seconde, qui déclare le §3.1.7 du Vol. I **socle
 amont non repris ici** : les quatre axes restent au **ch. 7 § 7.2.2**, et le § 14.1 y renvoie sans les
 reconstruire. **Les cinq questions ne sont pas re-décidées** : leur formulation, leur ordre et leurs
 règles d'emploi sont repris du cadrage du Vol. III **sans modification**. Les **quatre échelles
@@ -380,3 +384,34 @@ numérotation, jamais nues (R-13 du Vol. III). Le **marqueur « corpus d'appui �
 R-14** portent leur degré, et **les sept cases vides du tableau 14.2 sont déclarées degré 3** une par
 une. Enfin, les **six occurrences de « Lecture de l'auteur »** sont suivies de ce que le socle établit
 et n'établit pas — dont **deux sections entières**, le § 14.1 et le § 14.4, marquées à l'ouverture.
+
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-20 — close par réalignement du plan (TOC v0.25, décisions 8 et 14).** La thèse du ch. 14 est
+  amendée : « aucun mécanisme de 2026 » devient « **aucun des trois mécanismes instruits par le
+  Vol. III** ». ⚠ **Ce n'était pas une divergence à arbitrer** : la source avait borné cette forme le
+  **21 juillet 2026** et l'avait reportée dans sa pièce le 22 ; le plan ne l'avait pas suivie. *Le
+  report a été fait, il n'a pas été décidé.* **Le corps de cette pièce n'a pas changé** — il était
+  déjà écrit sous la forme bornée, et la thèse citée en tête l'est désormais aussi.
+- **R-IV-21 — close par déclaration des deux arrivées à la table de couverture (TOC v0.25).** Le
+  **ch. 25 § 25.1** et le **ch. 37 § 37.4** figurent désormais à la table du ch. 14, avec la mention
+  qu'ils sont nommés **d'après la correspondance du plan et non d'après un texte**, les deux chapitres
+  n'étant pas rédigés. ⚠ **La classe de défaut est nommée au plan plutôt que corrigée en silence** :
+  *une arrivée se déclare aux deux bouts*, c'est le défaut que la v0.17 avait soldé sur le §2.8.5 du
+  Vol. I, **et il s'est reproduit à l'identique** — parce qu'**aucun des quinze contrôles ne rapproche
+  une liste de départs d'une liste d'arrivées**. La parade reste la collation manuelle.
+
+⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle
+consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation de fond contre le Vol. III
+rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**.
+**CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur. Cette
+pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
+cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*

@@ -10,13 +10,13 @@ chapitre du Livre.** Chapitre à deux mouvements, issu de la fusion v0.20 des an
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Une entrée héritée est périmée sur un point précis, et le fait se déclare plutôt qu'il ne se lisse** : les cibles que le Vol. I prêtait à un forum sectoriel **ne se retrouvent dans aucun des deux documents de ce forum**, dans les bornes du balayage du Vol. III (§ 21.7) |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. III *Monographie* ch. 16-18**, dont les entrées **F-01** à **F-07**, **F-10**, **F-36**, **F-38**, **F-40**, **F-46**, **F-52** à **F-55**, **F-59** à **F-63**, **F-87** et les entrées héritées **H-03**, **H-17**, **H-27**, **H-33** conservent leurs niveaux d'origine ; et contre le **Vol. I *Monographie* §7.4.1 et §7.4.4**, en **[C]**. ⚠ **Quatre entrées mobilisées sont en [C]** — F-36, F-55, H-17, H-27, H-33 : elles corroborent, elles ne portent pas. ⚠ **H-27 est une thèse d'un volume antérieur, à attribuer à chaque emploi** : l'invariant qu'elle porte **n'est pas un fait**. **Aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | Vol. III — **R-11 (jalons « visés », jamais « fixés » ; statut du document porté à chaque mention ; les origines ne se fusionnent pas) : ce chapitre en est le SIÈGE — dix-sept occurrences**, § 21.1 (huit), § 21.4 (trois), § 21.7 (deux), § 21.8 et § 21.9 (trois) ; **R-14 : quatorze occurrences**, dont **douze de degré 3** ; **R-02 : neuf occurrences**, § 21.4 (deux), § 21.5 (cinq) et § 21.6 (deux) ; **R-09 : quatre occurrences** ; **R-01 : trois occurrences**, § 21.3 et § 21.5 ; **R-13 : une occurrence**, § 21.4, l'invariant nommé par ses termes. **R-03 à R-08, R-10, R-12 : zéro occurrence.** Vol. II — **§8.2 : deux occurrences**, § 21.7, la projection de coût attribuée à son auteur, à son millésime et à son périmètre ; **PRD Vol. II §8.2.5 : cinq occurrences** ; **R-1 à R-8 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **5 800 mots** de corps (§ 21.0 à § 21.9), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — **neuf sections pour deux mouvements**. ☑ **Décompte publiable depuis G-2** ; **réel : 8 342 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+43,8 %**, **le plus fort écart du Livre**. ⚠ **La volumétrie du Livre entier est relevée au [`README.md`](README.md) du dossier**, et c'est elle — non les écarts individuels — qui alimente **D-4** par **R-IV-17** |
+| **Volumétrie cible** | ≈ **5 800 mots** de corps (§ 21.0 à § 21.9), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — **neuf sections pour deux mouvements**. ☑ **Décompte publiable depuis G-2** ; **réel : 8 464 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+45,9 %**, **le plus fort écart du Livre** (re-mesuré le 27 juillet 2026 après la passe d'arbitrage, qui a ajouté au § 21.1 le renvoi au siège du tri prospectif). ⚠ **La volumétrie du Livre entier est relevée au [`README.md`](README.md) du dossier**, et c'est elle — non les écarts individuels — qui alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.24, entrée du chapitre 21, premier mouvement)* — toute la fabrique d'émission (ch. 12-18) repose sur des signatures classiques ; les jalons du NIST IR 8547 — dépréciation **visée** pour 2030, retrait **visé** pour 2035 — tombent dans la durée de vie des architectures conçues aujourd'hui, la PQC est donc une contrainte de conception et non une annexe.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 21, premier mouvement)* — toute la fabrique d'émission (ch. 12-18) repose sur des signatures classiques ; les jalons du NIST IR 8547 — dépréciation **visée** pour 2030, retrait **visé** pour 2035 — tombent dans la durée de vie des architectures conçues aujourd'hui, la PQC est donc une contrainte de conception et non une annexe.
 
 ---
 
-> **Thèse du second mouvement**, citée depuis le TOC v0.24, entrée du chapitre 21 — la crypto-agilité est l'application des trois premiers termes de l'invariant (découplage, contrat, évolution) à la couche cryptographique ; la dette de migration PQC est réelle mais largement non chiffrée — méthode d'estimation plutôt que chiffre.
+> **Thèse du second mouvement**, citée depuis le TOC v0.25, entrée du chapitre 21 — la crypto-agilité est l'application des trois premiers termes de l'invariant (découplage, contrat, évolution) à la couche cryptographique ; la dette de migration PQC est réelle mais largement non chiffrée — méthode d'estimation plutôt que chiffre.
 
 ⚠ **Deux thèses pour un chapitre : le ch. 21 est issu de la fusion v0.20 des anciens ch. 23 et 24**
 (décision 11 du TOC), et les deux entrées y sont conservées **intégralement**.
@@ -56,6 +56,15 @@ lui-même : **il fournit l'horloge, non son incidence**.*
 > sont **posés ici une seule fois**. Les **ch. 15, 16, 20** et, hors du Livre, les **ch. 45 et 49** y
 > renvoient ; **ils ne re-datent aucun jalon, et ne fusionnent aucune origine**. *C'est l'économie de la
 > fusion côté horloge, et elle n'a lieu que si ces chapitres s'y tiennent.*
+>
+> ⚠ **Ce siège porte les jalons, il ne porte pas le tri qui les classe.** Les trois statuts
+> **PROGRAMMÉ / PROJETÉ / SPÉCULATIF** — leur définition, ce qu'ils autorisent et ce qu'ils
+> interdisent — sont posés au **ch. 49 § 49.0, siège de la discipline pour toute la somme**, et ce
+> chapitre les **applique sans les redéfinir**. *Un instrument de tri et un fait trié ne se logent pas
+> au même endroit* : confondre les deux sièges reviendrait à faire dépendre la définition d'un
+> instrument de la matière qu'il classe. ⚠ **Ce renvoi est ajouté le 27 juillet 2026** (remontée
+> **R-IV-37**, close **sur constat**) : le siège du tri **existait déjà**, et *ce qui manquait n'était
+> pas le siège mais le renvoi* — trois chapitres du Livre triaient sans pointer vers lui.
 
 **Trois origines documentaires sont examinées pour leurs dates.** ⚠ **Elles ne relèvent ni du même
 auteur, ni du même régime, ni du même périmètre, et les fondre en un calendrier unique — ce que la
@@ -715,3 +724,45 @@ est attribuée à son auteur, à son millésime et à son périmètre à chacune
 **aucun ratio n'en est dérivé**. Enfin, les **quinze occurrences de « Lecture de l'auteur »** sont
 suivies de ce que le socle établit et n'établit pas — dont **deux paragraphes entiers**, le § 21.6 et
 le § 21.8, marqués à l'ouverture.
+
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-36 — close par enregistrement de la relève comme consommée par la source elle-même
+  (TOC v0.25).** Les deux instruments fédéraux **sont déjà au socle du Vol. III**, versés en **F-61**
+  avec leurs dates et leur portée — constat sur pièce le 27 juillet 2026. ⚠ **Et l'entrée porte la
+  réserve qui compte, que le plan ne portait pas** : la clause « ou un document successeur » est
+  **précisément ce qui empêche de conclure que le projet devient une norme**. *La relève n'était pas
+  fausse : elle était datée d'avant l'instruction du Vol. III, et rien ne l'avait rapprochée du socle
+  qui la contenait déjà.* ⚠ **Le constat est porté au-delà de ce chapitre** : *une relève du plan et
+  une entrée de socle peuvent porter le même objet sans que rien ne les rapproche* — un doublon
+  invisible aux quinze contrôles, et **coûteux dans les deux sens** : il fait tenir pour dû un
+  versement déjà fait, et fait perdre la réserve que l'entrée porte. Le rapprochement des relèves avec
+  les trois socles entre au **volet de fond de G-4**.
+- **R-IV-37 — close SUR CONSTAT, et la remontée était fausse pour moitié.** Elle tenait que le tri
+  prospectif « n'a aucun siège désigné dans la somme ». ⚠ **Le siège existe depuis la v0.16**, au
+  **ch. 49 § 49.0**, et il porte le mot. **Aucun siège n'a donc été créé.** *Ce qui était exact, c'est
+  l'autre moitié du constat* : **trois chapitres de ce Livre triaient sans renvoyer au siège** — les
+  renvois sont ajoutés, ici en tête du § 21.1, aux ch. 15 et 16 à leur thèse. ⚠ **La leçon n'est pas
+  que la remontée était mauvaise** : c'est qu'*une passe d'arbitrage qui exécute ses remontées sans
+  les vérifier fabrique le défaut qu'elle croit corriger* — ici, un second siège pour une matière qui
+  en avait déjà un. ⚠ **Le siège du tri, lui, n'est PAS versé à l'appareil, et l'empêchement est
+  structurel** : la table de [`PRD/check-sieges.py`](../PRD/check-sieges.py) exige une **pièce porteuse
+  existante** dont elle lit le marqueur, et **le ch. 49 n'est pas rédigé**. *Le versement est dû à la
+  rédaction du second mouvement du Livre V, et il est écrit comme dû plutôt que réputé fait.* **Le
+  volet appareil de la remontée**, lui, était soldé avant la passe : le **siège de l'horloge** est
+  versé au script avec les trois autres du Livre.
+
+⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle
+consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation de fond contre le Vol. III
+rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**.
+**CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur. Cette
+pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
+cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*

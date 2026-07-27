@@ -11,7 +11,7 @@ Premier mouvement — émettre (ch. 12-18). Deuxième chapitre du mouvement.*
 | **Garde-fous balayés** | Vol. III — **R-09 (une charte de groupe n'est pas un standard ; les stades se disent à chaque mention) : douze occurrences**, § 13.1 (quatre), § 13.3 (cinq), § 13.4 et § 13.5 (deux) ; **R-14 : sept occurrences**, § 13.1 (deux), § 13.2, § 13.4 et § 13.5 (trois), **toutes de degré 3 sauf une** ; **R-02 : trois occurrences**, § 13.1, § 13.4 et § 13.5 ; **R-05 : une occurrence**, § 13.5. **R-01, R-03, R-04, R-06 à R-08, R-10 à R-13 : zéro occurrence.** Vol. II — **§8.2 (métriques auto-déclarées) : deux occurrences**, § 13.3 et § 13.5, chacune attribuée à la page qui l'affiche ; **PRD Vol. II §8.2.5 (statuts pré-normatifs) : quatre occurrences**, § 13.1 et § 13.3 (trois). **R-1 à R-8 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **4 000 mots** de corps (§ 13.0 à § 13.5), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 3 947 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **−1,3 %**. ⚠ **Un écart individuel ne se lit pas seul** : la volumétrie du Livre est relevée pièce par pièce au [`README.md`](README.md) du dossier, et c'est elle qui alimente la **décision d'auteur D-4**, ouverte, par la remontée **R-IV-17** du ch. 12 |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.24, entrée du chapitre 13)* — le corpus W3C (VC, DID) fournit le vocabulaire du « passeport d'agent », mais son adoption en entreprise financière reste à démontrer — la distinction promesse/production est le fil.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 13)* — le corpus W3C (VC, DID) fournit le vocabulaire du « passeport d'agent », mais son adoption en entreprise financière reste à démontrer — la distinction promesse/production est le fil.
 
 ---
 
@@ -413,3 +413,34 @@ de R-09** disent le stade à chaque mention, y compris la clause du groupe commu
 de participants, l'énumération d'implémentations — sont attribuées à la page qui les affiche. Et les
 **cinq occurrences de « Lecture de l'auteur »** sont suivies de ce que le socle établit et n'établit
 pas.
+
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-18 — close par entrée au registre de l'Annexe C (TOC v0.25), troisième table.** La lacune du
+  Vol. III sur le **contenu technique du corpus W3C** et les profils d'interopérabilité est qualifiée
+  *couverte au régime **[C]** par le Vol. I, à instruire à la source primaire pour élévation*. ⚠ **Le
+  mot « couverte » est le seul admissible, et il ne veut pas dire « comblée »** : les faits du Vol. I
+  entrent en [C], et *une entrée [C] ne porte jamais un fait central*. **Rien n'est corrigé au
+  Vol. III** — son énoncé porte sur **son** corpus et reste exact dans son périmètre.
+- **R-IV-19 — close par écriture du critère au TOC v0.25, aux deux tables de couverture.** Le partage
+  du §7.4.3 du Vol. I entre ce chapitre et le **ch. 18 § 18.3** porte désormais sa ligne de partage :
+  ***ce qui se mesure en déploiements reste ici, ce qui se mesure en institutions va au ch. 18***.
+  C'est le critère que cette pièce avait appliqué et déclaré ; il est **repris tel quel** au plan, non
+  réinventé. ⚠ **Ce qui est réparé n'est pas le partage mais son invisibilité** : *un partage sans
+  critère est une double revendication qui ne se voit pas*, et **aucun contrôle outillé ne l'attrape**
+  — les deux renvois sont valides isolément.
+
+⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle
+consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation de fond contre le Vol. III
+rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**.
+**CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur. Cette
+pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
+cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*

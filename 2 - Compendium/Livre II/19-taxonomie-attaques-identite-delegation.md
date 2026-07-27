@@ -11,7 +11,9 @@ Deuxième mouvement — la confiance hostile (ch. 19-20). **Premier chapitre du 
 | **Garde-fous balayés** | Vol. III — **R-12 (traitement défensif exclusif, au niveau architectural, aucune recette d'exploitation) : quatorze occurrences**, dont **chacune des six lignes du tableau 19.2**, chaque entrée nommant **le maillon qui cède** et s'arrêtant là ; **R-08 (l'absence porte sur l'usurpation du justificatif propre d'un agent, et sur cela seul) : ce chapitre en est le SIÈGE — quatre occurrences**, § 19.6 ; **R-14 : douze occurrences**, dont **sept de degré 3** ; **R-02 : quatre occurrences** ; **R-04 : deux occurrences**, § 19.1, la formule laissée en langue originale et renvoyée à son siège ; **R-09 : trois occurrences**. **R-01, R-03, R-05 à R-07, R-10, R-11, R-13 : zéro occurrence.** Vol. II — **§8.2 (métriques auto-déclarées) : trois occurrences**, § 19.1 et § 19.5 (deux) ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : deux occurrences**, § 19.1 et § 19.6 ; **R-1 à R-8 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **5 000 mots** de corps (§ 19.0 à § 19.6), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 5 467 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+9,3 %**. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.24, entrée du chapitre 19)* — une part majoritaire des attaques propres aux systèmes multi-agents documentées à date sont des attaques d'identité (usurpation, confusion de délégué) ou de délégation (élévation par chaîne de mandat) — ce qui justifie d'absorber la sécurité dans le cadre identitaire.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 19)* — l'identité est le **verrou architectural** de la sécurité agentique — un agent dépourvu d'identité propre et gouvernée opère dans un écart d'attribution qui rend le moindre privilège inapplicable —, et les référentiels du domaine la traitent désormais comme un plan de contrôle à part entière : c'est ce qui justifie d'absorber la sécurité dans le cadre identitaire.
+>
+> ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-32** — la seule **bloquante** des vingt-quatre, et la seule où l'arbitrage a retenu l'autre branche que celle proposée. La forme antérieure portait « **une part majoritaire** ». Le dénombrement exigé n'a pas eu lieu ; ⚠ **et le lot n'est pas ouvert pour autant** : la source n'a pas seulement borné cette forme, elle l'a **réfutée au vote adversarial** et a réécrit sa thèse en énoncé architectural, écrivant que *« ce n'est pas une thèse de dénombrement »*. *Dénombrer pour établir un énoncé que la source tient pour non soutenu aurait produit un chiffre sans thèse à porter.* **Le corps du chapitre n'a pas changé** : il **n'écrivait aucune proportion**, et le § 19.1 continue de nommer le corpus candidat sans l'exploiter.
 
 ---
 
@@ -544,3 +546,45 @@ attribuées à leur source, **y compris les taux expérimentaux du § 19.5**, ra
 configurations qui les portent. Le mot **« sécurisé » n'est appliqué à aucun protocole, à aucune
 occurrence**. Et les **sept occurrences de « Lecture de l'auteur »** sont suivies de ce que le socle
 établit et n'établit pas.
+
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-32 — close par réalignement du plan (TOC v0.25, décisions 8 et 14), et c'est la seule
+  remontée du Livre où l'arbitrage a retenu l'autre branche que celle proposée.** La remontée offrait
+  deux issues : réaligner la thèse, ou **ouvrir un lot de dénombrement**. ⚠ **Le lot n'est pas
+  ouvert**, et le motif n'est pas l'économie : *la source n'a pas seulement borné cette forme, elle
+  l'a **réfutée au vote adversarial** et a réécrit sa thèse en énoncé architectural*, écrivant en
+  toutes lettres que « ce n'est pas une thèse de dénombrement » et que son relevé **ne soutient pas**
+  la proportion. **Dénombrer pour établir un énoncé que la source tient pour non soutenu aurait
+  produit un chiffre sans thèse à porter.** La thèse retombe donc sur la **forme architecturale** — le
+  verrou d'identité —, et l'exigence de dénombrement du plan est **éteinte avec son objet**. ⚠ **Le
+  corps n'a pas changé** : il **n'écrivait aucune proportion**, et le § 19.1 continue de nommer le
+  corpus candidat sans l'exploiter. ⚠ **Ce que le réalignement ne fait pas** : la lacune qui avait
+  motivé la question — le socle du Vol. II ne porte **aucune** attaque propre à A2A — **reste
+  entière**. *Une thèse réalignée ne comble pas la lacune qui l'a motivée ; elle cesse de prétendre la
+  combler.*
+- **R-IV-33 — close par ordonnancement au PRD v0.9, et l'obligation reste due.** La relecture dédiée
+  des **ch. 19 et 20** est ordonnancée **avant toute publication du second mouvement du Livre II**,
+  au jalon **J-IV-6**, et **son absence est un empêchement de publier, non une réserve à porter**.
+  ⚠ **La désignation du relecteur, elle, bute sur une contradiction que la passe a écrite plutôt que
+  contournée** : **CA-IV-11 et CA-IV-13 exigent un relecteur *distinct du rédacteur***, et **D-6 a
+  désigné l'auteur sans délégation comme instance d'arbitrage** — or *arbitrer n'est pas relire*. La
+  décision nomme qui tranche, **elle ne fournit pas de tiers**. ⚠ **Cette lacune-là n'est pas du même
+  ordre que les autres** : *une lacune de socle se comble par une source ; celle-ci ne se comble que
+  par une seconde personne.* Elle est déclarée au PRD §11 — *la déclarer est le seul geste qui
+  l'empêche de s'éteindre par oubli.*
+
+⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle
+consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation de fond contre le Vol. III
+rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**.
+**CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur. Cette
+pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
+cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*

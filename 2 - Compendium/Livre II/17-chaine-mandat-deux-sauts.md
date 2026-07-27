@@ -11,9 +11,11 @@ mécanisme.*
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Une relève du plan porte une date postérieure au gel de sa source** — un document normatif consulté le **26 juillet 2026** — et elle est **reprise comme relève, jamais comme entrée de socle** (§ 17.1) |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. III *Monographie* ch. 9-10**, dont les entrées **F-14**, **F-15**, **F-29**, **F-31**, **F-44** à **F-47**, **F-53**, **F-74** à **F-82**, **F-89** et les entrées héritées **H-01**, **H-06**, **H-12**, **H-19**, **H-28**, **H-29**, **H-33** conservent leurs niveaux d'origine ; et contre le **Vol. I *Monographie* §2.11.2 et §3.6.6**, en **[C]**. ⚠ **Six entrées mobilisées sont en [C]** — F-31, H-19, H-28, H-29, H-33, plus H-15/PC3 du Vol. II, construction d'auteur hors socle factuel : elles **situent**, elles ne portent pas. ⚠ **Le § 17.5 ne mobilise aucun socle** : il n'en a pas. **Aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | Vol. III — **R-14 : quinze occurrences**, dont **douze de degré 3** — **le plus grand nombre du Livre**, et c'est une conséquence du sujet : *un chapitre qui prend une frontière pour objet écrit surtout des absences* ; **R-02 : sept occurrences**, § 17.1 (quatre), § 17.2, § 17.3 et § 17.6 ; **R-09 : huit occurrences** ; **R-01 : deux occurrences**, § 17.2 et § 17.6 ; **R-12 (traitement défensif au niveau du maillon, aucune recette) : deux occurrences**, § 17.6.1 ; **R-13 : une occurrence**, § 17.4, l'échelle d'autonomie jamais nue. **R-03 à R-08, R-10, R-11 : zéro occurrence.** Vol. II — **§8.2 : une occurrence**, § 17.6.2 ; **R-1 à R-8 : zéro occurrence**. ⚠ **Un faux ami est déclaré** : le « point de contrôle » du glossaire du Vol. II traduit une notion de reprise sur incident et **n'est pas** le « point de contrôle obligatoire » de son ch. 19 ; la collision est **signalée et non résolue** (§ 17.4) |
-| **Volumétrie cible** | ≈ **5 700 mots** de corps (§ 17.0 à § 17.6), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — six sections dont une à trois sous-sections. ☑ **Décompte publiable depuis G-2** ; **réel : 6 745 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+18,3 %**. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
+| **Volumétrie cible** | ≈ **5 700 mots** de corps (§ 17.0 à § 17.6), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — six sections dont une à trois sous-sections. ☑ **Décompte publiable depuis G-2** ; **réel : 6 933 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+21,6 %** (re-mesuré le 27 juillet 2026 après la passe d'arbitrage, qui a versé au § 17.1 l'extraction du RFC 8693). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.24, entrée du chapitre 17)* — la délégation est le maillon faible — les mécanismes de 2026 prouvent qu'un agent *a* une identité, presque aucun ne prouve *au nom de qui* il agit ; au-delà de deux sauts, aucun mécanisme documenté ne maintient une traçabilité opposable de bout en bout.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 17)* — la délégation est le maillon faible — les mécanismes instruits par le Vol. III **documentent** qu'un agent *a* une identité, **aucun d'eux ne documente** *au nom de qui* il agit à l'instant t ; au-delà de deux sauts, **aucun des mécanismes instruits ne documente** une traçabilité opposable de bout en bout.
+>
+> ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-28** ouverte par cette pièce. **Trois** termes de la forme antérieure tombent ensemble : le verbe « **prouvent** », que **R-02 du Vol. III proscrit** pour un mécanisme cryptographique ; « **presque aucun** », quantificateur sur un corpus non balayé ; et « **aucun mécanisme documenté** », quantificateur universel négatif. **Le corps du chapitre n'a pas changé** : il était écrit aux formes bornées. ⚠ **Le renvoi de tête du TOC vise un document retiré du dépôt** — la *Synthèse* du Vol. I — et son régime est suspendu à la décision d'auteur **D-5**.
 
 ---
 
@@ -94,17 +96,33 @@ matérielle du mandat ni sur sa durée* — ces éléments relevant de la politi
 d'autorisation, que la RFC laisse hors de son texte. **Il ne faut donc pas écrire qu'OAuth ne
 permettrait pas d'établir le mandant : il ne le spécifie pas, ce qui est autre chose.**
 
-⚠ **Relève du plan, à instruire à la source primaire, et elle vise la thèse de ce chapitre.** Le TOC
-signale que le « au nom de qui » **a une spécification normative que la thèse ne nomme pas** : le
-RFC 8693 est un document de la voie des normes (*Standards Track*) de **janvier 2020**, il distingue
-**nommément** délégation et usurpation d'identité, et il porte **les deux véhicules de la chaîne** —
-un paramètre qui nomme la partie agissante, et une revendication par laquelle une partie est déclarée
-autorisée à agir pour une autre. ⚠ **Portée exacte, et rien de plus** : *la RFC **modélise** la
-chaîne ; elle n'établit ni son déploiement, ni sa suffisance au second saut.* La thèse en sort
-**possiblement sous-spécifiée, non fausse**. ⚠ **Cette relève n'entre pas au socle** : elle est
-**repérage**, le document ayant été consulté à l'éditeur de RFC le 26 juillet 2026 sans passer par une
-extraction versée. *Le § 17.1 en est le siège désigné ; aucun énoncé du chapitre ne s'y adosse comme à
-un fait.*
+☑ **La relève du plan sur le RFC 8693 est consommée par extraction — 27 juillet 2026, remontée
+R-IV-29 close.** Le TOC signalait que le « au nom de qui » **a une spécification normative que la
+thèse ne nommait pas**, et demandait l'extraction plutôt que la reprise d'un résumé. Elle a été faite
+à la source primaire, **aux deux sièges du document** — éditeur de RFC et *datatracker* de l'IETF —,
+sur un texte de la **voie des normes** (*Standards Track*) publié en **janvier 2020**.
+
+**Ce que la spécification démontre**, en ses propres termes. La chaîne de délégation s'exprime **par
+imbrication** de l'attribut d'acteur : « A chain of delegation can be expressed by nesting one "act"
+claim within another » ; l'acteur courant est le plus extérieur, les acteurs antérieurs forment
+« a history trail », et **aucune profondeur maximale n'est spécifiée**.
+
+⚠ **Et l'extraction rapporte davantage que ce que la relève annonçait — dans le sens qui affermit la
+thèse de ce chapitre au lieu de la fragiliser.** La même section **exclut expressément les maillons
+antérieurs de toute décision d'autorisation** : « the consumer of a token MUST only consider the
+token's top-level claims and the party identified as the current actor », les acteurs antérieurs
+étant « informational only and […] not to be considered in access control decisions ». *Le RFC 8693
+documente donc l'**historique** d'une chaîne et **proscrit** qu'il fasse preuve.*
+
+⚠ **La conséquence se formule exactement, et pas au-delà.** La relève supposait la thèse
+« possiblement sous-spécifiée » ; **elle ne l'est pas sur ce point**. La traçabilité opposable de
+bout en bout ne manque pas ici **par omission du spécificateur** — elle est **écartée par
+prescription**, et pour un motif que le document assume : un vérificateur ne doit pas fonder sa
+décision sur des maillons qu'il n'a pas lui-même authentifiés. *Ce qui manque au second saut n'est
+donc pas un détail que la spécification aurait négligé, c'est ce qu'elle a délibérément placé hors de
+sa portée.* ⚠ **Cette extraction n'entre toujours pas au socle** : c'est la porte **G-3** qui l'y
+ferait. Elle cesse seulement d'être un repérage sur résumé — *lire un document à sa source ne le
+verse pas ; cela rend seulement le versement possible.* Le **§ 17.1 en est le siège désigné**.
 
 **Les jetons de transaction : un mécanisme de propagation, borné à un domaine de confiance.** Le
 document en est, au 21 juillet 2026, à sa **révision -09 du 6 juillet 2026**, expirant le **7 janvier
@@ -644,3 +662,44 @@ est tenu **au niveau du maillon**, identifiants cités, **aucune recette reprodu
 terminologique du Vol. II est signalée et non résolue**. Et les **dix occurrences de « Lecture de
 l'auteur »** sont suivies de ce que le socle établit et n'établit pas — dont **une section entière**,
 le § 17.4, marquée à l'ouverture.
+
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-27 — close par la décision d'auteur D-9, neuve : lot d'instruction ouvert, blocage
+  maintenu.** ⚠ **L'issue de D-7 — périmètre assumé et déclaré — a été examinée et écartée**, et le
+  motif est la différence entre les deux cas : le risque 15 nommait une matière que la somme **ne
+  prescrit pas**, quand ici **deux chapitres du Livre III prescriront une parade — l'humain qui
+  révise — dont ce § 17.5 est la limite empirique**. *Un cadre dont la parade est un humain qui révise
+  suppose que cet humain révise ; assumer le périmètre reviendrait à prescrire la parade en déclarant
+  ne rien savoir de son efficacité.* **Le lot reprend le corpus et le critère de clôture que le
+  § 17.5 formule** — la pièce les a écrits plutôt que d'écrire la section, et c'était le seul geste
+  admissible. ⚠ **Le blocage tient et il est nommé** : les **ch. 25 et 27 ne se lancent pas** avant
+  clôture. ⚠ **Et rien n'est effacé** : la section a été rédigée contre une consigne explicite du
+  plan ; *l'arbitrage qui suit une infraction ne la rattrape pas.*
+- **R-IV-28 — close par réalignement du plan (TOC v0.25, décisions 8 et 14).** Les **trois** termes
+  tombent ensemble : « prouvent » (proscrit par **R-02**), « presque aucun » (quantificateur sur un
+  corpus non balayé) et « aucun mécanisme documenté » (quantificateur universel négatif). **Le corps
+  n'a pas changé** : il était écrit aux formes bornées.
+- **R-IV-29 — close par consommation de la relève, PAR EXTRACTION à la source primaire** (G-1,
+  27 juillet 2026, aux deux sièges du document). ⚠ **Et l'extraction a établi l'inverse de ce que la
+  relève supposait.** Le plan tenait la thèse pour « possiblement sous-spécifiée » ; la RFC **exclut
+  expressément** les maillons antérieurs de toute décision d'autorisation, les donnant pour
+  *informational only*. *La traçabilité opposable de bout en bout n'y manque pas par omission : elle y
+  est écartée par prescription.* Le § 17.1 nomme désormais la RFC, son statut et cette clause —
+  *taire une spécification normative qui donne raison à la thèse serait le même défaut que la taire
+  quand elle la contredit.* ⚠ **L'extraction n'entre pas au socle** : c'est **G-3** qui l'y ferait.
+
+⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle
+consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation de fond contre le Vol. III
+rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**.
+**CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur. Cette
+pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
+cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*

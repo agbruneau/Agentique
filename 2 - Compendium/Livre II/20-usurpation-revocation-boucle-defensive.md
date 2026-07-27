@@ -12,11 +12,11 @@ deux mouvements, issu de la fusion v0.20 des anciens ch. 21 et 22.*
 | **Garde-fous balayés** | Vol. III — **R-12 : douze occurrences**, tout le chapitre étant tenu au niveau du maillon ; **R-02 : onze occurrences**, § 20.1 (deux), § 20.3 (trois), § 20.4 (trois), § 20.5, § 20.8 et § 20.10 ; **R-14 : seize occurrences**, dont **onze de degré 3** — **le plus grand nombre du Livre** ; **R-09 : neuf occurrences** ; **R-08 : deux occurrences**, § 20.0 et § 20.9, **renvoyées à leur siège du ch. 19 § 19.6** ; **R-04 : deux occurrences**, § 20.9 ; **R-03 : une occurrence**, § 20.9. **R-01, R-05 à R-07, R-10, R-11, R-13 : zéro occurrence.** Vol. II — **§8.2 : cinq occurrences**, § 20.8 (trois), § 20.9 et § 20.10 ; **§8.4 (quatre statuts de produit, dits à chaque mention) : sept occurrences**, § 20.8 ; **réserve F-01 : une occurrence**, § 20.1 ; **R-1 à R-8 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **6 200 mots** de corps (§ 20.0 à § 20.11), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — **onze sections pour deux mouvements**, le plus grand nombre du Livre. ☑ **Décompte publiable depuis G-2** ; **réel : 8 855 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+42,8 %**, le deuxième écart du Livre après le ch. 21. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.24, entrée du chapitre 20, premier mouvement)* — la vérification à l'admission ne protège pas contre la dérive après admission (rug-pull d'un serveur d'outils ou d'un agent tiers) ; et chaque mécanisme spécifie l'émission avec soin et la révocation avec négligence — asymétrie qui reproduit l'histoire des PKI.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 20, premier mouvement)* — la vérification à l'admission ne protège pas contre la dérive après admission (rug-pull d'un serveur d'outils ou d'un agent tiers) ; et chaque mécanisme spécifie l'émission avec soin et la révocation avec négligence — asymétrie qui reproduit l'histoire des PKI.
 
 ---
 
-> **Thèse du second mouvement**, citée depuis le TOC v0.24, entrée du chapitre 20 — la défense s'agentifie elle-même, et l'identité distingue un SOC agentique gouvernable d'un système auto-organisé ingouvernable ; les agents défensifs sont les premiers à devoir porter le passeport du ch. 16.
+> **Thèse du second mouvement**, citée depuis le TOC v0.25, entrée du chapitre 20 — la défense s'agentifie elle-même, et l'identité distingue un SOC agentique gouvernable d'un système auto-organisé ingouvernable ; les agents défensifs sont les premiers à devoir porter le passeport du ch. 16.
 
 ⚠ **Deux thèses pour un chapitre : le ch. 20 est issu de la fusion v0.20 des anciens ch. 21 et 22**
 (décision 11 du TOC). Les deux entrées y sont conservées **intégralement**, en deux mouvements portant
@@ -803,3 +803,35 @@ statut de produit** portent leur catégorie, et **les trois clauses d'exclusivit
 auto-déclarées rencontrées sont attribuées à leur auteur et non reprises**. Le mot **« sécurisé » n'est
 appliqué à aucun protocole**. Et les **onze occurrences de « Lecture de l'auteur »** sont suivies de ce
 que le socle établit et n'établit pas.
+
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-34 — close par inscription au registre des corrections dues de G-3 (PRD v0.9).** La
+  correction de l'**intitulé de l'entrée de socle** — qui énonce que « le marché est en préversion plus
+  qu'en production » quand **le rapport de lot qui la fonde pose expressément qu'aucun énoncé de la
+  forme "le marché" n'est soutenu** — se fera **à la refonte du socle**, avec celle du **niveau
+  contesté** de l'entrée voisine par la règle de composition. ⚠ **Elle ne se fait pas ici, et c'est le
+  point** : *un rédacteur ne corrige pas une entrée de socle depuis un chapitre.* La pièce écrit la
+  forme bornée et **ne reprend pas l'intitulé** — ce qui était déjà le cas avant l'arbitrage.
+- **R-IV-35 — close par entrée au registre de l'Annexe C (TOC v0.25), troisième table.** La lacune du
+  Vol. III sur la **chaîne d'approvisionnement** — ni définition normative, ni mécanisme d'attestation
+  d'intégrité à l'exécution — est qualifiée *couverte au régime **[C]** par le Vol. I, à instruire à la
+  source primaire pour élévation*, le §2.10.4 du Vol. I nommant trois contrôles. ⚠ **Sixième
+  occurrence de la classe** — après R-IV-12, R-IV-13, R-IV-14, R-IV-18 : *six occurrences en deux
+  Livres font d'une classe de défaut une propriété du corpus, pas un accident de chapitre.* ⚠ **Et la
+  couverture ne comble rien** : *couverte au régime [C] ne vaut pas comblée.*
+
+⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle
+consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation de fond contre le Vol. III
+rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**.
+**CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur. Cette
+pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
+cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*

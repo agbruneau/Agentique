@@ -10,9 +10,11 @@ mouvement** : les trois mécanismes d'émission y sont instruits sur pièce.*
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : aucun fait de ce chapitre n'a été repris à la source primaire. Gels de source : **juin 2026** (Vol. I), **16 juillet 2026** (Vol. II), **21 juillet 2026** (Vol. III). ⚠ **Deux objets se périment nommément** : la spécification agent-agent lue en **v1.0.0** n'est **pas revalidée sur la v1.0.1** que son registre porte, et les statuts de préversion d'un produit d'éditeur sont datés du 21 juillet 2026 |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. III *Monographie* ch. 5-7 hors §7.4**, dont les entrées **F-01** à **F-12**, **F-33** à **F-43**, **F-50**, **F-53**, **F-55**, **F-64** à **F-69**, **F-87** et les entrées héritées **H-01**, **H-03**, **H-04**, **H-07** conservent leurs niveaux d'origine ; contre le **Vol. II *Monographie* §8.2**, dont **Vol. II F-08** conserve son niveau **[A, statut BROUILLON]** ; et contre le **Vol. I *Monographie* §3.4 et §3.6.3**, en **[C]**. ⚠ **Deux entrées mobilisées ici sont en [C] et corroborent sans porter** : Vol. III F-36 et F-55. **Aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | Vol. II — **R-3 (la spécification de registre s'appuie sur SPIFFE/SPIRE comme *fondation* ; l'exigence stricte n'est pas établie) : trois occurrences**, § 15.3.1, appliqué et non re-siégé — l'encadré « Affirmations écartées » reste au **ch. 16 § 16.2** ; **PRD Vol. II §8.2.5 (statuts pré-normatifs) : quatorze occurrences**, § 15.1.1, § 15.2.1 (deux), § 15.2.3 (trois), § 15.3.1 (quatre), § 15.3.2 (trois) et § 15.3.3 ; **§8.2 (métriques et qualifications auto-déclarées) : six occurrences**, § 15.2.1 (trois), § 15.2.2 (deux) et § 15.2.3 ; **R-2 : zéro occurrence** — siège au ch. 16 ; **R-1, R-4 à R-8 : zéro occurrence**. Vol. III — **R-02 (par ce que la spécification démontre, jamais par ce qu'elle promet) : quinze occurrences**, réparties sur les trois sections ; **R-09 : douze occurrences** ; **R-14 : onze occurrences**, dont **sept de degré 3** ; **R-01 (le passeport n'est pas un mécanisme documenté) : quatre occurrences** ; **R-06 (« attendu par » E-23, jamais « exigé ») : trois occurrences**, § 15.3.3 ; **R-07 (le rapprochement schéma/attente réglementaire est une inférence d'auteur) : deux occurrences**, § 15.3.3 ; **R-04 : une occurrence**, § 15.3.2, le sigle jamais nu et renvoyé à son siège. **R-03, R-05, R-08, R-10 à R-13 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **5 800 mots** de corps (§ 15.0 à § 15.3), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — ce chapitre en porte trois, mais **onze sous-sections**, ce que la dérivation au prorata des seules sections `##` sous-estime. ☑ **Décompte publiable depuis G-2** ; **réel : 8 021 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+38,3 %**, le troisième écart du Livre après les ch. 21 et 20. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
+| **Volumétrie cible** | ≈ **5 800 mots** de corps (§ 15.0 à § 15.3), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — ce chapitre en porte trois, mais **onze sous-sections**, ce que la dérivation au prorata des seules sections `##` sous-estime. ☑ **Décompte publiable depuis G-2** ; **réel : 8 152 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+40,6 %**, le troisième écart du Livre après les ch. 21 et 20 (re-mesuré le 27 juillet 2026 après la passe d'arbitrage, qui a ajouté au corps la note de correction du § 15.1.4). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.24, entrée du chapitre 15)* — la signature d'une Agent Card vaut ce que valent son ancrage de confiance, sa révocation et sa gouvernance des clés ; le registre gouverné devient la pièce de conformité maîtresse, mais trois modèles concurrents répondent à des questions différentes de la grille.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 15)* — la signature d'une Agent Card vaut ce que valent son ancrage de confiance, sa révocation et sa gouvernance des clés ; le registre gouverné **tend à devenir — mouvement SPÉCULATIF, qu'aucune entrée du socle ne date —** la pièce de conformité maîtresse, mais trois modèles concurrents répondent à des questions différentes de la grille.
+>
+> ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-23** ouverte par cette pièce. La forme antérieure — « le registre gouverné **devient** » — énonçait au présent de constat un mouvement prospectif que le socle ne date pas, confondant les deux instruments que **CA-IV-10** sépare. **Le corps du chapitre n'a pas changé** : il écrivait déjà l'énoncé en hypothèse. Le tri prospectif est celui du **siège de la discipline, ch. 49 § 49.0**, et n'est pas redéfini ici.
 
 ---
 
@@ -226,7 +228,16 @@ d'émission de cette liste — jusqu'à une heure, un jour ou une semaine —, e
 l'état « good » **ne signifie pas nécessairement** que le certificat ait jamais été émis
 (Vol. III F-53, **[B]**). *Mobilisé ici en corroboration seulement ; le siège est le ch. 20 § 20.5.*
 
-### 15.1.4 Verdict par la grille du ch. 14 : ce que la carte prouve, ce qu'elle affirme, ce qu'elle tait
+### 15.1.4 Verdict par la grille du ch. 14 : ce que la carte établit, ce qu'elle affirme, ce qu'elle tait
+
+⚠ **Cet intitulé a été corrigé au TOC v0.25, et le défaut qu'il portait n'avait été remonté par
+personne.** Le plan écrivait « ce que la carte **prouve** ». Or **R-02 du Vol. III — que ce même plan
+assigne en garde-fou à ce chapitre — est la convention cardinale de sa source** : un mécanisme
+cryptographique se qualifie par ce que sa spécification **démontre**, jamais par ce qu'elle
+**promet**, et la carte signée est exactement un tel mécanisme. *Le plan proscrivait le verbe dans le
+corps du chapitre et le portait dans son propre intitulé de section.* ⚠ **Le défaut est hérité, et il
+reste ouvert chez la source** : le Vol. III porte la même forme à son §5.4, sous une remontée
+**réservée à son auteur**. **Le compendium corrige chez lui et ne corrige rien chez elle.**
 
 Les règles d'emploi de la grille sont posées au **ch. 14 § 14.1** et ne sont pas répétées ; deux
 commandent directement ce verdict — application **par mécanisme**, et **trois verdicts seulement**.
@@ -758,3 +769,43 @@ langue originale et non reprises au compte de la somme. Les **trois occurrences 
 « attendu par », **jamais « exigé »**. Et les **onze occurrences de « Lecture de l'auteur »** sont
 suivies de ce que le socle établit et n'établit pas — dont **un paragraphe entier**, le § 15.2.3,
 marqué à l'ouverture.
+
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-22 — close par arbitrage unique aux deux sièges (TOC v0.25), et l'instruction a trouvé un
+  second défaut.** *(a)* Le verdict **Q-C reste une case vide au degré 3**, ici comme au **ch. 14
+  § 14.2** : le verdict est une **absence de documentation**, non un fait négatif vérifié, et
+  l'arbitrage est **unique par construction** — *deux verdicts divergents sur le même mécanisme dans
+  le même Livre seraient un défaut que ni la relecture ni le contrôle outillé n'attraperaient, chacun
+  étant cohérent isolément.* *(b)* ⚠ **En instruisant la remontée, la passe a trouvé ce que personne
+  n'avait remonté** : l'intitulé du § 15.1.4 portait « ce que la carte **prouve** », verbe que **R-02
+  proscrit** et que le plan assigne pourtant en garde-fou à ce chapitre. **Corrigé** ici et au TOC ;
+  ⚠ **le défaut est hérité et reste ouvert chez la source**, dont la remontée est réservée à son
+  auteur — *un volume source ne se corrige pas depuis la somme.*
+- **R-IV-23 — close par réalignement du plan (TOC v0.25, décisions 8 et 14).** « le registre gouverné
+  **devient** » devient « **tend à devenir — mouvement SPÉCULATIF, qu'aucune entrée du socle ne
+  date** ». La forme antérieure énonçait au présent de constat un mouvement prospectif, confondant les
+  deux instruments que **CA-IV-10** sépare. **Le corps n'a pas changé** : il écrivait déjà l'énoncé en
+  hypothèse. ⚠ **Même classe que R-IV-20** : *un report qui n'avait pas été fait, non une divergence.*
+- **R-IV-24 — close par versement d'appareil**, au terme de la passe de rédaction. La table `SIEGES`
+  de [`PRD/check-sieges.py`](../PRD/check-sieges.py) est passée de **trois sièges à sept** et s'éprouve
+  sur **vingt et une pièces** ; le harnais de mutation passe sur le corpus intact et attrape ses cinq
+  mutations. ⚠ **Le contrôle a trouvé un défaut réel au premier passage, et il était dans le siège
+  lui-même** : la signature de la triade létale **ne résolvait pas contre sa propre pièce** — un retour
+  à la ligne coupait l'un des trois sommets. *Une signature qui ne voit pas son propre siège ne verrait
+  pas non plus une copie.*
+
+⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle
+consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation de fond contre le Vol. III
+rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**.
+**CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur. Cette
+pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
+cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*

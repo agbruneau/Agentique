@@ -10,13 +10,13 @@ Livre.** Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 12
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet de G-1 franchi ce jour porte sur le Livre I seul** : les faits périssables du présent chapitre relèvent du **volet résiduel, explicitement non instruit** — aucun d'eux n'a été repris à la source primaire le 27 juillet 2026. Gels de source, qui ne tiennent pas lieu de gel de la somme : **juin 2026** (Vol. I), **16-17 juillet 2026** (Vol. II), **21 juillet 2026** (Vol. III). ⚠ Trois objets de ce chapitre se périment par leur propre horloge : deux dates d'expiration d'*Internet-Drafts* (7 janvier 2027) et le statut de préversion de plusieurs capacités d'un produit d'éditeur |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte, l'Annexe B n'existe pas). Résolution contre le **Vol. III *Monographie* ch. 1-2**, dont les entrées **F-27**, **F-28**, **F-29**, **F-36**, **F-41**, **F-42**, **F-85**, **F-86**, **F-87** et les entrées héritées **H-02**, **H-03**, **H-09** conservent leurs niveaux d'origine — **[A]**, **[B]**, **[B, degré 1]**, **[B, degré 2]** ou **[C]** selon l'entrée ; contre le **Vol. II *Monographie* ch. 8**, dont les entrées **Vol. II F-07** et **Vol. II F-08** conservent leur niveau **[A]** ; et contre le **Vol. I *Monographie* §3.6.1-3.6.2**, en régime **[C]** (PRD §7.1). ⚠ **Deux séries F-xx coexistent dans ce chapitre** et chaque identifiant porte son volume : un « F-07 » nu y serait indécidable entre le socle du Vol. II et celui du Vol. III. **Aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | Vol. II — **PRD Vol. II §8.2.5 (statuts pré-normatifs) : neuf occurrences**, § 12.1 (deux), § 12.5 (quatre), § 12.6, § 12.7 et § 12.8 ; **§8.2 (métriques et qualifications auto-déclarées) : trois occurrences**, § 12.2 (deux) et § 12.7 ; **R-1 : une occurrence**, § 12.5 ; **R-8 : une occurrence**, § 12.2, la formule laissée en langue originale et renvoyée à son siège. **R-2 à R-7 : zéro occurrence** — leurs sièges sont les ch. 15 et 16. Vol. III — **R-09 (quatre statuts, dits à chaque mention) : onze occurrences**, § 12.1 (trois), § 12.5 (cinq), § 12.6, § 12.7 et § 12.8 ; **R-02 : trois occurrences**, § 12.1, § 12.5 et § 12.7 ; **R-14 : six occurrences**, § 12.1, § 12.2, § 12.3 et § 12.8 (trois, une par degré) ; **R-04 : une occurrence**, § 12.2 ; **R-13 : une occurrence**, § 12.2. **R-01, R-03, R-05 à R-08, R-10 à R-12 : zéro occurrence.** ⚠ **Faux ami déclaré** : le « plan de contrôle » du maillage de services pré-agentique (ch. 1 § 1.3.4) n'apparaît pas dans ce chapitre ; la seule occurrence du syntagme y est la formule anglaise d'un rapport daté, non reprise au compte de la somme |
-| **Volumétrie cible** | ≈ **6 200 mots** de corps (§ 12.0 à § 12.8), **cible dérivée** de l'enveloppe du Livre — 50 000 mots au TOC v0.24 — répartie entre les dix chapitres au prorata de leurs sections, ce chapitre en portant neuf pour deux mouvements. ☑ **La somme des dix cibles dérivées a été additionnée avant rédaction et vaut 50 000 mots** : c'est la leçon du Livre I, dont les onze cibles dérivées totalisaient 93 000 mots pour une enveloppe de 65 000, soit **+43 %**, sans que personne ne fasse l'addition. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026) ; **réel : 7 301 mots**, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **+17,8 %** de la cible. ⚠ **Cet écart n'est pas corrigé par amputation, et il n'est pas non plus une surprise** : le PRD §13 déclare pour ce Livre précisément une « condensation réelle d'environ 52 % sur les enveloppes héritées », avec pour parade la **décision d'auteur D-4** — re-calibrage éventuel —, **toujours ouverte**. La pièce fournit donc à D-4 une mesure plutôt qu'un avis ; remontée **R-IV-17** |
+| **Volumétrie cible** | ≈ **6 200 mots** de corps (§ 12.0 à § 12.8), **cible dérivée** de l'enveloppe du Livre — 50 000 mots au TOC v0.24 — répartie entre les dix chapitres au prorata de leurs sections, ce chapitre en portant neuf pour deux mouvements. ☑ **La somme des dix cibles dérivées a été additionnée avant rédaction et vaut 50 000 mots** : c'est la leçon du Livre I, dont les onze cibles dérivées totalisaient 93 000 mots pour une enveloppe de 65 000, soit **+43 %**, sans que personne ne fasse l'addition. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026) ; **réel : 7 372 mots**, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **+18,9 %** de la cible (re-mesuré le 27 juillet 2026 au terme de la passe d'arbitrage, qui a versé au § 12.8 la réserve de titre reconduite). ⚠ **Cet écart n'est pas corrigé par amputation, et il n'est pas non plus une surprise** : le PRD §13 déclare pour ce Livre précisément une « condensation réelle d'environ 52 % sur les enveloppes héritées », avec pour parade la **décision d'auteur D-4** — re-calibrage éventuel —, **toujours ouverte**. La pièce fournit donc à D-4 une mesure plutôt qu'un avis ; remontée **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.24, entrée du chapitre 12, premier mouvement)* — l'identité machine n'est pas née avec les agents — comptes de service, X.509, clés d'API forment un passif mal gouverné dont l'entreprise agentique hérite avant d'y ajouter le sien.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 12, premier mouvement)* — l'identité machine n'est pas née avec les agents — comptes de service, X.509, clés d'API forment un passif mal gouverné dont l'entreprise agentique hérite avant d'y ajouter le sien.
 
 ---
 
-> **Thèse du second mouvement**, citée depuis le TOC v0.24, entrée du chapitre 12 — la première vague de l'identité agentique est une extension des RFC existantes, non une rupture, et chaque extension révèle une hypothèse implicite (un humain au bout du flux) qui cesse de tenir.
+> **Thèse du second mouvement**, citée depuis le TOC v0.25, entrée du chapitre 12 — la première vague de l'identité agentique est une extension des RFC existantes, non une rupture, et chaque extension révèle une hypothèse implicite (un humain au bout du flux) qui cesse de tenir.
 
 ⚠ **Deux thèses pour un chapitre, et ce n'est pas une négligence de rédaction.** Le ch. 12 est issu
 de la **fusion v0.20** des anciens ch. 12 et 13 (décision 11 du TOC) : les deux entrées y sont
@@ -559,9 +559,13 @@ entrée héritée mentionne le protocole au titre d'un produit qui s'en réclame
 logiciel. ⚠ **Retirer un mot d'un titre ne retire pas un trou du socle : il cesse seulement de le
 promettre.**
 
-⚠ **Et le titre du présent chapitre porte toujours « OIDC », lui.** Le TOC v0.24 l'a conservé au titre
+⚠ **Et le titre du présent chapitre porte toujours « OIDC », lui.** Le TOC l'a conservé au titre
 du second mouvement, la fusion v0.20 ayant repris les entrées **intégralement**, à la seule
-renumérotation près. **La pièce ne corrige pas ce titre** — un rédacteur ne corrige jamais le TOC, il
+renumérotation près — arbitrage **reconduit en v0.25** sur la remontée **R-IV-15** : la décision 11a
+interdit de réécrire une entrée fusionnée, et *une correction de titre serait une réécriture*. ⚠ **Ce
+qui a changé, c'est que le plan porte désormais la réserve ET la lacune qui la fonde** : la
+**lacune 19 du Vol. III** — OpenID Connect, non instruite — est entrée au registre de l'Annexe C.
+*Une réserve de titre sans lacune enregistrée est une prudence sans adresse.* **La pièce ne corrige pas ce titre** — un rédacteur ne corrige jamais le TOC, il
 remonte —, et la contradiction est **portée en remontée** plutôt que lissée : le chapitre traite
 d'OIDC uniquement par ce qu'un produit d'éditeur en déclare (§ 12.7), et **rien de son texte n'est
 établi**.
@@ -710,3 +714,53 @@ et le § 12.8 en produit **une de chaque**. Les **trois occurrences de R-02** é
 mécanisme démontre **et** ne démontre pas. Les **onze occurrences de R-09** portent révision, date,
 expiration et état de procédure. Et les **inférences sont marquées** : sept occurrences de « Lecture
 de l'auteur », chacune suivie de ce que le socle établit et n'établit pas.
+
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-14 — close par entrée au registre de l'Annexe C (TOC v0.25), dans une TROISIÈME table.** La
+  lacune du Vol. III sur le ratio des identités machines est qualifiée *illustrée par le Vol. I au
+  régime **[C]**, non instruite* — ni « comblée », ni « ouverte sans matière ». ⚠ **La table est
+  neuve, et sa création est le vrai geste** : ces absences sont déclarées **au degré 3 dans le texte
+  rédigé** du Vol. III et **le §10 de son PRD ne les numérote pas** ; les verser dans les deux séries
+  numérotées existantes aurait périmé un cardinal contrôlé. ⚠ **La lacune n'est pas comblée pour
+  autant** : le chiffre du Vol. I est une **métrique auto-déclarée** — *illustration, jamais preuve*.
+- **R-IV-15 — close par arbitrage de plan, et le titre n'a pas bougé.** Le mot « OIDC » **reste** au
+  titre du second mouvement : la **décision 11a** pose qu'une entrée fusionnée est conservée
+  intégralement, et une correction de titre serait une **réécriture**. La réserve du Vol. III est
+  **portée au TOC**, à l'entrée du chapitre. ⚠ **Et l'arbitrage a trouvé ce qui manquait vraiment** :
+  la **lacune 19 du Vol. III** — OpenID Connect, non instruite — **entre au registre de l'Annexe C**.
+  *Le plan portait la réserve sans porter la lacune qui la fonde ; une réserve de titre sans lacune
+  enregistrée est une prudence sans adresse* — elle ne remonte au ch. 49 dans aucun registre.
+- **R-IV-16 — close par relevé, porté au PRD v0.9 §13 ; le risque n'est pas réduit, il est
+  énumérable.** Les **quinze remontées ouvertes du Vol. III** — R-G-43 à R-G-57, **aucune tranchée** —
+  ont été relevées pièce par pièce sur son registre de gouvernance. **Six touchent la matière de ce
+  Livre** : l'intitulé fautif du §5.4 (corrigé ici, ouvert là-bas), les attestations auto-délivrées et
+  les cellules tronquées des rapports de lot **qui fondent les dix chapitres**, le retrait de la
+  *Synthèse* du Vol. I avec les revendications de verbatim qui en dépendent, et les deux points de
+  revalidation déjà au registre du gel. **Neuf ne le touchent pas** — règles, objets de cadrage, ou
+  chapitres hors du périmètre de fusion. Le relevé devient une **condition de sortie de G-4** et
+  **se refait au gel de publication**. ⚠ *Énumérer n'est pas parer : neuf des quinze sont réservées à
+  l'auteur du Vol. III, et aucune n'a bougé.*
+- **R-IV-17 — close par la décision d'auteur D-4, tranchée sur la mesure.** **Enveloppes maintenues,
+  écart documenté, re-calibrage remis à une passe unique de clôture** portant sur les cinq Livres
+  mesurés — jamais Livre par Livre, un Livre sur cinq étant un échantillon. ⚠ **La mesure a servi
+  d'abord à écarter l'explication commode** : la somme des dix cibles avait bien été additionnée et
+  valait 50 000 — *le dépassement vient de la matière, non de la dérivation* —, et les trois plus
+  forts écarts sont les trois pièces qui portent **le plus de bornes**. *L'enveloppe héritée n'avait
+  pas budgété le coût du bornage.* ⚠ **La partie opérante de la décision est une interdiction** :
+  aucun rédacteur des Livres III à V ne traite son enveloppe comme un plafond à couper.
+
+⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle
+consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation de fond contre le Vol. III
+rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**.
+**CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur. Cette
+pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
+cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*

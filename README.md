@@ -153,11 +153,11 @@ Le volume naît des lacunes des deux précédents : identité non humaine et dé
 
 **Au stade du cadrage seul.** Le dossier
 [`2 - Compendium/`](2%20-%20Compendium/) porte une table des matières
-commentée ([`TOC.md`](2%20-%20Compendium/PRD/TOC.md), **v0.24 du 27 juillet 2026** — chaque
+commentée ([`TOC.md`](2%20-%20Compendium/PRD/TOC.md), **v0.25 du 27 juillet 2026** — chaque
 entrée de chapitre y est désormais suivie de sa **table des matières détaillée**, provenance par
 sous-section et table de couverture, **portée en titres markdown depuis la v0.18** : le plan du
 fichier expose la hiérarchie livre → chapitre → section), son
-**PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium/PRD/PRD.md), v0.8 du
+**PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium/PRD/PRD.md), v0.9 du
 27 juillet 2026 — portes de lancement, régimes de preuve, critères d'acceptation, jalons), sa vue
 synoptique dérivée ([`README.md`](2%20-%20Compendium/README.md)), son exécutable
 de contrôle ([`check-toc.py`](2%20-%20Compendium/PRD/check-toc.py), avec son harnais de
@@ -175,13 +175,16 @@ se déclare elle-même **brouillon, non publiable** et porte, en section hors pl
 cet écart et les remontées qu'elle ouvre. ⚠ **Les deux écarts ne sont pas du même ordre** : le Livre I
 a été écrit avant G-1, G-2 et G-3 ; le **Livre II** l'est avant **G-3 et G-4** — et G-4, la collation
 de fond contre le Vol. III rédigé, est le préalable que le PRD nomme **pour ce Livre précisément**, sa
-source se déclarant elle-même non publiable. Les **treize remontées du Livre I sont soldées** ; le
-Livre II en ouvre **vingt-quatre, R-IV-14 à R-IV-37**, dont **deux bloquantes** — l'une pour un front
-neuf rédigé sans les sources que le plan exigeait, l'autre pour une thèse dont le dénombrement n'a pas
-été conduit. **Le statut du volume n'en est pas changé** : socle consolidé à zéro entrée, cinq portes
-sur sept ouvertes, cinq décisions d'auteur sur huit à prendre — et le TOC, le PRD et le conspectus
-n'ont été touchés par aucune rédaction, la règle d'escalade du PRD interdisant à un rédacteur de les
-corriger. *Un brouillon écrit hors portes ne franchit aucune porte.*
+source se déclarant elle-même non publiable. **Les trente-sept remontées des deux Livres sont
+soldées** — treize au Livre I, **vingt-quatre au Livre II, R-IV-14 à R-IV-37** —, chacune portée là où
+elle fait foi par deux passes d'arbitrage distinctes. Le fait central de la seconde : **cinq des
+treize thèses du Livre II portaient une forme que leur source avait bornée un mois plus tôt** sans que
+le plan suive — *cinq reports qui n'avaient pas été faits, non cinq divergences à arbitrer*, et
+**aucune pièce ne pouvait le voir seule**. **Le statut du volume n'en est pas changé** : socle
+consolidé à zéro entrée, cinq portes sur sept ouvertes, quatre décisions d'auteur sur neuf à prendre —
+et le TOC, le PRD et le conspectus n'ont été touchés par aucune rédaction, la règle d'escalade du PRD
+interdisant à un rédacteur de les corriger. *Un brouillon écrit hors portes ne franchit aucune
+porte* — et *zéro remontée ouverte ne veut pas dire pièce recevable.*
 
 Sa nature le distingue des trois autres : ce n'est ni un quatrième panneau ni un méta-index, mais
 un **omnibus qui absorbe les Vol. I, II et III** en un seul ouvrage réordonné et dédoublonné, à
@@ -283,11 +286,11 @@ volumes sources font foi et la divergence reste ouverte — le cadrage le dit lu
     │   ├── README.md                          état du livre, 13 remontées soldées, deux rendus
     │   └── 01-… à 11-….md / .html             chapitres 1 à 11 — source + page à thème sombre
     ├── Livre II/                            ⚠ rédaction hors portes — 10 pièces sur 10, brouillons
-    │   ├── README.md                          état du livre, 24 remontées, 4 sièges, volumétrie
+    │   ├── README.md                          état du livre, 24 remontées soldées, 4 sièges, volumétrie
     │   └── 12-… à 21-….md / .html             chapitres 12 à 21 — source + page à thème sombre
     └── PRD/                                 gouvernance de la rédaction (sous-dossier)
-        ├── PRD.md                           v0.8 — portes, régimes de preuve, jalons
-        ├── TOC.md                           table des matières commentée (v0.24) — spécification
+        ├── PRD.md                           v0.9 — portes, régimes de preuve, jalons
+        ├── TOC.md                           table des matières commentée (v0.25) — spécification
         ├── check-toc.py                     contrôles C1-C15 (python PRD/check-toc.py)
         ├── check-sieges.py                  contrôles S1-S5 inter-pièces — 7 sièges, 21 pièces
         ├── decompte.sh                      commande de décompte de référence (porte G-2)

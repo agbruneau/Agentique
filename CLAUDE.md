@@ -61,18 +61,26 @@ rédigés en `.md` et en `.html`, **avant** les portes du PRD du volume. Quatre 
 édite au niveau de la racine. *(a)* Le **statut du volume est inchangé** — cadrage, **socle à zéro
 entrée** : ne pas requalifier le Vol. IV en « rédigé » dans les décomptes ni dans les tableaux d'état,
 un brouillon hors portes ne franchissant aucune porte.
-⚠ **Une passe d'arbitrage du 27 juillet 2026 a fait bouger trois chiffres de ce constat, et trois
-seulement** (PRD v0.8, TOC v0.24) : les **treize remontées R-IV-01 à R-IV-13 sont soldées**, **deux
-portes sur sept sont franchies** (G-2 entièrement ; G-1 pour le seul volet du Livre I) et **trois
-décisions d'auteur sur huit sont prises** (D-1, D-6, D-7). ⚠ **Rien
+⚠ **Deux passes d'arbitrage du 27 juillet 2026 ont fait bouger des chiffres de ce constat, et rien
+d'autre** (PRD v0.9, TOC v0.25) : les **trente-sept remontées R-IV-01 à R-IV-37 sont soldées** —
+treize du Livre I, vingt-quatre du Livre II —, **deux portes sur sept sont franchies** (G-2
+entièrement ; G-1 pour le seul volet du Livre I) et **cinq décisions d'auteur sur neuf sont prises**
+(D-1, D-4, D-6, D-7, et **D-9**, ouverte et prise dans la même passe). ⚠ **Rien
 de cela ne requalifie le volume** : **G-3 n'est pas entamée**, le socle consolidé compte toujours zéro
 entrée, aucun énoncé n'est central au sens de CA-IV-01, et *deux portes franchies sur sept ne font pas
-un volume recevable*. *(b)* ⚠ **Le Livre II enfreint une porte de plus que le Livre I, et l'écart ne
-se confond pas.** Il est rédigé avant **G-3 et G-4** — et **G-4, la collation de fond contre le
+un volume recevable*. *(b)* ⚠ **Le Livre II enfreint une porte de plus que le Livre I, et l'arbitrage
+ne l'efface pas.** Il est rédigé avant **G-3 et G-4** — et **G-4, la collation de fond contre le
 Vol. III rédigé, est le préalable que le PRD nomme pour ce Livre précisément**, sa source se déclarant
-elle-même *non publiable* ; il enfreint en outre l'**ordre de rédaction** du PRD §6. Il ouvre
-**vingt-quatre remontées, R-IV-14 à R-IV-37, dont deux bloquantes**, et **aucune de celles qui
-relèvent du plan n'est close**. *(c)* **Le régime de la veille ne bouge pas non plus** :
+elle-même *non publiable* ; il enfreint en outre l'**ordre de rédaction** du PRD §6. ⚠ **Le fait de
+méthode que sa clôture a établi vaut au-delà de lui** : **cinq de ses treize thèses portaient une forme
+que leur source avait bornée le 21 juillet 2026 et reportée dans ses pièces le 22**, sans que le plan
+suive — *cinq reports qui n'avaient pas été faits, non cinq divergences à arbitrer* —, et **aucune
+pièce ne pouvait le voir seule**, chacune étant cohérente isolément. La **décision 14 du TOC** en fait
+une obligation de passe, domaine de balayage déclaré. ⚠ **Et une condition de publication n'est
+satisfaisable par aucune passe du volume en l'état** : CA-IV-11 et CA-IV-13 exigent un **relecteur
+distinct du rédacteur**, que D-6 ne fournit pas — *arbitrer n'est pas relire*, et *une lacune de socle
+se comble par une source ; celle-ci ne se comble que par une seconde personne.*
+*(c)* **Le régime de la veille ne bouge pas non plus** :
 sa réf. [220] décrit le Vol. IV comme un cadrage sans chapitre, et cela reste vrai *à sa date* — c'est
 un troisième écart de la même famille que les deux déjà consignés plus bas (Vol. III rédigé,
 démonstrateur retiré), **signalé ici, jamais corrigé dans la veille**. *(d)* Le détail, l'issue de

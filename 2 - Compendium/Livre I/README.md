@@ -2,8 +2,9 @@
 
 Répertoire de rédaction du **Livre I** du compendium *La somme agentique* (Vol. IV). Il ne porte
 aucune décision, aucun socle et aucun garde-fou propre : la spécification de contenu est le
-[`PRD/TOC.md`](../PRD/TOC.md) v0.24, la gouvernance de la rédaction le [`PRD/PRD.md`](../PRD/PRD.md)
-v0.8. En cas d'écart entre une pièce de ce dossier et le TOC, **le TOC prime** — sauf déviation
+[`PRD/TOC.md`](../PRD/TOC.md) v0.25, la gouvernance de la rédaction le [`PRD/PRD.md`](../PRD/PRD.md)
+v0.9. ⚠ *Les renvois « TOC v0.24 » de ce fichier et de ses pièces sont des **constats datés** — ce que
+la passe du Livre I a fait, à la version où elle l'a fait — et ne se corrigent pas.* En cas d'écart entre une pièce de ce dossier et le TOC, **le TOC prime** — sauf déviation
 fondée, qui se déclare (décision 8 du TOC) et se remonte, jamais se corrige au plan depuis ici.
 
 ## ⚠ État : le Livre est rédigé, arbitré, et toujours non publiable

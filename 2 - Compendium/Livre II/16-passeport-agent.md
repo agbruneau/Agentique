@@ -12,7 +12,9 @@ compose ce que les trois précédents ont instruit séparément, et il n'a pas d
 | **Garde-fous balayés** | Vol. II — **R-2 et R-3 : ce chapitre en est le SIÈGE** (§ 16.2, encadré « Affirmations écartées ») — **deux occurrences chacun**, l'affirmation écartée et sa forme imposée ; **PRD Vol. II §8.2.5 : neuf occurrences** ; **§8.2 : deux occurrences**, § 16.3 ; **R-4 (« quatre cibles successives », jamais « quatre reports », jamais « lancé ») : zéro occurrence** — le RTR n'est pas cité ; **R-1, R-5 à R-8 : zéro occurrence**. Vol. III — **R-01 (le passeport est un objet de synthèse, jamais un mécanisme documenté) : ce chapitre en est le lieu d'application le plus dense — dix occurrences**, dont l'ouverture et chacune des cinq sections ; **R-14 : treize occurrences**, dont **neuf de degré 3** ; **R-02 : six occurrences** ; **R-09 : dix occurrences** ; **R-06 : deux occurrences**, § 16.1 ; **R-05 : une occurrence**, § 16.3 ; **R-13 : une occurrence**, § 16.3, le sigle du maillage jamais nu. **R-03, R-04, R-07, R-08, R-10 à R-12 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **4 500 mots** de corps (§ 16.0 à § 16.5), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 4 771 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+6,0 %**. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.24, entrée du chapitre 16)* — le « passeport d'agent » n'existe dans aucune spécification de 2026 — objet de synthèse assemblant carte signée, inscription au registre, chaîne de mandat et attestations ; sa normalisation 2027-2028 est projetée en statut PROJETÉ. Pour l'entreprise, rien n'entre au maillage sans lui.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 16)* — le « passeport d'agent » n'existe dans aucune spécification de 2026 — objet de synthèse assemblant carte signée, inscription au registre, chaîne de mandat et attestations ; sa normalisation est projetée **à une échéance que le socle ne date pas**, en statut PROJETÉ. Pour l'entreprise, rien n'entre au maillage sans lui.
+>
+> ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-25** ouverte par cette pièce. La forme antérieure datait la normalisation de **2027-2028**, échéance **empruntée à une entrée [C]** que le relevé propre du Vol. III ne confirme pas — *une thèse ne se date pas depuis une entrée qui ne porte jamais un fait central* (CA-IV-01). **Le corps du chapitre n'a pas changé** : le § 16.4 établissait déjà d'où vient l'agenda et ce qu'il vaut. Le tri prospectif est celui du **siège de la discipline, ch. 49 § 49.0** ; le **siège du statut PROJETÉ de la normalisation du passeport** reste au § 16.4.
 
 ---
 
@@ -460,3 +462,38 @@ rappellent que le passeport est un objet de synthèse, **y compris dans le titre
 Les **deux occurrences de R-06** écrivent « attendu par ». Et le chapitre porte **son marquage
 d'inférence à l'ouverture** (§ 16.0), la pièce étant une construction d'auteur de bout en bout, plus
 **huit occurrences ponctuelles** de « Lecture de l'auteur ».
+
+
+---
+
+### Clôture des remontées — 27 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre l'issue des remontées ouvertes par cette pièce. *Une remontée ne se clôt pas là où elle
+s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour une décision d'auteur, au
+[TOC](../PRD/TOC.md) pour un réalignement de plan, à l'appareil pour une dette d'outillage.
+
+- **R-IV-25 — close par réalignement du plan (TOC v0.25, décisions 8 et 14), et la demande de passe
+  systématique est devenue une règle.** La thèse ne date plus la normalisation de **2027-2028** :
+  l'échéance était **empruntée à une entrée [C]** que le relevé propre du Vol. III ne confirme pas, et
+  *une thèse ne se date pas depuis une entrée qui ne porte jamais un fait central*. ⚠ **La remontée
+  demandait plus qu'un cas d'espèce, et elle l'a obtenu** : la **décision 14** du TOC fait du
+  réalignement d'une thèse contre le texte rédigé de sa source une **obligation de passe**, à mener
+  avant rédaction. **Le balayage a été fait et son domaine est déclaré** : **treize thèses examinées,
+  cinq réalignées** — *le Livre compte dix chapitres mais treize thèses, les ch. 12, 20 et 21 en
+  portant deux chacun au titre des fusions v0.20*, **et aucune pièce ne pouvait le voir seule.**
+- **R-IV-26 — close par ouverture du risque 17 au registre du TOC v0.25.** L'asymétrie est déclarée :
+  la **quatrième pièce du passeport** — les attestations de conformité — n'a **ni chapitre ni socle**,
+  quand les trois autres ont chacune au moins un chapitre entier. ⚠ **Le risque a fallu le créer
+  plutôt que le ranger** : ce n'est **ni le risque 13 ni le risque 16** (la matière existe et a une
+  source), et **ce n'est pas une lacune de l'Annexe C** (rien ne manque aux volumes) — *c'est la somme
+  qui répartit inégalement, et cet angle mort n'avait pas de case.* **Trois parades sont écrites avec
+  leur coût** ; ⚠ **aucune n'est prise** : le choix engage le découpage, donc l'auteur — et la parade
+  par défaut est écrite **pour ne pas passer pour un choix qui n'a pas été fait**.
+
+⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle
+consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation de fond contre le Vol. III
+rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**.
+**CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur. Cette
+pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
+cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*

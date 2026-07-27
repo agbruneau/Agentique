@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 19 — Taxonomie des attaques d&#x27;identité et de délégation · La somme agentique</title>
-<meta name="description" content="une part majoritaire des attaques propres aux systèmes multi-agents documentées à date sont des attaques d&#x27;identité (usurpation, confusion de délégué) ou de délégation (élévation par chaîne de mandat) — ce qui justifie d&#x27;absorber la sécurité dans le cadre identitaire.">
+<meta name="description" content="l&#x27;identité est le verrou architectural de la sécurité agentique — un agent dépourvu d&#x27;identité propre et gouvernée opère dans un écart d&#x27;attribution qui rend le moindre privilège inapplicable —, et les référentiels du domaine la traitent désormais comme un plan de contrôle à part entière : c&#x27;est ce ">
 <meta name="author" content="André-Guy Bruneau">
 <meta name="color-scheme" content="dark">
 <style>
@@ -542,7 +542,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>La somme agentique</em><br>
-    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.24 ·
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.25 ·
     <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
     <a href="19-taxonomie-attaques-identite-delegation.md">Version Markdown</a>
   </div>
@@ -575,8 +575,8 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <div class="these">
   <span class="these__label">Thèse</span>
-  <p>une part majoritaire des attaques propres aux systèmes multi-agents documentées à date sont des attaques d'identité (usurpation, confusion de délégué) ou de délégation (élévation par chaîne de mandat) — ce qui justifie d'absorber la sécurité dans le cadre identitaire.</p>
-  <span class="prov">Citée depuis le <code>TOC.md</code> v0.24, entrée du chapitre 19.</span>
+  <p>l'identité est le <strong>verrou architectural</strong> de la sécurité agentique — un agent dépourvu d'identité propre et gouvernée opère dans un écart d'attribution qui rend le moindre privilège inapplicable —, et les référentiels du domaine la traitent désormais comme un plan de contrôle à part entière : c'est ce qui justifie d'absorber la sécurité dans le cadre identitaire.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.25, entrée du chapitre 19.</span>
 </div>
 
 <h2 id="s190"><span class="sig">§ 19.0</span>Introduction : ce que ce chapitre ne peut pas affirmer, et pourquoi il le dit d'abord</h2>
@@ -839,11 +839,26 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.24</strong> — § 19.1 à § 19.6, dans l'ordre exact —, et le § 19.0 est une introduction de chapitre. La <strong>table de couverture est respectée pour ses quatre lignes</strong>, y compris la quatrième, qui déclare les défenses architecturales et l'alignement <strong>hors périmètre</strong> : ils restent au <strong>ch. 6</strong>, et le § 19.3 s'en abstient explicitement. Les <strong>deux arrivées depuis le ch. 6</strong> — le modèle de menace et les vecteurs — sont <strong>déclarées et reçues</strong> : le § 19.2 et le § 19.3 les portent, et le ch. 11 § 11.1.2 n'en traite que l'amplification. Le <strong>siège de la triade létale est posé et marqué</strong> (§ 19.2) ; le <strong>siège de la restriction du garde-fou sur l'usurpation</strong> l'est aussi (§ 19.6). L'<strong>encadré de désambiguïsation reste au ch. 7 § 7.5</strong> ; l'<strong>ancrage informationnel reste au ch. 5</strong> ; la <strong>non-compositionnalité reste au ch. 37 § 37.3</strong>. ⚠ <strong>Le traitement est défensif à ses quatorze occurrences</strong> : chaque entrée nomme le maillon et la raison pour laquelle il cède, cite son identifiant, <strong>et s'arrête là</strong> — <em>aucune recette d'exploitation n'est reproduite, et aucune mécanique n'est décrite au grain de l'exécution.</em> Les <strong>douze occurrences de R-14</strong> portent leur degré, dont <strong>sept au degré 3</strong>, et le § 19.6 en produit <strong>un de chaque des trois régimes protocolaires</strong>. Les <strong>trois métriques auto-déclarées</strong> sont attribuées à leur source, <strong>y compris les taux expérimentaux du § 19.5</strong>, rapportés aux trois configurations qui les portent. Le mot <strong>« sécurisé » n'est appliqué à aucun protocole, à aucune occurrence</strong>. Et les <strong>sept occurrences de « Lecture de l'auteur »</strong> sont suivies de ce que le socle établit et n'établit pas.</p>
 
+<h3>Clôture des remontées — 27 juillet 2026</h3>
+
+<div class="avert">
+  <p><strong>Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.</strong> Elle enregistre l'issue des remontées ouvertes par cette pièce. <em>Une remontée ne se clôt pas là où elle s'ouvre : elle se solde là où elle fait foi</em> — au <a class="lien" href="../PRD/PRD.md">PRD</a> pour une décision d'auteur, au <a class="lien" href="../PRD/TOC.md">TOC</a> pour un réalignement de plan, à l'appareil pour une dette d'outillage.</p>
+</div>
+
+<ul class="puces">
+  <li><strong>R-IV-32 — close par réalignement du plan (TOC v0.25, décisions 8 et 14), et c'est la seule remontée du Livre où l'arbitrage a retenu l'autre branche que celle proposée.</strong> La remontée offrait deux issues : réaligner la thèse, ou <strong>ouvrir un lot de dénombrement</strong>. ⚠ <strong>Le lot n'est pas ouvert</strong>, et le motif n'est pas l'économie : <em>la source n'a pas seulement borné cette forme, elle l'a <strong>réfutée au vote adversarial</strong> et a réécrit sa thèse en énoncé architectural</em>, écrivant en toutes lettres que « ce n'est pas une thèse de dénombrement » et que son relevé <strong>ne soutient pas</strong> la proportion. <strong>Dénombrer pour établir un énoncé que la source tient pour non soutenu aurait produit un chiffre sans thèse à porter.</strong> La thèse retombe donc sur la <strong>forme architecturale</strong> — le verrou d'identité —, et l'exigence de dénombrement du plan est <strong>éteinte avec son objet</strong>. ⚠ <strong>Le corps n'a pas changé</strong> : il <strong>n'écrivait aucune proportion</strong>, et le § 19.1 continue de nommer le corpus candidat sans l'exploiter. ⚠ <strong>Ce que le réalignement ne fait pas</strong> : la lacune qui avait motivé la question — le socle du Vol. II ne porte <strong>aucune</strong> attaque propre à A2A — <strong>reste entière</strong>. <em>Une thèse réalignée ne comble pas la lacune qui l'a motivée ; elle cesse de prétendre la combler.</em></li>
+  <li><strong>R-IV-33 — close par ordonnancement au PRD v0.9, et l'obligation reste due.</strong> La relecture dédiée des <strong>ch. 19 et 20</strong> est ordonnancée <strong>avant toute publication du second mouvement du Livre II</strong>, au jalon <strong>J-IV-6</strong>, et <strong>son absence est un empêchement de publier, non une réserve à porter</strong>. ⚠ <strong>La désignation du relecteur, elle, bute sur une contradiction que la passe a écrite plutôt que contournée</strong> : <strong>CA-IV-11 et CA-IV-13 exigent un relecteur <em>distinct du rédacteur</strong></em>, et <strong>D-6 a désigné l'auteur sans délégation comme instance d'arbitrage</strong> — or <em>arbitrer n'est pas relire</em>. La décision nomme qui tranche, <strong>elle ne fournit pas de tiers</strong>. ⚠ <strong>Cette lacune-là n'est pas du même ordre que les autres</strong> : <em>une lacune de socle se comble par une source ; celle-ci ne se comble que par une seconde personne.</em> Elle est déclarée au PRD §11 — <em>la déclarer est le seul geste qui l'empêche de s'éteindre par oubli.</em></li>
+</ul>
+
+<div class="avert">
+  <p><strong>Ce que la clôture ne change pas.</strong> Les portes <strong>G-3</strong> et <strong>G-4</strong> demeurent ouvertes : le socle consolidé compte <strong>zéro entrée</strong>, l'Annexe B n'existe pas, la collation de fond contre le Vol. III rédigé n'est pas conduite, et <strong>aucun énoncé de cette pièce n'est central au sens de CA-IV-01</strong>. <strong>CA-IV-13 n'est pas satisfaite</strong> — aucune relecture par un relecteur distinct du rédacteur. Cette pièce reste un <strong>brouillon non publiable</strong>. <em>Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.</em></p>
+</div>
+
 </section>
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre II, chapitre 19. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
-  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.24, entrée du chapitre 19, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.25, entrée du chapitre 19, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
 </footer>
 

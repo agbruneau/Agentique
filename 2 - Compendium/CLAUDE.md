@@ -13,10 +13,10 @@ désormais dans le sous-dossier [`PRD/`](PRD/) ; le README (conspectus) et ce `C
 la racine du dossier. Les chemins ci-dessous et la commande de contrôle (§ protocole) en tiennent
 compte.
 
-Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.8, 27 juillet 2026** — passe d'arbitrage : **D-1, D-6 et D-7 prises**, **G-2 et le volet Livre I de G-1 franchis**, treize remontées soldées ; c'est la première version qui **consomme** de la gouvernance au lieu d'en poser) régit la
+Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.9, 27 juillet 2026** — seconde passe d'arbitrage : **D-4 tranchée** — enveloppes maintenues, amputation interdite — et **D-9 ouverte et prise** — lot d'instruction du § 17.5, bloquant pour les ch. 25 et 27 ; **vingt-quatre remontées soldées**, **aucune porte franchie** ; cumul : **cinq décisions sur neuf**, **deux portes sur sept**. ⚠ C'est aussi la version qui déclare **CA-IV-11 et CA-IV-13 insatisfaisables en l'état**, D-6 ne fournissant pas de relecteur tiers) régit la
 **gouvernance de la rédaction** — portes de lancement, ordre, régimes de preuve, seuil de vote,
 critères CA-IV, jalons, décisions d'auteur — et **prime en cas de conflit sur la gouvernance, le
-socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.24, 27 juillet 2026 — arbitrage : structure inchangée, risque 15 tranché, quatre réalignements au titre de la décision 8 ; 50 chapitres en 5 livres,
+socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.25, 27 juillet 2026 — second arbitrage : structure inchangée, cinq thèses réalignées (ch. 14, 15, 16, 17, 19), décision 14 posée, risque 17 ouvert, troisième table à l'Annexe C ; 50 chapitres en 5 livres,
 projection ≈ 376 000–401 000 mots ; plafond de cinquante chapitres posé en décision 13 et contrôlé par C15 ;
 le ch. 41, la fabrique d'agents, entré en v0.22, est payé par la fusion des ch. 47 et 48**) reste la *spécification de contenu* du compendium — autorité
 sur le découpage et sur chaque chapitre (thèse, sections, ligne Fusion, socle, garde-fous) ;
@@ -36,31 +36,37 @@ comme préalables. ⚠ **Les deux écarts ne sont pas du même ordre, et les con
 second.** Le Livre I a été écrit avant **G-1, G-2 et G-3** ; le **Livre II** l'est avant **G-3 et
 G-4** — et **G-4, la collation de fond contre le Vol. III rédigé, est le préalable que le PRD nomme
 pour ce Livre précisément**, sa source se déclarant elle-même *non publiable*. Il enfreint en outre
-**l'ordre de rédaction du PRD §6**, qui le plaçait en troisième position. ⚠ **Le Livre II ouvre
-vingt-quatre remontées — R-IV-14 à R-IV-37, dont deux bloquantes et deux soldées par versement
-d'appareil** ; leur tableau est au [`README.md` de `Livre II/`](Livre%20II/README.md) et **n'est pas
-repris ici**. ⚠ **Sa volumétrie réelle est de 61 165 mots pour une enveloppe de 50 000 — soit
-+22,3 %**, et c'est la **mesure que la décision d'auteur D-4 attendait** : *la somme des dix cibles
+**l'ordre de rédaction du PRD §6**, qui le plaçait en troisième position. ⚠ **Le Livre II a ouvert
+vingt-quatre remontées — R-IV-14 à R-IV-37, dont deux bloquantes — et LES VINGT-QUATRE SONT SOLDÉES
+depuis le 27 juillet 2026** (TOC v0.25, PRD v0.9) ; leur tableau d'issues est au
+[`README.md` de `Livre II/`](Livre%20II/README.md) et **n'est pas repris ici**. ⚠ **Sa volumétrie réelle est de 61 677 mots pour une enveloppe de 50 000 — soit
++23,4 %** (re-mesurée au terme de la passe d'arbitrage ; elle valait 61 165 à la rédaction, quatre
+corrections ayant touché le corps de leur pièce), et c'est la **mesure que la décision d'auteur D-4 attendait** : *la somme des dix cibles
 dérivées avait pourtant été additionnée avant rédaction et valait exactement 50 000 — le dépassement
 vient de la matière, non de la dérivation.* Quatre choses à savoir avant d'y toucher.
-*(a)* ⚠ **Le statut de gouvernance a partiellement bougé le 27 juillet 2026 — passe d'arbitrage,
-PRD v0.8 et TOC v0.24.** Chaque pièce se déclare toujours *brouillon, non publiable*, et **le socle
+*(a)* ⚠ **Le statut de gouvernance a partiellement bougé le 27 juillet 2026 — DEUX passes d'arbitrage,
+PRD v0.9 et TOC v0.25.** Chaque pièce se déclare toujours *brouillon, non publiable*, et **le socle
 consolidé reste à 0 entrée** : **G-3 n'est pas entamée**, aucun énoncé n'est central au sens de
 CA-IV-01. Ce qui a changé : **deux portes sur sept sont franchies** — **G-2** entièrement
 ([`PRD/decompte.sh`](PRD/decompte.sh), éprouvée sur les trois corpus entiers) et **G-1 pour le seul
-volet du Livre I** ([`PRD/gel-2026-07-27.md`](PRD/gel-2026-07-27.md)) — et **trois décisions d'auteur
-sur huit sont prises** : **D-1** (gel unique au 27 juillet 2026), **D-6** (l'instance d'arbitrage est
-l'auteur, sans délégation), **D-7** (risque 15 : **périmètre assumé et déclaré**). **D-2, D-3, D-4,
-D-5 et D-8 restent ouvertes**, les risques 13, 14 et 16 restent déclarés non comblés. ⚠ **Ne pas en
+volet du Livre I** ([`PRD/gel-2026-07-27.md`](PRD/gel-2026-07-27.md)) — et **cinq décisions d'auteur
+sur neuf sont prises** : **D-1** (gel unique au 27 juillet 2026), **D-4** (enveloppes maintenues,
+re-calibrage remis à une passe unique de clôture, ⚠ **amputation interdite**), **D-6** (l'instance
+d'arbitrage est l'auteur, sans délégation), **D-7** (risque 15 : **périmètre assumé et déclaré**) et
+**D-9** (neuve : lot d'instruction du § 17.5 ouvert, ⚠ **bloquant pour les ch. 25 et 27**). **D-2,
+D-3, D-5 et D-8 restent ouvertes**, les risques 13, 14, 16 et **17** restent déclarés non comblés.
+⚠ **La seconde passe n'a franchi AUCUNE porte** : *cinq thèses collationnées ne sont pas une collation
+de fond*, et le volet de fond de G-4 reste entier. ⚠ **Ne pas en
 tirer une requalification du volume** : *deux portes franchies sur sept ne font pas un volume
 recevable*, et un brouillon écrit hors portes ne franchit aucune porte — il en documente le coût.
 *(b)* ⚠ **Le TOC, le PRD et le conspectus n'ont pas été touchés PAR LA RÉDACTION — ils l'ont été par
 la passe d'arbitrage qui a suivi, et la distinction est toute la règle d'escalade.** À la rédaction,
 aucun des trois n'a bougé, conformément au PRD (Annexe A) : *un rédacteur ne corrige jamais le TOC,
 ce PRD ni le Conspectus — il **remonte**.* Ce sont les **remontées** qui ont ensuite été traitées, par
-une passe de plan et de gouvernance distincte (TOC v0.24, PRD v0.8, conspectus réaligné) — jamais une
+deux passes de plan et de gouvernance distinctes (TOC v0.24 puis v0.25, PRD v0.8 puis v0.9, conspectus
+réaligné à chaque fois) — jamais une
 pièce corrigeant son propre cahier des charges. **Leurs champs Statut disent toujours zéro pièce
-**recevable**, et c'est correct** : onze brouillons hors portes n'en font aucune. Ne pas les
+**recevable**, et c'est correct** : vingt et un brouillons hors portes n'en font aucune. Ne pas les
 « corriger » pour ces pièces.
 *(c)* ⚠ **Les treize remontées ouvertes par cette rédaction — R-IV-01 à R-IV-13 — sont SOLDÉES depuis
 le 27 juillet 2026 ; il n'en reste aucune d'ouverte.** Chacune a été **portée là où elle fait foi**,
@@ -78,6 +84,31 @@ réalignement du TOC**, et la classe qu'elles nommaient est désormais **écrite
 — voir ci-dessous. **(4)** ⚠ **Une remontée close ne rend pas la pièce recevable** : *zéro remontée
 ouverte veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée*, rien de
 plus.
+
+⚠ **Les vingt-quatre du Livre II — R-IV-14 à R-IV-37 — sont soldées de la même manière, et quatre
+enseignements de leur clôture valent au niveau du dossier ; le tableau des issues, lui, est au
+[`README.md` de `Livre II/`](Livre%20II/README.md).** **(1)** ⚠ **Cinq des treize thèses du Livre portaient
+une forme que leur source avait corrigée après coup** — ch. 14, 15, 16, 17 et 19, bornées à la source le
+21 juillet 2026 et reportées dans ses pièces le 22, sans que le plan suive. *Cinq reports qui
+n'avaient pas été faits, non cinq divergences à arbitrer* — et **aucune pièce ne pouvait le voir
+seule**, chacune citant fidèlement un énoncé périmé. La **décision 14 du TOC** en fait une obligation
+de passe, **domaine de balayage déclaré** (**treize thèses examinées, cinq réalignées** — *le Livre compte dix chapitres mais treize thèses, les ch. 12, 20 et 21 en portant deux chacun au titre des fusions v0.20*) : *un cardinal
+d'écarts sans domaine de balayage est un relevé, pas une couverture.* **(2)** ⚠ **Instruire les
+remontées en a trouvé une qui n'était pas ouverte et en a réfuté une qui l'était.** Le § 15.1.4
+portait « ce que la carte **prouve** », verbe que **R-02 proscrit** et que le plan assignait pourtant
+en garde-fou à ce chapitre — défaut **hérité**, ouvert chez la source, **corrigé ici et signalé
+là-bas**. À l'inverse, **R-IV-37 était fausse pour moitié** : le siège du tri prospectif **existait**
+(ch. 49 § 49.0), seuls les renvois manquaient. *Une passe d'arbitrage qui exécute ses remontées sans
+les vérifier fabrique le défaut qu'elle croit corriger.* **(3)** **Deux remontées bloquantes, deux
+réponses opposées, et l'écart est le résultat** : **R-IV-32** est close **sans lot** — la source avait
+**réfuté** la proportion au vote adversarial, et *dénombrer pour établir un énoncé que la source tient
+pour non soutenu aurait produit un chiffre sans thèse à porter* ; **R-IV-27** est close **par un lot
+ouvert et un blocage maintenu** (D-9), deux chapitres du Livre III devant **prescrire** la parade dont
+le § 17.5 est la limite empirique. *La différence n'est pas de gravité mais de dépendance.*
+**(4)** ⚠ **Une obligation reste due que ce dossier ne peut pas payer** : **CA-IV-11 et CA-IV-13**
+exigent un **relecteur distinct du rédacteur**, et **D-6 ne fournit pas de tiers** — *arbitrer n'est
+pas relire*. L'écart est déclaré au PRD §11 ; *une lacune de socle se comble par une source, celle-ci
+par une seconde personne.*
 *(d)* **Le `.html` est un rendu, jamais une seconde source** : toute correction se fait au `.md` et
 se reporte au même commit. Le compendium n'a **pas** de pipeline de rendu — les trois copies du
 FESP appartiennent aux Vol. I, II et III, et aucune n'a été copiée ici. Le rendu et ses huit
@@ -139,7 +170,7 @@ jour quand une passe change une convention, plutôt que de laisser diverger la p
 - **Une classe de double revendication qu'aucun contrôle n'attrape.** Quand une ligne Fusion absorbe un **intervalle de chapitres** (« Vol. III ch. 5-7 ») pendant qu'un autre chapitre en prélève **une section** nommée (« §7.4 »), les deux renvois sont valides isolément et vivent à des grains différents : `check-toc.py` ne les rapproche pas. **Collation manuelle, à refaire à chaque révision d'une ligne Fusion citant un intervalle.**
 - **Une arrivée se déclare aux deux bouts.** Le §2.8.5 du Vol. I était déclaré à son *départ* (ch. 6) et nulle part à son *arrivée* (ch. 4) : un chapitre rédigé sur sa seule liste de sections aurait perdu la section que la v0.5 avait sauvée.
 
-⚠ **Ce que la v0.17 n'a pas touché, et qu'une passe de cohérence ne doit jamais toucher** : les **risques 13, 14 et 16** (Livre V sans socle, couche d'exécution sans chapitre, et — depuis la v0.22 — un chapitre sans socle dans un livre qui en a un) portent sur du **contenu manquant**, non sur une incohérence — leur arbitrage est une décision d'auteur (**D-2**, **D-3**, **D-8** du PRD), et **une passe de cohérence ne les tranche pas**. De même la thèse forte du ch. 19, à instruire par dénombrement. ⚠ **Le risque 15 sort de cette liste depuis la v0.24, et il faut lire comment** : il est **tranché par D-7 — périmètre assumé et déclaré** —, ce qui **ne le comble pas** mais le **borne**. Les ch. 6, 37 et 48 sont **fermés** à l'accord entre agents sous défaillance ; y ajouter une section rouvrirait la décision d'auteur, non le seul chapitre. *Un périmètre assumé n'est pas un angle mort résorbé : c'est un angle mort dont le lecteur est prévenu.*
+⚠ **Ce que la v0.17 n'a pas touché, et qu'une passe de cohérence ne doit jamais toucher** : les **risques 13, 14, 16 et — depuis la v0.25 — 17** (Livre V sans socle, couche d'exécution sans chapitre, un chapitre sans socle dans un livre qui en a un, et **la quatrième pièce du passeport, qui n'a ni chapitre ni socle**) portent sur du **contenu manquant**, non sur une incohérence — leur arbitrage est une décision d'auteur (**D-2**, **D-3**, **D-8** du PRD), et **une passe de cohérence ne les tranche pas**. De même la thèse forte du ch. 19, à instruire par dénombrement. ⚠ **Le risque 15 sort de cette liste depuis la v0.24, et il faut lire comment** : il est **tranché par D-7 — périmètre assumé et déclaré** —, ce qui **ne le comble pas** mais le **borne**. Les ch. 6, 37 et 48 sont **fermés** à l'accord entre agents sous défaillance ; y ajouter une section rouvrirait la décision d'auteur, non le seul chapitre. *Un périmètre assumé n'est pas un angle mort résorbé : c'est un angle mort dont le lecteur est prévenu.*
 
 ## ⚠ Plafond dur : cinquante chapitres, jamais plus
 
@@ -206,6 +237,13 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
   (deux séries « Q n » au Vol. II) et son volume (R-1…R-8 du Vol. II ≠ R-01…R-14 du Vol. III).
 - **Décision 8** — le plan s'aligne sur le chapitre rédigé, jamais l'inverse ; une déviation fondée
   se déclare.
+- **Décision 14 (v0.25)** — ⚠ **la collation d'une thèse contre le texte rédigé de sa source est une
+  obligation de passe, à mener AVANT la rédaction et non à la relecture.** *Une citation fidèle d'un
+  énoncé périmé reste périmée* — et la thèse se cite verbatim depuis le TOC (PRD §6). **Le rédacteur
+  ne réaligne rien** : il écrit son corps sous la forme bornée, cite la thèse telle qu'elle est, et
+  **remonte**. ⚠ **Le balayage déclare son domaine** : annoncer *n* réalignements sans dire **sur
+  combien** ils ont porté est un relevé, pas une couverture. Motif : **cinq des treize thèses du Livre II**
+  portaient une forme que leur source avait bornée un mois plus tôt.
 - **Décisions 11, 12 et 13 (v0.20, v0.22, v0.23)** — les trois cartes de renumérotation **se chaînent et ne se
   réécrivent jamais** : un « ch. 57 » gelé désigne le ch. 50 de la v0.21, le ch. 51 de la v0.22, le **ch. 50**
   courant. La **13a** pose le plafond de cinquante chapitres, la **13b** que toute insertion se paie par une
