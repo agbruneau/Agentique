@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 1 — L'interopérabilité comme problème d'intégration d'entreprise · La somme agentique</title>
+<meta name="description" content="Livre I, chapitre 1 du compendium « La somme agentique » : l'interopérabilité comme propriété à maintenir dans le temps, et comme problème économique avant d'être technique.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — Livre I, chapitre 1
+   Thème sombre orange. Feuille de style autonome, aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav__replie { display: block; }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre I · Chapitre 1</div>
+  <ol>
+    <li><a href="#s10"><span class="num">1.0</span>Introduction</a></li>
+    <li><a href="#s11"><span class="num">1.1</span>Fondements et théorie</a></li>
+    <li><a href="#s12"><span class="num">1.2</span>Cadres et maturité</a></li>
+    <li><a href="#s13"><span class="num">1.3</span>Architectures d'intégration</a></li>
+    <li><a href="#s14"><span class="num">1.4</span>Styles d'API</a></li>
+    <li><a href="#s15"><span class="num">1.5</span>Messagerie et événementiel</a></li>
+    <li><a href="#s16"><span class="num">1.6</span>Patrons et coordination</a></li>
+    <li><a href="#s17"><span class="num">1.7</span>Synthèse</a></li>
+    <li><a href="#s18"><span class="num">1.8</span>Note de statut</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.23 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="01-interoperabilite-integration-entreprise.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre I — Coopérer · Premier mouvement : les fondements</div>
+  <h1><span class="chap">Chapitre 1</span>L'interopérabilité comme problème d'intégration d'entreprise</h1>
+  <p class="titre__situe">Fondements de l'interopérabilité et couche protocolaire agentique — premier des six chapitres du mouvement des fondements (ch.&nbsp;1-6).</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — rédigé sur instruction d'auteur du 27 juillet 2026, <strong>avant</strong> le franchissement des portes G-1 (gel unique), G-2 (commande de décompte) et G-3 (refonte du socle) du PRD §5. La règle cardinale du volume — <em>un chapitre écrit sur un socle vide n'est pas un chapitre en avance, c'est une inférence longue</em> — n'est pas levée&nbsp;; elle est <strong>déclarée enfreinte</strong>, avec ses conséquences énumérées en note de clôture (§&nbsp;1.8).</dd>
+
+    <dt>Date de gel</dt>
+    <dd><strong>Aucune.</strong> Le gel unique du compendium relève de la décision d'auteur D-1, non prise. La matière condensée ici porte le gel de sa source — <strong>juin 2026</strong> (Vol.&nbsp;I) —, qui n'est pas le gel de la somme et ne peut en tenir lieu.</dd>
+
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong>&nbsp;: l'Annexe B n'est pas constituée (porte G-3 ouverte, socle à 0 entrée au PRD v0.7). Les énoncés factuels résolvent contre le <strong>Vol.&nbsp;I <em>Monographie</em> §1.0-1.6</strong>, dont le régime d'héritage est <strong>[C]</strong> (PRD §7.1). <strong>Aucun énoncé de ce chapitre n'est donc central au sens de CA-IV-01</strong> tant que l'élévation en [B] par lecture des sources primaires citées par le Vol.&nbsp;I n'est pas faite.</dd>
+
+    <dt>Garde-fous balayés</dt>
+    <dd><strong>Séries héritées, balayées intégralement, y compris à zéro occurrence.</strong> Vol.&nbsp;II — R-1 à R-8&nbsp;: <strong>zéro occurrence</strong> (aucune matière réglementaire canadienne, aucune métrique d'adoption, aucun énoncé sur E-23, le RTR ou MCP). Vol.&nbsp;III — R-01 à R-14&nbsp;: <strong>zéro occurrence</strong> pour R-01 à R-13 (aucune qualification cryptographique&nbsp;; aucun emploi d'«&nbsp;AgentMesh&nbsp;», de «&nbsp;control plane&nbsp;», d'«&nbsp;ACP&nbsp;» ni d'«&nbsp;autonomie graduée&nbsp;»&nbsp;; ⚠ «&nbsp;plan de contrôle&nbsp;» y figure au sens du maillage de services <strong>pré-agentique</strong>, §&nbsp;1.3.4, où il n'est pas un terme de la série)&nbsp;; <strong>R-14 (trois degrés d'absence)&nbsp;: deux occurrences</strong>, §&nbsp;1.2.2.3 et §&nbsp;1.3.1.2, marquées en toutes lettres.</dd>
+
+    <dt>Volumétrie cible</dt>
+    <dd>≈&nbsp;11&nbsp;000 mots de corps (§&nbsp;1.0 à §&nbsp;1.7). Enveloppe <strong>dérivée, non prescrite</strong>&nbsp;: le TOC ne donne d'enveloppe qu'au Livre (~65&nbsp;000 mots pour onze chapitres)&nbsp;; le présent chapitre étant le socle pré-agentique que neuf chapitres aval citent sans le reconstruire, il pèse plus que la moyenne — le solde reste ≈&nbsp;54&nbsp;000 pour les ch. 2-11. ⚠ <strong>Aucun décompte n'est publiable</strong>&nbsp;: la commande de décompte de référence est la porte G-2, non franchie (leçon du Vol.&nbsp;II — quatre mesures successives avant d'arrêter un chiffre). Toute mesure prise ici est indicative et se refera à G-2.</dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>L'interopérabilité n'est pas un attribut mais une propriété à maintenir dans le temps&nbsp;; la dette d'intégration et le coût de la non-interopérabilité en font un problème économique avant d'être technique.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.23, entrée du chapitre 1.</span>
+</div>
+
+<!-- ===================================================== § 1.0 ============ -->
+<h2 id="s10"><span class="sig">§ 1.0</span>Introduction : l'interopérabilité comme problème d'intégration d'entreprise</h2>
+
+<p>L'interopérabilité se traite le plus souvent comme une question technique close par le choix d'un protocole ou d'un format. Le présent chapitre retient un parti pris différent, qu'il conserve jusqu'à sa clôture : la traiter comme un problème d'<strong>intégration des systèmes d'entreprise</strong>, c'est-à-dire comme une propriété d'ensemble que l'organisation acquiert, puis maintient, au fil de l'évolution conjointe de ses applications, de ses données et de ses processus. Ce déplacement n'est pas rhétorique. Il commande la suite de la somme : si l'interopérabilité est une propriété à maintenir, alors elle a un coût récurrent, une gouvernance, des instruments de mesure — et les protocoles agentiques des chapitres 7 à 11 en hériteront la charge sans la résoudre.</p>
+
+<p>Ce chapitre est le socle <strong>pré-agentique</strong> du Livre I, et il est posé une seule fois. Ce qu'il établit — vocabulaire, taxonomie des niveaux, théorie du couplage, styles d'intégration, contrats d'API, messagerie, patrons de coordination — n'est reconstruit dans aucun chapitre aval : les chapitres agentiques y renvoient. Trois matières que le lecteur pourrait attendre ici en sont explicitement absentes, et leur absence est un arbitrage, non un oubli : la <strong>sémantique</strong> et les ontologies partent au ch. 2 ; l'<strong>héritage IAM</strong> — identité fédérée, autorisation déléguée, <em>zero trust</em> — part au ch. 3 ; l'<strong>exécution durable, les pipelines et l'orchestration agentique</strong> partent en entier au ch. 22 (Livre III), où l'autonomie encadrée les reprend dans son propre régime.</p>
+
+<h3>1.0.1 Coût de la non-interopérabilité et dette d'intégration : l'enjeu économique et le périmètre du chapitre</h3>
+
+<p>L'absence d'interopérabilité n'est pas une gêne opérationnelle : c'est un coût continu, supporté par l'organisation qu'elle le mesure ou non. Lorsque les systèmes d'information se constituent en silos, chaque besoin d'échange impose de tisser une liaison dédiée entre deux applications. Cette intégration point-à-point engendre une croissance combinatoire du nombre de connexions : raccorder <em>n</em> systèmes susceptibles de dialoguer deux à deux peut requérir jusqu'à <em>n</em>(<em>n</em>−1)/2 liaisons, chacune avec sa logique de transport, de format et de correspondance. S'accumule alors une <strong>dette d'intégration</strong> : couplages rigides, transformations dupliquées, connaissances enfouies dans des adaptateurs ponctuels que plus personne n'ose modifier.</p>
+
+<p>Cette dette est précisément ce que le langage des patrons d'intégration cherche à résorber, notamment par l'introduction d'un intermédiaire et d'un format pivot qui ramènent la complexité de <em>N</em>×<em>N</em> à un ordre linéaire (voir §&nbsp;1.6.1). Le constat est donc autant économique qu'architectural : toute décision d'intégration met en balance le coût total de possession sur le cycle de vie complet — développement, exploitation, maintenance, dépréciation — et non le seul coût d'acquisition. C'est dans ce cadre que se pose l'arbitrage <em>build-vs-buy</em>, et c'est là que se loge le piège le plus fréquent : un échange réalisé à bas coût immédiat mais fortement couplé <strong>reporte sa facture</strong> sur l'évolution future, lorsqu'un changement unilatéral d'un côté brisera l'autre.</p>
+
+<p>Le périmètre du chapitre découle de ce constat. L'angle dominant est l'intégration des systèmes d'entreprise : la capacité de systèmes hétérogènes, autonomes et distribués à coopérer. Les couches y sont parcourues du transport jusqu'à la coordination de processus. Sont délibérément exclus l'interopérabilité matérielle de bas niveau et les protocoles réseau étudiés pour eux-mêmes, retenus seulement comme socle dont les couches supérieures dépendent.</p>
+
+<h3>1.0.2 L'invariant transversal — découplage, contrat, évolution</h3>
+
+<p>Un invariant traverse la somme entière et sera rappelé à chaque couche : l'interopérabilité durable repose sur trois notions solidaires — le <strong>découplage</strong>, le <strong>contrat</strong>, l'<strong>évolution</strong>.</p>
+
+<p>Le <em>découplage</em> est la réduction des dépendances mutuelles entre systèmes : dépendances de technologie, de format, de localisation, de temporalité et de modèle d'interaction (voir §&nbsp;1.1.3). Il conditionne la mise à l'échelle, puisqu'un système faiblement couplé peut être déployé, remplacé ou modifié sans coordination synchrone avec ses partenaires. Le principe trouve sa racine dans la décomposition modulaire par masquage de l'information : un module n'expose qu'une interface stable et dissimule ses choix internes susceptibles de changer.</p>
+
+<p>Le <em>contrat</em> est le support qui rend ce découplage opérationnel. C'est l'interface explicite — syntaxique, sémantique ou comportementale — sur laquelle deux parties s'accordent et qui leur permet d'évoluer indépendamment tant qu'elles la respectent (voir §&nbsp;1.1.3). À chaque couche, le contrat prend une forme concrète : description d'API (voir §&nbsp;1.4.2), schéma de message, contrat d'événement, contrat de données.</p>
+
+<p>L'<em>évolution</em>, enfin, est la dimension temporelle : un contrat doit pouvoir changer sans rompre les consommateurs existants, par des règles de compatibilité ascendante et descendante, le versionnement et les lecteurs tolérants (voir §&nbsp;1.1.4).</p>
+
+<div class="avert">
+  <p><strong>Deux termes ici, quatre à l'avant-propos.</strong> L'invariant de la somme compte <strong>quatre</strong> termes — découplage, contrat, évolution et <strong>exploitation</strong> —, posé en entier à l'avant-propos. Le présent chapitre en éprouve les <strong>trois premiers</strong> sur la matière pré-agentique ; le quatrième n'a pas d'objet ici, faute d'agent à exploiter, et se referme au Livre IV (ch. 38-40). Invoquer le «&nbsp;quatrième terme&nbsp;» dans ce chapitre serait sans antécédent : il n'y est pas éprouvé, il y est seulement annoncé.</p>
+</div>
+
+<h3>1.0.3 Parcours différenciés : lecture recherche et lecture praticien-architecte</h3>
+
+<p>La somme s'adresse à deux lectorats dont les attentes diffèrent, et le présent chapitre est conçu pour être lu selon deux parcours. Le <em>parcours recherche</em> privilégie les modèles, les taxonomies, les formalismes et les questions ouvertes ; il s'attardera sur la définition opérationnelle de l'interopérabilité, sur les modèles de maturité conceptuelle et sur les formalismes de compatibilité comportementale. Le <em>parcours praticien-architecte</em> privilégie les normes, les protocoles, les technologies et les décisions de mise en œuvre ; il suivra plus volontiers les styles d'API, les courtiers de messages et les patrons d'intégration.</p>
+
+<p>Deux dispositifs, hérités du Vol.&nbsp;I et reconduits par la somme, servent ces deux lectures sans cloisonner le propos. Les encadrés <strong>«&nbsp;Perspective recherche&nbsp;»</strong> isolent les apports théoriques — formalismes, résultats d'impossibilité — que le praticien pressé peut survoler sans perdre le fil. Les encadrés <strong>«&nbsp;Mise en œuvre&nbsp;»</strong> isolent à l'inverse les normes datées, les outils et les considérations de déploiement, que le lecteur recherche peut traiter comme des illustrations. Le dispositif est reconduit dans tout le Livre I ; il cesse au Livre III, dont la matière réglementaire ne s'y prête pas.</p>
+
+<!-- ===================================================== § 1.1 ============ -->
+<h2 id="s11"><span class="sig">§ 1.1</span>Fondements et théorie de l'interopérabilité</h2>
+
+<p>Avant d'aborder les cadres de référence (voir §&nbsp;1.2) et les architectures d'intégration (voir §&nbsp;1.3), il faut fixer un vocabulaire rigoureux. Cette section pose les définitions, les taxonomies de niveaux, la théorie du couplage et les formalismes qui justifient l'ensemble des mécanismes traités plus loin — et, au-delà, les protocoles agentiques des ch. 7 à 11, qui n'en changent pas les termes.</p>
+
+<h3>1.1.1 Définir l'interopérabilité : échanger <em>et</em> utiliser</h3>
+
+<p>L'interopérabilité se définit comme la capacité de deux systèmes ou plus à échanger de l'information <strong>et à utiliser mutuellement l'information échangée</strong>. Cette formulation distingue deux moments souvent confondus : l'échange (l'information transite) et l'usage (le destinataire interprète et exploite effectivement ce qu'il reçoit). Un transfert d'octets réussi ne garantit pas l'interopérabilité ; encore faut-il que la sémantique du message soit comprise et que l'action attendue s'ensuive. C'est cette distinction, et elle seule, qui rend intelligible l'écart que le ch. 2 nommera <em>accord de protocole contre compréhension</em> — deux agents peuvent négocier correctement un échange sans s'entendre sur ce qu'ils échangent.</p>
+
+<p>Il convient également de séparer la <strong>capacité</strong> de l'<strong>acte</strong> : l'interopérabilité comme propriété d'un système (son aptitude à coopérer) ne se confond pas avec l'acte d'interopérer (une interaction effective et réussie à un instant donné). La portée est pratique : un système peut être interopérable en principe sans qu'aucun échange concret ne soit en cours, et un échange ponctuel peut réussir par accident sans propriété stable sous-jacente.</p>
+
+<p>Quatre concepts voisins, fréquemment employés comme synonymes, recouvrent des relations distinctes. L'<strong>intégration</strong> désigne un assemblage fortement couplé où les composants sont réunis en un tout cohérent, souvent au prix d'une dépendance mutuelle élevée. L'<strong>interopérabilité</strong> vise au contraire une coopération faiblement couplée : les systèmes restent autonomes et coopèrent par contrats explicites, sans fusionner. La <strong>compatibilité</strong> renvoie à une coexistence — deux systèmes fonctionnent côte à côte sans se nuire, sans nécessairement coopérer. La <strong>portabilité</strong> concerne la migration : l'aptitude d'un artefact à être transféré d'un environnement vers un autre.</p>
+
+<div class="tableau">
+<table>
+  <thead>
+    <tr><th>Concept</th><th>Relation</th><th>Couplage</th><th>Finalité</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Intégration</td><td>Assemblage</td><td>Fort</td><td>Constituer un tout unifié</td></tr>
+    <tr><td>Interopérabilité</td><td>Coopération</td><td>Faible</td><td>Échanger et utiliser l'information entre systèmes autonomes</td></tr>
+    <tr><td>Compatibilité</td><td>Coexistence</td><td>Nul à faible</td><td>Fonctionner sans interférence</td></tr>
+    <tr><td>Portabilité</td><td>Migration</td><td>—</td><td>Transférer vers un autre environnement</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="legende">Tableau 1.1 — Quatre relations entre systèmes, distinguées par le couplage qu'elles supposent.</p>
+
+<p>La distinction est structurante : l'angle dominant retenu est l'intégration des systèmes d'entreprise, mais l'objectif visé demeure l'interopérabilité au sens fort — une coopération qui préserve l'autonomie des systèmes et minimise leur couplage.</p>
+
+<p>Le modèle de qualité produit SQuaRE érige enfin l'interopérabilité en sous-caractéristique <strong>mesurable</strong>, rattachée à la compatibilité (ISO/IEC 25010:2023), aux côtés de la coexistence. L'inscription dans un référentiel normatif a une conséquence méthodologique décisive : l'interopérabilité cesse d'être un mot d'ordre pour devenir une exigence non fonctionnelle, spécifiable, vérifiable et opposable lors de l'évaluation d'un produit logiciel. C'est ce qui permet, plus loin, de la relier au test et à la certification (ch. 3 §&nbsp;3.4) plutôt qu'à une appréciation globale.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Inscrire l'interopérabilité dans un modèle de qualité produit invite à la décliner en exigences testables dès la spécification : conformité à un contrat d'interface, tolérance aux versions, sémantique partagée. Ces exigences se transposent en contrôles automatisés dans la chaîne d'intégration continue, où elles deviennent des portes de qualité plutôt que des intentions.</p>
+</div>
+
+<h3>1.1.2 Taxonomie des niveaux : la pile canonique et le LCIM</h3>
+
+<p>L'interopérabilité s'analyse en niveaux superposés formant une hiérarchie <strong>cumulative</strong>, où chaque palier présuppose les précédents. Le niveau <strong>technique</strong> assure le transport des bits et l'établissement de la connexion. Le niveau <strong>syntaxique</strong> garantit que les structures de données échangées partagent une grammaire commune. Le niveau <strong>sémantique</strong> établit que les parties attribuent le même sens aux données. Le niveau <strong>organisationnel</strong> aligne processus métier, responsabilités et règles entre organisations. La cumulativité est essentielle : un accord sémantique est sans effet si la syntaxe diffère, et un accord syntaxique reste vain si le transport échoue.</p>
+
+<p>Cette pile fournit la grille de lecture de la somme entière. Chaque mécanisme étudié plus loin se situe sur l'un de ces paliers — les formats et schémas au ch. 2, la sémantique et les ontologies au ch. 2 également, la coordination organisationnelle des processus ici même (§&nbsp;1.6), et les protocoles agentiques au ch. 8.</p>
+
+<div class="avert">
+  <p>Elle prépare aussi le constat le plus important du Livre I : MCP et A2A opèrent au niveau syntaxique et, partiellement, technique ; ils ne fournissent aucun mécanisme d'accord sémantique, qu'ils <strong>présupposent</strong>. Ce constat est établi au ch. 8 et au ch. 9 ; il est ici seulement rendu formulable.</p>
+</div>
+
+<p>Le <em>Levels of Conceptual Interoperability Model</em> (LCIM) approfondit la couche sémantique en distinguant des degrés de maturité conceptuelle de l'échange. À la pile technique-syntaxique-sémantique, il superpose les niveaux pragmatique, dynamique et conceptuel, articulés autour de trois notions : l'<em>integratability</em> (compatibilité des réseaux et plateformes), l'<em>interoperability</em> (échange et usage des données) et la <em>composability</em> (alignement des modèles conceptuels sous-jacents). Le modèle a été raffiné en une échelle à sept niveaux, du niveau 0 — absence d'interopérabilité — jusqu'à l'interopérabilité conceptuelle, où les hypothèses et abstractions des modèles sont elles-mêmes documentées et alignées.</p>
+
+<p>L'apport décisif du LCIM est de montrer qu'un échange syntaxiquement <strong>et</strong> sémantiquement correct ne suffit pas : tant que les modèles conceptuels et les présupposés des systèmes ne sont pas explicités, des incompréhensions subsistent, invisibles au plan technique.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Le LCIM déplace la question de l'interopérabilité du transport vers la composabilité des modèles. Cette hiérarchie conceptuelle reste un cadre d'analyse plutôt qu'un protocole opérationnel : elle qualifie ce qui manque à un échange pour être pleinement signifiant, mais ne prescrit pas comment combler l'écart — outil de diagnostic davantage qu'instrument de mesure rigoureux (limites discutées en §&nbsp;1.2.2).</p>
+</div>
+
+<h3>1.1.3 Couplage, découplage et conception orientée contrat</h3>
+
+<h4>1.1.3.1 Les facettes du couplage</h4>
+
+<p>Le couplage n'est pas une grandeur unique mais un <strong>faisceau de dépendances</strong>, chacune réductible séparément. On distingue notamment le couplage de <strong>technologie</strong> (dépendance à une plateforme ou un langage communs), de <strong>format</strong> (dépendance à une représentation précise des données), de <strong>localisation</strong> (dépendance à l'adresse physique du correspondant), de <strong>temporalité</strong> (nécessité que les deux parties soient disponibles simultanément) et d'<strong>interaction</strong> (rigidité du protocole de conversation).</p>
+
+<p>Chaque facette appelle un mécanisme de découplage spécifique : l'<strong>indirection</strong> — un intermédiaire dissociant l'appelant de la localisation et de l'identité du destinataire — traite le couplage de localisation ; l'<strong>asynchronisme</strong> lève le couplage temporel ; les <strong>schémas tolérants</strong>, qui ignorent les champs inconnus et tolèrent les ajouts, atténuent le couplage de format. Le découplage est la condition même du passage à l'échelle : plus les dépendances entre systèmes sont nombreuses et rigides, plus chaque évolution propage des ruptures.</p>
+
+<p>Cette décomposition en facettes vaut d'être retenue pour une raison qui excède ce chapitre. <span class="auteur">Lecture de l'auteur</span> les protocoles agentiques ne réduisent pas le couplage de manière uniforme : ils traitent avec vigueur le couplage de format et d'interaction, laissent largement ouvert le couplage de localisation (d'où les registres du ch. 9) et <strong>rétablissent</strong> un couplage de confiance que la pile pré-agentique ne connaissait pas sous cette forme (d'où le Livre II). Ce que le socle établit ici, c'est la grille ; le classement des protocoles dans cette grille est instruit aux chapitres nommés, non ici.</p>
+
+<h4>1.1.3.2 Le contrat comme support formel</h4>
+
+<p>Si le découplage isole les systèmes, le contrat est ce qui leur permet malgré tout de coopérer. Un contrat est une interface explicite : il publie ce qu'un système offre et ce qu'il exige, sans dévoiler sa réalisation interne. L'idée prolonge directement le principe du masquage de l'information : un module ne doit exposer que ce qui est nécessaire à son usage, selon une règle de moindre connaissance qui limite ce que chaque partie présume de l'autre.</p>
+
+<p>On distingue trois ordres de contrats, de portée croissante. Le contrat <strong>syntaxique</strong> fixe la structure des messages (types, champs, formats). Le contrat <strong>sémantique</strong> fixe le sens des données et des opérations. Le contrat <strong>comportemental</strong> fixe l'ordre admissible des interactions — quelles séquences d'échanges sont valides. Cette gradation structure toute la somme : les contrats syntaxiques se réalisent dans les descriptions d'API (§&nbsp;1.4.2), les contrats sémantiques dans les ontologies et schémas (ch. 2), et la vérification de leur respect relève du test de conformité (ch. 3 §&nbsp;3.4).</p>
+
+<div class="avert">
+  <p>La gradation est aussi un instrument de diagnostic pour la suite de la somme. Les Agent Cards du ch. 8 et le passeport d'agent du ch. 16 sont des contrats <strong>syntaxiques</strong> dotés d'une intention sémantique ; aucun des deux n'est un contrat comportemental. C'est cette absence qui rend possible le problème des deux sauts du ch. 17 — un contrat qui déclare <em>ce qu'un agent est</em> ne dit rien de <em>l'ordre légitime des délégations</em>.</p>
+</div>
+
+<h4>1.1.3.3 Hétérogénéité, autonomie, distribution : les problèmes irréductibles</h4>
+
+<p>Trois sources de difficulté rendent l'interopérabilité non triviale et résistent à toute solution purement technique. L'<strong>hétérogénéité</strong> désigne la diversité des représentations, des modèles et des sens entre systèmes conçus indépendamment ; elle s'analyse en une taxonomie distinguant l'hétérogénéité de système, de syntaxe, de structure et de sémantique, cette dernière étant la plus difficile à réduire. L'<strong>autonomie</strong> désigne le fait que chaque système reste maître de ses décisions, de son évolution et de ses règles : il ne peut être contraint de se conformer unilatéralement à un autre, ce qui interdit les solutions par autorité centrale. La <strong>distribution</strong> introduit la séparation spatiale, la latence et la possibilité de pannes partielles.</p>
+
+<p>Le caractère irréductible de ces trois propriétés explique pourquoi l'interopérabilité ne se résout pas une fois pour toutes mais <strong>se maintient</strong> : ces tensions persistent et imposent des compromis permanents, que les mécanismes des sections suivantes n'éliminent pas mais arbitrent. C'est le contenu technique de la thèse du chapitre.</p>
+
+<h3>1.1.4 L'interopérabilité dans le temps</h3>
+
+<h4>1.1.4.1 Évolution et versionnement</h4>
+
+<p>L'interopérabilité n'est pas un état acquis mais une propriété à maintenir tandis que les systèmes évoluent à des rythmes différents. La notion clé est la compatibilité : un changement est <strong>ascendant</strong> (rétrocompatible) lorsqu'un consommateur ancien continue de fonctionner avec un producteur nouveau, et <strong>descendant</strong> lorsqu'un consommateur nouveau fonctionne avec un producteur ancien. Le versionnement sémantique fournit une convention de signalement distinguant les évolutions compatibles des ruptures.</p>
+
+<p>Le principe du <em>tolerant reader</em> est central : un consommateur robuste ignore ce qu'il ne connaît pas et ne dépend que des éléments dont il a réellement besoin, ce qui lui permet de survivre aux extensions du producteur. Ce principe est lui-même une déclinaison du découplage de format appliquée au temps.</p>
+
+<p>L'évolution constitue le troisième terme de l'invariant, et c'est celui que la couche agentique met le plus rudement à l'épreuve. <span class="auteur">Lecture de l'auteur</span> une spécification protocolaire dont la politique de dépréciation n'est pas écrite ne satisfait pas ce troisième terme, quel que soit le soin apporté aux deux premiers. Le point est repris au ch. 7, où la gouvernance des spécifications est instruite, et il porte une échéance : la révision MCP dont la ratification est <strong>annoncée</strong> pour le 28 juillet 2026 comporte une politique de dépréciation, et c'est à ce titre — non à celui de ses fonctions — qu'elle intéresse le présent invariant.</p>
+
+<h4>1.1.4.2 Formalismes de la compatibilité comportementale</h4>
+
+<p>Au-delà des conventions pratiques, des formalismes permettent de raisonner rigoureusement sur la compatibilité des protocoles d'échange. La théorie des <strong>types de session</strong> fournit une discipline de typage des communications structurées : un type de session décrit la séquence légale des messages d'une conversation, de sorte qu'un compilateur peut garantir qu'un participant respecte le protocole. D'abord binaire, l'approche a été étendue aux interactions à plusieurs parties par les types de session asynchrones multipartites, qui spécifient globalement un protocole puis le <strong>projettent</strong> sur chaque participant. En parallèle, les <strong>automates d'interface</strong> modélisent les composants comme des automates dont les actions d'entrée et de sortie doivent s'accorder ; deux composants sont compatibles s'il existe un environnement où leurs interactions ne mènent jamais à un blocage, et leur composition se calcule par un produit optimiste.</p>
+
+<p>Ces formalismes donnent un contenu précis à la notion de contrat comportemental : la compatibilité de protocole y devient une propriété <strong>décidable</strong> plutôt qu'une intuition.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Leur portée pratique reste limitée par l'écart entre les protocoles spécifiés formellement et les contrats d'API industriels, généralement décrits en termes structurels plutôt que comportementaux. Cet écart n'est pas comblé par la couche agentique — il s'y creuse : un agent dont le plan est produit à l'exécution ne se laisse pas typer par une session décrite à l'avance. Le rapprochement des deux mondes reste un front de recherche ouvert, repris au ch. 49.</p>
+</div>
+
+<!-- ===================================================== § 1.2 ============ -->
+<h2 id="s12"><span class="sig">§ 1.2</span>Cadres de référence et modèles de maturité</h2>
+
+<p>Là où la section précédente a établi le vocabulaire, celle-ci fournit les <strong>grilles de lecture partagées</strong> : des cadres conceptuels qui découpent le problème en dimensions, des modèles de maturité qui en jaugent l'atteinte, et un dispositif réglementaire européen qui a fait basculer l'interopérabilité du statut de bonne pratique recommandée à celui d'obligation juridique. Ces référentiels jouent, à l'échelle organisationnelle, le rôle que le contrat joue à l'échelle technique.</p>
+
+<h3>1.2.1 Dimensions canoniques et ISO 11354</h3>
+
+<p>Les cadres conceptuels dominants structurent l'interopérabilité en couches superposées. L'articulation canonique retient quatre niveaux : <strong>juridique</strong> (alignement des bases légales et des régimes de responsabilité entre organisations qui échangent), <strong>organisationnel</strong> (coordination des processus métier, des rôles et des accords de service), <strong>sémantique</strong> (préservation du sens des données échangées) et <strong>technique</strong> (protocoles, interfaces et formats d'acheminement). Chaque couche supérieure suppose les couches inférieures résolues : un échange techniquement parfait reste inopérant si le sens diverge ou si le cadre juridique interdit le partage.</p>
+
+<p>L'apport décisif de ce cadre tient à son traitement de la <strong>gouvernance</strong> non comme une cinquième couche, mais comme une dimension <strong>transversale</strong> qui traverse les quatre niveaux : décisions de partage, propriété des données et règles d'évolution des interfaces relèvent d'un pilotage qui conditionne l'interopérabilité à chaque palier.</p>
+
+<p>Le <em>Framework for Enterprise Interoperability</em>, normalisé sous ISO 11354-1:2011, propose une lecture orthogonale et complémentaire. Il organise le problème selon un cube à trois axes : les <em>préoccupations</em> d'interopérabilité (données, services, processus, affaires), les <em>barrières</em> qui l'entravent (conceptuelles, technologiques, organisationnelles) et les <em>approches</em> pour les lever. L'intérêt du modèle est de croiser systématiquement chaque préoccupation avec chaque type de barrière, produisant une matrice de diagnostic qui localise où l'interopérabilité achoppe — un défaut de sens (barrière conceptuelle) au niveau des données ne se traite pas comme une incompatibilité de protocole (barrière technologique) au niveau des services.</p>
+
+<p>L'apport le plus structurant tient à la typologie des trois <strong>approches</strong> de mise en relation. L'approche <strong>intégrée</strong> impose un format commun unique à tous les participants ; l'approche <strong>unifiée</strong> définit un méta-modèle pivot de référence sans imposer son adoption interne ; l'approche <strong>fédérée</strong> n'exige aucun format imposé et repose sur une adaptation dynamique à l'exécution. Cette dernière constitue l'idéal du couplage faible : elle préserve pleinement l'autonomie de chaque système en n'imposant ni format partagé ni connaissance mutuelle a priori, au prix d'une complexité d'adaptation reportée à l'exécution.</p>
+
+<div class="avert">
+  <p><strong>Cette typologie est l'un des instruments les plus réutilisés de la somme, et le plus exposé au contresens.</strong> L'ambition affichée des protocoles agentiques relève du registre <strong>fédéré</strong> — adaptation à l'exécution, découverte dynamique, aucune imposition de modèle interne. Leur réalisation de 2026 relève, elle, du registre <strong>unifié</strong> : un méta-modèle pivot de référence (le schéma d'Agent Card, le schéma d'outil MCP) auquel chaque participant se conforme. L'écart entre les deux registres n'est pas un défaut de mise en œuvre : c'est le prix de la vérifiabilité, et il est instruit au ch. 9. Le présent chapitre pose la distinction ; il ne tranche pas le classement.</p>
+</div>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>La lignée du cube ISO 11354 alimente une littérature soutenue sur la mesure de la maturité fédérée, dont une variante ultérieure introduit des métriques floues pour traiter le caractère graduel et incertain de l'atteinte de l'interopérabilité — déplacement de l'évaluation discrète par paliers vers une mesure continue, repris en §&nbsp;1.2.2.</p>
+</div>
+
+<h3>1.2.2 Modèles de maturité : LISI, EIMM, IMM/IMAPS et les limites des modèles à niveaux</h3>
+
+<h4>1.2.2.1 La lignée militaire et son héritage</h4>
+
+<p>Les premiers modèles de maturité opérationnels sont nés du besoin militaire d'évaluer la capacité de systèmes hétérogènes à se coordonner. Le modèle <em>Levels of Information Systems Interoperability</em> (LISI) définit cinq niveaux croissants, d'isolé à universel, caractérisés selon quatre attributs regroupés sous l'acronyme PAID : procédures, applications, infrastructure et données. La force de LISI est d'avoir lié chaque niveau de maturité à des artefacts <strong>concrets et vérifiables</strong> — sans procédures partagées, sans infrastructure commune, sans données alignées, la prétention à interopérer reste théorique. Cette discipline de l'évaluation par preuves plutôt que par déclaration d'intention demeure l'héritage le plus durable de cette lignée, et la somme la reprend à son compte : c'est la même exigence qui, au Livre II, distinguera un mécanisme d'identité qui <strong>démontre</strong> de celui qui <strong>promet</strong>.</p>
+
+<p>Le modèle souffrait d'un angle mort : centré sur les systèmes techniques, il négligeait la dimension humaine et organisationnelle. Le <em>Organisational Interoperability Maturity Model</em> comble ce manque en ajoutant une couche organisationnelle distincte, évaluant l'aptitude des organisations elles-mêmes — préparation, compréhension partagée, commandement, éthique — à coopérer au-delà de la connexion de leurs systèmes. L'interopérabilité demeure, à son terme, une propriété <strong>sociotechnique</strong>.</p>
+
+<h4>1.2.2.2 Le déplacement vers l'entreprise et les services publics</h4>
+
+<p>Le besoin d'évaluation s'est ensuite déplacé du domaine militaire vers l'entreprise et l'administration. Le <em>Enterprise Interoperability Maturity Model</em> (EIMM) transpose la logique de maturité au monde de l'entreprise, couvrant les processus métier, l'organisation, les services, l'information et les outils, chacun évalué selon des paliers croissants. Contrairement aux modèles de défense, l'EIMM met l'accent sur la <strong>modélisation d'entreprise</strong> comme préalable à l'interopérabilité : on ne peut aligner des processus qu'on n'a pas d'abord explicités. Cette exigence rejoint directement la démarche de formalisation architecturale du ch. 44.</p>
+
+<p>Cette famille a essaimé en outils d'audit destinés au secteur public — l'<em>Interoperability Maturity Model</em> (IMM) et son questionnaire d'auto-évaluation IMAPS en sont les représentants les plus diffusés : l'évaluation de la maturité d'un service public y est structurée selon les couches du cadre européen et débouche sur un score et des recommandations.</p>
+
+<h4>1.2.2.3 Limites des modèles à niveaux face aux architectures dynamiques</h4>
+
+<p>Les modèles de maturité à paliers présentent des limites structurelles que les architectures contemporaines rendent saillantes.</p>
+
+<p>Leur premier défaut est le <strong>statisme</strong> : ils photographient un état de maturité à un instant donné, alors que l'interopérabilité d'un système composé d'API versionnées, de microservices déployés indépendamment et de flux événementiels est une propriété continûment renégociée à chaque changement de contrat. Leur deuxième écueil est la <strong>conformité de façade</strong> : un système peut satisfaire les critères formels d'un niveau — disposer des procédures, des interfaces, des formats requis — sans interopérer effectivement, l'évaluation par cases cochées se substituant à la vérification du comportement réel. Leur troisième faiblesse tient à une prise en compte insuffisante de la dimension sémantique et, plus encore, de l'irruption de composants pilotés par l'intelligence artificielle : conçus pour des systèmes au comportement déterministe et stable, ces modèles peinent à qualifier la maturité d'interactions médiées par des agents dont la planification est dynamique et le comportement non déterministe.</p>
+
+<div class="avert">
+  <p>Ce troisième point est une <strong>absence de documentation</strong>, non un fait négatif vérifié (degré 3 de l'échelle R-14 du Vol.&nbsp;III) : aucun balayage documenté n'établit ici qu'<em>aucun</em> modèle de maturité ne traite le non-déterminisme agentique — seulement qu'aucun de ceux qui sont recensés au socle hérité ne le fait. La formulation «&nbsp;ces modèles peinent à qualifier&nbsp;» est donc à lire au sens d'une insuffisance constatée sur le corpus consulté, non d'une impossibilité établie.</p>
+</div>
+
+<p>Une piste de dépassement consiste à substituer à l'échelle discrète une logique de <strong>maturité continue</strong>, où l'interopérabilité se mesure en permanence par observation du système en production — par le <em>contract testing</em> piloté par le consommateur et l'observabilité opérationnelle (ch. 3 §&nbsp;3.4) — plutôt que par audit ponctuel. <span class="auteur">Lecture de l'auteur</span> cette piste est exactement celle que le Livre IV reprendra sous le nom d'AgentOps : mesurer en continu ce qu'un audit ponctuel ne peut établir. Le socle n'établit pas cette filiation ; elle est proposée comme lecture.</p>
+
+<h3>1.2.3 Le cadre européen : EIF, EIRA et l'<em>Interoperable Europe Act</em></h3>
+
+<p>Le cadre européen illustre le passage d'un référentiel de principes à une architecture concrètement outillée. Le <em>New European Interoperability Framework</em> en pose le socle doctrinal : douze principes directeurs, parmi lesquels le principe d'«&nbsp;ouverture&nbsp;» qui porte sur les données, les spécifications et les logiciels et appelle les administrations à exposer leurs fonctions par des interfaces ouvertes et documentées. Ce principe oriente la conception vers le contrat d'API comme support privilégié plutôt que comme option.</p>
+
+<p>Le passage du principe à l'exécutable s'opère avec la <em>European Interoperability Reference Architecture</em> (EIRA), dont la version v6.1.0 du 31 mai 2024 décompose l'interopérabilité en blocs architecturaux répartis sur les quatre couches. Chaque bloc nomme une capacité d'interopérabilité réutilisable, indépendamment de toute technologie particulière, ce qui en fait un vocabulaire partagé pour décrire et comparer des solutions. Un outillage de conformité l'accompagne, qui permet de modéliser une solution concrète, de la confronter aux blocs de référence et d'identifier les écarts.</p>
+
+<p>L'<em>Interoperable Europe Act</em> marque enfin le basculement de l'interopérabilité d'une recommandation à une obligation juridique contraignante. Le règlement (UE) 2024/903, adopté le 13 mars 2024 et entré en application le 12 juillet 2024, établit un cadre de mesures pour un niveau élevé d'interopérabilité du secteur public à l'échelle de l'Union. Son innovation centrale est l'<strong>évaluation obligatoire de l'interopérabilité</strong> : avant toute décision relative à des systèmes d'information assurant la fourniture transfrontalière de services publics, l'entité concernée doit évaluer formellement les effets de cette décision sur l'interopérabilité — obligation applicable depuis le 12 janvier 2025. Le règlement institue par ailleurs un dispositif de <strong>solutions labellisées</strong>, partagées et réutilisables, conçu pour mutualiser les briques validées plutôt que de réinventer des intégrations point-à-point.</p>
+
+<div class="avert">
+  <p><strong>Ce cas est le premier de la somme où l'interopérabilité devient une contrainte de conformité opposable, et il est cité à ce titre seul.</strong> Il n'est ni un modèle pour le cadre canadien, ni un précédent applicable au vertical financier : le Livre III instruit les textes canadiens à leur propre grain, et aucun raisonnement par analogie européenne n'y est admis. Ce qui se transporte d'ici au Livre III est le <strong>geste</strong> — ériger une évaluation préalable en exigence légale —, jamais son contenu.</p>
+</div>
+
+<!-- ===================================================== § 1.3 ============ -->
+<h2 id="s13"><span class="sig">§ 1.3</span>Architectures d'intégration : de la SOA aux maillages</h2>
+
+<p>Les sections précédentes ont posé le vocabulaire et les cadres d'évaluation ; il s'agit maintenant de retracer comment les styles d'intégration ont matérialisé l'invariant dans des architectures concrètes. Le parcours va du bus de services jusqu'aux maillages distribués, sans céder au récit d'une simple succession de générations : chaque style a <strong>déplacé la frontière du couplage</strong> plutôt que de l'abolir, et les ruptures apparentes prolongent souvent des principes plus anciens. C'est la leçon la plus utile de cette section pour la suite de la somme.</p>
+
+<h3>1.3.1 Architecture orientée services et services web</h3>
+
+<h4>1.3.1.1 Fondements et principes</h4>
+
+<p>L'architecture orientée services (SOA) naît d'un constat économique avant d'être un choix technique : la prolifération des connexions point-à-point engendre une dette d'intégration dont le coût croît quadratiquement avec le nombre de systèmes. La SOA propose de substituer à ce maillage <em>N</em>×<em>N</em> une médiation par services réutilisables exposant des capacités métier derrière des contrats stables. Ses principes directeurs — couplage faible, contrat de service explicite, autonomie, abstraction, réutilisabilité, composabilité et découvrabilité — constituent moins une recette qu'une grille de conception orientée vers la stabilité des interfaces sous changement.</p>
+
+<h4>1.3.1.2 SOAP, WSDL et l'échec de la découverte par annuaire</h4>
+
+<p>La concrétisation technique dominante de la SOA au tournant des années 2000 fut la pile des services web, articulée autour de trois piliers : l'enveloppe de messagerie <strong>SOAP</strong>, neutre vis-à-vis du transport ; le contrat machine-lisible <strong>WSDL</strong>, qui décrit opérations, messages et liaisons ; et l'annuaire <strong>UDDI</strong>, censé porter la découverte dynamique des services. Autour de ce noyau, la pile WS-* ajouta des qualités de service contractualisées : sécurité de message, messagerie fiable, adressage, politique.</p>
+
+<div class="avert">
+  <p><strong>La découverte centralisée par registre fut un échec relatif — les annuaires UDDI publics furent retirés dès 2006 — et c'est le fait le plus instructif de cette sous-section.</strong> La somme y revient au ch. 9, où la récurrence <em>registre UDDI → registre de services → registre d'agents</em> est analysée pour elle-même. Le point à retenir ici est de méthode : un registre ne réussit pas parce qu'il est techniquement correct, mais parce qu'un régime de gouvernance lui donne une raison d'être tenu à jour.</p>
+  <p>Le caractère «&nbsp;relatif&nbsp;» de cet échec relève d'une <strong>absence de documentation</strong> au sens de R-14 : le socle hérité documente le retrait des annuaires publics, non l'absence d'usages privés persistants.</p>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>La richesse de WS-* eut un coût : la complexité d'interopérabilité entre piles fournisseurs. Le profilage et le recours quasi systématique à un style d'encodage unique furent nécessaires pour garantir l'interopérabilité réelle entre implémentations — un contrat syntaxique exhaustif ne suffit pas sans convention d'usage partagée. Le constat vaut tel quel pour les profils d'usage des protocoles agentiques.</p>
+</div>
+
+<h4>1.3.1.3 Granularité et gouvernance</h4>
+
+<p>La question de la granularité est le point de bascule pratique de la SOA. Un service trop fin recrée le couplage bavard (<em>chatty</em>) que l'architecture voulait éliminer ; un service trop grossier redevient un silo. La réponse retenue consiste à identifier les services par <strong>capacités métier</strong> plutôt que par entités techniques, et à privilégier une approche <em>contract-first</em> où le contrat est conçu avant le code qui l'implémente. Cette discipline n'a de valeur que soutenue par une gouvernance du cycle de vie : référentiel de services, versionnement, validation de conformité, maîtrise des dépendances. Sans elle, le découplage initial se dégrade silencieusement à mesure que des consommateurs s'attachent à des détails non contractuels.</p>
+
+<h3>1.3.2 Bus de services d'entreprise et intégration B2B</h3>
+
+<p>Le <strong>bus de services d'entreprise</strong> (ESB) opérationnalise la SOA en infrastructure d'intégration : une dorsale de médiation substituant au couplage point-à-point une connectivité distribuée. Ses capacités cardinales sont la connectivité multi-protocole, le routage par contenu et la transformation de message, qui réconcilient les formats hétérogènes des extrémités. L'ESB matérialise ainsi un découplage de format et de protocole : producteur et consommateur n'ont plus à partager ni représentation ni canal, la médiation absorbant l'hétérogénéité.</p>
+
+<p>L'ESB centralisé a souffert de sa propre réussite : concentrer toute la médiation sur une dorsale partagée en a fait un point de contention organisationnel et un goulot de déploiement — l'antithèse du couplage faible recherché. Son déclin sur site s'est accompagné de la montée des plateformes d'intégration en tant que service (iPaaS) et des plateformes d'intégration hybrides, qui externalisent la médiation vers le nuage et l'ouvrent à l'intégration à faible codage par des utilisateurs métier. La modernisation des dorsales héritées suit deux voies complémentaires : la mise en façade par des API contemporaines, et le motif du figuier étrangleur (<em>strangler fig</em>) qui substitue progressivement de nouveaux services aux fonctions de l'ESB sans réécriture massive.</p>
+
+<p>L'intégration <strong>B2B</strong>, enfin, constitue un sous-domaine d'une remarquable longévité : EDIFACT en Europe et ASC X12 en Amérique du Nord structurent encore l'essentiel des échanges de commandes, factures et avis d'expédition entre partenaires commerciaux, transportés par AS2 et son successeur AS4. Leur place dans la pile moderne n'est pas résiduelle mais <strong>frontalière</strong> : ils survivent derrière des passerelles B2B qui assurent la correspondance entre messages EDI et représentations internes. L'interopérabilité réelle se gère par traduction aux frontières plutôt que par remplacement uniforme — constat qui vaudra tel quel pour l'insertion des agents dans un parc applicatif existant (ch. 24).</p>
+
+<h3>1.3.3 Microservices et communication inter-services</h3>
+
+<p>Le style microservices se lit autant comme un héritage que comme une réaction à la SOA. La continuité tient au principe partagé du service à couplage faible derrière un contrat ; la rupture tient au déplacement de l'intelligence <strong>de la médiation vers les extrémités</strong>. Le mot d'ordre <em>smart endpoints, dumb pipes</em> inverse la logique de l'ESB : la transformation et le routage retournent dans les services, le réseau redevenant un simple transport. Deux corollaires en découlent : la décentralisation des données — chaque service possède sa base, proscrivant la base partagée comme couplage caché — et le déploiement indépendant, qui fait du découplage temporel de cycle de vie un objectif de premier rang. La délimitation des services s'ancre dans les contextes bornés (<em>bounded contexts</em>) de la conception pilotée par le domaine : la frontière d'un service épouse une frontière de modèle métier cohérent, faisant du contrat la traduction d'une <strong>autonomie sémantique</strong>.</p>
+
+<p>La communication inter-services se laisse classer selon le couplage qu'elle induit dans le temps et l'espace. Le style <strong>synchrone</strong> (requête-réponse) crée un couplage temporel : l'appelant bloque sur la disponibilité de l'appelé, propageant pannes et latences le long de la chaîne d'appels. Le style <strong>asynchrone</strong> par messagerie découple temporellement producteur et consommateur via un intermédiaire persistant. Le style <strong>événementiel</strong> pousse plus loin le découplage spatial : l'émetteur ignore l'identité et le nombre de ses consommateurs.</p>
+
+<p>Distribuer un système expose enfin à des modes de défaillance absents du monolithe, qu'il faut contenir par des patrons de résilience : le <strong>disjoncteur</strong> (<em>circuit breaker</em>) interrompt les appels vers un service défaillant pour éviter l'épuisement des ressources de l'appelant ; le <strong>cloisonnement</strong> (<em>bulkhead</em>) isole les pools de ressources pour qu'une panne localisée ne se propage pas ; la <strong>saga</strong> gère la cohérence d'une transaction métier répartie par compensations (voir §&nbsp;1.6.2). Symétriquement, plusieurs anti-patrons signalent un découplage manqué : le <strong>monolithe distribué</strong>, où des services prétendument autonomes doivent être déployés ensemble ; les <strong>services bavards</strong>, dont la granularité excessive multiplie les allers-retours ; et la <strong>base de données partagée</strong>, qui rétablit par-dessous le couplage que les contrats abolissaient au-dessus.</p>
+
+<p>Le critère de réussite demeure constant, et il vaut d'être retenu comme tel : <em>un service ne peut évoluer indépendamment que si rien hors de son contrat ne le relie à ses pairs.</em></p>
+
+<h3>1.3.4 Maillages — le socle transposable</h3>
+
+<div class="avert">
+  <p><strong>Cette sous-section est délibérément partielle.</strong> La déclinaison <strong>agentique</strong> du maillage — le maillage d'agents comme point d'application de la politique, PEP/PDP, <em>zero trust</em> transposé au graphe d'agents — n'est pas traitée ici : elle constitue le ch. 37, au Livre IV. Ce qui suit est le socle <strong>transposable</strong> seulement, posé une fois pour que le ch. 37 puisse s'y appuyer sans le reconstruire.</p>
+</div>
+
+<p>Le maillage de services (<em>service mesh</em>) répond à un problème né de la prolifération des microservices : les préoccupations transversales — routage, chiffrement mutuel du transport, nouvelles tentatives, observabilité — se trouvent dupliquées dans chaque service et chaque langage. Le maillage les externalise dans une couche d'infrastructure dédiée. Son architecture sépare un <strong>plan de contrôle</strong>, qui distribue la configuration et la politique, d'un <strong>plan de données</strong> fait de mandataires latéraux (<em>sidecar proxies</em>) interceptant tout le trafic entrant et sortant de chaque service. Le service applicatif n'a plus connaissance ni de la sécurité de transport ni de la politique de trafic : il dialogue avec son mandataire local, qui applique le contrat opérationnel.</p>
+
+<p>Cette séparation est le concept que la somme réutilise le plus loin de son origine : c'est elle, et non le produit qui l'implémente, qui est transposée au ch. 37. Le modèle <em>sidecar</em> a par ailleurs un coût mesurable — chaque saut traverse deux mandataires, ajoutant latence et consommation proportionnelles au nombre d'instances —, ce qui a motivé l'émergence de plans de données alternatifs : modes ambiants dissociant une couche par nœud portant le transport sécurisé des fonctions applicatives activées à la demande, ou déport d'une partie de la fonction réseau dans le noyau du système d'exploitation. L'externalisation des préoccupations transversales est un acquis structurel ; seul son <strong>point d'application</strong> — instance, nœud ou noyau — reste en débat.</p>
+
+<p>Le <strong>maillage d'événements</strong> (<em>event mesh</em>) est le pendant événementiel : là où le maillage de services fédère des appels synchrones, il fédère des flux d'événements à travers courtiers, régions et organisations, par réplication entre grappes ou par dorsales assurant un routage dynamique vers les seuls courtiers ayant des abonnés intéressés. Le découplage spatial du producteur s'étend ainsi à l'échelle géographique et inter-organisationnelle.</p>
+
+<!-- ===================================================== § 1.4 ============ -->
+<h2 id="s14"><span class="sig">§ 1.4</span>Styles d'API, conception et gestion</h2>
+
+<p>Cette section ouvre le bloc des <strong>mécanismes d'échange</strong>. Après les architectures d'intégration, elle examine l'interface programmatique elle-même : les styles par lesquels deux systèmes se parlent, les contrats machine-lisibles qui en figent la forme, et le plan de gestion qui en gouverne l'exposition. L'invariant s'y lit à l'échelle de l'appel : un style définit le couplage temporel et spatial acceptable, un contrat formalise l'interface partagée et conditionne l'évolution sans rupture, et la couche de gestion industrialise le cycle de vie de ce contrat.</p>
+
+<h3>1.4.1 Panorama des styles et critères de choix</h3>
+
+<p>Le style <strong>REST</strong> procède de contraintes architecturales — interface uniforme, sans état, client-serveur, mise en cache, système en couches — qui font de la ressource adressable par URI, manipulée par un jeu verbal restreint et des représentations négociées, le pivot du découplage entre client et serveur. Un modèle de maturité largement diffusé gradue l'adoption en quatre niveaux, de l'appel de procédure tunnelé sur un point d'extrémité unique jusqu'aux contrôles hypermédia.</p>
+
+<p>Il importe de souligner que ce modèle est une <strong>heuristique pédagogique</strong>, distincte de la définition d'origine : pour cette dernière, l'hypermédia comme moteur de l'état applicatif n'est pas un degré supérieur facultatif mais une condition nécessaire pour parler de REST. La pratique industrielle, largement arrêtée au niveau intermédiaire, relève d'un appel de procédure discipliné sur HTTP plus que d'une architecture pleinement hypermédia. Cette tension illustre le fil conducteur : la promesse de découplage maximal de REST a un <strong>coût de conformité</strong> que la plupart des organisations choisissent de ne pas payer.</p>
+
+<p>Là où REST expose des ressources, le style <strong>RPC</strong> expose des procédures : le client invoque une méthode typée comme s'il s'agissait d'un appel local, le contrat décrivant les signatures plutôt que des ressources. gRPC en est la réalisation contemporaine dominante, appuyée sur HTTP/2 pour le multiplexage, le contrôle de flux et la diffusion en continu bidirectionnelle, et sur un langage de description d'interface compilé assurant une sérialisation binaire dense. Le coût de cette densité est l'accessibilité : un navigateur ne maîtrise pas suffisamment la trame HTTP/2 pour parler gRPC nativement, d'où des variantes passant par un mandataire de traduction ou unifiant plusieurs modes derrière une même définition de service.</p>
+
+<p>Le découplage y est de nature différente : <strong>REST découple par l'uniformité de l'interface, gRPC par la stabilité d'un contrat compilé.</strong></p>
+
+<p><strong>GraphQL</strong> déplace le pouvoir de cadrage du serveur vers le client : plutôt que de multiplier les points d'extrémité, le serveur publie un schéma typé unique et le client formule exactement les champs dont il a besoin, ce qui résorbe les pathologies de sur-récupération et de sous-récupération. À l'échelle de l'entreprise, l'enjeu devient la <strong>composition</strong> : exposer un graphe unifié agrégeant des dizaines de services autonomes sans recentraliser leur propriété. Deux voies s'y opposent — une fédération outillée mais liée à un écosystème, et un travail de normalisation ouverte de la composition de schémas, en cours. La trajectoire rejoint le fil conducteur : la fédération n'a de valeur d'interopérabilité que si la <strong>règle de composition est elle-même un contrat ouvert</strong>, et non un produit captif.</p>
+
+<div class="avert">
+  <p>Le point vaut d'être retenu tel quel pour le ch. 7 : c'est le même critère qui y départage une spécification protocolaire <em>gouvernée</em> d'une spécification simplement <em>publiée</em>.</p>
+</div>
+
+<p>Les <strong>webhooks</strong>, enfin, inversent l'initiative : le consommateur enregistre une URL de rappel et le producteur l'invoque par une requête HTTP sortante lorsqu'un événement survient. Ce mécanisme constitue en pratique la première forme d'interopérabilité événementielle <strong>entre organisations</strong>, car il ne suppose ni courtier partagé ni connexion persistante — seulement deux points d'extrémité HTTP. Sa faiblesse historique fut l'absence de contrat lisible par machine, comblée depuis par la formalisation des rappels et des webhooks dans les contrats d'API.</p>
+
+<h3>1.4.2 Contrats d'API : OpenAPI, AsyncAPI et la discipline du contrat d'abord</h3>
+
+<p>Le contrat des API synchrones s'est standardisé autour d'<strong>OpenAPI</strong>. Sa version 3.1.0 a marqué un jalon décisif en réalignant pleinement le format sur JSON Schema, résorbant une divergence de longue date entre deux dialectes de description de données ; la version 3.2.0, publiée en septembre 2025, étend la portée du contrat aux interactions en continu. OpenAPI matérialise le <strong>contrat syntaxique</strong> : une description unique, lisible par l'humain et la machine, à partir de laquelle se génèrent souches, simulacres, documentation et validateurs — ce qui découple le rythme de développement du producteur et des consommateurs.</p>
+
+<p>Le contrat synchrone ne suffit pas à décrire un échange asynchrone, où il n'y a ni requête ni réponse appariées mais des messages publiés sur des canaux. <strong>AsyncAPI</strong> comble cette lacune en transposant à l'événementiel la même démarche : sa version 3.0.0, publiée en décembre 2023, organise la description autour des notions de canaux, d'opérations et de messages, et sépare nettement le canal de l'opération qui l'emprunte. La symétrie avec OpenAPI est délibérée : une organisation peut décrire sa surface synchrone et sa surface événementielle dans deux formalismes cousins, réutilisant les mêmes schémas de message.</p>
+
+<p>Le contrat peut précéder le code (<em>design-first</em>) ou en être dérivé (<em>code-first</em>). L'approche conception-d'abord présente des bénéfices d'interopérabilité décisifs : le contrat, négocié avant toute implémentation, sert immédiatement de support à la simulation, à la génération parallèle des deux côtés, et à la gouvernance par revue et vérification de style. L'approche code-d'abord, plus rapide à amorcer, expose au risque d'un contrat qui <strong>dérive</strong> au gré de l'implémentation. Le choix engage directement l'évolution : un contrat traité comme artefact de première classe se versionne et se vérifie indépendamment du code.</p>
+
+<p>Maintenir l'interopérabilité sous changement suppose enfin une stratégie de versionnement explicite et une <strong>signalisation propre de la dépréciation</strong> — l'écosystème HTTP fournit des en-têtes permettant d'annoncer la dépréciation et la date de retrait d'un point d'extrémité, donnant aux consommateurs le temps de migrer sans rupture brutale. La discipline complémentaire est la vérification du contrat <strong>côté consommateur</strong> : les contrats pilotés par le consommateur formalisent les attentes effectives des clients, de sorte qu'une évolution incompatible soit détectée avant déploiement plutôt que constatée en production.</p>
+
+<h3>1.4.3 Gestion d'API : passerelle, portail, orchestration de parcours</h3>
+
+<p>Une fois les contrats définis, encore faut-il exposer les API de façon contrôlée. La <strong>passerelle d'API</strong> constitue le point d'entrée qui externalise les préoccupations transversales hors des services : routage, authentification et autorisation, limitation de débit et de quota, mise en cache, journalisation et observabilité. Elle réalise un rôle de médiation comparable, mais non identique, à celui de l'ESB : là où l'ESB centralisait routage et transformation lourde au cœur du réseau, la passerelle se concentre sur la gestion du trafic <strong>en bordure d'exposition</strong>.</p>
+
+<div class="avert">
+  <p>Ce déplacement n'est pas neutre : concentrer l'authentification, la limitation de débit et l'application des politiques à la passerelle découple ces préoccupations de la logique métier, mais introduit un <strong>point de contrôle dont la gouvernance doit elle-même être pensée</strong>. C'est structurellement le même geste que celui du ch. 37 — externaliser l'application de la politique dans une couche dédiée —, et il y portera les mêmes bénéfices et les mêmes risques. Le socle est ici ; la transposition agentique est là-bas.</p>
+</div>
+
+<p>La passerelle n'est que l'organe d'exécution d'un plan de gestion plus large. La <strong>gestion d'API</strong> couvre le cycle de vie complet du contrat — conception, publication, versionnement, dépréciation, retrait —, ainsi que les catalogues recensant les API disponibles et les portails par lesquels les consommateurs les découvrent et s'y abonnent. Cette industrialisation transforme l'API en <strong>produit géré</strong>, doté d'un propriétaire, d'un public cible et d'indicateurs d'usage. Une gouvernance <strong>fédérée</strong> — règles communes appliquées de manière distribuée plutôt que centralisée — concilie l'autonomie des équipes propriétaires et la cohérence du portefeuille ; l'application automatisée des règles de style par vérification des contrats, déplacée au plus tôt dans la chaîne d'intégration, l'opérationnalise.</p>
+
+<p>Un contrat d'API décrit enfin des opérations isolées ; il ne dit rien des <strong>séquences d'appels</strong> qui réalisent un parcours métier complet — s'authentifier, créer une ressource, interroger son statut, confirmer. Une spécification dédiée standardise la description, lisible par machine, de telles séquences multi-étapes : ordre des appels, passage de données d'une étape à la suivante, conditions de succès et de reprise. Une seconde répond à un besoin complémentaire : appliquer des surcharges réutilisables à un contrat sans le modifier à la source — traduction de descriptions, ajout d'exemples, masquage d'éléments internes, adaptation par environnement.</p>
+
+<p>Ces deux mécanismes prolongent la logique contractuelle au-delà de l'opération unitaire : l'un formalise la <strong>composition temporelle</strong> des appels, l'autre la <strong>spécialisation contrôlée</strong> du contrat selon le public. <span class="auteur">Lecture de l'auteur</span> le premier est le plus proche parent pré-agentique d'un plan d'agent : une séquence d'appels décrite, ordonnée, conditionnée. La différence est que ce plan-là est écrit avant l'exécution et vérifiable comme contrat, là où le plan agentique est produit pendant l'exécution. Le socle n'établit pas cette parenté ; elle est proposée comme lecture, et son instruction relève du ch. 22.</p>
+
+<!-- ===================================================== § 1.5 ============ -->
+<h2 id="s15"><span class="sig">§ 1.5</span>Messagerie, middleware orienté message et architecture événementielle</h2>
+
+<p>L'appel synchrone couple le demandeur à la disponibilité, au rythme et à la localisation du fournisseur. Le middleware orienté message (MOM) brise ce couplage en interposant un intermédiaire qui absorbe les écarts de temps, de débit et de présence entre les parties. Le fil conducteur y prend une forme particulière : le découplage devient <strong>temporel</strong> et non plus seulement spatial, le contrat se déplace de la signature d'opération vers le <strong>schéma de message</strong>, et l'évolution se gouverne au niveau des charges utiles échangées.</p>
+
+<h3>1.5.1 Le modèle du MOM et les sémantiques de canal</h3>
+
+<p>Le modèle conceptuel repose sur trois primitives : le <strong>message</strong>, unité de données autoporteuse munie d'un en-tête et d'une charge utile ; le <strong>canal</strong>, conduit logique nommé sur lequel transitent les messages d'une même catégorie ; et le couple <strong>producteur/consommateur</strong>, qui n'a jamais à se connaître ni à coexister dans le temps. Le producteur dépose un message et poursuit son traitement ; le consommateur le retire quand il est prêt. L'anatomie d'un message sépare l'en-tête — métadonnées d'acheminement, d'identité et de corrélation que l'infrastructure exploite — de la charge utile métier, <strong>opaque au courtier</strong>.</p>
+
+<p>Trois sémantiques de canal se distinguent, qu'il importe de ne pas confondre. La <strong>file</strong> (point-à-point) répartit les messages entre consommateurs concurrents : chaque message est livré à exactement un consommateur du groupe, ce qui permet la mise à l'échelle horizontale du traitement. La <strong>publication-abonnement</strong> diffuse chaque message à tous les abonnés du canal : un même événement atteint <em>N</em> destinataires indépendants. Le <strong>flux persistant</strong> (journal) conserve les messages dans un registre ordonné et rejouable : les consommateurs y progressent par décalage et peuvent relire l'historique, propriété absente des files traditionnelles où la consommation est destructive.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Le flux persistant comme abstraction d'intégration trouve sa source dans le journal d'ajout comme structure fondamentale des systèmes distribués : un journal partitionné, ordonné et durable suffit à reconstruire l'état des consommateurs en aval, ce qui rapproche la messagerie du journal de transactions d'une base de données. La frontière entre file et flux, longtemps nette, se brouille d'ailleurs : des mécanismes récents permettent une consommation concurrente de type file au-dessus d'un journal persistant. Le tableau des sémantiques se lit donc comme un <strong>continuum de propriétés</strong> — consommation destructive ou non, un ou <em>N</em> destinataires, rejouabilité — plutôt que comme une typologie cloisonnée de produits.</p>
+</div>
+
+<h3>1.5.2 Courtiers, protocoles et garanties de livraison</h3>
+
+<p>La sélection d'un courtier s'arbitre sur quelques axes : débit soutenu, latence de bout en bout, modèle de persistance, granularité de l'acquittement et topologie de déploiement. Un courtier de files mûr fondé sur le routage par échanges excelle dans la distribution de tâches et le routage fin par clé, avec acquittement par message ; un journal partitionné conservé sur disque privilégie le débit et la durabilité, au prix d'une granularité d'acquittement par partition ; une architecture dissociant service et stockage facilite l'élasticité et la multilocation ; une pile légère vise la latence minimale et la simplicité opérationnelle. <strong>Aucun courtier n'est universellement supérieur</strong> : la grille de sélection doit confronter le profil de charge réel — taille des messages, ratio lecture/écriture, exigence de rejeu, contraintes de latence — aux propriétés effectives du produit, et non à ses arguments de positionnement.</p>
+
+<p>L'interopérabilité au niveau du fil de communication dépend du <strong>protocole</strong>, distinct du courtier qui l'implémente. AMQP 1.0, normalisé puis repris en ISO/IEC 19464:2014, définit un protocole de messagerie indépendant du courtier : il spécifie le format de trame et la sémantique de transfert sans imposer de modèle de courtier. ⚠ Il convient de le distinguer d'AMQP 0-9-1, protocole antérieur et de modèle différent : le partage du sigle masque une <strong>discontinuité de conception</strong>. MQTT cible la périphérie contrainte — équipements à faible puissance, réseaux à bande passante limitée ou intermittents. STOMP retient un parti pris inverse : un protocole textuel délibérément minimal, trivial à implémenter, au prix d'une expressivité réduite.</p>
+
+<p>Trois sémantiques de livraison encadrent enfin toute messagerie fiable : <strong>au plus une fois</strong> (perte possible, jamais de doublon), <strong>au moins une fois</strong> (jamais de perte, doublons possibles) et <strong>exactement une fois</strong>.</p>
+
+<div class="avert">
+  <p><strong>La troisième, en tant que garantie de <em>livraison</em>, est irréalisable sous pannes.</strong> Il s'agit d'une instance du problème des deux généraux : aucun protocole d'échange de messages sur un canal faillible ne peut garantir l'accord sans incertitude résiduelle. Promettre une livraison exactement-une-fois absolue relève de l'abus de langage — et c'est un résultat d'impossibilité, non une limite d'implémentation. La somme le reprend au ch. 48, où la sémantique d'effet en tire les conséquences pour un virement qui réussit à moitié.</p>
+</div>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>La voie praticable n'est pas la livraison mais le <strong>traitement</strong> exactement-une-fois, obtenu en combinant une livraison au-moins-une-fois avec un consommateur <strong>idempotent</strong> : rejouer le même message ne modifie pas l'état au-delà du premier traitement. L'idempotence se construit par déduplication sur un identifiant de message, par opérations naturellement idempotentes, ou par condition de version. L'effet observable devient indépendant du nombre de remises, ce qui rend les doublons inoffensifs sans prétendre les éliminer du canal.</p>
+</div>
+
+<p>L'ordre, enfin, n'est garanti qu'à l'intérieur d'une partition ou d'un flux, jamais globalement sur un canal partitionné, car l'horloge physique ne fonde aucun ordre total dans un système distribué. La conception doit donc colocaliser dans une même partition les messages dont l'ordre relatif importe — typiquement par clé d'entité — et accepter l'entrelacement arbitraire entre partitions. Découplage, ordre et débit forment ici un compromis explicite : élargir le parallélisme par partitionnement affaiblit les garanties d'ordre transversal.</p>
+
+<h3>1.5.3 Architecture événementielle et fiabilité</h3>
+
+<p>L'architecture événementielle se décline en plusieurs styles qu'il faut distinguer pour éviter des amalgames coûteux. La <strong>notification d'événement</strong> signale qu'un fait s'est produit sans en transporter l'état, obligeant le consommateur à rappeler la source — couplage faible, mais trafic de retour. Le <strong>transfert d'état porté par l'événement</strong> embarque les données nécessaires au consommateur, supprimant le rappel au prix d'un schéma plus riche à faire évoluer. L'<strong>event sourcing</strong> érige le journal d'événements en source de vérité : l'état courant se dérive par rejeu de la séquence, ce qui confère auditabilité et capacité de reconstruction.</p>
+
+<p>Deux topologies organisent la propagation. Le <strong>courtier</strong> (chorégraphie) laisse chaque composant réagir aux événements sans coordonnateur central : couplage minimal, mais flux global difficile à observer. Le <strong>médiateur</strong> introduit un orchestrateur qui pilote la séquence : visibilité accrue, au prix d'un point de couplage de contrôle. L'arbitrage prolonge celui de l'orchestration et de la chorégraphie (voir §&nbsp;1.6.2).</p>
+
+<p>La fiabilité de la publication bute sur le problème de la <strong>double écriture</strong> : un service qui modifie sa base puis publie un événement effectue deux opérations sur deux systèmes sans transaction commune ; une panne entre les deux laisse l'état incohérent. Le patron <strong>Outbox transactionnel</strong> résout ce dilemme en écrivant l'événement dans une table dédiée au sein de la <strong>même transaction locale</strong> que la modification métier : l'atomicité de la base garantit que les deux faits sont validés ensemble ou pas du tout. Un processus séparé relaie ensuite les lignes vers le courtier — relais que la <strong>capture de données de changement</strong> peut instrumenter en lisant le journal de transactions de la base plutôt qu'en l'interrogeant périodiquement. Le relais offrant une livraison au-moins-une-fois, le consommateur doit demeurer idempotent : la chaîne complète — outbox, capture, consommateur idempotent — réalise une publication fiable <strong>sans transaction distribuée</strong>.</p>
+
+<p>L'événement, en franchissant la frontière entre systèmes, devient enfin un contrat. <strong>CloudEvents</strong> standardise l'<em>enveloppe</em> de cet échange — un ensemble d'attributs de métadonnées communs (identifiant, source, type, horodatage) indépendants du format de la charge utile et du protocole de transport. Cette enveloppe interopérable permet de router, filtrer et tracer des événements provenant de sources hétérogènes sans présumer de leur contenu métier, <strong>séparant nettement le contrat de transport du contrat de données</strong>. L'évolution du contenu se gouverne par un <strong>registre de schémas</strong>, qui externalise les schémas de charge utile et en contrôle automatiquement la compatibilité avant qu'un producteur ne publie un format incompatible.</p>
+
+<div class="avert">
+  <p>Le couplage entre enveloppe stable et charge utile gouvernée illustre la maturité de la couche événementielle : le découplage temporel du MOM se complète d'un <strong>découplage d'évolution</strong>, où le contrat d'événement devient l'unité de versionnement partagée entre des systèmes qui ne se connaissent pas. Ce dispositif à deux étages — enveloppe normalisée, contenu gouverné séparément — est exactement celui que le ch. 8 retrouvera dans les enveloppes de message des protocoles agentiques, et le ch. 38 dans la corrélation des traces. Le lecteur qui l'a compris ici n'a pas à le réapprendre là-bas.</p>
+</div>
+
+<!-- ===================================================== § 1.6 ============ -->
+<h2 id="s16"><span class="sig">§ 1.6</span>Patrons d'intégration et coordination de processus</h2>
+
+<p>L'intégration de systèmes hétérogènes ne se réduit pas à un choix de protocole ou de format : elle suppose un <strong>vocabulaire partagé de solutions éprouvées</strong> et une discipline de coordination des traitements qui s'étendent dans le temps.</p>
+
+<h3>1.6.1 Le langage des patrons d'intégration d'entreprise</h3>
+
+<p>Le catalogue des patrons d'intégration d'entreprise (EIP) constitue le vocabulaire de référence de l'intégration par messagerie asynchrone : soixante-cinq patrons organisés autour de quelques familles cardinales. Les <strong>canaux de messages</strong> découplent émetteur et destinataire dans l'espace et le temps ; les <strong>routeurs</strong> — routeur par contenu, liste de destinataires, séparateur, agrégateur — acheminent et recomposent les messages selon leur contenu sans que les extrémités se connaissent ; les <strong>traducteurs</strong> réconcilient les représentations divergentes aux frontières ; les <strong>points d'extrémité</strong> raccordent les applications au système de messagerie.</p>
+
+<p>Deux patrons opérationnels méritent une mention particulière, car la somme les réemploie : le <strong>canal de lettres mortes</strong> (<em>Dead Letter Channel</em>), qui isole les messages non livrables pour éviter qu'une défaillance ponctuelle ne bloque le flux, et le <strong>bon de consigne</strong> (<em>Claim-Check</em>), qui extrait une charge utile volumineuse vers un stockage externe en ne faisant circuler qu'une référence.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>La valeur du langage tient à sa <strong>portabilité</strong> : un routeur par contenu désigne la même intention quelle que soit la plateforme, ce qui constitue un contrat de conception partagé entre équipes. C'est à ce titre, et non comme catalogue d'implémentations, que la somme le conserve.</p>
+</div>
+
+<p>Lorsque <em>N</em> applications doivent s'échanger des données, le couplage par traductions directes croît en <em>N</em>×<em>N</em> : chaque paire exige son propre traducteur, et l'ajout d'un système impose de modifier tous les autres. Le <strong>modèle de données canonique</strong> brise cette explosion combinatoire en introduisant un format pivot indépendant des applications : chaque système ne traduit qu'entre son format propre et le canonique, ramenant le coût d'intégration à un ordre linéaire <em>2N</em>.</p>
+
+<div class="avert">
+  <p><strong>Le patron comporte des pièges bien documentés, et ils valent avertissement pour toute la somme.</strong> Un canonique trop ambitieux devient un schéma universel rigide, coûteux à faire évoluer, qui <strong>recouple paradoxalement les parties par sa lenteur de changement</strong> ; à l'inverse, un canonique négligé dégénère en plus petit dénominateur commun appauvri. La gouvernance du modèle pivot — sa portée, sa cadence d'évolution, ses règles de compatibilité — conditionne donc son succès bien davantage que sa justesse initiale.</p>
+  <p><span class="auteur">Lecture de l'auteur</span> tout schéma d'échange agentique prétendant à l'universalité hérite de ce dilemme sans le résoudre ; le constat est posé ici, son instruction relève des ch. 9 et 43.</p>
+</div>
+
+<h3>1.6.2 Coordination : orchestration, chorégraphie et transactions</h3>
+
+<h4>1.6.2.1 Orchestration contre chorégraphie</h4>
+
+<p>Coordonner un processus réparti sur plusieurs services suppose de choisir <strong>où réside la logique de séquencement</strong>. L'<strong>orchestration</strong> confie cette logique à un coordonnateur central qui invoque les services dans l'ordre voulu : la visibilité du processus est totale et son audit aisé, au prix d'un couplage de contrôle — le coordonnateur connaît tous les participants et devient un point de dépendance. La <strong>chorégraphie</strong> distribue au contraire la logique : chaque service réagit aux événements émis par les autres sans chef d'orchestre, ce qui maximise le découplage et l'autonomie des équipes, mais rend l'état global du processus difficile à observer et à diagnostiquer.</p>
+
+<p>L'arbitrage se joue sur quelques critères concrets : l'<strong>auditabilité</strong> favorise l'orchestration ; l'<strong>autonomie des équipes</strong> et la résilience favorisent la chorégraphie ; la complexité du processus et le nombre de participants déplacent le point d'équilibre.</p>
+
+<div class="avert">
+  <p><strong>Ce critère d'auditabilité est le pivot le plus important que ce chapitre lègue au Livre III.</strong> C'est lui, et non une préférence d'architecture, qui explique pourquoi un exploitant soumis à une exigence de démonstration devant un tiers retient l'orchestration : il ne peut produire l'état d'un processus qu'aucun composant ne détient. Le raisonnement complet — sous exigence réglementaire stricte, le cadre déterministe invoque les agents et jamais l'inverse — est instruit au ch. 29, avec les textes qui le fondent. Il <strong>n'est pas établi ici</strong> : ce chapitre en fournit la prémisse d'architecture, non la démonstration réglementaire.</p>
+</div>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>La tension entre les deux styles se formalise dans la théorie des types de session multipartites, qui dérive d'une spécification globale de protocole — la chorégraphie — les types locaux que chaque participant doit respecter, garantissant statiquement l'absence de blocage. Cette projection global-vers-local éclaire pourquoi une chorégraphie correcte exige une spécification préalable rigoureuse, là où l'orchestration centralise ce contrat dans le coordonnateur.</p>
+</div>
+
+<h4>1.6.2.2 Saga, validation à deux phases et cohérence éventuelle</h4>
+
+<p>Les transactions réparties confrontent l'intégrateur à des limites théoriques établies. Sous partition réseau, cohérence forte et disponibilité ne peuvent coexister. Le protocole de validation à deux phases offre l'atomicité distribuée, mais au prix d'un verrouillage synchrone qui bloque les participants pendant la coordination ; un résultat d'impossibilité classique montre par ailleurs qu'aucun consensus déterministe n'est garanti en présence d'asynchronie et de défaillances, ce qui fragilise le coordonnateur lui-même.</p>
+
+<p>Le patron <strong>saga</strong> renonce à l'atomicité globale au profit d'une suite de transactions locales, chacune assortie d'une <strong>compensation</strong> qui annule sémantiquement son effet en cas d'échec ultérieur. La saga se décline en variante <strong>orchestrée</strong> — un coordonnateur séquence les étapes et déclenche les compensations — et <strong>chorégraphiée</strong> — chaque étape réagit aux événements précédents.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Ce renoncement assumé s'inscrit dans un cadre de cohérence alternatif, posé face aux propriétés transactionnelles classiques : la cohérence éventuelle devient un <strong>choix de conception explicite</strong>, où l'on échange la garantie d'isolation immédiate contre la disponibilité et le découplage, en reportant la réconciliation sur des mécanismes compensatoires.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Ces résultats sont des résultats d'impossibilité, et la somme les traite comme tels.</strong> Ils ne se périment pas avec les technologies qui les rencontrent : un agent qui coordonne deux institutions y est soumis exactement comme un service qui coordonne deux bases. Le ch. 48 en tire les conséquences pour la sémantique d'effet ; l'<strong>accord entre agents sous asynchronie et défaillance partielle</strong> — ce que deux agents tiennent pour vrai quand le réseau se partitionne — est en revanche un angle mort <strong>déclaré</strong> du plan de la somme (risque 15 du TOC), dont l'arbitrage est une décision d'auteur non prise. Le présent chapitre pose les résultats ; il ne comble pas cet écart et ne prétend pas le faire.</p>
+</div>
+
+<h4>1.6.2.3 Modélisation des processus</h4>
+
+<p>Pour rendre les processus exécutables intelligibles aux parties prenantes non techniques, un triptyque de notations couvre trois facettes complémentaires de l'automatisation. <strong>BPMN</strong> décrit les processus séquencés par flux ; <strong>DMN</strong> externalise les règles de décision dans des tables lisibles, les séparant de la logique de flux ; <strong>CMMN</strong> traite les processus non structurés, pilotés par les données et le jugement humain plutôt que par une séquence figée.</p>
+
+<div class="avert">
+  <p><strong>Un point statutaire mérite d'être souligné, et il est de ceux que la lecture rapide efface</strong> : parmi ces trois notations, <strong>seule BPMN a été reprise comme norme internationale</strong> (ISO/IEC 19510:2013), ce qui lui confère une assise de normalisation que DMN et CMMN n'ont pas. Les traiter comme trois normes de même rang serait une erreur de fait.</p>
+</div>
+
+<p>La valeur d'interopérabilité de ces notations tient à leur <strong>double lecture</strong> : un même diagramme sert de contrat d'auditabilité pour les métiers et la conformité, tout en se compilant en artefact exécutable, fermant l'écart entre la spécification et l'exécution. C'est cette propriété — et non la notation elle-même — que le ch. 29 réemploie pour traduire des exigences réglementaires en frames déterministes.</p>
+
+<div class="avert">
+  <p><strong>Ce que cette section ne traite pas.</strong> L'<strong>exécution durable</strong>, les <strong>pipelines</strong> et l'<strong>orchestration agentique</strong> — moteurs à exécution durable, continuum lots/flux, et le contraste entre orchestration déterministe et orchestration pilotée par un agent générateur de plans — partent <strong>en entier</strong> au ch. 22 (Livre III), où la taxonomie OO1-OO4 et le paradigme de l'autonomie encadrée les reprennent. Leur absence ici est un arbitrage de découpage, déclaré à la ligne Fusion de ce chapitre.</p>
+</div>
+
+<!-- ===================================================== § 1.7 ============ -->
+<h2 id="s17"><span class="sig">§ 1.7</span>Synthèse : ce que le chapitre lègue à la somme</h2>
+
+<p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur, conformément à la table détaillée du TOC.</em></p>
+
+<p>Ce chapitre a soutenu une thèse et un seul déplacement : l'interopérabilité n'est pas un attribut qu'un système possède, mais une <strong>propriété qu'une organisation maintient</strong>, à un coût récurrent, sous une gouvernance, et contre trois difficultés qui ne se dissolvent jamais — hétérogénéité, autonomie, distribution. Ce déplacement a une portée directe sur la suite : il interdit de lire les protocoles agentiques comme une solution à l'interopérabilité, et oblige à les lire comme un <strong>déplacement supplémentaire de la frontière du couplage</strong>, avec ses propres coûts de maintien.</p>
+
+<p>Cinq legs précis se transmettent aux chapitres aval, et ils sont nommés ici pour que ces chapitres n'aient pas à les reconstruire.</p>
+
+<dl class="legs">
+  <dt>Vers le ch. 2 — la sémantique</dt>
+  <dd>La pile canonique (§&nbsp;1.1.2) établit que le niveau sémantique est cumulatif et distinct du syntaxique. Le ch. 2 instruit ce niveau — formats, schémas, ontologies, graphes de connaissances — et le ch. 9 en tire l'écart agentique : accord de protocole contre compréhension.</dd>
+
+  <dt>Vers le ch. 3 — l'identité et la gouvernance</dt>
+  <dd>Tout ce qui, dans ce chapitre, touche à la sécurité de l'intégration a été délibérément renvoyé : l'héritage IAM — identité fédérée, autorisation déléguée, <em>zero trust</em>, identité de charge de travail — est posé une seule fois au ch. 3, que les ch. 12 et 37 citent <strong>sans le reconstruire</strong>. C'est la principale économie de la fusion côté identité, et elle n'a lieu que si ces chapitres s'y tiennent.</dd>
+
+  <dt>Vers le ch. 22 — l'orchestration déterministe</dt>
+  <dd>Le critère d'arbitrage orchestration/chorégraphie (§&nbsp;1.6.2), l'exigence d'auditabilité qu'il porte, et les résultats d'impossibilité sur les transactions réparties sont la prémisse d'architecture du Livre III. L'exécution durable et les pipelines l'accompagnent, ayant été déplacés là-bas en entier.</dd>
+
+  <dt>Vers le ch. 37 — le maillage</dt>
+  <dd>La séparation plan de contrôle / plan de données (§&nbsp;1.3.4) et le geste d'externaliser l'application de la politique dans une couche dédiée (§&nbsp;1.4.3) sont le socle <strong>transposable</strong> du maillage d'agents. Le ch. 37 en fait un point d'application de l'identité ; il ne redémontre pas le patron.</dd>
+
+  <dt>Vers le Livre entier — l'invariant</dt>
+  <dd>Découplage, contrat, évolution : trois termes éprouvés ici sur une matière pré-agentique et déterministe, précisément pour qu'on puisse mesurer, aux chapitres suivants, ce que la couche agentique leur fait subir. Le quatrième terme — l'exploitation — n'a pas d'objet dans ce chapitre et se referme au Livre IV.</dd>
+</dl>
+
+<p>Une remarque de méthode, enfin. Rien de ce chapitre n'est neuf : tout y est hérité d'un corpus rédigé et gelé, condensé selon une ligne de fusion arrêtée au plan. Sa fonction dans la somme est celle d'un <strong>socle non répété</strong> — ce qui lui donne sa valeur n'est pas son originalité mais sa position : il est le seul endroit où ces notions sont posées, et chaque chapitre aval qui les reconstruirait annulerait l'économie qui justifie la refonte des trois volumes en un seul ouvrage.</p>
+
+<!-- ===================================================== § 1.8 ============ -->
+<section class="statut" id="s18">
+<h2><span class="sig">§ 1.8</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel ce chapitre a été rédigé, conformément à la règle d'escalade du PRD, Annexe A : <em>un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il remonte.</em></p>
+</div>
+
+<p><strong>Ce qui est enfreint.</strong> Le PRD §5 pose que «&nbsp;aucun chapitre ne se rédige avant que G-1, G-2 et G-3 soient franchies&nbsp;», et §6 place les Livres I et III en premier <strong>après</strong> ces portes. Les trois sont ouvertes : gel unique non fixé (D-1), commande de décompte non validée sur les trois corpus (G-2), socle consolidé à 0 entrée (G-3). Ce chapitre a donc été écrit <strong>sur instruction d'auteur</strong> avant ses préalables, et il en porte les quatre conséquences suivantes.</p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01.</strong> Faute d'Annexe B, aucune affirmation ne résout contre une entrée de socle numérotée. Les énoncés factuels héritent du régime [C] du Vol.&nbsp;I (PRD §7.1) et <strong>doivent être élevés en [B] par lecture des sources primaires que le Vol.&nbsp;I cite</strong> avant toute publication.</li>
+  <li><strong>Aucun décompte de ce chapitre n'est publiable</strong> (G-2). La volumétrie annoncée en tête est une enveloppe, pas une mesure.</li>
+  <li><strong>Les renvois aux chapitres aval sont des renvois de plan, non de texte.</strong> Les ch. 2, 3, 9, 22, 29, 37, 38, 43, 48 et 49 ne sont pas rédigés : chaque «&nbsp;voir ch. N&nbsp;» résout contre l'entrée du TOC v0.23, jamais contre une pièce. ⚠ Ils se re-vérifient contre le texte lorsqu'il existera — un renvoi de plan qui survit à la rédaction du chapitre cible sans être revérifié est exactement le défaut que la décision 8 du TOC proscrit.</li>
+  <li><strong>Deux remontées de gouvernance sont ouvertes par cette rédaction</strong>, à l'instance d'arbitrage (D-6, elle-même non désignée) :
+    <ul class="puces">
+      <li><strong>R-IV-01 — bloquant pour le ch. 6.</strong> La décision <strong>D-7</strong> (risque 15 : l'accord entre agents sous asynchronie et défaillance partielle) est due <em>avant</em> J-IV-4, donc avant la rédaction du Livre I. Le §&nbsp;1.6.2 pose les résultats d'impossibilité qui en sont la matière et <strong>déclare l'angle mort sans le combler</strong> ; si D-7 tranche pour des sections dans l'existant, ce chapitre devra recevoir une addition et le ch. 6 sa section d'atterrissage.</li>
+      <li><strong>R-IV-02 — non bloquant.</strong> Le TOC signale, sous l'entrée du ch. 1, <strong>deux écarts constatés et non corrigés</strong> : le §&nbsp;1.2 (cadres et modèles de maturité) est absent de la phrase «&nbsp;Sections : …&nbsp;» bien que couvert par la ligne Fusion ; et l'«&nbsp;exécution durable&nbsp;» y reste nommée alors que la ligne Fusion la retire. Le présent chapitre s'aligne sur la <strong>ligne Fusion</strong> dans les deux cas — §&nbsp;1.2 est rédigé, l'exécution durable ne l'est pas — conformément à la primauté de la ligne Fusion sur la liste de sections. La correction de la liste relève d'une passe du <code>TOC.md</code>, hors mandat d'un rédacteur.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure du chapitre suit la table détaillée du TOC section par section ; la table de couverture (décision 6) est respectée, y compris les trois sorties de périmètre (§1.7-1.8 → ch. 2 ; §1.9-1.10 → ch. 3 ; §1.6.3 → ch. 22) et les deux coupes assumées (§1.11 et §1.12 de la source, la seconde absorbée en §&nbsp;1.7) ; les deux séries de garde-fous sont balayées et déclarées, y compris à zéro occurrence ; les constructions d'auteur portent «&nbsp;Lecture de l'auteur&nbsp;» (CA-IV-07).</p>
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 1. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.23 (27 juillet 2026), entrée du chapitre 1, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source (juin 2026, Vol. I) et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture -----------------------------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>

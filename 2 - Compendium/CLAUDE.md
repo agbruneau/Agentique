@@ -20,12 +20,35 @@ socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.23, 27 juillet 2026 — 50 
 projection ≈ 376 000–401 000 mots ; plafond de cinquante chapitres posé en décision 13 et contrôlé par C15 ;
 le ch. 41, la fabrique d'agents, entré en v0.22, est payé par la fusion des ch. 47 et 48**) reste la *spécification de contenu* du compendium — autorité
 sur le découpage et sur chaque chapitre (thèse, sections, ligne Fusion, socle, garde-fous) ;
-**aucun chapitre n'est rédigé**. Tant que la somme n'est pas écrite, les trois volumes sources
-font foi (champ Statut du TOC), et une thèse de ce plan n'est pas une source (sa propre
-décision 8). [`README.md`](README.md) est la **vue synoptique dérivée** du TOC (le « conspectus » du volume, même
+**aucun chapitre n'est rédigé au sens des portes**. Tant que la somme n'est pas écrite, les trois
+volumes sources font foi (champ Statut du TOC), et une thèse de ce plan n'est pas une source (sa
+propre décision 8). [`README.md`](README.md) est la **vue synoptique dérivée** du TOC (le « conspectus » du volume, même
 version en tête) : il ne porte aucune décision, aucun socle, aucun garde-fou propre — en cas
 d'écart, **le TOC prime**, et toute passe qui modifie le TOC réaligne le conspectus (version,
 faits touchés) ou y déclare le retard en tête.
+
+⚠ **Une pièce existe pourtant dans le dossier, et elle est hors portes — fait signalé ici, non
+arbitré.** Le **27 juillet 2026, sur instruction d'auteur**, le répertoire [`Livre I/`](Livre%20I/) a
+été créé et le **chapitre 1** y a été rédigé en deux rendus (`.md` source, `.html` de lecture à
+thème sombre), **avant** le franchissement des portes **G-1, G-2 et G-3** que le PRD §5 pose comme
+préalables à toute rédaction. Quatre choses à savoir avant d'y toucher.
+*(a)* **Le statut de gouvernance n'a pas bougé** : la pièce se déclare elle-même *brouillon, non
+publiable*, le socle consolidé reste à **0 entrée**, les sept portes restent ouvertes et les huit
+décisions d'auteur **D-1 à D-8** restent à prendre. Un brouillon écrit hors portes ne franchit
+aucune porte — il en documente le coût.
+*(b)* **Ni le TOC, ni le PRD, ni le conspectus n'ont été touchés**, conformément à la règle
+d'escalade du PRD (Annexe A) : *un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il
+remonte.* Leurs champs Statut décrivent donc encore « zéro pièce rédigée », et **c'est correct au
+sens où ils l'entendent** : zéro pièce **recevable**. Ne pas les « corriger » pour cette pièce.
+*(c)* **Deux remontées sont ouvertes par cette rédaction**, portées par la § 1.8 de la pièce (une
+section hors plan, à retirer à la publication) : **R-IV-01**, *bloquante pour le ch. 6* — la
+décision **D-7** (risque 15, l'accord sous défaillance) est due avant la rédaction du Livre I et le
+§ 1.6.2 de la pièce déclare l'angle mort sans le combler ; **R-IV-02**, non bloquante — les deux
+écarts que le TOC signale sous l'entrée du ch. 1, tranchés dans la pièce **en faveur de la ligne
+Fusion**, la liste de sections restant à réaligner par une passe du `TOC.md`.
+*(d)* **Le `.html` est un rendu, jamais une seconde source** : toute correction se fait au `.md` et
+se reporte au même commit. Le compendium n'a **pas** de pipeline de rendu — les trois copies du
+FESP appartiennent aux Vol. I, II et III, et aucune n'a été copiée ici.
 
 ⚠ **`audit.md` n'est pas un quatrième livrable.** C'est un rapport de couverture daté (24 juillet 2026), **sans autorité** : ni source, ni socle, ni décision. Ne jamais le citer à l'appui d'un énoncé ni s'en servir pour modifier le plan — ses constats retenus ont été portés là où ils font foi (risque 15 du TOC, décision D-7 du PRD, passe v0.15) ; ce qu'il porte encore n'a pas été retenu. Un audit ultérieur suit la même règle : il **remonte**, il ne tranche pas.
 

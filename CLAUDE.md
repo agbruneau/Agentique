@@ -54,6 +54,18 @@ exécutable (`C15`) vivent au [`CLAUDE.md` du dossier](2%20-%20Compendium/CLAUDE
 de son `TOC.md` — **ils ne sont pas repris ici** (périmètre des fichiers de doc : le niveau supérieur
 situe et renvoie).
 
+⚠ **Le Vol. IV n'est plus tout à fait un cadrage nu : une pièce y est rédigée, hors portes.** Le
+27 juillet 2026, sur instruction d'auteur, `2 - Compendium/Livre I/` a été créé et le **chapitre 1**
+y a été rédigé en `.md` et en `.html`, **avant** les portes G-1, G-2 et G-3 du PRD du volume. Trois
+conséquences pour qui édite au niveau de la racine. *(a)* Le **statut du volume est inchangé** —
+cadrage, socle à zéro entrée, sept portes ouvertes : ne pas requalifier le Vol. IV en « rédigé » dans
+les décomptes ni dans les tableaux d'état. *(b)* **Le régime de la veille ne bouge pas non plus** :
+sa réf. [220] décrit le Vol. IV comme un cadrage sans chapitre, et cela reste vrai *à sa date* — c'est
+un troisième écart de la même famille que les deux déjà consignés plus bas (Vol. III rédigé,
+démonstrateur retiré), **signalé ici, jamais corrigé dans la veille**. *(c)* Le détail, les remontées
+ouvertes et le régime des deux rendus vivent au [`CLAUDE.md` du dossier](2%20-%20Compendium/CLAUDE.md)
+et au `README.md` de `Livre I/` — ils ne sont pas repris ici.
+
 **Le fichier le plus spécifique gagne.** En travaillant dans un dossier de volume, appliquer son
 `CLAUDE.md`, pas celui-ci.
 

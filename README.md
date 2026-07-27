@@ -27,7 +27,7 @@ Les trois volumes vivent sous [`1 - Corpus/`](1%20-%20Corpus/) ; la veille est
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | — (à fixer au lancement) |
-| **État** | Publiée (146 p., 257 références) | Rédaction terminée (569 p., ≈ 263 600 mots ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Cadrage seul** — TOC v0.23 (+ conspectus et PRD v0.7) |
+| **État** | Publiée (146 p., 257 références) | Rédaction terminée (569 p., ≈ 263 600 mots ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Cadrage seul** — TOC v0.23 (+ conspectus et PRD v0.7) ; ⚠ **une pièce hors portes** depuis le 27 juillet 2026 — `Livre I/`, chapitre 1, brouillon déclaré non publiable |
 
 ## Veille technologique — le document transversal
 
@@ -163,7 +163,19 @@ synoptique dérivée ([`README.md`](2%20-%20Compendium/README.md)), son exécuta
 de contrôle ([`check-toc.py`](2%20-%20Compendium/PRD/check-toc.py), avec son harnais de
 validation par mutation) et un
 [`CLAUDE.md`](2%20-%20Compendium/CLAUDE.md) de conventions —
-**aucun chapitre rédigé : c'est un plan de refonte, pas une nouvelle thèse.**
+**c'est un plan de refonte, pas une nouvelle thèse.**
+
+⚠ **Une seule pièce y est rédigée, et elle est hors portes.** Le 27 juillet 2026, sur instruction
+d'auteur, le répertoire [`Livre I/`](2%20-%20Compendium/Livre%20I/) a été créé et le **chapitre 1**
+— *L'interopérabilité comme problème d'intégration d'entreprise* — y a été rédigé en deux rendus
+(`.md` source, `.html` de lecture à thème sombre), **avant** le franchissement des portes G-1 (gel
+unique), G-2 (commande de décompte) et G-3 (refonte du socle) que le PRD pose comme préalables à
+toute rédaction. La pièce se déclare elle-même **brouillon, non publiable** et porte, en section
+hors plan, les quatre conséquences de cet écart et deux remontées de gouvernance. **Le statut du
+volume n'en est pas changé** : socle consolidé à zéro entrée, sept portes ouvertes, huit décisions
+d'auteur à prendre — et le TOC, le PRD et le conspectus n'ont pas été touchés, la règle d'escalade
+du PRD interdisant à un rédacteur de les corriger. *Un brouillon écrit hors portes ne franchit
+aucune porte.*
 
 Sa nature le distingue des trois autres : ce n'est ni un quatrième panneau ni un méta-index, mais
 un **omnibus qui absorbe les Vol. I, II et III** en un seul ouvrage réordonné et dédoublonné, à
@@ -261,6 +273,9 @@ volumes sources font foi et la divergence reste ouverte — le cadrage le dit lu
 └── 2 - Compendium/                        ← Vol. IV
     ├── CLAUDE.md                            conventions du volume
     ├── README.md                            vue synoptique dérivée du TOC (le « conspectus » du volume)
+    ├── Livre I/                             ⚠ rédaction hors portes — 1 pièce sur 11 (ch. 1), brouillon
+    │   ├── README.md                          état du livre, régime des deux rendus
+    │   └── 01-…-entreprise.md / .html         chapitre 1 — source + page à thème sombre
     └── PRD/                                 gouvernance de la rédaction (sous-dossier)
         ├── PRD.md                           v0.7 — portes, régimes de preuve, jalons
         ├── TOC.md                           table des matières commentée (v0.23) — spécification
