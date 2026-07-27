@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 3 — Sécurité, identité et gouvernance de l&#x27;interopérabilité · La somme agentique</title>
+<meta name="description" content="le passage du périmètre réseau à la confiance par échange, et l&#x27;identité fédérée à autorisation déléguée, sont l&#x27;héritage IAM que la fabrique de confiance agentique (Livre II) étire jusqu&#x27;à rupture.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre I · Chapitre 3</div>
+  <ol>
+    <li><a href="#s31"><span class="num">3.1</span>Du périmètre réseau à la confiance par échange</a></li>
+    <li><a href="#s32"><span class="num">3.2</span>Identité fédérée et autorisation déléguée</a></li>
+    <li><a href="#s33"><span class="num">3.3</span>Zero-trust, identité de charge de travail et confiance décentralisée</a></li>
+    <li><a href="#s34"><span class="num">3.4</span>Gouvernance, test et observabilité de l&#x27;interopérabilité</a></li>
+    <li><a href="#s35"><span class="num">3.5</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.23 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="03-securite-identite-gouvernance.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique</div>
+  <h1><span class="chap">Chapitre 3</span>Sécurité, identité et gouvernance de l&#x27;interopérabilité</h1>
+  <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6)</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — rédigé sur instruction d'auteur du 27 juillet 2026, <strong>avant</strong> les portes G-1, G-2 et G-3 du <a class="lien" href="../PRD/PRD.md">PRD</a> §5. ⚠ <strong>Ce chapitre est le plus exposé du premier mouvement</strong>, à double titre : il est le <strong>chapitre-charnière</strong> dont dépend l'économie de fusion côté identité (§ 3.2 et § 3.3 ne sont reconstruits nulle part ailleurs), et il porte de la matière <strong>cryptographique</strong>, où le garde-fou R-02 du Vol. III s'applique pleinement</dd>
+    <dt>Date de gel</dt>
+    <dd><strong>Aucune.</strong> Gel unique non fixé (décision d'auteur D-1). Matière condensée au gel de sa source — <strong>juin 2026</strong> (Vol. I) —, qui n'est pas celui de la somme. ⚠ Trois faits datés y appellent une re-vérification à G-1 : la finalisation d'un profil de haute sécurité (22 février 2025), une recommandation du W3C sur les attestations vérifiables (15 mai 2025), et le statut d'un projet de cadre d'autorisation <strong>encore à l'état de projet à la mi-2026</strong></dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (Annexe B non constituée, porte G-3 ouverte). Les énoncés résolvent contre le <strong>Vol. I <em>Monographie</em> §1.9-1.10</strong>, en régime <strong>[C]</strong> (PRD §7.1). <strong>Aucun énoncé n'est central au sens de CA-IV-01.</strong> ⚠ Réserve renforcée pour ce chapitre : la matière cryptographique est celle où un énoncé [C] non élevé fait le plus de dégâts, puisqu'elle est citée comme garantie</dd>
+    <dt>Garde-fous balayés</dt>
+    <dd><strong>Les deux séries, intégralement.</strong> Vol. II — R-1 à R-8 : <strong>zéro occurrence</strong> (aucune matière réglementaire canadienne, aucune métrique d'adoption auto-déclarée, aucun énoncé sur E-23, le RTR ou MCP). Vol. III — <strong>R-02 (qualification cryptographique) : cinq occurrences</strong>, § 3.2.2 (deux), § 3.3.1, § 3.3.2 (deux) — chaque mécanisme y est qualifié par ce que sa spécification <strong>démontre</strong>, jamais par ce qu'elle promet ; <strong>R-11 (jalons NIST « visés », jamais « fixés ») : une occurrence</strong>, § 3.3.2, avec statut du document porté ; <strong>R-14 (trois degrés d'absence) : deux occurrences</strong>, § 3.1.1 et § 3.4.3. R-01, R-03 à R-10, R-12, R-13 : <strong>zéro occurrence</strong> — ⚠ « point d'application de politique » y figure au sens <strong>pré-agentique</strong> du zero-trust, où il n'est pas le terme que R-13 vise</dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ 9 000 mots de corps (§ 3.1 à § 3.4). Enveloppe <strong>dérivée, non prescrite</strong> ; ce chapitre pèse plus que la moyenne parce qu'il est <strong>posé une seule fois pour cinq chapitres aval</strong>. ⚠ <strong>Aucun décompte n'est publiable</strong> tant que G-2 est ouverte</dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>le passage du périmètre réseau à la confiance par échange, et l'identité fédérée à autorisation déléguée, sont l'héritage IAM que la fabrique de confiance agentique (Livre II) étire jusqu'à rupture.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.23, entrée du chapitre 3.</span>
+</div>
+
+<h2 id="s31"><span class="sig">§ 3.1</span>Du périmètre réseau à la confiance par échange</h2>
+
+<p>La sécurité n'est pas une couche superposée à l'interopérabilité : elle en est une <strong>propriété émergente</strong>, qui se construit et se vérifie à chaque échange. Dès lors que deux systèmes administrés séparément coopèrent par contrat (ch. 1 § 1.1.1), la frontière de confiance se déplace du périmètre réseau vers <strong>le message lui-même</strong>.</p>
+
+<p>Ce déplacement est le sujet du chapitre, et il se formule en une exigence : un appel inter-services doit prouver <strong>qui</strong> l'émet, <strong>au nom de qui</strong> il agit et <strong>sur quoi</strong> il porte, indépendamment du chemin réseau emprunté. Le contrat de sécurité — schéma de jeton, profil d'autorisation, identité de charge de travail — devient alors un artefact aussi explicite et versionné que le contrat d'interface.</p>
+
+<div class="avert">
+  <p><strong>Ce chapitre est posé une seule fois pour toute la somme, et c'est sa raison d'être.</strong> Les ch. 12 (transposition d'OAuth, d'OIDC et de SCIM aux agents), ch. 13 (identité décentralisée agentique), ch. 21 (horloge post-quantique), ch. 37 (zero-trust au grain de l'infrastructure) et ch. 38 (observabilité agentique) <strong>y renvoient sans le reconstruire</strong>. C'est la principale économie de la refonte des trois volumes côté identité, et elle n'a lieu que si ces cinq chapitres s'y tiennent. Un lecteur qui trouverait OAuth réexpliqué au ch. 12 devrait considérer que l'économie a été perdue.</p>
+</div>
+
+<h3>3.1.1 Modèle de menace de l'intégration</h3>
+
+<p>L'intégration multiplie les frontières de confiance, et chacune introduit une classe d'attaques propre. Quatre méritent d'être nommées, parce que la couche agentique les retrouvera toutes.</p>
+
+<p>Le <strong>mandataire confus</strong> (<em>confused deputy</em>) — un service privilégié induit à agir pour le compte d'un appelant non autorisé — est un défaut <strong>structurel</strong> des architectures déléguées, et non un défaut d'implémentation. Une passerelle qui réutilise ses propres droits au lieu de propager ceux du client transforme tout point d'entrée en vecteur d'escalade. C'est le défaut le plus important de cette sous-section pour la suite du Livre : il connaît une variante moderne dans les architectures agentiques, où une injection d'invite indirecte détourne le plan d'un agent en lui faisant traiter comme instructions des contenus externes.</p>
+
+<p>Le <strong>vol et le rejeu de jetons porteurs</strong> constituent la menace corollaire, et elle est analytique plutôt qu'empirique : un jeton porteur intercepté est, <strong>par définition</strong>, rejouable par quiconque le détient. Ce n'est pas une faiblesse d'implémentation qu'un correctif effacerait ; c'est la conséquence directe de ce qu'un jeton porteur <em>est</em>. La liaison cryptographique du jeton à son porteur (§ 3.2.2) n'est donc pas un durcissement optionnel dans une intégration exposée.</p>
+
+<p>S'y ajoutent l'<strong>escalade latérale</strong> — un appel exploitant une relation de confiance implicite entre services — et la <strong>falsification de requête côté serveur</strong>, particulièrement aiguë en passerelle, où un composant légitime est détourné pour atteindre des ressources internes autrement inaccessibles.</p>
+
+<p>Ces vecteurs convergent vers un principe directeur : <em>ne jamais faire confiance, toujours vérifier</em>. <strong>Aucune position dans la topologie</strong> — réseau interne, sous-réseau de confiance, maillage — ne confère d'autorité par elle-même. Chaque requête est authentifiée et autorisée sur ses propres mérites.</p>
+
+<div class="avert">
+  <p>Que cette liste soit exhaustive n'est pas établi : le socle hérité recense ces classes sans prétendre à un balayage systématique. Il s'agit d'une <strong>absence de documentation</strong> au sens de R-14 du Vol. III, non d'un fait négatif vérifié — et la taxonomie proprement agentique du ch. 19 procédera, elle, par balayage documenté.</p>
+</div>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Le mandataire confus se modélise comme une <strong>perte d'information sur l'identité du mandant</strong> le long d'une chaîne de délégation : le système préserve l'<em>authentification</em> mais perd l'<em>autorisation</em> d'origine. C'est une formulation qui vaut d'être retenue, parce qu'elle dit exactement ce que les profils de propagation de contexte (§ 3.2.3) réparent — rendre la chaîne de mandants explicite et vérifiable à chaque saut, plutôt que reconstruite par inférence. Le problème des deux sauts du ch. 17 en est la forme agentique.</p>
+</div>
+
+<h3>3.1.2 OWASP API Security Top 10 et contrôles</h3>
+
+<p>Les API étant le substrat dominant de l'intégration moderne, leur classe de vulnérabilités propre mérite une cartographie sur le pipeline d'échange. Un référentiel largement adopté hiérarchise ces risques et place en tête les <strong>défauts d'autorisation au niveau de l'objet</strong> : l'accès à des ressources d'un autre locataire faute de contrôle par identifiant, et la granularité du contrôle qui s'arrête à la ressource sans couvrir ses propriétés sensibles.</p>
+
+<p>Ces deux défauts sont, au fond, <strong>des fautes de contrat</strong> : l'interface expose une surface d'objets plus large que la politique d'autorisation ne la garde. Les lire ainsi plutôt que comme des bogues change la parade — on corrige le contrat, pas seulement le code.</p>
+
+<p>L'<strong>authentification cassée</strong> — gestion défaillante des jetons, absence de rotation, points de terminaison non protégés — complète le tableau et fait le lien direct avec les mécanismes d'identité fédérée du § 3.2.</p>
+
+<p>La valeur opératoire du référentiel tient à sa transposition sur les étapes de l'intégration : validation du jeton et de son audience en passerelle ; <strong>contrôle d'autorisation au plus près de la ressource</strong>, et non seulement au point d'entrée ; limitation des propriétés sérialisées par le contrat de réponse ; application des quotas et limites de débit (§ 3.4.2). Chaque risque se règle ainsi par un contrôle attaché à <strong>un point de contrat identifiable</strong>, et non par une mesure de périmètre.</p>
+
+<h2 id="s32"><span class="sig">§ 3.2</span>Identité fédérée et autorisation déléguée</h2>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p><strong>Socle pré-agentique, posé ici une seule fois.</strong> Le ch. 12 transpose ces mécanismes aux agents et <strong>n'en reconstruit aucun</strong>. Ce qui suit est donc l'état de l'art <em>avant</em> que l'agent n'entre en scène — c'est délibérément une photographie, et sa valeur pour la somme tient à ce qu'elle serve de point de comparaison.</p>
+</div>
+
+<h3>3.2.1 SAML, OAuth 2.x/2.1 et OpenID Connect</h3>
+
+<p>L'identité fédérée résout un problème d'interopérabilité précis : permettre à un système d'accepter des identités <strong>émises et garanties par un autre domaine administratif</strong>. C'est le premier mécanisme de la somme où une organisation accepte de faire dépendre une décision d'accès d'une assertion produite ailleurs — geste dont le Livre II montrera qu'il ne se transpose pas mécaniquement aux agents.</p>
+
+<p>Le format historique de cette fédération est l'<strong>assertion SAML 2.0</strong>, encore omniprésente dans l'intégration interentreprises et l'authentification unique vers les applications d'entreprise. La trajectoire dominante est néanmoins une migration vers <strong>OpenID Connect</strong>, qui adosse l'authentification à la couche d'autorisation <strong>OAuth 2.0</strong> et substitue à l'assertion XML un jeton d'identité JSON plus léger, mieux adapté aux API et aux clients publics.</p>
+
+<p>Sur le versant de l'<strong>autorisation déléguée</strong>, le socle évolue d'OAuth 2.0 vers <strong>OAuth 2.1</strong>, dont l'objet est de consolider les flux éprouvés et de proscrire ceux jugés dangereux : l'échange de code avec preuve de clé devient obligatoire, et le flux implicite est retiré.</p>
+
+<div class="avert">
+  <p><strong>Point de statut à ne pas lisser</strong> : à la date d'arrêt des sources (mi-2026), <strong>OAuth 2.1 est encore à l'état de projet</strong>. La consolidation est en revanche codifiée comme <em>bonne pratique de sécurité actuelle</em> par un document normatif publié, qui constitue la référence pour durcir un déploiement existant <strong>sans attendre</strong> la finalisation. Citer OAuth 2.1 comme un standard établi serait une faute de fait ; s'appuyer sur la bonne pratique publiée ne l'est pas.</p>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Pour un nouveau service, le couple OpenID Connect pour l'authentification et OAuth 2.1 avec preuve de clé obligatoire pour l'autorisation déléguée constitue le défaut raisonnable, en appliquant dès la conception les recommandations de la bonne pratique publiée. SAML 2.0 demeure pertinent pour interopérer avec un parc applicatif existant, sans être retenu pour de nouvelles intégrations orientées API.</p>
+</div>
+
+<h3>3.2.2 Jetons, anti-rejeu et profils à haute sécurité</h3>
+
+<p>Le <strong>jeton est le contrat de sécurité matérialisé</strong> : sa structure et ses garanties déterminent la confiance qu'un consommateur peut lui accorder. Le format pivot est le jeton web JSON, <strong>signé</strong> pour l'intégrité et l'authenticité, et <strong>chiffré</strong> lorsque la confidentialité de ses revendications l'exige.</p>
+
+<p>Il faut ici être exact sur ce qu'une signature apporte, parce que c'est le point où la lecture rapide se trompe. <strong>Un jeton signé reste un jeton porteur, donc rejouable s'il est dérobé.</strong> La signature démontre l'<em>origine</em> et l'<em>intégrité</em> de la revendication ; elle ne démontre <strong>rien</strong> sur l'identité de celui qui présente le jeton. Confondre les deux, c'est croire protégé ce qui ne l'est pas.</p>
+
+<p>La parade consiste à <strong>lier cryptographiquement le jeton à son détenteur légitime</strong>, et deux mécanismes le font à des niveaux différents :</p>
+
+<ul class="puces">
+  <li>la <strong>liaison par certificat client</strong> en TLS mutuel ancre le jeton à la clé TLS du client — elle démontre la possession de cette clé lors de la poignée de main, et suppose une infrastructure de certificats mutuels ;</li>
+  <li>la <strong>démonstration de possession de clé</strong> au niveau applicatif atteint le même objectif <strong>sans</strong> cette infrastructure, en exigeant une preuve de possession à chaque requête.</li>
+</ul>
+
+<div class="avert">
+  <p><strong>Qualification, au sens de R-02 du Vol. III.</strong> Ces deux mécanismes <strong>démontrent</strong> qu'un requérant possède une clé au moment de la requête. Ils ne démontrent pas que cette clé est détenue par l'entité légitime, ni qu'elle n'a pas été extraite d'un environnement compromis : ces propriétés relèvent de la protection de la clé, non du protocole de liaison. Écrire qu'un jeton lié est « non rejouable » serait qualifier par la promesse ; écrire qu'il « n'est plus rejouable par un tiers ne possédant pas la clé » est qualifier par ce qui est démontré.</p>
+</div>
+
+<p>Ces mécanismes se composent en <strong>profils de haute sécurité</strong> pour les contextes les plus exposés. Un profil largement retenu, <strong>finalisé le 22 février 2025</strong>, agrège ces exigences — jetons liés au porteur, indication explicite de la ressource cible, validation stricte des paramètres — en une cible de conformité éprouvée, notamment dans l'écosystème de la finance ouverte que le Livre III reprendra.</p>
+
+<p>Adopter un tel profil revient à <strong>figer un contrat de sécurité interopérable et certifiable</strong>, plutôt qu'à recomposer <em>ad hoc</em> un assemblage de contrôles. C'est le même geste que celui du modèle de données canonique au ch. 1 § 1.6.1 : substituer un pivot gouverné à une combinatoire de décisions locales.</p>
+
+<h3>3.2.3 Provisionnement et propagation de contexte</h3>
+
+<p>L'identité fédérée présuppose que les comptes <strong>existent et restent synchronisés</strong> entre domaines : c'est le rôle du provisionnement. Un standard dédié en fournit le schéma et le protocole, automatisant le cycle de vie des comptes — création, mise à jour, désactivation — d'un fournisseur d'identité vers les applications consommatrices.</p>
+
+<p>Sans ce maillon, la révocation d'accès reste manuelle et tardive, ce qui <strong>rouvre la fenêtre d'attaque que l'authentification fédérée prétendait fermer</strong>. Le provisionnement est donc la facette <em>évolution</em> du contrat d'identité : il garantit que l'état d'autorisation suit l'état réel des personnes et des charges. Une identité fédérée sans provisionnement n'est pas une identité fédérée imparfaite — c'est une identité fédérée dont la principale garantie est absente.</p>
+
+<p>La seconde exigence est la <strong>propagation du contexte d'autorisation</strong> le long d'une chaîne d'appels, sans perte du mandant d'origine (§ 3.1.1). Deux mécanismes s'y emploient :</p>
+
+<ul class="puces">
+  <li>l'<strong>échange de jetons</strong> permet à un service intermédiaire d'obtenir, à partir d'un jeton entrant, un jeton dérivé <strong>restreint</strong> pour appeler le service suivant, en conservant la trace du sujet initial ;</li>
+  <li>les <strong>jetons de transaction</strong> poussent cette logique vers une preuve d'autorisation propre à une transaction métier, traversant l'ensemble des sauts internes.</li>
+</ul>
+
+<p>Ces approches matérialisent la délégation en chaîne comme un <strong>contrat explicite et vérifiable de bout en bout</strong>, là où une simple réémission de jeton porteur effacerait l'identité du mandant et rouvrirait le risque de mandataire confus.</p>
+
+<div class="avert">
+  <p><strong>C'est ici que se joue la thèse du chapitre</strong>, et il vaut de le dire au moment où le mécanisme est posé plutôt qu'au moment où il rompt. Ces dispositifs ont été conçus pour des chaînes <strong>courtes, prévues à l'avance, et dont les maillons sont des services</strong>. Un agent qui compose son plan à l'exécution, invoque des outils non anticipés et délègue à d'autres agents ne satisfait aucune de ces trois hypothèses. Le ch. 17 mesure ce que la chaîne de mandat devient dans ces conditions ; le présent chapitre pose ce qu'elle <strong>était</strong> — et l'écart entre les deux est ce que la thèse appelle <em>l'étirement jusqu'à rupture</em>.</p>
+</div>
+
+<h2 id="s33"><span class="sig">§ 3.3</span>Zero-trust, identité de charge de travail et confiance décentralisée</h2>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p><strong>Socle pré-agentique, posé ici une seule fois.</strong> Les ch. 37 (zero-trust au grain de l'infrastructure), ch. 13 (identité décentralisée agentique) et ch. 21 (horloge post-quantique) y renvoient <strong>sans le reconstruire</strong>.</p>
+</div>
+
+<h3>3.3.1 Zero-trust et identité de charge de travail</h3>
+
+<p>Le <strong>zero-trust</strong> formalise le principe <em>ne jamais faire confiance, toujours vérifier</em> en une architecture où <strong>aucune confiance n'est dérivée de la localisation réseau</strong>. Une architecture de référence publiée en pose les composants — point de décision et point d'application de politique, évaluation continue par requête — que l'intégration transpose en exigeant authentification et autorisation à chaque appel, <strong>y compris à l'intérieur d'un même périmètre</strong>. Dans un maillage de services (ch. 1 § 1.3.4), ce principe se concrétise par du TLS mutuel systématique entre charges, déchargeant l'authentification mutuelle vers l'infrastructure plutôt que vers le code applicatif.</p>
+
+<div class="avert">
+  <p><strong>Précision de vocabulaire, à tenir pour tout le Livre.</strong> « Point d'application de politique » et « point de décision » sont ici employés au sens <strong>pré-agentique</strong> de cette architecture de référence. Ils ne sont pas les termes que le garde-fou R-13 du Vol. III proscrit nus — celui-ci vise « AgentMesh », « control plane », « ACP » et « autonomie graduée ». Le ch. 37 reprendra la paire au grain de l'agent, et c'est <strong>là</strong> que la vigilance terminologique s'impose.</p>
+</div>
+
+<p>L'application du zero-trust aux services exige une <strong>identité pour les acteurs non humains</strong>, à durée de vie courte et vérifiable. Un cadre normalisé et son implémentation de référence fournissent à chaque charge un identifiant et un document d'identité vérifiable, émis et renouvelé automatiquement, qui <strong>remplace les secrets statiques à longue durée de vie par une attestation cryptographique éphémère</strong>. Des travaux de standardisation visent à harmoniser ces mécanismes.</p>
+
+<div class="avert">
+  <p><strong>Qualification, au sens de R-02.</strong> Ce que ce cadre démontre est précis et borné : qu'une charge présentant un document d'identité valide <strong>a été attestée par le nœud d'émission au moment de l'émission</strong>, et que ce document n'a pas expiré. Il ne démontre pas que la charge n'a pas été compromise depuis, ni que le processus attesté est celui qu'il prétend être au-delà de ce que la plateforme d'attestation peut établir. La différence entre « identité vérifiable » et « identité vérifiée en continu » n'est pas rhétorique : c'est l'écart que l'évaluation continue du zero-trust est censée combler, et qu'elle ne comble qu'à la granularité de la requête.</p>
+</div>
+
+<p>Le découplage s'applique ici à l'identité elle-même : elle devient un <strong>contrat émis par l'infrastructure</strong>, indépendant de l'adresse réseau, et <strong>révocable par expiration plutôt que par rotation manuelle de secrets</strong>. C'est le remplacement d'un geste opérationnel faillible par une propriété structurelle — et c'est l'un des rares endroits de ce Livre où une classe entière d'incidents disparaît plutôt que de se déplacer.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>L'identité non humaine à durée de vie courte déplace la sécurité d'un modèle de <strong>secrets partagés</strong> vers un modèle d'<strong>attestation continue</strong>. La question ouverte porte sur la <strong>composition</strong> de ces identités le long d'une chaîne d'appels : articuler l'identité de charge — qui <em>exécute</em> — et l'identité déléguée du mandant humain — au nom de <em>qui</em> — sans confondre les deux reste un problème de modélisation actif. C'est exactement la question que les ch. 16 et 17 reprennent pour l'agent, où un troisième terme s'ajoute : <em>sous quel mandat, et pour combien de temps</em>.</p>
+</div>
+
+<h3>3.3.2 Identité décentralisée, eIDAS 2.0 et cryptographie post-quantique</h3>
+
+<p>À l'horizon de la confiance inter-organisationnelle, l'identité fédérée centralisée cède progressivement la place à des modèles <strong>décentralisés</strong> où le sujet présente lui-même des attestations vérifiables, sans dépendance à un fournisseur d'identité commun.</p>
+
+<p>Un modèle de données porté par une <strong>recommandation du W3C du 15 mai 2025</strong> en fixe le format : une attestation signée par un émetteur, conservée par le détenteur, présentée à un vérifieur, avec <strong>divulgation sélective</strong> des seules revendications nécessaires — divulgation que des mécanismes de jeton à divulgation sélective et des protocoles de présentation rendent opérationnelle. Cette architecture <strong>découple l'émission de la vérification</strong>, condition d'une interopérabilité de l'identité à l'échelle de plusieurs juridictions.</p>
+
+<p>Le cadre réglementaire européen ancre cette logique dans le droit et organise le déploiement d'un portefeuille d'identité numérique, dont la généralisation est <strong>attendue à compter de 2026</strong> — échéance à re-vérifier, et non à citer comme acquise.</p>
+
+<div class="avert">
+  <p><strong>Qualification, au sens de R-02.</strong> Une attestation vérifiable démontre qu'un émetteur identifié a signé un ensemble de revendications à une date donnée, et que le porteur peut en prouver la possession. Elle <strong>ne démontre pas</strong> que les revendications sont vraies, ni que l'émetteur était fondé à les émettre, ni que le sujet n'a pas changé d'état depuis. La confiance dans une attestation reste une confiance dans son <strong>émetteur</strong> — le format déplace le problème de la confiance, il ne le résout pas. Le ch. 16 rencontrera exactement cette limite en posant qu'un passeport d'agent ne vaut que ce que vaut son autorité d'émission.</p>
+</div>
+
+<p>La couche cryptographique sous-jacente entre simultanément dans une <strong>transition de fond</strong>. Anticipant la menace que poserait un calculateur quantique sur les algorithmes asymétriques actuels, l'organisme de normalisation américain a <strong>publié en août 2024</strong> ses premiers standards post-quantiques : un mécanisme d'encapsulation de clés et deux mécanismes de signature.</p>
+
+<div class="avert">
+  <p><strong>Deux précisions de statut, et la seconde relève de R-11 du Vol. III.</strong> <em>(a)</em> Ces standards sont <strong>publiés</strong> — c'est un fait daté, non une annonce. <em>(b)</em> En revanche, les <strong>jalons de migration</strong> que le même organisme associe à cette transition sont <strong>visés</strong>, jamais <em>fixés</em>, et le document qui les porte a son propre statut, qu'il faut citer avec lui. Écrire qu'une date de dépréciation est « fixée » serait attribuer à une projection l'autorité d'une norme. Le ch. 21, qui prend l'horloge post-quantique pour objet, porte cette distinction comme règle de rédaction.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Qualification, au sens de R-02 — la plus importante du chapitre.</strong> Ces algorithmes sont conçus pour résister à des attaques par calculateur quantique <strong>sur la base de problèmes mathématiques dont aucune attaque quantique efficace n'est connue</strong>. Ce n'est pas la même chose qu'une preuve de résistance, et la nuance n'est pas académique : la sélection a déjà éliminé des candidats après publication de leur analyse. La formulation défendable est « résistant en l'état des attaques connues », jamais « inviolable » ni « sûr contre le quantique ».</p>
+</div>
+
+<p>Ces algorithmes appellent une migration des jetons, certificats et canaux qui sous-tendent toute l'identité fédérée : la signature des attestations, l'authentification mutuelle des charges et les profils de haute sécurité (§ 3.2.2) devront intégrer des suites résistantes. Le contrat de sécurité acquiert ainsi une dimension d'<strong>évolution algorithmique</strong> — l'agilité cryptographique — qui prolonge, jusque dans le choix des primitives, l'invariant du Livre.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> l'agilité cryptographique est le troisième terme de l'invariant appliqué à un objet qui, historiquement, n'était pas censé changer. Un format de message évolue ; on s'y attendait. Une primitive de signature évolue ; on ne s'y attendait pas, et la plupart des systèmes déployés ne portent nulle part la négociation qui le permettrait. Le socle n'établit pas cette lecture ; elle est proposée comme telle, et le ch. 21 l'instruit sous le nom de <strong>dette de migration</strong>.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>La transition relève d'abord d'un <strong>inventaire</strong> : recenser où des primitives asymétriques signent ou protègent des jetons et des canaux d'intégration, puis privilégier une cryptographie agile — négociation d'algorithme, hybridation classique et post-quantique — plutôt qu'un remplacement en bloc. Aligner ce chantier sur l'introduction des attestations vérifiables évite de figer prématurément des formats appelés à changer.</p>
+</div>
+
+<h2 id="s34"><span class="sig">§ 3.4</span>Gouvernance, test et observabilité de l'interopérabilité</h2>
+
+<p>Les sections précédentes ont établi <em>comment</em> des systèmes s'authentifient et se délèguent l'autorité. Celle-ci traite les préoccupations qui traversent toutes les couches une fois l'intégration <strong>en production</strong> : la gouvernance des contrats, la définition et l'application des niveaux de service, le test d'interopérabilité et sa certification, et l'observabilité comme condition opérationnelle.</p>
+
+<p>L'invariant y trouve son prolongement organisationnel, et il vaut d'être énoncé ainsi : <em>un contrat n'est interopérable que s'il est gouverné, vérifié et observé tout au long de sa vie.</em> Un contrat correct qui n'est ni vérifié ni observé est une intention.</p>
+
+<h3>3.4.1 Modèles de gouvernance et politique exécutable</h3>
+
+<p>La gouvernance de l'intégration se décline selon un continuum : du modèle <strong>centralisé</strong>, où une équipe unique conçoit et publie tous les contrats, au modèle <strong>décentralisé</strong>, où chaque équipe-produit possède ses interfaces, en passant par un modèle <strong>fédéré</strong> qui combine standards communs et autonomie locale. Ce dernier prolonge la logique du couplage faible au plan organisationnel et rejoint la perspective du maillage de données (ch. 2 § 2.2.2). Un centre d'excellence incarne fréquemment ce compromis : plutôt que de produire les intégrations, il édite des guides de style, des gabarits et des règles partagées que les équipes appliquent elles-mêmes.</p>
+
+<p>L'apport décisif de la dernière décennie est la traduction de ces règles en <strong>politique exécutable</strong> (<em>policy-as-code</em>) : des contraintes vérifiées automatiquement plutôt que recommandées. Un vérificateur de description d'API évalue chaque définition contre un jeu de règles versionnées — nommage, sécurité obligatoire, présence d'exemples — et signale les écarts <strong>dès la validation</strong>, en amont de la chaîne d'intégration continue.</p>
+
+<p>Ce déplacement vers l'amont intègre la gouvernance au flux de développement : la conformité au guide de style devient une <strong>condition de fusion</strong> plutôt qu'un audit <em>a posteriori</em>. C'est la même doctrine que celle du registre de schémas au ch. 2 § 2.1.6, et que celle qui gouverne ce dépôt : une règle sans motif exécutable qui la contrôle n'en est pas une.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Une chaîne d'intégration continue typique enchaîne, à chaque modification d'un contrat : un contrôle de style <strong>bloquant</strong> sur les règles critiques, la publication de la version validée dans un registre de schémas, et la propagation contrôlée vers les consommateurs. La gouvernance d'ensemble peut s'aligner sur une norme internationale de gouvernance des systèmes d'information pour articuler responsabilités, conformité et performance.</p>
+</div>
+
+<h3>3.4.2 Cycle de vie des contrats, niveaux de service et application à l'exécution</h3>
+
+<p>Un contrat d'interface <strong>vit</strong> : il naît, évolue et meurt. Maintenir l'interopérabilité sous changement (ch. 1 § 1.1.4) exige une discipline de versionnement et de <strong>dépréciation explicite</strong>. L'écosystème HTTP fournit des en-têtes normalisés permettant d'annoncer, dans la réponse même, qu'une ressource est dépréciée et la date à laquelle elle cessera d'être servie — donnant aux consommateurs une <strong>fenêtre de migration prévisible</strong> plutôt qu'une rupture silencieuse.</p>
+
+<p>Ce mécanisme est modeste et il est presque toujours omis, ce qui en fait un bon révélateur : une organisation qui ne signale pas ses dépréciations dans le protocole les signalera par courriel, donc mal, donc tard.</p>
+
+<p>Au-delà de la structure du contrat, son <strong>exécution</strong> se gouverne par des objectifs mesurables. La discipline de l'ingénierie de fiabilité distingue trois objets qu'il ne faut pas confondre :</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th></th><th>Nature</th><th>Portée</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Indicateur</strong> (SLI)</td><td>grandeur <strong>mesurée</strong> — taux de succès, latence au centile élevé</td><td>interne, factuel</td></tr>
+    <tr><td><strong>Objectif</strong> (SLO)</td><td><strong>seuil visé</strong> sur cet indicateur</td><td>interne, décidé</td></tr>
+    <tr><td><strong>Accord</strong> (SLA)</td><td><strong>engagement contractuel</strong> envers le consommateur</td><td>externe, opposable</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 3.1 — Indicateur, objectif et accord de niveau de service : trois objets distincts, souvent confondus.</p>
+
+<p>De ces objectifs dérive le <strong>budget d'erreur</strong> : la part d'indisponibilité tolérée, qui arbitre entre vélocité de changement et stabilité. À l'exécution, la passerelle d'API applique ces engagements par des quotas et une limitation de débit qui protègent le producteur et répartissent équitablement la capacité entre consommateurs.</p>
+
+<p>L'interopérabilité, sous-caractéristique de la compatibilité dans le modèle de qualité produit (ch. 1 § 1.1.1), ne se réduit donc pas à la définition <strong>statique</strong> du contrat : elle inclut la tenue, vérifiable, de ses niveaux de service. C'est ce qui la rend mesurable en continu plutôt qu'auditable ponctuellement — la piste que le ch. 1 § 1.2.2 identifiait comme dépassement des modèles de maturité à paliers, et que le Livre IV reprendra sous le nom d'AgentOps.</p>
+
+<h3>3.4.3 Conformité, interopérabilité et test piloté par le consommateur</h3>
+
+<p>Il importe de distinguer deux propriétés que la pratique confond, et dont la confusion coûte cher.</p>
+
+<p>La <strong>conformité</strong> atteste qu'une implémentation respecte une spécification de référence <strong>prise isolément</strong>. L'<strong>interopérabilité</strong> atteste que <strong>deux</strong> implémentations, fussent-elles chacune conformes, fonctionnent effectivement ensemble. L'interopérabilité est une <strong>relation entre systèmes</strong>, non une propriété intrinsèque de l'un d'eux (ch. 1 § 1.1.1) : deux participants conformes peuvent diverger sur des choix laissés libres par la norme et échouer à coopérer.</p>
+
+<p>Le test d'interopérabilité vise donc l'<strong>appariement réel</strong>, là où le test de conformité vise l'adéquation au modèle. Une suite de conformité verte des deux côtés ne prouve rien sur leur coopération.</p>
+
+<p>Le <strong>test de contrat piloté par le consommateur</strong> opérationnalise cette distinction : le consommateur exprime ses attentes sous forme d'un contrat ; le producteur vérifie <strong>en continu</strong> qu'il les honore. L'outillage automatise ce cycle — chaque partie publie ses contrats, et une commande d'autorisation de déploiement interroge le registre pour n'autoriser une livraison que si toutes les paires consommateur-producteur restent compatibles.</p>
+
+<p>On rejoint ici la vérification de compatibilité comportementale (ch. 1 § 1.1.4) : ce test en fournit une approximation <strong>pragmatique et automatisable</strong>, fondée sur des exemples plutôt que sur une preuve exhaustive.</p>
+
+<div class="avert">
+  <p>Que cet écart entre couverture empirique et garantie formelle ne soit comblé par aucune méthode industrielle relève d'une <strong>absence de documentation</strong> au sens de R-14 : le socle hérité n'en recense pas, ce qui n'établit pas qu'il n'en existe aucune.</p>
+</div>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Ce test vérifie la compatibilité <strong>par échantillons d'interactions</strong>, non par raisonnement sur l'ensemble des comportements admissibles. Les formalismes du ch. 1 § 1.1.4 — types de session, automates d'interface — visent au contraire une garantie comportementale décidée sur la structure des protocoles. L'écart entre cette garantie et la couverture empirique reste un front de recherche, et il s'élargit quand le participant est un agent dont les comportements ne sont pas énumérables à l'avance.</p>
+</div>
+
+<h3>3.4.4 Suites de certification et organismes de normalisation</h3>
+
+<p>Lorsque l'interopérabilité doit être garantie à l'échelle d'un <strong>écosystème ouvert</strong>, les acteurs s'appuient sur des <strong>profils d'interopérabilité</strong> — sous-ensembles précisés d'une norme, fermant les options ambiguës — et sur une <strong>certification tierce</strong> qui atteste leur respect. Dans le domaine de l'identité, des programmes de certification valident qu'une implémentation se comporte comme attendu ; d'autres certifient l'authentification forte.</p>
+
+<p>Cette certification transforme une compatibilité <strong>espérée</strong> en compatibilité <strong>attestée</strong> — condition d'adoption dans les secteurs régulés, comme le Livre III le montrera. C'est aussi l'héritage direct de la discipline LISI que le ch. 1 § 1.2.2 relevait : l'évaluation par preuves plutôt que par déclaration d'intention.</p>
+
+<p>La gouvernance des normes elles-mêmes se répartit entre organismes aux périmètres complémentaires : l'IETF publie les documents des protocoles d'Internet, le W3C les recommandations du Web, OASIS et l'OMG des standards d'entreprise, l'ISO et la CEI les normes internationales. Cartographier cette répartition aide à situer la <strong>maturité et l'autorité</strong> d'une spécification donnée.</p>
+
+<div class="avert">
+  <p><strong>Une recommandation finalisée, un document promu au rang de norme et un travail en cours ne portent pas le même poids contractuel.</strong> C'est la distinction que le marqueur de ressource vivante matérialise dans tout ce dépôt, et elle est la seule protection contre une classe d'erreur très répandue : citer un brouillon comme s'il engageait ses auteurs. Le ch. 7, qui traite la généalogie et la gouvernance des standards agentiques, en fait son critère central.</p>
+</div>
+
+<h3>3.4.5 Traçage distribué et contexte de trace</h3>
+
+<p>Dans une architecture distribuée, une requête traverse de nombreux services avant de produire une réponse ; comprendre une <strong>défaillance d'interopérabilité</strong> suppose de reconstituer ce parcours. Le traçage distribué répond à ce besoin en propageant un identifiant de trace de bout en bout.</p>
+
+<p>Pour que la corrélation survive aux frontières entre services hétérogènes, <strong>le format de propagation doit lui-même être interopérable</strong> : une recommandation du W3C normalise les en-têtes de contexte de trace, et une spécification complémentaire y ajoute la propagation de contexte applicatif.</p>
+
+<p>Ce point mérite d'être souligné parce qu'il est contre-intuitif : <strong>l'observabilité est un problème d'interopérabilité à part entière</strong>. Sans format de contexte commun, les traces se rompent à chaque changement de fournisseur, et le système reste opaque précisément là où il est le plus distribué.</p>
+
+<p>Un cadre d'instrumentation largement adopté fournit le protocole d'export qui unifie les trois signaux — traces, métriques et journaux —, tandis que ses <strong>conventions sémantiques</strong> standardisent le nommage des attributs, condition d'une corrélation effective entre signaux et entre équipes. La littérature de l'observabilité insiste sur cette bascule : l'enjeu n'est plus de <strong>surveiller des seuils connus d'avance</strong>, mais d'<strong>interroger librement</strong> un système pour expliquer des comportements imprévus — ce qui suppose des données émises selon des conventions partagées.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> cette bascule est la raison pour laquelle l'observabilité, et non la supervision, est le socle que le Livre IV réemploie. Un agent produit par construction des comportements imprévus ; un dispositif conçu pour vérifier des seuils connus d'avance n'a rien à en dire. Le socle n'établit pas cette conséquence ; elle est proposée comme lecture, et le ch. 38 l'instruit.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Une instrumentation conforme aux conventions sémantiques, propageant le contexte de trace normalisé, permet de suivre une transaction à travers une passerelle d'API, un maillage de services et des consommateurs d'événements. Au niveau du transport, des outils fondés sur des sondes noyau offrent une visibilité réseau <strong>sans instrumentation applicative</strong>, complémentaire des traces de niveau service.</p>
+</div>
+
+<h3>3.4.6 Auditabilité et conformité réglementaire des intégrations</h3>
+
+<p>L'observabilité ne sert pas que le diagnostic : elle fonde l'<strong>auditabilité</strong>, c'est-à-dire la capacité à <strong>démontrer après coup, preuves à l'appui</strong>, comment une intégration s'est comportée.</p>
+
+<p>La différence entre les deux est celle du destinataire. Le diagnostic sert l'exploitant, qui sait ce qu'il cherche ; l'auditabilité sert un <strong>tiers</strong>, qui ne le sait pas et qui n'accordera aucun crédit à une reconstitution produite par la partie contrôlée. C'est cette asymétrie qui rend l'auditabilité coûteuse, et c'est elle que le Livre III retrouvera comme contrainte plutôt que comme confort.</p>
+
+<p>Cette exigence devient contraignante dès lors que la réglementation impose des <strong>interfaces ouvertes</strong> et la <strong>traçabilité des accès</strong>. Dans la banque ouverte, une directive européenne oblige les établissements à exposer des interfaces d'accès aux comptes, dont l'usage par des tiers doit être journalisé et vérifiable ; l'auditabilité des appels y est une <strong>condition de conformité</strong>, non un agrément.</p>
+
+<div class="avert">
+  <p><strong>Ce cas est cité comme illustration du mécanisme, et à ce titre seul.</strong> Il n'est ni un modèle pour le cadre canadien, ni un précédent transposable au vertical financier que le Livre III instruit à son propre grain. Ce qui se transporte d'ici vers les ch. 25 à 36 est la <strong>forme</strong> — une exigence d'auditabilité opposable, adossée à une obligation d'interface —, jamais son contenu. La même réserve avait été posée au ch. 1 § 1.2.3 pour le dispositif européen d'évaluation obligatoire, et elle vaut pour la même raison : le Livre III ne raisonne pas par analogie européenne.</p>
+</div>
+
+<p>Cette section clôt le socle pré-agentique de l'identité et de la gouvernance. Ce qui suit, dans le Livre I, est la couche protocolaire proprement agentique — et ce qui la précède, dans les ch. 4 à 6, est l'ingénierie de l'agent lui-même. Le lecteur qui arrive au ch. 12 y trouvera ces mécanismes <strong>transposés</strong>, jamais réexpliqués : c'est le contrat que ce chapitre passe avec le reste de la somme.</p>
+
+<section class="statut" id="s35">
+
+<h2><span class="sig">§ 3.5</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel ce chapitre a été rédigé, conformément à la règle d'escalade du <a class="lien" href="../PRD/PRD.md">PRD</a> Annexe A : <em>un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il remonte.</em></p>
+</div>
+
+<p><strong>Ce qui est enfreint</strong> — les portes <strong>G-1</strong>, <strong>G-2</strong> et <strong>G-3</strong> sont ouvertes. Rédaction sur instruction d'auteur du 27 juillet 2026. Quatre conséquences, plus une propre à ce chapitre :</p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01.</strong> Les faits résolvent contre le Vol. I <em>Monographie</em> §1.9-1.10, en régime <strong>[C]</strong>.</li>
+  <li><strong>Aucun décompte n'est publiable</strong> (G-2).</li>
+  <li><strong>Les renvois « ch. N » sont des renvois de plan, non de texte</strong> — ch. 7, 12, 13, 16, 17, 19, 21, 25-36, 37, 38 non rédigés.</li>
+  <li><strong>⚠ Conséquence propre à ce chapitre, et la plus sérieuse du Livre I à ce jour.</strong> Le régime <strong>[C]</strong> est particulièrement inadéquat pour de la matière <strong>cryptographique</strong>, parce qu'un énoncé de sécurité non élevé en [B] est cité comme une <strong>garantie</strong>. Le chapitre a paré ce risque en appliquant R-02 avec insistance — cinq qualifications explicites, chacune énonçant ce que le mécanisme démontre <strong>et ce qu'il ne démontre pas</strong>. Cette parade <strong>ne remplace pas l'élévation en [B]</strong>, qui reste due en G-3 et qui, pour ce chapitre, doit être traitée en priorité.</li>
+</ol>
+
+<p><strong>Remontées ouvertes par ce chapitre</strong>, à l'instance d'arbitrage (D-6, non désignée) :</p>
+
+<ul class="puces">
+  <li><strong>R-IV-04 — non bloquante, à échéance G-1.</strong> Trois faits datés à re-vérifier : la finalisation du profil de haute sécurité (22 février 2025), la recommandation sur les attestations vérifiables (15 mai 2025), et le <strong>statut de projet</strong> du cadre d'autorisation de nouvelle génération, encore non finalisé à la mi-2026. Ce dernier est le plus volatil : sa finalisation pendant la rédaction de la somme obligerait à reprendre le § 3.2.1, qui le présente aujourd'hui comme un projet.</li>
+  <li><strong>R-IV-05 — bloquante pour les ch. 12, 13, 21, 37 et 38.</strong> L'économie de fusion côté identité <strong>repose entièrement</strong> sur le fait que ces cinq chapitres citent les § 3.2 et § 3.3 <strong>sans les reconstruire</strong>. Aucun dispositif de contrôle ne vérifie cette abstention : <code>check-toc.py</code> ne lit pas les pièces, et <code>verifier-piece.py</code> ne connaît qu'une pièce à la fois. <strong>Un motif de balayage inter-pièces est à construire en G-3</strong> — il ferait partie des motifs que le PRD §8 dit devoir être posés à la clôture de cette porte. Sans lui, la duplication se constatera à la relecture finale, c'est-à-dire trop tard pour être économique.</li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la table détaillée du TOC section par section (§ 3.1 à § 3.4) ; la table de couverture est respectée, y compris la mention <strong>en entier</strong> des §1.9.2 et §1.9.3 non hérités par les ch. 12 et 37 ; les deux séries de garde-fous sont balayées et déclarées, avec cinq occurrences de R-02, une de R-11 et deux de R-14 marquées en toutes lettres ; les constructions d'auteur portent « Lecture de l'auteur » (CA-IV-07).</p>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 3. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.23, entrée du chapitre 3, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>
