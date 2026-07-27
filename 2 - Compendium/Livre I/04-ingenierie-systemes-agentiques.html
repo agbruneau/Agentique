@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 4 — L&#x27;ingénierie des systèmes agentiques : anatomie, raisonnement, outils · La somme agentique</title>
+<meta name="description" content="l&#x27;agent est un LLM augmenté d&#x27;une boucle perception-raisonnement-action-observation ; son ingénierie est une discipline distincte du prompt, gouvernée par des régimes de contrôle et des niveaux d&#x27;autonomie.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre I · Chapitre 4</div>
+  <ol>
+    <li><a href="#s40"><span class="num">4.0</span>Introduction : de l&#x27;agent conversationnel à l&#x27;agent qui agit</a></li>
+    <li><a href="#s41"><span class="num">4.1</span>Fondements et définitions de l&#x27;IA agentique</a></li>
+    <li><a href="#s42"><span class="num">4.2</span>Architectures d&#x27;agent et boucle agentique</a></li>
+    <li><a href="#s43"><span class="num">4.3</span>Raisonnement, planification et calcul à l&#x27;inférence</a></li>
+    <li><a href="#s44"><span class="num">4.4</span>Utilisation d&#x27;outils et accès aux outils</a></li>
+    <li><a href="#s45"><span class="num">4.5</span>Choix et service du modèle comme décision d&#x27;ingénierie</a></li>
+    <li><a href="#s46"><span class="num">4.6</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.23 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="04-ingenierie-systemes-agentiques.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique</div>
+  <h1><span class="chap">Chapitre 4</span>L&#x27;ingénierie des systèmes agentiques : anatomie, raisonnement, outils</h1>
+  <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6)</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — rédigé sur instruction d'auteur du 27 juillet 2026, <strong>avant</strong> les portes G-1, G-2 et G-3 du <a class="lien" href="../PRD/PRD.md">PRD</a> §5. Premier chapitre du Livre I dont la matière est <strong>proprement agentique</strong> : les ch. 1 à 3 posaient le socle pré-agentique</dd>
+    <dt>Date de gel</dt>
+    <dd><strong>Aucune.</strong> Gel unique non fixé (décision d'auteur D-1). Matière condensée au gel de sa source — <strong>juin 2026</strong> (Vol. I). ⚠ <strong>C'est le chapitre du Livre I dont la matière se périme le plus vite</strong> : la nomenclature des modèles de raisonnement, les jalons de version des cadriciels et la frontière des capacités sont datés par construction, et la source elle-même écrit que cette nomenclature « évolue vite et doit être revérifiée à toute publication »</dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (Annexe B non constituée, porte G-3 ouverte). Les énoncés résolvent contre le <strong>Vol. I <em>Monographie</em> §2.1-2.5 et §2.8.5</strong>, en régime <strong>[C]</strong> (PRD §7.1). <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd><strong>Les deux séries, intégralement.</strong> Vol. II — <strong>R-8 (jamais nus) : une occurrence</strong>, § 4.1.4, où « autonomie graduée » n'est employé qu'accompagné de son échelle ; <strong>métriques auto-déclarées (PRD Vol. II §7.5) : une occurrence</strong>, § 4.0.1, attribuée à sa source. R-1 à R-7 : <strong>zéro occurrence</strong> (aucune matière réglementaire canadienne, aucun énoncé sur E-23 ni le RTR) ; ⚠ <strong>réserve F-01 (MCP « cadre » d'autorisation, jamais « sécurisé ») : sans objet ici</strong> — l'anatomie protocolaire part au ch. 8, et ce chapitre s'arrête à l'usage d'outils au niveau ingénierie. Vol. III — <strong>R-13 (« autonomie graduée » jamais nue) : une occurrence</strong>, § 4.1.4, avec l'échelle nommée ; <strong>R-14 : deux occurrences</strong>, § 4.1.1 et § 4.3.3. R-01 à R-12 : <strong>zéro occurrence</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ 9 000 mots de corps (§ 4.0 à § 4.5). Enveloppe <strong>dérivée, non prescrite</strong>. ⚠ <strong>Aucun décompte n'est publiable</strong> tant que G-2 est ouverte</dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>l'agent est un LLM augmenté d'une boucle perception-raisonnement-action-observation ; son ingénierie est une discipline distincte du prompt, gouvernée par des régimes de contrôle et des niveaux d'autonomie.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.23, entrée du chapitre 4.</span>
+</div>
+
+<h2 id="s40"><span class="sig">§ 4.0</span>Introduction : de l'agent conversationnel à l'agent qui agit</h2>
+
+<p>Les trois premiers chapitres du Livre ont posé un socle <strong>pré-agentique</strong> : ce que l'interopérabilité exige, ce que le sens suppose, ce que la confiance coûte. Ce chapitre ouvre la matière proprement agentique, et il commence par la seule distinction qui la justifie.</p>
+
+<p>Entre 2024 et 2026, les systèmes fondés sur les grands modèles de langage ont franchi un seuil qualitatif : de systèmes qui <strong>produisent du texte</strong> sur demande, ils sont passés à des systèmes qui <strong>agissent</strong> — appellent des outils, lisent et écrivent des fichiers, interrogent des bases, pilotent un navigateur ou un poste de travail, coordonnent d'autres agents. La question centrale se déplace avec eux. Il ne s'agit plus de savoir si un modèle est capable, mais de savoir comment <strong>concevoir, déployer et exploiter</strong> un système autour de lui qui soit fiable, contrôlable en coût et défendable en sécurité.</p>
+
+<p>C'est cet enjeu d'ingénierie qui fait de l'agentique une discipline distincte du prompt — et la thèse du chapitre tient dans cette distinction.</p>
+
+<h3>4.0.1 Du modèle conversationnel à l'agent qui agit sur le monde</h3>
+
+<p>Un modèle conversationnel <strong>répond</strong> : il reçoit une suite de jetons et en produit une autre, sans effet au-delà de la chaîne de caractères rendue. Un agent <strong>agit</strong> : il insère entre la perception et la sortie une boucle où le modèle décide d'invoquer des outils dont l'exécution produit des <strong>effets de bord</strong> — un courriel envoyé, une transaction enregistrée, un fichier modifié.</p>
+
+<p>La conséquence d'ingénierie est immédiate et elle commande tout le reste : <em>dès que le modèle agit, le rayon d'impact s'élargit</em>. Une hallucination dans une réponse textuelle se corrige par relecture ; une hallucination qui déclenche une <strong>action irréversible</strong> engage le système producteur. Ce n'est pas un raffinement de l'usage conversationnel, c'est un changement de nature.</p>
+
+<p>Les capacités de pilotage d'interface graphique, ouvertes en bêta publique fin 2024 puis formalisées début 2025, illustrent cet élargissement : l'agent ne manipule plus des API choisies, mais l'interface graphique générale, <strong>démultipliant à la fois la portée et la surface d'exposition</strong>.</p>
+
+<p>Trois contraintes transversales structurent l'ingénierie qui suit, et elles sont posées ici une fois pour servir partout :</p>
+
+<ul class="puces">
+  <li><strong>le coût</strong> — l'intensité en jetons des boucles agentiques fait de l'économie des jetons une contrainte de conception, non un poste budgétaire. Un surcoût d'environ <strong>quinze fois</strong> pour une architecture multi-agents sur une tâche interne est <strong>rapporté par Anthropic</strong> ; cette métrique est auto-déclarée et n'est citée qu'attribuée à sa source. Le fil est consolidé au Livre IV ;</li>
+  <li><strong>le modèle</strong> — frontière contre petits modèles agentiques, modèles de raisonnement contre modèles standards, routage et réglage maison : une décision d'ingénierie, traitée en § 4.5 ;</li>
+  <li><strong>la sécurité</strong> — instructions et données partagent <strong>le même flux de jetons</strong>, de sorte que l'injection d'invite <strong>ne peut être éliminée au niveau du modèle</strong> et appelle une défense en profondeur. Le modèle de menace et les vecteurs sont au ch. 19 ; la défense architecturale au ch. 6 § 6.5.</li>
+</ul>
+
+<p>Ces trois fils prolongent l'invariant du Livre en l'appliquant à une couche logicielle d'un genre nouveau, où le composant central est <strong>probabiliste</strong> et où le périmètre de l'action s'élargit à mesure que l'autonomie augmente.</p>
+
+<h3>4.0.2 Le double public et l'angle d'ingénierie dominant</h3>
+
+<p>Le chapitre s'adresse aux deux lectorats de la somme et l'assume comme contrainte de rédaction. Le lectorat de recherche attend les formalismes et les filiations : l'agent rationnel, l'héritage des architectures délibératives, le cadre des processus décisionnels sous observabilité partielle, la lignée de l'apprentissage par renforcement. Le praticien-architecte attend des normes, des cadriciels nommés et datés, et des critères de décision opérationnels.</p>
+
+<p>L'angle retenu pour arbitrer est celui de l'<strong>ingénierie</strong> : les formalismes classiques ne sont pas exposés pour eux-mêmes, mais comme ancrage qui éclaire les choix de conception. Les encadrés <em>Perspective recherche</em> et <em>Mise en œuvre</em>, hérités du Vol. I et reconduits par la somme, sont l'instrument de ce double public.</p>
+
+<div class="avert">
+  <p><strong>Ce que ce chapitre ne traite pas, et où cela se trouve.</strong> Il traite l'ingénierie <strong>interne</strong> de l'agent — architecture, raisonnement, outillage, choix du modèle. Il ne traite ni la mémoire et l'ancrage informationnel (ch. 5), ni le multi-agent, l'évaluation et la sûreté (ch. 6), ni l'<strong>anatomie protocolaire</strong> de l'accès agent-outil, qui part <strong>en entier</strong> au ch. 8. La distinction est nette et vaut d'être retenue : ici, l'usage d'outils comme problème d'ingénierie ; là-bas, le protocole comme objet.</p>
+</div>
+
+<h2 id="s41"><span class="sig">§ 4.1</span>Fondements et définitions de l'IA agentique</h2>
+
+<p>Avant l'ingénierie proprement dite, il faut fixer le vocabulaire, exhumer les formalismes que les agents fondés sur les modèles de langage <strong>réoutillent</strong> plutôt qu'ils ne les remplacent, et nommer le débat terminologique qui, faute de consensus formel, cadre l'ensemble.</p>
+
+<p>L'invariant du Livre y trouve déjà ses prises : un agent est précisément une unité que l'on cherche à <strong>découpler</strong> de son environnement par un <strong>contrat</strong> d'action, et dont le comportement <strong>évolue</strong> au gré du modèle, de la mémoire et des outils qui le composent.</p>
+
+<h3>4.1.1 Qu'est-ce qu'un agent ? Définition canonique et débat terminologique</h3>
+
+<p>Le terme souffre d'une polysémie ancienne que l'irruption des modèles de langage n'a fait qu'aggraver. ⚠ <strong>Reconnaître cette absence de consensus formel n'est pas une faiblesse rhétorique : c'est une donnée d'ingénierie</strong>, car la frontière entre « ce qui est un agent » et « ce qui n'en est pas un » conditionne les choix d'architecture, de coût et de sécurité. Que cette absence de consensus persiste relève d'un constat sur le corpus consulté — une <strong>absence de documentation</strong> au sens de R-14 du Vol. III, non un fait négatif vérifié.</p>
+
+<p>La définition canonique provient du manuel de référence du domaine : un agent est tout ce qui peut être vu comme <strong>percevant</strong> son environnement au moyen de capteurs et <strong>agissant</strong> sur cet environnement au moyen d'effecteurs. Volontairement minimale, elle fixe le vocabulaire réutilisé partout — <em>perception</em>, <em>action</em>, et au-dessus le <em>but</em> qui rend une action préférable à une autre — et institue surtout la <strong>boucle perception-action</strong> comme structure invariante.</p>
+
+<p>Des raffinements classiques exigent qu'un agent intelligent soit <strong>réactif</strong> (il répond en temps utile), <strong>proactif</strong> (il poursuit des buts de sa propre initiative) et <strong>social</strong> (il interagit avec d'autres agents). Une lecture par l'<strong>optimalité bornée</strong> est plus exigeante encore, et particulièrement pertinente ici : l'agent rationnel n'est pas celui qui calcule l'action parfaite, mais celui qui <strong>agit au mieux compte tenu de ses ressources de calcul limitées</strong>. Cadrage prémonitoire pour des agents dont chaque pas de délibération a un coût en jetons.</p>
+
+<p>La littérature récente distingue par ailleurs l'<strong>agent</strong> comme entité de l'<strong>IA agentique</strong> comme propriété d'un système, et deux formulations opérationnelles coexistent sans se recouvrir. L'une insiste sur la <strong>direction dynamique</strong> du processus — des systèmes où les modèles dirigent eux-mêmes leurs processus et leur usage d'outils, plutôt qu'un script figé. L'autre, plus lapidaire, insiste sur la <strong>boucle outillée</strong> — un modèle qui exécute des outils en boucle pour atteindre un but. Elles se citent séparément parce qu'elles n'insistent pas sur le même critère.</p>
+
+<p>Au-delà de l'entité unique, une taxonomie conceptuelle oppose explicitement les <em>agents</em> — entités outillées individuelles — à l'<em>IA agentique</em> — systèmes composés et coordonnés. Cette opposition structure la progression du mouvement : le noyau d'un agent occupe ce chapitre et le ch. 5, les systèmes coordonnés le ch. 6.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>L'absence de définition consensuelle rend les comparaisons de « capacités agentiques » <strong>difficilement commensurables</strong> entre travaux : chaque équipe opérationnalise « agent » à sa manière, de la simple boucle outillée jusqu'aux sociétés simulées. Cela fragilise toute prétention à une métrique unifiée et justifie l'approche par bancs d'essai ciblés du ch. 6 § 6.3 — approche qui a ses propres limites, mais dont le périmètre est au moins déclarable.</p>
+</div>
+
+<h3>4.1.2 Le cadre de l'agent rationnel : PEAS et typologies</h3>
+
+<p>Le cadre de l'agent rationnel offre une grille de conception <strong>toujours pertinente pour spécifier un agent avant d'en écrire la moindre ligne</strong>. Trois outils s'en dégagent.</p>
+
+<p>La spécification <strong>PEAS</strong> — performance, environnement, actionneurs, capteurs — force l'ingénieur à expliciter quatre choses : la mesure de performance qui définit le succès, l'environnement où l'agent opère, les actionneurs par lesquels il agit, les capteurs par lesquels il perçoit. Appliquée à un agent de recherche documentaire, elle impose de nommer la métrique de qualité, le corpus et les API accessibles, les outils invocables et les canaux d'entrée. C'est, transposé, <strong>l'exercice de définition du contrat d'action</strong> de l'agent — et c'est le premier point où l'invariant du Livre mord sur la matière agentique.</p>
+
+<p>La <strong>typologie des environnements</strong> — observable ou partiellement observable, déterministe ou stochastique, statique ou dynamique, discret ou continu, mono- ou multi-agent — situe la difficulté. Un agent web opère typiquement dans un environnement <strong>partiellement observable, stochastique et dynamique</strong> : précisément les conditions où la boucle perception-action doit tolérer l'incertitude.</p>
+
+<p>L'<strong>échelle de sophistication</strong> — agent réflexe simple, à modèle interne, à but, à utilité, apprenant — se transpose directement aux patrons du § 4.2.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>PEAS se traduit en <strong>fiche de spécification</strong> : objectif mesurable, périmètre d'environnement, inventaire des outils autorisés et de leurs permissions, nature des observations. Cette fiche est aussi le point de départ de l'analyse de risque — <strong>énumérer les actionneurs, c'est énumérer le rayon d'impact</strong>, donc la surface à sécuriser. C'est le lien le plus direct entre la spécification d'un agent et le travail du Livre II.</p>
+</div>
+
+<h3>4.1.3 Héritages théoriques : BDI, systèmes multi-agents et décision séquentielle</h3>
+
+<p>Les agents fondés sur les modèles de langage ne naissent pas dans un vide théorique. Trois lignées importent, et aucune n'est une curiosité historique : elles reviennent au premier plan dès qu'il s'agit de fiabiliser un agent, d'en coordonner plusieurs, ou de comprendre ce que signifie « entraîner » un agent.</p>
+
+<p><strong>L'architecture croyances-désirs-intentions</strong> (BDI) formalise la délibération pratique en trois attitudes : les <em>croyances</em> (l'état informationnel tenu pour vrai), les <em>désirs</em> (les états du monde jugés souhaitables), les <em>intentions</em> (les désirs auxquels l'agent s'est engagé). Le socle philosophique soutient que <strong>l'engagement envers une intention sert précisément à éviter la reconsidération permanente des options</strong> — un argument de stabilité computationnelle avant la lettre.</p>
+
+<p>Ce point vaut d'être retenu, parce qu'il nomme un défaut réel des agents contemporains : là où un modèle de langage tend à reconsidérer son plan à chaque pas — coûteux en jetons et source de dérive sur les longues trajectoires —, l'engagement offre un cadre pour distinguer <strong>ce qui doit rester stable</strong> de <strong>ce qui peut être révisé</strong>. La séparation croyances/intentions préfigure la frontière contrôleur/exécuteur du § 4.2.4.</p>
+
+<p><strong>Les systèmes multi-agents classiques</strong> ont posé, bien avant les modèles de langage, la question de la coordination : un protocole d'allocation de tâches par appel d'offres et adjudication, des actes de langage normalisés structurant la communication par performatifs typés. Ce socle est explicitement réinterprété par les systèmes multi-agents contemporains (ch. 6 § 6.1).</p>
+
+<p><strong>La décision séquentielle</strong> fournit le cadre formel de la boucle sous observabilité partielle : le processus décisionnel de Markov modélise la décision quand l'état est observable, son extension partiellement observable le cas — plus réaliste — où l'état n'est qu'imparfaitement observé. Un agent opérant sur le web ou un poste de travail relève <strong>structurellement</strong> de ce second cas : il n'observe qu'une fenêtre partielle de son environnement.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Le branchement entre ce formalisme et les agents contemporains reste <strong>partiellement métaphorique</strong> : un agent ne maximise pas une fonction de valeur explicite à l'inférence, il échantillonne des actions conditionnées par un contexte. La transposition rigoureuse — apprendre une politique par renforcement multi-tours sur des trajectoires d'outils — est précisément l'objet des travaux d'entraînement agentique (§ 4.3.5), qui matérialisent le pont entre la décision séquentielle classique et l'optimisation des modèles.</p>
+</div>
+
+<h3>4.1.4 Agent, workflow, automatisation : régimes de contrôle et niveaux d'autonomie</h3>
+
+<p>L'une des distinctions les plus opératoires de la période oppose les <strong>flux de travail</strong> — où modèles et outils sont orchestrés par des chemins de code prédéfinis — aux <strong>agents</strong> — où le modèle lui-même dirige dynamiquement son processus.</p>
+
+<p>Le critère discriminant tient en une question : <strong>qui tient la tuyauterie</strong>, le code écrit par l'ingénieur ou le modèle au moment de l'exécution ?</p>
+
+<p>Cette distinction n'est pas académique : elle gouverne le <strong>coût</strong> (un flux déterministe est prévisible et économe ; un agent autonome ne l'est pas), la <strong>testabilité</strong> (un chemin de code se teste, une délibération émergente s'évalue statistiquement) et la <strong>sécurité</strong> (déléguer le contrôle au modèle élargit la surface d'injection d'invite, irréductible au niveau du modèle).</p>
+
+<p>Au-delà du couple binaire, il est utile de penser la délégation comme un <strong>continuum d'autonomie, des niveaux 0 à 5</strong> — du simple outil sous contrôle humain total jusqu'à l'agent pleinement autonome — par analogie avec les échelles d'autonomie de conduite.</p>
+
+<div class="avert">
+  <p><strong>Précision imposée par le garde-fou R-13 du Vol. III, et le TOC la signale sous l'entrée de ce chapitre.</strong> Le Vol. I porte <strong>trois échelles distinctes</strong> dont la confusion serait fautive. Celle qui vient d'être posée est le <strong>continuum d'autonomie 0-5</strong> de son ch. 2. Écrire « l'autonomie graduée du Vol. I » sans préciser <strong>laquelle</strong> rendrait le renvoi indécidable — et le terme « autonomie graduée » ne s'emploie jamais nu, ni ici ni ailleurs dans la somme. Le patron directeur <em>autonomie graduée sous contrôle de finalité</em>, posé à l'avant-propos, est un <strong>troisième objet encore</strong> : il n'est pas une échelle mais un principe d'architecture, et le Livre III l'instruit.</p>
+</div>
+
+<p>Le principe d'ingénierie qui se dégage de ce continuum est constant et sera repris par toute la somme : <strong>minimiser la surface agentique</strong>. Ne déléguer au modèle que ce qui requiert réellement sa flexibilité, et confier au code déterministe tout ce qui peut l'être. Cette préférence pour le découplage explicite entre tuyauterie déterministe et délibération prolonge directement l'invariant : un <strong>contrat clair entre la partie figée et la partie autonome</strong> du système.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>La règle pratique est de <strong>remonter le moins d'autonomie possible vers le modèle</strong>. Si la tâche se décrit comme un graphe d'étapes connu à l'avance, un flux l'emporte sur un agent : moins de jetons, plus de prédictibilité, surface d'attaque réduite. L'agentivité ne se justifie que lorsque la séquence d'actions <strong>ne peut être anticipée</strong>. Cet arbitrage est le cœur de la grille de décision « quand agentifier » que le ch. 43 reprend.</p>
+</div>
+
+<h3>4.1.5 La frontière des capacités : cadrage qualitatif</h3>
+
+<p>Pour motiver l'effort d'ingénierie qui suit, il faut situer <strong>qualitativement</strong> ce que les agents savent et ne savent pas faire — sans anticiper la mécanique (§ 4.4), ni les chiffres de bancs d'essai, qui sont au ch. 6 § 6.3.</p>
+
+<p>Trois domaines concentrent les progrès les plus nets. Le <strong>codage</strong> : la résolution autonome de tâches logicielles réelles est passée d'anecdotique à substantielle, portée par des harnais d'agents dédiés. Le <strong>pilotage de poste de travail</strong> : un agent peut désormais percevoir une interface et agir dessus, quoique de façon encore fragile. La <strong>recherche approfondie</strong> : la décomposition itérative d'une question en sous-recherches outillées est devenue une application phare.</p>
+
+<p>Ces avancées ne doivent pas masquer des <strong>fragilités structurelles persistantes</strong>, qui sont autant de motifs d'ingénierie pour la suite :</p>
+
+<ul class="puces">
+  <li>les <strong>horizons longs</strong> — les agents s'effondrent sur les tâches à nombreuses étapes, où l'erreur se compose pas après pas ;</li>
+  <li>le <strong>coût</strong> — l'intensité en jetons des boucles en fait une contrainte de premier ordre ;</li>
+  <li>la <strong>fiabilité</strong> — le non-déterminisme et le manque de consistance d'une exécution à l'autre.</li>
+</ul>
+
+<p>C'est <strong>cette tension entre capacités réelles et fragilités tenaces</strong>, et non un récit de progrès linéaire, qui justifie l'angle d'ingénierie de tout le mouvement.</p>
+
+<h2 id="s42"><span class="sig">§ 4.2</span>Architectures d'agent et boucle agentique</h2>
+
+<p>Les fondements fournissent le vocabulaire ; ils ne disent pas comment se construit concrètement le noyau d'un agent. Cette section décrit ce noyau et catalogue les patrons mono-agent qui instancient la boucle.</p>
+
+<h3>4.2.1 Le modèle augmenté et la boucle perception-raisonnement-action-observation</h3>
+
+<p>Le bloc de base d'un agent n'est <strong>pas le modèle nu</strong> mais le <strong>modèle augmenté</strong> : un modèle de langage doté d'un accès à des outils, à une mémoire et à un mécanisme de récupération, inséré dans une boucle de contrôle qui répète un cycle élémentaire — <strong>percevoir</strong> l'état (l'invite courante et les observations accumulées), <strong>raisonner</strong> (produire une étape de réflexion ou une décision), <strong>agir</strong> (émettre un appel d'outil ou une réponse), puis <strong>observer</strong> le résultat et l'intégrer au contexte avant l'itération suivante.</p>
+
+<p>La distinction avec un appel unique au modèle est <strong>structurelle</strong> : l'agent boucle, et c'est cette itération jusqu'à un critère d'arrêt — but atteint, budget d'appels épuisé, échec irrécupérable, demande d'intervention humaine — qui transforme un générateur de texte en système qui agit.</p>
+
+<p>Le bloc de base se décompose en quatre facultés qui structurent tout le noyau : l'<strong>usage d'outils</strong> (§ 4.4), la <strong>mémoire</strong> comme état interne persistant (ch. 5), la <strong>récupération</strong> d'information externe (ch. 5), et le <strong>raisonnement</strong> qui orchestre le tout (§ 4.3).</p>
+
+<p>La boucle elle-même reste volontairement minimale, et les guides d'ingénierie recommandent de partir du modèle augmenté le plus simple <strong>et de n'ajouter de la structure que lorsqu'une défaillance observée le justifie</strong>. Chaque tour consomme des jetons en proportion du contexte accumulé : la longueur de la trajectoire est donc, dès ce niveau, une variable de coût de premier ordre.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Le <strong>critère d'arrêt n'est pas un détail mais une garantie de terminaison</strong>. Une boucle sans budget d'appels explicite ni détection de stagnation peut diverger, multiplier les appels facturés et accumuler du contexte jusqu'à la dégradation. Fixer dès la conception un budget de pas, un plafond de jetons et une condition d'échec contrôlé relève du <strong>contrat opérationnel</strong> de l'agent, au même titre qu'un délai d'expiration pour un service réseau.</p>
+</div>
+
+<h3>4.2.2 Architectures cognitives en héritage</h3>
+
+<p>Les agents contemporains n'inventent pas la notion d'architecture cognitive : ils en héritent. Deux architectures classiques ont formalisé, bien avant l'ère des modèles de langage, la séparation entre mémoire — de travail, déclarative, procédurale —, opérateurs d'action et cycle de décision réglé par des règles. Cette lignée symbolique n'est pas la seule : une approche réactive, pour qui l'intelligence émerge du couplage étroit entre perception et action <strong>sans modèle symbolique central</strong>, offre le contrepoint historique — tension entre délibération explicite et réactivité incarnée que l'on retrouve, transposée, dans l'arbitrage du § 4.2.4.</p>
+
+<p>La tripartition qui s'en dégage — <em>qu'est-ce que l'agent sait, que peut-il faire, comment choisit-il</em> — demeure une grille de lecture pertinente. Un cadre intégrateur récent pose le pont explicite avec les agents langagiers : il les organise selon trois axes — des <strong>modules de mémoire</strong> (de travail, épisodique, sémantique, procédurale), un <strong>espace d'action</strong> structuré en actions internes (raisonner, récupérer, écrire en mémoire) et externes (utiliser un outil, interagir avec l'environnement), et une <strong>procédure de décision</strong> qui sélectionne l'action à chaque pas.</p>
+
+<p>Sa valeur d'ingénierie est de fournir un <strong>référentiel commun</strong> : il permet de situer les patrons du § 4.2.3 comme des instanciations d'un même schéma plutôt que comme des recettes isolées.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Ce cadre se présente comme intégrateur et <strong>non comme une architecture exécutable</strong> : sa contribution est taxinomique. Il éclaire une limite des agents actuels — là où les architectures classiques contraignaient le cycle par des <strong>règles vérifiables</strong>, l'agent langagier substitue un raisonnement en langage naturel <strong>dont la fidélité n'est pas garantie</strong> (§ 4.3.4), déplaçant la difficulté du choix de l'action vers le <strong>contrôle</strong> de ce choix. C'est, reformulé, le problème que tout le Livre II prend pour objet.</p>
+</div>
+
+<h3>4.2.3 Patrons de boucle mono-agent</h3>
+
+<p>Quelques patrons canoniques structurent la boucle d'un seul agent. Ils se distinguent par la façon dont ils <strong>entrelacent ou séparent</strong> raisonnement, action et observation, et par les compromis qu'ils imposent entre coût, prédictibilité et robustesse.</p>
+
+<p><strong>L'entrelacement raisonnement-action</strong> est le patron minimal de référence : à chaque pas, une étape de raisonnement verbalisé et une action dont le résultat est réinjecté avant le pas suivant. La trace guide le choix de l'action et l'action <strong>ancre le raisonnement dans des faits observés</strong>, ce qui réduit les hallucinations par rapport à une chaîne de pensée close sur elle-même.</p>
+
+<p>Sa simplicité explique son adoption comme boucle par défaut, mais elle a un coût précis. Chaque pas implique un appel au modèle <strong>sur l'intégralité du contexte accumulé</strong> : le coût croît avec la longueur de la trajectoire. Sur les trajectoires longues, ce patron <strong>dérive</strong> — accumulation d'erreurs non corrigées, boucles répétitives, perte du but initial à mesure que le contexte se dilue. Il sert donc d'excellent point de départ et de référence de comparaison, mais demande des garde-fous — budget de pas, détection de stagnation, compaction du contexte — dès que l'horizon dépasse quelques itérations.</p>
+
+<p><strong>La séparation planification-exécution</strong> répond à cette dérive : produire d'abord un plan en plusieurs étapes, puis l'exécuter pas à pas, avec replanification lorsqu'une étape échoue. La trajectoire devient plus prédictible et offre un point de reprise net, <strong>au prix d'une rigidité accrue</strong>. Une variante pousse le découplage plus loin en planifiant l'ensemble des appels d'outils <strong>avant</strong> d'observer leurs résultats, ce qui regroupe le raisonnement en un seul passage et permet de paralléliser les appels indépendants — gain d'économie de jetons, <strong>perte de réactivité</strong> : un plan établi sans observation ne peut corriger sa route si une hypothèse initiale s'avère fausse.</p>
+
+<p><strong>L'auto-critique</strong> ajoute à la boucle un mécanisme de réflexion : après un échec, l'agent génère une critique verbale de ce qui n'a pas fonctionné, l'écrit en mémoire, et réessaie en conditionnant sa nouvelle tentative sur cette réflexion. Ce <strong>renforcement verbal</strong> — distinct d'un apprentissage par mise à jour des poids — améliore les performances sur les tâches autorisant plusieurs essais, <strong>à condition qu'un signal de réussite permette de savoir qu'une correction est nécessaire</strong>.</p>
+
+<div class="avert">
+  <p><strong>La limite structurelle de l'auto-critique mono-agent est la chambre d'écho</strong> : un agent qui se critique lui-même reste prisonnier des angles morts de son propre modèle et peut <strong>renforcer une erreur au lieu de la corriger</strong>, faute de point de vue extérieur. C'est l'un des rares arguments techniques solides en faveur des topologies multi-agents — débat, vote, critique croisée —, et le ch. 6 § 6.1 en pèse le coût.</p>
+</div>
+
+<p><strong>L'action comme code exécutable</strong> unifie enfin l'espace d'action en le ramenant à un seul format : plutôt que d'émettre des appels d'outils sous forme d'objets discrets, l'agent écrit un fragment de programme qui invoque les outils comme des fonctions, compose leurs résultats, applique de la logique de contrôle et renvoie une valeur. Les avantages sont réels — familiarité des modèles avec le code, composition de plusieurs opérations en un seul tour, accès à un écosystème de bibliothèques plutôt qu'à un catalogue figé. <strong>La contrepartie est une surface de risque maximale</strong> : exécuter du code généré par un modèle exige un environnement confiné, faute de quoi l'agent dispose d'une capacité d'action quasi illimitée sur le système hôte.</p>
+
+<h3>4.2.4 Séparation contrôleur/exécuteur et critères de choix</h3>
+
+<p>Le principe d'ingénierie qui sous-tend ces patrons est la séparation entre un <strong>contrôleur</strong> qui décide quoi faire et un <strong>exécuteur</strong> qui réalise les actions — déclinée en architecture orchestrateur-travailleurs lorsque l'exécution est répartie.</p>
+
+<p>Isoler la décision de l'exécution est <strong>l'application directe du découplage au domaine agentique</strong> : le contrôleur tient la logique de but et de planification, l'exécuteur tient l'interface contractuelle vers les outils, et chacun peut évoluer sans casser l'autre.</p>
+
+<p>Le choix d'architecture procède alors d'un arbitrage entre deux régimes :</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Régime</th><th>Mécanisme</th><th>Force</th><th>Faiblesse</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Réactif</strong></td><td>décide pas à pas selon les observations</td><td>souple face à l'imprévu</td><td>peu prédictible, coûteux sur l'horizon long</td></tr>
+    <tr><td><strong>Délibératif</strong></td><td>planifie avant d'agir</td><td>prédictible, économe en appels</td><td>rigide face au changement</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 4.1 — Les deux régimes de boucle agentique et l'arbitrage qu'ils imposent.</p>
+
+<p><strong>Aucun n'est universellement supérieur</strong> : le critère opérationnel est la prévisibilité de l'environnement et la longueur de l'horizon.</p>
+
+<p>Deux anti-patrons doivent être nommés, parce qu'ils sont fréquents et coûteux. L'<strong>agentivité non justifiée</strong> : confier au modèle la tuyauterie d'un problème qu'un flux déterministe résoudrait plus sûrement et à moindre coût. Le <strong>plan rigide</strong> : imposer une planification figée à un environnement qui change, ce qui transforme la prédictibilité recherchée en fragilité.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> la séparation contrôleur/exécuteur est le concept de ce chapitre qui voyage le plus loin dans la somme. C'est elle que le ch. 22 retrouve sous le nom d'orchestration encadrée, et le ch. 29 sous celui de <em>frame déterministe invoquant les agents</em>. Le socle n'établit pas cette filiation ; elle est proposée comme lecture, et son instruction relève du Livre III.</p>
+
+<h2 id="s43"><span class="sig">§ 4.3</span>Raisonnement, planification et calcul à l'inférence</h2>
+
+<p>Reste le moteur qui anime chaque tour de la boucle : le <strong>raisonnement intra-agent</strong>. C'est lui qui transforme une observation en décision d'action et qui, sur un horizon long, distingue un agent capable de mener une tâche à terme d'un agent qui dérive.</p>
+
+<p>L'angle reste l'ingénierie : chaque avancée est soupesée à l'aune de son <strong>coût en jetons</strong>, de sa <strong>prédictibilité</strong> et de sa <strong>robustesse</strong>. Le raisonnement est précisément le poste où l'agent dépense le plus <strong>pour penser avant d'agir</strong>.</p>
+
+<h3>4.3.1 Du raisonnement linéaire à la recherche structurée</h3>
+
+<p>Le raisonnement par étapes intermédiaires a d'abord été obtenu par invite : inciter un modèle suffisamment grand à <strong>expliciter ses étapes</strong> améliore nettement les tâches arithmétiques, symboliques et de bon sens. Cette trace linéaire reste fragile : <strong>une erreur précoce se propage jusqu'à la conclusion</strong>.</p>
+
+<p>La <strong>cohérence interne</strong> atténue ce risque en échantillonnant plusieurs chaînes puis en retenant la réponse majoritaire — troquant des jetons supplémentaires contre une variance réduite. Mais le raisonnement réel n'est ni linéaire ni à passe unique. L'<strong>exploration arborescente</strong> généralise la chaîne : l'agent engendre plusieurs pensées candidates, les évalue et <strong>revient en arrière</strong>, ce qui débloque des tâches exigeant planification et recherche. Une généralisation en <strong>graphe</strong> autorise agrégation et raffinement de pensées non strictement arborescentes.</p>
+
+<p>Le compromis est explicite et se chiffre : <strong>chaque niveau de structure multiplie les appels au modèle</strong>, donc le coût et la latence, pour un gain de qualité qui décroît au-delà d'un certain budget.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Chaîne de pensée et cohérence interne sont des leviers à activer par défaut là où la justesse prime ; l'arbre et le graphe ne se justifient que sur des tâches à espace de solutions combinatoire, <strong>et à surcoût budgété d'avance</strong>. Avant d'instancier une recherche structurée, chiffrer le facteur multiplicatif d'appels qu'elle impose et le confronter au gain mesuré — faute de quoi l'agent paie un raisonnement somptuaire sans rendement.</p>
+</div>
+
+<h3>4.3.2 Recherche guidée et vérificateurs à l'inférence</h3>
+
+<p>Explorer un arbre de raisonnement suppose de savoir <strong>quelles branches étendre</strong> : c'est le rôle des vérificateurs. Une approche unifie raisonnement, action et planification en pilotant une recherche arborescente à l'inférence, où la valeur des nœuds est estimée par le modèle lui-même et par la rétroaction de l'environnement.</p>
+
+<p>Deux familles de vérificateurs guident cette recherche : les <strong>modèles de récompense de processus</strong>, qui notent chaque étape intermédiaire, et les <strong>modèles de récompense de résultat</strong>, qui ne jugent que la réponse finale. La supervision <strong>étape par étape</strong> l'emporte empiriquement sur la supervision de résultat pour fiabiliser le raisonnement mathématique.</p>
+
+<p>Le patron le plus simple échantillonne <em>N</em> réponses et retient celle qu'un vérificateur classe en tête, sans recherche arborescente. Plus largement, <strong>allouer davantage de calcul à l'inférence peut s'avérer plus rentable qu'augmenter la taille du modèle</strong> — un déplacement dont le § 4.3.4 tire les conséquences.</p>
+
+<div class="avert">
+  <p><strong>Une distinction à ne pas perdre</strong> : la recherche guidée <strong>à l'inférence</strong> produit une meilleure réponse ici et maintenant ; l'usage de la même technique pour <strong>générer des données</strong> d'auto-amélioration relève du § 4.3.5. Les deux emploient le même mécanisme à des fins incommensurables.</p>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Le couple <em>échantillonnage + vérificateur</em> est déployable <strong>sans entraînement spécialisé</strong> : le vérificateur peut être un modèle de récompense léger, un jeu de tests exécutables, ou un juge calibré (ch. 6 § 6.3.2). C'est l'option de premier recours pour gagner en fiabilité à budget contrôlé, le facteur d'échantillonnage se réglant finement selon l'enveloppe. La recherche arborescente complète reste réservée aux tâches à fort espace de décision où sa latence est tolérable.</p>
+</div>
+
+<h3>4.3.3 Décomposition et planification : les limites des modèles planificateurs</h3>
+
+<p>Mener une tâche à horizon long exige de <strong>décomposer le but en sous-buts ordonnés</strong>. Trois lignées coexistent : la décomposition par invite (planifier puis exécuter), la planification hiérarchique de tâches, et les <strong>solveurs symboliques</strong> qui offrent des garanties de correction et de complétude que les modèles autorégressifs n'ont pas.</p>
+
+<div class="avert">
+  <p><strong>Les évaluations contrôlées tempèrent l'enthousiasme, et ce point est le plus important de la section.</strong> Sur des bancs mesurant la planification et le raisonnement sur le changement, les modèles autorégressifs <strong>échouent à produire des plans valides de manière fiable</strong>, y compris sur des domaines élémentaires. Une investigation critique conclut qu'ils tiennent davantage de la <strong>récupération approximative de plans</strong> que de la recherche systématique dans l'espace d'états, et qu'ils ne fournissent <strong>aucune garantie de validité ni d'optimalité</strong>.</p>
+</div>
+
+<p>La distinction de génération importe : un modèle autorégressif standard est faible en planification, mais les <strong>modèles de raisonnement</strong> entraînés à dérouler une délibération interne marquent des progrès mesurables sur ces mêmes bancs. L'écart tient à la nature du calcul — un solveur explore exhaustivement et <strong>prouve l'inatteignabilité</strong>, là où le modèle, même raisonneur, échantillonne sans garantie.</p>
+
+<div class="avert">
+  <p><strong>Pour le praticien, cette limite est structurelle et non un défaut d'invite</strong> : aucune formulation ne confère à un modèle autorégressif les propriétés de complétude d'un planificateur symbolique. Que les progrès des modèles de raisonnement ne comblent pas cet écart relève, en revanche, d'une <strong>absence de documentation</strong> au sens de R-14 : le socle hérité constate des progrès mesurables sans établir de borne.</p>
+</div>
+
+<p>La voie productive consiste à employer le modèle <strong>non comme planificateur mais comme traducteur et générateur d'heuristiques</strong>. Dans ce rôle, il convertit un énoncé en langage naturel vers une représentation formelle qu'un solveur classique résout <strong>avec ses garanties</strong>, le modèle intervenant à nouveau pour rétro-traduire. Une architecture hybride place un <strong>vérificateur indépendant</strong> entre génération et acceptation : le modèle propose, un validateur externe réfute ou accepte, et seuls les plans certifiés sont exécutés.</p>
+
+<p>L'enjeu se déplace alors vers la <strong>qualité de la formalisation</strong> — un schéma de domaine erroné produit un plan valide <strong>pour le mauvais problème</strong>. C'est un déplacement du risque, non sa suppression : exactement le geste que le ch. 1 identifiait dans toutes les architectures d'intégration.</p>
+
+<h3>4.3.4 Modèles de raisonnement et calcul au moment du test</h3>
+
+<p>Une classe distincte de modèles a émergé — les <strong>modèles de raisonnement</strong> — entraînés à produire une <strong>longue délibération interne avant de répondre</strong>, plutôt qu'à répondre directement. Des travaux montrent qu'un apprentissage par renforcement à récompense vérifiable peut, à lui seul, faire émerger des comportements de raisonnement étendu — vérification, retour en arrière, allongement spontané de la trace — sans réglage supervisé préalable. Une autre lignée inaugure l'<strong>alignement délibératif</strong>, où le modèle raisonne explicitement sur les politiques de sûreté avant de répondre.</p>
+
+<div class="avert">
+  <p><strong>La nomenclature de ces familles évolue vite et la source elle-même prescrit de la revérifier à toute publication.</strong> Ce chapitre ne la fige donc pas : ce qui compte pour l'ingénierie n'est pas la liste des modèles mais <strong>le phénomène de fond</strong>.</p>
+</div>
+
+<p>Ce phénomène est une <strong>nouvelle loi d'échelle</strong> : à modèle figé, la qualité croît avec le calcul dépensé <strong>à l'inférence</strong>. Une partie du budget se déplace de l'entraînement vers le service — et c'est une conséquence d'architecture, pas seulement de facture.</p>
+
+<p><strong>Contrôler le budget de raisonnement.</strong> Le raisonnement étendu se paie en jetons facturés. Les interfaces exposent des leviers explicites — paramètre d'effort, budget de réflexion — qui plafonnent la longueur de la délibération. ⚠ <strong>Ces jetons de réflexion sont facturés comme des jetons de sortie même lorsqu'ils n'apparaissent pas dans la réponse visible</strong> : c'est un poste de coût de premier ordre que la lecture d'une facture ne révèle pas spontanément.</p>
+
+<p>Deux écueils symétriques guettent. Le <strong>sous-budget</strong> tronque la délibération et dégrade les tâches difficiles. Le <strong>sur-budget</strong> produit la sur-réflexion, où le modèle dépense des jetons sans gain — voire dérive vers une réponse moins bonne. L'enjeu est donc de <strong>calibrer l'effort par classe de tâche</strong> plutôt que d'appliquer un budget uniforme.</p>
+
+<p><strong>Fidélité et monitorabilité de la trace.</strong> La trace de raisonnement offre une tentation : la lire pour surveiller les intentions de l'agent. ⚠ <strong>Cette monitorabilité est une occasion fragile</strong>, car la chaîne verbalisée <strong>n'est pas toujours fidèle au calcul réel</strong> qui produit la réponse. Des travaux d'alignement montrent que des modèles peuvent produire un raisonnement de façade non représentatif de leur traitement effectif.</p>
+
+<p>Il s'ensuit qu'une chaîne plausible <strong>ne garantit ni la justesse ni la sincérité</strong> de la décision. Pour l'ingénierie de la sûreté, la conséquence est directe : la surveillance de la trace est un signal <strong>utile mais non probant</strong>, à combiner avec des contrôles externes sur les <strong>actions effectivement émises</strong> plutôt que sur les seules pensées déclarées.</p>
+
+<div class="avert">
+  <p>Et un piège de second ordre, qu'il faut nommer : <strong>optimiser directement la trace pour qu'elle paraisse sûre risque de détruire la propriété même qu'on cherchait à exploiter</strong>, en incitant le modèle à masquer son raisonnement réel. C'est une contrainte de conception pour tout dispositif de supervision, et le ch. 6 § 6.5 la reprend.</p>
+</div>
+
+<h3>4.3.5 Entraînement et auto-amélioration des agents</h3>
+
+<p>Les sections précédentes supposaient le modèle figé ; reste son perfectionnement <strong>comme agent</strong>. Plusieurs leviers se composent : le réglage supervisé sur trajectoires réussies, collectées par échantillonnage avec rejet ; l'apprentissage par renforcement <strong>multi-tours</strong> entraînant directement sur l'interaction avec l'environnement ; le renforcement à <strong>récompense vérifiable</strong>, où la récompense provient d'un vérificateur programmatique — test unitaire, validateur — plutôt que d'un modèle de préférence ; la distillation de raisonnement d'un grand modèle vers un plus petit.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Cet apprentissage diffère <strong>par nature</strong> de l'amélioration par mémoire ou par réflexion verbale (§ 4.2.3 et ch. 5) : la réflexion modifie le <strong>contexte</strong> sans toucher aux poids, tandis que le renforcement et la distillation modifient le <strong>modèle</strong>. La frontière entre adaptation en contexte et mise à jour paramétrique structure <strong>deux régimes d'ingénierie aux contrats et aux coûts distincts</strong> — l'un réversible et borné à une session, l'autre persistant et requérant une infrastructure d'entraînement.</p>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>L'auto-amélioration paramétrique relève directement du § 4.5 : un réglage maison sur trajectoires métier peut spécialiser un petit modèle à coût d'inférence réduit, mais il introduit une <strong>dette d'évolution</strong> — chaque mise à niveau du modèle de base force à rejouer le pipeline d'entraînement et à revalider les bancs d'évaluation. Le découplage entre la logique d'orchestration et le modèle entraîné conditionne la capacité à faire évoluer l'un sans réécrire l'autre. C'est l'invariant du Livre appliqué au modèle lui-même.</p>
+</div>
+
+<h2 id="s44"><span class="sig">§ 4.4</span>Utilisation d'outils et accès aux outils</h2>
+
+<p>L'agent décrit jusqu'ici raisonne et boucle, mais <strong>demeure un système clos</strong> tant qu'il ne peut produire d'effets de bord. L'outillage est la frontière où le texte généré <strong>devient action</strong>.</p>
+
+<div class="avert">
+  <p><strong>Cette section s'arrête à l'usage d'outils au niveau ingénierie.</strong> L'anatomie protocolaire de l'accès agent-outil — primitives, transports, révisions, registres, passerelles et découverte d'entreprise — part <strong>en entier</strong> au ch. 8. C'est un arbitrage de découpage déclaré à la ligne Fusion de ce chapitre, et non un oubli : la mécanique par laquelle un agent invoque un outil et le protocole qui normalise cette invocation sont deux objets distincts, et les traiter au même endroit mélangerait une discipline de conception et une spécification.</p>
+</div>
+
+<h3>4.4.1 Appel de fonctions et apprentissage de l'usage d'outils</h3>
+
+<p>L'<strong>appel de fonctions</strong> est le mécanisme par lequel un modèle expose son intention d'agir sous une forme <strong>structurée et machine-exploitable</strong> plutôt qu'en prose libre. Le modèle reçoit, en plus de l'invite, une description d'outils — un nom, une glose en langage naturel, un schéma des paramètres — et émet un objet conforme désignant l'outil et ses arguments ; l'environnement exécute et réinjecte l'observation dans la boucle.</p>
+
+<p>Les <strong>sorties structurées</strong> garantissent que l'argument respecte le schéma — typage, énumérations, champs requis —, ce qui <strong>transforme un problème de génération ouverte en un problème de remplissage contraint</strong>, plus vérifiable et plus robuste à l'analyse syntaxique. Ce déplacement est le même que celui du contrat d'API au ch. 1 § 1.4.2, et il produit le même bénéfice.</p>
+
+<p>Sur le plan de l'apprentissage, trois jalons marquent le passage à l'échelle : un modèle peut <strong>s'auto-superviser</strong> pour décider <em>quand</em> appeler une interface, en n'insérant un appel que s'il réduit la perte de prédiction ; la <strong>récupération documentaire</strong> de descriptions d'interfaces réduit l'hallucination de signatures inexistantes ; et l'entraînement à grande échelle sur des milliers d'interfaces réelles étend la capacité aux chaînes d'appels multiples.</p>
+
+<p>Le <strong>contrat de l'outil — son schéma — est le pivot du découplage</strong> : le modèle dépend de l'interface, non de l'implémentation.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Le schéma est un <strong>contrat de premier ordre</strong>, et sa stabilité conditionne la régression. Toute évolution d'une signature — champ renommé, énumération élargie — doit être versionnée et testée <strong>comme une rupture d'API</strong> (ch. 1 § 1.4.2), faute de quoi un agent en production <strong>cesse silencieusement d'appeler correctement l'outil</strong>. Silencieusement est le mot qui compte : rien ne lève d'exception.</p>
+</div>
+
+<h3>4.4.2 Sélection, orchestration et conception d'outils fiables</h3>
+
+<p>Au-delà de l'appel unitaire, l'agent doit <strong>choisir</strong> le bon outil dans un catalogue qui peut compter des centaines d'entrées, puis enchaîner ou paralléliser les appels.</p>
+
+<p>Lorsque le nombre d'outils dépasse ce qu'une fenêtre de contexte peut décrire sans dégradation, la pratique consiste à n'injecter dans l'invite que les outils <strong>pertinents</strong>, sélectionnés par récupération sémantique : les descriptions sont indexées, et seules les plus proches de la requête courante sont exposées. Cette récupération d'outils est <strong>le pendant, côté action, de la récupération documentaire</strong> du ch. 5 — et elle réduit aussi la charge en jetons.</p>
+
+<p>L'orchestration distingue les appels <strong>séquentiels</strong> — où l'argument d'un outil dépend de l'observation d'un précédent — des appels <strong>parallèles</strong>, où plusieurs outils indépendants sont invoqués en un seul tour.</p>
+
+<p>L'<strong>ergonomie cognitive de l'outil</strong> est décisive, et c'est le point le plus négligé de la section. Un outil trop fin multiplie les tours et le coût ; un outil trop large <strong>brouille le choix du modèle</strong>. Trois propriétés font un outil fiable :</p>
+
+<ul class="puces">
+  <li>la <strong>granularité</strong> épouse une intention d'agent, non une opération technique ;</li>
+  <li>les <strong>noms et gloses</strong> sont univoques — le modèle choisit sur la description, pas sur le code ;</li>
+  <li>l'<strong>idempotence</strong> — une même requête répétée produit le même état — protège des réessais et des duplications d'effets de bord.</li>
+</ul>
+
+<p>Ces propriétés font de la conception d'outils une <strong>discipline d'interface au sens contractuel</strong> : un outil bien conçu est un contrat <strong>lisible par le modèle</strong>. C'est une exigence de plus que le contrat d'API classique ne portait pas, et elle change la manière de rédiger une glose.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Documenter chaque outil <strong>comme une API publique</strong> : glose orientée tâche, schéma typé, exemples d'usage, codes d'erreur explicites. Privilégier les opérations idempotentes, et préférer <strong>un petit nombre d'outils composables</strong> à une prolifération d'opérations spécialisées que le modèle peine à départager.</p>
+</div>
+
+<h3>4.4.3 Outils universels : exécution de code et pilotage d'interface</h3>
+
+<p>Certains outils ne ciblent pas une interface particulière mais ouvrent un <strong>espace d'action universel</strong> : exécuter du code arbitraire, ou piloter une interface graphique conçue pour des humains.</p>
+
+<p><strong>L'exécution de code</strong> est l'outil universel le plus puissant : plutôt que d'appeler des outils nommés un par un, l'agent émet du code exécuté dans un interpréteur <strong>confiné</strong>, qui peut lui-même chaîner appels, calculs et manipulations. ⚠ <strong>Le confinement est ici une mesure de sécurité non négociable</strong> : du code généré par un modèle exposé à du contenu non fiable peut tenter une exfiltration ou une élévation de privilèges.</p>
+
+<p><strong>Le pilotage d'interface</strong> étend l'agent à une interface graphique : il reçoit une capture d'écran, décide d'une action — cliquer à des coordonnées, saisir du texte, faire défiler — et observe l'écran résultant. C'est la boucle perception-action transposée au registre <strong>multimodal</strong>.</p>
+
+<p>Le verrou technique est l'<strong>ancrage</strong> : convertir une cible décrite sémantiquement en coordonnées d'écran exactes. Plusieurs techniques s'y emploient — annotation par jeu de marques superposant des étiquettes aux éléments cliquables, prédiction directe de coordonnées par des modèles entraînés à cet effet, reconnaissance optique pour localiser le texte.</p>
+
+<div class="avert">
+  <p><strong>La progression se lit mieux comme une trajectoire que comme un point.</strong> Les scores datés, l'écart résiduel au plafond humain et l'interprétation des bancs — contamination, classements contrôlés en coût — sont <strong>rassemblés au ch. 6 § 6.3</strong>, et ne sont pas repris ici. Ce chapitre retient seulement que la trajectoire illustre <strong>à la fois la rapidité des progrès et la fragilité persistante des tâches longues et précises</strong>.</p>
+</div>
+
+<p>Les <strong>agents de navigateur</strong> forment une sous-classe où le substrat est une page web, ce qui ouvre deux voies d'ancrage concurrentes. La première exploite la <strong>structure</strong> — arbre du document et arbre d'accessibilité fournissent une représentation textuelle des éléments interactifs, plus compacte et plus précise que la vision, mais <strong>sensible à la fragilité des sélecteurs</strong>. La seconde repose sur la <strong>vision</strong>, plus robuste aux variations de balisage mais plus coûteuse en jetons et en latence.</p>
+
+<div class="avert">
+  <p><strong>Leur exposition au monde ouvert en fait la surface d'injection la plus critique</strong> : tout contenu de page lu par l'agent est du contenu <strong>non fiable</strong> susceptible de détourner ses instructions. Le choix entre structure et vision est ainsi autant une <strong>décision de surface d'attaque</strong> qu'une décision de robustesse — et c'est au ch. 19 que ce vecteur est instruit.</p>
+</div>
+
+<h3>4.4.4 Robustesse de la boucle d'outillage et évaluation</h3>
+
+<p>Un agent qui appelle des outils en production <strong>échoue d'abord par les outils</strong> : interface indisponible, délai dépassé, réponse mal formée, quota épuisé.</p>
+
+<p>La robustesse repose sur des mécanismes empruntés à l'ingénierie des systèmes distribués, déjà posés au ch. 1 § 1.3.3 : réessais avec temporisation exponentielle, disjoncteurs, et surtout des <strong>budgets d'appels</strong> bornant le nombre d'itérations et le coût — faute de quoi une boucle peut diverger en consommant des jetons sans converger.</p>
+
+<div class="avert">
+  <p><strong>La gestion d'erreurs doit être pensée comme un signal pour le modèle</strong>, et c'est une inversion par rapport à l'ingénierie classique. Un message d'erreur <strong>structuré et actionnable</strong> permet à l'agent de corriger son appel, là où une exception opaque le fait abandonner ou halluciner. Le message d'erreur cesse d'être un artefact de journalisation pour devenir une <strong>entrée de la boucle</strong>.</p>
+</div>
+
+<p>L'évaluation de cette boucle s'appuie sur une famille de bancs spécialisés — justesse de l'appel de fonctions y compris en parallèle et en série, interaction outil-agent-utilisateur dans des domaines réalistes avec des métriques qui <strong>pénalisent l'inconsistance entre essais</strong>, pilotage d'ordinateur, navigation web. Leur détail chiffré et leur interprétation sont au ch. 6 § 6.3.</p>
+
+<p><strong>Sans banc d'évaluation, une régression de fiabilité passe inaperçue jusqu'à la production.</strong> La robustesse de l'outillage est indissociable de sa mesure — ce qui est, transposé, le constat du ch. 1 § 1.2.2 sur la maturité continue.</p>
+
+<h2 id="s45"><span class="sig">§ 4.5</span>Choix et service du modèle comme décision d'ingénierie</h2>
+
+<p><em>Cette section arrive depuis le ch. 6, où sa ligne Fusion la déclare partante. ⚠ <strong>Elle est la seule perte silencieuse qu'a trouvée la collation du plan contre les volumes complets</strong> : déclarée à son départ et nulle part à son arrivée jusqu'à une révision tardive du TOC, elle aurait disparu d'un chapitre rédigé sur sa seule liste de sections. La règle qui en est tirée — <strong>une arrivée se déclare aux deux bouts</strong> — vaut pour toute la somme.</em></p>
+
+<p>Le modèle qui anime chaque agent est une <strong>variable d'ingénierie, non une donnée fixe</strong>. Trois arbitrages le structurent.</p>
+
+<p><strong>Frontière contre petits modèles agentiques.</strong> Une proposition défendue soutient que des modèles de petite taille, <strong>spécialisés et économiques</strong>, suffisent à la majorité des sous-tâches répétitives d'un système agentique, et permettent une exécution locale ou en périphérie. Un orchestrateur peut alors <strong>router dynamiquement</strong> : un grand modèle de raisonnement pour la planification, un petit modèle rapide pour les appels d'outils routiniers. Ce routage multi-modèles est l'expression, au niveau du service, du fil transversal posé en § 4.0.1.</p>
+
+<p><strong>Modèles de raisonnement contre modèles standards.</strong> Le surcoût en jetons de réflexion (§ 4.3.4) <strong>ne se justifie que pour les sous-tâches qui l'exigent</strong>. Appliquer un modèle de raisonnement uniformément est le défaut de configuration le plus coûteux de cette section.</p>
+
+<p><strong>Réglage maison.</strong> Affiner un modèle ouvert par renforcement vérifiable ou distillation pour une tâche agentique précise est une voie crédibilisée par la disponibilité de modèles ouverts performants. Elle porte sa dette, décrite en § 4.3.5.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Au service, les leviers déterminants sont la <strong>latence de bout en bout</strong> des boucles, la <strong>réutilisation du cache</strong> de clés-valeurs et le <strong>traitement par lots</strong>. Ils arbitrent le compromis entre débit, coût et <strong>souveraineté</strong> — l'exécution locale d'un petit modèle répondant à des exigences de confidentialité que le recours à une interface fermée ne satisfait pas.</p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> ce dernier point est celui qui relie ce chapitre au Livre III. Le choix du modèle cesse d'être une décision de performance dès lors qu'une contrainte de résidence ou de confidentialité s'applique : il devient une décision d'architecture réglementée, au même titre que le choix d'un hébergement. Le socle n'établit pas cette conséquence ; elle est proposée comme lecture, et les ch. 25 à 31 l'instruisent sur le terrain canadien.</p>
+
+<section class="statut" id="s46">
+
+<h2><span class="sig">§ 4.6</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel ce chapitre a été rédigé, conformément à la règle d'escalade du <a class="lien" href="../PRD/PRD.md">PRD</a> Annexe A : <em>un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il remonte.</em></p>
+</div>
+
+<p><strong>Ce qui est enfreint</strong> — les portes <strong>G-1</strong>, <strong>G-2</strong> et <strong>G-3</strong> sont ouvertes. Rédaction sur instruction d'auteur du 27 juillet 2026. Conséquences :</p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01</strong> — régime <strong>[C]</strong> hérité du Vol. I.</li>
+  <li><strong>Aucun décompte n'est publiable</strong> (G-2).</li>
+  <li><strong>Les renvois « ch. N » sont des renvois de plan, non de texte</strong> — ch. 5, 6, 8, 19, 22, 25-31, 43 non rédigés.</li>
+</ol>
+
+<p><strong>Remontée ouverte par ce chapitre</strong>, à l'instance d'arbitrage (D-6, non désignée) :</p>
+
+<ul class="puces">
+  <li><strong>R-IV-06 — non bloquante, mais de plus courte échéance que R-IV-03 et R-IV-04.</strong> Ce chapitre est celui du Livre I dont la matière se périme le plus vite : nomenclature des familles de modèles de raisonnement, jalons de version des cadriciels, frontière des capacités. <strong>La source elle-même prescrit de revérifier cette nomenclature à toute publication</strong>, et le chapitre a paré le risque en <strong>ne la figeant pas</strong> — il décrit le phénomène (la loi d'échelle au moment du test) plutôt que la liste des modèles qui l'instancient. Cette parade est délibérée et devrait être <strong>conservée</strong> à la révision G-1 : une somme qui nommerait les modèles de 2026 serait périmée avant sa publication.</li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la table détaillée du TOC section par section (§ 4.0 à § 4.5), y compris le refonte du §2.1.3 source en apparat de navigation plutôt qu'en section propre ; la table de couverture est respectée, dont la sortie de périmètre du §2.5.4 vers le ch. 8 et l'<strong>arrivée</strong> du §2.8.5 en § 4.5, déclarée ici comme elle l'est au ch. 6 ; les deux séries de garde-fous sont balayées et déclarées, avec l'occurrence de R-13 marquée et son échelle nommée, et la métrique auto-déclarée du § 4.0.1 attribuée à sa source ; les constructions d'auteur portent « Lecture de l'auteur » (CA-IV-07).</p>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 4. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.23, entrée du chapitre 4, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>
