@@ -41,8 +41,12 @@ Chaque pièce existe en **deux rendus de la même matière**, versionnés ensemb
 
 - le **`.md`** — la source ; c'est lui qui fait foi ;
 - le **`.html`** — page autonome à thème sombre orange, sans aucune ressource externe (CSS et script
-  intégrés, aucune police ni image distante), navigation de chapitre, barre de progression, styles
-  d'impression. Elle se lit hors ligne par simple ouverture dans un navigateur.
+  intégrés, aucune police ni image distante), **prose justifiée avec césure automatique**,
+  navigation de chapitre, barre de progression, styles d'impression. Elle se lit hors ligne par
+  simple ouverture dans un navigateur. ⚠ La césure s'appuie sur l'attribut `lang="fr-CA"` du
+  document : le retirer désactiverait la coupure des mots **sans prévenir**, et une justification
+  sans césure creuse des lézardes dans une colonne de cette largeur. Titres, légendes et navigation
+  restent au fer à gauche — les justifier y produirait des trous.
 
 ⚠ **Le `.html` est un rendu, pas une seconde source.** Toute correction se fait dans le `.md` puis
 se reporte dans le `.html` au même commit — jamais l'inverse, jamais l'un sans l'autre (même règle
