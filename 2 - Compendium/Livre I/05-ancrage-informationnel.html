@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 5 — Ancrage informationnel : mémoire, contexte, RAG agentique · La somme agentique</title>
+<meta name="description" content="l&#x27;agent persistant se construit par l&#x27;ingénierie du contexte et une pile de récupération gouvernée.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre I · Chapitre 5</div>
+  <ol>
+    <li><a href="#s50"><span class="num">5.0</span>Ce que ce chapitre traite, et ce qu&#x27;il ne traite pas</a></li>
+    <li><a href="#s51"><span class="num">5.1</span>Du modèle sans état à l&#x27;agent persistant : mémoire et ingénierie du contexte</a></li>
+    <li><a href="#s52"><span class="num">5.2</span>Architectures de mémoire long terme et pile de récupération</a></li>
+    <li><a href="#s53"><span class="num">5.3</span>RAG agentique : planifier, récupérer, critiquer, itérer</a></li>
+    <li><a href="#s54"><span class="num">5.4</span>Données structurées, accès d&#x27;entreprise et gouvernance d&#x27;ancrage</a></li>
+    <li><a href="#s55"><span class="num">5.5</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.23 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="05-ancrage-informationnel.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique</div>
+  <h1><span class="chap">Chapitre 5</span>Ancrage informationnel : mémoire, contexte, RAG agentique</h1>
+  <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6)</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — rédigé sur instruction d'auteur du 27 juillet 2026, <strong>avant</strong> les portes G-1, G-2 et G-3 du <a class="lien" href="../PRD/PRD.md">PRD</a> §5</dd>
+    <dt>Date de gel</dt>
+    <dd><strong>Aucune.</strong> Gel unique non fixé (décision d'auteur D-1). Matière condensée au gel de sa source — <strong>juin 2026</strong> (Vol. I). ⚠ <strong>Deux fonctions produit citées y sont en bêta à cette date</strong>, avec une version d'interface datée que la source prescrit de fixer au moment d'intégrer ; elles sont citées comme telles et non comme disponibilité générale</dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (Annexe B non constituée, porte G-3 ouverte). Les énoncés résolvent contre le <strong>Vol. I <em>Monographie</em> §2.6-2.7</strong>, en régime <strong>[C]</strong> (PRD §7.1). <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd><strong>Les deux séries, intégralement.</strong> Vol. II — R-1 à R-8 : <strong>zéro occurrence</strong> ; ⚠ <strong>une réserve d'usage tenue</strong> : deux fonctions produit en bêta sont nommées comme telles, jamais présentées comme disponibles en général — c'est la doctrine que R-4 impose au RTR, appliquée ici par analogie hors de son domaine propre. Vol. III — R-01 à R-13 : <strong>zéro occurrence</strong> ; <strong>R-14 (trois degrés d'absence) : deux occurrences</strong>, § 5.0 et § 5.2.2 — la première est un <strong>fait négatif vérifié</strong>, cas rare dans ce Livre, établi par le balayage documenté que le TOC porte sous l'entrée de ce chapitre</dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ 7 500 mots de corps (§ 5.1 à § 5.4). Enveloppe <strong>dérivée, non prescrite</strong>. ⚠ <strong>Aucun décompte n'est publiable</strong> tant que G-2 est ouverte</dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>l'agent persistant se construit par l'ingénierie du contexte et une pile de récupération gouvernée.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.23, entrée du chapitre 5.</span>
+</div>
+
+<h2 id="s50"><span class="sig">§ 5.0</span>Ce que ce chapitre traite, et ce qu'il ne traite pas</h2>
+
+<p><em>Cadrage d'ouverture. La table détaillée du TOC ouvre ce chapitre à § 5.1 ; ce paragraphe liminaire n'est pas une section du plan mais l'apparat qui en déclare la frontière, comme le ch. 4 le fait pour la sienne.</em></p>
+
+<p>Un modèle de langage est <strong>intrinsèquement sans état</strong> : chaque appel d'inférence ne connaît du monde que ce que sa fenêtre de contexte contient à l'instant de l'invocation, et tout ce qui en sort est oublié dès la requête suivante. Or un agent, par définition, <strong>agit dans la durée</strong> — il enchaîne des tours, poursuit un but sur plusieurs pas, reprend une tâche interrompue.</p>
+
+<p>L'écart entre un modèle amnésique et un agent persistant se comble par une discipline d'ingénierie : la gestion de l'<strong>état informationnel</strong> que l'agent écrit et relit. C'est l'objet de ce chapitre, et il repose sur une distinction qu'il faut tenir fermement parce que la pratique la brouille :</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th></th><th>Ce que c'est</th><th>Provenance</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Mémoire</strong></td><td>ce que l'agent <strong>produit et conserve</strong> de sa propre activité</td><td>interne, écrite par l'agent</td></tr>
+    <tr><td><strong>Récupération</strong> (RAG)</td><td>ce qu'il <strong>va chercher</strong> dans un corpus tiers</td><td>externe, écrite par d'autres</td></tr>
+    <tr><td><strong>Protocole d'accès</strong></td><td>la tuyauterie qui relie l'un et l'autre aux sources</td><td>ni l'un ni l'autre — un transport</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 5.1 — Trois objets que la pratique confond, et qui n'ont ni le même cycle de vie ni la même gouvernance.</p>
+
+<p>Le troisième — le protocole d'accès agent-outil — n'est pas traité ici : il est au <strong>ch. 8</strong>. Les deux premiers occupent respectivement les § 5.1-5.2 et les § 5.3-5.4.</p>
+
+<div class="avert">
+  <p><strong>Ce chapitre ne traite pas l'empoisonnement de la mémoire et des sources, et cette absence est un constat de source, non un oubli.</strong> Un balayage documenté des §2.6-2.7 du Vol. I n'y relève <strong>aucune occurrence</strong> de cette matière : elle vit ailleurs dans le volume source, et le plan l'affecte au <strong>ch. 19</strong>, qui la relit comme un risque d'<strong>identité des sources</strong>. C'est, au sens de l'échelle R-14 du Vol. III, un <strong>fait négatif vérifié</strong> — établi par balayage — et non une absence de documentation. La distinction compte : ici on peut affirmer que la matière n'est pas dans la source ; ailleurs dans ce Livre, on n'a pu affirmer que ne pas l'avoir trouvée.</p>
+</div>
+
+<p>Le partage est donc net et il vaut d'être posé d'emblée : <strong>ce chapitre pose l'ancrage ; le ch. 19 en pose le versant hostile.</strong> Le § 5.4.2 marque le point de jonction sans le franchir.</p>
+
+<p>Le fil du <strong>coût</strong> domine par ailleurs tout ce qui suit. Chaque jeton conservé dans la fenêtre est facturé <strong>à chaque tour</strong> — ce qui fait de la budgétisation du contexte une contrainte d'ingénierie de premier ordre, non un raffinement d'optimisation.</p>
+
+<h2 id="s51"><span class="sig">§ 5.1</span>Du modèle sans état à l'agent persistant : mémoire et ingénierie du contexte</h2>
+
+<h3>5.1.1 Taxonomie de la mémoire</h3>
+
+<p>Le passage du modèle sans état à l'agent persistant emprunte sa structuration aux architectures cognitives classiques (ch. 4 § 4.2.2), qui distinguaient déjà mémoire de travail et mémoire à long terme.</p>
+
+<p>La <strong>mémoire de travail</strong> correspond au contenu effectivement présent dans la fenêtre de contexte au moment de l'inférence : invite système, historique récent, observations d'outils du tour courant, bloc de raisonnement actif. Elle est <strong>volatile, bornée et coûteuse</strong> — son occupation se paie en jetons à chaque appel.</p>
+
+<p>La <strong>mémoire à long terme</strong> vit hors de la fenêtre, dans un magasin externe que l'agent interroge sélectivement. Les revues du domaine reprennent une tripartition issue de la psychologie cognitive et des architectures symboliques :</p>
+
+<ul class="puces">
+  <li>la mémoire <strong>épisodique</strong> consigne des événements situés et datés — « lors de la session du 3 mars, l'utilisateur a refusé telle option » ;</li>
+  <li>la mémoire <strong>sémantique</strong> retient des faits décontextualisés et stables — « l'utilisateur préfère le français canadien » ;</li>
+  <li>la mémoire <strong>procédurale</strong> encode des compétences, des routines et des consignes d'action — « pour déployer, exécuter ces étapes dans cet ordre ».</li>
+</ul>
+
+<div class="avert">
+  <p><strong>Cette taxonomie n'est pas une commodité descriptive : elle oriente les choix d'implémentation</strong>, parce que chaque type appelle un magasin, un rythme d'écriture et une politique de récupération <strong>distincts</strong>. L'épisodique se prête à un journal horodaté et à une recherche par similarité ; le sémantique, à un profil structuré ou à un graphe de faits ; le procédural, à des fichiers relus à chaque démarrage (§ 5.1.4).</p>
+</div>
+
+<p>La cohérence d'un agent persistant tient précisément à ce que ces registres soient <strong>gérés explicitement</strong> plutôt que noyés dans un historique conversationnel indifférencié. Un agent dont toute la mémoire est un historique est un agent dont la mémoire ne se gouverne pas.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>La transposition de la mémoire humaine vers les agents est un programme de recherche actif, non une simple métaphore. Les revues cartographient les mécanismes — encodage, stockage, rappel, oubli — et soulignent que <strong>la frontière entre mémoire et apprentissage paramétrique reste théoriquement floue</strong> : ce que l'agent retient dans un magasin externe relève d'une mémoire <strong>non paramétrique</strong>, distincte de l'auto-amélioration par mise à jour des poids (ch. 4 § 4.3.5). C'est la même distinction que le ch. 4 posait entre adaptation en contexte et mise à jour du modèle, vue du côté de l'état plutôt que du côté de l'apprentissage.</p>
+</div>
+
+<h3>5.1.2 L'ingénierie du contexte comme discipline</h3>
+
+<p>La gestion de la mémoire de travail s'est constituée en <strong>discipline d'ingénierie à part entière</strong>. Son point de départ est empirique, et il est contre-intuitif : <strong>les modèles n'exploitent pas uniformément leur fenêtre de contexte</strong>.</p>
+
+<p>Deux phénomènes documentés le montrent. La <strong>perte au milieu</strong> établit que l'information placée au centre d'un long contexte est nettement moins bien utilisée que celle située en tête ou en queue, dessinant une courbe de performance en U. La <strong>dégradation progressive</strong> de la qualité à mesure que la fenêtre se remplit s'y ajoute.</p>
+
+<div class="avert">
+  <p><strong>Ensemble, ces deux constats ruinent une intuition répandue</strong> : élargir indéfiniment la fenêtre ne résout pas le problème de la mémoire. <em>Un contexte plus grand n'est pas un contexte mieux utilisé</em>, et il coûte plus cher à chaque tour. C'est le point le plus important de la section, et celui que les annonces de fenêtres toujours plus vastes rendent le plus facile à oublier.</p>
+</div>
+
+<p>L'ingénierie du contexte répond par un répertoire d'opérations désormais standardisé, qu'une formulation d'usage ordonne en <strong>quatre verbes</strong> :</p>
+
+<ul class="puces">
+  <li><strong>écrire</strong> — déporter hors fenêtre, dans un espace de travail ou une mémoire, ce qui doit survivre au-delà du tour ;</li>
+  <li><strong>sélectionner</strong> — n'admettre dans la fenêtre que ce qui sert le tour courant ;</li>
+  <li><strong>compacter</strong> — résumer ou comprimer l'historique pour libérer du budget ;</li>
+  <li><strong>isoler</strong> — cloisonner les contextes entre sous-tâches ou sous-agents pour éviter la contamination croisée.</li>
+</ul>
+
+<div class="avert">
+  <p><strong>Le quatrième verbe fait débat, et le débat mérite d'être rapporté plutôt que tranché.</strong> Une position concurrente plaide au contraire pour un <strong>fil de contexte continu et un rédacteur unique</strong> plutôt qu'un cloisonnement multi-agents, au motif que l'isolation <strong>fragmente le contexte partagé</strong> dont dépend la cohérence. Les deux positions ne portent pas sur les mêmes tâches, et le ch. 6 § 6.1 retrouvera exactement cette tension en pesant le surcoût du multi-agent.</p>
+</div>
+
+<p>Une formulation synthétique présente l'ensemble de ces opérations comme la pratique consistant à <strong>curer délibérément l'ensemble minimal de jetons à haute valeur informationnelle</strong>, plutôt qu'à accumuler. C'est l'expression directe du fil du coût : chaque opération vise à maximiser le rendement informationnel <strong>par jeton facturé</strong>.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Deux conséquences opérationnelles nettes. <em>(a)</em> <strong>La taille effectivement utile de la fenêtre est inférieure à sa taille nominale</strong>, et la <strong>position</strong> de l'information dans le contexte est une variable de conception, non un détail : placer les consignes critiques et les données saillantes en tête ou en queue. <em>(b)</em> Traiter le budget de jetons comme une <strong>ressource rare à allouer explicitement</strong> — d'autant que les jetons de raisonnement des modèles de réflexion (ch. 4 § 4.3.4) grèvent <strong>le même budget</strong>.</p>
+</div>
+
+<h3>5.1.3 Compaction réversible, résumé et oubli actif</h3>
+
+<p>La <strong>compaction</strong> est l'opération par laquelle un agent réduit l'empreinte de son historique pour rester sous le seuil de sa fenêtre tout en préservant l'essentiel de ce qu'il a accompli.</p>
+
+<p>Le mécanisme canonique est l'<strong>auto-compaction à seuil</strong> : lorsque l'occupation approche d'une limite configurée, l'agent déclenche un résumé de la portion ancienne de l'historique, qui remplace les tours détaillés par une synthèse compacte. Une fonction produit apparentée — l'<strong>édition de contexte</strong> — permet de retirer ou de condenser des éléments devenus inutiles, par exemple des observations d'outils volumineuses dont <strong>seul le verdict importe encore</strong>.</p>
+
+<div class="avert">
+  <p><strong>Cette fonction est en bêta à la date d'arrêt des sources</strong>, avec une version d'interface datée que la source prescrit de fixer au moment d'intégrer, son comportement et son contrat pouvant évoluer. Elle est citée comme telle et <strong>jamais présentée comme une disponibilité générale</strong>.</p>
+</div>
+
+<p>L'enjeu de conception est la <strong>réversibilité</strong>. Une compaction agressive risque d'effacer un détail qui redeviendra pertinent ; une compaction trop prudente ne libère pas assez de budget. La bonne pratique consiste à <strong>compacter en conservant un pointeur vers la trace intégrale</strong>, déportée dans un magasin persistant, de sorte que le résumé reste <strong>augmentable à la demande</strong> sans peser sur la fenêtre courante.</p>
+
+<p>L'<strong>oubli actif</strong> complète le dispositif : plutôt que de tout retenir, l'agent élague délibérément les éléments à faible valeur — bruit conversationnel, tentatives avortées, redondances. Le bénéfice est double, et le second est moins évident que le premier : réduire le contexte améliore le coût, <strong>et</strong> atténue la dégradation décrite en § 5.1.2.</p>
+
+<p>La compaction n'est donc <strong>pas une simple troncature, mais une politique d'allocation</strong> : elle arbitre, tour après tour, ce qui mérite de rester dans la mémoire de travail et ce qui peut être résumé ou écarté.</p>
+
+<h3>5.1.4 Mémoire procédurale et fichiers de configuration d'agent</h3>
+
+<p>La mémoire procédurale se matérialise par une stratification claire entre trois plans :</p>
+
+<ol class="numeros">
+  <li>le <strong>contexte actif</strong> — ce qui occupe la fenêtre au tour courant ;</li>
+  <li>l'<strong>espace de travail</strong> — où l'agent note des résultats partiels qu'il relira <strong>au sein de la même tâche</strong> ;</li>
+  <li>le <strong>magasin persistant</strong> — ce qui survit <strong>entre les sessions</strong>.</li>
+</ol>
+
+<p>Un outil de mémoire dédié instrumente ce dernier plan en tant que primitive, offrant à l'agent des opérations explicites pour écrire, relire et mettre à jour une mémoire externe. ⚠ <strong>Cette fonction est elle aussi en bêta à la date d'arrêt</strong> et se cite avec la même réserve.</p>
+
+<p>Au-dessus de cette mécanique, une convention s'est imposée pour la mémoire procédurale <strong>durable</strong> : les <strong>fichiers de configuration d'agent</strong> relus au démarrage. Un format contribué à une fondation neutre et son équivalent chez un autre éditeur codifient, dans un fichier <strong>versionné avec le projet</strong>, les consignes, conventions et routines que l'agent doit appliquer à chaque exécution.</p>
+
+<p>Ces fichiers jouent un <strong>double rôle</strong> qui mérite d'être explicité, parce qu'il est rarement nommé : ils sont à la fois une <strong>mémoire procédurale</strong> — le « comment faire » stable de l'agent — et une <strong>spécification d'agent</strong> — le contrat explicite de son comportement attendu.</p>
+
+<p>C'est l'invariant du Livre au plan mémoriel : la procédure est <strong>découplée</strong> de toute session particulière, exprimée comme un <strong>contrat</strong> lisible par l'humain et par la machine, et elle <strong>évolue</strong> par édition du fichier plutôt que par ré-entraînement. Le passage de ces formats sous gouvernance de fondation confirme leur statut de <strong>point d'interopérabilité</strong> plutôt que de détail d'implémentation propriétaire — et c'est à ce titre que le ch. 7 les reprend.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>En déploiement, la mémoire procédurale gagne à être <strong>traitée comme du code</strong> : fichiers versionnés dans le dépôt, revus en revue de code, et <strong>tenus courts</strong> pour ne pas gonfler la fenêtre à chaque démarrage. Cette dernière contrainte est réelle et souvent négligée : un fichier de consignes qui grossit sans discipline devient un coût fixe payé à chaque exécution.</p>
+</div>
+
+<h2 id="s52"><span class="sig">§ 5.2</span>Architectures de mémoire long terme et pile de récupération</h2>
+
+<h3>5.2.1 Architectures de mémoire long terme</h3>
+
+<p>Au-delà des fichiers de configuration, plusieurs architectures proposent des magasins structurés et des politiques de gestion explicites. Elles se distinguent moins par leur mécanique de stockage que par la <strong>métaphore d'organisation</strong> qu'elles retiennent, et cette métaphore commande leurs propriétés.</p>
+
+<p>Une première lignée pose l'<strong>analogie du système d'exploitation</strong> : le modèle gère lui-même une hiérarchie mémoire à trois niveaux — un contexte principal en fenêtre, une mémoire d'archives et une mémoire de rappel hors fenêtre — en <strong>paginant</strong> l'information entre ces niveaux comme un système d'exploitation gère la mémoire virtuelle.</p>
+
+<p>Une deuxième introduit un <strong>flux de mémoire horodaté</strong> assorti d'un mécanisme de récupération combinant <strong>récence, importance et pertinence</strong>, et d'une réflexion qui synthétise des souvenirs de plus haut niveau.</p>
+
+<p>D'autres visent la mise en production avec une couche extensible extrayant et consolidant les faits saillants au fil des échanges ; organisent la mémoire en système multi-agents dédié ; ou appliquent un principe d'interconnexion dynamique entre souvenirs.</p>
+
+<p>Une dernière lignée structure la mémoire comme un <strong>graphe de connaissances temporel</strong>, où faits et relations portent une <strong>validité datée</strong>. C'est l'approche qui répond le plus directement au problème que les autres contournent — la révision.</p>
+
+<p>Sous ces architectures opère une <strong>pile de récupération mutualisée</strong> avec celle du RAG (§ 5.3.2) : bases vectorielles pour la recherche dense, recherche <strong>hybride</strong> combinant dense et lexical, <strong>réordonnancement</strong> des candidats.</p>
+
+<div class="avert">
+  <p><strong>Ce partage est délibéré et il éclaire la thèse.</strong> La différence entre mémoire et récupération tient <strong>moins à la mécanique qu'à la provenance et au cycle de vie</strong> de ce qui est stocké : état produit par l'agent d'un côté, corpus externe de l'autre. Deux objets qui partagent leur outillage et diffèrent par leur gouvernance — c'est exactement la configuration où l'on confond les deux, et où la confusion coûte cher.</p>
+</div>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>Ces architectures convergent vers une représentation <strong>hybride</strong> où le graphe temporel concurrence l'index vectoriel pur. Modéliser explicitement l'évolution des faits dans le temps — <strong>une relation peut devenir caduque sans être effacée</strong> — répond au problème de la cohérence d'une mémoire qui doit oublier ou réviser plutôt qu'accumuler. La parenté avec les graphes de connaissances du ch. 2 § 2.3.5 n'est pas fortuite : mémoire à long terme et récupération structurée partagent un même substrat.</p>
+</div>
+
+<h3>5.2.2 Consolidation, ancrage et évaluation de la mémoire</h3>
+
+<p>Une mémoire à long terme n'a de valeur que si elle est correctement <strong>écrite</strong>, <strong>consolidée</strong> et, au besoin, <strong>oubliée</strong>. Ces trois opérations sont distinctes :</p>
+
+<ul class="puces">
+  <li>l'<strong>écriture</strong> décide ce qui mérite d'être retenu et sous quelle forme ;</li>
+  <li>la <strong>consolidation</strong> fusionne, met à jour et abstrait des souvenirs épars en représentations plus stables — c'est elle qui transforme une série d'épisodes en un fait sémantique, ou qui <strong>révise un fait obsolète</strong> ;</li>
+  <li>l'<strong>oubli</strong> élague ce qui est périmé ou contradictoire, pour éviter que la mémoire ne dérive en magasin incohérent.</li>
+</ul>
+
+<div class="avert">
+  <p><strong>Ces opérations touchent directement à la fiabilité, et par un mécanisme qu'il faut nommer.</strong> Une mémoire mal gérée devient <strong>une source d'hallucinations</strong> : un agent qui rappelle un fait erroné avec aplomb propage l'erreur sur toute la trajectoire. La différence avec une hallucination ordinaire est que celle-ci est <em>persistante</em> et <em>auto-confirmante</em> — l'agent la relira à la session suivante.</p>
+</div>
+
+<p>Deux pratiques atténuent ce risque, et elles reviendront à l'identique côté récupération (§ 5.4.2) :</p>
+
+<ul class="puces">
+  <li>les <strong>citations</strong> — ancrer chaque assertion mémorisée à sa source ou à l'épisode qui l'a produite, de sorte que l'agent puisse <strong>justifier</strong> ce qu'il avance plutôt que de le confabuler ;</li>
+  <li>l'<strong>abstention</strong> — reconnaître qu'il ne sait pas, plutôt qu'inventer un souvenir absent.</li>
+</ul>
+
+<p>L'évaluation de la mémoire fait l'objet de bancs dédiés, qui mesurent la mémoire interactive à long terme sur des historiques étendus, la mémoire conversationnelle sur de très longues durées, et la mémoire au fil d'interactions incrémentales.</p>
+
+<div class="avert">
+  <p><strong>Ce que ces bancs vérifient dépasse le rappel</strong>, et c'est ce qui en fait autre chose qu'une mesure de stockage : ils éprouvent la capacité à <strong>mettre un fait à jour</strong>, à <strong>l'oublier quand il le faut</strong> et à <strong>raisonner sur plusieurs souvenirs</strong> — c'est-à-dire la qualité de la <strong>consolidation</strong>. Qu'il n'existe pas de mesure consolidée de cette qualité au-delà de ces bancs relève d'une <strong>absence de documentation</strong> au sens de R-14, non d'un fait négatif vérifié.</p>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>En production, l'évaluation de la mémoire s'inscrit dans la boucle d'évaluation continue que le ch. 39 instruit : constituer, <strong>à partir des traces réelles</strong>, des jeux d'épreuve mesurant le rappel, la mise à jour et l'abstention. ⚠ <strong>La consolidation et l'oubli doivent être instrumentés et observables au même titre que les appels d'outils</strong> — faute de quoi une dérive silencieuse de la mémoire passe inaperçue jusqu'à ce qu'elle se traduise en erreur visible. C'est, transposé à l'état interne, le principe d'observabilité du ch. 3 § 3.4.5.</p>
+</div>
+
+<h2 id="s53"><span class="sig">§ 5.3</span>RAG agentique : planifier, récupérer, critiquer, itérer</h2>
+
+<p>L'ancrage par la mémoire dote l'agent d'un état interne qu'il écrit et relit ; il reste néanmoins <strong>coupé des corpus volumineux et mouvants</strong> — bases documentaires, entrepôts relationnels, graphes de connaissances — qui dépassent la fenêtre de contexte.</p>
+
+<p>La <strong>génération augmentée par récupération</strong> constitue le second pilier de l'ancrage. Là où la mémoire est l'état que l'agent <strong>possède</strong>, la récupération est l'information qu'il <strong>va chercher au moment voulu</strong>.</p>
+
+<h3>5.3.1 Du RAG statique au RAG agentique</h3>
+
+<p>Le RAG dit <em>naïf</em> enchaîne une fois pour toutes trois étapes — encoder la requête, récupérer les passages les plus proches, conditionner la génération.</p>
+
+<div class="avert">
+  <p><strong>Cette linéarité fait sa fragilité, et le constat est documenté plutôt qu'intuitif</strong> : un recensement des points de défaillance récurrents d'un système de récupération en dénombre <strong>sept</strong>, du contenu manquant au passage pertinent mais non extrait — autant de pannes qu'<strong>une passe unique ne peut ni détecter ni corriger</strong>.</p>
+</div>
+
+<p>Le RAG <strong>agentique</strong> répond en transformant le pipeline figé en <strong>boucle de contrôle</strong> : l'agent planifie sa stratégie de recherche, déclenche une ou plusieurs récupérations, <strong>critique</strong> la suffisance et la pertinence des éléments obtenus, puis décide d'itérer, de reformuler ou de s'arrêter. La récupération devient <strong>une action outillée parmi d'autres</strong> plutôt qu'une étape préalable — ce qui la place, structurellement, dans la boucle du ch. 4 § 4.2.1.</p>
+
+<p>Deux mécanismes auto-correcteurs en constituent l'ossature. Le premier entraîne le modèle à émettre des jetons de réflexion qui décident <strong>à la volée</strong> s'il faut récupérer, puis évaluent la pertinence des passages et l'étayage de chaque affirmation produite. Le second ajoute un <strong>évaluateur léger</strong> qui note la qualité de la récupération et, lorsqu'elle est jugée incorrecte ou ambiguë, déclenche un <strong>repli</strong> plutôt que de générer sur des bases erronées.</p>
+
+<p>La <strong>récupération itérative entrelacée au raisonnement</strong> pousse la même idée : chaque étape de raisonnement peut déclencher une nouvelle requête, ce qui réduit les hallucinations sur les questions <strong>multi-sauts</strong> en rapprochant la génération de ses sources à chaque pas.</p>
+
+<div class="encadre encadre--recherche">
+  <span class="encadre__label">Perspective recherche</span>
+  <p>La frontière entre RAG agentique <em>invité</em> et <em>entraîné</em> se déplace vers l'<strong>apprentissage de la politique de récupération</strong> : optimiser par renforcement une politique qui intercale raisonnement et appels à un moteur de recherche instancie, pour la récupération, la logique du renforcement multi-tours du ch. 4 § 4.3.5. La boucle cesse alors d'être un échafaudage d'invite pour devenir un <strong>comportement appris</strong>, vérifiable contre la justesse finale.</p>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>La boucle auto-correctrice <strong>échange du coût contre de la fiabilité</strong> : chaque tour de critique et de re-récupération consomme des jetons et de la latence. Le <strong>critère d'arrêt</strong> — nombre maximal de tours, budget d'appels, seuil de confiance de l'évaluateur — est donc un paramètre de conception au même titre que pour toute boucle agentique, et non un détail. Un évaluateur de pertinence léger est souvent <strong>plus économique qu'une re-génération complète</strong> par un modèle frontière.</p>
+</div>
+
+<h3>5.3.2 Stratégies de récupération, ingestion et structures</h3>
+
+<p>La qualité d'un système de récupération se joue <strong>d'abord au stade de la récupération et de l'ingestion</strong>, en amont de toute boucle agentique. C'est un ordre de priorité que la fascination pour la boucle fait souvent oublier.</p>
+
+<p><strong>Côté récupération</strong>, la pratique a convergé vers l'<strong>hybridation</strong>. La recherche <strong>dense</strong> par plongements est forte sur la proximité sémantique ; la recherche <strong>lexicale</strong> reste supérieure sur les termes rares, les identifiants et les correspondances exactes. Les listes de résultats sont fusionnées par une méthode qui <strong>combine les rangs sans recalibrer les scores</strong>, puis un <strong>réordonnanceur</strong> affine le classement final sur un petit ensemble de candidats. Des bancs dédiés guident le choix des encodeurs et des réordonnanceurs, et des techniques d'<strong>expansion de requête</strong> — générer un document hypothétique pour densifier la recherche — complètent l'arsenal.</p>
+
+<p><strong>Côté ingestion</strong>, le découpage naïf en fenêtres de taille fixe <strong>brise le contexte et dégrade la pertinence</strong>. Deux techniques y répondent : le découpage <strong>contextuel</strong>, qui préfixe chaque fragment d'un résumé situant sa place dans le document, et le découpage <strong>tardif</strong>, qui encode le document entier <strong>avant</strong> de le segmenter, pour que chaque fragment hérite du contexte global.</p>
+
+<p><strong>Pour les questions exigeant l'agrégation d'informations dispersées</strong>, les structures hiérarchiques et de graphe deviennent décisives : construction récursive d'un arbre de résumés autorisant une récupération à plusieurs niveaux de granularité ; extraction d'un graphe de connaissances du corpus dont les communautés servent les requêtes globales de synthèse ; approches inspirées de la consolidation neurobiologique pour la récupération multi-sauts.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Le pont avec le graphe de connaissances et la pile du Web sémantique a été posé au ch. 2 § 2.4.2 ; la récupération structurée le matérialise du côté agentique. En pratique, la chaîne <em>dense + lexical → fusion → réordonnancement</em> forme un <strong>contrat de récupération stable</strong> dont chaque maillon se substitue indépendamment sans réécrire l'appelant — application directe du découplage à des corpus qui évoluent en continu. Le réordonnancement, par son coût marginal, se réserve aux quelques dizaines de candidats de tête.</p>
+</div>
+
+<h2 id="s54"><span class="sig">§ 5.4</span>Données structurées, accès d'entreprise et gouvernance d'ancrage</h2>
+
+<h3>5.4.1 Données structurées et accès d'entreprise</h3>
+
+<div class="avert">
+  <p><strong>Une part majeure de l'information d'entreprise ne réside pas dans des documents non structurés</strong> mais dans des bases relationnelles, où l'accès passe par une <strong>requête</strong> plutôt que par une similarité vectorielle. La récupération documentaire, à elle seule, laisse cette part hors d'atteinte.</p>
+</div>
+
+<p>La traduction d'une question en langage naturel vers une requête exécutable est le <strong>pendant structuré</strong> de la récupération, et sa version agentique en hérite la boucle : générer une requête, l'exécuter, <strong>observer le résultat ou l'erreur</strong>, corriger, recommencer.</p>
+
+<p>Les bancs d'essai jalonnent une montée en difficulté instructive. Un premier a posé le cadre de l'analyse sémantique inter-domaines ; un deuxième a introduit les <strong>grandes bases bruitées</strong> et la contrainte d'<strong>efficacité d'exécution</strong>, rapprochant l'évaluation des conditions réelles ; un troisième franchit un seuil en confrontant les modèles à des flux d'entreprise réalistes — schémas massifs, dialectes multiples, requêtes imbriquées sur des entrepôts.</p>
+
+<div class="avert">
+  <p><strong>C'est sur ce dernier que le constat porte</strong> : les méthodes <strong>en une passe s'effondrent</strong>, et seule une démarche agentique — exploration du schéma, exécution incrémentale, correction d'erreurs — maintient une performance utile. Itérer contre le moteur est précisément ce que la boucle apporte au-delà de la simple génération, et c'est l'un des rares endroits du Livre I où l'agentivité se justifie par une mesure plutôt que par un argument.</p>
+</div>
+
+<p>L'accès aux données structurées rejoint ici la question du <strong>transport</strong>, traitée au ch. 8. Un serveur d'accès normalisé exposant une base offre à l'agent un <strong>contrat d'outil stable</strong> — interroger, lister les schémas, décrire une table — qui découple l'agent de la mécanique de connexion et d'authentification.</p>
+
+<p>Cette couche est <strong>complémentaire de la récupération documentaire, non concurrente</strong> : l'une récupère du texte non structuré pertinent, l'autre donne accès à la <strong>donnée structurée vivante</strong>. Un agent d'entreprise combine couramment les deux — récupérer une note de politique, l'agréger à des chiffres tirés d'un entrepôt.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Mise en œuvre</span>
+  <p>Exposer un entrepôt par un serveur d'accès normalisé plutôt que par une connexion codée en dur applique le découplage au niveau des données : <strong>le contrat d'outil survit aux changements de moteur sous-jacent</strong>, et la gouvernance d'accès se centralise à la passerelle au lieu de se disperser dans chaque agent. La génération de requêtes agentique réclame en contrepartie des <strong>garde-fous d'exécution</strong> — requêtes en lecture seule, périmètre de tables limité, plafonds de lignes et de temps — pour éviter qu'une boucle de correction n'engendre des requêtes coûteuses ou destructrices sur une base de production.</p>
+</div>
+
+<h3>5.4.2 Gouvernance d'accès, ancrage et évaluation</h3>
+
+<p>Dès lors qu'un agent récupère et restitue de l'information d'entreprise, <strong>trois exigences se superposent</strong> : que l'accès respecte les droits de l'utilisateur, que la réponse soit ancrée et traçable, et que le tout soit mesurable.</p>
+
+<p><strong>La gouvernance d'accès</strong> impose que le contrôle des permissions s'applique <strong>au niveau du document, voire du fragment</strong>, et non seulement à l'interface de l'agent.</p>
+
+<div class="avert">
+  <p><strong>Le mode d'échec ici est silencieux, et c'est ce qui le rend grave.</strong> Un index vectoriel qui mélange sans cloisonnement des documents soumis à des habilitations distinctes <strong>contourne le modèle d'autorisation sans jamais lever d'erreur</strong>. La récupération doit donc filtrer les candidats selon l'identité de l'<strong>utilisateur effectif</strong> avant la génération — faute de quoi <strong>l'agent devient un canal de fuite de contrôle d'accès</strong>. C'est la propagation d'identité du ch. 3 § 3.2.3 appliquée aux données, et le ch. 17 en montrera la version multi-saut.</p>
+</div>
+
+<p><strong>L'ancrage.</strong> Réduire les hallucinations exige davantage que de bons passages : il faut une <strong>attribution vérifiable</strong> et un <strong>comportement d'abstention</strong>. La citation <strong>affirmation par affirmation</strong> — rattacher chaque énoncé de la réponse au fragment source précis qui l'étaye — rend le résultat auditable ; l'abstention assumée — répondre « information indisponible » plutôt que combler le vide — est préférable à une réponse plausible mais non étayée. Ce sont les deux mêmes pratiques qu'au § 5.2.2, et leur récurrence n'est pas fortuite : mémoire et récupération échouent de la même manière.</p>
+
+<p><strong>L'évaluation</strong> doit porter sur <strong>deux axes distincts</strong>, et les découpler est indispensable :</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Axe</th><th>Ce qu'on mesure</th><th>Instruments</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Récupération</strong></td><td>le rappel — les bons passages ont-ils été trouvés ?</td><td>métriques classiques de recherche d'information</td></tr>
+    <tr><td><strong>Génération augmentée</strong></td><td>fidélité au contexte, pertinence de la réponse et du contexte</td><td>cadres d'évaluation sans référence humaine, juges légers entraînés</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 5.2 — Les deux axes d'évaluation d'un système de récupération, à mesurer séparément.</p>
+
+<div class="avert">
+  <p><strong>Une réponse fausse peut tenir à un bon générateur nourri de mauvais passages, ou l'inverse</strong> — et <strong>seul le diagnostic séparé oriente la correction</strong>. Mesurer la seule qualité finale dit qu'il y a un problème, jamais où il est.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Point de jonction avec le ch. 19, marqué et non franchi.</strong> La récupération agentique n'est pas qu'un mécanisme d'ancrage : elle est aussi un <strong>vecteur d'attaque</strong>. En récupérant du contenu non fiable — courriel, page web, document partagé — et en l'injectant dans le flux de raisonnement d'un agent qui dispose par ailleurs de données privées et d'un canal de sortie, elle réunit les conditions d'une exfiltration. <strong>Tout passage récupéré doit être traité comme du contenu non fiable susceptible de porter une injection d'invite indirecte.</strong></p>
+</div>
+
+<p>Conformément au fil de la sécurité posé au ch. 4 § 4.0.1, <strong>ce risque ne se résout pas au niveau du modèle</strong> : il appelle une défense en profondeur — étiquetage de provenance des fragments, cloisonnement des privilèges, contrôle du canal de sortie. Le modèle de menace, la triade de conditions et les incidents documentés sont <strong>au ch. 19</strong> ; la défense architecturale, <strong>au ch. 6 § 6.5</strong>. Ce chapitre s'arrête ici, et c'est l'arbitrage du plan.</p>
+
+<section class="statut" id="s55">
+
+<h2><span class="sig">§ 5.5</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel ce chapitre a été rédigé, conformément à la règle d'escalade du <a class="lien" href="../PRD/PRD.md">PRD</a> Annexe A : <em>un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il remonte.</em></p>
+</div>
+
+<p><strong>Ce qui est enfreint</strong> — les portes <strong>G-1</strong>, <strong>G-2</strong> et <strong>G-3</strong> sont ouvertes. Rédaction sur instruction d'auteur du 27 juillet 2026. Conséquences :</p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01</strong> — régime <strong>[C]</strong> hérité du Vol. I.</li>
+  <li><strong>Aucun décompte n'est publiable</strong> (G-2).</li>
+  <li><strong>Les renvois « ch. N » sont des renvois de plan, non de texte</strong> — ch. 6, 7, 8, 17, 19, 39 non rédigés.</li>
+</ol>
+
+<p><strong>Remontée ouverte par ce chapitre</strong>, à l'instance d'arbitrage (D-6, non désignée) :</p>
+
+<ul class="puces">
+  <li><strong>R-IV-07 — non bloquante, à échéance G-1.</strong> Deux fonctions produit citées au § 5.1.3 et § 5.1.4 sont <strong>en bêta</strong> à la date d'arrêt des sources, avec une version d'interface datée. Le chapitre les nomme comme telles et ne les présente jamais comme disponibles en général — mais leur statut est précisément ce qui peut changer entre le gel de la source et le gel de la somme, dans les deux sens : passage en disponibilité générale, ou retrait. <strong>À re-vérifier une à une en G-1</strong>, et non à reconduire de mémoire.</li>
+</ul>
+
+<p><strong>Une observation de méthode, sans remontée.</strong> Ce chapitre porte le <strong>premier fait négatif vérifié</strong> du Livre I (§ 5.0) : l'absence de matière d'empoisonnement dans les §2.6-2.7 du Vol. I est établie par un balayage documenté que le TOC porte sous l'entrée du chapitre, et non simplement non trouvée. La distinction entre les trois degrés de R-14 n'est donc pas ici une précaution rhétorique : elle sépare deux énoncés de statut réellement différent, et le chapitre en fait usage aux deux niveaux (§ 5.0 pour le degré 1, § 5.2.2 pour le degré 3).</p>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la table détaillée du TOC section par section (§ 5.1 à § 5.4) ; le § 5.0 est un apparat de cadrage, non une section du plan, et il est déclaré tel. La table de couverture est respectée, y compris la sortie de périmètre du §2.10.2.2 vers le ch. 19 : <strong>aucune sous-section d'empoisonnement n'est écrite ici</strong>, le § 5.4.2 se bornant à marquer le point de jonction. Les deux séries de garde-fous sont balayées et déclarées ; les deux occurrences de R-14 sont marquées avec leur <strong>degré</strong> ; les fonctions en bêta portent leur réserve d'usage.</p>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 5. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.23, entrée du chapitre 5, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>
