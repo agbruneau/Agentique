@@ -17,6 +17,7 @@ Usage :  python check-sieges-mutations.py
 Sortie 0 si le contrôle passe intact ET attrape les cinq mutations.
 """
 
+import os
 import re
 import shutil
 import subprocess
@@ -24,7 +25,13 @@ import sys
 import tempfile
 from pathlib import Path
 
-RACINE = Path(__file__).resolve().parent.parent
+# ⚠ La racine du corpus est paramétrable depuis la v0.26, et le motif est un fait
+# de terrain : deux passes de rédaction peuvent tourner en parallèle, et le temps 1
+# du harnais — « le contrôle passe-t-il sur le corpus intact ? » — n'est
+# interprétable que sur le corpus que la passe courante COMMITTE. Sans cette
+# variable, un écart introduit par une passe voisine non committée rend tout le
+# harnais inutilisable, donc ignoré. Par défaut : le corpus réel.
+RACINE = Path(os.environ.get("COMPENDIUM_RACINE", Path(__file__).resolve().parent.parent))
 SCRIPT = Path(__file__).resolve().parent / "check-sieges.py"
 
 # La console Windows par défaut est en cp1252 et ne sait pas écrire « ☑ ».
@@ -34,6 +41,9 @@ CH03 = "Livre I/03-securite-identite-gouvernance.md"
 CH06 = "Livre I/06-multi-agents-evaluation-surete.md"
 CH07 = "Livre I/07-genealogie-gouvernance.md"
 CH08 = "Livre I/08-anatomie-mcp-a2a.md"
+CH48 = "Livre V/48-semantique-effet-idempotence-compensation.md"
+CH49 = "Livre V/49-horizon-frontiere-connaissance-verifiable.md"
+CH50 = "Livre V/50-peremption-protocole-revalidation.md"
 
 
 def executer(racine):
@@ -97,12 +107,63 @@ def m5_siege_absent(tmp):
     (tmp / CH03).unlink()
 
 
+def m6_taxonomie_effet_recopiee(tmp):
+    """S4 — le siège de la sémantique d'effet reconstruit dans une autre pièce.
+
+    La faute que le versement du Livre V a pour objet d'empêcher : quatre pièces
+    renvoient au ch. 48 « qui en est le siège » ; il suffit qu'une seule refasse
+    la table des trois classes pour que l'économie de la fusion tombe.
+    """
+    p = tmp / CH50
+    faux = ("\n\n| Classe d'effet | Ce qu'une reprise produit |\n| --- | --- |\n"
+            "| **Lecture** | rien |\n"
+            "| **Écriture** | un doublon |\n"
+            "| **Engagement** | un second engagement |\n"
+            "\n: Tableau 50.2 — Les trois classes d'effet.\n")
+    texte = p.read_text(encoding="utf-8")
+    coupe = texte.index("## § 50.3")
+    p.write_text(texte[:coupe] + faux + texte[coupe:], encoding="utf-8")
+
+
+def m7_marqueur_tri_retire(tmp):
+    """S2 — le siège du tri prospectif perd son marqueur.
+
+    Il était déclaré au plan depuis la v0.16 SANS jamais porter le mot dans une
+    pièce, faute de pièce : c'est exactement l'état que ce contrôle interdit de
+    reproduire.
+    """
+    p = tmp / CH49
+    p.write_text(p.read_text(encoding="utf-8")
+                 .replace("SIÈGE DU TRI PROSPECTIF POUR TOUTE LA SOMME",
+                          "Orientation méthodologique"), encoding="utf-8")
+
+
+def m8_definition_tri_recopiee(tmp):
+    """S4 — les trois définitions du tri recopiées dans une autre pièce.
+
+    ⚠ Mutation de la garde `renvoi: None` : elle prouve que désactiver S5 pour un
+    siège ne désactive PAS S4. Un siège hors contrôle de reconstruction serait un
+    siège non versé.
+    """
+    p = tmp / CH48
+    faux = ("\n\nLe tri se rappelle : **PROGRAMMÉ** désigne un engagement daté réel, "
+            "**PROJETÉ** une prévision d'analyste ou d'institution, **SPÉCULATIF** "
+            "un pari de recherche ou un scénario.\n")
+    texte = p.read_text(encoding="utf-8")
+    coupe = texte.index("## § 48.2")
+    p.write_text(texte[:coupe] + faux + texte[coupe:], encoding="utf-8")
+
+
 MUTATIONS = [
     ("M1  S2 — marqueur de siège retiré", m1_marqueur_retire, "[S2]"),
     ("M2  S4 — signature du siège recopiée ailleurs", m2_signature_recopiee, "[S4]"),
     ("M3  S5 — renvoi au siège retiré", m3_renvoi_retire, "[S5]"),
     ("M4  S3 — signature périmée contre son propre siège", m4_signature_perimee, "[S3]"),
     ("M5  S1 — pièce porteuse du siège absente", m5_siege_absent, "[S1]"),
+    ("M6  S4 — taxonomie de la sémantique d'effet recopiée", m6_taxonomie_effet_recopiee, "[S4]"),
+    ("M7  S2 — marqueur du siège du tri prospectif retiré", m7_marqueur_tri_retire, "[S2]"),
+    ("M8  S4 — définitions du tri recopiées (garde `renvoi: None`)",
+     m8_definition_tri_recopiee, "[S4]"),
 ]
 
 

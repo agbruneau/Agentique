@@ -21,7 +21,7 @@ minuscules sans accents ni espaces, dérivé du titre (`01-interoperabilite-inte
 | **Date de gel** | << « Aucune » tant que D-1 n'est pas prise. Nommer le gel de la source consommée — juin 2026 (Vol. I), 16-17 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III) — **en précisant qu'il n'est pas le gel de la somme et ne peut en tenir lieu**. >> |
 | **Socle mobilisé** | << Contre quoi les énoncés résolvent réellement, et à quel régime. Tant que G-3 est ouverte : « aucune entrée du socle consolidé », l'Annexe B n'existant pas. Nommer la source et son régime d'héritage ([C] pour le Vol. I, niveau conservé pour les Vol. II et III), puis en tirer la conséquence sur CA-IV-01. >> |
 | **Garde-fous balayés** | << Les deux séries, nommées par volume, **y compris les zéros**. Signaler les faux amis (« plan de contrôle » pré-agentique ≠ « control plane » de R-13). Compter les occurrences réelles de ceux qui s'appliquent, et dire où elles sont. >> |
-| **Volumétrie cible** | << Enveloppe **dérivée** de celle du Livre, avec sa dérivation écrite ; puis le rappel que tant que G-2 est ouverte, aucun décompte n'est publiable. >> |
+| **Volumétrie cible** | << Enveloppe **dérivée** de celle du Livre, avec sa dérivation écrite — et l'addition des cibles du Livre **faite avant la première ligne** (leçon de D-4). Puis le **réel mesuré** par `PRD/decompte.sh`, seule autorité : ☑ les décomptes sont publiables depuis G-2 (27 juillet 2026). ⚠ L'écart se **documente**, jamais ne se corrige par amputation ni par gonflement. >> |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v<< version >>, entrée du chapitre << N >>)* — << thèse verbatim, sans reformulation >>
 

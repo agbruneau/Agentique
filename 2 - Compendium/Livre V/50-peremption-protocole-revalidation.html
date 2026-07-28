@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 50 — Péremption et protocole de revalidation · La somme agentique</title>
+<meta name="description" content="le compendium est daté et le dit — événements qui le périment, protocole de revalidation, conditions de gel des chapitres périssables.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre V · Chapitre 50</div>
+  <ol>
+    <li><a href="#s501"><span class="num">50.1</span>Les lacunes propres au blueprint</a></li>
+    <li><a href="#s502"><span class="num">50.2</span>Les événements de péremption</a></li>
+    <li><a href="#s503"><span class="num">50.3</span>Le protocole de revalidation</a></li>
+    <li><a href="#s504"><span class="num">50.4</span>Le registre de gel par chapitre</a></li>
+    <li><a href="#s505"><span class="num">50.5</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.26 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="50-peremption-protocole-revalidation.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre V — Livrer et clore : l&#x27;agent comme livrable logiciel, horizon et frontière</div>
+  <h1><span class="chap">Chapitre 50</span>Péremption et protocole de revalidation</h1>
+  <p class="titre__situe">Livre V — Livrer et clore : l'agent comme livrable logiciel, horizon et frontière. Second mouvement — horizon et frontière de la connaissance vérifiable (ch. 49-50). <strong>Dernier chapitre de la somme</strong> : le second mouvement du Livre V est terminal, et toute insertion future se fait avant lui (décision 9 du TOC)</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — portes <strong>G-3</strong> et <strong>G-4</strong> ouvertes ; volet résiduel de <strong>G-1</strong> non instruit ; <strong>ordre de rédaction du PRD §6 enfreint</strong> ; instruction d'auteur du 27 juillet 2026. ⚠ <strong>Ce chapitre porte une impossibilité propre, et elle est plus lourde que celle du ch. 49</strong> : <em>le § 50.4 doit tenir le <strong>registre de gel par chapitre</strong> de l'ouvrage, et <strong>l'appareil entier — avant-propos et neuf annexes — reste à écrire</strong> — un registre de gel dont dix lignes sur soixante sont vides n'est pas un registre, c'est une liste d'attente.</em> Voir la note de statut, § 50.5</dd>
+    <dt>Date de gel</dt>
+    <dd><strong>27 juillet 2026</strong> — gel unique, <strong>D-1 prise</strong> (registre : <a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Un événement de péremption de la somme est daté du LENDEMAIN de son gel</strong>, et <strong>D-1 a expressément refusé d'avancer le gel d'un jour pour l'absorber : la révision du protocole agent-outil, annoncée pour le 28 juillet 2026</strong> — <em>quatre sections du ch. 8 sont à revalider dès ce jour.</em> Gels de source consommés : <strong>16-17 juillet 2026</strong> (Vol. II, ch. 24) et <strong>21 juillet 2026</strong> (Vol. III, §28.6) — ⚠ <strong>aucun des deux ne tient lieu du gel de la somme</strong></dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte). Résolution contre le <strong>Vol. II</strong> <code>Monographie</code> <strong>ch. 24</strong> (niveaux d'origine conservés, dont les <strong>cinq lacunes propres du blueprint</strong> et sa <strong>réserve F-29</strong>) et contre le <strong>Vol. III</strong> <code>Monographie</code> <strong>§28.6</strong> (niveaux conservés, ⚠ <strong>sous G-4 non franchie</strong> — son volet de fond reste dû). ⚠ <strong>Une entrée mobilisée porte un écart déclaré à sa source et non arbitré</strong> : la qualification de l'échéance de 2035 en « plafond et non plancher » figure au libellé d'une entrée du Vol. III mais a été rangée en <strong>lecture d'auteur</strong> par son propre contrôle de bornage ; <em>elle est reprise avec cette marque, et la présente pièce ne la rejoue pas.</em> <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd>Vol. II — <strong>R-4 (RTR : « quatre cibles successives — 2019, 2022, 2023, 2026 », jamais « quatre reports », jamais « lancé ») : quatre occurrences</strong>, § 50.2 (trois) et § 50.3 ; <strong>réserve F-29 : trois occurrences</strong>, balayée avec R-4 comme le prescrit la ligne Fusion ; <strong>R-5 (aucun organisme de normalisation désigné) : trois occurrences</strong>, § 50.2 et § 50.3 ; <strong>R-6 (position au quadrant iPaaS non vérifiée) : deux occurrences</strong>, § 50.1 et § 50.3 ; <strong>R-1 à R-3, R-7, R-8 : zéro occurrence</strong>. Vol. III — <strong>R-11 (jalons « visés », statut du document porté, origines jamais fusionnées) : deux occurrences</strong>, § 50.2, aux lignes « normalisation du passeport » et « jalons post-quantiques » — ⚠ <em>dont la clause de non-fusion des trois origines</em> ; <strong>R-14 (trois degrés d'absence) : six occurrences au corps, re-mesurées</strong> — <strong>deux énoncés au degré 3</strong> (§ 50.2, ligne de la désignation) et <strong>quatre qualifications de fait négatif</strong> reprises de leurs sources (§ 50.1, § 50.2) ; <strong>R-09 (statut d'une révision annoncée au brouillon) : trois occurrences</strong>, § 50.2 ; <strong>R-08 (une absence d'incident public n'est pas une preuve de sûreté) : deux occurrences</strong>, § 50.2 ; <strong>R-01 : une occurrence</strong>, § 50.2, le passeport n'étant dans aucune spécification à date ; <strong>R-02 à R-07, R-10, R-12, R-13 : zéro occurrence</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ <strong>4 200 mots</strong> de corps (§ 50.1 à § 50.4), <strong>cible dérivée au prorata des sections</strong> : 20 000 mots au second mouvement du Livre (TOC v0.25), dix-neuf sections au total, <strong>quatre ici</strong> — 20 000 × 4/19 ≈ 4 200, le ch. 49 recevant ≈ 15 800. La somme des quatre cibles du Livre vaut <strong>exactement 34 000</strong>. ☑ <strong>Décompte publiable depuis G-2</strong> ; <strong>réel : 3 440 mots</strong> par <a class="lien" href="../PRD/decompte.sh"> 0 </a>, seule autorité de décompte — <strong>−18,1 %</strong>, <strong>le plus faible écart du Livre</strong> ; ⚠ <em>le Livre entier est mesuré à <strong>25 017 mots</strong> pour une enveloppe de 34 000, soit <strong>−26,4 %</strong> — relevé au <a class="lien" href="README.md"> 1 </a> du dossier</em></dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>le compendium est daté et le dit — événements qui le périment, protocole de revalidation, conditions de gel des chapitres périssables.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.26, entrée du chapitre 50.</span>
+</div>
+
+<p><strong>Un ouvrage daté doit dire quand il cesse d'être actuel.</strong> Le domaine évolue par trimestres, et c'est pour cette raison que chaque pièce de la somme porte sa date de gel. Ce chapitre clôt l'ouvrage par la <strong>discipline évidentiaire du Vol. II</strong> : d'abord ce que le blueprint ne parvient pas à établir (§ 50.1), puis ce qu'un événement daté rendra faux (§ 50.2), puis la procédure par laquelle un lecteur — ou l'auteur — reconstitue la validité du document à une date ultérieure (§ 50.3), enfin la convention de datation elle-même (§ 50.4). <em>Les deux premiers registres relèvent de la connaissance ; les deux derniers, de la méthode.</em></p>
+
+<div class="avert">
+  <p><strong>Une distinction gouverne tout le chapitre, et elle est reprise du Vol. II</strong> <code>Monographie</code> <strong>§21.3</strong> : <em>périmer n'est pas falsifier</em>. Ces échéances ne dégradent pas la somme de façon diffuse — <strong>chacune vise une formulation précise, et celle-là seulement</strong>. Et parce que ces formulations sont datées, <em>l'événement ne les rend pas fausses mais <strong>non actuelles</strong></em> : le lecteur postérieur lit un énoncé qui a changé de temps grammatical. <strong>C'est la fonction même de la date de gel</strong> ; <em>seule basculerait dans le faux une formulation que l'événement contredirait sans être bornée par la sienne.</em></p>
+</div>
+
+<h2 id="s501"><span class="sig">§ 50.1</span>Les lacunes propres au blueprint</h2>
+
+<p><strong>Le blueprint de la somme — l'architecture de référence des ch. 42 à 46 — porte cinq lacunes propres, héritées du Vol. II, une sixième ayant été résolue avant son gel.</strong> ⚠ <strong>Le ch. 45 en est le siège</strong> (lacune §10.6 du PRD du Vol. II, registre de l'Annexe C) ; cette section les <strong>rassemble sans les rouvrir</strong>, et ⚠ <strong>le ch. 45 a été rédigé le même jour, hors de la présente passe</strong> : le renvoi, qui était de plan à la rédaction, résout désormais contre un texte que cette passe n'a pas relu.</p>
+
+<p><em>Ce qui a été résolu, et par quoi.</em> Jusqu'à une passe de revalidation du <strong>16 juillet 2026</strong>, la trajectoire événementielle du portefeuille d'intégration reposait sur une annonce dont l'aboutissement n'était pas confirmé — une acquisition dont une couche entière du blueprint dépendait. <strong>Elle a été clôturée le 17 mars 2026</strong>, trois mois et neuf jours après son annonce du 8 décembre 2025. ⚠ <strong>Le point de méthode compte plus que le fait</strong> : <em>cette lacune a été résolue par une seule vérification ciblée sur la source primaire de l'éditeur</em> — elle mesure ce qu'une passe de revalidation disciplinée accomplit, et, par contraste, ce que les cinq suivantes ont d'irréductible avec les moyens documentaires disponibles.</p>
+
+<p><em>Ce qui subsiste, et à quel titre.</em> <strong>(1)</strong> La <strong>position au quadrant d'analyste sur le marché de l'intégration en tant que service n'est pas vérifiée</strong> — ⚠ <strong>R-6 du Vol. II</strong> : le socle établit deux autres positions, sur deux marchés distincts, et <em>deux quadrants d'un même analyste portant sur deux marchés distincts ne se substituent pas l'un à l'autre</em>. <strong>(2)</strong> L'éditeur <strong>ne publie aucune architecture agentique propre aux services financiers</strong> — vérification faite sur son catalogue et sur ses ouvrages techniques : <em>la déclinaison du patron générique vers le contexte d'une institution financière fédérale canadienne est le travail de la somme, non celui de l'éditeur</em>, et <strong>chaque descente du patron vers le cas canadien produit une inférence d'auteur</strong>. <strong>(3)</strong> La chaîne reliant la messagerie transactionnelle au traitement des messages financiers normalisés reste au niveau <strong>[C]</strong> après une <strong>élévation tentée et échouée</strong> : le lien n'est confirmé que par un ouvrage technique de 2016, et <em>les pages de documentation de l'éditeur refusent systématiquement l'accès aux outils de vérification automatisée</em>. ⚠ <strong>Cette lacune a une valeur méthodologique qui dépasse son objet</strong> : <em>elle montre qu'une élévation de niveau de preuve peut échouer sans que la recherche ait été négligée, et que l'échec doit alors être <strong>écrit</strong> — avec sa date, ses moyens et son motif — plutôt que dissimulé derrière une formulation prudente.</em> <strong>(4)</strong> Sur les sept liens du tableau de correspondance réglementaire, <strong>cinq sont des inférences d'auteur</strong> ; <strong>une seule est documentée</strong> — et pour le seul <strong>rôle opérationnel</strong> d'un intégrateur sur les rails de paiement, <em>non pour une conformité</em> ; la septième est une <strong>attente réglementaire</strong> où il est interdit d'anticiper. <strong>(5)</strong> Le document est <strong>daté</strong>, et c'est l'objet des trois sections suivantes.</p>
+
+<div class="avert">
+  <p><strong>La quatrième lacune est structurelle et ne sera pas comblée par une recherche — et l'inverse serait plus grave.</strong> <em>Qu'une majorité des correspondances réglementaires soient des inférences n'est pas un défaut du blueprint : c'est la seule écriture honnête d'un rapprochement qu'aucun texte ne prescrit.</em> <strong>Quatre cas doivent rester distincts</strong> : l'inférence adossée à un <strong>fait négatif établi</strong> — l'éditeur ne revendique aucune conformité à deux lignes directrices nommées, et <em>ce fait négatif est établi, il est écrit</em> ; l'<strong>inférence simple</strong>, où il serait faux d'ajouter que l'éditeur ne revendique aucune conformité <strong>en général</strong>, le socle attestant au contraire des revendications pour trois autres cadres ; le <strong>lien documenté</strong>, qui interdit l'universel inverse ; et l'<strong>attente réglementaire</strong>, où <strong>aucun standard n'est nommé et où rien ne doit être anticipé</strong> (⚠ <strong>R-5 du Vol. II</strong>).</p>
+</div>
+
+<h2 id="s502"><span class="sig">§ 50.2</span>Les événements de péremption</h2>
+
+<p><strong>Les lacunes disent ce que l'on ne sait pas ; les événements de péremption disent ce que l'on sait aujourd'hui et qui cessera d'être vrai à une date largement prévisible.</strong> ⚠ <strong>Ce n'est pas un calendrier</strong> : c'est un inventaire d'événements, chacun avec sa trace, son tri prospectif quand il en porte un, et <strong>la partie de la somme qui tombe s'il survient</strong>. <em>Le siège du tri est au ch. 49 § 49.0, et il n'est pas redéfini ici.</em></p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Événement</th><th>Ce que le socle en porte</th><th>Tri</th><th>Ce qui se refait</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Désignation de l'organisme de normalisation technique</strong>, par arrêté ministériel</td><td><strong>fait négatif vérifié</strong> au 16 juillet 2026 côté Vol. II ; au 27 juin 2026 le texte officiel écrit encore « sera désigné » côté Vol. III ; ⚠ <strong>la candidature d'un organisme relève du commentaire d'industrie, non d'une position officielle</strong> (R-5) ; ⚠ <em>l'index de la Gazette, partie II, n'a pas été balayé — le socle ne documente pas l'existence d'un arrêté : <strong>degré 3</strong></em>, non fait négatif vérifié</td><td><strong>PROGRAMMÉ sans date d'engagement</strong> — l'obligation est inscrite dans un texte, aucune échéance ne lui est associée</td><td>ch. 30, ch. 32 en entier ; la ligne « cadre bancaire » du tableau de correspondance du ch. 46 ; lacunes §10.1 du Vol. II et 3 du Vol. III. ⚠ <strong>De tous les événements listés, c'est celui qui porte le plus fort potentiel de réécriture — et le seul dont la date reste inconnue</strong></td></tr>
+    <tr><td><strong>Lancement effectif du rail temps réel canadien</strong></td><td>⚠ <strong>La double contrainte se tient des deux mains</strong> : d'un côté une <strong>cible officiellement annoncée</strong> au quatrième trimestre 2026, à l'issue de tests industriels — <em>écrire qu'aucune date n'est annoncée serait faux</em> ; de l'autre <strong>quatre cibles successives — 2019, 2022, 2023, 2026</strong> — et un système <strong>qui n'est pas en production</strong> — <em>écrire qu'il est lancé serait tout aussi faux</em> (<strong>R-4</strong>, réserve <strong>F-29</strong>)</td><td><strong>PROGRAMMÉ conditionnel</strong></td><td>tout énoncé au futur sur ce rail bascule au passé — ou se reformule <strong>si la cible glisse une cinquième fois</strong> ; ch. 33, ch. 36</td></tr>
+    <tr><td><strong>Révisions du protocole agent-outil <em>et</em> du protocole agent-agent</strong></td><td>⚠ <strong>La couche protocolaire entière du Livre I se périme au rythme de SES DEUX spécifications, non de la seule première</strong> — <em>c'est le point que les versions antérieures du plan perdaient.</em> Côté agent-outil, une <strong>révision majeure est annoncée au brouillon</strong> — protocole sans état, retrait de l'en-tête de session — pour le <strong>28 juillet 2026</strong> ; ⚠ <strong>les trois volumes divergent sur le statut de cette date, et l'écart est signalé, non arbitré</strong> : le Vol. I la donne comme révision visée, le Vol. II comme finalisation attendue, <strong>le Vol. III relève que la date n'est pas confirmée à la source</strong> (<strong>R-09</strong>)</td><td>⚠ <strong>Aucun tri attribué, et l'abstention est motivée</strong> : <em>le PROGRAMMÉ exige un engagement daté portant sa source ; c'est la date qui manque</em></td><td>ch. 8 en entier — ⚠ <strong>quatre de ses sections sont à revalider dès le 28 juillet 2026</strong>, soit <strong>le lendemain du gel unique</strong>, et <strong>D-1 a refusé d'avancer le gel d'un jour pour l'absorber</strong> ; ch. 11 ; ch. 47 § 47.4</td></tr>
+    <tr><td><strong>Transfert de gouvernance du protocole de paiement agentique</strong></td><td>⚠ <strong>CANDIDAT SURVENU, et instruit</strong> : le don à une alliance d'authentification, <strong>annoncé le 28 avril 2026</strong>, a été <strong>constaté le 27 juillet 2026 sur ses quatre éléments</strong> — date, version, cas d'usage nommé, deux groupes de travail techniques —, ce qui a <strong>instruit la lacune §10.9e du Vol. II</strong> par source primaire nouvelle datée</td><td><strong>FAIT ÉTABLI</strong> — événement survenu, non prévision</td><td>ch. 10 ; la divergence correspondante de l'Annexe C, <strong>re-tranchée sur pièce</strong>. ⚠ <em>Le socle gelé du Vol. II n'est pas corrigé rétroactivement : le fait s'écrit comme <strong>postérieur à son instruction</strong>, et cela se dit</em></td></tr>
+    <tr><td><strong>Normalisation du passeport d'agent</strong></td><td>⚠ <strong>Le passeport ne figure dans AUCUNE spécification à date : c'est un objet de synthèse construit par le corpus</strong> (<strong>R-01</strong>). Le relevé propre du Vol. III <strong>n'en confirme aucune échéance</strong> — un brouillon de travail du 11 mai 2026, un stade de recommandation candidate du 5 mars 2026 non dépassé, <strong>sept documents de groupe de travail dont aucune date de publication n'est annoncée</strong></td><td>⚠ <strong>Tri mixte, et il ne se simplifie pas</strong> : <strong>SPÉCULATIF pour l'assemblage</strong> des quatre pièces, <strong>PROJETÉ pour deux des trois voies</strong> ; <em>aucun des trois n'est PROGRAMMÉ, l'absence de jalon daté étant le critère du PROGRAMMÉ</em></td><td>ch. 16 en entier ; R-01 ; la première ligne du contrat de l'étage d'émission au ch. 46</td></tr>
+    <tr><td><strong>Stabilisation des conventions sémantiques d'observabilité</strong></td><td>dépôt dédié <strong>sans version citable</strong> ; documents agentiques au <strong>premier des cinq échelons</strong> — <em>développement, alpha, bêta, candidat, stable</em> ; <strong>rupture datée du 12 juin 2026</strong></td><td><strong>SPÉCULATIF</strong> — aucun jalon daté relevé</td><td>ch. 38 ; ch. 40 ; lacune 15 du Vol. III ; l'étage d'exploitation du ch. 46</td></tr>
+    <tr><td><strong>Premier incident public documentant l'usurpation du justificatif propre d'un agent</strong> ⚠ <em>(intitulé corrigé — voir ci-dessous)</em></td><td>Des incidents d'<strong>identité non humaine</strong> sont publics, datés et documentés — une campagne d'août 2025, jetons compromis, révocation d'ensemble le 20 août 2025. <strong>Ce qui reste non documenté est l'usurpation du justificatif propre d'un agent, et cela seul</strong></td><td><strong>SPÉCULATIF</strong> — scénario, sans calendrier ni engagement</td><td>ch. 19 § 19.1 ; ch. 20 ; la portée de R-08 ; ⚠ <strong>et le § 47.6, dont les divulgations candidates du 1ᵉʳ semestre 2026 ne sont pas instruites</strong></td></tr>
+    <tr><td><strong>Jalons post-quantiques</strong></td><td>libellés portés par un <strong>projet public initial</strong>, non par une norme finale ; ⚠ <strong>jamais fusionnés</strong> avec les deux instruments fédéraux de juin 2026, ni avec un rapport conjoint européen qui <strong>ordonne par le risque sans calendrier daté</strong> (<strong>R-11</strong>)</td><td><strong>PROJETÉ</strong> — intention d'une institution dans un document à l'état de projet</td><td>ch. 21 en entier ; ch. 13 ; la ligne « jalons post-quantiques » du tableau du ch. 46 ; lacune 13 du Vol. III. ⚠ <strong>Le siège est le ch. 21 § 21.1 ; aucun jalon n'est re-daté ici</strong></td></tr>
+    <tr><td><strong>Entrée en vigueur simultanée d'E-23 et de la ligne directrice IA de l'AMF</strong></td><td><strong>1ᵉʳ mai 2027</strong>, échéance datée portant sa source ; ⚠ la « période de transition » de dix-huit mois est portée par un <strong>document d'information</strong>, <strong>non par le corps de la ligne directrice</strong></td><td><strong>PROGRAMMÉE</strong></td><td>⚠ <strong>Ce n'est pas une péremption au sens strict, mais une péremption DE DISCOURS</strong> : <em>tout ce que la somme écrit au futur proche — « les institutions devront », « d'ici l'entrée en vigueur » — bascule au présent ce jour-là</em>, et la question cesse d'être « comment se préparer » pour devenir « comment se conformer ». Ch. 25, ch. 27 ; l'étage de gouvernance du ch. 46</td></tr>
+    <tr><td><strong>Expiration des documents de groupe de travail mobilisés</strong></td><td>des jetons de transaction expirant le <strong>7 janvier 2027</strong> ; l'un des sept documents d'<strong>identité de charge de travail</strong> — ⚠ <em>matière du socle IAM, siège au <strong>ch. 3</strong>, non reconstruite ici</em> — expirant le <strong>3 septembre 2026</strong> ; ⚠ <strong>relevé horodaté et périssable</strong> : <em>toute rédaction postérieure rejoue l'entrée avant citation</em></td><td><strong>PROGRAMMÉ</strong> — dates portées par les documents eux-mêmes</td><td>ch. 12, ch. 17 § 17.1, ch. 18 ; lacune 14 du Vol. III. ⚠ <strong>Le cardinal « neuf chantiers, six organisations » du ch. 18 se re-mesure au gel de publication</strong> — deux de ses lignes reposent sur des documents expirant les 27 septembre et 24 novembre 2026</td></tr>
+    <tr><td><strong>Textes réglementaires finaux postérieurs à l'été 2026</strong></td><td>le règlement du cadre bancaire est <strong>prépublié</strong> ; sa période de commentaires se clôt le <strong>26 août 2026</strong> et <em>le texte final peut différer du texte prépublié</em> ; dans la même fenêtre, un règlement administratif du rail temps réel entre en vigueur le <strong>24 août 2026</strong></td><td><strong>PROGRAMMÉ</strong></td><td>ch. 32, ch. 33 ; ⚠ <em>un corpus gelé en juillet 2026 traverse <strong>deux échéances réglementaires en six semaines</strong></em></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 50.1 — Les onze événements de péremption de la somme, avec leur trace, leur tri prospectif et leur incidence, au 27 juillet 2026. <strong>Cardinal re-mesuré sur la colonne d'événements</strong> : <strong>onze événements, dont quatre PROGRAMMÉS, un PROGRAMMÉ sans date d'engagement, un PROGRAMMÉ conditionnel, un PROJETÉ, deux SPÉCULATIFS, un à tri mixte, un sans tri attribué — et un FAIT ÉTABLI, survenu.</strong> ⚠ Les événements des deux sources ont été <strong>rapprochés, non additionnés</strong> : cinq viennent du Vol. II, huit du Vol. III, et <strong>deux paires portaient le même objet</strong>.</p>
+
+<div class="avert">
+  <p><strong>L'intitulé du septième événement est corrigé, et la correction est de fond — elle vient de la source, non de ce chapitre.</strong> Le TOC l'écrit « premier incident public <strong>d'identité agentique</strong> ». Or <strong>l'absence d'incident public n'est pas une preuve de sûreté</strong> : elle peut signaler une surface encore peu déployée, une détection immature ou une divulgation non publique (<strong>R-08 du Vol. III</strong>). ⚠ <strong>Et l'absence elle-même est bornée</strong> : des incidents d'identité <strong>non humaine</strong> sont publics, datés et documentés par source primaire, et <strong>l'affirmation d'une absence générale a été écartée à l'unanimité au vote</strong> d'un lot du Vol. III. <em>Écrire « premier incident public d'identité agentique » revendiquerait une absence que le socle a explicitement retirée.</em> ⚠ <strong>Le Vol. III a corrigé cet intitulé chez lui et remonté l'écart à son auteur</strong> ; <strong>la somme suit la forme corrigée et remonte l'écart de son propre plan</strong> (R-IV-71).</p>
+</div>
+
+<div class="avert">
+  <p><strong>Un angle mort de cette liste même, et il est déclaré plutôt que comblé.</strong> <strong>La couche d'exécution — le harnais — n'a aucun événement dans ce tableau</strong>, alors qu'elle se révise <strong>au rythme d'un produit d'éditeur</strong> : versions, politique d'approbation, admission d'extensions. <em>C'est une horloge plus rapide que celle des protocoles, et la seule des cinq du ch. 47 § 47.1 qui n'ait ici aucune ligne.</em> ⚠ <strong>L'y inscrire suppose d'avoir tranché le risque 14, qui est la décision d'auteur D-2, non prise</strong> — et <strong>la porte G-5 conditionne nommément le premier mouvement du Livre V</strong>. <em>Le ch. 47 § 47.8.1 porte la même remontée depuis l'autre bout de la chaîne.</em></p>
+</div>
+
+<h2 id="s503"><span class="sig">§ 50.3</span>Le protocole de revalidation</h2>
+
+<p><strong>Un document daté qui ne dit pas comment se redater n'est daté qu'à moitié.</strong> Le protocole qui suit est celui du Vol. II, repris <strong>et non réinventé</strong> ; il vaut aussi bien pour l'institution qui reprendrait ce blueprint à son compte.</p>
+
+<p><strong>Le principe : amender le socle d'abord, les chapitres ensuite — jamais l'inverse.</strong> Un fait qui évolue est d'abord <strong>constaté à sa source primaire</strong> et consigné dans un <strong>rapport de revalidation daté</strong> ; l'entrée du socle est amendée, <strong>avec son niveau de preuve</strong> ; les chapitres qui en dépendent sont alors repris et <strong>portent une nouvelle date de gel</strong>. ⚠ <em>La discipline paraît lourde : elle est ce qui empêche un chapitre corrigé de contredire silencieusement un chapitre voisin qui ne l'a pas été.</em> ⚠ <strong>Et pour la somme, elle a une conséquence de gouvernance immédiate</strong> : tant que <strong>G-3</strong> n'est pas franchie, <em>il n'y a pas de socle à amender d'abord</em> — le protocole est <strong>écrit et inapplicable</strong>, et c'est la remontée R-IV-72.</p>
+
+<p><strong>La portée : les faits « chauds » se dénombrent limitativement.</strong> Pour la somme, ce sont les onze événements du § 50.2, dont <strong>quatre portent une date ou une fenêtre dans les douze mois du gel</strong>.</p>
+
+<div class="avert">
+  <p><strong>Une liste de veille qui ne se réduit jamais est une liste que l'on cesse de lire</strong> : le Vol. II l'a prouvé en <strong>sortant</strong> de la sienne l'événement résolu par sa revalidation de juillet 2026 (§ 50.1). <em>Le même geste est dû ici pour le transfert de gouvernance du protocole de paiement, désormais <strong>survenu et instruit</strong> — il quitte la veille et entre à l'historique.</em></p>
+</div>
+
+<p><strong>Le seuil : la revalidation doit dater de moins de trente jours au moment de la publication</strong> (CA-IV-04). ⚠ <strong>Ce seuil est arbitraire, comme tout seuil, et il est calibré sur la cadence trimestrielle du domaine</strong> — <em>où une spécification protocolaire majeure peut basculer en une quinzaine de jours</em>, ce dont l'échéance du 28 juillet 2026 fournit l'illustration <strong>à même ce chapitre</strong>.</p>
+
+<p><strong>Les garde-fous qui se balayent ensemble à chaque revalidation, et la ligne Fusion du chapitre les nomme</strong> : <strong>R-4</strong> (les quatre cibles successives du rail temps réel ; jamais « lancé »), <strong>R-5</strong> (aucun organisme de normalisation désigné), <strong>R-6</strong> (la position au quadrant non vérifiée) et la <strong>réserve F-29</strong>. ⚠ <em>Ils se balayent <strong>ensemble</strong> parce qu'un même événement en périme plusieurs : un arrêté de désignation touche R-5 et le tableau de correspondance du ch. 46 ; un lancement effectif touche R-4 et F-29.</em> <strong>Les balayer un par un les fait diverger.</strong></p>
+
+<p><strong>La transposition, pour l'institution qui reprendrait ce blueprint, tient en trois gestes.</strong> <em>Reconstituer</em> d'abord la liste de veille à sa propre date : les onze événements du § 50.2, augmentés de ce que le calendrier réglementaire aura fait apparaître. <em>Classer</em> ensuite chaque affirmation du dossier selon qu'elle repose sur un <strong>fait vérifié</strong>, sur une <strong>inférence</strong> — cinq des sept correspondances réglementaires en sont — ou sur un <strong>repérage non confirmé</strong> ; ⚠ <strong>seule la première catégorie soutient une décision</strong>. <em>Rouvrir</em> enfin, auprès de son propre canal éditeur, ce que les outils documentaires publics n'ont pas pu établir : <em>ce que le corpus n'a pas obtenu, une institution cliente l'obtient souvent par contrat.</em></p>
+
+<div class="avert">
+  <p><strong>La limite du protocole doit être dite, et le Vol. II la dit de sa propre passe.</strong> Celle qui a résolu une lacune et documenté un échec a été menée <strong>sans vote adversarial à trois juges</strong> — <em>un « meilleur effort borné », une passe de recherche par lacune, hors du budget de vérification complet</em>. <strong>Ses verdicts sont adossés à des sources primaires ; ils n'ont pas le statut probatoire des entrées confirmées par vote unanime.</strong> <em>La revalidation est un filet, pas une garantie.</em></p>
+</div>
+
+<h2 id="s504"><span class="sig">§ 50.4</span>Le registre de gel par chapitre</h2>
+
+<p><strong>La convention de datation de la somme tient en deux termes, et ils ne se substituent pas l'un à l'autre.</strong> <em>Premier terme</em> : un <strong>gel unique de l'ouvrage</strong>, fixé par la décision <strong>D-1</strong> au <strong>27 juillet 2026</strong> — <em>c'est la date à laquelle les faits ont été repris à la source primaire, non un gel de source emprunté ; les trois volumes gardent les leurs.</em> <em>Second terme</em> : une <strong>date de gel par chapitre</strong>, pour les <strong>faits périssables</strong> que le chapitre porte.</p>
+
+<div class="avert">
+  <p><strong>Pourquoi les deux, et pourquoi l'un ne suffit pas.</strong> Un gel unique dit à quelle date l'ouvrage arrête son état ; il ne dit pas <strong>lequel de ses chapitres a été revalidé quand</strong>. <em>Un chapitre repris après un événement de péremption porte une date postérieure au gel de l'ouvrage — et c'est précisément l'information qu'un lecteur cherche pour savoir si l'énoncé qu'il cite a survécu à l'événement.</em> <strong>Le registre est donc le seul instrument qui rende la revalidation vérifiable plutôt que déclarée.</strong></p>
+</div>
+
+<p><strong>Ce que le registre doit porter, pièce par pièce</strong>, sur le modèle du Vol. III et selon le PRD §9 : <em>statut</em>, <em>date de gel</em>, <em>cible de volumétrie</em>, <em>volumétrie réelle</em> — et il se renseigne <strong>au même commit que la pièce</strong>, puis <strong>se re-vérifie contre l'en-tête de la pièce avant tout usage</strong>.</p>
+
+<div class="avert">
+  <p><strong>Cette dernière clause n'est pas de la prudence rituelle</strong> : <em>un registre qui recopie un en-tête sans le relire est un second exemplaire du même chiffre, non un contrôle</em> — c'est la règle de re-mesure du dépôt, appliquée à l'appareil.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Et voici l'état réel, qui est la seule chose que ce chapitre puisse honnêtement écrire : le registre n'existe pas.</strong> Le compendium n'a <strong>aucun fichier de registre de gel</strong> au 27 juillet 2026 ; <strong>cinquante pièces sur soixante sont rédigées au commit de cette passe</strong> — les <strong>cinquante chapitres du plan</strong>, l'appareil restant entier —, <strong>toutes en brouillon non publiable</strong>, et <em>chacune porte sa date de gel et sa volumétrie dans son propre en-tête à cinq champs</em>. ⚠ <strong>Ce décompte est celui d'un relevé horodaté, et il a bougé pendant la rédaction de cette pièce</strong> : les Livres III et IV sont écrits <strong>simultanément, hors de la présente passe</strong> — <em>un registre dressé sur un corpus en cours d'écriture se périme entre sa première et sa dernière ligne, et c'est la seconde raison de ne pas le dresser ici.</em> ⚠ <strong>La première suffisait</strong> : un registre dressé aujourd'hui aurait <strong>dix lignes vides sur soixante</strong> — les dix pièces d'appareil —, et il <strong>donnerait l'apparence d'un instrument là où il n'y a qu'une liste d'attente</strong> : <em>le dresser à ce stade produirait un document faussement complet, ce que le risque 5 du TOC interdit.</em> <strong>La dette est déclarée et remontée</strong> (R-IV-73), non payée ici — <em>et c'est le seul geste que la règle d'escalade autorise à un rédacteur.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Un dernier point, et il ferme l'ouvrage sur la seule chose qu'il puisse promettre.</strong> La somme est datée du 27 juillet 2026, <strong>et son gel a un lendemain</strong> : la révision du protocole agent-outil est annoncée pour le 28 juillet 2026, et <strong>D-1 a refusé d'avancer le gel d'un jour pour l'absorber</strong>. <em>Un ouvrage qui déplacerait sa date de gel pour englober un événement attendu cesserait de dire à quelle date il a été vérifié pour dire à quelle date il aurait aimé l'être.</em> <strong>Le compendium est daté, et il le dit</strong> — y compris quand la date est déjà en train d'être dépassée.</p>
+</div>
+
+<section class="statut" id="s505">
+
+<h2><span class="sig">§ 50.5</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong></p>
+</div>
+
+<p><strong>Ce qui est enfreint.</strong> Portes <strong>G-3</strong> et <strong>G-4</strong> ; volet résiduel de <strong>G-1</strong> non instruit ; <strong>ordre de rédaction du PRD §6</strong>, qui place la clôture en dernier — <em>elle a été écrite alors que vingt-deux chapitres sur cinquante n'étaient pas rédigés — tous écrits depuis, hors de cette passe — et alors que l'appareil entier reste à écrire</em>. Instruction d'auteur du 27 juillet 2026.</p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01.</strong> Les niveaux d'origine des deux sources sont conservés, mais <strong>G-3 n'a refondu aucune entrée</strong> et <strong>G-4 n'a pas collationné le Vol. III</strong>.</li>
+  <li><strong>Les décomptes sont publiables</strong> (G-2). Écart de <strong>−18,1 %</strong> — le plus faible du Livre, dont l'écart d'ensemble est de <strong>−26,4 %</strong>.</li>
+  <li><strong>Deux sections écrivent un état que la part non rédigée de la somme rend provisoire</strong> : le § 50.2, dont la liste d'événements se refera à chaque revalidation, et le § 50.4, dont le registre <strong>n'existe pas</strong>.</li>
+  <li><strong>Les renvois se partagent en trois régimes</strong> — ⚠ <strong>relevé horodaté du 27 juillet 2026 : les cinquante chapitres du plan existent désormais en brouillon</strong> — ⚠ <em>et ce décompte a bougé DEUX FOIS pendant la rédaction de cette pièce</em>, les Livres III et IV ayant été écrits puis committés <strong>en parallèle, hors de cette passe</strong>, portant le corpus de 25 à 50 pièces de chapitre. <strong>Aucun renvoi de plan ne subsiste donc</strong>, et ce qui subsiste est plus exigeant à déclarer : <strong>dix-neuf pièces sur cinquante que la présente passe n'a pas relues.</strong> <strong>(a)</strong> Résolvent contre du <strong>texte rédigé, relu par cette passe</strong> : ch. 8, ch. 10, ch. 11, ch. 12, ch. 13, ch. 16, ch. 17 § 17.1, ch. 18, ch. 19 § 19.1, ch. 20, ch. 21 § 21.1 — et <strong>ch. 47 § 47.1, § 47.4, § 47.6, § 47.8.1</strong>, ainsi que <strong>ch. 48 § 48.1</strong> et <strong>ch. 49 § 49.0</strong>, rédigés dans la présente passe. <strong>(b)</strong> Résolvent contre du <strong>texte rédigé le même jour, hors de cette passe et non relu par elle</strong> : ch. 25, ch. 27, ch. 30, ch. 32, ch. 33, ch. 38, ch. 40 — ⚠ <em>à re-vérifier au commit</em>. <strong>(c)</strong> <strong>Renvois de plan : aucun au commit</strong> — ⚠ <em>les ch. 36, 45 et 46 l'étaient encore à la rédaction ; ils ont été écrits depuis, hors de cette passe, et passent au groupe (b).</em></li>
+</ol>
+
+<p><strong>Remontées ouvertes par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-71 — non bloquante, de formulation, et l'écart est HÉRITÉ.</strong> Le TOC porte l'intitulé « <strong>premier incident public d'identité agentique</strong> » pour le septième événement de péremption. ⚠ <strong>Sa source l'a corrigé le 22 juillet 2026</strong> — « premier incident public documentant <strong>l'usurpation du justificatif propre d'un agent</strong> » — parce que l'affirmation d'une absence générale <strong>a été écartée à l'unanimité au vote</strong> d'un de ses lots, des incidents d'identité <strong>non humaine</strong> étant publics et datés. <em>L'intitulé du plan revendique donc une absence que le socle a explicitement retirée.</em> <strong>Le chapitre suit la forme corrigée et remonte.</strong> <strong>Demande remontée</strong> : réalignement de l'intitulé au TOC, au titre des décisions 8 et 14. ⚠ <em>C'est la sixième occurrence de cette classe dans le corpus — un énoncé de plan périmé par une correction faite à la source après la passe qui l'avait reprise.</em></li>
+  <li><strong>R-IV-72 — non bloquante, mais elle rend une section inapplicable.</strong> Le § 50.3 prescrit d'<strong>amender le socle d'abord, les chapitres ensuite</strong>. ⚠ <strong>Or le socle consolidé compte zéro entrée</strong> : il n'y a rien à amender d'abord, et <em>le protocole de revalidation de la somme est écrit sans être applicable</em>. <strong>Demande remontée</strong> : que la clôture de <strong>G-3</strong> enregistre le protocole comme une de ses conditions de sortie, l'Annexe B devant exister <strong>avant</strong> que la première revalidation ne soit conduite.</li>
+  <li><strong>R-IV-73 — non bloquante, de dette d'appareil, et elle est nommée par le PRD.</strong> Le <strong>§ 50.4</strong> doit tenir le <strong>registre de gel par chapitre</strong> ; <strong>aucun fichier de registre n'existe</strong> dans le compendium, alors que le PRD §9 en prescrit le modèle et la règle de renseignement <strong>au même commit que la pièce</strong>. <strong>cinquante pièces sur soixante sont rédigées</strong> ; un registre dressé aujourd'hui serait vide pour plus de la moitié de ses lignes. <strong>Demande remontée</strong> : création du registre à la clôture de <strong>G-3</strong>, alimenté rétroactivement depuis les en-têtes des pièces existantes, et <strong>avant la première revalidation</strong>. ⚠ <em>Une convention de datation sans registre est une déclaration d'intention.</em></li>
+  <li><strong>R-IV-74 — non bloquante, de divergence signalée et non arbitrée.</strong> Les trois volumes portent <strong>trois statuts différents</strong> pour la date du <strong>28 juillet 2026</strong> : révision visée (Vol. I), finalisation attendue (Vol. II), <strong>date non confirmée à la source</strong> (Vol. III, R-09). ⚠ <strong>D-1 la traite comme un événement daté</strong> en refusant d'avancer le gel pour l'absorber. <em>Les trois énoncés sont exacts à leur date et à leur régime ; ils ne sont pas fusionnables.</em> <strong>Demande remontée</strong> : arbitrage à l'<strong>Annexe C</strong> sur source primaire nouvelle datée — et <strong>de toute façon rejeu du constat dès le 28 juillet 2026</strong>, quelle que soit l'issue.</li>
+</ul>
+
+<ul class="puces">
+  <li><strong>R-IV-75 — non bloquante, de gouvernance, et elle a été découverte par un défaut réel de la présente passe.</strong> ⚠ <strong>La série des remontées <code>R-IV-NN</code> n'a pas d'allocateur, et deux passes simultanées y ont puisé les mêmes numéros.</strong> La présente passe avait ouvert ses quinze remontées en <strong>R-IV-38 à R-IV-52</strong> ; le relevé du corpus a montré que les Livres III et IV, rédigés le même jour hors d'elle, avaient déjà consommé <strong>R-IV-38 à R-IV-59</strong>. <em>Les quinze ont été renumérotées en <strong>R-IV-60 à R-IV-74</strong>, la présente — seizième — prenant <strong>R-IV-75</strong> ; et la collision n'a été vue qu'au contrôle — aucun des quinze contrôles outillés du plan ne la voit, <code>check-sieges.py</code> ne lisant pas les identifiants et <code>check-toc.py</code> ne lisant pas les pièces.</em> <strong>Demande remontée</strong> : que l'allocation des identifiants de remontée soit <strong>écrite au PRD</strong> — plage réservée par Livre, ou registre unique tenu au dossier —, et que le contrôle <code>check-compendium.py</code> prévu en G-3 <strong>refuse un identifiant en double</strong>. ⚠ <em>Deux remontées portant le même numéro se soldent l'une pour l'autre sans que personne s'en aperçoive : c'est la classe de défaut la plus silencieuse que ce Livre ait rencontrée, et elle ne vient pas du plan mais du parallélisme des passes.</em></li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.25 (structure inchangée en v0.26)</strong> — § 50.1 à § 50.4, dans l'ordre exact. La <strong>table de couverture est respectée pour ses deux lignes</strong> : le §28.6 du Vol. III est <strong>prélevé au ch. 45</strong> et arrive ici, le §24.1-24.3 du Vol. II est condensé, et</p>
+
+<div class="avert">
+  <p><strong>le partage du §21.3 du Vol. II avec le ch. 49 § 49.14 est tenu</strong> — <em>la péremption est ici, les frontières y sont</em>. <strong>Aucun siège n'est reconstruit</strong> : le tri prospectif reste au <strong>ch. 49 § 49.0</strong> et n'est pas redéfini ; l'horloge post-quantique reste au <strong>ch. 21 § 21.1</strong> — <em>aucun jalon n'est re-daté, aucun libellé verbatim reproduit</em> ; la sémantique d'effet reste au <strong>ch. 48 § 48.1</strong>. <strong>Les quatre occurrences de R-4 et les trois de F-29 sont balayées ensemble</strong> comme la ligne Fusion le prescrit, avec <strong>R-5</strong> et <strong>R-6</strong> : <em>le rail temps réel n'est jamais dit lancé, et la formule des quatre cibles successives est écrite telle quelle, jamais en « quatre reports »</em>. <strong>Les deux occurrences de R-11 portent le statut de leur document et ne fusionnent aucune origine de jalon.</strong> <strong>Les six occurrences de R-14 portent leur degré</strong>, dont deux au <strong>degré 3</strong> et quatre reprises de leurs sources. <strong>Les deux occurrences de R-08 énoncent qu'une absence d'incident public n'est pas une preuve de sûreté.</strong> <strong>Le cardinal du tableau 50.1 est re-mesuré sur sa colonne</strong> — onze événements —, et <strong>les événements des deux sources ont été rapprochés et non additionnés</strong>, deux paires portant le même objet. Enfin, <strong>l'écart de la qualification « plafond et non plancher » est repris avec sa marque de lecture d'auteur</strong>, et <em>la pièce ne le rejoue pas</em>.</p>
+</div>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre V, chapitre 50. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.26, entrée du chapitre 50, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>

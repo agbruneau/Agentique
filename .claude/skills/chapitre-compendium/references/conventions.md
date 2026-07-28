@@ -100,10 +100,15 @@ disponibilité générale.
 — README du dépôt, README du volume, `CLAUDE.md`, PRD, TOC, registre de gel — et se met à jour
 partout ensemble.
 
-⚠ **Tant que G-2 est ouverte, aucun décompte de pièce n'est publiable.** La commande de référence
-n'est pas validée sur les trois corpus. Toute mesure prise est indicative et se refera. Le Vol. II a
-payé l'ordre inverse : commande publiée après un test sur deux fichiers pour vingt-neuf, puis quatre
-mesures successives (89 757 → 88 021 → 90 362 → 92 059) avant d'arrêter un chiffre.
+☑ **Les décomptes sont publiables depuis le franchissement de G-2** (27 juillet 2026), et
+[`PRD/decompte.sh`](../../../../2%20-%20Compendium/PRD/decompte.sh) en est la **seule autorité** —
+jamais `wc -w`, qui sur-compte la ponctuation de balisage d'environ 3,5 %. ⚠ **Ce paragraphe disait
+l'inverse jusqu'au 27 juillet 2026, et l'écart a été relevé par la rédaction du Livre V**
+(remontée R-IV-63) : *deux pièces d'appareil se contredisaient, et c'était celle que le rédacteur
+copie qui était périmée.* Le Vol. II a payé l'ordre inverse : commande publiée après un test sur deux
+fichiers pour vingt-neuf, puis quatre mesures successives (89 757 → 88 021 → 90 362 → 92 059) avant
+d'arrêter un chiffre. ⚠ **Écrire le réel à côté de la cible, et ne jamais corriger un écart par
+amputation ni par gonflement** (D-4).
 
 ⚠ **Un cardinal annoncé en toutes lettres ne se met pas à jour tout seul.** Le piège n'est pas le
 nombre posé au titre d'une liste — c'est celui qui la **cite à distance**, dans une synthèse ou une

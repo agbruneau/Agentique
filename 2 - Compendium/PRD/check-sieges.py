@@ -166,6 +166,58 @@ SIEGES = [
         "declencheur": r"Affirmations écartées",
         "renvoi": r"ch\.\s*16\s*§\s*16\.2",
     },
+    # ----------------------------------------------------------------- Livre V
+    # Deux sièges versés le 27 juillet 2026 avec la rédaction du Livre V
+    # (remontées R-IV-64 et R-IV-68). Le premier existait AVANT sa pièce : quatre
+    # pièces du Livre III et deux sections du ch. 1 déclaraient déjà « la
+    # sémantique d'effet est au ch. 48, qui en est le siège » — sans que le TOC
+    # le désigne ni qu'aucun instrument le contrôle. Le second était déclaré au
+    # plan depuis la v0.16 et le TOC v0.25 en rendait le versement dû « à la
+    # rédaction du second mouvement du Livre V ».
+    {
+        "id": "siège de la sémantique d'effet (idempotence, compensation, réconciliation)",
+        "fichier": "Livre V/48-semantique-effet-idempotence-compensation.md",
+        "section": "ch. 48 § 48.1",
+        "marqueur": r"SIÈGE DE LA SÉMANTIQUE D'EFFET POUR TOUTE LA SOMME",
+        # Reconstruire le siège, c'est refaire sa TAXONOMIE — donc les trois
+        # rangées de sa table. Les trois mots « idempotence, compensation,
+        # réconciliation » sont au contraire la forme normale d'un RENVOI, que
+        # quatre pièces du Livre III emploient correctement : les prendre pour
+        # signature rendrait le contrôle bruyant donc ignoré.
+        "signature": [
+            r"^\|\s*\*\*Lecture\*\*",
+            r"^\|\s*\*\*Écriture\*\*",
+            r"^\|\s*\*\*Engagement\*\*",
+        ],
+        "declencheur": r"sémantique d'effet",
+        "renvoi": r"ch\.\s*48\b",
+    },
+    {
+        "id": "siège du tri prospectif (PROGRAMMÉ / PROJETÉ / SPÉCULATIF)",
+        "fichier": "Livre V/49-horizon-frontiere-connaissance-verifiable.md",
+        "section": "ch. 49 § 49.0",
+        "marqueur": r"SIÈGE DU TRI PROSPECTIF POUR TOUTE LA SOMME",
+        # Employer une étiquette de tri est un usage ; DÉFINIR les trois statuts
+        # est le siège. D'où l'ancrage sur les trois définitions, jamais sur les
+        # étiquettes : « PROJETÉ » nu apparaît dans treize pièces à bon droit.
+        "signature": [
+            r"engagement daté réel",
+            r"prévision d'analyste",
+            r"pari de recherche",
+        ],
+        # ⚠ S5 est DÉSACTIVÉ pour ce siège, et le motif est mesuré, non commode :
+        # treize pièces rédigées trient des énoncés prospectifs, SIX ne renvoient
+        # pas au siège (ch. 13, 18, 19, 20 du Livre II ; ch. 25 du Livre III ;
+        # ch. 37 du Livre IV). L'obligation de renvoi existe au plan — le TOC
+        # v0.25 l'a posée pour trois pièces — mais l'outiller aujourd'hui
+        # produirait six échecs sur des pièces hors de la passe qui verse le
+        # siège : un contrôle bruyant est un contrôle ignoré. Remontée R-IV-68 :
+        # aligner les six, PUIS réactiver en remplaçant None par le motif de
+        # renvoi. *Un siège contrôlé contre la reconstruction mais non contre
+        # l'omission de renvoi est à moitié contrôlé, et cela se déclare.*
+        "declencheur": r"\btri prospectif\b",
+        "renvoi": None,
+    },
 ]
 
 # Les deux zones où un motif ne compte pas, et le motif du second n'est pas
@@ -248,6 +300,14 @@ def controler():
                 )
 
         # ---- S5 : qui touche la matière renvoie au siège --------------
+        # `renvoi: None` désactive S5 pour un siège dont l'obligation de renvoi
+        # n'est pas encore tenue par le corpus. C'est une déclaration, pas une
+        # commodité : le motif chiffré vit au commentaire du siège concerné, et
+        # sa réactivation est une remontée ouverte. Sans cette garde, le seul
+        # moyen de verser un tel siège serait de le laisser hors contrôle —
+        # c'est-à-dire de ne rien contrôler du tout.
+        if siege["renvoi"] is None:
+            continue
         for piece in corpus:
             if piece == chemin:
                 continue

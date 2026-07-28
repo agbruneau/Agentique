@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 48 — La sémantique d&#x27;effet : idempotence, compensation, réconciliation · La somme agentique</title>
+<meta name="description" content="une action d&#x27;agent produit des effets dans des systèmes d&#x27;enregistrement, et ce qui advient quand elle réussit à moitié — idempotence, compensation, réconciliation — n&#x27;est documenté par rien de ce que la somme a instruit, ni du côté des protocoles (Livre I) ni du côté de l&#x27;encadrement (Livre III) ; ">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre V · Chapitre 48</div>
+  <ol>
+    <li><a href="#s481"><span class="num">48.1</span>Taxonomie des effets d&#x27;une action d&#x27;agent</a></li>
+    <li><a href="#s482"><span class="num">48.2</span>Idempotence et rejouabilité des appels d&#x27;outils</a></li>
+    <li><a href="#s483"><span class="num">48.3</span>Compensation et sagas au grain de l&#x27;agent</a></li>
+    <li><a href="#s484"><span class="num">48.4</span>Réconciliation des flux financiers</a></li>
+    <li><a href="#s485"><span class="num">48.5</span>Tracer l&#x27;effet, pas seulement l&#x27;appel</a></li>
+    <li><a href="#s486"><span class="num">48.6</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.26 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="48-semantique-effet-idempotence-compensation.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre V — Livrer et clore : l&#x27;agent comme livrable logiciel, horizon et frontière</div>
+  <h1><span class="chap">Chapitre 48</span>La sémantique d&#x27;effet : idempotence, compensation, réconciliation</h1>
+  <p class="titre__situe">Livre V — Livrer et clore : l'agent comme livrable logiciel, horizon et frontière. Premier mouvement — l'agent comme livrable logiciel : provenance, mise en service, sémantique d'effet (ch. 47-48). Second et dernier chapitre du mouvement, et <strong>troisième des trois fronts</strong> de matière neuve que l'audit v0.3 avait nommés puis écartés (décision 9 du TOC)</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — portes <strong>G-3</strong>, <strong>G-5</strong> et <strong>G-6</strong> ouvertes ; volet résiduel de <strong>G-1</strong> non instruit ; <strong>ordre de rédaction du PRD §6 enfreint</strong> ; instruction d'auteur du 27 juillet 2026. ⚠ <strong>Ce chapitre porte le SIÈGE DE LA SÉMANTIQUE D'EFFET pour toute la somme</strong> (§ 48.1) : <strong>quatre pièces rédigées y renvoient déjà</strong> — ch. 22 § 22.5, ch. 23, ch. 24, ch. 27 —, plus le <strong>ch. 1 § 1.5.2 et § 1.6.2.2</strong>, et <strong>aucune ne reconstruit la matière</strong>. ⚠ <strong>Et il est FERMÉ à une matière par décision d'auteur</strong> : <strong>D-7</strong> (périmètre assumé et déclaré) ferme les ch. 6, 37 et 48 à l'accord entre agents sous asynchronie et défaillance partielle ; <em>y ouvrir une section rouvrirait la décision, non le seul chapitre</em>. Voir la note de statut, § 48.6</dd>
+    <dt>Date de gel</dt>
+    <dd><strong>27 juillet 2026</strong> — gel unique, <strong>D-1 prise</strong> (registre : <a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Aucun gel de source n'est consommé</strong> : « Fusion : aucune ». Les repérages hérités qu'il mobilise viennent du <strong>Vol. I</strong> (gel de <strong>juin 2026</strong>, régime <strong>[C]</strong>) et du <strong>Vol. III</strong> (gel du <strong>21 juillet 2026</strong>, niveaux conservés) par l'intermédiaire de pièces rédigées de la somme, ⚠ <strong>et aucun des deux ne tient lieu du gel de la somme</strong>. ⚠ <strong>Volet résiduel de G-1 non instruit</strong> : la préimpression du § 48.5 n'a pas été ouverte, et aucune spécification protocolaire n'a été rebalayée pour le § 48.2</dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (G-3) <strong>et aucune entrée propre</strong> — matière neuve, « Fusion : aucune » (décision 9 du TOC). Résolution effective : <em>(a)</em> <strong>adossements internes</strong> aux pièces rédigées — <strong>ch. 1 § 1.5.2</strong> et <strong>§ 1.6.2.2</strong> (idempotence, saga, résultats d'impossibilité au grain pré-agentique), <strong>ch. 4 § 4.6</strong> (l'idempotence comme propriété de conception d'outil), <strong>ch. 8 § 8.3</strong> (tâches asynchrones <strong>expérimentales</strong>), <strong>ch. 22 § 22.5</strong> (exécution durable) —, chacune portant ses entrées et ses niveaux, <strong>non retranscrits ici</strong> ; <em>(b)</em> deux <strong>repérages [C] du Vol. I</strong> cités par leur section — <code>Monographie</code> §5.7.5 (irréversibilité des rails temps réel) et §5.7.6 (encapsulation du cœur bancaire) — qui <strong>corroborent et ne portent pas</strong> ; <em>(c)</em> la <strong>relève v0.10</strong> du plan, en repérage [C], <strong>dont aucun résultat chiffré n'est repris</strong>. ⚠ <strong>Régime de preuve le plus dur des trois</strong> (PRD §7.2) : aucun vote adversarial n'a eu lieu, aucune source primaire n'a été extraite — <strong>aucun énoncé n'est central au sens de CA-IV-01</strong>, et <strong>CA-IV-07 est porté à l'ouverture</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd>Vol. III — <strong>R-14 (trois degrés d'absence) : neuf occurrences au corps, re-mesurées</strong> — <strong>huit énoncés d'absence portant le degré 3</strong> (chapeau, § 48.2, § 48.3, § 48.4, § 48.5) et <strong>une qualification de fait négatif établi</strong> (§ 48.1, reprise du ch. 16 § 16.1) ; <strong>R-02 (qualifier par ce que la spécification démontre) : trois occurrences</strong>, § 48.2 (deux, dont le refus d'assimiler les tâches asynchrones à un moteur durable), § 48.5 ; <strong>R-09 : une occurrence</strong>, § 48.2, sur la révision protocolaire annoncée au brouillon ; <strong>R-13 : zéro occurrence</strong> — ni « control plane » ni « autonomie graduée » ne sont employés, ⚠ <strong>et le faux ami est déclaré</strong> : le « plan de contrôle » pré-agentique du ch. 1 § 1.3.4 n'est pas visé par R-13 et n'apparaît pas ici ; <strong>R-01 à R-08, R-10 à R-12 : zéro occurrence</strong>. Vol. II — <strong>R-4 (RTR : « quatre cibles successives », jamais « lancé ») : une occurrence</strong>, § 48.4, où le rail temps réel canadien est nommé <strong>sans jamais être dit lancé</strong> (réserve F-29) ; <strong>R-1 à R-3, R-5 à R-8 : zéro occurrence</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ <strong>4 700 mots</strong> de corps (§ 48.1 à § 48.5), <strong>cible dérivée par front</strong> : 14 000 mots au premier mouvement du Livre (TOC v0.25, Volumétrie — le chiffre de l'audit v0.3 pour ses <strong>trois</strong> fronts), dont <strong>un</strong> porté par ce chapitre, soit ≈ 4 700 ; les deux autres sont au ch. 47 (≈ 9 300). ☑ <strong>Décompte publiable depuis G-2</strong> ; <strong>réel : 2 793 mots</strong> par <a class="lien" href="../PRD/decompte.sh"> 0 </a>, seule autorité de décompte — <strong>−40,6 %</strong>. ⚠ <strong>L'écart est en défaut et son motif est celui du ch. 47</strong> : <em>sur un front sans socle, la volumétrie mesure ce qu'on peut écrire sans fabriquer</em> — et <strong>deux des cinq sections sont des lots d'instruction</strong>. ⚠ <strong>D-4 interdit l'amputation comme le gonflement</strong> : l'écart se documente et ne se corrige pas</dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>une action d'agent produit des effets dans des systèmes d'enregistrement, et ce qui advient quand elle réussit à moitié — idempotence, compensation, réconciliation — <strong>n'est documenté par rien de ce que la somme a instruit, ni du côté des protocoles (Livre I) ni du côté de l'encadrement (Livre III)</strong> ; c'est en finance que le coût de ce silence est maximal (un virement à moitié réussi n'est pas un incident d'observabilité, c'est un écart comptable).</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.26, entrée du chapitre 48.</span>
+</div>
+
+<div class="avert">
+  <p><strong>La thèse est déclarée <em>construction d'auteur, socle à constituer</em> par le TOC lui-même</strong>, et elle porte deux propositions de statuts inégaux qu'il faut séparer avant d'entrer dans le chapitre. La seconde — <em>un virement à moitié réussi est un écart comptable</em> — est une <strong>lecture d'auteur</strong>, et elle est reprise comme telle. La première — <em>ce n'est spécifié ni par les protocoles ni par l'encadrement</em> — est une <strong>absence</strong>, et <strong>elle n'a pas été établie par balayage</strong> : c'est une <em>absence de documentation dans le corpus de la somme</em>, au <strong>degré 3</strong> de l'échelle R-14 du Vol. III, non un fait négatif vérifié. <em>Le chapitre ne peut donc pas écrire que les protocoles n'en disent rien ; il écrit que rien de ce que la somme a instruit ne le documente</em>, ce qui n'est pas la même proposition et n'autorise pas la même conclusion.</p>
+</div>
+
+<h2 id="s481"><span class="sig">§ 48.1</span>Taxonomie des effets d'une action d'agent</h2>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>SIÈGE DE LA SÉMANTIQUE D'EFFET POUR TOUTE LA SOMME.</strong> La matière — <em>idempotence, compensation, réconciliation</em> — est posée <strong>ici une seule fois</strong>. Le <strong>ch. 1 § 1.5.2</strong> et <strong>§ 1.6.2.2</strong> en posent les fondements <strong>au grain pré-agentique</strong> et y renvoient ; les <strong>ch. 22 § 22.5</strong>, <strong>ch. 23</strong>, <strong>ch. 24</strong> et <strong>ch. 27</strong> l'<strong>appliquent</strong> et y renvoient nommément ; aucun de ces chapitres ne la reconstruit. <em>C'est l'économie de la fusion côté « effets d'une action », et elle n'a lieu que si ces chapitres s'y tiennent.</em></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> la taxonomie qui suit est une construction de ce chapitre. <strong>Ce que le socle établit</strong> : rien ; il n'y a pas de socle, et aucune des trois classes ne résout contre une entrée numérotée d'aucun volume. <strong>Ce qu'il n'établit pas</strong> : que ces trois classes soient les bonnes, qu'elles soient exhaustives, ni qu'une action réelle se rattache à une seule d'entre elles. Elle vaut comme <strong>vocabulaire de travail</strong> — et son seul mérite est de faire tenir ensemble trois questions que les chapitres amont posent séparément.</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Classe d'effet</th><th>Ce qu'une reprise produit</th><th>Ce qui la borne</th><th>Où la somme en traite</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Lecture</strong></td><td>rien : rejouer une lecture ne change pas l'état du système d'enregistrement</td><td>le coût et la fraîcheur, non la correction</td><td>ch. 1 § 1.5.2 (déduplication, condition de version)</td></tr>
+    <tr><td><strong>Écriture</strong></td><td>un doublon, <strong>sauf si l'opération est idempotente</strong></td><td>l'idempotence est une <strong>propriété de l'outil</strong>, jamais du protocole qui l'invoque (ch. 4 § 4.6)</td><td>§ 48.2 ; ch. 22 § 22.5 (reprise d'un moteur durable)</td></tr>
+    <tr><td><strong>Engagement</strong></td><td>un second engagement, <strong>que rien ne défait</strong></td><td>seule la <strong>compensation</strong> agit, et elle est sémantique, non transactionnelle</td><td>§ 48.3 ; § 48.4 pour le cas financier</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 48.1 — Les trois classes d'effet d'une action d'agent, construction d'auteur du présent chapitre au 27 juillet 2026. <strong>Aucune ligne ne résout contre une entrée de socle</strong> ; la colonne de droite renvoie aux sièges qui traitent la matière, jamais à une source qui l'établirait.</p>
+
+<p><strong>Ce que la taxonomie fait voir, et c'est le seul point qu'elle établisse : la frontière qui compte n'est pas celle du succès et de l'échec, mais celle de la reprise.</strong> Un système qui reprend une trajectoire interrompue rejoue des lectures sans conséquence, des écritures avec conséquence si l'outil n'est pas idempotent, et des engagements qu'aucune reprise ne peut annuler. <em>La question « l'action a-t-elle réussi » est mal posée ; la question opérante est « que produit son rejeu ».</em></p>
+
+<div class="avert">
+  <p><strong>Le fondement de cette distinction est un résultat d'impossibilité, et il est déjà posé.</strong> Le <strong>ch. 1 § 1.5.2</strong> établit que la livraison exactement-une-fois est <strong>irréalisable sous pannes</strong> — instance du problème des deux généraux —, et que la voie praticable est le <strong>traitement</strong> exactement-une-fois, obtenu en combinant une livraison au-moins-une-fois avec un consommateur idempotent. Ce chapitre en tire la conséquence que le ch. 1 lui assigne : <em>si la livraison ne peut être garantie, l'effet doit l'être ; et c'est l'effet, non le message, que la sémantique de ce chapitre prend pour objet.</em></p>
+</div>
+
+<h2 id="s482"><span class="sig">§ 48.2</span>Idempotence et rejouabilité des appels d'outils</h2>
+
+<div class="avert">
+  <p><strong>Le plan borne cette section par une formule qu'il faut appliquer à la lettre : « ce que les spécifications protocolaires en disent — </strong>à instruire, jamais présumé<strong> ».</strong> Aucune passe d'instruction protocolaire n'a été conduite pour ce chapitre. Ce qui suit est donc <strong>ce que des pièces rédigées de la somme portent déjà</strong>, plus l'état de l'absence — jamais une lecture de spécification faite ici.</p>
+</div>
+
+<p><strong>Ce que la somme porte, et c'est peu mais c'est précis.</strong> Le <strong>ch. 8 § 8.3</strong> établit que les <strong>tâches asynchrones</strong> du protocole agent-outil sont <strong>expérimentales</strong>, que le mécanisme <em>se rapproche, sans s'y identifier</em>, de l'exécution durable de l'intégration d'entreprise, et surtout qu'il <strong>ne fournit pas les garanties de reprise et d'idempotence</strong> d'un moteur durable — <em>leur contrat ne saurait être présenté comme stable</em>. ⚠ <strong>C'est un énoncé sur ce que le mécanisme ne démontre pas, et il est repris tel quel</strong> : R-02 du Vol. III veut qu'un mécanisme se qualifie par ce que sa spécification démontre, jamais par la parenté qu'on lui prête. <em>Le rapprochement avec un moteur durable est précisément ce que le ch. 8 refuse de tenir pour une équivalence.</em></p>
+
+<p><strong>Ce que la somme porte du côté de l'outil.</strong> Le <strong>ch. 4 § 4.6</strong> range l'idempotence parmi les propriétés de conception d'un outil — <em>une même requête répétée produit le même état</em>, ce qui protège des réessais et des duplications d'effets de bord. <span class="auteur">Lecture de l'auteur</span> <strong>la conséquence est dissymétrique et elle est le cœur de la section</strong> : <em>l'idempotence est une propriété de l'outil invoqué, pas du protocole qui l'invoque, ni de l'agent qui décide de l'invoquer.</em> <strong>Ce que le socle établit</strong> : la propriété et son intérêt, par le ch. 4. <strong>Ce qu'il n'établit pas</strong> : qu'un protocole agentique la prescrive, l'exprime dans un champ, ou permette à un appelant de savoir si l'outil qu'il appelle la possède.</p>
+
+<div class="avert">
+  <p><strong>L'absence, à son degré exact.</strong> <strong>Le socle de la somme ne documente aucune spécification protocolaire prescrivant l'idempotence d'un appel d'outil, ni aucun champ qui la déclarerait — degré 3, absence de documentation dans le corpus de cet ouvrage.</strong> Deux bornes accompagnent ce constat, et sans elles il serait faux. <em>(1)</em> Le balayage sur lequel il s'appuie n'a pas été mené pour cette question : le <strong>ch. 20 § 20.1</strong> rapporte l'énumération des <strong>huit champs</strong> du type qui décrit un outil, dont aucun ne porte de version, d'empreinte ni de signature — <em>ce balayage-là portait sur l'intégrité, non sur l'idempotence</em>, et il était <strong>borné à une page d'une révision nommée</strong>. <em>L'étendre à l'idempotence serait exactement l'élargissement que le contrôle de bornage du Vol. III écarte.</em> <em>(2)</em> ⚠ <strong>Une révision majeure du protocole agent-outil est annoncée au brouillon</strong> — dont la date n'est pas confirmée à la source (R-09 du Vol. III) — et <strong>tout constat de cette section est à rejouer sur la révision publiée</strong> : il ne vaut pas par avance pour elle.</p>
+</div>
+
+<p><strong>Le lot d'instruction, formulé pour qu'il soit ouvrable.</strong> <em>Question</em> : une spécification protocolaire agentique prescrit-elle, exprime-t-elle ou permet-elle de déclarer l'idempotence d'une opération invocable, et sous quelle forme un appelant peut-il l'établir avant d'invoquer ? <em>Corpus à ouvrir</em> : les pages de définition d'outil des révisions courantes des deux protocoles du Livre I, dans leur texte intégral ; les documents de l'IETF sur les méthodes idempotentes et les clés de requête ; les contrats de tâche des moteurs d'exécution durable relevés au ch. 22 § 22.5. <em>Critère de clôture</em> : un champ nommé, ou un énoncé normatif cité et daté, portant l'idempotence d'une opération — non une recommandation de bonne pratique dans une page de guide. <em>Échec documenté</em> : si le corpus n'en porte pas, l'énoncé qui en sort reste au degré 3, et la thèse du chapitre est <strong>confirmée dans sa lettre sans être établie</strong> — nuance qui doit survivre à l'instruction.</p>
+
+<h2 id="s483"><span class="sig">§ 48.3</span>Compensation et sagas au grain de l'agent</h2>
+
+<p><strong>Le patron est acquis et ne se reconstruit pas ici.</strong> Le <strong>ch. 1 § 1.6.2.2</strong> pose la saga — renoncement à l'atomicité globale au profit d'une suite de transactions locales, chacune assortie d'une <strong>compensation</strong> qui <strong>annule sémantiquement</strong> son effet —, ses deux variantes orchestrée et chorégraphiée, et le régime de cohérence dans lequel ce renoncement s'inscrit. Le <strong>ch. 22 § 22.5</strong> porte l'exécution durable, sa reprise et son rejeu. <em>Ce chapitre applique ; il ne réexpose ni l'un ni l'autre.</em></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que « au grain de l'agent » change, et c'est la seule proposition propre de la section.</strong> Une saga classique suppose que l'ensemble des étapes soit <strong>connu du concepteur</strong> : la compensation de l'étape <em>k</em> est écrite en même temps que l'étape <em>k</em>. Un agent qui <strong>compose sa trajectoire à l'exécution</strong> — c'est la définition même que le ch. 22 donne de l'orchestration pilotée par un agent générateur de plans — produit des suites d'étapes que personne n'a écrites, donc des suites dont personne n'a écrit les compensations. <strong>Ce que le socle établit</strong> : le patron et ses variantes (ch. 1 § 1.6.2.2) ; que la trajectoire d'un agent générateur de plans n'est pas fixée à la conception (ch. 22 § 22.5, avec ses niveaux propres). <strong>Ce qu'il n'établit pas</strong> : qu'un mécanisme de compensation ait été spécifié pour une trajectoire composée à l'exécution, ni qu'un moteur durable en fournisse un. <strong>Le socle ne documente aucun dispositif de compensation dont la portée soit une trajectoire d'agent non fixée à la conception — degré 3.</strong></p>
+
+<div class="avert">
+  <p><strong>Deux bornes ferment cette section, et la seconde est une décision d'auteur qu'il est interdit de rouvrir ici.</strong></p>
+</div>
+
+<p><em>(1)</em> <strong>La compensation n'est pas l'annulation.</strong> Elle <em>annule sémantiquement</em> — un remboursement compense un débit, il ne le supprime pas ; les deux écritures subsistent. C'est la formule du <strong>ch. 1 § 1.6.2.2</strong>, et elle décide de tout le § 48.4 : <em>dans un système d'enregistrement, la compensation laisse une trace, et c'est cette trace que la réconciliation lit.</em></p>
+
+<p><em>(2)</em> ⚠ <strong>L'accord entre agents sous asynchronie et défaillance partielle n'est pas traité, et cette absence est un périmètre assumé, non un oubli.</strong> Le <strong>ch. 1 § 1.6.2.2</strong> pose les résultats d'impossibilité <strong>au grain pré-agentique</strong> et déclare qu'il est le <strong>seul endroit de l'ouvrage</strong> où ils figurent ; la <strong>décision d'auteur D-7</strong>, prise le 27 juillet 2026 (risque 15 du TOC), a arbitré la matière en <strong>périmètre assumé et déclaré</strong>, ce qui <strong>ferme</strong> les ch. 6, 37 et <strong>48</strong>. <em>Y ouvrir une section ne rouvrirait pas ce chapitre : elle rouvrirait la décision.</em> ⚠ <strong>Et la conséquence pour le lecteur est celle que le ch. 1 énonce</strong> : les architectures inter-institutions que la somme prescrit — maillage inter-domaines, vérification d'agent tiers, rails de paiement — <strong>opèrent sous un régime de défaillance que l'ouvrage ne caractérise pas</strong>. <em>Un périmètre assumé n'est pas un angle mort résorbé : c'est un angle mort dont le lecteur est prévenu.</em> Le <strong>ch. 49</strong> en enregistre l'état final.</p>
+
+<div class="avert">
+  <p><strong>Un fait de plan est consigné ici parce qu'il est le motif du risque 15 et qu'il se lit mal ailleurs</strong> : cette section est, selon le TOC v0.25, la <strong>seule occurrence de « sagas » de toute la zone des chapitres</strong>, et elle l'est <strong>au grain d'une action unique</strong>. <em>C'est ce constat, et non une préférence d'architecture, qui a fondé le risque 15 — et D-7 l'a borné sans le combler.</em></p>
+</div>
+
+<h2 id="s484"><span class="sig">§ 48.4</span>Réconciliation des flux financiers</h2>
+
+<p><strong>La thèse place ici le coût maximal du silence, et cette section dit pourquoi — sans pouvoir l'établir.</strong> Trois propriétés se cumulent dans un système d'enregistrement financier, et chacune est portée par un renvoi, non par une source de ce chapitre.</p>
+
+<p><em>Premièrement, l'irréversibilité.</em> Le <strong>Vol. I</strong> <code>Monographie</code> <strong>§5.7.5</strong> traite les paiements temps réel et leur irréversibilité, et son <strong>§7.9.3</strong> — repris au <strong>ch. 49 § 49.9</strong> — pose que le règlement sur monnaie programmable est <strong>sans mécanisme de rétrofacturation</strong>, de sorte qu'une erreur d'agent n'y est pas rattrapable <em>a posteriori</em>. ⚠ <strong>Les deux entrées sont en [C]</strong> : le Vol. I entre au régime le plus faible, sa vérification portant sur ses références et non sur le contenu de ses affirmations (PRD §7.1) — <em>elles corroborent, elles ne portent pas</em>. ⚠ <strong>Et une formulation est imposée</strong> : le rail temps réel canadien se nomme sans jamais s'écrire « lancé » (réserve F-29, R-4 du Vol. II) ; le ch. 33 en est le siège, et ce chapitre n'en date rien.</p>
+
+<p><em>Deuxièmement, l'encapsulation.</em> Le <strong>Vol. I</strong> <code>Monographie</code> <strong>§5.7.6</strong> porte la règle invariante selon laquelle <strong>aucun agent n'accède en écriture directe au grand livre</strong>, la couche d'exposition ne publiant que des capacités <strong>bornées et idempotentes</strong> — en <strong>[C]</strong> de nouveau. <em>L'idempotence y est donc une exigence de l'exposition, ce qui rejoint exactement le constat dissymétrique du § 48.2 : la propriété est portée par ce qui expose l'outil, jamais par ce qui l'appelle.</em></p>
+
+<p><em>Troisièmement, l'écart comptable.</em> <span class="auteur">Lecture de l'auteur</span> <strong>c'est la seconde proposition de la thèse, et elle est une lecture, non un fait</strong> : un virement dont l'ordre est parti et dont la confirmation n'est pas revenue laisse deux systèmes dans deux états, et <em>ce désaccord n'est pas un défaut de supervision, c'est une différence entre deux enregistrements</em>. <strong>Ce que le socle établit</strong> : l'irréversibilité et l'encapsulation, en [C]. <strong>Ce qu'il n'établit pas</strong> : qu'un tel écart ait été observé sur un flux agentique, ni qu'un dispositif de réconciliation ait été spécifié pour ce cas. <strong>Le socle ne documente aucun mécanisme de réconciliation dont le périmètre déclaré couvre les effets d'une action d'agent — degré 3.</strong></p>
+
+<div class="avert">
+  <p><strong>Trois renvois de cette section portent la matière que le chapitre n'a pas, et leurs trois cibles sont dans trois états différents.</strong> Le plan situe les flux ISO 20022 au <strong>ch. 33</strong> — ⚠ <strong>rédigé le même jour hors de cette passe, à re-vérifier au commit</strong> —, au <strong>ch. 45 § 45.12</strong> — ⚠ <strong>renvoi de plan, chapitre non rédigé</strong> — et le <strong>trou de responsabilité</strong> au <strong>ch. 36 § 36.2.6</strong> — ⚠ <strong>renvoi de plan, chapitre non rédigé</strong>. <em>La conséquence est à écrire plutôt qu'à taire : la partie de cette section qui rattacherait la sémantique d'effet à un flux de règlement réel est celle qui manque, et elle manque parce que deux de ses trois chapitres d'appui n'existent pas encore.</em></p>
+</div>
+
+<h2 id="s485"><span class="sig">§ 48.5</span>Tracer l'effet, pas seulement l'appel</h2>
+
+<p><strong>La question est étroite : ce qu'une trace d'exécution enregistre est un appel, non son effet.</strong> Le plan situe le <em>chaînon manquant</em> au <strong>ch. 38 § 38.5</strong> — ⚠ <strong>rédigé le même jour hors de cette passe, à re-vérifier au commit</strong> — et ce chapitre le prolonge au seul grain qui lui appartient : <em>ce qui manque n'est pas la trace de l'appel, c'est la jointure entre l'appel tracé et l'effet enregistré ailleurs.</em></p>
+
+<p><strong>Deux constats hérités du Vol. III cadrent la difficulté, et ils sont plus précis que ce que ce chapitre pourrait produire.</strong> <em>(1)</em> Sa <strong>lacune 21</strong> — <em>corrélation entre trace d'exécution et chaîne de mandat protocolaire</em> — est déclarée <strong>non instruite</strong> : la pièce de jonction n'a été ouverte par aucun de ses lots. <em>(2)</em> Son <strong>§26.3</strong> établit que les compteurs d'appels des conventions relevées comptent les appels <strong>directs</strong>, les appels de sous-agents ou d'agents auxquels la tâche est transférée étant <strong>attribués séparément</strong> — de sorte qu'<em>une chaîne de délégation n'est pas reconstituable par sommation de ces compteurs</em>, non par insuffisance de l'instrument mais <strong>par construction déclarée de sa sémantique</strong>. ⚠ <strong>Les deux constats entrent sous G-4 non franchie</strong> : ils viennent d'un volume qui se déclare <em>rédigé mais non publiable</em>, et <em>le volet de fond de la collation reste dû</em>. ⚠ <strong>Et le second porte une réserve de vote à sa source</strong> — l'entrée qui l'établit est marquée <em>vote dû, non conduit</em> : elle est reprise avec cette marque, jamais sans elle.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que ces deux constats permettent de dire de l'effet, et c'est neuf :</strong> si une chaîne d'appels n'est pas reconstituable, <em>l'effet observé au bout de la chaîne n'est rattachable à aucun mandat déterminé</em>. <strong>Ce que le socle établit</strong> : la sémantique des compteurs et la non-instruction de la jointure (Vol. III, avec ses réserves). <strong>Ce qu'il n'établit pas</strong> : qu'une clé de jointure existe, ni qu'aucune n'existe. <strong>Le socle ne documente aucune clé rattachant un effet enregistré à la trace de l'appel qui l'a produit — degré 3.</strong></p>
+
+<div class="avert">
+  <p><strong>Une taxonomie candidate existe déjà, en vocabulaire de sûreté, et elle dit la même chose depuis l'autre bout.</strong> Une <strong>préimpression adverse de mai 2026</strong> tient la <strong>détection des divergences entre l'action effectuée et son enregistrement d'audit</strong> pour la propriété porteuse d'un <em>runtime</em> agentique, et en énumère <strong>quatre</strong> : contournement de garde, falsification du journal, échec silencieux de l'hôte, cible erronée. <em>C'est, dit autrement, la question de ce chapitre.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Deux réserves, et aucune n'est facultative.</strong> <em>(1)</em> La préimpression <strong>n'est pas révisée par les pairs</strong>, et <strong>son texte n'a pas été ouvert par cette passe</strong> — ce qui est rapporté est ce que la relève du plan en porte, <strong>degré 3</strong> sur tout le reste. <em>(2)</em> Elle <strong>propose une implémentation concurrente de l'objet qu'elle mesure</strong> : son intérêt est inverse de celui de l'éditeur, <em>ce qui ne le neutralise pas</em> mais interdit de la lire comme un relevé neutre. <strong>Taxonomie à instruire ; aucun de ses résultats chiffrés n'est repris ici</strong> — et <em>un chiffre non repris ne se devine pas davantage qu'il ne se cite</em>.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Ce que ce chapitre lègue, et ce qu'il ne lègue pas.</strong> Il lègue <strong>une taxonomie de travail</strong> (§ 48.1), <strong>deux lots d'instruction</strong> (§ 48.2, § 48.5) et <strong>le siège</strong> que quatre pièces rédigées attendaient. Il ne lègue <strong>aucun mécanisme</strong> : ni idempotence prescrite, ni compensation spécifiée, ni clé de jointure. <em>La somme sait désormais nommer ce qui advient quand une action d'agent réussit à moitié ; elle ne sait pas encore ce qu'un exploitant doit en faire, et le ch. 49 § 49.14 l'enregistre à ce titre.</em></p>
+</div>
+
+<section class="statut" id="s486">
+
+<h2><span class="sig">§ 48.6</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong></p>
+</div>
+
+<p><strong>Ce qui est enfreint.</strong> Portes <strong>G-3</strong>, <strong>G-5</strong> (D-2 non prise) et <strong>G-6</strong> (D-3 non prise) ; volet résiduel de <strong>G-1</strong> non instruit ; <strong>ordre de rédaction du PRD §6</strong> — ce mouvement vient en cinquième position, après les ch. 41-46. Instruction d'auteur du 27 juillet 2026.</p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01.</strong> Le régime applicable est le plus dur des trois (PRD §7.2, « Matière neuve ») : <strong>toutes</strong> les affirmations centrales au vote adversarial, plancher « sources primaires seules ». <strong>Zéro vote, zéro extraction.</strong></li>
+  <li><strong>Les décomptes sont publiables</strong> (G-2). Écart de <strong>−40,6 %</strong> sur la cible dérivée par front.</li>
+  <li><strong>Les renvois se partagent en trois régimes</strong> — ⚠ <strong>relevé horodaté du 27 juillet 2026 : les cinquante chapitres du plan existent désormais en brouillon</strong> — ⚠ <em>et ce décompte a bougé DEUX FOIS pendant la rédaction de cette pièce</em>, les Livres III et IV ayant été écrits puis committés <strong>en parallèle, hors de cette passe</strong>, portant le corpus de 25 à 50 pièces de chapitre. <strong>Aucun renvoi de plan ne subsiste donc</strong>, et ce qui subsiste est plus exigeant à déclarer : <strong>dix-neuf pièces sur cinquante que la présente passe n'a pas relues.</strong> <strong>(a)</strong> Résolvent contre du <strong>texte rédigé, relu par cette passe</strong> : ch. 1 § 1.5.2 et § 1.6.2.2, ch. 4 § 4.6, ch. 8 § 8.3, ch. 16 § 16.1, ch. 20 § 20.1 — et <strong>ch. 47, ch. 49 § 49.9 et § 49.14</strong>, rédigés dans la présente passe. <strong>(b)</strong> Résolvent contre du <strong>texte rédigé le même jour, hors de cette passe et non relu par elle</strong> : ch. 22 § 22.5, ch. 23, ch. 24, ch. 27, ch. 33, ch. 38 § 38.5 — ⚠ <em>à re-vérifier au commit</em>. <strong>(c)</strong> <strong>Renvois de plan : aucun au commit</strong> — ⚠ <em>les ch. 36 § 36.2.6 et ch. 45 § 45.12 l'étaient encore à la rédaction, et ont été écrits depuis, hors de cette passe : ils passent au groupe (b) et <strong>se re-vérifient</strong>.</em></li>
+  <li><strong>Une matière est absente par décision d'auteur, non par omission</strong> : l'accord entre agents sous asynchronie et défaillance partielle, fermé au ch. 48 par <strong>D-7</strong>. <em>La déclarer est la seule chose que ce chapitre pouvait faire ; l'écrire aurait rouvert la décision.</em></li>
+</ol>
+
+<p><strong>Remontées ouvertes par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-64 — non bloquante, de siège et d'appareil ; elle constate qu'un siège existait avant sa pièce.</strong> <strong>Quatre pièces du Livre III</strong> — ch. 22 § 22.5, ch. 23, ch. 24, ch. 27 — et <strong>deux sections du ch. 1</strong> déclarent que « la sémantique d'effet est au <strong>ch. 48</strong>, qui en est le siège », <strong>alors que le TOC ne désigne nulle part ce chapitre comme siège</strong> et que <code>check-sieges.py</code> n'en portait aucune trace. <em>Le marqueur est posé par la présente pièce et le siège est versé à l'appareil</em> — mais la <strong>désignation</strong> relève du plan. <strong>Demande remontée</strong> : inscription du siège de la sémantique d'effet à l'entrée du ch. 48 du TOC, comme la v0.25 l'a fait pour le siège du tri prospectif au ch. 49 § 49.0. ⚠ <em>Un siège qu'aucun plan ne désigne et que cinq pièces citent est un siège qui disparaît au premier remaniement.</em></li>
+  <li><strong>R-IV-65 — non bloquante, de thèse.</strong> La thèse citée affirme que la sémantique d'effet « n'est spécifié ni par les protocoles (Livre I) ni par l'encadrement (Livre III) ». ⚠ <strong>C'est un quantificateur universel négatif, et aucun balayage ne le soutient</strong> : le corpus de la somme n'en documente rien — <strong>degré 3</strong> —, ce qui n'établit pas l'absence. <em>La classe de défaut est celle que la décision 14 du TOC nomme, et le chapitre écrit son corps sous la forme bornée sans toucher à la thèse.</em> <strong>Demande remontée</strong> : réalignement de la thèse sur la forme bornée, ou balayage documenté qui l'établirait.</li>
+  <li><strong>R-IV-66 — non bloquante, de dépendance.</strong> Le <strong>§ 48.4</strong> est la section dont la matière dépend le plus de chapitres que cette passe n'a pas relus : ch. 33 (flux ISO 20022, rédigé le même jour hors d'elle), ch. 36 § 36.2.6 (trou de responsabilité, <strong>non rédigé</strong>), ch. 45 § 45.12 (<strong>non rédigé</strong>). <strong>Demande remontée</strong> : que la section soit <strong>re-vérifiée après la rédaction du Livre III et du second mouvement du Livre IV</strong>, et non tenue pour acquise. ⚠ <em>Le plan plaçait ce mouvement en dernier précisément pour cette raison ; l'ordre a été enfreint, et le § 48.4 en porte le coût.</em></li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.25 (structure inchangée en v0.26)</strong> — § 48.1 à § 48.5, dans l'ordre exact. La <strong>table d'appuis</strong> est respectée : les adossements internes sont <strong>des renvois, jamais des sources</strong>, et <strong>aucune entrée F-xx, aucun garde-fou hérité</strong> n'est revendiqué. <strong>Le siège est posé et marqué</strong> (§ 48.1), et <strong>versé à <a class="lien" href="../PRD/check-sieges.py"> 0 </a> dans la même passe</strong>, avec son harnais de mutation rejoué. <strong>Aucun siège d'un autre chapitre n'est reconstruit</strong> : les résultats d'impossibilité et le patron saga restent au <strong>ch. 1 § 1.6.2.2</strong>, l'exécution durable au <strong>ch. 22 § 22.5</strong>, l'anatomie des tâches asynchrones au <strong>ch. 8 § 8.3</strong>, l'énumération des huit champs au <strong>ch. 20 § 20.1</strong>. <strong>La matière fermée par D-7 n'est pas écrite.</strong> <strong>Les neuf occurrences de R-14 portent leur degré</strong>, dont huit au <strong>degré 3</strong>, et <strong>aucune absence propre à ce chapitre n'est écrite comme fait négatif vérifié</strong>. <strong>Les trois occurrences de R-02</strong> énoncent ce que la source démontre <strong>et</strong> ne démontre pas — dont le refus explicite d'assimiler les tâches asynchrones à un moteur durable. <strong>Les quatre divergences de la préimpression sont nommées, ses deux réserves portées, et aucun de ses chiffres n'est repris.</strong> <strong>Le rail temps réel canadien n'est jamais dit lancé</strong> (R-4). Enfin, <strong>la réserve de vote de l'entrée du Vol. III est reprise avec l'entrée</strong>, jamais détachée d'elle.</p>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre V, chapitre 48. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.26, entrée du chapitre 48, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>

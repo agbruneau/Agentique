@@ -20,8 +20,8 @@ neuf**, le plafond de cinquante interdisant d'en ouvrir un sans fusion ; **D-3**
 jusqu'à leur clôture, une instruction infructueuse valant retrait**. **Sept décisions sur neuf sont
 désormais prises** ; D-5 et D-8 restent ouvertes. *(3)* ⚠ **Aucune porte n'est franchie pour autant** :
 *une décision prise n'est pas une porte franchie — D-3 ouvre des lots, elle ne constitue pas un socle.*
-*(4)* ⚠ **Sa volumétrie est en DÉFAUT, et c'est le premier Livre dans ce cas** : **25 005 mots** pour une
-enveloppe de 34 000, soit **−26,5 %**, l'écart se concentrant sur les deux chapitres sans socle (−42,7 %
+*(4)* ⚠ **Sa volumétrie est en DÉFAUT, et c'est le premier Livre dans ce cas** : **25 017 mots** pour une
+enveloppe de 34 000, soit **−26,4 %**, l'écart se concentrant sur les deux chapitres sans socle (−42,7 %
 et −40,6 %). *Sur un front dont la ligne Fusion déclare « sources primaires à constituer avant
 rédaction », la volumétrie mesure l'absence de sources* — et **quatre sections sont des lots
 d'instruction plutôt que du contenu**, seul geste que le régime de preuve autorisait. *(5)* **Deux
