@@ -2,7 +2,10 @@
 
 Répertoire de rédaction du **Livre V** du compendium *La somme agentique* (Vol. IV) — le **dernier**
 du plan. Il ne porte aucune décision, aucun socle et aucun garde-fou propre : la spécification de
-contenu est le [`PRD/TOC.md`](../PRD/TOC.md) v0.26, la gouvernance de la rédaction le
+contenu est le [`PRD/TOC.md`](../PRD/TOC.md) — ⚠ **les quatre pièces citent leurs thèses depuis la
+v0.26**, celle de l'arbitrage de ce Livre ; **le fichier est passé en v0.27 le même jour**, par
+l'arbitrage du Livre III mené en parallèle, *et cette version ne retouche aucune des trois thèses
+réalignées ici* (constat sur pièce, 27 juillet 2026) — et la gouvernance de la rédaction le
 [`PRD/PRD.md`](../PRD/PRD.md) v0.11. En cas d'écart entre une pièce de ce dossier et le TOC, **le TOC
 prime** — sauf déviation fondée, qui se déclare (décision 8 du TOC) et **se remonte, jamais se corrige
 au plan depuis ici**.
