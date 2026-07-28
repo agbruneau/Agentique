@@ -47,6 +47,27 @@ divergent volontairement. Ce fichier régit deux choses seulement — la **racin
 | Vol. III — *L'entreprise agentique* (rédaction, gouvernance PRD) | [`1 - Corpus/3 - EntrepriseAgentique/CLAUDE.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/CLAUDE.md) |
 | Vol. IV — *La somme agentique* (compendium, cadrage) | [`2 - Compendium/CLAUDE.md`](2%20-%20Compendium/CLAUDE.md) — le `TOC.md` du dossier reste la spécification de contenu |
 
+⚠ **Le 27 juillet 2026, le Livre V du Vol. IV — le dernier du plan — a été rédigé et arbitré, et deux
+faits de ce geste valent au niveau de la racine.** Ses quatre chapitres (ch. 47-50) existent en `.md` et
+`.html`, **hors portes** ; ses **seize remontées R-IV-60 à R-IV-75 sont soldées** (TOC v0.26, PRD
+v0.11) ; **deux décisions d'auteur y ont été prises — D-2 et D-3 —, ce qui en porte le total à sept sur
+neuf**. ⚠ **Le statut du volume ne change pas** : *une décision prise n'est pas une porte franchie* —
+deux portes sur sept restent franchies, le socle consolidé compte toujours zéro entrée, et **la
+publication du premier mouvement du Livre V est en outre bloquée par D-3**. Le détail vit au
+[`CLAUDE.md` du dossier](2%20-%20Compendium/CLAUDE.md) et au
+[`README.md` de `Livre V/`](2%20-%20Compendium/Livre%20V/README.md), et **n'est pas repris ici**.
+
+⚠ **Le second fait est de méthode et il dépasse le Vol. IV : deux passes de rédaction ont couru en
+parallèle le même jour sur le même appareil.** Le télescopage a produit trois défauts qu'**aucun
+contrôle du dépôt ne voit** — une **collision d'identifiants de remontée** (deux passes puisant les
+mêmes numéros), un **numéro de version d'appareil revendiqué deux fois**, et un **contrôle inter-pièces
+en échec pour des fichiers qu'une autre passe n'avait pas encore committés**. *La parade retenue est une
+règle d'attestation, non un outil* : **un contrôle nomme le corpus sur lequel il porte**, et quand
+l'arbre de travail contient le travail d'une autre passe, il s'exécute sur **le corpus que le commit
+produit**. ⚠ *Attester « le contrôle passe » sur un corpus qu'on ne committe pas est une attestation
+fausse* — c'est la règle des attestations sur pièce du dépôt, appliquée au parallélisme. La règle
+d'allocation des identifiants vit au PRD du volume (§13).
+
 ⚠ **Une règle de portée du Vol. IV se signale ici parce qu'elle borne le livrable, pas seulement sa
 rédaction** : depuis le 27 juillet 2026, le compendium compte **au plus cinquante chapitres**, et
 toute insertion se paie par une fusion dans la même passe. La règle, son protocole et son contrôle
@@ -87,6 +108,29 @@ démonstrateur retiré), **signalé ici, jamais corrigé dans la veille**. *(d)*
 chaque remontée, la volumétrie des deux livres et le régime des deux rendus vivent au
 [`CLAUDE.md` du dossier](2%20-%20Compendium/CLAUDE.md) et aux `README.md` de `Livre I/` et de
 `Livre II/` — ils ne sont pas repris ici.
+
+⚠ **Le paragraphe qui précède est daté, et son cardinal — « deux livres » — est périmé sans être
+remplaçable aujourd'hui.** Le **27 juillet 2026**, toujours sur instruction d'auteur,
+[`2 - Compendium/Livre III/`](2%20-%20Compendium/Livre%20III/) a été créé et **ses quinze chapitres**
+— ch. 22 à 36 — y ont été rédigés en deux rendus chacun, puis **ses vingt-quatre remontées R-IV-76 à
+R-IV-99 soldées** (TOC v0.27, PRD v0.10) ; **une passe distincte écrivait simultanément les Livres IV
+et V dans le même dépôt**. ⚠ **Le total n'est donc PAS recalculé ici** : *un cardinal mesuré pendant
+que des pièces s'écrivent est faux à la seconde où on le publie* — il se re-mesure **au terme des deux
+passes**, ensemble, comme la règle des décomptes l'exige. **Quatre faits valent au niveau de la
+racine.** *(a)* ⚠ **Le statut du Vol. IV reste inchangé** — cadrage, socle à **zéro entrée**, **G-3 non
+entamée** : *ne pas le requalifier en « rédigé »*, trois livres de brouillon hors portes n'en faisant
+pas davantage que deux. *(b)* ⚠ **L'écart du Livre III est d'un ordre neuf : il enfreint une DÉCISION
+D'AUTEUR, non une seule porte.** Les **ch. 25 et 27** ont été rédigés alors que **D-9** déclare son lot
+d'instruction **bloquant pour eux deux**, et **ils prescrivent l'un et l'autre la parade dont ce lot est
+la limite empirique** ; *l'infraction est nommée à chaque pièce, et l'arbitrage qui l'a suivie la solde
+sans la rattraper.* *(c)* ⚠ **Le régime de la veille ne bouge pas davantage** : sa réf. [220] décrit le
+Vol. IV comme un cadrage sans chapitre, et cela **reste vrai à sa date** — même famille que les trois
+écarts déjà consignés, **signalé ici, jamais corrigé dans la veille**. *(d)* ⚠ **Deux réconciliations
+sont dues entre les passes concurrentes** : la **numérotation de version du PRD**, et le **versement des
+huit sièges du Livre III** à `check-sieges.py`, reporté parce que *payer une dette d'outillage pendant
+qu'un autre écrit le même fichier produirait une table incohérente que le harnais de mutation ne
+détecterait pas*. Le détail vit au [`CLAUDE.md` du dossier](2%20-%20Compendium/CLAUDE.md) et au
+`README.md` de `Livre III/`.
 
 ⚠ **Un fait de méthode se signale ici parce qu'il vaut au-delà du Vol. IV.** La rédaction des ch. 10
 et 11 a révélé deux fois la même classe de défaut : une **lacune déclarée du socle d'un volume**

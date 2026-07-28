@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 36 — Prospective : AP2 sur les rails canadiens ? · La somme agentique</title>
+<meta name="description" content="aucune source ne documente l&#x27;articulation AP2 ↔ rails canadiens — le chapitre pose le cadre d&#x27;analyse et les conditions de possibilité, sans affirmer (énumérer des conditions n&#x27;est pas prédire).">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre III · Chapitre 36</div>
+  <ol>
+    <li><a href="#s360"><span class="num">36.0</span>Ouverture : ce qu&#x27;un chapitre prospectif change, et ce qu&#x27;il ne change pas</a></li>
+    <li><a href="#s361"><span class="num">36.1</span>État de la question</a></li>
+    <li><a href="#s362"><span class="num">36.2</span>Interopérabilité B2B, commerce et paiements agentiques en finance</a></li>
+    <li><a href="#s363"><span class="num">36.3</span>Conditions de possibilité</a></li>
+    <li><a href="#s364"><span class="num">36.4</span>Questions de recherche</a></li>
+    <li><a href="#s365"><span class="num">36.5</span>L&#x27;économie d&#x27;agents existe déjà, sur d&#x27;autres rails — relève à instruire</a></li>
+    <li><a href="#s366"><span class="num">36.6</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.25 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="36-prospective-ap2-rails-canadiens.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier</div>
+  <h1><span class="chap">Chapitre 36</span>Prospective : AP2 sur les rails canadiens ?</h1>
+  <p class="titre__situe">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Troisième mouvement — le terrain canadien (ch. 31-36). <strong>Dernier chapitre du Livre</strong>, et <strong>le seul de la somme dont le titre porte un point d'interrogation</strong> — *ce n'est pas une coquetterie de rédaction : c'est la description exacte de son objet</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — porte <strong>G-3</strong> ouverte (socle consolidé à zéro entrée) ; volet résiduel de <strong>G-1</strong> non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ <strong>La règle cardinale du PRD §5 est enfreinte.</strong> Voir la note de statut, § 36.6. ⚠ <strong>G-4 ne conditionne pas ce chapitre</strong> ; ⚠ <strong>D-9 ne le bloque pas.</strong> ⚠ <strong>Ce chapitre porte la lacune la plus explicite du Livre — et c'est son sujet même</strong></dd>
+    <dt>Date de gel</dt>
+    <dd><strong>27 juillet 2026</strong> — gel unique, <strong>D-1 prise</strong> (registre : <a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Un point de ce chapitre a été instruit par G-1 et il faut le lire</strong> : <em>la <strong>divergence AP2 / gouvernance</strong> a été <strong>consommée par extraction</strong> au titre du volet Livre I du gel</em> — voir § 36.1. ⚠ <strong>Tout le reste du volet résiduel demeure dû.</strong> Gels de source consommés : <strong>16-17 juillet 2026</strong> (Vol. II ch. 16) et <strong>juin 2026</strong> (Vol. I §5.13)</dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte). Les énoncés résolvent contre le <strong>Vol. II <em>Monographie</em> ch. 16</strong> — <strong>F-04</strong> et <strong>F-29</strong> conservant leurs niveaux d'origine — et contre le <strong>Vol. I <em>Monographie</em> §5.13</strong>, qui entre <strong>en [C]</strong> (PRD §7.1). ⚠ <strong>Le § 36.5 relève d'un régime encore inférieur</strong> : <em>préimpressions dont <strong>seuls les résumés ont été consultés</strong> — <strong>repérages [C], jamais des faits</strong>.</em> <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd>Vol. II — ⚠ <strong>garde-fou d'entrée : ne pas combler la lacune par de la fiction — huit occurrences</strong>, § 36.0, § 36.1 (deux), § 36.3 (trois), § 36.4 et § 36.5 ; ⚠ <strong>réserve F-29 — ne jamais écrire « lancé » ni « en production » : cinq occurrences</strong>, § 36.1, § 36.3 (trois) et § 36.4 ; <strong>formulation imposée PRDPlan Vol. II §4.4 — « quatre <em>cibles successives</em> » : une occurrence</strong>, § 36.1 ; <strong>R-4 : deux occurrences</strong>, § 36.1 et § 36.3 ; ⚠ <strong>R-8 (le sigle « ACP » jamais nu) : deux occurrences</strong>, § 36.2.4, <strong>avec renvoi au ch. 7 § 7.5</strong> ; <strong>PRD §8.4 (neutralité fournisseur) : trois occurrences</strong>, § 36.2 ; <strong>décision 7 (deux séries « Q n ») : deux occurrences</strong>, § 36.0 et § 36.4 ; <strong>R-1 à R-3, R-5 à R-7 : zéro occurrence</strong>. Vol. III — <strong>R-14 (trois degrés d'absence) : douze occurrences</strong>, § 36.1 (trois), § 36.2 (deux), § 36.3 (quatre) et § 36.5 (trois) ; <strong>R-09 : quatre occurrences</strong>, § 36.2.4 et § 36.5 ; <strong>R-11 : deux occurrences</strong>, § 36.1 et § 36.3 ; <strong>R-02 : une occurrence</strong>, § 36.2.2 ; <strong>R-01, R-03 à R-08, R-10, R-12, R-13 : zéro occurrence</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ <strong>5 000 mots</strong> de corps (§ 36.0 à § 36.5), <strong>cible dérivée</strong> de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections et des <strong>sept sous-sections</strong> du § 36.2. ☑ <strong>Décompte publiable depuis G-2</strong> ; la mesure réelle est portée au <a class="lien" href="README.md"> 0 </a> du dossier. ⚠ <strong>D-4 interdit l'amputation comme le gonflement</strong></dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>aucune source ne documente l'articulation AP2 ↔ rails canadiens — le chapitre pose le cadre d'analyse et les conditions de possibilité, sans affirmer (énumérer des conditions n'est pas prédire).</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.25, entrée du chapitre 36.</span>
+</div>
+
+<div class="avert">
+  <p><strong>La thèse a été collationnée contre le texte rédigé de sa source avant la rédaction</strong> (décision 14 du TOC). <strong>Domaine de balayage : une thèse examinée, zéro réalignée.</strong> Elle reprend la thèse du Vol. II ch. 16 en y ajoutant la glose « <strong>énumérer des conditions n'est pas prédire</strong> », ⚠ <em>qui est <strong>une phrase du corps de la source, promue en thèse par le plan</strong></em> — <em>et qui <strong>ne lui ajoute aucune portée</strong>.</em></p>
+</div>
+
+<h2 id="s360"><span class="sig">§ 36.0</span>Ouverture : ce qu'un chapitre prospectif change, et ce qu'il ne change pas</h2>
+
+<p><strong>Les cinq chapitres qui précèdent ont établi la couche d'interopérabilité financière canadienne</strong> : <em>les durcisseurs du domaine (<strong>ch. 31</strong>), le cadre bancaire et son standard technique non désigné (<strong>ch. 32</strong>), la couche sémantique des paiements et le calendrier du rail en temps réel (<strong>ch. 33</strong>), les sous-domaines (<strong>ch. 34</strong>), et l'état déclaré des institutions (<strong>ch. 35</strong>).</em> <em>Le <strong>Livre I</strong> a établi, de son côté, la pile protocolaire agentique, dont le protocole dédié à la transaction (<strong>ch. 10</strong>).</em></p>
+
+<p><strong>La question s'impose d'elle-même : que se passe-t-il là où les deux se rencontrent ?</strong></p>
+
+<div class="avert">
+  <p><strong>La réponse tient en une phrase, et elle est désagréable : <em>le socle ne documente pas cette rencontre</em>.</strong> <em>Aucune source, primaire ou secondaire, ne l'atteste.</em> ⚠ <strong>C'est une lacune reconnue — la lacune PRD Vol. II §10.5 — et ce chapitre en est le chapitre porteur</strong> ; <em>son état final sera enregistré au <strong>ch. 49</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong><em>Un chapitre prospectif, dans une somme tracée, n'abaisse pas le seuil de preuve : il change d'objet.</strong></em> <em>Il ne dit pas <strong>ce qui adviendra</strong> — il dit <strong>ce qu'il faudrait qui fût vrai</strong> pour que la question reçoive un jour une réponse, il dit <strong>ce que le socle établit de chacune de ces conditions</strong>, et il dit <strong>ce qu'il faudrait observer pour trancher</strong>.</em> ⚠ <strong><em>Aucune des trois opérations n'exige de deviner. Toutes les trois exigent de nommer précisément l'ignorance</strong></em> — <em>ce qui est un exercice plus difficile, et plus utile, que de la meubler.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le garde-fou du chapitre tient en une ligne</strong> (assignation du TOC v0.25) : <strong><em>ne pas combler la lacune par de la fiction.</strong></em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Une convention de renvoi s'impose d'entrée</strong> (décision 7 du TOC) : *le Vol. II porte <strong>deux séries « Q n » indépendantes et sans recouvrement</strong> — celle <strong>d'agenda</strong> (<em>Monographie</em> ch. 21 §21.2), dont le <strong>ch. 27 § 27.7</strong> porte Q4 et le <strong>ch. 30 § 30.3.1</strong> porte Q5 ; et <strong>celle du présent chapitre</strong> (<em>Monographie</em> ch. 16 §16.3), <strong>cinq questions de la série AP2/rail en temps réel</strong>.* ⚠ <strong><em>La série se nomme à chaque renvoi</strong></em>, <em>sous peine de désigner deux objets par une même étiquette.</em></p>
+</div>
+
+<h2 id="s361"><span class="sig">§ 36.1</span>État de la question</h2>
+
+<p><strong>Commençons par ce que le socle établit de chaque côté.</strong></p>
+
+<p><strong>Du côté du protocole.</strong> *Le protocole de paiement agentique a été <strong>annoncé le 16 septembre 2025</strong> comme protocole compagnon du protocole agent-agent, dédié aux transactions pilotées par agents — ⚠ <em>le socle <strong>date l'annonce au jour près, le lancement au mois près seulement</strong></em> (Vol. II F-04). <em>En <strong>avril 2026</strong>, <strong>plus de soixante organisations</strong> des paiements et des services financiers <strong>déclarent leur soutien</strong>, selon un communiqué de fondation daté du <strong>9 avril 2026</strong></em> — ⚠ <strong><em>le soutien déclaré ne vaut pas déploiement en production</strong></em>, *et le <strong>ch. 7</strong> en a fait la démonstration une fois pour toute la somme. <em>Le socle en nomme sept.</em></p>
+
+<div class="avert">
+  <p><strong>Cette liste appelle une observation et <em>une seule mise en garde</em>.</strong> <em>L'observation : <strong>le socle n'attribue à aucune des sept un rôle sur un rail de paiement canadien</strong>, et <strong>n'établit la nationalité d'aucune</strong>.</em> ⚠ <strong>La mise en garde, qui est la plus importante du chapitre</strong> : <strong><em>le socle donne une liste illustrative, pas la liste complète des soixante et plus</strong></em>. ⚠ <strong><em>On ne peut donc pas en conclure qu'aucune organisation canadienne ne figure parmi celles qui déclarent leur soutien.</strong></em></p>
+</div>
+
+<div class="avert">
+  <p><strong><em>L'absence est ici une absence de documentation, non une absence documentée</strong></em> — <em>degré 3 de l'échelle R-14 du Vol. III</em> — <em>et <strong>la distinction sépare la présente lacune du fait négatif vérifié du ch. 32 § 32.4</strong>, où quatre chaînes ont été cherchées dans trois textes nommés.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Un point de cette section a été instruit depuis, et il faut le lire exactement.</strong> <em>Le Vol. II écrit que <strong>le protocole est celui que la conclusion de son ch. 1 a dû explicitement exclure de son constat de consolidation</strong>, faute de transfert de gouvernance documenté</em> — ⚠ <strong>et le Vol. I, à son §5.13.4, décrit au contraire un transfert de standardisation vers les groupes de travail d'une alliance, daté du 28 avril 2026, avec une version de spécification.</strong> ⚠ <strong><em>Ce n'est pas une contradiction : ce sont deux états datés d'un même objet</strong></em> — <em>le Vol. II gèle au 16-17 juillet 2026 <strong>sur son propre socle</strong>, le Vol. I décrit un fait d'avril 2026 <strong>en [C]</strong>.</em> ☑ <strong>La divergence a été consommée par extraction au titre de G-1</strong>, <em>volet Livre I, au registre du gel du 27 juillet 2026</em> — ⚠ <strong>et la somme retient l'état instruit</strong> : <em>le transfert est documenté.</em> ⚠ <strong><em>Le Vol. II ne se corrige pas pour autant</strong></em> : <em>son énoncé était exact <strong>à son gel et sur son socle</strong>, et <strong>une lacune de couverture datée est une information, non un défaut</strong>.</em></p>
+</div>
+
+<p><strong>Du côté du rail.</strong> ⚠ <strong><em>Le rail canadien de paiement en temps réel n'est pas en production</strong></em> — <em>les tests industriels sont en cours</em> (<strong>ch. 33 § 33.2</strong>, qui en est le siège). *L'opérateur <strong>vise</strong> un lancement au <strong>T4 2026</strong> ; ⚠ <strong>et la formulation est imposée : « la cible a été successivement reportée : 2019, puis 2022, puis 2023, puis 2026 » — ce sont <em>quatre cibles successives</em>, non quatre reports</strong>.*</p>
+
+<div class="avert">
+  <p><em>L'opérateur annonce un système <strong>nativement conforme à la couche sémantique dès son lancement</strong> et un <strong>déploiement graduel se poursuivant en 2027</strong> — ⚠ <strong>l'un et l'autre sous la même condition que la cible elle-même</strong>, et <strong>R-4 impose de l'attribuer plutôt que de l'affirmer au futur catégorique</strong>.</em></p>
+</div>
+
+<p><strong>Le constat central peut désormais être posé sans détour.</strong></p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>Question</strong> : le protocole de paiement agentique est-il <strong>employé, expérimenté, ou seulement envisagé de source documentée</strong>, sur un rail de paiement canadien ?  <strong>Recherche menée</strong> (trois passes de constitution du socle du Vol. II, puis revalidation du 16 juillet 2026, qui a re-consulté directement la page officielle du rail <strong>sans y relever de mention du protocole</strong>, ⚠ <em>mais dont le périmètre était la revalidation des faits chauds, non la présente question</em>). ⚠ <strong>Pourquoi elle échoue</strong> : <strong><em>les deux corpus ne se rencontrent nulle part au socle</strong></em> — <em>le socle ne rapporte, des sources primaires du protocole, <strong>aucun rail de paiement canadien</strong>, étant entendu qu'<strong>il n'en porte pas la liste complète des soutiens</strong> ; et il ne rapporte, des pages du rail, <strong>aucune mention du protocole</strong>.</em> ⚠ <strong><em>Aucune vérification par recherche exhaustive de chaînes n'a été menée dans les sources primaires de l'un ni de l'autre</strong></em> — <em>à la différence du ch. 32 § 32.4.</em>  ⚠ <strong>En l'absence de source primaire, la question reste ouverte ; <em>aucune inférence n'est proposée ici</em>.</strong></p>
+</div>
+
+<h2 id="s362"><span class="sig">§ 36.2</span>Interopérabilité B2B, commerce et paiements agentiques en finance</h2>
+
+<p>*Section <strong>reçue du Vol. I <em>Monographie</em> §5.13</strong>, ⚠ <strong>arrivée depuis le ch. 34</strong>, dont la table de couverture en déclare le départ. ⚠ <strong>Toute sa matière entre en [C]</strong>.*</p>
+
+<div class="avert">
+  <p><strong>Cette section déplace la focale du périmètre interne de l'institution vers <em>l'espace inter-entreprises</em> où les agents négocient, autorisent et règlent des paiements</strong> — <strong><em>le cas limite que tous les durcisseurs du ch. 31 amplifient simultanément</strong></em>, <em>puisque l'argent y circule entre organisations distinctes, sur des rails dont certains sont irrévocables.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>La mécanique du commerce agentique a été posée au générique</strong> au <strong>ch. 10</strong> et au <strong>ch. 24 § 24.7</strong> ; <em>le propos ici n'est pas de la réinventer mais de <strong>l'instancier sous la contrainte financière</strong>.</em></p>
+</div>
+
+<h3>36.2.1 La pile à trois couches</h3>
+
+<div class="avert">
+  <p><strong>Le patron architectural qui commande toute la section est <em>une stratification de la chaîne de paiement en trois couches</em>, posée une fois pour décider où l'agentique a le droit d'intervenir.</strong></p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Couche</th><th>Ce qui s'y joue</th><th>L'agentique y est-elle admise ?</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Intention, orchestration, négociation</strong></td><td>interpréter un besoin exprimé en langage naturel, comparer des offres, composer un panier, préparer une instruction</td><td>⚠ <strong>oui</strong> — <em>c'est là que le non-déterminisme <strong>apporte une valeur réelle</strong></em></td></tr>
+    <tr><td><strong>Autorisation</strong></td><td>vérifier qu'une instruction est <strong>conforme à un mandat préexistant</strong> : montant, bénéficiaire, fenêtre temporelle, politique de consentement</td><td>⚠ <strong>non</strong> — <em>vérification, non délibération</em></td></tr>
+    <tr><td><strong>Règlement</strong></td><td>⚠ <strong>la finalité</strong></td><td>⚠ <strong>non</strong> — <em>doit rester <strong>déterministe et fondé sur des règles</strong>, identique à ce qu'il est aujourd'hui</em></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 36.1 — La stratification de la chaîne de paiement, reprise du Vol. I en <strong>[C]</strong>. ⚠ <strong><em>L'erreur de conception à proscrire est de laisser le raisonnement probabiliste de l'agent franchir la frontière vers les deux couches basses.</strong></em></p>
+
+<div class="avert">
+  <p><em>Un travail de cadrage institutionnel de référence formule précisément cette répartition</em> : <strong><em>l'agentique remodèle les paiements </strong>en s'insérant dans l'intention et l'orchestration<strong>, non en remplaçant les rails de règlement.</strong></em> ⚠ <strong>C'est la même frontière que le ch. 31 § 31.1.1 pose sous le nom d'irréversibilité</strong>, <em>et le <strong>ch. 34 § 34.7.1</strong> l'a reprise en clôture du bloc financier.</em></p>
+</div>
+
+<h3>36.2.2 Le mandat vérifiable comme exigence issue de l'irréversibilité</h3>
+
+<div class="avert">
+  <p><strong>Le <em>mandat vérifiable</em> n'est pas une commodité de produit mais <em>une exigence dérivée de l'irréversibilité</em>.</strong></p>
+</div>
+
+<p><strong>Le raisonnement est direct</strong> : <em>si l'action de règlement <strong>ne peut être annulée</strong>, <strong>le contrôle ne peut s'exercer qu'avant l'exécution</strong>, et <strong>il doit prendre une forme qui survive à la transaction et reste opposable après coup</strong>.</em></p>
+
+<p><em>D'où la nécessité d'un <strong>artefact cryptographique</strong> — une <strong>intention signée</strong> portant des <strong>limites explicites</strong> : montant maximal, bénéficiaire ou catégorie de marchand, durée de validité, conditions de déclenchement — <strong>émis ou contresigné par l'humain ou l'institution responsable</strong>, et <strong>présenté à la couche d'autorisation avant tout règlement</strong>.</em></p>
+
+<div class="avert">
+  <p><strong>La chaîne de mandat qui porte cet artefact est au ch. 17</strong>, siège unique dans la somme ; <em>elle n'est pas reconstruite ici.</em> ⚠ <strong>Et le triptyque d'identité qui l'ancre — client, entreprise, agent — est au ch. 18 § 18.1</strong>, <em>siège unique également.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Un mécanisme se qualifie par ce que sa spécification démontre</strong> (R-02 du Vol. III) : <em>une intention signée <strong>démontre</strong> qu'un mandat existait et ce qu'il portait ; <strong>elle ne démontre pas</strong> que l'action exécutée en relevait — ⚠ <strong>et c'est exactement le trou que le § 36.2.6 nomme</strong>.</em></p>
+</div>
+
+<h3>36.2.3 Rails de cartes : l'insertion de l'émetteur</h3>
+
+<div class="avert">
+  <p><strong>Sur les rails de cartes, le critère d'insertion de la banque émettrice est qu'elle s'y insère <em>sans modifier son modèle de responsabilité</em>.</strong></p>
+</div>
+
+<p><em>Le mécanisme est <strong>l'extension de la tokenisation existante</strong> : là où un jeton de carte classique substitue un identifiant de surface au numéro de compte réel, <strong>le jeton de paiement agentique enrichit ce jeton d'un contexte supplémentaire</strong> liant <strong>l'agent autorisé</strong>, <strong>le périmètre marchand admissible</strong> et <strong>la politique de consentement applicable</strong>.</em></p>
+
+<div class="avert">
+  <p><strong><em>L'intérêt pour l'émetteur est de réutiliser l'infrastructure et les règles de responsabilité déjà éprouvées plutôt que d'inventer un régime distinct.</strong></em></p>
+</div>
+
+<div class="avert">
+  <p><em>Les deux grands réseaux ont annoncé <strong>des cadres concurrents qu'il faut distinguer par statut</strong> : le premier a dévoilé une technologie de paiement agentique <strong>le 29 avril 2025</strong>, prolongée <strong>le 10 juin 2026</strong> ; le second a introduit un protocole d'agent de confiance s'appuyant sur des signatures de message et une authentification web.</em> ⚠ <strong>Neutralité fournisseur</strong> : <em>deux réseaux nommés, aucun recommandé</em> ; ⚠ <strong>et tous les jalons relèvent de ressources vivantes et de chiffres non audités, à re-vérifier au moment de citer, en distinguant l'annonce, l'aperçu et la disponibilité générale.</strong></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong><em>l'insertion reste un enrichissement de jeton, pas une refonte du rail</strong></em> : <em>l'enjeu d'intégration consiste à <strong>projeter le contexte agentique sur les attributs de jeton déjà gérés par la plateforme de tokenisation</strong>, <strong>sans toucher au moteur de règlement ni aux règles de rétrofacturation existantes</strong>.</em> <strong>Ce que le socle établit</strong> : les annonces et le mécanisme. <strong>Ce qu'il n'établit pas</strong> : cette conséquence d'intégration, qui est une lecture reprise du Vol. I.</p>
+
+<h3>36.2.4 Protocoles ouverts de mandat et de commerce</h3>
+
+<p><em>À côté des rails propriétaires, <strong>un ensemble de protocoles ouverts</strong> matérialise le mandat vérifiable du § 36.2.2 <strong>sous forme d'objets signés et échangeables</strong>.</em></p>
+
+<p><strong>Le plus explicite structure le paiement agentique autour de mandats signés</strong> — <em>intention, panier, paiement</em> — ⚠ <strong><em>constituant précisément la preuve cryptographique que l'institution doit vérifier, journaliser et pouvoir opposer</strong></em>. *Il est conçu pour le cas où <strong>l'humain n'est pas en ligne au moment du règlement</strong>, ce qui en fait la réponse directe à une tension d'authentification forte ; ⚠ <strong>et sa standardisation a été transférée aux groupes de travail d'une alliance, à une version datée du 28 avril 2026</strong> (R-09 du Vol. III : <em>le statut se dit à chaque mention</em>).</p>
+
+<div class="avert">
+  <p><strong>Plusieurs piles concurrentes ou complémentaires coexistent, et l'une d'elles impose une désambiguïsation.</strong> <em>Un <strong>protocole de commerce agentique</strong> porté par deux éditeurs partage son sigle avec <strong>le protocole de communication d'agents</strong> traité aux <strong>ch. 7 et ch. 10</strong>.</em> ⚠ <strong><em>Il s'agit d'une homonymie, et le sigle n'est jamais employé nu dans la somme</strong></em> (R-8 du Vol. II) : ⚠ <strong>l'encadré de désambiguïsation à quatre branches est au ch. 7 § 7.5, siège unique</strong>, <em>et il n'est pas dupliqué ici.</em> <em>Deux autres piles complètent l'inventaire — un protocole de commerce universel et un rail de micropaiement natif du web.</em> ⚠ <strong>Neutralité fournisseur</strong> : <em>quatre piles nommées, aucune recommandée.</em></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong><em>pour une institution financière, l'intérêt de ces protocoles tient moins à leur transport qu'à l'objet « mandat signé » qu'ils rendent standard</strong></em> : <em>un artefact qu'un système d'autorisation peut <strong>vérifier puis archiver comme preuve</strong>.</em> ⚠ <strong>La décision d'architecture pratique consiste à traiter le mandat comme <em>entrée canonique de la couche d'autorisation</strong></em> (§ 36.2.1), <em>quel que soit le rail de règlement aval, <strong>de sorte que la piste d'audit repose sur un objet signé homogène plutôt que sur des journaux propriétaires hétérogènes</strong></em> (<strong>ch. 31 § 31.3.2</strong>). <strong>Ce que le socle établit</strong> : les protocoles et leurs objets. <strong>Ce qu'il n'établit pas</strong> : cette décision, qui est une lecture.</p>
+
+<h3>36.2.5 Règlement machine-à-machine, jetons de valeur régulés et dépôts tokenisés</h3>
+
+<p><em>Pour le <strong>règlement machine-à-machine</strong>, le critère d'arbitrage de rail est que <strong>la banque conserve une place native par trois leviers</strong> : <strong>l'émission</strong> de l'instrument, <strong>sa garde</strong> et <strong>la conformité</strong> qui l'entoure.</em></p>
+
+<div class="avert">
+  <p><strong>Trois objets distincts, souvent confondus dans le discours de marché, doivent être tenus séparés</strong> :</p>
+</div>
+
+<ol class="numeros">
+  <li><strong>Le jeton de valeur public régulé</strong> — <em>un <strong>actif au porteur</strong> dont l'émission et la circulation relèvent d'un régime de crypto-actifs</em> (<strong>ch. 30 § 30.2.5</strong>).</li>
+  <li>⚠ <strong>Le dépôt tokenisé bancaire</strong> — <em>la représentation d'un dépôt <strong>inscrit au bilan d'une banque</strong>, <strong>objet de nature juridique différente</strong> : il <strong>demeure de la monnaie de banque commerciale</strong> et <strong>ne sort pas du périmètre prudentiel</strong>.</em> ⚠ <strong><em>Cette distinction est le point d'architecture central et ne doit pas être effacée.</strong></em></li>
+  <li><strong>Le jeton de carte agentique</strong> du § 36.2.3 — ⚠ <em>qui <strong>n'est pas un instrument de règlement</strong> mais <strong>un porteur d'autorisation sur un rail existant</strong>.</em></li>
+</ol>
+
+<div class="avert">
+  <p><em>De nouvelles infrastructures de règlement orientées paiement émergent</em> — <strong>ressources vivantes, à re-vérifier.</strong></p>
+</div>
+
+<h3>36.2.6 Litige, rétrofacturation et le trou de responsabilité</h3>
+
+<div class="avert">
+  <p><strong>L'irréversibilité et la délégation, combinées, ouvrent <em>un trou de responsabilité que les cadres de litige existants ne couvrent pas</em>.</strong></p>
+</div>
+
+<p><em>Le patron de risque opérationnel est celui de <strong>l'achat agentique « non intentionnel »</strong></em> : <strong><em>un agent exécute, dans les limites apparentes de son mandat, une transaction que l'humain n'aurait pas voulue</strong></em> — <em>par dérive d'interprétation de l'intention, par empoisonnement de contexte ou de mémoire (<strong>ch. 19</strong>), ou par collusion entre agents (<strong>ch. 31 § 31.3.4</strong>).</em></p>
+
+<div class="avert">
+  <p><strong>Or les cadres de rétrofacturation ont été conçus pour des fraudes ou des défauts de marchand, <em>non pour une instruction autorisée mais non voulue</em> émise par un acteur-machine</strong> ; ⚠ <strong>et sur les rails irréversibles, la rétrofacturation n'existe tout simplement pas.</strong></p>
+</div>
+
+<p><em>La voie de résolution privilégiée est <strong>le modèle en boucle fermée</strong> : une couche de confiance partagée entre participants, des certificats d'identité d'agent et des jetons à portée bornée <strong>qui rendent la résolution déterministe</strong></em> — ⚠ <strong><em>on peut alors établir, à partir du mandat signé et de l'identité de l'agent, si l'instruction relevait ou non du périmètre.</strong></em></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong><em>tant que l'intention déléguée n'est pas elle-même un objet vérifiable, l'imputation de responsabilité reste indécidable.</strong></em> <em>La fermeture proposée <strong>convertit un problème normatif — qui répond d'une action non voulue — en un problème vérifiable — l'action était-elle dans le périmètre du mandat signé ?</strong></em>, <em>ce qui est <strong>la condition pour qu'un mécanisme de litige déterministe puisse exister</strong>.</em> <strong>Ce que le socle établit</strong> : le trou et la voie proposée. <strong>Ce qu'il n'établit pas</strong> : que cette conversion suffise. ⚠ <strong>Le ch. 29 § 29.3 en porte le versant canadien</strong>, <em>et il ne le referme pas davantage</em> ; ⚠ <strong>la sémantique d'effet qu'une réconciliation suppose est au ch. 48.</strong></p>
+
+<h3>36.2.7 L'angle Canada et Québec</h3>
+
+<div class="avert">
+  <p><strong>L'instanciation canadienne illustre la stratification du § 36.2.1 <em>sur une infrastructure nationale encore en construction</em>.</strong></p>
+</div>
+
+<p><em>Le rail canadien de paiement en temps réel constitue <strong>le pendant national de la couche de règlement déterministe</strong> : son cadre de règles <strong>doit entrer en vigueur le 24 août 2026</strong>, le lancement étant <strong>phasé à partir du quatrième trimestre 2026</strong>, avec un élargissement en 2027 — ⚠ <strong>ressource vivante</strong> — <strong>avec un règlement irrévocable</strong> et la couche sémantique commune.</em> ⚠ <strong>Le ch. 33 en est le siège</strong>, et ses statuts y sont dits.</p>
+
+<div class="avert">
+  <p><strong>Ce qui relève d'ici est <em>l'insertion agentique au-dessus de ce rail</strong></em> : <strong><em>l'agent prépare et soumet l'instruction, mais la finalité irrévocable impose le patron du ch. 31 § 31.1.1 — préparation par l'agent, libération humaine sur l'irréversible.</strong></em></p>
+</div>
+
+<div class="avert">
+  <p><em>Côté monnaie tokenisée, <strong>un cadre fédéral a été annoncé dans un contexte budgétaire et de réforme du secteur des paiements</strong></em> — ⚠ <strong>annonce, non texte adopté</strong> ; <em>et <strong>R-5 du Vol. II interdit d'en décrire le contenu</strong>.</em></p>
+</div>
+
+<h2 id="s363"><span class="sig">§ 36.3</span>Conditions de possibilité</h2>
+
+<div class="avert">
+  <p><strong><em>Énumérer des conditions de possibilité n'est pas prédire.</strong></em> <em>C'est <strong>dire ce qu'il faudrait établir</strong>, et <strong>rapporter chaque condition à ce que le socle en porte — souvent rien</strong>.</em></p>
+</div>
+
+<p><strong>Trois conditions se dégagent, dans un ordre qui n'est pas celui de l'importance mais celui de l'antériorité logique.</strong></p>
+
+<p><strong>Première condition : <em>le rail doit exister</em>.</strong> ⚠ <strong>C'est la plus élémentaire, et elle n'est pas remplie.</strong> <em>Le rail est en tests industriels ; ⚠ <strong>il n'est pas en production</strong> (réserve F-29 du Vol. II).</em> ⚠ <strong><em>Toute articulation du protocole avec ce rail est donc, à la date de gel, une articulation avec un système qui ne fonctionne pas encore.</strong></em> <em>Du <strong>16 avril 2024</strong> — reprise du programme — au <strong>27 juillet 2026</strong>, il s'est écoulé <strong>vingt-sept mois</strong> de construction, de bascules de tests internes puis d'acceptation, <strong>sans lancement</strong>.</em></p>
+
+<div class="avert">
+  <p><strong>Les deux calendriers ne sont pas de même nature, et c'est un point que le lecteur pressé manquera.</strong> <em>Le socle documente pour le rail <strong>une chronologie jalonnée</strong> — composante complétée au T3 2025, tests internes au T4 2025, acceptation au T1 2026, tests industriels à la mi-2026 — <strong>assortie de la réserve qu'il s'agit de communications d'opérateur</strong>. Pour le protocole, il ne documente que <strong>deux points</strong> : <strong>une annonce</strong> et <strong>un décompte de soutiens déclarés</strong>.</em> ⚠ <strong><em>Aucun jalon de version, aucune étape de maturité, aucun déploiement.</strong></em></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong><em>l'asymétrie de documentation entre les deux objets est elle-même le fait le plus solide de ce chapitre.</strong></em> <strong>Ce que le socle établit</strong> : <em>qu'un opérateur de rail publie <strong>une chronologie jalonnée et révisable</strong>, et que, pour le protocole, on ne dispose que <strong>d'une date d'annonce et d'un décompte de soutiens déclarés</strong>.</em> ⚠ <strong>Ce qu'il n'établit pas</strong> : <em>que le second soit <strong>immature</strong> — <strong>seulement que sa maturité n'est pas documentée</strong> par les sources dont dispose la somme.</em></p>
+
+<div class="avert">
+  <p><strong><em>Un architecte qui inverserait la charge de la preuve, et lirait l'absence de jalons comme une preuve d'inexistence, commettrait la faute symétrique de celui qui lit un décompte de soutiens comme un décompte de mises en production</strong></em> — <em>et le <strong>ch. 7</strong> a posé cette seconde faute une fois pour toute la somme.</em></p>
+</div>
+
+<p><strong>Deuxième condition : <em>les couches sémantiques doivent se rejoindre</em>.</strong> <em>Le rail est annoncé nativement conforme dès son lancement.</em> ⚠ <strong>Ce que la <em>richesse</em> de ces données changerait pour des agents, en revanche, ne relève d'aucun chapitre de la somme</strong> : <em>le <strong>ch. 33 § 33.4</strong> a établi que le socle <strong>n'en documente aucun attribut</strong> — ni structure des données de remise, ni granularité des identifiants — <strong>et c'est la raison pour laquelle il ne l'écrit pas</strong>.</em></p>
+
+<p><strong>La question qui appartient à ce chapitre est plus étroite</strong> : <em>le socle établit-il <strong>une correspondance entre le protocole et la couche sémantique</strong> ?</em> ⚠ <strong><em>Il n'en établit aucune.</strong></em> <em>Le socle <strong>ne porte pas l'anatomie technique du protocole</strong> : il en donne <strong>la fonction déclarée</strong> et rien de plus.</em> ⚠ <strong>Le ch. 10 le traite dans les limites de ce que cette entrée documente ; ce chapitre ne peut aller au-delà.</strong> ⚠ <strong><em>Toute phrase décrivant comment un mandat de paiement agentique se traduirait en message de la couche sémantique serait une invention, et la somme n'en produira pas.</strong></em></p>
+
+<p><strong>Troisième condition : <em>la gouvernance doit être documentable des deux côtés</em>.</strong> <em>Côté rail, le socle nomme les partenaires de livraison et d'exploitation et date l'entrée en vigueur du règlement administratif (<strong>ch. 33 § 33.3</strong>).</em> ⚠ <strong>Il n'établit rien des règles d'accès qui s'appliqueraient à un tiers, agentique ou non</strong> — <em>degré 3.</em></p>
+
+<div class="avert">
+  <p><strong>Le cas d'un opérateur canadien mérite d'être signalé pour ce qu'il <em>n'est pas</strong></em> : <em>le socle <strong>ne le documente qu'en qualité de partenaire du rail</strong>, ayant livré une composante en juin 2023.</em> ⚠ <strong><em>Il n'établit rien de ses rails propres</strong></em> — <em>et <strong>la question du titre de ce chapitre, pour ce versant-là, ne peut donc même pas être instruite</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Côté protocole, l'état a changé depuis le gel du Vol. II</strong> : <em>le § 36.1 a exposé le transfert documenté, <strong>consommé par extraction au titre de G-1</strong>.</em> ⚠ <strong>Cela lève le premier terme de cette condition, non le second</strong> : <em>un transfert de standardisation <strong>documente une gouvernance</strong> ; il <strong>ne documente pas des règles d'accès à un rail canadien</strong>.</em></p>
+</div>
+
+<h2 id="s364"><span class="sig">§ 36.4</span>Questions de recherche</h2>
+
+<div class="avert">
+  <p><strong>De ce qui précède se déduit un programme, et <em>c'est le véritable livrable du chapitre</em>.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>Cinq questions — série AP2 / rail en temps réel du Vol. II (<em>Monographie</em> ch. 16 §16.3)</strong> —, <em>chacune <strong>falsifiable</strong>, chacune <strong>assortie de ce qui la trancherait</strong>.</em> ⚠ <strong><em>À ne pas confondre avec la série d'agenda du même volume</strong></em>, dont <strong>Q4 est au ch. 27 § 27.7</strong> et <strong>Q5 au ch. 30 § 30.3.1</strong> (décision 7 du TOC).</p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th></th><th>Question</th><th>⚠ Ce qui la trancherait</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Q1</strong></td><td>Parmi les <strong>plus de soixante organisations</strong> dont un communiqué de fondation rapporte le soutien déclaré, <strong>s'en trouve-t-il une qui opère un rail de paiement canadien ou y participe ?</strong></td><td><strong>la liste complète</strong> des organisations, ⚠ <em>dont le socle ne nomme que sept</em></td></tr>
+    <tr><td><strong>Q2</strong></td><td><strong>La gouvernance du protocole fait-elle l'objet d'un transfert à une fondation neutre ?</strong></td><td>un communiqué de la fondation ou de l'éditeur. ☑ ⚠ <strong>Instruite depuis</strong> : <em>le § 36.1 expose le transfert documenté, consommé par extraction au titre de G-1</em> — ⚠ <strong><em>la question est close pour le transfert, non pour ce qu'il emporte</strong></em></td></tr>
+    <tr><td><strong>Q3</strong></td><td><strong>Une correspondance entre le protocole et la couche sémantique des paiements est-elle documentée par une source primaire ?</strong></td><td><strong>la spécification du protocole elle-même</strong>, ⚠ <em>que le socle ne porte pas</em></td></tr>
+    <tr><td><strong>Q4</strong></td><td><strong>Le règlement administratif du rail traite-t-il de l'initiation d'un paiement par un tiers ou par un agent ?</strong></td><td><strong>le texte publié</strong>, ⚠ <em>dont le socle atteste <strong>l'existence et les dates, non le contenu</strong></em> (ch. 33 § 33.3)</td></tr>
+    <tr><td><strong>Q5</strong></td><td><strong>Le lancement du rail visé au T4 2026 a-t-il lieu ?</strong></td><td>l'opérateur. ⚠ <em>C'est <strong>l'événement qui lèverait ou maintiendrait la réserve du socle sur la production</strong>, et il figure aux conditions de péremption</em> (<strong>ch. 50</strong>)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 36.2 — Les cinq questions de la série AP2 / rail en temps réel, avec ce qui trancherait chacune. ⚠ <strong>Une seule a bougé depuis le gel du Vol. II, et elle n'est close qu'en partie.</strong></p>
+
+<div class="avert">
+  <p><strong>Une quatrième famille de conditions existe, et ce chapitre ne la traite pas</strong> : <em>les <strong>conditions réglementaires</strong>. Un paiement initié par un agent dans une institution financière canadienne rencontrerait <strong>le régime du deuxième mouvement</strong> (ch. 25 à 30), et <strong>le croisement systématique de la pile protocolaire avec les exigences canadiennes appartient au Livre IV</strong>.</em> ⚠ <strong><em>Le signaler ici est nécessaire ; l'instruire ici serait empiéter.</strong></em></p>
+</div>
+
+<h2 id="s365"><span class="sig">§ 36.5</span>L'économie d'agents existe déjà, sur d'autres rails — relève à instruire</h2>
+
+<div class="avert">
+  <p><strong>Cette section est <em>une relève du plan</em>, et son régime est le plus bas de tout le Livre.</strong></p>
+</div>
+
+<p><em>Elle relève de la <strong>relève v0.11 du TOC</strong>, dont le régime est déclaré sans ambiguïté</em> : ⚠ <strong><em>des préimpressions dont seuls les résumés ont été consultés — des repérages [C], jamais des faits.</strong></em></p>
+
+<p><strong>Ce que la relève rapporte.</strong> *Une <strong>étude empirique de juin 2026</strong> mesure <strong>des millions de transactions machine-à-machine quotidiennes</strong> sur <strong>des rails de micropaiement natifs du web</strong> et <strong>d'enregistrement sur chaîne</strong>, ⚠ <strong>et en établit la fragilité</strong> : <em>identité, autorisation et paiement <strong>non interopérables</strong>.</em> <em>Deux analyses datées relèvent par ailleurs <strong>des vulnérabilités du rail de paiement</strong> et <strong>la manipulabilité de la réputation du registre</strong>. Et <strong>un cadre d'encadrement</strong> — une « économie bac à sable », avec des axes de perméabilité et d'intentionnalité — <strong>est proposé par des chercheurs d'un laboratoire industriel</strong>.</em></p>
+
+<div class="avert">
+  <p><strong>Le régime se dit à chaque mention</strong> (R-09 du Vol. III) : <strong><em>ce sont des préimpressions, non des articles évalués par les pairs ; seuls leurs résumés ont été consultés ; et aucune n'entre au socle.</strong></em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Et la portée se borne exactement</strong> : <strong><em>ces rails parallèles sont un contre-scénario aux conditions de possibilité du § 36.3, pas un fait canadien.</strong></em></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que la relève permet de dire, et rien de plus</strong> : *l'hypothèse implicite du chapitre — <strong>qu'une économie d'agents attendrait un rail national et un protocole mûr</strong> — <strong>n'est pas la seule possible</strong>. ⚠ <em>Une économie de transactions machine-à-machine <strong>peut se constituer sur des rails que ni le régulateur canadien ni les institutions du ch. 35 n'ont conçus</strong>, et <strong>la relève rapporte qu'elle le fait déjà ailleurs</strong>.</em> ⚠ <strong>Ce que le socle établit</strong> : <em>rien — <strong>la relève n'est pas au socle</strong>.</em> ⚠ <strong>Ce qu'elle signale</strong> : <em>une <strong>direction d'instruction</strong>, dont le critère de clôture serait <strong>l'extraction des quatre préimpressions à leur source primaire</strong>, et <strong>leur confrontation aux trois conditions du § 36.3</strong>.</em> ⚠ <strong><em>Le volet résiduel de G-1 ne l'a pas exécutée.</strong></em></p>
+
+<div class="avert">
+  <p><strong>Et le garde-fou du chapitre s'applique ici avec le plus de force</strong> : <strong><em>ne pas combler la lacune par de la fiction</strong></em> — <em>ni par une fiction de rail national, ni par une fiction de rail parallèle.</em></p>
+</div>
+
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
+
+<p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
+
+<ol class="numeros">
+  <li>⚠ <strong>Une lacune nommée, non comblée</strong> : <em>aucune source ne documente l'articulation du protocole avec les rails canadiens.</em> <strong>Le ch. 49 en enregistrera l'état final</strong> ; <em>aucun chapitre aval ne la comble.</em></li>
+  <li><strong>La pile à trois couches</strong> (§ 36.2.1), <em>posée une fois</em> : ⚠ <strong><em>le non-déterminisme est admis dans la phase délibérative, banni de la phase d'engagement irréversible.</strong></em> <em>Le <strong>ch. 48</strong> en porte la sémantique d'effet.</em></li>
+  <li>⚠ <strong>Le mandat vérifiable comme exigence <em>dérivée</em> de l'irréversibilité</strong> — <em>non comme commodité de produit.</em> <strong>Le ch. 17 en est le siège</strong> ; ce chapitre en donne la raison financière.</li>
+  <li>⚠ <strong>Les trois objets à ne pas confondre</strong> (§ 36.2.5) : <em>jeton de valeur public, dépôt tokenisé, jeton d'autorisation.</em> <strong><em>La distinction est un point d'architecture, pas de vocabulaire.</strong></em></li>
+  <li>⚠ <strong>Le trou de responsabilité de l'achat non intentionnel</strong> (§ 36.2.6) : <em>les cadres de rétrofacturation <strong>n'ont pas été conçus pour une instruction autorisée mais non voulue</strong>.</em></li>
+  <li>⚠ <strong>L'asymétrie de documentation entre un rail et un protocole</strong> (§ 36.3) : <strong><em>le fait le plus solide du chapitre</strong></em>, <em>et <strong>la faute symétrique qu'il interdit</strong>.</em></li>
+  <li><strong>Les cinq questions de la série AP2 / rail</strong> (§ 36.4), <em>chacune avec ce qui la trancherait</em> — ⚠ <strong>une seule a bougé, et elle n'est close qu'en partie.</strong></li>
+</ol>
+
+<div class="avert">
+  <p><strong>Ce que le chapitre ne lègue pas.</strong> Il ne lègue <strong>aucune articulation documentée</strong>, <strong>aucun pronostic</strong>, <strong>aucune correspondance sémantique</strong>, <strong>aucune règle d'accès de rail</strong>. Il ne lègue <strong>aucun fait de la relève du § 36.5</strong> — <em>repérages seuls.</em> Et il ne lègue <strong>aucun rail lancé</strong> : <em>la réserve F-29 tient jusqu'au dernier mot.</em></p>
+</div>
+
+<section class="statut" id="s366">
+
+<h2><span class="sig">§ 36.6</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A) : <em>un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il <strong>remonte</strong>.</em></p>
+</div>
+
+<p><strong>Ce qui est enfreint.</strong> La porte <strong>G-3</strong> et le <strong>volet résiduel de G-1</strong>. Instruction d'auteur du 27 juillet 2026. ⚠ <strong>G-4 ne conditionne pas ce chapitre</strong> ; ⚠ <strong>D-9 ne le bloque pas.</strong></p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01.</strong> Le socle consolidé compte zéro entrée ; les identifiants cités — F-04, F-29 — sont <strong>ceux du Vol. II</strong>, préfixés (décision 7). ⚠ <strong>Le § 36.2 entre en [C]</strong> ; ⚠ <strong>le § 36.5 à un régime encore inférieur</strong> : <em>préimpressions, résumés seuls consultés.</em></li>
+  <li>⚠ <strong>Le volet résiduel de G-1 n'est pas instruit, à une exception près qui est déclarée</strong> : <em>la <strong>divergence de gouvernance du protocole</strong> a été <strong>consommée par extraction</strong> au titre du volet Livre I du gel du 27 juillet 2026, et <strong>le § 36.1 en porte l'état instruit</strong>.</em> ⚠ <strong>Tout le reste demeure dû</strong> — <em>y compris <strong>les quatre préimpressions du § 36.5</strong>, dont le plan déclare qu'elles sont « à instruire ».</em></li>
+  <li><strong>Les décomptes sont publiables</strong> (G-2). L'écart à la cible est relevé au <a class="lien" href="README.md"> 0 </a> du dossier et alimente <strong>D-4</strong>, déjà tranchée.</li>
+  <li><strong>Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan.</strong> Ils résolvent contre l'entrée du TOC : le <strong>Livre IV</strong> dans son ensemble, <strong>ch. 48</strong>, <strong>ch. 49</strong> et <strong>ch. 50</strong> (Livre V). Résolvent contre du <strong>texte rédigé</strong> : <strong>ch. 7 § 7.5</strong>, <strong>ch. 10</strong>, <strong>ch. 17</strong>, <strong>ch. 18 § 18.1</strong>, <strong>ch. 19</strong>, <strong>ch. 24 § 24.7</strong>, <strong>ch. 29 § 29.3</strong>, <strong>ch. 30 § 30.2.5</strong>, <strong>ch. 31 § 31.1.1, § 31.3.2 et § 31.3.4</strong>, <strong>ch. 32 § 32.4</strong>, <strong>ch. 33</strong>, <strong>ch. 34 § 34.7.1</strong> et <strong>ch. 35</strong>.</li>
+</ol>
+
+<p><strong>Remontée ouverte par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-99 — non bloquante, de divergence entre volumes résolue par G-1 et non reportée au plan.</strong> Le <strong>Vol. II</strong> écrit que le protocole de paiement agentique est <strong>celui que son ch. 1 a dû exclure de son constat de consolidation</strong>, faute de <strong>transfert de gouvernance documenté</strong> ; le <strong>Vol. I</strong>, à son §5.13.4, <strong>décrit ce transfert, daté du 28 avril 2026</strong>, avec une version de spécification. ☑ <strong>La divergence a été consommée par extraction au titre de G-1</strong> (registre du gel du 27 juillet 2026, volet Livre I), <strong>et la somme retient l'état instruit.</strong> ⚠ <strong>Mais deux choses restent dues.</strong> <em>(a)</em> <strong>Le TOC ne porte pas l'état instruit</strong> : <em>son entrée du ch. 36 cite F-04 sans mention du transfert, et <strong>un rédacteur qui n'ouvrirait pas le registre du gel écrirait l'état périmé</strong>.</em> <em>(b)</em> ⚠ <strong>Le ch. 10 — siège de la pile protocolaire — doit être vérifié</strong> : <em>il a été rédigé le 27 juillet 2026, et <strong>le registre du gel a été publié le même jour</strong></em>. <strong>Demande remontée</strong> : que <strong>l'état instruit soit porté à l'entrée du ch. 36 au TOC</strong>, et que <strong>la cohérence du ch. 10 soit constatée sur pièce</strong>. ⚠ <em>La classe est celle que le <code>CLAUDE.md</code> du compendium nomme</em> : <strong><em>une lacune de couverture entre volumes</strong></em> — <em>« le socle de A ne documente pas X » et « B documente X » sont <strong>logiquement compatibles</strong>, et <strong>le volume le plus ancien ne se corrige pas</strong>.</em></li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.25</strong> — § 36.1 à § 36.5, dans l'ordre exact, <strong>sous-sections 36.2.1 à 36.2.7 comprises</strong> —, le § 36.0 étant une <strong>ouverture de chapitre</strong>. La <strong>table de couverture est respectée pour ses deux lignes</strong>, ⚠ <strong>et l'arrivée du §5.13 du Vol. I est déclarée aux deux bouts</strong> : <em>le ch. 34 en déclare le départ à sa propre table.</em> La <strong>décision 14 a été exécutée avant la rédaction</strong>, domaine déclaré : une thèse examinée, zéro réalignée.</p>
+
+<div class="avert">
+  <p><strong>Le garde-fou d'entrée — <em>ne pas combler la lacune par de la fiction</em> — est tenu à ses huit occurrences</strong>, <em>y compris au § 36.5, où la tentation était double.</em> ⚠ <strong>La réserve F-29 est tenue à ses cinq occurrences</strong> : <em>ni « lancé », ni « en production », <strong>jusqu'au dernier mot du chapitre</strong>.</em> ⚠ <strong>La formulation imposée sur les cibles successives est reprise mot pour mot</strong>, et <strong>R-4 est tenu à ses deux occurrences</strong>. ⚠ <strong>R-8 est tenu à ses deux occurrences</strong> : <em>le sigle homonyme du § 36.2.4 <strong>n'est jamais employé nu</strong>, et <strong>la désambiguïsation renvoie au ch. 7 § 7.5</strong> sans être dupliquée.</em> ⚠ <strong>Les deux séries « Q n » sont nommées à chaque renvoi</strong> (décision 7). Les <strong>douze occurrences de R-14 portent leur degré</strong>, ⚠ <strong>et l'absence du § 36.1 est explicitement distinguée du fait négatif vérifié du ch. 32 § 32.4</strong>. Les <strong>quatre occurrences de R-09 disent leur statut</strong>, ⚠ <strong>dont celles du § 36.5, où le régime des préimpressions est déclaré trois fois</strong>. Enfin, ⚠ <strong>la neutralité fournisseur est tenue à ses trois occurrences</strong> : <em>six protocoles ou réseaux nommés, <strong>aucun recommandé</strong>.</em></p>
+</div>
+
+<h3>Clôture des remontées — 27 juillet 2026</h3>
+
+<div class="avert">
+  <p><strong>Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.</strong> Elle enregistre l'issue des remontées ouvertes par cette pièce. <em>Une remontée ne se clôt pas là où elle s'ouvre : elle se solde là où elle fait foi</em> — au <a class="lien" href="../PRD/PRD.md">PRD</a> pour une décision ou un régime, au <a class="lien" href="../PRD/TOC.md">TOC</a> pour un réalignement de plan, à l'appareil pour une dette d'outillage.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Renumérotation, à lire avant les numéros.</strong> <em>Les remontées de ce Livre portaient d'abord les numéros <strong>R-IV-38 à R-IV-61</strong> ; une <strong>passe concurrente écrivait les Livres IV et V dans le même dépôt le même jour</strong> et les avait consommés. <strong>Le Livre III a été renuméroté en R-IV-76 à R-IV-99</strong> à la découverte de la collision — <strong>aucun numéro n'est partagé</strong>.</em></p>
+</div>
+
+<ul class="puces">
+  <li><strong>R-IV-99 — close par portage de l'état instruit au plan (TOC v0.27), et par CONSTAT sur pièce pour son second volet.</strong> <em>(a)</em> L'entrée du ch. 36 porte désormais <strong>l'état instruit</strong> du transfert de gouvernance du protocole de paiement agentique — <em>consommé par extraction au titre de G-1, volet Livre I</em> — ⚠ <em>sans quoi <strong>un rédacteur qui n'ouvrirait pas le registre du gel écrirait l'état périmé</strong></em>. <em>(b)</em> ☑ <strong>La cohérence du ch. 10 est constatée sur pièce</strong> : <em>il porte déjà le transfert daté du 28 avril 2026, en version v0.2</em> — <strong>le constat a été fait, non présumé</strong> (CA-IV-14). ⚠ <em>Le Vol. II ne se corrige pas pour autant : <strong>son énoncé était exact à son gel et sur son socle</strong>, et la classe est celle du <code>CLAUDE.md</code> du compendium — <strong>une lacune de couverture entre volumes</strong>.</em></li>
+</ul>
+
+<div class="avert">
+  <p><strong>Ce que la clôture ne change pas.</strong> Les portes <strong>G-3</strong> et — pour les chapitres qui citent le Vol. III — <strong>G-4</strong> demeurent ouvertes ; le socle consolidé compte <strong>zéro entrée</strong> ; <strong>aucun énoncé de cette pièce n'est central au sens de CA-IV-01</strong>. <strong>CA-IV-11 et CA-IV-13 ne sont pas satisfaites</strong> — <em>aucune relecture par un relecteur distinct du rédacteur</em>. Cette pièce reste un <strong>brouillon non publiable</strong>. <em>Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.</em></p>
+</div>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre III, chapitre 36. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.25, entrée du chapitre 36, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>

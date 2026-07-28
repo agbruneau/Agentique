@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 33 — ISO 20022 : Lynx accompli, RTR visé · La somme agentique</title>
+<meta name="description" content="la couche sémantique commune des paiements canadiens est en place — Lynx a achevé sa bascule ; Paiements Canada annonce un RTR nativement ISO 20022 dès son lancement, visé au T4 2026 (cible plusieurs fois repoussée — attribuer, ne pas affirmer au futur catégorique).">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre III · Chapitre 33</div>
+  <ol>
+    <li><a href="#s330"><span class="num">33.0</span>Ouverture : un rail accompli, un rail visé</a></li>
+    <li><a href="#s331"><span class="num">33.1</span>Lynx : une migration achevée, et ce que cela veut dire</a></li>
+    <li><a href="#s332"><span class="num">33.2</span>RTR : une chronologie vérifiée, une cible annoncée, une cible reportée</a></li>
+    <li><a href="#s333"><span class="num">33.3</span>Le règlement administratif : l&#x27;instrument juridique précède le rail</a></li>
+    <li><a href="#s334"><span class="num">33.4</span>Ce que la couche sémantique commune change — et ce que le socle n&#x27;en dit pas</a></li>
+    <li><a href="#s335"><span class="num">33.5</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.25 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="33-iso-20022-lynx-rtr.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier</div>
+  <h1><span class="chap">Chapitre 33</span>ISO 20022 : Lynx accompli, RTR visé</h1>
+  <p class="titre__situe">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Troisième mouvement — le terrain canadien : interopérabilité financière et adoption (ch. 31-36). Troisième chapitre du mouvement : <strong>un rail accompli et un rail visé, à ne jamais laisser confondre</strong></p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — porte <strong>G-3</strong> ouverte (socle consolidé à zéro entrée) ; volet résiduel de <strong>G-1</strong> non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ <strong>La règle cardinale du PRD §5 est enfreinte.</strong> Voir la note de statut, § 33.5. ⚠ <strong>G-4 ne conditionne pas ce chapitre</strong> ; ⚠ <strong>D-9 ne le bloque pas</strong></dd>
+    <dt>Date de gel</dt>
+    <dd><strong>27 juillet 2026</strong> — gel unique, <strong>D-1 prise</strong> (registre : <a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Volet résiduel de G-1 non instruit — et ce chapitre porte deux échéances qui tombent après le gel de la somme</strong> : <em>l'entrée en vigueur d'un règlement administratif le <strong>24 août 2026</strong>, et la cible de lancement d'un rail au <strong>T4 2026</strong>.</em> ⚠ <strong>Aucune des deux n'est constatée</strong> ; <em>elles sont annoncées.</em> Gel de source consommé : <strong>16-17 juillet 2026</strong> (Vol. II ch. 15)</dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte). Les énoncés résolvent contre le <strong>Vol. II <em>Monographie</em> ch. 15</strong>, dont les entrées <strong>F-28</strong>, <strong>F-29</strong> et <strong>F-45</strong> conservent leurs niveaux d'origine ; ⚠ <strong>F-29 est l'entrée la mieux votée du chapitre</strong> — <em>neuf affirmations confirmées par vote adversarial unanime, sur quatre pages officielles</em> — <strong>et c'est elle qui porte la réserve la plus stricte du Livre</strong> : <em>ne jamais écrire « lancé » ni « en production ».</em> ⚠ <strong>Toutes ces entrées sont du Vol. II</strong> (décision 7 du TOC). <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd>Vol. II — ⚠ <strong>réserve F-29 — ne jamais écrire « lancé » ni « en production » : sept occurrences</strong>, § 33.0, § 33.2 (quatre), § 33.4 et la synthèse ; ⚠ <strong>formulation imposée PRDPlan Vol. II §4.4 — « quatre <em>cibles successives</em> — 2019, 2022, 2023, 2026 », jamais « quatre reports » : trois occurrences</strong>, § 33.2 ; <strong>R-4 (la cible T4 2026 <em>est</em> officiellement annoncée — l'attribuer, ne pas l'affirmer au futur catégorique) : cinq occurrences</strong>, § 33.2 (trois), § 33.3 et § 33.4 ; <strong>PRD §8.4 (neutralité fournisseur) : trois occurrences</strong>, § 33.1 et § 33.2 (deux) ; <strong>R-5 : deux occurrences</strong>, § 33.3 ; <strong>R-1 à R-3, R-6 à R-8 : zéro occurrence</strong>. Vol. III — <strong>R-14 (trois degrés d'absence) : six occurrences</strong>, § 33.1, § 33.2 (deux), § 33.3 et § 33.4 (deux) ; <strong>R-11 (jalons visés, jamais fixés) : quatre occurrences</strong>, § 33.2 (trois) et § 33.4 — ⚠ <em>le garde-fou du Vol. III et celui du Vol. II se recouvrent ici, et les deux sont nommés</em> ; <strong>R-09 : deux occurrences</strong>, § 33.2 et § 33.3 ; <strong>R-01 à R-08, R-10, R-12, R-13 : zéro occurrence</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ <strong>3 500 mots</strong> de corps (§ 33.0 à § 33.4), <strong>cible dérivée</strong> de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant quatre. ☑ <strong>Décompte publiable depuis G-2</strong> ; la mesure réelle est portée au <a class="lien" href="README.md"> 0 </a> du dossier. ⚠ <strong>D-4 interdit l'amputation comme le gonflement</strong></dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>la couche sémantique commune des paiements canadiens est en place — Lynx a achevé sa bascule ; Paiements Canada annonce un RTR nativement ISO 20022 dès son lancement, <strong>visé</strong> au T4 2026 (cible plusieurs fois repoussée — attribuer, ne pas affirmer au futur catégorique).</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.25, entrée du chapitre 33.</span>
+</div>
+
+<div class="avert">
+  <p><strong>La thèse a été collationnée contre le texte rédigé de sa source avant la rédaction</strong> (décision 14 du TOC). <strong>Domaine de balayage : une thèse examinée, zéro réalignée — et un réalignement déjà fait par le plan, dans le bon sens.</strong> ⚠ <strong>Le Vol. II intitule son chapitre « RTR <em>imminent</em> » et sa thèse porte « visé au T4 2026 » ; le plan a retenu « visé » jusque dans le titre, et y a ajouté la parenthèse « cible plusieurs fois repoussée — attribuer, ne pas affirmer au futur catégorique ».</strong> <em>C'est <strong>l'inverse du cas ordinaire</strong> : le plan est ici <strong>plus borné que sa source</strong>, et il le devient sur le mot exact que la réserve F-29 vise.</em> <strong>Le corps écrit la forme du plan.</strong></p>
+</div>
+
+<h2 id="s330"><span class="sig">§ 33.0</span>Ouverture : un rail accompli, un rail visé</h2>
+
+<p><strong>Un architecte d'entreprise qui conçoit aujourd'hui une chaîne de paiement canadienne travaille sur un terrain d'une asymétrie singulière.</strong> <em>D'un côté, <strong>un rail achevé</strong> : le système de paiements de grande valeur a terminé sa migration, et l'alternative technique qui subsistait a été retirée. De l'autre, <strong>un rail annoncé, daté, testé</strong> — ⚠ <strong>mais qui n'a pas encore traité un paiement en exploitation</strong>.</em></p>
+
+<p><strong>Les deux parleront le même langage sémantique. L'un le parle déjà ; l'autre le parlera dès son premier jour, si ce jour arrive à la date visée.</strong></p>
+
+<div class="avert">
+  <p><strong>Le chapitre soutient que la couche sémantique commune est en place, et il faut prendre ce verbe au sérieux dans les deux directions.</strong> <em>« En place » signifie que <strong>le choix de format n'est plus une variable d'architecture</strong> : sur le premier rail, il est <strong>arrêté et irréversible</strong> ; sur le second, il est <strong>arrêté par construction</strong>.</em> ⚠ <strong><em>« En place » ne signifie pas « en exploitation partout »</strong></em> — <em>et la distinction entre un rail accompli et un rail visé est précisément ce que ce chapitre s'attache à ne pas laisser confondre, <strong>parce que c'est la confusion la plus coûteuse qu'un dossier d'architecture puisse commettre</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Deux garde-fous se recouvrent ici, et les deux sont nommés.</strong> *La <strong>réserve F-29 du Vol. II</strong> : <strong>ne jamais écrire « lancé » ni « en production »</strong>. Et <strong>R-11 du Vol. III</strong> : <em>un jalon est <strong>visé</strong>, jamais <strong>fixé</strong></em>. ⚠ <strong>Le second est plus général, le premier plus strict</strong> : <em>R-11 interdit d'écrire « fixé » ; F-29 interdit en outre d'écrire « lancé ».</em></p>
+</div>
+
+<p><strong>Ce que le chapitre ne traite pas.</strong> ⚠ <em>Le <strong>substrat sémantique financier</strong> — les trois couches, le détail des standards — est au <strong>ch. 31 § 31.2</strong>, qui en est le siège ; <strong>le flux instancié de bout en bout</strong> est au <strong>Livre IV</strong>. Le <strong>cadre bancaire</strong> est au <strong>ch. 32</strong> ; <strong>l'articulation avec les protocoles de paiement agentique</strong> au <strong>ch. 36</strong>, explicitement prospectif.</em></p>
+
+<h2 id="s331"><span class="sig">§ 33.1</span>Lynx : une migration achevée, et ce que cela veut dire</h2>
+
+<p><strong>Le fait central est daté.</strong> Le <strong>22 novembre 2025</strong>, la coexistence des deux familles de messages prend fin sur le rail de grande valeur : <em>les messages hérités sont <strong>retirés</strong> au profit des messages structurés, et <strong>ils ne sont plus pris en charge</strong>.</em> L'opérateur <strong>annonce l'achèvement le 26 novembre 2025</strong>. ⚠ <strong>La bascule technique est alignée sur l'échéance mondiale du réseau de messagerie interbancaire</strong> (Vol. II F-28).</p>
+
+<p><strong>Cette date clôt une transition longue.</strong> <em>La coexistence avait été ouverte en <strong>mars 2023</strong> ; il s'écoule donc <strong>quelque trente-deux mois</strong> — deux ans et huit mois durant lesquels le rail a accepté l'un et l'autre format, <strong>chaque institution restant maîtresse du moment où elle basculait ses propres chaînes</strong>.</em></p>
+
+<div class="avert">
+  <p><strong>Et la bascule finale n'a pas été un basculement.</strong> <em>Selon l'opérateur, <strong>plus de 98 % des messages étaient déjà au format structuré en octobre 2025</strong></em> — ⚠ <strong>métrique de l'opérateur, attribuée à sa source</strong> — <em>moins de 2 % du trafic déclaré restait donc à l'ancien format à cette date.</em></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>le 22 novembre n'a vraisemblablement pas déplacé le volume ; il a supprimé un reliquat, et surtout il a supprimé <em>l'option</em>.</strong> <strong>Ce que le socle établit</strong> : la part déjà basculée en octobre 2025, et le retrait des messages hérités. <strong>Ce qu'il n'établit pas</strong> : la part résiduelle à la date de bascule elle-même — <em>absence de documentation, degré 3 de l'échelle R-14 du Vol. III.</em></p>
+
+<div class="avert">
+  <p><strong>Pour l'architecte, la valeur de cette date ne tient donc pas à la nouveauté d'un format : elle tient à la <em>disparition d'une alternative</em>.</strong> <em>Tant que la coexistence durait, la question « <strong>quel format ce flux émet-il ?</strong> » restait ouverte et devait être tranchée <strong>composant par composant</strong>, avec la logique conditionnelle, les tests et la dette que cela suppose.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Mais la borne est stricte</strong> : <em>ce que la fin de la coexistence garantit, c'est qu'<strong>à la frontière du rail</strong> il n'existe plus de branche à maintenir. <strong>Ce qu'elle ne garantit pas</strong>, c'est qu'il n'en subsiste aucune <strong>à l'intérieur des institutions</strong> — question qui relève de l'inventaire de chacune, non de ce chapitre.</em></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>un mot sur l'alignement de la date, souvent lu comme un détail de calendrier.</strong> <em>Il <strong>situe la date canadienne sur un calendrier qui n'est pas propre au Canada</strong>, mais commun aux correspondants bancaires du monde entier — et un architecte qui aurait cherché à négocier un report de sa bascule interne <strong>aurait négocié contre un calendrier qu'aucun acteur canadien ne maîtrisait</strong>.</em> <strong>Ce que le socle établit</strong> : l'alignement. <strong>Ce qu'il n'établit pas</strong> : <em>que l'échéance mondiale ait été la <strong>cause</strong> de la date canadienne, seulement qu'elles <strong>coïncident</strong></em>. ⚠ <em>La nuance est mince, mais elle sépare une observation d'une reconstruction rétrospective.</em></p>
+
+<div class="avert">
+  <p><strong>Le rail a une histoire industrielle, et elle se rapporte sous neutralité fournisseur.</strong> <em>Un partenaire technologique principal a été sélectionné le <strong>2 mai 2019</strong> — hébergement, intégration, bascule et exploitation ; le système est <strong>lancé le 1ᵉʳ septembre 2021</strong>, vingt-huit mois après l'annonce ; un centre de données additionnel s'y ajoute en octobre 2023.</em> ⚠ <strong>Deux réserves accompagnent ce fait et se portent avec lui</strong> : <em>les <strong>montants des contrats ne sont pas publics</strong>, et — conformément à la neutralité fournisseur (PRD Vol. II §8.4) — <strong>ce rôle est un fait de contexte, jamais un argument de conformité réglementaire</strong>.</em> ⚠ <strong>Le socle ne documente aucun lien entre ce rôle et les lignes directrices du régulateur prudentiel</strong> — <em>absence de documentation, non un fait négatif vérifié.</em></p>
+</div>
+
+<h2 id="s332"><span class="sig">§ 33.2</span>RTR : une chronologie vérifiée, une cible annoncée, une cible reportée</h2>
+
+<div class="avert">
+  <p><strong>Le rail de paiement en temps réel n'est pas un projet dont on ignorerait l'état d'avancement.</strong> <em>Il est, au contraire, l'un des objets les mieux jalonnés du socle du Vol. II — <strong>neuf affirmations confirmées par vote adversarial unanime</strong>, sur quatre pages officielles de l'opérateur (F-29).</em> ⚠ <strong>La difficulté n'est pas de savoir où il en est ; elle est de dire son statut sans le surqualifier ni le sous-qualifier — <em>deux fautes symétriques et également disqualifiantes</em> dans un dossier d'architecture.</strong></p>
+</div>
+
+<p><strong>La chronologie, telle que l'opérateur la communique, est la suivante.</strong></p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Jalon</th><th>Date</th></tr></thead>
+  <tbody>
+    <tr><td>Livraison de la composante d'échange par un premier partenaire</td><td><strong>juin 2023</strong></td></tr>
+    <tr><td><strong>Reprise du programme</strong>, avec deux nouveaux partenaires de livraison et d'exploitation</td><td><strong>16 avril 2024</strong></td></tr>
+    <tr><td>Construction de la composante compensation et règlement, <strong>complétée</strong></td><td><strong>T3 2025</strong></td></tr>
+    <tr><td>Tests internes, <strong>complétés</strong></td><td><strong>T4 2025</strong></td></tr>
+    <tr><td>Tests d'acceptation utilisateur, <strong>complétés</strong></td><td><strong>T1 2026</strong></td></tr>
+    <tr><td>Tests industriels</td><td>⚠ <strong>en cours à la mi-2026</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 33.1 — La chronologie du rail de paiement en temps réel, telle que l'opérateur la communique (Vol. II F-29, <strong>neuf affirmations votées à l'unanimité</strong>). ⚠ <strong>La page officielle des partenaires liste un quatrième nom sans en détailler le rôle</strong> — <em>le socle enregistre la présence, pas la fonction, et la somme n'en dira pas davantage.</em></p>
+
+<p><strong>D'où l'énoncé qui doit être tenu mot pour mot, et que le lecteur pressé retiendra de préférence à tout le reste</strong> :</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>À la mi-juillet 2026, le rail de paiement en temps réel n'est pas en production.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong><em>Aucune formulation de ce chapitre — ni d'aucun autre chapitre de la somme — ne doit laisser entendre qu'il serait lancé ou exploité</strong></em> (réserve F-29 du Vol. II).</p>
+</div>
+
+<div class="avert">
+  <p><strong>Symétriquement, et c'est l'autre versant du garde-fou, il serait tout aussi faux d'écrire qu'aucune date n'aurait été annoncée.</strong> <em>L'opérateur <strong>vise un lancement au T4 2026</strong>, à l'issue des tests industriels en cours ;</em> ⚠ <strong>et la formulation qui suit est imposée</strong> (PRDPlan Vol. II §4.4) :</p>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p><strong>La cible a été successivement reportée : 2019, puis 2022, puis 2023, puis 2026.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong><em>Ces quatre valeurs sont les cibles successives, non les dates auxquelles les reports ont été décidés</strong></em> — <em>la distinction importe, faute de quoi la phrase raconterait une histoire que le socle ne porte pas.</em> ⚠ <strong>Écrire « quatre reports » serait la faute exacte que la formulation imposée proscrit.</strong></p>
+</div>
+
+<p><strong>L'opérateur annonce un lancement <em>graduel</em>, dont le déploiement se poursuivrait en 2027</strong> — ⚠ <em>et, point décisif pour ce chapitre, <strong>le format structuré dès le lancement</strong>.</em></p>
+
+<p><strong>Posons l'écart, puisqu'il structure toute planification qui s'appuierait sur ce rail.</strong> ⚠ <em>En retenant le trimestre civil — <strong>le socle ne précise pas la convention de l'opérateur</strong>, et un exercice financier décalé déplacerait tous les intervalles qui suivent — l'ouverture du T4 2026 tombe le 1ᵉʳ octobre.</em> <em>De la reprise du programme à cette ouverture, il s'écoule <strong>un peu moins de trente mois</strong>. Et de la première cible annoncée à la cible en vigueur, <strong>sept ans</strong> séparent l'intention initiale de l'échéance actuellement visée.</em></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>ces deux nombres ne disent pas la même chose et ne doivent pas être lus ensemble sans précaution.</strong> <strong>Ce que le socle établit</strong> : quatre cibles successives. <strong>Ce qu'il n'établit pas</strong> : ni les causes des reports, ni une quelconque probabilité que la cible soit tenue.</p>
+
+<div class="avert">
+  <p><strong><em>Un historique de reports n'est pas un pronostic</strong></em> — <em>il est une information sur la <strong>classe de risque</strong> à laquelle appartient l'engagement, non sur l'engagement lui-même.</em> ⚠ <strong>Ce que l'architecte prudent en tire n'est donc pas « le rail sera reporté », affirmation que rien n'autorise, mais une exigence de conception</strong> : <strong><em>tout plan dont la valeur dépend d'une date de disponibilité de ce rail doit porter son scénario de report</strong></em>, au même titre qu'il porterait celui de tout fournisseur externe. ⚠ <strong>Et R-4 du Vol. II borne l'énoncé dans l'autre sens</strong> : <em>la cible <strong>est</strong> officiellement annoncée — l'attribuer à son auteur, <strong>ne pas l'affirmer au futur catégorique</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Une dernière précision, négative, mérite d'être consignée parce qu'elle protège le lecteur d'une source vieillie.</strong> <em>Aucune source primaire du socle <strong>ne mentionne deux organisations souvent citées</strong> parmi les partenaires <strong>actuels</strong> du rail ; les partenaires établis sont ceux du tableau 33.1.</em> ⚠ <strong>Un dossier qui les citerait comme partenaires actuels contredirait les sources primaires disponibles au 16 juillet 2026</strong> — ⚠ <em>le socle ne dit rien, en revanche, d'une éventuelle association <strong>passée</strong>, et la somme n'en infère aucune : absence de documentation, degré 3.</em> ⚠ <strong>Neutralité fournisseur</strong> : <em>les partenaires sont nommés comme faits de contexte, avec les mêmes réserves qu'au § 33.1 — <strong>montants non publics, aucun argument de conformité</strong>.</em></p>
+</div>
+
+<h2 id="s333"><span class="sig">§ 33.3</span>Le règlement administratif : l'instrument juridique précède le rail</h2>
+
+<p><strong>Le règlement administratif du rail a été publié dans la partie II de la gazette officielle le 1ᵉʳ juillet 2026, et il entre en vigueur le 24 août 2026</strong> (Vol. II F-29).</p>
+
+<div class="avert">
+  <p><strong>Au gel de la somme — 27 juillet 2026 —, l'instrument est donc <em>publié</em> mais <em>pas encore en vigueur</strong></em> (R-09 du Vol. III : <em>le statut se dit à chaque mention</em>). ⚠ <strong>Il reste vingt-huit jours avant son entrée en vigueur.</strong> <em>Le Vol. II en comptait trente-neuf à son propre gel ; <strong>le chiffre a été refait et il a bougé</strong>.</em></p>
+</div>
+
+<p><strong>Les intervalles se calculent simplement.</strong> <em>De la publication à l'entrée en vigueur : <strong>cinquante-quatre jours</strong>. De l'entrée en vigueur à l'ouverture du trimestre visé pour le lancement — sous la réserve de convention posée au § 33.2 : <strong>trente-huit jours</strong>, un peu plus de cinq semaines.</em></p>
+
+<div class="avert">
+  <p><strong>Ce que le socle établit ici s'arrête à ces trois dates et à leur ordre. Il n'établit <em>pas</em> le contenu du règlement administratif</strong>, <em>et le chapitre s'interdit donc d'en décrire les obligations, les seuils ou les mécanismes</em> — ⚠ <strong>absence de documentation, degré 3 ; et R-5 du Vol. II l'interdit doublement : <em>ce dont on n'a pas le texte ne se décrit pas</em>.</strong></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>la seule chose que la séquence autorise à observer, c'est que l'instrument juridique <em>entre en vigueur avant</em> l'ouverture du trimestre visé, et non après.</strong> <em>C'est l'ordonnancement attendu d'un rail dont la participation est réglementée</em> — ⚠ <strong>et le passage des contraintes réglementaires aux cadres déterministes est l'objet du ch. 29</strong>, qui en porte le principe. <strong>Ce que le socle établit</strong> : la chronologie. <strong>Ce qu'il n'établit pas</strong> : <em>ni le contenu du règlement, ni l'intention qui a produit cet ordonnancement, et la somme ne les lui prête pas.</em></p>
+
+<div class="avert">
+  <p><strong>Il faut par ailleurs relever ce que cette date fait au reste du chapitre.</strong> <em>Le 24 août 2026 est <strong>postérieur au gel de la somme</strong>, ce qui en fait <strong>l'un de ses points de revalidation</strong> : au 27 juillet 2026, <strong>l'entrée en vigueur est un fait annoncé, pas un fait constaté</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>La distinction paraîtra excessive ; elle ne l'est pas.</strong> <strong><em>C'est exactement la même distinction que celle qui sépare une cible de lancement d'un lancement</strong></em> — <em>et la discipline qui consiste à la tenir partout, <strong>y compris là où elle semble ne rien coûter</strong>, est ce qui permet de la tenir <strong>là où elle coûte cher</strong>.</em> <strong>Le ch. 50 enregistrera les deux échéances comme événements de péremption.</strong></p>
+</div>
+
+<h2 id="s334"><span class="sig">§ 33.4</span>Ce que la couche sémantique commune change — et ce que le socle n'en dit pas</h2>
+
+<p><strong>Reste la question que le mouvement pose : qu'est-ce que tout cela change pour des agents ?</strong></p>
+
+<p><strong>Commençons par ce que le socle établit, et qui n'est pas rien.</strong> ⚠ <em>Après le 22 novembre 2025, le rail de grande valeur <strong>ne connaît plus qu'un jeu de messages</strong> ; le rail en temps réel, <strong>s'il est lancé au T4 2026 comme l'opérateur le vise</strong>, le sera <strong>nativement au format structuré</strong>.</em></p>
+
+<p><strong>Ces deux rails auront donc une <em>couche sémantique commune</strong></em> — ⚠ <em>et cette communauté n'est pas le fruit d'une convergence progressive à laquelle il faudrait encore laisser du temps : elle est <strong>acquise sur l'un par retrait de l'alternative</strong>, et <strong>posée sur l'autre par construction</strong>.</em></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>la conséquence d'architecture est une conséquence de <em>surface</em>, pas de <em>capacité</em>.</strong> <em>Un système appelé à interagir avec les deux rails n'a plus <strong>deux vocabulaires</strong> à apprendre, mais <strong>un</strong> ; <strong>ce qui était une question de traduction devient une question de routage</strong>. Pour un composant logiciel — agentique ou non — cela <strong>réduit le nombre de représentations à maintenir</strong>, donc <strong>le nombre d'endroits où une erreur de correspondance peut naître</strong>.</em> <strong>Ce que le socle établit</strong> : l'unicité du format sur le premier rail et son adoption native prévue sur le second.</p>
+
+<div class="avert">
+  <p><strong>Ce qu'il n'établit pas</strong> : <em>que cette unicité produise <strong>un gain mesurable</strong> — <strong>aucune source de la somme ne le quantifie</strong>, absence de documentation, degré 3.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Il faut ici marquer nettement la frontière, car c'est le point où un chapitre de cette nature dérape ordinairement.</strong> <em>Le bénéfice <strong>agentique</strong> que le <strong>ch. 31 § 31.2.2</strong> énonce — des champs nommés et typés donnant à un agent de quoi exécuter un criblage déterministe et une réconciliation automatisée — est <strong>une lecture d'architecture</strong>, non un fait mesuré ; ⚠ <strong>et le socle du Vol. II ne documente aucun déploiement agentique sur ces deux rails</strong> : absence de documentation, degré 3.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Une conséquence de la règle du ch. 31 § 31.1.1 se rappelle enfin, et elle est plus contraignante que la sémantique.</strong> *Le rail en temps réel, <strong>s'il est lancé</strong>, portera un règlement <strong>à finalité immédiate</strong> : ⚠ <strong>la sémantique commune ne change rien à l'irréversibilité</strong>, et le patron directeur — <em>préparation par l'agent, libération humaine sur l'action irréversible</em> — <strong>s'y applique intégralement</strong>. Et <strong>le ch. 22 § 22.4</strong> ajoute la contrainte de temps : <strong><em>un délai qui doit être tenu ne se confie pas à un composant dont la durée d'exécution n'est pas bornée</strong></em> — ⚠ <em>ce que le <strong>ch. 24 § 24.8</strong> déclare n'avoir aucun modèle de service pour dimensionner.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Et la borne du chapitre se redit une dernière fois</strong> : <strong><em>le rail visé n'est pas lancé</strong></em>, sa cible est <strong>annoncée et attribuée</strong>, elle <strong>a été successivement reportée</strong> — 2019, puis 2022, puis 2023, puis 2026 —, et <strong>rien ici n'affirme au futur catégorique</strong> (R-4 du Vol. II ; R-11 du Vol. III).</p>
+</div>
+
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
+
+<p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
+
+<ol class="numeros">
+  <li><strong>Une couche sémantique commune, acquise de deux manières différentes</strong> : <em>par <strong>retrait de l'alternative</strong> sur un rail, <strong>par construction</strong> sur l'autre.</em> ⚠ <strong>La conséquence est de <em>surface</em>, non de <em>capacité</strong></em> — <em>le nombre de représentations à maintenir baisse ; aucune source ne quantifie le gain.</em></li>
+  <li>⚠ <strong>La formulation imposée sur les cibles</strong>, posée ici une fois pour toute la somme : <em>« quatre <strong>cibles successives</strong> — 2019, 2022, 2023, 2026 », <strong>jamais</strong> « quatre reports ».</em> <strong>Le ch. 36 la reprend telle quelle.</strong></li>
+  <li>⚠ <strong>La réserve F-29, la plus stricte du Livre</strong> : <em>ne jamais écrire « lancé » ni « en production ».</em> <strong>Le ch. 36, explicitement prospectif, en dépend entièrement.</strong></li>
+  <li><strong>Un historique de reports n'est pas un pronostic</strong> — <em>c'est une information sur la classe de risque de l'engagement.</em> ⚠ <strong>La conséquence de conception est qu'un plan adossé à cette date doit porter son scénario de report.</strong></li>
+  <li><strong>L'ordonnancement juridique précède le rail</strong> : <em>le règlement administratif entre en vigueur <strong>avant</strong> l'ouverture du trimestre visé.</em> <strong>Le ch. 29 en porte le principe général.</strong></li>
+</ol>
+
+<div class="avert">
+  <p><strong>Ce que le chapitre ne lègue pas.</strong> Il ne lègue <strong>aucun rail lancé</strong>. Il ne lègue <strong>aucun contenu de règlement administratif</strong> : <em>le socle n'en porte que trois dates.</em> Il ne lègue <strong>aucun gain mesuré</strong> de l'unicité sémantique, ni <strong>aucun déploiement agentique documenté</strong> sur ces rails. Et il ne lègue <strong>aucune convention de trimestre</strong> : <em>civil ou financier, le socle ne le précise pas, et tous les intervalles du § 33.2 en dépendent.</em></p>
+</div>
+
+<section class="statut" id="s335">
+
+<h2><span class="sig">§ 33.5</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A) : <em>un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il <strong>remonte</strong>.</em></p>
+</div>
+
+<p><strong>Ce qui est enfreint.</strong> La porte <strong>G-3</strong> et le <strong>volet résiduel de G-1</strong>. Instruction d'auteur du 27 juillet 2026. ⚠ <strong>G-4 ne conditionne pas ce chapitre</strong> ; ⚠ <strong>D-9 ne le bloque pas.</strong></p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01.</strong> Le socle consolidé compte zéro entrée ; les identifiants cités — F-28, F-29, F-45 — sont <strong>ceux du Vol. II</strong>, préfixés à chaque emploi (décision 7).</li>
+  <li>⚠ <strong>Le volet résiduel de G-1 pèse sur deux échéances postérieures au gel de la somme</strong> : <em>l'entrée en vigueur du règlement administratif le <strong>24 août 2026</strong> — dans vingt-huit jours — et la cible de lancement au <strong>T4 2026</strong>.</em> ⚠ <strong>Ni l'une ni l'autre n'est constatée</strong> ; <em>le <strong>ch. 50</strong> les enregistrera comme événements de péremption, et ce chapitre est <strong>celui du Livre dont le plus grand nombre d'énoncés changera de temps grammatical</strong>.</em></li>
+  <li>⚠ <strong>Deux comptes à rebours ont été re-mesurés au gel et ont bougé</strong> : <em>vingt-huit jours avant l'entrée en vigueur du règlement, contre trente-neuf au gel du Vol. II.</em> <strong>Ils n'ont pas été recopiés.</strong></li>
+  <li><strong>Les décomptes sont publiables</strong> (G-2). L'écart à la cible est relevé au <a class="lien" href="README.md"> 0 </a> du dossier et alimente <strong>D-4</strong>, déjà tranchée.</li>
+  <li><strong>Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan.</strong> Ils résolvent contre l'entrée du TOC : <strong>ch. 36</strong> (présent Livre, même passe), le <strong>Livre IV</strong> et <strong>ch. 50</strong> (Livre V). Résolvent contre du <strong>texte rédigé</strong> : <strong>ch. 22 § 22.4</strong>, <strong>ch. 24 § 24.8</strong>, <strong>ch. 29</strong>, <strong>ch. 31 § 31.1.1 et § 31.2.2</strong> et <strong>ch. 32</strong>.</li>
+</ol>
+
+<p><strong>Remontée ouverte par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-96 — non bloquante, de convention de mesure non documentée dont dépendent quatre intervalles.</strong> Le § 33.2 calcule <strong>quatre intervalles</strong> — <em>un peu moins de trente mois depuis la reprise du programme ; sept ans depuis la première cible ; trente-huit jours entre l'entrée en vigueur du règlement et l'ouverture du trimestre</em> — <strong>tous ancrés sur l'ouverture du T4 2026</strong>. ⚠ <strong>Or le socle ne précise pas si l'opérateur compte en trimestre <em>civil</em> ou en trimestre d'<em>exercice financier</strong></em>, et <em>un exercice décalé déplacerait les quatre</em>. <strong>La source le déclare et calcule quand même, sous réserve ; la somme reprend la réserve.</strong> <strong>Demande remontée</strong> : que cette convention entre au <strong>registre des faits à instruire au gel de publication</strong>, au même titre que le cardinal du ch. 18 (R-IV-31) et les deux cardinaux du ch. 26 (R-IV-86). ⚠ <strong>La classe est celle d'un <em>cardinal dérivé d'une convention non documentée</strong></em> : <em>le nombre est exact <strong>sous une hypothèse</strong>, et l'hypothèse ne se voit pas dans le nombre.</em></li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.25</strong> — § 33.1 à § 33.4, dans l'ordre exact —, le § 33.0 étant une <strong>ouverture de chapitre</strong>. La <strong>table de couverture est respectée pour son unique ligne</strong> : le Vol. II §15.1-15.4 est condensé aux § 33.1-33.4, <strong>rien n'en est coupé</strong>. La <strong>décision 14 a été exécutée avant la rédaction</strong>, domaine déclaré : une thèse examinée, zéro réalignée — ⚠ <strong>et le réalignement déjà opéré par le plan, dans le sens du bornage, est déclaré</strong>.</p>
+
+<div class="avert">
+  <p><strong>La réserve F-29 est tenue à ses sept occurrences</strong> : <em>le mot « lancé » n'apparaît qu'au <strong>conditionnel attribué</strong> ou dans la formule qui l'interdit ; <strong>« en production » n'apparaît qu'au négatif</strong>.</em> ⚠ <strong>La formulation imposée sur les cibles successives est reprise mot pour mot à ses trois occurrences</strong>, et <strong>« quatre reports » n'est écrit qu'à l'endroit où la somme le proscrit</strong>. <strong>R-4 du Vol. II est tenu à ses cinq occurrences</strong> — <em>la cible est attribuée, jamais affirmée au futur catégorique</em> — et <strong>R-11 du Vol. III à ses quatre</strong> : <em>visé, jamais fixé.</em> Les <strong>six occurrences de R-14 portent leur degré</strong>, et les <strong>deux de R-09 leur statut</strong>. ⚠ <strong>La neutralité fournisseur est tenue à ses trois occurrences</strong> : <em>les partenaires industriels sont nommés comme <strong>faits de contexte</strong>, avec <strong>montants non publics</strong> et <strong>aucun argument de conformité</strong></em>, et <strong>les deux organisations que le socle ne mentionne pas parmi les partenaires actuels sont signalées sans être nommées comme fautives</strong>. Enfin, ⚠ <strong>le contenu du règlement administratif n'est pas décrit</strong> : <em>le socle n'en porte que trois dates, et R-5 du Vol. II interdit le reste.</em></p>
+</div>
+
+<h3>Clôture des remontées — 27 juillet 2026</h3>
+
+<div class="avert">
+  <p><strong>Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.</strong> Elle enregistre l'issue des remontées ouvertes par cette pièce. <em>Une remontée ne se clôt pas là où elle s'ouvre : elle se solde là où elle fait foi</em> — au <a class="lien" href="../PRD/PRD.md">PRD</a> pour une décision ou un régime, au <a class="lien" href="../PRD/TOC.md">TOC</a> pour un réalignement de plan, à l'appareil pour une dette d'outillage.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Renumérotation, à lire avant les numéros.</strong> <em>Les remontées de ce Livre portaient d'abord les numéros <strong>R-IV-38 à R-IV-61</strong> ; une <strong>passe concurrente écrivait les Livres IV et V dans le même dépôt le même jour</strong> et les avait consommés. <strong>Le Livre III a été renuméroté en R-IV-76 à R-IV-99</strong> à la découverte de la collision — <strong>aucun numéro n'est partagé</strong>.</em></p>
+</div>
+
+<ul class="puces">
+  <li><strong>R-IV-96 — close par versement au registre du volet résiduel de G-1 (PRD v0.10 §5).</strong> La <strong>convention de trimestre</strong> dont dépendent <strong>quatre intervalles publiés</strong> entre au registre des faits à instruire. ⚠ <em>Le socle ne précise pas si l'opérateur compte en trimestre <strong>civil</strong> ou en trimestre d'<strong>exercice financier</strong>, et <strong>un exercice décalé déplacerait les quatre</strong>.</em> ⚠ <strong><em>Un cardinal dérivé d'une convention non documentée est exact sous une hypothèse, et l'hypothèse ne se voit pas dans le nombre.</strong></em></li>
+</ul>
+
+<div class="avert">
+  <p><strong>Ce que la clôture ne change pas.</strong> Les portes <strong>G-3</strong> et — pour les chapitres qui citent le Vol. III — <strong>G-4</strong> demeurent ouvertes ; le socle consolidé compte <strong>zéro entrée</strong> ; <strong>aucun énoncé de cette pièce n'est central au sens de CA-IV-01</strong>. <strong>CA-IV-11 et CA-IV-13 ne sont pas satisfaites</strong> — <em>aucune relecture par un relecteur distinct du rédacteur</em>. Cette pièce reste un <strong>brouillon non publiable</strong>. <em>Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.</em></p>
+</div>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre III, chapitre 33. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.25, entrée du chapitre 33, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>

@@ -6,6 +6,32 @@ plus spécifique gagne** : ici, celui-ci ; les règles valant pour tout le dép�
 faits datés, périmètre des fichiers de doc) sont au [`CLAUDE.md` racine](../CLAUDE.md) et ne sont
 pas répétées.
 
+⚠ **État au 27 juillet 2026, en tête parce qu'il conditionne toute édition : le Livre V — le DERNIER
+du plan — est rédigé et arbitré, et sa publication est bloquée par une décision d'auteur.** Ses
+**quatre chapitres** (ch. 47-50) vivent au dossier [`Livre V/`](Livre%20V/), en `.md` et `.html`, **hors
+portes** : le premier mouvement (ch. 47-48) a été écrit avant **G-3, G-5 et G-6** — *les deux dernières
+sont les portes que le PRD nomme pour ce mouvement précisément* —, le second avant **G-3 et G-4**. Six
+faits à connaître avant d'y toucher. *(1)* **Ses seize remontées R-IV-60 à R-IV-75 sont soldées** (TOC
+v0.26, PRD v0.11) ; le tableau des issues est au [`README.md` de `Livre V/`](Livre%20V/README.md) et
+**n'est pas repris ici**. *(2)* ⚠ **Deux décisions d'auteur sont prises, et elles bornent sans combler**
+: **D-2** — le risque 14 (la couche d'exécution) tranché en **sections dans l'existant, sans chapitre
+neuf**, le plafond de cinquante interdisant d'en ouvrir un sans fusion ; **D-3** — la matière neuve en
+**trois lots d'instruction ouverts, retrait non exécuté, publication du premier mouvement bloquée
+jusqu'à leur clôture, une instruction infructueuse valant retrait**. **Sept décisions sur neuf sont
+désormais prises** ; D-5 et D-8 restent ouvertes. *(3)* ⚠ **Aucune porte n'est franchie pour autant** :
+*une décision prise n'est pas une porte franchie — D-3 ouvre des lots, elle ne constitue pas un socle.*
+*(4)* ⚠ **Sa volumétrie est en DÉFAUT, et c'est le premier Livre dans ce cas** : **25 005 mots** pour une
+enveloppe de 34 000, soit **−26,5 %**, l'écart se concentrant sur les deux chapitres sans socle (−42,7 %
+et −40,6 %). *Sur un front dont la ligne Fusion déclare « sources primaires à constituer avant
+rédaction », la volumétrie mesure l'absence de sources* — et **quatre sections sont des lots
+d'instruction plutôt que du contenu**, seul geste que le régime de preuve autorisait. *(5)* **Deux
+sièges y sont posés** (voir la table des sièges plus bas). *(6)* ⚠ **Un fait de terrain a marqué la
+passe et il n'est pas au plan** : les Livres III et IV ont été rédigés **en parallèle**, le même jour,
+hors d'elle — d'où une **collision d'identifiants de remontée** (R-IV-75, règle d'allocation portée au
+PRD §13), un **numéro de version d'appareil revendiqué deux fois**, et l'obligation d'exécuter
+`check-sieges.py` sur **le corpus que le commit produit** plutôt que sur l'arbre de travail. *Attester
+« le contrôle passe » sur un corpus qu'on ne committe pas serait une attestation fausse.*
+
 ## Les livrables — un plan, sa gouvernance et sa vue synoptique, pas un ouvrage
 
 ⚠ **Réorganisation du 23 juillet 2026** : le PRD, le TOC et les deux scripts de contrôle vivent
@@ -13,10 +39,10 @@ désormais dans le sous-dossier [`PRD/`](PRD/) ; le README (conspectus) et ce `C
 la racine du dossier. Les chemins ci-dessous et la commande de contrôle (§ protocole) en tiennent
 compte.
 
-Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.9, 27 juillet 2026** — seconde passe d'arbitrage : **D-4 tranchée** — enveloppes maintenues, amputation interdite — et **D-9 ouverte et prise** — lot d'instruction du § 17.5, bloquant pour les ch. 25 et 27 ; **vingt-quatre remontées soldées**, **aucune porte franchie** ; cumul : **cinq décisions sur neuf**, **deux portes sur sept**. ⚠ C'est aussi la version qui déclare **CA-IV-11 et CA-IV-13 insatisfaisables en l'état**, D-6 ne fournissant pas de relecteur tiers) régit la
+Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.11, 27 juillet 2026** — ⚠ **troisième passe d'arbitrage, celle du Livre V** : **D-2** tranchée — risque 14 en *sections dans l'existant, sans chapitre neuf* — et **D-3** — matière neuve en *trois lots ouverts, retrait non exécuté, publication du premier mouvement bloquée* ; **seize remontées soldées**, **sept décisions sur neuf**, **aucune porte franchie** ; seconde passe d'arbitrage : **D-4 tranchée** — enveloppes maintenues, amputation interdite — et **D-9 ouverte et prise** — lot d'instruction du § 17.5, bloquant pour les ch. 25 et 27 ; **vingt-quatre remontées soldées**, **aucune porte franchie** ; cumul : **cinq décisions sur neuf**, **deux portes sur sept**. ⚠ C'est aussi la version qui déclare **CA-IV-11 et CA-IV-13 insatisfaisables en l'état**, D-6 ne fournissant pas de relecteur tiers) régit la
 **gouvernance de la rédaction** — portes de lancement, ordre, régimes de preuve, seuil de vote,
 critères CA-IV, jalons, décisions d'auteur — et **prime en cas de conflit sur la gouvernance, le
-socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.25, 27 juillet 2026 — second arbitrage : structure inchangée, cinq thèses réalignées (ch. 14, 15, 16, 17, 19), décision 14 posée, risque 17 ouvert, troisième table à l'Annexe C ; 50 chapitres en 5 livres,
+socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.26, 27 juillet 2026 — troisième arbitrage : structure inchangée, trois thèses réalignées (ch. 47 second mouvement, ch. 48, ch. 49 second mouvement), deux sièges désignés et versés, inventaire des lacunes du Vol. III requalifié ; second arbitrage : structure inchangée, cinq thèses réalignées (ch. 14, 15, 16, 17, 19), décision 14 posée, risque 17 ouvert, troisième table à l'Annexe C ; 50 chapitres en 5 livres,
 projection ≈ 376 000–401 000 mots ; plafond de cinquante chapitres posé en décision 13 et contrôlé par C15 ;
 le ch. 41, la fabrique d'agents, entré en v0.22, est payé par la fusion des ch. 47 et 48**) reste la *spécification de contenu* du compendium — autorité
 sur le découpage et sur chaque chapitre (thèse, sections, ligne Fusion, socle, garde-fous) ;
@@ -116,6 +142,68 @@ contrôles sont outillés par le skill (voir plus bas) ; ⚠ **le vérificateur 
 un enchaînement `&&`**, le code de sortie du dernier maillon masquant son échec — faute déjà commise
 sur le ch. 6, poussé avec un défaut de rendu alors que le contrôle échouait.
 
+## ⚠ Livre III — quinze chapitres rédigés hors portes, D-9 enfreinte deux fois (27 juillet 2026)
+
+⚠ **Sur instruction d'auteur, [`Livre III/`](Livre%20III/) a été créé le 27 juillet 2026 et ses
+quinze chapitres — ch. 22 à 36 — y ont été rédigés en deux rendus chacun**, puis **ses vingt-quatre
+remontées R-IV-76 à R-IV-99 soldées** (TOC **v0.27**, PRD **v0.10**). ⚠ **Le statut du volume est
+inchangé** : socle consolidé à **zéro entrée**, **G-3 non entamée**, aucun énoncé central au sens de
+CA-IV-01, **CA-IV-11 et CA-IV-13 toujours insatisfaites** — *arbitrer n'est pas relire*. **Six choses
+à savoir avant d'éditer ici** ; le tableau des issues et la volumétrie sont au
+[`README.md` de `Livre III/`](Livre%20III/README.md) et **ne sont pas repris**.
+
+*(a)* ⚠ **L'écart de portes de ce Livre est d'un ordre que les deux précédents n'avaient pas atteint :
+il enfreint une DÉCISION D'AUTEUR, pas seulement une porte.** **D-9** ouvre un lot d'instruction du
+§ 17.5 déclaré **bloquant pour les ch. 25 et 27** ; les deux ont été rédigés, **et ils prescrivent
+l'un et l'autre la parade humaine dont ce lot est la limite empirique**. L'infraction est **nommée à
+chaque pièce**, au PRD et au journal du TOC. ⚠ *Le régime est celui que D-7 a appliqué au ch. 6 :
+**un arbitrage qui suit une infraction la solde ; il ne la rattrape pas.*** **G-4 conditionne en
+outre trois chapitres** — ch. 25, 27 et 30, qui consomment le Vol. III — **et son volet de fond reste
+entier**.
+
+*(b)* ⚠ **La classe de défaut de plan trouvée ici est l'INVERSE de celle du Livre II, et c'est le fait
+de méthode qui vaut au-delà du Livre.** Là-bas, cinq thèses **citaient fidèlement** une forme que leur
+source avait bornée après coup — *le plan n'avait pas suivi*. Ici, **deux thèses avaient elles-mêmes
+retranché une borne en la reprenant** : le ch. 25 avait perdu « d'**analystes** » (effaçant l'objet du
+garde-fou d'attribution) et converti une **lecture de l'auteur** en prescription ; le ch. 27 avait
+perdu « **sous l'article 12.1 du moins** ». ⚠ **Cette seconde classe est plus difficile à voir que la
+première** : *la source est intacte, le corps de la pièce est correct — les deux rédacteurs avaient
+écrit sous la forme bornée — et **seule la comparaison mot à mot de la thèse citée avec la thèse
+rédigée la révèle**.* **Domaine déclaré : quinze thèses examinées, deux réalignées** (décision 14).
+
+*(c)* ⚠ **Un arbitrage a été DÉFAIT plutôt que confirmé, et le motif se généralise.** Le plan
+tranchait la date de la ligne directrice québécoise en faveur du Vol. II ; le Vol. I en portait un
+troisième terme ; et le Vol. III, **par extraction à la source primaire**, établit qu'**aucune des
+deux dates arbitrées ne figure aux pages officielles**. ⚠ ***Une divergence dont on découvre
+qu'aucun de ses termes n'est à la source n'est plus une divergence : c'est une absence de datation***
+— *et l'arbitrage qui la tranchait portait sur un objet inexistant.* La somme écrit « avril 2026 » et
+déclare les trois états (R-IV-88).
+
+*(d)* ⚠ **Une décision de régime a été prise au PRD §7.1, et c'est une EXCLUSION du socle** (R-IV-97) :
+les affirmations que le **Vol. I déclare lui-même hors de son propre corpus bibliographique**
+**n'entrent pas au socle consolidé**, à aucun niveau. *Le motif est que **[C] n'est pas assez bas** :
+[C] atteste **une vérification des références** ; une affirmation hors corpus **n'a pas même reçu
+cette vérification-là**.* Elles restent **citables avec leur réserve, jamais versables**.
+
+*(e)* ⚠ **Une enveloppe tenue à +0,3 % ne prouve rien sur ses pièces, et le dire est le résultat le
+plus transférable du Livre.** La cible du Livre est tenue **par compensation** : les écarts
+individuels vont de **−19,9 % à +31,9 %**, cinquante et un points d'amplitude. ⚠ ***Un agrégat
+conforme est compatible avec une dispersion que la conformité de l'agrégat masque*** — c'est
+exactement la mesure que **D-4** attendait, et elle **interdit toujours l'amputation**.
+
+*(f)* ☐ **Deux dettes restent dues, avec leur motif écrit.** **Huit sièges déclarés** — six au ch. 31,
+deux domiciles au ch. 24 — **ne sont PAS versés à [`PRD/check-sieges.py`](PRD/check-sieges.py)** : ce
+fichier était **écrit en parallèle par la rédaction des Livres IV et V le même jour**, et ⚠ *payer une
+dette d'outillage pendant qu'un autre l'écrit produirait une table incohérente que le harnais de
+mutation ne détecterait pas*. **Les pièces portent leurs huit marqueurs** ; **table et harnais restent
+dus, en une passe unique après la clôture des deux Livres.** ⚠ **La même concurrence a déplacé les
+numéros de remontées** : la passe des Livres IV et V avait consommé **R-IV-38 à R-IV-75** et la
+**v0.26** ; *le Livre III a été renuméroté en R-IV-76 à R-IV-99 à la découverte de la collision, et
+**aucun numéro n'est partagé**.* ☑ **La numérotation de version du PRD, elle, est réconciliée** : la
+**v0.10** (arbitrage du Livre III) et la **v0.11** (arbitrage du Livre V) **s'empilent dans l'ordre**,
+la seconde par-dessus la première — *les deux passes se fusionnent, elles ne se remplacent pas*, et
+**aucune ne réécrit la rangée de l'autre**.
+
 ⚠ **Une classe de défaut propre à la somme s'est révélée en rédigeant les ch. 10 et 11, et elle est
 consignée ici parce qu'elle vaut pour tout le compendium.** Dans les deux cas, une **lacune déclarée
 du socle d'un volume** est **comblée par le texte rédigé d'un autre volume** — l'autre source de la
@@ -207,6 +295,23 @@ plan), **`check-sieges.py` (S1-S5, inter-pièces — qu'un siège déclaré ne s
 ailleurs, et que toute pièce touchant sa matière y renvoie)**, et `decompte.sh --verifier` (la
 volumétrie, quatre points d'ancrage sur les trois corpus sources). Chacun a son harnais de mutation
 et se vérifie comme le reste : *un script de contrôle est du contenu.*
+
+⚠ **Elle est passée de sept à NEUF le 27 juillet 2026, avec la rédaction du Livre V** (remontées
+R-IV-64 et R-IV-68), et s'éprouve désormais sur **25 pièces** : s'ajoutent le **siège de la sémantique
+d'effet** (ch. 48 § 48.1) et le **siège du tri prospectif** (ch. 49 § 49.0). ⚠ **Le premier existait
+avant sa pièce, et c'est le fait à retenir** : **six sections rédigées** — ch. 1 § 1.5.2 et § 1.6.2.2,
+ch. 22 § 22.5, ch. 23, ch. 24, ch. 27 — écrivaient déjà « la sémantique d'effet est au ch. 48, qui en
+est le siège » **alors que le TOC ne le désignait nulle part et qu'aucun instrument ne le
+contrôlait** ; il est désigné en v0.26. ⚠ **Le second est versé À MOITIÉ, et l'écart est chiffré** :
+son contrôle **S5 est désactivé** — sur les **treize pièces** qui trient des énoncés prospectifs,
+**six ne renvoient pas au siège** (ch. 13, 18, 19, 20 du Livre II ; ch. 25 du Livre III ; ch. 37 du
+Livre IV) ; *activer S5 produirait six échecs sur des pièces hors de la passe qui verse le siège, et un
+contrôle bruyant est un contrôle ignoré.* **La réactivation est due après alignement des six.** ⚠ **Une
+garde neuve est entrée au script pour cela** — `renvoi: None` désactive S5 pour un siège nommé, **sans
+désactiver S4** : une mutation du harnais l'éprouve (huit mutations depuis cette passe). ⚠ **Et le
+harnais accepte désormais une racine paramétrable** (`COMPENDIUM_RACINE`) : *quand deux passes écrivent
+en parallèle, le temps 1 — « le contrôle passe-t-il sur le corpus intact ? » — n'est interprétable que
+sur le corpus que la passe **committe***.
 
 ⚠ **La table des sièges est passée de trois à sept le 27 juillet 2026, avec la rédaction du
 Livre II** (remontées R-IV-24 et R-IV-37) : aux trois du Livre I s'ajoutent le **KYA** (ch. 18

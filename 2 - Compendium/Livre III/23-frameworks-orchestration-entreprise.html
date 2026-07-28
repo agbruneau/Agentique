@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 23 — Les frameworks d&#x27;orchestration d&#x27;entreprise · La somme agentique</title>
+<meta name="description" content="l&#x27;offre s&#x27;est industrialisée en 2025-2026 (Agent Framework, LangGraph, orchestration événementielle Kafka/Confluent) avec un support MCP répandu et inégalement établi et un support A2A de périmètre inégal.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre III · Chapitre 23</div>
+  <ol>
+    <li><a href="#s230"><span class="num">23.0</span>Ouverture : ce qu&#x27;un principe d&#x27;architecture vaut sans produit pour le porter</a></li>
+    <li><a href="#s231"><span class="num">23.1</span>Microsoft Agent Framework : la succession assumée</a></li>
+    <li><a href="#s232"><span class="num">23.2</span>LangGraph Platform : la GA la plus ancienne, la frontière plateforme/bibliothèque</a></li>
+    <li><a href="#s233"><span class="num">23.3</span>L&#x27;orchestration événementielle : le journal avant le cadre</a></li>
+    <li><a href="#s234"><span class="num">23.4</span>Deux cas en encadré : Temporal et CrewAI</a></li>
+    <li><a href="#s235"><span class="num">23.5</span>Grille de lecture : ce que les patrons livrés positionnent, et ce qu&#x27;ils ne positionnent pas</a></li>
+    <li><a href="#s236"><span class="num">23.6</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.25 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="23-frameworks-orchestration-entreprise.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier</div>
+  <h1><span class="chap">Chapitre 23</span>Les frameworks d&#x27;orchestration d&#x27;entreprise</h1>
+  <p class="titre__situe">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Premier mouvement — autonomie encadrée : orchestration en entreprise (ch. 22-24). Deuxième chapitre du mouvement : il éprouve sur l'offre réelle le vocabulaire que le ch. 22 a posé</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — porte <strong>G-3</strong> ouverte (socle consolidé à zéro entrée) ; volet résiduel de <strong>G-1</strong> non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ <strong>La règle cardinale du PRD §5 est enfreinte.</strong> Voir la note de statut, § 23.6. ⚠ <strong>Ce chapitre est celui du Livre dont les faits se périment le plus vite</strong> : quatre des cinq offres qu'il examine portent un statut de disponibilité daté, et deux d'entre eux étaient pré-disponibilité générale au gel de leur source</dd>
+    <dt>Date de gel</dt>
+    <dd><strong>27 juillet 2026</strong> — gel unique, <strong>D-1 prise</strong> (registre : <a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Volet résiduel de G-1 non instruit</strong> : <strong>aucun statut de disponibilité de ce chapitre n'a été repris à la source primaire</strong>, et les préversions publiques y sont celles que le Vol. II constatait à son propre gel. Gels de source consommés : <strong>16-17 juillet 2026</strong> (Vol. II ch. 7) et <strong>juin 2026</strong> (Vol. I §2.8.4) — ⚠ <strong>aucun des deux ne tient lieu du gel de la somme</strong></dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte). Les énoncés résolvent contre le <strong>Vol. II <em>Monographie</em> ch. 7</strong>, dont les entrées <strong>F-15</strong>, <strong>F-16</strong>, <strong>F-32</strong>, <strong>F-33</strong> et <strong>F-41</strong> conservent leurs niveaux d'origine — <strong>[B]</strong> pour les quatre premières (annonces primaires extraites, citations verbatim), <strong>[B] revalidé</strong> pour F-41 ; l'entrée <strong>Temporal</strong> y demeure au <strong>repérage [C]</strong> et <strong>ne porte aucun fait central</strong> ; l'entrée <strong>CrewAI</strong> s'y tient à <strong>trois niveaux distincts</strong> que la pièce sépare. Le <strong>Vol. I <em>Monographie</em> §2.8.4</strong> entre en <strong>[C]</strong> — repérage documentaire (PRD §7.1). <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd>Vol. II — <strong>PRD §8.2.3 (chiffres d'éditeurs auto-déclarés) : quatre occurrences</strong>, § 23.2 (deux) et § 23.4 (deux), chacune attribuée à sa source à l'endroit même où elle est citée ; <strong>PRD §8.4 (neutralité fournisseur) : trois occurrences</strong>, § 23.0, § 23.3 et § 23.5 ; <strong>R-1 : zéro occurrence</strong> ; <strong>R-8 : zéro occurrence</strong> — le sigle n'apparaît pas dans ce chapitre ; <strong>R-2 à R-7 : zéro occurrence</strong>. Vol. III — <strong>R-09 (quatre statuts, dits à chaque mention) : neuf occurrences</strong>, § 23.1 (deux), § 23.2 (deux), § 23.3 (trois) et § 23.4 (deux) ; <strong>R-14 (trois degrés d'absence) : sept occurrences</strong>, § 23.0, § 23.1, § 23.2 (deux), § 23.4 et § 23.5 (deux) ; <strong>R-02 : deux occurrences</strong>, § 23.1 et § 23.5 ; <strong>R-13 : une occurrence</strong>, § 23.5 ; ⚠ <strong>faux ami déclaré</strong> — le « plan de contrôle » du maillage de services pré-agentique (ch. 1 § 1.3.4) n'apparaît pas ici. <strong>R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ <strong>5 000 mots</strong> de corps (§ 23.0 à § 23.5), <strong>cible dérivée</strong> de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant cinq. ☑ <strong>Décompte publiable depuis G-2</strong> ; la mesure réelle est portée au <a class="lien" href="README.md"> 0 </a> du dossier, par <a class="lien" href="../PRD/decompte.sh"> 1 </a>, <strong>seule autorité de décompte</strong>. ⚠ <strong>D-4 interdit l'amputation comme le gonflement</strong></dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>l'offre s'est industrialisée en 2025-2026 (Agent Framework, LangGraph, orchestration événementielle Kafka/Confluent) avec un support MCP <strong>répandu et inégalement établi</strong> et un support A2A de périmètre inégal.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.25, entrée du chapitre 23.</span>
+</div>
+
+<div class="avert">
+  <p><strong>La thèse a été collationnée contre le texte rédigé de sa source avant la rédaction</strong> (décision 14 du TOC). <strong>Domaine de balayage : une thèse examinée, zéro réalignée.</strong> La forme du TOC <strong>condense</strong> celle du Vol. II — laquelle ajoute « un support A2A <strong>désormais attesté de première main</strong>, mais de périmètre inégal » — sans rien lui faire dire de plus : <em>une condensation qui retranche un qualificatif positif ne surqualifie pas.</em> Le corps écrit néanmoins la forme complète, celle de la source, parce que c'est d'elle que dépend le décompte du § 23.2.</p>
+</div>
+
+<h2 id="s230"><span class="sig">§ 23.0</span>Ouverture : ce qu'un principe d'architecture vaut sans produit pour le porter</h2>
+
+<p>Les deux mouvements du ch. 22 ont posé un vocabulaire et un principe : quatre options d'orchestration permettant de situer une architecture sur un continuum d'encadrement, et l'autonomie encadrée comme mécanisme premier de gouvernance. Reste la question que pose tout architecte d'entreprise une fois la doctrine admise : <strong>que livre effectivement l'industrie, à quelle date, et avec quel statut de disponibilité ?</strong> <em>Un principe d'architecture qu'aucun produit ne sait porter n'est qu'un vœu ; un produit dont la fonctionnalité décisive est en préversion n'est pas encore une décision d'achat.</em></p>
+
+<p>Ce chapitre soutient que l'industrialisation a bel et bien eu lieu — mais qu'elle est <strong>plus inégale que le discours des éditeurs ne le laisse paraître</strong>, et que cette inégalité se loge précisément là où une institution financière regarde : le <strong>statut de disponibilité</strong>, le <strong>périmètre exact</strong> des fonctionnalités d'interopérabilité, et la démarcation entre ce qu'un éditeur <strong>documente</strong> et ce qu'il se contente de <strong>déclarer</strong>. Il couvre <strong>cinq offres</strong>, dans le périmètre exact que le socle autorise : trois au corps, deux en encadré — dont une que le socle ne documente qu'au niveau du repérage.</p>
+
+<div class="avert">
+  <p><strong>Une convention de lecture gouverne tout le chapitre.</strong> Lorsqu'il est écrit ci-dessous que « le socle ne documente pas » telle capacité d'un produit, il faut l'entendre au sens strict : c'est une <strong>absence de documentation dans le corpus de la somme</strong> — degré 3 de l'échelle R-14 du Vol. III —, <strong>non un fait négatif vérifié</strong>. La distinction n'est pas de rhétorique : <em>elle sépare ce qu'un dossier de conformité peut affirmer de ce qu'il doit aller vérifier lui-même.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Neutralité fournisseur.</strong> Le chapitre <strong>nomme</strong> des offres et <strong>ne recommande</strong> aucune d'elles ; aucun comparatif indépendant ne figure au socle, et le peu de métriques disponibles est <strong>auto-déclaré par les éditeurs</strong>. <em>La neutralité interdit de recommander, non de nommer</em> — et un statut qui n'est pas attribué n'est pas revalidable au gel suivant.</p>
+</div>
+
+<p><strong>Ce que le chapitre ne traite pas.</strong> Ni l'identité et les registres d'agents, dont les sièges sont aux <strong>ch. 15 à 18</strong> ; ni le passage à l'échelle d'un parc, qui est au <strong>ch. 24</strong> ; ni la place de la branche événementielle dans un portefeuille d'intégration d'entreprise, qui relève du <strong>Livre IV</strong> ; ni aucune adoption en production dans une institution financière canadienne — c'est l'objet du <strong>ch. 35</strong>, et <strong>aucune des sources citées ici n'y contribue</strong>.</p>
+
+<h2 id="s231"><span class="sig">§ 23.1</span>Microsoft Agent Framework : la succession assumée</h2>
+
+<p>Le premier des trois jalons est daté du <strong>3 avril 2026</strong> : Microsoft Agent Framework atteint sa <strong>disponibilité générale</strong> (<em>general availability</em>, GA) en version 1.0 (Vol. II F-15, <strong>[B]</strong>). Le fait notable n'est pas la version, c'est la <strong>généalogie</strong>. Agent Framework est le successeur direct de deux produits antérieurs du même éditeur — l'un issu de la recherche multi-agents, l'autre de l'intégration d'entreprise —, développés par les mêmes équipes ; il <strong>fusionne</strong> les abstractions d'agents du premier et les fonctionnalités d'entreprise du second, et le socle cite des <strong>guides de migration publiés</strong> —</p>
+
+<div class="avert">
+  <p><strong>sans établir qu'il en existe un par lignée</strong> (<em>absence de documentation, degré 3</em>).</p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> la succession assumée n'est pas un détail de calendrier produit, c'est un <strong>signal de risque de tiers</strong>. Une institution qui avait bâti sur l'une ou l'autre lignée n'affronte pas un abandon, mais une <strong>convergence documentée</strong>, assortie de guides publiés. <strong>Ce que le socle établit</strong> : la filiation, la fusion des abstractions et l'existence de ces guides. <strong>Ce qu'il n'établit pas</strong> : leur couverture par lignée, leur qualité, le coût réel d'une migration, ni aucun engagement de support à long terme. <em>L'inférence porte sur la forme de la transition, pas sur sa facilité.</em></p>
+
+<p>Sur le versant <strong>protocolaire</strong>, Agent Framework est l'offre du socle dont le support du protocole agent-outil est <strong>le mieux caractérisé</strong> : support natif, avec clients, serveurs appelables, outils locaux et outils hébergés. La <strong>bidirectionnalité</strong> mérite qu'on s'y arrête — le framework consomme des outils exposés par des serveurs tiers, et peut lui-même en exposer. C'est exactement la doctrine officielle de complémentarité que le <strong>ch. 8</strong> examine — le protocole agent-outil pour l'intégration d'outils et de contexte au niveau de l'agent individuel, le protocole agent-agent pour la coordination entre agents, que le projet résume par « Complementary to MCP, not a replacement » (Vol. II F-16, <strong>[B]</strong>) —, appliquée ici du premier côté. ⚠ <strong>Et il faut préciser dans le même mouvement ce que la formule ne dit pas</strong> : le protocole agent-outil fournit un <strong>cadre d'autorisation</strong> fondé sur OAuth, ce qui <strong>ne rend « sécurisée » aucune implémentation qui s'en réclame</strong> (réserve F-01 du Vol. II) — <em>un mécanisme se qualifie par ce que sa spécification démontre, non par ce qu'elle promet</em> (R-02 du Vol. III). Le <strong>ch. 11</strong> en documente les surfaces d'attaque.</p>
+
+<div class="avert">
+  <p><strong>Le socle ne documente aucun support du protocole agent-agent pour Agent Framework lui-même</strong> ; les intégrations de ce protocole par les plateformes infonuagiques du même éditeur relèvent d'une autre entrée, traitée au <strong>ch. 8</strong>. Selon la convention posée en ouverture, c'est une <strong>absence de documentation</strong>, non une absence établie.</p>
+</div>
+
+<p>Sur le versant de l'<strong>orchestration</strong>, Agent Framework livre des <em>workflows</em> à base de graphes (<em>graph-based workflows</em>) avec <strong>routage typé</strong>, <strong>points de contrôle</strong> (<em>checkpointing</em>) et <strong>humain-dans-la-boucle</strong> (<em>human-in-the-loop</em>).</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> ce triplet se laisse lire avec les catégories du ch. 22 : le graphe comme <strong>cadre explicite</strong>, le point de contrôle comme instrument de <strong>traçabilité</strong>, l'humain-dans-la-boucle comme <strong>point d'arrêt</strong> de supervision. <strong>Ce que le socle établit</strong> : les capacités d'un côté, la taxonomie de l'autre. <strong>Ce qu'il n'établit pas</strong> : le rapprochement, qui est celui de la somme et se développe au § 23.5. ⚠ <strong>L'humain-dans-la-boucle des frameworks ne se confond pas avec la révision humaine que le ch. 27 examine au titre de l'article 12.1 de la Loi 25</strong> : les deux mécanismes se ressemblent et ne répondent pas au même besoin — le premier est un point d'arrêt d'ingénierie, le second une obligation légale ouverte <strong>sur demande de la personne concernée</strong>.</p>
+
+<p>Deux réserves accompagnent l'entrée du socle, et l'une d'elles porte loin. La première est mineure : un des SDK demeure <strong>en préversion</strong>. La seconde ne l'est pas : le socle documente des <strong>limites connues du magasin de points de contrôle en déploiement distribué multi-conteneurs</strong>.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> une institution financière canadienne qui déploierait ce framework le ferait, selon toute vraisemblance, sur une infrastructure conteneurisée distribuée : <strong>la configuration précise où le socle signale la limite</strong>. Et le mécanisme concerné — le point de contrôle — est celui-là même dont dépend la <strong>reconstitution <em>a posteriori</em> d'une exécution</strong>, c'est-à-dire ce que le ch. 25 rencontrera au titre de la surveillance continue. <strong>Ce que le socle établit</strong> : l'existence de la limite et son domaine. <strong>Ce qu'il n'établit pas</strong> : sa gravité, son contournement, ni le calendrier de sa résolution. <em>La conclusion praticable n'est pas « ne pas déployer », c'est « instruire ce point avant l'inventaire de modèles » — et cette instruction incombe à l'institution, non à la somme.</em></p>
+
+<p><strong>Ce que le Vol. I ajoute, au régime [C].</strong> Le repérage documentaire du Vol. I situe cette offre dans une famille — celle des frameworks de grands fournisseurs, qu'il distingue par le <strong>couplage au fournisseur de modèle</strong>, le <strong>modèle d'exécution</strong> et la <strong>portée d'interopérabilité</strong> — et note deux voisines : l'une articulée autour du passage de relais entre agents, des garde-fous de validation d'entrées et de sorties et du traçage intégré ; l'autre organisant des arbres d'agents nativement interopérables par le protocole agent-agent. ⚠ <strong>Ce repérage n'élève rien</strong> : il vient d'un volume dont la vérification porte sur les références et non sur le contenu des affirmations, et il <strong>ne porte aucun fait central</strong>.</p>
+
+<h2 id="s232"><span class="sig">§ 23.2</span>LangGraph Platform : la GA la plus ancienne, la frontière plateforme/bibliothèque</h2>
+
+<p>Le deuxième jalon est antérieur de moins de onze mois au premier : la disponibilité générale de <strong>LangGraph Platform</strong> est annoncée le <strong>14 mai 2025</strong>, pour le déploiement et la gestion d'agents à état et de longue durée (<em>stateful, long-running agents</em>) — Vol. II F-32, <strong>[B]</strong>, annonce primaire extraite avec citations verbatim. Le billet nomme des entreprises construisant des agents avec la <strong>bibliothèque</strong>, et <strong>une</strong> entreprise cliente pour la gestion centralisée, c'est-à-dire pour la <strong>plateforme</strong>.</p>
+
+<div class="avert">
+  <p><strong>Ces deux énoncés ne se fusionnent pas, et la source impose elle-même la distinction.</strong> Les premiers sont cités comme construisant des agents <strong>avec la bibliothèque</strong> ; la seconde est nommée comme cliente d'entreprise <strong>pour la plateforme</strong>. Le socle ne permet ni de les confondre, ni d'inférer que ces entreprises figurent parmi les déploiements dénombrés ci-dessous. <em>Une référence client nommée est un fait plus solide qu'un décompte agrégé, à condition de ne lui faire dire que ce qu'elle dit.</em></p>
+</div>
+
+<p>Le billet annonce aussi un chiffre. ⚠ <strong>Métrique auto-déclarée, attribuée ici comme elle doit l'être à chaque occurrence</strong> (PRD Vol. II §8.2.3) : <strong>selon le billet de disponibilité générale de LangChain du 14 mai 2025, l'éditeur déclare que près de 400 entreprises avaient déployé des agents en production via la plateforme depuis la bêta de juin 2024</strong> — soit sur les onze mois qui séparent les deux dates. <strong>Cette donnée est auto-déclarée et n'a fait l'objet d'aucune vérification indépendante.</strong> Elle n'est pas pour autant sans valeur : à la différence des décomptes d'« organisations de soutien » examinés au <strong>ch. 7</strong>, elle prétend mesurer un <strong>déploiement en production</strong>, ce qui est la grandeur pertinente. Mais elle est déclarée par le vendeur du produit qu'elle valorise, <strong>sans définition publiée de l'unité comptée</strong>.</p>
+
+<p>Le point décisif est ailleurs, et il est <strong>de périmètre</strong>. Le billet de mai 2025 <strong>ne mentionne ni le protocole agent-outil ni le protocole agent-agent</strong>. Une passe d'élévation du 16 juillet 2026 a comblé une partie de ce silence, mais d'une manière qu'il faut énoncer avec exactitude : le support du protocole agent-agent est confirmé de première main <strong>pour la plateforme commerciale</strong> — la documentation officielle décrit un point d'entrée dédié et trois méthodes nommées — <strong>mais pas pour la bibliothèque libre</strong>, où la fonctionnalité demeurait une <strong>requête ouverte</strong> au 3 avril 2026.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> cette frontière n'est pas technique, elle est <strong>commerciale</strong>, et elle se lit dans un dossier d'approvisionnement avant de se lire dans une architecture. L'interopérabilité inter-agents de cette lignée est, à la date de gel, une <strong>propriété de l'offre commerciale et non de la bibliothèque libre</strong>. Une institution qui adopterait la bibliothèque en pensant obtenir le protocole agent-agent, ou qui construirait un scénario de repli sur elle en supposant la parité fonctionnelle, <strong>se tromperait sur ce qu'elle achète et sur ce qu'elle peut internaliser</strong>. <strong>Ce que le socle établit</strong> : les deux versants de l'asymétrie. <strong>Ce qu'il n'établit pas</strong> : l'intention de l'éditeur, ni le calendrier d'une éventuelle convergence.</p>
+
+<div class="avert">
+  <p><strong>Quant au support du protocole agent-outil, le socle n'en documente aucune source de première main</strong> — absence de documentation, degré 3, et non fait négatif vérifié. Elle suffit néanmoins à mesurer ce que la thèse entend par un support « répandu et inégalement établi », et <strong>le décompte le montre plus précisément encore.</strong></p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Offre</th><th>Protocole agent-outil</th><th>Protocole agent-agent</th><th>Niveau</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Agent Framework</strong></td><td>documenté <strong>de première main</strong></td><td>non documenté</td><td><strong>[B]</strong> (F-15)</td></tr>
+    <tr><td><strong>LangGraph</strong></td><td><strong>non documenté</strong></td><td><strong>plateforme commerciale seulement</strong> — pas la bibliothèque libre</td><td><strong>[B]</strong> (F-32)</td></tr>
+    <tr><td><strong>Confluent / Kafka</strong></td><td>documenté <strong>de première main</strong></td><td><strong>préversion publique</strong></td><td><strong>[B]</strong> (F-33)</td></tr>
+    <tr><td><strong>Temporal</strong></td><td><strong>repéré, non extrait</strong></td><td>non documenté</td><td><strong>[C]</strong> — ne porte aucun fait central</td></tr>
+    <tr><td><strong>CrewAI</strong></td><td><strong>repéré, non extrait</strong></td><td>documenté <strong>de première main</strong></td><td><strong>[B]</strong> sur ce seul volet</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 23.1 — Les cinq offres et le régime de preuve de leur support protocolaire, au gel du Vol. II (16-17 juillet 2026). ⚠ <strong>Aucune ligne n'a été reprise à la source primaire pour la somme</strong> — le volet résiduel de G-1 est dû.</p>
+
+<p><strong>Sur les cinq offres, le support du protocole agent-outil n'est documenté de première main que pour deux</strong> — Agent Framework et Confluent —, <strong>repéré sans extraction pour deux autres</strong> — Temporal et CrewAI, que le socle range l'un et l'autre au niveau <strong>[C]</strong> —, et <strong>non documenté pour la cinquième</strong>. <em>Répandu, en effet ; inégalement établi, surtout — et à aucun moment « généralisé », mot que le décompte réfute et que la thèse ne porte pas.</em></p>
+
+<div class="avert">
+  <p><strong>C'est de ce décompte que dépend la thèse, et c'est pourquoi CrewAI ne se note jamais d'une étiquette unique</strong> : lui attribuer un « <strong>[B]</strong> » global écraserait la distinction entre son volet agent-agent, élevé sur source primaire extraite, et son volet agent-outil, resté au repérage — et le décompte « <strong>deux offres sur cinq de première main</strong> » tomberait avec elle. Le § 23.4 tient les trois niveaux séparés.</p>
+</div>
+
+<p><strong>Ce que le Vol. I ajoute, au régime [C].</strong> Le repérage du Vol. I décrit la mécanique de cette lignée : un système agentique y est modélisé comme un <strong>graphe d'états</strong> où chaque nœud transforme un état partagé et où des <strong>réducteurs</strong> déterminent comment fusionner les mises à jour concurrentes ; la persistance de l'état après chaque pas autorise <strong>reprise, retour en arrière et intervention humaine</strong>.</p>
+
+<div class="avert">
+  <p><strong>Ce repérage n'établit aucun statut de disponibilité</strong> : c'est l'entrée du Vol. II qui les porte, et elle seule.</p>
+</div>
+
+<h2 id="s233"><span class="sig">§ 23.3</span>L'orchestration événementielle : le journal avant le cadre</h2>
+
+<p>Des trois branches traitées au corps, la troisième est <strong>la seule à ne pas être en disponibilité générale</strong>, et c'est peut-être la plus intéressante pour une institution financière — <em>parce qu'elle raisonne en flux, comme les paiements.</em></p>
+
+<p>En <strong>août 2025</strong>, un éditeur annonce des <strong>agents événementiels</strong> sur son offre infonuagique : exécution sur un moteur de traitement de flux et un bus de messages managés, avec <strong>appel d'outils déclaré nativement</strong> par le protocole agent-outil (Vol. II F-33, <strong>[B]</strong>). Six mois plus tard, une mise à jour du <strong>26 février 2026</strong> ajoute trois éléments : une <strong>intégration du protocole agent-agent en préversion publique</strong> (<em>Open Preview</em>), permettant à ces agents d'orchestrer des tâches avec des agents externes sur toute plateforme compatible ; le <strong>support officiel du serveur d'outils libre</strong> pour son offre infonuagique ; et une caractérisation du transport qui mérite d'être citée en langue originale pour ce qu'elle affirme — la collaboration inter-agents s'y opère « all over a reliable, replayable Kafka backbone », soit <strong>sur une dorsale fiable et rejouable</strong>.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> c'est là que le présent mouvement rejoint ce que le ch. 22 § 22.4 a établi. Les travaux repris là-bas — un préprint non révisé par les pairs, dont les auteurs déclarent eux-mêmes des menaces à la validité — posent que <strong>la journalisation confiée aux agents n'est généralement pas recommandée</strong>. Un bus d'événements rejouable répond exactement à ce problème : il <strong>externalise le journal hors des agents</strong>, et le rend rejouable <strong>par construction plutôt que par discipline</strong>. <strong>Ce que le socle établit</strong> : la caractérisation du transport par son éditeur, et la position des travaux repris au ch. 22. <strong>Ce qu'il n'établit pas</strong> : le rapprochement entre les deux, qui est une inférence de la somme — ⚠ <strong>et une inférence dont la portée est bornée.</strong> <em>Un bus fiable et rejouable fournit un <strong>journal</strong>, non un <strong>cadre</strong> : il enregistre ce qui s'est produit, il n'impose pas ce qui doit se produire.</em> <strong>La traçabilité n'est pas l'encadrement</strong>, et le deuxième mouvement du présent Livre montrera que les exigences canadiennes réclament <strong>les deux</strong>.</p>
+
+<p>La liste des plateformes que cet éditeur cite comme partenaires possibles recoupe le périmètre du chapitre : <strong>un seul de ces noms</strong> renvoie à une offre dont le socle confirme de première main, chez son propre éditeur, un support du protocole agent-agent. Un autre est cité <strong>sans que le produit visé soit précisé</strong>, et le socle ne permet pas de le rattacher à la plateforme commerciale plutôt qu'à la bibliothèque libre — laquelle n'a précisément aucun support documenté. <strong>La frontière posée au § 23.2 interdit de trancher à la place de la source.</strong></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> la recoupe vaut d'être notée pour ce seul cas, où la somme dispose d'attestations <strong>des deux côtés</strong> plutôt que d'un seul. Elle ne va pas plus loin : la mention est une déclaration d'un éditeur sur ce que <strong>son</strong> intégration permettrait, la confirmation vient de l'éditeur cité et porte sur <strong>son propre</strong> produit, et <strong>aucune source du socle ne documente une liaison effectivement établie entre deux de ces offres</strong> — l'une des deux extrémités étant du reste en préversion.</p>
+
+<div class="avert">
+  <p><strong>Deux réserves sont dirimantes.</strong> Les fonctionnalités décrites sont <strong>pré-disponibilité générale</strong> — préversion publique ou accès anticipé. Et la source <strong>ne nomme aucun client et ne publie aucun chiffre d'adoption</strong> : <em>l'adoption en production ne peut pas en être inférée.</em> Le contraste avec la section précédente est instructif : l'un publie un chiffre auto-déclaré qu'il faut attribuer, l'autre n'en publie aucun — ce qui interdit toute affirmation d'adoption mais épargne au lecteur une métrique invérifiable. <strong>Aucune des deux situations ne permet d'écrire que la branche événementielle est déployée en production dans une institution financière.</strong></p>
+</div>
+
+<p><strong>Un fait de propriété, enfin</strong>, dont ce chapitre ne développe pas les conséquences. L'acquisition de cet éditeur par un grand fournisseur d'infrastructure a été <strong>annoncée le 8 décembre 2025 et clôturée le 17 mars 2026</strong> — dix-neuf jours après la mise à jour décrite ci-dessus (Vol. II F-41, <strong>[B] revalidé</strong>). Ce qui en découle pour un portefeuille d'intégration d'entreprise relève du <strong>Livre IV</strong>, sous la réserve de <strong>neutralité fournisseur</strong>. Retenons ici le seul point qui concerne l'architecte en amont de son choix : <strong>la trajectoire événementielle décrite ci-dessus a changé de propriétaire entre son annonce et la date de gel de sa source.</strong></p>
+
+<p><strong>Ce que le Vol. I ajoute, au régime [C].</strong> Une troisième famille y est décrite, qui mêle déterminisme et agentivité par un <strong>modèle événementiel</strong> : des étapes enchaînées par décorateurs de démarrage et d'écoute, articulant des équipes d'agents à rôles au sein de flux pilotés par événements ; ou des étapes déclenchées par des événements, offrant une primitive légère pour composer comportements agentiques et passages strictement déterministes. <strong>Ces approches rendent explicite le graphe de dépendances entre étapes</strong>, ce qui facilite la traçabilité et la composition — <em>et c'est précisément la propriété que le § 23.5 identifiera comme un matériau, non comme un positionnement.</em></p>
+
+<h2 id="s234"><span class="sig">§ 23.4</span>Deux cas en encadré : Temporal et CrewAI</h2>
+
+<p>Les deux offres restantes <strong>ne se traitent pas au même niveau de preuve</strong>, et c'est la raison de leur mise en encadré.</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p><strong>État de la connaissance vérifiable — l'adoption d'entreprise de Temporal.</strong> Question : quelle est l'adoption d'entreprise de cette offre, et quel est le statut exact de son support des agents et du protocole agent-outil ? <strong>Recherche : aucune.</strong> La passe d'élévation bornée du 16 juillet 2026 ne l'a pas instruite — elle portait sur quatre autres cibles. ⚠ <strong>La lacune du socle (PRD Vol. II §10.3, réduite en P0) subsiste ici faute de tentative, non par échec de recherche</strong>, et les chiffres d'adoption d'entreprise demeurent non vérifiés. <em>La distinction importe en dossier de conformité : rien n'autorise à conclure que ces chiffres résisteraient à la vérification, ni qu'ils s'y déroberaient.</em> Le socle n'en conserve qu'un <strong>repérage documentaire</strong> — un billet officiel décrivant une intégration en préversion publique, chaque invocation d'agent s'exécutant comme activité orchestrée dans un <em>workflow</em> durable, ainsi que des recettes d'outillage dans la documentation — <strong>sans extraction intégrale du contenu</strong>. ⚠ <strong>Ce niveau de preuve interdit à ces éléments de porter un fait central</strong> ; ils sont mentionnés comme repérage, et à ce titre seulement. En l'absence de source primaire extraite, la question reste ouverte ; <strong>aucune inférence n'est proposée ici</strong>.</p>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p><strong>CrewAI — première main sur le protocole agent-agent, repérage sur le protocole agent-outil, autodéclaration sur l'adoption.</strong> Cette offre se documente <strong>à trois niveaux de preuve distincts</strong>, qu'il faut tenir séparés — c'est ce qui la distingue de la précédente, uniformément au repérage. <em>(1)</em> Le support du <strong>protocole agent-agent</strong> y est documenté de première main, <strong>élevé [B] le 16 juillet 2026</strong> sur source primaire extraite : la documentation officielle énonce que « CrewAI treats A2A protocol as a first-class delegation primitive », décrit une variante d'installation dédiée et deux classes de configuration nommées, et porte un journal des modifications daté depuis novembre 2025. <em>(2)</em> Le support du <strong>protocole agent-outil</strong> relève d'un deuxième régime : il est documenté officiellement par l'éditeur — connexion par trois transports, les outils étant consommés comme des outils natifs — mais le socle le laisse au <strong>repérage [C]</strong>, n'en ayant pas extrait le contenu, et l'élévation du 16 juillet 2026 n'a porté que sur le premier volet. ⚠ <strong>Il ne peut donc porter aucun fait central</strong> — d'où le décompte du § 23.2. <em>(3)</em> Les <strong>chiffres d'adoption</strong> relèvent d'un troisième régime. ⚠ <strong>Métrique auto-déclarée</strong> (PRD Vol. II §8.2.3) : <strong>selon CrewAI — qui ne publie à cet endroit ni source datée ni définition de l'unité comptée —, l'éditeur déclare que sa plateforme est employée par des entreprises du Fortune 500 et qu'elle a enregistré environ deux milliards d'exécutions sur douze mois. Ces données sont auto-déclarées et n'ont fait l'objet d'aucune vérification indépendante.</strong> ⚠ <strong>L'écart avec la métrique du § 23.2 joue contre celle-ci</strong> : celle-là est datée et rattachée à un billet identifiable, donc situable et contestable ; celle-ci ne l'est pas. Ces chiffres <strong>ne fondent aucune affirmation d'adoption en production dans le secteur financier canadien</strong>.</p>
+</div>
+
+<p><strong>Ce que le Vol. I ajoute, au régime [C].</strong> Le thème d'ingénierie que ces deux cas illustrent est celui de l'<strong>exécution durable</strong> — garantir qu'un système agentique long survive aux pannes, reprenne là où il s'est arrêté et <strong>n'exécute pas deux fois une action non idempotente</strong>. Le repérage du Vol. I note que la persistance interne d'un framework s'appuie de plus en plus sur des <strong>moteurs dédiés</strong>, et que s'y ajoutent des <strong>garde-fous structurels</strong> — intervention humaine, sorties structurées, diffusion de résultats partiels — et une <strong>observabilité native</strong>. ⚠ <strong>La mécanique de ces moteurs est posée au ch. 22 § 22.5.1 et n'est pas reconstruite ici</strong> ; la <strong>sémantique d'effet</strong> que le mot « idempotente » appelle est au <strong>ch. 48</strong>, qui en est le siège.</p>
+
+<h2 id="s235"><span class="sig">§ 23.5</span>Grille de lecture : ce que les patrons livrés positionnent, et ce qu'ils ne positionnent pas</h2>
+
+<p>Il reste à faire ce pour quoi le ch. 22 a construit son vocabulaire : <strong>situer les patrons livrés sur la taxonomie OO1-OO4</strong>.</p>
+
+<div class="avert">
+  <p><strong>L'exercice appelle un avertissement préalable, et il est dirimant.</strong> <strong>Aucune source du socle ne positionne un framework sur l'échelle OO1-OO4</strong> : la taxonomie est un cadre académique, les produits sont documentés par leurs éditeurs, et <strong>le corpus de la somme ne contient aucune source rapprochant les deux</strong> — <em>absence de documentation, degré 3, conformément à la convention posée au § 23.0.</em> Le tableau qui suit est donc <strong>intégralement une construction d'auteur</strong>.</p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> le tableau ci-dessous rapproche ce que le socle établit d'un côté et de l'autre. <strong>Ce que le socle établit</strong> : les capacités documentées de chaque offre, et la taxonomie du ch. 22. <strong>Ce qu'il n'établit pas</strong> : le moindre positionnement, qu'aucune source ne porte.</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Patron livré</th><th>Ce que le socle établit</th><th>Positionnement proposé <em>(construction d'auteur)</em></th></tr></thead>
+  <tbody>
+    <tr><td><em>Workflows</em> à base de graphes, routage typé</td><td>Agent Framework, GA 1.0 (F-15)</td><td>le graphe est un <strong>cadre explicite extérieur aux agents</strong> — <strong>OO3 ou OO4</strong> selon que les agents invoqués sont ou non conscients du processus</td></tr>
+    <tr><td>Points de contrôle</td><td>Agent Framework, GA 1.0 ; limites en multi-conteneurs (F-15)</td><td>instrument de la propriété <strong>traçabilité</strong>, <strong>non une option d'orchestration</strong> en soi</td></tr>
+    <tr><td>Humain-dans-la-boucle</td><td>Agent Framework, GA 1.0 (F-15)</td><td><strong>point d'arrêt de supervision</strong> ; critère de sélection du ch. 22 § 22.3, non un positionnement</td></tr>
+    <tr><td>Agents durables</td><td>Temporal — <strong>repérage [C]</strong>, ne porte aucun fait central</td><td><strong>aucun positionnement proposé</strong> : le niveau de preuve ne le permet pas</td></tr>
+    <tr><td>Bus d'événements comme transport inter-agents</td><td>Confluent, protocole agent-agent en préversion publique sur dorsale rejouable (F-33)</td><td>le protocole agent-agent <strong>sans cadre de processus explicite est la définition même d'OO1</strong> ; le bus ajoute <strong>le journal, non le cadre</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 23.2 — Les patrons livrés, situés sur la taxonomie du ch. 22 § 22.1. <strong>La colonne de droite est une construction d'auteur en totalité</strong> — aucune source du socle ne rapproche produits et taxonomie.</p>
+
+<p>De ce tableau, un enseignement se dégage, et c'est le principal du chapitre. <strong>Aucun des frameworks examinés ne livre un positionnement ; ils livrent des matériaux qui en autorisent plusieurs.</strong> Un même framework sert à câbler un graphe déterministe qui invoque des agents pour des tâches bornées — de l'ordre d'OO3 — ou à laisser un agent choisir librement ses outils sans cadre explicite — de l'ordre d'OO1. <em>Le produit n'arbitre pas ; la configuration arbitre.</em> Le cadre repris au ch. 22 rappelle d'ailleurs que <strong>les transitions entre options sont fluides</strong>, ce qui est la même observation vue depuis la théorie.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> et elle engage la suite du Livre : <strong>si le positionnement est un fait de configuration et non de produit, alors la question « quel framework choisir ? » est mal posée pour une institution réglementée.</strong> La bonne question est « <strong>quel cadre imposer, et quel produit sait le porter ?</strong> » — <em>l'ordre des termes n'est pas indifférent.</em> <strong>Ce que le socle établit</strong> : les deux moitiés — la taxonomie d'un côté, les capacités documentées de l'autre. <strong>Ce qu'il n'établit pas</strong> : le rapprochement, ni cette conséquence de méthode. C'est elle qui explique pourquoi le <strong>Livre IV</strong> construit son architecture de référence <strong>à partir des exigences et non du catalogue</strong>, et pourquoi le <strong>ch. 29</strong> est le pivot qui les traduit.</p>
+
+<div class="avert">
+  <p><strong>Une dernière borne, et elle est de vocabulaire.</strong> Rien de ce qui précède n'autorise à ranger ces offres sur une échelle d'autonomie : les échelles d'autonomie ne s'emploient jamais nues (R-13 du Vol. III), elles se nomment par leur cardinal et leur numérotation, et <strong>le ch. 14 § 14.4 en est le lieu de croisement pour toute la somme</strong>. <em>Un produit ne se situe pas sur une échelle d'autonomie ; une configuration s'y situe.</em></p>
+</div>
+
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
+
+<p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
+
+<ol class="numeros">
+  <li><strong>Une industrialisation datée, et son inégalité.</strong> Deux jalons de disponibilité générale sont datés et vérifiables — 14 mai 2025 et 3 avril 2026 —, la branche événementielle demeurant en préversion au gel de sa source. Le <strong>ch. 35</strong> ne réutilise aucun de ces faits : <em>il traite d'institutions, non d'éditeurs.</em></li>
+  <li><strong>Le décompte « deux offres sur cinq de première main », et ce qui le tient.</strong> Il ne tient que si CrewAI est noté <strong>à trois niveaux séparés</strong>. <em>Une étiquette unique le renverserait sans qu'aucun contrôle ne le signale.</em></li>
+  <li><strong>La frontière plateforme / bibliothèque libre.</strong> Elle est <strong>commerciale</strong>, non technique, et se lit dans un dossier d'approvisionnement. Le <strong>ch. 24 § 24.2</strong> la reprend au grain de la stratégie de standards ouverts, sans la redémontrer.</li>
+  <li><strong>Le journal n'est pas le cadre.</strong> Un bus rejouable externalise la trace ; il n'impose rien. C'est la distinction que le <strong>ch. 29</strong> consomme pour montrer que les exigences canadiennes réclament les deux.</li>
+  <li><strong>Aucun produit n'arbitre le degré d'encadrement.</strong> La question se pose dans l'ordre inverse — quel cadre imposer, quel produit sait le porter. Le <strong>Livre IV</strong> en fait sa méthode de construction.</li>
+</ol>
+
+<div class="avert">
+  <p><strong>Ce que le chapitre ne lègue pas.</strong> Aucun classement, aucune recommandation, aucune adoption en production dans une institution financière canadienne. Aucune métrique utilisable sans son attribution. Et <strong>aucun positionnement établi</strong> sur la taxonomie du ch. 22 : <em>le tableau 23.2 est une lecture, et il se déclare telle à chacune de ses lignes.</em></p>
+</div>
+
+<section class="statut" id="s236">
+
+<h2><span class="sig">§ 23.6</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A) : <em>un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il <strong>remonte</strong>.</em></p>
+</div>
+
+<p><strong>Ce qui est enfreint.</strong> La porte <strong>G-3</strong> et le <strong>volet résiduel de G-1</strong>. Instruction d'auteur du 27 juillet 2026. ⚠ <strong>La porte G-4 ne conditionne pas ce chapitre</strong> : sa ligne Fusion ne cite que le Vol. II et le Vol. I. ⚠ <strong>L'ordre de rédaction du PRD §6 n'est pas enfreint.</strong></p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01.</strong> Le socle consolidé compte zéro entrée ; les identifiants cités — F-15, F-16, F-32, F-33, F-41 — sont <strong>ceux du Vol. II</strong>, préfixés à chaque emploi (décision 7). Les éléments repris du Vol. I entrent en <strong>[C]</strong> et une élévation supposerait la lecture des sources primaires que le Vol. I cite.</li>
+  <li>⚠ <strong>Le volet résiduel de G-1 pèse plus lourd ici que sur tout autre chapitre du Livre.</strong> Ce chapitre vit de <strong>statuts de disponibilité</strong>, et <strong>aucun n'a été repris à la source primaire</strong> : une préversion publique de février 2026 a pu passer en disponibilité générale, une requête ouverte au 3 avril 2026 a pu être close, un SDK en préversion a pu être publié. <em>Chacun de ces faits est vrai à sa date et faux à la suivante</em> — et le <strong>ch. 50</strong> enregistrera ces événements de péremption.</li>
+  <li><strong>Les décomptes sont publiables</strong> (G-2). L'écart à la cible est relevé au <a class="lien" href="README.md"> 0 </a> du dossier et alimente <strong>D-4</strong>, déjà tranchée.</li>
+  <li><strong>Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan.</strong> Ils résolvent contre l'entrée du TOC : <strong>ch. 24, 25, 27, 29, 35</strong> (présent Livre, même passe), <strong>ch. 48</strong>, <strong>ch. 50</strong> et le <strong>Livre IV</strong> dans son ensemble. Résolvent contre du <strong>texte rédigé</strong> : <strong>ch. 1 § 1.3.4</strong>, <strong>ch. 7</strong>, <strong>ch. 8</strong>, <strong>ch. 11</strong>, <strong>ch. 14 § 14.4</strong>, <strong>ch. 15 à 18</strong> et <strong>ch. 22</strong>.</li>
+</ol>
+
+<p><strong>Remontées ouvertes par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-78 — non bloquante, de forme, et corollaire de R-IV-77.</strong> Le TOC intitule le § 23.4 « <strong>Deux cas en encadré</strong> » : la forme y est <strong>prescrite par le plan</strong>. Or le skill de rédaction pose que les encadrés « cessent au Livre III ». ⚠ <strong>Les deux règles ne portent pas sur le même objet et l'écart est réel</strong> : la règle du skill vise les <strong>deux dispositifs hérités du Vol. I</strong> — « Perspective recherche » et « Mise en œuvre » —, tandis que le § 23.4 emploie le dispositif du <strong>Vol. II</strong>, l'état de la connaissance vérifiable, que rien n'a supprimé. La pièce a suivi le TOC, qui prime sur le contenu. <strong>Demande remontée</strong> : que la règle du skill nomme les dispositifs qu'elle éteint, plutôt que le mot « encadré ». <em>Une règle formulée sur un mot plutôt que sur un objet éteint plus que ce qu'elle vise.</em></li>
+  <li><strong>R-IV-79 — non bloquante, de cardinal daté.</strong> La thèse et le § 23.2 reposent sur le décompte « deux offres sur cinq de première main », qui est <strong>un cardinal annoncé en toutes lettres</strong>. ⚠ <strong>Il n'est vrai qu'au gel du Vol. II</strong> : il bascule dès qu'une seule des trois offres au repérage est élevée, et le volet résiduel de G-1 n'a précisément pas été exécuté. <strong>Demande remontée</strong> : que ce cardinal soit inscrit au <strong>registre des faits à re-mesurer au gel de publication</strong>, comme l'a été celui du ch. 18 (remontée R-IV-31), et que <strong>le tableau 23.1 porte sa date</strong> au même titre que le tableau 18.1. <em>Un cardinal annoncé en toutes lettres ne se met pas à jour tout seul.</em></li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.25</strong> — § 23.1 à § 23.5, dans l'ordre exact —, le § 23.0 étant une <strong>ouverture de chapitre</strong>. La <strong>table de couverture est respectée pour ses deux lignes</strong> : le Vol. II §7.1-7.5 est condensé aux § 23.1-23.5, et le Vol. I §2.8.4 <strong>arrive</strong> aux § 23.1-23.4, <strong>arrivée déclarée aux deux bouts</strong> — le ch. 6 en déclare le départ.</p>
+
+<div class="avert">
+  <p><strong>Les quatre sous-sections du Vol. I sont toutes reçues</strong> : §2.8.4.1 au § 23.2, §2.8.4.2 au § 23.1, §2.8.4.3 au § 23.3, §2.8.4.4 au § 23.4 — <em>aucune n'est perdue en chemin</em>, ce qui était le risque de la répartition d'une source unique sur quatre destinations. La <strong>décision 14 a été exécutée avant la rédaction</strong>, domaine déclaré : une thèse examinée, zéro réalignée. Les <strong>garde-fous des deux séries sont balayés et déclarés, y compris à zéro occurrence</strong>. Les <strong>quatre métriques auto-déclarées sont attribuées à chaque occurrence, sans exception d'usage illustratif</strong> (PRD Vol. II §7.5 et §8.2.3), et <strong>les quatre statuts de disponibilité sont dits à chaque mention</strong> (R-09 du Vol. III). Les <strong>sept occurrences de R-14 portent leur degré</strong>. La <strong>lacune PRD Vol. II §10.3 est portée et non comblée</strong> : elle est déclarée subsistante <strong>faute de tentative</strong>, non par échec de recherche — <em>la distinction est celle que le Vol. II a lui-même établie, et l'effacer transformerait une lacune d'instruction en un constat.</em> Enfin, <strong>la neutralité fournisseur est tenue</strong> : cinq offres nommées, aucune recommandée, et le fait de propriété du § 23.3 rapporté <strong>sans en tirer de conséquence de portefeuille</strong>.</p>
+</div>
+
+<h3>Clôture des remontées — 27 juillet 2026</h3>
+
+<div class="avert">
+  <p><strong>Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.</strong> Elle enregistre l'issue des remontées ouvertes par cette pièce. <em>Une remontée ne se clôt pas là où elle s'ouvre : elle se solde là où elle fait foi</em> — au <a class="lien" href="../PRD/PRD.md">PRD</a> pour une décision ou un régime, au <a class="lien" href="../PRD/TOC.md">TOC</a> pour un réalignement de plan, à l'appareil pour une dette d'outillage.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Renumérotation, à lire avant les numéros.</strong> <em>Les remontées de ce Livre portaient d'abord les numéros <strong>R-IV-38 à R-IV-61</strong> ; une <strong>passe concurrente écrivait les Livres IV et V dans le même dépôt le même jour</strong> et les avait consommés. <strong>Le Livre III a été renuméroté en R-IV-76 à R-IV-99</strong> à la découverte de la collision — <strong>aucun numéro n'est partagé</strong>.</em></p>
+</div>
+
+<ul class="puces">
+  <li><strong>R-IV-78 — close avec R-IV-77 (PRD v0.10 §8).</strong> ⚠ <em>Le § 23.4 est la preuve de la clarification</em> : <strong>le plan prescrit l'encadré</strong> — son intitulé porte « Deux cas en encadré » — <strong>et le dispositif employé est celui du Vol. II</strong>, que la règle d'extinction ne vise pas. <em>La pièce avait suivi le TOC, qui prime sur le contenu.</em></li>
+  <li><strong>R-IV-79 — close par versement au registre du volet résiduel de G-1 (PRD v0.10 §5).</strong> Le cardinal « <strong>deux offres sur cinq de première main</strong> », ⚠ <em>dont <strong>la thèse du chapitre dépend</strong></em>, entre au <strong>registre des faits à re-mesurer au gel de publication</strong> — <em>il <strong>bascule dès qu'une seule des trois offres au repérage est élevée</strong></em>. ☑ <strong>Le tableau 23.1 porte sa date</strong>, comme le tableau 18.1 du ch. 18 après R-IV-31.</li>
+</ul>
+
+<div class="avert">
+  <p><strong>Ce que la clôture ne change pas.</strong> Les portes <strong>G-3</strong> et — pour les chapitres qui citent le Vol. III — <strong>G-4</strong> demeurent ouvertes ; le socle consolidé compte <strong>zéro entrée</strong> ; <strong>aucun énoncé de cette pièce n'est central au sens de CA-IV-01</strong>. <strong>CA-IV-11 et CA-IV-13 ne sont pas satisfaites</strong> — <em>aucune relecture par un relecteur distinct du rédacteur</em>. Cette pièce reste un <strong>brouillon non publiable</strong>. <em>Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.</em></p>
+</div>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre III, chapitre 23. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.25, entrée du chapitre 23, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>

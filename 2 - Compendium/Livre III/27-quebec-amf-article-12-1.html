@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 27 — Québec : la ligne directrice IA de l&#x27;AMF et l&#x27;article 12.1 de la Loi 25 · La somme agentique</title>
+<meta name="description" content="le Québec dispose du cadre le plus explicite ; l&#x27;art. 12.1 (révision humaine sur demande) entre en friction directe avec la décision agentique autonome, et son imputabilité pèse sur l&#x27;assujetti.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre III · Chapitre 27</div>
+  <ol>
+    <li><a href="#s270"><span class="num">27.0</span>Ouverture : le régime qui se déclenche sur une propriété d&#x27;architecture</a></li>
+    <li><a href="#s271"><span class="num">27.1</span>La ligne directrice IA de l&#x27;AMF : chronologie et convergence</a></li>
+    <li><a href="#s272"><span class="num">27.2</span>L&#x27;article 12.1 : trois obligations, un texte</a></li>
+    <li><a href="#s273"><span class="num">27.3</span>Le critère « exclusivement » et l&#x27;humain-dans-la-boucle</a></li>
+    <li><a href="#s274"><span class="num">27.4</span>L&#x27;article 12.1 et la décision automatisée multi-agents : état des positions</a></li>
+    <li><a href="#s275"><span class="num">27.5</span>La ligne directrice AMF relue par la grille des cinq questions</a></li>
+    <li><a href="#s276"><span class="num">27.6</span>Le mandat agentique en droit civil québécois : ce que l&#x27;analogie porte</a></li>
+    <li><a href="#s277"><span class="num">27.7</span>Cartographie des lectures, sans verdict</a></li>
+    <li><a href="#s278"><span class="num">27.8</span>Conséquences d&#x27;architecture</a></li>
+    <li><a href="#s279"><span class="num">27.9</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.25 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="27-quebec-amf-article-12-1.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier</div>
+  <h1><span class="chap">Chapitre 27</span>Québec : la ligne directrice IA de l&#x27;AMF et l&#x27;article 12.1 de la Loi 25</h1>
+  <p class="titre__situe">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Deuxième mouvement — le cadre réglementaire canadien (ch. 25-30). Troisième chapitre du mouvement, et <strong>siège de deux objets pour toute la somme</strong> : l'application de la grille des cinq questions à la ligne directrice de l'AMF, et la question Q4 de la série d'agenda du Vol. II</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — ⚠ <strong>et il porte, avec le ch. 25, l'écart de gouvernance le plus lourd du Livre.</strong> <strong>G-3</strong> ouverte ; <strong>G-4</strong> ouverte et <strong>opposable à ce chapitre</strong>, dont trois sections sur huit proviennent du Vol. III ; <strong>volet résiduel de G-1</strong> non instruit. ⚠ <strong>Il est bloqué nommément par la décision d'auteur D-9</strong> — « les ch. 25 et 27 ne se lancent pas avant clôture du lot [du § 17.5] », lot <strong>ouvert et non clos</strong>. Rédigé sur instruction d'auteur du 27 juillet 2026 ; <strong>l'infraction est consignée, non effacée</strong> (§ 27.9)</dd>
+    <dt>Date de gel</dt>
+    <dd><strong>27 juillet 2026</strong> — gel unique, <strong>D-1 prise</strong> (registre : <a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Volet résiduel de G-1 non instruit — et il pèse ici sur une date que trois documents du dépôt donnent différemment</strong> (voir § 27.1). Gels de source consommés : <strong>16-17 juillet 2026</strong> (Vol. II ch. 11), <strong>21 juillet 2026</strong> (Vol. III ch. 19-20) et <strong>juin 2026</strong> (Vol. I, en renvoi seulement) — ⚠ <strong>aucun ne tient lieu du gel de la somme</strong></dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte). Les énoncés résolvent contre le <strong>Vol. II <em>Monographie</em> ch. 11</strong> — <strong>F-25</strong> en <strong>[A]</strong> avec sa <strong>dette de vérification déclarée</strong>, <strong>F-27</strong> en <strong>[B]</strong> (texte officiel consulté), la <strong>nuance de cabinet en [C]</strong>, et l'entrée héritée <strong>H-06</strong> dont ⚠ <strong>le décompte des obligations a été corrigé par le Vol. III</strong> — et contre le <strong>Vol. III <em>Monographie</em> ch. 19-20</strong> : <strong>F-89</strong> en <strong>[B]</strong> (extraction du texte officiel, 21 juillet 2026), <strong>F-67</strong> et <strong>F-68</strong> en <strong>[B]</strong>, <strong>H-07</strong> en <strong>[B]</strong>, <strong>H-11</strong> en <strong>[B]</strong>. ⚠ <strong>Deux séries F-xx coexistent et se préfixent à chaque emploi</strong> (décision 7). <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong> ; ⚠ <strong>et la nuance de cabinet, en [C], ne porte aucun énoncé de ce chapitre</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd>Vol. II — <strong>garde-fou renforcé « aucun avis juridique » (PRD Vol. II §3) : sept occurrences</strong>, § 27.0, § 27.3 (deux), § 27.4, § 27.6, § 27.7 et § 27.8 ; <strong>réserve F-25 — ne jamais écrire « en attente » ni « en projet » : trois occurrences</strong>, § 27.1 ; <strong>PRDPlan Vol. II §4.4 — l'art. 12.1 outille un point d'arrêt humain, jamais « la révision de l'article 12.1 » : quatre occurrences</strong>, § 27.3 (deux) et § 27.8 (deux) ; <strong>R-5 : deux occurrences</strong>, § 27.1 ; <strong>R-1 à R-4, R-6 à R-8 : zéro occurrence</strong>. Vol. III — <strong>R-14 (trois degrés d'absence) : quatorze occurrences</strong>, § 27.1 (deux), § 27.4 (quatre), § 27.5 (cinq), § 27.6 (deux) et § 27.7 ; <strong>R-06 (modalité) : trois occurrences</strong>, § 27.1 et § 27.5 ; <strong>R-09 : une occurrence</strong>, § 27.5 ; <strong>R-11 : une occurrence</strong>, § 27.5 ; <strong>R-04 (homonymie) : trois occurrences</strong>, § 27.6 — ⚠ <strong>et R-04 n'est PAS étendu au mot « mandat »</strong> : ses branches sont closes chez sa source, qui a remonté la question plutôt que d'en ouvrir une septième ; <strong>R-01 : une occurrence</strong>, § 27.5 ; <strong>R-02, R-03, R-05, R-07, R-08, R-10, R-12, R-13 : zéro occurrence</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ <strong>7 500 mots</strong> de corps (§ 27.0 à § 27.8), <strong>cible dérivée</strong> de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant huit, dont <strong>trois reçues d'une seconde source</strong>. ☑ <strong>Décompte publiable depuis G-2</strong> ; la mesure réelle est portée au <a class="lien" href="README.md"> 0 </a> du dossier, par <a class="lien" href="../PRD/decompte.sh"> 1 </a>. ⚠ <strong>D-4 interdit l'amputation comme le gonflement</strong></dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>le Québec dispose du cadre le plus explicite ; l'art. 12.1 (révision humaine sur demande) entre en friction directe avec la décision agentique autonome, et son imputabilité pèse sur l'assujetti.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.25, entrée du chapitre 27.</span>
+</div>
+
+<div class="avert">
+  <p><strong>La thèse a été collationnée contre le texte rédigé de ses deux sources avant la rédaction</strong> (décision 14 du TOC). <strong>Domaine de balayage : une thèse examinée, zéro réalignée — et un membre à tracer.</strong> Les deux premiers membres reprennent la thèse du Vol. II ch. 11 à sa forme du 16-17 juillet 2026. Le troisième — « son imputabilité pèse sur l'assujetti » — <strong>ne vient pas du ch. 11 du Vol. II mais de la thèse de son ch. 13</strong>, où il est écrit « <strong>sous l'article 12.1 du moins</strong>, elle pèse sur l'assujetti, qui ne peut désigner de tiers ». ⚠ <strong>La restriction « sous l'article 12.1 du moins » est tombée dans la reprise</strong>, et elle est portante : <em>la source déclare expressément qu'elle ne peut rien dire du même point sous E-23 ni sous l'avis des ACVM, et qu'elle s'y refuse l'argument du silence.</em> <strong>Le corps du chapitre écrit la forme restreinte</strong> ; l'écart est remonté (§ 27.9, remontée <strong>R-IV-87</strong>).</p>
+</div>
+
+<h2 id="s270"><span class="sig">§ 27.0</span>Ouverture : le régime qui se déclenche sur une propriété d'architecture</h2>
+
+<p>Le ch. 25 a posé un régime prudentiel fédéral qui atteint l'agentique <strong>par une définition</strong> ; le ch. 26 a établi qu'aucune loi fédérale d'IA ne l'atteint autrement. <strong>Le Québec, lui, a écrit avant les autres ce que les autres régimes canadiens n'ont pas encore nommé</strong> — et il l'a fait dans un texte de protection des renseignements personnels, <strong>sans employer le mot « agent »</strong>.</p>
+
+<div class="avert">
+  <p><strong>Le chapitre porte un garde-fou renforcé de bout en bout : il n'émet aucun avis juridique</strong> (PRD Vol. II §3). <em>Il décrit ce que le socle porte, attribue chaque lecture à son auteur avec le niveau de preuve que le socle lui reconnaît, et n'en retient aucune contre les autres.</em></p>
+</div>
+
+<p><strong>Il se lit en trois temps.</strong> D'abord <strong>deux instruments québécois de nature opposée</strong> : une ligne directrice sectorielle dont le socle porte le calendrier et non le contenu (§ 27.1), et une disposition législative en vigueur dont le socle porte le texte officiel (§ 27.2-27.3). Ensuite <strong>l'instruction que le Vol. III a conduite sur ces mêmes objets</strong> : l'état des positions (§ 27.4), la relecture de la ligne directrice par la grille (§ 27.5), le mandat civiliste (§ 27.6), la cartographie sans verdict (§ 27.7). Enfin <strong>ce que l'architecte en retient</strong> (§ 27.8).</p>
+
+<p><strong>Ce que le chapitre ne traite pas.</strong> E-23 est au <strong>ch. 25</strong>, qui porte la <strong>moitié E-23</strong> du même §19.1 du Vol. III dont ce chapitre reçoit la <strong>moitié AMF</strong> ; le vide fédéral est au <strong>ch. 26</strong> ; les valeurs mobilières au <strong>ch. 28</strong> ; la traduction en contraintes d'architecture au <strong>ch. 29</strong>. ⚠ <strong>Et le régime européen n'y est pas</strong> : <em>sa source déclare que le socle du Vol. III ne documente ni le règlement général sur la protection des données ni aucun de ses articles</em> — <strong>absence de documentation, degré 3</strong> —, et <strong>la matière européenne de la somme est portée par le Vol. I, au ch. 30</strong>.</p>
+
+<h2 id="s271"><span class="sig">§ 27.1</span>La ligne directrice IA de l'AMF : chronologie et convergence</h2>
+
+<p>L'Autorité des marchés financiers a publié <strong>son projet</strong> de ligne directrice sur l'intelligence artificielle le <strong>3 juillet 2025</strong>, ouvrant une consultation <strong>close le 7 novembre 2025</strong> — un peu plus de quatre mois. <strong>La version finale a été publiée</strong> et <strong>elle entre en vigueur le 1ᵉʳ mai 2027</strong> (Vol. II F-25, <strong>[A]</strong>).</p>
+
+<div class="avert">
+  <p><strong>Une mise en garde de rédaction s'impose d'emblée, et la formulation est imposée : la ligne directrice de l'AMF n'est ni « en projet » ni « en attente ».</strong> Elle est <strong>finale</strong>, et seule son entrée en vigueur reste à venir (réserve F-25 du Vol. II). <em>Tout document de gouvernance interne qui la décrirait comme un texte de consultation décrirait un état du monde périmé.</em> ⚠ <strong>R-5 du Vol. II s'applique dans l'autre sens avec la même force</strong> : <em>ce qui n'est pas publié ne se décrit pas</em> — et le contenu de ce texte, précisément, n'est pas au socle du Vol. II.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Sa date de publication, en revanche, est l'objet d'une divergence que la somme expose plutôt qu'elle ne l'arbitre — et elle est à trois termes, non à deux.</strong></p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Source</th><th>Date portée</th><th>Régime</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Vol. II</strong> (F-25, <strong>[A]</strong>)</td><td><strong>30 mars 2026</strong></td><td>⚠ <strong>dette de vérification déclarée</strong> — la source primaire renvoyait une erreur d'accès aux outils employés le 17 juillet 2026</td></tr>
+    <tr><td><strong>Vol. I</strong> (<em>Monographie</em> §5.3.7)</td><td><strong>7 avril 2026</strong></td><td>⚠ entre dans la somme en <strong>[C]</strong> — repérage documentaire</td></tr>
+    <tr><td><strong>Vol. III</strong> (F-67, <strong>[B, degré 1]</strong>)</td><td>⚠ <strong>aucune date au jour près</strong> — la page française estampille le document « <strong>Avril 2026</strong> », l'anglaise porte « <strong>Updated on April 24, 2026</strong> », qui est une date de <strong>mise à jour de page</strong></td><td>extraction à la source primaire, 21 juillet 2026</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 27.1 — Les trois positions du dépôt sur la date de publication de la ligne directrice IA de l'AMF. ⚠ <strong>Le plan tranche en faveur du Vol. II</strong> (Annexe C du TOC) ; <em>cet arbitrage est antérieur à l'extraction du Vol. III, et il n'est pas rouvert ici.</em></p>
+
+<div class="avert">
+  <p><strong>Ce que le Vol. III établit change la nature de la question, et le chapitre l'écrit plutôt que de le taire.</strong> L'instruction du 21 juillet 2026 n'a tranché ni dans un sens ni dans l'autre — <strong>et pour une raison inattendue : aucune des deux dates ne figure à la source primaire.</strong> <em>Le chapitre écrit donc ce que la source porte : <strong>un mois, non un jour</strong>.</em> ⚠ <strong>L'écart avec l'arbitrage du plan est signalé, non corrigé</strong> (§ 27.9, remontée <strong>R-IV-88</strong>) : <em>un rédacteur ne corrige pas le registre des divergences ; il remonte.</em></p>
+</div>
+
+<p><strong>Ce qui est concordant suffit à ce que le chapitre établit</strong> : ⚠ <strong>l'entrée en vigueur au 1ᵉʳ mai 2027 ne dépend d'aucune des trois positions.</strong> <em>C'est le seul fait que ce chapitre fait porter à la chronologie.</em></p>
+
+<p><strong>La donnée structurante n'est pas la date de publication, mais celle de l'entrée en vigueur.</strong> Le <strong>1ᵉʳ mai 2027</strong> est <strong>aussi</strong> la date d'entrée en vigueur d'E-23 (<strong>ch. 25 § 25.1</strong>). <em>Deux régimes distincts — l'un fédéral et prudentiel, l'autre québécois et sectoriel — convergent sur un même jour.</em></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : la coïncidence des dates. <strong>Ce qu'il n'établit pas</strong> : son intentionnalité — <em>aucune source n'indique qu'un régulateur ait aligné son calendrier sur l'autre, et il serait imprudent d'en faire un argument sur leurs intentions.</em> <strong>Mais la conséquence opérationnelle ne dépend pas de l'intention</strong> : <em>une institution dont l'exploitation relève des deux régimes n'aura pas deux fenêtres de préparation successives, mais une seule, et devra faire converger deux programmes de conformité vers un même jalon.</em> <strong>C'est un fait de planification, et il est robuste indépendamment de ce qui l'a produit.</strong> Au gel de la somme, il reste <strong>neuf mois et quatre jours</strong>.</p>
+
+<div class="avert">
+  <p><strong>Et il faut se garder d'une lecture trop confortable du délai</strong> : <em>les mois qui séparent la publication finale de l'entrée en vigueur ne sont pas une période d'observation — ce sont les seuls mois pendant lesquels une institution peut encore modifier une architecture déjà en exploitation.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Il faut enfin énoncer sans détour ce que ce chapitre ne peut pas faire.</strong> <strong>Le socle du Vol. II porte le calendrier de la ligne directrice, non son contenu</strong> : les entrées vérifiées documentent la publication du projet, la clôture de la consultation, la publication de la version finale et son entrée en vigueur ; <strong>elles ne documentent pas les exigences que ce texte formule, article par article</strong> — lacune <strong>PRD Vol. II §10.4</strong>, que sa source qualifie de <strong>la plus coûteuse du volume</strong>. <em>La somme s'interdit de combler cet écart par de la reconstruction plausible : il serait aisé, et parfaitement irresponsable, de déduire le contenu d'une ligne directrice de son titre et de son contexte réglementaire.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>L'instruction du Vol. III a fait bouger cette lacune sans la refermer, et la distinction compte.</strong> Sa passe du 21 juillet 2026 a établi <strong>la modalité</strong> des attentes — l'Autorité formule sur le mode « L'Autorité s'attend à ce que… » —, leur <strong>articulation</strong> — elles s'appliquent <strong>en sus</strong> de celles d'une autre ligne directrice de la même autorité, sur la gestion du risque de modèle — et la <strong>définition</strong> du système d'intelligence artificielle qu'elle retient, reprise d'une définition internationale de 2024 incluant des « degrés variables d'autonomie et d'adaptabilité après déploiement » (Vol. III F-68, <strong>[B]</strong>). ⚠ <strong>Elle n'a pas pu extraire le document qui porte le détail numéroté des attentes</strong> : accès direct refusé, puis réponse du serveur en téléchargement de fichier plutôt qu'en page consultable. <em>La lacune a changé de nature sans se refermer : elle n'est plus « aucun accès au texte » mais « accès au sommaire des attentes, non à leur détail ».</em> <strong>La question reste ouverte ; aucune inférence n'est proposée ici.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>L'empilement des deux lignes directrices de la même autorité n'est pas un détail de forme</strong> : <em>une institution assujettie en lit deux, dont l'une n'est au socle d'aucun des trois volumes.</em></p>
+</div>
+
+<h2 id="s272"><span class="sig">§ 27.2</span>L'article 12.1 : trois obligations, un texte</h2>
+
+<p><strong>L'autre instrument québécois n'appelle aucune réserve de ce genre : son texte officiel a été consulté directement — deux fois, à un an d'intervalle — et il est en vigueur.</strong></p>
+
+<p>L'article 12.1 de la <em>Loi sur la protection des renseignements personnels dans le secteur privé</em> est <strong>en vigueur depuis le 22 septembre 2023</strong>, introduit par la Loi 25 (Vol. II F-27, <strong>[B]</strong> ; Vol. III F-89, <strong>[B]</strong>). Il précède de près de trois ans le gel de la somme, et de plus de trois ans et demi l'entrée en vigueur des deux lignes directrices du § 27.1. ⚠ <strong>Il ne s'agit pas d'un texte à venir : c'est le droit applicable</strong>, et il l'était déjà lorsque les premiers déploiements agentiques canadiens documentés au <strong>ch. 35</strong> ont été annoncés.</p>
+
+<p><strong>Son déclencheur est une formule précise, qu'il faut citer plutôt que paraphraser</strong> : l'article s'applique à toute personne qui exploite une entreprise et qui utilise des renseignements personnels « <strong>afin que soit rendue une décision fondée exclusivement sur un traitement automatisé de ceux-ci</strong> ».</p>
+
+<div class="avert">
+  <p><strong>Le déclencheur, tel qu'écrit, ne nomme aucune technologie.</strong> Il ne parle ni d'intelligence artificielle, ni de modèle, ni d'agent : <strong>il parle de la place de l'humain dans la production de la décision.</strong></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : le texte. <strong>Ce qu'il n'établit pas</strong> : aucune doctrine de neutralité technologique. <em>À s'en tenir aux mots du déclencheur, un arbre de règles écrit à la main paraît déclencher l'article aussi sûrement qu'un système multi-agents de 2026, dès lors que la décision est rendue sans intervention humaine.</em></p>
+
+<p><strong>Deux conditions, et non une seule, commandent l'application.</strong> La première tient à l'objet du traitement : il doit porter sur des <strong>renseignements personnels</strong>. La seconde tient à la place de l'humain : la décision doit être fondée <strong>exclusivement</strong> sur le traitement automatisé.</p>
+
+<div class="avert">
+  <p><strong>Le décompte des obligations a été corrigé au socle, et la correction n'est pas de forme.</strong> L'entrée héritée du Vol. II énumère <strong>trois obligations</strong> en y rangeant l'occasion de présenter des observations, et <strong>omet le droit de faire rectifier</strong>. Le relevé du Vol. III, conduit sur le texte officiel le 21 juillet 2026, compte <strong>une obligation inconditionnelle, trois informations dues sur demande — dont la rectification —, plus un alinéa distinct</strong> portant l'occasion de présenter des observations (Vol. III F-89, <strong>[B]</strong>).</p>
+</div>
+
+<div class="avert">
+  <p><strong>La conséquence est concrète, et elle vaut d'être écrite</strong> : <em>une institution qui bâtirait sa procédure de réponse sur la liste héritée informerait la personne concernée des renseignements utilisés, des raisons et des facteurs, lui offrirait la révision par une personne — et <strong>ne l'informerait pas de son droit de rectification</strong>. Le manque serait invisible à toute relecture qui ne rouvrirait pas le texte.</em></p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Régime</th><th>Contenu</th><th>Déclenchement</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Obligation inconditionnelle</strong></td><td>informer la personne qu'une telle décision a été rendue, <strong>au plus tard au moment</strong> où elle en est informée</td><td><strong>aucune demande requise</strong> — l'information accompagne la décision</td></tr>
+    <tr><td><strong>Sur demande, 1°</strong></td><td>les <strong>renseignements personnels utilisés</strong> pour rendre la décision</td><td>à la demande de la personne</td></tr>
+    <tr><td><strong>Sur demande, 2°</strong></td><td>« <strong>des raisons, ainsi que des principaux facteurs et paramètres, ayant mené à la décision</strong> »</td><td>idem</td></tr>
+    <tr><td><strong>Sur demande, 3°</strong></td><td>⚠ <strong>le droit de faire rectifier</strong> les renseignements utilisés — <em>omis par l'entrée héritée du Vol. II</em></td><td>idem</td></tr>
+    <tr><td><strong>Alinéa distinct</strong></td><td>« l'occasion de présenter ses observations à <strong>un membre du personnel de l'entreprise en mesure de réviser la décision</strong> »</td><td>⚠ <strong>hors de l'énumération</strong> — c'est le seul alinéa que le socle individualise</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 27.2 — L'articulation de l'article 12.1, telle que le relevé du 21 juillet 2026 l'établit sur le texte officiel. ⚠ <strong>Le titre de section du plan — « trois obligations, un texte » — porte le décompte hérité</strong> ; l'écart est remonté (§ 27.9, remontée <strong>R-IV-89</strong>).</p>
+
+<p><strong>Chaque terme du dernier alinéa est agissant.</strong> <em>Un membre du personnel</em> — donc une personne rattachée à l'entreprise ; <em>en mesure de réviser</em> — donc <strong>doté du pouvoir de défaire ce que le système a fait</strong>, et pas seulement d'expliquer ou de transmettre.</p>
+
+<p><strong>Sur l'obligation d'expliquer, la formule mérite d'être lue lentement</strong> : la loi ne demande pas une explication générale du fonctionnement du système, mais <strong>les raisons et les facteurs ayant mené à cette décision-là</strong>. ⚠ <strong>Elle porte sur l'instance, non sur le modèle</strong> — <em>et c'est exactement ce que le ch. 25 § 25.8 a montré qu'on ne peut pas extraire du modèle a posteriori.</em></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> c'est le déclenchement de ces obligations qui fait de l'article 12.1 <strong>le texte le plus explicite du corpus canadien</strong> examiné dans ce mouvement. <strong>Ce que le socle établit</strong> : les éléments de la comparaison — pas de régime fédéral spécifique (ch. 26) ; un avis qui énonce que les lois existantes s'appliquent sans en créer (ch. 28) ; une couverture prudentielle <strong>implicite</strong> tenue pour acquise par des analystes (ch. 25). <strong>Ce qu'il n'établit pas</strong> : le classement. <em>Face à ces instruments, l'article 12.1 énonce une obligation nommée, que la personne concernée peut faire valoir, et dont l'objet est précisément le point où l'autonomie de la machine s'arrête.</em> <strong>C'est en ce sens, et en ce sens seulement, que la thèse parle du cadre « le plus explicite ».</strong></p>
+
+<h2 id="s273"><span class="sig">§ 27.3</span>Le critère « exclusivement » et l'humain-dans-la-boucle</h2>
+
+<p><strong>Tout, désormais, se joue sur un adverbe.</strong></p>
+
+<p>L'article ne s'applique qu'aux décisions fondées <strong>exclusivement</strong> sur un traitement automatisé. <strong>Le texte ne définit pas ce que l'exclusivité exclut</strong>, et c'est là que l'architecture rejoint le droit.</p>
+
+<p>Selon l'analyse d'un cabinet, <strong>une intervention humaine significative <em>avant</em> la décision écarterait l'application de l'article</strong> — nuance qui serait déterminante pour qualifier les systèmes agentiques comportant un humain-dans-la-boucle (<em>human-in-the-loop</em>).</p>
+
+<div class="avert">
+  <p><strong>Cette lecture doit être maniée avec la plus grande prudence, et le socle impose sa propre réserve : il s'agit d'une interprétation de cabinet, retenue au niveau [C]</strong> — un repérage documentaire à confirmer, <strong>qui ne peut porter aucun fait central</strong> (CA-IV-01). <em>Une institution qui fonderait son architecture de décision sur cette seule nuance ferait reposer un choix structurant sur une interprétation doctrinale non confirmée.</em> ⚠ <strong>Et le Vol. III a instruit le point sans le trancher</strong> : sa passe du 21 juillet 2026 a ouvert deux pages du régulateur québécois, dont l'une <strong>restitue la loi sans l'interpréter</strong> ; <strong>la nuance de cabinet n'y est portée par aucune</strong> (F-89). <em>Elle demeure non confrontée à une position de l'autorité qui applique la loi.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Il faut au passage écarter une confusion terminologique dont la somme fait un point de vocabulaire : l'humain-dans-la-boucle et la révision humaine de l'article 12.1 ne sont pas la même chose.</strong> Le premier est un <strong>point d'arrêt inséré dans l'exécution</strong>, en amont ou au cours de la décision ; la seconde est un <strong>recours ouvert à la personne concernée, sur demande, après</strong> que la décision a été rendue.</p>
+</div>
+
+<div class="avert">
+  <p><strong>La formulation imposée en découle et ne souffre pas d'exception</strong> (PRDPlan Vol. II §4.4) : <em>le flux d'un système agentique <strong>outille un point d'arrêt humain</strong> ; il n'outille jamais « la révision de l'article 12.1 ».</em> <strong>Aucun dispositif d'humain-dans-la-boucle ne satisfait par lui-même l'alinéa de révision.</strong> <em>S'il est jugé significatif au sens de l'analyse citée — au niveau [C] —, il écarte l'article <strong>en entier</strong>, alinéa compris ; s'il ne l'est pas, l'article s'applique intégralement et la révision a posteriori reste due.</em> <strong>Dans les deux branches, outiller l'humain-dans-la-boucle n'outille pas la révision</strong> — <em>et confondre les deux notions revient à croire qu'on a satisfait une obligation en outillant une propriété différente.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Et c'est ici que le chapitre rencontre la limite que la décision D-9 protège.</strong> <em>Un critère d'exclusivité qui se joue sur le caractère « significatif » d'une intervention humaine suppose que cette intervention en soit une</em> — c'est-à-dire que l'humain exerce réellement son jugement. Le <strong>ch. 17 § 17.5</strong> traite du <strong>biais d'automatisation et de la supervision de façade</strong>, et <strong>il déclare son propre vide</strong> : le socle n'y porte aucune mesure de l'efficacité de cette supervision. ⚠ <strong>La parade que ce chapitre décrit est donc une parade dont la somme déclare ne rien savoir de l'efficacité</strong> — <em>et c'est le motif exact pour lequel D-9 bloque ce chapitre.</em> <strong>Le blocage est enfreint, non levé</strong> (§ 27.9).</p>
+</div>
+
+<div class="avert">
+  <p><strong>Trois questions restent ouvertes à la date de gel, et la somme se refuse à les combler.</strong> <em>Première</em> : que dit, article par article, la version finale de la ligne directrice de l'AMF ? — voir § 27.1. <em>Deuxième</em> : comment le régulateur québécois interprète-t-il l'article 12.1 appliqué aux systèmes multi-agents ? ⚠ <strong>Le socle ne documente aucune position sur ce point : absence de documentation dans le corpus, degré 3, non un fait négatif vérifié</strong> — <em>la recherche n'a balayé ni le répertoire des décisions ni le rapport annuel, et un résultat vide n'éprouve qu'une chaîne, jamais l'objet.</em> <em>Troisième</em> : le régime de l'article 12.1 atteint-il les institutions sous charte fédérale, celles qu'E-23 vise au ch. 25 ? ⚠ <strong>Le socle porte le déclencheur — « toute personne qui exploite une entreprise » — et rien sur la portée du régime à leur égard.</strong> <em>La question n'est pas théorique : elle décide si les deux régimes de ce mouvement se cumulent sur une même chaîne de décision ou s'appliquent à des périmètres disjoints.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Conséquence pour le lecteur</strong> : <em>une institution qui doit décider aujourd'hui ne peut pas s'appuyer sur la somme pour ces trois points ; elle doit lire la ligne directrice finale à la source et faire qualifier tant le critère d'exclusivité que son propre assujettissement par un conseil juridique.</em> <strong>La somme n'émet aucun avis juridique.</strong></p>
+</div>
+
+<h2 id="s274"><span class="sig">§ 27.4</span>L'article 12.1 et la décision automatisée multi-agents : état des positions</h2>
+
+<p>*Section <strong>reçue du Vol. III <em>Monographie</em> §20.1</strong>.*</p>
+
+<p><strong>Un agent qui refuse un financement, ajuste une prime ou ferme un dossier produit une décision, et cette décision est prise à partir de renseignements personnels.</strong> La présente section recense <strong>les lectures qui circulent</strong> sur l'application de l'article à une chaîne d'agents, et <strong>s'arrête là</strong>.</p>
+
+<p><strong>Ce que le texte porte est au § 27.2 ; ce qui suit est l'état des positions.</strong></p>
+
+<div class="avert">
+  <p><strong>Le socle n'établit pas ce qu'il advient de la condition d'exclusivité lorsque la décision est produite par plusieurs traitements automatisés enchaînés, dont l'un est ponctué d'une validation humaine</strong> — la configuration que le § 27.3 nomme. <em>Absence de documentation, degré 3.</em></p>
+</div>
+
+<p><strong>Le Vol. II a formulé la question et l'a laissée ouverte.</strong> Elle porte, à son ch. 21 §21.2, l'étiquette <strong>Q4</strong> : « L'article 12.1 s'applique-t-il à une décision prise par un système multi-agents avec humain-dans-la-boucle ? » — et le même chapitre nomme ce qui la trancherait : <strong>une position du régulateur québécois ou une décision judiciaire</strong>, le socle ne portant qu'une nuance d'analyse de cabinet. ⚠ <strong>Le renvoi nomme son chapitre, et il le doit</strong> : le ch. 16 §16.3 du même volume porte un jeu <strong>Q1 à Q5 entièrement distinct</strong>, sans recouvrement — <em>deux séries « Q n » coexistent au Vol. II, et la décision 7 du TOC impose de nommer la série à chaque renvoi.</em> <strong>La série AP2/RTR est au ch. 36 § 36.4 ; celle-ci est la série d'agenda.</strong></p>
+
+<div class="avert">
+  <p><strong>Une lecture qui circule a été écartée par l'instruction, et la mise à l'écart est consignée plutôt que jugée.</strong> Le rapport du lot du Vol. III déclare avoir écarté une page portant que « une intervention humaine significative écarterait l'application », <strong>parce qu'elle est publiée par une administration qui s'adresse aux organismes publics — elle relève donc de la loi du secteur public, non de celle du secteur privé — et parce qu'elle n'est pas attribuée au régulateur compétent</strong>. <em>La mise à l'écart est reprise ici comme telle, et non comme un jugement sur le fond de la lecture.</em></p>
+</div>
+
+<p><strong>Un deuxième texte canadien entre ici, et il vient d'un autre régulateur.</strong> L'avis 11-348 pose que les lois <strong>sur les valeurs mobilières</strong> existantes s'appliquent aux systèmes d'IA — <em>les indications qu'il donne ne créent ni ne modifient aucune exigence, formule reprise <strong>dans la substance</strong>, l'instrument étant en anglais</em> — et retient une définition incluant des <strong>niveaux variables d'autonomie et d'adaptativité après déploiement</strong> (Vol. III H-07, <strong>[B]</strong>). ⚠ <strong>Son instruction est au ch. 28</strong> ; le présent chapitre ne s'y avance pas.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : que <strong>deux textes canadiens de régulateurs distincts</strong> retiennent, pour définir un système d'intelligence artificielle, une clause portant sur <strong>l'autonomie après déploiement</strong>, et que la ligne directrice de l'AMF tient sa définition d'une définition internationale. <strong>Ce qu'il n'établit pas</strong> : que la définition de l'avis 11-348 ait la même provenance, ni que les deux formulations soient comparables <strong>au mot</strong> — <em>le socle porte la clause de l'avis en français alors que le texte est en anglais, et le Vol. II déclare expressément ne pas présenter ce rendu comme une citation verbatim.</em> ⚠ <strong>Le rapprochement porte donc sur la substance des deux clauses, jamais sur leur lettre</strong>, et il est une <strong>construction de la somme</strong>. <em>Il ne soutient qu'une chose, et prudemment : <strong>le critère par lequel ces textes attrapent un système agentique est l'autonomie, non la qualité d'agent</strong>, laquelle n'y est pas nommée.</em> ⚠ <strong>En déduire que ces cadres couvrent les systèmes agentiques est une lecture, à attribuer à qui l'avance, jamais à imputer au régulateur.</strong></p>
+
+<p><strong>Ce que l'obligation d'explication rencontre dans une chaîne</strong> mérite enfin d'être posé. L'objet de cette obligation est un matériau produit <strong>après coup, à la demande, sur une décision déjà rendue</strong>. La littérature que le socle porte nomme <strong>deux difficultés</strong> à le produire dans un système d'agents : un <strong>écart de responsabilité</strong> à quatre termes — développeur, organisation qui impose le cadre, fournisseur de modèle, comportement émergent — dont le <strong>ch. 22 § 22.10</strong> est le siège ; et un <strong>paradoxe de confidentialité de l'explicabilité</strong> — <em>l'explication détaillée d'une décision expose des éléments que d'autres régimes commandent de protéger</em> (Vol. III H-11, <strong>[B]</strong>), dont le <strong>ch. 22 § 22.9</strong> porte la tension.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : ces deux difficultés, et le texte québécois. <strong>Ce qu'il n'établit pas</strong> : que le droit québécois rencontre l'écart nommé par ces auteurs, ni qu'aucune des quatre parties qu'ils distinguent soit celle que l'article désigne. ⚠ <strong>L'article désigne « toute personne qui exploite une entreprise », et le socle ne documente pas l'application de cette désignation à une chaîne d'agents : absence de documentation, degré 3.</strong> <em>Le rapprochement est proposé comme hypothèse de travail pour le § 27.8 et pour le ch. 29 § 29.3 ; il ne conclut rien sur le droit.</em></p>
+
+<h2 id="s275"><span class="sig">§ 27.5</span>La ligne directrice AMF relue par la grille des cinq questions</h2>
+
+<p>*Section <strong>reçue du Vol. III <em>Monographie</em> §19.1, moitié AMF</strong> — ⚠ <strong>et ce chapitre en est le siège</strong>, la moitié E-23 étant au <strong>ch. 25 § 25.4</strong>. Le Vol. III désigne son §19.1 comme le <strong>seul siège d'application de la grille pour toute sa Partie VI</strong>.*</p>
+
+<div class="avert">
+  <p><strong>La lecture est inversée, et la conséquence est tenue jusqu'au bout.</strong> La grille des cinq questions s'applique <strong>par mécanisme, non par produit</strong> (ch. 14 § 14.1) — <em>et une ligne directrice n'est ni l'un ni l'autre.</em> Elle ne demande donc pas ce que le texte <strong>produit</strong>, mais <strong>ce qu'il suppose que l'institution puisse établir</strong>. ⚠ <strong>Aucun des trois verdicts de la grille n'est rendu</strong> : <em>en rendre un reviendrait à traiter une ligne directrice comme un mécanisme</em>, et <strong>il n'existe aucun quatrième verdict de complaisance</strong>.</p>
+</div>
+
+<p><strong>La modalité d'abord.</strong> L'Autorité formule ses attentes sur le mode « <strong>L'Autorité s'attend à ce que…</strong> », pour effet au 1ᵉʳ mai 2027, <strong>et ces attentes s'appliquent en sus de celles d'une autre de ses lignes directrices</strong> (Vol. III F-68, <strong>[B]</strong>). ⚠ <strong>On n'écrit donc pas davantage « exigé par l'AMF » que « exigé par E-23 »</strong> : <em>la modalité est l'attente dans les deux cas</em> (R-06 du Vol. III, dont le siège est le §19.1 de sa source).</p>
+
+<p><strong>Ce que le socle porte de ce texte, il le porte à trois titres et à trois seulement</strong> : une <strong>modalité</strong>, une <strong>articulation</strong> avec un second texte, et une <strong>définition</strong> — celle du système d'intelligence artificielle, reprise d'une définition internationale de 2024 incluant des « degrés variables d'autonomie et d'adaptabilité après déploiement ».</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Question <em>(ch. 14 § 14.1)</em></th><th>Ce que la ligne directrice de l'AMF suppose que l'institution puisse établir</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Q-A</strong> <em>qui es-tu</em></td><td>⚠ <strong>Case vide, degré 3</strong> — le socle porte une modalité, une articulation et une définition, <strong>non une attente d'inventaire</strong></td></tr>
+    <tr><td><strong>Q-B</strong> <em>qui t'a créé</em></td><td>⚠ <strong>Case vide, degré 3</strong></td></tr>
+    <tr><td><strong>Q-C</strong> <em>pour qui agis-tu</em></td><td>⚠ <strong>Case vide, degré 3</strong></td></tr>
+    <tr><td><strong>Q-D</strong> <em>que peux-tu faire</em></td><td>⚠ <strong>Case vide, degré 3</strong> — une classification fondée sur le risque <strong>n'est pas portée par le socle</strong> dans le libellé de l'entrée</td></tr>
+    <tr><td><strong>Q-E</strong> <em>qui en répond</em></td><td>⚠ <strong>Case vide, degré 3</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 27.3 — Lecture <strong>inversée</strong> de la grille des cinq questions sur la ligne directrice de l'AMF, au 21 juillet 2026. ⚠ <strong>Cinq cases vides sur cinq, toutes au degré 3</strong> — <em>et aucun verdict de la grille n'est rendu.</em></p>
+
+<div class="avert">
+  <p><strong>Le tableau dit une asymétrie qu'il faut nommer plutôt que lisser.</strong> Du côté d'E-23, le socle porte une <strong>attente de contenu</strong> — un inventaire, un cycle de vie, une cotation — et <strong>deux des cinq questions y trouvent un appui, dont un seul est net</strong> (ch. 25 § 25.4). Du côté de l'AMF, il porte <strong>une modalité, une articulation et une définition, et rien de plus</strong> : <em>le contenu article par article vit dans un document que l'instruction n'a pas pu extraire.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong><em>Une case au degré 3 ne dit pas que le cadre est muet ; elle dit que ce corpus-ci l'est.</strong></em> <strong>C'est la cinquième règle d'emploi de la grille</strong> (ch. 14 § 14.1), et elle est ici appliquée cinq fois de suite.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Et le régime prospectif se dit au bon niveau.</strong> L'entrée en vigueur au 1ᵉʳ mai 2027 est une <strong>échéance datée</strong>, donc <strong>PROGRAMMÉE</strong> au tri prospectif — ⚠ <em>à ne pas confondre avec un jalon <strong>visé</strong></em> (R-11 du Vol. III), dont le <strong>ch. 21 § 21.1</strong> est le siège. ⚠ <strong>Et le statut normatif se dit à chaque mention</strong> (R-09 du Vol. III) : <em>une ligne directrice sectorielle finale n'est ni une norme technique ratifiée, ni un standard.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Une réserve de forme, enfin, et elle est portée par la source elle-même.</strong> <em>Le passeport d'agent ne figure dans aucune spécification à date : c'est un objet de synthèse construit par la somme</em> (R-01 du Vol. III ; <strong>siège au ch. 16</strong>). <strong>La quatrième de ses pièces — les attestations de conformité — n'a pas de chapitre</strong>, et le versant réglementaire n'y ajoute rien : ⚠ <strong>le socle ne documente pas que la ligne directrice de l'AMF prévoie une attestation de conformité, une certification ou un référentiel d'audit opposable — absence de documentation, degré 3.</strong> <em>Le ch. 25 § 25.5 porte le même constat pour E-23, et le risque 17 du TOC déclare l'asymétrie.</em></p>
+</div>
+
+<h2 id="s276"><span class="sig">§ 27.6</span>Le mandat agentique en droit civil québécois : ce que l'analogie porte</h2>
+
+<p>*Section <strong>reçue du Vol. III <em>Monographie</em> §20.2</strong> — ⚠ <strong>et la limite de l'analogie est au ch. 17 § 17.3</strong>, qui en est le siège dans la somme.*</p>
+
+<div class="avert">
+  <p><strong>Le mot « mandat » traverse la somme dans au moins trois registres, et le socle n'en documente que deux.</strong> <em>La discipline qui s'impose est celle que le garde-fou d'homonymie R-04 du Vol. III impose au sigle des protocoles de communication d'agents : <strong>nommer le registre à chaque occurrence</strong>, sous peine d'agréger des objets que rien ne rend commensurables.</em> ⚠ <strong>R-04 n'est pas étendu au mot « mandat »</strong> : ses branches sont <strong>closes</strong> chez sa source, qui a <strong>remonté</strong> la question d'en ouvrir une septième plutôt que de le faire. <em>La somme reprend cette abstention.</em></p>
+</div>
+
+<p><strong>Premier registre — le mandat des protocoles.</strong> Il est <strong>spécifié, versionné et daté</strong>, à des statuts qui ne sont pas les mêmes. Les mandats du protocole de paiement agentique existent en une version publiée en avril 2026 : deux types de mandats sérialisés, un attribut de type versionné, des attributs temporels — ⚠ <strong>et le rapport de lot y attache la réserve qu'il s'agit d'une spécification de projet, non d'un texte normatif d'organisme de normalisation</strong> (R-09 du Vol. III). L'échange de jetons, lui, est porté par une <strong>RFC</strong>, et il exprime la délégation par un <strong>attribut dédié</strong>. ⚠ <strong>Le siège de cette mécanique est le ch. 17</strong>, qui l'a instruite à la source primaire ; <strong>le ch. 10</strong> porte celui des mandats de paiement. <em>Ni l'un ni l'autre n'est reconstruit ici.</em></p>
+
+<p><strong>Deuxième registre — le mandat des référentiels d'attaque.</strong> Il est employé pour <strong>nommer un maillon qui cède</strong> : un agent peut disposer d'outils inaccessibles aux utilisateurs, de sorte que l'abus de l'accès à l'agent confère des privilèges supérieurs — <em>ce qui cède n'est pas l'authentification de l'agent, mais <strong>l'absence de réduction de portée entre mandant et mandataire</strong></em>. La contre-mesure symétrique pose qu'un agent agissant pour un utilisateur <strong>ne doit pas recevoir de permissions que cet utilisateur n'a pas</strong>. ⚠ <strong>Le siège de cette taxonomie est le ch. 19</strong>, qui en fait l'axe de son tri ; elle n'est pas reprise ici.</p>
+
+<p><strong>Troisième registre — le mandat du droit civil.</strong> ⚠ <strong>Le socle ne documente pas le mandat au sens du droit civil québécois : c'est une absence de documentation dans le corpus, non un fait négatif vérifié.</strong> <em>Le lot d'instruction dont l'objet déclaré était la chaîne de mandat consigne que l'analogie avec le droit civil <strong>n'a pas été instruite</strong>, étant hors du périmètre des sources primaires qu'il s'était donné.</em> <strong>Aucune passe de recherche n'a été conduite</strong> ; la question reste ouverte, et <strong>aucune inférence n'est proposée ici</strong>.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : ce que portent les deux premiers registres — des mandats sérialisés et datés, un attribut qui exprime qu'une délégation a eu lieu et nomme la partie agissante dans une spécification qui <strong>décline expressément</strong> la sécurité du jeton qui le transporte, et deux énoncés de référentiel qui rangent l'écart de portée parmi les objets de sécurité. <strong>Ce qu'il n'établit rien du troisième</strong> : ni la définition civiliste, ni ses conditions de formation, ni son régime de responsabilité, ni aucune source qui les rapproche d'un mandat protocolaire. ⚠ <strong>La proposition retenue est donc minimale et falsifiable</strong> : <em>le vocabulaire technique de la délégation agentique <strong>emprunte</strong> ses termes — mandant, mandataire, mandat — à une institution juridique dont la somme ne documente pas le contenu, et <strong>cet emprunt n'importe aucune de ses propriétés</strong>.</em> Un lecteur peut refuser cette lecture <strong>sans qu'aucun des faits ci-dessus tombe</strong>.</p>
+
+<div class="avert">
+  <p><strong>Ce que le socle documente, en revanche, c'est un défaut d'instrument, et il faut le formuler exactement.</strong> L'attribut de délégation exprime qu'une délégation a eu lieu et nomme la partie agissante ; sa spécification place <strong>hors de son périmètre</strong> les caractéristiques de sécurité du jeton, <strong>et n'attache à cet attribut aucune assertion sur le consentement du mandant, sur la portée matérielle du mandat ni sur sa durée</strong>. ⚠ <strong>La consigne de formulation qui accompagne ce relevé vaut d'être reprise telle quelle</strong> : <em>la spécification <strong>ne le spécifie pas</strong>, ce qui n'est pas la même chose que <strong>le mécanisme ne le permet pas</strong>.</em> <strong>Le ch. 17 est le siège de ce point</strong> ; il n'est repris ici que pour marquer <strong>où l'analyse juridique bute sur une pièce technique et non sur une question de droit</strong>.</p>
+</div>
+
+<h2 id="s277"><span class="sig">§ 27.7</span>Cartographie des lectures, sans verdict</h2>
+
+<p>*Section <strong>reçue du Vol. III <em>Monographie</em> §20.3</strong>. ⚠ <strong>Siège de Q4 de la série d'agenda du Vol. II</strong> : la question est <strong>instruite, non tranchée</strong>, et <strong>cette forme est reconduite</strong>.*</p>
+
+<p><strong>La cartographie qui suit est l'objet de la section, et sa limite.</strong> Elle range les lectures qui circulent sur <strong>une seule question</strong> — <em>une décision produite par une chaîne d'agents, ponctuée d'une validation humaine, est-elle « fondée exclusivement sur un traitement automatisé » ?</em> — avec, pour chacune, <strong>sa source, le niveau que le socle lui reconnaît, et ce qui la trancherait</strong>. ⚠ <strong>Aucune n'est retenue.</strong></p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Lecture</th><th>Source et attribution</th><th>Niveau</th><th>Ce qui la trancherait</th></tr></thead>
+  <tbody>
+    <tr><td><strong>A.</strong> L'intervention humaine significative <em>avant</em> la décision écarte l'application</td><td>analyse de cabinet, portée en réserve d'une entrée héritée ; ⚠ <strong>non confrontée à une position du régulateur québécois</strong> — <em>degré 3</em></td><td><strong>[C]</strong> — repérage ; ⚠ <strong>ne porte aucun fait central</strong> (CA-IV-01)</td><td>une position du régulateur ou une décision judiciaire</td></tr>
+    <tr><td><strong>B.</strong> La lettre conditionne le régime au caractère exclusif du traitement, et <strong>ne qualifie pas</strong> une suite de traitements enchaînés</td><td>texte officiel, extrait le 21 juillet 2026 (Vol. III F-89)</td><td><strong>[B]</strong> — extraction citée d'une source primaire</td><td>idem ; ⚠ <strong>le texte lui-même ne va pas plus loin</strong></td></tr>
+    <tr><td><strong>C.</strong> Les lois <strong>sur les valeurs mobilières</strong> existantes s'appliquent aux systèmes d'IA, et l'avis déclare ne créer ni modifier aucune exigence</td><td>avis 11-348, 5 décembre 2024 (Vol. III H-07)</td><td><strong>[B]</strong> — ⚠ <strong>le socle n'établit pas qu'il porte sur l'article 12.1</strong></td><td>un avis d'un régulateur compétent sur la loi québécoise ; ⚠ <strong>le socle n'en documente pas — degré 3</strong></td></tr>
+    <tr><td><strong>D.</strong> La validation humaine ne vaut que si elle s'inscrit dans la chaîne de mandat comme <strong>un acte daté et signé</strong></td><td>thèse du Vol. II — le point d'arrêt humain ; ⚠ <strong>construction d'auteur, à attribuer, jamais un fait</strong> ; l'exigence probatoire qui s'y ajoute est une construction du Vol. III, <strong>siège au ch. 17</strong></td><td>⚠ <strong>hors niveaux</strong> — thèse attribuée, non entrée factuelle</td><td>⚠ <strong>non tranchable par le droit</strong> : c'est une proposition d'architecture, pas une lecture du texte</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 27.4 — Cartographie des lectures sur l'application de l'article 12.1 à une chaîne d'agents, au 21 juillet 2026. ⚠ <strong>Aucune n'est retenue contre les autres, et aucun verdict n'est rendu.</strong></p>
+
+<p><strong>Trois observations closent cette table, et aucune n'est un verdict.</strong></p>
+
+<p><strong>La première</strong> est que <strong>les lectures A et B ne s'opposent pas frontalement</strong> : <em>la première ajoute au texte une condition que la seconde constate absente.</em> Départager les deux <strong>suppose une autorité que le socle ne porte pas</strong> — et le Vol. II l'avait déjà nommée, <strong>sans la trouver</strong>.</p>
+
+<p><strong>La deuxième</strong> est que <strong>la lecture D est d'une autre nature que les trois autres.</strong> <em>Elle ne dit pas ce que le texte signifie ; elle dit ce qu'une organisation devrait pouvoir produire pour que la question soit <strong>décidable sur pièce</strong>.</em> À ce titre, elle relève du <strong>ch. 17</strong>, où elle est instruite comme telle.</p>
+
+<p><strong>La troisième</strong> est que ⚠ <strong>la question Q4 ressort de ce chapitre exactement dans l'état où elle y est entrée</strong> — <em>prolongée, mieux datée, adossée à un texte officiel dont le décompte des obligations a été corrigé au socle, et <strong>non tranchée</strong>.</em> <strong>C'est le traitement que le plan lui assigne</strong> ; <em>ce n'est pas un aveu d'échec, mais c'est un résultat maigre, et le dire vaut mieux que de l'habiller.</em></p>
+
+<div class="avert">
+  <p><strong>Une lacune de la source entre ici au registre, et elle est nommée.</strong> <em>Le socle du Vol. III ne documente ni le régime européen des décisions automatisées, ni aucun article du règlement général sur la protection des données</em> — <strong>absence de documentation, degré 3</strong>, portée à son PRD sous le numéro 16 et <strong>entrée au registre de l'Annexe C du TOC</strong>, dans la table distincte des lacunes du Vol. III. ⚠ <strong>Le chapitre ne perd rien pour autant</strong> : <em>sa matière européenne est portée par le Vol. I et atterrit au <strong>ch. 30</strong>, qui en est le lieu.</em></p>
+</div>
+
+<h2 id="s278"><span class="sig">§ 27.8</span>Conséquences d'architecture</h2>
+
+<p><strong>Que retient l'architecte de tout ceci ?</strong> ⚠ <strong>Le socle porte les obligations, non leurs conséquences techniques</strong> : <em>les trois contraintes qui suivent sont une lecture de l'auteur adossée au texte.</em> Et <strong>la somme n'émet aucun avis juridique.</strong></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>la première contrainte porte sur la traçabilité de l'instance.</strong> L'obligation d'expliquer ne vise pas le modèle, mais « les raisons, ainsi que les principaux facteurs et paramètres, ayant mené à la décision » — <em>c'est-à-dire à celle-ci, pour cette personne, à ce moment</em>. <strong>Un système qui ne conserve pas de quoi reconstituer le cheminement d'une décision individuelle ne peut pas satisfaire cette obligation a posteriori</strong>, quelle que soit la qualité de sa documentation générale. <em>La contrainte est d'autant plus lourde que la décision est produite par une chaîne d'agents : ce qu'il faut restituer n'est pas la trace d'un appel, mais celle d'un enchaînement.</em> ⚠ <strong>Et l'obligation est due sur demande, à une date qu'aucun concepteur ne choisit</strong> — <em>ce qui interdit de compter sur une reconstitution improvisée.</em> <strong>Ce que le socle établit</strong> : le texte de l'obligation. <strong>Ce qu'il n'établit pas</strong> : cette contrainte. Le <strong>ch. 29 § 29.1</strong> la porte à sa table de traduction.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>la deuxième contrainte porte sur le déclencheur d'information.</strong> L'entreprise doit informer « au plus tard au moment de la décision ». ⚠ <strong>C'est une exigence de synchronisme : le moment de la décision doit être un événement identifiable dans le système, pas un état qui se constate après coup.</strong> <em>Une architecture dans laquelle nul ne saurait dire à quel instant précis la décision a été rendue — parce que plusieurs agents y ont contribué de façon diffuse — ne rend pas seulement l'audit difficile : elle rend l'obligation d'information <strong>mécaniquement inexécutable</strong>.</em> <strong>Ce que le socle établit</strong> : l'obligation et son échéance. <strong>Ce qu'il n'établit pas</strong> : l'inexécutabilité, qui est une conséquence lue.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>la troisième contrainte porte sur la réversibilité.</strong> La loi exige un membre du personnel « en mesure de réviser la décision ». <em>Cela suppose non seulement qu'une personne soit désignée, mais que le système admette qu'une décision <strong>déjà rendue, déjà communiquée et peut-être déjà exécutée en aval</strong> soit défaite.</em> <strong>Ce que le socle établit</strong> : l'obligation. <strong>Ce qu'il n'établit pas</strong> : les moyens de la satisfaire — ⚠ <em>mais admettre la révision d'une décision autonome par un humain doté du pouvoir de la défaire paraît difficilement séparable d'une exigence de conception : cela ne peut pas être ajouté à une chaîne agentique après coup sans en revoir les effets de bord.</em> <strong>La sémantique d'effet que cette contrainte appelle — idempotence, compensation, réconciliation — est au ch. 48</strong>, qui en est le siège.</p>
+
+<div class="avert">
+  <p><strong>Le flux d'un système agentique outille donc un point d'arrêt humain ; il n'outille jamais « la révision de l'article 12.1 »</strong> (PRDPlan Vol. II §4.4). <em>Les deux contraintes sont distinctes, et le § 27.3 dit pourquoi.</em></p>
+</div>
+
+<p><strong>C'est ici que la friction annoncée par la thèse prend sa forme précise.</strong> <em>La décision agentique autonome a pour intérêt économique de rendre une décision sans humain ; l'article 12.1 attache précisément à cette absence d'humain un triple régime d'obligations.</em></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle fournit</strong> : le fait générateur — l'exclusivité du traitement automatisé — et l'objectif économique de l'agentique. <strong>Ce qu'il ne qualifie pas</strong> : la friction. <em>Celle-ci paraît <strong>structurelle plutôt qu'accidentelle</strong>, en ce que le fait générateur de l'obligation est exactement la propriété que l'on cherche à obtenir.</em> <strong>Deux voies s'ouvrent en conséquence, et le socle n'en valide aucune</strong> : <em>soit l'entreprise réintroduit une intervention humaine de nature à écarter le critère d'exclusivité — voie qui repose sur une interprétation au niveau <strong>[C]</strong>, non confrontée à une position du régulateur, et dont le <strong>ch. 17 § 17.5</strong> montre qu'on ne sait rien de son efficacité empirique ; soit elle <strong>assume le déclenchement</strong> de l'article et outille les obligations.</em> <strong>La seconde voie a ceci de recommandable qu'elle ne dépend d'aucune interprétation contestable ; elle a ceci de coûteux qu'elle impose la traçabilité, le synchronisme et la réversibilité à l'ensemble de la chaîne.</strong></p>
+
+<p><strong>Reste la question du porteur, et c'est le troisième membre de la thèse.</strong></p>
+
+<div class="avert">
+  <p><strong>Garde-fou renforcé, et une thèse de la source amendée qu'il faut reprendre à sa forme corrigée.</strong> <em>Le droit des renseignements personnels <strong>raisonne par exploitant d'entreprise</strong></em> — le texte désigne « toute personne qui exploite une entreprise » (Vol. III F-89, <strong>[B]</strong>) — et <strong>la dichotomie « responsable / mandataire » n'est portée par aucune entrée du socle</strong> : elle se traite comme <strong>construction à instruire</strong>, non comme acquis. <em>C'est l'amendement que le Vol. III a porté à sa propre thèse le 21 juillet 2026 et reporté dans sa pièce le 22 ; la somme le reprend, elle ne le rouvre pas.</em></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>sous l'article 12.1 du moins</strong>, l'écart de responsabilité posé au <strong>ch. 22 § 22.10</strong> n'offre pas à l'entreprise assujettie <strong>la ressource de désigner un tiers</strong> : ni le développeur, ni le fournisseur de modèle, ni l'émergence elle-même. ⚠ <strong>La restriction « sous l'article 12.1 du moins » est portante et ne se retire pas</strong> : <em>le socle ne porte ni les attentes d'E-23 ni le corps de l'avis 11-348 sur ce point précis, et la somme se refuse l'argument du silence.</em> <strong>Ce que le socle établit</strong> : le fait générateur, sans condition tenant à l'auteur du système. <strong>Ce qu'il n'établit pas</strong> : que le droit canadien <strong>résolve</strong> l'écart de responsabilité — <em>ce que le manifeste nomme est l'indétermination de l'<strong>allocation</strong> de l'imputabilité entre quatre porteurs, question que ces textes ne traitent pas et que la somme n'a ni la vocation ni la compétence de trancher.</em></p>
+
+<div class="avert">
+  <p><strong>Et une réserve close le point</strong> : <em>cette lecture explique pourquoi l'encadrement est <strong>nécessaire</strong>, non qu'il soit <strong>suffisant</strong>. Rien, au socle, ne dit qu'un cadre correctement posé libère l'assujetti de quoi que ce soit, ni que la démonstrabilité d'un cadre vaille preuve de conformité.</em> <strong>La question est juridique, et reste ouverte</strong> — le <strong>ch. 29 § 29.3</strong> la reprend et ne la referme pas davantage.</p>
+</div>
+
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
+
+<p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
+
+<ol class="numeros">
+  <li><strong>L'articulation exacte de l'article 12.1</strong>, à sa forme <strong>corrigée</strong> : une obligation inconditionnelle, <strong>trois</strong> informations dues sur demande <strong>dont le droit de rectification</strong>, et un alinéa distinct. ⚠ <em>L'entrée héritée en omettait une</em> — <strong>posé ici une fois, aucun chapitre aval ne le recompte.</strong></li>
+  <li><strong>La distinction entre le point d'arrêt humain et la révision de l'article 12.1.</strong> <em>Outiller le premier n'outille pas la seconde.</em> Le <strong>ch. 29</strong> en fait deux lignes distinctes de sa table.</li>
+  <li><strong>Le siège de la grille des cinq questions sur l'AMF</strong> (§ 27.5) : <strong>cinq cases vides sur cinq, au degré 3</strong>. <em>Aucun chapitre aval ne la ré-applique à ce texte.</em></li>
+  <li><strong>Le siège de Q4</strong>, instruite et <strong>non tranchée</strong> — forme reconduite, et <strong>cartographie sans verdict</strong>. Le <strong>ch. 49</strong> en enregistrera l'état final.</li>
+  <li><strong>Le porteur, sous restriction.</strong> <em>Sous l'article 12.1 du moins</em>, l'assujetti <strong>ne peut désigner de tiers</strong>. ⚠ <strong>La restriction se transporte avec l'énoncé</strong> ; le <strong>ch. 29 § 29.3</strong> l'exploite et la maintient.</li>
+  <li><strong>Trois contraintes d'architecture</strong> — traçabilité de l'instance, synchronisme, réversibilité — posées comme lectures et non comme obligations dérivées. Le <strong>ch. 29</strong> les convertit ; le <strong>ch. 48</strong> porte la sémantique d'effet qu'elles supposent.</li>
+</ol>
+
+<div class="avert">
+  <p><strong>Ce que le chapitre ne lègue pas.</strong> Il ne lègue <strong>rien du contenu de la ligne directrice de l'AMF</strong> : <em>le socle n'en porte que le calendrier, la modalité, l'articulation et la définition</em> — et la lacune est <strong>exposée, non comblée</strong>. Il ne lègue <strong>aucune position du régulateur québécois</strong> sur l'article 12.1. Il ne lègue <strong>aucune définition civiliste du mandat</strong>. Il ne lègue <strong>aucune date de publication au jour près</strong> pour la ligne directrice — <em>trois documents du dépôt en donnent trois états, et l'extraction la plus récente n'en trouve aucun à la source.</em> Et il <strong>n'émet aucun avis juridique.</strong></p>
+</div>
+
+<section class="statut" id="s279">
+
+<h2><span class="sig">§ 27.9</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A) : <em>un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il <strong>remonte</strong>.</em></p>
+</div>
+
+<p><strong>Ce qui est enfreint.</strong></p>
+
+<ol class="numeros">
+  <li>⚠ <strong>La décision d'auteur D-9 est enfreinte nommément, et pour la seconde fois du Livre.</strong> Le PRD v0.9 écrit que « les <strong>ch. 25 et 27</strong> ne se lancent pas avant clôture du lot ». <strong>Le lot est ouvert et non clos.</strong> ⚠ <strong>Et le motif de D-9 vise ce chapitre plus directement encore que le ch. 25</strong> : <em>« l'art. 12.1 au ch. 27 » y est nommé comme l'un des deux endroits où la somme <strong>prescrira</strong> une parade humaine dont le § 17.5 est la limite empirique.</em> Le § 27.3 la décrit, le § 27.8 en fait l'une des deux voies ouvertes, <strong>et la somme continue de déclarer ne rien savoir de son efficacité</strong>. <em>L'infraction est consignée et ne sera pas effacée par l'arbitrage qui la suivra.</em></li>
+  <li>⚠ <strong>La porte G-4 conditionne ce chapitre et n'est pas franchie.</strong> Quatre de ses huit sections — § 27.4, § 27.5, § 27.6, § 27.7 — proviennent <strong>intégralement</strong> du Vol. III, qui se déclare <strong>non publiable</strong>. <em>Le volet structurel de G-4 est levé ; le volet de fond reste entier</em>, et <strong>le relevé des quinze remontées ouvertes du Vol. III n'a pas été refait pour le périmètre du Livre III</strong> (remontée R-IV-85, ouverte au ch. 25).</li>
+  <li><strong>La porte G-3 n'est pas entamée</strong> : socle consolidé à zéro entrée, <strong>aucun énoncé central au sens de CA-IV-01</strong>. ⚠ <strong>Et la conséquence mord ici sur un point précis</strong> : <em>la nuance de cabinet du § 27.3 est en <strong>[C]</strong> et ne porte donc aucun énoncé de ce chapitre</em> — elle y figure au titre de ce qu'elle est.</li>
+  <li><strong>Le volet résiduel de G-1 n'est pas instruit</strong>, et il pèse sur <strong>trois objets</strong> : la date de publication de la ligne directrice (§ 27.1), l'état des positions du régulateur québécois (§ 27.3), et le statut de la spécification de paiement citée au § 27.6.</li>
+  <li><strong>Les décomptes sont publiables</strong> (G-2). L'écart à la cible est relevé au <a class="lien" href="README.md"> 0 </a> du dossier et alimente <strong>D-4</strong>, déjà tranchée.</li>
+  <li><strong>Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan.</strong> Ils résolvent contre l'entrée du TOC : <strong>ch. 28, 29, 30, 35</strong> (présent Livre, même passe), <strong>ch. 48</strong> et <strong>ch. 49</strong> (Livre V). Résolvent contre du <strong>texte rédigé</strong> : <strong>ch. 10</strong>, <strong>ch. 14 § 14.1</strong>, <strong>ch. 16</strong>, <strong>ch. 17 § 17.3 et § 17.5</strong>, <strong>ch. 19</strong>, <strong>ch. 21 § 21.1</strong>, <strong>ch. 22 § 22.9 et § 22.10</strong>, <strong>ch. 25</strong> et <strong>ch. 26</strong>.</li>
+</ol>
+
+<p><strong>Remontées ouvertes par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-87 — non bloquante, de thèse.</strong> Le troisième membre de la thèse du ch. 27 — « <strong>et son imputabilité pèse sur l'assujetti</strong> » — est repris de la thèse du <strong>ch. 13 du Vol. II</strong>, où il est écrit « <strong>sous l'article 12.1 du moins</strong>, elle pèse sur l'assujetti, qui ne peut désigner de tiers ». ⚠ <strong>La restriction est tombée dans la reprise, et elle est portante</strong> : la source déclare expressément que <em>« les attentes d'E-23 ne traitent pas de ce point, et aucune vérification négative n'y porte ; le socle ne porte pas davantage le corps de l'avis 11-348 »</em>, et qu'elle <strong>se refuse l'argument du silence</strong>. <em>Sans la restriction, l'énoncé devient une proposition générale sur le droit canadien que trois textes sur quatre ne portent pas.</em> <strong>Demande remontée</strong> : réalignement de la thèse au titre des décisions 8 et 14. <em>Le corps de la pièce est déjà écrit sous la forme restreinte, au § 27.8.</em></li>
+  <li><strong>R-IV-88 — non bloquante, de divergence à trois termes.</strong> Le plan pose, pour la date de publication finale de la ligne directrice IA de l'AMF, une <strong>divergence tranchée en faveur du Vol. II — 30 mars 2026</strong> —, avec <strong>dette de vérification déclarée</strong>. ⚠ <strong>La divergence est en réalité à trois termes, et le troisième est le plus récent</strong> : le <strong>Vol. I</strong> porte le <strong>7 avril 2026</strong> (§5.3.7, en [C]) ; et le <strong>Vol. III</strong>, par extraction à la source primaire le <strong>21 juillet 2026</strong>, établit qu'<strong>aucune des deux dates ne figure aux pages officielles</strong> — la française estampille « Avril 2026 », l'anglaise porte une date de mise à jour de page. <strong>Demande remontée</strong> : que le registre de l'Annexe C <strong>enregistre le troisième terme et le constat d'extraction</strong>, et que l'arbitrage soit re-examiné à sa lumière. ⚠ <strong>Le rédacteur ne l'a pas fait à la place du plan</strong> : le § 27.1 écrit ce que la source porte — <em>un mois, non un jour</em> — et <strong>déclare l'arbitrage du plan sans le contredire</strong>. <em>Une divergence dont on découvre qu'aucun de ses termes n'est à la source n'est plus une divergence : c'est une absence de datation.</em></li>
+  <li><strong>R-IV-89 — non bloquante, de cardinal hérité dans un intitulé de plan.</strong> Le TOC intitule le § 27.2 « <strong>L'article 12.1 : trois obligations, un texte</strong> ». ⚠ <strong>Ce cardinal est celui de l'entrée héritée du Vol. II, que le Vol. III a corrigée</strong> : le relevé sur le texte officiel compte <strong>une obligation inconditionnelle, trois informations dues sur demande — dont le droit de rectification, que l'entrée héritée omettait — et un alinéa distinct</strong>. <strong>Demande remontée</strong> : que l'intitulé et la ligne « Sections » du plan portent l'articulation corrigée. ⚠ <strong>La classe est nommée par le <code>CLAUDE.md</code> du compendium</strong> : <em>un cardinal annoncé en toutes lettres ne se met pas à jour tout seul</em> — <strong>et celui-ci vit dans un intitulé de section</strong>, où aucun contrôle ne le rapproche de sa source. <em>La pièce écrit l'articulation corrigée et cite l'intitulé du plan tel quel.</em></li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.25</strong> — § 27.1 à § 27.8, dans l'ordre exact —, le § 27.0 étant une <strong>ouverture de chapitre</strong>. La <strong>table de couverture est respectée pour ses trois lignes</strong>, et ⚠ <strong>le partage du §19.1 du Vol. III est tenu des deux côtés</strong> : <em>ce chapitre porte la moitié AMF et en est le siège ; la moitié E-23 est au ch. 25 § 25.4, et aucune des deux ne déborde sur l'autre.</em> ⚠ <strong>Le ch. 20 du Vol. III est reçu en entier</strong>, comme la correction v0.17 du plan l'impose — <em>son « volet RGPD » n'existe plus, et la lacune correspondante est portée au § 27.7 sans être comblée.</em> La <strong>décision 14 a été exécutée avant la rédaction</strong>, domaine déclaré : une thèse examinée, <strong>un membre à restriction tracé et remonté</strong>. Le <strong>garde-fou renforcé « aucun avis juridique » est tenu à ses sept occurrences</strong>, et <strong>la formulation imposée sur le point d'arrêt humain à ses quatre</strong>. La <strong>réserve F-25 est tenue</strong> : <em>ni « en attente », ni « en projet »</em>. Les <strong>quatorze occurrences de R-14 portent leur degré</strong>, dont <strong>les cinq cases vides du tableau 27.3, déclarées degré 3 une par une</strong>. ⚠ <strong>La nuance de cabinet, en [C], ne porte aucun énoncé</strong> : elle figure comme lecture attribuée, au tableau 27.4, avec ce qui la trancherait. ⚠ <strong>R-04 n'est pas étendu au mot « mandat »</strong> : les trois registres sont nommés à chaque occurrence, <strong>sans qu'une septième branche soit ouverte</strong>. Enfin, <strong>Q4 n'est pas tranchée</strong> — <em>elle ressort du chapitre dans l'état où elle y est entrée</em>, et <strong>la forme « cartographie sans verdict » est reconduite</strong> comme le plan l'exige.</p>
+
+<h3>Clôture des remontées — 27 juillet 2026</h3>
+
+<div class="avert">
+  <p><strong>Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.</strong> Elle enregistre l'issue des remontées ouvertes par cette pièce. <em>Une remontée ne se clôt pas là où elle s'ouvre : elle se solde là où elle fait foi</em> — au <a class="lien" href="../PRD/PRD.md">PRD</a> pour une décision ou un régime, au <a class="lien" href="../PRD/TOC.md">TOC</a> pour un réalignement de plan, à l'appareil pour une dette d'outillage.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Renumérotation, à lire avant les numéros.</strong> <em>Les remontées de ce Livre portaient d'abord les numéros <strong>R-IV-38 à R-IV-61</strong> ; une <strong>passe concurrente écrivait les Livres IV et V dans le même dépôt le même jour</strong> et les avait consommés. <strong>Le Livre III a été renuméroté en R-IV-76 à R-IV-99</strong> à la découverte de la collision — <strong>aucun numéro n'est partagé</strong>.</em></p>
+</div>
+
+<ul class="puces">
+  <li><strong>R-IV-87 — close par réalignement de la thèse (TOC v0.27, décisions 8 et 14).</strong> La restriction ⚠ <strong>« sous l'article 12.1 du moins »</strong> est <strong>rétablie</strong>. <em>Elle est portée par la thèse du ch. 13 du Vol. II, d'où ce membre provient, et <strong>la source déclare expressément que le socle ne porte ni les attentes d'E-23 ni le corps de l'avis 11-348 sur ce point</strong>, et qu'elle <strong>se refuse l'argument du silence</strong>.</em> ☑ <strong>Le corps de la pièce n'a pas changé</strong> — <em>le § 27.8 était déjà écrit sous la forme restreinte.</em></li>
+  <li><strong>R-IV-88 — close par requalification de la divergence (TOC v0.27, Annexe C), et l'issue défait l'arbitrage plutôt qu'elle ne le confirme.</strong> Le troisième terme — <strong>le Vol. I porte le 7 avril 2026</strong> — entre au registre, ⚠ <strong>et avec lui le constat d'extraction du Vol. III</strong> : <em>aucune des deux dates arbitrées <strong>ne figure aux pages officielles</strong>.</em> ⚠ <strong><em>Une divergence dont on découvre qu'aucun de ses termes n'est à la source n'est plus une divergence : c'est une absence de datation</strong></em> — <em>et l'arbitrage qui la tranchait portait sur un objet inexistant.</em> ☑ <strong>La somme écrit « avril 2026 » et déclare les trois états</strong> ; <em>l'entrée en vigueur au 1ᵉʳ mai 2027, seule concordante, porte tout ce que la somme en tire.</em></li>
+  <li><strong>R-IV-89 — close par correction de l'intitulé (TOC v0.27).</strong> Le § 27.2 s'intitule désormais « <strong>une obligation inconditionnelle, trois informations dues sur demande, un alinéa distinct</strong> ». ⚠ <em>Le cardinal « trois obligations » était celui de l'entrée héritée du Vol. II, <strong>que le Vol. III a corrigée</strong> — et <strong>il vivait dans un intitulé de section, où aucun contrôle ne le rapproche de sa source</strong>.</em></li>
+</ul>
+
+<div class="avert">
+  <p><strong>Ce que la clôture ne change pas.</strong> Les portes <strong>G-3</strong> et — pour les chapitres qui citent le Vol. III — <strong>G-4</strong> demeurent ouvertes ; le socle consolidé compte <strong>zéro entrée</strong> ; <strong>aucun énoncé de cette pièce n'est central au sens de CA-IV-01</strong>. <strong>CA-IV-11 et CA-IV-13 ne sont pas satisfaites</strong> — <em>aucune relecture par un relecteur distinct du rédacteur</em>. Cette pièce reste un <strong>brouillon non publiable</strong>. <em>Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.</em></p>
+</div>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre III, chapitre 27. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.25, entrée du chapitre 27, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>

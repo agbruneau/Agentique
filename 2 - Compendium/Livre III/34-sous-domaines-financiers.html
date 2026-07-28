@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 34 — Les sous-domaines financiers : banque, assurance, patrimoine · La somme agentique</title>
+<meta name="description" content="l&#x27;agentique se décline différemment selon le sous-domaine — bancaire, IARD, assurance de personne, gestion de patrimoine, services TI financiers — chacun avec sa maturité et ses points de durcissement propres.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre III · Chapitre 34</div>
+  <ol>
+    <li><a href="#s340"><span class="num">34.0</span>Ouverture : instancier, jamais re-dériver</a></li>
+    <li><a href="#s341"><span class="num">34.1</span>Bancaire : détail, gros, paiements, crédit, cœur de système</a></li>
+    <li><a href="#s342"><span class="num">34.2</span>Assurance de dommage</a></li>
+    <li><a href="#s343"><span class="num">34.3</span>Assurance de personne</a></li>
+    <li><a href="#s344"><span class="num">34.4</span>Gestion de patrimoine et d&#x27;actifs</a></li>
+    <li><a href="#s345"><span class="num">34.5</span>Services technologiques dans le domaine financier</a></li>
+    <li><a href="#s346"><span class="num">34.6</span>Synthèse par sous-domaine</a></li>
+    <li><a href="#s347"><span class="num">34.7</span>Synthèse et transition du bloc financier</a></li>
+    <li><a href="#s348"><span class="num">34.8</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.25 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="34-sous-domaines-financiers.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier</div>
+  <h1><span class="chap">Chapitre 34</span>Les sous-domaines financiers : banque, assurance, patrimoine</h1>
+  <p class="titre__situe">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Troisième mouvement — le terrain canadien : interopérabilité financière et adoption (ch. 31-36). Quatrième chapitre du mouvement : <strong>il instancie, sous-domaine par sous-domaine, les six patrons que le ch. 31 a posés une fois</strong></p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — porte <strong>G-3</strong> ouverte (socle consolidé à zéro entrée) ; volet résiduel de <strong>G-1</strong> non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ <strong>La règle cardinale du PRD §5 est enfreinte.</strong> Voir la note de statut, § 34.8. ⚠ <strong>G-4 ne conditionne pas ce chapitre</strong> : sa ligne Fusion ne cite que le Vol. I ; ⚠ <strong>D-9 ne le bloque pas</strong> — <em>il <strong>applique</strong> le patron de libération humaine, il ne le prescrit pas.</em></dd>
+    <dt>Date de gel</dt>
+    <dd><strong>27 juillet 2026</strong> — gel unique, <strong>D-1 prise</strong> (registre : <a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Volet résiduel de G-1 non instruit — et ce chapitre est celui du Livre qui porte le plus grand nombre d'annonces produit datées</strong> : <em>une quarantaine, dont la plupart sont <strong>auto-déclarées</strong> et <strong>à re-vérifier au moment de citer</strong>.</em> Gel de source consommé : <strong>juin 2026</strong> (Vol. I ch. 5) — ⚠ <strong>il ne tient pas lieu du gel de la somme</strong></dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte). ⚠ <strong>La totalité de la matière vient du Vol. I et entre en [C]</strong> — repérage documentaire (PRD §7.1). ⚠ <strong>Conséquence : aucun énoncé n'est central au sens de CA-IV-01</strong>, et <em>l'élévation en [B] passerait par la lecture des sources primaires que le Vol. I cite.</em> ⚠ <strong>Plusieurs affirmations du chapitre sont en outre déclarées par leur source « hors corpus bibliographique, à sourcer à la rédaction »</strong> : <em>elles sont reprises <strong>avec cette réserve</strong>, jamais sans.</em> Les seuls appuis à un autre régime sont des <strong>renvois</strong> aux ch. 25 à 33</dd>
+    <dt>Garde-fous balayés</dt>
+    <dd>Vol. II — <strong>PRD §8.2.3 et §7.5 (métriques auto-déclarées, projections) : vingt-trois occurrences</strong>, réparties sur les sept sections — ⚠ <em>c'est le chapitre du Livre où ce garde-fou travaille le plus, et <strong>aucune métrique n'y est citée sans attribution</strong></em> ; <strong>PRD §8.4 (neutralité fournisseur) : neuf occurrences</strong>, § 34.1 à § 34.5 ; <strong>R-5 : trois occurrences</strong>, § 34.1, § 34.6 et § 34.7 ; <strong>R-1 à R-4, R-6 à R-8 : zéro occurrence</strong>. Vol. III — <strong>R-09 (quatre statuts, dits à chaque mention) : dix-huit occurrences</strong>, § 34.1 (trois), § 34.2 (quatre), § 34.3 (trois), § 34.4 (quatre) et § 34.5 (quatre) ; <strong>R-14 (trois degrés d'absence) : huit occurrences</strong>, § 34.2, § 34.3 (deux), § 34.4, § 34.5 et § 34.6 (trois) ; <strong>R-13 : trois occurrences</strong>, § 34.1, § 34.4 et § 34.7 — ⚠ <em>l'échelle à quatre paliers non numérotés est <strong>nommée par son cardinal</strong>, jamais nue</em> ; <strong>R-02 : deux occurrences</strong>, § 34.4 et § 34.6 ; <strong>R-11 : deux occurrences</strong>, § 34.1 et § 34.3 ; <strong>R-01, R-03 à R-08, R-10, R-12 : zéro occurrence</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ <strong>9 500 mots</strong> de corps (§ 34.0 à § 34.7), <strong>cible dérivée</strong> de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des <strong>trente-trois sous-sections</strong> que sa ligne Fusion absorbe : <strong>la plus haute cible du Livre avec le ch. 24</strong>. ☑ <strong>Décompte publiable depuis G-2</strong> ; la mesure réelle est portée au <a class="lien" href="README.md"> 0 </a> du dossier. ⚠ <strong>D-4 interdit l'amputation comme le gonflement</strong></dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>l'agentique se décline différemment selon le sous-domaine — bancaire, IARD, assurance de personne, gestion de patrimoine, services TI financiers — chacun avec sa maturité et ses points de durcissement propres.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.25, entrée du chapitre 34.</span>
+</div>
+
+<div class="avert">
+  <p><strong>La thèse a été collationnée contre le texte rédigé de sa source avant la rédaction</strong> (décision 14 du TOC). <strong>Domaine de balayage : une thèse examinée, zéro réalignée.</strong> Le ch. 5 du Vol. I n'a pas de thèse formelle ; celle du plan est une <strong>construction d'éditeur</strong> fidèle à l'organisation de ses §5.7 à §5.11.</p>
+</div>
+
+<h2 id="s340"><span class="sig">§ 34.0</span>Ouverture : instancier, jamais re-dériver</h2>
+
+<p><strong>Le ch. 31 a posé six patrons une fois pour toute la somme</strong> : <em>l'irréversibilité, le risque systémique, la double-qualification, le critère anti-emballement, le quatre-yeux et le patron AML.</em></p>
+
+<div class="avert">
+  <p><strong>Ce chapitre les <em>instancie</em> sous-domaine par sous-domaine, et il n'en re-dérive aucun.</strong></p>
+</div>
+
+<p><strong>Ce qui varie d'un sous-domaine à l'autre n'est pas la nature des durcisseurs, mais leur <em>pondération</em> et leur <em>point d'application</em>.</strong> <em>En banque, c'est l'irréversibilité du règlement ; en assurance de dommage, c'est la cascade d'erreurs le long de la chaîne du sinistre ; en assurance de personne, c'est le <strong>coût humain</strong> d'une décision erronée ; en gestion de patrimoine, ce n'est pas un paiement mais <strong>une recommandation</strong> ; dans les services technologiques, c'est la <strong>dépendance elle-même</strong>.</em></p>
+
+<div class="avert">
+  <p><strong>Trois réserves de régime commandent la lecture.</strong> <em>(1)</em> <strong>Toute la matière entre en [C]</strong> — <em>aucun énoncé n'est central.</em> <em>(2)</em> ⚠ <strong>Le chapitre porte une quarantaine d'annonces produit datées, la plupart auto-déclarées</strong> : <em>chacune est <strong>attribuée à sa source</strong> et <strong>marquée à re-vérifier</strong>, et <strong>aucune n'est recommandée</strong> (PRD Vol. II §8.4).</em> <em>(3)</em> ⚠ <strong>Plusieurs affirmations sont déclarées par le Vol. I lui-même « hors corpus bibliographique du chapitre, à sourcer à la rédaction »</strong> : <em>elles sont reprises <strong>avec cette réserve</strong>, et un lecteur qui les réutiliserait devrait les sourcer lui-même.</em></p>
+</div>
+
+<p><strong>Ce que le chapitre ne traite pas.</strong> ⚠ <em>L'<strong>architecture de référence</strong>, le <strong>modèle de maturité financier</strong> et la <strong>grille de décision</strong> — les §5.12.1 à §5.12.3 de la source — sont <strong>hors périmètre</strong> : ils vont au <strong>Livre IV</strong>. L'<strong>interopérabilité B2B et les paiements agentiques</strong> — le §5.13 — vont au <strong>ch. 36</strong>. ⚠ <strong>Ces deux sorties sont déclarées à la table de couverture</strong>, et le chapitre ne les anticipe pas.</em></p>
+
+<h2 id="s341"><span class="sig">§ 34.1</span>Bancaire : détail, gros, paiements, crédit, cœur de système</h2>
+
+<p><strong>Le premier sous-domaine combine l'ensemble des durcisseurs</strong> : <em>irréversibilité des rails de règlement, exigences de fonds propres, risque de modèle codifié et auditabilité réglementaire.</em></p>
+
+<h3>34.1.1 Le tri par régime d'usage</h3>
+
+<div class="avert">
+  <p><strong>Le critère structurant de tout le sous-domaine est la distinction entre deux régimes d'usage que le discours commercial tend à confondre</strong>, et <strong>le ch. 31 § 31.1.3 en est le siège</strong> : <em>la <strong>productivité assistée</strong> — un copilote rédige, résume, prépare, <strong>mais aucune transaction irréversible n'est exécutée sans intervention humaine</strong> — et l'<strong>autonomie transactionnelle</strong> — l'agent <strong>initie une action à effet financier irrévocable</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>La quasi-totalité des déploiements observés en 2024-2026 relèvent du premier régime</strong> ; <em>l'autonomie transactionnelle <strong>demeure rare, bornée et réservée à des périmètres à faible matérialité</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong><em>Ce tri n'est pas une nuance rhétorique : il détermine le niveau de garde-fou exigé.</strong></em> <em>Un copilote tombe sous une gouvernance de productivité ; un agent transactionnel déclenche <strong>trois patrons du ch. 31</strong> — la libération humaine sur l'irréversible (§ 31.1.1), la double-qualification (§ 31.1.4) et la ségrégation des tâches (§ 31.3.4).</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le tri n'est pas davantage une échelle d'autonomie</strong> (R-13 du Vol. III) : <em>les échelles de la somme sont <strong>nommées par leur cardinal et leur numérotation</strong> au <strong>ch. 14 § 14.4</strong>, et le mot « copilote » y désigne trois objets distincts.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Une projection d'analyste situe l'enjeu économique et se cite avec son statut</strong> : <em>une érosion potentielle des pools de profit bancaires <strong>pouvant atteindre 170 G$ d'ici 2027</strong> — <strong>projection d'analyste, attribuée</strong> — explique la pression d'adoption.</em> ⚠ <strong><em>Mais la pression économique ne dispense pas du tri par criticité</strong></em>, qui reste le préalable à toute conception.</p>
+</div>
+
+<h3>34.1.2 Front conversationnel et le revirement humain-dans-la-boucle</h3>
+
+<p><strong>Le front conversationnel illustre la domination du régime de productivité assistée et les limites de l'autonomie tournée vers le client.</strong></p>
+
+<div class="avert">
+  <p><em>Côté copilotes employés, une grande banque rapporte un déploiement à <strong>environ 200 000 utilisateurs en huit mois</strong> — <strong>chiffres auto-déclarés, à re-vérifier</strong> — avec des premiers agents multi-étapes <strong>en émergence</strong>. Côté client, une autre décrit un assistant ayant <strong>dépassé trois milliards d'interactions</strong> au sein de plus de <strong>26 milliards d'interactions numériques annuelles</strong> — <strong>chiffres auto-déclarés</strong> ; ⚠ <strong>et cet assistant demeure réactif, non un agent transactionnel autonome</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Un cas fait charnière, et sa leçon est plus instructive que ses chiffres.</strong> <em>Un assistant déployé en février 2024 fut promu comme accomplissant « le travail de 700 agents à temps plein » — <strong>auto-déclaré et contesté</strong> — avant un <strong>revirement, à partir de mai 2025, vers un modèle hybride réintroduisant l'humain</strong>.</em></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>la leçon transférable est la segmentation par criticité</strong> : <em>un agent peut traiter le statut d'une commande, mais <strong>le litige, la fraude ou la situation de détresse financière exigent l'escalade humaine</strong>.</em> ⚠ <strong>Ce revirement confirme deux choses</strong> : <em>le patron de collaboration humain-agent du <strong>ch. 24 § 24.5.4</strong>, et le tri du § 34.1.1</em> — <strong><em>l'enthousiasme initial pour le remplacement intégral cède devant l'exigence de qualité et de conformité sur les interactions à fort enjeu, où une réponse erronée engage la responsabilité de l'établissement</strong></em> (ch. 31 § 31.1.3). <strong>Ce que le socle établit</strong> : les faits et le revirement. <strong>Ce qu'il n'établit pas</strong> : cette généralisation.</p>
+
+<h3>34.1.3 Crime financier : la tête de pont</h3>
+
+<div class="avert">
+  <p><strong>Le patron du crime financier agentique est posé au ch. 31 § 31.4.3, siège unique</strong> : <em>l'agent investigue et prépare, <strong>la décision de déclarer demeure humaine</strong>.</em> <strong>Cette sous-section n'ajoute que les illustrations bancaires datées et le rattachement canadien.</strong></p>
+</div>
+
+<p><strong>La conformité au crime financier constitue la tête de pont de l'agentique en banque</strong> <em>parce qu'elle conjugue <strong>un volume massif d'alertes</strong>, <strong>un produit narratif</strong> bien adapté à la génération de texte, et <strong>l'exclusion de la détection de fraude</strong> du régime de haut risque européen</em> (<strong>ch. 30 § 30.2.3</strong>).</p>
+
+<div class="avert">
+  <p><strong>Les illustrations produit datées convergent vers le triage assisté plutôt que vers la décision autonome, et chacune porte son statut</strong> : <em>un éditeur intègre un triage anti-blanchiment à son orchestrateur ; un autre annonce un agent de criminalité financière opérant en temps réel — <strong>annonce fournisseur</strong> ; un partenariat annoncé le <strong>4 mai 2026</strong> positionne un agent de crimes financiers comme premier cas d'usage, avec <strong>deux déploiements nommés</strong> et une <strong>disponibilité générale annoncée pour le second semestre 2026</strong>, données confinées sur l'infrastructure de l'éditeur — <strong>annonce à re-vérifier</strong>.</em> ⚠ <strong>Neutralité fournisseur</strong> : <em>trois offres nommées, aucune recommandée.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Du côté canadien, le rattachement est celui du ch. 30 § 30.2.7</strong> : <em>le programme de conformité demeure <strong>non délégable à l'agent</strong>, et de nouvelles obligations encadrent la conservation et la documentation <strong>depuis le 1ᵉʳ octobre 2025</strong>.</em> ⚠ <em>Un cabinet qualifie la vérification client de domaine où l'agentique passe le plus tôt à l'échelle ; <strong>tout gain d'efficacité chiffré relève de l'auto-déclaration</strong> et doit être attribué nominativement.</em></p>
+</div>
+
+<h3>34.1.4 Crédit et octroi : périmètre de haut risque et origination hypothécaire</h3>
+
+<p><strong>Le crédit aux personnes physiques est l'un des rares domaines bancaires explicitement visés par le régime européen de haut risque</strong> — *scoring de crédit et de solvabilité des personnes physiques,</p>
+
+<div class="avert">
+  <p><strong>à l'exception de la détection de fraude</strong>* (<strong>ch. 30 § 30.2.3</strong>).</p>
+</div>
+
+<div class="avert">
+  <p><strong>Le patron réglementaire central consiste à séparer nettement la <em>décision réglementée</em> de l'<em>orchestration agentique</em> qui l'entoure</strong>, et il est le plus clair du chapitre :</p>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p><em>Le scoring de solvabilité demeure <strong>un modèle gouverné, explicable et journalisé</strong>, soumis au régime du risque de modèle. <strong>L'agent n'est pas ce modèle.</strong> Il <strong>orchestre autour</strong> : il collecte les pièces justificatives, pré-remplit les formulaires, explique la décision au client — ⚠ <strong>mais il ne se substitue pas au moteur de décision réglementé.</strong></em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le delta sectoriel empile deux régimes</strong>, et il faut les tenir séparés : <em>le régime européen de haut risque — <strong>échéance reportée au 2 décembre 2027, report adopté sous réserve de publication</strong></em> (<strong>ch. 30 § 30.2.3</strong>) — <em>et les régimes de <strong>notification de décision automatisée</strong> : le régime européen et <strong>l'article 12.1 québécois</strong>, dont le <strong>ch. 27</strong> est le siège et qui <strong>n'est pas une interdiction</strong> mais <strong>un régime de transparence et de révision</strong>.</em></p>
+</div>
+
+<p><strong>L'origination hypothécaire constitue un ajout volumétrique majeur</strong>, distinct du crédit à la consommation et lui aussi visé. ⚠ <em>La chaîne — réception des documents, vérification, pré-remplissage selon un modèle de référence publié le <strong>29 octobre 2025</strong> (<strong>ch. 31 § 31.2.5</strong>), puis clôture électronique — <strong>se prête à l'orchestration agentique sur ses étapes à faible irréversibilité</strong>, tandis que <strong>le scoring décisionnel reste un modèle gouverné</strong>.</em> ⚠ <strong>Le standard fournit le substrat sémantique qui réduit l'affabulation du pré-remplissage et facilite l'audit</strong> — <em>application directe du ch. 31 § 31.2.1.</em></p>
+
+<div class="avert">
+  <p><strong>Une question de fond n'est pas refermée, et elle précède l'agentique</strong> : <em>la littérature établit que <strong>certaines garanties d'équité sont mutuellement incompatibles</strong>.</em> ⚠ <strong><em>La couche d'orchestration agentique n'absout pas le modèle sous-jacent : elle déplace seulement la frontière de l'explicabilité</strong></em> (ch. 31 § 31.3), <em>qui doit relier la recommandation au profil et à sa justification.</em></p>
+</div>
+
+<h3>34.1.5 Paiements temps réel, cœur de système et banque ouverte</h3>
+
+<div class="avert">
+  <p><strong>Le versant des rails de paiement canadiens est au ch. 33</strong>, qui en porte les dates, les statuts et la réserve la plus stricte du Livre ; <em>il n'est pas doublé ici.</em> ⚠ <strong>Et le patron d'irréversibilité qui les gouverne est au ch. 31 § 31.1.1.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>L'encapsulation du cœur de système est au ch. 24 § 24.1.4</strong> pour son versant générique et au <strong>§ 34.5.2</strong> pour son delta financier ; <em>elle n'est pas reprise ici.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>La banque ouverte</strong> — <em>l'agent comme destinataire accrédité</em> — <strong>est au ch. 32</strong>, qui porte le cadre, son superviseur, son règlement prépublié et <strong>son fait négatif vérifié sur le standard technique</strong>. ⚠ <strong><em>Aucune spécification n'est nommée ici</strong></em>, et <strong>R-5 du Vol. II l'interdit</strong> : <em>une anticipation d'industrie n'est pas une désignation.</em></p>
+</div>
+
+<h2 id="s342"><span class="sig">§ 34.2</span>Assurance de dommage</h2>
+
+<div class="avert">
+  <p><strong>Le saut d'interopérabilité observé en assurance de dommage n'est pas l'agent lui-même, mais la mutation du transport sous-jacent.</strong></p>
+</div>
+
+<h3>34.2.1 Le tournant du transport : du lot au temps réel</h3>
+
+<p><em>Historiquement, l'échange entre courtiers, assureurs et fournisseurs s'appuyait sur un <strong>format par lots</strong> hérité de l'échange de documents structurés, puis sur des messages <strong>en temps réel</strong>.</em> ⚠ <strong>Le critère discriminant est donc le passage de ce socle par lots à un transport agentique temps réel exposant les capacités sectorielles sous une forme consommable par un agent.</strong></p>
+
+<div class="avert">
+  <p><em>Une organisation sectorielle a annoncé le <strong>28 mai 2026</strong> une architecture qualifiée de « <strong>compatible avec le protocole agent-outil</strong> » au-dessus de deux de ses produits, présentée comme « gouvernée et auditable », avec une annonce de suivi début juin 2026 — <strong>disponibilité générale à re-vérifier</strong>, <strong>chiffre fournisseur</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Cette mise à disposition demande une qualification prudente, et c'est l'application directe du siège anti-emballement du ch. 31 § 31.2.6</strong> : <em>il ne s'agit <strong>ni d'un nouveau protocole</strong>, <strong>ni d'un serveur d'outils financier officiel ratifié</strong> — <strong>aucun standard sectoriel de ce type n'existe à juin 2026</strong>.</em> <strong>Concrètement, l'organisation expose des produits existants par une interface</strong> ; <em>la valeur réside dans le <strong>découplage</strong> entre la logique d'agent et le modèle de données assurantiel, et dans le caractère <strong>contractuel et journalisé</strong> de l'échange.</em> ⚠ <strong><em>L'agent consomme une capacité bornée plutôt que de deviner une structure</strong></em> — <em>ce qui réduit l'ambiguïté sémantique et facilite l'auditabilité.</em></p>
+</div>
+
+<h3>34.2.2 Les plateformes de police comme plateformes d'agents</h3>
+
+<p><em>⚠ <strong>Cette sous-section est le siège de la grille d'architecture des plateformes d'assurance de dommage</strong> dans la somme ; les § 34.5.2 et § 34.5.6 y renvoient sans la re-dériver.</em></p>
+
+<p><strong>Le critère d'architecture oppose deux modèles.</strong> <em>Dans le premier, <strong>l'agent est embarqué dans le cœur de police</strong> — couplage fort : la plateforme intègre ses propres capacités agentiques, <strong>au prix d'une portabilité de modèle réduite</strong>. Dans le second, <strong>le cœur est exposé comme outil</strong> par une interface ouverte et indépendante du modèle, <strong>laissant l'entreprise choisir et changer son fournisseur</strong>.</em></p>
+
+<p><strong>Les trois axes de décision sont</strong> : <em>la <strong>portabilité du modèle</strong>, l'<strong>ouverture à l'orchestration inter-agents</strong>, et le <strong>périmètre de la piste d'audit</strong>.</em></p>
+
+<div class="avert">
+  <p><strong><em>Ce choix engage directement le découplage et l'évolution : un cœur exposé comme outil survit au remplacement du modèle ; un agent embarqué lie le cycle de vie du modèle à celui du cœur.</strong></em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Les éditeurs se positionnent diversement, et chaque statut se dit</strong> : <em>l'un a annoncé le <strong>8 décembre 2025</strong> une version dont un assistant de souscription présenté comme « première capacité agentique du cœur » et un cadre agentique indépendant du modèle — ⚠ <strong>à condition de distinguer l'outillage de développement du cadre agentique d'exécution embarqué</strong>, distinction que le <strong>ch. 31 § 31.2.6</strong> impose ; un autre a lancé le <strong>28 avril 2026</strong> une plateforme articulant un référentiel de contexte, une couche d'assurance qualité et une passerelle ; un troisième a annoncé en <strong>octobre 2025</strong> une version dotée de « 13 agents » avec humain dans la boucle — <strong>chiffres fournisseurs, à re-vérifier</strong>.</em> ⚠ <strong>Neutralité fournisseur</strong> : <em>trois offres nommées, aucune recommandée.</em></p>
+</div>
+
+<h3>34.2.3 Sinistres et fraude : l'agent orchestrateur d'une chaîne</h3>
+
+<p><strong>La chaîne du sinistre — déclaration, instruction, règlement, subrogation — est le théâtre où l'agentique y est la plus visible</strong>, ⚠ <strong>et le patron directeur y est celui du <em>coordinateur de spécialistes</em>, non du <em>décideur unique</em>.</strong></p>
+
+<div class="avert">
+  <p><em>L'agent orchestre des sous-tâches — extraction de pièces, évaluation des dommages, détection de fraude, calcul d'indemnité — <strong>dont chacune comporte un risque de cascade</strong> : <strong>une erreur propagée le long de la chaîne aboutit à un règlement irréversible</strong>.</em> ⚠ <strong>Ce mode d'échec relève de la taxonomie des défaillances multi-agents dont le ch. 6 est le siège</strong>, <em>et il impose la <strong>libération humaine sur l'action irréversible</strong></em> (ch. 31 § 31.1.1).</p>
+</div>
+
+<div class="avert">
+  <p><strong>Une distinction de lecture est nécessaire, et elle vaut pour tout le chapitre</strong> : <em>il faut séparer <strong>les agents-produits</strong> — vendus comme agents autonomes — <strong>des produits qui utilisent des agents en sous-composant</strong>, ⚠ <strong>pour ne pas surclasser le degré réel d'autonomie</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><em>Un éditeur a lancé le <strong>16 septembre 2025</strong> une plateforme de sinistres qualifiée d'agentique, et revendique des contrats reconduits ainsi que des gains — <strong>−3 % de pertes, −30 % de temps de traitement, 60 % d'automatisation, plus de 99 % de couverture</strong> : ⚠ <strong>chiffres AUTO-DÉCLARÉS, à re-vérifier</strong>, cités ici sous cette seule attribution.</em> ⚠ <strong>Le marché se concentre</strong> : <em>une acquisition clôturée le <strong>6 janvier 2025</strong> pour <strong>730 M$</strong> cible une branche particulière ; un autre acteur industrialise l'évaluation de dommages « sans contact ».</em> ⚠ <strong>Un règlement de litige entre deux de ces acteurs constitue un signal de concentration et de risque de verrouillage fournisseur</strong> — <em>à surveiller du point de vue de la résilience opérationnelle</em> (<strong>ch. 30 § 30.2.2</strong>).</p>
+</div>
+
+<h3>34.2.4 Souscription, tarification, distribution et télématique</h3>
+
+<p><strong>En amont du sinistre, la souscription suit un patron d'enchaînement</strong> : <em>réception → enrichissement → triage → <strong>soumission prête à décider</strong></em>. ⚠ <em>L'agent collecte la demande, l'enrichit de données externes, la trie par appétit de risque et <strong>la présente au souscripteur sous une forme prête à décider</strong></em> — <em>application du patron du ch. 31 § 31.1.1.</em></p>
+
+<div class="avert">
+  <p><strong>La télématique et l'assurance basée sur l'usage fournissent le substrat de données, et les chiffres portent leur statut</strong> : <em>une levée de <strong>350 M$ en mars 2026</strong> et <strong>plus de 21 millions d'assurés</strong> revendiqués avec une croissance annuelle de l'ordre de <strong>+28 %</strong> — <strong>chiffres fournisseur et presse, à re-vérifier</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Les métriques de productivité souvent citées sont des projections d'analyste</strong> : <em>souscription ramenée <strong>de trois jours à trois minutes</strong>, taux de traitement de bout en bout passant <strong>de 10-15 % à 70-90 %</strong></em> — ⚠ <strong>projections d'analyste, à re-vérifier</strong>, <em>jamais des mesures auditées.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>La tarification fondée sur l'usage soulève des questions d'équité tarifaire</strong>, traitées par une littérature dédiée ; ⚠ <em>en assurance de dommage, <strong>cet enjeu relève du risque de modèle et de la conformité locale, non du régime de haut risque</strong></em> — voir § 34.2.6.</p>
+</div>
+
+<h3>34.2.5 Réassurance : la frontière où l'agentique reste copilote</h3>
+
+<div class="avert">
+  <p><strong>La réassurance marque la frontière où l'agentique cesse d'être autonome pour rester copilote.</strong></p>
+</div>
+
+<p><em>Le critère est que <strong>franchir la frontière inter-firmes</strong> — cédante, courtier, réassureur — <strong>exige une identité d'agent vérifiable et une contractualisation explicite</strong> : un agent qui agirait au nom d'une partie auprès d'une autre devrait être <strong>identifié, autorisé et imputable</strong>.</em> ⚠ <strong>C'est exactement l'objet du ch. 18 § 18.1, siège unique de la connaissance de l'agent</strong>, <em>qui n'est pas reconstruit ici.</em></p>
+
+<div class="avert">
+  <p><strong><em>Or ces mécanismes — connaissance de l'agent, négociation de contrat machine-à-machine, journalisation opposable entre entreprises — sont encore absents en pratique à juin 2026.</strong></em> <em>Les déploiements observés sont par conséquent <strong>des copilotes internes à une firme</strong>, et non des agents franchissant la frontière de manière autonome.</em></p>
+</div>
+
+<div class="avert">
+  <p><em>Un courtier a présenté le <strong>23 juin 2025</strong> un copilote et un module contractuel couvrant quinze branches ; un réassureur a publié en <strong>décembre 2025</strong> un plan directeur — ⚠ <strong>communiqués fournisseurs hors corpus bibliographique du chapitre source, à sourcer et à re-vérifier au moment de citer</strong>.</em> ⚠ <strong><em>Il importe de ne pas surclasser ces réalisations : ce sont des copilotes et des cadres conceptuels, non des agents autonomes.</strong></em> <strong>La ségrégation des rôles et l'indépendance d'exécution du ch. 31 § 31.3.4 restent des conditions structurelles.</strong></p>
+</div>
+
+<h3>34.2.6 Le régime propre : où le droit mord différemment</h3>
+
+<div class="avert">
+  <p><strong>Le régime applicable à l'assurance de dommage se distingue par ce qui <em>n'y mord pas</em>.</strong></p>
+</div>
+
+<p><strong>Le point critique est que la tarification et la souscription y <em>ne sont pas</em> explicitement classées « haut risque »</strong> : <em>le point de l'annexe européenne qui vise l'assurance <strong>ne concerne que la vie et la santé</strong></em> (<strong>ch. 30 § 30.2.3</strong>). ⚠ <strong><em>L'assurance de dommage se trouve dans une zone grise, et il serait erroné d'y étendre le régime de haut risque.</strong></em></p>
+
+<p><strong>Le centre de gravité réglementaire se déplace donc vers deux pôles.</strong> *D'une part, <strong>le risque de modèle</strong> : la guidance américaine du 17 avril 2026, ⚠ <strong>qui exclut explicitement l'IA générative et agentique et reste non contraignante</strong> ; <strong>E-23</strong>, ⚠ <em>finale mais <strong>en vigueur le 1ᵉʳ mai 2027</strong>, et dont la portée élargie couvre les assureurs de dommage</em> ; et la ligne directrice québécoise, <strong>même date d'entrée en vigueur</strong> (<strong>ch. 25</strong>, <strong>ch. 27</strong>, <strong>ch. 30 § 30.2.4</strong>). D'autre part, <strong>la résilience opérationnelle</strong>, avec son registre de tiers et son risque de concentration (<strong>ch. 30 § 30.2.2</strong>).*</p>
+
+<div class="avert">
+  <p><em>Une organisation nord-américaine de superviseurs poursuit des travaux sur les écarts de redevabilité et les erreurs en cascade, sur la base d'un bulletin type de 2023.</em> ⚠ <strong>Une projection d'analyste situe à environ 7-8 % la proportion d'assureurs disposant d'une gouvernance inter-agents intégrée</strong> — <em>projection, à marquer comme telle.</em></p>
+</div>
+
+<h2 id="s343"><span class="sig">§ 34.3</span>Assurance de personne</h2>
+
+<div class="avert">
+  <p><strong>L'assurance de personne se distingue de l'assurance de dommage par <em>deux durcisseurs cumulés et structurants</strong></em> : <em>la souscription et la tarification y portent sur <strong>une personne physique</strong> et tombent donc <strong>explicitement</strong> dans le périmètre de haut risque ; et <strong>la donnée mobilisée est une donnée de santé sensible</strong>.</em> ⚠ <strong><em>Le delta réglementaire n'est donc pas marginal mais constitutif.</strong></em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le patron du ch. 31 § 31.1.1 s'y applique avec une acuité particulière</strong> : <strong><em>le coût d'une décision erronée peut y être humain, et non seulement financier.</strong></em></p>
+</div>
+
+<h3>34.3.1 La souscription accélérée comme chaîne d'orchestration régulée</h3>
+
+<p><strong>La souscription vie accélérée est le cas où la chaîne d'orchestration rencontre la contrainte réglementaire la plus directe</strong> : <em>c'est une <strong>décision de tarification du risque sur une personne physique</strong>, donc explicitement de haut risque ; et, <strong>lorsqu'elle est rendue sans intervention humaine</strong>, une <strong>décision exclusivement automatisée</strong> déclenchant les obligations de l'article 12.1</em> (<strong>ch. 27 § 27.2</strong>).</p>
+
+<p><strong>La chaîne type enchaîne</strong> : <em>récupération de preuves hétérogènes, application de règles de mortalité et de morbidité, puis <strong>verdict</strong> — traitement de bout en bout pour les profils nets, <strong>renvoi à un humain sinon</strong>.</em></p>
+
+<div class="avert">
+  <p><strong>Le critère architectural directeur n'est pas « quel modèle de langage », mais <em>où s'arrête l'autonomie</strong></em> : <em>tout cas non traité de bout en bout <strong>remonte à un souscripteur humain</strong>, et toute décision exclusivement automatisée <strong>doit rester explicable et révisable</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le rôle propre de l'agent y demeure circonscrit</strong> — <em>synthèse de preuves volumineuses et suggestion de prochaine action</em> — <em>tandis que <strong>le verdict de mortalité reste un modèle actuariel ou à règles, gouverné</strong> au sens du risque de modèle.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Il faut distinguer deux objets que le marketing confond</strong> : <em>le <strong>moteur de règles déterministe</strong>, auditable par construction et <strong>antérieur aux modèles de langage</strong> ; et l'<strong>agent non déterministe</strong> qui orchestre la collecte et la synthèse autour de ce moteur.</em> ⚠ <strong><em>Le second n'absorbe pas le premier : il l'instrumente.</strong></em></p>
+</div>
+
+<div class="avert">
+  <p><em>Deux plateformes ont annoncé, en <strong>novembre 2025</strong> et le <strong>29 octobre 2025</strong>, des socles présentés comme des bonds d'intelligence artificielle pour ce sous-domaine — <strong>auto-déclaré</strong>, <strong>statuts annonce / préversion / disponibilité générale à reconfirmer</strong>.</em> ⚠ <em>Un cabinet relève que la modernisation des technologies de cœur par l'agentique reste, à juin 2026, <strong>largement en projet plutôt qu'en production</strong> — <strong>estimation d'analyste</strong>.</em></p>
+</div>
+
+<h3>34.3.2 La donnée de santé comme contexte d'agent</h3>
+
+<div class="avert">
+  <p><strong>Là où la branche vie pose la question « où s'arrête l'autonomie », la donnée manipulée fait apparaître une seconde frontière.</strong></p>
+</div>
+
+<p><em>Le patron d'ancrage gouverné du <strong>ch. 24 § 24.4</strong> s'y spécialise en un <strong>pont dossier de santé → agent</strong>, mais sous une contrainte de premier ordre absente des autres sous-domaines : <strong>la donnée de santé est une catégorie particulière</strong> dans les trois régimes concernés.</em></p>
+
+<div class="avert">
+  <p><strong>La conséquence d'architecture est que <em>la minimisation et le consentement doivent précéder la lecture</strong></em> : <em>l'agent <strong>ne doit recevoir en contexte que le strict nécessaire à la tâche</strong>, et <strong>la résidence de ce contexte tombe sous le piège du ch. 31 § 31.5.1</strong></em> — <em>l'invite, les plongements et les traces contiennent la donnée client, <strong>ici une donnée de santé</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Sur le plan de l'interopérabilité, il n'existe <em>aucun</em> serveur d'outils sectoriel officiel pour l'assurance de personne à juin 2026</strong> — <em>application directe du siège anti-emballement du <strong>ch. 31 § 31.2.6</strong></em>. <em>Ce qu'on observe est un <strong>empilement</strong> : une couche sémantique de ressources de santé matures, au-dessus de laquelle s'intercalent des connecteurs <strong>génériques, non sectoriels</strong>.</em> ⚠ <strong>Le rôle de cette couche est de présenter à l'agent <em>une capacité bornée, identifiée et journalisée</em> plutôt qu'un accès direct au dossier.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>Note de sourçage, reprise de la source</strong> : <em>les standards d'interopérabilité de santé et les connecteurs correspondants <strong>ne figurent pas au corpus bibliographique du chapitre source</strong>, centré sur la finance ; <strong>ils sont à sourcer sur leurs publications propres au moment de citer</strong>, et <strong>toute affirmation à leur sujet demeure sans appui bibliographique</strong>.</em></p>
+</div>
+
+<h3>34.3.3 Prestations et autorisation préalable</h3>
+
+<div class="avert">
+  <p><strong>Le versant prestations <em>renverse le calcul de risque</em> qui gouverne le reste du chapitre</strong> : <em>ici, <strong>le coût d'erreur n'est pas financier mais humain</strong> — un refus de soins, l'interruption d'une rente d'invalidité.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le patron du ch. 31 § 31.1.1 s'y traduit en une <em>asymétrie d'autorité explicite</strong></em> :</p>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>*Un agent peut être autorisé à <strong>approuver ou à accélérer</strong> une prestation — <strong>cas où l'erreur joue en faveur de l'assuré et reste réversible côté payeur</strong> — ⚠ <strong>mais une décision défavorable de nature clinique doit rester réservée à un professionnel qualifié</strong>, assortie du journal d'audit infalsifiable du <strong>ch. 31 § 31.3.2</strong>.</p>
+</div>
+
+<p><strong>Le cas d'usage le plus mature et, simultanément, le plus litigieux est l'autorisation préalable</strong> : *techniquement, l'agent <strong>assemble le dossier</strong> — il rassemble pièces et justifications cliniques —</p>
+
+<div class="avert">
+  <p><strong>mais la décision adverse demeure humaine</strong>.*</p>
+</div>
+
+<div class="avert">
+  <p><strong>La cascade d'erreurs propre aux systèmes multi-agents y prend une portée particulière</strong> : <em>une chaîne mal cadrée peut <strong>convertir une synthèse erronée en refus à conséquence sanitaire</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le contre-exemple canonique de gouvernance illustre précisément ce que le patron interdit, et il se cite avec toutes ses réserves</strong> : *un litige visant l'usage d'un outil prédictif en gestion de l'utilisation — <strong>refus partiel d'une requête en rejet le 13 février 2025</strong> — est à présenter comme <strong>un contre-exemple contesté par l'assureur, et non comme un fait établi</strong> ; ⚠ <strong>son intérêt analytique est de matérialiser le risque qu'un score automatisé se substitue <em>de fait</em> à la décision clinique humaine</strong>.* ⚠ <strong>Note de sourçage</strong> : <em>les canaux d'échange en santé, les acteurs nommés et le litige <strong>ne figurent pas au corpus bibliographique du chapitre source</strong> — ils relèvent de sources juridiques et de santé <strong>à citer directement</strong>, et tout chiffre de rendement d'un fournisseur est <strong>auto-déclaré</strong>.</em></p>
+</div>
+
+<h3>34.3.4 Distribution, conseil et rentes</h3>
+
+<p><strong>La distribution et le conseil forment le pont vers la gestion de patrimoine du § 34.4</strong> : <em>l'agent y assiste le distributeur, ⚠ <strong>mais la convenance de la recommandation reste un acte réglementé qui ne s'atténue pas du fait qu'un agent l'a préparé</strong></em> (<strong>ch. 30 § 30.2.5</strong>).</p>
+
+<div class="avert">
+  <p><strong>L'exigence d'interopérabilité qui en découle est que la chaîne doit <em>porter la preuve</em> reliant la recommandation au profil du client et à sa justification</strong> — <strong><em>un agent qui « propose » sans laisser ce fil documentaire reporte le risque de conduite sur le distributeur.</strong></em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le sous-domaine présente un trait qui le distingue du patrimoine</strong> : *les <strong>rentes et la couverture de longévité</strong> engagent l'assureur sur <strong>un horizon décennal</strong> — souvent trente à quarante ans — de sorte que <strong><em>la stabilité et l'explicabilité du modèle actuariel priment sur l'agilité de l'agent</strong></em>.* ⚠ <strong>Les hypothèses de mortalité, de taux et de comportement tombent sous le risque de modèle gouverné</strong> : <strong><em>leur révision n'est pas un terrain d'expérimentation non déterministe, et l'agent y intervient au mieux comme assistant de préparation, jamais comme arbitre des hypothèses de long terme.</strong></em></p>
+</div>
+
+<div class="avert">
+  <p><em>Deux plateformes ont annoncé des copilotes de distribution et d'administration en <strong>octobre 2025</strong>, <strong>février 2026</strong> et <strong>juin 2025</strong> — <strong>annonces fournisseur, statuts et chiffres auto-déclarés, à reconfirmer</strong>.</em></p>
+</div>
+
+<h3>34.3.5 Le régime propre : haut risque, équité, donnée sensible</h3>
+
+<div class="avert">
+  <p><strong>Cette sous-section n'instaure pas un nouveau régime : elle énonce le <em>delta</em> que la vie et la santé ajoutent au bloc transverse du ch. 30</strong>, <em>et qui justifie d'en faire une branche distincte du § 34.2.6, où la tarification de dommage n'est précisément <strong>pas</strong> explicitement de haut risque.</em></p>
+</div>
+
+<p><strong>Le premier marqueur est le régime européen</strong> : <em>le point de l'annexe qui vise l'assurance range au haut risque <strong>l'évaluation du risque et la tarification en assurance vie et santé pour les personnes physiques</strong></em> — ⚠ <strong><em>libellé exact, à ne pas étendre à l'assurance de dommage ni à confondre avec le point qui vise le scoring de crédit.</strong></em> <em>L'échéance <strong>était</strong> fixée au 2 août 2026 ; ⚠ <strong>le report de seize mois au 2 décembre 2027 a été adopté dans la fenêtre du socle, sous la seule réserve de la publication à suivre</strong></em> (<strong>ch. 30 § 30.2.3</strong>).</p>
+
+<p><em>S'y articule, <strong>sans nouvelles exigences propres</strong>, un avis d'une autorité européenne d'assurance sur la gouvernance du risque lié à l'IA. Aux États-Unis, le pilotage passe par <strong>un bulletin type adopté le 4 décembre 2023</strong>, repris par un nombre croissant d'États — ⚠ <strong>décompte et statut à reconfirmer</strong>.</em></p>
+
+<div class="avert">
+  <p><strong>Au Canada et au Québec</strong> : <em>E-23 couvre désormais <strong>tous les assujettis fédéraux, assureurs vie compris</strong> ; <strong>la ligne directrice québécoise ajoute un responsable senior unique, un répertoire centralisé et une explication « claire et simple » au client</strong></em> — ⚠ <strong>ce que le ch. 30 § 30.2.7 porte en [C], et que le ch. 27 § 27.1 déclare comme <em>lacune du socle du Vol. II, non comblée</strong></em> ; <em>et l'article 12.1 s'applique à toute décision exclusivement automatisée, ⚠ <strong>sans être une interdiction</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>L'enjeu de fond, plus aigu ici qu'ailleurs, est l'équité et le biais</strong> : <em>sur des contrats de très longue durée, <strong>le risque est qu'un modèle exploite des variables corrélées</strong> à l'état de santé, au profil génétique ou à l'âge, <strong>et reproduise une discrimination prohibée</strong>.</em> ⚠ *La littérature fournit le cadre formel — <strong>bornes théoriques entre critères d'équité</strong>, application au prix d'assurance non discriminatoire — ⚠ <strong>et aucun de ces cadres ne se résout par l'agentique</strong> : <strong><em>l'agent doit au contraire en porter la preuve documentée</strong></em>.*</p>
+</div>
+
+<div class="avert">
+  <p><strong><em>Le delta se résume ainsi : un même agent y cumule haut risque, donnée sensible et horizon long, ce qui rend la gouvernance d'équité non pas optionnelle mais constitutive de la conformité.</strong></em></p>
+</div>
+
+<h2 id="s344"><span class="sig">§ 34.4</span>Gestion de patrimoine et d'actifs</h2>
+
+<div class="avert">
+  <p><strong>Ce sous-domaine se distingue des trois précédents par <em>une tension de qualification juridique</em> plutôt que par l'irréversibilité d'un règlement</strong> : <strong><em>le geste réglementé n'est pas un paiement mais une recommandation</strong></em>, <em>et la frontière critique est celle qui sépare <strong>l'assistance documentaire</strong> du <strong>conseil personnalisé soumis aux obligations de convenance</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le critère de lecture transversal se pose une fois</strong> : <strong><em>ne jamais confondre le conseiller automatisé classique — moteur de règles déterministe — avec l'agent non déterministe</strong></em> (§ 34.4.4).</p>
+</div>
+
+<h3>34.4.1 Le copilote du conseiller comme orchestrateur d'interopérabilité</h3>
+
+<div class="avert">
+  <p><strong>Le premier patron n'est pas un agent qui place ou rééquilibre, mais un copilote dont la valeur d'interopérabilité tient à ce qu'il <em>écrit dans le système d'enregistrement réglementaire</em>.</strong></p>
+</div>
+
+<p><em>La distinction est structurante : <strong>un assistant qui se contente de répondre reste un outil de productivité sans empreinte sur la piste documentaire</strong> ; <strong>un copilote qui transcrit l'entretien, en produit une note, la consigne au dossier et en dérive les tâches de suivi referme une boucle où chaque écriture devient un acte traçable et révisable</strong>.</em></p>
+
+<div class="avert">
+  <p><em>La trajectoire documentée d'une grande maison en donne l'exemple : à un assistant déployé en 2023 — <strong>adoption auto-déclarée dépassant 98 % des équipes</strong> — succède en <strong>juin 2024</strong> un outil combinant transcription et synthèse <strong>avec consignation automatique au registre</strong>, puis un troisième côté recherche en <strong>octobre 2024</strong>.</em> ⚠ <strong>Le déplacement décisif est là : <em>l'agent ne lit plus seulement le contexte, il alimente le registre</strong></em> — <em>ce qui fait de la qualité et de la réversibilité de cette écriture une exigence de premier ordre.</em></p>
+</div>
+
+<p><strong>Deux corollaires en découlent.</strong> *D'abord, ⚠ <strong>le consentement du client à l'enregistrement devient une pré-condition d'interopérabilité, pas une formalité</strong> : sans lui, la boucle ne peut s'amorcer. Ensuite,</p>
+
+<div class="avert">
+  <p><strong>l'écriture au dossier tombe sous les obligations de conservation des livres et registres</strong> — <strong>ch. 31 § 31.3.2</strong> — <em>de sorte que <strong>la note produite par l'agent doit être conservée, horodatée et opposable au même titre qu'une note rédigée par le conseiller</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><em>Le mouvement n'est pas isolé : un autre fournisseur a intégré son assistant au flux de travail du conseiller en <strong>mars 2026</strong>, en remplacement d'un agent conversationnel de 2023.</em> ⚠ <strong><em>Le terrain d'adoption mature n'est donc pas le conseil automatisé, mais l'instrumentation gouvernée de l'acte de conseil humain.</strong></em></p>
+</div>
+
+<h3>34.4.2 L'architecture fédérée à registre de capacités</h3>
+
+<div class="avert">
+  <p><strong>Le patron d'architecture le plus instructif du sous-domaine est <em>un registre fédéré de capacités</strong></em> <em>qui transpose au monde de l'investissement <strong>la résolution du problème N×M en N+M</strong> posée au <strong>ch. 24 § 24.0.3</strong> : chaque équipe expose ses fonctions comme capacités enregistrées <strong>plutôt que de multiplier les intégrations point-à-point</strong>.</em></p>
+</div>
+
+<p><em>La conception documentée réunit <strong>une orchestration supervisée</strong>, <strong>un registre alimenté par des dizaines d'équipes</strong>, <strong>un filtrage ramenant l'espace d'outils à une vingtaine ou une trentaine d'outils pertinents par requête</strong>, et <strong>des garde-fous d'entrée et de sortie</strong>.</em></p>
+
+<div class="avert">
+  <p><strong>Le trait le plus signifiant n'est pas technique mais réglementaire</strong> : *la contrainte « <strong>pas de conseil en investissement</strong> », <strong>vérifiée par évaluation</strong>, est <strong><em>un choix d'architecture de gouvernance</strong></em> — en interdisant à l'agent de formuler un conseil personnalisé, l'éditeur <strong>maintient délibérément le copilote en deçà du seuil qui déclencherait les obligations de convenance</strong> (§ 34.4.5).*</p>
+</div>
+
+<div class="avert">
+  <p><strong><em>C'est l'illustration directe du patron du ch. 31 § 31.1.1 appliqué non à l'irréversibilité d'un règlement mais à la frontière du conseil réglementé : on borne la capacité de l'agent pour rester du bon côté de la qualification juridique.</strong></em> ⚠ <em>Le parc supervisé se compte en milliers de milliards de dollars d'actifs — <strong>chiffre auto-déclaré, à re-vérifier</strong> — ce qui donne la mesure de l'enjeu de fiabilité.</em></p>
+</div>
+
+<div class="avert">
+  <p><em>Le même patron se décline sur l'investissement alternatif et sur la production de commentaires de portefeuille — un outil annoncé le <strong>2 octobre 2025</strong> — <strong>étant entendu qu'il s'arrête avant la communication finalisée au client</strong>, laissant le conseiller valider le texte</em> : ⚠ <strong>ce qui reconduit l'asymétrie <em>préparation par l'agent / décision et diffusion par l'humain</em>.</strong></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>l'apport opérationnel du registre est de convertir la prolifération d'intégrations en <em>un point de catalogage unique</em> où chaque capacité porte une identité, une portée et une évaluation.</strong> ⚠ <em>Le filtrage à vingt ou trente outils par requête <strong>n'est pas un détail de performance</strong> : c'est <strong>un contrôle de surface d'attaque</strong> et <strong>un contrôle de coût</strong>.</em> <strong>Ce que le socle établit</strong> : la conception. <strong>Ce qu'il n'établit pas</strong> : cette lecture des trois invariants — <em>registre gouverné, garde-fous évalués en continu, contrainte de finalité testée par évaluation plutôt que par simple consigne d'invite.</em></p>
+
+<h3>34.4.3 Plateformes de gestion : de la requête en langage naturel à l'agent de données</h3>
+
+<div class="avert">
+  <p><strong>Le critère éditorial structurant est de <em>distinguer l'analyse en langage naturel — généralement disponible — de l'agent autonome de flux de travail, encore en préversion</em>.</strong> <strong><em>La confusion marketing assimile les deux ; l'architecture les sépare nettement.</strong></em></p>
+</div>
+
+<div class="avert">
+  <p><em>Une plateforme en fournit l'illustration : une couche d'analyse de portefeuille en langage naturel, déployée début <strong>mars 2026</strong>, est <strong>un outil de requête et de synthèse</strong> sur des données déjà rapprochées, tandis qu'un agent d'<strong>opérations de données</strong> relève <strong>du registre de la préversion</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le patron à retenir est que <em>les premiers agents véritablement disponibles ne sont pas des agents de conseil mais des agents de qualité, de connectivité et de réconciliation de données</strong></em> : <em>on commence par <strong>les flux internes à faible irréversibilité</strong> — préparer, rapprocher, contrôler la donnée — <strong>là où une erreur se corrige sans conséquence client immédiate</strong>, avant d'envisager toute action tournée vers le client.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong><em>Cette gradation est l'application directe du principe « commencer par les usages à faible irréversibilité »</strong></em> (ch. 31 § 31.1.1) : <em>la donnée propre et rapprochée est <strong>le pré-requis de tout le reste</strong>, et <strong>un terrain d'apprentissage sûr</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><em>Le même mouvement s'observe chez trois autres acteurs, avec des annonces de <strong>juin 2025</strong>, <strong>mars 2026</strong> et <strong>février 2026</strong>.</em> ⚠ <strong>Toutes ces annonces sont fournisseur et à statut — annonce, préversion, disponibilité générale — à reconfirmer</strong> ; ⚠ <strong><em>la discipline de lecture est de ne jamais traiter une préversion d'agent de flux comme une capacité de conseil disponible.</strong></em></p>
+</div>
+
+<h3>34.4.4 Conseiller automatisé classique et agent : la désambiguïsation impérative</h3>
+
+<div class="avert">
+  <p><strong>La désambiguïsation la plus importante du sous-domaine est aussi la plus mal comprise du marché : <em>le conseiller automatisé classique n'est pas un agent fondé sur un modèle de langage</em>.</strong></p>
+</div>
+
+<p><em>Les plateformes de conseil automatisé établies reposent sur des <strong>moteurs de règles déterministes</strong> : allocation dérivée d'une théorie du portefeuille, <strong>rééquilibrage déclenché par franchissement de seuils</strong>, <strong>récolte algorithmique de pertes fiscales</strong>.</em> ⚠ <strong>Les méthodologies publiées décrivent des systèmes <em>auditables par construction</strong></em> : <strong><em>à entrée donnée, sortie reproductible, sans génération non déterministe.</strong></em></p>
+
+<div class="avert">
+  <p><em>L'IA agentique y est, à juin 2026, <strong>périphérique</strong> — service à la clientèle, accueil, assistance documentaire — <strong>et non au cœur de la décision d'investissement</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong><em>Confondre les deux conduirait à attribuer à un moteur de règles auditable les risques de non-déterminisme et d'affabulation propres aux modèles de langage, et inversement à présenter un agent comme aussi prévisible qu'un moteur de règles.</strong></em> ⚠ <strong>Un mécanisme se qualifie par ce que sa spécification démontre</strong> (R-02 du Vol. III) : <em>un moteur de règles <strong>démontre</strong> la reproductibilité ; un agent <strong>n'offre qu'une garantie probabiliste</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><em>Le repère canadien est utile : le premier conseiller automatisé du pays, <strong>lancé en 2014</strong>, gérant un encours de l'ordre de <strong>cent milliards de dollars canadiens</strong> — <strong>chiffre auto-déclaré, à re-vérifier</strong> — <strong>opère comme gestionnaire de portefeuille inscrit</strong> auprès des autorités de valeurs mobilières et de l'autorité québécoise</em> : ⚠ <strong><em>un statut réglementé qui ne s'efface pas du fait de l'automatisation</strong></em> (<strong>ch. 28</strong>).</p>
+</div>
+
+<div class="avert">
+  <p><strong>Une mise en garde de conformité s'impose au passage</strong> : <em>l'automatisation d'une fonction <strong>n'exonère pas des obligations de communication</strong>, comme l'a rappelé <strong>une sanction d'un régulateur américain, en avril 2023, pour des déclarations inexactes</strong> sur un service de récolte de pertes fiscales.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le patron transférable est l'<em>autonomie bornée</strong></em> — *et ⚠ <strong>ce n'est pas une échelle d'autonomie</strong> (R-13 du Vol. III), dont le lieu de croisement est le <strong>ch. 14 § 14.4</strong> : <em>l'agent assiste à la production de signaux, à la préparation et au post-marché, ⚠ <strong>mais n'initie pas l'acte irréversible</strong>, lequel reste soit déterministe, soit validé par un humain.</em> ⚠ <em>À juin 2026, l'usage agentique en gestion de patrimoine <strong>demeure largement expérimental</strong>.</em></p>
+</div>
+
+<h3>34.4.5 Cadre fiduciaire, convenance et explicabilité</h3>
+
+<div class="avert">
+  <p><strong>L'angle propre au sous-domaine — que le ch. 30 § 30.1 ne traite qu'en générique — est le cadre de <em>meilleur intérêt et de convenance</em>.</strong></p>
+</div>
+
+<p><strong>La règle directrice est sans atténuation</strong> :</p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>Tout agent qui touche à une recommandation hérite des obligations d'agir au mieux des intérêts du client, et le fait qu'un agent ait préparé la recommandation ne dilue en rien la responsabilité de la firme.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>La conséquence d'interopérabilité est précise</strong> : <em>la chaîne doit <strong>porter la preuve</strong> reliant la recommandation au profil de connaissance du client et à sa justification, <strong>de façon traçable, conservée et révisable</strong></em> — ⚠ <strong><em>un agent qui « propose » sans laisser ce fil documentaire ne fait que reporter le risque de conduite sur la firme et le conseiller.</strong></em> <em>C'est exactement l'objet du journal infalsifiable du <strong>ch. 31 § 31.3.2</strong>, ici appliqué à l'acte de conseil.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Une note de qualification est essentielle</strong> : <strong><em>la convenance n'est pas une matière du régime européen de haut risque</strong></em> — <em>elle relève de <strong>l'encadrement de conduite</strong>, dont le <strong>ch. 30 § 30.2.5</strong> porte le rappel : <strong>la firme demeure responsable du résultat de convenance, quel que soit le degré d'automatisation</strong>.</em></p>
+</div>
+
+<p><strong>Le maillage juridictionnel se lit alors ainsi</strong> : <em>aux États-Unis, la conduite relève d'un régime de meilleur intérêt, <strong>avec un rappel explicite des obligations applicables à l'IA générative en juin 2024</strong> ; au Canada et au Québec, <strong>la règle de convenance</strong> se combine à l'encadrement des organismes d'autoréglementation, à la ligne directrice québécoise (<strong>ch. 27</strong>) et à <strong>l'article 12.1</strong> ; dans l'Union, la directive sur les services d'investissement cadre les produits concernés.</em></p>
+
+<div class="avert">
+  <p><strong><em>L'explicabilité y est doublement requise : par la conduite — justifier la recommandation au client — et par le droit des décisions automatisées.</strong></em> ⚠ <em>La littérature fournit le répertoire des méthodes mobilisables, <strong>tout en rappelant que l'explicabilité d'un modèle non déterministe reste un problème de recherche ouvert</strong></em> — <em>ce que le <strong>ch. 25 § 25.8</strong> a établi du côté prudentiel canadien : <strong>la causalité entrées-sorties est souvent indéterminable</strong>.</em></p>
+</div>
+
+<h3>34.4.6 Négociation et recherche augmentée</h3>
+
+<div class="avert">
+  <p><strong>Le terrain où le patron <em>multi-agents spécialisés</em> est le plus abouti dans la littérature est aussi le plus prudent dans la pratique.</strong></p>
+</div>
+
+<p><em>L'architecture canonique décompose la chaîne d'investissement en <strong>rôles dédiés</strong> — analyste fondamental, agent de sentiment, agent de risque, agent de construction de portefeuille, agent d'exécution, agent d'audit — coordonnés par les protocoles du <strong>ch. 8</strong>.</em></p>
+
+<div class="avert">
+  <p><strong>Le critère architectural directeur est que <em>la ségrégation entre génération de signal, contrôle du risque et exécution n'est pas une commodité d'ingénierie mais le contrôle interne réincarné en architecture</strong></em> : <strong><em>un agent qui propose une position ne doit pas être celui qui en valide le risque ni celui qui l'exécute, sous peine de reconstituer un canal de collusion</strong></em> — ⚠ <strong>application directe du siège du quatre-yeux, ch. 31 § 31.3.4.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>L'état réel reste néanmoins celui de la recherche et des pilotes, non de la production autonome</strong> : <em>la littérature documente des cadres multi-agents et des bancs d'essai de décision, ⚠ <strong>mais « l'autonomie bornée » demeure la règle d'exploitation</strong>.</em></p>
+</div>
+
+<p><em>Sur le plan de l'interopérabilité, <strong>les agents d'exécution parlent les standards de marché établis</strong> — ceux du <strong>ch. 31 § 31.2</strong> — <strong>que des serveurs d'outils encapsulent</strong> pour offrir à l'agent <strong>une capacité bornée et journalisée plutôt qu'un accès brut</strong>.</em> ⚠ *Une illustration datée d'<strong>octobre 2025</strong> en donne un exemple — <strong>annonce fournisseur, à re-vérifier</strong> ; ⚠ <strong>et le critère du ch. 31 § 31.2.6 s'applique</strong> : <em>ce n'est pas un standard sectoriel ratifié.</em></p>
+
+<div class="avert">
+  <p><strong>Ce sous-domaine porte enfin un risque systémique propre</strong> — <em>uniformité des comportements et événements éclair lorsque de nombreux agents corrélés réagissent au même signal</em> — ⚠ <strong>dont le siège est le ch. 31 § 31.1.2</strong> ; <em>il n'est pas re-développé ici.</em></p>
+</div>
+
+<h3>34.4.7 Opérations institutionnelles</h3>
+
+<div class="avert">
+  <p><strong>Le patron est contre-intuitif au regard de l'emballement</strong> : <strong><em>les premiers agents institutionnels réellement robustes ne sont pas des agents d'investissement mais des agents d'opérations de post-marché</strong></em> — <em>réconciliation de positions et de transactions, traitement des opérations sur titres, calcul et contrôle de la valeur liquidative, production du reporting réglementaire.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Ces tâches ont la propriété qui en fait le bon point d'entrée</strong> : <em>une <strong>irréversibilité immédiate faible</strong> — un rapprochement erroné se corrige avant tout effet externe — <strong>couplée à une exigence d'exactitude très élevée</strong>, le résultat alimentant la comptabilité du fonds et la déclaration au régulateur.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le critère d'interopérabilité directeur est d'<em>ancrer l'agent sur un standard exécutable</em> plutôt que sur du texte libre</strong> : *en s'appuyant sur le modèle de domaine commun et sur la transformation des règles de déclaration en code (<strong>ch. 31 § 31.2.4</strong>), <em>l'agent <strong>orchestre un standard exécutable et versionné au lieu de deviner</strong> une logique de déclaration</em> — ⚠ <strong>ce qui réduit l'espace d'affabulation et rend la sortie auditable.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le garde-fou non négociable est le <em>quatre-yeux sur tout ajustement comptable</strong></em> (ch. 31 § 31.3.4) : <strong><em>un agent peut préparer un rapprochement ou signaler un écart, mais l'ajustement qui modifie un solde reste soumis à une validation indépendante.</strong></em></p>
+</div>
+
+<div class="avert">
+  <p><strong>La discipline de lecture est de <em>distinguer le copilote d'opérations — émergent — de l'agent autonome — rare</strong></em> : <em>à juin 2026, <strong>l'état de l'art est l'assistance à l'opérateur, non l'exécution autonome de la chaîne comptable</strong>.</em></p>
+</div>
+
+<h2 id="s345"><span class="sig">§ 34.5</span>Services technologiques dans le domaine financier</h2>
+
+<div class="avert">
+  <p><strong>Les quatre sous-domaines précédents partagent une dépendance qu'aucun ne porte seul : <em>l'ossature technologique qui rend leurs agents conformes</em>.</strong> <em>Cette section la traite comme <strong>un sous-domaine à part entière</strong>, parce qu'en finance régulée <strong>la couche technologique n'est pas un simple substrat de productivité mais un lieu où s'exercent des obligations nominatives</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>La spécificité financière tient en une bascule de finalité</strong> : <em>la passerelle d'IA <strong>cesse d'être d'abord un optimiseur de coût d'inférence pour devenir un point de contrôle réglementaire</strong>, et <strong>la modernisation du cœur applicatif n'est légitime que si elle préserve l'identité, les permissions et la piste d'audit</strong>.</em></p>
+</div>
+
+<h3>34.5.1 La résilience opérationnelle comme contrainte d'architecture</h3>
+
+<p><em>La résilience opérationnelle, traitée au niveau du régime au <strong>ch. 30 § 30.2.2</strong>, se traduit ici en contrainte directrice</em> : ⚠ <strong><em>toute dépendance technologique critique — fournisseur de modèle, serveur d'outils hébergé, passerelle — doit être cartographiée, sa concentration évaluée avant toute contractualisation, et sa stratégie de sortie testée plutôt que postulée.</strong></em></p>
+
+<div class="avert">
+  <p><strong>La prolifération d'agents du ch. 24 § 24.0.2 se relit en finance comme <em>une prolifération de dépendances soumises à registre obligatoire</strong></em> : <em>chaque agent matériel <strong>ajoute des fournisseurs en cascade</strong> — modèle d'inférence, hébergeur, intermédiaire de données — <strong>qui doivent figurer au registre</strong>.</em> ⚠ *Côté canadien, <strong>la lecture conjointe de trois lignes directrices</strong> en forme le pendant (<strong>ch. 30 § 30.2.7</strong>) — ⚠ <em>l'une d'elles est déclarée par la source <strong>hors corpus bibliographique, à sourcer à la rédaction</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le risque de concentration n'est pas hypothétique</strong> : <em>un agent déployé sur une infrastructure d'un grand opérateur <strong>hérite mécaniquement d'une dépendance vers un fournisseur critique désigné</strong>, dont la première liste de <strong>dix-neuf entités</strong> a été arrêtée le <strong>18 novembre 2025</strong> (ch. 30 § 30.2.2).</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>La même exigence — <em>éprouver plutôt que postuler</em> — se prolonge vers la résilience d'exécution du parc</strong> : <em>la continuité <strong>ne se démontre pas seulement par un test de bascule de fournisseur</strong>, mais par une exploitation capable de <strong>détecter, corréler et remédier en continu</strong>.</em> ⚠ <strong>Le siège de cette discipline est au Livre IV</strong> ; <em>ce chapitre n'en retient que le constat : <strong>en finance régulée, la résilience mesurée devient un indicateur de conformité autant que d'exploitation</strong>.</em></p>
+</div>
+
+<h3>34.5.2 Modernisation du cœur : la façade gouvernée</h3>
+
+<div class="avert">
+  <p><strong>Le patron de modernisation est <em>l'encapsulation, non la réécriture de masse</strong></em> — <em>spécialisation financière du principe posé au <strong>ch. 24 § 24.1.4</strong>.</em></p>
+</div>
+
+<p><strong>Deux régimes doivent être distingués.</strong> *D'une part, <strong>des agents employés <em>pour</em> moderniser</strong> : assistants de modernisation attaquant une pression <strong>parfois chiffrée à 70-75 % du budget technologique consacré au patrimoine applicatif</strong> — ⚠ <strong>presse et analystes, à re-vérifier</strong>. D'autre part, <strong>des agents <em>en production</em> opérant à travers une façade</strong> : trois éditeurs ont annoncé, en <strong>2025 et 2026</strong>, des capacités d'exposition de leur cœur — ⚠ <strong>annonces fournisseur, statuts à reconfirmer</strong>, et <strong>neutralité fournisseur tenue</strong>.*</p>
+
+<div class="avert">
+  <p><strong>Le critère de légitimité de la façade est strict</strong> : <strong><em>elle n'est admissible qu'assortie d'une identité d'agent, de permissions héritées du consentement et d'un journal d'audit</strong></em> — <em>ce que le <strong>ch. 24 § 24.3</strong> pose au grain du parc et le <strong>ch. 18</strong> au grain de l'imputabilité.</em></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>l'invariant de la couche d'exposition est qu'il n'y a <em>jamais</em> d'accès direct en écriture au grand livre</strong> : <em>seulement <strong>des capacités bornées, idempotentes, respectant la double entrée et la ségrégation des tâches comme propriétés vérifiables du contrat</strong>.</em> ⚠ <strong>La sémantique d'effet que le mot « idempotente » appelle est au ch. 48</strong>, siège unique. <strong>Ce que le socle établit</strong> : les annonces et le patron d'encapsulation. <strong>Ce qu'il n'établit pas</strong> : cet invariant, qui est une lecture reprise du Vol. I.</p>
+
+<h3>34.5.3 Passerelle d'IA et plateformes d'intégration régulées</h3>
+
+<div class="avert">
+  <p><strong>La passerelle cesse, en finance, d'être un optimiseur de coût pour devenir <em>le point de contrôle obligatoire</strong></em> : <em>application de politique, identité, prévention de fuite de données et contrôle de sortie, journalisation.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>C'est une spécialisation du plan de contrôle d'entreprise du ch. 24 § 24.1.3</strong> — ⚠ <em>et <strong>le « plan de contrôle » désigne ici celui du maillage de services pré-agentique</strong> (ch. 1 § 1.3.4), <strong>non le terme que R-13 du Vol. III proscrit nu</strong></em> — <em>mais dont <strong>le facteur déterminant n'est pas la commodité opérationnelle</strong> : ce sont <strong>les régimes de risque de modèle</strong> (<strong>ch. 30 § 30.2.4</strong>) et <strong>la résidence des données</strong> (<strong>ch. 31 § 31.5.1</strong>) qui imposent que les évaluations « ne quittent pas l'environnement ».</em></p>
+</div>
+
+<div class="avert">
+  <p><em>Les capacités attendues sont désormais standardisées chez les fournisseurs d'infrastructure — clés virtuelles et budgets de jetons, limites par requête, gouvernance multi-fournisseur, assainissement des données personnelles, passerelle-registre.</em> ⚠ <strong>Cinq offres sont nommées par la source ; aucune n'est recommandée</strong> (PRD Vol. II §8.4).</p>
+</div>
+
+<div class="avert">
+  <p><strong>La transposition financière la plus aboutie est l'archétype du « système d'exploitation d'agents » bancaire</strong> : <em>un lancement rapporté au <strong>14 mai 2026</strong>, avec disponibilité générale annoncée pour <strong>août 2026</strong></em> — ⚠ <strong><em>selon une analyse tierce, à recouper avec les communiqués primaires de l'éditeur</strong></em>.</p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>la passerelle devient le lieu où s'instancient des contrôles autrement dispersés</strong> : <em>limites d'autorité budgétaire de l'agent <strong>matérialisées en quotas de jetons</strong> (§ 34.5.6), <strong>filtrage empêchant l'exfiltration de données client via les traces</strong> (ch. 31 § 31.5.1), et <strong>journal exploitable pour l'audit réglementaire</strong> (ch. 31 § 31.3.2).</em> <strong>Ce que le socle établit</strong> : les capacités et les annonces. <strong>Ce qu'il n'établit pas</strong> : cette convergence en un point unique.</p>
+
+<h3>34.5.4 Identité des agents en finance</h3>
+
+<div class="avert">
+  <p><strong>La mécanique de la connaissance de l'agent et des identités non humaines est posée au ch. 18 § 18.1, siège unique, et au ch. 24 § 24.3 pour son grain de parc</strong> ; <em>elle n'est pas re-dérivée.</em> ⚠ <strong>Les rails de paiement qui en dépendent sont au ch. 10 et au ch. 36.</strong></p>
+</div>
+
+<p><strong>Le delta propre à la couche technologique est circonscrit à un point</strong> : <strong><em>l'exécution liée à une identité</strong></em> <em>constitue <strong>le support concret de la ségrégation des tâches</strong> (ch. 31 § 31.3.4) et de <strong>l'attribution de responsabilité à un humain imputable</strong>.</em></p>
+
+<div class="avert">
+  <p><strong>En finance, cette exigence est renforcée par la matérialité financière de l'action</strong> : <em>lier chaque exécution à une identité d'agent traçable, elle-même rattachée à un principal humain, <strong>n'est pas une commodité d'observabilité mais la condition technique du préparateur-vérificateur et de la non-collusion inter-agents</strong>.</em> ⚠ <em>Concrètement, <strong>l'identité d'agent permet que l'agent-proposeur et l'agent-approbateur s'exécutent dans des contextes distincts, liés à des identités distinctes, sans canal latéral</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Des briques émergentes existent — <em>mais aucune ne constitue un standard établi à juin 2026</strong></em> : <em>le positionnement en la matière reste <strong>principalement le fait de fournisseurs</strong>, et <strong>le ch. 18 § 18.1 en porte le constat, à son propre degré</strong>.</em></p>
+</div>
+
+<h3>34.5.5 Infonuagique souverain et résidence financière</h3>
+
+<div class="avert">
+  <p><strong>Les offres sont décrites au ch. 31 § 31.5.2 et ne sont pas re-listées ici.</strong></p>
+</div>
+
+<p><em>Le delta propre à la couche technologique tient à <strong>un déplacement de la souveraineté du statut de contrainte juridique à celui de contrainte de déploiement des agents et des modèles</strong></em> : ⚠ <strong><em>où s'exécute l'agent, où sont calculés ses plongements, où résident ses traces — ces choix deviennent des paramètres d'architecture de premier ordre</strong></em>, encadrés par les attentes des autorités sur l'externalisation (<strong>ch. 30 § 30.1.5</strong>, <strong>ch. 30 § 30.2.7</strong>).</p>
+
+<div class="avert">
+  <p><strong>L'arbitrage structurant reste celui du ch. 31 § 31.5.1</strong>, et ⚠ <strong>le piège à éviter est le même</strong> : <strong><em>croire que la souveraineté résout la concentration</strong></em> — <em>un infonuagique souverain repose souvent sur les mêmes grands opérateurs désignés fournisseurs critiques.</em></p>
+</div>
+
+<h3>34.5.6 Observabilité et discipline financière réglementaire</h3>
+
+<div class="avert">
+  <p><strong>Les mécanismes génériques d'observabilité relèvent du Livre IV et ne sont pas re-décrits.</strong> <em>Deux deltas proprement financiers s'y greffent.</em></p>
+</div>
+
+<p><strong>Le premier est <em>la nature du journal</strong></em> : ⚠ *en finance régulée, <strong>il ne suffit pas d'observer au sens de l'exploitation</strong> — <em>il faut <strong>produire une piste d'audit exploitable</strong> pour la résilience opérationnelle et pour le régime de risque de modèle, <strong>reliant chaque décision d'agent à son contexte, son modèle d'inventaire et son approbation humaine</strong></em> (ch. 31 § 31.3.1 et § 31.3.2).</p>
+
+<p><strong>Le second est <em>la requalification de la discipline financière</strong></em> : ⚠ <strong><em>le décompte des jetons cesse d'être une affaire de coût pour devenir un contrôle de gouvernance</strong></em>, <em>en ce que <strong>les budgets de jetons matérialisent les limites d'autorité de l'agent</strong></em> — ⚠ <strong><em>un agent dont le budget est plafonné ne peut entreprendre une action dont l'ampleur dépasse son mandat.</strong></em></p>
+
+<div class="avert">
+  <p><em>Côté marché, <strong>une vague de modernisation du cœur applicatif est documentée par les analystes</strong> — <strong>à marquer comme projections d'analyste</strong> — dans les quatre sous-domaines précédents.</em></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>l'instrumentation à viser articule trois plans</strong> : <em>observabilité opérationnelle au sens du Livre IV ; <strong>journal d'audit réglementaire infalsifiable</strong> (ch. 31 § 31.3.2) ; et <strong>contrôle financier des autorités budgétaires comme garde-fou d'autonomie</strong>.</em> ⚠ <strong><em>Les trois doivent partager la même clé d'identité d'agent pour que le coût, le comportement et la décision soient corrélables a posteriori.</strong></em> <strong>Ce que le socle établit</strong> : les deux deltas. <strong>Ce qu'il n'établit pas</strong> : cette exigence de clé commune, qui est une lecture.</p>
+
+<h2 id="s346"><span class="sig">§ 34.6</span>Synthèse par sous-domaine</h2>
+
+<h3>34.6.1 Études de cas datées</h3>
+
+<div class="avert">
+  <p><strong>Le tableau qui suit matérialise le tri du chapitre, et il porte ses statuts dans ses cellules.</strong></p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Sous-domaine</th><th>Cas relevés</th><th>Statut</th><th>Régime de preuve</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Bancaire</strong></td><td>déploiements de <strong>mai-juin 2026</strong> chez trois institutions, dont un groupe visant une cible chiffrée pour 2027 — ⚠ <em>hors corpus, à sourcer</em></td><td>annonce / déploiement</td><td>⚠ <strong>fournisseur / auto-déclaré, à re-vérifier</strong></td></tr>
+    <tr><td><strong>Crime financier</strong></td><td>partenariat annoncé le <strong>4 mai 2026</strong>, disponibilité générale annoncée pour le second semestre 2026 (§ 34.1.3)</td><td>annonce / déploiement</td><td>⚠ <strong>fournisseur, auto-déclaré</strong></td></tr>
+    <tr><td><strong>Assurance de dommage</strong></td><td>plateforme de sinistres et renouvellement de <strong>mars 2026</strong> ; plateforme du <strong>28 avril 2026</strong> ; version du <strong>8 décembre 2025</strong> ; acquisition clôturée le <strong>6 janvier 2025</strong> (§ 34.2.2-34.2.3)</td><td>annonce / disponibilité générale <strong>selon le produit</strong></td><td>⚠ <strong>auto-déclaré, à re-vérifier</strong></td></tr>
+    <tr><td><strong>Vie et santé</strong></td><td>⚠ <strong>contre-exemple judiciaire</strong> — refus partiel d'une requête en rejet le <strong>13 février 2025</strong> (§ 34.3.3)</td><td>⚠ <strong>litige en cours</strong></td><td><strong>fait procédural — usage contesté</strong></td></tr>
+    <tr><td><strong>Services technologiques</strong></td><td>« système d'exploitation d'agents » du <strong>14 mai 2026</strong> ; capacités annoncées le <strong>7 mai 2026</strong> (§ 34.5.3)</td><td>annonce / préversion / disponibilité générale</td><td>⚠ <strong>fournisseur</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 34.1 — Les cas datés relevés par le Vol. I, avec leur statut et leur régime de preuve. ⚠ <strong>Aucun n'a été repris à la source primaire pour la somme</strong>, et <strong>aucun n'est recommandé</strong>.</p>
+
+<div class="avert">
+  <p><strong>Le tableau dit trois choses, et la troisième est la plus instructive</strong> : <em>(a)</em> <strong><em>la quasi-totalité des cas matures sont des copilotes ou des agents d'opérations internes</strong></em> ; <em>(b)</em> ⚠ <strong><em>le cas vie et santé est un contre-exemple judiciaire, non une réussite</strong></em> ; <em>(c)</em> <strong><em>les rares cas de « système d'exploitation d'agents » bancaire restent au stade de l'annonce ou de la disponibilité imminente</strong></em>. ⚠ <strong>Le précédent juridique de fond demeure celui du ch. 31 § 31.1.3.</strong></p>
+</div>
+
+<h3>34.6.2 Bancs d'essai sectoriels : la fiabilité de flux prime sur le raisonnement</h3>
+
+<div class="avert">
+  <p><strong>Le critère issu des bancs d'essai financiers 2024-2026 est contre-intuitif et structurant</strong> : <strong><em>l'intelligence générale d'un modèle ne se traduit pas en compétence financière de bout en bout.</strong></em></p>
+</div>
+
+<p><em>Le goulot d'étranglement mesuré <strong>n'est pas la qualité du raisonnement isolé</strong> mais <strong>la fiabilité du flux complet</strong> — récupération correcte, enchaînement d'outils sans dérive, cohérence sur des séquences longues.</em> ⚠ <em>Un banc d'essai dédié à la gestion de patrimoine, de <strong>décembre 2025</strong>, <strong>conclut explicitement que les agents sont limités par la fiabilité du flux plutôt que par le raisonnement</strong>.</em></p>
+
+<div class="avert">
+  <p><em>Côté négociation, les évaluations multi-agents et les bancs plus récents <strong>rapportent des rendements faibles</strong>, confortant la posture d'autonomie bornée du § 34.4.6.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Un vide doit être signalé explicitement, par honnêteté éditoriale plutôt que par extrapolation</strong> : <strong><em>à juin 2026, il n'existe aucun banc d'essai public mature côté assurance — souscription, sinistres — ni côté anti-blanchiment agentique.</strong></em> ⚠ <em>Les métriques de ces domaines <strong>proviennent donc d'études fournisseur, non de bancs reproductibles</strong> — <strong>absence de documentation, degré 3 de l'échelle R-14 du Vol. III</strong> — ⚠ <strong>ce qui doit tempérer toute affirmation de performance</strong>.</em></p>
+</div>
+
+<h3>34.6.3 Questions ouvertes propres à la finance</h3>
+
+<div class="avert">
+  <p><strong>Les questions résiduelles sont présentées comme telles, chacune traduite en une exigence d'architecture plutôt qu'en pronostic.</strong></p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Question ouverte</th><th>Ce que la somme peut en dire</th><th>Exigence d'architecture</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Responsabilité</strong></td><td><em>qui répond d'un crédit refusé, d'un sinistre rejeté ou d'un conseil inadéquat décidé par un agent ?</em> ⚠ <strong>non tranchée</strong> — aggravée par la démultiplication des dépendances</td><td><strong>chaîne de responsabilité traçable du mandat à l'action</strong> (<strong>ch. 18</strong>, <strong>ch. 29 § 29.3</strong>)</td></tr>
+    <tr><td><strong>Équité et biais</strong></td><td>⚠ <em>plusieurs critères d'équité sont <strong>mutuellement incompatibles</strong></em> ; <strong>aucun cadre ne se résout par l'agentique</strong></td><td><em>l'agent doit <strong>en porter la preuve documentée</strong></em> (§ 34.3.5)</td></tr>
+    <tr><td><strong>Explicabilité</strong></td><td><em>l'obligation d'explication « claire et simple », l'information sur les décisions exclusivement automatisées et le régime européen imposent <strong>une explicabilité opposable</strong></em> — ⚠ <strong>encore difficile sur des artefacts non déterministes</strong></td><td><strong>ch. 25 § 25.8</strong> ; <strong>ch. 27 § 27.8</strong></td></tr>
+    <tr><td><strong>Irréversibilité et rappel</strong></td><td>⚠ <em>un déploiement trop large d'autonomie <strong>se paie d'un revirement coûteux</strong></em> (§ 34.1.2)</td><td><strong><em>la réversibilité de la décision de déploiement elle-même</strong></em></td></tr>
+    <tr><td><strong>Risque systémique d'agents corrélés</strong></td><td>⚠ <strong>siège au ch. 31 § 31.1.2</strong> — <em>l'uniformité des modèles reste un risque macro <strong>non résolu</strong></em></td><td>—</td></tr>
+    <tr><td><strong>Concentration sur les fournisseurs de modèles</strong></td><td>⚠ <em>la dépendance à un petit nombre de fournisseurs <strong>demeure un risque non couvert par la seule résidence</strong></em> (<strong>ch. 31 § 31.5.2</strong>)</td><td><em>diversification effective et <strong>stratégie de sortie testée</strong></em></td></tr>
+    <tr><td><strong>Assurabilité des préjudices causés par des agents</strong></td><td>⚠ <em>question émergente <strong>avec peu de doctrine</strong> — degré 3</em> — ⚠ <em>d'autant plus saillante que <strong>la finance est elle-même assureur</strong></em></td><td>—</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 34.2 — Les sept questions ouvertes propres à la finance, avec l'exigence d'architecture que chacune produit. ⚠ <strong>Aucune n'est refermée ici</strong> ; <em>le ch. 49 en enregistrera l'état final.</em></p>
+
+<h3>34.6.4 Bacs à sable réglementaires</h3>
+
+<div class="avert">
+  <p><strong>Le patron de clôture est <em>le test supervisé comme voie de mise en production graduée</strong></em> : <em>le bac à sable réglementaire constitue <strong>un mécanisme de gouvernance externe</strong>, complémentaire du plan de contrôle interne.</em> ⚠ <em>Là où le plan de contrôle interne <strong>borne l'action en continu</strong>, le bac à sable offre <strong>un cadre où le superviseur observe l'agent en conditions encadrées avant son passage à l'échelle</strong></em> — ⚠ <em>le franchissement devenant lui-même <strong>un jalon de maturité vérifiable</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><em>Plusieurs dispositifs sont actifs à juin 2026, à présenter avec leur statut daté : au Royaume-Uni, un dispositif de test en conditions réelles accueille une <strong>deuxième cohorte annoncée le 21 avril 2026, huit firmes</strong>, dont <strong>des cas explicitement agentiques</strong> ; une collaboration internationale est annoncée pour 2026 — ⚠ <strong>hors corpus bibliographique du chapitre source, à sourcer à la rédaction</strong>.</em> ⚠ <em>Côté Canada et Québec, l'écosystème combine plusieurs dispositifs, <strong>sans cohorte agentique financière publiquement détaillée à juin 2026</strong></em> — <em>absence de documentation, degré 3.</em></p>
+</div>
+
+<h2 id="s347"><span class="sig">§ 34.7</span>Synthèse et transition du bloc financier</h2>
+
+<p>*Section <strong>reçue du §5.14 du Vol. I</strong> — ⚠ <strong>rattachement corrigé en v0.3 du plan</strong> : <em>c'est la <strong>clôture du ch. 5</strong> de sa source, non un développement sur les paiements agentiques.</em></p>
+
+<div class="avert">
+  <p><strong>Cette section ne réintroduit aucun fait nouveau</strong> : <em>elle ressaisit les fils du mouvement, puis fixe l'horizon temporel à partir duquel les exigences décrites <strong>cessent d'être des attentes pour devenir des obligations opposables</strong>.</em></p>
+</div>
+
+<h3>34.7.1 Le patron directeur</h3>
+
+<p><strong>Le fil conducteur unique, dont le siège est le ch. 31 § 31.1.1</strong>, veut que <strong><em>l'autonomie d'un agent financier se calibre sur le produit de la matérialité de l'action et de sa réversibilité, et non sur la capacité brute du modèle</strong></em>.</p>
+
+<div class="avert">
+  <p><strong>De cette règle découle une échelle que la somme nomme par son cardinal</strong> (R-13 du Vol. III) : <em>l'<strong>échelle à quatre paliers non numérotés</strong> — assistance, copilote, orchestration sous revue, autonomie bornée — ⚠ <strong>dont le siège de croisement est le ch. 14 § 14.4</strong>, et <strong>dont deux homonymes coexistent au Vol. I</strong>.</em></p>
+</div>
+
+<p><strong>Son corollaire opératoire est le patron du ch. 31 § 31.1.1</strong> : <strong><em>préparation par l'agent, libération humaine sur l'action irréversible.</strong></em></p>
+
+<div class="avert">
+  <p><strong>La revue empirique du mouvement confirme ce calibrage</strong> : <em>la quasi-totalité des déploiements observés relèvent de <strong>la productivité assistée</strong>, et <strong>le revirement du § 34.1.2 en est l'illustration charnière</strong>.</em> ⚠ <em>La littérature institutionnelle situe la même frontière du côté des paiements — <strong>l'agentique remodèle l'intention et l'orchestration en amont de la finalité, sans se substituer aux rails de règlement</strong> — ⚠ <strong>ce que le ch. 36 reprend, explicitement prospectif</strong>.</em></p>
+</div>
+
+<h3>34.7.2 La signature du vertical</h3>
+
+<div class="avert">
+  <p><strong>Ce qui distingue la finance de tout autre secteur est la <em>double-qualification</em>, dont le siège est le ch. 31 § 31.1.4</strong> : <em>un même agent relève <strong>simultanément du risque de modèle et de la résilience opérationnelle</strong>, et <strong>doit produire la piste d'audit pour ces deux régimes à la fois</strong>.</em></p>
+</div>
+
+<p><em>La grille de qualification multiple du <strong>ch. 30 § 30.2.1</strong> <strong>instancie</strong> ce patron sans le re-dériver</em>,</p>
+
+<div class="avert">
+  <p><strong>et toute l'architecture de référence du Livre IV en découlera</strong> : <em>un point de contrôle unique et obligatoire par lequel transite chaque action d'agent, <strong>couplé à l'inventaire des modèles — car si l'agent décide, c'est un modèle</strong></em> (ch. 31 § 31.3.1).</p>
+</div>
+
+<div class="avert">
+  <p><strong>Trois exigences transverses prolongent cette signature, et les trois sont des sièges uniques</strong> : <em>la <strong>ségrégation des tâches</strong> étendue à l'indépendance anti-collusion (<strong>ch. 31 § 31.3.4</strong>) ; l'<strong>identité de l'agent</strong> (<strong>ch. 18 § 18.1</strong>) ; et le <strong>patron anti-blanchiment</strong> (<strong>ch. 31 § 31.4.3</strong>).</em></p>
+</div>
+
+<h3>34.7.3 Les standards de données comme garde-fou déterministe</h3>
+
+<p><strong>Le troisième fil, posé au ch. 31 § 31.2</strong>, est que <strong><em>l'interopérabilité sémantique de l'agent ne repose pas sur du texte libre mais sur le substrat normatif du secteur</strong></em>, stratifié en trois couches.</p>
+
+<p><strong>Le bénéfice est double.</strong> <em>D'une part, <strong>ancrer l'agent sur le standard réduit l'affabulation et facilite l'auditabilité</strong> — ce qui prend appui sur la bascule du <strong>ch. 33 § 33.1</strong>, ⚠ <strong>bascule qui n'éteint pas l'ancien format mais le subordonne au nouveau</strong>. D'autre part, <strong>le standard peut devenir logique exécutable que l'agent orchestre plutôt qu'il ne devine</strong> (ch. 31 § 31.2.4).</em></p>
+
+<div class="avert">
+  <p><strong>Et le critère d'honnêteté éditoriale reste celui du ch. 31 § 31.2.6</strong> : <strong><em>aucun serveur d'outils financier sectoriel n'est ratifié à juin 2026</strong></em>, <em>et R-5 du Vol. II interdit d'anticiper.</em></p>
+</div>
+
+<h3>34.7.4 La transition : l'horizon réglementaire</h3>
+
+<div class="avert">
+  <p><strong>Le passage au chapitre suivant se fait par <em>le calendrier</em>.</strong> <em>La plupart des régimes décrits sont, à juin 2026, <strong>en phase d'application échelonnée, de révision ou d'adoption</strong> ; ils convergent vers une fenêtre <strong>2026-2027</strong> qui <strong>transforme les attentes en contraintes opposables</strong>.</em></p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Jalon</th><th>Échéance</th><th>Statut au gel de la somme</th><th>Chapitre</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Régime européen de haut risque</strong></td><td>⚠ <strong>reportée au 2 décembre 2027</strong>, report <strong>adopté sous réserve de publication</strong></td><td>⚠ <em>ressource vivante</em></td><td>ch. 30 § 30.2.3</td></tr>
+    <tr><td><strong>E-23</strong> — risque de modèle fédéral</td><td><strong>1ᵉʳ mai 2027</strong></td><td><em>finale, non en vigueur</em></td><td>ch. 25</td></tr>
+    <tr><td><strong>Ligne directrice IA québécoise</strong></td><td><strong>1ᵉʳ mai 2027</strong></td><td><em>finale, non en vigueur ; ⚠ <strong>date de publication en divergence à trois termes</strong></em></td><td>ch. 27 § 27.1</td></tr>
+    <tr><td><strong>Cadre bancaire canadien</strong></td><td>⚠ <strong>aucune échéance absolue</strong> — toutes ancrées sur une publication finale non datée</td><td><em>règlement <strong>prépublié</strong>, commentaires clos le 26 août 2026</em></td><td>ch. 32 § 32.3</td></tr>
+    <tr><td><strong>Rail de paiement en temps réel</strong></td><td>⚠ <strong>T4 2026 <em>visé</strong></em> — <em>quatre cibles successives</em></td><td>⚠ <strong><em>pas en production</strong></em></td><td>ch. 33 § 33.2</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 34.3 — L'horizon réglementaire 2026-2027, avec le statut de chaque jalon au gel de la somme. ⚠ <strong>Tous sont à re-vérifier</strong> : <em>ils portent des dates récentes ou des textes vivants</em>, et <strong>le ch. 50 les enregistrera comme événements de péremption.</strong></p>
+
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
+
+<p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
+
+<ol class="numeros">
+  <li><strong>Cinq sous-domaines, cinq points d'application des mêmes patrons.</strong> ⚠ <em>Ce qui varie n'est pas la nature des durcisseurs mais <strong>leur pondération et leur point d'application</strong>.</em></li>
+  <li>⚠ <strong>La séparation de la décision réglementée et de l'orchestration agentique</strong> (§ 34.1.4) : <strong><em>l'agent n'est pas le modèle ; il orchestre autour.</strong></em> <em>Le <strong>Livre IV</strong> en fait un invariant d'architecture.</em></li>
+  <li>⚠ <strong>L'asymétrie d'autorité en prestations</strong> (§ 34.3.3) : <em>approuver peut être délégué, <strong>refuser ne le peut pas</strong></em> — <em>l'application la plus fine du patron du ch. 31 § 31.1.1.</em></li>
+  <li>⚠ <strong>La désambiguïsation moteur de règles / agent</strong> (§ 34.4.4) : <strong><em>à entrée donnée, sortie reproductible</strong></em> <em>d'un côté ; <strong>garantie probabiliste</strong> de l'autre.</em></li>
+  <li>⚠ <strong>Le point d'entrée robuste est le post-marché, non l'investissement</strong> (§ 34.4.7) : <em>faible irréversibilité immédiate, exigence d'exactitude très élevée.</em></li>
+  <li>⚠ <strong>La requalification du décompte de jetons en contrôle de gouvernance</strong> (§ 34.5.6) : <strong><em>un budget plafonné borne le mandat.</strong></em> <em>Le <strong>Livre IV</strong> en fait une discipline.</em></li>
+  <li>⚠ <strong>Le vide de bancs d'essai en assurance et en anti-blanchiment</strong> (§ 34.6.2), <em>déclaré au degré 3</em> : <strong><em>toute métrique de ces domaines vient d'études fournisseur.</strong></em></li>
+  <li><strong>Les sept questions ouvertes</strong> (§ 34.6.3), <em>chacune traduite en exigence d'architecture.</em> <strong>Le ch. 49 en enregistrera l'état final.</strong></li>
+</ol>
+
+<div class="avert">
+  <p><strong>Ce que le chapitre ne lègue pas.</strong> Il ne lègue <strong>aucun fait au régime [B]</strong> : <em>toute sa matière vient du Vol. I et entre en <strong>[C]</strong>.</em> Il ne lègue <strong>aucune recommandation de produit</strong> — <em>une quarantaine d'offres nommées, <strong>aucune recommandée</strong></em>. Il ne lègue <strong>aucune métrique auditée</strong> : <em>toutes sont auto-déclarées ou des projections d'analystes.</em> Il ne lègue <strong>ni architecture de référence, ni modèle de maturité financier, ni grille de décision</strong> — <em>ces trois sont au <strong>Livre IV</strong></em>. Et il ne lègue <strong>rien des paiements agentiques</strong> : <em>c'est l'objet du <strong>ch. 36</strong>.</em></p>
+</div>
+
+<section class="statut" id="s348">
+
+<h2><span class="sig">§ 34.8</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A) : <em>un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il <strong>remonte</strong>.</em></p>
+</div>
+
+<p><strong>Ce qui est enfreint.</strong> La porte <strong>G-3</strong> et le <strong>volet résiduel de G-1</strong>. Instruction d'auteur du 27 juillet 2026. ⚠ <strong>G-4 ne conditionne pas ce chapitre</strong> ; ⚠ <strong>D-9 ne le bloque pas.</strong></p>
+
+<ol class="numeros">
+  <li>⚠ <strong>Aucun énoncé n'est central au sens de CA-IV-01.</strong> <strong>Toute la matière vient du Vol. I</strong>, en <strong>[C]</strong>. ⚠ <strong>Et une seconde couche de réserve s'y ajoute</strong> : <em>plusieurs affirmations sont déclarées par le Vol. I lui-même <strong>hors de son propre corpus bibliographique, « à sourcer à la rédaction »</strong></em> — les standards de santé du § 34.3.2, les acteurs et le litige du § 34.3.3, une ligne directrice canadienne du § 34.5.1, les bacs à sable du § 34.6.4, et trois lignes du tableau 34.1. ⚠ <strong><em>Une affirmation déclarée hors corpus par sa propre source n'entre même pas en [C] : elle entre comme mention à sourcer.</strong></em></li>
+  <li>⚠ <strong>Le volet résiduel de G-1 pèse ici plus qu'ailleurs par le nombre</strong> : *une quarantaine d'annonces produit datées, dont <strong>plusieurs disponibilités générales annoncées pour un horizon postérieur au gel de la somme</strong> — août 2026, second semestre 2026. ⚠ <strong>Aucune n'a été reprise à la source primaire.</strong></li>
+  <li><strong>Les décomptes sont publiables</strong> (G-2). L'écart à la cible est relevé au <a class="lien" href="README.md"> 0 </a> du dossier et alimente <strong>D-4</strong>, déjà tranchée.</li>
+  <li><strong>Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan.</strong> Ils résolvent contre l'entrée du TOC : <strong>ch. 36</strong> (présent Livre, même passe), le <strong>Livre IV</strong> dans son ensemble, <strong>ch. 48</strong>, <strong>ch. 49</strong> et <strong>ch. 50</strong> (Livre V). Résolvent contre du <strong>texte rédigé</strong> : <strong>ch. 1 § 1.3.4</strong>, <strong>ch. 6</strong>, <strong>ch. 8</strong>, <strong>ch. 10</strong>, <strong>ch. 14 § 14.4</strong>, <strong>ch. 18 § 18.1</strong>, <strong>ch. 24</strong>, <strong>ch. 25</strong>, <strong>ch. 27</strong>, <strong>ch. 28</strong>, <strong>ch. 30</strong>, <strong>ch. 31</strong>, <strong>ch. 32</strong> et <strong>ch. 33</strong>.</li>
+</ol>
+
+<p><strong>Remontée ouverte par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-97 — non bloquante, de régime de preuve inférieur à [C].</strong> Le Vol. I déclare <strong>six fois dans son ch. 5</strong> que certaines de ses affirmations sont <strong>« hors corpus bibliographique du chapitre, à sourcer à la rédaction »</strong> — standards d'interopérabilité de santé, acteurs et litige de l'autorisation préalable, une ligne directrice canadienne, dispositifs de bacs à sable, et trois entrées de son tableau d'études de cas. ⚠ <strong>Le régime de la somme ne prévoit pas cette catégorie</strong> : <em>le PRD §7.1 pose que les faits du Vol. I entrent <strong>en [C]</strong>, sans distinguer ceux que le Vol. I déclare lui-même <strong>hors de son propre corpus</strong>.</em> ⚠ <strong><em>Une affirmation hors corpus n'a pas été vérifiée même au niveau des références</strong></em> — <em>c'est-à-dire au niveau exact que [C] atteste.</em> <strong>Demande remontée</strong> : que <strong>G-3 décide du sort de cette catégorie</strong> — soit un quatrième niveau, soit une exclusion explicite du socle consolidé —, et que <strong>le registre de l'Annexe C l'enregistre</strong>. ⚠ <em>La pièce a écrit la réserve à chacune de ses occurrences ; <strong>elle n'a pas créé de niveau</strong>, ce qui relève de G-3.</em></li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.25</strong> — § 34.1 à § 34.7, dans l'ordre exact —, le § 34.0 étant une <strong>ouverture de chapitre</strong>. La <strong>table de couverture est respectée pour ses cinq lignes</strong>, ⚠ <strong>y compris ses deux sorties de périmètre</strong> : <em>les §5.12.1-5.12.3 vont au <strong>Livre IV</strong>, le §5.13 au <strong>ch. 36</strong></em>, <em>nommées au § 34.0 au moment où le lecteur les attendrait</em>. ⚠ <strong>Le rattachement du §5.14, corrigé en v0.3 du plan, est respecté</strong> : <em>il est la clôture du chapitre source, et il est reçu au § 34.7.</em> La <strong>décision 14 a été exécutée avant la rédaction</strong>, domaine déclaré : une thèse examinée, zéro réalignée. ⚠ <strong>Les six sièges du ch. 31 sont renvoyés et jamais re-dérivés</strong>, non plus que ceux des <strong>ch. 6, 14 § 14.4, 18 § 18.1, 19 et 48</strong>. Les <strong>vingt-trois métriques auto-déclarées ou projections portent leur statut à chaque occurrence</strong>, ⚠ <strong>sans exception d'usage illustratif</strong> — <em>y compris les quatre gains du § 34.2.3 et les deux du § 34.2.4.</em> Les <strong>dix-huit occurrences de R-09 disent leur statut</strong> et les <strong>huit de R-14 leur degré</strong>. ⚠ <strong>R-13 est tenu à ses trois occurrences</strong> : <em>l'échelle à quatre paliers est <strong>nommée par son cardinal</strong>, et le tri productivité assistée / autonomie transactionnelle est <strong>déclaré n'être pas une échelle d'autonomie</strong>.</em></p>
+
+<div class="avert">
+  <p><strong>La neutralité fournisseur est tenue à ses neuf occurrences</strong> : <em>une quarantaine d'offres nommées, <strong>aucune recommandée</strong>.</em> Enfin, ⚠ <strong>les six réserves « hors corpus » de la source sont reprises une par une</strong>, et <strong>le vide de bancs d'essai du § 34.6.2 est déclaré au degré 3 plutôt que comblé</strong>.</p>
+</div>
+
+<h3>Clôture des remontées — 27 juillet 2026</h3>
+
+<div class="avert">
+  <p><strong>Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.</strong> Elle enregistre l'issue des remontées ouvertes par cette pièce. <em>Une remontée ne se clôt pas là où elle s'ouvre : elle se solde là où elle fait foi</em> — au <a class="lien" href="../PRD/PRD.md">PRD</a> pour une décision ou un régime, au <a class="lien" href="../PRD/TOC.md">TOC</a> pour un réalignement de plan, à l'appareil pour une dette d'outillage.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Renumérotation, à lire avant les numéros.</strong> <em>Les remontées de ce Livre portaient d'abord les numéros <strong>R-IV-38 à R-IV-61</strong> ; une <strong>passe concurrente écrivait les Livres IV et V dans le même dépôt le même jour</strong> et les avait consommés. <strong>Le Livre III a été renuméroté en R-IV-76 à R-IV-99</strong> à la découverte de la collision — <strong>aucun numéro n'est partagé</strong>.</em></p>
+</div>
+
+<ul class="puces">
+  <li><strong>R-IV-97 — close par DÉCISION DE RÉGIME (PRD v0.10 §7.1), et la décision est une exclusion.</strong> Les affirmations que le <strong>Vol. I déclare lui-même « hors corpus bibliographique du chapitre, à sourcer à la rédaction »</strong> ⚠ <strong>n'entrent pas au socle consolidé</strong>. <strong>Le motif est que [C] n'est pas assez bas</strong> : <em>le niveau <strong>[C]</strong> atteste <strong>une vérification des références</strong> ; une affirmation que sa propre source déclare <strong>hors de son corpus</strong> <strong>n'a pas même reçu cette vérification-là</strong>.</em> ☑ <strong>Elles demeurent des mentions à sourcer</strong> — <em>citables avec leur réserve, jamais versables</em> — et ⚠ <strong>G-3 n'a plus à trancher entre un quatrième niveau et une exclusion : l'exclusion est décidée</strong>. ☑ <em>Les six occurrences du chapitre portent déjà cette réserve.</em></li>
+</ul>
+
+<div class="avert">
+  <p><strong>Ce que la clôture ne change pas.</strong> Les portes <strong>G-3</strong> et — pour les chapitres qui citent le Vol. III — <strong>G-4</strong> demeurent ouvertes ; le socle consolidé compte <strong>zéro entrée</strong> ; <strong>aucun énoncé de cette pièce n'est central au sens de CA-IV-01</strong>. <strong>CA-IV-11 et CA-IV-13 ne sont pas satisfaites</strong> — <em>aucune relecture par un relecteur distinct du rédacteur</em>. Cette pièce reste un <strong>brouillon non publiable</strong>. <em>Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.</em></p>
+</div>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre III, chapitre 34. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.25, entrée du chapitre 34, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>
