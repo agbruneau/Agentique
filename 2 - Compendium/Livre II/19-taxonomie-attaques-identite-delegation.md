@@ -8,10 +8,10 @@ Deuxième mouvement — la confiance hostile (ch. 19-20). **Premier chapitre du 
 | **Statut** | **Brouillon de rédaction, non publiable** — portes **G-3** et **G-4** ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Deux obligations propres à ce chapitre ne sont pas satisfaites, et elles sont d'ordres différents.** *(a)* Le TOC déclare que **la thèse de ce chapitre est le premier énoncé à instruire avant rédaction** : sa proportion doit être **établie par dénombrement sur un corpus déclaré** — **le dénombrement n'a pas été conduit**, et le corps du chapitre **n'écrit aucune proportion** (voir § 19.0 et **R-IV-32**). *(b)* **CA-IV-11 exige une relecture dédiée par un relecteur distinct, dont le compte rendu est déposé et nommé dans la pièce, l'attestation auto-délivrée étant proscrite même exacte** : **aucune relecture dédiée n'a eu lieu**, et **rien dans cette pièce ne doit être lu comme une attestation**. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Les identifiants de vulnérabilité et les incidents datés se périment par publication de correctif** : ils sont cités comme **jalons datés**, jamais comme état courant d'exposition — et **quatre des identifiants mobilisés portent un vote adversarial incomplet** |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. III *Monographie* ch. 12**, dont les entrées **F-13** à **F-26**, **F-03**, **F-04**, **F-56** et les entrées héritées **H-09**, **H-11**, **H-24**, **H-25**, **H-26** conservent leurs niveaux d'origine — **treize en [A]**, **une en [B]**, les héritées en **[B]** ou **[C]** ; et contre le **Vol. I *Monographie* §2.10.1 et §2.10.2**, en **[C]**. ⚠ **F-26 porte un vote adversarial incomplet**, et *un vote incomplet n'est pas un vote favorable* : ses quatre identifiants **illustrent** et ne portent aucun énoncé central. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. III — **R-12 (traitement défensif exclusif, au niveau architectural, aucune recette d'exploitation) : quatorze occurrences**, dont **chacune des six lignes du tableau 19.2**, chaque entrée nommant **le maillon qui cède** et s'arrêtant là ; **R-08 (l'absence porte sur l'usurpation du justificatif propre d'un agent, et sur cela seul) : ce chapitre en est le SIÈGE — quatre occurrences**, § 19.6 ; **R-14 : douze occurrences**, dont **sept de degré 3** ; **R-02 : quatre occurrences** ; **R-04 : deux occurrences**, § 19.1, la formule laissée en langue originale et renvoyée à son siège ; **R-09 : trois occurrences**. **R-01, R-03, R-05 à R-07, R-10, R-11, R-13 : zéro occurrence.** Vol. II — **§8.2 (métriques auto-déclarées) : trois occurrences**, § 19.1 et § 19.5 (deux) ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : deux occurrences**, § 19.1 et § 19.6 ; **R-1 à R-8 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **5 000 mots** de corps (§ 19.0 à § 19.6), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 5 467 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+9,3 %**. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les sept sections du corps, § 19.0 à § 19.6.** Vol. III — **R-08 (l'absence porte sur l'usurpation du justificatif propre d'un agent, et sur cela seul) : ce chapitre en est le SIÈGE — un marqueur**, § 19.6, celui du siège lui-même ; **R-02 : un marqueur**, § 19.1 ; **R-14 : un marqueur**, § 19.6. **R-01, R-03 à R-07, R-09 à R-13 : zéro marqueur.** ⚠ **R-12 est appliqué sur tout le domaine sans être marqué une seule fois, et c'est le garde-fou structurant du chapitre** : traitement défensif exclusif, au niveau architectural, **aucune recette d'exploitation** — chacune des six lignes du tableau 19.2 nomme **le maillon qui cède** et s'arrête là. Même régime pour **R-14** hors de son marqueur — les absences portent leur degré, dont sept au **degré 3** —, pour **R-09** (statut dit à chaque mention) et pour **R-04** (§ 19.1, la formule laissée en langue originale et renvoyée à son siège). Vol. II — **§8.2 (métriques auto-déclarées) : zéro marqueur** ; les métriques des § 19.1 et § 19.5 sont attribuées à leur source à chaque occurrence ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : zéro marqueur** ; la formule imposée est tenue aux § 19.1 et § 19.6 ; **R-1 à R-8 : zéro marqueur** |
+| **Volumétrie cible** | ≈ **5 000 mots** de corps (§ 19.0 à § 19.6), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 5 529 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+10,6 %** (re-mesuré au commit du 28 juillet 2026, au terme de la passe de correction de l'audit). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 19)* — l'identité est le **verrou architectural** de la sécurité agentique — un agent dépourvu d'identité propre et gouvernée opère dans un écart d'attribution qui rend le moindre privilège inapplicable —, et les référentiels du domaine la traitent désormais comme un plan de contrôle à part entière : c'est ce qui justifie d'absorber la sécurité dans le cadre identitaire.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 19)* — l'identité est le **verrou architectural** de la sécurité agentique — un agent dépourvu d'identité propre et gouvernée opère dans un écart d'attribution qui rend le moindre privilège inapplicable —, et les référentiels du domaine la traitent désormais comme un plan de contrôle à part entière : c'est ce qui justifie d'absorber la sécurité dans le cadre identitaire.
 >
 > ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-32** — la seule **bloquante** des vingt-quatre, et la seule où l'arbitrage a retenu l'autre branche que celle proposée. La forme antérieure portait « **une part majoritaire** ». Le dénombrement exigé n'a pas eu lieu ; ⚠ **et le lot n'est pas ouvert pour autant** : la source n'a pas seulement borné cette forme, elle l'a **réfutée au vote adversarial** et a réécrit sa thèse en énoncé architectural, écrivant que *« ce n'est pas une thèse de dénombrement »*. *Dénombrer pour établir un énoncé que la source tient pour non soutenu aurait produit un chiffre sans thèse à porter.* **Le corps du chapitre n'a pas changé** : il **n'écrivait aucune proportion**, et le § 19.1 continue de nommer le corpus candidat sans l'exploiter.
 
@@ -19,24 +19,28 @@ Deuxième mouvement — la confiance hostile (ch. 19-20). **Premier chapitre du 
 
 ## § 19.0 — Introduction : ce que ce chapitre ne peut pas affirmer, et pourquoi il le dit d'abord
 
-⚠ **La thèse citée ci-dessus porte une proportion, et cette proportion n'est pas établie.** Le TOC la
-déclare lui-même **le premier énoncé à instruire avant rédaction** : *la proportion affirmée doit être
-établie par **dénombrement sur un corpus déclaré**, ou l'énoncé retombe sans quantificateur.* **Le
-dénombrement n'a pas été conduit** — la porte **G-1** dont il relèverait n'a pas été ouverte pour ce
-Livre —, et **aucun corpus n'a été déclaré**.
+⚠ **La thèse citée ci-dessus ne porte plus de proportion, et l'exigence de dénombrement qui la visait
+est tombée avec son objet.** Jusqu'au **TOC v0.24**, elle portait « **une part majoritaire** », que le
+plan déclarait lui-même **le premier énoncé à instruire avant rédaction** : *la proportion affirmée
+devait être établie par **dénombrement sur un corpus déclaré**, ou l'énoncé retombait sans
+quantificateur.* **Le dénombrement n'a pas été conduit** — la porte **G-1** dont il relèverait n'a pas
+été ouverte pour ce Livre —, et **aucun corpus n'a été déclaré**.
 
 **La conséquence est écrite avant la première ligne de recension : le corps de ce chapitre n'écrit
 aucune proportion, ni majoritaire, ni notable, ni d'aucune autre forme.** *Ce qu'il soutient est
 architectural et non statistique*, et c'est exactement la position que la source de ce chapitre a
 elle-même adoptée après avoir vu sa forme quantitative **réfutée au vote adversarial**.
 
-⚠ **La source est plus nette encore que le plan, et l'écart se déclare.** Le Vol. III écrit en tête de
-son chapitre correspondant : *« Ce n'est pas une thèse de dénombrement, et le chapitre le dit : le
-relevé des référentiels **ne soutient pas** que la majorité des attaques documentées seraient des
-attaques d'identité ou de délégation. »* Sa thèse rectifiée porte que **l'identité est le verrou
-architectural** de la sécurité agentique. ⚠ **Le TOC du compendium porte encore la forme
-quantitative** ; la pièce **cite la thèse verbatim, comme le PRD l'exige**, et **écrit son corps sous
-la forme architecturale**. L'écart est remonté (**R-IV-32**), non arbitré ici.
+⚠ **La source était plus nette encore que le plan, et l'écart s'est soldé dans son sens.** Le Vol. III
+écrit en tête de son chapitre correspondant : *« Ce n'est pas une thèse de dénombrement, et le
+chapitre le dit : le relevé des référentiels **ne soutient pas** que la majorité des attaques
+documentées seraient des attaques d'identité ou de délégation. »* Sa thèse rectifiée porte que
+**l'identité est le verrou architectural** de la sécurité agentique. ⚠ **Le TOC du compendium portait
+encore la forme quantitative jusqu'à la v0.24** ; la pièce **citait la thèse verbatim, comme le PRD
+l'exige**, et **écrivait son corps sous la forme architecturale**. **L'écart a été soldé par la
+remontée R-IV-32** — la seule **bloquante** des vingt-quatre —, qui a réaligné la thèse au **TOC
+v0.25** **sans ouvrir de lot de dénombrement** : *dénombrer pour établir un énoncé que la source tient
+pour non soutenu aurait produit un chiffre sans thèse à porter.*
 
 **Ce que ce chapitre soutient, et ce que le socle en porte.** Lecture de l'auteur — **ce que le socle
 établit** : l'énoncé d'imputation architecturale d'un référentiel de sécurité applicative (F-19,
@@ -492,7 +496,7 @@ auto-délivrée est proscrite même exacte : rien dans cette pièce, y compris l
 1. **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ **Et quatre identifiants de vulnérabilité
    portent un vote adversarial incomplet** (F-26) : *un vote incomplet n'est pas un vote favorable*, et
    ils sont employés en illustration seule, jamais comme appui.
-2. **Les décomptes sont publiables** (G-2). Écart de **+9,3 %** ; la volumétrie du Livre alimente
+2. **Les décomptes sont publiables** (G-2). Écart de **+10,6 %** ; la volumétrie du Livre alimente
    **D-4** par **R-IV-17**.
 3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan** : **ch. 37 § 37.3** —
    siège de la non-compositionnalité, invoqué **deux fois** — et **ch. 47**, où l'incident public
@@ -537,15 +541,16 @@ reçues** : le § 19.2 et le § 19.3 les portent, et le ch. 11 § 11.1.2 n'en tr
 Le **siège de la triade létale est posé et marqué** (§ 19.2) ; le **siège de la restriction du
 garde-fou sur l'usurpation** l'est aussi (§ 19.6). L'**encadré de désambiguïsation reste au ch. 7
 § 7.5** ; l'**ancrage informationnel reste au ch. 5** ; la **non-compositionnalité reste au ch. 37
-§ 37.3**. ⚠ **Le traitement est défensif à ses quatorze occurrences** : chaque entrée nomme le maillon
+§ 37.3**. ⚠ **Le traitement est défensif sur tout le domaine balayé** : chaque entrée nomme le maillon
 et la raison pour laquelle il cède, cite son identifiant, **et s'arrête là** — *aucune recette
-d'exploitation n'est reproduite, et aucune mécanique n'est décrite au grain de l'exécution.* Les
-**douze occurrences de R-14** portent leur degré, dont **sept au degré 3**, et le § 19.6 en produit
-**un de chaque des trois régimes protocolaires**. Les **trois métriques auto-déclarées** sont
-attribuées à leur source, **y compris les taux expérimentaux du § 19.5**, rapportés aux trois
-configurations qui les portent. Le mot **« sécurisé » n'est appliqué à aucun protocole, à aucune
-occurrence**. Et les **sept occurrences de « Lecture de l'auteur »** sont suivies de ce que le socle
-établit et n'établit pas.
+d'exploitation n'est reproduite, et aucune mécanique n'est décrite au grain de l'exécution.* **R-12
+n'y porte aucun marqueur littéral** : *l'application est réelle, le renvoi à l'identifiant absent, et
+la couverture se déclare plutôt qu'elle ne se dénombre.* Les absences **portent leur degré**, dont
+sept au **degré 3**, et le § 19.6 en produit **un de chaque des trois régimes protocolaires**. Les
+**métriques auto-déclarées** sont attribuées à leur source, **y compris les taux expérimentaux du
+§ 19.5**, rapportés aux trois configurations qui les portent. Le mot **« sécurisé » n'est appliqué à
+aucun protocole, à aucune occurrence**. Et les **six marqueurs de « Lecture de l'auteur »** — § 19.0,
+§ 19.1, § 19.2 et § 19.4 (trois) — sont suivis de ce que le socle établit et n'établit pas.
 
 
 ---

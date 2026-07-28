@@ -10,17 +10,25 @@ séquence dans le temps ce que les quatre précédents ont posé dans l'espace.*
 | **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6. ⚠ **R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre.** ⚠ **Ce chapitre est le seul du Livre dont l'objet est daté de bout en bout** : *son argument porte sur un compte à rebours, et **un compte à rebours ne se recopie pas — il se recalcule*** (§ 46.2) |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : *aucun jalon externe du § 46.3 n'a été repris à la source primaire*, et **c'est la matière la plus périssable du Livre**. Gel de source : **16 juillet 2026** (Vol. II) ; *il n'est pas celui de la somme, et l'écart de onze jours **change le compte à rebours*** |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Vol. II — **F-09** *(attentes d'E-23, **[A/B mixte]** — **[A]** pour la publication, l'entrée en vigueur, la portée et la définition de « modèle » ; **[B]** pour les exigences opératoires extraites du texte intégral : inventaire, cotation, documentation et son appendice, surveillance continue, **absence de disposition transitoire** ; ⚠ **ce chapitre mobilise les deux strates**)* ; **F-25** *(calendrier de la ligne directrice de l'AMF)* ; **F-37** *(propriétés, métriques et enseignements d'orchestration)* ; **F-44** *(outils de gouvernance et d'observabilité — inférences marquées)*. **En renvoi seulement** : F-10, F-29, F-34, F-35, F-36, F-42. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | **Les deux séries, intégralement, y compris les zéros.** Vol. II — **réserve F-09 (« attendu par E-23 », jamais « exigé » ; « documentation de modèle » et « inventaire », jamais « fiche de modèle » *à propos d'E-23*) : onze occurrences**, § 46.1 (quatre), § 46.2 (six), § 46.3 ; **R-7 (le rapprochement entre une métrique ou un produit et l'instrumentation d'E-23 est une inférence d'auteur) : cinq occurrences**, § 46.1, ⚠ **nommé par volume — à ne pas confondre avec R-07 du Vol. III, qui porte lui aussi sur l'inférence produit ↔ réglementation** ; **réserves F-37 (préimpression non révisée) : trois occurrences**, § 46.1 (deux) et § 46.2 ; **réserve F-25 (jamais « en attente » ni « en projet ») : deux occurrences**, § 46.2 et § 46.3 ; **R-4 et réserve F-29 : une occurrence**, § 46.3, en renvoi ; **R-5 (aucun standard technique désigné — formulation imposée) : une occurrence**, § 46.3 ; **§8.4 (neutralité fournisseur) appliqué par prudence : deux occurrences**, § 46.1 — *le garde-fou est borné au mouvement d'instanciation, et ce chapitre mobilise pourtant des produits nommés* ; **métriques auto-déclarées : deux occurrences**, § 46.1 ; **R-1, R-2, R-3, R-6, R-8 : zéro occurrence.** Vol. III — **R-14 : six occurrences**, § 46.1 (deux), § 46.2 (deux), § 46.3 (deux) ; **R-11 (jalons « visés », jamais « fixés ») : deux occurrences**, § 46.3 ; **R-09 : deux occurrences**, § 46.3. **R-01 à R-08, R-10, R-12, R-13 : zéro occurrence** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** Vol. II — **réserve F-09 (« attendu par E-23 », jamais « exigé » ; « documentation de modèle » et « inventaire », jamais « fiche de modèle » *à propos d'E-23*) : une occurrence de l'identifiant**, § 46.3 — ⚠ *la formule imposée est employée à chaque énoncé sur E-23 des § 46.1, § 46.2 et § 46.3 : **domaine déclaré, sans cardinal*** ; **R-7 (le rapprochement entre une métrique ou un produit et l'instrumentation d'E-23 est une inférence d'auteur) : une occurrence**, § 46.1, ⚠ **nommé par volume — à ne pas confondre avec R-07 du Vol. III, qui porte lui aussi sur l'inférence produit ↔ réglementation** ; **réserve F-37 (préimpression non révisée) : une occurrence**, § 46.1 ; **réserve F-25 (jamais « en attente » ni « en projet ») : une occurrence**, § 46.3 ; **R-4 et réserve F-29 : une occurrence chacun**, § 46.3, en renvoi ; **R-5 (aucun standard technique désigné — formulation imposée) : une occurrence**, § 46.3 ; **métriques auto-déclarées (marqueur « auto-déclaré ») : une occurrence**, § 46.1 ; **§8.4 (neutralité fournisseur) appliqué par prudence : domaine déclaré, § 46.1, sans cardinal** — *le garde-fou est borné au mouvement d'instanciation, et ce chapitre mobilise pourtant des produits nommés* ; **R-1, R-2, R-3, R-6, R-8 : zéro occurrence.** Vol. III — **R-09 : une occurrence**, § 46.3 ; **R-11 (jalons « visés », jamais « fixés ») : une occurrence**, § 46.3 ; **R-14 : zéro occurrence de l'identifiant** — ⚠ *les degrés d'absence sont portés en toutes lettres aux § 46.1, § 46.2 et § 46.3 : **domaine déclaré, sans cardinal***. **R-01 à R-08, R-10, R-12, R-13 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **3 000 mots** de corps (§ 46.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des trois sections — **la plus basse du Livre**. ☑ **Décompte publiable depuis G-2** ; **réel reporté au [`README.md`](README.md)**. ⚠ **D-4 s'applique** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 46)* — les métriques d'évaluation des orchestrations (correction, réactivité, traçabilité) sont l'instrumentation candidate des programmes E-23/AMF ; la feuille de route se séquence sur l'entrée en vigueur commune (inventaire → encadrement → surveillance).
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 46 — **thèse collationnée et amendée en v0.28**, décisions 8 et 14, remontée R-IV-107)* — les métriques d'évaluation des orchestrations (correction, réactivité, traçabilité) sont l'instrumentation **candidate** des programmes E-23/AMF — ⚠ **« candidate » est un mot de l'auteur, absent du socle, et aucune source ne valide cet emploi** ; **le partage 4 → 3 tient à l'objet mesuré** — *artefact de conception pour la quatrième propriété instrumentée, comportement en exploitation pour les trois retenues* —, ⚠ **et la raison de fond disponible appuie les quatre, non les trois** ; la feuille de route se séquence sur l'entrée en vigueur commune (inventaire → encadrement → surveillance). ⚠ **Partage déclaré avec le ch. 40** : *la grille dérivée là-bas, l'instrumentation candidate ici.*
 
-☑ **La thèse citée résiste à la collation contre le texte rédigé de sa source — décision 14 du TOC,
-appliquée avant la rédaction, et c'est la seconde du Livre IV dans ce cas.** Le Vol. II porte les deux
-membres **mot pour mot** ; le plan y ajoute seulement, entre parenthèses, **les trois mouvements que la
-source nomme elle-même**. ⚠ **Un point mérite d'être borné, et il vient de la source** : *le mot
-« candidate » est **de l'auteur**, il n'est pas au socle, et **aucune source ne valide l'emploi de ces
-métriques à ce titre**.* **Le corps l'écrit ainsi de bout en bout.**
+☑ **Les deux membres de la thèse ont résisté à la collation contre le texte rédigé de leur source —
+décision 14 du TOC, appliquée avant la rédaction, et c'est l'un des deux seuls cas du Livre IV.** Le
+Vol. II porte les deux membres **mot pour mot** ; le plan y ajoutait seulement, entre parenthèses,
+**les trois mouvements que la source nomme elle-même**. ⚠ **Un point méritait d'être borné, et il vient
+de la source** : *le mot « candidate » est **de l'auteur**, il n'est pas au socle, et **aucune source
+ne valide l'emploi de ces métriques à ce titre**.* **Le corps l'écrit ainsi de bout en bout.**
+
+⚠ **Ce que la thèse citée a gagné en v0.28, et pourquoi la citation ci-dessus est plus longue que la
+forme v0.25 que cette pièce portait** (décision 17 du TOC, alinéa c) : *l'arbitrage a **amendé
+l'entrée du plan sans en changer les deux membres*** — il y a **inscrit la borne du mot « candidate »**
+que ce corps appliquait déjà, **motivé le partage 4 → 3 à la ligne Fusion** par l'objet mesuré, écrit
+que **la raison de fond disponible appuie les quatre propriétés et non les trois**, et **déclaré le
+partage avec le ch. 40** (remontées R-IV-107 et R-IV-109). *Aucune de ces additions ne contredit le
+corps ; toutes y étaient déjà écrites, et c'est le plan qui les a rejointes.*
 
 ---
 
@@ -139,7 +147,7 @@ l'éditeur destine à trois cadres nommés** — **aucun des trois n'est un text
 > documentée, ou que son absence soit **établie par balayage** plutôt que présumée. ⚠ **La question
 > reste ouverte ; aucune inférence n'est proposée ici.**
 
-## § 46.2 — Feuille de route type : inventorier, encadrer, surveiller
+## § 46.2 — Feuille de route type : inventaire, encadrement, surveillance
 
 ### 46.2.1 Le compte à rebours, recalculé et non recopié
 
@@ -193,6 +201,13 @@ le calibre.**
 options d'orchestration, et **imposer un cadre déterministe à ceux qui relèvent d'une exigence
 stricte***.
 
+⚠ **La chaîne qui rend l'encadrement opposable n'est pas reconstruite ici** : *de l'intention au
+substrat — pilote de conformité, évaluation de risque, exigence, réalisation, élément exécutable —,
+elle a **son siège pour toute la somme au ch. 44 § 44.6**, avec son critère d'auditabilité (*aucune
+exigence réglementaire orpheline*). **Ce chapitre y renvoie et n'en refait aucun maillon** ; il en tire
+seulement la conséquence de calendrier : *une exigence qu'aucun élément exécutable ne réalise au
+1ᵉʳ mai 2027 est une exigence non encadrée, quelle que soit la qualité du schéma qui la porte.*
+
 **Lecture de l'auteur** — ⚠ *la cotation attendue par E-23 et la grille de sélection de la
 préimpression **portent sur le même geste** — décider combien d'encadrement mérite un processus — **mais
 aucune source ne les relie***, et ⚠ **les sept critères de sélection sont qualitatifs : ils orientent
@@ -223,8 +238,8 @@ deux** ; **elle ne dit rien de ce que le second texte attend**, et la somme ne l
 
 ⚠ **Cette section est la plus périssable de la somme, et elle porte sa péremption dans son objet
 même** : *elle recense des événements dont **la survenue est ce qui la périme**.* ⚠ **Elle recoupe les
-événements de péremption du ch. 50 sans les reconstruire** — *ce chapitre en est le siège, et il n'est
-pas rédigé.*
+événements de péremption du ch. 50 sans les reconstruire** — *ce chapitre en est le siège ;* ⚠ *il n'était
+pas rédigé à la date de cette pièce, il l'est depuis, hors portes.*
 
 | Jalon | Ce que le socle en porte, à sa date | ⚠ Régime |
 |---|---|---|
@@ -237,12 +252,17 @@ pas rédigé.*
 
 : Tableau 46.2 — Les jalons externes à surveiller, avec leur régime épistémique. ⚠ **Un seul est PROGRAMMÉ ; deux sont des faits négatifs bornés ; trois sont des renvois dont le siège est ailleurs.**
 
+⚠ **Les trois statuts employés dans la colonne de régime — PROGRAMMÉ, PROJETÉ, SPÉCULATIF — ne sont
+pas définis ici** : *leur **siège pour toute la somme est au ch. 49 § 49.0***, et ce chapitre les
+**applique sans les redéfinir**. *Un tri qui redéfinirait ses propres statuts au lieu de renvoyer au
+siège ferait diverger la seule échelle prospective de l'ouvrage.*
+
 ⚠ **Lecture de l'auteur, et c'est le dernier énoncé du Livre** : *des six jalons, **un seul porte une
 date opposable**, et **c'est celui qui commande la feuille de route**. Les cinq autres sont des états
 d'attente — **et un programme séquencé sur des états d'attente n'a qu'un seul point d'ancrage**.*
 ⚠ **Le socle ne documente aucun mécanisme de surveillance de ces jalons** : absence de documentation,
 non fait négatif vérifié (degré 3). ***Ce que la somme peut faire est les nommer et les dater ; les
-surveiller est le travail du ch. 50, et il n'est pas rédigé.***
+surveiller est le travail du ch. 50 —*** ⚠ ***non rédigé à la date de cette pièce, rédigé depuis, hors portes.***
 
 ## Synthèse : ce que le chapitre lègue à la somme
 
@@ -291,10 +311,16 @@ Instruction d'auteur du **27 juillet 2026**.
 2. **Les décomptes sont publiables** (G-2) ; le réel est reporté au [`README.md`](README.md). ⚠ **Et le
    compte à rebours du § 46.2.1 est recalculé, non recopié** — *278 jours du 27 juillet 2026 au
    1ᵉʳ mai 2027.*
-3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan.** Ne sont pas rédigés :
-   **ch. 25**, **ch. 29**, **ch. 33**, **ch. 49**, **ch. 50**. Les renvois vers les **ch. 21** et
-   **ch. 43** résolvent contre du texte au terme de la présente passe ; ceux vers les **ch. 38, 39, 40,
-   42, 45** aussi.
+3. **Les renvois « ch. N » : état FINAL de la passe, et non ordre d'écriture.** ⚠ *La forme
+   antérieure de ce point photographiait l'instant où cette pièce a été écrite ; elle est corrigée
+   ici sur l'état que le commit produit.* **Les dix chapitres du Livre IV (ch. 37 à 46) sont
+   rédigés**, comme le sont les **cinquante chapitres des cinq Livres** : *tous les renvois « ch.
+   N » de cette pièce résolvent donc contre du texte.* ⚠ **Ce qui reste vrai de la forme
+   antérieure, et qui est daté** : à l'heure où ce chapitre a été écrit, n'étaient rédigés ni les
+   ch. 25, 29 et 33 du Livre III, ni les ch. 49 et 50 du Livre V — *les renvois qui les visent ont
+   été posés comme renvois de plan et n'ont pas été re-vérifiés contre le texte paru après eux.* ⚠
+   **Et « résoudre contre du texte » ne vaut pas recevabilité** : *le texte visé est lui-même un
+   brouillon hors portes.*
 4. **La neutralité fournisseur est appliquée par prudence**, ⚠ *le garde-fou étant borné au mouvement
    d'instanciation alors que ce chapitre mobilise des produits nommés* : **statuts auto-déclarés
    attribués, aucune comparaison, aucune recommandation.**
@@ -310,6 +336,11 @@ Instruction d'auteur du **27 juillet 2026**.
   **Demande remontée** : que **le motif du partage soit écrit à la ligne Fusion**, ou que **la
   quatrième propriété soit réintégrée**. ⚠ *Un partage repris de passe en passe sans motif finit par
   ressembler à un résultat.*
+  ☑ **Issue, 27 juillet 2026** — **TOC, ligne Fusion** — le **partage 4 → 3** des propriétés
+  instrumentées est **motivé à la ligne Fusion** : *l'objet mesuré — artefact de conception
+  contre comportement en exploitation* ; ⚠ **et la borne est écrite** : *la raison de fond
+  disponible appuie les **quatre**, non les trois.* **La citation en tête de cette pièce porte
+  la forme amendée** (décision 17 du TOC).
 - **R-IV-108 — non bloquante, de fait périssable, et elle vise un domaine plutôt qu'un fait.** Le
   § 46.3 recense **six jalons externes**, ⚠ **dont un seul est PROGRAMMÉ et dont aucun n'a été repris à
   la source primaire au gel de la somme**. *Deux d'entre eux sont des faits négatifs vérifiés bornés
@@ -319,6 +350,10 @@ Instruction d'auteur du **27 juillet 2026**.
   reprise de chacun** — *une désignation publiée, un arrêté, une ratification, une publication de
   version.* ⚠ *Un tableau de jalons dont aucun n'est re-daté au gel est un tableau daté d'un autre
   jour, et c'est le seul défaut qui périme un chapitre entier plutôt qu'un énoncé.*
+  ☑ **Issue, 27 juillet 2026** — **PRD, volet résiduel de G-1, DOMAINE DÉCLARÉ** — les **six
+  jalons externes** entrent au domaine **avec le critère de reprise de chacun** : *une
+  désignation publiée, un arrêté, une ratification, une publication de version* ; ⚠ *un tableau
+  de jalons dont aucun n'est re-daté au gel est daté d'un autre jour.*
 - **R-IV-109 — non bloquante, de frontière entre chapitres.** Le **ch. 40** dérive une **grille
   d'indicateurs** de ce que les cadres attendent et **ne produit aucune valeur** ; ce chapitre demande
   si **des métriques existantes** pourraient servir un programme réglementaire. ⚠ **Les deux
@@ -328,18 +363,24 @@ Instruction d'auteur du **27 juillet 2026**.
   candidate de l'autre* —, comme le TOC le fait pour les partages déclarés du ch. 40 § 40.3 avec le
   ch. 49. ⚠ *Deux chapitres qui produisent le même constat sans se déclarer se répéteront à la
   relecture, ou se contrediront.*
+  ☑ **Issue, 27 juillet 2026** — **TOC, ligne Fusion** — le **partage avec le ch. 40 est déclaré**
+  : *la grille dérivée d'un côté, l'instrumentation candidate de l'autre* ; ⚠ *deux chapitres
+  qui produisent le même constat sans se déclarer se répéteront à la relecture, ou se
+  contrediront.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 46.1 à
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.28** — § 46.1 à
 § 46.3, dans l'ordre exact —, et le § 46.0 est une introduction de chapitre. La **table de couverture
-est respectée pour son unique ligne** : Vol. II §20.1-20.3 en **condensé**. Les **onze occurrences de
-la forme imposée « attendu par E-23 »** sont tenues, et ⚠ **« fiche de modèle » compte zéro occurrence
-à propos d'E-23**. Les **cinq occurrences du garde-fou d'inférence produit ↔ réglementation** sont
-**nommées par volume**, ⚠ *les deux séries portant chacune un garde-fou sur ce même geste et le renvoi
-nu étant indécidable*. Les **trois réserves de la préimpression** sont portées à chaque mobilisation,
-et **ses résultats chiffrés ne sont pas repris**. Les **deux statuts auto-déclarés** sont attribués à
-leur éditeur nommé. Le **compte à rebours est recalculé au gel de la somme**, et **l'écart avec celui
-de la source est déclaré**. Les **six occurrences de degré 3** portent leur degré, et **les deux faits
-négatifs vérifiés portent leur borne**. **Aucun siège neuf n'est posé** ; les sièges touchés — les
+est respectée pour son unique ligne** : Vol. II §20.1-20.3 en **condensé**. ⚠ **Cardinaux re-mesurés au commit du 28 juillet 2026, sur le marqueur littéral et sur le corps seul** (décision 16 du TOC) ; *les cardinaux antérieurs comptaient les applications du garde-fou et n'étaient re-mesurables par aucune règle écrite.* La **forme imposée « attendu par E-23 » est tenue à chaque énoncé sur E-23 —
+domaine déclaré, sans cardinal** (alinéa c), le marqueur littéral y comptant **deux occurrences** ; et
+⚠ **« fiche de modèle » compte zéro occurrence à propos d'E-23**, re-mesuré. Le **garde-fou
+d'inférence produit ↔ réglementation est nommé par volume** — marqueur littéral « R-7 », **une
+occurrence**, § 46.1 —, ⚠ *les deux séries portant chacune un garde-fou sur ce même geste et le renvoi
+nu étant indécidable*. La **réserve de la préimpression** est portée à chaque mobilisation — marqueur
+littéral « F-37 », **une occurrence** —, et **ses résultats chiffrés ne sont pas repris**. Le **statut
+auto-déclaré du § 46.1 — une occurrence du marqueur « auto-déclaré »** — est attribué à son éditeur
+nommé. Le **compte à rebours est recalculé au gel de la somme**, et **l'écart avec celui
+de la source est déclaré**. Le marqueur littéral **« degré 3 » compte deux occurrences**, chacune portant son
+degré, et **les deux faits négatifs vérifiés portent leur borne**. **Aucun siège neuf n'est posé** ; les sièges touchés — les
 points de contrôle obligatoires au **ch. 43 § 43.3**, la correspondance réglementaire au **ch. 45
 § 45.4**, l'horloge post-quantique au **ch. 21**, l'état des conventions au **ch. 38 § 38.2** —
 portent leur renvoi.

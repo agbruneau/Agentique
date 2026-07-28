@@ -9,7 +9,7 @@ mouvement : il éprouve sur l'offre réelle le vocabulaire que le ch. 22 a posé
 | **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 23.6. ⚠ **Ce chapitre est celui du Livre dont les faits se périment le plus vite** : quatre des cinq offres qu'il examine portent un statut de disponibilité daté, et deux d'entre eux étaient pré-disponibilité générale au gel de leur source |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : **aucun statut de disponibilité de ce chapitre n'a été repris à la source primaire**, et les préversions publiques y sont celles que le Vol. II constatait à son propre gel. Gels de source consommés : **16-17 juillet 2026** (Vol. II ch. 7) et **juin 2026** (Vol. I §2.8.4) — ⚠ **aucun des deux ne tient lieu du gel de la somme** |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. II *Monographie* ch. 7**, dont les entrées **F-15**, **F-16**, **F-32**, **F-33** et **F-41** conservent leurs niveaux d'origine — **[B]** pour les quatre premières (annonces primaires extraites, citations verbatim), **[B] revalidé** pour F-41 ; l'entrée **Temporal** y demeure au **repérage [C]** et **ne porte aucun fait central** ; l'entrée **CrewAI** s'y tient à **trois niveaux distincts** que la pièce sépare. Le **Vol. I *Monographie* §2.8.4** entre en **[C]** — repérage documentaire (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. II — **PRD §8.2.3 (chiffres d'éditeurs auto-déclarés) : quatre occurrences**, § 23.2 (deux) et § 23.4 (deux), chacune attribuée à sa source à l'endroit même où elle est citée ; **PRD §8.4 (neutralité fournisseur) : trois occurrences**, § 23.0, § 23.3 et § 23.5 ; **R-1 : zéro occurrence** ; **R-8 : zéro occurrence** — le sigle n'apparaît pas dans ce chapitre ; **R-2 à R-7 : zéro occurrence**. Vol. III — **R-09 (quatre statuts, dits à chaque mention) : neuf occurrences**, § 23.1 (deux), § 23.2 (deux), § 23.3 (trois) et § 23.4 (deux) ; **R-14 (trois degrés d'absence) : sept occurrences**, § 23.0, § 23.1, § 23.2 (deux), § 23.4 et § 23.5 (deux) ; **R-02 : deux occurrences**, § 23.1 et § 23.5 ; **R-13 : une occurrence**, § 23.5 ; ⚠ **faux ami déclaré** — le « plan de contrôle » du maillage de services pré-agentique (ch. 1 § 1.3.4) n'apparaît pas ici. **R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence** |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **PRD §8.2.3 (chiffres d'éditeurs auto-déclarés) : deux occurrences du renvoi**, § 23.2 et § 23.4 ; ⚠ *le marqueur « auto-déclaré » y est écrit **six fois** — § 23.0, § 23.2 (deux), § 23.3 et § 23.4 (deux) —, chacune attribuée à sa source à l'endroit même où elle est citée* ; **PRD §8.4 (neutralité fournisseur) : le renvoi n'est pas écrit au corps** ; *la formule « neutralité fournisseur » l'est **une fois**, § 23.3, et **le garde-fou est appliqué aux § 23.0, § 23.3 et § 23.5** — aucune offre recommandée* ; **R-1 : zéro occurrence** ; **R-8 : zéro occurrence** — le sigle n'apparaît pas dans ce chapitre ; **R-2 à R-7 : zéro occurrence**. Vol. III — **R-09 (quatre statuts, dits à chaque mention) : zéro occurrence du sigle** ; ⚠ *le garde-fou est **appliqué aux § 23.1 à § 23.4**, chaque statut étant dit en toutes lettres à sa mention — **le décompte n'est pas re-mesurable et n'est donc pas annoncé*** ; **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 23.0 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 23.0, § 23.1, § 23.2 et § 23.5, « fait négatif vérifié » aux § 23.0 et § 23.2* ; **R-02 : une occurrence du sigle**, § 23.1 ; **R-13 : une occurrence du sigle**, § 23.5 ; ⚠ **faux ami déclaré** — le « plan de contrôle » du maillage de services pré-agentique (ch. 1 § 1.3.4) n'apparaît pas ici. **R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **5 000 mots** de corps (§ 23.0 à § 23.5), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant cinq. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh), **seule autorité de décompte**. ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 23)* — l'offre s'est industrialisée en 2025-2026 (Agent Framework, LangGraph, orchestration événementielle Kafka/Confluent) avec un support MCP **répandu et inégalement établi** et un support A2A de périmètre inégal.
@@ -174,9 +174,9 @@ précisément encore.**
 
 | Offre | Protocole agent-outil | Protocole agent-agent | Niveau |
 |---|---|---|---|
-| **Agent Framework** | documenté **de première main** | non documenté | **[B]** (F-15) |
-| **LangGraph** | **non documenté** | **plateforme commerciale seulement** — pas la bibliothèque libre | **[B]** (F-32) |
-| **Confluent / Kafka** | documenté **de première main** | **préversion publique** | **[B]** (F-33) |
+| **Agent Framework** | documenté **de première main** | non documenté | **[B]** (Vol. II F-15) |
+| **LangGraph** | **non documenté** | **plateforme commerciale seulement** — pas la bibliothèque libre | **[B]** (Vol. II F-32) |
+| **Confluent / Kafka** | documenté **de première main** | **préversion publique** | **[B]** (Vol. II F-33) |
 | **Temporal** | **repéré, non extrait** | non documenté | **[C]** — ne porte aucun fait central |
 | **CrewAI** | **repéré, non extrait** | documenté **de première main** | **[B]** sur ce seul volet |
 
@@ -333,11 +333,11 @@ Lecture de l'auteur — le tableau ci-dessous rapproche ce que le socle établit
 
 | Patron livré | Ce que le socle établit | Positionnement proposé *(construction d'auteur)* |
 |---|---|---|
-| *Workflows* à base de graphes, routage typé | Agent Framework, GA 1.0 (F-15) | le graphe est un **cadre explicite extérieur aux agents** — **OO3 ou OO4** selon que les agents invoqués sont ou non conscients du processus |
-| Points de contrôle | Agent Framework, GA 1.0 ; limites en multi-conteneurs (F-15) | instrument de la propriété **traçabilité**, **non une option d'orchestration** en soi |
-| Humain-dans-la-boucle | Agent Framework, GA 1.0 (F-15) | **point d'arrêt de supervision** ; critère de sélection du ch. 22 § 22.3, non un positionnement |
+| *Workflows* à base de graphes, routage typé | Agent Framework, GA 1.0 (Vol. II F-15) | le graphe est un **cadre explicite extérieur aux agents** — **OO3 ou OO4** selon que les agents invoqués sont ou non conscients du processus |
+| Points de contrôle | Agent Framework, GA 1.0 ; limites en multi-conteneurs (Vol. II F-15) | instrument de la propriété **traçabilité**, **non une option d'orchestration** en soi |
+| Humain-dans-la-boucle | Agent Framework, GA 1.0 (Vol. II F-15) | **point d'arrêt de supervision** ; critère de sélection du ch. 22 § 22.3, non un positionnement |
 | Agents durables | Temporal — **repérage [C]**, ne porte aucun fait central | **aucun positionnement proposé** : le niveau de preuve ne le permet pas |
-| Bus d'événements comme transport inter-agents | Confluent, protocole agent-agent en préversion publique sur dorsale rejouable (F-33) | le protocole agent-agent **sans cadre de processus explicite est la définition même d'OO1** ; le bus ajoute **le journal, non le cadre** |
+| Bus d'événements comme transport inter-agents | Confluent, protocole agent-agent en préversion publique sur dorsale rejouable (Vol. II F-33) | le protocole agent-agent **sans cadre de processus explicite est la définition même d'OO1** ; le bus ajoute **le journal, non le cadre** |
 
 : Tableau 23.2 — Les patrons livrés, situés sur la taxonomie du ch. 22 § 22.1. **La colonne de droite est une construction d'auteur en totalité** — aucune source du socle ne rapproche produits et taxonomie.
 
@@ -444,10 +444,15 @@ respectée pour ses deux lignes** : le Vol. II §7.1-7.5 est condensé aux § 23
 §2.8.4.3 au § 23.3, §2.8.4.4 au § 23.4 — *aucune n'est perdue en chemin*, ce qui était le risque de la
 répartition d'une source unique sur quatre destinations. La **décision 14 a été exécutée avant la
 rédaction**, domaine déclaré : une thèse examinée, zéro réalignée. Les **garde-fous des deux séries
-sont balayés et déclarés, y compris à zéro occurrence**. Les **quatre métriques auto-déclarées sont
-attribuées à chaque occurrence, sans exception d'usage illustratif** (PRD Vol. II §7.5 et §8.2.3), et
-**les quatre statuts de disponibilité sont dits à chaque mention** (R-09 du Vol. III). Les **sept
-occurrences de R-14 portent leur degré**. La **lacune PRD Vol. II §10.3 est portée et non comblée** :
+sont balayés et déclarés, y compris à zéro occurrence**. Les **métriques auto-déclarées sont attribuées
+à chaque occurrence, sans exception d'usage illustratif** (PRD Vol. II §7.5 et §8.2.3) — *le marqueur
+« auto-déclaré » est écrit **six fois**, localisées à l'en-tête* —, et **les statuts de disponibilité
+sont dits à chaque mention** aux § 23.1 à § 23.4 (R-09 du Vol. III). Les **absences portent toutes leur
+degré** : *une occurrence du sigle R-14, quatre du marqueur « degré 3 » et deux de « fait négatif
+vérifié »*. ⚠ **Ces cardinaux ont été re-mesurés au commit du 28 juillet 2026** (décision 16 du TOC) ;
+*l'attestation antérieure annonçait quatre métriques, neuf statuts et sept occurrences de R-14, aucun
+de ces trois nombres n'étant re-mesurable contre le corps.* La **lacune PRD Vol. II §10.3 est portée
+et non comblée** :
 elle est déclarée subsistante **faute de tentative**, non par échec de recherche — *la distinction est
 celle que le Vol. II a lui-même établie, et l'effacer transformerait une lacune d'instruction en un
 constat.* Enfin, **la neutralité fournisseur est tenue** : cinq offres nommées, aucune recommandée, et

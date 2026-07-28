@@ -11,13 +11,16 @@ rendent leurs verdicts d'architecture.*
 | **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6, qui place ce mouvement **après les Livres I et III** — *le Livre III n'est pas achevé.* ⚠ **R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre.** ⚠ **Ce chapitre est l'homologue de méthode du ch. 14** : comme lui, il ne verse rien et fournit un instrument ; **comme lui, sa recevabilité tient à son rendement, non à sa filiation** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **16 juillet 2026** (Vol. II, ch. 18), **17 juillet 2026** (Vol. II, Annexe B), **21 juillet 2026** (Vol. III, Annexe B). ⚠ **Ce chapitre porte trois gels de source distincts et ne les fusionne pas** : *une matrice dont les lignes sont datées de trois jours différents n'est pas datée d'un jour.* |
 | **Socle mobilisé** | ⚠ **Socle TRANSVERSAL, construit par la rédaction — et sa contrepartie est obligatoire et non négociable** (règle héritée du Vol. II, reprise par le TOC) : l'en-tête énumère **les entrées effectivement mobilisées et les garde-fous effectivement balayés, y compris ceux à zéro occurrence**. **Aucune entrée du socle consolidé** (G-3 ouverte). Vol. II — **F-01** (MCP), **F-02** et **F-16** (A2A), **F-04** (AP2) ; **F-09** (E-23), **F-25** (AMF), **F-26** (11-348), **F-27** (art. 12.1) ; **F-11**, **F-34**, **F-35** (cadre bancaire) ; **F-36**, **F-37** ; **F-05**, **F-08**, **F-10**, **F-15** en renvoi. Vol. III — **F-01** à **F-11**, **F-33** à **F-43**, **F-46** à **F-51**, **F-55**, **F-70**, **F-71**, **F-87**, **F-89**, **F-93**, **F-95** ; **H-01** à **H-03**, **H-09**, **H-10**, **H-33**. ⚠ **Les deux séries F-xx sont préfixées de leur volume à chaque emploi** : *un « F-09 » nu est indécidable entre le socle du Vol. II et celui du Vol. III, qui portent chacun une entrée sous ce numéro et sur un objet différent* (décision 7 du TOC). **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | **Les deux séries, intégralement, y compris les zéros — la contrepartie du socle transversal.** Vol. II — **réserve F-09 (« attendu par E-23 », jamais « exigé » ; « documentation de modèle » / « inventaire », jamais « fiche de modèle ») : neuf occurrences**, § 42.1 (deux), § 42.3 (cinq), § 42.4 (deux) ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : trois occurrences**, § 42.2 ; **R-5 (aucun standard technique désigné — formulation imposée) : quatre occurrences**, § 42.2 (deux), § 42.3, § 42.4 ; **réserve F-25 (jamais « en attente » ni « en projet ») : deux occurrences**, § 42.1 et § 42.3 ; **soutien ≠ production (décompte AP2) : une occurrence**, § 42.2 ; **R-7 : ressort en contexte réglementaire pur, aucune correspondance produit ↔ réglementation dans ce chapitre — filtré** ; **R-1, R-2, R-3, R-4, R-6, R-8 : zéro occurrence.** Vol. III — **R-14 (trois degrés d'absence) : douze occurrences**, § 42.1 (trois), § 42.2 (deux), § 42.3 (quatre), § 42.4 (trois) ; **R-02 : trois occurrences**, § 42.2 ; **R-09 : deux occurrences**, § 42.2 ; **R-01 : une occurrence**, § 42.3. **R-03 à R-08, R-10 à R-13 : zéro occurrence.** ⚠ **Faux ami déclaré** : « standard technique » y désigne l'objet du cadre bancaire, **jamais un jugement de qualité** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** *La contrepartie du socle transversal.* Vol. II — **réserve F-09 (« attendu par E-23 », jamais « exigé » ; « documentation de modèle » / « inventaire », jamais « fiche de modèle ») : deux occurrences de l'identifiant**, § 42.1 — ⚠ *la formule imposée est employée bien au-delà, à chaque énoncé sur E-23 des § 42.1, § 42.3 et § 42.4 : **domaine déclaré, sans cardinal*** ; **réserve F-25 (jamais « en attente » ni « en projet ») : deux occurrences**, § 42.1 ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : une occurrence**, § 42.2. **R-5 (aucun standard technique désigné — formulation imposée) : zéro occurrence de l'identifiant** — ⚠ *la formulation imposée est tenue aux § 42.2, § 42.3 et § 42.4, **domaine déclaré sans cardinal*** ; **soutien ≠ production (décompte AP2) : domaine déclaré, § 42.2, sans cardinal** ; **R-7 : ressort en contexte réglementaire pur, aucune correspondance produit ↔ réglementation dans ce chapitre — filtré** ; **R-1, R-2, R-3, R-4, R-6, R-8 : zéro occurrence.** Vol. III — **R-02 : une occurrence**, § 42.2 ; **R-09 : une occurrence**, § 42.2 ; **R-14 (trois degrés d'absence) : une occurrence**, § 42.0 — ⚠ *les trois espèces de vide du § 42.3 en sont l'application systématique, sans que l'identifiant y soit répété : **domaine déclaré, corps entier*** ; **R-01 : zéro occurrence de l'identifiant**, le garde-fou restant tenu au § 42.3. **R-03 à R-08, R-10 à R-13 : zéro occurrence.** ⚠ **Faux ami déclaré** : « standard technique » y désigne l'objet du cadre bancaire, **jamais un jugement de qualité** |
 | **Volumétrie cible** | ≈ **4 000 mots** de corps (§ 42.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des quatre sections — **la deuxième plus basse du Livre**, ce chapitre ne portant aucun corpus propre. ☑ **Décompte publiable depuis G-2** ; **réel reporté au [`README.md`](README.md)**. ⚠ **D-4 s'applique** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 42)* — croiser la pile protocolaire (MCP/A2A/AP2) avec les exigences canadiennes (E-23, AMF, art. 12.1, 11-348, cadre bancaire) et la grille des cinq questions révèle où les standards suffisent et où l'architecture doit compenser — et, à date, quinze croisements sans lien documenté.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 42 — **thèse réalignée en v0.28**, décisions 8 et 14, remontée R-IV-54, DOUBLE)* — croiser la pile protocolaire (MCP/A2A/AP2) avec les exigences canadiennes (E-23, AMF, art. 12.1, 11-348, cadre bancaire) **révèle où l'architecture doit compenser** — ⚠ **et n'identifie aucun croisement où les standards suffisent : la matrice est un tableau de vides** —, **et, à date, quinze croisements sans lien documenté**. ⚠ **La mise en regard avec la grille des cinq questions est une CONSTRUCTION DU COMPENDIUM, déclarée telle** : *le Vol. II n'emploie pas la grille, le Vol. III ne croise pas ses mécanismes aux textes canadiens, et une addition de plan non déclarée est indiscernable d'une reprise de source.*
 
-⚠ **La thèse citée porte un membre que sa source contredit, et un autre qu'elle n'a jamais porté —
-décision 14 du TOC, appliquée avant la rédaction.** *Premier* : « révèle **où les standards
+⚠ **La thèse portait, à la rédaction, un membre que sa source contredit et un autre qu'elle n'a jamais
+porté — le réalignement est FAIT, et l'histoire de l'écart se conserve** (décision 17 du TOC,
+alinéa c). **Forme antérieure, v0.25** : « croiser la pile protocolaire […] **et la grille des cinq
+questions** révèle **où les standards suffisent** et où l'architecture doit compenser — et, à date,
+quinze croisements sans lien documenté ». *Premier* : « révèle **où les standards
 suffisent** et où l'architecture doit compenser ». **Le Vol. II ne trouve aucun croisement où les
 standards suffisent** : sa matrice « n'est pas un tableau de correspondances, c'est un **tableau de
 vides** », et sa conclusion est que les standards ne répondent pas parce qu'ils **ne répondent pas à
@@ -26,8 +29,10 @@ la question posée**. *La moitié « où les standards suffisent » n'a pas d'oc
 addition du plan** : le Vol. II n'emploie pas la grille — c'est un instrument du Vol. III —, et le
 croisement des deux matrices est une **construction du compendium**, à faire et à déclarer telle. **Ce
 chapitre le fait au § 42.3.3 et le marque.** ⚠ **Le troisième membre, lui, tient** : *quinze
-croisements sans lien documenté* est exactement ce que la source établit, **re-mesuré ici**. Écart
-remonté (**R-IV-54**, § 42.5).
+croisements sans lien documenté* est exactement ce que la source établit, **re-mesuré ici**. L'écart
+avait été remonté (**R-IV-54**, § 42.5). ☑ **La remontée est soldée par l'arbitrage v0.28 du TOC** (décisions 8 et 14), et **la citation
+ci-dessus porte la forme réalignée**, reportée **par copie** depuis l'entrée courante du plan.
+*La v0.29 du TOC ne modifie aucune thèse du Livre.*
 
 ---
 
@@ -328,10 +333,19 @@ texte**. Instruction d'auteur du **27 juillet 2026**.
    ce dispositif, non une relecture, qui a permis au Vol. II de détecter une erreur de marquage de son
    propre socle.*
 2. **Les décomptes sont publiables** (G-2) ; le réel est reporté au [`README.md`](README.md).
-3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan.** Ne sont pas rédigés :
-   **ch. 27**, **ch. 28**, **ch. 29**, **ch. 32**, **ch. 43**, **ch. 45**, **ch. 49**, et l'**Annexe
-   F**. Les renvois vers les **ch. 8, 10, 11, 14, 19, 22, 25** résolvent contre du texte ; ceux vers
-   les **ch. 37, 38, 39, 46** résolvent contre du texte au terme de la présente passe.
+3. **Les renvois « ch. N » : état FINAL de la passe, et non ordre d'écriture.** ⚠ *La forme
+   antérieure de ce point photographiait l'instant où cette pièce a été écrite et déclarait « ne
+   sont pas rédigés : ch. 43 et ch. 45 » — alors que **la même passe les a écrits ensuite** ; elle
+   est corrigée ici sur l'état que le commit produit.* **Les dix chapitres du Livre IV (ch. 37 à
+   46) sont rédigés**, comme le sont les **cinquante chapitres des cinq Livres** : *tous les
+   renvois « ch. N » de cette pièce résolvent donc contre du texte.* ⚠ **Les renvois vers les
+   ANNEXES restent des renvois de plan** — *aucune annexe du compendium n'est rédigée*, l'annexe F
+   comprise. ⚠ **Ce qui reste vrai de la forme antérieure, et qui est daté** : à l'heure où ce
+   chapitre a été écrit, n'étaient rédigés ni les ch. 27, 28, 29 et 32 du Livre III, ni le ch. 49
+   du Livre V, non plus que les ch. 43 et ch. 45 — *les renvois qui les visent ont été posés comme
+   renvois de plan et n'ont pas été re-vérifiés contre le texte paru après eux.* ⚠ **Et « résoudre
+   contre du texte » ne vaut pas recevabilité** : *le texte visé est lui-même un brouillon hors
+   portes.*
 4. **Le cardinal de quinze est re-mesuré sur la source, non recopié** ; ☐ **la re-mesure contre la
    matrice consolidée de l'Annexe F reste due**, cette annexe n'étant pas rédigée.
 5. **CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur.
@@ -351,6 +365,10 @@ texte**. Instruction d'auteur du **27 juillet 2026**.
   Fusion**, comme le TOC le fait déjà pour le ch. 41 — *une addition de plan non déclarée est
   indiscernable d'une reprise de source.* ⚠ **La pièce l'a écrite et marquée au § 42.3.3** ; *la
   déclaration au plan reste due.*
+  ☑ **Issue, 27 juillet 2026** — **TOC, décisions 8 et 14 — thèse DOUBLE** : *(a)* « révèle **où
+  les standards suffisent** » tombe — *la matrice est un tableau de vides et n'en trouve aucun*
+  ; *(b)* « et la grille des cinq questions » est **déclarée addition du compendium** à la ligne
+  Fusion. **La citation en tête de cette pièce porte la forme réalignée** (décision 17 du TOC).
 - **R-IV-55 — non bloquante, de collision d'identifiants, et elle porte sur une classe entière.** Ce
   chapitre mobilise **simultanément les deux séries F-xx** — celle du Vol. II et celle du Vol. III —,
   et **plusieurs numéros existent dans les deux sur des objets sans rapport** : *F-01, F-02, F-04,
@@ -362,6 +380,9 @@ texte**. Instruction d'auteur du **27 juillet 2026**.
   identifiants de socle non préfixés**, validé par mutation. ⚠ *Ce chapitre est le premier du
   compendium à mobiliser les deux séries en volume, et c'est exactement le point où l'absence de
   contrôle cesse d'être théorique.*
+  ☑ **Issue, 27 juillet 2026** — **PRD, spécification du contrôle de socle (G-3)** — un **motif de
+  balayage des identifiants de socle non préfixés** est inscrit à construire et à valider par
+  mutation ; ⚠ *ce chapitre est le premier à mobiliser les deux séries F-xx en volume.*
 - **R-IV-56 — non bloquante, de divergence datée, et elle est déjà au registre.** Le socle du Vol. II
   date la version finale de la ligne directrice de l'AMF du **30 mars 2026** ; la **veille
   technologique de la racine du dépôt la date du 7 avril 2026**, sa source étant **inaccessible aux
@@ -370,8 +391,11 @@ texte**. Instruction d'auteur du **27 juillet 2026**.
   elle y est déjà énumérée — **et que la ligne de la matrice porte la réserve tant qu'elle n'est pas
   tranchée** ; ⚠ *le cadrage du Vol. IV a tranché en faveur du Vol. II, et cet arbitrage n'a aucune
   autorité tant que la somme n'est pas rédigée.*
+  ☑ **Issue, 27 juillet 2026** — **TOC, Annexe C + PRD, domaine de G-1** — la divergence de date
+  sur la ligne directrice de l'AMF est **maintenue au registre avec sa réserve**, ⚠ *l'arbitrage
+  du cadrage n'ayant aucune autorité tant que la somme n'est pas rédigée.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 42.1 à
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.28** — § 42.1 à
 § 42.4, dans l'ordre exact —, et le § 42.0 est une introduction de chapitre. La **table de couverture
 est respectée pour ses trois lignes** : Vol. II §18.1-18.4 en **condensé**, Vol. II *Monographie*
 Annexe B comme **source des quinze croisements**, Vol. III Annexe B comme **matrice des mécanismes**.
@@ -379,9 +403,11 @@ Annexe B comme **source des quinze croisements**, Vol. III Annexe B comme **matr
 que la source n'a pas trouvée n'est introduite** — *c'est la discipline propre à ce chapitre, et la
 seule qui l'empêche de fabriquer.* Les **deux partitions du cardinal sont maintenues distinctes**. Les
 **deux faits négatifs vérifiés portent leur borne** — *le premier sur le vocabulaire agentique, les
-chaînes de protocole n'ayant pas été cherchées ; le second sur quatre chaînes nommées.* Les **douze
-occurrences de degré 3** portent leur degré. Les **neuf occurrences de la forme imposée « attendu par
-E-23 »** sont tenues, et **« fiche de modèle » compte zéro occurrence**. Le **socle transversal porte
+chaînes de protocole n'ayant pas été cherchées ; le second sur quatre chaînes nommées.* ⚠ **Cardinaux re-mesurés au commit du 28 juillet 2026, sur le marqueur littéral et sur le corps seul** (décision 16 du TOC) ; *les cardinaux antérieurs comptaient les applications du garde-fou et n'étaient re-mesurables par aucune règle écrite.* Les **trois occurrences du marqueur littéral « degré 3 »** portent leur degré, et
+*les trois espèces de vide du § 42.3 en sont l'application systématique — domaine déclaré, sans
+cardinal* (alinéa c). La **forme imposée « attendu par E-23 » est tenue à chaque énoncé sur E-23 —
+domaine déclaré**, le marqueur littéral y comptant **une occurrence** ; et **« fiche de modèle »
+compte zéro occurrence**, re-mesuré. Le **socle transversal porte
 sa contrepartie obligatoire à l'en-tête**, y compris les garde-fous à zéro occurrence. **Aucun siège
 neuf n'est posé** ; les sièges touchés — la grille au **ch. 14**, le passeport au **ch. 16**,
 l'encadré à quatre branches au **ch. 7 § 7.5** — portent leur renvoi.

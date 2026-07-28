@@ -8,10 +8,10 @@ Premier mouvement — émettre (ch. 12-18). Deuxième chapitre du mouvement.*
 | **Statut** | **Brouillon de rédaction, non publiable** — portes **G-3** et **G-4** ouvertes ; instruction d'auteur du 27 juillet 2026. Le régime de preuve du Livre II est celui de la **source rédigée non publiable** (PRD §7.2) : le Vol. III déclare lui-même que « rédigé ne vaut pas publiable ». Détail et remontées en clôture, où **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** et ne sont pas rouvertes |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : aucun fait de ce chapitre n'a été repris à la source primaire ce jour-là. Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Ce chapitre est le plus périssable du mouvement** : quatre des cinq stades de documents qu'il relève sont **en cours de procédure**, et l'un d'eux avait déjà dépassé sa propre échéance auto-déclarée au relevé |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. III *Monographie* ch. 3**, dont les entrées **F-30**, **F-31**, **F-32**, **F-49**, **F-50**, **F-79**, **F-80**, **F-81**, **F-82**, **F-83**, **F-87** et les entrées héritées **H-18**, **H-19**, **H-20** conservent leurs niveaux d'origine ; et contre le **Vol. I *Monographie* §3.6.4 et §7.4.3**, en régime **[C]** (PRD §7.1). ⚠ **Trois entrées mobilisées ici sont en [C]** — H-18, H-19, H-20 : elles **situent** l'objet, elles ne le portent pas. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. III — **R-09 (une charte de groupe n'est pas un standard ; les stades se disent à chaque mention) : douze occurrences**, § 13.1 (quatre), § 13.3 (cinq), § 13.4 et § 13.5 (deux) ; **R-14 : sept occurrences**, § 13.1 (deux), § 13.2, § 13.4 et § 13.5 (trois), **toutes de degré 3 sauf une** ; **R-02 : trois occurrences**, § 13.1, § 13.4 et § 13.5 ; **R-05 : une occurrence**, § 13.5. **R-01, R-03, R-04, R-06 à R-08, R-10 à R-13 : zéro occurrence.** Vol. II — **§8.2 (métriques auto-déclarées) : deux occurrences**, § 13.3 et § 13.5, chacune attribuée à la page qui l'affiche ; **PRD Vol. II §8.2.5 (statuts pré-normatifs) : quatre occurrences**, § 13.1 et § 13.3 (trois). **R-1 à R-8 : zéro occurrence** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les six sections du corps, § 13.0 à § 13.5.** Vol. III — **R-14 : trois marqueurs**, § 13.0, § 13.4 et § 13.5 ; **R-02 : deux marqueurs**, § 13.0 et § 13.4 ; **R-09 (une charte de groupe n'est pas un standard ; les stades se disent à chaque mention) : un marqueur**, § 13.1 ; la clause de stade est en outre reprise **à chaque mention** sans marqueur, aux § 13.1, § 13.3, § 13.4 et § 13.5 — *couverture déclarée, non dénombrée*. **R-01, R-03 à R-08, R-10 à R-13 : zéro marqueur.** Vol. II — **§8.2 (métriques auto-déclarées) : zéro marqueur** ; les métriques des § 13.3 et § 13.5 sont **attribuées à la page qui les affiche**, sans que le renvoi au garde-fou soit écrit ; **PRD Vol. II §8.2.5 (statuts pré-normatifs) : zéro marqueur** ; les stades pré-normatifs sont portés aux § 13.1 et § 13.3. **R-1 à R-8 : zéro marqueur** |
 | **Volumétrie cible** | ≈ **4 000 mots** de corps (§ 13.0 à § 13.5), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 3 947 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **−1,3 %**. ⚠ **Un écart individuel ne se lit pas seul** : la volumétrie du Livre est relevée pièce par pièce au [`README.md`](README.md) du dossier, et c'est elle qui alimente la **décision d'auteur D-4**, ouverte, par la remontée **R-IV-17** du ch. 12 |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 13)* — le corpus W3C (VC, DID) fournit le vocabulaire du « passeport d'agent », mais son adoption en entreprise financière reste à démontrer — la distinction promesse/production est le fil.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 13)* — le corpus W3C (VC, DID) fournit le vocabulaire du « passeport d'agent », mais son adoption en entreprise financière reste à démontrer — la distinction promesse/production est le fil.
 
 ---
 
@@ -407,12 +407,13 @@ déclarés : §7.4.1 et §7.4.4 du Vol. I partent au **ch. 21**, §7.4.2 au **ch
 trois n'est repris ici**. Le **socle IAM et le socle *zero-trust* ne sont pas reconstruits** : ils
 restent au **ch. 3**, auquel le § 13.0 et le § 13.4 renvoient. Le **siège du KYA n'est pas
 anticipé** : le § 13.2 nomme les deux entrées de la DIF sans instruire le sigle, dont le siège unique
-est le **ch. 18 § 18.1**. Les **sept occurrences de R-14** portent leur degré. Les **douze occurrences
-de R-09** disent le stade à chaque mention, y compris la clause du groupe communautaire, répétée
-**cinq fois** plutôt que posée une fois en tête. Les **deux métriques auto-déclarées** — le décompte
-de participants, l'énumération d'implémentations — sont attribuées à la page qui les affiche. Et les
-**cinq occurrences de « Lecture de l'auteur »** sont suivies de ce que le socle établit et n'établit
-pas.
+est le **ch. 18 § 18.1**. Les **trois marqueurs de R-14** portent leur degré. Le **marqueur unique de
+R-09** ouvre une discipline reprise **à chaque mention** sur le domaine balayé — la clause du groupe
+communautaire y est répétée plutôt que posée une fois en tête —, et *cette reprise se déclare sans se
+dénombrer*. Les **deux métriques auto-déclarées** — le décompte de participants, l'énumération
+d'implémentations — sont attribuées à la page qui les affiche. Et les **quatre marqueurs de « Lecture
+de l'auteur »**, aux § 13.1, § 13.3, § 13.4 et § 13.5, sont suivis de ce que le socle établit et
+n'établit pas.
 
 
 ---

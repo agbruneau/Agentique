@@ -729,3 +729,31 @@ Les constats transversaux T-1 à T-4 agrègent des instances comptées aussi dan
 8. **Corrections ponctuelles de renvois** : I.1 (ch. 21 → ch. 49 ou « Vol. II ch. 21 » nommé), I.2 (« ch. 8 § » sans numéro), III.D.3 (renvois promis du § 34.2.2), III.C.1 et III.E.4 (en-tête de socle du ch. 30, dans les deux sens), III.D.2 (F-45).
 
 Chaque remontée suit le régime du dossier : elle se porte là où elle fera foi (PRD pour une décision, TOC pour un réalignement, appareil pour l'outillage, pièce pour une correction de corps), jamais close sur place, et l'arbitrage appartient à l'auteur.
+
+---
+
+## 10. Suites — où chaque remontée a été portée (28 juillet 2026)
+
+⚠ **Cette section enregistre une disposition ; elle n'arbitre rien.** L'arbitrage a eu lieu ailleurs, sur instruction d'auteur du 28 juillet 2026, et **c'est là qu'il fait foi** : TOC **v0.29**, PRD **v0.13**, appareil, pièces. *Ce rapport reste sans autorité, et le fait que ses constats aient été suivis ne lui en donne pas.*
+
+| Remontée | Portée à | Ce qui a été fait |
+|---|---|---|
+| 1 — re-citer ou statuer | **TOC, décision 17** ; les cinq Livres | *Une thèse réalignée se reporte à la pièce au même commit, **par copie et jamais par re-frappe***. **Quatorze pièces re-citées** ; le **bloquant II.1 est soldé** — la clause de périmètre du ch. 21 est rétablie ; cinq introductions du Livre II et trois corps du Livre V, qui contredisaient leur propre tête, sont réécrits. |
+| 2 — la règle du diff | **PRD §13**, risque neuf | *Une passe d'arbitrage qui touche une pièce **est** une passe d'édition* : elle relit son diff ligne à ligne, re-mesure les cardinaux des zones qu'elle touche, et reporte à la pièce ce qu'elle réaligne au plan. |
+| 3 — solder les sièges | **`check-sieges.py`** | Table portée de **12 à 26 sièges**, harnais à **108 mutations**. Les huit du Livre III versés, six orphelins de plus, noms harmonisés. ⚠ **Six défauts réels trouvés au versement, dont trois attestations fausses dans les pièces** — corrigées. |
+| 4 — trancher l'anonymisation | **TOC, décision 15** | Parade **maintenue** pour les dénominations commerciales et les versions ; **l'attribution ne s'anonymise jamais** (attributeur, auteur et date d'un instrument, identifiant d'une source à instruire). Corrigée là où l'un des trois était atteint. |
+| 5 — statuer sur les attestations | **TOC, décision 16** ; **`check-compendium.py`** | Un décompte porte sur le **marqueur littéral dans le corps**, mesuré **au commit** ; à défaut, **le domaine sans cardinal**. **Les cinquante en-têtes refaits.** ⚠ *L'écart mesuré dépasse ce que l'audit annonçait* — « R-14 : quinze occurrences » pour zéro marqueur, « R-12 : quatorze » pour zéro. |
+| 6 — réaligner les cardinaux | Les deux `CLAUDE.md`, README, pièces | Décomptes de décisions réalignés (**neuf sur neuf**), ventilation du tableau 50.1 re-comptée, erreur calendaire du ch. 28 corrigée, affirmation du README du Livre IV rendue vraie par le report des 32 issues aux notes. |
+| 7 — réaligner le plan | **TOC v0.29** | § 34.2 déplié sur ses six sous-sections ; date de la ligne directrice québécoise réalignée à **trois sites** ; lacune §10.11 routée ; plus **trois écarts qu'aucun volet de l'audit n'avait vus** — sous-entrée 1.0.2, titre du § 47.8, et un erratum de la v0.28. |
+| 8 — corrections de renvois | Les cinq Livres | I.1, I.2, III.C.1, III.D.2, III.D.3, III.E.4 soldées ; **et quatre attributions de socle décalées d'un rang au ch. 35**, que l'audit n'avait pas vues. |
+
+### Ce que la passe a établi contre l'audit
+
+⚠ **Deux constats sont réfutés ou requalifiés en les instruisant, et c'est le résultat le plus utile de cette section.**
+
+1. **V.2 est mal diagnostiqué.** Le bloc de réalignement manquant au `.html` du ch. 48 ne venait pas d'un rendu depuis un état intermédiaire : **le générateur écarte silencieusement tout bloc placé entre la thèse et le premier séparateur**. La cause est **d'appareil**, elle valait pour toute pièce, et elle avait déjà avalé un intitulé au ch. 47. *Un audit qui suppose une cause plausible en désigne une fausse ; seule l'instruction la trouve.*
+2. **Le volet D certifiait au ch. 35 que les onze entrées de socle sont « nommées une à une »** — ce qui est **vrai et ne dit rien de leur exactitude** : quatre d'entre elles étaient **décalées d'un rang**. *Une vérification de forme ne se lit jamais comme une vérification de fond, et c'est le reproche que ce rapport adresse ailleurs aux attestations de balayage.*
+
+### Ce que la passe n'a pas fait
+
+**G-4, G-5 et G-6 ne sont pas franchies** ; le **volet résiduel de G-1** reste dû et **conditionne la re-datation du socle consolidé** (4 entrées sur 159) ; **CA-IV-11 et CA-IV-13 demeurent insatisfaisables** faute d'un relecteur distinct du rédacteur — *et cet audit, conduit par la même main que la rédaction, ne les satisfait pas davantage : il constate, il ne réfute pas.* Les cinquante chapitres demeurent un **brouillon non publiable**.

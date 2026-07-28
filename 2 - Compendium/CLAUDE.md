@@ -6,6 +6,31 @@ plus spécifique gagne** : ici, celui-ci ; les règles valant pour tout le dép�
 faits datés, périmètre des fichiers de doc) sont au [`CLAUDE.md` racine](../CLAUDE.md) et ne sont
 pas répétées.
 
+⚠ **ÉTAT AU 28 JUILLET 2026 — la passe d'audit, et le seul changement de statut que le volume ait
+connu depuis son ouverture.** Un **audit intégral des cinq Livres** ([`audit.md`](audit.md), cent
+constats sur le corpus du commit `8cb40fa`, un seul bloquant) a été conduit, puis **ses huit
+remontées soldées** — TOC **v0.29**, PRD **v0.13**. **Cinq faits conditionnent toute édition ici.**
+*(1)* ⚠ **LE SOCLE CONSOLIDÉ EXISTE** : [`PRD/socle-consolide.md`](PRD/socle-consolide.md) v1.0 porte
+**159 entrées `S-001`…`S-159`** — 46 du Vol. II, 96 du Vol. III, 17 du Vol. I en `[C]` —, **deux
+tables de correspondance**, **13 entrées héritées fondues**, **5 exclues**, identité de clôture
+vérifiée (*177 sources = 159 + 13 + 5*). **La phrase « socle consolidé : zéro entrée », vraie depuis
+l'ouverture du volume, ne l'est plus — ne plus l'écrire.** *(2)* ⚠ **G-3 est ENTAMÉE, NON FRANCHIE**,
+et l'écart est le résultat : **4 entrées sur 159 sont re-datées**, 155 ne le sont pas, la re-datation
+dépendant du **volet résiduel de G-1** ; **23 réserves** sont déclarées ; et **aucun énoncé n'a été
+confronté à sa source primaire**. *Un socle constitué n'est pas un socle vérifié.* **Deux portes sur
+sept restent franchies.** *(3)* ⚠ **Les NEUF décisions d'auteur sont prises** — **D-5** l'a été le
+28 juillet (ancrage de la *Synthèse* du Vol. I à l'arbre gelé `fd8f1be~1`, vérifié sur pièce ;
+restauration écartée, repointage interdit). *Ne plus écrire « sept sur neuf » ni « huit sur neuf ».*
+*(4)* **L'appareil compte quatre contrôles**, chacun exécuté seul : `check-toc.py` (C1-C15),
+`check-sieges.py` (**26 sièges** sur 50 pièces, 108 mutations), **`check-compendium.py` (P1-P7,
+15 mutations)** et `decompte.sh`, plus le **registre de gel** à 50 lignes. *(5)* ⚠ **La volumétrie a
+bougé et se re-mesure, jamais ne se recopie** : **300 780 mots** de corps (I 64 750 · II 62 054 ·
+III 91 477 · IV 56 025 · V 26 474) pour 308 000 d'enveloppe, **−2,3 %** — mais **cent trois points
+d'amplitude** entre les pièces extrêmes. ⚠ **Le statut du volume ne change pas pour autant** : les
+cinquante chapitres demeurent un **brouillon non publiable**, **CA-IV-11 et CA-IV-13 restent
+insatisfaisables** faute de relecteur tiers, et la publication du premier mouvement du Livre V reste
+bloquée par D-3.
+
 ⚠ **État au 27 juillet 2026, en tête parce qu'il conditionne toute édition : le Livre V — le DERNIER
 du plan — est rédigé et arbitré, et sa publication est bloquée par une décision d'auteur.** Ses
 **quatre chapitres** (ch. 47-50) vivent au dossier [`Livre V/`](Livre%20V/), en `.md` et `.html`, **hors
@@ -17,7 +42,7 @@ v0.26, PRD v0.11) ; le tableau des issues est au [`README.md` de `Livre V/`](Liv
 : **D-2** — le risque 14 (la couche d'exécution) tranché en **sections dans l'existant, sans chapitre
 neuf**, le plafond de cinquante interdisant d'en ouvrir un sans fusion ; **D-3** — la matière neuve en
 **trois lots d'instruction ouverts, retrait non exécuté, publication du premier mouvement bloquée
-jusqu'à leur clôture, une instruction infructueuse valant retrait**. **Sept décisions sur neuf sont
+jusqu'à leur clôture, une instruction infructueuse valant retrait**. **Sept décisions sur neuf étaient alors prises ; ⚠ les NEUF le sont depuis le 28 juillet 2026 (D-8 le 27, D-5 le 28) — la phrase qui suit est datée du 27 et n'est plus l'état courant.** *(Forme d'origine : « Sept décisions sur neuf sont
 désormais prises** ; D-5 et D-8 restent ouvertes. *(3)* ⚠ **Aucune porte n'est franchie pour autant** :
 *une décision prise n'est pas une porte franchie — D-3 ouvre des lots, elle ne constitue pas un socle.*
 *(4)* ⚠ **Sa volumétrie est en DÉFAUT, et c'est le premier Livre dans ce cas** : **25 017 mots** pour une

@@ -10,7 +10,7 @@ c'est la description exacte de son objet.*
 | **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 36.6. ⚠ **G-4 ne conditionne pas ce chapitre** ; ⚠ **D-9 ne le bloque pas.** ⚠ **Ce chapitre porte la lacune la plus explicite du Livre — et c'est son sujet même** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Un point de ce chapitre a été instruit par G-1 et il faut le lire** : *la **divergence AP2 / gouvernance** a été **consommée par extraction** au titre du volet Livre I du gel* — voir § 36.1. ⚠ **Tout le reste du volet résiduel demeure dû.** Gels de source consommés : **16-17 juillet 2026** (Vol. II ch. 16) et **juin 2026** (Vol. I §5.13) |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. II *Monographie* ch. 16** — **F-04** et **F-29** conservant leurs niveaux d'origine — et contre le **Vol. I *Monographie* §5.13**, qui entre **en [C]** (PRD §7.1). ⚠ **Le § 36.5 relève d'un régime encore inférieur** : *préimpressions dont **seuls les résumés ont été consultés** — **repérages [C], jamais des faits**.* **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. II — ⚠ **garde-fou d'entrée : ne pas combler la lacune par de la fiction — huit occurrences**, § 36.0, § 36.1 (deux), § 36.3 (trois), § 36.4 et § 36.5 ; ⚠ **réserve F-29 — ne jamais écrire « lancé » ni « en production » : cinq occurrences**, § 36.1, § 36.3 (trois) et § 36.4 ; **formulation imposée PRDPlan Vol. II §4.4 — « quatre *cibles successives* » : une occurrence**, § 36.1 ; **R-4 : deux occurrences**, § 36.1 et § 36.3 ; ⚠ **R-8 (le sigle « ACP » jamais nu) : deux occurrences**, § 36.2.4, **avec renvoi au ch. 7 § 7.5** ; **PRD §8.4 (neutralité fournisseur) : trois occurrences**, § 36.2 ; **décision 7 (deux séries « Q n ») : deux occurrences**, § 36.0 et § 36.4 ; **R-1 à R-3, R-5 à R-7 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : douze occurrences**, § 36.1 (trois), § 36.2 (deux), § 36.3 (quatre) et § 36.5 (trois) ; **R-09 : quatre occurrences**, § 36.2.4 et § 36.5 ; **R-11 : deux occurrences**, § 36.1 et § 36.3 ; **R-02 : une occurrence**, § 36.2.2 ; **R-01, R-03 à R-08, R-10, R-12, R-13 : zéro occurrence** |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — ⚠ **garde-fou d'entrée : ne pas combler la lacune par de la fiction** — *aucune formule fixe ne le porte ; il est **appliqué aux § 36.0, § 36.1, § 36.3, § 36.4 et § 36.5**, et **le décompte n'est donc pas annoncé*** ; ⚠ **réserve F-29 — ne jamais écrire « lancé » ni « en production » du rail en temps réel** : *« lancé » est écrit **une fois**, à la synthèse, dans la formule qui l'interdit ; « en production » **quatre fois**, § 36.1 (deux) et § 36.3 (deux), **toujours au négatif ou dans la réserve*** ; **formulation imposée PRDPlan Vol. II §4.4 — « quatre *cibles successives* » : une occurrence**, § 36.1, *et la forme proscrite « quatre reports » une fois au même endroit, là où la somme la cite pour l'interdire* ; **R-4 : une occurrence du sigle**, § 36.1 ; ⚠ **R-8 (le sigle « ACP » jamais nu) : une occurrence du sigle**, § 36.2.4, **avec renvoi au ch. 7 § 7.5** ; **PRD §8.4 (neutralité fournisseur) : le renvoi n'est pas écrit au corps** ; *le garde-fou est **appliqué au § 36.2**, six protocoles ou réseaux y étant nommés et aucun recommandé* ; **décision 7 (deux séries « Q n ») : appliquée aux § 36.0 et § 36.4** ; **R-5 : une occurrence du sigle**, § 36.2.7 ; **R-1 à R-3, R-6, R-7 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 36.1 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 36.1 et § 36.3, « fait négatif vérifié » au § 36.1* ; **R-09 : deux occurrences du sigle**, § 36.2.4 et § 36.5 ; **R-11 : zéro occurrence du sigle** — *le garde-fou est appliqué au § 36.4, « visé » y étant écrit* ; **R-02 : une occurrence du sigle**, § 36.2.2 ; **R-01, R-03 à R-08, R-10, R-12, R-13 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **5 000 mots** de corps (§ 36.0 à § 36.5), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections et des **sept sous-sections** du § 36.2. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier. ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 36 — **explicitement prospectif**)* — aucune source ne documente l'articulation AP2 ↔ rails canadiens — le chapitre pose le cadre d'analyse et les conditions de possibilité, sans affirmer (énumérer des conditions n'est pas prédire).
@@ -379,13 +379,19 @@ nécessaire ; l'instruire ici serait empiéter.***
 *Elle relève de la **relève v0.11 du TOC**, dont le régime est déclaré sans ambiguïté* : ⚠ ***des
 préimpressions dont seuls les résumés ont été consultés — des repérages [C], jamais des faits.***
 
-**Ce que la relève rapporte.** *Une **étude empirique de juin 2026** mesure **des millions de
-transactions machine-à-machine quotidiennes** sur **des rails de micropaiement natifs du web** et
-**d'enregistrement sur chaîne**, ⚠ **et en établit la fragilité** : *identité, autorisation et paiement
-**non interopérables**.* *Deux analyses datées relèvent par ailleurs **des vulnérabilités du rail de
-paiement** et **la manipulabilité de la réputation du registre**. Et **un cadre d'encadrement** — une
-« économie bac à sable », avec des axes de perméabilité et d'intentionnalité — **est proposé par des
-chercheurs d'un laboratoire industriel**.*
+⚠ **Les quatre préimpressions sont nommées par leur identifiant, et elles doivent l'être** : *le critère
+de clôture déclaré plus bas est **leur extraction à leur source primaire** — **une source qu'on ne peut
+pas retrouver n'est pas instruisible**, et la parade de péremption qui autorise ailleurs à taire une
+dénomination commerciale ne couvre pas l'identifiant d'une source qu'un lot doit instruire.*
+
+**Ce que la relève rapporte.** *Une **étude empirique de juin 2026** (**arXiv 2606.25876**) mesure **des
+millions de transactions machine-à-machine quotidiennes** sur **des rails de micropaiement natifs du
+web** et **d'enregistrement sur chaîne**, ⚠ **et en établit la fragilité** : *identité, autorisation et
+paiement **non interopérables**.* *Deux analyses datées relèvent par ailleurs **des vulnérabilités du
+rail de paiement** (**arXiv 2605.30998**) et **la manipulabilité de la réputation du registre**
+(**arXiv 2606.26028**). Et **un cadre d'encadrement** — une « économie bac à sable », avec des axes de
+perméabilité et d'intentionnalité — **est proposé par des chercheurs d'un laboratoire industriel**
+(**arXiv 2509.10147**).*
 
 ⚠ **Le régime se dit à chaque mention** (R-09 du Vol. III) : ***ce sont des préimpressions, non des
 articles évalués par les pairs ; seuls leurs résumés ont été consultés ; et aucune n'entre au socle.***
@@ -399,8 +405,9 @@ la seule possible**. ⚠ *Une économie de transactions machine-à-machine **peu
 rails que ni le régulateur canadien ni les institutions du ch. 35 n'ont conçus**, et **la relève
 rapporte qu'elle le fait déjà ailleurs**.* ⚠ **Ce que le socle établit** : *rien — **la relève n'est pas
 au socle**.* ⚠ **Ce qu'elle signale** : *une **direction d'instruction**, dont le critère de clôture
-serait **l'extraction des quatre préimpressions à leur source primaire**, et **leur confrontation aux
-trois conditions du § 36.3**.* ⚠ ***Le volet résiduel de G-1 ne l'a pas exécutée.***
+serait **l'extraction des quatre préimpressions à leur source primaire — arXiv 2606.25876, 2605.30998,
+2606.26028 et 2509.10147 —**, et **leur confrontation aux trois conditions du § 36.3**.* ⚠ ***Le
+volet résiduel de G-1 ne l'a pas exécutée.***
 
 ⚠ **Et le garde-fou du chapitre s'applique ici avec le plus de force** : ***ne pas combler la lacune par
 de la fiction*** — *ni par une fiction de rail national, ni par une fiction de rail parallèle.*
@@ -479,17 +486,23 @@ dans l'ordre exact, **sous-sections 36.2.1 à 36.2.7 comprises** —, le § 36.0
 chapitre**. La **table de couverture est respectée pour ses deux lignes**, ⚠ **et l'arrivée du §5.13 du
 Vol. I est déclarée aux deux bouts** : *le ch. 34 en déclare le départ à sa propre table.* La
 **décision 14 a été exécutée avant la rédaction**, domaine déclaré : une thèse examinée, zéro réalignée.
-⚠ **Le garde-fou d'entrée — *ne pas combler la lacune par de la fiction* — est tenu à ses huit
-occurrences**, *y compris au § 36.5, où la tentation était double.* ⚠ **La réserve F-29 est tenue à ses
-cinq occurrences** : *ni « lancé », ni « en production », **jusqu'au dernier mot du chapitre**.* ⚠ **La
-formulation imposée sur les cibles successives est reprise mot pour mot**, et **R-4 est tenu à ses deux
-occurrences**. ⚠ **R-8 est tenu à ses deux occurrences** : *le sigle homonyme du § 36.2.4 **n'est jamais
+⚠ **Le garde-fou d'entrée — *ne pas combler la lacune par de la fiction* — est tenu sur tout son
+domaine**, *les § 36.0, § 36.1, § 36.3, § 36.4 et § 36.5, y compris là où la tentation était double.*
+⚠ **La réserve F-29 est tenue** : *ni « lancé », ni « en production », **jusqu'au dernier mot du
+chapitre** — les cinq marqueurs relevés sont soit au négatif, soit dans la formule qui les interdit.*
+⚠ **La formulation imposée sur les cibles successives est reprise mot pour mot**, et **R-4 est tenu à
+son occurrence**. ⚠ **R-8 est tenu à son occurrence** : *le sigle homonyme du § 36.2.4 **n'est jamais
 employé nu**, et **la désambiguïsation renvoie au ch. 7 § 7.5** sans être dupliquée.* ⚠ **Les deux séries
-« Q n » sont nommées à chaque renvoi** (décision 7). Les **douze occurrences de R-14 portent leur
-degré**, ⚠ **et l'absence du § 36.1 est explicitement distinguée du fait négatif vérifié du ch. 32
-§ 32.4**. Les **quatre occurrences de R-09 disent leur statut**, ⚠ **dont celles du § 36.5, où le régime
-des préimpressions est déclaré trois fois**. Enfin, ⚠ **la neutralité fournisseur est tenue à ses trois
-occurrences** : *six protocoles ou réseaux nommés, **aucun recommandé**.*
+« Q n » sont nommées à chaque renvoi** (décision 7). **Les absences portent toutes leur degré** — *une
+occurrence du sigle R-14 au § 36.1, deux du marqueur « degré 3 »* —, ⚠ **et l'absence du § 36.1 est
+explicitement distinguée du fait négatif vérifié du ch. 32 § 32.4**. Les **deux occurrences de R-09
+disent leur statut**, ⚠ **dont celle du § 36.5, où le régime des préimpressions est déclaré**. ⚠ **La
+neutralité fournisseur est tenue** : *six protocoles ou réseaux nommés, **aucun recommandé**.* ⚠ **Ces
+cardinaux ont été re-mesurés au commit du 28 juillet 2026** (décision 16 du TOC) ; *l'attestation
+antérieure annonçait huit occurrences du garde-fou d'entrée, cinq de la réserve F-29, deux de R-4, deux
+de R-8, douze de R-14, quatre de R-09 et trois de la neutralité fournisseur.* ⚠ **Et les quatre
+identifiants arXiv du § 36.5 y sont désormais portés** — *son critère de clôture déclaré est leur
+extraction à la source primaire, et il était inexécutable sans eux (décision 15b du TOC).*
 
 
 ---

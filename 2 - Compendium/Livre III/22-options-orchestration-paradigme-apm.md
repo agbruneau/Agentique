@@ -10,7 +10,7 @@ Fusion et deux tables de couverture, conservées intégralement (décision 11a d
 | **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée, Annexe B inexistante) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte** : *un chapitre écrit sur un socle vide n'est pas un chapitre en avance, c'est une inférence longue.* Voir la note de statut, § 22.11 |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet résiduel de G-1 couvre ce Livre et n'est pas instruit** : aucun fait périssable des quinze pièces du Livre III n'a été repris à la source primaire. Gels de source consommés ici : **16-17 juillet 2026** (Vol. II, ch. 5 et 6) et **juin 2026** (Vol. I, §1.6.3) — ⚠ **aucun des deux ne tient lieu du gel de la somme** |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés du premier mouvement résolvent contre le **Vol. II *Monographie* ch. 5**, dont l'entrée **F-37** conserve son niveau **[B]** d'origine sous ses réserves propres (préprint v1 non révisé par les pairs, menaces à la validité déclarées par ses auteurs) ; ceux du second contre le **Vol. II *Monographie* ch. 6**, entrée **F-36**, **[B] pour l'attribution** — le manifeste est cité comme position argumentée de ses dix-huit auteurs, jamais comme fait établi du domaine ; **F-46** est cité en renvoi pour le statut de la convergence. Le § 22.5 résout contre le **Vol. I *Monographie* §1.6.3**, qui entre en **[C]** — repérage documentaire, la vérification du Vol. I portant sur ses références et non sur le contenu de ses affirmations (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. II — **R-1 : une occurrence**, § 22.6 (la mention de l'ACP protocolaire par le manifeste est **antérieure à la fusion du 29 août 2025** et ne se reprend pas comme état des lieux) ; **R-8 : une occurrence**, § 22.6, avec renvoi à l'encadré de désambiguïsation du **ch. 7 § 7.5** — le sigle n'est jamais employé nu ; **R-4, R-5 : zéro occurrence** (matière de paiement et de désignation, sièges aux ch. 32-33) ; **R-2, R-3, R-6, R-7 : zéro occurrence**. Vol. III — **R-13 (« control plane » et « autonomie graduée » jamais nus) : deux occurrences**, § 22.0 et § 22.9 ; ⚠ **faux ami déclaré** — le « plan de contrôle » au sens du maillage de services **pré-agentique** (ch. 1 § 1.3.4) n'est pas le *control plane* que R-13 vise, et il n'est pas employé ici ; **R-14 (trois degrés d'absence) : six occurrences**, § 22.2, § 22.4 (deux), § 22.7 et § 22.8 (deux) ; **R-02 (qualifier par ce que la spécification démontre) : deux occurrences**, § 22.4 et § 22.7 ; **R-01, R-03 à R-12 : zéro occurrence** |
+| **Garde-fous balayés** | Vol. II — **R-1 : une occurrence**, § 22.6 (la mention de l'ACP protocolaire par le manifeste est **antérieure à la fusion du 29 août 2025** et ne se reprend pas comme état des lieux) ; **R-8 : une occurrence**, § 22.6, avec renvoi à l'encadré de désambiguïsation du **ch. 7 § 7.5** — le sigle n'est jamais employé nu ; **R-4, R-5 : zéro occurrence** (matière de paiement et de désignation, sièges aux ch. 32-33) ; **R-2, R-3, R-6, R-7 : zéro occurrence**. Vol. III — **R-13 (« control plane » et « autonomie graduée » jamais nus) : une occurrence du sigle**, § 22.0 ; ⚠ **faux ami déclaré** — le « plan de contrôle » au sens du maillage de services **pré-agentique** (ch. 1 § 1.3.4) n'est pas le *control plane* que R-13 vise, et il n'est pas employé ici ; **R-14 (trois degrés d'absence) : deux occurrences du sigle**, § 22.2 et § 22.7 — ⚠ **et les degrés eux-mêmes se marquent en toutes lettres, sans le sigle** : *« degré 3 » aux § 22.2, § 22.3, § 22.4, § 22.7 et § 22.8 (deux), « fait négatif vérifié » aux § 22.2 et § 22.4* ; **R-02 (qualifier par ce que la spécification démontre) : deux occurrences du sigle**, § 22.4 et § 22.7 ; **R-01, R-03 à R-12 : zéro occurrence**. ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** de la pièce — en-tête et note de statut exclus.* |
 | **Volumétrie cible** | ≈ **8 500 mots** de corps (§ 22.0 à § 22.10), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant dix sur les quatre-vingt-huit du Livre, majorées du poids de ses deux mouvements. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh), **seule autorité de décompte**. ⚠ **D-4 interdit l'amputation comme le gonflement** : l'écart se documente |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 22, premier mouvement — ancien ch. 25)* — le choix d'architecture agentique est un choix de position sur un continuum d'encadrement, objectivable par cinq propriétés et sept critères.
@@ -550,7 +550,8 @@ et il précède, logiquement, toute discussion de plateforme.*
 ⚠ **Le premier mouvement nomme un arbitrage voisin, et la somme se garde d'en faire une
 corroboration.** Les deux cadres — la taxonomie OO1-OO4 du § 22.1 et le manifeste — sont **distincts**,
 et le socle n'établit entre eux **aucune filiation** ; il ne les tient pas pour autant pour
-indépendants, **une autrice de F-37 cosignant F-36**. C'est leur **convergence** qui est établie, et
+indépendants, **une autrice du Vol. II F-37 cosignant le Vol. II F-36**. C'est leur **convergence**
+qui est établie, et
 elle vaut comme **faisceau**, jamais comme corroboration par sources indépendantes (Vol. II F-46, dont
 l'adjectif « indépendantes » a été retiré du socle par sa source elle-même). Le **ch. 29 § 29.2** en
 fait l'objet d'une section entière ; il n'est pas anticipé ici.
@@ -559,7 +560,8 @@ fait l'objet d'une section entière ; il n'est pas anticipé ici.
 2026 résolvent les permissions par une **chaîne ordonnée de règles à premier appariement gagnant** :
 refus par outil, auto-approbation globale, politique par outil, octrois de session par outil puis par
 catégorie, politique par catégorie, et par défaut *demander* — avec des octrois **persistant d'une
-session à l'autre**. C'est la première réalisation concrète et datée d'un *frame* opérationnel, c'est-à-dire du
+session à l'autre**. C'est la première réalisation concrète et datée d'un *frame* opérationnel,
+c'est-à-dire du
 terme que le socle ne caractérise pas. ⚠ **Elle ne fonde rien** : elle est un cas, et le socle de la
 taxonomie du § 22.1 est déjà sous la lacune §10.10 ; l'y adosser reviendrait à combler une lacune
 déclarée par une source de moindre qualité, ce que le régime du dépôt interdit. ⚠ **Elle n'est pas non
@@ -813,10 +815,13 @@ a été exécutée avant la rédaction** : deux thèses collationnées contre le
 **zéro réalignement**, domaine déclaré. Les **garde-fous des deux séries sont balayés et déclarés, y
 compris à zéro occurrence**, et le **faux ami « plan de contrôle »** est nommé plutôt que fui. Le
 **sigle ACP n'est jamais employé nu** et renvoie au **ch. 7 § 7.5** ; la **mécanique de la fusion** n'est
-pas reconstruite et renvoie au **ch. 8 § 8.5.1**. Les **six occurrences de R-14 portent leur degré**, et
-les **deux occurrences de R-02** qualifient par ce que la source démontre. Les **constructions d'auteur
-portent « Lecture de l'auteur »** suivi de ce que le socle établit et n'établit pas (CA-IV-07) — quinze
-occurrences, dont deux tableaux dont une colonne entière est marquée telle. La **lacune PRD Vol. II
+pas reconstruite et renvoie au **ch. 8 § 8.5.1**. Les **absences portent toutes leur degré** — *deux
+occurrences du sigle R-14, six du marqueur « degré 3 » et deux de « fait négatif vérifié »*, localisées
+à l'en-tête —, et les **deux occurrences de R-02** qualifient par ce que la source démontre. Les
+**constructions d'auteur portent « Lecture de l'auteur »** suivi de ce que le socle établit et n'établit
+pas (CA-IV-07) — ⚠ **dix-neuf occurrences**, *re-comptées au commit du 28 juillet 2026 sous la règle de
+la décision 16 du TOC ; l'attestation antérieure en annonçait quinze* —, dont deux tableaux dont une
+colonne entière est marquée telle. La **lacune PRD Vol. II
 §10.10 est portée et non comblée**, avec son renvoi au **ch. 49**. Enfin, **aucune métrique
 auto-déclarée n'est citée dans ce chapitre** : les seuls chiffres qui y figurent sont les trois valeurs
 de F1 du préprint, attribuées à leur source et déclarées illustration à chaque occurrence.

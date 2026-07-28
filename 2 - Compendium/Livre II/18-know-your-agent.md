@@ -9,10 +9,10 @@ frontière de l'organisation, là où l'émission cesse d'être un acte interne.
 | **Statut** | **Brouillon de rédaction, non publiable** — portes **G-3** et **G-4** ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Ce chapitre porte le SIÈGE UNIQUE du KYA pour toute la somme** (§ 18.1) : les ch. 13 § 13.2, 15 § 15.2.3 et 16 § 16.3 y renvoient et **n'instruisent pas le sigle**. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Ce chapitre est le plus dense en objets périssables du mouvement** : neuf chantiers relevés, dont **deux dates d'expiration d'*Internet-Drafts* déjà échues ou proches** au moment où la pièce est écrite, et une ratification annoncée **sans date** |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. III *Monographie* ch. 11**, dont les entrées **F-04**, **F-06**, **F-07**, **F-09**, **F-30**, **F-32**, **F-33** à **F-35**, **F-38**, **F-40**, **F-43**, **F-48** à **F-51**, **F-56**, **F-73**, **F-83**, **F-86**, **F-87** et les entrées héritées **H-19** conservent leurs niveaux d'origine ; et contre le **Vol. I *Monographie* §5.5.4, §3.6.5 et §7.4.3**, en **[C]**. ⚠ **H-19 est en [C]** : l'énoncé « aucun forum n'avait tranché » entre comme **thèse d'un volume antérieur, attribuée et datée de son gel de juin 2026**, non comme fait vérifié. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. III — **R-05 (le KYA n'est pas un standard établi ; « terme de marché » est une construction d'auteur, non une formule du Vol. I) : ce chapitre en est le SIÈGE — cinq occurrences**, § 18.0, § 18.1 (trois) et § 18.3 ; **R-09 : onze occurrences**, dont la clause du groupe communautaire **répétée à chaque mention** ; **R-14 : dix occurrences**, dont **huit de degré 3** ; **R-02 : cinq occurrences**, § 18.2 (trois) et § 18.3 (deux) ; **R-03 (« entreprise agentique », jamais une catégorie établie) : une occurrence**, § 18.3 ; **R-13 : une occurrence**, § 18.3, les niveaux de certification jamais confondus avec une échelle d'autonomie. **R-01, R-04, R-06 à R-08, R-10 à R-12 : zéro occurrence.** Vol. II — **§8.2 : une occurrence**, § 18.1, le décompte de participants attribué à la page qui l'affiche ; **PRD Vol. II §8.2.5 : six occurrences** ; **R-1 à R-8 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **3 800 mots** de corps (§ 18.0 à § 18.4), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 4 202 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+10,6 %**. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les cinq sections du corps, § 18.0 à § 18.4.** Vol. III — **R-02 : trois marqueurs**, § 18.2 (deux) et § 18.3 ; **R-14 : un marqueur**, § 18.3 ; les absences du chapitre portent néanmoins leur degré, dont **huit au degré 3**, sur tout le domaine. **R-01, R-03 à R-13 : zéro marqueur.** ⚠ **R-05 est appliqué sans être marqué, et ce chapitre en est pourtant le SIÈGE** : le KYA n'est pas un standard établi, et « terme de marché » est une **construction d'auteur, non une formule du Vol. I** — la clause est portée aux § 18.0, § 18.1 et § 18.3, **sans renvoi à l'identifiant**. Même régime pour **R-09** (le stade se dit à chaque mention, clause du groupe communautaire comprise), **R-03** (« entreprise agentique », jamais une catégorie établie, § 18.3) et **R-13** (§ 18.3, les niveaux de certification jamais confondus avec une échelle d'autonomie). Vol. II — **§8.2 : zéro marqueur** ; le décompte de participants du § 18.1 est attribué à la page qui l'affiche ; **PRD Vol. II §8.2.5 : zéro marqueur** ; **R-1 à R-8 : zéro marqueur** |
+| **Volumétrie cible** | ≈ **3 800 mots** de corps (§ 18.0 à § 18.4), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 4 252 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+11,9 %** (re-mesuré au commit du 28 juillet 2026, au terme de la passe de correction de l'audit). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 18)* — le KYA transpose la logique du KYC — vérifier avant d'admettre — sans l'infrastructure institutionnelle qui rend le KYC possible ; la *trust fabric* inter-entreprises reste privée et fragmentée, et c'est elle qui décide si l'entreprise agentique s'arrête à ses murs.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 18)* — le KYA transpose la logique du KYC — vérifier avant d'admettre — sans l'infrastructure institutionnelle qui rend le KYC possible ; la *trust fabric* inter-entreprises reste privée et fragmentée, et c'est elle qui décide si l'entreprise agentique s'arrête à ses murs.
 
 ---
 
@@ -26,12 +26,6 @@ trancher, que de **ce que le tiers veut bien lui présenter**.
 *C'est le point où la question de l'identité cesse d'être interne et devient une question de
 frontière.* C'est aussi le point où **le vocabulaire du domaine devance ses institutions**, et le
 chapitre commence par poser cet écart plutôt que de l'employer.
-
-> ⚠ **SIÈGE UNIQUE DU KYA POUR TOUTE LA SOMME.** La connaissance de l'agent — *Know Your Agent*, KYA
-> — est **posée ici une seule fois**, au § 18.1. Les **ch. 13 § 13.2, ch. 15 § 15.2.3 et ch. 16
-> § 16.3** nomment le sigle sans l'instruire et y renvoient ; **ils ne reconstruisent ni son statut, ni
-> son inventaire**. C'est l'économie de la fusion sur cette matière, et l'abstention est contrôlée par
-> [`PRD/check-sieges.py`](../PRD/check-sieges.py).
 
 **Le statut du terme, posé avant tout usage.** *La connaissance de l'agent **n'est pas un standard
 établi** ; les initiatives existantes relèvent du **positionnement fournisseur*** (Vol. I
@@ -64,6 +58,12 @@ prend le versant ***trust fabric***. La **valeur probante** des mécanismes qu'u
 supposerait est au **ch. 16**.
 
 ## § 18.1 — État des propositions KYA
+
+> ⚠ **SIÈGE UNIQUE DU KYA POUR TOUTE LA SOMME.** La connaissance de l'agent — *Know Your Agent*, KYA
+> — est **posée ici une seule fois**, au présent § 18.1. Les **ch. 13 § 13.2, ch. 15 § 15.2.3 et ch. 16
+> § 16.3** nomment le sigle sans l'instruire et y renvoient ; **ils ne reconstruisent ni son statut, ni
+> son inventaire**. C'est l'économie de la fusion sur cette matière, et l'abstention est contrôlée par
+> [`PRD/check-sieges.py`](../PRD/check-sieges.py).
 
 Le Vol. I décrivait, à son gel de juin 2026, des formes « encore concurrentes » et un **verrou
 institutionnel** (H-19, **[C]**). *L'instruction du 21 juillet 2026 ne renverse pas ce constat : elle
@@ -310,12 +310,15 @@ instances relevées au § 18.1 n'a pris en charge, à la date de gel, ce qu'elle
 vérifier elle-même.* ⚠ **Cette borne n'est pas une précaution de style** : le socle **ne documente ni
 l'existence ni l'absence** d'un tel dispositif hors des pages ouvertes — **degré 3**.
 
-## § 18.4 — Relève à instruire : l'agent mutable prive la réputation de son ancrage
+## § 18.4 — Relève v0.11, à instruire : l'agent mutable prive la réputation de son ancrage
 
 ⚠ **Cette section porte une relève du plan, et non un fait.** Une **préimpression révisée en mai
-2026** soutient que les architectures d'agents à **poids, invites et mémoire mutables** n'offrent pas
-la **persistance d'identité** que tout mécanisme de réputation présuppose : *l'objet vérifié à
-l'admission peut cesser d'être l'objet admis.*
+2026** — **arXiv 2605.30169**, identifiant reporté du TOC — soutient que les architectures d'agents à
+**poids, invites et mémoire mutables** n'offrent pas la **persistance d'identité** que tout mécanisme
+de réputation présuppose : *l'objet vérifié à l'admission peut cesser d'être l'objet admis.*
+⚠ **L'identifiant est écrit plutôt qu'élidé, et ce n'est pas une commodité** : *le critère de clôture
+de cette relève est l'extraction de son texte intégral, et une source qu'un lot doit instruire ne
+s'anonymise pas — sans son identifiant, le lot n'est pas exécutable.*
 
 ⚠ **Régime, et il est le plus bas de tout le Livre.** **Préimpression non révisée par les pairs,
 résumé seul consulté** : c'est un **repérage [C]**, **jamais un fait**. *Le texte intégral n'a pas été
@@ -371,7 +374,7 @@ rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026.
 1. **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ **Et le § 18.4 est d'un régime encore plus
    bas** : préimpression, résumé seul consulté, **repérage [C]** — *il ne porte aucun énoncé du tout,
    et la pièce l'écrit.*
-2. **Les décomptes sont publiables** (G-2). Écart de **+10,6 %** ; la volumétrie du Livre alimente
+2. **Les décomptes sont publiables** (G-2). Écart de **+11,9 %** ; la volumétrie du Livre alimente
    **D-4** par **R-IV-17**.
 3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan** : **ch. 37**. Les renvois
    vers le **ch. 3** résolvent contre du texte ; ceux vers les **ch. 12, 13, 14, 15, 16, 17, 20, 21**
@@ -406,15 +409,19 @@ rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026.
 dans l'ordre exact —, et le § 18.0 est une introduction de chapitre. La **table de couverture est
 respectée pour ses quatre lignes**, y compris le **partage déclaré du §7.4.3 du Vol. I avec le ch. 13**
 : le versant **adoption** reste au ch. 13 § 13.5, le versant ***trust fabric*** est ici, et **ni l'un
-ni l'autre ne reconstruit la moitié de l'autre**. Le **siège unique du KYA est posé et marqué**
-(§ 18.0). Le **socle IAM et l'identité de charge de travail restent au ch. 3**. L'**inventaire de la
-révocation reste au ch. 20 § 20.4** ; la **valeur probante reste au ch. 15** ; l'**assemblage reste au
-ch. 16**. **Aucun verdict de grille n'est rendu.** Les **dix occurrences de R-14** portent leur degré,
-dont **huit au degré 3**. Les **onze occurrences de R-09** répètent la clause du groupe communautaire
-**à chaque mention** plutôt que de la poser une fois en tête. Le **décompte de participants est
-attribué à la page qui l'affiche**. Les **niveaux de certification du § 18.3 ne sont confondus avec
-aucune échelle d'autonomie**. Et les **six occurrences de « Lecture de l'auteur »** sont suivies de ce
-que le socle établit et n'établit pas — dont **le § 18.3 entier**, marqué à l'ouverture.
+ni l'autre ne reconstruit la moitié de l'autre**. Le **siège unique du KYA est posé et marqué au
+§ 18.1**, là où le TOC, le conspectus et [`PRD/check-sieges.py`](../PRD/check-sieges.py) le
+domicilient — *le marqueur était posé au § 18.0 à la rédaction ; il a été replacé le 28 juillet 2026,
+sans que sa formulation change.* Le **socle IAM et l'identité de charge de travail restent au ch. 3**.
+L'**inventaire de la révocation reste au ch. 20 § 20.4** ; la **valeur probante reste au ch. 15** ;
+l'**assemblage reste au ch. 16**. **Aucun verdict de grille n'est rendu.** Les absences **portent leur
+degré**, dont huit au **degré 3**, sur tout le domaine balayé — *application de R-14 déclarée, non
+dénombrée : la pièce n'en porte qu'un marqueur littéral, au § 18.3.* La clause du groupe communautaire
+est répétée **à chaque mention** plutôt que posée une fois en tête (R-09, appliqué sans marqueur). Le
+**décompte de participants est attribué à la page qui l'affiche**. Les **niveaux de certification du
+§ 18.3 ne sont confondus avec aucune échelle d'autonomie**. Et les **cinq marqueurs de « Lecture de
+l'auteur »** — § 18.0, § 18.2, § 18.3 (deux) et § 18.4 — sont suivis de ce que le socle établit et
+n'établit pas, dont **le § 18.3 entier**, marqué à l'ouverture.
 
 
 ---

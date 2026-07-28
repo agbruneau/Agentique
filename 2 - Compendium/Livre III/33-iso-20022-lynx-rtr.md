@@ -9,7 +9,7 @@ Troisième chapitre du mouvement : **un rail accompli et un rail visé, à ne ja
 | **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 33.5. ⚠ **G-4 ne conditionne pas ce chapitre** ; ⚠ **D-9 ne le bloque pas** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit — et ce chapitre porte deux échéances qui tombent après le gel de la somme** : *l'entrée en vigueur d'un règlement administratif le **24 août 2026**, et la cible de lancement d'un rail au **T4 2026**.* ⚠ **Aucune des deux n'est constatée** ; *elles sont annoncées.* Gel de source consommé : **16-17 juillet 2026** (Vol. II ch. 15) |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. II *Monographie* ch. 15**, dont les entrées **F-28**, **F-29** et **F-45** conservent leurs niveaux d'origine ; ⚠ **F-29 est l'entrée la mieux votée du chapitre** — *neuf affirmations confirmées par vote adversarial unanime, sur quatre pages officielles* — **et c'est elle qui porte la réserve la plus stricte du Livre** : *ne jamais écrire « lancé » ni « en production ».* ⚠ **Toutes ces entrées sont du Vol. II** (décision 7 du TOC). **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. II — ⚠ **réserve F-29 — ne jamais écrire « lancé » ni « en production » : sept occurrences**, § 33.0, § 33.2 (quatre), § 33.4 et la synthèse ; ⚠ **formulation imposée PRDPlan Vol. II §4.4 — « quatre *cibles successives* — 2019, 2022, 2023, 2026 », jamais « quatre reports » : trois occurrences**, § 33.2 ; **R-4 (la cible T4 2026 *est* officiellement annoncée — l'attribuer, ne pas l'affirmer au futur catégorique) : cinq occurrences**, § 33.2 (trois), § 33.3 et § 33.4 ; **PRD §8.4 (neutralité fournisseur) : trois occurrences**, § 33.1 et § 33.2 (deux) ; **R-5 : deux occurrences**, § 33.3 ; **R-1 à R-3, R-6 à R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : six occurrences**, § 33.1, § 33.2 (deux), § 33.3 et § 33.4 (deux) ; **R-11 (jalons visés, jamais fixés) : quatre occurrences**, § 33.2 (trois) et § 33.4 — ⚠ *le garde-fou du Vol. III et celui du Vol. II se recouvrent ici, et les deux sont nommés* ; **R-09 : deux occurrences**, § 33.2 et § 33.3 ; **R-01 à R-08, R-10, R-12, R-13 : zéro occurrence** |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — ⚠ **réserve F-29 — ne jamais écrire « lancé » ni « en production » du rail en temps réel** ; *le mot « lancé » est écrit **onze fois** au corps — § 33.0 (deux), § 33.1 (trois), § 33.2, § 33.4 (trois) et la synthèse (deux) — ⚠ **et son domaine se départage** : les **trois du § 33.1 portent sur le rail de grande valeur**, dont le lancement est un fait daté du socle (F-45) et que la réserve ne vise pas ; **les huit autres sont soit au conditionnel attribué, soit dans la formule qui l'interdit**. « En production » est écrit **trois fois**, § 33.0, § 33.2 et la synthèse, **toujours au négatif*** ; ⚠ **formulation imposée PRDPlan Vol. II §4.4 — « quatre *cibles successives* — 2019, 2022, 2023, 2026 », jamais « quatre reports »** : *le renvoi est écrit une fois, § 33.2 ; la formule imposée **trois fois** (§ 33.2 deux, synthèse) et la forme proscrite **deux fois**, **aux deux seuls endroits où la somme la cite pour l'interdire*** ; **R-4 (la cible T4 2026 *est* officiellement annoncée — l'attribuer, ne pas l'affirmer au futur catégorique) : deux occurrences du sigle**, § 33.2 et § 33.4 ; **PRD §8.4 (neutralité fournisseur) : une occurrence du renvoi et deux de la formule**, § 33.1 ; **R-5 : une occurrence du sigle**, § 33.3 ; **R-1 à R-3, R-6 à R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 33.1 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 33.1, § 33.2, § 33.3 et § 33.4 (deux), « fait négatif vérifié » au § 33.1* ; **R-11 (jalons visés, jamais fixés) : trois occurrences du sigle**, § 33.0 (deux) et § 33.4 — ⚠ *le garde-fou du Vol. III et celui du Vol. II se recouvrent ici, et les deux sont nommés* ; **R-09 : une occurrence du sigle**, § 33.3 ; **R-01 à R-08, R-10, R-12, R-13 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **3 500 mots** de corps (§ 33.0 à § 33.4), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant quatre. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier. ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 33)* — la couche sémantique commune des paiements canadiens est en place — Lynx a achevé sa bascule ; Paiements Canada annonce un RTR nativement ISO 20022 dès son lancement, **visé** au T4 2026 (cible plusieurs fois repoussée — attribuer, ne pas affirmer au futur catégorique).
@@ -94,8 +94,11 @@ sépare une observation d'une reconstruction rétrospective.*
 
 ⚠ **Le rail a une histoire industrielle, et elle se rapporte sous neutralité fournisseur.** *Un
 partenaire technologique principal a été sélectionné le **2 mai 2019** — hébergement, intégration,
-bascule et exploitation ; le système est **lancé le 1ᵉʳ septembre 2021**, vingt-huit mois après
-l'annonce ; un centre de données additionnel s'y ajoute en octobre 2023.* ⚠ **Deux réserves accompagnent
+bascule et exploitation ; le système est **lancé le 1ᵉʳ septembre 2021**, à un jour près vingt-huit mois
+après l'annonce ; un centre de données additionnel s'y ajoute en octobre 2023* (Vol. II **F-45**).
+⚠ **Le mot « lancé » se dit ici sans réserve, et il faut voir pourquoi** : *il porte sur **le rail de
+grande valeur**, dont le lancement est un fait daté du socle — **la réserve F-29, qui interdit d'écrire
+« lancé », vise le rail en temps réel du § 33.2, et lui seul**.* ⚠ **Deux réserves accompagnent
 ce fait et se portent avec lui** : *les **montants des contrats ne sont pas publics**, et — conformément
 à la neutralité fournisseur (PRD Vol. II §8.4) — **ce rôle est un fait de contexte, jamais un argument
 de conformité réglementaire**.* ⚠ **Le socle ne documente aucun lien entre ce rôle et les lignes
@@ -317,16 +320,28 @@ dans l'ordre exact —, le § 33.0 étant une **ouverture de chapitre**. La **ta
 respectée pour son unique ligne** : le Vol. II §15.1-15.4 est condensé aux § 33.1-33.4, **rien n'en est
 coupé**. La **décision 14 a été exécutée avant la rédaction**, domaine déclaré : une thèse examinée,
 zéro réalignée — ⚠ **et le réalignement déjà opéré par le plan, dans le sens du bornage, est déclaré**.
-⚠ **La réserve F-29 est tenue à ses sept occurrences** : *le mot « lancé » n'apparaît qu'au **conditionnel
-attribué** ou dans la formule qui l'interdit ; **« en production » n'apparaît qu'au négatif**.* ⚠ **La
+⚠ **La réserve F-29 est tenue sur tout son domaine** : *sur le **rail en temps réel**, seul domaine
+qu'elle vise, le mot « lancé » n'apparaît qu'au **conditionnel attribué** ou dans la formule qui
+l'interdit, et **« en production » n'apparaît qu'au négatif**.* ⚠ **L'attestation antérieure portait sur
+le mot et non sur son domaine, et elle était fausse à ce titre** : *le § 33.1 écrit « le système est
+**lancé** le 1ᵉʳ septembre 2021 » à l'indicatif — **du rail de grande valeur**, dont le lancement est un
+fait daté du socle (F-45). **La réserve n'est pas violée ; l'attestation l'était**, et elle est corrigée
+le 28 juillet 2026.* ⚠ **La
 formulation imposée sur les cibles successives est reprise mot pour mot à ses trois occurrences**, et
-**« quatre reports » n'est écrit qu'à l'endroit où la somme le proscrit**. **R-4 du Vol. II est tenu à
-ses cinq occurrences** — *la cible est attribuée, jamais affirmée au futur catégorique* — et **R-11 du
-Vol. III à ses quatre** : *visé, jamais fixé.* Les **six occurrences de R-14 portent leur degré**, et les
-**deux de R-09 leur statut**. ⚠ **La neutralité fournisseur est tenue à ses trois occurrences** : *les
+**« quatre reports » n'est écrit qu'aux deux endroits où la somme le proscrit**. **R-4 du Vol. II est
+tenu** — *la cible est attribuée, jamais affirmée au futur catégorique ; son sigle est écrit deux fois,
+§ 33.2 et § 33.4* — et **R-11 du Vol. III à ses trois occurrences** : *visé, jamais fixé.* Les
+**absences portent toutes leur degré** — *une occurrence du sigle R-14 au § 33.1, cinq du marqueur
+« degré 3 »* —, et **l'occurrence de R-09 dit son statut**. ⚠ **La neutralité fournisseur est tenue** :
+*les
 partenaires industriels sont nommés comme **faits de contexte**, avec **montants non publics** et
 **aucun argument de conformité***, et **les deux organisations que le socle ne mentionne pas parmi les
-partenaires actuels sont signalées sans être nommées comme fautives**. Enfin, ⚠ **le contenu du règlement
+partenaires actuels sont signalées sans être nommées comme fautives**. ⚠ **Ces cardinaux ont été
+re-mesurés au commit du 28 juillet 2026** (décision 16 du TOC) ; *l'attestation antérieure annonçait
+sept occurrences de la réserve F-29, cinq de R-4, quatre de R-11, six de R-14, deux de R-09 et trois de
+la neutralité fournisseur.* ⚠ **Et l'entrée F-45, annoncée à l'en-tête sans être employée au corps, est
+désormais attribuée au § 33.1**, où elle porte le rôle du partenaire industriel du rail de grande
+valeur. Enfin, ⚠ **le contenu du règlement
 administratif n'est pas décrit** : *le socle n'en porte que trois dates, et R-5 du Vol. II interdit le
 reste.*
 

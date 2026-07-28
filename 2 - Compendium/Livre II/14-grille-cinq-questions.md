@@ -10,20 +10,21 @@ rendent leurs verdicts.*
 | **Statut** | **Brouillon de rédaction, non publiable** — portes **G-3** et **G-4** ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Ce chapitre est le seul du Livre dont le régime de preuve ne dépend d'aucun fait** : la grille est une **construction d'auteur** du Vol. III, spécifiée à son PRD et **dérivée d'aucun socle** — sa recevabilité tient à son rendement, non à sa filiation. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** et ne sont pas rouvertes |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Un instrument ne se périme pas comme un fait** : ce qui se périme ici est l'**application-témoin** du § 14.2, dont chaque verdict est daté du 21 juillet 2026 et se rejouera à chaque révision des trois mécanismes qu'elle éprouve |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte), **et aucune entrée n'est requise pour la grille elle-même** : elle est spécifiée au **PRD du Vol. III, Annexe C**, document de cadrage, non versée par un lot d'instruction. Les **verdicts** du § 14.2 résolvent, eux, contre le **Vol. III *Monographie* ch. 4**, dont les entrées **F-01** à **F-11**, **F-14**, **F-15**, **F-19**, **F-21**, **F-33** à **F-43**, **F-47**, **F-48**, **F-50**, **F-55**, **F-87** et l'entrée héritée **H-03** conservent leurs niveaux d'origine ; l'échelle d'autonomie du § 14.4 vient du **Vol. I *Monographie* §5.0.2**, portée par **H-31**, en **[C]** et **non élevable**. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. III — **R-14 (trois degrés d'absence) : neuf occurrences**, § 14.2 (sept, une par case vide) et § 14.3 (deux) ; **R-02 : quatre occurrences**, § 14.2 ; **R-09 : trois occurrences**, § 14.2 ; **R-13 (échelles d'autonomie jamais nues) : quatre occurrences**, § 14.4, où trois échelles homonymes du Vol. I sont nommées par leur cardinal et leur numérotation ; **R-01 : deux occurrences**, § 14.3 et § 14.4. **R-03 à R-08, R-10 à R-12 : zéro occurrence.** Vol. II — **§8.2 : une occurrence**, § 14.2 ; **R-1 à R-8 : zéro occurrence** — leurs sièges sont les ch. 15 et 16. ⚠ **Faux ami déclaré** : le « corpus d'appui » nommé au § 14.4 est un **marqueur conditionnel de réouverture**, jamais une source |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les cinq sections du corps, § 14.0 à § 14.4.** Vol. III — **R-02 : deux marqueurs**, § 14.2 (deux) ; **R-14 (trois degrés d'absence) : un marqueur**, § 14.1 ; les **sept cases vides du tableau 14.2** sont chacune déclarée **degré 3** dans le corps du tableau, **sans marqueur** — *couverture déclarée, non dénombrée*. **R-01, R-03 à R-13 : zéro marqueur.** ⚠ **R-13 est pourtant appliqué sans être marqué** : les **trois échelles homonymes du Vol. I** sont nommées au § 14.4 par leur cardinal et leur numérotation, **jamais nues** — l'application est réelle, le renvoi à l'identifiant absent. Vol. II — **réserve F-01 : un marqueur**, § 14.2 ; **§8.2 : zéro marqueur** ; **R-1 à R-8 : zéro marqueur** — leurs sièges sont les ch. 15 et 16. ⚠ **Faux ami déclaré** : le « corpus d'appui » nommé au § 14.4 est un **marqueur conditionnel de réouverture**, jamais une source |
 | **Volumétrie cible** | ≈ **3 000 mots** de corps (§ 14.0 à § 14.4), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — **la plus basse du Livre**, ce chapitre ne portant que quatre sections et aucun corpus propre. ☑ **Décompte publiable depuis G-2** ; **réel : 3 514 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+17,1 %**. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 14)* — cinq questions — *qui es-tu, qui t'a créé, pour qui agis-tu, que peux-tu faire, qui en répond* — forment la grille de lecture de tout mécanisme d'identité agentique ; ce sont les questions que l'entreprise doit pouvoir poser à chacun de ses agents, et **aucun des trois mécanismes instruits par le Vol. III ne répond aux cinq**.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 14)* — cinq questions — *qui es-tu, qui t'a créé, pour qui agis-tu, que peux-tu faire, qui en répond* — forment la grille de lecture de tout mécanisme d'identité agentique ; ce sont les questions que l'entreprise doit pouvoir poser à chacun de ses agents, et **aucun des trois mécanismes instruits par le Vol. III ne répond aux cinq**.
 >
 > ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-20** ouverte par cette pièce. La forme citée par la version antérieure — « aucun mécanisme de 2026 ne répond aux cinq » — était un **quantificateur universel négatif sur un corpus non balayé**. **Le corps du chapitre n'a pas changé** : il était déjà écrit sous la forme bornée, et le § 14.2 déclarait la portée limitée à l'échantillon.
 
-⚠ **La thèse citée ci-dessus porte une forme que sa source a elle-même bornée le 21 juillet 2026, et
-l'écart se déclare plutôt qu'il ne se lisse.** Le Vol. III a remplacé « aucun mécanisme de 2026 » par
-« **aucun des trois mécanismes instruits par ce volume** », au motif que la première forme est un
+⚠ **La thèse citée ci-dessus est la forme bornée, et l'écart qui l'a précédée se déclare plutôt qu'il
+ne se lisse.** Le Vol. III avait remplacé « aucun mécanisme de 2026 » par « **aucun des trois
+mécanismes instruits par ce volume** » le **21 juillet 2026**, au motif que la première forme est un
 **quantificateur universel négatif sur un corpus non balayé** — exactement ce que R-14 et le régime
-des trois degrés d'absence proscrivent. Le TOC v0.24 porte encore la forme large. **La pièce cite la
-thèse verbatim, comme le PRD l'exige, et écrit le corps sous la forme bornée** ; la contradiction est
-remontée (voir la note de statut), non arbitrée ici.
+des trois degrés d'absence proscrivent ; le plan du compendium ne l'avait pas suivie, et son TOC
+v0.24 portait encore la forme large. **L'écart a été soldé par la remontée R-IV-20**, qui a réaligné
+la thèse au **TOC v0.25** au titre de la décision 8 : la pièce cite désormais la forme bornée, et
+**son corps n'a pas eu à changer** — il était déjà écrit sous cette forme.
 
 ---
 
@@ -377,13 +378,16 @@ la ligne des **deux arrivées** du § 14.3, sur la remontée **R-IV-21** de cett
 seconde, qui déclare le §3.1.7 du Vol. I **socle
 amont non repris ici** : les quatre axes restent au **ch. 7 § 7.2.2**, et le § 14.1 y renvoie sans les
 reconstruire. **Les cinq questions ne sont pas re-décidées** : leur formulation, leur ordre et leurs
-règles d'emploi sont repris du cadrage du Vol. III **sans modification**. Les **quatre échelles
-d'autonomie et de certification** que la somme croise sont nommées par leur cardinal et leur
-numérotation, jamais nues (R-13 du Vol. III). Le **marqueur « corpus d'appui » est conservé** au
-§ 14.4, comme marqueur conditionnel de réouverture et jamais comme source. Les **neuf occurrences de
-R-14** portent leur degré, et **les sept cases vides du tableau 14.2 sont déclarées degré 3** une par
-une. Enfin, les **six occurrences de « Lecture de l'auteur »** sont suivies de ce que le socle établit
-et n'établit pas — dont **deux sections entières**, le § 14.1 et le § 14.4, marquées à l'ouverture.
+règles d'emploi sont repris du cadrage du Vol. III **sans modification**. Les **trois échelles
+d'autonomie homonymes du Vol. I** que le § 14.4 croise avec la grille sont nommées par leur cardinal
+et leur numérotation, jamais nues (R-13 du Vol. III) ; ⚠ **aucune échelle de certification n'est
+mobilisée ici** — les niveaux de certification sont au **ch. 18 § 18.3**, et ce chapitre ne les
+anticipe pas. Le **marqueur « corpus d'appui » est conservé** au § 14.4, comme marqueur conditionnel
+de réouverture et jamais comme source. Le **marqueur unique de R-14** ouvre le régime des trois
+degrés, et **les sept cases vides du tableau 14.2 sont déclarées degré 3** une par une, dans le corps
+du tableau. Enfin, les **quatre marqueurs de « Lecture de l'auteur »** — § 14.1 (deux), § 14.3 et
+§ 14.4 — sont suivis de ce que le socle établit et n'établit pas, dont **deux sections entières**, le
+§ 14.1 et le § 14.4, marquées à l'ouverture.
 
 
 ---

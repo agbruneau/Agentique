@@ -28,8 +28,9 @@ du PRD §6**, qui plaçait son second mouvement après les Livres I et III.
 | **Volet résiduel de G-1** | ⚠ **dû, et il l'est plus lourdement ici qu'ailleurs** — **aucun fait périssable des dix pièces n'a été repris à la source primaire** |
 | **Socle consolidé** | ⚠ **zéro entrée** — **G-3 n'est pas entamée** |
 | **Énoncés centraux au sens de CA-IV-01** | ⚠ **aucun**, dans aucune des dix pièces |
-| **Sièges posés** | **trois** — versés à l'appareil au terme de la passe |
+| **Sièges posés** | ⚠ **CINQ, et non trois** — *le décompte publié en était faux* : trois versés à l'appareil le 27 juillet 2026, **deux découverts par l'audit du 28** (voir plus bas) |
 | **Statut des pièces** | **brouillon non publiable** — inchangé |
+| **Passe de correction du 28 juillet 2026** | ⚠ **douze constats d'audit soldés dans les dix pièces**, dont **dix thèses re-citées par copie** et **les dix champs « Garde-fous balayés » re-mesurés** sous la décision 16 — *aucune porte franchie, aucun statut changé* |
 
 *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune question n'attend
 plus de réponse qui ne soit déjà tranchée.* ⚠ **Et une condition de publication n'est satisfaisable par
@@ -73,9 +74,21 @@ main.**
 
 ## Volumétrie réelle — et une leçon symétrique de celle du Livre II
 
-**55 249 mots** de corps pour les dix pièces, mesurés le 27 juillet 2026 par
+**56 025 mots** de corps pour les dix pièces, **re-mesurés le 28 juillet 2026** par
 [`PRD/decompte.sh`](../PRD/decompte.sh), **seule autorité de décompte du volume** — contre une
-enveloppe de Livre de **69 000** au TOC, soit **−19,9 %**.
+enveloppe de Livre de **69 000** au TOC, soit **−18,8 %**.
+
+⚠ **Ce chiffre remplace les 55 249 publiés le 27 juillet 2026, et l'écart a DEUX causes qu'il faut
+tenir séparées.** *(1)* **Un mot venait d'une mesure prise avant une retouche du même commit** : le
+marqueur de siège du **ch. 45 § 45.6** est passé de « SIÈGE UNIQUE DE CETTE MATIÈRE POUR TOUTE LA
+SOMME » (neuf mots) à « SIÈGE DE L'ORGANISATION DE LA FABRIQUE POUR TOUTE LA SOMME » (dix) **après**
+le décompte, dans le commit qui le publiait — *la vraie valeur au commit `0fac01c` était **55 250**,
+non 55 249.* ⚠ ***Une mesure se prend sur le corpus que le commit produit***, et c'est la règle que
+cet écart d'un mot enfreignait. *(2)* **Les 775 mots restants sont ceux de la passe de correction du
+28 juillet 2026** — thèses re-citées sous leur forme réalignée, blocs de désalignement reformulés au
+passé, identifiants de corpus portés aux cinq lots du ch. 41, renvois de siège écrits. ⚠ **Aucun n'est
+du gonflement** : *ils sont tous dans des sections que l'audit a nommées, et **D-4 interdit autant le
+gonflement que l'amputation***.
 
 ⚠ **La leçon du Livre I a de nouveau été appliquée, et de nouveau elle n'a pas suffi — mais l'écart a
 changé de signe.** *Les dix cibles dérivées ont été additionnées **avant la première ligne** et valent
@@ -83,34 +96,39 @@ changé de signe.** *Les dix cibles dérivées ont été additionnées **avant l
 elle ; celui-ci reste en deçà malgré elle.** ⚠ **La dérivation n'est donc en cause dans aucun des trois
 cas** : *ce qui varie est la matière.*
 
-| Pièce | Cible dérivée | Réel | Écart |
-|---|---|---|---|
-| [Ch. 37](37-maillage-agents-point-application.md) | 11 000 | **9 724** | −11,6 % |
-| [Ch. 38](38-observabilite-agentique.md) | 6 000 | **5 628** | **−6,2 %** |
-| [Ch. 39](39-cycle-de-vie-operationnel.md) | 6 500 | **6 136** | **−5,6 %** |
-| [Ch. 40](40-indicateurs-agentops-finops.md) | 6 500 | **5 541** | −14,8 % |
-| [Ch. 41](41-fabrique-agents.md) | 5 000 | **3 329** | **−33,4 %** |
-| [Ch. 42](42-matrice-protocoles-exigences.md) | 4 000 | **3 529** | −11,8 % |
-| [Ch. 43](43-architecture-reference-couches.md) | 6 500 | **5 839** | −10,2 % |
-| [Ch. 44](44-formalisation-archimate.md) | 8 500 | **6 016** | **−29,2 %** |
-| [Ch. 45](45-blueprint-instancie-cycle-de-vie.md) | 12 000 | **6 751** | **−43,7 %** |
-| [Ch. 46](46-instrumentation-feuille-route.md) | 3 000 | **2 756** | −8,1 % |
-| **Livre** | **69 000** | **55 249** | **−19,9 %** |
+| Pièce | Cible dérivée | Réel au 27 juill. (publié) | **Réel au 28 juill. (commit)** | Écart à la cible |
+|---|---|---|---|---|
+| [Ch. 37](37-maillage-agents-point-application.md) | 11 000 | 9 724 | **9 756** | −11,3 % |
+| [Ch. 38](38-observabilite-agentique.md) | 6 000 | 5 628 | **5 693** | **−5,1 %** |
+| [Ch. 39](39-cycle-de-vie-operationnel.md) | 6 500 | 6 136 | **6 165** | **−5,2 %** |
+| [Ch. 40](40-indicateurs-agentops-finops.md) | 6 500 | 5 541 | **5 564** | −14,4 % |
+| [Ch. 41](41-fabrique-agents.md) | 5 000 | 3 329 | **3 765** | **−24,7 %** |
+| [Ch. 42](42-matrice-protocoles-exigences.md) | 4 000 | 3 529 | **3 529** | −11,8 % |
+| [Ch. 43](43-architecture-reference-couches.md) | 6 500 | 5 839 | **5 839** | −10,2 % |
+| [Ch. 44](44-formalisation-archimate.md) | 8 500 | 6 016 | **6 016** | **−29,2 %** |
+| [Ch. 45](45-blueprint-instancie-cycle-de-vie.md) | 12 000 | 6 751 | **6 781** | **−43,5 %** |
+| [Ch. 46](46-instrumentation-feuille-route.md) | 3 000 | 2 756 | **2 917** | −2,8 % |
+| **Livre** | **69 000** | 55 249 | **56 025** | **−18,8 %** |
 
-: Volumétrie du Livre IV, mesurée le 27 juillet 2026. *L'écart se documente ; il ne se corrige ni par amputation ni par **gonflement** — et c'est la seconde interdiction qui porte ici.*
+: Volumétrie du Livre IV. *L'écart se documente ; il ne se corrige ni par amputation ni par **gonflement** — et c'est la seconde interdiction qui porte ici.* ⚠ **Trois pièces sont inchangées** — ch. 42, 43 et 44 —, *toutes leurs corrections tombant dans l'en-tête ou dans la note de statut, que la commande de décompte exclut du corps.*
 
 ⚠ **Les trois plus forts écarts ont trois causes distinctes, et aucune n'est une coupe.**
 
-1. **Ch. 41, −33,4 % — un chapitre sans source ne développe pas.** *Il n'a **aucun volume source,
+1. **Ch. 41, −24,7 % — un chapitre sans source ne développe pas.** *Il n'a **aucun volume source,
    aucune entrée de socle, aucun garde-fou assigné** ; ce qu'il produit à la place d'un contenu est
    **cinq lots d'instruction formulés**.* ⚠ **La brièveté y est l'indicateur, non le défaut** : *un
-   chapitre sans socle qui atteindrait sa cible aurait produit du plausible.*
+   chapitre sans socle qui atteindrait sa cible aurait produit du plausible.* ⚠ **L'écart s'est réduit
+   de −33,4 % à −24,7 % le 28 juillet 2026, et le motif compte** : *la passe de correction a porté aux
+   cinq lots **les identifiants du corpus qu'ils doivent instruire** (décision 15 du TOC, alinéa b-iii)
+   — **un critère de clôture qui ne nomme pas ses sources est inexécutable**, et le cinquième lot,
+   celui du § 41.7, n'avait ni corpus ni critère écrits.* **Aucun fait n'a été ajouté ; ce sont des
+   points d'entrée, pas des sources.**
 2. **Ch. 44, −29,2 % — le garde-fou de non-redondance mord plus fort ici qu'à sa source.** *La règle
    héritée est : **si l'on retire le mot « ArchiMate » et que la phrase tient encore comme un exposé
    des chapitres amont, c'est une redondance à renvoyer**. Au Vol. I ce chapitre suivait **cinq**
    chapitres ; ici il en suit **quarante-trois**.* ⚠ *Le même garde-fou, appliqué à huit fois plus
    d'amont, retire huit fois plus de prose.*
-3. **Ch. 45, −43,7 % — et c'est la leçon propre au compendium.** *Huit de ses quinze sections ont
+3. **Ch. 45, −43,5 % — et c'est la leçon propre au compendium.** *Huit de ses quinze sections ont
    **leur siège ailleurs dans la somme** : le point d'application au ch. 37, la trace au ch. 38,
    l'évaluation et la révocation au ch. 39, les points de contrôle et le modèle de maturité au
    ch. 43, le registre des stéréotypes au ch. 44.* ⚠ **Un chapitre d'instanciation dans un compendium
@@ -119,7 +137,7 @@ cas** : *ce qui varie est la matière.*
 ⚠ **C'est la leçon symétrique de celle du Livre II, et les deux se lisent ensemble.** *Le Livre II
 dépassait de **+23,4 %** parce que **le bornage allonge** : un chapitre qui doit dire, à chaque
 énoncé, ce que sa source démontre et ne démontre pas est plus long qu'un chapitre qui affirme.*
-**Celui-ci reste en deçà de **−19,9 %** parce que **le siège raccourcit** : un chapitre qui renvoie où
+**Celui-ci reste en deçà de **−18,8 %** parce que **le siège raccourcit** : un chapitre qui renvoie où
 un autre a posé est plus court qu'un chapitre qui reconstruit.** ⚠ ***Les deux forces jouent dans tous
 les Livres ; ce qui change est laquelle domine*** — et **l'enveloppe héritée n'avait budgété ni l'une
 ni l'autre.** *La mesure alimente **D-4**, dont le re-calibrage est remis à une passe unique de
@@ -149,18 +167,30 @@ douze thèses**, et c'est le domaine de balayage de la décision 14.**
 neuve**, « Fusion : aucune », **sans volume source, sans entrée de socle et sans garde-fou hérité
 assigné**. *Ne pas le lire au même régime de preuve que ses voisins.*
 
-## Trois sièges posés ici pour toute la somme
+## ⚠ CINQ sièges posés ici pour toute la somme — et le décompte de trois était faux
 
-| Siège | Pièce | Ce qu'il interdit de refaire ailleurs |
-|---|---|---|
-| **Les cinq points de contrôle obligatoires** | **ch. 43 § 43.3** | la liste et son dérivation des cinq zones de compensation ; les **ch. 37, 38, 39, 41 et 45** y renvoient |
-| **Le modèle de maturité et les trois échelles d'autonomie** | **ch. 43 § 43.5** | le croisement par palier et la **désambiguïsation des trois échelles homonymes du Vol. I** — ⚠ *le ch. 39 § 39.6 s'abstient explicitement d'en produire un autre* |
-| **L'organisation de la fabrique** | **ch. 45 § 45.6** | la répartition des rôles ; le **ch. 41 § 41.7** y renvoie **sans la reprendre**, *et c'est pourquoi sa table détaillée ne porte aucun marqueur de provenance* |
+| Siège | Pièce | État à l'appareil | Ce qu'il interdit de refaire ailleurs |
+|---|---|---|---|
+| **Les cinq points de contrôle obligatoires** | **ch. 43 § 43.3** | ☑ versé le 27 juill. 2026 | la liste et son dérivation des cinq zones de compensation ; les **ch. 37, 38, 39, 41 et 45** y renvoient |
+| **Le modèle de maturité et les trois échelles d'autonomie** | **ch. 43 § 43.5** | ☑ versé le 27 juill. 2026 | le croisement par palier et la **désambiguïsation des trois échelles homonymes du Vol. I** — ⚠ *le ch. 39 § 39.6 s'abstient explicitement d'en produire un autre* |
+| **L'organisation de la fabrique** | **ch. 45 § 45.6** | ☑ versé le 27 juill. 2026 | la répartition des rôles ; le **ch. 41 § 41.7** y renvoie **sans la reprendre**, *et c'est pourquoi sa table détaillée ne porte aucun marqueur de provenance* |
+| ⚠ **La collision « fabrique »** (décision 12c du TOC) | **ch. 43 § 43.1** | ☐ **dû** — *versé au même commit par la passe de gouvernance du 28 juill. 2026* | la désambiguïsation des quatre emplois du mot ; le **ch. 41 § 41.1** y renvoie |
+| ⚠ **La conformité traçable** | **ch. 44 § 44.6** | ☐ **dû** — *versé au même commit par la passe de gouvernance du 28 juill. 2026* | la chaîne *pilote → évaluation → exigence → réalisation → élément exécutable* et son critère d'auditabilité ; les **ch. 45 § 45.14** et **ch. 46 § 46.2.3** y renvoient |
 
-: Les trois sièges du Livre IV, versés à [`PRD/check-sieges.py`](../PRD/check-sieges.py) au terme de la passe.
+: Les cinq sièges du Livre IV. ⚠ **Le décompte publié le 27 juillet 2026 — « trois » — était faux, et c'est l'audit du 28 qui l'a établi** (constat IV.1).
 
-☑ **Les trois sont contrôlés depuis cette passe.** ⚠ **Et le contrôle a trouvé deux défauts réels au
-premier passage sur ce Livre**, *avant même le versement des trois sièges neufs* : **(1)** le
+⚠ **Les deux sièges découverts portaient déjà la forme pleine du marqueur, et c'est ce qui rend
+l'omission coûteuse.** *La règle du dossier est que **les trois gestes vont ensemble — la table,
+le marqueur, le harnais — jamais deux sur trois** ; ici deux gestes sur trois étaient faits, et le
+manquant est celui qui outille l'abstention : **une reconstruction de la désambiguïsation « fabrique »
+ou de la chaîne de conformité traçable ailleurs dans la somme passait tous les contrôles.***
+⚠ **La passe de correction des pièces n'a PAS versé la table elle-même** — *elle est hors de sa zone* :
+elle a **conservé les deux marqueurs mot pour mot**, dont la signature est prise telle qu'elle est
+écrite, **vérifié les renvois entrants annoncés** et **écrit celui qui manquait** (ch. 46 § 46.2.3).
+
+☑ **Les trois premiers sont contrôlés depuis la passe du 27 juillet 2026** ; ☐ **les deux autres le
+seront au commit du 28**. ⚠ **Et le contrôle a trouvé deux défauts réels au
+premier passage sur ce Livre**, *avant même le versement des trois sièges alors comptés* : **(1)** le
 **ch. 41 portait la signature de forme de l'encadré à quatre branches du ch. 7 § 7.5** — *une table
 dont les rangées commençaient par « (a) » à « (d) », sur un tout autre objet* : **renumérotée F1-F4**,
 ⚠ *car réutiliser la forme d'un siège pour une autre table rend le contrôle aveugle ou bruyant* ;
@@ -171,8 +201,13 @@ dont les rangées commençaient par « (a) » à « (d) », sur un tout autre ob
 
 Chacune a été **portée là où elle fait foi**, jamais déclarée close sur place : au
 [PRD](../PRD/PRD.md) pour une décision d'auteur ou un domaine de porte, au [TOC](../PRD/TOC.md) pour
-un réalignement de plan, à l'appareil pour une dette d'outillage. Le détail de chaque clôture vit dans
-la **note de statut de la pièce** qui l'avait ouverte.
+un réalignement de plan, à l'appareil pour une dette d'outillage. ☑ **Le détail de chaque clôture vit
+désormais dans la note de statut de la pièce qui l'avait ouverte**, sous la forme d'une ligne
+« ☑ **Issue, 27 juillet 2026 —** … » appendue à chaque remontée. ⚠ **Cette affirmation était FAUSSE
+avant le 28 juillet 2026, et l'audit l'a établi** (constat IV.2) : *les dix notes ne consignaient que
+les **ouvertures**, jamais les issues, et le seul lieu où elles vivaient était le tableau ci-dessous.*
+**Les trente-deux issues ont été portées aux pièces**, une par une, et le décompte a été re-mesuré
+— **trente-deux lignes insérées pour trente-deux remontées**.
 
 | Remontée | Ouverte au | Issue |
 |---|---|---|
@@ -197,7 +232,7 @@ la **note de statut de la pièce** qui l'avait ouverte.
 | **R-IV-56** | ch. 42 | ☑ **TOC, Annexe C + PRD, domaine de G-1** — la divergence de date sur la ligne directrice de l'AMF est **maintenue au registre avec sa réserve**, ⚠ *l'arbitrage du cadrage n'ayant aucune autorité tant que la somme n'est pas rédigée* |
 | **R-IV-57** | ch. 43 | ☑ **TOC, décisions 8 et 14** — « **et la fabrique d'identité** imposée sous exigence réglementaire stricte » : ⚠ **l'extension est déclarée construction d'auteur à la ligne Fusion**, *aucune des deux sources ne la portant, et « imposé » étant une formule d'obligation que R-06 borne* |
 | **R-IV-58** | ch. 43 | ☑ **PRD, domaine de G-4** — le couple « le Vol. I écrit *réglementairement exigé* / le Vol. II établit une **attente** » entre au domaine ; ⚠ **ce n'est pas une contradiction** : *lacune de couverture apparente, et le volume le plus ancien ne se corrige pas* |
-| **R-IV-59** | ch. 43 | ☑ **appareil** — les **trois sièges du Livre** versés à la table `SIEGES`, **harnais de mutation rejoué** ; ⚠ **deux défauts réels trouvés au premier passage**, dont *un chapitre qui touchait la matière d'un siège sans y renvoyer* |
+| **R-IV-59** | ch. 43 | ☑ **appareil** — les **trois sièges alors comptés** versés à la table `SIEGES`, **harnais de mutation rejoué** ; ⚠ **deux défauts réels trouvés au premier passage**, dont *un chapitre qui touchait la matière d'un siège sans y renvoyer*. ⚠ **Ce que la clôture avait manqué, et que l'audit du 28 juillet 2026 a établi** : *le Livre pose **cinq** sièges, non trois — la collision « fabrique » (ch. 43 § 43.1) et la conformité traçable (ch. 44 § 44.6) portaient leur marqueur sans entrée de table* ; ☐ **leur versement est dû au commit du 28** |
 | **R-IV-100** | ch. 44 | ☑ **TOC, décision 8** — les **neuf sous-sections numérotées « 43.1.x » sous le chapitre 44** et la **table de couverture dirigeant vers « § 43 »** sont réalignées ; ⚠ **classe de défaut déjà consignée pour trois passes de structure consécutives** — *aucun des quinze contrôles ne lit les tables détaillées* |
 | **R-IV-101** | ch. 44 | ☑ **PRD, volet résiduel de G-1, DOMAINE DÉCLARÉ** — la **re-vérification du mécanisme d'extension sur le document normatif** est inscrite avec son domaine : *liste des éléments retirés ou renommés, mécanisme d'extension, état du support d'outillage*. ⚠ **Le blocage tient pour la publication du § 44.1.9 et, par dépendance, du ch. 45** : *le registre reste publié sous réserve* |
 | **R-IV-102** | ch. 44 | ☑ **PRD, G-3** — la **voie d'élévation** est déclarée pour ce chapitre : *lecture des sources primaires que le Vol. I cite*, ⚠ **avec sa borne** — *une entrée sans source primaire tierce reste une thèse attribuée et ne porte jamais un fait central* |
@@ -247,6 +282,47 @@ la **note de statut de la pièce** qui l'avait ouverte.
    prise le même jour — par une autre passe, et après cette rédaction**. *Le Livre a été écrit avant.*
    ⚠ ***Un arbitrage postérieur solde une remontée ; il n'efface pas l'ordre dans lequel les gestes ont
    été faits.***
+
+## ⚠ La passe de correction du 28 juillet 2026 — douze constats d'audit soldés dans les pièces
+
+**Sur instruction d'auteur, en réponse à l'[audit du 28 juillet 2026](../audit.md), §7 et §3.** La
+passe **corrige, elle ne réédite pas** : aucune section n'est ajoutée, aucun fait n'est versé, aucune
+thèse n'est réécrite. ⚠ **Elle ne franchit aucune porte et ne change aucun statut** — *le socle
+consolidé compte toujours zéro entrée, G-3 n'est pas entamée, CA-IV-13 reste insatisfaite, et les dix
+pièces restent un brouillon non publiable.*
+
+| Constat | Ce qui a été corrigé, et où |
+|---|---|
+| **IV.8** *(le plus gros lot)* | **Les dix thèses réalignées en v0.28 sont re-citées dans les pièces**, **par copie littérale** depuis l'entrée courante du plan — ch. 37 (les deux mouvements), 38, 39, 40, 42, 43, 45 (les deux), **46**. ⚠ **Les ch. 41 et 44 sont les deux seules thèses inchangées** : leur ancrage passe à v0.28 pour dire qu'elles y ont été **re-collationnées**, non qu'elles auraient changé. **Le bloc qui déclarait le désalignement d'origine est conservé, reformulé au passé**, avec la forme v0.25 citée (décision 17 du TOC, alinéa c) |
+| **IV.2** | **Les trente-deux issues sont portées aux dix notes de statut**, chacune sous la remontée qui l'avait ouverte |
+| **IV.3** | **Les dix points 3 des notes sont réalignés sur l'état final de la passe** — *les cinquante chapitres existent, les renvois internes résolvent contre du texte* —, l'information datée étant conservée comme telle. ⚠ **Neuf mentions du corps** « ch. N n'est pas rédigé » (ch. 38, 39, 40, 41, 46) sont corrigées de la même manière |
+| **IV.4** *et T-1* | **Les dix champs « Garde-fous balayés » sont re-mesurés** sous la **décision 16** : cardinal = **marqueur littéral de l'identifiant dans le corps**, en-tête et note exclus ; **le domaine est déclaré sans cardinal** là où le garde-fou est appliqué sans que son identifiant soit écrit. **Les attestations des dix notes** suivent la même règle |
+| **IV.7** | **Ch. 38, synthèse** : « le ch. 40 hérite de cet état pour ses **douze** métriques » → le cardinal est cité **dans sa valeur re-mesurée au ch. 40 § 40.1.2, seize** (douze de F-90, quatre de F-95) |
+| **IV.5** | **Trois intitulés réalignés** : ch. 39 § 39.4 (« versionner le **mandat protocolaire** »), ch. 46 § 46.2 (« inventaire, encadrement, surveillance »), ch. 38 § 38.2 (« OpenTelemetry »). ⚠ **Quinze autres déviations sont déclarées plutôt que corrigées** — ch. 37 § 37.9 ; ch. 39 § 39.2 ; ch. 40 § 40.3 et § 40.4 ; ch. 41 § 41.3 ; ch. 44 § 44.2, § 44.3, § 44.5 et § 44.9 ; ch. 45 § 45.1, § 45.7, § 45.9, § 45.11, § 45.12 et § 45.14 — *une déviation fondée se déclare* (décision 8), et **la parade de péremption reste en vigueur pour les dénominations commerciales** (décision 15, alinéa a) |
+| **IV.9** | **Ch. 45 § 45.4** : « un fait négatif du socle, établi et **central** » → « **déterminant pour la section** », *« central » étant le terme technique de CA-IV-01 que l'en-tête de la même pièce déclare inatteint* |
+| **IV.10** | **Ch. 41, synthèse** : « les ch. **42-51** de la numérotation antérieure reviennent » → **les ch. 42-50 redeviennent les ch. 41-49**, *l'état v0.22 étant périmé depuis la fusion v0.23* |
+| **IV.1** | **Les deux marqueurs de siège sont conservés mot pour mot** ; **les renvois entrants annoncés sont vérifiés** — ch. 45 § 45.14 existait, **ch. 46 § 46.2.3 a été écrit**. Le versement à l'appareil est **hors zone** et dû au même commit |
+| **IV.6** | **La volumétrie est re-mesurée sur le corpus que le commit produit** (tableau ci-dessus), et *l'écart d'un mot est localisé et expliqué dans la note du ch. 45* |
+| **III.C.3** *étendu* | **Le renvoi au siège du tri prospectif (ch. 49 § 49.0) est écrit** au **ch. 37 § 37.7** et au **ch. 46 § 46.3** — *les deux seules pièces du Livre qui écrivent « tri prospectif », balayage exhaustif* |
+| **T-4** *(décision 15)* | **Les cinq lots du ch. 41 portent les identifiants de leur corpus** — *un critère de clôture qui ne nomme pas ses sources est inexécutable* —, et **le cinquième (§ 41.7) reçoit le corpus et le critère qu'il n'avait pas** |
+
+: Les douze constats d'audit soldés par la passe du 28 juillet 2026, et le geste de chacun. ⚠ **Domaine du balayage des décomptes, déclaré plutôt que chiffré** : *les **dix champs « Garde-fous balayés »** et les **dix attestations de clôture** ont été re-mesurés entrée par entrée ; le cardinal des entrées n'est pas publié ici, faute d'être re-mesurable autrement qu'en les recomptant* — **c'est la décision 16 appliquée à ce README même.**
+
+⚠ **Trois choses que cette passe n'a PAS faites, et qui se déclarent.** *(1)* **Elle n'a touché ni le
+TOC, ni le PRD, ni le conspectus du volume** — *un rédacteur ne les corrige jamais, il remonte.*
+*(2)* **Elle n'a versé aucun siège à l'appareil** : la table est hors de sa zone, et *attester un
+versement qu'on n'a pas constaté serait l'attestation fausse que le dépôt proscrit* — **les pièces
+écrivent « dû », pas « fait ».** *(3)* ⚠ **Elle n'a pas re-nommé le corpus** : la parade de péremption
+reste en vigueur pour les dénominations commerciales et les versions (décision 15, alinéa a) ; seuls
+les trois interdits d'attribution ont été corrigés.
+
+⚠ **Un défaut de rendu a été trouvé par le vérificateur et il vaut d'être connu.** *La thèse du
+premier mouvement du ch. 45, copiée littéralement, refermait une borne de gras **sur** le marqueur
+« Lecture de l'auteur », que le générateur de page reconnaît avec sa balise fermante :* **le rendu
+produisait un gras jamais refermé, sur tout le reste du paragraphe.** *La borne a été rouverte devant
+le marqueur — **aucun mot changé, aucun mot ne perdant son gras** — et l'accommodation est déclarée
+dans la pièce.* ⚠ ***C'est la règle du dépôt sur les livrables rendus par un pipeline** : n'employer
+que le balisage que ce pipeline accepte, et le vérifier sur la sortie.*
 
 ## Ce que le Livre couvre — et ce qu'il ne couvre pas
 

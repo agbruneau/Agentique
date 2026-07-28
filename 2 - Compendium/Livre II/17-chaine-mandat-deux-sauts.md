@@ -10,10 +10,10 @@ mécanisme.*
 | **Statut** | **Brouillon de rédaction, non publiable** — portes **G-3** et **G-4** ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Une section de ce chapitre est en outre rédigée contre une consigne explicite du plan** : le TOC déclare le § 17.5 « **front neuf — aucun des trois volumes ne le porte : sources primaires à établir avant rédaction** », et **ces sources n'ont pas été établies**. Le § 17.5 **expose donc le vide au lieu de le combler**, et ouvre la remontée **R-IV-27**. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Une relève du plan porte une date postérieure au gel de sa source** — un document normatif consulté le **26 juillet 2026** — et elle est **reprise comme relève, jamais comme entrée de socle** (§ 17.1) |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. III *Monographie* ch. 9-10**, dont les entrées **F-14**, **F-15**, **F-29**, **F-31**, **F-44** à **F-47**, **F-53**, **F-74** à **F-82**, **F-89** et les entrées héritées **H-01**, **H-06**, **H-12**, **H-19**, **H-28**, **H-29**, **H-33** conservent leurs niveaux d'origine ; et contre le **Vol. I *Monographie* §2.11.2 et §3.6.6**, en **[C]**. ⚠ **Six entrées mobilisées sont en [C]** — F-31, H-19, H-28, H-29, H-33, plus H-15/PC3 du Vol. II, construction d'auteur hors socle factuel : elles **situent**, elles ne portent pas. ⚠ **Le § 17.5 ne mobilise aucun socle** : il n'en a pas. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. III — **R-14 : quinze occurrences**, dont **douze de degré 3** — **le plus grand nombre du Livre**, et c'est une conséquence du sujet : *un chapitre qui prend une frontière pour objet écrit surtout des absences* ; **R-02 : sept occurrences**, § 17.1 (quatre), § 17.2, § 17.3 et § 17.6 ; **R-09 : huit occurrences** ; **R-01 : deux occurrences**, § 17.2 et § 17.6 ; **R-12 (traitement défensif au niveau du maillon, aucune recette) : deux occurrences**, § 17.6.1 ; **R-13 : une occurrence**, § 17.4, l'échelle d'autonomie jamais nue. **R-03 à R-08, R-10, R-11 : zéro occurrence.** Vol. II — **§8.2 : une occurrence**, § 17.6.2 ; **R-1 à R-8 : zéro occurrence**. ⚠ **Un faux ami est déclaré** : le « point de contrôle » du glossaire du Vol. II traduit une notion de reprise sur incident et **n'est pas** le « point de contrôle obligatoire » de son ch. 19 ; la collision est **signalée et non résolue** (§ 17.4) |
-| **Volumétrie cible** | ≈ **5 700 mots** de corps (§ 17.0 à § 17.6), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — six sections dont une à trois sous-sections. ☑ **Décompte publiable depuis G-2** ; **réel : 6 933 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+21,6 %** (re-mesuré le 27 juillet 2026 après la passe d'arbitrage, qui a versé au § 17.1 l'extraction du RFC 8693). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les sept sections du corps, § 17.0 à § 17.6, et les trois sous-sections du § 17.6.** Vol. III — **R-02 : trois marqueurs**, § 17.0, § 17.1 et § 17.6.2. **R-01, R-03 à R-14 : zéro marqueur.** ⚠ **Ce chapitre est celui du Livre où l'écart entre marqueurs et applications est le plus large, et le motif tient au sujet** : *un chapitre qui prend une frontière pour objet écrit surtout des absences.* Les applications non marquées, portées sur tout le domaine balayé, sont celles de **R-14** — les absences portent leur degré, dont douze au **degré 3** —, de **R-09** (statut dit à chaque mention), de **R-01** (§ 17.2 et § 17.6), de **R-12** (traitement au niveau du maillon, aucune recette, § 17.6.1) et de **R-13** (§ 17.4, l'échelle d'autonomie jamais nue) : *l'application est réelle, le renvoi à l'identifiant absent.* Vol. II — **§8.2 : zéro marqueur** ; la métrique du § 17.6.2 est attribuée à sa source ; **R-1 à R-8 : zéro marqueur**. ⚠ **Un faux ami est déclaré** : le « point de contrôle » du glossaire du Vol. II traduit une notion de reprise sur incident et **n'est pas** le « point de contrôle obligatoire » de son ch. 19 ; la collision est **signalée et non résolue** (§ 17.4) |
+| **Volumétrie cible** | ≈ **5 700 mots** de corps (§ 17.0 à § 17.6), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — six sections dont une à trois sous-sections. ☑ **Décompte publiable depuis G-2** ; **réel : 6 970 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+22,3 %** (re-mesuré au commit du 28 juillet 2026, au terme de la passe de correction de l'audit). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 17)* — la délégation est le maillon faible — les mécanismes instruits par le Vol. III **documentent** qu'un agent *a* une identité, **aucun d'eux ne documente** *au nom de qui* il agit à l'instant t ; au-delà de deux sauts, **aucun des mécanismes instruits ne documente** une traçabilité opposable de bout en bout.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 17)* — la délégation est le maillon faible — les mécanismes instruits par le Vol. III **documentent** qu'un agent *a* une identité, **aucun d'eux ne documente** *au nom de qui* il agit à l'instant t ; au-delà de deux sauts, **aucun des mécanismes instruits ne documente** une traçabilité opposable de bout en bout.
 >
 > ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-28** ouverte par cette pièce. **Trois** termes de la forme antérieure tombent ensemble : le verbe « **prouvent** », que **R-02 du Vol. III proscrit** pour un mécanisme cryptographique ; « **presque aucun** », quantificateur sur un corpus non balayé ; et « **aucun mécanisme documenté** », quantificateur universel négatif. **Le corps du chapitre n'a pas changé** : il était écrit aux formes bornées. ⚠ **Le renvoi de tête du TOC vise un document retiré du dépôt** — la *Synthèse* du Vol. I — et son régime est suspendu à la décision d'auteur **D-5**.
 
@@ -33,18 +33,20 @@ s'applique par mécanisme et ne rend que trois verdicts. **Ce chapitre n'en rend
 verdict à l'application-témoin, et encore partiel ; une question à laquelle deux mécanismes sur trois
 ne permettent même pas de répondre n'appelle pas un verdict de plus, elle appelle un chapitre.*
 
-Lecture de l'auteur — **la thèse citée en tête est une construction du plan, et deux de ses termes
-excèdent ce que le socle établit.** **Ce que le socle établit** : la spécification d'un format de
-mandat versionné et de ses attributs temporels (Vol. III F-46, **[B]**) ; la définition d'un attribut
-de délégation dans un jeton et l'exclusion explicite de la sécurité de ce jeton hors du périmètre du
-même document (F-47, **[A]**) ; le statut pré-normatif d'un mécanisme de propagation de contexte
-(F-29, **[A]**). **Ce qu'il n'établit ni ne permet d'écrire** : *(a)* un **classement** des mécanismes
-de 2026 — « presque aucun » suppose un balayage qu'aucun rapport de lot ne revendique ; *(b)* qu'un
-mécanisme cryptographique « **prouve** » quoi que ce soit, verbe que R-02 proscrit ; *(c)* le
-quantificateur universel négatif de la seconde moitié — « aucun mécanisme documenté » —, forme que le
-régime des trois degrés d'absence refuse. ⚠ **Le corps de ce chapitre n'emploie aucun des trois**, et
-**le Vol. III a lui-même borné les deux thèses correspondantes le 21 juillet 2026** ; l'écart est
-remonté (**R-IV-28**), non arbitré ici.
+Lecture de l'auteur — **la thèse du chapitre est une construction du plan, et sa forme antérieure
+portait trois termes qui excédaient ce que le socle établit.** **Ce que le socle établit** : la
+spécification d'un format de mandat versionné et de ses attributs temporels (Vol. III F-46, **[B]**) ;
+la définition d'un attribut de délégation dans un jeton et l'exclusion explicite de la sécurité de ce
+jeton hors du périmètre du même document (F-47, **[A]**) ; le statut pré-normatif d'un mécanisme de
+propagation de contexte (F-29, **[A]**). **Ce qu'il n'établissait ni ne permettait d'écrire** :
+*(a)* un **classement** des mécanismes de 2026 — « presque aucun » supposait un balayage qu'aucun
+rapport de lot ne revendique ; *(b)* qu'un mécanisme cryptographique « **prouve** » quoi que ce soit,
+verbe que R-02 proscrit ; *(c)* le quantificateur universel négatif de la seconde moitié — « aucun
+mécanisme documenté » —, forme que le régime des trois degrés d'absence refuse. ⚠ **Le corps de ce
+chapitre n'a employé aucun des trois**, et **le Vol. III avait lui-même borné les deux thèses
+correspondantes le 21 juillet 2026** sans que le plan suive. **L'écart a été soldé par la remontée
+R-IV-28**, qui a réaligné la thèse au **TOC v0.25** : *les trois termes sont tombés ensemble, et la
+forme citée en tête est désormais celle que le corps écrivait déjà.*
 
 **Le chapitre se lit en six temps.** Ce que trois mécanismes portent du mandat (§ 17.1) ; le rang que
 chacun accorde à la **chaîne** (§ 17.2) ; ce qu'un régime civil du mandat éclaire, et où l'analogie
@@ -605,7 +607,7 @@ rédaction du PRD §6. ⚠ **Et une consigne explicite du plan est enfreinte** :
 1. **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ **Et le § 17.5 est un cas à part dans tout le
    Livre** : il ne mobilise **aucune entrée**, à aucun niveau. *Il ne s'agit pas d'un énoncé faible,
    mais d'une section qui n'en porte aucun.*
-2. **Les décomptes sont publiables** (G-2). Écart de **+18,3 %** ; la volumétrie du Livre alimente
+2. **Les décomptes sont publiables** (G-2). Écart de **+22,3 %** ; la volumétrie du Livre alimente
    **D-4** par **R-IV-17**.
 3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan** : **ch. 25**, **ch. 27**,
    **ch. 37 § 37.3**, **ch. 38** et **ch. 49**. ⚠ Deux d'entre eux sont **structurants** — le ch. 27
@@ -655,8 +657,10 @@ avec ses trois sous-sections, dans l'ordre exact —, et le § 17.0 est une intr
 verdict de grille n'est rendu**, conformément à la règle d'emploi 5 : le chapitre **instruit Q-C**. La
 **divergence de gouvernance de la spécification de paiement n'est pas rouverte** : elle reste tranchée
 au **ch. 10**. Le **socle IAM reste au ch. 3** ; l'**inventaire de la révocation au ch. 20 § 20.4** ;
-la **taxonomie des attaques au ch. 19** ; le **versant québécois du mandat au ch. 27**. Les **quinze
-occurrences de R-14** portent leur degré, dont **douze au degré 3**. Les **sept occurrences de R-02**
+la **taxonomie des attaques au ch. 19** ; le **versant québécois du mandat au ch. 27**. Les absences
+**portent leur degré**, dont douze au **degré 3**, sur tout le domaine balayé — *application de R-14
+déclarée, non dénombrée, faute de marqueur littéral.* Les **trois marqueurs de R-02** — § 17.0,
+§ 17.1 et § 17.6.2 —
 énoncent ce que le mécanisme démontre **et** ne démontre pas. Le **traitement défensif du § 17.6.1**
 est tenu **au niveau du maillon**, identifiants cités, **aucune recette reproduite**. La **collision
 terminologique du Vol. II est signalée et non résolue**. Et les **dix occurrences de « Lecture de

@@ -10,13 +10,15 @@ constaté cinq vides, celui-ci construit ce qui les comble — et doit dire d'ab
 | **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6. ⚠ **R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre.** ⚠ **Ce chapitre porte DEUX sièges pour toute la somme** — les **cinq points de contrôle obligatoires** (§ 43.3) et le **modèle de maturité avec la désambiguïsation des trois échelles d'autonomie** (§ 43.5) — et **une collision de vocabulaire** que la décision 12c du TOC lui assigne (§ 43.1) |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **16 juillet 2026** (Vol. II), **21 juillet 2026** (Vol. III), **juin 2026** (Vol. I). *Aucun n'est celui de la somme.* |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Vol. II — **F-36**, **F-37**, **F-46** (assignés par le plan) ; **F-07**, **F-08**, **F-15**, **F-16**, **F-32**, **F-33** ; **F-01**, **F-02**, **F-04** (couche protocolaire) ; **F-09**, **F-25**, **F-26**, **F-27** (couche de gouvernance) ; **F-35** avec **F-11** et **F-34** ; **F-17**, **F-21**, **F-28** ; **F-10** en renvoi. Vol. III — **F-01**, **F-04**, **F-08**, **F-09**, **F-11**, **F-46**, **F-47**, **F-52**, **F-71** ; **H-01** à **H-03**, **H-11**, **H-12**, **H-15**, **H-17**, **H-24**, **H-25**, **H-27**, **H-31**. Vol. I *Monographie* §2.13.1, §4.12, §5.12.1-5.12.3 et §6.10, **en [C]**. ⚠ **Les deux séries F-xx sont préfixées de leur volume à chaque emploi** (décision 7 du TOC) — *ce chapitre est, avec le ch. 42, celui où la collision est la plus dense.* ⚠ **Entrées [C] non élevables** : **H-31** (échelle d'autonomie) et les quatre sections du Vol. I sont des **constructions d'auteur de leur volume**, non des reprises de sources primaires tierces — *l'élévation en [B] par lecture de la source est sans objet, et elles n'entrent jamais comme faits.* **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | **Les deux séries, intégralement, y compris les zéros.** Vol. II — **réserve F-09 (« attendu par E-23 », jamais « exigé ») : sept occurrences**, § 43.1 (trois), § 43.3 (deux), § 43.5 (deux) ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : deux occurrences**, § 43.1 ; **R-2 (jamais « registre centralisé » pour un annuaire nommé) : deux occurrences**, § 43.1 ; **R-3 (une spécification *s'appuie sur* un mécanisme, ne l'impose pas) : une occurrence**, § 43.1 ; **R-8 (sigle jamais nu, quatre branches) : cinq occurrences**, § 43.4, **toutes renvoyées au siège du ch. 7 § 7.5** ; **métriques auto-déclarées : six occurrences**, § 43.2 (trois) et § 43.5 (trois) ; **réserve F-25 : deux occurrences**, § 43.1 et § 43.2 ; **R-5 : une occurrence**, § 43.6 ; **R-4, R-6, R-7 : zéro occurrence** — *R-7 ressort en contexte réglementaire pur, aucune correspondance produit ↔ réglementation, filtré.* Vol. III — **R-13 (échelle d'autonomie jamais nue) : neuf occurrences**, § 43.5, ⚠ **dont le SIÈGE de la désambiguïsation des trois échelles homonymes** ; **R-14 : onze occurrences**, § 43.1 (trois), § 43.2 (deux), § 43.3, § 43.4 (deux), § 43.5 (trois) ; **R-09 : quatre occurrences**, § 43.1 (deux), § 43.6 (deux) ; **R-02 : deux occurrences**, § 43.1 et § 43.4 ; **R-01 : deux occurrences**, § 43.3 et § 43.4. **R-03 à R-08, R-10 à R-12 : zéro occurrence** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** Vol. II — **réserve F-09 (« attendu par E-23 », jamais « exigé ») : deux occurrences**, § 43.1 et § 43.3 — ⚠ *la formule imposée est employée au-delà, aux § 43.1, § 43.3 et § 43.5 : **domaine déclaré, sans cardinal*** ; **réserve F-37 (préimpression non révisée) : deux occurrences**, § 43.3 ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : une occurrence**, § 43.1 ; **réserve F-25 : une occurrence**, § 43.1 ; **R-2 (jamais « registre centralisé » pour un annuaire nommé) : une occurrence**, § 43.1 ; **R-3 (une spécification *s'appuie sur* un mécanisme, ne l'impose pas) : une occurrence**, § 43.1 ; **R-5 : une occurrence**, § 43.6 ; **R-8 (sigle jamais nu, quatre branches) : une occurrence**, § 43.4, **renvoyée au siège du ch. 7 § 7.5** ; **métriques auto-déclarées (marqueur « auto-déclaré ») : six occurrences**, § 43.1, § 43.2 (deux) et § 43.5 (trois) ; **R-1, R-4, R-6, R-7 : zéro occurrence** — *R-7 ressort en contexte réglementaire pur, aucune correspondance produit ↔ réglementation, filtré.* Vol. III — **R-09 : deux occurrences**, § 43.1 et § 43.6 ; **R-01 : une occurrence**, § 43.3 ; **R-06 : une occurrence**, § 43.4 ; **R-13 (échelle d'autonomie jamais nue) : une occurrence**, § 43.5, ⚠ **dont le SIÈGE de la désambiguïsation des trois échelles homonymes** — *le garde-fou y est appliqué à chaque rangée de la table du siège sans que l'identifiant soit répété* ; **R-02 et R-14 : zéro occurrence de l'identifiant** — ⚠ *les deux garde-fous sont pourtant tenus, les degrés d'absence étant portés en toutes lettres aux § 43.1 à § 43.6 : **domaine déclaré, corps entier, sans cardinal** (décision 16, alinéa c)*. **R-03 à R-05, R-07, R-08, R-10 à R-12 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **6 500 mots** de corps (§ 43.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des six sections et du volume de source consommé — *trois volumes y convergent, ce qui est le maximum du Livre.* ☑ **Décompte publiable depuis G-2** ; **réel reporté au [`README.md`](README.md)**. ⚠ **D-4 s'applique** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 43)* — les Livres I-IV se composent en une architecture cible neutre à couches (protocoles, identité/registre, orchestration, maillage, exploitation, gouvernance), structurée par OO1-OO4, avec OO3/OO4 et la fabrique d'identité imposés sous exigence réglementaire stricte.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 43 — **thèse réalignée en v0.28**, décisions 8 et 14, remontée R-IV-57)* — les Livres I-IV se composent en une architecture cible neutre à couches (protocoles, identité/registre, orchestration, maillage, exploitation, gouvernance) — ⚠ **fusion déclarée des quatre couches du Vol. II et des trois étages du Vol. III** —, structurée par OO1-OO4, avec **OO3/OO4** imposés sous exigence réglementaire stricte. ⚠ **L'extension de cette formule d'obligation à la fabrique d'identité est une CONSTRUCTION D'AUTEUR, déclarée telle** : *aucune des deux sources ne la porte, le Vol. III posant ses trois étages au titre de son cadrage et déclarant qu'aucune entrée ne les fonde.*
 
-⚠ **La thèse citée porte un membre qu'aucune de ses deux sources ne porte, et il touche une
-formulation imposée — décision 14 du TOC, appliquée avant la rédaction.** La thèse du Vol. II écrit :
+⚠ **La thèse portait, à la rédaction, un membre qu'aucune de ses deux sources ne porte, et il touchait
+une formulation imposée — le réalignement est FAIT, et l'histoire de l'écart se conserve** (décision 17
+du TOC, alinéa c). **Forme antérieure, v0.25** : « … structurée par OO1-OO4, avec OO3/OO4 **et la
+fabrique d'identité** imposés sous exigence réglementaire stricte ». La thèse du Vol. II écrit :
 « architecture cible neutre structurée par OO1-OO4, avec **OO3/OO4** imposés sous exigence
 réglementaire stricte ». ⚠ **Le plan y ajoute « et la fabrique d'identité »**, et *ni le Vol. II ni le
 Vol. III ne portent cet énoncé* : le Vol. III pose les trois étages **au titre de son cadrage, non de
@@ -25,8 +27,10 @@ l'addition est plus lourde qu'un simple ajout** : « imposé sous exigence régl
 une **formule d'obligation**, or *le principe dont elle vient est lui-même une **Lecture de l'auteur**
 du Vol. II, construite par transposition de trois sources dont le socle n'établit l'application ni au
 Canada ni à la finance canadienne.* **Étendre une formule d'obligation à un objet qu'elle ne visait
-pas est le geste que R-06 du Vol. III interdit sur E-23**, et la somme s'y tient. **La pièce cite la
-thèse verbatim et écrit son corps sous la forme bornée** ; écart **remonté** (R-IV-57, § 43.7).
+pas est le geste que R-06 du Vol. III interdit sur E-23**, et la somme s'y tient. **Le corps a été
+écrit sous la forme bornée** et l'écart avait été **remonté** (R-IV-57, § 43.7). ☑ **La remontée est soldée par l'arbitrage v0.28 du TOC** (décisions 8 et 14), et **la citation
+ci-dessus porte la forme réalignée**, reportée **par copie** depuis l'entrée courante du plan.
+*La v0.29 du TOC ne modifie aucune thèse du Livre.*
 
 ⚠ **Un second point n'est pas un désalignement mais une fusion déclarée** : le plan porte **six
 couches** là où le Vol. II en pose **quatre** ; les deux qui s'ajoutent — **maillage** et
@@ -503,15 +507,30 @@ rédaction du PRD §6**. Instruction d'auteur du **27 juillet 2026**.
    proportion d'inférences marquées est la plus haute** : *une architecture de référence range, nomme
    et relie — les liens sont d'un auteur, et le socle ne porte que les objets rangés.*
 2. **Les décomptes sont publiables** (G-2) ; le réel est reporté au [`README.md`](README.md).
-3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan.** Ne sont pas rédigés :
-   **ch. 23**, **ch. 29**, **ch. 32**, **ch. 34**, **ch. 44**, **ch. 45**, **ch. 48**, **ch. 49**, et
-   l'**Annexe H**. Les renvois vers les **ch. 4, 6, 7, 8, 14, 16, 19** résolvent contre du texte ; ceux
-   vers les **ch. 37, 38, 39, 40, 41, 42, 46** résolvent contre du texte au terme de la présente passe.
-4. **Deux sièges neufs sont posés par cette pièce** — les cinq points de contrôle obligatoires
-   (§ 43.3) et le modèle de maturité avec les trois échelles (§ 43.5). ☐ **Leur versement à
-   [`PRD/check-sieges.py`](../PRD/check-sieges.py) est dû au terme de la passe**, avec le rejeu du
-   harnais de mutation : *un siège s'ajoute à la table, la pièce porteuse écrit son marqueur, et le
-   harnais se rejoue — les trois gestes, jamais deux sur trois.*
+3. **Les renvois « ch. N » : état FINAL de la passe, et non ordre d'écriture.** ⚠ *La forme
+   antérieure de ce point photographiait l'instant où cette pièce a été écrite et déclarait « ne
+   sont pas rédigés : ch. 44 et ch. 45 » — alors que **la même passe les a écrits ensuite** ; elle
+   est corrigée ici sur l'état que le commit produit.* **Les dix chapitres du Livre IV (ch. 37 à
+   46) sont rédigés**, comme le sont les **cinquante chapitres des cinq Livres** : *tous les
+   renvois « ch. N » de cette pièce résolvent donc contre du texte.* ⚠ **Les renvois vers les
+   ANNEXES restent des renvois de plan** — *aucune annexe du compendium n'est rédigée*, l'annexe H
+   comprise. ⚠ **Ce qui reste vrai de la forme antérieure, et qui est daté** : à l'heure où ce
+   chapitre a été écrit, n'étaient rédigés ni les ch. 23, 29, 32 et 34 du Livre III, ni les ch. 48
+   et 49 du Livre V, non plus que les ch. 44 et ch. 45 — *les renvois qui les visent ont été posés
+   comme renvois de plan et n'ont pas été re-vérifiés contre le texte paru après eux.* ⚠ **Et «
+   résoudre contre du texte » ne vaut pas recevabilité** : *le texte visé est lui-même un
+   brouillon hors portes.*
+4. **TROIS sièges sont posés par cette pièce**, et non deux : les cinq points de contrôle obligatoires
+   (§ 43.3), le modèle de maturité avec les trois échelles (§ 43.5), ⚠ **et la collision « fabrique »
+   (§ 43.1, décision 12c du TOC)** — *ce dernier porte la forme pleine du marqueur et n'avait pourtant
+   pas été compté.* ☑ **Le versement des deux premiers à
+   [`PRD/check-sieges.py`](../PRD/check-sieges.py) est FAIT** — constaté sur pièce le 28 juillet 2026,
+   la table en portant douze — ; ☐ **celui du troisième est DÛ, et la passe de gouvernance du
+   28 juillet 2026 le verse au même commit** : *un siège s'ajoute à la table, la pièce porteuse écrit
+   son marqueur, et le harnais se rejoue — les trois gestes, jamais deux sur trois.* ⚠ **Cette pièce
+   n'atteste que ce qu'elle a constaté** : *le marqueur du § 43.1 est écrit et l'entrée de table est
+   hors de son mandat ; un marqueur de siège qu'aucune table ne contrôle laisserait passer une
+   reconstruction ailleurs dans la somme.*
 5. **CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur.
 
 **Remontées ouvertes par ce chapitre :**
@@ -527,6 +546,11 @@ rédaction du PRD §6**. Instruction d'auteur du **27 juillet 2026**.
   à la finance canadienne.* **Demande remontée** : réalignement au titre des **décisions 8 et 14**,
   et — *si l'extension à la fabrique d'identité est voulue* — **qu'elle soit déclarée construction
   d'auteur à la ligne Fusion**, comme le TOC le fait pour le ch. 41.
+  ☑ **Issue, 27 juillet 2026** — **TOC, décisions 8 et 14** — « **et la fabrique d'identité**
+  imposée sous exigence réglementaire stricte » : ⚠ **l'extension est déclarée construction
+  d'auteur à la ligne Fusion**, *aucune des deux sources ne la portant, et « imposé » étant une
+  formule d'obligation que R-06 borne.* **La citation en tête de cette pièce porte la forme
+  réalignée** (décision 17 du TOC).
 - **R-IV-58 — non bloquante, de divergence entre volumes, et elle n'est PAS une contradiction.** Le
   **Vol. I** qualifie le point d'application unique et obligatoire en finance régulée d'enchaînement
   **« réglementairement exigé »** (§ 43.4). Le **socle du Vol. II** établit qu'E-23 est **fondée sur
@@ -538,6 +562,10 @@ rédaction du PRD §6**. Instruction d'auteur du **27 juillet 2026**.
   **Demande remontée** : que **la collation de fond (G-4) inscrive ce couple à son domaine** et
   détermine si le Vol. I vise un corpus que le Vol. II ne balaie pas. ⚠ *C'est une lacune de
   couverture apparente, non une contradiction ; et le volume le plus ancien ne se corrige pas.*
+  ☑ **Issue, 27 juillet 2026** — **PRD, domaine de G-4** — le couple « le Vol. I écrit
+  *réglementairement exigé* / le Vol. II établit une **attente** » entre au domaine ; ⚠ **ce
+  n'est pas une contradiction** : *lacune de couverture apparente, et le volume le plus ancien
+  ne se corrige pas.*
 - **R-IV-59 — non bloquante, de dette d'appareil, ET ELLE EST DUE PAR CETTE PASSE.** Ce chapitre pose
   **deux sièges neufs** — les cinq points de contrôle obligatoires et le modèle de maturité avec la
   désambiguïsation des trois échelles. ⚠ **Cinq chapitres déjà rédigés y renvoient** (ch. 37, 38, 39,
@@ -546,8 +574,16 @@ rédaction du PRD §6**. Instruction d'auteur du **27 juillet 2026**.
   harnais de mutation**, avant tout commit de clôture du Livre. ⚠ *La table est passée de trois à sept
   sièges avec le Livre II, et le versement y avait trouvé un défaut réel au premier passage — dont un
   siège qui ne résolvait pas contre lui-même.*
+  ☑ **Issue, 27 juillet 2026** — **appareil** — les **trois sièges du Livre** versés à la table
+  des sièges du contrôle inter-pièces, **harnais de mutation rejoué** ; ⚠ **deux défauts réels
+  trouvés au premier passage**, dont *un chapitre qui touchait la matière d'un siège sans y
+  renvoyer*. ⚠ **Ce que cette clôture avait manqué** : *deux marqueurs de siège du Livre — la
+  collision « fabrique » (ch. 43 § 43.1) et la conformité traçable (ch. 44 § 44.6) — **n'avaient
+  été ni comptés ni versés***. ☐ **Leur versement est dû, et la passe de gouvernance du
+  28 juillet 2026 le porte au même commit** — *constaté sur pièce ce jour-là : la table porte
+  douze entrées, et ces deux-là n'y sont pas.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 43.1 à
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.28** — § 43.1 à
 § 43.6, dans l'ordre exact —, et le § 43.0 est une introduction de chapitre. La **table de couverture
 est respectée pour ses six lignes**, y compris ses trois régimes propres : Vol. II §19.1-19.4 en
 **condensé** ; Vol. III *Monographie* §27.1 et §27.4 en **condensé**, ⚠ *son §27.2 partant au ch. 44 et
@@ -555,11 +591,13 @@ ses §27.3/§27.5 au ch. 45, **qui ne sont pas repris ici*** ; Vol. I §5.12.1-5
 **arrivées** depuis les ch. 34 et 24, §2.13.1 en **arrivée** depuis le ch. 6, et **§6.10 prélevé au
 ch. 44**, qui traite par ailleurs son chapitre d'origine en bloc. La **neutralité fournisseur est
 tenue** : *aucun composant n'est prescrit, les réalisations sont nommées comme cas documentés, et
-leurs statuts sont dits à chaque mention.* Les **neuf occurrences de R-13** portent **le cardinal et la
-numérotation de leur échelle**, et **« copilote » n'est jamais employé nu**. Les **sept occurrences de
-la forme « attendu par E-23 »** sont tenues, et ⚠ **l'unique endroit où une source écrit « exigé » est
-signalé, borné et remonté** plutôt que repris. Les **onze occurrences de degré 3** portent leur degré.
-Les **six métriques auto-déclarées** sont attribuées à l'institution ou à l'analyste **nommé** qui les
-publie. **Les cinq points de contrôle obligatoires ne sont pas déduits d'une source, et la pièce
+leurs statuts sont dits à chaque mention.* ⚠ **Cardinaux re-mesurés au commit du 28 juillet 2026, sur le marqueur littéral et sur le corps seul** (décision 16 du TOC) ; *les cardinaux antérieurs comptaient les applications du garde-fou et n'étaient re-mesurables par aucune règle écrite.* **R-13 est tenu à chaque emploi d'une échelle d'autonomie — domaine déclaré, sans
+cardinal** (alinéa c), le marqueur littéral y comptant **une occurrence**, au § 43.5, siège de la
+désambiguïsation ; **le cardinal et la numérotation de leur échelle** y sont portés, et **« copilote »
+n'est jamais employé nu**. La **forme « attendu par E-23 » est tenue à chaque énoncé sur E-23 —
+domaine déclaré**, le marqueur littéral « F-09 » y comptant **deux occurrences**, et ⚠ **l'unique
+endroit où une source écrit « exigé » est signalé, borné et remonté** plutôt que repris. Le marqueur
+littéral **« degré 3 » compte quatre occurrences**, chacune portant son degré. Les **six métriques
+auto-déclarées** sont attribuées à l'institution ou à l'analyste **nommé** qui les publie. **Les cinq points de contrôle obligatoires ne sont pas déduits d'une source, et la pièce
 l'écrit** : *ce sont les cinq zones du ch. 42 assignées à leur couche, dont quatre seulement
 deviennent des points de contrôle.*

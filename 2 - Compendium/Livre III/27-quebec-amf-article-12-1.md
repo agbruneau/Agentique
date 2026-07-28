@@ -10,10 +10,10 @@ directrice de l'AMF, et la question Q4 de la série d'agenda du Vol. II.*
 | **Statut** | **Brouillon de rédaction, non publiable** — ⚠ **et il porte, avec le ch. 25, l'écart de gouvernance le plus lourd du Livre.** **G-3** ouverte ; **G-4** ouverte et **opposable à ce chapitre**, dont trois sections sur huit proviennent du Vol. III ; **volet résiduel de G-1** non instruit. ⚠ **Il est bloqué nommément par la décision d'auteur D-9** — « les ch. 25 et 27 ne se lancent pas avant clôture du lot [du § 17.5] », lot **ouvert et non clos**. Rédigé sur instruction d'auteur du 27 juillet 2026 ; **l'infraction est consignée, non effacée** (§ 27.9) |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit — et il pèse ici sur une date que trois documents du dépôt donnent différemment** (voir § 27.1). Gels de source consommés : **16-17 juillet 2026** (Vol. II ch. 11), **21 juillet 2026** (Vol. III ch. 19-20) et **juin 2026** (Vol. I, en renvoi seulement) — ⚠ **aucun ne tient lieu du gel de la somme** |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. II *Monographie* ch. 11** — **F-25** en **[A]** avec sa **dette de vérification déclarée**, **F-27** en **[B]** (texte officiel consulté), la **nuance de cabinet en [C]**, et l'entrée héritée **H-06** dont ⚠ **le décompte des obligations a été corrigé par le Vol. III** — et contre le **Vol. III *Monographie* ch. 19-20** : **F-89** en **[B]** (extraction du texte officiel, 21 juillet 2026), **F-67** et **F-68** en **[B]**, **H-07** en **[B]**, **H-11** en **[B]**. ⚠ **Deux séries F-xx coexistent et se préfixent à chaque emploi** (décision 7). **Aucun énoncé n'est central au sens de CA-IV-01** ; ⚠ **et la nuance de cabinet, en [C], ne porte aucun énoncé de ce chapitre** |
-| **Garde-fous balayés** | Vol. II — **garde-fou renforcé « aucun avis juridique » (PRD Vol. II §3) : sept occurrences**, § 27.0, § 27.3 (deux), § 27.4, § 27.6, § 27.7 et § 27.8 ; **réserve F-25 — ne jamais écrire « en attente » ni « en projet » : trois occurrences**, § 27.1 ; **PRDPlan Vol. II §4.4 — l'art. 12.1 outille un point d'arrêt humain, jamais « la révision de l'article 12.1 » : quatre occurrences**, § 27.3 (deux) et § 27.8 (deux) ; **R-5 : deux occurrences**, § 27.1 ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : quatorze occurrences**, § 27.1 (deux), § 27.4 (quatre), § 27.5 (cinq), § 27.6 (deux) et § 27.7 ; **R-06 (modalité) : trois occurrences**, § 27.1 et § 27.5 ; **R-09 : une occurrence**, § 27.5 ; **R-11 : une occurrence**, § 27.5 ; **R-04 (homonymie) : trois occurrences**, § 27.6 — ⚠ **et R-04 n'est PAS étendu au mot « mandat »** : ses branches sont closes chez sa source, qui a remonté la question plutôt que d'en ouvrir une septième ; **R-01 : une occurrence**, § 27.5 ; **R-02, R-03, R-05, R-07, R-08, R-10, R-12, R-13 : zéro occurrence** |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **garde-fou renforcé « aucun avis juridique » (PRD Vol. II §3) : quatre occurrences de la formule**, § 27.0, § 27.3, § 27.8 et la synthèse ; *le renvoi « PRD Vol. II §3 » est écrit une fois, § 27.0* ; **réserve F-25 — ne jamais écrire « en attente » ni « en projet » : une occurrence, § 27.1, et c'est la formule qui l'interdit** — ⚠ *« en projet » n'apparaît nulle part, et **c'est le résultat attendu** : une réserve tenue se mesure à l'absence de ce qu'elle proscrit* ; **PRDPlan Vol. II §4.4 — l'art. 12.1 outille un point d'arrêt humain, jamais « la révision de l'article 12.1 » : deux occurrences du renvoi**, § 27.3 et § 27.8 ; **R-5 : une occurrence du sigle**, § 27.1 ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : zéro occurrence du sigle** ; ⚠ *le garde-fou est **appliqué aux § 27.0, § 27.1, § 27.3, § 27.4, § 27.5, § 27.6, § 27.7 et à la synthèse**, où les degrés se marquent en toutes lettres — « degré 3 » **seize fois**, « degré 1 » et « fait négatif vérifié » une fois chacun ; **le décompte du sigle n'est donc pas annoncé*** ; **R-06 (modalité) : une occurrence du sigle**, § 27.5 ; **R-09 : deux occurrences du sigle**, § 27.5 et § 27.6 ; **R-11 : une occurrence du sigle**, § 27.5 ; **R-04 (homonymie) : deux occurrences du sigle**, § 27.6 — ⚠ **et R-04 n'est PAS étendu au mot « mandat »** : ses branches sont closes chez sa source, qui a remonté la question plutôt que d'en ouvrir une septième ; **R-01 : une occurrence du sigle**, § 27.5 ; **R-02, R-03, R-05, R-07, R-08, R-10, R-12, R-13 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **7 500 mots** de corps (§ 27.0 à § 27.8), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant huit, dont **trois reçues d'une seconde source**. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh). ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 27 — prolonge Q4 de la série d'agenda du Vol. II, *Monographie* ch. 21 §21.2, **sans la trancher**)* — le Québec dispose du cadre le plus explicite ; l'art. 12.1 (révision humaine sur demande) entre en friction directe avec la décision agentique autonome, et son imputabilité pèse sur l'assujetti.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 27 — prolonge Q4 de la série d'agenda du Vol. II, *Monographie* ch. 21 §21.2, **sans la trancher** ; restriction rétablie en v0.27, décisions 8 et 14, sur la remontée R-IV-87)* — le Québec dispose du cadre le plus explicite ; l'art. 12.1 (révision humaine sur demande) entre en friction directe avec la décision agentique autonome, et — **sous l'article 12.1 du moins** — son imputabilité pèse sur l'assujetti, **qui ne peut désigner de tiers**.
 
 ---
 
@@ -22,11 +22,13 @@ directrice de l'AMF, et la question Q4 de la série d'agenda du Vol. II.*
 tracer.** Les deux premiers membres reprennent la thèse du Vol. II ch. 11 à sa forme du 16-17 juillet
 2026. Le troisième — « son imputabilité pèse sur l'assujetti » — **ne vient pas du ch. 11 du Vol. II
 mais de la thèse de son ch. 13**, où il est écrit « **sous l'article 12.1 du moins**, elle pèse sur
-l'assujetti, qui ne peut désigner de tiers ». ⚠ **La restriction « sous l'article 12.1 du moins » est
+l'assujetti, qui ne peut désigner de tiers ». ⚠ **La restriction « sous l'article 12.1 du moins » était
 tombée dans la reprise**, et elle est portante : *la source déclare expressément qu'elle ne peut rien
 dire du même point sous E-23 ni sous l'avis des ACVM, et qu'elle s'y refuse l'argument du silence.*
-**Le corps du chapitre écrit la forme restreinte** ; l'écart est remonté (§ 27.9, remontée
-**R-IV-87**).
+**Le corps du chapitre écrivait déjà la forme restreinte** ; l'écart a été remonté (§ 27.9, remontée
+**R-IV-87**) et **arbitré ailleurs** — le TOC v0.27 a rétabli la restriction ainsi que la clause
+« qui ne peut désigner de tiers », et **le bloc de tête ci-dessus cite désormais cette forme, depuis la
+v0.28** (passe de correction du 28 juillet 2026). *Le corps du chapitre n'a pas bougé.*
 
 ## § 27.0 — Ouverture : le régime qui se déclenche sur une propriété d'architecture
 
@@ -129,7 +131,7 @@ ouverte ; aucune inférence n'est proposée ici.**
 ⚠ **L'empilement des deux lignes directrices de la même autorité n'est pas un détail de forme** : *une
 institution assujettie en lit deux, dont l'une n'est au socle d'aucun des trois volumes.*
 
-## § 27.2 — L'article 12.1 : trois obligations, un texte
+## § 27.2 — L'article 12.1 : une obligation inconditionnelle, trois informations dues sur demande, un alinéa distinct
 
 **L'autre instrument québécois n'appelle aucune réserve de ce genre : son texte officiel a été consulté
 directement — deux fois, à un an d'intervalle — et il est en vigueur.**
@@ -179,7 +181,7 @@ rouvrirait pas le texte.*
 | **Sur demande, 3°** | ⚠ **le droit de faire rectifier** les renseignements utilisés — *omis par l'entrée héritée du Vol. II* | idem |
 | **Alinéa distinct** | « l'occasion de présenter ses observations à **un membre du personnel de l'entreprise en mesure de réviser la décision** » | ⚠ **hors de l'énumération** — c'est le seul alinéa que le socle individualise |
 
-: Tableau 27.2 — L'articulation de l'article 12.1, telle que le relevé du 21 juillet 2026 l'établit sur le texte officiel. ⚠ **Le titre de section du plan — « trois obligations, un texte » — porte le décompte hérité** ; l'écart est remonté (§ 27.9, remontée **R-IV-89**).
+: Tableau 27.2 — L'articulation de l'article 12.1, telle que le relevé du 21 juillet 2026 l'établit sur le texte officiel. ⚠ **L'intitulé de la section portait le décompte hérité — « trois obligations, un texte »** ; l'écart a été remonté (§ 27.9, remontée **R-IV-89**), le TOC v0.27 a corrigé le titre du plan, et **l'intitulé ci-dessus reprend cette forme depuis la passe de correction du 28 juillet 2026**.
 
 **Chaque terme du dernier alinéa est agissant.** *Un membre du personnel* — donc une personne rattachée
 à l'entreprise ; *en mesure de réviser* — donc **doté du pouvoir de défaire ce que le système a fait**,
@@ -667,10 +669,15 @@ deux ne déborde sur l'autre.* ⚠ **Le ch. 20 du Vol. III est reçu en entier**
 du plan l'impose — *son « volet RGPD » n'existe plus, et la lacune correspondante est portée au § 27.7
 sans être comblée.* La **décision 14 a été exécutée avant la rédaction**, domaine déclaré : une thèse
 examinée, **un membre à restriction tracé et remonté**. Le **garde-fou renforcé « aucun avis juridique »
-est tenu à ses sept occurrences**, et **la formulation imposée sur le point d'arrêt humain à ses
-quatre**. La **réserve F-25 est tenue** : *ni « en attente », ni « en projet »*. Les **quatorze
-occurrences de R-14 portent leur degré**, dont **les cinq cases vides du tableau 27.3, déclarées
-degré 3 une par une**. ⚠ **La nuance de cabinet, en [C], ne porte aucun énoncé** : elle figure comme
+est tenu à ses quatre occurrences** — *§ 27.0, § 27.3, § 27.8 et la synthèse* —, et **la formulation
+imposée sur le point d'arrêt humain est tenue sur tout son domaine**, *son renvoi étant écrit aux § 27.3
+et § 27.8*. La **réserve F-25 est tenue** : *ni « en attente », ni « en projet », hors la formule du
+§ 27.1 qui les interdit*. Les **absences portent toutes leur degré** — *le sigle R-14 n'est pas écrit au
+corps ; les degrés le sont, « degré 3 » **seize fois**, ventilés à l'en-tête* —, dont **les cinq cases
+vides du tableau 27.3, déclarées degré 3 une par une**. ⚠ **Ces cardinaux ont été re-mesurés au commit
+du 28 juillet 2026** (décision 16 du TOC) ; *l'attestation antérieure annonçait sept occurrences du
+garde-fou renforcé, quatre de la formulation imposée et quatorze de R-14, aucun des trois n'étant
+re-mesurable contre le corps.* ⚠ **La nuance de cabinet, en [C], ne porte aucun énoncé** : elle figure comme
 lecture attribuée, au tableau 27.4, avec ce qui la trancherait. ⚠ **R-04 n'est pas étendu au mot
 « mandat »** : les trois registres sont nommés à chaque occurrence, **sans qu'une septième branche soit
 ouverte**. Enfin, **Q4 n'est pas tranchée** — *elle ressort du chapitre dans l'état où elle y est
@@ -705,8 +712,10 @@ découverte de la collision — **aucun numéro n'est partagé**.*
   l'arbitrage qui la tranchait portait sur un objet inexistant.* ☑ **La somme écrit « avril 2026 » et
   déclare les trois états** ; *l'entrée en vigueur au 1ᵉʳ mai 2027, seule concordante, porte tout ce que
   la somme en tire.*
-- **R-IV-89 — close par correction de l'intitulé (TOC v0.27).** Le § 27.2 s'intitule désormais
-  « **une obligation inconditionnelle, trois informations dues sur demande, un alinéa distinct** ».
+- **R-IV-89 — close par correction de l'intitulé (TOC v0.27), reportée à la pièce le 28 juillet 2026.**
+  Le § 27.2 s'intitule désormais « **une obligation inconditionnelle, trois informations dues sur
+  demande, un alinéa distinct** », **au plan comme ici** — le report à la pièce et la reformulation de
+  la légende du tableau 27.2 datent de la passe de correction du 28 juillet 2026.
   ⚠ *Le cardinal « trois obligations » était celui de l'entrée héritée du Vol. II, **que le Vol. III a
   corrigée** — et **il vivait dans un intitulé de section, où aucun contrôle ne le rapproche de sa
   source**.*

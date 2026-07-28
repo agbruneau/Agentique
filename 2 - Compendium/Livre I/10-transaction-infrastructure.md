@@ -8,10 +8,12 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11).*
 | **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Gels de source **inégaux et l'écart est ici décisif** : **juin 2026** (Vol. I) et **16 juillet 2026** (Vol. II). ⚠ Le **tableau daté du § 10.3.3** est un instantané qui **se périme en bloc** ; le **statut de gouvernance du § 10.1.3** est le point du Livre où les deux gels **ne disent pas la même chose** |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. I *Monographie* §3.9** (régime **[C]**, PRD §7.1) et contre le **Vol. II *Monographie* ch. 3**, dont les entrées **F-04**, **F-05** et **F-43** conservent leurs niveaux **[A]**, **[A]** et **[B]**, et la **réserve F-06** son régime de préimpression. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. II — **R-1 : deux occurrences**, § 10.5.1 et § 10.6.2, l'ACP protocolaire jamais présenté comme un standard vivant ; **R-8 : cinq occurrences**, § 10.3.2 (deux), § 10.5.1, § 10.5.3 et § 10.6.2, le sigle jamais nu, le siège de l'encadré restant au **ch. 7 § 7.5** ; **métriques auto-déclarées : quatre occurrences**, § 10.1.2 (deux), § 10.2.1 et § 10.2.2, toutes attribuées et toutes porteuses de la clause « soutien ≠ production » ; **réserve F-01 : deux occurrences**, § 10.3.3 et § 10.4.2 ; **réserve F-06 : une occurrence**, § 10.6. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 : trois occurrences**, § 10.1.4, § 10.3.4 et § 10.4.3 ; **R-13 : cinq occurrences**, mêmes que R-8 ; **R-14 : six occurrences** — § 10.1.3, § 10.1.4 (deux), § 10.2.2, § 10.3.4 et § 10.4.2 —, dont **la plus lourde du Livre**, celle du § 10.1.3, qui porte une **divergence entre deux volumes rédigés**. R-01, R-03 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 7 000 mots de corps (§ 10.1 à § 10.6) — **mesurés, non estimés**, la mesure valant ici plus que la cible : deux des six sections sont bornées par un **partage déclaré** (§ 10.5 avec le ch. 8, § 10.3.4 avec le ch. 18) et deux autres par une **lacune assumée** (§ 10.1.4). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 7 004 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **+0,1 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 611 mots, soit −0,6 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Garde-fous balayés** | ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **R-1 : deux occurrences**, § 10.5.1 et § 10.6.2, l'ACP protocolaire jamais présenté comme un standard vivant ; **R-8 : deux occurrences**, § 10.3.2 et § 10.6.2, le sigle jamais nu à ses emplois, le siège de l'encadré restant au **ch. 7 § 7.5** ; **métriques auto-déclarées (PRD Vol. II §8.2.1) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au § 10.1.2, au § 10.2.1 et au § 10.2.3**, chacune attribuée et porteuse de la clause « soutien ≠ production » — ⚠ *le § 10.2.2, que cet en-tête portait auparavant, n'en porte aucune : l'occurrence est au § 10.2.3* ; **réserve F-01 : deux occurrences**, § 10.3.3 et § 10.4.2 ; **réserve F-06 : une occurrence**, § 10.6. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 : quatre occurrences**, § 10.1.4, § 10.3.3, § 10.3.4 et § 10.4.3 ; **R-13 : deux occurrences**, mêmes que R-8 ; **R-14 : sept occurrences** — § 10.1.3, § 10.1.4 (deux), § 10.2.1, § 10.2.2, § 10.3.4 et § 10.4.2 —, **le plus grand nombre du Livre à égalité avec le ch. 11**, dont **la plus lourde**, celle du § 10.1.3, qui porte une **divergence entre deux volumes rédigés**. R-01, R-03 à R-12 : **zéro occurrence** |
+| **Volumétrie cible** | ≈ 7 000 mots de corps (§ 10.1 à § 10.6) — **mesurés, non estimés**, la mesure valant ici plus que la cible : deux des six sections sont bornées par un **partage déclaré** (§ 10.5 avec le ch. 8, § 10.3.4 avec le ch. 18) et deux autres par une **lacune assumée** (§ 10.1.4). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 7 036 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **+0,5 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 750 mots, soit −0,4 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 10 — **deux énoncés de statut inégal, à ne pas fondre**)* — que la transaction pilotée par agents (AP2) soit l'**aboutissement financier** de la pile est une **lecture d'auteur** ; qu'AGNTCY soit une couche d'infrastructure **et non un concurrent** est le **positionnement officiel déclaré du projet**, une déclaration et non un fait vérifié, que des analyses tierces nuancent.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 10 — **deux énoncés de statut inégal, à ne pas fondre**)* — que la transaction pilotée par agents (AP2) soit l'**aboutissement financier** de la pile est une **lecture d'auteur** — le socle établit qu'AP2 est un protocole compagnon d'A2A, rien de plus sur sa centralité ; qu'AGNTCY soit une couche d'infrastructure **et non un concurrent** est le **positionnement officiel déclaré du projet**, une déclaration et non un fait vérifié, que des analyses tierces nuancent.
+
+⚠ **La clause médiane de cette thèse — « le socle établit qu'AP2 est un protocole compagnon d'A2A, rien de plus sur sa centralité » — manquait au bloc cité jusqu'au 28 juillet 2026.** Elle était restituée **en substance** au paragraphe de décomposition ci-dessous, mais la citation déclarée verbatim était **amputée**, et la comparaison mot à mot avec le plan échouait. *Une citation verbatim ne se re-frappe pas : elle se copie.* La citation ci-dessus **a été reprise par copie littérale depuis le TOC v0.28** ; le plan, lui, n'a pas bougé sur cette entrée.
 
 ---
 
@@ -34,9 +36,9 @@ le **positionnement officiel déclaré du projet** — une déclaration, non un 
 analyses tierces viennent nuancer. *Une lecture d'auteur et une déclaration de partie intéressée ne
 sont pas du même ordre, et aucune des deux n'est un fait établi.*
 
-Ce chapitre porte en outre la **densité d'énoncés d'absence la plus forte du Livre** — six occurrences
-de l'échelle à trois degrés du Vol. III —, et l'une d'elles est d'un genre que les neuf chapitres
-précédents n'ont pas rencontré : **deux volumes rédigés du corpus n'y disent pas la même chose**.
+Ce chapitre porte en outre la **densité d'énoncés d'absence la plus forte du Livre, à égalité avec le
+ch. 11** — sept occurrences de l'échelle à trois degrés du Vol. III —, et l'une d'elles est d'un
+genre que les neuf chapitres précédents n'ont pas rencontré : **deux volumes rédigés du corpus n'y disent pas la même chose**.
 Le § 10.1.3 lui est consacré.
 
 ---
@@ -76,8 +78,8 @@ ralliées ».* La seconde formule est indue et ce chapitre ne l'emploie pas.
 ### 10.1.2 La métrique des soixante : un endossement, pas une production
 
 Sur l'adoption, les sources fournissent **un chiffre et une liste**. Selon le communiqué de la
-fondation faîtière du **9 avril 2026**, **plus de soixante organisations des paiements et des services
-financiers déclarent leur soutien** au protocole.
+**Linux Foundation**, fondation faîtière du protocole, daté du **9 avril 2026**, **plus de soixante
+organisations des paiements et des services financiers déclarent leur soutien** au protocole.
 
 ⚠ **Ce chiffre est auto-déclaré et il est attribué ici à sa source, comme il doit l'être à chaque
 occurrence** (PRD du Vol. II §8.2.1). **Le soutien déclaré ne vaut pas déploiement en production.**
@@ -214,7 +216,7 @@ réseau, avec un éditeur de cadriciel d'orchestration et un éditeur d'outillag
 division infonuagique d'un grand fournisseur de recherche et de services, un éditeur de bases de
 données et un éditeur de distribution ouverte.
 
-Le communiqué de la fondation faîtière du **29 juillet 2025** fait état de **plus de soixante-cinq
+Le communiqué de la **Linux Foundation** du **29 juillet 2025** fait état de **plus de soixante-cinq
 entreprises déclarant leur soutien au projet**. ⚠ **Chiffre auto-déclaré, attribué ici à ce communiqué
 et daté de juillet 2025 ; il ne vaut pas plus déploiement en production que celui du § 10.1.2**
 (PRD du Vol. II §8.2.1). ⚠ **Les sources n'enregistrent aucune actualisation ultérieure de ce
@@ -302,7 +304,7 @@ l'écran** :
 | **Agent exécutant** | la **délégation** et l'**opération** de la transaction | tout signal perceptuel prouvant qu'un humain agit |
 | **Commerçant** | la **livraison** du bien ou du service | la capacité d'observer un parcours humain |
 
-: Les trois rôles que le commerce agentique dissocie, et ce que la dissociation fait disparaître de chaque côté.
+: Tableau 10.1 — Les trois rôles que le commerce agentique dissocie, et ce que la dissociation fait disparaître de chaque côté.
 
 Cette dissociation fait **disparaître les signaux de confiance hérités du parcours humain** — le défi
 d'authentification forte à trois domaines, l'épreuve de reconnaissance, la frappe au clavier
@@ -387,7 +389,7 @@ réseaux de cartes ont **étendu leurs schémas existants plutôt que d'en crée
 | **Groupe de travail paiements** de la fondation d'authentification | **coprésidé par les deux réseaux de cartes** | **2026** | **bâtit sur le protocole de paiement du § 10.1** et sur un cadre d'**intention vérifiable** |
 | **Authentification de robot par le web** | un fournisseur d'infrastructure de périphérie, en cours de spécification à l'organisme de normalisation d'Internet | **en cours, 2026** | l'agent **signe ses requêtes** par les signatures de message HTTP et **publie sa clé publique** sous un chemin de découverte normalisé |
 
-: Rails de cartes et authentification d'agent — instantané daté, ni classement ni recommandation ; le tableau se périme en bloc.
+: Tableau 10.2 — Rails de cartes et authentification d'agent — instantané daté, ni classement ni recommandation ; le tableau se périme en bloc.
 
 **Deux lectures se dégagent, et il faut les tenir séparées.**
 
@@ -553,7 +555,7 @@ le protocole agent-agent est actée.
 | lancement (17 mars 2025) | fusion (29 août 2025) | **cinq mois et douze jours** |
 | billet doctrinal (28 mai 2025) | fusion (29 août 2025) | **trois mois et un jour** |
 
-: Les deux intervalles du dossier ACP protocolaire, calculés à partir des seules dates portées par les sources.
+: Tableau 10.3 — Les deux intervalles du dossier ACP protocolaire, calculés à partir des seules dates portées par les sources.
 
 ⚠ **Garde-fou R-1 du Vol. II — le risque terminologique le plus élevé du corpus source, et ce chapitre
 est l'un des deux où il est maximal.** **L'ACP protocolaire ne doit jamais être présenté comme un
@@ -590,7 +592,7 @@ tout dossier de risque de tiers** — où elle est rarement faite :
 | **Le protocole peut mourir** | la **pérennité de la spécification** | **rien** — le développement a cessé malgré la fondation |
 | **L'utilisateur peut être abandonné** | la **continuité d'exploitation** de qui l'avait adopté | **actifs versés, adaptateurs, guides de migration** |
 
-: Les deux risques que la fusion de l'ACP protocolaire permet de séparer — et que les dossiers de risque de tiers confondent d'ordinaire.
+: Tableau 10.4 — Les deux risques que la fusion de l'ACP protocolaire permet de séparer — et que les dossiers de risque de tiers confondent d'ordinaire.
 
 *Lecture d'auteur.* **Un architecte n'achète pas la survie d'un protocole ; il achète une sortie
 ordonnée si le protocole ne survit pas.** C'est la seule chose que ce cas documente, et c'est déjà
@@ -634,8 +636,8 @@ des conclusions d'architecture opposées :**
 
 ⚠ **Les sources ne tranchent pas, et aucune inférence n'est proposée ici.** *Un ouvrage qui trancherait
 gagnerait en fluidité ce qu'il perdrait en droit d'être cru.* La question est ouverte au registre des
-lacunes du Vol. II, et la somme la portera **telle quelle** jusqu'au **ch. 21**, où sa reprise est
-prévue.
+lacunes du Vol. II, et la somme la portera **telle quelle** jusqu'au **ch. 49**, où sa reprise est
+prévue — même destination que celle qu'annonce le siège de l'encadré, au ch. 7 § 7.5.
 
 ---
 

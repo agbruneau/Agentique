@@ -10,8 +10,8 @@ et 56 (décision 11 du TOC).*
 | **Statut** | **Brouillon de rédaction, non publiable** — portes **G-3** et **G-4** ouvertes ; volet résiduel de **G-1** non instruit ; **ordre de rédaction du PRD §6 enfreint** — la clôture vient en dernier, et *le § 49.12 devait enregistrer l'état **final** des lacunes, et **l'appareil entier — avant-propos et neuf annexes — reste à écrire** ; ⚠ six chapitres manquaient encore à la rédaction de cette pièce, tous écrits depuis, hors de cette passe* ; instruction d'auteur du 27 juillet 2026. ⚠ **Ce chapitre porte le SIÈGE DU TRI PROSPECTIF pour toute la somme** (§ 49.0), désigné par le TOC v0.25 sur la remontée **R-IV-37** : les ch. 15, 16 § 16.4 et 21 y renvoient et **ne redéfinissent pas les trois statuts**. ⚠ **Il porte aussi le SIÈGE DU VERROU SÉMANTIQUE** (§ 49.6), hérité du Vol. I. Voir la note de statut, § 49.15 |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). Gels de source consommés : **juin 2026** (Vol. I, `Monographie` ch. 7, §3.13.2-3.13.4, §2.13.2), **16-17 juillet 2026** (Vol. II, ch. 21), **21 juillet 2026** (Vol. III, §10.3, §26.3, §28.5) — ⚠ **aucun des trois ne tient lieu du gel de la somme**, et l'écart est ici le plus lourd du corpus : *un chapitre prospectif hérite d'une frise dont chaque date porte, à sa source, la marque « à re-vérifier »*. ⚠ **Volet résiduel de G-1 non instruit** : **aucune** des échéances du § 49.1 n'a été reprise à sa source primaire par cette passe |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Premier mouvement : résolution contre le **Vol. I** `Monographie` **ch. 7** et **§3.13.2-3.13.4**, **intégralement en [C]** — sa vérification porte sur les *références*, non sur le contenu des affirmations (PRD §7.1). Second mouvement : contre le **Vol. II** `Monographie` **ch. 21** (niveaux d'origine conservés, dont ses **onze lacunes** au **PRD Vol. II §10**), le **Vol. III** `Monographie` **§10.3**, **§26.3** et **§28.5** (niveaux conservés, ⚠ **sous G-4 non franchie**), et le **Vol. I** `Monographie` **§2.13.2** en **[C]**. ⚠ **Deux entrées mobilisées portent une réserve de vote à leur source** — **F-96 du Vol. III**, *vote dû, non conduit*, citée au § 49.13 — et **elles la portent à chaque emploi**. **Aucun énoncé n'est central au sens de CA-IV-01** : *tout le premier mouvement résout contre du [C], et une affirmation tracée vers une entrée [C] n'est pas centrale, ou n'est pas rédigée* |
-| **Garde-fous balayés** | Vol. I — **tri PROGRAMMÉ / PROJETÉ / SPÉCULATIF : systématique**, ce chapitre en étant le **siège** (§ 49.0) ; **quarante-neuf emplois des trois statuts au corps** — seize PROGRAMMÉ, dix-sept PROJETÉ, seize SPÉCULATIF, décompte re-mesuré et non estimé —, dont ⚠ **aucun ne présente du PROJETÉ ni du SPÉCULATIF comme acquis**. Vol. III — **R-14 (trois degrés d'absence) : vingt occurrences au corps** — **quinze énoncés au degré 3**, **un au degré 1**, **quatre qualifications de fait négatif** reprises de leurs sources ; **R-11 (jalons « visés », jamais « fixés » ; statut du document porté) : dix occurrences**, § 49.1.2 (trois), § 49.1.3, § 49.4 (deux), § 49.9 (deux), § 49.11.3 (deux), ⚠ **et le siège de l'horloge reste au ch. 21 § 21.1**, dont aucun jalon n'est re-daté ici ; **R-02 : trois occurrences**, § 49.2, § 49.3, § 49.6 ; **R-13 : deux occurrences**, § 49.7 et § 49.11 — ⚠ **faux ami déclaré** : le « plan de contrôle » pré-agentique (ch. 1 § 1.3.4) n'est pas visé par R-13 ; **R-01, R-03 à R-10, R-12 : zéro occurrence**. Vol. II — **R-4 (RTR : « quatre cibles successives », jamais « lancé ») : trois occurrences**, § 49.1, § 49.9 et § 49.12 ; **R-5 (aucun standard technique désigné) : quatre occurrences**, § 49.12 (deux) et § 49.13 (deux) ; **R-6 (position au quadrant iPaaS non vérifiée) : deux occurrences**, § 49.12 ; **R-8 : zéro occurrence**, la quatrième branche étant citée par identifiant au § 49.12 **sans que le sigle soit employé nu** ; **R-1 à R-3, R-7 : zéro occurrence**. ⚠ **Métriques et projections attribuées : dix-neuf occurrences**, chacune nommée par son type de source, son millésime quand la source le porte et son périmètre — § 49.7 (six), § 49.8 (sept), § 49.9 (quatre), § 49.10 (deux) ; ⚠ **cardinal établi par relevé de ventilation, domaine déclaré : les quatre sections nommées** |
-| **Volumétrie cible** | ≈ **15 800 mots** de corps (§ 49.0 à § 49.14), **cible dérivée au prorata des sections** : l'enveloppe du Livre est de 34 000 mots (TOC v0.25), dont **20 000 au second mouvement** ; celui-ci compte **dix-neuf sections** — quinze ici, quatre au ch. 50 —, d'où 20 000 × 15/19 ≈ 15 800, le ch. 50 recevant ≈ 4 200. La somme des quatre cibles du Livre vaut **exactement 34 000**, addition faite avant la première ligne (leçon de **D-4**). ☑ **Décompte publiable depuis G-2** ; **réel : 13 458 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte — **−14,8 %**. ⚠ **L'écart est en défaut et son motif est nommé** : *les § 49.4 et § 49.5 sont des renvois seuls* — leur matière est prélevée par le Livre II —, et *les § 49.12 à § 49.14 enregistrent un état que la part non rédigée de la somme rend provisoire*. **D-4 interdit le gonflement autant que l'amputation** : l'écart se documente |
+| **Garde-fous balayés** | Vol. I — **tri PROGRAMMÉ / PROJETÉ / SPÉCULATIF : systématique**, ce chapitre en étant le **siège** (§ 49.0) ; **quarante-trois emplois des trois statuts au corps** — **quatorze PROGRAMMÉ** (dont deux au pluriel), **quinze PROJETÉ**, **quatorze SPÉCULATIF** —, dont ⚠ **aucun ne présente du PROJETÉ ni du SPÉCULATIF comme acquis**. ⚠ **Décompte re-mesuré au commit du 28 juillet 2026 sous la règle littérale : le marqueur en capitales dans le corps (§ 49.0 à § 49.14), définitions du siège comprises, en-tête et note de statut exclus ; les emplois en bas de casse (« le projeté et le spéculatif ») ne sont pas des tris et ne sont pas comptés.** ⚠ **Le relevé antérieur — « quarante-neuf emplois, seize/dix-sept/seize » — ne se reproduisait par aucune règle de comptage écrite : *un cardinal invérifiable est un relevé, non une couverture*, et il est corrigé ici.** Vol. III — **R-14 (trois degrés d'absence) : dix-neuf occurrences au corps** — **quatorze énoncés au degré 3**, **un au degré 1**, **quatre qualifications de fait négatif** reprises de leurs sources, ⚠ **même règle littérale, même domaine** (le relevé antérieur annonçait vingt et quinze) ; **R-11 (jalons « visés », jamais « fixés » ; statut du document porté) : dix occurrences**, § 49.1.2 (trois), § 49.1.3, § 49.4 (deux), § 49.9 (deux), § 49.11.3 (deux), ⚠ **et le siège de l'horloge reste au ch. 21 § 21.1**, dont aucun jalon n'est re-daté ici ; **R-02 : trois occurrences**, § 49.2, § 49.3, § 49.6 ; **R-13 : deux occurrences**, § 49.7 et § 49.11 — ⚠ **faux ami déclaré** : le « plan de contrôle » pré-agentique (ch. 1 § 1.3.4) n'est pas visé par R-13 ; **R-01, R-03 à R-10, R-12 : zéro occurrence**. Vol. II — **R-4 (RTR : « quatre cibles successives », jamais « lancé ») : trois occurrences**, § 49.1, § 49.9 et § 49.12 ; **R-5 (aucun standard technique désigné) : quatre occurrences**, § 49.12 (deux) et § 49.13 (deux) ; **R-6 (position au quadrant iPaaS non vérifiée) : deux occurrences**, § 49.12 ; **R-8 : une occurrence de l'identifiant**, § 49.12, où la quatrième branche est citée **sans que le sigle soit employé nu** ; **R-1 à R-3, R-7 : zéro occurrence**. ⚠ **Métriques et projections attribuées : dix-neuf occurrences**, chacune nommée par son type de source, son millésime quand la source le porte et son périmètre — § 49.7 (six), § 49.8 (sept), § 49.9 (quatre), § 49.10 (deux) ; ⚠ **cardinal établi par relevé de ventilation, domaine déclaré : les quatre sections nommées** |
+| **Volumétrie cible** | ≈ **15 800 mots** de corps (§ 49.0 à § 49.14), **cible dérivée au prorata des sections** : l'enveloppe du Livre est de 34 000 mots (TOC v0.25), dont **20 000 au second mouvement** ; celui-ci compte **dix-neuf sections** — quinze ici, quatre au ch. 50 —, d'où 20 000 × 15/19 ≈ 15 800, le ch. 50 recevant ≈ 4 200. La somme des quatre cibles du Livre vaut **exactement 34 000**, addition faite avant la première ligne (leçon de **D-4**). ☑ **Décompte publiable depuis G-2** ; **réel : 13 740 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte — **−13,0 %**, ⚠ **re-mesuré au commit du 28 juillet 2026** (13 458 et −14,8 % au commit de rédaction) ; **c'est le plus faible écart des quatre pièces du Livre**. ⚠ **L'écart est en défaut et son motif est nommé** : *les § 49.4 et § 49.5 sont des renvois seuls* — leur matière est prélevée par le Livre II —, et *les § 49.12 à § 49.14 enregistrent un état que la part non rédigée de la somme rend provisoire*. **D-4 interdit le gonflement autant que l'amputation** : l'écart se documente |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.26, entrée du chapitre 49, premier mouvement)* — une grappe d'échéances datées (PROGRAMMÉ) structure l'horizon ; au-delà, la trajectoire des protocoles, de la gouvernance par couche, de l'identité vérifiable/PQC, de la menace et de la recherche se lit en PROJETÉ, jamais en SPÉCULATIF déguisé en certitude.
 
@@ -27,12 +27,15 @@ ouverture, qu'il enregistre les lacunes des trois socles sources. ⚠ **Le réal
 définitif** : *la thèse redeviendra celle du socle consolidé quand G-3 sera franchie.*
 
 ⚠ **Deux thèses pour un chapitre, et le second mouvement porte une impossibilité que la première
-phrase du chapitre doit nommer.** La thèse du second mouvement parle des « lacunes du **socle
-consolidé** » ; **ce socle n'existe pas** — G-3 n'est pas entamée, l'Annexe B est inexistante, le
-socle consolidé compte **zéro entrée**. *Le § 49.12 enregistre donc les lacunes des **trois socles
-sources**, ce qui n'est pas la même chose*, et il le déclare à son ouverture. La thèse n'est pas
-réécrite ici : la décision 8 du TOC veut que le chapitre corrige le plan, et le réalignement se
-**remonte** (R-IV-69).
+phrase du chapitre doit nommer.** La thèse du second mouvement parle, depuis son réalignement en
+v0.26, des « lacunes **des trois socles sources** » — et c'est ce que le § 49.12 enregistre. ⚠ **La
+forme antérieure disait « lacunes du socle consolidé », et il faut savoir pourquoi elle a été
+défaite** : **ce socle n'existe pas** — G-3 n'est pas entamée, l'Annexe B est inexistante, le socle
+consolidé compte **zéro entrée** —, *de sorte que la forme n'était pas fausse mais prématurée d'une
+porte.* Le chapitre n'a rien réécrit de son côté : la décision 8 du TOC veut que le chapitre corrige
+le plan, et le réalignement s'est **remonté** (R-IV-69) avant d'être porté au TOC. ⚠ **Le
+réalignement est daté, non définitif** : *la thèse redeviendra celle du socle consolidé quand G-3
+sera franchie.*
 
 ## § 49.0 — Orientation : lire un chapitre prospectif sans céder à la prédiction
 
@@ -377,8 +380,11 @@ parmi ses agendas de recherche.*
 
 > ⚠ **SIÈGE DU VERROU SÉMANTIQUE ET PRAGMATIQUE POUR TOUTE LA SOMME.** Le verrou est posé **ici une
 > seule fois**, hérité du Vol. I `Monographie` §7.6.1 et §3.13.3. Le **ch. 2** (données et
-> sémantique), le **ch. 9** (découverte) et le **ch. 43** l'**appliquent** et y renvoient ; ils ne le
-> redémontrent pas. *L'entrée est en **[C]** : le siège organise, il n'établit pas.*
+> sémantique), le **ch. 9** (découverte) et le **ch. 43** en **appliquent** la matière sans la
+> redémontrer. ⚠ **Relevé re-mesuré le 28 juillet 2026, et il corrige cette déclaration** : sur les
+> trois, **seul le ch. 9 renvoie ici** ; le **ch. 2 ne cite ce chapitre nulle part** et le **ch. 43**
+> n'emploie pas le terme. *Le siège est donc posé et **nommé par une seule pièce sur trois** — c'est
+> pourquoi son contrôle S5 reste désactivé à l'appareil, avec ce compte pour motif.* *L'entrée est en **[C]** : le siège organise, il n'établit pas.*
 
 **À l'horizon 2027-2032, l'interopérabilité agentique cesse d'être un problème de transport.** Le
 passage de messages entre agents est, pour l'essentiel, résolu au niveau **syntaxique** ; les
@@ -844,7 +850,12 @@ PROJETÉ, attribuée nommément à son auteur, jamais en PROGRAMMÉ** : *sa form
 d'humour d'ingénierie — ce qui n'en fait pas une prédiction fausse, mais interdit de la citer comme
 une régularité établie.* Le régime qu'elle décrit — agent hors session, déclenché par événement,
 sollicitant l'humain sur ses propres canaux — **touche aussi les ch. 37, 39 et 40**, et il est la
-matière du **risque 14**, dont l'arbitrage est la décision **D-2**, non prise (voir ch. 47 § 47.8.1).
+matière du **risque 14**. ☑ **Son arbitrage — la décision D-2 — a été pris le 27 juillet 2026, après
+la rédaction de cette section : sections dans l'existant, sans chapitre neuf**, les deux points
+d'atterrissage reconnus étant le **ch. 47 § 47.8.1** et le **ch. 50 § 50.2**. ⚠ **Ce chapitre n'en
+est pas un, et la relève reste donc portée ici sans être consommée** : *le risque 14 est borné, non
+comblé* — la somme n'a aucun chapitre de la couche d'exécution —, la porte **G-5** n'est pas franchie
+pour autant, et la thèse citée demeure un repérage [C] non extrait.
 
 ### 49.11.5 Ce que la clôture du premier mouvement lègue
 
@@ -870,13 +881,17 @@ qui construit sur les conclusions de la somme a besoin de savoir lesquelles repo
 trois juges, lesquelles sur une extraction de source primaire, lesquelles sur un repérage que nul n'a
 confirmé.
 
-⚠ **Trois avertissements précèdent tout registre, et le premier corrige la thèse de ce mouvement.**
+⚠ **Trois avertissements précèdent tout registre, et le premier dit ce que la thèse de ce mouvement
+enregistre exactement.**
 
-*(1)* **La thèse parle des « lacunes du socle consolidé » ; ce socle n'existe pas.** La porte **G-3**
-n'est pas entamée, l'Annexe B est inexistante, **le socle consolidé compte zéro entrée**. Ce registre
-recense donc les lacunes des **trois socles sources**, ce qui n'est pas la même chose : *une lacune
-du socle consolidé serait un trou dans un objet refondu ; celles-ci sont des trous hérités, dont la
-refonte n'a pas encore décidé du sort.* Le réalignement de la thèse est **remonté** (R-IV-69).
+*(1)* **La thèse parle des « lacunes des trois socles sources », et ce registre est cela — pas autre
+chose.** ⚠ **Ce n'est pas un registre du socle consolidé, et il ne peut pas l'être** : la porte
+**G-3** n'est pas entamée, l'Annexe B est inexistante, **le socle consolidé compte zéro entrée**.
+*Une lacune du socle consolidé serait un trou dans un objet refondu ; celles-ci sont des trous
+hérités, dont la refonte n'a pas encore décidé du sort.* ⚠ **La thèse a porté la forme « lacunes du
+socle consolidé » jusqu'au réalignement v0.26** : *elle n'était pas fausse, elle était prématurée
+d'une porte*, et la remontée **R-IV-69** l'a fait borner. **Le registre redeviendra celui du socle
+consolidé quand G-3 sera franchie ; il ne l'est pas au commit de cette pièce.**
 
 *(2)* ⚠ **La distinction qui gouverne tout ce mouvement, reprise du Vol. II** `Monographie` **§21.1 et
 de l'échelle R-14 du Vol. III.** *Le socle ne documente pas X* signifie qu'aucune source du corpus
@@ -1038,21 +1053,25 @@ nomme sa série et son volume.**
 
 : Tableau 49.4 — Les six questions d'agenda du Vol. II, avec leur critère de clôture et leur chapitre porteur dans la somme. ⚠ **Q5 est instruite sans être close par le Vol. III** (sa lacune 3) ; **Q4 est prolongée et non tranchée** ; **Q1 et Q6 restent au Vol. II**, le Vol. III ne les reprenant pas.
 
-⚠ **Trois de ces questions sont inconfortables, et leur inconfort est le meilleur argument de la
-méthode.** *(1)* **Q1** l'est parce que la taxonomie qu'elle interroge **structure trois parties du
+⚠ **Trois inconforts se lisent derrière cette table, et il faut d'abord dire sur quoi chacun porte :
+seul le premier est l'une des six questions.** *(1)* **Q1**, celle du tableau, l'est parce que la
+taxonomie qu'elle interroge **structure trois parties du
 Vol. II** et repose sur une **source unique** : un préprint de première version non révisé par les
 pairs, *dont les auteurs déclarent eux-mêmes des menaces à la validité* — expériences initiales,
 invites non comparées, facteurs confondants. *Le cadre conceptuel est repris ; les chiffres, à titre
-d'illustration seulement.* *(2)* La deuxième porte sur **la convergence érigée en principe directeur
-du blueprint** : elle est formulée par un manifeste académique, une expérimentation et un patron de
+d'illustration seulement.* *(2)* Le deuxième **ne figure à aucune des six questions** : il porte sur
+**la convergence érigée en principe directeur
+du blueprint**, formulée par un manifeste académique, une expérimentation et un patron de
 fournisseur, **dont deux partagent une autrice et deux une organisation**. ⚠ *La convergence est un
-faisceau réel ; elle ne vaut pas corroboration indépendante.* *(3)* La troisième est
-**méthodologique**, et c'est la plus utile : sur les **384 affirmations** extraites par les trois
+faisceau réel ; elle ne vaut pas corroboration indépendante.* *(3)* Le troisième n'y figure pas
+davantage, et il est **méthodologique** — il porte sur l'appareil de vérification du Vol. II
+lui-même, non sur son agenda : sur les **384 affirmations** extraites par les trois
 passes du Vol. II, **75 seulement ont atteint le vote adversarial à trois juges** — *un peu moins d'un
 cinquième* —, dont 69 confirmées à l'unanimité et 6 réfutées. ⚠ **Le plafond était budgétaire et il
 est documenté.** *Lecture de l'auteur* — **ce que cela établit** : les décomptes et la limite ; **ce
 que cela n'établit pas** : que les entrées non votées soient moins exactes — *seulement qu'elles sont
-moins vérifiées.*
+moins vérifiées.* ⚠ *Les trois se lisent ensemble parce qu'ils bornent la même chose — ce que la
+table peut soutenir —, non parce qu'ils seraient trois lignes de la table.*
 
 ### 49.13.2 Les questions transmises par le Vol. III
 
@@ -1070,8 +1089,12 @@ vérificateur situé au-delà du premier maillon** établisse, à l'instant où 
 mandant d'origine, la portée du mandat et sa validité courante ? Les cinq sous-questions, avec leur
 corpus et leur critère de clôture, portent sur **l'atténuation** de la portée d'un maillon au suivant,
 la **fraîcheur** de l'autorité à chaque saut, l'**ancrage transitif** lorsque l'ancrage de confiance
-est renvoyé au déploiement, la **preuve** opposable devant un tiers, et la **cinquième** que sa source
-énumère. ⚠ *Lecture de l'auteur reprise de la source* — **ce que le socle établit** : les périmètres
+est renvoyé au déploiement, la **preuve** opposable devant un tiers, et l'**imputabilité** — *au
+troisième maillon, qui répond de l'acte ?* —, dont le critère de clôture est **le rattachement
+documenté d'un acte de maillon terminal à une entité juridique nommée**. ⚠ **La cinquième est nommée
+ici plutôt que renvoyée à sa source** : *une sous-question laissée anonyme dans une liste de cinq se
+lit comme une ellipse, et un énoncé de recherche transmis sans son objet n'est pas instruisible.*
+⚠ *Lecture de l'auteur reprise de la source* — **ce que le socle établit** : les périmètres
 déclarés et les états de piste. **Ce qu'il n'établit pas** : *que ces cinq sous-questions soient les
 bonnes, ni qu'elles épuisent le problème, ni qu'une réponse à chacune composerait une réponse à
 l'ensemble* — c'est **la présomption de composition** que la non-compositionnalité de la sûreté invite
@@ -1190,8 +1213,9 @@ rédaction du PRD §6**, qui place la clôture **en dernier**. Instruction d'aut
    la précision apparente et le régime de preuve est ici maximal** : le chapitre porte **des dates au
    quantième, des pourcentages et des ordres de grandeur**, et *tout cela résout contre un socle que
    G-3 n'a pas refondu.*
-2. **Les décomptes sont publiables** (G-2). Écart de **−14,8 %** — le plus faible des trois chapitres
-   à source de ce Livre après le ch. 50 —, dont le motif est nommé au champ
+2. **Les décomptes sont publiables** (G-2). Écart de **−13,0 %** — ⚠ **re-mesuré au commit du
+   28 juillet 2026**, contre −14,8 % au commit de rédaction — **et c'est le plus faible écart des
+   quatre pièces du Livre**, le ch. 50 venant ensuite à −15,9 %. Son motif est nommé au champ
    *Volumétrie cible* : deux sections sont des renvois seuls, trois enregistrent un état provisoire.
 3. **L'ordre enfreint a une conséquence propre à ce chapitre, et elle est plus lourde qu'ailleurs.**
    Le § 49.12 devait enregistrer l'état **final** des lacunes ; ⚠ **vingt-cinq chapitres sur cinquante
@@ -1253,18 +1277,32 @@ sont respectées pour leurs dix lignes**, y compris leurs **prélèvements décl
 est **prélevé par le Livre II** et le §7.5 **par le ch. 20** — *les § 49.4 et § 49.5 sont des renvois
 seuls, et c'est conforme, non lacunaire*. Le **§3.13.2-3.13.4** est affecté aux § 49.2, § 49.6 et
 § 49.11, **seule affectation du reste de §3.13**, le ch. 7 ne recevant que §3.13.1. **Les deux sièges
-sont posés et marqués** — tri prospectif (§ 49.0) et verrou sémantique (§ 49.6) —, et **le premier est
-versé à l'appareil dans la même passe**, comme le TOC v0.25 l'exigeait de la rédaction de ce
-mouvement. **Aucun siège d'un autre chapitre n'est reconstruit** : l'horloge post-quantique reste au
+sont posés et marqués** — tri prospectif (§ 49.0) et verrou sémantique (§ 49.6) —, et ☑ **les deux
+sont désormais versés à [`PRD/check-sieges.py`](../PRD/check-sieges.py)** : le **tri prospectif** l'a
+été dans la passe de rédaction, comme le TOC v0.25 l'exigeait de ce mouvement ; le **verrou
+sémantique** l'est **au commit du 28 juillet 2026**, par la **passe de gouvernance du même commit** —
+*la table des sièges est tenue au script et n'est pas recopiée ici*. ⚠ **L'attestation porte sur le
+corpus que le commit produit, non sur l'arbre de travail** : au contrôle exécuté par la présente
+passe, la table portait encore **douze sièges** sans le verrou, la passe de gouvernance n'ayant pas
+encore versé le sien ; *attester « le contrôle passe » sur un corpus qu'on ne committe pas serait une
+attestation fausse* (CA-IV-14). ⚠ **La rédaction avait laissé le second à un geste sur trois — marqueur posé, table
+non alimentée, harnais non rejoué — sans dette déclarée**, et *un siège marqué qu'aucun instrument ne
+contrôle est un siège qui disparaît au premier remaniement* : la règle des trois gestes est tenue à
+compter de ce commit. ⚠ **Les trois chapitres consommateurs que le siège nomme — ch. 2, ch. 9,
+ch. 43 — ne portent, eux, aucun renvoi entrant vers le § 49.6** (relevé au commit) ; *l'alignement
+leur appartient et il est remonté, non exécuté ici.* **Aucun siège d'un autre chapitre n'est
+reconstruit** : l'horloge post-quantique reste au
 **ch. 21 § 21.1** — *aucun jalon n'est re-daté ici, aucun libellé verbatim reproduit* —, l'assemblage
 du passeport au **ch. 16 § 16.1**, la chaîne de mandat au **ch. 17**, la sémantique d'effet au
 **ch. 48 § 48.1**, les résultats d'impossibilité au **ch. 1 § 1.6.2.2**. **Les onze lacunes du Vol. II
 apparaissent toutes, par identifiant** (CA-IV-06), et **les vingt-deux du Vol. III également**.
-**Les vingt occurrences de R-14 portent leur degré**, dont quinze au **degré 3**. **Les dix
+**Les dix-neuf occurrences de R-14 portent leur degré**, dont quatorze au **degré 3** — ⚠ **cardinal
+re-mesuré au commit du 28 juillet 2026 sous la règle littérale, corps seul**. **Les dix
 occurrences de R-11 portent la formulation imposée** — « visé », jamais « fixé », statut du document
 dit, origines jamais fusionnées. **Les trois occurrences de R-4 ne disent jamais le rail temps réel
 canadien lancé.** **Les dix-neuf métriques et projections sont attribuées à leur source, à leur
-millésime et à leur périmètre**, et **aucun ratio n'en est dérivé**. **Les quarante-neuf emplois des
+millésime et à leur périmètre**, et **aucun ratio n'en est dérivé**. **Les quarante-trois emplois des
 trois statuts portent leur tri**, et *aucun PROJETÉ ni SPÉCULATIF n'est présenté comme acquis*. **Les deux réserves de vote des
-entrées héritées sont reprises avec elles.** Enfin, **« fabrique » est désambiguïsé à ses deux
-occurrences** (§ 49.8, § 49.12.2, § 49.14) et **« autonomie graduée » n'est jamais employé nu**.
+entrées héritées sont reprises avec elles.** Enfin, **« fabrique » est désambiguïsé à ses trois
+occurrences** (§ 49.8, § 49.12.2, § 49.14) — ⚠ *le cardinal « deux » qu'annonçait cette phrase ne
+correspondait pas à sa propre énumération* — et **« autonomie graduée » n'est jamais employé nu**.

@@ -47,6 +47,22 @@ divergent volontairement. Ce fichier régit deux choses seulement — la **racin
 | Vol. III — *L'entreprise agentique* (rédaction, gouvernance PRD) | [`1 - Corpus/3 - EntrepriseAgentique/CLAUDE.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/CLAUDE.md) |
 | Vol. IV — *La somme agentique* (compendium, cadrage) | [`2 - Compendium/CLAUDE.md`](2%20-%20Compendium/CLAUDE.md) — le `TOC.md` du dossier reste la spécification de contenu |
 
+⚠ **Le 28 juillet 2026, le Vol. IV a changé de statut pour la première fois depuis son ouverture, et
+trois faits valent au niveau de la racine.** Un **audit intégral de ses cinq Livres** a été conduit
+([`2 - Compendium/audit.md`](2%20-%20Compendium/audit.md) — cent constats, un seul bloquant) et **ses
+huit remontées ont été soldées** (TOC v0.29, PRD v0.13). *(a)* ⚠ **Le socle consolidé existe** —
+[`socle-consolide.md`](2%20-%20Compendium/PRD/socle-consolide.md), **159 entrées `S-001`…`S-159`**,
+deux tables de correspondance : **la phrase « socle consolidé à zéro entrée », vraie depuis
+l'ouverture du volume et répétée partout dans ce fichier, ne l'est plus** — la conserver ailleurs
+dans ce document est un fait daté du 27 juillet, non l'état courant. *(b)* ⚠ **G-3 est ENTAMÉE, NON
+FRANCHIE**, et **les NEUF décisions d'auteur sont prises** (D-5 le 28 juillet) : *ne plus écrire
+« sept sur neuf »*. **Deux portes sur sept restent franchies** — la re-datation du socle (4 entrées
+sur 159) dépend du volet résiduel de **G-1**, et *un socle constitué n'est pas un socle vérifié*.
+*(c)* **Le statut du volume ne change pas pour autant** : les cinquante chapitres demeurent un
+**brouillon non publiable**, et **CA-IV-11 comme CA-IV-13 restent insatisfaisables** faute d'un
+relecteur distinct du rédacteur. Le détail vit au [`CLAUDE.md` du
+dossier](2%20-%20Compendium/CLAUDE.md) et **n'est pas repris ici**.
+
 ⚠ **Le 27 juillet 2026, le Livre V du Vol. IV — le dernier du plan — a été rédigé et arbitré, et deux
 faits de ce geste valent au niveau de la racine.** Ses quatre chapitres (ch. 47-50) existent en `.md` et
 `.html`, **hors portes** ; ses **seize remontées R-IV-60 à R-IV-75 sont soldées** (TOC v0.26, PRD

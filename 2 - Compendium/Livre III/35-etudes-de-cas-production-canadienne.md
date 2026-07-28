@@ -9,8 +9,8 @@ matière repose principalement sur des déclarations d'entreprises**.*
 |---|---|
 | **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 35.10. ⚠ **G-4 ne conditionne pas ce chapitre** ; ⚠ **D-9 ne le bloque pas.** ⚠ **Ce chapitre est le plus périssable de la somme** : *sa source déclare elle-même qu'« à ce rythme d'annonces, un trimestre suffit à le rendre incomplet »* |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : *aucun communiqué, aucun rapport annuel, aucune métrique de ce chapitre n'a été repris à la source primaire pour la somme.* Gel de source consommé : **16-17 juillet 2026** (Vol. II ch. 17) — ⚠ **et l'écart avec le gel de la somme est de onze jours** ; *l'un des faits du chapitre est daté du **7 juillet 2026**, soit **neuf jours avant le gel de sa source**.* |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. II *Monographie* ch. 17**, dont les entrées **F-17**, **F-18**, **F-19**, **F-20**, **F-21**, **F-22**, **F-23b**, **F-30**, **F-31**, **F-47** et **F-48** conservent leurs niveaux d'origine. ⚠ **Le plan prescrit de nommer ces entrées une à une, la plage seule ne les désignant pas** — *ce qui est fait ici.* ⚠ **Deux d'entre elles — F-47 et F-48 — sont de niveau mixte [B/C]** : *le détour d'accès a permis d'établir **une part** du dossier et non la totalité.* ⚠ **Toutes sont du Vol. II** (décision 7 du TOC). **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. II — ⚠ **PRD §7.5 (métriques institutionnelles auto-déclarées, attribution à chaque occurrence) : vingt-neuf occurrences**, réparties sur les neuf sections — *c'est **le chapitre du Livre où ce garde-fou travaille le plus**, et **aucune métrique n'y figure sans son attributeur, sa date et son support*** ; ⚠ **R-8 (le sigle « ACP » jamais nu) : quatre occurrences**, § 35.2 et § 35.8, avec **renvoi à l'encadré de désambiguïsation du ch. 7 § 7.5** ; **PRD §3 (aucun conseil juridique) : trois occurrences**, § 35.1, § 35.7 et § 35.8 ; **R-5 : deux occurrences**, § 35.5 et § 35.8 ; **R-1 à R-4, R-6, R-7 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : onze occurrences**, § 35.0, § 35.1, § 35.3, § 35.6 (deux), § 35.7 (deux) et § 35.8 (quatre, dont **un fait négatif *vérifié*** au § 35.6) ; **R-09 : trois occurrences**, § 35.4 et § 35.8 ; **R-13 : deux occurrences**, § 35.1 et § 35.5 — ⚠ *l'échelle à trois degrés du § 35.5 est **déclarée grille de lecture d'éditeur**, non une échelle d'autonomie* ; **R-02 : une occurrence**, § 35.8 ; **R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence** |
+| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. II *Monographie* ch. 17**, dont les entrées **F-17**, **F-18**, **F-19**, **F-20**, **F-21**, **F-22**, **F-23**, **F-23b**, **F-30**, **F-31**, **F-47** et **F-48** conservent leurs niveaux d'origine — **douze entrées**. ⚠ **Le plan prescrit de nommer ces entrées une à une, la plage seule ne les désignant pas** — *ce qui est fait ici.* ⚠ **Quatre attributions du corps ont été corrigées le 28 juillet 2026, contre le PRD et la *Monographie* ch. 17 du Vol. II ouverts à la source** : *les identifiants du § 35.2 (Scotiabank), du § 35.4 (Manuvie) et des deux emplois du § 35.5 (Desjardins, puis accréditation) étaient **décalés d'un rang** — F-20 pour F-21, F-21 pour F-22, F-22 pour F-23b, F-23b pour F-23 —, et **F-23 manquait à cette liste**. **F-20**, dont le contenu propre est la gouvernance publiée du § 35.3, y est désormais attribuée.* ⚠ **Deux d'entre elles — F-47 et F-48 — sont de niveau mixte [B/C]** : *le détour d'accès a permis d'établir **une part** du dossier et non la totalité.* ⚠ **Toutes sont du Vol. II** (décision 7 du TOC). **Aucun énoncé n'est central au sens de CA-IV-01** |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus.* Vol. II — ⚠ **PRD §7.5 (métriques institutionnelles auto-déclarées, attribution à chaque occurrence) : sept occurrences du renvoi**, § 35.0, § 35.1, § 35.2, § 35.3, § 35.4, § 35.7 et § 35.8.2 ; *le marqueur « auto-déclaré » est écrit **vingt-trois fois**, sur les neuf sections et la synthèse* — *c'est **le chapitre du Livre où ce garde-fou travaille le plus**, et **aucune métrique n'y figure sans son attributeur, sa date et son support*** ; ⚠ **R-8 (le sigle « ACP » jamais nu) : deux occurrences du sigle**, § 35.2 et § 35.8.2, avec **renvoi à l'encadré de désambiguïsation du ch. 7 § 7.5** ; **PRD Vol. II §3 (aucun conseil juridique) : quatre occurrences du renvoi**, § 35.1, § 35.6, § 35.7 et § 35.8.1 ; *la formule « aucun avis juridique » est écrite **trois fois**, § 35.1, § 35.6 et la synthèse* ; **R-5 : une occurrence du sigle**, § 35.5 ; **R-1 à R-4, R-6, R-7 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : deux occurrences du sigle**, § 35.1 et § 35.8.3 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » **huit fois** (§ 35.1, § 35.3, § 35.6, § 35.7, § 35.8.3, § 35.9 deux fois, synthèse), « fait négatif vérifié » **trois fois** (§ 35.8.3, § 35.9 et la synthèse)* — ⚠ **le fait négatif vérifié lui-même est POSÉ au § 35.6**, *l'absence du terme « agentique » dans le communiqué d'une institution*, **et les trois occurrences de la formule le REPRENNENT pour l'opposer à l'absence de documentation du § 35.8.3** ; *l'incise antérieure, qui le disait « au § 35.6 » tout en le comptant parmi les quatre du § 35.8, contredisait sa propre partition* ; **R-09 : une occurrence du sigle**, § 35.4 ; **R-13 : une occurrence du sigle**, § 35.5 — ⚠ *l'échelle à trois degrés du § 35.5 est **déclarée grille de lecture d'éditeur**, non une échelle d'autonomie* ; **R-02 : une occurrence du sigle**, § 35.8.2 ; **R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **6 000 mots** de corps (§ 35.0 à § 35.9), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant neuf. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier. ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 35)* — l'agentique canadienne est en production, documentée par sources primaires, gouvernée au niveau C-suite — et inégalement documentable selon les institutions.
@@ -167,7 +167,7 @@ n'établit pas** : *aucun lien causal entre elles, et la somme n'en postule pas.
 volume**.*
 
 **L'outil est une plateforme interne d'analyse documentaire en service depuis 2018 et brevetée**
-(Vol. II F-20). ⚠ **C'est un détail structurant** : *l'institution **n'a pas construit un système
+(Vol. II F-21). ⚠ **C'est un détail structurant** : *l'institution **n'a pas construit un système
 agentique à partir de rien** — elle a **greffé des capacités agentiques, en 2025, sur une plateforme
 déjà éprouvée par sept années d'exploitation**.* *La capacité ajoutée est **le traitement autonome des
 courriels de clients en services bancaires aux entreprises** : compréhension du contenu, acheminement
@@ -267,7 +267,8 @@ indépendamment.** ⚠ *Le socle n'établit ni la méthode de calcul, ni la part
 référentiel comptable permettant de la vérifier après coup.*
 
 **Sur le plan de la gouvernance**, *l'institution publie des principes articulés autour de **quatre
-axes** : imputabilité, équité, vie privée et sécurité, transparence.* ⚠ **On notera, par comparaison
+axes** : imputabilité, équité, vie privée et sécurité, transparence* (Vol. II **F-20**). ⚠ **On
+notera, par comparaison
 avec les cinq critères du § 35.1, le chevauchement quasi complet — et *une divergence isolée* :** *là où
 l'une retient **l'explicabilité**, l'autre retient **la transparence**.* ⚠ **Le socle n'établit pas ce
 que chaque institution met sous ces mots** — *absence de documentation, degré 3* — ⚠ *et **il serait
@@ -291,7 +292,7 @@ cet effort, et la somme ne lui en prête aucun.*
 d'exécution nommé*.**
 
 Le **10 mars 2026**, *un communiqué conjoint annonce qu'un temps d'exécution nommé est retenu pour la
-plateforme d'IA agentique d'entreprise de l'institution, ⚠ **alors en bêta*** (Vol. II F-21).
+plateforme d'IA agentique d'entreprise de l'institution, ⚠ **alors en bêta*** (Vol. II F-22).
 
 ⚠ **Le fait est mince en apparence et considérable en portée** : *c'est **la seule institution canadienne
 dont le socle atteste, par source primaire, le composant technique** sur lequel repose son exécution
@@ -339,7 +340,7 @@ ni une présentation aux investisseurs, mais **un rapport annuel audité**.*
 **une suite bureautique assistée** figurent parmi les priorités stratégiques. Ensuite — et **c'est le
 fait le plus lourd** — que « **Ancrer nos pratiques d'affaires dans les données, l'analytique et
 l'intelligence artificielle** » constitue **l'une des six orientations d'un plan stratégique
-quadriennal** (Vol. II F-22).* ⚠ *Le libellé est cité **tel qu'il figure à la source** ; c'est un
+quadriennal** (Vol. II F-23b).* ⚠ *Le libellé est cité **tel qu'il figure à la source** ; c'est un
 document français, et **la citation ne requiert pas de traduction**.*
 
 ⚠ **La différence de statut documentaire est décisive** : *un communiqué **engage la réputation** d'une
@@ -365,7 +366,7 @@ d'autonomie** (R-13 du Vol. III) : *les échelles d'autonomie de la somme sont a
 ⚠ **Un second élément rattache cette institution à un enjeu du § 34 et du ch. 32** : *sa participation
 au cadre des services bancaires axés sur le consommateur est — **comme celle de toute entité
 candidate** — **conditionnelle à l'accréditation par la banque centrale**, dont **les modalités restent
-à définir par règlement** (Vol. II F-23b).* ⚠ **Le ch. 32 § 32.2 a établi l'état de ce cadre** ; *on
+à définir par règlement** (Vol. II F-23).* ⚠ **Le ch. 32 § 32.2 a établi l'état de ce cadre** ; *on
 retiendra seulement ici que **l'ambition agentique d'une institution coopérative croisera une exigence
 d'accréditation dont les modalités ne sont pas encore écrites**.* ⚠ **Le socle n'établit aucun lien entre
 les deux** — *et R-5 du Vol. II interdit d'anticiper.*
@@ -620,7 +621,8 @@ entre ce que les institutions gouvernent et ce que la grille des cinq questions 
 
 *Section de sortie sans homologue direct dans la source — construction d'éditeur.*
 
-1. ⚠ **La règle d'attribution, appliquée vingt-neuf fois** : *toute métrique institutionnelle est
+1. ⚠ **La règle d'attribution, appliquée sur les neuf sections** — *cardinaux et ventilation à
+   l'en-tête, re-mesurés au commit du 28 juillet 2026* : *toute métrique institutionnelle est
    **auto-déclarée**, et **son attribution est obligatoire à chaque occurrence**.* **Aucun chapitre aval
    ne reprend un chiffre de ce chapitre sans son attributeur, sa date et son support.**
 2. ⚠ **Trois classes d'accès documentaire, partition exhaustive** : *cinq, quatre, une.* ***L'inégalité
@@ -688,15 +690,20 @@ dans l'ordre exact —, le § 35.0 étant une **ouverture de chapitre**. ⚠ **L
 intact** : *les neuf sections de la source sont reprises **sans redécoupage**, et **le § 35.8 conserve
 ses trois institutions dans une seule section**, comme le plan l'impose.* La **table de couverture est
 respectée pour son unique ligne**. La **décision 14 a été exécutée avant la rédaction**, domaine
-déclaré : une thèse examinée, zéro réalignée, **une borne de portée transportée**. ⚠ **Les onze entrées
+déclaré : une thèse examinée, zéro réalignée, **une borne de portée transportée**. ⚠ **Les douze entrées
 du socle sont nommées une à une**, *et **les deux entrées de niveau mixte [B/C] sont signalées comme
-telles*** — *le plan l'exige explicitement.* ⚠ **La règle d'attribution est tenue à ses vingt-neuf
-occurrences** : *aucune métrique institutionnelle n'apparaît sans **son attributeur, sa date et son
-support**, et **les trois métriques non additionnables sont déclarées telles**.* ⚠ **R-8 est tenu à ses
-quatre occurrences** : *le sigle homonyme **n'est jamais employé nu**, et la désambiguïsation **renvoie
-au ch. 7 § 7.5** sans être dupliquée.* Les **onze occurrences de R-14 portent leur degré**, ⚠ **et le
+telles*** — *le plan l'exige explicitement* ; ⚠ **quatre attributions décalées d'un rang ont été
+corrigées le 28 juillet 2026 contre le PRD et la *Monographie* ch. 17 du Vol. II ouverts à la source, et
+F-23 a été ajoutée à la liste** (voir le champ *Socle mobilisé*). ⚠ **La règle d'attribution est tenue
+sur tout son domaine** : *aucune métrique institutionnelle n'apparaît sans **son attributeur, sa date et
+son support**, et **les trois métriques non additionnables sont déclarées telles**.* ⚠ **R-8 est tenu à
+ses deux occurrences** : *le sigle homonyme **n'est jamais employé nu**, et la désambiguïsation
+**renvoie au ch. 7 § 7.5** sans être dupliquée.* **Les absences portent toutes leur degré** — *deux
+occurrences du sigle R-14, huit du marqueur « degré 3 »* —, ⚠ **et le
 fait négatif *vérifié* du § 35.6 est explicitement distingué de l'absence de documentation du
-§ 35.8.3**. ⚠ **R-13 est tenu** : *l'échelle à trois degrés du § 35.5 est **déclarée grille de lecture
+§ 35.8.3**. ⚠ **Ces cardinaux ont été re-mesurés au commit du 28 juillet 2026** (décision 16 du TOC) ;
+*l'attestation antérieure annonçait vingt-neuf attributions, quatre occurrences de R-8 et onze de
+R-14.* ⚠ **R-13 est tenu** : *l'échelle à trois degrés du § 35.5 est **déclarée grille de lecture
 d'éditeur**, non un classement du socle ni une échelle d'autonomie.* Enfin, ⚠ **aucun avis juridique
 n'est émis** (PRD Vol. II §3), et ⚠ **aucune position sur la taxonomie du ch. 22 n'est attribuée à un
 système**, *le socle ne documentant l'architecture d'exécution d'aucun d'eux.*

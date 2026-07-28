@@ -9,7 +9,7 @@ Deuxième chapitre du mouvement : **un cadre légiféré dont l'interface techni
 | **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 32.5. ⚠ **G-4 ne conditionne pas ce chapitre** : sa ligne Fusion ne cite que le Vol. II ; ⚠ **D-9 ne le bloque pas** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit — et il porte ici sur une échéance qui tombe après le gel de la somme** : la période de commentaires du règlement prépublié **se clôt le 26 août 2026**, soit **trente jours après** la date de gel. *Tout ce que ce chapitre rapporte du règlement devra être revalidé à cette date.* Gel de source consommé : **16-17 juillet 2026** (Vol. II ch. 14) — ⚠ **il ne tient pas lieu du gel de la somme** |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. II *Monographie* ch. 14**, dont les entrées **F-11**, **F-23**, **F-34** et **F-35** conservent leurs niveaux d'origine ; ⚠ **F-35 porte le fait négatif du § 32.4 et le porte au niveau de preuve le plus élevé du volume** — *balayage documenté, non absence de trouvaille.* **F-09**, **F-25** et **F-24** y sont mobilisées **en renvoi seulement**. ⚠ **Toutes ces entrées sont du Vol. II** et se préfixent comme telles (décision 7 du TOC). **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. II — **R-5 (attente réglementaire — ne rien anticiper) : neuf occurrences**, § 32.0, § 32.1 (deux), § 32.2 (deux), § 32.3 (deux) et § 32.4 (deux) — ⚠ *c'est le chapitre du Livre où ce garde-fou travaille le plus* ; **PRDPlan Vol. II §4.4 — « attendu par E-23 », jamais « exigé » : une occurrence**, § 32.3, **en renvoi au ch. 25** ; **PRD §8.4 (neutralité fournisseur) : une occurrence**, § 32.4 ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : sept occurrences**, § 32.1 (deux), § 32.2 (deux), § 32.3 et § 32.4 (deux) — ⚠ **dont un fait négatif VÉRIFIÉ, degré 1**, au § 32.4, *à distinguer soigneusement des six absences de documentation qui l'accompagnent* ; **R-09 : deux occurrences**, § 32.3 et § 32.4 ; **R-11 : une occurrence**, § 32.3 ; **R-01 à R-08, R-10, R-12, R-13 : zéro occurrence** |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **R-5 (attente réglementaire — ne rien anticiper) : trois occurrences du sigle**, § 32.0, § 32.1 et § 32.4 — ⚠ *c'est le chapitre du Livre où ce garde-fou travaille le plus, et **il est appliqué aux § 32.0 à § 32.4 sans exception*** ; **PRDPlan Vol. II §4.4 — écrire « attendu par E-23 », jamais « exigé » : ni le renvoi ni la formule ne sont écrits au corps** ; *la modalité s'y écrit « la ligne directrice **attend** plutôt qu'elle n'exige », § 32.3, **en renvoi au ch. 25*** ; **PRD §8.4 (neutralité fournisseur) : le renvoi n'est pas écrit au corps** ; *la formule l'est **une fois**, § 32.4* ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : trois occurrences du sigle**, § 32.1, § 32.4 (deux) — ⚠ *et les degrés se marquent en toutes lettres : « degré 1 » au § 32.4 (deux) et à la synthèse, « degré 3 » aux § 32.1 (deux), § 32.2 (deux) et § 32.4 (deux)* ; ⚠ **dont un fait négatif VÉRIFIÉ, degré 1**, au § 32.4, *à distinguer soigneusement des absences de documentation qui l'accompagnent* ; **R-09 : une occurrence du sigle**, § 32.3 ; **R-11 : une occurrence du sigle**, § 32.3 ; **R-01 à R-08, R-10, R-12, R-13 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **3 500 mots** de corps (§ 32.0 à § 32.4), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant quatre. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier. ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 32)* — le cadre est légiféré (C-15), supervisé par la Banque du Canada, réglementairement en cours — et son standard technique n'est **pas** désigné (fait négatif vérifié).
@@ -89,7 +89,8 @@ la mobilité ; il dit que le droit est **économie-large** et que le cadre banca
 application**.*
 
 ⚠ **Le véhicule législatif retenu — une loi sur la protection des renseignements personnels — n'est pas
-anodin**, *et il est **le même** que celui qu'emprunte le projet de loi que le **ch. 26 § 26.2** examine* :
+anodin**, *et il est **le même** que celui qu'emprunte le projet de loi que le **ch. 26 § 26.2** examine
+(Vol. II **F-24**, **[B]**, **en renvoi seulement** — le projet de loi lui-même n'est pas instruit ici)* :
 **un instrument adopté et un projet de loi distinct visent le même véhicule législatif**, ⚠ **sans
 qu'aucune interaction entre eux ne soit documentée au socle** — *absence de documentation, degré 3.*
 
@@ -252,6 +253,14 @@ balayé**, ⚠ **ni à une désignation qui n'emploierait aucune des quatre cha�
 l'existence même d'un arrêté, y demeure au **degré 3** parce que l'index officiel des textes pris n'a pas
 été balayé.*
 
+⚠ **Deux verbes portent ici deux régimes de preuve distincts, et les confondre défait le fait
+négatif** : ***publié*** dit ce que le balayage des sources nommées a constaté — degré 1, fait négatif
+vérifié — quand ***pris*** dirait l'existence même de l'acte, que **seul l'index officiel des textes
+pris établirait** et qui reste au **degré 3** faute d'avoir été balayé ; *c'est pourquoi le tableau 30.2
+du ch. 30 proscrit d'écrire « aucun arrêté n'a été **pris** » là où le présent chapitre écrit « aucun
+arrêté de désignation n'avait été **publié** à cette date »* — **les deux énoncés ne se contredisent
+pas : le second est plus faible, et c'est le seul que le balayage soutienne**.
+
 ⚠ **L'anticipation de l'organisme candidat existe, elle est réelle, et elle est correctement située** :
 *elle relève du **commentaire d'industrie** — cabinets et associations sectorielles.* ⚠ ***Un cabinet
 qui anticipe n'est pas un ministre qui désigne.*** ⚠ **Écrire que cet organisme serait le standard
@@ -272,7 +281,11 @@ une réécriture**.*
 budgétaire de 2025 **un fait structurant du cadre sans le dater** (lacune **PRD Vol. II §10.11**).*
 ⚠ **Cette lacune a été ouverte le 17 juillet 2026, à la construction de la frise chronologique — donc
 *après* la table de couverture du TOC du Vol. II**, *ce qui explique qu'elle en soit absente.* **Elle est
-signalée ici, et son état final sera enregistré au ch. 49.**
+signalée ici, et le plan la route vers deux destinations qu'il ne faut pas substituer l'une à l'autre** :
+*son **état final** sera enregistré au **ch. 49**, qui reprend les onze lacunes héritées par leur
+identifiant (CA-IV-06), et l'**Annexe D** en porte le renvoi documentaire.* ⚠ **Le renvoi à la seule
+Annexe D était celui du plan jusqu'à la v0.28 ; la pièce n'écrivait, elle, que le ch. 49 — les deux sont
+désormais portés ensemble.**
 
 ### Synthèse : ce que le chapitre lègue à la somme
 
@@ -351,13 +364,19 @@ TOC, ce PRD ni le Conspectus — il **remonte**.*
 dans l'ordre exact —, le § 32.0 étant une **ouverture de chapitre**. La **table de couverture est
 respectée pour son unique ligne** : le Vol. II §14.1-14.4 est condensé aux § 32.1-32.4, **rien n'en est
 coupé**. La **décision 14 a été exécutée avant la rédaction**, domaine déclaré : une thèse examinée,
-zéro réalignée. ⚠ **R-5 du Vol. II est tenu à ses neuf occurrences** : *ni le contenu du règlement final,
-ni les modalités d'accréditation, ni l'identité de l'organisme, ni l'entrée en vigueur article par
-article ne sont décrits.* ⚠ **Le fait négatif VÉRIFIÉ du § 32.4 est distingué des six absences de
-documentation qui l'accompagnent**, une par une, et **sa borne de balayage est écrite avec lui**. Les
-**deux occurrences de R-09 disent leur statut** — *prépublié, non final* — et **R-11 est tenu** : *une
-durée relative sans origine n'est pas un jalon visé.* ⚠ **La lacune PRD Vol. II §10.11 est portée et non
-comblée**, avec la mention qu'elle a été **ouverte après la table de couverture de son propre TOC**.
+zéro réalignée. ⚠ **R-5 du Vol. II est tenu sur tout son domaine — les § 32.0 à § 32.4**, *son sigle
+étant écrit trois fois* : *ni le contenu du règlement final, ni les modalités d'accréditation, ni
+l'identité de l'organisme, ni l'entrée en vigueur article par article ne sont décrits.* ⚠ **Le fait
+négatif VÉRIFIÉ du § 32.4 est distingué des absences de documentation qui l'accompagnent**, une par une,
+et **sa borne de balayage est écrite avec lui** ; ⚠ **la distinction *publié* / *pris* qui la porte est
+désormais écrite au § 32.4**, où elle manquait — *ajoutée le 28 juillet 2026, elle lève la friction
+apparente avec le tableau 30.2 du ch. 30.* **L'occurrence de R-09 dit son statut** — *prépublié, non
+final* — et **R-11 est tenu** : *une durée relative sans origine n'est pas un jalon visé.* ⚠ **La lacune
+PRD Vol. II §10.11 est portée et non comblée**, avec la mention qu'elle a été **ouverte après la table
+de couverture de son propre TOC** ; ⚠ **et ses deux destinations sont désormais écrites — ch. 49 et
+Annexe D —**, la pièce ne portant que la première jusqu'au 28 juillet 2026. ⚠ **Les cardinaux de
+l'en-tête ont été re-mesurés au même commit** (décision 16 du TOC) ; *l'attestation antérieure annonçait
+neuf occurrences de R-5, sept de R-14 et deux de R-09.*
 Enfin, ⚠ **le registre du cadre bancaire n'est pas confondu avec le registre d'agents du ch. 15** : *la
 distinction est écrite au § 32.2, comme le plan l'exige.*
 

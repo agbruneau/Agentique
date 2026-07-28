@@ -8,24 +8,27 @@ il pose le régime prudentiel fédéral sur lequel les cinq suivants se situent.
 |---|---|
 | **Statut** | **Brouillon de rédaction, non publiable** — ⚠ **et ce chapitre porte l'écart de gouvernance le plus lourd du Livre.** Trois portes lui sont opposables et **aucune n'est franchie** : **G-3** (socle consolidé à zéro entrée), **G-4** (collation de fond contre le Vol. III rédigé — *ce chapitre cite le Vol. III, donc G-4 le conditionne nommément*, PRD §5), et le **volet résiduel de G-1**. ⚠ **Il est en outre bloqué nommément par la décision d'auteur D-9** : le lot d'instruction du § 17.5 est ouvert et **non clos**, et le PRD écrit que « les ch. 25 et 27 ne se lancent pas avant clôture du lot ». Il a été rédigé quand même, sur instruction d'auteur du 27 juillet 2026 ; **l'infraction est consignée, non effacée** — voir la note de statut, § 25.9 |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : aucun fait périssable de ce chapitre n'a été repris à la source primaire. Gels de source consommés : **16-17 juillet 2026** (Vol. II ch. 9) et **21 juillet 2026** (Vol. III ch. 19) — ⚠ **aucun des deux ne tient lieu du gel de la somme**. ⚠ **Une échéance structure le chapitre et se re-mesure à chaque gel** : l'entrée en vigueur au **1ᵉʳ mai 2027**, dont tous les décomptes de jours ci-dessous dépendent |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. II *Monographie* ch. 9**, dont l'entrée **F-09** est **[A/B mixte]** — ⚠ **et l'ordre des rangs se lit correctement : dans ce socle, [B] est *sous* [A]**, l'énumération [A] étant **close** ; **F-10** est **[A]** — et contre le **Vol. III *Monographie* ch. 19**, dont **F-64**, **F-65**, **F-66** et **F-67** sont en **[B]**, l'entrée héritée **H-04** en **[A/B mixte]** et **H-05** en **[A]**. ⚠ **Deux séries F-xx coexistent et se préfixent à chaque emploi** (décision 7 du TOC) : F-09 et F-10 sont **du Vol. II**, F-64 à F-68 **du Vol. III**. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. II — **PRD §8.2.4 (couverture E-23 = inférence d'analystes) : six occurrences**, § 25.0, § 25.3 (trois), § 25.7 et la synthèse ; **PRDPlan Vol. II §4.4 — « attendu par E-23 », jamais « exigé » : onze occurrences**, § 25.2 (deux), § 25.4 (trois), § 25.5 (deux), § 25.6 (trois) et § 25.7 ; **PRD §8.2.6 (projections) : deux occurrences**, § 25.8 ; **R-1 à R-8 : zéro occurrence**. Vol. III — **R-06 (modalité d'E-23) : le siège est le §19.1 de sa source, et le présent chapitre l'applique — onze occurrences confondues avec la formulation imposée ci-dessus** ; **R-14 (trois degrés d'absence) : douze occurrences**, § 25.4 (cinq, une par case), § 25.5 (trois), § 25.6 et § 25.7 (trois, une par degré) ; **R-11 (jalons visés, jamais fixés) : une occurrence**, § 25.4 ; **R-09 : deux occurrences**, § 25.5 ; **R-02 : une occurrence**, § 25.5 ; **R-01, R-03 à R-05, R-07, R-08, R-10, R-12, R-13 : zéro occurrence** — ⚠ **R-07 est le siège du §19.2 de la source et il est appliqué au § 25.5**, sans y être re-posé |
+| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. II *Monographie* ch. 9**, dont l'entrée **F-09** est **[A/B mixte]** — ⚠ **et l'ordre des rangs se lit correctement : dans ce socle, [B] est *sous* [A]**, l'énumération [A] étant **close** ; **F-10** est **[A]** — et contre le **Vol. III *Monographie* ch. 19**, dont **F-64**, **F-65**, **F-66**, **F-67** et **F-68** sont en **[B]** — ⚠ **F-68 est citée en renvoi seulement**, au § 25.1, pour la concordance des deux entrées en vigueur —, l'entrée héritée **H-04** en **[A/B mixte]** et **H-05** en **[A]**. ⚠ **Deux séries F-xx coexistent et se préfixent à chaque emploi** (décision 7 du TOC) : F-09 et F-10 sont **du Vol. II**, F-64 à F-68 **du Vol. III**. **Aucun énoncé n'est central au sens de CA-IV-01** |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **PRD §8.2.4 (couverture E-23 = inférence d'analystes) : deux occurrences du renvoi**, § 25.0 et § 25.3 ; **PRDPlan Vol. II §4.4 — écrire « attendu par E-23 », jamais « exigé » : deux occurrences du renvoi**, § 25.2 et § 25.6 ; ⚠ *la formule imposée elle-même est **appliquée aux § 25.2, § 25.5, § 25.6 et § 25.7**, et le § 25.6 en porte le siège d'énoncé — **son décompte n'est pas re-mesurable au marqueur et n'est donc pas annoncé*** ; **PRD §8.2.6 (projections) : une occurrence du renvoi**, § 25.8 ; **R-1 à R-8 : zéro occurrence**. Vol. III — **R-06 (modalité d'E-23) : quatre occurrences du sigle**, § 25.2, § 25.4, § 25.6 et § 25.7 — *le siège est le §19.1 de sa source, et le présent chapitre l'applique sans le re-poser* ; **R-14 (trois degrés d'absence) : deux occurrences du sigle**, § 25.3 et § 25.7 — ⚠ *et les degrés se marquent en toutes lettres : « degré 1 » aux § 25.3, § 25.4 et § 25.7, « degré 2 » au § 25.5, « degré 3 » cinq fois au § 25.4 (une par case), « fait négatif vérifié » six fois (§ 25.3, § 25.4, § 25.5 deux fois, § 25.7 deux fois) et « fait négatif établi » une fois au § 25.5* ; **R-11 (jalons visés, jamais fixés) : une occurrence du sigle**, § 25.4 ; **R-09 : une occurrence du sigle**, § 25.5 ; **R-07 : une occurrence du sigle**, § 25.5 — ⚠ **R-07 est le siège du §19.2 de la source et il est appliqué là, sans y être re-posé** ; **R-02 : une occurrence du sigle**, § 25.5 ; **R-01, R-03 à R-05, R-08, R-10, R-12, R-13 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **7 000 mots** de corps (§ 25.0 à § 25.8), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant huit. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh). ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 25)* — E-23 couvre l'IA agentique *implicitement*, par sa définition de « modèle » — couverture par inférence que les institutions doivent traiter comme acquise d'ici le 1ᵉʳ mai 2027 ; l'identité agentique est le prérequis technique d'obligations qui ne la mentionnent pas.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 25 — forme réalignée en v0.27, décisions 8 et 14, sur la remontée R-IV-83)* — E-23 couvre l'IA agentique *implicitement*, par sa définition de « modèle » — couverture par **inférence d'analystes**, **à traiter** comme acquise d'ici le 1ᵉʳ mai 2027 ; l'identité agentique est le prérequis technique d'obligations qui ne la mentionnent pas.
 
 ---
 
 ⚠ **La thèse a été collationnée contre le texte rédigé de ses deux sources avant la rédaction**
 (décision 14 du TOC). **Domaine de balayage : une thèse examinée, une divergence trouvée — et elle
-n'est pas de forme.** Le premier membre condense la thèse du Vol. II ch. 9 en **retranchant son
+n'était pas de forme.** Le premier membre condensait la thèse du Vol. II ch. 9 en **retranchant son
 qualificatif décisif** : la source écrit « couverture par inférence **d'analystes**, à traiter comme
-acquise », le plan écrit « couverture par inférence que les institutions **doivent** traiter comme
-acquise ». *Retirer « d'analystes » efface l'objet même du garde-fou §8.2.4, et « doivent » transforme
-en prescription ce que la source marque expressément comme une **lecture de l'auteur** fondée sur une
-asymétrie de risque.* Le second membre reprend fidèlement la conclusion du Vol. III ch. 19. **La pièce
-cite la thèse verbatim, comme le PRD l'exige, et écrit son corps sous la forme bornée** ; l'écart est
-remonté (§ 25.9, remontée **R-IV-83**), il n'est pas arbitré ici.
+acquise », et le plan portait alors « couverture par inférence que les institutions **doivent** traiter
+comme acquise ». *Retirer « d'analystes » effaçait l'objet même du garde-fou §8.2.4, et « doivent »
+transformait en prescription ce que la source marque expressément comme une **lecture de l'auteur**
+fondée sur une asymétrie de risque.* Le second membre reprenait fidèlement la conclusion du Vol. III
+ch. 19. **La pièce a cité la thèse verbatim, comme le PRD l'exige, et écrit son corps sous la forme
+bornée** ; l'écart a été remonté (§ 25.9, remontée **R-IV-83**) et **arbitré ailleurs** — le TOC v0.27
+a réaligné la thèse sur la forme bornée, et **le bloc de tête ci-dessus la cite désormais dans cette
+forme, depuis la v0.28** (passe de correction du 28 juillet 2026). *Le corps du chapitre n'a pas
+bougé : il était déjà écrit sous la forme que le plan porte aujourd'hui.*
 
 ## § 25.0 — Ouverture : deux façons pour un régulateur d'atteindre une technologie
 
@@ -282,7 +285,8 @@ Q-E est une case vide.**
 ⚠ **Et l'échéance se dit au bon régime.** Le 1ᵉʳ mai 2027 est une **échéance datée**, donc
 **PROGRAMMÉE** au tri prospectif — *à ne jamais confondre avec un jalon **visé*** (R-11 du Vol. III) :
 *un texte publié à entrée en vigueur future n'est pas une cible d'organisme.* Le **ch. 21 § 21.1** est
-le siège des jalons visés, et il n'est pas repris ici.
+le siège des jalons visés, et il n'est pas repris ici ; ⚠ **le tri prospectif lui-même — PROGRAMMÉ /
+PROJETÉ / SPÉCULATIF — a son siège au ch. 49 § 49.0**, *appliqué ici et jamais re-dérivé*.
 
 ## § 25.5 — Le registre du ch. 15 comme pièce de conformité
 
@@ -596,11 +600,15 @@ dans l'ordre exact —, le § 25.0 étant une **ouverture de chapitre**. La **ta
 respectée pour ses trois lignes**, et **le partage du §19.1 du Vol. III est tenu** : *seule la moitié
 E-23 est ici, la moitié AMF va au ch. 27 § 27.5, qui en est le siège désigné par la source elle-même.*
 La **décision 14 a été exécutée avant la rédaction**, domaine déclaré : une thèse examinée, **une
-divergence trouvée et remontée**. ⚠ **La formulation imposée est tenue à ses onze occurrences** :
-« attendu par E-23 », jamais « exigé » ; et **les cinq attentes au socle sont énumérées sans que la
-« supervision humaine » y soit ajoutée** — *y compris au § 25.6, qui traite précisément de sa limite.*
-Les **douze occurrences de R-14 portent leur degré**, et les **deux cases vides du tableau 25.1 sont
-déclarées degré 3 une par une**. Les **deux métriques du § 25.8 sont attribuées comme projections
+divergence trouvée et remontée**. ⚠ **La formulation imposée est tenue sur tout son domaine** — *les
+§ 25.2, § 25.5, § 25.6 et § 25.7* : « attendu par E-23 », jamais « exigé » ; et **les cinq attentes au
+socle sont énumérées sans que la « supervision humaine » y soit ajoutée** — *y compris au § 25.6, qui
+traite précisément de sa limite.* Les **absences portent toutes leur degré** — *deux occurrences du
+sigle R-14, et les marqueurs de degré ventilés à l'en-tête* —, et les **deux cases vides du
+tableau 25.1 sont déclarées degré 3 une par une**. ⚠ **Ces cardinaux ont été re-mesurés au commit du
+28 juillet 2026** (décision 16 du TOC) ; *l'attestation antérieure annonçait onze occurrences de la
+formulation imposée et douze de R-14, ni l'un ni l'autre n'étant re-mesurable contre le corps.* Les
+**deux métriques du § 25.8 sont attribuées comme projections
 d'enquête auto-déclarée**, à chaque occurrence. Le **registre n'est pas reconstruit** — son siège est le
 **ch. 15** — et **la grille des cinq questions n'est pas re-décidée** : elle est appliquée dans sa
 lecture inversée, **sans qu'aucun de ses trois verdicts soit rendu**, comme la source l'impose.

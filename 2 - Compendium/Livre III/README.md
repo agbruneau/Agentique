@@ -2,18 +2,23 @@
 
 Répertoire de rédaction du **Livre III** du compendium *La somme agentique* (Vol. IV). Il ne porte
 aucune décision, aucun socle et aucun garde-fou propre : la spécification de contenu est le
-[`PRD/TOC.md`](../PRD/TOC.md) **v0.27**, la gouvernance de la rédaction le
-[`PRD/PRD.md`](../PRD/PRD.md) — **v0.10** pour l'arbitrage de ce Livre, **v0.11** pour l'état courant
-du fichier. En cas d'écart entre une pièce de ce dossier et le TOC, **le TOC prime** — sauf déviation
-fondée, qui se déclare (décision 8 du TOC) et **se remonte, jamais se corrige au plan depuis ici**.
+[`PRD/TOC.md`](../PRD/TOC.md), la gouvernance de la rédaction le [`PRD/PRD.md`](../PRD/PRD.md). En cas
+d'écart entre une pièce de ce dossier et le TOC, **le TOC prime** — sauf déviation fondée, qui se
+déclare (décision 8 du TOC) et **se remonte, jamais se corrige au plan depuis ici**.
 
-⚠ **Deux versions de PRD sont nommées ci-dessus, et ce n'est pas une coquille.** *Une passe distincte
-a rédigé et arbitré le **Livre V** dans le même dépôt le même jour*, portant le PRD à **v0.11** ;
-☑ **les deux rangées s'empilent dans l'ordre — les passes se fusionnent, elles ne se remplacent
-pas** — et **aucune ne réécrit celle de l'autre**. La même concurrence explique la **renumérotation
-des remontées de ce Livre** : *elles portaient d'abord **R-IV-38 à R-IV-61**, numéros que l'autre passe
-avait consommés ; elles ont été portées à **R-IV-76 à R-IV-99** à la découverte de la collision, et
-**aucun numéro n'est partagé**.*
+⚠ **Trois versions de plan sont citées dans ce dossier, et aucune n'est une coquille — c'est la
+chronologie des passes.** L'**arbitrage** de ce Livre s'est fait sur le **TOC v0.27** et le **PRD
+v0.10** (27 juillet 2026) ; le **PRD est passé à v0.11** le même jour, par la passe du Livre V, ☑ **sans
+que la rangée de l'autre soit réécrite** — *les passes se fusionnent, elles ne se remplacent pas.* La
+**passe de correction du 28 juillet 2026** (voir plus bas) a re-cité les thèses des **ch. 25 et 27**
+depuis le **TOC v0.28**, forme qu'elles portent aujourd'hui. ⚠ **Les treize autres pièces citent
+« TOC v0.25 » et ne se périment pas pour autant** : *leur thèse est **identique caractère par
+caractère** au plan courant — vérifié en collation intégrale le 28 juillet 2026 —, et **l'étiquette
+date la citation, elle ne prétend pas nommer la dernière version du plan**.*
+
+⚠ **La même concurrence de passes explique la renumérotation des remontées de ce Livre** : *elles
+portaient d'abord **R-IV-38 à R-IV-61**, numéros que l'autre passe avait consommés ; elles ont été
+portées à **R-IV-76 à R-IV-99** à la découverte de la collision, et **aucun numéro n'est partagé**.*
 
 ## ⚠ État : le Livre est rédigé, arbitré, et toujours non publiable
 
@@ -62,45 +67,104 @@ ici** : **CA-IV-11 et CA-IV-13 exigent un relecteur distinct du rédacteur**, qu
 pas** — *arbitrer n'est pas relire*. **Aucune des quinze pièces n'a reçu autre chose que des contrôles
 mécaniques, conduits par la même main que la rédaction.**
 
+## ⚠ Passe de correction du 28 juillet 2026 — ce qui a été corrigé, et ce qui a été remonté
+
+**Sur instruction d'auteur, en réponse à l'[`audit.md`](../audit.md) du 28 juillet 2026** (volets A à E
+du §6, plus les transversaux T-1 à T-4), les **quinze `.md` et leurs quinze `.html`** ont été repris.
+⚠ **Cette passe corrige ; elle ne réédite pas** : *aucune section n'a été ajoutée ni retirée, aucune
+thèse n'a été réécrite — seulement re-citée depuis le plan —, et **le propos des chapitres est
+inchangé**. ⚠ **Elle ne franchit aucune porte et ne requalifie rien** : les pièces restent des
+**brouillons non publiables**, le socle consolidé compte toujours **zéro entrée**, et **CA-IV-13 n'est
+pas davantage satisfaite** — *cette passe est de la même main que la rédaction.*
+
+| Constat | Ce qui a été corrigé, et où |
+|---|---|
+| **III.A.1** | ⚠ **Thèses des ch. 25 et 27 re-citées par COPIE littérale depuis l'entrée courante du TOC**, étiquetées « v0.28 » (décision 17b du TOC : *le report se fait par copie, jamais par re-frappe*). Les deux blocs de collation qui documentent l'écart d'origine sont **conservés, reformulés au passé**. ☑ **Les quinze thèses — seize blocs, le ch. 22 en portant deux — ont été collationnées une à une contre le TOC : aucune autre divergence** |
+| **III.A.2** | Intitulé du **§ 27.2** aligné sur le plan — *une obligation inconditionnelle, trois informations dues sur demande, un alinéa distinct* — et **légende du tableau 27.2 corrigée**, qui décrivait l'état inverse de la réalité |
+| **III.A.3** | ⚠ **Erreur d'arithmétique calendaire du ch. 28 corrigée en trois endroits** — § 28.3 (deux fois) et note de statut, point 4 : *du 31 mars 2025 au 27 juillet 2026 il s'écoule **483 jours**, soit **quinze mois et vingt-sept jours**, non « seize mois et vingt-six jours » ; l'anniversaire de seize mois tombe le 31 juillet 2026, après le gel.* ☑ **Toutes les autres durées calendaires du Livre ont été recalculées une à une** — *ch. 23, 25 (trois), 26 (deux), 27, 28 (trois), 32 (cinq), 33 (quatre), 34 et 35 (trois)* — **et elles sont exactes**, hors le « vingt-huit mois » du ch. 33 § 33.1, qui vaut 27 mois et 30 jours et s'écrit désormais « à un jour près vingt-huit mois » |
+| **III.A.5, III.C.1, III.C.8, III.D.2, III.E.4** | **Socle déclaré remis en concordance avec le socle employé** : **H-07** citée en renvoi au ch. 28 § 28.2 ; **F-33 [B]** et **F-34 [A]** ajoutées à l'en-tête du ch. 30, **H-19 retirée** (aucun emploi au corps) ; **F-24** attribuée au ch. 32 § 32.1 ; **F-45** attribuée au ch. 33 § 33.1 ; **F-68 [B]** pourvue de son niveau à l'en-tête du ch. 25 |
+| **III.A.6, III.B.1 à III.B.4, III.C.2, III.D.4 à III.D.6 (T-1)** | ⚠ **Les quinze champs « Garde-fous balayés » et les quinze attestations de note ont été re-mesurés par balayage exhaustif** et réécrits sous la **règle de comptage de la décision 16 du TOC** — *marqueur littéral, dans le corps, en-tête et note exclus ; **domaine balayé sans cardinal** là où le garde-fou est appliqué sans que son identifiant soit écrit.* **Douze pièces sur quinze portaient au moins un cardinal faux ou une localisation contredite par le texte.** Trois clauses d'attestation fausses sont corrigées **par le texte plutôt que par l'affaiblissement** : sept `F-xx` nus **préfixés** aux tableaux 23.1 et 23.2 et deux au ch. 22 § 22.7 ; le faux ami « plan de contrôle » du **ch. 24 § 24.6.2 désambiguïsé** ; l'attestation du **ch. 33 sur le mot « lancé » corrigée sur son domaine** — *la réserve F-29 vise le rail en temps réel, non le rail de grande valeur, et ce n'est donc pas la réserve qui était violée mais l'attestation* |
+| **III.C.3 (T-3)** | **Renvoi au siège du tri prospectif — ch. 49 § 49.0 — ajouté** aux ch. 30 (§ 30.3.1, § 30.3.2, légende du tableau 30.3), ch. 31 (§ 31.1.2) **et ch. 25 (§ 25.4)**, cette dernière figurant à la liste des six pièces non renvoyantes inscrite au script. *Sans cela, la réactivation de S5 échouerait sur ce Livre* |
+| **III.C.5** | Statut du **ch. 30** corrigé : il aplatissait une distinction que son § 30.3.3 construit — *deux des sept instances portent des **Recommandations** publiées ; c'est le travail **spécifique à l'agent** qui est pré-normatif* |
+| **III.C.6, III.E.5** | **Six bandeaux de siège du ch. 31 réécrits** : renvois inter-chapitres **nommés par leur chapitre** (« le ch. 34 § 34.1 », non « les § 34.1 »), et **listes de consommateurs re-mesurées par balayage des cinquante pièces** — ⚠ *le bandeau du § 31.3.4 nommait un § 31.4.1 qui n'y renvoie pas.* ☑ **Aucun marqueur de siège n'est renommé** : les huit signatures sont laissées **telles qu'écrites**, la passe de gouvernance les versant au même commit |
+| **III.C.6c** | **§ 31.4.2 : le troisième phénomène est rétabli** — *les rails instantanés suppriment la fenêtre de récupération* —, écrit **en renvoi au § 31.1.1** et marqué *Lecture de l'auteur*, la conjonction des trois étant la thèse de la sous-section et non un fait du socle |
+| **III.C.7** | **Friction *publié* / *pris* écrite au ch. 32 § 32.4** : *le premier verbe dit ce que le balayage a constaté — degré 1 —, le second l'existence de l'acte, que seul l'index non balayé établirait — degré 3.* **Les deux énoncés ne se contredisent pas ; le second est plus faible** |
+| **III.C.9** | **§ 31.1.3 borné** : « à valeur de fait juridique établi » est retiré, le régime du chapitre étant **intégralement [C]** — *le repérage est daté, la décision n'a pas été reprise à sa source primaire, et **aucun énoncé n'est central au sens de CA-IV-01*** |
+| **III.D.3** | **§ 34.2.2 : les deux renvois entrants promis sont écrits** — § 34.5.2 (l'opposition cœur embarqué / cœur exposé) et § 34.5.6 (le périmètre de la piste d'audit, troisième axe de la grille). ⚠ **Le marqueur du siège est conservé mot pour mot** |
+| **III.D.1, III.E.6 (T-4)** | **Attribution jamais anonymisée, sur les trois cas que la décision 15b du TOC nomme** : le **ch. 24 § 24.3.4** nomme désormais **OWASP Non-Human Identities Top 10 (2025)**, domicile de la grille des dix risques ; le **ch. 36 § 36.5** porte ses **quatre identifiants arXiv** — *2606.25876, 2605.30998, 2606.26028, 2509.10147* —, sans lesquels son propre critère de clôture était inexécutable ; le **ch. 29 tableau 29.1** nomme la série de « CA-5 ». ☑ **Le reste du Livre n'est pas re-nommé** : la parade de péremption tient pour les dénominations commerciales et les versions |
+| **III.E.3** | **Ch. 32 § 32.4 : la lacune PRD Vol. II §10.11 route désormais vers ses DEUX destinations** — *le ch. 49 pour son état final, l'**Annexe D** pour son renvoi documentaire* —, la pièce ne portant que la première |
+| **hors audit** | ⚠ **Quatre attributions de socle décalées d'un rang au ch. 35, trouvées en instruisant III.D.1** : *§ 35.2 (F-20 → **F-21**), § 35.4 (F-21 → **F-22**), § 35.5 (F-22 → **F-23b**, puis F-23b → **F-23**)*. **F-23 manquait à l'en-tête** et y entre ; **F-20**, dont le contenu propre est la gouvernance publiée du § 35.3, y est désormais attribuée. *Établi contre le `PRD.md` et la `Monographie` ch. 17 du Vol. II **ouverts à la source**, notes [^4], [^6] et [^7]* — ⚠ **le volet D de l'audit avait certifié ces entrées « nommées une à une », ce qui est vrai et ne dit rien de leur exactitude** |
+
+**Ce qui a été remonté sans être corrigé** — *un rédacteur ne corrige jamais le TOC, ce PRD ni le
+conspectus : il remonte* (PRD, Annexe A) :
+
+- **III.E.1** — la **table détaillée du § 34.2** du TOC déplie quatre objets là où sa source en porte
+  six ; la pièce couvre les six. **Hors zone** : traité par la passe de gouvernance.
+- **III.E.2** — l'**entrée du ch. 27** au TOC porte encore « finale le 30 mars 2026 — divergence
+  tranchée » que **R-IV-88 a défaite**. **Hors zone** : idem.
+- **III.B.6a** — le **titre du § 24.7** retranche « (B2B) » au titre du plan. *Déviation non déclarée,
+  sans effet sur la résolution des renvois ; **elle n'était pas dans le mandat de la passe** et n'a pas
+  été touchée.*
+- **III.B.7** — la **dérivation volumétrique annoncée au ch. 22** (« majorée du poids de ses deux
+  mouvements ») ne reconstruit pas sa cible. *Question de calibrage, qui relève de **D-4** et de sa
+  passe unique de clôture.*
+- **III.A.4** — la borne du **ch. 28 § 28.2** se calcule depuis la date que **R-IV-88** a défaite.
+  *L'énoncé reste vrai comme borne inférieure ; sa dérivation dépend d'un objet que l'arbitrage déclare
+  inexistant. **À trancher en G-1**, non ici.*
+- **III.A.7** — décompte croisé entre le **ch. 27 § 27.5** (« deux des cinq questions ») et le
+  **tableau 25.1** (trois appuis). *Les deux pièces lisent la même grille à deux grains ; **le
+  départager est un arbitrage de fond**, non une correction.*
+- **III.D.8** — au **ch. 34 § 34.1**, trois thèmes du dépliage traités en renvoi plutôt qu'en condensé ;
+  au **ch. 35**, le § 35.8 subdivisé hors dépliage. *Écarts au plan, à arbitrer.*
+
 ## Volumétrie réelle — l'enveloppe tenue, et pourquoi cela ne prouve rien
 
-**90 251 mots** de corps pour les quinze pièces, mesurés le 27 juillet 2026 par
+**91 477 mots** de corps pour les quinze pièces, **re-mesurés le 28 juillet 2026** par
 [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — contre une enveloppe de
-Livre de **90 000** au TOC, soit **+0,3 %**.
+Livre de **90 000** au TOC, soit **+1,6 %**.
 
-| Pièce | Cible dérivée | Réel | Écart |
-|---|---|---|---|
-| [Ch. 22](22-options-orchestration-paradigme-apm.md) | 8 500 | **8 459** | −0,5 % |
-| [Ch. 23](23-frameworks-orchestration-entreprise.md) | 5 000 | **4 421** | −11,6 % |
-| [Ch. 24](24-passage-echelle-entreprise.md) | 9 500 | **12 530** | **+31,9 %** |
-| [Ch. 25](25-e23-risque-modele.md) | 7 000 | **6 069** | −13,3 % |
-| [Ch. 26](26-vide-federal-c27-c36.md) | 2 500 | **2 316** | −7,4 % |
-| [Ch. 27](27-quebec-amf-article-12-1.md) | 7 500 | **6 905** | −7,9 % |
-| [Ch. 28](28-valeurs-mobilieres-acvm-11-348.md) | 2 500 | **2 331** | −6,8 % |
-| [Ch. 29](29-pont-frames-deterministes.md) | 4 000 | **4 577** | +14,4 % |
-| [Ch. 30](30-maillage-reglementaire-normalisation.md) | 7 500 | **7 941** | +5,9 % |
-| [Ch. 31](31-vertical-financier-durcisseurs.md) | 8 500 | **8 084** | −4,9 % |
-| [Ch. 32](32-cadre-bancaire-consommateur.md) | 3 500 | **3 086** | −11,8 % |
-| [Ch. 33](33-iso-20022-lynx-rtr.md) | 3 500 | **2 804** | **−19,9 %** |
-| [Ch. 34](34-sous-domaines-financiers.md) | 9 500 | **9 562** | +0,7 % |
-| [Ch. 35](35-etudes-de-cas-production-canadienne.md) | 6 000 | **6 783** | +13,1 % |
-| [Ch. 36](36-prospective-ap2-rails-canadiens.md) | 5 000 | **4 383** | −12,3 % |
-| **Livre** | **90 000** | **90 251** | **+0,3 %** |
+| Pièce | Cible dérivée | Réel (28 juill.) | Écart | Réel (27 juill.) |
+|---|---|---|---|---|
+| [Ch. 22](22-options-orchestration-paradigme-apm.md) | 8 500 | **8 464** | −0,4 % | 8 459 |
+| [Ch. 23](23-frameworks-orchestration-entreprise.md) | 5 000 | **4 435** | −11,3 % | 4 421 |
+| [Ch. 24](24-passage-echelle-entreprise.md) | 9 500 | **12 628** | **+32,9 %** | 12 530 |
+| [Ch. 25](25-e23-risque-modele.md) | 7 000 | **6 142** | −12,3 % | 6 069 |
+| [Ch. 26](26-vide-federal-c27-c36.md) | 2 500 | **2 316** | −7,4 % | 2 316 |
+| [Ch. 27](27-quebec-amf-article-12-1.md) | 7 500 | **6 984** | −6,9 % | 6 905 |
+| [Ch. 28](28-valeurs-mobilieres-acvm-11-348.md) | 2 500 | **2 379** | −4,8 % | 2 331 |
+| [Ch. 29](29-pont-frames-deterministes.md) | 4 000 | **4 580** | +14,5 % | 4 577 |
+| [Ch. 30](30-maillage-reglementaire-normalisation.md) | 7 500 | **8 017** | +6,9 % | 7 941 |
+| [Ch. 31](31-vertical-financier-durcisseurs.md) | 8 500 | **8 517** | +0,2 % | 8 084 |
+| [Ch. 32](32-cadre-bancaire-consommateur.md) | 3 500 | **3 271** | −6,5 % | 3 086 |
+| [Ch. 33](33-iso-20022-lynx-rtr.md) | 3 500 | **2 859** | **−18,3 %** | 2 804 |
+| [Ch. 34](34-sous-domaines-financiers.md) | 9 500 | **9 629** | +1,4 % | 9 562 |
+| [Ch. 35](35-etudes-de-cas-production-canadienne.md) | 6 000 | **6 800** | +13,3 % | 6 783 |
+| [Ch. 36](36-prospective-ap2-rails-canadiens.md) | 5 000 | **4 456** | −10,9 % | 4 383 |
+| **Livre** | **90 000** | **91 477** | **+1,6 %** | 90 251 |
 
-: Volumétrie du Livre III, mesurée le 27 juillet 2026. *L'écart se documente ; il ne se corrige ni par amputation ni par gonflement* (D-4).
+: Volumétrie du Livre III, re-mesurée le 28 juillet 2026 au terme de la passe de correction ; la dernière colonne conserve la mesure du 27 juillet, pour que le delta se lise. *L'écart se documente ; il ne se corrige ni par amputation ni par gonflement* (D-4).
 
-⚠ **L'enveloppe est tenue au Livre, et ce résultat ne prouve rien de la méthode — il faut le dire
+⚠ **Le Livre a pris 1 226 mots — soit +1,4 % — et c'est intégralement de l'appareil, non de la matière.**
+*La passe de correction du 28 juillet 2026 n'a **rien** ajouté au propos des chapitres : elle a réécrit
+des champs « Garde-fous balayés » pour les rendre re-mesurables, ajouté des renvois de siège, des
+attributions et des désambiguïsations, et documenté au passé les écarts qu'elle soldait.* ⚠ ***Un
+appareil qui devient honnête coûte des mots*** — et **les quatre pièces les plus touchées sont celles
+dont les décomptes divergeaient le plus** : ch. 31 (+433), ch. 32 (+185), ch. 24 (+98) et ch. 30 (+76).
+*D-4 interdit d'amputer pour compenser ; l'écart se documente ici et alimente le re-calibrage de
+clôture.*
+
+⚠ **L'enveloppe reste tenue au Livre, et ce résultat ne prouve rien de la méthode — il faut le dire
 avant qu'on en tire une leçon fausse.** *Le Livre II avait **additionné ses dix cibles avant la
 première ligne** et obtenu exactement 50 000, pour finir à **+23,4 %** ; **ici la même addition a été
-faite, et l'écart au Livre est de +0,3 %**.* ⚠ ***La différence n'est donc pas dans la dérivation — elle
+faite, et l'écart au Livre est de +1,6 %**.* ⚠ ***La différence n'est donc pas dans la dérivation — elle
 était bonne dans les deux cas — mais dans la dispersion par pièce*** : **les écarts individuels vont de
-−19,9 % à +31,9 %**, soit **une amplitude de cinquante et un points**, et **ils se compensent**.
+−18,3 % à +32,9 %**, soit **une amplitude de cinquante et un points**, et **ils se compensent**.
 *Une enveloppe tenue par compensation n'est pas une enveloppe prédite.*
 
-⚠ **Les deux extrêmes ont chacun leur cause, et elles sont opposées.** Le **ch. 24** dépasse de près
-d'un tiers parce qu'il **déplie dix sections dont chacune absorbe quatre à sept sous-sections d'une
-source unique** — *la cible avait été dérivée au prorata des **sections**, non des **sous-sections***.
-Le **ch. 33** est court de vingt pour cent parce que **sa matière est faite de dates, de statuts et de
+⚠ **Les deux extrêmes ont chacun leur cause, et elles sont opposées.** Le **ch. 24** dépasse d'un tiers
+parce qu'il **déplie dix sections dont chacune absorbe quatre à sept sous-sections d'une source
+unique** — *la cible avait été dérivée au prorata des **sections**, non des **sous-sections***.
+Le **ch. 33** est court de dix-huit pour cent parce que **sa matière est faite de dates, de statuts et de
 bornes** — *un chapitre qui doit surtout **ne pas écrire** est plus court qu'un chapitre qui expose.*
 ⚠ **C'est le pendant exact de la cause identifiée au Livre II** : *là-bas, le bornage allongeait ; ici,
 il raccourcit — parce que **ce qui est borné n'est plus la formulation d'un énoncé mais son
@@ -135,14 +199,21 @@ ne les fond pas en une troisième**.* ⚠ **Deux autres sont « conservés intac
 
 | Siège | Pièce | Ce qu'il interdit de refaire ailleurs |
 |---|---|---|
-| **Le patron d'irréversibilité** | **ch. 31 § 31.1.1** | *préparation par l'agent, libération humaine sur l'action irréversible* — les ch. 33, 34 et 36 y renvoient |
-| **Le risque systémique** | **ch. 31 § 31.1.2** | *la corrélation des agents comme canal distinct de la défaillance individuelle* |
-| **Le patron-signature de la double-qualification** | **ch. 31 § 31.1.4** | *un même agent produit la piste d'audit pour deux régimes qui ne se recouvrent pas* — ⚠ **le ch. 30 § 30.2.1 déclare lui-même ne faire que l'instancier** |
-| **Le critère anti-emballement** | **ch. 31 § 31.2.6** | *adoption interne, outillage de développement et serveur d'exécution disponible sont **trois réalités distinctes*** |
-| **Le patron du quatre-yeux** | **ch. 31 § 31.3.4** | *l'agent qui propose n'est jamais celui qui approuve*, **plus l'indépendance d'exécution anti-collusion** |
-| **Le patron AML** | **ch. 31 § 31.4.3** | *l'agent investigue et prépare ; la décision de déclarer demeure humaine* |
+| **Le patron d'irréversibilité** | **ch. 31 § 31.1.1** | *préparation par l'agent, libération humaine sur l'action irréversible* — **renvois entrants hors du chapitre : ch. 24 § 24.1.4, ch. 33 (deux points), ch. 34 (dix points), ch. 36 (trois points)** |
+| **Le risque systémique** | **ch. 31 § 31.1.2** | *la corrélation des agents comme canal distinct de la défaillance individuelle* — **ch. 34 § 34.4.6 et § 34.6.3, seuls consommateurs** |
+| **Le patron-signature de la double-qualification** | **ch. 31 § 31.1.4** | *un même agent produit la piste d'audit pour deux régimes qui ne se recouvrent pas* — ⚠ **le ch. 30 § 30.2.1 déclare lui-même ne faire que l'instancier** ; **ch. 30 (six points), ch. 34 § 34.1.1 et § 34.7.2** |
+| **Le critère anti-emballement** | **ch. 31 § 31.2.6** | *adoption interne, outillage de développement et serveur d'exécution disponible sont **trois réalités distinctes*** — **ch. 34, cinq points** |
+| **Le patron du quatre-yeux** | **ch. 31 § 31.3.4** | *l'agent qui propose n'est jamais celui qui approuve*, **plus l'indépendance d'exécution anti-collusion** — **ch. 34 (six points), ch. 36 (deux points)** |
+| **Le patron AML** | **ch. 31 § 31.4.3** | *l'agent investigue et prépare ; la décision de déclarer demeure humaine* — **ch. 30 (quatre points), ch. 34 § 34.1.3 et § 34.7.2** |
 
-: Les six sièges du Livre III. ⚠ **Deux domiciles supplémentaires** — la grille des dix risques d'identités non humaines (**ch. 24 § 24.3.4**) et l'application des permissions à la récupération (**ch. 24 § 24.4.2**) — *portent leur marqueur sans être des sièges au sens du plan.*
+: Les six sièges du Livre III. ⚠ **Les listes de renvois entrants ont été re-mesurées le 28 juillet 2026 par balayage des cinquante pièces**, à la pièce comme ici — *les trois documents en donnaient trois versions, et toutes sous-comptaient.* ⚠ **Deux domiciles supplémentaires** — la grille des dix risques d'identités non humaines (**ch. 24 § 24.3.4**, ⚠ **désormais attribuée à son auteur et à son année**, décision 15b du TOC) et l'application des permissions à la récupération (**ch. 24 § 24.4.2**) — *portent leur marqueur sans être des sièges au sens du plan.*
+
+⚠ **Un neuvième candidat existe et il est nommé ici pour la première fois** : le **§ 34.2.2** — la grille
+d'architecture des plateformes d'assurance de dommage — porte un marqueur de siège que le TOC désigne
+lui aussi. *Il annonçait deux renvois entrants, aux § 34.5.2 et § 34.5.6, **dont aucun n'existait** ;
+les deux ont été écrits le 28 juillet 2026.* ⚠ **Son versement à `check-sieges.py` relève de la passe de
+gouvernance, non de ce dossier** — *le marqueur du § 34.2.2 est conservé mot pour mot pour que la
+signature versée résolve.*
 
 ⚠ **Aucun des huit n'est encore contrôlé par [`PRD/check-sieges.py`](../PRD/check-sieges.py), et le
 motif du report est explicite** : *le fichier est **en cours de modification par la passe concurrente
@@ -151,12 +222,13 @@ est portée au PRD v0.10** et **se paie en une passe unique, après la clôture 
 huit marqueurs sont écrits dans les pièces — le geste du rédacteur —, et **les deux autres gestes** —
 table et harnais de mutation — **restent dus**.*
 
-⚠ **Et le contrôle passe malgré tout, ce qui est précisément le piège à nommer.** Au terme des deux
-passes, `check-sieges.py` rend **« les 9 sièges tiennent sur 50 pièces (S1-S5) »** — *les quinze pièces
-de ce Livre y sont lues et n'y produisent aucun écart*. ⚠ ***Une sortie 0 n'atteste que les sièges
-inscrits à la table : elle ne dit rien des huit qui n'y sont pas.*** *Un contrôle vert sur un domaine
-amputé est plus dangereux qu'un contrôle rouge* — d'où l'inscription de la dette ici, au PRD et au
-`CLAUDE.md` du dossier plutôt que dans le seul journal d'une passe.
+⚠ **Et le contrôle passe malgré tout, ce qui est précisément le piège à nommer.** Au terme des trois
+passes du 27 juillet 2026, `check-sieges.py` rend **« les 12 sièges tiennent sur 50 pièces (S1-S5) »** —
+*les quinze pièces de ce Livre y sont lues et n'y produisent aucun écart*. ⚠ ***Une sortie 0 n'atteste
+que les sièges inscrits à la table : elle ne dit rien des huit qui n'y sont pas, ni du neuvième candidat
+du § 34.2.2.*** *Un contrôle vert sur un domaine amputé est plus dangereux qu'un contrôle rouge* — d'où
+l'inscription de la dette ici, au PRD et au `CLAUDE.md` du dossier plutôt que dans le seul journal d'une
+passe.
 
 ## Les vingt-quatre remontées — soldées le 27 juillet 2026
 

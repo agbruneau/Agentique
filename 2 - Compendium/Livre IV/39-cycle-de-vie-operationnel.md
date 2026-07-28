@@ -10,13 +10,16 @@ capacité — **agir sur ce qu'on voit**.*
 | **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6. ⚠ **Chapitre de COMPOSITION, sans lot d'instruction propre** — il consomme les ch. 20, 37 et 38 plutôt qu'une passe de recherche —, et *un chapitre de composition est plus exposé qu'un chapitre de socle, pas moins : sans source à citer, l'inférence ne se voit pas.* **R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : aucun fait périssable de cette pièce n'a été repris à la source primaire. Gels de source : **21 juillet 2026** (Vol. III), **juin 2026** (Vol. I) ; *ils ne sont pas celui de la somme* |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. III *Monographie* ch. 25**, dont les entrées **F-03**, **F-05**, **F-06**, **F-07**, **F-10**, **F-12**, **F-19**, **F-20**, **F-21**, **F-23**, **F-34**, **F-35**, **F-37**, **F-38**, **F-40**, **F-46**, **F-52**, **F-53**, **F-55**, **F-57**, **F-64**, **F-65**, **F-66**, **F-68**, **F-70**, **F-71**, **F-76**, **F-77**, **F-92**, **F-93**, **F-97**, **F-98** et les entrées héritées **H-04**, **H-07**, **H-11**, **H-12**, **H-15**, **H-23**, **H-25**, **H-26**, **H-27**, **H-28**, **H-31**, **H-33** **conservent leurs niveaux d'origine** ; et contre le **Vol. I *Monographie* §2.11.4-2.11.5**, qui entre **en [C]**. ⚠ **Une entrée porte une dette de vote non résorbée** : **F-92** est en **[B, degré 1] avec vote adversarial dû et non conduit** — *elle ne porte aucune thèse ici, et la refonte du socle (G-3) ne l'admettra pas avant résorption.* ⚠ **Régime « source rédigée non publiable »** : G-4 non close, **aucun vote conduit**. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | **Les deux séries, intégralement, y compris les zéros.** Vol. III — **R-14 (trois degrés d'absence) : seize occurrences**, § 39.1 (deux), § 39.2 (quatre), § 39.3 (deux), § 39.4 (quatre), § 39.5 (deux), § 39.6 (deux) ; **R-09 (statut pré-normatif dit à chaque mention) : dix occurrences**, § 39.1 (deux), § 39.2 (trois), § 39.3 (deux), § 39.4 (trois) ; **R-02 : quatre occurrences**, § 39.1, § 39.2, § 39.4, § 39.5 ; **R-01 (le passeport n'existe dans aucune spécification) : trois occurrences**, § 39.5 (deux) et la synthèse ; **R-13 (échelle d'autonomie jamais nue) : trois occurrences**, § 39.2 et § 39.6 (deux) — *l'échelle à quatre paliers non numérotés y est nommée par son cardinal, jamais seule* ; **R-06 (« attendu par E-23 ») : trois occurrences**, § 39.2 ; **R-12 (traitement défensif au niveau architectural) : deux occurrences**, § 39.2 et § 39.3 ; **R-11 : une occurrence**, § 39.2. **R-03 à R-05, R-07, R-08, R-10 : zéro occurrence.** Vol. II — **métriques auto-déclarées : cinq occurrences**, § 39.1 (trois) et § 39.4 (deux), chacune attribuée à son éditeur nommé. **R-1 à R-8 : zéro occurrence** — *leurs sièges sont aux ch. 15, 16 et 45.* ⚠ **Faux ami déclaré** : le « corpus d'appui » du § 39.6 est un **marqueur conditionnel de réouverture**, jamais une source |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** Vol. III — **R-14 (trois degrés d'absence) : quatre occurrences**, § 39.1, § 39.2, § 39.4 et § 39.6 ; **R-09 (statut pré-normatif dit à chaque mention) : trois occurrences**, § 39.2, § 39.3 et § 39.4 ; **R-13 (échelle d'autonomie jamais nue) : deux occurrences**, § 39.2 et § 39.6 — *l'échelle à quatre paliers non numérotés y est nommée par son cardinal, jamais seule* ; **R-01 (le passeport n'existe dans aucune spécification) : une occurrence**, § 39.5 ; **R-06 (« attendu par E-23 ») : une occurrence**, § 39.2 ; **R-11 : une occurrence**, § 39.2 ; **R-12 (traitement défensif au niveau architectural) : une occurrence**, § 39.2. **R-02 : une occurrence de l'identifiant**, § 39.5 — ⚠ *le garde-fou est pourtant appliqué, chaque mécanisme étant qualifié par ce que sa spécification démontre : domaine déclaré, corps entier, sans cardinal (décision 16, alinéa c)* ; **R-03 à R-05, R-07, R-08, R-10 : zéro occurrence.** Vol. II — **métriques auto-déclarées (marqueur « auto-déclaré ») : quatre occurrences**, § 39.1 (deux) et § 39.3 (deux), chacune attribuée à son éditeur nommé ; **réserve F-37 (préimpression non révisée) : deux occurrences**, § 39.4. **R-1 à R-8 : zéro occurrence** — *leurs sièges sont aux ch. 15, 16 et 45.* ⚠ **Faux ami déclaré** : le « corpus d'appui » du § 39.6 est un **marqueur conditionnel de réouverture**, jamais une source |
 | **Volumétrie cible** | ≈ **6 500 mots** de corps (§ 39.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des six sections et du volume de source consommé. ☑ **Décompte publiable depuis G-2** ; **réel reporté au [`README.md`](README.md)** du Livre. ⚠ **D-4 s'applique** : *ni amputation ni gonflement* |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 39)* — l'exploitation d'un parc d'agents est une boucle — évaluer, détecter la dérive, répondre à l'incident, réviser le mandat — réalisation opérationnelle du quatrième terme de l'invariant ; sans elle, le passeport certifie un comportement passé, jamais le comportement courant.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 39 — **thèse réalignée en v0.28**, décisions 8 et 14, remontée R-IV-45)* — **Lecture de l'auteur** — l'exploitation d'un parc d'agents **forme** une boucle — évaluer, détecter la dérive, répondre à l'incident, réviser le mandat. ⚠ **Ce que le socle établit** : l'énoncé de l'invariant à quatre termes, entré en **[C]** comme thèse à attribuer. ⚠ **Ce qu'il n'établit pas** : **que cette boucle en soit la réalisation** — *le Vol. I ne décrit aucune boucle d'exploitation*. Sans elle, **le passeport n'assemble que des pièces datées à leur émission** — *et non « certifie », verbe qui prêterait une capacité à un objet ne figurant dans aucune spécification (R-01 du Vol. III).*
 
-⚠ **La thèse citée porte deux formes que sa source a elle-même bornées — décision 14 du TOC, appliquée
-avant la rédaction.** *Premièrement*, le Vol. III a **reformulé sa thèse le 21 juillet 2026**
+⚠ **La thèse portait, à la rédaction, deux formes que sa source avait elle-même bornées — le
+réalignement est FAIT, et l'histoire de l'écart se conserve** (décision 17 du TOC, alinéa c). **Forme
+antérieure, v0.25** : « l'exploitation d'un parc d'agents **est** une boucle […] — **réalisation
+opérationnelle du quatrième terme de l'invariant** ; sans elle, **le passeport certifie** un
+comportement passé, jamais le comportement courant ». *Premièrement*, le Vol. III a **reformulé sa thèse le 21 juillet 2026**
 (confrontation P4.0, écarts ÉC-11 et ÉC-12) et l'a marquée **« Lecture de l'auteur » en totalité** :
 ce que le socle établit est l'**énoncé de l'invariant à quatre termes**, entré en **[C]** comme thèse
 à attribuer ; ce qu'il **n'établit pas** est **que la boucle décrite en soit la réalisation** — *le
@@ -24,8 +27,10 @@ Vol. I ne décrit aucune boucle d'exploitation*. *Deuxièmement*, « le passepor
 comportement passé » : la source écrit « le passeport **n'assemble que des pièces datées à leur
 émission** ». ⚠ **La différence n'est pas de style** : *« certifier » attribue une capacité à un objet
 qui ne figure dans aucune spécification à date* (R-01 du Vol. III), et qualifier un mécanisme par ce
-qu'il promet plutôt que par ce qu'il démontre est ce que R-02 proscrit. **La pièce cite la thèse
-verbatim et écrit son corps sous la forme bornée** ; l'écart est **remonté** (R-IV-45, § 39.7).
+qu'il promet plutôt que par ce qu'il démontre est ce que R-02 proscrit. **Le corps a été écrit sous la
+forme bornée** et l'écart avait été **remonté** (R-IV-45, § 39.7). ☑ **La remontée est soldée par l'arbitrage v0.28 du TOC** (décisions 8 et 14), et **la citation
+ci-dessus porte la forme réalignée**, reportée **par copie** depuis l'entrée courante du plan.
+*La v0.29 du TOC ne modifie aucune thèse du Livre.*
 
 ---
 
@@ -314,7 +319,7 @@ journalise l'état et chaque effet de bord, permet la reprise après panne **san
 déjà engagées, à condition que les appels d'outils soient idempotents**. ⚠ **L'idempotence devient
 ainsi une exigence de conception d'outil de premier ordre** : *sans elle, une reprise transforme un
 agent en multiplicateur d'effets de bord.* ⚠ **Le versant *sémantique d'effet* de ce constat est au
-ch. 48**, qui n'est pas rédigé — ce chapitre le nomme et ne le développe pas. *Deux* :
+ch. 48**, ⚠ *non rédigé à la date de cette pièce et rédigé depuis, hors portes* — ce chapitre le nomme et ne le développe pas. *Deux* :
 l'**intervention humaine** doit être traitée comme **une primitive d'architecture et non comme un
 correctif tardif** — points d'interruption où l'exécution se suspend en attendant une approbation,
 modes d'approbation gradués selon la sensibilité de l'action, interruptibilité, **modélisation en
@@ -342,7 +347,7 @@ intermédiaire — retirer un mandat précis et constater sa propagation — n'e
 entrée**. Elle se réfute par la production d'un mécanisme de retrait sélectif **dont la propagation
 soit constatable**.
 
-## § 39.4 — GitOps du parc d'agents : versionner le mandat, promouvoir, revenir en arrière
+## § 39.4 — GitOps du parc d'agents : versionner le mandat protocolaire, promouvoir, revenir en arrière
 
 **Ce que cette section vérifie.** Elle demande ce qui permettrait de restituer, après coup, **quel
 mandat et quelles bornes de privilège étaient en vigueur au moment d'une action donnée** — et d'y
@@ -484,7 +489,7 @@ apprentissage cesserait d'être un cas limite pour devenir le régime nominal.* 
 préimpression, de juillet 2026, propose d'encadrer l'auto-modification par des **certificats à
 garanties d'erreur auditables**. ⚠ **Les trois sont des préimpressions dont seuls les résumés ont été
 consultés : repérages [C], jamais des faits**, et leur instruction relève de **G-1**. ⚠ **Le versant
-versionnement est au ch. 47**, qui n'est pas rédigé — *un artefact qui se modifie en production n'a
+versionnement est au ch. 47**, ⚠ *non rédigé à la date de cette pièce et rédigé depuis, hors portes* — *un artefact qui se modifie en production n'a
 plus d'horloge fixe du tout.* **Aucun énoncé de ce chapitre ne s'y adosse.**
 
 ## § 39.6 — Cycle de vie et modèles de maturité
@@ -535,7 +540,7 @@ fait auquel le confronter.*
 
 ⚠ **Ce que le chapitre ne lègue pas.** Aucun **indicateur** : ils sont au **ch. 40**. Aucune
 **sémantique d'effet** : l'idempotence est nommée ici comme exigence de conception héritée en [C], et
-**le ch. 48 en est le siège** — non rédigé. Aucune **quatrième dérive** : la mémoire est un **front
+**le ch. 48 en est le siège** — ⚠ *non rédigé à la date de cette pièce, rédigé depuis, hors portes*. Aucune **quatrième dérive** : la mémoire est un **front
 ouvert**, pas une dérive documentée. Et aucun **verdict sur l'auto-évolution** : trois préimpressions
 non instruites ne font pas un régime nominal.
 
@@ -554,11 +559,18 @@ rédaction du PRD §6**. Instruction d'auteur du **27 juillet 2026**.
    sa source : *elle est citée à sa seule borne, ne porte aucune thèse, et **n'entrera pas au socle
    consolidé avant résorption** (PRD §7.1).*
 2. **Les décomptes sont publiables** (G-2) ; le réel est reporté au [`README.md`](README.md).
-3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan.** Ne sont pas rédigés :
-   **ch. 41**, **ch. 43**, **ch. 45**, **ch. 47**, **ch. 48**, et les chapitres du Livre III au-delà
-   du ch. 26 — dont le **ch. 27**, siège de la ligne directrice de l'AMF. Les renvois vers les **ch. 5,
-   6, 15, 16, 19, 20, 22** résolvent contre du texte ; ceux vers les **ch. 37, 38, 40, 46** résolvent
-   contre du texte au terme de la présente passe.
+3. **Les renvois « ch. N » : état FINAL de la passe, et non ordre d'écriture.** ⚠ *La forme
+   antérieure de ce point photographiait l'instant où cette pièce a été écrite et déclarait « ne
+   sont pas rédigés : ch. 41, ch. 43 et ch. 45 » — alors que **la même passe les a écrits
+   ensuite** ; elle est corrigée ici sur l'état que le commit produit.* **Les dix chapitres du
+   Livre IV (ch. 37 à 46) sont rédigés**, comme le sont les **cinquante chapitres des cinq
+   Livres** : *tous les renvois « ch. N » de cette pièce résolvent donc contre du texte.* ⚠ **Ce
+   qui reste vrai de la forme antérieure, et qui est daté** : à l'heure où ce chapitre a été
+   écrit, n'étaient rédigés ni les ch. 47 et 48 du Livre V, ni les chapitres du Livre III au-delà
+   du ch. 26 — dont le ch. 27, siège de la ligne directrice de l'AMF —, non plus que les ch. 41,
+   ch. 43 et ch. 45 — *les renvois qui les visent ont été posés comme renvois de plan et n'ont pas
+   été re-vérifiés contre le texte paru après eux.* ⚠ **Et « résoudre contre du texte » ne vaut
+   pas recevabilité** : *le texte visé est lui-même un brouillon hors portes.*
 4. **Trois fronts sont exposés et non comblés** : la restitution datée (§ 39.4), le *frame*
    opérationnel (§ 39.5) et l'absence de modèle de maturité (§ 39.6). ⚠ *Aucun n'est rédigé : le seul
    geste admissible sur un front dont le socle est muet est d'exposer le vide et de formuler la
@@ -577,6 +589,11 @@ rédaction du PRD §6**. Instruction d'auteur du **27 juillet 2026**.
   émission »**. ⚠ *« Certifier » attribue une capacité à un objet qui ne figure dans aucune
   spécification (R-01), et qualifie un mécanisme par ce qu'il promet (R-02).* **Demande remontée** :
   réalignement au titre des **décisions 8 et 14**.
+  ☑ **Issue, 27 juillet 2026** — **TOC, décisions 8 et 14** — la boucle n'**est** pas la
+  réalisation du quatrième terme : *la source marque sa thèse « Lecture de l'auteur » en
+  totalité* ; ⚠ **et « le passeport certifie » tombe** — *R-01 : il ne figure dans aucune
+  spécification.* **La citation en tête de cette pièce porte la forme réalignée** (décision 17
+  du TOC).
 - **R-IV-46 — non bloquante, de qualification de relève, et de la même classe que R-IV-44.** Le TOC
   porte au § 39.2 une **relève v0.10** sur la **mémoire comme quatrième source de dérive**, et au
   § 39.5 une **relève v0.11** sur l'**auto-évolution**. ⚠ **Les deux sont des repérages [C]** — la
@@ -587,6 +604,9 @@ rédaction du PRD §6**. Instruction d'auteur du **27 juillet 2026**.
   versionnement de l'auto-évolution —, **et que leur statut de repérage soit rappelé à leur point
   d'atterrissage**. ⚠ *Une relève dont le codestinataire n'est pas rédigé se perd deux fois : à
   l'instruction et au versement.*
+  ☑ **Issue, 27 juillet 2026** — **PRD, domaine de G-1** — les relèves v0.10 (mémoire) et v0.11
+  (auto-évolution) sont inscrites **avec leur chapitre codestinataire déclaré** : ch. 5 pour
+  l'une, ch. 47 pour l'autre ; ⚠ *leur statut de repérage se rappelle au point d'atterrissage.*
 - **R-IV-47 — non bloquante, de dette héritée.** L'entrée **F-92 du Vol. III porte une dette de vote
   adversarial déclarée et non conduite**, et le PRD du compendium §7.1 pose que **F-92 et F-96 du
   Vol. III n'entrent pas au socle consolidé avant résorption de cette dette ou reprise de la parade**.
@@ -595,19 +615,26 @@ rédaction du PRD §6**. Instruction d'auteur du **27 juillet 2026**.
   que le **domaine de G-4** enregistre le chapitre consommateur — *une dette de vote héritée qu'aucun
   chapitre ne signale à son point de consommation devient invisible au moment exact où elle
   compterait.*
+  ☑ **Issue, 27 juillet 2026** — **PRD, registre des corrections dues de G-3** — la **dette de
+  vote de F-92** est constatée **au versement**, et le chapitre consommateur est enregistré au
+  domaine de G-4.
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 39.1 à
-§ 39.6, dans l'ordre exact —, et le § 39.0 est une introduction de chapitre. La **table de couverture
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.28** — § 39.1 à
+§ 39.6, dans l'ordre exact —, et le § 39.0 est une introduction de chapitre. ⚠ **Le § 39.4 porte
+désormais l'intitulé exact du plan** — « versionner le **mandat protocolaire** » —, *le qualificatif
+complet de la chaîne étant obligatoire à chaque occurrence (ch. 45 § 45.10)* ; **une déviation
+subsiste au § 39.2**, qui développe « modèle, outil, autonomie » en « dérive de modèle, dérive d'outil,
+dérive d'autonomie » — *déviation de lisibilité, sans effet de sens, déclarée ici* (décision 8). La **table de couverture
 est respectée pour ses trois lignes**, y compris sa **sortie de périmètre explicite** : le Vol. I
 §2.9 **n'est pas repris ici**, ses fondements restant au **ch. 6** et son versant observabilité au
 **ch. 38**. Le §2.11.4-2.11.5 arrive **en arrivée depuis le ch. 6**, déclarée aux deux bouts. La
 **distinction adaptation éphémère / évolution persistante n'est pas reconstruite** : elle est renvoyée
 au **ch. 22**, comme la ligne Fusion l'exige. Le **marqueur « corpus d'appui » est conservé** au
-§ 39.6 comme **marqueur conditionnel de réouverture**, et *aucun énoncé ne s'y adosse*. Les **trois
-degrés d'absence** portent leur degré à chacune des seize occurrences ; **aucun degré 3 n'est écrit
-comme un fait négatif vérifié**, et le § 39.6 refuse explicitement l'énoncé qu'on écrirait à sa place.
-Les **cinq métriques ou qualifications auto-déclarées** sont attribuées à leur éditeur nommé. Les
-**neuf occurrences de « Lecture de l'auteur »** sont suivies de ce que le socle établit et n'établit
-pas. **Aucun siège neuf n'est posé** ; les trois sièges touchés — le passeport au **ch. 16**, les
+§ 39.6 comme **marqueur conditionnel de réouverture**, et *aucun énoncé ne s'y adosse*. ⚠ **Cardinaux re-mesurés au commit du 28 juillet 2026, sur le marqueur littéral et sur le corps seul** (décision 16 du TOC) ; *les cardinaux antérieurs comptaient les applications du garde-fou et n'étaient re-mesurables par aucune règle écrite.* Les **trois degrés d'absence** portent leur degré **à chaque énoncé négatif
+du corps — domaine déclaré, sans cardinal** (alinéa c) ; le marqueur littéral « degré 3 » y compte
+**sept occurrences**, **aucune n'est écrite comme un fait négatif vérifié**, et le § 39.6 refuse
+explicitement l'énoncé qu'on écrirait à sa place. Les **quatre métriques ou qualifications
+auto-déclarées** sont attribuées à leur éditeur nommé. Les **sept occurrences de « Lecture de
+l'auteur »** sont suivies de ce que le socle établit et n'établit pas. **Aucun siège neuf n'est posé** ; les trois sièges touchés — le passeport au **ch. 16**, les
 points de contrôle obligatoires au **ch. 43 § 43.3**, le modèle de maturité au **ch. 43 § 43.5** —
 portent leur renvoi, et *deux d'entre eux sont des renvois de plan, déclarés au point 3 ci-dessus.*

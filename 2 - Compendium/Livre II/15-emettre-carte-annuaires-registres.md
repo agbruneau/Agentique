@@ -9,10 +9,10 @@ mouvement** : les trois mécanismes d'émission y sont instruits sur pièce.*
 | **Statut** | **Brouillon de rédaction, non publiable** — portes **G-3** et **G-4** ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Le TOC désigne ce chapitre comme celui « à plus haut risque de surinterprétation » et lui assigne une relecture adversariale prioritaire** ; **CA-IV-13 n'est pas satisfaite** — la présente pièce n'a reçu que des contrôles mécaniques, conduits par la même main que la rédaction. *Un contrôle mécanique n'est pas une réfutation, et se relire soi-même n'est pas être relu.* **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : aucun fait de ce chapitre n'a été repris à la source primaire. Gels de source : **juin 2026** (Vol. I), **16 juillet 2026** (Vol. II), **21 juillet 2026** (Vol. III). ⚠ **Deux objets se périment nommément** : la spécification agent-agent lue en **v1.0.0** n'est **pas revalidée sur la v1.0.1** que son registre porte, et les statuts de préversion d'un produit d'éditeur sont datés du 21 juillet 2026 |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. III *Monographie* ch. 5-7 hors §7.4**, dont les entrées **F-01** à **F-12**, **F-33** à **F-43**, **F-50**, **F-53**, **F-55**, **F-64** à **F-69**, **F-87** et les entrées héritées **H-01**, **H-03**, **H-04**, **H-07** conservent leurs niveaux d'origine ; contre le **Vol. II *Monographie* §8.2**, dont **Vol. II F-08** conserve son niveau **[A, statut BROUILLON]** ; et contre le **Vol. I *Monographie* §3.4 et §3.6.3**, en **[C]**. ⚠ **Deux entrées mobilisées ici sont en [C] et corroborent sans porter** : Vol. III F-36 et F-55. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. II — **R-3 (la spécification de registre s'appuie sur SPIFFE/SPIRE comme *fondation* ; l'exigence stricte n'est pas établie) : trois occurrences**, § 15.3.1, appliqué et non re-siégé — l'encadré « Affirmations écartées » reste au **ch. 16 § 16.2** ; **PRD Vol. II §8.2.5 (statuts pré-normatifs) : quatorze occurrences**, § 15.1.1, § 15.2.1 (deux), § 15.2.3 (trois), § 15.3.1 (quatre), § 15.3.2 (trois) et § 15.3.3 ; **§8.2 (métriques et qualifications auto-déclarées) : six occurrences**, § 15.2.1 (trois), § 15.2.2 (deux) et § 15.2.3 ; **R-2 : zéro occurrence** — siège au ch. 16 ; **R-1, R-4 à R-8 : zéro occurrence**. Vol. III — **R-02 (par ce que la spécification démontre, jamais par ce qu'elle promet) : quinze occurrences**, réparties sur les trois sections ; **R-09 : douze occurrences** ; **R-14 : onze occurrences**, dont **sept de degré 3** ; **R-01 (le passeport n'est pas un mécanisme documenté) : quatre occurrences** ; **R-06 (« attendu par » E-23, jamais « exigé ») : trois occurrences**, § 15.3.3 ; **R-07 (le rapprochement schéma/attente réglementaire est une inférence d'auteur) : deux occurrences**, § 15.3.3 ; **R-04 : une occurrence**, § 15.3.2, le sigle jamais nu et renvoyé à son siège. **R-03, R-05, R-08, R-10 à R-13 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **5 800 mots** de corps (§ 15.0 à § 15.3), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — ce chapitre en porte trois, mais **onze sous-sections**, ce que la dérivation au prorata des seules sections `##` sous-estime. ☑ **Décompte publiable depuis G-2** ; **réel : 8 152 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+40,6 %**, le troisième écart du Livre après les ch. 21 et 20 (re-mesuré le 27 juillet 2026 après la passe d'arbitrage, qui a ajouté au corps la note de correction du § 15.1.4). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les quatre sections du corps, § 15.0 à § 15.3, et leurs onze sous-sections.** Vol. II — **R-3 (la spécification de registre s'appuie sur SPIFFE/SPIRE comme *fondation* ; l'exigence stricte n'est pas établie) : deux marqueurs**, § 15.3.1, appliqué et non re-siégé — l'encadré « Affirmations écartées » reste au **ch. 16 § 16.2** ; **R-2 : un marqueur**, § 15.3.1, **renvoi à son siège** du ch. 16, aucune application ici ; **réserve F-01 : deux marqueurs**, § 15.0 et § 15.1.1 ; **PRD Vol. II §8.2.5 (statuts pré-normatifs) : zéro marqueur** — la qualification pré-normative est pourtant portée **à chaque mention** aux § 15.1.1, § 15.2.1, § 15.2.3, § 15.3.1, § 15.3.2 et § 15.3.3 : *application déclarée, non dénombrée* ; **§8.2 (métriques et qualifications auto-déclarées) : zéro marqueur** — les métriques des § 15.2.1 à § 15.2.3 sont néanmoins attribuées à la page qui les affiche, à chaque occurrence ; **R-1, R-4 à R-8 : zéro marqueur**. Vol. III — **R-02 (par ce que la spécification démontre, jamais par ce qu'elle promet) : sept marqueurs**, § 15.0, § 15.1.4 (deux), § 15.2.2, § 15.3.1 et § 15.3.2 (deux) — *c'est le plus grand nombre du Livre* ; **R-07 (le rapprochement schéma/attente réglementaire est une inférence d'auteur) : deux marqueurs**, § 15.2 et § 15.3.3 ; **R-01 (le passeport n'est pas un mécanisme documenté) : un marqueur**, § 15.3.3. **R-03 à R-06, R-08 à R-14 : zéro marqueur.** ⚠ **Trois de ces zéros sont des applications sans marqueur, et le dire est la contrepartie de la règle** : **R-14** (les absences du chapitre portent leur degré, dont sept au degré 3), **R-09** (le stade se dit à chaque mention) et **R-06** (« attendu par » E-23, **jamais « exigé »**, au § 15.3.3) sont **appliqués sur tout le domaine balayé** — *l'application est réelle, le renvoi à l'identifiant absent* |
+| **Volumétrie cible** | ≈ **5 800 mots** de corps (§ 15.0 à § 15.3), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — ce chapitre en porte trois, mais **onze sous-sections**, ce que la dérivation au prorata des seules sections `##` sous-estime. ☑ **Décompte publiable depuis G-2** ; **réel : 8 187 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+41,2 %**, le troisième écart du Livre après les ch. 21 et 20 (re-mesuré au commit du 28 juillet 2026, au terme de la passe de correction de l'audit). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 15)* — la signature d'une Agent Card vaut ce que valent son ancrage de confiance, sa révocation et sa gouvernance des clés ; le registre gouverné **tend à devenir — mouvement SPÉCULATIF, qu'aucune entrée du socle ne date —** la pièce de conformité maîtresse, mais trois modèles concurrents répondent à des questions différentes de la grille.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 15)* — la signature d'une Agent Card vaut ce que valent son ancrage de confiance, sa révocation et sa gouvernance des clés ; le registre gouverné **tend à devenir — mouvement SPÉCULATIF, qu'aucune entrée du socle ne date —** la pièce de conformité maîtresse, mais trois modèles concurrents répondent à des questions différentes de la grille.
 >
 > ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-23** ouverte par cette pièce. La forme antérieure — « le registre gouverné **devient** » — énonçait au présent de constat un mouvement prospectif que le socle ne date pas, confondant les deux instruments que **CA-IV-10** sépare. **Le corps du chapitre n'a pas changé** : il écrivait déjà l'énoncé en hypothèse. Le tri prospectif est celui du **siège de la discipline, ch. 49 § 49.0**, et n'est pas redéfini ici.
 
@@ -479,10 +479,13 @@ Lecture de l'auteur — la typologie qui structure ce paragraphe — **registre 
 fédération, annuaire protocolaire** — est une construction d'auteur. **Ce que le socle établit** : le
 statut, la date et le contenu prescriptif des quatre dispositifs (Vol. III F-38 à F-43 ; H-03). **Ce
 qu'il n'établit pas** : qu'ils forment trois modèles, que ces modèles soient concurrents, ni qu'un
-registre d'agents soit **en voie de devenir** une pièce de conformité. ⚠ **Ce dernier énoncé — que la
-thèse du chapitre porte au présent — est prospectif, et son tri est SPÉCULATIF** : aucune entrée du
-socle ne date d'engagement une telle trajectoire. *Le chapitre l'écrit en hypothèse, jamais en
-constat, et le remonte plutôt que de le corriger.*
+registre d'agents soit **en voie de devenir** une pièce de conformité. ⚠ **Ce dernier énoncé est
+prospectif, et son tri est SPÉCULATIF** : aucune entrée du socle ne date d'engagement une telle
+trajectoire. La thèse le portait **au présent de constat** jusqu'au **TOC v0.24** — « le registre
+gouverné **devient** » — et **l'écart a été soldé par la remontée R-IV-23**, qui l'a réalignée au
+**TOC v0.25** en « **tend à devenir — mouvement SPÉCULATIF, qu'aucune entrée du socle ne date** ».
+*Le chapitre l'écrivait déjà en hypothèse, jamais en constat ; la thèse citée en tête le fait
+désormais aussi.*
 
 ### 15.3.1 La spécification CSA (`toolAccessList`, `permissionBoundaries`) : ce qu'un brouillon de laboratoire prescrit, et ce qu'il traîne
 
@@ -535,7 +538,7 @@ vingt-trois jours après la publication de la spécification qui s'y adosse** (V
 qu'on serait tenté d'en tirer** : *au 27 mars 2026, le brouillon désigné était vivant.* **Ce n'est donc
 pas un adossement à un texte mort, c'est un adossement non entretenu.**
 
-### 15.3.2 Registres et découverte : le protocole normalise le chemin, l'annuaire spécifie le magasin
+### 15.3.2 Registres et découverte : A2A normalise le chemin, AGNTCY spécifie le magasin
 
 ⚠ **Ce paragraphe est le versant *identité et conformité* d'une matière partagée.** Le §3.4 du Vol. I
 est **partagé déclaré** entre le **ch. 9**, qui en prend le versant **protocolaire** — la leçon des
@@ -705,10 +708,11 @@ chapitre n'est pas satisfaite** : le TOC lui assigne une **relecture adversarial
 contrôles mécaniques, conduits par la même main que la rédaction.
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ **Ce chapitre est celui où la conséquence est
-   la plus lourde du Livre** : il porte quinze occurrences de R-02, onze de R-14 et douze de R-09 —
-   c'est-à-dire qu'il **passe son temps à borner ce qu'il avance**, et ces bornes reposent sur un socle
-   que G-3 n'a pas refondu et que G-4 n'a pas collationné.
-2. **Les décomptes sont publiables** (G-2). Écart de **+38,3 %** — le troisième du Livre après les ch. 21 et 20 ; la volumétrie du Livre alimente
+   la plus lourde du Livre** : il porte **sept marqueurs de R-02**, le plus grand nombre du Livre, et
+   applique R-14, R-09 et R-06 **sur tout son domaine balayé** — c'est-à-dire qu'il **passe son temps
+   à borner ce qu'il avance**, et ces bornes reposent sur un socle que G-3 n'a pas refondu et que G-4
+   n'a pas collationné.
+2. **Les décomptes sont publiables** (G-2). Écart de **+41,2 %** — le troisième du Livre après les ch. 21 et 20 ; la volumétrie du Livre alimente
    **D-4** par **R-IV-17**.
 3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan** : le **ch. 25 § 25.2**
    n'est pas rédigé, et il est cité **trois fois** comme siège — de l'analyse réglementaire, du
@@ -761,14 +765,15 @@ restent au ch. 3**. L'**encadré de désambiguïsation reste au ch. 7 § 7.5** e
 fusion au ch. 8 § 8.5.1**. L'**encadré « Affirmations écartées » reste au ch. 16 § 16.2**. Le
 **versant « extension des RFC » du produit d'éditeur reste au ch. 12 § 12.7** : le § 15.2.1 n'y
 revient pas. L'**inventaire de la révocation reste au ch. 20 § 20.4** : le § 15.1.3 n'en traite que ce
-qui borne la carte. Les **quinze occurrences de R-02** énoncent ce que le mécanisme démontre **et** ne
-démontre pas. Les **onze occurrences de R-14** portent leur degré, dont **sept au degré 3**. Les
-**six métriques ou qualifications auto-déclarées** sont attribuées à leur source à chaque occurrence,
+qui borne la carte. Les **sept marqueurs de R-02** énoncent ce que le mécanisme démontre **et** ne
+démontre pas. Les absences du chapitre **portent leur degré**, dont sept au **degré 3**, sur tout le
+domaine balayé — *application de R-14 déclarée, non dénombrée, faute de marqueur littéral.* Les
+**métriques ou qualifications auto-déclarées** sont attribuées à leur source à chaque occurrence,
 **sans exception d'usage illustratif** — les deux formules d'éditeur du § 15.2.2 sont laissées en
-langue originale et non reprises au compte de la somme. Les **trois occurrences de R-06** écrivent
-« attendu par », **jamais « exigé »**. Et les **onze occurrences de « Lecture de l'auteur »** sont
-suivies de ce que le socle établit et n'établit pas — dont **un paragraphe entier**, le § 15.2.3,
-marqué à l'ouverture.
+langue originale et non reprises au compte de la somme. Le § 15.3.3 écrit **« attendu par », jamais
+« exigé »** (R-06). Et les **huit marqueurs de « Lecture de l'auteur »** — § 15.0, § 15.1.2, § 15.1.4,
+§ 15.2.3, § 15.2.4, § 15.3, § 15.3.2 et § 15.3.3 — sont suivis de ce que le socle établit et n'établit
+pas, dont **un paragraphe entier**, le § 15.2.3, marqué à l'ouverture.
 
 
 ---

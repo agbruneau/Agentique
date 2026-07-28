@@ -10,7 +10,7 @@ ch. 31 a posés une fois**.*
 | **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 34.8. ⚠ **G-4 ne conditionne pas ce chapitre** : sa ligne Fusion ne cite que le Vol. I ; ⚠ **D-9 ne le bloque pas** — *il **applique** le patron de libération humaine, il ne le prescrit pas.* |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit — et ce chapitre est celui du Livre qui porte le plus grand nombre d'annonces produit datées** : *une quarantaine, dont la plupart sont **auto-déclarées** et **à re-vérifier au moment de citer**.* Gel de source consommé : **juin 2026** (Vol. I ch. 5) — ⚠ **il ne tient pas lieu du gel de la somme** |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). ⚠ **La totalité de la matière vient du Vol. I et entre en [C]** — repérage documentaire (PRD §7.1). ⚠ **Conséquence : aucun énoncé n'est central au sens de CA-IV-01**, et *l'élévation en [B] passerait par la lecture des sources primaires que le Vol. I cite.* ⚠ **Plusieurs affirmations du chapitre sont en outre déclarées par leur source « hors corpus bibliographique, à sourcer à la rédaction »** : *elles sont reprises **avec cette réserve**, jamais sans.* Les seuls appuis à un autre régime sont des **renvois** aux ch. 25 à 33 |
-| **Garde-fous balayés** | Vol. II — **PRD §8.2.3 et §7.5 (métriques auto-déclarées, projections) : vingt-trois occurrences**, réparties sur les sept sections — ⚠ *c'est le chapitre du Livre où ce garde-fou travaille le plus, et **aucune métrique n'y est citée sans attribution*** ; **PRD §8.4 (neutralité fournisseur) : neuf occurrences**, § 34.1 à § 34.5 ; **R-5 : trois occurrences**, § 34.1, § 34.6 et § 34.7 ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-09 (quatre statuts, dits à chaque mention) : dix-huit occurrences**, § 34.1 (trois), § 34.2 (quatre), § 34.3 (trois), § 34.4 (quatre) et § 34.5 (quatre) ; **R-14 (trois degrés d'absence) : huit occurrences**, § 34.2, § 34.3 (deux), § 34.4, § 34.5 et § 34.6 (trois) ; **R-13 : trois occurrences**, § 34.1, § 34.4 et § 34.7 — ⚠ *l'échelle à quatre paliers non numérotés est **nommée par son cardinal**, jamais nue* ; **R-02 : deux occurrences**, § 34.4 et § 34.6 ; **R-11 : deux occurrences**, § 34.1 et § 34.3 ; **R-01, R-03 à R-08, R-10, R-12 : zéro occurrence** |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **PRD §8.2.3 et §7.5 (métriques auto-déclarées, projections) : les deux renvois ne sont pas écrits au corps** ; *les marqueurs le sont — « auto-déclaré » **quatorze fois** et « projection d'analyste » **six fois**, sur les § 34.0 à § 34.6 et la synthèse* ; ⚠ *c'est le chapitre du Livre où ce garde-fou travaille le plus, **aucune métrique n'y étant citée sans attribution*** ; **PRD §8.4 (neutralité fournisseur) : deux occurrences du renvoi**, § 34.0 et § 34.5.3 ; *la formule est écrite une fois, § 34.5.2, et **le garde-fou est appliqué de § 34.1 à § 34.5*** ; **R-5 : deux occurrences du sigle**, § 34.1.5 et § 34.7.3 ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-09 (quatre statuts, dits à chaque mention) : zéro occurrence du sigle** ; ⚠ *le garde-fou est **appliqué de § 34.1 à § 34.6**, chaque statut — annonce, préversion, disponibilité générale — étant dit à sa mention ; **le décompte n'est pas re-mesurable et n'est donc pas annoncé*** ; **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 34.6.2 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 34.6.2, § 34.6.3, § 34.6.4 et à la synthèse, « fait négatif vérifié » au § 34.1.5* ; **R-13 : quatre occurrences du sigle**, § 34.1.1, § 34.4.4, § 34.5.3 et § 34.7.1 — ⚠ *l'échelle à quatre paliers non numérotés est **nommée par son cardinal**, jamais nue* ; **R-02 : une occurrence du sigle**, § 34.4.4 ; **R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **9 500 mots** de corps (§ 34.0 à § 34.7), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des **trente-trois sous-sections** que sa ligne Fusion absorbe : **la plus haute cible du Livre avec le ch. 24**. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier. ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 34)* — l'agentique se décline différemment selon le sous-domaine — bancaire, IARD, assurance de personne, gestion de patrimoine, services TI financiers — chacun avec sa maturité et ses points de durcissement propres.
@@ -720,7 +720,9 @@ résilience mesurée devient un indicateur de conformité autant que d'exploitat
 ### 34.5.2 Modernisation du cœur : la façade gouvernée
 
 ⚠ **Le patron de modernisation est *l'encapsulation, non la réécriture de masse*** — *spécialisation
-financière du principe posé au **ch. 24 § 24.1.4**.*
+financière du principe posé au **ch. 24 § 24.1.4**.* ⚠ **L'opposition qui commande ce choix — agent
+embarqué dans le cœur contre cœur exposé comme outil, et ses trois axes de décision — a son siège au
+§ 34.2.2 ; elle est appliquée ici au cœur bancaire, jamais re-dérivée.**
 
 **Deux régimes doivent être distingués.** *D'une part, **des agents employés *pour* moderniser** :
 assistants de modernisation attaquant une pression **parfois chiffrée à 70-75 % du budget technologique
@@ -811,7 +813,9 @@ deltas proprement financiers s'y greffent.*
 **Le premier est *la nature du journal*** : ⚠ *en finance régulée, **il ne suffit pas d'observer au sens
 de l'exploitation** — *il faut **produire une piste d'audit exploitable** pour la résilience
 opérationnelle et pour le régime de risque de modèle, **reliant chaque décision d'agent à son contexte,
-son modèle d'inventaire et son approbation humaine*** (ch. 31 § 31.3.1 et § 31.3.2).
+son modèle d'inventaire et son approbation humaine*** (ch. 31 § 31.3.1 et § 31.3.2). ⚠ **Le périmètre
+de cette piste est le troisième axe de la grille d'architecture dont le § 34.2.2 est le siège** :
+*il est ici instancié en exigence d'observabilité, **sans que la grille soit re-dérivée**.*
 
 **Le second est *la requalification de la discipline financière*** : ⚠ ***le décompte des jetons cesse
 d'être une affaire de coût pour devenir un contrôle de gouvernance***, *en ce que **les budgets de jetons
@@ -1052,14 +1056,22 @@ vont au **Livre IV**, le §5.13 au **ch. 36***, *nommées au § 34.0 au moment o
 attendrait*. ⚠ **Le rattachement du §5.14, corrigé en v0.3 du plan, est respecté** : *il est la clôture
 du chapitre source, et il est reçu au § 34.7.* La **décision 14 a été exécutée avant la rédaction**,
 domaine déclaré : une thèse examinée, zéro réalignée. ⚠ **Les six sièges du ch. 31 sont renvoyés et
-jamais re-dérivés**, non plus que ceux des **ch. 6, 14 § 14.4, 18 § 18.1, 19 et 48**. Les **vingt-trois
-métriques auto-déclarées ou projections portent leur statut à chaque occurrence**, ⚠ **sans exception
-d'usage illustratif** — *y compris les quatre gains du § 34.2.3 et les deux du § 34.2.4.* Les
-**dix-huit occurrences de R-09 disent leur statut** et les **huit de R-14 leur degré**. ⚠ **R-13 est tenu
-à ses trois occurrences** : *l'échelle à quatre paliers est **nommée par son cardinal**, et le tri
-productivité assistée / autonomie transactionnelle est **déclaré n'être pas une échelle d'autonomie**.*
-⚠ **La neutralité fournisseur est tenue à ses neuf occurrences** : *une quarantaine d'offres nommées,
-**aucune recommandée**.* Enfin, ⚠ **les six réserves « hors corpus » de la source sont reprises une par
+jamais re-dérivés**, non plus que ceux des **ch. 6, 14 § 14.4, 18 § 18.1, 19 et 48** ; ⚠ **et le siège
+propre du chapitre — la grille d'architecture des plateformes d'assurance de dommage, § 34.2.2 — reçoit
+désormais ses deux renvois entrants**, aux § 34.5.2 et § 34.5.6, *qui manquaient alors que le marqueur
+les annonçait (ajoutés le 28 juillet 2026).* Les **métriques auto-déclarées ou projections portent leur
+statut à chaque occurrence**, ⚠ **sans exception d'usage illustratif** — *quatorze marqueurs
+« auto-déclaré » et six « projection d'analyste », y compris les quatre gains du § 34.2.3 et les deux du
+§ 34.2.4.* Les **statuts sont dits à chaque mention** de § 34.1 à § 34.6 (R-09), et **les absences
+portent toutes leur degré** — *une occurrence du sigle R-14 au § 34.6.2, quatre du marqueur « degré 3 »*.
+⚠ **R-13 est tenu à ses quatre occurrences** : *l'échelle à quatre paliers est **nommée par son
+cardinal**, et le tri productivité assistée / autonomie transactionnelle est **déclaré n'être pas une
+échelle d'autonomie**.* ⚠ **La neutralité fournisseur est tenue** : *une quarantaine d'offres nommées,
+**aucune recommandée**.* ⚠ **Ces cardinaux ont été re-mesurés au commit du 28 juillet 2026**
+(décision 16 du TOC) ; *l'attestation antérieure annonçait vingt-trois métriques, dix-huit occurrences
+de R-09, huit de R-14, trois de R-13 et neuf de la neutralité fournisseur, aucun de ces cinq nombres
+n'étant re-mesurable contre le corps.* Enfin, ⚠ **les six réserves « hors corpus » de la source sont
+reprises une par
 une**, et **le vide de bancs d'essai du § 34.6.2 est déclaré au degré 3 plutôt que comblé**.
 
 

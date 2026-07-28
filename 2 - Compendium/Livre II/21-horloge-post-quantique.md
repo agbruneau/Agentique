@@ -9,14 +9,14 @@ chapitre du Livre.** Chapitre à deux mouvements, issu de la fusion v0.20 des an
 | **Statut** | **Brouillon de rédaction, non publiable** — portes **G-3** et **G-4** ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Ce chapitre porte le SIÈGE DE L'HORLOGE pour toute la somme** (§ 21.1) : les ch. 15, 16, 20 et, hors du Livre, les ch. 45 et 49 y renvoient et **ne re-datent aucun jalon**. ⚠ **Il porte aussi le garde-fou le plus mécanique du Livre** : *on écrit « **visée** », jamais « fixée », jamais « ~2030 »* — et le **statut du document** se dit à chaque mention. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Une entrée héritée est périmée sur un point précis, et le fait se déclare plutôt qu'il ne se lisse** : les cibles que le Vol. I prêtait à un forum sectoriel **ne se retrouvent dans aucun des deux documents de ce forum**, dans les bornes du balayage du Vol. III (§ 21.7) |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. III *Monographie* ch. 16-18**, dont les entrées **F-01** à **F-07**, **F-10**, **F-36**, **F-38**, **F-40**, **F-46**, **F-52** à **F-55**, **F-59** à **F-63**, **F-87** et les entrées héritées **H-03**, **H-17**, **H-27**, **H-33** conservent leurs niveaux d'origine ; et contre le **Vol. I *Monographie* §7.4.1 et §7.4.4**, en **[C]**. ⚠ **Quatre entrées mobilisées sont en [C]** — F-36, F-55, H-17, H-27, H-33 : elles corroborent, elles ne portent pas. ⚠ **H-27 est une thèse d'un volume antérieur, à attribuer à chaque emploi** : l'invariant qu'elle porte **n'est pas un fait**. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. III — **R-11 (jalons « visés », jamais « fixés » ; statut du document porté à chaque mention ; les origines ne se fusionnent pas) : ce chapitre en est le SIÈGE — dix-sept occurrences**, § 21.1 (huit), § 21.4 (trois), § 21.7 (deux), § 21.8 et § 21.9 (trois) ; **R-14 : quatorze occurrences**, dont **douze de degré 3** ; **R-02 : neuf occurrences**, § 21.4 (deux), § 21.5 (cinq) et § 21.6 (deux) ; **R-09 : quatre occurrences** ; **R-01 : trois occurrences**, § 21.3 et § 21.5 ; **R-13 : une occurrence**, § 21.4, l'invariant nommé par ses termes. **R-03 à R-08, R-10, R-12 : zéro occurrence.** Vol. II — **§8.2 : deux occurrences**, § 21.7, la projection de coût attribuée à son auteur, à son millésime et à son périmètre ; **PRD Vol. II §8.2.5 : cinq occurrences** ; **R-1 à R-8 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **5 800 mots** de corps (§ 21.0 à § 21.9), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — **neuf sections pour deux mouvements**. ☑ **Décompte publiable depuis G-2** ; **réel : 8 464 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+45,9 %**, **le plus fort écart du Livre** (re-mesuré le 27 juillet 2026 après la passe d'arbitrage, qui a ajouté au § 21.1 le renvoi au siège du tri prospectif). ⚠ **La volumétrie du Livre entier est relevée au [`README.md`](README.md) du dossier**, et c'est elle — non les écarts individuels — qui alimente **D-4** par **R-IV-17** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les dix sections du corps, § 21.0 à § 21.9.** Vol. III — **R-11 (jalons « visés », jamais « fixés » ; statut du document porté à chaque mention ; les origines ne se fusionnent pas) : ce chapitre en est le SIÈGE — trois marqueurs**, § 21.7, § 21.8 et § 21.9 ; ⚠ **la formulation imposée est tenue bien au-delà de ces trois marqueurs** — « visée » et jamais « fixée », statut du document à chaque mention, **aucune fusion d'origines** —, notamment aux § 21.1 et § 21.4 qui n'en portent aucun : *application déclarée sur tout le domaine, non dénombrée.* **R-02 : quatre marqueurs**, § 21.3 et § 21.5 (trois). **R-01, R-03 à R-10, R-12 à R-14 : zéro marqueur** ; ⚠ **R-14 est pourtant appliqué partout** — les absences portent leur degré, dont douze au **degré 3** —, ainsi que **R-09** (statut dit à chaque mention), **R-01** (§ 21.3 et § 21.5) et **R-13** (§ 21.4, l'invariant nommé par ses termes). Vol. II — **réserve F-01 : quatre marqueurs**, § 21.0, § 21.3 (deux) et § 21.5 ; **§8.2 : zéro marqueur** ; la projection de coût du § 21.7 est attribuée à son auteur, à son millésime et à son périmètre ; **PRD Vol. II §8.2.5 : zéro marqueur** ; le statut de projet du document d'échéances est porté à chaque mention ; **R-1 à R-8 : zéro marqueur** |
+| **Volumétrie cible** | ≈ **5 800 mots** de corps (§ 21.0 à § 21.9), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — **neuf sections pour deux mouvements**. ☑ **Décompte publiable depuis G-2** ; **réel : 8 587 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+48,1 %**, **le plus fort écart du Livre** (re-mesuré au commit du 28 juillet 2026, au terme de la passe de correction de l'audit). ⚠ **La volumétrie du Livre entier est relevée au [`README.md`](README.md) du dossier**, et c'est elle — non les écarts individuels — qui alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 21, premier mouvement)* — toute la fabrique d'émission (ch. 12-18) repose sur des signatures classiques ; les jalons du NIST IR 8547 — dépréciation **visée** pour 2030, retrait **visé** pour 2035 — tombent dans la durée de vie des architectures conçues aujourd'hui, la PQC est donc une contrainte de conception et non une annexe.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 21, premier mouvement)* — toute la fabrique d'émission (ch. 12-18) repose sur des signatures classiques ; les jalons du NIST IR 8547 — dépréciation **visée** pour 2030, retrait **visé** pour 2035 — tombent dans la durée de vie des architectures conçues aujourd'hui, la PQC est donc une contrainte de conception et non une annexe.
 
 ---
 
-> **Thèse du second mouvement**, citée depuis le TOC v0.25, entrée du chapitre 21 — la crypto-agilité est l'application des trois premiers termes de l'invariant (découplage, contrat, évolution) à la couche cryptographique ; la dette de migration PQC est réelle mais largement non chiffrée — méthode d'estimation plutôt que chiffre.
+> **Thèse du second mouvement**, citée depuis le TOC v0.28, entrée du chapitre 21 — la crypto-agilité est l'application des **trois premiers termes de l'invariant** (découplage, contrat, évolution — le quatrième, l'exploitation, est refermé au Livre IV) à la couche cryptographique ; la dette de migration PQC est réelle mais largement non chiffrée — méthode d'estimation plutôt que chiffre.
 
 ⚠ **Deux thèses pour un chapitre : le ch. 21 est issu de la fusion v0.20 des anciens ch. 23 et 24**
 (décision 11 du TOC), et les deux entrées y sont conservées **intégralement**.
@@ -72,7 +72,8 @@ littérature de vulgarisation fait couramment — produit un énoncé faux dans 
 donc tenues sur trois lignes distinctes, et cette section est le siège de cette discipline pour toute
 la somme.*
 
-**Première origine : l'institut national de normalisation.** Il **vise** une **dépréciation en 2030**
+**Première origine : le NIST.** Le **NIST IR 8547**, *Transition to Post-Quantum Cryptography
+Standards*, à l'état de **projet public initial**, **vise** une **dépréciation en 2030**
 des mécanismes à clé publique vulnérables au quantique **au niveau de sécurité de 112 bits**, et une
 **interdiction en 2035** de ces mêmes mécanismes **tous niveaux de sécurité confondus**. Le projet écrit
 littéralement « **Deprecated after 2030** » et « **Disallowed after 2035** » (F-60, **[B]**), dans les
@@ -95,13 +96,15 @@ texte de l'entrée, mais le contrôle de bornage du lot l'a rangée en lecture d
 reprise **à ce titre**.
 
 ⚠ **Un troisième élément achève de qualifier cette ligne, et il ne figure pas au socle** : le
-**véhicule normatif** que le projet désigne pour porter ces échéances est **lui-même à l'état de
-projet public initial**, sa période de commentaires étant close depuis décembre 2024. *(Source primaire
+**véhicule normatif** que la §4.1 du NIST IR 8547 désigne pour porter ces échéances — la
+**SP 800-131A Rev. 3** — est **lui-même un projet public initial**, sa période de commentaires étant
+close depuis décembre 2024. *(Source primaire
 ouverte et citée hors socle, non versée.)* ⚠ ***Un projet qui renvoie ses échéances à un second projet
 ne devient pas exécutoire par accumulation.***
 
-**Deuxième origine : l'exécutif fédéral américain.** Un décret présidentiel, **signé le 22 juin 2026 et
-publié au registre fédéral du 25 juin 2026**, charge le bureau de la gestion et du budget de publier
+**Deuxième origine : l'exécutif fédéral américain.** Le **décret présidentiel 14412**, *Securing the
+Nation Against Advanced Cryptographic Attacks*, **signé le 22 juin 2026 et
+publié au *Federal Register* du 25 juin 2026**, charge l'*Office of Management and Budget* (OMB) de publier
 **sous 90 jours** une directive de migration visant les **actifs de grande valeur** et les systèmes à
 impact élevé, **selon le périmètre que le décret définit**, avec échéance au **31 décembre 2030 pour
 l'établissement de clés** et au **31 décembre 2031 pour les signatures numériques** (F-61, **[B, degré
@@ -110,8 +113,8 @@ en outre la publication d'une **règle proposée** modifiant la réglementation 
 qui viserait les contractants couverts à la même échéance ; ⚠ ***une règle proposée n'est pas une règle
 en vigueur**, et le socle n'établit rien de son adoption.*
 
-**La note d'application, du 24 juin 2026, ordonne aux agences d'aligner leur plan de migration sur le
-projet « *or successor document* »**, sa note de bas de page renvoyant explicitement à l'adresse du
+**La note OMB M-26-15 du 24 juin 2026, qui met en œuvre ce décret, ordonne aux agences d'aligner leur
+plan de migration sur « NIST Internal Report (IR) 8547 […] *or successor document* »**, sa note de bas de page renvoyant explicitement à l'adresse du
 projet (F-61). ⚠ **C'est le fait qui commande la lecture de cette deuxième ligne : une obligation
 fédérale datée s'ancre sur un document qui est encore un projet public initial.** *La clause « ou un
 document successeur » est précisément ce qui évite d'en conclure que le projet devient une norme — elle
@@ -128,12 +131,14 @@ aux institutions financières canadiennes, ni à leurs fournisseurs.*** **Le soc
 d'instrument canadien équivalent — absence de documentation, non fait négatif vérifié** (degré 3), et
 la lacune est déclarée au § 21.8.
 
-**Troisième origine : le secteur financier européen.** Un rapport conjoint de 2026 **ordonne ses
+**Troisième origine : le secteur financier européen.** Le rapport conjoint *Prioritising Post-Quantum
+Cryptography Migration Activities in Financial Services* (**Europol**, Office des publications de
+l'Union européenne, Luxembourg, **2026**) **ordonne ses
 activités de migration par le risque plutôt que par un calendrier daté** : le balayage du texte extrait
-de ses 26 pages **ne relève aucune occurrence** des trois chaînes cherchées — les deux millésimes et
-l'identifiant du projet de l'institut (F-63, **[B]**, fait négatif **VÉRIFIÉ**, **borné à ces trois
+de ses 26 pages **ne relève aucune occurrence** des trois chaînes cherchées — « 2030 », « 2035 » et
+« 8547 » (F-63, **[B]**, fait négatif **VÉRIFIÉ**, **borné à ces trois
 chaînes, à ce fichier et à cette extraction** — ⚠ *ce qui serait rendu en image y échappe*). Un second
-document, antérieur, porte au titre le nom d'un forum sectoriel. ⚠ **Le socle ne documente pas de lien
+document, antérieur, est le *call to action* du **Quantum Safe Financial Forum** (QSFF). ⚠ **Le socle ne documente pas de lien
 institutionnel entre ce document et le rapport conjoint — degré 3** : *le rattachement des deux textes
 est porté par des communiqués que le lot n'a pas pu ouvrir.* ⚠ Ce second document **ne porte pas
 davantage d'échéance sectorielle** : ses cinq recommandations sont énoncées **sans date**, et **la seule
@@ -142,14 +147,14 @@ ouverte et citée hors socle, non versée.)*
 
 | Origine | Ce que le document écrit | Statut réel du document | Périmètre | Tri prospectif |
 |---|---|---|---|---|
-| Projet de l'institut national (F-59, F-60) | « Deprecated after 2030 » (112 bits) ; « Disallowed after 2035 » (tous niveaux) ; 2035 comme **borne de spécification** — *lecture d'auteur* | **projet public initial** ; **une seule entrée d'historique**, de novembre 2024 ; commentaires clos en janvier 2025 | les normes d'algorithmes de cet institut | **PROJETÉ** — *intention annoncée dans un projet ; tri d'auteur, motivé ci-dessous* |
-| Décret et note d'application (F-61) | migration au **31 déc. 2030** (établissement de clés) et au **31 déc. 2031** (signatures) ; alignement des plans sur le projet « **or successor document** » | décret **signé et publié** ; note d'application du 24 juin 2026 | actifs de grande valeur et systèmes fédéraux **américains** à impact élevé ; règle d'acquisition **proposée**, non adoptée | **PROGRAMMÉ** — *engagement daté porté par un texte publié* |
-| Rapport sectoriel européen (F-63) et appel à l'action d'un forum (hors socle) — ⚠ **deux documents, lien institutionnel non documenté** | priorisation **par le risque** ; **aucune échéance sectorielle** relevée au balayage ; l'échéance citée dans le second est **attribuée à l'administration américaine** | rapport de praticiens, portant **un avertissement de non-obligation** | secteur financier, **sans force contraignante** | *sans échéance propre à trier* |
+| **NIST IR 8547** (F-59, F-60) | « Deprecated after 2030 » (112 bits) ; « Disallowed after 2035 » (tous niveaux) ; 2035 comme **borne de spécification** — *lecture d'auteur* | **projet public initial** ; **une seule entrée d'historique**, de novembre 2024 ; commentaires clos en janvier 2025 | les normes d'algorithmes du NIST | **PROJETÉ** — *intention annoncée dans un projet ; tri d'auteur, motivé ci-dessous* |
+| **Décret 14412** et **note OMB M-26-15** (F-61) | migration au **31 déc. 2030** (établissement de clés) et au **31 déc. 2031** (signatures) ; alignement des plans sur le projet « **or successor document** » | décret **signé et publié** ; note d'application du 24 juin 2026 | actifs de grande valeur et systèmes fédéraux **américains** à impact élevé ; règle d'acquisition **proposée**, non adoptée | **PROGRAMMÉ** — *engagement daté porté par un texte publié* |
+| **Rapport Europol 2026** (F-63) et *call to action* du **QSFF** (hors socle) — ⚠ **deux documents, lien institutionnel non documenté** | priorisation **par le risque** ; **aucune échéance sectorielle** relevée au balayage ; l'échéance citée dans le second est **attribuée à l'administration américaine** | rapport de praticiens, portant **un avertissement de non-obligation** | secteur financier, **sans force contraignante** | *sans échéance propre à trier* |
 
 : Tableau 21.1 — Trois origines de l'horloge post-quantique, leurs statuts et leurs périmètres, au 21 juillet 2026.
 
 Lecture de l'auteur — **ce que le socle établit** : les jalons figurent **dans un projet** et y sont
-formulés **comme une intention** — le texte écrit que l'institut *« intends to »* déprécier (F-60) —,
+formulés **comme une intention** — le texte écrit « NIST **intends** to instead deprecate… » (F-60) —,
 et **le véhicule normatif censé les porter est lui aussi un projet**. **Ce que le socle n'établit
 pas** : **un tri prospectif de ces jalons** — ni F-59 ni F-60 n'en porte. *La lecture proposée est
 qu'un engagement institutionnel **annoncé sans être en vigueur** relève du **PROJETÉ**, non du
@@ -157,8 +162,8 @@ PROGRAMMÉ.* **Le tri de la deuxième ligne, lui, se déduit du fait** : *un tex
 portant des dates est un engagement daté réel.*
 
 **Quatrième constat, et il ferme la section.** ⚠ **Les algorithmes de remplacement, eux, ne sont pas en
-projet** : deux normes d'encapsulation de clé et de signature sont **finales, publiées le 13 août
-2024** (F-62, **[B]**). ***Les algorithmes sont normalisés ; le calendrier de retrait des algorithmes
+projet** : **FIPS 203** (ML-KEM, encapsulation de clé) et **FIPS 204** (ML-DSA, signature) sont des
+normes **finales, publiées le 13 août 2024** (F-62, **[B]**). ***Les algorithmes sont normalisés ; le calendrier de retrait des algorithmes
 classiques ne l'est pas.*** ⚠ **L'asymétrie est le cœur de l'horloge** : *une organisation qui
 attendrait « la norme » pour agir attendrait un document dont **rien, dans le corpus consulté, ne date
 la finalisation**.* ⚠ **Et un statut final ne vaut pas texte figé** : les fiches des deux normes portent
@@ -166,7 +171,7 @@ la finalisation**.* ⚠ **Et un statut final ne vaut pas texte figé** : les fic
 § 21.4.*
 
 ⚠ **La lacune du statut réel du projet est ouverte et non close** : **le socle ne documente pas de
-calendrier de finalisation — degré 3**, et *il ne s'en déduit rien sur les intentions de l'institut.*
+calendrier de finalisation — degré 3**, et *il ne s'en déduit rien sur les intentions du NIST.*
 
 ## § 21.2 — *Harvest now, decrypt later* appliqué aux artefacts d'identité longue durée
 
@@ -277,7 +282,7 @@ rien ne borne dans le temps **traverse par construction les deux jalons du § 21
 variable qu'une institution contrôle **n'est pas la date, mais la durée de vie qu'elle consent à ses
 propres artefacts**.*
 
-## § 21.4 — Définition opérationnelle et état des recommandations
+## § 21.4 — Définition opérationnelle et état des recommandations NIST
 
 ⚠ **La réponse ne se lit pas dans le socle, et il faut l'écrire avant tout le reste.** **Le socle ne
 documente ni définition de la crypto-agilité, ni recommandation portant sur elle — absence de
@@ -474,10 +479,15 @@ publique **que cette passe a ouverte**.* ⚠ **Le lot déclare expressément n'a
 la littérature sur ce point, et refuse d'en tirer une affirmation d'unicité** — *les chiffres circulant
 dans la presse spécialisée n'ont pas été instruits et ne sont pas rapportés.*
 
-Cette étude est un **rapport de juillet 2024 au législateur fédéral américain**, prescrit par une loi
-de préparation à la cybersécurité quantique. Selon ce rapport, un bureau de la présidence déclare que
-**le coût total, à l'échelle du gouvernement, de la migration des systèmes d'information prioritaires
-entre 2025 et 2035 s'établirait à environ 7,1 milliards de dollars de 2024**. ⚠ **Cette donnée est
+Cette étude est le **rapport de juillet 2024 de l'*Office of Management and Budget* (OMB) au Congrès
+des États-Unis**, prescrit par le *Quantum Computing Cybersecurity Preparedness Act* (Public Law
+117-260) — le commanditaire est donc le législateur fédéral américain. Selon ce rapport,
+l'*Office of the National Cyber Director* (ONCD) déclare que **le coût total, à l'échelle du
+gouvernement, de la migration des systèmes d'information prioritaires entre 2025 et 2035 s'établirait
+à environ 7,1 milliards de dollars de 2024**. ⚠ **L'attributeur est nommé plutôt qu'élidé** :
+*la parade de péremption vaut pour une dénomination commerciale ou une version, jamais pour
+l'attributeur d'une métrique — un chiffre dont on ne peut plus remonter l'auteur cesse d'être
+vérifiable, et c'est exactement ce que le garde-fou d'attribution protège.* ⚠ **Cette donnée est
 auto-déclarée** — *elle est produite à partir des estimations remises par les agences elles-mêmes* —
 **et n'a fait l'objet d'aucune vérification indépendante** ; le rapport porte lui-même sa réserve
 d'incertitude — *« a high, but expected, level of uncertainty »* — et **impose une mise à jour
@@ -677,7 +687,7 @@ rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026.
    l'écart entre la précision apparente et le régime de preuve est le plus grand** : *il porte des dates
    au quantième, des libellés verbatim et des numéros de section — et **tout cela résout contre un socle
    que G-3 n'a pas refondu et que G-4 n'a pas collationné**.*
-2. **Les décomptes sont publiables** (G-2). Écart de **+43,8 %** — **le plus fort du Livre** ; **la volumétrie du Livre entier**
+2. **Les décomptes sont publiables** (G-2). Écart de **+48,1 %** — **le plus fort du Livre** ; **la volumétrie du Livre entier**
    alimente **D-4** par **R-IV-17**.
 3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan** : **ch. 45** et
    **ch. 49**. Les renvois vers le **ch. 3** résolvent contre du texte ; ceux vers les **ch. 15, 16, 17,
@@ -713,16 +723,18 @@ dans l'ordre exact, les deux mouvements dans leur ordre —, et le § 21.0 est u
 chapitre. Les **deux tables de couverture sont respectées pour leurs cinq lignes**. Le **siège de
 l'horloge est posé et marqué** (§ 21.1). Le **socle IAM et l'identité de charge de travail restent au
 ch. 3** ; l'**inventaire de la révocation reste au ch. 20 § 20.4** ; l'**assemblage du passeport reste
-au ch. 16** ; le **quatrième terme de l'invariant reste refermé au Livre IV**. ⚠ **Les dix-sept
-occurrences de R-11 portent la formulation imposée** : *« visée », jamais « fixée »*, **aucun ordre de
-grandeur approché n'est écrit**, le **statut du document est dit à chaque mention**, et **les quatre
-origines de jalons ne sont fusionnées à aucun endroit**. Les **quatorze occurrences de R-14** portent
-leur degré, dont **douze au degré 3**. Les **neuf occurrences de R-02** énoncent ce que la spécification
-démontre **et** ne démontre pas — dont le **refus explicite de reprendre la qualification de
+au ch. 16** ; le **quatrième terme de l'invariant reste refermé au Livre IV**. ⚠ **La formulation
+imposée par R-11 est tenue sur tout le domaine balayé** : *« visée », jamais « fixée »*, **aucun ordre
+de grandeur approché n'est écrit**, le **statut du document est dit à chaque mention**, et **les quatre
+origines de jalons ne sont fusionnées à aucun endroit** — *la pièce n'en porte que **trois marqueurs
+littéraux**, aux § 21.7, § 21.8 et § 21.9 ; la couverture se déclare, elle ne se dénombre pas.* Les
+absences **portent leur degré**, dont **douze au degré 3**. Les **quatre marqueurs de R-02** — § 21.3
+et § 21.5 (trois) — énoncent ce que la spécification
+démontre **et** ne démontre pas, dont le **refus explicite de reprendre la qualification de
 « crypto-agilité structurellement présente »** que le rapport de lot proposait. La **projection de coût
-est attribuée à son auteur, à son millésime et à son périmètre à chacune de ses deux occurrences**, et
-**aucun ratio n'en est dérivé**. Enfin, les **quinze occurrences de « Lecture de l'auteur »** sont
-suivies de ce que le socle établit et n'établit pas — dont **deux paragraphes entiers**, le § 21.6 et
+est attribuée à son auteur, à son millésime et à son périmètre à chacune de ses occurrences**, et
+**aucun ratio n'en est dérivé**. Enfin, les **quinze marqueurs de « Lecture de l'auteur »** sont
+suivis de ce que le socle établit et n'établit pas — dont **deux paragraphes entiers**, le § 21.6 et
 le § 21.8, marqués à l'ouverture.
 
 

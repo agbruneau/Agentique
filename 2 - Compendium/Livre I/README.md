@@ -4,7 +4,11 @@ Répertoire de rédaction du **Livre I** du compendium *La somme agentique* (Vol
 aucune décision, aucun socle et aucun garde-fou propre : la spécification de contenu est le
 [`PRD/TOC.md`](../PRD/TOC.md) v0.25, la gouvernance de la rédaction le [`PRD/PRD.md`](../PRD/PRD.md)
 v0.9. ⚠ *Les renvois « TOC v0.24 » de ce fichier et de ses pièces sont des **constats datés** — ce que
-la passe du Livre I a fait, à la version où elle l'a fait — et ne se corrigent pas.* En cas d'écart entre une pièce de ce dossier et le TOC, **le TOC prime** — sauf déviation
+la passe du Livre I a fait, à la version où elle l'a fait — et ne se corrigent pas.* ⚠ **Une exception,
+et une seule, depuis la passe de correction du 28 juillet 2026** : les **blocs de thèse des ch. 7, 10
+et 11** portent « citée depuis le TOC v0.28 », parce qu'ils **ont été re-cités à cette version** ; les
+huit autres restent à v0.23, qui est la version d'où ils ont été copiés et où leur thèse n'a pas
+bougé. *Une étiquette de citation date la copie, pas la lecture du fichier.* En cas d'écart entre une pièce de ce dossier et le TOC, **le TOC prime** — sauf déviation
 fondée, qui se déclare (décision 8 du TOC) et se remonte, jamais se corrige au plan depuis ici.
 
 ## ⚠ État : le Livre est rédigé, arbitré, et toujours non publiable
@@ -44,14 +48,23 @@ jamais** — sa réf. [220] décrit un cadrage sans chapitre, et cela reste vrai
 
 ### Volumétrie réelle — publiable depuis G-2
 
-**64 611 mots** de corps pour les onze pièces, mesurés le 27 juillet 2026 par
+**64 750 mots** de corps pour les onze pièces, **re-mesurés le 28 juillet 2026** par
 [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — contre une enveloppe
-de Livre de **65 000** au TOC, soit **−0,6 %**.
+de Livre de **65 000** au TOC, soit **−0,4 %**.
+
+⚠ **Le chiffre a bougé de +139 mots à la passe de correction du 28 juillet 2026, et il se lit ainsi.**
+La mesure de rédaction valait **64 611** (−0,6 %) ; sept pièces ont vu leur corps touché par les
+corrections d'audit — ch. 3 (+13), ch. 6 (+33), ch. 7 (+6), ch. 8 (+4), ch. 9 (+4), ch. 10 (+32),
+ch. 11 (+47) —, l'essentiel venant de la numérotation des tableaux des ch. 10 et 11 et de
+l'attribution nominative de trois métriques. *Un cardinal se re-mesure après tout ajout de contenu ;
+il ne se recopie pas.* ⚠ **Les chiffres publiés hors de ce dossier — audit du 28 juillet 2026 (§2 et
+§4.2), et tout décompte agrégé du compendium — restent à la mesure de rédaction et sont donc périmés
+d'autant** : l'écart est **remonté**, il n'est pas corrigé depuis ici.
 
 ⚠ **Le chiffre agrégé est bon et les chiffres individuels sont mauvais, et c'est le constat qui
 compte.** Chaque pièce a **dérivé** sa cible de l'enveloppe du Livre, personne n'ayant additionné les
 dérivations : leur somme atteint **93 000 mots**, soit **+43 %** de l'enveloppe qu'elles prétendaient
-toutes respecter. Les écarts individuels vont de **−55,9 %** (ch. 6) à **+0,1 %** (ch. 10). *C'est la
+toutes respecter. Les écarts individuels vont de **−55,5 %** (ch. 6) à **+0,5 %** (ch. 10). *C'est la
 cible dérivée qui était fausse, non la pièce qui est courte* — et l'écart se documente, il ne se
 corrige ni par amputation ni par gonflement.
 
@@ -166,6 +179,125 @@ Trois constats méritent d'être retenus avant d'ouvrir le Livre suivant.
    changements portait une **dépréciation** : une correction fondée sur le billet aurait **cassé** un
    énoncé exact du ch. 8. La vérification est allée jusqu'au document qui fait autorité, et c'est ce
    qui l'a sauvé.
+
+## La passe de correction du 28 juillet 2026 — huit constats soldés, un partiel, quatre écarts remontés
+
+⚠ **Sur instruction d'auteur, les onze pièces ont été corrigées le 28 juillet 2026 en réponse à
+l'audit des cinq Livres** (`audit.md`, section 4 pour le Livre I ; constats transversaux T-1, T-2 et
+T-4). ⚠ **Rien de ce qui suit ne requalifie le Livre** : les portes n'ont pas bougé, le socle
+consolidé compte toujours **zéro entrée**, **CA-IV-13 reste insatisfaite** — *une passe de correction
+n'est pas une relecture adversariale, et se corriger soi-même n'est pas être relu.* Les onze pièces
+demeurent des **brouillons non publiables**, et l'audit qui les a relevées **ne fait pas autorité** :
+c'est un constat daté, dont les issues appartiennent à l'auteur.
+
+**Trois arbitrages d'auteur commandent la passe, et ils ne se rediscutent pas.**
+
+1. **La re-citation d'une thèse suit son réalignement.** Le bloc de thèse d'une pièce cite le plan ;
+   quand le plan est réaligné, la citation se **reprend par copie littérale**, jamais par re-frappe.
+   Le bloc qui documentait le désalignement d'origine est **conservé et reformulé au passé** — *un
+   défaut soldé se raconte, il ne s'efface pas.*
+2. ⚠ **Règle neuve et opposable sur les décomptes d'en-tête.** *Un décompte d'occurrences déclaré au
+   champ « Garde-fous balayés » porte sur le **marqueur littéral de l'identifiant** — « R-14 »,
+   « R-02 », « F-01 » — dans le **corps** de la pièce, en-tête et note de statut exclus ; il se
+   re-mesure au commit.* Un garde-fou appliqué **sans identifiant écrit** — les métriques
+   auto-déclarées — se déclare désormais par son **domaine balayé, sans cardinal** : *mieux vaut un
+   domaine vérifiable qu'un nombre faux.* La règle est inscrite en tête du champ des **onze** pièces
+   et les cardinaux y ont tous été re-mesurés par balayage exhaustif.
+3. **L'attribution ne s'anonymise jamais.** La parade de péremption reste permise pour les
+   dénominations commerciales et les versions, mais **trois choses en sortent** : l'attributeur d'une
+   métrique ou d'une affirmation ; l'auteur et la date d'un instrument repris ; l'identifiant d'une
+   source qu'un lot doit instruire. *Une métrique dont l'attributeur est anonyme n'est plus
+   remontable par le lecteur — et le régime du volume tient tout entier à ce qu'elle le reste.*
+
+### Ce qui a été corrigé, par constat
+
+| Constat | Objet | Correction |
+|---|---|---|
+| **I.1** | § 10.5.3 renvoyait la lacune PRD Vol. II §10.7 « jusqu'au **ch. 21** » | ☑ **ch. 49**, vérifié contre le TOC et contre le **ch. 7 § 7.5**, siège de l'encadré, qui écrivait déjà « renvoyée au ch. 49 ». *Le ch. 21 du compendium est l'horloge post-quantique ; le renvoi visait le chapitre source du Vol. II, et un renvoi nu sans marqueur de document est la classe que la décision 7 proscrit.* |
+| **I.2** | § 6.5.2 : renvoi cassé « ch. 8 § » sans numéro | ☑ **ch. 8 § 8.3.2**, cible vérifiée sur pièce (« Registres, passerelles et découverte d'entreprise ») |
+| **I.3** | thèse du ch. 10 amputée de sa clause médiane | ☑ **re-citée par copie littérale** depuis le TOC v0.28 : « — le socle établit qu'AP2 est un protocole compagnon d'A2A, rien de plus sur sa centralité ». *La clause était restituée en substance au corps ; la citation déclarée verbatim, elle, était fausse.* |
+| **I.4** | thèses des ch. 7 et 11 figées à la v0.23 | ☑ **re-citées depuis le TOC v0.28** — ch. 7 (amendement R-IV-08 : le transfert d'AP2 à la FIDO Alliance est documenté), ch. 11 (requalification R-IV-13 : « le socle **du Vol. II** »). Les blocs de désalignement sont **reformulés au passé**, et **les corps qui commentaient la forme ancienne le sont aussi** — ch. 7 (note de statut) et **ch. 11 § 11.4.2**, qui écrivait encore « la thèse citée en tête est fausse de la somme » |
+| **I.5** | cardinaux et localisations d'occurrences inexacts | ☑ **onze pièces balayées**, pas seulement les quatre nommées : voir la table ci-dessous |
+| **I.6** | ch. 1 § 1.0.2 : « Deux termes ici » contre « les trois premiers » | ☑ titre de l'encadré aligné sur le corps — **« Trois termes ici, quatre à l'avant-propos »**. ⚠ *La sous-entrée 1.0.2 du TOC écrit « les deux premiers » : l'écart est **remonté**, non corrigé.* |
+| **I.7** | numérotation des tableaux interrompue aux ch. 10-11 | ☑ **Tableau 10.1 à 10.4** et **Tableau 11.1 à 11.5**, légendes conservées mot pour mot |
+| **I.8** | ch. 4 : « autonomie graduée » comptée sous R-8 du Vol. II | ☑ la ligne est **retirée** : le corps ne porte **aucun marqueur R-8**, et les deux définitions concordantes de la somme — ch. 7 § 7.5 (R-8 = collision « ACP ») et ch. 3 § 3.3.1 (R-13 = les quatre termes proscrits) — rattachent l'occurrence au seul **R-13 du Vol. III** |
+| **I.10** | attributions anonymisées | ☑ **partiellement** — les trois catégories de l'arbitrage 3 seulement (voir plus bas) ; la parade demeure pour le reste |
+
+### Les décomptes re-mesurés — avant → après
+
+Balayage exhaustif des onze pièces, marqueur littéral dans le corps. **Neuf pièces sur onze portaient
+au moins un cardinal, une localisation ou une plage de zéros faux ; deux étaient exactes** — le ch. 1
+et le ch. 5. *Le domaine de balayage est déclaré parce qu'un cardinal d'écarts sans domaine est un
+relevé, pas une couverture.*
+
+| Pièce | Correction |
+|---|---|
+| **Ch. 2** | R-02 sortie de la plage « zéro occurrence » : **le marqueur figure une fois** (§ 2.4.1), sans déclencher le garde-fou |
+| **Ch. 3** | R-02 **cinq → quatre** ; R-13 sorti de la plage « zéro » (**un marqueur**, § 3.3.1) ; *le § 3.2.2 porte un marqueur pour deux mécanismes — le cardinal compte les marqueurs* |
+| **Ch. 4** | R-8 **une → zéro** (constat I.8) ; métriques auto-déclarées : cardinal remplacé par le domaine (§ 4.0.1) |
+| **Ch. 6** | R-8 **deux → une** ; R-13 **deux → une** ; métriques : domaine § 6.1.1, § 6.2, § 6.5.2, sans cardinal |
+| **Ch. 7** | R-1 : localisation **§ 7.4.2 → § 7.4.1** ; R-8 **huit → deux** (les huit comptaient les **emplois du sigle**, non les marqueurs) ; R-13 **deux → une** ; R-14 **trois → deux** ; métriques **quatre → domaine § 7.6 seul**, le § 7.3 n'en portant aucune |
+| **Ch. 8** | F-01 **six → quatre** ; R-8 **cinq → une** ; R-13 **cinq → une** ; R-02 : **§ 8.1.4 ajouté** à la localisation ; R-14 **quatre → trois**, le § 8.8 étant la note de statut ; métriques : domaine § 8.4.2 et § 8.6.3 |
+| **Ch. 9** | R-8 **trois → une** ; R-13 **trois → une** ; R-14 **cinq → quatre** (§ 9.6 = note de statut) ; ⚠ **le superlatif « le chapitre du Livre le plus dense en énoncés d'absence » est retiré** — les ch. 10 et 11 en portent sept |
+| **Ch. 10** | R-8 **cinq → deux** ; R-13 **cinq → deux** ; R-02 **trois → quatre** (§ 10.3.3 omis) ; **R-14 six → sept** (§ 10.2.1 omis) ; métriques : § 10.2.2 **→ § 10.2.3** |
+| **Ch. 11** | F-01 **sept → quatre** ; R-14 : « le plus grand nombre du Livre » **→ à égalité avec le ch. 10**, sept chacun |
+
+⚠ **Une leçon de cette table dépasse le Livre** : *les décomptes faux ne l'étaient presque jamais par
+négligence, mais parce que deux objets différents portaient le même nom* — les **emplois d'un sigle**
+comptés comme des occurrences de son garde-fou, la **note de statut** comptée dans le corps, une
+**application** interprétée comptée comme un marqueur. **Aucun des quinze contrôles du volume ne
+rapproche un en-tête du corps qu'il décrit** ; c'est une dette d'appareil, et elle est déclarée.
+
+### Attributions rendues nominatives
+
+| Lieu | Avant | Après |
+|---|---|---|
+| ch. 6 § 6.2, ch. 7 § 7.6 (deux fois), ch. 8 § 8.4.2, ch. 9 § 9.2.5, ch. 10 § 10.1.2 et § 10.2.1 | « la fondation faîtière », « la fondation gestionnaire », « les organisations promotrices » | **la Linux Foundation** — attributeur des métriques d'adoption, que le TOC nomme dans la thèse même du ch. 7 |
+| ch. 6 § 6.5.2 | « attribuée ici à la source qui la rapporte » ; réserve de la règle de non-cumul sans attributeur | **Debenedetti et coll. (2025)**, sur le banc **AgentDojo** ; **Meta AI, 31 octobre 2025** — les deux vérifiés à la source de fusion (Vol. I *Monographie* §2.10) |
+| ch. 3 § 3.1.2 | « un référentiel largement adopté » | l'**OWASP API Security Top 10**, publié par la fondation **OWASP** — l'intitulé de la section le nommait déjà ; le corps ne le nommait pas |
+
+⚠ **Ce qui n'a pas été re-nommé l'est délibérément.** La parade de péremption demeure pour les
+dénominations commerciales, les produits et les versions ; seules les **trois catégories** de
+l'arbitrage 3 en sortent. *Anonymiser un produit protège d'une péremption ; anonymiser un attributeur
+supprime la vérifiabilité qui fonde le régime de preuve — ce ne sont pas le même geste.*
+
+### Ce qui est remonté, et non corrigé
+
+*Un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il **remonte**.* Quatre écarts
+relèvent d'eux et sont laissés intacts :
+
+1. ⚠ **La sous-entrée 1.0.2 du TOC écrit « les deux premiers termes sont éprouvés ici »** ; le corps
+   du ch. 1 en éprouve **trois** (découplage, contrat, évolution — l'évolution au § 1.1.4), et le
+   § 1.7 le confirme. La pièce a été alignée sur elle-même ; **le plan reste à réaligner** au titre de
+   la décision 8.
+2. ⚠ **La volumétrie du Livre est passée de 64 611 à 64 750 mots** (−0,4 % de l'enveloppe). Les
+   chiffres publiés hors de ce dossier — audit §2 et §4.2, agrégat du compendium — sont périmés
+   d'autant, et **ne se corrigent pas depuis ici**.
+3. ⚠ **La date de l'instrument repris au ch. 3 § 3.1.2 n'est pas portée** : le référentiel OWASP est
+   désormais nommé, mais **aucune version datée ne figure au corpus de la pièce**, et *ce qui n'a pas
+   été vu à la source ne s'écrit pas comme vu*. L'arbitrage 3 demande l'auteur **et** la date ; seul
+   l'auteur est versé. **À instruire à la source primaire.**
+4. ⚠ **Les constats I.9 et I.10a-b ne sont pas soldés, et c'est un choix de périmètre.** La triple
+   restitution paraphrasée de la mécanique de la fusion de l'ACP (ch. 7 § 7.3 et § 7.4.1, ch. 10
+   § 10.5.2) hors de son siège du ch. 8 § 8.5.1 relève d'un **contrôle de fond** qu'aucun motif de
+   `check-sieges.py` ne voit ; le réalignement des tables détaillées du TOC sur les sous-sections
+   réellement écrites (ch. 5, 10, 11) et sur les intitulés reformulés (ch. 8 § 8.5) est **une passe de
+   plan**, hors mandat d'une passe de correction de pièces.
+
+### Contrôles exécutés — 28 juillet 2026
+
+Chacun **seul**, jamais tuyauté dans un `&&`, le code de sortie du dernier maillon masquant l'échec
+des précédents.
+
+- `verifier-piece.py` sur les **onze** pièces : **sortie 0** pour chacune, les huit contrôles passent ;
+- les onze `.html` **régénérés** par `rendre-piece.py` depuis le `.md` corrigé, au même geste — *le
+  rendu se génère, il ne se recopie pas* ;
+- `PRD/decompte.sh` sur les onze pièces : **64 750 mots**, re-mesurés et reportés dans les onze
+  en-têtes ;
+- `PRD/check-sieges.py` : **sortie 0** — « les 12 sièges tiennent sur 50 pièces (S1-S5) ». ⚠ **Domaine
+  déclaré** : l'arbre de travail au 28 juillet 2026, **où des passes sœurs éditaient simultanément les
+  Livres II à V** ; le contrôle porte donc sur un corpus dont ce dossier n'écrit qu'un cinquième, et
+  *seul le corpus que le commit produit fait foi.*
 
 ## Les deux formats
 

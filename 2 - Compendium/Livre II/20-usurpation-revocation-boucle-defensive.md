@@ -9,14 +9,14 @@ deux mouvements, issu de la fusion v0.20 des anciens ch. 21 et 22.*
 | **Statut** | **Brouillon de rédaction, non publiable** — portes **G-3** et **G-4** ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **CA-IV-11 n'est pas satisfaite** : ce chapitre relève, comme le ch. 19, du régime de **relecture dédiée par un relecteur distinct**, dont le compte rendu doit être **déposé et nommé dans la pièce** ; **aucune n'a eu lieu**, et *l'attestation auto-délivrée est proscrite même exacte* — **rien ici ne doit être lu comme une attestation**. Voir **R-IV-33**, ouverte au ch. 19. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Ce chapitre est le plus exposé du Livre à la péremption produit** : trois offres de sécurité y sont datées, dont **deux en préversion** et **une sans date de disponibilité** ; et un **corpus de référence a changé de chemin de distribution et de convention de version** entre deux relevés |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. III *Monographie* ch. 13-15**, dont les entrées **F-01** à **F-07**, **F-10**, **F-12** à **F-21**, **F-25**, **F-26**, **F-36**, **F-38**, **F-43**, **F-46**, **F-47**, **F-52** à **F-58**, **F-73** et les entrées héritées **H-01**, **H-09**, **H-21**, **H-22**, **H-24** à **H-26**, **H-28**, **H-29**, **H-33** conservent leurs niveaux d'origine ; et contre le **Vol. I *Monographie* §7.5.1 à §7.5.4**, en **[C]**. ⚠ **Sept entrées mobilisées sont en [C]** — F-36, F-55, H-21, H-22, H-24, H-25, H-26, H-33 : elles corroborent, elles ne portent pas. ⚠ **F-56 porte un niveau contesté** et **F-26 un vote incomplet**. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. III — **R-12 : douze occurrences**, tout le chapitre étant tenu au niveau du maillon ; **R-02 : onze occurrences**, § 20.1 (deux), § 20.3 (trois), § 20.4 (trois), § 20.5, § 20.8 et § 20.10 ; **R-14 : seize occurrences**, dont **onze de degré 3** — **le plus grand nombre du Livre** ; **R-09 : neuf occurrences** ; **R-08 : deux occurrences**, § 20.0 et § 20.9, **renvoyées à leur siège du ch. 19 § 19.6** ; **R-04 : deux occurrences**, § 20.9 ; **R-03 : une occurrence**, § 20.9. **R-01, R-05 à R-07, R-10, R-11, R-13 : zéro occurrence.** Vol. II — **§8.2 : cinq occurrences**, § 20.8 (trois), § 20.9 et § 20.10 ; **§8.4 (quatre statuts de produit, dits à chaque mention) : sept occurrences**, § 20.8 ; **réserve F-01 : une occurrence**, § 20.1 ; **R-1 à R-8 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **6 200 mots** de corps (§ 20.0 à § 20.11), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — **onze sections pour deux mouvements**, le plus grand nombre du Livre. ☑ **Décompte publiable depuis G-2** ; **réel : 8 855 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+42,8 %**, le deuxième écart du Livre après le ch. 21. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les douze sections du corps, § 20.0 à § 20.11.** Vol. III — **R-02 : sept marqueurs**, § 20.2, § 20.3 (quatre), § 20.5 et § 20.9. **R-01, R-03 à R-14 : zéro marqueur.** ⚠ **Quatre garde-fous sont pourtant appliqués sur tout le domaine, sans marqueur littéral** : **R-12** (tout le chapitre est tenu au niveau du maillon, aucune recette), **R-14** (les absences portent leur degré, dont onze au **degré 3** — le plus grand nombre du Livre), **R-09** (le stade se dit à chaque mention) et **R-03** (§ 20.9, « entreprise agentique » jamais une catégorie établie). ⚠ **La restriction du garde-fou sur l'usurpation est renvoyée à son siège du ch. 19 § 19.6 aux § 20.0, § 20.9 et à la note de statut, mais la pièce n'écrit nulle part l'identifiant R-08** : le renvoi est **de section, non d'identifiant** — *écart mesuré, remonté et non corrigé ici*. Vol. II — **réserve F-01 : trois marqueurs**, § 20.0, § 20.2 et § 20.3 ; **§8.2 : zéro marqueur** ; les métriques et qualifications des § 20.8 à § 20.10 sont attribuées à leur source à chaque occurrence ; **§8.4 (quatre statuts de produit, dits à chaque mention) : zéro marqueur** ; les statuts sont portés au § 20.8, à chaque offre nommée ; **R-1 à R-8 : zéro marqueur** |
+| **Volumétrie cible** | ≈ **6 200 mots** de corps (§ 20.0 à § 20.11), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — **onze sections pour deux mouvements**, le plus grand nombre du Livre. ☑ **Décompte publiable depuis G-2** ; **réel : 8 868 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+43,0 %**, le deuxième écart du Livre après le ch. 21 (re-mesuré au commit du 28 juillet 2026, au terme de la passe de correction de l'audit). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 20, premier mouvement)* — la vérification à l'admission ne protège pas contre la dérive après admission (rug-pull d'un serveur d'outils ou d'un agent tiers) ; et chaque mécanisme spécifie l'émission avec soin et la révocation avec négligence — asymétrie qui reproduit l'histoire des PKI.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 20, premier mouvement)* — la vérification à l'admission ne protège pas contre la dérive après admission (rug-pull d'un serveur d'outils ou d'un agent tiers) ; et chaque mécanisme spécifie l'émission avec soin et la révocation avec négligence — asymétrie qui reproduit l'histoire des PKI.
 
 ---
 
-> **Thèse du second mouvement**, citée depuis le TOC v0.25, entrée du chapitre 20 — la défense s'agentifie elle-même, et l'identité distingue un SOC agentique gouvernable d'un système auto-organisé ingouvernable ; les agents défensifs sont les premiers à devoir porter le passeport du ch. 16.
+> **Thèse du second mouvement**, citée depuis le TOC v0.28, entrée du chapitre 20 — la défense s'agentifie elle-même, et l'identité distingue un SOC agentique gouvernable d'un système auto-organisé ingouvernable — les agents défensifs sont les premiers à devoir porter le passeport du ch. 16.
 
 ⚠ **Deux thèses pour un chapitre : le ch. 20 est issu de la fusion v0.20 des anciens ch. 21 et 22**
 (décision 11 du TOC). Les deux entrées y sont conservées **intégralement**, en deux mouvements portant
@@ -470,7 +470,7 @@ systèmes agentiques dont la cadence d'action excède la supervision humaine en 
 lui-même** : *le cas démontre **un** cas, **daté et circonscrit** ; il établit la **faisabilité**, non
 la **généralisation**.* **Inférer de ce cas une prévalence ou une systématisation de l'attaque autonome
 relèverait du PROJETÉ, voire du SPÉCULATIF, et doit être présenté comme tel.** ⚠ **Tri prospectif
-obligatoire** : *l'observation prouve qu'un seuil de faisabilité est franchi, **sans préjuger du rythme
+obligatoire** : *l'observation démontre qu'un seuil de faisabilité est franchi, **sans préjuger du rythme
 auquel ce mode opératoire se diffusera**.*
 
 ⚠ **Et un chiffre circule sur ce terrain, qui ne doit pas entrer sans son appareil.** Une projection
@@ -649,10 +649,11 @@ recevoir les mises à jour sans erreur ni signal** — est une lecture d'auteur,
 ni existence d'une atténuation portant spécifiquement sur l'identité d'agent. **Aucun dénombrement n'est
 donc écrit ici.**
 
-**Le référentiel applicatif est publié, daté et stable dans sa forme** : version **2026**, publication
-de **décembre 2025**, 57 pages, aucun statut de brouillon relevé (F-16, **[A]**). ⚠ *Millésime et date
-de publication diffèrent, et se citent ensemble.* Le second document du même organisme en est à la
-**version 2.01 de juin 2026** (F-20, **[A]**) ; **il reprend des métriques auto-déclarées d'éditeurs,
+**Le référentiel applicatif est publié, daté et stable dans sa forme** : l'*OWASP Top 10 for Agentic
+Applications*, version **2026**, publication de **décembre 2025**, 57 pages, aucun statut de brouillon
+relevé (F-16, **[A]**). ⚠ *Millésime et date
+de publication diffèrent, et se citent ensemble.* Le second document du même organisme — *State of
+Agentic AI Security and Governance* — en est à la **version 2.01 de juin 2026** (F-20, **[A]**) ; **il reprend des métriques auto-déclarées d'éditeurs,
 qui ne sont pas reprises ici.**
 
 ⚠ **Un fait négatif borné mérite d'être reporté à sa juste portée** : sur les dix intitulés du
@@ -753,7 +754,7 @@ rédaction du PRD §6. ⚠ **Et CA-IV-11 n'est pas satisfaite** — voir **R-IV-
    intégralement en [C]** : les §§ 20.7 et 20.11 viennent du Vol. I, et *une entrée [C] ne porte jamais
    un fait central.* **Le premier mouvement, lui, est un chapitre de composition** qui consomme le
    ch. 15 sans source nouvelle.
-2. **Les décomptes sont publiables** (G-2). Écart de **+42,8 %** — le deuxième du Livre après le ch. 21 ; la volumétrie du Livre alimente
+2. **Les décomptes sont publiables** (G-2). Écart de **+43,0 %** — le deuxième du Livre après le ch. 21 ; la volumétrie du Livre alimente
    **D-4** par **R-IV-17**.
 3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan**, et ce chapitre en porte
    **cinq** : **ch. 37 § 37.3** (non-compositionnalité), **ch. 38** (observabilité), **ch. 39** (dérive
@@ -795,14 +796,15 @@ garde-fou sur l'usurpation n'est pas reformulée** : son siège reste le **ch. 1
 § 20.0 et le § 20.9 renvoient. La **triade létale n'est pas reconstruite** : son siège reste le
 **ch. 19 § 19.2**. La **non-compositionnalité reste au ch. 37 § 37.3** ; l'**encadré de désambiguïsation
 au ch. 7 § 7.5** ; le **socle IAM au ch. 3** ; la **frontière des deux sauts au ch. 17 § 17.6**. ⚠ **Le
-traitement est défensif à ses douze occurrences** : chaque entrée nomme le maillon et la raison pour
-laquelle il cède, **et s'arrête là**. Les **seize occurrences de R-14** portent leur degré, dont **onze
-au degré 3**. Les **onze occurrences de R-02** énoncent ce que le mécanisme démontre **et** ne démontre
-pas — dont l'**écart de fond avec le Vol. I** au § 20.3, déclaré et non arbitré. Les **sept mentions de
-statut de produit** portent leur catégorie, et **les trois clauses d'exclusivité ou métriques
-auto-déclarées rencontrées sont attribuées à leur auteur et non reprises**. Le mot **« sécurisé » n'est
-appliqué à aucun protocole**. Et les **onze occurrences de « Lecture de l'auteur »** sont suivies de ce
-que le socle établit et n'établit pas.
+traitement est défensif sur tout le domaine balayé** : chaque entrée nomme le maillon et la raison
+pour laquelle il cède, **et s'arrête là** — *R-12 n'y porte aucun marqueur littéral, et la couverture
+se déclare plutôt qu'elle ne se dénombre.* Les absences **portent leur degré**, dont **onze au
+degré 3**. Les **sept marqueurs de R-02** — § 20.2, § 20.3 (quatre), § 20.5 et § 20.9 — énoncent ce
+que le mécanisme démontre **et** ne démontre pas, dont l'**écart de fond avec le Vol. I** au § 20.3,
+déclaré et non arbitré. Les **mentions de statut de produit** portent leur catégorie au § 20.8, et
+**les clauses d'exclusivité ou métriques auto-déclarées rencontrées sont attribuées à leur auteur et
+non reprises**. Le mot **« sécurisé » n'est appliqué à aucun protocole**. Et les **onze marqueurs de
+« Lecture de l'auteur »** sont suivis de ce que le socle établit et n'établit pas.
 
 
 ---
@@ -824,9 +826,12 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
 - **R-IV-35 — close par entrée au registre de l'Annexe C (TOC v0.25), troisième table.** La lacune du
   Vol. III sur la **chaîne d'approvisionnement** — ni définition normative, ni mécanisme d'attestation
   d'intégrité à l'exécution — est qualifiée *couverte au régime **[C]** par le Vol. I, à instruire à la
-  source primaire pour élévation*, le §2.10.4 du Vol. I nommant trois contrôles. ⚠ **Sixième
-  occurrence de la classe** — après R-IV-12, R-IV-13, R-IV-14, R-IV-18 : *six occurrences en deux
-  Livres font d'une classe de défaut une propriété du corpus, pas un accident de chapitre.* ⚠ **Et la
+  source primaire pour élévation*, le §2.10.4 du Vol. I nommant trois contrôles. ⚠ **Cinquième
+  occurrence de la classe** — après R-IV-12 et R-IV-13 au Livre I, R-IV-14 et R-IV-18 ici : *cinq
+  occurrences en deux Livres font d'une classe de défaut une propriété du corpus, pas un accident de
+  chapitre.* ⚠ **Le cardinal a été re-mesuré au commit du 28 juillet 2026** : la clôture écrivait
+  « sixième » quand l'ouverture de la remontée écrivait « cinquième » et que la série n'en énumérait
+  que cinq — *la série vaut cinq pour les deux premiers Livres, et sept une fois le Livre III versé.* ⚠ **Et la
   couverture ne comble rien** : *couverte au régime [C] ne vaut pas comblée.*
 
 ⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle

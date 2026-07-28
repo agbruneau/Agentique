@@ -8,12 +8,14 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11). **Premier chap
 | **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes ; rédaction sur instruction d'auteur du 27 juillet 2026. ⚠ **Premier chapitre du Livre I à consommer le Vol. II**, dont le régime de preuve diffère : ses faits portent des niveaux **[A]/[B]/[C]** explicites et conservent leur niveau d'origine (PRD §7.1), là où ceux du Vol. I entrent en [C] ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. ⚠ **Ce chapitre porte deux gels de source distincts** — **juin 2026** (Vol. I) et **16 juillet 2026** (Vol. II) — et c'est le premier du Livre où l'écart compte : la chronologie qu'il établit s'arrête au bilan public d'avril 2026, et une révision protocolaire majeure était attendue **douze jours après** le gel du Vol. II |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. I *Monographie* §3.0-3.1 et §3.13.1** (régime **[C]**) et le **Vol. II *Monographie* ch. 1** — dont le TOC assigne à ce chapitre les entrées **F-01, F-02, F-04, F-05, F-43**, à niveau conservé. ⚠ **Tant que G-3 n'est pas franchie, ces identifiants restent préfixés de leur volume** : un « F-01 » nu est indécidable entre deux socles |
-| **Garde-fous balayés** | **Les deux séries — et ce chapitre est le siège d'un garde-fou.** Vol. II — **R-1 (l'ACP protocolaire n'est pas un standard vivant) : trois occurrences**, § 7.3, § 7.4.2 et § 7.5 ; **R-8 (sigle jamais nu, quatre branches) : le § 7.5 en est le SIÈGE** pour toute la somme — huit occurrences, toutes qualifiées ; **métriques auto-déclarées : quatre occurrences**, § 7.6 (trois) et § 7.3, chacune attribuée. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-13 : deux occurrences**, § 7.5, mêmes termes ; **R-14 : trois occurrences**, § 7.4.2, § 7.5 et § 7.6. R-01 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 8 000 mots de corps (§ 7.0 à § 7.6). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 4 881 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−39,0 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 611 mots, soit −0,6 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Garde-fous balayés** | **Les deux séries — et ce chapitre est le siège d'un garde-fou.** ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **R-1 (l'ACP protocolaire n'est pas un standard vivant) : trois occurrences**, § 7.3, § 7.4.1 et § 7.5 ; **R-8 (sigle jamais nu, quatre branches) : deux occurrences**, § 7.5, dont le **SIÈGE** de l'encadré pour toute la somme — ⚠ *le sigle qualifié, lui, revient huit fois dans la pièce : c'est un décompte d'emplois, non de marqueurs, et il ne se confond pas avec celui du garde-fou* ; **métriques auto-déclarées (PRD Vol. II §8.2.1) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au seul § 7.6**, chaque chiffre attribué à sa source ; ⚠ *le § 7.3, que cet en-tête portait auparavant, n'en porte aucune*. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-13 : une occurrence**, § 7.5, mêmes termes ; **R-14 : deux occurrences**, § 7.4.2 et § 7.5. R-01 à R-12 : **zéro occurrence** |
+| **Volumétrie cible** | ≈ 8 000 mots de corps (§ 7.0 à § 7.6). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 4 887 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−38,9 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 750 mots, soit −0,4 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 7)* — en dix-sept mois, la couche protocolaire agentique s'est consolidée sous gouvernance neutre (Linux Foundation) — condition **nécessaire et non suffisante** de sa crédibilité en entreprise réglementée ; mais « soutien ≠ production » et AP2 n'a aucun transfert de gouvernance documenté.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 7)* — en dix-sept mois, la couche protocolaire agentique s'est consolidée sous gouvernance neutre (Linux Foundation) — condition **nécessaire et non suffisante** de sa crédibilité en entreprise réglementée (formulation du ch. 1 du Vol. II, que les v0.1-v0.5 amputaient de sa restriction) ; mais « soutien ≠ production », et le transfert de gouvernance d'AP2 **est documenté depuis la v0.24** : don à la FIDO Alliance le **28 avril 2026**, version v0.2, cas *Human-Not-Present*, deux groupes de travail techniques — fait **constaté à la source primaire le 27 juillet 2026** (registre du gel, fait 12), instruit au ch. 10.
 
 ⚠ **La restriction de cette thèse n'est pas décorative, et elle a déjà été perdue une fois.** Les versions v0.1 à v0.5 du plan citaient la thèse **amputée de « et non suffisante »**, ce qui en inversait la portée : d'un avertissement, elles faisaient une recommandation. La formulation intégrale est celle du ch. 1 du Vol. II, et c'est elle qui est reprise ici. *Une gouvernance neutre ne suffit pas à emporter la décision d'une institution réglementée* — le Livre III établit tout ce qu'il faut y ajouter.
+
+⚠ **La dernière clause de cette thèse a été amendée après la rédaction de la pièce, et la citation ci-dessus porte la forme réalignée.** La pièce citait à l'origine la forme du TOC v0.23 — « AP2 n'a aucun transfert de gouvernance documenté » —, forme que la **remontée R-IV-08 a portée au plan** : la thèse **a été réalignée au TOC v0.24** (décision 8), le transfert étant établi à la source primaire par le Vol. I *Monographie* §3.13.1, et la citation **a été reprise depuis le TOC v0.28** à la passe de correction du 28 juillet 2026. ⚠ **La clause antérieure n'est pas effacée mais située** : elle était **exacte du point de vue du socle du Vol. II**, dont la couverture s'arrêtait à son gel, et **périmée du point de vue du Vol. I**, qui portait le fait daté — *lacune de couverture, non contradiction entre volumes*. Le § 7.4.2 et le **ch. 10 § 10.1.3** en instruisent l'écart.
 
 ---
 
@@ -457,10 +459,11 @@ Il reste à examiner **les chiffres par lesquels ces protocoles annoncent leur r
 faire avec une sévérité que la littérature promotionnelle ne s'impose pas.
 
 Les données disponibles sont les suivantes, **et chacune est attribuée à sa source, comme elle doit
-l'être à chaque occurrence** (PRD du Vol. II §8.2.1). En **avril 2026**, **la fondation faîtière
-annonce que plus de 150 organisations déclarent leur soutien** au protocole agent-agent, contre plus
-de 50 au lancement. Un **communiqué de la même fondation du 29 juillet 2025** fait état de **plus de
-65 entreprises** déclarant leur soutien à la couche d'infrastructure.
+l'être à chaque occurrence** (PRD du Vol. II §8.2.1). En **avril 2026**, **la Linux Foundation —
+fondation faîtière des deux protocoles — annonce que plus de 150 organisations déclarent leur
+soutien** au protocole agent-agent, contre plus de 50 au lancement. Un **communiqué de la même
+fondation du 29 juillet 2025** fait état de **plus de 65 entreprises** déclarant leur soutien à la
+couche d'infrastructure.
 
 ⚠ **Ces deux chiffres ne se rapprochent pas** : plus de huit mois les séparent, et le socle
 n'enregistre **aucune actualisation ultérieure** du second. Les comparer serait fautif.
@@ -487,8 +490,8 @@ mondial, la poignée d'institutions qui documentent une mise en production — e
 enseignements les plus robustes de la somme.*
 
 **La troisième porte sur la croissance elle-même.** Le passage de plus de 50 à plus de 150
-organisations en douze mois, **tel que la fondation le rapporte en avril 2026**, est un triplement
-apparent. Mais **un triplement d'une grandeur non définie reste non défini**. La progression établit
+organisations en douze mois, **tel que la Linux Foundation le rapporte en avril 2026**, est un
+triplement apparent. Mais **un triplement d'une grandeur non définie reste non défini**. La progression établit
 qu'un nombre croissant d'organisations jugent utile d'**associer publiquement leur nom** au
 protocole : information sur la **dynamique** du domaine, non sur sa **maturité technique**.
 
@@ -565,10 +568,13 @@ d'auteur du 27 juillet 2026. Conséquences habituelles, plus deux propres à ce 
   corrigés** ; l'instruction complète est au **ch. 10 § 10.1.3**, et la **remontée R-IV-12** y porte
   la demande de réalignement du plan au titre de la décision 8.
 
-  ⚠ **La thèse citée en tête reste inchangée, et c'est délibéré** : elle est **citée verbatim depuis
-  le TOC v0.23**, et un rédacteur ne corrige pas le TOC — il remonte. Sa dernière clause (« AP2 n'a
-  aucun transfert de gouvernance documenté ») est **exacte du point de vue du socle du Vol. II** et
-  **périmée du point de vue du Vol. I** ; l'écart est exposé au § 7.6 et instruit au ch. 10.
+  ⚠ **À la rédaction, la thèse citée en tête est restée inchangée, et c'était délibéré** : elle était
+  **citée verbatim depuis le TOC v0.23**, et un rédacteur ne corrige pas le TOC — il remonte. Sa
+  dernière clause (« AP2 n'a aucun transfert de gouvernance documenté ») était **exacte du point de
+  vue du socle du Vol. II** et **périmée du point de vue du Vol. I** ; l'écart était exposé au § 7.6
+  et instruit au ch. 10. ⚠ **La thèse a depuis été réalignée au TOC v0.24 sur cette remontée, et le
+  bloc de tête a été re-cité depuis le TOC v0.28 le 28 juillet 2026** : *la citation porte désormais
+  la forme réalignée, et la comparaison mot à mot avec le plan courant résout.*
 
   *Leçon de méthode, portée au skill de rédaction : une pièce ne se rédige pas sur la seule source que
   le plan met en avant, mais sur l'intégralité de son périmètre de fusion.*
@@ -581,8 +587,8 @@ d'auteur du 27 juillet 2026. Conséquences habituelles, plus deux propres à ce 
 de couverture est respectée, dont les **deux sorties de périmètre vers le ch. 49** — le reste du
 §3.13 du Vol. I et le §7.3 — et le **siège de l'encadré R-8 en § 7.5**. La **thèse est citée dans sa
 forme intégrale**, restriction « et non suffisante » comprise. La chronologie est ordonnée **par
-protocole**, avec les deux séquences inverses explicitées. Les **quatre métriques auto-déclarées sont
-attribuées**, R-1 est tenu à ses trois occurrences, le sigle à quatre branches est **toujours
+protocole**, avec les deux séquences inverses explicitées. Les **métriques auto-déclarées du § 7.6
+sont attribuées**, R-1 est tenu à ses trois occurrences, le sigle à quatre branches est **toujours
 qualifié**, et la lacune héritée est **encadrée sans être comblée**.
 
 ---

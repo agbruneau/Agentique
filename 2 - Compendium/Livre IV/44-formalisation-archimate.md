@@ -10,13 +10,16 @@ formalisme ce que le ch. 43 a rangé en couches, et rien d'autre.***
 | **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6. ⚠ **ET AVANT LE PRÉALABLE QUE LE PLAN NOMME POUR CE CHAPITRE PRÉCISÉMENT** : la **re-vérification du mécanisme d'extension tel que la version de référence le porte** est déclarée par le TOC **préalable au registre des stéréotypes (§ 44.1.9), non note de transition** — *elle n'a pas eu lieu*. Le PRD §12 la nomme au jalon J-IV-5. ⚠ **R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit, et ce chapitre est celui du Livre où l'omission pèse le plus** : *son ancrage de version est un document de norme d'avril 2026, dont la liste définitive des éléments retirés ou renommés est déclarée **ressource vivante à recouper au gel** — et le recoupement n'a pas été fait.* Gel de source : **juin 2026** (Vol. I). *Il n'est pas celui de la somme.* |
 | **Socle mobilisé** | ⚠ **Aucune entrée du socle consolidé** (G-3 ouverte), **et aucune entrée F-xx d'aucun volume** : ce chapitre consomme le **Vol. I *Monographie* ch. 6**, qui entre **en [C]** — *sa vérification porte sur ses références, non sur le contenu de ses affirmations* —, plus **Vol. III *Monographie* §27.2** au seul titre de la matière à formaliser. ⚠ **Conséquence, et elle est plus large ici qu'ailleurs** : **tout ce chapitre est en [C]**, *aucun énoncé n'est central au sens de CA-IV-01*, et **l'élévation en [B] passerait par la lecture des documents de norme que le Vol. I cite** — travail de **G-1**, non de ce chapitre. ⚠ **Une entrée de socle est mobilisée par exception**, au § 44.6 : le **Vol. II F-09** (E-23), pour la seule modalité de sa formulation |
-| **Garde-fous balayés** | **Les deux séries, intégralement, y compris les zéros.** Vol. III — **R-14 (trois degrés d'absence) : huit occurrences**, § 44.0 (deux), § 44.1 (trois), § 44.5, § 44.7, § 44.9 ; **R-09 (statut d'un document dit à chaque mention) : six occurrences**, § 44.0 (trois), § 44.1, § 44.7 (deux) ; **R-02 : deux occurrences**, § 44.1 — *un mécanisme d'extension se qualifie par ce que la spécification rend officiel* ; **R-13 (échelle d'autonomie jamais nue) : une occurrence**, § 44.1.7, **renvoyée au siège du ch. 43 § 43.5** ; **R-01 : une occurrence**, § 44.1.6. **R-03 à R-08, R-10 à R-12 : zéro occurrence.** Vol. II — **réserve F-09 (« attendu par E-23 », jamais « exigé ») : trois occurrences**, § 44.6 ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : une occurrence**, § 44.1.3 ; **R-8 (sigle jamais nu) : deux occurrences**, § 44.1.6, **renvoyées au siège du ch. 7 § 7.5** ; **R-1 à R-7 : zéro occurrence** ; **métriques auto-déclarées : deux occurrences**, § 44.7 et § 44.9, **attribuées à leur éditeur nommé**. ⚠ **Garde-fou PROPRE au chapitre, hérité de sa source et plus nécessaire ici qu'à elle** : *si l'on retire le mot « ArchiMate » et que la phrase tient encore comme un exposé des chapitres amont, c'est une redondance à renvoyer* — **au Vol. I ce chapitre en suivait cinq ; ici il en suit quarante-trois** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** Vol. III — **R-09 (statut d'un document dit à chaque mention) : une occurrence**, § 44.0.2 ; **R-02 : une occurrence**, § 44.1.1 — *un mécanisme d'extension se qualifie par ce que la spécification rend officiel* ; **R-01 : une occurrence**, § 44.1.6 ; **R-13 (échelle d'autonomie jamais nue) : une occurrence**, § 44.1.7, **renvoyée au siège du ch. 43 § 43.5**. **R-14 (trois degrés d'absence) : une occurrence de l'identifiant**, § 44.6 — ⚠ *le garde-fou est pourtant tenu de bout en bout, chaque absence portant son degré en toutes lettres aux § 44.0, § 44.1, § 44.5, § 44.7 et § 44.9 : **domaine déclaré, sans cardinal** (décision 16, alinéa c)* ; **R-03 à R-08, R-10 à R-12 : zéro occurrence.** Vol. II — **réserve F-09 (« attendu par E-23 », jamais « exigé ») : une occurrence**, § 44.6 ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : une occurrence**, § 44.1.3 ; **R-8 (sigle jamais nu) : une occurrence**, § 44.1.6, **renvoyée au siège du ch. 7 § 7.5** ; **métriques auto-déclarées (marqueur « auto-déclaré ») : une occurrence**, § 44.9, **attribuée à son éditeur nommé** ; **R-1 à R-7 : zéro occurrence**. ⚠ **Garde-fou PROPRE au chapitre, hérité de sa source et plus nécessaire ici qu'à elle** : *si l'on retire le mot « ArchiMate » et que la phrase tient encore comme un exposé des chapitres amont, c'est une redondance à renvoyer* — **au Vol. I ce chapitre en suivait cinq ; ici il en suit quarante-trois** |
 | **Volumétrie cible** | ≈ **8 500 mots** de corps (§ 44.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des dix sections et du volume de source consommé — **la deuxième plus haute du Livre**, ce chapitre absorbant un chapitre entier du Vol. I. ☑ **Décompte publiable depuis G-2** ; **réel reporté au [`README.md`](README.md)**. ⚠ **D-4 s'applique** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 44 — le verrou est méthodologique et se nomme d'emblée)* — **ArchiMate n'a aucun élément natif** pour l'agent autonome, l'appel d'outil MCP, l'interaction A2A, l'identité non humaine ou le plan de contrôle ; la seule extension défendable est le mécanisme officiel **Specialization + stéréotype `<<…>>` + Profiles**, sur le modèle du *Risk & Security Overlay*. Ce que le chapitre apporte est une **traduction structurelle**, jamais une reprise du fond conceptuel des livres amont.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 44 — le verrou est méthodologique et se nomme d'emblée ; ⚠ **thèse inchangée depuis la v0.25, re-collationnée mot pour mot contre la v0.28** — avec celle du ch. 41, l'une des deux seules du Livre que l'arbitrage n'a pas réalignées)* — **ArchiMate n'a aucun élément natif** pour l'agent autonome, l'appel d'outil MCP, l'interaction A2A, l'identité non humaine ou le plan de contrôle ; la seule extension défendable est le mécanisme officiel **Specialization + stéréotype `<<…>>` + Profiles**, sur le modèle du *Risk & Security Overlay*. Ce que le chapitre apporte est une **traduction structurelle**, jamais une reprise du fond conceptuel des livres amont.
 
 ☑ **La thèse citée résiste à la collation contre le texte rédigé de sa source — décision 14 du TOC,
-appliquée avant la rédaction, et c'est la première du Livre IV dans ce cas.** Le Vol. I écrit que
+appliquée avant la rédaction, et c'est l'un des deux seuls cas du Livre IV** ; ⚠ **c'est aussi, avec
+celle du ch. 41, l'une des deux seules que l'arbitrage v0.28 n'a PAS réalignées** — *la citation en
+tête n'a donc rien à reporter, et son ancrage de version est relevé à la v0.28 pour dire qu'elle y a
+été re-collationnée, non qu'elle y aurait changé* (décision 17 du TOC). Le Vol. I écrit que
 *« ni ArchiMate 3.2 ni ArchiMate 4 n'introduisent de métaclasse dédiée à l'intelligence artificielle
 ou aux agents autonomes »*, et que *« le seul mécanisme d'extension défendable est celui que la
 spécification rend officiel : la spécialisation, assortie d'un stéréotype, complétée par les
@@ -634,10 +637,18 @@ du **27 juillet 2026**.
    est le seul du Livre dont la totalité du corps est en [C]**, hors une réserve de modalité empruntée
    au Vol. II au § 44.6.
 2. **Les décomptes sont publiables** (G-2) ; le réel est reporté au [`README.md`](README.md).
-3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan.** Ne sont pas rédigés :
-   **ch. 25**, **ch. 45**, et l'**Annexe H**. Les renvois vers les **ch. 5, 7, 8, 12, 14, 16, 17, 19**
-   résolvent contre du texte ; ceux vers les **ch. 37, 38, 40, 41, 42, 43, 46** résolvent contre du
-   texte au terme de la présente passe.
+3. **Les renvois « ch. N » : état FINAL de la passe, et non ordre d'écriture.** ⚠ *La forme
+   antérieure de ce point photographiait l'instant où cette pièce a été écrite et déclarait « ne
+   sont pas rédigés : ch. 45 » — alors que **la même passe l'a écrit ensuite** ; elle est
+   corrigée ici sur l'état que le commit produit.* **Les dix chapitres du Livre IV (ch. 37 à 46)
+   sont rédigés**, comme le sont les **cinquante chapitres des cinq Livres** : *tous les renvois «
+   ch. N » de cette pièce résolvent donc contre du texte.* ⚠ **Les renvois vers les ANNEXES
+   restent des renvois de plan** — *aucune annexe du compendium n'est rédigée*, l'annexe H
+   comprise. ⚠ **Ce qui reste vrai de la forme antérieure, et qui est daté** : à l'heure où ce
+   chapitre a été écrit, n'étaient rédigés ni le ch. 25 du Livre III, ni le ch. 45 — *les
+   renvois qui les visent ont été posés comme renvois de plan et n'ont pas été re-vérifiés contre
+   le texte paru après eux.* ⚠ **Et « résoudre contre du texte » ne vaut pas recevabilité** : *le
+   texte visé est lui-même un brouillon hors portes.*
 4. **Le registre des stéréotypes est publié sous réserve explicite**, et *aucune conformité à la
    version de référence n'est attestée* — ⚠ **CA-IV-14 : « conforme » s'écrit depuis une constatation
    sur pièce, jamais depuis un document amont.**
@@ -655,6 +666,10 @@ du **27 juillet 2026**.
   remappage qui ne voit qu'une borne, et qu'aucun des quinze contrôles ne signale* : `check-toc.py`
   porte sur des motifs de ligne et **ne connaît pas les tables détaillées**. *La pièce écrit ses
   sous-sections en 44.1.x et remonte l'écart ; elle ne corrige pas le plan.*
+  ☑ **Issue, 27 juillet 2026** — **TOC, décision 8** — les **neuf sous-sections numérotées «
+  43.1.x » sous le chapitre 44** et la **table de couverture dirigeant vers « § 43 »** sont
+  réalignées ; ⚠ **classe de défaut déjà consignée pour trois passes de structure consécutives**
+  — *aucun des quinze contrôles ne lit les tables détaillées.*
 - **R-IV-101 — BLOQUANTE pour la publication du § 44.1.9 et, par dépendance, du ch. 45.** Le plan
   déclare la **re-vérification du mécanisme Specialization + stéréotype + Profiles tel que le document
   normatif de référence le porte** comme **préalable au registre des stéréotypes, non note de
@@ -667,6 +682,11 @@ du **27 juillet 2026**.
   **inscription de cette re-vérification au volet résiduel de G-1**, avec **domaine déclaré** — la
   liste des éléments retirés ou renommés, le mécanisme d'extension, et l'état du support d'outillage.
   ⚠ *Le PRD la nomme déjà à J-IV-5 ; ce qui manque n'est pas la mention, c'est l'exécution.*
+  ☑ **Issue, 27 juillet 2026** — **PRD, volet résiduel de G-1, DOMAINE DÉCLARÉ** — la **re-
+  vérification du mécanisme d'extension sur le document normatif** est inscrite avec son domaine
+  : *liste des éléments retirés ou renommés, mécanisme d'extension, état du support
+  d'outillage*. ⚠ **Le blocage tient pour la publication du § 44.1.9 et, par dépendance, du ch.
+  45** : *le registre reste publié sous réserve.*
 - **R-IV-102 — non bloquante, de régime, et elle porte sur une classe.** **La totalité du corps de ce
   chapitre est en [C]** — le Vol. I étant sa source unique —, ⚠ **et cela inclut des énoncés que la
   somme traite ailleurs comme structurants** : *la limite du non-déterminisme, l'écart entre intention
@@ -676,9 +696,17 @@ du **27 juillet 2026**.
   *lecture des sources primaires que le Vol. I cite, avec la borne du PRD §7.1 : **une entrée sans
   source primaire tierce reste une thèse attribuée et ne porte jamais un fait central***. ⚠ *Une
   chaîne de dépendances dont le premier maillon est en [C] ne s'élève pas par ses maillons aval.*
+  ☑ **Issue, 27 juillet 2026** — **PRD, G-3** — la **voie d'élévation** est déclarée pour ce
+  chapitre : *lecture des sources primaires que le Vol. I cite*, ⚠ **avec sa borne** — *une
+  entrée sans source primaire tierce reste une thèse attribuée et ne porte jamais un fait
+  central.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 44.0 à
-§ 44.9, dans l'ordre exact —, et **le contrat de lecture de la source est refondu en apparat**, comme
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.28** — § 44.0 à
+§ 44.9, dans l'ordre exact ; ⚠ **quatre déviations d'intitulé sont fondées et se déclarent**
+(décision 8, reprise en décision 15 alinéa c) : le § 44.2 ajoute un article, le § 44.3 abrège « chaînes
+de valeur financières », le § 44.5 écrit « exécution » pour « runtime » et le § 44.9 « le formalisme »
+pour le nom du langage — *les deux dernières relèvent du garde-fou de non-redondance propre au
+chapitre et de la règle de langue du dépôt, non d'un écart de contenu* —, et **le contrat de lecture de la source est refondu en apparat**, comme
 la table le prescrit. La **table de couverture est respectée pour ses sept lignes**, y compris ses
 **deux prélèvements déclarés** : **§6.8 part au ch. 45** (exemple de bout en bout) et **§6.10 part au
 ch. 43** (maturité par plateaux) — ⚠ *ni l'un ni l'autre n'est repris ici*, et **le §6.0.1 est refondu
@@ -686,8 +714,16 @@ en apparat**. Le **garde-fou de non-redondance est tenu de bout en bout** : *auc
 chapitre ne tient comme exposé des chapitres amont si l'on retire le mot du langage*, et **les renvois
 remplacent partout la reprise**. Les **notes d'équivalence 3.2 sont portées aux deux patrons qui les
 exigent** — *ceux qui mobilisent l'élément retiré* —, et **non aux patrons bâtis sur des éléments
-inchangés**. Les **huit occurrences de degré 3** portent leur degré. Les **deux capacités
-auto-déclarées** sont attribuées à leur éditeur nommé, avec statut et date. **Aucun siège neuf n'est
-posé** ; **le siège de la conformité traçable est repris de la source à son emplacement** (§ 44.6), et
-les sièges touchés — l'encadré du **ch. 7 § 7.5**, le passeport au **ch. 16**, les trois échelles au
-**ch. 43 § 43.5** — portent leur renvoi.
+inchangés**. ⚠ **Cardinaux re-mesurés au commit du 28 juillet 2026, sur le marqueur littéral et sur le corps seul** (décision 16 du TOC) ; *les cardinaux antérieurs comptaient les applications du garde-fou et n'étaient re-mesurables par aucune règle écrite.* Le marqueur littéral **« degré 3 » compte deux occurrences**, et *les trois
+degrés sont portés en toutes lettres à chaque absence des § 44.0, § 44.1, § 44.5, § 44.7 et § 44.9 —
+domaine déclaré, sans cardinal* (alinéa c). La **capacité auto-déclarée du § 44.9 — une occurrence du
+marqueur « auto-déclaré »** — est attribuée à son éditeur nommé, avec statut et date. ⚠ **Un siège EST posé et marqué par cette pièce, et la
+formulation antérieure — « aucun siège neuf n'est posé » — était fausse** : **le siège de la conformité
+traçable** (§ 44.6), que le plan désigne lui-même « (SIÈGE) » à son entrée, est **repris de la source à
+son emplacement** et **porte la forme pleine du marqueur**. ☐ **Son versement à
+[`PRD/check-sieges.py`](../PRD/check-sieges.py) est DÛ, et la passe de gouvernance du 28 juillet 2026
+le verse au même commit** — *constaté sur pièce à l'heure de cette écriture : la table porte douze
+entrées et celle-ci n'y est pas* ; ☑ **les renvois entrants annoncés, eux, existent** — **ch. 45
+§ 45.14** et **ch. 46 § 46.2.3**, le second écrit par la présente passe. Les
+sièges **touchés sans être reconstruits** — l'encadré du **ch. 7 § 7.5**, le passeport au **ch. 16**,
+les trois échelles au **ch. 43 § 43.5** — portent leur renvoi.

@@ -10,20 +10,24 @@ trois capacités que l'exploitation distingue — **voir**.*
 | **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6. ⚠ **Les remontées R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre** et ne sont pas rouvertes ici : **G-5 conditionne le Livre entier**, et l'arbitrage du risque 14 (**D-2**) n'est pas pris |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : **aucun fait périssable de cette pièce n'a été repris à la source primaire**, et ce chapitre est celui du Livre où le manque coûte le plus — son objet principal est un corpus **sans version citable**, dont la seule ancre est une date de consultation. Gels de source : **21 juillet 2026** (Vol. III), **juin 2026** (Vol. I) ; *ils ne sont pas celui de la somme et ne peuvent en tenir lieu* |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. III *Monographie* ch. 24**, dont les entrées **F-64**, **F-65**, **F-66**, **F-74**, **F-75**, **F-76**, **F-77**, **F-78**, **F-89**, **F-90**, **F-91**, **F-95** et les entrées héritées **H-04**, **H-06**, **H-11**, **H-12**, **H-14**, **H-15**, **H-23**, **H-27**, **H-28**, **H-33** **conservent leurs niveaux d'origine** ; et contre le **Vol. I *Monographie* §2.9.6, §3.12.3 et §4.9.1-4.9.2**, qui entre **en [C]**. ⚠ **Régime « source rédigée non publiable »** (PRD §7.2) : **G-4 non close, aucun vote adversarial conduit**. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | **Les deux séries, intégralement, y compris les zéros.** Vol. III — **R-14 (trois degrés d'absence) : douze occurrences**, § 38.1 (trois), § 38.2 (deux), § 38.4 (trois), § 38.5 (quatre) ; **R-09 (statut pré-normatif dit à chaque mention) : huit occurrences**, § 38.2 (quatre), § 38.3 (deux), § 38.5 (deux) ; **R-02 : trois occurrences**, § 38.2 et § 38.5 (deux) ; **R-07 (inférence produit ↔ réglementation) : trois occurrences**, § 38.4, ⚠ **avec ses deux régimes d'absence distincts, qui ne s'échangent pas** ; **R-06 (« attendu par E-23 », jamais « exigé ») : quatre occurrences**, § 38.4 ; **R-01 : deux occurrences**, § 38.5 ; **R-03 (« AgentOps » terme de fournisseur) : deux occurrences**, § 38.1 ; **R-04 : une occurrence**, § 38.1 (homonymie du sigle « APM », héritée et déclarée). **R-05, R-08, R-10 à R-13 : zéro occurrence.** Vol. II — **R-7 (instrumentation d'une attente réglementaire par un produit = inférence d'auteur) : deux occurrences**, § 38.4, ⚠ **nommé par volume, à ne pas confondre avec R-07 du Vol. III** ; **métriques et conformités auto-déclarées : trois occurrences**, § 38.2 (deux) et § 38.4, chacune attribuée à son éditeur nommé. **R-1 à R-6, R-8 : zéro occurrence.** ⚠ **Faux ami déclaré** : le sigle « APM » sert à **deux objets sans rapport** dans le Vol. III — la supervision des performances applicatives et un manifeste de recherche homonyme ; le syntagme complet est écrit à chaque emploi, jamais le sigle nu |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** Vol. III — **R-14 (trois degrés d'absence) : quatre occurrences**, § 38.0, § 38.1, § 38.2 et § 38.4 ; **R-09 (statut pré-normatif dit à chaque mention) : deux occurrences**, § 38.3 et § 38.5 ; **R-01 : une occurrence**, § 38.5 ; **R-02 : une occurrence**, § 38.5 ; **R-03 (« AgentOps » terme de fournisseur) : une occurrence**, § 38.0 ; **R-04 : une occurrence**, § 38.1 (homonymie du sigle « APM », héritée et déclarée) ; **R-06 (« attendu par E-23 », jamais « exigé ») : une occurrence**, § 38.4 ; **R-07 (inférence produit ↔ réglementation) : une occurrence**, § 38.4, ⚠ **avec ses deux régimes d'absence distincts, qui ne s'échangent pas**. **R-05, R-08, R-10 à R-13 : zéro occurrence.** Vol. II — **R-7 (instrumentation d'une attente réglementaire par un produit = inférence d'auteur) : une occurrence**, § 38.4, ⚠ **nommé par volume, à ne pas confondre avec R-07 du Vol. III** ; **R-8 (sigle jamais nu) : une occurrence**, § 38.1, **renvoyée au siège du ch. 7 § 7.5** — ⚠ *l'en-tête antérieur la comptait à zéro* ; **métriques et conformités auto-déclarées (marqueur « auto-déclaré ») : une occurrence**, § 38.2, attribuée à son éditeur nommé. **R-1 à R-6 : zéro occurrence.** ⚠ **Faux ami déclaré** : le sigle « APM » sert à **deux objets sans rapport** dans le Vol. III — la supervision des performances applicatives et un manifeste de recherche homonyme ; le syntagme complet est écrit à chaque emploi, jamais le sigle nu |
 | **Volumétrie cible** | ≈ **6 000 mots** de corps (§ 38.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des cinq sections et du volume de source consommé. ☑ **Décompte publiable depuis G-2** ; **réel reporté au [`README.md`](README.md)** du Livre, mesuré par [`PRD/decompte.sh`](../PRD/decompte.sh). ⚠ **D-4 s'applique** : l'écart se documente, **ni amputation ni gonflement** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 38)* — l'AgentOps commence par l'observabilité, dont le socle de standardisation est les conventions sémantiques GenAI/agents d'OpenTelemetry — mais tracer un *appel* n'est pas tracer une *délégation* : la corrélation trace ↔ chaîne de mandat est le chaînon manquant.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 38 — **thèse réalignée en v0.28**, décisions 8 et 14, remontée R-IV-42)* — l'observabilité agentique dispose d'un **candidat à la standardisation** — les conventions sémantiques GenAI et agents d'OpenTelemetry —, ⚠ **mais leur état interdit de parler d'un socle acquis** : premier des **cinq** échelons de maturité, **aucune version citable**, rupture de dépôt datée. Tracer un *appel* n'est pas tracer une *délégation* : la corrélation trace ↔ chaîne de mandat est le chaînon manquant. ⚠ **« L'AgentOps commence par l'observabilité » est un ordonnancement d'auteur, non un fait** — *aucune entrée n'établit d'ordre entre les capacités d'exploitation.*
 
-⚠ **La thèse citée porte deux formes que sa source a elle-même bornées, et l'écart se déclare —
-décision 14 du TOC, appliquée avant la rédaction.** *Premièrement*, « **dont le socle de
-standardisation est** les conventions sémantiques » : le Vol. III a reformulé sa thèse le 21 juillet
-2026 et écrit exactement l'inverse — **« leur état interdit de parler d'un socle acquis »**, les deux
-fichiers agentiques relevés étant au **premier des cinq échelons** de maturité et **aucune version ne
-leur étant citable**. *Deuxièmement*, « **l'AgentOps commence par l'observabilité** » est déclaré par
-la source elle-même comme **un ordonnancement d'auteur, non un fait** : aucune entrée n'établit un
-ordre entre les capacités d'exploitation. **La pièce cite la thèse verbatim, comme le PRD §6 l'exige,
-et écrit son corps sous la forme bornée** ; l'écart est **remonté** (R-IV-42, § 38.6), non arbitré ici.
+⚠ **La thèse portait, à la rédaction, deux formes que sa source avait elle-même bornées — le
+réalignement est FAIT, et l'histoire de l'écart se conserve** (décision 17 du TOC, alinéa c). **Forme
+antérieure, v0.25** : « l'AgentOps commence par l'observabilité, **dont le socle de standardisation
+est** les conventions sémantiques GenAI/agents d'OpenTelemetry ». *Premièrement*, « **dont le socle de
+standardisation est** » : le Vol. III avait reformulé sa thèse le 21 juillet 2026 et écrit exactement
+l'inverse — **« leur état interdit de parler d'un socle acquis »**, les deux fichiers agentiques
+relevés étant au **premier des cinq échelons** de maturité et **aucune version ne leur étant
+citable**. *Deuxièmement*, « **l'AgentOps commence par l'observabilité** » était déclaré par la source
+elle-même comme **un ordonnancement d'auteur, non un fait** : aucune entrée n'établit un ordre entre
+les capacités d'exploitation. **Le corps a été écrit sous la forme bornée** et l'écart avait été
+**remonté** (R-IV-42, § 38.6). ☑ **La remontée est soldée par l'arbitrage v0.28 du TOC** (décisions 8
+et 14), et **la citation ci-dessus porte la forme réalignée**, reportée **par copie** depuis l'entrée
+courante du plan. *La v0.29 du TOC ne modifie aucune thèse du Livre.*
 
 ⚠ **Un second désalignement porte sur la ligne de sections du plan, et il est de fait daté** — voir
 § 38.2.1 et la remontée **R-IV-43**.
@@ -136,7 +140,7 @@ l'entreprise doit répondre d'un mandataire, et la distance entre les deux est e
 § 38.2 à § 38.5 mesurent.* ⚠ **Le lecteur peut refuser cette lecture sans qu'aucun des faits cités ne
 tombe.**
 
-## § 38.2 — État des conventions sémantiques d'OpenTelemetry pour l'IA générative et les agents
+## § 38.2 — État des conventions sémantiques OpenTelemetry pour l'IA générative et les agents
 
 ### 38.2.1 La première chose à écrire est ce qu'on ne peut pas écrire
 
@@ -380,7 +384,7 @@ enregistrement d'audit**, et proposant le **journal chaîné par empreintes** co
 Vol. I documente la parade, en [C] ; il ne documente pas la thèse.** *Une parade décrite ne vaut pas
 la propriété qu'on lui prête*, et la relève **reste un repérage [C] à instruire à la source
 primaire** — elle n'entre pas au socle, et son instruction relève de G-1. ⚠ **Le versant *effet* est
-au ch. 48**, qui n'est pas rédigé.
+au ch. 48**, ⚠ *rédigé depuis, par une passe concurrente du même jour, et **hors portes comme celle-ci** : le renvoi résout contre du texte, non contre une pièce recevable.*
 
 ### 38.4.4 Le garde-fou, et le socle y est dissymétrique — ne pas généraliser
 
@@ -490,8 +494,10 @@ somme prend pour objet.*
    s'écrit à chaque emploi, dans tout le Livre.
 2. **L'état daté du corpus d'instrumentation, et la manière de le citer.** Premier échelon d'une
    échelle de **cinq**, **aucune version citable**, ancre unique = date de consultation. ⚠ **Le
-   ch. 40 hérite de cet état pour ses douze métriques**, et **le ch. 46** pour son inventaire de
-   jalons externes — *aucun ne le redémontre.*
+   ch. 40 hérite de cet état pour les métriques qu'il dénombre**, et **le ch. 46** pour son inventaire
+   de jalons externes — *aucun ne le redémontre.* ⚠ **Le cardinal se lit au ch. 40 § 40.1.2, qui le
+   re-mesure : SEIZE** — douze au document de métriques (F-90), quatre au document de jonction (F-95),
+   *que le § 38.5 mentionne lui-même* ; **il n'est pas cité ici sous sa valeur partielle.**
 3. **La distinction instrument / indicateur.** Ce chapitre nomme et rattache ; **le ch. 40 compte**.
    La frontière est posée ici pour les deux.
 4. **Le régime de la trace probatoire.** Producteur distinct de l'observé ; infalsifiabilité en [C] ;
@@ -506,8 +512,8 @@ somme prend pour objet.*
    § 41.5** en dépend — une boucle de réémission suppose de savoir **quel agent** l'indicateur
    condamne.
 
-⚠ **Ce que le chapitre ne lègue pas.** Aucune **mesure** : les douze métriques relevées ne sont pas
-comptées ici, elles sont au **ch. 40**. Aucun **verdict de grille** : la grille du ch. 14 y sert en
+⚠ **Ce que le chapitre ne lègue pas.** Aucune **mesure** : les métriques relevées ne sont pas comptées
+ici, elles le sont au **ch. 40 § 40.1.2**, *qui en dénombre seize*. Aucun **verdict de grille** : la grille du ch. 14 y sert en
 lecture inversée, à nommer ce que l'instrument ne produit pas. Et **aucune propriété démontrée d'un
 outil nommé** — *deux produits sont cités, deux régimes d'absence sont déclarés, et rien n'est
 recommandé.*
@@ -529,11 +535,18 @@ PRD §6**. Instruction d'auteur du **27 juillet 2026**.
    source primaire au gel de la somme**. *Un état daté non re-daté est un état d'un autre jour.*
 2. **Les décomptes sont publiables** (G-2) ; le réel est reporté au [`README.md`](README.md) du
    Livre.
-3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan.** Ne sont pas rédigés :
-   **ch. 41**, **ch. 43**, **ch. 45**, **ch. 48**, **ch. 49**, et les chapitres du Livre III au-delà
-   du ch. 26 — dont le **ch. 25**, siège de R-06, et le **ch. 27**, siège de l'article 12.1. Les
-   renvois vers les **ch. 1, 6, 7, 8, 9, 14, 15, 16, 17** résolvent contre du texte ; ceux vers les
-   **ch. 37, 39, 40, 42, 46** résolvent contre du texte au terme de la présente passe.
+3. **Les renvois « ch. N » : état FINAL de la passe, et non ordre d'écriture.** ⚠ *La forme
+   antérieure de ce point photographiait l'instant où cette pièce a été écrite et déclarait « ne
+   sont pas rédigés : ch. 41, ch. 43 et ch. 45 » — alors que **la même passe les a écrits
+   ensuite** ; elle est corrigée ici sur l'état que le commit produit.* **Les dix chapitres du
+   Livre IV (ch. 37 à 46) sont rédigés**, comme le sont les **cinquante chapitres des cinq
+   Livres** : *tous les renvois « ch. N » de cette pièce résolvent donc contre du texte.* ⚠ **Ce
+   qui reste vrai de la forme antérieure, et qui est daté** : à l'heure où ce chapitre a été
+   écrit, n'étaient rédigés ni les ch. 48 et 49 du Livre V, ni les chapitres du Livre III au-delà
+   du ch. 26 — dont le ch. 25, siège de R-06, et le ch. 27, siège de l'article 12.1 —, non plus
+   que les ch. 41, ch. 43 et ch. 45 — *les renvois qui les visent ont été posés comme renvois de
+   plan et n'ont pas été re-vérifiés contre le texte paru après eux.* ⚠ **Et « résoudre contre du
+   texte » ne vaut pas recevabilité** : *le texte visé est lui-même un brouillon hors portes.*
 4. **La lacune de corrélation du § 38.5 est exposée, non comblée**, et sa question instruisible est
    formulée avec son corpus et son critère de clôture. ⚠ **Elle n'est pas rédigée** : *le seul geste
    admissible sur un front dont le plan déclare le socle non constitué est d'exposer le vide.*
@@ -550,6 +563,10 @@ PRD §6**. Instruction d'auteur du **27 juillet 2026**.
   commence par l'observabilité » est déclaré **par la source elle-même** comme un **ordonnancement
   d'auteur, non un fait**. **Demande remontée** : réalignement au titre des **décisions 8 et 14** du
   TOC. ⚠ **Ce n'est pas une divergence à arbitrer, c'est un report qui n'a pas été fait.**
+  ☑ **Issue, 27 juillet 2026** — **TOC, décisions 8 et 14** — « dont **le socle de standardisation
+  est** » tombe : *la source écrit que **leur état interdit de parler d'un socle acquis*** ; et
+  « l'AgentOps commence par l'observabilité » est déclaré **ordonnancement d'auteur**. **La
+  citation en tête de cette pièce porte la forme réalignée** (décision 17 du TOC).
 - **R-IV-43 — non bloquante, de fait daté et de forme, portant sur la LIGNE DE SECTIONS du plan et
   non sur sa thèse.** Deux défauts distincts au même endroit. *(a)* La ligne annonce un « statut exact
   des conventions — **stable/expérimental** — à dater au gel » : **cette alternative binaire est
@@ -562,6 +579,10 @@ PRD §6**. Instruction d'auteur du **27 juillet 2026**.
   documente chez un éditeur au § 38.2.3.** **Demande remontée** : réalignement de la ligne de
   sections (décision 8), et **inscription de la relève v0.7 correspondante au domaine de G-1** pour
   reprise à la source primaire.
+  ☑ **Issue, 27 juillet 2026** — **TOC** (ligne de sections) **et PRD** (domaine de G-1) —
+  l'alternative binaire *stable/expérimental* est **réfutée par l'échelle à cinq échelons** ; ⚠
+  **et l'ancre de version du plan est antérieure de deux mois au déplacement qui l'a périmée** —
+  *exactement le défaut que le § 38.2.3 documente chez un éditeur.*
 - **R-IV-44 — non bloquante, de qualification de relève.** Le TOC porte au § 38.4 une **relève v0.10**
   posant que la propriété porteuse d'un environnement d'exécution agentique est la **détection de la
   divergence entre l'action effectuée et son enregistrement d'audit**, avec le **journal chaîné par
@@ -571,19 +592,24 @@ PRD §6**. Instruction d'auteur du **27 juillet 2026**.
   couvert en [C] et relève de l'Annexe C au titre des lacunes de couverture, le volet *thèse* reste un
   repérage [C] entier à instruire en G-1. ⚠ *Une relève partiellement couverte qu'on laisse entière
   se paie deux fois : une fois en instruction inutile, une fois en couverture non déclarée.*
+  ☑ **Issue, 27 juillet 2026** — **TOC, Annexe C** — la relève v0.10 est **scindée à son point
+  d'atterrissage** : *le volet **parade** est **couvert en [C]** par le Vol. I et entre à la
+  troisième table des lacunes de couverture ; le volet **thèse** reste un repérage [C] entier,
+  au domaine de G-1.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 38.1 à
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.28** — § 38.1 à
 § 38.5, dans l'ordre exact —, et le § 38.0 est une introduction de chapitre. La **table de couverture
 est respectée pour ses cinq lignes**, y compris ses trois régimes propres : Vol. I *Monographie*
 §2.9.6 en **seule affectation** — *le ch. 6 ne la conserve pas* —, §3.12.3 **prélevé au ch. 9**, qui
 déclare la sortie à son bout, et §4.9.1-4.9.2 en **condensé**. La **sortie de périmètre est
 reconduite** : le Vol. I §2.9 **n'est pas repris ici**, ses fondements restant au ch. 6. Les **coupes
 de la source sont reconduites** — coût par jeton, horizon de tâche, non-déterminisme, panorama des
-plateformes : **aucune n'est rétablie**. Les **trois degrés d'absence** portent leur degré à chacune
-des douze occurrences, et ⚠ **les deux régimes du tableau 38.2 sont écrits comme deux régimes
-distincts, jamais échangés**. Les **trois conformités ou métriques auto-déclarées** sont attribuées à
-leur éditeur nommé. Les **huit occurrences de « Lecture de l'auteur »** sont suivies de ce que le
-socle établit et n'établit pas. **Aucun siège neuf n'est posé** ; les deux sièges touchés — l'encadré
+plateformes : **aucune n'est rétablie**. ⚠ **Cardinaux re-mesurés au commit du 28 juillet 2026, sur le marqueur littéral et sur le corps seul** (décision 16 du TOC) ; *les cardinaux antérieurs comptaient les applications du garde-fou et n'étaient re-mesurables par aucune règle écrite.* Les **trois degrés d'absence** portent leur degré **à chaque énoncé négatif du
+corps — domaine déclaré, sans cardinal** (alinéa c) ; le marqueur littéral « degré 3 » y compte **cinq
+occurrences**, et ⚠ **les deux régimes du tableau 38.2 sont écrits comme deux régimes distincts,
+jamais échangés**. La **conformité auto-déclarée du § 38.2 — une occurrence du marqueur
+« auto-déclaré »** — est attribuée à son éditeur nommé. Les **six occurrences de « Lecture de
+l'auteur »** sont suivies de ce que le socle établit et n'établit pas. **Aucun siège neuf n'est posé** ; les deux sièges touchés — l'encadré
 du **ch. 7 § 7.5** et les points de contrôle obligatoires du **ch. 43 § 43.3** — portent leur renvoi,
-et *le second est un renvoi vers un chapitre non rédigé, donc un renvoi de plan, déclaré au point 3
-ci-dessus.*
+et *le second visait, à la rédaction, un chapitre non encore écrit ; **le ch. 43 est rédigé au terme de la
+passe**, et le renvoi résout contre du texte — voir le point 3 ci-dessus.*

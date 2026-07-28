@@ -8,8 +8,8 @@ Premier mouvement — les fondements (ch. 1-6). **Dernier chapitre du mouvement.
 | **Statut** | **Brouillon de rédaction, non publiable — et rédigé malgré une remontée bloquante.** Aux portes G-1, G-2 et G-3 ouvertes s'ajoute ici une **seconde infraction, distincte et plus grave** : la remontée **R-IV-01**, ouverte par le ch. 1, est marquée *bloquante pour le ch. 6*, et la règle d'escalade du [PRD](../PRD/PRD.md) pose qu'une remontée bloquante **interdit de lancer le chapitre**. Elle est enfreinte sur instruction d'auteur du 27 juillet 2026 ; le détail et ses conséquences sont en § 6.6 ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Matière condensée au gel de sa source — **juin 2026** (Vol. I). ⚠ Trois faits datés y appellent une re-vérification : le passage d'un protocole agent-agent sous fondation, la création d'une fondation neutre en décembre 2025, et un chiffre d'adoption **auto-déclaré** relevé à un anniversaire |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (Annexe B non constituée, G-3 ouverte). Les énoncés résolvent contre le **Vol. I *Monographie* §2.8.1-2.8.3, §2.9.1-2.9.5 et §2.10.3-2.10.5**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | **Les deux séries, intégralement — et c'est le chapitre du Livre I où ils mordent le plus.** Vol. II — **R-8 (« ACP » jamais nu) : deux occurrences**, § 6.2, où le sigle est développé à sa première apparition et jamais employé seul ; **métriques auto-déclarées (PRD Vol. II §7.5) : quatre occurrences**, § 6.1.1 (deux), § 6.2 et § 6.5.2, **chacune attribuée à sa source, sans exception d'usage illustratif**. R-1 à R-7 : **zéro occurrence**. Vol. III — **R-13 (mêmes termes jamais nus) : deux occurrences**, § 6.2, les mêmes ; **R-14 : trois occurrences**, § 6.4.1, § 6.5.1 et § 6.5.3. R-01 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 8 500 mots de corps (§ 6.1 à § 6.5). Enveloppe **dérivée, non prescrite**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 3 751 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−55,9 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 611 mots, soit −0,6 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Garde-fous balayés** | **Les deux séries, intégralement — et c'est le chapitre du Livre I où ils mordent le plus.** ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **R-8 (« ACP » jamais nu) : une occurrence**, § 6.2, où le sigle est développé à sa première apparition et jamais employé seul ; **métriques auto-déclarées (PRD Vol. II §7.5) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au § 6.1.1, au § 6.2 et au § 6.5.2**, **chaque chiffre attribué à sa source, sans exception d'usage illustratif**. R-1 à R-7 : **zéro occurrence**. Vol. III — **R-13 (mêmes termes jamais nus) : une occurrence**, § 6.2, la même ; **R-14 : trois occurrences**, § 6.4.1, § 6.5.1 et § 6.5.3. R-01 à R-12 : **zéro occurrence** |
+| **Volumétrie cible** | ≈ 8 500 mots de corps (§ 6.1 à § 6.5). Enveloppe **dérivée, non prescrite**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 3 784 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−55,5 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 750 mots, soit −0,4 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 6)* — le multi-agent a un surcoût que seuls certains gains justifient ; son évaluation (succès de tâche vs trajectoire) et sa sûreté (triade létale, vecteurs d'attaque) sont les deux fronts encore ouverts.
 
@@ -127,8 +127,9 @@ reconnaissance que la relation d'un agent à ses outils et sa relation à ses pa
 même problème, constat que le ch. 8 instruit.
 
 ⚠ **Un chiffre d'adoption est relevé au premier anniversaire d'A2A** — plus de 150 organisations —,
-et il est **auto-déclaré par les organisations promotrices**. Il est attribué ici à sa source, et il
-mesure un **soutien**, non une mise en production. La distinction est celle que le ch. 7 érige en
+et il est **auto-déclaré**. Il est attribué ici à sa source — **la Linux Foundation**,
+fondation faîtière du protocole, qui le rapporte en avril 2026 (ch. 7 § 7.6) —, et il mesure un
+**soutien**, non une mise en production. La distinction est celle que le ch. 7 érige en
 critère, et elle vaut d'être posée dès maintenant : *soutien n'est pas production*.
 
 ---
@@ -366,7 +367,7 @@ L'implémentation opérationnelle — protocoles d'autorisation, identités non 
 secrets — relève du **Livre II**, et le socle pré-agentique en est au ch. 3 § 3.2.
 
 La **chaîne d'approvisionnement des outils** appelle ses propres contrôles : vérification de
-provenance, épinglage de version, admission par passerelle. Le ch. 8 § traite les registres ; le
+provenance, épinglage de version, admission par passerelle. Le ch. 8 § 8.3.2 traite les registres ; le
 ch. 47 traite la provenance des composants.
 
 ⚠ **Le point cardinal de cette section, et il est chiffré.** Ces garde-fous sont des **mesures de
@@ -374,9 +375,10 @@ réduction de risque dont l'efficacité est partielle et mesurable**. Le patron 
 contrôle **neutralise par conception** le détournement par injection, mais **ne résout par
 construction qu'environ deux tiers des scénarios de son banc d'évaluation** — la fraction restante
 exigeant une politique que le mécanisme **ne sait pas exprimer**. Cette proportion est **indicative et
-dépendante du banc**, et elle est attribuée ici à la source qui la rapporte. La règle de non-cumul,
-de son côté, **ne garantit la sûreté qu'à l'intérieur d'une session**, sans protéger contre une
-attaque **répartie sur plusieurs sessions**.
+dépendante du banc**, et elle est attribuée ici à la source qui la rapporte — **Debenedetti et coll.
+(2025)**, sur le banc **AgentDojo**. La règle de non-cumul, de son côté, **ne garantit la sûreté qu'à
+l'intérieur d'une session**, sans protéger contre une attaque **répartie sur plusieurs sessions** —
+réserve portée par son propre auteur, **Meta AI, le 31 octobre 2025**.
 
 *Présenter ces chiffres est indispensable pour interdire toute lecture de « solution ».* La défense
 en profondeur empile des couches imparfaites **précisément parce qu'aucune n'est suffisante** — et

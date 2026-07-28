@@ -10,7 +10,7 @@ versant réglementaire.*
 | **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 24.10. ⚠ **Une section de ce chapitre a un socle que le plan déclare « à établir avant rédaction »** — le § 24.8 ; elle est écrite **au régime de repli que le plan lui-même prescrit**, et non comblée |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : aucun fait de ce chapitre n'a été repris à la source primaire, et **la relève v0.19 du § 24.8 n'a pas été extraite**. Gel de source consommé : **juin 2026** (Vol. I ch. 4) — ⚠ **il ne tient pas lieu du gel de la somme**, et le chapitre porte des jalons produits et réglementaires postérieurs à cette date chez d'autres sources |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). **Ce chapitre est le seul du Livre dont la totalité de la matière vient du Vol. I** : elle entre donc **intégralement en [C]** — repérage documentaire, la vérification du Vol. I portant sur ses références et non sur le contenu des affirmations (PRD §7.1). ⚠ **Conséquence à tirer sans détour : aucun énoncé de ce chapitre n'est central au sens de CA-IV-01, et aucun ne peut le devenir sans élévation en [B] par lecture des sources primaires que le Vol. I cite.** Les seuls appuis à un autre régime sont des **renvois** vers les sièges des Livres I et II (ch. 3, ch. 10, ch. 18, ch. 19, ch. 20), qui ne sont pas reconstruits ici |
-| **Garde-fous balayés** | Vol. II — **PRD §8.2.3 et §7.5 (métriques auto-déclarées et projections d'analystes) : onze occurrences**, § 24.0 (trois), § 24.2 (deux), § 24.3, § 24.7 (deux) et § 24.9 (trois), chacune attribuée à sa source ; **PRD §8.4 (neutralité fournisseur) : deux occurrences**, § 24.0 et § 24.1 ; **R-1 à R-8 : zéro occurrence** — ⚠ le sigle proscrit nu par R-8 **apparaît dans la source au titre d'un protocole de commerce**, et il est ici employé **avec son qualificatif complet**, renvoi au **ch. 7 § 7.5**. Vol. III — **R-14 (trois degrés d'absence) : neuf occurrences**, § 24.0, § 24.3 (deux), § 24.5, § 24.7 (deux) et § 24.8 (trois) ; **R-09 (quatre statuts, dits à chaque mention) : douze occurrences**, § 24.1 (quatre), § 24.2 (trois), § 24.3 (trois) et § 24.4 (deux) ; **R-13 : trois occurrences**, § 24.2, § 24.6 et § 24.9 ; ⚠ **faux ami déclaré et employé** — le « **plan de contrôle** » des § 24.1 et § 24.2 est celui du **maillage de services pré-agentique** (ch. 1 § 1.3.4) : *ce n'est pas le* control plane *que R-13 proscrit nu*, et la distinction est écrite à chaque emploi ; **R-02 : deux occurrences**, § 24.3 et § 24.6 ; **R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence** |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **PRD §8.2.3 et §7.5 (métriques auto-déclarées et projections d'analystes) : les deux renvois ne sont pas écrits au corps** ; *le marqueur « projection d'analyste » l'est **trois fois** — § 24.0.2, § 24.2.4 et § 24.7.2 —, et **le garde-fou est appliqué aux § 24.0, § 24.2, § 24.3, § 24.7 et § 24.9**, chaque chiffre étant attribué à sa source* ; **PRD §8.4 (neutralité fournisseur) : le renvoi n'est pas écrit au corps** ; *la formule l'est **une fois**, § 24.1.2* ; **R-8 : une occurrence du sigle**, § 24.7.2 — ⚠ le sigle proscrit nu par R-8 **apparaît dans la source au titre d'un protocole de commerce**, et il est ici employé **avec son qualificatif complet**, renvoi au **ch. 7 § 7.5** ; **R-1 à R-7 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 24.0.3 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 24.0.3, § 24.3.2, § 24.4.2, § 24.5.1 et § 24.8 (trois), « fait négatif vérifié » aux § 24.3.2 et § 24.8* ; **R-09 (quatre statuts, dits à chaque mention) : zéro occurrence du sigle** ; ⚠ *le garde-fou est **appliqué aux § 24.1 à § 24.4**, chaque statut étant dit en toutes lettres — **le décompte n'est pas re-mesurable et n'est donc pas annoncé*** ; **R-13 : cinq occurrences du sigle**, § 24.1.2, § 24.2.1, § 24.5.2, § 24.6.2 et § 24.9.2 ; ⚠ **faux ami déclaré et employé** — le « **plan de contrôle** » est celui du **maillage de services pré-agentique** (ch. 1 § 1.3.4) : *ce n'est pas le* control plane *que R-13 proscrit nu* ; ses **cinq emplois** sont au **§ 24.1.2**, au **§ 24.5.2** (rangée du tableau 24.1 et sa légende) et au **§ 24.6.2** (deux), et **la distinction est écrite à chacun** — ⚠ *celle du § 24.6.2 a été ajoutée le 28 juillet 2026, l'emploi y étant nu jusque-là* ; **R-02 : deux occurrences du sigle**, § 24.3.2 et § 24.6.3 ; **R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **9 500 mots** de corps (§ 24.0 à § 24.9), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant dix, chacune dépliant de quatre à sept sous-sections de sa source : **la plus haute cible du Livre avec le ch. 34**. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh). ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 24)* — de la dette d'intégration à la prolifération d'agents, l'entreprise doit intégrer les agents à son tissu existant, gouverner le parc à l'échelle et instruire sa maturité — sans dupliquer l'IAM et l'observabilité en place.
@@ -484,6 +484,11 @@ d'Internet expire, et le ch. 18 a montré ce que cette péremption coûte à un 
 ⚠ **Cette sous-section est le domicile unique de cette grille dans la somme** : le § 24.6 ne fait qu'y
 renvoyer.
 
+⚠ **La grille est nommée et attribuée, et elle doit l'être** : il s'agit du **OWASP Non-Human
+Identities Top 10 (2025)**. *La parade de péremption qui autorise ailleurs à taire une dénomination
+commerciale **ne couvre pas l'auteur et la date d'un instrument repris** — une grille dont on ne peut
+remonter la provenance n'est plus vérifiable, et **c'est ici le domicile même de cette matière**.*
+
 La grille énumère **dix risques** qui forment une liste de contrôle d'architecture et d'appel d'offres
 directement actionnable : mise hors service défaillante ; fuite de secret ; identité non humaine tierce
 vulnérable ; authentification non sûre ; identité sur-privilégiée ; configuration infonuagique non
@@ -785,7 +790,10 @@ l'organisme qui les publie** ; la somme les attribue là où elle les cite, et n
 
 Les défenses se déclinent en couches : **classification de la provenance et du niveau de confiance** des
 données ingérées, **démarcation** du contenu non fiable, et **séparation du plan de contrôle et du flux
-de données non fiable**. ⚠ **Le principe directeur, propre à l'échelle d'un parc où l'on ne maîtrise pas
+de données non fiable** — ⚠ **faux ami à désambiguïser ici comme partout ailleurs dans la pièce** : ce
+« plan de contrôle » est celui du **maillage de services pré-agentique** (**ch. 1 § 1.3.4**), **non le**
+*control plane* que **R-13 du Vol. III** proscrit nu. ⚠ **Le principe directeur, propre à l'échelle
+d'un parc où l'on ne maîtrise pas
 l'origine de chaque document, est de traiter toute donnée comme potentiellement empoisonnée** —
 *l'injection demeurant un risque non résoluble plutôt qu'un défaut corrigible*, et le **ch. 11** en
 porte la démonstration.
@@ -1263,15 +1271,22 @@ dans l'ordre exact, à l'exception documentée du § 24.6.4 (R-IV-80). La **tabl
 respectée pour ses douze lignes**, y compris ses **trois sorties de périmètre** — §4.8 vers le ch. 30,
 §4.9 et §4.12 vers le Livre IV —, nommées dans le corps au moment où le lecteur les attendrait
 (§ 24.0.3). La **décision 14 a été exécutée avant la rédaction**, domaine déclaré : une thèse examinée,
-zéro réalignée. ⚠ **Les cinq sièges amont que ce chapitre touche sont renvoyés et non reconstruits** :
-socle IAM (**ch. 3**), désambiguïsation à quatre branches (**ch. 7 § 7.5**), connaissance de l'agent
-(**ch. 18**), triade létale (**ch. 19**) et boucle défensive (**ch. 20**) ; ⚠ **et le mot « fabrique »
+zéro réalignée. ⚠ **Les sièges amont que ce chapitre touche sont renvoyés et non reconstruits — liste
+re-mesurée le 28 juillet 2026, où elle passe de cinq à sept** : socle IAM (**ch. 3**), désambiguïsation
+à quatre branches (**ch. 7 § 7.5**), mécanique de la fusion (**ch. 8**), connaissance de
+l'agent (**ch. 18**), triade létale (**ch. 19**), boucle défensive (**ch. 20**) et **croisement des
+échelles d'autonomie (ch. 14 § 14.4)** ; ⚠ **et le mot « fabrique »
 est désambiguïsé à son unique emploi** (décision 12c). Les **garde-fous des deux séries sont balayés et
 déclarés, y compris à zéro occurrence**, et le **faux ami « plan de contrôle » est employé, déclaré et
-distingué** du terme que R-13 proscrit — *le déclarer plutôt que le fuir est ce que le plan demande.*
-Les **onze métriques auto-déclarées ou projections d'analystes portent leur statut à chaque
-occurrence**, sans exception d'usage illustratif. Les **neuf occurrences de R-14 portent leur degré**, et
-**les trois absences du § 24.8 sont déclarées degré 3 une par une**. Enfin, **le § 24.8 n'écrit aucune
+distingué** du terme que R-13 proscrit — *le déclarer plutôt que le fuir est ce que le plan demande* ;
+⚠ **ses cinq emplois sont localisés à l'en-tête, et celui du § 24.6.2, qui était nu, a été désambiguïsé
+le 28 juillet 2026.** Les **métriques auto-déclarées ou projections d'analystes portent leur statut à
+chaque occurrence**, sans exception d'usage illustratif — *domaine balayé : § 24.0, § 24.2, § 24.3,
+§ 24.7 et § 24.9.* Les **absences portent toutes leur degré** — *une occurrence du sigle R-14, sept du
+marqueur « degré 3 » et deux de « fait négatif vérifié »* —, et **les trois absences du § 24.8 sont
+déclarées degré 3 une par une**. ⚠ **Ces cardinaux ont été re-mesurés au commit du 28 juillet 2026**
+(décision 16 du TOC) ; *l'attestation antérieure annonçait onze métriques et neuf occurrences de R-14,
+ni l'un ni l'autre n'étant re-mesurable contre le corps.* Enfin, **le § 24.8 n'écrit aucune
 doctrine à l'endroit où son socle est déclaré manquant** : *exposer le vide et formuler la question
 instruisible est le seul geste admissible*, et c'est celui qui a été fait.
 

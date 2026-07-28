@@ -14,32 +14,39 @@ et donc **deux thèses**, conservées intégralement et **jamais fondues en une 
 | **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5** du [PRD](../PRD/PRD.md) §5, et **hors de l'ordre de rédaction** du PRD §6, qui place ce Livre après les Livres I et III. ⚠ **L'écart de portes de ce chapitre est le plus large du compendium à ce jour, et il tient à un cumul plutôt qu'à une porte** : G-4 le conditionne comme premier mouvement du Livre IV, **G-5 conditionne le Livre entier** — l'arbitrage du risque 14 (le harnais), décision d'auteur **D-2**, non prise —, et G-3 n'est pas entamée. La règle cardinale du PRD §5 — *un chapitre écrit sur un socle vide n'est pas un chapitre en avance, c'est une inférence longue* — est **enfreinte et déclarée telle** ; voir la note de statut, § 37.10 |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit pour ce Livre** : **aucun fait périssable de cette pièce n'a été repris à la source primaire**, et ils sont nombreux — statuts de préversion, révisions d'*Internet-Drafts*, dates de disponibilité générale, versions de dépôts publics. Ils sont ceux que les volumes sources portaient **à leur propre gel** : **21 juillet 2026** (Vol. III), **juin 2026** (Vol. I). *Ces gels ne sont pas celui de la somme et ne peuvent en tenir lieu.* |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte, Annexe B inexistante). Les énoncés résolvent contre le **Vol. III *Monographie* ch. 22 et ch. 23**, dont les entrées **F-04**, **F-06**, **F-07**, **F-15**, **F-19**, **F-20**, **F-29**, **F-35**, **F-40**, **F-43**, **F-46**, **F-47**, **F-53**, **F-70**, **F-71**, **F-72**, **F-73**, **F-87**, **F-88** et les entrées héritées **H-01**, **H-03**, **H-09**, **H-10**, **H-12**, **H-13**, **H-15**, **H-24**, **H-30**, **H-33** **conservent leurs niveaux d'origine** ; et contre le **Vol. I *Monographie* §1.3.4 et §2.10.3-2.10.4**, qui entre **en [C]** (PRD §7.1). ⚠ **Deux régimes se croisent dans cette pièce, et le second est le plus dur du compendium après la matière neuve** : les ch. 22 et 23 du Vol. III relèvent du régime **« source rédigée non publiable »** (PRD §7.2), qui exige le vote adversarial pour *toute* affirmation issue d'une pièce touchée par une remontée ouverte — **G-4 n'étant pas close, aucun de ces votes n'a eu lieu**. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | **Les deux séries, intégralement, y compris les zéros.** Vol. III — **R-04 (« AgentMesh », « plan de contrôle », « ACP » jamais nus) : onze occurrences**, § 37.1 (cinq), § 37.2, § 37.5, § 37.7 (deux) et § 37.9 (deux) ; **R-14 (trois degrés d'absence) : quatorze occurrences**, § 37.1 (deux), § 37.2 (trois), § 37.4 (trois), § 37.5 (trois), § 37.8 (deux), § 37.9 ; **R-02 (qualification par ce que la spécification démontre) : sept occurrences**, § 37.1 (deux), § 37.2 (deux), § 37.5 (deux), § 37.7 ; **R-09 (statut pré-normatif dit à chaque mention) : neuf occurrences**, § 37.2 (quatre), § 37.5 (deux), § 37.7, § 37.8 (deux) ; **R-01 (le passeport n'existe dans aucune spécification) : quatre occurrences**, § 37.4, § 37.5, § 37.8, § 37.9 ; **R-03 (« maillage d'agents », terme de fournisseur) : trois occurrences**, § 37.1 ; **R-11 : une occurrence**, § 37.7 ; **R-12 (traitement défensif au niveau architectural) : deux occurrences**, § 37.3 et § 37.6 ; **R-13 : une occurrence**, § 37.6. **R-05 à R-08, R-10 : zéro occurrence.** Vol. II — **R-8 (sigle jamais nu, quatre branches) : six occurrences**, § 37.1 (deux), § 37.2, § 37.5, § 37.7, § 37.9, **toutes renvoyées au siège du ch. 7 § 7.5, aucune reconstruite** ; **métriques et qualifications auto-déclarées : huit occurrences**, § 37.2 (six) et § 37.5 (deux), chacune attribuée à son éditeur nommé. **R-1 à R-7 : zéro occurrence.** ⚠ **Faux ami déclaré** : « plan de contrôle » figure au § 37.1 au sens du **maillage de services pré-agentique** (ch. 1 § 1.3.4), où il n'est pas le terme que R-13 du Vol. III vise ; le sens visé est déterminable de chaque phrase, comme la tête de Livre l'impose |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** Vol. III — **R-09 (statut pré-normatif dit à chaque mention) : neuf occurrences**, § 37.2 (trois), § 37.4, § 37.5 (deux), § 37.7, § 37.8 (deux) ; **R-14 (trois degrés d'absence) : sept occurrences**, § 37.1 (trois), § 37.2, § 37.5 (deux), § 37.9 ; **R-02 (qualification par ce que la spécification démontre) : cinq occurrences**, § 37.1 (deux), § 37.2, § 37.4, § 37.5 ; **R-01 (le passeport n'existe dans aucune spécification) : deux occurrences**, § 37.4 et § 37.9 ; **R-04 (« AgentMesh », « plan de contrôle », « ACP » jamais nus) : deux occurrences**, § 37.0 et la synthèse — ⚠ *le garde-fou est appliqué bien au-delà, à chaque emploi des trois termes, sans que son identifiant soit répété : domaine déclaré, corps entier* ; **R-12 (traitement défensif au niveau architectural) : deux occurrences**, § 37.3 et § 37.6 ; **R-13 (échelle d'autonomie jamais nue) : deux occurrences**, § 37.0 et § 37.6 ; **R-03 (« maillage d'agents », terme de fournisseur) : une occurrence**, § 37.1 ; **R-11 (jalons « visés », jamais « fixés ») : une occurrence**, § 37.7. **R-05 à R-08, R-10 : zéro occurrence.** Vol. II — **R-8 (sigle jamais nu, quatre branches) : trois occurrences**, § 37.0, § 37.1 et § 37.2, **toutes renvoyées au siège du ch. 7 § 7.5, aucune reconstruite** ; **métriques et qualifications auto-déclarées (marqueur « auto-déclaré ») : sept occurrences**, § 37.2 (quatre), § 37.3, § 37.5 et la synthèse, chacune attribuée à son éditeur nommé. **R-1 à R-7 : zéro occurrence.** ⚠ **Faux ami déclaré** : « plan de contrôle » figure au § 37.1 au sens du **maillage de services pré-agentique** (ch. 1 § 1.3.4), où il n'est pas le terme que R-13 du Vol. III vise ; le sens visé est déterminable de chaque phrase, comme la tête de Livre l'impose |
 | **Volumétrie cible** | ≈ **11 000 mots** de corps (§ 37.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des sections et du volume de source consommé — **la plus haute du Livre**, ce chapitre portant **neuf sections pour deux mouvements** et consommant deux chapitres entiers du Vol. III. ⚠ **La leçon du Livre I est appliquée avant la première ligne** : les **dix cibles dérivées du Livre ont été additionnées et valent exactement 69 000** — le Livre I avait dépassé faute que quiconque additionne ses onze dérivations. ☑ **Décompte publiable depuis G-2** ; **réel : mesuré par [`PRD/decompte.sh`](../PRD/decompte.sh) et reporté au [`README.md`](README.md) du Livre**, seule autorité de décompte du volume. ⚠ **D-4 s'applique** : l'écart se documente, **il ne se corrige ni par amputation ni par gonflement** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 37, premier mouvement)* — le maillage d'agents est la réinstanciation, au niveau agentique, du patron *service mesh* — un plan de données qui médiatise chaque arête, un plan de contrôle qui centralise la politique ; cette filiation trie ce que le terme recouvre réellement de ce qu'il recouvre en marketing.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 37, premier mouvement — **thèse réalignée en v0.28**, décisions 8 et 14, remontée R-IV-38)* — **le présent ouvrage définit** le maillage d'agents par filiation avec le patron *service mesh* — un plan de données qui médiatise chaque arête, un plan de contrôle qui centralise la politique ; **cette définition est celle de l'ouvrage, et le terme n'en a pas d'autre qui fasse autorité**. La filiation retenue fournit un **instrument de tri par statut** des offres que le Vol. III a ouvertes. ⚠ **Coût déclaré, repris de la source** : elle **n'affirme rien de l'écart entre le discours des fournisseurs et leurs réalisations** — *la forme antérieure, « trie ce que le terme recouvre réellement de ce qu'il recouvre en marketing », affirmait exactement l'énoncé que la source déclare ne pas faire.*
 
-> **Thèse du second mouvement**, citée depuis le TOC v0.25, entrée du chapitre 37 — le maillage est le lieu où le passeport du ch. 16 devient opposable — PEP adossé à un PDP, transposition du *zero trust* au graphe d'agents : vérifier chaque arête, sans confiance héritée de la topologie.
+> **Thèse du second mouvement**, citée depuis le TOC **v0.28**, entrée du chapitre 37 *(thèse réalignée en v0.28, décisions 8 et 14 — remontée R-IV-39)* — **Lecture de l'auteur** — le maillage est **un** lieu où le passeport du ch. 16 **pourrait** devenir opposable, **et le seul que la somme instruise** — PEP adossé à un PDP, transposition du *zero trust* au graphe d'agents. ⚠ **Vérifier chaque arête, sans confiance héritée de la topologie, est un principe d'architecture posé par l'ouvrage, non une propriété relevée d'un maillage déployé** — *report d'un bornage que le Vol. III avait fait le 21 juill. 2026 et que le plan n'avait pas suivi.*
 
-⚠ **Les deux thèses citées ci-dessus portent une forme que leur source a elle-même bornée, et l'écart
-se déclare plutôt qu'il ne se lisse — c'est la décision 14 du TOC appliquée avant la rédaction, non à
-la relecture.** Le balayage a porté sur **les deux thèses du chapitre**, et **les deux sont
-désalignées** ; le corps est écrit sous la forme bornée, la thèse est citée verbatim comme le PRD
-§6 l'exige, et les deux écarts sont **remontés** (R-IV-38 et R-IV-39, § 37.10) — jamais arbitrés ici.
+⚠ **Les deux thèses citées ci-dessus portaient, à la rédaction, une forme que leur source avait
+elle-même bornée — le réalignement est FAIT, et l'histoire de l'écart se conserve** (décision 17 du
+TOC, alinéa c). Le balayage avait porté sur **les deux thèses du chapitre**, et **les deux étaient
+désalignées** ; le corps a été écrit sous la forme bornée, la thèse était citée verbatim dans sa forme
+v0.25 comme le PRD §6 l'exigeait, et les deux écarts avaient été **remontés** (R-IV-38 et R-IV-39,
+§ 37.10). ☑ **Les deux remontées sont soldées par l'arbitrage v0.28 du TOC** (décisions 8 et 14), et
+**les citations ci-dessus portent désormais la forme réalignée**, reportée **par copie** depuis
+l'entrée courante du plan. *La v0.29 du TOC ne modifie aucune thèse du Livre.*
 
-- **Premier mouvement.** Le Vol. III n'écrit pas que le maillage **est** une réinstanciation : il
-  écrit que **l'ouvrage le définit** par filiation, que « cette définition est celle de l'ouvrage, et
-  le terme n'en a pas d'autre qui fasse autorité ». Et il déclare expressément, en coût de sa thèse,
-  qu'elle **« n'affirme rien de l'écart entre le discours des fournisseurs et leurs réalisations ;
-  elle affirme un tri par statut, sur cinq offres nommées »**. *Le membre « ce qu'il recouvre
-  réellement / ce qu'il recouvre en marketing » est exactement l'énoncé que la source déclare ne pas
-  faire.*
-- **Second mouvement.** Le Vol. III a **reformulé sa thèse le 21 juillet 2026** (confrontation P4.0,
-  écarts ÉC-05 à ÉC-07) : le maillage y est **« *un* lieu où le passeport […] *pourrait* devenir
-  opposable, et le seul que cet ouvrage instruise »**, et « vérifier chaque arête » y est un
-  **principe d'architecture posé par l'ouvrage, non une propriété relevée d'un maillage déployé**. Le
-  TOC porte encore l'article défini et l'indicatif présent. *Ce n'est pas une divergence à arbitrer :
-  c'est un report qui n'a pas été fait.*
+- **Premier mouvement — forme antérieure, v0.25** : « le maillage d'agents **est la réinstanciation**,
+  au niveau agentique, du patron *service mesh* […] ; cette filiation **trie ce que le terme recouvre
+  réellement de ce qu'il recouvre en marketing** ». Le Vol. III n'écrivait pas que le maillage **est**
+  une réinstanciation : il écrit que **l'ouvrage le définit** par filiation, que « cette définition est
+  celle de l'ouvrage, et le terme n'en a pas d'autre qui fasse autorité ». Et il déclare expressément,
+  en coût de sa thèse, qu'elle **« n'affirme rien de l'écart entre le discours des fournisseurs et
+  leurs réalisations ; elle affirme un tri par statut, sur cinq offres nommées »**. *Le membre « ce
+  qu'il recouvre réellement / ce qu'il recouvre en marketing » était exactement l'énoncé que la source
+  déclare ne pas faire.* ☑ **Réalignement porté au plan par R-IV-38.**
+- **Second mouvement — forme antérieure, v0.25** : « le maillage est **le** lieu où le passeport du
+  ch. 16 **devient** opposable […] : vérifier chaque arête, sans confiance héritée de la topologie ».
+  Le Vol. III avait **reformulé sa thèse le 21 juillet 2026** (confrontation P4.0, écarts ÉC-05 à
+  ÉC-07) : le maillage y est **« *un* lieu où le passeport […] *pourrait* devenir opposable, et le
+  seul que cet ouvrage instruise »**, et « vérifier chaque arête » y est un **principe d'architecture
+  posé par l'ouvrage, non une propriété relevée d'un maillage déployé**. Le TOC portait encore
+  l'article défini et l'indicatif présent. *Ce n'était pas une divergence à arbitrer : c'était un
+  report qui n'avait pas été fait.* ☑ **Réalignement porté au plan par R-IV-39.**
 
 ---
 
@@ -616,7 +623,9 @@ porte à chaque mention.
 
 ⚠ **Le tri prospectif ne porte pas sur l'existence du document**, qui est un **fait constaté et
 daté**, mais sur ce que ce document annonce (Vol. III **H-33**, **[C]**, instrument de méthode et non
-fait). Le tri du rapport de lot classe la prospective en **PROJETÉ** — le document annonce l'intention
+fait). ⚠ **Les trois statuts du tri — PROGRAMMÉ, PROJETÉ, SPÉCULATIF — ne sont pas définis ici : leur
+siège pour toute la somme est au ch. 49 § 49.0**, et ce chapitre s'y **renvoie sans le reconstruire**.
+Le tri du rapport de lot classe la prospective en **PROJETÉ** — le document annonce l'intention
 de lancer un projet de démonstration, **sans engagement daté de livraison constaté**. L'aboutissement
 en spécification demeure **SPÉCULATIF**, aucune source ouverte ne portant de jalon en ce sens. ⚠ **La
 thèse du Vol. III écrit pour sa part « la transposition est PROGRAMMÉE pour le document » : l'écart
@@ -876,11 +885,18 @@ troisième position. Instruction d'auteur du **27 juillet 2026**.
 2. **Les décomptes sont publiables** (G-2 franchie). Le réel est mesuré par `decompte.sh` et reporté
    au [`README.md`](README.md) du Livre. ⚠ **D-4 s'applique** : l'écart se documente, **l'amputation
    est interdite**.
-3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan, non de texte.** Ne sont
-   pas rédigés à la date de cette pièce : **ch. 41**, **ch. 43**, **ch. 45**, **ch. 47**, et les
-   chapitres du Livre III au-delà du ch. 26. Les renvois vers les **ch. 1, 3, 6, 7, 8, 9, 14, 15, 16,
-   17, 19, 20** résolvent contre du texte ; ceux vers les **ch. 38, 39, 40, 42, 44, 46** résolvent
-   contre du texte **au terme de la présente passe**.
+3. **Les renvois « ch. N » : état FINAL de la passe, et non ordre d'écriture.** ⚠ *La forme
+   antérieure de ce point photographiait l'instant où cette pièce a été écrite et déclarait « ne
+   sont pas rédigés : ch. 41, ch. 43 et ch. 45 » — alors que **la même passe les a écrits
+   ensuite** ; elle est corrigée ici sur l'état que le commit produit.* **Les dix chapitres du
+   Livre IV (ch. 37 à 46) sont rédigés**, comme le sont les **cinquante chapitres des cinq
+   Livres** : *tous les renvois « ch. N » de cette pièce résolvent donc contre du texte.* ⚠ **Ce
+   qui reste vrai de la forme antérieure, et qui est daté** : à l'heure où ce chapitre a été
+   écrit, n'étaient rédigés ni le ch. 47 du Livre V, ni les chapitres du Livre III au-delà du ch.
+   26, non plus que les ch. 41, ch. 43 et ch. 45 — *les renvois qui les visent ont été posés comme
+   renvois de plan et n'ont pas été re-vérifiés contre le texte paru après eux.* ⚠ **Et « résoudre
+   contre du texte » ne vaut pas recevabilité** : *le texte visé est lui-même un brouillon hors
+   portes.*
 4. **Les huit cases vides ou verdicts de degré 3 du § 37.4 et des sections suivantes sont des états
    de preuve, non des verdicts** ; elles se rempliront ou non selon ce que G-3 et G-4 versent, **et
    pas selon ce qu'une relecture jugera plausible**.
@@ -888,7 +904,13 @@ troisième position. Instruction d'auteur du **27 juillet 2026**.
    L'obligation est déclarée insatisfaisable en l'état au PRD §11, **D-6 ne fournissant pas de
    tiers** ; *arbitrer n'est pas relire, et se relire soi-même n'est pas être relu.*
 
-**Remontées ouvertes par ce chapitre :**
+**Remontées ouvertes par ce chapitre — et leur issue, soldée le 27 juillet 2026 :**
+
+⚠ **Chaque remontée porte ci-dessous son issue**, portée là où elle fait foi — au TOC pour un
+réalignement de plan, au PRD pour une décision d'auteur ou un domaine de porte, à l'appareil pour une
+dette d'outillage. *Le tableau consolidé des trente-deux issues du Livre vit au
+[`README.md`](README.md) ; il n'est pas repris ici.* ⚠ **Une remontée close ne rend pas la pièce
+recevable** : *elle veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*
 
 - **R-IV-38 — non bloquante, de thèse, et déjà tranchée à la source (premier mouvement).** La thèse
   citée porte « cette filiation trie **ce que le terme recouvre réellement de ce qu'il recouvre en
@@ -899,6 +921,11 @@ troisième position. Instruction d'auteur du **27 juillet 2026**.
   **définit** » là où le plan écrit « le maillage **est** » — *une définition posée présentée comme un
   constat*. **Demande remontée** : réalignement au titre des **décisions 8 et 14** du TOC. ⚠ **Ce
   n'est pas une divergence à arbitrer, c'est un report qui n'a pas été fait.**
+  ☑ **Issue, 27 juillet 2026** — **TOC, décisions 8 et 14** — thèse réalignée : la source
+  **définit** par filiation, elle n'affirme pas que le maillage **est** une réinstanciation ; ⚠
+  **et le membre « ce qu'il recouvre réellement / en marketing » tombe** — *la source déclare en
+  coût de sa thèse qu'elle n'affirme rien de cet écart*. **La citation en tête de cette pièce
+  porte la forme réalignée** (décision 17 du TOC).
 - **R-IV-39 — non bloquante, de thèse, et déjà tranchée à la source (second mouvement).** La thèse
   citée porte « le maillage **est le** lieu où le passeport du ch. 16 **devient** opposable ». Le
   Vol. III a **reformulé cette thèse le 21 juillet 2026** (confrontation P4.0, écarts ÉC-05 à ÉC-07)
@@ -906,6 +933,11 @@ troisième position. Instruction d'auteur du **27 juillet 2026**.
   instruise », et y a ajouté que « vérifier chaque arête » est un **principe d'architecture posé par
   l'ouvrage, non une propriété relevée d'un maillage déployé**. Le TOC porte encore l'article défini
   et l'indicatif. **Demande remontée** : réalignement au titre des **décisions 8 et 14**.
+  ☑ **Issue, 27 juillet 2026** — **TOC, décisions 8 et 14** — « **le** lieu où le passeport
+  **devient** opposable » devient « **un** lieu où il **pourrait** le devenir, et le seul que
+  l'ouvrage instruise » ; *report que la source avait fait le 21 juill. 2026 et que le plan
+  n'avait pas suivi*. **La citation en tête de cette pièce porte la forme réalignée** (décision
+  17 du TOC).
 - **R-IV-40 — BLOQUANTE pour le Livre IV entier, de gouvernance.** La porte **G-5** conditionne
   « Livre IV et premier mouvement du Livre V » (PRD §5) : l'arbitrage du **risque 14** — la couche
   d'exécution, le harnais — est une décision d'auteur (**D-2**) **non prise**. Ce chapitre a été
@@ -916,6 +948,10 @@ troisième position. Instruction d'auteur du **27 juillet 2026**.
   périmètre assumé et déclaré. ⚠ **La règle d'escalade veut qu'une remontée bloquante interdise de
   lancer le chapitre qu'elle bloque** : elle est ouverte **après** la rédaction, non avant, et
   *l'infraction est consignée plutôt que rattrapée par l'arbitrage qui la suivra*.
+  ☑ **Issue, 27 juillet 2026** — **close sur constat — D-2 EST PRISE**, *sections dans l'existant,
+  sans chapitre neuf*, le plafond de cinquante interdisant d'en ouvrir un sans fusion. ⚠ **Mais
+  elle l'a été par une AUTRE passe et APRÈS cette rédaction** : *le Livre a été écrit avant G-5,
+  et l'arbitrage ne rattrape pas l'infraction — il la solde.*
 - **R-IV-41 — non bloquante, de cardinal hérité.** Le Vol. III porte **trois écarts non résolus** sur
   le tri des statuts (§ 37.2.1) : cinq réalisations contre six objets relevés ; la production comme
   « quatrième catégorie » contre « troisième degré » d'un tri à trois ; la **disponibilité
@@ -923,10 +959,18 @@ troisième position. Instruction d'auteur du **27 juillet 2026**.
   source et non tranchés**. **Demande remontée** : que la **collation de fond (G-4)** les inscrive à
   son domaine, le compendium n'ayant pas à re-trancher un écart de cardinal de son volume source —
   *mais un cardinal hérité non tranché qui traverse une somme y devient un cardinal de la somme.*
+  ☑ **Issue, 27 juillet 2026** — **PRD, domaine de G-4** — les trois écarts de cardinal hérités
+  (cinq réalisations contre six objets ; quatrième catégorie contre troisième degré ;
+  disponibilité restreinte hors nomenclature) entrent au domaine de la collation de fond ; ⚠ *le
+  compendium ne re-tranche pas un cardinal de son volume source.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 37.1 à
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.28** — § 37.1 à
 § 37.9, dans l'ordre exact, les deux mouvements séparés et chacun sous son ancien titre —, et le
-§ 37.0 est une introduction de chapitre et de Livre. Les **deux tables de couverture sont
+§ 37.0 est une introduction de chapitre et de Livre. ⚠ **Une déviation d'intitulé est fondée et se
+déclare** (décision 8, reprise en décision 15 alinéa c) : le § 37.9 **allonge** le titre du plan
+— « Coûts, latence, complexité, point de défaillance » — de « : les conditions qui renverseraient ce
+chapitre », *parce que la section est le lieu des conditions de réfutation et que le plan ne le dit
+pas.* Les **deux tables de couverture sont
 respectées**, y compris leurs deux régimes propres : Vol. I *Monographie* §1.3.4 en **arrivée**
 (déclinaison agentique, le socle transposable restant scindé au ch. 1) et §2.10.3-2.10.4 en **partage
 déclaré** avec le ch. 6, *appliqués ici et posés là-bas, sans reconstruction*. Les **coupes de la
@@ -934,10 +978,11 @@ source sont reconduites et déclarées** — transport et routage sémantique, c
 d'appartenance du Vol. III, **ne sont pas rétablis** ; la fermeture du chapitre à l'accord entre
 agents sous défaillance (**D-7**) est **tenue**, aucune section n'y touchant. Les **deux sièges que
 ce chapitre touche sans les reconstruire** portent leur renvoi : l'encadré à quatre branches du
-**ch. 7 § 7.5** et le socle IAM du **ch. 3 § 3.2-3.3**. Les **trois degrés d'absence** portent leur
-degré à chacune des quatorze occurrences, et **aucun degré 3 n'est écrit comme un fait négatif
-vérifié**. Les **huit qualifications auto-déclarées** sont attribuées à leur éditeur **nommé**, à
-chaque occurrence. Les **onze occurrences de « Lecture de l'auteur »** sont suivies de ce que le socle
-établit et n'établit pas. Enfin, **aucun siège neuf n'est posé par ce chapitre** : il n'ajoute rien à
+**ch. 7 § 7.5** et le socle IAM du **ch. 3 § 3.2-3.3**. ⚠ **Cardinaux re-mesurés au commit du 28 juillet 2026, sur le marqueur littéral et sur le corps seul** (décision 16 du TOC) ; *les cardinaux antérieurs comptaient les applications du garde-fou et n'étaient re-mesurables par aucune règle écrite.* Les **trois degrés d'absence** portent leur degré **à chaque énoncé négatif du
+corps — domaine déclaré, sans cardinal** (alinéa c) ; le marqueur littéral « degré 3 » y compte
+**quinze occurrences**, et **aucune n'est écrite comme un fait négatif vérifié**. Les **sept
+qualifications auto-déclarées** sont attribuées à leur éditeur **nommé**, à chaque occurrence. Les
+**neuf occurrences de « Lecture de l'auteur »** sont suivies de ce que le socle établit et n'établit
+pas. Enfin, **aucun siège neuf n'est posé par ce chapitre** : il n'ajoute rien à
 la table `SIEGES` de [`check-sieges.py`](../PRD/check-sieges.py), et c'est un résultat — *un chapitre
 d'application qui poserait un siège aurait probablement reconstruit celui d'un autre.*

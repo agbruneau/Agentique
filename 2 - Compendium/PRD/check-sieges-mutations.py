@@ -17,6 +17,7 @@ Usage :  python check-sieges-mutations.py
 Sortie 0 si le contrôle passe intact ET attrape les cinq mutations.
 """
 
+import importlib.util
 import os
 import re
 import shutil
@@ -60,10 +61,18 @@ def executer(racine):
 
 
 def copier():
-    """Copie jetable du corpus : les pièces seules suffisent au contrôle."""
+    """Copie jetable du corpus : les pièces seules suffisent au contrôle.
+
+    ⚠ Seuls les `.md` sont copiés. `check-sieges.py` ne lit rien d'autre, et la
+    table est passée à vingt-six sièges : recopier les `.html` à chaque mutation
+    multipliait la durée du harnais par cinq pour aucun contrôle de plus — *un
+    harnais trop lent est un harnais qu'on cesse d'exécuter.*
+    """
     tmp = Path(tempfile.mkdtemp(prefix="sieges-mut-"))
-    for livre in RACINE.glob("Livre *"):
-        shutil.copytree(livre, tmp / livre.name)
+    for piece in RACINE.glob("Livre */*.md"):
+        cible = tmp / piece.parent.name / piece.name
+        cible.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(piece, cible)
     return tmp
 
 
@@ -207,6 +216,139 @@ def m11_trois_echelles_recopiees(tmp):
     p.write_text(texte[:coupe] + faux + texte[coupe:], encoding="utf-8")
 
 
+# --- le balayage générique, une mutation par classe et par siège --------------
+#
+# ⚠ Les onze mutations ci-dessus sont ÉCRITES À LA MAIN, et elles le restent :
+# chacune reproduit une faute plausible dans la forme du corpus — une table
+# recopiée dans un chapitre voisin, un renvoi remplacé par « plus haut » —, et
+# plusieurs consignent une faute réellement commise. Elles ne se remplacent pas.
+#
+# Ce qu'elles ne font pas, c'est COUVRIR : la table est passée de trois à
+# vingt-six sièges, et écrire à la main quatre mutations par siège produirait
+# une centaine de fonctions dont la plupart diraient la même chose. Le balayage
+# ci-dessous les dérive de la table elle-même, uniformément.
+#
+# ⚠ Ce que cette dérivation coûte, et il faut le dire : une mutation dérivée de
+# la table éprouve que le contrôle LIT bien ce que la table déclare — que le
+# marqueur est trouvable, que la signature résout, qu'une copie ailleurs est
+# vue, qu'un déclencheur sans renvoi échoue. Elle n'éprouve PAS que la table
+# déclare la bonne chose : une signature ancrée sur un terme nu passerait ce
+# balayage tout en étant bruyante. *Le jugement sur ce qu'un siège interdit de
+# refaire reste au commentaire du siège ; le balayage ne le remplace pas.*
+
+# ⚠ Le dépôt n'a pas de `.gitignore` : importer le contrôle y déposerait un
+# `PRD/__pycache__/` non versionné à chaque exécution du harnais. Un outil de
+# contrôle ne salit pas l'arbre de travail qu'il contrôle.
+sys.dont_write_bytecode = True
+
+_SPEC = importlib.util.spec_from_file_location("check_sieges", SCRIPT)
+CS = importlib.util.module_from_spec(_SPEC)
+_SPEC.loader.exec_module(CS)
+
+
+def _inserer(chemin, bloc):
+    """Insère un bloc DANS le corps de la pièce — jamais après la note de statut.
+
+    `corps()` coupe à la note de statut : un bloc ajouté en fin de fichier ne
+    serait pas lu, et la mutation passerait pour non détectée alors qu'elle
+    n'aurait pas eu lieu.
+    """
+    texte = chemin.read_text(encoding="utf-8")
+    coupe = CS.FIN_DE_CORPS.search(texte)
+    i = coupe.start() if coupe else len(texte)
+    chemin.write_text(texte[:i] + bloc + texte[i:], encoding="utf-8")
+
+
+def _lignes_de_signature(tmp, siege):
+    """Les lignes du siège qui portent sa signature, prêtes à être recopiées."""
+    corps = CS.corps((tmp / siege["fichier"]).read_text(encoding="utf-8"))
+    lignes = []
+    for motif in siege["signature"]:
+        m = re.search(motif, corps, re.M)
+        if m is None:
+            raise AssertionError(f"signature introuvable dans son siège : {siege['id']}")
+        debut = corps.rfind("\n", 0, m.start()) + 1
+        fin = corps.find("\n", m.end())
+        lignes.append(corps[debut:fin if fin != -1 else len(corps)])
+    return lignes
+
+
+def _texte_declencheur(tmp, siege):
+    """Un fragment réel qui résout contre le déclencheur, replié sur une ligne."""
+    candidats = [tmp / siege["fichier"]] + sorted(tmp.glob("Livre */[0-9][0-9]-*.md"))
+    for p in candidats:
+        m = re.search(siege["declencheur"], CS.corps(p.read_text(encoding="utf-8")))
+        if m:
+            return re.sub(r"\s+", " ", m.group(0))
+    raise AssertionError(f"déclencheur introuvable dans tout le corpus : {siege['id']}")
+
+
+def _cible(tmp, siege, interdits=()):
+    """Une pièce de la copie qui n'est pas le siège et ne résout aucun interdit."""
+    for p in sorted(tmp.glob("Livre */[0-9][0-9]-*.md")):
+        if p == tmp / siege["fichier"]:
+            continue
+        corps = CS.corps(p.read_text(encoding="utf-8"))
+        if any(re.search(m, corps, re.M) for m in interdits if m):
+            continue
+        return p
+    raise AssertionError(f"aucune pièce cible disponible : {siege['id']}")
+
+
+def _g_s2(siege):
+    def muter(tmp):
+        p = tmp / siege["fichier"]
+        texte = p.read_text(encoding="utf-8")
+        neuf = re.sub(siege["marqueur"], "Encadré ordinaire", texte, flags=re.M)
+        assert neuf != texte, f"marqueur introuvable : {siege['id']}"
+        p.write_text(neuf, encoding="utf-8")
+    return muter
+
+
+def _g_s3(siege):
+    def muter(tmp):
+        p = tmp / siege["fichier"]
+        texte = p.read_text(encoding="utf-8")
+        neuf = re.sub(siege["signature"][0], "— forme changée —", texte, flags=re.M)
+        assert neuf != texte, f"signature[0] introuvable : {siege['id']}"
+        p.write_text(neuf, encoding="utf-8")
+    return muter
+
+
+def _g_s4(siege):
+    def muter(tmp):
+        bloc = "\n\n" + "\n".join(_lignes_de_signature(tmp, siege)) + "\n"
+        _inserer(_cible(tmp, siege), bloc)
+    return muter
+
+
+def _g_s5(siege):
+    def muter(tmp):
+        fragment = _texte_declencheur(tmp, siege)
+        cible = _cible(tmp, siege, interdits=(siege["declencheur"], siege["renvoi"]))
+        _inserer(cible, f"\n\nUne pièce avale évoque {fragment} sans renvoyer à son siège.\n")
+    return muter
+
+
+def _balayage():
+    """Une mutation par classe et par siège, dérivée de la table.
+
+    S5 n'est dérivé que pour les sièges dont il est ARMÉ : muter un siège à
+    `renvoi: None` produirait une mutation qu'aucun contrôle ne peut attraper,
+    donc un faux échec du harnais. Les sièges à S5 désactivé restent couverts
+    par S2, S3 et S4 — c'est exactement ce que « à moitié contrôlé » veut dire.
+    """
+    sortie = []
+    for siege in CS.SIEGES:
+        nom = siege["section"]
+        sortie.append((f"G {nom} — S2, marqueur retiré", _g_s2(siege), "[S2]"))
+        sortie.append((f"G {nom} — S3, signature périmée", _g_s3(siege), "[S3]"))
+        sortie.append((f"G {nom} — S4, signature recopiée ailleurs", _g_s4(siege), "[S4]"))
+        if siege["renvoi"] is not None:
+            sortie.append((f"G {nom} — S5, matière touchée sans renvoi", _g_s5(siege), "[S5]"))
+    return sortie
+
+
 MUTATIONS = [
     ("M1  S2 — marqueur de siège retiré", m1_marqueur_retire, "[S2]"),
     ("M2  S4 — signature du siège recopiée ailleurs", m2_signature_recopiee, "[S4]"),
@@ -223,7 +365,7 @@ MUTATIONS = [
      m10_renvoi_organisation_fabrique_retire, "[S5]"),
     ("M11 S4 — table des trois échelles recopiée (garde `renvoi: None`)",
      m11_trois_echelles_recopiees, "[S4]"),
-]
+] + _balayage()
 
 
 def main():

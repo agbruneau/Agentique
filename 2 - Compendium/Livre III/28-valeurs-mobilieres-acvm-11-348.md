@@ -10,7 +10,7 @@ n'en a pas besoin**.*
 | **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 28.4. ⚠ **Ce chapitre n'est pas conditionné par G-4** : sa ligne Fusion ne cite que le Vol. II ; le Vol. III y est mentionné **une fois, en renvoi**, au titre de la lecture C de la cartographie du ch. 27 § 27.7 |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : ⚠ **et une question de ce chapitre est explicitement datée d'une absence** — les suites de la consultation close le 31 mars 2025 ne sont documentées par aucune source du socle, **et la fenêtre d'absence s'allonge d'un jour par jour**. Gel de source consommé : **16-17 juillet 2026** (Vol. II ch. 12) — ⚠ **il ne tient pas lieu du gel de la somme** |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. II *Monographie* ch. 12**, dont l'entrée **F-26** est en **[B]** — consultée directement le 16 juillet 2026 sur la page officielle de l'instrument, son communiqué et son texte officiel ; **F-09** et **F-25** y sont mobilisées **en renvoi seulement**. L'entrée héritée **H-07** du **Vol. III** est citée **une fois, en renvoi**. ⚠ **Deux séries F-xx coexistent et se préfixent à chaque emploi** (décision 7 du TOC). **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | Vol. II — **CA-5 (fidélité des citations) : deux occurrences**, § 28.1 et § 28.2 — ⚠ **l'instrument est en anglais, et la doctrine française du socle n'est pas présentée comme une citation verbatim** ; **garde-fou « aucun avis juridique » (PRD Vol. II §3) : trois occurrences**, § 28.0, § 28.1 et la synthèse ; **PRD §8.2.4 : une occurrence**, § 28.2, **en renvoi au ch. 25** ; **PRDPlan Vol. II §4.4 — « attendu par E-23 » : une occurrence**, § 28.2 ; **R-7 (correspondance produit ↔ réglementation) : zéro occurrence — et il est sans objet ici**, ce chapitre étant en contexte réglementaire pur ; **R-1 à R-6, R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : cinq occurrences**, § 28.1, § 28.2 (deux) et § 28.3 (deux) ; **R-09 : une occurrence**, § 28.1 ; **R-01 à R-08, R-10 à R-13 : zéro occurrence** |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus.* Vol. II — **CA-5 (fidélité des citations) : deux occurrences du sigle**, § 28.1 et § 28.2 — ⚠ **l'instrument est en anglais, et la doctrine française du socle n'est pas présentée comme une citation verbatim** ; **garde-fou « aucun avis juridique » (PRD Vol. II §3) : une occurrence de la formule et une du renvoi**, § 28.0 — *le garde-fou est **appliqué à tout le chapitre**, aucun énoncé n'y étant un avis* ; **PRD §8.2.4 : une occurrence du renvoi**, § 28.2, **en renvoi au ch. 25** ; **PRDPlan Vol. II §4.4 — « attendu par E-23 » : une occurrence du renvoi et une de la formule**, § 28.2 ; **R-7 (correspondance produit ↔ réglementation) : zéro occurrence — et il est sans objet ici**, ce chapitre étant en contexte réglementaire pur ; **R-1 à R-6, R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : deux occurrences du sigle**, § 28.2 et § 28.3 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 28.2 et § 28.3, « fait négatif vérifié » au § 28.2* ; **R-09 : une occurrence du sigle**, § 28.1 ; **R-01 à R-08, R-10 à R-13 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **2 500 mots** de corps (§ 28.0 à § 28.3), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant trois : **la plus basse du Livre avec le ch. 26**. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh). ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 28)* — les lois existantes s'appliquent — la définition retenue des systèmes d'IA (autonomie et adaptativité variables) capture nativement l'agentique.
@@ -98,9 +98,12 @@ ch. 27. C'est un document qui **constate** l'état d'un droit préexistant.*
 
 La définition retenue **inclut explicitement des niveaux variables d'autonomie et d'adaptativité après
 déploiement** — ce que le socle qualifie d'**accroche directe pour l'intelligence artificielle
-agentique** (Vol. II F-26, **[B]**). ⚠ **Réserve de citation (CA-5)** : *le socle porte cette clause en
-français alors que l'instrument est en anglais ; il n'en établit ni le libellé d'origine ni la
-provenance.* **Chacune des deux propriétés porte.**
+agentique** (Vol. II F-26, **[B]**). ⚠ **Réserve de citation (CA-5)** : *le socle porte cette
+clause en français alors que l'instrument est en anglais ; il n'en établit ni le libellé d'origine ni la
+provenance.* ⚠ **Le même avis porte une entrée héritée au Vol. III — H-07, [B] —, citée ici en renvoi
+seulement** : elle est mobilisée à la cartographie du **ch. 27 § 27.7** (lecture C), où elle sert un
+autre objet — l'articulation avec l'article 12.1 —, et **aucun énoncé du présent chapitre ne s'y
+adosse**. **Chacune des deux propriétés porte.**
 
 ***Niveaux variables d'autonomie*** : la définition admet **un continuum plutôt qu'une catégorie** ; un
 système qui recommande et un système qui décide relèvent tous deux du champ, **à des positions
@@ -173,14 +176,14 @@ la seconde, seule, est finale et assortie d'une date d'entrée en vigueur.**
 fenêtre ouverte aura duré **trois mois et vingt-six jours**.*
 
 ⚠ **Ce qui l'a suivie n'est documenté par aucune source du socle.** *Au gel de la somme —
-27 juillet 2026 —, seize mois et vingt-six jours se sont écoulés depuis la clôture* : ni synthèse des
+27 juillet 2026 —, quinze mois et vingt-sept jours se sont écoulés depuis la clôture* : ni synthèse des
 commentaires reçus, ni avis subséquent, ni instrument dérivé n'y figure. **La question est portée aux
 lacunes de la source** (PRD Vol. II §10.4).
 
 ⚠ **Le régime de cette absence se dit exactement** : *c'est une **absence de source** dans le corpus,
 non une absence de production du régulateur* — **degré 3 de l'échelle R-14**, et **non un fait négatif
 vérifié**. **La question reste ouverte ; aucune inférence n'est proposée ici.** ⚠ *En particulier, la
-somme ne présume rien du sens de ce silence sur seize mois : **ni qu'il annonce un instrument à venir,
+somme ne présume rien du sens de ce silence sur quinze mois : **ni qu'il annonce un instrument à venir,
 ni qu'il traduise l'abandon du dossier, ni qu'il vaille approbation tacite des pratiques du marché**.*
 
 **Reste ce que cette incertitude n'entame pas.**
@@ -251,10 +254,13 @@ ne le bloque pas** : *il ne prescrit aucune parade humaine — l'avis ne prescri
    contre l'entrée du TOC : **ch. 29, 34** (présent Livre, même passe) et **ch. 50** (Livre V).
    Résolvent contre du **texte rédigé** : **ch. 14 § 14.4**, **ch. 22 § 22.1 et § 22.8**, **ch. 25
    § 25.3**, **ch. 26 § 26.3** et **ch. 27 § 27.1 et § 27.7**.
-4. ⚠ **Deux calculs de durée sont datés du gel et se re-mesurent** : les **seize mois et vingt-six
+4. ⚠ **Deux calculs de durée sont datés du gel et se re-mesurent** : les **quinze mois et vingt-sept
    jours** écoulés depuis la clôture de la consultation, et les **deux bornes inférieures** du § 28.2.
    *Les premiers croissent d'un jour par jour ; les secondes sont stables tant que le socle ne date pas
-   le document de réflexion.*
+   le document de réflexion.* ⚠ **Le premier a été recalculé le 28 juillet 2026** : les deux occurrences
+   portaient « seize mois et vingt-six jours », faux sous la convention que la pièce emploie partout
+   ailleurs — *du 31 mars 2025 au 27 juillet 2026, il s'écoule 483 jours, soit **quinze** mois et
+   vingt-sept jours, l'anniversaire de seize mois tombant le 31 juillet 2026, après le gel.*
 
 **Remontée ouverte par ce chapitre :**
 
@@ -275,10 +281,13 @@ coupé**. La **décision 14 a été exécutée avant la rédaction**, domaine d�
 zéro réalignée — **et la borne que la source attache à son propre rang comparatif est reprise au
 § 28.2**. ⚠ **CA-5 est tenu à ses deux occurrences** : *la doctrine et la clause de définition sont
 reprises **en français, telles que le socle les établit**, et ne sont pas présentées comme des citations
-verbatim d'un instrument anglais.* Le **garde-fou « aucun avis juridique » est tenu à ses trois
-occurrences**, et **l'inventaire des obligations auxquelles l'avis renvoie n'est pas dressé**. Les
-**cinq occurrences de R-14 portent leur degré**, dont **deux au degré 3** — le contenu des attentes
-éventuelles et les suites de la consultation. La **formulation imposée sur E-23 est tenue à son unique
+verbatim d'un instrument anglais.* Le **garde-fou « aucun avis juridique » est posé au § 28.0 et tenu sur
+tout le chapitre** — *la formule y est écrite une fois* —, et **l'inventaire des obligations auxquelles
+l'avis renvoie n'est pas dressé**. Les **absences portent toutes leur degré** — *deux occurrences du
+sigle R-14, aux § 28.2 et § 28.3* —, **les deux au degré 3** : le contenu des attentes éventuelles et
+les suites de la consultation. ⚠ **Ces cardinaux ont été re-mesurés au commit du 28 juillet 2026**
+(décision 16 du TOC) ; *l'attestation antérieure annonçait trois occurrences du garde-fou renforcé et
+cinq de R-14.* La **formulation imposée sur E-23 est tenue à son unique
 occurrence**, et **le renvoi au ch. 25 y est explicite**. Enfin, ⚠ **le chapitre ne classe pas les
 textes canadiens entre eux** : *la comparaison du § 28.2 est marquée lecture de l'auteur et bornée par
 la lacune de contenu de la ligne directrice de l'AMF.*

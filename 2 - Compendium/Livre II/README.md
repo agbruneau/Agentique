@@ -2,9 +2,17 @@
 
 Répertoire de rédaction du **Livre II** du compendium *La somme agentique* (Vol. IV). Il ne porte
 aucune décision, aucun socle et aucun garde-fou propre : la spécification de contenu est le
-[`PRD/TOC.md`](../PRD/TOC.md) v0.25, la gouvernance de la rédaction le [`PRD/PRD.md`](../PRD/PRD.md)
-v0.9. En cas d'écart entre une pièce de ce dossier et le TOC, **le TOC prime** — sauf déviation
+[`PRD/TOC.md`](../PRD/TOC.md), la gouvernance de la rédaction le [`PRD/PRD.md`](../PRD/PRD.md).
+En cas d'écart entre une pièce de ce dossier et le TOC, **le TOC prime** — sauf déviation
 fondée, qui se déclare (décision 8 du TOC) et **se remonte, jamais se corrige au plan depuis ici**.
+
+⚠ **Versions citées, et la distinction qui compte.** Les pièces ont été **rédigées et arbitrées**
+contre le **TOC v0.25** et le **PRD v0.9** ; leurs **treize thèses sont citées depuis le TOC v0.28**,
+version courante à la date de la **passe de correction du 28 juillet 2026**, qui les a **toutes
+re-collationnées mot à mot** — *aucune des passes v0.26 à v0.28 n'a touché une entrée du Livre II, et
+les dates de rédaction restent écrites telles quelles dans les pièces.* Le PRD est à **v0.12**.
+*Une pièce qui cite une version de plan déclare quelle version elle a réellement lue ; elle ne se
+redate pas pour suivre le numéro courant.*
 
 ## ⚠ État : le Livre est rédigé, arbitré, et toujours non publiable
 
@@ -58,16 +66,21 @@ jamais** — sa réf. [220] décrit un cadrage sans chapitre, et **cela reste vr
 
 ## Volumétrie réelle — et la leçon du Livre I appliquée sans effet
 
-**61 677 mots** de corps pour les dix pièces, mesurés le 27 juillet 2026 par
+**62 054 mots** de corps pour les dix pièces, mesurés le **28 juillet 2026** par
 [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — contre une enveloppe
-de Livre de **50 000** au TOC, soit **+23,4 %**.
+de Livre de **50 000** au TOC, soit **+24,1 %**.
 
-⚠ **Le chiffre a été re-mesuré au terme de la passe d'arbitrage, et il a bougé** : il valait **61 165**
-à la rédaction. **Quatre** corrections de la passe touchent le **corps** de leur pièce — la réserve de
-titre reconduite au § 12.8, la note du § 15.1.4, l'extraction du RFC 8693 au § 17.1, le renvoi au
-siège du tri au § 21.1 — et **un décompte
-ne se recopie pas d'une passe à l'autre**. *Les blocs de clôture des remontées, eux, sont hors corps :
-la commande s'arrête à la note de statut.*
+⚠ **Le chiffre a été re-mesuré à chacune des trois passes, et il a bougé à chacune** : **61 165** à la
+rédaction, **61 677** au terme de la passe d'arbitrage, **62 054** au commit de la passe de correction
+du 28 juillet 2026. ***Sept des dix décomptes ont bougé*** — ch. 15 à 21 —, sous l'effet des
+introductions resynchronisées avec la thèse réalignée qui les précède (ch. 15, 16, 17, 19), de la
+clause retranchée rendue à la thèse du second mouvement du ch. 21, des attributions rétablies aux
+§ 21.1 et § 21.7, et de l'identifiant de la préimpression écrit au § 18.4 — et **un décompte
+ne se recopie pas d'une passe à l'autre**. ⚠ **Trois pièces ont été corrigées sans que leur décompte
+bouge** (ch. 12, 13, 14), *et le motif tient à la délimitation du corps* : la commande court **du
+premier `---` à la note de statut**, ce qui met hors décompte l'en-tête, la note de statut et la
+clôture des remontées — et, au ch. 14, le paragraphe d'introduction qui précède ce premier `---`.
+*Une correction hors corps est une correction quand même ; elle n'est simplement pas mesurée.*
 
 ⚠ **La leçon du Livre I a été appliquée, et elle n'a pas suffi — c'est le constat qui compte.** Le
 Livre I avait vu **onze cibles dérivées totaliser 93 000 mots pour une enveloppe de 65 000**, faute
@@ -83,21 +96,26 @@ qu'un avis** (remontée **R-IV-17**). ☑ **D-4 est tranchée depuis le 27 juill
 | [Ch. 12](12-heritage-standards-etires.md) | 6 200 | **7 372** | +18,9 % |
 | [Ch. 13](13-identite-decentralisee-vc-did.md) | 4 000 | **3 947** | **−1,3 %** |
 | [Ch. 14](14-grille-cinq-questions.md) | 3 000 | **3 514** | +17,1 % |
-| [Ch. 15](15-emettre-carte-annuaires-registres.md) | 5 800 | **8 152** | +40,6 % |
-| [Ch. 16](16-passeport-agent.md) | 4 500 | **4 771** | +6,0 % |
-| [Ch. 17](17-chaine-mandat-deux-sauts.md) | 5 700 | **6 933** | +21,6 % |
-| [Ch. 18](18-know-your-agent.md) | 3 800 | **4 202** | +10,6 % |
-| [Ch. 19](19-taxonomie-attaques-identite-delegation.md) | 5 000 | **5 467** | +9,3 % |
-| [Ch. 20](20-usurpation-revocation-boucle-defensive.md) | 6 200 | **8 855** | **+42,8 %** |
-| [Ch. 21](21-horloge-post-quantique.md) | 5 800 | **8 464** | **+45,9 %** |
-| **Livre** | **50 000** | **61 677** | **+23,4 %** |
+| [Ch. 15](15-emettre-carte-annuaires-registres.md) | 5 800 | **8 187** | +41,2 % |
+| [Ch. 16](16-passeport-agent.md) | 4 500 | **4 828** | +7,3 % |
+| [Ch. 17](17-chaine-mandat-deux-sauts.md) | 5 700 | **6 970** | +22,3 % |
+| [Ch. 18](18-know-your-agent.md) | 3 800 | **4 252** | +11,9 % |
+| [Ch. 19](19-taxonomie-attaques-identite-delegation.md) | 5 000 | **5 529** | +10,6 % |
+| [Ch. 20](20-usurpation-revocation-boucle-defensive.md) | 6 200 | **8 868** | **+43,0 %** |
+| [Ch. 21](21-horloge-post-quantique.md) | 5 800 | **8 587** | **+48,1 %** |
+| **Livre** | **50 000** | **62 054** | **+24,1 %** |
 
-: Volumétrie du Livre II, re-mesurée le 27 juillet 2026 au terme de la passe d'arbitrage. *L'écart se documente ; il ne se corrige ni par amputation ni par gonflement.*
+: Volumétrie du Livre II, re-mesurée le 28 juillet 2026 au commit de la passe de correction. *L'écart se documente ; il ne se corrige ni par amputation ni par gonflement.*
 
 ⚠ **Les trois plus forts écarts ont la même cause, et elle est structurelle** : les ch. 15, 20 et 21
-sont les trois pièces qui portent **le plus de bornes** — quinze occurrences de R-02 au ch. 15, seize
-de R-14 au ch. 20, dix-sept de R-11 au ch. 21. *Un chapitre qui doit dire, à chaque énoncé, ce que sa
-source démontre et ne démontre pas, est plus long qu'un chapitre qui affirme.*
+sont les trois pièces qui **bornent le plus densément** — le ch. 15 porte **sept marqueurs de R-02**,
+le plus grand nombre du Livre ; les ch. 20 et 21 tiennent R-14 et R-11 **sur tout leur domaine
+balayé**. *Un chapitre qui doit dire, à chaque énoncé, ce que sa
+source démontre et ne démontre pas, est plus long qu'un chapitre qui affirme.* ⚠ **Ce constat ne se
+chiffre plus en « occurrences »** : depuis le 28 juillet 2026, un cardinal d'en-tête porte sur le
+**marqueur littéral** de l'identifiant dans le corps, et une **application non marquée** se déclare
+comme **domaine balayé, sans cardinal** — *les anciens chiffres mêlaient les deux et n'étaient
+re-mesurables ni dans un sens ni dans l'autre.*
 
 ## Les dix pièces
 
@@ -118,20 +136,40 @@ source démontre et ne démontre pas, est plus long qu'un chapitre qui affirme.*
 **fusions v0.20** (décision 11 du TOC). *Les deux entrées y sont conservées intégralement, avec leurs
 deux thèses ; la rédaction ne les fond pas en une troisième.*
 
-## Quatre sièges posés ici pour toute la somme
+## Six sièges marqués ici pour toute la somme — quatre versés, deux en attente
 
-| Siège | Pièce | Ce qu'il interdit de refaire ailleurs |
-|---|---|---|
-| **Le KYA** (connaissance de l'agent) | **ch. 18 § 18.1** | son statut de terme, ses neuf chantiers, son fait négatif établi de degré 2 |
-| **La triade létale** (modèle de menace) | **ch. 19 § 19.2** | l'énoncé des trois sommets ; le ch. 11 § 11.1.2 n'en traite que l'**amplification** |
-| **L'horloge post-quantique** | **ch. 21 § 21.1** | les jalons, leur statut et leurs origines — ⚠ **qui ne se fusionnent jamais** |
-| **L'encadré des affirmations écartées** (R-2 et R-3 du Vol. II) | **ch. 16 § 16.2** | les deux affirmations non vérifiées et leurs **formes imposées** |
+| Siège | Pièce | Versé à l'appareil | Ce qu'il interdit de refaire ailleurs |
+|---|---|---|---|
+| **Le KYA** (connaissance de l'agent) | **ch. 18 § 18.1** | ☑ | son statut de terme, ses neuf chantiers, son fait négatif établi de degré 2 |
+| **La triade létale** (modèle de menace) | **ch. 19 § 19.2** | ☑ | l'énoncé des trois sommets ; le ch. 11 § 11.1.2 n'en traite que l'**amplification** |
+| **L'horloge post-quantique** | **ch. 21 § 21.1** | ☑ | les jalons, leur statut et leurs origines — ⚠ **qui ne se fusionnent jamais** |
+| **L'encadré des affirmations écartées** (R-2 et R-3 du Vol. II) | **ch. 16 § 16.2** | ☑ | les deux affirmations non vérifiées et leurs **formes imposées** |
+| **Le statut PROJETÉ de la normalisation du passeport** | **ch. 16 § 16.4** | ☐ | l'agenda de normalisation, repris **une seule fois** et **à son régime [C]** |
+| **La restriction du garde-fou R-08** | **ch. 19 § 19.6** | ☐ | la formulation de l'absence — *l'usurpation du justificatif propre d'un agent, et cela seul* |
 
-: Les quatre sièges du Livre II, versés à [`PRD/check-sieges.py`](../PRD/check-sieges.py) au terme de la passe.
+: Les six sièges marqués au Livre II, au 28 juillet 2026. ⚠ **Le cardinal était écrit « quatre » ici jusqu'à cette date** : le Livre porte **six marqueurs formels** « SIÈGE … POUR TOUTE LA SOMME », re-dénombrés par balayage exhaustif des dix pièces, et [`PRD/check-sieges.py`](../PRD/check-sieges.py) n'en contrôle que quatre.
 
-☑ **Les quatre sont contrôlés depuis cette passe.** La table du script en portait **trois**, tous
-posés au Livre I ; elle en porte désormais **sept**, éprouvés sur **21 pièces**, et le harnais de
-mutation `check-sieges-mutations.py` **passe sur le corpus intact et attrape ses cinq mutations**.
+⚠ **Les deux derniers n'étaient pas versés au lancement de cette passe, et cette passe ne les verse
+pas.** *Un siège se pose en trois gestes — l'entrée à la table `SIEGES`, le marqueur à la pièce, le
+harnais de mutation rejoué —, et ceux-ci n'en avaient qu'un.* Le versement relève de `PRD/`, **hors du
+périmètre d'une passe de rédaction** : ⚠ **une passe de gouvernance concurrente l'exécute le même
+jour**, et *les deux marqueurs ont été conservés mot pour mot pour qu'elle les retrouve intacts*.
+**La colonne « versé » ci-dessus décrit l'état de la table au lancement**, non celui qu'elle aura au
+commit de l'autre passe — *un contrôle nomme le corpus sur lequel il porte, et celui-ci n'est pas
+committé ici.* **☑ `check-sieges.py` passe sur le corpus de cette passe : les 12 sièges tiennent sur
+50 pièces (S1-S5).**
+
+☑ **Le marqueur du siège du KYA a été replacé au § 18.1** le 28 juillet 2026 : il était posé au
+§ 18.0 alors que le TOC, le présent conspectus et la table du script le domicilient au § 18.1.
+*Sa formulation n'a pas changé — un marqueur se déplace, il ne se réécrit pas* ; le script résolvant
+par fichier, les contrôles S1-S5 passaient avant comme après.
+
+☑ **Les quatre premiers sont contrôlés depuis la passe d'arbitrage.** La table du script en portait
+**trois**, tous posés au Livre I ; elle en portait **sept** au terme de cette passe, éprouvés sur
+**21 pièces**, et le harnais de mutation `check-sieges-mutations.py` **passait sur le corpus intact et
+attrapait ses cinq mutations**. ⚠ **La table a grossi depuis, par des passes qui ne sont pas
+celles-ci** : elle porte **douze sièges** sur **50 pièces** au 28 juillet 2026 — chiffre relevé sur le
+script, non recopié.
 ⚠ **Un défaut réel a été trouvé au premier passage** : le siège de la triade létale **ne résolvait pas
 contre lui-même** (contrôle **S3**), un retour à la ligne coupant l'un des trois sommets — *une
 signature qui ne voit pas son propre siège ne verrait pas non plus une copie.*
@@ -191,9 +229,13 @@ la pièce** qui l'avait ouverte.
    corps et le portait dans son propre intitulé*. À l'inverse, **R-IV-37 était fausse pour moitié** :
    le siège du tri prospectif **existait**. *Une passe d'arbitrage qui exécute ses remontées sans les
    vérifier fabrique le défaut qu'elle croit corriger.*
-3. ⚠ **La classe « lacune de couverture couverte par un autre volume » atteint six occurrences en deux
-   Livres** — R-IV-12 et R-IV-13 au Livre I, R-IV-14, R-IV-18 et R-IV-35 ici. *Six occurrences font
-   d'une classe de défaut une propriété du corpus, pas un accident de chapitre.* Elles entrent dans
+3. ⚠ **La classe « lacune de couverture couverte par un autre volume » atteint cinq occurrences en deux
+   Livres** — R-IV-12 et R-IV-13 au Livre I, R-IV-14, R-IV-18 et R-IV-35 ici. *Cinq occurrences font
+   d'une classe de défaut une propriété du corpus, pas un accident de chapitre.* ⚠ **Le cardinal était
+   écrit « six » ici et à la clôture de R-IV-35, pour cinq identifiants énumérés ; re-mesuré sur sa
+   série le 28 juillet 2026, il vaut cinq** — *aucun sixième membre n'existe dans le domaine de ces
+   deux Livres ; la série atteint sept une fois le Livre III versé (R-IV-84, R-IV-92), et ce
+   cardinal-là vit au README de ce Livre-là.* Elles entrent dans
    une **troisième table** de l'Annexe C, séparée parce que **le PRD du Vol. III ne numérote pas ces
    absences**. ⚠ **Et aucune ne comble quoi que ce soit** : *couverte au régime [C] ne vaut pas
    comblée.*
@@ -205,6 +247,74 @@ la pièce** qui l'avait ouverte.
    *assumer le périmètre reviendrait à prescrire la parade en déclarant ne rien savoir de son
    efficacité*. **La différence n'est pas de gravité mais de dépendance** : la première portait un
    énoncé dont rien ne dépendait, la seconde porte un vide dont deux chapitres dépendront.
+
+## ⚠ La passe de correction du 28 juillet 2026 — ce qui a été corrigé, ce qui a été remonté
+
+Sur instruction d'auteur, en réponse à l'[audit du 28 juillet 2026](../audit.md). ⚠ **Cette passe
+corrige ; elle ne réédite pas, et elle ne franchit aucune porte** : le socle consolidé compte toujours
+**zéro entrée**, **G-3 n'est pas entamée**, **CA-IV-11 et CA-IV-13 restent insatisfaites**, et les dix
+pièces demeurent un **brouillon non publiable**. *Corriger une citation n'est pas la vérifier ; aligner
+un cardinal n'est pas relire.* Le périmètre est **`Livre II/` seul** — ni le TOC, ni le PRD, ni le
+conspectus du volume n'ont été touchés depuis ici.
+
+| Constat de l'audit | Correction, et où |
+|---|---|
+| **II.1 — bloquant** : trois thèses de second mouvement non verbatim | ☑ **Corrigées par copie littérale** depuis l'entrée courante du TOC, ch. 12, 20 et 21. ⚠ Le ch. 21 avait **retranché une clause entière** — « — le quatrième, l'exploitation, est refermé au Livre IV » —, les ch. 12 et 20 une **ponctuation**. ☑ **Les treize thèses du Livre ont ensuite été re-collationnées mot à mot contre le TOC v0.28, par comparaison de chaînes** : les dix autres étaient exactes |
+| **II.2** : cinq introductions commentent la forme antérieure de leur thèse | ☑ **Réécrites au passé et à l'état réel** — ch. 14 (§ 14.0), ch. 15 (§ 15.3), ch. 16 (§ 16.4), ch. 17 (§ 17.0), ch. 19 (§ 19.0). *Chacune nomme désormais la forme que la source avait bornée, sa date, et la remontée qui a soldé l'écart* — l'information historique est conservée, la contradiction avec la tête est levée |
+| **II.4** : quatre notes de statut portent des volumétries périmées | ☑ **Les dix pièces re-mesurées** par `PRD/decompte.sh`, **en-tête et note alignés sur la mesure du commit** ; la remontée R-IV-17 du ch. 12 porte désormais **les deux chiffres datés** plutôt qu'un seul périmé |
+| **II.5** : cardinal de la classe « lacune couverte par un autre volume » | ☑ **Re-mesuré sur sa série : cinq, non six**, à la clôture de R-IV-35 (ch. 20) et au constat 3 ci-dessus. *Aucun sixième membre n'existe dans le domaine des deux Livres* |
+| **II.6** : ch. 16, « Cinq entrées » pour six identifiants | ☑ **« Six entrées »** au champ *Socle mobilisé*, conforme à sa propre énumération et à sa note |
+| **II.7** : trois intitulés s'écartent du plan | ☑ **Rétablis sur le plan** : ch. 15 § 15.3.2 (« **A2A** normalise le chemin, **AGNTCY** spécifie le magasin »), ch. 21 § 21.4 (« …recommandations **NIST** »), ch. 18 § 18.4 (« Relève **v0.11**, à instruire… »). *Aucune règle du corpus ne fondait la déviation : R-04 impose qu'un sigle ne soit pas nu, non qu'il soit effacé* |
+| **II.8** : ch. 14, « quatre échelles » pour trois nommées | ☑ **« Trois échelles d'autonomie »**, et la note dit désormais que **le chapitre ne mobilise aucune échelle de certification** — celles-ci sont au ch. 18 § 18.3 |
+| **II.9** : « prouve » au § 20.7 | ☑ **« démontre »**, aligné sur la note du plan |
+| **II.11** : marqueur du siège KYA posé au § 18.0 | ☑ **Déplacé au § 18.1**, où le TOC, ce conspectus et la table du script le domicilient ; **formulation inchangée** |
+| **T-1** : les décomptes d'en-tête ne se re-mesurent pas | ☑ **Règle de comptage neuve, écrite en tête des dix champs *Garde-fous balayés*** — voir ci-dessous —, et **tous les cardinaux re-mesurés par balayage exhaustif**, en-tête et note de statut exclus |
+| **T-4** : attribution anonymisée | ☑ **Trois familles rétablies** : l'**attributeur** de la métrique de coût (ch. 21 § 21.7 — *Office of Management and Budget*, projection de l'*Office of the National Cyber Director*) ; l'**auteur et la date** des instruments repris (ch. 21 § 21.1 — NIST IR 8547, SP 800-131A Rev. 3, décret 14412, note OMB M-26-15, rapport Europol 2026, QSFF ; ch. 20 § 20.10 — les deux référentiels applicatifs) ; l'**identifiant d'une source qu'un lot doit instruire** (ch. 18 § 18.4 — arXiv 2605.30169). *Le reste n'est pas re-nommé : la parade de péremption demeure permise pour une dénomination commerciale ou une version* |
+
+: Ce que la passe de correction du 28 juillet 2026 a corrigé au Livre II.
+
+### La règle de comptage des en-têtes — neuve, et opposable
+
+> *Un décompte d'occurrences déclaré dans un en-tête porte sur le **marqueur littéral** de
+> l'identifiant dans le **corps** de la pièce, **note de statut et en-tête exclus** ; il se re-mesure
+> au commit.*
+
+⚠ **Elle a fait tomber la quasi-totalité des cardinaux du Livre, et c'est le résultat.** Les en-têtes
+annonçaient des **applications** — « R-12 : douze occurrences », « R-11 : dix-sept occurrences » —
+là où le corps ne porte, respectivement, **aucun** et **trois** marqueurs littéraux. *Deux régimes de
+comptage coexistaient sans qu'aucun texte ne dise lequel s'appliquait, ce qui rendait le chiffre
+invérifiable dans les deux sens.* Chaque champ porte désormais **trois choses distinctes** : la règle,
+le **domaine balayé** (les sections du corps, nommées), et par identifiant soit un **nombre de
+marqueurs avec ses localisations**, soit la mention explicite qu'il est **appliqué sans marqueur** —
+*couverture déclarée, jamais dénombrée.* ⚠ **Un zéro marqueur ne vaut pas garde-fou non appliqué**, et
+les champs le disent à chaque fois que le cas se présente : c'est le cas de **R-12 au ch. 19 et au
+ch. 20**, garde-fou structurant de l'un et de l'autre.
+
+⚠ **Aucun contrôle outillé ne voit cette classe**, et cette passe n'en verse pas : `check-toc.py` ne
+lit pas les pièces, `verifier-piece.py` ne lit pas les cardinaux, `check-sieges.py` ne regarde que les
+sièges. *La règle est opposable à la lecture ; sa vérification reste manuelle, et elle est déclarée
+telle.*
+
+### Ce qui est remonté et non corrigé ici
+
+- ☐ **Deux sièges marqués et non versés** — le **statut PROJETÉ** (ch. 16 § 16.4) et la **restriction
+  R-08** (ch. 19 § 19.6). Le versement à `PRD/check-sieges.py`, l'entrée à la table et le rejeu du
+  harnais relèvent de `PRD/`, **hors du périmètre d'une passe de rédaction** (constat **II.3**, classe
+  **T-3**).
+- ☐ **La restriction R-08 est renvoyée par section, jamais par identifiant.** Les ch. 12 § 12.2,
+  ch. 20 § 20.0 et ch. 20 § 20.9 écrivent « son siège est le ch. 19 § 19.6 » et **n'écrivent nulle part
+  « R-08 »** — l'en-tête du ch. 20 le déclarait pourtant à deux occurrences. *Le fait est mesuré et
+  écrit à l'en-tête ; si le versement du siège exige un renvoi par identifiant, il devra être ajouté
+  par la passe qui verse.*
+- ☐ **Trois notes de statut portent encore « le TOC du compendium porte encore la forme large »**
+  (ch. 14, 15, 17), **au présent**. ⚠ *Ces phrases sont dans les blocs « Remontées ouvertes par ce
+  chapitre », qui enregistrent la remontée **telle qu'elle a été ouverte**, et la sous-section
+  « Clôture des remontées » qui les suit immédiatement en donne l'issue.* **Elles sont conservées
+  volontairement** : les réécrire effacerait la trace de ce qui a été remonté. Le choix est déclaré
+  ici plutôt que tu.
+- ☐ **Les ancrages de version des corps** (« TOC v0.24 », « TOC v0.25 ») **ne sont pas re-datés** :
+  ils disent contre quelle version la pièce a été écrite et arbitrée. *Seules les **citations de
+  thèse** portent la version courante, parce qu'elles ont été re-collationnées contre elle.*
 
 ## Ce que le Livre couvre — et ce qu'il ne couvre pas
 
