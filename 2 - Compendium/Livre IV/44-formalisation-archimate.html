@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 44 — La formalisation ArchiMate · La somme agentique</title>
+<meta name="description" content="ArchiMate n&#x27;a aucun élément natif pour l&#x27;agent autonome, l&#x27;appel d&#x27;outil MCP, l&#x27;interaction A2A, l&#x27;identité non humaine ou le plan de contrôle ; la seule extension défendable est le mécanisme officiel Specialization + stéréotype &amp;lt;&amp;lt;…&amp;gt;&amp;gt; + Profiles, sur le modèle du Risk &amp;amp; Security Over">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre IV · Chapitre 44</div>
+  <ol>
+    <li><a href="#s440"><span class="num">44.0</span>Primer ArchiMate et convention de version</a></li>
+    <li><a href="#s441"><span class="num">44.1</span>Le problème de modélisation : patrons pour concepts agentiques</a></li>
+    <li><a href="#s442"><span class="num">44.2</span>Motivation : des exigences réglementaires traçables</a></li>
+    <li><a href="#s443"><span class="num">44.3</span>Strategy : capacités agentiques et chaînes de valeur</a></li>
+    <li><a href="#s444"><span class="num">44.4</span>Business : rôles, collaborations humain-agent et objets financiers</a></li>
+    <li><a href="#s445"><span class="num">44.5</span>Application et Technology : agents, protocoles, exécution, résidence</a></li>
+    <li><a href="#s446"><span class="num">44.6</span>Points de vue transverses</a></li>
+    <li><a href="#s447"><span class="num">44.7</span>Gouvernance des vues et organisation du blueprint</a></li>
+    <li><a href="#s448"><span class="num">44.8</span>Bibliothèque de patrons et anti-patrons</a></li>
+    <li><a href="#s449"><span class="num">44.9</span>Questions ouvertes : le formalisme face aux systèmes autonomes</a></li>
+    <li><a href="#s4410"><span class="num">44.10</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.25 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="44-formalisation-archimate.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale</div>
+  <h1><span class="chap">Chapitre 44</span>La formalisation ArchiMate</h1>
+  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Quatrième mouvement — composer (ch. 42-46). Troisième chapitre du mouvement : <strong>il traduit dans un formalisme ce que le ch. 43 a rangé en couches, et rien d'autre.</strong></p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — rédigé sur instruction d'auteur du 27 juillet 2026, <strong>avant</strong> les portes <strong>G-3</strong>, <strong>G-4</strong> et <strong>G-5</strong>, et hors de l'ordre de rédaction du PRD §6. ⚠ <strong>ET AVANT LE PRÉALABLE QUE LE PLAN NOMME POUR CE CHAPITRE PRÉCISÉMENT</strong> : la <strong>re-vérification du mécanisme d'extension tel que la version de référence le porte</strong> est déclarée par le TOC <strong>préalable au registre des stéréotypes (§ 44.1.9), non note de transition</strong> — <em>elle n'a pas eu lieu</em>. Le PRD §12 la nomme au jalon J-IV-5. ⚠ <strong>R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre</strong></dd>
+    <dt>Date de gel</dt>
+    <dd><strong>27 juillet 2026</strong> — gel unique, <strong>D-1 prise</strong> (<a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Volet résiduel de G-1 non instruit, et ce chapitre est celui du Livre où l'omission pèse le plus</strong> : <em>son ancrage de version est un document de norme d'avril 2026, dont la liste définitive des éléments retirés ou renommés est déclarée <strong>ressource vivante à recouper au gel</strong> — et le recoupement n'a pas été fait.</em> Gel de source : <strong>juin 2026</strong> (Vol. I). <em>Il n'est pas celui de la somme.</em></dd>
+    <dt>Socle mobilisé</dt>
+    <dd>⚠ <strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte), <strong>et aucune entrée F-xx d'aucun volume</strong> : ce chapitre consomme le <strong>Vol. I <em>Monographie</em> ch. 6</strong>, qui entre <strong>en [C]</strong> — <em>sa vérification porte sur ses références, non sur le contenu de ses affirmations</em> —, plus <strong>Vol. III <em>Monographie</em> §27.2</strong> au seul titre de la matière à formaliser. ⚠ <strong>Conséquence, et elle est plus large ici qu'ailleurs</strong> : <strong>tout ce chapitre est en [C]</strong>, <em>aucun énoncé n'est central au sens de CA-IV-01</em>, et <strong>l'élévation en [B] passerait par la lecture des documents de norme que le Vol. I cite</strong> — travail de <strong>G-1</strong>, non de ce chapitre. ⚠ <strong>Une entrée de socle est mobilisée par exception</strong>, au § 44.6 : le <strong>Vol. II F-09</strong> (E-23), pour la seule modalité de sa formulation</dd>
+    <dt>Garde-fous balayés</dt>
+    <dd><strong>Les deux séries, intégralement, y compris les zéros.</strong> Vol. III — <strong>R-14 (trois degrés d'absence) : huit occurrences</strong>, § 44.0 (deux), § 44.1 (trois), § 44.5, § 44.7, § 44.9 ; <strong>R-09 (statut d'un document dit à chaque mention) : six occurrences</strong>, § 44.0 (trois), § 44.1, § 44.7 (deux) ; <strong>R-02 : deux occurrences</strong>, § 44.1 — <em>un mécanisme d'extension se qualifie par ce que la spécification rend officiel</em> ; <strong>R-13 (échelle d'autonomie jamais nue) : une occurrence</strong>, § 44.1.7, <strong>renvoyée au siège du ch. 43 § 43.5</strong> ; <strong>R-01 : une occurrence</strong>, § 44.1.6. <strong>R-03 à R-08, R-10 à R-12 : zéro occurrence.</strong> Vol. II — <strong>réserve F-09 (« attendu par E-23 », jamais « exigé ») : trois occurrences</strong>, § 44.6 ; <strong>réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : une occurrence</strong>, § 44.1.3 ; <strong>R-8 (sigle jamais nu) : deux occurrences</strong>, § 44.1.6, <strong>renvoyées au siège du ch. 7 § 7.5</strong> ; <strong>R-1 à R-7 : zéro occurrence</strong> ; <strong>métriques auto-déclarées : deux occurrences</strong>, § 44.7 et § 44.9, <strong>attribuées à leur éditeur nommé</strong>. ⚠ <strong>Garde-fou PROPRE au chapitre, hérité de sa source et plus nécessaire ici qu'à elle</strong> : <em>si l'on retire le mot « ArchiMate » et que la phrase tient encore comme un exposé des chapitres amont, c'est une redondance à renvoyer</em> — <strong>au Vol. I ce chapitre en suivait cinq ; ici il en suit quarante-trois</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ <strong>8 500 mots</strong> de corps (§ 44.0 à la synthèse), <strong>cible dérivée</strong> de l'enveloppe du Livre (<strong>69 000 mots</strong>, TOC v0.25) au prorata des dix sections et du volume de source consommé — <strong>la deuxième plus haute du Livre</strong>, ce chapitre absorbant un chapitre entier du Vol. I. ☑ <strong>Décompte publiable depuis G-2</strong> ; <strong>réel reporté au <a class="lien" href="README.md"> 0 </a></strong>. ⚠ <strong>D-4 s'applique</strong></dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p><strong>ArchiMate n'a aucun élément natif</strong> pour l'agent autonome, l'appel d'outil MCP, l'interaction A2A, l'identité non humaine ou le plan de contrôle ; la seule extension défendable est le mécanisme officiel <strong>Specialization + stéréotype <code>&lt;&lt;…&gt;&gt;</code> + Profiles</strong>, sur le modèle du <em>Risk &amp; Security Overlay</em>. Ce que le chapitre apporte est une <strong>traduction structurelle</strong>, jamais une reprise du fond conceptuel des livres amont.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.25, entrée du chapitre 44.</span>
+</div>
+
+<h2 id="s440"><span class="sig">§ 44.0</span>Primer ArchiMate et convention de version</h2>
+
+<div class="avert">
+  <p><strong>Le contrat de lecture de la source est refondu en apparat, et il n'est pas reconduit comme section.</strong> <em>Ce que le Vol. I devait déclarer à ses cinq chapitres amont, la somme le déclare à quarante-trois</em>, et <strong>la forme change</strong> : le garde-fou de non-redondance est porté à l'en-tête, où il s'applique à chaque phrase, plutôt qu'à une sous-section qu'on lit une fois.</p>
+</div>
+
+<h3>44.0.1 Pourquoi un formalisme, et pourquoi celui-là</h3>
+
+<div class="avert">
+  <p><strong>Ce paragraphe est en [C], comme tout le chapitre, et il énonce une thèse d'un volume antérieur, à attribuer.</strong> Le Vol. I retient ce langage pour une raison qu'il déclare : <em>c'est un langage de description d'architecture d'entreprise <strong>normalisé et gouverné par un organisme</strong>, ce qui rend une convention d'extension <strong>traçable et opposable</strong> là où une notation propriétaire ne le serait pas.</em> <strong>Ce que le socle établit</strong> : rien — le socle consolidé compte zéro entrée, et <strong>aucun volume ne verse de fait sur ce langage</strong>. <strong>Ce qu'il n'établit pas</strong> : que ce langage soit le meilleur, ni qu'un autre formalisme échouerait.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Une distinction est reprise parce que sa confusion est un anti-patron nommé</strong> (§ 44.8) : <strong>langage</strong>, <strong>méthode</strong>, <strong>cadre</strong>, <strong>outil</strong> et <strong>modèle de référence</strong> sont cinq objets distincts. <em>Le langage décrit ; la méthode conduit ; le cadre range ; l'outil édite ; le modèle de référence propose un contenu.</em> <strong>Confondre le premier et le second est la faute la plus courante</strong>, et la somme ne l'écrit qu'une fois.</p>
+</div>
+
+<h3>44.0.2 Le cadre, les domaines, les aspects — version de référence</h3>
+
+<p><strong>Ancrage de version, et il commande tout le chapitre</strong> : la version de référence est <strong>ArchiMate 4</strong> (document normatif d'avril 2026) ; <strong>les équivalences avec la version 3.2 (octobre 2022) figurent en notes de transition</strong>. ⚠ <strong>Statut dit à chaque mention</strong> (R-09 du Vol. III) : <em>ce sont des documents de norme publiés par leur organisme, non des brouillons</em> — et <strong>la liste définitive des éléments retirés ou renommés est une ressource vivante à recouper au gel</strong>, ⚠ <strong>recoupement qui n'a pas eu lieu</strong> (§ 44.0.4).</p>
+
+<p><strong>Le changement de métamodèle est de fond, et il est confirmé par l'éditeur de la norme.</strong> La version de référence <strong>substitue aux <em>couches</em> un découpage en domaines pairs</strong>, sans hiérarchie implicite entre eux ; <strong>sept domaines</strong> sont retenus — <strong>Common</strong> (nouveau, transverse), <strong>Business</strong>, <strong>Application</strong>, <strong>Technology</strong> (qui <strong>absorbe l'ancienne couche Physical</strong>), <strong>Motivation</strong>, <strong>Strategy</strong>, <strong>Implementation &amp; Migration</strong>. Le noyau réunit les quatre premiers ; le langage complet y ajoute les trois derniers.</p>
+
+<div class="avert">
+  <p><strong>Deux mises en garde s'imposent pour la suite, et la première est celle qu'on lit à l'envers.</strong> <em>Un</em> : <strong>il n'existe ni domaine fusionnant Application et Technology, ni domaine Physical distinct</strong> — <em>en version de référence, Application et Technology demeurent deux domaines <strong>séparés</strong>, et Physical est simplement absorbé dans Technology.</em> <strong>La distinction entre la logique de l'agent et son substrat d'exécution reste donc valide, mais devient une convention d'altitude plutôt qu'une frontière de couche.</strong> <em>Deux</em> : <strong>les comportements sont unifiés</strong> — <em>quatre éléments génériques exacts, <strong>Service</strong>, <strong>Process</strong>, <strong>Function</strong>, <strong>Event</strong>, complétés par les Collaboration et Role génériques, remplacent les variantes auparavant déclinées par couche.</em> <strong>Les quatre aspects du langage sont conservés</strong> : structure active, comportement, structure passive, motivation.</p>
+</div>
+
+<h3>44.0.3 Éléments et relations : les libellés exacts, parce que la suite les mobilise sans les redéfinir</h3>
+
+<p><strong>La version de référence réduit le décompte d'éléments d'environ soixante à environ quarante-deux</strong>, principalement par l'unification des comportements et la suppression de variantes par couche. ⚠ <strong>Le cardinal est celui que le Vol. I rapporte, en [C]</strong> ; <em>la somme ne l'a pas re-mesuré sur le document de norme, et la relève du plan le confirme dans les mêmes termes — <strong>environ 30 % de réduction, de plus de soixante à une quarantaine</strong>.</em></p>
+
+<p><strong>Les onze relations sont inchangées par rapport aux versions 3.x</strong> : <strong>Composition</strong>, <strong>Aggregation</strong>, <strong>Assignment</strong>, <strong>Realization</strong>, <strong>Serving</strong>, <strong>Access</strong>, <strong>Influence</strong>, <strong>Triggering</strong>, <strong>Flow</strong>, <strong>Specialization</strong>, <strong>Association</strong>. ⚠ <strong>La Junction est un connecteur, non une douzième relation.</strong> ⚠ <strong>Un libellé appelle une vigilance particulière</strong> : <strong>Serving</strong> a remplacé l'ancien « Used by » <strong>dès les versions 3.x</strong>, et <em>ce dernier terme ne s'emploie jamais</em>.</p>
+
+<div class="avert">
+  <p><strong>Quatre relations portent l'essentiel du sens dans les patrons du § 44.1, et leurs nuances conditionnent la défendabilité de chacun</strong> : <strong>Serving</strong> — <em>un élément en sert un autre durablement</em> ; <strong>Realization</strong> — <em>un élément concrétise un comportement ou un service plus abstrait</em> ; <strong>Assignment</strong> — <em>une structure active porte un comportement ou une responsabilité</em> ; <strong>Access</strong> — <em>un comportement lit ou écrit une structure passive</em>.</p>
+</div>
+
+<h3>44.0.4 Convention de version — et le préalable qui n'a pas été tenu</h3>
+
+<div class="avert">
+  <p><strong>C'est le point le plus important de cette section, et il conditionne le § 44.1.9.</strong> Le plan déclare, en toutes lettres : <em>la re-vérification du mécanisme <strong>Specialization + stéréotype + Profiles</strong> tel que le document normatif de référence le porte est <strong>un préalable au registre des stéréotypes, non une note de transition</strong>.</em></p>
+</div>
+
+<p>☐ <strong>Ce préalable n'a pas été tenu.</strong> <em>Aucune lecture du document de norme n'a été conduite par la somme</em> ; <strong>tout ce que ce chapitre écrit du mécanisme d'extension vient du Vol. I, en [C]</strong>, et <strong>l'ampleur de la refonte est précisément ce qui rend l'omission coûteuse</strong> : <em>une refonte de métamodèle qui retire environ un tiers des éléments et remplace les couches par des domaines est la plus profonde depuis la création du langage — et le mécanisme d'extension est l'objet même que la somme lui emprunte.</em></p>
+
+<div class="avert">
+  <p><strong>Deux conséquences sont tirées ici plutôt que laissées à deviner.</strong> <em>Un</em> : <strong>le registre des stéréotypes du § 44.1.9 est reproduit comme registre du Vol. I, en [C], et non comme registre conforme à la version de référence</strong> — <em>la différence n'est pas de politesse : un registre présenté comme conforme à un document qu'on n'a pas lu est une attestation, et CA-IV-14 la proscrit.</em> <em>Deux</em> : <strong>les substitutions d'éléments retirés que le registre porte</strong> — <em>pour l'élément de contrat, pour l'écart de maturité, pour l'indicateur</em> — <strong>sont des propositions du Vol. I, présentées par lui comme des conventions gouvernées et non comme des règles natives</strong>, ⚠ <em>et il déclare lui-même que le devenir exact de l'un d'eux <strong>reste à confirmer</strong> sur le document normatif.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Une seconde réserve datée pèse sur tout le mouvement, et elle est d'outillage.</strong> À la mi-2026, <strong>la quasi-totalité des ateliers d'architecture d'entreprise n'exporte et n'importe encore que la version 3.2 nativement</strong>, ⚠ <strong>ce qui rend le blueprint du ch. 45 non échangeable en version de référence dans la plupart d'entre eux</strong>. <em>Le chapitre écrit donc en version de référence <strong>avec note d'équivalence 3.2 par patron</strong>, et la note n'est pas un ornement : c'est la condition pour que le modèle soit ouvrable.</em></p>
+</div>
+
+<h2 id="s441"><span class="sig">§ 44.1</span>Le problème de modélisation : patrons pour concepts agentiques</h2>
+
+<h3>44.1.1 Le verrou méthodologique : aucun élément natif, le recours à la spécialisation</h3>
+
+<div class="avert">
+  <p><strong>Le verrou commande toute la suite et se pose sans ambiguïté</strong> : <em>ni la version 3.2, ni la version de référence n'introduisent de métaclasse dédiée à l'intelligence artificielle ou aux agents autonomes.</em> <strong>La refonte du métamodèle vise la simplification du langage, non l'ajout d'une prise en charge agentique.</strong></p>
+</div>
+
+<p><strong>Le seul mécanisme d'extension défendable est celui que la spécification rend officiel</strong> : <strong>Specialization</strong>, assortie d'un <strong>stéréotype <code>&lt;&lt;…&gt;&gt;</code></strong>, complétée par les <strong>Profiles</strong> (attributs typés). ⚠ <strong>Un mécanisme se qualifie par ce que la spécification rend officiel, jamais par ce qu'une pratique en fait</strong> (R-02 du Vol. III, transposé). ⚠ <strong>Ce levier n'est pas une trouvaille</strong> : <em>il reproduit la démarche d'un overlay de risque et de sécurité normalisé par le même organisme, qui superpose des stéréotypes à des éléments existants <strong>sans inventer de concept</strong>.</em></p>
+
+<div class="avert">
+  <p><strong>La pratique communautaire confirme l'absence de solution canonique</strong>, et le Vol. I le déclare : <em>la modélisation d'agents logiciels s'est longtemps appuyée sur des <strong>conventions informelles</strong>.</em> ⚠ <strong>Le socle ne documente aucun balayage des extensions communautaires</strong> : absence de documentation, non fait négatif vérifié (degré 3). <em>« Seule extension défendable » est un jugement de conformité au métamodèle, non un constat d'exhaustivité.</em></p>
+</div>
+
+<h3>44.1.2 Patron « agent » : Application Component, Role, Collaboration</h3>
+
+<p><strong>Le choix de la métaclasse dépend de deux critères orthogonaux : l'altitude — technique ou métier — et la responsabilité — brique exécutable ou fonction imputable.</strong> Trois options se présentent : <em>(A)</em> brique technique exécutant un modèle et une logique d'outillage → <strong>Application Component</strong> ; <em>(B)</em> fonction métier déléguée porteuse d'une responsabilité → <strong>Role</strong> — <em>élément générique en version de référence, héritier de l'ancien « Business Role »</em> — assigné à un <strong>Business Actor</strong> responsable ; <em>(C)</em> essaim d'agents coopérants → <strong>Application Collaboration</strong>.</p>
+
+<p><strong>Le patron canonique combine ces facettes</strong> : un <strong>Application Component</strong> stéréotypé <code>&lt;&lt;Agent&gt;&gt;</code>, auquel est <strong>assigné un Role</strong>, et qui <strong>réalise</strong> une <strong>Application Process</strong> stéréotypée <code>&lt;&lt;reasoning loop&gt;&gt;</code> matérialisant la boucle de raisonnement.</p>
+
+<div class="avert">
+  <p><strong>Le choix de la métaclasse comportementale est tranché une fois et vaut pour tout le chapitre</strong> : <em>la boucle plan-agir-observer est un <strong>Process</strong>, parce qu'elle est un enchaînement <strong>ordonné</strong> d'étapes ; la <strong>Function</strong> est réservée à l'appel d'outil atomique, comportement <strong>non séquentiel</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le compromis porte sur l'imputabilité, et il est le seul enjeu réel de ce patron</strong> : <em>remonter l'agent dans le domaine Business <strong>engage une responsabilité métier ou réglementaire</strong> ; le maintenir dans Application <strong>traduit un statut d'outil sous supervision</strong>.</em> <strong>Ce n'est pas un choix de notation ; c'est un choix de qualification</strong> — et <strong>le ch. 43 § 43.2.2 a établi que la qualification précède l'architecture</strong>.</p>
+</div>
+
+<h3>44.1.3 Patron « appel d'outil » : Application Service, Interface, Serving</h3>
+
+<p><strong>Siège de la modélisation de la relation agent-outil ; le protocole n'est pas réexpliqué</strong> — <em>son anatomie est au ch. 8.</em></p>
+
+<p>Le serveur exposant des capacités outillées est un <strong>Application Component</strong> stéréotypé <code>&lt;&lt;MCP Server&gt;&gt;</code>. <strong>Chaque capacité offerte est une Application Service</strong>, réalisée par ce composant via <strong>Realization</strong>, et rendue accessible par une <strong>Application Interface</strong>. L'agent consommateur est relié à cette service par <strong>Serving</strong> — ⚠ <strong>jamais par « Used by »</strong>. La ressource lue est un <strong>Data Object</strong>, accédé par <strong>Access</strong>.</p>
+
+<div class="avert">
+  <p><strong>L'anti-confusion à tenir est celle de Serving et de Realization</strong> : <em>Realization relie le composant à la capacité qu'il rend effective — le serveur <strong>réalise</strong> le service ; Serving relie le service au consommateur qu'il dessert — le service <strong>dessert</strong> l'agent.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>La granularité recommandée n'est pas un détail</strong> : <em>une <strong>Application Service par capacité outillée</strong>, et non un service global indifférencié</em> — <strong>cette décomposition expose la surface réelle de délégation et donne un point d'accroche aux contrôles</strong>. <em>Sans elle, la borne de privilège que le Livre II exige n'a nulle part où s'attacher.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le protocole porte un cadre d'autorisation, jamais un protocole « sécurisé »</strong> (réserve F-01 du Vol. II ; siège <strong>ch. 8</strong>) : <em>ce que le patron modélise est une surface d'appel, non une garantie.</em></p>
+</div>
+
+<h3>44.1.4 Patron « interaction agent-agent » : Collaboration, Flow, Triggering</h3>
+
+<p><strong>Siège de la modélisation de la relation agent-agent.</strong> L'échange se modélise par <strong>Flow</strong> pour un transfert d'information, par <strong>Triggering</strong> pour un déclenchement de comportement, ou par les deux conjointement. Les agents sont des <strong>Application Components</strong> ; une collaboration durable se réifie en <strong>Application Collaboration</strong> ; le message est un <strong>Data Object</strong>.</p>
+
+<div class="avert">
+  <p><strong>Un avertissement de version est ici décisif : l'élément Interaction est retiré en version de référence.</strong> <em>Là où la version 3.2 offrait une « Application Interaction » pour le comportement conjoint, la version de référence le modélise par une <strong>Collaboration</strong> associée à un <strong>comportement générique unifié</strong> dont l'Assignment porte une <strong>multiplicité supérieure ou égale à deux</strong> — deux structures actives assignées au même comportement.</em> <strong>C'est l'un des rares endroits où la note d'équivalence 3.2 n'est pas cosmétique.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>La relation Serving est ici soigneusement réservée</strong> : <em>elle ne s'emploie que lorsqu'un agent-spécialiste <strong>offre durablement un service</strong> à d'autres, jamais pour un échange ponctuel.</em> <strong>Le compromis Flow / Triggering / Serving — transfert, déclenchement, offre durable — est justifié une seule fois ici et repris par renvoi.</strong></p>
+</div>
+
+<h3>44.1.5 Patron « identité non humaine » : Role, structure active, overlay de sécurité</h3>
+
+<p><strong>Siège canonique de la modélisation de l'identité non humaine ; son cycle de vie et les mécanismes de délégation ne sont pas redéroulés</strong> — <em>ils sont au Livre II, ch. 12 et ch. 17.</em></p>
+
+<p>L'identité sous laquelle un agent agit est un <strong>Role</strong>, porté par l'<strong>Application Component</strong> qui incarne l'agent au moyen d'un <strong>Assignment</strong>. Les justificatifs d'authentification — jeton, clé, certificat — sont un <strong>Data Object</strong> au plan logique, <strong>matérialisé en Artifact</strong> au plan technologique. <strong>La délégation, lorsqu'un agent agit pour le compte d'un autre principal, se représente par une chaîne de relations Assignment.</strong> ⚠ <strong>Le propriétaire humain responsable de l'identité machine est un Business Actor, rattaché par Assignment au Role</strong> — <em>c'est ce qui restaure l'imputabilité, et c'est structurellement la réponse à Q-E de la grille du ch. 14.</em></p>
+
+<div class="avert">
+  <p><strong>Le patron assume une dette de modélisation, et il faut la lire pour ce qu'elle est</strong> : <em>le langage n'offre <strong>aucune solution native</strong> pour l'identité machine, et <strong>la distinction entre une identité humaine et une identité non humaine ne tient qu'au stéréotype et à la convention visuelle, non à une sémantique du langage</strong>.</em> <strong>Un modèle dont la distinction la plus lourde de conséquences repose sur une convention d'annotation est un modèle dont la relecture doit vérifier l'annotation.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>Les risques propres aux identités non humaines s'expriment dans le domaine Motivation au moyen des spécialisations de l'overlay de sécurité</strong> : <em>un classement daté de ces risques s'injecte comme des paires <strong>risque / contrôle</strong> — le risque devenant un <strong>Assessment</strong>, le contrôle un <strong>Requirement</strong> réalisé par un service jouant le rôle de point d'application.</em> <strong>Le contenu de ces risques n'est pas réexposé</strong> : il est au <strong>ch. 19</strong>.</p>
+</div>
+
+<h3>44.1.6 Patron « plan de contrôle d'agents » et la limite de la découverte dynamique</h3>
+
+<div class="avert">
+  <p><strong>Désambiguïsation obligatoire</strong> (R-8 du Vol. II) : <em>« plan de contrôle d'agents » s'entend au sens du patron d'architecture</em>, et <strong>l'encadré des quatre branches siège au ch. 7 § 7.5</strong> — <em>ce chapitre y renvoie et ne le reconstruit pas</em>.</p>
+</div>
+
+<p>Le plan de contrôle est une <strong>Application Collaboration</strong> stéréotypée <code>&lt;&lt;Control Plane&gt;&gt;</code>, réalisant un ensemble d'<strong>Application Services</strong> de gouvernance — autorisation, journalisation, application des politiques, supervision — qui <strong>desservent</strong> le parc. <strong>Son ancrage stratégique passe par une Capability</strong> ; <strong>les politiques qu'il applique s'expriment en Requirements spécialisés</strong>, ⚠ <strong>et non en Constraints — l'élément Constraint étant retiré en version de référence au profit d'une Specialization de Requirement</strong>.</p>
+
+<div class="avert">
+  <p><strong>À ce patron s'attache une limite structurelle dédiée, et c'est la plus instructive du chapitre.</strong> <em>La découverte au moment de l'exécution — carte d'agent, registre, nommage — est <strong>par nature dynamique</strong>, alors que le langage est un langage de <strong>description statique</strong>.</em> <strong>Le modèle rend la mécanique de manière approchée</strong> : <em>un Application Component figurant le registre ou le catalogue, un Data Object regroupant les cartes.</em> ⚠ <strong>Mais la relation de découverte effective — le fait qu'un agent localise dynamiquement un pair à l'exécution — n'est pas représentable nativement</strong> : <em>le modèle décrit <strong>les artefacts</strong> de la découverte, non <strong>son occurrence</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Et le passeport n'y change rien</strong> : <em>il ne figure dans aucune spécification à date</em> (R-01 du Vol. III ; siège <strong>ch. 16</strong>). <strong>Ce que le modèle pourrait porter est l'artefact d'un objet qui n'existe pas</strong> — <em>le formalisme n'ajoute aucune existence à ce qu'il représente.</em></p>
+</div>
+
+<h3>44.1.7 Patron « humain-agent » : point d'arrêt, double regard, autonomie graduée</h3>
+
+<p><strong>Siège de la modélisation du contrôle de finalité.</strong> La coopération humain-agent est une <strong>Business Collaboration</strong> réalisant, <strong>en version 3.2 une Business Interaction</strong> et, <strong>en version de référence, un comportement générique unifié</strong> — <em>l'élément Interaction étant retiré</em>.</p>
+
+<p><strong>Le point d'intervention humain se modélise par l'Assignment d'un Role humain à l'étape irréversible du comportement</strong> : ⚠ <strong><em>c'est l'assignation, et non une annotation, qui inscrit structurellement l'exigence de supervision.</strong></em></p>
+
+<div class="avert">
+  <p><strong>Le contrôle à quatre yeux appelle une construction particulière, justifiée ici une seule fois</strong> : <em>le proposeur et l'approbateur sont <strong>deux Roles distincts</strong>, et <strong>il ne doit exister aucune relation Flow directe du proposeur vers l'approbateur</strong>.</em> ⚠ <strong>Cette absence délibérée de Flow est la preuve d'architecture de la non-collusion</strong> : <em>structurellement, l'information ne transite pas de l'un à l'autre sans passer par l'objet de travail soumis et le mécanisme de contrôle.</em> <strong>La convention est reprise par renvoi partout où elle s'applique, sans être rejustifiée.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>Ce que ce patron atteste, et ce qu'il n'atteste pas.</strong> <em>Le langage atteste <strong>l'intention</strong> de contrôle — le Role humain est assigné à l'étape irréversible — <strong>mais non son exercice à l'exécution</strong>.</em> <strong>C'est l'écart général entre description statique et état d'instance</strong> (§ 44.9), et <strong>c'est aussi la limite exacte que le ch. 40 § 40.4 rencontre du côté des indicateurs</strong> : <em>mesurer la révision n'est pas mesurer le discernement ; modéliser l'assignation n'est pas modéliser l'attention.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>L'autonomie graduée se traduit par un Profile — niveau d'autonomie, réversibilité — plutôt que par une relation.</strong> ⚠ <strong>R-13 du Vol. III</strong> : <em>l'échelle visée n'est jamais nommée nue ; le siège de la désambiguïsation des trois échelles homonymes est au <strong>ch. 43 § 43.5</strong>, et ce chapitre n'en reconstruit aucune.</em></p>
+</div>
+
+<h3>44.1.8 Patron « mémoire, récupération et ancrage gouverné »</h3>
+
+<p><strong>Siège de la modélisation de la persistance et de l'ancrage ; les mécanismes ne sont pas réexpliqués</strong> — <em>ils sont au ch. 5.</em></p>
+
+<p>La mémoire de l'agent et la base qui la sous-tend sont des <strong>Data Objects</strong>, accédés par la <strong>Function</strong> de l'agent ; leur matérialisation au plan d'exécution est un <strong>Artifact</strong>. <strong>La couche sémantique qui structure l'ancrage est un Data Object réalisant un Business Object.</strong></p>
+
+<div class="avert">
+  <p><strong>La décomposition recommandée n'est pas neutre, et c'est tout l'apport du patron</strong> : <em>en distinguant explicitement le Data Object <strong>de mémoire</strong>, le Data Object <strong>de contexte récupéré</strong> et le Business Object <strong>sémantique</strong>, le modèle <strong>expose les points où s'appliquent les contrôles</strong> de prévention de fuite et de filtrage de sortie.</em> ⚠ <strong><em>Sans cette décomposition, la mémoire devient une boîte opaque où aucun contrôle n'a de point d'ancrage.</strong></em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Et le ch. 39 § 39.2.4 a rencontré le même objet par l'autre bout</strong> : <em>une quatrième source de dérive, la mémoire continûment réécrite par des modèles auxiliaires, y est portée comme <strong>relève à instruire</strong>, non comme fait.</em> <strong>Le patron modélise ce que la relève interroge</strong> — <em>ce qui est exactement le rôle d'un formalisme, et exactement sa limite.</em></p>
+</div>
+
+<h3>44.1.9 Le registre des stéréotypes du blueprint</h3>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>POINT D'APPUI AVAL — et il est publié sous réserve.</strong> Le plan déclare ce registre <strong>point d'appui dont dépendent le ch. 45 et l'Annexe H</strong>, à tenir <strong>en un seul lieu</strong>. ☐ <strong>Le préalable que le plan lui assigne — la re-vérification du mécanisme d'extension tel que le document normatif de référence le porte — n'a pas été tenu</strong> (§ 44.0.4). <strong>Ce registre est donc reproduit comme registre du Vol. I, en [C], et non comme registre conforme à la version de référence.</strong></p>
+</div>
+
+<p><strong>Quatre limites structurelles sont à assumer avant le registre lui-même</strong>, et elles ne se franchissent par aucun stéréotype.</p>
+
+<ol class="numeros">
+  <li>⚠ <strong>Le langage est un langage de description statique</strong> : <em>il représente une <strong>intention</strong> d'architecture, non un <strong>état d'exécution</strong>.</em></li>
+  <li>⚠ <strong>Le non-déterminisme du comportement d'un agent n'est pas représentable</strong> : <em>un Process décrit le cadre de contrôle <strong>attendu</strong>, jamais le chemin <strong>effectif</strong>.</em></li>
+  <li>⚠ <strong>L'état d'instance échappe au langage</strong>, <em>qui modélise des <strong>types</strong>, non des <strong>instances</strong></em>.</li>
+  <li>⚠ <strong>La dynamicité de la découverte à l'exécution n'est pas native</strong> (§ 44.1.6).</li>
+</ol>
+
+<div class="avert">
+  <p><strong>S'y ajoute un effet de version sur la méthode</strong> : <em>la distinction entre la logique de l'agent et son substrat d'exécution <strong>n'est plus une frontière de couche</strong>, mais une <strong>convention d'abstraction et de stéréotype</strong></em> — étant entendu que <strong>les deux domaines demeurent pairs et distincts, et ne fusionnent pas</strong>.</p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Famille</th><th>Stéréotypes</th><th>Ce qu'ils annotent</th><th>Siège</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Patrons agentiques</strong></td><td><code>&lt;&lt;Agent&gt;&gt;</code>, <code>&lt;&lt;MCP Server&gt;&gt;</code>, <code>&lt;&lt;NHI&gt;&gt;</code>, <code>&lt;&lt;Control Plane&gt;&gt;</code>, <code>&lt;&lt;reasoning loop&gt;&gt;</code>, <code>&lt;&lt;regulatory-requirement&gt;&gt;</code></td><td>un élément <strong>existant</strong> du langage, dont la sémantique sous-jacente <strong>reste la sienne</strong></td><td>§ 44.1.2 à § 44.1.6, § 44.2</td></tr>
+    <tr><td><strong>Substitution d'éléments retirés</strong></td><td><code>&lt;&lt;Contract&gt;&gt;</code> (Specialization de Business Object), <code>&lt;&lt;maturity-gap&gt;&gt;</code> (Specialization d'Assessment), <code>&lt;&lt;KPI&gt;&gt;</code> (Specialization de Driver ou d'Assessment)</td><td>⚠ <strong>propositions du Vol. I, présentées par lui comme conventions gouvernées et non comme règles natives</strong> — <em>et il déclare que le devenir de l'une d'elles <strong>reste à confirmer</strong> sur le document normatif</em></td><td>§ 44.4, § 43.5.3, § 46.1</td></tr>
+    <tr><td><strong>Overlay de risque et de sécurité</strong></td><td>importés tels quels de l'overlay normalisé</td><td>⚠ <strong>non redéfinis ici</strong> — <em>les redéfinir produirait un dialecte</em></td><td>overlay d'origine</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 44.1 — Le registre des stéréotypes du blueprint. ⚠ <strong>Reproduit du Vol. I, en [C], et publié sous réserve du préalable non tenu (§ 44.0.4).</strong> <em>Les <strong>Profiles</strong> normalisés portent les attributs typés d'<strong>autonomie</strong>, de <strong>matérialité</strong> et de <strong>réversibilité</strong> — les trois dimensions que les relations ne peuvent pas exprimer.</em></p>
+
+<div class="avert">
+  <p><strong>Le registre ne liste que les stéréotypes propres au blueprint agentique</strong>, et cette borne est la condition de sa portabilité : <em>importer un overlay normalisé sans le redéfinir préserve la conformité au métamodèle ; le réécrire produirait exactement le dialecte que le mécanisme officiel permet d'éviter.</em></p>
+</div>
+
+<h2 id="s442"><span class="sig">§ 44.2</span>Motivation : des exigences réglementaires traçables</h2>
+
+<p><strong>Le domaine Motivation porte l'intention, et la somme n'en retient que la charpente.</strong> Les éléments mobilisés sont <strong>Stakeholder</strong>, <strong>Driver</strong>, <strong>Assessment</strong>, <strong>Goal</strong> et <strong>Outcome</strong>, <strong>Principle</strong> et <strong>Requirement</strong>.</p>
+
+<p><strong>La construction propre au blueprint tient en une convention</strong> : <em>une exigence réglementaire est une <strong>Specialization de Requirement</strong> stéréotypée <code>&lt;&lt;regulatory-requirement&gt;&gt;</code></em> — ⚠ <strong>et non un élément Constraint</strong>, <em>retiré en version de référence</em>. <strong>Ce que cette convention achète</strong> : <em>chaque texte devient un objet de modèle <strong>auquel une chaîne descendante peut se rattacher</strong></em> (§ 44.6).</p>
+
+<div class="avert">
+  <p><strong>Ce que la somme ne fait pas ici, et il faut le dire au moment où le lecteur l'attendrait</strong> : <em>elle ne re-expose ni le contenu des textes — il est au <strong>Livre III</strong> —, ni leur croisement avec les protocoles — il est au <strong>ch. 42</strong>.</em> <strong>Ce paragraphe ne dit qu'une chose : où un texte se pose dans un modèle.</strong> <em>Le garde-fou de non-redondance s'applique ici plus qu'ailleurs — retirer le mot du langage laisserait un exposé réglementaire, donc une redondance à renvoyer.</em></p>
+</div>
+
+<p><strong>Les Assessments propres à l'agentique sont nommés et non développés</strong> : <em>prolifération non gouvernée d'agents, risque de modèle, concentration de fournisseurs.</em> ⚠ <strong>Chacun est un objet de modèle, pas un constat de la somme</strong> : <em>le premier est une inférence du Vol. I en [C], les deux autres sont traités au Livre III.</em></p>
+
+<h2 id="s443"><span class="sig">§ 44.3</span>Strategy : capacités agentiques et chaînes de valeur</h2>
+
+<p><strong>Le domaine Strategy porte trois éléments utiles au blueprint</strong> : <strong>Capability</strong>, <strong>Resource</strong>, <strong>Course of Action</strong>, plus <strong>Value Stream</strong>.</p>
+
+<div class="avert">
+  <p><strong>La règle qui compte est une règle d'unité, et son anti-patron est nommé au § 44.8</strong> : <em>la <strong>capacité agentique</strong> est l'unité de planification — <strong>ni le modèle, ni l'outil</strong>.</em> <strong>Une Capability par serveur d'outils est un anti-patron</strong>, <em>parce qu'elle fait dépendre le plan de l'implémentation.</em></p>
+</div>
+
+<p><strong>L'ancrage sur des référentiels de capacités sectoriels</strong> — <em>cartographies de domaines de service bancaires ou assurantiels</em> — <strong>se fait par Specialization</strong>, ce qui <strong>rend la réutilisation transverse possible sans réinventer la carte</strong>.</p>
+
+<div class="avert">
+  <p><strong>Le Value Stream conscient de la coopération humain-agent est le seul apport propre de ce domaine</strong> au blueprint : <em>il rend visible, à l'échelle d'un flux de valeur, <strong>où l'humain reste dans la chaîne</strong></em> — et <strong>le point d'arrêt du § 44.1.7 est son expression au grain du comportement</strong>.</p>
+</div>
+
+<h2 id="s444"><span class="sig">§ 44.4</span>Business : rôles, collaborations humain-agent et objets financiers</h2>
+
+<p><strong>Le domaine Business tranche une question que le § 44.1.2 a posée sans la refermer : à quelle altitude placer l'agent.</strong></p>
+
+<div class="avert">
+  <p><strong>Le critère de bascule est de responsabilité, non de technique</strong> : <em>un agent monte dans le domaine Business <strong>quand une responsabilité métier ou réglementaire lui est imputée</strong> ; il reste dans Application <strong>quand il est un outil sous supervision</strong>.</em> <strong>Ce critère est une construction du Vol. I, en [C]</strong> — <em>aucune source normative ne le pose</em>.</p>
+</div>
+
+<p><strong>La collaboration humain-agent est une Business Collaboration</strong> réalisant un comportement unifié (§ 44.1.7). <strong>Les objets et produits financiers sont des Business Objects et des Products</strong> ; ⚠ <strong>le contrat, dont l'élément dédié est retiré en version de référence, se rend par une Specialization de Business Object stéréotypée <code>&lt;&lt;Contract&gt;&gt;</code></strong> — <em>convention du registre, publiée sous la réserve du § 44.0.4</em>.</p>
+
+<div class="avert">
+  <p><strong>Le raffinement d'un parcours humain-agent par une notation de processus dédiée est mentionné comme possibilité, non comme prescription</strong> : <em>le langage d'architecture décrit la structure, une notation de processus décrit l'enchaînement fin — les deux se complètent et ne se remplacent pas.</em></p>
+</div>
+
+<h2 id="s445"><span class="sig">§ 44.5</span>Application et Technology : agents, protocoles, exécution, résidence</h2>
+
+<p><strong>Les deux domaines demeurent pairs et distincts</strong> (§ 44.0.2), <strong>et la somme n'en retient que ce que la traduction structurelle exige.</strong></p>
+
+<p><strong>Côté Application</strong> : <em>la métaclasse de l'agent est tranchée au § 44.1.2 ; la distinction <strong>Function / Process</strong> l'est aussi — <strong>Process</strong> pour la boucle ordonnée, <strong>Function</strong> pour l'appel atomique.</em> <strong>La projection des protocoles, de la passerelle et du registre s'instancie sur les patrons du § 44.1</strong>,</p>
+
+<div class="avert">
+  <p><strong>sans redérivation du triplet</strong> — <em>la redériver serait l'anti-patron n° 9.</em></p>
+</div>
+
+<p><strong>Côté Technology</strong> : <strong>Node</strong>, <strong>Device</strong> et <strong>System Software</strong> pour le parc d'exécution ; <strong>Service</strong>, <strong>Interface</strong> et <strong>Artifact</strong> pour ce qu'il expose ; <strong>Path</strong> et <strong>Communication Network</strong> pour le substrat d'échange ; ⚠ <strong>et la projection technologique du patron d'identité non humaine</strong> — <em>les justificatifs deviennent des Artifacts, l'émetteur d'identité un Node, le magasin de secrets un System Software.</em></p>
+
+<div class="avert">
+  <p><strong>L'observabilité s'y modélise comme un flux, et c'est le seul point où ce chapitre touche le mouvement <em>exploiter</strong></em> : <em>un collecteur exporte la télémétrie par une relation <strong>Flow</strong></em>. <strong>Ce que ce formalisme ne dit pas</strong> : <em>ce que cette télémétrie <strong>porte</strong></em> — <strong>le ch. 38 § 38.5 établit qu'elle ne porte pas la clé de jointure</strong>, et <em>aucun stéréotype n'y remédie.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>La résidence et la souveraineté se modélisent par des Groupings de zone et des Profiles de juridiction</strong>, <em>ce qui rend visible une contrainte que le ch. 38 § 38.3 a nommée sans la résoudre</em> : <strong>quand des segments de trace transitent par des juridictions différentes, l'unicité de la trace devient une contrainte d'architecture.</strong> ⚠ <strong>Le socle ne documente pas de mécanisme qui la garantirait</strong> : absence de documentation, non fait négatif vérifié (degré 3).</p>
+</div>
+
+<h2 id="s446"><span class="sig">§ 44.6</span>Points de vue transverses</h2>
+
+<p><strong>Quatre points de vue transverses complètent le blueprint</strong>, et <strong>le troisième est un siège</strong>.</p>
+
+<p><strong>Sécurité et risque.</strong> <em>L'overlay normalisé s'applique au parc d'agents <strong>tel quel</strong></em>, ses stéréotypes étant <strong>importés et non redéfinis</strong> (§ 44.1.9). <strong>Chaque risque devient un Assessment, chaque contrôle un Requirement réalisé par un service.</strong></p>
+
+<p><strong>Confiance zéro, identité non humaine et segmentation.</strong> <em>Le point de vue rend visible ce que le ch. 37 § 37.7 a posé</em> : <strong>la vérification est une fonction discrète exécutée avant l'établissement d'une session, et la protection porte sur les ressources et non sur les segments.</strong> ⚠ <strong>Ce que le formalisme apporte est une chose et une seule</strong> : <em>il rend <strong>énumérables</strong> les arêtes que le modèle prévoit de médiatiser</em> — <strong>et le ch. 37 § 37.9 a établi que l'énumération du complément est la question opérante</strong>. ⚠ <strong>Il ne dit pas si le déploiement réel les médiatise toutes.</strong></p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p>⚠ <strong>SIÈGE DE LA CONFORMITÉ TRAÇABLE.</strong> La chaîne se lit <strong>de l'intention au substrat</strong>, et <strong>aucun maillon n'est facultatif</strong> : <em>un <strong>Driver</strong> de conformité <strong>influence</strong> un <strong>Assessment</strong> de risque, qui justifie un <strong>Requirement</strong> — souvent une Specialization stéréotypée <code>&lt;&lt;regulatory-requirement&gt;&gt;</code> — ; ce Requirement est <strong>réalisé</strong> par un <strong>Course of Action</strong> ou une <strong>Application Function</strong>, lesquels sont à leur tour réalisés ou assignés à un <strong>Application Component</strong> ou un <strong>Technology Service</strong> concret.</em> ⚠ <strong>Le critère d'auditabilité du blueprint est qu'aucun Requirement réglementaire ne demeure orphelin</strong> — <em>c'est-à-dire dépourvu d'un élément exécutable qui le réalise effectivement.</em></p>
+</div>
+
+<p><strong>Sur cette chaîne se construit la matrice d'auditabilité</strong>, qui croise <strong>le Requirement réglementaire</strong>, <strong>le contrôle</strong>, <strong>le domaine de capacité concerné</strong> et <strong>l'élément qui porte la responsabilité</strong>. ⚠ <strong>Elle ne se re-dérive pas à partir de rien</strong> : <em>elle s'ancre sur la matrice du ch. 42, que le blueprint <strong>relie au modèle</strong> plutôt qu'il ne la reformule.</em></p>
+
+<div class="avert">
+  <p><strong>L'orientation canadienne donne à cette chaîne des points d'ancrage datés, et la modalité de chacun se porte.</strong> <em>L'article 12.1 <strong>impose</strong> la traçabilité des décisions automatisées ; la ligne directrice E-23 <strong>attend</strong> une gestion du risque de modèle qui s'étend aux méthodes d'IA et d'apprentissage automatique, <strong>jamais « exige »</strong></em> (réserve F-09 du Vol. II ; siège <strong>ch. 25</strong>). ⚠ <strong>Chacun devient dans le modèle un <code>&lt;&lt;regulatory-requirement&gt;&gt;</code> dont la chaîne descendante doit aboutir à un élément exécutable</strong> — <em>et c'est le seul endroit où ce chapitre touche au fond réglementaire, parce que c'est le seul où la structure en dépend.</em></p>
+</div>
+
+<p><strong>Audit et observabilité, avec ségrégation des tâches.</strong> <em>Le journal d'audit est un <strong>Data Object en mode ajout seul</strong>, propriété portée par un <strong>Profile</strong> plutôt que par un élément dédié.</em> <strong>Toute action sensible se rend par une Function dotée d'un Access en écriture vers ce Data Object, complété d'un Triggering vers le service de journalisation</strong> — ⚠ <strong>de sorte que l'écriture de la trace soit structurellement liée à l'exécution de l'action, et non optionnelle</strong>.</p>
+
+<div class="avert">
+  <p><strong>Un dernier critère distingue deux finalités qu'on confond souvent, et il est structurel</strong> : <em>l'observabilité d'exploitation et l'audit réglementaire <strong>exploitent la même télémétrie</strong> mais <strong>obéissent à des contraintes distinctes de rétention et de résidence</strong>.</em> <strong>Le blueprint les sépare en deux Data Objects, voire deux Groupings</strong> — ⚠ <strong><em>un journal d'exploitation purgé après quelques semaines ne saurait tenir lieu de piste d'audit conservée des années.</strong></em> <em>C'est la même distinction que le ch. 38 § 38.4 pose en régime de production ; ici, elle devient une séparation d'objets.</em></p>
+</div>
+
+<h2 id="s447"><span class="sig">§ 44.7</span>Gouvernance des vues et organisation du blueprint</h2>
+
+<p><strong>Une vue est une représentation d'un sous-ensemble du modèle ; un point de vue en est le gabarit</strong>, qui nomme <strong>les parties prenantes visées, leurs préoccupations et les éléments admis</strong>. ⚠ <strong>Deux dimensions le caractérisent</strong> : <em>sa <strong>finalité</strong> — concevoir, décider, informer — et son <strong>niveau d'abstraction</strong> — détail, cohérence, vue d'ensemble.</em></p>
+
+<div class="avert">
+  <p><strong>La gouvernance des vues est ce qui distingue un blueprint d'un jeu de diagrammes</strong>, et le Vol. I en tire une règle : <em>états <strong>actuel</strong> et <strong>cible</strong> distingués, versionnement, et <strong>réconciliation périodique du référentiel avec le parc réel</strong>.</em> <strong>L'anti-patron correspondant est nommé au § 44.8 : l'inventaire fantôme — un modèle d'intention déconnecté du parc.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>Et c'est ici que le ch. 41 § 41.3 rejoint ce chapitre par l'autre bout</strong> : <em>le <strong>catalogue interne</strong> y est proposé comme le lieu où l'organisation sait ce qu'elle produit et exploite</em>, et <strong>la réconciliation dont il est question ici en serait le pendant côté modèle</strong>. ⚠ <strong>Ni l'un ni l'autre n'est porté par une source</strong> : <em>le catalogue est une construction d'auteur de matière neuve, la réconciliation une thèse en [C] — les rapprocher est une lecture, et elle est marquée.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Une réserve d'outillage, datée et attribuée</strong> : <em>à la mi-2026, deux ateliers nommés par le Vol. I prennent en charge la spécialisation et les profils <strong>sur le socle 3.2</strong>, mais <strong>pas encore l'export natif de la version de référence</strong></em> — ⚠ <strong>information rapportée par le Vol. I, en [C], statut et version dits à la mention</strong>. <strong>D'où la règle du chapitre</strong> : <em>écrire en version de référence <strong>avec note d'équivalence 3.2 par patron</strong></em>.</p>
+</div>
+
+<h2 id="s448"><span class="sig">§ 44.8</span>Bibliothèque de patrons et anti-patrons</h2>
+
+<p><strong>Six patrons forment l'ossature opératoire</strong>, chacun renvoyant à son siège au § 44.1 : <em>l'agent gouverné ; le serveur d'outils gouverné ; l'échange agent-agent inter-domaines ; le plan de contrôle ; le couple point d'arrêt humain / double regard ; la double qualification.</em> ⚠ <strong>L'apport propre de la bibliothèque n'est pas la liste, c'est l'instanciation par sous-domaine</strong> : <em>un même patron se décline d'un cas d'usage à l'autre <strong>sans renégocier le triplet de modélisation</strong>.</em></p>
+
+<p><strong>Neuf anti-patrons sont nommés avec leur correction</strong>, et ⚠ <strong>trois valent d'être retenus parce qu'un chapitre aval les commettrait sans s'en apercevoir.</strong></p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Anti-patron</th><th>Ce qu'il produit</th><th>Correction</th></tr></thead>
+  <tbody>
+    <tr><td><strong>L'agent « boîte magique » mono-couche</strong></td><td>un seul élément censé tout porter</td><td><strong>décomposer</strong> en Application Component <code>&lt;&lt;Agent&gt;&gt;</code> + Role + Application Process <code>&lt;&lt;reasoning loop&gt;&gt;</code> — ⚠ <em>faute de quoi <strong>l'imputabilité et la boucle de raisonnement deviennent illisibles</strong></em></td></tr>
+    <tr><td><strong>Le point d'arrêt humain décoratif</strong></td><td>un Role humain placé <strong>hors</strong> de l'étape irréversible</td><td><strong>faire tomber le point d'arrêt exactement sur l'action irréversible, par Assignment</strong> — ⚠ <em>c'est la version structurelle du constat du ch. 40 § 40.4</em></td></tr>
+    <tr><td><strong>L'inventaire fantôme</strong></td><td>un modèle d'intention <strong>déconnecté du parc réel</strong></td><td><strong>réconcilier le référentiel avec l'inventaire d'agents et le catalogue</strong> (§ 44.7) — ⚠ <em>et le ch. 40 § 40.2 a établi qu'<strong>aucune source d'énumération du parc opposable n'est documentée</strong></em></td></tr>
+    <tr><td><strong>L'interaction agent-agent modélisée en Serving</strong></td><td>une offre de service durable là où il n'y a qu'un échange</td><td><strong>réserver Serving à l'agent-spécialiste offert durablement ; rendre l'échange par Flow ou Triggering</strong></td></tr>
+    <tr><td><strong>Le serveur d'outils traité comme un élément inventé</strong></td><td>un dialecte non portable</td><td><strong>composer</strong> Application Component + Application Service + Application Interface, <em>le seul mécanisme d'extension défendable étant Specialization + stéréotype + Profiles</em></td></tr>
+    <tr><td><strong>La capacité réinventée par outil</strong></td><td>une Capability par serveur</td><td><strong>la capacité agentique est l'unité de planification, pas le modèle ni l'outil</strong> (§ 44.3)</td></tr>
+    <tr><td><strong>Le modèle figé</strong>, non versionné</td><td>un livrable de présentation</td><td><strong>gouvernance de vue, états actuel et cible, feuille de route par paliers</strong> (§ 44.7 ; <strong>ch. 43 § 43.5.3</strong>)</td></tr>
+    <tr><td><strong>La confusion langage / méthode / outil</strong></td><td>une méthode prise pour un langage</td><td><strong>tenir la distinction du § 44.0.1</strong></td></tr>
+    <tr><td><strong>Re-expliquer les chapitres amont dans une vue</strong></td><td>de la prose protocolaire ou réglementaire <strong>à la place</strong> d'éléments et de relations</td><td>⚠ <strong>renvoyer</strong>, et porter l'information variable <strong>en carte thermique d'attribut</strong> plutôt qu'en texte — <em>c'est le garde-fou de non-redondance appliqué à la vue</em></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 44.2 — Les neuf anti-patrons et leurs corrections. ⚠ <strong>Le dernier est celui que ce chapitre risque à chaque paragraphe</strong>, <em>puisqu'il suit quarante-trois chapitres au lieu de cinq.</em></p>
+
+<h2 id="s449"><span class="sig">§ 44.9</span>Questions ouvertes : le formalisme face aux systèmes autonomes</h2>
+
+<div class="avert">
+  <p><strong>Trois questions restent ouvertes, et aucune n'est refermée ici.</strong></p>
+</div>
+
+<p><strong>Première — l'adéquation à un système non déterministe.</strong> <em>Le langage décrit des <strong>types</strong> d'éléments et des relations <strong>stables</strong> ; or un système agentique se définit par <strong>un état d'instance qui change à l'exécution</strong> et par <strong>une décision non déterministe</strong> — le même agent, sur la même entrée, peut emprunter des chemins différents.</em> ⚠ <strong>Le métamodèle ne dispose d'aucune construction pour représenter cette variabilité</strong>, et <strong>aucun stéréotype du registre ne la franchit</strong> : <em>elle relève du registre descriptif lui-même, non du vocabulaire d'éléments.</em></p>
+
+<div class="avert">
+  <p><strong>La conséquence méthodologique est une complémentarité obligée, et elle est le legs le plus opérant du chapitre</strong> : <em>le blueprint fixe <strong>l'intention d'architecture et les contrôles structurels</strong> ; l'observabilité et l'inventaire vivant renseignent <strong>l'état effectif</strong>.</em> ⚠ <strong><em>Les deux artefacts ne se substituent pas ; ils se réconcilient</strong></em> — et <strong>le ch. 38 a établi que le second terme de cette complémentarité est précisément celui dont la clé de jointure manque.</strong></p>
+</div>
+
+<p><strong>Deuxième — le modèle vivant.</strong> <em>L'idée d'un jumeau numérique organisationnel suppose <strong>un modèle alimenté et corrigé automatiquement</strong>, plutôt qu'un livrable édité à la main.</em> ⚠ <strong>Le Vol. I rapporte, en [C] et avec ses éditeurs nommés, que des plateformes d'architecture exposent désormais des serveurs d'outils sur leur référentiel</strong> — ⚠ <strong>capacités auto-déclarées par leurs éditeurs, statuts et dates dits à la mention, non vérifiées indépendamment</strong>. <em>Cela ouvre la possibilité que <strong>des agents interrogent et modifient le modèle d'architecture</strong> — c'est-à-dire que <strong>l'objet décrit et l'outil qui le décrit convergent</strong>.</em></p>
+
+<div class="avert">
+  <p><strong>Deux écueils dominent, et le second est structurel.</strong> <em>Un</em> : <strong>la vérification du modèle généré</strong> — <em>un modèle produit par un agent non déterministe <strong>hérite de l'incertitude de son producteur</strong>, et doit être validé, faute de quoi le jumeau dérive.</em> <em>Deux</em> : <strong>la tension de fond avec la nature statique du langage</strong> — <em>un modèle conçu pour décrire des types stables se prête mal à une réécriture continue par des processus dont l'état change en permanence.</em> ⚠ <strong>Et le ch. 41 § 41.5 rencontre exactement la même difficulté sous un autre nom</strong> : <em>une boucle de réémission suppose de restituer l'état antérieur de ce qu'elle corrige.</em></p>
+</div>
+
+<p><strong>Troisième — overlay contre extension formelle.</strong> <em>Le pari du blueprint est qu'un <strong>overlay</strong> de stéréotypes et de profils suffit, <strong>sans inventer d'éléments</strong>.</em> ⚠ <strong>L'argument pour l'overlay est l'économie et la stabilité</strong> : <em>aucune fragmentation du langage, une convention gouvernée plutôt qu'un dialecte.</em> ⚠ <strong>L'argument pour l'extension est la fidélité ontologique</strong> : <em>un stéréotype <strong>ne fait qu'annoter</strong> un élément dont la sémantique sous-jacente reste celle d'un Application Component ou d'un Role — <strong>ce qui n'épuise pas le caractère propre de l'agent</strong>.</em></p>
+
+<div class="avert">
+  <p><strong>Et le fait décisif est un fait de non-événement, à écrire avec sa borne</strong> : <em>la version de référence a <strong>refondu son métamodèle en profondeur sans ajouter aucune prise en charge native de l'IA ou des agents</strong></em> — <strong>l'occasion d'une extension formelle a été disponible et n'a pas été saisie</strong>. ⚠ <strong>Ce constat vient du Vol. I, en [C], et la re-vérification sur le document normatif n'a pas été conduite</strong> (§ 44.0.4) : <em>c'est précisément l'énoncé que le préalable non tenu devait confirmer.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>La question reste ouverte, et le blueprint assume sa réponse — l'overlay — comme un choix daté et révisable, non comme une vérité du langage.</strong></p>
+</div>
+
+<p>## Synthèse : ce que le chapitre lègue à la somme</p>
+
+<p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
+
+<ol class="numeros">
+  <li><strong>Le verrou, posé une fois.</strong> ⚠ <strong>Aucun élément natif</strong> ; <strong>une seule extension défendable</strong> — <em>Specialization + stéréotype + Profiles</em>, sur le modèle d'un overlay normalisé. Le <strong>ch. 45</strong> et l'<strong>Annexe H</strong> l'appliquent <strong>sans le redécider</strong>.</li>
+  <li>⚠ <strong>Le registre des stéréotypes, publié sous réserve.</strong> ☐ <em>Le préalable que le plan lui assigne — la re-vérification sur le document normatif — <strong>n'a pas été tenu</strong></em>, et <strong>le registre est reproduit en [C], non comme registre conforme</strong>. <em>Le ch. 45 en dépend, et il en dépend sous la même réserve.</em></li>
+  <li><strong>Les six patrons et les neuf anti-patrons.</strong> ⚠ <em>Le neuvième anti-patron est le garde-fou du chapitre lui-même</em> : <strong>retirer le mot du langage ; si la phrase tient comme un exposé des chapitres amont, c'est une redondance.</strong></li>
+  <li>⚠ <strong>SIÈGE : la conformité traçable.</strong> <em>Driver → Assessment → Requirement → réalisation → élément exécutable</em>, <strong>aucun maillon facultatif</strong>, ⚠ <strong>et le critère d'auditabilité est qu'aucun Requirement réglementaire ne demeure orphelin</strong>. Le <strong>ch. 45 § 45.4</strong> l'instancie sur un portefeuille réel ; le <strong>ch. 46</strong> l'instrumente.</li>
+  <li><strong>La séparation structurelle de l'observabilité et de l'audit.</strong> <em>Deux Data Objects, deux régimes de rétention</em> — ⚠ <strong>un journal d'exploitation purgé ne tient pas lieu de piste d'audit</strong>. Le <strong>ch. 38 § 38.4</strong> le pose en régime de production ; <strong>ici, il devient une séparation d'objets</strong>.</li>
+  <li><strong>La complémentarité obligée du modèle et du parc.</strong> ⚠ <strong><em>Le modèle fixe l'intention ; l'observabilité renseigne l'état ; les deux ne se substituent pas.</strong></em> <em>C'est le legs le plus opérant du chapitre, et le ch. 38 en a établi la faiblesse — la clé de jointure manque.</em></li>
+</ol>
+
+<div class="avert">
+  <p><strong>Ce que le chapitre ne lègue pas.</strong> Aucun <strong>fait</strong> : <em>tout y est en [C]</em>. Aucune <strong>conformité à la version de référence</strong> : <em>le préalable n'a pas été tenu</em>. Aucun <strong>contenu réglementaire, protocolaire ou d'exploitation</strong> : <em>il ne les traduit que structurellement, et le neuvième anti-patron est la règle qui l'y contraint</em>. Et aucune <strong>représentation de l'exécution</strong> : <em>le langage décrit des types ; le non-déterminisme, l'état d'instance et la découverte dynamique lui échappent, et <strong>aucun stéréotype ne les rattrape</strong>.</em></p>
+</div>
+
+<section class="statut" id="s4410">
+
+<h2><span class="sig">§ 44.10</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A).</p>
+</div>
+
+<p><strong>Ce qui est enfreint.</strong> Portes <strong>G-3</strong>, <strong>G-4</strong> et <strong>G-5</strong> ; <strong>volet résiduel de G-1</strong> ; <strong>ordre de rédaction du PRD §6</strong> ; ⚠ <strong>et le préalable propre à ce chapitre — la re-vérification du mécanisme d'extension sur le document normatif de référence —, que le TOC déclare <em>préalable au registre des stéréotypes, non note de transition</em>, et que le PRD §12 nomme au jalon J-IV-5.</strong> Instruction d'auteur du <strong>27 juillet 2026</strong>.</p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01, et ici la raison est double</strong> : <em>le socle consolidé compte zéro entrée</em>, <strong>et la source unique de ce chapitre entre en [C]</strong> — sa vérification portant sur ses références et non sur le contenu de ses affirmations. ⚠ <strong>Ce chapitre est le seul du Livre dont la totalité du corps est en [C]</strong>, hors une réserve de modalité empruntée au Vol. II au § 44.6.</li>
+  <li><strong>Les décomptes sont publiables</strong> (G-2) ; le réel est reporté au <a class="lien" href="README.md"> 0 </a>.</li>
+  <li><strong>Les renvois « ch. N » vers les Livres III à V sont des renvois de plan.</strong> Ne sont pas rédigés : <strong>ch. 25</strong>, <strong>ch. 45</strong>, et l'<strong>Annexe H</strong>. Les renvois vers les <strong>ch. 5, 7, 8, 12, 14, 16, 17, 19</strong> résolvent contre du texte ; ceux vers les <strong>ch. 37, 38, 40, 41, 42, 43, 46</strong> résolvent contre du texte au terme de la présente passe.</li>
+  <li><strong>Le registre des stéréotypes est publié sous réserve explicite</strong>, et <em>aucune conformité à la version de référence n'est attestée</em> — ⚠ <strong>CA-IV-14 : « conforme » s'écrit depuis une constatation sur pièce, jamais depuis un document amont.</strong></li>
+  <li><strong>CA-IV-13 n'est pas satisfaite</strong> — aucune relecture par un relecteur distinct du rédacteur.</li>
+</ol>
+
+<p><strong>Remontées ouvertes par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-60 — non bloquante, de numérotation, ET ELLE PORTE SUR LE PLAN LUI-MÊME.</strong> La table détaillée du ch. 44 numérote <strong>les neuf sous-sections du § 44.1 en « 43.1.1 » à « 43.1.9 »</strong>, ⚠ <strong>soit dans la numérotation d'un autre chapitre</strong> ; et sa <strong>table de couverture</strong> dirige la ligne du Vol. III <em>Monographie</em> §27.2 vers <strong>« § 43 (transverse) »</strong>, ⚠ <strong>alors que le corps de l'entrée du ch. 44 écrit que ce §27.2 est </strong>consolidé ici<strong>, dans le formalisme.</strong> <strong>Demande remontée</strong> : réalignement des dix formes sur la numérotation courante (décision 8). ⚠ <strong>C'est très exactement la classe de défaut que le <code>CLAUDE.md</code> du dossier consigne pour trois passes de structure consécutives</strong> — <em>un remappage qui ne voit qu'une borne, et qu'aucun des quinze contrôles ne signale</em> : <code>check-toc.py</code> porte sur des motifs de ligne et <strong>ne connaît pas les tables détaillées</strong>. <em>La pièce écrit ses sous-sections en 44.1.x et remonte l'écart ; elle ne corrige pas le plan.</em></li>
+  <li><strong>R-IV-61 — BLOQUANTE pour la publication du § 44.1.9 et, par dépendance, du ch. 45.</strong> Le plan déclare la <strong>re-vérification du mécanisme Specialization + stéréotype + Profiles tel que le document normatif de référence le porte</strong> comme <strong>préalable au registre des stéréotypes, non note de transition</strong>. ☐ <strong>Elle n'a pas été conduite.</strong> ⚠ <strong>Trois raisons rendent l'omission coûteuse plutôt que formelle</strong> : <em>(a)</em> la refonte du métamodèle <strong>retire environ un tiers des éléments et remplace les couches par des domaines</strong> — c'est la plus profonde depuis la création du langage ; <em>(b)</em> <strong>trois entrées du registre sont des substitutions d'éléments retirés</strong>, dont le Vol. I déclare lui-même que <strong>le devenir de l'une reste à confirmer</strong> ; <em>(c)</em> ⚠ <strong>le ch. 45 et l'Annexe H dépendent de ce registre</strong>, et <em>un point d'appui aval publié sous réserve propage sa réserve</em>. <strong>Demande remontée</strong> : <strong>inscription de cette re-vérification au volet résiduel de G-1</strong>, avec <strong>domaine déclaré</strong> — la liste des éléments retirés ou renommés, le mécanisme d'extension, et l'état du support d'outillage. ⚠ <em>Le PRD la nomme déjà à J-IV-5 ; ce qui manque n'est pas la mention, c'est l'exécution.</em></li>
+  <li><strong>R-IV-62 — non bloquante, de régime, et elle porte sur une classe.</strong> <strong>La totalité du corps de ce chapitre est en [C]</strong> — le Vol. I étant sa source unique —, ⚠ <strong>et cela inclut des énoncés que la somme traite ailleurs comme structurants</strong> : <em>la limite du non-déterminisme, l'écart entre intention et exercice du contrôle humain, la complémentarité obligée du modèle et de l'observabilité.</em> <strong>Ces trois énoncés sont repris par les ch. 40, 41 et 45</strong>, et <em>aucun ne peut y devenir central tant qu'il reste en [C]</em>. <strong>Demande remontée</strong> : que <strong>G-3 déclare la voie d'élévation</strong> pour ce chapitre — <em>lecture des sources primaires que le Vol. I cite, avec la borne du PRD §7.1 : <strong>une entrée sans source primaire tierce reste une thèse attribuée et ne porte jamais un fait central</strong></em>. ⚠ <em>Une chaîne de dépendances dont le premier maillon est en [C] ne s'élève pas par ses maillons aval.</em></li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.25</strong> — § 44.0 à § 44.9, dans l'ordre exact —, et <strong>le contrat de lecture de la source est refondu en apparat</strong>, comme la table le prescrit. La <strong>table de couverture est respectée pour ses sept lignes</strong>, y compris ses <strong>deux prélèvements déclarés</strong> : <strong>§6.8 part au ch. 45</strong> (exemple de bout en bout) et <strong>§6.10 part au ch. 43</strong> (maturité par plateaux) — ⚠ <em>ni l'un ni l'autre n'est repris ici</em>, et <strong>le §6.0.1 est refondu en apparat</strong>. Le <strong>garde-fou de non-redondance est tenu de bout en bout</strong> : <em>aucune phrase de ce chapitre ne tient comme exposé des chapitres amont si l'on retire le mot du langage</em>, et <strong>les renvois remplacent partout la reprise</strong>. Les <strong>notes d'équivalence 3.2 sont portées aux deux patrons qui les exigent</strong> — <em>ceux qui mobilisent l'élément retiré</em> —, et <strong>non aux patrons bâtis sur des éléments inchangés</strong>. Les <strong>huit occurrences de degré 3</strong> portent leur degré. Les <strong>deux capacités auto-déclarées</strong> sont attribuées à leur éditeur nommé, avec statut et date. <strong>Aucun siège neuf n'est posé</strong> ; <strong>le siège de la conformité traçable est repris de la source à son emplacement</strong> (§ 44.6), et les sièges touchés — l'encadré du <strong>ch. 7 § 7.5</strong>, le passeport au <strong>ch. 16</strong>, les trois échelles au <strong>ch. 43 § 43.5</strong> — portent leur renvoi.</p>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre IV, chapitre 44. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.25, entrée du chapitre 44, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>

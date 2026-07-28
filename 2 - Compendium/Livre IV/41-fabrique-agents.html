@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 41 — La fabrique d&#x27;agents : produire, certifier et réémettre le parc · La somme agentique</title>
+<meta name="description" content="le maillage admet des agents (ch. 37) et l&#x27;AgentOps mesure leur comportement (ch. 38-40), mais ni l&#x27;un ni l&#x27;autre ne dit d&#x27;où vient l&#x27;agent admis ni par quel geste il est réémis quand la mesure le condamne ; la fabrique d&#x27;agents — gabarits gouvernés, catalogue interne, barrière de certification, réé">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre IV · Chapitre 41</div>
+  <ol>
+    <li><a href="#s410"><span class="num">41.0</span>Ouverture : pourquoi ce chapitre existe, et à quelles conditions il devrait survivre</a></li>
+    <li><a href="#s411"><span class="num">41.1</span>Ce que « fabrique » désigne ici, et les trois emplois dont il faut la séparer</a></li>
+    <li><a href="#s412"><span class="num">41.2</span>Le gabarit d&#x27;agent gouverné : ce qui se décide une fois pour tout le parc</a></li>
+    <li><a href="#s413"><span class="num">41.3</span>Le catalogue interne et le registre gouverné : deux objets, deux autorités</a></li>
+    <li><a href="#s414"><span class="num">41.4</span>La barrière de certification : ce qu&#x27;un agent démontre avant d&#x27;être admis au maillage</a></li>
+    <li><a href="#s415"><span class="num">41.5</span>La boucle de réémission : de l&#x27;indicateur et de la dérive au gabarit corrigé</a></li>
+    <li><a href="#s416"><span class="num">41.6</span>La fabrique comme point de concentration : ce qu&#x27;elle centralise, ce qu&#x27;elle fragilise</a></li>
+    <li><a href="#s417"><span class="num">41.7</span>L&#x27;organisation de la fabrique : qui opère quoi</a></li>
+    <li><a href="#s418"><span class="num">41.8</span>Ce que la fabrique ne fait pas : la couche d&#x27;exécution reste hors périmètre</a></li>
+    <li><a href="#s419"><span class="num">41.9</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.25 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="41-fabrique-agents.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale</div>
+  <h1><span class="chap">Chapitre 41</span>La fabrique d&#x27;agents : produire, certifier et réémettre le parc</h1>
+  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Troisième mouvement — produire (ch. 41). Chapitre unique du mouvement, <strong>et seul chapitre de matière neuve de ce Livre</strong></p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable — et sous le régime le plus dur du compendium.</strong> Rédigé sur instruction d'auteur du 27 juillet 2026, <strong>avant</strong> les portes <strong>G-3</strong>, <strong>G-4</strong>, <strong>G-5</strong> <strong>et G-6</strong> — cette dernière conditionnant nommément le sort de ce chapitre —, <strong>avant</strong> la décision d'auteur <strong>D-8</strong> qui doit trancher entre <em>constitution d'un socle propre depuis des sources primaires</em> et <em>retrait du chapitre</em>, et <strong>hors de l'ordre de rédaction du PRD §6</strong>, qui le place <strong>après</strong> les ch. 42-46 dont il consomme les renvois. ⚠ <strong>Le régime de preuve applicable est celui de la matière neuve</strong> (PRD §7.2) : <strong>vote adversarial sur TOUTES les affirmations centrales</strong>, <strong>sources primaires seules</strong>, et <strong>l'échec documenté est un résultat</strong>. <strong>Aucune de ces conditions n'est remplie</strong>, et le <strong>risque 16 du TOC</strong> est ouvert avec son issue de retrait</dd>
+    <dt>Date de gel</dt>
+    <dd><strong>27 juillet 2026</strong> — gel unique, <strong>D-1 prise</strong> (<a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Ce chapitre n'a aucun fait périssable à re-dater, et ce n'est pas une bonne nouvelle</strong> : il n'en a aucun parce qu'<strong>il ne porte aucun fait</strong>. Le <strong>seul relevé daté</strong> qu'il mobilise est un <strong>fait de dépôt</strong> constaté sur pièce le 27 juillet 2026 (§ 41.1), qui <strong>n'entre pas au socle</strong></dd>
+    <dt>Socle mobilisé</dt>
+    <dd>⚠ <strong>Aucun. Ni entrée du socle consolidé (G-3 ouverte), ni entrée F-xx d'un volume source, ni garde-fou hérité assigné par le plan.</strong> C'est le fait le plus important de cet en-tête, et il est <strong>exactement conforme à ce que le TOC déclare</strong> : « aucun volume source, aucune entrée F-xx, aucun garde-fou hérité » (risque 16). Les seuls appuis sont <strong>internes</strong> — <strong>ch. 15</strong>, <strong>ch. 16</strong>, <strong>ch. 37</strong>, <strong>ch. 38-40</strong>, <strong>ch. 43</strong>, <strong>ch. 45</strong>, <strong>ch. 47</strong> —, et ⚠ <strong>un adossement interne est un renvoi, jamais une source</strong>. <strong>Tout énoncé de ce chapitre est au mieux un repérage [C] à instruire</strong> ; <strong>aucun n'est central au sens de CA-IV-01</strong>, et <em>aucun ne peut le devenir sans une passe d'instruction que ce chapitre n'a pas eue.</em></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd><strong>Les deux séries, intégralement, et le résultat du balayage est lui-même un fait de méthode.</strong> ⚠ <strong>Le plan n'assigne à ce chapitre aucun garde-fou hérité</strong> ; ceux qui suivent sont <strong>balayés par prudence et non par assignation</strong>. Vol. III — <strong>R-14 (trois degrés d'absence) : dix occurrences</strong>, § 41.2 (deux), § 41.3, § 41.4 (deux), § 41.5 (deux), § 41.6, § 41.7, § 41.8 ; <strong>R-02 : deux occurrences</strong>, § 41.4 — <em>une barrière se qualifie par ce qu'elle démontre</em> ; <strong>R-01 : deux occurrences</strong>, § 41.3 et § 41.4. <strong>R-03 à R-13 : zéro occurrence</strong> — aucune qualification cryptographique, aucun emploi d'« AgentMesh », de « control plane » ni d'échelle d'autonomie. Vol. II — <strong>R-1 à R-8 : zéro occurrence</strong> ; <strong>métriques auto-déclarées : zéro occurrence</strong> — <em>ce chapitre ne cite aucun chiffre d'éditeur, parce qu'il n'en a aucun à citer.</em> ⚠ <strong>Un garde-fou PROPRE est ouvert par le plan et il est tenu de bout en bout</strong> : la <strong>désambiguïsation d'« agent factory »</strong> (décision 12c du TOC), <strong>posée au § 41.1</strong> — <em>quatre emplois, dont deux vivent dans le plan lui-même</em></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ <strong>5 000 mots</strong> de corps (§ 41.0 à la synthèse), <strong>cible dérivée</strong> de l'enveloppe du Livre (<strong>69 000 mots</strong>, TOC v0.25) au prorata des huit sections, ⚠ <strong>minorée parce qu'un chapitre sans source ne développe pas</strong> : <em>l'ampleur serait ici l'indice du défaut, non celui du travail.</em> ☑ <strong>Décompte publiable depuis G-2</strong> ; <strong>réel reporté au <a class="lien" href="README.md"> 0 </a></strong>. ⚠ <strong>D-4 s'applique</strong>, et son interdiction de gonflement porte ici plus qu'ailleurs</dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>le maillage <strong>admet</strong> des agents (ch. 37) et l'AgentOps <strong>mesure</strong> leur comportement (ch. 38-40), mais ni l'un ni l'autre ne dit <strong>d'où vient</strong> l'agent admis ni <strong>par quel geste</strong> il est réémis quand la mesure le condamne ; la fabrique d'agents — gabarits gouvernés, catalogue interne, barrière de certification, réémission pilotée par la mesure — est le plan de production qui referme cette boucle, et sans elle « appliquer » et « exploiter » décrivent un parc que <strong>personne n'a la responsabilité de produire</strong>.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.25, entrée du chapitre 41.</span>
+</div>
+
+<h2 id="s410"><span class="sig">§ 41.0</span>Ouverture : pourquoi ce chapitre existe, et à quelles conditions il devrait survivre</h2>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>marquage porté à l'ouverture et régissant le chapitre entier</strong> (CA-IV-07, qui l'impose nommément aux chapitres de matière neuve). <strong>Ce que le socle établit</strong> : <strong>rien</strong>. Le socle consolidé compte zéro entrée, aucun volume source ne porte cette matière, et <strong>le seul relevé daté du chapitre est un fait de dépôt</strong> (§ 41.1). <strong>Ce qu'il n'établit pas</strong> : <strong>la totalité de ce qui suit</strong> — l'existence d'un objet nommé « fabrique d'agents » dans une organisation quelconque, la pertinence du découpage en huit sections, et jusqu'à la nécessité du chapitre.</p>
+
+<p><strong>Le motif de son insertion est un constat de couverture, et il est vérifiable.</strong> La somme décrit le maillage qui <strong>admet</strong> les agents (ch. 37) et l'exploitation qui <strong>mesure</strong> leur comportement (ch. 38-40) ; elle décrit l'architecture qui les <strong>compose</strong> (ch. 43) et le blueprint qui les <strong>instancie</strong> (ch. 45). ⚠ <strong>Elle ne nommait nulle part le plan qui les <em>produit</strong></em> — constat établi par balayage de la zone des chapitres du plan, <strong>zéro occurrence</strong>, et c'est ce constat, non un fait du domaine, qui a motivé l'insertion (décision 12 du TOC, sur instruction d'auteur du 27 juillet 2026).</p>
+
+<div class="avert">
+  <p><strong>Un constat de couverture d'un plan n'est pas un fait sur le monde</strong>, et la nuance est la seule chose que ce chapitre puisse affirmer sans réserve : <em>le plan ne traitait pas la production ; il ne s'ensuit pas que la production soit un objet constitué, ni qu'elle mérite un chapitre.</em> <strong>C'est exactement ce que D-8 doit trancher.</strong></p>
+</div>
+
+<p><strong>Les huit sections se lisent donc comme huit questions instruisibles</strong>, chacune assortie de ce qu'il faudrait ouvrir pour la clore. Ce qui <strong>ne s'y trouve pas</strong> est aussi déclaré : <strong>aucune recette d'organisation</strong>, <strong>aucun modèle de maturité</strong> (siège <strong>ch. 43 § 43.5</strong>), <strong>aucun outil nommé</strong>, <strong>aucun chiffre</strong>.</p>
+
+<h2 id="s411"><span class="sig">§ 41.1</span>Ce que « fabrique » désigne ici, et les trois emplois dont il faut la séparer</h2>
+
+<div class="avert">
+  <p><strong>Le chapitre s'ouvre sur ce tri plutôt que de le renvoyer au glossaire, et le motif est celui qui a déjà coûté une passe au corpus.</strong> C'est le geste que la branche (f) du garde-fou d'homonymie du Vol. III impose déjà à « AgentMesh » (ch. 37 § 37.0), et <strong>la cause est identique</strong> : <em>deux sens incompatibles à quelques lignes d'écart.</em> ⚠ <strong>Deux des quatre emplois vivent déjà dans le plan de cette somme et se confondraient à l'œil.</strong></p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Emploi</th><th>Objet</th><th>Ce qu'il désigne</th><th>Où il vit</th></tr></thead>
+  <tbody>
+    <tr><td><strong>F1</strong></td><td><strong>Fabrique d'agents</strong> (<em>agent factory</em>)</td><td>le <strong>plan de production d'un parc</strong> : gabarits gouvernés, catalogue interne, barrière de certification, réémission pilotée par la mesure</td><td><strong>ce chapitre</strong> — construction d'auteur</td></tr>
+    <tr><td><strong>F2</strong></td><td><strong>Fabrique d'identité</strong> — et <strong>fabrique de confiance</strong></td><td>l'<strong>étage qui émet l'identité</strong>, non celui qui produit l'agent</td><td><strong>ch. 43 § 43.1</strong>, qui en est le siège</td></tr>
+    <tr><td><strong>F3</strong></td><td><strong>Titre d'éditeur</strong></td><td>un <strong>nom de publication</strong>, jamais un terme d'architecture</td><td>bibliographie du <strong>Vol. I</strong>, ch. 7</td></tr>
+    <tr><td><strong>F4</strong></td><td><strong>Patron <em>factory</strong></em> du catalogue de patrons de conception</td><td>un patron qui <strong>instancie un objet à l'exécution</strong> — aucun rapport avec un plan de production organisationnel</td><td><strong>Annexe G</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 41.1 — Les quatre emplois du mot « fabrique » dans la somme, et le lieu de chacun. ⚠ <strong>Aucun chapitre n'emploie le terme sans que le sens visé soit déterminable de sa phrase</strong> (décision 12c du TOC) ; le glossaire (Annexe E) porte les quatre.</p>
+
+<div class="avert">
+  <p><strong>L'emploi (c) est le seul relevé daté de tout ce chapitre, et sa borne est plus étroite que celle que le plan lui donne.</strong> <strong>Constat sur pièce, 27 juillet 2026</strong> : la bibliographie du <strong>Vol. I</strong> porte, sous un éditeur nommé, <strong>une publication dont le titre contient l'expression</strong>, datée du <strong>24 septembre 2025</strong> — l'entrée regroupe par ailleurs un second document, <strong>dont le titre ne porte pas l'expression</strong>, et <strong>porte le marqueur de ressource vivante</strong>. ⚠ <strong>Le plan écrit « la série <em>Agent Factory</em> » ; ce que la pièce constate est <em>un titre</em>, non une série</strong> — <em>le socle ne documente pas l'existence d'une série sous ce nom : absence de documentation, non fait négatif vérifié</em> (degré 3). ⚠ <strong>Et ce que ce fait de dépôt atteste s'arrête là où il commence</strong> : <strong>l'emploi du terme par un éditeur, à une date</strong>, rien de plus. <strong>Il n'entre pas au socle</strong>, il <strong>ne caractérise pas l'objet</strong>, et <strong>aucun énoncé de ce chapitre ne s'y adosse</strong>.</p>
+</div>
+
+<div class="avert">
+  <p><strong>La distinction (a)/(b) est celle dont la confusion coûterait le plus cher, et elle mérite d'être dite en une phrase</strong> : <em>la fabrique d'identité <strong>émet</strong> ; la fabrique d'agents <strong>produit</strong> ; les deux sont des étages distincts de la même architecture, et le mot ne les désigne jamais indistinctement.</em></p>
+</div>
+
+<h2 id="s412"><span class="sig">§ 41.2</span>Le gabarit d'agent gouverné : ce qui se décide une fois pour tout le parc</h2>
+
+<p><em>Construction d'auteur ; sources primaires à constituer.</em></p>
+
+<p><strong>La proposition est la suivante</strong> : un <strong>gabarit d'agent gouverné</strong> est l'artefact par lequel une organisation <strong>décide une fois, pour une classe d'agents, ce qu'elle refuserait de décider à chaque agent</strong>. Ce qu'il fixerait — <strong>bornes de finalité</strong>, <strong>outils admis</strong>, <strong>politique d'approbation</strong>, <strong>exigences de trace</strong> — et ce qu'il laisserait à l'agent sont deux listes ; <strong>ni l'une ni l'autre n'est portée par une source.</strong></p>
+
+<div class="avert">
+  <p><strong>Un gabarit n'est pas un cadriciel</strong>, et la distinction n'est pas verbale : les <strong>cadriciels de composition</strong> — ce qui exécute une orchestration — sont au <strong>ch. 23</strong>, <strong>et ce chapitre ne les reconstruit pas</strong>. <em>Un gabarit décrit ce qu'un agent a le droit d'être ; un cadriciel décrit comment il tourne.</em></p>
+</div>
+
+<p><strong>Le seul argument que ce chapitre puisse opposer à un lecteur sceptique vient d'un autre chapitre, et il est cité comme tel.</strong> Le <strong>ch. 39 § 39.2</strong> établit — <em>dans les bornes de son propre socle</em> — que <strong>des trois dérives documentées, celle que les cadres réglementaires nomment est celle que le seul relevé d'instrumentation versé n'instrumente pas</strong>, et il en tire une <strong>obligation de conception</strong> : <em>ce qui n'est pas instrumenté doit être borné à l'émission.</em> ⚠ <strong>Un gabarit est un candidat au lieu de ce bornage</strong> ; <strong>qu'il en soit le bon lieu n'est établi par rien.</strong></p>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p><strong>Ce qu'il faudrait ouvrir pour clore la question.</strong> <strong>Corpus</strong> : les référentiels d'ingénierie logicielle traitant du gabarit d'application gouverné (<em>golden path</em>, <em>paved road</em>) et leur transposition documentée à un parc d'agents ; les schémas de profil d'agent déjà relevés par le Livre II, <strong>au titre de ce qu'ils rendent obligatoire à la déclaration</strong> ; toute publication d'organisation décrivant un gabarit d'agent en production. <strong>Critère de clôture</strong> : qu'au moins un corpus primaire décrive un artefact fixant, pour une classe d'agents, les quatre catégories ci-dessus — ou que son absence soit <strong>établie par balayage</strong> plutôt que présumée. ⚠ <strong>Une instruction infructueuse est un résultat</strong> : elle rendrait la section retirable, ce que D-8 prévoit.</p>
+</div>
+
+<h2 id="s413"><span class="sig">§ 41.3</span>Le catalogue interne et le registre gouverné : deux objets, deux autorités</h2>
+
+<p><em>Adossement au <strong>ch. 15</strong> (registres gouvernés, carte d'agent signée) et au <strong>ch. 16</strong> (passeport), <strong>sans les reconstruire</strong>. Construction d'auteur, marquée telle.</em></p>
+
+<div class="avert">
+  <p><strong>La distinction à tenir, sous peine de doublon d'autorité, est celle-ci</strong> : le <strong>registre gouverné</strong> est le lieu où une identité devient <strong>opposable à des tiers</strong> ; le <strong>catalogue interne</strong> est le lieu où l'organisation sait <strong>ce qu'elle produit et exploite</strong>. ⚠ <strong>Confondre les deux redonnerait au catalogue une valeur probante qu'aucune spécification relevée ne lui reconnaît</strong> — et <em>le ch. 15 a établi, dans ses propres bornes, que même le registre gouverné n'a pas cette valeur au régime où le corpus le documente.</em></p>
+</div>
+
+<p><strong>Deux propriétés distinguent les deux objets, et elles sont proposées, non relevées.</strong></p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th></th><th>Registre gouverné (<strong>ch. 15</strong>)</th><th>Catalogue interne (<em>ce chapitre</em>)</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Ce qu'il rend possible</strong></td><td>qu'un tiers <strong>vérifie</strong> une identité qu'il n'a pas émise</td><td>que l'organisation <strong>énumère</strong> ce qu'elle a produit</td></tr>
+    <tr><td><strong>À qui il est opposable</strong></td><td>à des tiers, dans les limites que le Livre II a bornées</td><td><strong>à personne</strong> — <em>c'est un instrument de gestion, non de preuve</em></td></tr>
+    <tr><td><strong>Ce qu'il porte de plus</strong></td><td>l'ancrage, dont le Livre II établit qu'il est le verrou</td><td>le <strong>gabarit d'origine</strong> de chaque agent, et son état de certification</td></tr>
+    <tr><td><strong>Ce qui le peuple</strong></td><td>l'émission</td><td>la <strong>fabrique</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 41.2 — Registre gouverné et catalogue interne : deux objets, deux autorités. ⚠ <strong>Construction d'auteur en totalité</strong> — <em>aucune ligne de ce tableau n'est portée par une entrée de socle.</em></p>
+
+<div class="avert">
+  <p><strong>Une seule chose relie ce tableau à un constat établi ailleurs, et elle vient du ch. 40 § 40.2</strong> : la grille minimale y demande un <strong>dénominateur</strong> — <em>une source d'énumération du parc</em> — et déclare que <strong>le socle n'en documente aucune qui soit opposable à l'inventaire attendu</strong> (degré 3). <strong>Le catalogue interne est un candidat à ce dénominateur</strong> ; ⚠ <strong>qu'il le fournisse effectivement n'est établi par rien</strong>, et <em>un candidat proposé à l'endroit exact où une lacune est déclarée est précisément l'énoncé qu'aucune relecture ne peut réfuter.</em></p>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p><strong>Ce qu'il faudrait ouvrir.</strong> <strong>Corpus</strong> : les spécifications de registre déjà relevées par le Livre II, <strong>relues au titre de ce qu'elles disent d'un usage interne</strong> ; les publications décrivant un inventaire d'actifs applicatifs gouverné et son articulation à un annuaire d'identités. <strong>Critère de clôture</strong> : qu'un corpus primaire distingue explicitement les deux autorités, ou qu'aucun ne les distingue — <em>l'un et l'autre résultat sont exploitables.</em></p>
+</div>
+
+<h2 id="s414"><span class="sig">§ 41.4</span>La barrière de certification : ce qu'un agent démontre avant d'être admis au maillage</h2>
+
+<p><em>Adossement au <strong>ch. 37 § 37.5</strong> (le maillage comme point d'application) et au <strong>ch. 47 § 47.9</strong> (barrière d'évaluation au déploiement).</em></p>
+
+<div class="avert">
+  <p><strong>Le grain diffère des deux, et il se déclare.</strong> Le <strong>ch. 47</strong> traite la barrière au grain de <strong>l'artefact et de sa mise en service</strong> ; ce chapitre au grain du <strong>parc et de son admission</strong>. <em>Un artefact franchit une barrière une fois ; un parc en franchit une à chaque agent, et la question devient celle du débit autant que celle du critère.</em> ⚠ <strong>Le ch. 47 n'est pas rédigé</strong> : le renvoi est un <strong>renvoi de plan</strong>.</p>
+</div>
+
+<p><strong>La proposition est étroite</strong> : <em>le maillage vérifie l'agent qui se présente ; il ne dit rien de ce qui l'a produit.</em> Le <strong>ch. 37 § 37.5</strong> l'établit dans ses propres bornes — le point d'application <strong>évalue une politique</strong>, il <strong>n'émet, ne vérifie ni ne révoque un identifiant</strong>. <strong>La barrière de certification serait le geste qui décide de ce qui <em>peut</em> se présenter</strong> ; ⚠ <strong>qu'un tel geste existe, et qu'il soit distinct du point d'application, n'est établi par rien.</strong></p>
+
+<div class="avert">
+  <p><strong>Et une difficulté héritée s'y transporte intacte, ce qui est le seul énoncé fort de cette section.</strong> Le plan renvoie au <strong>problème de l'oracle</strong> — <em>comment sait-on qu'un comportement est correct quand on ne dispose pas d'un résultat attendu de référence ?</em> — relevé au <strong>ch. 47 § 47.9</strong>. <strong>Une barrière de certification hérite de la même difficulté et ne s'en affranchit pas en changeant d'échelle</strong> : <em>certifier mille agents ne rend pas l'oracle plus disponible qu'il ne l'était pour un.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Une barrière se qualifie par ce qu'elle démontre, jamais par ce qu'elle promet</strong> (R-02 du Vol. III, balayé par prudence) : <em>une barrière qui admet sans oracle atteste un passage, non une propriété.</em> Et ⚠ <strong>le passeport d'agent ne figure dans aucune spécification à date</strong> (R-01 du Vol. III ; siège <strong>ch. 16</strong>) : une barrière ne peut donc <strong>pas</strong> être décrite comme « vérifiant le passeport », et ce chapitre ne l'écrit pas.</p>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p><strong>Ce qu'il faudrait ouvrir.</strong> <strong>Corpus</strong> : la littérature de test métamorphique et d'évaluation sans oracle, déjà relevée par le plan au titre du <strong>ch. 47</strong> ; les référentiels de certification de composants logiciels transposables, <strong>sous réserve d'une filiation établie plutôt que réinventée</strong> ; toute publication décrivant une porte d'admission à un maillage. <strong>Critère de clôture</strong> : qu'un critère d'admission documenté soit relevé avec <strong>ce qu'il démontre</strong> — et non ce qu'il annonce.</p>
+</div>
+
+<h2 id="s415"><span class="sig">§ 41.5</span>La boucle de réémission : de l'indicateur et de la dérive au gabarit corrigé</h2>
+
+<p><em>Adossement au <strong>ch. 39 § 39.2</strong> (dérive), au <strong>ch. 39 § 39.4</strong> (versionnement du parc) et au <strong>ch. 40 § 40.2</strong> (grille minimale d'indicateurs). Construction d'auteur.</em></p>
+
+<p><strong>C'est ici que l'AgentOps cesserait d'être une discipline de constat.</strong> La proposition tient en une phrase : ⚠ <strong><em>un indicateur qui ne réémet rien mesure sans corriger.</strong></em> Le <strong>ch. 40 § 40.2</strong> produit quatre grandeurs et <strong>une colonne de ce qui manque</strong> ; le <strong>ch. 39 § 39.2</strong> produit trois dérives dont une n'est pas instrumentée. <strong>La boucle de réémission serait le geste qui transforme l'un et l'autre en correction du gabarit dont l'agent est issu</strong>, plutôt qu'en correction de l'agent lui-même.</p>
+
+<div class="avert">
+  <p><strong>La distinction est la seule chose que cette section apporte, et elle est réfutable</strong> : <em>corriger l'agent traite l'occurrence ; corriger le gabarit traite la classe.</em> Ce que le <strong>ch. 39 § 39.4</strong> établit dans ses bornes — <strong>on sait versionner ce qu'un agent est autorisé à faire, on ne sait pas restituer ce qu'il était autorisé à faire à l'instant où il l'a fait</strong> — <strong>s'applique au gabarit avec la même force</strong> : <em>une boucle de réémission dont on ne peut pas restituer l'état antérieur du gabarit ne se documente pas, elle se raconte.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le ch. 39 § 39.4 déclare d'ailleurs ce chapitre comme siège du gabarit à promouvoir</strong>, et <strong>l'adossement est donc mutuel</strong> : <em>ce chapitre-ci ne peut pas fonder la boucle sur un chapitre qui la lui renvoie.</em> <strong>Le socle ne documente ni la boucle, ni le gabarit, ni leur articulation</strong> : absence de documentation, non fait négatif vérifié (degré 3).</p>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p><strong>Ce qu'il faudrait ouvrir.</strong> <strong>Corpus</strong> : les publications d'exploitation décrivant une correction de gabarit déclenchée par un indicateur de production ; la littérature de gestion de configuration traitant de la <strong>propagation d'une correction de modèle à des instances déjà déployées</strong>. <strong>Critère de clôture</strong> : qu'un mécanisme documenté relie une mesure de production à une modification d'artefact d'origine, <strong>avec son délai de propagation</strong> — <em>le délai est la partie qui manque partout ailleurs dans ce Livre, et il manquerait ici de la même manière.</em></p>
+</div>
+
+<h2 id="s416"><span class="sig">§ 41.6</span>La fabrique comme point de concentration : ce qu'elle centralise, ce qu'elle fragilise</h2>
+
+<div class="avert">
+  <p><strong>Cette section porte les conditions qui renverseraient ce chapitre, et elles sont à écrire comme telles, non comme réserves de style</strong> — même exigence qu'au <strong>ch. 37 § 37.9</strong>. <em>Un chapitre qui ne peut pas être renversé n'affirme rien</em> ; ⚠ <strong>et un chapitre sans socle qui ne peut pas être renversé n'est même pas discutable.</strong></p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>#</th><th>Condition</th><th>Ce qui la rendrait constatable</th></tr></thead>
+  <tbody>
+    <tr><td><strong>1</strong></td><td><strong>Gabarit unique et monoculture de parc</strong> — un gabarit qui décide pour tout le parc <strong>propage aussi ses défauts à tout le parc</strong></td><td>un incident dont la cause remonte au gabarit et non à l'agent ; ou, à l'inverse, l'absence documentée de corrélation entre agents issus d'un même gabarit</td></tr>
+    <tr><td><strong>2</strong></td><td><strong>File d'attente de certification comme goulot</strong> — une barrière qui admet trop lentement <strong>est contournée</strong>, et un contournement documenté vide la barrière de son objet</td><td>une mesure de délai d'admission rapportée au rythme de production ; ⚠ <strong>le socle n'en porte aucune</strong> (degré 3), et le <strong>ch. 40 § 40.5</strong> établit seulement que <strong>le coût est une contrainte de premier ordre</strong>, en [C]</td></tr>
+    <tr><td><strong>3</strong></td><td><strong>Équipe-fabrique en point de défaillance unique</strong> — la centralisation qui fait la valeur du dispositif fait aussi sa fragilité</td><td>une indisponibilité documentée, ou une mesure de dépendance ; ⚠ <strong>c'est la troisième condition du ch. 37 § 37.9, transposée d'un point d'application à une équipe</strong>, et <em>la transposition est une lecture, non un constat</em></td></tr>
+    <tr><td><strong>4</strong></td><td><strong>L'écart entre ce que la fabrique croit produire et ce que le maillage admet réellement</strong></td><td>un relevé d'agents admis au maillage <strong>sans passage par la fabrique</strong> ; ⚠ <strong>c'est le pendant exact de la première condition du ch. 37 § 37.9</strong> — <em>un dispositif dont on ne peut pas énumérer ce qui l'a contourné ne fournit pas la garantie qu'il annonce</em></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 41.3 — Les quatre conditions de réfutation du chapitre 41. ⚠ <strong>Construction d'auteur</strong> ; <em>aucune n'est instruite, et une condition posée n'est pas une condition éprouvée.</em></p>
+
+<div class="avert">
+  <p><strong>La quatrième est la plus instructive, parce qu'elle rejoint le résultat du ch. 37 par l'autre bout.</strong> Le ch. 37 demande <strong>quelles arêtes le maillage ne médiatise pas</strong> ; celui-ci demande <strong>quels agents la fabrique n'a pas produits</strong>. <em>Les deux questions ont la même forme — l'énumération du complément —, et ni l'une ni l'autre n'a de réponse documentée.</em></p>
+</div>
+
+<h2 id="s417"><span class="sig">§ 41.7</span>L'organisation de la fabrique : qui opère quoi</h2>
+
+<div class="avert">
+  <p><strong>Aucune revendication de provenance ici, et la forme le dit.</strong> La source de cette matière est portée par le <strong>ch. 45 § 45.6</strong>, <strong>qui en reste le siège</strong> ; ce chapitre n'en tire qu'un <strong>renvoi interne</strong>. <em>C'est le motif pour lequel la table détaillée de ce chapitre ne porte aucun marqueur de provenance : en porter un ici serait une <strong>seconde revendication du même texte</strong>.</em></p>
+</div>
+
+<p><strong>Ce que ce chapitre peut écrire sans empiéter tient en une question, et elle est neuve</strong> : <em>les rôles que le ch. 45 § 45.6 répartit entre plateforme, gestion des identités, sécurité et exploitation répondent de ce qui <strong>tourne</strong> ; qui répond de ce qui <strong>est produit</strong> ?</em> ⚠ <strong>Le socle ne documente aucune répartition des responsabilités de production d'un parc d'agents</strong> : absence de documentation, non fait négatif vérifié (degré 3).</p>
+
+<div class="avert">
+  <p><strong>Et la question n'est pas rhétorique</strong> : le <strong>ch. 39 § 39.4</strong> a établi, en [C], que <strong>les agents qui maintiennent le parc sont eux-mêmes des agents</strong> et relèvent <strong>du même régime que ceux qu'ils surveillent</strong>. <em>La même récursivité s'appliquerait à la fabrique — l'outillage qui produit les agents serait lui-même à produire —, et rien n'établit où elle s'arrête.</em></p>
+</div>
+
+<h2 id="s418"><span class="sig">§ 41.8</span>Ce que la fabrique ne fait pas : la couche d'exécution reste hors périmètre</h2>
+
+<div class="avert">
+  <p><strong>Cette section est la plus importante du chapitre, et elle est entièrement négative.</strong> Le <strong>risque 14 du TOC n'est pas comblé par ce chapitre</strong>, et il faut l'écrire ici plutôt que le laisser croire.</p>
+</div>
+
+<p><strong>Le harnais</strong> — le programme qui <strong>héberge la boucle de l'agent</strong> et porte la persistance de session, les modes, les sous-agents, la chaîne d'approbation d'outils, l'admission d'extensions et la compression de contexte — <strong>n'est traité par aucun chapitre de la somme</strong>. ⚠ <strong>Produire un agent n'est pas l'exécuter</strong> : <em>la fabrique décide de ce qui entre au parc ; le harnais décide, en dernier ressort, d'exécuter l'appel.</em></p>
+
+<div class="avert">
+  <p><strong>Trois conséquences, et la troisième est celle qu'on oublie.</strong> <em>Un</em> : <strong>la porte G-5 conditionne le Livre IV entier</strong> et n'est pas franchie — <strong>l'arbitrage du risque 14 est la décision d'auteur D-2</strong>, que <strong>ce chapitre ne consomme pas</strong>. <em>Deux</em> : <strong>le ch. 37 § 37.6 le rencontre par l'autre bout</strong> — l'admission par passerelle y est nommée comme contrôle de chaîne d'approvisionnement, et <strong>ce qui exécute l'appel après l'admission n'y est pas traité davantage</strong>. <em>Trois</em> : ⚠ <strong>le plafond de cinquante chapitres rend le comblement coûteux et le déclare</strong> — <em>un chapitre neuf sur le harnais serait interdit sans la fusion qui le paie</em> (décision 13 du TOC). <strong>Le plafond ne tranche pas le risque 14 ; il en rend le coût explicite.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le socle ne documente pas la couche d'exécution agentique</strong> : absence de documentation, non fait négatif vérifié (degré 3). <em>Et cette absence-ci n'est pas de la même nature que les autres du chapitre : les précédentes portent sur une matière que la somme prétend traiter, celle-ci sur une matière qu'elle déclare ne pas traiter.</em></p>
+</div>
+
+<p>## Synthèse : ce que le chapitre lègue à la somme</p>
+
+<p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
+
+<div class="avert">
+  <p><strong>Ce chapitre lègue moins que les autres, et le déclarer est le premier de ses legs.</strong></p>
+</div>
+
+<ol class="numeros">
+  <li><strong>La désambiguïsation d'« agent factory ».</strong> <strong>Quatre emplois, dont deux vivent dans le plan</strong> ; le <strong>ch. 43 § 43.1</strong> porte le second, ce chapitre le premier. <strong>Aucun chapitre n'emploie le mot sans que le sens soit déterminable de sa phrase.</strong> <em>C'est le seul legs du chapitre qui ne dépende d'aucune instruction.</em></li>
+  <li><strong>Une question, posée une fois</strong> : <em>d'où vient l'agent admis, et par quel geste est-il réémis quand la mesure le condamne ?</em> Les <strong>ch. 37 à 40</strong> ne la posent pas ; <strong>elle est ici, et elle y est ouverte, non résolue</strong>.</li>
+  <li><strong>Quatre conditions de réfutation</strong>, dont <strong>deux sont les transpositions déclarées de celles du ch. 37 § 37.9</strong>. ⚠ <em>Une transposition est une lecture — le déclarer est ce qui la distingue d'un constat.</em></li>
+  <li><strong>Le rappel que le risque 14 n'est pas comblé.</strong> ⚠ <strong>C'est un legs négatif, et le plus opposable du chapitre</strong> : le <strong>ch. 49</strong> enregistrera l'état final des lacunes, <strong>et celle-ci en fera partie quelle que soit l'issue de D-8</strong>.</li>
+  <li><strong>Cinq lots d'instruction formulés</strong>, avec leur corpus et leur critère de clôture (§ 41.2, § 41.3, § 41.4, § 41.5, § 41.7). ⚠ <strong>C'est ce que le chapitre produit <em>à la place</em> d'un contenu</strong>, et <em>une instruction infructueuse resterait un résultat.</em></li>
+</ol>
+
+<div class="avert">
+  <p><strong>Ce que le chapitre ne lègue pas — et la liste est longue à dessein.</strong> Aucun <strong>fait</strong>. Aucune <strong>entrée de socle</strong>. Aucun <strong>chiffre</strong>, aucun <strong>seuil</strong>, aucun <strong>délai</strong>. Aucun <strong>outil nommé</strong>, aucune <strong>organisation nommée</strong>. Aucun <strong>modèle de maturité</strong> — <em>son siège est au ch. 43 § 43.5</em>. Aucune <strong>recette d'organisation</strong>. Et <strong>aucune garantie de survie</strong> : <em>si D-8 tranche pour le retrait, ce chapitre disparaît et les ch. 42-51 de la numérotation antérieure reviennent — la renumérotation inverse est prévue, et elle est le prix déclaré de l'insertion.</em></p>
+</div>
+
+<section class="statut" id="s419">
+
+<h2><span class="sig">§ 41.9</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A).</p>
+</div>
+
+<p><strong>Ce qui est enfreint — et c'est l'écart le plus large du compendium à ce jour.</strong> Portes <strong>G-3</strong>, <strong>G-4</strong>, <strong>G-5</strong> et <strong>G-6</strong> ; <strong>décision d'auteur D-8 non prise</strong>, alors qu'elle conditionne nommément l'existence de ce chapitre ; <strong>ordre de rédaction du PRD §6</strong>, qui place ce chapitre <strong>après</strong> les ch. 42-46 — non rédigés — <strong>et après G-6</strong> ; <strong>régime de preuve de la matière neuve</strong> (PRD §7.2), qui exige <strong>le vote adversarial sur toutes les affirmations centrales et des sources primaires seules</strong>. Instruction d'auteur du <strong>27 juillet 2026</strong>.</p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01, et ici ce n'est pas une conséquence de G-3 : c'est une propriété du chapitre.</strong> Il n'a <strong>aucun socle à mobiliser</strong>, et <em>un chapitre écrit sur un socle vide n'est pas un chapitre en avance, c'est une inférence longue</em> — la règle cardinale du PRD §5, <strong>enfreinte et déclarée telle</strong>.</li>
+  <li><strong>Les décomptes sont publiables</strong> (G-2) ; le réel est reporté au <a class="lien" href="README.md"> 0 </a>. ⚠ <strong>Et la brièveté est ici un indicateur, non un défaut</strong> : <em>un chapitre sans source qui atteindrait sa cible aurait produit du plausible.</em></li>
+  <li><strong>La quasi-totalité des renvois de ce chapitre sont des renvois de plan.</strong> Ne sont pas rédigés : <strong>ch. 23</strong>, <strong>ch. 43</strong>, <strong>ch. 45</strong>, <strong>ch. 47</strong>, <strong>ch. 49</strong>, et les annexes E et G. Seuls les renvois vers les <strong>ch. 15, 16, 37, 38, 39, 40</strong> résolvent contre du texte au terme de la présente passe. ⚠ <strong>Un chapitre dont les appuis sont exclusivement internes et dont la majorité des appuis ne sont pas rédigés est adossé à un plan, non à un texte</strong> — <em>et c'est exactement ce que l'ordre de rédaction du PRD §6 voulait éviter en le plaçant après les ch. 42-46.</em></li>
+  <li><strong>Les cinq lots formulés ne sont pas ouverts</strong> : ce chapitre <strong>formule</strong> des questions instruisibles, il <strong>n'instruit rien</strong>. <em>C'est le seul geste admissible sur une matière dont le plan déclare le socle à constituer avant rédaction.</em></li>
+  <li><strong>CA-IV-13 n'est pas satisfaite</strong> — aucune relecture par un relecteur distinct du rédacteur.</li>
+</ol>
+
+<p><strong>Remontées ouvertes par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-51 — BLOQUANTE pour la publication de ce chapitre, de gouvernance.</strong> La porte <strong>G-6</strong> et la décision d'auteur <strong>D-8</strong> conditionnent nommément le sort de ce chapitre : <em>constitution d'un socle propre depuis des sources primaires, ou retrait avec renumérotation inverse.</em> <strong>Aucune des deux n'a eu lieu</strong>, et le chapitre a été rédigé sur instruction d'auteur. <strong>Demande remontée</strong> : que <strong>D-8 soit prise</strong> au vu de ce que cette pièce produit — <strong>cinq lots formulés, zéro fait versé</strong> —, et que <strong>la thèse du plan soit réécrite ou retirée dans la même passe</strong>, la décision 8 du TOC s'appliquant ici <strong>doublement</strong> (« aucune thèse ne peut se recopier telle quelle dans le bandeau du chapitre rédigé »). ⚠ <strong>La règle d'escalade veut qu'une remontée bloquante interdise de lancer le chapitre qu'elle bloque</strong> : elle est ouverte <strong>après</strong> la rédaction, et <em>l'infraction est consignée plutôt que rattrapée par l'arbitrage qui la suivra.</em></li>
+  <li><strong>R-IV-52 — non bloquante, de fait de dépôt, et de portée plus étroite que le plan.</strong> La table d'appuis du TOC qualifie l'emploi (c) du § 41.1 de <strong>« série <em>Agent Factory</em> de Microsoft »</strong>. <strong>Le constat sur pièce du 27 juillet 2026 établit <em>un titre</em>, non une série</strong> : la bibliographie du Vol. I porte, sous cet éditeur, <strong>une publication dont le titre contient l'expression</strong>, datée du 24 septembre 2025, l'entrée regroupant un second document <strong>dont le titre ne la porte pas</strong>, et <strong>portant le marqueur de ressource vivante</strong>. <strong>Demande remontée</strong> : que la table d'appuis soit ramenée à ce que la pièce constate — <em>un fait de dépôt atteste l'emploi d'un terme par un éditeur à une date, jamais l'existence d'une série.</em> ⚠ <em>Le seul relevé daté d'un chapitre sans socle mérite d'être exact au mot près.</em></li>
+  <li><strong>R-IV-53 — non bloquante, de circularité d'adossement.</strong> Le <strong>ch. 39 § 39.4</strong> renvoie au <strong>§ 41.5</strong> pour le gabarit à promouvoir ; le <strong>§ 41.5</strong> s'adosse au <strong>ch. 39 § 39.2 et § 39.4</strong> pour la dérive et le versionnement. ⚠ <strong>L'adossement est mutuel, et aucun des deux ne porte de source</strong> : <em>un chapitre ne peut pas fonder sa proposition sur un chapitre qui la lui renvoie.</em> Le cas se reproduit entre le <strong>§ 41.4</strong> et le <strong>ch. 47 § 47.9</strong>, non rédigé. <strong>Demande remontée</strong> : que la collation de fond (<strong>G-4</strong>) inscrive à son domaine <strong>le contrôle des adossements mutuels entre chapitres de matière neuve et chapitres consommateurs</strong>, et que la table des appuis du ch. 41 distingue les adossements <strong>descendants</strong> — vers un chapitre pourvu d'un socle — des adossements <strong>circulaires</strong>. ⚠ <em><code>check-sieges.py</code> ne voit pas cette classe : il contrôle qu'un siège n'est pas reconstruit, non qu'un renvoi ne boucle pas.</em></li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.25</strong> — § 41.1 à § 41.8, dans l'ordre exact —, et le § 41.0 est une ouverture portant le <strong>marquage de construction d'auteur pour tout le chapitre</strong>, comme CA-IV-07 l'exige nommément des chapitres de matière neuve.</p>
+
+<div class="avert">
+  <p><strong>Le régime « Fusion : aucune » est tenu de bout en bout</strong> : <strong>aucun marqueur de provenance vers un volume source n'apparaît dans cette pièce</strong>, parce qu'il n'y en a aucun à porter — <em>l'absence de provenance y est rendue visible par la forme, non seulement par une mention.</em> La <strong>décision 6 (couverture tracée) est sans objet</strong> et déclarée telle. Le <strong>garde-fou propre du chapitre — la désambiguïsation d'« agent factory » (décision 12c) — est posé au § 41.1 et tenu partout ailleurs</strong>. Les <strong>deux sièges que ce chapitre touche sans les reconstruire</strong> portent leur renvoi : l'organisation de la fabrique au <strong>ch. 45 § 45.6</strong> et le modèle de maturité au <strong>ch. 43 § 43.5</strong>. Les <strong>dix occurrences de degré 3</strong> portent leur degré, et ⚠ <strong>aucune n'est écrite comme un fait négatif vérifié</strong> — <em>ce qui est la seule discipline qu'un chapitre sans socle puisse réellement tenir.</em> <strong>Aucun chiffre, aucun seuil, aucun outil et aucune organisation ne sont nommés</strong>, et <strong>aucune section n'écrit de contenu plausible à l'endroit où le plan déclare le socle à constituer</strong> : <em>les cinq lots formulés sont ce que la pièce produit à la place.</em></p>
+</div>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre IV, chapitre 41. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.25, entrée du chapitre 41, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>

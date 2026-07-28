@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 46 — Instrumentation et feuille de route vers le 1ᵉʳ mai 2027 · La somme agentique</title>
+<meta name="description" content="les métriques d&#x27;évaluation des orchestrations (correction, réactivité, traçabilité) sont l&#x27;instrumentation candidate des programmes E-23/AMF ; la feuille de route se séquence sur l&#x27;entrée en vigueur commune (inventaire → encadrement → surveillance).">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre IV · Chapitre 46</div>
+  <ol>
+    <li><a href="#s460"><span class="num">46.0</span>Ouverture : une architecture qu&#x27;on ne sait pas instrumenter est une intention</a></li>
+    <li><a href="#s461"><span class="num">46.1</span>Des métriques académiques aux indicateurs de risque de modèle</a></li>
+    <li><a href="#s462"><span class="num">46.2</span>Feuille de route type : inventorier, encadrer, surveiller</a></li>
+    <li><a href="#s463"><span class="num">46.3</span>Les jalons externes à surveiller</a></li>
+    <li><a href="#s464"><span class="num">46.4</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.25 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="46-instrumentation-feuille-route.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale</div>
+  <h1><span class="chap">Chapitre 46</span>Instrumentation et feuille de route vers le 1ᵉʳ mai 2027</h1>
+  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Quatrième mouvement — composer (ch. 42-46). <strong>Dernier chapitre du mouvement et du Livre</strong> : il séquence dans le temps ce que les quatre précédents ont posé dans l'espace</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — rédigé sur instruction d'auteur du 27 juillet 2026, <strong>avant</strong> les portes <strong>G-3</strong>, <strong>G-4</strong> et <strong>G-5</strong>, et hors de l'ordre de rédaction du PRD §6. ⚠ <strong>R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre.</strong> ⚠ <strong>Ce chapitre est le seul du Livre dont l'objet est daté de bout en bout</strong> : <em>son argument porte sur un compte à rebours, et <strong>un compte à rebours ne se recopie pas — il se recalcule</strong></em> (§ 46.2)</dd>
+    <dt>Date de gel</dt>
+    <dd><strong>27 juillet 2026</strong> — gel unique, <strong>D-1 prise</strong> (<a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Volet résiduel de G-1 non instruit</strong> : <em>aucun jalon externe du § 46.3 n'a été repris à la source primaire</em>, et <strong>c'est la matière la plus périssable du Livre</strong>. Gel de source : <strong>16 juillet 2026</strong> (Vol. II) ; <em>il n'est pas celui de la somme, et l'écart de onze jours <strong>change le compte à rebours</strong></em></dd>
+    <dt>Socle mobilisé</dt>
+    <dd><strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte). Vol. II — <strong>F-09</strong> <em>(attentes d'E-23, <strong>[A/B mixte]</strong> — <strong>[A]</strong> pour la publication, l'entrée en vigueur, la portée et la définition de « modèle » ; <strong>[B]</strong> pour les exigences opératoires extraites du texte intégral : inventaire, cotation, documentation et son appendice, surveillance continue, <strong>absence de disposition transitoire</strong> ; ⚠ <strong>ce chapitre mobilise les deux strates</strong>)</em> ; <strong>F-25</strong> <em>(calendrier de la ligne directrice de l'AMF)</em> ; <strong>F-37</strong> <em>(propriétés, métriques et enseignements d'orchestration)</em> ; <strong>F-44</strong> <em>(outils de gouvernance et d'observabilité — inférences marquées)</em>. <strong>En renvoi seulement</strong> : F-10, F-29, F-34, F-35, F-36, F-42. <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd><strong>Les deux séries, intégralement, y compris les zéros.</strong> Vol. II — <strong>réserve F-09 (« attendu par E-23 », jamais « exigé » ; « documentation de modèle » et « inventaire », jamais « fiche de modèle » <em>à propos d'E-23</em>) : onze occurrences</strong>, § 46.1 (quatre), § 46.2 (six), § 46.3 ; <strong>R-7 (le rapprochement entre une métrique ou un produit et l'instrumentation d'E-23 est une inférence d'auteur) : cinq occurrences</strong>, § 46.1, ⚠ <strong>nommé par volume — à ne pas confondre avec R-07 du Vol. III, qui porte lui aussi sur l'inférence produit ↔ réglementation</strong> ; <strong>réserves F-37 (préimpression non révisée) : trois occurrences</strong>, § 46.1 (deux) et § 46.2 ; <strong>réserve F-25 (jamais « en attente » ni « en projet ») : deux occurrences</strong>, § 46.2 et § 46.3 ; <strong>R-4 et réserve F-29 : une occurrence</strong>, § 46.3, en renvoi ; <strong>R-5 (aucun standard technique désigné — formulation imposée) : une occurrence</strong>, § 46.3 ; <strong>§8.4 (neutralité fournisseur) appliqué par prudence : deux occurrences</strong>, § 46.1 — <em>le garde-fou est borné au mouvement d'instanciation, et ce chapitre mobilise pourtant des produits nommés</em> ; <strong>métriques auto-déclarées : deux occurrences</strong>, § 46.1 ; <strong>R-1, R-2, R-3, R-6, R-8 : zéro occurrence.</strong> Vol. III — <strong>R-14 : six occurrences</strong>, § 46.1 (deux), § 46.2 (deux), § 46.3 (deux) ; <strong>R-11 (jalons « visés », jamais « fixés ») : deux occurrences</strong>, § 46.3 ; <strong>R-09 : deux occurrences</strong>, § 46.3. <strong>R-01 à R-08, R-10, R-12, R-13 : zéro occurrence</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ <strong>3 000 mots</strong> de corps (§ 46.0 à la synthèse), <strong>cible dérivée</strong> de l'enveloppe du Livre (<strong>69 000 mots</strong>, TOC v0.25) au prorata des trois sections — <strong>la plus basse du Livre</strong>. ☑ <strong>Décompte publiable depuis G-2</strong> ; <strong>réel reporté au <a class="lien" href="README.md"> 0 </a></strong>. ⚠ <strong>D-4 s'applique</strong></dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>les métriques d'évaluation des orchestrations (correction, réactivité, traçabilité) sont l'instrumentation candidate des programmes E-23/AMF ; la feuille de route se séquence sur l'entrée en vigueur commune (inventaire → encadrement → surveillance).</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.25, entrée du chapitre 46.</span>
+</div>
+
+<h2 id="s460"><span class="sig">§ 46.0</span>Ouverture : une architecture qu'on ne sait pas instrumenter est une intention</h2>
+
+<p>Le <strong>ch. 42</strong> a établi qu'<strong>aucun protocole ne répond aux attentes des trois textes dont le socle porte le contenu</strong>, et que les deux autres lignes de sa matrice sont <strong>vides pour des raisons opposées</strong>. Le <strong>ch. 43</strong> a construit les couches qui doivent compenser, le <strong>ch. 44</strong> les a formalisées, le <strong>ch. 45</strong> les a instanciées.</p>
+
+<p><strong>Reste ce qu'E-23 <em>attend</em> d'un programme de risque de modèle, et qui n'est pas un schéma</strong> : ⚠ <em>des normes de fréquence, de portée et de critères ; un suivi de la performance ; des seuils de dépassement.</em> ⚠ <strong><em>Que mesure-t-on ? À quelle fréquence ? Contre quel seuil ?</strong></em> <strong>Une architecture qu'on ne sait pas instrumenter est une intention.</strong></p>
+
+<div class="avert">
+  <p><strong>Ce chapitre soutient une proposition étroite, et il faut en énoncer l'étroitesse avant de la défendre.</strong> <em>Les métriques que la littérature académique attache aux options d'orchestration sont des <strong>candidates</strong> à l'instrumentation d'un programme de risque de modèle canadien.</em> ⚠ <strong>« Candidates » : le mot est de l'auteur, il n'est pas au socle, et aucune source ne valide leur emploi à ce titre.</strong> <em>Ce chapitre les présente comme telles, expose ce qui manque pour qu'elles cessent de l'être, et séquence le travail qui ne dépend, lui, d'aucune de ces réserves.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Et la frontière avec le ch. 40 se pose ici</strong>, parce que les deux chapitres parlent d'indicateurs : <em>le <strong>ch. 40</strong> dérive une grille <strong>de ce que les cadres attendent</strong>, et il ne produit <strong>aucune valeur</strong> ; celui-ci demande si <strong>des métriques existantes</strong> pourraient servir cette grille.</em> ⚠ <strong>Les deux aboutissent au même endroit par deux chemins</strong> : <em>le premier trouve une colonne de manques, le second trouve des candidates sans validation.</em></p>
+</div>
+
+<h2 id="s461"><span class="sig">§ 46.1</span>Des métriques académiques aux indicateurs de risque de modèle</h2>
+
+<h3>46.1.1 Le point de départ est une liste, et sa source porte sa réserve</h3>
+
+<p>Une préimpression instrumente <strong>quatre de ses cinq propriétés d'évaluation</strong> : <em>la <strong>spécificité de tâche</strong> par des mesures de complexité de code ; l'<strong>assurance de correction</strong> par la précision, le rappel et leur moyenne harmonique ; la <strong>réactivité</strong> par le taux de faux négatifs et la vitesse de réaction ; la <strong>traçabilité</strong> par la correction du journal</em> (Vol. II <strong>F-37</strong>, <strong>[B]</strong>).</p>
+
+<div class="avert">
+  <p><strong>La réserve ne se détache jamais de l'entrée</strong> : <em>préimpression <strong>non révisée par les pairs</strong>, dont <strong>les auteurs déclarent eux-mêmes des menaces à la validité</strong></em> — le cadre conceptuel est repris, <strong>les résultats chiffrés à titre d'illustration seulement</strong>. ⚠ <strong>La cinquième propriété, l'autonomie, ne dispose d'aucune métrique dans l'entrée du socle</strong> — <em>constat repris du <strong>ch. 39 § 39.2.3</strong>, qui en est le siège, et dont il ne se conclut rien.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le plan en retient trois — correction, réactivité, traçabilité — et le partage n'est pas celui de la source.</strong> <em>La quatrième propriété instrumentée, la spécificité de tâche, <strong>n'y figure pas</strong>.</em> <span class="auteur">Lecture de l'auteur</span> <em>la ligne de partage paraît être celle de <strong>l'objet mesuré</strong> : les mesures de complexité portent sur <strong>un artefact de conception</strong>, les trois autres sur <strong>un comportement en exploitation</strong>, seul objet d'une surveillance continue.</em> ⚠ <strong>Le socle n'opère pas ce partage et n'en fournit pas le motif</strong> ; <em>l'écart entre les quatre propriétés instrumentées et les trois retenues est signalé plutôt que comblé.</em></p>
+</div>
+
+<h3>46.1.2 L'autre versant, et la modalité qui commande toute la section</h3>
+
+<p>Depuis l'extraction de son texte intégral, le socle porte ce que la ligne directrice E-23 <strong>attend</strong> en matière de surveillance continue — ⚠ <strong>et la modalité est contraignante</strong> : <em>E-23 est <strong>fondée sur des principes</strong> et rédigée au conditionnel ; <strong>elle attend, elle n'exige pas</strong></em>.</p>
+
+<p><strong>Son principe de surveillance attend</strong> : <em>des normes de <strong>fréquence, de portée et de critères</strong> par palier de risque ; le suivi de <strong>la performance, de l'usage, des données d'entrée et des dépendances externes</strong> ; des <strong>seuils de dépassement</strong> ; et, verbatim, des processus pour traiter les défis propres à l'IA et à l'apprentissage automatique — <strong>« autonomous decision making, autonomous re-parametrization, and the elevated potential for model drift »</strong></em>.</p>
+
+<div class="avert">
+  <p><strong>Les deux listes se regardent. Il faut résister à la tentation de les superposer.</strong></p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Métrique candidate</th><th>Ce qu'E-23 <strong>attend</strong> en regard</th><th>⚠ Pourquoi ce n'est pas une correspondance</th></tr></thead>
+  <tbody>
+    <tr><td><strong>précision, rappel, moyenne harmonique</strong> — assurance de correction</td><td><strong>suivi de la performance</strong></td><td><em>les deux portent sur la conformité d'un résultat à l'attendu, mais <strong>l'un est une mesure de laboratoire sur un scénario</strong>, l'autre <strong>une attente de dispositif sur un parc</strong></em></td></tr>
+    <tr><td><strong>vitesse de réaction, taux de faux négatifs</strong> — réactivité</td><td><strong>seuils de dépassement</strong></td><td>⚠ <em>le socle <strong>ne dit pas de quelle grandeur</strong></em></td></tr>
+    <tr><td><strong>correction du journal</strong> — traçabilité</td><td><strong>documentation de modèle et inventaire</strong>, dont l'appendice énumère les champs</td><td>⚠ <em>objets <strong>d'une tout autre nature</strong> qu'un journal d'exécution</em></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 46.1 — Les trois rapprochements plausibles, et pourquoi aucun n'est documenté. ⚠ <strong>Le socle porte les deux termes de chacun ; il n'en porte aucun rapprochement.</strong> <em>Ce sont des candidatures, pas des correspondances.</em></p>
+
+<h3>46.1.3 Une raison de fond appuie la candidature — et elle n'appuie pas le partage</h3>
+
+<p><strong>Lecture de l'auteur</strong>, posée au <strong>ch. 43 § 43.3</strong> et non au socle : <em>les <strong>quatre</strong> propriétés instrumentées — <strong>spécificité de tâche comprise</strong> — sont celles qu'un exploitant peut <strong>démontrer à un tiers</strong>, et <strong>c'est l'instrumentation qui rend une propriété démontrable</strong></em>. <strong>Et un programme de risque de modèle est précisément un dispositif de démonstration à un tiers.</strong></p>
+
+<div class="avert">
+  <p><strong>La convergence d'objet est réelle ; elle ne vaut pas validation.</strong> ⚠ <strong>Et il faut la noter exactement</strong> : <em>cette raison appuie les <strong>quatre</strong> propriétés, <strong>la spécificité de tâche comprise</strong>, et non les trois que retient le plan.</em> <strong><em>Elle ne fournit donc aucun motif au partage 4 → 3</strong></em>, que le socle n'opère pas davantage.</p>
+</div>
+
+<h3>46.1.4 L'outillage, et le garde-fou le plus important du chapitre</h3>
+
+<p>Le socle documente, <strong>chez un éditeur nommé</strong>, des capacités qui portent sur les mêmes objets — <em>inventorier, coter, surveiller</em> : ⚠ <strong>selon la documentation de cet éditeur</strong>, un produit de gouvernance <strong>en disponibilité générale déclarée</strong> depuis une date nommée, assorti en 2025 d'une gouvernance agentique ; et, ⚠ <strong>en préversion publique annoncée</strong>, une observabilité d'agents et de modèles (Vol. II <strong>F-44</strong>). ⚠ <strong>Statuts auto-déclarés, attribués à leur éditeur, non vérifiés indépendamment.</strong> <em>Le socle documente par ailleurs des capacités d'orchestration chez d'autres éditeurs — <strong>siège ch. 43 § 43.6</strong> — ;</em> ⚠ <strong>aucune n'est ici comparée aux précédentes.</strong></p>
+
+<div class="avert">
+  <p><strong>Et c'est ici que le garde-fou le plus important de ce chapitre s'applique.</strong> <strong><em>Le rapprochement entre un produit de gouvernance et E-23 est une inférence d'auteur : l'éditeur ne revendique aucune conformité à E-23, et aucune source ne documente ce lien</strong></em> (R-7 du Vol. II ; <strong>fait négatif ÉTABLI</strong>, siège <strong>ch. 45 § 45.4</strong>). <strong>La même règle vaut pour le produit d'observabilité.</strong> ⚠ <strong>Le rapprochement avec la ligne directrice de l'AMF est lui aussi une inférence d'auteur</strong> — <em>mais <strong>le régime d'absence diffère</strong>, et le ch. 45 § 45.4 en est le siège.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Que l'éditeur ne revendique rien à l'endroit d'E-23 n'autorise aucune généralisation</strong> : <em>le socle atteste au contraire, pour un module de conformité issu d'un accord de revente daté, <strong>des contenus que l'éditeur destine à trois cadres nommés</strong> — <strong>aucun des trois n'est un texte canadien</strong>.</em></p>
+</div>
+
+<div class="encadre encadre--oeuvre">
+  <span class="encadre__label">Note</span>
+  <p><strong>État de la recherche — la validité de ces métriques comme indicateurs de risque.</strong> <strong>Question</strong> : les métriques de correction, de réactivité et de traçabilité sont-elles <strong>valides</strong> comme indicateurs de risque de modèle en contexte financier canadien ? <strong>État</strong> : lacune ouverte le 16 juillet 2026 ; ⚠ <strong>aucune passe de recherche n'a été conduite</strong>. <strong>Ce que le socle établit</strong> : les quatre propriétés instrumentées et leurs métriques, et un jeu de résultats sur un scénario unique. <strong>Ce qu'il n'établit pas</strong> : ⚠ <em>aucune reproduction indépendante ; aucune application documentée de la taxonomie à un processus d'institution financière ; <strong>aucune validation de ces métriques comme indicateurs de risque</strong></em>. <strong>Corpus à ouvrir</strong> : la préimpression elle-même, à sa source primaire, et les publications de l'autorité postérieures au gel. <strong>Critère de clôture</strong> : qu'une validation soit documentée, ou que son absence soit <strong>établie par balayage</strong> plutôt que présumée. ⚠ <strong>La question reste ouverte ; aucune inférence n'est proposée ici.</strong></p>
+</div>
+
+<h2 id="s462"><span class="sig">§ 46.2</span>Feuille de route type : inventorier, encadrer, surveiller</h2>
+
+<h3>46.2.1 Le compte à rebours, recalculé et non recopié</h3>
+
+<div class="avert">
+  <p><strong>Un compte à rebours est le cardinal le plus périssable qu'un chapitre puisse porter, et celui-ci est recalculé au gel de la somme plutôt que repris de sa source.</strong> <em>Du <strong>27 juillet 2026</strong> — date du gel unique — au <strong>1ᵉʳ mai 2027</strong>, il reste <strong>neuf mois et quatre jours</strong>, soit <strong>278 jours</strong>.</em> ⚠ <strong>Le Vol. II en comptait neuf mois et quinze jours à son propre gel du 16 juillet 2026</strong> : <em>l'écart de onze jours entre les deux gels est exactement l'écart entre les deux comptes</em>, <strong>et c'est pourquoi le chiffre ne se recopie pas.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>Et le texte ne porte aucune disposition transitoire.</strong> <em>La ligne directrice de l'AMF, <strong>finale</strong> — et ⚠ <strong>jamais « en attente » ni « en projet »</strong> — <strong>entre en vigueur à la même date</strong>.</em> ⚠ <strong>Cette convergence commande le séquencement</strong>, <em>et elle est la seule chose que la somme puisse en tirer</em> : <strong>le socle ne porte de ce second texte que son calendrier.</strong></p>
+</div>
+
+<h3>46.2.2 Premier mouvement — inventorier</h3>
+
+<p><strong>E-23 attend un inventaire des modèles dont le risque inhérent est jugé non négligeable, tenu à l'échelle de l'entreprise, exact, tenu à jour et soumis à des contrôles robustes</strong> ; ⚠ <strong>son appendice en énumère les champs</strong> — <em>identifiant, nom, cote de risque, propriétaire, développeur, origine, puis, pour les modèles à risque non négligeable, version, date de déploiement, réviseur, approbateur, dépendances, sources de données, usages approuvés, limites, date de revue, état de surveillance, prochaine revue.</em></p>
+
+<div class="avert">
+  <p><strong>Ce premier mouvement ne dépend d'aucune des réserves du § 46.1</strong> : <em>il est tracé au texte, il est daté, et <strong>il se conduit sans qu'aucune métrique académique n'y intervienne</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Il porte cependant une difficulté propre, et c'est celle du périmètre.</strong> <em>E-23 <strong>ne nomme ni l'agentique, ni les agents, ni l'orchestration</strong> — vérification mécanique sur le texte intégral. Sa définition de « modèle », laissée « intentionally broad », <strong>englobe les méthodes d'IA et d'apprentissage automatique</strong>, et le texte vise expressément la prise de décision autonome et la re-paramétrisation autonome ; d'où une <strong>couverture implicite</strong> que des analystes juridiques tiennent pour acquise</em> — ⚠ <strong>inférence d'analystes, jamais « le régulateur exige pour l'IA agentique ».</strong> <strong>La conduite qui en découle est celle du ch. 25</strong> : <em>traiter la couverture comme acquise, <strong>et documenter qu'on le fait par prudence plutôt que par obligation établie</strong>.</em> ⚠ <strong>L'inventaire est le lieu où cette prudence se paie ou s'économise.</strong></p>
+</div>
+
+<div class="avert">
+  <p><strong>Et c'est ici que le ch. 40 § 40.2 rejoint ce chapitre par l'autre bout</strong> : <em>sa grille demande <strong>un dénominateur</strong> — une source d'énumération du parc opposable à l'inventaire attendu — et <strong>déclare qu'aucune n'est documentée</strong> (degré 3).</em> <strong><em>L'inventaire attendu par E-23 et le dénombrement d'un parc d'agents ne portent pas sur le même objet, et le ch. 43 § 43.1.2 l'a écrit</strong></em> : <em>le premier recense des modèles, le second des agents.</em></p>
+</div>
+
+<h3>46.2.3 Deuxième mouvement — coter, puis encadrer</h3>
+
+<p><strong>E-23 attend que chaque modèle reçoive une cote de risque, et que la portée, l'échelle et l'intensité de la gestion soient proportionnées à ce risque.</strong> ⚠ <strong>La cotation précède l'encadrement parce qu'elle le calibre.</strong></p>
+
+<p><strong>Vient ensuite le travail que les ch. 29 et 43 ont défini</strong> : <em>positionner chaque processus sur les options d'orchestration, et <strong>imposer un cadre déterministe à ceux qui relèvent d'une exigence stricte</strong></em>.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> ⚠ <em>la cotation attendue par E-23 et la grille de sélection de la préimpression <strong>portent sur le même geste</strong> — décider combien d'encadrement mérite un processus — <strong>mais aucune source ne les relie</strong></em>, et ⚠ <strong>les sept critères de sélection sont qualitatifs : ils orientent un jugement, ils ne calculent pas une réponse.</strong> <strong><em>Une institution qui voudrait industrialiser ce choix devra construire elle-même sa pondération et l'assumer comme sa propre décision.</strong></em></p>
+
+<h3>46.2.4 Troisième mouvement — surveiller</h3>
+
+<div class="avert">
+  <p><strong>C'est le seul des trois où l'instrumentation du § 46.1 trouve sa place, et c'est donc le seul qui hérite de ses réserves.</strong></p>
+</div>
+
+<p><strong>Un enseignement du socle y commande pourtant une décision d'architecture immédiate, et il ne dépend d'aucun chiffre</strong> : <em>la journalisation confiée aux agents « <strong>n'est généralement pas recommandée</strong> »</em></p>
+
+<div class="avert">
+  <p><strong>(préimpression, source unique)</strong>. <span class="auteur">Lecture de l'auteur</span> <em>si la trace n'est pas produite par l'agent, et si E-23 <strong>attend</strong> un état de surveillance par modèle inventorié, alors <strong>le lieu de production de la trace est une décision à prendre avant le 1ᵉʳ mai 2027, non après</strong>.</em> ⚠ <strong>Le socle déconseille un producteur ; il n'en désigne aucun autre</strong> — <em>et le <strong>ch. 43 § 43.3</strong> en a fait le point de contrôle obligatoire PC2, dont il déclare que <strong>l'élimination des trois autres candidats est de l'auteur</strong>.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Un mot, enfin, sur ce que cette feuille de route ne peut pas faire.</strong> <em>Elle est séquencée sur deux textes <strong>dont un seul est au socle par son contenu</strong>.</em> ⚠ <strong>Le socle ne porte de la ligne directrice de l'AMF que son calendrier</strong> ; <em>son contenu article par article relève d'une <strong>lacune déclarée</strong>.</em> <span class="auteur">Lecture de l'auteur</span> ⚠ <em>la convergence des dates rend rationnel <strong>un programme unique plutôt que deux</strong> ; <strong>elle ne dit rien de ce que le second texte attend</strong>, et la somme ne le fabriquera pas.</em></p>
+</div>
+
+<h2 id="s463"><span class="sig">§ 46.3</span>Les jalons externes à surveiller</h2>
+
+<div class="avert">
+  <p><strong>Cette section est la plus périssable de la somme, et elle porte sa péremption dans son objet même</strong> : <em>elle recense des événements dont <strong>la survenue est ce qui la périme</strong>.</em> ⚠ <strong>Elle recoupe les événements de péremption du ch. 50 sans les reconstruire</strong> — <em>ce chapitre en est le siège, et il n'est pas rédigé.</em></p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Jalon</th><th>Ce que le socle en porte, à sa date</th><th>⚠ Régime</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Entrée en vigueur d'E-23</strong> et de la <strong>ligne directrice IA de l'AMF</strong>, <strong>1ᵉʳ mai 2027</strong></td><td>échéances <strong>datées d'un texte publié</strong> (Vol. II <strong>F-09</strong>, <strong>F-25</strong>)</td><td><strong>PROGRAMMÉ</strong> — <em>seul jalon du tableau dans ce tri</em></td></tr>
+    <tr><td><strong>Cadre bancaire — désignation d'un organisme de normalisation technique</strong></td><td>⚠ <em>aucun organisme désigné, <strong>aucun standard nommé</strong> dans les textes officiels</em> ; le règlement est <strong>prépublié</strong>, son texte final peut changer (Vol. II <strong>F-34</strong>, <strong>F-35</strong>)</td><td>⚠ <strong>fait négatif VÉRIFIÉ, borné aux chaînes cherchées</strong> ; <em>la candidature d'un format d'industrie relève du <strong>commentaire d'industrie</strong></em> (R-5 du Vol. II)</td></tr>
+    <tr><td><strong>Rail de paiement en temps réel</strong></td><td>⚠ <strong>quatre cibles successives — 2019, 2022, 2023, 2026 —, jamais « quatre reports », et jamais « lancé »</strong> (réserve F-29, R-4 du Vol. II ; siège <strong>ch. 33</strong>)</td><td><em>renvoi seul ; ce chapitre n'en tire rien</em></td></tr>
+    <tr><td><strong>Révision majeure du protocole agent-outil</strong></td><td><strong>annoncée au brouillon</strong>, ⚠ <strong>sa date n'est pas confirmée à la source</strong> (R-09 du Vol. III)</td><td>⚠ <strong>aucun tri prospectif ne lui est attribué</strong>, <em>et l'abstention est motivée : le PROGRAMMÉ exige un engagement daté réel, et c'est la date qui manque</em></td></tr>
+    <tr><td><strong>Jalons post-quantiques</strong></td><td>⚠ <strong>« visés », jamais « fixés »</strong>, statut du document porté (R-11 du Vol. III)</td><td>⚠ <strong>siège au ch. 21</strong>, <em>qui ne se fusionne jamais</em> — renvoi seul</td></tr>
+    <tr><td><strong>Conventions sémantiques d'instrumentation</strong></td><td>⚠ <strong>premier des cinq échelons, aucune version citable</strong> (siège <strong>ch. 38 § 38.2</strong>)</td><td><strong>SPÉCULATIF</strong> — <em>aucun jalon daté n'est relevé</em></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 46.2 — Les jalons externes à surveiller, avec leur régime épistémique. ⚠ <strong>Un seul est PROGRAMMÉ ; deux sont des faits négatifs bornés ; trois sont des renvois dont le siège est ailleurs.</strong></p>
+
+<div class="avert">
+  <p><strong>Lecture de l'auteur, et c'est le dernier énoncé du Livre</strong> : <em>des six jalons, <strong>un seul porte une date opposable</strong>, et <strong>c'est celui qui commande la feuille de route</strong>. Les cinq autres sont des états d'attente — <strong>et un programme séquencé sur des états d'attente n'a qu'un seul point d'ancrage</strong>.</em> ⚠ <strong>Le socle ne documente aucun mécanisme de surveillance de ces jalons</strong> : absence de documentation, non fait négatif vérifié (degré 3). <strong><em>Ce que la somme peut faire est les nommer et les dater ; les surveiller est le travail du ch. 50, et il n'est pas rédigé.</strong></em></p>
+</div>
+
+<p>## Synthèse : ce que le chapitre lègue à la somme</p>
+
+<p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
+
+<ol class="numeros">
+  <li><strong>Le mot « candidate », et ce qu'il refuse.</strong> ⚠ <em>Trois métriques sont <strong>candidates</strong> à l'instrumentation d'un programme de risque de modèle ; <strong>aucune source ne valide cet emploi</strong>, et le mot est de l'auteur.</em> <strong>Le ch. 49 enregistrera si la candidature a été instruite.</strong></li>
+  <li><strong>Les trois rapprochements, et pourquoi aucun n'est une correspondance.</strong> ⚠ <em>Le socle porte les deux termes de chacun ; <strong>il n'en porte aucun rapprochement</strong>.</em></li>
+  <li><strong>Le partage 4 → 3, signalé et non comblé.</strong> ⚠ <em>La raison de fond appuie <strong>quatre</strong> propriétés ; <strong>le plan en retient trois</strong>, et le socle n'opère pas le partage.</em></li>
+  <li><strong>La feuille de route en trois mouvements, et l'asymétrie de leurs dépendances.</strong> ⚠ <strong><em>Le premier ne dépend d'aucune réserve ; le troisième en hérite toutes.</strong></em> <em>C'est le seul legs opératoire du chapitre : <strong>on peut commencer par l'inventaire sans avoir tranché la validité d'une seule métrique</strong>.</em></li>
+  <li><strong>Le compte à rebours, recalculé au gel de la somme.</strong> ⚠ <strong>278 jours</strong>, <em>neuf mois et quatre jours</em> — <strong>et l'écart de onze jours avec le compte de la source est exactement l'écart entre les deux gels.</strong> <em>Un cardinal daté ne se recopie pas.</em></li>
+  <li><strong>Les six jalons, et leur régime.</strong> ⚠ <em>Un seul est <strong>PROGRAMMÉ</strong>.</em> <strong>Le ch. 50 en est le siège pour la surveillance ; ce chapitre les nomme et les date.</strong></li>
+</ol>
+
+<div class="avert">
+  <p><strong>Ce que le chapitre ne lègue pas.</strong> Aucune <strong>validation</strong> : <em>la candidature reste une candidature.</em> Aucun <strong>seuil</strong> : <em>le socle ne dit pas de quelle grandeur.</em> Aucune <strong>attente de la seconde autorité</strong> : <em>le socle n'en porte que le calendrier, et la somme ne fabriquera pas le contenu qui manque.</em> Et aucune <strong>conformité</strong> : ⚠ <em>le rapprochement entre un outil et une attente réglementaire reste une inférence d'auteur, à chaque occurrence, et <strong>l'éditeur ne revendique rien</strong>.</em></p>
+</div>
+
+<section class="statut" id="s464">
+
+<h2><span class="sig">§ 46.4</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A).</p>
+</div>
+
+<p><strong>Ce qui est enfreint.</strong> Portes <strong>G-3</strong>, <strong>G-4</strong> et <strong>G-5</strong> ; <strong>volet résiduel de G-1</strong> — ⚠ <strong>et c'est le chapitre du Livre où l'omission est la plus visible</strong> : <em>son § 46.3 recense six jalons dont <strong>aucun n'a été repris à la source primaire au gel de la somme</strong></em> ; <strong>ordre de rédaction du PRD §6</strong>. Instruction d'auteur du <strong>27 juillet 2026</strong>.</p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01.</strong> ⚠ <strong>Et l'entrée principale du chapitre est mixte</strong> : <em>E-23 y entre à deux niveaux — l'un pour son calendrier et sa portée, l'autre pour ses exigences opératoires extraites du texte intégral —, <strong>et ce chapitre mobilise les deux strates</strong>. Confondre les deux ferait porter à une extraction ce qu'un vote adversarial avait établi, ou l'inverse.</em></li>
+  <li><strong>Les décomptes sont publiables</strong> (G-2) ; le réel est reporté au <a class="lien" href="README.md"> 0 </a>. ⚠ <strong>Et le compte à rebours du § 46.2.1 est recalculé, non recopié</strong> — <em>278 jours du 27 juillet 2026 au 1ᵉʳ mai 2027.</em></li>
+  <li><strong>Les renvois « ch. N » vers les Livres III à V sont des renvois de plan.</strong> Ne sont pas rédigés : <strong>ch. 25</strong>, <strong>ch. 29</strong>, <strong>ch. 33</strong>, <strong>ch. 49</strong>, <strong>ch. 50</strong>. Les renvois vers les <strong>ch. 21</strong> et <strong>ch. 43</strong> résolvent contre du texte au terme de la présente passe ; ceux vers les <strong>ch. 38, 39, 40, 42, 45</strong> aussi.</li>
+  <li><strong>La neutralité fournisseur est appliquée par prudence</strong>, ⚠ <em>le garde-fou étant borné au mouvement d'instanciation alors que ce chapitre mobilise des produits nommés</em> : <strong>statuts auto-déclarés attribués, aucune comparaison, aucune recommandation.</strong></li>
+  <li><strong>CA-IV-13 n'est pas satisfaite</strong> — aucune relecture par un relecteur distinct du rédacteur.</li>
+</ol>
+
+<p><strong>Remontées ouvertes par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-67 — non bloquante, de partage non motivé, et elle est héritée.</strong> Le plan retient <strong>trois</strong> des <strong>quatre</strong> propriétés instrumentées — <em>correction, réactivité, traçabilité</em> —, <strong>et écarte la spécificité de tâche</strong>. ⚠ <strong>Le socle n'opère pas ce partage et n'en fournit pas le motif</strong>, et <em>la seule raison de fond disponible — que ces propriétés sont celles qu'un exploitant <strong>démontre</strong> à un tiers — <strong>appuie les quatre</strong>, non les trois</em>. <strong>La source signale déjà l'écart chez elle.</strong> <strong>Demande remontée</strong> : que <strong>le motif du partage soit écrit à la ligne Fusion</strong>, ou que <strong>la quatrième propriété soit réintégrée</strong>. ⚠ <em>Un partage repris de passe en passe sans motif finit par ressembler à un résultat.</em></li>
+  <li><strong>R-IV-68 — non bloquante, de fait périssable, et elle vise un domaine plutôt qu'un fait.</strong> Le § 46.3 recense <strong>six jalons externes</strong>, ⚠ <strong>dont un seul est PROGRAMMÉ et dont aucun n'a été repris à la source primaire au gel de la somme</strong>. <em>Deux d'entre eux sont des faits négatifs vérifiés bornés aux chaînes cherchées ; un troisième est annoncé au brouillon sans date confirmée ; un quatrième est au premier échelon d'une échelle de maturité sans version citable.</em> <strong>Demande remontée</strong> : que <strong>le volet résiduel de G-1 inscrive les six jalons de ce tableau à son domaine</strong>, avec <strong>le critère de reprise de chacun</strong> — <em>une désignation publiée, un arrêté, une ratification, une publication de version.</em> ⚠ <em>Un tableau de jalons dont aucun n'est re-daté au gel est un tableau daté d'un autre jour, et c'est le seul défaut qui périme un chapitre entier plutôt qu'un énoncé.</em></li>
+  <li><strong>R-IV-69 — non bloquante, de frontière entre chapitres.</strong> Le <strong>ch. 40</strong> dérive une <strong>grille d'indicateurs</strong> de ce que les cadres attendent et <strong>ne produit aucune valeur</strong> ; ce chapitre demande si <strong>des métriques existantes</strong> pourraient servir un programme réglementaire. ⚠ <strong>Les deux aboutissent au même constat par deux chemins — manques d'un côté, candidatures sans validation de l'autre — et le plan ne déclare pas leur articulation.</strong> <strong>Demande remontée</strong> : que <strong>la ligne Fusion du ch. 46 déclare le partage avec le ch. 40</strong> — <em>la grille dérivée d'un côté, l'instrumentation candidate de l'autre</em> —, comme le TOC le fait pour les partages déclarés du ch. 40 § 40.3 avec le ch. 49. ⚠ <em>Deux chapitres qui produisent le même constat sans se déclarer se répéteront à la relecture, ou se contrediront.</em></li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.25</strong> — § 46.1 à § 46.3, dans l'ordre exact —, et le § 46.0 est une introduction de chapitre. La <strong>table de couverture est respectée pour son unique ligne</strong> : Vol. II §20.1-20.3 en <strong>condensé</strong>. Les <strong>onze occurrences de la forme imposée « attendu par E-23 »</strong> sont tenues, et ⚠ <strong>« fiche de modèle » compte zéro occurrence à propos d'E-23</strong>. Les <strong>cinq occurrences du garde-fou d'inférence produit ↔ réglementation</strong> sont <strong>nommées par volume</strong>, ⚠ <em>les deux séries portant chacune un garde-fou sur ce même geste et le renvoi nu étant indécidable</em>. Les <strong>trois réserves de la préimpression</strong> sont portées à chaque mobilisation, et <strong>ses résultats chiffrés ne sont pas repris</strong>. Les <strong>deux statuts auto-déclarés</strong> sont attribués à leur éditeur nommé. Le <strong>compte à rebours est recalculé au gel de la somme</strong>, et <strong>l'écart avec celui de la source est déclaré</strong>. Les <strong>six occurrences de degré 3</strong> portent leur degré, et <strong>les deux faits négatifs vérifiés portent leur borne</strong>. <strong>Aucun siège neuf n'est posé</strong> ; les sièges touchés — les points de contrôle obligatoires au <strong>ch. 43 § 43.3</strong>, la correspondance réglementaire au <strong>ch. 45 § 45.4</strong>, l'horloge post-quantique au <strong>ch. 21</strong>, l'état des conventions au <strong>ch. 38 § 38.2</strong> — portent leur renvoi.</p>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre IV, chapitre 46. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.25, entrée du chapitre 46, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>

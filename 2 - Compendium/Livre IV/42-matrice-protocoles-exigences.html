@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 42 — La matrice protocoles × exigences réglementaires · La somme agentique</title>
+<meta name="description" content="croiser la pile protocolaire (MCP/A2A/AP2) avec les exigences canadiennes (E-23, AMF, art. 12.1, 11-348, cadre bancaire) et la grille des cinq questions révèle où les standards suffisent et où l&#x27;architecture doit compenser — et, à date, quinze croisements sans lien documenté.">
+<meta name="author" content="André-Guy Bruneau">
+<meta name="color-scheme" content="dark">
+<style>
+/* ==========================================================================
+   La somme agentique — feuille de style commune des pièces
+   Thème sombre orange. Autonome : aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  /* Fonds, du plus profond au plus clair */
+  --fond-0: #0d0b09;
+  --fond-1: #141110;
+  --fond-2: #1c1815;
+  --fond-3: #262019;
+  --fond-4: #322a21;
+
+  /* Orange — la couleur directrice */
+  --orange:        #ff8c26;
+  --orange-vif:    #ffa14d;
+  --orange-clair:  #ffb066;
+  --orange-pale:   #ffd2a3;
+  --orange-sombre: #c96a12;
+  --orange-voile:  rgba(255, 140, 38, 0.10);
+  --orange-trait:  rgba(255, 140, 38, 0.28);
+
+  /* Textes */
+  --texte:      #ece3d9;
+  --texte-doux: #c3b6a8;
+  --texte-faible: #8d8175;
+
+  /* Structure */
+  --trait: #302820;
+  --trait-fort: #423628;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --largeur-texte: 43rem;
+  --largeur-nav: 20rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--fond-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--texte);
+  background:
+    radial-gradient(ellipse 90rem 44rem at 50% -14rem, rgba(255, 140, 38, 0.085), transparent 68%),
+    var(--fond-0);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------- barre de progression */
+#progression {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--orange-sombre), var(--orange), var(--orange-clair));
+  box-shadow: 0 0 12px rgba(255, 140, 38, 0.55);
+  transition: width 0.08s linear;
+}
+
+/* --------------------------------------------------------------- ossature */
+.page {
+  display: grid;
+  grid-template-columns: var(--largeur-nav) minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+/* --------------------------------------------------------------- navigation latérale */
+.nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 3.5rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fond-4) transparent;
+}
+.nav::-webkit-scrollbar { width: 7px; }
+.nav::-webkit-scrollbar-thumb { background: var(--fond-4); border-radius: 4px; }
+
+.nav__marque {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nav__sous {
+  font-size: 0.72rem;
+  color: var(--texte-faible);
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav > ol > li { margin-bottom: 0.15rem; }
+
+.nav a {
+  display: block;
+  padding: 0.32rem 0.7rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.nav a:hover {
+  color: var(--orange-clair);
+  background: var(--orange-voile);
+  border-left-color: var(--orange-trait);
+}
+.nav a.actif {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-voile);
+  font-weight: 600;
+}
+.nav .num {
+  display: inline-block;
+  min-width: 2.6em;
+  color: var(--texte-faible);
+  font-variant-numeric: tabular-nums;
+}
+.nav a.actif .num { color: var(--orange-sombre); }
+
+.nav__pied {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.7rem;
+  color: var(--texte-faible);
+  line-height: 1.6;
+}
+.nav__pied a { display: inline; padding: 0; border: 0; color: var(--orange-sombre); text-decoration: underline; text-underline-offset: 2px; }
+.nav__pied a:hover { background: none; color: var(--orange); }
+
+/* --------------------------------------------------------------- corps */
+.corps {
+  max-width: var(--largeur-texte);
+  padding: 3.5rem 0 0;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- titre */
+.titre { margin-bottom: 3rem; }
+
+.titre__fil {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titre h1 {
+  font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.015em;
+  color: #fbf4ec;
+}
+.titre h1 .chap {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--orange-clair);
+  margin-bottom: 0.55rem;
+}
+
+.titre__situe {
+  font-style: italic;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--orange-trait);
+}
+
+/* --------------------------------------------------------------- en-tête à cinq champs */
+.entete {
+  margin: 2.5rem 0 2.5rem;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fond-2), var(--fond-1));
+}
+.entete__titre {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+.entete dt {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--orange-clair);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  background: rgba(255, 140, 38, 0.035);
+}
+.entete dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--texte-doux);
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--trait);
+}
+.entete dl > :nth-last-child(1),
+.entete dl > :nth-last-child(2) { border-bottom: 0; }
+
+/* --------------------------------------------------------------- thèse */
+.these {
+  margin: 2.5rem 0 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--orange-voile), transparent 82%);
+}
+.these__label {
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.these p { margin: 0; font-size: 1.06rem; line-height: 1.65; color: #f5ebe1; }
+.these .prov { display: block; margin-top: 0.7rem; font-size: 0.78rem; font-style: italic; color: var(--texte-faible); }
+
+/* --------------------------------------------------------------- titres de section */
+h2 {
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 4rem 0 1.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--trait);
+  color: #fbf4ec;
+  letter-spacing: -0.01em;
+}
+h2 .sig {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.09rem;
+  font-weight: 600;
+  margin: 2.6rem 0 0.85rem;
+  color: var(--orange-pale);
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--orange-clair);
+}
+
+p { margin: 0 0 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- justification
+   Prose justifiée, césure automatique. La césure n'est pas un ornement : sur une
+   colonne de ~43rem, une justification sans coupure de mots creuse des lézardes
+   dans un texte français, dont les mots sont longs. Elle s'appuie sur l'attribut
+   `lang="fr-CA"` du document — le retirer désactiverait la coupure sans prévenir. */
+.corps p,
+.corps dd,
+.corps li,
+.pied p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Ce qui ne se justifie pas : le chapeau du titre et les légendes (courts — la
+   justification y produit des trous), et la navigation (colonne étroite). */
+.titre__situe,
+.legende,
+.nav a {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+strong { color: #fdf6ee; font-weight: 600; }
+em { color: var(--texte); }
+
+a.lien { color: var(--orange-clair); text-decoration: none; border-bottom: 1px solid var(--orange-trait); }
+a.lien:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* --------------------------------------------------------------- encadrés */
+.encadre {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: 7px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  background: var(--fond-2);
+  border: 1px solid var(--trait);
+  border-left-width: 3px;
+}
+.encadre__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.encadre p { margin-bottom: 0.75rem; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.encadre--recherche { border-left-color: #b8823f; }
+.encadre--recherche .encadre__label { color: #d9a25a; }
+
+.encadre--oeuvre { border-left-color: #8c7a5e; }
+.encadre--oeuvre .encadre__label { color: #b7a184; }
+
+/* Avertissement — le marqueur ⚠ du corpus, ajouté par le CSS */
+.avert {
+  margin: 1.9rem 0;
+  padding: 1.15rem 1.4rem 1.15rem 3.1rem;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  line-height: 1.66;
+  background: linear-gradient(90deg, rgba(255, 140, 38, 0.085), rgba(255, 140, 38, 0.02));
+  border: 1px solid var(--orange-trait);
+  border-left: 3px solid var(--orange);
+}
+.avert::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.15rem;
+  top: 1.05rem;
+  font-size: 1.05rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.avert p { margin-bottom: 0.8rem; }
+.avert p:last-child { margin-bottom: 0; }
+
+/* Lecture de l'auteur — marquage CA-IV-07 */
+.auteur {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-voile);
+  border: 1px solid var(--orange-trait);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- tableau */
+.tableau { margin: 2.1rem 0; overflow-x: auto; border-radius: 7px; border: 1px solid var(--trait); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--sans); min-width: 34rem; }
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.8rem 1rem;
+  background: var(--orange-voile);
+  border-bottom: 1px solid var(--orange-trait);
+  white-space: nowrap;
+}
+tbody td { padding: 0.72rem 1rem; border-bottom: 1px solid var(--trait); color: var(--texte-doux); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
+tbody td:first-child { color: var(--texte); font-weight: 600; }
+.legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
+
+/* --------------------------------------------------------------- listes */
+ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
+ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+ul.puces li::marker { color: var(--orange); }
+ol.numeros li::marker { color: var(--orange); font-weight: 700; font-family: var(--sans); font-size: 0.9em; }
+
+dl.legs { margin: 1.5rem 0; }
+dl.legs dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange-clair);
+  margin-top: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+dl.legs dd { margin: 0; color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- note de statut */
+.statut {
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: 1px dashed var(--orange-trait);
+  border-radius: 9px;
+  background: rgba(255, 140, 38, 0.045);
+}
+.statut h2 { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem; }
+.statut h2 .sig { color: var(--orange-sombre); }
+
+/* --------------------------------------------------------------- pied */
+.pied {
+  max-width: var(--largeur-texte);
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--trait);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--texte-faible);
+}
+.pied strong { color: var(--texte-doux); }
+
+/* --------------------------------------------------------------- responsive */
+@media (max-width: 62rem) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.4rem 5rem; }
+  .nav {
+    position: static;
+    max-height: none;
+    padding: 2.2rem 0 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--trait);
+    padding-bottom: 1.5rem;
+  }
+  .nav > ol { columns: 2; column-gap: 1.5rem; }
+  .nav a.actif { background: none; }
+  .corps { padding-top: 2rem; }
+  .entete dl { grid-template-columns: minmax(0, 1fr); }
+  .entete dt { padding-bottom: 0.2rem; border-bottom: 0; }
+  .entete dd { padding-top: 0.35rem; }
+  body { font-size: 16.5px; }
+}
+@media (max-width: 34rem) {
+  .nav > ol { columns: 1; }
+  .avert { padding-left: 2.8rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+@media print {
+  :root { --texte: #111; --texte-doux: #333; }
+  html, body { background: #fff; color: #111; }
+  .nav, #progression { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .corps { max-width: none; }
+  h2 { break-after: avoid; }
+  .avert, .encadre, .tableau, .these { break-inside: avoid; border-color: #bbb; background: #f7f7f7; }
+}
+</style>
+</head>
+<body>
+
+<div id="progression" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ====================================================== navigation ====== -->
+<nav class="nav" aria-label="Table des matières du chapitre">
+  <div class="nav__marque">La somme agentique</div>
+  <div class="nav__sous">Livre IV · Chapitre 42</div>
+  <ol>
+    <li><a href="#s420"><span class="num">42.0</span>Ouverture : un instrument, et la règle qui l&#x27;empêche de fabriquer</a></li>
+    <li><a href="#s421"><span class="num">42.1</span>Construction de la matrice</a></li>
+    <li><a href="#s422"><span class="num">42.2</span>Lecture par protocole</a></li>
+    <li><a href="#s423"><span class="num">42.3</span>Lecture par exigence</a></li>
+    <li><a href="#s424"><span class="num">42.4</span>Les zones de compensation architecturale</a></li>
+    <li><a href="#s425"><span class="num">42.5</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+  </ol>
+  <div class="nav__pied">
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.25 ·
+    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    <a href="42-matrice-protocoles-exigences.md">Version Markdown</a>
+  </div>
+</nav>
+
+<!-- ============================================================ corps ====== -->
+<main class="corps">
+
+<header class="titre">
+  <div class="titre__fil">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale</div>
+  <h1><span class="chap">Chapitre 42</span>La matrice protocoles × exigences réglementaires</h1>
+  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Quatrième mouvement — composer (ch. 42-46). Premier chapitre du mouvement, <strong>et chapitre de méthode transversal</strong> : il ne verse aucun fait propre, il fournit l'instrument par lequel les ch. 43 à 46 rendent leurs verdicts d'architecture</p>
+</header>
+
+<section class="entete" aria-label="En-tête de pièce à cinq champs">
+  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
+  <dl>
+    <dt>Statut</dt>
+    <dd><strong>Brouillon de rédaction, non publiable</strong> — rédigé sur instruction d'auteur du 27 juillet 2026, <strong>avant</strong> les portes <strong>G-3</strong>, <strong>G-4</strong> et <strong>G-5</strong>, et hors de l'ordre de rédaction du PRD §6, qui place ce mouvement <strong>après les Livres I et III</strong> — <em>le Livre III n'est pas achevé.</em> ⚠ <strong>R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre.</strong> ⚠ <strong>Ce chapitre est l'homologue de méthode du ch. 14</strong> : comme lui, il ne verse rien et fournit un instrument ; <strong>comme lui, sa recevabilité tient à son rendement, non à sa filiation</strong></dd>
+    <dt>Date de gel</dt>
+    <dd><strong>27 juillet 2026</strong> — gel unique, <strong>D-1 prise</strong> (<a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Volet résiduel de G-1 non instruit.</strong> Gels de source : <strong>16 juillet 2026</strong> (Vol. II, ch. 18), <strong>17 juillet 2026</strong> (Vol. II, Annexe B), <strong>21 juillet 2026</strong> (Vol. III, Annexe B). ⚠ <strong>Ce chapitre porte trois gels de source distincts et ne les fusionne pas</strong> : <em>une matrice dont les lignes sont datées de trois jours différents n'est pas datée d'un jour.</em></dd>
+    <dt>Socle mobilisé</dt>
+    <dd>⚠ <strong>Socle TRANSVERSAL, construit par la rédaction — et sa contrepartie est obligatoire et non négociable</strong> (règle héritée du Vol. II, reprise par le TOC) : l'en-tête énumère <strong>les entrées effectivement mobilisées et les garde-fous effectivement balayés, y compris ceux à zéro occurrence</strong>. <strong>Aucune entrée du socle consolidé</strong> (G-3 ouverte). Vol. II — <strong>F-01</strong> (MCP), <strong>F-02</strong> et <strong>F-16</strong> (A2A), <strong>F-04</strong> (AP2) ; <strong>F-09</strong> (E-23), <strong>F-25</strong> (AMF), <strong>F-26</strong> (11-348), <strong>F-27</strong> (art. 12.1) ; <strong>F-11</strong>, <strong>F-34</strong>, <strong>F-35</strong> (cadre bancaire) ; <strong>F-36</strong>, <strong>F-37</strong> ; <strong>F-05</strong>, <strong>F-08</strong>, <strong>F-10</strong>, <strong>F-15</strong> en renvoi. Vol. III — <strong>F-01</strong> à <strong>F-11</strong>, <strong>F-33</strong> à <strong>F-43</strong>, <strong>F-46</strong> à <strong>F-51</strong>, <strong>F-55</strong>, <strong>F-70</strong>, <strong>F-71</strong>, <strong>F-87</strong>, <strong>F-89</strong>, <strong>F-93</strong>, <strong>F-95</strong> ; <strong>H-01</strong> à <strong>H-03</strong>, <strong>H-09</strong>, <strong>H-10</strong>, <strong>H-33</strong>. ⚠ <strong>Les deux séries F-xx sont préfixées de leur volume à chaque emploi</strong> : <em>un « F-09 » nu est indécidable entre le socle du Vol. II et celui du Vol. III, qui portent chacun une entrée sous ce numéro et sur un objet différent</em> (décision 7 du TOC). <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong></dd>
+    <dt>Garde-fous balayés</dt>
+    <dd><strong>Les deux séries, intégralement, y compris les zéros — la contrepartie du socle transversal.</strong> Vol. II — <strong>réserve F-09 (« attendu par E-23 », jamais « exigé » ; « documentation de modèle » / « inventaire », jamais « fiche de modèle ») : neuf occurrences</strong>, § 42.1 (deux), § 42.3 (cinq), § 42.4 (deux) ; <strong>réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : trois occurrences</strong>, § 42.2 ; <strong>R-5 (aucun standard technique désigné — formulation imposée) : quatre occurrences</strong>, § 42.2 (deux), § 42.3, § 42.4 ; <strong>réserve F-25 (jamais « en attente » ni « en projet ») : deux occurrences</strong>, § 42.1 et § 42.3 ; <strong>soutien ≠ production (décompte AP2) : une occurrence</strong>, § 42.2 ; <strong>R-7 : ressort en contexte réglementaire pur, aucune correspondance produit ↔ réglementation dans ce chapitre — filtré</strong> ; <strong>R-1, R-2, R-3, R-4, R-6, R-8 : zéro occurrence.</strong> Vol. III — <strong>R-14 (trois degrés d'absence) : douze occurrences</strong>, § 42.1 (trois), § 42.2 (deux), § 42.3 (quatre), § 42.4 (trois) ; <strong>R-02 : trois occurrences</strong>, § 42.2 ; <strong>R-09 : deux occurrences</strong>, § 42.2 ; <strong>R-01 : une occurrence</strong>, § 42.3. <strong>R-03 à R-08, R-10 à R-13 : zéro occurrence.</strong> ⚠ <strong>Faux ami déclaré</strong> : « standard technique » y désigne l'objet du cadre bancaire, <strong>jamais un jugement de qualité</strong></dd>
+    <dt>Volumétrie cible</dt>
+    <dd>≈ <strong>4 000 mots</strong> de corps (§ 42.0 à la synthèse), <strong>cible dérivée</strong> de l'enveloppe du Livre (<strong>69 000 mots</strong>, TOC v0.25) au prorata des quatre sections — <strong>la deuxième plus basse du Livre</strong>, ce chapitre ne portant aucun corpus propre. ☑ <strong>Décompte publiable depuis G-2</strong> ; <strong>réel reporté au <a class="lien" href="README.md"> 0 </a></strong>. ⚠ <strong>D-4 s'applique</strong></dd>
+  </dl>
+</section>
+
+<div class="these">
+  <span class="these__label">Thèse</span>
+  <p>croiser la pile protocolaire (MCP/A2A/AP2) avec les exigences canadiennes (E-23, AMF, art. 12.1, 11-348, cadre bancaire) et la grille des cinq questions révèle où les standards suffisent et où l'architecture doit compenser — et, à date, quinze croisements sans lien documenté.</p>
+  <span class="prov">Citée depuis le <code>TOC.md</code> v0.25, entrée du chapitre 42.</span>
+</div>
+
+<h2 id="s420"><span class="sig">§ 42.0</span>Ouverture : un instrument, et la règle qui l'empêche de fabriquer</h2>
+
+<p><strong>Deux inventaires ne se sont jamais rencontrés dans les Livres qui précèdent.</strong> Le Livre I a établi l'anatomie d'une pile protocolaire consolidée sous gouvernance neutre ; le Livre III a établi le contenu d'un corpus d'exigences canadiennes, et ses limites. <strong>Ce chapitre les croise.</strong></p>
+
+<p><strong>Le résultat n'est pas celui qu'un titre de matrice laisse attendre.</strong> ⚠ <strong>Sur les quinze croisements que porte la matrice — trois protocoles, cinq textes —, aucun n'est documenté par une source du socle.</strong> <em>Aucune source ne documente qu'une spécification protocolaire mentionne un texte canadien, ni l'inverse</em> — <strong>absence de documentation dans le corpus des volumes sources, non fait négatif vérifié</strong> (R-14 du Vol. III, degré 3). ⚠ <strong>Cette matrice n'est donc pas un tableau de correspondances : c'est un tableau de vides.</strong> <em>Son intérêt tient à ceci que ces vides ne sont pas de même espèce, et qu'ils désignent en négatif le lieu exact où l'architecture doit compenser.</em></p>
+
+<div class="avert">
+  <p><strong>Le cardinal est re-mesuré ici et non recopié</strong>, comme le TOC l'exige : <strong>cinq lignes</strong> — E-23, ligne directrice de l'AMF, avis 11-348, article 12.1, cadre bancaire — <strong>par trois colonnes de protocole</strong> — MCP, A2A, AP2 — <strong>font quinze</strong>, recomptés ligne à ligne sur la table de la source. ☐ <strong>La re-mesure contre la matrice consolidée de l'appareil reste due</strong> : <em>cette annexe n'est pas rédigée, et un cardinal re-mesuré sur la source n'est pas un cardinal re-mesuré sur sa consolidation.</em></p>
+</div>
+
+<p><strong>Trois propositions structurent le chapitre.</strong> <em>La première</em> : la matrice est un objet dont il faut fixer les <strong>règles de remplissage</strong>, faute de quoi elle produira de la plausibilité au lieu d'un constat (§ 42.1). <em>La deuxième</em> : lue <strong>par protocole</strong>, elle montre que la couche protocolaire répond à des questions — <em>qui parle, par quel format, avec quelle habilitation</em> — que les textes canadiens <strong>ne posent pas</strong> (§ 42.2). <em>La troisième</em> : lue <strong>par texte</strong>, elle montre que <strong>ceux dont le socle porte le contenu le plus précis sont ceux auxquels les protocoles répondent le moins</strong> (§ 42.3).</p>
+
+<div class="avert">
+  <p><strong>Ce que le chapitre ne refait pas.</strong> La <strong>traduction des exigences en cadres déterministes</strong> est au <strong>ch. 29</strong>, et il n'y est pas revenu. Les <strong>couches, leur positionnement et les points de contrôle obligatoires</strong> sont au <strong>ch. 43</strong> ; leur <strong>instrumentation</strong> au <strong>ch. 46</strong> ; leur <strong>instanciation</strong> au <strong>ch. 45</strong>. <em>La valeur propre de ce chapitre est ailleurs : la matrice comme objet, ses deux lectures, les zones de compensation.</em></p>
+</div>
+
+<h2 id="s421"><span class="sig">§ 42.1</span>Construction de la matrice</h2>
+
+<p><strong>Trois règles de remplissage, sans lesquelles l'exercice serait un exercice d'analogie.</strong> Elles sont <strong>reprises de la source sans être réinventées.</strong></p>
+
+<ol class="numeros">
+  <li><strong>Deux termes par cellule.</strong> ⚠ Une cellule n'est renseignable que si le socle porte <strong>les deux choses</strong> : <em>ce que l'exigence attend</em>, <strong>et</strong> <em>ce que le protocole fournit</em>. <strong>La condition n'est pas également servie d'une ligne à l'autre.</strong></li>
+  <li><strong>Aucune cellule ne porte un verdict de conformité.</strong> ⚠ <em>Le socle ne relie aucun protocole à aucun texte canadien</em>, et il faut distinguer une <strong>absence au socle</strong> d'un <strong>fait négatif vérifié</strong> dans la source. <strong>Cette matrice porte deux faits négatifs vérifiés</strong>, l'un et l'autre <strong>bornés à ce qui a été cherché</strong>.</li>
+  <li><strong>Toute cellule non vide est une inférence d'auteur</strong>, jamais une lecture.</li>
+</ol>
+
+<div class="avert">
+  <p><strong>La première règle départage les lignes, et c'est elle qui produit le résultat du § 42.3.</strong> Depuis l'extraction du texte intégral d'E-23 — en anglais et en français —, le socle du Vol. II porte la <strong>définition verbatim de « modèle »</strong> et <strong>cinq domaines d'attentes opératoires</strong> : cycle de vie, inventaire d'entreprise, cotation graduée, <strong>documentation de modèle</strong>, surveillance continue (Vol. II <strong>F-09</strong>, <strong>[A/B mixte]</strong>). ⚠ <strong>« Documentation de modèle » et « inventaire », jamais « fiche de modèle »</strong> — <em>zéro occurrence dans le texte</em> — et <strong>« attendu par E-23 », jamais « exigé par E-23 » ni « E-23 impose »</strong> : la ligne directrice est <strong>fondée sur des principes</strong> et rédigée au conditionnel.</p>
+</div>
+
+<p><strong>La ligne directrice de l'AMF, elle, n'est au socle que par son calendrier</strong> (Vol. II <strong>F-25</strong>, <strong>[A]</strong>) : ⚠ <strong>c'est la seule ligne où le premier terme manque, et ce chapitre ne le comble pas</strong>.</p>
+
+<div class="avert">
+  <p><strong>Forme imposée</strong> : <em>ne jamais écrire « en attente » ni « en projet »</em> — <strong>elle est finale</strong>, et <strong>en vigueur au 1ᵉʳ mai 2027</strong>. ⚠ <strong>Une divergence datée est signalée et non lissée</strong> : <em>le Vol. II date la version finale du 30 mars 2026 ; la veille technologique de la racine du dépôt la date du 7 avril 2026, sa source étant inaccessible aux outils.</em> <strong>Le cadrage du Vol. IV tranche en faveur du Vol. II ; cet arbitrage n'a aucune autorité tant que la somme n'est pas rédigée, et la divergence reste au registre de l'Annexe C.</strong></p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Texte canadien <em>(traitement dans la somme)</em></th><th>Ce que le socle porte de sa demande</th><th>MCP</th><th>A2A v1.0</th><th>AP2</th></tr></thead>
+  <tbody>
+    <tr><td><strong>E-23 — attentes de risque de modèle</strong> (<strong>ch. 25</strong>)</td><td>définition verbatim de « modèle », laissée <em>intentionally broad</em> ; <strong>cinq domaines d'attentes opératoires</strong> — inventaire d'entreprise, cotation de risque par modèle, cycle de vie à cinq volets, documentation de modèle, <strong>surveillance continue visant la décision et la re-paramétrisation autonomes</strong> (Vol. II <strong>F-09</strong>)</td><td><strong>fait négatif VÉRIFIÉ</strong> (vocabulaire) : <em>agentique</em>, <em>agents</em>, <em>orchestration</em> <strong>absents du texte intégral</strong>, EN et FR</td><td><em>idem</em> — <strong>aucun agent nommé</strong></td><td><em>idem</em> — <strong>aucun agent nommé</strong></td></tr>
+    <tr><td><strong>Ligne directrice IA de l'AMF</strong> (<strong>ch. 27</strong>)</td><td>⚠ <strong>le calendrier seul</strong> : finale, <strong>en vigueur le 1ᵉʳ mai 2027</strong> (Vol. II <strong>F-25</strong>)</td><td><strong>rien de croisable</strong></td><td><strong>rien de croisable</strong></td><td><strong>rien de croisable</strong></td></tr>
+    <tr><td><strong>Avis 11-348</strong> (<strong>ch. 28</strong>)</td><td>doctrine — <em>l'avis ne crée ni ne modifie aucune exigence</em> ; définition captant <strong>autonomie et adaptativité après déploiement</strong> (Vol. II <strong>F-26</strong>)</td><td>rien sur l'auto-modification</td><td>rien sur l'auto-modification</td><td>rien sur l'auto-modification</td></tr>
+    <tr><td><strong>Art. 12.1</strong> (<strong>ch. 27</strong>)</td><td><strong>trois obligations, libellé officiel</strong> : <strong>informer</strong>, <strong>expliquer</strong> sur demande, <strong>offrir la révision</strong> par un membre du personnel en mesure de réviser (Vol. II <strong>F-27</strong>)</td><td>données typées = <strong>substrat de frontière</strong>, non trace d'instance</td><td>cartes d'agents signées = <strong>identité de l'appelant</strong>, non explication</td><td><strong>rien au socle</strong> (anatomie non portée)</td></tr>
+    <tr><td><strong>Cadre bancaire — standard technique</strong> (<strong>ch. 32</strong>)</td><td>exigence d'un <strong>standard unique</strong> ; organisme <strong>à désigner par arrêté ministériel</strong> ; ⚠ <strong>aucun standard nommé</strong> (Vol. II <strong>F-35</strong>)</td><td><strong>fait négatif VÉRIFIÉ</strong> : quatre chaînes cherchées, <strong>zéro occurrence</strong> dans les textes officiels</td><td><strong>rien au socle</strong></td><td><strong>rien au socle</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 42.1 — La matrice protocoles × textes canadiens, telle que les socles des Vol. II et III la portent. ⚠ <strong>Quinze croisements, aucun lien documenté</strong> ; <strong>quatre absences cherchées dans la source</strong>, <strong>onze constatées au socle</strong> — <em>4 + 11 = 15, re-mesuré sur cette table.</em></p>
+
+<div class="avert">
+  <p><strong>Deux partitions coexistent et ne se recouvrent pas</strong> — la source les distingue, et les confondre est le piège propre à cet objet. Par la <strong>provenance de l'absence</strong> : <strong>quatre</strong> cherchées dans la source, <strong>onze</strong> constatées au socle. Par l'<strong>état de la cellule</strong> : <strong>six cellules non vides</strong> — les trois d'E-23, article 12.1 × MCP, article 12.1 × A2A, cadre bancaire × MCP — et <strong>neuf vides</strong>. <em>La première mesure la manière dont l'ouvrage sait qu'il ne sait pas ; la seconde ce que la cellule donne à lire.</em> ⚠ <strong>Le vide est celui du lien, jamais celui de la cellule.</strong></p>
+</div>
+
+<h2 id="s422"><span class="sig">§ 42.2</span>Lecture par protocole</h2>
+
+<p><strong>MCP répond à une question : comment un agent atteint un outil.</strong> Interface client-serveur fondée sur JSON-RPC 2.0, invocation d'outils, échange de données typées, <strong>cadre d'autorisation</strong> fondé sur OAuth (Vol. II <strong>F-01</strong>, <strong>[A]</strong>). ⚠ <strong>« Cadre d'autorisation », jamais « sécurisé »</strong> — <em>la sécurité dépend de l'implémentation</em>, et le <strong>ch. 8</strong> en est le siège. <strong>Deux croisements méritent l'examen ; aucun ne survit.</strong></p>
+
+<p><em>Le premier oppose le typage à l'obligation d'expliquer.</em> Le <strong>ch. 8</strong> a établi qu'un échange typé est <strong>déclaré à l'avance</strong>, donc vérifiable à la frontière et opposable après coup — <em>sans que le socle établisse qu'il suffise à une piste d'audit réglementaire.</em> <span class="auteur">Lecture de l'auteur</span> l'article 12.1 exige, sur demande, « les raisons, ainsi que les principaux facteurs et paramètres, ayant mené à la décision ». <em>Un journal typé atteste de <strong>la forme</strong> de ce qui a transité par un appel d'outil ; il n'atteste ni des raisons, ni des facteurs, ni des paramètres.</em> <strong>Ce que le socle établit</strong> : les deux termes. <strong>Ce qu'il n'établit pas</strong> : leur écart, qui est de l'auteur.</p>
+
+<p><em>Le second croisement est le seul lexique commun de toute la matrice : OAuth.</em> <span class="auteur">Lecture de l'auteur</span> que le fondement du cadre d'autorisation de MCP et l'anticipation d'industrie relative au cadre bancaire <strong>emploient le même mot</strong> est un rapprochement de l'auteur, <strong>que le socle ne pose pas</strong>. ⚠ <strong>Il vaut d'être posé pour être aussitôt désamorcé</strong> : <strong>aucun organisme de normalisation technique n'a été désigné par arrêté ministériel et aucun standard n'est nommé dans les textes officiels</strong> ; <em>la candidature d'un format d'industrie relève du <strong>commentaire d'industrie</strong>, attribué comme tel.</em> <strong>Cette intersection a été cherchée dans la source, et ne s'y trouve pas</strong> (Vol. II <strong>F-35</strong>, <strong>[A]</strong>, fait négatif <strong>VÉRIFIÉ</strong>).</p>
+
+<p><strong>A2A répond à une autre question : comment un agent délègue à un autre.</strong> Délégation de pair à pair, cartes d'agents dont la variante signée porte une <strong>vérification cryptographique d'identité</strong> ; version 1.0 que <strong>le projet qualifie lui-même</strong> de première spécification stable (Vol. II <strong>F-02</strong>, <strong>[A]</strong>). ⚠ <strong>Qualification du projet, attribuée à lui</strong> (R-09 du Vol. III, statut dit à la mention). <em>La doctrine de complémentarité déclarée par le projet — « MCP dans les agents, A2A entre les agents » — rend les colonnes séparables</em> ; ⚠ <strong>le ch. 8 a établi qu'un critère de découpage n'est pas une contrainte</strong>.</p>
+
+<p><em>Le croisement tentant est celui de la carte signée avec l'imputabilité, et il échoue deux fois.</em> <strong>D'abord</strong> parce que le <strong>ch. 11</strong> l'a établi : le cadre d'autorisation de MCP et la carte signée d'A2A établissent tous deux <strong>qui parle</strong>, ⚠ <strong>non ce qui est dit ni si ce qui est dit est fondé</strong> (R-02 du Vol. III — <em>qualifier un mécanisme par ce que sa spécification démontre</em>). <strong>Ensuite</strong> parce que <strong>le porteur de l'obligation canadienne n'est pas l'agent</strong> : <span class="auteur">Lecture de l'auteur</span> sous l'article 12.1, l'obligation <strong>pèse sur l'entreprise qui rend la décision</strong>, et <em>aucune identité d'agent ne déplace ce porteur.</em> Le <strong>ch. 29</strong> en fait le pivot de son argument.</p>
+
+<p><strong>AP2 est la ligne la plus vide, et la plus instructive.</strong> Protocole compagnon d'A2A pour les transactions pilotées par agents ; ⚠ <strong>plus de soixante organisations déclarent leur soutien</strong> — <em>métrique auto-déclarée, attribuée au communiqué de fondation qui la porte, et <strong>le soutien déclaré ne vaut pas déploiement en production</strong></em> (Vol. II <strong>F-04</strong>, <strong>[A]</strong>). ⚠ <strong>Le socle du Vol. II ne porte ni son anatomie technique, ni un transfert de gouvernance, et ne le relie à aucun rail canadien.</strong></p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>une relation inverse apparaît</strong>. <em>Des trois protocoles, celui qui touche le plus directement l'acte réglementé — le paiement — est celui dont le socle documente le moins : ni anatomie, ni gouvernance, ni articulation canadienne.</em> <strong>Ce que le socle établit</strong> : les trois absences, chacune bornée à son libellé. <strong>Ce qu'il n'établit pas</strong> : leur convergence, qui est une lecture — ⚠ <em>et elle borne cette somme avant de borner AP2</em> : une institution qui l'instrumenterait en premier ne trouvera ici <strong>ni sa structure de message, ni son mandat, ni sa preuve d'intention</strong>, et <strong>doit remonter aux sources primaires</strong>. ⚠ <strong>Aucune de ces absences n'établit un fait négatif sur le protocole lui-même.</strong></p>
+
+<div class="avert">
+  <p><strong>Le ch. 10 de la somme documente, lui, l'anatomie d'AP2 que le Vol. II ne porte pas</strong> — <em>c'est une lacune de couverture couverte, non comblée</em> : les deux états sont datés, compatibles, et <strong>l'énoncé du Vol. II reste exact dans son périmètre</strong>. <strong>Cette matrice ne s'en sert pas</strong> : <em>sa cellule mesure ce que le socle du Vol. II relie à un texte canadien, et le ch. 10 n'en relie aucun.</em></p>
+</div>
+
+<h2 id="s423"><span class="sig">§ 42.3</span>Lecture par exigence</h2>
+
+<p>Lue par ses lignes, la matrice se réorganise en <strong>trois espèces</strong>. ⚠ <strong>La distinction n'est pas rhétorique : deux vides d'espèces différentes n'appellent pas la même conduite.</strong></p>
+
+<h3>42.3.1 Les trois espèces de vide</h3>
+
+<p><strong>Vide de socle — une ligne</strong> (ligne directrice de l'AMF). ⚠ Ces cellules sont vides parce que <strong>la somme ne sait pas ce que le texte attend</strong> : le contenu article par article relève d'une lacune déclarée. <em>Seule ligne dont le premier terme manque, et <strong>seul vide qu'une extraction primaire comblerait</strong>.</em></p>
+
+<p><strong>Vide de texte — une ligne</strong> (cadre bancaire). ⚠ Ces cellules sont vides <strong>pour une raison opposée</strong> : le socle porte l'exigence — <em>un standard technique unique est requis</em> —, mais <strong>le texte officiel ne désigne rien</strong>. <em>Non une lacune de la somme : <strong>un état du droit</strong>, et il est vérifié.</em></p>
+
+<p><strong>Vide de protocole — trois lignes</strong> (E-23, article 12.1, avis 11-348). ⚠ Ici, <strong>le socle porte la demande, et ce sont les protocoles qui ne portent rien.</strong></p>
+
+<ul class="puces">
+  <li><strong>E-23</strong> ne nomme <strong>ni l'agentique, ni les agents, ni l'orchestration</strong> — vérification mécanique sur le texte intégral, EN et FR. Sa définition de « modèle », laissée <em>intentionally broad</em>, englobe les méthodes d'IA et d'apprentissage automatique, et le texte vise expressément la <strong>prise de décision autonome</strong> et la <strong>re-paramétrisation autonome</strong> ; ⚠ <strong>d'où une couverture <em>implicite</em>, que des analystes juridiques tiennent pour acquise — inférence d'analystes, jamais « le BSIF exige pour l'IA agentique ».</strong> <span class="auteur">Lecture de l'auteur</span> <em>les champs d'un inventaire de modèles gouvernés et le typage d'un appel d'outil portent sur des objets différents</em> ; le socle porte les deux termes, leur non-recouvrement est de l'auteur.</li>
+  <li><strong>L'article 12.1</strong> attache <strong>trois obligations</strong> dont le socle porte le libellé officiel — informer, expliquer sur demande, offrir la révision. ⚠ <strong>Le socle ne documente, pour aucun des trois protocoles, d'événement de décision, d'explication d'instance ni d'intervention humaine.</strong></li>
+  <li><strong>L'avis 11-348</strong> capte les systèmes dont l'autonomie et l'adaptativité varient <strong>après déploiement</strong>. ⚠ <strong>Le socle ne documente, pour aucun protocole, de distinction entre l'adaptation éphémère d'une instance et l'évolution persistante du modèle de processus</strong> — distinction que le <strong>ch. 22</strong> fournit et que le <strong>ch. 29</strong> érige en contrainte.</li>
+</ul>
+
+<h3>42.3.2 Le renversement, et c'est le résultat le plus utile du chapitre</h3>
+
+<p><span class="auteur">Lecture de l'auteur</span> <em>on attendrait que les lignes vides soient celles des textes les moins lisibles. <strong>C'est l'inverse.</strong></em> Les deux textes dont le socle porte le contenu le plus précis — E-23, par extraction intégrale, et l'article 12.1, par son libellé officiel — sont <strong>ceux dont les six croisements ne portent aucun lien documenté</strong>, ⚠ <strong>et ce sont eux qui obligent le plus tôt</strong> : <em>l'un depuis 2023, l'autre au 1ᵉʳ mai 2027.</em></p>
+
+<div class="avert">
+  <p><strong>Pour MCP et A2A, dont le socle porte l'anatomie, ce vide n'est pas documentaire</strong> : <em>les deux spécifications décrivent des appels et des délégations, non des décisions.</em> ⚠ <strong>Pour AP2, dont le socle du Vol. II ne porte aucune structure de message, rien ne permet de trancher entre les deux espèces.</strong> <em>Un vide de socle se comble par une extraction primaire ; qu'un vide de protocole se comble ou non, la somme le laisse ouvert.</em></p>
+</div>
+
+<h3>42.3.3 Le croisement avec la grille des cinq questions — construction du compendium</h3>
+
+<div class="avert">
+  <p><strong>Ce croisement n'est porté par aucune des deux sources, et il est marqué comme construction.</strong> Le Vol. II n'emploie pas la grille — <em>c'est un instrument du Vol. III</em> —, et le Vol. III ne croise pas ses mécanismes avec les textes canadiens. <strong>La somme met les deux matrices en regard, et c'est un geste d'éditeur.</strong></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : d'un côté, <strong>quinze croisements sans lien documenté</strong> (Vol. II) ; de l'autre, des <strong>verdicts par mécanisme</strong> sur les cinq questions, dont <strong>aucun « répond » plein</strong>, plusieurs « répond partiellement » et de nombreuses <strong>cases vides au degré 3</strong> (Vol. III, Annexe B). <strong>Ce qu'il n'établit pas</strong> : que les deux matrices mesurent le même objet — <em>et elles ne le mesurent pas.</em></p>
+
+<div class="avert">
+  <p><strong>La mise en regard produit néanmoins un constat, et un seul.</strong> Les trois cellules non vides de la matrice protocolaire — article 12.1 × MCP, article 12.1 × A2A, cadre bancaire × MCP — sont exactement celles où <strong>le protocole apporte quelque chose qui répond à Q-A</strong> (<em>qui es-tu</em>) <strong>et à rien d'autre</strong> : <em>un substrat de frontière typé, une identité d'appelant vérifiable, un vocabulaire d'autorisation partagé.</em> <strong>Or aucune des trois obligations canadiennes croisées ne pose la question Q-A</strong> : elles posent <em>qui répond</em> (Q-E) et <em>sur quel fondement</em>. ⚠ <strong>Le croisement des deux instruments dit donc la même chose que chacun séparément, et il le dit plus court</strong> : <em>la couche protocolaire répond à la première question de la grille ; les textes canadiens posent la dernière.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Ce constat est réfutable, et par une seule chose</strong> : la production d'une cellule où un protocole apporterait une réponse à Q-C, Q-D ou Q-E qu'un texte canadien exigerait. <strong>Le socle n'en porte aucune.</strong></p>
+</div>
+
+<h2 id="s424"><span class="sig">§ 42.4</span>Les zones de compensation architecturale</h2>
+
+<p><strong>Appelons <em>zone de compensation</em> un point où le socle établit une demande, ou une contrainte de conception, que la couche protocolaire ne porte pas — et que quelque chose d'autre doit donc porter.</strong> ⚠ <strong>Les cinq qui suivent relèvent de la Lecture de l'auteur : le socle en porte les termes, jamais la conclusion.</strong></p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>#</th><th>Zone</th><th>Ce que le socle porte des deux côtés</th><th>Ce qui doit compenser, et où c'est traité</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Z1</strong></td><td><strong>La production de la trace</strong></td><td>l'art. 12.1 exige les raisons, facteurs et paramètres de <em>cette</em> décision ; une préimpression enseigne que <strong>la journalisation confiée aux agents « n'est généralement pas recommandée »</strong> ⚠ <em>(source unique, non révisée)</em> ; un rapport conjoint d'autorités établit que <strong>les relations causales entrées-sorties sont souvent indéterminables</strong></td><td><strong>le cadre</strong>, non l'agent — <strong>ch. 29</strong> ; ⚠ <strong>la matrice ajoute le quatrième candidat écarté : le protocole</strong> — <em>le typage donne un substrat de frontière, non une trace d'instance</em>. Instrumentation : <strong>ch. 38 § 38.4</strong></td></tr>
+    <tr><td><strong>Z2</strong></td><td><strong>Le point d'arrêt humain</strong></td><td>l'art. 12.1 exige l'occasion de présenter ses observations à <strong>un membre du personnel en mesure de réviser</strong> ; ⚠ <strong>le socle ne documente d'humain dans aucun des trois protocoles</strong> — il le documente au niveau d'<strong>un</strong> cadriciel d'orchestration nommé, jamais des protocoles</td><td><strong>la couche d'orchestration</strong> — <strong>ch. 23</strong> ; ⚠ <strong>le flux outille un point d'arrêt humain, jamais la révision de l'article 12.1</strong> (<strong>ch. 45 § 45.11</strong>)</td></tr>
+    <tr><td><strong>Z3</strong></td><td><strong>La détectabilité de l'auto-modification</strong></td><td>l'avis 11-348 capte l'adaptativité <strong>après déploiement</strong> ; un manifeste scinde l'auto-modification en <strong>adaptation</strong> et <strong>évolution</strong> ; E-23 <strong>attend</strong> une surveillance continue visant nommément la <strong>re-paramétrisation autonome</strong></td><td>⚠ <strong>aucune ligne de la pile ne l'exécute</strong> : la contrainte est au <strong>ch. 29</strong>, la distinction au <strong>ch. 22</strong>, le constat d'indétectabilité au <strong>ch. 39 § 39.5</strong></td></tr>
+    <tr><td><strong>Z4</strong></td><td><strong>L'interface d'accès du cadre bancaire</strong></td><td><strong>le standard technique n'est pas désigné</strong> — fait négatif vérifié, quatre chaînes cherchées</td><td><strong>traiter le standard d'accès comme une variable derrière une frontière d'abstraction</strong> — <strong>ch. 32</strong> ; ⚠ <strong>ce n'est pas un choix de protocole agentique, aucun n'étant nommé dans les textes</strong>. Flux instancié : <strong>ch. 45 § 45.13</strong></td></tr>
+    <tr><td><strong>Z5</strong></td><td><strong>Le contenu et l'état</strong></td><td>les réponses protocolaires établissent <strong>qui parle</strong> ; ⚠ elles <strong>ne couvrent ni l'empoisonnement d'outils, ni l'injection d'invites, ni l'empoisonnement de mémoire</strong> ; un manifeste propose <strong>le confinement local, non la prévention</strong></td><td><strong>le maillage et les garde-fous d'exécution</strong> — <strong>ch. 37 § 37.6</strong> ; la menace elle-même est au <strong>ch. 19</strong>, la défense au <strong>ch. 6</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 42.2 — Les cinq zones de compensation architecturale. ⚠ <strong>Construction d'auteur</strong> : le socle porte les termes de chaque ligne, <strong>jamais la conclusion qu'elle en tire</strong>.</p>
+
+<p><span class="auteur">Lecture de l'auteur</span> <strong>les cinq zones partagent une propriété qu'aucune ne montre seule : <em>aucune ne se referme en choisissant un meilleur protocole</em>.</strong> ⚠ <strong>Là où les standards ne suffisent pas, ce n'est pas parce qu'ils seraient immatures : c'est parce qu'ils ne répondent pas à la question posée.</strong> <em>La compensation n'est donc pas un palliatif transitoire ; elle est <strong>structurelle</strong>, et l'architecture de référence du <strong>ch. 43</strong> est l'endroit où elle se construit.</em></p>
+
+<div class="avert">
+  <p><strong>Lecture bornée par sa date</strong> : le socle documente une <strong>révision majeure du protocole agent-outil annoncée</strong>, postérieure au gel de sa source, ⚠ <strong>sans en documenter le contenu au regard d'aucune exigence canadienne</strong> — degré 3. <em>Ce que cette révision changerait à la matrice n'est documenté par rien, et l'inférer serait la faute que la somme prend pour objet.</em></p>
+</div>
+
+<p>## Synthèse : ce que le chapitre lègue à la somme</p>
+
+<p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
+
+<ol class="numeros">
+  <li><strong>L'instrument, et ses trois règles de remplissage.</strong> <em>Deux termes par cellule ; aucun verdict de conformité ; toute cellule non vide est une inférence.</em> Les <strong>ch. 43 à 46</strong> les appliquent sans les redécider, et <strong>l'Annexe F les consolide</strong>.</li>
+  <li><strong>Le cardinal, re-mesuré et non recopié.</strong> <strong>Quinze croisements, aucun lien documenté</strong> ; <strong>4 + 11 = 15</strong> par la provenance de l'absence, <strong>6 + 9 = 15</strong> par l'état de la cellule. ⚠ <strong>Les deux partitions ne se recouvrent pas, et les confondre est le piège propre à cet objet.</strong></li>
+  <li><strong>Les trois espèces de vide.</strong> <em>Vide de socle</em> (une ligne, comblable par extraction), <em>vide de texte</em> (une ligne, état du droit vérifié), <em>vide de protocole</em> (trois lignes). ⚠ <strong>Une seule se comble par une passe d'instruction, et le ch. 49 enregistrera laquelle.</strong></li>
+  <li><strong>Le renversement.</strong> <em>Les deux textes dont le socle porte le contenu le plus précis sont ceux dont les croisements sont les plus vides — et ce sont eux qui obligent le plus tôt.</em></li>
+  <li><strong>Les cinq zones de compensation.</strong> Elles sont <strong>le cahier des charges du ch. 43</strong> : <em>ce que l'architecture doit porter parce qu'aucun protocole ne le porte.</em> Le <strong>ch. 45</strong> les instancie, le <strong>ch. 46</strong> en séquence l'instrumentation.</li>
+  <li><strong>Le croisement des deux matrices, marqué comme construction.</strong> <em>La couche protocolaire répond à la première question de la grille ; les textes canadiens posent la dernière.</em> ⚠ <strong>Construction du compendium, réfutable par une seule cellule.</strong></li>
+</ol>
+
+<div class="avert">
+  <p><strong>Ce que le chapitre ne lègue pas — et il faut l'énoncer avec la même netteté que la source.</strong> Il ne dit pas que <strong>les protocoles seraient non conformes</strong> aux exigences canadiennes : <em>la conformité n'est pas une propriété qu'un format d'échange puisse porter, et aucune source ne l'évalue.</em> Il ne dit pas que <strong>ces quinze absences établissent l'absence d'un lien</strong> : <em>onze sont un état de la documentation, non un état du monde, et les quatre autres ne portent que sur les chaînes effectivement cherchées.</em> Il ne dit pas <strong>ce que la ligne directrice de l'AMF attend</strong> : <em>son contenu n'est pas au socle.</em> Il ne dit pas que <strong>les cinq zones soient exhaustives</strong> : <em>elles procèdent de cinq lignes dont une est vide du côté des attentes.</em> ⚠ <strong>La matrice n'établit pas que les protocoles échouent : elle établit qu'ils répondent à une autre question — et que personne, à la date de gel, n'a écrit la phrase qui les relierait au droit canadien.</strong></p>
+</div>
+
+<section class="statut" id="s425">
+
+<h2><span class="sig">§ 42.5</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
+
+<div class="avert">
+  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A).</p>
+</div>
+
+<p><strong>Ce qui est enfreint.</strong> Portes <strong>G-3</strong>, <strong>G-4</strong> et <strong>G-5</strong> ; <strong>volet résiduel de G-1</strong> ; <strong>ordre de rédaction du PRD §6</strong>, qui place ce mouvement <strong>après les Livres I et III</strong> — ⚠ <strong>et le Livre III n'est pas achevé</strong>, ce qui rend <strong>les renvois vers les ch. 27, 28, 29 et 32 non résolus contre du texte</strong>. Instruction d'auteur du <strong>27 juillet 2026</strong>.</p>
+
+<ol class="numeros">
+  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01.</strong> ⚠ <strong>Et ce chapitre est le seul du Livre dont le socle est TRANSVERSAL et construit par la rédaction</strong> : <em>sa contrepartie — l'énumération des entrées mobilisées et des garde-fous balayés, y compris à zéro — est portée à l'en-tête, et c'est ce dispositif, non une relecture, qui a permis au Vol. II de détecter une erreur de marquage de son propre socle.</em></li>
+  <li><strong>Les décomptes sont publiables</strong> (G-2) ; le réel est reporté au <a class="lien" href="README.md"> 0 </a>.</li>
+  <li><strong>Les renvois « ch. N » vers les Livres III à V sont des renvois de plan.</strong> Ne sont pas rédigés : <strong>ch. 27</strong>, <strong>ch. 28</strong>, <strong>ch. 29</strong>, <strong>ch. 32</strong>, <strong>ch. 43</strong>, <strong>ch. 45</strong>, <strong>ch. 49</strong>, et l'<strong>Annexe F</strong>. Les renvois vers les <strong>ch. 8, 10, 11, 14, 19, 22, 25</strong> résolvent contre du texte ; ceux vers les <strong>ch. 37, 38, 39, 46</strong> résolvent contre du texte au terme de la présente passe.</li>
+  <li><strong>Le cardinal de quinze est re-mesuré sur la source, non recopié</strong> ; ☐ <strong>la re-mesure contre la matrice consolidée de l'Annexe F reste due</strong>, cette annexe n'étant pas rédigée.</li>
+  <li><strong>CA-IV-13 n'est pas satisfaite</strong> — aucune relecture par un relecteur distinct du rédacteur.</li>
+</ol>
+
+<p><strong>Remontées ouvertes par ce chapitre :</strong></p>
+
+<ul class="puces">
+  <li><strong>R-IV-54 — non bloquante, de thèse, DOUBLE, et de deux natures différentes.</strong> <em>(a)</em> La thèse porte « révèle <strong>où les standards suffisent</strong> et où l'architecture doit compenser ». ⚠ <strong>Le Vol. II ne trouve aucun croisement où les standards suffisent</strong> : sa matrice est <strong>un tableau de vides</strong>, et sa conclusion est que les standards <strong>ne répondent pas à la question posée</strong>. <em>Le membre est sans occurrence dans la source, et sa conservation ferait attendre au lecteur une colonne que la matrice ne porte pas.</em> <em>(b)</em> La thèse porte « <strong>et la grille des cinq questions</strong> ». ⚠ <strong>Ce membre n'est pas un désalignement mais une ADDITION du plan</strong> : le Vol. II n'emploie pas la grille, le Vol. III ne croise pas ses mécanismes aux textes canadiens, et <strong>le croisement est une construction du compendium</strong>. <strong>Demande remontée</strong> : <em>(a)</em> réalignement du premier membre sur la forme de la source (<strong>décisions 8 et 14</strong>) ; <em>(b)</em> que le second membre soit <strong>déclaré construction d'auteur à la ligne Fusion</strong>, comme le TOC le fait déjà pour le ch. 41 — <em>une addition de plan non déclarée est indiscernable d'une reprise de source.</em> ⚠ <strong>La pièce l'a écrite et marquée au § 42.3.3</strong> ; <em>la déclaration au plan reste due.</em></li>
+  <li><strong>R-IV-55 — non bloquante, de collision d'identifiants, et elle porte sur une classe entière.</strong> Ce chapitre mobilise <strong>simultanément les deux séries F-xx</strong> — celle du Vol. II et celle du Vol. III —, et <strong>plusieurs numéros existent dans les deux sur des objets sans rapport</strong> : <em>F-01, F-02, F-04, F-09, F-35, F-37, F-46 et F-89, entre autres, ont un porteur dans chaque volume.</em> La pièce préfixe <strong>chaque occurrence</strong> de son volume, comme la décision 7 l'exige. ⚠ <strong>Mais aucun contrôle outillé ne vérifie ce préfixage</strong> : <code>check-toc.py</code> ne lit pas les pièces, <code>check-sieges.py</code> contrôle les sièges, <code>verifier-piece.py</code> ne connaît qu'une pièce et ignore les identifiants. <strong>Demande remontée</strong> : que <strong><code>check-compendium.py</code>, à construire en G-3, porte un motif de balayage des identifiants de socle non préfixés</strong>, validé par mutation. ⚠ <em>Ce chapitre est le premier du compendium à mobiliser les deux séries en volume, et c'est exactement le point où l'absence de contrôle cesse d'être théorique.</em></li>
+  <li><strong>R-IV-56 — non bloquante, de divergence datée, et elle est déjà au registre.</strong> Le socle du Vol. II date la version finale de la ligne directrice de l'AMF du <strong>30 mars 2026</strong> ; la <strong>veille technologique de la racine du dépôt la date du 7 avril 2026</strong>, sa source étant <strong>inaccessible aux outils</strong>. La pièce <strong>signale la divergence et ne la lisse pas</strong>, comme le régime du dépôt l'exige. <strong>Demande remontée</strong> : que <strong>le volet résiduel de G-1 nomme cette divergence dans son domaine</strong> — elle y est déjà énumérée — <strong>et que la ligne de la matrice porte la réserve tant qu'elle n'est pas tranchée</strong> ; ⚠ <em>le cadrage du Vol. IV a tranché en faveur du Vol. II, et cet arbitrage n'a aucune autorité tant que la somme n'est pas rédigée.</em></li>
+</ul>
+
+<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la <strong>table détaillée du TOC v0.25</strong> — § 42.1 à § 42.4, dans l'ordre exact —, et le § 42.0 est une introduction de chapitre. La <strong>table de couverture est respectée pour ses trois lignes</strong> : Vol. II §18.1-18.4 en <strong>condensé</strong>, Vol. II <em>Monographie</em> Annexe B comme <strong>source des quinze croisements</strong>, Vol. III Annexe B comme <strong>matrice des mécanismes</strong>.</p>
+
+<div class="avert">
+  <p><strong>Les trois règles de remplissage sont reprises sans être réinventées</strong>, et <strong>aucune correspondance que la source n'a pas trouvée n'est introduite</strong> — <em>c'est la discipline propre à ce chapitre, et la seule qui l'empêche de fabriquer.</em> Les <strong>deux partitions du cardinal sont maintenues distinctes</strong>. Les <strong>deux faits négatifs vérifiés portent leur borne</strong> — <em>le premier sur le vocabulaire agentique, les chaînes de protocole n'ayant pas été cherchées ; le second sur quatre chaînes nommées.</em> Les <strong>douze occurrences de degré 3</strong> portent leur degré. Les <strong>neuf occurrences de la forme imposée « attendu par E-23 »</strong> sont tenues, et <strong>« fiche de modèle » compte zéro occurrence</strong>. Le <strong>socle transversal porte sa contrepartie obligatoire à l'en-tête</strong>, y compris les garde-fous à zéro occurrence. <strong>Aucun siège neuf n'est posé</strong> ; les sièges touchés — la grille au <strong>ch. 14</strong>, le passeport au <strong>ch. 16</strong>, l'encadré à quatre branches au <strong>ch. 7 § 7.5</strong> — portent leur renvoi.</p>
+</div>
+
+</section>
+
+<footer class="pied">
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre IV, chapitre 42. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.25, entrée du chapitre 42, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // --- barre de progression de lecture et section active -----------------
+  var barre = document.getElementById("progression");
+  var liens = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var cibles = liens.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var enAttente = false;
+
+  function majProgression() {
+    var h = document.documentElement;
+    var parcourable = h.scrollHeight - h.clientHeight;
+    var ratio = parcourable > 0 ? (h.scrollTop || document.body.scrollTop) / parcourable : 0;
+    barre.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+
+  function majSectionActive() {
+    var seuil = window.scrollY + window.innerHeight * 0.28;
+    var actif = -1;
+    for (var i = 0; i < cibles.length; i++) {
+      if (cibles[i] && cibles[i].offsetTop <= seuil) { actif = i; }
+    }
+    for (var j = 0; j < liens.length; j++) {
+      liens[j].classList.toggle("actif", j === actif);
+    }
+  }
+
+  function auDefilement() {
+    if (enAttente) { return; }
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      majProgression();
+      majSectionActive();
+      enAttente = false;
+    });
+  }
+
+  window.addEventListener("scroll", auDefilement, { passive: true });
+  window.addEventListener("resize", auDefilement, { passive: true });
+  auDefilement();
+})();
+</script>
+
+</body>
+</html>
