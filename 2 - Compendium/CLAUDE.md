@@ -14,11 +14,7 @@ remontées soldées** — TOC **v0.29**, PRD **v0.13**. **Cinq faits conditionne
 **159 entrées `S-001`…`S-159`** — 46 du Vol. II, 96 du Vol. III, 17 du Vol. I en `[C]` —, **deux
 tables de correspondance**, **13 entrées héritées fondues**, **5 exclues**, identité de clôture
 vérifiée (*177 sources = 159 + 13 + 5*). **La phrase « socle consolidé : zéro entrée », vraie depuis
-l'ouverture du volume, ne l'est plus — ne plus l'écrire.** *(2)* ⚠ **G-3 est ENTAMÉE, NON FRANCHIE**,
-et l'écart est le résultat : **4 entrées sur 159 sont re-datées**, 155 ne le sont pas, la re-datation
-dépendant du **volet résiduel de G-1** ; **23 réserves** sont déclarées ; et **aucun énoncé n'a été
-confronté à sa source primaire**. *Un socle constitué n'est pas un socle vérifié.* **Deux portes sur
-sept restent franchies.** *(3)* ⚠ **Les NEUF décisions d'auteur sont prises** — **D-5** l'a été le
+l'ouverture du volume, ne l'est plus — ne plus l'écrire.** *(2)* ☑ ⚠ **LA PORTE G-3 EST FRANCHIE** (28 juillet 2026, PRD v0.14, jalon **J-IV-2 atteint**) — la première depuis G-2, et celle que le PRD déclare conditionner **toute rédaction**. Ses quatre termes sont livrés : socle numéroté, deux tables, **re-datation à la source primaire** des **123 entrées à sensibilité temporelle** (**91 inchangées, 10 changées, 22 non établies**, domaine déclaré et clos), et `check-compendium.py` **validé par mutation** (P1-P8, 17 mutations). **Trois portes sur sept sont désormais franchies.** ⚠ **Le résidu fait partie du franchissement et se cite avec lui** : **22 entrées portent une date non re-vérifiée, 28 sont partielles**, et **aucune des cinquante ne porte un fait central sur sa composante non re-vérifiée** ; les entrées **intégralement ré-établies sont 63 sur 123**. *Ne jamais écrire « 91 confirmées ».* **Aucun vote adversarial n'est conduit**, et il reste dû pour toute entrée appelée à porter un fait central. *(3)* ⚠ **Les NEUF décisions d'auteur sont prises** — **D-5** l'a été le
 28 juillet (ancrage de la *Synthèse* du Vol. I à l'arbre gelé `fd8f1be~1`, vérifié sur pièce ;
 restauration écartée, repointage interdit). *Ne plus écrire « sept sur neuf » ni « huit sur neuf ».*
 *(4)* **L'appareil compte quatre contrôles**, chacun exécuté seul : `check-toc.py` (C1-C15),

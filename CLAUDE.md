@@ -54,10 +54,14 @@ huit remontées ont été soldées** (TOC v0.29, PRD v0.13). *(a)* ⚠ **Le socl
 [`socle-consolide.md`](2%20-%20Compendium/PRD/socle-consolide.md), **159 entrées `S-001`…`S-159`**,
 deux tables de correspondance : **la phrase « socle consolidé à zéro entrée », vraie depuis
 l'ouverture du volume et répétée partout dans ce fichier, ne l'est plus** — la conserver ailleurs
-dans ce document est un fait daté du 27 juillet, non l'état courant. *(b)* ⚠ **G-3 est ENTAMÉE, NON
-FRANCHIE**, et **les NEUF décisions d'auteur sont prises** (D-5 le 28 juillet) : *ne plus écrire
-« sept sur neuf »*. **Deux portes sur sept restent franchies** — la re-datation du socle (4 entrées
-sur 159) dépend du volet résiduel de **G-1**, et *un socle constitué n'est pas un socle vérifié*.
+dans ce document est un fait daté du 27 juillet, non l'état courant. *(b)* ☑ ⚠ **LA PORTE G-3 EST FRANCHIE** le 28 juillet 2026 (PRD v0.14, jalon **J-IV-2 atteint**) —
+la première depuis G-2, et celle qui conditionne toute rédaction : **trois portes sur sept** le sont
+désormais. Les **123 entrées à sensibilité temporelle du socle ont été portées à leur source
+primaire** — **91 inchangées, 10 changées, 22 non établies**, domaine déclaré et clos. **Les neuf
+décisions d'auteur sont prises** (D-5 le 28 juillet) : *ne plus écrire « sept sur neuf »*.
+⚠ **Le résidu se cite avec le franchissement** : **22 entrées portent une date non re-vérifiée,
+28 sont partielles**, et **aucune des cinquante ne porte un fait central sur sa composante non
+re-vérifiée** — *91 « inchangées » n'est pas 91 « confirmées ».*
 *(c)* **Le statut du volume ne change pas pour autant** : les cinquante chapitres demeurent un
 **brouillon non publiable**, et **CA-IV-11 comme CA-IV-13 restent insatisfaisables** faute d'un
 relecteur distinct du rédacteur. Le détail vit au [`CLAUDE.md` du

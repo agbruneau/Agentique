@@ -420,6 +420,9 @@ def controler():
     # ---- P6 : le registre de gel est aligné pièce à pièce -------------
     echecs += controler_registre(corpus)
 
+    # ---- P8 : le seuil de J-IV-2 ---------------------------------------
+    echecs += controler_resolution_du_toc()
+
     # ---- Les trois rapports déclaratifs -------------------------------
     #
     # ⚠ Aucun des trois n'est un contrôle supprimé : chacun est mesuré, chiffré,
@@ -554,6 +557,53 @@ def controler_registre(corpus):
     return echecs
 
 
+TOC = RACINE / "PRD" / "TOC.md"
+
+
+def controler_resolution_du_toc():
+    """P8 — le seuil que le jalon J-IV-2 énonce, rendu opposable.
+
+    Le PRD §12 fixe pour sortie de J-IV-2 que « **100 % des F-xx cités par le
+    TOC résolvent contre l'Annexe B** ». Tant que cette phrase n'a pas
+    d'exécutable, c'est une spécification et non un seuil — *un contrôle dont
+    l'exécutable n'est pas versionné est une spécification, pas un contrôle*.
+
+    Deux décisions de lecture, écrites parce qu'elles ne vont pas de soi.
+
+    **(1) « Résoudre » inclut résoudre vers une EXCLUSION DÉCLARÉE.** Cinq
+    identifiants sont connus du socle sans y être versés — `F-92` et `F-96`
+    (dette de vote), `H-13`, `H-15`, `H-16` (hors socle factuel) —, plus les
+    trois non attribués `F-12` à `F-14`. Un renvoi vers eux **n'est pas
+    pendant** : il tombe sur une rangée qui dit ce qu'ils sont et pourquoi ils
+    ne sont pas versés. *C'est même la valeur propre de l'Annexe B : elle
+    répond aussi des entrées qu'elle refuse.* Exiger un `S-nnn` ferait échouer
+    le seuil sur les deux entrées que le socle a délibérément écartées — un
+    contrôle qui punit la déclaration d'une exclusion enseigne à ne pas la
+    déclarer.
+
+    **(2) Les zones gelées du TOC sont hors domaine.** Les rangées
+    d'historique et les journaux citent les identifiants **de leur passe** et
+    ne se corrigent jamais (règle du fichier). Les y opposer rendrait le
+    contrôle faux à chaque version : mêmes exemptions que `check-toc.py`.
+    """
+    if not TOC.exists():
+        return ["[P8] `PRD/TOC.md` est absent — le seuil de J-IV-2 n'est pas mesurable."]
+    _, _, connus = tables_du_socle()
+    if connus is None:
+        return ["[P8] `PRD/socle-consolide.md` est absent — le seuil de J-IV-2 "
+                "n'est pas mesurable."]
+    lignes = [l for l in TOC.read_text(encoding="utf-8").splitlines()
+              if not l.startswith("| Historique")]
+    zone = "\n".join(lignes).split("## Journal v0.")[0]
+    cites = set(re.findall(r"(?<![\w-])([FH]-\d+b?)(?![\w-])", zone))
+    pendants = sorted(cites - connus)
+    if pendants:
+        return [f"[P8] {len(pendants)} identifiant(s) de socle cité(s) par le TOC ne résolvent "
+                f"pas contre l'Annexe B — {', '.join(pendants)}. Seuil de J-IV-2 : "
+                f"{len(cites & connus)}/{len(cites)}."]
+    return []
+
+
 def main():
     echecs, rapport = controler()
     for bloc in rapport:
@@ -564,7 +614,7 @@ def main():
         for e in echecs:
             print(f"  {e}")
         return 1
-    print(f"OK — les {len(pieces())} pièces tiennent (P1-P7), "
+    print(f"OK — les {len(pieces())} pièces tiennent (P1-P8), "
           f"{len(rapport)} rapport(s) déclaratif(s) ci-dessus.")
     return 0
 

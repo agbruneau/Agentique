@@ -124,7 +124,9 @@ def copier():
         cible.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(piece, cible)
     (tmp / "PRD").mkdir(exist_ok=True)
-    for nom in ("socle-consolide.md", "registre-gel.md"):
+    # ⚠ Le TOC entre à la copie depuis l'ajout de P8 : le seuil de J-IV-2 se
+    # mesure sur lui, et une copie sans lui rendrait la mutation M8 inopérante.
+    for nom in ("socle-consolide.md", "registre-gel.md", "TOC.md"):
         shutil.copy2(RACINE / "PRD" / nom, tmp / "PRD" / nom)
     return tmp
 
@@ -185,6 +187,46 @@ def m4_identifiant_de_socle_inconnu(tmp):
 def m4b_identifiant_source_inconnu(tmp):
     """P4 — un `F-xx` qui ne résout contre aucune des deux tables."""
     inserer(tmp / CH46, "\n\nLe Vol. III F-99 documente le point à sa source.\n")
+
+
+def m8_toc_identifiant_pendant(tmp):
+    """P8 — le TOC cite un identifiant de socle que l'Annexe B ne connaît pas.
+
+    C'est le seuil de **J-IV-2** que cette mutation éprouve : *« 100 % des F-xx
+    cités par le TOC résolvent contre l'Annexe B »*. On insère le renvoi dans la
+    **zone vivante** du fichier — après le dernier titre de livre, avant les
+    journaux —, puisque les rangées d'historique et les journaux sont gelés et
+    hors domaine par construction.
+
+    ⚠ L'identifiant doit être RÉELLEMENT inconnu des deux tables : le premier
+    jet employait « Vol. II F-77 », qui existe au socle du Vol. III — *la
+    mutation ne mutait rien, et le harnais l'a dit.* Les séries s'arrêtent à
+    `F-48` (Vol. II) et `F-98` (Vol. III) : `F-99` est hors des deux.
+    """
+    p = tmp / "PRD" / "TOC.md"
+    texte = p.read_text(encoding="utf-8")
+    ancre = "## Annexes"
+    assert ancre in texte, "ancre de mutation introuvable dans le TOC"
+    p.write_text(texte.replace(
+        ancre, "Renvoi de contrôle : le Vol. III F-99 fonde ce point.\n\n" + ancre, 1),
+        encoding="utf-8")
+
+
+def m8b_exclusion_declaree(tmp):
+    """P8 — une exclusion DÉCLARÉE résout, et ne doit produire aucun échec.
+
+    ⚠ C'est le *ne-doit-pas-voir* qui protège la décision de lecture de P8 :
+    `F-92` est **connue et non versée** (dette de vote). Un contrôle qui la
+    compterait pendante **punirait la déclaration de l'exclusion** — et
+    enseignerait à ne pas la déclarer, ce qui est l'inverse de ce que
+    l'Annexe B doit produire.
+    """
+    p = tmp / "PRD" / "TOC.md"
+    texte = p.read_text(encoding="utf-8")
+    ancre = "## Annexes"
+    p.write_text(texte.replace(
+        ancre, "Renvoi de contrôle : le Vol. III F-92 porte sa dette de vote.\n\n" + ancre, 1),
+        encoding="utf-8")
 
 
 def m5_cardinal_fausse(tmp):
@@ -275,6 +317,9 @@ def m7e_mention_metalinguistique(tmp):
 #   « rapport » — le cardinal du rapport déclaratif doit CROÎTRE ;
 #   « muet »    — la mutation ne doit produire AUCUN échec neuf.
 MUTATIONS = [
+    ("M8  P8 — le TOC cite un identifiant que l'Annexe B ne connaît pas",
+     m8_toc_identifiant_pendant, "[P8]", "echec"),
+    ("M8b P8 — une exclusion déclarée résout (F-92)", m8b_exclusion_declaree, "[P8]", "muet"),
     ("M1  P1 — champ d'en-tête retiré", m1_champ_retire, "[P1]", "echec"),
     ("M2  P2 — renvoi « ch. 62 » hors du domaine 1-50", m2_renvoi_hors_domaine, "[P2]", "echec"),
     ("M2b P2 — « ch. 62 du Vol. II » désigne une source", m2b_renvoi_a_une_source, "[P2]", "muet"),
