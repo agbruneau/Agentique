@@ -218,6 +218,93 @@ SIEGES = [
         "declencheur": r"\btri prospectif\b",
         "renvoi": None,
     },
+    # --------------------------------------------------------------------
+    # Les trois sièges du Livre IV, versés le 27 juillet 2026 avec sa passe
+    # d'arbitrage (remontée R-IV-59). Deux d'entre eux ont S5 DÉSACTIVÉ, et le
+    # motif est mesuré plutôt que commode — même doctrine que pour le tri
+    # prospectif ci-dessus : *un contrôle bruyant est un contrôle ignoré.*
+    # --------------------------------------------------------------------
+    {
+        "id": "siège des cinq points de contrôle obligatoires",
+        "fichier": "Livre IV/43-architecture-reference-couches.md",
+        "section": "ch. 43 § 43.3",
+        "marqueur": r"SIÈGE DES CINQ POINTS DE CONTRÔLE OBLIGATOIRES POUR TOUTE LA SOMME",
+        # Reconstruire le siège, c'est refaire LA LISTE — donc les cinq rangées
+        # de sa table. Citer « PC2 » ou « les cinq points de contrôle
+        # obligatoires » est au contraire la forme normale d'un renvoi, que cinq
+        # pièces emploient correctement : les prendre pour signature rendrait le
+        # contrôle bruyant. D'où l'ancrage sur les rangées, aux deux bouts et au
+        # milieu — trois suffisent, et TOUTES doivent être présentes.
+        "signature": [
+            r"^\|\s*\*\*PC1\*\*",
+            r"^\|\s*\*\*PC3\*\*",
+            r"^\|\s*\*\*PC5\*\*",
+        ],
+        # ⚠ S5 est DÉSACTIVÉ pour ce siège, et le motif est mesuré : SEPT pièces
+        # emploient « points de contrôle obligatoires », dont SIX renvoient au
+        # siège (ch. 37, 38, 39, 43, 45, 46 du Livre IV) et UNE ne le fait pas —
+        # le ch. 17 du Livre II, qui cite « les cinq points de contrôle
+        # obligatoires DE SON ch. 19 », c'est-à-dire du Vol. II, sa source. Son
+        # renvoi est exact dans son périmètre, et l'aligner obligerait à toucher
+        # le corps d'une pièce dont la volumétrie est publiée — ce qui périmerait
+        # un cardinal contrôlé pour satisfaire un motif. Remontée : aligner le
+        # ch. 17 à la passe qui rouvrira le Livre II, PUIS remplacer None par
+        # r"ch\.\s*43\b". *Un siège contrôlé contre la reconstruction mais non
+        # contre l'omission de renvoi est à moitié contrôlé, et cela se déclare.*
+        "declencheur": r"points? de contrôle obligatoires?",
+        "renvoi": None,
+    },
+    {
+        "id": "siège du modèle de maturité et des trois échelles d'autonomie",
+        "fichier": "Livre IV/43-architecture-reference-couches.md",
+        "section": "ch. 43 § 43.5",
+        "marqueur": r"SIÈGE DU MODÈLE DE MATURITÉ ET DE LA DÉSAMBIGUÏSATION DES TROIS ÉC",
+        # Ce que le siège interdit de refaire n'est pas le mot « maturité » :
+        # c'est la TABLE qui départage les trois échelles homonymes du Vol. I par
+        # leur cardinal et leur numérotation. D'où l'ancrage sur les trois
+        # libellés d'échelle, jamais sur « copilote » ni sur « autonomie graduée »,
+        # que R-13 oblige déjà à qualifier partout.
+        "signature": [
+            r"échelle à quatre paliers non numérotés",
+            r"continuum à six niveaux numérotés",
+            r"graduation à quatre niveaux préfixés",
+        ],
+        # ⚠ S5 est DÉSACTIVÉ pour ce siège, et le motif est mesuré : SEPT pièces
+        # emploient « modèle de maturité », dont TROIS renvoient au siège
+        # (ch. 39, 40, 41 du Livre IV) et QUATRE ne le font pas — le ch. 1 du
+        # Livre I, les ch. 24 et 34 du Livre III, tous rédigés hors de la passe
+        # qui verse ce siège, et deux d'entre eux dans une passe concurrente du
+        # même jour. Outiller l'obligation aujourd'hui produirait quatre échecs
+        # sur des pièces qu'aucune passe en cours n'a mandat de corriger.
+        # Remontée : aligner les quatre, PUIS remplacer None par r"ch\.\s*43\b".
+        "declencheur": r"modèles? de maturité",
+        "renvoi": None,
+    },
+    {
+        "id": "siège de l'organisation de la fabrique (qui opère quoi)",
+        "fichier": "Livre IV/45-blueprint-instancie-cycle-de-vie.md",
+        "section": "ch. 45 § 45.6",
+        "marqueur": r"SIÈGE DE L'ORGANISATION DE LA FABRIQUE POUR TOUTE LA SOMME",
+        # Reconstruire ce siège, c'est reposer les DEUX absences de titulaire
+        # documentées et le principe hérité qu'elles bornent — les trois ensemble,
+        # jamais l'une d'elles seule : le « plan de contrôle obligatoire » se cite
+        # légitimement ailleurs, sous le qualificatif que R-8 impose.
+        # ⚠ Les espaces sont écrits `\s+` : le corps est enroulé à 100 colonnes,
+        # et un retour à la ligne au milieu d'un motif le rend introuvable. C'est
+        # le défaut exact que le versement du Livre II avait trouvé sur la triade
+        # létale, et il s'est reproduit ici au premier passage — *une signature
+        # qui ne voit pas son propre siège ne verrait pas non plus une copie.*
+        "signature": [
+            r"aucune\s+disposition\s+de\s+gouvernance\s+des\s+clés",
+            r"aucun\s+organe\s+une\s+responsabilité\s+de\s+gestion\s+des\s+clés",
+            r"plan\s+de\s+contrôle\s+obligatoire",
+        ],
+        # ☑ S5 ACTIF : deux pièces seulement touchent la matière — le siège et le
+        # ch. 41 § 41.7, qui y renvoie. C'est le seul des trois sièges de ce Livre
+        # dont l'obligation de renvoi soit outillable sans bruit, et il l'est.
+        "declencheur": r"organisation de la fabrique",
+        "renvoi": r"ch\.\s*45\b",
+    },
 ]
 
 # Les deux zones où un motif ne compte pas, et le motif du second n'est pas

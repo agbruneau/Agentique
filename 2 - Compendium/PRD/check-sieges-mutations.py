@@ -41,6 +41,9 @@ CH03 = "Livre I/03-securite-identite-gouvernance.md"
 CH06 = "Livre I/06-multi-agents-evaluation-surete.md"
 CH07 = "Livre I/07-genealogie-gouvernance.md"
 CH08 = "Livre I/08-anatomie-mcp-a2a.md"
+CH41 = "Livre IV/41-fabrique-agents.md"
+CH43 = "Livre IV/43-architecture-reference-couches.md"
+CH45 = "Livre IV/45-blueprint-instancie-cycle-de-vie.md"
 CH48 = "Livre V/48-semantique-effet-idempotence-compensation.md"
 CH49 = "Livre V/49-horizon-frontiere-connaissance-verifiable.md"
 CH50 = "Livre V/50-peremption-protocole-revalidation.md"
@@ -154,6 +157,56 @@ def m8_definition_tri_recopiee(tmp):
     p.write_text(texte[:coupe] + faux + texte[coupe:], encoding="utf-8")
 
 
+def m9_table_points_controle_recopiee(tmp):
+    """S4 — la table des cinq points de contrôle obligatoires recopiée ailleurs.
+
+    ⚠ Seconde mutation de la garde `renvoi: None` — le siège des points de
+    contrôle a S5 désactivé, et cette mutation prouve que S4 reste armé. C'est
+    aussi la classe de faute que le ch. 41 a réellement commise au premier
+    passage, sur un AUTRE siège : réutiliser la forme d'un siège pour une table
+    voisine.
+    """
+    p = tmp / CH45
+    faux = ("\n| # | Point |\n|---|---|\n"
+            "| **PC1** | l'événement de décision |\n"
+            "| **PC2** | la trace d'instance |\n"
+            "| **PC3** | le point d'arrêt humain |\n"
+            "| **PC4** | la séparation adaptation / évolution |\n"
+            "| **PC5** | le confinement local |\n"
+            "\n: Tableau 45.9 — Les cinq points, redits.\n")
+    texte = p.read_text(encoding="utf-8")
+    coupe = texte.index("## § 45.7")
+    p.write_text(texte[:coupe] + faux + texte[coupe:], encoding="utf-8")
+
+
+def m10_renvoi_organisation_fabrique_retire(tmp):
+    """S5 — le ch. 41 cesse de renvoyer au siège de l'organisation de la fabrique.
+
+    C'est le SEUL des trois sièges du Livre IV dont S5 soit armé, et le seul
+    endroit du corpus où l'omission de renvoi sur cette matière soit détectable.
+    Le § 41.7 doit renvoyer au ch. 45 ; l'en priver doit échouer.
+    """
+    p = tmp / CH41
+    texte = p.read_text(encoding="utf-8")
+    p.write_text(texte.replace("ch. 45", "le chapitre voisin"), encoding="utf-8")
+
+
+def m11_trois_echelles_recopiees(tmp):
+    """S4 — la table des trois échelles d'autonomie recopiée ailleurs.
+
+    Troisième garde de `renvoi: None`. Ce que le siège interdit n'est pas le mot
+    « maturité » — que sept pièces emploient à bon droit — mais le départage des
+    trois échelles homonymes par leur cardinal et leur numérotation.
+    """
+    p = tmp / CH45
+    faux = ("\nRappel des trois échelles : l'**échelle à quatre paliers non "
+            "numérotés**, le **continuum à six niveaux numérotés** de 0 à 5, et la "
+            "**graduation à quatre niveaux préfixés** L.\n")
+    texte = p.read_text(encoding="utf-8")
+    coupe = texte.index("## § 45.8")
+    p.write_text(texte[:coupe] + faux + texte[coupe:], encoding="utf-8")
+
+
 MUTATIONS = [
     ("M1  S2 — marqueur de siège retiré", m1_marqueur_retire, "[S2]"),
     ("M2  S4 — signature du siège recopiée ailleurs", m2_signature_recopiee, "[S4]"),
@@ -164,6 +217,12 @@ MUTATIONS = [
     ("M7  S2 — marqueur du siège du tri prospectif retiré", m7_marqueur_tri_retire, "[S2]"),
     ("M8  S4 — définitions du tri recopiées (garde `renvoi: None`)",
      m8_definition_tri_recopiee, "[S4]"),
+    ("M9  S4 — table des cinq points de contrôle recopiée (garde `renvoi: None`)",
+     m9_table_points_controle_recopiee, "[S4]"),
+    ("M10 S5 — renvoi au siège de l'organisation de la fabrique retiré",
+     m10_renvoi_organisation_fabrique_retire, "[S5]"),
+    ("M11 S4 — table des trois échelles recopiée (garde `renvoi: None`)",
+     m11_trois_echelles_recopiees, "[S4]"),
 ]
 
 

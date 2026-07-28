@@ -645,7 +645,7 @@ du **27 juillet 2026**.
 
 **Remontées ouvertes par ce chapitre :**
 
-- **R-IV-60 — non bloquante, de numérotation, ET ELLE PORTE SUR LE PLAN LUI-MÊME.** La table détaillée
+- **R-IV-100 — non bloquante, de numérotation, ET ELLE PORTE SUR LE PLAN LUI-MÊME.** La table détaillée
   du ch. 44 numérote **les neuf sous-sections du § 44.1 en « 43.1.1 » à « 43.1.9 »**, ⚠ **soit dans la
   numérotation d'un autre chapitre** ; et sa **table de couverture** dirige la ligne du Vol. III
   *Monographie* §27.2 vers **« § 43 (transverse) »**, ⚠ **alors que le corps de l'entrée du ch. 44
@@ -655,7 +655,7 @@ du **27 juillet 2026**.
   remappage qui ne voit qu'une borne, et qu'aucun des quinze contrôles ne signale* : `check-toc.py`
   porte sur des motifs de ligne et **ne connaît pas les tables détaillées**. *La pièce écrit ses
   sous-sections en 44.1.x et remonte l'écart ; elle ne corrige pas le plan.*
-- **R-IV-61 — BLOQUANTE pour la publication du § 44.1.9 et, par dépendance, du ch. 45.** Le plan
+- **R-IV-101 — BLOQUANTE pour la publication du § 44.1.9 et, par dépendance, du ch. 45.** Le plan
   déclare la **re-vérification du mécanisme Specialization + stéréotype + Profiles tel que le document
   normatif de référence le porte** comme **préalable au registre des stéréotypes, non note de
   transition**. ☐ **Elle n'a pas été conduite.** ⚠ **Trois raisons rendent l'omission coûteuse plutôt
@@ -667,7 +667,7 @@ du **27 juillet 2026**.
   **inscription de cette re-vérification au volet résiduel de G-1**, avec **domaine déclaré** — la
   liste des éléments retirés ou renommés, le mécanisme d'extension, et l'état du support d'outillage.
   ⚠ *Le PRD la nomme déjà à J-IV-5 ; ce qui manque n'est pas la mention, c'est l'exécution.*
-- **R-IV-62 — non bloquante, de régime, et elle porte sur une classe.** **La totalité du corps de ce
+- **R-IV-102 — non bloquante, de régime, et elle porte sur une classe.** **La totalité du corps de ce
   chapitre est en [C]** — le Vol. I étant sa source unique —, ⚠ **et cela inclut des énoncés que la
   somme traite ailleurs comme structurants** : *la limite du non-déterminisme, l'écart entre intention
   et exercice du contrôle humain, la complémentarité obligée du modèle et de l'observabilité.* **Ces

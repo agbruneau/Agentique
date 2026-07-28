@@ -302,7 +302,7 @@ Instruction d'auteur du **27 juillet 2026**.
 
 **Remontées ouvertes par ce chapitre :**
 
-- **R-IV-67 — non bloquante, de partage non motivé, et elle est héritée.** Le plan retient **trois** des
+- **R-IV-107 — non bloquante, de partage non motivé, et elle est héritée.** Le plan retient **trois** des
   **quatre** propriétés instrumentées — *correction, réactivité, traçabilité* —, **et écarte la
   spécificité de tâche**. ⚠ **Le socle n'opère pas ce partage et n'en fournit pas le motif**, et *la
   seule raison de fond disponible — que ces propriétés sont celles qu'un exploitant **démontre** à un
@@ -310,7 +310,7 @@ Instruction d'auteur du **27 juillet 2026**.
   **Demande remontée** : que **le motif du partage soit écrit à la ligne Fusion**, ou que **la
   quatrième propriété soit réintégrée**. ⚠ *Un partage repris de passe en passe sans motif finit par
   ressembler à un résultat.*
-- **R-IV-68 — non bloquante, de fait périssable, et elle vise un domaine plutôt qu'un fait.** Le
+- **R-IV-108 — non bloquante, de fait périssable, et elle vise un domaine plutôt qu'un fait.** Le
   § 46.3 recense **six jalons externes**, ⚠ **dont un seul est PROGRAMMÉ et dont aucun n'a été repris à
   la source primaire au gel de la somme**. *Deux d'entre eux sont des faits négatifs vérifiés bornés
   aux chaînes cherchées ; un troisième est annoncé au brouillon sans date confirmée ; un quatrième est
@@ -319,7 +319,7 @@ Instruction d'auteur du **27 juillet 2026**.
   reprise de chacun** — *une désignation publiée, un arrêté, une ratification, une publication de
   version.* ⚠ *Un tableau de jalons dont aucun n'est re-daté au gel est un tableau daté d'un autre
   jour, et c'est le seul défaut qui périme un chapitre entier plutôt qu'un énoncé.*
-- **R-IV-69 — non bloquante, de frontière entre chapitres.** Le **ch. 40** dérive une **grille
+- **R-IV-109 — non bloquante, de frontière entre chapitres.** Le **ch. 40** dérive une **grille
   d'indicateurs** de ce que les cadres attendent et **ne produit aucune valeur** ; ce chapitre demande
   si **des métriques existantes** pourraient servir un programme réglementaire. ⚠ **Les deux
   aboutissent au même constat par deux chemins — manques d'un côté, candidatures sans validation de

@@ -11,7 +11,7 @@ ch. 50) — et donc **deux thèses**, conservées intégralement et **jamais fon
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6. ⚠ **Ce chapitre hérite en outre d'une réserve du ch. 44** : *le registre des stéréotypes dont il dépend est publié sous réserve d'un préalable non tenu* (R-IV-61). ⚠ **R-IV-40 et R-IV-41 valent pour tout le Livre.** ⚠ **Le § 45.6 est un SIÈGE pour toute la somme** — le ch. 41 § 41.7 y renvoie sans le reprendre |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6. ⚠ **Ce chapitre hérite en outre d'une réserve du ch. 44** : *le registre des stéréotypes dont il dépend est publié sous réserve d'un préalable non tenu* (R-IV-101). ⚠ **R-IV-40 et R-IV-41 valent pour tout le Livre.** ⚠ **Le § 45.6 est un SIÈGE pour toute la somme** — le ch. 41 § 41.7 y renvoie sans le reprendre |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit, et c'est le chapitre du Livre où le nombre de faits périssables est le plus élevé** : *statuts de disponibilité, versions de produits, dates d'annonce, échéances de brouillons — **aucun n'a été repris à la source primaire***. Gels de source : **16 juillet 2026** (Vol. II, ch. 22-23), **21 juillet 2026** (Vol. III), **juin 2026** (Vol. I) |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Vol. II — **F-38 à F-46** ⚠ **nommées une à une, la plage seule ne les désignant pas** : **F-38**, **F-39**, **F-40**, **F-41**, **F-42**, **F-43**, **F-44**, **F-45**, **F-46** ; plus **F-09**, **F-27**, **F-28**, **F-29**, **F-33**, **F-34**, **F-35**, **F-36**, **F-37**, **F-01**, **F-02**, **F-16**, **F-05**, **F-48** ; ⚠ **et le socle du second mouvement est une plage distincte, relevée sur l'en-tête de sa source** : **F-39 à F-42 et F-44 à F-46** — *ni F-38 ni F-43 n'y figurent* —, plus **F-27**, **F-28**, **F-34**, **F-35**. **PRD du Vol. II, Annexe B §B.1-B.4** (spécification du blueprint). Vol. III — **F-06**, **F-07**, **F-08**, **F-11**, **F-29**, **F-46**, **F-47**, **F-85**, **F-86**, **F-89** ; **H-13**, **H-30**, **H-32**. Vol. I — **Annexe B** (architecture de solutions) et *Monographie* **§6.8**, **en [C]**. ⚠ **Les deux séries F-xx sont préfixées de leur volume à chaque emploi** (décision 7). **Aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | **Les deux séries, intégralement, y compris les zéros.** Vol. II — **§8.4 (neutralité fournisseur : nommer, jamais recommander) : quatorze occurrences**, § 45.1 (trois), § 45.2 (six), § 45.3 (trois), § 45.11 (deux) ; **R-6 (position à un classement d'analystes non vérifiée) : une occurrence**, § 45.3 ; **R-7 (instrumentation d'une attente réglementaire par un produit = inférence d'auteur) : cinq occurrences**, § 45.4, ⚠ **nommé par volume, à ne pas confondre avec R-07 du Vol. III** ; **R-8 (sigle jamais nu, quatre branches) : trois occurrences**, § 45.2 et § 45.6, **renvoyées au siège du ch. 7 § 7.5** ; **R-5 (aucun standard technique désigné) : trois occurrences**, § 45.13 ; **réserve F-09 (« attendu par E-23 », jamais « exigé ») : six occurrences**, § 45.4 et § 45.11 ; **réserve F-01 : une occurrence**, § 45.2 ; **métriques auto-déclarées : neuf occurrences**, § 45.2 (quatre), § 45.3, § 45.11 (deux), § 45.12 (deux), **chacune attribuée à son éditeur ou à son institution nommée** ; **R-1 à R-4 : zéro occurrence**. Vol. III — **R-07 (aucune conformité revendiquée : fait négatif ÉTABLI, non vérifié) : quatre occurrences**, § 45.4 ; **R-14 : treize occurrences**, § 45.2, § 45.4 (deux), § 45.5 (deux), § 45.6 (deux), § 45.8, § 45.9 (deux), § 45.10 (deux), § 45.15 ; **R-09 : neuf occurrences**, § 45.2 (trois), § 45.5 (deux), § 45.9 (deux), § 45.10 (deux) ; **R-01 : trois occurrences**, § 45.1, § 45.8, § 45.10 ; **R-02 : deux occurrences**, § 45.9 ; **R-13 : une occurrence**, § 45.14, **renvoyée au siège du ch. 43 § 43.5**. **R-03 à R-06, R-08, R-10 à R-12 : zéro occurrence** |
@@ -40,7 +40,7 @@ désalignement le plus net du Livre — décision 14 du TOC, appliquée avant la
   exactement la faute que ce volume prend pour objet ».*
 
 **La pièce cite les deux thèses verbatim, comme le PRD §6 l'exige, et écrit son corps sous les formes
-bornées** ; les écarts sont **remontés** (R-IV-63 et R-IV-64, § 45.16), non arbitrés ici.
+bornées** ; les écarts sont **remontés** (R-IV-103 et R-IV-104, § 45.16), non arbitrés ici.
 
 ---
 
@@ -250,7 +250,7 @@ point d'intégration »** : *le corps ne le porte pas, et l'écart est remonté.
 
 ## § 45.6 — L'organisation de la fabrique : qui opère quoi
 
-> ⚠ **SIÈGE UNIQUE DE CETTE MATIÈRE POUR TOUTE LA SOMME.** Le **ch. 41 § 41.7** y **renvoie sans la
+> ⚠ **SIÈGE DE L'ORGANISATION DE LA FABRIQUE POUR TOUTE LA SOMME.** Le **ch. 41 § 41.7** y **renvoie sans la
 > reprendre** — *un renvoi interne, jamais une seconde revendication du même texte* (décision 6 du
 > TOC). *C'est le motif pour lequel la table détaillée du ch. 41 ne porte aucun marqueur de
 > provenance.*
@@ -325,7 +325,7 @@ satisfont les premières**.*
 de jouer **chaque transition au grain du cas fil rouge** ; **les trois transitions ci-dessous sont
 jouées au grain générique des mécanismes**, et le cas est joué **en une passe unique** au § 45.15.*
 ⚠ **L'inversion est un choix de composition, non une prescription du cadrage** — et *c'est exactement
-la forme que la thèse du mouvement ne porte pas* (remontée R-IV-63).
+la forme que la thèse du mouvement ne porte pas* (remontée R-IV-103).
 
 ## § 45.8 — Naissance : enregistrement, émission du passeport, admission au maillage
 
@@ -577,7 +577,7 @@ que la somme prend pour objet.**
 
 ⚠ **L'intitulé du plan écrit pourtant « Confrontation externe »**, quand *sa propre note de provenance
 écrit « confrontation **interne** au corpus »* : **le désalignement est interne au plan**, et il est
-remonté (R-IV-64).
+remonté (R-IV-104).
 
 **Ce que l'épreuve établit malgré tout.** *Les contraintes-pivots du cas — l'article 12.1, la résidence
 canadienne, les lignes directrices de risque de modèle et de risque technologique, la ligne directrice
@@ -626,7 +626,7 @@ gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A).
 **Ce qui est enfreint.** Portes **G-3**, **G-4** et **G-5** ; **volet résiduel de G-1** — ⚠ **et ce
 chapitre est celui du Livre où le nombre de faits périssables non repris à la source primaire est le
 plus élevé** ; **ordre de rédaction du PRD §6**. ⚠ **S'y ajoute une dépendance héritée** : *le registre
-des stéréotypes dont le § 45.14 dépend est publié sous réserve d'un préalable non tenu* (R-IV-61).
+des stéréotypes dont le § 45.14 dépend est publié sous réserve d'un préalable non tenu* (R-IV-101).
 Instruction d'auteur du **27 juillet 2026**.
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ **Et la lacune héritée du Vol. II est portée
@@ -646,7 +646,7 @@ Instruction d'auteur du **27 juillet 2026**.
 
 **Remontées ouvertes par ce chapitre :**
 
-- **R-IV-63 — non bloquante, de thèse, et elle porte sur ce que la source DÉCLARE AVOIR FAIT.** La
+- **R-IV-103 — non bloquante, de thèse, et elle porte sur ce que la source DÉCLARE AVOIR FAIT.** La
   thèse du second mouvement écrit que **« chaque transition est jouée contre l'architecture, au grain
   d'un cas financier canadien »**. ⚠ **Le Vol. III déclare expressément l'inverse en tête de son
   chapitre** : *« les trois transitions ci-dessous sont jouées **au grain générique des mécanismes**,
@@ -656,7 +656,7 @@ Instruction d'auteur du **27 juillet 2026**.
   qu'elle est **« une épreuve de cohérence »**. **Demande remontée** : réalignement des deux membres au
   titre des **décisions 8 et 14**. ⚠ *Ce n'est pas une divergence d'interprétation : la source décrit
   sa propre méthode, et le plan en décrit une autre.*
-- **R-IV-64 — non bloquante, de désalignement INTERNE AU PLAN.** La table détaillée du ch. 45 intitule
+- **R-IV-104 — non bloquante, de désalignement INTERNE AU PLAN.** La table détaillée du ch. 45 intitule
   sa dernière section **« § 45.15 — Confrontation externe »**, et **sa propre note de provenance**
   écrit, dans la même entrée : *« ← Vol. III* Monographie *§28.4 (**confrontation interne au
   corpus**) »*. ⚠ **Le titre et sa provenance se contredisent dans la même ligne**, et *la source
@@ -664,7 +664,7 @@ Instruction d'auteur du **27 juillet 2026**.
   interne.* **Demande remontée** : réalignement du titre sur la provenance (décision 8). ⚠ *Un
   désalignement interne à une entrée du plan ne se voit ni au contrôle de renvois ni au contrôle de
   cardinaux ; seule la lecture conjointe du titre et de sa note le montre.*
-- **R-IV-65 — non bloquante, de quantificateur, et de la même classe que R-IV-57.** La thèse du premier
+- **R-IV-105 — non bloquante, de quantificateur, et de la même classe que R-IV-57.** La thèse du premier
   mouvement écrit que **« chaque couche porte son positionnement OO, son statut de preuve et son point
   d'intégration avec l'IAM et l'observabilité en place »**. ⚠ **Trois bornes** : *(a)* **aucune source
   ne porte de positionnement** — le Vol. II l'établit et qualifie **tout** positionnement de Lecture de
@@ -672,7 +672,7 @@ Instruction d'auteur du **27 juillet 2026**.
   § 45.2 le dit ligne par ligne ; *(c)* **le Vol. III traite trois existants, non huit couches**, et
   **deux des trois ne sont pas documentés à ce grain** (§ 45.5). **Demande remontée** : réalignement du
   quantificateur au titre des **décisions 8 et 14**.
-- **R-IV-66 — non bloquante, de lacune héritée à porter au registre.** Le PRD du Vol. II déclare une
+- **R-IV-106 — non bloquante, de lacune héritée à porter au registre.** Le PRD du Vol. II déclare une
   lacune sur le portefeuille instancié — *classement d'analystes sous réserve, standard de messagerie
   resté en **[C]** après une élévation tentée et échouée, annonces canadiennes ouvertes*. ⚠ **La ligne
   Fusion du plan la nomme et lui assigne un renvoi vers un chapitre non rédigé.** **Demande remontée** :
