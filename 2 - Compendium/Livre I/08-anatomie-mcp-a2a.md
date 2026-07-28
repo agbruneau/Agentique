@@ -5,13 +5,13 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11).*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes ; rédaction sur instruction d'auteur du 27 juillet 2026. ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
-| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Deux gels de source : **juin 2026** (Vol. I), **16 juillet 2026** (Vol. II). ⚠ **Ce chapitre porte la péremption la plus courte de toute la somme, et elle se compte en heures.** L'anatomie décrite est celle de la **révision 2025-11-25** ; une **révision candidate, gelée le 21 mai 2026, a sa ratification annoncée pour le 28 juillet 2026** — soit **le lendemain de la date de rédaction de ce chapitre**. Si elle est ratifiée, l'anatomie du § 8.1 et du § 8.2 est **à revalider en bloc**, sources primaires à extraire |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. I *Monographie* §3.2-3.3 et §2.5.4** (régime **[C]**) et le **Vol. II *Monographie* ch. 2** — entrées assignées par le TOC : **F-01, F-02, F-03, F-16**, à niveau conservé, **préfixées de leur volume** tant que G-3 n'a pas renuméroté |
-| **Garde-fous balayés** | ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : quatre occurrences**, § 8.1.4, § 8.2.2, § 8.3.1 et § 8.6.1, chacune tenue — ⚠ *la formule imposée, elle, est employée au-delà de ces quatre marqueurs, notamment au § 8.7 : la réserve est tenue partout, seul son marqueur est compté ici* ; **R-1 : une occurrence**, § 8.5.1 ; **R-8 (sigle jamais nu) : une occurrence**, § 8.5.1 — le siège de l'encadré est au **ch. 7 § 7.5**, auquel ce chapitre renvoie **sans le reconstruire** ; **métriques auto-déclarées (PRD Vol. II §8.2.1) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au § 8.4.2 et au § 8.6.3**, la première attribuée, la seconde **refusée comme métrique** faute de chiffre, de date et de définition. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 (qualification par ce que la spécification démontre) : trois occurrences**, § 8.1.4, § 8.2.2 et § 8.4.2 ; **R-13 : une occurrence**, § 8.5.1, même que R-8 ; **R-14 : trois occurrences**, § 8.2.3, § 8.6.1 et § 8.7 — ⚠ *le § 8.8, que cet en-tête portait auparavant, est la note de statut : hors domaine de comptage*. R-01, R-03 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 10 000 mots de corps (§ 8.1 à § 8.7) — le plus lourd du Livre I, sept sections contre quatre à six ailleurs. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 138 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−48,6 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 750 mots, soit −0,4 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes à la rédaction ; rédaction sur instruction d'auteur du 27 juillet 2026. ⚠ **Deux mises à jour postérieures à la rédaction, et la seconde change l'état du volume.** *(1)* **27 juillet 2026** : **G-2 et le volet Livre I de G-1 franchis** (PRD v0.8), **remontées de cette pièce closes**. *(2)* **28 juillet 2026** : **G-3 est FRANCHIE** (PRD v0.14) — le socle consolidé existe, **159 entrées `S-001`…`S-159`** ([`socle-consolide.md`](../PRD/socle-consolide.md) v1.2). ⚠ **Aucune de ces trois portes ne rend la pièce recevable, et le motif se lit en trois temps.** *(a)* Elle a été **écrite avant elles**, et ses énoncés **n'ont pas été ré-résolus contre les identifiants `S-nnn`** — *une porte franchie après coup ne remonte pas le fil des pièces qu'elle conditionnait* : la ré-résolution est **due**, non faite. *(b)* Tant qu'elle n'est pas faite, **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**. *(c)* **CA-IV-11 et CA-IV-13 demeurent insatisfaisables**, D-6 ne fournissant pas de relecteur distinct du rédacteur (PRD §11). |
+| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Deux gels de source : **juin 2026** (Vol. I), **16 juillet 2026** (Vol. II). ⚠ **Ce chapitre portait la péremption la plus courte de toute la somme, elle se comptait en heures, et ELLE EST ADVENUE.** L'anatomie décrite est celle de la **révision 2025-11-25** ; la **révision candidate, gelée le 21 mai 2026, avait sa ratification annoncée pour le 28 juillet 2026** — soit **le lendemain de la date de rédaction de ce chapitre**. **Constat du 28 juillet 2026** : la ratification a eu lieu à la date annoncée (socle consolidé `S-001` ; [registre du volet résiduel de G-1](../PRD/gel-2026-07-28-volet-residuel.md)). ⚠ **La revalidation en bloc des § 8.1 et § 8.2 est donc OUVERTE et NON EXÉCUTÉE** : elle se fait **sur sources primaires extraites**, jamais par retouche de ce texte — *ce chapitre décrit un contrat qui n'est plus le contrat courant, et il le dit plutôt que de se corriger à l'aveugle* |
+| **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026, et cette pièce n'y est PAS encore résolue.** Elle a été rédigée par résolution directe contre le **Vol. I *Monographie* §3.2-3.3 et §2.5.4** — régime **[C]** (PRD §7.1 : la vérification du Vol. I porte sur ses références, non sur le contenu de ses affirmations) — et contre le **Vol. II *Monographie* ch. 2**, aux quatre entrées que le TOC lui assigne : **`F-01`, `F-02`, `F-03`, `F-16` du Vol. II**. Ces quatre entrées **résolvent désormais en `S-001`, `S-002`, `S-003` et `S-013`** du socle consolidé, à **niveau conservé** (les quatre y sont `[A]` à portée générale). ⚠ **La correspondance est établie ici, la ré-résolution ne l'est pas** : *rapprocher deux identifiants n'est pas confronter un énoncé à l'entrée qu'il invoque*, et la matière du Vol. I n'a pour sa part **aucune entrée consolidée** — les dix-sept entrées héritées du Vol. I (`S-143`…`S-159`) ne couvrent pas §3.2-3.3. **Le régime [C] tient donc pour tout ce que ce chapitre tire du Vol. I** |
+| **Garde-fous balayés** | ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : quatre occurrences**, § 8.1.4, § 8.2.2, § 8.3.1 et § 8.6.1, chacune tenue — ⚠ *la formule imposée, elle, est employée au-delà de ces quatre marqueurs, notamment au § 8.7 : la réserve est tenue partout, seul son marqueur est compté ici* ; **R-1 : une occurrence**, § 8.5.1 ; **R-8 (sigle jamais nu) : une occurrence**, § 8.5.1 — le siège de l'encadré est au **ch. 7 § 7.5**, auquel ce chapitre renvoie **sans le reconstruire** ; **métriques auto-déclarées (PRD Vol. II §8.2, règle 1 ; règle transversale au §7.5) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au § 8.4.2 et au § 8.6.3**, la première attribuée, la seconde **refusée comme métrique** faute de chiffre, de date et de définition ; s'y ajoute, au § 8.6.1, une **estimation de tiers** attribuée nommément (décision 15 du TOC). R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 (qualification par ce que la spécification démontre) : trois occurrences**, § 8.1.4, § 8.2.2 et § 8.4.2 ; **R-13 : une occurrence**, § 8.5.1, même que R-8 ; **R-14 : trois occurrences**, § 8.2.3, § 8.6.1 et § 8.7 — ⚠ *le § 8.8, que cet en-tête portait auparavant, est la note de statut : hors domaine de comptage*. R-01, R-03 à R-12 : **zéro occurrence** |
+| **Volumétrie cible** | ≈ 10 000 mots de corps (§ 8.1 à § 8.7) — le plus lourd du Livre I, sept sections contre quatre à six ailleurs. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 635 mots** de corps, **re-mesurés le 28 juillet 2026** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−43,7 %** de la cible (5 138 mots et −48,6 % à la rédaction ; la passe de relecture a ajouté des constats datés et des bornes de régime, **aucune matière neuve**). ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. **Le réel du Livre valait 64 750 mots, soit −0,4 % de l'enveloppe, au relevé du 27 juillet 2026** ; ⚠ **il n'est PAS re-mesuré ici** — *un cardinal de Livre mesuré pendant que ses onze pièces sont relues est faux à la seconde où on le publie*, et il se re-mesure au terme de la passe, sur le corpus que le commit produit. C'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 8)* — « MCP dans les agents, A2A entre les agents » — doctrine de complémentarité **déclarée par le projet A2A** (non un accord des deux projets) qui fournit le premier critère de découpage architectural, sans le contraindre.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 8 — copiée, non re-frappée ; forme inchangée depuis la v0.23)* — « MCP dans les agents, A2A entre les agents » — doctrine de complémentarité **déclarée par le projet A2A** (non un accord des deux projets) qui fournit le premier critère de découpage architectural, sans le contraindre.
 
 ⚠ **Trois qualifications de cette thèse sont portées par le plan et tenues ici** : la doctrine est **déclarée**, elle l'est **par une seule des deux parties**, et elle **ne contraint pas**. Chacune est instruite au § 8.6.3.
 
@@ -79,7 +79,9 @@ où le serveur peut, à son tour, interroger l'hôte.*
 Lecture de l'auteur — c'est le premier endroit de la somme où un contrat d'interface autorise
 explicitement l'appelé à solliciter l'appelant. Le ch. 1 § 1.1.3 posait le contrat comme publication
 de ce qu'un système offre et exige ; ici, il devient un **protocole de conversation**. Le socle
-n'établit pas cette lecture ; elle est proposée comme telle.
+établit l'existence des trois primitives client et la direction de leur appel ; il **n'établit ni
+cette lecture, ni le caractère inédit qu'elle prête à ce renversement** dans l'histoire des contrats
+d'interface. Elle est proposée comme telle.
 
 ### 8.1.3 Transports : une trajectoire du couplage vers le découplage
 
@@ -91,19 +93,21 @@ l'illustration la plus nette de l'invariant du Livre dans tout le mouvement.
 | **Entrée-sortie standard** | le serveur est un sous-processus local de l'hôte | **fort** — cycle de vie et machine partagés |
 | **HTTP à deux points d'accès** | un point pour les requêtes, un pour le flux d'événements | déprécié dès la révision suivante |
 | **HTTP diffusable à point unique** | un seul point d'accès | **résiduel** — un identifiant de session épingle un client à une instance |
-| **Cœur sans état** *(candidat)* | suppression de la poignée de main et de l'identifiant de session | **aucun** — serveur déployable derrière un répartiteur à tourniquet |
+| **Cœur sans état** *(candidat au gel)* | suppression de la poignée de main et de l'identifiant de session | **aucun** — serveur déployable derrière un répartiteur à tourniquet |
 
 : Tableau 8.2 — La trajectoire des transports : quatre étapes, un couplage qui décroît jusqu'à l'absence d'état partagé.
 
-⚠ **La dernière étape est une cible architecturale, non un acquis déployé.** Elle relève d'une
-**révision candidate** ; le § 8.2.1 en donne le statut exact.
+⚠ **La dernière étape est une cible architecturale, non un acquis déployé.** Elle relevait, au gel,
+d'une **révision candidate** ; le § 8.2.1 en donne le statut exact et le constat de bascule qui a
+suivi.
 
 ### 8.1.4 Une interface d'outillage assortie d'un cadre d'autorisation
 
-⚠ **Formulation imposée, tenue ici et à ses cinq autres occurrences (réserve F-01 du Vol. II) : ce
-protocole est assorti d'un *cadre d'autorisation*, jamais d'un protocole « sécurisé ».** La distinction
-n'est pas de style. Un cadre fournit les mécanismes ; **la sécurité dépend de l'implémentation qui les
-met en œuvre**, et le ch. 11 expose ce que le socle nomme comme risques attachés. Écrire « protocole
+⚠ **Formulation imposée, tenue ici et à ses trois autres occurrences marquées (réserve F-01 du
+Vol. II) : ce protocole est assorti d'un *cadre d'autorisation*, jamais d'un protocole « sécurisé ».**
+La distinction n'est pas de style. Un cadre fournit les mécanismes ; **la sécurité dépend de
+l'implémentation qui les met en œuvre**, et le ch. 11 expose ce que le socle nomme comme risques
+attachés. Écrire « protocole
 sécurisé » attribuerait à la spécification une propriété que seule une mise en œuvre peut porter — et
 c'est exactement ce que le garde-fou R-02 du Vol. III proscrit en matière cryptographique.
 
@@ -122,21 +126,29 @@ La succession des révisions constitue une **étude de cas de gouvernance d'un s
 | **2025-03-26** | 26 mars 2025 | transport diffusable à point unique ; **cadre** d'autorisation |
 | **2025-06-18** | 18 juin 2025 | sorties structurées ; sollicitation ; racines ; serveur qualifié serveur de ressources |
 | **2025-11-25** | 25 nov. 2025 | découverte d'identité ; schémas 2020-12 ; tâches asynchrones **expérimentales** |
-| **2026-07-28** *(candidate)* | gelée le 21 mai 2026 | cœur sans état ; cadre d'extensions à nommage inversé ; **politique de dépréciation formelle** ; dépréciation de trois primitives et de l'enregistrement dynamique de client |
+| **2026-07-28** *(candidate au gel)* | gelée le 21 mai 2026 | cœur sans état ; cadre d'extensions à nommage inversé ; **politique de dépréciation formelle** ; dépréciation de trois primitives et de l'enregistrement dynamique de client |
 
-: Tableau 8.3 — Cinq jalons en moins de deux ans, et un cinquième qui n'est pas acquis.
+: Tableau 8.3 — Cinq jalons en moins de deux ans, et un cinquième qui n'était pas acquis au gel.
 
 ⚠ **Trois précisions de statut, et la première est la plus importante de tout le chapitre.**
 
-*(a)* **Le cinquième jalon est une révision candidate, non une révision publiée.** Elle a été
-**gelée le 21 mai 2026** et sa **ratification est annoncée pour le 28 juillet 2026**. À la date de
-rédaction de ce chapitre — le 27 juillet 2026 —, **elle n'est pas ratifiée**, et l'anatomie décrite
-aux § 8.1 et § 8.2 est celle de la **révision 2025-11-25**. Sa portée reste susceptible d'ajustement
-avant publication.
+*(a)* **Le cinquième jalon était, à la rédaction, une révision candidate et non une révision
+publiée.** Gelée le **21 mai 2026**, sa **ratification était annoncée pour le 28 juillet 2026** ; à la
+date de rédaction — le 27 juillet 2026 —, **elle n'était pas ratifiée**, et l'anatomie décrite aux
+§ 8.1 et § 8.2 est celle de la **révision 2025-11-25**.
+
+⚠ **Constat postérieur, daté du 28 juillet 2026 : la ratification a eu lieu, à la date même que la
+source annonçait.** La page de spécification courante sert désormais la révision `2026-07-28`, et
+l'index documentaire du site ne connaît plus la précédente (socle consolidé `S-001`, instruit au
+[registre du volet résiduel de G-1](../PRD/gel-2026-07-28-volet-residuel.md)). ⚠ **Ce constat porte
+sur la bascule, non sur le contenu de la révision neuve, qui n'a pas été extrait.** *La péremption que
+ce chapitre avait datée est advenue* : les § 8.1.3, § 8.2.1, § 8.2.2 et § 8.3.1 se revalident **en
+bloc et sur sources primaires**, non par retouche — et ils décrivent, en attendant, l'état arrêté au
+gel.
 
 *(b)* **Cette révision porte des changements cassants**, et non seulement des ajouts : suppression de
 la poignée de main et de l'identifiant de session, dépréciation de trois primitives, remplacement du
-mécanisme d'enregistrement de client. Une ratification **périmerait l'anatomie en bloc**, et non par
+mécanisme d'enregistrement de client. Sa ratification **périme donc l'anatomie en bloc**, et non par
 retouches.
 
 *(c)* **La cadence elle-même est un fait d'interopérabilité** : cinq jalons en moins de deux ans
@@ -159,9 +171,10 @@ pile d'identité classique posée au ch. 3 § 3.2.
 Une révision qualifie le serveur de **serveur de ressources**, en lui imposant la **validation
 d'audience** des jetons et la **découverte de ses métadonnées** par des mécanismes normalisés. ⚠ **La
 validation d'audience est ici décisive, et sa fonction mérite d'être nommée précisément : elle confine
-un jeton à un destinataire et bloque la classe d'attaque du mandataire confus** — celle-là même que le
-ch. 3 § 3.1.1 identifiait comme défaut structurel des architectures déléguées. C'est l'un des rares
-endroits du mouvement où un mécanisme protocolaire ferme une classe d'attaque nommée.
+un jeton à un destinataire déclaré, et prive ainsi de son ressort la classe d'attaque du mandataire
+confus** — celle-là même que le ch. 3 § 3.1.1 identifiait comme défaut structurel des architectures
+déléguées. C'est l'un des rares endroits du mouvement où un mécanisme protocolaire **prend nommément
+pour cible** une classe d'attaque connue ; la fermer reste à la charge de l'implémentation.
 
 Une révision ultérieure ajoute la découverte d'identité, des documents de métadonnées de client, et le
 **consentement incrémental** — élargir le périmètre d'accès au fil des besoins plutôt que d'exiger
@@ -177,8 +190,12 @@ l'outil invoqué se comporte comme sa description l'annonce. **Cadre d'autorisat
 
 ⚠ **Une réserve de statut sur le socle sous-jacent** : le cadre d'autorisation de nouvelle génération
 sur lequel s'appuie cette pile **demeure un projet à la date d'arrêt des sources**, la version
-antérieure restant la base normative en vigueur. Le ch. 3 § 3.2.1 porte la même réserve, et les deux
-doivent être levées ensemble à G-1.
+antérieure restant la base normative en vigueur. Le ch. 3 § 3.2.1 porte la même réserve, et le **volet
+Livre I de la porte G-1 les a instruites toutes deux le 27 juillet 2026**
+([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md), fait 8) : le document **est toujours à l'état de
+projet**, désormais daté, et **aucune version normative n'en est issue**. *La réserve n'est pas levée ;
+elle est datée* — et c'est le seul effet qu'une instruction à la source pouvait avoir sur un texte qui
+n'a pas bougé.
 
 ### 8.2.3 Vers une sémantique des résultats : sorties structurées et tâches
 
@@ -191,13 +208,14 @@ S'y ajoutent les **tâches asynchrones**, ⚠ **expérimentales** : un appel d'o
 identifiant de tâche — logique « appeler maintenant, récupérer plus tard » — au lieu d'un résultat
 immédiat. Ce mécanisme **se rapproche, sans s'y identifier**, de l'exécution durable de l'intégration
 d'entreprise : il gère la longue durée, mais **ne fournit pas les garanties de reprise et
-d'idempotence** d'un moteur durable. Leur contrat **ne saurait être présenté comme stable**.
+d'idempotence** d'un moteur durable. Le contrat de ces tâches **ne saurait être présenté comme
+stable**.
 
 ⚠ **Une limite de fond demeure, et elle est la plus importante de la section : un schéma n'est pas une
 ontologie.** Un dialecte de schéma contraint la **forme** d'une sortie, **non son interprétation** ; il
 ne dit ni ce que les valeurs signifient, ni comment elles se relient à un vocabulaire partagé. Que ce
 verrou n'ait pas de réponse protocolaire relève d'une **absence de documentation** au sens de R-14 :
-le socle n'en recense pas, ce qui n'établit pas qu'il n'en existe aucune. Le ch. 9 § 9.4 l'instruit.
+le socle n'en recense aucune, ce qui n'établit pas qu'il n'en existe pas. Le ch. 9 § 9.4 l'instruit.
 
 ---
 
@@ -215,7 +233,7 @@ Le versant **conformité** s'appuie sur un cadre dédié et un outil d'inspectio
 révisions datées**. ⚠ Conformément à la réserve F-01, ces outils valident qu'une implémentation
 **respecte une révision** ; ils ne la déclarent pas sécurisée.
 
-La **politique de dépréciation formelle** introduite par la révision candidate — statuts *actif*,
+La **politique de dépréciation formelle** introduite par la cinquième révision — statuts *actif*,
 *déprécié*, *retiré*, assortis d'un préavis d'au moins douze mois entre dépréciation et retrait —
 constitue un mécanisme de maturité **comparable à ceux des organismes de normalisation classiques**
 (ch. 3 § 3.4.4) : *elle rend l'évolution du contrat prévisible*. C'est, de toutes les nouveautés
@@ -233,7 +251,7 @@ Trois traitements distincts d'un même objet, et le partage est déclaré au pla
 
 À mesure que les serveurs se multiplient, **la découverte et la gouvernance deviennent des problèmes
 d'ingénierie distincts**. L'écosystème dépasse les **dix mille serveurs publics** — ordre de grandeur
-qui **change la nature du risque** plutôt que son intensité.
+qui **change la nature du risque**.
 
 En entreprise, une **passerelle** s'interpose entre les agents et les serveurs pour centraliser
 l'authentification, l'autorisation à granularité fine, la journalisation et l'application de
@@ -255,19 +273,21 @@ maîtrisée d'un serveur est elle-même un risque.*
 
 ### 8.4.1 Du Contract Net aux patrons transposés
 
-La coordination par appel d'offres **précède de plusieurs décennies** l'ère des grands modèles. Un
-protocole formalisait dès 1980 un cycle d'allocation de tâches entre nœuds d'un solveur distribué :
-**annonce → appel d'offres → soumissions → attribution**. Ce schéma a été repris et standardisé, aux
-côtés d'un langage de communication à performatifs (ch. 7 § 7.2.1).
+La coordination par appel d'offres **précède de plusieurs décennies** l'ère des grands modèles. Le
+**Contract Net** formalisait dès 1980 un cycle d'allocation de tâches entre nœuds d'un solveur
+distribué : **annonce → appel d'offres → soumissions → attribution**. Ce schéma a été repris et
+standardisé, aux côtés d'un langage de communication à performatifs (ch. 7 § 7.2.1).
 
 Transposé aux essaims d'agents, le patron **reste pertinent** : un coordinateur peut solliciter
 plusieurs agents spécialisés et retenir celui dont la réponse, le coût ou la disponibilité conviennent
 le mieux.
 
-⚠ **Mais le constat d'état est net et il vaut d'être posé sans détour : aucun protocole majeur — ni
-agent-outil, ni agent-agent, ni l'alternative décentralisée — ne normalise un cycle d'enchères complet
-à la manière historique.** La négociation y demeure soit **implicite**, portée par le langage naturel
-dans l'invite, soit **ad hoc**, codée au cas par cas dans la logique applicative.
+⚠ **Mais le constat d'état est net, et il se pose sans détour comme il se borne.** À l'état 2024-2026
+que la source déclare, **aucun des trois protocoles majeurs examinés ici — agent-outil, agent-agent,
+alternative décentralisée — ne normalise un cycle d'enchères complet à la manière historique.** La
+négociation y demeure soit **implicite**, portée par le langage naturel dans l'invite, soit **ad
+hoc**, codée au cas par cas dans la logique applicative. *Le constat porte sur trois spécifications à
+une date ; il ne vaut pas pour l'ensemble des protocoles agentiques.*
 
 La leçon d'adoption de la lignée historique — **l'échec relatif d'un formalisme lourd** (ch. 7
 § 7.2.1) — pèse manifestement sur les choix de conception actuels, qui privilégient des **contrats
@@ -307,11 +327,16 @@ passeport d'agent.
 socle** : l'**ancrage de confiance** des Agent Cards signées — c'est-à-dire à quelle autorité remonte
 la chaîne —, la **date exacte de la v1.0**, la **multi-location**, et l'**inventaire infonuagique** du
 protocole agent-outil (§ 8.7). Ils sont **signalés ici, encadrés, et renvoyés au ch. 49**. Les combler
-par une source de moindre qualité serait la faute que la règle du dépôt proscrit.
+par une source de moindre qualité serait la faute que la règle du dépôt proscrit. ⚠ **Constat du
+28 juillet 2026, qui ne comble rien** : l'instruction du volet résiduel de G-1 a relevé un matériau
+touchant la **date de la v1.0** et **ne l'a pas versé au socle**, l'instruction d'une lacune relevant
+d'une passe de socle. *Un matériau relevé n'est pas une entrée* : les quatre objets restent hors socle,
+et ce chapitre continue de s'en abstenir.
 
 ⚠ **Métrique auto-déclarée, attribuée** : le franchissement d'un seuil de **plus de 150 organisations
-contributrices** en avril 2026 est **rapporté par la Linux Foundation**, qui gère le protocole.
-La réserve du ch. 7 § 7.6 s'applique intégralement — *soutien n'est pas production*.
+de soutien** en avril 2026 est **rapporté par la Linux Foundation**, qui gère le protocole. Le socle
+qualifie lui-même « organisation de soutien » de **notion non définie**, et la réserve du ch. 7 § 7.6
+s'applique intégralement — *soutien n'est pas production*.
 
 ### 8.4.3 Délégation de tâches et collaboration inter-cadriciels
 
@@ -382,10 +407,10 @@ développement actif a cessé ; il ne subsiste qu'à travers le protocole absorb
 
 ⚠ **Un écart de titre est assumé et déclaré par le plan.** Le protocole décentralisé arrive dans ce
 chapitre **par l'intervalle** de sa ligne Fusion, et il **n'est pas nommé au titre** — lequel reste
-« MCP (agent-outil) et A2A (agent-agent) ». Retoucher ce titre **déplacerait un renvoi cité en clair
-dans huit chapitres**, et cet objet y est traité **comme un tiers comparé, non comme un objet du même
-rang**. L'écart est déclaré, non oublié — c'est la même classe que le § 1.2 du ch. 1, couvert par
-l'intervalle sans être glosé au titre.
+« MCP (agent-outil) et A2A (agent-agent) ». Retoucher ce titre déplacerait — **selon le plan** — un
+renvoi **cité en clair dans huit chapitres**, et cet objet y est traité **comme un tiers comparé, non
+comme un objet du même rang**. L'écart est déclaré, non oublié : c'est la même classe que le § 1.2 du
+ch. 1, couvert par l'intervalle sans être glosé au titre.
 
 Ce protocole emprunte une voie **résolument distincte** : décentralisée, pair-à-pair. Son architecture
 s'organise en **trois couches** :
@@ -400,8 +425,7 @@ La sémantique des messages s'appuie sur des formats du Web sémantique (ch. 2 �
 
 ⚠ **Cette négociation de méta-protocole constitue la réponse la plus aboutie au problème de la
 négociation de capacités**, en cela qu'elle relève du **niveau dynamique** du modèle LCIM (ch. 7
-§ 7.1.3) — celui où *le protocole lui-même devient objet d'accord à l'exécution*. C'est, dans tout ce
-mouvement, la seule proposition qui attaque ce niveau frontalement.
+§ 7.1.3) — celui où *le protocole lui-même devient objet d'accord à l'exécution*.
 
 Sa **maturité reste néanmoins conditionnée** à celle de l'infrastructure d'identité décentralisée
 sous-jacente, dont l'adoption à large échelle **n'est pas attendue avant 2027 environ** — projection à
@@ -420,8 +444,9 @@ d'Internet, initiatives de fondation autour d'un langage de définition d'agent.
 
 ⚠ **Une perspective doit être maniée au conditionnel, et l'avertissement est explicite dans la
 source** : une **spécification conjointe** rapprochant formellement l'axe vertical et l'axe horizontal
-**est attendue mais ne fait l'objet d'aucun projet public** à la date d'arrêt. *Toute affirmation sur
-son contenu ou son calendrier relève de la projection.*
+**est attendue, et le socle n'en recense aucun projet public** à la date d'arrêt — *ce qui n'établit
+pas qu'il n'en existe pas.* **Toute affirmation sur son contenu ou son calendrier relève de la
+projection.**
 
 ---
 
@@ -443,14 +468,15 @@ Le contrat agent-outil présente des modes d'échec **qui lui sont propres** et 
 Le troisième point mérite d'être souligné : c'est **l'évolution**, troisième terme de l'invariant, qui
 manque ici. Un schéma stable peut recouvrir un comportement changé, et rien ne le signale.
 
-⚠ **Deux faits datés, et une qualification contestée qu'il faut rapporter comme telle.** Une note
-sectorielle a fait le point sur l'accumulation de vulnérabilités ; une divulgation d'avril 2026 a
-**estimé à environ 200 000 le nombre d'instances exposées** par un comportement de transport par
-défaut. ⚠ **La qualification de ce comportement comme « défaut de conception » demeure contestée**,
-l'éditeur le tenant pour **un choix intentionnel documenté**. La somme **rapporte le désaccord et ne
-le tranche pas** — et le chiffre est une estimation d'un tiers, attribuée à sa source. Que ce
-désaccord n'ait pas été arbitré publiquement relève d'une **absence de documentation** au sens de
-R-14.
+⚠ **Deux faits datés, et une qualification contestée qu'il faut rapporter comme telle. Les parties se
+nomment : une attribution anonymisée n'est pas une attribution.** La **Cloud Security Alliance** a fait
+le point sur l'accumulation de vulnérabilités dans une note de 2026 ; une divulgation d'**OX Security**
+(avril 2026) a **estimé à environ 200 000 le nombre d'instances exposées** par un comportement de
+transport par défaut. ⚠ **La qualification de ce comportement comme « défaut de conception » demeure
+contestée**, **Anthropic** le tenant pour **un choix intentionnel documenté**. La somme **rapporte le
+désaccord et ne le tranche pas** — et le chiffre demeure **une estimation d'un tiers, attribuée à
+chaque occurrence à celui qui la produit**. Que ce désaccord n'ait pas été arbitré publiquement relève
+d'une **absence de documentation** au sens de R-14.
 
 ⚠ Et la réserve F-01 tient jusque dans la description des échecs : ce sont des **risques attachés à un
 cadre d'autorisation**, non la démonstration qu'un protocole « sécurisé » aurait failli.
@@ -506,10 +532,17 @@ combinaison est **prévue et revendiquée par les mainteneurs** ; elle n'établi
 déploiement**. ⚠ Le lecteur reconnaîtra ici la réserve centrale du ch. 7 § 7.6 — *le soutien déclaré
 ne vaut pas déploiement* — **dans une variante plus discrète, et pour cela plus insidieuse**.
 
-Ces réserves posées, que retenir ? Lecture de l'auteur — **sa valeur n'est pas descriptive mais
-prescriptive**. Elle fournit un **critère de découpage** — l'accès aux outils d'un côté, la délégation
-entre agents de l'autre —, et un critère de découpage est ce dont **manque cruellement une
-organisation qui débute**.
+⚠ **Précision de régime, datée du 28 juillet 2026, et elle porte sur la forme de la trace, non sur son
+fond.** L'instruction à la source primaire **confirme la doctrine** et **échoue à retrouver le
+verbatim** que le socle citait, à une adresse qui ne résout plus (`S-013`). *Le fond est attesté, la
+citation littérale ne l'est pas* — ce chapitre rend donc la doctrine en français et **ne la reproduit
+entre guillemets nulle part**.
+
+Ces réserves posées, reste à dire ce que la doctrine vaut. Lecture de l'auteur — **sa valeur n'est pas
+descriptive mais prescriptive**. Elle fournit un **critère de découpage** — l'accès aux outils d'un
+côté, la délégation entre agents de l'autre —, et un critère de découpage est ce dont **manque
+cruellement une organisation qui débute**. Le socle établit la doctrine et son attribution ; il
+**n'établit ni cette valeur prescriptive, ni le besoin qu'elle prétend combler**.
 
 ⚠ **Mais un critère n'est pas une contrainte, et c'est le troisième terme de la thèse.** Rien, dans
 les protocoles eux-mêmes tels que le socle les documente, **n'empêche une équipe de faire transiter
@@ -517,8 +550,8 @@ par des appels d'outils ce qui est en réalité une délégation entre agents**,
 frontière entre les deux axes est une décision d'architecture que l'organisation doit prendre,
 documenter et défendre — elle n'est pas donnée par la technique.*
 
-⚠ **Et la frontière est floue en pratique**, ce que le plan tient pour un fait et non pour une
-opinion : les **tâches asynchrones** de l'axe vertical (§ 8.2.3) **empiètent sur le terrain de la
+⚠ **Et la frontière est floue en pratique — constat de la source, arrêté à juin 2026, non une
+opinion** : les **tâches asynchrones** de l'axe vertical (§ 8.2.3) **empiètent sur le terrain de la
 délégation** de l'axe horizontal — recouvrement **postérieur** aux revues d'interopérabilité de
 l'écosystème, qui ne pouvaient donc pas en tenir compte. Mieux vaut retenir un **critère de choix
 pragmatique** qu'une frontière nette : *l'axe vertical lorsqu'on consomme une capacité bien délimitée
@@ -543,8 +576,14 @@ asymétrie : cette précision ne porte que sur lui.**
 L'état documenté au printemps 2026 est le suivant. Chez un premier fournisseur, le protocole est
 intégré à une plateforme d'atelier en **préversion**, et à un produit d'assistant en **disponibilité
 générale depuis avril 2026**. Chez un deuxième, l'intégration est portée par un environnement
-d'exécution d'agents. Chez le troisième, elle est **d'origine**, le protocole y étant né. ⚠ **Ces
-statuts sont documentés par des sources d'avril 2026 et non revalidés à la date de gel.**
+d'exécution d'agents. Chez le troisième, elle est **d'origine**, le protocole y étant né.
+
+⚠ **Ces statuts sont documentés par des sources d'avril 2026, et l'instruction du 28 juillet 2026 ne
+les a rouverts qu'à moitié** (socle consolidé `S-003`). **Les deux statuts du premier fournisseur
+tiennent** : la plateforme d'atelier porte toujours sa mention de préversion, le produit d'assistant
+n'en porte aucune. **Le volet du deuxième fournisseur n'a pas été consulté.** *Une confirmation
+partielle n'est pas une confirmation* — l'inventaire reste borné à ce qui a été rouvert, et le reste
+demeure à la date de sa source.
 
 Cet inventaire dit **deux choses**.
 
@@ -557,7 +596,7 @@ peu commun dans un marché disputé, est une inférence d'architecture**, non un
 différence qui compte.** Une **préversion** et une **disponibilité générale** n'engagent pas le
 fournisseur au même degré. Lecture de l'auteur — ⚠ le socle établit **les statuts**, **pas ce qu'ils
 emportent** : la somme ne documente ni les garanties de service attachées à chaque statut, ni leur
-réception par une seconde ligne de défense. Ce qui découle du fait tient en une consigne : *l'architecte
+réception par une seconde ligne de défense. Ce qui en découle tient en une consigne : *l'architecte
 prudent lit le statut avant de lire la marque.*
 
 ⚠ **Il faut enfin nommer une limite de ce chapitre plutôt que la laisser se combler par le silence.**
@@ -577,18 +616,28 @@ ne jamais la franchir.*
 
 ⚠ **Cette section n'est pas au TOC et n'a pas vocation à survivre.**
 
-**Ce qui est enfreint** — portes **G-1**, **G-2**, **G-3** ouvertes ; instruction d'auteur du
-27 juillet 2026. Conséquences habituelles : aucun énoncé central au sens de CA-IV-01, aucun décompte
-publiable, renvois de plan et non de texte (ch. 9, 10, 11, 15, 16, 23, 29, 49 non rédigés).
+**Ce qui a été enfreint à la rédaction** — portes **G-1**, **G-2** et **G-3** ouvertes ; instruction
+d'auteur du 27 juillet 2026. Conséquences habituelles : aucun énoncé central au sens de CA-IV-01,
+aucun décompte publiable, renvois de plan et non de texte.
+
+⚠ **Deux de ces trois conséquences sont tombées depuis, et la troisième ne tombe pas.** *(1)* Le
+**décompte est publiable** depuis G-2 (27 juillet 2026) ; il est porté au champ *Volumétrie cible*.
+*(2)* Les **renvois sont devenus des renvois de texte** : les cinquante chapitres existent en brouillon
+depuis le 27 juillet 2026, et les huit cibles de cette pièce — ch. 9, 10, 11, 15, 16, 23, 29 et 49 —
+sont rédigées. Leurs **numéros de section résolvent** contre le texte ; ⚠ **le fond de ce qu'ils
+promettent n'a pas été re-vérifié** par cette passe, qui n'ouvre qu'une pièce. *(3)* ⚠ **La première ne
+tombe pas** : G-3 est franchie depuis le 28 juillet 2026, mais **cette pièce n'a pas été ré-résolue
+contre le socle consolidé** — *aucun énoncé n'est central au sens de CA-IV-01*, et il ne le deviendra
+pas d'un franchissement dont la pièce n'a pas été relue.
 
 **Remontée ouverte par ce chapitre — et c'est la plus urgente de tout le Livre I :**
 
 - **R-IV-10 — non bloquante, mais d'échéance immédiate.** La **révision candidate** du protocole
-  agent-outil a sa **ratification annoncée pour le 28 juillet 2026**, soit **le lendemain de la
+  agent-outil avait sa **ratification annoncée pour le 28 juillet 2026**, soit **le lendemain de la
   rédaction de ce chapitre**. Elle porte des **changements cassants** : cœur sans état, dépréciation
   de trois primitives, remplacement du mécanisme d'enregistrement de client. **Si elle est ratifiée,
   les § 8.1.3, § 8.2.1, § 8.2.2 et § 8.3.1 sont à revalider en bloc**, sources primaires à extraire —
-  et non à retoucher.
+  et non à retoucher. ⚠ **Elle l'a été le 28 juillet 2026** : voir la clôture ci-dessous.
 
   Le chapitre a paré ce risque de la seule manière défendable : **en déclarant que l'anatomie décrite
   est celle de la révision 2025-11-25**, et en portant le statut de candidate à chacune de ses
@@ -597,21 +646,33 @@ publiable, renvois de plan et non de texte (ch. 9, 10, 11, 15, 16, 23, 29, 49 no
   une révision annoncée.*
 
 **Une observation de méthode, sans remontée.** Ce chapitre est celui où la **réserve F-01** du Vol. II
-mord le plus — six occurrences —, et la répétition est délibérée. La formulation « cadre
-d'autorisation, jamais sécurisé » n'est pas une précaution de langage : elle sépare **ce qu'une
-spécification fournit** de **ce qu'une implémentation garantit**, et c'est la même distinction que
-R-02 du Vol. III impose en matière cryptographique. Les deux garde-fous, venus de volumes différents,
-disent la même chose — et G-3 devrait examiner s'ils se fondent.
+mord le plus — **quatre occurrences marquées** au sens de la décision 16 du TOC, et la formule tenue
+au-delà de ses marqueurs —, et la répétition est délibérée. La formulation « cadre d'autorisation,
+jamais sécurisé » n'est pas une précaution de langage : elle sépare **ce qu'une spécification
+fournit** de **ce qu'une implémentation garantit**, et c'est la même distinction que R-02 du Vol. III
+impose en matière cryptographique. Les deux garde-fous, venus de volumes différents, disent la même
+chose. ⚠ **La fusion que cette observation appelait n'a pas eu lieu** : G-3 a été franchie le
+28 juillet 2026 **sans que les deux séries héritées soient rapprochées**, et elles restent citées
+préfixées de leur volume.
 
 **Ce qui n'est pas enfreint.** La structure suit la table détaillée (§ 8.1 à § 8.7). La table de
-couverture est respectée, dont **l'arrivée du §2.5.4 depuis le ch. 4** — déclarée aux deux bouts — et
-la sortie du §3.6 vers le Livre II. Les **deux écarts que la v0.17 du plan a soldés sont tenus** : le
-**partage déclaré** sur la fusion de l'ACP protocolaire — mécanique ici, portée de risque au ch. 10 —
-et l'**écart de titre assumé** sur le protocole décentralisé, nommé à la liste de sections sans
-retoucher un titre cité en clair dans huit chapitres. Le **siège de l'encadré R-8 reste au ch. 7
-§ 7.5** : ce chapitre y renvoie et **ne le reconstruit pas**. La **lacune héritée du PRD Vol. II §10.9
-est portée, encadrée et non comblée**. Les trois métriques auto-déclarées sont attribuées ; R-1, R-8,
-R-13, R-02 et R-14 sont tenus à toutes leurs occurrences.
+couverture est respectée, dont **l'arrivée du Vol. I *Monographie* §2.5.4 depuis le ch. 4** — déclarée
+aux deux bouts — et la sortie du Vol. I *Monographie* §3.6 vers le Livre II. Les **deux écarts que la
+v0.17 du plan a soldés sont tenus** : le **partage déclaré** sur la fusion de l'ACP protocolaire —
+mécanique ici, portée de risque au ch. 10 — et l'**écart de titre assumé** sur le protocole
+décentralisé, nommé à la liste de sections sans retoucher un titre que le plan déclare cité en clair
+dans huit chapitres. Le **siège de l'encadré R-8 reste au ch. 7 § 7.5** : ce chapitre y renvoie et **ne
+le reconstruit pas**, et le **siège de la mécanique de la fusion, posé ici au § 8.5.1**, ne recouvre
+pas la portée de risque qui siège au ch. 10 § 10.5. La **lacune héritée du PRD Vol. II §10.9 est
+portée, encadrée et non comblée**. R-1, R-8, R-13, R-02 et R-14 sont tenus à toutes leurs occurrences.
+
+**Deux applications du régime des métriques auto-déclarées, et elles ne sont pas de même nature.** Au
+§ 8.4.2, le décompte d'organisations de soutien est **attribué à l'organisme qui le publie** et assorti
+de la réserve *soutien n'est pas production*. Au § 8.6.3, la formule « de nombreux systèmes utilisent
+les deux » est **refusée comme métrique** — ni chiffrée, ni datée, ni définie. *Refuser une formule au
+rang de métrique n'est pas l'attribuer : c'est constater qu'il n'y a rien à attribuer.* S'y ajoute, au
+§ 8.6.1, une **estimation d'un tiers** attribuée nommément à celui qui la produit (décision 15 du TOC :
+l'attribution ne s'anonymise jamais).
 
 ---
 
@@ -639,8 +700,38 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
   fondée sur le seul billet d'annonce l'aurait **cassé**. *Une source secondaire qui résume une
   source normative n'en est pas un substitut, même quand elle émane du même émetteur.*
 
-⚠ **Ce que la clôture ne change pas.** La porte **G-3** demeure ouverte : le socle consolidé compte
-**zéro entrée**, l'Annexe B n'existe pas, et **aucun énoncé de cette pièce n'est central au sens de
-CA-IV-01**. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
-pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
-tranchée.*
+⚠ **Ce que la clôture ne changeait pas, à sa date.** La porte **G-3** demeurait ouverte : le socle
+consolidé comptait **zéro entrée**, l'Annexe B n'existait pas, et **aucun énoncé de cette pièce n'était
+central au sens de CA-IV-01**. *Zéro remontée ouverte ne veut pas dire pièce recevable — cela veut dire
+qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*
+
+---
+
+### Passe de relecture — 28 juillet 2026
+
+⚠ **Hors plan comme ce qui précède, et se retire avec.** Trois faits datés du 28 juillet 2026 touchent
+cette pièce, et **aucun ne la rend recevable**.
+
+- ⚠ **La péremption annoncée par R-IV-10 EST ADVENUE, à la date même.** La révision est publiée : la
+  page de spécification courante la sert, l'index documentaire du site ne connaît plus la précédente
+  (socle consolidé `S-001`, registre du volet résiduel de G-1). *Le chapitre était exact à sa date, et
+  il ne l'est plus à celle-ci pour ce qu'il décrit du contrat courant.* ⚠ **La revalidation en bloc des
+  § 8.1.3, § 8.2.1, § 8.2.2 et § 8.3.1 est OUVERTE et NON EXÉCUTÉE** : elle appelle une extraction de
+  la révision neuve à sa source, qu'aucune passe n'a conduite — *constater une bascule n'est pas lire
+  le texte qui a basculé*. La relecture s'est donc bornée à **dater la péremption**, sans réécrire une
+  anatomie qu'elle ne peut pas vérifier.
+- **La porte G-3 est franchie et le socle consolidé existe** — 159 entrées, dont les quatre du Vol. II
+  que le TOC assigne à ce chapitre (`S-001`, `S-002`, `S-003`, `S-013`). ⚠ **La correspondance est
+  portée à l'en-tête ; la ré-résolution des énoncés contre ces entrées reste DUE**, et elle est hors du
+  mandat d'une passe de relecture qui n'ouvre qu'une pièce. *Une porte franchie après coup ne relit pas
+  les pièces qu'elle conditionnait.*
+- **Les cardinaux et les attributions de la pièce ont été re-mesurés sous les décisions 15 et 16 du
+  TOC.** Trois écarts d'appareil sont corrigés : la réserve F-01 était annoncée à six occurrences pour
+  **quatre marqueurs**, les métriques auto-déclarées à trois pour **deux applications de nature
+  différente**, et l'estimation du § 8.6.1 était présentée comme « attribuée à sa source » **sans que
+  la source soit nommée** — ce que la décision 15 proscrit expressément.
+
+⚠ **Ce que rien de tout cela ne change.** **CA-IV-11 et CA-IV-13 demeurent insatisfaisables**, D-6 ne
+fournissant pas de relecteur distinct du rédacteur, et **G-4 conditionne encore la collation de fond**.
+Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce
+recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*

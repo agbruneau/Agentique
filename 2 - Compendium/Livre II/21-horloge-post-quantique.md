@@ -6,30 +6,31 @@ chapitre du Livre.** Chapitre à deux mouvements, issu de la fusion v0.20 des an
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — portes **G-3** et **G-4** ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Ce chapitre porte le SIÈGE DE L'HORLOGE pour toute la somme** (§ 21.1) : les ch. 15, 16, 20 et, hors du Livre, les ch. 45 et 49 y renvoient et **ne re-datent aucun jalon**. ⚠ **Il porte aussi le garde-fou le plus mécanique du Livre** : *on écrit « **visée** », jamais « fixée », jamais « ~2030 »* — et le **statut du document** se dit à chaque mention. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Une entrée héritée est périmée sur un point précis, et le fait se déclare plutôt qu'il ne se lisse** : les cibles que le Vol. I prêtait à un forum sectoriel **ne se retrouvent dans aucun des deux documents de ce forum**, dans les bornes du balayage du Vol. III (§ 21.7) |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. III *Monographie* ch. 16-18**, dont les entrées **F-01** à **F-07**, **F-10**, **F-36**, **F-38**, **F-40**, **F-46**, **F-52** à **F-55**, **F-59** à **F-63**, **F-87** et les entrées héritées **H-03**, **H-17**, **H-27**, **H-33** conservent leurs niveaux d'origine ; et contre le **Vol. I *Monographie* §7.4.1 et §7.4.4**, en **[C]**. ⚠ **Quatre entrées mobilisées sont en [C]** — F-36, F-55, H-17, H-27, H-33 : elles corroborent, elles ne portent pas. ⚠ **H-27 est une thèse d'un volume antérieur, à attribuer à chaque emploi** : l'invariant qu'elle porte **n'est pas un fait**. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les dix sections du corps, § 21.0 à § 21.9.** Vol. III — **R-11 (jalons « visés », jamais « fixés » ; statut du document porté à chaque mention ; les origines ne se fusionnent pas) : ce chapitre en est le SIÈGE — trois marqueurs**, § 21.7, § 21.8 et § 21.9 ; ⚠ **la formulation imposée est tenue bien au-delà de ces trois marqueurs** — « visée » et jamais « fixée », statut du document à chaque mention, **aucune fusion d'origines** —, notamment aux § 21.1 et § 21.4 qui n'en portent aucun : *application déclarée sur tout le domaine, non dénombrée.* **R-02 : quatre marqueurs**, § 21.3 et § 21.5 (trois). **R-01, R-03 à R-10, R-12 à R-14 : zéro marqueur** ; ⚠ **R-14 est pourtant appliqué partout** — les absences portent leur degré, dont douze au **degré 3** —, ainsi que **R-09** (statut dit à chaque mention), **R-01** (§ 21.3 et § 21.5) et **R-13** (§ 21.4, l'invariant nommé par ses termes). Vol. II — **réserve F-01 : quatre marqueurs**, § 21.0, § 21.3 (deux) et § 21.5 ; **§8.2 : zéro marqueur** ; la projection de coût du § 21.7 est attribuée à son auteur, à son millésime et à son périmètre ; **PRD Vol. II §8.2.5 : zéro marqueur** ; le statut de projet du document d'échéances est porté à chaque mention ; **R-1 à R-8 : zéro marqueur** |
-| **Volumétrie cible** | ≈ **5 800 mots** de corps (§ 21.0 à § 21.9), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — **neuf sections pour deux mouvements**. ☑ **Décompte publiable depuis G-2** ; **réel : 8 587 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+48,1 %**, **le plus fort écart du Livre** (re-mesuré au commit du 28 juillet 2026, au terme de la passe de correction de l'audit). ⚠ **La volumétrie du Livre entier est relevée au [`README.md`](README.md) du dossier**, et c'est elle — non les écarts individuels — qui alimente **D-4** par **R-IV-17** |
+| **Statut** | **Brouillon de rédaction, non publiable** — pièce rédigée **avant** les portes **G-3** et **G-4**, sur instruction d'auteur du 27 juillet 2026. ⚠ **G-3 est franchie depuis le 28 juillet 2026 ; G-4 demeure ouverte** — *une porte franchie après coup solde la rédaction qui l'a devancée, elle ne la rattrape pas.* ⚠ **Ce chapitre porte le SIÈGE DE L'HORLOGE pour toute la somme** (§ 21.1) : les ch. 15, 16, 20 et, hors du Livre, les ch. 45 et 49 y renvoient et **ne re-datent aucun jalon**. ⚠ **Il porte aussi le garde-fou le plus mécanique du Livre** : *on écrit « **visée** », jamais « fixée », jamais « ~2030 »* — et le **statut du document** se dit à chaque mention. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ☑ **Le volet de faits du résidu de G-1 est levé le 28 juillet 2026** : les 123 entrées à sensibilité temporelle du socle consolidé ont été portées à leur source primaire — **91 inchangées, 10 changées, 22 non établies** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)). ☐ **Ses deux autres volets restent dus** ; la relève v0.7 qui atterrit ici est **consommée** (R-IV-36), et aucune des obligations de pièce nommées pour le Livre II ne porte sur ce chapitre. Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Une entrée héritée est périmée sur un point précis, et le fait se déclare plutôt qu'il ne se lisse** : les cibles de 2030-2031 et de 2035 que le Vol. I prêtait au **Quantum Safe Financial Forum** (QSFF) **ne se retrouvent dans aucun des deux documents de ce forum**, dans les bornes du balayage du Vol. III — bornes que la re-datation du 28 juillet 2026 a **élargies sans les infirmer** (§ 21.7) |
+| **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** — [`socle-consolide.md`](../PRD/socle-consolide.md), **v1.2, 159 entrées `S-001`…`S-159`** —, **mais aucun énoncé de cette pièce n'y a été re-résolu** : le corps cite les identifiants de ses volumes d'origine, que les deux tables de correspondance de l'**Annexe B** (§4 et §5) résolvent (PRD §7.1). Résolution contre le **Vol. III *Monographie* ch. 16-18**, dont les entrées **F-01** à **F-07**, **F-10**, **F-36**, **F-38**, **F-40**, **F-46**, **F-52** à **F-55**, **F-59** à **F-63**, **F-87** et les entrées héritées **H-01**, **H-03**, **H-17**, **H-27**, **H-33** conservent leurs niveaux d'origine — *le franchissement de G-3 n'a promu aucune entrée* ; et contre le **Vol. I *Monographie* §7.4.1 et §7.4.4**, en **[C]** — ⚠ *le §7.4.1 par l'entrée héritée H-17, le **§7.4.4 par aucune** : il n'a pas d'identifiant de socle et entre au seul titre du régime du PRD §7.1 (§ 21.7).* ⚠ **Deux des entrées héritées se fondent, au socle consolidé, dans une entrée du Vol. II** — H-01 dans `S-002`, H-03 dans `S-008` : *ne jamais empiler l'héritée et son origine comme deux appuis, elles n'en font qu'un.* ⚠ **Cinq entrées mobilisées sont en [C]** — F-36 (`S-082`), F-55 (`S-101`), H-17 (`S-143`), H-27 (`S-153`), H-33 (`S-159`) : elles corroborent, elles ne portent pas. ⚠ **Deux d'entre elles portent un état de re-datation qui compte** : `S-082` est **☑ changée** — son volet AWS est daté depuis, et **son niveau est à réexaminer** ; ce chapitre n'en mobilise que le volet confirmé, en corroboration seule — et `S-153` est **☐ non établie**, sa source ayant été retirée du dépôt (§ 21.4). ⚠ **H-27 est une thèse d'un volume antérieur, à attribuer à chaque emploi** : l'invariant qu'elle porte **n'est pas un fait**. **Aucun énoncé n'est central au sens de CA-IV-01** — non plus faute de socle, qui existe désormais, mais faute de vote : **aucun vote adversarial n'a été conduit** et **G-4 est ouverte** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les dix sections du corps, § 21.0 à § 21.9.** Vol. III — **R-11 (jalons « visés », jamais « fixés » ; statut du document porté à chaque mention ; les origines ne se fusionnent pas) : ce chapitre en est le SIÈGE — trois marqueurs**, § 21.7, § 21.8 et § 21.9 ; ⚠ **la formulation imposée est tenue bien au-delà de ces trois marqueurs** — « visée » et jamais « fixée », statut du document à chaque mention, **aucune fusion d'origines** —, notamment aux § 21.1 et § 21.4 qui n'en portent aucun : *application déclarée sur tout le domaine, non dénombrée.* **R-02 : quatre marqueurs**, § 21.3 et § 21.5 (trois). **R-01, R-03 à R-10, R-12 à R-14 : zéro marqueur** ; ⚠ **R-14 est pourtant appliqué partout** — les absences portent leur degré : **dix-huit marqueurs « degré 3 »** dans le corps, dont deux qualifient une colonne entière de tableau, et **trois faits négatifs VÉRIFIÉS** (F-59, F-63, F-52) —, ainsi que **R-09** (statut dit à chaque mention), **R-01** (§ 21.3 et § 21.5) et **R-13** (§ 21.4, l'invariant nommé par ses termes). Vol. II — **réserve F-01 (le protocole agent-outil : « cadre d'autorisation », jamais « sécurisé ») : zéro marqueur** — ⚠ *les quatre « F-01 » du corps appartiennent à la série du **Vol. III**, non à celle-ci*, un `F-xx` nu étant indécidable entre deux socles (décision 7) ; la réserve est néanmoins **appliquée au § 21.3**, où l'autorisation du protocole agent-outil n'est jamais dite « sécurisée » ; **§8.2 : zéro marqueur** ; la projection de coût du § 21.7 est attribuée à son auteur, à son millésime et à son périmètre ; **PRD Vol. II §8.2.5 : zéro marqueur** ; le statut de projet du document d'échéances est porté à chaque mention ; **R-1 à R-8 : zéro marqueur** |
+| **Volumétrie cible** | ≈ **5 800 mots** de corps (§ 21.0 à § 21.9), **cible dérivée** de l'enveloppe du Livre (50 000 mots, inchangée au TOC v0.30) au prorata des sections — **neuf sections pour deux mouvements**. ☑ **Décompte publiable depuis G-2** ; **réel : 9 022 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+55,6 %** (re-mesuré au commit du 28 juillet 2026, au terme de la passe de relecture ; **8 587 mots et +48,1 %** à la passe de correction de l'audit, **8 464 et +45,9 %** à l'audit lui-même). ⚠ **La croissance est entièrement faite de bornes rétablies et d'attributions rendues** — *aucune n'est retirée, D-4 interdisant l'amputation.* ⚠ **Le rang de cet écart dans le Livre n'est pas déclaré ici** : *neuf pièces voisines sont relues en parallèle, et un rang mesuré pendant que les autres bougent est faux à la seconde où on l'écrit.* **La volumétrie du Livre entier est relevée au [`README.md`](README.md) du dossier**, et c'est elle — non les écarts individuels — qui alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 21, premier mouvement)* — toute la fabrique d'émission (ch. 12-18) repose sur des signatures classiques ; les jalons du NIST IR 8547 — dépréciation **visée** pour 2030, retrait **visé** pour 2035 — tombent dans la durée de vie des architectures conçues aujourd'hui, la PQC est donc une contrainte de conception et non une annexe.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 21, premier mouvement)* — toute la fabrique d'émission (ch. 12-18) repose sur des signatures classiques ; les jalons du NIST IR 8547 — dépréciation **visée** pour 2030, retrait **visé** pour 2035 — tombent dans la durée de vie des architectures conçues aujourd'hui, la PQC est donc une contrainte de conception et non une annexe.
 
 ---
 
-> **Thèse du second mouvement**, citée depuis le TOC v0.28, entrée du chapitre 21 — la crypto-agilité est l'application des **trois premiers termes de l'invariant** (découplage, contrat, évolution — le quatrième, l'exploitation, est refermé au Livre IV) à la couche cryptographique ; la dette de migration PQC est réelle mais largement non chiffrée — méthode d'estimation plutôt que chiffre.
+> **Thèse du second mouvement**, citée depuis le TOC v0.30, entrée du chapitre 21 — la crypto-agilité est l'application des **trois premiers termes de l'invariant** (découplage, contrat, évolution — le quatrième, l'exploitation, est refermé au Livre IV) à la couche cryptographique ; la dette de migration PQC est réelle mais largement non chiffrée — méthode d'estimation plutôt que chiffre.
 
 ⚠ **Deux thèses pour un chapitre : le ch. 21 est issu de la fusion v0.20 des anciens ch. 23 et 24**
 (décision 11 du TOC), et les deux entrées y sont conservées **intégralement**.
 
 ## § 21.0 — Introduction : la seule échéance datée du Livre
 
-Les six chapitres du premier mouvement ont établi ce qu'une organisation peut **émettre**, et les deux
-du deuxième ce qui peut **céder**. Aucun des deux n'a rencontré de **date** : les statuts de
+Les sept chapitres du premier mouvement (ch. 12-18) ont établi ce qu'une organisation peut **émettre**,
+et les deux du deuxième (ch. 19-20) ce qui peut **céder**. Aucun des deux n'a rencontré d'échéance qui
+**contraigne la conception** : les statuts de
 normalisation relevés au ch. 13 sont des stades, les propositions du ch. 18 sont **sans jalon**, et les
 trois scénarios du ch. 16 § 16.4 sont **tous PROJETÉS ou SPÉCULATIFS**.
 
-**Ce chapitre est le seul du Livre à porter des échéances datées, et c'est ce qui lui donne sa
-fonction.** L'entreprise qui met aujourd'hui des agents en production **arrête des mécanismes
+**Ce chapitre est le seul du Livre dont l'objet propre soit une horloge — des jalons publics datés,
+examinés pour eux-mêmes —, et c'est ce qui lui donne sa fonction.** L'entreprise qui met aujourd'hui des agents en production **arrête des mécanismes
 d'identité pour une architecture dont elle attend plusieurs années de service** ; et les mécanismes que
 le premier mouvement a examinés **reposent, au grain de la cryptographie, sur des signatures numériques
 classiques**.
@@ -66,7 +67,8 @@ lui-même : **il fournit l'horloge, non son incidence**.*
 > **R-IV-37**, close **sur constat**) : le siège du tri **existait déjà**, et *ce qui manquait n'était
 > pas le siège mais le renvoi* — trois chapitres du Livre triaient sans pointer vers lui.
 
-**Trois origines documentaires sont examinées pour leurs dates.** ⚠ **Elles ne relèvent ni du même
+**Trois origines documentaires sont examinées ici pour leurs dates — une quatrième, hors socle, est
+nommée au § 21.8.** ⚠ **Elles ne relèvent ni du même
 auteur, ni du même régime, ni du même périmètre, et les fondre en un calendrier unique — ce que la
 littérature de vulgarisation fait couramment — produit un énoncé faux dans les trois cas.** *Elles sont
 donc tenues sur trois lignes distinctes, et cette section est le siège de cette discipline pour toute
@@ -77,7 +79,8 @@ Standards*, à l'état de **projet public initial**, **vise** une **dépréciati
 des mécanismes à clé publique vulnérables au quantique **au niveau de sécurité de 112 bits**, et une
 **interdiction en 2035** de ces mêmes mécanismes **tous niveaux de sécurité confondus**. Le projet écrit
 littéralement « **Deprecated after 2030** » et « **Disallowed after 2035** » (F-60, **[B]**), dans les
-tableaux de deux sections nommées — l'une pour les signatures, l'autre pour l'établissement de clés.
+tableaux de ses **§4.1.1** (signatures) et **§4.1.2** (établissement de clés) — *bornes de section
+portées par la composante du rapport de lot, que le texte de l'entrée ne reprend pas.*
 ⚠ **Le statut du document n'est pas un détail de procédure** : sa fiche affiche, à la consultation du
 21 juillet 2026, **une entrée d'historique unique** de novembre 2024 et **une période de commentaires
 publics close en janvier 2025** ; **aucune version finale n'y figure** (F-59, **[B]**, fait négatif
@@ -158,8 +161,11 @@ formulés **comme une intention** — le texte écrit « NIST **intends** to ins
 et **le véhicule normatif censé les porter est lui aussi un projet**. **Ce que le socle n'établit
 pas** : **un tri prospectif de ces jalons** — ni F-59 ni F-60 n'en porte. *La lecture proposée est
 qu'un engagement institutionnel **annoncé sans être en vigueur** relève du **PROJETÉ**, non du
-PROGRAMMÉ.* **Le tri de la deuxième ligne, lui, se déduit du fait** : *un texte signé, publié et
-portant des dates est un engagement daté réel.*
+PROGRAMMÉ.* ⚠ **La définition qu'applique ce tri est elle-même attribuée** : elle est héritée du
+**Vol. I *Monographie* §7.0.2** (H-33, **[C]**), et son siège dans la somme est celui qu'annonce
+l'encadré ci-dessus — *appliquer un instrument sans nommer son auteur le fait passer pour acquis.*
+**Le tri de la deuxième ligne, lui, se déduit du fait** : *un texte signé, publié et portant des dates
+est un engagement daté réel.*
 
 **Quatrième constat, et il ferme la section.** ⚠ **Les algorithmes de remplacement, eux, ne sont pas en
 projet** : **FIPS 203** (ML-KEM, encapsulation de clé) et **FIPS 204** (ML-DSA, signature) sont des
@@ -259,7 +265,7 @@ borne la circulation.* ⚠ **Et le précédent ne console pas** : *là même où
 sa granularité est bornée à la période d'émission de la liste.* **L'inventaire complet est au ch. 20
 § 20.4** ; il n'est pas refait ici.
 
-Lecture de l'auteur — **ce qu'il n'établit pas** : que ces manques soient **liés entre eux**, qu'ils
+Lecture de l'auteur — **ce que le socle n'établit pas** : que ces manques soient **liés entre eux**, qu'ils
 tiennent à une **cause commune**, ni qu'ils **empêchent** une migration. *La lecture proposée est
 qu'**une migration cryptographique est d'abord une opération de retrait**, et qu'elle ordonne donc les
 travaux d'une institution — **instrumenter le retrait avant de choisir l'algorithme de remplacement**.
@@ -268,7 +274,7 @@ tomber.*
 
 **Le troisième porte sur l'objet composite.** ⚠ **Le passeport d'agent ne figure dans aucune
 spécification de 2026 : c'est un objet de synthèse construit par la somme** (ch. 16). Lecture de
-l'auteur — **ce qu'il n'établit pas** : que ces pièces composent un objet unique, ni **qu'une propriété
+l'auteur — **ce que le socle n'établit pas** : que ces pièces composent un objet unique, ni **qu'une propriété
 de migration se transporte d'une pièce à l'assemblage** — *aucune entrée mobilisée ici ne porte sur des
 assemblages.* *La lecture proposée est que **la migration de cet assemblage ne vaudra pas mieux que
 celle de sa pièce la moins agile**, le tableau montrant que ces pièces n'ont ni le même format, ni le
@@ -312,9 +318,15 @@ convaincue de défaut** — elle est **muette**, et le silence se qualifie à so
 
 ⚠ **L'invariant n'est pas employé nu, et sa forme se cite exactement.** Il est **une thèse d'un volume
 antérieur, à attribuer** : *« découplage, contrat, évolution » deviennent « découplage, contrat,
-évolution, exploitation »* (H-27, **[C]**). **Une entrée [C] ne porte jamais un fait central** : *elle
-fournit ici un cadre, non une preuve*, et **le quatrième terme est refermé au Livre IV**, non invoqué
-ici.
+évolution, exploitation »* (H-27, **[C]**, Vol. I *Synthèse* §10.3 ; l'énoncé canonique de l'invariant
+à **trois** termes est au Vol. I *Monographie* §1.0.2.1 — ne pas confondre les deux). **Une entrée [C]
+ne porte jamais un fait central** : *elle fournit ici un cadre, non une preuve*, et **le quatrième terme
+est refermé au Livre IV**, non invoqué ici. ⚠ **Une borne s'ajoute depuis le 28 juillet 2026, et elle
+tient au dépôt plutôt qu'au contenu** : le fichier qui porte cette citation a été **supprimé du dépôt le
+22 juillet 2026** (commit `fd8f1be`), de sorte que l'entrée est **☐ non établie** au volet résiduel de
+G-1 (`S-153`), non rejouable dans l'arbre courant. ***Une citation non rejouable n'est pas une citation
+fautive : elle cesse d'être opposable sans cesser d'être exacte*** — raison de plus pour n'en tirer
+aucun fait.
 
 **L'état des recommandations, tel que le socle le porte, se résume à un écart de statut** — **algorithmes
 normalisés, calendrier de retrait non normalisé** (F-62 ; F-59). *Le § 21.1 en est le siège ; il n'est
@@ -322,8 +334,9 @@ pas rejoué.*
 
 ⚠ **Deux précisions se rattachent directement à l'objet de ce mouvement, et l'une comme l'autre nuance
 ce qu'un statut « final » autorise à croire.** *(1)* **Les fiches des deux normes finales portent
-l'une et l'autre un avis d'errata** annonçant des corrections dans une révision future, et l'une porte
-en outre une **note de planification** signalant plusieurs points mineurs à corriger. ⚠ **Le socle ne
+l'une et l'autre un avis d'errata** annonçant des corrections dans une révision future, et celle de
+**FIPS 204** porte en outre une **note de planification du 23 février 2026** signalant plusieurs points
+mineurs à corriger. ⚠ **Le socle ne
 documente aucune date pour la révision annoncée — degré 3** ; **tri : PROJETÉ** — *intention publiée
 sans échéance relevée.* ***Un statut final ne vaut pas texte figé : le paramètre vers lequel on migre
 bouge lui aussi, ce qui est un argument pour l'agilité et non contre elle.*** *(2)* **Le véhicule
@@ -347,8 +360,8 @@ L'audit demande à chaque mécanisme **les trois questions de la définition**, 
 que la spécification démontre**. ⚠ **Trois précautions le bornent, et elles ne sont pas de forme.**
 *(1)* **Un mécanisme dont la spécification est muette sur un point reçoit un degré d'absence, non un
 verdict défavorable** — *c'est la faute que R-02 proscrit, et c'est elle que ce paragraphe risque à
-chaque ligne de son tableau.* *(2)* **Deux des entrées mobilisées sont en [C]** et **ne portent aucune
-affirmation centrale**. *(3)* **La dernière ligne ne porte pas sur un mécanisme** : *le passeport
+chaque ligne de son tableau.* *(2)* **Deux des entrées mobilisées dans ce tableau sont en [C]** —
+F-36 et F-55 — et **ne portent aucune affirmation centrale**. *(3)* **La dernière ligne ne porte pas sur un mécanisme** : *le passeport
 d'agent est un objet de synthèse construit par la somme* — **en auditer la crypto-agilité, c'est
 auditer une construction**, et le tableau le dit à sa dernière ligne plutôt que de le taire.
 
@@ -359,7 +372,7 @@ auditer une construction**, et le tableau le dit à sa dernière ligne plutôt q
 | **Mandat de paiement agentique** (v0.2.0) | sérialisation et **attribut de type versionné** (F-46, **[B]**) ; la spécification impose **l'appariement exact de la chaîne de type, suffixe de version compris** | mécanisme de retrait d'un mandat ; procédure de passage d'une version de type à la suivante ; **régime de compatibilité entre deux versions** | ch. 17 § 17.1 ; ch. 20 § 20.4 |
 | **Identité de charge de travail** | la spécification énonce qu'un justificatif est **considéré valide s'il a été signé par une autorité du domaine de confiance** de l'identité qu'il porte (F-87, **[B]**) | **tout élément d'algorithme, de profil ou de transition** ; le profil et la version mis en œuvre chez un fournisseur ne sont pas documentés sur la page consultée | ch. 3 (socle) ; ch. 15 § 15.2.2 ; **F-36, [C]**, corroboration seule |
 | **Registre gouverné** | **deux champs obligatoires** du profil d'agent (F-40, **[B]**, borné à ces deux champs) ; ce que le document décrit par là est **un régime de champs et d'invalidation**, et il **ne démontre par ce seul fait aucune propriété cryptographique** (R-02) ; côté annuaire, l'adressage par contenu est **présenté** comme fondant l'intégrité, **sans démonstration** (F-55, **[C, degré 1]**) | la présence ou l'absence d'un élément cryptographique **parmi les autres champs du schéma** — *le socle ne porte pas l'inventaire complet* ; la fonction de hachage employée et sa substituabilité ; ⚠ le balayage porte sur une **révision supplantée, non rebalayée** | ch. 15 § 15.3.1, § 15.3.2 |
-| **Passeport d'agent** | *néant* — **objet de synthèse sans spécification**, donc **sans contrat porteur d'un paramètre d'algorithme** | **le socle ne documente pas d'objet composé de ces quatre pièces** | ch. 16, ouverture |
+| **Passeport d'agent** | *néant* — **objet de synthèse sans spécification**, donc **sans contrat porteur d'un paramètre d'algorithme** | **le socle ne documente pas d'objet composé des quatre pièces qu'assemble le ch. 16** | ch. 16, ouverture |
 
 : Tableau 21.3 — Audit de crypto-agilité, mécanisme par mécanisme, au 21 juillet 2026 — ce que chaque spécification démontre, et ce que le socle ne porte pas.
 
@@ -389,7 +402,7 @@ porte sa version, et la spécification **exige que les mises en œuvre apparient
 suffixe compris** (F-46). *La deuxième condition de la définition est donc satisfaite — mais elle l'est
 d'une manière qui **déplace le coût**.*
 
-Lecture de l'auteur — **ce qu'il n'établit pas** : ce qu'il advient d'un vérificateur confronté à une
+Lecture de l'auteur — **ce que le socle n'établit pas** : ce qu'il advient d'un vérificateur confronté à une
 version qu'il ne connaît pas, ni qu'aucun régime de compatibilité n'existe ailleurs dans la
 spécification. *La lecture proposée est qu'**un appariement exact transforme le changement de version
 en bascule coordonnée plutôt qu'en transition progressive** : émetteurs et vérificateurs doivent changer
@@ -424,7 +437,7 @@ valeur du paramètre.* ⚠ **Et une limite en borne d'avance la portée** : les 
 et les clients **SHOULD** vérifier (F-04) — *un régime facultatif ne permet pas d'imposer une
 transition, il permet de l'offrir.*
 
-**Patron 2 — l'hybride comme mesure temporaire, et non comme état stable.** Le projet de l'institut
+**Patron 2 — l'hybride comme mesure temporaire, et non comme état stable.** Le projet du NIST
 énonce que, lorsqu'elles sont employées, **les solutions hybrides sont « typically expected to be
 temporary measures that lead to a second transition »** vers des outils n'employant que des algorithmes
 post-quantiques. *(Source citée à la réserve d'une affirmation versée, que le texte de l'entrée ne
@@ -465,7 +478,7 @@ ni horodatage d'appoint — degré 3**.
 où l'algorithme change : elle se rompt lorsqu'un vérificateur ne peut plus établir, pour un artefact
 déjà émis, sous quel régime il l'a été.***
 
-Lecture de l'auteur — **ce qu'il n'établit pas** : qu'une chaîne de confiance se rompe, ni qu'une
+Lecture de l'auteur — **ce que le socle n'établit pas** : qu'une chaîne de confiance se rompe, ni qu'une
 migration l'expose. *La lecture proposée est que **la crypto-agilité et la révocabilité sont la même
 propriété vue de deux côtés** : un mécanisme qui ne sait pas retirer ce qu'il a émis **ne peut pas
 achever une migration** — il peut seulement en ajouter une couche.* **Elle est réfutable** : *un
@@ -513,19 +526,26 @@ secteur** : ses cinq recommandations sont **sans date**, et la seule échéance 
 n'a pas pu être établie sur une page de son éditeur.*
 
 ⚠ **Ce relevé a une conséquence directe sur l'héritage, et elle est désagréable : une entrée héritée est
-périmée sur ce point** (F-63). Le Vol. I prête à un forum sectoriel des cibles propres ; **la source
-primaire ouverte par la passe n'en porte pas**, dans les bornes de son balayage. ⚠ ***Une cible
-attribuée à un forum qui ne l'énonce pas est exactement ce que R-11 proscrit en interdisant de
-fusionner des jalons d'origines distinctes.***
+périmée sur ce point** (F-63). Le Vol. I prête au **QSFF** des cibles propres de **2030-2031 et de
+2035** ; **la source primaire ouverte par la passe n'en porte pas**, dans les bornes de son balayage —
+lesquelles excluaient la chaîne « 2031 », qui n'y avait pas été cherchée. ⚠ **La re-datation du
+28 juillet 2026 a élargi ce balayage sans l'infirmer** : conduit sur les vingt-six pages entières, il
+donne **zéro occurrence de « 2030 », de « 2031 » et de « 2035 »** (`S-109`) — *la péremption est ainsi
+confirmée plus fermement que l'entrée ne l'établissait.* ⚠ ***Une cible attribuée à un forum qui ne
+l'énonce pas est exactement ce que R-11 proscrit en interdisant de fusionner des jalons d'origines
+distinctes.***
 
 Lecture de l'auteur — **ce que le socle établit** : que le rapport européen ne porte aucune des trois
 chaînes relevées, et que le balayage hors socle du second n'y relève aucune échéance sectorielle. **Ce
-qu'il n'établit pas** : **par quel chemin l'entrée héritée en est venue à prêter ces cibles à ce
-forum**. *Tout au plus se constate-t-il que deux des millésimes concernés sont les deux échéances du
-décret ; **aucune source du socle ne relie ce texte à l'entrée héritée**.* ⚠ ***Seul l'écart est
+qu'il n'établit pas** : **par quel chemin l'entrée héritée en est venue à prêter ces cibles au
+QSFF**. *Tout au plus se constate-t-il que 2030 et 2031 sont les deux échéances du décret 14412 ;
+**aucune source du socle ne relie ce texte à l'entrée héritée**.* ⚠ ***Seul l'écart est
 documenté ; sa provenance ne l'est pas, et la somme ne la reconstitue pas.***
 
-⚠ **Le versant du Vol. I, en [C], ajoute un verrou d'ingénierie que le socle propre ne porte pas.** Son
+⚠ **Le versant du Vol. I ajoute un verrou d'ingénierie que le socle propre ne porte pas — et il faut
+dire par quelle porte il entre.** ⚠ **Aucune entrée héritée ne couvre le §7.4.4 du Vol. I** : là où le
+§7.4.1 entre par H-17, celui-ci **n'a pas d'identifiant de socle** et entre en **[C]** par le seul
+régime du PRD §7.1. *Un appui sans entrée est plus faible qu'une entrée [C], non plus fort.* Son
 §7.4.4 nomme **deux propriétés qui s'opposent** — *la longévité requise d'un justificatif d'autorité et
 la nature jetable d'une identité d'agent instanciée pour une tâche* — et une **soutenabilité de
 performance non établie** : *les signatures et échanges post-quantiques, dont les tailles d'artefacts
@@ -538,7 +558,11 @@ aucun énoncé de ce paragraphe n'est central.*
 
 *Puisqu'aucun nombre n'est transposable, ce qui se transmet est une méthode.* Lecture de l'auteur —
 **elle est construite ici, et elle est une construction d'auteur en totalité.** **Ce que le socle
-établit** : les quatre contraintes du § 21.1 et du § 21.4. **Il n'établit pas de méthode d'inventaire,
+établit** : les **quatre contraintes posées au § 21.1** — les algorithmes de remplacement sont
+normalisés depuis le 13 août 2024 tandis que le calendrier de retrait ne l'est pas (F-62 ; F-59) ; les
+deux jalons sont portés par ce même document à l'état de projet (F-59, F-60) ; une obligation fédérale
+datée s'y ancre par la clause « ou un document successeur » (F-61) ; un rapport sectoriel ordonne ses
+activités par le risque plutôt que par une date (F-63). **Il n'établit pas de méthode d'inventaire,
 pas de nomenclature d'artefacts, pas de pondération de risque, pas d'ordre de grandeur de charge.**
 *Les cinq relevés qui suivent sont proposés par la somme ; **ils ne sont endossés par aucune source**.*
 
@@ -560,9 +584,10 @@ l'inventaire ; ce paragraphe propose ce qu'il faut relever sur chacun.**
 4. **Le régime qui lie l'artefact — s'il en existe un.** ⚠ **C'est ici que la discipline de R-11 se
    paie.** Les jalons relevés viennent de **quatre origines distinctes qui ne se fusionnent pas** : le
    projet de l'institut, **qui vise sans prescrire** ; le décret, **qui fixe des échéances pour le
-   périmètre fédéral qu'il définit** ; la note d'application, **qui échelonne** ; et une cible générale
-   citée par le projet lui-même — *cette quatrième origine est **hors socle**, et son versement est
-   remonté.* **Le relevé consiste à nommer laquelle des quatre s'applique, à quel titre et sur quel
+   périmètre fédéral qu'il définit** ; la note d'application, **qui échelonne** ; et la **cible générale
+   de 2035 que fixe le mémorandum de sécurité nationale NSM-10**, citée par le projet lui-même —
+   *cette quatrième origine est **hors socle**, et son versement est demandé par le Vol. III, non opéré
+   ici.* **Le relevé consiste à nommer laquelle des quatre s'applique, à quel titre et sur quel
    périmètre.** ⚠ *La confrontation ne se saute pas au motif que l'exploitant est canadien* : le décret
    charge par ailleurs de publier une **règle proposée** d'acquisition visant les contractants couverts
    — *une règle proposée n'est ni une règle en vigueur ni une obligation constatée, et son périmètre se
@@ -586,10 +611,12 @@ fourchette et aucune règle de trois — et ce refus est le résultat de la pass
 *quelles échéances les autorités canadiennes énoncent-elles, et sous quel régime ?* **Aucune passe de
 recherche n'a été conduite** — le lot déclare n'avoir rien instruit hors du couple États-Unis / Union
 européenne, **et signale lui-même que cette lacune est la plus coûteuse de celles qu'il laisse.**
-*Sources à retrouver : les publications de l'autorité nationale de cybersécurité et les travaux du
-groupe de travail sectoriel canadien, dont le rapport précise que **la mention ne repose que sur des
-communiqués de presse** — le sigle comptant **zéro occurrence** dans le texte extrait du rapport
-européen.* **La question reste ouverte ; aucune inférence n'est proposée.**
+*Sources à retrouver : les publications du **Centre canadien pour la cybersécurité** et les travaux du
+groupe de travail canadien **CFDIR**, dont le rapport de lot précise que **la mention ne repose que sur
+des communiqués de presse** — le sigle « CFDIR » comptant **zéro occurrence** dans le texte extrait du
+rapport européen.* ⚠ **Les deux identifiants sont nommés plutôt qu'élidés** : *un critère de clôture qui
+ne porte pas l'identifiant de la source à instruire est inexécutable.* **La question reste ouverte ;
+aucune inférence n'est proposée.**
 
 ## § 21.9 — Fenêtre d'action 2026-2029 : le calendrier inverse
 
@@ -613,22 +640,22 @@ deux primitives — elle attend du côté des dates.***
 **La deuxième appelle une lecture, et elle est contre-intuitive.** Le projet écrit que ses normes
 d'algorithmes **peuvent** continuer de spécifier des techniques vulnérables jusqu'en 2035, et annonce
 que **des guides propres à une application pourront imposer des transitions plus précoces** (F-60).
-Lecture de l'auteur — *2035 y fonctionne donc **comme un plafond et non comme un plancher**.* **Ce
-qu'il n'établit pas** : que 2035 vaille plafond **pour un exploitant donné**, ni qu'un guide sectoriel
+Lecture de l'auteur — *2035 y fonctionne donc **comme un plafond et non comme un plancher**.* **Ce que
+le socle n'établit pas** : que 2035 vaille plafond **pour un exploitant donné**, ni qu'un guide sectoriel
 plus précoce existe pour la couche agentique. ⚠ ***Une institution qui lirait 2035 comme sa propre
 échéance lirait le plafond d'un autre.***
 
-⚠ **Conformément à R-11** : l'institut **vise** une dépréciation en 2030 au niveau de sécurité de
+⚠ **Conformément à R-11** : le NIST **vise** une dépréciation en 2030 au niveau de sécurité de
 112 bits et une interdiction en 2035 tous niveaux confondus, **dans un document à l'état de projet
-public initial** — *aucune de ces deux lignes n'est formulée en obligation, et **un jalon de cet
-institut n'est pas une obligation légale**.*
+public initial** — *aucune de ces deux lignes n'est formulée en obligation, et **un jalon du NIST n'est
+pas une obligation légale**.*
 
 **La troisième est une lecture d'auteur, et elle porte la borne de droite du titre.** Lecture de
 l'auteur — **ce que le socle établit** : une date d'obligation applicable à un périmètre fédéral
-américain nommé, le 31 décembre 2030 pour l'établissement de clés (F-61) ; que l'institut vise 2030 et
-2035 **dans un projet** ; et que la clause « ou un document successeur » **est précisément ce qui
-empêche ce projet de devenir la norme sur laquelle une obligation se fonderait**. **Ce qu'il n'établit
-pas** : **aucun délai de conception, aucun cycle de renouvellement d'infrastructure, aucune durée de
+américain nommé, le 31 décembre 2030 pour l'établissement de clés (F-61) ; que le NIST vise 2030 et
+2035 **dans un projet** (F-59, F-60) ; et que la clause « ou un document successeur » **est précisément
+ce qui empêche ce projet de devenir la norme sur laquelle une obligation se fonderait**. **Ce qu'il
+n'établit pas** : **aucun délai de conception, aucun cycle de renouvellement d'infrastructure, aucune durée de
 migration d'un parc — degré 3.** *La fenêtre **2026-2029** est donc une construction de la somme : elle
 borne à droite l'intervalle qui précède la première échéance datée du socle, et **elle vaut ce que vaut
 l'hypothèse — non sourcée — qu'un parc d'agents ne se migre pas dans l'année de son échéance**.*
@@ -645,7 +672,7 @@ dernier **les artefacts agiles**, dont la migration est un changement de configu
 (H-27, **[C]**, thèse attribuée) : ***une dette de migration n'est pas un problème d'architecture qu'on
 résout une fois ; c'est une charge d'exploitation qui se réévalue à chaque révision du document qui
 porte l'horloge*** — et ce document est, à la date de gel, **un projet** (F-59). ⚠ **Aucun calendrier de
-finalisation n'a été relevé — degré 3** ; *il ne s'en déduit rien sur les intentions de l'institut.*
+finalisation n'a été relevé — degré 3** ; *il ne s'en déduit rien sur les intentions du NIST.*
 
 **Ce que ce chapitre refuse d'écrire, et pourquoi il le déclare.** *(1)* Il **ne convertit pas** en coût
 unitaire, en ratio ou en fourchette d'entreprise la projection de coût du § 21.7 : *le périmètre du
@@ -660,8 +687,9 @@ transpose devient, en trois citations, une échéance.***
 
 *Section de sortie sans homologue direct dans la source — construction d'éditeur.*
 
-1. **Le siège de l'horloge** (§ 21.1), avec ses trois origines **qui ne se fusionnent pas** et le statut
-   réel de chaque texte. Les **ch. 45 et 49** y renvoient ; **aucun ne re-date un jalon**.
+1. **Le siège de l'horloge** (§ 21.1), avec ses **trois origines documentaires** — la quatrième, hors
+   socle, étant nommée au § 21.8 — **qui ne se fusionnent pas**, et le statut réel de chaque texte.
+   Hors du Livre, les **ch. 45 et 49** y renvoient ; **aucun ne re-date un jalon**.
 2. **La formulation imposée** : « **visée** », jamais « fixée », jamais un ordre de grandeur approché ;
    et **le statut du document porté à chaque mention**. *C'est le garde-fou le plus mécanique du Livre,
    et le plus facile à casser d'inadvertance.*
@@ -680,20 +708,32 @@ transpose devient, en trois citations, une échéance.***
 
 ⚠ **Cette section n'est pas au TOC et n'a pas vocation à survivre.**
 
-**Ce qui est enfreint.** Portes **G-3** et **G-4** ; volet résiduel de **G-1** non instruit ; ordre de
-rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026.
+**Ce qui est enfreint.** Portes **G-3** et **G-4** au moment de la rédaction ; volet résiduel de **G-1**
+non instruit alors ; ordre de rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026. ⚠ **Deux de
+ces trois manques sont levés depuis, et le dire ne les rattrape pas** : **G-3 est franchie** et le
+**volet de faits de G-1 est levé** le 28 juillet 2026 — *une porte franchie après coup solde la
+rédaction qui l'a devancée.* **G-4 demeure ouverte.**
 
-1. **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ **Et ce chapitre est celui du Livre où
-   l'écart entre la précision apparente et le régime de preuve est le plus grand** : *il porte des dates
-   au quantième, des libellés verbatim et des numéros de section — et **tout cela résout contre un socle
-   que G-3 n'a pas refondu et que G-4 n'a pas collationné**.*
-2. **Les décomptes sont publiables** (G-2). Écart de **+48,1 %** — **le plus fort du Livre** ; **la volumétrie du Livre entier**
-   alimente **D-4** par **R-IV-17**.
-3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan** : **ch. 45** et
-   **ch. 49**. Les renvois vers le **ch. 3** résolvent contre du texte ; ceux vers les **ch. 15, 16, 17,
-   20** résolvent contre du texte au terme de la présente passe.
+1. **Aucun énoncé n'est central au sens de CA-IV-01**, et le motif a changé de nature le 28 juillet
+   2026 : *ce n'est plus l'absence de socle — il existe — mais l'absence de vote*, **aucun vote
+   adversarial n'ayant été conduit**, et **G-4 n'ayant collationné aucun fond**. ⚠ **L'écart entre la
+   précision apparente de ce chapitre et son régime de preuve est son risque propre** : *il porte des
+   dates au quantième, des libellés verbatim et des numéros de section — et **rien de tout cela n'a été
+   re-résolu sur l'Annexe B**.*
+2. **Les décomptes sont publiables** (G-2). Écart de **+55,6 %** au terme de la relecture du 28 juillet
+   2026 — ⚠ *son rang dans le Livre ne se déclare pas tant que les neuf pièces voisines sont en
+   relecture* ; **la volumétrie du Livre entier** alimente **D-4** par **R-IV-17**.
+3. **Aucune mention de chapitre n'est plus un renvoi de plan.** Les **ch. 45** et **ch. 49**, rédigés le
+   27 juillet 2026, existent en texte : le renvoi au **ch. 49 § 49.0** — siège du tri prospectif —
+   résout contre du texte, et les cinq chapitres déclarés comme renvoyant au siège de l'horloge le font
+   effectivement (constat sur pièce). Les renvois vers le **ch. 3** et vers les **ch. 15, 16, 17, 20**
+   résolvaient déjà. ⚠ *Résoudre contre du texte n'est pas résoudre contre du texte recevable* : les
+   pièces citées sont elles-mêmes des brouillons hors portes.
 4. **Une entrée héritée est déclarée périmée sur un point précis** (§ 21.7), **et la pièce ne la corrige
-   pas** : *c'est le socle propre du Vol. III qui le porte, et la correction relève de **G-3**.*
+   pas** : *c'est le socle propre du Vol. III qui le porte.* ☑ **Le socle consolidé l'a repris tel quel
+   le 28 juillet 2026** : l'entrée y porte sa péremption **en réserve déclarée**, et ⚠ **son énoncé
+   hérité n'est pas réécrit** — *un volume aval ne réécrit pas un volume amont, il déclare ce qu'il en
+   fait.*
 
 **Remontées ouvertes par ce chapitre :**
 
@@ -718,7 +758,7 @@ rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026.
   l'horloge à la table de [`PRD/check-sieges.py`](../PRD/check-sieges.py)**, avec les trois autres
   sièges que ce Livre pose (voir **R-IV-24**, ouverte au ch. 15).
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.24** — § 21.1 à § 21.9,
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.30** — § 21.1 à § 21.9,
 dans l'ordre exact, les deux mouvements dans leur ordre —, et le § 21.0 est une introduction de
 chapitre. Les **deux tables de couverture sont respectées pour leurs cinq lignes**. Le **siège de
 l'horloge est posé et marqué** (§ 21.1). Le **socle IAM et l'identité de charge de travail restent au
@@ -728,12 +768,14 @@ imposée par R-11 est tenue sur tout le domaine balayé** : *« visée », jamai
 de grandeur approché n'est écrit**, le **statut du document est dit à chaque mention**, et **les quatre
 origines de jalons ne sont fusionnées à aucun endroit** — *la pièce n'en porte que **trois marqueurs
 littéraux**, aux § 21.7, § 21.8 et § 21.9 ; la couverture se déclare, elle ne se dénombre pas.* Les
-absences **portent leur degré**, dont **douze au degré 3**. Les **quatre marqueurs de R-02** — § 21.3
+absences **portent leur degré** : **dix-huit marqueurs « degré 3 »** — dont deux qualifient une colonne
+entière de tableau — et **trois faits négatifs VÉRIFIÉS**, ceux de F-59, de F-63 et de F-52, chacun avec
+sa borne. Les **quatre marqueurs de R-02** — § 21.3
 et § 21.5 (trois) — énoncent ce que la spécification
 démontre **et** ne démontre pas, dont le **refus explicite de reprendre la qualification de
 « crypto-agilité structurellement présente »** que le rapport de lot proposait. La **projection de coût
 est attribuée à son auteur, à son millésime et à son périmètre à chacune de ses occurrences**, et
-**aucun ratio n'en est dérivé**. Enfin, les **quinze marqueurs de « Lecture de l'auteur »** sont
+**aucun ratio n'en est dérivé**. Enfin, les **dix-sept marqueurs de « Lecture de l'auteur »** sont
 suivis de ce que le socle établit et n'établit pas — dont **deux paragraphes entiers**, le § 21.6 et
 le § 21.8, marqués à l'ouverture.
 
@@ -765,16 +807,24 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
   renvois sont ajoutés, ici en tête du § 21.1, aux ch. 15 et 16 à leur thèse. ⚠ **La leçon n'est pas
   que la remontée était mauvaise** : c'est qu'*une passe d'arbitrage qui exécute ses remontées sans
   les vérifier fabrique le défaut qu'elle croit corriger* — ici, un second siège pour une matière qui
-  en avait déjà un. ⚠ **Le siège du tri, lui, n'est PAS versé à l'appareil, et l'empêchement est
-  structurel** : la table de [`PRD/check-sieges.py`](../PRD/check-sieges.py) exige une **pièce porteuse
-  existante** dont elle lit le marqueur, et **le ch. 49 n'est pas rédigé**. *Le versement est dû à la
-  rédaction du second mouvement du Livre V, et il est écrit comme dû plutôt que réputé fait.* **Le
-  volet appareil de la remontée**, lui, était soldé avant la passe : le **siège de l'horloge** est
-  versé au script avec les trois autres du Livre.
+  en avait déjà un. ⚠ **Le siège du tri, lui, n'était PAS versé à l'appareil au 27 juillet 2026, et
+  l'empêchement était structurel** : la table de [`PRD/check-sieges.py`](../PRD/check-sieges.py) exige
+  une **pièce porteuse existante** dont elle lit le marqueur, et le ch. 49 n'était pas encore rédigé.
+  *Le versement était dû à la rédaction du second mouvement du Livre V, et il a été écrit comme dû
+  plutôt que réputé fait.* ☑ **Il est fait depuis** : le ch. 49 a été rédigé le 27 juillet 2026 et le
+  **siège du tri prospectif figure à la table**, ⚠ **son contrôle S5 désactivé** — *six pièces qui
+  trient ne renvoient pas encore au siège, et un contrôle bruyant est un contrôle ignoré* ; la
+  réactivation est due après leur alignement, celui de ce chapitre étant acquis (§ 21.1). **Le volet
+  appareil de la remontée**, lui, était soldé avant la passe : le **siège de l'horloge** est versé au
+  script avec les trois autres du Livre.
 
-⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle
-consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation de fond contre le Vol. III
-rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**.
-**CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur. Cette
-pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
-cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*
+⚠ **Ce que la clôture ne change pas.** *(Constat du 27 juillet 2026, amendé sur un seul point le
+28.)* ☑ **G-3 est franchie depuis le 28 juillet 2026** : l'Annexe B existe et compte **159 entrées** —
+mais **aucun énoncé de cette pièce n'y a été re-résolu**, et **aucune entrée n'a été promue**.
+☐ **G-4 demeure ouverte** : la collation de fond contre le Vol. III rédigé n'est pas conduite.
+**Aucun énoncé de cette pièce n'est central au sens de CA-IV-01** — faute de vote adversarial, non plus
+faute de socle. **CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du
+rédacteur. ⚠ **La relecture du 28 juillet 2026 ne la satisfait pas davantage** : *elle est conduite sous
+la même main que la rédaction, et ce critère-là ne se comble que par une seconde personne.* Cette pièce
+reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
+pièce recevable : cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*

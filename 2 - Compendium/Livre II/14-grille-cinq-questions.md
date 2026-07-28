@@ -2,29 +2,20 @@
 
 *Livre II — Faire confiance : identité, délégation et fabrique de confiance.
 Premier mouvement — émettre (ch. 12-18). Troisième chapitre du mouvement, et **chapitre de méthode
-transversal** : il ne verse aucun fait, il fournit l'instrument par lequel les six chapitres suivants
-rendent leurs verdicts.*
+transversal** : il ne verse aucun fait, il fournit l'instrument par lequel les **ch. 15 à 21** rendent
+leurs verdicts.*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — portes **G-3** et **G-4** ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Ce chapitre est le seul du Livre dont le régime de preuve ne dépend d'aucun fait** : la grille est une **construction d'auteur** du Vol. III, spécifiée à son PRD et **dérivée d'aucun socle** — sa recevabilité tient à son rendement, non à sa filiation. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** et ne sont pas rouvertes |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Un instrument ne se périme pas comme un fait** : ce qui se périme ici est l'**application-témoin** du § 14.2, dont chaque verdict est daté du 21 juillet 2026 et se rejouera à chaque révision des trois mécanismes qu'elle éprouve |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte), **et aucune entrée n'est requise pour la grille elle-même** : elle est spécifiée au **PRD du Vol. III, Annexe C**, document de cadrage, non versée par un lot d'instruction. Les **verdicts** du § 14.2 résolvent, eux, contre le **Vol. III *Monographie* ch. 4**, dont les entrées **F-01** à **F-11**, **F-14**, **F-15**, **F-19**, **F-21**, **F-33** à **F-43**, **F-47**, **F-48**, **F-50**, **F-55**, **F-87** et l'entrée héritée **H-03** conservent leurs niveaux d'origine ; l'échelle d'autonomie du § 14.4 vient du **Vol. I *Monographie* §5.0.2**, portée par **H-31**, en **[C]** et **non élevable**. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les cinq sections du corps, § 14.0 à § 14.4.** Vol. III — **R-02 : deux marqueurs**, § 14.2 (deux) ; **R-14 (trois degrés d'absence) : un marqueur**, § 14.1 ; les **sept cases vides du tableau 14.2** sont chacune déclarée **degré 3** dans le corps du tableau, **sans marqueur** — *couverture déclarée, non dénombrée*. **R-01, R-03 à R-13 : zéro marqueur.** ⚠ **R-13 est pourtant appliqué sans être marqué** : les **trois échelles homonymes du Vol. I** sont nommées au § 14.4 par leur cardinal et leur numérotation, **jamais nues** — l'application est réelle, le renvoi à l'identifiant absent. Vol. II — **réserve F-01 : un marqueur**, § 14.2 ; **§8.2 : zéro marqueur** ; **R-1 à R-8 : zéro marqueur** — leurs sièges sont les ch. 15 et 16. ⚠ **Faux ami déclaré** : le « corpus d'appui » nommé au § 14.4 est un **marqueur conditionnel de réouverture**, jamais une source |
-| **Volumétrie cible** | ≈ **3 000 mots** de corps (§ 14.0 à § 14.4), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — **la plus basse du Livre**, ce chapitre ne portant que quatre sections et aucun corpus propre. ☑ **Décompte publiable depuis G-2** ; **réel : 3 514 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+17,1 %**. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
+| **Statut** | **Brouillon de rédaction, non publiable** — **rédigé le 27 juillet 2026 avant G-3 et G-4**, sur instruction d'auteur. ⚠ **G-3 a été franchie depuis, le 28 juillet 2026** (PRD v0.14 ; socle consolidé [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées `S-001`…`S-159`**), et **G-4 demeure ouverte** : *une porte franchie après coup ne rattrape pas la pièce écrite avant elle* — **celle-ci n'a pas été ré-adossée entrée par entrée au socle consolidé**, et le ré-adossement reste dû. ⚠ **Ce chapitre est le seul du Livre dont le régime de preuve ne dépend d'aucun fait** : la grille est une **construction d'auteur** du Vol. III, spécifiée à son PRD et **dérivée d'aucun socle** — sa recevabilité tient à son rendement, non à sa filiation. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** et ne sont pas rouvertes |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet de faits de G-1 levé le 28 juillet 2026** — 123 entrées à sensibilité temporelle portées à leur source ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) ; ⚠ **l'obligation de pièce du Livre II, elle, reste due**. Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Un instrument ne se périme pas comme un fait** : ce qui se périme ici est l'**application-témoin** du § 14.2, dont chaque verdict est daté du 21 juillet 2026 et se rejouera à chaque révision des trois mécanismes qu'elle éprouve |
+| **Socle mobilisé** | ⚠ **Aucune entrée n'est requise pour la grille elle-même** : elle est spécifiée au **PRD du Vol. III, Annexe C**, document de cadrage, non versée par un lot d'instruction. Les **verdicts** du § 14.2 résolvent, eux, contre le **Vol. III *Monographie* ch. 4**, dont **vingt et une entrées propres** sont mobilisées — **F-01**, **F-02**, **F-04** à **F-09**, **F-11**, **F-14**, **F-15**, **F-19**, **F-21**, **F-33** à **F-35**, **F-37**, **F-38**, **F-40**, **F-47**, **F-87** — plus les **entrées héritées H-02 et H-03** ; toutes conservent leurs **niveaux d'origine**. L'échelle d'autonomie du § 14.4 vient du **Vol. I *Monographie* §5.0.2**, portée par **H-31**, en **[C]** et **non élevable**. ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** et ces entrées y résolvent par la **table de correspondance n° 2** ([`socle-consolide.md`](../PRD/socle-consolide.md) §5) ; la pièce les cite **dans la série du Vol. III, préfixées de leur volume** (décision 7) — **la re-citation en `S-nnn` n'est pas faite et reste due**. **Aucun énoncé n'est central au sens de CA-IV-01** : le PRD v0.14 déclare le **vote adversarial dû pour toute entrée appelée à porter un fait central**, et aucun n'a été conduit par la consolidation |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les cinq sections du corps, § 14.0 à § 14.4.** Vol. III — **R-02 : deux marqueurs**, § 14.2 (deux) ; **R-13 : un marqueur**, § 14.4 ; **R-14 (trois degrés d'absence) : un marqueur**, § 14.1 ; les **sept cases vides du tableau 14.2** sont chacune déclarée **degré 3** dans le corps du tableau, **sans marqueur** — *couverture déclarée, non dénombrée*. **R-01, R-03 à R-12 : zéro marqueur.** ⚠ **Deux garde-fous sont appliqués au-delà de ce que leur marqueur signale** : **R-13** — les **trois échelles homonymes du Vol. I** sont nommées au § 14.4 par leur cardinal et leur numérotation, **jamais nues**, sur toute la section et non au seul endroit marqué — et **R-12**, le § 14.3 rangeant les attaques par maillon en **traitement défensif exclusif, sans recette d'exploitation**, sans porter l'identifiant. Vol. II — **réserve F-01, §8.2, R-1 à R-8 : zéro marqueur**, leurs sièges étant les ch. 15 et 16. ⚠ **Collision de séries déclarée** : l'unique occurrence littérale de « F-01 » au § 14.2 est celle du **Vol. III**, non celle du Vol. II — *un `F-xx` nu est indécidable entre deux socles* (décision 7) —, et la réserve du Vol. II sur ce protocole est **sans objet ici**, la condensation du F-40 ne le nommant pas. ⚠ **Faux ami déclaré** : le « corpus d'appui » nommé au § 14.4 est un **marqueur conditionnel de réouverture**, jamais une source |
+| **Volumétrie cible** | ≈ **3 000 mots** de corps (§ 14.0 à § 14.4), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — **la plus basse du Livre**, ce chapitre ne portant que quatre sections et aucun corpus propre. ☑ **Décompte publiable depuis G-2** ; **réel : 3 725 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+24,2 %**, re-mesuré à la relecture du 28 juillet 2026 (⚠ *valeur antérieure périmée : 3 514, +17,1 %* ; les **211 mots** de l'écart sont ceux des bornes et des attributions ajoutées par la relecture — **aucune amputation n'a été faite**, D-4). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 14)* — cinq questions — *qui es-tu, qui t'a créé, pour qui agis-tu, que peux-tu faire, qui en répond* — forment la grille de lecture de tout mécanisme d'identité agentique ; ce sont les questions que l'entreprise doit pouvoir poser à chacun de ses agents, et **aucun des trois mécanismes instruits par le Vol. III ne répond aux cinq**.
 >
-> ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-20** ouverte par cette pièce. La forme citée par la version antérieure — « aucun mécanisme de 2026 ne répond aux cinq » — était un **quantificateur universel négatif sur un corpus non balayé**. **Le corps du chapitre n'a pas changé** : il était déjà écrit sous la forme bornée, et le § 14.2 déclarait la portée limitée à l'échantillon.
-
-⚠ **La thèse citée ci-dessus est la forme bornée, et l'écart qui l'a précédée se déclare plutôt qu'il
-ne se lisse.** Le Vol. III avait remplacé « aucun mécanisme de 2026 » par « **aucun des trois
-mécanismes instruits par ce volume** » le **21 juillet 2026**, au motif que la première forme est un
-**quantificateur universel négatif sur un corpus non balayé** — exactement ce que R-14 et le régime
-des trois degrés d'absence proscrivent ; le plan du compendium ne l'avait pas suivie, et son TOC
-v0.24 portait encore la forme large. **L'écart a été soldé par la remontée R-IV-20**, qui a réaligné
-la thèse au **TOC v0.25** au titre de la décision 8 : la pièce cite désormais la forme bornée, et
-**son corps n'a pas eu à changer** — il était déjà écrit sous cette forme.
+> ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-20** ouverte par cette pièce. La forme citée par la version antérieure — « aucun mécanisme de 2026 ne répond aux cinq » — était un **quantificateur universel négatif sur un corpus non balayé**, que le garde-fou **R-14 du Vol. III** proscrit ; sa source l'avait bornée le **21 juillet 2026** et reportée dans sa pièce le 22, sans que le plan du compendium suive. ⚠ *Ce n'était donc pas une divergence à arbitrer, mais un report qui n'avait pas été fait.* **Le corps du chapitre n'a pas changé** : il était déjà écrit sous la forme bornée, et le § 14.2 déclarait la portée limitée à l'échantillon.
 
 ---
 
@@ -48,7 +39,7 @@ existence serait précisément l'objet que la somme prend pour cible : *un instr
 
 **Le chapitre se lit en quatre temps.** D'où vient la grille et ce que son inspiration n'autorise pas
 (§ 14.1) ; ce qu'elle donne quand on l'éprouve sur trois mécanismes documentés (§ 14.2) ; comment
-elle structure les six chapitres suivants (§ 14.3) ; et ce qu'elle devient croisée avec une échelle
+elle structure les chapitres suivants (§ 14.3) ; et ce qu'elle devient croisée avec une échelle
 d'autonomie (§ 14.4).
 
 ## § 14.1 — L'inspiration de la grille — et ce qu'elle n'autorise pas
@@ -61,9 +52,9 @@ cardinal de cinq, l'ordre de ses questions, le partage qu'elle opère entre elle
 propre ou héritée, ne les porte, et aucune source primaire n'en est l'extraction.
 
 ⚠ **La différence avec l'instrument équivalent du Vol. II est structurante et vaut d'être écrite** :
-la taxonomie d'orchestration OO1-OO4 du Vol. II venait **d'une source** ; la grille n'en vient
-**d'aucune**. Elle relève du régime des constructions d'auteur, ce qui interdit d'en tirer un
-argument d'autorité et impose qu'elle soit **falsifiable**.
+la taxonomie d'orchestration OO1-OO4 du Vol. II (*Monographie* ch. 5) venait **d'une source** ; la
+grille n'en vient **d'aucune**. Elle relève du régime des constructions d'auteur, ce qui interdit
+d'en tirer un argument d'autorité et impose qu'elle soit **falsifiable**.
 
 **L'inspiration, elle, est nommée.** Le Vol. I emploie une grille d'analyse **par axes** —
 découverte, sémantique, identité et confiance, gouvernance des frontières —, présentée comme le moyen
@@ -76,6 +67,13 @@ repérage documentaire —, parce que sa vérification porte sur ses référence
 ses affirmations (PRD §7.1) ; et **une entrée [C] ne porte jamais un fait central**. *Adosser la
 grille aux axes du Vol. I l'aurait rendue inutilisable au moment même où l'on prétendait la fonder.*
 ⚠ **Les quatre axes sont posés au ch. 7 § 7.2.2** et ne sont pas reconstruits ici.
+
+⚠ **Aucune entrée de socle ne porte les axes eux-mêmes, et l'écart se déclare plutôt qu'il ne se
+comble.** Le Vol. III l'avait constaté pour son propre socle ; le balayage des **159 entrées** du
+socle consolidé, au 28 juillet 2026, le confirme — **aucune ne les énonce** : fait négatif
+**vérifié** sur ce corpus, degré 1, et borné à lui. *La traçabilité de cette filiation vient des
+documents de cadrage, non du socle ; y créer une entrée n'y changerait rien, une entrée [C]
+n'autorisant aucun emploi central.*
 
 Lecture de l'auteur — le changement d'objet justifie le changement d'instrument : les **axes**
 comparent des spécifications *entre elles* ; les **cinq questions** demandent ce qu'une entreprise
@@ -157,13 +155,16 @@ politique d'accès conditionnel ciblant des identités d'agent **ne s'applique p
 d'utilisateur de l'agent, et une politique ciblant « tous les utilisateurs » **n'inclut pas** les
 identités d'agent (Vol. III F-35, **[A]**, fait négatif **établi**, degré 2). *Un identifiant qui
 n'est pas unique au point d'application ne répond qu'à moitié à « qui es-tu ».* Sur **Q-B**, **répond
-partiellement** : ce qui se cite en **[B]** est la spécification elle-même — un SVID est valide s'il a
-été signé par une autorité du domaine de confiance de l'identité qu'il porte (Vol. III F-87) —, et ce
-qu'elle **démontre** est une vérification de signature dans un domaine, **non l'ancrage de confiance
-de cette autorité** (R-02). Sur **Q-C**, **répond partiellement** : le mandat s'exprime, mais qu'il
-soit interrogeable **à l'instant t** n'est pas établi (degré 3). Sur **Q-D**, même verdict et même
-cause : les bornes sont opposables au point d'application d'**un** des deux plans (F-35). Sur
-**Q-E**, **case vide au degré 3**.
+partiellement** : ce qui se cite en **[B]** est la spécification elle-même — **SPIFFE-ID** énonce
+qu'un SVID est valide s'il a été signé par une autorité du domaine de confiance de l'**identité
+SPIFFE** qu'il porte (Vol. III F-87) —, et ce qu'elle **démontre** est une vérification de signature
+dans un domaine, **non l'ancrage de confiance de cette autorité** (R-02). Sur **Q-C**, **répond
+partiellement**, et la borne vient de la norme sous-jacente : le **RFC 8693** définit l'attribut `act`
+comme le moyen d'exprimer **qu'une délégation a eu lieu** et place explicitement hors de son périmètre
+les caractéristiques de sécurité des jetons eux-mêmes (Vol. III F-47, **[A]**) — le mandat s'exprime
+donc, mais qu'il soit interrogeable **à l'instant t** n'est pas établi (degré 3). Sur **Q-D**, même
+verdict et même cause : les bornes sont opposables au point d'application d'**un** des deux plans
+(F-35). Sur **Q-E**, **case vide au degré 3**.
 
 **Les registres gouvernés.** Statut, dit à chaque mention : la spécification de registre d'agents est
 un **brouillon de laboratoire** et son en-tête le dit — « White Paper | 2026-03-27 | Status: draft »,
@@ -215,16 +216,16 @@ répondre n'appelle pas un verdict de plus ; elle appelle un chapitre.*
 exclusif, au niveau architectural, sans recette d'exploitation. Le socle montre que le tri
 fonctionne : dans la campagne de compromission de jetons du **8 au 18 août 2025 au moins**, le maillon
 qui cède est le **jeton porteur**, lié ni à l'appelant, ni à un appareil, ni à une session — *quiconque
-le détient est l'intégration* (Vol. III F-21, **[A]**) : **défaut de Q-A**. Dans la technique du corpus
-de techniques adverses où un agent dispose d'outils inaccessibles aux utilisateurs, ce n'est pas
-l'authentification qui cède mais **l'absence de réduction de portée entre mandant et mandataire**
-(Vol. III F-14, **[A]**) : **défaut de Q-D**, que la contre-mesure correspondante vise en posant qu'un
-agent agissant pour un utilisateur ne doit pas recevoir de permissions que cet utilisateur n'a pas
-(Vol. III F-15, **[A]**).
+le détient est l'intégration* (Vol. III F-21, **[A]**) : **défaut de Q-A**. Dans la technique
+**AML.T0053** du corpus de techniques adverses **MITRE ATLAS**, où un agent dispose d'outils
+inaccessibles aux utilisateurs, ce n'est pas l'authentification qui cède mais **l'absence de réduction
+de portée entre mandant et mandataire** (Vol. III F-14, **[A]**) : **défaut de Q-D**, que la
+contre-mesure **AML.M0027** vise en posant qu'un agent agissant pour un utilisateur ne doit pas
+recevoir de permissions que cet utilisateur n'a pas (Vol. III F-15, **[A]**).
 
-Une entrée d'un référentiel de sécurité applicative énonce le lien que la grille formalise : « Without
-a distinct, governed identity of its own, an agent operates in an attribution gap that makes
-enforcing true least privilege impossible. » (Vol. III F-19, **[A]**).
+L'entrée **ASI03** du référentiel de sécurité applicative de l'**OWASP** énonce le lien que la grille
+formalise : « Without a distinct, governed identity of its own, an agent operates in an attribution
+gap that makes enforcing true least privilege impossible. » (Vol. III F-19, **[A]**).
 
 Lecture de l'auteur — l'énoncé soutient **l'ordre** des questions : sans réponse à Q-A, Q-D et Q-E
 deviennent **inapplicables** plutôt que difficiles — une borne de privilège suppose un porteur
@@ -260,9 +261,9 @@ dépôt effectif.
 **L'échelle se cite au complet, et la contrainte n'est pas de forme.** Selon la proposition du
 Vol. I, l'**échelle à quatre paliers non numérotés** — *assistance → copilote → orchestration sous
 revue → autonomie bornée* — indexe l'autonomie consentie sur le produit **matérialité × réversibilité**,
-non sur la capacité brute du modèle ; l'entrée héritée **H-31 [C]** en rapporte le principe : *un agent
-ne doit jamais exécuter une action irréversible sans garde-fou structurel ; la règle est la
-préparation par l'agent et la libération humaine sur l'action irréversible.*
+non sur la capacité brute du modèle ; l'entrée héritée **H-31 [C]** en rapporte le principe, verbatim :
+« un agent ne doit jamais exécuter une action irréversible sans garde-fou structurel ; la règle est la
+préparation par l'agent et la *release* humaine sur l'action irréversible ».
 
 ⚠ **Trois échelles coexistent au Vol. I et partagent leurs libellés — les nommer nues est proscrit.**
 « Copilote » est un palier de l'échelle à **quatre paliers non numérotés**, le **niveau 2** du
@@ -270,6 +271,12 @@ continuum à **six niveaux numérotés de 0 à 5**, et le **niveau L0** de la gr
 niveaux préfixés L, L0-L3**. *Le terme ne s'emploie jamais seul*, et l'indexation sur matérialité ×
 réversibilité ne discrimine pas davantage — la graduation L0-L3 indexe deux de ses niveaux sur les
 mêmes critères. **Seuls le cardinal et la numérotation discriminent.**
+
+⚠ **Une de ces trois numérotations n'est plus opposable.** Les désignations du continuum à six
+niveaux ne vivent qu'au tableau 3 de la *Synthèse* du Vol. I, **fichier supprimé du dépôt le
+22 juillet 2026** : le renvoi demeure exact, il **cesse d'être opposable**, et le socle consolidé
+déclare pour ce motif le calibrage du garde-fou **R-13 du Vol. III non rejouable** dans l'arbre
+courant (`S-157`). *La règle de désambiguïsation ne s'en trouve pas allégée pour autant.*
 
 ⚠ **H-31 est une entrée [C] non élevable, et la conséquence est nette.** L'échelle est une
 **construction d'auteur du Vol. I**, introduite par « La proposition de l'ouvrage… », non la reprise
@@ -286,8 +293,8 @@ qui l'a produit*. À l'*orchestration sous revue*, la revue porte sur une **cha�
 acte : **Q-C** devient centrale, et *une chaîne de mandat qui ne s'interroge qu'à l'admission ne
 soutient pas une revue portant sur l'exécution*. À l'*autonomie bornée*, les cinq deviennent
 simultanément exigibles, et le défaut le plus coûteux est celui que le § 14.2 a trouvé à la carte
-signée : un identifiant vérifiable dont la **clé de signature** ne peut être ni expirée ni révoquée en
-usage, sans qu'aucun moyen ne permette d'établir ce statut (Vol. III F-07, **[A]**).
+signée : un identifiant vérifiable dont la **clé de signature**, expirée ou révoquée, ne doit plus
+servir à vérifier — sans qu'aucun moyen permette d'établir ce statut (Vol. III F-07, **[A]**).
 
 | Palier *(échelle à quatre paliers non numérotés du Vol. I)* | Question qui devient exigible | Motif |
 |---|---|---|
@@ -333,22 +340,31 @@ exactement sur quel échantillon elle a été éprouvée.
 ⚠ **Cette section n'est pas au TOC et n'a pas vocation à survivre.** Elle consigne l'écart de
 gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A).
 
-**Ce qui est enfreint.** Portes **G-3** et **G-4** ; volet résiduel de **G-1** non instruit ; ordre de
-rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026.
+**Ce qui est enfreint.** Portes **G-3** et **G-4** à la rédaction ; volet résiduel de **G-1** non
+instruit ; ordre de rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026. ⚠ **Deux de ces
+trois écarts se sont refermés le lendemain, et aucun n'est rattrapé pour autant** : **G-3 est
+franchie** et le **volet de faits de G-1 levé** le 28 juillet 2026 — *une porte franchie après coup ne
+requalifie pas la pièce écrite avant elle ; elle en rend le ré-adossement possible, et dû*.
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01** — et ce chapitre est le seul du Livre où cela
    ne change presque rien : **la grille n'est pas un fait**, elle est un instrument, et son
-   admissibilité tient à son rendement. Ce qui souffre de G-3, ce sont les **verdicts** du § 14.2,
-   qui résolvent contre un socle non refondu.
-2. **Les décomptes sont publiables** (G-2). Écart de **+17,1 %** ; il alimente **D-4** par **R-IV-17**.
+   admissibilité tient à son rendement. Ce qui souffrait de G-3, ce sont les **verdicts** du § 14.2 ;
+   ⚠ **le socle est refondu depuis, et ils n'y sont pas encore ré-adossés** — la consolidation
+   n'ayant d'ailleurs **promu aucune entrée** ni conduit aucun vote adversarial, la centralité reste
+   hors de portée.
+2. **Les décomptes sont publiables** (G-2). Écart de **+24,2 %**, re-mesuré au commit ; il alimente
+   **D-4** par **R-IV-17**.
 3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan** : ch. 25 § 25.1, ch. 37
    § 37.4 et ch. 42 ne sont pas rédigés. Les renvois vers le **ch. 7 § 7.2.2** résolvent contre du
-   texte ; ceux vers les **ch. 15, 16, 17, 19 et 20** résolvent contre du texte au terme de la
+   texte ; ceux vers les **ch. 15, 16, 17, 18, 19 et 20** résolvent contre du texte au terme de la
    présente passe.
-4. **Les sept cases vides du § 14.2 sont des états de preuve, non des verdicts** ; elles se rempliront
-   ou non selon ce que G-3 et G-4 versent, et **pas selon ce qu'une relecture jugera plausible**.
+4. **Les sept cases vides du § 14.2 sont des états de preuve, non des verdicts.** ⚠ **G-3 n'en a
+   rempli aucune** : la consolidation reprend les entrées des trois socles sans en verser de neuve.
+   Elles se rempliront ou non selon ce que **G-4** et l'instruction de sources primaires établiront,
+   et **pas selon ce qu'une relecture jugera plausible**.
 
-**Remontées ouvertes par ce chapitre :**
+**Remontées ouvertes par ce chapitre** *(texte déposé à la rédaction ; leur issue est à la clôture
+ci-dessous, et les deux sont closes)* **:**
 
 - **R-IV-20 — non bloquante, de thèse, et déjà tranchée à la source.** La thèse du ch. 14 au TOC v0.24
   porte « **aucun mécanisme de 2026** ne répond aux cinq ». Le Vol. III a **borné cette forme le
@@ -371,14 +387,14 @@ rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026.
   qu'elle ne mentionne pas. ⚠ **Une arrivée se déclare aux deux bouts** — c'est la classe de défaut
   que la v0.17 du TOC a soldée sur le §2.8.5 du Vol. I, et elle se reproduit ici à l'identique.
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.24** — § 14.1 à
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.28** — § 14.1 à
 § 14.4, dans l'ordre exact —, et le § 14.0 est une introduction de chapitre. La **table de couverture
 est respectée pour ses trois lignes** — ⚠ *elle en portait deux à la rédaction : la v0.25 y a ajouté
 la ligne des **deux arrivées** du § 14.3, sur la remontée **R-IV-21** de cette pièce* —, y compris la
-seconde, qui déclare le §3.1.7 du Vol. I **socle
-amont non repris ici** : les quatre axes restent au **ch. 7 § 7.2.2**, et le § 14.1 y renvoie sans les
-reconstruire. **Les cinq questions ne sont pas re-décidées** : leur formulation, leur ordre et leurs
-règles d'emploi sont repris du cadrage du Vol. III **sans modification**. Les **trois échelles
+seconde, qui déclare le §3.1.7 du Vol. I **socle amont non repris ici** : les quatre axes restent au
+**ch. 7 § 7.2.2**, et le § 14.1 y renvoie sans les reconstruire. **Les cinq questions ne sont pas
+re-décidées** : leur formulation, leur ordre et leurs règles d'emploi sont repris du cadrage du
+Vol. III **sans modification**. Les **trois échelles
 d'autonomie homonymes du Vol. I** que le § 14.4 croise avec la grille sont nommées par leur cardinal
 et leur numérotation, jamais nues (R-13 du Vol. III) ; ⚠ **aucune échelle de certification n'est
 mobilisée ici** — les niveaux de certification sont au **ch. 18 § 18.3**, et ce chapitre ne les
@@ -389,6 +405,38 @@ du tableau. Enfin, les **quatre marqueurs de « Lecture de l'auteur »** — § 
 § 14.4 — sont suivis de ce que le socle établit et n'établit pas, dont **deux sections entières**, le
 § 14.1 et le § 14.4, marquées à l'ouverture.
 
+**Relecture du 28 juillet 2026 — ce qu'elle a corrigé, ce qu'elle remonte.** *Relecture de la même
+main que la rédaction : elle ne satisfait donc ni **CA-IV-11** ni **CA-IV-13**, qui exigent un
+relecteur tiers.* **Sept corrections au corps et à l'en-tête.** *(1)* L'état des portes est repris sur
+le **PRD v0.14** — G-3 franchie, volet de faits de G-1 levé — sans requalifier la pièce. *(2)* Le
+champ **Socle mobilisé** est **re-mesuré sur le corps** : il déclarait des entrées que la
+condensation n'avait pas retenues — **F-03, F-10, F-36, F-39, F-41 à F-43, F-48, F-50, F-55** — et
+**taisait H-02**, que le tableau 14.2 cite ; la liste porte désormais les **vingt et une entrées
+propres et les deux héritées réellement mobilisées**. *(3)* Le champ **Garde-fous** attribuait au
+**Vol. II** une occurrence de « F-01 » qui est **celle du Vol. III** — la collision même que la
+décision 7 nomme ; l'attestation est corrigée en **zéro marqueur du Vol. II**, le marqueur de
+**R-13** entré au § 14.4 y est décompté, et **R-12** est déclaré appliqué sans porter son identifiant. *(4)* Le § 14.2 rendait le verdict **Q-C** des
+annuaires **sans son entrée** : le **RFC 8693** et **F-47 [A]** y sont rétablis d'après la source, et
+« SVID » cessait d'avoir un antécédent depuis que la condensation avait retiré le contexte SPIFFE.
+*(5)* Le § 14.4 écrivait « la **libération** humaine » là où l'entrée **H-31** porte « la *release*
+humaine » — un verbatim ne se traduit pas —, et rendait F-07 par une tournure qui se lisait « la clé
+ne peut pas être révoquée », **plus forte que le fait** : la formulation revient à ce que l'entrée
+porte, une interdiction sans le moyen d'établir le statut. *(6)* Le § 14.3 citait une affirmation
+**verbatim** et rangeait deux techniques adverses **sans nommer leur attributeur** : l'**OWASP** et
+le corpus **MITRE ATLAS** sont nommés, avec les identifiants de leurs entrées — *la parade de
+péremption couvre les dénominations commerciales et les versions, jamais l'attribution*
+(décision 15), et la pièce nommait déjà l'éditeur d'un produit au § 14.2. *(7)* Un paragraphe
+**répétait** la note de réalignement de la thèse ; il est fondu dans elle, sans perte de borne.
+**Deux bornes ajoutées** : **aucune des 159 entrées du socle consolidé ne porte les quatre axes** du
+Vol. I (§ 14.1), et les désignations du **continuum à six niveaux** ne vivent qu'au tableau 3 d'un
+**fichier supprimé du dépôt** (§ 14.4, `S-157`). ⚠ **Ce qui est remonté et non corrigé ici** : le **ré-adossement en
+`S-nnn`** de cette pièce ; la **tournure de F-07 restée fautive à la source** (Vol. III *Monographie*
+§4.4), corrigée chez le compendium et signalée là-bas, jamais corrigée là-bas ; et l'**écart de
+libellé de la table détaillée du TOC**, dont l'en-tête annonce « chapitre 15 » sous l'entrée du
+chapitre 14. ⚠ **Aucun identifiant `R-IV-nn` n'est alloué par cette relecture** : *plusieurs passes
+lisent le corpus le même jour, et deux passes qui numérotent dans une série partagée sans allocation
+préalable produisent la collision que le PRD §13 a déjà eu à défaire* — l'allocation revient à la
+passe d'arbitrage.
 
 ---
 
@@ -413,9 +461,20 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
   Vol. I, **et il s'est reproduit à l'identique** — parce qu'**aucun des quinze contrôles ne rapproche
   une liste de départs d'une liste d'arrivées**. La parade reste la collation manuelle.
 
-⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle
-consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation de fond contre le Vol. III
-rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**.
-**CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur. Cette
-pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
-cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*
+⚠ **Ce que la clôture ne change pas** *(état au 27 juillet 2026)*. Les portes **G-3** et **G-4**
+demeurent ouvertes : le socle consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation
+de fond contre le Vol. III rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central
+au sens de CA-IV-01**. **CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct
+du rédacteur. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas
+dire pièce recevable : cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
+tranchée.*
+
+⚠ **Mise à jour du 28 juillet 2026 — une des deux portes s'est refermée, et l'énoncé ci-dessus se
+date plutôt qu'il ne se réécrit.** **G-3 est franchie** : l'**Annexe B existe**
+([`socle-consolide.md`](../PRD/socle-consolide.md) v1.2), le socle consolidé compte **159 entrées**
+et non plus zéro, et les entrées que cette pièce mobilise y résolvent par la table de correspondance
+n° 2. **Rien d'autre ne bouge** : **G-4 demeure ouverte** et la collation de fond contre le Vol. III
+rédigé n'est pas conduite ; **aucune entrée n'a été promue** et **aucun vote adversarial n'a été
+conduit** par la consolidation, de sorte qu'**aucun énoncé de cette pièce n'est central au sens de
+CA-IV-01** ; **CA-IV-11 et CA-IV-13 demeurent insatisfaites**, **D-6** ne fournissant pas de
+relecteur tiers.

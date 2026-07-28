@@ -7,9 +7,9 @@ constaté cinq vides, celui-ci construit ce qui les comble — et doit dire d'ab
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6. ⚠ **R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre.** ⚠ **Ce chapitre porte DEUX sièges pour toute la somme** — les **cinq points de contrôle obligatoires** (§ 43.3) et le **modèle de maturité avec la désambiguïsation des trois échelles d'autonomie** (§ 43.5) — et **une collision de vocabulaire** que la décision 12c du TOC lui assigne (§ 43.1) |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6. ⚠ **R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre.** ⚠ **Ce chapitre porte TROIS sièges pour toute la somme** — les **cinq points de contrôle obligatoires** (§ 43.3), le **modèle de maturité avec la désambiguïsation des trois échelles d'autonomie** (§ 43.5) et la **collision de vocabulaire « fabrique »** que la décision 12c du TOC lui assigne (§ 43.1). ☑ **Les trois sont versés à [`PRD/check-sieges.py`](../PRD/check-sieges.py)**, constaté sur pièce le 28 juillet 2026 |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **16 juillet 2026** (Vol. II), **21 juillet 2026** (Vol. III), **juin 2026** (Vol. I). *Aucun n'est celui de la somme.* |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Vol. II — **F-36**, **F-37**, **F-46** (assignés par le plan) ; **F-07**, **F-08**, **F-15**, **F-16**, **F-32**, **F-33** ; **F-01**, **F-02**, **F-04** (couche protocolaire) ; **F-09**, **F-25**, **F-26**, **F-27** (couche de gouvernance) ; **F-35** avec **F-11** et **F-34** ; **F-17**, **F-21**, **F-28** ; **F-10** en renvoi. Vol. III — **F-01**, **F-04**, **F-08**, **F-09**, **F-11**, **F-46**, **F-47**, **F-52**, **F-71** ; **H-01** à **H-03**, **H-11**, **H-12**, **H-15**, **H-17**, **H-24**, **H-25**, **H-27**, **H-31**. Vol. I *Monographie* §2.13.1, §4.12, §5.12.1-5.12.3 et §6.10, **en [C]**. ⚠ **Les deux séries F-xx sont préfixées de leur volume à chaque emploi** (décision 7 du TOC) — *ce chapitre est, avec le ch. 42, celui où la collision est la plus dense.* ⚠ **Entrées [C] non élevables** : **H-31** (échelle d'autonomie) et les quatre sections du Vol. I sont des **constructions d'auteur de leur volume**, non des reprises de sources primaires tierces — *l'élévation en [B] par lecture de la source est sans objet, et elles n'entrent jamais comme faits.* **Aucun énoncé n'est central au sens de CA-IV-01** |
+| **Socle mobilisé** | ⚠ **Écrite avant l'existence du socle consolidé, la pièce ne s'y ré-adosse pas.** L'Annexe B ([`PRD/socle-consolide.md`](../PRD/socle-consolide.md), **159 entrées `S-001`…`S-159`**) existe depuis le **28 juillet 2026**, **porte G-3 franchie** — *la formule « socle consolidé : zéro entrée » a cessé d'être vraie et n'est plus écrite ici* ; les énoncés ci-dessous résolvent **contre les socles des volumes, par leurs identifiants d'origine**, et **la correspondance vers les `S-nnn` reste due**. Vol. II — **F-36**, **F-37**, **F-46** (assignés par le plan) ; **F-07**, **F-08**, **F-15**, **F-16**, **F-32**, **F-33** ; **F-01**, **F-02**, **F-04** (couche protocolaire) ; **F-09**, **F-25**, **F-26**, **F-27** (couche de gouvernance) ; **F-35** avec **F-11** et **F-34** ; **F-17**, **F-21**, **F-28** ; **F-10** en renvoi. Vol. III — **F-01**, **F-04**, **F-08**, **F-09**, **F-11**, **F-35**, **F-40**, **F-46**, **F-47**, **F-52**, **F-70**, **F-71**, **F-90** à **F-96** ; **H-01** à **H-03**, **H-11**, **H-12**, **H-15**, **H-17**, **H-24**, **H-25**, **H-27**, **H-31**. Vol. I *Monographie* §2.13.1, §4.12, §5.12.1-5.12.3 et §6.10, **en [C]**. ⚠ **Les deux séries F-xx sont préfixées de leur volume à chaque emploi** (décision 7 du TOC) — *ce chapitre est, avec le ch. 42, celui où la collision est la plus dense.* ⚠ **Trois des entrées mobilisées n'entrent PAS au socle consolidé, et la pièce le porte à leur emploi** : Vol. III **F-92** et **F-96** — *dette de vote adversarial non résorbée ; **non réfutées, non éprouvées*** — et Vol. III **H-15**, *les cinq points de contrôle obligatoires venant du texte rédigé du Vol. II et non de son socle.* ⚠ **Entrées [C] non élevables** : **H-31** (échelle d'autonomie) et les quatre sections du Vol. I sont des **constructions d'auteur de leur volume**, non des reprises de sources primaires tierces — *l'élévation en [B] par lecture de la source est sans objet, et elles n'entrent jamais comme faits.* **Aucun énoncé n'est central au sens de CA-IV-01** — *les entrées [C] l'interdisent, et **aucun vote adversarial n'a été conduit** sur celles qui n'en sont pas* |
 | **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** Vol. II — **réserve F-09 (« attendu par E-23 », jamais « exigé ») : deux occurrences**, § 43.1 et § 43.3 — ⚠ *la formule imposée est employée au-delà, aux § 43.1, § 43.3 et § 43.5 : **domaine déclaré, sans cardinal*** ; **réserve F-37 (préimpression non révisée) : deux occurrences**, § 43.3 ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : une occurrence**, § 43.1 ; **réserve F-25 : une occurrence**, § 43.1 ; **R-2 (jamais « registre centralisé » pour un annuaire nommé) : une occurrence**, § 43.1 ; **R-3 (une spécification *s'appuie sur* un mécanisme, ne l'impose pas) : une occurrence**, § 43.1 ; **R-5 : une occurrence**, § 43.6 ; **R-8 (sigle jamais nu, quatre branches) : une occurrence**, § 43.4, **renvoyée au siège du ch. 7 § 7.5** ; **métriques auto-déclarées (marqueur « auto-déclaré ») : six occurrences**, § 43.1, § 43.2 (deux) et § 43.5 (trois) ; **R-1, R-4, R-6, R-7 : zéro occurrence** — *R-7 ressort en contexte réglementaire pur, aucune correspondance produit ↔ réglementation, filtré.* Vol. III — **R-09 : deux occurrences**, § 43.1 et § 43.6 ; **R-01 : une occurrence**, § 43.3 ; **R-06 : une occurrence**, § 43.4 ; **R-13 (échelle d'autonomie jamais nue) : une occurrence**, § 43.5, ⚠ **dont le SIÈGE de la désambiguïsation des trois échelles homonymes** — *le garde-fou y est appliqué à chaque rangée de la table du siège sans que l'identifiant soit répété* ; **R-02 et R-14 : zéro occurrence de l'identifiant** — ⚠ *les deux garde-fous sont pourtant tenus, les degrés d'absence étant portés en toutes lettres aux § 43.1 à § 43.6 : **domaine déclaré, corps entier, sans cardinal** (décision 16, alinéa c)*. **R-03 à R-05, R-07, R-08, R-10 à R-12 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **6 500 mots** de corps (§ 43.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des six sections et du volume de source consommé — *trois volumes y convergent, ce qui est le maximum du Livre.* ☑ **Décompte publiable depuis G-2** ; **réel reporté au [`README.md`](README.md)**. ⚠ **D-4 s'applique** |
 
@@ -30,7 +30,7 @@ Canada ni à la finance canadienne.* **Étendre une formule d'obligation à un o
 pas est le geste que R-06 du Vol. III interdit sur E-23**, et la somme s'y tient. **Le corps a été
 écrit sous la forme bornée** et l'écart avait été **remonté** (R-IV-57, § 43.7). ☑ **La remontée est soldée par l'arbitrage v0.28 du TOC** (décisions 8 et 14), et **la citation
 ci-dessus porte la forme réalignée**, reportée **par copie** depuis l'entrée courante du plan.
-*La v0.29 du TOC ne modifie aucune thèse du Livre.*
+*Les v0.29 et v0.30 du TOC ne modifient aucune thèse du Livre.*
 
 ⚠ **Un second point n'est pas un désalignement mais une fusion déclarée** : le plan porte **six
 couches** là où le Vol. II en pose **quatre** ; les deux qui s'ajoutent — **maillage** et
@@ -88,7 +88,7 @@ des quatre emplois, **que ce chapitre ne reconstruit pas**.
 | **Identité et registre** — *fabrique d'identité* | identités d'agents et gabarits d'identité sur des protocoles d'autorisation et d'authentification, **dont les flux étendent ces RFC plutôt qu'ils ne s'y conforment** (Vol. II **F-33**) ; spécification de registre, **brouillon** : profil ancré, énumération d'outils invocables, bornes de privilège (Vol. II **F-07**, **F-08** ; Vol. III **F-40**, **H-03**) | **nommer l'agent** ; **borner ses outils et ses droits hors de lui** | la conformité (statuts pré-normatifs) ; ⚠ **l'inventaire attendu par E-23, qui est un objet distinct** |
 | **Orchestration** | taxonomie OO1-OO4, cinq propriétés, sept critères (Vol. II **F-36**) ; réalisations : flux à base de graphes, points de contrôle, humain dans la boucle (Vol. II **F-15**) | **tenir l'enchaînement ; produire la trace ; arrêter pour l'humain** | la qualification juridique du processus ; le contenu des cadres |
 | **Maillage** | syntaxe d'autorisation par arête, **pré-version auto-déclarée** (Vol. III **F-71**, **F-70**) ; **écart de couverture entre deux plans d'identité déclaré par l'éditeur** (Vol. III **F-35**) | **appliquer la politique à l'arête** — **siège ch. 37** | l'émission ; ⚠ **la couverture du graphe, qui n'est établie par aucune entrée** |
-| **Exploitation** — *AgentOps* | seize métriques **au grain de l'opération**, aucune de parc ; **dimension d'agent qui est un nom, pas une identité** (Vol. III **F-90** à **F-96**) | **voir, boucler, mesurer** — **siège ch. 38-40** | ⚠ **la clé de jointure entre trace et mandat**, lacune ouverte |
+| **Exploitation** — *AgentOps* | seize métriques **au grain de l'opération**, aucune de parc ; **dimension d'agent qui est un nom, pas une identité** (Vol. III **F-90** à **F-96**) — ⚠ *ces deux énoncés-là relèvent de **F-96** et **F-92**, **exclus du socle consolidé** pour dette de vote adversarial : **non réfutés, non éprouvés*** | **voir, boucler, mesurer** — **siège ch. 38-40** | ⚠ **la clé de jointure entre trace et mandat**, lacune ouverte |
 | **Gouvernance** | E-23 : **cinq domaines d'attentes opératoires** (Vol. II **F-09**) ; ligne directrice de l'AMF : **le calendrier seul** (Vol. II **F-25**) ; avis 11-348 (**F-26**) ; article 12.1 (**F-27**) | **inventaire, cotation, cycle de vie, documentation, surveillance** | ⚠ **ce que l'AMF attend — non porté par le socle** |
 
 : Tableau 43.1 — Les six couches de l'architecture de référence unifiée. ⚠ **Le découpage est imposé par le plan ; sa vertu est d'obliger à dire, couche par couche, ce que les socles documentent et ce qu'ils laissent vide.**
@@ -115,7 +115,8 @@ somme au ch. 3 § 3.2 et § 3.3***. **Ce chapitre les transpose aux agents et n'
 *c'est l'économie qui justifie la refonte des trois volumes en un ouvrage, et un chapitre
 d'architecture qui la reconstruirait l'annulerait au premier paragraphe.*
 
-**Lecture de l'auteur** — les deux champs obligatoires de ce schéma sont, dans le vocabulaire du
+**Lecture de l'auteur** — les deux champs obligatoires du **schéma de profil d'agent** — l'énumération
+des outils invocables et les bornes de privilège (Vol. III **F-40**) — sont, dans le vocabulaire du
 manifeste, un **cadre opérationnel** — *ce que l'agent peut faire, avec quels outils* — **écrit hors
 de l'agent, dans un objet lisible avant l'exécution**. ⚠ **Le socle porte les deux termes ; il ne pose
 pas le rapprochement**, et *l'état pré-normatif de la spécification interdit d'en tirer autre chose
@@ -171,17 +172,19 @@ primaires décrivent.
 ### 43.2.2 Trois classes, et ce qui les distingue
 
 **Classe 1 — la décision de crédit avec mémo à un souscripteur humain.** ⚠ **Métrique auto-déclarée,
-attribuée à l'institution nommée qui la publie et non vérifiée indépendamment** : une banque
-**déclare** que son premier modèle d'IA agentique effectue la pré-adjudication d'un prêt garanti et
-génère des mémos de synthèse, **ramenant un traitement d'environ quinze heures à moins de trois
-minutes** (Vol. II **F-17**). **Lecture de l'auteur**, *sur la classe seulement* — **cinq des sept
+attribuée à chaque occurrence et non vérifiée indépendamment** : **TD** déclare que son premier modèle
+d'IA agentique, développé par **Layer 6**, effectue la pré-adjudication d'un prêt garanti par
+l'immobilier et génère des mémos de synthèse pour les souscripteurs, **ramenant un traitement d'environ
+quinze heures à moins de trois minutes** — ⚠ **résultats que la source qualifie elle-même de
+préliminaires** (Vol. II **F-17**). **Lecture de l'auteur**, *sur la classe seulement* — **cinq des sept
 critères y sont saturés**, et le principe du **ch. 29** y conclut à **OO3 ou OO4**. ⚠ **Le socle ne dit
 pas où se positionne ce système, et la somme ne le déduit pas d'un gain de temps déclaré.**
 
-**Classe 2 — l'acheminement autonome de courriels commerciaux.** ⚠ **Métrique auto-déclarée** : une
-institution **déclare** que des capacités agentiques traitent de façon autonome **environ 90 %
-d'environ 1 500 courriels par jour**, les cas complexes étant escaladés (Vol. II **F-21**). **Lecture
-de l'auteur** — ⚠ **la classe est instructive par ce qu'elle rend indécidable** : *un acheminement
+**Classe 2 — l'acheminement autonome de courriels commerciaux.** ⚠ **Métrique auto-déclarée, attribuée
+à chaque occurrence** : **Scotiabank** déclare que des capacités agentiques traitent de façon autonome
+**environ 90 % d'environ 1 500 courriels par jour** en services bancaires aux entreprises, les cas
+complexes étant escaladés (Vol. II **F-21**). **Lecture de l'auteur** — ⚠ **la classe est instructive
+par ce qu'elle rend indécidable** : *un acheminement
 est-il une « décision fondée exclusivement sur un traitement automatisé » au sens de l'article 12.1 ?*
 **Le socle ne le dit pas, et la somme n'émet pas d'avis juridique.** Le critère « contraintes » ne se
 remplit donc **pas par lecture d'un texte**, mais par **une qualification que l'institution doit
@@ -398,20 +401,21 @@ une dette dont l'échéance est le palier suivant.*
 
 ### 43.5.3 La feuille de route par plateaux, et l'écart entre ambition et déploiement
 
-*← Vol. I* Monographie *§5.12.2 et §6.10 — **prélevés au ch. 44**, qui traite par ailleurs son
-chapitre d'origine en bloc. ⚠ **[C]**.*
+*← Vol. I* Monographie *§5.12.2 — **arrivée** depuis le ch. 34 — et §6.10, **prélevé au ch. 44**, qui
+traite par ailleurs son chapitre d'origine en bloc. ⚠ **[C]**.*
 
 Le Vol. I modélise la trajectoire comme **une suite ordonnée de paliers** — *un état de référence, des
 états intermédiaires, un état cible* —, chacun **agrégeant un jeu d'incréments de capacité**, ⚠ **et
 il pose la règle qui compte** : *un palier ne se franchit qu'en débloquant un jeu de **contrôles
-vérifiables**, non en empilant des fonctionnalités.* **Lecture de l'auteur** — ⚠ *c'est le même énoncé
-que le § 43.3 sous une autre forme : **chaque palier est un endroit où l'exploitant doit pouvoir
-produire quelque chose**.*
+vérifiables**, non en empilant des fonctionnalités.* ⚠ **L'instrument est nommé et daté** : *c'est une
+transposition du **modèle LCIM** — Wang, Tolk et Wang, 2009 — aux agents, et la somme n'en est ni
+l'auteur ni le dépositaire.* **Lecture de l'auteur** — ⚠ *c'est le même énoncé que le § 43.3 sous une
+autre forme : **chaque palier est un endroit où l'exploitant doit pouvoir produire quelque chose**.*
 
 **Sa transposition financière déplace l'axe de lecture** : ⚠ *chaque palier ne débloque pas seulement
 des capacités d'interopérabilité, il débloque surtout des **contrôles**.* Le Vol. I situe **la
-réduction de risque la plus forte non au sommet de l'échelle mais au passage intermédiaire** — *là où
-l'application de politique et les contrôles d'accès deviennent **systématiques et non plus
+réduction de risque la plus forte non au sommet de cette grille mais à son passage intermédiaire** —
+*là où l'application de politique et les contrôles d'accès deviennent **systématiques et non plus
 ponctuels***. ⚠ **Repérage [C], thèse attribuée** : *une institution qui pousse l'autonomie sans avoir
 franchi ce palier accumule du risque non gouverné.*
 
@@ -420,10 +424,12 @@ auto-déclaré et attribué.** Le Vol. I rapporte, **tous de statut analyste ou 
 ressources vivantes à re-vérifier** : *environ un tiers des organisations à un niveau de maturité 3 ou
 supérieur ; une quasi-totalité qui **prévoient** des déploiements ; environ un déploiement sur dix
 réellement en production* — écart que les analystes nomment le **purgatoire des pilotes**. **D'autres
-enquêtes qu'il cite avancent des chiffres plus bas encore, également auto-déclarés.** ⚠ **Aucune de
-ces grandeurs n'est vérifiée indépendamment, aucune n'est reprise comme fait, et la somme n'en dérive
-rien.** *Ce qu'elles éclairent est une chose et une seule* : **la gouvernance est régulièrement citée
-comme blocage principal** — ⚠ *ce qui, s'il fallait le retenir, validerait a contrario le patron du
+enquêtes qu'il cite avancent des chiffres plus bas encore, également auto-déclarés et nommément
+attribués** : *les enquêtes de **McKinsey/QuantumBlack** (2025) et le rapport **MIT NANDA**
+(Challapally et coll., 2025).* ⚠ **Aucune de ces grandeurs n'est vérifiée indépendamment, aucune n'est
+reprise comme fait, et la somme n'en dérive rien.** *Ce qu'elles éclairent est une chose et une
+seule* : **la gouvernance est régulièrement citée comme blocage principal** — ⚠ *ce qui, s'il fallait
+le retenir, validerait a contrario le patron du
 palier intermédiaire : **c'est l'absence de contrôles, non l'insuffisance des modèles, qui retiendrait
 les déploiements**.* **Lecture de l'auteur, et elle est faible par construction** : *un constat tiré
 d'enquêtes auto-déclarées ne vaut pas mieux que ses sources.*
@@ -433,10 +439,10 @@ d'enquêtes auto-déclarées ne vaut pas mieux que ses sources.*
 **Cette architecture est neutre ; elle n'en est pas moins réalisable, et le socle documente de quoi.**
 
 **Pour la couche d'orchestration, trois réalisations sont au socle**, et **chacune porte son statut à
-la mention** (R-09 du Vol. III) : *un cadriciel d'éditeur en **disponibilité générale** depuis une date
-nommée, portant les flux à base de graphes, les points de contrôle et l'humain dans la boucle*
-(Vol. II **F-15**) ; *une plateforme dont **le support d'un protocole n'est confirmé de première main
-que pour son offre commerciale**, non pour sa bibliothèque ouverte* (Vol. II **F-32**) ; *une
+la mention** (R-09 du Vol. III) : *un cadriciel d'éditeur en **disponibilité générale**, portant les
+flux à base de graphes, les points de contrôle et l'humain dans la boucle* (Vol. II **F-15**) ; *une
+plateforme dont **le support d'un protocole n'est confirmé de première main que pour son offre
+commerciale**, non pour sa bibliothèque ouverte* (Vol. II **F-32**) ; *une
 orchestration événementielle dont les capacités agentiques déclarent un appel d'outils natif et une
 intégration en **préversion ouverte**, ⚠ **sans qu'aucun client ni chiffre d'adoption ne figure à la
 source*** (Vol. II **F-33**). ⚠ **Deux autres cadriciels sont au socle en [C] et ne portent aucun fait
@@ -479,7 +485,7 @@ compatible avec l'un des protocoles de la pile.
    chose, non un endroit où le système doit être bon* — **et aucun ne suppose le passeport**.
 4. ⚠ **SIÈGE : le modèle de maturité et les trois échelles d'autonomie.** Posés **une seule fois**,
    avec leur cardinal et leur numérotation. Le **ch. 39 § 39.6 s'abstient explicitement d'en produire
-   un autre** ; le **ch. 40 § 40.6** y renvoie pour l'autonomie graduée.
+   un autre** ; le **ch. 40 § 40.6** y renvoie pour départager les trois échelles homonymes.
 5. **L'ordre d'application de deux instruments.** *La grille « quand agentifier » d'abord, la taxonomie
    OO ensuite.* ⚠ **Construction du compendium, réfutable.**
 6. **La distinction point de contrôle / frontière d'abstraction.** *Produire quelque chose, contre
@@ -501,7 +507,9 @@ documente aucun, le corpus d'appui a été retiré, et ce qui reste est une cons
 gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A).
 
 **Ce qui est enfreint.** Portes **G-3**, **G-4** et **G-5** ; **volet résiduel de G-1** ; **ordre de
-rédaction du PRD §6**. Instruction d'auteur du **27 juillet 2026**.
+rédaction du PRD §6**. Instruction d'auteur du **27 juillet 2026**. ⚠ **G-3 a depuis été franchie —
+28 juillet 2026 —, et cela ne rattrape pas la pièce** : *elle a été écrite sans socle consolidé, et son
+ré-adossement aux `S-nnn` reste dû.* **G-4 et G-5 demeurent ouvertes.**
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ **Et ce chapitre est celui du Livre où la
    proportion d'inférences marquées est la plus haute** : *une architecture de référence range, nomme
@@ -523,14 +531,12 @@ rédaction du PRD §6**. Instruction d'auteur du **27 juillet 2026**.
 4. **TROIS sièges sont posés par cette pièce**, et non deux : les cinq points de contrôle obligatoires
    (§ 43.3), le modèle de maturité avec les trois échelles (§ 43.5), ⚠ **et la collision « fabrique »
    (§ 43.1, décision 12c du TOC)** — *ce dernier porte la forme pleine du marqueur et n'avait pourtant
-   pas été compté.* ☑ **Le versement des deux premiers à
-   [`PRD/check-sieges.py`](../PRD/check-sieges.py) est FAIT** — constaté sur pièce le 28 juillet 2026,
-   la table en portant douze — ; ☐ **celui du troisième est DÛ, et la passe de gouvernance du
-   28 juillet 2026 le verse au même commit** : *un siège s'ajoute à la table, la pièce porteuse écrit
-   son marqueur, et le harnais se rejoue — les trois gestes, jamais deux sur trois.* ⚠ **Cette pièce
-   n'atteste que ce qu'elle a constaté** : *le marqueur du § 43.1 est écrit et l'entrée de table est
-   hors de son mandat ; un marqueur de siège qu'aucune table ne contrôle laisserait passer une
-   reconstruction ailleurs dans la somme.*
+   pas été compté.* ☑ **Les TROIS sont versés à [`PRD/check-sieges.py`](../PRD/check-sieges.py)** —
+   constaté sur pièce le 28 juillet 2026 : *la table porte **vingt-six sièges**, et le troisième —
+   la collision « fabrique » — y est entré ce jour-là comme **marqueur orphelin**, avec celui du
+   ch. 44 § 44.6.* ⚠ **Cette pièce n'atteste que ce qu'elle a constaté** : *l'entrée de table et le
+   rejeu du harnais relèvent de la passe qui verse, non de celle-ci ; un marqueur de siège qu'aucune
+   table ne contrôle laisserait passer une reconstruction ailleurs dans la somme.*
 5. **CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur.
 
 **Remontées ouvertes par ce chapitre :**
@@ -579,25 +585,31 @@ rédaction du PRD §6**. Instruction d'auteur du **27 juillet 2026**.
   trouvés au premier passage**, dont *un chapitre qui touchait la matière d'un siège sans y
   renvoyer*. ⚠ **Ce que cette clôture avait manqué** : *deux marqueurs de siège du Livre — la
   collision « fabrique » (ch. 43 § 43.1) et la conformité traçable (ch. 44 § 44.6) — **n'avaient
-  été ni comptés ni versés***. ☐ **Leur versement est dû, et la passe de gouvernance du
-  28 juillet 2026 le porte au même commit** — *constaté sur pièce ce jour-là : la table porte
-  douze entrées, et ces deux-là n'y sont pas.*
+  été ni comptés ni versés***. ☑ **Leur versement est FAIT** — *constaté sur pièce le 28 juillet
+  2026 : les deux entrent à la table comme **marqueurs orphelins**, qui porte désormais **vingt-six
+  sièges**.*
 
 **Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.28** — § 43.1 à
-§ 43.6, dans l'ordre exact —, et le § 43.0 est une introduction de chapitre. La **table de couverture
-est respectée pour ses six lignes**, y compris ses trois régimes propres : Vol. II §19.1-19.4 en
-**condensé** ; Vol. III *Monographie* §27.1 et §27.4 en **condensé**, ⚠ *son §27.2 partant au ch. 44 et
-ses §27.3/§27.5 au ch. 45, **qui ne sont pas repris ici*** ; Vol. I §5.12.1-5.12.3 et §4.12 en
+§ 43.6, dans l'ordre exact —, **inchangée en v0.29 et en v0.30**, et le § 43.0 est une introduction de
+chapitre. La **table de couverture est respectée pour ses six lignes**, y compris ses trois régimes
+propres : Vol. II §19.1-19.4 en **condensé** ; Vol. III *Monographie* §27.1 et §27.4 en **condensé**,
+⚠ *son §27.2 partant au ch. 44 et ses §27.3/§27.5 au ch. 45, **qui ne sont pas repris ici*** ;
+Vol. I §5.12.1-5.12.3 et §4.12 en
 **arrivées** depuis les ch. 34 et 24, §2.13.1 en **arrivée** depuis le ch. 6, et **§6.10 prélevé au
 ch. 44**, qui traite par ailleurs son chapitre d'origine en bloc. La **neutralité fournisseur est
 tenue** : *aucun composant n'est prescrit, les réalisations sont nommées comme cas documentés, et
-leurs statuts sont dits à chaque mention.* ⚠ **Cardinaux re-mesurés au commit du 28 juillet 2026, sur le marqueur littéral et sur le corps seul** (décision 16 du TOC) ; *les cardinaux antérieurs comptaient les applications du garde-fou et n'étaient re-mesurables par aucune règle écrite.* **R-13 est tenu à chaque emploi d'une échelle d'autonomie — domaine déclaré, sans
-cardinal** (alinéa c), le marqueur littéral y comptant **une occurrence**, au § 43.5, siège de la
+leurs statuts sont dits à chaque mention.* ⚠ **Cardinaux re-mesurés au commit du 28 juillet 2026, sur
+le marqueur littéral et sur le corps seul** (décision 16 du TOC) ; *les cardinaux antérieurs comptaient
+les applications du garde-fou et n'étaient re-mesurables par aucune règle écrite.* **R-13 est tenu à
+chaque emploi d'une échelle d'autonomie — domaine déclaré, sans cardinal** (alinéa c), le marqueur
+littéral y comptant **une occurrence**, au § 43.5, siège de la
 désambiguïsation ; **le cardinal et la numérotation de leur échelle** y sont portés, et **« copilote »
 n'est jamais employé nu**. La **forme « attendu par E-23 » est tenue à chaque énoncé sur E-23 —
 domaine déclaré**, le marqueur littéral « F-09 » y comptant **deux occurrences**, et ⚠ **l'unique
 endroit où une source écrit « exigé » est signalé, borné et remonté** plutôt que repris. Le marqueur
 littéral **« degré 3 » compte quatre occurrences**, chacune portant son degré. Les **six métriques
-auto-déclarées** sont attribuées à l'institution ou à l'analyste **nommé** qui les publie. **Les cinq points de contrôle obligatoires ne sont pas déduits d'une source, et la pièce
-l'écrit** : *ce sont les cinq zones du ch. 42 assignées à leur couche, dont quatre seulement
-deviennent des points de contrôle.*
+auto-déclarées** sont attribuées à l'institution ou à l'analyste **nommé** qui les publie — ⚠ **TD et
+Layer 6, Scotiabank, McKinsey/QuantumBlack et MIT NANDA sont désormais nommés en toutes lettres**
+(décision 15 du TOC, alinéa b, premier titre). **Les cinq points de contrôle obligatoires ne sont pas
+déduits d'une source, et la pièce l'écrit** : *ce sont les cinq zones du ch. 42 assignées à leur
+couche, dont quatre seulement deviennent des points de contrôle.*

@@ -5,13 +5,13 @@ Deuxième mouvement — la confiance hostile (ch. 19-20). **Premier chapitre du 
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — portes **G-3** et **G-4** ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Deux obligations propres à ce chapitre ne sont pas satisfaites, et elles sont d'ordres différents.** *(a)* Le TOC déclare que **la thèse de ce chapitre est le premier énoncé à instruire avant rédaction** : sa proportion doit être **établie par dénombrement sur un corpus déclaré** — **le dénombrement n'a pas été conduit**, et le corps du chapitre **n'écrit aucune proportion** (voir § 19.0 et **R-IV-32**). *(b)* **CA-IV-11 exige une relecture dédiée par un relecteur distinct, dont le compte rendu est déposé et nommé dans la pièce, l'attestation auto-délivrée étant proscrite même exacte** : **aucune relecture dédiée n'a eu lieu**, et **rien dans cette pièce ne doit être lu comme une attestation**. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Les identifiants de vulnérabilité et les incidents datés se périment par publication de correctif** : ils sont cités comme **jalons datés**, jamais comme état courant d'exposition — et **quatre des identifiants mobilisés portent un vote adversarial incomplet** |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. III *Monographie* ch. 12**, dont les entrées **F-13** à **F-26**, **F-03**, **F-04**, **F-56** et les entrées héritées **H-09**, **H-11**, **H-24**, **H-25**, **H-26** conservent leurs niveaux d'origine — **treize en [A]**, **une en [B]**, les héritées en **[B]** ou **[C]** ; et contre le **Vol. I *Monographie* §2.10.1 et §2.10.2**, en **[C]**. ⚠ **F-26 porte un vote adversarial incomplet**, et *un vote incomplet n'est pas un vote favorable* : ses quatre identifiants **illustrent** et ne portent aucun énoncé central. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les sept sections du corps, § 19.0 à § 19.6.** Vol. III — **R-08 (l'absence porte sur l'usurpation du justificatif propre d'un agent, et sur cela seul) : ce chapitre en est le SIÈGE — un marqueur**, § 19.6, celui du siège lui-même ; **R-02 : un marqueur**, § 19.1 ; **R-14 : un marqueur**, § 19.6. **R-01, R-03 à R-07, R-09 à R-13 : zéro marqueur.** ⚠ **R-12 est appliqué sur tout le domaine sans être marqué une seule fois, et c'est le garde-fou structurant du chapitre** : traitement défensif exclusif, au niveau architectural, **aucune recette d'exploitation** — chacune des six lignes du tableau 19.2 nomme **le maillon qui cède** et s'arrête là. Même régime pour **R-14** hors de son marqueur — les absences portent leur degré, dont sept au **degré 3** —, pour **R-09** (statut dit à chaque mention) et pour **R-04** (§ 19.1, la formule laissée en langue originale et renvoyée à son siège). Vol. II — **§8.2 (métriques auto-déclarées) : zéro marqueur** ; les métriques des § 19.1 et § 19.5 sont attribuées à leur source à chaque occurrence ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : zéro marqueur** ; la formule imposée est tenue aux § 19.1 et § 19.6 ; **R-1 à R-8 : zéro marqueur** |
-| **Volumétrie cible** | ≈ **5 000 mots** de corps (§ 19.0 à § 19.6), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 5 529 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+10,6 %** (re-mesuré au commit du 28 juillet 2026, au terme de la passe de correction de l'audit). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
+| **Statut** | **Brouillon de rédaction, non publiable** — **rédigé le 27 juillet 2026 avant G-3 et G-4**, sur instruction d'auteur. ⚠ **G-3 a été franchie depuis, le 28 juillet 2026** (PRD v0.14 ; socle consolidé [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées `S-001`…`S-159`**), et **G-4 demeure ouverte** : *une porte franchie après coup ne rattrape pas la pièce écrite avant elle* — **celle-ci n'a pas été ré-adossée entrée par entrée au socle consolidé**, et le ré-adossement reste dû. ⚠ **Deux obligations propres à ce chapitre, et une seule subsiste.** *(a)* Le TOC déclarait la thèse **premier énoncé à instruire avant rédaction**, sa proportion devant être établie par dénombrement sur un corpus déclaré : ⚠ **l'exigence est éteinte avec son objet depuis le TOC v0.25** — la thèse ne porte plus de proportion (**R-IV-32**), le corps **n'en écrit aucune**, et le corpus candidat reste nommé au § 19.1 sans être exploité. *(b)* ⚠ **Celle-ci subsiste** : **CA-IV-11 exige une relecture dédiée par un relecteur distinct, dont le compte rendu est déposé et nommé dans la pièce, l'attestation auto-délivrée étant proscrite même exacte** — **aucune relecture dédiée n'a eu lieu**, et **rien dans cette pièce ne doit être lu comme une attestation**. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet de faits de G-1 levé le 28 juillet 2026** — 123 entrées à sensibilité temporelle portées à leur source ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) ; ⚠ **l'obligation de pièce du Livre II, elle, reste due**. Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Les identifiants de vulnérabilité et les incidents datés se périment par publication de correctif** : ils sont cités comme **jalons datés**, jamais comme état courant d'exposition — et **quatre des identifiants mobilisés portent un vote adversarial incomplet** |
+| **Socle mobilisé** | Résolution contre le **Vol. III *Monographie* ch. 12**, dont **dix-sept entrées propres** sont mobilisées — **F-03**, **F-04**, **F-13** à **F-26**, **F-56** — et **quatre entrées héritées** : **H-09** en **[A]**, **H-11** en **[B]**, **H-24** et **H-26** en **[C]**. Toutes conservent leurs **niveaux d'origine** : sur **F-13 à F-26**, **treize en [A]** et **une en [B]** (F-26) ; **F-03** et **F-04** en **[A]** ; **F-56** en **[B]**. Le **Vol. I *Monographie* §2.10.1 et §2.10.2** fournit les § 19.2 et § 19.3, en **[C]**. ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** et ces entrées y résolvent par la **table de correspondance n° 2** ([`socle-consolide.md`](../PRD/socle-consolide.md) §5) ; la pièce les cite **dans la série du Vol. III, préfixées de leur volume** (décision 7) — **la re-citation en `S-nnn` n'est pas faite et reste due**. ⚠ **F-26 porte un vote adversarial incomplet**, et *un vote incomplet n'est pas un vote favorable* : ses quatre identifiants **illustrent** et ne portent aucun énoncé central. **Aucun énoncé n'est central au sens de CA-IV-01** : le PRD v0.14 déclare le **vote adversarial dû pour toute entrée appelée à porter un fait central**, et la consolidation n'en a conduit aucun |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les sept sections du corps, § 19.0 à § 19.6.** Vol. III — **R-08 (l'absence porte sur l'usurpation du justificatif propre d'un agent, et sur cela seul) : ce chapitre en est le SIÈGE — un marqueur**, § 19.6, celui du siège lui-même ; **R-02 : un marqueur**, § 19.1 ; **R-14 : un marqueur**, § 19.6. **R-01, R-03 à R-07, R-09 à R-13 : zéro marqueur.** ⚠ **R-12 est appliqué sur tout le domaine sans être marqué une seule fois, et c'est le garde-fou structurant du chapitre** : traitement défensif exclusif, au niveau architectural, **aucune recette d'exploitation** — chacune des six lignes du tableau 19.1 nomme **le maillon qui cède** et s'arrête là. Même régime pour **R-14** hors de son marqueur : les absences portent leur degré, et **les marqueurs littéraux de degré sont quatre — « degré 1 » aux § 19.4 et § 19.6, « degré 3 » aux § 19.5 et § 19.6** ; les autres absences sont **qualifiées sans marqueur** (§ 19.1, § 19.6 et tableau 19.2) et relèvent du domaine déclaré. Même régime pour **R-09** (statut dit à chaque mention) et pour **R-04** et **R-13** (§ 19.1 : la formule « identity as the new control plane » est **laissée en langue originale**, déclarée homonyme et renvoyée à son siège, le ch. 7 § 7.5 — *elle n'est employée nue à aucune occurrence*). Vol. II — **§8.2 (métriques auto-déclarées) : zéro marqueur** ; les métriques des § 19.1 et § 19.5 sont attribuées à leur source à chaque occurrence ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : zéro marqueur** ; la formule imposée est tenue aux § 19.1 et § 19.6 ; **R-1 à R-8 : zéro marqueur** |
+| **Volumétrie cible** | ≈ **5 000 mots** de corps (§ 19.0 à § 19.6), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 5 764 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+15,3 %**, re-mesuré à la relecture du 28 juillet 2026 (⚠ *valeur antérieure périmée : 5 529, +10,6 %* ; les **235 mots** de l'écart sont ceux des attributions rétablies au titre de la décision 15 — **aucune amputation n'a été faite**, D-4). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 19)* — l'identité est le **verrou architectural** de la sécurité agentique — un agent dépourvu d'identité propre et gouvernée opère dans un écart d'attribution qui rend le moindre privilège inapplicable —, et les référentiels du domaine la traitent désormais comme un plan de contrôle à part entière : c'est ce qui justifie d'absorber la sécurité dans le cadre identitaire.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 19)* — l'identité est le **verrou architectural** de la sécurité agentique — un agent dépourvu d'identité propre et gouvernée opère dans un écart d'attribution qui rend le moindre privilège inapplicable —, et les référentiels du domaine la traitent désormais comme un plan de contrôle à part entière : c'est ce qui justifie d'absorber la sécurité dans le cadre identitaire.
 >
 > ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-32** — la seule **bloquante** des vingt-quatre, et la seule où l'arbitrage a retenu l'autre branche que celle proposée. La forme antérieure portait « **une part majoritaire** ». Le dénombrement exigé n'a pas eu lieu ; ⚠ **et le lot n'est pas ouvert pour autant** : la source n'a pas seulement borné cette forme, elle l'a **réfutée au vote adversarial** et a réécrit sa thèse en énoncé architectural, écrivant que *« ce n'est pas une thèse de dénombrement »*. *Dénombrer pour établir un énoncé que la source tient pour non soutenu aurait produit un chiffre sans thèse à porter.* **Le corps du chapitre n'a pas changé** : il **n'écrivait aucune proportion**, et le § 19.1 continue de nommer le corpus candidat sans l'exploiter.
 
@@ -23,8 +23,8 @@ Deuxième mouvement — la confiance hostile (ch. 19-20). **Premier chapitre du 
 est tombée avec son objet.** Jusqu'au **TOC v0.24**, elle portait « **une part majoritaire** », que le
 plan déclarait lui-même **le premier énoncé à instruire avant rédaction** : *la proportion affirmée
 devait être établie par **dénombrement sur un corpus déclaré**, ou l'énoncé retombait sans
-quantificateur.* **Le dénombrement n'a pas été conduit** — la porte **G-1** dont il relèverait n'a pas
-été ouverte pour ce Livre —, et **aucun corpus n'a été déclaré**.
+quantificateur.* **Le dénombrement n'a pas été conduit** — l'obligation de pièce du Livre II au titre
+de **G-1** restant due au 28 juillet 2026 —, et **aucun corpus n'a été déclaré**.
 
 **La conséquence est écrite avant la première ligne de recension : le corps de ce chapitre n'écrit
 aucune proportion, ni majoritaire, ni notable, ni d'aucune autre forme.** *Ce qu'il soutient est
@@ -43,9 +43,10 @@ v0.25** **sans ouvrir de lot de dénombrement** : *dénombrer pour établir un �
 pour non soutenu aurait produit un chiffre sans thèse à porter.*
 
 **Ce que ce chapitre soutient, et ce que le socle en porte.** Lecture de l'auteur — **ce que le socle
-établit** : l'énoncé d'imputation architecturale d'un référentiel de sécurité applicative (F-19,
-**[A]**) ; la qualification de l'identité d'agent en nouveau plan de contrôle par un rapport daté de
-juin 2026 (F-20, **[A]**) ; l'existence de techniques et de contre-mesures nommant **l'écart
+établit** : l'énoncé d'imputation architecturale de l'entrée **ASI03** du référentiel de sécurité
+applicative de l'**OWASP** (F-19, **[A]**) ; la qualification de l'identité d'agent en nouveau plan de
+contrôle par le rapport *State of Agentic AI Security and Governance*, version 2.01 de **juin 2026**
+(F-20, **[A]**) ; l'existence de techniques et de contre-mesures nommant **l'écart
 d'autorité entre mandant et mandataire** (F-14, F-15, F-24) ; et **un** incident public daté de
 défaillance d'identité **non humaine** (F-21, **[A]**). **Ce qu'il n'établit pas** : que l'identité
 soit *le* verrou de la sécurité agentique **plutôt qu'un verrou parmi d'autres**, ni qu'un tri par
@@ -67,40 +68,43 @@ triade létale sans la reconstruire** — *elle est reconstruite ici, une seule 
 
 ## § 19.1 — Recension : identifiants, incidents datés, littérature
 
-Le Vol. II a fermé son chapitre de clôture sur six questions, dont la deuxième porte sur **la mécanique
-des risques protocolaires nommés** et sur **l'existence d'attaques propres au protocole agent-agent**.
-*Elle appelait un socle ; la présente section est ce socle, avec ses bornes.*
+Le Vol. II a fermé son chapitre de clôture sur six questions (*Monographie* ch. 21 §21.2), dont la
+deuxième — **Q2 de la série d'agenda** — porte sur **la mécanique des risques protocolaires nommés** et
+sur **l'existence d'attaques propres au protocole agent-agent (A2A)**. *Elle appelait un socle ; la
+présente section est ce socle, avec ses bornes.*
 
-**Le référentiel de techniques adverses.** Le corpus est versionné — **collection 2026.06**, format
-6.0.0, modifiée le 27 mai 2026 et publiée le 30 juin 2026 (F-56, **[B]**). Il fournit trois des
-éléments mobilisés ici. Une technique d'**empoisonnement d'outil à la publication** relève d'une
-tactique de développement de ressources, est déclarée sur la plateforme agentique, de maturité
-*Realized*, créée le 30 janvier 2026 (F-13, **[A]**) : *l'outil est empoisonné **à la publication**,
-dans des registres que la description qualifie de largement non réglementés.* ⚠ **Le maillon qui cède
-est en amont de toute vérification d'identité** — *l'agent qui installe cet outil n'a aucun élément
-d'identité à contrôler.* Une seconde technique, l'**invocation d'outils inaccessibles à
-l'utilisateur**, énonce que des agents peuvent disposer d'outils que les utilisateurs n'atteignent pas
-et que l'abus de l'accès à l'agent confère des privilèges supérieurs (F-14, **[A]**) : ⚠ *ce n'est pas
+**Le référentiel de techniques adverses.** Le corpus **MITRE ATLAS** est versionné — **collection
+2026.06**, format 6.0.0, modifiée le 27 mai 2026 et publiée le 30 juin 2026 (F-56, **[B]**). Il
+fournit trois des éléments mobilisés ici. La technique **AML.T0104**, *Publish Poisoned AI Agent
+Tool* — **empoisonnement d'outil à la publication** —, relève d'une tactique de développement de
+ressources, est déclarée sur la plateforme agentique, de maturité *Realized*, créée le 30 janvier 2026
+(F-13, **[A]**) : *l'outil est empoisonné **à la publication**, dans des registres que la description
+qualifie de largement non réglementés.* ⚠ **Le maillon qui cède est en amont de toute vérification
+d'identité** — *l'agent qui installe cet outil n'a aucun élément d'identité à contrôler.* La technique
+**AML.T0053**, *AI Agent Tool Invocation* — l'**invocation d'outils inaccessibles à l'utilisateur** —,
+énonce que des agents peuvent disposer d'outils que les utilisateurs n'atteignent pas et que l'abus de
+l'accès à l'agent confère des privilèges supérieurs (F-14, **[A]**) : ⚠ *ce n'est pas
 l'authentification de l'agent qui cède, c'est **l'absence de réduction de portée entre le mandant et le
-mandataire**.* La contre-mesure correspondante pose le plafond : **un agent agissant pour un
-utilisateur ne doit pas recevoir de permissions que cet utilisateur n'a pas** (F-15, **[A]**).
+mandataire**.* La contre-mesure **AML.M0027** pose le plafond correspondant : **un agent agissant pour
+un utilisateur ne doit pas recevoir de permissions que cet utilisateur n'a pas** (F-15, **[A]**).
 ⚠ **Prescription de configuration, non mécanisme démontré** : le référentiel énonce ce qu'il faut
 faire, *il n'établit aucune propriété cryptographique de mandat* (R-02).
 
-**Les référentiels de sécurité applicative.** Le référentiel agentique porte la mention de version
-**2026** et la date de publication **décembre 2025** — ⚠ *millésime et date diffèrent : ils se citent
-ensemble* —, compte 57 pages, et son balayage de statut n'y relève **aucune mention de brouillon, de
-version candidate ni de préversion** (F-16, **[A]**). Ses dix entrées vont d'une numérotation
-d'ouverture à une numérotation de clôture (F-17, **[A]**) — ⚠ *le document n'étant pas
-typographiquement constant d'une page à l'autre, aucune revendication de verbatim n'est portée sur ces
-intitulés sans nommer la page.*
+**Les référentiels de sécurité applicative.** Le document *OWASP Top 10 For Agentic Applications 2026*
+porte la mention de version **2026** et la date de publication **décembre 2025** — ⚠ *millésime et
+date diffèrent : ils se citent ensemble* —, compte 57 pages, et son balayage de statut n'y relève
+**aucune mention de brouillon, de version candidate ni de préversion** (F-16, **[A]**). Ses dix
+entrées, relevées aux en-têtes de section, vont d'**ASI01** à **ASI10** (F-17, **[A]**) — ⚠ *le
+document n'étant pas typographiquement constant d'une page à l'autre, aucune revendication de verbatim
+n'est portée sur ces intitulés sans nommer la page.*
 
-**Deux d'entre elles portent le propos.** La troisième impute le risque à une **inadéquation
-architecturale** entre des systèmes d'identité conçus pour des utilisateurs humains et la conception
-agentique, et formule le manque en une phrase : « Without a distinct, governed identity of its own, an
-agent operates in an attribution gap that makes enforcing true least privilege impossible » (F-19,
-**[A]**). Le rapport d'état de la sécurité agentique, **version 2.01 de juin 2026**, érige l'identité
-d'agent en chapitre propre et la qualifie de nouveau plan de contrôle, en distinguant l'identité non
+**Deux d'entre elles portent le propos.** **ASI03**, *Identity and Privilege Abuse*, impute le risque à
+une **inadéquation architecturale** entre des systèmes d'identité conçus pour des utilisateurs humains
+et la conception agentique, et formule le manque en une phrase : « Without a distinct, governed
+identity of its own, an agent operates in an attribution gap that makes enforcing true least privilege
+impossible » (F-19, **[A]**). Le rapport *State of Agentic AI Security and Governance*, **version 2.01,
+daté de juin 2026**, érige l'identité d'agent en chapitre propre et la qualifie de nouveau plan de
+contrôle — « identity as the new control plane » —, en distinguant l'identité non
 humaine — qui « verifies that a credential is authorized to connect » — de l'identité d'agent — qui
 « has to verify what the holder is doing with that authorization, **continuously** » (F-20, **[A]**).
 ⚠ **Homonymie** : l'expression relève du **garde-fou d'homonymie à quatre branches, dont le siège est
@@ -109,13 +113,14 @@ en langue originale**. ⚠ **Attribution** : ce rapport reprend par ailleurs **d
 auto-déclarées d'éditeur** ; *le présent chapitre n'en reprend aucune, et sa thèse ne dépend d'aucun
 ratio de prolifération.*
 
-**Les incidents datés.** L'incident porté au socle en **[A]** est une campagne suivie sous une
-désignation d'acteur : entre le **8 août 2025** et **au moins le 18 août 2025**, un acteur a accédé à
-des instances d'un service infonuagique **au moyen de jetons OAuth compromis** associés à une
+**Les incidents datés.** L'incident porté au socle en **[A]** est la campagne suivie sous la
+désignation d'acteur **UNC6395** : entre le **8 août 2025** et **au moins le 18 août 2025**, un acteur
+a accédé à des instances **Salesforce** au moyen de **jetons OAuth compromis** associés à une
 application tierce, et **l'ensemble des jetons a été révoqué le 20 août 2025** (F-21, **[A]**).
-⚠ **L'entrée écrit « application tierce » ; l'affirmation qui la fonde et sa source primaire la
-nomment**, et le nom est reporté par la source plutôt qu'effacé — *un éditeur anonymisé rend le fait
-non revalidable au gel suivant.* **Le maillon qui cède est le jeton porteur délivré à une identité non
+⚠ **L'entrée du socle écrit « application tierce » ; l'affirmation qui la fonde et sa source
+primaire — l'avis du Google Threat Intelligence Group — nomment l'application, et c'est *Salesloft
+Drift***. Le nom est reporté ici plutôt qu'effacé — *un éditeur anonymisé rend le fait non revalidable
+au gel suivant.* **Le maillon qui cède est le jeton porteur délivré à une identité non
 humaine** : il n'est lié ni à l'appelant, ni à un appareil, ni à une session, de sorte que **quiconque
 le détient *est* l'intégration** aux yeux du fournisseur, et que **la révocation est le remède — et
 elle est collective**.
@@ -126,15 +131,18 @@ somme. *L'avis primaire ne la qualifie pas ainsi ; le rattachement de cet incide
 agentique est une lecture, et il vaut pour ce qu'il éclaire — la structure du justificatif —, non pour
 une équivalence de catégorie.*
 
-**Quatre identifiants de vulnérabilité complètent la recension** (F-26, **[B]**). ⚠ **Leur vote
+**Quatre identifiants de vulnérabilité complètent la recension** — **CVE-2025-32711**,
+**CVE-2025-6514**, **CVE-2025-12420** et **CVE-2026-55255** (F-26, **[B]**). ⚠ **Leur vote
 adversarial n'a pas pu être complété, et un vote incomplet n'est pas un vote favorable** : *ils
 illustrent, ils ne portent aucun énoncé central de ce chapitre, et ils sont à revalider avant tout
-emploi de ce rang.*
+emploi de ce rang* — ⚠ **les quatre identifiants sont écrits pour que cette revalidation soit
+exécutable**, un critère de clôture qui ne nomme pas sa source n'en étant pas un.
 
 **La littérature.** Des trois entrées versées, **une seule est une publication revue par les pairs en
-actes de piste principale** : elle démontre l'**empoisonnement de la mémoire à long terme ou de la base
-de connaissances interrogée par récupération** d'agents fondés sur des modèles de langue (F-23,
-**[A]**). Les deux autres sont des **préimpressions non revues par les pairs** : l'une range la
+actes de piste principale** — **AgentPoison**, **NeurIPS 2024** —, et elle démontre
+l'**empoisonnement de la mémoire à long terme ou de la base de connaissances interrogée par
+récupération** (*retrieval-augmented generation*, RAG) d'agents fondés sur des modèles de langue
+(F-23, **[A]**). Les deux autres sont des **préimpressions non revues par les pairs** : l'une range la
 **confusion de délégué** parmi cinq vecteurs d'élévation de privilège et l'identifie à l'instruction
 directe transmise par message inter-agents (F-24, **[A]**) ; l'autre rapporte que le **détournement du
 contrôle et de la communication interne d'un système multi-agents réussit même lorsque les agents pris
@@ -148,13 +156,13 @@ authentifié : **la proportion de littérature revue par les pairs de ce relevé
 sous-estimée**, et *il n'en découle pas que le domaine soit surtout préimpression*. *(2)* Le lot
 recense des techniques, des référentiels et des incidents ; **il ne mesure aucune prévalence** —
 *c'est le motif direct du § 19.0.* *(3)* Le relevé est **arrêté au 21 juillet 2026 et se périme par
-trimestres** : une **révision majeure du protocole agent-outil est annoncée au brouillon**, dont la
-revalidation confirme la substance **et non la date**, de sorte qu'**aucun tri prospectif n'y est
-arrêté** et que **les décomptes portant sur ce protocole sont à rejouer**. ⚠ Ce protocole porte un
-**cadre d'autorisation** (H-09, **[A]**) — *formule imposée ; on n'écrit jamais « sécurisé ».*
+trimestres** : une **révision majeure de la spécification du protocole agent-outil (MCP) est annoncée
+au brouillon**, dont la revalidation confirme la substance **et non la date**, de sorte qu'**aucun tri
+prospectif n'y est arrêté** et que **les décomptes portant sur ce protocole sont à rejouer**. ⚠ MCP
+porte un **cadre d'autorisation** (H-09, **[A]**) — *formule imposée ; on n'écrit jamais « sécurisé ».*
 
 ⚠ **Un incident de méthode est consigné, et il appartient au propos de la somme** : une recherche
-documentaire **secondaire** a rattaché au protocole agent-agent un identifiant de vulnérabilité qui,
+documentaire **secondaire** a rattaché à A2A un identifiant de vulnérabilité qui,
 **fiche primaire ouverte, désigne un tout autre produit**. *Un identifiant plausible attribué par un
 intermédiaire à un objet qu'il ne désigne pas, et que seule l'ouverture de la source a arrêté.*
 
@@ -164,18 +172,18 @@ avant usage*, et **aucune qualification n'a été conduite**. *(2)* Une **classe
 vecteur est le harnais** — extension tierce admise par simple configuration —, **et non le protocole
 ni le mécanisme d'identité, est repérée** ; ⚠ **si elle s'instruit, elle entre au dénombrement
 *contre* la thèse d'absorption de ce chapitre, non à son appui.** *Son incident public candidat est
-décrit au ch. 47, non rédigé.* ⚠ **Ces deux relèves ne sont pas instruites ici**, le volet résiduel de
-G-1 n'ayant pas été ouvert.
+décrit au ch. 47 § 47.7.* ⚠ **Ces deux relèves ne sont pas instruites ici** : l'obligation de pièce du
+Livre II au titre de G-1 reste due.
 
 ⚠ **Une troisième relève porte une taxonomie d'organisme, et sa portée exacte est plus étroite qu'il
-n'y paraît.** Un institut national publie une **taxonomie et terminologie des attaques et atténuations
-en apprentissage automatique adverse**, **finale, de mars 2025**, structurée par types de méthodes
+n'y paraît.** Le **NIST** publie *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks
+and Mitigations*, **NIST AI 100-2 E2025**, **finale, de mars 2025**, structurée par types de méthodes
 d'apprentissage, étapes du cycle de vie et objectifs de l'attaquant. ⚠ **Deux réserves, à tenir
 ensemble.** *(a)* La page relevée **ne mentionne pas l'injection d'invite par son nom** : *la couverture
 de ce vecteur est à vérifier dans le document lui-même, jamais à présumer.* *(b)* ⚠ **Une taxonomie ne
-dénombre pas** : *elle n'apporte aucun appui à la thèse quantitative, qui reste entière et à instruire
-— s'en servir pour la soutenir serait exactement la faute que le § 19.0 refuse.* **Elle n'entre pas au
-socle.**
+dénombre pas** : *elle n'apporte aucun appui à une thèse quantitative — s'en servir pour en soutenir
+une serait exactement la faute que le § 19.0 refuse ; et la thèse de ce chapitre n'en porte plus
+depuis le TOC v0.25.* **Elle n'entre pas au socle.**
 
 ## § 19.2 — Modèle de menace agentique, triade létale et impossibilité architecturale
 
@@ -185,12 +193,13 @@ socle.**
 > s'y adosse. *C'est l'économie de la fusion côté menace, et elle n'a lieu que si ces chapitres s'y
 > tiennent.*
 
-**Le cadre de menace le plus opérant pour les agents tient en une conjonction.** Un agent devient
-dangereusement exploitable lorsqu'il combine **simultanément trois propriétés** :
+**Le cadre de menace le plus opérant pour les agents tient en une conjonction, que Willison (2025b)
+nomme la *triade létale* (« lethal trifecta »).** Un agent devient dangereusement exploitable
+lorsqu'il combine **simultanément trois propriétés** :
 l'**accès à des données privées** ; l'**exposition à du contenu non fiable** — courriel, page web,
-document récupéré, sortie d'outil — ; et la disposition d'un **canal de sortie vers l'extérieur**. *Prise isolément,
-chacune est anodine ; réunies, elles permettent à une instruction dissimulée dans le contenu non
-fiable de détourner l'agent pour exfiltrer les données privées par le canal de sortie.*
+document récupéré, sortie d'outil — ; et la disposition d'un **canal de sortie vers l'extérieur**.
+*Prise isolément, chacune est anodine ; réunies, elles permettent à une instruction dissimulée dans le
+contenu non fiable de détourner l'agent pour exfiltrer les données privées par le canal de sortie.*
 
 ⚠ **Régime de cet apport** : la matière vient du **Vol. I *Monographie* §2.10.1**, et les faits du
 Vol. I entrent dans la somme en **[C]** — *sa vérification porte sur ses références, non sur le contenu
@@ -204,15 +213,16 @@ estiment improbable qu'il soit un jour pleinement résolu.*
 **La racine est architecturale.** Dans un agent fondé sur un modèle de langue, **les instructions du
 concepteur et les données ingérées partagent le même flux de jetons**, sans séparation de privilège
 analogue à celle d'un canal de commande distinct d'un canal de données. ⚠ *Aucune barrière interne au
-modèle ne distingue de façon fiable « ce qu'on me dit de faire » de « ce que je lis ».* La
-compromission par **injection indirecte** a été démontrée expérimentalement sur des applications
-réelles intégrant un modèle de langue.
+modèle ne distingue de façon fiable « ce qu'on me dit de faire » de « ce que je lis ».* **Greshake et
+al. (2023)** ont les premiers démontré expérimentalement cette compromission par **injection
+indirecte** sur des applications réelles intégrant un modèle de langue.
 
 > **Perspective recherche.** ⚠ **L'impossibilité dont il est question ici n'est pas un théorème** :
 > c'est un **constat d'ingénierie de sécurité**. *Tant qu'instructions et données coexistent dans un
 > espace de jetons indifférencié, un classifieur parfait de l'intention hostile équivaudrait à résoudre
 > le problème de l'alignement sémantique en boucle ouverte.* Les travaux de défense par conception
-> contournent la difficulté en imposant une séparation de privilège **à l'extérieur** du modèle plutôt
+> (**Debenedetti et al., 2025**) contournent la difficulté en imposant une séparation de privilège
+> **à l'extérieur** du modèle plutôt
 > qu'en cherchant à durcir le modèle lui-même — *un déplacement du problème de la couche cognitive vers
 > la couche système*. ⚠ **Leur instruction est au ch. 6**, qui en est le siège ; elle n'est pas reprise
 > ici.
@@ -235,26 +245,29 @@ outil branché et chaque écriture en mémoire ouvre un vecteur. ⚠ **Régime**
 ⚠ **Traitement défensif** : la mécanique est exposée **au niveau du maillon**, et **aucune recette
 n'est reproduite**.
 
-**Injection d'invite directe et indirecte.** L'injection figure **en tête** d'un référentiel de
-sécurité des applications à modèle de langue, *signe de sa centralité*. La forme **directe** consiste
-pour un utilisateur à formuler une entrée qui subvertit les consignes système ; la forme
+**Injection d'invite directe et indirecte.** L'injection figure **en tête** du référentiel *OWASP Top
+10 for LLM Applications 2025*, sous le code **LLM01**, *signe de sa centralité*. La forme **directe**
+consiste pour un utilisateur à formuler une entrée qui subvertit les consignes système ; la forme
 **indirecte**, propre aux agents, **place l'instruction hostile dans un contenu que l'agent récupérera
-de lui-même** — un courriel, une page, un passage extrait, la sortie d'un outil. ⚠ *La forme indirecte
-est caractérisée comme la menace dominante des applications intégrant un modèle de langue, précisément
-parce que **la victime n'a aucune interaction directe avec l'attaquant**.* Les **navigateurs
-agentiques** en constituent la surface la plus exposée : *tout site visité devient un canal
+de lui-même** — un courriel, une page, un passage extrait, la sortie d'un outil. ⚠ *Greshake et al.
+(2023) caractérisent cette dernière comme la menace dominante des applications intégrant un modèle de
+langue, précisément parce que **la victime n'a aucune interaction directe avec l'attaquant**.* Les
+**navigateurs agentiques** en constituent la surface la plus exposée : *tout site visité devient un canal
 d'injection potentiel.* ⚠ **Les mécanismes de confinement proposés relèvent de la limitation du
 dommage, non de la prévention de l'injection**, qui demeure non résoluble au niveau du modèle
 (§ 19.2).
 
 **Exfiltration, sortie et agence excessive.** Le troisième sommet de la triade — **le canal de
-sortie** — est lui-même un vecteur : *une URL construite avec un secret en paramètre, un appel d'outil
-réseau, un champ de formulaire.* Un incident d'**exfiltration sans clic**, depuis un environnement de
-productivité et **sans action de la victime**, démontre la triade en conditions réelles — *contenu non
-fiable ingéré, données privées accessibles, canal de sortie exploité.* ⚠ L'identifiant correspondant
-figure parmi **les quatre à vote incomplet** du socle propre (F-26) : *il illustre, il ne porte pas.*
+sortie** — est lui-même un vecteur, que le même référentiel code sous **LLM02** : *une URL construite
+avec un secret en paramètre, un appel d'outil réseau, un champ de formulaire.* L'incident
+**EchoLeak** (Aim Security, 2025 ; **CVE-2025-32711**) — exfiltration **sans clic** depuis un
+environnement de productivité, **sans action de la victime** — démontre la triade en conditions
+réelles : *contenu non fiable ingéré, données privées accessibles, canal de sortie exploité.*
+⚠ Son identifiant figure parmi **les quatre à vote incomplet** du socle propre (F-26) : *il illustre,
+il ne porte pas.*
 
-L'**agence excessive** désigne, distinctement, le **sur-dimensionnement des permissions** accordées à
+L'**agence excessive** (**LLM06**, *excessive agency*) désigne, distinctement, le
+**sur-dimensionnement des permissions** accordées à
 l'agent : portée d'accès trop large, outils trop puissants, absence de plafond sur les actions. ⚠ *Plus
 l'agence est large, plus le dommage d'une injection réussie est grand ; minimiser la surface agentique
 et appliquer le moindre privilège **réduit l'amplitude du risque indépendamment de la probabilité
@@ -274,19 +287,20 @@ restée sans réponse, rend l'attaque possible ou l'attribution impossible**.
 
 | Attaque ou incident, avec sa borne | Maillon qui cède | Question en défaut | Trace |
 |---|---|---|---|
-| **Empoisonnement d'outil à la publication** (corpus 2026.06, maturité *Realized*, créée le 30 janv. 2026) | empoisonnement à la publication, **en amont de toute vérification d'identité** | **Q-B des sources** — extension de la grille, ci-dessous | F-13 **[A]** |
-| **Invocation d'outils inaccessibles à l'utilisateur** (même corpus ; la matrice la range sous deux tactiques) | **absence de réduction de portée** entre mandant et mandataire | **Q-D** — bornes de privilège non opposables | F-14 **[A]** ; contre-mesure F-15 **[A]** |
-| **Compromission de jetons d'application tierce**, 8 au 18 août 2025 au moins, révocation le 20 août 2025 | jeton porteur **non lié** à l'appelant, à l'appareil ni à la session | **Q-A** — l'identifiant n'est pas résistant à la détention par un tiers | F-21 **[A]** |
+| **AML.T0104**, empoisonnement d'outil à la publication (corpus MITRE ATLAS 2026.06, maturité *Realized*, créée le 30 janv. 2026) | empoisonnement à la publication, **en amont de toute vérification d'identité** | **Q-B des sources** — extension de la grille, ci-dessous | F-13 **[A]** |
+| **AML.T0053**, invocation d'outils inaccessibles à l'utilisateur (même corpus ; la matrice la range sous deux tactiques) | **absence de réduction de portée** entre mandant et mandataire | **Q-D** — bornes de privilège non opposables | F-14 **[A]** ; contre-mesure **AML.M0027**, F-15 **[A]** |
+| **UNC6395**, compromission de jetons d'application tierce, 8 au 18 août 2025 au moins, révocation le 20 août 2025 | jeton porteur **non lié** à l'appelant, à l'appareil ni à la session | **Q-A** — l'identifiant n'est pas résistant à la détention par un tiers | F-21 **[A]** |
 | **Confusion de délégué**, quatrième de cinq vecteurs d'une préimpression non revue | l'instruction inter-agents fait agir le mandataire **hors du mandat qu'il détient** | **Q-C** — chaîne de mandat non interrogeable à l'exécution | F-24 **[A]**, préimpression |
-| **Empoisonnement de la mémoire et de la base interrogée**, actes revus par les pairs | l'entrée de mémoire ou le document récupéré **n'a pas d'origine vérifiable** | **Q-B des sources** | F-23 **[A]** |
+| **AgentPoison**, empoisonnement de la mémoire et de la base interrogée, actes de NeurIPS 2024, revus par les pairs | l'entrée de mémoire ou le document récupéré **n'a pas d'origine vérifiable** | **Q-B des sources** | F-23 **[A]** |
 | **Détournement d'un système multi-agents**, préimpression non revue, configurations données | **la composition, non un agent** : le détournement réussit **même lorsque** les agents pris isolément ne sont pas vulnérables et **même lorsqu'ils** refusent les actions nuisibles | ⚠ **aucune — cas non rangé par la grille** | F-25 **[A]**, préimpression |
 
 : Tableau 19.1 — Tri des entrées du socle par le maillon qui cède, au 21 juillet 2026. Chaque cellule porte la borne de son entrée ; la colonne « Question en défaut » est un **tri d'auteur**. **La dernière ligne est le cas que le tri ne range pas.**
 
 **Trois enseignements se tirent de ce tableau, et le troisième est celui qui compte.**
 
-**Le premier est l'ordre des questions.** L'énoncé d'imputation architecturale le formule en une phrase
-(F-19). Lecture de l'auteur — **ce que le socle établit** : l'énoncé cité, au niveau [A]. **Ce qu'il
+**Le premier est l'ordre des questions.** L'énoncé d'**ASI03** le formule en une phrase : sans identité
+propre et gouvernée, l'agent opère dans un écart d'attribution qui rend le moindre privilège
+inapplicable (F-19). Lecture de l'auteur — **ce que le socle établit** : l'énoncé cité, au niveau [A]. **Ce qu'il
 n'établit pas** : que Q-A commande les autres questions **par nécessité logique**. *La lecture proposée
 est que Q-D et Q-E ne deviennent pas **difficiles** en l'absence de réponse à Q-A, elles deviennent
 **inapplicables** — une borne de privilège suppose un porteur identifié, et une imputabilité suppose
@@ -309,14 +323,15 @@ donnés**. **Ce qu'il n'établit pas** : que la grille soit **inapte** à la ran
 l'est : une taxonomie par maillon d'identité interroge les agents **un à un**, et laisse donc échapper
 la classe où le défaut est **dans la composition**.* ⚠ Le Vol. I porte l'énoncé qui la nomme —
 *« un agent sûr et un outil sûr, une fois composés, ne donnent pas un système sûr ; la sûreté n'est pas
-une propriété compositionnelle »* (H-24, **[C]**, corroboration et non appui). ⚠ **La préimpression
-n'établit pas ce théorème et ne s'y substitue pas** : la formule reste adossée au Vol. I, et **son
+une propriété compositionnelle »* (H-24, **[C]**, corroboration et non appui). ⚠ **Cette préimpression
+n'établit pas cet énoncé et ne s'y substitue pas** : la formule reste adossée au Vol. I, et **son
 siège dans la somme est le ch. 37 § 37.3**.
 
 **Reste ce que la taxonomie ne dit pas.** ⚠ **Elle ne dénombre rien.** Sur les dix intitulés du
-référentiel agentique, **un seul comporte le mot « Identity » et aucun ne comporte « Delegation »**
-(F-18, **[A]**, fait négatif **vérifié**, degré 1). ⚠ **L'énoncé porte sur les intitulés, non sur les
-contenus** : la délégation est traitée **dans le corps de deux des dix entrées**, et *transformer ce
+référentiel *OWASP Top 10 For Agentic Applications 2026*, **un seul comporte le mot « Identity » et
+aucun ne comporte « Delegation »** (F-18, **[A]**, fait négatif **vérifié**, degré 1). ⚠ **L'énoncé
+porte sur les intitulés, non sur les contenus** : la délégation est traitée **dans le corps d'ASI03 et
+d'ASI02**, et *transformer ce
 fait négatif de titre en fait négatif de contenu serait une faute.* ⚠ **Aucune entrée du socle ne
 tranche la question quantitative dans un sens ni dans l'autre**, et le lot chargé de l'établir a
 **réfuté la forme quantitative** que le cadrage prêtait au chapitre.
@@ -331,17 +346,18 @@ déplacent la question d'identité d'un cran : *non plus **qui es-tu ?** posée 
 au document, à l'entrée de mémoire, au serveur d'outils.*
 
 **Le fait porteur est établi et revu par les pairs** : l'empoisonnement de la mémoire à long terme ou
-de la base de connaissances interrogée par récupération est **démontré par une publication en actes de
-piste principale** (F-23, **[A]**). ⚠ **Les taux qu'elle rapporte — un taux de succès moyen élevé pour
-un taux d'empoisonnement très faible — sont mesurés et déclarés par les auteurs sur leurs trois
-configurations expérimentales** ; *ils ne sont pas une propriété générale des agents à mémoire
-persistante, et l'attribution est due à chaque occurrence.* **Le maillon qui cède n'est ni
-l'authentification de l'agent ni son mandat : c'est l'absence d'origine vérifiable de l'entrée retenue
-en mémoire.**
+de la base de connaissances interrogée par récupération est **démontré par AgentPoison, publication
+parue dans les actes de NeurIPS 2024** (F-23, **[A]**). ⚠ **Les taux que ses auteurs rapportent — un
+taux de succès moyen supérieur ou égal à 80 % pour un taux d'empoisonnement inférieur à 0,1 % — sont
+mesurés et déclarés par eux sur leurs trois configurations expérimentales** ; *ils ne sont pas une
+propriété générale des agents à mémoire persistante, et l'attribution est due à chaque occurrence.*
+**Le maillon qui cède n'est ni l'authentification de l'agent ni son mandat : c'est l'absence d'origine
+vérifiable de l'entrée retenue en mémoire.**
 
 **Un manifeste de recherche prolonge le constat au grain de l'exploitation** (H-11, **[B]**). Il tient
-l'empoisonnement de mémoire pour un **défi ouvert**, oppose deux patrons d'architecture, scinde
-l'auto-modification en **adaptation éphémère** et **évolution persistante**, et fait de
+l'empoisonnement de mémoire pour un **défi ouvert**, oppose deux patrons d'architecture —
+*Action-Selector* et *Plan-Then-Execute* —, scinde l'auto-modification en **adaptation éphémère** et
+**évolution persistante**, et fait de
 l'opérationnalisation **locale** des cadres normatifs une **frontière de sécurité** — *restreindre le
 contexte et les capacités limite l'impact d'un agent compromis.* Il nomme enfin un **écart de
 responsabilité** entre le développeur, l'organisation qui impose le cadre, le fournisseur de modèle et
@@ -352,8 +368,9 @@ le socle** — seul le normatif l'est —, et *aucun développement de ce chapit
 **indirecte** ; **empoisonnement d'outils par les descriptions en langage naturel** ; le **retournement
 d'un serveur** comme **variante temporelle** ; et la **transitivité de la confiance**. ⚠ *Le Vol. I y
 pose que l'injection n'est pas résoluble au niveau du modèle et que la parade relève du confinement.*
-⚠ **Deux scores coexistent pour l'un des identifiants cités selon l'autorité qui les publie, et l'écart
-n'est pas arbitré ici.**
+⚠ **L'identifiant que cette entrée cite — CVE-2025-32711 — figure aussi au socle propre parmi les
+quatre à vote incomplet (F-26), et deux scores coexistent pour cette fiche selon l'autorité qui les
+publie : l'écart n'est pas arbitré ici.**
 
 **L'identité des sources a un troisième visage, celui de l'éditeur.** Un paquet publié sous le nom d'un
 éditeur, **par un tiers sans aucun lien avec lui**, ajoutait dans une de ses versions une **mise en
@@ -399,35 +416,37 @@ documentation, non un fait négatif vérifié.** ⚠ **Elle s'interprète avec p
 peu déployée, détection immature, divulgation non publique — **et elle ne constitue pas une preuve de
 sûreté.**
 
-**Du côté du protocole agent-agent, deux énoncés coexistent, de degrés différents, et les fondre en un
-seul serait la faute que R-14 proscrit.**
+**Du côté du protocole agent-agent (A2A), deux énoncés coexistent, de degrés différents, et les fondre
+en un seul serait la faute que R-14 proscrit.**
 
-**Degré 1, fait négatif vérifié.** Le texte intégral de la page de spécification en v1.0.0 **ne
-contient aucune occurrence** de neuf chaînes relatives à l'usurpation, au rejeu, à l'injection
-d'invite, à la confusion de délégué, à la non-répudiation, au multi-saut, à la provenance et à
-l'interception (F-22, **[A]**). *Le balayage a porté sur le texte rendu, mesuré, et a été **rejoué
-indépendamment par un juge**.* ⚠ **C'est un fait négatif de vocabulaire, borné à un document et à une
-version** : *il établit que la spécification ne **nomme** pas ces menaces, non que le protocole y soit
+**Degré 1, fait négatif vérifié.** Le texte intégral de la page de spécification **A2A v1.0.0** **ne
+contient aucune occurrence** de neuf chaînes relatives à l'usurpation (deux chaînes), au rejeu, à
+l'injection d'invite, à la confusion de délégué, à la non-répudiation, au multi-saut, à la provenance
+et à l'interception (F-22, **[A]**). *Le balayage a porté sur le texte rendu, mesuré à
+**170 999 caractères**, et a été **rejoué indépendamment par un juge**.* ⚠ **C'est un fait négatif de
+vocabulaire, borné à un document et à une version** : *il établit que la spécification ne **nomme** pas
+ces menaces, non que le protocole y soit
 vulnérable — un texte peut traiter un risque sans employer le mot.* ⚠ Il ne porte pas davantage sur les
 documents de sujet du même site, **que le lot déclare n'avoir pas ouverts**.
 
-**Le contre-exemple est dans le texte même.** La spécification **reconnaît** que l'échange de
-justificatifs en bande **expose ces justificatifs à chacun des agents d'une chaîne de requêtes**, et
-n'oppose à ce risque que des recommandations de niveau *SHOULD*. *(Source primaire ouverte et citée
+**Le contre-exemple est dans le texte même.** La spécification **reconnaît**, en section 7.6.3, que
+l'échange de justificatifs en bande **expose ces justificatifs à chacun des agents d'une chaîne de
+requêtes**, et n'oppose à ce risque que des recommandations de niveau *SHOULD*. *(Source primaire ouverte et citée
 hors socle, non versée.)* ⚠ **Le maillon qui cède est nommé par la spécification elle-même** : *la
 chaîne formée par des tâches successives n'a pas de porteur d'identité propre, de sorte que le
 justificatif circule tel quel et que chaque intermédiaire le lit.*
 
-La page de bonnes pratiques du protocole agent-outil fait de même, **à une réserve de statut près qui
-se dit à chaque occurrence** : elle **ne siège pas dans l'arbre normatif** et se présente elle-même
-comme un **complément** de la spécification d'autorisation. Elle reconnaît **huit familles d'attaque**,
-dont la confusion de délégué et le détournement de session, **sans employer** les termes de délégation,
-de multi-saut, d'identité d'agent ni de non-humain — *balayage borné à cette page et à l'index normatif
-d'une révision nommée*. ⚠ **Les menaces sont donc traitées par un document d'accompagnement ; le texte
-d'autorisation de cette révision, lui, n'a pas été ouvert**, et le décompte ne vaut pas pour lui.
+La page *Security Best Practices* du protocole agent-outil (MCP) fait de même, **à une réserve de
+statut près qui se dit à chaque occurrence** : elle **ne siège pas dans l'arbre normatif** et se
+présente elle-même comme un **complément** de la spécification d'autorisation. Elle reconnaît **huit
+familles d'attaque**, dont la confusion de délégué et le détournement de session, **sans employer** les
+termes de délégation, de multi-saut, d'identité d'agent ni de non-humain — *balayage borné à cette page
+et à l'index normatif de la **révision 2025-11-25***. ⚠ **Les menaces sont donc traitées par un
+document d'accompagnement ; le texte d'autorisation de cette révision, lui, n'a pas été ouvert par le
+lot**, et le décompte ne vaut pas pour lui.
 
 **Degré 3, absence de documentation.** Le corpus consulté **ne documente aucun identifiant de
-vulnérabilité visant le protocole agent-agent lui-même** : les identifiants relevés visent des
+vulnérabilité visant A2A lui-même** : les identifiants relevés visent des
 **bibliothèques tierces portant son nom**. ⚠ **La règle qui l'impose a été payée au vote : un registre
 interrogé par mot-clé n'établit aucune absence, son rappel étant inconnu.** *Trois formulations plus
 fortes ont été écartées et ne doivent pas resurgir* — deux clauses d'exclusivité et un fait négatif de
@@ -436,8 +455,9 @@ deux protocoles** : *il mesure une **attribution**, et deux lectures concurrente
 exposition réelle moindre, ou surface d'attribution moindre faute de déploiements et de chercheurs.*
 
 **La technique publiée qui nomme le protocole appelle une décision, et le lot l'a prise.** Une
-publication d'une unité de recherche en sécurité, **datée du 31 octobre 2025 et signée**, décrit une
-technique de **contrebande de session entre agents** ; ⚠ *ses auteurs déclarent eux-mêmes qu'elle ne
+publication de l'unité de recherche en sécurité **Unit 42** de Palo Alto Networks, **datée du
+31 octobre 2025 et signée de Jay Chen et Royce Lu**, décrit une technique de **contrebande de session
+entre agents** (*agent session smuggling*) ; ⚠ *ses auteurs déclarent eux-mêmes qu'elle ne
 révèle **aucune vulnérabilité du protocole** et qu'elle **n'a pas été observée en usage réel**.*
 ⚠ **L'affirmation qui la portait a été écartée 3-0 sur sa clause d'exclusivité, et son entrée au socle
 est refusée en l'état.** Elle est donc caractérisée **au seul niveau architectural** : *le maillon qui
@@ -458,7 +478,7 @@ et la distinction entre elles est le contenu, non la nuance.**
 
 : Tableau 19.2 — Trois régimes d'absence côté protocolaire, et ce que chacun autorise à écrire, au 21 juillet 2026.
 
-⚠ **Et le mot que ce chapitre n'emploie à aucune occurrence** : *sécurisé*. Le protocole agent-outil
+⚠ **Et le mot que ce chapitre n'emploie à aucune occurrence** : *sécurisé*. MCP
 porte un **cadre d'autorisation** — formule imposée par la réserve du socle du Vol. II —, *parce que la
 sécurité dépend de l'implémentation.*
 
@@ -485,24 +505,29 @@ sécurité dépend de l'implémentation.*
 
 ⚠ **Cette section n'est pas au TOC et n'a pas vocation à survivre.**
 
-**Ce qui est enfreint.** Portes **G-3** et **G-4** ; volet résiduel de **G-1** non instruit ; ordre de
-rédaction du PRD §6. ⚠ **Et deux obligations propres à ce chapitre** : *(a)* le **dénombrement** que le
-TOC exige **avant rédaction** n'a pas été conduit ; *(b)* **CA-IV-11** — relecture dédiée par un
-relecteur distinct, compte rendu déposé et nommé — **n'est pas satisfaite**. ⚠ *L'attestation
+**Ce qui est enfreint.** La pièce a été rédigée le 27 juillet 2026 **avant G-3 et G-4**, hors de
+l'ordre de rédaction du PRD §6, sur instruction d'auteur. ⚠ **G-3 a été franchie depuis, le 28 juillet
+2026** (PRD v0.14, socle consolidé à 159 entrées) et **le volet de faits de G-1 a été levé** le même
+jour ; *une porte franchie après coup ne rattrape pas la pièce écrite avant elle*, et **G-4 comme
+l'obligation de pièce du Livre II au titre de G-1 restent dues**. ⚠ **Et deux obligations propres à ce
+chapitre, dont une seule subsiste** : *(a)* le **dénombrement** que le TOC exigeait **avant rédaction**
+n'a pas été conduit — ⚠ **l'exigence est éteinte avec son objet depuis le TOC v0.25**, la thèse ne
+portant plus de proportion ; *(b)* **CA-IV-11** — relecture dédiée par un
+relecteur distinct, compte rendu déposé et nommé — **n'est toujours pas satisfaite**. ⚠ *L'attestation
 auto-délivrée est proscrite même exacte : rien dans cette pièce, y compris la présente note, ne doit
-être lu comme une attestation de traitement défensif conforme.* Instruction d'auteur du 27 juillet
-2026.
+être lu comme une attestation de traitement défensif conforme.*
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ **Et quatre identifiants de vulnérabilité
    portent un vote adversarial incomplet** (F-26) : *un vote incomplet n'est pas un vote favorable*, et
    ils sont employés en illustration seule, jamais comme appui.
-2. **Les décomptes sont publiables** (G-2). Écart de **+10,6 %** ; la volumétrie du Livre alimente
-   **D-4** par **R-IV-17**.
-3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan** : **ch. 37 § 37.3** —
-   siège de la non-compositionnalité, invoqué **deux fois** — et **ch. 47**, où l'incident public
-   candidat de la relève sur le harnais est décrit. Les renvois vers les **ch. 5, 6, 7 § 7.5, 11
-   § 11.1.2** résolvent contre du texte ; ceux vers les **ch. 12, 14, 15, 20** résolvent contre du
-   texte au terme de la présente passe.
+2. **Les décomptes sont publiables** (G-2). Écart de **+15,3 %**, re-mesuré au commit du 28 juillet
+   2026 ; la volumétrie du Livre alimente **D-4** par **R-IV-17**.
+3. **Tous les renvois « ch. N » de cette pièce résolvent désormais contre du texte**, les cinq Livres
+   ayant été rédigés le 27 juillet 2026 : **ch. 5, 6, 7 § 7.5, 11 § 11.1.2, 12, 14, 15, 20** au
+   Livre I et au Livre II ; **ch. 37 § 37.3** — siège de la non-compositionnalité, invoqué **deux
+   fois** — au Livre IV ; **ch. 47 § 47.7** — où l'incident public candidat de la relève sur le
+   harnais est décrit — au Livre V. ⚠ *Résoudre contre du texte ne vaut pas recevabilité de la
+   cible* : les cinq Livres sont des brouillons hors portes.
 4. **Deux relèves atterrissent ici et ne sont pas consommées** : le corpus candidat du dénombrement, et
    la classe d'attaques dont le vecteur est le harnais. ⚠ *La seconde entrerait **contre** la thèse de
    ce chapitre, non à son appui* — et **c'est le motif pour lequel elle est nommée plutôt que
@@ -511,7 +536,7 @@ auto-délivrée est proscrite même exacte : rien dans cette pièce, y compris l
 **Remontées ouvertes par ce chapitre :**
 
 - **R-IV-32 — BLOQUANTE pour la thèse, et cinquième occurrence d'une classe désormais installée.** La
-  thèse du ch. 19 au TOC v0.24 porte « **une part majoritaire** ». ⚠ **Sa source a réfuté cette forme
+  thèse du ch. 19 au TOC v0.24 portait « **une part majoritaire** ». ⚠ **Sa source a réfuté cette forme
   au vote adversarial et a réécrit sa propre thèse en énoncé architectural** — *« ce n'est pas une
   thèse de dénombrement »*. Le TOC lui-même déclare que la proportion **doit être établie par
   dénombrement sur un corpus déclaré, ou que l'énoncé retombe sans quantificateur** ; **le dénombrement
@@ -532,7 +557,8 @@ auto-délivrée est proscrite même exacte : rien dans cette pièce, y compris l
   dualité d'usage relu par son rédacteur est le cas où l'attestation auto-délivrée est le plus
   tentante et le plus nocive.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.24** — § 19.1 à § 19.6,
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC**, inchangée de la v0.24 à
+la v0.30 — § 19.1 à § 19.6,
 dans l'ordre exact —, et le § 19.0 est une introduction de chapitre. La **table de couverture est
 respectée pour ses quatre lignes**, y compris la quatrième, qui déclare les défenses architecturales et
 l'alignement **hors périmètre** : ils restent au **ch. 6**, et le § 19.3 s'en abstient explicitement.
@@ -545,12 +571,17 @@ garde-fou sur l'usurpation** l'est aussi (§ 19.6). L'**encadré de désambiguï
 et la raison pour laquelle il cède, cite son identifiant, **et s'arrête là** — *aucune recette
 d'exploitation n'est reproduite, et aucune mécanique n'est décrite au grain de l'exécution.* **R-12
 n'y porte aucun marqueur littéral** : *l'application est réelle, le renvoi à l'identifiant absent, et
-la couverture se déclare plutôt qu'elle ne se dénombre.* Les absences **portent leur degré**, dont
-sept au **degré 3**, et le § 19.6 en produit **un de chaque des trois régimes protocolaires**. Les
-**métriques auto-déclarées** sont attribuées à leur source, **y compris les taux expérimentaux du
-§ 19.5**, rapportés aux trois configurations qui les portent. Le mot **« sécurisé » n'est appliqué à
-aucun protocole, à aucune occurrence**. Et les **six marqueurs de « Lecture de l'auteur »** — § 19.0,
-§ 19.1, § 19.2 et § 19.4 (trois) — sont suivis de ce que le socle établit et n'établit pas.
+la couverture se déclare plutôt qu'elle ne se dénombre.* Les absences **portent leur degré** — **quatre
+marqueurs littéraux**, « degré 1 » aux § 19.4 et § 19.6, « degré 3 » aux § 19.5 et § 19.6, les autres
+qualifiées sans marqueur —, et le § 19.6 en produit **un de chaque des trois régimes protocolaires**.
+Les **métriques auto-déclarées** sont attribuées à leur source, **y compris les taux expérimentaux du
+§ 19.5**, rapportés à AgentPoison et aux trois configurations qui les portent. Le mot **« sécurisé »
+n'est appliqué à aucun protocole, à aucune occurrence**. Et les **six marqueurs de « Lecture de
+l'auteur »** — § 19.0, § 19.1, § 19.2 et § 19.4 (trois) — sont suivis de ce que le socle établit et
+n'établit pas. ⚠ **Les attributions effacées par la parade de péremption ont été rétablies** au titre
+de la **décision 15** — référentiels, techniques, incident, identifiants de vulnérabilité, auteurs et
+dates des instruments repris —, la parade demeurant pour les seules dénominations commerciales et les
+numéros de version.
 
 
 ---
@@ -587,9 +618,18 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
   par une seconde personne.* Elle est déclarée au PRD §11 — *la déclarer est le seul geste qui
   l'empêche de s'éteindre par oubli.*
 
-⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle
-consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation de fond contre le Vol. III
-rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**.
-**CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur. Cette
-pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
-cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*
+⚠ **Ce que la clôture ne changeait pas, à sa date.** Les portes **G-3** et **G-4** demeuraient
+ouvertes : le socle consolidé comptait **zéro entrée**, l'Annexe B n'existait pas, la collation de fond
+contre le Vol. III rédigé n'était pas conduite, et **aucun énoncé de cette pièce n'était central au
+sens de CA-IV-01**.
+
+⚠ **Mise à jour du 28 juillet 2026 — ce qui a changé, et ce qui tient.** Ce qui a changé : **G-3 est
+franchie** et l'**Annexe B existe** — [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2,
+**159 entrées `S-001`…`S-159`** (PRD v0.14, jalon J-IV-2 atteint). ⚠ **Tout le reste tient** : **G-4
+reste ouverte**, la collation de fond contre le Vol. III rédigé n'est pas conduite, et **aucun énoncé
+de cette pièce n'est central au sens de CA-IV-01**, la consolidation n'ayant conduit **aucun vote
+adversarial**. **CA-IV-11 et CA-IV-13 ne sont pas davantage satisfaites** — aucune relecture par un
+relecteur distinct du rédacteur. ⚠ **Et la pièce n'a pas été ré-adossée entrée par entrée au socle
+consolidé** : elle cite ses faits dans la série du Vol. III, la re-citation en `S-nnn` restant due.
+Cette pièce demeure un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce
+recevable : cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*

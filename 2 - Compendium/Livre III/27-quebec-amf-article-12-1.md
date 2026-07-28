@@ -7,11 +7,11 @@ directrice de l'AMF, et la question Q4 de la série d'agenda du Vol. II.*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — ⚠ **et il porte, avec le ch. 25, l'écart de gouvernance le plus lourd du Livre.** **G-3** ouverte ; **G-4** ouverte et **opposable à ce chapitre**, dont trois sections sur huit proviennent du Vol. III ; **volet résiduel de G-1** non instruit. ⚠ **Il est bloqué nommément par la décision d'auteur D-9** — « les ch. 25 et 27 ne se lancent pas avant clôture du lot [du § 17.5] », lot **ouvert et non clos**. Rédigé sur instruction d'auteur du 27 juillet 2026 ; **l'infraction est consignée, non effacée** (§ 27.9) |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit — et il pèse ici sur une date que trois documents du dépôt donnent différemment** (voir § 27.1). Gels de source consommés : **16-17 juillet 2026** (Vol. II ch. 11), **21 juillet 2026** (Vol. III ch. 19-20) et **juin 2026** (Vol. I, en renvoi seulement) — ⚠ **aucun ne tient lieu du gel de la somme** |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. II *Monographie* ch. 11** — **F-25** en **[A]** avec sa **dette de vérification déclarée**, **F-27** en **[B]** (texte officiel consulté), la **nuance de cabinet en [C]**, et l'entrée héritée **H-06** dont ⚠ **le décompte des obligations a été corrigé par le Vol. III** — et contre le **Vol. III *Monographie* ch. 19-20** : **F-89** en **[B]** (extraction du texte officiel, 21 juillet 2026), **F-67** et **F-68** en **[B]**, **H-07** en **[B]**, **H-11** en **[B]**. ⚠ **Deux séries F-xx coexistent et se préfixent à chaque emploi** (décision 7). **Aucun énoncé n'est central au sens de CA-IV-01** ; ⚠ **et la nuance de cabinet, en [C], ne porte aucun énoncé de ce chapitre** |
-| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **garde-fou renforcé « aucun avis juridique » (PRD Vol. II §3) : quatre occurrences de la formule**, § 27.0, § 27.3, § 27.8 et la synthèse ; *le renvoi « PRD Vol. II §3 » est écrit une fois, § 27.0* ; **réserve F-25 — ne jamais écrire « en attente » ni « en projet » : une occurrence, § 27.1, et c'est la formule qui l'interdit** — ⚠ *« en projet » n'apparaît nulle part, et **c'est le résultat attendu** : une réserve tenue se mesure à l'absence de ce qu'elle proscrit* ; **PRDPlan Vol. II §4.4 — l'art. 12.1 outille un point d'arrêt humain, jamais « la révision de l'article 12.1 » : deux occurrences du renvoi**, § 27.3 et § 27.8 ; **R-5 : une occurrence du sigle**, § 27.1 ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : zéro occurrence du sigle** ; ⚠ *le garde-fou est **appliqué aux § 27.0, § 27.1, § 27.3, § 27.4, § 27.5, § 27.6, § 27.7 et à la synthèse**, où les degrés se marquent en toutes lettres — « degré 3 » **seize fois**, « degré 1 » et « fait négatif vérifié » une fois chacun ; **le décompte du sigle n'est donc pas annoncé*** ; **R-06 (modalité) : une occurrence du sigle**, § 27.5 ; **R-09 : deux occurrences du sigle**, § 27.5 et § 27.6 ; **R-11 : une occurrence du sigle**, § 27.5 ; **R-04 (homonymie) : deux occurrences du sigle**, § 27.6 — ⚠ **et R-04 n'est PAS étendu au mot « mandat »** : ses branches sont closes chez sa source, qui a remonté la question plutôt que d'en ouvrir une septième ; **R-01 : une occurrence du sigle**, § 27.5 ; **R-02, R-03, R-05, R-07, R-08, R-10, R-12, R-13 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **7 500 mots** de corps (§ 27.0 à § 27.8), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant huit, dont **trois reçues d'une seconde source**. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh). ⚠ **D-4 interdit l'amputation comme le gonflement** |
+| **Statut** | **Brouillon de rédaction, non publiable** — ⚠ **et il porte, avec le ch. 25, l'écart de gouvernance le plus lourd du Livre.** ⚠ **G-3 a été franchie le 28 juillet 2026, soit APRÈS cette rédaction** : *une porte franchie ensuite ne rend pas recevable une pièce écrite avant elle* — la pièce se **relit** contre le socle consolidé, elle n'y a pas été écrite. **G-4** demeure ouverte et **opposable à ce chapitre**, dont **quatre sections sur huit** proviennent du Vol. III ; **le volet de faits du résidu de G-1 est levé**, ses deux autres volets restent dus. ⚠ **Il est bloqué nommément par la décision d'auteur D-9** — « les ch. 25 et 27 ne se lancent pas avant clôture du lot [du § 17.5] », lot **ouvert et non clos**. Rédigé sur instruction d'auteur du 27 juillet 2026 ; **l'infraction est consignée, non effacée** (§ 27.9) |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet de faits du résidu de G-1 a été instruit le 28 juillet 2026** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) — **et il n'a rien re-établi de ce chapitre** : les entrées qui portent la chronologie de l'AMF comme le texte de l'article 12.1 sont revenues **☐ non établie**, l'hôte refusant l'accès. ⚠ *Instruire n'est pas confirmer* : la tentative a eu lieu, le constat manque, et la datation reste celle de la source (voir § 27.1). Gels de source consommés : **16-17 juillet 2026** (Vol. II ch. 11), **21 juillet 2026** (Vol. III ch. 19-20) et **juin 2026** (Vol. I, en renvoi seulement) — ⚠ **aucun ne tient lieu du gel de la somme** |
+| **Socle mobilisé** | ☑ **Le socle consolidé existe depuis le 28 juillet 2026** ([`socle-consolide.md`](../PRD/socle-consolide.md), 159 entrées) : les énoncés de ce chapitre y résolvent contre **sept entrées**, chacune citée avec sa provenance d'origine (décision 7). **`S-023`** — chronologie de la ligne directrice IA de l'AMF, **`[A]` de portée générale, non marqué individuellement** (Vol. II `F-25` + Vol. III `H-05`, fondues) ; **`S-025`** — article 12.1, **`[B]`** marqué individuellement, ⚠ **réserve d'interprétation `[C]` incluse** (Vol. II `F-27` + Vol. III `H-06`, fondues, **corrigée par `S-135`**) ; **`S-135`** — relevé du texte officiel du 21 juillet 2026, **`[B]`** (Vol. III `F-89`) ; **`S-113`** — les dates de l'AMF, **`[B, degré 1]`** (Vol. III `F-67`) ; **`S-114`** — modalité, articulation et définition, **`[B]`** (Vol. III `F-68`) ; **`S-024`** — avis ACVM 11-348, **`[B]`** (Vol. II `F-26` + Vol. III `H-07`, fondues) ; **`S-034`** — manifeste APM, **`[B]`** (Vol. II `F-36` + Vol. III `H-11`, fondues). ⚠ **Six de ces sept entrées portent leur re-datation `☐ non établie`** — accès refusé par l'hôte —, seule `S-034` portant `☑ inchangée (partielle)`. ⚠ **Aucun énoncé n'est central au sens de CA-IV-01, et le motif a changé sans que la conclusion bouge** : ce n'est plus un socle vide, c'est **l'absence de vote adversarial** jointe à la borne que le franchissement de G-3 pose — *aucune entrée non re-vérifiée ne porte de fait central*. ⚠ **La réserve `[C]` de `S-025` — la nuance du cabinet Fasken — ne porte, elle non plus, aucun énoncé de ce chapitre.** *Les deux premiers registres du § 27.6 sont mobilisés **en renvoi seulement** : leurs entrées sont déclarées à leurs sièges, aux ch. 10, 17 et 19* |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **garde-fou renforcé « aucun avis juridique » (PRD Vol. II §3) : quatre occurrences de la formule**, § 27.0, § 27.3, § 27.8 et la synthèse ; *le renvoi « PRD Vol. II §3 » est écrit une fois, § 27.0* ; **réserve F-25 — ne jamais écrire « en attente » ni « en projet » : une occurrence de chacune, § 27.1, et toutes deux dans la formule qui les interdit** — ⚠ *hors cette formule, aucune des deux n'apparaît, et **c'est le résultat attendu** : une réserve tenue se mesure à l'absence de ce qu'elle proscrit* ; **PRDPlan Vol. II §4.4 — l'art. 12.1 outille un point d'arrêt humain, jamais « la révision de l'article 12.1 » : deux occurrences du renvoi**, § 27.3 et § 27.8 ; **R-5 : une occurrence du sigle**, § 27.1 ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : zéro occurrence du sigle** ; ⚠ *le garde-fou est **appliqué aux § 27.0, § 27.1, § 27.3, § 27.4, § 27.5, § 27.6, § 27.7 et à la synthèse**, où les degrés se marquent en toutes lettres — « degré 3 » **seize fois**, « degré 1 » et « fait négatif vérifié » une fois chacun ; **le décompte du sigle n'est donc pas annoncé*** ; **R-06 (modalité) : une occurrence du sigle**, § 27.5 ; **R-09 : deux occurrences du sigle**, § 27.5 et § 27.6 ; **R-11 : une occurrence du sigle**, § 27.5 ; **R-04 (homonymie) : deux occurrences du sigle**, § 27.6 — ⚠ **et R-04 n'est PAS étendu au mot « mandat »** : ses branches sont closes chez sa source, qui a remonté la question plutôt que d'en ouvrir une septième ; **R-01 : une occurrence du sigle**, § 27.5 ; **R-02, R-03, R-05, R-07, R-08, R-10, R-12, R-13 : zéro occurrence** |
+| **Volumétrie cible** | ≈ **7 500 mots** de corps (§ 27.0 à § 27.8), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant huit, dont **quatre reçues d'une seconde source**. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh). ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 27 — prolonge Q4 de la série d'agenda du Vol. II, *Monographie* ch. 21 §21.2, **sans la trancher** ; restriction rétablie en v0.27, décisions 8 et 14, sur la remontée R-IV-87)* — le Québec dispose du cadre le plus explicite ; l'art. 12.1 (révision humaine sur demande) entre en friction directe avec la décision agentique autonome, et — **sous l'article 12.1 du moins** — son imputabilité pèse sur l'assujetti, **qui ne peut désigner de tiers**.
 
@@ -69,8 +69,8 @@ décrirait comme un texte de consultation décrirait un état du monde périmé.
 s'applique dans l'autre sens avec la même force** : *ce qui n'est pas publié ne se décrit pas* — et le
 contenu de ce texte, précisément, n'est pas au socle du Vol. II.
 
-⚠ **Sa date de publication, en revanche, est l'objet d'une divergence que la somme expose plutôt
-qu'elle ne l'arbitre — et elle est à trois termes, non à deux.**
+⚠ **Sa date de publication, en revanche, n'est pas datable au jour près — et ce que le dépôt en porte
+est à trois termes, non à deux.**
 
 | Source | Date portée | Régime |
 |---|---|---|
@@ -78,16 +78,23 @@ qu'elle ne l'arbitre — et elle est à trois termes, non à deux.**
 | **Vol. I** (*Monographie* §5.3.7) | **7 avril 2026** | ⚠ entre dans la somme en **[C]** — repérage documentaire |
 | **Vol. III** (F-67, **[B, degré 1]**) | ⚠ **aucune date au jour près** — la page française estampille le document « **Avril 2026** », l'anglaise porte « **Updated on April 24, 2026** », qui est une date de **mise à jour de page** | extraction à la source primaire, 21 juillet 2026 |
 
-: Tableau 27.1 — Les trois positions du dépôt sur la date de publication de la ligne directrice IA de l'AMF. ⚠ **Le plan tranche en faveur du Vol. II** (Annexe C du TOC) ; *cet arbitrage est antérieur à l'extraction du Vol. III, et il n'est pas rouvert ici.*
+: Tableau 27.1 — Les trois positions du dépôt sur la date de publication de la ligne directrice IA de l'AMF. ⚠ **Le registre de l'Annexe C du TOC ne tranche plus en faveur d'aucune** : l'arbitrage antérieur en faveur du Vol. II a été **défait**, non confirmé, par l'extraction du Vol. III (remontée **R-IV-88**, soldée en v0.27).
 
 ⚠ **Ce que le Vol. III établit change la nature de la question, et le chapitre l'écrit plutôt que de le
 taire.** L'instruction du 21 juillet 2026 n'a tranché ni dans un sens ni dans l'autre — **et pour une
-raison inattendue : aucune des deux dates ne figure à la source primaire.** *Le chapitre écrit donc ce
-que la source porte : **un mois, non un jour**.* ⚠ **L'écart avec l'arbitrage du plan est signalé, non
-corrigé** (§ 27.9, remontée **R-IV-88**) : *un rédacteur ne corrige pas le registre des divergences ; il
-remonte.*
+raison inattendue : aucune des deux dates ne figure à la source primaire.** ⚠ ***Une divergence dont on
+découvre qu'aucun de ses termes n'est à la source n'est plus une divergence : c'est une absence de
+datation*** — et l'arbitrage qui la tranchait portait sur un objet inexistant. **La somme écrit donc ce
+que la source porte — *un mois, non un jour* : avril 2026 — et déclare les trois états ci-dessus.**
 
-**Ce qui est concordant suffit à ce que le chapitre établit** : ⚠ **l'entrée en vigueur au 1ᵉʳ mai 2027
+⚠ **Le résidu du gel unique n'a pas rouvert cette datation, et l'écrire fait partie du régime.** Le
+volet de faits instruit le 28 juillet 2026 a reporté ces entrées à leur source ; **l'hôte a refusé
+l'accès sur les quatre adresses de son domaine**, et elles en reviennent **☐ non établie**. *La barrière
+que le Vol. II avait rencontrée le 17 juillet 2026 s'est reproduite onze jours plus tard, ce qui la
+qualifie de durable* — **et une entrée non re-datée n'est ni infirmée ni confirmée : elle est dans
+l'état où sa source l'a laissée.**
+
+**Ce qui concorde suffit à ce que le chapitre établit** : ⚠ **l'entrée en vigueur au 1ᵉʳ mai 2027
 ne dépend d'aucune des trois positions.** *C'est le seul fait que ce chapitre fait porter à la
 chronologie.*
 
@@ -120,9 +127,9 @@ réglementaire.*
 Sa passe du 21 juillet 2026 a établi **la modalité** des attentes — l'Autorité formule sur le mode
 « L'Autorité s'attend à ce que… » —, leur **articulation** — elles s'appliquent **en sus** de celles
 d'une autre ligne directrice de la même autorité, sur la gestion du risque de modèle — et la
-**définition** du système d'intelligence artificielle qu'elle retient, reprise d'une définition
-internationale de 2024 incluant des « degrés variables d'autonomie et d'adaptabilité après
-déploiement » (Vol. III F-68, **[B]**). ⚠ **Elle n'a pas pu extraire le document qui porte le détail
+**définition** du système d'intelligence artificielle qu'elle retient, **reprise de celle de l'OCDE
+(2024)**, incluant des « degrés variables d'autonomie et d'adaptabilité après déploiement » (Vol. III
+F-68, **[B]**). ⚠ **Elle n'a pas pu extraire le document qui porte le détail
 numéroté des attentes** : accès direct refusé, puis réponse du serveur en téléchargement de fichier
 plutôt qu'en page consultable. *La lacune a changé de nature sans se refermer : elle n'est plus « aucun
 accès au texte » mais « accès au sommaire des attentes, non à leur détail ».* **La question reste
@@ -134,14 +141,15 @@ institution assujettie en lit deux, dont l'une n'est au socle d'aucun des trois 
 ## § 27.2 — L'article 12.1 : une obligation inconditionnelle, trois informations dues sur demande, un alinéa distinct
 
 **L'autre instrument québécois n'appelle aucune réserve de ce genre : son texte officiel a été consulté
-directement — deux fois, à un an d'intervalle — et il est en vigueur.**
+directement — deux fois en juillet 2026, le 16 par le Vol. II et le 21 par le Vol. III — et il est en
+vigueur.**
 
 L'article 12.1 de la *Loi sur la protection des renseignements personnels dans le secteur privé* est
 **en vigueur depuis le 22 septembre 2023**, introduit par la Loi 25 (Vol. II F-27, **[B]** ; Vol. III
-F-89, **[B]**). Il précède de près de trois ans le gel de la somme, et de plus de trois ans et demi
-l'entrée en vigueur des deux lignes directrices du § 27.1. ⚠ **Il ne s'agit pas d'un texte à venir :
-c'est le droit applicable**, et il l'était déjà lorsque les premiers déploiements agentiques canadiens
-documentés au **ch. 35** ont été annoncés.
+F-89, **[B]**). Il précède de près de trois ans le gel de la somme, et de plus de trois ans et demi le
+1ᵉʳ mai 2027, jour où entrent en vigueur la ligne directrice de l'AMF comme E-23. ⚠ **Il ne s'agit pas
+d'un texte à venir : c'est le droit applicable**, et il l'était déjà lorsque les premiers déploiements
+agentiques canadiens documentés au **ch. 35** ont été annoncés.
 
 **Son déclencheur est une formule précise, qu'il faut citer plutôt que paraphraser** : l'article
 s'applique à toute personne qui exploite une entreprise et qui utilise des renseignements personnels
@@ -161,11 +169,11 @@ traitement : il doit porter sur des **renseignements personnels**. La seconde ti
 l'humain : la décision doit être fondée **exclusivement** sur le traitement automatisé.
 
 ⚠ **Le décompte des obligations a été corrigé au socle, et la correction n'est pas de forme.** L'entrée
-héritée du Vol. II énumère **trois obligations** en y rangeant l'occasion de présenter des observations,
-et **omet le droit de faire rectifier**. Le relevé du Vol. III, conduit sur le texte officiel le
-21 juillet 2026, compte **une obligation inconditionnelle, trois informations dues sur demande — dont
-la rectification —, plus un alinéa distinct** portant l'occasion de présenter des observations (Vol. III
-F-89, **[B]**).
+**H-06** du Vol. III — dont l'origine est **F-27** du Vol. II — énumère **trois obligations** en y
+rangeant l'occasion de présenter des observations, et **omet le droit de faire rectifier**. Le relevé
+du Vol. III, conduit sur le texte officiel le 21 juillet 2026, compte **une obligation
+inconditionnelle, trois informations dues sur demande — dont la rectification —, plus un alinéa
+distinct** portant l'occasion de présenter des observations (Vol. III F-89, **[B]**).
 
 ⚠ **La conséquence est concrète, et elle vaut d'être écrite** : *une institution qui bâtirait sa
 procédure de réponse sur la liste héritée informerait la personne concernée des renseignements
@@ -175,10 +183,10 @@ rouvrirait pas le texte.*
 
 | Régime | Contenu | Déclenchement |
 |---|---|---|
-| **Obligation inconditionnelle** | informer la personne qu'une telle décision a été rendue, **au plus tard au moment** où elle en est informée | **aucune demande requise** — l'information accompagne la décision |
+| **Obligation inconditionnelle** | informer la personne qu'une telle décision a été rendue, **au plus tard au moment de la décision** | **aucune demande requise** — l'information accompagne la décision |
 | **Sur demande, 1°** | les **renseignements personnels utilisés** pour rendre la décision | à la demande de la personne |
 | **Sur demande, 2°** | « **des raisons, ainsi que des principaux facteurs et paramètres, ayant mené à la décision** » | idem |
-| **Sur demande, 3°** | ⚠ **le droit de faire rectifier** les renseignements utilisés — *omis par l'entrée héritée du Vol. II* | idem |
+| **Sur demande, 3°** | ⚠ **le droit de faire rectifier** les renseignements utilisés — *omis par l'entrée héritée **H-06** du Vol. III* | idem |
 | **Alinéa distinct** | « l'occasion de présenter ses observations à **un membre du personnel de l'entreprise en mesure de réviser la décision** » | ⚠ **hors de l'énumération** — c'est le seul alinéa que le socle individualise |
 
 : Tableau 27.2 — L'articulation de l'article 12.1, telle que le relevé du 21 juillet 2026 l'établit sur le texte officiel. ⚠ **L'intitulé de la section portait le décompte hérité — « trois obligations, un texte »** ; l'écart a été remonté (§ 27.9, remontée **R-IV-89**), le TOC v0.27 a corrigé le titre du plan, et **l'intitulé ci-dessus reprend cette forme depuis la passe de correction du 28 juillet 2026**.
@@ -208,18 +216,21 @@ en ce sens seulement, que la thèse parle du cadre « le plus explicite ».**
 L'article ne s'applique qu'aux décisions fondées **exclusivement** sur un traitement automatisé. **Le
 texte ne définit pas ce que l'exclusivité exclut**, et c'est là que l'architecture rejoint le droit.
 
-Selon l'analyse d'un cabinet, **une intervention humaine significative *avant* la décision écarterait
-l'application de l'article** — nuance qui serait déterminante pour qualifier les systèmes agentiques
-comportant un humain-dans-la-boucle (*human-in-the-loop*).
+Selon l'analyse du **cabinet Fasken**, **une intervention humaine significative *avant* la décision
+écarterait l'application de l'article** — nuance qui serait déterminante pour qualifier les systèmes
+agentiques comportant un humain-dans-la-boucle (*human-in-the-loop*).
 
 ⚠ **Cette lecture doit être maniée avec la plus grande prudence, et le socle impose sa propre
 réserve : il s'agit d'une interprétation de cabinet, retenue au niveau [C]** — un repérage documentaire
-à confirmer, **qui ne peut porter aucun fait central** (CA-IV-01). *Une institution qui fonderait son
-architecture de décision sur cette seule nuance ferait reposer un choix structurant sur une
-interprétation doctrinale non confirmée.* ⚠ **Et le Vol. III a instruit le point sans le trancher** :
-sa passe du 21 juillet 2026 a ouvert deux pages du régulateur québécois, dont l'une **restitue la loi
-sans l'interpréter** ; **la nuance de cabinet n'y est portée par aucune** (F-89). *Elle demeure non
-confrontée à une position de l'autorité qui applique la loi.*
+à confirmer, **qui ne peut porter aucun fait central** (CA-IV-01). ⚠ **Et l'attribution ne s'abrège
+pas** : *une nuance qui vient d'un cabinet nommé se cite avec son nom, sous peine de circuler comme un
+état du droit* (décision 15 du TOC). *Une institution qui fonderait son architecture de décision sur
+cette seule nuance ferait reposer un choix structurant sur une interprétation doctrinale non
+confirmée.* ⚠ **Et le Vol. III a instruit le point sans le trancher** : sa passe du 21 juillet 2026 a
+ouvert **deux pages de la Commission d'accès à l'information**, dont l'une **restitue la loi sans
+l'interpréter** ; **la nuance Fasken n'y est portée par aucune** (Vol. III F-89) — *constat borné à ces
+deux pages, non au corpus de la Commission*. *Elle demeure non confrontée à une position de l'autorité
+qui applique la loi.*
 
 ⚠ **Il faut au passage écarter une confusion terminologique dont la somme fait un point de
 vocabulaire : l'humain-dans-la-boucle et la révision humaine de l'article 12.1 ne sont pas la même
@@ -246,11 +257,11 @@ c'est le motif exact pour lequel D-9 bloque ce chapitre.* **Le blocage est enfre
 
 ⚠ **Trois questions restent ouvertes à la date de gel, et la somme se refuse à les combler.**
 *Première* : que dit, article par article, la version finale de la ligne directrice de l'AMF ? — voir
-§ 27.1. *Deuxième* : comment le régulateur québécois interprète-t-il l'article 12.1 appliqué aux
-systèmes multi-agents ? ⚠ **Le socle ne documente aucune position sur ce point : absence de
-documentation dans le corpus, degré 3, non un fait négatif vérifié** — *la recherche n'a balayé ni le
-répertoire des décisions ni le rapport annuel, et un résultat vide n'éprouve qu'une chaîne, jamais
-l'objet.* *Troisième* : le régime de l'article 12.1 atteint-il les institutions sous charte fédérale,
+§ 27.1. *Deuxième* : comment la **Commission d'accès à l'information** interprète-t-elle l'article 12.1
+appliqué aux systèmes multi-agents ? ⚠ **Le socle ne documente aucune position sur ce point : absence
+de documentation dans le corpus, degré 3, non un fait négatif vérifié** — *la recherche n'a balayé ni
+le répertoire de ses décisions ni son rapport annuel, et un résultat vide n'éprouve qu'une chaîne,
+jamais l'objet.* *Troisième* : le régime de l'article 12.1 atteint-il les institutions sous charte fédérale,
 celles qu'E-23 vise au ch. 25 ? ⚠ **Le socle porte le déclencheur — « toute personne qui exploite une
 entreprise » — et rien sur la portée du régime à leur égard.** *La question n'est pas théorique : elle
 décide si les deux régimes de ce mouvement se cumulent sur une même chaîne de décision ou s'appliquent
@@ -277,21 +288,24 @@ humaine** — la configuration que le § 27.3 nomme. *Absence de documentation, 
 
 **Le Vol. II a formulé la question et l'a laissée ouverte.** Elle porte, à son ch. 21 §21.2,
 l'étiquette **Q4** : « L'article 12.1 s'applique-t-il à une décision prise par un système multi-agents
-avec humain-dans-la-boucle ? » — et le même chapitre nomme ce qui la trancherait : **une position du
-régulateur québécois ou une décision judiciaire**, le socle ne portant qu'une nuance d'analyse de
-cabinet. ⚠ **Le renvoi nomme son chapitre, et il le doit** : le ch. 16 §16.3 du même volume porte un jeu
-**Q1 à Q5 entièrement distinct**, sans recouvrement — *deux séries « Q n » coexistent au Vol. II, et la
-décision 7 du TOC impose de nommer la série à chaque renvoi.* **La série AP2/RTR est au ch. 36 § 36.4 ;
+avec humain-dans-la-boucle ? » — et le même chapitre nomme ce qui la trancherait : **une position de la
+Commission d'accès à l'information ou une décision judiciaire**, le socle ne portant qu'une nuance
+d'analyse de cabinet. ⚠ **Le renvoi nomme son chapitre, et il le doit** : le ch. 16 §16.3 du Vol. II
+porte un jeu **Q1 à Q5 entièrement distinct**, sans recouvrement — *deux séries « Q n » coexistent au
+Vol. II, et la décision 7 du TOC impose de nommer la série à chaque renvoi.* **La série AP2/RTR est au ch. 36 § 36.4 ;
 celle-ci est la série d'agenda.**
 
 ⚠ **Une lecture qui circule a été écartée par l'instruction, et la mise à l'écart est consignée plutôt
 que jugée.** Le rapport du lot du Vol. III déclare avoir écarté une page portant que « une intervention
-humaine significative écarterait l'application », **parce qu'elle est publiée par une administration qui
-s'adresse aux organismes publics — elle relève donc de la loi du secteur public, non de celle du
-secteur privé — et parce qu'elle n'est pas attribuée au régulateur compétent**. *La mise à l'écart est
-reprise ici comme telle, et non comme un jugement sur le fond de la lecture.*
+humaine significative écarterait l'application », **parce qu'elle est publiée par le Secrétariat du
+Conseil du trésor et s'adresse aux organismes publics — elle relève donc de la loi du secteur public,
+non de celle du secteur privé — et parce qu'elle n'est pas attribuée à la Commission d'accès à
+l'information**. ⚠ *L'émetteur se nomme : c'est le motif même de la mise à l'écart, et l'anonymiser la
+rendrait invérifiable.* *Elle est reprise ici comme telle, et non comme un jugement sur le fond de la
+lecture.*
 
-**Un deuxième texte canadien entre ici, et il vient d'un autre régulateur.** L'avis 11-348 pose que les
+**Un deuxième texte canadien entre ici, et il vient d'un autre régulateur.** L'avis **11-348 des
+Autorités canadiennes en valeurs mobilières (ACVM)**, du 5 décembre 2024, pose que les
 lois **sur les valeurs mobilières** existantes s'appliquent aux systèmes d'IA — *les indications qu'il
 donne ne créent ni ne modifient aucune exigence, formule reprise **dans la substance**, l'instrument
 étant en anglais* — et retient une définition incluant des **niveaux variables d'autonomie et
@@ -300,8 +314,8 @@ présent chapitre ne s'y avance pas.
 
 Lecture de l'auteur — **ce que le socle établit** : que **deux textes canadiens de régulateurs
 distincts** retiennent, pour définir un système d'intelligence artificielle, une clause portant sur
-**l'autonomie après déploiement**, et que la ligne directrice de l'AMF tient sa définition d'une
-définition internationale. **Ce qu'il n'établit pas** : que la définition de l'avis 11-348 ait la même
+**l'autonomie après déploiement**, et que la ligne directrice de l'AMF tient la sienne de **celle de
+l'OCDE (2024)**. **Ce qu'il n'établit pas** : que la définition de l'avis 11-348 ait la même
 provenance, ni que les deux formulations soient comparables **au mot** — *le socle porte la clause de
 l'avis en français alors que le texte est en anglais, et le Vol. II déclare expressément ne pas
 présenter ce rendu comme une citation verbatim.* ⚠ **Le rapprochement porte donc sur la substance des
@@ -348,8 +362,8 @@ est le §19.1 de sa source).
 
 **Ce que le socle porte de ce texte, il le porte à trois titres et à trois seulement** : une
 **modalité**, une **articulation** avec un second texte, et une **définition** — celle du système
-d'intelligence artificielle, reprise d'une définition internationale de 2024 incluant des « degrés
-variables d'autonomie et d'adaptabilité après déploiement ».
+d'intelligence artificielle, **reprise de celle de l'OCDE (2024)**, incluant des « degrés variables
+d'autonomie et d'adaptabilité après déploiement ».
 
 | Question *(ch. 14 § 14.1)* | Ce que la ligne directrice de l'AMF suppose que l'institution puisse établir |
 |---|---|
@@ -362,18 +376,19 @@ variables d'autonomie et d'adaptabilité après déploiement ».
 : Tableau 27.3 — Lecture **inversée** de la grille des cinq questions sur la ligne directrice de l'AMF, au 21 juillet 2026. ⚠ **Cinq cases vides sur cinq, toutes au degré 3** — *et aucun verdict de la grille n'est rendu.*
 
 ⚠ **Le tableau dit une asymétrie qu'il faut nommer plutôt que lisser.** Du côté d'E-23, le socle porte
-une **attente de contenu** — un inventaire, un cycle de vie, une cotation — et **deux des cinq questions
-y trouvent un appui, dont un seul est net** (ch. 25 § 25.4). Du côté de l'AMF, il porte **une modalité,
-une articulation et une définition, et rien de plus** : *le contenu article par article vit dans un
-document que l'instruction n'a pas pu extraire.*
+une **attente de contenu** — un inventaire, un cycle de vie, une cotation — et **trois des cinq
+questions y trouvent un appui, dont un seul est net** (ch. 25 § 25.4). Du côté de l'AMF, il porte **une
+modalité, une articulation et une définition, et rien de plus** : *le contenu article par article vit
+dans un document que l'instruction n'a pas pu extraire.*
 
 ⚠ ***Une case au degré 3 ne dit pas que le cadre est muet ; elle dit que ce corpus-ci l'est.*** **C'est
 la cinquième règle d'emploi de la grille** (ch. 14 § 14.1), et elle est ici appliquée cinq fois de
 suite.
 
 ⚠ **Et le régime prospectif se dit au bon niveau.** L'entrée en vigueur au 1ᵉʳ mai 2027 est une
-**échéance datée**, donc **PROGRAMMÉE** au tri prospectif — ⚠ *à ne pas confondre avec un jalon **visé***
-(R-11 du Vol. III), dont le **ch. 21 § 21.1** est le siège. ⚠ **Et le statut normatif se dit à chaque
+**échéance datée**, donc **PROGRAMMÉE** au tri prospectif — *dont le **ch. 49 § 49.0** est le siège,
+appliqué ici et jamais re-dérivé*. ⚠ *À ne pas confondre avec un jalon **visé*** (R-11 du Vol. III),
+dont le **ch. 21 § 21.1** est le siège. ⚠ **Et le statut normatif se dit à chaque
 mention** (R-09 du Vol. III) : *une ligne directrice sectorielle finale n'est ni une norme technique
 ratifiée, ni un standard.*
 
@@ -425,9 +440,10 @@ Lecture de l'auteur — **ce que le socle établit** : ce que portent les deux p
 mandats sérialisés et datés, un attribut qui exprime qu'une délégation a eu lieu et nomme la partie
 agissante dans une spécification qui **décline expressément** la sécurité du jeton qui le transporte, et
 deux énoncés de référentiel qui rangent l'écart de portée parmi les objets de sécurité. **Ce qu'il
-n'établit rien du troisième** : ni la définition civiliste, ni ses conditions de formation, ni son
-régime de responsabilité, ni aucune source qui les rapproche d'un mandat protocolaire. ⚠ **La
-proposition retenue est donc minimale et falsifiable** : *le vocabulaire technique de la délégation
+n'établit pas** : rien du troisième — ni la définition civiliste, ni ses conditions de formation, ni
+son régime de responsabilité, ni aucune source qui rapproche l'un de ces trois d'un mandat
+protocolaire. ⚠ **La proposition retenue est donc minimale et falsifiable** : *le vocabulaire
+technique de la délégation
 agentique **emprunte** ses termes — mandant, mandataire, mandat — à une institution juridique dont la
 somme ne documente pas le contenu, et **cet emprunt n'importe aucune de ses propriétés**.* Un lecteur
 peut refuser cette lecture **sans qu'aucun des faits ci-dessus tombe**.
@@ -454,9 +470,9 @@ retenue.**
 
 | Lecture | Source et attribution | Niveau | Ce qui la trancherait |
 |---|---|---|---|
-| **A.** L'intervention humaine significative *avant* la décision écarte l'application | analyse de cabinet, portée en réserve d'une entrée héritée ; ⚠ **non confrontée à une position du régulateur québécois** — *degré 3* | **[C]** — repérage ; ⚠ **ne porte aucun fait central** (CA-IV-01) | une position du régulateur ou une décision judiciaire |
+| **A.** L'intervention humaine significative *avant* la décision écarte l'application | analyse du **cabinet Fasken**, portée en réserve d'une entrée héritée ; ⚠ **non confrontée à une position de la Commission d'accès à l'information** — *degré 3, borné aux deux pages consultées* | **[C]** — repérage ; ⚠ **ne porte aucun fait central** (CA-IV-01) | une position de la Commission ou une décision judiciaire |
 | **B.** La lettre conditionne le régime au caractère exclusif du traitement, et **ne qualifie pas** une suite de traitements enchaînés | texte officiel, extrait le 21 juillet 2026 (Vol. III F-89) | **[B]** — extraction citée d'une source primaire | idem ; ⚠ **le texte lui-même ne va pas plus loin** |
-| **C.** Les lois **sur les valeurs mobilières** existantes s'appliquent aux systèmes d'IA, et l'avis déclare ne créer ni modifier aucune exigence | avis 11-348, 5 décembre 2024 (Vol. III H-07) | **[B]** — ⚠ **le socle n'établit pas qu'il porte sur l'article 12.1** | un avis d'un régulateur compétent sur la loi québécoise ; ⚠ **le socle n'en documente pas — degré 3** |
+| **C.** Les lois **sur les valeurs mobilières** existantes s'appliquent aux systèmes d'IA, et l'avis déclare ne créer ni modifier aucune exigence | avis **ACVM** 11-348, 5 décembre 2024 (Vol. III H-07) | **[B]** — ⚠ **le socle n'établit pas qu'il porte sur l'article 12.1** | un avis de la Commission d'accès à l'information sur la loi québécoise ; ⚠ **le socle n'en documente pas — degré 3** |
 | **D.** La validation humaine ne vaut que si elle s'inscrit dans la chaîne de mandat comme **un acte daté et signé** | thèse du Vol. II — le point d'arrêt humain ; ⚠ **construction d'auteur, à attribuer, jamais un fait** ; l'exigence probatoire qui s'y ajoute est une construction du Vol. III, **siège au ch. 17** | ⚠ **hors niveaux** — thèse attribuée, non entrée factuelle | ⚠ **non tranchable par le droit** : c'est une proposition d'architecture, pas une lecture du texte |
 
 : Tableau 27.4 — Cartographie des lectures sur l'application de l'article 12.1 à une chaîne d'agents, au 21 juillet 2026. ⚠ **Aucune n'est retenue contre les autres, et aucun verdict n'est rendu.**
@@ -521,12 +537,13 @@ sémantique d'effet que cette contrainte appelle — idempotence, compensation, 
 ch. 48**, qui en est le siège.
 
 ⚠ **Le flux d'un système agentique outille donc un point d'arrêt humain ; il n'outille jamais « la
-révision de l'article 12.1 »** (PRDPlan Vol. II §4.4). *Les deux contraintes sont distinctes, et le
+révision de l'article 12.1 »** (PRDPlan Vol. II §4.4). *Les deux notions sont distinctes, et le
 § 27.3 dit pourquoi.*
 
 **C'est ici que la friction annoncée par la thèse prend sa forme précise.** *La décision agentique
 autonome a pour intérêt économique de rendre une décision sans humain ; l'article 12.1 attache
-précisément à cette absence d'humain un triple régime d'obligations.*
+précisément à cette absence d'humain les trois régimes d'obligations du § 27.2 — l'inconditionnel, ce
+qui est dû sur demande, et l'alinéa distinct.*
 
 Lecture de l'auteur — **ce que le socle fournit** : le fait générateur — l'exclusivité du traitement
 automatisé — et l'objectif économique de l'agentique. **Ce qu'il ne qualifie pas** : la friction.
@@ -534,7 +551,8 @@ automatisé — et l'objectif économique de l'agentique. **Ce qu'il ne qualifie
 est exactement la propriété que l'on cherche à obtenir.* **Deux voies s'ouvrent en conséquence, et le
 socle n'en valide aucune** : *soit l'entreprise réintroduit une intervention humaine de nature à écarter
 le critère d'exclusivité — voie qui repose sur une interprétation au niveau **[C]**, non confrontée à
-une position du régulateur, et dont le **ch. 17 § 17.5** montre qu'on ne sait rien de son efficacité
+une position de la Commission d'accès à l'information, et dont le **ch. 17 § 17.5** montre qu'on ne
+sait rien de son efficacité
 empirique ; soit elle **assume le déclenchement** de l'article et outille les obligations.* **La seconde
 voie a ceci de recommandable qu'elle ne dépend d'aucune interprétation contestable ; elle a ceci de
 coûteux qu'elle impose la traçabilité, le synchronisme et la réversibilité à l'ensemble de la chaîne.**
@@ -558,7 +576,7 @@ pas** : que le droit canadien **résolve** l'écart de responsabilité — *ce q
 l'indétermination de l'**allocation** de l'imputabilité entre quatre porteurs, question que ces textes
 ne traitent pas et que la somme n'a ni la vocation ni la compétence de trancher.*
 
-⚠ **Et une réserve close le point** : *cette lecture explique pourquoi l'encadrement est **nécessaire**,
+⚠ **Et une réserve clôt le point** : *cette lecture explique pourquoi l'encadrement est **nécessaire**,
 non qu'il soit **suffisant**. Rien, au socle, ne dit qu'un cadre correctement posé libère l'assujetti
 de quoi que ce soit, ni que la démonstrabilité d'un cadre vaille preuve de conformité.* **La question
 est juridique, et reste ouverte** — le **ch. 29 § 29.3** la reprend et ne la referme pas davantage.
@@ -586,10 +604,10 @@ est juridique, et reste ouverte** — le **ch. 29 § 29.3** la reprend et ne la 
 
 ⚠ **Ce que le chapitre ne lègue pas.** Il ne lègue **rien du contenu de la ligne directrice de l'AMF** :
 *le socle n'en porte que le calendrier, la modalité, l'articulation et la définition* — et la lacune est
-**exposée, non comblée**. Il ne lègue **aucune position du régulateur québécois** sur l'article 12.1. Il
-ne lègue **aucune définition civiliste du mandat**. Il ne lègue **aucune date de publication au jour
-près** pour la ligne directrice — *trois documents du dépôt en donnent trois états, et l'extraction la
-plus récente n'en trouve aucun à la source.* Et il **n'émet aucun avis juridique.**
+**exposée, non comblée**. Il ne lègue **aucune position de la Commission d'accès à l'information** sur
+l'article 12.1. Il ne lègue **aucune définition civiliste du mandat**. Il ne lègue **aucune date de
+publication au jour près** pour la ligne directrice — *trois documents du dépôt en donnent trois états,
+et l'extraction la plus récente n'en trouve aucun à la source.* Et il **n'émet aucun avis juridique.**
 
 ---
 
@@ -613,19 +631,30 @@ TOC, ce PRD ni le Conspectus — il **remonte**.*
    publiable**. *Le volet structurel de G-4 est levé ; le volet de fond reste entier*, et **le relevé des
    quinze remontées ouvertes du Vol. III n'a pas été refait pour le périmètre du Livre III** (remontée
    R-IV-85, ouverte au ch. 25).
-3. **La porte G-3 n'est pas entamée** : socle consolidé à zéro entrée, **aucun énoncé central au sens de
-   CA-IV-01**. ⚠ **Et la conséquence mord ici sur un point précis** : *la nuance de cabinet du § 27.3 est
-   en **[C]** et ne porte donc aucun énoncé de ce chapitre* — elle y figure au titre de ce qu'elle est.
-4. **Le volet résiduel de G-1 n'est pas instruit**, et il pèse sur **trois objets** : la date de
-   publication de la ligne directrice (§ 27.1), l'état des positions du régulateur québécois (§ 27.3),
-   et le statut de la spécification de paiement citée au § 27.6.
+3. ⚠ **La porte G-3 était ouverte à la rédaction ; elle a été franchie le 28 juillet 2026, et cela ne
+   rétablit pas la pièce.** *Une pièce écrite sur un socle absent n'est pas validée par le socle qui
+   naît après elle* : elle a été **relue** contre lui, à la passe du 28 juillet 2026, et ses énoncés y
+   résolvent contre sept entrées (voir l'en-tête). ⚠ **Aucun énoncé n'est central au sens de CA-IV-01**,
+   pour deux motifs distincts : **aucun vote adversarial n'a été conduit** sur les entrées mobilisées,
+   et **six d'entre elles portent leur re-datation `☐ non établie`**, la borne posée au franchissement
+   interdisant qu'une composante non re-vérifiée porte un fait central. ⚠ **Et la conséquence mord ici
+   sur un point précis** : *la nuance du cabinet Fasken au § 27.3 est en **[C]** et ne porte donc aucun
+   énoncé de ce chapitre* — elle y figure au titre de ce qu'elle est.
+4. ⚠ **Le volet de faits du résidu de G-1 a été instruit le 28 juillet 2026, et il n'a rien re-établi
+   ici.** Les **trois objets** sur lesquels il pesait restent en l'état : la date de publication de la
+   ligne directrice (§ 27.1) — **accès refusé par l'hôte sur les quatre adresses de son domaine** —,
+   l'état des positions de la Commission d'accès à l'information (§ 27.3), et le statut de la
+   spécification de paiement citée au § 27.6. *La tentative a eu lieu ; le constat manque.* **Les deux
+   autres volets du résidu restent dus.**
 5. **Les décomptes sont publiables** (G-2). L'écart à la cible est relevé au [`README.md`](README.md) du
    dossier et alimente **D-4**, déjà tranchée.
-6. **Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan.** Ils résolvent
-   contre l'entrée du TOC : **ch. 28, 29, 30, 35** (présent Livre, même passe), **ch. 48** et **ch. 49**
-   (Livre V). Résolvent contre du **texte rédigé** : **ch. 10**, **ch. 14 § 14.1**, **ch. 16**, **ch. 17
-   § 17.3 et § 17.5**, **ch. 19**, **ch. 21 § 21.1**, **ch. 22 § 22.9 et § 22.10**, **ch. 25** et
-   **ch. 26**.
+6. ⚠ **Les renvois « ch. N » ne sont plus des renvois de plan, et c'est le seul point que le temps a
+   amélioré.** Les cinquante chapitres existent en brouillon depuis le 27 juillet 2026 : **ch. 10**,
+   **ch. 14 § 14.1**, **ch. 16**, **ch. 17 § 17.3 et § 17.5**, **ch. 19**, **ch. 21 § 21.1**, **ch. 22
+   § 22.9 et § 22.10**, **ch. 25**, **ch. 26**, **ch. 28**, **ch. 29 § 29.1 et § 29.3**, **ch. 30**,
+   **ch. 35**, **ch. 36 § 36.4**, **ch. 48** et **ch. 49** résolvent tous contre du **texte rédigé**, et
+   ont été re-vérifiés comme tels le 28 juillet 2026. ⚠ *Résoudre contre un texte rédigé n'est pas
+   résoudre contre un texte recevable* : aucune des pièces citées n'est publiable.
 
 **Remontées ouvertes par ce chapitre :**
 
@@ -661,8 +690,9 @@ TOC, ce PRD ni le Conspectus — il **remonte**.*
   celui-ci vit dans un intitulé de section**, où aucun contrôle ne le rapproche de sa source. *La pièce
   écrit l'articulation corrigée et cite l'intitulé du plan tel quel.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 27.1 à § 27.8,
-dans l'ordre exact —, le § 27.0 étant une **ouverture de chapitre**. La **table de couverture est
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC** — § 27.1 à § 27.8, dans
+l'ordre exact —, le § 27.0 étant une **ouverture de chapitre** ; *l'intitulé du § 27.2 est aligné sur la
+correction v0.27, reportée ici le 28 juillet 2026*. La **table de couverture est
 respectée pour ses trois lignes**, et ⚠ **le partage du §19.1 du Vol. III est tenu des deux côtés** :
 *ce chapitre porte la moitié AMF et en est le siège ; la moitié E-23 est au ch. 25 § 25.4, et aucune des
 deux ne déborde sur l'autre.* ⚠ **Le ch. 20 du Vol. III est reçu en entier**, comme la correction v0.17
@@ -677,8 +707,13 @@ corps ; les degrés le sont, « degré 3 » **seize fois**, ventilés à l'en-t�
 vides du tableau 27.3, déclarées degré 3 une par une**. ⚠ **Ces cardinaux ont été re-mesurés au commit
 du 28 juillet 2026** (décision 16 du TOC) ; *l'attestation antérieure annonçait sept occurrences du
 garde-fou renforcé, quatre de la formulation imposée et quatorze de R-14, aucun des trois n'étant
-re-mesurable contre le corps.* ⚠ **La nuance de cabinet, en [C], ne porte aucun énoncé** : elle figure comme
-lecture attribuée, au tableau 27.4, avec ce qui la trancherait. ⚠ **R-04 n'est pas étendu au mot
+re-mesurable contre le corps.* ⚠ **La nuance du cabinet Fasken, en [C], ne porte aucun énoncé** : elle
+figure comme lecture attribuée, au tableau 27.4, avec ce qui la trancherait. ⚠ **Les attributions que la
+pièce avait anonymisées sont rétablies** (décision 15 du TOC, passe du 28 juillet 2026) : *le cabinet
+Fasken, la Commission d'accès à l'information, le Secrétariat du Conseil du trésor — émetteur de la page
+écartée, et motif même de sa mise à l'écart —, les ACVM et l'OCDE.* ⚠ *La mise à l'écart de cette page
+avait été corrigée chez la source par sa propre relecture adversariale ; la somme l'avait ré-anonymisée
+en la reprenant.* ⚠ **R-04 n'est pas étendu au mot
 « mandat »** : les trois registres sont nommés à chaque occurrence, **sans qu'une septième branche soit
 ouverte**. Enfin, **Q4 n'est pas tranchée** — *elle ressort du chapitre dans l'état où elle y est
 entrée*, et **la forme « cartographie sans verdict » est reconduite** comme le plan l'exige.
@@ -720,9 +755,10 @@ découverte de la collision — **aucun numéro n'est partagé**.*
   corrigée** — et **il vivait dans un intitulé de section, où aucun contrôle ne le rapproche de sa
   source**.*
 
-⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et — pour les chapitres qui citent le
-Vol. III — **G-4** demeurent ouvertes ; le socle consolidé compte **zéro entrée** ; **aucun énoncé de
-cette pièce n'est central au sens de CA-IV-01**. **CA-IV-11 et CA-IV-13 ne sont pas satisfaites** —
-*aucune relecture par un relecteur distinct du rédacteur*. Cette pièce reste un **brouillon non
-publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune
-question n'attend plus de réponse qui ne soit déjà tranchée.*
+⚠ **Ce que la clôture ne change pas — état re-vérifié le 28 juillet 2026.** **G-3 est franchie**, et le
+socle consolidé porte **159 entrées** ; **G-4 demeure ouverte** et reste opposable à ce chapitre, qui
+tient quatre de ses huit sections du Vol. III. ⚠ **Aucun énoncé de cette pièce n'est central au sens de
+CA-IV-01** — *aucun vote adversarial, et six des sept entrées mobilisées non re-datées.* **CA-IV-11 et
+CA-IV-13 ne sont pas satisfaites** — *aucune relecture par un relecteur distinct du rédacteur*. Cette
+pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
+cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*

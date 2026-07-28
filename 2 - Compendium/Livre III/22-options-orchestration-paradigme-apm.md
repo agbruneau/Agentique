@@ -7,17 +7,17 @@ Fusion et deux tables de couverture, conservées intégralement (décision 11a d
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée, Annexe B inexistante) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte** : *un chapitre écrit sur un socle vide n'est pas un chapitre en avance, c'est une inférence longue.* Voir la note de statut, § 22.11 |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet résiduel de G-1 couvre ce Livre et n'est pas instruit** : aucun fait périssable des quinze pièces du Livre III n'a été repris à la source primaire. Gels de source consommés ici : **16-17 juillet 2026** (Vol. II, ch. 5 et 6) et **juin 2026** (Vol. I, §1.6.3) — ⚠ **aucun des deux ne tient lieu du gel de la somme** |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés du premier mouvement résolvent contre le **Vol. II *Monographie* ch. 5**, dont l'entrée **F-37** conserve son niveau **[B]** d'origine sous ses réserves propres (préprint v1 non révisé par les pairs, menaces à la validité déclarées par ses auteurs) ; ceux du second contre le **Vol. II *Monographie* ch. 6**, entrée **F-36**, **[B] pour l'attribution** — le manifeste est cité comme position argumentée de ses dix-huit auteurs, jamais comme fait établi du domaine ; **F-46** est cité en renvoi pour le statut de la convergence. Le § 22.5 résout contre le **Vol. I *Monographie* §1.6.3**, qui entre en **[C]** — repérage documentaire, la vérification du Vol. I portant sur ses références et non sur le contenu de ses affirmations (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01** |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé le **27 juillet 2026 sur instruction d'auteur, avant la porte G-3** : le socle consolidé comptait alors zéro entrée et l'Annexe B n'existait pas. ⚠ **La règle cardinale du PRD §5 a été enfreinte, et la porte franchie depuis ne la rattrape pas** : *un chapitre écrit sur un socle vide n'est pas un chapitre en avance, c'est une inférence longue* — **un arbitrage qui suit une infraction la solde ; il ne la refait pas**. ☑ **G-3 est franchie depuis le 28 juillet 2026** (PRD v0.14 ; Annexe B = [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées `S-001`…`S-159`**), ⚠ **et la pièce n'a pas été réadossée à ce socle** : la relecture du 28 juillet 2026 y a rattaché ses trois entrées par les tables de correspondance, elle n'a pas re-conduit sa rédaction. **CA-IV-11 et CA-IV-13 demeurent insatisfaites** — elles attendent un relecteur distinct du rédacteur, que **D-6** ne fournit pas. Voir la note de statut, § 22.11 |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ☑ **Le volet de faits de G-1 est levé depuis le 28 juillet 2026** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) : les trois entrées mobilisées ici ont été portées à leur source primaire — **`S-035`** (le cadre OO1-OO4) **☑ inchangée**, *toujours en v1, sans version de revue* ; **`S-034`** (le manifeste) **☑ inchangée partielle**, ⚠ *sa référence de revue n'a pas été rouverte — corroborée par notice, jamais à écrire comme re-vérifiée* ; **`S-044`** (la convergence) **☐ non établie**, *accès refusé par l'hôte*. ⚠ **Deux volets de G-1 restent dus et couvrent ce chapitre** (PRD v0.14) : les **relèves atterrissant hors du Livre I** — dont celle du § 22.7 — et les **obligations de pièce du Livre III**. Gels de source consommés ici : **16-17 juillet 2026** (Vol. II, ch. 5 et 6) et **juin 2026** (Vol. I, §1.6.3) — ⚠ **aucun des deux ne tient lieu du gel de la somme** |
+| **Socle mobilisé** | ☑ **Le socle consolidé existe** (Annexe B, `S-001`…`S-159`) ; ⚠ **les énoncés de la pièce citent les identifiants de leur volume d'origine et se résolvent par les tables de correspondance des §4 et §5 de l'Annexe B** — la pièce n'est pas réécrite sur la série consolidée. Premier mouvement : **Vol. II *Monographie* ch. 5**, entrée **F-37** → **`S-035`**, qui conserve son niveau **[B]** d'origine sous ses réserves propres (préprint v1 non révisé par les pairs, menaces à la validité déclarées par ses auteurs) ; second mouvement : **Vol. II *Monographie* ch. 6**, entrée **F-36** → **`S-034`**, **[B] pour l'attribution** — le manifeste est cité comme position argumentée de ses dix-huit auteurs, jamais comme fait établi du domaine ; **F-46** → **`S-044`** est cité en renvoi pour le statut de la convergence. ⚠ **Le § 22.5 n'a AUCUNE entrée au socle consolidé** : il résout contre le **Vol. I *Monographie* §1.6.3**, en **[C]** — repérage documentaire, la vérification du Vol. I portant sur ses références et non sur le contenu de ses affirmations (PRD §7.1) —, et *le Vol. I n'entre à l'Annexe B que par les dix-sept entrées héritées `S-143`…`S-159`, dont aucune ne porte cette matière.* **Aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | Vol. II — **R-1 : une occurrence**, § 22.6 (la mention de l'ACP protocolaire par le manifeste est **antérieure à la fusion du 29 août 2025** et ne se reprend pas comme état des lieux) ; **R-8 : une occurrence**, § 22.6, avec renvoi à l'encadré de désambiguïsation du **ch. 7 § 7.5** — le sigle n'est jamais employé nu ; **R-4, R-5 : zéro occurrence** (matière de paiement et de désignation, sièges aux ch. 32-33) ; **R-2, R-3, R-6, R-7 : zéro occurrence**. Vol. III — **R-13 (« control plane » et « autonomie graduée » jamais nus) : une occurrence du sigle**, § 22.0 ; ⚠ **faux ami déclaré** — le « plan de contrôle » au sens du maillage de services **pré-agentique** (ch. 1 § 1.3.4) n'est pas le *control plane* que R-13 vise, et il n'est pas employé ici ; **R-14 (trois degrés d'absence) : deux occurrences du sigle**, § 22.2 et § 22.7 — ⚠ **et les degrés eux-mêmes se marquent en toutes lettres, sans le sigle** : *« degré 3 » aux § 22.2, § 22.3, § 22.4, § 22.7 et § 22.8 (deux), « fait négatif vérifié » aux § 22.2 et § 22.4* ; **R-02 (qualifier par ce que la spécification démontre) : deux occurrences du sigle**, § 22.4 et § 22.7 ; **R-01, R-03 à R-12 : zéro occurrence**. ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** de la pièce — en-tête et note de statut exclus.* |
-| **Volumétrie cible** | ≈ **8 500 mots** de corps (§ 22.0 à § 22.10), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant dix sur les quatre-vingt-huit du Livre, majorées du poids de ses deux mouvements. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh), **seule autorité de décompte**. ⚠ **D-4 interdit l'amputation comme le gonflement** : l'écart se documente |
+| **Volumétrie cible** | ≈ **8 500 mots** de corps (§ 22.0 à § 22.10), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.30 — au prorata des sections, ce chapitre en portant dix sur les quatre-vingt-huit du Livre, majorées du poids de ses deux mouvements. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh), **seule autorité de décompte**. ⚠ **D-4 interdit l'amputation comme le gonflement** : l'écart se documente |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 22, premier mouvement — ancien ch. 25)* — le choix d'architecture agentique est un choix de position sur un continuum d'encadrement, objectivable par cinq propriétés et sept critères.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 22, premier mouvement — ancien ch. 25)* — le choix d'architecture agentique est un choix de position sur un continuum d'encadrement, objectivable par cinq propriétés et sept critères.
 
 ---
 
-> **Thèse du second mouvement**, citée depuis le TOC v0.25, entrée du chapitre 22 *(ancien ch. 26)* — l'autonomie n'est pas l'automatisation ; elle se gouverne par des frames normatifs et opérationnels et quatre capacités (encadrement, explicabilité, actionnabilité conversationnelle, auto-modification).
+> **Thèse du second mouvement**, citée depuis le TOC v0.30, entrée du chapitre 22 *(ancien ch. 26)* — l'autonomie n'est pas l'automatisation ; elle se gouverne par des frames normatifs et opérationnels et quatre capacités (encadrement, explicabilité, actionnabilité conversationnelle, auto-modification).
 
 ⚠ **Deux thèses pour un chapitre, et ce n'est pas une négligence de rédaction.** Le ch. 22 est issu de
 la **fusion v0.20** des anciens ch. 25 et 26 (décision 11 du TOC) : les deux entrées y sont conservées
@@ -30,7 +30,11 @@ conformément à la **décision 14** du TOC. **Domaine de balayage : deux thèse
 réalignée.** L'une et l'autre reprennent mot pour mot la thèse du chapitre correspondant du Vol. II —
 ch. 5 et ch. 6 de sa *Monographie* — à sa forme du 16-17 juillet 2026, et aucune n'a été bornée depuis
 à sa source. *Un balayage qui ne trouve rien se déclare comme un balayage qui trouve : c'est le domaine
-qui fait la couverture, pas le résultat.*
+qui fait la couverture, pas le résultat.* ☑ **La collation inverse a été refaite le 28 juillet 2026**,
+sous la **décision 17** du TOC : les deux blocs ci-dessus ont été **comparés caractère à caractère** à
+l'entrée courante du plan — **TOC v0.30, deux thèses examinées, zéro écart** —, et *le plan ne les a
+pas touchées depuis la passe qui les a écrites.* **Aucune des deux ne figure parmi les quatorze pièces
+que la décision 17 déclarait désalignées.**
 
 ## § 22.0 — Ouverture : deux mouvements, une seule question
 
@@ -76,11 +80,11 @@ situations ne diffèrent pas par le degré d'intelligence mise en œuvre : elles
 **localisation du contrôle**.
 
 ⚠ **Le cadre repris ici vient d'une source unique, et il faut le dire avant d'aller plus loin plutôt
-qu'après.** Il est porté par un préprint de juin 2026 dû à une équipe de la TU Munich, **non révisé par
-les pairs**, dont les auteurs déclarent eux-mêmes des menaces à la validité de leurs propres
-expériences — expériences initiales, invites non comparées entre elles, facteurs confondants (Vol. II
-F-37, **[B]** pour le cadre). **Le cadre conceptuel est repris ; les résultats chiffrés ne le sont
-qu'à titre d'illustration.** Cette réserve n'est pas une clause de style : elle commande la manière
+qu'après.** Il est porté par un préprint du **30 juin 2026** dû à **Rinderle-Ma, Mangler et coll.**
+(TU Munich), **non révisé par les pairs**, dont les auteurs déclarent eux-mêmes des menaces à la
+validité de leurs propres expériences — expériences initiales, invites non comparées entre elles,
+facteurs confondants (Vol. II F-37, **[B]** pour le cadre). **Le cadre conceptuel est repris ; les
+résultats chiffrés ne le sont qu'à titre d'illustration.** Cette réserve n'est pas une clause de style : elle commande la manière
 dont le chapitre distingue, à chaque section, ce qui relève d'une construction conceptuelle
 réutilisable de ce qui relève d'une expérimentation initiale dont nul ne prétend qu'elle est
 concluante. ⚠ **Elle est en outre portée au registre des lacunes** — la **lacune PRD Vol. II §10.10**
@@ -260,7 +264,7 @@ fait sous cette réserve.
 ## § 22.4 — Les métriques quantitatives et les résultats expérimentaux
 
 ⚠ **Garde-fou de section : source unique, préprint v1.** Tout ce qui suit est **illustration, jamais
-preuve** (assignation du TOC v0.25, entrée du chapitre 22).
+preuve** (assignation du TOC v0.30, entrée du chapitre 22).
 
 Le cadre propose une instrumentation des propriétés du § 22.2. La spécificité de tâche s'y mesure par
 la complexité cyclomatique (*cyclomatic complexity*) et par la métrique ABC ; l'assurance de
@@ -275,8 +279,9 @@ démonstrabilité, et que la seule qui reste sans mesure est celle qui décrit l
 machine. ⚠ **La somme ne conclut rien de ce silence** : l'entrée du socle n'en rapporte aucune, et
 établir si l'article lui-même n'en propose pas relèverait d'une relecture ciblée du préprint, **qui n'a
 pas été conduite** — *absence de documentation dans le corpus, degré 3, et non fait négatif vérifié.*
-Le fait est signalé parce qu'un architecte qui bâtirait un tableau de bord sur ces métriques trouverait
-le trou lui-même.
+C'est le volet *(c)* de la **lacune PRD Vol. II §10.10**, celui-là même dont la source nomme le remède :
+la relecture du préprint déposé. Le fait est signalé parce qu'un architecte qui bâtirait un tableau de
+bord sur ces métriques trouverait le trou lui-même.
 
 La seconde observation est que ces métriques sont, dans leur majorité, **empruntées à des disciplines
 établies** — le génie logiciel pour la complexité cyclomatique et la métrique ABC, l'évaluation des
@@ -314,10 +319,10 @@ présent Livre examine les contraintes temporelles des rails de paiement canadie
 cette règle cesse d'être théorique.
 
 Reste le verdict, que le socle rattache à la même entrée. Sur un scénario soumis à une réglementation
-stricte — un processus de don de sang régi par une directive européenne —, le cadre conclut que
-**l'orchestration non encadrée est « inacceptable » lorsque des exigences strictes d'exécution et de
-documentation s'appliquent, et que les tâches essentielles doivent être imposées de façon déterministe
-par le cadre**.
+stricte — un processus de don de sang régi par la **directive européenne 2002/98/CE** —, le cadre
+conclut que **l'orchestration non encadrée est « inacceptable » lorsque des exigences strictes
+d'exécution et de documentation s'appliquent, et que les tâches essentielles doivent être imposées de
+façon déterministe par le cadre**.
 
 ⚠ **Il faut manier ce verdict avec exactitude.** Il est adossé au même préprint et aux mêmes réserves ;
 il porte sur un scénario européen, dans un domaine qui n'est pas la finance, sous une directive qui
@@ -434,9 +439,11 @@ restriction des droits, est-il présenté comme le mécanisme *premier* de gouve
 agentiques ?
 
 ⚠ **La réponse examinée ici vient d'un texte de recherche, et son statut commande tout ce qui suit.**
-C'est un **manifeste** sur l'*Agentic Business Process Management* (APM), signé par dix-huit auteurs
-issus du monde universitaire et de l'industrie, né d'un séminaire et publié en revue (Vol. II F-36).
-Un manifeste de recherche **n'établit pas des faits** : il propose un vocabulaire, une architecture
+C'est un **manifeste** sur l'*Agentic Business Process Management* (APM) — Calvanese, De Giacomo,
+Dumas, Kampik, Montali, Rinderle-Ma, Weber et coll. —, signé par **dix-huit auteurs** issus du monde
+universitaire et de l'industrie, né d'un séminaire, déposé en préimpression le **12 avril 2026** et
+publié en revue (Vol. II F-36). Un manifeste de recherche **n'établit pas des faits** : il propose un
+vocabulaire, une architecture
 conceptuelle et un programme de travail. Le socle lui attribue une confiance haute **pour
 l'attribution** — ce que la somme affirme avec certitude, c'est que ces auteurs soutiennent ces thèses,
 avec ces arguments. Sa valeur pour une institution financière canadienne ne tient donc pas à une
@@ -549,10 +556,10 @@ et il précède, logiquement, toute discussion de plateforme.*
 
 ⚠ **Le premier mouvement nomme un arbitrage voisin, et la somme se garde d'en faire une
 corroboration.** Les deux cadres — la taxonomie OO1-OO4 du § 22.1 et le manifeste — sont **distincts**,
-et le socle n'établit entre eux **aucune filiation** ; il ne les tient pas pour autant pour
-indépendants, **une autrice du Vol. II F-37 cosignant le Vol. II F-36**. C'est leur **convergence**
-qui est établie, et
-elle vaut comme **faisceau**, jamais comme corroboration par sources indépendantes (Vol. II F-46, dont
+et le socle n'établit entre eux **aucune filiation** ; il ne les tient pas pour indépendants pour
+autant, **Rinderle-Ma cosignant le Vol. II F-37 et le Vol. II F-36**. C'est leur **convergence** qui est
+établie, et elle vaut comme **faisceau**, jamais comme corroboration par sources indépendantes
+(Vol. II F-46, dont
 l'adjectif « indépendantes » a été retiré du socle par sa source elle-même). Le **ch. 29 § 29.2** en
 fait l'objet d'une section entière ; il n'est pas anticipé ici.
 
@@ -560,21 +567,22 @@ fait l'objet d'une section entière ; il n'est pas anticipé ici.
 2026 résolvent les permissions par une **chaîne ordonnée de règles à premier appariement gagnant** :
 refus par outil, auto-approbation globale, politique par outil, octrois de session par outil puis par
 catégorie, politique par catégorie, et par défaut *demander* — avec des octrois **persistant d'une
-session à l'autre**. C'est la première réalisation concrète et datée d'un *frame* opérationnel,
-c'est-à-dire du
-terme que le socle ne caractérise pas. ⚠ **Elle ne fonde rien** : elle est un cas, et le socle de la
-taxonomie du § 22.1 est déjà sous la lacune §10.10 ; l'y adosser reviendrait à combler une lacune
-déclarée par une source de moindre qualité, ce que le régime du dépôt interdit. ⚠ **Elle n'est pas non
-plus instruite** : le volet résiduel de G-1 la couvre et n'a pas été exécuté — *repérage, non fait.* Et
-elle se qualifie par ce que sa documentation **démontre**, non par ce qu'elle promet (R-02 du Vol. III) :
-ce qui est documenté est un **ordre de résolution**, non une garantie d'opposabilité au point
-d'application.
+session à l'autre**. C'est la première réalisation concrète et datée d'un *frame* opérationnel —
+**celui des deux termes que le socle ne caractérise pas**. ⚠ **Elle ne fonde rien** : elle est un cas,
+et le socle de la taxonomie du § 22.1 est déjà sous la lacune §10.10 ; l'y adosser reviendrait à
+combler une lacune déclarée par une source de moindre qualité, ce que le régime du dépôt interdit.
+⚠ **Elle n'est pas non plus instruite, et elle ne peut pas l'être en l'état** : le volet résiduel de
+G-1 la couvre et n'a pas été exécuté — *repérage, non fait* —, mais **le plan ne nomme aucun des
+harnais qu'elle décrit**, si bien que l'instruction due n'a pas de document à ouvrir (décision 15b du
+TOC, troisième interdit). L'écart est remonté ; il n'est pas comblé de mémoire ici. Et elle se qualifie
+par ce que sa documentation **démontre**, non par ce qu'elle promet (R-02 du Vol. III) : ce qui est
+documenté est un **ordre de résolution**, non une garantie d'opposabilité au point d'application.
 
 ⚠ **Deux points de cette relève atterrissent ailleurs, et l'un des deux n'est pas arrivé.** *(a)* Un
 **octroi de catégorie qui survit à la session est un élargissement de mandat sans acte de délégation** —
 point assigné au **ch. 17**, déjà rédigé, **où il ne figure pas** ; l'écart est remonté (voir la note de
 statut, remontée **R-IV-76**), il n'est pas comblé ici. *(b)* Un **mode d'auto-approbation globale
-n'est pas un contrôle** au sens de la surveillance continue **attendue par** E-23 — point assigné au
+n'est pas un contrôle** au sens de la supervision **attendue par** E-23 — point assigné au
 **ch. 25**, qui le reçoit dans le présent Livre.
 
 ## § 22.8 — Les quatre capacités requises
@@ -589,9 +597,10 @@ l'objet des deux sections précédentes.
 
 La deuxième est l'**explicabilité**, et c'est celle qui intéresse le plus directement le présent Livre.
 Le manifeste ne la traite pas comme une propriété désirable de l'ingénierie : il la relie
-**explicitement à la conformité réglementaire**, en nommant deux instruments **européens**, et en
-désignant **la finance comme domaine à haut risque**. ⚠ **La portée exacte de ce fait doit être
-tenue** : les instruments que le manifeste nomme sont européens, et **le socle n'établit aucun lien
+**explicitement à la conformité réglementaire**, en nommant deux instruments **européens** — le
+règlement général sur la protection des données et le règlement européen sur l'intelligence
+artificielle —, et en désignant **la finance comme domaine à haut risque**. ⚠ **La portée exacte de ce
+fait doit être tenue** : ces deux instruments sont européens, et **le socle n'établit aucun lien
 entre ce texte et les instruments canadiens** — ni la ligne directrice E-23 du Bureau du surintendant
 des institutions financières, ni la ligne directrice sur l'intelligence artificielle de l'Autorité des
 marchés financiers, ni l'article 12.1 de la Loi 25. *Absence de documentation, degré 3.* Ces
@@ -603,7 +612,8 @@ haut risque, et non comme un raffinement d'ingénierie qu'on ajoute si le temps 
 La troisième est l'**actionnabilité conversationnelle**, que le manifeste inscrit au rang des quatre
 capacités requises. ⚠ **Le socle la nomme et la range parmi les quatre, mais n'en rapporte ni
 caractérisation, ni terme anglais, ni critère de satisfaction ; aucune autre entrée ne la traite** —
-*absence de documentation, degré 3, vérifiée au corpus le 16 juillet 2026 par la source.* La somme s'en
+*absence de documentation, degré 3, vérifiée au corpus le 16 juillet 2026 par la source*, et c'est le
+volet *(b)* de la **lacune PRD Vol. II §10.10** que le § 22.1 a déclarée. La somme s'en
 tient donc à ce qu'elle peut établir — **que ces auteurs la tiennent pour requise** — et **ne construit
 sur elle aucune exigence d'architecture**. *Une capacité qu'on ne sait pas caractériser ne peut pas
 devenir un point de contrôle*, et le **ch. 29** ne l'inscrit à aucune ligne de sa table de traduction.
@@ -621,7 +631,8 @@ que la somme soutient : *un système qui traite l'adaptation et l'évolution par
 rend indétectable, dans ses journaux, le moment où une exception est devenue une règle.* **Ce que le
 socle établit** : les deux régimes et leur asymétrie de portée. **Ce qu'il n'établit pas** : qu'il
 faille les autoriser séparément. La proposition est confrontée aux exigences canadiennes au **ch. 25**,
-dont la définition de « modèle » et l'attente de surveillance continue en dépendent directement.
+où la définition réglementaire de « modèle » et l'attente de surveillance continue en dépendent
+directement.
 
 ## § 22.9 — Les frames locaux comme frontière de sécurité
 
@@ -754,27 +765,42 @@ l'architecte.
 gouvernance sous lequel la pièce a été rédigée, conformément à la règle d'escalade du PRD (Annexe A) :
 *un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il **remonte**.*
 
-**Ce qui est enfreint.** La porte **G-3** (refonte du socle, non entamée) et le **volet résiduel de
-G-1** (aucun fait périssable du Livre III repris à la source primaire). Instruction d'auteur du
-27 juillet 2026. ⚠ **L'ordre de rédaction du PRD §6 n'est PAS enfreint par ce chapitre** : il place les
-Livres I et III en première position, et le Livre I est rédigé. ⚠ **La porte G-4 ne conditionne pas ce
-chapitre** : sa ligne Fusion ne cite que le Vol. II et le Vol. I.
+**Ce qui est enfreint.** La pièce a été rédigée le **27 juillet 2026, sur instruction d'auteur**, alors
+que la porte **G-3** (refonte du socle) n'était pas entamée et que le **volet résiduel de G-1** n'avait
+pas été instruit. ☑ **Les deux ont bougé depuis, et il faut lire comment.** **G-3 est franchie le
+28 juillet 2026** (PRD v0.14) et le **volet de faits de G-1 est levé** le même jour ; ⚠ **cela ne
+rattrape pas la pièce** — *un arbitrage qui suit une infraction la solde, il ne refait pas la rédaction
+qu'elle a produite*, régime déjà appliqué par D-7 au ch. 6 et par D-9 aux ch. 25 et 27. ⚠ **Et deux
+volets de G-1 restent dus qui couvrent ce chapitre** : les **relèves atterrissant hors du Livre I** —
+dont celle du § 22.7 — et les **obligations de pièce du Livre III**. ⚠ **L'ordre de rédaction du
+PRD §6 n'est PAS enfreint par ce chapitre** : il place les Livres I et III en première position, et le
+Livre I est rédigé. ⚠ **La porte G-4 ne conditionne pas ce chapitre** : sa ligne Fusion ne cite que le
+Vol. II et le Vol. I.
 
-1. **Aucun énoncé n'est central au sens de CA-IV-01.** Le socle consolidé compte zéro entrée, l'Annexe B
-   n'existe pas, et les identifiants cités — F-36, F-37, F-46 — sont **ceux du Vol. II**, préfixés à
-   chaque emploi comme la décision 7 l'exige. Pour qu'un énoncé de ce chapitre devienne central, il
-   faudrait que G-3 verse ces entrées au socle consolidé sous une numérotation unique, et que les faits
-   du Vol. I mobilisés au § 22.5 soient **élevés en [B] par lecture des sources primaires que le Vol. I
-   cite** — ce qui n'a pas été fait.
+1. **Aucun énoncé n'est central au sens de CA-IV-01, et le motif a changé sans que le constat change.**
+   Il ne tient plus à un socle vide — l'Annexe B existe depuis le 28 juillet 2026 —, mais à trois faits.
+   *(a)* Les identifiants cités — F-36, F-37, F-46 — restent **ceux du Vol. II**, préfixés à chaque
+   emploi comme la décision 7 l'exige, et **résolvent** par la table de correspondance du §4 de
+   l'Annexe B vers `S-034`, `S-035` et `S-044` ; ⚠ **la pièce n'a pas été réécrite sur la série
+   consolidée** — *rattacher n'est pas réadosser*. *(b)* Le premier mouvement demeure sous la **lacune
+   PRD Vol. II §10.10** et sous le garde-fou de source unique ; le second n'est **[B] que pour
+   l'attribution**. *(c)* ⚠ **La matière du § 22.5 n'a AUCUNE entrée au socle consolidé** : le Vol. I n'y
+   entre que par les dix-sept entrées héritées `S-143`…`S-159`, dont aucune ne porte l'exécution
+   durable — elle reste en **[C]**, et son élévation supposerait la lecture des sources primaires que le
+   Vol. I cite, **qui n'a pas été faite**.
 2. **Les décomptes sont publiables** (G-2 franchie le 27 juillet 2026). L'écart à la cible est relevé au
    [`README.md`](README.md) du dossier et alimente **D-4**, déjà tranchée : *enveloppes maintenues,
-   amputation interdite.*
-3. **Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan, non de texte.** Ils
-   résolvent contre l'entrée du TOC et **se re-vérifieront contre le texte** quand il existera :
-   **ch. 23, 24, 25, 29, 30, 31, 33, 34** (présent Livre, à rédiger dans la même passe), **ch. 48** et
-   **ch. 49** (Livre V, non rédigé), et le **Livre IV** dans son ensemble. Résolvent en revanche contre
-   du **texte rédigé** : **ch. 1 § 1.3.4**, **ch. 7 § 7.5**, **ch. 8 § 8.5.1**, **ch. 11**, **ch. 14
-   § 14.4**, **ch. 17 § 17.5** et **ch. 19**.
+   amputation interdite.* ⚠ **La mesure qui y figure est antérieure à la relecture du 28 juillet 2026**
+   et ne couvre donc pas les corrections d'appareil de cette passe.
+3. **Les renvois « ch. N » ne sont plus des renvois de plan : les cinquante chapitres existent en
+   brouillon depuis le 27 juillet 2026.** ☑ **Les treize renvois de section du corps et de l'en-tête ont
+   été résolus contre le texte le 28 juillet 2026**, chacun contre un titre existant : **ch. 1
+   § 1.3.4**, **ch. 7 § 7.5**, **ch. 8 § 8.5.1**, **ch. 14 § 14.4**, **ch. 17 § 17.5**, **ch. 23
+   § 23.3** et **§ 23.5**,
+   **ch. 24 § 24.9**, **ch. 29 § 29.2** et **§ 29.3**, **ch. 30 § 30.1.5**, **ch. 31 § 31.3** et
+   **ch. 34 § 34.6**. ⚠ **Ce contrôle est de résolution, non de fond** : *qu'un titre existe ne dit pas
+   que la matière annoncée s'y trouve*, et la collation de contenu des **renvois de chapitre nus** —
+   ch. 11, 19, 25, 26, 27, 33, 48, 49 et le Livre IV dans son ensemble — **n'a pas été conduite**.
 4. **Une matière est reçue et une autre est refusée, et les deux se déclarent.** Le § 22.5 **reçoit en
    entier** le §1.6.3 du Vol. I, dont le ch. 1 déclare le départ à sa table de couverture — *l'arrivée
    est donc déclarée aux deux bouts*, ce que la classe de défaut soldée en v0.17 du TOC impose. À
@@ -805,24 +831,35 @@ chapitre** : sa ligne Fusion ne cite que le Vol. II et le Vol. I.
   que son motif soit réécrit. *Une règle de forme dont le motif ne couvre pas son domaine se tient
   encore ; elle ne se transmet pas.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 22.1 à
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.30** — § 22.1 à
 § 22.10, dans l'ordre exact, sous-sections 22.5.1 à 22.5.3 comprises —, le § 22.0 étant une
-**ouverture de chapitre** et non une section du plan. **Les deux mouvements sont conservés
+**ouverture de chapitre** et non une section du plan. ⚠ **Deux intitulés de sous-section dévient du
+plan, et la déviation se déclare ici plutôt que de rester tue** (décision 15c) : *« Continuum
+lots/flux… »* pour *« Continuum batch/streaming… »* et *« Orchestration déterministe **et**
+orchestration agentique — la charnière »* pour *« Orchestration déterministe **vs** orchestration
+agentique »*. **Motif dans les deux cas : la règle de langue du dépôt** — terme français au titre,
+terme anglais entre parenthèses à la première occurrence du corps —, et, pour le second, la mention de
+charnière que la table détaillée porte elle-même en note de provenance. *Aucune matière n'est déplacée
+ni retranchée ; seuls les intitulés diffèrent.* **Les deux mouvements sont conservés
 intégralement**, avec leurs deux thèses citées verbatim, leurs deux lignes Fusion et leurs deux tables
 de couverture : *ils ne sont pas fondus en une troisième thèse* (décision 11a). Les **deux tables de
 couverture sont respectées**, y compris les sorties de périmètre déclarées au § 22.0. La **décision 14
 a été exécutée avant la rédaction** : deux thèses collationnées contre le texte rédigé du Vol. II,
-**zéro réalignement**, domaine déclaré. Les **garde-fous des deux séries sont balayés et déclarés, y
-compris à zéro occurrence**, et le **faux ami « plan de contrôle »** est nommé plutôt que fui. Le
+**zéro réalignement**, domaine déclaré ; ☑ **et la décision 17 l'a été le 28 juillet 2026**, par
+comparaison caractère à caractère des deux blocs à l'entrée courante du plan — **zéro écart**. Les
+**garde-fous des deux séries sont balayés et déclarés, y compris à zéro occurrence**, et le **faux ami
+« plan de contrôle »** est nommé plutôt que fui. Le
 **sigle ACP n'est jamais employé nu** et renvoie au **ch. 7 § 7.5** ; la **mécanique de la fusion** n'est
 pas reconstruite et renvoie au **ch. 8 § 8.5.1**. Les **absences portent toutes leur degré** — *deux
 occurrences du sigle R-14, six du marqueur « degré 3 » et deux de « fait négatif vérifié »*, localisées
 à l'en-tête —, et les **deux occurrences de R-02** qualifient par ce que la source démontre. Les
 **constructions d'auteur portent « Lecture de l'auteur »** suivi de ce que le socle établit et n'établit
 pas (CA-IV-07) — ⚠ **dix-neuf occurrences**, *re-comptées au commit du 28 juillet 2026 sous la règle de
-la décision 16 du TOC ; l'attestation antérieure en annonçait quinze* —, dont deux tableaux dont une
-colonne entière est marquée telle. La **lacune PRD Vol. II
-§10.10 est portée et non comblée**, avec son renvoi au **ch. 49**. Enfin, **aucune métrique
+la décision 16 du TOC ; l'attestation antérieure en annonçait quinze* —, **auxquelles s'ajoutent deux
+tableaux dont une colonne entière est marquée telle** : *ces deux-là ne portent pas le marqueur
+littéral et n'entrent donc pas dans le décompte.* La **lacune PRD Vol. II
+§10.10 est portée et non comblée**, ses trois volets étant nommés à leur section — *(a)* au § 22.7,
+*(b)* au § 22.8, *(c)* au § 22.4 —, avec son renvoi au **ch. 49**. Enfin, **aucune métrique
 auto-déclarée n'est citée dans ce chapitre** : les seuls chiffres qui y figurent sont les trois valeurs
 de F1 du préprint, attribuées à leur source et déclarées illustration à chaque occurrence.
 
@@ -864,3 +901,63 @@ cette pièce n'est central au sens de CA-IV-01**. **CA-IV-11 et CA-IV-13 ne sont
 *aucune relecture par un relecteur distinct du rédacteur*. Cette pièce reste un **brouillon non
 publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune
 question n'attend plus de réponse qui ne soit déjà tranchée.*
+
+⚠ **Le paragraphe ci-dessus est daté du 27 juillet 2026 et ne se réécrit pas** — *un journal publié se
+prolonge, il ne se corrige pas.* **G-3 a été franchie le lendemain**, et le bloc suivant enregistre ce
+que cela change.
+
+---
+
+### Relecture — 28 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre une **passe de relecture** conduite après le franchissement de **G-3**, sur le seul `.md` de
+cette pièce et son rendu. ⚠ **Elle ne satisfait NI CA-IV-11 NI CA-IV-13** : *relire n'est pas être un
+tiers*, et **D-6** ne fournit toujours pas de relecteur distinct du rédacteur.
+
+**Ce que la passe a fait.** Elle a réaligné les **déclarations de gouvernance** de la pièce sur l'état
+réel du volume — G-3 franchie, socle consolidé constitué et re-daté, cinquante chapitres existant en
+brouillon —, **re-mesuré** tous les cardinaux annoncés par balayage exhaustif du corps sous la
+**décision 16**, **re-collationné** les deux thèses par copie sous la **décision 17**, **résolu** les
+treize renvois de section contre les titres existants, **nommé cinq attributions** que la pièce
+anonymisait sous la **décision 15b** — les auteurs et la date du préprint (§ 22.1), la directive du
+scénario réglementé (§ 22.4), les auteurs et la date de dépôt du manifeste (§ 22.6), l'autrice qui
+cosigne les deux sources académiques (§ 22.7), les deux instruments européens de l'explicabilité
+(§ 22.8) —, et **déclaré** deux déviations d'intitulé. ⚠ **Elle n'a réadossé
+aucun énoncé au socle consolidé** : *rattacher un identifiant par sa table de correspondance n'est pas
+re-conduire une rédaction sur le socle qui manquait quand elle a été faite.*
+
+**Remontées ouvertes par cette passe — quatre, identifiants NON alloués.** ⚠ **L'allocation est
+délibérément laissée à la passe d'arbitrage** : la règle du PRD §13 veut qu'une plage neuve se prenne
+**au-dessus du maximum constaté sur pièces, jamais au-dessus du maximum supposé**, et *ce maximum n'est
+pas constatable pendant que d'autres passes écrivent le même corpus* — c'est exactement la collision de
+R-IV-60…69, reproduite si on la devine.
+
+- **(i) — non bloquante, au TOC. La relève v0.10 ne porte aucun identifiant de source.** Elle décrit
+  « les harnais documentés en 2026 » et leur chaîne de règles à premier appariement gagnant, et le
+  **volet résiduel de G-1 la déclare à instruire à la source primaire** — sans qu'aucune de ses deux
+  formulations à l'entrée du plan, celle de la ligne Fusion du second mouvement et celle portée sous le
+  § 22.7, ne nomme le document à
+  ouvrir. ⚠ *Un critère de clôture dont la cible n'est pas identifiée est inexécutable*, et c'est le
+  troisième interdit de la **décision 15b**, déjà relevé au ch. 36 § 36.5. **Demande remontée** : que le
+  plan porte l'identifiant, ou qu'il déclare la relève non instruisible en l'état. **Le rédacteur ne le
+  complète pas de mémoire.**
+- **(ii) — non bloquante, à l'Annexe B. Un intervalle faux dans l'état de re-datation de `S-035`.**
+  L'entrée écrit que *« treize mois après le dépôt, rien n'est venu le corroborer »* pour un préprint
+  **déposé le 30 juin 2026** et re-porté à sa source le **28 juillet 2026** — soit **un mois**. ⚠ *La
+  réserve que cette phrase renforce est juste ; l'intervalle qui la chiffre ne l'est pas*, et le présent
+  chapitre s'en tient donc au fait sans le chiffrer. **Demande remontée** : correction de l'intervalle
+  à l'Annexe B, ou déclaration de ce qu'il mesure réellement.
+- **(iii) — non bloquante, au PRD. Aucun régime n'est posé pour les pièces rédigées AVANT G-3.**
+  Cinquante chapitres existent, écrits sur un socle à zéro entrée, et le socle existe désormais. La
+  passe a **rattaché** les trois entrées de cette pièce par les tables de correspondance ; elle ne l'a
+  pas **réadossée**. ⚠ *Les deux gestes ne sont pas de même nature et le second n'est demandé nulle
+  part* : le PRD ne dit ni qu'un réadossement est dû avant publication, ni qu'un rattachement suffit.
+  **Demande remontée** : que le régime soit tranché — et, s'il l'est dans le sens du réadossement,
+  qu'il le soit **pour les cinquante pièces à la fois**, une convention par relecteur produisant
+  cinquante conventions.
+- **(iv) — non bloquante, au README du Livre. La volumétrie de la pièce est périmée par cette passe.**
+  Le tableau du dossier porte **8 464 mots** au 28 juillet 2026, mesure antérieure à la présente
+  relecture, qui a ajouté de l'appareil sans toucher au propos. ⚠ *Le rédacteur ne corrige pas le
+  conspectus ni le README du Livre* ; **`decompte.sh` demeure la seule autorité**, et la re-mesure est
+  due au commit de la passe. *D-4 interdit toujours l'amputation comme le gonflement.*

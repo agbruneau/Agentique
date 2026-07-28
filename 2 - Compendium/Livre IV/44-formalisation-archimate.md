@@ -7,18 +7,18 @@ formalisme ce que le ch. 43 a rangé en couches, et rien d'autre.***
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6. ⚠ **ET AVANT LE PRÉALABLE QUE LE PLAN NOMME POUR CE CHAPITRE PRÉCISÉMENT** : la **re-vérification du mécanisme d'extension tel que la version de référence le porte** est déclarée par le TOC **préalable au registre des stéréotypes (§ 44.1.9), non note de transition** — *elle n'a pas eu lieu*. Le PRD §12 la nomme au jalon J-IV-5. ⚠ **R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre** |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit, et ce chapitre est celui du Livre où l'omission pèse le plus** : *son ancrage de version est un document de norme d'avril 2026, dont la liste définitive des éléments retirés ou renommés est déclarée **ressource vivante à recouper au gel** — et le recoupement n'a pas été fait.* Gel de source : **juin 2026** (Vol. I). *Il n'est pas celui de la somme.* |
-| **Socle mobilisé** | ⚠ **Aucune entrée du socle consolidé** (G-3 ouverte), **et aucune entrée F-xx d'aucun volume** : ce chapitre consomme le **Vol. I *Monographie* ch. 6**, qui entre **en [C]** — *sa vérification porte sur ses références, non sur le contenu de ses affirmations* —, plus **Vol. III *Monographie* §27.2** au seul titre de la matière à formaliser. ⚠ **Conséquence, et elle est plus large ici qu'ailleurs** : **tout ce chapitre est en [C]**, *aucun énoncé n'est central au sens de CA-IV-01*, et **l'élévation en [B] passerait par la lecture des documents de norme que le Vol. I cite** — travail de **G-1**, non de ce chapitre. ⚠ **Une entrée de socle est mobilisée par exception**, au § 44.6 : le **Vol. II F-09** (E-23), pour la seule modalité de sa formulation |
-| **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** Vol. III — **R-09 (statut d'un document dit à chaque mention) : une occurrence**, § 44.0.2 ; **R-02 : une occurrence**, § 44.1.1 — *un mécanisme d'extension se qualifie par ce que la spécification rend officiel* ; **R-01 : une occurrence**, § 44.1.6 ; **R-13 (échelle d'autonomie jamais nue) : une occurrence**, § 44.1.7, **renvoyée au siège du ch. 43 § 43.5**. **R-14 (trois degrés d'absence) : une occurrence de l'identifiant**, § 44.6 — ⚠ *le garde-fou est pourtant tenu de bout en bout, chaque absence portant son degré en toutes lettres aux § 44.0, § 44.1, § 44.5, § 44.7 et § 44.9 : **domaine déclaré, sans cardinal** (décision 16, alinéa c)* ; **R-03 à R-08, R-10 à R-12 : zéro occurrence.** Vol. II — **réserve F-09 (« attendu par E-23 », jamais « exigé ») : une occurrence**, § 44.6 ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : une occurrence**, § 44.1.3 ; **R-8 (sigle jamais nu) : une occurrence**, § 44.1.6, **renvoyée au siège du ch. 7 § 7.5** ; **métriques auto-déclarées (marqueur « auto-déclaré ») : une occurrence**, § 44.9, **attribuée à son éditeur nommé** ; **R-1 à R-7 : zéro occurrence**. ⚠ **Garde-fou PROPRE au chapitre, hérité de sa source et plus nécessaire ici qu'à elle** : *si l'on retire le mot « ArchiMate » et que la phrase tient encore comme un exposé des chapitres amont, c'est une redondance à renvoyer* — **au Vol. I ce chapitre en suivait cinq ; ici il en suit quarante-trois** |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6. ⚠ **G-3 a depuis été franchie** — 28 juillet 2026, PRD v0.14, socle consolidé de **159 entrées** —, mais **après** cette rédaction et **sans qu'aucune entrée n'en porte la matière** (§ 44.0.1) ; **G-4 et G-5 demeurent ouvertes**. ⚠ **ET AVANT LE PRÉALABLE QUE LE PLAN NOMME POUR CE CHAPITRE PRÉCISÉMENT** : la **re-vérification du mécanisme d'extension tel que la version de référence le porte** est déclarée par le TOC **préalable au registre des stéréotypes (§ 44.1.9), non note de transition** — *elle n'a pas eu lieu*. Le PRD §12 la nomme au jalon J-IV-5. ⚠ **R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre** |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet de FAITS du volet résiduel de G-1 est levé depuis le 28 juillet 2026** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)), **mais son domaine — les 123 entrées de socle à sensibilité temporelle — ne couvre pas ce chapitre**, et l'omission y pèse plus qu'ailleurs dans le Livre : *son ancrage de version est le document de norme **C260** (The Open Group, 27 avril 2026), dont la liste définitive des éléments retirés ou renommés est déclarée **ressource vivante à recouper au gel** — et le recoupement n'a toujours pas été fait.* Gel de source : **juin 2026** (Vol. I). *Il n'est pas celui de la somme.* |
+| **Socle mobilisé** | ⚠ **Aucune entrée du socle consolidé — et le motif a changé le 28 juillet 2026** : *la porte G-3 est franchie et le socle compte désormais **159 entrées** (`S-001`…`S-159`), mais **aucune ne porte sur ce langage de modélisation ni sur son document de norme**, balayage constaté sur pièce.* **Aucune entrée F-xx d'aucun volume** non plus : ce chapitre consomme le **Vol. I *Monographie* ch. 6**, qui entre **en [C]** — *sa vérification porte sur ses références, non sur le contenu de ses affirmations* —, plus **Vol. III *Monographie* §27.2** au seul titre de la matière à formaliser. ⚠ **Conséquence, et elle est plus large ici qu'ailleurs** : **tout ce chapitre est en [C]**, *aucun énoncé n'est central au sens de CA-IV-01*, et **l'élévation en [B] passerait par la lecture des documents de norme que le Vol. I cite** — travail de **G-1**, non de ce chapitre. ⚠ **Une entrée de socle est mobilisée par exception**, au § 44.6 : le **Vol. II F-09** (E-23), pour la seule modalité de sa formulation |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** Vol. III — **R-09 (statut d'un document dit à chaque mention) : une occurrence**, § 44.0.2 ; **R-02 : une occurrence**, § 44.1.1 — *un mécanisme d'extension se qualifie par ce que la spécification rend officiel* ; **R-01 : une occurrence**, § 44.1.6 ; **R-13 (échelle d'autonomie jamais nue) : une occurrence**, § 44.1.7, **renvoyée au siège du ch. 43 § 43.5**. **R-14 (trois degrés d'absence) : une occurrence de l'identifiant dans le corps**, au bloc de collation de la thèse — *l'échelle y est nommée pour qualifier « seule extension défendable » en absence de documentation plutôt qu'en fait négatif vérifié* — ⚠ *l'identifiant n'est écrit qu'au commentaire de thèse, hors du domaine déclaré ; le garde-fou, lui, est tenu, chaque absence portant son degré en toutes lettres aux § 44.1, § 44.5 et § 44.9 : **domaine déclaré, sans cardinal** (décision 16, alinéa c)* ; **R-03 à R-08, R-10 à R-12 : zéro occurrence.** Vol. II — **réserve F-09 (« attendu par E-23 », jamais « exigé ») : une occurrence**, § 44.6 ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : une occurrence**, § 44.1.3 ; **R-8 (sigle jamais nu) : une occurrence**, § 44.1.6, **renvoyée au siège du ch. 7 § 7.5** ; **métriques auto-déclarées (marqueur « auto-déclaré ») : une occurrence**, § 44.9, **attribuée à ses deux éditeurs nommés et datée** — *l'attribution ne s'anonymise jamais* (décision 15 du TOC, alinéa a) ; **R-1 à R-7 : zéro occurrence**. ⚠ **Garde-fou PROPRE au chapitre, hérité de sa source et plus nécessaire ici qu'à elle** : *si l'on retire le mot « ArchiMate » et que la phrase tient encore comme un exposé des chapitres amont, c'est une redondance à renvoyer* — **au Vol. I ce chapitre en suivait cinq ; ici il en suit quarante-trois**, ⚠ *le plan écrivant encore « quarante-deux », cardinal d'une numérotation antérieure : l'écart est déclaré et remonté, non corrigé au plan* (décision 8) |
 | **Volumétrie cible** | ≈ **8 500 mots** de corps (§ 44.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des dix sections et du volume de source consommé — **la deuxième plus haute du Livre**, ce chapitre absorbant un chapitre entier du Vol. I. ☑ **Décompte publiable depuis G-2** ; **réel reporté au [`README.md`](README.md)**. ⚠ **D-4 s'applique** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 44 — le verrou est méthodologique et se nomme d'emblée ; ⚠ **thèse inchangée depuis la v0.25, re-collationnée mot pour mot contre la v0.28** — avec celle du ch. 41, l'une des deux seules du Livre que l'arbitrage n'a pas réalignées)* — **ArchiMate n'a aucun élément natif** pour l'agent autonome, l'appel d'outil MCP, l'interaction A2A, l'identité non humaine ou le plan de contrôle ; la seule extension défendable est le mécanisme officiel **Specialization + stéréotype `<<…>>` + Profiles**, sur le modèle du *Risk & Security Overlay*. Ce que le chapitre apporte est une **traduction structurelle**, jamais une reprise du fond conceptuel des livres amont.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.30**, entrée du chapitre 44, **par copie et non par re-frappe** — décision 17 du TOC ; le verrou est méthodologique et se nomme d'emblée ; ⚠ **thèse inchangée depuis la v0.25, re-collationnée mot pour mot contre la v0.30**, les v0.29 et v0.30 ne touchant aucune thèse — avec celle du ch. 41, l'une des deux seules du Livre que l'arbitrage v0.28 n'a pas réalignées)* — **ArchiMate n'a aucun élément natif** pour l'agent autonome, l'appel d'outil MCP, l'interaction A2A, l'identité non humaine ou le plan de contrôle ; la seule extension défendable est le mécanisme officiel **Specialization + stéréotype `<<…>>` + Profiles**, sur le modèle du *Risk & Security Overlay*. Ce que le chapitre apporte est une **traduction structurelle**, jamais une reprise du fond conceptuel des livres amont.
 
 ☑ **La thèse citée résiste à la collation contre le texte rédigé de sa source — décision 14 du TOC,
 appliquée avant la rédaction, et c'est l'un des deux seuls cas du Livre IV** ; ⚠ **c'est aussi, avec
 celle du ch. 41, l'une des deux seules que l'arbitrage v0.28 n'a PAS réalignées** — *la citation en
-tête n'a donc rien à reporter, et son ancrage de version est relevé à la v0.28 pour dire qu'elle y a
+tête n'a donc rien à reporter, et son ancrage de version est relevé à la v0.30 pour dire qu'elle y a
 été re-collationnée, non qu'elle y aurait changé* (décision 17 du TOC). Le Vol. I écrit que
 *« ni ArchiMate 3.2 ni ArchiMate 4 n'introduisent de métaclasse dédiée à l'intelligence artificielle
 ou aux agents autonomes »*, et que *« le seul mécanisme d'extension défendable est celui que la
@@ -45,9 +45,9 @@ s'applique à chaque phrase, plutôt qu'à une sous-section qu'on lit une fois.
 attribuer.** Le Vol. I retient ce langage pour une raison qu'il déclare : *c'est un langage de
 description d'architecture d'entreprise **normalisé et gouverné par un organisme**, ce qui rend une
 convention d'extension **traçable et opposable** là où une notation propriétaire ne le serait pas.*
-**Ce que le socle établit** : rien — le socle consolidé compte zéro entrée, et **aucun volume ne verse
-de fait sur ce langage**. **Ce qu'il n'établit pas** : que ce langage soit le meilleur, ni qu'un autre
-formalisme échouerait.
+**Ce que le socle établit** : rien — le socle consolidé, constitué depuis le 28 juillet 2026, **ne
+porte aucune entrée sur ce langage**, et **aucun volume n'en verse de fait**. **Ce qu'il n'établit
+pas** : que ce langage soit le meilleur, ni qu'un autre formalisme échouerait.
 
 ⚠ **Une distinction est reprise parce que sa confusion est un anti-patron nommé** (§ 44.8) :
 **langage**, **méthode**, **cadre**, **outil** et **modèle de référence** sont cinq objets distincts.
@@ -58,8 +58,10 @@ ne l'écrit qu'une fois.
 ### 44.0.2 Le cadre, les domaines, les aspects — version de référence
 
 **Ancrage de version, et il commande tout le chapitre** : la version de référence est **ArchiMate 4**
-(document normatif d'avril 2026) ; **les équivalences avec la version 3.2 (octobre 2022) figurent en
-notes de transition**. ⚠ **Statut dit à chaque mention** (R-09 du Vol. III) : *ce sont des documents
+(The Open Group, doc **C260**, 27 avril 2026) ; **les équivalences avec la version 3.2 (octobre 2022)
+figurent en notes de transition**. ⚠ **L'identifiant du document est écrit plutôt que paré** — *c'est
+la source qu'un lot doit instruire, et elle ne s'anonymise pas* (décision 15 du TOC, alinéa c).
+⚠ **Statut dit à chaque mention** (R-09 du Vol. III) : *ce sont des documents
 de norme publiés par leur organisme, non des brouillons* — et **la liste définitive des éléments
 retirés ou renommés est une ressource vivante à recouper au gel**, ⚠ **recoupement qui n'a pas eu
 lieu** (§ 44.0.4).
@@ -86,8 +88,8 @@ conservés** : structure active, comportement, structure passive, motivation.
 **La version de référence réduit le décompte d'éléments d'environ soixante à environ quarante-deux**,
 principalement par l'unification des comportements et la suppression de variantes par couche. ⚠ **Le
 cardinal est celui que le Vol. I rapporte, en [C]** ; *la somme ne l'a pas re-mesuré sur le document
-de norme, et la relève du plan le confirme dans les mêmes termes — **environ 30 % de réduction, de
-plus de soixante à une quarantaine**.*
+de norme, et la relève du plan le confirme **en termes plus larges** — environ 30 % de réduction, de
+plus de soixante à une quarantaine —, **sans reprendre le chiffre exact**.*
 
 **Les onze relations sont inchangées par rapport aux versions 3.x** : **Composition**,
 **Aggregation**, **Assignment**, **Realization**, **Serving**, **Access**, **Influence**,
@@ -144,8 +146,9 @@ charge agentique.**
 **Specialization**, assortie d'un **stéréotype `<<…>>`**, complétée par les **Profiles** (attributs
 typés). ⚠ **Un mécanisme se qualifie par ce que la spécification rend officiel, jamais par ce qu'une
 pratique en fait** (R-02 du Vol. III, transposé). ⚠ **Ce levier n'est pas une trouvaille** : *il
-reproduit la démarche d'un overlay de risque et de sécurité normalisé par le même organisme, qui
-superpose des stéréotypes à des éléments existants **sans inventer de concept**.*
+reproduit la démarche du **Risk & Security Overlay** (The Open Group, doc **W172**, 2019), qui
+superpose des stéréotypes à des éléments existants **sans inventer de concept**.* ⚠ **L'auteur et la
+date d'un instrument repris s'écrivent** (décision 15 du TOC, alinéa b).
 
 ⚠ **La pratique communautaire confirme l'absence de solution canonique**, et le Vol. I le déclare : *la
 modélisation d'agents logiciels s'est longtemps appuyée sur des **conventions informelles**.* ⚠ **Le
@@ -185,8 +188,8 @@ anatomie est au ch. 8.*
 Le serveur exposant des capacités outillées est un **Application Component** stéréotypé
 `<<MCP Server>>`. **Chaque capacité offerte est une Application Service**, réalisée par ce composant
 via **Realization**, et rendue accessible par une **Application Interface**. L'agent consommateur est
-relié à cette service par **Serving** — ⚠ **jamais par « Used by »**. La ressource lue est un **Data
-Object**, accédé par **Access**.
+relié à ce service par **Serving** — ⚠ **jamais par « Used by »**. La ressource lue est un **Data
+Object**, accédée par **Access**.
 
 ⚠ **L'anti-confusion à tenir est celle de Serving et de Realization** : *Realization relie le composant
 à la capacité qu'il rend effective — le serveur **réalise** le service ; Serving relie le service au
@@ -279,9 +282,11 @@ un comportement générique unifié** — *l'élément Interaction étant retir�
 du comportement** : ⚠ ***c'est l'assignation, et non une annotation, qui inscrit structurellement
 l'exigence de supervision.***
 
-⚠ **Le contrôle à quatre yeux appelle une construction particulière, justifiée ici une seule fois** :
-*le proposeur et l'approbateur sont **deux Roles distincts**, et **il ne doit exister aucune relation
-Flow directe du proposeur vers l'approbateur**.* ⚠ **Cette absence délibérée de Flow est la preuve
+⚠ **Le contrôle à quatre yeux appelle une construction particulière, justifiée ici une seule fois — et
+ce qui est justifié ici est son RENDU, non le patron** : *le patron lui-même siège au **ch. 31
+§ 31.3.4**, que ce chapitre ne reconstruit pas.* Le proposeur et l'approbateur sont **deux Roles
+distincts**, et **il ne doit exister aucune relation Flow directe du proposeur vers l'approbateur**.
+⚠ **Cette absence délibérée de Flow est la preuve
 d'architecture de la non-collusion** : *structurellement, l'information ne transite pas de l'un à
 l'autre sans passer par l'objet de travail soumis et le mécanisme de contrôle.* **La convention est
 reprise par renvoi partout où elle s'applique, sans être rejustifiée.**
@@ -326,8 +331,8 @@ exactement le rôle d'un formalisme, et exactement sa limite.*
 > référence le porte — n'a pas été tenu** (§ 44.0.4). **Ce registre est donc reproduit comme registre
 > du Vol. I, en [C], et non comme registre conforme à la version de référence.**
 
-**Quatre limites structurelles sont à assumer avant le registre lui-même**, et elles ne se franchissent
-par aucun stéréotype.
+**Quatre limites structurelles sont à assumer avant le registre lui-même**, et **aucun stéréotype ne
+les franchit**.
 
 1. ⚠ **Le langage est un langage de description statique** : *il représente une **intention**
    d'architecture, non un **état d'exécution**.*
@@ -344,8 +349,8 @@ fusionnent pas**.
 | Famille | Stéréotypes | Ce qu'ils annotent | Siège |
 |---|---|---|---|
 | **Patrons agentiques** | `<<Agent>>`, `<<MCP Server>>`, `<<NHI>>`, `<<Control Plane>>`, `<<reasoning loop>>`, `<<regulatory-requirement>>` | un élément **existant** du langage, dont la sémantique sous-jacente **reste la sienne** | § 44.1.2 à § 44.1.6, § 44.2 |
-| **Substitution d'éléments retirés** | `<<Contract>>` (Specialization de Business Object), `<<maturity-gap>>` (Specialization d'Assessment), `<<KPI>>` (Specialization de Driver ou d'Assessment) | ⚠ **propositions du Vol. I, présentées par lui comme conventions gouvernées et non comme règles natives** — *et il déclare que le devenir de l'une d'elles **reste à confirmer** sur le document normatif* | § 44.4, § 43.5.3, § 46.1 |
-| **Overlay de risque et de sécurité** | importés tels quels de l'overlay normalisé | ⚠ **non redéfinis ici** — *les redéfinir produirait un dialecte* | overlay d'origine |
+| **Substitution d'éléments retirés** | `<<Contract>>` (Specialization de Business Object), `<<maturity-gap>>` (Specialization d'Assessment), `<<KPI>>` (Specialization de Driver ou d'Assessment) | ⚠ **propositions du Vol. I, présentées par lui comme conventions gouvernées et non comme règles natives** — *et il déclare que le devenir de l'une d'elles **reste à confirmer** sur le document normatif* | § 44.4, **ch. 43** § 43.5.3, **ch. 46** § 46.1 |
+| **Overlay de risque et de sécurité** | importés tels quels du *Risk & Security Overlay* (The Open Group, doc W172, 2019) | ⚠ **non redéfinis ici** — *les redéfinir produirait un dialecte* | overlay d'origine |
 
 : Tableau 44.1 — Le registre des stéréotypes du blueprint. ⚠ **Reproduit du Vol. I, en [C], et publié sous réserve du préalable non tenu (§ 44.0.4).** *Les **Profiles** normalisés portent les attributs typés d'**autonomie**, de **matérialité** et de **réversibilité** — les trois dimensions que les relations ne peuvent pas exprimer.*
 
@@ -378,8 +383,8 @@ au Livre III.*
 
 ## § 44.3 — Strategy : capacités agentiques et chaînes de valeur
 
-**Le domaine Strategy porte trois éléments utiles au blueprint** : **Capability**, **Resource**,
-**Course of Action**, plus **Value Stream**.
+**Le domaine Strategy porte quatre éléments utiles au blueprint** : **Capability**, **Resource**,
+**Course of Action** et **Value Stream**.
 
 ⚠ **La règle qui compte est une règle d'unité, et son anti-patron est nommé au § 44.8** : *la
 **capacité agentique** est l'unité de planification — **ni le modèle, ni l'outil**.* **Une Capability
@@ -421,7 +426,8 @@ traduction structurelle exige.**
 **Côté Application** : *la métaclasse de l'agent est tranchée au § 44.1.2 ; la distinction **Function /
 Process** l'est aussi — **Process** pour la boucle ordonnée, **Function** pour l'appel atomique.* **La
 projection des protocoles, de la passerelle et du registre s'instancie sur les patrons du § 44.1**,
-⚠ **sans redérivation du triplet** — *la redériver serait l'anti-patron n° 9.*
+⚠ **sans redérivation du triplet** — *le redériver ici reconstruirait ce que le § 44.1 pose une fois,
+et annulerait l'économie même du siège.*
 
 **Côté Technology** : **Node**, **Device** et **System Software** pour le parc d'exécution ;
 **Service**, **Interface** et **Artifact** pour ce qu'il expose ; **Path** et **Communication
@@ -429,8 +435,9 @@ Network** pour le substrat d'échange ; ⚠ **et la projection technologique du 
 humaine** — *les justificatifs deviennent des Artifacts, l'émetteur d'identité un Node, le magasin de
 secrets un System Software.*
 
-⚠ **L'observabilité s'y modélise comme un flux, et c'est le seul point où ce chapitre touche le
-mouvement *exploiter*** : *un collecteur exporte la télémétrie par une relation **Flow***. **Ce que ce
+⚠ **L'observabilité s'y modélise comme un flux** — *un collecteur exporte la télémétrie par une
+relation **Flow*** —, et **c'est le premier des deux endroits où ce chapitre touche le mouvement
+*exploiter***, le second étant le point de vue d'audit du § 44.6. **Ce que ce
 formalisme ne dit pas** : *ce que cette télémétrie **porte*** — **le ch. 38 § 38.5 établit qu'elle ne
 porte pas la clé de jointure**, et *aucun stéréotype n'y remédie.*
 
@@ -469,9 +476,10 @@ responsabilité**. ⚠ **Elle ne se re-dérive pas à partir de rien** : *elle s
 ch. 42, que le blueprint **relie au modèle** plutôt qu'il ne la reformule.*
 
 ⚠ **L'orientation canadienne donne à cette chaîne des points d'ancrage datés, et la modalité de chacun
-se porte.** *L'article 12.1 **impose** la traçabilité des décisions automatisées ; la ligne directrice
-E-23 **attend** une gestion du risque de modèle qui s'étend aux méthodes d'IA et d'apprentissage
-automatique, **jamais « exige »*** (réserve F-09 du Vol. II ; siège **ch. 25**). ⚠ **Chacun devient
+se porte.** *L'article 12.1 de la **Loi 25** (Québec) **impose** des obligations d'information et de
+révision humaine sur la décision automatisée — leur contenu est au **Livre III**, non ici ; la ligne
+directrice **E-23 attend** une gestion du risque de modèle qui s'étend aux méthodes d'IA et
+d'apprentissage automatique, **jamais « exige »*** (réserve F-09 du Vol. II ; siège **ch. 25**). ⚠ **Chacun devient
 dans le modèle un `<<regulatory-requirement>>` dont la chaîne descendante doit aboutir à un élément
 exécutable** — *et c'est le seul endroit où ce chapitre touche au fond réglementaire, parce que c'est
 le seul où la structure en dépend.*
@@ -501,17 +509,19 @@ tire une règle : *états **actuel** et **cible** distingués, versionnement, et
 périodique du référentiel avec le parc réel**.* **L'anti-patron correspondant est nommé au § 44.8 :
 l'inventaire fantôme — un modèle d'intention déconnecté du parc.**
 
-⚠ **Et c'est ici que le ch. 41 § 41.3 rejoint ce chapitre par l'autre bout** : *le **catalogue
-interne** y est proposé comme le lieu où l'organisation sait ce qu'elle produit et exploite*, et
-**la réconciliation dont il est question ici en serait le pendant côté modèle**. ⚠ **Ni l'un ni
-l'autre n'est porté par une source** : *le catalogue est une construction d'auteur de matière neuve,
-la réconciliation une thèse en [C] — les rapprocher est une lecture, et elle est marquée.*
+⚠ **Et c'est ici que le ch. 41 § 41.3 rejoint ce chapitre par l'autre bout.** **Lecture de l'auteur** —
+*le **catalogue interne** y est proposé comme le lieu où l'organisation sait ce qu'elle produit et
+exploite, et **la réconciliation dont il est question ici en serait le pendant côté modèle**.* **Ce
+que le socle établit** : rien — *le catalogue est une construction d'auteur de matière neuve, la
+réconciliation une thèse en [C]*. **Ce qu'il n'établit pas** : que les deux gestes soient un seul, ni
+qu'un référentiel réconcilié suffise à tenir un catalogue à jour.
 
-⚠ **Une réserve d'outillage, datée et attribuée** : *à la mi-2026, deux ateliers nommés par le Vol. I
-prennent en charge la spécialisation et les profils **sur le socle 3.2**, mais **pas encore l'export
-natif de la version de référence*** — ⚠ **information rapportée par le Vol. I, en [C], statut et
-version dits à la mention**. **D'où la règle du chapitre** : *écrire en version de référence **avec
-note d'équivalence 3.2 par patron***.
+⚠ **Une réserve d'outillage, datée et attribuée** : *à la mi-2026, deux ateliers de modélisation
+nommés par le Vol. I prennent en charge la spécialisation et les profils **sur le socle 3.x** — l'un
+certifié pour la 3.1, l'autre pour la 3.2 —, mais **pas encore l'export natif de la version de
+référence*** — ⚠ **information rapportée par le Vol. I, en [C], statut et version dits à la
+mention**. **D'où la règle du chapitre** : *écrire en version de référence **avec note d'équivalence
+3.2 par patron***.
 
 ## § 44.8 — Bibliothèque de patrons et anti-patrons
 
@@ -521,8 +531,8 @@ le couple point d'arrêt humain / double regard ; la double qualification.* ⚠ 
 bibliothèque n'est pas la liste, c'est l'instanciation par sous-domaine** : *un même patron se décline
 d'un cas d'usage à l'autre **sans renégocier le triplet de modélisation**.*
 
-**Neuf anti-patrons sont nommés avec leur correction**, et ⚠ **trois valent d'être retenus parce qu'un
-chapitre aval les commettrait sans s'en apercevoir.**
+**Neuf anti-patrons sont nommés avec leur correction**, et ⚠ **les trois premiers du tableau valent
+d'être retenus parce qu'un chapitre aval les commettrait sans s'en apercevoir.**
 
 | Anti-patron | Ce qu'il produit | Correction |
 |---|---|---|
@@ -547,7 +557,9 @@ et des relations **stables** ; or un système agentique se définit par **un ét
 à l'exécution** et par **une décision non déterministe** — le même agent, sur la même entrée, peut
 emprunter des chemins différents.* ⚠ **Le métamodèle ne dispose d'aucune construction pour représenter
 cette variabilité**, et **aucun stéréotype du registre ne la franchit** : *elle relève du registre
-descriptif lui-même, non du vocabulaire d'éléments.*
+descriptif lui-même, non du vocabulaire d'éléments.* ⚠ **Cet énoncé se borne à son degré** : *il vient
+du Vol. I en [C], et le document de norme n'a pas été lu par la somme (§ 44.0.4) — **absence de
+documentation, non fait négatif vérifié (degré 3)**.*
 
 ⚠ **La conséquence méthodologique est une complémentarité obligée, et elle est le legs le plus opérant
 du chapitre** : *le blueprint fixe **l'intention d'architecture et les contrôles structurels** ;
@@ -557,9 +569,11 @@ complémentarité est précisément celui dont la clé de jointure manque.**
 
 **Deuxième — le modèle vivant.** *L'idée d'un jumeau numérique organisationnel suppose **un modèle
 alimenté et corrigé automatiquement**, plutôt qu'un livrable édité à la main.* ⚠ **Le Vol. I rapporte,
-en [C] et avec ses éditeurs nommés, que des plateformes d'architecture exposent désormais des serveurs
-d'outils sur leur référentiel** — ⚠ **capacités auto-déclarées par leurs éditeurs, statuts et dates
-dits à la mention, non vérifiées indépendamment**. *Cela ouvre la possibilité que **des agents
+en [C], que deux plateformes d'architecture exposent désormais des serveurs d'outils sur leur
+référentiel — Ardoq, plateforme annoncée le 28 mai 2026 avec ses agents en bêta ouverte, et SAP
+LeanIX, dont la fonction de création d'agents est déclarée en disponibilité générale depuis le
+19 décembre 2025** — ⚠ **capacités auto-déclarées par ces éditeurs, statuts et dates dits à la
+mention, non vérifiées indépendamment**. *Cela ouvre la possibilité que **des agents
 interrogent et modifient le modèle d'architecture** — c'est-à-dire que **l'objet décrit et l'outil qui
 le décrit convergent**.*
 
@@ -627,13 +641,16 @@ gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A).
 
 **Ce qui est enfreint.** Portes **G-3**, **G-4** et **G-5** ; **volet résiduel de G-1** ; **ordre de
 rédaction du PRD §6** ; ⚠ **et le préalable propre à ce chapitre — la re-vérification du mécanisme
-d'extension sur le document normatif de référence —, que le TOC déclare *préalable au registre des
-stéréotypes, non note de transition*, et que le PRD §12 nomme au jalon J-IV-5.** Instruction d'auteur
-du **27 juillet 2026**.
+d'extension sur le document normatif de référence (C260) —, que le TOC déclare *préalable au registre
+des stéréotypes, non note de transition*, et que le PRD §12 nomme au jalon J-IV-5.** Instruction
+d'auteur du **27 juillet 2026**. ⚠ **G-3 a été franchie le 28 juillet 2026, après cette rédaction** :
+*l'infraction n'en est pas effacée — une porte franchie ensuite ne rétroagit pas sur la pièce écrite
+avant elle*, et **G-4, G-5 et le préalable propre au chapitre demeurent entiers**.
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01, et ici la raison est double** : *le socle
-   consolidé compte zéro entrée*, **et la source unique de ce chapitre entre en [C]** — sa
-   vérification portant sur ses références et non sur le contenu de ses affirmations. ⚠ **Ce chapitre
+   consolidé, constitué depuis le 28 juillet 2026, **ne porte aucune entrée sur la matière de ce
+   chapitre*** — balayage constaté sur pièce —, **et la source unique de ce chapitre entre en [C]** :
+   sa vérification porte sur ses références et non sur le contenu de ses affirmations. ⚠ **Ce chapitre
    est le seul du Livre dont la totalité du corps est en [C]**, hors une réserve de modalité empruntée
    au Vol. II au § 44.6.
 2. **Les décomptes sont publiables** (G-2) ; le réel est reporté au [`README.md`](README.md).
@@ -701,29 +718,39 @@ du **27 juillet 2026**.
   entrée sans source primaire tierce reste une thèse attribuée et ne porte jamais un fait
   central.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.28** — § 44.0 à
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.30** — § 44.0 à
 § 44.9, dans l'ordre exact ; ⚠ **quatre déviations d'intitulé sont fondées et se déclarent**
-(décision 8, reprise en décision 15 alinéa c) : le § 44.2 ajoute un article, le § 44.3 abrège « chaînes
-de valeur financières », le § 44.5 écrit « exécution » pour « runtime » et le § 44.9 « le formalisme »
-pour le nom du langage — *les deux dernières relèvent du garde-fou de non-redondance propre au
-chapitre et de la règle de langue du dépôt, non d'un écart de contenu* —, et **le contrat de lecture de la source est refondu en apparat**, comme
-la table le prescrit. La **table de couverture est respectée pour ses sept lignes**, y compris ses
+(décision 8) : le § 44.2 ajoute un article, le § 44.3 abrège « chaînes de valeur financières », le
+§ 44.5 écrit « exécution » pour « runtime » et le § 44.9 « le formalisme » pour le nom du langage —
+*les deux dernières relèvent du garde-fou de non-redondance propre au chapitre et de la règle de
+langue du dépôt, non d'un écart de contenu* —, et **le contrat de lecture de la source est refondu en
+apparat**, comme la table le prescrit. ⚠ **Une cinquième déviation est de cardinal et se déclare
+aussi** : *le plan écrit « ici il en suit **quarante-deux** » ; la pièce écrit **quarante-trois**,
+le chapitre 44 suivant les chapitres 1 à 43 — l'écart est **remonté**, non corrigé au plan.* La
+**table de couverture est respectée pour ses sept lignes**, y compris ses
 **deux prélèvements déclarés** : **§6.8 part au ch. 45** (exemple de bout en bout) et **§6.10 part au
 ch. 43** (maturité par plateaux) — ⚠ *ni l'un ni l'autre n'est repris ici*, et **le §6.0.1 est refondu
 en apparat**. Le **garde-fou de non-redondance est tenu de bout en bout** : *aucune phrase de ce
 chapitre ne tient comme exposé des chapitres amont si l'on retire le mot du langage*, et **les renvois
 remplacent partout la reprise**. Les **notes d'équivalence 3.2 sont portées aux deux patrons qui les
 exigent** — *ceux qui mobilisent l'élément retiré* —, et **non aux patrons bâtis sur des éléments
-inchangés**. ⚠ **Cardinaux re-mesurés au commit du 28 juillet 2026, sur le marqueur littéral et sur le corps seul** (décision 16 du TOC) ; *les cardinaux antérieurs comptaient les applications du garde-fou et n'étaient re-mesurables par aucune règle écrite.* Le marqueur littéral **« degré 3 » compte deux occurrences**, et *les trois
-degrés sont portés en toutes lettres à chaque absence des § 44.0, § 44.1, § 44.5, § 44.7 et § 44.9 —
-domaine déclaré, sans cardinal* (alinéa c). La **capacité auto-déclarée du § 44.9 — une occurrence du
-marqueur « auto-déclaré »** — est attribuée à son éditeur nommé, avec statut et date. ⚠ **Un siège EST posé et marqué par cette pièce, et la
-formulation antérieure — « aucun siège neuf n'est posé » — était fausse** : **le siège de la conformité
-traçable** (§ 44.6), que le plan désigne lui-même « (SIÈGE) » à son entrée, est **repris de la source à
-son emplacement** et **porte la forme pleine du marqueur**. ☐ **Son versement à
-[`PRD/check-sieges.py`](../PRD/check-sieges.py) est DÛ, et la passe de gouvernance du 28 juillet 2026
-le verse au même commit** — *constaté sur pièce à l'heure de cette écriture : la table porte douze
-entrées et celle-ci n'y est pas* ; ☑ **les renvois entrants annoncés, eux, existent** — **ch. 45
-§ 45.14** et **ch. 46 § 46.2.3**, le second écrit par la présente passe. Les
-sièges **touchés sans être reconstruits** — l'encadré du **ch. 7 § 7.5**, le passeport au **ch. 16**,
-les trois échelles au **ch. 43 § 43.5** — portent leur renvoi.
+inchangés**. ⚠ **Cardinaux re-mesurés au commit, sur le marqueur littéral et sur le corps seul**
+(décision 16 du TOC) ; *les cardinaux antérieurs comptaient les applications du garde-fou et
+n'étaient re-mesurables par aucune règle écrite.* Le marqueur littéral **« degré 3 » compte trois
+occurrences** — § 44.1.1, § 44.5 et § 44.9 —, et *chaque absence porte son degré en toutes lettres à
+ces trois endroits : **domaine déclaré, sans cardinal*** (alinéa c). ⚠ **L'identifiant R-14, lui,
+n'est écrit nulle part dans le corps** : *le garde-fou est appliqué, son marqueur ne l'est pas, et la
+déclaration antérieure — « une occurrence, § 44.6 » — était fausse.* La **capacité auto-déclarée du
+§ 44.9 — une occurrence du marqueur « auto-déclaré »** — est attribuée à **ses deux éditeurs nommés**,
+avec leurs statuts et leurs dates (décision 15, alinéa a). ⚠ **Un siège EST posé et marqué par cette
+pièce, et la formulation antérieure — « aucun siège neuf n'est posé » — était fausse** : **le siège de
+la conformité traçable** (§ 44.6), que le plan désigne lui-même « (SIÈGE) » à son entrée, est **repris
+de la source à son emplacement** et **porte la forme pleine du marqueur**. ☑ **Son versement à
+[`PRD/check-sieges.py`](../PRD/check-sieges.py) est FAIT** — *constaté sur pièce : la table porte
+vingt-six entrées et celle-ci y figure, avec sa signature à trois motifs* ; ☑ **les renvois entrants
+annoncés existent** — **ch. 45 § 45.14** et **ch. 46 § 46.2.3**. Les sièges **touchés sans être
+reconstruits** — l'encadré du **ch. 7 § 7.5**, le passeport au **ch. 16**, le patron du quatre-yeux au
+**ch. 31 § 31.3.4** et les trois échelles au **ch. 43 § 43.5** — portent leur renvoi. ⚠ **Le renvoi au
+ch. 31 est neuf** : *l'appareil déclarait ce chapitre comme la seule pièce touchant la matière du
+quatre-yeux sans nommer son siège, et désactivait S5 pour ce motif ; le § 44.1.7 le nomme désormais,
+et la réactivation du contrôle est **remontée**.*

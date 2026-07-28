@@ -8,9 +8,9 @@ rendent leurs verdicts d'architecture.*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6, qui place ce mouvement **après les Livres I et III** — *le Livre III n'est pas achevé.* ⚠ **R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre.** ⚠ **Ce chapitre est l'homologue de méthode du ch. 14** : comme lui, il ne verse rien et fournit un instrument ; **comme lui, sa recevabilité tient à son rendement, non à sa filiation** |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6, qui place ce mouvement **après les Livres I et III** — *le Livre III n'était pas achevé à la rédaction.* ⚠ **R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre.** ⚠ **Ce chapitre est l'homologue de méthode du ch. 14** : comme lui, il ne verse rien et fournit un instrument ; **comme lui, sa recevabilité tient à son rendement, non à sa filiation** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **16 juillet 2026** (Vol. II, ch. 18), **17 juillet 2026** (Vol. II, Annexe B), **21 juillet 2026** (Vol. III, Annexe B). ⚠ **Ce chapitre porte trois gels de source distincts et ne les fusionne pas** : *une matrice dont les lignes sont datées de trois jours différents n'est pas datée d'un jour.* |
-| **Socle mobilisé** | ⚠ **Socle TRANSVERSAL, construit par la rédaction — et sa contrepartie est obligatoire et non négociable** (règle héritée du Vol. II, reprise par le TOC) : l'en-tête énumère **les entrées effectivement mobilisées et les garde-fous effectivement balayés, y compris ceux à zéro occurrence**. **Aucune entrée du socle consolidé** (G-3 ouverte). Vol. II — **F-01** (MCP), **F-02** et **F-16** (A2A), **F-04** (AP2) ; **F-09** (E-23), **F-25** (AMF), **F-26** (11-348), **F-27** (art. 12.1) ; **F-11**, **F-34**, **F-35** (cadre bancaire) ; **F-36**, **F-37** ; **F-05**, **F-08**, **F-10**, **F-15** en renvoi. Vol. III — **F-01** à **F-11**, **F-33** à **F-43**, **F-46** à **F-51**, **F-55**, **F-70**, **F-71**, **F-87**, **F-89**, **F-93**, **F-95** ; **H-01** à **H-03**, **H-09**, **H-10**, **H-33**. ⚠ **Les deux séries F-xx sont préfixées de leur volume à chaque emploi** : *un « F-09 » nu est indécidable entre le socle du Vol. II et celui du Vol. III, qui portent chacun une entrée sous ce numéro et sur un objet différent* (décision 7 du TOC). **Aucun énoncé n'est central au sens de CA-IV-01** |
+| **Socle mobilisé** | ⚠ **Socle TRANSVERSAL, construit par la rédaction — et sa contrepartie est obligatoire et non négociable** (règle héritée du Vol. II, reprise par le TOC) : l'en-tête énumère **les entrées effectivement mobilisées et les garde-fous effectivement balayés, y compris ceux à zéro occurrence**. ☑ **Le socle consolidé existe depuis le 28 juillet 2026** — [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées**, porte **G-3 franchie**. ⚠ **Cette pièce n'a PAS été re-citée en `S-nnn`** (PRD §7.1) : elle cite les identifiants sources préfixés, que les deux tables de correspondance résolvent — **Vol. II F-01 → `S-001`**, **F-02 → `S-002`**, **F-04 → `S-004`**, **F-09 → `S-009`**, **F-10 → `S-010`**, **F-25 → `S-023`**, **F-26 → `S-024`**, **F-27 → `S-025`**, **F-35 → `S-033`**, **F-36 → `S-034`**, **F-37 → `S-035`**. Vol. II — **F-01** (MCP), **F-02** et **F-16** (A2A), **F-04** (AP2) ; **F-09** (E-23), **F-25** (AMF), **F-26** (11-348), **F-27** (art. 12.1) ; **F-11**, **F-34**, **F-35** (cadre bancaire) ; **F-36**, **F-37** ; **F-05**, **F-08**, **F-10**, **F-15** en renvoi. Vol. III — **F-01** à **F-11**, **F-33** à **F-43**, **F-46** à **F-51**, **F-55**, **F-70**, **F-71**, **F-87**, **F-89**, **F-93**, **F-95** ; **H-01** à **H-03**, **H-09**, **H-10**, **H-33**. ⚠ **Les deux séries F-xx sont préfixées de leur volume à chaque emploi** : *un « F-09 » nu est indécidable entre le socle du Vol. II et celui du Vol. III, qui portent chacun une entrée sous ce numéro et sur un objet différent* (décision 7 du TOC). ⚠ **Aucun énoncé n'est central au sens de CA-IV-01**, et le franchissement de G-3 ne le change pas : *la refonte du socle est **structurelle**, non évidentielle — aucun vote adversarial n'y a été conduit, et il reste dû pour toute entrée appelée à porter un fait central* |
 | **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** *La contrepartie du socle transversal.* Vol. II — **réserve F-09 (« attendu par E-23 », jamais « exigé » ; « documentation de modèle » / « inventaire », jamais « fiche de modèle ») : deux occurrences de l'identifiant**, § 42.1 — ⚠ *la formule imposée est employée bien au-delà, à chaque énoncé sur E-23 des § 42.1, § 42.3 et § 42.4 : **domaine déclaré, sans cardinal*** ; **réserve F-25 (jamais « en attente » ni « en projet ») : deux occurrences**, § 42.1 ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : une occurrence**, § 42.2. **R-5 (aucun standard technique désigné — formulation imposée) : zéro occurrence de l'identifiant** — ⚠ *la formulation imposée est tenue aux § 42.2, § 42.3 et § 42.4, **domaine déclaré sans cardinal*** ; **soutien ≠ production (décompte AP2) : domaine déclaré, § 42.2, sans cardinal** ; **R-7 : ressort en contexte réglementaire pur, aucune correspondance produit ↔ réglementation dans ce chapitre — filtré** ; **R-1, R-2, R-3, R-4, R-6, R-8 : zéro occurrence.** Vol. III — **R-02 : une occurrence**, § 42.2 ; **R-09 : une occurrence**, § 42.2 ; **R-14 (trois degrés d'absence) : une occurrence**, § 42.0 — ⚠ *les trois espèces de vide du § 42.3 en sont l'application systématique, sans que l'identifiant y soit répété : **domaine déclaré, corps entier*** ; **R-01 : zéro occurrence de l'identifiant**, le garde-fou restant tenu au § 42.3. **R-03 à R-08, R-10 à R-13 : zéro occurrence.** ⚠ **Faux ami déclaré** : « standard technique » y désigne l'objet du cadre bancaire, **jamais un jugement de qualité** |
 | **Volumétrie cible** | ≈ **4 000 mots** de corps (§ 42.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des quatre sections — **la deuxième plus basse du Livre**, ce chapitre ne portant aucun corpus propre. ☑ **Décompte publiable depuis G-2** ; **réel reporté au [`README.md`](README.md)**. ⚠ **D-4 s'applique** |
 
@@ -32,7 +32,8 @@ chapitre le fait au § 42.3.3 et le marque.** ⚠ **Le troisième membre, lui, t
 croisements sans lien documenté* est exactement ce que la source établit, **re-mesuré ici**. L'écart
 avait été remonté (**R-IV-54**, § 42.5). ☑ **La remontée est soldée par l'arbitrage v0.28 du TOC** (décisions 8 et 14), et **la citation
 ci-dessus porte la forme réalignée**, reportée **par copie** depuis l'entrée courante du plan.
-*La v0.29 du TOC ne modifie aucune thèse du Livre.*
+*Ni la v0.29 ni la v0.30 du TOC ne modifient une thèse du Livre : la citation ci-dessus reste celle de
+l'entrée courante du plan.*
 
 ---
 
@@ -56,16 +57,19 @@ protocole** — MCP, A2A, AP2 — **font quinze**, recomptés ligne à ligne sur
 ☐ **La re-mesure contre la matrice consolidée de l'appareil reste due** : *cette annexe n'est pas
 rédigée, et un cardinal re-mesuré sur la source n'est pas un cardinal re-mesuré sur sa consolidation.*
 
-**Trois propositions structurent le chapitre.** *La première* : la matrice est un objet dont il faut
+**Quatre propositions structurent le chapitre.** *La première* : la matrice est un objet dont il faut
 fixer les **règles de remplissage**, faute de quoi elle produira de la plausibilité au lieu d'un
 constat (§ 42.1). *La deuxième* : lue **par protocole**, elle montre que la couche protocolaire répond
 à des questions — *qui parle, par quel format, avec quelle habilitation* — que les textes canadiens
 **ne posent pas** (§ 42.2). *La troisième* : lue **par texte**, elle montre que **ceux dont le socle
 porte le contenu le plus précis sont ceux auxquels les protocoles répondent le moins** (§ 42.3).
+*La quatrième* : ces vides, pris ensemble, désignent **cinq zones de compensation** dont l'architecture
+doit répondre (§ 42.4) — c'est le membre opératoire de la thèse, et le seul qui lègue un cahier des
+charges.
 
 ⚠ **Ce que le chapitre ne refait pas.** La **traduction des exigences en cadres déterministes** est au
-**ch. 29**, et il n'y est pas revenu. Les **couches, leur positionnement et les points de contrôle
-obligatoires** sont au **ch. 43** ; leur **instrumentation** au **ch. 46** ; leur **instanciation** au
+**ch. 29**, et le présent chapitre n'y revient pas. Les **couches, leur positionnement et les points
+de contrôle obligatoires** sont au **ch. 43** ; leur **instrumentation** au **ch. 46** ; leur **instanciation** au
 **ch. 45**. *La valeur propre de ce chapitre est ailleurs : la matrice comme objet, ses deux lectures,
 les zones de compensation.*
 
@@ -88,18 +92,21 @@ l'extraction du texte intégral d'E-23 — en anglais et en français —, le so
 **définition verbatim de « modèle »** et **cinq domaines d'attentes opératoires** : cycle de vie,
 inventaire d'entreprise, cotation graduée, **documentation de modèle**, surveillance continue
 (Vol. II **F-09**, **[A/B mixte]**). ⚠ **« Documentation de modèle » et « inventaire », jamais « fiche
-de modèle »** — *zéro occurrence dans le texte* — et **« attendu par E-23 », jamais « exigé par
-E-23 » ni « E-23 impose »** : la ligne directrice est **fondée sur des principes** et rédigée au
-conditionnel.
+de modèle »** — *forme sans occurrence dans le texte intégral d'E-23* — et **« attendu par E-23 »,
+jamais « exigé par E-23 » ni « E-23 impose »** : la ligne directrice est **fondée sur des principes**
+et rédigée au conditionnel.
 
 **La ligne directrice de l'AMF, elle, n'est au socle que par son calendrier** (Vol. II **F-25**,
 **[A]**) : ⚠ **c'est la seule ligne où le premier terme manque, et ce chapitre ne le comble pas**.
 ⚠ **Forme imposée** : *ne jamais écrire « en attente » ni « en projet »* — **elle est finale**, et **en
-vigueur au 1ᵉʳ mai 2027**. ⚠ **Une divergence datée est signalée et non lissée** : *le Vol. II date la
-version finale du 30 mars 2026 ; la veille technologique de la racine du dépôt la date du 7 avril
-2026, sa source étant inaccessible aux outils.* **Le cadrage du Vol. IV tranche en faveur du Vol. II ;
-cet arbitrage n'a aucune autorité tant que la somme n'est pas rédigée, et la divergence reste au
-registre de l'Annexe C.**
+vigueur au 1ᵉʳ mai 2027**. ⚠ **Sa date de finalisation, en revanche, n'est plus une divergence
+tranchée mais une ABSENCE DE DATATION** : la somme écrit **avril 2026** — *un mois, non un jour* — et
+**déclare les trois états** que le corpus porte ; *le Vol. III établit par extraction du 21 juillet
+2026 qu'**aucune des deux dates arbitrées ne figure aux pages officielles**, de sorte que l'arbitrage
+qui les départageait portait sur un objet inexistant.* **Le siège de ce constat est le ch. 27
+§ 27.1**, et le registre de l'Annexe C le porte ; ⚠ **la position antérieure du cadrage — « 30 mars
+2026, en faveur du Vol. II » — ne se rétablit pas.** *Seule l'entrée en vigueur est concordante entre
+les trois états, et c'est elle seule que la ligne de la matrice porte.*
 
 | Texte canadien *(traitement dans la somme)* | Ce que le socle porte de sa demande | MCP | A2A v1.0 | AP2 |
 |---|---|---|---|---|
@@ -161,9 +168,10 @@ d'agent ne déplace ce porteur.* Le **ch. 29** en fait le pivot de son argument.
 
 **AP2 est la ligne la plus vide, et la plus instructive.** Protocole compagnon d'A2A pour les
 transactions pilotées par agents ; ⚠ **plus de soixante organisations déclarent leur soutien** —
-*métrique auto-déclarée, attribuée au communiqué de fondation qui la porte, et **le soutien déclaré ne
-vaut pas déploiement en production*** (Vol. II **F-04**, **[A]**). ⚠ **Le socle du Vol. II ne porte ni
-son anatomie technique, ni un transfert de gouvernance, et ne le relie à aucun rail canadien.**
+*métrique auto-déclarée, attribuée au **communiqué de fondation du 9 avril 2026** qui la porte, et **le
+soutien déclaré ne vaut pas déploiement en production*** (Vol. II **F-04**, **[A]**). ⚠ **Le socle du
+Vol. II ne porte ni son anatomie technique, ni aucun transfert de gouvernance documenté, et ne le relie
+à aucun rail canadien** — *la prospective de ce dernier point est au **ch. 36***.
 
 **Lecture de l'auteur** — **une relation inverse apparaît**. *Des trois protocoles, celui qui touche le
 plus directement l'acte réglementé — le paiement — est celui dont le socle documente le moins : ni
@@ -202,9 +210,10 @@ demande, et ce sont les protocoles qui ne portent rien.**
   le texte intégral, EN et FR. Sa définition de « modèle », laissée *intentionally broad*, englobe les
   méthodes d'IA et d'apprentissage automatique, et le texte vise expressément la **prise de décision
   autonome** et la **re-paramétrisation autonome** ; ⚠ **d'où une couverture *implicite*, que des
-  analystes juridiques tiennent pour acquise — inférence d'analystes, jamais « le BSIF exige pour
-  l'IA agentique ».** **Lecture de l'auteur** — *les champs d'un inventaire de modèles gouvernés et le
-  typage d'un appel d'outil portent sur des objets différents* ; le socle porte les deux termes, leur
+  analystes juridiques canadiens tiennent pour acquise — inférence d'analystes, jamais « le BSIF exige
+  pour l'IA agentique »** (siège de l'énoncé : **ch. 25 § 25.3**). **Lecture de l'auteur** — *les
+  champs d'un inventaire de modèles gouvernés et le typage d'un appel d'outil portent sur des objets
+  différents* ; le socle porte les deux termes, leur
   non-recouvrement est de l'auteur.
 - **L'article 12.1** attache **trois obligations** dont le socle porte le libellé officiel — informer,
   expliquer sur demande, offrir la révision. ⚠ **Le socle ne documente, pour aucun des trois
@@ -219,8 +228,8 @@ demande, et ce sont les protocoles qui ne portent rien.**
 **Lecture de l'auteur** — *on attendrait que les lignes vides soient celles des textes les moins
 lisibles. **C'est l'inverse.*** Les deux textes dont le socle porte le contenu le plus précis — E-23,
 par extraction intégrale, et l'article 12.1, par son libellé officiel — sont **ceux dont les six
-croisements ne portent aucun lien documenté**, ⚠ **et ce sont eux qui obligent le plus tôt** : *l'un
-depuis 2023, l'autre au 1ᵉʳ mai 2027.*
+croisements ne portent aucun lien documenté**, ⚠ **et ce sont eux qui obligent le plus tôt** :
+*l'article 12.1 depuis 2023, E-23 au 1ᵉʳ mai 2027.*
 
 ⚠ **Pour MCP et A2A, dont le socle porte l'anatomie, ce vide n'est pas documentaire** : *les deux
 spécifications décrivent des appels et des délégations, non des décisions.* ⚠ **Pour AP2, dont le
@@ -231,8 +240,9 @@ ou non, la somme le laisse ouvert.*
 ### 42.3.3 Le croisement avec la grille des cinq questions — construction du compendium
 
 ⚠ **Ce croisement n'est porté par aucune des deux sources, et il est marqué comme construction.** Le
-Vol. II n'emploie pas la grille — *c'est un instrument du Vol. III* —, et le Vol. III ne croise pas ses
-mécanismes avec les textes canadiens. **La somme met les deux matrices en regard, et c'est un geste
+Vol. II n'emploie pas la grille — *c'est un instrument du Vol. III, dont la somme pose l'exposé au
+**ch. 14**, son siège ; les cinq questions ne sont pas re-dérivées ici* —, et le Vol. III ne croise pas
+ses mécanismes avec les textes canadiens. **La somme met les deux matrices en regard, et c'est un geste
 d'éditeur.**
 
 **Lecture de l'auteur** — **ce que le socle établit** : d'un côté, **quinze croisements sans lien
@@ -241,14 +251,16 @@ documenté** (Vol. II) ; de l'autre, des **verdicts par mécanisme** sur les cin
 (Vol. III, Annexe B). **Ce qu'il n'établit pas** : que les deux matrices mesurent le même objet — *et
 elles ne le mesurent pas.*
 
-⚠ **La mise en regard produit néanmoins un constat, et un seul.** Les trois cellules non vides de la
-matrice protocolaire — article 12.1 × MCP, article 12.1 × A2A, cadre bancaire × MCP — sont exactement
-celles où **le protocole apporte quelque chose qui répond à Q-A** (*qui es-tu*) **et à rien d'autre** :
-*un substrat de frontière typé, une identité d'appelant vérifiable, un vocabulaire d'autorisation
-partagé.* **Or aucune des trois obligations canadiennes croisées ne pose la question Q-A** : elles
-posent *qui répond* (Q-E) et *sur quel fondement*. ⚠ **Le croisement des deux instruments dit donc la
-même chose que chacun séparément, et il le dit plus court** : *la couche protocolaire répond à la
-première question de la grille ; les textes canadiens posent la dernière.*
+⚠ **La mise en regard produit néanmoins un constat, et un seul.** Sur les six cellules non vides de la
+matrice protocolaire, **trois seulement portent un apport du protocole** — article 12.1 × MCP,
+article 12.1 × A2A, cadre bancaire × MCP ; ⚠ *les trois autres, celles de la ligne E-23, sont non vides
+d'un fait négatif vérifié, ce qui n'est pas un apport.* **Ces trois-là sont exactement celles où le
+protocole apporte quelque chose qui répond à Q-A** (*qui es-tu*) **et à rien d'autre** : *un substrat de
+frontière typé, une identité d'appelant vérifiable, un vocabulaire d'autorisation partagé.* **Or aucune
+des trois obligations canadiennes croisées ne pose la question Q-A** : elles posent *qui en répond*
+(Q-E) et *sur quel fondement*. ⚠ **Le croisement des deux instruments dit donc la même chose que chacun
+séparément, et il le dit plus court** : *la couche protocolaire répond à la première question de la
+grille ; les textes canadiens posent la dernière.*
 
 ⚠ **Ce constat est réfutable, et par une seule chose** : la production d'une cellule où un protocole
 apporterait une réponse à Q-C, Q-D ou Q-E qu'un texte canadien exigerait. **Le socle n'en porte
@@ -263,11 +275,11 @@ jamais la conclusion.**
 
 | # | Zone | Ce que le socle porte des deux côtés | Ce qui doit compenser, et où c'est traité |
 |---|---|---|---|
-| **Z1** | **La production de la trace** | l'art. 12.1 exige les raisons, facteurs et paramètres de *cette* décision ; une préimpression enseigne que **la journalisation confiée aux agents « n'est généralement pas recommandée »** ⚠ *(source unique, non révisée)* ; un rapport conjoint d'autorités établit que **les relations causales entrées-sorties sont souvent indéterminables** | **le cadre**, non l'agent — **ch. 29** ; ⚠ **la matrice ajoute le quatrième candidat écarté : le protocole** — *le typage donne un substrat de frontière, non une trace d'instance*. Instrumentation : **ch. 38 § 38.4** |
+| **Z1** | **La production de la trace** | l'art. 12.1 exige les raisons, facteurs et paramètres de *cette* décision ; une préimpression enseigne que **la journalisation confiée aux agents « n'est généralement pas recommandée »** (Vol. II **F-37**, ⚠ *préimpression non révisée, source unique*) ; un rapport conjoint d'autorités fédérales établit que **les relations causales entrées-sorties sont souvent indéterminables** (Vol. II **F-10**) | **le cadre**, non l'agent — **ch. 29** ; ⚠ **la matrice ajoute le quatrième candidat écarté : le protocole** — *le typage donne un substrat de frontière, non une trace d'instance*. Instrumentation : **ch. 38 § 38.4** |
 | **Z2** | **Le point d'arrêt humain** | l'art. 12.1 exige l'occasion de présenter ses observations à **un membre du personnel en mesure de réviser** ; ⚠ **le socle ne documente d'humain dans aucun des trois protocoles** — il le documente au niveau d'**un** cadriciel d'orchestration nommé, jamais des protocoles | **la couche d'orchestration** — **ch. 23** ; ⚠ **le flux outille un point d'arrêt humain, jamais la révision de l'article 12.1** (**ch. 45 § 45.11**) |
-| **Z3** | **La détectabilité de l'auto-modification** | l'avis 11-348 capte l'adaptativité **après déploiement** ; un manifeste scinde l'auto-modification en **adaptation** et **évolution** ; E-23 **attend** une surveillance continue visant nommément la **re-paramétrisation autonome** | ⚠ **aucune ligne de la pile ne l'exécute** : la contrainte est au **ch. 29**, la distinction au **ch. 22**, le constat d'indétectabilité au **ch. 39 § 39.5** |
+| **Z3** | **La détectabilité de l'auto-modification** | l'avis 11-348 capte l'adaptativité **après déploiement** ; un manifeste de recherche scinde l'auto-modification en **adaptation** et **évolution** (Vol. II **F-36**) ; E-23 **attend** une surveillance continue visant nommément la **re-paramétrisation autonome** | ⚠ **aucune ligne de la pile ne l'exécute** : la contrainte est au **ch. 29**, la distinction au **ch. 22**, le constat d'indétectabilité au **ch. 39 § 39.5** |
 | **Z4** | **L'interface d'accès du cadre bancaire** | **le standard technique n'est pas désigné** — fait négatif vérifié, quatre chaînes cherchées | **traiter le standard d'accès comme une variable derrière une frontière d'abstraction** — **ch. 32** ; ⚠ **ce n'est pas un choix de protocole agentique, aucun n'étant nommé dans les textes**. Flux instancié : **ch. 45 § 45.13** |
-| **Z5** | **Le contenu et l'état** | les réponses protocolaires établissent **qui parle** ; ⚠ elles **ne couvrent ni l'empoisonnement d'outils, ni l'injection d'invites, ni l'empoisonnement de mémoire** ; un manifeste propose **le confinement local, non la prévention** | **le maillage et les garde-fous d'exécution** — **ch. 37 § 37.6** ; la menace elle-même est au **ch. 19**, la défense au **ch. 6** |
+| **Z5** | **Le contenu et l'état** | les réponses protocolaires établissent **qui parle** ; ⚠ elles **ne couvrent ni l'empoisonnement d'outils, ni l'injection d'invites, ni l'empoisonnement de mémoire** ; le même manifeste de recherche propose **le confinement local, non la prévention** (Vol. II **F-36**) | **le maillage et les garde-fous d'exécution** — **ch. 37 § 37.6** ; la menace elle-même est au **ch. 19**, la défense au **ch. 6** |
 
 : Tableau 42.2 — Les cinq zones de compensation architecturale. ⚠ **Construction d'auteur** : le socle porte les termes de chaque ligne, **jamais la conclusion qu'elle en tire**.
 
@@ -324,12 +336,24 @@ gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A).
 
 **Ce qui est enfreint.** Portes **G-3**, **G-4** et **G-5** ; **volet résiduel de G-1** ; **ordre de
 rédaction du PRD §6**, qui place ce mouvement **après les Livres I et III** — ⚠ **et le Livre III
-n'est pas achevé**, ce qui rend **les renvois vers les ch. 27, 28, 29 et 32 non résolus contre du
-texte**. Instruction d'auteur du **27 juillet 2026**.
+n'était pas achevé à la rédaction**, ce qui a rendu **les renvois vers les ch. 27, 28, 29 et 32
+opposables au plan et non au texte**. Instruction d'auteur du **27 juillet 2026**.
 
-1. **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ **Et ce chapitre est le seul du Livre dont le
-   socle est TRANSVERSAL et construit par la rédaction** : *sa contrepartie — l'énumération des
-   entrées mobilisées et des garde-fous balayés, y compris à zéro — est portée à l'en-tête, et c'est
+⚠ **Deux de ces énoncés ont vieilli, et l'état courant se dit plutôt que se devine.** *(a)* **La porte
+G-3 est franchie depuis le 28 juillet 2026** (PRD v0.14, TOC v0.30) : le socle consolidé existe et
+compte **159 entrées**. ⚠ **L'infraction n'en est pas effacée** — *cette pièce a été écrite avant, et un
+arbitrage qui suit une infraction la solde sans la rattraper* —, et **la pièce n'est pas re-tracée
+contre le socle consolidé** : elle cite les identifiants sources, que les tables de correspondance
+résolvent. *(b)* **Le Livre III est achevé**, comme les quatre autres : les renvois de cette pièce
+résolvent désormais contre du texte, au régime que le point 3 précise. ⚠ **G-4 et G-5 restent
+ouvertes**, et le volet résiduel de G-1 reste dû.
+
+1. **Aucun énoncé n'est central au sens de CA-IV-01** — ⚠ **et le franchissement de G-3 ne l'a pas
+   changé** : *la refonte du socle est structurelle, non évidentielle ; aucun vote adversarial n'y a
+   été conduit, et il reste dû pour toute entrée appelée à porter un fait central.* ⚠ **Et ce
+   chapitre est le seul du Livre dont le socle est TRANSVERSAL et construit par la rédaction** :
+   *sa contrepartie — l'énumération des entrées mobilisées et des garde-fous balayés, y compris à
+   zéro — est portée à l'en-tête, et c'est
    ce dispositif, non une relecture, qui a permis au Vol. II de détecter une erreur de marquage de son
    propre socle.*
 2. **Les décomptes sont publiables** (G-2) ; le réel est reporté au [`README.md`](README.md).
@@ -394,20 +418,41 @@ texte**. Instruction d'auteur du **27 juillet 2026**.
   ☑ **Issue, 27 juillet 2026** — **TOC, Annexe C + PRD, domaine de G-1** — la divergence de date
   sur la ligne directrice de l'AMF est **maintenue au registre avec sa réserve**, ⚠ *l'arbitrage
   du cadrage n'ayant aucune autorité tant que la somme n'est pas rédigée.*
+  ⚠ **Cette issue a été DÉPASSÉE le jour même, et la pièce s'aligne sur l'état courant** : la
+  remontée **R-IV-88** du Livre III établit, par extraction du 21 juillet 2026, qu'**aucune des deux
+  dates arbitrées ne figure aux pages officielles** — *une divergence dont aucun terme n'est à la
+  source n'est plus une divergence : c'est une **absence de datation***. Le plan le porte depuis la
+  **v0.27** et l'a réaligné à trois sites en **v0.29** ; ⚠ **le § 42.1 est le quatrième site**, et il
+  écrit désormais **avril 2026** avec ses trois états déclarés. *La position antérieure — « 30 mars
+  2026, en faveur du Vol. II » — ne se rétablit pas.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.28** — § 42.1 à
-§ 42.4, dans l'ordre exact —, et le § 42.0 est une introduction de chapitre. La **table de couverture
-est respectée pour ses trois lignes** : Vol. II §18.1-18.4 en **condensé**, Vol. II *Monographie*
-Annexe B comme **source des quinze croisements**, Vol. III Annexe B comme **matrice des mécanismes**.
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC**, re-collationnée contre
+la **v0.30** — § 42.1 à § 42.4, dans l'ordre exact —, et le § 42.0 est une introduction de chapitre.
+La **table de couverture est respectée pour ses trois lignes** : Vol. II §18.1-18.4 en **condensé**,
+Vol. II *Monographie* Annexe B comme **source des quinze croisements**, Vol. III Annexe B comme
+**matrice des mécanismes**.
 ⚠ **Les trois règles de remplissage sont reprises sans être réinventées**, et **aucune correspondance
 que la source n'a pas trouvée n'est introduite** — *c'est la discipline propre à ce chapitre, et la
 seule qui l'empêche de fabriquer.* Les **deux partitions du cardinal sont maintenues distinctes**. Les
 **deux faits négatifs vérifiés portent leur borne** — *le premier sur le vocabulaire agentique, les
-chaînes de protocole n'ayant pas été cherchées ; le second sur quatre chaînes nommées.* ⚠ **Cardinaux re-mesurés au commit du 28 juillet 2026, sur le marqueur littéral et sur le corps seul** (décision 16 du TOC) ; *les cardinaux antérieurs comptaient les applications du garde-fou et n'étaient re-mesurables par aucune règle écrite.* Les **trois occurrences du marqueur littéral « degré 3 »** portent leur degré, et
+chaînes de protocole n'ayant pas été cherchées ; le second sur quatre chaînes nommées.*
+⚠ **Cardinaux re-mesurés au commit du 28 juillet 2026, sur le marqueur littéral et sur le corps
+seul** (décision 16 du TOC) ; *les cardinaux antérieurs comptaient les applications du garde-fou et
+n'étaient re-mesurables par aucune règle écrite.* Les **trois occurrences du marqueur littéral
+« degré 3 »** portent leur degré, et
 *les trois espèces de vide du § 42.3 en sont l'application systématique — domaine déclaré, sans
 cardinal* (alinéa c). La **forme imposée « attendu par E-23 » est tenue à chaque énoncé sur E-23 —
-domaine déclaré**, le marqueur littéral y comptant **une occurrence** ; et **« fiche de modèle »
-compte zéro occurrence**, re-mesuré. Le **socle transversal porte
-sa contrepartie obligatoire à l'en-tête**, y compris les garde-fous à zéro occurrence. **Aucun siège
-neuf n'est posé** ; les sièges touchés — la grille au **ch. 14**, le passeport au **ch. 16**,
-l'encadré à quatre branches au **ch. 7 § 7.5** — portent leur renvoi.
+domaine déclaré**, le marqueur littéral y comptant **une occurrence** ; et **« fiche de modèle » compte
+une occurrence**, au § 42.1, **en mention de la forme proscrite** — ⚠ *re-mesuré à la relecture du
+28 juillet 2026, sur les espaces normalisés : le décompte antérieur annonçait zéro parce qu'un retour à
+la ligne coupait la chaîne, et **un motif qu'un retour à la ligne coupe n'est pas absent, il est
+invisible**.* Le **socle transversal porte sa contrepartie obligatoire à l'en-tête**, y compris les
+garde-fous à zéro occurrence. **Aucun siège neuf n'est posé.** ⚠ **Le relevé des sièges touchés est
+refait et il contredit le précédent** : *aucun des trois sièges que cette note nommait — l'encadré à
+quatre branches du **ch. 7 § 7.5**, l'encadré des affirmations écartées du **ch. 16 § 16.2**, le statut
+projeté de la normalisation du passeport du **ch. 16 § 16.4** — n'est déclenché par la pièce, aucun de
+leurs motifs n'y ayant d'occurrence.* **Deux le sont**, tous deux au ch. 43 — *les points de contrôle
+obligatoires (§ 43.3), au § 42.0 ; la fabrique d'agents (§ 43.1), à la seule ligne de situation, qui
+nomme le mouvement du Livre* —, **et le renvoi au ch. 43 est porté**. ⚠ **La
+grille des cinq questions n'est PAS un siège de l'appareil** — aucune entrée ne la contrôle —, mais le
+**ch. 14** en est l'exposé, et le § 42.3.3 y renvoie désormais plutôt que de la re-dériver.

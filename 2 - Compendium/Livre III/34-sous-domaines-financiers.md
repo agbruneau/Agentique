@@ -7,10 +7,10 @@ ch. 31 a posés une fois**.*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 34.8. ⚠ **G-4 ne conditionne pas ce chapitre** : sa ligne Fusion ne cite que le Vol. I ; ⚠ **D-9 ne le bloque pas** — *il **applique** le patron de libération humaine, il ne le prescrit pas.* |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit — et ce chapitre est celui du Livre qui porte le plus grand nombre d'annonces produit datées** : *une quarantaine, dont la plupart sont **auto-déclarées** et **à re-vérifier au moment de citer**.* Gel de source consommé : **juin 2026** (Vol. I ch. 5) — ⚠ **il ne tient pas lieu du gel de la somme** |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). ⚠ **La totalité de la matière vient du Vol. I et entre en [C]** — repérage documentaire (PRD §7.1). ⚠ **Conséquence : aucun énoncé n'est central au sens de CA-IV-01**, et *l'élévation en [B] passerait par la lecture des sources primaires que le Vol. I cite.* ⚠ **Plusieurs affirmations du chapitre sont en outre déclarées par leur source « hors corpus bibliographique, à sourcer à la rédaction »** : *elles sont reprises **avec cette réserve**, jamais sans.* Les seuls appuis à un autre régime sont des **renvois** aux ch. 25 à 33 |
-| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **PRD §8.2.3 et §7.5 (métriques auto-déclarées, projections) : les deux renvois ne sont pas écrits au corps** ; *les marqueurs le sont — « auto-déclaré » **quatorze fois** et « projection d'analyste » **six fois**, sur les § 34.0 à § 34.6 et la synthèse* ; ⚠ *c'est le chapitre du Livre où ce garde-fou travaille le plus, **aucune métrique n'y étant citée sans attribution*** ; **PRD §8.4 (neutralité fournisseur) : deux occurrences du renvoi**, § 34.0 et § 34.5.3 ; *la formule est écrite une fois, § 34.5.2, et **le garde-fou est appliqué de § 34.1 à § 34.5*** ; **R-5 : deux occurrences du sigle**, § 34.1.5 et § 34.7.3 ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-09 (quatre statuts, dits à chaque mention) : zéro occurrence du sigle** ; ⚠ *le garde-fou est **appliqué de § 34.1 à § 34.6**, chaque statut — annonce, préversion, disponibilité générale — étant dit à sa mention ; **le décompte n'est pas re-mesurable et n'est donc pas annoncé*** ; **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 34.6.2 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 34.6.2, § 34.6.3, § 34.6.4 et à la synthèse, « fait négatif vérifié » au § 34.1.5* ; **R-13 : quatre occurrences du sigle**, § 34.1.1, § 34.4.4, § 34.5.3 et § 34.7.1 — ⚠ *l'échelle à quatre paliers non numérotés est **nommée par son cardinal**, jamais nue* ; **R-02 : une occurrence du sigle**, § 34.4.4 ; **R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence** |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé le 27 juillet 2026 sur instruction d'auteur, **porte G-3 alors ouverte** (socle consolidé à zéro entrée) et **volet résiduel de G-1** alors non instruit. ⚠ **La règle cardinale du PRD §5 a été enfreinte, et la porte franchie depuis ne la rattrape pas** : **G-3 est franchie le 28 juillet 2026** (PRD v0.14 ; socle consolidé de **159 entrées**, `S-001` à `S-159`), *mais la pièce n'a pas été ré-adossée* — voir le champ **Socle mobilisé** et la note de statut, § 34.8. ⚠ **G-4 ne conditionne pas ce chapitre** : sa ligne Fusion ne cite que le Vol. I ; ⚠ **D-9 ne le bloque pas** — *il **applique** le patron de libération humaine, il ne le prescrit pas.* |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet de FAITS de G-1 est levé depuis le 28 juillet 2026** — 123 entrées à sensibilité temporelle instruites à leur source primaire, registre au [`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md) —, ⚠ **mais le volet des obligations de pièce des Livres II et III reste dû, et ce chapitre en porte la charge la plus lourde du Livre** : *une quarantaine d'annonces produit datées, dont la plupart sont **auto-déclarées** et **à re-vérifier au moment de citer**.* Gel de source consommé : **juin 2026** (Vol. I ch. 5) — ⚠ **il ne tient pas lieu du gel de la somme** |
+| **Socle mobilisé** | ⚠ **Aucune entrée du socle consolidé — et depuis le 28 juillet 2026 c'est un défaut de COUVERTURE mesuré, non un socle vide** : *les 159 entrées existent, mais **aucune ne porte les §5.7 à §5.11 du Vol. I**, qui sont l'intégralité de la ligne Fusion de ce chapitre ; les **17 entrées héritées du Vol. I** — `S-143` à `S-159` — portent ses §2.10, §3.10, §5.0.2-5.1.1, §7.x et sa Synthèse.* ⚠ **Une seule entrée touche la matière du chapitre, `S-157`** — l'autonomie graduée et son échelle à quatre paliers non numérotés, Vol. I *Monographie* §5.0.2 et §5.1.1 —, *et elle est **déclarée non élevable : thèse à attribuer, jamais un fait***, régime que le § 34.7.1 tient. ⚠ **La totalité de la matière propre du chapitre vient du Vol. I et entre en [C]** — repérage documentaire (PRD §7.1). ⚠ **Conséquence : aucun énoncé n'est central au sens de CA-IV-01**, et *l'élévation en [B] passerait par la lecture des sources primaires que le Vol. I cite.* ⚠ **Plusieurs affirmations du chapitre sont en outre déclarées par leur source « hors corpus bibliographique, à sourcer à la rédaction »** : *elles sont reprises **avec cette réserve**, jamais sans.* Les seuls appuis à un autre régime sont des **renvois** aux ch. 25 à 33 |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **PRD §8.2.3 et §7.5 (métriques auto-déclarées, projections) : les deux renvois ne sont pas écrits au corps** ; *les marqueurs le sont — « auto-déclaré » **seize fois** (§ 34.0, § 34.1.2 ×3, § 34.2.2, § 34.2.3, § 34.3.1, § 34.3.3, § 34.3.4, § 34.4.1, § 34.4.2, § 34.4.4, § 34.6.1 ×3 et la synthèse), « l'auto-déclaration » **une fois** (§ 34.1.3), et « projection d'analyste » **sept fois** (§ 34.1.1 ×2, § 34.2.4 ×2, § 34.2.6, § 34.5.6 et la synthèse)* ; ⚠ *c'est le chapitre du Livre où ce garde-fou travaille le plus, **aucune métrique n'y étant citée sans attribution*** ; ⚠ **et l'attribution y est NOMINATIVE depuis la décision 15 du TOC** : *chaque attributeur de métrique est nommé, à trois exceptions déclarées à leur occurrence — § 34.2.6, § 34.5.2 et § 34.5.6 —, **où la source elle-même n'en nomme aucun*** ; **PRD §8.4 (neutralité fournisseur) : deux occurrences du renvoi**, § 34.0 et § 34.5.3 ; *la formule est écrite **trois fois** — § 34.1.3, § 34.2.2 et § 34.5.2 — et **le garde-fou est appliqué de § 34.1 à § 34.5*** ; **R-5 : deux occurrences du sigle**, § 34.1.5 et § 34.7.3 ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-09 (quatre statuts, dits à chaque mention) : zéro occurrence du sigle** ; ⚠ *le garde-fou est **appliqué de § 34.1 à § 34.6**, chaque statut — annonce, préversion, disponibilité générale — étant dit à sa mention ; **le décompte n'est pas re-mesurable et n'est donc pas annoncé*** ; **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 34.6.2 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 34.6.2, § 34.6.3, § 34.6.4 et à la synthèse, « fait négatif vérifié » au § 34.1.5* ; **R-13 : quatre occurrences du sigle**, § 34.1.1, § 34.4.4, § 34.5.3 et § 34.7.1 — ⚠ *l'échelle à quatre paliers non numérotés est **nommée par son cardinal**, jamais nue* ; **R-02 : une occurrence du sigle**, § 34.4.4 ; **R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **9 500 mots** de corps (§ 34.0 à § 34.7), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des **trente-trois sous-sections** que sa ligne Fusion absorbe : **la plus haute cible du Livre avec le ch. 24**. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier. ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 34)* — l'agentique se décline différemment selon le sous-domaine — bancaire, IARD, assurance de personne, gestion de patrimoine, services TI financiers — chacun avec sa maturité et ses points de durcissement propres.
@@ -24,7 +24,7 @@ formelle ; celle du plan est une **construction d'éditeur** fidèle à l'organi
 ## § 34.0 — Ouverture : instancier, jamais re-dériver
 
 **Le ch. 31 a posé six patrons une fois pour toute la somme** : *l'irréversibilité, le risque
-systémique, la double-qualification, le critère anti-emballement, le quatre-yeux et le patron AML.*
+systémique, la double-qualification, le critère anti-emballement, le quatre-yeux et le patron anti-blanchiment.*
 ⚠ **Ce chapitre les *instancie* sous-domaine par sous-domaine, et il n'en re-dérive aucun.**
 
 **Ce qui varie d'un sous-domaine à l'autre n'est pas la nature des durcisseurs, mais leur *pondération*
@@ -59,9 +59,9 @@ assistée** — un copilote rédige, résume, prépare, **mais aucune transactio
 sans intervention humaine** — et l'**autonomie transactionnelle** — l'agent **initie une action à effet
 financier irrévocable**.*
 
-⚠ **La quasi-totalité des déploiements observés en 2024-2026 relèvent du premier régime** ;
-*l'autonomie transactionnelle **demeure rare, bornée et réservée à des périmètres à faible
-matérialité**.*
+⚠ **La quasi-totalité des déploiements observés en 2024-2026 relèvent du premier régime** —
+*observation de cabinet, **attribuée à Deloitte (2025)*** ; *l'autonomie transactionnelle **demeure
+rare, bornée et réservée à des périmètres à faible matérialité**.*
 
 ⚠ ***Ce tri n'est pas une nuance rhétorique : il détermine le niveau de garde-fou exigé.*** *Un copilote
 tombe sous une gouvernance de productivité ; un agent transactionnel déclenche **trois patrons du
@@ -72,9 +72,9 @@ ségrégation des tâches (§ 31.3.4).*
 sont **nommées par leur cardinal et leur numérotation** au **ch. 14 § 14.4**, et le mot « copilote » y
 désigne trois objets distincts.*
 
-⚠ **Une projection d'analyste situe l'enjeu économique et se cite avec son statut** : *une érosion
-potentielle des pools de profit bancaires **pouvant atteindre 170 G$ d'ici 2027** — **projection
-d'analyste, attribuée** — explique la pression d'adoption.* ⚠ ***Mais la pression économique ne dispense
+⚠ **Une projection d'analyste situe l'enjeu économique, et elle se cite avec son attributeur** : *une
+érosion potentielle des bassins de profit bancaires **pouvant atteindre 170 G$ d'ici 2027** —
+**projection d'analyste attribuée à McKinsey (2025)** — explique la pression d'adoption.* ⚠ ***Mais la pression économique ne dispense
 pas du tri par criticité***, qui reste le préalable à toute conception.
 
 ### 34.1.2 Front conversationnel et le revirement humain-dans-la-boucle
@@ -82,16 +82,17 @@ pas du tri par criticité***, qui reste le préalable à toute conception.
 **Le front conversationnel illustre la domination du régime de productivité assistée et les limites de
 l'autonomie tournée vers le client.**
 
-⚠ *Côté copilotes employés, une grande banque rapporte un déploiement à **environ 200 000 utilisateurs
-en huit mois** — **chiffres auto-déclarés, à re-vérifier** — avec des premiers agents multi-étapes **en
-émergence**. Côté client, une autre décrit un assistant ayant **dépassé trois milliards
-d'interactions** au sein de plus de **26 milliards d'interactions numériques annuelles** — **chiffres
-auto-déclarés** ; ⚠ **et cet assistant demeure réactif, non un agent transactionnel autonome**.*
+⚠ *Côté copilotes employés, **JPMorgan Chase** rapporte un déploiement à **environ 200 000
+utilisateurs en huit mois** — **chiffres auto-déclarés par l'établissement, à re-vérifier** — avec des
+premiers agents multi-étapes **en émergence**. Côté client, **Bank of America** décrit un assistant
+ayant **dépassé trois milliards d'interactions** au sein de plus de **26 milliards d'interactions
+numériques annuelles** — **chiffres auto-déclarés par l'établissement** ; ⚠ **et cet assistant demeure
+réactif, non un agent transactionnel autonome**.*
 
-⚠ **Un cas fait charnière, et sa leçon est plus instructive que ses chiffres.** *Un assistant déployé en
-février 2024 fut promu comme accomplissant « le travail de 700 agents à temps plein » — **auto-déclaré
-et contesté** — avant un **revirement, à partir de mai 2025, vers un modèle hybride réintroduisant
-l'humain**.*
+⚠ **Un cas fait charnière, et sa leçon est plus instructive que ses chiffres.** *L'assistant que
+**Klarna** a déployé en février 2024 fut promu comme accomplissant « le travail de 700 agents à temps
+plein » — **chiffre auto-déclaré par Klarna, et contesté** — avant un **revirement, à partir de mai
+2025, vers un modèle hybride réintroduisant l'humain**.*
 
 Lecture de l'auteur — **la leçon transférable est la segmentation par criticité** : *un agent peut
 traiter le statut d'une commande, mais **le litige, la fraude ou la situation de détresse financière
@@ -115,21 +116,22 @@ et **l'exclusion de la détection de fraude** du régime de haut risque europée
 autonome, et chacune porte son statut** : *un éditeur intègre un triage anti-blanchiment à son
 orchestrateur ; un autre annonce un agent de criminalité financière opérant en temps réel — **annonce
 fournisseur** ; un partenariat annoncé le **4 mai 2026** positionne un agent de crimes financiers comme
-premier cas d'usage, avec **deux déploiements nommés** et une **disponibilité générale annoncée pour le
+premier cas d'usage, avec **deux déploiements clients annoncés** et une **disponibilité générale
+annoncée pour le
 second semestre 2026**, données confinées sur l'infrastructure de l'éditeur — **annonce à
 re-vérifier**.* ⚠ **Neutralité fournisseur** : *trois offres nommées, aucune recommandée.*
 
 ⚠ **Du côté canadien, le rattachement est celui du ch. 30 § 30.2.7** : *le programme de conformité
 demeure **non délégable à l'agent**, et de nouvelles obligations encadrent la conservation et la
-documentation **depuis le 1ᵉʳ octobre 2025**.* ⚠ *Un cabinet qualifie la vérification client de domaine
+documentation **depuis le 1ᵉʳ octobre 2025**.* ⚠ *Le **Boston Consulting Group (2025)** qualifie la vérification client de domaine
 où l'agentique passe le plus tôt à l'échelle ; **tout gain d'efficacité chiffré relève de
 l'auto-déclaration** et doit être attribué nominativement.*
 
 ### 34.1.4 Crédit et octroi : périmètre de haut risque et origination hypothécaire
 
 **Le crédit aux personnes physiques est l'un des rares domaines bancaires explicitement visés par le
-régime européen de haut risque** — *scoring de crédit et de solvabilité des personnes physiques,
-⚠ **à l'exception de la détection de fraude*** (**ch. 30 § 30.2.3**).
+régime européen de haut risque** — scoring de crédit et de solvabilité des personnes physiques,
+⚠ **à l'exception de la détection de fraude** (**ch. 30 § 30.2.3**).
 
 ⚠ **Le patron réglementaire central consiste à séparer nettement la *décision réglementée* de
 l'*orchestration agentique* qui l'entoure**, et il est le plus clair du chapitre :
@@ -218,14 +220,14 @@ remplacement du modèle ; un agent embarqué lie le cycle de vie du modèle à c
 cœur » et un cadre agentique indépendant du modèle — ⚠ **à condition de distinguer l'outillage de
 développement du cadre agentique d'exécution embarqué**, distinction que le **ch. 31 § 31.2.6** impose ;
 un autre a lancé le **28 avril 2026** une plateforme articulant un référentiel de contexte, une couche
-d'assurance qualité et une passerelle ; un troisième a annoncé en **octobre 2025** une version dotée de
-« 13 agents » avec humain dans la boucle — **chiffres fournisseurs, à re-vérifier**.* ⚠ **Neutralité
-fournisseur** : *trois offres nommées, aucune recommandée.*
+d'assurance qualité et une passerelle ; un troisième — **Majesco** — a annoncé en **octobre 2025** une version dotée de « 13 agents » avec
+humain dans la boucle — **chiffre auto-déclaré par l'éditeur, à re-vérifier**.*
+⚠ **Neutralité fournisseur** : *trois offres nommées, aucune recommandée.*
 
 ### 34.2.3 Sinistres et fraude : l'agent orchestrateur d'une chaîne
 
 **La chaîne du sinistre — déclaration, instruction, règlement, subrogation — est le théâtre où
-l'agentique y est la plus visible**, ⚠ **et le patron directeur y est celui du *coordinateur de
+l'agentique est la plus visible**, ⚠ **et le patron directeur y est celui du *coordinateur de
 spécialistes*, non du *décideur unique*.**
 
 ⚠ *L'agent orchestre des sous-tâches — extraction de pièces, évaluation des dommages, détection de
@@ -238,12 +240,13 @@ l'action irréversible*** (ch. 31 § 31.1.1).
 **les agents-produits** — vendus comme agents autonomes — **des produits qui utilisent des agents en
 sous-composant**, ⚠ **pour ne pas surclasser le degré réel d'autonomie**.*
 
-⚠ *Un éditeur a lancé le **16 septembre 2025** une plateforme de sinistres qualifiée d'agentique, et
-revendique des contrats reconduits ainsi que des gains — **−3 % de pertes, −30 % de temps de traitement,
-60 % d'automatisation, plus de 99 % de couverture** : ⚠ **chiffres AUTO-DÉCLARÉS, à re-vérifier**, cités
-ici sous cette seule attribution.* ⚠ **Le marché se concentre** : *une acquisition clôturée le **6 janvier
-2025** pour **730 M$** cible une branche particulière ; un autre acteur industrialise l'évaluation de
-dommages « sans contact ».* ⚠ **Un règlement de litige entre deux de ces acteurs constitue un signal de
+⚠ *L'éditeur **Shift Technology** a lancé le **16 septembre 2025** une plateforme de sinistres
+qualifiée d'agentique, et revendique des contrats reconduits ainsi que des gains — **−3 % de pertes,
+−30 % de temps de traitement, 60 % d'automatisation, plus de 99 % de couverture** : ⚠ **chiffres
+AUTO-DÉCLARÉS par Shift Technology, à re-vérifier**, cités ici sous cette seule attribution.* ⚠ **Le
+marché se concentre** : *l'acquisition d'**EvolutionIQ** par **CCC Intelligent Solutions**, clôturée le
+**6 janvier 2025** pour **730 M$**, cible une branche particulière ; un autre acteur industrialise
+l'évaluation de dommages « sans contact ».* ⚠ **Un règlement de litige entre deux de ces acteurs constitue un signal de
 concentration et de risque de verrouillage fournisseur** — *à surveiller du point de vue de la
 résilience opérationnelle* (**ch. 30 § 30.2.2**).
 
@@ -255,13 +258,14 @@ externes, la trie par appétit de risque et **la présente au souscripteur sous 
 décider*** — *application du patron du ch. 31 § 31.1.1.*
 
 ⚠ **La télématique et l'assurance basée sur l'usage fournissent le substrat de données, et les chiffres
-portent leur statut** : *une levée de **350 M$ en mars 2026** et **plus de 21 millions d'assurés**
-revendiqués avec une croissance annuelle de l'ordre de **+28 %** — **chiffres fournisseur et presse, à
-re-vérifier**.*
+portent leur attributeur** : *l'exploitant **Cambridge Mobile Telematics** revendique une levée de
+**350 M$ en mars 2026**, **plus de 21 millions d'assurés** et une croissance annuelle de l'ordre de
+**+28 %** — **chiffres de l'exploitant et de la presse, à re-vérifier**.*
 
 ⚠ **Les métriques de productivité souvent citées sont des projections d'analyste** : *souscription
 ramenée **de trois jours à trois minutes**, taux de traitement de bout en bout passant **de 10-15 % à
-70-90 %*** — ⚠ **projections d'analyste, à re-vérifier**, *jamais des mesures auditées.*
+70-90 %*** — ⚠ **projections d'analyste attribuées à McKinsey & Company (2025), à re-vérifier**,
+*jamais des mesures auditées.*
 
 ⚠ **La tarification fondée sur l'usage soulève des questions d'équité tarifaire**, traitées par une
 littérature dédiée ; ⚠ *en assurance de dommage, **cet enjeu relève du risque de modèle et de la
@@ -299,15 +303,16 @@ erroné d'y étendre le régime de haut risque.***
 
 **Le centre de gravité réglementaire se déplace donc vers deux pôles.** *D'une part, **le risque de
 modèle** : la guidance américaine du 17 avril 2026, ⚠ **qui exclut explicitement l'IA générative et
-agentique et reste non contraignante** ; **E-23**, ⚠ *finale mais **en vigueur le 1ᵉʳ mai 2027**, et dont
-la portée élargie couvre les assureurs de dommage* ; et la ligne directrice québécoise, **même date
+agentique et reste non contraignante** ; **E-23**, ⚠ **finale mais en vigueur le 1ᵉʳ mai 2027**, et dont
+la portée élargie couvre les assureurs de dommage ; et la ligne directrice québécoise, **même date
 d'entrée en vigueur** (**ch. 25**, **ch. 27**, **ch. 30 § 30.2.4**). D'autre part, **la résilience
 opérationnelle**, avec son registre de tiers et son risque de concentration (**ch. 30 § 30.2.2**).*
 
-⚠ *Une organisation nord-américaine de superviseurs poursuit des travaux sur les écarts de redevabilité
-et les erreurs en cascade, sur la base d'un bulletin type de 2023.* ⚠ **Une projection d'analyste situe
-à environ 7-8 % la proportion d'assureurs disposant d'une gouvernance inter-agents intégrée** —
-*projection, à marquer comme telle.*
+⚠ *La **National Association of Insurance Commissioners (NAIC)** poursuit des travaux sur les écarts de
+redevabilité et les erreurs en cascade, sur la base de son **bulletin type de 2023**.* ⚠ **Une
+projection d'analyste situe à environ 7-8 % la proportion d'assureurs disposant d'une gouvernance
+inter-agents intégrée** — *projection dont **la source ne nomme pas l'attributeur**, à marquer comme
+telle.*
 
 ## § 34.3 — Assurance de personne
 
@@ -346,7 +351,7 @@ l'instrumente.***
 
 ⚠ *Deux plateformes ont annoncé, en **novembre 2025** et le **29 octobre 2025**, des socles présentés
 comme des bonds d'intelligence artificielle pour ce sous-domaine — **auto-déclaré**, **statuts
-annonce / préversion / disponibilité générale à reconfirmer**.* ⚠ *Un cabinet relève que la modernisation
+annonce / préversion / disponibilité générale à reconfirmer**.* ⚠ *Le cabinet **McKinsey** relève que la modernisation
 des technologies de cœur par l'agentique reste, à juin 2026, **largement en projet plutôt qu'en
 production** — **estimation d'analyste**.*
 
@@ -384,24 +389,24 @@ d'invalidité.*
 
 ⚠ **Le patron du ch. 31 § 31.1.1 s'y traduit en une *asymétrie d'autorité explicite*** :
 
-> *Un agent peut être autorisé à **approuver ou à accélérer** une prestation — **cas où l'erreur joue en
+> Un agent peut être autorisé à **approuver ou à accélérer** une prestation — **cas où l'erreur joue en
 > faveur de l'assuré et reste réversible côté payeur** — ⚠ **mais une décision défavorable de nature
 > clinique doit rester réservée à un professionnel qualifié**, assortie du journal d'audit infalsifiable
 > du **ch. 31 § 31.3.2**.
 
 **Le cas d'usage le plus mature et, simultanément, le plus litigieux est l'autorisation préalable** :
-*techniquement, l'agent **assemble le dossier** — il rassemble pièces et justifications cliniques —
-⚠ **mais la décision adverse demeure humaine**.*
+techniquement, l'agent **assemble le dossier** — il rassemble pièces et justifications cliniques —
+⚠ **mais la décision adverse demeure humaine**.
 
 ⚠ **La cascade d'erreurs propre aux systèmes multi-agents y prend une portée particulière** : *une chaîne
 mal cadrée peut **convertir une synthèse erronée en refus à conséquence sanitaire**.*
 
 ⚠ **Le contre-exemple canonique de gouvernance illustre précisément ce que le patron interdit, et il se
-cite avec toutes ses réserves** : *un litige visant l'usage d'un outil prédictif en gestion de
+cite avec toutes ses réserves** : un litige visant l'usage d'un outil prédictif en gestion de
 l'utilisation — **refus partiel d'une requête en rejet le 13 février 2025** — est à présenter comme
 **un contre-exemple contesté par l'assureur, et non comme un fait établi** ; ⚠ **son intérêt analytique
 est de matérialiser le risque qu'un score automatisé se substitue *de fait* à la décision clinique
-humaine**.* ⚠ **Note de sourçage** : *les canaux d'échange en santé, les acteurs nommés et le litige
+humaine**. ⚠ **Note de sourçage** : *les canaux d'échange en santé, les acteurs en cause et le litige
 **ne figurent pas au corpus bibliographique du chapitre source** — ils relèvent de sources juridiques et
 de santé **à citer directement**, et tout chiffre de rendement d'un fournisseur est **auto-déclaré**.*
 
@@ -415,9 +420,10 @@ s'atténue pas du fait qu'un agent l'a préparé*** (**ch. 30 § 30.2.5**).
 recommandation au profil du client et à sa justification** — ***un agent qui « propose » sans laisser ce
 fil documentaire reporte le risque de conduite sur le distributeur.***
 
-⚠ **Le sous-domaine présente un trait qui le distingue du patrimoine** : *les **rentes et la couverture
-de longévité** engagent l'assureur sur **un horizon décennal** — souvent trente à quarante ans — de
-sorte que ***la stabilité et l'explicabilité du modèle actuariel priment sur l'agilité de l'agent***.*
+⚠ **Le sous-domaine présente un trait qui le distingue du patrimoine** : les **rentes et la couverture
+de longévité** engagent l'assureur sur **un horizon pluridécennal** — souvent trente à quarante ans —
+de sorte que ***la stabilité et l'explicabilité du modèle actuariel priment sur l'agilité de
+l'agent***.
 ⚠ **Les hypothèses de mortalité, de taux et de comportement tombent sous le risque de modèle gouverné** :
 ***leur révision n'est pas un terrain d'expérimentation non déterministe, et l'agent y intervient au
 mieux comme assistant de préparation, jamais comme arbitre des hypothèses de long terme.***
@@ -439,9 +445,11 @@ qui vise le scoring de crédit.*** *L'échéance **était** fixée au 2 août 20
 au 2 décembre 2027 a été adopté dans la fenêtre du socle, sous la seule réserve de la publication à
 suivre*** (**ch. 30 § 30.2.3**).
 
-*S'y articule, **sans nouvelles exigences propres**, un avis d'une autorité européenne d'assurance sur
-la gouvernance du risque lié à l'IA. Aux États-Unis, le pilotage passe par **un bulletin type adopté le
-4 décembre 2023**, repris par un nombre croissant d'États — ⚠ **décompte et statut à reconfirmer**.*
+S'y articule, **sans nouvelles exigences propres**, l'avis de l'**Autorité européenne des assurances
+et des pensions professionnelles (EIOPA)** sur la gouvernance et la gestion du risque lié à l'IA, du
+**6 août 2025**. Aux États-Unis, le pilotage passe par le **bulletin type de la National Association of
+Insurance Commissioners (NAIC), adopté le 4 décembre 2023**, repris par un nombre croissant d'États —
+⚠ **décompte et statut à reconfirmer**.
 
 ⚠ **Au Canada et au Québec** : *E-23 couvre désormais **tous les assujettis fédéraux, assureurs vie
 compris** ; **la ligne directrice québécoise ajoute un responsable senior unique, un répertoire
@@ -451,10 +459,10 @@ centralisé et une explication « claire et simple » au client*** — ⚠ **ce 
 
 ⚠ **L'enjeu de fond, plus aigu ici qu'ailleurs, est l'équité et le biais** : *sur des contrats de très
 longue durée, **le risque est qu'un modèle exploite des variables corrélées** à l'état de santé, au
-profil génétique ou à l'âge, **et reproduise une discrimination prohibée**.* ⚠ *La littérature fournit le
+profil génétique ou à l'âge, **et reproduise une discrimination prohibée**.* ⚠ La littérature fournit le
 cadre formel — **bornes théoriques entre critères d'équité**, application au prix d'assurance non
 discriminatoire — ⚠ **et aucun de ces cadres ne se résout par l'agentique** : ***l'agent doit au
-contraire en porter la preuve documentée***.*
+contraire en porter la preuve documentée***.
 
 ⚠ ***Le delta se résume ainsi : un même agent y cumule haut risque, donnée sensible et horizon long, ce
 qui rend la gouvernance d'équité non pas optionnelle mais constitutive de la conformité.***
@@ -479,15 +487,16 @@ productivité sans empreinte sur la piste documentaire** ; **un copilote qui tra
 produit une note, la consigne au dossier et en dérive les tâches de suivi referme une boucle où chaque
 écriture devient un acte traçable et révisable**.*
 
-⚠ *La trajectoire documentée d'une grande maison en donne l'exemple : à un assistant déployé en 2023 —
-**adoption auto-déclarée dépassant 98 % des équipes** — succède en **juin 2024** un outil combinant
-transcription et synthèse **avec consignation automatique au registre**, puis un troisième côté
-recherche en **octobre 2024**.* ⚠ **Le déplacement décisif est là : *l'agent ne lit plus seulement le
+⚠ *La trajectoire documentée de **Morgan Stanley** en donne l'exemple : à un assistant déployé en
+2023 — **adoption dépassant 98 % des équipes, auto-déclarée par la firme dans une étude de cas de son
+fournisseur de modèle (2024)** — succède en **juin 2024** un outil combinant transcription et synthèse
+**avec consignation automatique au registre**, puis un troisième côté recherche en **octobre 2024**.* ⚠ **Le déplacement décisif est là : *l'agent ne lit plus seulement le
 contexte, il alimente le registre*** — *ce qui fait de la qualité et de la réversibilité de cette
 écriture une exigence de premier ordre.*
 
-**Deux corollaires en découlent.** *D'abord, ⚠ **le consentement du client à l'enregistrement devient une
-pré-condition d'interopérabilité, pas une formalité** : sans lui, la boucle ne peut s'amorcer. Ensuite,
+**Deux corollaires en découlent.** D'abord, ⚠ **le consentement du client à l'enregistrement devient
+une pré-condition d'interopérabilité, pas une formalité** : sans lui, la boucle ne peut s'amorcer.
+Ensuite,
 ⚠ **l'écriture au dossier tombe sous les obligations de conservation des livres et registres** —
 **ch. 31 § 31.3.2** — *de sorte que **la note produite par l'agent doit être conservée, horodatée et
 opposable au même titre qu'une note rédigée par le conseiller**.*
@@ -508,15 +517,16 @@ les intégrations point-à-point**.*
 dizaines d'équipes**, **un filtrage ramenant l'espace d'outils à une vingtaine ou une trentaine d'outils
 pertinents par requête**, et **des garde-fous d'entrée et de sortie**.*
 
-⚠ **Le trait le plus signifiant n'est pas technique mais réglementaire** : *la contrainte « **pas de
+⚠ **Le trait le plus signifiant n'est pas technique mais réglementaire** : la contrainte « **pas de
 conseil en investissement** », **vérifiée par évaluation**, est ***un choix d'architecture de
 gouvernance*** — en interdisant à l'agent de formuler un conseil personnalisé, l'éditeur **maintient
-délibérément le copilote en deçà du seuil qui déclencherait les obligations de convenance** (§ 34.4.5).*
+délibérément le copilote en deçà du seuil qui déclencherait les obligations de convenance** (§ 34.4.5).
 
 ⚠ ***C'est l'illustration directe du patron du ch. 31 § 31.1.1 appliqué non à l'irréversibilité d'un
 règlement mais à la frontière du conseil réglementé : on borne la capacité de l'agent pour rester du bon
-côté de la qualification juridique.*** ⚠ *Le parc supervisé se compte en milliers de milliards de dollars
-d'actifs — **chiffre auto-déclaré, à re-vérifier** — ce qui donne la mesure de l'enjeu de fiabilité.*
+côté de la qualification juridique.*** ⚠ *Le parc supervisé par la plateforme de **BlackRock** se compte en milliers de milliards de dollars
+d'actifs — **chiffre auto-déclaré par l'éditeur, à re-vérifier** — ce qui donne la mesure de l'enjeu de
+fiabilité.*
 
 ⚠ *Le même patron se décline sur l'investissement alternatif et sur la production de commentaires de
 portefeuille — un outil annoncé le **2 octobre 2025** — **étant entendu qu'il s'arrête avant la
@@ -576,17 +586,18 @@ comme aussi prévisible qu'un moteur de règles.*** ⚠ **Un mécanisme se quali
 spécification démontre** (R-02 du Vol. III) : *un moteur de règles **démontre** la reproductibilité ; un
 agent **n'offre qu'une garantie probabiliste**.*
 
-⚠ *Le repère canadien est utile : le premier conseiller automatisé du pays, **lancé en 2014**, gérant un
-encours de l'ordre de **cent milliards de dollars canadiens** — **chiffre auto-déclaré, à re-vérifier**
-— **opère comme gestionnaire de portefeuille inscrit** auprès des autorités de valeurs mobilières et de
-l'autorité québécoise* : ⚠ ***un statut réglementé qui ne s'efface pas du fait de l'automatisation***
+⚠ *Le repère canadien est utile : **Wealthsimple**, premier conseiller automatisé du pays, **lancé en
+2014**, gère un encours de l'ordre de **cent milliards de dollars canadiens** — **chiffre auto-déclaré
+par la firme, à re-vérifier** — et **opère comme gestionnaire de portefeuille inscrit** auprès des
+autorités de valeurs mobilières et de l'autorité québécoise* : ⚠ ***un statut réglementé qui ne s'efface pas du fait de l'automatisation***
 (**ch. 28**).
 
 ⚠ **Une mise en garde de conformité s'impose au passage** : *l'automatisation d'une fonction **n'exonère
-pas des obligations de communication**, comme l'a rappelé **une sanction d'un régulateur américain, en
-avril 2023, pour des déclarations inexactes** sur un service de récolte de pertes fiscales.*
+pas des obligations de communication**, comme l'a rappelé **la sanction prononcée par la Securities and
+Exchange Commission (SEC) le 18 avril 2023, assortie d'une pénalité de 9 M$**, pour des déclarations
+inexactes sur un service de récolte de pertes fiscales.*
 
-⚠ **Le patron transférable est l'*autonomie bornée*** — *et ⚠ **ce n'est pas une échelle d'autonomie**
+⚠ **Le patron transférable est l'*autonomie bornée*** — et ⚠ **ce n'est pas une échelle d'autonomie**
 (R-13 du Vol. III), dont le lieu de croisement est le **ch. 14 § 14.4** : *l'agent assiste à la
 production de signaux, à la préparation et au post-marché, ⚠ **mais n'initie pas l'acte irréversible**,
 lequel reste soit déterministe, soit validé par un humain.* ⚠ *À juin 2026, l'usage agentique en gestion
@@ -615,8 +626,8 @@ porte le rappel : **la firme demeure responsable du résultat de convenance, que
 d'automatisation**.*
 
 **Le maillage juridictionnel se lit alors ainsi** : *aux États-Unis, la conduite relève d'un régime de
-meilleur intérêt, **avec un rappel explicite des obligations applicables à l'IA générative en juin
-2024** ; au Canada et au Québec, **la règle de convenance** se combine à l'encadrement des organismes
+meilleur intérêt, **avec le rappel explicite des obligations applicables à l'IA générative publié par
+la Financial Industry Regulatory Authority (FINRA) le 27 juin 2024** ; au Canada et au Québec, **la règle de convenance** se combine à l'encadrement des organismes
 d'autoréglementation, à la ligne directrice québécoise (**ch. 27**) et à **l'article 12.1** ; dans
 l'Union, la directive sur les services d'investissement cadre les produits concernés.*
 
@@ -647,7 +658,7 @@ siège du quatre-yeux, ch. 31 § 31.3.4.**
 
 *Sur le plan de l'interopérabilité, **les agents d'exécution parlent les standards de marché établis**
 — ceux du **ch. 31 § 31.2** — **que des serveurs d'outils encapsulent** pour offrir à l'agent **une
-capacité bornée et journalisée plutôt qu'un accès brut**.* ⚠ *Une illustration datée d'**octobre 2025**
+capacité bornée et journalisée plutôt qu'un accès brut**.* ⚠ Une illustration datée d'**octobre 2025**
 en donne un exemple — **annonce fournisseur, à re-vérifier** ; ⚠ **et le critère du ch. 31 § 31.2.6
 s'applique** : *ce n'est pas un standard sectoriel ratifié.*
 
@@ -668,10 +679,10 @@ d'exactitude très élevée**, le résultat alimentant la comptabilité du fonds
 régulateur.*
 
 ⚠ **Le critère d'interopérabilité directeur est d'*ancrer l'agent sur un standard exécutable* plutôt que
-sur du texte libre** : *en s'appuyant sur le modèle de domaine commun et sur la transformation des règles
-de déclaration en code (**ch. 31 § 31.2.4**), *l'agent **orchestre un standard exécutable et versionné au
-lieu de deviner** une logique de déclaration* — ⚠ **ce qui réduit l'espace d'affabulation et rend la
-sortie auditable.**
+sur du texte libre** : en s'appuyant sur le modèle de domaine commun et sur la transformation des règles
+de déclaration en code (**ch. 31 § 31.2.4**), *l'agent **orchestre ce standard, versionné, au lieu de
+deviner** une logique de déclaration* — ⚠ **ce qui réduit l'espace d'affabulation et rend la sortie
+auditable.**
 
 ⚠ **Le garde-fou non négociable est le *quatre-yeux sur tout ajustement comptable*** (ch. 31 § 31.3.4) :
 ***un agent peut préparer un rapprochement ou signaler un écart, mais l'ajustement qui modifie un solde
@@ -703,7 +714,7 @@ contractualisation, et sa stratégie de sortie testée plutôt que postulée.***
 ⚠ **La prolifération d'agents du ch. 24 § 24.0.2 se relit en finance comme *une prolifération de
 dépendances soumises à registre obligatoire*** : *chaque agent matériel **ajoute des fournisseurs en
 cascade** — modèle d'inférence, hébergeur, intermédiaire de données — **qui doivent figurer au
-registre**.* ⚠ *Côté canadien, **la lecture conjointe de trois lignes directrices** en forme le pendant
+registre**.* ⚠ Côté canadien, **la lecture conjointe de trois lignes directrices** en forme le pendant
 (**ch. 30 § 30.2.7**) — ⚠ *l'une d'elles est déclarée par la source **hors corpus bibliographique, à
 sourcer à la rédaction**.*
 
@@ -724,12 +735,12 @@ financière du principe posé au **ch. 24 § 24.1.4**.* ⚠ **L'opposition qui c
 embarqué dans le cœur contre cœur exposé comme outil, et ses trois axes de décision — a son siège au
 § 34.2.2 ; elle est appliquée ici au cœur bancaire, jamais re-dérivée.**
 
-**Deux régimes doivent être distingués.** *D'une part, **des agents employés *pour* moderniser** :
+**Deux régimes doivent être distingués.** D'une part, **des agents employés *pour* moderniser** :
 assistants de modernisation attaquant une pression **parfois chiffrée à 70-75 % du budget technologique
-consacré au patrimoine applicatif** — ⚠ **presse et analystes, à re-vérifier**. D'autre part, **des
-agents *en production* opérant à travers une façade** : trois éditeurs ont annoncé, en **2025 et 2026**,
-des capacités d'exposition de leur cœur — ⚠ **annonces fournisseur, statuts à reconfirmer**, et
-**neutralité fournisseur tenue**.*
+consacré au patrimoine applicatif** — ⚠ **chiffre de presse et d'analystes dont la source ne nomme pas
+l'attributeur, à re-vérifier**. D'autre part, **des agents *en production* opérant à travers une
+façade** : trois éditeurs ont annoncé, en **2025 et 2026**, des capacités d'exposition de leur cœur —
+⚠ **annonces fournisseur, statuts à reconfirmer**, et **neutralité fournisseur tenue**.
 
 ⚠ **Le critère de légitimité de la façade est strict** : ***elle n'est admissible qu'assortie d'une
 identité d'agent, de permissions héritées du consentement et d'un journal d'audit*** — *ce que le
@@ -757,12 +768,13 @@ l'environnement ».*
 
 ⚠ *Les capacités attendues sont désormais standardisées chez les fournisseurs d'infrastructure — clés
 virtuelles et budgets de jetons, limites par requête, gouvernance multi-fournisseur, assainissement des
-données personnelles, passerelle-registre.* ⚠ **Cinq offres sont nommées par la source ; aucune n'est
-recommandée** (PRD Vol. II §8.4).
+données personnelles, passerelle-registre, orchestration et registre d'agents.* ⚠ **Six offres sont
+nommées par la source ; aucune n'est recommandée** (PRD Vol. II §8.4).
 
 ⚠ **La transposition financière la plus aboutie est l'archétype du « système d'exploitation d'agents »
 bancaire** : *un lancement rapporté au **14 mai 2026**, avec disponibilité générale annoncée pour **août
-2026*** — ⚠ ***selon une analyse tierce, à recouper avec les communiqués primaires de l'éditeur***.
+2026*** — ⚠ ***rapporté par l'analyse tierce de Klover.ai (2025-2026), à recouper avec les
+communiqués primaires de l'éditeur***.
 
 Lecture de l'auteur — **la passerelle devient le lieu où s'instancient des contrôles autrement
 dispersés** : *limites d'autorité budgétaire de l'agent **matérialisées en quotas de jetons** (§ 34.5.6),
@@ -810,7 +822,7 @@ les mêmes grands opérateurs désignés fournisseurs critiques.*
 ⚠ **Les mécanismes génériques d'observabilité relèvent du Livre IV et ne sont pas re-décrits.** *Deux
 deltas proprement financiers s'y greffent.*
 
-**Le premier est *la nature du journal*** : ⚠ *en finance régulée, **il ne suffit pas d'observer au sens
+**Le premier est *la nature du journal*** : ⚠ en finance régulée, **il ne suffit pas d'observer au sens
 de l'exploitation** — *il faut **produire une piste d'audit exploitable** pour la résilience
 opérationnelle et pour le régime de risque de modèle, **reliant chaque décision d'agent à son contexte,
 son modèle d'inventaire et son approbation humaine*** (ch. 31 § 31.3.1 et § 31.3.2). ⚠ **Le périmètre
@@ -823,7 +835,8 @@ matérialisent les limites d'autorité de l'agent*** — ⚠ ***un agent dont le
 entreprendre une action dont l'ampleur dépasse son mandat.***
 
 ⚠ *Côté marché, **une vague de modernisation du cœur applicatif est documentée par les analystes** —
-**à marquer comme projections d'analyste** — dans les quatre sous-domaines précédents.*
+**à marquer comme projections d'analyste**, ⚠ **la source ne nommant pas leur attributeur** — dans les
+quatre sous-domaines précédents.*
 
 Lecture de l'auteur — **l'instrumentation à viser articule trois plans** : *observabilité opérationnelle
 au sens du Livre IV ; **journal d'audit réglementaire infalsifiable** (ch. 31 § 31.3.2) ; et **contrôle
@@ -844,7 +857,7 @@ de clé commune, qui est une lecture.
 | **Crime financier** | partenariat annoncé le **4 mai 2026**, disponibilité générale annoncée pour le second semestre 2026 (§ 34.1.3) | annonce / déploiement | ⚠ **fournisseur, auto-déclaré** |
 | **Assurance de dommage** | plateforme de sinistres et renouvellement de **mars 2026** ; plateforme du **28 avril 2026** ; version du **8 décembre 2025** ; acquisition clôturée le **6 janvier 2025** (§ 34.2.2-34.2.3) | annonce / disponibilité générale **selon le produit** | ⚠ **auto-déclaré, à re-vérifier** |
 | **Vie et santé** | ⚠ **contre-exemple judiciaire** — refus partiel d'une requête en rejet le **13 février 2025** (§ 34.3.3) | ⚠ **litige en cours** | **fait procédural — usage contesté** |
-| **Services technologiques** | « système d'exploitation d'agents » du **14 mai 2026** ; capacités annoncées le **7 mai 2026** (§ 34.5.3) | annonce / préversion / disponibilité générale | ⚠ **fournisseur** |
+| **Services technologiques** | « système d'exploitation d'agents » du **14 mai 2026** ; capacités d'un éditeur de cœur bancaire annoncées le **7 mai 2026** (§ 34.5.2-34.5.3) | annonce / préversion / disponibilité générale | ⚠ **fournisseur** |
 
 : Tableau 34.1 — Les cas datés relevés par le Vol. I, avec leur statut et leur régime de preuve. ⚠ **Aucun n'a été repris à la source primaire pour la somme**, et **aucun n'est recommandé**.
 
@@ -861,8 +874,9 @@ d'exploitation d'agents » bancaire restent au stade de l'annonce ou de la dispo
 
 *Le goulot d'étranglement mesuré **n'est pas la qualité du raisonnement isolé** mais **la fiabilité du
 flux complet** — récupération correcte, enchaînement d'outils sans dérive, cohérence sur des séquences
-longues.* ⚠ *Un banc d'essai dédié à la gestion de patrimoine, de **décembre 2025**, **conclut
-explicitement que les agents sont limités par la fiabilité du flux plutôt que par le raisonnement**.*
+longues.* ⚠ *Un banc d'essai dédié à la gestion de patrimoine — **préimpression arXiv 2512.02230, 3 décembre
+2025** — **conclut explicitement que les agents sont limités par la fiabilité du flux plutôt que par le
+raisonnement**.*
 ⚠ *Côté négociation, les évaluations multi-agents et les bancs plus récents **rapportent des rendements
 faibles**, confortant la posture d'autonomie bornée du § 34.4.6.*
 
@@ -906,7 +920,7 @@ publiquement détaillée à juin 2026*** — *absence de documentation, degré 3
 
 ## § 34.7 — Synthèse et transition du bloc financier
 
-*Section **reçue du §5.14 du Vol. I** — ⚠ **rattachement corrigé en v0.3 du plan** : *c'est la **clôture
+*Section **reçue du §5.14 du Vol. I** — ⚠ **rattachement corrigé en v0.3 du plan** : c'est la **clôture
 du ch. 5** de sa source, non un développement sur les paiements agentiques.*
 
 ⚠ **Cette section ne réintroduit aucun fait nouveau** : *elle ressaisit les fils du mouvement, puis fixe
@@ -951,7 +965,8 @@ de l'agent** (**ch. 18 § 18.1**) ; et le **patron anti-blanchiment** (**ch. 31 
 ### 34.7.3 Les standards de données comme garde-fou déterministe
 
 **Le troisième fil, posé au ch. 31 § 31.2**, est que ***l'interopérabilité sémantique de l'agent ne
-repose pas sur du texte libre mais sur le substrat normatif du secteur***, stratifié en trois couches.
+repose pas sur du texte libre mais sur le substrat normatif du secteur***, stratifié en trois couches
+que l'agent consomme différemment — **messagerie et syntaxe**, **modèle et capacité**, **ontologie**.
 
 **Le bénéfice est double.** *D'une part, **ancrer l'agent sur le standard réduit l'affabulation et
 facilite l'auditabilité** — ce qui prend appui sur la bascule du **ch. 33 § 33.1**, ⚠ **bascule qui
@@ -1014,34 +1029,43 @@ paiements agentiques** : *c'est l'objet du **ch. 36**.*
 gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A) : *un rédacteur ne corrige jamais le
 TOC, ce PRD ni le Conspectus — il **remonte**.*
 
-**Ce qui est enfreint.** La porte **G-3** et le **volet résiduel de G-1**. Instruction d'auteur du
-27 juillet 2026. ⚠ **G-4 ne conditionne pas ce chapitre** ; ⚠ **D-9 ne le bloque pas.**
+**Ce qui est enfreint.** La porte **G-3** et le **volet résiduel de G-1**, l'une et l'autre ouvertes au
+27 juillet 2026, date de l'instruction d'auteur. ⚠ **G-3 a été franchie le 28 juillet 2026** — PRD
+v0.14, socle consolidé de **159 entrées** — et le **volet de FAITS de G-1 levé le même jour** ;
+⚠ ***une porte franchie après coup solde l'écart, elle ne le rattrape pas*** : *la pièce n'a pas été
+ré-adossée au socle, et cette note reste due jusqu'à ce qu'elle le soit.* ⚠ **G-4 ne conditionne pas ce
+chapitre** ; ⚠ **D-9 ne le bloque pas.**
 
 1. ⚠ **Aucun énoncé n'est central au sens de CA-IV-01.** **Toute la matière vient du Vol. I**, en **[C]**.
    ⚠ **Et une seconde couche de réserve s'y ajoute** : *plusieurs affirmations sont déclarées par le
    Vol. I lui-même **hors de son propre corpus bibliographique, « à sourcer à la rédaction »*** — les
-   standards de santé du § 34.3.2, les acteurs et le litige du § 34.3.3, une ligne directrice canadienne
-   du § 34.5.1, les bacs à sable du § 34.6.4, et trois lignes du tableau 34.1. ⚠ ***Une affirmation
+   communiqués de réassurance du § 34.2.5, les standards de santé du § 34.3.2, les acteurs et le litige
+   du § 34.3.3, une ligne directrice canadienne du § 34.5.1, les bacs à sable du § 34.6.4, et les trois
+   cas de la ligne bancaire du tableau 34.1. ⚠ ***Une affirmation
    déclarée hors corpus par sa propre source n'entre même pas en [C] : elle entre comme mention à
    sourcer.***
-2. ⚠ **Le volet résiduel de G-1 pèse ici plus qu'ailleurs par le nombre** : *une quarantaine d'annonces
-   produit datées, dont **plusieurs disponibilités générales annoncées pour un horizon postérieur au gel
-   de la somme** — août 2026, second semestre 2026. ⚠ **Aucune n'a été reprise à la source primaire.**
+2. ⚠ **Le volet des obligations de pièce de G-1 pèse ici plus qu'ailleurs par le nombre** : une
+   quarantaine d'annonces produit datées, dont **plusieurs disponibilités générales annoncées pour un
+   horizon postérieur au gel de la somme** — août 2026, second semestre 2026. ⚠ **Aucune n'a été reprise
+   à la source primaire**, et ⚠ **la levée du volet de FAITS de G-1, le 28 juillet 2026, ne les couvre
+   pas** : *elle a porté sur les 123 entrées à sensibilité temporelle du socle, non sur les annonces
+   produit que cette pièce cite.*
 3. **Les décomptes sont publiables** (G-2). L'écart à la cible est relevé au [`README.md`](README.md) du
    dossier et alimente **D-4**, déjà tranchée.
 4. **Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan.** Ils résolvent
    contre l'entrée du TOC : **ch. 36** (présent Livre, même passe), le **Livre IV** dans son ensemble,
    **ch. 48**, **ch. 49** et **ch. 50** (Livre V). Résolvent contre du **texte rédigé** : **ch. 1
    § 1.3.4**, **ch. 6**, **ch. 8**, **ch. 10**, **ch. 14 § 14.4**, **ch. 18 § 18.1**, **ch. 24**,
-   **ch. 25**, **ch. 27**, **ch. 28**, **ch. 30**, **ch. 31**, **ch. 32** et **ch. 33**.
+   **ch. 25**, **ch. 27**, **ch. 28**, **ch. 29 § 29.3**, **ch. 30**, **ch. 31**, **ch. 32** et
+   **ch. 33**.
 
 **Remontée ouverte par ce chapitre :**
 
 - **R-IV-97 — non bloquante, de régime de preuve inférieur à [C].** Le Vol. I déclare **six fois dans son
   ch. 5** que certaines de ses affirmations sont **« hors corpus bibliographique du chapitre, à sourcer à
-  la rédaction »** — standards d'interopérabilité de santé, acteurs et litige de l'autorisation
-  préalable, une ligne directrice canadienne, dispositifs de bacs à sable, et trois entrées de son
-  tableau d'études de cas. ⚠ **Le régime de la somme ne prévoit pas cette catégorie** : *le PRD §7.1
+  la rédaction »** — communiqués de réassurance, standards d'interopérabilité de santé, acteurs et
+  litige de l'autorisation préalable, une ligne directrice canadienne, dispositifs de bacs à sable, et
+  les trois cas de la ligne bancaire de son tableau d'études de cas. ⚠ **Le régime de la somme ne prévoit pas cette catégorie** : *le PRD §7.1
   pose que les faits du Vol. I entrent **en [C]**, sans distinguer ceux que le Vol. I déclare lui-même
   **hors de son propre corpus**.* ⚠ ***Une affirmation hors corpus n'a pas été vérifiée même au niveau
   des références*** — *c'est-à-dire au niveau exact que [C] atteste.* **Demande remontée** : que **G-3
@@ -1050,7 +1074,11 @@ TOC, ce PRD ni le Conspectus — il **remonte**.*
   chacune de ses occurrences ; **elle n'a pas créé de niveau**, ce qui relève de G-3.*
 
 **Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 34.1 à § 34.7,
-dans l'ordre exact —, le § 34.0 étant une **ouverture de chapitre**. La **table de couverture est
+dans l'ordre exact —, le § 34.0 étant une **ouverture de chapitre**. ⚠ **Le TOC a depuis réaligné sur sa
+source la table détaillée du § 34.2** (v0.29, 28 juillet 2026) : *elle dépliait quatre sous-sections là
+où la source en porte six ; **le chapitre en couvrait déjà six**, § 34.2.5 et § 34.2.6 comprises, et
+c'est le plan qui a été corrigé sur la pièce* — **décision 8, dans le sens qu'elle prescrit**. *La thèse
+citée en tête est celle de la v0.25 et **la v0.29 ne l'a pas touchée**.* La **table de couverture est
 respectée pour ses cinq lignes**, ⚠ **y compris ses deux sorties de périmètre** : *les §5.12.1-5.12.3
 vont au **Livre IV**, le §5.13 au **ch. 36***, *nommées au § 34.0 au moment où le lecteur les
 attendrait*. ⚠ **Le rattachement du §5.14, corrigé en v0.3 du plan, est respecté** : *il est la clôture
@@ -1060,19 +1088,32 @@ jamais re-dérivés**, non plus que ceux des **ch. 6, 14 § 14.4, 18 § 18.1, 19
 propre du chapitre — la grille d'architecture des plateformes d'assurance de dommage, § 34.2.2 — reçoit
 désormais ses deux renvois entrants**, aux § 34.5.2 et § 34.5.6, *qui manquaient alors que le marqueur
 les annonçait (ajoutés le 28 juillet 2026).* Les **métriques auto-déclarées ou projections portent leur
-statut à chaque occurrence**, ⚠ **sans exception d'usage illustratif** — *quatorze marqueurs
-« auto-déclaré » et six « projection d'analyste », y compris les quatre gains du § 34.2.3 et les deux du
-§ 34.2.4.* Les **statuts sont dits à chaque mention** de § 34.1 à § 34.6 (R-09), et **les absences
+statut à chaque occurrence**, ⚠ **sans exception d'usage illustratif** — *seize marqueurs
+« auto-déclaré », un « auto-déclaration » et sept « projection d'analyste », y compris les quatre gains
+du § 34.2.3 et les deux du § 34.2.4.* ⚠ **Et elles portent désormais leur attributeur nommé**
+(décision 15 du TOC) : *l'anonymisation a été levée partout où une métrique ou une affirmation attribuée
+était portée — **§ 34.1.1, § 34.1.2, § 34.1.3, § 34.2.2, § 34.2.3, § 34.2.4, § 34.2.6, § 34.3.1,
+§ 34.3.5, § 34.4.1, § 34.4.2, § 34.4.4, § 34.4.5, § 34.5.3 et § 34.6.2** —, et **maintenue partout où
+seule une dénomination commerciale est en jeu**, ce que la décision 15a autorise. ⚠ **Trois métriques
+restent sans attributeur nommé — § 34.2.6, § 34.5.2 et § 34.5.6 — parce que la source n'en nomme aucun**
+: *le fait est écrit à chacune plutôt que masqué.* Les **statuts sont dits à chaque mention** de § 34.1 à § 34.6 (R-09), et **les absences
 portent toutes leur degré** — *une occurrence du sigle R-14 au § 34.6.2, quatre du marqueur « degré 3 »*.
 ⚠ **R-13 est tenu à ses quatre occurrences** : *l'échelle à quatre paliers est **nommée par son
 cardinal**, et le tri productivité assistée / autonomie transactionnelle est **déclaré n'être pas une
 échelle d'autonomie**.* ⚠ **La neutralité fournisseur est tenue** : *une quarantaine d'offres nommées,
 **aucune recommandée**.* ⚠ **Ces cardinaux ont été re-mesurés au commit du 28 juillet 2026**
-(décision 16 du TOC) ; *l'attestation antérieure annonçait vingt-trois métriques, dix-huit occurrences
+(décision 16 du TOC), **puis une seconde fois à la relecture du même jour** — *cinq d'entre eux avaient
+bougé : « auto-déclaré » de quatorze à **seize**, « projection d'analyste » de six à **sept**, la
+formule de neutralité fournisseur d'une occurrence à **trois**, les offres de la passerelle du § 34.5.3
+de cinq à **six**, et les réserves « hors corpus » du corps de cinq lieux à **six**, le § 34.2.5 ayant
+été omis de l'énumération* ; *l'attestation antérieure annonçait vingt-trois métriques, dix-huit occurrences
 de R-09, huit de R-14, trois de R-13 et neuf de la neutralité fournisseur, aucun de ces cinq nombres
-n'étant re-mesurable contre le corps.* Enfin, ⚠ **les six réserves « hors corpus » de la source sont
-reprises une par
-une**, et **le vide de bancs d'essai du § 34.6.2 est déclaré au degré 3 plutôt que comblé**.
+n'étant re-mesurable contre le corps.* Enfin, ⚠ **les six réserves « hors corpus » de la source sont reprises une par une** — *§ 34.2.5,
+§ 34.3.2, § 34.3.3, § 34.5.1, § 34.6.1 et § 34.6.4* —, et **le vide de bancs d'essai du § 34.6.2 est
+déclaré au degré 3 plutôt que comblé**. ⚠ **Ce qui reste dû, en revanche, est le RÉ-ADOSSEMENT au socle
+consolidé** : *la pièce a été écrite avant que G-3 ne soit franchie, et **aucune de ses affirmations ne
+cite un identifiant `S-nnn`** ; la mesure portée au champ **Socle mobilisé** montre que le socle ne
+couvre pas les §5.7-5.11 du Vol. I, **ce qui explique l'absence sans la justifier**.*
 
 
 ---

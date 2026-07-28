@@ -7,11 +7,11 @@ n'en a pas besoin**.*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 28.4. ⚠ **Ce chapitre n'est pas conditionné par G-4** : sa ligne Fusion ne cite que le Vol. II ; le Vol. III y est mentionné **une fois, en renvoi**, au titre de la lecture C de la cartographie du ch. 27 § 27.7 |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : ⚠ **et une question de ce chapitre est explicitement datée d'une absence** — les suites de la consultation close le 31 mars 2025 ne sont documentées par aucune source du socle, **et la fenêtre d'absence s'allonge d'un jour par jour**. Gel de source consommé : **16-17 juillet 2026** (Vol. II ch. 12) — ⚠ **il ne tient pas lieu du gel de la somme** |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. II *Monographie* ch. 12**, dont l'entrée **F-26** est en **[B]** — consultée directement le 16 juillet 2026 sur la page officielle de l'instrument, son communiqué et son texte officiel ; **F-09** et **F-25** y sont mobilisées **en renvoi seulement**. L'entrée héritée **H-07** du **Vol. III** est citée **une fois, en renvoi**. ⚠ **Deux séries F-xx coexistent et se préfixent à chaque emploi** (décision 7 du TOC). **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus.* Vol. II — **CA-5 (fidélité des citations) : deux occurrences du sigle**, § 28.1 et § 28.2 — ⚠ **l'instrument est en anglais, et la doctrine française du socle n'est pas présentée comme une citation verbatim** ; **garde-fou « aucun avis juridique » (PRD Vol. II §3) : une occurrence de la formule et une du renvoi**, § 28.0 — *le garde-fou est **appliqué à tout le chapitre**, aucun énoncé n'y étant un avis* ; **PRD §8.2.4 : une occurrence du renvoi**, § 28.2, **en renvoi au ch. 25** ; **PRDPlan Vol. II §4.4 — « attendu par E-23 » : une occurrence du renvoi et une de la formule**, § 28.2 ; **R-7 (correspondance produit ↔ réglementation) : zéro occurrence — et il est sans objet ici**, ce chapitre étant en contexte réglementaire pur ; **R-1 à R-6, R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : deux occurrences du sigle**, § 28.2 et § 28.3 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 28.2 et § 28.3, « fait négatif vérifié » au § 28.2* ; **R-09 : une occurrence du sigle**, § 28.1 ; **R-01 à R-08, R-10 à R-13 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **2 500 mots** de corps (§ 28.0 à § 28.3), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant trois : **la plus basse du Livre avec le ch. 26**. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh). ⚠ **D-4 interdit l'amputation comme le gonflement** |
+| **Statut** | **Brouillon de rédaction, non publiable** — **rédigé le 27 juillet 2026 avant G-3**, sur instruction d'auteur ; ⚠ **la règle cardinale du PRD §5 était donc enfreinte** (voir la note de statut, § 28.4). ⚠ **G-3 a été franchie depuis, le 28 juillet 2026** (PRD v0.14 ; socle consolidé [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées `S-001`…`S-159`**), et le **volet de faits de G-1 levé le même jour** : *une porte franchie après coup ne rattrape pas la pièce écrite avant elle* — **celle-ci n'a pas été ré-adossée entrée par entrée au socle consolidé**, et le ré-adossement reste dû. ⚠ **Ce chapitre n'est pas conditionné par G-4** : sa ligne Fusion ne cite que le Vol. II ; le Vol. III y est mentionné **une fois, en renvoi**, au titre de la lecture C de la cartographie du ch. 27 § 27.7 |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet de faits de G-1 est levé le 28 juillet 2026** — 123 entrées à sensibilité temporelle portées à leur source ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) —, ⚠ **et l'entrée qui porte cet avis en est revenue ☐ NON ÉTABLIE** : *six routes tentées*, source primaire servie mais **non extractible**, les autres en accès refusé ou introuvables. ⚠ ***Instruire n'est pas confirmer*** : la date de l'avis n'a pas été re-constatée au gel, et **aucun énoncé de ce chapitre ne peut être central sur cette composante** (CA-IV-01). ⚠ **Une question du chapitre est en outre datée d'une absence** — les suites de la consultation close le 31 mars 2025 ne sont documentées par aucune source du socle, **et la fenêtre d'absence s'allonge d'un jour par jour**. Gel de source consommé : **16-17 juillet 2026** (Vol. II ch. 12) — ⚠ **il ne tient pas lieu du gel de la somme** |
+| **Socle mobilisé** | Les énoncés résolvent contre le **Vol. II *Monographie* ch. 12**, dont l'entrée **F-26** est en **[B]** — consultée directement le 16 juillet 2026 sur la page officielle de l'instrument, son communiqué et son texte officiel. L'entrée héritée **H-07** du **Vol. III** est citée **une fois, en renvoi**. ⚠ **F-09 et F-25 du Vol. II ne sont pas citées au corps** : leur matière est atteinte **par renvoi** aux **ch. 25 § 25.3** et **ch. 27 § 27.1**, et *déclarer un identifiant qu'on n'emploie pas est une attestation vide*. ⚠ **Deux séries F-xx coexistent et se préfixent à chaque emploi** (décision 7 du TOC). ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** et ces entrées y résolvent par ses deux tables de correspondance ([`socle-consolide.md`](../PRD/socle-consolide.md) §4 et §5) : ⚠ **F-26 du Vol. II et H-07 du Vol. III y sont FONDUES en une seule entrée — `S-024`, en [B]** —, **F-09 → `S-009`**, **F-25 → `S-023`**. **La re-citation en `S-nnn` n'est pas faite et reste due.** **Aucun énoncé n'est central au sens de CA-IV-01** : aucun vote adversarial n'a été conduit par la consolidation, et `S-024` porte de surcroît une **re-datation non établie** |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés à la relecture du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus.* Vol. II — **CA-5 (fidélité des citations) : deux occurrences du sigle**, § 28.1 et § 28.2 — ⚠ **l'instrument est en anglais, et la doctrine française du socle n'est pas présentée comme une citation verbatim** ; **garde-fou « aucun avis juridique » (PRD Vol. II §3) : une occurrence de la formule et une du renvoi**, § 28.0 — *le garde-fou est **appliqué à tout le chapitre**, aucun énoncé n'y étant un avis* ; **PRD §8.2.4 : une occurrence du renvoi**, § 28.2, **en renvoi au ch. 25** ; **PRDPlan Vol. II §4.4 — « attendu par E-23 » : une occurrence du renvoi et une de la formule**, § 28.2 ; **R-7 (correspondance produit ↔ réglementation) : zéro occurrence — et il est sans objet ici**, ce chapitre étant en contexte réglementaire pur ; **R-1 à R-6, R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : deux occurrences du sigle**, § 28.2 et § 28.3 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 », **deux occurrences**, § 28.2 et § 28.3 ; « fait négatif vérifié », **deux occurrences**, § 28.2 et § 28.3, l'une et l'autre **en négation** — *les deux absences du chapitre sont au degré 3, aucune n'est un fait négatif vérifié* ; **R-09 : une occurrence du sigle**, § 28.1 ; **R-01 à R-08, R-10 à R-13 : zéro occurrence** |
+| **Volumétrie cible** | ≈ **2 500 mots** de corps (§ 28.0 à § 28.3), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant trois : **la plus basse du Livre avec le ch. 26**. ☑ **Décompte publiable depuis G-2** ; **réel : 2 531 mots**, soit **+1,2 %**, re-mesuré à la relecture du 28 juillet 2026 par [`PRD/decompte.sh`](../PRD/decompte.sh) — ⚠ *valeur antérieure périmée : 2 379, −4,8 %*. Les **152 mots** de l'écart sont ceux des bornes, des attributions et des re-vérifications ajoutées par la relecture : ⚠ **aucune amputation n'a été faite**, et **D-4 interdit l'amputation comme le gonflement**. Le tableau du [`README.md`](README.md) du dossier porte encore la mesure antérieure |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 28)* — les lois existantes s'appliquent — la définition retenue des systèmes d'IA (autonomie et adaptativité variables) capture nativement l'agentique.
 
@@ -103,7 +103,11 @@ clause en français alors que l'instrument est en anglais ; il n'en établit ni 
 provenance.* ⚠ **Le même avis porte une entrée héritée au Vol. III — H-07, [B] —, citée ici en renvoi
 seulement** : elle est mobilisée à la cartographie du **ch. 27 § 27.7** (lecture C), où elle sert un
 autre objet — l'articulation avec l'article 12.1 —, et **aucun énoncé du présent chapitre ne s'y
-adosse**. **Chacune des deux propriétés porte.**
+adosse**. ⚠ *Les deux identifiants sont **fondus en une seule entrée** au socle consolidé du 28 juillet
+2026 — `S-024`, en [B] : la fusion résout un doublon, elle ne verse aucun fait neuf et ne déplace aucun
+niveau.*
+
+**Chacune des deux propriétés porte.**
 
 ***Niveaux variables d'autonomie*** : la définition admet **un continuum plutôt qu'une catégorie** ; un
 système qui recommande et un système qui décide relèvent tous deux du champ, **à des positions
@@ -126,7 +130,7 @@ socle n'établit pas comment ces dispositifs la traitent**, et l'écart décrit 
 développée au **ch. 29 § 29.1**. *Ce que cette propriété exige d'une architecture — journalisation,
 reconstitution, imputabilité d'un comportement non spécifié à l'avance — y est repris.* ⚠ **Et le
 rapprochement avec la distinction adaptation / évolution du ch. 22 § 22.8 est une construction de la
-somme, que ni l'avis ni le manifeste n'énoncent.**
+somme, que n'énoncent ni l'avis, ni le manifeste de recherche dont cette distinction est tirée.**
 
 Lecture de l'auteur — **la comparaison avec le cadre fédéral de risque de modèle doit être marquée comme
 une lecture.** **Ce que le socle établit** : deux faits distincts. *D'une part*, E-23 **ne nomme ni
@@ -148,27 +152,32 @@ sa date, sa portée, sa doctrine, sa définition et les documents qu'il référe
 si l'avis formule des attentes au-delà du constat d'applicabilité** — en matière de gouvernance,
 d'explicabilité ou de supervision — **ni, le cas échéant, leur détail** : *absence de documentation dans
 le corpus, degré 3 de l'échelle R-14 du Vol. III, non un fait négatif vérifié.* **La question reste
-ouverte ; aucune inférence n'est proposée ici**, et **le volet résiduel de G-1 ne l'a pas instruite**.
+ouverte ; aucune inférence n'est proposée ici.** ⚠ **Le volet de faits de G-1, levé le 28 juillet 2026,
+ne l'a pas comblée** : *l'entrée en est revenue **non établie** — source primaire servie mais non
+extractible —, ce qui laisse la tentative faite et le constat manquant.*
 
 ⚠ ***Cette réserve n'affaiblit pas la thèse ; elle la circonscrit.*** *La thèse ne porte pas sur ce que
 l'avis exige — il n'exige rien — mais sur **ce que sa définition capte**, seul point que le socle
 établisse.*
 
-**L'avis ne s'écrit pas dans le vide.** Il référence **deux documents** que le socle identifie : un
-rapport conjoint d'une commission provinciale des valeurs mobilières et d'un cabinet-conseil sur les
-cas d'usage de l'IA en marchés de capitaux, et **un document de réflexion de l'Autorité des marchés
-financiers proposant trente meilleures pratiques** d'utilisation responsable de l'IA dans le secteur
-financier.
+**L'avis ne s'écrit pas dans le vide.** Il référence **deux documents** que le socle identifie : le
+rapport conjoint de la **Commission des valeurs mobilières de l'Ontario** et d'**EY**, « AI in Capital
+Markets: Exploring Use Cases in Ontario », sur les cas d'usage de l'IA en marchés de capitaux, et **un
+document de réflexion de l'Autorité des marchés financiers proposant trente meilleures pratiques**
+d'utilisation responsable de l'IA dans le secteur financier.
 
 ⚠ **Ce second renvoi appelle une précision que le socle n'énonce pas mais que la chronologie impose, et
 la confusion serait grave.** *Le document de réflexion référencé par un avis publié le 5 décembre 2024
 est **nécessairement antérieur** à cette date ; le **projet** de ligne directrice de l'AMF a été publié
-le 3 juillet 2025, et sa **version finale** en 2026 (ch. 27 § 27.1).* **Les deux documents sont donc
-distincts**, et séparés d'**au moins six mois et vingt-huit jours** du projet, d'**au moins quinze mois
-et vingt-cinq jours** de la version finale — ⚠ *l'écart réel étant nécessairement supérieur dans les
-deux cas, puisque le socle ne date pas le document de réflexion : ce sont des **bornes inférieures**,
-non des valeurs.* ⚠ **Les confondre serait une erreur facile — même régulateur, même objet — et grave :
-la seconde, seule, est finale et assortie d'une date d'entrée en vigueur.**
+le 3 juillet 2025, et sa **version finale en avril 2026** (ch. 27 § 27.1).* **Les deux documents sont
+donc distincts**, et séparés d'**au moins six mois et vingt-huit jours** du projet et d'**au moins
+quinze mois** de la version finale. ⚠ **Ce sont des bornes inférieures, non des valeurs, et à double
+titre** : *le socle ne date pas le document de réflexion*, et *il ne date plus la version finale au
+jour près* — **aucune des deux dates que le dépôt portait ne figure aux pages officielles**
+(ch. 27 § 27.1), en sorte que les « quinze mois et vingt-cinq jours » calculés par le Vol. II se
+dérivent d'un 30 mars 2026 que la somme ne reprend pas. ⚠ **Les confondre serait une erreur facile —
+même régulateur, même objet — et grave : la seconde, seule, est finale et assortie d'une date d'entrée
+en vigueur.**
 
 ## § 28.3 — Les suites de la consultation
 
@@ -181,10 +190,11 @@ commentaires reçus, ni avis subséquent, ni instrument dérivé n'y figure. **L
 lacunes de la source** (PRD Vol. II §10.4).
 
 ⚠ **Le régime de cette absence se dit exactement** : *c'est une **absence de source** dans le corpus,
-non une absence de production du régulateur* — **degré 3 de l'échelle R-14**, et **non un fait négatif
-vérifié**. **La question reste ouverte ; aucune inférence n'est proposée ici.** ⚠ *En particulier, la
-somme ne présume rien du sens de ce silence sur quinze mois : **ni qu'il annonce un instrument à venir,
-ni qu'il traduise l'abandon du dossier, ni qu'il vaille approbation tacite des pratiques du marché**.*
+non une absence de production du régulateur* — **degré 3 de l'échelle R-14 du Vol. III**, et **non un
+fait négatif vérifié**. **La question reste ouverte ; aucune inférence n'est proposée ici.** ⚠ *En
+particulier, la somme ne présume rien du sens de ce silence sur quinze mois : **ni qu'il annonce un
+instrument à venir, ni qu'il traduise l'abandon du dossier, ni qu'il vaille approbation tacite des
+pratiques du marché**.*
 
 **Reste ce que cette incertitude n'entame pas.**
 
@@ -219,8 +229,9 @@ seul des deux volets appelle une veille — et que ce n'est pas celui qui les ob
    d'une infrastructure de marché relève du même champ qu'un système chez une personne inscrite.* **Le
    ch. 34 § 34.4 en rencontre la conséquence sur les opérations de post-marché.**
 4. **Une distinction de régime entre les deux volets du document.** *Le volet avis ne dépend d'aucune
-   suite ; le volet consultation en appelle une, et n'en a pas de documentée.* **Le ch. 50 en fait un
-   événement de péremption à surveiller.**
+   suite ; le volet consultation en appelle une, et n'en a pas de documentée.* ⚠ **Aucun événement de
+   péremption de la somme ne la porte** : *le ch. 50 § 50.2 ne l'inventorie pas, et le plan ne la lui
+   assigne pas* — l'écart est remonté au § 28.4, il n'est pas comblé ici.
 
 ⚠ **Ce que le chapitre ne lègue pas.** Il ne lègue **aucune attente de gouvernance, d'explicabilité ou
 de supervision** : *le socle ne porte pas ce contenu, et le § 28.2 le dit plutôt que de le combler.* Il
@@ -240,27 +251,43 @@ n'a pas de date d'entrée en vigueur parce qu'il n'en a pas besoin.**
 gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A) : *un rédacteur ne corrige jamais le
 TOC, ce PRD ni le Conspectus — il **remonte**.*
 
-**Ce qui est enfreint.** La porte **G-3** et le **volet résiduel de G-1**. Instruction d'auteur du
-27 juillet 2026. ⚠ **La porte G-4 ne conditionne pas ce chapitre** : sa ligne Fusion ne cite que le
-Vol. II, et la seule mention du Vol. III y est **un renvoi** vers le ch. 27 § 27.7. ⚠ **La décision D-9
-ne le bloque pas** : *il ne prescrit aucune parade humaine — l'avis ne prescrit rien du tout.*
+**Ce qui était enfreint à la rédaction.** La porte **G-3** et le **volet résiduel de G-1**. Instruction
+d'auteur du 27 juillet 2026. ⚠ **Les deux ont bougé le 28 juillet 2026 — G-3 franchie, volet de faits
+de G-1 levé — et cela ne rattrape rien** : *la pièce a été écrite sur un socle qui n'existait pas, et
+elle n'a pas été ré-adossée à celui qui existe désormais.* ⚠ **La porte G-4 ne conditionne pas ce
+chapitre** : sa ligne Fusion ne cite que le Vol. II, et la seule mention du Vol. III y est **un renvoi**
+vers le ch. 27 § 27.7. ⚠ **La décision D-9 ne le bloque pas** : *il ne prescrit aucune parade humaine —
+l'avis ne prescrit rien du tout.*
 
-1. **Aucun énoncé n'est central au sens de CA-IV-01.** Le socle consolidé compte zéro entrée ; les
-   identifiants cités — F-26, et en renvoi F-09 et F-25 du **Vol. II**, H-07 du **Vol. III** — sont
-   préfixés à chaque emploi (décision 7).
+1. **Aucun énoncé n'est central au sens de CA-IV-01.** Le socle consolidé existe depuis le 28 juillet
+   2026, mais **aucun vote adversarial n'a été conduit par la consolidation** et l'entrée qui porte cet
+   avis — `S-024` — revient du gel **☐ non établie**. Les identifiants **cités au corps** sont **F-26 du
+   Vol. II** (deux occurrences) et **H-07 du Vol. III** (une, en renvoi), préfixés à chaque emploi
+   (décision 7) ; **F-09 et F-25 du Vol. II ne sont pas cités** — leur matière est atteinte par renvoi
+   aux ch. 25 § 25.3 et ch. 27 § 27.1.
 2. **Les décomptes sont publiables** (G-2). L'écart à la cible est relevé au [`README.md`](README.md) du
-   dossier et alimente **D-4**, déjà tranchée.
-3. **Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan.** Ils résolvent
-   contre l'entrée du TOC : **ch. 29, 34** (présent Livre, même passe) et **ch. 50** (Livre V).
-   Résolvent contre du **texte rédigé** : **ch. 14 § 14.4**, **ch. 22 § 22.1 et § 22.8**, **ch. 25
-   § 25.3**, **ch. 26 § 26.3** et **ch. 27 § 27.1 et § 27.7**.
+   dossier et alimente **D-4**, déjà tranchée. ⚠ **La relecture du 28 juillet 2026 a modifié le corps de
+   la pièce** : *la ligne du ch. 28 au tableau de volumétrie du dossier est donc périmée et se re-mesure
+   à la passe qui committe* (décision 16b).
+3. **Tous les renvois « ch. N » résolvent désormais contre du texte rédigé, et ils ont été re-vérifiés
+   un à un le 28 juillet 2026** — **dix renvois de section** : **ch. 14 § 14.4**, **ch. 22 § 22.1 et
+   § 22.8**, **ch. 25 § 25.3**, **ch. 26 § 26.3**, **ch. 27 § 27.1 et § 27.7**, **ch. 29 § 29.1**,
+   **ch. 34 § 34.4** et **ch. 50 § 50.2** ; les renvois de chapitre nu ne visent que des chapitres déjà
+   couverts par l'un d'eux.
+   ⚠ **Les trois derniers étaient des renvois de plan à la rédaction** — ch. 29, 34 et 50 n'étaient pas
+   écrits — **et c'est la revérification qui a montré que celui du ch. 50 ne résolvait pas** : le § 50.2
+   n'inventorie pas les suites de cette consultation. *Un renvoi de plan qui survit à la rédaction de sa
+   cible sans revérification est exactement le défaut que la décision 8 proscrit.*
 4. ⚠ **Deux calculs de durée sont datés du gel et se re-mesurent** : les **quinze mois et vingt-sept
    jours** écoulés depuis la clôture de la consultation, et les **deux bornes inférieures** du § 28.2.
-   *Les premiers croissent d'un jour par jour ; les secondes sont stables tant que le socle ne date pas
-   le document de réflexion.* ⚠ **Le premier a été recalculé le 28 juillet 2026** : les deux occurrences
-   portaient « seize mois et vingt-six jours », faux sous la convention que la pièce emploie partout
-   ailleurs — *du 31 mars 2025 au 27 juillet 2026, il s'écoule 483 jours, soit **quinze** mois et
-   vingt-sept jours, l'anniversaire de seize mois tombant le 31 juillet 2026, après le gel.*
+   *Le premier croît d'un jour par jour.* ⚠ **Il a été recalculé le 28 juillet 2026** :
+   les deux occurrences portaient « seize mois et vingt-six jours », faux sous la convention que la
+   pièce emploie partout ailleurs — *du 31 mars 2025 au 27 juillet 2026, il s'écoule 483 jours, soit
+   **quinze** mois et vingt-sept jours, l'anniversaire de seize mois tombant le 31 juillet 2026, après
+   le gel.* ⚠ **La seconde borne a été refaite le même jour, et pour un motif de socle** : *elle se
+   dérivait du « 30 mars 2026 » que **R-IV-88 a défait** — la somme écrit « avril 2026 » —, et **G-1 a
+   tranché depuis** en constatant que ni cette date ni le 7 avril 2026 ne se lisent aux pages
+   officielles.* Elle est ramenée à **quinze mois**, valeur qui tient sous chacun des trois états.
 
 **Remontée ouverte par ce chapitre :**
 
@@ -274,21 +301,64 @@ ne le bloque pas** : *il ne prescrit aucune parade humaine — l'avis ne prescri
   ch. 25 a nommée par R-IV-84, à ceci près qu'ici aucun autre volume ne la couvre.** *Ce n'est pas une
   lacune couverte en [C], c'est une lacune que personne ne porte.*
 
+**Remontées ouvertes par la relecture du 28 juillet 2026 — sans numéro alloué.** ⚠ *La série `R-IV-NN`
+n'a pas d'allocateur et la relecture court en parallèle sur les cinquante pièces ; **prendre un numéro
+ici reproduirait la collision de dix identifiants du 27 juillet 2026** (PRD §13). Les quatre demandes
+ci-dessous se numérotent à la passe d'arbitrage.*
+
+- **Le ch. 50 n'inventorie pas les suites de cette consultation — non bloquante, d'écart entre une
+  pièce et sa cible.** La synthèse de ce chapitre annonçait que **le ch. 50 en ferait un événement de
+  péremption** ; ⚠ **ni le § 50.2 rédigé ni la liste d'événements que le TOC lui assigne ne la
+  portent**. *L'énoncé de ce chapitre est corrigé — l'absence y est écrite plutôt que présumée
+  comblée* ; **demande remontée** : que l'événement entre à la liste du ch. 50 § 50.2 au plan, ou que
+  l'exclusion soit motivée. ⚠ *L'objet est pourtant du genre exact que le ch. 50 recense : **une
+  consultation close dont une suite ferait tomber une partie de la somme**.*
+- **Le titre de la table détaillée du ch. 28 au TOC nomme un autre chapitre — non bloquante, de
+  désalignement interne au plan.** L'entrée du chapitre 28 est suivie de « **Table des matières
+  détaillée du chapitre 32** ». ⚠ *C'est la classe qu'a nommée la rédaction du Livre IV : **le plan se
+  contredit lui-même**, et **aucun des quinze contrôles ne le voit**, `check-toc.py` portant sur des
+  motifs de ligne et ne connaissant pas les tables détaillées.*
+- **La phrase « Sections » du ch. 28 promet une section que le socle ne peut pas porter — non
+  bloquante, de spécification insatisfaisable.** Elle annonce trois objets dont le deuxième est
+  « **attentes (gouvernance, explicabilité, supervision)** », et la note de provenance du § 28.3 les
+  lui rattache — ⚠ **alors que le socle n'établit pas si l'avis en formule**, ce que R-IV-90 vient
+  précisément de porter au registre des lacunes. *Le chapitre suit la table détaillée, qui n'ouvre
+  aucune section d'attentes ;* **demande remontée** : que la phrase « Sections » et la note du § 28.3
+  s'alignent sur la lacune inscrite, plutôt que de prescrire un contenu que le régime de preuve
+  interdit d'écrire.
+- **La volumétrie du dossier est périmée par cette relecture — non bloquante, de décompte.** Le tableau
+  du [`README.md`](README.md) porte **2 379 mots** pour ce chapitre ; la mesure du 28 juillet 2026, après
+  corrections, donne **2 531** par [`PRD/decompte.sh`](../PRD/decompte.sh) — l'écart à la cible passe de
+  **−4,8 %** à **+1,2 %**, et le total du Livre s'en trouve décalé d'autant. **Demande remontée** : que
+  la ligne et le total soient re-mesurés à la passe qui committe. ⚠ **Les 152 mots sont de l'appareil,
+  non de la matière**, et **aucune amputation n'a été faite** (D-4).
+
 **Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 28.1 à § 28.3,
 dans l'ordre exact —, le § 28.0 étant une **ouverture de chapitre**. La **table de couverture est
 respectée pour son unique ligne** : le Vol. II §12.1-12.3 est condensé aux § 28.1-28.3, **rien n'en est
 coupé**. La **décision 14 a été exécutée avant la rédaction**, domaine déclaré : une thèse examinée,
 zéro réalignée — **et la borne que la source attache à son propre rang comparatif est reprise au
-§ 28.2**. ⚠ **CA-5 est tenu à ses deux occurrences** : *la doctrine et la clause de définition sont
-reprises **en français, telles que le socle les établit**, et ne sont pas présentées comme des citations
-verbatim d'un instrument anglais.* Le **garde-fou « aucun avis juridique » est posé au § 28.0 et tenu sur
-tout le chapitre** — *la formule y est écrite une fois* —, et **l'inventaire des obligations auxquelles
-l'avis renvoie n'est pas dressé**. Les **absences portent toutes leur degré** — *deux occurrences du
+§ 28.2**. ⚠ **La décision 17 est vérifiée dans l'autre sens à la relecture du 28 juillet 2026** : *la
+thèse citée est **identique caractère par caractère** à l'entrée courante du plan* — l'étiquette
+« v0.25 » **date la citation, elle ne prétend pas nommer la dernière version du TOC** —, et le corps ne
+commente aucune forme que la thèse ne porte plus. ⚠ **CA-5 est tenu à ses deux occurrences** : *la
+doctrine et la clause de définition sont reprises **en français, telles que le socle les établit**, et
+ne sont pas présentées comme des citations verbatim d'un instrument anglais.* Le **garde-fou « aucun
+avis juridique » est posé au § 28.0 et tenu sur tout le chapitre** — *la formule y est écrite une
+fois* —, et **l'inventaire des obligations auxquelles l'avis renvoie n'est pas dressé**. Les
+**absences portent toutes leur degré** — *deux occurrences du
 sigle R-14, aux § 28.2 et § 28.3* —, **les deux au degré 3** : le contenu des attentes éventuelles et
-les suites de la consultation. ⚠ **Ces cardinaux ont été re-mesurés au commit du 28 juillet 2026**
-(décision 16 du TOC) ; *l'attestation antérieure annonçait trois occurrences du garde-fou renforcé et
-cinq de R-14.* La **formulation imposée sur E-23 est tenue à son unique
-occurrence**, et **le renvoi au ch. 25 y est explicite**. Enfin, ⚠ **le chapitre ne classe pas les
+les suites de la consultation. ⚠ **Ces cardinaux ont été re-mesurés par balayage littéral à la
+relecture du 28 juillet 2026** (décision 16 du TOC), *et la mesure a corrigé les deux attestations
+antérieures* : la première annonçait trois occurrences du garde-fou renforcé et cinq de R-14 ; la
+seconde localisait « fait négatif vérifié » **au seul § 28.2** alors que le § 28.3 en porte une
+seconde. ⚠ ***Un cardinal exact assorti d'une localisation fausse reste un cardinal faux*** — c'est le
+deuxième des trois degrés que la décision 16 nomme. La **formulation imposée sur E-23 est tenue à son
+unique occurrence**, et **le renvoi au ch. 25 y est explicite**. ⚠ **Les deux documents référencés par
+l'avis sont nommés par leur auteur** au § 28.2 depuis la relecture (décision 15b) : *la parade de
+péremption du corpus couvre les dénominations commerciales et les versions, jamais l'attribution* —
+« une commission provinciale des valeurs mobilières et un cabinet-conseil » n'en était pas une, dans
+une phrase qui nommait l'Autorité des marchés financiers. Enfin, ⚠ **le chapitre ne classe pas les
 textes canadiens entre eux** : *la comparaison du § 28.2 est marquée lecture de l'auteur et bornée par
 la lacune de contenu de la ligne directrice de l'AMF.*
 
@@ -321,3 +391,13 @@ cette pièce n'est central au sens de CA-IV-01**. **CA-IV-11 et CA-IV-13 ne sont
 *aucune relecture par un relecteur distinct du rédacteur*. Cette pièce reste un **brouillon non
 publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune
 question n'attend plus de réponse qui ne soit déjà tranchée.*
+
+⚠ **Addendum du 28 juillet 2026 — ce que la clôture ci-dessus ne pouvait pas savoir.** *Le bloc qui
+précède est daté du 27 juillet 2026 et ne se réécrit pas ; son état des portes est celui de sa date, et
+deux de ses termes ont bougé depuis.* **G-3 est franchie** (PRD v0.14) et **le socle consolidé compte
+159 entrées**, non zéro ; **G-4 demeure ouverte** mais **ne conditionne pas ce chapitre**. ⚠ **Rien de
+cela ne rend la pièce recevable** : elle n'a pas été ré-adossée au socle consolidé, `S-024` revient du
+gel **☐ non établie**, **aucun énoncé n'est central au sens de CA-IV-01**, et **CA-IV-11 comme CA-IV-13
+restent insatisfaites**, D-6 ne fournissant pas de relecteur tiers. ⚠ **Le compte de remontées n'est
+plus nul non plus** : la relecture du 28 juillet 2026 en a ouvert **quatre**, listées plus haut et
+**sans numéro alloué**.

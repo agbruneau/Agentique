@@ -7,18 +7,20 @@ versant réglementaire.*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 24.10. ⚠ **Une section de ce chapitre a un socle que le plan déclare « à établir avant rédaction »** — le § 24.8 ; elle est écrite **au régime de repli que le plan lui-même prescrit**, et non comblée |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : aucun fait de ce chapitre n'a été repris à la source primaire, et **la relève v0.19 du § 24.8 n'a pas été extraite**. Gel de source consommé : **juin 2026** (Vol. I ch. 4) — ⚠ **il ne tient pas lieu du gel de la somme**, et le chapitre porte des jalons produits et réglementaires postérieurs à cette date chez d'autres sources |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). **Ce chapitre est le seul du Livre dont la totalité de la matière vient du Vol. I** : elle entre donc **intégralement en [C]** — repérage documentaire, la vérification du Vol. I portant sur ses références et non sur le contenu des affirmations (PRD §7.1). ⚠ **Conséquence à tirer sans détour : aucun énoncé de ce chapitre n'est central au sens de CA-IV-01, et aucun ne peut le devenir sans élévation en [B] par lecture des sources primaires que le Vol. I cite.** Les seuls appuis à un autre régime sont des **renvois** vers les sièges des Livres I et II (ch. 3, ch. 10, ch. 18, ch. 19, ch. 20), qui ne sont pas reconstruits ici |
-| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **PRD §8.2.3 et §7.5 (métriques auto-déclarées et projections d'analystes) : les deux renvois ne sont pas écrits au corps** ; *le marqueur « projection d'analyste » l'est **trois fois** — § 24.0.2, § 24.2.4 et § 24.7.2 —, et **le garde-fou est appliqué aux § 24.0, § 24.2, § 24.3, § 24.7 et § 24.9**, chaque chiffre étant attribué à sa source* ; **PRD §8.4 (neutralité fournisseur) : le renvoi n'est pas écrit au corps** ; *la formule l'est **une fois**, § 24.1.2* ; **R-8 : une occurrence du sigle**, § 24.7.2 — ⚠ le sigle proscrit nu par R-8 **apparaît dans la source au titre d'un protocole de commerce**, et il est ici employé **avec son qualificatif complet**, renvoi au **ch. 7 § 7.5** ; **R-1 à R-7 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 24.0.3 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 24.0.3, § 24.3.2, § 24.4.2, § 24.5.1 et § 24.8 (trois), « fait négatif vérifié » aux § 24.3.2 et § 24.8* ; **R-09 (quatre statuts, dits à chaque mention) : zéro occurrence du sigle** ; ⚠ *le garde-fou est **appliqué aux § 24.1 à § 24.4**, chaque statut étant dit en toutes lettres — **le décompte n'est pas re-mesurable et n'est donc pas annoncé*** ; **R-13 : cinq occurrences du sigle**, § 24.1.2, § 24.2.1, § 24.5.2, § 24.6.2 et § 24.9.2 ; ⚠ **faux ami déclaré et employé** — le « **plan de contrôle** » est celui du **maillage de services pré-agentique** (ch. 1 § 1.3.4) : *ce n'est pas le* control plane *que R-13 proscrit nu* ; ses **cinq emplois** sont au **§ 24.1.2**, au **§ 24.5.2** (rangée du tableau 24.1 et sa légende) et au **§ 24.6.2** (deux), et **la distinction est écrite à chacun** — ⚠ *celle du § 24.6.2 a été ajoutée le 28 juillet 2026, l'emploi y étant nu jusque-là* ; **R-02 : deux occurrences du sigle**, § 24.3.2 et § 24.6.3 ; **R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **9 500 mots** de corps (§ 24.0 à § 24.9), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant dix, chacune dépliant de quatre à sept sous-sections de sa source : **la plus haute cible du Livre avec le ch. 34**. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh). ⚠ **D-4 interdit l'amputation comme le gonflement** |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé le 27 juillet 2026, sur instruction d'auteur, **avant le franchissement de G-3** : la règle cardinale du PRD §5 est enfreinte, et l'infraction n'est pas rattrapée par ce qui l'a suivie. Voir la note de statut, § 24.10. ⚠ **G-3 est franchie depuis le 28 juillet 2026** (PRD v0.14 ; [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées `S-001`…`S-159`**) — ⚠ **et le régime de preuve de cette pièce n'en bouge pas d'un cran** : *aucune de ces entrées ne porte le ch. 4 du Vol. I*, source unique du chapitre (voir *Socle mobilisé*). **CA-IV-11 et CA-IV-13 demeurent insatisfaites** — aucune relecture par un relecteur distinct du rédacteur, que **D-6** ne fournit pas. ⚠ **Une section de ce chapitre a un socle que le plan déclare « à établir avant rédaction »** — le § 24.8 ; elle est écrite **au régime de repli que le plan lui-même prescrit**, et non comblée |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet de faits du résidu de G-1 est levé le 28 juillet 2026** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) — *mais son domaine est le socle consolidé, dont **aucune entrée ne relève du ch. 4 du Vol. I*** : **aucun fait de ce chapitre n'a été repris à la source primaire**, et l'écart se déclare plutôt que de se déduire d'une porte franchie. ⚠ **La relève v0.19 du § 24.8 n'est toujours pas instruite** : le registre du volet la range explicitement hors de son domaine. Gel de source consommé : **juin 2026** (Vol. I *Monographie* ch. 4) — ⚠ **il ne tient pas lieu du gel de la somme**, et le chapitre porte des jalons produits et réglementaires postérieurs à cette date chez d'autres sources |
+| **Socle mobilisé** | **Aucune entrée du socle consolidé**, et le motif a changé le 28 juillet 2026 sans que la conséquence change. Ce n'est plus que le socle soit vide — il compte 159 entrées — mais que **ses 17 entrées portant le Vol. I (`S-143`…`S-159`) proviennent de ses ch. 2, 3, 5 et 7, de son Annexe B et de sa *Synthèse* supprimée du dépôt — jamais de son ch. 4**. **Ce chapitre est le seul du Livre dont la totalité de la matière vient du Vol. I** : elle entre donc **intégralement en [C]** — repérage documentaire, la vérification du Vol. I portant sur ses références et non sur le contenu des affirmations (PRD §7.1). ⚠ **Conséquence à tirer sans détour : aucun énoncé de ce chapitre n'est central au sens de CA-IV-01, et aucun ne peut le devenir sans élévation en [B] par lecture des sources primaires que le Vol. I cite.** Les seuls appuis à un autre régime sont des **renvois** vers des sièges, énumérés à la note de statut et **non reconstruits ici** |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **PRD §8.2.3 et §7.5 (métriques auto-déclarées et projections d'analystes) : les deux renvois ne sont pas écrits au corps** ; *le marqueur « projection d'analyste » l'est **trois fois** — § 24.0.2, § 24.2.4 et § 24.7.2 —, et **le garde-fou est appliqué aux six sections qui portent un chiffre — § 24.0, § 24.2, § 24.5, § 24.7, § 24.8 et § 24.9** —, chacun portant son statut* ; ⚠ *les statuts de produit — annonce, préversion, disponibilité générale — se disent en outre à chaque mention aux § 24.1, § 24.2 et § 24.3, où aucun chiffre n'est avancé* ; ⚠ **et son attributeur est nommé, depuis le 28 juillet 2026, à chaque occurrence** (décision 15b du TOC) : *la parade de péremption couvre les dénominations commerciales et les versions, **jamais l'attribution*** — les suites et les offres restent donc anonymes aux § 24.1 à § 24.3, quand les cabinets, organismes et auteurs qui portent un chiffre ou une affirmation sont nommés avec leur millésime ; **PRD §8.4 (neutralité fournisseur) : le renvoi n'est pas écrit au corps** ; *la formule l'est **une fois**, § 24.1.2* ; **R-8 : une occurrence du sigle**, § 24.7.2 — ⚠ le sigle proscrit nu par R-8 **apparaît dans la source au titre d'un protocole de commerce**, et il est ici employé **avec son qualificatif complet**, renvoi au **ch. 7 § 7.5** ; **R-1 à R-7 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 24.0.3 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 24.0.3, § 24.3.2, § 24.4.2, § 24.5.1 et § 24.8 (trois), « fait négatif vérifié » aux § 24.3.2 et § 24.8* ; **R-09 (quatre statuts, dits à chaque mention) : zéro occurrence du sigle** ; ⚠ *le garde-fou est **appliqué aux § 24.1 à § 24.4**, chaque statut étant dit en toutes lettres — **le décompte n'est pas re-mesurable et n'est donc pas annoncé*** ; **R-13 : cinq occurrences du sigle**, § 24.1.2, § 24.2.1, § 24.5.2, § 24.6.2 et § 24.9.2 ; ⚠ **faux ami déclaré et employé** — le « **plan de contrôle** » est celui du **maillage de services pré-agentique** (ch. 1 § 1.3.4) : *ce n'est pas le* control plane *que R-13 proscrit nu* ; le littéral « plan de contrôle » compte **six occurrences**, soit **trois emplois suivis chacun de sa désambiguïsation** — **§ 24.1.2**, **§ 24.5.2** (rangée du tableau 24.1, désambiguïsée en légende) et **§ 24.6.2** —, et **la distinction est donc écrite à chacun** ; ⚠ *celle du § 24.6.2 a été ajoutée le 28 juillet 2026, l'emploi y étant nu jusque-là, et le cardinal des six a été rétabli le même jour — l'attestation antérieure comptait cinq emplois en omettant la seconde occurrence du § 24.1.2* ; **R-02 : deux occurrences du sigle**, § 24.3.2 et § 24.6.3 ; **R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence** |
+| **Volumétrie cible** | ≈ **9 500 mots** de corps (§ 24.0 à § 24.9), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.30 — au prorata des **sections**, ce chapitre en portant dix : **la plus haute cible du Livre avec le ch. 34**. ⚠ **C'est la dérivation elle-même qui explique le dépassement** : *neuf de ces dix sections déplient de quatre à six sous-sections de leur source — la dixième, le § 24.8, n'en a aucune —, et la cible a été calculée au prorata des sections, non des sous-sections.* ☑ **Décompte publiable depuis G-2** ; mesure réelle par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité : **12 955 mots au terme de la relecture du 28 juillet 2026**, soit **+36,4 %** — le plus fort écart du Livre ; elle valait **12 628** avant cette passe, et ⚠ *les 327 mots pris sont de l'appareil et de l'attribution, non de la matière*. Le tableau du Livre est au [`README.md`](README.md) du dossier, dont la rangée du ch. 24 est à réaligner (remontée). ⚠ **D-4 interdit l'amputation comme le gonflement** : l'écart se documente et alimente le re-calibrage de clôture |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 24)* — de la dette d'intégration à la prolifération d'agents, l'entreprise doit intégrer les agents à son tissu existant, gouverner le parc à l'échelle et instruire sa maturité — sans dupliquer l'IAM et l'observabilité en place.
+> **Thèse** *(citée par copie depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 24 — décision 17)* — de la dette d'intégration à la prolifération d'agents, l'entreprise doit intégrer les agents à son tissu existant, gouverner le parc à l'échelle et instruire sa maturité — sans dupliquer l'IAM et l'observabilité en place.
 
 ---
 
 ⚠ **La thèse a été collationnée contre le texte rédigé de sa source avant la rédaction** (décision 14 du
-TOC). **Domaine de balayage : une thèse examinée, zéro réalignée.** Le ch. 4 du Vol. I ne porte pas de
+TOC), puis **re-comparée mot à mot à l'entrée du TOC v0.30 le 28 juillet 2026** (décision 17) : *elle y
+résout à l'identique, et la citation ci-dessus est une copie, non une re-frappe.* **Domaine de
+balayage : une thèse examinée, zéro réalignée.** Le ch. 4 du Vol. I ne porte pas de
 thèse formelle mais un **résumé de chapitre**, dont la thèse du TOC est une **construction d'éditeur**
 fidèle : elle en reprend le fil conducteur — trois plans d'interaction, passage N×M → N+M, quatre
 dettes — sans lui ajouter de portée. ⚠ **Le membre « sans dupliquer l'IAM et l'observabilité en place »
@@ -33,7 +35,7 @@ multi-agents de laboratoire, vers **l'organisation comme système-de-systèmes**
 
 Cette organisation agrège des humains aux rôles et autorités hétérogènes, un parc applicatif mêlant
 progiciels du commerce, développements maison et services logiciels hérités, et désormais une couche
-d'agents qui s'y superpose. ⚠ **Ce qui distingue ce contexte d'un système multi-agents conçu d'un seul
+d'agents qui s'y superpose. **Ce qui distingue ce contexte d'un système multi-agents conçu d'un seul
 tenant, c'est précisément l'absence de conception unifiée** : les composants préexistent, appartiennent
 à des propriétaires différents, obéissent à des contrats de service disjoints et **ne peuvent être
 réécrits à volonté**. *Les problèmes propres à cette échelle — héritage, silos, conformité sectorielle,
@@ -45,7 +47,9 @@ d'entreprise et de son modèle opérationnel.*
 § 24.4. Le **plan agent-agent** régit la collaboration inter-équipes et inter-organisations ; il est
 traité aux § 24.5 et § 24.7. Le **plan agent-humain** — autorité, délégation, responsabilité — est
 **transverse** : il n'a pas de section propre et s'ancre en trois points, la collaboration humaine
-(§ 24.5), la supervision sécuritaire (§ 24.6) et la redevabilité socio-technique (§ 24.9).
+(§ 24.5), la supervision sécuritaire (§ 24.6) et la redevabilité socio-technique (§ 24.9). ⚠ *La source
+lui en donne un quatrième — la gouvernance de la décision automatisée — qui part au **ch. 30** avec le
+§4.8 : trois ancrages ici par effet de périmètre, non par réduction.*
 
 ### 24.0.1 Continuité et rupture de la dette
 
@@ -78,12 +82,14 @@ développeur instancie un agent isolé, une organisation en voit naître des cen
 d'équipes, chacun requérant justificatifs d'accès, jetons et droits.
 
 ⚠ **Les chiffres qui circulent sur ce phénomène portent tous leur statut, et aucun n'est une mesure
-auditée.** Un rapport d'éditeur de 2025 avance un **ratio de 82 identités non humaines pour 1 identité
+auditée** — ⚠ *et chacun porte son attributeur, que la parade de péremption ne couvre pas* (décision 15b
+du TOC). **Rubrik Zero Labs (2025)** avance un **ratio de 82 identités non humaines pour 1 identité
 humaine** et indique que **89 % des organisations sondées** ont intégré des agents à leur
-infrastructure d'identité : ⚠ **chiffre fournisseur issu d'une enquête commanditée**, à re-vérifier.
-Une organisation internationale documente par ailleurs la fréquence des organisations dépourvues de
-gouvernance claire de ces identités. Et sur le versant prospectif, ⚠ **une projection d'analyste — non
-une mesure** — anticipe que les agents dépasseront en nombre les vendeurs d'un facteur dix d'ici 2028,
+infrastructure d'identité : ⚠ **chiffre fournisseur issu d'une enquête commanditée** — Wakefield
+Research, 1 625 décideurs —, à re-vérifier. Le **Forum économique mondial (2025)** documente par
+ailleurs la fréquence des organisations dépourvues de gouvernance claire de ces identités. Et sur le
+versant prospectif, ⚠ **une projection d'analyste — non une mesure** — de **Gartner (2025)** anticipe
+que les agents dépasseront en nombre les vendeurs d'un facteur dix d'ici 2028,
 et thématise un **écart d'autorité** (*authority gap*) entre ce que les agents sont **techniquement
 capables** de faire et ce que l'organisation les a **explicitement habilités** à faire.
 
@@ -97,10 +103,12 @@ du phénomène et sa nature spécifiquement organisationnelle**.
 La valeur de l'interopérabilité agentique se matérialise là où une tâche **cesse de s'arrêter à la
 frontière d'un système**. L'automatisation de bout en bout qui traverse plusieurs applications est le
 pilote d'affaires central, et le décloisonnement inter-systèmes en est la condition. Or les enquêtes de
-terrain signalent un **décalage persistant entre investissement et valeur captée** : ⚠ un rapport de
-2025, **non audité et fondé sur cinquante-deux entretiens**, documente une majorité de projets bloqués
-au stade pilote, tandis qu'⚠ une **étude tierce d'un cabinet** estime que près de 80 % des entreprises
-ne constatent pas d'effet significatif sur leur résultat. *Le coût du statu quo n'est donc pas
+terrain signalent un **décalage persistant entre investissement et valeur captée** : le rapport
+*GenAI Divide* (**Challapally et coll., MIT Project NANDA, 2025**) — ⚠ **non audité, fondé sur
+cinquante-deux entretiens** — documente une majorité de projets bloqués au stade pilote, tandis que
+**McKinsey & Company (2025)** estime que près de 80 % des entreprises ne constatent pas d'effet
+significatif sur leur résultat — ⚠ **étude tierce à statut d'enquête, non une mesure auditée**.
+*Le coût du statu quo n'est donc pas
 l'absence de technologie, mais l'incapacité à la transformer en valeur opérationnelle sous contrainte
 d'intégration.*
 
@@ -114,8 +122,10 @@ tend ainsi vers le seul **branchement au contrat partagé**.
 
 ⚠ **Cette proposition est une thèse d'architecture, non un fait mesuré.** Le Vol. I la porte comme fil
 conducteur ; ⚠ **le socle n'en établit aucune vérification empirique en entreprise** — *absence de
-documentation, degré 3 de l'échelle R-14 du Vol. III.* Elle est rouverte au § 24.2 (stratégie de
-standards ouverts) et refermée au § 24.9 (maturité) ; **le ch. 29 en fera l'un des termes de sa
+documentation, degré 3 de l'échelle R-14 du Vol. III.* Elle est rouverte au § 24.2, où la stratégie
+d'écosystème en fait l'argument des standards ouverts (§ 24.2.4) puis la referme sur le coût total de
+possession (§ 24.2.5), et **elle reparaît deux fois** — appliquée à la sémantique des données
+(§ 24.4.4), puis aux places de marché d'agents (§ 24.7.3) ; **le ch. 29 en fera l'un des termes de sa
 traduction réglementaire**, et il n'en tirera aucune preuve.
 
 ⚠ **Ce que le chapitre ne traite pas, et où le trouver.** La **gouvernance et la conformité
@@ -128,7 +138,7 @@ sont trois sorties de périmètre déclarées à la table de couverture, non tro
 
 ## § 24.1 — Intégrer les agents au tissu d'intégration existant
 
-⚠ **L'erreur structurante consisterait à traiter la couche agentique comme un système d'information
+**L'erreur structurante consisterait à traiter la couche agentique comme un système d'information
 neuf, déployé à côté du parc existant plutôt qu'à l'intérieur.** L'entreprise réelle ne reconstruit ni
 son bus d'entreprise, ni sa plateforme d'intégration, ni ses passerelles d'API, ni son maillage
 d'événements, ni ses canaux d'échange de documents parce qu'un nouveau type d'acteur y fait son
@@ -167,7 +177,7 @@ erreur, de contrôle d'accès et de supervision. **Générer automatiquement des
 de ce catalogue** fait de chaque connecteur existant un outil gouverné exposable à un agent — et les
 mécanismes de fiabilité hérités servent de garde-fous **sans réécriture**.
 
-⚠ **Le bénéfice architectural n'est pas la nouveauté fonctionnelle mais la réutilisation du plan de
+**Le bénéfice architectural n'est pas la nouveauté fonctionnelle mais la réutilisation du plan de
 contrôle existant.** ⚠ **Faux ami à ne pas confondre** : ce « plan de contrôle » est celui du **maillage
 de services pré-agentique** (ch. 1 § 1.3.4) — *ce n'est pas le* control plane *agentique que R-13 du
 Vol. III proscrit nu*, et le présent chapitre n'emploie jamais ce second terme.
@@ -206,9 +216,8 @@ la longueur de contexte —, les **rafales** consécutives aux boucles de raison
 en requêtes ; **cache sémantique** rapprochant les requêtes proches ; **disjoncteurs déclenchés sur la
 vélocité de coût** plutôt que sur le taux d'erreur ; **routage de modèles** selon la difficulté de la
 tâche ; et **chaînes de repli inter-fournisseurs**. ⚠ Les offres qui les portent sont documentées au
-régime [C] et à des statuts inégaux — préversion pour certaines, disponibilité générale datée d'avril
-2026 pour au moins une, dont le statut d'une autre **n'est pas confirmé à la date de référence de la
-source**.
+régime [C] et à des statuts inégaux : préversion pour certaines, disponibilité générale datée d'avril
+2026 pour au moins une, et **statut non confirmé à la date de référence de la source** pour une autre.
 
 **Le critère d'architecture demeure constant, et c'est lui le legs de la sous-section : faire transiter
 tout le trafic agentique par un point d'application unique où le coût et l'accès deviennent observables
@@ -332,7 +341,7 @@ couche métier reste à l'ouvrage de l'entreprise.**
 
 ### 24.2.4 Jardins clos, standards ouverts et stratégie d'écosystème
 
-⚠ **La décision structurante n'est pas le choix d'une suite mais le choix d'une stratégie
+**La décision structurante n'est pas le choix d'une suite mais le choix d'une stratégie
 d'écosystème.** Les suites intégrées offrent expérience cohérente et délai de valeur court, **au prix
 d'un verrouillage** ; une pile ouverte multi-fournisseurs préserve l'optionnalité, **au prix d'un effort
 d'assemblage**. L'arbitrage reboucle la proposition N×M → N+M du § 24.0.3 : standardiser les interfaces
@@ -345,9 +354,10 @@ complète, avec ses dates et ses transferts de gouvernance, est au **ch. 7** et 
 sont les sièges. *La vraie question n'est pas « quel produit » mais « sur quel écosystème parier » sans
 hypothéquer l'avenir.*
 
-⚠ **Un garde-fou tempère l'enthousiasme, et il porte son statut** : une **projection d'analyste** —
-non une mesure — alerte sur le « lavage agentique » (*agent washing*) et anticipe que **plus de 40 %
-des projets d'IA agentique seront annulés d'ici fin 2027**. *Attribuer, ne pas affirmer.*
+⚠ **Un garde-fou tempère l'enthousiasme, et il porte son attributeur autant que son statut** :
+**Gartner (2025)** alerte sur le « lavage agentique » (*agent washing*) et anticipe que **plus de 40 %
+des projets d'IA agentique seront annulés d'ici fin 2027** — **projection d'analyste, non une mesure**.
+*Attribuer, ne pas affirmer.*
 
 Lecture de l'auteur — la parade d'architecture consiste à exiger des **standards ouverts scorables en
 appel d'offres**, de sorte que la portabilité reste un **attribut contractuel** plutôt qu'une promesse :
@@ -366,12 +376,13 @@ lui-même**, déterminante pour le coût total de possession, la souveraineté e
 découplage entre l'agent et son modèle permet d'arbitrer entre modèle propriétaire de frontière —
 performance, mais dépendance — et modèle ouvert exécutable sur site ou en infonuagique souverain.
 
-⚠ **Le coût total de possession d'un parc agentique ne se réduit pas au prix des jetons** : il agrège
+**Le coût total de possession d'un parc agentique ne se réduit pas au prix des jetons** : il agrège
 l'orchestration, l'intégration au tissu existant, l'identité et la sécurité, l'observabilité et la
 discipline financière, et la conduite du changement. ⚠ **Le rendement, lui, demeure difficile à
-établir** : une part importante des organisations ne constate pas d'impact significatif sur le
-résultat — ⚠ **étude tierce, à re-vérifier** —, et le rapport déjà cité au § 24.0.3 documente l'écart
-entre budgets engagés et valeur captée — ⚠ **rapport non audité**.
+établir** : selon **McKinsey (2025)**, une part importante des organisations ne constate pas d'impact
+significatif sur le résultat — ⚠ **étude tierce, à re-vérifier** —, et le rapport *GenAI Divide* déjà
+cité au § 24.0.3 (**Challapally et coll., 2025**) documente l'écart entre budgets engagés et valeur
+captée — ⚠ **rapport non audité**.
 
 *L'effet plateforme — réutilisation des connecteurs, des garde-fous et des évaluations à travers les
 cas d'usage — est précisément ce qui, en abaissant le coût marginal du cas suivant, peut faire pencher
@@ -462,7 +473,7 @@ alors de l'infrastructure existante — accès conditionnel, gouvernance des ide
 risque. La seconde est constituée de **plateformes natives d'identités non humaines**, conçues
 spécifiquement pour les identités machine et agentiques.
 
-⚠ **La distinction n'est pas cosmétique** : la première mutualise la gouvernance humaine et machine **au
+**La distinction n'est pas cosmétique** : la première mutualise la gouvernance humaine et machine **au
 prix d'un modèle parfois mal ajusté aux agents éphémères** ; la seconde traite l'agent comme un citoyen
 de première classe **mais ajoute une plateforme à intégrer**. Dans les deux cas, l'exigence est
 d'**étendre aux agents l'accès conditionnel, la gouvernance des accès et la détection de risque**
@@ -502,7 +513,7 @@ exactement la deuxième moitié du membre de thèse « sans dupliquer l'IAM et l
 D'autre part, elle **se lit comme une grille d'évaluation des fournisseurs** : chaque item devient un
 critère scorable.
 
-⚠ **Le cas des agents mérite une attention propre.** À la différence d'une identité machine statique,
+**Le cas des agents mérite une attention propre.** À la différence d'une identité machine statique,
 un agent doté d'autonomie peut **escalader ses propres droits** — enchaîner des outils pour obtenir un
 accès non prévu, ou exploiter une délégation mal bornée. *La grille doit donc être appliquée non comme
 un instantané mais comme un **invariant vérifié en continu** sur un parc dont les membres raisonnent et
@@ -537,7 +548,7 @@ divulgation engage la responsabilité de l'organisation**.
 
 Le passage de l'un à l'autre exige une pile en **étages explicites** : sources hétérogènes → ingestion
 et classification → indexation → récupération filtrée par politique → génération → vérification →
-audit. ⚠ **Chaque étage est un point de contrôle distinct, et l'absence d'un seul — typiquement la
+audit. **Chaque étage est un point de contrôle distinct, et l'absence d'un seul — typiquement la
 classification ou le filtrage par politique — ramène la pile au prototype, quelles que soient les
 performances du modèle.**
 
@@ -557,7 +568,7 @@ restreint l'espace de recherche aux documents autorisés **avant** la requête, 
 exigible ; le contrôle par attributs, qui module l'accès selon des attributs contextuels, offre une
 granularité supérieure et résiste mieux aux matrices d'habilitation complexes.
 
-⚠ **Le point d'architecture déterminant tient au moment du filtrage.** Les permissions doivent être
+**Le point d'architecture déterminant tient au moment du filtrage.** Les permissions doivent être
 appliquées **à l'intérieur** de la recherche du plus proche voisin approximatif, **et non en
 post-traitement** sur les résultats — *car un filtrage a posteriori fuit* : la seule présence d'un
 document dans l'index, ou les statistiques de pertinence renvoyées, peut **révéler l'existence
@@ -587,7 +598,7 @@ améliorent la qualité des synthèses à coût maîtrisé — ⚠ **leur mécan
 qui en sont les sièges. Lorsque l'agent doit néanmoins interroger directement l'entrepôt,
 l'**interrogation gouvernée** applique la sécurité **au niveau du moteur**.
 
-⚠ **Le critère discriminant tient à l'emplacement de l'application** : *une sécurité par rangée évaluée
+**Le critère discriminant tient à l'emplacement de l'application** : *une sécurité par rangée évaluée
 à la compilation de la requête est plus robuste qu'un filtrage applicatif posé au-dessus du moteur.*
 
 ### 24.4.4 Le serveur d'outils comme point d'application, et les contrats de données pour agents
@@ -643,16 +654,17 @@ système multi-agents de laboratoire, d'un choix d'ingénierie devient en entrep
 
 ### 24.5.1 Quand le multi-agent aide, et quand il nuit — à lire d'abord
 
-⚠ **La première décision n'est pas architecturale mais économique : faut-il un système multi-agents du
+**La première décision n'est pas architecturale mais économique : faut-il un système multi-agents du
 tout ?**
 
 Les retours d'expérience publiés en 2025 convergent sur un avertissement. Les gains réels d'un système
 multi-agents face à **un agent unique bien conçu** sont souvent minces, tandis que le surcoût en jetons,
 en latence et en complexité de coordination **croît rapidement** ; ⚠ **une mesure rapportée par la
-source — au régime [C] — évoque qu'un système de recherche multi-agents peut consommer de l'ordre de
-quinze fois les jetons d'une interaction simple.** Plusieurs praticiens recommandent explicitement de
-**ne pas construire de systèmes multi-agents par défaut**, le partage de contexte entre agents
-concurrents étant fragile et propice aux décisions incohérentes. À l'inverse, des travaux montrent que
+source — Hadfield et coll. (2025), au régime [C] — évoque qu'un système de recherche multi-agents peut
+consommer de l'ordre de quinze fois les jetons d'une interaction de clavardage simple.** Des praticiens
+recommandent explicitement de **ne pas construire de systèmes multi-agents par défaut** (Yan, 2025), le
+partage de contexte entre agents concurrents étant fragile et propice aux décisions incohérentes. À
+l'inverse, des travaux sur la collaboration multi-agents en entreprise (Shu et coll., 2024) montrent que
 des architectures bien conçues apportent une valeur mesurable **lorsque la tâche s'y prête**.
 
 La synthèse opérationnelle tient en trois heuristiques. **Le multi-agent se justifie** quand il existe
@@ -660,15 +672,16 @@ un **parallélisme réel exploitable**, quand une **séparation des responsabili
 l'impose, ou quand des **frontières organisationnelles incontournables** interdisent un contexte
 partagé. Hors de ces cas, **un contexte partagé et un agent unique demeurent préférables**.
 
-⚠ **L'anti-patron à proscrire consiste à multiplier les agents par mimétisme d'un organigramme
+**L'anti-patron à proscrire consiste à multiplier les agents par mimétisme d'un organigramme
 humain** : *la structure de l'entreprise n'est pas un plan d'architecture logicielle.* Le **Livre IV**
-en fait le défaut de sa grille de décision, dont le défaut reste le mono-agent.
+en tire la règle de sa grille de décision, **dont l'option par défaut demeure le mono-agent**.
 
 ⚠ **Une question reste ouverte et se déclare** : la métrique d'utilité marginale isolant l'apport de la
 décomposition de l'effet du budget de calcul **n'existe pas dans le corpus** — *absence de
 documentation, degré 3.* Les modes d'échec des systèmes multi-agents sont en revanche catalogués de
-façon empirique, et une part substantielle des défaillances tient à **la spécification et à la
-coordination** plutôt qu'aux capacités individuelles. ⚠ **Le siège de cette taxonomie est le ch. 6**,
+façon empirique (Cemri et coll., 2025), et une part substantielle des défaillances tient à **la
+spécification et à la coordination** plutôt qu'aux capacités individuelles. ⚠ **Le siège de cette
+taxonomie est le ch. 6**,
 qui traite l'évaluation et la sûreté des systèmes multi-agents ; elle n'est pas reconstruite ici.
 
 ### 24.5.2 Trois échelles d'orchestration, et le choix de patron
@@ -691,7 +704,7 @@ inter-domaines, tandis que les formes en **essaim** ou à **tableau noir** reste
 la recherche. ⚠ **Les topologies et le raisonnement collectif sont au ch. 6** ; ce chapitre n'en retient
 que le critère de sélection à l'échelle.
 
-⚠ **Le critère décisif d'industrialisation est le découplage entre la logique d'orchestration et
+**Le critère décisif d'industrialisation est le découplage entre la logique d'orchestration et
 l'exécution des étapes** — et *le patron retenu doit rester portable d'un cadriciel à l'autre*, faute de
 quoi il redevient un verrou (§ 24.2.4).
 
@@ -707,8 +720,8 @@ infrastructure parallèle**.
 ⚠ **La mécanique de la fiche d'agent et de sa publication est au ch. 15**, qui en est le siège dans la
 somme ; le **ch. 9** en tient le versant protocolaire. Aucun des deux n'est reconstruit ici.
 
-À l'échelle inter-organisations, la même mécanique soutient des scénarios d'appel d'offres, de chaîne
-d'approvisionnement et d'approvisionnement, où **l'orchestration devient fédérée** : chaque firme
+À l'échelle inter-organisations, la même mécanique soutient des scénarios d'appel d'offres,
+d'approvisionnement et de chaîne logistique, où **l'orchestration devient fédérée** : chaque firme
 conserve son orchestrateur, et la coordination s'opère **par contrats inter-agents sans orchestrateur
 central unique**. *Cette orchestration sans point de contrôle commun est précisément ce qui distingue le
 B2B agentique du multi-agents intra-firme*, et elle appelle les dispositifs du § 24.7.
@@ -755,7 +768,7 @@ qui impose la **défense en profondeur** plutôt que la confiance en un contrôl
 
 ### 24.6.1 Le modèle de menace du parc
 
-⚠ **La surface d'attaque d'un parc n'est pas la somme des surfaces de ses agents : elle est élargie**
+**La surface d'attaque d'un parc n'est pas la somme des surfaces de ses agents : elle est élargie**
 par l'intégration au tissu existant et par la composition des protocoles. Chaque serveur d'outils
 encapsulant un système hérité, chaque liaison inter-départementale et chaque outil exposé devient un
 **point d'entrée ou un canal de propagation**.
@@ -775,7 +788,7 @@ composition, en fournir un troisième à un pair qui en détenait deux.
 
 ### 24.6.2 Injection indirecte par les données d'entreprise et fuites sans clic
 
-⚠ **L'entreprise constitue le pire cas pour l'injection indirecte de consignes**, parce que ses canaux
+**L'entreprise constitue le pire cas pour l'injection indirecte de consignes**, parce que ses canaux
 d'ingestion sont **innombrables et largement non fiables** : courriels, espaces documentaires, tickets
 de support, wikis, fiches de gestion de la relation client, enregistrements de progiciel, tables de
 l'entrepôt-lac — *autant de vecteurs par lesquels un contenu empoisonné atteint le contexte d'un agent
@@ -792,15 +805,14 @@ Les défenses se déclinent en couches : **classification de la provenance et du
 données ingérées, **démarcation** du contenu non fiable, et **séparation du plan de contrôle et du flux
 de données non fiable** — ⚠ **faux ami à désambiguïser ici comme partout ailleurs dans la pièce** : ce
 « plan de contrôle » est celui du **maillage de services pré-agentique** (**ch. 1 § 1.3.4**), **non le**
-*control plane* que **R-13 du Vol. III** proscrit nu. ⚠ **Le principe directeur, propre à l'échelle
-d'un parc où l'on ne maîtrise pas
-l'origine de chaque document, est de traiter toute donnée comme potentiellement empoisonnée** —
-*l'injection demeurant un risque non résoluble plutôt qu'un défaut corrigible*, et le **ch. 11** en
-porte la démonstration.
+*control plane* que **R-13 du Vol. III** proscrit nu. Le principe directeur, propre à l'échelle d'un
+parc où l'on ne maîtrise pas l'origine de chaque document, est de **traiter toute donnée comme
+potentiellement empoisonnée** — *l'injection demeurant un risque non résoluble plutôt qu'un défaut
+corrigible*, et le **ch. 11** en porte la démonstration.
 
 ### 24.6.3 Prévention de fuite, chaîne d'approvisionnement et confinement
 
-⚠ **À l'échelle, le plus gros canal d'exfiltration n'est plus le courriel ou la clé de stockage mais
+**À l'échelle, le plus gros canal d'exfiltration n'est plus le courriel ou la clé de stockage mais
 l'IA générative elle-même** : les outils de prévention de fuite hérités sont **aveugles à l'invite et à
 la trajectoire d'un agent**.
 
@@ -830,12 +842,12 @@ dépliée par la table détaillée du TOC, qui s'arrête au volet précédent** 
 que **la ligne Fusion et la table de couverture portent le §4.7 en entier** ; l'écart est remonté (voir
 la note de statut, remontée **R-IV-80**).
 
-⚠ **À l'échelle d'une organisation, l'intervention humaine ne peut être systématique sans détruire la
+**À l'échelle d'une organisation, l'intervention humaine ne peut être systématique sans détruire la
 valeur de l'automatisation.** Le critère est donc une **classification des actions par impact** —
 irréversibles, financières, mouvements de données, transactions B2B — assortie de **seuils de confiance**
 qui déclenchent une passerelle d'approbation **pour les seules actions à fort enjeu**.
 
-⚠ **Le risque inverse est la fatigue d'approbation**, où la multiplication des sollicitations vide le
+**Le risque inverse est la fatigue d'approbation**, où la multiplication des sollicitations vide le
 contrôle de sa substance ; la **traçabilité de qui a approuvé quoi** devient alors le garde-fou. *Et
 c'est la seconde rencontre du chapitre avec la limite empirique du ch. 17 § 17.5, qui la nomme sans la
 mesurer.*
@@ -847,11 +859,11 @@ défensive, et ne sont pas reconstruits ici. *La synthèse est une défense en p
 confiance nulle : vérification par requête, micro-segmentation et privilège minimal, appliqués au parc
 d'agents comme à toute charge de travail* — **socle posé au ch. 3**.
 
-## § 24.7 — Interopérabilité inter-entreprises, commerce agentique et écosystème
+## § 24.7 — Interopérabilité inter-entreprises (B2B), commerce agentique et écosystème
 
 Le B2B traditionnel suppose une **relation préétablie** : deux firmes qui s'accordent à l'avance sur un
 format, un canal sécurisé ou une API contractuelle, puis échangent des messages dont la sémantique est
-figée par convention bilatérale. ⚠ **La couche agentique brise cette hypothèse.** Un agent agissant pour
+figée par convention bilatérale. **La couche agentique brise cette hypothèse.** Un agent agissant pour
 le compte d'une organisation peut désormais **découvrir** un partenaire qu'il ne connaissait pas,
 **négocier** des termes qui n'étaient pas pré-câblés et **transiger** — engager des fonds, signer un
 mandat — par-delà la frontière de la firme.
@@ -869,10 +881,10 @@ les reconstruit pas**. Ce qui suit en est **la seule conséquence de parc**.
 Le premier critère d'architecture du B2B agentique est un patron de **vérification d'identité préalable
 à la transaction**, transposé du monde humain : là où la finance impose une vérification du client avant
 d'ouvrir un compte, l'inter-firmes agentique exige l'équivalent **avant d'accepter qu'un agent étranger
-lise un catalogue, négocie ou paie**. ⚠ **La dernière des questions qu'il pose ne se résout pas par la
-seule technique** : établir **qui porte la responsabilité juridique** des actes de l'agent. *L'enjeu
-déclaré est précisément d'ancrer une redevabilité humaine derrière l'entité non humaine* — et le **ch. 18**
-montre à quel degré cet enjeu est aujourd'hui outillé.
+lise un catalogue, négocie ou paie**. ⚠ **La question que ce patron laisse ouverte ne se résout pas par
+la seule technique** : établir **qui porte la responsabilité juridique** des actes de l'agent. *L'enjeu
+déclaré est précisément d'ancrer une redevabilité humaine derrière l'entité non humaine* — et le
+**ch. 18** montre à quel degré cet enjeu est aujourd'hui outillé.
 
 ⚠ **Deux familles de registres inter-firmes coexistent, et le choix entre elles est une décision
 d'architecture structurante.** D'un côté, des **catalogues sous curation** où un opérateur vérifie et
@@ -901,7 +913,7 @@ fonds circulent). *Ce découplage permet de combiner librement les standards plu
 suite monolithique* — et **la séparation entre intention, panier et paiement matérialise le découplage
 contractuel** : chaque étape porte sa propre preuve signée, vérifiable indépendamment.
 
-⚠ **La couche de règlement est celle où l'arbitrage est le plus délicat, car deux familles de rails
+**La couche de règlement est celle où l'arbitrage est le plus délicat, car deux familles de rails
 coexistent durablement** : des rails de règlement machine-à-machine natifs du web d'un côté, les
 réseaux de cartes de l'autre. *Ils ne se remplacent pas mais cohabitent ; un architecte B2B doit prévoir
 les deux selon la contrepartie, la juridiction et le profil de risque.* ⚠ **Le versant canadien de cette
@@ -909,8 +921,9 @@ question est au ch. 36**, qui est explicitement prospectif et **déclare que le 
 l'articulation** entre ces protocoles et les rails canadiens.
 
 ⚠ **Les estimations du gisement économique relèvent de la projection d'analyste et se lisent comme
-telles** : deux cabinets avancent des ordres de grandeur en milliers de milliards de dollars à
-l'horizon 2030, et une projection attribue aux agents un dépassement en nombre des vendeurs d'ici 2028.
+telles, attributeur nommé** : **McKinsey & Company (2025)** avance des ordres de grandeur en milliers de
+milliards de dollars à l'horizon 2030 pour le commerce agentique, et **Gartner (2025)** — déjà cité au
+§ 24.0.2 — attribue aux agents un dépassement en nombre des vendeurs d'ici 2028.
 ⚠ **Chiffres de projection, non audités.** *Ces ordres de grandeur situent l'enjeu sans le mesurer ; la
 pile de protocoles en est la condition d'infrastructure, non la preuve de réalisation.*
 
@@ -944,7 +957,7 @@ et **le ch. 30 en donne la carte réglementaire**, le **ch. 49** l'état final.
 
 ### 24.7.4 Sécurité, responsabilité et modes d'échec à la frontière
 
-⚠ **À la frontière inter-organisationnelle, la défense ne peut plus présumer un périmètre de confiance
+**À la frontière inter-organisationnelle, la défense ne peut plus présumer un périmètre de confiance
 partagé** : chaque firme est une zone potentiellement hostile pour l'autre, et le pire cas du § 24.6 se
 conjugue avec **l'impossibilité de réviser le code ou la configuration de l'agent d'en face**.
 
@@ -981,10 +994,10 @@ répondeur et le rail de règlement relèvent de **trois juridictions** ?
 ## § 24.8 — Capacité d'inférence, budget de latence et contention
 
 ⚠ **Cette section est une construction d'auteur, et son socle est déclaré « à établir avant
-rédaction ».** Le TOC v0.25 pose, pour ce seul emplacement du chapitre, qu'**aucune sous-section du
-ch. 4 du Vol. I ne porte cet objet** — capacité d'inférence, budget de latence, contention — et que les
-appuis les plus proches sont le §4.3.5, qui l'aborde **par le coût**, et le §4.6.1, qui l'aborde **par
-le surcoût du multi-agent** : *ni l'un ni l'autre par le dimensionnement.*
+rédaction ».** Le TOC v0.30 pose, pour ce seul emplacement du chapitre, qu'**aucune sous-section du
+ch. 4 du Vol. I *Monographie* ne porte cet objet** — capacité d'inférence, budget de latence,
+contention — et que les appuis les plus proches y sont le §4.3.5, qui l'aborde **par le coût**, et le
+§4.6.1, qui l'aborde **par le surcoût du multi-agent** : *ni l'un ni l'autre par le dimensionnement.*
 
 ⚠ **Les sources primaires n'ont pas été établies, et la section s'écrit donc au régime de repli que le
 plan lui-même prescrit** : « à défaut, la section se replie sur ces deux appuis **et cesse d'être
@@ -995,9 +1008,10 @@ relecture ne peut réfuter, faute de fait auquel la confronter.**
 **Ce que les deux appuis permettent d'écrire, et rien de plus.** Le § 24.2.5 établit que le coût total
 de possession d'un parc **agrège six postes** dont les jetons ne sont qu'un, et que la mesure pertinente
 est **le coût par résultat métier**. Le § 24.5.1 établit qu'un système multi-agents **consomme
-davantage** qu'un agent unique — ⚠ un ordre de grandeur de quinze fois est rapporté au régime [C] pour
-un cas de recherche — et que **le surcoût porte sur les jetons, la latence et la complexité de
-coordination**. *De ces deux appuis, il découle que le dimensionnement d'un parc est un problème réel ;
+davantage** qu'un agent unique — ⚠ un ordre de grandeur de quinze fois est rapporté par Hadfield et
+coll. (2025), au régime [C], pour un cas de recherche — et que **le surcoût porte sur les jetons, la
+latence et la complexité de coordination**. *De ces deux appuis, il découle que le dimensionnement
+d'un parc est un problème réel ;
 il n'en découle **aucune méthode** pour le conduire.*
 
 ⚠ **Trois choses que la somme ne peut pas écrire ici, et qu'elle déclare plutôt que de les inférer.**
@@ -1016,9 +1030,12 @@ méthode de dimensionnement transposée à un parc d'agents, où la ressource co
 plutôt que le cœur de calcul.
 
 ⚠ **Une relève du plan désigne une source primaire canonique pour la première moitié de cette question,
-et elle n'a pas été instruite.** La **relève v0.19 du TOC** identifie un article de revue de 2013, à
-DOI publié, dont la thèse est que **la variabilité de latence se tolère par construction logicielle**,
-et qu'à l'échelle **un incident de performance rare touche une fraction significative des requêtes**.
+et elle n'a pas été instruite.** La **relève v0.19 du TOC** identifie **Dean et Barroso, *The Tail at
+Scale*, *Communications of the ACM* 56(2), p. 74-80, 1ᵉʳ février 2013, DOI 10.1145/2408776.2408794** —
+⚠ *l'identifiant est écrit parce qu'un lot dont la source n'est pas nommée a un critère de clôture
+inexécutable* (décision 15b du TOC) —, dont la thèse est que **la variabilité de latence se tolère par
+construction logicielle**, et qu'à l'échelle **un incident de performance rare touche une fraction
+significative des requêtes**.
 ⚠ **Elle porte exactement l'objet de cette section — et la somme ne l'écrit pas comme un fait** : elle
 est **marquée « à instruire à la source primaire ; n'entre pas au socle »**, et le **volet résiduel de
 G-1 ne l'a pas exécutée**. ⚠ **La transposition à un parc d'agents n'est en outre pas dans la source** —
@@ -1037,7 +1054,7 @@ dimensionnement qui la rendrait opposable ne l'est pas.**
 
 ## § 24.9 — Adoption organisationnelle, modèle opérationnel et maturité
 
-⚠ **Le passage à l'échelle bute moins sur la disponibilité des protocoles — réputée acquise au terme
+**Le passage à l'échelle bute moins sur la disponibilité des protocoles — réputée acquise au terme
 des sections précédentes — que sur la capacité de l'organisation à se restructurer pour les
 exploiter.** *Le goulot d'étranglement est socio-organisationnel, non technique.*
 
@@ -1050,7 +1067,7 @@ les unités d'affaires **industrialisent les cas d'usage au plus près de leurs 
 
 *Le moyeu mutualise la contrainte — référentiel d'inventaire, modèle d'identité non humaine, grilles
 d'évaluation — pour que les unités conservent leur vélocité sans rejouer les arbitrages de conformité à
-chaque projet.* ⚠ **C'est la contrepartie organisationnelle du principe de greffe du § 24.1** : *ne pas
+chaque projet.* **C'est la contrepartie organisationnelle du principe de greffe du § 24.1** : *ne pas
 dupliquer ce qui est déjà gouverné.*
 
 Le moyeu fait par ailleurs émerger **des rôles inédits dont la fonction des ressources humaines
@@ -1065,10 +1082,12 @@ qu'à la répéter.**
 Lecture de l'auteur — ⚠ **cette sous-section porte une transposition que le Vol. I déclare
 propriétaire**, c'est-à-dire une construction d'auteur, et **le régime s'applique de bout en bout**.
 
-Le modèle des niveaux d'interopérabilité conceptuelle, acquis au **ch. 1**, échelonne l'interopérabilité
-en niveaux croissants : **technique** — les bits transitent ; **syntaxique** — la structure des messages
-est commune ; **sémantique** — le sens des données est partagé ; **pragmatique** — le contexte d'usage
-est compris ; **dynamique** — les états évoluent de concert ; **conceptuel** — les modèles du monde sont
+Le modèle des niveaux d'interopérabilité conceptuelle — **Tolk et Muguira, 2003**, l'auteur et la date
+de l'instrument repris ne s'anonymisant pas (décision 15b du TOC) —, acquis au **ch. 1**, échelonne
+l'interopérabilité en niveaux croissants : **technique** — les bits transitent ; **syntaxique** — la
+structure des messages est commune ; **sémantique** — le sens des données est partagé ;
+**pragmatique** — le contexte d'usage est compris ; **dynamique** — les états évoluent de concert ;
+**conceptuel** — les modèles du monde sont
 alignés.
 
 Appliqué à un parc d'agents, ce barème éclaire **ce que des protocoles fonctionnels ne garantissent
@@ -1085,14 +1104,15 @@ sur le sens** d'une « commande » ou d'un « client », ni sur l'effet d'une ac
 | **5 — dynamique** | états évoluant de concert | coordination des états au fil d'une trajectoire observable (**Livre IV**) |
 | **6 — conceptuel** | modèles du monde alignés | alignement des modèles de tâche et d'autorité entre agents hétérogènes — ⚠ **étage le plus exigeant, encore largement non atteint** |
 
-: Tableau 24.2 — La transposition du modèle de maturité aux agents. ⚠ **Construction d'auteur du Vol. I, reprise en [C]** : aucune validation empirique ne fixe le seuil à partir duquel l'alignement conceptuel devient mesurable plutôt que postulé.
+: Tableau 24.2 — La transposition du modèle de maturité aux agents ; barème d'origine de Tolk et Muguira (2003), acquis au ch. 1. ⚠ **Construction d'auteur du Vol. I, reprise en [C]** : aucune validation empirique ne fixe le seuil à partir duquel l'alignement conceptuel devient mesurable plutôt que postulé.
 
 **Ce que le socle établit** : le barème d'origine et sa transposition, comme proposition du Vol. I.
 **Ce qu'il n'établit pas** : sa validité empirique. ⚠ **Cette grille fait écho à des modèles de maturité
-praticiens publiés, sans s'y substituer** — l'un à cinq niveaux progressifs, l'autre fondé sur une
-enquête auprès d'environ 4 500 dirigeants dans seize pays dont le score moyen **recule** d'un millésime
-à l'autre et qui n'identifie qu'environ 18 % d'organisations avancées. ⚠ **Chiffres d'étude tierce,
-millésimés 2025, à re-vérifier.**
+praticiens publiés, sans s'y substituer** — celui de **Microsoft (2025)**, à cinq niveaux progressifs,
+et celui de **ServiceNow avec Oxford Economics (2025)**, fondé sur une enquête auprès d'environ
+4 500 dirigeants dans seize pays, dont le score moyen **recule** d'un millésime à l'autre et qui
+n'identifie qu'environ 18 % d'organisations avancées. ⚠ **Chiffres d'étude tierce, millésimés 2025, à
+re-vérifier.**
 
 *La valeur opérationnelle de la transposition tient à ses **indicateurs vérifiables**, qui la
 distinguent d'une échelle déclarative* : **couverture d'inventaire des agents** — part du parc
@@ -1111,16 +1131,18 @@ Le goulot du déploiement est socio-organisationnel avant d'être technique : **
 les exigences de conformité figurent au premier rang des freins**, devant la disponibilité des modèles
 ou des protocoles.
 
-La conduite du changement engage d'abord une **recomposition des compétences**. ⚠ Une **projection**
-fondée sur plus de mille entreprises avance un solde net de l'ordre de **+78 millions d'emplois d'ici
-2030** et estime qu'environ **39 % des compétences requises évolueront** — ⚠ **projection à statut
-prospectif, à re-vérifier.** Un effet de structure préoccupe particulièrement : **l'érosion du vivier
-junior**, l'automatisation des tâches d'entrée de gamme tarissant le réservoir dont sont issus les
-profils expérimentés de demain ; des travaux documentent des effets d'emploi récents **concentrés sur
-les jeunes travailleurs des métiers les plus exposés**.
+La conduite du changement engage d'abord une **recomposition des compétences**. ⚠ Le *Future of Jobs
+Report 2025* du **Forum économique mondial (2025)**, fondé sur plus de mille entreprises, projette un
+solde net de l'ordre de **+78 millions d'emplois d'ici 2030** et estime qu'environ **39 % des
+compétences requises évolueront** — ⚠ **projection à statut prospectif, à re-vérifier.** Un effet de
+structure préoccupe particulièrement : **l'érosion du vivier junior**, l'automatisation des tâches
+d'entrée de gamme tarissant le réservoir dont sont issus les profils expérimentés de demain ;
+**Brynjolfsson, Chandar et Chen (2025)** documentent des effets d'emploi récents **concentrés sur les
+jeunes travailleurs des métiers les plus exposés**.
 
 ⚠ **La distinction entre augmentation et substitution structure l'analyse**, et elle réfute une intuition
-courante : la frontière **ne suit pas la hiérarchie attendue**, nombre de tâches relevant d'une
+courante : selon **Shao, Zope, Jiang et coll. (2025)**, au sein du cadre *Future of Work with AI Agents*
+de Stanford, la frontière **ne suit pas la hiérarchie attendue**, nombre de tâches relevant d'une
 augmentation souhaitée par les travailleurs plutôt que d'une substitution. *Cette nuance disqualifie le
 raisonnement par mimétisme d'organigramme du § 24.5.1 et invite à calibrer le déploiement sur la nature
 réelle des tâches, non sur leur étiquette de poste.*
@@ -1128,10 +1150,10 @@ réelle des tâches, non sur leur étiquette de poste.*
 ⚠ **En Europe, le droit social constitue un blocage de déploiement et non un simple paramètre de
 conformité** : consultation des comités d'entreprise, co-détermination et encadrement de la surveillance
 algorithmique des travailleurs **peuvent suspendre la mise en production** d'un agent dont l'action
-affecte l'organisation du travail. Une résolution parlementaire — ⚠ **non contraignante** — signale un
-encadrement à venir. S'ajoutent des obligations d'accessibilité **en application depuis le 28 juin
-2025**, avec transition jusqu'au 28 juin 2030, qui contraignent les interfaces agent-humain destinées au
-public.
+affecte l'organisation du travail. Le **Parlement européen (2025)** a adopté sur ce point une
+résolution — ⚠ **non contraignante** — qui signale un encadrement à venir. S'y ajoutent les obligations
+d'accessibilité de la **directive (UE) 2019/882**, **en application depuis le 28 juin 2025** avec
+transition jusqu'au 28 juin 2030, qui contraignent les interfaces agent-humain destinées au public.
 
 ⚠ **Le versant canadien de cette question n'est pas ici** : le **ch. 26** traite du vide fédéral, le
 **ch. 27** du régime québécois, et **aucun des deux ne se déduit du droit européen**.
@@ -1151,7 +1173,7 @@ déploiement**, qui répond de quoi.* ⚠ **C'est exactement l'écart de respons
 a posé et que le ch. 29 § 29.3 exploitera** ; ce chapitre en fournit la contrepartie organisationnelle,
 non l'arbitrage.
 
-⚠ **Le maintien d'un humain dans la boucle ou en supervision est ici traité comme un dispositif
+**Le maintien d'un humain dans la boucle ou en supervision est ici traité comme un dispositif
 organisationnel de redevabilité, non comme un garde-fou d'ingénierie.** La conception du système doit
 soutenir **la conscience situationnelle de l'opérateur, la calibration de la confiance et la clarté des
 rôles**, faute de quoi s'installent la **sur-confiance** et la **déqualification** : *l'humain, déchargé
@@ -1164,11 +1186,12 @@ la combler** : *le socle ne porte pas de mesure de l'efficacité de la supervisi
 ch. 25 et 27 prescriront pourtant l'un et l'autre une parade dont c'est la limite empirique**, et le
 plan le déclare.
 
-⚠ **Un premier cadre national dédié à cette gouvernance existe**, lancé le 22 janvier 2026,
-**d'adhésion volontaire** : son apport pratique est de **calibrer les exigences de supervision sur le
-degré d'autonomie de l'agent**. ⚠ **Il n'est pas une norme, et il n'est pas canadien** — *le ch. 30
-§ 30.3.3 traite de la normalisation internationale, et il ne l'y range pas comme instrument
-contraignant.*
+⚠ **Un premier cadre national dédié à cette gouvernance existe**, et l'instrument porte son auteur et sa
+date : le *Model AI Governance Framework for Agentic AI* (version 1.0) de l'**IMDA/MDDI de Singapour
+(2026)**, lancé le 22 janvier 2026, **d'adhésion volontaire**. Son apport pratique est de **calibrer les
+exigences de supervision sur le degré d'autonomie de l'agent**. ⚠ **Il n'est ni une norme ni un
+instrument canadien** — *le ch. 30 § 30.3.3 traite de la normalisation internationale, et il ne l'y
+range pas comme instrument contraignant.*
 
 ### Synthèse : ce que le chapitre lègue à la somme
 
@@ -1209,9 +1232,18 @@ supervision humaine** — *il l'a croisée trois fois et l'a déclarée trois fo
 gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A) : *un rédacteur ne corrige jamais le TOC,
 ce PRD ni le Conspectus — il **remonte**.*
 
-**Ce qui est enfreint.** La porte **G-3** et le **volet résiduel de G-1**. Instruction d'auteur du
-27 juillet 2026. ⚠ **La porte G-4 ne conditionne pas ce chapitre** : sa ligne Fusion ne cite que le
-Vol. I.
+**Ce qui est enfreint.** La porte **G-3** et le **volet résiduel de G-1**, à la date de rédaction.
+Instruction d'auteur du 27 juillet 2026. ⚠ **La porte G-4 ne conditionne pas ce chapitre** : sa ligne
+Fusion ne cite que le Vol. I.
+
+⚠ **Deux de ces trois faits ont bougé le 28 juillet 2026, et il faut lire précisément ce qu'ils
+changent — c'est-à-dire presque rien pour cette pièce.** **G-3 est franchie** (PRD v0.14 ; socle
+consolidé v1.2, 159 entrées) et **le volet de faits du résidu de G-1 est levé** (123 entrées portées à
+leur source primaire). ⚠ **Mais aucune entrée de ce socle ne porte le ch. 4 du Vol. I** — les 17 entrées
+héritées du Vol. I viennent de ses ch. 2, 3, 5 et 7, de son Annexe B et de sa *Synthèse* supprimée —, et
+**la relève v0.19 du § 24.8 est explicitement rangée hors du domaine du volet**. *Une porte franchie
+ailleurs ne franchit rien ici* : le régime de cette pièce demeure **[C]** de bout en bout, et **une
+infraction n'est pas rattrapée par l'arbitrage ni par la porte qui la suivent**.
 
 1. ⚠ **Aucun énoncé n'est central au sens de CA-IV-01, et ce chapitre est celui du Livre où la
    contrainte mord le plus fort.** **Toute sa matière vient du Vol. I**, dont les faits entrent en
@@ -1220,13 +1252,15 @@ Vol. I.
    des sources primaires que le Vol. I cite** — plusieurs dizaines pour ce seul chapitre.
 2. **Les décomptes sont publiables** (G-2). L'écart à la cible est relevé au [`README.md`](README.md) du
    dossier et alimente **D-4**, déjà tranchée.
-3. **Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan.** Ils résolvent
-   contre l'entrée du TOC : **ch. 25, 26, 27, 29, 30, 31, 33, 36** (présent Livre, même passe),
-   **ch. 37**, **ch. 41**, **ch. 43** et le **Livre IV** dans son ensemble, **ch. 47**, **ch. 48** et
-   **ch. 49** (Livre V). Résolvent contre du **texte rédigé** : **ch. 1**, **ch. 2**, **ch. 5**,
-   **ch. 6**, **ch. 7 § 7.5**, **ch. 8**, **ch. 9**, **ch. 10**, **ch. 11**, **ch. 14 § 14.2 et
-   § 14.4**, **ch. 15**, **ch. 17 § 17.5**, **ch. 18 § 18.1**, **ch. 19 § 19.2**, **ch. 20**, **ch. 22**
-   et **ch. 23**.
+3. **Les renvois « ch. N » résolvent tous, et leur régime a changé le 28 juillet 2026.** À la rédaction,
+   ceux qui visaient les **ch. 25 à 36** (présent Livre, même passe), le **Livre IV** et le **Livre V**
+   étaient des **renvois de plan**, résolus contre l'entrée du TOC. **Les cinquante pièces existent
+   désormais en brouillon** : ⚠ *tous les renvois de cette pièce résolvent contre du texte — vérifié le
+   28 juillet 2026 par balayage des cinquante pièces, **aucun chapitre cité ne manque, et les vingt et
+   un renvois distincts de sous-section résolvent contre le titre de leur pièce cible***.
+   ⚠ **Ce que cela ne veut pas dire** :
+   *le texte visé est un brouillon non publiable comme celui-ci* — un renvoi qui résout contre un
+   brouillon résout contre un brouillon, et il se re-vérifiera à la publication.
 4. ⚠ **Le § 24.8 est écrit au régime de repli prescrit par le plan, et il faut le lire ainsi.** Sa
    consigne — « sources primaires à établir **avant rédaction** ; à défaut, la section se replie sur ces
    deux appuis **et cesse d'être autonome** » — a été suivie à la lettre : *aucune ligne de contenu
@@ -1248,9 +1282,11 @@ Vol. I.
   quinze contrôles ne rapproche une ligne Fusion de sa table détaillée**.
 - **R-IV-81 — non bloquante, de relève non instruite portant sur un front neuf.** Le § 24.8 est le seul
   emplacement du Livre dont le plan déclare le socle « **à établir avant rédaction** », et la **relève
-  v0.19** y désigne **une source primaire canonique portant exactement son objet**, avec DOI publié.
-  ⚠ **Elle n'a pas été instruite** — le volet résiduel de G-1 ne l'a pas exécutée —, et la section est
-  donc écrite au régime de repli. **Demande remontée** : que cette relève soit **instruite par extraction
+  v0.19** y désigne **une source primaire canonique portant exactement son objet** — Dean et Barroso,
+  *The Tail at Scale*, *Communications of the ACM* 56(2), 2013, DOI 10.1145/2408776.2408794.
+  ⚠ **Elle n'a pas été instruite** — ni par le volet résiduel de G-1, dont le registre du 28 juillet 2026
+  la range explicitement hors domaine —, et la section est donc écrite au régime de repli.
+  **Demande remontée** : que cette relève soit **instruite par extraction
   à la source primaire** au titre de G-1, comme l'a été la RFC 8693 pour le ch. 17 (R-IV-29), ou que le
   § 24.8 soit **déclaré périmètre assumé** par décision d'auteur. ⚠ **Ce n'est pas un cas de D-9** : là
   où le § 17.5 nommait un vide **sans source identifiée**, celui-ci en a **une, nommée et datée**, que
@@ -1266,29 +1302,47 @@ Vol. I.
   rédacteur —, mais *un siège qu'aucun script ne regarde finit par diverger*, et les deux autres gestes
   ne sont pas de son ressort.
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 24.0 à § 24.9,
-dans l'ordre exact, à l'exception documentée du § 24.6.4 (R-IV-80). La **table de couverture est
-respectée pour ses douze lignes**, y compris ses **trois sorties de périmètre** — §4.8 vers le ch. 30,
-§4.9 et §4.12 vers le Livre IV —, nommées dans le corps au moment où le lecteur les attendrait
-(§ 24.0.3). La **décision 14 a été exécutée avant la rédaction**, domaine déclaré : une thèse examinée,
-zéro réalignée. ⚠ **Les sièges amont que ce chapitre touche sont renvoyés et non reconstruits — liste
-re-mesurée le 28 juillet 2026, où elle passe de cinq à sept** : socle IAM (**ch. 3**), désambiguïsation
-à quatre branches (**ch. 7 § 7.5**), mécanique de la fusion (**ch. 8**), connaissance de
-l'agent (**ch. 18**), triade létale (**ch. 19**), boucle défensive (**ch. 20**) et **croisement des
-échelles d'autonomie (ch. 14 § 14.4)** ; ⚠ **et le mot « fabrique »
-est désambiguïsé à son unique emploi** (décision 12c). Les **garde-fous des deux séries sont balayés et
-déclarés, y compris à zéro occurrence**, et le **faux ami « plan de contrôle » est employé, déclaré et
-distingué** du terme que R-13 proscrit — *le déclarer plutôt que le fuir est ce que le plan demande* ;
-⚠ **ses cinq emplois sont localisés à l'en-tête, et celui du § 24.6.2, qui était nu, a été désambiguïsé
-le 28 juillet 2026.** Les **métriques auto-déclarées ou projections d'analystes portent leur statut à
-chaque occurrence**, sans exception d'usage illustratif — *domaine balayé : § 24.0, § 24.2, § 24.3,
-§ 24.7 et § 24.9.* Les **absences portent toutes leur degré** — *une occurrence du sigle R-14, sept du
-marqueur « degré 3 » et deux de « fait négatif vérifié »* —, et **les trois absences du § 24.8 sont
-déclarées degré 3 une par une**. ⚠ **Ces cardinaux ont été re-mesurés au commit du 28 juillet 2026**
-(décision 16 du TOC) ; *l'attestation antérieure annonçait onze métriques et neuf occurrences de R-14,
-ni l'un ni l'autre n'étant re-mesurable contre le corps.* Enfin, **le § 24.8 n'écrit aucune
-doctrine à l'endroit où son socle est déclaré manquant** : *exposer le vide et formuler la question
-instruisible est le seul geste admissible*, et c'est celui qui a été fait.
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.30** — § 24.0 à § 24.9,
+dans l'ordre exact —, et ⚠ **l'exception que la rédaction avait dû documenter n'en est plus une** : la
+v0.27 a déplié le §4.7.4 sur la remontée R-IV-80, de sorte que le § 24.6.4 est désormais au plan.
+**Les intitulés suivent le plan** (décision 15c) : ⚠ *le titre du § 24.7 avait retranché « (B2B) », sans
+déclaration ; il est rétabli le 28 juillet 2026.* La **table de couverture est respectée pour ses douze
+lignes**, y compris ses **trois sorties de périmètre** — §4.8 vers le ch. 30, §4.9 et §4.12 vers le
+Livre IV —, nommées dans le corps au moment où le lecteur les attendrait (§ 24.0.3). La **décision 14 a
+été exécutée avant la rédaction** et la **décision 17 le 28 juillet 2026**, domaine déclaré dans les deux
+cas : une thèse examinée, zéro réalignée.
+
+⚠ **Les sièges que ce chapitre touche sont renvoyés et non reconstruits — domaine énuméré sans cardinal
+(décision 16c), re-mesuré le 28 juillet 2026 par balayage du corps** ; *les trois listes que la pièce en
+donnait auparavant, à l'en-tête, ici et au corps, ne concordaient pas.* **En amont** : données et
+sémantique (**ch. 2**, avec le **ch. 5**), socle IAM (**ch. 3**), ancrage informationnel (**ch. 5**),
+évaluation et sûreté des systèmes multi-agents (**ch. 6**), désambiguïsation à quatre branches du sigle
+(**ch. 7 § 7.5**), généalogie et gouvernance des protocoles (**ch. 7** et **ch. 10**), mécanique
+d'autorisation du protocole agent-outil (**ch. 8**), découverte et nommage (**ch. 9**), modes d'échec
+protocolaires et exfiltration sans clic (**ch. 11**), croisement des échelles d'autonomie
+(**ch. 14 § 14.4**), fiche d'agent et registres (**ch. 15**), chaîne de mandat et échange de jetons
+(**ch. 17**), connaissance de l'agent (**ch. 18 § 18.1**), triade létale (**ch. 19 § 19.2**), boucle
+défensive et centre opérationnel (**ch. 20**), moteurs d'exécution durable (**ch. 22 § 22.5.1**).
+**En aval** : couple point de décision / point d'application (**ch. 37**) et sémantique d'effet
+(**ch. 48**). ⚠ **Et le mot « fabrique » est désambiguïsé à son unique emploi** (décision 12c).
+
+Les **garde-fous des deux séries sont balayés et déclarés, y compris à zéro occurrence**, et le **faux
+ami « plan de contrôle » est employé, déclaré et distingué** du terme que R-13 proscrit — *le déclarer
+plutôt que le fuir est ce que le plan demande* ; ⚠ **le littéral compte six occurrences, soit trois
+emplois suivis chacun de sa désambiguïsation, et le § 24.6.2, qui était nu, a été désambiguïsé le
+28 juillet 2026.** Les **chiffres portent leur statut à chaque occurrence** — *domaine balayé : § 24.0,
+§ 24.2, § 24.5, § 24.7, § 24.8 et § 24.9* —, ⚠ **et depuis le 28 juillet 2026 leur attributeur est
+nommé avec son millésime** (décision 15b) : *cabinets, organismes, éditeurs et auteurs d'articles,
+ainsi que la grille des dix risques du § 24.3.4, l'instrument de maturité du § 24.9.2 et la source
+que la relève du § 24.8
+doit instruire* — **la parade de péremption ne couvrant que les dénominations commerciales et les
+versions**, qui restent anonymes aux § 24.1 à § 24.3. Les **absences portent toutes leur degré** — *une
+occurrence du sigle R-14, sept du marqueur « degré 3 » et deux de « fait négatif vérifié »* —, et **les
+trois absences du § 24.8 sont déclarées degré 3 une par une**. ⚠ **Ces cardinaux ont été re-mesurés au
+commit du 28 juillet 2026** (décision 16 du TOC) ; *l'attestation antérieure annonçait onze métriques et
+neuf occurrences de R-14, ni l'un ni l'autre n'étant re-mesurable contre le corps.* Enfin, **le § 24.8
+n'écrit aucune doctrine à l'endroit où son socle est déclaré manquant** : *exposer le vide et formuler la
+question instruisible est le seul geste admissible*, et c'est celui qui a été fait.
 
 
 ---
@@ -1322,11 +1376,16 @@ découverte de la collision — **aucun numéro n'est partagé**.*
   fichier `check-sieges.py` est **écrit en parallèle par la rédaction des Livres IV et V**, et **payer
   une dette d'outillage pendant qu'un autre l'écrit produirait une table incohérente que le harnais de
   mutation ne détecterait pas**.* ☑ **Les marqueurs sont écrits dans la pièce** ; ☐ *table et harnais
-  restent dus.*
+  restent dus.* ⚠ **Addendum du 28 juillet 2026 — la dette est payée pour les deux domiciles de ce
+  chapitre** : les entrées « domicile de la grille de risque des identités non humaines » (§ 24.3.4) et
+  « domicile de l'application des permissions à la récupération » (§ 24.4.2) **figurent à la table
+  `SIEGES`**, avec leur marqueur, leur signature et leur déclencheur, **S5 armé et mesuré vide**.
+  *Les marqueurs de ces deux sous-sections sont désormais la signature versée à l'appareil : les
+  reformuler casserait le contrôle.*
 
-⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et — pour les chapitres qui citent le
-Vol. III — **G-4** demeurent ouvertes ; le socle consolidé compte **zéro entrée** ; **aucun énoncé de
-cette pièce n'est central au sens de CA-IV-01**. **CA-IV-11 et CA-IV-13 ne sont pas satisfaites** —
-*aucune relecture par un relecteur distinct du rédacteur*. Cette pièce reste un **brouillon non
-publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune
-question n'attend plus de réponse qui ne soit déjà tranchée.*
+⚠ **Ce que la clôture ne change pas.** Le **volet de fond de G-4** demeure dû ; **aucun énoncé de cette
+pièce n'est central au sens de CA-IV-01** — ⚠ *et le franchissement de G-3, le 28 juillet 2026, ne le
+change pas, aucune entrée du socle consolidé ne portant le ch. 4 du Vol. I.* **CA-IV-11 et CA-IV-13 ne
+sont pas satisfaites** — *aucune relecture par un relecteur distinct du rédacteur*. Cette pièce reste un
+**brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire
+qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*

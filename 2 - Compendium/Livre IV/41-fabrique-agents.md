@@ -13,11 +13,11 @@ d'auteur du 27 juillet 2026** — **« Fusion : aucune »**, thèse marquée con
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable — et sous le régime le plus dur du compendium.** Rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4**, **G-5** **et G-6** — cette dernière conditionnant nommément le sort de ce chapitre —, **avant** la décision d'auteur **D-8** qui doit trancher entre *constitution d'un socle propre depuis des sources primaires* et *retrait du chapitre*, et **hors de l'ordre de rédaction du PRD §6**, qui le place **après** les ch. 42-46 dont il consomme les renvois. ⚠ **Le régime de preuve applicable est celui de la matière neuve** (PRD §7.2) : **vote adversarial sur TOUTES les affirmations centrales**, **sources primaires seules**, et **l'échec documenté est un résultat**. **Aucune de ces conditions n'est remplie**, et le **risque 16 du TOC** est ouvert avec son issue de retrait |
+| **Statut** | **Brouillon de rédaction, non publiable — et sous le régime le plus dur du compendium.** Rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4**, **G-5** **et G-6** — cette dernière conditionnant nommément le sort de ce chapitre —, **avant** la décision d'auteur **D-8**, qui devait trancher entre *constitution d'un socle propre depuis des sources primaires* et *retrait du chapitre* — ⚠ **elle a été prise depuis, le 27 juillet 2026, après cette rédaction et sur la remontée R-IV-51 : socle non constitué, chapitre maintenu sous réserve, retrait non exécuté** —, et **hors de l'ordre de rédaction du PRD §6**, qui le place **après** les ch. 42-46 dont il consomme les renvois. ⚠ **Le régime de preuve applicable est celui de la matière neuve** (PRD §7.2) : **vote adversarial sur TOUTES les affirmations centrales**, **sources primaires seules**, et **l'échec documenté est un résultat**. **Aucune de ces conditions n'est remplie**, et le **risque 16 du TOC** est ouvert avec son issue de retrait |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce chapitre n'a aucun fait périssable à re-dater, et ce n'est pas une bonne nouvelle** : il n'en a aucun parce qu'**il ne porte aucun fait**. Le **seul relevé daté** qu'il mobilise est un **fait de dépôt** constaté sur pièce le 27 juillet 2026 (§ 41.1), qui **n'entre pas au socle** |
-| **Socle mobilisé** | ⚠ **Aucun. Ni entrée du socle consolidé (G-3 ouverte), ni entrée F-xx d'un volume source, ni garde-fou hérité assigné par le plan.** C'est le fait le plus important de cet en-tête, et il est **exactement conforme à ce que le TOC déclare** : « aucun volume source, aucune entrée F-xx, aucun garde-fou hérité » (risque 16). Les seuls appuis sont **internes** — **ch. 15**, **ch. 16**, **ch. 37**, **ch. 38-40**, **ch. 43**, **ch. 45**, **ch. 47** —, et ⚠ **un adossement interne est un renvoi, jamais une source**. **Tout énoncé de ce chapitre est au mieux un repérage [C] à instruire** ; **aucun n'est central au sens de CA-IV-01**, et *aucun ne peut le devenir sans une passe d'instruction que ce chapitre n'a pas eue.* |
-| **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** ⚠ **Le plan n'assigne à ce chapitre aucun garde-fou hérité** ; ceux qui suivent sont **balayés par prudence et non par assignation**, et *le résultat du balayage est lui-même un fait de méthode*. Vol. III — **R-01 : une occurrence**, § 41.4 ; **R-02 : une occurrence**, § 41.4 — *une barrière se qualifie par ce qu'elle démontre*. **R-14 : zéro occurrence de l'identifiant** — ⚠ *les trois degrés d'absence sont pourtant portés à chaque énoncé négatif du chapitre, sous la forme « absence de documentation, non fait négatif vérifié (degré 3) » : **domaine déclaré, corps entier, sans cardinal** (décision 16, alinéa c)* ; **R-03 à R-13 : zéro occurrence** — aucune qualification cryptographique, aucun emploi d'« AgentMesh », de « control plane » ni d'échelle d'autonomie. Vol. II — **R-1 à R-8 : zéro occurrence** ; **métriques auto-déclarées : zéro occurrence** — *ce chapitre ne cite aucun chiffre d'éditeur, parce qu'il n'en a aucun à citer.* ⚠ **Un garde-fou PROPRE est ouvert par le plan et il est tenu de bout en bout** : la **désambiguïsation d'« agent factory »** (décision 12c du TOC), **posée au § 41.1** — *quatre emplois, dont deux vivent dans le plan lui-même* |
-| **Volumétrie cible** | ≈ **5 000 mots** de corps (§ 41.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des huit sections, ⚠ **minorée parce qu'un chapitre sans source ne développe pas** : *l'ampleur serait ici l'indice du défaut, non celui du travail.* ☑ **Décompte publiable depuis G-2** ; **réel reporté au [`README.md`](README.md)**. ⚠ **D-4 s'applique**, et son interdiction de gonflement porte ici plus qu'ailleurs |
+| **Socle mobilisé** | ⚠ **Aucun. Ni entrée du socle consolidé, ni entrée F-xx d'un volume source, ni garde-fou hérité assigné par le plan.** C'est le fait le plus important de cet en-tête, et il est **exactement conforme à ce que le TOC déclare** : « aucun volume source, aucune entrée F-xx, aucun garde-fou hérité » (risque 16). ⚠ **Depuis le 28 juillet 2026, cette absence n'est plus imputable à la porte, et l'écart se durcit** : **G-3 est franchie** et le socle consolidé compte **159 entrées `S-001`…`S-159`** — *ce chapitre n'en mobilise aucune parce qu'il n'a pas de source, non parce que le socle serait vide.* Les seuls appuis sont **internes** — **ch. 15**, **ch. 16**, **ch. 37**, **ch. 38-40**, **ch. 43**, **ch. 45**, **ch. 47** —, et ⚠ **un adossement interne est un renvoi, jamais une source**. **Tout énoncé de ce chapitre est au mieux un repérage [C] à instruire** ; **aucun n'est central au sens de CA-IV-01**, et *aucun ne peut le devenir sans une passe d'instruction que ce chapitre n'a pas eue.* |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** ⚠ **Le plan n'assigne à ce chapitre aucun garde-fou hérité** ; ceux qui suivent sont **balayés par prudence et non par assignation**, et *le résultat du balayage est lui-même un fait de méthode*. Vol. III — **R-01 : une occurrence**, § 41.4 ; **R-02 : une occurrence**, § 41.4 — *une barrière se qualifie par ce qu'elle démontre*. **R-14 : zéro occurrence de l'identifiant** — ⚠ *les trois degrés d'absence sont pourtant portés à chaque énoncé négatif du chapitre, sous la forme « absence de documentation, non fait négatif vérifié (degré 3) » : **domaine déclaré, corps entier, sans cardinal** (décision 16, alinéa c)* ; **R-03 à R-13 : zéro occurrence** — aucune qualification cryptographique, aucun emploi d'« AgentMesh », de « control plane » ni d'échelle d'autonomie. Vol. II — **R-1 à R-8 : zéro occurrence** ; **métriques auto-déclarées : zéro occurrence** — *ce chapitre ne cite aucun chiffre d'éditeur, parce qu'il n'en a aucun à citer.* ⚠ **Un garde-fou PROPRE est ouvert par le plan et il est tenu de bout en bout** : la **désambiguïsation d'« agent factory »** (décision 12c du TOC), **posée au § 41.1** — *quatre emplois, dont **trois** vivent dans le plan de la somme* |
+| **Volumétrie cible** | ≈ **5 000 mots** de corps (§ 41.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) répartie sur ses **dix chapitres** — *la somme des dix cibles dérivées vaut exactement 69 000* —, ⚠ **la part de ce chapitre étant minorée parce qu'un chapitre sans source ne développe pas** : *l'ampleur serait ici l'indice du défaut, non celui du travail.* ☑ **Décompte publiable depuis G-2** ; **réel reporté au [`README.md`](README.md)**. ⚠ **D-4 s'applique**, et son interdiction de gonflement porte ici plus qu'ailleurs |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 41 — **construction d'auteur, socle à constituer** ; ⚠ **thèse inchangée depuis la v0.25, re-collationnée mot pour mot contre la v0.28** — l'arbitrage du Livre IV a réaligné dix des douze thèses, celle-ci et celle du ch. 44 exceptées)* — le maillage **admet** des agents (ch. 37) et l'AgentOps **mesure** leur comportement (ch. 38-40), mais ni l'un ni l'autre ne dit **d'où vient** l'agent admis ni **par quel geste** il est réémis quand la mesure le condamne ; la fabrique d'agents — gabarits gouvernés, catalogue interne, barrière de certification, réémission pilotée par la mesure — est le plan de production qui referme cette boucle, et sans elle « appliquer » et « exploiter » décrivent un parc que **personne n'a la responsabilité de produire**.
 
@@ -40,10 +40,11 @@ qu'il n'a rien à composer.*
 ## § 41.0 — Ouverture : pourquoi ce chapitre existe, et à quelles conditions il devrait survivre
 
 Lecture de l'auteur — **marquage porté à l'ouverture et régissant le chapitre entier** (CA-IV-07,
-qui l'impose nommément aux chapitres de matière neuve). **Ce que le socle établit** : **rien**. Le
-socle consolidé compte zéro entrée, aucun volume source ne porte cette matière, et **le seul relevé
-daté du chapitre est un fait de dépôt** (§ 41.1). **Ce qu'il n'établit pas** : **la totalité de ce qui
-suit** — l'existence d'un objet nommé « fabrique d'agents » dans une organisation quelconque, la
+qui l'impose nommément aux chapitres de matière neuve). **Ce que le socle établit** : **rien**. ⚠ **Et
+depuis le 28 juillet 2026, ce « rien » ne se lit plus comme le vide du socle mais comme celui de ce
+chapitre** : *le socle consolidé compte 159 entrées, et aucune n'est mobilisable ici.* Aucun volume
+source ne porte cette matière, et **le seul relevé daté du chapitre est un fait de dépôt** (§ 41.1).
+**Ce qu'il n'établit pas** : **la totalité de ce qui suit** — l'existence d'un objet nommé « fabrique d'agents » dans une organisation quelconque, la
 pertinence du découpage en huit sections, et jusqu'à la nécessité du chapitre.
 
 **Le motif de son insertion est un constat de couverture, et il est vérifiable.** La somme décrit le
@@ -57,31 +58,39 @@ du domaine, qui a motivé l'insertion (décision 12 du TOC, sur instruction d'au
 ⚠ **Un constat de couverture d'un plan n'est pas un fait sur le monde**, et la nuance est la seule
 chose que ce chapitre puisse affirmer sans réserve : *le plan ne traitait pas la production ; il ne
 s'ensuit pas que la production soit un objet constitué, ni qu'elle mérite un chapitre.* **C'est
-exactement ce que D-8 doit trancher.**
+exactement ce que D-8 avait à trancher, et elle l'a fait le 27 juillet 2026, après cette
+rédaction** : *chapitre maintenu sous réserve, socle non constitué,* ⚠ **le retrait demeurant l'issue
+si les lots échouent.**
 
-**Les huit sections se lisent donc comme huit questions instruisibles**, chacune assortie de ce qu'il
-faudrait ouvrir pour la clore. Ce qui **ne s'y trouve pas** est aussi déclaré : **aucune recette
-d'organisation**, **aucun modèle de maturité** (siège **ch. 43 § 43.5**), **aucun outil nommé**,
-**aucun chiffre**.
+**Les huit sections se lisent donc comme huit questions instruisibles**, dont **cinq** sont assorties
+du corpus à ouvrir et du critère qui clorait l'instruction — § 41.2, § 41.3, § 41.4, § 41.5 et
+§ 41.7. ⚠ **Les trois autres n'appellent aucun lot, et le motif diffère à chaque fois** : la
+désambiguïsation (§ 41.1) tranche un emploi de mots, les conditions de réfutation (§ 41.6) énoncent ce
+qui renverserait le chapitre, et la sortie de périmètre (§ 41.8) déclare une matière que la somme ne
+traite pas — *aucune des trois n'attend quoi que ce soit d'une source.*
+
+**Ce qui ne s'y trouve pas est déclaré au même titre** : **aucune recette d'organisation**, **aucun
+modèle de maturité** (siège **ch. 43 § 43.5**), **aucun outil nommé**, **aucun chiffre**.
 
 ## § 41.1 — Ce que « fabrique » désigne ici, et les trois emplois dont il faut la séparer
 
 ⚠ **Le chapitre s'ouvre sur ce tri plutôt que de le renvoyer au glossaire, et le motif est celui qui a
 déjà coûté une passe au corpus.** C'est le geste que la branche (f) du garde-fou d'homonymie du
 Vol. III impose déjà à « AgentMesh » (ch. 37 § 37.0), et **la cause est identique** : *deux sens
-incompatibles à quelques lignes d'écart.* ⚠ **Deux des quatre emplois vivent déjà dans le plan de
-cette somme et se confondraient à l'œil.**
+incompatibles à quelques lignes d'écart.* ⚠ **Trois des quatre emplois vivent déjà dans le plan de
+cette somme, et deux d'entre eux se confondraient à l'œil** — celui de ce chapitre et celui du
+**ch. 43 § 43.1**.
 
 | Emploi | Objet | Ce qu'il désigne | Où il vit |
 |---|---|---|---|
 | **F1** | **Fabrique d'agents** (*agent factory*) | le **plan de production d'un parc** : gabarits gouvernés, catalogue interne, barrière de certification, réémission pilotée par la mesure | **ce chapitre** — construction d'auteur |
 | **F2** | **Fabrique d'identité** — et **fabrique de confiance** | l'**étage qui émet l'identité**, non celui qui produit l'agent | **ch. 43 § 43.1**, qui en est le siège |
-| **F3** | **Titre d'éditeur** | un **nom de publication**, jamais un terme d'architecture | bibliographie du **Vol. I**, ch. 7 |
-| **F4** | **Patron *factory*** du catalogue de patrons de conception | un patron qui **instancie un objet à l'exécution** — aucun rapport avec un plan de production organisationnel | **Annexe G** |
+| **F3** | **Titre d'éditeur** | un **nom de publication**, jamais un terme d'architecture | bibliographie du **Vol. I** (*Monographie* §7.10.4) |
+| **F4** | **Patron *factory*** du catalogue GoF de patrons de conception | un patron qui **instancie un objet à l'exécution** — aucun rapport avec un plan de production organisationnel | **Annexe G** |
 
 : Tableau 41.1 — Les quatre emplois du mot « fabrique » dans la somme, et le lieu de chacun. ⚠ **Aucun chapitre n'emploie le terme sans que le sens visé soit déterminable de sa phrase** (décision 12c du TOC) ; le glossaire (Annexe E) porte les quatre.
 
-⚠ **L'emploi (c) est le seul relevé daté de tout ce chapitre, et sa borne est plus étroite que celle
+⚠ **L'emploi F3 est le seul relevé daté de tout ce chapitre, et sa borne est plus étroite que celle
 que le plan lui donne.** **Constat sur pièce, 27 juillet 2026** : la bibliographie du **Vol. I** porte,
 sous un éditeur nommé, **une publication dont le titre contient l'expression**, datée du **24 septembre
 2025** — l'entrée regroupe par ailleurs un second document, **dont le titre ne porte pas
@@ -92,9 +101,10 @@ l'existence d'une série sous ce nom : absence de documentation, non fait négat
 éditeur, à une date**, rien de plus. **Il n'entre pas au socle**, il **ne caractérise pas l'objet**, et
 **aucun énoncé de ce chapitre ne s'y adosse**.
 
-⚠ **La distinction (a)/(b) est celle dont la confusion coûterait le plus cher, et elle mérite d'être
-dite en une phrase** : *la fabrique d'identité **émet** ; la fabrique d'agents **produit** ; les deux
-sont des étages distincts de la même architecture, et le mot ne les désigne jamais indistinctement.*
+⚠ **La distinction F1/F2 est celle dont la confusion coûterait le plus cher, et elle tient à un
+verbe** : *la fabrique d'identité **émet** ; la fabrique d'agents **produit**.* ⚠ **Le départage de
+ces deux étages a son siège au ch. 43 § 43.1** : *ce chapitre y renvoie et ne le refait pas ; ce qui
+lui appartient en propre est la table des quatre emplois ci-dessus.*
 
 ## § 41.2 — Le gabarit d'agent gouverné : ce qui se décide une fois pour tout le parc
 
@@ -113,8 +123,9 @@ il tourne.*
 
 **Le seul argument que ce chapitre puisse opposer à un lecteur sceptique vient d'un autre chapitre, et
 il est cité comme tel.** Le **ch. 39 § 39.2** établit — *dans les bornes de son propre socle* — que
-**des trois dérives documentées, celle que les cadres réglementaires nomment est celle que le seul
-relevé d'instrumentation versé n'instrumente pas**, et il en tire une **obligation de conception** :
+**des trois dérives qu'il traite, et qu'il déclare inégalement documentées, celle que les cadres
+réglementaires nomment est celle que le seul relevé d'instrumentation versé au socle n'instrumente
+pas**, et il en tire une **obligation de conception** :
 *ce qui n'est pas instrumenté doit être borné à l'émission.* ⚠ **Un gabarit est un candidat au lieu de
 ce bornage** ; **qu'il en soit le bon lieu n'est établi par rien.**
 
@@ -144,7 +155,7 @@ une valeur probante qu'aucune spécification relevée ne lui reconnaît** — et
 ses propres bornes, que même le registre gouverné n'a pas cette valeur au régime où le corpus le
 documente.*
 
-**Deux propriétés distinguent les deux objets, et elles sont proposées, non relevées.**
+**Quatre propriétés distinguent les deux objets, et elles sont proposées, non relevées.**
 
 | | Registre gouverné (**ch. 15**) | Catalogue interne (*ce chapitre*) |
 |---|---|---|
@@ -175,19 +186,23 @@ l'énoncé qu'aucune relecture ne peut réfuter.*
 ## § 41.4 — La barrière de certification : ce qu'un agent démontre avant d'être admis au maillage
 
 *Adossement au **ch. 37 § 37.5** (le maillage comme point d'application) et au **ch. 47 § 47.9**
-(barrière d'évaluation au déploiement).*
+(barrière d'évaluation au déploiement) ; ⚠ **le constat cité plus bas vient du ch. 37 § 37.4**, où il
+est établi.*
 
 ⚠ **Le grain diffère des deux, et il se déclare.** Le **ch. 47** traite la barrière au grain de
 **l'artefact et de sa mise en service** ; ce chapitre au grain du **parc et de son admission**. *Un
 artefact franchit une barrière une fois ; un parc en franchit une à chaque agent, et la question
-devient celle du débit autant que celle du critère.* ⚠ **Le ch. 47 n'était pas rédigé à la date de cette pièce**, *il l'est depuis, hors portes* : le renvoi est
-un **renvoi de plan**.
+devient celle du débit autant que celle du critère.* ⚠ **Le ch. 47 n'était pas rédigé à la date de
+cette pièce** : le renvoi a été posé comme **renvoi de plan**, et *il n'a pas été re-vérifié contre le
+texte — rédigé depuis, hors portes — qui a paru après lui.*
 
 **La proposition est étroite** : *le maillage vérifie l'agent qui se présente ; il ne dit rien de ce
-qui l'a produit.* Le **ch. 37 § 37.5** l'établit dans ses propres bornes — le point d'application
-**évalue une politique**, il **n'émet, ne vérifie ni ne révoque un identifiant**. **La barrière de
-certification serait le geste qui décide de ce qui *peut* se présenter** ; ⚠ **qu'un tel geste existe,
-et qu'il soit distinct du point d'application, n'est établi par rien.**
+qui l'a produit.* Le **ch. 37 § 37.4** l'établit dans ses propres bornes — le mécanisme
+d'autorisation par arête **évalue une politique**, il **ne produit, ne vérifie ni ne révoque un
+identifiant**. ⚠ **Le verbe est celui de la source, et il compte ici plus qu'ailleurs** : *elle écrit
+« production », non « émission », et ce chapitre est celui qui interdit de confondre les deux.* **La
+barrière de certification serait le geste qui décide de ce qui *peut* se présenter** ; ⚠ **qu'un tel
+geste existe, et qu'il soit distinct du point d'application, n'est établi par rien.**
 
 ⚠ **Et une difficulté héritée s'y transporte intacte, ce qui est le seul énoncé fort de cette
 section.** Le plan renvoie au **problème de l'oracle** — *comment sait-on qu'un comportement est
@@ -221,8 +236,9 @@ passeport », et ce chapitre ne l'écrit pas.
 **C'est ici que l'AgentOps cesserait d'être une discipline de constat.** La proposition tient en une
 phrase : ⚠ ***un indicateur qui ne réémet rien mesure sans corriger.*** Le **ch. 40 § 40.2** produit
 quatre grandeurs et **une colonne de ce qui manque** ; le **ch. 39 § 39.2** produit trois dérives dont
-une n'est pas instrumentée. **La boucle de réémission serait le geste qui transforme l'un et l'autre
-en correction du gabarit dont l'agent est issu**, plutôt qu'en correction de l'agent lui-même.
+une n'est pas instrumentée par le seul relevé d'instrumentation versé au socle. **La boucle de
+réémission serait le geste qui transforme l'un et l'autre en correction du gabarit dont l'agent est
+issu**, plutôt qu'en correction de l'agent lui-même.
 
 ⚠ **La distinction est la seule chose que cette section apporte, et elle est réfutable** : *corriger
 l'agent traite l'occurrence ; corriger le gabarit traite la classe.* Ce que le **ch. 39 § 39.4**
@@ -231,9 +247,9 @@ restituer ce qu'il était autorisé à faire à l'instant où il l'a fait** — 
 la même force** : *une boucle de réémission dont on ne peut pas restituer l'état antérieur du gabarit
 ne se documente pas, elle se raconte.*
 
-⚠ **Le ch. 39 § 39.4 déclare d'ailleurs ce chapitre comme siège du gabarit à promouvoir**, et
-**l'adossement est donc mutuel** : *ce chapitre-ci ne peut pas fonder la boucle sur un chapitre qui la
-lui renvoie.* **Le socle ne documente ni la boucle, ni le gabarit, ni leur articulation** : absence de
+⚠ **Le ch. 39 § 39.4 renvoie d'ailleurs à cette section** — *promouvoir suppose un gabarit à
+promouvoir, et il déclare ne pas le fournir* —, et **l'adossement est donc mutuel** : *ce chapitre-ci
+ne peut pas fonder la boucle sur un chapitre qui la lui renvoie.* **Le socle ne documente ni la boucle, ni le gabarit, ni leur articulation** : absence de
 documentation, non fait négatif vérifié (degré 3).
 
 > **Ce qu'il faudrait ouvrir.** **Corpus** : les publications d'exploitation décrivant une correction
@@ -275,11 +291,13 @@ portée par le **ch. 45 § 45.6**, **qui en reste le siège** ; ce chapitre n'en
 interne**. *C'est le motif pour lequel la table détaillée de ce chapitre ne porte aucun marqueur de
 provenance : en porter un ici serait une **seconde revendication du même texte**.*
 
-**Ce que ce chapitre peut écrire sans empiéter tient en une question, et elle est neuve** : *les rôles
-que le ch. 45 § 45.6 répartit entre plateforme, gestion des identités, sécurité et exploitation
-répondent de ce qui **tourne** ; qui répond de ce qui **est produit** ?* ⚠ **Le socle ne documente
-aucune répartition des responsabilités de production d'un parc d'agents** : absence de documentation,
-non fait négatif vérifié (degré 3).
+**Ce que ce chapitre peut écrire sans empiéter tient en une question, et le ch. 45 § 45.6 la pose
+lui-même à son terme** : *les rôles qu'il répartit répondent de ce qui **tourne** ; qui répond de ce
+qui **est produit** ?* ⚠ **Et la répartition dont elle part est bornée à sa source** : *le ch. 45
+§ 45.6 déclare que le socle n'établit pas la répartition des responsabilités entre équipes, et que la
+sienne est une inférence d'auteur intégrale* — **ce chapitre n'en hérite donc aucun titulaire
+nommé**. ⚠ **Le socle ne documente aucune répartition des responsabilités de production d'un parc
+d'agents** : absence de documentation, non fait négatif vérifié (degré 3).
 
 ⚠ **Et la question n'est pas rhétorique** : le **ch. 39 § 39.4** a établi, en [C], que **les agents qui
 maintiennent le parc sont eux-mêmes des agents** et relèvent **du même régime que ceux qu'ils
@@ -307,13 +325,18 @@ pas l'exécuter** : *la fabrique décide de ce qui entre au parc ; le harnais d�
 ressort, d'exécuter l'appel.*
 
 ⚠ **Trois conséquences, et la troisième est celle qu'on oublie.** *Un* : **la porte G-5 conditionne le
-Livre IV entier** et n'est pas franchie — **l'arbitrage du risque 14 est la décision d'auteur D-2**,
-que **ce chapitre ne consomme pas**. *Deux* : **le ch. 37 § 37.6 le rencontre par l'autre bout** —
-l'admission par passerelle y est nommée comme contrôle de chaîne d'approvisionnement, et **ce qui
-exécute l'appel après l'admission n'y est pas traité davantage**. *Trois* : ⚠ **le plafond de
+Livre IV entier** et n'était pas franchie à la rédaction — **l'arbitrage du risque 14 est la décision
+d'auteur D-2**, que **ce chapitre ne consomme pas**. ⚠ **Elle a été prise depuis, le 27 juillet 2026,
+par une autre passe et après cette rédaction** : *sections dans l'existant, sans chapitre neuf* — **des
+sections que ce Livre n'a pas écrites**, et *le risque 14 n'en est pas comblé pour autant.* *Deux* :
+**le ch. 37 § 37.6 le rencontre par l'autre bout** — l'admission par passerelle y est nommée comme
+contrôle de chaîne d'approvisionnement, et **ce qui exécute l'appel après l'admission n'y est pas
+traité davantage**. *Trois* : ⚠ **le plafond de
 cinquante chapitres rend le comblement coûteux et le déclare** — *un chapitre neuf sur le harnais
 serait interdit sans la fusion qui le paie* (décision 13 du TOC). **Le plafond ne tranche pas le
-risque 14 ; il en rend le coût explicite.**
+risque 14 ; il en rend le coût explicite.** ⚠ **Et c'est sur cette contrainte-là que D-2 a écarté
+l'issue « chapitre neuf »** — *par une contrainte de plan, non par un jugement de fond*, la décision
+le déclarant elle-même.
 
 ⚠ **Le socle ne documente pas la couche d'exécution agentique** : absence de documentation, non fait
 négatif vérifié (degré 3). *Et cette absence-ci n'est pas de la même nature que les autres du
@@ -326,9 +349,10 @@ matière qu'elle déclare ne pas traiter.*
 
 ⚠ **Ce chapitre lègue moins que les autres, et le déclarer est le premier de ses legs.**
 
-1. **La désambiguïsation d'« agent factory ».** **Quatre emplois, dont deux vivent dans le plan** ; le
-   **ch. 43 § 43.1** porte le second, ce chapitre le premier. **Aucun chapitre n'emploie le mot sans
-   que le sens soit déterminable de sa phrase.** *C'est le seul legs du chapitre qui ne dépende
+1. **La désambiguïsation d'« agent factory ».** **Quatre emplois, dont trois vivent dans le plan de la
+   somme** : le plan de production ici, la fabrique d'identité au **ch. 43 § 43.1**, le patron
+   *factory* à l'**Annexe G** ; le quatrième est un titre d'éditeur. **Aucun chapitre n'emploie le mot
+   sans que le sens soit déterminable de sa phrase.** *C'est le seul legs du chapitre qui ne dépende
    d'aucune instruction.*
 2. **Une question, posée une fois** : *d'où vient l'agent admis, et par quel geste est-il réémis quand
    la mesure le condamne ?* Les **ch. 37 à 40** ne la posent pas ; **elle est ici, et elle y est
@@ -337,8 +361,8 @@ matière qu'elle déclare ne pas traiter.*
    ch. 37 § 37.9**. ⚠ *Une transposition est une lecture — le déclarer est ce qui la distingue d'un
    constat.*
 4. **Le rappel que le risque 14 n'est pas comblé.** ⚠ **C'est un legs négatif, et le plus opposable du
-   chapitre** : le **ch. 49** enregistrera l'état final des lacunes, **et celle-ci en fera partie
-   quelle que soit l'issue de D-8**.
+   chapitre** : le **ch. 49 § 49.12** tient le registre des lacunes résiduelles, **et celle-ci en
+   fera partie quelle que soit l'issue de D-8**.
 5. **Cinq lots d'instruction formulés**, avec leur corpus et leur critère de clôture (§ 41.2, § 41.3,
    § 41.4, § 41.5, § 41.7). ⚠ **C'est ce que le chapitre produit *à la place* d'un contenu**, et *une
    instruction infructueuse resterait un résultat.*
@@ -346,9 +370,10 @@ matière qu'elle déclare ne pas traiter.*
 ⚠ **Ce que le chapitre ne lègue pas — et la liste est longue à dessein.** Aucun **fait**. Aucune
 **entrée de socle**. Aucun **chiffre**, aucun **seuil**, aucun **délai**. Aucun **outil nommé**, aucune
 **organisation nommée**. Aucun **modèle de maturité** — *son siège est au ch. 43 § 43.5*. Aucune
-**recette d'organisation**. Et **aucune garantie de survie** : *si D-8 tranche pour le retrait, ce
-chapitre disparaît et les **ch. 42-50 redeviennent les ch. 41-49** — la renumérotation inverse est
-prévue, et elle est le prix déclaré de l'insertion.* ⚠ **La fourchette « ch. 42-51 » que ce paragraphe
+**recette d'organisation**. Et **aucune garantie de survie** : *D-8 a maintenu le chapitre sous
+réserve et laissé le retrait comme issue si les cinq lots échouent* — **il disparaîtrait alors, et
+les ch. 42-50 redeviendraient les ch. 41-49** ; la renumérotation inverse est prévue, et elle est le
+prix déclaré de l'insertion. ⚠ **La fourchette « ch. 42-51 » que ce paragraphe
 portait décrivait l'état v0.22 du plan, à cinquante et un chapitres** : *elle est périmée depuis la
 **fusion v0.23**, qui a payé l'insertion et ramené le plan à cinquante — un retrait ferait donc
 revenir neuf chapitres, non dix.* **La carte de la décision 13d se chaîne à celle de la 12b ; elle ne
@@ -362,10 +387,10 @@ la réécrit pas.**
 gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A).
 
 **Ce qui est enfreint — et c'est l'écart le plus large du compendium à ce jour.** Portes **G-3**,
-**G-4**, **G-5** et **G-6** ; **décision d'auteur D-8 non prise**, alors qu'elle conditionne
-nommément l'existence de ce chapitre ; **ordre de rédaction du PRD §6**, qui place ce chapitre
-**après** les ch. 42-46 — non rédigés — **et après G-6** ; **régime de preuve de la matière neuve**
-(PRD §7.2), qui exige **le vote adversarial sur toutes les affirmations centrales et des sources
+**G-4**, **G-5** et **G-6** ; **décision d'auteur D-8 non prise à cette date**, alors qu'elle
+conditionne nommément l'existence de ce chapitre ; **ordre de rédaction du PRD §6**, qui place ce
+chapitre **après** les ch. 42-46 — non rédigés alors — **et après G-6** ; **régime de preuve de la
+matière neuve** (PRD §7.2), qui exige **le vote adversarial sur toutes les affirmations centrales et des sources
 primaires seules**. Instruction d'auteur du **27 juillet 2026**.
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01, et ici ce n'est pas une conséquence de G-3 : c'est
@@ -381,8 +406,10 @@ primaires seules**. Instruction d'auteur du **27 juillet 2026**.
    est corrigée ici sur l'état que le commit produit.* **Les dix chapitres du Livre IV (ch. 37 à
    46) sont rédigés**, comme le sont les **cinquante chapitres des cinq Livres** : *tous les
    renvois « ch. N » de cette pièce résolvent donc contre du texte.* ⚠ **Les renvois vers les
-   ANNEXES restent des renvois de plan** — *aucune annexe du compendium n'est rédigée*, les
-   annexes E et G comprises. ⚠ **Ce qui reste vrai de la forme antérieure, et qui est daté** : à
+   ANNEXES restent des renvois de plan** — *les annexes E et G, seules citées ici, ne sont pas
+   rédigées*. ⚠ **Une annexe l'est depuis le 28 juillet 2026** — l'**Annexe B**, le socle consolidé,
+   constituée au franchissement de G-3 —, *et cette pièce ne la cite pas, n'ayant aucune entrée à y
+   prendre.* ⚠ **Ce qui reste vrai de la forme antérieure, et qui est daté** : à
    l'heure où ce chapitre a été écrit, n'étaient rédigés ni le ch. 23 du Livre III, ni les ch. 47
    et 49 du Livre V, non plus que les ch. 43 et ch. 45 — *les renvois qui les visent ont été posés
    comme renvois de plan et n'ont pas été re-vérifiés contre le texte paru après eux.* ⚠ **Et «
@@ -410,7 +437,8 @@ primaires seules**. Instruction d'auteur du **27 juillet 2026**.
   versé**, ce qui est le résultat que la décision attendait ; le retrait reste l'issue si les
   lots échouent.* **Le blocage est levé pour la rédaction, non pour la publication.**
 - **R-IV-52 — non bloquante, de fait de dépôt, et de portée plus étroite que le plan.** La table
-  d'appuis du TOC qualifie l'emploi (c) du § 41.1 de **« série *Agent Factory* de Microsoft »**. **Le
+  d'appuis du TOC qualifie l'emploi **F3** du § 41.1 — le titre d'éditeur — de **« série *Agent
+  Factory* de Microsoft »**. **Le
   constat sur pièce du 27 juillet 2026 établit *un titre*, non une série** : la bibliographie du
   Vol. I porte, sous cet éditeur, **une publication dont le titre contient l'expression**, datée du
   24 septembre 2025, l'entrée regroupant un second document **dont le titre ne la porte pas**, et
@@ -439,16 +467,23 @@ primaires seules**. Instruction d'auteur du **27 juillet 2026**.
 
 **Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.28** — § 41.1 à
 § 41.8, dans l'ordre exact ; ⚠ **le § 41.3 abrège l'intitulé du plan en retirant « du ch. 15 »,
-déviation déclarée** (décision 8), *le renvoi au ch. 15 étant porté par le corps de la section* —, et le § 41.0 est une ouverture portant le **marquage de construction
-d'auteur pour tout le chapitre**, comme CA-IV-07 l'exige nommément des chapitres de matière neuve.
+déviation déclarée** (décision 8), *le renvoi au ch. 15 étant porté par le corps de la section* —, et
+le § 41.0 est une ouverture portant le **marquage de construction d'auteur pour tout le chapitre**,
+comme CA-IV-07 l'exige nommément des chapitres de matière neuve.
 ⚠ **Le régime « Fusion : aucune » est tenu de bout en bout** : **aucun marqueur de provenance vers un
 volume source n'apparaît dans cette pièce**, parce qu'il n'y en a aucun à porter — *l'absence de
 provenance y est rendue visible par la forme, non seulement par une mention.* La **décision 6
 (couverture tracée) est sans objet** et déclarée telle. Le **garde-fou propre du chapitre — la
 désambiguïsation d'« agent factory » (décision 12c) — est posé au § 41.1 et tenu partout ailleurs**.
-Les **deux sièges que ce chapitre touche sans les reconstruire** portent leur renvoi : l'organisation
-de la fabrique au **ch. 45 § 45.6** et le modèle de maturité au **ch. 43 § 43.5**. ⚠ **Cardinaux re-mesurés au commit du 28 juillet 2026, sur le marqueur littéral et sur le corps seul** (décision 16 du TOC) ; *les cardinaux antérieurs comptaient les applications du garde-fou et n'étaient re-mesurables par aucune règle écrite.* Les **six occurrences du marqueur littéral « degré 3 »**
-portent leur degré, et ⚠ **aucune n'est écrite comme un fait négatif vérifié** — *ce qui est la seule discipline qu'un chapitre sans socle puisse réellement tenir.*
+Les **trois sièges que ce chapitre touche sans les reconstruire** portent leur renvoi : l'organisation
+de la fabrique au **ch. 45 § 45.6**, le modèle de maturité au **ch. 43 § 43.5** et le départage des
+deux étages de la « fabrique » au **ch. 43 § 43.1** — ⚠ *ce dernier versé à l'appareil le 28 juillet
+2026, et le cardinal de « deux » que ce paragraphe portait est périmé de ce versement, non d'un ajout
+de cette pièce.* ⚠ **Cardinaux re-mesurés au commit du 28 juillet 2026, sur le marqueur littéral et
+sur le corps seul** (décision 16 du TOC) ; *les cardinaux antérieurs comptaient les applications du
+garde-fou et n'étaient re-mesurables par aucune règle écrite.* Les **six occurrences du marqueur
+littéral « degré 3 »** portent leur degré, et ⚠ **aucune n'est écrite comme un fait négatif
+vérifié** — *ce qui est la seule discipline qu'un chapitre sans socle puisse réellement tenir.*
 **Aucun chiffre, aucun seuil, aucun outil et aucune organisation ne sont nommés**, et **aucune section
 n'écrit de contenu plausible à l'endroit où le plan déclare le socle à constituer** : *les cinq lots
 formulés sont ce que la pièce produit à la place.*

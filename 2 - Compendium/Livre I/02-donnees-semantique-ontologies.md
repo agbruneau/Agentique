@@ -5,13 +5,13 @@ Premier mouvement — les fondements (ch. 1-6).*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes G-1, G-2 et G-3 du [PRD](../PRD/PRD.md) §5. Même régime que le ch. 1 : l'écart est déclaré, non dissimulé ; ses conséquences sont énumérées en § 2.5 ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes G-1, G-2 et G-3 du [PRD](../PRD/PRD.md) §5. Même régime que le ch. 1 : l'écart est déclaré, non dissimulé ; ses conséquences sont énumérées en § 2.5. ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. ⚠ **Mise à jour du 28 juillet 2026** : **G-3 est franchie** (PRD v0.14), **trois portes sur sept le sont désormais**, et le socle consolidé existe — *la phrase « socle consolidé à zéro entrée », que cette pièce portait, a cessé d'être vraie*. **La pièce reste néanmoins un brouillon non publiable**, pour deux motifs qui ne se recouvrent pas : elle a été **rédigée hors portes**, et *un franchissement postérieur solde une infraction sans la rattraper* ; et **CA-IV-11 et CA-IV-13 demeurent insatisfaisables** faute d'un relecteur distinct du rédacteur (D-6). **Aucun de ses énoncés n'est central au sens de CA-IV-01** — le motif est au champ *Socle mobilisé*, et il a changé sans que la conclusion bouge. |
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. La matière condensée porte le gel de sa source — **juin 2026** (Vol. I) —, qui n'est pas celui de la somme et ne peut en tenir lieu. ⚠ Ce chapitre est particulièrement exposé à la péremption : **quatre spécifications qu'il cite étaient en cours au gel de la source** (SPARQL 1.2, SHACL 1.2, RDF 1.2/RDF-star, et la refonte majeure d'OpenAPI), et une graduation de projet y est datée de février 2026 |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (Annexe B non constituée, porte G-3 ouverte). Les énoncés résolvent contre le **Vol. I *Monographie* §1.7-1.8**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01** avant élévation en [B] par lecture des sources primaires que le Vol. I cite |
+| **Socle mobilisé** | ⚠ **Aucune entrée du socle consolidé — et depuis le 28 juillet 2026 ce constat a changé de motif sans changer de portée.** L'Annexe B **existe** ([`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées `S-001`…`S-159`**, porte G-3 franchie) ; **aucune de ses entrées ne couvre le périmètre de ce chapitre**. Balayage du domaine entier le 28 juillet 2026 : les **dix-sept entrées héritées du Vol. I** (`S-143`…`S-159`) proviennent des §2.10, §3.10, §5.0-5.1, §7.x et de l'Annexe B de sa *Monographie*, ou des §10-§11 de sa *Synthèse* (quatre d'entre elles, dont le fichier a quitté le dépôt le 22 juillet 2026) ; **aucune** ne provient du **§1.7** ni du **§1.8**. *Ce n'est plus « le socle est vide », c'est « le socle ne couvre pas cette matière » — constat de balayage sur un domaine clos, non estimation.* Les énoncés résolvent donc contre le **Vol. I *Monographie* §1.7-1.8** directement, **hors socle**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01** avant élévation en [B] par lecture des sources primaires que le Vol. I cite |
 | **Garde-fous balayés** | **Les deux séries, intégralement, y compris les zéros.** ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — R-1 à R-8 : **zéro occurrence** (aucune matière réglementaire canadienne, aucun énoncé sur E-23, le RTR ou MCP). Vol. III — R-01, R-03 à R-13 : **zéro occurrence** ; **R-02 : le marqueur figure une fois, § 2.4.1, sans que le garde-fou soit déclenché** — ⚠ le § 2.4 approche R-02 (qualification par ce que la spécification démontre) sans le déclencher, l'objet n'étant pas cryptographique ; la règle y est néanmoins appliquée par analogie à la fiabilité des correspondances produites par modèle. **R-14 (trois degrés d'absence) : trois occurrences**, § 2.1.5, § 2.3.3 et § 2.4.1, marquées en toutes lettres |
-| **Volumétrie cible** | ≈ 8 000 mots de corps (§ 2.1 à § 2.4). Enveloppe **dérivée, non prescrite** — le TOC n'en donne qu'au Livre (~65 000 mots pour onze chapitres). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 245 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−34,4 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 750 mots, soit −0,4 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Volumétrie cible** | ≈ 8 000 mots de corps (§ 2.1 à § 2.4). Enveloppe **dérivée, non prescrite** — le TOC n'en donne qu'au Livre (~65 000 mots pour onze chapitres). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 443 mots** de corps, **re-mesurés le 28 juillet 2026** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−32,0 %** de la cible ; la passe de relecture du 28 juillet a ajouté 198 mots, tous d'appareil de preuve ou de renvoi, **aucun de contenu neuf**. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre valait 64 750 mots, soit −0,4 % de l'enveloppe**, à la mesure antérieure à cette relecture : c'est la cible dérivée qui était fausse, non la pièce qui est courte. ⚠ **Ce total de Livre n'est PAS re-mesuré ici, et il ne doit pas l'être** — les onze pièces sont relues en parallèle, et *un cardinal mesuré pendant que ses termes changent est faux à la seconde où on le publie* ; il se re-mesure au terme de la passe. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 2)* — l'interopérabilité sémantique — accord sur le sens, pas seulement sur le format — est le niveau que les protocoles agentiques présupposent et que peu savent établir.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 2 ; forme **inchangée en v0.29**, re-collationnée mot à mot le 28 juillet 2026 — décisions 14 et 17)* — l'interopérabilité sémantique — accord sur le sens, pas seulement sur le format — est le niveau que les protocoles agentiques présupposent et que peu savent établir.
 
 ---
 
@@ -71,9 +71,9 @@ Côté binaire, deux familles structurent la pratique, et leur différence n'est
 de **doctrine d'évolution**.
 
 **Protocol Buffers** repose sur un langage de description d'interface compilé, un encodage compact à
-étiquettes numériques, et une compatibilité fondée sur la **stabilité des numéros de champ** : un
-champ retiré laisse son numéro réservé à jamais. Il sert de format de charge utile à gRPC et convient
-au trafic interservices à faible latence.
+étiquettes numériques, et une compatibilité d'évolution fondée sur la **stabilité des numéros de
+champ**. Il sert de format de charge utile à gRPC et convient au trafic interservices à faible
+latence.
 
 **Apache Avro** adopte une philosophie distincte : le schéma, exprimé en JSON, accompagne ou
 référence chaque jeu de données, et la **résolution de schéma à la lecture** confronte explicitement
@@ -115,8 +115,9 @@ Du point de vue de l'invariant, ces standards **découplent le client analytique
 stockage** par un contrat de transport stable. C'est la même opération que celle du contrat d'API au
 ch. 1 § 1.4.2, transposée à un plan où elle était historiquement absente.
 
-> **Perspective recherche.** La proposition du *lakehouse* consiste précisément à unifier
-> l'entreposage et l'analytique avancée sur un substrat de formats ouverts. Arrow comme format
+> **Perspective recherche.** La proposition du *lakehouse* (Zaharia et coll., 2021) consiste
+> précisément à unifier l'entreposage et l'analytique avancée sur un substrat de formats
+> ouverts. Arrow comme format
 > mémoire et Flight SQL comme protocole filaire en sont les pièces d'interopérabilité : ils
 > dissocient le moteur d'exécution de la couche de stockage, autorisant la coexistence de moteurs
 > hétérogènes sur un même corpus. La question ouverte n'est plus la faisabilité mais la
@@ -140,7 +141,8 @@ est le fait le plus conséquent de cette sous-section : à partir de cette versi
 d'OpenAPI est un surensemble strict du vocabulaire JSON Schema, ce qui réconcilie la description
 d'API et la validation de charge utile sous un même formalisme et **supprime une divergence
 historiquement coûteuse**. Deux dialectes qui décrivaient la même chose de deux manières
-incompatibles obligeaient chaque organisation à maintenir deux vérités ; il n'en reste qu'une.
+incompatibles obligeaient chaque organisation à maintenir deux vérités ; **à partir de cette
+version**, il n'en reste qu'une.
 
 La validation aux frontières concrétise le principe de moindre confiance : un consommateur valide ce
 qu'il reçoit, un producteur valide ce qu'il émet, et le schéma partagé fait foi. La **conception** du
@@ -174,11 +176,11 @@ confrontant explicitement les deux schémas plutôt qu'en espérant leur coïnci
 
 ⚠ **Une garantie de compatibilité n'est pas une garantie de sens.** Un champ peut rester structurellement
 compatible tout en changeant de signification — une même colonne « montant » qui passe des dollars
-aux cents satisfait toutes les règles ci-dessus et casse tous les consommateurs. Le fait que les
+aux cents satisfait toutes les règles ci-dessus et casse ses consommateurs. Le fait que les
 registres n'attrapent pas cette classe de rupture relève d'une **absence de documentation** au sens
-de R-14 : le socle hérité ne documente aucun mécanisme de contrôle sémantique automatique à ce
-niveau, ce qui ne dit rien de l'existence d'approches non recensées. C'est précisément l'écart que
-les § 2.3 et § 2.4 prennent pour objet.
+de R-14 du Vol. III : le socle hérité ne documente aucun mécanisme de contrôle sémantique
+automatique à ce niveau, ce qui ne dit rien de l'existence d'approches non recensées. C'est
+précisément l'écart que les § 2.3 et § 2.4 prennent pour objet.
 
 ### 2.1.6 Registres de schémas dans l'architecture événementielle
 
@@ -196,8 +198,8 @@ des règles de compatibilité**. À l'enregistrement d'une nouvelle version, le 
 **garde-fou exécutable au moment de l'évolution**, et non une recommandation qu'une relecture
 pourrait laisser passer.
 
-C'est le même principe que celui qui gouverne ce dépôt et que le ch. 1 § 1.2.2 identifiait dans la
-lignée LISI : *une règle sans motif exécutable qui la contrôle n'en est pas une*. Un registre de
+C'est le principe que le ch. 1 § 1.2.2 identifiait dans la lignée LISI : *une règle sans motif
+exécutable qui la contrôle n'en est pas une*. Un registre de
 schémas est l'instrument par lequel une organisation rend non négociable, à l'échelle de centaines de
 sujets, le contrat d'évolution qui autorise le déploiement indépendant.
 
@@ -215,26 +217,27 @@ sujets, le contrat d'évolution qui autorise le déploiement indépendant.
 ### 2.2.1 Transformation et ponts inter-formats
 
 L'hétérogénéité des formats étant irréductible (ch. 1 § 1.1.3), l'intégration suppose presque
-toujours une médiation entre représentations. Le patron **Message Translator** en est la
-formalisation : un composant transforme la structure et la sémantique d'un message d'un format source
+toujours une médiation entre représentations. Le patron **Message Translator** (Hohpe et Woolf, 2003)
+en est la formalisation : un composant transforme la structure et la sémantique d'un message d'un format source
 vers un format cible **sans coupler producteur et consommateur à la connaissance l'un de l'autre**.
 Les outils varient selon le monde — XSLT pour les transformations XML, langages de projection pour
 JSON — et les ponts les plus courants concernent les conversions REST/SOAP et JSON/Avro, où une
 passerelle traduit entre les conventions des deux univers.
 
-Ces transformations ne sont **pas neutres**, et c'est le point que la pratique oublie. La conversion
-entre modèles de richesse inégale entraîne des pertes : un type absent dans le format cible, une
-contrainte non exprimable, une structure imbriquée aplatie. Ces pertes doivent être **identifiées et
-réconciliées explicitement au point de médiation**, plutôt que subies silencieusement en aval.
+Ces transformations ne sont **pas neutres**, et c'est le point qu'on oublie le plus aisément. La
+conversion entre modèles de richesse inégale entraîne des pertes : un type absent dans le format
+cible, une contrainte non exprimable, une structure imbriquée aplatie. Ces pertes doivent être
+**identifiées et réconciliées explicitement au point de médiation**, plutôt que subies
+silencieusement en aval.
 
 Le traducteur préserve donc le découplage en localisant la connaissance des deux formats en un seul
 endroit, mais il introduit **un point où le contrat peut se dégrader**. Sa conception relève de la
-même rigueur contractuelle que les interfaces qu'il relie — et il est le plus souvent traité comme un
-détail d'implémentation, ce qui est l'erreur.
+même rigueur contractuelle que les interfaces qu'il relie ; le traiter comme un détail
+d'implémentation est l'erreur.
 
 ### 2.2.2 Contrats de données et produits de données
 
-Le mouvement du **maillage de données** (*data mesh*) transpose au domaine des données les principes
+Le mouvement du **maillage de données** (*data mesh* ; Dehghani, 2022) transpose au domaine des données les principes
 de découplage et de propriété décentralisée déjà appliqués aux services. Sa pièce maîtresse est le
 **contrat de données** : une spécification exécutable, machine-lisible, qui fixe le schéma, les
 garanties de qualité, les attentes sémantiques et les engagements de service entre un fournisseur et
@@ -256,8 +259,11 @@ en encodant l'usage autorisé dans le contrat lui-même.
 Lecture de l'auteur — c'est la première fois, dans la progression du Livre, qu'un contrat prétend
 porter non seulement la **forme** et le **sens** de ce qui est échangé, mais l'**usage autorisé** de
 ce qui a été transféré. Cette prétention est exactement celle que le Livre II retrouvera sous le nom
-de délégation, et le Livre IV sous celui de politique appliquée à l'exécution. Le socle n'établit pas
-cette filiation ; elle est proposée comme lecture, et son instruction relève des ch. 17 et 37.
+de délégation, et le Livre IV sous celui de politique appliquée à l'exécution. Ce que le socle
+établit s'arrête à l'énoncé du paragraphe précédent — le protocole d'espaces de données encode
+l'usage autorisé dans le contrat lui-même ; **il n'établit pas la filiation** vers la délégation ni
+vers la politique d'exécution, proposée ici comme lecture, et dont l'instruction relève des ch. 17
+et 37.
 
 > **Perspective recherche.** Le contrat de données exécutable déplace la question de
 > l'interopérabilité sémantique du plan documentaire vers le plan opérationnel : les attentes de
@@ -283,9 +289,11 @@ standardise l'interface entre moteurs et catalogue, transformant celui-ci d'un c
 en un contrat ouvert et interchangeable. Plusieurs implémentations se disputent ce rôle, dont l'une a
 gradué au rang de projet de premier niveau de sa fondation le **19 février 2026**.
 
-⚠ **Cette date est un fait daté, et le seul de ce chapitre qui appelle une re-vérification à G-1** :
+⚠ **Cette date est le seul fait daté du chapitre, et elle a été reprise à sa source primaire** :
 une graduation de projet est un événement de gouvernance, non une propriété technique, et la carte
-des implémentations en concurrence bouge par trimestres.
+des implémentations en concurrence bouge par trimestres. Le volet Livre I de la porte G-1 l'a
+**confirmée au 19 février 2026** le 27 juillet 2026 (registre du gel, fait 1) ; la réserve porte
+désormais sur la carte, non sur la date.
 
 Cette convergence vers un protocole de catalogue commun est l'extension la plus récente de
 l'invariant au plan analytique : en découplant le moteur du catalogue par un contrat stable, elle
@@ -302,8 +310,14 @@ ce que ces messages signifient. L'interopérabilité sémantique vise précisém
 troisième palier de la pile canonique (ch. 1 § 1.1.2) : faire en sorte que l'information reçue soit
 interprétée par le destinataire **avec le sens que l'émetteur lui prêtait**.
 
+⚠ **Le verrou que ce hiatus nomme n'est pas reconstruit ici.** Le constat d'ensemble — la
+normalisation est abondante dans le bas de la pile et s'amenuise vers le haut, là où le sens se
+joue — et le programme de recherche qui en découle ont leur **siège au ch. 49 § 49.6**, lieu unique
+pour toute la somme. Le présent chapitre en instrumente le versant outillé : ce que la pile du Web
+sémantique sait établir, et à quel prix.
+
 L'invariant reste identique, et c'est ce qui rend cette section lisible : un vocabulaire partagé est
-un **contrat** ; une ontologie — spécification explicite d'une conceptualisation — est une
+un **contrat** ; une ontologie — spécification explicite d'une conceptualisation (Gruber, 1993) — est une
 **interface** qui découple les producteurs de sens des consommateurs ; et ces deux artefacts doivent
 **évoluer** sans rompre les correspondances établies.
 
@@ -316,9 +330,9 @@ pour l'intégration : **deux graphes provenant de sources hétérogènes fusionn
 leurs triplets**, sans réconciliation préalable de schémas, pourvu qu'ils partagent des
 identifiants.
 
-C'est une propriété qu'aucun format tabulaire ne possède, et elle explique la persistance de RDF
-malgré une adoption industrielle modeste : là où fusionner deux schémas relationnels exige un projet,
-fusionner deux graphes RDF exige un accord sur des identifiants.
+C'est une propriété que la fusion de deux schémas relationnels n'offre pas, et elle explique la
+persistance de RDF : là où fusionner deux schémas relationnels exige un projet, fusionner deux
+graphes RDF exige un accord sur des identifiants.
 
 Au-dessus de RDF s'échelonne une gradation de pouvoir expressif. **RDFS** introduit un vocabulaire
 léger — classes, propriétés, hiérarchies, domaines et co-domaines —, auquel **SKOS** adjoint
@@ -378,13 +392,13 @@ circonstancié lorsqu'un graphe les viole. SHACL devient ainsi le **contrat sém
 points d'échange**, transposant au graphe la discipline du contrat-d'abord. **ShEx** poursuit le même
 objectif avec une grammaire de patrons d'inspiration régulière, souvent jugée plus concise.
 
-⚠ **La distinction conceptuelle qui suit est la plus mal comprise de ce chapitre, et la plus
-coûteuse.** OWL sert l'**inférence** sous hypothèse de **monde ouvert** — déduire des faits
+⚠ **La distinction conceptuelle qui suit est celle dont la confusion se paie le plus cher.**
+OWL sert l'**inférence** sous hypothèse de **monde ouvert** — déduire des faits
 implicites ; SHACL sert la **validation** sous hypothèse de **monde clos** — constater qu'un fait
 requis manque. Confondre les deux produit des contrôles qui **ne se déclenchent jamais** : une
 contrainte exprimée en OWL sur un graphe incomplet n'est pas violée, elle est simplement non
 satisfaite, et le raisonneur conclut que le fait manquant est peut-être vrai ailleurs. Une
-organisation qui croit valider alors qu'elle infère ne s'en aperçoit qu'à l'incident.
+organisation qui croit valider alors qu'elle infère risque de ne s'en apercevoir qu'à l'incident.
 
 L'alignement de SHACL sur la révision du modèle RDF — **lui aussi en cours au gel de la source** —
 vise à contraindre aussi les assertions qualifiées, étendant la portée du contrat à la **provenance**
@@ -394,16 +408,17 @@ des données échangées, exigence récurrente de l'auditabilité (ch. 3 § 3.4)
 > même graphe demeure un sujet ouvert : un axiome OWL peut rendre satisfiable un graphe qu'une forme
 > SHACL rejette, et inversement. La spécification d'une sémantique unifiée du raisonnement et de la
 > validation, et la décidabilité des fragments combinés, restent des questions vives. ⚠ Que ces
-> questions soient « ouvertes » relève ici d'une **absence de documentation** au sens de R-14 : le
-> socle hérité ne recense aucune solution, ce qui n'établit pas qu'aucune n'existe.
+> questions soient « ouvertes » relève ici d'une **absence de documentation** au sens de R-14 du
+> Vol. III : le socle hérité ne recense aucune solution, ce qui n'établit pas qu'aucune n'existe.
 
 ### 2.3.4 Alignement ontologique et architectures de médiation
 
 L'hétérogénéité sémantique — désigner la même entité par des termes différents, ou des entités
 différentes par le même terme — est l'obstacle irréductible que ni la syntaxe ni la validation ne
 résolvent. Lorsque deux ontologies autonomes décrivent un domaine recouvrant, l'interopérabilité
-exige de **découvrir les correspondances** entre leurs concepts : c'est l'appariement d'ontologies,
-dont la production est un ensemble de relations d'équivalence, de subsomption ou de chevauchement.
+exige de **découvrir les correspondances** entre leurs concepts : c'est l'appariement d'ontologies
+(Euzenat et Shvaiko, 2013), dont la production est un ensemble de relations d'équivalence, de
+subsomption ou de chevauchement.
 Une campagne d'évaluation comparative fournit à ce champ sa référence empirique, en évaluant les
 systèmes d'appariement sur des paires d'ontologies de référence — jalon stable pour mesurer tout
 progrès, y compris celui des approches récentes (§ 2.4.1).
@@ -432,7 +447,7 @@ y coexistent. Le graphe **matérialisé** importe et fusionne effectivement les 
 de graphe ; le graphe **virtuel** les laisse dans leurs bases d'origine et expose une couche
 sémantique par-dessus. Une spécification dédiée standardise cette projection, en décrivant comment
 lignes et colonnes d'un schéma relationnel se traduisent en triplets. Cette projection est le cœur de
-l'**accès aux données fondé sur les ontologies** (OBDA), où l'ontologie sert d'interface de requête
+l'**accès aux données fondé sur les ontologies** (OBDA ; Poggi et coll., 2008), où l'ontologie sert d'interface de requête
 de haut niveau au-dessus de sources dont la complexité reste masquée — application directe du
 masquage d'information au plan sémantique.
 
@@ -450,9 +465,9 @@ temps**.
 > **Mise en œuvre.** Le choix entre les deux modèles ne se tranche pas dans l'abstrait. Un cas
 > d'usage d'intégration ouverte et de fédération inter-domaines penche vers RDF et SPARQL
 > (§ 2.3.2) ; un cas d'usage interne à forte densité de relations attribuées et à requêtes de
-> parcours penche vers un graphe de propriétés. La normalisation du langage de requête a
-> substantiellement réduit le verrouillage fournisseur qui pesait historiquement sur le second — ce
-> qui rend le critère technique, désormais, réellement décisif.
+> parcours penche vers un graphe de propriétés. La normalisation du langage de requête a réduit le
+> verrouillage fournisseur qui pesait historiquement sur le second, ce qui rend au critère technique
+> le poids que la contrainte commerciale lui disputait.
 
 ---
 
@@ -462,12 +477,16 @@ temps**.
 
 Le goulet d'étranglement historique de l'interopérabilité sémantique est le **coût humain** :
 construire une ontologie et établir les correspondances entre schémas relève d'un travail expert,
-lent et difficilement automatisable. C'est ce coût, plus qu'un défaut technique, qui explique que la
-pile du § 2.3 soit restée minoritaire malgré trente ans de maturité.
+lent et difficilement automatisable.
+
+Lecture de l'auteur — c'est ce coût, plus qu'un défaut technique, qui explique la diffusion limitée
+de la pile du § 2.3. Le socle établit le goulet d'étranglement humain ; il n'établit ni cette
+causalité, ni aucune mesure de diffusion.
 
 Les grands modèles de langage ouvrent ici une piste **exploratoire**. Des travaux évaluent la
 capacité d'un modèle à induire des éléments d'ontologie — termes, hiérarchies, relations — à partir
-de corpus, en mesurant les résultats contre des bancs d'essai établis. D'autres approches ciblent
+de corpus, en mesurant les résultats contre des bancs d'essai établis (Babaei Giglou et coll.,
+2023). D'autres approches ciblent
 l'appariement de schémas et d'ontologies proprement dit, confrontées à la référence exigeante de la
 campagne d'évaluation citée en § 2.3.4.
 
@@ -475,8 +494,7 @@ Ces résultats appellent une lecture prudente, et la prudence porte ici sur un p
 promesse est réelle : les modèles capturent une connaissance lexicale et contextuelle qui leur permet
 de proposer des correspondances qu'un appariement purement structurel manquerait. Mais la limite est
 **structurelle et non conjoncturelle** : *une correspondance générée n'est pas vérifiée*. Elle peut
-être plausible et fausse — et une correspondance plausible et fausse est très exactement ce qu'un
-appariement manuel, lent et coûteux, ne produit pas.
+être plausible et fausse, et rien dans le procédé qui l'a produite ne distingue les deux cas.
 
 La gouvernance du sens en environnement distribué impose donc de traiter la sortie du modèle comme
 une **proposition soumise à validation** — par SHACL (§ 2.3.3), par revue experte, par confrontation
@@ -486,20 +504,22 @@ d'intégration : elle n'y produira pas une panne, mais une divergence lente.
 
 ⚠ **La fiabilité des correspondances produites par modèle est un front de recherche explicitement
 ouvert.** Que le socle hérité n'en recense pas de solution éprouvée est une **absence de
-documentation** au sens de R-14, non un fait négatif vérifié.
+documentation** au sens de R-14 du Vol. III, non un fait négatif vérifié.
 
 Lecture de l'auteur — le régime à appliquer ici est celui que le Vol. III impose aux mécanismes
 cryptographiques (R-02) : qualifier un dispositif par ce que sa spécification **démontre**, jamais
 par ce qu'elle **promet**. Un appariement produit par modèle démontre une plausibilité lexicale ; il
-ne démontre pas une équivalence sémantique. L'analogie n'est pas dans le socle ; elle est proposée
-comme lecture, et elle vaut avertissement pour toute la suite du Livre, où la tentation d'attribuer à
-un agent la compétence qu'on souhaiterait qu'il ait sera constante.
+ne démontre pas une équivalence sémantique. Ce que le socle établit est la règle elle-même, et son
+domaine — les mécanismes cryptographiques ; **il n'établit pas son extension** aux correspondances
+produites par modèle, proposée ici comme lecture. Elle vaut avertissement pour toute la suite du
+Livre, où la tentation d'attribuer à un agent la compétence qu'on souhaiterait qu'il ait sera
+constante.
 
 ### 2.4.2 GraphRAG : les graphes au service de l'IA générative d'entreprise
 
 La relation entre graphes et modèles se renverse aussi : le graphe de connaissances n'est plus
 seulement une cible que le modèle aide à construire, il devient une **ressource qui discipline le
-modèle**. C'est l'objet de GraphRAG, qui adosse la génération augmentée par récupération non à un
+modèle**. C'est l'objet de GraphRAG (Edge et coll., 2024), qui adosse la génération augmentée par récupération non à un
 index vectoriel plat mais à un **graphe structuré** extrait des sources, permettant un raisonnement
 multi-sauts et une synthèse à l'échelle d'un corpus que la récupération par fragments isolés ne sait
 pas produire. Des approches apparentées cherchent à rendre cette construction plus économique pour un
@@ -529,10 +549,10 @@ Livres II et IV le réemploieront.
 ⚠ **Ce que ce chapitre ne traite pas, et où cela se trouve.** Le versant proprement **agentique** de
 la sémantique — l'écart entre accord de protocole et compréhension, la sémantique lue-par-le-modèle,
 les ontologies de capacités, les modes d'échec sémantiques propres aux échanges entre agents — n'est
-pas repris ici. Il est **consolidé au ch. 9**, où la découverte et la pile protocolaire le prennent
-pour objet. La thèse du présent chapitre en est la prémisse : les protocoles agentiques
-**présupposent** l'accord sémantique et ne le fournissent pas. C'est au ch. 9 qu'on mesure le prix de
-cette présupposition, non ici.
+pas repris ici. Cette matière est celle du **Vol. I *Monographie* §3.5** ; elle est **consolidée au
+ch. 9 § 9.4**, où la découverte et la pile protocolaire la prennent pour objet. La thèse du présent
+chapitre en est la prémisse : les protocoles agentiques **présupposent** l'accord sémantique et ne le
+fournissent pas. C'est au ch. 9 qu'on mesure le prix de cette présupposition, non ici.
 
 ---
 
@@ -550,10 +570,16 @@ d'auteur du 27 juillet 2026. Quatre conséquences :
 1. **Aucun énoncé n'est central au sens de CA-IV-01.** Les faits résolvent contre le Vol. I
    *Monographie* §1.7-1.8, en régime **[C]** ; l'élévation en [B] passe par la lecture des sources
    primaires que le Vol. I cite.
-2. **Les décomptes sont publiables depuis le 27 juillet 2026** — G-2 franchie, `PRD/decompte.sh` versionnée et éprouvée sur les trois corpus entiers.
-3. **Les renvois « ch. N » sont des renvois de plan, non de texte.** Les ch. 3, 9, 17, 37 et 43 ne
-   sont pas rédigés ; chaque renvoi résout contre l'entrée du TOC v0.23 et se re-vérifiera contre le
-   texte lorsqu'il existera.
+2. **Les décomptes sont publiables depuis le 27 juillet 2026** — G-2 franchie, `PRD/decompte.sh`
+   versionnée et éprouvée sur les trois corpus entiers.
+3. **Les renvois « ch. N » étaient, à la rédaction, des renvois de plan et non de texte** : les
+   ch. 3, 9, 17, 37 et 43 n'existaient pas, et chacun résolvait contre l'entrée du TOC v0.23.
+   ⚠ **Mise à jour du 28 juillet 2026** : **les cinquante chapitres de la somme existent en
+   brouillon**, et les renvois sortants de cette pièce ont été **re-vérifiés contre leur texte** —
+   ch. 1 § 1.1.2, § 1.1.3, § 1.1.4, § 1.2.2, § 1.4.1 et § 1.4.2 ; ch. 3 § 3.4 ; ch. 9 § 9.4 ;
+   ch. 43 ; ch. 49 § 49.6 ; ch. 17 et ch. 37, cités au chapitre et non à la section. *Un renvoi de
+   plan qui survit à la rédaction de sa cible sans revérification est le défaut que la décision 8 du
+   TOC proscrit ; il ne survit plus ici.*
 4. **Une remontée est ouverte par ce chapitre**, à l'instance d'arbitrage (D-6, non désignée) :
    **R-IV-03 — non bloquante, mais à échéance G-1.** Ce chapitre est le plus exposé du Livre I à la
    péremption : **quatre spécifications qu'il cite étaient en cours au gel de la source** (juin 2026)
@@ -569,9 +595,10 @@ d'auteur du 27 juillet 2026. Quatre conséquences :
 
 **Ce qui n'est pas enfreint.** La structure suit la table détaillée du TOC section par section
 (§ 2.1 à § 2.4, aucune section de synthèse n'étant prévue pour ce chapitre) ; la table de couverture
-est respectée, y compris la sortie de périmètre du §3.5 vers le ch. 9 ; les deux séries de garde-fous
-sont balayées et déclarées, y compris à zéro occurrence ; les trois occurrences de R-14 sont marquées
-en toutes lettres ; les constructions d'auteur portent « Lecture de l'auteur » (CA-IV-07).
+est respectée, y compris la sortie de périmètre du Vol. I *Monographie* §3.5 vers le ch. 9 ; les deux
+séries de garde-fous sont balayées et déclarées, y compris à zéro occurrence ; les trois occurrences
+de R-14 du Vol. III sont marquées en toutes lettres ; les constructions d'auteur portent « Lecture de
+l'auteur » (CA-IV-07).
 
 ---
 
@@ -591,8 +618,44 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
   elles sont toutes **confirmées et datées**, ce qui les rend opposables au lieu de simplement
   prudentes.
 
-⚠ **Ce que la clôture ne change pas.** La porte **G-3** demeure ouverte : le socle consolidé compte
-**zéro entrée**, l'Annexe B n'existe pas, et **aucun énoncé de cette pièce n'est central au sens de
-CA-IV-01**. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
-pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
-tranchée.*
+⚠ **Ce que la clôture ne changeait pas, au 27 juillet 2026.** La porte **G-3** demeurait ouverte : le
+socle consolidé comptait **zéro entrée**, l'Annexe B n'existait pas, et **aucun énoncé de cette pièce
+n'était central au sens de CA-IV-01**. La pièce restait un **brouillon non publiable**. *Zéro
+remontée ouverte ne veut pas dire pièce recevable — cela veut dire qu'aucune question n'attend plus
+de réponse qui ne soit déjà tranchée.*
+
+---
+
+### Passe de relecture — 28 juillet 2026
+
+⚠ **L'état de gouvernance décrit ci-dessus a bougé ; la conclusion qu'il portait, non.** Cette
+sous-section est hors plan comme celles qui la précèdent, et se retire avec elles.
+
+- ☑ **G-3 est franchie** le 28 juillet 2026 ([PRD](../PRD/PRD.md) v0.14, jalon J-IV-2 atteint) :
+  l'Annexe B existe — [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées** —, deux
+  tables de correspondance sont publiées, les **123 entrées à sensibilité temporelle** ont été
+  portées à leur source primaire (**91 inchangées, 10 changées, 22 non établies**), et
+  `check-compendium.py` est validé par mutation. **Trois portes sur sept sont franchies.**
+- ☐ **Rien de cela ne rend cette pièce recevable, et son motif a changé sans que sa portée bouge.**
+  Le socle existe, mais **aucune de ses entrées ne couvre le Vol. I *Monographie* §1.7-1.8**
+  (balayage du domaine entier, champ *Socle mobilisé*) : les énoncés de ce chapitre résolvent
+  toujours hors socle, en régime **[C]**, et **aucun n'est central au sens de CA-IV-01**. *Le socle a
+  cessé d'être vide sans commencer à couvrir cette matière.*
+- ☐ **Deux obligations restent dues, qu'aucune passe de relecture ne peut payer** : **aucun vote
+  adversarial n'a été conduit** — le PRD §7.2 le réserve aux affirmations qui portent seules la thèse
+  d'un chapitre, et il reste dû pour toute entrée appelée à porter un fait central — et **CA-IV-11 et
+  CA-IV-13 demeurent insatisfaisables**, faute d'un relecteur distinct du rédacteur (**D-6**).
+  *Arbitrer n'est pas relire, et relire n'est pas être un tiers.*
+
+**Une remontée est ouverte par cette passe**, sans identifiant : l'allocation des `R-IV-NN` relève du
+[PRD](../PRD/PRD.md) §13 et d'une passe d'arbitrage, et *numéroter dans une série partagée pendant
+qu'une autre passe y puise est exactement la collision du 27 juillet 2026*.
+
+- **Réactiver le contrôle S5 du siège du verrou sémantique** (`PRD/check-sieges.py`, entrée
+  « ch. 49 § 49.6 »). Le contrôle est **désactivé** (`renvoi: None`) au motif mesuré, le 28 juillet
+  2026, que le siège nommait le ch. 2 en premier parmi ses consommateurs alors que **le ch. 2 ne
+  citait le ch. 49 nulle part**. ☑ **Le § 2.3 porte désormais ce renvoi** ; la condition que le
+  script inscrit en commentaire — *aligner le ch. 2, puis remplacer `None` par le motif de renvoi* —
+  est **levée pour son premier terme**. ⚠ **Le second reste dû** : le ch. 43, second consommateur
+  déclaré, n'emploie pas « verrou », et **une pièce ne modifie pas l'appareil** — *un rédacteur ne
+  corrige pas le contrôle qu'il vient de satisfaire.*

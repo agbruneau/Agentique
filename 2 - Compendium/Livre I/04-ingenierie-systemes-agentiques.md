@@ -5,13 +5,13 @@ Premier mouvement — les fondements (ch. 1-6).*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes G-1, G-2 et G-3 du [PRD](../PRD/PRD.md) §5. Premier chapitre du Livre I dont la matière est **proprement agentique** : les ch. 1 à 3 posaient le socle pré-agentique ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes G-1, G-2 et G-3 du [PRD](../PRD/PRD.md) §5. Premier chapitre du Livre I dont la matière est **proprement agentique** : les ch. 1 à 3 posaient le socle pré-agentique. ⚠ **Mises à jour des 27 et 28 juillet 2026, postérieures à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis** (PRD v0.8), les **remontées de cette pièce sont closes**, et **G-3 est franchie depuis le 28 juillet 2026** (PRD v0.14) — le socle consolidé existe, à **159 entrées `S-001`…`S-159`** ([Annexe B](../PRD/socle-consolide.md) v1.2). ⚠ **La pièce n'en devient pas recevable** : aucune de ces entrées ne couvre son périmètre de fusion (champ *Socle mobilisé*), **aucun de ses énoncés n'est central au sens de CA-IV-01**, et **CA-IV-11 et CA-IV-13 demeurent insatisfaites**, D-6 ne fournissant pas de relecteur distinct du rédacteur. Elle reste un **brouillon non publiable** |
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Matière condensée au gel de sa source — **juin 2026** (Vol. I). ⚠ **C'est le chapitre du Livre I dont la matière se périme le plus vite** : la nomenclature des modèles de raisonnement, les jalons de version des cadriciels et la frontière des capacités sont datés par construction, et la source elle-même écrit que cette nomenclature « évolue vite et doit être revérifiée à toute publication » |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (Annexe B non constituée, porte G-3 ouverte). Les énoncés résolvent contre le **Vol. I *Monographie* §2.1-2.5 et §2.8.5**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | **Les deux séries, intégralement.** ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **R-1 à R-8 : zéro occurrence** (aucune matière réglementaire canadienne, aucun énoncé sur E-23 ni le RTR) ; ⚠ **une version antérieure de cet en-tête portait « R-8 : une occurrence, § 4.1.4 »** : le corps n'y porte **aucun marqueur R-8**, et l'emploi d'« autonomie graduée » relève de **R-13 du Vol. III** — série que la sous-entrée 4.1.4 du TOC est seule à désigner. *Une occurrence attribuée à un identifiant qui ne l'écrit nulle part est une extension d'identifiant, non un balayage* ; **métriques auto-déclarées (PRD Vol. II §7.5) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au § 4.0.1**, la métrique attribuée à sa source ; ⚠ **réserve F-01 (MCP « cadre » d'autorisation, jamais « sécurisé ») : sans objet ici** — l'anatomie protocolaire part au ch. 8, et ce chapitre s'arrête à l'usage d'outils au niveau ingénierie. Vol. III — **R-13 (« autonomie graduée » jamais nue) : une occurrence**, § 4.1.4, avec l'échelle nommée ; **R-14 : deux occurrences**, § 4.1.1 et § 4.3.3. R-01 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 9 000 mots de corps (§ 4.0 à § 4.5). Enveloppe **dérivée, non prescrite**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 7 145 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−20,6 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 750 mots, soit −0,4 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Socle mobilisé** | **Aucune entrée du socle consolidé** — non plus faute d'annexe, l'[Annexe B](../PRD/socle-consolide.md) existant depuis le 28 juillet 2026, mais **faute de couverture** : ses **dix-sept entrées portant le Vol. I** (`S-143`…`S-159`) proviennent des §3.10, §5.0.2-5.1.1, §7.x et §2.10.2 de sa *Monographie*, et **aucune ne relève des §2.1-2.5 ni du §2.8.5**, qui sont le périmètre de fusion de ce chapitre. Les énoncés résolvent donc contre le **Vol. I *Monographie* §2.1-2.5 et §2.8.5** eux-mêmes, en régime **[C]** (PRD §7.1). ⚠ **Une entrée touche la matière du § 4.1.4 sans pouvoir l'appuyer** : `S-157`, qui recense les trois échelles d'autonomie du Vol. I, est **déclarée non élevable** — construction d'auteur, « thèse à attribuer, jamais un fait » — et son calibrage de R-13 est **non rejouable**, les désignations de l'échelle 0-5 vivant dans un fichier retiré du dépôt le 22 juillet 2026. **Aucun énoncé n'est central au sens de CA-IV-01** — les dix-sept entrées du Vol. I sont au demeurant toutes `[C]` |
+| **Garde-fous balayés** | **Les deux séries, intégralement.** ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **R-1 à R-8 : zéro occurrence** (aucune matière réglementaire canadienne, aucun énoncé sur E-23 ni le RTR) ; ⚠ **une version antérieure de cet en-tête portait « R-8 : une occurrence, § 4.1.4 »** : le corps n'y porte **aucun marqueur R-8**, et l'emploi d'« autonomie graduée » relève de **R-13 du Vol. III** — série que la sous-entrée 4.1.4 du TOC est seule à désigner. *Une occurrence attribuée à un identifiant qui ne l'écrit nulle part est une extension d'identifiant, non un balayage* ; **métriques auto-déclarées (PRD Vol. II §7.5) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au § 4.0.1**, la métrique attribuée à sa source ; ⚠ **réserve F-01 du Vol. II (MCP « cadre » d'autorisation, jamais « sécurisé ») : sans objet ici** — l'anatomie protocolaire part au ch. 8, et ce chapitre s'arrête à l'usage d'outils au niveau ingénierie. Vol. III — **R-13 (« autonomie graduée » jamais nue) : une occurrence**, § 4.1.4, avec l'échelle nommée ; **R-14 : deux occurrences**, § 4.1.1 et § 4.3.3. R-01 à R-12 : **zéro occurrence** |
+| **Volumétrie cible** | ≈ 9 000 mots de corps (§ 4.0 à § 4.5). Enveloppe **dérivée, non prescrite**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 7 224 mots** de corps, re-mesurés le 28 juillet 2026 par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−19,7 %** de la cible (7 145 mots et −20,6 % à la rédaction ; la relecture du 28 juillet a ajouté 79 mots d'attribution et de bornage). ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre était de 64 750 mots au 27 juillet 2026, soit −0,4 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. ⚠ **Ce cardinal de Livre n'est PAS re-mesuré ici** — les onze pièces sont relues en parallèle, et *un agrégat mesuré pendant que ses termes bougent est faux à la seconde où on le publie* : il se re-mesure au commit de la passe (décision 16). *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 4)* — l'agent est un LLM augmenté d'une boucle perception-raisonnement-action-observation ; son ingénierie est une discipline distincte du prompt, gouvernée par des régimes de contrôle et des niveaux d'autonomie.
+> **Thèse** *(citée verbatim depuis le [`TOC.md`](../PRD/TOC.md), entrée du chapitre 4 — forme de la v0.23, re-collationnée mot à mot contre la v0.30 le 28 juillet 2026 : **inchangée**)* — l'agent est un LLM augmenté d'une boucle perception-raisonnement-action-observation ; son ingénierie est une discipline distincte du prompt, gouvernée par des régimes de contrôle et des niveaux d'autonomie.
 
 ---
 
@@ -44,8 +44,9 @@ le rayon d'impact s'élargit*. Une hallucination dans une réponse textuelle se 
 une hallucination qui déclenche une **action irréversible** engage le système producteur. Ce n'est
 pas un raffinement de l'usage conversationnel, c'est un changement de nature.
 
-Les capacités de pilotage d'interface graphique, ouvertes en bêta publique fin 2024 puis formalisées
-début 2025, illustrent cet élargissement : l'agent ne manipule plus des API choisies, mais
+Les capacités de pilotage d'interface graphique, ouvertes en bêta publique en **octobre 2024** puis
+reprises en **janvier 2025** par un second fournisseur sous la forme d'un agent utilisateur
+d'ordinateur, illustrent cet élargissement : l'agent ne manipule plus des API choisies, mais
 l'interface graphique générale, **démultipliant à la fois la portée et la surface d'exposition**.
 
 Trois contraintes transversales structurent l'ingénierie qui suit, et elles sont posées ici une fois
@@ -107,8 +108,8 @@ pas un » conditionne les choix d'architecture, de coût et de sécurité. Que c
 persiste relève d'un constat sur le corpus consulté — une **absence de documentation** au sens de
 R-14 du Vol. III, non un fait négatif vérifié.
 
-La définition canonique provient du manuel de référence du domaine : un agent est tout ce qui peut
-être vu comme **percevant** son environnement au moyen de capteurs et **agissant** sur cet
+La définition canonique est celle de **Russell et Norvig (2020/2021)** : un agent est tout ce qui
+peut être vu comme **percevant** son environnement au moyen de capteurs et **agissant** sur cet
 environnement au moyen d'effecteurs. Volontairement minimale, elle fixe le vocabulaire réutilisé
 partout — *perception*, *action*, et au-dessus le *but* qui rend une action préférable à une autre —
 et institue surtout la **boucle perception-action** comme structure invariante.
@@ -141,8 +142,9 @@ systèmes coordonnés le ch. 6.
 
 ### 4.1.2 Le cadre de l'agent rationnel : PEAS et typologies
 
-Le cadre de l'agent rationnel offre une grille de conception **toujours pertinente pour spécifier un
-agent avant d'en écrire la moindre ligne**. Trois outils s'en dégagent.
+Le cadre de l'agent rationnel hérité de **Russell et Norvig (2020/2021)**, que la somme reprend tel
+quel, offre une grille de conception **toujours pertinente pour spécifier un agent avant d'en écrire
+la moindre ligne**. Trois outils s'en dégagent.
 
 La spécification **PEAS** — performance, environnement, actionneurs, capteurs — force l'ingénieur à
 expliciter quatre choses : la mesure de performance qui définit le succès, l'environnement où l'agent
@@ -217,17 +219,19 @@ prévisible et économe ; un agent autonome ne l'est pas), la **testabilité** (
 teste, une délibération émergente s'évalue statistiquement) et la **sécurité** (déléguer le contrôle
 au modèle élargit la surface d'injection d'invite, irréductible au niveau du modèle).
 
-Au-delà du couple binaire, il est utile de penser la délégation comme un **continuum d'autonomie, des
-niveaux 0 à 5** — du simple outil sous contrôle humain total jusqu'à l'agent pleinement autonome —
-par analogie avec les échelles d'autonomie de conduite.
+Au-delà du couple binaire, il est utile de penser la délégation comme un **continuum d'autonomie à
+six niveaux, numérotés de 0 à 5** — du simple outil sous contrôle humain total jusqu'à l'agent
+pleinement autonome — par analogie avec les échelles d'autonomie de conduite.
 
 ⚠ **Précision imposée par le garde-fou R-13 du Vol. III, et le TOC la signale sous l'entrée de ce
-chapitre.** Le Vol. I porte **trois échelles distinctes** dont la confusion serait fautive. Celle qui
-vient d'être posée est le **continuum d'autonomie 0-5** de son ch. 2. Écrire « l'autonomie graduée du
+chapitre.** Le Vol. I porte **trois échelles distinctes** dont la confusion serait fautive, et
+**seuls leur cardinal et leur numérotation les discriminent** — deux d'entre elles comptent quatre
+niveaux, de sorte que la numérotation n'est pas facultative. Celle qui vient d'être posée est le
+**continuum à six niveaux, 0 à 5**, du Vol. I *Monographie* §2.2.4. Écrire « l'autonomie graduée du
 Vol. I » sans préciser **laquelle** rendrait le renvoi indécidable — et le terme « autonomie
 graduée » ne s'emploie jamais nu, ni ici ni ailleurs dans la somme. Le patron directeur *autonomie
-graduée sous contrôle de finalité*, posé à l'avant-propos, est un **troisième objet encore** : il
-n'est pas une échelle mais un principe d'architecture, et le Livre III l'instruit.
+graduée sous contrôle de finalité*, posé à l'avant-propos de la somme, **n'entre pas dans ce compte
+de trois** : il n'est pas une échelle mais un principe d'architecture, et le Livre III l'instruit.
 
 Le principe d'ingénierie qui se dégage de ce continuum est constant et sera repris par toute la
 somme : **minimiser la surface agentique**. Ne déléguer au modèle que ce qui requiert réellement sa
@@ -241,7 +245,7 @@ un **contrat clair entre la partie figée et la partie autonome** du système.
 > justifie que lorsque la séquence d'actions **ne peut être anticipée**. Cet arbitrage est le cœur de
 > la grille de décision « quand agentifier » que le ch. 43 reprend.
 
-### 4.1.5 La frontière des capacités : cadrage qualitatif
+### 4.1.5 La frontière des capacités 2024-2026 : cadrage qualitatif
 
 Pour motiver l'effort d'ingénierie qui suit, il faut situer **qualitativement** ce que les agents
 savent et ne savent pas faire — sans anticiper la mécanique (§ 4.4), ni les chiffres de bancs
@@ -338,9 +342,9 @@ de raisonnement verbalisé et une action dont le résultat est réinjecté avant
 guide le choix de l'action et l'action **ancre le raisonnement dans des faits observés**, ce qui
 réduit les hallucinations par rapport à une chaîne de pensée close sur elle-même.
 
-Sa simplicité explique son adoption comme boucle par défaut, mais elle a un coût précis. Chaque pas
-implique un appel au modèle **sur l'intégralité du contexte accumulé** : le coût croît avec la
-longueur de la trajectoire. Sur les trajectoires longues, ce patron **dérive** — accumulation
+Sa simplicité explique son adoption comme boucle par défaut, mais cette adoption a un coût précis.
+Chaque pas implique un appel au modèle **sur l'intégralité du contexte accumulé** : le coût croît
+avec la longueur de la trajectoire. Sur les trajectoires longues, ce patron **dérive** — accumulation
 d'erreurs non corrigées, boucles répétitives, perte du but initial à mesure que le contexte se dilue.
 Il sert donc d'excellent point de départ et de référence de comparaison, mais demande des garde-fous
 — budget de pas, détection de stagnation, compaction du contexte — dès que l'horizon dépasse quelques
@@ -351,8 +355,9 @@ plusieurs étapes, puis l'exécuter pas à pas, avec replanification lorsqu'une 
 trajectoire devient plus prédictible et offre un point de reprise net, **au prix d'une rigidité
 accrue**. Une variante pousse le découplage plus loin en planifiant l'ensemble des appels d'outils
 **avant** d'observer leurs résultats, ce qui regroupe le raisonnement en un seul passage et permet de
-paralléliser les appels indépendants — gain d'économie de jetons, **perte de réactivité** : un plan
-établi sans observation ne peut corriger sa route si une hypothèse initiale s'avère fausse.
+paralléliser les appels indépendants — économie de jetons d'un côté, **perte de réactivité** de
+l'autre : un plan établi sans observation ne peut corriger sa route si une hypothèse initiale
+s'avère fausse.
 
 **L'auto-critique** ajoute à la boucle un mécanisme de réflexion : après un échec, l'agent génère une
 critique verbale de ce qui n'a pas fonctionné, l'écrit en mémoire, et réessaie en conditionnant sa
@@ -375,7 +380,7 @@ qu'à un catalogue figé. **La contrepartie est une surface de risque maximale**
 généré par un modèle exige un environnement confiné, faute de quoi l'agent dispose d'une capacité
 d'action quasi illimitée sur le système hôte.
 
-### 4.2.4 Séparation contrôleur/exécuteur et critères de choix
+### 4.2.4 Séparation contrôleur/exécuteur et critères de choix d'architecture
 
 Le principe d'ingénierie qui sous-tend ces patrons est la séparation entre un **contrôleur** qui
 décide quoi faire et un **exécuteur** qui réalise les actions — déclinée en architecture
@@ -495,8 +500,8 @@ garantie.
 ⚠ **Pour le praticien, cette limite est structurelle et non un défaut d'invite** : aucune formulation
 ne confère à un modèle autorégressif les propriétés de complétude d'un planificateur symbolique. Que
 les progrès des modèles de raisonnement ne comblent pas cet écart relève, en revanche, d'une
-**absence de documentation** au sens de R-14 : le socle hérité constate des progrès mesurables sans
-établir de borne.
+**absence de documentation** au sens de R-14 du Vol. III : le socle hérité constate des progrès
+mesurables sans établir de borne.
 
 La voie productive consiste à employer le modèle **non comme planificateur mais comme traducteur et
 générateur d'heuristiques**. Dans ce rôle, il convertit un énoncé en langage naturel vers une
@@ -507,7 +512,7 @@ plans certifiés sont exécutés.
 
 L'enjeu se déplace alors vers la **qualité de la formalisation** — un schéma de domaine erroné
 produit un plan valide **pour le mauvais problème**. C'est un déplacement du risque, non sa
-suppression : exactement le geste que le ch. 1 identifiait dans toutes les architectures
+suppression : exactement le geste que le ch. 1 identifiait déjà dans les architectures
 d'intégration.
 
 ### 4.3.4 Modèles de raisonnement et calcul au moment du test
@@ -695,10 +700,11 @@ décision de robustesse — et c'est au ch. 19 que ce vecteur est instruit.
 Un agent qui appelle des outils en production **échoue d'abord par les outils** : interface
 indisponible, délai dépassé, réponse mal formée, quota épuisé.
 
-La robustesse repose sur des mécanismes empruntés à l'ingénierie des systèmes distribués, déjà posés
-au ch. 1 § 1.3.3 : réessais avec temporisation exponentielle, disjoncteurs, et surtout des **budgets
-d'appels** bornant le nombre d'itérations et le coût — faute de quoi une boucle peut diverger en
-consommant des jetons sans converger.
+La robustesse repose sur des mécanismes empruntés à l'ingénierie des systèmes distribués — le
+**disjoncteur** et le **cloisonnement** sont posés au ch. 1 § 1.3.3 —, auxquels s'ajoutent les
+réessais avec temporisation exponentielle et surtout des **budgets d'appels** bornant le nombre
+d'itérations et le coût, faute de quoi une boucle peut diverger en consommant des jetons sans
+converger.
 
 ⚠ **La gestion d'erreurs doit être pensée comme un signal pour le modèle**, et c'est une inversion
 par rapport à l'ingénierie classique. Un message d'erreur **structuré et actionnable** permet à
@@ -727,9 +733,9 @@ aux deux bouts** — vaut pour toute la somme.*
 Le modèle qui anime chaque agent est une **variable d'ingénierie, non une donnée fixe**. Trois
 arbitrages le structurent.
 
-**Frontière contre petits modèles agentiques.** Une proposition défendue soutient que des modèles de
-petite taille, **spécialisés et économiques**, suffisent à la majorité des sous-tâches répétitives
-d'un système agentique, et permettent une exécution locale ou en périphérie. Un orchestrateur peut
+**Frontière contre petits modèles agentiques.** Une proposition défendue **en 2025** soutient que
+des modèles de petite taille, **spécialisés et économiques**, suffisent à la majorité des sous-tâches
+répétitives d'un système agentique, et permettent une exécution locale ou en périphérie. Un orchestrateur peut
 alors **router dynamiquement** : un grand modèle de raisonnement pour la planification, un petit
 modèle rapide pour les appels d'outils routiniers. Ce routage multi-modèles est l'expression, au
 niveau du service, du fil transversal posé en § 4.0.1.
@@ -762,13 +768,22 @@ gouvernance sous lequel ce chapitre a été rédigé, conformément à la règle
 [PRD](../PRD/PRD.md) Annexe A : *un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il
 remonte.*
 
-**Ce qui est enfreint** — les portes **G-1**, **G-2** et **G-3** sont ouvertes. Rédaction sur
-instruction d'auteur du 27 juillet 2026. Conséquences :
+**Ce qui était enfreint à la rédaction** — les portes **G-1**, **G-2** et **G-3** étaient ouvertes.
+Rédaction sur instruction d'auteur du 27 juillet 2026. ⚠ **Les trois sont franchies depuis** — G-2 et
+le volet Livre I de G-1 le 27 juillet 2026, **G-3 le 28 juillet 2026** —, et *une porte franchie
+après coup ne rattrape pas l'infraction : elle en solde les conséquences une à une.* État au
+28 juillet 2026 :
 
-1. **Aucun énoncé n'est central au sens de CA-IV-01** — régime **[C]** hérité du Vol. I.
+1. **Aucun énoncé n'est central au sens de CA-IV-01** — régime **[C]** hérité du Vol. I, et
+   inchangé par le franchissement de G-3 : le socle consolidé ne couvre pas le périmètre de fusion
+   de ce chapitre, et ses dix-sept entrées portant le Vol. I sont toutes `[C]`.
 2. **Les décomptes sont publiables depuis le 27 juillet 2026** — G-2 franchie, `PRD/decompte.sh` versionnée et éprouvée sur les trois corpus entiers.
-3. **Les renvois « ch. N » sont des renvois de plan, non de texte** — ch. 5, 6, 8, 19, 22, 25-31, 43
-   non rédigés.
+3. **Les renvois « ch. N » sont désormais des renvois de texte** — les cinquante chapitres existent
+   en brouillon, et les renvois de cette pièce ont été re-vérifiés contre eux le 28 juillet 2026.
+   ⚠ *Ils résolvent contre des brouillons hors portes, non contre des chapitres recevables.*
+4. ⚠ **CA-IV-11 et CA-IV-13 demeurent insatisfaites** : elles exigent un relecteur distinct du
+   rédacteur, que **D-6** ne fournit pas. *Une lacune de socle se comble par une source ; celle-ci ne
+   se comble que par une seconde personne.*
 
 **Remontée ouverte par ce chapitre**, à l'instance d'arbitrage (D-6, non désignée) :
 
@@ -781,12 +796,34 @@ instruction d'auteur du 27 juillet 2026. Conséquences :
   révision G-1 : une somme qui nommerait les modèles de 2026 serait périmée avant sa publication.
 
 **Ce qui n'est pas enfreint.** La structure suit la table détaillée du TOC section par section
-(§ 4.0 à § 4.5), y compris le refonte du §2.1.3 source en apparat de navigation plutôt qu'en section
+(§ 4.0 à § 4.5), y compris la refonte du §2.1.3 source en apparat de navigation plutôt qu'en section
 propre ; la table de couverture est respectée, dont la sortie de périmètre du §2.5.4 vers le ch. 8 et
 l'**arrivée** du §2.8.5 en § 4.5, déclarée ici comme elle l'est au ch. 6 ; les deux séries de
-garde-fous sont balayées et déclarées, avec l'occurrence de R-13 marquée et son échelle nommée, et la
-métrique auto-déclarée du § 4.0.1 attribuée à sa source ; les constructions d'auteur portent
-« Lecture de l'auteur » (CA-IV-07).
+garde-fous sont balayées et déclarées, avec l'occurrence de R-13 marquée et son échelle nommée par
+son cardinal **et** sa numérotation, et la métrique auto-déclarée du § 4.0.1 attribuée à sa source ;
+les constructions d'auteur portent « Lecture de l'auteur » (CA-IV-07).
+
+⚠ **Écart de régime signalé le 28 juillet 2026, partiellement corrigé — la décision 15 du TOC
+(v0.29) borne la parade que R-IV-06 avait validée pour ce chapitre.** La parade demeure acquise pour
+les **dénominations commerciales et les numéros de version** — c'est exactement ce que R-IV-06
+couvrait, et le chapitre continue de décrire *le phénomène* plutôt que la liste des modèles qui
+l'instancient. Mais la décision pose que **l'attribution ne s'anonymise jamais**, à trois titres,
+dont *l'auteur et la date d'un instrument repris*. **Trois points sont corrigés ici** : la définition
+canonique et la grille PEAS, que la somme reprend telles quelles, portent désormais leur auteur et
+leur date (§ 4.1.1, § 4.1.2) ; les deux dates du pilotage d'interface graphique sont rendues au jour
+près (§ 4.0.1). ☐ **Ce qui n'est pas corrigé, et pourquoi.** Les patrons de boucle, les techniques de
+raisonnement structuré, les bancs de planification et les travaux d'entraînement restent décrits
+**sans nom ni attribution** (§ 4.2.2 à § 4.3.5, § 4.4.1) — **y compris dans les intitulés de
+sous-section**, que la table détaillée du TOC nomme et que ce chapitre abrège en conséquence
+(4.2.2, 4.2.3, 4.3.3, 4.3.4, 4.4.3, et « modèle » pour « LLM » aux 4.0.1 et 4.2.1). ⚠ *Les intitulés
+de section proprement dits — § 4.0 à § 4.5 — suivent le plan sans écart* (décision 15c). *Ce n'est
+pas un oubli mais une abstention motivée* : la décision 15 déclare expressément qu'elle **n'ordonne
+pas de re-nommer le corpus** et que les pièces se corrigent « là où l'un des trois interdits est
+atteint, jamais partout » — or **aucune de ces références n'est nommée nulle part dans les cinquante
+chapitres**, et les rendre à ce seul chapitre y produirait l'inhomogénéité même que la décision prend
+pour objet. **Remontée à l'instance d'arbitrage** (D-6), identifiant à allouer par la passe qui
+l'instruira : *ces instruments sont-ils « repris » au sens de la décision 15b(ii), ou seulement
+décrits ?* La réponse vaut pour tout le corpus et **ne se tranche pas depuis une pièce**.
 
 ---
 
@@ -805,8 +842,11 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
   modèles de 2026 serait périmée avant sa publication.* La nomenclature reste à revérifier à toute
   publication, comme la source elle-même le prescrit.
 
-⚠ **Ce que la clôture ne change pas.** La porte **G-3** demeure ouverte : le socle consolidé compte
-**zéro entrée**, l'Annexe B n'existe pas, et **aucun énoncé de cette pièce n'est central au sens de
-CA-IV-01**. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
-pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
-tranchée.*
+⚠ **Ce que le franchissement de G-3 ne change pas, re-mesuré le 28 juillet 2026.** L'Annexe B existe
+désormais et compte **159 entrées**, mais **aucune ne couvre les §2.1-2.5 ni le §2.8.5 du Vol. I**,
+d'où procède ce chapitre : **aucun de ses énoncés n'est central au sens de CA-IV-01**, et le régime
+**[C]** est inchangé. **CA-IV-11 et CA-IV-13 restent insatisfaites**, D-6 ne fournissant pas de
+relecteur tiers. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas
+dire pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
+tranchée.* ⚠ *Et un socle qui existe sans couvrir sa pièce n'est pas un socle qui l'appuie : la porte
+est franchie pour le volume, pas pour ce chapitre.*

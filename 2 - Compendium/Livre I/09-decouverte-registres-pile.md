@@ -5,19 +5,19 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11).*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigée le 27 juillet 2026 sur instruction d'auteur, **portes G-1, G-2 et G-3 alors ouvertes**. ⚠ **Mise à jour du 28 juillet 2026** : **G-2, le volet Livre I de G-1 et désormais G-3 sont franchies** — le socle consolidé existe ([`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées** `S-001`…`S-159` ; PRD v0.14) —, et les **remontées de cette pièce sont closes**. ⚠ **Le franchissement de G-3 ne rend pas cette pièce recevable, et c'est le point à ne pas lire trop vite** : *ses énoncés n'ont pas été ré-adossés au socle consolidé*, la résolution demeure celle du champ ci-dessous, en régime **[C]**, **aucun énoncé n'est central au sens de CA-IV-01**, et **CA-IV-13 reste insatisfaite** faute de relecteur distinct du rédacteur. *Une porte franchie n'est pas une pièce recevable ; c'est une condition qui cesse de manquer.* |
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Gel de source : **juin 2026** (Vol. I). ⚠ La **matrice de maturité** du § 9.2.5 est un **livrable daté** : son intérêt tient à ce qu'elle situe chaque protocole à une date, et elle **se périme en bloc** — c'est un instantané, non un classement durable |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. I *Monographie* §3.4, §3.5, §3.7-3.8 et §3.12**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **R-1 : une occurrence**, § 9.2.1 ; **R-8 : une occurrence**, § 9.2.1, le sigle toujours qualifié à ses emplois, le siège de l'encadré restant au **ch. 7 § 7.5** ; **réserve F-01 : une occurrence**, § 9.5.2 ; **métriques auto-déclarées (PRD Vol. II §8.2.1) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au seul § 9.2.5**, la métrique attribuée à sa source. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 : deux occurrences**, § 9.1.5 et § 9.4.4 ; **R-13 : une occurrence**, § 9.2.1, même que R-8 ; **R-14 : quatre occurrences** — § 9.1.1, § 9.3.4, § 9.4.4 et § 9.5.3 — ; ⚠ *la mention « le chapitre du Livre le plus dense en énoncés d'absence », que cet en-tête portait auparavant, est retirée : les ch. 10 et 11 en portent **sept** chacun* ; ⚠ *le § 9.6, que cet en-tête portait auparavant, est la note de statut : hors domaine de comptage*. R-01, R-03 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 9 000 mots de corps (§ 9.1 à § 9.5). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 530 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−38,6 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 750 mots, soit −0,4 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Socle mobilisé** | **Aucune entrée du socle consolidé** — ⚠ *non plus parce qu'il n'existe pas, mais parce qu'aucune de ses entrées ne couvre le périmètre de cette pièce* : balayage exhaustif des **dix-sept entrées héritées du Vol. I** (`S-143`…`S-159`, socle v1.2, 28 juillet 2026), **zéro** ne porte les §3.4, §3.5, §3.7-3.8 ni §3.12. Résolution contre le **Vol. I *Monographie* §3.4, §3.5, §3.7-3.8 et §3.12**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01** |
+| **Garde-fous balayés** | ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **R-1 : une occurrence**, § 9.2.1 ; **R-8 : une occurrence**, § 9.2.1, le sigle toujours qualifié à ses emplois, le siège de l'encadré restant au **ch. 7 § 7.5** ; **réserve F-01 : une occurrence**, § 9.5.2 ; **métriques auto-déclarées (PRD Vol. II §8.2, règle 1) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au seul § 9.2.5**, la métrique attribuée à sa source. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 : deux occurrences**, § 9.1.5 et § 9.4.4 ; **R-13 : une occurrence**, § 9.2.1, même que R-8 ; **R-14 : quatre occurrences** — § 9.1.1, § 9.3.4, § 9.4.4 et § 9.5.3 — ; ⚠ *la mention « le chapitre du Livre le plus dense en énoncés d'absence », que cet en-tête portait auparavant, est retirée : d'autres pièces du Livre en portent davantage, et **un cardinal mesuré sur le corps d'une AUTRE pièce n'est pas re-mesurable au commit de celle-ci*** ; ⚠ *le § 9.6, que cet en-tête portait auparavant, est la note de statut : hors domaine de comptage*. R-01, R-03 à R-12 : **zéro occurrence** |
+| **Volumétrie cible** | ≈ 9 000 mots de corps (§ 9.1 à § 9.5). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 698 mots** de corps, **re-mesurés le 28 juillet 2026** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−36,7 %** de la cible. Le chiffre a bougé de **+168 mots** à la passe de relecture du 28 juillet 2026 — attributions rétablies, renvois corrigés, déviation d'intitulés déclarée ; *un cardinal se re-mesure après tout ajout, il ne se recopie pas.* ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. *C'est la cible dérivée qui était fausse, non la pièce qui est courte ; un écart se documente, il ne se corrige ni par amputation ni par gonflement.* ⚠ **Le total du Livre n'est PAS repris ici, et l'abstention est le geste juste** : *une passe qui court en parallèle sur les dix autres pièces ne peut pas en mesurer la somme* — il valait **64 750 mots** au 28 juillet 2026 et **se re-mesure au terme des passes**, au [`README.md` du Livre](README.md) |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 9)* — la découverte et le nommage des agents, et la portabilité inter-modèles/inter-cadriciels, sont les propriétés que l'étagement de la pile protocolaire rend possibles — ou trahit.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 9 — **forme inchangée au TOC v0.30**, re-collationnée mot à mot le 28 juillet 2026 ; décisions 14 et 17)* — la découverte et le nommage des agents, et la portabilité inter-modèles/inter-cadriciels, sont les propriétés que l'étagement de la pile protocolaire rend possibles — ou trahit.
 
 ---
 
 ## § 9.1 — Découverte, registres et nommage des agents et des outils
 
-> **Versant protocolaire seul.** ⚠ Le §3.4 de la source est **partagé déclaré** avec le **ch. 15**
+> **Versant protocolaire seul.** ⚠ Le **Vol. I *Monographie* §3.4** est **partagé déclaré** avec le **ch. 15**
 > (Livre II), qui en prend le **versant identité et conformité** — les registres *gouvernés*. Ce qui
 > suit est un **pont, pas une reprise** : le ch. 15 ne reconstruira pas ce chapitre, et ce chapitre
 > ne préempte pas le sien.
@@ -36,31 +36,32 @@ reformule l'invariant du Livre à l'échelle d'un **réseau ouvert d'acteurs aut
 
 ### 9.1.1 La leçon d'UDDI : une récurrence en trois temps
 
-L'écosystème agentique **rejoue un cycle déjà observé**, et le ch. 1 § 1.3.1 en avait posé le premier
-temps.
+L'écosystème agentique **rejoue un cycle déjà observé**, et le ch. 1 § 1.3.1 en avait posé le
+**premier temps**.
 
-Au début des années 2000, l'architecture des services web reposait sur une trinité où un langage
-décrivait les interfaces et où un **annuaire universel et public** ambitionnait de recenser les
-services. ⚠ **Cet annuaire a échoué relativement**, et le diagnostic est précis : trop ambitieux dans
-sa portée mondiale, il supposait une découverte **au temps de conception** — un développeur consulte
-le registre, choisit un service, code l'intégration — là où le besoin réel d'appariement **à
-l'exécution** restait marginal. Les grands annuaires publics ont fermé.
+Au début des années 2000, l'architecture des services web reposait sur trois piliers que le
+ch. 1 § 1.3.1 nomme un à un : une enveloppe de messagerie, un langage de description d'interfaces, et
+un **annuaire universel et public** — l'**UDDI** — chargé de recenser les services. ⚠ **Cet annuaire
+a échoué relativement**, et le diagnostic est précis : trop ambitieux dans sa portée mondiale, il
+supposait une découverte **au temps de conception** — un développeur consulte le registre, choisit un
+service, code l'intégration — là où le besoin réel d'appariement **à l'exécution** restait marginal.
+Les grands annuaires publics ont fermé.
 
 **La leçon n'est pas que les registres sont inutiles**, et c'est le contresens le plus fréquent. Elle
-est que **la curation et la fédération l'emportent sur le tout-dynamique et la centralisation**. Le
-pendule est revenu, par les registres d'API d'entreprise, vers des catalogues **gouvernés et de
-portée maîtrisée**.
+est que **la curation et la fédération l'emportent sur le tout-dynamique et la centralisation**.
+**Deuxième temps** : le pendule est revenu, par les registres d'API d'entreprise, vers des catalogues
+**gouvernés et de portée maîtrisée**.
 
-Le passage aux registres d'agents prolonge cette récurrence, et les premières taxonomies des
-solutions — centralisées, d'entreprise, distribuées — **retrouvent le même arbitrage**. Deux
-propositions en découlent et structurent la suite :
+**Troisième temps** — le passage aux registres d'agents prolonge cette récurrence, et les premières
+taxonomies des solutions — centralisées, d'entreprise, distribuées — **retrouvent le même
+arbitrage**. Deux propositions en découlent et structurent la suite :
 
 1. **la découverte sous curation surpasse le tout-dynamique** ;
 2. **la fédération surpasse la centralisation**.
 
-*L'enjeu agentique n'est donc pas de réinventer l'annuaire, mais d'éviter de répéter l'erreur tout en
-ajoutant ce que les services web n'avaient pas : un appariement sémantique à l'exécution et une
-couche de confiance native.*
+*L'enjeu agentique n'est donc pas de réinventer l'annuaire, mais d'éviter de répéter l'erreur d'UDDI
+tout en ajoutant ce que les services web n'avaient pas : un appariement sémantique à l'exécution et
+une couche de confiance native.*
 
 ⚠ Que ces deux propositions valent au-delà du cas historique dont elles sont tirées n'est pas
 établi : elles sont **inférées d'une récurrence observée**, non démontrées. C'est, au sens de R-14 du
@@ -144,8 +145,8 @@ d'un agent isolé :
 - le nommage ouvre la porte au **typosquattage** et à l'**appropriation d'espaces de noms** ;
 - le **registre lui-même peut être empoisonné**, et la résolution **diriger un client vers un
   imposteur** ;
-- la **dépendance à un registre central recrée le point unique de défaillance** que l'échec historique
-  du § 9.1.1 illustrait — et que la fédération vise précisément à éviter.
+- la **dépendance à un registre central recrée le point unique de défaillance** que l'échec d'UDDI
+  illustrait au § 9.1.1 — et que la fédération vise précisément à éviter.
 
 > **Mise en œuvre.** La parade tient à **l'attestation à chaque étage** plutôt qu'à la confiance dans
 > un opérateur unique : provenance cryptographique et adressage par contenu contre la carte mensongère
@@ -209,8 +210,9 @@ mais elle **masque trois traits propres au domaine** :
 
 > **Perspective recherche.** Ces propositions illustrent une **tension méthodologique** : transposer
 > un modèle conçu pour des **canaux déterministes** à des **acteurs probabilistes et
-> auto-descriptifs**. Une grille d'analyse en trois plans suggère pourquoi **aucune ne fait
-> consensus** : une pile en couches modélise bien le transport et la syntaxe, mais **le niveau
+> auto-descriptifs**. La grille d'analyse en trois plans de **Yuan et coll. (2026)** — celle que
+> mobilise le § 9.4.1 — suggère pourquoi **aucune ne fait consensus** : une pile en couches modélise
+> bien le transport et la syntaxe, mais **le niveau
 > sémantique-pragmatique résiste à la stratification**, car *l'alignement d'intentions traverse
 > l'ensemble de la pile plutôt que d'y occuper une couche*.
 
@@ -264,10 +266,13 @@ la composition réelle relève d'un **choix d'ingénierie**, non d'une prescript
 
 ### 9.2.5 Matrice de maturité et de décision
 
-> **Mise en œuvre.** ⚠ **Ce tableau est un instantané daté, et c'est sa valeur comme sa limite.** Il
-> croise, pour chaque protocole, l'axe couvert, le statut de maturité, la gouvernance et la
-> recommandation d'usage. **Les statuts reprennent strictement les qualifications des sections
-> amont** : *ce qui est marqué candidat ou expérimental ne doit pas être déployé comme acquis.*
+> **Mise en œuvre.** ⚠ **Ce tableau est un instantané daté, et c'est sa valeur comme sa limite.**
+> Repris du **Vol. I *Monographie* §3.7.5**, à l'état de **juin 2026**, il croise, pour chacun des
+> protocoles retenus, l'axe couvert, le statut de maturité, la gouvernance et la recommandation
+> d'usage. **Les statuts reprennent strictement les qualifications des sections amont** : *ce qui est
+> marqué candidat ou expérimental ne doit pas être déployé comme acquis.* ⚠ **Sept lignes, non la
+> totalité des spécifications recensées** : la couche commerciale n'y tient qu'une ligne, son
+> développement étant au ch. 10.
 
 | Protocole | Axe | Statut | Gouvernance | Usage recommandé |
 | --- | --- | --- | --- | --- |
@@ -279,11 +284,11 @@ la composition réelle relève d'un **choix d'ingénierie**, non d'une prescript
 | **Commerce (paiement)** | commercial | émergent ; spécification **mouvante** | consortium d'éditeurs | achat agentique ; **à suivre par révision datée** |
 | **Interface agent-humain** | agent-humain | **expérimental** | fondation dédiée / communauté | validation et interfaces riches ; **hors production critique** |
 
-: Tableau 9.3 — Matrice de maturité et de décision, à la date d'arrêt des sources. Instantané, non classement durable.
+: Tableau 9.3 — Matrice de maturité et de décision, à juin 2026, gel du Vol. I. Instantané, non classement durable.
 
-⚠ **Métrique auto-déclarée, attribuée** : le jalon d'adoption cité pour le protocole agent-agent est
-**rapporté par la Linux Foundation**, qui gère le protocole, et la réserve du ch. 7 § 7.6
-s'applique — *soutien n'est pas production*.
+⚠ **Métrique auto-déclarée, attribuée** : le jalon d'adoption du protocole agent-agent — **plus de
+150 organisations de soutien, au 9 avril 2026** — est **rapporté par la Linux Foundation**, qui gère
+le protocole ; la réserve du ch. 7 § 7.6 s'applique — *soutien n'est pas production*.
 
 **La logique de décision se résume ainsi.** Pour un système interopérable de production, **les deux
 axes principaux constituent le socle minimal** ; la couche agent-humain s'ajoute dès qu'un point de
@@ -308,8 +313,11 @@ normalisation ne l'ait spécifiée**. Sa diffusion procède de **l'adoption en m
 processus délibératif** : les serveurs d'inférence ouverts et les passerelles tierces l'émulent
 **précisément parce qu'elle est le format que la plupart des outils savent déjà parler**.
 
-On retrouve ici la distinction classique entre standard **de fait** et standard **de droit** (ch. 1
-§ 1.1.1) : *la conformité n'est pas certifiée mais constatée à l'usage*.
+On retrouve ici la distinction classique entre standard **de fait** et standard **de droit** — *la
+conformité n'est pas certifiée mais constatée à l'usage*. Le **ch. 15 § 15.2.3** en est le domicile
+dans la somme, et le **ch. 3 § 3.4.4** en tient l'autre versant : la certification tierce, qui
+convertit une compatibilité **espérée** en compatibilité **attestée**. Ce chapitre y renvoie et **ne
+les reconstruit pas**.
 
 ⚠ **Le paradoxe propre à ce cas tient à un double mouvement de couplage, et il mérite d'être suivi
 pas à pas.** D'un côté, l'interface **découple** l'application du fournisseur : un client écrit pour
@@ -320,8 +328,8 @@ s'en écarte devient, par construction, non portable**.
 
 *Le découplage à l'égard du fournisseur se paie donc d'un couplage à l'égard d'une grammaire
 d'échange que personne ne gouverne formellement et dont l'évolution échappe à tout contrat public.*
-C'est, dans tout le Livre, l'illustration la plus nette de ce que le ch. 1 § 1.3 posait : le couplage
-ne disparaît pas, il se déplace.
+Le ch. 1 § 1.3 le posait déjà, sur les architectures d'intégration : le couplage ne disparaît pas, il
+se déplace.
 
 ### 9.3.2 Fragmentation des formats et passerelles de médiation
 
@@ -333,8 +341,8 @@ ne disparaît pas, il se déplace.
 > **qui divergent d'un fournisseur à l'autre et brisent la substituabilité**.
 
 La réponse de l'industrie est une **couche d'adaptation** qui normalise ces formats derrière une
-interface unique : bibliothèques et mandataires traduisant des centaines d'interfaces, plans de
-contrôle multi-fournisseurs, routage et repli.
+interface unique : bibliothèques et mandataires traduisant **plus d'une centaine** d'interfaces,
+plans de contrôle multi-fournisseurs, routage et repli.
 
 ⚠ **Ces passerelles instancient des patrons déjà catalogués au ch. 1** : le traducteur de message, le
 modèle de données canonique, la passerelle d'API (ch. 1 § 1.6.1 et § 1.4.3). *Le domaine agentique
@@ -349,9 +357,10 @@ appauvri.
 
 ### 9.3.3 Interopérabilité des cadriciels par protocoles partagés
 
-⚠ **L'interopérabilité entre cadriciels d'orchestration ne s'obtient pas par une norme d'agent unique
-qui les coifferait tous, mais par l'adoption commune de protocoles transversaux.** C'est un fait de
-structure, et il vaut d'être opposé à l'intuition inverse.
+⚠ **L'interopérabilité entre cadriciels d'orchestration ne s'obtient pas, à juin 2026, par une norme
+d'agent unique qui les coifferait tous, mais par l'adoption commune de protocoles transversaux.**
+⚠ *C'est un constat d'état daté, non une impossibilité de principe* — et il vaut d'être opposé à
+l'intuition inverse.
 
 Dès lors qu'un cadriciel parle ces protocoles, il devient **capable de consommer les outils et de
 déléguer les tâches d'un autre**, indépendamment de son modèle interne d'agent. **La couverture
@@ -409,8 +418,8 @@ non un accident de transition.*
 acquise.** Qu'un standard soit hébergé par une fondation indépendante garantit **la maîtrise partagée
 de son évolution** — *non que deux implémentations conformes se comprendront effectivement*. C'est
 exactement la distinction que le § 9.5 reprend, et elle est le pendant, au plan institutionnel, de la
-restriction que le ch. 7 portait à sa thèse : *la fondation règle le problème de la propriété du
-contrat ; elle ne dispense pas d'en éprouver l'exécution.*
+restriction que porte la thèse du ch. 7 — *condition nécessaire et **non suffisante*** : la fondation
+règle le problème de la propriété du contrat ; elle ne dispense pas d'en éprouver l'exécution.
 
 ---
 
@@ -420,8 +429,10 @@ Les sections précédentes ont montré que les protocoles **stabilisent rapideme
 syntaxe**, mais laissent ouverte la question décisive : **deux agents qui échangent des messages
 valides partagent-ils la même interprétation de ce qu'ils s'échangent ?**
 
-C'est ici que se referme la thèse du ch. 2 — *les protocoles agentiques présupposent l'accord
-sémantique et ne le fournissent pas* — et que s'en mesure le prix.
+C'est ici que se referme la thèse du ch. 2 — *l'interopérabilité sémantique est le niveau que les
+protocoles agentiques **présupposent** et que **peu savent établir*** — et que s'en mesure le prix.
+⚠ *La formulation est celle du ch. 2, et elle se reprend telle quelle* : « peu savent établir »
+affirme moins que « ne fournissent pas », et c'est la forme bornée qui prime.
 
 ### 9.4.1 L'écart entre accord de protocole et compréhension
 
@@ -430,10 +441,11 @@ le cycle de vie des tâches, signer sa carte — sans interpréter de la même m
 interlocuteur l'intention véhiculée.** *L'accord sur le protocole garantit que les octets transitent
 et se décodent ; il ne garantit pas que le sens transite.*
 
-Une grille d'analyse à trois plans — communication, syntaxique, sémantique — appliquée à dix-huit
-protocoles établit ce diagnostic : les protocoles dominants atteignent **une bonne maturité aux plans
-de la communication et de la syntaxe**, mais demeurent **pauvres en mécanismes de clarification,
-d'alignement et de vérification du sens**, lesquels sont **repoussés vers la couche applicative**.
+La grille d'analyse à trois plans de **Yuan et coll. (2026)** — communication, syntaxique,
+sémantique —, appliquée à **dix-huit protocoles**, établit ce diagnostic : les protocoles dominants
+atteignent **une bonne maturité aux plans de la communication et de la syntaxe**, mais demeurent
+**pauvres en mécanismes de clarification, d'alignement et de vérification du sens**, lesquels sont
+**repoussés vers la couche applicative**.
 
 ⚠ **Ce diagnostic recoupe la filiation du ch. 7 § 7.2.1 : le problème n'est pas neuf, il ressurgit
 sous une forme déplacée.** Le socle théorique de la compréhension partagée est **ancien et robuste** —
@@ -508,16 +520,17 @@ canonique à maintenir**. ⚠ **Ses risques le sont tout autant, et ils sont de 
 **non-déterminisme de la médiation**, et **dette technique déplacée du schéma vers les invites**, plus
 difficile à versionner et à auditer.
 
-⚠ **La prise de position défendue est la suivante, et le plan la porte comme une position, non comme
-un fait : la médiation par modèle complète, mais ne remplace pas, l'interopérabilité sémantique
-formelle.** *La souplesse probabiliste traite les cas que la spécification formelle n'avait pas
-anticipés ; la spécification formelle, en retour, contraint et vérifie les propositions du modèle.*
+⚠ **La prise de position que défend le Vol. I *Monographie* §3.5.4 est la suivante — et elle se
+reprend ici comme une position, jamais comme un fait : la médiation par modèle complète, mais ne
+remplace pas, l'interopérabilité sémantique formelle.** *La souplesse probabiliste traite les cas que
+la spécification formelle n'avait pas anticipés ; la spécification formelle, en retour, contraint et
+vérifie les propositions du modèle.*
 
 Cette **synthèse neuro-symbolique** — un raisonnement **contraint par l'ontologie** — est argumentée
-dans une architecture où le raisonnement neuronal opère **sous la contrainte d'une ontologie de
-domaine**. *C'est cette articulation, et non l'un ou l'autre pôle isolé, qui répond au verrou tout en
-préservant le découplage : la couche formelle stabilise le contrat, la couche neuronale absorbe
-l'évolution.*
+par **Tuan et Sanyal (2026)**, dans une architecture où le raisonnement neuronal opère **sous la
+contrainte d'une ontologie de domaine**. *C'est cette articulation, et non l'un ou l'autre pôle
+isolé, qui répond au verrou tout en préservant le découplage : la couche formelle stabilise le
+contrat, la couche neuronale absorbe l'évolution.*
 
 ⚠ **Qualification, au sens de R-02 du Vol. III, et rappel du ch. 2 § 2.4.1** : un appariement produit
 par modèle **démontre une plausibilité lexicale** ; il **ne démontre pas une équivalence sémantique**.
@@ -567,7 +580,7 @@ Définir « interopérable » de façon opérationnelle suppose donc de le **mes
 propres au régime agentique** : **taux de réussite de la tâche déléguée** et **fidélité du transfert
 d'intention** d'un agent à l'autre — *et non le seul succès de la poignée de main*.
 
-Une **pyramide d'évaluation à trois étages** se dégage :
+Le **Vol. I *Monographie* §3.12.1** en dégage une **pyramide d'évaluation à trois étages** :
 
 | Étage | Ce qu'il mesure | Nature |
 | --- | --- | --- |
@@ -612,8 +625,8 @@ la tâche déléguée**, **fidélité du transfert d'intention**, et **surcoût 
 jetons et messages consommés par la négociation.
 
 ⚠ **Des travaux balisent ce terrain, mais aucun banc standardisé véritablement inter-fournisseurs ne
-s'impose** à la date d'arrêt des sources. C'est une **absence de documentation** au sens de R-14, et
-non un fait négatif vérifié : le socle n'en recense pas.
+s'impose** à juin 2026, gel de la source. C'est une **absence de documentation** au sens de R-14, et
+non un fait négatif vérifié : le socle n'en recense aucun.
 
 **La certification est plus embryonnaire encore.** L'attestation par un **tiers indépendant** — qui
 validerait qu'une implémentation est **non seulement conforme mais interopérable au sens mesurable**
@@ -637,9 +650,20 @@ distribué est au ch. 3 § 3.4.5.
 
 ⚠ **Cette section n'est pas au TOC et n'a pas vocation à survivre.**
 
-**Ce qui est enfreint** — portes **G-1**, **G-2**, **G-3** ouvertes ; instruction d'auteur du
-27 juillet 2026. Conséquences habituelles : aucun énoncé central au sens de CA-IV-01 (régime **[C]**),
-aucun décompte publiable, renvois de plan et non de texte (ch. 10, 11, 15, 38, 49 non rédigés).
+**Ce qui a été enfreint à la rédaction** — portes **G-1**, **G-2** et **G-3** alors **ouvertes** ;
+instruction d'auteur du 27 juillet 2026. Conséquences d'alors : aucun énoncé central au sens de
+CA-IV-01 (régime **[C]**), aucun décompte publiable, renvois de plan et non de texte, aucun des
+chapitres cités hors du Livre I n'étant rédigé.
+
+⚠ **Ce que le 28 juillet 2026 change, et ce qu'il ne change pas.** *(a)* **G-2 et G-3 sont
+franchies**, ainsi que le volet Livre I de G-1 : les **décomptes sont publiables** — celui de
+l'en-tête l'est —, et le socle consolidé **existe** (159 entrées). *(b)* **Les cinquante chapitres de
+la somme sont rédigés** : les renvois de cette pièce **résolvent désormais contre du texte**, et ils
+ont été re-vérifiés un à un — ch. 1, 2, 3, 5, 6, 7, 8, 10 et 11 au Livre I ; ch. 15, 38 et 49 hors de
+lui, ces derniers demeurant eux-mêmes des brouillons hors portes. *(c)* ⚠ **Rien de cela ne rend la
+pièce recevable** : ses énoncés **n'ont pas été ré-adossés** au socle consolidé, dont aucune des
+dix-sept entrées héritées du Vol. I ne couvre son périmètre de fusion ; le régime **[C]** tient, et
+**CA-IV-13** — un relecteur distinct du rédacteur — reste insatisfaite.
 
 **Remontée ouverte par ce chapitre :**
 
@@ -658,12 +682,26 @@ aucun décompte publiable, renvois de plan et non de texte (ch. 10, 11, 15, 38, 
   instruction à la source primaire relève de **G-1**.
 
 **Ce qui n'est pas enfreint.** La structure suit la table détaillée (§ 9.1 à § 9.5). La table de
-couverture est respectée, dont le **partage déclaré du §3.4 avec le ch. 15** — versant protocolaire
-ici, gouverné là-bas — et la **sortie du §3.12.3 vers le ch. 38**, seule affectation de la propagation
-de trace. Le **siège de l'encadré R-8 reste au ch. 7 § 7.5** : ce chapitre y renvoie et **ne le
-reconstruit pas**. Les cinq occurrences de **R-14** portent leur degré ; les deux de **R-02** énoncent
-ce que le mécanisme démontre **et** ne démontre pas ; la métrique auto-déclarée du § 9.2.5 est
-attribuée ; R-1 est tenu au § 9.2.1.
+couverture est respectée, dont le **partage déclaré du Vol. I *Monographie* §3.4 avec le ch. 15** —
+versant protocolaire ici, gouverné là-bas — et la **sortie du §3.12.3 vers le ch. 38**, seule
+affectation de la propagation de trace. Le **siège de l'encadré R-8 reste au ch. 7 § 7.5** : ce
+chapitre y renvoie et **ne le reconstruit pas**. Les **quatre** occurrences de **R-14** portent leur
+degré ; les deux de **R-02** énoncent ce que le mécanisme démontre **et** ne démontre pas ; la
+métrique auto-déclarée du § 9.2.5 est attribuée à la Linux Foundation, avec son chiffre et sa date ;
+R-1 est tenu au § 9.2.1.
+
+**Déviation déclarée : les intitulés de sous-sections.** ⚠ *La structure suit le plan ; les
+intitulés, non — et la décision 15c veut que l'écart se déclare plutôt qu'il se constate.* Domaine
+balayé et cardinal, re-mesurés le 28 juillet 2026 : **vingt-trois sous-sections, dont trois
+identiques au plan** (§ 9.2.1, § 9.3.3, § 9.4.5) et **vingt reformulées**, pour deux motifs qu'il ne
+faut pas confondre. *(a)* **La parade de péremption** (décision 15a) retire une dénomination
+commerciale que le titre du plan porte — **neuf** cas : § 9.1.3, § 9.1.4, § 9.2.2, § 9.2.4, § 9.3.1,
+§ 9.3.2, § 9.3.4, § 9.3.5, § 9.5.2. *(b)* **La traduction ou le resserrement**, sans nom propre en
+jeu — **onze** cas : § 9.1.1, § 9.1.2, § 9.1.5, § 9.2.3, § 9.2.5, § 9.4.1, § 9.4.2, § 9.4.3, § 9.4.4,
+§ 9.5.1, § 9.5.3. ⚠ **Ce que la déviation ne touche pas** : *le découpage, l'ordre et la matière sont
+ceux du plan* — aucune sous-section n'est ajoutée, aucune n'est retirée, et la table de couverture
+résout sans exception. **Le réalignement de la table détaillée sur le chapitre rédigé relève du TOC**
+(décision 8), et il est remonté ci-dessous.
 
 ---
 
@@ -682,8 +720,50 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
   contiguïté avec de la matière mieux établie — exactement ce que ce chapitre s'était interdit.
   L'abstention est donc **confirmée au gel unique**, et non simplement héritée.
 
-⚠ **Ce que la clôture ne change pas.** La porte **G-3** demeure ouverte : le socle consolidé compte
-**zéro entrée**, l'Annexe B n'existe pas, et **aucun énoncé de cette pièce n'est central au sens de
-CA-IV-01**. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
-pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
-tranchée.*
+⚠ **Ce que la clôture ne changeait pas, à cette date.** La porte **G-3** demeurait ouverte : le socle
+consolidé comptait **zéro entrée**, l'Annexe B n'existait pas, et **aucun énoncé de cette pièce
+n'était central au sens de CA-IV-01**. Cette pièce reste un **brouillon non publiable**. *Zéro
+remontée ouverte ne veut pas dire pièce recevable — cela veut dire qu'aucune question n'attend plus
+de réponse qui ne soit déjà tranchée.*
+
+---
+
+### Passe de relecture — 28 juillet 2026
+
+⚠ **Hors plan comme les deux sections qui précèdent, et se retire avec elles.** Cette passe n'a
+touché **que cette pièce** — son `.md` et son `.html` régénéré. *Elle n'a corrigé ni le TOC, ni le
+PRD, ni le conspectus : ce qui relève d'eux est remonté ci-dessous.* ⚠ **Elle ne satisfait pas
+CA-IV-13** : *relire n'est pas être relu par un tiers*, et **D-6** n'en fournit toujours pas.
+
+**Ce que la passe a corrigé sur pièce.** Un **renvoi qui ne résolvait pas** — la distinction *standard
+de fait / standard de droit* était renvoyée au ch. 1 § 1.1.1, **qui ne la porte pas** ; balayage des
+cinq Livres : son domicile est le **ch. 15 § 15.2.3**, et le § 9.3.1 y renvoie désormais, avec le
+ch. 3 § 3.4.4 pour l'autre versant. Une
+**quantité surévaluée** au § 9.3.2 — « des centaines d'interfaces » là où la source écrit *plus d'une
+centaine*. **Trois attributions rétablies** au titre de la décision 15b : la **grille d'analyse à
+trois plans** (Yuan et coll., 2026), mobilisée deux fois — § 9.2.2 et § 9.4.1 — sans son auteur ; la
+**synthèse neuro-symbolique** du § 9.4.4 (Tuan et Sanyal, 2026) ; et la **prise de position** du même
+paragraphe, attribuée au plan alors qu'elle est celle du Vol. I *Monographie* §3.5.4. La **métrique
+auto-déclarée** du § 9.2.5, dont le renvoi était **pendant** — aucun jalon n'était cité —, porte
+désormais son chiffre, sa date et son attributeur. Deux **instruments repris** nomment leur source et
+leur date : la matrice du § 9.2.5 et la pyramide du § 9.5.1. Enfin, **un décompte faux** : la présente
+note attestait *cinq* occurrences de R-14 pour **quatre**.
+
+**Remontées de cette passe** — ⚠ **sans identifiant alloué, et le motif s'écrit** : l'allocation
+relève du **PRD §13**, et *une passe qui numérote dans une série partagée pendant que d'autres
+écrivent rejoue la collision de R-IV-60…69*. Elles sont décrites, non numérotées.
+
+1. **Le réalignement de la table détaillée du ch. 9** — vingt intitulés de sous-sections sur
+   vingt-trois dévient du plan, neuf par la parade de péremption et onze par traduction ou
+   resserrement (détail au § 9.6). Le découpage, l'ordre et la couverture sont intacts : c'est un
+   réalignement de **titres**, que la décision 8 confie au TOC. **Non bloquante.**
+2. **Le domicile du *standard de fait* n'est déclaré nulle part au plan** — le ch. 15 § 15.2.3 le
+   tient dans le texte, et le ch. 12 § 12.7 l'y renvoie explicitement, mais **le TOC ne le désigne
+   pas** et **`check-sieges.py` ne le contrôle pas** : rien n'empêche une pièce aval d'en redonner sa
+   propre formulation, ce que ce chapitre faisait en renvoyant ailleurs. **Non bloquante ;
+   destinataires : le TOC pour la désignation, l'appareil pour le versement.**
+3. **Le ré-adossage de cette pièce au socle consolidé** — G-3 est franchie, mais aucune des dix-sept
+   entrées héritées du Vol. I (`S-143`…`S-159`) ne couvre les §3.4, §3.5, §3.7-3.8 ni §3.12 dont ce
+   chapitre procède. ⚠ *La question n'est pas de savoir si la pièce doit citer des `S-nnn` : c'est de
+   savoir si sa matière doit entrer au socle, et à quel niveau.* **Non bloquante pour la pièce ;
+   destinataire : le PRD §7.1.**

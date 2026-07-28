@@ -7,15 +7,15 @@ mécanisme.*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — portes **G-3** et **G-4** ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Une section de ce chapitre est en outre rédigée contre une consigne explicite du plan** : le TOC déclare le § 17.5 « **front neuf — aucun des trois volumes ne le porte : sources primaires à établir avant rédaction** », et **ces sources n'ont pas été établies**. Le § 17.5 **expose donc le vide au lieu de le combler**, et ouvre la remontée **R-IV-27**. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Une relève du plan porte une date postérieure au gel de sa source** — un document normatif consulté le **26 juillet 2026** — et elle est **reprise comme relève, jamais comme entrée de socle** (§ 17.1) |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. III *Monographie* ch. 9-10**, dont les entrées **F-14**, **F-15**, **F-29**, **F-31**, **F-44** à **F-47**, **F-53**, **F-74** à **F-82**, **F-89** et les entrées héritées **H-01**, **H-06**, **H-12**, **H-19**, **H-28**, **H-29**, **H-33** conservent leurs niveaux d'origine ; et contre le **Vol. I *Monographie* §2.11.2 et §3.6.6**, en **[C]**. ⚠ **Six entrées mobilisées sont en [C]** — F-31, H-19, H-28, H-29, H-33, plus H-15/PC3 du Vol. II, construction d'auteur hors socle factuel : elles **situent**, elles ne portent pas. ⚠ **Le § 17.5 ne mobilise aucun socle** : il n'en a pas. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les sept sections du corps, § 17.0 à § 17.6, et les trois sous-sections du § 17.6.** Vol. III — **R-02 : trois marqueurs**, § 17.0, § 17.1 et § 17.6.2. **R-01, R-03 à R-14 : zéro marqueur.** ⚠ **Ce chapitre est celui du Livre où l'écart entre marqueurs et applications est le plus large, et le motif tient au sujet** : *un chapitre qui prend une frontière pour objet écrit surtout des absences.* Les applications non marquées, portées sur tout le domaine balayé, sont celles de **R-14** — les absences portent leur degré, dont douze au **degré 3** —, de **R-09** (statut dit à chaque mention), de **R-01** (§ 17.2 et § 17.6), de **R-12** (traitement au niveau du maillon, aucune recette, § 17.6.1) et de **R-13** (§ 17.4, l'échelle d'autonomie jamais nue) : *l'application est réelle, le renvoi à l'identifiant absent.* Vol. II — **§8.2 : zéro marqueur** ; la métrique du § 17.6.2 est attribuée à sa source ; **R-1 à R-8 : zéro marqueur**. ⚠ **Un faux ami est déclaré** : le « point de contrôle » du glossaire du Vol. II traduit une notion de reprise sur incident et **n'est pas** le « point de contrôle obligatoire » de son ch. 19 ; la collision est **signalée et non résolue** (§ 17.4) |
-| **Volumétrie cible** | ≈ **5 700 mots** de corps (§ 17.0 à § 17.6), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — six sections dont une à trois sous-sections. ☑ **Décompte publiable depuis G-2** ; **réel : 6 970 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+22,3 %** (re-mesuré au commit du 28 juillet 2026, au terme de la passe de correction de l'audit). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé le 27 juillet 2026 sur instruction d'auteur, **avant le franchissement de G-3**. ⚠ **G-3 est franchie depuis le 28 juillet 2026** (PRD v0.14 ; socle consolidé de **159 entrées**, `S-001` à `S-159`) et **G-4 demeure ouverte** : *une porte franchie après coup ne rattrape pas une rédaction qui l'a devancée*. ⚠ **Une section de ce chapitre est en outre rédigée contre une consigne explicite du plan** : le TOC déclare le § 17.5 « **front neuf — aucun des trois volumes ne le porte : sources primaires à établir avant rédaction** », et **ces sources n'ont pas été établies**. Le § 17.5 **expose donc le vide au lieu de le combler**, et ouvre la remontée **R-IV-27**. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet de faits de G-1 est levé depuis le 28 juillet 2026** — les **123 entrées à sensibilité temporelle** du socle consolidé portées à leur source, **91 inchangées, 10 changées, 22 non établies** ; ⚠ **les obligations de pièce du Livre II restent dues**. Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Une relève du plan porte une date postérieure au gel de sa source** — un document normatif consulté le **26 juillet 2026** — et elle est **reprise comme relève, jamais comme entrée de socle** (§ 17.1) |
+| **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** (Annexe B, `S-001` à `S-159`) ; **cette pièce ne s'y adosse pas encore** — le versement des identifiants consolidés au corps des pièces reste dû, et la résolution se lit ici contre les **identifiants sources**. Résolution contre le **Vol. III *Monographie* ch. 9-10**, dont les entrées **F-07**, **F-14**, **F-15**, **F-29** à **F-31**, **F-46**, **F-47**, **F-50**, **F-53**, **F-65**, **F-74** à **F-80**, **F-82**, **F-89** et les entrées héritées **H-01**, **H-04**, **H-06**, **H-12**, **H-19**, **H-28**, **H-29**, **H-33** conservent leurs niveaux d'origine ; et contre le **Vol. I *Monographie* §2.11.2 et §3.6.6**, en **[C]**. ⚠ **Cinq entrées mobilisées sont en [C]** — F-31, H-19, H-28, H-29, H-33 : elles **situent**, elles ne portent pas. **H-15/PC3 du Vol. II**, construction d'auteur, est **hors socle factuel** et **n'est versée au socle consolidé à aucun niveau** : citable avec sa réserve, jamais versable. ⚠ **État de re-datation des vingt-huit entrées au 28 juillet 2026** : **treize inchangées**, dont deux partiellement (H-04, F-46) ; **trois changées** (F-31, F-50, F-78) ; **quatre non établies**, obstacle nommé (H-06, F-89, H-28, H-29) ; **huit sans objet**, faute de sensibilité temporelle. ⚠ **Le § 17.5 ne mobilise aucun socle** : il n'en a pas. **Aucun énoncé n'est central au sens de CA-IV-01** — *ni la pièce n'est adossée au socle consolidé, ni aucune de ses entrées n'a subi le vote adversarial que le régime de preuve réserve à un fait central* |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les sept sections du corps, § 17.0 à § 17.6, et les trois sous-sections du § 17.6.** Vol. III — **R-02 : quatre marqueurs**, le bloc de thèse, § 17.0, § 17.1 et § 17.6.2. **R-01, R-03 à R-14 : zéro marqueur.** ⚠ **Ce chapitre est celui du Livre où l'écart entre marqueurs et applications est le plus large, et le motif tient au sujet** : *un chapitre qui prend une frontière pour objet écrit surtout des absences.* Les applications non marquées, portées sur tout le domaine balayé, sont celles de **R-14** — les absences portent leur degré, dont dix au **degré 3** —, de **R-09** (statut dit à chaque mention), de **R-01** (§ 17.2 et § 17.6), de **R-12** (traitement au niveau du maillon, aucune recette, § 17.6.1) et de **R-13** (§ 17.4, l'échelle d'autonomie jamais nue) : *l'application est réelle, le renvoi à l'identifiant absent.* Vol. II — **§8.2 : zéro marqueur** ; la métrique du § 17.6.2 est attribuée à sa source ; **R-1 à R-8 : zéro marqueur**. ⚠ **Un faux ami est déclaré** : le « point de contrôle » du glossaire du Vol. II traduit une notion de reprise sur incident et **n'est pas** le « point de contrôle obligatoire » de son ch. 19 ; la collision est **signalée et non résolue** (§ 17.4) |
+| **Volumétrie cible** | ≈ **5 700 mots** de corps (§ 17.0 à § 17.6), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — six sections dont une à trois sous-sections. ☑ **Décompte publiable depuis G-2** ; **réel : 7 190 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+26,1 %** (re-mesuré au commit du 28 juillet 2026, au terme de la passe de relecture ; **6 970 mots**, soit **+22,3 %**, à la passe de correction de l'audit). ⚠ **La croissance est celle de l'appareil de preuve, non de la matière** : elle vient du report de l'état du socle et de la re-datation du 28 juillet 2026 — *documenter un régime coûte des mots, et D-4 interdit de les reprendre par amputation*. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** ; ⚠ **la ligne du registre de gel porte encore 6 970 et reste à réaligner** — *l'en-tête et `decompte.sh` font foi* |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 17)* — la délégation est le maillon faible — les mécanismes instruits par le Vol. III **documentent** qu'un agent *a* une identité, **aucun d'eux ne documente** *au nom de qui* il agit à l'instant t ; au-delà de deux sauts, **aucun des mécanismes instruits ne documente** une traçabilité opposable de bout en bout.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 17)* — la délégation est le maillon faible — les mécanismes instruits par le Vol. III **documentent** qu'un agent *a* une identité, **aucun d'eux ne documente** *au nom de qui* il agit à l'instant t ; au-delà de deux sauts, **aucun des mécanismes instruits ne documente** une traçabilité opposable de bout en bout.
 >
-> ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-28** ouverte par cette pièce. **Trois** termes de la forme antérieure tombent ensemble : le verbe « **prouvent** », que **R-02 du Vol. III proscrit** pour un mécanisme cryptographique ; « **presque aucun** », quantificateur sur un corpus non balayé ; et « **aucun mécanisme documenté** », quantificateur universel négatif. **Le corps du chapitre n'a pas changé** : il était écrit aux formes bornées. ⚠ **Le renvoi de tête du TOC vise un document retiré du dépôt** — la *Synthèse* du Vol. I — et son régime est suspendu à la décision d'auteur **D-5**.
+> ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-28** ouverte par cette pièce. **Trois** termes de la forme antérieure tombent ensemble : le verbe « **prouvent** », que **R-02 du Vol. III proscrit** pour un mécanisme cryptographique ; « **presque aucun** », quantificateur sur un corpus non balayé ; et « **aucun mécanisme documenté** », quantificateur universel négatif. **Le corps du chapitre n'a pas changé** : il était écrit aux formes bornées. ⚠ **Le renvoi de tête du TOC vise un document retiré du dépôt** — la *Synthèse* du Vol. I —, et la décision d'auteur **D-5, prise le 28 juillet 2026**, l'**ancre à l'arbre gelé `fd8f1be~1`** : **restauration écartée, repointage interdit**. *Le renvoi reste exact sans être opposable.*
 
 ---
 
@@ -29,9 +29,10 @@ auditeur, et **la produire pour un instant donné** — non pour le moment de l'
 
 ⚠ **Règle d'emploi déclarée à l'ouverture, et elle vaut pour tout le chapitre.** La grille du ch. 14
 s'applique par mécanisme et ne rend que trois verdicts. **Ce chapitre n'en rend aucun** : il
-*instruit* **Q-C** au lieu de l'appliquer. Le motif est au ch. 14 § 14.3 — *Q-C n'a reçu qu'un seul
-verdict à l'application-témoin, et encore partiel ; une question à laquelle deux mécanismes sur trois
-ne permettent même pas de répondre n'appelle pas un verdict de plus, elle appelle un chapitre.*
+*instruit* **Q-C** au lieu de l'appliquer. Le motif est écrit au **ch. 14 § 14.3**, sur le constat de
+son § 14.2 — *Q-C n'a reçu qu'un seul verdict à l'application-témoin, et encore partiel ; une question
+à laquelle deux mécanismes sur trois ne permettent même pas de répondre n'appelle pas un verdict de
+plus, elle appelle un chapitre.*
 
 Lecture de l'auteur — **la thèse du chapitre est une construction du plan, et sa forme antérieure
 portait trois termes qui excédaient ce que le socle établit.** **Ce que le socle établit** : la
@@ -122,18 +123,23 @@ bout en bout ne manque pas ici **par omission du spécificateur** — elle est *
 prescription**, et pour un motif que le document assume : un vérificateur ne doit pas fonder sa
 décision sur des maillons qu'il n'a pas lui-même authentifiés. *Ce qui manque au second saut n'est
 donc pas un détail que la spécification aurait négligé, c'est ce qu'elle a délibérément placé hors de
-sa portée.* ⚠ **Cette extraction n'entre toujours pas au socle** : c'est la porte **G-3** qui l'y
-ferait. Elle cesse seulement d'être un repérage sur résumé — *lire un document à sa source ne le
-verse pas ; cela rend seulement le versement possible.* Le **§ 17.1 en est le siège désigné**.
+sa portée.* ⚠ **G-3 est franchie depuis le 28 juillet 2026, et cette extraction n'est pourtant pas
+versée** : l'entrée du socle consolidé qui reprend le RFC 8693 porte la **§4.1** et l'exclusion de
+périmètre de la **§1**, *non la clause d'imbrication ni l'exclusion des maillons antérieurs de la
+décision d'autorisation*. **Le versement de ces deux clauses reste dû** ; d'ici là, l'extraction cesse
+seulement d'être un repérage sur résumé — *lire un document à sa source ne le verse pas ; cela rend
+seulement le versement possible.* Le **§ 17.1 en est le siège désigné**.
 
 **Les jetons de transaction : un mécanisme de propagation, borné à un domaine de confiance.** Le
 document en est, au 21 juillet 2026, à sa **révision -09 du 6 juillet 2026**, expirant le **7 janvier
 2027**, à l'état d'appel de dernière relecture du groupe de travail OAuth : *Internet-Draft* en cours,
 **non un RFC** (Vol. III F-29, **[A]** ; statut et expiration dits à chaque mention). ⚠ **La date du
 7 janvier 2027 est l'expiration automatique du document — PROGRAMMÉE au sens mécanique**, elle ne dit
-rien d'une adoption ni d'un calendrier de publication. Son abrégé énonce l'objet et **la clause qui
-compte pour ce chapitre est la borne de périmètre** : la propagation vaut **within a trusted
-domain**. *Le § 17.6 y revient.*
+rien d'une adoption ni d'un calendrier de publication. ⚠ **L'étiquette est celle du tri prospectif**
+posé au Vol. I *Monographie* §7.0.2 et repris par le Vol. III (H-33, **[C]**) ; **son siège dans la
+somme est le ch. 49 § 49.0**, et ce chapitre ne l'y redéfinit pas. L'abrégé du document énonce
+l'objet, et **la clause qui compte pour ce chapitre est la borne de périmètre** : la propagation vaut
+**within a trusted domain**. *Le § 17.6 y revient.*
 
 ⚠ **Le socle IAM pré-agentique — dont l'autorisation déléguée fait partie — est posé au ch. 3** et
 n'est pas reconstruit ici : ce chapitre s'y adosse, et n'instruit que ce que les trois mécanismes
@@ -154,10 +160,11 @@ Des trois, le **document d'autorisation d'agent** de la spécification de paieme
 décrit la chaîne **comme l'objet qu'il spécifie**. Il la formule ainsi — *source primaire ouverte et
 citée hors socle par le Vol. III* : « Mandates form a cryptographically verifiable chain from the
 original user-approved Mandate through to the closed Mandate used to authorize a particular Verifier's
-action. » ⚠ **Le même balayage, borné à ce seul fichier, relève que ce document n'invoque pas OAuth** :
-les chaînes correspondantes n'y figurent pas, les références externes relevées étant d'un autre
-corpus. ⚠ *Ce constat ne réfute aucune compatibilité : il établit que **ce fichier** ne l'invoque pas,
-à cette date.*
+action. » ⚠ **Le relevé de ce fichier, borné à lui seul, établit que ce document n'invoque pas
+OAuth** : aucune des chaînes de caractères recherchées — le nom du cadre, le numéro de la RFC, les
+deux noms de l'échange et celui de l'attribut d'acteur — n'y figure, les références externes relevées
+appartenant à un autre corpus. ⚠ *Ce constat ne réfute aucune compatibilité : il établit que **ce
+fichier** ne l'invoque pas, à cette date.*
 
 Le **RFC 8693**, à l'inverse, traite la chaîne comme un **attribut d'un jeton dont il décline
 expressément la sécurité** (F-47). Les **jetons de transaction** nomment eux aussi une chaîne
@@ -165,9 +172,9 @@ d'appels, mais **la bornent** : ils la situent **à l'intérieur d'un domaine de
 est précisément la frontière que l'entreprise franchit dès qu'un agent tiers entre en jeu*, objet du
 **ch. 18**.
 
-⚠ **Aucun des trois n'est un mécanisme d'émission, et c'est ce qui sépare ce chapitre du § 15.1.** La
-carte d'agent signée — dont le socle hérité **ne documente ni l'ancrage de confiance, ni la
-révocation, ni la gouvernance des clés** (Vol. III H-01, **[A]**) — porte une **identité**, non un
+⚠ **Aucun des trois n'est un mécanisme d'émission, et c'est ce qui sépare ce chapitre du ch. 15
+§ 15.1.** La carte d'agent signée — dont le socle hérité **ne documente ni l'ancrage de confiance, ni
+la révocation, ni la gouvernance des clés** (Vol. III H-01, **[A]**) — porte une **identité**, non un
 **mandat**. *Les deux objets se vérifient séparément, et l'un ne se déduit pas de l'autre.*
 
 **Ce que le Vol. I ajoute en régime [C], et qui nomme le patron sans l'établir.** Son §2.11.2 pose que
@@ -290,11 +297,13 @@ laisse.* ⚠ **On n'écrit jamais « la révision de l'article 12.1 »** : le fl
 humain**, et la formule imposée ne se relâche pas.
 
 **La position amont est nommée par une thèse du Vol. II et non par une source** : le **point d'arrêt
-humain** figure parmi les cinq points de contrôle obligatoires de son ch. 19, où il porte lui-même le
-marquage « Lecture de l'auteur ». *Il entre donc ici comme thèse d'un volume antérieur, à prolonger et
-à attribuer, jamais comme acquis.* ⚠ **Collision terminologique héritée, signalée et non résolue** :
-le glossaire du Vol. II réserve « point de contrôle » à la traduction d'une notion de reprise sur
-incident, et « point de contrôle obligatoire » y désigne autre chose.
+humain** figure parmi les cinq points de contrôle obligatoires du **Vol. II *Monographie* ch. 19
+§19.3**, où il porte lui-même le marquage « Lecture de l'auteur ». *Il entre donc ici comme thèse d'un
+volume antérieur, à prolonger et à attribuer, jamais comme acquis.* ⚠ **La somme ne pose ces cinq
+points qu'une seule fois, au ch. 43 § 43.3**, qui en est le siège ; ce chapitre n'en reconstruit
+aucun. ⚠ **Collision terminologique héritée, signalée et non résolue** : le glossaire du Vol. II
+réserve « point de contrôle » à la traduction d'une notion de reprise sur incident, et « point de
+contrôle obligatoire » y désigne autre chose.
 
 **Ce que le Vol. I ajoute en régime [C] : l'interaction elle-même devient un objet à négocier.** Son
 §3.6.6 pose que la confiance ne se joue pas seulement entre systèmes mais **à l'interface où un humain
@@ -333,7 +342,8 @@ même titre que les maillons machine, et **non comme un événement d'interface*
 attributs qui la rendraient vérifiable** — un horodatage d'émission et une échéance (F-46) — et
 **l'obligation légale qui la rend opposable devant un tiers** (F-89). ⚠ **Et l'échelle d'autonomie que
 le ch. 14 § 14.4 croise avec la grille ne s'emploie jamais nue** : trois échelles homonymes coexistent
-au Vol. I, et seuls le cardinal et la numérotation les discriminent.
+au Vol. I, et seuls le cardinal et la numérotation les discriminent — *la désambiguïsation est posée
+une seule fois, au **ch. 43 § 43.5**, et n'est pas rejouée ici.*
 
 ## § 17.5 — Le biais d'automatisation et la supervision de façade
 
@@ -436,9 +446,10 @@ agent-agent et de lui seul**, l'admission d'un agent tiers **ne dispose d'aucun 
 
 **Et l'identité elle-même ne se revérifie pas en chemin.** La carte signée pose au niveau normatif le
 plus fort que les clés expirées ou révoquées **MUST NOT** servir à la vérification, **sans fournir de
-mécanisme** permettant au client d'établir cette expiration ou cette révocation (F-07, **[A]** ; siège
-au ch. 15 § 15.1.3, inventaire au ch. 20 § 20.4). ⚠ **L'interdiction porte sur la clé, non sur la
-carte** — borne de l'entrée, et *elle change ce qu'un vérificateur aval peut en tirer.*
+mécanisme** permettant au client d'établir cette expiration ou cette révocation (Vol. III F-07,
+**[A]** ; siège au ch. 15 § 15.1.3, inventaire au ch. 20 § 20.4). ⚠ **L'interdiction porte sur la
+clé, non sur la carte** — borne de l'entrée, et *elle change ce qu'un vérificateur aval peut en
+tirer.*
 
 **Ce que la littérature d'attaque nomme, et qui est le même point vu de l'autre côté.** Le corpus de
 techniques adverses range parmi ses entrées l'invocation d'outils par un agent : *un agent peut
@@ -485,21 +496,26 @@ résume pas à un adjectif (siège : **ch. 13 § 13.1**, non rejoué ici). ⚠ *
 paragraphe est l'écart entre l'objet documenté et l'objet cherché** : *ce corpus spécifie un format
 d'attestation ; le socle ne documente pas de mécanisme par lequel des accréditations s'enchaîneraient
 pour porter une délégation d'un maillon au suivant — degré 3.* ⚠ Deux constats **bornent la piste sans
-la fermer** : un groupe communautaire annonce parmi ses livrables une méthode d'identifiant et un
-format d'accréditation d'agent (F-30, **[B]**) — mais **un groupe communautaire ne produit pas de
-Recommandation et n'engage aucun calendrier**, et ce groupe n'avait **publié ni rapport ni brouillon**
-au relevé (F-50) ; et le rapport d'interopérabilité du modèle de données énumère dix implémentations
+la fermer** : le groupe communautaire *Agent Identity Registry Protocol*, **proposé le 22 avril
+2026**, annonce parmi ses livrables une méthode d'identifiant et un format d'accréditation d'agent
+(F-30, **[B]**) — mais **un groupe communautaire ne produit pas de Recommandation et n'engage aucun
+calendrier**, et ce groupe n'avait **publié ni rapport ni brouillon** au relevé (F-50) ; et le
+rapport d'interopérabilité du modèle de données énumère dix implémentations
 dont **aucun intitulé** ne désigne un acteur financier — ⚠ *fait négatif borné aux intitulés, non à la
 nature des organisations*, entrée en **[C]**, corroboration seule (F-31).
 
 **Troisième piste — corréler les journaux.** Le relevé est d'une autre nature que les deux
 précédents : *il ne décrit pas ce qu'une spécification prescrit, mais l'état d'un jeu de conventions
 d'instrumentation.* ⚠ **Une conformité annoncée peut pointer un millésime périmé** : la documentation
-d'un éditeur nommé énonce sa conformité par référence à un millésime du **dépôt principal** publié le
-25 août 2025, **antérieur au déplacement** (F-78, **[B]**). *Le siège de ce dossier est le ch. 38 ; il
-n'est pas instruit ici.* ⚠ **Deux réserves achèvent de borner la piste** : le rapport de lot **déclare
-lui-même** n'avoir pas ouvert le document du dépôt dédié qu'il désigne comme **la pièce de jonction de
-cette corrélation**, et qualifie ce manque de **lacune la plus coûteuse** du lot ; et le cadre
+d'un éditeur de plateforme énonce sa conformité par référence à un millésime publié le **25 août
+2025**, **antérieur au déplacement** (F-78, **[B]**). ⚠ **La re-datation du 28 juillet 2026 a changé
+la qualification, non le millésime** : le syntagme de conformité est identique au mot près, mais son
+ancre pointe désormais le **dépôt dédié** — *écrire « un millésime du dépôt principal » n'est plus
+exact* —, et **la date de ce changement n'est pas établie**, la page ne portant aucune révision
+datable. *Le siège de ce dossier est le ch. 38 ; il n'est pas instruit ici.* ⚠ **Deux réserves
+achèvent de borner la piste** : le rapport de lot **déclare lui-même** n'avoir pas ouvert le document
+du dépôt dédié qu'il désigne comme **la pièce de jonction de cette corrélation**, et qualifie ce
+manque de **lacune la plus coûteuse** du lot ; et le cadre
 empirique hérité du Vol. II enseigne que **la journalisation confiée aux agents « n'est généralement
 pas recommandée »** (H-12, **[B]**) — ⚠ *source unique, préimpression non révisée par les pairs, sans
 reproduction indépendante*, réserve que le socle porte expressément.
@@ -542,10 +558,10 @@ présomption de composition que la non-compositionnalité de la sûreté invite 
    **normatif** nommant la portée transmise, cité et daté — **non une atténuation posée en principe**.
 2. **La fraîcheur.** Un vérificateur au-delà du premier maillon dispose-t-il d'un moyen documenté
    d'établir qu'un mandat amont est **encore en vigueur** à l'instant où il agit ? *Corpus* :
-   mécanismes de révocation et de statut, dispositions de propagation d'état des registres. *Critère*
-   : un **budget de fraîcheur** ou un **délai de propagation** écrit dans un texte. ⚠ Le Vol. I nommait
-   déjà ce verrou (H-19, **[C]**, repérage seul) ; le **ch. 20 § 20.6** établit que le socle n'en
-   documente pas la cascade.
+   mécanismes de révocation et de statut, dispositions de propagation d'état des registres.
+   *Critère* : un **budget de fraîcheur** ou un **délai de propagation** écrit dans un texte. ⚠ Le
+   Vol. I nommait déjà ce verrou (H-19, **[C]**, repérage seul) ; le **ch. 20 § 20.6** établit que le
+   socle n'en documente pas la cascade.
 3. **L'ancrage transitif.** Lorsque l'ancrage de confiance est renvoyé au déploiement, **quelle règle
    documentée** permet à un vérificateur d'accepter l'ancrage retenu par un maillon amont qu'il ne
    connaît pas ? *Corpus* : modèles de confiance des spécifications de mandat, précédents
@@ -599,22 +615,27 @@ d'ignorance.*
 
 ⚠ **Cette section n'est pas au TOC et n'a pas vocation à survivre.**
 
-**Ce qui est enfreint.** Portes **G-3** et **G-4** ; volet résiduel de **G-1** non instruit ; ordre de
-rédaction du PRD §6. ⚠ **Et une consigne explicite du plan est enfreinte** : le § 17.5 est déclaré
+**Ce qui est enfreint.** La pièce a été rédigée **avant G-3** — franchie depuis, le 28 juillet 2026 —
+et **avant G-4**, qui demeure ouverte ; le **volet de faits de G-1** est levé depuis la même date,
+mais les **obligations de pièce du Livre II** restent dues ; l'**ordre de rédaction du PRD §6** est
+enfreint. ⚠ *Une porte franchie après coup ne rattrape pas une rédaction qui l'a devancée.* ⚠ **Et
+une consigne explicite du plan est enfreinte** : le § 17.5 est déclaré
 **front neuf, sources primaires à établir avant rédaction**, et il a été rédigé **sans elles** — voir
 **R-IV-27**. Instruction d'auteur du 27 juillet 2026.
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ **Et le § 17.5 est un cas à part dans tout le
    Livre** : il ne mobilise **aucune entrée**, à aucun niveau. *Il ne s'agit pas d'un énoncé faible,
    mais d'une section qui n'en porte aucun.*
-2. **Les décomptes sont publiables** (G-2). Écart de **+22,3 %** ; la volumétrie du Livre alimente
+2. **Les décomptes sont publiables** (G-2). Écart de **+26,1 %** ; la volumétrie du Livre alimente
    **D-4** par **R-IV-17**.
-3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan** : **ch. 25**, **ch. 27**,
-   **ch. 37 § 37.3**, **ch. 38** et **ch. 49**. ⚠ Deux d'entre eux sont **structurants** — le ch. 27
-   est le **siège du versant québécois du mandat**, dont ce chapitre déclare ne pas préjuger, et le
-   ch. 25 porte la supervision dont le § 17.5 déclare la limite non documentée. Les renvois vers les
-   **ch. 3, 10** résolvent contre du texte ; ceux vers les **ch. 13, 14, 15, 16, 18, 19, 20, 21**
-   résolvent contre du texte au terme de la présente passe.
+3. **Tous les renvois « ch. N » résolvent désormais contre du texte** — les cinquante chapitres du
+   plan existent en brouillon hors portes depuis le 27 juillet 2026 —, ⚠ **et résoudre contre un
+   brouillon n'est pas résoudre contre une pièce recevable** : les renvois vers les **ch. 25**,
+   **ch. 27**, **ch. 37 § 37.3**, **ch. 38**, **ch. 43 § 43.3**, **ch. 43 § 43.5** et **ch. 49
+   § 49.0** visent des pièces qui se déclarent elles-mêmes non publiables, et se re-vérifieront à leur
+   recevabilité. ⚠ Deux d'entre eux sont **structurants** — le ch. 27 est le **siège du versant
+   québécois du mandat**, dont ce chapitre déclare ne pas préjuger, et le ch. 25 porte la supervision
+   dont le § 17.5 déclare la limite non documentée.
 4. **Une relève porte une date postérieure au gel de sa source** (§ 17.1, document consulté le
    26 juillet 2026) : elle est reprise **comme relève**, jamais comme entrée de socle, et **n'appuie
    aucun énoncé**.
@@ -639,8 +660,9 @@ rédaction du PRD §6. ⚠ **Et une consigne explicite du plan est enfreinte** :
   régime des trois degrés refuse. Ses thèses rectifiées portent « aucun des mécanismes **instruits par
   ce volume** ne documente ». **Le TOC du compendium porte encore les formes larges.** La pièce cite
   la thèse verbatim et écrit son corps aux formes bornées. **Demande remontée** : la **passe de
-  réalignement systématique** déjà demandée en R-IV-25 — *quatre thèses du Livre II sur dix portent une
-  forme que leur source a corrigée après coup, et c'est exactement l'objet du volet de fond de G-4.*
+  réalignement systématique** déjà demandée en R-IV-25 — *quatre thèses du Livre étaient connues dans
+  ce cas au moment de la remontée ; la passe d'arbitrage en a réaligné **cinq sur les treize** que le
+  Livre porte, et c'est exactement l'objet du volet de fond de G-4.*
 - **R-IV-29 — non bloquante, de siège.** Le § 17.1 est désigné par le TOC comme le **siège de la
   relève sur le RFC 8693**, dont le plan dit qu'elle rend la thèse « **possiblement sous-spécifiée,
   non fausse** ». ⚠ **Or une relève n'entre pas au socle, et un siège de relève n'est pas un siège de
@@ -650,18 +672,21 @@ rédaction du PRD §6. ⚠ **Et une consigne explicite du plan est enfreinte** :
   Livre appelle**. *Tant qu'elle n'est pas faite, la thèse du chapitre reste sous-spécifiée et la pièce
   l'écrit.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.24** — § 17.1 à § 17.6,
-avec ses trois sous-sections, dans l'ordre exact —, et le § 17.0 est une introduction de chapitre. La
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.24**, **inchangée
+jusqu'à la v0.30** — § 17.1 à § 17.6, avec ses trois sous-sections, dans l'ordre exact —, et le
+§ 17.0 est une introduction de chapitre. La
 **table de couverture est respectée pour ses cinq lignes**, y compris la cinquième, qui déclare le
 § 17.5 **socle à constituer** : *la pièce l'a laissé à constituer plutôt que de le simuler.* **Aucun
-verdict de grille n'est rendu**, conformément à la règle d'emploi 5 : le chapitre **instruit Q-C**. La
+verdict de grille n'est rendu**, conformément à la **règle d'emploi 5 du Vol. III *PRD*** (Annexe C
+§C.2), que le **ch. 14 § 14.3** reconduit : le chapitre **instruit Q-C**. La
 **divergence de gouvernance de la spécification de paiement n'est pas rouverte** : elle reste tranchée
 au **ch. 10**. Le **socle IAM reste au ch. 3** ; l'**inventaire de la révocation au ch. 20 § 20.4** ;
 la **taxonomie des attaques au ch. 19** ; le **versant québécois du mandat au ch. 27**. Les absences
-**portent leur degré**, dont douze au **degré 3**, sur tout le domaine balayé — *application de R-14
-déclarée, non dénombrée, faute de marqueur littéral.* Les **trois marqueurs de R-02** — § 17.0,
-§ 17.1 et § 17.6.2 —
-énoncent ce que le mécanisme démontre **et** ne démontre pas. Le **traitement défensif du § 17.6.1**
+**portent leur degré**, dont dix au **degré 3**, sur tout le domaine balayé — *application de R-14
+déclarée, non dénombrée, faute de marqueur littéral.* Les **quatre marqueurs de R-02** portent la
+règle plutôt qu'ils ne l'énoncent deux fois : le **bloc de thèse** et le **§ 17.0** nomment le verbe
+qu'elle proscrit, le **§ 17.1** et le **§ 17.6.2** qualifient chaque mécanisme par ce que sa
+spécification démontre **et** ne démontre pas. Le **traitement défensif du § 17.6.1**
 est tenu **au niveau du maillon**, identifiants cités, **aucune recette reproduite**. La **collision
 terminologique du Vol. II est signalée et non résolue**. Et les **dix occurrences de « Lecture de
 l'auteur »** sont suivies de ce que le socle établit et n'établit pas — dont **une section entière**,
@@ -700,10 +725,54 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
   est écartée par prescription.* Le § 17.1 nomme désormais la RFC, son statut et cette clause —
   *taire une spécification normative qui donne raison à la thèse serait le même défaut que la taire
   quand elle la contredit.* ⚠ **L'extraction n'entre pas au socle** : c'est **G-3** qui l'y ferait.
+  ☐ **Elle ne l'a pas fait** : G-3 a été franchie le 28 juillet 2026 **sans que ces deux clauses
+  soient versées**, et le versement reste dû (§ 17.1).
 
-⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle
-consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation de fond contre le Vol. III
-rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**.
-**CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur. Cette
-pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
-cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*
+⚠ **Ce que la clôture ne change pas.** **G-4 demeure ouverte** — la collation de fond contre le
+Vol. III rédigé n'est pas conduite —, et **aucun énoncé de cette pièce n'est central au sens de
+CA-IV-01** : la pièce n'est pas adossée au socle consolidé, dont l'existence, acquise le 28 juillet
+2026, **ne vaut pas adossement**. **CA-IV-13 n'est pas satisfaite** — aucune relecture par un
+relecteur distinct du rédacteur. Cette pièce reste un **brouillon non publiable**. *Zéro remontée
+ouverte au terme de cette clôture ne veut pas dire pièce recevable : cela veut dire qu'aucune des
+questions ouvertes ce jour-là n'attend plus de réponse qui ne soit déjà tranchée.*
+
+---
+
+### Passe de relecture — 28 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre ce que la relecture de la pièce a corrigé et ce qu'elle a **remonté sans corriger**.
+⚠ **Les remontées ci-dessous ne portent pas d'identifiant** : *l'allocation des `R-IV-nn` relève de la
+passe d'arbitrage* (PRD §13), et **numéroter depuis une pièce dans une série partagée est précisément
+le geste qui a produit dix numéros alloués deux fois** le 27 juillet 2026.
+
+**Corrigé dans la pièce.** L'état des portes et du socle consolidé, périmé par le franchissement de
+G-3 (en-tête, § 17.1, note de statut) ; **deux cardinaux faux** — R-02 déclaré à trois marqueurs pour
+quatre, les absences au degré 3 déclarées à douze pour dix — ; la **liste des entrées mobilisées**,
+qui déclarait F-44, F-45 et H-15 que le corps ne porte pas et taisait F-07, F-30, F-50, F-65 et H-04
+qu'il porte ; la **version du TOC** d'où la thèse est citée ; l'issue de **D-5**, prise depuis ; la
+**qualification de F-78**, que la re-datation du 28 juillet 2026 a changée ; et trois renvois que la
+décision 7 rendait indécidables — un « F-07 » nu entre deux socles, une « règle d'emploi 5 » sans
+document, un « ch. 19 » sans volume.
+
+**Remonté sans correction, faute de fait ou faute de mandat.**
+
+- **De socle — la pièce n'est pas adossée à l'Annexe B.** Le socle consolidé existe et cette pièce
+  résout toujours contre les identifiants sources. *Le versement des `S-nnn` au corps des pièces est
+  une passe unique du volume, non le geste d'un relecteur* : le faire ici seul produirait une pièce
+  numérotée dans une série que quarante-neuf autres n'emploient pas encore.
+- **De socle — quatre entrées mobilisées portent une date non re-vérifiée**, dont **H-06** et
+  **F-89**, qui portent ensemble l'article 12.1 du § 17.4 et du § 17.5 : l'éditeur officiel a refusé
+  l'accès. ⚠ *Non re-datée n'est pas infirmée* — l'extraction du 21 juillet 2026 tient, et aucun
+  énoncé central ne s'y adosse ; **la re-datation reste due**.
+- **De régime — une attribution reste anonyme au § 17.6.2**, contre la décision 15 *(b)(i)* : « la
+  documentation d'un éditeur de plateforme » n'est pas une attribution. ⚠ **La somme ne peut pas la
+  lever seule** : *sa source anonymise déjà l'éditeur*, et nommer sans source serait inventer. La
+  demande porte sur le socle, non sur la pièce. *L'autre anonymat de la même section — le groupe
+  communautaire — a été levé dans la passe, sa source le nommant.*
+- **D'appareil — le siège des cinq points de contrôle obligatoires peut armer son contrôle.** Ce
+  chapitre était la seule pièce hors siège à employer la matière sans renvoyer au **ch. 43 § 43.3** ;
+  le renvoi est posé, et le motif de désactivation de S5 pour ce siège tombe avec lui.
+- **D'appareil — la volumétrie de cette pièce est re-mesurée**, et la ligne du **registre de gel** ne
+  l'est pas : *l'en-tête et `decompte.sh` font foi, le registre suit*, et son réalignement se fait à
+  la passe qui clôt la relecture des cinquante pièces.

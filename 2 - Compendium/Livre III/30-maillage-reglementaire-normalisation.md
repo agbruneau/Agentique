@@ -7,13 +7,13 @@ troisième mouvement n'ouvre le terrain**.*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — **G-3** ouverte ; ⚠ **G-4 ouverte et opposable à ce chapitre**, dont le § 30.3 provient intégralement du Vol. III ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 30.4. ⚠ **D-9 ne bloque pas ce chapitre** : *il ne prescrit aucune parade humaine.* ⚠ **Ce chapitre est celui du Livre dont la matière est la plus périssable** : *un calendrier réglementaire européen en cours de report, un arrêté qui n'a pas été pris, et sept instances de normalisation dont **les travaux spécifiques à l'identité d'agent** sont pré-normatifs sans exception relevée* — ⚠ **la formule ne dit pas que ces instances n'auraient rien publié** : *deux d'entre elles portent des **Recommandations** (modèle de données des accréditations v2.0, 15 mai 2025 ; identifiants décentralisés v1.0, 19 juillet 2022), mais ce sont des **formats génériques, non écrits pour l'agent** — c'est la partition exacte que le § 30.3.3 établit, et l'en-tête l'aplatissait.* |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit — et il pèse ici sur une douzaine de dates.** Gels de source consommés : **juin 2026** (Vol. I §4.8, §5.3, §2.11.3), **16-17 juillet 2026** (Vol. II ch. 21 §21.2) et **21 juillet 2026** (Vol. III ch. 21) — ⚠ **aucun ne tient lieu du gel de la somme**, et l'écart entre le plus ancien et le plus récent est de **plus d'un mois** sur une matière qui se périme par trimestres |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). ⚠ **Trois régimes coexistent dans ce seul chapitre, et la distinction commande la lecture.** Le **Vol. I** — §4.8, §5.3, §2.11.3 — entre **intégralement en [C]** (PRD §7.1) : *repérage documentaire, aucun fait central.* Le **Vol. III *Monographie* ch. 21** conserve ses niveaux : **H-08** en **[A]**, **F-69** en **[A]**, **F-48** en **[A]**, **F-34** en **[A]**, **F-50**, **F-51**, **F-73**, **F-56**, **F-79** à **F-83**, **F-85**, **F-86** et **F-33** en **[B]**. ⚠ **Le champ a été re-mesuré contre le corps le 28 juillet 2026** : *F-33 et F-34, citées au § 30.3.2, y manquaient ; **H-19**, qui y était déclarée en **[C]**, n'est mobilisée par aucun énoncé du corps et en est retirée.* Le **Vol. II ch. 21 §21.2** y verse **Q5**, ⚠ *question d'agenda, non entrée factuelle*. ⚠ **Deux séries F-xx coexistent et se préfixent** (décision 7). **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **R-5 (attente réglementaire — ne rien anticiper) : quatre occurrences du sigle**, § 30.1.1, § 30.2.3, § 30.3.1 et § 30.3.2 ; **PRD §8.2.3 et §7.5 (métriques auto-déclarées) : les deux renvois ne sont pas écrits au corps** ; *le garde-fou est **appliqué aux § 30.2.2 et § 30.3.3**, chaque chiffre y étant attribué à sa source* ; **PRD §8.4 (neutralité fournisseur) : une occurrence du renvoi**, § 30.3.2 ; **PRDPlan Vol. II §4.4 — écrire « attendu par E-23 », jamais « exigé » : une occurrence du renvoi**, § 30.2.4 ; *la modalité s'écrit « E-23 **attend** », « elle **n'exige pas** », aux § 30.2.4 et § 30.2.7 — **le décompte de la formule n'est pas re-mesurable et n'est donc pas annoncé*** ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : deux occurrences du sigle**, § 30.3.1 — ⚠ *et les degrés se marquent en toutes lettres : « degré 1 » au § 30.3.1, « degré 2 » aux § 30.3.2 et § 30.3.3 (deux), « degré 3 » aux § 30.1.4, § 30.3.1 et § 30.3.3 (deux), « fait négatif vérifié » aux § 30.3.1 et § 30.3.3 (deux)* ; **R-09 (quatre statuts, dits à chaque mention) : six occurrences du sigle**, § 30.1.2, § 30.2.3, § 30.3.2 (deux) et § 30.3.3 (deux) — *le garde-fou est en outre **appliqué à toutes les rangées du tableau 30.3***, où chaque statut est dit sans que le sigle soit repris ; **R-11 (jalons visés, jamais fixés) : deux occurrences du sigle**, § 30.3.1 et § 30.3.3 ; **R-02 : une occurrence du sigle**, § 30.3.3 ; **R-01 : une occurrence du sigle**, § 30.3.2 ; **R-13 : deux occurrences du sigle**, § 30.0 et § 30.1.1 ; **R-03 à R-08, R-10, R-12 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **7 500 mots** de corps (§ 30.0 à § 30.3), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des **quinze sous-sections** qu'il déplie, et non des trois sections de tête. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier. ⚠ **D-4 interdit l'amputation comme le gonflement** |
+| **Statut** | **Brouillon de rédaction, non publiable** — pièce rédigée **avant** la porte **G-3**, sur instruction d'auteur du 27 juillet 2026. ⚠ **G-3 est franchie depuis le 28 juillet 2026** (PRD v0.14 ; socle consolidé à **159 entrées**) — *une porte franchie après coup solde la rédaction qui l'a devancée, elle ne la rattrape pas.* ⚠ **G-4 demeure ouverte et opposable à ce chapitre**, dont le § 30.3 provient intégralement du Vol. III. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 30.4. ⚠ **D-9 ne bloque pas ce chapitre** : *il ne prescrit aucune parade humaine.* ⚠ **Ce chapitre est celui du Livre dont la matière est la plus périssable** : *un calendrier réglementaire européen en cours de publication, un arrêté qui n'a pas été pris, et les **sept rangées d'instances du tableau 30.3**, dont les travaux spécifiques à l'identité d'agent sont pré-normatifs sans exception relevée **partout où le socle en documente***. ⚠ **La formule ne dit pas que ces instances n'auraient rien publié** : *deux de ces rangées portent des **Recommandations** (modèle de données des accréditations v2.0, 15 mai 2025 ; identifiants décentralisés v1.0, 19 juillet 2022), mais ce sont des **formats génériques, non écrits pour l'agent** — c'est la partition exacte que le § 30.3.3 établit.* ⚠ **Et la septième rangée ne documente rien** : *les travaux du sous-comité international d'IA et de l'organisme européen de normalisation ne sont portés par aucune entrée, et rien n'est affirmé d'eux — pas même leur caractère pré-normatif.* |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet de FAITS de G-1 est levé depuis le 28 juillet 2026** (registre : [`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) : *les entrées du socle que ce chapitre mobilise y ont été portées à leur source primaire, et **deux ont changé — toutes deux sur un décompte de participants** ; seul celui du § 30.3.3 est écrit ici, et il y est re-daté.* ⚠ **Les volets de pièce des Livres II et III restent dus**, et ils pèsent ici sur une douzaine de dates réglementaires européennes que le socle ne porte pas. Gels de source consommés : **juin 2026** (Vol. I §4.8, §5.3, §2.11.3), **16-17 juillet 2026** (Vol. II ch. 21 §21.2) et **21 juillet 2026** (Vol. III ch. 21) — ⚠ **aucun ne tient lieu du gel de la somme**, et l'écart entre le plus ancien et le plus récent est de **plus d'un mois** sur une matière qui se périme par trimestres |
+| **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** — [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées `S-001`…`S-159`** — *et ce chapitre a été rédigé avant lui* : ses énoncés résolvent contre les identifiants de leurs volumes d'origine, que les tables de correspondance normatives du socle rattachent à la série consolidée. ⚠ **Trois régimes coexistent dans ce seul chapitre, et la distinction commande la lecture.** Le **Vol. I** — §4.8, §5.3, §2.11.3 — entre **intégralement en [C]** (PRD §7.1) : *repérage documentaire, aucun fait central.* Le **Vol. III *Monographie* ch. 21** conserve ses niveaux : **H-08** (→ `S-033`, fondue dans son origine du Vol. II), **F-69** (→ `S-115`), **F-48** (→ `S-094`), **F-34** (→ `S-080`) et **F-82** (→ `S-128`) en **[A]** ; **F-33**, **F-50**, **F-51**, **F-73**, **F-79**, **F-80**, **F-81**, **F-83**, **F-85** et **F-86** en **[B]**. ⚠ **Une entrée a changé de niveau à la refonte, et le corps le porte** : **F-56** (→ `S-102`) est **rétrogradée de [B] en [C]** le 28 juillet 2026 par la règle de composition — *jamais un fait central* —, et le tableau 30.3 le dit à sa rangée. ⚠ **Le champ a été re-mesuré contre le corps** : *F-33 et F-34, citées au § 30.3.2, y manquaient ; **H-19**, qui y était déclarée en **[C]**, n'est mobilisée par aucun énoncé du corps et en est retirée.* Le **Vol. II ch. 21 §21.2** y verse **Q5**, ⚠ *question d'agenda, non entrée factuelle*. ⚠ **Deux séries F-xx coexistent et se préfixent** (décision 7) ; la série `S-nnn` est la seule que le socle alloue. ⚠ **Aucun énoncé n'est central au sens de CA-IV-01** : *la matière des § 30.1 et § 30.2 est en **[C]**, celle du § 30.3 relève d'une source dont **G-4** n'est pas franchie, et **trois affirmations reprises du Vol. I sont exclues du socle à tout niveau** — voir § 30.2.3, § 30.2.6 et § 30.2.7.* |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **R-5 (attente réglementaire — ne rien anticiper) : quatre occurrences du sigle**, § 30.1.1, § 30.2.3, § 30.3.1 et § 30.3.2 ; **PRD §8.2.3 et §7.5 (métriques auto-déclarées) : les deux renvois ne sont pas écrits au corps** ; *le garde-fou est **appliqué aux § 30.2.2 et § 30.3.3** — ⚠ **avec une issue opposée aux deux endroits**, et c'est le résultat : le chiffre du § 30.3.3 est **attribué et daté aux deux relevés**, celui du § 30.2.2 **ne l'est pas** — sa source ne nomme pas l'étude, et **l'attribution manquante est déclarée due sur place*** ; **PRD §8.4 (neutralité fournisseur) : une occurrence du renvoi**, § 30.3.2 ; **PRDPlan Vol. II §4.4 — écrire « attendu par E-23 », jamais « exigé » : une occurrence du renvoi**, § 30.2.4 ; *la modalité s'écrit « E-23 **attend** », « elle **n'exige pas** », aux § 30.2.4 et § 30.2.7 — **le décompte de la formule n'est pas re-mesurable et n'est donc pas annoncé*** ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : deux occurrences du sigle**, § 30.3.1 — ⚠ *et les degrés se marquent en toutes lettres : « degré 1 » au § 30.3.1, « degré 2 » aux § 30.3.2 et § 30.3.3 (deux), « degré 3 » aux § 30.1.4, § 30.3.1 et § 30.3.3 (deux), « fait négatif vérifié » aux § 30.3.1 et § 30.3.3 (deux)* ; **R-09 (quatre statuts, dits à chaque mention) : six occurrences du sigle**, § 30.1.2, § 30.2.3, § 30.3.2 (deux) et § 30.3.3 (deux) — *le garde-fou est en outre **appliqué à toutes les rangées du tableau 30.3***, où chaque statut est dit sans que le sigle soit repris ; **R-11 (jalons visés, jamais fixés) : deux occurrences du sigle**, § 30.3.1 et § 30.3.3 ; **R-02 : une occurrence du sigle**, § 30.3.3 ; **R-01 : une occurrence du sigle**, § 30.3.2 ; **R-13 : deux occurrences du sigle**, § 30.0 et § 30.1.1 ; **R-03 à R-08, R-10, R-12 : zéro occurrence** |
+| **Volumétrie cible** | ≈ **7 500 mots** de corps (§ 30.0 à § 30.3), **cible dérivée** de l'enveloppe du Livre — 90 000 mots, inchangée du TOC v0.25 au TOC v0.30 — au prorata des **quinze sous-sections** qu'il déplie, et non des trois sections de tête. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, ⚠ **et elle a bougé à la relecture du 28 juillet 2026** — *la pièce a reçu des bornes de régime qu'elle n'avait pas (trois réserves d'exclusion, une attribution due, un trio de textes corrigé), et **le bornage allonge***. **Le chiffre se re-mesure au commit** (décision 16). ⚠ **D-4 interdit l'amputation comme le gonflement** : *une borne ne se coupe pas pour tenir une cible.* |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 30)* — hors Canada, l'AI Act, ISO 42001, le RGPD et les cadres sectoriels dessinent le maillage transversal que l'agent en finance régulée doit satisfaire ; et la désignation de l'organisme de normalisation technique du cadre bancaire canadien fixera qui écrit les règles d'identité des agents financiers.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 30 — citation reportée par copie, décision 17)* — hors Canada, l'AI Act, ISO 42001, le RGPD et les cadres sectoriels dessinent le maillage transversal que l'agent en finance régulée doit satisfaire ; et la désignation de l'organisme de normalisation technique du cadre bancaire canadien fixera qui écrit les règles d'identité des agents financiers.
 
 ---
 
@@ -42,9 +42,10 @@ agents financiers canadiens ?**
 
 ⚠ **Trois régimes de preuve coexistent dans ce chapitre, et les confondre en ruinerait la lecture.** *Le
 § 30.1 et le § 30.2 viennent du **Vol. I** et entrent **intégralement en [C]** — repérage documentaire,
-aucun fait central. Le § 30.3 vient du **Vol. III** et conserve ses niveaux, dont deux entrées en
-**[A]**. Et une question d'agenda du **Vol. II** — Q5 — y est instruite sans être tranchée.* **La
-frontière passe donc à l'intérieur du chapitre, et elle est marquée à chaque section.**
+aucun fait central. Le § 30.3 vient du **Vol. III** et conserve ses niveaux, dont **cinq entrées en
+[A]** — l'en-tête les nomme, avec leur correspondance au socle consolidé. Et une question d'agenda du
+**Vol. II** — Q5 — y est instruite sans être tranchée.* **La frontière passe donc à l'intérieur du
+chapitre, et elle est marquée à chaque section.**
 
 **Ce que le chapitre ne traite pas.** ⚠ **Le siège de la double-qualification — l'agent comme *modèle*
 et comme *tiers TIC* — est au ch. 31 § 31.1.4** : *le §5.3 du Vol. I déclare lui-même **ne faire que
@@ -55,7 +56,7 @@ Vol. III) : *le ch. 14 § 14.4 en est le lieu de croisement.*
 
 ## § 30.1 — Gouvernance et conformité d'entreprise
 
-*Section **reçue du Vol. I *Monographie* §4.8 et §2.11.3**, ce dernier **arrivant du ch. 6**. ⚠ **Toute
+Section **reçue du Vol. I *Monographie* §4.8 et §2.11.3**, ce dernier **arrivant du ch. 6**. ⚠ **Toute
 la matière de cette section entre en [C]** — repérage documentaire — *et aucun de ses énoncés ne porte
 un fait central.*
 
@@ -65,16 +66,21 @@ d'entreprise porte sur le *système* déployé** : un acteur autonome greffé su
 existant, doté d'une identité de flotte, puisant dans le patrimoine informationnel et susceptible de
 franchir des frontières organisationnelles — *tout ce que le ch. 24 a décrit.*
 
-**Trois leviers structurent la section et se renforcent** : les **obligations légales** qui imposent une
-*règle* ; les **normes volontaires** qui fournissent un *système de management* ; et les **contrôles
-techniques** qui rendent la règle *exécutable*. ⚠ **L'état réglementaire est arrêté au gel du Vol. I —
-juin 2026 — et le calendrier est mouvant** : *chaque échéance est qualifiée par son statut juridique
+**Trois leviers structurent la section et se renforcent** : les **obligations légales** qui imposent
+une *règle* — AI Act, RGPD, réglementation sectorielle ; les **normes volontaires** qui fournissent
+un *système de management* — ISO/IEC 42001, NIST AI RMF ; et les **contrôles techniques** qui
+rendent la règle *exécutable* — inventaire, *policy-as-code*, journalisation probante. ⚠ **Les
+instruments se nomment avec leur auteur et leur date** (décision 15 du TOC) : *la parade de
+péremption vaut pour les dénominations commerciales et les numéros de version, jamais pour
+l'attribution d'un instrument repris.* ⚠ **L'état réglementaire est arrêté au gel du Vol. I — juin
+2026 — et le calendrier est mouvant** : *chaque échéance est qualifiée par son statut juridique
 exact, et tout report non publié officiellement est signalé comme **non acquis**.*
 
-### 30.1.1 Qualification des agents et calendrier d'application
+### 30.1.1 Qualification des agents sous l'AI Act et calendrier d'application
 
-Le règlement européen sur l'intelligence artificielle structure la conformité par **les rôles** et par
-**le niveau de risque** — deux axes que l'autonomie d'action d'un agent vient **déplacer**.
+Le règlement européen sur l'intelligence artificielle — l'**AI Act**, règlement (UE) 2024/1689 —
+structure la conformité par **les rôles** et par **le niveau de risque** : deux axes que l'autonomie
+d'action d'un agent vient **déplacer**.
 
 *Sur l'axe des rôles* : l'entreprise qui **développe** l'agent est fournisseur, celle qui l'**exploite
 sous sa propre responsabilité** est déployeur ; **la distinction conditionne la répartition des
@@ -114,30 +120,31 @@ conformité prudente conserve une trajectoire alignée sur les échéances actue
 ⚠ **Le déclencheur opérationnel n'est pas la date, mais l'inventaire.** *Un agent ne peut être qualifié
 que s'il figure au registre décrit au § 30.1.3, avec son périmètre de décision et ses outils.*
 
-### 30.1.2 Normes volontaires
+### 30.1.2 Normes volontaires : ISO/IEC 42001, famille 42000, NIST AI RMF
 
 **Là où la loi impose une règle, les normes volontaires fournissent l'appareil de management qui rend
 cette règle tenable dans la durée.**
 
-Une norme internationale de 2023 définit un **système de management de l'intelligence artificielle
-certifiable**, bâti sur la structure de haut niveau commune aux normes de management — ⚠ *ce qui permet
-de l'imbriquer avec une norme de sécurité de l'information déjà en place*. Son exigence d'évaluation
-d'impact est opérationnalisée par une norme complémentaire de 2025, **articulable** aux évaluations
-d'impact que d'autres régimes imposent — ⚠ *trois exercices qu'une organisation a intérêt à conduire de
-façon convergente plutôt que redondante.* Autour de ce noyau gravite une **famille** de normes
-(terminologie, gestion du risque, cycle de vie, exigences d'organismes d'audit).
+**ISO/IEC 42001:2023** définit un **système de management de l'intelligence artificielle certifiable**,
+bâti sur la structure de haut niveau commune aux normes de management — ⚠ *ce qui permet de l'imbriquer
+avec ISO/IEC 27001, déjà en place dans la plupart des institutions*. Son exigence d'évaluation d'impact
+est opérationnalisée par **ISO/IEC 42005:2025**, **articulable** aux évaluations d'impact que d'autres
+régimes imposent — celle de l'AI Act et celle du RGPD —, ⚠ *trois exercices qu'une organisation a
+intérêt à conduire de façon convergente plutôt que redondante.* Autour de ce noyau gravite la **famille
+42000** (terminologie, gestion du risque, cycle de vie, exigences d'organismes d'audit).
 
 ⚠ **Le point d'attention propre à l'agentique est que ces normes, conçues pour des *systèmes* d'IA,
 doivent être appliquées à l'*autonomie d'action*** : *le périmètre du système de management doit couvrir
 non seulement la qualité de la sortie du modèle, mais **les actions que l'agent déclenche dans les
 systèmes d'enregistrement**.*
 
-Du côté américain et inter-juridictionnel, un **cadre de gestion du risque** organise la gouvernance
-autour de quatre fonctions, complété pour le génératif par un profil dédié. ⚠ **Pour l'autonomie
-d'action, ces cadres généralistes se prolongent par des surcouches de sécurité** — dont l'une était,
-au relevé du Vol. I, ⚠ **en brouillon de discussion** au 8 janvier 2026 : *travaux émergents, non une
-norme ratifiée* (R-09 du Vol. III). ⚠ **Un profil agentique dédié était, lui, au statut de brouillon
-en 2026, et ne saurait être présenté comme acquis.**
+Du côté américain et inter-juridictionnel, le **NIST AI Risk Management Framework 1.0** (NIST, 2023)
+organise la gouvernance autour de quatre fonctions, complété pour le génératif par le profil **NIST AI
+600-1** (NIST, 2024). ⚠ **Pour l'autonomie d'action, ces cadres généralistes se prolongent par des
+surcouches de sécurité** — les *Control Overlays for Securing AI Systems* du CAISI, ⚠ **en brouillon de
+discussion au 8 janvier 2026** au relevé du Vol. I : *travaux émergents, non une norme ratifiée* (R-09
+du Vol. III). ⚠ **Un profil agentique dédié, élaboré sous l'égide de la Cloud Security Alliance, était
+lui-même au statut de brouillon en 2026, et ne saurait être présenté comme acquis.**
 
 Lecture de l'auteur — **l'intérêt pratique de ces normes tient aux tables de correspondance qui relient
 les exigences des différents cadres** : *une organisation qui projette une seule fois ses contrôles sur
@@ -152,7 +159,7 @@ outil qui en invoque un autre — et qui saurait **attribuer le risque le long d
 délégation** n'est documenté par aucune entrée.* **Le ch. 17 en porte le versant technique ; le
 ch. 29 § 29.3 en porte le versant juridique, et ni l'un ni l'autre ne la referme.**
 
-### 30.1.3 Inventaire, registre d'agents et politique exécutable
+### 30.1.3 Inventaire/registre d'agents et *policy-as-code*
 
 **Le principe fondateur tient en une formule : on ne gouverne que ce qu'on a inventorié.**
 
@@ -179,20 +186,21 @@ simplement déclarés.**
 la somme ; **le registre comme objet d'émission est au ch. 15**. *Ni l'un ni l'autre n'est reconstruit
 ici : cette sous-section n'en porte que le versant de gouvernance d'entreprise.*
 
-### 30.1.4 Régime européen des données personnelles et réglementation sectorielle
+### 30.1.4 **RGPD pour agents autonomes** et réglementation sectorielle
 
 ⚠ **Une précision de provenance ouvre cette sous-section, et elle vaut avertissement.** *Le Vol. III
-déclare que **son socle ne documente ni le règlement général européen sur la protection des données ni
-aucun de ses articles** — absence de documentation, degré 3, portée à son registre sous le numéro 16 —
-et qu'**aucun rapprochement entre le régime québécois et le régime européen n'est opéré chez lui**
-(**ch. 27 § 27.7**).* ⚠ **La matière européenne de la somme est donc portée par le Vol. I seul, et elle
-entre en [C].** *Ce n'est pas une contradiction entre volumes : « le socle du Vol. III ne documente pas
-X » et « le Vol. I documente X » sont **logiquement compatibles** — c'est une **lacune de couverture**,
-et couverte en [C] ne vaut pas comblée.*
+déclare que **son socle ne documente ni le règlement général européen sur la protection des données
+— le RGPD — ni aucun de ses articles** : absence de documentation, degré 3, portée à son registre
+sous le numéro 16. Il déclare de même qu'**aucun rapprochement entre le régime québécois et le
+régime européen n'est opéré chez lui** (**ch. 27 § 27.7**).* ⚠ **La matière européenne de la somme
+est donc portée par le Vol. I seul, et elle entre en [C].** *Ce n'est pas une contradiction entre
+volumes : « le socle du Vol. III ne documente pas X » et « le Vol. I documente X » sont
+**logiquement compatibles** — c'est une **lacune de couverture**, et couverte en [C] ne vaut pas
+comblée.*
 
-**Le régime européen frappe l'autonomie agentique de plein fouet par sa disposition sur la décision
-individuelle automatisée**, qui l'encadre et ouvre un droit à explication. *Dès qu'un agent prend ou
-influence **sans intervention humaine significative** une décision produisant des effets juridiques ou
+**Le RGPD frappe l'autonomie agentique de plein fouet par sa disposition sur la décision individuelle
+automatisée**, qui l'encadre et ouvre un droit à explication. *Dès qu'un agent prend ou influence
+**sans intervention humaine significative** une décision produisant des effets juridiques ou
 comparables — accord de crédit, tri de candidatures, modulation d'un service essentiel —, le déployeur
 doit pouvoir établir la base légale du traitement, démontrer la minimisation des données et fournir une
 explication intelligible de la logique sous-jacente.*
@@ -200,8 +208,8 @@ explication intelligible de la logique sous-jacente.*
 ⚠ **C'est précisément là que l'attribution par identité non humaine cesse d'être un sujet de sécurité
 pour devenir un instrument de redevabilité** : *la chaîne d'identité et la piste d'audit sont ce qui
 permet de rattacher une décision contestée à un agent, à son propriétaire et à ses sources de données.*
-**Le principe directeur, valable au-delà de ce seul régime, est que la conformité dépend de la **donnée
-traitée** et de la **décision prise**, non du modèle considéré isolément.**
+**Le principe directeur, valable au-delà de ce seul régime, est que la conformité dépend de la donnée
+traitée et de la décision prise, non du modèle considéré isolément.**
 
 ⚠ **Le lecteur remarquera la parenté avec l'article 12.1 du ch. 27, et il faut la borner.** *Les deux
 régimes se déclenchent sur une propriété du **processus décisionnel**, non sur une technologie ; mais le
@@ -214,7 +222,7 @@ la porte pas** — *aucune conclusion juridique n'en est tirée ici.*
 l'agent touche au dispositif médical — *souvent assorti d'un déploiement sur site ou en infonuagique
 souverain.*
 
-### 30.1.5 Résidence, souveraineté, responsabilité et *e-discovery*
+### 30.1.5 Résidence/souveraineté, responsabilité, *e-discovery* et modèle opérationnel de gouvernance
 
 **La résidence — où repose physiquement la donnée — et la souveraineté — quelle juridiction la régit —
 ne sont pas seulement des contraintes de gouvernance : elles deviennent des contraintes d'architecture
@@ -249,9 +257,9 @@ coordonnés, est celle de la traçabilité de la redevabilité lorsque la décis
 délégation distribuée** — *traitée au ch. 24 § 24.9.4 comme enjeu socio-technique, au ch. 29 § 29.3
 comme question d'imputabilité, et **refermée par ni l'un ni l'autre**.*
 
-## § 30.2 — Maillage réglementaire transversal : Europe, États-Unis, Canada-Québec
+## § 30.2 — Maillage réglementaire transversal UE / US / Canada-Québec
 
-*Section **reçue du Vol. I *Monographie* §5.3**. ⚠ **Toute sa matière entre en [C]**, et **le siège de
+Section **reçue du Vol. I *Monographie* §5.3**. ⚠ **Toute sa matière entre en [C]**, et **le siège de
 la double-qualification est au ch. 31 § 31.1.4** : *le §5.3 déclare lui-même ne faire que l'instancier.*
 
 Le § 30.1 a posé le générique transversal. **Cette section pose la question préalable à toute conception
@@ -260,7 +268,7 @@ directeur est que chaque exigence est menée par une obligation nominative, dat�
 vigueur, en phase d'application, en projet ou en accord provisoire — plutôt que par une généralité
 réglementaire.**
 
-### 30.2.1 La grille de qualification multiple
+### 30.2.1 La grille de qualification multiple : système TIC / modèle / décision automatisée
 
 **Avant de réguler un agent, l'architecte doit déterminer sous quels régimes il tombe.** ⚠ **Le patron
 de fond — la double-qualification, l'agent comme *modèle* **et** comme *tiers TIC* — est posé une fois
@@ -276,12 +284,12 @@ Un agent financier reçoit **jusqu'à trois qualifications cumulatives, non excl
 
 : Tableau 30.1 — La grille de qualification multiple d'un agent financier. ⚠ **Le point méthodologique décisif est que la coexistence de ces régimes est *le patron, pas une erreur à corriger*** : *la conformité consiste à produire la piste d'audit pour chacun **simultanément**, non à choisir l'un d'eux.*
 
-### 30.2.2 La résilience opérationnelle : l'agent comme service TIC
+### 30.2.2 DORA et la résilience opérationnelle : l'agent comme service TIC
 
-Le règlement européen de résilience opérationnelle numérique du secteur financier, **applicable depuis
-le 17 janvier 2025**, structure la matière autour de **cinq piliers** : gouvernance du risque
-technologique, gestion des incidents, tests de résilience, gestion du risque lié aux tiers, et partage
-d'information.
+Le règlement européen de résilience opérationnelle numérique du secteur financier — **DORA** —,
+**applicable depuis le 17 janvier 2025**, structure la matière autour de **cinq piliers** :
+gouvernance du risque technologique, gestion des incidents, tests de résilience, gestion du risque lié
+aux tiers, et partage d'information.
 
 ⚠ **Pour l'agentique, l'articulation la plus contraignante porte sur le registre des tiers et sur le
 risque de concentration** : *tout fournisseur de modèle, de passerelle ou de serveur d'outils devient un
@@ -302,20 +310,21 @@ d'une dépendance vers un fournisseur supervisé, sans intervention de l'institu
 ⚠ **Le risque de concentration n'est pas théorique, et le chiffre porte son statut** : *une part
 documentée des entités financières européennes — **supérieure à 65 % selon une étude tierce, à
 re-vérifier** — s'appuie sur au moins deux des trois grands fournisseurs pour des fonctions critiques.*
-**Le ch. 31 § 31.5.2 en porte l'analyse.**
+⚠ **L'attribution de ce chiffre est due et manque à sa source** : *le Vol. I ne nomme pas l'étude, et
+« une étude tierce » n'est pas une attribution* (décision 15 du TOC) — **la métrique est donc citée
+avec sa réserve, et aucun énoncé de la somme ne s'y adosse.** **Le ch. 31 § 31.5.2 en porte l'analyse.**
 
 **La conséquence pour le fil de la somme est nette** : *ce régime impose un **contrat** explicite entre
 l'entité financière et chaque tiers de la chaîne agentique, et un plan d'**évolution** — la stratégie de
 sortie — qui maintient le **découplage** vis-à-vis d'un fournisseur dont la défaillance serait
 systémique.*
 
-### 30.2.3 Le régime de haut risque : ciblé, et son report
+### 30.2.3 AI Act Annexe III : haut-risque ciblé et report adopté
 
-⚠ **Le règlement européen sur l'intelligence artificielle ne qualifie pas l'usage financier en bloc : la
-classification en « haut risque » est strictement libellée, et toute extrapolation crée un risque de
-sur-conformité.**
+⚠ **L'AI Act ne qualifie pas l'usage financier en bloc : la classification en « haut risque » est
+strictement libellée à son annexe III, et toute extrapolation crée un risque de sur-conformité.**
 
-*Un point de son annexe vise le **scoring de crédit et l'évaluation de la solvabilité des personnes
+*Un point de l'annexe III vise le **scoring de crédit et l'évaluation de la solvabilité des personnes
 physiques** — ⚠ **avec une exclusion explicite pour la détection de fraude, qui n'est donc pas à haut
 risque**. Un autre vise **la tarification et l'évaluation du risque en assurance vie et santé
 uniquement**.*
@@ -326,7 +335,7 @@ l'exclusion de la fraude**, qui maintient les agents de détection de crime fina
 ⚠ **et c'est ce qui fonde leur rôle de tête de pont au ch. 31 § 31.4.3.**
 
 **Le calendrier appelle une qualification temporelle tout aussi précise.** Les obligations relatives aux
-systèmes à haut risque de l'annexe **devaient s'appliquer au 2 août 2026**. ⚠ **Le report décrit au
+systèmes à haut risque de l'annexe III **devaient s'appliquer au 2 août 2026**. ⚠ **Le report décrit au
 § 30.1.1 les porte au 2 décembre 2027** — *l'IA embarquée au 2 août 2028, le marquage des contenus
 synthétiques au 2 décembre 2026* — ⚠ **et il est adopté dans la fenêtre du socle, sous la seule réserve
 de la publication officielle à suivre** (R-09 du Vol. III : *le statut se dit à chaque mention*).
@@ -335,19 +344,25 @@ tient** : *tant que la publication n'est pas intervenue, une architecture pruden
 trajectoire antérieure.*
 
 **Sur l'articulation avec le droit financier sectoriel**, deux autorités européennes ont posé le
-cadrage : l'une traite le règlement comme **complémentaire** du droit prudentiel bancaire et du crédit,
-l'autre **confirme — sans imposer d'exigences nouvelles** — que les régimes prudentiels d'assurance
-encadrent déjà l'usage de l'IA.
+cadrage : l'**Autorité bancaire européenne** traite le règlement comme **complémentaire** du droit
+prudentiel bancaire et du crédit, tandis que l'**Autorité européenne des assurances et des pensions
+professionnelles** confirme — **sans imposer d'exigences nouvelles** — que les régimes prudentiels
+d'assurance encadrent déjà l'usage de l'IA. ⚠ **Les deux moitiés de cette phrase n'ont pas le même
+régime, et l'écart se déclare** : *le premier terme repose sur une mise en correspondance de
+**novembre 2025** que le Vol. I range lui-même **hors de son corpus bibliographique** — **exclue du
+socle consolidé à tout niveau** (PRD §7.1, décision prise sur la remontée R-IV-97) et **citable avec
+cette réserve, jamais versable** ; le second repose sur un avis daté du **6 août 2025**, sourcé.*
 
-### 30.2.4 Risque de modèle : la divergence transatlantique
+### 30.2.4 Risque-modèle : la divergence transatlantique
 
 *⚠ **Cette sous-section est le siège du régime de risque de modèle côté international** ; le versant
 canadien est au **ch. 25**, et les approfondissements sectoriels du ch. 34 y renvoient.*
 
 **Le fait structurant est une divergence transatlantique d'approche.**
 
-**Aux États-Unis**, le **17 avril 2026** marque une bascule : une **guidance interagences** remplace un
-corpus de 2011. ⚠ **Deux propriétés en font un cas d'école de qualification.** *D'une part, elle **exclut
+**Aux États-Unis**, le **17 avril 2026** marque une bascule : une **guidance interagences de la Réserve
+fédérale, de l'OCC et de la FDIC** remplace le corpus que les deux premières avaient posé en **2011**.
+⚠ **Deux propriétés en font un cas d'école de qualification.** *D'une part, elle **exclut
 explicitement de son périmètre l'IA générative et l'IA agentique**, jugées « novel and rapidly
 evolving », renvoyées à une demande d'information annoncée. D'autre part, elle demeure **non
 contraignante** — c'est l'écart d'approche le plus net avec l'Europe et le Canada, plus prescriptifs.*
@@ -356,10 +371,11 @@ contraignante** — c'est l'écart d'approche le plus net avec l'Europe et le Ca
 modèle ne crée aucune zone de non-droit pour l'agent**, qui reste soumis à la gouvernance générale, au
 droit du crédit équitable et au dispositif anti-blanchiment.
 
-**Au Royaume-Uni**, le cadre est **en vigueur et stable** : une déclaration prudentielle publiée en 2023
-et en vigueur depuis 2024 articule **cinq principes** de gestion du risque de modèle pour les banques.
-**En Europe**, le risque de modèle reste **distribué** — *pas de cadre unique* — entre le droit
-prudentiel et les obligations de gestion du risque et de transparence du règlement sur l'IA.
+**Au Royaume-Uni**, le cadre est **en vigueur et stable** : une déclaration prudentielle de l'**autorité
+de régulation prudentielle de la Banque d'Angleterre**, publiée en **2023** et en vigueur depuis
+**2024**, articule **cinq principes** de gestion du risque de modèle pour les banques. **En Europe**, le
+risque de modèle reste **distribué** — *pas de cadre unique* — entre le droit prudentiel et les
+obligations de gestion du risque et de transparence de l'**AI Act**.
 
 ⚠ **Et au Canada, la lecture se fait au ch. 25, avec sa formulation imposée** : *E-23 **attend**, elle
 n'exige pas* (PRDPlan Vol. II §4.4).
@@ -371,39 +387,43 @@ validation indépendante, surveillance continue — à des artefacts non déterm
 stable, là où un agent réintroduit de la variance à chaque inférence**.* **Ce que le socle établit** :
 l'exclusion. **Ce qu'il n'établit pas** : cette difficulté, qui est une lecture reprise du Vol. I.
 
-### 30.2.5 Conduite et marchés
+### 30.2.5 Conduite et marchés : MiFID II, *suitability*, MiCA
 
 **Le conseil en investissement et l'évaluation d'adéquation relèvent d'un régime distinct du régime de
 haut risque — point de qualification à ne pas confondre.**
 
-Pour les services d'investissement, la directive européenne et son règlement d'accompagnement
-s'appliquent **sans atténuation** à l'usage de l'IA. ⚠ **L'autorité européenne des marchés l'a confirmé
-par une déclaration publique de 2024**, articulée avec ses orientations révisées sur l'adéquation
-couvrant le conseil automatisé : ***la firme reste responsable du résultat de l'évaluation d'adéquation,
-quel que soit le degré d'automatisation.***
+Pour les services d'investissement, la directive **MiFID II** et son règlement d'accompagnement
+**MiFIR** s'appliquent **sans atténuation** à l'usage de l'IA. ⚠ **L'Autorité européenne des marchés
+financiers l'a confirmé par une déclaration publique du 30 mai 2024**, articulée avec ses orientations
+révisées sur l'adéquation couvrant le conseil automatisé : ***la firme reste responsable du résultat de
+l'évaluation d'adéquation, quel que soit le degré d'automatisation.***
 
 ⚠ **La conséquence de conception est directe : un agent de conseil ne déplace pas la responsabilité de
 conduite** — *la **préparation** peut être automatisée, mais **la conformité du résultat demeure
 imputable à l'entreprise***. **Le ch. 31 § 31.1.3 en porte le siège**, et **le ch. 34 § 34.4** le
 versant sectoriel.
 
-Pour les crypto-actifs, un règlement européen encadre les prestataires de services **depuis le
+Pour les crypto-actifs, le règlement **MiCA** encadre les prestataires de services **depuis le
 30 décembre 2024**, avec une période de transition s'étendant jusqu'à la fin juin 2026.
 
-### 30.2.6 Lutte anti-blanchiment et fonds propres
+### 30.2.6 AML/CTF et capital : *single rulebook* 2027, AMLA, Bâle III
 
 **Le régime de lutte contre le blanchiment se consolide selon un calendrier daté, qu'un agent de
-conformité doit anticiper plutôt que subir.** Un paquet européen adopté en 2024 institue un corpus de
-règles unique **applicable le 10 juillet 2027**, tandis qu'une autorité de surveillance dédiée est
-**opérationnelle depuis 2025**.
+conformité doit anticiper plutôt que subir.** Le paquet européen adopté le **24 avril 2024** institue un
+corpus de règles unique — le *single rulebook* — **applicable le 10 juillet 2027**, tandis que
+l'autorité de surveillance **AMLA**, établie à Francfort, est **opérationnelle depuis 2025**. ⚠ **La
+date d'application du corpus unique porte une réserve de régime** : *le Vol. I range le règlement qui
+l'institue **hors de son propre corpus bibliographique** — **exclu du socle consolidé à tout niveau**
+(PRD §7.1, décision prise sur la remontée R-IV-97) —, de sorte que cette échéance est **citée avec sa
+réserve et ne porte aucun énoncé de la somme**.*
 
 ⚠ **Ce calendrier importe pour l'agentique** : *un agent d'investigation conçu aujourd'hui devra être
 conforme à un référentiel harmonisé qui n'entre pleinement en application qu'en 2027* — **ce qui plaide
 pour un découplage entre la logique d'investigation et le jeu de règles, appelé à évoluer.**
 
-**Sur les fonds propres**, un règlement européen s'applique **depuis le 1ᵉʳ janvier 2025** — avec un
-report de mise en œuvre pour l'une de ses composantes — et une directive **doit être transposée à
-compter du 11 janvier 2026**.
+**Sur les fonds propres**, le règlement européen qui met en œuvre la finalisation de **Bâle III**
+s'applique **depuis le 1ᵉʳ janvier 2025** — avec un report de mise en œuvre pour l'une de ses
+composantes — et la directive qui l'accompagne **doit être transposée à compter du 11 janvier 2026**.
 
 ⚠ **Le point de qualification du § 30.2.3 se rappelle ici** : *l'IA de détection de fraude bénéficie de
 l'exclusion du régime de haut risque, **ce qui ne l'exonère pas des obligations de fond du dispositif
@@ -420,13 +440,19 @@ sens d'une obligation.**
 portent à leurs propres régimes. En cas d'écart, ce sont eux qui font foi** : *ils résolvent contre le
 Vol. II et le Vol. III, à des niveaux supérieurs.* **Ce que le Vol. I y ajoute est signalé comme tel.**
 
-**Sur le versant fédéral prudentiel**, le Vol. I porte les mêmes dates que le **ch. 25** — finalisation
-en septembre 2025, entrée en vigueur au 1ᵉʳ mai 2027 — et **deux pièges qu'il nomme** : *(a)* **ne pas
-dater l'entrée en vigueur à 2025**, qui est la date de finalisation ; *(b)* **ne pas confondre ce texte
-avec la ligne directrice de technologie et cyberrésilience** du même régulateur, en vigueur depuis le
-1ᵉʳ janvier 2024, ni avec celle de gestion du risque lié aux tiers, en vigueur depuis le 1ᵉʳ mai 2024.
-⚠ *La lecture conjointe de ces trois textes forme **le pendant canadien de la double-qualification** du
-ch. 31 § 31.1.4.* ⚠ **Et la formulation imposée tient** : *E-23 **attend**, elle n'exige pas.*
+**Sur le versant fédéral prudentiel**, le Vol. I porte les mêmes dates que le **ch. 25** pour **E-23** —
+finalisation en septembre 2025, entrée en vigueur au 1ᵉʳ mai 2027 — et **deux pièges qu'il nomme** :
+*(a)* **ne pas dater l'entrée en vigueur à 2025**, qui est la date de finalisation ; *(b)* **ne pas
+confondre E-23 avec B-13**, la ligne directrice de technologie et cyberrésilience du même régulateur,
+en vigueur depuis le 1ᵉʳ janvier 2024, **ni avec B-10**, celle de gestion du risque lié aux tiers, en
+vigueur depuis le 1ᵉʳ mai 2024. ⚠ **Le trio qui forme le pendant canadien n'est pas celui-là, et c'est
+tout l'objet du second piège** : *ce que le Vol. I désigne comme **le pendant canadien de la
+double-qualification** du ch. 31 § 31.1.4 est la lecture conjointe de **B-13, B-10 et E-21** — **E-23
+en est le texte à ne pas confondre, non un membre**.* ⚠ **Et E-21 porte une réserve de régime qui la
+distingue des deux autres** : *le Vol. I la range **hors de son propre corpus bibliographique** —
+**exclue du socle consolidé à tout niveau** (PRD §7.1, décision prise sur la remontée R-IV-97) —, de
+sorte que **le troisième membre du trio est cité avec sa réserve, jamais versé**.* ⚠ **La formulation
+imposée tient** : *E-23 **attend**, elle n'exige pas.*
 
 ⚠ **Sur le versant québécois, le Vol. I porte deux choses que le socle du Vol. II ne porte pas, et il
 faut les lire au bon régime.**
@@ -445,13 +471,13 @@ systèmes d'IA, un répertoire centralisé, une cote de risque périodique, une 
 simple » au client, une surveillance des biais et du calibrage dynamique** — et note qu'elle est
 **distincte** de la ligne directrice de la même autorité sur le risque de modèle.*
 
-⚠ **Ce n'est pas une contradiction, et il faut l'écrire exactement.** *« Le socle du Vol. II ne documente
-pas le contenu » et « le Vol. I le décrit » sont **logiquement compatibles** : c'est une **lacune de
-couverture**, non une divergence de fait.* ⚠ **Et la couverture est en [C]** — repérage documentaire du
-Vol. I, dont la vérification porte sur les références et non sur le contenu des affirmations : ***couverte
-en [C] ne vaut pas comblée***, et **aucun énoncé central ne peut s'y adosser**. ⚠ **La lacune §10.4
-reste donc ouverte, et le ch. 27 § 27.1 continue de la déclarer.** *L'écart est remonté au ch. 25
-(remontée R-IV-84) ; il n'est pas comblé ici.*
+⚠ **Ce n'est pas une contradiction, et il faut l'écrire exactement.** *« Le socle du Vol. II ne
+documente pas le contenu » et « le Vol. I le décrit » sont **logiquement compatibles** : c'est une
+**lacune de couverture**, non une divergence de fait.* ⚠ **Et la couverture est en [C]** — repérage
+documentaire du Vol. I, dont la vérification porte sur les références et non sur le contenu des
+affirmations : ***couverte en [C] ne vaut pas comblée***, et **aucun énoncé central ne peut s'y
+adosser**. ⚠ **La lacune §10.4 reste donc ouverte, et le ch. 27 § 27.1 continue de la déclarer.**
+*L'écart est remonté au ch. 25 (remontée R-IV-84) ; il n'est pas comblé ici.*
 
 **Sur le droit de la décision automatisée**, le Vol. I porte l'article 12.1 avec ⚠ **un point de
 qualification que le ch. 27 confirme** : *il ne s'agit **pas d'une interdiction** de type européen, mais
@@ -470,9 +496,9 @@ reste à confirmer** — ressource vivante, non un acquis.*
 
 ## § 30.3 — La normalisation institutionnelle et le cadre bancaire canadien
 
-*Section **reçue du Vol. III *Monographie* ch. 21**, et **instruisant Q5 de la série d'agenda du
+Section **reçue du Vol. III *Monographie* ch. 21**, et **instruisant Q5 de la série d'agenda du
 Vol. II** (*Monographie* ch. 21 §21.2). ⚠ **Le Vol. II porte deux séries « Q n » indépendantes** : celle
-d'agenda, dont Q5 relève, et celle du **ch. 36 § 36.4** — *nommer la série à chaque renvoi* (décision 7).*
+d'agenda, dont Q5 relève, et celle du **ch. 36 § 36.4** — *nommer la série à chaque renvoi* (décision 7).
 
 **Les deux mouvements qui précèdent lisent des textes publiés. Celui-ci porte sur un texte qui n'est pas
 écrit, et sur la question préalable de savoir qui l'écrira.**
@@ -525,8 +551,8 @@ thèse à attribuer.* **La qualification prospective que le socle autorise est c
 date d'engagement** — ⚠ *l'obligation de désigner est inscrite dans un texte, et le socle ne lui associe
 aucune échéance.* ⚠ **Le tri prospectif employé ici — PROGRAMMÉ / PROJETÉ / SPÉCULATIF — est celui du
 siège de la discipline, le ch. 49 § 49.0, et il n'est pas re-dérivé** : *le présent chapitre l'applique,
-il ne le définit pas.* ⚠ **Ce n'est pas un jalon visé** (R-11 du Vol. III) : *le ch. 21 § 21.1 est le siège
-des jalons visés, et il n'est pas repris ici.*
+il ne le définit pas.* ⚠ **Ce n'est pas un jalon visé** (R-11 du Vol. III) : *le siège des jalons datés
+et de leur statut est l'horloge post-quantique du ch. 21 § 21.1, et il n'est pas repris ici.*
 
 ### 30.3.2 Scénarios et leurs conséquences sur la pile identitaire
 
@@ -623,7 +649,7 @@ dans ses cellules.**
 | **Consortium du web — identifiants décentralisés** | v1.0 ; v1.1 | v1.0 : **Recommandation** du 19 juillet 2022, ⚠ *page signalant des errata dont le contenu n'a pas été ouvert — degré 3* (F-81) ; v1.1 : **instantané de recommandation candidate** du 5 mars 2026 (F-82, **[A]**) | pour la v1.1, ⚠ **relevé de liste et non balayage de texte** : *aucun degré d'absence n'est porté* |
 | **Groupe communautaire « protocole d'agent d'IA »** | charte déclarant, **parmi d'autres objets**, un modèle d'identité pour les agents | hébergé depuis le 8 mai 2025 ; ⚠ **groupe communautaire** — *statut qui ne place ses travaux ni sur la voie des normes ni au rang de norme* (F-83, **[B]** ; R-09) | ⚠ **aucun document produit par ce groupe n'a été ouvert** |
 | **Fondation d'identité ouverte** | charte d'un groupe communautaire sur l'identité et l'IA | ⚠ place **hors de son périmètre** le développement de tout protocole de normalisation mondiale sur les agents et l'identité, et **renvoie ce travail à un groupe de travail** (F-48, **[A]**, *fait négatif ÉTABLI, degré 2*) | ⚠ **le socle ne documente pas** le régime de publication d'un groupe communautaire de cette fondation — *degré 3* |
-| **Institut national de normalisation (États-Unis)** | une publication spéciale de 2020 ; un document sur l'identité et l'autorisation des agents ; une initiative de standards | la publication de **août 2020** pose l'authentification et l'autorisation comme fonctions discrètes préalables à l'établissement d'une session ; le document du 5 février 2026 est ⚠ **un document de concept à l'état de projet public initial** ; l'initiative annoncée le 17 février 2026 prend en 2026 la forme d'⚠ **un projet de document de concept, non d'une publication finale** (F-73, F-56, **[B]**) | ⚠ **aucun de ces trois documents n'est une publication finale sur l'identité d'agent** |
+| **Institut national de normalisation (États-Unis)** | une publication spéciale de 2020 ; un document sur l'identité et l'autorisation des agents ; une initiative de standards | la publication de **août 2020** pose l'authentification et l'autorisation comme fonctions discrètes préalables à l'établissement d'une session ; le document du 5 février 2026 est ⚠ **un document de concept à l'état de projet public initial** ; l'initiative annoncée le 17 février 2026 prend en 2026 la forme d'⚠ **un projet de document de concept, non d'une publication finale** (F-73, **[B]** ; F-56, ⚠ **[C]** depuis sa rétrogradation du 28 juillet 2026 — *jamais un fait central*) | ⚠ **aucun de ces trois documents n'est une publication finale sur l'identité d'agent** |
 | **Sous-comité international d'IA ; organisme européen de normalisation** | — | ⚠ **le socle ne documente pas leurs travaux** : *absence de documentation dans le corpus, non un fait négatif vérifié* | — |
 
 : Tableau 30.3 — Les instances de normalisation et l'état de leurs travaux applicables à l'identité d'agent, au 21 juillet 2026. ⚠ **Chaque statut est dit à sa mention** (R-09 du Vol. III) ; **aucune ligne n'a été reprise à la source primaire pour la somme.** ⚠ **Les qualifications prospectives de la dernière colonne relèvent du tri du ch. 49 § 49.0**, siège de la discipline pour toute la somme — *appliqué ici, jamais re-dérivé*.
@@ -650,24 +676,25 @@ décline la charge de la normaliser.** *C'est le sens de la réserve que le Vol.
 connaissance de l'agent tiers* — ⚠ **dont le siège unique est le ch. 18 § 18.1**, et qui **n'est pas
 reconstruit ici**.
 
-⚠ **Il vaut la peine de mesurer l'écart avec ce qu'une normalisation institutionnelle porte réellement
-lorsqu'elle existe.** *Le socle documente **deux précédents de fédération de confiance** : un règlement
-européen inscrit dans son texte un **audit des prestataires qualifiés au moins tous les 24 mois, à leurs
-frais** ; une alliance industrielle exploite un **programme de certification par laboratoires accrédités**
-et un service de métadonnées (Vol. III F-51, **[B]**).* ⚠ **Ce ne sont pas des spécifications : ce sont
-des dispositifs de contrôle périodique, financés, avec des tiers accrédités.** ***C'est cet appareil-là
-qui manque au champ agentique*** — *et c'est lui qu'une désignation ministérielle mettrait en mouvement,
-ou ne mettrait pas.* ⚠ **Un mécanisme se qualifie par ce que sa spécification démontre** (R-02 du
-Vol. III) : *un programme de certification démontre un contrôle périodique ; une charte qui décline la
-charge ne démontre rien.*
+⚠ **Il vaut la peine de mesurer l'écart avec ce qu'une normalisation institutionnelle porte
+réellement lorsqu'elle existe.** *Le socle documente **deux précédents de fédération de confiance**
+: un règlement européen inscrit dans son texte un **audit des prestataires qualifiés au moins tous
+les 24 mois, à leurs frais** ; une alliance industrielle exploite un **programme de certification
+par laboratoires accrédités** et un service de métadonnées (Vol. III F-51, **[B]**).* ⚠ **Ce ne sont
+pas des spécifications : ce sont des dispositifs de contrôle périodique, financés, avec des tiers
+accrédités.** ***C'est cet appareil-là qui manque au champ agentique*** — *et c'est lui qu'une
+désignation ministérielle mettrait en mouvement, ou ne mettrait pas.* ⚠ **Un mécanisme se qualifie
+par ce que sa spécification démontre** (R-02 du Vol. III) : *un programme de certification démontre
+un contrôle périodique ; une charte qui décline la charge ne démontre rien.*
 
-⚠ **Une remarque d'attribution, enfin, pour un chiffre qui circule.** *Au relevé du 21 juillet 2026, la
-page des participants du groupe communautaire affichait **254 participants non-présidents**.* ⚠ **Cette
-donnée est affichée par la plateforme et n'a fait l'objet d'aucune vérification indépendante** ; *elle
-compte des **inscriptions individuelles**, non des organisations contributrices ni une activité
-rédactionnelle.* ⚠ **Elle mesure une attention, pas une production** — et aucun document de ce groupe
-n'a été ouvert. ***Un chiffre d'inscription qu'on cesse d'attribuer devient, en trois citations, un
-indicateur d'avancement qu'il n'est pas.***
+⚠ **Une remarque d'attribution, enfin, pour un chiffre qui circule.** *Au relevé du 21 juillet 2026,
+la page des participants du groupe communautaire affichait **254 participants non-présidents** ; la
+re-datation à la source primaire du 28 juillet 2026 en compte **260**, et l'entrée porte les deux
+états.* ⚠ **Cette donnée est affichée par la plateforme et n'a fait l'objet d'aucune vérification
+indépendante** ; *elle compte des **inscriptions individuelles**, non des organisations
+contributrices ni une activité rédactionnelle.* ⚠ **Elle mesure une attention, pas une production**
+— et aucun document de ce groupe n'a été ouvert. ***Un chiffre d'inscription qu'on cesse d'attribuer
+devient, en trois citations, un indicateur d'avancement qu'il n'est pas.***
 
 ### Synthèse : ce que le chapitre lègue à la somme
 
@@ -712,22 +739,32 @@ TOC, ce PRD ni le Conspectus — il **remonte**.*
    Vol. III, qui se déclare **non publiable**.* **Le volet de fond reste entier**, et **le relevé de ses
    quinze remontées ouvertes n'a pas été refait pour le périmètre du Livre III** (remontée R-IV-85,
    ouverte au ch. 25).
-2. **La porte G-3 n'est pas entamée** : socle consolidé à zéro entrée, **aucun énoncé central au sens de
-   CA-IV-01**. ⚠ **Et la conséquence mord différemment selon la section** : *les § 30.1 et § 30.2 entrent
-   **intégralement en [C]** et ne pourraient porter un fait central même après G-3, sans élévation par
-   lecture des sources primaires que le Vol. I cite ; le § 30.3 porte des entrées **[A]** et **[B]** du
-   Vol. III, qui conserveraient leurs niveaux.*
-3. **Le volet résiduel de G-1 n'est pas instruit**, ⚠ **et c'est ici qu'il pèse le plus lourd du Livre** :
-   *une douzaine de dates réglementaires européennes, un report en cours de publication, un arrêté non
-   pris, et sept instances de normalisation dont les statuts se périment par trimestres.* **Le ch. 50
-   enregistrera ces événements de péremption.**
+2. **La pièce a été rédigée avant G-3, et G-3 a été franchie depuis** — le 28 juillet 2026, PRD v0.14,
+   socle consolidé à **159 entrées**. ⚠ *Une porte franchie après coup solde la rédaction qui l'a
+   devancée ; elle ne la rattrape pas* : la pièce n'a pas été réécrite contre le socle, ses énoncés
+   résolvent toujours contre les identifiants de leurs volumes d'origine, et **l'en-tête porte la
+   correspondance plutôt que de la simuler**. ⚠ **Aucun énoncé n'est central au sens de CA-IV-01, et le
+   motif diffère selon la section** : *les § 30.1 et § 30.2 entrent **intégralement en [C]** et ne
+   pourraient porter un fait central sans élévation par lecture des sources primaires que le Vol. I
+   cite ; le § 30.3 porte des entrées **[A]** et **[B]** du Vol. III, mais **G-4 n'est pas franchie**.*
+   ⚠ **Trois affirmations reprises du Vol. I sont en outre exclues du socle à tout niveau** — la mise en
+   correspondance de novembre 2025 (§ 30.2.3), la date d'application du corpus unique anti-blanchiment
+   (§ 30.2.6) et **E-21** (§ 30.2.7) : *leur source les range hors de son propre corpus bibliographique,
+   et **[C] n'est pas assez bas** pour elles.*
+3. **Le volet de FAITS de G-1 est levé** depuis le 28 juillet 2026, et **les volets de pièce des
+   Livres II et III restent dus** — ⚠ **c'est ici qu'ils pèsent le plus lourd du Livre** : *une douzaine
+   de dates réglementaires européennes que le socle ne porte pas, un report en cours de publication, un
+   arrêté non pris, et les instances du tableau 30.3, dont les statuts se périment par trimestres.*
+   **Le ch. 50 enregistrera ces événements de péremption.**
 4. **Les décomptes sont publiables** (G-2). L'écart à la cible est relevé au [`README.md`](README.md) du
    dossier et alimente **D-4**, déjà tranchée.
-5. **Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan.** Ils résolvent
-   contre l'entrée du TOC : **ch. 31, 32, 34** (présent Livre, même passe), **ch. 49** et **ch. 50**
-   (Livre V). Résolvent contre du **texte rédigé** : **ch. 3**, **ch. 12**, **ch. 13**, **ch. 14 § 14.1
-   et § 14.2**, **ch. 15**, **ch. 16**, **ch. 17**, **ch. 18 § 18.1**, **ch. 24**, **ch. 25**, **ch. 26**
-   et **ch. 27**.
+5. **Les renvois « ch. N » étaient des renvois de plan à la rédaction ; ils ne le sont plus.** *Les
+   cinquante chapitres existent en brouillon depuis le 27 juillet 2026* — **ch. 3**, **ch. 12**,
+   **ch. 13**, **ch. 14 § 14.1 et § 14.2**, **ch. 15**, **ch. 16**, **ch. 17**, **ch. 18 § 18.1**,
+   **ch. 21 § 21.1**, **ch. 24**, **ch. 25**, **ch. 26**, **ch. 27**, **ch. 29 § 29.3**, **ch. 31**,
+   **ch. 32**, **ch. 34**, **ch. 49** et **ch. 50**. ⚠ **Ils résolvent donc contre du texte, non contre
+   une entrée de plan — mais la vérification contre ce texte n'a pas été refaite pièce à pièce**, et
+   c'est une dette de relecture, non un renvoi pendant.
 
 **Remontées ouvertes par ce chapitre :**
 
@@ -751,30 +788,71 @@ TOC, ce PRD ni le Conspectus — il **remonte**.*
   qu'une est de la même classe que le « front neuf » du § 17.5 — à ceci près qu'ici, **la source déclare
   elle-même l'écart**, et que la pièce n'a rien eu à inventer.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 30.1 à § 30.3,
-avec leurs **quinze sous-sections**, dans l'ordre exact —, le § 30.0 étant une **ouverture de chapitre**.
-La **table de couverture est respectée pour ses six lignes**, ⚠ **y compris son écart déclaré** : *le
-« volet RGPD » du ch. 20 du Vol. III **n'existe plus**, la ligne Fusion le porte corrigé depuis la
-v0.17, et **le chapitre ne perd rien** — sa matière européenne est portée par le Vol. I, intacte, au
-§ 30.1.4.* ⚠ **Le §2.11.3 du Vol. I arrive ici depuis le ch. 6, et l'arrivée est déclarée aux deux
-bouts.** La **décision 14 a été exécutée avant la rédaction**, domaine déclaré : une thèse examinée,
-**zéro réalignée, une borne de source portée**. ⚠ **Le siège de la double-qualification n'est pas
-reposé** : *il est au ch. 31 § 31.1.4, et le §5.3 déclare lui-même ne faire que l'instancier.* ⚠ **Le
-siège du KYA n'est pas reconstruit** : il est au **ch. 18 § 18.1** ; ⚠ **et le tri prospectif renvoie
-désormais à son siège, le ch. 49 § 49.0**, aux § 30.3.1, § 30.3.2 et à la légende du tableau 30.3 — *les
-trois renvois ont été ajoutés le 28 juillet 2026.* Les **absences portent toutes leur degré** — *deux
+**Remontées ouvertes par la relecture du 28 juillet 2026 — *numéro à allouer par la passe d'arbitrage*.**
+⚠ *Aucun numéro n'est pris ici, et c'est la règle qui l'exige* : le PRD §13 veut qu'une plage neuve se
+prenne **au-dessus du maximum constaté sur pièces**, jamais au-dessus du maximum supposé — et **le
+maximum n'est pas constatable pendant qu'une relecture parallèle édite les quarante-neuf autres
+pièces**. *Prendre un numéro sous cette contrainte reproduirait la collision de R-IV-60…69.*
+
+- **Non bloquante, de contradiction interne au plan.** L'entrée du ch. 30 au TOC désigne **deux
+  chapitres différents du Vol. III** pour une même matière : sa ligne Fusion écrit que « le Vol. III
+  rédigé a retiré le RGPD de son **ch. 19** », tandis que le reste du même bloc — l'avertissement
+  d'écart, la table de couverture — écrit **ch. 20** et **§20**, à quatre reprises. ⚠ *Les deux ne
+  peuvent pas être vrais ensemble, et **aucun des contrôles du plan ne rapproche un titre de sa propre
+  note de provenance*** — classe de défaut déjà nommée par la passe du Livre IV. **Demande remontée** :
+  trancher lequel des deux numéros est celui de la source, et l'écrire une seule fois. *La pièce a
+  retenu **ch. 20**, forme majoritaire du bloc, et ne tranche pas.*
+- **Non bloquante, de régime d'exclusion non porté au plan.** Le socle consolidé (§6.4) déclare que le
+  **ch. 34** reprend « avec cette réserve à chaque occurrence » les affirmations que le Vol. I range hors
+  de son propre corpus bibliographique. ⚠ **Le présent chapitre en reprend trois — §5.3.3, §5.3.6 et
+  §5.3.7 —, et le plan ne le dit nulle part** : *sa ligne Fusion et sa table de couverture désignent ces
+  sections sans signaler qu'une part de leur matière est **exclue du socle à tout niveau**.* **Demande
+  remontée** : que la table de couverture du ch. 30 porte cette réserve, comme celle du ch. 34.
+- **Non bloquante, de ré-ancrage dû sur le socle consolidé.** La pièce a été rédigée **avant G-3** et
+  cite ses entrées par les identifiants de leurs volumes d'origine ; l'en-tête porte désormais leur
+  correspondance vers `S-nnn`, ⚠ **mais le corps ne l'a pas été, et une rétrogradation de niveau a déjà
+  eu lieu** (F-56 → `S-102`, [B] → [C]). *Une pièce qui cite un identifiant source pendant que le socle
+  alloue les siens vieillit à chaque révision du socle.* **Demande remontée** : une passe unique de
+  ré-ancrage des cinquante pièces sur la série `S-nnn`, jamais pièce à pièce.
+
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.30** — § 30.1 à §
+30.3, avec leurs **quinze sous-sections**, dans l'ordre exact —, le § 30.0 étant une **ouverture de
+chapitre**. ⚠ **Les intitulés de section ont été rétablis sur ceux du plan à la relecture du 28
+juillet 2026** (décision 15c du TOC). **Domaine de balayage : les dix-huit intitulés que le plan
+prescrit — trois sections et quinze sous-sections —, dont douze rétablis** — *une section, § 30.2,
+et onze sous-sections* ; *la réécriture retranchait systématiquement les noms propres d'instruments
+— AI Act, ISO/IEC 42001, famille 42000, NIST AI RMF, policy-as-code, RGPD, DORA, annexe III, MiFID
+II, MiCA, AMLA, Bâle III.* **Ces noms sont rendus au corps là où l'attribution d'un instrument
+repris était anonymisée**, et **nulle part ailleurs** — *la parade de péremption demeure pour les
+dénominations commerciales, dont les opérateurs d'infrastructure infonuagique du § 30.2.2.* La
+**table de couverture est respectée pour ses sept lignes**, ⚠ **y compris son écart déclaré et le
+recouvrement que la v0.27 y a ajouté** : *le « volet RGPD » du ch. 20 du Vol. III **n'existe plus**,
+la ligne Fusion le porte corrigé depuis la v0.17, et **le chapitre ne perd rien** — sa matière
+européenne est portée par le Vol. I, intacte, au § 30.1.4.* ⚠ **Le §2.11.3 du Vol. I arrive ici
+depuis le ch. 6, et l'arrivée est déclarée aux deux bouts.** La **décision 14 a été exécutée avant
+la rédaction**, domaine déclaré : une thèse examinée, **zéro réalignée, une borne de source portée**
+; ⚠ **la thèse a été re-collationnée par copie contre le TOC v0.30 le 28 juillet 2026** (décision
+17), **sans écart**. ⚠ **Le siège de la double-qualification n'est pas reposé** : *il est au ch. 31
+§ 31.1.4, et le §5.3 déclare lui-même ne faire que l'instancier.* ⚠ **Le siège du KYA n'est pas
+reconstruit** : il est au **ch. 18 § 18.1** ; ⚠ **et le tri prospectif renvoie désormais à son
+siège, le ch. 49 § 49.0**, aux § 30.3.1, § 30.3.2 et à la légende du tableau 30.3 — *les trois
+renvois ont été ajoutés le 28 juillet 2026.* Les **absences portent toutes leur degré** — *deux
 occurrences du sigle R-14 au § 30.3.1, et les marqueurs de degré ventilés à l'en-tête* —, dont **les
-trois régimes du tableau 30.2, séparés un par un**. Les **six occurrences de R-09 disent leur statut**,
-et **R-11 est tenu à ses deux occurrences** — *visé, jamais fixé*. **R-5 du Vol. II est tenu à ses
-quatre occurrences** : *ce qui n'est pas publié n'est pas décrit*, et **l'anticipation d'industrie sur
-l'organisme candidat est nommée comme telle**. ⚠ **Ces cardinaux ont été re-mesurés au commit du
-28 juillet 2026** (décision 16 du TOC) ; *l'attestation antérieure annonçait treize occurrences de R-14,
-quinze de R-09, trois de R-11 et sept de R-5, aucun de ces quatre nombres n'étant re-mesurable contre le
-corps.* Les **deux métriques
-sont attribuées** — la part d'entités dépendantes et le décompte de participants —, ⚠ **la seconde avec
-la réserve que sa source lui attache**. Enfin, ⚠ **la lacune §10.4 du Vol. II n'est pas comblée** : *ce
-que le Vol. I décrit du contenu de la ligne directrice québécoise est écrit **en [C]**, avec la mention
-que **couverte en [C] ne vaut pas comblée** — et l'écart est remonté au ch. 25, non arbitré ici.*
+trois régimes du tableau 30.2, séparés un par un**. Les **six occurrences de R-09 disent leur
+statut**, et **R-11 est tenu à ses deux occurrences** — *visé, jamais fixé*. **R-5 du Vol. II est
+tenu à ses quatre occurrences** : *ce qui n'est pas publié n'est pas décrit*, et **l'anticipation
+d'industrie sur l'organisme candidat est nommée comme telle**. ⚠ **Ces cardinaux ont été re-mesurés
+au commit du 28 juillet 2026** (décision 16 du TOC) ; *l'attestation antérieure annonçait treize
+occurrences de R-14, quinze de R-09, trois de R-11 et sept de R-5, aucun de ces quatre nombres
+n'étant re-mesurable contre le corps.* ⚠ **Les deux métriques du chapitre ne sont pas au même
+régime, et l'attestation antérieure les confondait** : *le **décompte de participants** du § 30.3.3
+est **attribué** — à la plateforme qui l'affiche —, daté aux deux relevés et assorti de la réserve
+que sa source lui attache ; la **part d'entités dépendantes** du § 30.2.2 ne l'est **pas**, « une
+étude tierce » n'étant pas une attribution (décision 15b), et **le Vol. I ne nomme pas l'étude*** —
+**l'attribution est déclarée due à cet endroit même, et aucun énoncé ne s'adosse au chiffre**.
+Enfin, ⚠ **la lacune §10.4 du Vol. II n'est pas comblée** : *ce que le Vol. I décrit du contenu de
+la ligne directrice québécoise est écrit **en [C]**, avec la mention que **couverte en [C] ne vaut
+pas comblée** — et l'écart est remonté au ch. 25, non arbitré ici.*
 
 
 ---
@@ -807,3 +885,18 @@ cette pièce n'est central au sens de CA-IV-01**. **CA-IV-11 et CA-IV-13 ne sont
 *aucune relecture par un relecteur distinct du rédacteur*. Cette pièce reste un **brouillon non
 publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune
 question n'attend plus de réponse qui ne soit déjà tranchée.*
+
+### Addenda du 28 juillet 2026
+
+⚠ **Le relevé qui précède est daté du 27 juillet 2026 et ne se réécrit pas** — *une attestation qui se
+corrige après coup cesse d'attester quoi que ce soit.* Deux faits l'ont dépassé le lendemain, et ils
+s'ajoutent plutôt qu'ils ne le remplacent.
+
+- ☑ **G-3 est franchie** (PRD v0.14, jalon J-IV-2 atteint) : le socle consolidé porte **159 entrées
+  `S-001`…`S-159`**, et la phrase « socle consolidé à zéro entrée », vraie depuis le premier jour du
+  volume, a cessé de l'être. ⚠ **Rien de cela ne rend la pièce recevable** : *une porte franchie après
+  coup solde la rédaction qui l'a devancée, elle ne la rattrape pas* — **G-4 demeure ouverte**, et
+  **CA-IV-11 comme CA-IV-13 demeurent insatisfaisables**, faute de relecteur distinct du rédacteur.
+- ☑ **Le volet de faits de G-1 est levé** : les entrées du socle que cette pièce mobilise ont été portées
+  à leur source primaire. ⚠ **Deux effets sur le corps, tous deux reportés** : le décompte de
+  participants du § 30.3.3 est re-daté, et **F-56 est rétrogradée de [B] en [C]** (→ `S-102`).

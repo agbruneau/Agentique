@@ -5,11 +5,11 @@ Premier mouvement — les fondements (ch. 1-6).*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes G-1, G-2 et G-3 du [PRD](../PRD/PRD.md) §5. ⚠ **Ce chapitre est le plus exposé du premier mouvement**, à double titre : il est le **chapitre-charnière** dont dépend l'économie de fusion côté identité (§ 3.2 et § 3.3 ne sont reconstruits nulle part ailleurs), et il porte de la matière **cryptographique**, où le garde-fou R-02 du Vol. III s'applique pleinement ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
-| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Matière condensée au gel de sa source — **juin 2026** (Vol. I) —, qui n'est pas celui de la somme. ⚠ Trois faits datés y appellent une re-vérification à G-1 : la finalisation d'un profil de haute sécurité (22 février 2025), une recommandation du W3C sur les attestations vérifiables (15 mai 2025), et le statut d'un projet de cadre d'autorisation **encore à l'état de projet à la mi-2026** |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (Annexe B non constituée, porte G-3 ouverte). Les énoncés résolvent contre le **Vol. I *Monographie* §1.9-1.10**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ Réserve renforcée pour ce chapitre : la matière cryptographique est celle où un énoncé [C] non élevé fait le plus de dégâts, puisqu'elle est citée comme garantie |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes G-1, G-2 et G-3 du [PRD](../PRD/PRD.md) §5. ⚠ **Ce chapitre est le plus exposé du premier mouvement**, à double titre : il est le **chapitre-charnière** dont dépend l'économie de fusion côté identité (§ 3.2 et § 3.3 ne sont reconstruits nulle part ailleurs), et il porte de la matière **cryptographique**, où le garde-fou R-02 du Vol. III s'applique pleinement. ⚠ **Deux mises à jour postérieures à la rédaction.** *27 juillet 2026* — **G-2 et le volet Livre I de G-1 ont été franchis** (PRD v0.8), et les **remontées de cette pièce sont closes**. *28 juillet 2026* — **G-3 est franchie à son tour** (PRD v0.14) : le socle consolidé existe, **159 entrées `S-001`…`S-159`** ([Annexe B](../PRD/socle-consolide.md)). ⚠ **La pièce n'y est pas ré-adossée pour autant** : ses énoncés résolvent toujours contre le Vol. I *Monographie* §1.9-1.10 en régime **[C]**, aucune entrée du socle n'est promue et **aucun vote adversarial n'a été conduit**. **Aucun énoncé n'est central au sens de CA-IV-01**, G-4, G-5 et G-6 restent ouvertes, CA-IV-11 et CA-IV-13 demeurent insatisfaites faute d'un relecteur distinct du rédacteur, et la pièce reste un **brouillon non publiable**. *Une porte franchie n'est pas un ouvrage recevable ; c'est une condition qui cesse de manquer.* |
+| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Matière condensée au gel de sa source — **juin 2026** (Vol. I) —, qui n'est pas celui de la somme. ⚠ Trois faits datés y appellent une re-vérification à G-1 : la finalisation d'un profil de haute sécurité (22 février 2025), une recommandation du W3C sur les attestations vérifiables (15 mai 2025), et le statut d'**OAuth 2.1**, **encore à l'état de projet à la mi-2026** |
+| **Socle mobilisé** | **Aucune entrée du socle consolidé.** ⚠ **L'Annexe B existe depuis le 28 juillet 2026** — 159 entrées, `S-001`…`S-159` —, mais **cette pièce n'y est pas ré-adossée** : le ré-adossement est dû et n'est pas opéré ici. Les énoncés résolvent contre le **Vol. I *Monographie* §1.9-1.10**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ Réserve renforcée pour ce chapitre : la matière cryptographique est celle où un énoncé [C] non élevé fait le plus de dégâts, puisqu'elle est citée comme garantie |
 | **Garde-fous balayés** | **Les deux séries, intégralement.** ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — R-1 à R-8 : **zéro occurrence** (aucune matière réglementaire canadienne, aucune métrique d'adoption auto-déclarée, aucun énoncé sur E-23, le RTR ou MCP). Vol. III — **R-02 (qualification cryptographique) : quatre occurrences**, § 3.2.2, § 3.3.1 et § 3.3.2 (deux) — chaque mécanisme y est qualifié par ce que sa spécification **démontre**, jamais par ce qu'elle promet ; ⚠ *le § 3.2.2 porte **un** marqueur pour **deux** mécanismes qualifiés : le cardinal compte les marqueurs, non les mécanismes* ; **R-11 (jalons NIST « visés », jamais « fixés ») : une occurrence**, § 3.3.2, avec statut du document porté ; **R-14 (trois degrés d'absence) : deux occurrences**, § 3.1.1 et § 3.4.3 ; **R-13 : le marqueur figure une fois, § 3.3.1, en déclaration de non-déclenchement** — ⚠ « point d'application de politique » y figure au sens **pré-agentique** du zero-trust, où il n'est pas le terme que R-13 vise. R-01, R-03 à R-10, R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 9 000 mots de corps (§ 3.1 à § 3.4). Enveloppe **dérivée, non prescrite** ; ce chapitre pèse plus que la moyenne parce qu'il est **posé une seule fois pour cinq chapitres aval**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 069 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−43,7 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 750 mots, soit −0,4 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Volumétrie cible** | ≈ 9 000 mots de corps (§ 3.1 à § 3.4). Enveloppe **dérivée, non prescrite** ; ce chapitre pèse plus que la moyenne parce qu'il est **posé une seule fois pour cinq chapitres aval**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 104 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−43,3 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre était, au 27 juillet 2026, de 64 750 mots, soit −0,4 % de l'enveloppe** — ⚠ **cardinal de Livre à re-mesurer au terme de la passe de relecture**, les onze pièces étant révisées en parallèle : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 3)* — le passage du périmètre réseau à la confiance par échange, et l'identité fédérée à autorisation déléguée, sont l'héritage IAM que la fabrique de confiance agentique (Livre II) étire jusqu'à rupture.
 
@@ -79,9 +79,9 @@ elle, par balayage documenté.
 ### 3.1.2 OWASP API Security Top 10 et contrôles
 
 Les API étant le substrat dominant de l'intégration moderne, leur classe de vulnérabilités propre
-mérite une cartographie sur le pipeline d'échange. L'**OWASP API Security Top 10** — référentiel
-largement adopté, publié et tenu à jour par la fondation **OWASP** — hiérarchise ces
-risques et place en tête les **défauts d'autorisation au niveau de l'objet** : l'accès à des
+mérite une cartographie sur le pipeline d'échange. L'**OWASP API Security Top 10**, publié et tenu à
+jour par la fondation **OWASP**, hiérarchise ces risques et place en tête les **défauts
+d'autorisation au niveau de l'objet** : l'accès à des
 ressources d'un autre locataire faute de contrôle par identifiant, et la granularité du contrôle qui
 s'arrête à la ressource sans couvrir ses propriétés sensibles.
 
@@ -170,8 +170,8 @@ relèvent de la protection de la clé, non du protocole de liaison. Écrire qu'u
 rejouable » serait qualifier par la promesse ; écrire qu'il « n'est plus rejouable par un tiers ne
 possédant pas la clé » est qualifier par ce qui est démontré.
 
-Ces mécanismes se composent en **profils de haute sécurité** pour les contextes les plus exposés. Un
-profil largement retenu, **finalisé le 22 février 2025**, agrège ces exigences — jetons liés au
+Ces mécanismes se composent en **profils de haute sécurité** pour les contextes les plus exposés.
+L'un d'eux, **finalisé le 22 février 2025**, agrège ces exigences — jetons liés au
 porteur, indication explicite de la ressource cible, validation stricte des paramètres — en une cible
 de conformité éprouvée, notamment dans l'écosystème de la finance ouverte que le Livre III reprendra.
 
@@ -183,7 +183,7 @@ locales.
 ### 3.2.3 Provisionnement et propagation de contexte
 
 L'identité fédérée présuppose que les comptes **existent et restent synchronisés** entre domaines :
-c'est le rôle du provisionnement. Un standard dédié en fournit le schéma et le protocole,
+c'est le rôle du provisionnement. Le standard **SCIM** en fournit le schéma et le protocole,
 automatisant le cycle de vie des comptes — création, mise à jour, désactivation — d'un fournisseur
 d'identité vers les applications consommatrices.
 
@@ -222,31 +222,33 @@ présent chapitre pose ce qu'elle **était** — et l'écart entre les deux est 
 > l'infrastructure), ch. 13 (identité décentralisée agentique) et ch. 21 (horloge post-quantique)
 > y renvoient **sans le reconstruire**.
 
-### 3.3.1 Zero-trust et identité de charge de travail
+### 3.3.1 Zero-trust et identité de charge de travail : SPIFFE/SPIRE, WIMSE
 
 Le **zero-trust** formalise le principe *ne jamais faire confiance, toujours vérifier* en une
-architecture où **aucune confiance n'est dérivée de la localisation réseau**. Une architecture de
-référence publiée en pose les composants — point de décision et point d'application de politique,
-évaluation continue par requête — que l'intégration transpose en exigeant authentification et
-autorisation à chaque appel, **y compris à l'intérieur d'un même périmètre**. Dans un maillage de
-services (ch. 1 § 1.3.4), ce principe se concrétise par du TLS mutuel systématique entre charges,
-déchargeant l'authentification mutuelle vers l'infrastructure plutôt que vers le code applicatif.
+architecture où **aucune confiance n'est dérivée de la localisation réseau**. L'architecture de
+référence **NIST SP 800-207** en pose les composants — point de décision et point d'application de
+politique, évaluation continue par requête — que l'intégration transpose en exigeant
+authentification et autorisation à chaque appel, **y compris à l'intérieur d'un même périmètre**.
+Dans un maillage de services (ch. 1 § 1.3.4), ce principe se concrétise par du TLS mutuel
+systématique entre charges, déchargeant l'authentification mutuelle vers l'infrastructure plutôt que
+vers le code applicatif.
 
 ⚠ **Précision de vocabulaire, à tenir pour tout le Livre.** « Point d'application de politique » et
 « point de décision » sont ici employés au sens **pré-agentique** de cette architecture de référence.
 Ils ne sont pas les termes que le garde-fou R-13 du Vol. III proscrit nus — celui-ci vise
-« AgentMesh », « control plane », « ACP » et « autonomie graduée ». Le dernier de ces sigles désigne
+« AgentMesh », « control plane », « ACP » et « autonomie graduée ». Le sigle **« ACP »** désigne
 à lui seul au moins quatre objets distincts ; l'encadré de désambiguïsation qui les sépare est au
 **ch. 7 § 7.5**, siège unique pour toute la somme, et n'est pas reconstruit ici. Le ch. 37 reprendra
 la paire au grain de l'agent, et c'est **là** que la vigilance terminologique s'impose.
 
 L'application du zero-trust aux services exige une **identité pour les acteurs non humains**, à durée
-de vie courte et vérifiable. Un cadre normalisé et son implémentation de référence fournissent à
+de vie courte et vérifiable. **SPIFFE** et son implémentation de référence **SPIRE** fournissent à
 chaque charge un identifiant et un document d'identité vérifiable, émis et renouvelé automatiquement,
 qui **remplace les secrets statiques à longue durée de vie par une attestation cryptographique
-éphémère**. Des travaux de standardisation visent à harmoniser ces mécanismes.
+éphémère**. Des travaux de standardisation **encore pré-normatifs** — le groupe **WIMSE** de l'IETF —
+visent à harmoniser ces mécanismes.
 
-⚠ **Qualification, au sens de R-02.** Ce que ce cadre démontre est précis et borné : qu'une charge
+⚠ **Qualification, au sens de R-02.** Ce que SPIFFE démontre est précis et borné : qu'une charge
 présentant un document d'identité valide **a été attestée par le nœud d'émission au moment de
 l'émission**, et que ce document n'a pas expiré. Il ne démontre pas que la charge n'a pas été
 compromise depuis, ni que le processus attesté est celui qu'il prétend être au-delà de ce que la
@@ -281,9 +283,9 @@ jeton à divulgation sélective et des protocoles de présentation rendent opér
 architecture **découple l'émission de la vérification**, condition d'une interopérabilité de
 l'identité à l'échelle de plusieurs juridictions.
 
-Le cadre réglementaire européen ancre cette logique dans le droit et organise le déploiement d'un
-portefeuille d'identité numérique, dont la généralisation est **attendue à compter de 2026** —
-échéance à re-vérifier, et non à citer comme acquise.
+Le cadre réglementaire européen **eIDAS 2.0** ancre cette logique dans le droit et organise le
+déploiement d'un portefeuille d'identité numérique, dont la généralisation est **attendue à compter
+de 2026** — échéance à re-vérifier, et non à citer comme acquise.
 
 ⚠ **Qualification, au sens de R-02.** Une attestation vérifiable démontre qu'un émetteur identifié a
 signé un ensemble de revendications à une date donnée, et que le porteur peut en prouver la
@@ -295,8 +297,8 @@ que ce que vaut son autorité d'émission.
 
 La couche cryptographique sous-jacente entre simultanément dans une **transition de fond**.
 Anticipant la menace que poserait un calculateur quantique sur les algorithmes asymétriques actuels,
-l'organisme de normalisation américain a **publié en août 2024** ses premiers standards
-post-quantiques : un mécanisme d'encapsulation de clés et deux mécanismes de signature.
+le **NIST** a **publié en août 2024** ses premiers standards post-quantiques : un mécanisme
+d'encapsulation de clés et deux mécanismes de signature.
 
 ⚠ **Deux précisions de statut, et la seconde relève de R-11 du Vol. III.** *(a)* Ces standards sont
 **publiés** — c'est un fait daté, non une annonce. *(b)* En revanche, les **jalons de migration** que
@@ -379,9 +381,11 @@ L'écosystème HTTP fournit des en-têtes normalisés permettant d'annoncer, dan
 ressource est dépréciée et la date à laquelle elle cessera d'être servie — donnant aux consommateurs
 une **fenêtre de migration prévisible** plutôt qu'une rupture silencieuse.
 
-Ce mécanisme est modeste et il est presque toujours omis, ce qui en fait un bon révélateur : une
-organisation qui ne signale pas ses dépréciations dans le protocole les signalera par courriel, donc
-mal, donc tard.
+Ce mécanisme est modeste, et sa fréquence d'emploi n'est établie nulle part dans le corpus mobilisé.
+
+Lecture de l'auteur — son omission est un bon révélateur : une organisation qui ne signale pas ses
+dépréciations dans le protocole les signalera par courriel, donc mal, donc tard. Le socle n'établit
+ni cette fréquence ni cette conséquence ; l'une et l'autre sont proposées comme lecture.
 
 Au-delà de la structure du contrat, son **exécution** se gouverne par des objectifs mesurables. La
 discipline de l'ingénierie de fiabilité distingue trois objets qu'il ne faut pas confondre :
@@ -430,8 +434,8 @@ une approximation **pragmatique et automatisable**, fondée sur des exemples plu
 exhaustive.
 
 ⚠ Que cet écart entre couverture empirique et garantie formelle ne soit comblé par aucune méthode
-industrielle relève d'une **absence de documentation** au sens de R-14 : le socle hérité n'en recense
-pas, ce qui n'établit pas qu'il n'en existe aucune.
+industrielle relève d'une **absence de documentation** au sens de R-14 du Vol. III : le socle hérité
+n'en recense pas, ce qui n'établit pas qu'il n'en existe aucune.
 
 > **Perspective recherche.** Ce test vérifie la compatibilité **par échantillons d'interactions**,
 > non par raisonnement sur l'ensemble des comportements admissibles. Les formalismes du
@@ -446,7 +450,7 @@ Lorsque l'interopérabilité doit être garantie à l'échelle d'un **écosystè
 s'appuient sur des **profils d'interopérabilité** — sous-ensembles précisés d'une norme, fermant les
 options ambiguës — et sur une **certification tierce** qui atteste leur respect. Dans le domaine de
 l'identité, des programmes de certification valident qu'une implémentation se comporte comme attendu ;
-d'autres certifient l'authentification forte.
+d'autres, dont celui de la **FIDO Alliance**, certifient l'authentification forte.
 
 Cette certification transforme une compatibilité **espérée** en compatibilité **attestée** —
 condition d'adoption dans les secteurs régulés, comme le Livre III le montrera. C'est aussi
@@ -464,21 +468,22 @@ matérialise dans tout ce dépôt, et elle est la seule protection contre une cl
 répandue : citer un brouillon comme s'il engageait ses auteurs. Le ch. 7, qui traite la généalogie et
 la gouvernance des standards agentiques, en fait son critère central.
 
-### 3.4.5 Traçage distribué et contexte de trace
+### 3.4.5 Traçage distribué : OpenTelemetry et W3C Trace Context
 
 Dans une architecture distribuée, une requête traverse de nombreux services avant de produire une
 réponse ; comprendre une **défaillance d'interopérabilité** suppose de reconstituer ce parcours. Le
 traçage distribué répond à ce besoin en propageant un identifiant de trace de bout en bout.
 
 Pour que la corrélation survive aux frontières entre services hétérogènes, **le format de propagation
-doit lui-même être interopérable** : une recommandation du W3C normalise les en-têtes de contexte de
-trace, et une spécification complémentaire y ajoute la propagation de contexte applicatif.
+doit lui-même être interopérable** : la recommandation **W3C Trace Context** normalise les en-têtes
+de contexte de trace, et une spécification complémentaire y ajoute la propagation de contexte
+applicatif.
 
 Ce point mérite d'être souligné parce qu'il est contre-intuitif : **l'observabilité est un problème
 d'interopérabilité à part entière**. Sans format de contexte commun, les traces se rompent à chaque
 changement de fournisseur, et le système reste opaque précisément là où il est le plus distribué.
 
-Un cadre d'instrumentation largement adopté fournit le protocole d'export qui unifie les trois
+Le cadre d'instrumentation **OpenTelemetry** fournit le protocole d'export qui unifie les trois
 signaux — traces, métriques et journaux —, tandis que ses **conventions sémantiques** standardisent
 le nommage des attributs, condition d'une corrélation effective entre signaux et entre équipes. La
 littérature de l'observabilité insiste sur cette bascule : l'enjeu n'est plus de **surveiller des
@@ -535,28 +540,38 @@ gouvernance sous lequel ce chapitre a été rédigé, conformément à la règle
 [PRD](../PRD/PRD.md) Annexe A : *un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il
 remonte.*
 
-**Ce qui est enfreint** — les portes **G-1**, **G-2** et **G-3** sont ouvertes. Rédaction sur
-instruction d'auteur du 27 juillet 2026. Quatre conséquences, plus une propre à ce chapitre :
+**Ce qui est enfreint** — les portes **G-1**, **G-2** et **G-3** étaient ouvertes à la rédaction, sur
+instruction d'auteur du 27 juillet 2026 ; **les trois ont été franchies depuis**, et l'infraction
+n'est pas rattrapée pour autant. Trois conséquences, plus une propre à ce chapitre :
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01.** Les faits résolvent contre le Vol. I
-   *Monographie* §1.9-1.10, en régime **[C]**.
-2. **Les décomptes sont publiables depuis le 27 juillet 2026** — G-2 franchie, `PRD/decompte.sh` versionnée et éprouvée sur les trois corpus entiers.
-3. **Les renvois « ch. N » sont des renvois de plan, non de texte** — ch. 7, 12, 13, 16, 17, 19, 21,
-   25-36, 37, 38 non rédigés.
+   *Monographie* §1.9-1.10, en régime **[C]**, et la pièce n'a pas été ré-adossée au socle consolidé
+   constitué le 28 juillet 2026.
+2. **Les décomptes sont publiables depuis le 27 juillet 2026** — G-2 franchie, la commande
+   `PRD/decompte.sh` versionnée et éprouvée sur les trois corpus entiers.
+3. **Les renvois « ch. N » ont cessé d'être des renvois de plan.** Les ch. 7, 12, 13, 16, 17, 19, 21,
+   25-36, 37 et 38 sont **rédigés en brouillon hors portes** depuis le 27 juillet 2026, et les
+   renvois de cette pièce ont été **re-vérifiés contre leur texte** le 28 juillet 2026 : ⚠ **le
+   contrôle a porté sur l'existence de la cible et la résolution des sections citées** — les huit
+   sections des ch. 1 et 2, le siège du ch. 7 § 7.5, et l'existence de chacun des autres chapitres
+   cités —, **non sur la fidélité de fond de chaque annonce**, qui relève de la porte G-4.
+   ⚠ *Ils renvoient en outre à des brouillons non publiables, ce qui n'en fait pas des appuis
+   opposables.*
 4. **⚠ Conséquence propre à ce chapitre, et la plus sérieuse du Livre I à ce jour.** Le régime **[C]**
    est particulièrement inadéquat pour de la matière **cryptographique**, parce qu'un énoncé de
    sécurité non élevé en [B] est cité comme une **garantie**. Le chapitre a paré ce risque en
-   appliquant R-02 avec insistance — cinq qualifications explicites, chacune énonçant ce que le
-   mécanisme démontre **et ce qu'il ne démontre pas**. Cette parade **ne remplace pas l'élévation en
-   [B]**, qui reste due en G-3 et qui, pour ce chapitre, doit être traitée en priorité.
+   appliquant R-02 avec insistance — **quatre qualifications explicites, couvrant cinq mécanismes**,
+   chacune énonçant ce que le mécanisme démontre **et ce qu'il ne démontre pas**. Cette parade **ne
+   remplace pas l'élévation en [B]**, qui reste due et que **le franchissement de G-3 n'a pas
+   opérée** : le socle constitué ne promeut aucune entrée et ne conduit aucun vote adversarial.
 
 **Remontées ouvertes par ce chapitre**, à l'instance d'arbitrage (D-6, non désignée) :
 
 - **R-IV-04 — non bloquante, à échéance G-1.** Trois faits datés à re-vérifier : la finalisation du
-  profil de haute sécurité (22 février 2025), la recommandation sur les attestations vérifiables
-  (15 mai 2025), et le **statut de projet** du cadre d'autorisation de nouvelle génération, encore
-  non finalisé à la mi-2026. Ce dernier est le plus volatil : sa finalisation pendant la rédaction de
-  la somme obligerait à reprendre le § 3.2.1, qui le présente aujourd'hui comme un projet.
+  profil de haute sécurité (22 février 2025), la recommandation du W3C sur les attestations
+  vérifiables (15 mai 2025), et le **statut de projet** d'**OAuth 2.1**, encore non finalisé à la
+  mi-2026. Ce dernier est le plus volatil : sa finalisation pendant la rédaction de la somme
+  obligerait à reprendre le § 3.2.1, qui le présente aujourd'hui comme un projet.
 - **R-IV-05 — bloquante pour les ch. 12, 13, 21, 37 et 38.** L'économie de fusion côté identité
   **repose entièrement** sur le fait que ces cinq chapitres citent les § 3.2 et § 3.3 **sans les
   reconstruire**. Aucun dispositif de contrôle ne vérifie cette abstention : `check-toc.py` ne lit
@@ -566,10 +581,14 @@ instruction d'auteur du 27 juillet 2026. Quatre conséquences, plus une propre �
   c'est-à-dire trop tard pour être économique.
 
 **Ce qui n'est pas enfreint.** La structure suit la table détaillée du TOC section par section
-(§ 3.1 à § 3.4) ; la table de couverture est respectée, y compris la mention **en entier** des
-§1.9.2 et §1.9.3 non hérités par les ch. 12 et 37 ; les deux séries de garde-fous sont balayées et
-déclarées, avec cinq occurrences de R-02, une de R-11 et deux de R-14 marquées en toutes lettres ;
-les constructions d'auteur portent « Lecture de l'auteur » (CA-IV-07).
+(§ 3.1 à § 3.4). ⚠ **Trois intitulés de sous-section y sont traduits plutôt que repris
+littéralement** — § 3.4.1, § 3.4.2 et § 3.4.3 —, leur matière étant inchangée et les termes anglais
+du plan figurant au corps ; les deux intitulés qui **retranchaient un instrument nommé**, § 3.3.1 et
+§ 3.4.5, ont été réalignés sur le plan le 28 juillet 2026. La table de couverture est respectée, y
+compris la mention **en entier** des §1.9.2 et §1.9.3 non hérités par les ch. 12 et 37 ; les deux
+séries de garde-fous sont balayées et déclarées, avec quatre occurrences de R-02, une de R-11, deux
+de R-14 et une de R-13 marquées en toutes lettres ; les constructions d'auteur portent « Lecture de
+l'auteur » (CA-IV-07).
 
 ---
 
@@ -593,8 +612,48 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
   Et le **siège du socle IAM ne portait aucun marqueur** : il en porte un désormais, au § 3.2, sans
   lequel aucun rédacteur aval ne pouvait savoir qu'il devait s'abstenir.
 
-⚠ **Ce que la clôture ne change pas.** La porte **G-3** demeure ouverte : le socle consolidé compte
-**zéro entrée**, l'Annexe B n'existe pas, et **aucun énoncé de cette pièce n'est central au sens de
-CA-IV-01**. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
+⚠ **Ce que la clôture ne change pas.** **Aucun énoncé de cette pièce n'est central au sens de
+CA-IV-01**, et elle reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
 pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
 tranchée.*
+
+---
+
+### Passe de relecture — 28 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre ce qu'une relecture de la seule pièce a corrigé, et ce qu'elle a **remonté sans le
+corriger**.
+
+**Ce qui a été corrigé dans la pièce.** *(a)* **L'état des portes a été re-daté** : la porte **G-3
+est franchie depuis le 28 juillet 2026** (PRD v0.14) et le socle consolidé existe — 159 entrées,
+`S-001`…`S-159` —, là où l'en-tête et la clôture le donnaient encore à zéro entrée. ⚠ **La pièce
+n'en tire aucune requalification** : elle n'est pas ré-adossée au socle, aucune entrée n'est promue,
+aucun vote adversarial n'est conduit. *(b)* **Deux cardinaux de R-02 se contredisaient** : l'en-tête
+comptait **quatre marqueurs** — la règle de décompte du 28 juillet 2026 comptant le marqueur
+littéral et non le mécanisme —, la note de statut en annonçait cinq à deux endroits ; les deux sites
+portent désormais **quatre marqueurs pour cinq mécanismes qualifiés**, et R-13 y est déclaré comme à
+l'en-tête. *(c)* Le décompte « quatre conséquences » de la note de statut en énumérait **trois**,
+plus celle propre au chapitre. *(d)* **Un antécédent flottant au § 3.3.1** — « le dernier de ces
+sigles » désignait « autonomie graduée », qui n'est pas un sigle — est rétabli sur **« ACP »**,
+conformément au siège du **ch. 7 § 7.5**. *(e)* **Six instruments repris étaient anonymisés** au
+corps alors que le plan ou l'en-tête les nomment : SP 800-207, SPIFFE/SPIRE, WIMSE, SCIM,
+OpenTelemetry et W3C Trace Context, plus le NIST comme éditeur des standards post-quantiques et
+OAuth 2.1 dans la remontée qui l'instruisait. ⚠ *La parade de péremption couvre les dénominations
+commerciales et les versions ; elle ne couvre pas l'auteur d'un instrument repris.* *(f)* **Trois
+affirmations d'adoption sans attributeur** — deux « largement adopté », aux § 3.1.2 et § 3.4.5, et un
+« largement retenu » au § 3.2.2 — sont retirées, et **une fréquence non établie** (« presque toujours
+omis », § 3.4.2) est passée sous « Lecture de l'auteur ».
+
+**Ce qui a été remonté sans être corrigé** — un relecteur ne corrige ni le TOC, ni le PRD, ni le
+conspectus, ni une pièce voisine. *(1)* **Le ré-adossement de la pièce au socle consolidé est dû** :
+les énoncés résolvent encore contre le Vol. I *Monographie* §1.9-1.10 en **[C]**, et l'élévation en
+**[B]** de la matière cryptographique reste la priorité que le point 4 ci-dessus nomme. *(2)*
+**D'autres instruments repris demeurent anonymisés, faute d'identification au corpus mobilisé, et
+leur DOMAINE est déclaré sans cardinal** — le profil de haute sécurité et la bonne pratique publiée
+du § 3.2, les en-têtes de dépréciation, la norme de gouvernance des systèmes d'information,
+l'outillage de test de contrat et les programmes de certification du § 3.4, la directive européenne
+de banque ouverte du § 3.4.6 : *ce qui n'a pas été vu à la source ne s'écrit pas comme vu*. *(3)*
+**Le cardinal de volumétrie du Livre n'est pas re-mesuré ici** : onze pièces sont révisées en
+parallèle, et *un cardinal mesuré pendant que des pièces s'écrivent est faux à la seconde où on le
+publie*.

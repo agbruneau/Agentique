@@ -6,11 +6,11 @@ frontière de l'organisation, là où l'émission cesse d'être un acte interne.
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — portes **G-3** et **G-4** ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Ce chapitre porte le SIÈGE UNIQUE du KYA pour toute la somme** (§ 18.1) : les ch. 13 § 13.2, 15 § 15.2.3 et 16 § 16.3 y renvoient et **n'instruisent pas le sigle**. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Ce chapitre est le plus dense en objets périssables du mouvement** : neuf chantiers relevés, dont **deux dates d'expiration d'*Internet-Drafts* déjà échues ou proches** au moment où la pièce est écrite, et une ratification annoncée **sans date** |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. III *Monographie* ch. 11**, dont les entrées **F-04**, **F-06**, **F-07**, **F-09**, **F-30**, **F-32**, **F-33** à **F-35**, **F-38**, **F-40**, **F-43**, **F-48** à **F-51**, **F-56**, **F-73**, **F-83**, **F-86**, **F-87** et les entrées héritées **H-19** conservent leurs niveaux d'origine ; et contre le **Vol. I *Monographie* §5.5.4, §3.6.5 et §7.4.3**, en **[C]**. ⚠ **H-19 est en [C]** : l'énoncé « aucun forum n'avait tranché » entre comme **thèse d'un volume antérieur, attribuée et datée de son gel de juin 2026**, non comme fait vérifié. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les cinq sections du corps, § 18.0 à § 18.4.** Vol. III — **R-02 : trois marqueurs**, § 18.2 (deux) et § 18.3 ; **R-14 : un marqueur**, § 18.3 ; les absences du chapitre portent néanmoins leur degré, dont **huit au degré 3**, sur tout le domaine. **R-01, R-03 à R-13 : zéro marqueur.** ⚠ **R-05 est appliqué sans être marqué, et ce chapitre en est pourtant le SIÈGE** : le KYA n'est pas un standard établi, et « terme de marché » est une **construction d'auteur, non une formule du Vol. I** — la clause est portée aux § 18.0, § 18.1 et § 18.3, **sans renvoi à l'identifiant**. Même régime pour **R-09** (le stade se dit à chaque mention, clause du groupe communautaire comprise), **R-03** (« entreprise agentique », jamais une catégorie établie, § 18.3) et **R-13** (§ 18.3, les niveaux de certification jamais confondus avec une échelle d'autonomie). Vol. II — **§8.2 : zéro marqueur** ; le décompte de participants du § 18.1 est attribué à la page qui l'affiche ; **PRD Vol. II §8.2.5 : zéro marqueur** ; **R-1 à R-8 : zéro marqueur** |
-| **Volumétrie cible** | ≈ **3 800 mots** de corps (§ 18.0 à § 18.4), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 4 252 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+11,9 %** (re-mesuré au commit du 28 juillet 2026, au terme de la passe de correction de l'audit). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
+| **Statut** | **Brouillon de rédaction, non publiable** — **écrit avant G-3**, franchie depuis le **28 juillet 2026** (PRD v0.14) ; **G-4 demeure ouverte** ; instruction d'auteur du 27 juillet 2026. ⚠ *Une porte franchie après coup ne rattrape pas la rédaction qui l'a devancée* : aucune entrée du socle consolidé n'était mobilisable quand cette pièce a été écrite. ⚠ **Ce chapitre porte le SIÈGE UNIQUE du KYA pour toute la somme** (§ 18.1) : les ch. 13 § 13.2, 15 § 15.2.3 et 16 § 16.3 y renvoient et **n'instruisent pas le sigle**. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet de FAITS de G-1 est levé** depuis le 28 juillet 2026 — 123 entrées à sensibilité temporelle portées à leur source ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) —, mais **le volet des relèves atterrissant hors du Livre I reste dû, et il porte celle du § 18.4**. Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Ce chapitre est le plus dense en objets périssables du mouvement** : neuf chantiers relevés, dont **deux dates d'expiration d'*Internet-Drafts* postérieures au gel et antérieures à toute publication vraisemblable**, et une ratification annoncée **sans date** |
+| **Socle mobilisé** | ⚠ **Aucune entrée du socle consolidé n'était mobilisable à la rédaction** ; l'Annexe B existe depuis le 28 juillet 2026 ([`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, 159 entrées `S-001`…`S-159`), et **la pièce n'a pas été réancrée sur la série consolidée** : elle cite ses appuis dans la série de leur volume d'origine, et ⚠ **tous les `F-xx` du corps sont ceux du Vol. III** (décision 7 — un `F-xx` nu est indécidable entre deux socles). Résolution contre le **Vol. III *Monographie* ch. 11**, dont les entrées **F-04**, **F-06**, **F-07**, **F-09**, **F-30**, **F-32**, **F-33** à **F-35**, **F-38**, **F-40**, **F-43**, **F-48** à **F-51**, **F-56**, **F-73**, **F-83**, **F-86**, **F-87** et l'entrée héritée **H-19** conservent leurs niveaux d'origine ; la correspondance vers `S-nnn` se lit à l'**Annexe B §5**, **seul instrument de résolution** — *le numéro consolidé ne se dérive pas du numéro source*. Et contre le **Vol. I *Monographie* §5.5.4, §3.6.5 et §7.4.3**, en **[C]**. ⚠ **Trois entrées mobilisées ici ont bougé à la refonte, et le corps en porte la trace** : **F-56** (`S-102`) est **rétrogradée `[B]` → `[C]`** par la règle de composition, *et c'est précisément la composante employée au § 18.1 — le volet identité — qui porte le `[C]`* ; **F-50** (`S-096`) et **F-83** (`S-129`) voient leurs **décomptes de participants re-datés** au 28 juillet 2026, leurs composantes de fond confirmées. ⚠ **H-19 est en [C]** (`S-145`) : l'énoncé « aucun forum n'avait tranché » entre comme **thèse d'un volume antérieur, attribuée et datée de son gel de juin 2026**, non comme fait vérifié. ⚠ **Aucun énoncé n'est central au sens de CA-IV-01, et le franchissement de G-3 n'y change rien** : la refonte **n'a conduit aucun vote adversarial** et **n'a confronté aucun énoncé à sa source primaire** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les cinq sections du corps, § 18.0 à § 18.4.** Vol. III — **R-02 : trois marqueurs**, § 18.2 (deux) et § 18.3 ; **R-14 : un marqueur**, § 18.3 ; les absences du chapitre portent néanmoins leur degré, dont **neuf au degré 3** — les deux occurrences de « `[B, degré 3]` », qui qualifient une **entrée du socle** et non une absence de la pièce, n'y entrent pas —, sur tout le domaine. **R-01, R-03 à R-13 : zéro marqueur.** ⚠ **R-05 est appliqué sans être marqué, et ce chapitre en est pourtant le SIÈGE** : le KYA n'est pas un standard établi, et « terme de marché » est une **construction d'auteur, non une formule du Vol. I** — la clause est portée aux § 18.0, § 18.1 et § 18.3, **sans renvoi à l'identifiant**. Même régime pour **R-09** (le stade se dit à chaque mention, clause du groupe communautaire comprise), **R-03** (« entreprise agentique », jamais une catégorie établie, § 18.3) et **R-13** (§ 18.3, les niveaux de certification jamais confondus avec une échelle d'autonomie). Vol. II — **§8.2 : zéro marqueur** ; les deux décomptes de participants du § 18.1 sont attribués à la page qui les affiche et à l'organisme qui la publie, et leur re-datation du 28 juillet 2026 y est portée ; **PRD Vol. II §8.2.5 : zéro marqueur** ; **R-1 à R-8 : zéro marqueur** |
+| **Volumétrie cible** | ≈ **3 800 mots** de corps (§ 18.0 à § 18.4), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 4 462 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+17,4 %** (re-mesuré au terme de la relecture du 28 juillet 2026 ; **4 252**, soit +11,9 %, à la passe de correction de l'audit qui l'a précédée). ⚠ **L'écart s'est creusé de cinq points et demi par bornage, jamais par ajout de matière** : les **deux cent dix mots** de la relecture portent une rétrogradation de niveau, une re-datation de décompte, un renvoi de siège et deux marquages de construction d'auteur — *amputer une borne et couper un hors-périmètre produisent le même chiffre, et seule la seconde est légitime* (D-4). ⚠ Le [registre de gel](../PRD/registre-gel.md) porte encore **4 252** : son réalignement est **remonté**. La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 18)* — le KYA transpose la logique du KYC — vérifier avant d'admettre — sans l'infrastructure institutionnelle qui rend le KYC possible ; la *trust fabric* inter-entreprises reste privée et fragmentée, et c'est elle qui décide si l'entreprise agentique s'arrête à ses murs.
 
@@ -79,17 +79,19 @@ ici, *n'est pas un progrès vers la norme, c'est une multiplication des candidat
 | **IETF** | Brouillon d'identité d'agent (soumission individuelle) | déposé le **26 mars 2026**, expirant le **27 septembre 2026** ; **non adopté** par un groupe de travail | F-50 |
 | **IETF** | Brouillon de registre d'identité d'agent (soumission individuelle) | déposé le **23 mai 2026**, expirant le **24 novembre 2026** ; **non adopté** par un groupe de travail | F-50 |
 | **Institut national de normalisation — centre d'excellence** | Document de concept sur l'identité et l'autorisation des agents logiciels et d'IA | publié le **5 février 2026**, à l'état de **projet public initial** | F-73 **[B]** |
-| **Institut national de normalisation — centre d'innovation** | Initiative de normalisation des agents d'IA | annoncée le **17 février 2026** ; troisième axe portant sur la sécurité et l'identité ; **volet identité à l'état de projet de document de concept** | F-56 **[B]** |
+| **Institut national de normalisation — centre d'innovation** | Initiative de normalisation des agents d'IA | annoncée le **17 février 2026** ; troisième axe portant sur la sécurité et l'identité ; **volet identité à l'état de projet de document de concept** | F-56 **[C]** |
 | **Fournisseur de sécurité applicative** | Cadre commercial « Know Your Agent » | **annoncé le 15 juin 2026** au sein d'un cadre de sécurité agentique | F-49 **[B, degré 3]** |
 
 : Tableau 18.1 — Neuf chantiers, six organisations, zéro texte ratifié, au 21 juillet 2026.
 
-⚠ **Tri prospectif des trois énoncés futurs du tableau.** Les deux **dates d'expiration** des
-*Internet-Drafts* sont **PROGRAMMÉES au sens strict** : elles découlent mécaniquement de la règle des
-six mois et sont affichées par le registre ; **elles n'annoncent aucun résultat de normalisation**. La
-**ratification** de la version 1 de la spécification communautaire est **PROJETÉE** : prévision
-attribuée à son organisme, millésimée du 22 juin 2026, **sans date annoncée** et **non revérifiée**
-entre cette date et le relevé — degré 3 pour cet intervalle.
+⚠ **Tri prospectif des trois énoncés futurs du tableau** — le **siège du tri prospectif** est au
+**ch. 49 § 49.0**, qui définit les trois statuts ; ils sont ici **appliqués, jamais redéfinis.** Les
+deux **dates d'expiration** des *Internet-Drafts* sont **PROGRAMMÉES au sens strict** : elles
+découlent mécaniquement de la règle des six mois et sont affichées par le registre ; **elles
+n'annoncent aucun résultat de normalisation**. La **ratification** de la version 1 de la spécification
+communautaire est **PROJETÉE** : prévision attribuée à son organisme, millésimée du 22 juin 2026,
+**sans date annoncée** et **non revérifiée** entre cette date et le relevé — degré 3 pour cet
+intervalle.
 
 **Neuf lignes, six organisations, et aucune ligne ne porte un texte ratifié ni adopté.** ⚠ **La borne
 de cet énoncé est celle de l'entrée qui le porte** : F-50 couvre la spécification non ratifiée au
@@ -106,9 +108,14 @@ voie des normes ni au rang de norme**, il **ne produit pas de Recommandation** e
 calendrier normatif** (F-83). Les deux groupes du tableau sont donc, ensemble, **un indicateur
 d'activité et non un jalon de normalisation** : le premier annonce des livrables **sans en avoir
 publié**, le second déclare un objet d'identité dans sa charte **sans qu'aucune de ses productions ait
-été ouverte**. ⚠ Le décompte de **254 participants** est **affiché par la plateforme** : il compte des
-**inscriptions individuelles**, non des organisations contributrices ni une activité rédactionnelle, et
-il est **attribué à cette page à chaque occurrence**.
+été ouverte**. ⚠ Le décompte de **254 participants** est **affiché par la page du groupe « AI Agent
+Protocol » du Consortium du Web**, à qui il est attribué à chaque occurrence : il compte des
+**inscriptions individuelles**, non des organisations contributrices ni une activité rédactionnelle.
+⚠ **Les deux décomptes du tableau ont été re-datés depuis, et ils ont bougé** : au 28 juillet 2026, les
+pages du même consortium affichent **37 participants non-présidents** pour le groupe de registre
+(`S-096`) et **260** pour celui-ci (`S-129`), les composantes de fond des deux entrées étant confirmées.
+*Un compteur affiché n'est pas un fait stable* — le tableau conserve le relevé du 21 juillet 2026, qui
+porte sa date.
 
 **L'instance qui a compilé le livre blanc de référence décline la normalisation, et elle le fait par
 écrit.** C'est **la seule entrée du lot à porter le niveau [A]** : la charte place **hors de son
@@ -134,10 +141,13 @@ source** et **ne porte aucun énoncé**.
 **Et le refus : une jonction que le socle ne fait pas, et que le chapitre ne fera donc pas.** Deux
 entrées datent, à douze jours d'écart, deux pièces d'un même organisme national de normalisation — une
 initiative annoncée le 17 février 2026 dont le volet identité est à l'état de projet de document de
-concept (F-56), et un document de concept publié le 5 février 2026 à l'état de projet public initial
-(F-73). ⚠ **Le socle ne documente pas si ces deux pièces désignent le même document — absence de
-documentation, non fait négatif vérifié.** *Les deux lignes sont donc portées séparément, et le lecteur
-qui a besoin de la réponse doit l'établir lui-même.*
+concept (F-56, **[C]**), et un document de concept publié le 5 février 2026 à l'état de projet public
+initial (F-73, **[B]**). ⚠ **Le socle ne documente pas si ces deux pièces désignent le même document —
+absence de documentation, non fait négatif vérifié.** *Les deux lignes sont donc portées séparément, et
+le lecteur qui a besoin de la réponse doit l'établir lui-même.* ⚠ **Le niveau de la première a été porté
+à `[C]` par la refonte du socle** (`S-102`, règle de composition : une entrée reçoit le niveau de sa
+composante la plus faible) — *et la composante en cause est exactement celle qui est employée ici*, le
+volet identité, que son lot n'a pas pu ouvrir. **Le repérage tient ; il ne porte aucun fait central.**
 
 ⚠ **La question de l'instance porteuse reste ouverte, et deux constats de rapport la bornent sans être
 versés.** Aucune des pages consultées **ne désigne un forum unique** ; et la page du groupe
@@ -207,12 +217,12 @@ complète est au **ch. 15 § 15.3.1**.
 **Un dernier constat, interne cette fois, mesure la difficulté à sa juste échelle.** La documentation
 d'un éditeur porte une **réserve explicite d'absence de couverture entre les deux plans d'identité
 d'agent** de son propre produit (F-35, **[A]**, degré 2). ⚠ **C'est un écart de point d'application à
-l'intérieur d'une seule location.** *Si la couverture n'est pas assurée dans un locataire unique, la
-question de savoir ce qu'un tiers peut en inférer de l'extérieur ne se pose même pas dans les mêmes
-termes.*
+l'intérieur d'un seul locataire** (*tenant*). *Si la couverture n'est pas assurée dans un locataire
+unique, la question de savoir ce qu'un tiers peut en inférer de l'extérieur ne se pose même pas dans
+les mêmes termes.*
 
 Lecture de l'auteur — **ce que le socle établit** : la découverte est spécifiée et le registre décliné
-(F-43) ; signature et vérification sont facultative et recommandée (F-04) ; l'ancrage est renvoyé hors
+(F-43) ; la signature est facultative et sa vérification recommandée (F-04) ; l'ancrage est renvoyé hors
 protocole (F-09) ; le statut d'une clé n'est pas établissable par les moyens décrits dans la **seule
 section balayée** (F-06, F-07) ; la validité d'un justificatif est définie **relativement à un
 domaine** (F-87) ; deux plans d'identité coexistent sans recouvrement dans un produit donné (F-35).
@@ -303,12 +313,14 @@ lorsqu'une signature ne peut pas être rattachée à un ancrage qu'elle contrôl
 est une construction privée** ; il n'est opposable qu'à ceux qui y consentent **par contrat** ; et
 **il ne compose pas avec celui du partenaire suivant**.
 
-*C'est en ce sens, et en ce sens seulement, que « l'entreprise agentique » — terme de fournisseur avant
-d'être terme de norme, dont la définition d'auteur a son siège unique à l'avant-propos de la somme —
-s'arrête à ses murs : non parce qu'une frontière technique l'y contraint, mais parce qu'aucune des
-instances relevées au § 18.1 n'a pris en charge, à la date de gel, ce qu'elle aimerait cesser de
-vérifier elle-même.* ⚠ **Cette borne n'est pas une précaution de style** : le socle **ne documente ni
-l'existence ni l'absence** d'un tel dispositif hors des pages ouvertes — **degré 3**.
+*C'est en ce sens, et en ce sens seulement, que « l'entreprise agentique » s'arrête à ses murs : non
+parce qu'une frontière technique l'y contraint, mais parce qu'aucune des instances relevées au § 18.1
+n'a pris en charge, à la date de gel, ce qu'elle aimerait cesser de vérifier elle-même.* ⚠ **Le terme
+n'est jamais une catégorie établie**, et sa qualification en *terme de fournisseur avant d'être terme
+de norme* est une **construction d'auteur** — de la famille de celle relevée au § 18.0, non une formule
+de source ; la définition d'auteur du syntagme a son siège unique à l'avant-propos de la somme.
+⚠ **Et la borne du constat n'est pas une précaution de style** : le socle **ne documente ni l'existence
+ni l'absence** d'un tel dispositif hors des pages ouvertes — **degré 3**.
 
 ## § 18.4 — Relève v0.11, à instruire : l'agent mutable prive la réputation de son ancrage
 
@@ -320,7 +332,7 @@ de réputation présuppose : *l'objet vérifié à l'admission peut cesser d'êt
 de cette relève est l'extraction de son texte intégral, et une source qu'un lot doit instruire ne
 s'anonymise pas — sans son identifiant, le lot n'est pas exécutable.*
 
-⚠ **Régime, et il est le plus bas de tout le Livre.** **Préimpression non révisée par les pairs,
+⚠ **Régime, et c'est le plus bas que cette pièce porte.** **Préimpression non révisée par les pairs,
 résumé seul consulté** : c'est un **repérage [C]**, **jamais un fait**. *Le texte intégral n'a pas été
 ouvert ; rien de ce que sa construction démontrerait, de son modèle de menace ou de ses hypothèses
 n'est établi ici* — **absence de documentation, degré 3**. ⚠ **Et le régime de preuve du Livre II
@@ -331,19 +343,21 @@ consolidé qu'après extraction de la source primaire en G-1**, et **cette extra
 seul contenu que cette section porte.
 
 Lecture de l'auteur — **si la thèse tient, elle pèse sur trois endroits de la somme, et pas seulement
-sur l'admission.** *(1)* Sur la **cinquième question de la grille** (ch. 14) : une imputabilité
-traçable suppose que l'entité à laquelle on impute **soit restée la même**. *(2)* Sur la
-**révocation** (ch. 20) : on ne révoque pas utilement l'identifiant d'un objet dont la substance a
-changé sans que l'identifiant bouge — *c'est le versant « identité » de ce que le ch. 20 § 20.1
-instruit sous l'angle du retournement d'un serveur d'outils.* *(3)* Sur l'**admission** elle-même
-(§ 18.2) : *un régime d'admission privé, écrit par celui qui admet, vérifie un objet à un instant ; si
-cet objet est mutable, le verdict ne dit rien de l'instant suivant.* ⚠ **Ce que le socle établit** :
-rien de la thèse. **Ce qu'il n'établit pas** : tout le reste — *y compris qu'elle soit fausse.*
+sur l'admission.** *(1)* Sur la **cinquième question de la grille** — **Q-E**, *qui en répond*
+(ch. 14 § 14.1) : une imputabilité traçable suppose que l'entité à laquelle on impute **soit restée la
+même**. *(2)* Sur la **révocation** (ch. 20) : on ne révoque pas utilement l'identifiant d'un objet
+dont la substance a changé sans que l'identifiant bouge — *c'est le versant « identité » de ce que le
+ch. 20 § 20.1 instruit sous l'angle du retournement d'un serveur d'outils.* *(3)* Sur l'**admission**
+elle-même (§ 18.2) : *un régime d'admission privé, écrit par celui qui admet, vérifie un objet à un
+instant ; si cet objet est mutable, le verdict ne dit rien de l'instant suivant.* ⚠ **Ce que le socle
+établit** : rien de la thèse. **Ce qu'il n'établit pas** : tout le reste — *y compris qu'elle soit
+fausse.*
 
-⚠ **La relève est portée ici et n'est consommée nulle part.** Son instruction relève de **G-1**, volet
-résiduel, et son critère de clôture est celui que le PRD impose aux préimpressions : **extraction du
-texte intégral**, et **niveau plafonné tant qu'aucune révision par les pairs n'est constatée**. *Aucun
-énoncé du présent chapitre ne s'y adosse.*
+⚠ **La relève est portée ici et n'est consommée nulle part.** Son instruction relève du **volet des
+relèves de G-1**, resté dû après la levée du volet de faits le 28 juillet 2026 ; son critère de clôture
+est celui que le PRD impose aux préimpressions : **extraction du texte intégral**, et **niveau plafonné
+tant qu'aucune révision par les pairs n'est constatée**. *Aucun énoncé du présent chapitre ne s'y
+adosse.*
 
 ### Synthèse : ce que le chapitre lègue à la somme
 
@@ -368,20 +382,27 @@ texte intégral**, et **niveau plafonné tant qu'aucune révision par les pairs 
 
 ⚠ **Cette section n'est pas au TOC et n'a pas vocation à survivre.**
 
-**Ce qui est enfreint.** Portes **G-3** et **G-4** ; volet résiduel de **G-1** non instruit ; ordre de
-rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026.
+**Ce qui est enfreint.** Portes **G-3** — **franchie depuis, le 28 juillet 2026**, ce qui *solde
+l'infraction sans la rattraper* — et **G-4**, toujours ouverte ; volet des relèves de **G-1** non
+instruit ; ordre de rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026.
 
-1. **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ **Et le § 18.4 est d'un régime encore plus
-   bas** : préimpression, résumé seul consulté, **repérage [C]** — *il ne porte aucun énoncé du tout,
-   et la pièce l'écrit.*
-2. **Les décomptes sont publiables** (G-2). Écart de **+11,9 %** ; la volumétrie du Livre alimente
-   **D-4** par **R-IV-17**.
-3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan** : **ch. 37**. Les renvois
-   vers le **ch. 3** résolvent contre du texte ; ceux vers les **ch. 12, 13, 14, 15, 16, 17, 20, 21**
-   résolvent contre du texte au terme de la présente passe.
-4. **Un siège neuf est posé par cette pièce** — le KYA (§ 18.0) — et **il n'est contrôlé par aucun
-   outil au moment où elle est écrite** : voir **R-IV-24**, ouverte au ch. 15, dont le versement est
-   opéré à la clôture de la passe.
+1. **Aucun énoncé n'est central au sens de CA-IV-01**, et le franchissement de G-3 n'y change rien : la
+   refonte du socle **n'a conduit aucun vote adversarial** et **n'a confronté aucun énoncé à sa source
+   primaire**. ⚠ **Le § 18.4 est d'un régime encore plus bas** : préimpression, résumé seul consulté,
+   **repérage [C]** — *il ne porte aucun énoncé du tout, et la pièce l'écrit.*
+2. **Les décomptes sont publiables** (G-2). Écart de **+17,4 %** — **4 462 mots** pour une cible de
+   3 800 ; la volumétrie du Livre alimente **D-4** par **R-IV-17**. ⚠ **La relecture du 28 juillet 2026
+   a modifié le corps, et la mesure avec lui** : le [registre de gel](../PRD/registre-gel.md) porte
+   encore l'ancienne valeur, **4 252** — son réalignement est **remonté**, un rédacteur ne corrigeant
+   pas l'appareil.
+3. **Tous les renvois « ch. N » de cette pièce résolvent désormais contre du texte** : les **ch. 3, 12,
+   13, 14, 15, 16, 17, 20, 21** du présent Livre et des Livres amont, le **ch. 37** (Livre IV) et le
+   **ch. 49** (Livre V), rédigés depuis. ⚠ **Un seul renvoi reste un renvoi de plan** : celui du § 18.3
+   vers l'**avant-propos de la somme**, qui n'est pas écrit.
+4. **Un siège neuf est posé par cette pièce** — le KYA (§ 18.1) — et **il n'était contrôlé par aucun
+   outil au moment où elle a été écrite** : voir **R-IV-24**, ouverte au ch. 15 ; ☑ **le versement à
+   [`PRD/check-sieges.py`](../PRD/check-sieges.py) a été opéré à la clôture de la passe**, et le
+   contrôle S4 y interdit désormais qu'un autre chapitre refasse l'inventaire des instances.
 
 **Remontées ouvertes par ce chapitre :**
 
@@ -406,19 +427,22 @@ rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026.
   lettres ne se met pas à jour tout seul — c'est le premier risque du plan.*
 
 **Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.24** — § 18.1 à § 18.4,
-dans l'ordre exact —, et le § 18.0 est une introduction de chapitre. La **table de couverture est
-respectée pour ses quatre lignes**, y compris le **partage déclaré du §7.4.3 du Vol. I avec le ch. 13**
-: le versant **adoption** reste au ch. 13 § 13.5, le versant ***trust fabric*** est ici, et **ni l'un
-ni l'autre ne reconstruit la moitié de l'autre**. Le **siège unique du KYA est posé et marqué au
-§ 18.1**, là où le TOC, le conspectus et [`PRD/check-sieges.py`](../PRD/check-sieges.py) le
+dans l'ordre exact —, table que ni la v0.29 ni la v0.30 n'ont touchée. Le § 18.0 est une introduction
+de chapitre. La **table de couverture est respectée pour ses quatre lignes**, y compris le **partage
+déclaré du §7.4.3 du Vol. I avec le ch. 13** : le versant **adoption** reste au ch. 13 § 13.5, le
+versant ***trust fabric*** est ici, et **ni l'un ni l'autre ne reconstruit la moitié de l'autre**. La
+**thèse est citée verbatim depuis le TOC v0.28**, forme que les v0.29 et v0.30 déclarent inchangée. Le
+**siège unique du KYA est posé et marqué au § 18.1**, là où le TOC, le conspectus et
+[`PRD/check-sieges.py`](../PRD/check-sieges.py) le
 domicilient — *le marqueur était posé au § 18.0 à la rédaction ; il a été replacé le 28 juillet 2026,
 sans que sa formulation change.* Le **socle IAM et l'identité de charge de travail restent au ch. 3**.
 L'**inventaire de la révocation reste au ch. 20 § 20.4** ; la **valeur probante reste au ch. 15** ;
 l'**assemblage reste au ch. 16**. **Aucun verdict de grille n'est rendu.** Les absences **portent leur
-degré**, dont huit au **degré 3**, sur tout le domaine balayé — *application de R-14 déclarée, non
+degré**, dont **neuf au degré 3**, sur tout le domaine balayé — *application de R-14 déclarée, non
 dénombrée : la pièce n'en porte qu'un marqueur littéral, au § 18.3.* La clause du groupe communautaire
-est répétée **à chaque mention** plutôt que posée une fois en tête (R-09, appliqué sans marqueur). Le
-**décompte de participants est attribué à la page qui l'affiche**. Les **niveaux de certification du
+est répétée **à chaque mention** plutôt que posée une fois en tête (R-09, appliqué sans marqueur). Les
+**décomptes de participants sont attribués à la page qui les affiche et à l'organisme qui la publie**,
+et leur re-datation du 28 juillet 2026 est portée au § 18.1. Les **niveaux de certification du
 § 18.3 ne sont confondus avec aucune échelle d'autonomie**. Et les **cinq marqueurs de « Lecture de
 l'auteur »** — § 18.0, § 18.2, § 18.3 (deux) et § 18.4 — sont suivis de ce que le socle établit et
 n'établit pas, dont **le § 18.3 entier**, marqué à l'ouverture.
@@ -448,9 +472,43 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
   pas à jour tout seul ; c'est le premier risque du plan.* ⚠ **Le cardinal n'est pas corrigé
   aujourd'hui** : il est exact à sa date, et *le re-mesurer avant l'échéance ne prouverait rien.*
 
-⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle
-consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation de fond contre le Vol. III
-rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**.
-**CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur. Cette
-pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
-cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*
+⚠ **Ce que la clôture ne change pas** — état re-constaté au 28 juillet 2026. La porte **G-3 est
+franchie** et l'**Annexe B existe** (159 entrées), mais **G-4 demeure ouverte** : la collation de fond
+contre le Vol. III rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de
+CA-IV-01** — *la refonte du socle n'a conduit aucun vote adversarial et n'a confronté aucun énoncé à sa
+source primaire.* **CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du
+rédacteur. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
+pièce recevable : cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*
+
+---
+
+### Relecture du 28 juillet 2026 — remontées sans identifiant alloué
+
+⚠ **Ces remontées ne portent pas de numéro `R-IV-NN`, et l'abstention est motivée.** La série n'a
+**aucun allocateur** (risque du PRD §13, réalisé le 27 juillet 2026 : dix numéros alloués deux fois),
+la règle veut qu'une plage neuve se prenne *au-dessus du maximum constaté sur pièces* — **R-IV-109** —,
+et **les autres chapitres étaient relus en parallèle au moment de celle-ci**.
+*Prendre un numéro dans ces conditions reproduirait exactement la collision que la règle vise.* Les
+quatre objets ci-dessous sont donc portés **à l'arbitrage de la passe qui les recevra**, qui leur
+allouera leurs identifiants.
+
+1. **Au plan (TOC).** L'entrée du chapitre 18 porte le titre « **Table des matières détaillée du
+   chapitre 19** » au-dessus de sa propre table détaillée — désalignement **interne au plan**, de la
+   classe relevée à la rédaction du Livre IV, qu'**aucun des quinze contrôles ne voit**.
+2. **Au plan (TOC) et à l'appareil.** Le § 18.3 et le ch. 20 renvoient tous deux à un « **siège unique
+   de la définition d'auteur de l'*entreprise agentique*** » **à l'avant-propos**. ⚠ **L'entrée
+   d'avant-propos du TOC pose une définition de travail de l'*agent d'entreprise*, non de l'*entreprise
+   agentique*, et aucun siège de ce nom n'est versé à `check-sieges.py`.** *Deux pièces renvoient donc à
+   un siège que ni le plan ni l'appareil ne domicilient.*
+3. **À l'appareil — `PRD/check-sieges.py`.** Le déclencheur du siège du tri prospectif, `tri
+   prospectif`, est **sensible à la casse** : le présent chapitre ouvrait sa clause par « **T**ri
+   prospectif » et **échappait au contrôle**, ce que le commentaire du script enregistre comme « le
+   ch. 18 a cessé d'employer le motif ». *Un décompte de dette assis sur un motif qui ne voit pas la
+   majuscule sous-estime la dette.* Le renvoi au **ch. 49 § 49.0** est posé par la présente relecture.
+4. **À l'appareil — `PRD/check-compendium.py`, contrôle P3.** Sa garde s'écrit `"Vol. II" in b and
+   "Vol. III" in b` : ⚠ ***« Vol. II » est un préfixe de « Vol. III »***, de sorte que **toute pièce
+   citant le seul Vol. III déclenche le rapport des identifiants nus**. Le présent chapitre ne cite pas
+   le Vol. II et y est pourtant compté. *Frontière ou anticipation négative obligatoire.*
+
+☐ **Et une réconciliation reste due, hors mandat d'un relecteur** : le [registre de
+gel](../PRD/registre-gel.md) porte la volumétrie antérieure à cette relecture.

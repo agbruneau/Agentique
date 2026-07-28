@@ -8,22 +8,23 @@ redécoupage.*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 29.5. ⚠ **Ce chapitre n'est pas conditionné par G-4** : sa ligne Fusion ne cite que le Vol. II ; ⚠ **mais il consomme deux chapitres qui, eux, le sont** — les ch. 25 et 27 —, *et ce qu'ils portent de non collationné se transmet à sa table.* ⚠ **Il n'est pas non plus bloqué par D-9** : *il ne prescrit aucune parade humaine — il traduit des textes, il ne recommande pas de dispositif.* |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gel de source consommé : **16-17 juillet 2026** (Vol. II ch. 13) — ⚠ **il ne tient pas lieu du gel de la somme**. ⚠ **Un fait de méthode se date ici** : la table du § 29.1 **a changé de forme le 17 juillet 2026** chez sa source, et *le chapitre le dit plutôt que de livrer le résultat comme s'il avait toujours été là* |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. II *Monographie* ch. 13**, dont les entrées **F-09** (deux strates), **F-25**, **F-26**, **F-27**, **F-36**, **F-37** et **F-46** conservent leurs niveaux d'origine ; **F-10** et **F-35** y sont mobilisées **en renvoi**. ⚠ **Toutes sont du Vol. II** et se préfixent comme telles (décision 7 du TOC). ⚠ **Un point de régime commande tout le chapitre** : *les cinq contraintes tirées d'E-23 le sont de sa **strate [B]**, la moins éprouvée du socle du Vol. II — source primaire lue, **sans vote adversarial***. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **PRD §8.2.4 (couverture E-23 = inférence d'analystes) : une occurrence du renvoi**, § 29.1 ; **PRDPlan Vol. II §4.4 — écrire « attendu par E-23 », jamais « exigé » : la formule littérale n'est pas écrite au corps** ; ⚠ *la modalité s'y écrit « E-23 **attend** » et « elle **n'exige pas** », et **le garde-fou est appliqué aux § 29.1, § 29.2 et § 29.4** — **le décompte n'est pas re-mesurable et n'est donc pas annoncé*** ; **garde-fou « aucun avis juridique » : trois occurrences de la formule**, § 29.0, § 29.3 et la synthèse — *le renvoi « PRD Vol. II §3 » est écrit une fois, § 29.0* ; **PRD §8.4 (neutralité fournisseur) : une occurrence du renvoi**, § 29.2 ; **CA-5 : une occurrence du sigle**, § 29.1 ; **R-1 à R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 29.1 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 29.1 et § 29.2, « fait négatif vérifié » au § 29.2* ; **R-02 : une occurrence du sigle**, § 29.2 ; **R-13 : une occurrence du sigle**, § 29.4 — ⚠ *les positions d'orchestration se nomment par leur sigle et leur cardinal, jamais comme une « autonomie graduée »* ; **R-01, R-03 à R-12 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **4 000 mots** de corps (§ 29.0 à § 29.4), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant quatre. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh). ⚠ **D-4 interdit l'amputation comme le gonflement** |
+| **Statut** | **Brouillon de rédaction, non publiable.** ⚠ **La pièce a été rédigée avant le franchissement de G-3, sur instruction d'auteur du 27 juillet 2026 : la règle cardinale du PRD §5 a été enfreinte, et l'arbitrage qui a suivi la solde sans la rattraper.** ☑ **La porte G-3 est depuis FRANCHIE** — 28 juillet 2026, PRD v0.14 : le socle consolidé existe ([`socle-consolide.md`](../PRD/socle-consolide.md), **159 entrées `S-001`…`S-159`**), et le « socle consolidé à zéro entrée » que déclarait cet en-tête a cessé d'être vrai. ⚠ **Rien de cela ne rend la pièce recevable** : *aucun vote adversarial n'est conduit*, et le PRD §7.2 l'exige de toute entrée appelée à porter un fait central ; **CA-IV-11 et CA-IV-13 demeurent insatisfaites**, faute d'un relecteur distinct du rédacteur. Voir la note de statut, § 29.5. ⚠ **Ce chapitre n'est pas conditionné par G-4** : sa ligne Fusion ne cite que le Vol. II ; ⚠ **mais il consomme deux chapitres qui, eux, le sont** — les ch. 25 et 27, que le jalon J-IV-4 nomme —, *et ce qu'ils portent de non collationné se transmet à sa table.* ⚠ **Il n'est pas non plus bloqué par D-9** : *il ne prescrit aucune parade humaine — il traduit des textes, il ne recommande pas de dispositif.* |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ☑ **Le volet de faits du résidu de G-1 est levé le 28 juillet 2026** : les **123 entrées à sensibilité temporelle** du socle consolidé ont été portées à leur source primaire — **91 inchangées, 10 changées, 22 non établies** ([registre](../PRD/gel-2026-07-28-volet-residuel.md)). ☐ **Restent dues les obligations de pièce du volet Livre III, dont aucune ne vise ce chapitre.** Gel de source consommé : **16-17 juillet 2026** (Vol. II *Monographie* ch. 13) — ⚠ **il ne tient pas lieu du gel de la somme**. ⚠ **Un fait de méthode se date ici** : la table du § 29.1 **a changé de forme le 17 juillet 2026** chez sa source, et *le chapitre le dit plutôt que de livrer le résultat comme s'il avait toujours été là* |
+| **Socle mobilisé** | ☑ **Le socle consolidé existe depuis le 28 juillet 2026.** Les énoncés résolvent contre le **Vol. II *Monographie* ch. 13** ; le corps cite les identifiants de cette source, **préfixés à chaque emploi** (décision 7 du TOC), et leur correspondance consolidée est donnée ici une fois pour toutes : **F-09 → `S-009`** (deux strates), **F-25 → `S-023`**, **F-26 → `S-024`**, **F-27 → `S-025`**, **F-36 → `S-034`**, **F-37 → `S-035`**, **F-46 → `S-044`** ; **F-10 → `S-010`** est mobilisée **en renvoi** au § 29.1. ⚠ **F-35 → `S-033`, que la ligne Fusion porte aussi « en renvoi », n'est employée nulle part au corps** — écart déclaré plutôt que présumé couvert (décision 8). ⚠ **Un point de régime commande tout le chapitre** : *les cinq contraintes tirées d'E-23 le sont de sa **strate [B]**, la moins éprouvée du socle du Vol. II — source primaire lue, **sans vote adversarial***. ⚠ **Un second vient du franchissement lui-même** : **quatre des entrées mobilisées portent une re-datation `☐ non établie`** — `S-023` (ligne directrice de l'AMF), `S-024` (avis 11-348), `S-025` (article 12.1) et `S-044` (patron de fournisseur) —, *toutes pour accès refusé par l'hôte*, et le PRD §5 en tire une borne opposable : **aucun fait central ne peut reposer sur leur composante non re-vérifiée**. ⚠ *L'énoncé que ce chapitre tient pour le plus solide — ce que l'article 12.1 fait peser sur l'entreprise — repose sur l'une des quatre.* **Aucun énoncé n'est central au sens de CA-IV-01** |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, puis à la relecture du même jour, sous la règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **PRD Vol. II §8.2.4 (couverture E-23 = inférence d'analystes) : une occurrence du renvoi**, § 29.1 ; **PRDPlan Vol. II §4.4 — écrire « attendu par E-23 », jamais « exigé » : la formule littérale n'est pas écrite au corps** ; ⚠ *la modalité s'y écrit « E-23 **attend** », « les **attentes** d'E-23 » et « elle **n'exige pas** », et **le garde-fou est appliqué aux § 29.1, § 29.3, § 29.4 et à la synthèse** — **le décompte n'est pas re-mesurable et n'est donc pas annoncé*** ; **garde-fou « aucun avis juridique » : trois occurrences de la formule**, § 29.0, § 29.3 et la synthèse — *le renvoi « PRD Vol. II §3 » est écrit une fois, § 29.0* ; **PRD Vol. II §8.4 (neutralité fournisseur) : une occurrence du renvoi**, § 29.2 ; **CA-5 du Vol. II : une occurrence du sigle**, § 29.1 ; **R-1 à R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 29.1 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 29.1 et § 29.2, « fait négatif vérifié » au § 29.2* ; **R-02 : une occurrence du sigle**, § 29.2 ; **R-13 : une occurrence du sigle**, § 29.4 — ⚠ *les positions d'orchestration se nomment par leur sigle et leur cardinal, jamais comme une « autonomie graduée »* ; **R-01, R-03 à R-12 : zéro occurrence** |
+| **Volumétrie cible** | ≈ **4 000 mots** de corps (§ 29.0 à § 29.4), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.30 — au prorata des sections, ce chapitre en portant quatre. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh). ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 29 — **pivot**)* — la plupart des exigences canadiennes lues se traduisent en frame d'architecture ; l'encadrement déterministe des processus réglementés est le principe sur lequel convergent trois sources **non indépendantes**, dont le socle n'établit l'application ni au Canada ni à la finance canadienne — la portée de la convergence, pas son autorité majorée.
+> **Thèse** *(citée par copie depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 29 — **pivot**)* — la plupart des exigences canadiennes lues se traduisent en frame d'architecture ; l'encadrement déterministe des processus réglementés est le principe sur lequel convergent trois sources **non indépendantes**, dont le socle n'établit l'application ni au Canada ni à la finance canadienne — la portée de la convergence, pas son autorité majorée.
 
 ---
 
 ⚠ **La thèse a été collationnée contre le texte rédigé de sa source avant la rédaction** (décision 14
 du TOC). **Domaine de balayage : une thèse examinée, zéro réalignée — et deux membres retranchés dont
-l'un se transporte.** La thèse du Vol. II ch. 13 porte **trois** propositions ; celle du plan en reprend
-deux. **Le membre retranché est le troisième** — « le *responsibility gap* éclaire l'imputabilité —
-**sous l'article 12.1 du moins**, elle pèse sur l'assujetti, qui ne peut désigner de tiers » — ⚠ *et il
-n'a pas disparu : le plan l'a versé à la thèse du **ch. 27**, où il est arrivé **sans sa restriction***
+l'un se transporte.** La thèse du Vol. II *Monographie* ch. 13 porte **trois** propositions ; celle du
+plan en reprend deux. **Le membre retranché est le troisième** — « le *responsibility gap* éclaire
+l'imputabilité — **sous l'article 12.1 du moins**, elle pèse sur l'assujetti, qui ne peut désigner de
+tiers » — ⚠ *et il n'a pas disparu : le plan l'a versé à la thèse du **ch. 27**, où il est arrivé
+**sans sa restriction***
 (remontée R-IV-87, ouverte là-bas). Le second retranchement est **le cardinal** — « neuf des onze
 entrées de la table du §13.1 » —, ⚠ **et le plan le retranche à bon droit** : *il déclare expressément
 que ces cardinaux sont ceux du Vol. II, qu'ils ne se recopient pas, et que **le compte se re-mesure à
@@ -96,9 +97,10 @@ en a extrait.* **L'article 12.1 dominait la table parce qu'on l'avait lu ; E-23 
 pour la même raison, et non parce qu'elle serait devenue plus contraignante entre-temps.** *Le lecteur
 est fondé à se demander ce que produirait la ligne directrice de l'AMF si on la lisait.*
 
-⚠ **Les cinq entrées d'E-23 se paient d'un pas dont il faut mesurer la longueur.** *E-23 **attend** ces
-cinq choses d'un **programme** de gestion du risque de modélisation — un dispositif d'organisation, de
-rôles et de contrôles. **Elle n'attend rien d'une architecture**, ne nomme ni les agents ni
+⚠ **Les cinq entrées d'E-23 qui produisent une contrainte se paient d'un pas dont il faut mesurer la
+longueur** — la sixième, celle du périmètre, n'en produit aucune. *E-23 **attend** ces cinq choses d'un
+**programme** de gestion du risque de modélisation — un dispositif d'organisation, de rôles et de
+contrôles. **Elle n'attend rien d'une architecture**, ne nomme ni les agents ni
 l'orchestration, et **ne dit nulle part qu'il faille construire un cadre**.*
 
 Lecture de l'auteur — ce que la somme ajoute est **une observation sur les conditions de possibilité**.
@@ -131,9 +133,10 @@ agentique compose plusieurs modèles, des outils et un enchaînement**, et E-23 
 documentation, degré 3 de l'échelle R-14 du Vol. III.* **C'est la question que les institutions
 fédérales auront à trancher d'ici le 1ᵉʳ mai 2027, et ce chapitre ne peut que la désigner.**
 
-**Des quatre entrées qui restent, trois proviennent du même texte, et la différence importe plus que
-leur nombre.** ⚠ *E-23 est **fondée sur des principes** et rédigée au conditionnel : elle **attend**.
-L'article 12.1 est une **disposition législative** rédigée à l'impératif : il **oblige**.* **Les cinq
+**Des quatre entrées qui restent — les six d'E-23 et la ligne de l'AMF une fois écartées —, trois
+proviennent du même texte, et la différence importe plus que leur nombre.** ⚠ *E-23 est **fondée sur
+des principes** et rédigée au conditionnel : elle **attend**. L'article 12.1 est une **disposition
+législative** rédigée à l'impératif : il **oblige**.* **Les cinq
 contraintes tirées d'E-23 sont donc des conditions de possibilité d'un programme attendu ; les trois
 tirées de l'article 12.1 sont des conditions de possibilité d'une obligation.** *L'inférence est de même
 nature — c'est toujours l'auteur qui la conduit — mais ce qu'elle sert à défendre ne l'est pas.*
@@ -157,20 +160,21 @@ que **la journalisation confiée aux agents « n'est généralement pas recomman
 
 Lecture de l'auteur — **la conjonction désigne le cadre comme lieu de production de la trace** — *non
 parce qu'une source le prescrirait, mais parce que **les deux autres candidats sont écartés** : l'agent
-par l'enseignement du préprint, et le modèle par le rapport conjoint du **ch. 25 § 25.8**, dont le socle
-établit que **les relations causales entre entrées et sorties sont souvent indéterminables**.* **Si l'on
-ne peut extraire l'explication du modèle *a posteriori*, ni raisonnablement la confier à l'agent, il
-reste ce qui les entoure.** ⚠ **Aucune des trois sources ne dit cela ; c'est leur conjonction, et elle
-est de l'auteur.**
+par l'enseignement du préprint, et le modèle par le rapport conjoint repris au **ch. 25 § 25.8**
+(**F-10 du Vol. II**), dont le socle établit que **les relations causales entre entrées et sorties sont
+souvent indéterminables**.* **Si l'on ne peut extraire l'explication du modèle *a posteriori*, ni
+raisonnablement la confier à l'agent, il reste ce qui les entoure.** ⚠ **Aucune des trois sources ne
+dit cela ; c'est leur conjonction, et elle est de l'auteur.**
 
 ## § 29.2 — Le verdict empirique et la convergence à trois sources
 
 **L'argument qui suit porte le titre du Livre ; il faut donc l'exposer avec plus de sévérité qu'aucun
 autre.**
 
-**Le premier terme est un verdict.** Sur un processus réglementé européen hors finance, le cadre repris
-au **ch. 22 § 22.4** conclut que **l'orchestration non encadrée est « inacceptable » lorsque des
-exigences strictes d'exécution et de documentation s'appliquent**, et que les tâches essentielles
+**Le premier terme est un verdict** (**F-37 du Vol. II**). Sur un processus réglementé européen hors
+finance, le cadre repris au **ch. 22 § 22.4** conclut que **l'orchestration non encadrée est
+« inacceptable » lorsque des exigences strictes d'exécution et de documentation s'appliquent**, et que
+les tâches essentielles
 doivent être **imposées de façon déterministe par le cadre**. ⚠ **Il provient d'un préprint non révisé
 par les pairs dont les auteurs déclarent eux-mêmes des menaces à la validité** — *le cadre conceptuel
 est repris, les résultats chiffrés à titre d'illustration seulement*, et le ch. 22 a refusé d'en faire
@@ -184,34 +188,36 @@ quel que soit son taux de réussite moyen**.* ⚠ **Et le mécanisme se qualifie
 démontre, non par ce qu'elle promet** (R-02 du Vol. III) : *un préprint mesure un F1 sur un scénario ;
 il ne démontre pas une propriété générale des architectures encadrées.*
 
-**Le deuxième terme est conceptuel.** Le manifeste érige l'**autonomie encadrée** en mécanisme premier
-de gouvernance et distingue les cadres **normatifs** des cadres **opérationnels** (**ch. 22 § 22.7**).
+**Le deuxième terme est conceptuel** (**F-36 du Vol. II**). Le manifeste érige l'**autonomie encadrée**
+en mécanisme premier de gouvernance et distingue les cadres **normatifs** des cadres **opérationnels**
+(**ch. 22 § 22.7**).
 ⚠ **Le socle lui attribue une confiance haute *pour l'attribution*** : *ce qui est certain, c'est que
 ces auteurs soutiennent cette thèse.* **Un manifeste ne fait pas autorité ; il fournit un vocabulaire.
 Il recommande, il ne juge pas.**
 
-**Le troisième terme est celui d'un fournisseur, et son statut se pose avant son contenu.** Un patron
-d'architecture publié par un grand fournisseur recommande **explicitement les flux de travail
-statiques** pour les processus sous surveillance réglementaire, au nom de l'auditabilité, de la
-conformité et de transferts définis. ⚠ **Deux réserves l'encadrent.** *Neutralité fournisseur d'abord* :
-cette position est retenue comme **cas d'instanciation documenté par sources primaires**, jamais comme
-recommandation ni verdict comparatif (PRD Vol. II §8.4). *Portée ensuite* : ⚠ **le socle établit que ce
-patron est générique et que son éditeur ne publie aucune architecture agentique spécifique aux services
-financiers** — *la recommandation vise « les processus sous surveillance réglementaire » en général,
-non un processus de crédit canadien.* **Là encore, il recommande — il ne juge pas.**
+**Le troisième terme est celui d'un fournisseur, et son statut se pose avant son contenu** (**F-46 du
+Vol. II**). Le patron d'architecture agentique publié par **IBM** recommande **explicitement les flux de
+travail statiques** pour les processus sous surveillance réglementaire, au nom de l'auditabilité, de la
+conformité et de transferts définis. ⚠ **L'éditeur est nommé : « un fournisseur » n'est pas une
+attribution** (décision 15b du TOC). ⚠ **Deux réserves l'encadrent.** *Neutralité
+fournisseur d'abord* : cette position est retenue comme **cas d'instanciation documenté par sources
+primaires**, jamais comme recommandation ni verdict comparatif (PRD Vol. II §8.4). *Portée ensuite* :
+⚠ **le socle établit que ce patron est générique et qu'IBM ne publie aucune architecture agentique
+spécifique aux services financiers** — *la recommandation vise « les processus sous surveillance
+réglementaire » en général, non un processus de crédit canadien.* **Là encore, il recommande — il ne
+juge pas.**
 
-⚠ **Le socle érige la rencontre de ces trois énoncés en convergence à trois sources, et il l'a
-longtemps qualifiée d'« indépendantes ». L'adjectif en a été retiré**, sur signalement des rédactions
-qui l'employaient, **parce qu'il était réfuté par le socle lui-même**. *La rétractation étant acquise,
-ce qui suit n'est plus une contestation du socle mais l'exposé de ce qui l'a motivée* — **et il faut le
-lire ainsi : la démonstration reste due au lecteur, car c'est d'elle que dépend la portée exacte du
-principe directeur.**
+⚠ **Le socle érige la rencontre de ces trois énoncés en convergence à trois sources, et il l'a d'abord
+qualifiée d'« indépendantes ». L'adjectif en a été retiré par un correctif daté du 16 juillet 2026,
+parce qu'il était réfuté par le socle lui-même.** *La rétractation étant acquise, ce qui suit n'en est
+plus la contestation mais l'exposé du motif* — **et la démonstration reste due au lecteur, puisque
+c'est d'elle que dépend la portée exacte du principe directeur.**
 
 **Une convergence tire sa force de l'indépendance de ses termes. Or le socle établit lui-même que ces
-trois-là ne sont pas indépendants, et il le fait deux fois.** *Premièrement*, **une même autrice
-cosigne les deux sources académiques**. *Deuxièmement*, **l'organisation qui publie le patron figure
-parmi celles dont proviennent les auteurs du manifeste**. ⚠ **Ni l'un ni l'autre recoupement n'est une
-conjecture : tous deux se lisent dans les entrées du socle.**
+trois-là ne sont pas indépendants, et il le fait deux fois.** *Premièrement*, **une même autrice —
+Rinderle-Ma — cosigne les deux sources académiques**. *Deuxièmement*, **IBM Research figure parmi les
+organisations dont proviennent les auteurs du manifeste, et c'est IBM qui publie le patron**. ⚠ **Ni
+l'un ni l'autre recoupement n'est une conjecture : tous deux se lisent dans les entrées du socle.**
 
 Lecture de l'auteur — **trois sources qui se recoupent deux à deux ne valent pas trois sources
 indépendantes.** *Ce faisceau n'établit pas que trois observateurs séparés ont abouti au même
@@ -232,7 +238,7 @@ n'établit aucun lien entre elles et ces textes.**
 ⚠ **Ce n'est pas pour autant un fait négatif vérifié.** *Aucune recherche exhaustive de ces chaînes dans
 les trois sources n'a été conduite* — **absence de documentation, degré 3** — *à la différence des faits
 négatifs que le socle établit par balayage documenté.* ⚠ **La distinction est celle-là même que ce
-chapitre exige d'E-23 au § 29.1 : une absence *au socle* n'est pas une absence *dans la source*.** *Le
+chapitre applique à E-23 au § 29.1 : une absence *au socle* n'est pas une absence *dans la source*.** *Le
 manifeste compte au contraire une affiliation canadienne, dont le socle ne dit pas si elle emporte
 quelque application au droit canadien.* **La transposition au contexte canadien conduite dans ce
 chapitre est donc entièrement une inférence d'auteur, et le lecteur est fondé à en exiger l'examen
@@ -264,11 +270,12 @@ construit**.* Rapportée à l'énumération du manifeste, **cette constante dés
 candidats : l'organisation qui impose le cadre.** ⚠ **Le socle n'établit ni ce rapprochement, ni son
 exactitude juridique.**
 
-⚠ **Elle ne dit pas que le droit canadien résolve l'écart de responsabilité** : *ce que le manifeste
-nomme est l'indétermination de l'**allocation** de l'imputabilité entre quatre porteurs, question que ces
-textes ne traitent pas et que la somme n'a ni la vocation ni la compétence de trancher.* ⚠ **Elle ne dit
-pas davantage que ces régimes se cumulent sur une même chaîne** : *le ch. 27 § 27.3 a laissé ouverte la
-question de savoir si l'article 12.1 atteint les institutions sous charte fédérale.*
+⚠ **Cette constante ne dit pas que le droit canadien résolve l'écart de responsabilité** : *ce que le
+manifeste nomme est l'indétermination de l'**allocation** de l'imputabilité entre quatre porteurs,
+question que ces textes ne traitent pas et que la somme n'a ni la vocation ni la compétence de
+trancher.* ⚠ **Elle ne dit pas davantage que ces régimes se cumulent sur une même chaîne** : *le
+ch. 27 § 27.3 a laissé ouverte la question de savoir si l'article 12.1 atteint les institutions sous
+charte fédérale.*
 
 **Ce que le socle permet de dire est plus modeste et suffit à l'architecture.** ⚠ **L'article 12.1
 n'offre pas à l'entreprise assujettie la ressource de désigner un tiers** : ni développeur, ni
@@ -363,7 +370,9 @@ est **le seul objet dont l'assujetti puisse démontrer la teneur**.
 **Le pont du Livre n'est donc pas une déduction. C'est un raisonnement, exposé pour être contesté — et
 sa partie la plus solide n'est ni la convergence de trois sources, ni la constante que l'auteur lit dans
 trois textes : c'est ce qu'un seul texte, l'article 12.1, fait peser sur l'entreprise qui rend la
-décision.**
+décision.** ⚠ **Et cette partie la plus solide porte elle-même une réserve datée** : *l'entrée de socle
+qui la soutient n'a pas été rouverte à sa source au gel unique du 28 juillet 2026, l'éditeur officiel
+ayant refusé l'accès — le fait tient à sa date d'extraction, non à celle de la somme.*
 
 ---
 
@@ -373,26 +382,37 @@ décision.**
 gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A) : *un rédacteur ne corrige jamais le
 TOC, ce PRD ni le Conspectus — il **remonte**.*
 
-**Ce qui est enfreint.** La porte **G-3** et le **volet résiduel de G-1**. Instruction d'auteur du
-27 juillet 2026. ⚠ **La porte G-4 ne conditionne pas ce chapitre directement** — sa ligne Fusion ne cite
-que le Vol. II — ⚠ **mais elle le conditionne par transitivité** : *sa table consomme les ch. 25 et 27,
-dont quatre sections sur seize proviennent du Vol. III et n'ont pas été collationnées au fond.* **La
-transitivité est déclarée plutôt que présumée neutre.** ⚠ **D-9 ne bloque pas ce chapitre** : *il ne
-prescrit aucune parade humaine.*
+**Ce qui a été enfreint à la rédaction.** La porte **G-3** — **franchie depuis, le 28 juillet 2026** —
+et le **volet résiduel de G-1**, dont le volet de faits est levé le même jour. Instruction d'auteur du
+27 juillet 2026. ⚠ **Une porte franchie après coup ne rattrape pas l'infraction** : *la pièce a été
+écrite sur un socle qui n'existait pas, et le socle qui existe aujourd'hui ne l'a pas relue.* ⚠ **La
+porte G-4 ne conditionne pas ce chapitre directement** — sa ligne Fusion ne cite que le Vol. II —
+⚠ **mais elle le conditionne par transitivité** : *sa table consomme les ch. 25 et 27, dont quatre
+sections sur seize proviennent du Vol. III et n'ont pas été collationnées au fond.* **La transitivité
+est déclarée plutôt que présumée neutre.** ⚠ **D-9 ne bloque pas ce chapitre** : *il ne prescrit aucune
+parade humaine.*
 
-1. **Aucun énoncé n'est central au sens de CA-IV-01.** Le socle consolidé compte zéro entrée ; les
-   identifiants cités sont **ceux du Vol. II**, préfixés à chaque emploi (décision 7). ⚠ **Et le régime
-   mord ici plus fort qu'ailleurs** : *cinq des neuf contraintes de la table sont dérivées de la
-   **strate [B]** de F-09 — source primaire lue, **sans vote adversarial** —, c'est-à-dire de la strate
-   **la moins éprouvée** du socle de sa source.*
+1. **Aucun énoncé n'est central au sens de CA-IV-01, et le motif a changé sans que la conséquence
+   bouge.** Le socle consolidé **existe** depuis le 28 juillet 2026 ; ce qui manque n'est donc plus
+   l'Annexe B, mais le **vote adversarial** que le PRD §7.2 exige de toute entrée appelée à porter un
+   fait central, et qu'aucune passe n'a conduit. Les identifiants cités au corps restent **ceux du
+   Vol. II**, préfixés à chaque emploi (décision 7), leur correspondance consolidée étant donnée à
+   l'en-tête. ⚠ **Et le régime mord ici plus fort qu'ailleurs, à deux titres** : *cinq des neuf
+   contraintes de la table sont dérivées de la **strate [B]** de F-09 — source primaire lue, **sans vote
+   adversarial** —, c'est-à-dire de la strate **la moins éprouvée** du socle de sa source* ; *et **quatre
+   des entrées mobilisées portent une re-datation `☐ non établie`**, sur lesquelles le PRD §5 interdit
+   d'asseoir un fait central.*
 2. **Les décomptes sont publiables** (G-2). L'écart à la cible est relevé au [`README.md`](README.md) du
-   dossier et alimente **D-4**, déjà tranchée. ⚠ **Le cardinal de la table, lui, a été re-mesuré à la
+   dossier et alimente **D-4**, déjà tranchée. ⚠ **Le relevé du README est celui du commit de rédaction
+   et ne couvre pas la présente relecture.** ⚠ **Le cardinal de la table, lui, a été re-mesuré à la
    rédaction** comme le plan l'exige : **onze entrées, neuf contraintes** — inchangé.
-3. **Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan.** Ils résolvent
-   contre l'entrée du TOC : **ch. 30** (présent Livre, même passe), le **Livre IV** dans son ensemble,
-   **ch. 47** et **ch. 49** (Livre V). Résolvent contre du **texte rédigé** : **ch. 22 § 22.1, § 22.3,
-   § 22.4, § 22.7, § 22.8 et § 22.10**, **ch. 25 § 25.8**, **ch. 27 § 27.2, § 27.3 et § 27.8**, et
-   **ch. 28**.
+3. **Tous les chapitres cités existent désormais en brouillon, et aucun renvoi de cette pièce n'est plus
+   un renvoi de plan.** Résolvent contre du **texte rédigé** : **ch. 22 § 22.1, § 22.3, § 22.4, § 22.7,
+   § 22.8 et § 22.10**, **ch. 25 § 25.8**, **ch. 27 § 27.1, § 27.2, § 27.3 et § 27.8**, la mention de
+   plage **ch. 25 à 28**, le **Livre IV** dans son ensemble, **ch. 47** et **ch. 49** (Livre V). ⚠ **Le
+   renvoi au ch. 30 que l'attestation antérieure déclarait n'existe nulle part au corps** : il est
+   retiré. ⚠ **Résoudre n'est pas valider** : *les pièces cibles sont elles-mêmes des brouillons hors
+   portes, et une chaîne de renvois entre brouillons ne produit aucune recevabilité.*
 
 **Remontée ouverte par ce chapitre :**
 
@@ -410,24 +430,37 @@ prescrit aucune parade humaine.*
   exigent* — **et ici le socle a été corrigé après la mesure**. *Le chapitre en fournit donc la
   démonstration une seconde fois, à ses dépens.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 29.1 à § 29.4,
-dans l'ordre exact —, le § 29.0 étant une **ouverture de chapitre**. ⚠ **Le chapitre-pivot est conservé
-intact** : *la structure de sa source est reprise sans redécoupage, et aucune ligne n'a été ajoutée ni
-retirée de sa table.* La **table de couverture est respectée pour son unique ligne**. La **décision 14 a
-été exécutée avant la rédaction**, domaine déclaré : une thèse examinée, **zéro réalignée, deux membres
-retranchés dont un tracé jusqu'à son nouveau siège**. ⚠ **Le cardinal a été re-mesuré ligne à ligne et
-non recopié**, comme le plan l'exige ; **et le domaine sur lequel il porte est déclaré périmé plutôt que
-corrigé en silence**. La **formulation imposée est tenue sur tout son domaine** — *les § 29.1, § 29.2 et
-§ 29.4* : « E-23 attend », jamais « exige ». La **neutralité fournisseur est tenue** : *une position
-d'éditeur est un cas d'instanciation, jamais une recommandation ; le renvoi PRD §8.4 est écrit une fois,
-§ 29.2.* ⚠ **L'adjectif « indépendantes » est retiré partout**, et la formule opposable est écrite au
-§ 29.2. Les **absences portent toutes leur degré** — *une occurrence du sigle R-14 au § 29.1, deux du
-marqueur « degré 3 » et une de « fait négatif vérifié »* —, et **la restriction « sous l'article 12.1 du
-moins » est portée à ses deux occurrences**. Enfin, **le garde-fou « aucun avis juridique » est tenu à
-ses trois occurrences** — *§ 29.0, § 29.3 et la synthèse* —, et **aucune allocation d'imputabilité n'est
-proposée**. ⚠ **Ces cardinaux ont été re-mesurés au commit du 28 juillet 2026** (décision 16 du TOC) ;
-*l'attestation antérieure annonçait neuf occurrences de la formulation imposée, deux de la neutralité
-fournisseur, huit de R-14 et quatre du garde-fou renforcé.*
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.30** — § 29.1 à § 29.4,
+dans l'ordre exact, **intitulés compris** —, le § 29.0 étant une **ouverture de chapitre**. ⚠ **Le
+chapitre-pivot est conservé intact** : *la structure de sa source est reprise sans redécoupage, et
+aucune ligne n'a été ajoutée ni retirée de sa table.* La **table de couverture est respectée pour son
+unique ligne**. La **thèse est citée par copie** depuis l'entrée du plan (décision 17), et la
+**décision 14 a été exécutée avant la rédaction**, domaine déclaré : une thèse examinée, **zéro
+réalignée, deux membres retranchés dont un tracé jusqu'à son nouveau siège**. ⚠ **Le cardinal de la
+table a été re-mesuré ligne à ligne et non recopié**, comme le plan l'exige ; **et le domaine sur lequel
+il porte est déclaré périmé plutôt que corrigé en silence**. La **formulation imposée est tenue sur tout
+son domaine** — *les § 29.1, § 29.3, § 29.4 et la synthèse* : « E-23 attend », jamais « exige ».
+La **neutralité fournisseur est tenue** : *une position d'éditeur est un cas d'instanciation, jamais une
+recommandation ; le renvoi PRD Vol. II §8.4 est écrit une fois, § 29.2* — ⚠ **et l'éditeur y est nommé,
+la neutralité n'étant pas l'anonymat** (décision 15b). ⚠ **L'adjectif « indépendantes » est retiré
+partout**, et la formule opposable est écrite au § 29.2. Les **absences portent toutes leur degré** —
+*une occurrence du sigle R-14 au § 29.1, deux du marqueur « degré 3 » et une de « fait négatif
+vérifié »* —, et **la restriction « sous l'article 12.1 du moins » est portée à ses deux occurrences du
+corps** — *§ 29.3 et la synthèse*.
+Enfin, **le garde-fou « aucun avis juridique » est tenu à ses trois occurrences** — *§ 29.0, § 29.3 et
+la synthèse* —, et **aucune allocation d'imputabilité n'est proposée**.
+
+⚠ **Ces cardinaux ont été re-mesurés deux fois, et la seconde mesure a trouvé ce que la première avait
+laissé passer.** Au commit du 28 juillet 2026, sous la règle de comptage de la **décision 16 du TOC**,
+l'attestation d'origine — *neuf occurrences de la formulation imposée, deux de la neutralité
+fournisseur, huit de R-14, quatre du garde-fou « aucun avis juridique »* — a été refaite par balayage
+littéral. ⚠ **La relecture du même jour en a corrigé trois défauts résiduels** : *le domaine de la
+formulation imposée était déclaré au **§ 29.2**, où E-23 n'est jamais mise en modalité, alors que le
+garde-fou s'applique au **§ 29.3** ; deux renvois de PRD étaient écrits **sans leur volume**, forme que
+la décision 7 proscrit ; et un **renvoi au ch. 30 était attesté sans exister au corps**.* ⚠ **Un écart de
+la ligne Fusion se déclare enfin plutôt que se taire** : *l'entrée **F-35** que le plan porte « en
+renvoi » **n'est employée nulle part au corps** — sa matière, le standard technique du cadre bancaire,
+est hors du périmètre de ce chapitre.*
 
 
 ---
@@ -454,9 +487,26 @@ découverte de la collision — **aucun numéro n'est partagé**.*
   démonstration de sa propre thèse : **la table mesure ce que le socle a extrait, non ce que les textes
   exigent**.*
 
-⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et — pour les chapitres qui citent le
-Vol. III — **G-4** demeurent ouvertes ; le socle consolidé compte **zéro entrée** ; **aucun énoncé de
+⚠ **Ce que la clôture ne change pas** — *état au 27 juillet 2026, gelé et non réécrit : deux de ses
+termes ont été dépassés le lendemain, et c'est l'addenda ci-dessous qui l'enregistre.* Les portes
+**G-3** et — pour les chapitres qui citent le Vol. III — **G-4** demeurent ouvertes ; le socle consolidé
+compte **zéro entrée** ; **aucun énoncé de
 cette pièce n'est central au sens de CA-IV-01**. **CA-IV-11 et CA-IV-13 ne sont pas satisfaites** —
 *aucune relecture par un relecteur distinct du rédacteur*. Cette pièce reste un **brouillon non
 publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune
 question n'attend plus de réponse qui ne soit déjà tranchée.*
+
+### Addenda du 28 juillet 2026 — la dette de R-IV-91 est soldée
+
+⚠ **La clôture qui précède est datée et n'est pas réécrite ; ce qui suit s'y ajoute.** Le
+**franchissement de G-3** (PRD **v0.14**, 28 juillet 2026) **tranche la condition de sortie qui portait
+la dette de R-IV-91**, et il la tranche dans le sens du refus : ☑ **les deux éléments de l'article 12.1
+— le 1°, les renseignements utilisés, et le 3°, le droit de faire rectifier — ne reçoivent PAS de ligne
+au socle consolidé**, *le Vol. II n'ayant pas conduit cette dérivation et la somme ne la faisant pas à
+sa place*. ⚠ **Mais l'absence cesse d'être muette, et c'est la contrepartie exigée** : *le § 29.1
+déclare les deux éléments comme dépourvus de ligne, avec leur motif — une table qui tait ce qu'elle ne
+dérive pas se lit comme une table complète.* ⚠ **La ligne héritée de l'article 12.1 est elle-même
+corrigée au socle** : `S-025` porte la correction que `S-135` lui apporte, et **l'entrée héritée
+omettait le 3°**. ☐ **Ce que l'addenda ne solde pas** : *le vote adversarial reste dû, et la re-datation
+de `S-025` demeure `☐ non établie` — accès refusé par l'hôte, le texte de l'article n'a pas été rouvert
+au gel unique.*

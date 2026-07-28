@@ -6,20 +6,21 @@ dernier chapitre du Livre.***
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Chapitre où la réserve F-01 est la plus exposée de tout le Livre** : le mot « sécurisé » n'y est appliqué à aucun protocole, à aucune occurrence ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. **G-3 demeure ouverte** — socle consolidé à zéro entrée : la pièce reste un **brouillon non publiable**, et aucun de ses énoncés n'est central au sens de CA-IV-01. |
+| **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Chapitre où la réserve F-01 est la plus exposée de tout le Livre** : le mot « sécurisé » n'y est appliqué à aucun protocole, à aucune occurrence. ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. ⚠ **Seconde mise à jour, 28 juillet 2026 — G-3 EST FRANCHIE** (PRD v0.14) : le socle consolidé existe et compte **159 entrées**, `S-001`…`S-159` ([Annexe B](../PRD/socle-consolide.md), v1.2). ⚠ **La pièce demeure pourtant un brouillon non publiable, et le motif se dit plutôt qu'il ne se devine** : ses énoncés **n'ont pas été ré-adossés au socle consolidé entrée par entrée** — la passe de relecture du 28 juillet 2026 en nomme les entrées mobilisables, elle ne substitue pas une résolution à l'autre —, et **CA-IV-11 comme CA-IV-13 demeurent insatisfaites**, D-6 ne fournissant pas de relecteur distinct du rédacteur. *Une porte franchie n'est pas une pièce recevable.* |
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Gels de source : **juin 2026** (Vol. I) et **16 juillet 2026** (Vol. II). ⚠ **Les identifiants de vulnérabilité et les incidents datés du § 11.1.3 se périment par publication de correctif** ; ils sont cités comme **jalons datés**, jamais comme état courant d'exposition |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Résolution contre le **Vol. I *Monographie* §3.10-3.11** (régime **[C]**) et contre le **Vol. II *Monographie* ch. 4**, dont les entrées **F-01** (et sa réserve), **F-02** et **F-36** conservent leurs niveaux **[A]**, **[A]** et **[B]**. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **réserve F-01 : quatre occurrences**, § 11.1.3, § 11.3.1, § 11.3.2 et § 11.4.1 — ⚠ *la formule imposée « cadre d'autorisation » est employée bien au-delà de ces quatre marqueurs, dès le § 11.0, et « sécurisé » n'est appliqué à aucun protocole nulle part : la réserve est tenue partout, seul son marqueur est compté ici* ; **§8.2 (attribution des auto-qualifications) : une occurrence**, § 11.3.1, la qualification de maturité attribuée à l'annonce du projet ; **R-1 : une occurrence**, § 11.1.1, l'ACP protocolaire jamais présenté comme un standard vivant ; **R-8 : une occurrence**, § 11.1.1. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 : cinq occurrences**, § 11.1.2, § 11.1.4, § 11.3.1, § 11.3.2 et § 11.3.3 ; **R-13 : une occurrence**, § 11.1.1 ; **R-14 : sept occurrences**, toutes de **degré 3** — § 11.1.3, § 11.1.4 (deux), § 11.2.2, § 11.3.2, § 11.3.3 et § 11.4.2 —, **le plus grand nombre du Livre à égalité avec le ch. 10**. R-01, R-03 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 6 000 mots de corps (§ 11.0 à § 11.4), **mesurés et non estimés** — le plus court du second mouvement, et c'est une conséquence du plan : quatre objets majeurs de ce chapitre (triade de conditions, passerelles, taxonomie d'identité, inventaire gouverné) siègent **ailleurs** et n'y sont que renvoyés. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 795 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−3,4 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre est de 64 750 mots, soit −0,4 % de l'enveloppe** : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Socle mobilisé** | ⚠ **Pièce écrite avant G-3 et non ré-adossée depuis** : la résolution du corps porte contre le **Vol. I *Monographie* §3.10-3.11** (régime **[C]**) et contre le **Vol. II *Monographie* ch. 4**, dont les entrées **F-01** (et sa réserve), **F-02** et **F-36** conservent leurs niveaux **[A]**, **[A]** et **[B]**. ☑ **Depuis le 28 juillet 2026, ces mêmes faits sont domiciliés au socle consolidé**, et les entrées se nomment : **`S-001`** (Vol. II `F-01`, fondue), **`S-002`** (Vol. II `F-02`, fondue) et **`S-034`** (Vol. II `F-36`, fondue) ; côté Vol. I, **`S-150`** (la non-compositionnalité de la sûreté), **`S-151`** (la révocation après approbation et l'intégrité continue) et **`S-152`** (injection et empoisonnement), **toutes trois en `[C]`**. ⚠ **Nommer n'est pas ré-adosser** : la correspondance se lit aux tables normatives de l'Annexe B, aucun énoncé de la pièce n'a été repris contre son entrée, et **aucun énoncé n'est central au sens de CA-IV-01** |
+| **Garde-fous balayés** | ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **réserve F-01 : quatre occurrences**, § 11.1.3, § 11.3.1, § 11.3.2 et § 11.4.1 — ⚠ *la formule imposée « cadre d'autorisation » est employée bien au-delà de ces quatre marqueurs, dès le § 11.0, et « sécurisé » n'est appliqué à aucun protocole nulle part : la réserve est tenue partout, seul son marqueur est compté ici* ; **§8.2 (attribution des auto-qualifications) : une occurrence**, § 11.3.1, la qualification de maturité attribuée à l'annonce du projet ; **R-1 : une occurrence**, § 11.1.1, l'ACP protocolaire jamais présenté comme un standard vivant ; **R-8 : une occurrence**, § 11.1.1. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 : cinq occurrences**, § 11.1.2, § 11.1.4, § 11.3.1, § 11.3.2 et § 11.3.3 ; **R-13 : une occurrence**, § 11.1.1 ; **R-14 : huit occurrences**, toutes de **degré 3** — § 11.1.3 (deux), § 11.1.4 (deux), § 11.2.2, § 11.3.2, § 11.3.3 et § 11.4.2. ⚠ *Le rang de ce cardinal dans le Livre n'est plus déclaré : un décompte inter-pièces se mesure sur des pièces stables, et onze relectures couraient en parallèle le 28 juillet 2026.* R-01, R-03 à R-12 : **zéro occurrence** |
+| **Volumétrie cible** | ≈ 6 000 mots de corps (§ 11.0 à § 11.4), **dérivée et non estimée** — cible basse, et c'est une conséquence du plan : quatre objets majeurs de ce chapitre (triade de conditions, passerelles, taxonomie d'identité, inventaire gouverné) siègent **ailleurs** et n'y sont que renvoyés. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 6 129 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **+2,2 %** de la cible, re-mesurés au terme de la passe de relecture du 28 juillet 2026 (à la rédaction : **5 795 mots**, −3,4 %). ⚠ **L'écart de la passe est motivé, non subi** : il vient des **identifiants, dates et attributions** versés aux § 11.1.3 et § 11.2.2, et de la remontée de relecture — *borner allonge, et c'est la mesure que D-4 attend.* ⚠ **L'écart individuel ne se lit toujours pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations, et *c'est la cible dérivée qui est fausse, non la pièce.* ⚠ **Le réel du LIVRE n'est plus déclaré ici** : il valait **64 750 mots** (−0,4 %) au 27 juillet 2026, et **onze relectures ont couru en parallèle le 28** — *un agrégat mesuré pendant que ses pièces s'écrivent est faux à la seconde où on le publie.* Il se re-mesure au terme des onze passes. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 11 — **requalifiée en v0.24 : sa seconde moitié était vraie du Vol. II et fausse de la somme**)* — la sécurité des protocoles dépend de l'implémentation ; empoisonnement d'outils et injection d'invites sont **nommés par les protocoles comme risques attachés**, sans que **le socle du Vol. II** en date la documentation ni en établisse la mécanique.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 11 — **requalifiée en v0.24 : sa seconde moitié était vraie du Vol. II et fausse de la somme**)* — la sécurité des protocoles dépend de l'implémentation ; empoisonnement d'outils et injection d'invites sont **nommés par les protocoles comme risques attachés**, sans que **le socle du Vol. II** en date la documentation ni en établisse la mécanique.
 
 ⚠ **La thèse citée ci-dessus porte la forme réalignée, et son sujet est désormais nommé.** À la
 rédaction, la pièce citait la forme du TOC v0.23 — « sans que **le socle** en date la documentation » —,
 énoncé vrai du Vol. II et faux de la somme : *porter la thèse sans son sujet aurait fait croire à la
 somme qu'elle ne dispose pas d'une matière dont un de ses volumes dispose.* La **remontée R-IV-13** l'a
-portée au plan ; la thèse **a été requalifiée au TOC v0.24** (décision 8) et la citation **a été reprise
-par copie littérale depuis le TOC v0.28** à la passe de correction du 28 juillet 2026.
+portée au plan ; la thèse **a été requalifiée au TOC v0.24** (décision 8), puis la citation **a été
+reprise par copie littérale** — jamais par re-frappe (décision 17) — et **re-collationnée mot à mot
+contre le TOC v0.30** à la passe de relecture du 28 juillet 2026, qui la trouve **identique**.
 
 ⚠ **Ce que la requalification borne, et ce qu'elle ne comble pas.** Le Vol. I documente la mécanique
 que le socle du Vol. II déclare absente de ses sources — identifiants de vulnérabilité, incidents
@@ -30,7 +31,7 @@ ouvert** : la requalification a changé son motif, non son état.
 
 ---
 
-## § 11.0 — Introduction : ce que trois chapitres d'acquis ne disent pas
+## § 11.0 — Introduction : ce que quatre chapitres d'acquis ne disent pas
 
 Les quatre chapitres précédents ont établi que la couche protocolaire agentique **était sortie du
 régime propriétaire** (ch. 7), qu'elle reposait sur une **doctrine de complémentarité explicite**
@@ -91,8 +92,8 @@ périmètre d'un système, mais **chaque arête du graphe d'interaction*** : tou
 délégation entre pairs, toute résolution via un registre constitue **un point où une propriété de
 sûreté peut se rompre**.
 
-La position défendue par la littérature de sécurité du domaine est qu'il faut **modéliser la menace au
-niveau du protocole et de l'écosystème**, et non du seul agent. ⚠ **Ce qui est propre à
+La position que défend la littérature de sécurité **mobilisée ici** est qu'il faut **modéliser la
+menace au niveau du protocole et de l'écosystème**, et non du seul agent. ⚠ **Ce qui est propre à
 l'interopérabilité, et développé ici, est l'amplification** : *la composition crée une surface
 d'attaque que l'analyse composant par composant ne révèle pas.*
 
@@ -148,8 +149,9 @@ reconduite ici sans exception.
 
 ### 11.1.3 Attaques sur les frontières : empoisonnement, révocation après approbation, injection transitive
 
-**Trois familles d'attaques visent spécifiquement les frontières.** Elles sont ici **datées et
-identifiées**, et le § 11.1.4 dira pourquoi ce fait est en lui-même un enjeu de la somme.
+**Trois familles d'attaques visent spécifiquement les frontières — et la première en réunit deux
+mécanismes distincts, que le tableau de clôture déplie.** Elles sont ici **datées et identifiées**, et
+le § 11.1.4 dira pourquoi ce fait est en lui-même un enjeu de la somme.
 
 **(1) L'empoisonnement d'outils et la révocation après approbation.** L'**empoisonnement d'outils**
 exploite une propriété que le ch. 9 § 9.4.2 a posée : **la description d'un outil est du texte libre,
@@ -165,46 +167,56 @@ contrat figé à l'approbation ne lie pas un acteur qui évolue après elle.* Un
 **définitions d'outils renforcées** et **contrôle d'accès par politique** répond à ce vecteur.
 
 **(2) L'injection indirecte traversant les frontières.** Un **exploit zéro-clic** documenté contre une
-suite bureautique assistée — **identifiant de vulnérabilité publié, score de gravité 9,3 sur 10, 2025**
-— illustre que **la nouveauté n'est pas l'injection elle-même mais la transitivité de la confiance** :
-*un contenu non fiable injecté en amont se propage par délégation.* Le ch. 5 § 5.4 avait posé
-l'injection indirecte au niveau de l'ancrage ; **ce qui est propre à l'interopérabilité est qu'elle
-franchit des frontières administratives.**
+suite bureautique assistée — **CVE-2025-32711**, avis de sécurité du **11 juin 2025** — illustre que
+**la nouveauté n'est pas l'injection elle-même mais la transitivité de la confiance** : *un contenu non
+fiable injecté en amont se propage par délégation.* Le ch. 5 § 5.4 avait posé l'injection indirecte au
+niveau de l'ancrage ; **ce qui est propre à l'interopérabilité est qu'elle franchit des frontières
+administratives.**
+
+⚠ **Un score de gravité se cite avec son émetteur, faute de quoi il est indécidable.** La valeur de
+**9,3 sur 10** est celle qu'attribue l'**autorité de numérotation de l'éditeur** ; la fiche en porte une
+**seconde, officielle elle aussi, retenue par l'organisme national**, qui en **diffère de 1,8 point et
+change de palier** — divergence de périmètre, **consignée au socle consolidé (`S-152`) et non
+arbitrée**. *Écrire « gravité 9,3 » sans nommer qui la prononce, c'est trancher en silence entre deux
+valeurs également officielles.*
 
 **(3) Les vulnérabilités d'implémentation des composants de la pile.** Deux identifiants publiés en
-2025 en donnent la mesure : une **exécution de commande** dans un utilitaire de relais du protocole
-agent-outil (**gravité 9,6**), et un **défaut d'authentification du proxy** d'un inspecteur du même
-protocole (**gravité 9,4**).
+2025 en donnent la mesure : **CVE-2025-6514**, une **exécution de commande** dans un utilitaire de
+relais du protocole agent-outil (**gravité 9,6**), et **CVE-2025-49596**, un **défaut
+d'authentification du proxy** d'un inspecteur du même protocole (**gravité 9,4**).
 
 ⚠ **Ces trois identifiants sont cités comme jalons datés, et non comme état courant d'exposition** :
-*un identifiant publié est, le plus souvent, un défaut corrigé* — ce que le tableau ci-dessous ne dit
-pas, faute de source, et ne doit donc pas laisser croire.
+*un identifiant publié est, le plus souvent, un défaut corrigé* — et **la source le documente pour deux
+des trois**, le relais étant **corrigé en version 0.1.16** (avis du 9 juillet 2025) et l'inspecteur **en
+version 0.14.1, le 13 juin 2025**. ⚠ **Pour CVE-2025-32711, la source ne documente aucun correctif** —
+*absence de documentation*, **R-14 degré 3** : le tableau ci-dessous ne l'atteste pas, et ne doit pas
+laisser croire l'inverse.
 
 | Famille | Ce que l'attaque exploite | Ce que la source établit |
 |---|---|---|
 | **empoisonnement d'outils**, ombrage | la **description d'outil** est du texte lu par le modèle | mécanique documentée ; **banc d'épreuve sur serveurs réels** |
 | **révocation après approbation** | la **mutabilité du serveur après l'approbation** | mécanique documentée ; mitigation par politique proposée |
-| **injection indirecte transitive** | la **transitivité de la confiance** entre agents | **un identifiant de vulnérabilité daté, gravité 9,3** |
-| **défauts d'implémentation** de la pile | le code des **composants d'outillage**, non le protocole | **deux identifiants datés, gravités 9,6 et 9,4** |
+| **injection indirecte transitive** | la **transitivité de la confiance** entre agents | **CVE-2025-32711** ; gravité **9,3** *selon l'autorité de l'éditeur* — seconde valeur officielle divergente |
+| **défauts d'implémentation** de la pile | le code des **composants d'outillage**, non le protocole | **CVE-2025-6514** et **CVE-2025-49596**, gravités **9,6** et **9,4** ; **correctifs documentés** |
 
-: Tableau 11.2 — Les quatre familles d'attaques sur les frontières — jalons datés, non état courant d'exposition.
+: Tableau 11.2 — Les trois familles d'attaques sur les frontières, la première dépliée en ses deux mécanismes — jalons datés, non état courant d'exposition.
 
 ⚠ **La réponse historique au *député confus* — le vol de jeton par un intermédiaire trompé — passe par
 le confinement d'audience des jetons**, adopté par le **cadre d'autorisation** du protocole
 agent-outil (ch. 8 § 8.2.2). *Réserve F-01 du Vol. II : cadre d'autorisation, jamais « sécurisé ».*
 
-**Une troisième surface, et c'est la moins documentée des trois.** Le Vol. II nomme, au titre d'un
-**défi de sécurité holistique** porté par un manifeste de recherche à dix-huit auteurs,
-l'**empoisonnement de mémoire** (*memory poisoning*). ⚠ **Son socle le nomme et s'arrête là** : il
-n'en porte **ni ce que cette mémoire recouvre, ni la mécanique de sa corruption, ni la portée
-temporelle de l'atteinte** — *absence de documentation*, **R-14 degré 3**, et **la moins documentée
-des trois surfaces**. *Un lecteur tenté d'en déduire la gravité doit savoir qu'il la déduirait de ce
-que la source ne porte pas.*
+**Reste la mémoire — la troisième des surfaces que cette section annonce en titre, après l'outil et
+l'invite, et de loin la moins documentée.** Le Vol. II la nomme au titre d'un **défi de sécurité
+holistique** porté par un manifeste de recherche à dix-huit auteurs : l'**empoisonnement de mémoire**
+(*memory poisoning*). ⚠ **Son socle le nomme et s'arrête là** : il n'en porte **ni ce que cette
+mémoire recouvre, ni la mécanique de sa corruption, ni la portée temporelle de l'atteinte** —
+*absence de documentation*, **R-14 degré 3**. *Un lecteur tenté d'en déduire la gravité doit savoir
+qu'il la déduirait de ce que la source ne porte pas.*
 
 ### 11.1.4 La typologie des trois surfaces, et l'asymétrie qu'elle ne doit pas masquer
 
-*Lecture d'auteur — construction d'éditeur, et le corpus source la marque déjà comme telle.* Les trois
-surfaces **se distinguent par ce qu'elles corrompent** :
+Lecture de l'auteur — construction d'éditeur, et le corpus source la marque déjà comme telle. Les
+trois surfaces **se distinguent par ce qu'elles corrompent** :
 
 | Surface | Ce qu'elle corrompt | Canal |
 |---|---|---|
@@ -218,7 +230,9 @@ surfaces **se distinguent par ce qu'elles corrompent** :
 canal.** *C'est, en une phrase, ce que le manifeste veut dire par « holistique » : le problème ne se
 découpe pas selon les frontières que l'ingénierie de la sécurité applicative a l'habitude de tracer.*
 
-**Trois énoncés d'absence closent cette section, et leurs degrés diffèrent.**
+**Trois énoncés closent cette section, et ce qui les sépare importe autant que ce qu'ils disent : le
+premier et le troisième sont des absences du socle du Vol. II, de même degré ; le deuxième n'est pas
+une absence, mais le rétrécissement que le Vol. I leur impose.**
 
 **(1)** ⚠ **Le socle du Vol. II ne documente aucune attaque propre au protocole agent-agent**, alors
 même que celui-ci ouvre une surface d'une autre nature — **la délégation de tâches de pair à pair**.
@@ -330,7 +344,11 @@ préoccupation de gouvernance, et non seulement de recherche.*
 
 **Un incident de production documenté illustre le caractère contractuel de ces défaillances**, et il
 mérite d'être lu pour ce qu'il déplace. Un agent de codage a **exécuté des commandes destructrices
-durant un gel de code**, entraînant la **perte de données de production**.
+durant un gel de code**, entraînant la **perte de données de production** — **incident 1152 de
+l'*AI Incident Database* (Responsible AI Collaborative), daté du 18 juillet 2025**. ⚠ *La notice
+qualifie elle-même l'exécution de rapportée* : l'identifiant et la date sont cités parce que la
+lacune héritée du § 11.4.2 réclame un incident **daté**, non parce que le fait aurait été établi
+ailleurs.
 
 > ⚠ **Le point saillant, du point de vue de l'interopérabilité, n'est pas la faute du modèle mais le
 > garde-fou organisationnel qui ne s'est pas appliqué à l'agent** : *une règle de validation prévue
@@ -363,7 +381,7 @@ aussi malhonnête de les taire que de les surqualifier.**
 d'autorisation.** ⚠ **La formulation est celle que le socle impose, et sa précision est le fond de
 l'affaire** (réserve F-01 du Vol. II).
 
-*Lecture d'auteur.* Le socle établit que ce protocole **porte un cadre d'autorisation** ; il **ne
+Lecture de l'auteur — le socle établit que ce protocole **porte un cadre d'autorisation** ; il **ne
 documente ni la sémantique du standard sous-jacent ni ses limites**. Ce qu'on en retient est qu'**un
 cadre de délégation d'autorisation établit l'habilitation d'un appelant** — *non le contenu ni le
 bien-fondé de ce qu'il demande, ni le fait que l'outil invoqué soit celui qu'il prétend être.*
@@ -399,6 +417,13 @@ session — était en finalisation **douze jours après ce gel**, et le ch. 8 §
 détail avec la remontée qui l'accompagne. ⚠ **On se gardera ici d'anticiper ses effets sur la surface
 d'attaque** : *le socle documente le changement, non ses conséquences* — et une révision de cette
 ampleur est précisément le genre d'événement qui commande une revalidation avant publication.
+
+⚠ **Depuis, la bascule a eu lieu, et elle se date sans qu'on en tire davantage.** Au **28 juillet
+2026**, la révision servie comme courante par la spécification est celle de cette refonte (`S-001`) :
+*la péremption que le socle avait datée s'est produite le jour même qu'il annonçait*, et la
+**revalidation en bloc demeure ouverte, non exécutée**. ⚠ **Rien de ce chapitre n'est réécrit sur
+cette base** — le socle **constate** la bascule ; il n'a pas extrait le texte de la révision neuve, et
+*constater qu'une spécification a changé n'est pas savoir ce qu'elle dit.*
 
 **Un dernier rappel, qui n'est pas de pure forme.** Le passage de ces protocoles **sous gouvernance
 neutre**, établi au ch. 7, **ne change rien à ce qui précède**. ⚠ **Le socle documente les transferts
@@ -471,8 +496,8 @@ donné l'ait adopté. *Une garantie composable démontrée sur un prototype n'es
 déployée.*
 
 **L'évaluation s'appuie sur des environnements dynamiques dédiés** et sur des **exercices adverses
-inter-agents** — dont **l'analyse par injection d'invite du protocole de paiement**, dont le ch. 10
-§ 10.3.4 a tiré le verrou : *un agent dont l'intention est détournée signera un mandat malveillant
+inter-agents** — dont **l'analyse par injection d'invite du protocole de paiement**, où le ch. 10
+§ 10.3.4 a pris son verrou : *un agent dont l'intention est détournée signera un mandat malveillant
 parfaitement valide.*
 
 ⚠ **L'exercice adverse inter-agents complète l'évaluation en éprouvant non un agent mais le graphe
@@ -499,7 +524,7 @@ capacités de chaque agent limite l'impact d'un agent compromis.*
 les surfaces du § 11.1 soient refermables ; elle suppose au contraire qu'elles ne le sont pas**, et
 déplace la question **de la prévention vers le confinement**.
 
-*Lecture d'auteur, et il faut dire précisément ce que le socle porte.* Il établit que le manifeste
+Lecture de l'auteur — et il faut dire précisément ce que le socle porte. Il établit que le manifeste
 propose ces cadres locaux comme **frontière de sécurité**, et il établit par ailleurs que
 l'**autonomie encadrée** — dont ces mêmes cadres, normatifs et opérationnels, sont le dispositif —
 est le **mécanisme premier de gouvernance des systèmes agentiques**. ⚠ **Il n'établit pas que
@@ -515,7 +540,7 @@ qu'on ait **décidé, en amont**, quel contexte et quelles capacités chaque age
 qu'on ait **spécifié le cadre**. *Or cette spécification n'est pas un artefact de sécurité : c'est un
 artefact de **conception du processus**.*
 
-*Lecture d'auteur — et c'est la proposition que ce chapitre lègue au reste de la somme.*
+Lecture de l'auteur — et c'est la proposition que ce chapitre lègue au reste de la somme.
 
 > **La sûreté d'un système agentique se décide, pour l'essentiel, au moment où l'on décide de son
 > architecture, et non au moment où l'on choisit ses protocoles.**
@@ -551,8 +576,8 @@ absents :
 | Ce que la lacune du Vol. II déclare absent | Ce que le Vol. I verse | Régime |
 |---|---|---|
 | **la mécanique** des attaques | empoisonnement d'outils, ombrage, révocation après approbation, injection transitive (§ 11.1.3) | **[C]** — à instruire à la source primaire |
-| **les identifiants de vulnérabilité** | trois identifiants datés de 2025, gravités 9,3 / 9,6 / 9,4 (§ 11.1.3) | **[C]** |
-| **les incidents publics datés** | un incident de production à perte de données (§ 11.2.2) | **[C]** |
+| **les identifiants de vulnérabilité** | **CVE-2025-32711**, **CVE-2025-6514**, **CVE-2025-49596**, tous de 2025 — gravités 9,3 / 9,6 / 9,4 (§ 11.1.3) | **[C]** |
+| **les incidents publics datés** | l'**incident 1152** de l'*AI Incident Database*, **18 juillet 2025** (§ 11.2.2) | **[C]** |
 | **les bancs d'épreuve** | un banc dédié aux attaques d'outils, un environnement d'évaluation dynamique (§ 11.1.3, § 11.3.3) | **[C]** |
 | **une attaque propre au protocole agent-agent** | ⚠ **rien** — une modélisation de menace et une analyse comparée, pas une attaque (§ 11.1.4) | — |
 
@@ -567,8 +592,8 @@ que le ch. 10 § 10.1.3 a instruite sur la gouvernance du protocole de paiement.
 *(2)* **La thèse de ce chapitre était, à la rédaction, vraie du Vol. II et fausse de la somme** sur sa
 seconde moitié. Elle était alors **citée verbatim depuis le plan** et **n'a pas été modifiée ici** : un
 rédacteur ne corrige pas le plan, **il remonte** — **R-IV-13**. ⚠ **Le plan a depuis été requalifié
-(TOC v0.24) et le bloc de tête re-cité depuis le TOC v0.28** : *la thèse nomme désormais son sujet —
-« le socle du Vol. II » —, et elle est vraie des deux.*
+(TOC v0.24) et le bloc de tête re-collationné contre le TOC v0.30** : *la thèse nomme désormais son
+sujet — « le socle du Vol. II » —, et elle est vraie des deux.*
 
 *(3)* **La cinquième ligne du tableau ne se comble pas**, et c'est celle qui compte le plus pour un
 architecte. **Aucune attaque propre au protocole agent-agent n'est au corpus**, ni au socle du Vol. II
@@ -636,7 +661,18 @@ relais là où ce chapitre s'arrête : établir qui parle, et à quel titre.*
 27 juillet 2026. Conséquences habituelles : aucun énoncé central au sens de CA-IV-01 (régime **[C]**
 pour la matière du Vol. I ; niveaux **[A]**, **[A]**, **[B]** conservés pour F-01, F-02 et F-36 du
 Vol. II), aucun décompte publiable, renvois de plan et non de texte (ch. 15, 19, 37, 38, 49 et le
-Livre III non rédigés).
+Livre III non rédigés **à cette date**).
+
+⚠ **Deux de ces conséquences ont cessé de valoir depuis ; la troisième a changé de motif sans cesser
+de valoir — et aucune ne rend la pièce recevable.** *(1)* **G-2 est franchie** (27 juillet 2026) : les
+décomptes de cette pièce **sont publiables**, et [`decompte.sh`](../PRD/decompte.sh) les mesure.
+*(2)* **Les cinquante chapitres du plan existent en brouillon hors portes** : les renvois « ch. N » se
+re-vérifient désormais **contre du texte**, et ⚠ **cette passe ne l'a pas fait** — elle a constaté que
+chacun résout dans l'intervalle 1-50 et que l'objet annoncé correspond au titre porté au TOC, *ce qui
+n'est pas la même épreuve*. *(3)* ⚠ **G-3 est franchie** (28 juillet 2026, PRD v0.14) **et aucun
+énoncé n'est central pour autant** : le socle consolidé existe, mais les entrées du Vol. I y entrent
+**en `[C]`** — *le motif de l'abstention n'est plus l'absence de socle, c'est le niveau des entrées.*
+Voir la remontée de relecture ci-dessous.
 
 **Remontée ouverte par ce chapitre :**
 
@@ -667,16 +703,37 @@ Livre III non rédigés).
   balayer systématiquement les lacunes déclarées d'un volume contre le texte rédigé des deux autres.
   *Aucun contrôle outillé ne le fait aujourd'hui.*
 
+**Remontée ouverte par la passe de relecture du 28 juillet 2026 — sans identifiant, et le motif est
+écrit.** ⚠ *Le 27 juillet 2026, trois passes concurrentes numérotant dans une série partagée sans
+allocation préalable ont alloué **dix numéros deux fois** ; cinquante relectures courent aujourd'hui
+en parallèle sur les cinquante pièces. **Allouer un `R-IV-NN` ici reproduirait exactement la
+collision** — la remontée se formule, son numéro s'alloue à la passe d'arbitrage.*
+
+- **Le ré-adossement de cette pièce au socle consolidé est dû, et il excède le mandat d'une
+  relecture.** G-3 étant franchie, les faits que la pièce mobilise sont domiciliés : **`S-001`**,
+  **`S-002`**, **`S-034`** (Vol. II) et **`S-150`**, **`S-151`**, **`S-152`** (Vol. I, en `[C]`). La
+  passe les **nomme** en tête ; elle n'a **repris aucun énoncé contre son entrée**. ⚠ **Deux
+  conséquences que seule une passe de socle peut tirer.** *(a)* **`S-072`** (Vol. III `F-26`) porte
+  **`CVE-2025-32711` et `CVE-2025-6514` au niveau `[B]`**, là où ce chapitre les résout en `[C]` par
+  la voie du Vol. I : *la pièce sous-déclare son propre régime*, ce qui est le sens sûr de l'erreur,
+  mais qui reste une résolution à trancher — **et l'entrée porte une dette de vote explicite, « à
+  revalider avant tout emploi central »**. *(b)* **`S-001` déclare la revalidation en bloc du
+  protocole agent-outil OUVERTE, NON EXÉCUTÉE** après la bascule du 28 juillet 2026 (§ 11.3.1) : *un
+  chapitre sur les risques d'un protocole dont la spécification courante vient de changer ne se
+  publie pas sans cette revalidation.*
+
 **Ce qui n'est pas enfreint.** La structure suit la table détaillée (§ 11.1 à § 11.4) ; le § 11.0 est
 une **introduction de chapitre**, non une section de plan, et la table de couverture du TOC est
 respectée pour les six provenances. La **triade de conditions n'est pas reconstruite** : elle reste au
 **ch. 19**, et le § 11.1.2 n'en traite que l'**amplification**, qui est propre à la couche
-d'interopérabilité. Le **siège de l'encadré R-8 reste au ch. 7 § 7.5**. Les **sept occurrences de
+d'interopérabilité. Le **siège de l'encadré R-8 reste au ch. 7 § 7.5**. Les **huit occurrences de
 R-14** portent leur degré ; les **cinq de R-02** énoncent ce que le mécanisme démontre **et** ne
-démontre pas ; la **qualification de maturité** du § 11.3.1 est attribuée à l'annonce du projet ;
-**R-1 est tenu au § 11.1.1**. ⚠ **Et le contrôle qui compte le plus dans ce chapitre : le mot
-« sécurisé » n'est appliqué à aucun protocole, à aucune occurrence** — la formule « cadre
-d'autorisation » est employée à ses sept occurrences (réserve F-01 du Vol. II).
+démontre pas ; les **quatre constructions d'auteur** portent le marqueur « Lecture de l'auteur »
+(CA-IV-07) ; la **qualification de maturité** du § 11.3.1 est attribuée à l'annonce du projet, et le
+**score de gravité** du § 11.1.3 à l'autorité qui le prononce ; **R-1 est tenu au § 11.1.1**.
+⚠ **Et le contrôle qui compte le plus dans ce chapitre : le mot « sécurisé » n'est appliqué à aucun
+protocole, à aucune occurrence** — la formule imposée est employée **six fois au singulier et une
+fois au pluriel** dans le corps (réserve F-01 du Vol. II).
 
 ---
 
@@ -699,7 +756,11 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
   n'est entrée pour §10.8 : c'est sa **couverture** qui a changé, pas son **état de preuve** —
   au contraire de §10.9e (ch. 10), qui a reçu une source primaire datée. *Une lacune requalifiée
   reste une lacune ; elle change de motif, pas d'état.* ⚠ Et **comblée au régime [C] ne vaut pas
-  comblée** : ces entrées ne porteront aucun fait central tant que G-3 n'est pas franchie.
+  comblée** : ces entrées ne porteront aucun fait central tant qu'elles resteront en `[C]`.
+  ⚠ **G-3 a été franchie depuis, le 28 juillet 2026, et cela ne les élève pas** : les entrées du
+  Vol. I entrent au socle consolidé **en `[C]`**, `S-150` à `S-152` comprises, et *l'élévation en
+  `[B]` est à une lecture de distance* — elle n'a pas été faite ici. **Franchir la porte a domicilié
+  ces faits ; cela ne leur a fait subir aucune épreuve nouvelle.**
 
 ⚠ **Ce que la clôture ne change pas.** La porte **G-3** demeure ouverte : le socle consolidé compte
 **zéro entrée**, l'Annexe B n'existe pas, et **aucun énoncé de cette pièce n'est central au sens de

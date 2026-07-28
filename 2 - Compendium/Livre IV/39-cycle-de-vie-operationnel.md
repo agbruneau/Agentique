@@ -2,15 +2,15 @@
 
 *Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et
 synthèse architecturale.
-Second mouvement — exploiter (ch. 38-40). Deuxième chapitre du mouvement : il traite la deuxième
-capacité — **agir sur ce qu'on voit**.*
+Second mouvement — exploiter (ch. 38-40). Deuxième chapitre du mouvement : il traite la deuxième des
+trois capacités que l'exploitation distingue — **agir sur ce qu'on voit**.*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6. ⚠ **Chapitre de COMPOSITION, sans lot d'instruction propre** — il consomme les ch. 20, 37 et 38 plutôt qu'une passe de recherche —, et *un chapitre de composition est plus exposé qu'un chapitre de socle, pas moins : sans source à citer, l'inférence ne se voit pas.* **R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre** |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6. ⚠ **Chapitre de COMPOSITION, sans lot d'instruction propre** — il consomme les ch. 20, 37 et 38 plutôt qu'une passe de recherche —, et *un chapitre de composition est plus exposé qu'un chapitre de socle, pas moins : sans source à citer, l'inférence ne se voit pas.* **R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre** — ☑ *soldées depuis (TOC v0.28, PRD v0.12) ; ⚠ **D-2, qui clôt R-IV-40, a été prise par une autre passe et APRÈS cette rédaction** : un arbitrage qui suit une infraction la solde, il ne la rattrape pas* |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : aucun fait périssable de cette pièce n'a été repris à la source primaire. Gels de source : **21 juillet 2026** (Vol. III), **juin 2026** (Vol. I) ; *ils ne sont pas celui de la somme* |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. III *Monographie* ch. 25**, dont les entrées **F-03**, **F-05**, **F-06**, **F-07**, **F-10**, **F-12**, **F-19**, **F-20**, **F-21**, **F-23**, **F-34**, **F-35**, **F-37**, **F-38**, **F-40**, **F-46**, **F-52**, **F-53**, **F-55**, **F-57**, **F-64**, **F-65**, **F-66**, **F-68**, **F-70**, **F-71**, **F-76**, **F-77**, **F-92**, **F-93**, **F-97**, **F-98** et les entrées héritées **H-04**, **H-07**, **H-11**, **H-12**, **H-15**, **H-23**, **H-25**, **H-26**, **H-27**, **H-28**, **H-31**, **H-33** **conservent leurs niveaux d'origine** ; et contre le **Vol. I *Monographie* §2.11.4-2.11.5**, qui entre **en [C]**. ⚠ **Une entrée porte une dette de vote non résorbée** : **F-92** est en **[B, degré 1] avec vote adversarial dû et non conduit** — *elle ne porte aucune thèse ici, et la refonte du socle (G-3) ne l'admettra pas avant résorption.* ⚠ **Régime « source rédigée non publiable »** : G-4 non close, **aucun vote conduit**. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** Vol. III — **R-14 (trois degrés d'absence) : quatre occurrences**, § 39.1, § 39.2, § 39.4 et § 39.6 ; **R-09 (statut pré-normatif dit à chaque mention) : trois occurrences**, § 39.2, § 39.3 et § 39.4 ; **R-13 (échelle d'autonomie jamais nue) : deux occurrences**, § 39.2 et § 39.6 — *l'échelle à quatre paliers non numérotés y est nommée par son cardinal, jamais seule* ; **R-01 (le passeport n'existe dans aucune spécification) : une occurrence**, § 39.5 ; **R-06 (« attendu par E-23 ») : une occurrence**, § 39.2 ; **R-11 : une occurrence**, § 39.2 ; **R-12 (traitement défensif au niveau architectural) : une occurrence**, § 39.2. **R-02 : une occurrence de l'identifiant**, § 39.5 — ⚠ *le garde-fou est pourtant appliqué, chaque mécanisme étant qualifié par ce que sa spécification démontre : domaine déclaré, corps entier, sans cardinal (décision 16, alinéa c)* ; **R-03 à R-05, R-07, R-08, R-10 : zéro occurrence.** Vol. II — **métriques auto-déclarées (marqueur « auto-déclaré ») : quatre occurrences**, § 39.1 (deux) et § 39.3 (deux), chacune attribuée à son éditeur nommé ; **réserve F-37 (préimpression non révisée) : deux occurrences**, § 39.4. **R-1 à R-8 : zéro occurrence** — *leurs sièges sont aux ch. 15, 16 et 45.* ⚠ **Faux ami déclaré** : le « corpus d'appui » du § 39.6 est un **marqueur conditionnel de réouverture**, jamais une source |
+| **Socle mobilisé** | **Aucune entrée du socle consolidé n'est citée ici.** ⚠ **La pièce a été rédigée avant la porte G-3 — franchie depuis, le 28 juillet 2026** ([`socle-consolide.md`](../PRD/socle-consolide.md), v1.2, 159 entrées `S-001`…`S-159`) : *le report de ses renvois sur la série `S-nnn` est **dû** et n'est pas opéré ici, une re-numérotation pièce par pièce produisant une somme à deux séries.* Les énoncés résolvent contre le **Vol. III *Monographie* ch. 25**, dont les entrées **F-03**, **F-05**, **F-06**, **F-07**, **F-10**, **F-12**, **F-19**, **F-20**, **F-21**, **F-23**, **F-34**, **F-35**, **F-37**, **F-38**, **F-40**, **F-46**, **F-52**, **F-53**, **F-55**, **F-57**, **F-64**, **F-65**, **F-66**, **F-68**, **F-70**, **F-71**, **F-76**, **F-77**, **F-92**, **F-93**, **F-97**, **F-98** et les entrées héritées **H-04**, **H-07**, **H-11**, **H-12**, **H-15**, **H-23**, **H-25**, **H-26**, **H-27**, **H-28**, **H-31**, **H-33** **conservent leurs niveaux d'origine** ; et contre le **Vol. I *Monographie* §2.11.4-2.11.5**, qui entre **en [C]**. ⚠ **Cinq de ces entrées sont déclarées au périmètre du chapitre source et ne portent aucun énoncé du corps** : **F-93**, **H-23**, **H-25**, **H-27**, **H-28**. ⚠ **Une entrée porte une dette de vote non résorbée** : **F-92** est en **[B, degré 1] avec vote adversarial dû et non conduit** — *elle ne porte aucune thèse ici* — et ☑ **la refonte du socle l'a effectivement écartée** : `F-92` et `F-96` du Vol. III **n'entrent pas au socle consolidé** tant que la dette tient (Annexe B §6.1). ⚠ **Régime « source rédigée non publiable »** : G-4 non close, **aucun vote conduit**. **Aucun énoncé n'est central au sens de CA-IV-01** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** Vol. III — **R-14 (trois degrés d'absence) : quatre occurrences**, § 39.1, § 39.2, § 39.4 et § 39.6 ; **R-09 (statut pré-normatif dit à chaque mention) : trois occurrences**, § 39.2, § 39.3 et § 39.4 ; **R-13 (échelle d'autonomie jamais nue) : deux occurrences**, § 39.2 et § 39.6 — *l'échelle à quatre paliers non numérotés y est nommée par son cardinal, jamais seule* ; **R-01 (le passeport n'existe dans aucune spécification) : une occurrence**, § 39.5 ; **R-06 (« attendu par E-23 ») : une occurrence**, § 39.2 ; **R-11 : une occurrence**, § 39.2 ; **R-12 (traitement défensif au niveau architectural) : une occurrence**, § 39.2. **R-02 : une occurrence de l'identifiant**, au bloc de collation de la thèse — *le corps est écrit sous la forme bornée, et le bloc nomme le garde-fou pour dire ce que la forme antérieure lui devait* ; **R-03 à R-05, R-07, R-08, R-10 : zéro occurrence de l'identifiant** — ⚠ *R-02 est pourtant appliqué de bout en bout, chaque mécanisme étant qualifié par ce que sa spécification démontre et non par ce qu'elle promet : domaine déclaré, corps entier, sans cardinal (décision 16, alinéa c).* Vol. II — **métriques et qualifications auto-déclarées (marqueur « auto-déclaré ») : quatre occurrences**, deux au § 39.1 et deux au § 39.3, chacune attribuée. La **première du § 39.1** est une **réserve** — le rapport nommé reprend des métriques auto-déclarées d'éditeur, et *rien n'en est repris ici* ; la **seconde** porte sur les évaluateurs d'une plateforme et est attribuée à **Microsoft**, son éditeur nommé. Les **deux du § 39.3** portent sur le statut de pré-version d'un mandataire ouvert, attribué à son hébergeur nommé, la **Linux Foundation** — *une qualification de maturité n'est pas une métrique, et la décision 15, alinéa a, vaut pour l'une comme pour l'autre.* **Réserve de la préimpression (marqueur littéral « F-37 » du Vol. II) : une occurrence**, § 39.2 — *l'entrée y est nommée à côté de son identifiant hérité du Vol. III, **H-12**, sous lequel le constat était seul porté ; la réserve, elle, est écrite à chaque mobilisation, domaine déclaré, sans cardinal.* ⚠ **Le corps porte deux AUTRES occurrences littérales de « F-37 », qui sont des entrées du Vol. III** (§ 39.4), désormais préfixées de leur volume — *la collision est exactement celle que la décision 7 proscrit, et l'en-tête l'avait elle-même commise.* **R-1 à R-8 : zéro occurrence** — *les sièges versés à l'appareil pour cette série sont hors de cette pièce : R-2 et R-3 au ch. 16 § 16.2, R-8 au ch. 7 § 7.5.* ⚠ **Faux ami déclaré** : le « corpus d'appui » du § 39.6 est un **marqueur conditionnel de réouverture**, jamais une source |
 | **Volumétrie cible** | ≈ **6 500 mots** de corps (§ 39.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des six sections et du volume de source consommé. ☑ **Décompte publiable depuis G-2** ; **réel reporté au [`README.md`](README.md)** du Livre. ⚠ **D-4 s'applique** : *ni amputation ni gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 39 — **thèse réalignée en v0.28**, décisions 8 et 14, remontée R-IV-45)* — **Lecture de l'auteur** — l'exploitation d'un parc d'agents **forme** une boucle — évaluer, détecter la dérive, répondre à l'incident, réviser le mandat. ⚠ **Ce que le socle établit** : l'énoncé de l'invariant à quatre termes, entré en **[C]** comme thèse à attribuer. ⚠ **Ce qu'il n'établit pas** : **que cette boucle en soit la réalisation** — *le Vol. I ne décrit aucune boucle d'exploitation*. Sans elle, **le passeport n'assemble que des pièces datées à leur émission** — *et non « certifie », verbe qui prêterait une capacité à un objet ne figurant dans aucune spécification (R-01 du Vol. III).*
@@ -30,35 +30,37 @@ qui ne figure dans aucune spécification à date* (R-01 du Vol. III), et qualifi
 qu'il promet plutôt que par ce qu'il démontre est ce que R-02 proscrit. **Le corps a été écrit sous la
 forme bornée** et l'écart avait été **remonté** (R-IV-45, § 39.7). ☑ **La remontée est soldée par l'arbitrage v0.28 du TOC** (décisions 8 et 14), et **la citation
 ci-dessus porte la forme réalignée**, reportée **par copie** depuis l'entrée courante du plan.
-*La v0.29 du TOC ne modifie aucune thèse du Livre.*
+*Ni la v0.29 ni la v0.30 du TOC ne modifient de thèse du Livre.*
 
 ---
 
 ## § 39.0 — Introduction : agir sur ce qu'on voit
 
 Le ch. 38 s'est arrêté sur un constat qu'il n'a pas comblé : **l'identité serait la clé de jointure de
-l'observabilité agentique, et rien dans le corpus ouvert ne la constitue**. Celui-ci traite la
+l'observabilité agentique, et l'objet qui la porterait — le passeport — ne figure dans aucune
+spécification à date** (§ 39.5). Celui-ci traite la
 deuxième capacité du mouvement : **agir sur ce qu'on voit**. Évaluer en continu, détecter la dérive
 (*drift*), répondre à l'incident, réviser le mandat — quatre gestes que l'exploitation d'un parc
 enchaîne, et dont ce chapitre demande, un à un, **ce que le socle en documente**.
 
-⚠ **Trois des chapitres amont portent une lacune à l'endroit exact où celui-ci les consomme, et le
+⚠ **Deux des chapitres amont portent, à trois endroits, une lacune là où celui-ci les consomme, et le
 fait se déclare avant la première section.** Le **ch. 20** porte un front ouvert sur l'attestation
 d'intégrité à l'exécution et un autre sur la **révocation en cascade** — *aucune passe de recherche
-n'a été conduite* ; le **ch. 38 § 38.5** porte le même sur la **corrélation trace ↔ chaîne de
+n'a été conduite* ; le **ch. 38 § 38.5** porte le troisième, sur la **corrélation trace ↔ chaîne de
 mandat**. **Le maillon « répondre à l'incident » s'appuie donc sur des chapitres qui déclarent ne pas
 savoir.** *Ce n'est pas un défaut de la thèse ; c'est une contrainte de rédaction, et le § 39.3
 l'écrit plutôt que de la contourner.*
 
 ⚠ **Ce que le chapitre ne traite pas.** Les **fondements de l'évaluation** ne sont pas ici : ils
-restent au **ch. 6**, et le Vol. I §2.9 n'est pas repris par ce Livre. La **barrière d'évaluation au
-déploiement** est au **ch. 47**, au grain de l'artefact. Le **grain du déploiement** y est aussi. Et
+restent au **ch. 6**, et le Vol. I *Monographie* §2.9 n'est pas repris ici — *son §2.9.6 arrive au
+ch. 38, non dans cette pièce.* La **barrière d'évaluation au déploiement** est au **ch. 47**, au grain
+de l'artefact, où se tient aussi le **grain du déploiement**. Et
 la **science de l'évaluation** est hors périmètre de bout en bout : *l'évaluation n'entre dans la
 somme que par la revalidation du passeport après apprentissage* (§ 39.5).
 
 **Le chapitre se lit en six temps** : évaluer (§ 39.1), détecter (§ 39.2), répondre (§ 39.3),
 versionner et revenir en arrière (§ 39.4), revalider ce qui a appris (§ 39.5), et situer le tout dans
-un modèle de maturité dont **la source a été retirée** (§ 39.6).
+un modèle de maturité dont **le corpus d'appui annoncé n'a jamais été déposé** (§ 39.6).
 
 ## § 39.1 — L'évaluation en production : des jeux d'essai à l'évaluation continue
 
@@ -75,11 +77,12 @@ d'émission, ni fenêtre de validité, ni indicateur de révocation** (Vol. III 
 verdict d'admission pourrait être daté hors de cette boucle** — absence de documentation, non fait
 négatif vérifié (R-14 du Vol. III, degré 3).
 
-**Le corpus nomme l'exigence, et il la nomme comme exigence.** Un rapport daté de **juin 2026**,
-version **2.01**, distingue l'identité non humaine — qui « verifies that a credential is authorized to
-connect » — de l'identité d'agent, laquelle « has to verify what the holder is doing with that
-authorization, **continuously** » (Vol. III **F-20**, **[A]**, citation en langue originale).
-⚠ **Deux réserves voyagent avec l'entrée** : la formule est celle de ce rapport, **à sa date et à sa
+**Le corpus nomme l'exigence, et il la nomme comme exigence.** Le rapport *State of Agentic AI
+Security and Governance*, **v2.01, juin 2026**, distingue l'identité non humaine — qui « verifies that
+a credential is authorized to connect » — de l'identité d'agent, laquelle « has to verify what the
+holder is doing with that authorization, **continuously** » (Vol. III **F-20**, **[A]**, citation en
+langue originale). ⚠ **L'attributeur se nomme plutôt qu'il ne s'anonymise** (décision 15, alinéa a),
+et **deux réserves voyagent avec l'entrée** : la formule est celle de ce rapport, **à sa date et à sa
 version, non un consensus du domaine** ; et le rapport reprend par ailleurs des **métriques
 auto-déclarées d'éditeur**, dont rien n'est repris ici. *Ce que l'entrée établit est qu'un référentiel
 daté **énonce** la vérification continue comme propriété distinctive — pas qu'un mécanisme la réalise.*
@@ -103,7 +106,7 @@ documenté, jamais comme recommandation**. ⚠ **L'absence de la mention « (pre
 n'est pas une déclaration de disponibilité générale** : *ne pas écrire que les six autres le
 seraient.*
 
-Deux évaluateurs de risque visent nommément l'agent, dont l'un dont la finalité déclarée est de
+Deux évaluateurs de risque visent nommément l'agent, et l'un d'eux a pour finalité déclarée de
 mesurer « an AI agent's ability to engage in behaviors that violate explicitly disallowed actions ».
 ⚠ **C'est ce que le corpus ouvert offre de plus proche d'un indicateur de mandat, et l'écart reste
 entier** : *mesurer la **capacité** d'un agent à s'engager dans des comportements interdits est un
@@ -123,7 +126,7 @@ sources ne font pas un marché** : l'entrée ne soutient **aucun énoncé sur l'
 Lecture de l'auteur — **ce que le socle établit** : un verdict d'admission **sans terme exprimé**
 (F-03, F-05) ; un référentiel daté qui **énonce** la vérification continue (F-20) ; un événement
 d'évaluation normalisé **au premier échelon** (F-77) ; onze évaluateurs dont cinq en préversion
-déclarée, **dont le plus proche du sujet mesure une capacité et non une conformité** (F-97) ;
+déclarée, **le plus proche du sujet mesurant une capacité et non une conformité** (F-97) ;
 l'absence d'identifiant commun entre trois sources nommées (F-98). **Ce qu'il n'établit pas** : qu'un
 dispositif d'évaluation en production existe **qui daterait un verdict d'identité**, ni qu'un résultat
 d'évaluation se rattache à un mandat, **ni qu'aucun outil ne le fasse ailleurs**. La lecture proposée
@@ -164,7 +167,7 @@ mécanisme examiné **n'offre, sur cette page, aucun champ qui tiendrait lieu de
 ### 39.2.2 La dérive de modèle n'est pas au socle, et le mot ne doit pas faire croire l'inverse
 
 ⚠ **Le socle ne documente pas de mécanisme de détection d'une dérive de comportement d'un modèle en
-production** : absence de documentation, non fait négatif vérifié (R-14, degré 3).
+production** : absence de documentation, non fait négatif vérifié (R-14 du Vol. III, degré 3).
 
 Ce que le corpus porte est **voisin sans être identique** : l'**empoisonnement de la mémoire longue ou
 de la base de récupération** est documenté par une publication **revue par les pairs** parue dans des
@@ -193,7 +196,7 @@ indépendants.**
 **[B, degré 1]**), la forme « attendu » étant portée **au titre du document d'information de son
 éditeur du 11 septembre 2025** et non du texte de la ligne directrice (Vol. III **F-66**,
 **[B, degré 1]**) — comporte une **surveillance continue visant nommément la décision autonome et la
-re-paramétrisation autonome** (Vol. III **H-04**, **[A/B mixte]** ; **F-65**, **[B]**). ⚠ **On écrit
+reparamétrisation autonome** (Vol. III **H-04**, **[A/B mixte]** ; **F-65**, **[B]**). ⚠ **On écrit
 « attendu par E-23 », jamais « exigé par E-23 »** (R-06 du Vol. III ; siège **ch. 25**). La ligne
 directrice de l'AMF formule ses attentes sur le mode « L'Autorité s'attend à ce que… », **pour effet
 au 1er mai 2027** — échéance datée d'un texte publié, donc **PROGRAMMÉE** —, sur une définition du
@@ -207,7 +210,8 @@ de normalisation est cité.
 
 **Le seul relevé d'instrumentation versé au socle ne la mesure pas.** Un cadre empirique relève que
 **quatre propriétés sur cinq sont instrumentées, l'autonomie n'en ayant aucune** (Vol. III **H-12**,
-**[B]**) — ⚠ **préimpression non révisée par les pairs, source unique, sans reproduction
+**[B]** — *entrée héritée du Vol. II **F-37**, les deux fondues au socle consolidé ; c'est ici, et non
+ailleurs, que ce constat est porté*) — ⚠ **préimpression non révisée par les pairs, source unique, sans reproduction
 indépendante** : *constat de cette préimpression sur les cinq propriétés qu'elle instrumente
 elle-même, non propriété établie du domaine.*
 
@@ -231,12 +235,13 @@ daté***.
 ⚠ **Cette relève est un repérage [C] à instruire à la source primaire ; elle n'entre pas au socle**, et
 son instruction relève de **G-1**, **avec le ch. 5** — qui porte l'ancrage informationnel. **Aucun
 énoncé de ce chapitre ne s'y adosse** : elle est nommée comme **front ouvert**, et le § 39.2 continue
-de compter **trois** dérives documentées, non quatre.
+de traiter les **trois** dérives que le plan annonce, non quatre — *dont une seule, la dérive d'outil,
+est documentée au socle.*
 
 Lecture de l'auteur — **ce que le socle établit** : l'absence de champ de version, d'empreinte ou de
 signature au type décrivant un outil, **sur une page nommée** (F-52) ; l'empoisonnement de la mémoire
 avec ses taux **attribués à leurs auteurs** (F-23) ; la mention de la décision et de la
-reparamétrisation autonomes par le cycle de vie attendu par E-23 (H-04, F-65, F-66) ; l'adaptabilité
+reparamétrisation autonomes par le cycle de vie **attendu par** E-23 (H-04, F-65, F-66) ; l'adaptabilité
 après déploiement dans deux définitions réglementaires (F-68, H-07) ; l'absence d'instrumentation de
 l'autonomie **dans une préimpression** (H-12). **Ce qu'il n'établit pas** : qu'il existe une métrique
 d'autonomie, ni que les trois dérives soient les seules, ni qu'elles se détectent par les mêmes
@@ -250,7 +255,8 @@ l'émission, c'est-à-dire au mandat lui-même.*
 
 ## § 39.3 — La réponse à incident agentique : révoquer, confiner, imputer
 
-**Trois leviers, et chacun se prend à un chapitre qui déclare une lacune à cet endroit précis.**
+**Trois leviers, et aucun n'est complet : les deux premiers butent sur une limite que leur chapitre
+amont déclare, le troisième n'est fourni par aucun mécanisme documenté.**
 
 **Révoquer en urgence, c'est agir sur un mécanisme prescrit sans être outillé.** Le **ch. 20** a relevé
 l'inventaire texte par texte, et **trois formes s'en dégagent : le silence, l'interdiction sans le
@@ -282,8 +288,9 @@ d'urgence est une réponse à granularité maximale.***
 
 **Confiner, c'est déplacer le lieu de l'échec, et le point d'application le documente à sa borne.** Le
 **ch. 37 § 37.5** a établi qu'une autorisation par arête possède une syntaxe documentée dans un
-mandataire ouvert dont la publication la plus récente est **pré-version auto-déclarée** (Vol. III
-**F-71**, **F-70**, **[B]**), et qu'un **écart de couverture entre deux plans d'identité est déclaré
+mandataire ouvert de la **Linux Foundation**, dont la publication la plus récente est **pré-version
+auto-déclarée** (Vol. III **F-71**, **F-70**, **[B]** ; *l'attributeur d'une qualification de maturité
+se nomme*), et qu'un **écart de couverture entre deux plans d'identité est déclaré
 par l'éditeur lui-même** (Vol. III **F-35**, **[A, degré 2]**, fait négatif **ÉTABLI**). ⚠ **La
 conséquence pour l'incident est directe, et c'est la première condition de renversement du ch. 37
 § 37.9** : *un confinement dont on ne peut pas énumérer les arêtes qu'il ne médiatise pas confine
@@ -298,12 +305,12 @@ Vol. II reprend à son **cinquième point de contrôle obligatoire** — le conf
 ⚠ **Le *frame* opérationnel n'est pas caractérisé par le socle** — seul le normatif l'est : *le
 chapitre ne s'adosse pas à cette notion*, et la lacune est déclarée au § 39.5.
 
-**Imputer, c'est ce qu'aucun des trois leviers ne fournit.** Un référentiel de sécurité applicative
+**Imputer, c'est le levier qu'aucun mécanisme documenté ne fournit.** Un référentiel de sécurité applicative
 énonce que **sans identité propre et gouvernée, un agent opère dans un écart d'attribution qui rend le
 moindre privilège inapplicable** (Vol. III **F-19**, **[A]**) ; le manifeste range parmi ses défis
 l'**écart de responsabilité** entre le développeur, l'organisation qui impose le cadre, le fournisseur
 de modèle et le comportement émergent (**H-11**, **[B]**). ⚠ **Et les répondants sont eux-mêmes des
-agents** : la documentation d'un agent de triage d'hameçonnage d'éditeur nommé, mise à jour le
+agents** : la documentation d'un agent de triage d'hameçonnage de **Microsoft**, mise à jour le
 1er juillet 2026, offre **deux modèles d'identité** — une identité d'agent créée pour lui, ou **un
 compte utilisateur existant dont l'agent hérite les accès** — et **déclare la seconde option
 incompatible** avec deux dispositifs de sécurité d'accès privilégié (Vol. III **F-57**, **[A]** ;
@@ -319,7 +326,8 @@ journalise l'état et chaque effet de bord, permet la reprise après panne **san
 déjà engagées, à condition que les appels d'outils soient idempotents**. ⚠ **L'idempotence devient
 ainsi une exigence de conception d'outil de premier ordre** : *sans elle, une reprise transforme un
 agent en multiplicateur d'effets de bord.* ⚠ **Le versant *sémantique d'effet* de ce constat est au
-ch. 48**, ⚠ *non rédigé à la date de cette pièce et rédigé depuis, hors portes* — ce chapitre le nomme et ne le développe pas. *Deux* :
+ch. 48** — *non rédigé à la date de cette pièce, rédigé depuis, hors portes* : ce chapitre le nomme et
+ne le développe pas. *Deux* :
 l'**intervention humaine** doit être traitée comme **une primitive d'architecture et non comme un
 correctif tardif** — points d'interruption où l'exécution se suspend en attendant une approbation,
 modes d'approbation gradués selon la sensibilité de l'action, interruptibilité, **modélisation en
@@ -356,16 +364,16 @@ dossier de diligence raisonnable porte un état courant et jamais un état daté
 
 ⚠ **Le socle ne documente aucune définition de « GitOps » appliqué à un parc d'agents, ni aucun
 dispositif de promotion entre environnements** : absence de documentation, non fait négatif vérifié
-(R-14, degré 3). *Le terme est employé au vocabulaire du plan, et la section écrit ce que les
+(R-14 du Vol. III, degré 3). *Le terme est employé au vocabulaire du plan, et la section écrit ce que les
 mécanismes déjà instruits portent — rien de plus.*
 
 **Le versionnement existe, à trois endroits et à trois régimes.**
 
 | Objet versionné | Ce que le socle établit | Ce qu'il n'établit pas |
 |---|---|---|
-| **Le mandat lui-même** | sérialisation en SD-JWT, **attribut de type versionné**, attributs temporels d'émission et d'expiration, **version v0.2.0 du 28 avril 2026** — ⚠ **spécification de projet, non texte normatif d'un organisme de normalisation** (**F-46**, [B] ; R-09) | qu'un **retrait** soit documenté : le **ch. 20** l'écrit au **degré 3** |
-| **La spécification de la carte**, non son artefact | spécification versionnée — v1.0.0 du 12 mars 2026, champ de signatures introduit en v0.3.0 le 30 juillet 2025 (**F-12**, [B]) ; ⚠ **écart consigné et non arbitré** : le registre affiche une étiquette **v1.0.1 du 28 mai 2026** quand l'en-tête déclare « Latest Released Version 1.0.0 », **et la v1.0.1 n'a pas été ouverte** | que l'**artefact** émis soit daté : les quatorze champs n'expriment **ni date d'émission, ni fenêtre de validité, ni indicateur de révocation** (**F-05**, [A, degré 1]) ; *le champ de version qu'il porte est la version **de l'agent**, non une date ni un numéro de série* |
-| **La déclaration des bornes** | deux champs **obligatoires** au schéma de profil d'agent d'un brouillon de laboratoire — énumération des outils invocables, limites de portée (**F-40**, [B]) ; un type de ressource d'annuaire héritant d'un type applicatif (**F-37**, [B]) | ⚠ **que la disponibilité générale d'un produit vaille disponibilité générale de ses capacités** : plusieurs capacités nommées demeuraient étiquetées *Preview* au 21 juillet 2026 (**F-34**, [A]) |
+| **Le mandat lui-même** | sérialisation en SD-JWT, **attribut de type versionné**, attributs temporels d'émission et d'expiration, **v0.2.0 du 28 avril 2026** — ⚠ **spécification de projet, non texte normatif d'un organisme de normalisation** (Vol. III **F-46**, [B] ; R-09) | qu'un **retrait** soit documenté : le **ch. 20** l'écrit au **degré 3** |
+| **La spécification de la carte**, non son artefact | spécification versionnée — v1.0.0 du 12 mars 2026, champ de signatures introduit en v0.3.0 le 30 juillet 2025 (Vol. III **F-12**, [B]) ; ⚠ **écart consigné et non arbitré** : le registre affiche une étiquette **v1.0.1 du 28 mai 2026** quand l'en-tête déclare « Latest Released Version 1.0.0 », **et la v1.0.1 n'a pas été ouverte** | que l'**artefact** émis soit daté : les quatorze champs n'expriment **ni date d'émission, ni fenêtre de validité, ni indicateur de révocation** (**F-05**, [A, degré 1]) ; *le champ de version qu'il porte est la version **de l'agent**, non une date ni un numéro de série* |
+| **La déclaration des bornes** | deux champs **obligatoires** au schéma de profil d'agent d'un brouillon de laboratoire — énumération des outils invocables, limites de portée (Vol. III **F-40**, [B]) ; un type de ressource d'annuaire héritant d'un type applicatif (Vol. III **F-37**, [B]) | ⚠ **que la disponibilité générale d'un produit vaille disponibilité générale de ses capacités** : plusieurs capacités nommées demeuraient étiquetées *Preview* au 21 juillet 2026 (Vol. III **F-34**, [A]) |
 
 : Tableau 39.1 — Les trois régimes de versionnement documentés par le socle du Vol. III, et leurs bornes. ⚠ *Le mécanisme se versionne, l'artefact porte une version d'agent — et ni l'un ni l'autre ne le date.*
 
@@ -419,7 +427,7 @@ réalise au socle**.
 > **État** : lacune ouverte le 21 juillet 2026 chez sa source ; **aucune passe de recherche n'a été
 > conduite** — ce chapitre n'a pas de lot d'instruction, et **aucun lot n'avait cet objet à son
 > périmètre**. **Corpus à ouvrir** : la documentation d'exploitation des annuaires et registres nommés
-> au socle (F-37, F-40), les dispositions de conservation d'historique des spécifications de registre
+> au socle (Vol. III F-37, F-40), les dispositions de conservation d'historique des spécifications de registre
 > dans leurs révisions courantes, et la littérature d'exploitation déclarative **sous réserve d'une
 > filiation établie explicitement plutôt que réinventée**. **Critère de clôture** : qu'un mécanisme
 > documenté restitue un état daté, ou que son absence soit établie par balayage. ⚠ **La question reste
@@ -489,8 +497,9 @@ apprentissage cesserait d'être un cas limite pour devenir le régime nominal.* 
 préimpression, de juillet 2026, propose d'encadrer l'auto-modification par des **certificats à
 garanties d'erreur auditables**. ⚠ **Les trois sont des préimpressions dont seuls les résumés ont été
 consultés : repérages [C], jamais des faits**, et leur instruction relève de **G-1**. ⚠ **Le versant
-versionnement est au ch. 47**, ⚠ *non rédigé à la date de cette pièce et rédigé depuis, hors portes* — *un artefact qui se modifie en production n'a
-plus d'horloge fixe du tout.* **Aucun énoncé de ce chapitre ne s'y adosse.**
+versionnement est au ch. 47** — *non rédigé à la date de cette pièce, rédigé depuis, hors portes* —,
+*un artefact qui se modifie en production n'ayant plus d'horloge fixe du tout.* **Aucun énoncé de ce
+chapitre ne s'y adosse.**
 
 ## § 39.6 — Cycle de vie et modèles de maturité
 
@@ -540,7 +549,7 @@ fait auquel le confronter.*
 
 ⚠ **Ce que le chapitre ne lègue pas.** Aucun **indicateur** : ils sont au **ch. 40**. Aucune
 **sémantique d'effet** : l'idempotence est nommée ici comme exigence de conception héritée en [C], et
-**le ch. 48 en est le siège** — ⚠ *non rédigé à la date de cette pièce, rédigé depuis, hors portes*. Aucune **quatrième dérive** : la mémoire est un **front
+**le ch. 48 en est le siège** — *non rédigé à la date de cette pièce, rédigé depuis, hors portes*. Aucune **quatrième dérive** : la mémoire est un **front
 ouvert**, pas une dérive documentée. Et aucun **verdict sur l'auto-évolution** : trois préimpressions
 non instruites ne font pas un régime nominal.
 
@@ -552,12 +561,16 @@ non instruites ne font pas un régime nominal.
 gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A).
 
 **Ce qui est enfreint.** Portes **G-3**, **G-4** et **G-5** ; **volet résiduel de G-1** ; **ordre de
-rédaction du PRD §6**. Instruction d'auteur du **27 juillet 2026**.
+rédaction du PRD §6**. Instruction d'auteur du **27 juillet 2026**. ⚠ **G-3 a été franchie depuis, le
+28 juillet 2026** : *une porte franchie après coup ne rétablit pas la pièce écrite avant elle — elle
+rend seulement mesurable ce qui lui manquait.*
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ **Et une entrée mobilisée porte une dette de
    vote non résorbée** — **F-92**, sur laquelle le vote adversarial est dû et n'a pas été conduit chez
-   sa source : *elle est citée à sa seule borne, ne porte aucune thèse, et **n'entrera pas au socle
-   consolidé avant résorption** (PRD §7.1).*
+   sa source : *elle est citée à sa seule borne et ne porte aucune thèse.* ☑ **La demande de
+   R-IV-47 a été exécutée** : la refonte du socle a **constaté la dette au versement** et **exclu
+   `F-92` comme `F-96`** du socle consolidé (Annexe B §6.1) — *l'exclusion tient tant que la dette
+   tient, et le chapitre consommateur reste enregistré au domaine de G-4.*
 2. **Les décomptes sont publiables** (G-2) ; le réel est reporté au [`README.md`](README.md).
 3. **Les renvois « ch. N » : état FINAL de la passe, et non ordre d'écriture.** ⚠ *La forme
    antérieure de ce point photographiait l'instant où cette pièce a été écrite et déclarait « ne
@@ -619,22 +632,54 @@ rédaction du PRD §6**. Instruction d'auteur du **27 juillet 2026**.
   vote de F-92** est constatée **au versement**, et le chapitre consommateur est enregistré au
   domaine de G-4.
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.28** — § 39.1 à
-§ 39.6, dans l'ordre exact —, et le § 39.0 est une introduction de chapitre. ⚠ **Le § 39.4 porte
+**Remontées ouvertes par la relecture du 28 juillet 2026.** ⚠ **Elles sont sans numéro, et le motif
+est une règle du dépôt, non un oubli** : *cinquante relectures courent en parallèle sur une série
+d'identifiants partagée, et c'est exactement la configuration qui a alloué dix numéros deux fois le
+27 juillet 2026.* **L'allocation est due à la passe d'arbitrage** (PRD §13).
+
+- **De désignation de siège — non bloquante.** Le **ch. 43 § 43.3** écrit que le constat de l'absence
+  de métrique d'autonomie, porté par l'entrée **F-37 du Vol. II**, est « repris au **ch. 39 § 39.2**,
+  **siège** ». ⚠ **Le constat est bien ici** — la présente relecture l'a vérifié et a nommé l'entrée à
+  côté de son homologue hérité **H-12** —, **mais aucun siège de ce nom n'est désigné au TOC ni versé à
+  [`check-sieges.py`](../PRD/check-sieges.py)**. *C'est la classe exacte du siège de la sémantique
+  d'effet, qui a vécu six sections rédigées avant d'être désigné.* **Demande remontée** : que le siège
+  soit **désigné au plan et versé à l'appareil**, ou que le renvoi du ch. 43 cesse de le nommer siège
+  — *un siège que deux pièces tiennent pour acquis et qu'aucun instrument ne connaît diverge sans que
+  rien ne le voie.*
+- **De cohérence interne au plan — non bloquante.** L'entrée du ch. 39 au TOC titre sa table
+  « **Table des matières détaillée du chapitre 44** », alors que la table déplie bien les § 39.1 à
+  § 39.6 du chapitre 39. ⚠ *Le plan se contredit lui-même, et **aucun des quinze contrôles ne voit
+  cette classe** : `check-toc.py` porte sur des motifs de ligne et ne connaît pas les tables
+  détaillées.* **Demande remontée** : réalignement du titre. *Le corps de la table est exact ; c'est
+  son en-tête qui désigne un autre chapitre.*
+
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.28**, *inchangée en
+v0.29 comme en v0.30* — § 39.1 à § 39.6, dans l'ordre exact —, et le § 39.0 est une introduction de
+chapitre. ⚠ **Le § 39.4 porte
 désormais l'intitulé exact du plan** — « versionner le **mandat protocolaire** » —, *le qualificatif
 complet de la chaîne étant obligatoire à chaque occurrence (ch. 45 § 45.10)* ; **une déviation
 subsiste au § 39.2**, qui développe « modèle, outil, autonomie » en « dérive de modèle, dérive d'outil,
 dérive d'autonomie » — *déviation de lisibilité, sans effet de sens, déclarée ici* (décision 8). La **table de couverture
 est respectée pour ses trois lignes**, y compris sa **sortie de périmètre explicite** : le Vol. I
-§2.9 **n'est pas repris ici**, ses fondements restant au **ch. 6** et son versant observabilité au
-**ch. 38**. Le §2.11.4-2.11.5 arrive **en arrivée depuis le ch. 6**, déclarée aux deux bouts. La
+*Monographie* §2.9 **n'est pas repris ici**, ses fondements restant au **ch. 6** et son versant
+observabilité au **ch. 38**. Le §2.11.4-2.11.5 arrive **en arrivée depuis le ch. 6**, déclarée aux
+deux bouts. La
 **distinction adaptation éphémère / évolution persistante n'est pas reconstruite** : elle est renvoyée
 au **ch. 22**, comme la ligne Fusion l'exige. Le **marqueur « corpus d'appui » est conservé** au
 § 39.6 comme **marqueur conditionnel de réouverture**, et *aucun énoncé ne s'y adosse*. ⚠ **Cardinaux re-mesurés au commit du 28 juillet 2026, sur le marqueur littéral et sur le corps seul** (décision 16 du TOC) ; *les cardinaux antérieurs comptaient les applications du garde-fou et n'étaient re-mesurables par aucune règle écrite.* Les **trois degrés d'absence** portent leur degré **à chaque énoncé négatif
 du corps — domaine déclaré, sans cardinal** (alinéa c) ; le marqueur littéral « degré 3 » y compte
 **sept occurrences**, **aucune n'est écrite comme un fait négatif vérifié**, et le § 39.6 refuse
 explicitement l'énoncé qu'on écrirait à sa place. Les **quatre métriques ou qualifications
-auto-déclarées** sont attribuées à leur éditeur nommé. Les **sept occurrences de « Lecture de
-l'auteur »** sont suivies de ce que le socle établit et n'établit pas. **Aucun siège neuf n'est posé** ; les trois sièges touchés — le passeport au **ch. 16**, les
-points de contrôle obligatoires au **ch. 43 § 43.3**, le modèle de maturité au **ch. 43 § 43.5** —
-portent leur renvoi, et *deux d'entre eux sont des renvois de plan, déclarés au point 3 ci-dessus.*
+auto-déclarées** sont attribuées — **Microsoft** au § 39.1, la **Linux Foundation** au § 39.3, la
+quatrième étant une **réserve** sur des métriques dont rien n'est repris —, et ⚠ **trois attributions
+que la relecture a trouvées anonymisées sont restituées** : le rapport du § 39.1 porte désormais son
+titre, le mandataire du § 39.3 son hébergeur, l'agent défensif du § 39.3 son éditeur (décision 15,
+alinéa a).
+Le marqueur « Lecture de l'auteur » compte **sept occurrences**, dont ⚠ **six sont des marquages** —
+tous suivis de ce que le socle établit et n'établit pas — *et la septième, au § 39.5, est une
+**mention** du marqueur porté par un volume source, non un marquage de cette pièce.* **Aucun siège
+neuf n'est posé.** Le corps porte **douze renvois de siège** vers **dix sièges distincts** — ch. 15,
+ch. 16, ch. 19, ch. 22, ch. 25, ch. 27, ch. 38 § 38.2, ch. 43 § 43.3, ch. 43 § 43.5 et ch. 48 —, dont
+**cinq sont versés à l'appareil** (ch. 16, ch. 19, ch. 43 § 43.3, ch. 43 § 43.5, ch. 48) ; *aucune
+matière de siège n'est reconstruite ici*, et **quatre de ces sièges n'étaient pas rédigés à l'heure
+de la rédaction** — ch. 27, ch. 43 § 43.3, ch. 43 § 43.5 et ch. 48 —, ce que le point 3 déclare.

@@ -1,24 +1,25 @@
 # Chapitre 26 — Le vide fédéral : de C-27 à C-36
 
 *Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier.
-Deuxième mouvement — le cadre réglementaire canadien (ch. 25-30). Deuxième chapitre du mouvement, et le
-plus court : il établit un fait négatif et en tire les conséquences.*
+Deuxième mouvement — le cadre réglementaire canadien (ch. 25-30). Deuxième chapitre du mouvement, et
+l'un des plus brefs : il établit un fait négatif et en tire les conséquences.*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 26.4. ⚠ **Ce chapitre n'est pas conditionné par G-4** : sa ligne Fusion ne cite que le Vol. II, et **il ne cite le Vol. III nulle part** |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : ⚠ **et ce chapitre est celui dont la péremption est la plus rapide du mouvement** — il repose sur l'**étape parlementaire** d'un projet de loi, observée en deuxième lecture au 16 juillet 2026. *Une étape n'est pas un état stable.* Gel de source consommé : **16-17 juillet 2026** (Vol. II ch. 10) — ⚠ **il ne tient pas lieu du gel de la somme** |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. II *Monographie* ch. 10**, dont l'entrée **F-24** est en **[B]**, revalidée le 16 juillet 2026 par consultation directe ; **F-09**, **F-25**, **F-26** et **F-27** y sont mobilisées **en renvoi seulement**, leurs développements étant aux ch. 25, 27 et 28. ⚠ **Toutes ces entrées sont du Vol. II** et se préfixent comme telles (décision 7 du TOC). **Aucun énoncé n'est central au sens de CA-IV-01** |
+| **Statut** | **Brouillon de rédaction, non publiable.** ⚠ **Pièce rédigée hors portes** le 27 juillet 2026, sur instruction d'auteur, alors que **G-3** était ouverte et le socle consolidé à zéro entrée — *la règle cardinale du PRD §5 a été enfreinte, et l'arbitrage qui a suivi la solde sans la rattraper.* ☑ **G-3 est franchie depuis le 28 juillet 2026** (PRD v0.14, jalon J-IV-2 atteint) et le **volet de faits du résidu de G-1 est levé** le même jour : *les deux écarts qui fondaient cette note sont tombés, et la pièce n'en devient pas recevable* — **CA-IV-11 et CA-IV-13 restent insatisfaites**, faute de relecteur distinct du rédacteur. Voir la note de statut, § 26.4. ⚠ **Ce chapitre n'est pas conditionné par G-4** : sa ligne Fusion ne cite que le Vol. II, et **ni sa thèse ni aucune de ses gloses ne consomme un fait du Vol. III** — *son seul emprunt à ce volume est la série de garde-fous R-01…R-14, qui est de l'appareil, non un fait* |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ☑ **Faits repris à la source primaire le 28 juillet 2026** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) : l'entrée qui porte ce chapitre est **reconduite inchangée** — première lecture le 15 juin 2026, **étape courante : deuxième lecture**, aucune progression consignée. ⚠ **Le chapitre demeure celui dont la péremption est la plus rapide du mouvement** : il repose sur l'**étape parlementaire** d'un projet de loi, et *une étape n'est pas un état stable* — deux obligations de pièce restent inscrites au registre du résidu (R-IV-86). Gel de source consommé : **16-17 juillet 2026** (Vol. II ch. 10) — ⚠ **il ne tient pas lieu du gel de la somme** |
+| **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** — [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées `S-001`…`S-159`**. La pièce a été rédigée **avant lui**, contre le **Vol. II *Monographie* ch. 10** ; ses identifiants y résolvent par la table de correspondance normative : **Vol. II `F-24` → `S-022`** (**[B]**, consultation directe du registre parlementaire, ⚠ *tension de niveau déclarée à la réserve 1 du §7 du socle*), qui porte les énoncés du chapitre ; **`F-09` → `S-009`**, **`F-25` → `S-023`**, **`F-26` → `S-024`** et **`F-27` → `S-025`**, mobilisées **en renvoi seulement**, leurs développements étant aux ch. 25, 27 et 28. ⚠ **Toutes ces entrées sont du Vol. II** et se préfixent comme telles (décision 7 du TOC). ⚠ **La correspondance est établie ; la confrontation de fond du corps au socle consolidé ne l'est pas** — *une table de correspondance ne constate pas CA-IV-01*, et le constat est un acte de gouvernance que la pièce ne pose pas (remontée non numérotée, § 26.4) |
 | **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus.* Vol. II — **PRD §8.2.4 (couverture E-23 = inférence d'analystes) : une occurrence du renvoi**, § 26.3, reprise **en renvoi** au ch. 25 ; **PRDPlan Vol. II §4.4 — écrire « attendu par E-23 », jamais « exigé » : une occurrence du renvoi et une de la formule**, § 26.3 ; **R-5 (attente réglementaire — ne rien anticiper) : deux occurrences du sigle**, § 26.1 et § 26.2 ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 26.2 — ⚠ *et le degré s'y marque en toutes lettres, « degré 3 » et « fait négatif vérifié » au même § 26.2* ; **R-01 à R-13 : zéro occurrence** — ⚠ **et R-09 est sans objet ici** : aucun statut normatif de spécification n'est mentionné dans ce chapitre, dont la matière est parlementaire |
-| **Volumétrie cible** | ≈ **2 500 mots** de corps (§ 26.0 à § 26.3), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant trois : **la plus basse du Livre avec le ch. 28**. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh). ⚠ **D-4 interdit l'amputation comme le gonflement** |
+| **Volumétrie cible** | ≈ **2 500 mots** de corps (§ 26.0 à § 26.3), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.30 —, la somme des quinze cibles dérivées valant exactement l'enveloppe ; **c'est la plus basse du Livre, à égalité avec le ch. 28**. ⚠ *La dérivation n'est pas au prorata des sections* : le ch. 30 en porte trois comme celui-ci pour une cible trois fois supérieure. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh) — ⚠ *la mesure du 28 juillet 2026 précède la passe de relecture et se re-mesure au commit*. ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 26)* — la mort de la LIAD laisse le Canada sans régulation fédérale spécifique de l'IA ; C-36 (loi sur la vie privée, non loi IA autonome) ne comble pas ce vide — la couverture effective passe par les régulateurs sectoriels.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 26 — ⚠ **thèse inchangée depuis la v0.25**, sous laquelle la pièce a été rédigée : aucune passe de réalignement ne l'a touchée)* — la mort de la LIAD laisse le Canada sans régulation fédérale spécifique de l'IA ; C-36 (loi sur la vie privée, non loi IA autonome) ne comble pas ce vide — la couverture effective passe par les régulateurs sectoriels.
 
 ---
 
 ⚠ **La thèse a été collationnée contre le texte rédigé de sa source avant la rédaction** (décision 14
-du TOC). **Domaine de balayage : une thèse examinée, zéro réalignée.** Elle reprend la thèse du
-Vol. II ch. 10 à sa forme du 16-17 juillet 2026 ; la parenthèse « loi sur la vie privée, non loi IA
+du TOC). **Domaine de balayage : une thèse examinée, zéro réalignée** — et le bloc ci-dessus a été
+**recollationné caractère à caractère contre le TOC v0.30**, sans écart (décision 17). Elle reprend
+la thèse du Vol. II ch. 10 à sa forme du 16-17 juillet 2026 ; la parenthèse « loi sur la vie privée, non loi IA
 autonome » **condense** la proposition incidente de la source — « c'est une loi de protection des
 renseignements personnels » — **sans rien lui ajouter**, et elle en reprend la qualification de portée
 en toutes lettres.
@@ -34,14 +35,17 @@ datée**.
 **Ce texte n'existe pas.** Il a été déposé, débattu, puis il est mort ; et ce qui a été déposé depuis à
 sa place **ne le remplace pas**.
 
-Ce chapitre établit ce **fait négatif** et en tire les conséquences d'architecture. Il soutient trois
+Ce chapitre établit ce **fait négatif** — que le socle porte **positivement**, en `S-022` (**[B]**), et
+non par absence de documentation — et en tire les conséquences d'architecture. Il soutient trois
 propositions. La première : **le vide fédéral n'est pas un accident de calendrier en voie de
 résorption**, mais un état documenté qui dure. La deuxième : **le projet de loi C-36, régulièrement
 présenté comme la réponse fédérale à l'intelligence artificielle, est en réalité une réforme de la
 protection des renseignements personnels** qui porte des volets d'IA — *la distinction n'est pas
 byzantine, elle décide de ce qu'une institution inscrit à son registre d'obligations*. La troisième :
 ce vide persistant, **la charge réglementaire effective repose entièrement sur les régulateurs
-sectoriels**, dont les ch. 25, 27 et 28 traitent respectivement.
+sectoriels** — le Bureau du surintendant des institutions financières, l'Autorité des marchés
+financiers et les Autorités canadiennes en valeurs mobilières —, dont les ch. 25, 27 et 28 traitent
+respectivement.
 
 ## § 26.1 — La prorogation du 6 janvier 2025 et la mort de C-27
 
@@ -50,9 +54,9 @@ fédéral canadien de l'IA n'a pas été voté, il est mort au feuilleton.**
 
 Le projet de loi C-27 réunissait **deux textes distincts** : une loi destinée à refondre le régime
 fédéral de protection des renseignements personnels, et la **Loi sur l'intelligence artificielle et les
-données** — premier et, à ce jour, unique projet fédéral de régulation spécifique des systèmes d'IA. À
-la **prorogation du 6 janvier 2025**, C-27 est mort au feuilleton, **emportant les deux volets
-ensemble** (Vol. II F-24, **[B]**, revalidé par consultation directe).
+données** (LIAD) — premier et, à ce jour, unique projet fédéral de régulation spécifique des systèmes
+d'IA. À la **prorogation du 6 janvier 2025**, C-27 est mort au feuilleton, **emportant les deux volets
+ensemble** (Vol. II `F-24` → `S-022`, **[B]**, revalidé par consultation directe).
 
 Lecture de l'auteur — **il faut mesurer ce qu'a été cet attelage.** Le volet IA voyageait dans le même
 véhicule législatif qu'une réforme de la vie privée ; les deux sont morts ensemble. *L'attelage paraît
@@ -85,8 +89,9 @@ décrit pas.*
 
 **La séquence qui suit paraît, de loin, corriger le tir.** En **mai 2025**, le gouvernement fédéral
 nomme le premier titulaire d'un portefeuille de l'IA et de l'innovation numérique. Le **15 juin 2026**,
-ce même ministre dépose le **projet de loi C-36** (Vol. II F-24, **[B]**). Entre la nomination et le
-dépôt, **treize mois** ; entre la prorogation qui a tué C-27 et ce dépôt, **dix-sept mois**.
+ce même ministre dépose le **projet de loi C-36** (Vol. II `F-24` → `S-022`, **[B]**). Entre la
+nomination et le dépôt, **treize mois** ; entre la prorogation qui a tué C-27 et ce dépôt,
+**dix-sept mois**.
 
 **Un ministre de l'IA dépose un projet de loi dix-sept mois après la mort du seul texte fédéral d'IA :
 la lecture par raccourci s'impose d'elle-même, et elle est fausse.**
@@ -107,47 +112,55 @@ des renseignements personnels.*
 
 **Deux précisions de statut s'imposent, et elles sont datées.** ⚠ **Premièrement, C-36 est un projet de
 loi et non une loi** : première lecture le 15 juin 2026 ; **à l'étape de la deuxième lecture au
-16 juillet 2026, date de consultation du socle**. *Aucune obligation n'en découle, et la somme ne se
-prononce pas sur son adoption* (R-5 du Vol. II — *ne rien anticiper*). ⚠ **Deuxièmement, la commission
-qu'il prévoit n'existe pas** : sa création est un **effet projeté** du texte, non un fait.
+16 juillet 2026, date de consultation du socle**, étape **reconduite inchangée au 28 juillet 2026** par
+l'instruction du résidu de G-1 — *douze jours sans progression au registre parlementaire officiel*.
+*Aucune obligation n'en découle, et la somme ne se prononce pas sur son adoption* (R-5 du Vol. II —
+*ne rien anticiper*). ⚠ **Deuxièmement, la commission qu'il prévoit n'existe pas** : sa création est un
+**effet projeté** du texte, non un fait.
 
 ⚠ **Que prescrit exactement le volet de transparence algorithmique ?** Les sources du socle établissent
 l'existence des trois volets et la nature générale du texte ; **elles n'en établissent pas le contenu
 article par article**, et le texte demeure susceptible d'amendement. *Absence de documentation dans le
 corpus, degré 3 de l'échelle R-14 du Vol. III — non un fait négatif vérifié.* **La question reste
-ouverte ; aucune inférence n'est proposée ici**, et **le volet résiduel de G-1 ne l'a pas instruite.**
+ouverte ; aucune inférence n'est proposée ici** — ⚠ **et l'instruction du 28 juillet 2026 ne l'a pas
+comblée** : *elle a reconduit l'étape parlementaire et la qualification de portée du texte, non son
+contenu.*
 
 ## § 26.3 — Conséquences : le vide persiste, la charge est sectorielle
 
-**La proposition centrale peut maintenant être énoncée dans les termes exacts du socle.** Le volet IA
-mort en janvier 2025 **ne sera pas ravivé tel quel**, et **le vide fédéral sur la régulation spécifique
-de l'IA persiste** (Vol. II F-24, **[B]**). Une formule de la presse spécialisée résume le constat, et
-la somme la cite en langue originale : « *Canada remains the only G7 nation without a binding AI
-regulatory framework* ». ⚠ **Cette formule est citée comme illustration d'un constat de presse, jamais
+**La proposition centrale peut maintenant être énoncée dans les termes exacts du socle.** **La LIAD ne
+sera pas ravivée telle quelle**, et **le vide fédéral sur la régulation spécifique de l'IA persiste**
+(Vol. II `F-24` → `S-022`, **[B]**). Une formule résume le constat, et la somme la cite en langue
+originale : « *Canada remains the only G7 nation without a binding AI regulatory framework* » —
+*AIMag*, juin 2026. ⚠ **Cette formule est citée comme illustration d'un constat de presse, jamais
 comme source d'un fait central** ; le fait central — la persistance du vide — est porté par l'entrée
-elle-même. ⚠ **Et une divergence d'attribution est signalée à sa source** : l'entrée attribue la formule
-à « des juristes », le rapport de revalidation à une publication nommée ; *le corps retient
-l'attribution la plus restrictive.*
+elle-même. ⚠ **Et une divergence d'attribution est signalée à sa source** : l'entrée l'attribue à
+« des juristes », le rapport de revalidation du Vol. II à ce seul périodique ; *le corps retient
+l'attribution la plus restrictive, et **il la nomme** — une affirmation ne s'anonymise pas*
+(décision 15 du TOC).
 
 ⚠ **Il faut cependant énoncer avec autant de soin ce que ce vide n'est pas, car la formule prête à
 contresens.** **Le Canada n'est pas un espace de non-droit pour les systèmes agentiques.** Le vide est
 **spécifique** : il porte sur l'absence d'un **régime fédéral contraignant qui régulerait les systèmes
-d'IA en tant que tels**. Les Autorités canadiennes en valeurs mobilières l'énoncent pour leur champ —
-leurs indications « ne créent ni ne modifient aucune exigence », **les lois existantes s'appliquent**
-(**ch. 28**).
+d'IA en tant que tels**. Les Autorités canadiennes en valeurs mobilières l'énoncent pour leur champ :
+leurs indications **ne créent ni ne modifient aucune exigence**, et **les lois sur les valeurs
+mobilières existantes s'appliquent** aux systèmes d'IA (**ch. 28**). ⚠ *L'énoncé de l'avis est un rendu
+français — l'instrument est rédigé en anglais et le socle n'en porte pas le libellé d'origine : il ne
+se cite pas entre guillemets de verbatim, et la borne « valeurs mobilières » ne s'en retire pas.*
 
 Lecture de l'auteur — le même raisonnement vaut **par construction** pour les autres branches du droit
 général — protection des renseignements personnels, droit des contrats, responsabilité civile —,
 **qu'aucun régime d'IA n'est venu écarter**. **Ce que le socle établit** : ce point pour les seules
 valeurs mobilières. **Ce qu'il n'établit pas** : sa généralisation.
 
-⚠ **Une conséquence de périmètre se pose tôt, et elle demeure une hypothèse de travail.** Le socle
-établit que C-36 modifie la loi fédérale sur les renseignements personnels — *une loi dont l'objet est
-le traitement des renseignements personnels*. Il **n'établit pas** le périmètre d'application des volets
-d'IA du projet, et le § 26.2 dit pourquoi. Mais **la nature du véhicule autorise au moins une lecture
-prudente** : *un régime greffé sur une loi de protection des renseignements personnels a vocation à
-saisir les traitements de renseignements personnels, non l'ensemble des décisions d'un système
-agentique.* Un agent qui orchestre un rapprochement comptable, une chaîne de messages de paiement
+Lecture de l'auteur — ⚠ **une conséquence de périmètre se pose tôt, et elle demeure une hypothèse de
+travail.** **Ce que le socle établit** : que C-36 modifie la loi fédérale sur les renseignements
+personnels — *une loi dont l'objet est le traitement des renseignements personnels*. **Ce qu'il
+n'établit pas** : le périmètre d'application des volets d'IA du projet, et le § 26.2 dit pourquoi. Mais
+**la nature du véhicule autorise au moins une lecture prudente** : *un régime greffé sur une loi de
+protection des renseignements personnels a vocation à saisir les traitements de renseignements
+personnels, non l'ensemble des décisions d'un système agentique.*
+Un agent qui orchestre un rapprochement comptable, une chaîne de messages de paiement
 interbancaires ou une supervision d'infrastructure ne manipule pas nécessairement de renseignements
 personnels ; **un agent de pré-adjudication hypothécaire, lui, en manipule par construction — et le
 ch. 35 § 35.1 en documente un cas canadien.** ⚠ *L'inférence porte sur la logique du véhicule
@@ -160,9 +173,9 @@ les régulateurs sectoriels, et ce déplacement est daté.**
 | Instrument | État | Date opposable | Chapitre |
 |---|---|---|---|
 | **E-23** — risque de modèle, fédéral prudentiel | version finale publiée le 11 septembre 2025 | **1ᵉʳ mai 2027** | ch. 25 |
-| **Ligne directrice IA de l'AMF** — Québec, sectoriel | ⚠ **finale**, jamais « en attente » ni « en projet » (réserve F-25 du Vol. II) — ⚠ *sa date de publication porte une divergence, voir ch. 27 § 27.1* | **1ᵉʳ mai 2027** | ch. 27 |
+| **Ligne directrice IA de l'AMF** — Québec, sectoriel | ⚠ **finale**, jamais « en attente » ni « en projet » (réserve Vol. II `F-25` → `S-023`) — ⚠ *sa publication n'est pas datée au jour près : **aucune** des deux dates autrefois arbitrées ne figure aux pages officielles, et la somme écrit **avril 2026** en déclarant ses trois états (ch. 27 § 27.1)* | **1ᵉʳ mai 2027** | ch. 27 |
 | **Art. 12.1 de la Loi 25** — Québec, droit général des renseignements personnels | **en vigueur** | **22 septembre 2023** — opposable depuis près de trois ans | ch. 27 |
-| **Avis 11-348 des ACVM** — valeurs mobilières | publié le 5 décembre 2024 ; **ne crée ni ne modifie aucune exigence** | **aucune** — les lois existantes s'appliquent | ch. 28 |
+| **Avis 11-348 des ACVM** — valeurs mobilières | publié le 5 décembre 2024 ; **ne crée ni ne modifie aucune exigence** *(rendu français)* | **aucune** — les lois **sur les valeurs mobilières** existantes s'appliquent | ch. 28 |
 
 : Tableau 26.1 — Les quatre instruments qui portent effectivement la charge, au gel du 27 juillet 2026. ⚠ **L'un d'eux relève du droit général québécois, non d'un régulateur sectoriel** — l'y ranger serait inexact.
 
@@ -192,16 +205,16 @@ déterministes — est l'objet du ch. 29, pivot du Livre.**
 *Section de sortie sans homologue direct dans la source — construction d'éditeur.*
 
 1. **Un fait négatif, daté et mesuré.** Pas de régime fédéral contraignant propre aux systèmes d'IA ;
-   **dix-huit mois et vingt et un jours** au gel de la somme. *Aucun chapitre aval ne le redémontre* —
-   le **ch. 29 § 29.1** l'inscrit à sa table comme une entrée qui **ne produit aucune contrainte**.
+   **dix-huit mois et vingt et un jours** au gel de la somme. *Aucun chapitre aval ne le redémontre*, et
+   la table de traduction du **ch. 29 § 29.1** n'en tire aucune contrainte — *un vide n'en produit pas.*
 2. **La qualification de C-36, et ce qu'elle interdit.** Loi de vie privée portant des volets d'IA,
    **non loi IA autonome**. *L'inscrire comme « cadre IA fédéral à venir » est une erreur de registre
    d'obligations*, et le **ch. 30** n'en tire aucun élément du maillage international.
 3. **Le vide est spécifique, non général.** Le droit général s'applique. ⚠ *Le socle ne l'établit que
    pour les valeurs mobilières* (**ch. 28**) ; la généralisation est une lecture.
 4. **La table des quatre instruments, et son ordre de priorité.** ⚠ **Un seul y est déjà opposable**, et
-   ce n'est pas celui qu'on attend. Le **ch. 27** le développe ; le **ch. 29** en fait la moitié de sa
-   table de traduction.
+   ce n'est pas celui qu'on attend. Le **ch. 27** le développe ; les quatre instruments forment **toute**
+   la table de traduction du **ch. 29**, qui n'en tire aucun autre texte.
 
 ⚠ **Ce que le chapitre ne lègue pas.** Il ne dit pas que C-36 sera adopté, ni qu'il ne le sera pas :
 *le socle documente une étape parlementaire, pas une issue.* Il ne dit pas ce que prescrit le volet de
@@ -219,26 +232,37 @@ charge.**
 gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A) : *un rédacteur ne corrige jamais le
 TOC, ce PRD ni le Conspectus — il **remonte**.*
 
-**Ce qui est enfreint.** La porte **G-3** et le **volet résiduel de G-1**. Instruction d'auteur du
-27 juillet 2026. ⚠ **La porte G-4 ne conditionne pas ce chapitre** : sa ligne Fusion ne cite que le
-Vol. II. ⚠ **La décision D-9 ne le bloque pas non plus** : elle nomme les ch. 25 et 27, et ce chapitre
-**ne prescrit aucune parade humaine** — *il n'en a pas l'occasion, n'ayant aucun texte contraignant à
-traduire.*
+**Ce qui était enfreint à la rédaction.** La porte **G-3** et le **volet résiduel de G-1**. Instruction
+d'auteur du 27 juillet 2026. ⚠ **La porte G-4 ne conditionnait pas ce chapitre** : sa ligne Fusion ne
+cite que le Vol. II. ⚠ **La décision D-9 ne le bloque pas non plus** : elle nomme les ch. 25 et 27 — et,
+depuis la v0.12 du PRD, le § 40.4 du ch. 40 —, et ce chapitre **ne prescrit aucune parade humaine** :
+*il n'en a pas l'occasion, n'ayant aucun texte contraignant à traduire.*
 
-1. **Aucun énoncé n'est central au sens de CA-IV-01.** Le socle consolidé compte zéro entrée ; les
-   identifiants cités — F-24, et en renvoi F-09, F-25, F-26, F-27 — sont **ceux du Vol. II**, préfixés
-   à chaque emploi (décision 7).
-2. ⚠ **Le volet résiduel de G-1 pèse ici sur un objet particulier : une étape parlementaire.** *C-36
-   était en deuxième lecture au 16 juillet 2026* — il a pu être adopté, amendé, ou mourir à son tour
-   depuis. **Aucune revalidation n'a été conduite**, et le **ch. 50** enregistrera cet événement de
-   péremption parmi ceux qu'il faut surveiller à chaque jalon.
+**Ce qui a bougé depuis, et ce que cela ne change pas.** ☑ **G-3 est franchie le 28 juillet 2026**
+(PRD v0.14) et ☑ **le volet de faits du résidu de G-1 est levé** le même jour. *Les deux écarts qui
+fondaient cette note sont donc tombés — et une porte franchie après coup ne rend pas recevable la pièce
+écrite avant elle* : elle en solde l'écart, elle ne le rattrape pas.
+
+1. **La traçabilité est désormais possible, et elle n'est pas constatée ici.** Les identifiants cités —
+   `F-24`, et en renvoi `F-09`, `F-25`, `F-26`, `F-27` — sont **ceux du Vol. II**, préfixés à chaque
+   emploi (décision 7), et résolvent au socle consolidé en `S-022`, `S-009`, `S-023`, `S-024` et
+   `S-025`. ⚠ **`S-022`, qui porte les énoncés du chapitre, est en [B]** — donc hors de l'exclusion que
+   **CA-IV-01** réserve aux entrées [C] —, mais **le constat de centralité est un acte de gouvernance
+   que la pièce ne pose pas**, et la confrontation de fond du corps au socle reste due.
+2. ⚠ **Le résidu de G-1 pesait ici sur un objet particulier : une étape parlementaire.** ☑ **Elle a été
+   reprise à sa source le 28 juillet 2026** et **reconduite inchangée** — deuxième lecture, aucune
+   progression consignée en douze jours. ⚠ **Cela ne clôt pas l'obligation** : l'étape et les deux
+   comptes à rebours du chapitre sont **inscrits au registre du résidu** (R-IV-86), à re-mesurer au
+   **gel de publication** ; le **ch. 50 § 50.2** est le siège des événements de péremption.
 3. **Les décomptes sont publiables** (G-2). L'écart à la cible est relevé au [`README.md`](README.md) du
-   dossier et alimente **D-4**, déjà tranchée.
-4. **Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan.** Ils résolvent
-   contre l'entrée du TOC : **ch. 27, 28, 29, 30, 35** (présent Livre, même passe) et **ch. 50**
-   (Livre V). Résolvent contre du **texte rédigé** : **ch. 7** et **ch. 25**.
+   dossier et alimente **D-4**, déjà tranchée — ⚠ *la mesure qui y figure précède la passe de relecture
+   du 28 juillet 2026 et se re-mesure au commit.*
+4. **Les renvois « ch. N » résolvent tous contre du texte rédigé.** Les cinquante chapitres du plan
+   existent en brouillon hors portes : **ch. 27, 28, 29, 30, 35** (présent Livre), **ch. 50** (Livre V),
+   **ch. 7** et **ch. 25**. ⚠ *Ce sont des brouillons* — la re-vérification contre le texte arrêté
+   demeure due.
 
-**Remontée ouverte par ce chapitre :**
+**Remontées ouvertes par ce chapitre :**
 
 - **R-IV-86 — non bloquante, de cardinal daté et de fait négatif à re-mesurer.** Deux énoncés de ce
   chapitre sont **des cardinaux annoncés en toutes lettres, calculés au gel** : la durée du vide fédéral
@@ -251,7 +275,20 @@ traduire.*
   y entre au même titre**. ⚠ **La classe est celle que le `CLAUDE.md` de la racine nomme** : *le piège
   n'est pas le nombre posé au titre d'une liste, c'est celui qui la cite à distance.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 26.1 à § 26.3,
+- **Remontée de la passe de relecture du 28 juillet 2026 — non bloquante, sans numéro alloué.**
+  ⚠ *Un relecteur n'alloue pas d'identifiant dans une série partagée pendant que d'autres passes y
+  puisent : la collision du 27 juillet 2026 est née de ce geste exact.* **Trois objets, tous hors du
+  mandat d'une pièce.** *(a)* **Le constat de CA-IV-01 pour cette pièce** : `S-022` est en [B] et
+  l'exclusion des entrées [C] ne joue donc pas, mais **constater qu'une affirmation est centrale et
+  tracée est un acte de gouvernance**, non un geste de relecture. *(b)* **La volumétrie du Livre III
+  au [`README.md`](README.md) du dossier est périmée par cette passe** — la mesure du 28 juillet 2026
+  précède les corrections —, et elle se re-mesure **au commit**, pour les quinze pièces ensemble.
+  *(c)* ⚠ **Le PRD porte deux rangées en contradiction avec sa propre rangée Version** : ses champs
+  *Date* et *Statut* datent de la v0.12 et écrivent encore « socle consolidé à 0 entrée (G-3, non
+  entamée) » quand la v0.14 déclare la porte franchie. *La pièce s'est adossée aux rangées de portes,
+  qui font foi ; elle signale l'écart plutôt que d'en choisir un terme.*
+
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.30** — § 26.1 à § 26.3,
 dans l'ordre exact —, le § 26.0 étant une **ouverture de chapitre**. La **table de couverture est
 respectée pour son unique ligne** : le Vol. II §10.1-10.3 est condensé aux § 26.1-26.3, **rien n'en est
 coupé**. La **décision 14 a été exécutée avant la rédaction**, domaine déclaré : une thèse examinée,
@@ -261,10 +298,11 @@ contenu de la loi morte ; *le sigle lui-même est écrit **deux fois**, aux § 2
 **absences portent leur degré** — *une occurrence du sigle R-14 au § 26.2, avec « degré 3 » et « fait
 négatif vérifié » écrits au même endroit* —, **dont une au degré 3 sur le contenu du volet
 algorithmique**. ⚠ **Ces cardinaux ont été re-mesurés au commit du 28 juillet 2026** (décision 16 du
-TOC) ; *l'attestation antérieure annonçait trois occurrences de R-5 et quatre de R-14.* La
-**citation de presse est attribuée et bornée** — illustration
-d'un constat, jamais source d'un fait central — et **la divergence d'attribution que sa source signale
-est reprise, non lissée**. Enfin, **la formulation imposée sur E-23 est tenue à son unique occurrence**,
+TOC) ; *l'attestation antérieure annonçait trois occurrences de R-5 et quatre de R-14.* La **citation de
+presse est attribuée nommément et bornée** — illustration d'un constat, jamais source d'un fait
+central — et **la divergence d'attribution que sa source signale est reprise, non lissée**. **Les cinq
+constructions d'auteur portent leur marqueur** et énoncent chacune ce que le socle établit et
+n'établit pas (CA-IV-07). Enfin, **la formulation imposée sur E-23 est tenue à son unique occurrence**,
 et **le chapitre ne développe rien du régime québécois ni du régime des valeurs mobilières** : il les
 renvoie aux ch. 27 et 28, qui en sont les sièges.
 
@@ -296,3 +334,17 @@ cette pièce n'est central au sens de CA-IV-01**. **CA-IV-11 et CA-IV-13 ne sont
 *aucune relecture par un relecteur distinct du rédacteur*. Cette pièce reste un **brouillon non
 publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune
 question n'attend plus de réponse qui ne soit déjà tranchée.*
+
+---
+
+### Addendum du 28 juillet 2026 — ce qui a bougé après cette clôture
+
+⚠ **La sous-section ci-dessus est un enregistrement daté et ne se réécrit pas** : elle était exacte le
+27 juillet 2026. Deux de ses énoncés ont cessé de l'être le lendemain, et c'est ici qu'ils se
+rectifient. ☑ **G-3 est franchie le 28 juillet 2026** (PRD v0.14, jalon J-IV-2 atteint) et **le socle
+consolidé compte 159 entrées**, non zéro ; **`S-022`, qui porte ce chapitre, est en [B]** et sort donc
+de l'exclusion que CA-IV-01 réserve aux entrées [C]. ⚠ **Ce qui ne bouge pas** : **G-4** demeure ouverte
+en son volet de fond — sans effet ici, ce chapitre ne consommant aucun fait du Vol. III —,
+**CA-IV-11 et CA-IV-13 restent insatisfaites** faute de relecteur distinct du rédacteur, et la pièce
+demeure un **brouillon non publiable**. *Une porte franchie après coup solde l'écart d'une pièce écrite
+avant elle ; elle ne la rend pas recevable.*

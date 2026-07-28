@@ -6,15 +6,15 @@ compose ce que les trois précédents ont instruit séparément, et il n'a pas d
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — portes **G-3** et **G-4** ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Ce chapitre est un chapitre de composition, et il est de ce fait plus exposé qu'un chapitre de socle, non moins** : chaque affirmation y est soit tracée vers un chapitre amont **nommé par son numéro et sa section** et vers l'entrée que ce chapitre mobilise, soit marquée « Lecture de l'auteur ». *Il n'y a pas de troisième cas, et un vide entre deux chapitres amont se décrit plutôt qu'il ne se comble.* **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit.** Gels de source : **juin 2026** (Vol. I), **16 juillet 2026** (Vol. II), **21 juillet 2026** (Vol. III). ⚠ **Un objet de synthèse ne se périme pas comme un fait, mais ses pièces le font** : les cinq faits datés du § 16.4 — trois scénarios de normalisation — sont ceux dont la péremption est la plus proche |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). **Aucun lot d'instruction propre** : ce chapitre compose. Résolution contre le **Vol. III *Monographie* ch. 8 et §7.4**, dont les entrées **F-01** à **F-11**, **F-29**, **F-33** à **F-51**, **F-55**, **F-64** à **F-69**, **F-79** à **F-89** et les entrées héritées **H-01**, **H-03**, **H-04**, **H-07**, **H-18**, **H-19**, **H-33** conservent leurs niveaux d'origine ; contre le **Vol. II *Monographie* §8.4**, dont **Vol. II F-07** à **Vol. II F-09** et **Vol. II F-25** conservent leurs niveaux ; et contre le **Vol. I *Monographie* §7.4.2**, en **[C]**. ⚠ **Six entrées mobilisées ici sont en [C]** — Vol. III F-31, F-36, F-55, H-18, H-19 et H-33, re-dénombrées au commit du 28 juillet 2026 : elles corroborent, elles ne portent pas. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les six sections du corps, § 16.0 à § 16.5.** Vol. II — **R-2 et R-3 : ce chapitre en est le SIÈGE** (§ 16.2, encadré « Affirmations écartées ») — **quatre marqueurs chacun**, § 16.2 (trois : l'affirmation écartée, sa forme imposée et le marqueur de siège) et § 16.5 ; **réserve F-01 : trois marqueurs**, § 16.1 (deux) et § 16.5 ; **PRD Vol. II §8.2.5 : zéro marqueur** — la qualification pré-normative est pourtant portée à chaque mention sur tout le domaine ; **§8.2 : zéro marqueur** — les qualifications auto-déclarées du § 16.3 sont attribuées à leur source ; **R-4 (« quatre cibles successives », jamais « quatre reports », jamais « lancé ») : zéro marqueur** — le RTR n'est pas cité ; **R-1, R-5 à R-8 : zéro marqueur**. Vol. III — **R-01 (le passeport est un objet de synthèse, jamais un mécanisme documenté) : deux marqueurs**, § 16.0 et § 16.5 ; ⚠ **c'est néanmoins le lieu d'application le plus dense de la somme** — la clause est reprise à l'ouverture et dans chacune des cinq sections, **sans marqueur** : *application déclarée, non dénombrée*. **R-02 à R-14 : zéro marqueur** ; ⚠ **R-14 est pourtant appliqué partout** — les absences portent leur degré, dont neuf au **degré 3** —, ainsi que **R-06** (« attendu par », § 16.1), **R-05** (§ 16.3) et **R-13** (§ 16.3, le sigle du maillage jamais nu) |
-| **Volumétrie cible** | ≈ **4 500 mots** de corps (§ 16.0 à § 16.5), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 4 828 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+7,3 %** (re-mesuré au commit du 28 juillet 2026, au terme de la passe de correction de l'audit). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
+| **Statut** | **Brouillon de rédaction, non publiable** — pièce rédigée **avant** les portes **G-3** et **G-4**, sur instruction d'auteur du 27 juillet 2026. ⚠ **G-3 est franchie depuis le 28 juillet 2026 ; G-4 demeure ouverte** — *une porte franchie après coup solde la rédaction qui l'a devancée, elle ne la rattrape pas.* ⚠ **Ce chapitre est un chapitre de composition, et il est de ce fait plus exposé qu'un chapitre de socle, non moins** : chaque affirmation y est soit tracée vers un chapitre amont **nommé par son numéro et sa section** et vers l'entrée que ce chapitre mobilise, soit marquée « Lecture de l'auteur ». *Il n'y a pas de troisième cas, et un vide entre deux chapitres amont se décrit plutôt qu'il ne se comble.* **R-IV-16 et R-IV-17, ouvertes au ch. 12 et soldées depuis, valent pour tout le Livre** |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ☑ **Le volet de faits du résidu de G-1 est levé le 28 juillet 2026** : les 123 entrées à sensibilité temporelle du socle consolidé ont été portées à leur source primaire — **91 inchangées, 10 changées, 22 non établies** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)). ☐ **Ses deux autres volets restent dus** ; aucun ne porte sur cette pièce. Gels de source : **juin 2026** (Vol. I), **16 juillet 2026** (Vol. II), **21 juillet 2026** (Vol. III). ⚠ **Un objet de synthèse ne se périme pas comme un fait, mais ses pièces le font** : les faits datés du § 16.4 — l'état des matériaux, puis les trois scénarios de normalisation — sont ceux dont la péremption est la plus proche ; **six dates distinctes** y sont portées, dont **une seule échéance à venir, le 1ᵉʳ mai 2027** |
+| **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** — [`socle-consolide.md`](../PRD/socle-consolide.md), **v1.2, 159 entrées `S-001`…`S-159`** —, **mais aucun énoncé de cette pièce n'y a été re-résolu** : le corps cite les identifiants de ses volumes d'origine, que les deux tables de correspondance de l'**Annexe B** (§4 et §5) résolvent (PRD §7.1). **Aucun lot d'instruction propre** : ce chapitre compose. Résolution contre le **Vol. III *Monographie* ch. 8 et §7.4**, dont les entrées **F-01** à **F-11**, **F-29**, **F-33** à **F-51**, **F-55**, **F-64** à **F-69**, **F-79** à **F-89** et les entrées héritées **H-01**, **H-03**, **H-04** et **H-18** conservent leurs niveaux d'origine — *le franchissement de G-3 n'a promu aucune entrée* ; contre le **Vol. II *Monographie* §8.4**, dont **Vol. II F-07** et **Vol. II F-08** conservent les leurs ; et contre le **Vol. I *Monographie* §7.4.2**, en **[C]**. ⚠ **Trois des entrées héritées se fondent, au socle consolidé, dans une entrée du Vol. II** — H-01 dans `S-002`, H-03 dans `S-008`, H-04 dans `S-009` : *ne jamais empiler « Vol. II F-08 » et « H-03 » comme deux appuis, ils n'en font qu'un.* ⚠ **Deux entrées mobilisées ici sont en [C]** — **H-18** (`S-144`), qui porte l'agenda du § 16.4, et **Vol. III F-55** (`S-101`), qui corrobore le cycle de vie du registre : elles corroborent, elles ne portent pas. **Aucun énoncé n'est central au sens de CA-IV-01** — non plus faute de socle, qui existe désormais, mais faute de vote : **aucun vote adversarial n'a été conduit** et **G-4 est ouverte** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les six sections du corps, § 16.0 à § 16.5.** Vol. II — **R-2 et R-3 : ce chapitre en est le SIÈGE** (§ 16.2, encadré « Affirmations écartées ») — **quatre marqueurs chacun**, § 16.2 (trois : le marqueur de siège, l'intitulé de l'encadré et la clause de non-recensement) et § 16.5 ; **réserve F-01 (le protocole agent-outil : « cadre d'autorisation », jamais « sécurisé ») : zéro marqueur** — ce protocole n'est pas cité, ⚠ *et les trois « F-01 » du corps appartiennent à la série du Vol. III, non à celle-ci* ; **PRD Vol. II §8.2.5 : zéro marqueur** — la qualification pré-normative est pourtant portée à chaque mention sur tout le domaine ; **§8.2 : zéro marqueur** — les qualifications auto-déclarées du § 16.3 sont attribuées à leur source ; **R-4 (« quatre cibles successives », jamais « quatre reports », jamais « lancé ») : zéro marqueur** — le RTR n'est pas cité ; **R-1, R-5 à R-8 : zéro marqueur**. Vol. III — **R-01 (le passeport est un objet de synthèse, jamais un mécanisme documenté) : trois marqueurs** — § 16.0 (un) et § 16.5 (deux, dont un à la synthèse de sortie) ; ⚠ **c'est néanmoins le lieu d'application le plus dense de la somme** — la clause est reprise à l'ouverture et dans chacune des cinq sections, **sans marqueur** : *application déclarée, non dénombrée*. **R-02 à R-14 : zéro marqueur** ; ⚠ **R-14 est pourtant appliqué partout** — les absences portent leur degré, dont neuf au **degré 3** —, ainsi que **R-06** (« attendu par », § 16.1), **R-05** (§ 16.3, le KYA rapporté à la formule du Vol. I) et **R-03** (§ 16.5, le maillage d'agents jamais employé comme catégorie établie) |
+| **Volumétrie cible** | ≈ **4 500 mots** de corps (§ 16.0 à § 16.5), **cible dérivée** de l'enveloppe du Livre (50 000 mots, inchangée au TOC v0.30) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 4 932 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+9,6 %** (re-mesuré au commit du 28 juillet 2026, au terme de la passe de relecture ; **4 828 mots et +7,3 %** à la mesure du 27 juillet 2026). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 16)* — le « passeport d'agent » n'existe dans aucune spécification de 2026 — objet de synthèse assemblant carte signée, inscription au registre, chaîne de mandat et attestations ; sa normalisation est projetée **à une échéance que le socle ne date pas**, en statut PROJETÉ. Pour l'entreprise, rien n'entre au maillage sans lui.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 16)* — le « passeport d'agent » n'existe dans aucune spécification de 2026 — objet de synthèse assemblant carte signée, inscription au registre, chaîne de mandat et attestations ; sa normalisation est projetée **à une échéance que le socle ne date pas**, en statut PROJETÉ. Pour l'entreprise, rien n'entre au maillage sans lui.
 >
-> ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-25** ouverte par cette pièce. La forme antérieure datait la normalisation de **2027-2028**, échéance **empruntée à une entrée [C]** que le relevé propre du Vol. III ne confirme pas — *une thèse ne se date pas depuis une entrée qui ne porte jamais un fait central* (CA-IV-01). **Le corps du chapitre n'a pas changé** : le § 16.4 établissait déjà d'où vient l'agenda et ce qu'il vaut. Le tri prospectif est celui du **siège de la discipline, ch. 49 § 49.0** ; le **siège du statut PROJETÉ de la normalisation du passeport** reste au § 16.4.
+> ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-25** ouverte par cette pièce. La forme antérieure datait la normalisation de **2027-2028**, échéance **empruntée à une entrée [C]** que le relevé propre du Vol. III ne confirme pas — *une thèse ne se date pas depuis une entrée qui ne porte jamais un fait central* (CA-IV-01). **Le corps du chapitre n'avait pas à suivre** : le § 16.4 établissait déjà d'où vient l'agenda et ce qu'il vaut. Le tri prospectif est celui du **siège de la discipline, ch. 49 § 49.0** ; le **siège du statut PROJETÉ de la normalisation du passeport** reste au § 16.4.
 
 ---
 
@@ -49,8 +49,7 @@ assentiment obtenu par confusion.*
 L'**interrogeabilité de la chaîne au-delà du premier vérificateur** est au **ch. 17 § 17.6**, qui la
 borne plutôt qu'il ne la comble. L'**admission d'un agent tiers** est au **ch. 18**. Et la **seconde
 moitié de la quatrième pièce** — le registre comme pièce de conformité relu depuis un cadre
-prudentiel — est au **ch. 25 § 25.2**, non rédigé : le § 16.1 en déclare l'attente plutôt que d'en
-préjuger.
+prudentiel — est au **ch. 25 § 25.5** : le § 16.1 en déclare l'attente plutôt que d'en préjuger.
 
 ## § 16.1 — Assemblage : les quatre pièces du passeport
 
@@ -94,11 +93,12 @@ interrogeable à un instant quelconque.*
 
 **La quatrième pièce — les attestations de conformité — n'a pas de chapitre, et la somme le déclare
 plutôt que de le masquer.** Elle est portée par **deux sections seulement** — ch. 15 § 15.3.3 et
-ch. 25 § 25.2. Du côté du registre, le relevé ne fait apparaître **qu'un nom de champ facultatif**,
+ch. 25 § 25.5. Du côté du registre, le relevé ne fait apparaître **qu'un nom de champ facultatif**,
 *source primaire ouverte hors socle et non versée* : **le socle ne documente ni son format, ni ce
 qu'une attestation y porterait, ni qui l'émettrait — degré 3**. Du côté réglementaire, ce à quoi une
 attestation se rapporterait est **daté et borné** : la ligne directrice **attend** — modalité au
-*should*, douze énoncés numérotés, aucune occurrence de *must* dans le corps balayé (F-64,
+*should*, douze énoncés numérotés, aucune occurrence de *must* au corps de la version anglaise,
+*seul balayé : ni l'appendice ni le volet français ne l'ont été* (F-64,
 **[B, degré 1]**) —, et le registre de l'attente est autorisé par le **document d'information** du
 même jour (F-66, **[B, degré 1]**). ⚠ **On écrit « attendu par », jamais « exigé par ».** ⚠ Et le texte
 qui attend l'inventaire **ne nomme ni l'agentique, ni les agents, ni l'orchestration** (H-04) : sa
@@ -109,7 +109,7 @@ couverture de son porteur est une **inférence d'analystes, jamais une dispositi
 | **Carte signée** | ch. 15 § 15.1 | intégrité d'un contenu canonicalisé au regard d'une clé (F-01, F-02, **[A]**) ; apposition **MAY**, vérification **SHOULD** (F-04, **[A]**) | l'appartenance de la clé à une organisation — ancrage renvoyé hors protocole (F-09, **[B]**) |
 | **Inscription au registre** | ch. 15 § 15.3 | champs obligatoires d'accès aux outils et de bornes de permission (F-40, **[B]**) ; brouillon de laboratoire, statut déclaré (F-38, **[A]**) | l'opposabilité de ces bornes au point d'application ; aucune interface de registre prescrite par le protocole (F-43, **[B, degré 2]**) |
 | **Chaîne de mandat** | ch. 17 | format versionné, attributs temporels (F-46, **[B]**) ; expression de la délégation, sécurité du jeton hors périmètre (F-47, **[A]**) | l'interrogeabilité de la chaîne à l'instant t (ch. 17 § 17.6) |
-| **Attestations de conformité** | ch. 15 § 15.3.3 et ch. 25 § 25.2 | un nom de champ **facultatif**, hors socle ; ce que les cadres canadiens **attendent** (F-65, F-68, **[B]** ; H-04) | le format, le contenu et l'émetteur d'une attestation — **degré 3** |
+| **Attestations de conformité** | ch. 15 § 15.3.3 et ch. 25 § 25.5 | un nom de champ **facultatif**, hors socle ; ce que les cadres canadiens **attendent** (F-65, F-68, **[B]** ; H-04) | le format, le contenu et l'émetteur d'une attestation — **degré 3** |
 
 : Tableau 16.1 — Les quatre pièces du passeport d'agent, objet de synthèse construit par la somme, au 21 juillet 2026.
 
@@ -121,18 +121,20 @@ constat **borné à ces quatre matières nommées**. **Et la quatrième est, des
 documentée** — même borne : chacune des trois autres est adossée à au moins une spécification
 instruite, tandis que l'attestation n'a qu'un nom de champ facultatif, relevé hors socle.
 
-⚠ **Un écart de disponibilité est déclaré, non contourné.** Des deux sièges de la quatrième pièce,
-**un seul est rédigé** : le **ch. 25 est au plan**, non au texte. Le présent chapitre **ne préjuge donc
-de rien** de ce que le ch. 25 § 25.2 établira du registre comme pièce de conformité ; il compose sur
-ce que le ch. 15 § 15.3.3 porte, et **déclare l'autre moitié en attente**.
+⚠ **Un écart de régime est déclaré, non contourné.** Des deux sièges de la quatrième pièce, **un seul
+appartient à ce Livre**. L'autre, le **ch. 25 § 25.5**, est rédigé depuis le 27 juillet 2026, mais en
+**brouillon hors portes**, et **G-4 le conditionne nommément** : *un renvoi vers un tel brouillon
+résout contre un texte, non contre une preuve.* Le présent chapitre **ne préjuge donc de rien** de ce
+que ce siège établira du registre comme pièce de conformité ; il compose sur ce que le ch. 15
+§ 15.3.3 porte, et **déclare l'autre moitié en attente**.
 
 ## § 16.2 — Ce qui n'existe toujours pas — et à quel degré
 
 > ⚠ **SIÈGE DE L'ENCADRÉ DES AFFIRMATIONS ÉCARTÉES POUR TOUTE LA SOMME.** Les garde-fous **R-2 et
-> R-3 du Vol. II** sont **posés ici une seule fois**. Les **ch. 12 § 12.0, ch. 15 § 15.3.1 et ch. 25**
-> les **appliquent** et y renvoient ; ils **ne reconstruisent pas cet encadré**. C'est l'économie de
-> la fusion côté « affirmations plausibles et non vérifiées », et elle n'a lieu que si ces chapitres
-> s'y tiennent.
+> R-3 du Vol. II** sont **posés ici une seule fois**. Les **ch. 12 § 12.0 et ch. 15 § 15.3.1** les
+> **appliquent** et y renvoient ; ils **ne reconstruisent pas cet encadré**. C'est l'économie de la
+> fusion côté « affirmations plausibles et non vérifiées », et elle n'a lieu que si ces chapitres s'y
+> tiennent.
 
 Une absence ne vaut que par **la manière dont elle a été établie**. Cette section est le lieu où la
 somme rend compte de ce qui manque **côté émission**, et elle le fait à trois degrés.
@@ -183,12 +185,13 @@ secondaire**.
 c'est sur elles que repose l'absence de ratification — non sur un balayage des actes de normalisation.
 Le brouillon de registre se donne à lui-même le statut « draft » dans un espace que son hébergeur dit
 n'être **pas encore** un projet officiel (F-38, **[A]**) ; l'extension SCIM est un *Internet-Draft*
-**expiré**, sans flux ni groupe adoptant (F-41, **[B, degré 2]** ; H-03, **[A]**), la session de
-l'IETF 125 s'étant close sur une demande de cas d'usage (F-42) ; et le service d'annuaire demeure une
-**soumission individuelle** (F-43). ⚠ **Pour le protocole agent-agent, ce que le socle porte est autre
-chose** : une première spécification stable hébergée par une fondation (H-01, **[A]**) et la
-déclaration explicite qu'**aucune interface de registre n'y est prescrite** (F-43) — *absence
-d'interface de registre, non absence de ratification, et les deux ne s'échangent pas.*
+**expiré**, sans flux ni groupe adoptant (F-41, **[B, degré 2]** ; H-03, **[A, statut BROUILLON]**),
+la session de l'IETF 125 s'étant close sur une demande de cas d'usage (F-42) ; et le service
+d'annuaire demeure une **soumission individuelle** (F-43). ⚠ **Pour le protocole agent-agent, ce que
+le socle porte est autre chose** : une première spécification stable hébergée par une fondation
+(H-01, **[A]**) et la déclaration explicite qu'**aucune interface de registre n'y est prescrite**
+(F-43) — *absence d'interface de registre, non absence de ratification, et les deux ne s'échangent
+pas.*
 
 **Absence de documentation.** Le **régime de gouvernance et de révocation** des registres du protocole
 agent-agent n'est pas relevé : la spécification ne prescrivant aucune interface, **il n'y a rien à en
@@ -220,8 +223,8 @@ l'ancrage au déploiement** (F-46 ; ch. 17 § 17.1) ; **l'attestation n'a pas d'
 disponibilité générale de la plateforme datée d'avril 2026 (F-33, **[B]**), type de ressource
 d'annuaire spécifié dans la version stable de l'interface de l'éditeur (F-37, **[B]**), et
 **disponibilité générale du produit qui ne vaut pas disponibilité générale de ses capacités**
-(F-34, **[A]**). ⚠ *Cas documenté, jamais recommandé*, et il porte sa propre réserve de couverture,
-**énoncée par l'éditeur** : une politique d'accès conditionnel ciblant des identités d'agent ne
+(F-34, **[A]**). ⚠ *Cas documenté, jamais recommandé* — et il porte **sa propre réserve de couverture,
+énoncée par l'éditeur** : une politique d'accès conditionnel ciblant des identités d'agent ne
 s'applique pas au compte d'utilisateur de l'agent (F-35, **[A, degré 2]**, fait négatif **ÉTABLI**).
 *Un émetteur qui tient l'agent sur deux plans ne délivre pas un passeport ; il délivre deux pièces qui
 ne se recouvrent pas.*
@@ -328,7 +331,8 @@ cadres prudentiels entrent en vigueur au 1ᵉʳ mai 2027**, échéance réglemen
 **PROGRAMMÉE** (F-65, F-66, F-68 ; H-04). S'y ajoute une **désignation institutionnelle dont l'issue
 est ouverte** : au 27 juin 2026, un résumé d'étude d'impact réglementaire écrivait encore que
 l'organisme de normalisation technique « **sera désigné** » conformément aux facteurs et processus
-établis par la loi (F-69, **[A, degré 3]** ; siège au **ch. 32 § 32.1**). ⚠ *C'est le libellé d'un
+établis par la loi (F-69, **[A, degré 3]** ; l'état de la désignation est porté par le **ch. 30
+§ 30.3**, auquel le ch. 32 § 32.4 renvoie sans le doubler). ⚠ *C'est le libellé d'un
 texte à une date*, et **le relevé ne porte aucun jalon daté**. ⚠ **Ce que ces ancrages datent, ce sont
 des entrées en vigueur et une procédure, non un format d'identité d'agent** : conclure de l'un à
 l'autre serait exactement l'inférence proscrite du côté réglementaire — *on écrit « attendu par »,
@@ -340,7 +344,7 @@ jamais « exigé par ».*
 | **2 — fondation ou alliance** | **PROJETÉ** (mandat) / **SPÉCULATIF** (assemblage) | donation annoncée le 28 avril 2026 (F-44, **[A]**) ; transfert **non matérialisé** à trois mois, normalisation annoncée sans échéance (F-45, **[B, degré 1]**) | la publication, par le cessionnaire, d'une spécification d'identité ou de paiement agentiques ; la matérialisation documentée du transfert |
 | **3 — préemption par le produit, cadrage par le régulateur** | ancrages **PROGRAMMÉS** (1ᵉʳ mai 2027) / résultat **SPÉCULATIF** | disponibilité générale datée et bornée (F-33, F-34) ; attentes de deux cadres au 1ᵉʳ mai 2027 (F-65, F-68) ; désignation **écrite au futur** au 27 juin 2026 (F-69) | un cadre prudentiel qui nommerait un format d'identité d'agent ; ou l'inverse — une normalisation ouverte qui précéderait l'échéance |
 
-: Tableau 16.2 — Trois scénarios de normalisation du passeport d'agent, avec leur tri prospectif, au 21 juillet 2026.
+: Tableau 16.2 — Trois scénarios de normalisation du passeport d'agent, objet de synthèse construit par la somme, avec leur tri prospectif, au 21 juillet 2026.
 
 **Aucun des trois n'est PROGRAMMÉ, et c'est le résultat de la section.** ⚠ Ce qui est PROGRAMMÉ dans
 ce dossier **ne concerne pas le passeport** : les expirations d'*Internet-Drafts*, qui découlent
@@ -366,7 +370,7 @@ une note intermédiaire.
 
 | Question | Réponse **sur le papier** | Pièce répondante | Ce que le socle établit aujourd'hui |
 |---|---|---|---|
-| **Q-A** *qui es-tu* | **répond partiellement** | carte signée + inscription | *vérifiable* oui (F-01, F-02) ; **résistance à l'usurpation non établie** (F-09) ; *révocable* non (F-05, F-06, F-07) — l'apport de l'inscription n'est documenté qu'en **[C]**, hors verdict ; *stable* : **degré 3** |
+| **Q-A** *qui es-tu* | **répond partiellement** | carte signée + inscription | *vérifiable* oui (F-01, F-02) ; **résistance à l'usurpation non établie** (F-09) ; *révocable* non (F-05, F-06, F-07) — l'apport de l'inscription, ses quatre états de cycle de vie, n'est documenté qu'en **[C]** (F-55, **[C, degré 1]** ; ch. 15 § 15.3.3) et reste **hors verdict** ; *stable* : **degré 3** |
 | **Q-B** *qui t'a créé* | **répond partiellement** | inscription + attestation | **aucune autorité d'émission documentée — degré 3** ; ancrage renvoyé hors protocole (F-08, F-09, F-11, F-43) |
 | **Q-C** *pour qui agis-tu* | **répond** | chaîne de mandat | format et attributs temporels (F-46, **[B]**) ; délégation exprimée (F-47, **[A]**) ; ⚠ **interrogeabilité à l'instant t non établie** (ch. 17 § 17.6) |
 | **Q-D** *que peux-tu faire* | **répond partiellement** | inscription au registre | bornes déclarées en champs obligatoires (F-40, **[B]**) ; ⚠ **opposabilité au point d'application non établie** — second terme de la question (ch. 14 § 14.2 ; F-35, **[A, degré 2]**) |
@@ -377,8 +381,8 @@ une note intermédiaire.
 **Ce que ce tableau autorise à conclure est étroit, et il faut l'écrire.** *Le passeport reçoit une
 réponse aux cinq questions parce qu'il a été construit pour en recevoir une : c'est la propriété d'un
 objet de synthèse, pas un résultat.* **Une** réponse est pleine sur le papier et **bornée sur le
-socle** ; **quatre** sont partielles **jusque sur le papier** — et **la seule des cinq dont la pièce
-répondante n'a pas de chapitre est Q-E, celle de l'imputabilité**.
+socle** ; **quatre** sont partielles **jusque sur le papier** — et **la seule des cinq dont aucune
+pièce répondante n'a de chapitre est Q-E, celle de l'imputabilité**.
 
 ⚠ **La thèse du ch. 14 n'est ni confirmée ni réfutée par cette section** : elle porte sur les
 mécanismes de 2026, et **le passeport n'en est pas un**. *Confondre les deux ferait de la construction
@@ -395,11 +399,13 @@ qu'une organisation **doive** conditionner l'admission à un artefact que person
 
 *Section de sortie sans homologue direct dans la source — construction d'éditeur.*
 
-1. **L'objet, et sa nature déclarée.** Le passeport est une **construction d'auteur**, et chaque
-   chapitre qui le cite doit le dire. Les **ch. 20, 21 et 37** l'invoquent ; **aucun ne le traite
-   comme un mécanisme existant**.
+1. **L'objet, et sa nature déclarée.** Le passeport est une **construction d'auteur**, et **chaque
+   pièce qui le cite doit le dire** — c'est la charge que R-01 du Vol. III fait peser sur toute
+   reprise. ⚠ **Le domaine se déclare ici sans cardinal** : le syntagme est repris dans les cinq
+   Livres, et *un relevé de leur traitement conduit pendant que ces pièces s'écrivent serait faux à
+   sa publication.*
 2. **Le siège des affirmations écartées.** R-2 et R-3 du Vol. II sont posés **ici une seule fois**,
-   avec leurs formes imposées. Les ch. 12, 15 et 25 y renvoient.
+   avec leurs formes imposées. Les ch. 12 et 15 y renvoient.
 3. **Le siège du statut PROJETÉ de la normalisation.** L'agenda 2027-2028 est repris **une seule
    fois**, en **[C]**, et **n'est re-daté nulle part**.
 4. **La conclusion la plus utile du chapitre, et c'est une conclusion négative.** *L'assemblage n'est
@@ -413,21 +419,35 @@ qu'une organisation **doive** conditionner l'admission à un artefact que person
 
 ⚠ **Cette section n'est pas au TOC et n'a pas vocation à survivre.**
 
-**Ce qui est enfreint.** Portes **G-3** et **G-4** ; volet résiduel de **G-1** non instruit ; ordre de
-rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026.
+**Ce qui est enfreint.** La pièce a été rédigée **avant G-3 et avant G-4**, et **avant l'instruction
+du volet résiduel de G-1** ; elle enfreint en outre l'**ordre de rédaction du PRD §6**. Instruction
+d'auteur du 27 juillet 2026. ⚠ **Deux de ces trois écarts sont soldés depuis, et aucun n'est
+rattrapé** : **G-3 est franchie** et le **volet de faits du résidu de G-1 est levé** le 28 juillet
+2026 — *une porte franchie après la rédaction qu'elle conditionnait ne la valide pas rétroactivement.*
+☐ **G-4 demeure ouverte**, volet de fond entier.
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01** — et **ce chapitre est celui où la conséquence
    est la plus paradoxale** : il ne verse aucun fait, il compose ; mais **un chapitre de composition
    est plus exposé qu'un chapitre de socle**, puisque chacune de ses phrases dépend de la fidélité de
-   la trace vers un chapitre amont. **Six entrées mobilisées sont en [C]** et corroborent sans porter.
-2. **Les décomptes sont publiables** (G-2). Écart de **+7,3 %** ; la volumétrie du Livre alimente **D-4** par **R-IV-17**.
-3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan**, et ce chapitre en porte
-   **trois** : **ch. 25 § 25.2** (seconde moitié de la quatrième pièce), **ch. 32 § 32.1** (siège de la
-   désignation institutionnelle) et **ch. 37 § 37.1** (siège de la définition du maillage). ⚠ **Le
-   premier est structurant** : le § 16.1 déclare **explicitement** qu'il ne préjuge de rien de ce que
-   le ch. 25 établira, et cette déclaration devra être **relue quand le ch. 25 existera**.
-4. **Un siège neuf est posé par cette pièce et il n'est contrôlé par aucun outil au moment où elle est
-   écrite** : l'encadré des affirmations écartées (§ 16.2). Voir **R-IV-24**, ouverte au ch. 15.
+   la trace vers un chapitre amont. ⚠ **Le motif a changé le 28 juillet 2026 sans que la conclusion
+   bouge** : ce n'est plus l'absence de socle — il existe — mais l'**absence de vote adversarial**,
+   que le PRD §7.2 réserve aux affirmations portant seules la thèse d'un chapitre et qui **reste dû**.
+   **Deux entrées mobilisées sont en [C]** — H-18 et Vol. III F-55 — et corroborent sans porter.
+2. **Les décomptes sont publiables** (G-2). Écart de **+9,6 %** — l'écart s'est creusé de 2,3 points par les corrections de cette passe, ⚠ *aucune n'ayant retiré une borne* ; la volumétrie du Livre alimente **D-4** par **R-IV-17**.
+3. **Le corps vise quatre chapitres des Livres III et IV, et aucun de ces renvois n'est plus un renvoi
+   de plan** : **ch. 25 § 25.5** (seconde moitié de la quatrième pièce), **ch. 30 § 30.3** (état de la
+   désignation institutionnelle), **ch. 32 § 32.4** (le standard technique, qui renvoie au précédent
+   sans le doubler) et **ch. 37 § 37.1** (siège de la définition du maillage) — les quatre chapitres
+   sont rédigés depuis le 27 juillet 2026, **en brouillon hors portes**. ⚠ **La revérification annoncée
+   a donc eu lieu, et elle a corrigé deux cibles** : le renvoi de la quatrième pièce visait le § 25.2,
+   qui traite de la définition de « modèle » ; celui de la désignation visait le § 32.1, quand
+   l'état de la désignation vit au ch. 30 § 30.3. *Un renvoi de plan qui survit à la rédaction de sa
+   cible sans revérification est exactement le défaut que la décision 8 du TOC proscrit.*
+4. **Deux sièges sont posés par cette pièce, et l'appareil les contrôle depuis le 27 juillet 2026** :
+   l'encadré des affirmations écartées (§ 16.2, R-IV-24, ouverte au ch. 15) et le statut PROJETÉ de la
+   normalisation du passeport (§ 16.4), tous deux inscrits à [`PRD/check-sieges.py`](../PRD/check-sieges.py).
+   ⚠ **Leurs marqueurs et leurs signatures sont la forme versée à l'appareil** : les reformuler
+   casserait le contrôle sans que le texte cesse d'être lisible.
 
 **Remontées ouvertes par ce chapitre :**
 
@@ -444,27 +464,30 @@ rédaction du PRD §6. Instruction d'auteur du 27 juillet 2026.
   précisément l'objet du **volet de fond de G-4**.
 - **R-IV-26 — non bloquante, de couverture, et elle porte sur une pièce qui n'existe pas.** La
   **quatrième pièce du passeport** n'a **pas de chapitre** et repose sur **deux sections**, dont une
-  seule est rédigée (ch. 15 § 15.3.3) ; l'autre est au **ch. 25 § 25.2**, dans un Livre non rédigé.
-  ⚠ **Le déséquilibre est structurel, non conjoncturel** : les trois autres pièces ont chacune au
-  moins un chapitre entier. **Demande remontée** : que le plan **déclare cette asymétrie** au registre
+  seule était rédigée à l'ouverture de la remontée (ch. 15 § 15.3.3) ; l'autre est au **ch. 25
+  § 25.5**, alors dans un Livre non rédigé. ⚠ **Le déséquilibre est structurel, non conjoncturel** :
+  les trois autres pièces ont chacune au moins un chapitre entier.
+  **Demande remontée** : que le plan **déclare cette asymétrie** au registre
   des risques plutôt que de la laisser se lire entre les lignes de deux tables de couverture — *une
   pièce d'un objet à quatre pièces qui n'a ni chapitre ni socle est un angle mort du même ordre que
   ceux que les risques 13 à 16 nomment.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.24** — § 16.1 à
-§ 16.5, dans l'ordre exact —, et le § 16.0 est une introduction de chapitre. La **table de couverture
-est respectée pour ses quatre lignes**, y compris la ligne « **prélevé au ch. 15** » : le §7.4 de la
-source est instruit **ici** et le ch. 15 porte son « hors §7.4 » — *la double revendication que la
-v0.17 du TOC avait relevée est donc levée dans le texte comme elle l'est au plan*. Le **siège de
-l'encadré R-2/R-3 est posé et marqué** (§ 16.2) ; le **siège du statut PROJETÉ** l'est aussi
-(§ 16.4). Le **siège du KYA reste au ch. 18 § 18.1** : le § 16.3 nomme le sigle sans l'instruire. Le
-**socle IAM reste au ch. 3**, l'**encadré de désambiguïsation au ch. 7 § 7.5**, l'**inventaire de la
-révocation au ch. 20 § 20.4**, les **précédents de fédération au ch. 18 § 18.3**. Les absences
-**portent leur degré**, dont neuf au **degré 3**, sur tout le domaine balayé — *application de R-14
-déclarée, non dénombrée, faute de marqueur littéral.* Les **deux marqueurs de R-01** — § 16.0 et
-§ 16.5 — ouvrent et referment un rappel repris **dans chacune des cinq sections et dans le titre de
-chaque tableau** : le passeport est un objet de synthèse. Le § 16.1 écrit **« attendu par »** (R-06).
-Et le chapitre porte **son marquage d'inférence à l'ouverture** (§ 16.0), la pièce étant une
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC**, inchangée de la v0.24
+à la **v0.30** — § 16.1 à § 16.5, dans l'ordre exact —, et le § 16.0 est une introduction de chapitre.
+La **table de couverture est respectée pour ses quatre lignes**, y compris la ligne « **prélevé au
+ch. 15** » : le §7.4 de la source est instruit **ici** et le ch. 15 porte son « hors §7.4 » — *la
+double revendication que la v0.17 du TOC avait relevée est donc levée dans le texte comme elle l'est
+au plan*. Le **siège de l'encadré R-2/R-3 est posé et marqué** (§ 16.2) ; le **siège du statut
+PROJETÉ** l'est aussi (§ 16.4). Le **siège du KYA reste au ch. 18 § 18.1** : le § 16.3 nomme le sigle
+sans l'instruire. Le **socle IAM reste au ch. 3**, l'**encadré de désambiguïsation au ch. 7 § 7.5**,
+l'**inventaire de la révocation au ch. 20 § 20.4**, les **précédents de fédération au ch. 18 § 18.3**.
+Les absences **portent leur degré**, dont neuf au **degré 3**, sur tout le domaine balayé —
+*application de R-14 déclarée, non dénombrée, faute de marqueur littéral.* Les **trois marqueurs de
+R-01** — un à l'ouverture (§ 16.0), deux à la clôture (§ 16.5 et sa synthèse de sortie) — encadrent un
+rappel repris **dans chacune des cinq sections** et porté par **la légende des trois tableaux**, sous
+la forme que chacun appelle : *objet de synthèse* aux tableaux 16.1 et 16.2, *réponse sur le papier*
+au tableau 16.3. Le § 16.1 écrit **« attendu par »** (R-06). Et le chapitre porte **son marquage
+d'inférence à l'ouverture** (§ 16.0), la pièce étant une
 construction d'auteur de bout en bout, plus **quatre marqueurs ponctuels** de « Lecture de l'auteur »
 — § 16.0, § 16.1, § 16.3 et § 16.5.
 
@@ -489,16 +512,27 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
   portant deux chacun au titre des fusions v0.20*, **et aucune pièce ne pouvait le voir seule.**
 - **R-IV-26 — close par ouverture du risque 17 au registre du TOC v0.25.** L'asymétrie est déclarée :
   la **quatrième pièce du passeport** — les attestations de conformité — n'a **ni chapitre ni socle**,
-  quand les trois autres ont chacune au moins un chapitre entier. ⚠ **Le risque a fallu le créer
+  quand les trois autres ont chacune au moins un chapitre entier. ⚠ **Il a fallu créer le risque
   plutôt que le ranger** : ce n'est **ni le risque 13 ni le risque 16** (la matière existe et a une
   source), et **ce n'est pas une lacune de l'Annexe C** (rien ne manque aux volumes) — *c'est la somme
   qui répartit inégalement, et cet angle mort n'avait pas de case.* **Trois parades sont écrites avec
   leur coût** ; ⚠ **aucune n'est prise** : le choix engage le découpage, donc l'auteur — et la parade
   par défaut est écrite **pour ne pas passer pour un choix qui n'a pas été fait**.
 
-⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et **G-4** demeurent ouvertes : le socle
-consolidé compte **zéro entrée**, l'Annexe B n'existe pas, la collation de fond contre le Vol. III
-rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**.
-**CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur. Cette
-pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable :
-cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*
+⚠ **Ce que la clôture ne change pas.** La **porte G-4 demeure ouverte** : la collation de fond contre
+le Vol. III rédigé n'est pas conduite, et **aucun énoncé de cette pièce n'est central au sens de
+CA-IV-01**. **CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du
+rédacteur. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
+pièce recevable : cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
+tranchée.*
+
+⚠ **Ce que la passe de relecture du 28 juillet 2026 a changé, et qui ne relève d'aucune remontée
+neuve.** La porte **G-3 est franchie** — l'Annexe B existe, **159 entrées `S-001`…`S-159`** — et le
+**volet de faits du résidu de G-1 est levé** ; l'en-tête de la pièce est réaligné sur ces deux états.
+**Les trois renvois sortants que la pièce portait ont été revérifiés contre le texte de leurs cibles,
+et deux étaient faux** :
+la seconde moitié de la quatrième pièce est au **ch. 25 § 25.5** et non au § 25.2 ; l'état de la
+désignation institutionnelle est au **ch. 30 § 30.3** et non au ch. 32 § 32.1. ⚠ **Aucun des deux ne
+se voyait sans ouvrir la cible** : les deux sections visées existent, et un contrôle mécanique de
+résolution les tient pour valides. *C'est exactement l'écart que la décision 8 du TOC nomme, et le
+seul instrument qui le trouve est la lecture.*

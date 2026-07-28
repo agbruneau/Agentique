@@ -6,10 +6,10 @@ il pose le régime prudentiel fédéral sur lequel les cinq suivants se situent.
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — ⚠ **et ce chapitre porte l'écart de gouvernance le plus lourd du Livre.** Trois portes lui sont opposables et **aucune n'est franchie** : **G-3** (socle consolidé à zéro entrée), **G-4** (collation de fond contre le Vol. III rédigé — *ce chapitre cite le Vol. III, donc G-4 le conditionne nommément*, PRD §5), et le **volet résiduel de G-1**. ⚠ **Il est en outre bloqué nommément par la décision d'auteur D-9** : le lot d'instruction du § 17.5 est ouvert et **non clos**, et le PRD écrit que « les ch. 25 et 27 ne se lancent pas avant clôture du lot ». Il a été rédigé quand même, sur instruction d'auteur du 27 juillet 2026 ; **l'infraction est consignée, non effacée** — voir la note de statut, § 25.9 |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : aucun fait périssable de ce chapitre n'a été repris à la source primaire. Gels de source consommés : **16-17 juillet 2026** (Vol. II ch. 9) et **21 juillet 2026** (Vol. III ch. 19) — ⚠ **aucun des deux ne tient lieu du gel de la somme**. ⚠ **Une échéance structure le chapitre et se re-mesure à chaque gel** : l'entrée en vigueur au **1ᵉʳ mai 2027**, dont tous les décomptes de jours ci-dessous dépendent |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. II *Monographie* ch. 9**, dont l'entrée **F-09** est **[A/B mixte]** — ⚠ **et l'ordre des rangs se lit correctement : dans ce socle, [B] est *sous* [A]**, l'énumération [A] étant **close** ; **F-10** est **[A]** — et contre le **Vol. III *Monographie* ch. 19**, dont **F-64**, **F-65**, **F-66**, **F-67** et **F-68** sont en **[B]** — ⚠ **F-68 est citée en renvoi seulement**, au § 25.1, pour la concordance des deux entrées en vigueur —, l'entrée héritée **H-04** en **[A/B mixte]** et **H-05** en **[A]**. ⚠ **Deux séries F-xx coexistent et se préfixent à chaque emploi** (décision 7 du TOC) : F-09 et F-10 sont **du Vol. II**, F-64 à F-68 **du Vol. III**. **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **PRD §8.2.4 (couverture E-23 = inférence d'analystes) : deux occurrences du renvoi**, § 25.0 et § 25.3 ; **PRDPlan Vol. II §4.4 — écrire « attendu par E-23 », jamais « exigé » : deux occurrences du renvoi**, § 25.2 et § 25.6 ; ⚠ *la formule imposée elle-même est **appliquée aux § 25.2, § 25.5, § 25.6 et § 25.7**, et le § 25.6 en porte le siège d'énoncé — **son décompte n'est pas re-mesurable au marqueur et n'est donc pas annoncé*** ; **PRD §8.2.6 (projections) : une occurrence du renvoi**, § 25.8 ; **R-1 à R-8 : zéro occurrence**. Vol. III — **R-06 (modalité d'E-23) : quatre occurrences du sigle**, § 25.2, § 25.4, § 25.6 et § 25.7 — *le siège est le §19.1 de sa source, et le présent chapitre l'applique sans le re-poser* ; **R-14 (trois degrés d'absence) : deux occurrences du sigle**, § 25.3 et § 25.7 — ⚠ *et les degrés se marquent en toutes lettres : « degré 1 » aux § 25.3, § 25.4 et § 25.7, « degré 2 » au § 25.5, « degré 3 » cinq fois au § 25.4 (une par case), « fait négatif vérifié » six fois (§ 25.3, § 25.4, § 25.5 deux fois, § 25.7 deux fois) et « fait négatif établi » une fois au § 25.5* ; **R-11 (jalons visés, jamais fixés) : une occurrence du sigle**, § 25.4 ; **R-09 : une occurrence du sigle**, § 25.5 ; **R-07 : une occurrence du sigle**, § 25.5 — ⚠ **R-07 est le siège du §19.2 de la source et il est appliqué là, sans y être re-posé** ; **R-02 : une occurrence du sigle**, § 25.5 ; **R-01, R-03 à R-05, R-08, R-10, R-12, R-13 : zéro occurrence** |
+| **Statut** | **Brouillon de rédaction, non publiable** — ⚠ **et ce chapitre porte l'écart de gouvernance le plus lourd du Livre.** Trois portes lui étaient opposables à la rédaction et **aucune n'était franchie** ; **une l'est depuis, une deuxième pour moitié, la troisième reste entière.** ☑ **G-3 est FRANCHIE le 28 juillet 2026** : le socle consolidé existe ([`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées** `S-001`…`S-159`), et *le champ « socle consolidé à zéro entrée » cesse d'être vrai*. ☑ **Le volet de FAITS du résiduel de G-1 est levé** le même jour ; ☐ **son volet des obligations de pièce reste dû** pour les Livres II et III, donc pour ce chapitre. ☐ **G-4 reste ouverte** — collation de fond contre le Vol. III rédigé, *ce chapitre cite le Vol. III, donc G-4 le conditionne nommément* (PRD §5) —, **son volet de fond entier**. ⚠ **Il est en outre bloqué nommément par la décision d'auteur D-9** : le lot d'instruction du § 17.5 est ouvert et **non clos**, et le PRD écrit que « les ch. 25 et 27 ne se lancent pas avant clôture du lot ». Il a été rédigé quand même, sur instruction d'auteur du 27 juillet 2026 ; **l'infraction est consignée, non effacée** — voir la note de statut, § 25.9. ⚠ **Une porte franchie ne rend pas la pièce recevable** : *elle retire une condition qui manquait, elle n'en atteste aucune.* |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ☑ **Volet de FAITS du résiduel de G-1 levé le 28 juillet 2026** ([registre](../PRD/gel-2026-07-28-volet-residuel.md)) : les **huit entrées consolidées** que ce chapitre mobilise ont été portées à leur source — `S-009`, `S-010` et `S-110` **☑ inchangées, partiellement** ; `S-112` **☑ inchangée** ; `S-023`, `S-113` et `S-114` **☐ non établies**, *accès refusé par l'hôte* ; `S-111` **☐ due**, l'entrée ne portant aucune date. ☐ **Le volet des obligations de pièce reste dû** : le point de la relève v0.10 reçu au § 25.6 et les statuts des dispositifs de registre du § 25.5 n'ont pas été repris à la source primaire. Gels de source consommés : **16-17 juillet 2026** (Vol. II ch. 9) et **21 juillet 2026** (Vol. III ch. 19) — ⚠ **aucun des deux ne tient lieu du gel de la somme**. ⚠ **Une échéance structure le chapitre et se re-mesure à chaque gel** : l'entrée en vigueur au **1ᵉʳ mai 2027**, dont tous les décomptes de jours ci-dessous dépendent |
+| **Socle mobilisé** | ☑ **Le socle consolidé existe depuis le 28 juillet 2026** — [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées**, porte **G-3 franchie**. ⚠ **Les pièces n'ont PAS été re-citées en `S-nnn`** (PRD §7.1) : elles citent les identifiants sources préfixés, que les deux tables de correspondance résolvent — ici **Vol. II F-09 + Vol. III H-04 → `S-009`**, **Vol. II F-10 → `S-010`**, **Vol. II F-25 + Vol. III H-05 → `S-023`**, **Vol. III F-64 à F-68 → `S-110` à `S-114`**. Les énoncés résolvent contre le **Vol. II *Monographie* ch. 9**, dont l'entrée **F-09** est **[A/B mixte]** — ⚠ **et l'ordre des rangs se lit correctement : dans ce socle, [B] est *sous* [A]**, l'énumération [A] étant **close** ; **F-10** est **[A]** — et contre le **Vol. III *Monographie* ch. 19**, dont **F-64**, **F-65**, **F-66**, **F-67** et **F-68** sont en **[B]** — ⚠ **F-25 et F-68 sont citées en renvoi seulement**, au § 25.1, pour la concordance des deux entrées en vigueur —, l'entrée héritée **H-04** en **[A/B mixte]** et **H-05** en **[A]**. ⚠ **Deux séries F-xx coexistent et se préfixent à chaque emploi** (décision 7 du TOC) : F-09, F-10 et F-25 sont **du Vol. II**, F-64 à F-68 **du Vol. III**. ⚠ **Un seul énoncé est avancé comme central** — *que les analystes juridiques canadiens tiennent la couverture pour acquise* (§ 25.3) —, et la strate **[A]** de `S-009` **le porte nommément**, votée 3-0 à sa source ; **aucun autre énoncé de la pièce n'est central au sens de CA-IV-01**, et ⚠ **aucun ne l'est sur une composante non re-vérifiée** — borne posée au franchissement de G-3. *Ce franchissement n'a conduit aucun vote adversarial : il reste dû pour toute entrée appelée à porter un fait central.* |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026 et repris à la passe de relecture du même jour, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **PRD Vol. II §8.2.4 (couverture E-23 = inférence d'analystes) : trois occurrences du renvoi**, note de collation de tête, § 25.0 et § 25.3 ; **PRDPlan Vol. II §4.4 — écrire « attendu par E-23 », jamais « exigé » : deux occurrences du renvoi**, § 25.2 et § 25.6 ; ⚠ *la formule imposée elle-même est **appliquée aux § 25.2, § 25.5, § 25.6 et § 25.7**, et le § 25.6 en porte le siège d'énoncé — **son décompte n'est pas re-mesurable au marqueur et n'est donc pas annoncé*** ; **PRD Vol. II §8.2.6 (projections) : une occurrence du renvoi**, § 25.8 ; **R-1 à R-8 : zéro occurrence**. Vol. III — **R-06 (modalité d'E-23) : quatre occurrences du sigle**, § 25.2, § 25.4, § 25.6 et § 25.7 — *le siège est le §19.1 de sa source, et le présent chapitre l'applique sans le re-poser* ; **R-14 (trois degrés d'absence) : trois occurrences du sigle**, § 25.3, § 25.7 et § 25.8 — ⚠ *et les degrés se marquent en toutes lettres : « degré 1 » aux § 25.3, § 25.4 et § 25.7, « degré 2 » au § 25.5, « degré 3 » six fois — **cinq au § 25.4**, dont **quatre dans les cases du tableau 25.1** (Q-B, Q-C, Q-D, Q-E) et **une à sa légende**, plus **une au § 25.8** —, « fait négatif vérifié » six fois (§ 25.3, § 25.4, § 25.5 deux fois, § 25.7 deux fois) et « fait négatif établi » une fois au § 25.5* ; **R-11 (jalons visés, jamais fixés) : une occurrence du sigle**, § 25.4 ; **R-09 : une occurrence du sigle**, § 25.5 ; **R-07 : une occurrence du sigle**, § 25.5 — ⚠ **R-07 est le siège du §19.2 de la source et il est appliqué là, sans y être re-posé** ; **R-02 : une occurrence du sigle**, § 25.5 ; **R-01, R-03 à R-05, R-08, R-10, R-12, R-13 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **7 000 mots** de corps (§ 25.0 à § 25.8), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant huit. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh). ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 25 — forme réalignée en v0.27, décisions 8 et 14, sur la remontée R-IV-83)* — E-23 couvre l'IA agentique *implicitement*, par sa définition de « modèle » — couverture par **inférence d'analystes**, **à traiter** comme acquise d'ici le 1ᵉʳ mai 2027 ; l'identité agentique est le prérequis technique d'obligations qui ne la mentionnent pas.
@@ -21,11 +21,11 @@ il pose le régime prudentiel fédéral sur lequel les cinq suivants se situent.
 n'était pas de forme.** Le premier membre condensait la thèse du Vol. II ch. 9 en **retranchant son
 qualificatif décisif** : la source écrit « couverture par inférence **d'analystes**, à traiter comme
 acquise », et le plan portait alors « couverture par inférence que les institutions **doivent** traiter
-comme acquise ». *Retirer « d'analystes » effaçait l'objet même du garde-fou §8.2.4, et « doivent »
-transformait en prescription ce que la source marque expressément comme une **lecture de l'auteur**
-fondée sur une asymétrie de risque.* Le second membre reprenait fidèlement la conclusion du Vol. III
-ch. 19. **La pièce a cité la thèse verbatim, comme le PRD l'exige, et écrit son corps sous la forme
-bornée** ; l'écart a été remonté (§ 25.9, remontée **R-IV-83**) et **arbitré ailleurs** — le TOC v0.27
+comme acquise ». *Retirer « d'analystes » effaçait l'objet même du garde-fou **PRD Vol. II §8.2.4**,
+et « doivent » transformait en prescription ce que la source marque expressément comme une **lecture
+de l'auteur** fondée sur une asymétrie de risque.* Le second membre reprenait fidèlement la conclusion
+du Vol. III ch. 19. **La pièce a cité la thèse verbatim, comme le PRD l'exige, et écrit son corps sous
+la forme bornée** ; l'écart a été remonté (§ 25.9, remontée **R-IV-83**) et **arbitré ailleurs** — le TOC v0.27
 a réaligné la thèse sur la forme bornée, et **le bloc de tête ci-dessus la cite désormais dans cette
 forme, depuis la v0.28** (passe de correction du 28 juillet 2026). *Le corps du chapitre n'a pas
 bougé : il était déjà écrit sous la forme que le plan porte aujourd'hui.*
@@ -57,7 +57,7 @@ est le siège : le présent chapitre ne porte que la **moitié E-23** du §19.1 
 
 ## § 25.1 — Genèse et calendrier
 
-Le socle établit **deux dates et un périmètre**, et il faut mesurer combien ils sont peu nombreux. La
+Le socle établit **deux dates et un périmètre**, et il faut mesurer à quel point c'est peu. La
 version finale d'E-23 a été **publiée le 11 septembre 2025**. Elle **entre en vigueur le 1ᵉʳ mai 2027**.
 Elle **s'applique à toutes les institutions financières fédérales**, y compris les succursales
 étrangères, dans la mesure compatible (Vol. II F-09, strate **[A]**).
@@ -76,6 +76,16 @@ régulateur intégré québécois est l'un des faits structurants du mouvement*,
 fait l'examen. La conséquence de planification ne dépend d'aucune intention : **une institution dont
 l'exploitation relève des deux régimes n'aura pas deux fenêtres de préparation successives, mais une
 seule.**
+
+⚠ **Les deux dates ne sont pourtant pas au même état de preuve, et l'écart date du franchissement de
+G-3.** La date fédérale a été **re-constatée à sa source** au volet de faits du résiduel de G-1
+(`S-009`, ☑ inchangée) ; les deux entrées qui portent la date québécoise sont **☐ non établies**
+(`S-023` et `S-114`), pour un **motif d'accès** — l'hôte refuse les requêtes sur les quatre adresses
+officielles du domaine de l'organisme. ⚠ **La conséquence est bornée et se tient** : *l'entrée en
+vigueur québécoise reste celle que le socle porte*, mais **elle n'a pas été re-constatée au gel**, et
+la borne du franchissement s'y applique — **aucun fait central ne repose sur cette composante**.
+*Un fait d'entrée en vigueur est un fait à échéance : son absence de re-datation se déclare, elle ne
+se présume pas stable.*
 
 ⚠ **Sur la genèse proprement dite, il faut être franc sur ce que le socle ne porte pas.** L'extraction
 du texte intégral et de sa lettre d'accompagnement établit **trois éléments d'antériorité, et trois
@@ -159,14 +169,14 @@ compte plus qu'on ne croit.
 
 ## § 25.3 — L'inférence agentique
 
-Nous arrivons au point le plus délicat du mouvement. ⚠ **La formulation qui suit est imposée par la
+Le mouvement atteint ici son point le plus délicat. ⚠ **La formulation qui suit est imposée par la
 méthode** (PRD Vol. II §8.2.4), et rendue dans sa substance :
 
 **E-23 ne nomme ni l'agentique ni les agents ; sa définition de « modèle » englobe les méthodes d'IA et
 d'apprentissage automatique, d'où une couverture implicite que les analystes juridiques canadiens
 tiennent pour acquise.**
 
-Chaque membre porte du poids. Reprenons-les.
+Chaque membre porte du poids ; ils se reprennent un à un.
 
 **« E-23 ne nomme ni l'agentique ni les agents »** est un **fait négatif vérifié** — degré 1 de
 l'échelle R-14 du Vol. III : le texte n'emploie ni « agentique », ni « agent(s) », ni
@@ -450,7 +460,7 @@ par les institutions financières fédérales serait passée d'environ **30 % en
 2023**, et **le Bureau et l'Agence projettent une adoption d'environ 70 % d'ici 2026 — une projection
 issue d'une enquête auto-déclarée, non un taux observé.**
 
-**Posons l'arithmétique, puisqu'elle est instructive.** De 2019 à 2023, quatre ans, la progression
+**L'arithmétique mérite d'être posée.** De 2019 à 2023, quatre ans, la progression
 déclarée est de vingt points — soit cinq points par an. De 2023 à 2026, trois ans, la progression
 *projetée* est également de vingt points — soit environ **six virgule sept points par an**. ⚠ *La
 projection ne prolonge donc pas la tendance déclarée : elle l'accélère d'un tiers.* C'est une
@@ -462,12 +472,14 @@ ils mesurent ce que des institutions ont déclaré d'elles-mêmes, **sans défin
 socle de ce qui compte comme « adoption de l'IA »**. *Le ch. 7 formulait le même avertissement à propos
 des métriques d'adoption des protocoles ; il vaut ici sans changement.*
 
-⚠ **La projection est-elle advenue ?** L'horizon de la projection — l'année 2026 — est le présent de ce
-chapitre. **Le socle ne documente aucune mesure postérieure à l'enquête rapportée le 24 septembre
-2024** : aucune entrée ne porte de taux observé pour 2024, 2025 ou 2026, et **aucune passe de recherche
-n'a été conduite** sur les publications postérieures. *La question reste ouverte ; aucune inférence
-n'est proposée ici, et notamment aucune extrapolation de la trajectoire déclarée.* **Le volet résiduel
-de G-1 la couvre et ne l'a pas exécutée.**
+⚠ **La projection est-elle advenue ? La question a été portée à la source, et elle reste ouverte.**
+L'horizon de la projection — l'année 2026 — est le présent de ce chapitre, et le **volet de faits du
+résiduel de G-1**, exécuté le 28 juillet 2026, a repris l'entrée à sa source primaire (`S-010`,
+☑ inchangée pour ses trois chiffres et son renvoi à E-23). ⚠ **Ce que la reprise établit est un
+manque, et le manque porte son degré** : **aucune mesure de réalisation de la projection 2026 n'est
+portée par la source** alors que l'échéance court — **absence de documentation, degré 3 de l'échelle
+R-14 du Vol. III**. *On n'écrit donc ni que le seuil de 70 % est atteint, ni qu'il ne l'est pas ;
+aucune inférence n'est proposée ici, et notamment aucune extrapolation de la trajectoire déclarée.*
 
 **Le second apport est d'une tout autre portée, et il justifie la place de ce chapitre en tête du
 mouvement.** Le rapport conjoint caractérise un **risque de modèle accru propre à l'IA**, et il le fait
@@ -489,7 +501,7 @@ d'indéterminabilité. **Ce qu'il n'établit pas** : cette conséquence d'archit
 inférence qui fait le pont du mouvement vers le **ch. 29**, qui en fait son pivot — et elle croise
 l'obligation d'explication de l'art. 12.1, dont le **ch. 27** porte le texte et les réserves.*
 
-**Notons enfin ce que la chronologie révèle.** Le rapport du 24 septembre 2024 rattachait **déjà** le
+**Reste enfin ce que la chronologie révèle.** Le rapport du 24 septembre 2024 rattachait **déjà** le
 risque de modèle propre à l'IA au cadre E-23 ; la version finale d'E-23, publiée moins d'un an plus
 tard, inclut explicitement les méthodes d'IA dans sa définition de « modèle » **et anticipe la décision
 autonome**. *Les deux textes se répondent.*
@@ -527,7 +539,8 @@ l'intention que cette lecture prête au régulateur.
 ⚠ **Ce que le chapitre ne lègue pas.** Il ne lègue **aucune attente du Bureau pour l'IA agentique** :
 la couverture est implicite, par la définition de modèle, et son caractère acquis est une **inférence
 d'analystes** que la somme rapporte **sans l'endosser comme état du droit**. Il ne lègue **aucun taux
-d'adoption** : le seul chiffre du chapitre est une projection auto-déclarée, non advenue au socle. Il
+d'adoption** : les trois chiffres du § 25.8 viennent tous d'une enquête auto-déclarée, et le seul qui
+vise 2026 est une **projection dont la réalisation n'est documentée nulle part au socle**. Il
 ne lègue **aucune comparaison des attributs d'inventaire** : l'appendice qui les porte n'a pas été
 extrait. Et il ne lègue **aucune mesure de l'efficacité de la supervision humaine**.
 
@@ -554,17 +567,28 @@ TOC, ce PRD ni le Conspectus — il **remonte**.*
    au texte, par lectures indépendantes chargées de réfuter — reste entier.* ⚠ **Et le Vol. III se
    déclare lui-même non publiable** : quinze remontées ouvertes, dont **six touchent la matière du
    Livre II** au relevé du PRD §13 — *le relevé n'a pas été refait pour le Livre III, et il est dû.*
-3. **La porte G-3 n'est pas entamée** : socle consolidé à zéro entrée, Annexe B inexistante, **aucun
-   énoncé central au sens de CA-IV-01**. Les identifiants cités appartiennent à **deux séries
-   distinctes**, préfixées à chaque emploi (décision 7).
-4. **Le volet résiduel de G-1 n'est pas instruit** : ni la projection d'adoption de 2026, ni les statuts
-   des dispositifs de registre, ni le point de la relève v0.10 reçu au § 25.6.
+3. ☑ **La porte G-3 était ouverte à la rédaction ; elle est FRANCHIE depuis le 28 juillet 2026.**
+   L'Annexe B existe — [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées** —, et les
+   huit entrées de ce chapitre s'y résolvent par les deux tables de correspondance. ⚠ **Trois bornes du
+   franchissement s'appliquent ici** : *aucun vote adversarial n'a été conduit* et il reste dû pour
+   toute entrée appelée à porter un fait central ; *aucun énoncé n'a été confronté à sa source
+   primaire*, la refonte portant sur les PRD des volumes ; et **aucun fait central ne repose sur une
+   composante non re-vérifiée**. Les identifiants cités appartiennent à **deux séries distinctes** et
+   restent préfixés à chaque emploi (décision 7), les pièces n'ayant pas été re-citées en `S-nnn`.
+4. ☑ **Le volet de FAITS du résiduel de G-1 est levé** le 28 juillet 2026, et la projection d'adoption
+   de 2026 en fait partie — issue au § 25.8. ☐ **Le volet des obligations de pièce reste dû** : ni les
+   statuts des dispositifs de registre du § 25.5, ni le point de la relève v0.10 reçu au § 25.6 n'ont
+   été repris à la source primaire.
 5. **Les décomptes sont publiables** (G-2). L'écart à la cible est relevé au [`README.md`](README.md) du
    dossier et alimente **D-4**, déjà tranchée.
-6. **Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan.** Ils résolvent
-   contre l'entrée du TOC : **ch. 26, 27, 28, 29, 30, 31** (présent Livre, même passe). Résolvent contre
-   du **texte rédigé** : **ch. 7**, **ch. 14 § 14.1 et § 14.2**, **ch. 15**, **ch. 16**, **ch. 17
-   § 17.5**, **ch. 21 § 21.1**, **ch. 22 § 22.6 et § 22.8**.
+6. ☑ **Plus aucun renvoi de ce chapitre n'est un renvoi de plan** : les cinquante pièces de la somme
+   sont rédigées depuis le 27 juillet 2026, et **les renvois ont été re-vérifiés contre le texte**,
+   comme la décision 8 l'exige d'un renvoi de plan qui survit à la rédaction de sa cible. **Tous
+   résolvent** : **ch. 7**, **ch. 14 § 14.1 et § 14.2**, **ch. 15**, **ch. 16**, **ch. 17 § 17.5**,
+   **ch. 21 § 21.1**, **ch. 22 § 22.6 et § 22.8**, **ch. 26**, **ch. 27 § 27.1, § 27.3 et § 27.5**,
+   **ch. 28**, **ch. 29 § 29.1**, **ch. 30 § 30.2.7**, **ch. 31 § 31.3**, **ch. 49 § 49.0**. ⚠ *La
+   vérification porte sur l'existence et la numérotation de la cible, non sur la concordance de fond de
+   ce qu'elle contient — celle-ci relève de G-4, qui reste ouverte.*
 
 **Remontées ouvertes par ce chapitre :**
 
@@ -603,13 +627,15 @@ La **décision 14 a été exécutée avant la rédaction**, domaine déclaré : 
 divergence trouvée et remontée**. ⚠ **La formulation imposée est tenue sur tout son domaine** — *les
 § 25.2, § 25.5, § 25.6 et § 25.7* : « attendu par E-23 », jamais « exigé » ; et **les cinq attentes au
 socle sont énumérées sans que la « supervision humaine » y soit ajoutée** — *y compris au § 25.6, qui
-traite précisément de sa limite.* Les **absences portent toutes leur degré** — *deux occurrences du
+traite précisément de sa limite.* Les **absences portent toutes leur degré** — *trois occurrences du
 sigle R-14, et les marqueurs de degré ventilés à l'en-tête* —, et les **deux cases vides du
 tableau 25.1 sont déclarées degré 3 une par une**. ⚠ **Ces cardinaux ont été re-mesurés au commit du
-28 juillet 2026** (décision 16 du TOC) ; *l'attestation antérieure annonçait onze occurrences de la
-formulation imposée et douze de R-14, ni l'un ni l'autre n'étant re-mesurable contre le corps.* Les
-**deux métriques du § 25.8 sont attribuées comme projections
-d'enquête auto-déclarée**, à chaque occurrence. Le **registre n'est pas reconstruit** — son siège est le
+28 juillet 2026** (décision 16 du TOC), puis **une seconde fois à la passe de relecture du même jour**,
+qui les a repris après ses propres additions au corps ; *l'attestation initiale annonçait onze
+occurrences de la formulation imposée et douze de R-14, ni l'un ni l'autre n'étant re-mesurable contre
+le corps.* Les **trois chiffres d'adoption du § 25.8 sont attribués au rapport conjoint qui les porte
+et à l'enquête auto-déclarée dont ils procèdent**, à chaque occurrence, et **celui de 2026 est déclaré
+projection** à chacune des siennes. Le **registre n'est pas reconstruit** — son siège est le
 **ch. 15** — et **la grille des cinq questions n'est pas re-décidée** : elle est appliquée dans sa
 lecture inversée, **sans qu'aucun de ses trois verdicts soit rendu**, comme la source l'impose.
 
@@ -652,3 +678,26 @@ cette pièce n'est central au sens de CA-IV-01**. **CA-IV-11 et CA-IV-13 ne sont
 *aucune relecture par un relecteur distinct du rédacteur*. Cette pièce reste un **brouillon non
 publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune
 question n'attend plus de réponse qui ne soit déjà tranchée.*
+
+---
+
+### Ce que le 28 juillet 2026 a changé — addendum daté
+
+⚠ **Le relevé qui précède est daté du 27 juillet 2026 et n'est pas réécrit** : *un état vrai à sa date
+se complète, il ne se corrige pas.* Trois de ses termes ont bougé le lendemain, et le reste tient.
+
+- ☑ **G-3 est franchie** (PRD v0.14) : le socle consolidé existe, **159 entrées**, et **« zéro entrée »
+  cesse d'être vrai**. Les huit entrées de ce chapitre s'y résolvent par les tables de correspondance.
+- ☑ **Le volet de FAITS du résiduel de G-1 est levé** : sur ces huit entrées, **quatre ☑ inchangées**
+  — trois partiellement —, **trois ☐ non établies** par refus d'accès de l'hôte, **une ☐ due** faute de
+  date à instruire. ☐ **Le volet des obligations de pièce reste dû.**
+- ☑ **Les renvois « ch. N » ont été re-vérifiés contre le texte rédigé** des cinquante pièces, et
+  **tous résolvent** (point 6 ci-dessus).
+
+⚠ **Ce que l'addendum ne change pas, et c'est l'essentiel.** **G-4 reste ouverte**, son volet de fond
+entier ; **D-9 reste enfreinte** et son lot d'instruction **non clos** ; **le relevé pièce par pièce
+des remontées du Vol. III pour le Livre III reste dû** (R-IV-85) ; **CA-IV-11 et CA-IV-13 demeurent
+insatisfaites**, D-6 ne fournissant pas de relecteur tiers. **Aucun vote adversarial n'a été conduit au
+franchissement**, et il reste dû pour toute entrée appelée à porter un fait central. *Cette pièce reste
+un brouillon non publiable : une porte franchie retire une condition qui manquait, elle n'en atteste
+aucune.*

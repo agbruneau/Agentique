@@ -2,17 +2,18 @@
 
 *Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier.
 Troisième mouvement — le terrain canadien : interopérabilité financière et adoption (ch. 31-36).
-Chapitre d'ouverture du mouvement, et **siège de six patrons pour toute la somme**.*
+Chapitre d'ouverture du mouvement, et **siège de six matières que la somme ne repose nulle part
+ailleurs** — quatre patrons, un risque et un critère.*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 31.6. ⚠ **Ce chapitre n'est pas conditionné par G-4** : sa ligne Fusion ne cite que le Vol. I ; ⚠ **D-9 ne le bloque pas** — *il pose le patron de la libération humaine sur l'irréversible, mais **au titre d'un durcisseur du domaine**, non comme une parade dont il prescrirait l'efficacité* |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit** : aucun fait de ce chapitre n'a été repris à la source primaire, et **le chapitre porte une vingtaine de jalons datés**. Gel de source consommé : **juin 2026** (Vol. I ch. 5) — ⚠ **il ne tient pas lieu du gel de la somme**, et l'écart est de **plus d'un mois** sur un domaine qui se périme par trimestres |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). ⚠ **La totalité de la matière de ce chapitre vient du Vol. I et entre donc en [C]** — repérage documentaire, la vérification du Vol. I portant sur ses **références** et non sur le **contenu de ses affirmations** (PRD §7.1). ⚠ **Conséquence à tirer sans détour : aucun énoncé de ce chapitre n'est central au sens de CA-IV-01**, et l'élévation en [B] passerait par la lecture des sources primaires que le Vol. I cite — *plusieurs dizaines pour ce seul chapitre.* Les seuls appuis à un autre régime sont des **renvois** vers les sièges des Livres I et II, qui ne sont pas reconstruits |
-| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **PRD §8.2.3 et §7.5 (métriques auto-déclarées, projections) : les deux renvois ne sont pas écrits au corps** ; *les marqueurs le sont — « auto-déclaré » **deux fois** (§ 31.2.2, § 31.4.2), « projection d'analyste » **trois fois** (§ 31.1.2, § 31.4.2, § 31.4.3) —, et **le garde-fou est appliqué aux § 31.1.2, § 31.2.2, § 31.2.3, § 31.3.1, § 31.4.1, § 31.4.2 et § 31.4.3**, chaque chiffre étant attribué à sa source* ; **PRD §8.4 (neutralité fournisseur) : une occurrence du renvoi**, § 31.2.6 ; **R-5 : une occurrence du sigle**, § 31.2.5 ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-09 (quatre statuts, dits à chaque mention) : deux occurrences du sigle**, § 31.2.4 et § 31.3.3 — *le garde-fou est en outre **appliqué aux § 31.2.2, § 31.2.5 et § 31.2.6**, chaque statut y étant dit sans que le sigle soit repris* ; **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 31.1.2 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 31.1.2, § 31.2.4, § 31.2.6, § 31.4.2 et § 31.5.1* ; **R-02 : trois occurrences du sigle**, § 31.2.4, § 31.3.2 et § 31.5.1 ; **R-13 : une occurrence du sigle**, § 31.1.3 — ⚠ *la distinction copilote / autonomie transactionnelle n'est **pas** une échelle d'autonomie et se déclare telle* ; **R-11 : une occurrence du sigle**, § 31.2.2 ; **R-01, R-03 à R-08, R-10, R-12 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **8 500 mots** de corps (§ 31.0 à § 31.5), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des **dix-neuf sous-sections** qu'il déplie, et non des cinq sections de tête. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier. ⚠ **D-4 interdit l'amputation comme le gonflement** |
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé le 27 juillet 2026, sur instruction d'auteur, **alors que la porte G-3 était ouverte**. ⚠ **La règle cardinale du PRD §5 est enfreinte, et le franchissement de G-3 le 28 juillet 2026 ne la rattrape pas** : *un arbitrage qui suit une infraction la solde ; il ne l'efface pas.* Le **volet de pièce de G-1** reste dû pour ce chapitre. Voir la note de statut, § 31.6. ⚠ **Ce chapitre n'est pas conditionné par G-4** : sa ligne Fusion ne cite que le Vol. I ; ⚠ **D-9 ne le bloque pas** — *il pose le patron de la libération humaine sur l'irréversible, mais **au titre d'un durcisseur du domaine**, non comme une parade dont il prescrirait l'efficacité* |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Aucun fait de ce chapitre n'a été repris à sa source primaire**, et **le chapitre porte une vingtaine de jalons datés**. *La re-datation du 28 juillet 2026 ne l'a pas atteint* : elle a porté les **123 entrées à sensibilité temporelle du socle consolidé** à leur source, et **aucun jalon de ce chapitre n'y figure** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)). Gel de source consommé : **juin 2026** (Vol. I ch. 5) — ⚠ **il ne tient pas lieu du gel de la somme**, et l'écart est de **plus d'un mois** sur un domaine qui se périme par trimestres |
+| **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** ([`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées** `S-001`…`S-159`) — *mais il ne porte du Vol. I que **17 entrées héritées, toutes en `[C]`***, et **deux seulement touchent ce chapitre**. **`S-157`** couvre le patron du § 31.1.1 et l'homonymie de « copilote » (Vol. I *Monographie* §5.0.2 et §5.1.1) — ⚠ ***entrée déclarée NON ÉLEVABLE*** : construction d'auteur du Vol. I, qui « entre comme thèse à attribuer, jamais comme fait ». **`S-159`** est le tri prospectif, **appliqué** au § 31.1.2. *(`S-145`, le KYA, est **renvoyée au ch. 18 § 18.1** et non reprise ici.)* ⚠ **Tout le reste — les §5.2 à §5.6 du Vol. I — n'a AUCUNE entrée au socle consolidé** : *absence de couverture, non contradiction*, et cette matière entre en **[C]** par le PRD §7.1, la vérification du Vol. I portant sur ses **références** et non sur le **contenu de ses affirmations**. ⚠ **Conséquence inchangée par le franchissement : aucun énoncé de ce chapitre n'est central au sens de CA-IV-01**, et l'élévation en [B] passerait par la lecture des sources primaires que le Vol. I cite — *plusieurs dizaines pour ce seul chapitre.* Les seuls appuis à un autre régime sont des **renvois** vers les sièges et domiciles des Livres I, II, III et V, qui ne sont pas reconstruits |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **PRD §8.2.3 et §7.5 (métriques auto-déclarées, projections) : les deux renvois ne sont pas écrits au corps** ; *les marqueurs le sont — « auto-déclaré » **deux fois** (§ 31.2.2, § 31.4.2), « projection d'analyste » **trois fois** (§ 31.1.2, deux occurrences ; § 31.4.3), plus sa forme plurielle « projections d'analystes » au § 31.4.2 et « estimation d'analyste » au § 31.5.2 —, et **le garde-fou est appliqué aux § 31.1.2, § 31.2.2, § 31.2.3, § 31.2.5, § 31.3.1, § 31.4.1, § 31.4.2, § 31.4.3 et § 31.5.2** — ⚠ **neuf sections, chaque chiffre y étant attribué à sa source ou déclaré non attribuable par elle*** ; **PRD §8.4 (neutralité fournisseur) : deux occurrences du renvoi**, § 31.2.6 et § 31.4.3 — *le marqueur seul, trois fois : § 31.2.6, § 31.4.3 et § 31.5.2* ; **R-5 : une occurrence du sigle**, § 31.2.5 ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-09 (quatre statuts, dits à chaque mention) : deux occurrences du sigle**, § 31.2.4 et § 31.3.3 — *le garde-fou est en outre **appliqué aux § 31.2.2, § 31.2.5 et § 31.2.6**, chaque statut y étant dit sans que le sigle soit repris* ; **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 31.1.2 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 31.1.2, § 31.2.4, § 31.2.6, § 31.4.2 et § 31.5.1* ; **R-02 : trois occurrences du sigle**, § 31.2.4, § 31.3.2 et § 31.5.1 ; **R-13 : une occurrence du sigle**, § 31.1.3 — ⚠ *la distinction copilote / autonomie transactionnelle n'est **pas** une échelle d'autonomie et se déclare telle* ; **R-11 : une occurrence du sigle**, § 31.2.2 ; **R-01, R-03 à R-08, R-10, R-12 : zéro occurrence**. ⚠ **Décision 15 du TOC (régime de l'anonymisation) : quatre occurrences du renvoi** — § 31.1.2, § 31.1.3, § 31.3.3 et § 31.4.3, aux quatre endroits où une **attribution anonymisée a été levée** ; *la parade de péremption demeure, elle, pour les dénominations commerciales et les numéros de version* |
+| **Volumétrie cible** | ≈ **8 500 mots** de corps (§ 31.0 à § 31.5), **cible dérivée** de l'enveloppe du Livre — 90 000 mots, inchangée du TOC v0.25 à la v0.29 — au prorata des **dix-neuf sous-sections** qu'il déplie, et non des cinq sections de tête. ☑ **Décompte publiable depuis G-2** : **9 177 mots** mesurés le 28 juillet 2026 par [`decompte.sh`](../PRD/decompte.sh), **seule autorité**, soit **+8,0 %** ; la mesure d'ensemble est portée au [`README.md`](README.md) du dossier. ⚠ **L'écart a crû de +0,5 % à +8,0 % à la relecture du 28 juillet 2026, et sa cause s'écrit** : *aucune matière n'a été ajoutée — **l'appareil de régime de preuve l'a été**, attributions levées, exclusion de socle nommée, omissions de renvoi consignées.* ⚠ **D-4 interdit l'amputation comme le gonflement** : *le bornage allonge, et raccourcir ici reviendrait à retirer une borne* |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 31)* — la finance durcit l'agentique par des contraintes transverses (standards de données, maillage réglementaire, risque-modèle, sécurité/AML-KYC/KYA, résidence/souveraineté) qui préexistent à l'agent et le contraignent.
+> **Thèse** *(citée par copie depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 31 ; **re-collationnée mot à mot contre la v0.29 le 28 juillet 2026 — identique**, la passe d'audit n'ayant touché aucune thèse)* — la finance durcit l'agentique par des contraintes transverses (standards de données, maillage réglementaire, risque-modèle, sécurité/AML-KYC/KYA, résidence/souveraineté) qui préexistent à l'agent et le contraignent.
 
 ---
 
@@ -62,6 +63,11 @@ le **ch. 33** (§ 33.4 et § 33.5), le **ch. 34** en dix points (§ 34.1.1, § 3
 § 34.3, § 34.3.3, § 34.4.2, § 34.4.3, § 34.7.1 et § 34.7.4) et le **ch. 36** (§ 36.2.1, § 36.2.7 et
 § 36.6). **Aucun ne le re-dérive.***
 
+⚠ **Une pièce consomme pourtant la matière sans nommer ce siège** : *le **ch. 49 § 49.11.3** écrit que
+« l'irréversibilité du règlement interdirait la correction a posteriori » et ne renvoie ici nulle part.*
+**Omission constatée le 28 juillet 2026, hors de la portée de cette pièce, qui la signale plutôt que de
+la corriger chez autrui** — *et motif pour lequel le contrôle **S5** demeure désactivé sur ce siège.*
+
 **Le règlement financier possède une propriété que l'ingénierie d'intégration classique ne connaît qu'à
 la marge : la finalité.** *Un virement instantané confirmé, un ordre exécuté, une police émise ou un
 sinistre payé sont des faits **qui ne se rétractent pas par simple instruction inverse**.*
@@ -70,8 +76,8 @@ sinistre payé sont des faits **qui ne se rétractent pas par simple instruction
 compensatoire — qui suppose qu'une transaction défaillante puisse être annulée par une transaction
 compensatrice — **atteint ici sa limite structurelle** : sur un rail à finalité immédiate, il n'existe
 **aucune compensation déterministe**, seulement un recouvrement incertain et coûteux.* ⚠ **La sémantique
-d'effet dont ce constat est la limite — idempotence, compensation, réconciliation — est au ch. 48**,
-qui en est le siège ; elle n'est pas reconstruite ici.
+d'effet dont ce constat est la limite — idempotence, compensation, réconciliation — est au ch. 48
+§ 48.1**, qui en est le siège ; elle n'est pas reconstruite ici.
 
 **Le critère de conception qui en découle est le patron directeur de tout le mouvement, et il se pose
 une fois** :
@@ -80,9 +86,10 @@ une fois** :
 > la préparation par l'agent et la libération humaine sur l'action irréversible.**
 
 *L'agent assemble le dossier, vérifie, formate, propose ; **un humain — ou un contrôle déterministe
-explicitement calibré — autorise le franchissement**.* La doctrine des agents autonomes met précisément
-en garde contre la délégation d'actions à conséquences irréversibles à des systèmes **dont le
-comportement n'est pas pleinement spécifiable**.
+explicitement calibré — autorise le franchissement**.* **Les travaux de Kolt (2025) sur la gouvernance
+des agents autonomes** mettent précisément en garde contre la délégation d'actions à conséquences
+irréversibles à des systèmes **dont le comportement n'est pas pleinement spécifiable** — *affirmation
+attribuée, reprise du Vol. I en **[C]**.*
 
 ⚠ **Les rails de paiement instantané irrévocables sont mentionnés ici comme illustration conceptuelle
 de cette irréversibilité** ; *leurs plafonds, dates et états réels sont au **ch. 33** pour le versant
@@ -93,9 +100,12 @@ Lecture de l'auteur — **le patron se matérialise par une séparation nette en
 l'**engagement** — la libération proprement dite, soumise à une autorité humaine ou à un contrôle
 déterministe. *Cela suppose des **identités d'agent à portée limitée**, incapables d'émettre seules
 l'instruction finale ; une **confirmation explicite** avant tout franchissement de rail irrévocable ;
-et une **piste d'audit reliant la proposition à l'autorisation**.* **Ce que le socle établit** : la
-propriété de finalité et le patron, tels que le Vol. I les pose. **Ce qu'il n'établit pas** : que ces
-trois moyens suffisent — *ils sont la mise en œuvre proposée, non une garantie.*
+et une **piste d'audit reliant la proposition à l'autorisation**.* ⚠ **Ce que le socle établit : rien de
+plus qu'un repérage.** *L'unique entrée du socle consolidé qui couvre cette matière — **`S-157`**, tirée
+du Vol. I *Monographie* §5.0.2 et §5.1.1 — **porte le patron et le déclare construction d'auteur du
+Vol. I** : « thèse à attribuer, jamais un fait », **entrée non élevable**.* **Ce qu'il n'établit pas** :
+ni la propriété de finalité, en **[C]** comme tout ce que ce chapitre tire du Vol. I ; ni que ces trois
+moyens suffisent — *ils sont la mise en œuvre proposée, non une garantie.*
 
 ⚠ **Et une limite empirique se déclare ici plutôt qu'ailleurs, parce que c'est ici que le patron se
 pose.** *Ce patron **suppose que l'humain qui libère exerce son jugement**. Le **ch. 17 § 17.5** traite
@@ -107,10 +117,14 @@ sans sa limite serait présenter une contrainte de domaine comme une solution.*
 ### 31.1.2 Capital, risque systémique et agents corrélés — SIÈGE DU RISQUE SYSTÉMIQUE
 
 ⚠ **SIÈGE DU RISQUE SYSTÉMIQUE POUR TOUTE LA SOMME.** *Renvois entrants **re-mesurés le 28 juillet 2026**
-: le **ch. 34** y renvoie deux fois — **§ 34.4.6** et **§ 34.6.3** — sans re-citer les sources de
-stabilité financière ; et le **ch. 49 § 49.10** consomme la matière **sans nommer ce siège** —
-⚠ *omission de renvoi constatée le 28 juillet 2026, hors de la portée de cette pièce, qui la signale
-plutôt que de la corriger chez autrui.*
+: à l'intérieur du chapitre, § 31.5.2 ; hors du chapitre, le **ch. 34** y renvoie deux fois —
+**§ 34.4.6** et **§ 34.6.3** — sans re-citer les sources de stabilité financière. **Aucun ne le
+re-dérive.***
+
+⚠ **Une pièce consomme la matière sans nommer ce siège** : *le **ch. 49 § 49.9**, dont le paragraphe
+« Le risque systémique des agents corrélés » la reprend depuis le Vol. I.* **Omission constatée le
+28 juillet 2026, hors de la portée de cette pièce, qui la signale plutôt que de la corriger chez
+autrui** — *et motif pour lequel le contrôle **S5** demeure désactivé sur ce siège.*
 
 **Le deuxième durcisseur opère à l'échelle macro.** *L'argument ne porte plus sur la défaillance d'un
 agent isolé mais sur **la corrélation des comportements** lorsque de nombreux acteurs déploient des
@@ -118,19 +132,21 @@ agents entraînés sur des données voisines, ancrés sur les mêmes modèles de
 signaux.* ⚠ **Cette uniformité engendre un risque de mimétisme et la possibilité d'événements de marché
 brusques et auto-amplifiés.**
 
-**Les autorités macroprudentielles ont documenté cette préoccupation** : un conseil international de
-stabilité financière a posé les implications de l'IA, suivi son adoption et ses vulnérabilités dans le
-secteur, puis **ouvert le 10 juin 2026 une consultation** sur les pratiques saines d'adoption
-responsable — ⚠ *rapport final **attendu en octobre 2026**, postérieur au socle du Vol. I : **PROGRAMMÉ**
-au tri prospectif du **ch. 49 § 49.0**, siège de la discipline pour toute la somme, appliqué ici et
-jamais re-dérivé, et **non advenu** au gel de la somme.* Une banque centrale a consacré une
-publication d'avril 2025 à l'IA dans le système financier, en relevant explicitement **les canaux de
-corrélation et de concentration** ; un comité scientifique consultatif européen a publié un rapport
-dédié au risque systémique de l'IA.
+**Les autorités macroprudentielles ont documenté cette préoccupation, et chacune se nomme** — ⚠ *la
+parade de péremption vaut pour les dénominations commerciales, jamais pour l'attributeur d'une
+affirmation* (décision 15 du TOC). *Le **Conseil de stabilité financière** a posé les implications de
+l'IA, suivi son adoption et ses vulnérabilités dans le secteur, puis **ouvert le 10 juin 2026 une
+consultation** sur les pratiques saines d'adoption responsable* — ⚠ *rapport final **attendu en octobre
+2026**, postérieur au socle du Vol. I : **PROGRAMMÉ** au tri prospectif du **ch. 49 § 49.0**, siège de la
+discipline pour toute la somme, appliqué ici et jamais re-dérivé, et **non advenu** au gel de la somme.*
+*La **Banque d'Angleterre** a consacré une publication d'avril 2025 à l'IA dans le système financier, en
+relevant explicitement **les canaux de corrélation et de concentration** ; le **comité scientifique
+consultatif du Comité européen du risque systémique** a publié un rapport dédié au risque systémique de
+l'IA (Cecchetti, Lumsdaine, Peltonen et Sánchez Serrano, 2025).*
 
-⚠ **Une projection d'analyste circule et se cite avec son statut** : *l'érosion potentielle des pools de
-profit bancaires sous l'effet de l'IA — **chiffrée jusqu'à 170 G$ d'ici 2027 par un cabinet, projection
-d'analyste, à attribuer explicitement** — alimente la pression à l'adoption rapide,* ⚠ **qui est
+⚠ **Une projection d'analyste circule et se cite avec son statut et son attributeur** : *l'érosion
+potentielle des bassins de profit bancaires sous l'effet de l'IA — **chiffrée jusqu'à 170 G$ d'ici 2027
+par McKinsey (2025), projection d'analyste** — alimente la pression à l'adoption rapide,* ⚠ **qui est
 elle-même un facteur de corrélation**.
 
 ⚠ **Une illustration empirique doit ici être maniée avec prudence, et la source le dit elle-même** : *un
@@ -152,17 +168,18 @@ formalisation, reprise du Vol. I en [C].
 l'institution demeure responsable du résultat produit par ses systèmes automatisés, y compris lorsque
 ce résultat émane d'un agent conversationnel.**
 
-**Le contre-exemple canonique est une décision d'un tribunal administratif provincial canadien rendue le
-14 février 2024.** ⚠ **Sa portée se dit exactement, et la formule antérieure — « à valeur de fait
-juridique établi » — la surqualifiait** : *le repérage entre ici au **régime [C]**, comme tout ce que ce
-chapitre tire du Vol. I (PRD §7.1), la vérification y ayant porté **sur les références et non sur le
-contenu des affirmations** ; la décision **n'a pas été reprise à sa source primaire pour la somme**, et
-le **volet résiduel de G-1 ne l'a pas instruite**. En [C], **aucun énoncé n'est central au sens de
-CA-IV-01**.* Ce que le repérage porte est ceci : *le tribunal a tenu un transporteur
-responsable d'une information erronée fournie par son agent conversationnel, a accordé des dommages, et
-a **écarté l'argument selon lequel l'agent serait une entité distincte**.* ⚠ **Bien que la décision
-relève du transport et non de la finance, sa portée est directement transposable : un agent qui parle
-au nom de l'institution l'engage.** ⚠ **Et le ch. 30 § 30.2.5 en porte le pendant européen** : *la firme
+**Le contre-exemple canonique est *Moffatt v. Air Canada*, rendue par le *Civil Resolution Tribunal* de
+la Colombie-Britannique le 14 février 2024** — ⚠ *la source d'un repérage se nomme, faute de quoi le lot
+qui devrait l'instruire n'a pas d'objet* (décision 15 du TOC). ⚠ **Sa portée se dit exactement, et la
+formule antérieure — « à valeur de fait juridique établi » — la surqualifiait** : *le repérage entre ici
+au **régime [C]**, comme tout ce que ce chapitre tire du Vol. I (PRD §7.1), la vérification y ayant porté
+**sur les références et non sur le contenu des affirmations** ; la décision **n'a pas été reprise à sa
+source primaire pour la somme**, et **le volet de pièce de G-1 ne l'a pas instruite**. En [C], **aucun
+énoncé n'est central au sens de CA-IV-01**.* Ce que le repérage porte est ceci : *le tribunal a tenu le
+transporteur responsable d'une information erronée fournie par son agent conversationnel, a accordé
+**650,88 $ CA de dommages**, et a **écarté l'argument selon lequel l'agent serait une entité
+distincte**.* ⚠ **Bien que la décision relève du transport et non de la finance, sa portée est
+directement transposable : un agent qui parle au nom de l'institution l'engage.** ⚠ **Et le ch. 30 § 30.2.5 en porte le pendant européen** : *la firme
 reste responsable du résultat d'une évaluation d'adéquation, quel que soit le degré d'automatisation.*
 
 **Il en découle une distinction structurante pour tout le mouvement**, et il faut la poser
@@ -195,14 +212,14 @@ nulle part.***
 agent tombe simultanément sous *deux* régimes de surveillance qui, ailleurs, restent disjoints.**
 
 *D'une part*, **dès lors qu'il participe à une décision, l'agent relève du risque de modèle** : il doit
-être **inventorié, validé indépendamment et surveillé en continu** au titre des cadres du § 30.2.4 —
-⚠ *dont le cadre canadien, **finalisé le 11 septembre 2025 et en vigueur le 1ᵉʳ mai 2027**, que le
-ch. 25 porte, et dont la modalité est l'**attente**, non l'exigence.*
+être **inventorié, validé indépendamment et surveillé en continu** au titre des cadres du **ch. 30
+§ 30.2.4** — ⚠ *dont le cadre canadien, **finalisé le 11 septembre 2025 et en vigueur le 1ᵉʳ mai
+2027**, que le ch. 25 porte, et dont la modalité est l'**attente**, non l'exigence.*
 
 *D'autre part*, **en tant que composant logiciel hébergé et dépendant de fournisseurs externes** —
 modèle de base, passerelle, serveur d'outils — **le même agent relève de la résilience
 opérationnelle** : il doit être **inscrit au registre des tiers technologiques**, **évalué pour le
-risque de concentration** et **couvert par une stratégie de sortie testée** (§ 30.2.2).
+risque de concentration** et **couvert par une stratégie de sortie testée** (**ch. 30 § 30.2.2**).
 
 **Le patron-signature de la finance est donc le suivant** :
 
@@ -215,8 +232,8 @@ validation, tests de robustesse et surveillance de la dérive ; et le **registre
 cartographie des dépendances, évaluation de concentration et clause de sortie.* ⚠ **Un modèle confiné à
 poids ouverts, dès lors qu'il est fourni par un tiers, s'inscrit lui-même au registre et devient un
 tiers traçable** ; ⚠ **un agent s'exécutant sur une infrastructure d'un grand opérateur hérite
-mécaniquement d'une dépendance vers un fournisseur critique supervisé** (§ 30.2.2). **Ce que le socle
-établit** : les deux régimes et leur non-recouvrement. **Ce qu'il n'établit pas** : cette conséquence de
+mécaniquement d'une dépendance vers un fournisseur critique supervisé** (**ch. 30 § 30.2.2**).
+**Ce que le socle établit** : les deux régimes et leur non-recouvrement. **Ce qu'il n'établit pas** : cette conséquence de
 double inventaire, qui est une lecture reprise du Vol. I.
 
 ⚠ **Le fil de la somme — découplage, contrat, évolution — se relit ici comme une double
@@ -397,8 +414,9 @@ réelle est à re-vérifier au moment de citer.* ⚠ **Les présenter comme un s
 serait une erreur de qualification** — *et c'est le motif d'existence de ce siège.*
 
 ⚠ **Le patron gagnant n'est pas le protocole en soi, mais le serveur d'outils *gouverné*** — *identité
-d'agent, permissions héritées, audit et comptage — **dont le siège est au ch. 24 § 24.4.4**, et qui
-n'est pas reconstruit ici.*
+d'agent, permissions héritées, audit et comptage —, **que le ch. 24 § 24.4.4 développe** et qui n'est pas
+reconstruit ici.* ⚠ *Le mot **siège** est réservé : le ch. 24 ne déclare de domicile qu'à ses § 24.3.4 et
+§ 24.4.2, et son § 24.4.4 n'en est pas un.*
 
 ## § 31.3 — Risque-modèle, auditabilité et explicabilité appliqués aux agents
 
@@ -434,8 +452,9 @@ modèle, et le premier contrôle exigible est son recensement.** ⚠ **C'est exa
 désigne un objet identifiable**, et c'est la seule des cinq questions de la grille que le texte
 présuppose sans ambiguïté.*
 
-**Les trois piliers classiques du risque de modèle se transposent moyennant des contrôles
-spécifiques.**
+**Les trois piliers classiques du risque de modèle — inventaire exhaustif, validation indépendante,
+surveillance continue — se transposent moyennant des contrôles spécifiques.** *Le premier vient d'être
+posé ; les deux autres suivent.*
 
 ⚠ **La validation indépendante ne peut plus se limiter à une mesure de performance sur un échantillon
 figé** : *elle doit **éprouver la robustesse aux injections d'invite**, **mesurer la variance de sortie
@@ -450,9 +469,12 @@ de version du modèle sous-jacent ou de la base de connaissances qui l'ancre.* �
 ch. 28 § 28.2 nomme « adaptativité après déploiement », et que le ch. 29 § 29.1 convertit en
 contrainte.**
 
-⚠ **Un constat sectoriel circule et se cite avec son statut** : *des observateurs documentent que
-**l'inventaire incomplet demeure le défaut le plus fréquemment relevé*** — **analyse d'éditeur de
-gouvernance reprise par la presse spécialisée, à re-vérifier**, non une mesure auditée.
+⚠ **Un constat sectoriel circule, et son attributeur manque à la source elle-même** : *des observateurs
+documentent que **l'inventaire incomplet demeure le défaut le plus fréquemment relevé***. ⚠ **Le Vol. I
+l'impute à une « analyse d'éditeur de gouvernance reprise par la presse spécialisée », millésimée 2025
+et déclarée « à re-vérifier », sans nommer l'éditeur** : *l'anonymat est celui de la source, non une
+parade de la somme, et il rend le constat **non instruisible en l'état*** — **jamais une mesure
+auditée.**
 
 ### 31.3.2 Piste d'audit infalsifiable et production de preuve réglementaire
 
@@ -473,8 +495,10 @@ soit complète.*
 
 **Côté américain, une règle de conservation amendée en 2022 et applicable depuis le 3 janvier 2023
 n'impose plus exclusivement un format d'écriture unique** mais admet une **piste d'audit alternative
-d'effet équivalent** — ⚠ *affirmation datée, hors corpus bibliographique du chapitre source, **à sourcer
-à la rédaction**.*
+d'effet équivalent** — ⚠ *affirmation datée que le Vol. I déclare **hors de son propre corpus
+bibliographique**. **Elle n'entre au socle consolidé à aucun niveau** (PRD §7.1, décision de régime prise
+sur la remontée R-IV-97) : **[C] atteste une vérification des références, et celle-ci ne l'a pas même
+reçue**. Elle demeure **citable avec sa réserve, jamais versable**.*
 
 **La piste sert deux finalités distinctes** : l'**examen prudentiel courant** et la **production forcée
 d'éléments probants** dans une procédure. ⚠ **Pour un agent, l'objet à conserver dépasse la décision
@@ -489,7 +513,9 @@ décision individuelle **ne peut pas la satisfaire a posteriori**.*
 ### 31.3.3 Le standard ouvert de référence en gouvernance financière
 
 **Là où la couche sécurité dispose de référentiels d'attaque, la couche gouvernance financière dispose
-d'un référentiel ouvert dédié**, porté par une fondation sectorielle sous égide neutre.
+d'un référentiel ouvert dédié** : l'*AI Governance Framework* de la **Fintech Open Source Foundation
+(FINOS)**, sous l'égide de la Linux Foundation. ⚠ *L'auteur d'un instrument que la somme reprend comme
+grille ne s'anonymise pas, et la date non plus* (décision 15 du TOC).
 
 ⚠ **Sa version 2.0, annoncée le 12 novembre 2025**, organise un **catalogue croisant risques et
 mitigations — 46 paires au total** — **référencé à sept cadres externes**, ce qui en fait un pendant
@@ -504,9 +530,9 @@ médiée par agent. ⚠ **Une mitigation type codifie l'audit de décision et l'
 d'enregistrements immuables et de la ségrégation des tâches** — *articulant directement ce référentiel
 aux § 31.3.2 et § 31.3.4.*
 
-⚠ **La rigueur de sourçage impose de distinguer l'*annonce* de la contribution agentique — octobre
-2025 — de la *publication* de la version 2.0 — 12 novembre 2025 —, et de traiter ce référentiel comme
-une ressource vivante dont la version doit être figée au moment de citer** (R-09 du Vol. III : *le
+⚠ **La rigueur de sourçage impose de distinguer l'*annonce* de la contribution agentique — Tetrate,
+octobre 2025 — de la *publication* de la version 2.0 — 12 novembre 2025 —, et de traiter ce référentiel
+comme une ressource vivante dont la version doit être figée au moment de citer** (R-09 du Vol. III : *le
 statut se dit à chaque mention*).
 
 Lecture de l'auteur — **adopter ce référentiel comme grille de couverture permet de cartographier, pour
@@ -524,6 +550,13 @@ usage réel.
 chapitre** : § 31.1.1, § 31.3.3 et § 31.4.3. **Hors du chapitre** : le **ch. 34** six fois (§ 34.1.1,
 § 34.2.5, § 34.4.6, § 34.4.7, § 34.5.4 et § 34.7.2) et le **ch. 36** deux fois (§ 36.2.6 et § 36.6).
 **Aucun ne le re-dérive.***
+
+⚠ **Une pièce touche la matière sans nommer ce siège** : *le **ch. 44 § 44.1.7** déclare justifier
+« une seule fois » la construction du contrôle à quatre yeux et **ne cite le ch. 31 nulle part**.* ⚠ *Ce
+qu'il construit est le rendu en langage de modélisation, non le patron, de sorte qu'il ne le re-dérive
+pas ; mais **une pièce qui justifie « une seule fois » une matière dont le siège est ailleurs doit
+nommer ce siège**.* **Omission constatée le 28 juillet 2026, hors de la portée de cette pièce** — *et
+motif pour lequel le contrôle **S5** demeure désactivé sur ce siège.*
 
 **La finance impose de longue date la séparation des fonctions : celui qui prépare une opération ne doit
 pas être celui qui l'approuve.** ⚠ **Transposé à l'acteur-agent, ce principe énonce que *l'agent qui
@@ -592,15 +625,18 @@ la défense.** **Le contrôle de premier ordre reste de subordonner toute action
 libération humaine** (§ 31.1.1) — ⚠ *la défense périmétrique ne pouvant à elle seule contenir un risque
 **structurel**.*
 
-⚠ **La perspective d'une supervision d'agents par d'autres agents est documentée comme tendance
-émergente du secteur, sans constituer, à juin 2026, un substitut au garde-fou humain sur
-l'irréversible** — *statut dit à sa mention.*
+⚠ **La perspective d'une supervision d'agents par d'autres agents est documentée par le Conseil de
+stabilité financière (*Monitoring Adoption of AI*, 2025) comme tendance émergente du secteur, sans
+constituer, à juin 2026, un substitut au garde-fou humain sur l'irréversible** — *statut dit à sa
+mention.*
 
 ⚠ **Une illustration hors entreprise du même patron circule, et elle se cite avec toutes ses réserves** :
 *le détournement d'un portefeuille rattaché à un agent, avec des pertes **de l'ordre de 150 000 à
-170 000 dollars américains** en mai 2026 — **chiffre rapporté, à attribuer et à dater au moment de
-citer** — montre qu'**une action irréversible déclenchée par un contenu hostile suffit à matérialiser la
-perte**.*
+170 000 dollars américains** en mai 2026, montre qu'**une action irréversible déclenchée par un contenu
+hostile suffit à matérialiser la perte**.* ⚠ **Le chiffre n'a pas d'attributeur, et l'absence est celle
+de la source** : *le Vol. I l'écrit « chiffre rapporté, à attribuer et dater au moment de citer » sans
+nommer qui le rapporte* — **il ne s'emploie donc pas comme mesure, seulement comme ordre de grandeur
+déclaré non attribué.**
 
 Lecture de l'auteur — **la conséquence opérationnelle est que la passerelle d'agents du ch. 24 § 24.1.3
 devient en finance le point d'application du garde-fou** : *non plus seulement filtrage de contenu et
@@ -620,13 +656,15 @@ généralisation de rails de paiement irrévocables* (§ 31.1.1).
 **Trois phénomènes se conjuguent.**
 
 **D'abord, les hypertrucages abaissent le coût de l'usurpation d'identité** au point de contourner les
-contrôles de vérification, d'authentification et de diligence — *risque documenté par une alerte de
-régulateur du 13 novembre 2024 et par une veille intergouvernementale du 22 décembre 2025.*
+contrôles de vérification, d'authentification et de diligence — *risque documenté par l'**alerte du
+FinCEN du 13 novembre 2024** sur les montages de fraude recourant à l'IA générative et par la **veille
+du Groupe d'action financière du 22 décembre 2025**.*
 
 **Ensuite, la fraude au paiement autorisé** — *où la victime est manipulée pour **ordonner elle-même**
-le virement* — **prospère précisément sur les rails instantanés** : ⚠ *au Royaume-Uni, un **régime de
-remboursement obligatoire** est entré en vigueur le **7 octobre 2024**, avec un plafond nommé — réponse
-réglementaire directe à ce déplacement du risque vers le payeur.*
+le virement* — **prospère précisément sur les rails instantanés** : ⚠ *au Royaume-Uni, le **régime de
+remboursement obligatoire** du *Payment Systems Regulator* est entré en vigueur le **7 octobre 2024**,
+assorti d'un **plafond de 85 000 £** — réponse réglementaire directe à ce déplacement du risque vers le
+payeur.*
 
 ⚠ **Le piège analytique est ici décisif** : ***l'authentification forte du client ne couvre pas la fraude
 au paiement autorisé*** — *la transaction est **techniquement légitime**, l'authentification a
@@ -635,8 +673,9 @@ d'authentification ne referme ce vecteur**, et le confondre avec un défaut d'au
 erreur de conception.
 
 **Au Canada, ce vecteur se manifeste notamment par l'interception de virements de personne à personne et
-l'usurpation d'autorités** — ⚠ *ces faits relevant de **constats sectoriels** plutôt que d'une
-statistique auditée : absence de documentation d'une mesure consolidée, degré 3.*
+l'usurpation d'autorités** — ⚠ *constats du **centre sectoriel de partage et d'analyse du renseignement
+financier (FS-ISAC), « Navigating Cyber 2025 », 19 mai 2025**, plutôt que statistique auditée :
+**absence de documentation d'une mesure consolidée, degré 3**.*
 
 **Enfin, les rails instantanés suppriment la fenêtre de récupération** que les deux vecteurs précédents
 supposaient encore ouverte : ⚠ *c'est la propriété d'irréversibilité posée au **§ 31.1.1**, siège du
@@ -679,13 +718,14 @@ conformité anti-blanchiment est **non délégable à l'agent** — l'agent peut
 jamais **porter** la responsabilité réglementaire.*
 
 ⚠ **Les déploiements de marché illustrent le mouvement sans en garantir l'autonomie, et les chiffres
-portent leur statut.** *Un fournisseur de services financiers et un fournisseur de modèles ont annoncé
-le **4 mai 2026** un agent de crime financier, données confinées sur l'infrastructure du premier, avec
-deux déploiements nommés ; ⚠ **la valeur revendiquée — passer l'enquête « de jours à minutes » — est un
-chiffre fournisseur, à marquer comme tel, à re-vérifier**.* ⚠ *Un cabinet décrit par ailleurs une
-« révolution agentique » de la vérification client, **dont les gains de productivité relèvent de la
-projection d'analyste**.* ⚠ **Neutralité fournisseur** : *ces offres sont nommées, aucune n'est
-recommandée.*
+portent leur statut et leur attributeur.** *FIS et Anthropic ont annoncé le **4 mai 2026** un agent de
+crime financier, données confinées sur l'infrastructure du premier, avec deux déploiements clients
+nommés par l'annonce ; ⚠ **la valeur revendiquée — passer l'enquête « de jours à minutes » — est un
+chiffre du fournisseur, attribué à FIS (2026) et à re-vérifier**, non une mesure indépendante.* ⚠ *Le
+BCG décrit par ailleurs, en octobre 2025, une « révolution agentique » de la vérification client,
+**dont les gains de productivité relèvent de la projection d'analyste**.* ⚠ **Neutralité fournisseur**
+(PRD Vol. II §8.4) : *ces offres sont nommées, aucune n'est recommandée* — ⚠ *et l'attributeur d'un
+chiffre se nomme même quand l'offre pourrait rester anonyme* (décision 15 du TOC).
 
 Lecture de l'auteur — **le cas anti-blanchiment est révélateur parce qu'il aligne le fil de la somme et
 la contrainte juridique** : *le **découplage** entre la phase d'investigation — déléguée à l'agent — et
@@ -788,10 +828,13 @@ datée retenue** au socle.* ⚠ **Neutralité fournisseur** : *trois offres nomm
 fournisseurs critiques** (**ch. 30 § 30.2.2**) ; **relocaliser la donnée dans une région ne réduit donc
 pas la dépendance systémique — elle la confirme**.* ⚠ **Le risque de concentration documenté au ch. 30
 § 30.2.2 — une part supérieure à 65 % des entités financières européennes s'appuyant sur au moins deux
-des trois grands fournisseurs pour des fonctions critiques, *étude tierce à re-vérifier* — vaut
-intégralement pour les déclinaisons souveraines** : *une panne simultanée chez un fournisseur critique
-**frappe ses régions souveraines comme ses régions standard**, et **le risque systémique d'agents
-corrélés s'en trouve aggravé lorsque tout un secteur appuie ses agents sur le même socle*** (§ 31.1.2).
+des trois grands fournisseurs pour des fonctions critiques — vaut intégralement pour les déclinaisons
+souveraines** : *une panne simultanée chez un fournisseur critique **frappe ses régions souveraines
+comme ses régions standard**, et **le risque systémique d'agents corrélés s'en trouve aggravé lorsque
+tout un secteur appuie ses agents sur le même socle*** (§ 31.1.2). ⚠ **Le chiffre porte une réserve
+d'attributeur** : *le Vol. I l'impute à une « étude tierce » qu'il déclare « à re-vérifier », **sans en
+nommer l'auteur** — l'anonymat est celui de la source, et la proportion ne s'emploie donc pas comme
+mesure.*
 
 ⚠ **La nuance d'architecture à retenir est que la souveraineté de premier ordre tient moins à la
 *localisation* qu'à la *gouvernance de l'identité et des accès*** — *qui peut invoquer l'agent, sous
@@ -818,10 +861,11 @@ n'établit pas** : ces deux invariants, qui sont une lecture reprise du Vol. I.
 *Section de sortie sans homologue direct dans la source — construction d'éditeur.*
 
 1. ⚠ **Le patron d'irréversibilité** (§ 31.1.1), **siège pour toute la somme** : *préparation par
-   l'agent, libération humaine sur l'action irréversible.* Les **ch. 33, 34 et 36** y renvoient ;
-   **aucun ne le re-dérive.**
+   l'agent, libération humaine sur l'action irréversible.* Les **ch. 24, 33, 34 et 36** y renvoient ;
+   **aucun ne le re-dérive** — ⚠ *seul le **ch. 49 § 49.11.3** en consomme la matière sans le nommer.*
 2. ⚠ **Le siège du risque systémique** (§ 31.1.2) : *la corrélation des agents est un canal distinct de
-   la défaillance individuelle.* Le **ch. 34** y renvoie sans re-citer ses sources.
+   la défaillance individuelle.* Le **ch. 34** y renvoie sans re-citer ses sources — ⚠ *et le **ch. 49
+   § 49.9** en reprend la matière sans le nommer.*
 3. ⚠ **Le patron-signature de la finance** (§ 31.1.4) : *un même agent produit la piste d'audit pour deux
    régimes qui ne se recouvrent pas.* **Le ch. 30 § 30.2.1 déclare lui-même ne faire que l'instancier.**
 4. **Les trois couches du substrat sémantique** (§ 31.2.1) : *messagerie, capacité, ontologie* — et
@@ -854,30 +898,41 @@ serveur d'outils financier ratifié** — *le § 31.2.6 existe pour interdire de
 gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A) : *un rédacteur ne corrige jamais le
 TOC, ce PRD ni le Conspectus — il **remonte**.*
 
-**Ce qui est enfreint.** La porte **G-3** et le **volet résiduel de G-1**. Instruction d'auteur du
-27 juillet 2026. ⚠ **G-4 ne conditionne pas ce chapitre** : sa ligne Fusion ne cite que le Vol. I.
-⚠ **D-9 ne le bloque pas** : *il pose le patron de la libération humaine **au titre d'un durcisseur du
-domaine**, et **en déclare la limite empirique** au § 31.1.1 plutôt que de la présumer résolue.*
+**Ce qui est enfreint.** La porte **G-3**, ouverte le 27 juillet 2026 quand cette pièce a été rédigée
+sur instruction d'auteur, et le **volet de pièce de G-1**. ⚠ **G-3 a été franchie le 28 juillet 2026**
+(PRD v0.14, jalon J-IV-2) — *et cela ne rattrape rien : un arbitrage qui suit une infraction la solde,
+il ne l'efface pas.* Le socle consolidé existe désormais, mais **il ne couvre pas ce chapitre** : voir
+le champ *Socle mobilisé*. ⚠ **G-4 ne conditionne pas ce chapitre** : sa ligne Fusion ne cite que le
+Vol. I. ⚠ **D-9 ne le bloque pas** : *il pose le patron de la libération humaine **au titre d'un
+durcisseur du domaine**, et **en déclare la limite empirique** au § 31.1.1 plutôt que de la présumer
+résolue.*
 
-1. ⚠ **Aucun énoncé n'est central au sens de CA-IV-01, et la contrainte mord ici autant qu'au ch. 24.**
+1. ⚠ **Aucun énoncé n'est central au sens de CA-IV-01, et le franchissement de G-3 n'y change rien.**
    **Toute la matière vient du Vol. I**, dont les faits entrent en **[C]** : *une entrée [C] ne porte
-   jamais un fait central.* **L'élévation en [B] passerait par la lecture des sources primaires que le
-   Vol. I cite** — *plusieurs dizaines pour ce seul chapitre, dont une décision de tribunal, deux
+   jamais un fait central.* ⚠ **Le socle consolidé ne l'améliore pas ici** : *il ne porte du Vol. I que
+   dix-sept entrées héritées, toutes en `[C]`, et **une seule couvre ce chapitre** — `S-157`, elle-même
+   **déclarée non élevable***. **L'élévation en [B] passerait par la lecture des sources primaires que
+   le Vol. I cite** — *plusieurs dizaines pour ce seul chapitre, dont une décision de tribunal, deux
    règlements européens et sept corpus de standards.*
-2. ⚠ **Le volet résiduel de G-1 pèse ici sur une vingtaine de jalons datés** : *une bascule de format de
+2. ⚠ **Le volet de pièce de G-1 pèse ici sur une vingtaine de jalons datés** : *une bascule de format de
    novembre 2025, un retrait attendu en novembre 2026, une consultation ouverte en juin 2026 dont le
    rapport est attendu en octobre 2026, une disponibilité générale du 15 janvier 2026, un référentiel de
    gouvernance en version 2.0 du 12 novembre 2025, un standard hypothécaire du 29 octobre 2025.*
-   ⚠ **Aucun n'a été repris à la source primaire**, et **le ch. 50 les enregistrera comme événements de
-   péremption.**
-3. **Les décomptes sont publiables** (G-2). L'écart à la cible est relevé au [`README.md`](README.md) du
-   dossier et alimente **D-4**, déjà tranchée.
-4. **Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan.** Ils résolvent
-   contre l'entrée du TOC : **ch. 32, 33, 34, 36** (présent Livre, même passe), le **Livre IV** dans son
-   ensemble, **ch. 48** et **ch. 50** (Livre V). Résolvent contre du **texte rédigé** : **ch. 1**,
-   **ch. 2**, **ch. 3**, **ch. 6**, **ch. 7**, **ch. 8**, **ch. 10**, **ch. 11 § 11.1.2**, **ch. 14
-   § 14.4**, **ch. 17 § 17.5**, **ch. 18 § 18.1**, **ch. 19 § 19.2**, **ch. 24**, **ch. 25 § 25.5**,
-   **ch. 27 § 27.8**, **ch. 28 § 28.2**, **ch. 29 § 29.1 et § 29.4** et **ch. 30**.
+   ⚠ **Aucun n'a été repris à sa source primaire**, et **le ch. 50 les enregistrera comme événements de
+   péremption.** ⚠ **La re-datation du 28 juillet 2026 ne les a pas touchés** : *elle a porté les 123
+   entrées à sensibilité temporelle du socle consolidé, et aucun de ces jalons n'y a d'entrée* — *le
+   volet levé est celui des faits du socle, non celui des pièces des Livres II et III.*
+3. **Les décomptes sont publiables** (G-2). La mesure du corps est de **9 177 mots** au 28 juillet 2026
+   — *cible ≈ 8 500, soit **+8,0 %***, par [`decompte.sh`](../PRD/decompte.sh), seule autorité. *L'écart
+   valait **+0,5 %** avant la relecture du 28 juillet ; **il est entièrement imputable à l'appareil de
+   régime de preuve**, non à de la matière neuve.* Elle alimente **D-4**, déjà tranchée, qui **interdit
+   l'amputation comme le gonflement**.
+4. **Les renvois « ch. N » ne sont plus des renvois de plan.** *Les cinquante pièces existent en
+   brouillon depuis le 27 juillet 2026* : les **112 occurrences de « ch. N »** de la pièce entière ont
+   été **re-résolues contre le texte rédigé le 28 juillet 2026**, section par section, et **toutes
+   résolvent** — *aucune ne pointe hors de la plage 1-50, aucune ne vise une section absente de sa
+   pièce cible.* ⚠ **Résoudre n'est pas concorder** : *un renvoi vers un brouillon reste un renvoi vers
+   un brouillon*, et il se re-vérifiera contre la version recevable de sa cible.
 
 **Remontée ouverte par ce chapitre :**
 
@@ -885,7 +940,8 @@ domaine**, et **en déclare la limite empirique** au § 31.1.1 plutôt que de la
   que le TOC déclare en toutes lettres** : le patron d'irréversibilité (§ 31.1.1), le risque systémique
   (§ 31.1.2), le patron-signature de la double-qualification (§ 31.1.4), le critère anti-emballement
   (§ 31.2.6), le patron du quatre-yeux (§ 31.3.4) et le patron AML (§ 31.4.3). ⚠ **Aucun des six ne
-  figure à la table `SIEGES` de [`PRD/check-sieges.py`](../PRD/check-sieges.py)**, qui en porte sept, tous
+  figurait, à l'ouverture de cette remontée, à la table `SIEGES` de
+  [`PRD/check-sieges.py`](../PRD/check-sieges.py)**, qui en portait alors sept, tous
   posés aux Livres I et II. **Demande remontée** : que les six soient versés à la table avec leur
   signature de forme et leur motif de déclenchement, et que le harnais de mutation soit rejoué. ⚠ **La
   remontée est la même classe que R-IV-82, ouverte au ch. 24 pour deux domiciles** — *et le cardinal
@@ -893,32 +949,44 @@ domaine**, et **en déclare la limite empirique** au § 31.1.1 plutôt que de la
   ses six marqueurs** — le geste du rédacteur — *mais un siège qu'aucun script ne regarde finit par
   diverger*, et **les deux autres gestes ne sont pas de son ressort**.
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 31.1 à § 31.5,
-avec leurs **dix-neuf sous-sections**, dans l'ordre exact —, le § 31.0 étant une **ouverture de
-chapitre**. La **table de couverture est respectée pour ses huit lignes**, ⚠ **y compris ses trois
-sorties de périmètre** : *le §5.0 est **acheminé à l'avant-propos**, le §5.3 va au **ch. 30**, et le
-§5.5.4 — **siège unique du KYA** — est **déjà consolidé au ch. 18** et n'est pas repris.* ⚠ **Les trois
-sont nommées dans le corps au moment où le lecteur les attendrait**, au § 31.0 et au § 31.4. La
-**décision 14 a été exécutée avant la rédaction**, domaine déclaré : une thèse examinée, zéro réalignée,
-**deux bornes de périmètre portées**. ⚠ **Les six sièges portent leur marqueur explicite**, et **les
-quatre sièges amont que le chapitre touche sont renvoyés et non reconstruits** : *la triade létale
-(**ch. 19 § 19.2**), le KYA (**ch. 18 § 18.1**), le socle IAM (**ch. 3**) et la sémantique d'effet
-(**ch. 48**).* ⚠ **Et le tri prospectif renvoie désormais à son siège, le ch. 49 § 49.0**, au § 31.1.2 —
-*renvoi ajouté le 28 juillet 2026.* Les **métriques auto-déclarées ou projections portent leur statut à
-chaque occurrence**, sans exception d'usage illustratif — *domaine balayé et marqueurs ventilés à
-l'en-tête, y compris le chiffre de pertes du § 31.4.1 et la valeur revendiquée du § 31.4.3.* Les **deux
-occurrences de R-09 disent leur statut** et **les absences portent toutes leur degré** — *une occurrence
-du sigle R-14, cinq du marqueur « degré 3 »*. ⚠ **R-13 est tenu à son occurrence** : *la distinction
-copilote / autonomie
-transactionnelle est **déclarée n'être pas une échelle d'autonomie**, et l'homonymie avec les trois
-échelles du ch. 14 § 14.4 est nommée plutôt que fuie.* ⚠ **Ces cardinaux ont été re-mesurés au commit du
-28 juillet 2026** (décision 16 du TOC) ; *l'attestation antérieure annonçait dix métriques, onze
-occurrences de R-09, six de R-14 et deux de R-13, aucun de ces quatre nombres n'étant re-mesurable
-contre le corps* — ⚠ **et les six bandeaux de siège ont vu leurs listes de renvois entrants re-mesurées
-par balayage des cinquante pièces**, le relevé antérieur nommant au § 31.3.4 un § 31.4.1 qui n'en porte
-aucun. Enfin, ⚠ **le patron du § 31.1.1 est écrit avec sa
-limite empirique** : *le ch. 17 § 17.5 déclare qu'on ne sait rien de l'efficacité de la supervision
-humaine, et le chapitre l'écrit là où il pose le patron qui en dépend.*
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC** — § 31.1 à § 31.5, avec
+leurs **dix-neuf sous-sections**, dans l'ordre exact —, le § 31.0 étant une **ouverture de chapitre**.
+⚠ **Une déviation de forme se déclare ici plutôt que de rester tue** (décisions 8 et 15c du TOC) :
+*les **intitulés** des sous-sections s'écartent de ceux du plan, dénominations de normes et
+anglicismes retirés au titre de la parade de péremption ; **présence, ordre et matière sont
+conformes**, et la v0.29 du TOC a elle-même retenu la forme française de la pièce pour les deux
+sièges des § 31.2.6 et § 31.3.4.* La **table de couverture est respectée pour ses huit lignes**,
+⚠ **y compris les trois qui sortent du chapitre — un acheminement et deux hors-périmètre** : *le §5.0
+est **acheminé à l'avant-propos**, le §5.3 va au **ch. 30**, et le §5.5.4 — **siège unique du KYA** —
+est **déjà consolidé au ch. 18** et n'est pas repris.* ⚠ **Les trois sont nommées dans le corps au
+moment où le lecteur les attendrait**, au § 31.0 et au § 31.4. La **décision 14 a été exécutée avant la
+rédaction**, domaine déclaré : une thèse examinée, zéro réalignée, **deux bornes de périmètre
+portées** ; *la thèse a été **re-collationnée mot à mot contre la v0.29 le 28 juillet 2026** et
+demeure identique.* ⚠ **Les six sièges portent leur marqueur explicite**, et **les six sièges ou
+domiciles amont que le chapitre touche sont renvoyés et non reconstruits** : *la triade létale
+(**ch. 19 § 19.2**), le KYA (**ch. 18 § 18.1**), le socle IAM (**ch. 3**),
+l'application des permissions à la récupération (**ch. 24 § 24.4.2**), la sémantique d'effet
+(**ch. 48 § 48.1**) et le tri prospectif (**ch. 49 § 49.0**, renvoi ajouté le 28 juillet 2026, au
+§ 31.1.2).* Les **métriques
+auto-déclarées et les projections portent leur statut à chaque occurrence**, sans exception d'usage
+illustratif — *domaine balayé et marqueurs ventilés à l'en-tête* ; ⚠ **et depuis le 28 juillet 2026
+elles portent aussi leur attributeur, ou la déclaration qu'il manque à la source** : *McKinsey pour la
+projection du § 31.1.2, FIS pour la valeur revendiquée du § 31.4.3, le BCG pour ses gains de
+productivité — tandis que le chiffre de pertes du § 31.4.1, le constat d'inventaire du § 31.3.1 et la
+proportion du § 31.5.2 sont **déclarés non attribuables, l'anonymat étant celui du Vol. I**.* Les
+**deux occurrences de R-09 disent leur statut** et **les absences portent toutes leur degré** — *une
+occurrence du sigle R-14, cinq du marqueur « degré 3 »*. ⚠ **R-13 est tenu à son occurrence** : *la
+distinction copilote / autonomie transactionnelle est **déclarée n'être pas une échelle d'autonomie**,
+et l'homonymie avec les trois échelles du ch. 14 § 14.4 est nommée plutôt que fuie.* ⚠ **Tous ces
+cardinaux ont été re-mesurés au commit du 28 juillet 2026** (décision 16 du TOC) ; *l'attestation
+antérieure annonçait « projection d'analyste » aux § 31.1.2, § 31.4.2 et § 31.4.3, et une seule
+occurrence du renvoi §8.4 — deux nombres que le corps ne soutient plus.* ⚠ **Les six bandeaux de siège
+ont vu leurs listes de renvois entrants re-mesurées par balayage des cinquante pièces**, et **trois
+omissions de renvoi chez autrui y sont désormais nommées** : *le ch. 49 § 49.11.3 et le ch. 49 § 49.9
+pour les deux sièges du § 31.1, le ch. 44 § 44.1.7 pour celui du § 31.3.4* — **hors de la portée de
+cette pièce, qui les signale plutôt que de les corriger.** Enfin, ⚠ **le patron du § 31.1.1 est écrit
+avec sa limite empirique** : *le ch. 17 § 17.5 déclare qu'on ne sait rien de l'efficacité de la
+supervision humaine, et le chapitre l'écrit là où il pose le patron qui en dépend.*
 
 
 ---
@@ -942,10 +1010,27 @@ découverte de la collision — **aucun numéro n'est partagé**.*
   ⚠ ***payer une dette d'outillage pendant qu'un autre l'écrit produirait une table incohérente que le
   harnais de mutation ne détecterait pas***. ☑ **Les six marqueurs sont écrits dans la pièce** — *le
   geste du rédacteur* ; ☐ **table et harnais restent dus**.
+- ☑ **Reprise du 28 juillet 2026 — la dette est payée, et le constat se date plutôt qu'il ne réécrit
+  le précédent.** *Les **six sièges de ce chapitre figurent désormais à la table `SIEGES`*** de
+  [`check-sieges.py`](../PRD/check-sieges.py), qui en porte **vingt-six**, chacun avec sa **signature
+  de forme** et son **motif de déclenchement**. ⚠ **Ce que la relecture a constaté sur pièce** : *les
+  **six marqueurs** et les **dix-huit lignes de signature** résolvent contre ce fichier* — **le
+  contrôle inter-pièces lui-même n'a pas été exécuté ici**, d'autres pièces étant en cours d'édition,
+  *et un contrôle exécuté sur un corpus instable atteste un état que le commit ne produira pas.*
+  ⚠ **Le versement est partiel sur trois des six, et le motif est écrit à la table** : *le contrôle
+  **S5** — « toute pièce touchant la matière renvoie au siège » — y est **désactivé** pour les
+  § 31.1.1, § 31.1.2 et § 31.3.4*, **trois pièces hors passe consommant leur matière sans les
+  nommer** — ch. 49 § 49.11.3, ch. 49 § 49.9 et ch. 44 § 44.1.7, **les trois vérifiées sur pièce le
+  28 juillet 2026**. ⚠ *Les aligner dépasse le mandat d'un relecteur de chapitre, et **un contrôle
+  bruyant est un contrôle ignoré**.* **S5 est actif** pour les § 31.1.4, § 31.2.6 et § 31.4.3.
+  ☐ **La réactivation des trois autres reste due, après alignement des pièces qui omettent le
+  renvoi.**
 
-⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et — pour les chapitres qui citent le
-Vol. III — **G-4** demeurent ouvertes ; le socle consolidé compte **zéro entrée** ; **aucun énoncé de
-cette pièce n'est central au sens de CA-IV-01**. **CA-IV-11 et CA-IV-13 ne sont pas satisfaites** —
-*aucune relecture par un relecteur distinct du rédacteur*. Cette pièce reste un **brouillon non
-publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune
-question n'attend plus de réponse qui ne soit déjà tranchée.*
+⚠ **Ce que la clôture ne change pas.** **G-3 a été franchie le 28 juillet 2026**, mais *le socle
+consolidé ne porte du Vol. I que dix-sept entrées héritées, toutes en `[C]`, dont **une seule couvre
+ce chapitre** et elle est **déclarée non élevable*** : **aucun énoncé de cette pièce n'est central au
+sens de CA-IV-01**, et le franchissement ne l'a pas rendu possible. **G-4** demeure ouverte pour les
+chapitres qui citent le Vol. III — *ce chapitre n'en est pas.* **CA-IV-11 et CA-IV-13 ne sont pas
+satisfaites** — *aucune relecture par un relecteur distinct du rédacteur, D-6 n'en fournissant pas.*
+Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce
+recevable : cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*
