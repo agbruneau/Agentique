@@ -132,6 +132,29 @@ qu'un autre écrit le même fichier produirait une table incohérente que le har
 détecterait pas*. Le détail vit au [`CLAUDE.md` du dossier](2%20-%20Compendium/CLAUDE.md) et au
 `README.md` de `Livre III/`.
 
+⚠ **Les deux passes concurrentes sont closes depuis le 27 juillet 2026, et le cardinal se re-mesure
+enfin — il vaut CINQ.** Les **dix chapitres du Livre IV** (ch. 37-46) et les **quatre du Livre V**
+(ch. 47-50) ont été rédigés et arbitrés le même jour ; **les cinq livres du plan existent donc en
+brouillon hors portes**, soit **cinquante chapitres sur cinquante**. ⚠ **Rien de cela ne requalifie le
+volume** : *le socle consolidé compte toujours **zéro entrée**, **G-3 n'est pas entamée**, aucun énoncé
+n'est central au sens de CA-IV-01, et **CA-IV-13 n'est satisfaite pour aucune pièce*** — **ne pas
+écrire « Vol. IV rédigé » dans un décompte ni dans un tableau d'état**. *Cinquante chapitres écrits
+hors portes ne franchissent aucune porte ; ils en documentent le coût.* **Trois faits de la passe du
+Livre IV valent au niveau de la racine.** *(a)* ⚠ **Une collision d'identifiants entre passes
+concurrentes s'est produite et a été résolue** : *trois passes numérotant dans une série partagée sans
+allocation préalable ont alloué **dix numéros deux fois** ; la renumérotation a porté sur le Livre IV,
+dont l'arbitrage n'était pas publié, et ses remontées des ch. 44-46 passent de R-IV-60…69 à
+**R-IV-100…109**.* ⚠ **Aucun instrument versionné ne rapproche deux plages de remontées** — *la
+collision n'a été trouvée qu'à la main, et c'est une dette d'appareil déclarée qui vaut pour tout le
+dépôt.* *(b)* ⚠ **Une classe de désalignement neuve est apparue, INTERNE AU PLAN** : *le TOC se
+contredisait lui-même en deux endroits — une numérotation de sous-sections empruntée à un autre
+chapitre, un titre de section contredisant sa propre note de provenance —, et **aucun des quinze
+contrôles ne voit cette classe**.* *(c)* ⚠ **Une réconciliation reste due et elle s'alourdit** : *le
+**versement des huit sièges du Livre III** à `check-sieges.py` n'a pas été fait, la table portant
+aujourd'hui **douze sièges** — les trois du Livre I, les quatre du Livre II, les deux du Livre V et
+les trois du Livre IV.* **La numérotation de version du PRD, elle, est réconciliée** : les passes se
+sont succédé en v0.10, v0.11 puis **v0.12**, et aucune rangée n'est en double.
+
 ⚠ **Un fait de méthode se signale ici parce qu'il vaut au-delà du Vol. IV.** La rédaction des ch. 10
 et 11 a révélé deux fois la même classe de défaut : une **lacune déclarée du socle d'un volume**
 comblée par le **texte rédigé d'un autre volume** du dépôt. *Ce n'est pas une contradiction entre

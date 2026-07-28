@@ -54,7 +54,12 @@ MUTATIONS = [
      "Sections : généalogie (comptes de service → workload identity)",
      "Sections (~5 000 mots) : généalogie (comptes de service → workload identity)", "C3"),
     ("M4",  "TOC.md", "renvoi ch. 39 (d", "renvoi ch. 58 (d", "C4"),
-    ("M5",  "TOC.md", "obligations des Livres III-IV,", "obligations des Livres III-XII,", "C5"),
+    # ⚠ Ancre réancrée à la v0.28 : la précédente — « obligations des Livres III-IV, » —
+    # a disparu avec le réalignement de la thèse du ch. 40 (remontée R-IV-48), qui a
+    # dû retirer le mot « obligations » : un seul des quatre instruments impose.
+    # *Une mutation dont l'ancre disparaît cesse de tester sans le dire, et le bilan
+    # du harnais est le seul endroit où cela se voit.*
+    ("M5",  "TOC.md", "des Livres III-IV attendent", "des Livres III-XII attendent", "C5"),
     # M5b teste la branche « et » de C5, ajoutée en v0.21 : « Livres II et VII »
     # ne déclenchait rien avant elle (angle mort constaté au journal v0.21 du TOC).
     ("M5b", "TOC.md", "IAM et observabilité en place (Livres II et IV)",
@@ -95,7 +100,11 @@ MUTATIONS = [
     ("M12", "TOC.md", "*Fusion : Vol. III ch. 12 + Vol. I* Monographie",
      "*Fusion : Vol. III *TOC* §12.1 + Vol. I* Monographie", "C12"),
     ("M13", "TOC.md", "d'un ouvrage à 50 chapitres", "d'un ouvrage à 54 chapitres", "C13"),
-    ("M14", "README.md", "**v0.23** (27 juillet 2026)", "**v0.10** (21 juillet 2026)", "C14"),
+    # ⚠ Ancre réancrée à la v0.28 : la précédente citait la v0.23, périmée depuis cinq
+    # passes. **Cette ancre se réancre à CHAQUE passe** — c'est une faiblesse de
+    # conception connue, consignée plutôt que corrigée ici : la corriger demanderait
+    # un motif au lieu d'un littéral, donc une modification du harnais à valider.
+    ("M14", "README.md", "**v0.28** (27 juillet 2026)", "**v0.10** (21 juillet 2026)", "C14"),
     # M15 — plafond dur (décision 13a) : un chapitre de plus doit être refusé.
     ("M15", "TOC.md", "### Chapitre 50 — Péremption",
      "### Chapitre 51 — Chapitre de test du plafond\n\n### Chapitre 50 — Péremption", "C15"),

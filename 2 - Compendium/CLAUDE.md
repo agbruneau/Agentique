@@ -260,6 +260,61 @@ jour quand une passe change une convention, plutôt que de laisser diverger la p
 
 ⚠ **Ce que la v0.17 n'a pas touché, et qu'une passe de cohérence ne doit jamais toucher** : les **risques 13, 14, 16 et — depuis la v0.25 — 17** (Livre V sans socle, couche d'exécution sans chapitre, un chapitre sans socle dans un livre qui en a un, et **la quatrième pièce du passeport, qui n'a ni chapitre ni socle**) portent sur du **contenu manquant**, non sur une incohérence — leur arbitrage est une décision d'auteur (**D-2**, **D-3**, **D-8** du PRD), et **une passe de cohérence ne les tranche pas**. De même la thèse forte du ch. 19, à instruire par dénombrement. ⚠ **Le risque 15 sort de cette liste depuis la v0.24, et il faut lire comment** : il est **tranché par D-7 — périmètre assumé et déclaré** —, ce qui **ne le comble pas** mais le **borne**. Les ch. 6, 37 et 48 sont **fermés** à l'accord entre agents sous défaillance ; y ajouter une section rouvrirait la décision d'auteur, non le seul chapitre. *Un périmètre assumé n'est pas un angle mort résorbé : c'est un angle mort dont le lecteur est prévenu.*
 
+## ⚠ Livre IV — dix chapitres rédigés hors portes, et une collision d'identifiants entre passes concurrentes (27 juillet 2026)
+
+⚠ **Sur instruction d'auteur, [`Livre IV/`](Livre%20IV/) a été créé le 27 juillet 2026 et ses dix
+chapitres (ch. 37-46) y ont été rédigés en `.md` et en `.html`, hors portes.** Ils sont **arbitrés**
+depuis le même jour — **TOC v0.28, PRD v0.12** — et demeurent un **brouillon non publiable**. Le
+tableau des trente-deux issues, la volumétrie et les arbitrages de périmètre vivent au
+[`README.md` de `Livre IV/`](Livre%20IV/README.md) et **ne sont pas repris ici**. **Cinq faits valent
+au niveau du dossier.**
+
+*(a)* ⚠ **L'écart de portes de ce Livre est le plus large du compendium, et il tient à un CUMUL.** Il
+est rédigé avant **G-3**, avant **G-4** — préalable déclaré de son premier mouvement — et avant
+**G-5**, ⚠ **qui conditionne le Livre entier** ; et son **ch. 41** l'est en outre avant **G-6** et
+**D-8**, *qui conditionnent nommément son existence*. ⚠ **Une infraction n'est pas rattrapée par
+l'arbitrage qui l'a suivie** : *la décision **D-2** qui conditionne G-5 a été prise le même jour — par
+une autre passe, et **après** cette rédaction.*
+
+*(b)* ⚠ **Une collision d'identifiants entre passes concurrentes s'est produite, et c'est un fait de
+méthode qui vaut au-delà de ce Livre.** *Trois passes ont écrit et arbitré les Livres III, IV et V
+dans le même dépôt le même jour, en numérotant leurs remontées dans une **série unique et partagée
+sans allocation préalable** ; **dix numéros — R-IV-60 à R-IV-69 — ont été alloués deux fois**.* **La
+renumérotation a porté sur le Livre IV**, dont l'arbitrage n'était pas publié : ses remontées des
+ch. 44, 45 et 46 passent de R-IV-60…69 à **R-IV-100…109**, et **aucun numéro n'est partagé**. ⚠ **La
+carte se chaîne, elle ne se réécrit pas**, et elle vit au README du Livre. ⚠ **Aucun instrument
+versionné ne rapproche deux plages de remontées** — *la collision n'a été trouvée qu'à la main, et
+c'est une dette d'appareil déclarée.*
+
+*(c)* ⚠ **Une classe de désalignement neuve est apparue, et elle est INTERNE AU PLAN.** Deux remontées
+de ce Livre ne portent pas sur un écart entre le plan et sa source : **le plan se contredit
+lui-même** — *neuf sous-sections numérotées « 43.1.x » sous le chapitre 44, et un titre de section
+écrivant « Confrontation externe » quand sa propre note de provenance écrit « interne au corpus »*.
+⚠ **Aucun des quinze contrôles ne voit cette classe** : `check-toc.py` porte sur des motifs de ligne et
+**ne connaît pas les tables détaillées**. *Seule la lecture conjointe d'un titre et de sa note l'a
+montrée* — quatrième passe consécutive dont le défaut échappe au script.
+
+*(d)* ⚠ **Dix thèses sur douze étaient désalignées — la proportion la plus élevée des cinq Livres**, et
+le domaine de balayage se déclare : *douze thèses examinées, dix réalignées ; le Livre compte **dix
+chapitres mais douze thèses**, les ch. 37 et 45 en portant deux chacun au titre des fusions v0.20.*
+**Seules celles des ch. 44 et 46 résistent à la collation.**
+
+*(e)* ⚠ **La volumétrie de ce Livre enseigne l'inverse de celle du Livre II, et les deux se lisent
+ensemble.** *Le Livre II dépassait de **+23,4 %** parce que **le bornage allonge** ; celui-ci reste à
+**−19,9 %** (55 249 mots pour 69 000) parce que **le siège raccourcit** — huit des quinze sections de
+son ch. 45 ont leur siège ailleurs dans la somme, et **un chapitre d'instanciation renvoie là où une
+monographie développe**.* ⚠ **Les deux forces jouent dans tous les Livres ; ce qui change est laquelle
+domine**, et *l'enveloppe héritée n'avait budgété ni l'une ni l'autre.* **La mesure alimente D-4**,
+dont le re-calibrage reste remis à une passe unique de clôture.
+
+⚠ **Trois sièges neufs sont versés à l'appareil par ce Livre** — les **cinq points de contrôle
+obligatoires** et le **modèle de maturité avec les trois échelles d'autonomie** (ch. 43), l'**organisation
+de la fabrique** (ch. 45) —, portant la table de [`PRD/check-sieges.py`](PRD/check-sieges.py) à **douze
+sièges** et le harnais à **onze mutations**. ⚠ **S5 est désactivé pour deux d'entre eux, avec un motif
+mesuré** : *une pièce du Livre II et quatre pièces hors passe emploient la matière sans renvoyer au
+siège, et les aligner dépasse le mandat de la passe qui verse* — **un contrôle bruyant est un contrôle
+ignoré**.
+
 ## ⚠ Plafond dur : cinquante chapitres, jamais plus
 
 **Règle d'auteur du 27 juillet 2026, sans exception.** Le compendium compte **au plus cinquante
