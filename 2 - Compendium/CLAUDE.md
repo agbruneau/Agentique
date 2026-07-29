@@ -178,7 +178,19 @@ exigent un **relecteur distinct du rédacteur**, et **D-6 ne fournit pas de tier
 pas relire*. L'écart est déclaré au PRD §11 ; *une lacune de socle se comble par une source, celle-ci
 par une seconde personne.*
 *(d)* **Le `.html` est un rendu, jamais une seconde source** : toute correction se fait au `.md` et
-se reporte au même commit. Le rendu `.html` et ses huit contrôles sont outillés par le skill (voir
+se reporte au même commit. ⚠ **Depuis la purge du 29 juillet 2026, il ne porte QUE le corps
+technique** : l'**en-tête à cinq champs**, la **thèse citée depuis le TOC** et la **note de statut**
+en ont été retirés des cinquante pièces — *la même coupe que `build/assemble.py` opère pour le PDF*,
+appliquée au rendu de lecture. **Quatre points.** **(1)** ⚠ **Retirer n'est pas ignorer** : le
+générateur du skill **exige** les trois à la lecture et **échoue** si l'un manque. **(2)** ⚠ **Les
+quinze renvois du corps vers la note retirée sont marqués d'une dague, jamais supprimés**
+(`§ 40.7 †`), et le pied de page en donne la lecture. **(3)** ⚠ **Le contrôle [6] du vérificateur a
+changé de sens** : il exige l'appareil **au `.md`** et le **refuse** au `.html` — harnais rejoué,
+**quatorze mutations, toutes détectées**. **(4)** ⚠ **Le décompte des dagues diffère de celui du
+PDF** — **quinze** ici, **vingt-trois** là —, et l'écart n'est pas un défaut : *les deux coupes ne
+tombent pas au même endroit*, le paragraphe d'appareil qui suit la thèse restant dans le corps que
+`assemble.py` produit. **Ne pas « aligner » un cardinal sur l'autre** : chacun se mesure sur son
+propre rendu. Le rendu `.html` et ses huit contrôles sont outillés par le skill (voir
 plus bas) ; ⚠ **le vérificateur ne se tuyaute jamais dans un enchaînement `&&`**, le code de sortie
 du dernier maillon masquant son échec — faute déjà commise sur le ch. 6, poussé avec un défaut de
 rendu alors que le contrôle échouait.

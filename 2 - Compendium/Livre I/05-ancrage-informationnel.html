@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 5 — Ancrage informationnel : mémoire, contexte, RAG agentique · La somme agentique</title>
-<meta name="description" content="l&#x27;agent persistant se construit par l&#x27;ingénierie du contexte et une pile de récupération gouvernée.">
+<meta name="description" content="Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6)">
 <meta name="author" content="André-Guy Bruneau">
 <meta name="color-scheme" content="dark">
 <style>
@@ -535,13 +535,10 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <li><a href="#s51"><span class="num">5.1</span>Du modèle sans état à l&#x27;agent persistant : mémoire et ingénierie du contexte</a></li>
     <li><a href="#s52"><span class="num">5.2</span>Architectures de mémoire long terme et pile de récupération</a></li>
     <li><a href="#s53"><span class="num">5.3</span>RAG agentique : planifier-récupérer-critiquer-itérer</a></li>
-    <li><a href="#s54"><span class="num">5.4</span>Données structurées, accès d&#x27;entreprise et gouvernance d&#x27;ancrage</a></li>
-    <li><a href="#s55"><span class="num">5.5</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+    <li><a href="#s54"><span class="num">5.4</span>Données structurées, accès d&#x27;entreprise et gouvernance d&#x27;ancrage</a></li>
   </ol>
   <div class="nav__pied">
-    Vol.&nbsp;IV — <em>La somme agentique</em><br>
-    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.30 ·
-    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
     <a href="05-ancrage-informationnel.md">Version Markdown</a>
   </div>
 </nav>
@@ -554,28 +551,6 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <h1><span class="chap">Chapitre 5</span>Ancrage informationnel : mémoire, contexte, RAG agentique</h1>
   <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6)</p>
 </header>
-
-<section class="entete" aria-label="En-tête de pièce à cinq champs">
-  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
-  <dl>
-    <dt>Statut</dt>
-    <dd><strong>Brouillon de rédaction, non publiable</strong> — rédigé sur instruction d'auteur du 27 juillet 2026, <strong>avant</strong> les portes G-1, G-2 et G-3 du <a class="lien" href="../PRD/PRD.md">PRD</a> §5 ⚠ <strong>Mise à jour du 27 juillet 2026, postérieure à la rédaction</strong> : <strong>G-2 et le volet Livre I de G-1 ont été franchis depuis</strong> (PRD v0.8), et les <strong>remontées de cette pièce sont closes</strong>. ⚠ <strong>Mise à jour du 28 juillet 2026, passe de relecture</strong> : <strong>G-3 est franchie à son tour</strong> (PRD v0.14, TOC v0.30) et le socle consolidé existe — <strong>159 entrées</strong> —, mais <strong>aucune ne couvre le périmètre de fusion de ce chapitre</strong> (voir <em>Socle mobilisé</em>). La pièce reste donc un <strong>brouillon non publiable</strong> : aucun de ses énoncés n'est central au sens de CA-IV-01, et <strong>CA-IV-11 comme CA-IV-13 demeurent insatisfaites</strong>, D-6 ne fournissant pas de relecteur distinct du rédacteur.</dd>
-    <dt>Date de gel</dt>
-    <dd><strong>27 juillet 2026</strong> — gel unique du compendium, <strong>décision d'auteur D-1 prise</strong> ce jour (registre : <a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Ce gel n'efface pas ceux des sources</strong>, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Matière condensée au gel de sa source — <strong>juin 2026</strong> (Vol. I). ⚠ <strong>Deux fonctions produit citées y étaient en bêta à cette date ; il n'en reste qu'une au gel unique</strong> — l'<strong>édition de contexte</strong> (§ 5.1.3) est toujours en bêta, en-tête d'activation daté inchangé ; l'<strong>outil de mémoire</strong> (§ 5.1.4) est passé en <strong>disponibilité générale</strong>. Constats pris à la source primaire le 27 juillet 2026 (registre du gel, faits 9 et 10). <em>Le seul écart que la re-datation du Livre I ait trouvé va dans le sens favorable : la pièce était trop prudente, non fausse</em></dd>
-    <dt>Socle mobilisé</dt>
-    <dd><strong>Aucune entrée du socle consolidé — et depuis le 28 juillet 2026 ce n'est plus faute d'Annexe B, mais faute de couverture.</strong> L'<a class="lien" href="../PRD/socle-consolide.md">Annexe B</a> est constituée (G-3 franchie, <strong>159 entrées <code>S-001</code>…<code>S-159</code></strong>) ; ⚠ <strong>aucune de ses entrées ne procède des §2.6-2.7 du Vol. I <em>Monographie</strong></em>, périmètre de fusion de ce chapitre — balayage exhaustif de la colonne <em>Provenance</em> des 159 entrées, les <strong>dix-sept</strong> entrées héritées du Vol. I (<code>S-143</code>…<code>S-159</code>) venant de ses §7.x, §3.10.x, §2.10.2.x, §5.0.2-§5.1.1, de son Annexe B et de sa <em>Synthèse</em>. <strong>Fait négatif vérifié</strong> au sens de R-14 du Vol. III, domaine déclaré. Les énoncés résolvent donc contre le <strong>Vol. I <em>Monographie</em> §2.6-2.7</strong>, en régime <strong>[C]</strong> (PRD §7.1), comme avant la porte. <strong>Aucun énoncé n'est central au sens de CA-IV-01.</strong> ⚠ <em>Les seules entrées consolidées touchant la mémoire et la récupération portent sur leur empoisonnement — ainsi <code>S-069</code> et <code>S-152</code> —, matière affectée au <strong>ch. 19</strong> et exclue au § 5.0 : la couverture du socle et la sortie de périmètre du plan concordent</em></dd>
-    <dt>Garde-fous balayés</dt>
-    <dd><strong>Les deux séries, intégralement.</strong> ⚠ <strong>Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026</strong> : un décompte d'occurrences porte sur le <strong>marqueur littéral de l'identifiant</strong> dans le <strong>corps</strong> de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué <strong>sans identifiant écrit</strong> se déclare par son <strong>domaine balayé, sans cardinal</strong>. Vol. II — R-1 à R-8 : <strong>zéro occurrence</strong> ; ⚠ <strong>une réserve d'usage tenue</strong> : les fonctions produit non généralement disponibles sont nommées comme telles, jamais présentées comme disponibles en général — c'est la doctrine que R-4 du Vol. II impose au RTR, appliquée ici par analogie hors de son domaine propre. ⚠ <strong>Elles étaient deux au gel de la source, il n'en reste qu'une au gel unique</strong> (§ 5.1.3) ; la réserve <strong>est levée pour la seconde</strong> (§ 5.1.4), sur constat à la source primaire — <em>une réserve se lève sur pièce, comme elle se pose.</em> ⚠ <strong>Réserve <code>F-01</code> du Vol. II (MCP « cadre » d'autorisation, jamais « sécurisé ») : applicable depuis le 28 juillet 2026</strong> — la décision 15 du TOC ayant fait nommer le protocole que la pièce désignait par périphrase, <strong>trois occurrences de « MCP » entrent au corps</strong> (§ 5.0, § 5.4.1 deux fois) ; <strong>aucune ne le qualifie de sécurisé</strong>, l'anatomie protocolaire partant au ch. 8. Vol. III — R-01 à R-13 : <strong>zéro occurrence</strong> ; <strong>R-14 (trois degrés d'absence) : deux occurrences</strong>, § 5.0 et § 5.2.2 — la première est un <strong>fait négatif vérifié</strong>, cas rare dans ce Livre, établi par le balayage documenté que le TOC porte sous l'entrée de ce chapitre</dd>
-    <dt>Volumétrie cible</dt>
-    <dd>≈ 7 500 mots de corps (§ 5.1 à § 5.4). Enveloppe <strong>dérivée, non prescrite</strong>. ☑ <strong>Décompte publiable depuis le franchissement de G-2</strong> (27 juillet 2026). <strong>Réel : 4 864 mots</strong> de corps, mesurés par <a class="lien" href="../PRD/decompte.sh"> 0 </a> le 28 juillet 2026, seule autorité de décompte du volume — <strong>−35,1 %</strong> de la cible. ⚠ <strong>Le réel a bougé DEUX fois le même jour, et les deux motifs sont un régime de preuve, non un gonflement</strong> : <strong>+390 mots</strong> à la passe de relecture — la décision 15 du TOC a fait rétablir les auteurs, les dates et les noms d'instruments que la pièce désignait par périphrase —, puis <strong>+77 mots</strong> à la contre-vérification, qui a marqué <strong>deux constructions d'auteur restées nues</strong> (CA-IV-07, § 5.1.2 et § 5.2.2). Les deux passes sont journalisées au § 5.5. <em>Aucun écart n'a été corrigé ni par amputation ni par gonflement</em> (D-4). ⚠ <strong>L'écart individuel ne se lit pas seul</strong> : la somme des onze cibles dérivées du Livre atteint <strong>93 000 mots</strong> pour une enveloppe de <strong>65 000</strong> — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations, de sorte que la cible dérivée est fausse autant que la pièce est courte. ⚠ <strong>Le réel du LIVRE n'est pas reporté ici</strong> : il n'est pas re-mesurable pendant que les onze pièces sont en relecture simultanée, et <strong>se re-mesure au terme de la passe</strong>, sur le corpus que le commit produit</dd>
-  </dl>
-</section>
-
-<div class="these">
-  <span class="these__label">Thèse</span>
-  <p>l'agent persistant se construit par l'ingénierie du contexte et une pile de récupération gouvernée.</p>
-  <span class="prov">Citée depuis le <code>TOC.md</code> v0.30, entrée du chapitre 5.</span>
-</div>
 
 <h2 id="s50"><span class="sig">§ 5.0</span>Ce que ce chapitre traite, et ce qu'il ne traite pas</h2>
 
@@ -610,7 +585,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <h2 id="s51"><span class="sig">§ 5.1</span>Du modèle sans état à l'agent persistant : mémoire et ingénierie du contexte</h2>
 
-<p><em>Le TOC intitule cette section « Du <strong>LLM</strong> sans état à l'agent persistant » ; la pièce traduit le sigle, le registre du corpus n'admettant un terme technique anglais qu'entre parenthèses à sa première occurrence. Déviation d'intitulé déclarée au titre de la décision 8 du TOC, remontée en § 5.5 ; la matière et la provenance sont inchangées.</em></p>
+<p><em>Le TOC intitule cette section « Du <strong>LLM</strong> sans état à l'agent persistant » ; la pièce traduit le sigle, le registre du corpus n'admettant un terme technique anglais qu'entre parenthèses à sa première occurrence. Déviation d'intitulé déclarée au titre de la décision 8 du TOC, remontée en §&nbsp;5.5&nbsp;† ; la matière et la provenance sont inchangées.</em></p>
 
 <h3>5.1.1 Taxonomie de la mémoire</h3>
 
@@ -877,104 +852,10 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <p>Conformément au fil de la sécurité posé au ch. 4 § 4.0.1, <strong>ce risque ne se résout pas au niveau du modèle</strong> : il appelle une défense en profondeur — étiquetage de provenance des fragments, cloisonnement des privilèges, contrôle du canal de sortie. Le modèle de menace, la triade de conditions et les incidents documentés sont <strong>au ch. 19</strong> ; la défense architecturale, <strong>au ch. 6 § 6.5</strong>. Ce chapitre s'arrête ici, et c'est l'arbitrage du plan.</p>
 
-<section class="statut" id="s55">
-
-<h2><span class="sig">§ 5.5</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
-
-<div class="avert">
-  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel ce chapitre a été rédigé, conformément à la règle d'escalade du <a class="lien" href="../PRD/PRD.md">PRD</a> Annexe A : <em>un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il remonte.</em></p>
-</div>
-
-<p><strong>Ce qui est enfreint</strong> — les portes <strong>G-1</strong>, <strong>G-2</strong> et <strong>G-3</strong> sont ouvertes. Rédaction sur instruction d'auteur du 27 juillet 2026. Conséquences :</p>
-
-<ol class="numeros">
-  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01</strong> — régime <strong>[C]</strong> hérité du Vol. I.</li>
-  <li><strong>Les décomptes sont publiables depuis le 27 juillet 2026</strong> — G-2 franchie, <code>PRD/decompte.sh</code> versionnée et éprouvée sur les trois corpus entiers.</li>
-  <li><strong>Les renvois « ch. N » étaient des renvois de plan, non de texte</strong>, les ch. 6, 7, 8, 17, 19 et 39 n'étant pas rédigés à la date de rédaction. ⚠ <strong>Ils le sont depuis</strong> — les cinquante chapitres existent en brouillon hors portes —, et la relecture du 28 juillet 2026 a re-vérifié <strong>chaque renvoi de section contre le plan</strong> (TOC v0.30) : ch. 2 § 2.3.5 et § 2.4.2, ch. 3 § 3.2.3 et § 3.4.5, ch. 4 § 4.2.1, § 4.2.2, § 4.3.4 et § 4.3.5, ch. 6 § 6.1 et § 6.5, ch. 39 — tous résolvent. Le <strong>ch. 4 § 4.0.1</strong> est un apparat de sa pièce, hors table détaillée : il est vérifié <strong>contre la pièce</strong>, où le fil de la sécurité est effectivement posé. Le <strong>ch. 24 § 24.4.2</strong> est vérifié contre sa pièce et contre <code>PRD/check-sieges.py</code>, qui l'enregistre comme domicile. ⚠ <strong>La re-vérification contre le TEXTE reste due</strong> pour les pièces que la passe de relecture modifie en parallèle : un renvoi qui résout contre le plan ne prouve pas qu'il résout contre la prose.</li>
-</ol>
-
-<p><strong>Remontée ouverte par ce chapitre</strong>, à l'instance d'arbitrage — <strong>D-6, non désignée à la rédaction ; prise le 27 juillet 2026 : l'auteur, sans délégation</strong> :</p>
-
-<ul class="puces">
-  <li><strong>R-IV-07 — non bloquante, à échéance G-1.</strong> Deux fonctions produit citées au § 5.1.3 et § 5.1.4 sont <strong>en bêta</strong> à la date d'arrêt des sources, avec une version d'interface datée. Le chapitre les nomme comme telles et ne les présente jamais comme disponibles en général — mais leur statut est précisément ce qui peut changer entre le gel de la source et le gel de la somme, dans les deux sens : passage en disponibilité générale, ou retrait. <strong>À re-vérifier une à une en G-1</strong>, et non à reconduire de mémoire.</li>
-</ul>
-
-<p><strong>Une observation de méthode, sans remontée.</strong> Ce chapitre porte le <strong>premier fait négatif vérifié</strong> du Livre I (§ 5.0) : l'absence de matière d'empoisonnement dans les §2.6-2.7 du Vol. I est établie par un balayage documenté que le TOC porte sous l'entrée du chapitre, et non simplement non trouvée. La distinction entre les trois degrés de R-14 n'est donc pas ici une précaution rhétorique : elle sépare deux énoncés de statut réellement différent, et le chapitre en fait usage aux deux niveaux (§ 5.0 pour le degré 1, § 5.2.2 pour le degré 3).</p>
-
-<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la table détaillée du TOC section par section (§ 5.1 à § 5.4) ; le § 5.0 est un apparat de cadrage, non une section du plan, et il est déclaré tel. La table de couverture est respectée, y compris la sortie de périmètre du §2.10.2.2 vers le ch. 19 : <strong>aucune sous-section d'empoisonnement n'est écrite ici</strong>, le § 5.4.2 se bornant à marquer le point de jonction. Les deux séries de garde-fous sont balayées et déclarées ; les deux occurrences de R-14 du Vol. III sont marquées avec leur <strong>degré</strong> ; les fonctions en bêta portent leur réserve d'usage.</p>
-
-<p><strong>Une déviation d'intitulé, déclarée au titre de la décision 8 du TOC</strong> (et de la règle <em>(c)</em> de sa décision 15, « les intitulés de section suivent le plan ; une déviation fondée se déclare »). Le plan intitule la section <strong>« Du LLM sans état à l'agent persistant : mémoire et ingénierie du contexte »</strong> ; la pièce écrit <strong>« Du modèle sans état… »</strong>. Motif : le registre du corpus n'admet un terme technique anglais qu'entre parenthèses à sa première occurrence, et le sigle nu en tête de section ne s'y prête pas. <strong>C'est la seule déviation d'intitulé de la pièce</strong> : la table détaillée du TOC porte <strong>quatorze</strong> intitulés — quatre sections et dix sous-sections —, et les <strong>treize</strong> autres sont repris mot à mot, le § 5.2.1 (« et pile de récupération », tombé) et le § 5.3 (virgules pour traits d'union) ayant été <strong>réalignés</strong> à la relecture du 28 juillet 2026. Remontée ci-dessous.</p>
-
-<h3>Clôture des remontées — 27 juillet 2026</h3>
-
-<div class="avert">
-  <p><strong>Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.</strong> Elle enregistre l'issue des remontées ouvertes par cette pièce. <em>Une remontée ne se clôt pas là où elle s'ouvre : elle se solde là où elle fait foi</em> — au <a class="lien" href="../PRD/PRD.md">PRD</a> pour une décision d'auteur, au <a class="lien" href="../PRD/TOC.md">TOC</a> pour un réalignement de plan, à l'appareil pour une dette d'outillage.</p>
-</div>
-
-<ul class="puces">
-  <li><strong>R-IV-07 — close par le franchissement de G-1 (volet Livre I), et c'est la seule remontée du Livre dont la re-datation ait changé un fait.</strong> Les deux fonctions produit ont été reprises à la source primaire le 27 juillet 2026 (registre du gel, faits 9 et 10) : l'<strong>édition de contexte</strong> (§ 5.1.3) est <strong>toujours en bêta</strong>, en-tête d'activation daté inchangé ; l'<strong>outil de mémoire</strong> (§ 5.1.4) est passé en <strong>disponibilité générale</strong>. Le § 5.1.4, l'en-tête et le champ des garde-fous sont corrigés. ⚠ <strong>L'écart va dans le sens favorable</strong> : une fonction qui passe en disponibilité générale rendait la pièce <strong>trop prudente</strong>, non fausse — elle ne l'avait jamais présentée comme disponible. <em>C'est le mode de péremption le moins coûteux, et le seul que la re-datation du Livre I ait rencontré.</em></li>
-</ul>
-
-<div class="avert">
-  <p><strong>Ce que la clôture ne change pas</strong> <em>(état au 27 juillet 2026 ; la porte a bougé le lendemain — voir la passe de relecture ci-dessous)</em>. La porte <strong>G-3</strong> demeure ouverte : le socle consolidé compte <strong>zéro entrée</strong>, l'Annexe B n'existe pas, et <strong>aucun énoncé de cette pièce n'est central au sens de CA-IV-01</strong>. Cette pièce reste un <strong>brouillon non publiable</strong>. <em>Zéro remontée ouverte ne veut pas dire pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.</em></p>
-</div>
-
-<h3>Passe de relecture — 28 juillet 2026</h3>
-
-<div class="avert">
-  <p><strong>Hors plan comme la note qui la porte, et se retire avec elle.</strong> Cette sous-section enregistre ce qu'une passe de relecture a changé dans la pièce, et ce qu'elle n'a pas pu changer.</p>
-</div>
-
-<p><strong>Ce qui a bougé hors de la pièce, et qui la conditionne.</strong> La porte <strong>G-3 est franchie</strong> depuis le 28 juillet 2026 (PRD v0.14, TOC v0.30) : l'Annexe B existe, sous la forme du <a class="lien" href="../PRD/socle-consolide.md">socle consolidé</a>, <strong>159 entrées <code>S-001</code> à <code>S-159</code></strong>.</p>
-
-<div class="avert">
-  <p><strong>Ce socle ne couvre pas la matière de ce chapitre, et le constat est un fait négatif vérifié.</strong> Balayage exhaustif de la colonne <em>Provenance</em> des 159 entrées : <strong>aucune ne procède des §2.6-2.7 du Vol. I <em>Monographie</strong></em>, périmètre de fusion de ce chapitre. Les <strong>dix-sept</strong> entrées héritées du Vol. I (<code>S-143</code> à <code>S-159</code>) proviennent de ses §7.x, §3.10.x, §2.10.2.x, §5.0.2-§5.1.1, de son Annexe B et de sa <em>Synthèse</em> — jamais de §2.6 ni de §2.7. C'est un <strong>fait négatif vérifié</strong> au sens de R-14 du Vol. III, domaine déclaré, et non une absence de documentation. <strong>Trois conséquences.</strong> <em>(1)</em> Les énoncés de cette pièce continuent de résoudre contre le <strong>Vol. I <em>Monographie</em> §2.6-2.7</strong>, en régime <strong>[C]</strong> (PRD §7.1), et <strong>aucun n'est central au sens de CA-IV-01</strong>. <em>(2)</em> Les seules entrées consolidées qui touchent la mémoire et la récupération portent sur leur <strong>empoisonnement</strong> — ainsi <code>S-069</code> et <code>S-152</code> —, matière que le plan affecte au <strong>ch. 19</strong> et que ce chapitre exclut au § 5.0 : <em>la couverture du socle et la sortie de périmètre du plan concordent.</em> <em>(3)</em> La pièce reste un <strong>brouillon non publiable</strong> : <strong>CA-IV-11 et CA-IV-13 demeurent insatisfaites</strong>, D-6 ne fournissant pas de relecteur distinct du rédacteur. ⚠ <em>Une porte franchie n'est pas une pièce recevable, et un socle qui ne documente pas une matière ne la rend pas centrale.</em></p>
-</div>
-
-<p><strong>Ce que la relecture a corrigé dans la pièce.</strong></p>
-
-<ol class="numeros">
-  <li><strong>Décision 15 du TOC — l'attribution ne s'anonymise jamais.</strong> La pièce désignait ses instruments et ses attributeurs par périphrase : « un recensement […] en dénombre sept », « une position concurrente », « une formulation d'usage », « un troisième [banc] », « des bancs dédiés », « une première lignée ». Les <strong>auteurs et les dates sont rétablis</strong> aux § 5.1.1 à § 5.4.2, ainsi que les noms des instruments repris — bancs, architectures de mémoire, mécanismes auto-correcteurs, pile de récupération, cadres d'évaluation —, et le <strong>Model Context Protocol</strong> est nommé là où la pièce écrivait « un serveur d'accès normalisé ». ⚠ <strong>La parade de péremption est maintenue là où la décision la maintient</strong> — règle <em>(a)</em> : les deux fonctions produit gardent leur dénomination générique et <strong>leur numéro de version n'est pas cité</strong>, seul leur <strong>éditeur</strong> étant nommé au titre de l'attribution.</li>
-  <li><strong>Décision 16 — les cardinaux du corps re-mesurés</strong>, non les seuls cardinaux d'en-tête : « trois objets », « quatre verbes », « trois plans », « trois opérations », « deux pratiques », « trois étapes », « sept points de défaillance », « trois exigences », « deux axes » — tous vérifiés par balayage contre ce qu'ils annoncent. Le cardinal des intitulés de section (quatorze, treize repris) est neuf et mesuré.</li>
-  <li><strong>Décision 17 — la thèse est re-citée par copie depuis le TOC v0.30</strong>, et elle est <strong>identique</strong> à la forme citée depuis la v0.23 : le plan n'a pas amendé cette entrée. Le bloc de tête porte désormais la version courante.</li>
-  <li><strong>Décision 7 — deux renvois complétés</strong> : « au sens de R-14 » (§ 5.2.2) devenu « R-14 du Vol. III », et « les §2.6-2.7 du Vol. I » (§ 5.0) devenu « du Vol. I <em>Monographie</em> ».</li>
-  <li><strong>Régime de preuve — deux énoncés bornés.</strong> Le § 5.4.1 affirmait que le constat du banc était « l'un des rares endroits du Livre I où l'agentivité se justifie par une mesure » : <strong>jugement d'auteur sur un domaine que personne n'a dénombré</strong>, remplacé par l'attribution du constat à ses auteurs. Le § 5.2.1 affirmait qu'une architecture « répond le plus directement au problème que les autres contournent » : <strong>comparaison non étayée</strong>, remplacée par ce que les descriptions portent, et par ce que leur silence n'établit pas.</li>
-</ol>
-
-<p><strong>Remontées ouvertes par cette passe</strong> — ⚠ <strong>sans identifiant alloué, et le motif est opposable</strong> : la règle <em>(1)</em> du PRD §13 veut qu'une plage neuve se prenne <strong>au-dessus du maximum constaté sur pièces</strong>, jamais au-dessus du maximum supposé ; or <strong>cinquante relectures courent en parallèle</strong> sur le même appareil, et le maximum constaté à cet instant est faux à l'instant suivant. <em>C'est exactement le défaut que R-IV-75 a payé.</em> L'allocation revient à la passe d'arbitrage.</p>
-
-<ul class="puces">
-  <li><strong>Intitulé du § 5.1 — non bloquante.</strong> Le plan écrit « Du <strong>LLM</strong> sans état », la pièce « Du <strong>modèle</strong> sans état ». Déviation fondée et déclarée (décision 8) ; <strong>au plan de trancher</strong> s'il reprend la forme française ou s'il maintient le sigle.</li>
-  <li><strong>Lacune du socle consolidé pour les §2.6-2.7 du Vol. I — non bloquante, à échéance G-4.</strong> La totalité de la matière de ce chapitre est hors socle. Ce n'est <strong>pas une contradiction</strong> entre volumes mais une <strong>lacune de couverture</strong>, du genre que l'Annexe C du TOC oblige la collation de fond à balayer. Elle se <strong>signale</strong>, elle ne se comble pas par une source de moindre qualité.</li>
-  <li><strong>Cardinal de Livre au champ <em>Volumétrie</em> — non bloquante.</strong> Le total du Livre I qui y figurait (64 750 mots) datait de la rédaction et <strong>n'est pas re-mesurable pendant que les onze pièces du Livre sont en relecture simultanée</strong>. Il est retiré au profit du seul réel de la pièce, mesuré. <strong>Le total du Livre se re-mesure au terme de la passe</strong>, par <code>PRD/decompte.sh</code>, sur le corpus que le commit produit.</li>
-</ul>
-
-<h3>Contre-vérification de la relecture — 28 juillet 2026</h3>
-
-<div class="avert">
-  <p><strong>Hors plan comme la note qui la porte.</strong> Une seconde passe a repris la relecture ci-dessus <strong>en cherchant à la prendre en défaut</strong>, plutôt qu'à la confirmer : <em>une attestation de relecture est une attestation comme une autre — elle se constate sur pièce.</em> Ce qu'elle a constaté, dans les deux sens.</p>
-</div>
-
-<p><strong>Ce que la re-mesure confirme.</strong> Les attributions rétablies au titre de la décision 15 résolvent <strong>une à une</strong> contre les §2.6-2.7 du Vol. I <em>Monographie</em> — auteurs, millésimes, noms d'instruments et date du 9 décembre 2025 comprises : <strong>aucune source n'a été inventée</strong>. ⚠ <strong>Domaine déclaré sans cardinal</strong> (décision 16c) : <em>le balayage a porté sur <strong>toutes</strong> les mentions d'auteur, de millésime et de nom d'instrument des § 5.1.1 à § 5.4.2, confrontées au texte des §2.6.1 à §2.7.4 de la source ; le nombre d'« attributions » n'est pas publiable, faute d'une règle qui dise si l'unité est l'instrument ou l'occurrence.</em> Le réel de <strong>4 787 mots</strong> que la relecture déclarait est re-mesuré par <code>PRD/decompte.sh</code> et retrouvé <strong>à l'unité près</strong> — <em>le champ porte aujourd'hui 4 864, les 77 mots d'écart étant ceux que la présente passe a ajoutés.</em> Les <strong>quatorze intitulés</strong> de la table détaillée sont recomptés (quatre sections, dix sous-sections) et les <strong>treize</strong> repris le sont mot à mot. La thèse est identique à celle de l'entrée du chapitre au TOC v0.30. Les cardinaux du corps, les <strong>trois</strong> occurrences de « MCP » et les <strong>deux</strong> de « R-14 » sont recomptés au marqueur littéral (décision 16). <strong>Aucune régression n'a été trouvée dans le diff de la relecture.</strong></p>
-
-<p><strong>Ce que la re-mesure contredit — une correction fausse, rectifiée.</strong> L'énumération des provenances du socle portait « <strong>§1.0.2</strong> » parmi les sections du Vol. I dont procèdent les dix-sept entrées héritées.</p>
-
-<div class="avert">
-  <p><strong>Aucune cellule <em>Provenance</em> de <code>S-143</code> à <code>S-159</code> ne porte cette section</strong> : elle n'apparaît qu'à l'<strong>intérieur</strong> de l'énoncé de <code>S-153</code>, et sous la forme §1.0.2.1. La mention est retirée aux <strong>deux sites</strong> (en-tête, § 5.5). <em>Le fait négatif vérifié qu'elle accompagnait n'est pas touché — il porte sur l'absence de §2.6 et de §2.7, et cette absence est confirmée par le même balayage.</em> ⚠ <strong>La leçon est de méthode</strong> : <em>un balayage qui déclare son domaine doit énumérer ce qu'il a vu, non ce qu'il croit avoir vu — une provenance de trop suffit à rendre l'attestation invérifiable.</em></p>
-</div>
-
-<p><strong>Ce que la relecture avait manqué — deux constructions d'auteur non marquées.</strong> La pièce ne portait <strong>aucune</strong> occurrence de « Lecture de l'auteur », alors que deux de ses énoncés sont des inférences que la source ne fait pas : la conciliation des deux positions sur l'isolation (§ 5.1.2) et la caractérisation de l'hallucination mémorielle comme <em>persistante</em> et <em>auto-confirmante</em> (§ 5.2.2). <strong>Les deux portent désormais leur marqueur</strong> et disent ce que le socle établit et n'établit pas (<strong>CA-IV-07</strong>). ⚠ <em>La passe qui a nommé les attributeurs a rendu ces deux inférences plus visibles sans les marquer : nommer une source ne dispense pas de marquer ce qu'on lui ajoute.</em> ⚠ <strong>Le cardinal des pièces du Livre qui portent le marqueur n'est pas publié</strong> : il n'est pas re-mesurable pendant que les onze sont en relecture simultanée (décision 16b).</p>
-
-<div class="avert">
-  <p><strong>Ce que la contre-vérification ne change pas.</strong> Elle <strong>ne relève d'aucune porte</strong> et <strong>ne satisfait ni CA-IV-11 ni CA-IV-13</strong> : D-6 désigne l'auteur comme instance unique, et <em>deux passes du même appareil ne font pas un relecteur distinct du rédacteur</em>. La pièce demeure un <strong>brouillon non publiable</strong>.</p>
-</div>
-
-</section>
-
 <footer class="pied">
-  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 5. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
-  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.30, entrée du chapitre 5, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
-  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 5. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
+  <p><strong>†</strong> Renvoi à une section retirée de ce rendu — la note de statut, hors corps — conservée au fichier Markdown jumeau.</p>
 </footer>
 
 </main>

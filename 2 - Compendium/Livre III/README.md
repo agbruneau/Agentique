@@ -322,9 +322,9 @@ la lacune **reste ouverte**.*
 
 ## Les deux formats
 
-Chaque pièce existe en **deux rendus de la même matière**, versionnés ensemble :
+Chaque pièce existe en **deux rendus**, versionnés ensemble — ⚠ **et depuis la purge du 29 juillet 2026 ils ne portent plus la même matière** :
 
-- le **`.md`** — la source ; **c'est lui qui fait foi** ;
+- le **`.md`** — la source ; **c'est lui qui fait foi**, et **lui seul porte l'appareil** : en-tête à cinq champs, thèse citée depuis le TOC, note de statut ;
 - le **`.html`** — page autonome à thème sombre orange, **sans aucune ressource externe**, prose
   justifiée avec césure, navigation de chapitre, barre de progression, styles d'impression. ⚠ La césure
   s'appuie sur l'attribut `lang="fr-CA"` : *le retirer désactiverait la coupure des mots **sans

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 4 — L&#x27;ingénierie des systèmes agentiques : anatomie, raisonnement, outils · La somme agentique</title>
-<meta name="description" content="l&#x27;agent est un LLM augmenté d&#x27;une boucle perception-raisonnement-action-observation ; son ingénierie est une discipline distincte du prompt, gouvernée par des régimes de contrôle et des niveaux d&#x27;autonomie.">
+<meta name="description" content="Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6)">
 <meta name="author" content="André-Guy Bruneau">
 <meta name="color-scheme" content="dark">
 <style>
@@ -536,13 +536,10 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <li><a href="#s42"><span class="num">4.2</span>Architectures d&#x27;agent et boucle agentique</a></li>
     <li><a href="#s43"><span class="num">4.3</span>Raisonnement, planification et calcul à l&#x27;inférence</a></li>
     <li><a href="#s44"><span class="num">4.4</span>Utilisation d&#x27;outils et accès aux outils</a></li>
-    <li><a href="#s45"><span class="num">4.5</span>Choix et service du modèle comme décision d&#x27;ingénierie</a></li>
-    <li><a href="#s46"><span class="num">4.6</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+    <li><a href="#s45"><span class="num">4.5</span>Choix et service du modèle comme décision d&#x27;ingénierie</a></li>
   </ol>
   <div class="nav__pied">
-    Vol.&nbsp;IV — <em>La somme agentique</em><br>
-    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.23 ·
-    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
     <a href="04-ingenierie-systemes-agentiques.md">Version Markdown</a>
   </div>
 </nav>
@@ -555,28 +552,6 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <h1><span class="chap">Chapitre 4</span>L&#x27;ingénierie des systèmes agentiques : anatomie, raisonnement, outils</h1>
   <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6)</p>
 </header>
-
-<section class="entete" aria-label="En-tête de pièce à cinq champs">
-  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
-  <dl>
-    <dt>Statut</dt>
-    <dd><strong>Brouillon de rédaction, non publiable</strong> — rédigé sur instruction d'auteur du 27 juillet 2026, <strong>avant</strong> les portes G-1, G-2 et G-3 du <a class="lien" href="../PRD/PRD.md">PRD</a> §5. Premier chapitre du Livre I dont la matière est <strong>proprement agentique</strong> : les ch. 1 à 3 posaient le socle pré-agentique. ⚠ <strong>Mises à jour des 27 et 28 juillet 2026, postérieures à la rédaction</strong> : <strong>G-2 et le volet Livre I de G-1 ont été franchis</strong> (PRD v0.8), les <strong>remontées de cette pièce sont closes</strong>, et <strong>G-3 est franchie depuis le 28 juillet 2026</strong> (PRD v0.14) — le socle consolidé existe, à <strong>159 entrées <code>S-001</code>…<code>S-159</code></strong> (<a class="lien" href="../PRD/socle-consolide.md">Annexe B</a> v1.2). ⚠ <strong>La pièce n'en devient pas recevable</strong> : aucune de ces entrées ne couvre son périmètre de fusion (champ <em>Socle mobilisé</em>), <strong>aucun de ses énoncés n'est central au sens de CA-IV-01</strong>, et <strong>CA-IV-11 et CA-IV-13 demeurent insatisfaites</strong>, D-6 ne fournissant pas de relecteur distinct du rédacteur. Elle reste un <strong>brouillon non publiable</strong></dd>
-    <dt>Date de gel</dt>
-    <dd><strong>27 juillet 2026</strong> — gel unique du compendium, <strong>décision d'auteur D-1 prise</strong> ce jour (registre : <a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Ce gel n'efface pas ceux des sources</strong>, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Matière condensée au gel de sa source — <strong>juin 2026</strong> (Vol. I). ⚠ <strong>C'est le chapitre du Livre I dont la matière se périme le plus vite</strong> : la nomenclature des modèles de raisonnement, les jalons de version des cadriciels et la frontière des capacités sont datés par construction, et la source elle-même écrit que cette nomenclature « évolue vite et doit être revérifiée à toute publication »</dd>
-    <dt>Socle mobilisé</dt>
-    <dd><strong>Aucune entrée du socle consolidé</strong> — non plus faute d'annexe, l'<a class="lien" href="../PRD/socle-consolide.md">Annexe B</a> existant depuis le 28 juillet 2026, mais <strong>faute de couverture</strong> : ses <strong>dix-sept entrées portant le Vol. I</strong> (<code>S-143</code>…<code>S-159</code>) proviennent des §7.x, §3.10, §2.10.2, §5.0.2-5.1.1 et de l'Annexe B de sa <em>Monographie</em> — ⚠ <strong>quatre d'entre elles, <code>S-153</code> à <code>S-156</code>, ne proviennent pas de la <em>Monographie</strong></em>, mais de la <em>Synthèse</em> du même volume (§10.2, §10.3, §11.5, §11.6), <strong>fichier retiré du dépôt le 22 juillet 2026</strong> —, et <strong>aucune ne relève des §2.1-2.5 ni du §2.8.5</strong>, qui sont le périmètre de fusion de ce chapitre. Les énoncés résolvent donc contre le <strong>Vol. I <em>Monographie</em> §2.1-2.5 et §2.8.5</strong> eux-mêmes, en régime <strong>[C]</strong> (PRD §7.1). ⚠ <strong>Une entrée touche la matière du § 4.1.4 sans pouvoir l'appuyer</strong> : <code>S-157</code>, qui recense les trois échelles d'autonomie du Vol. I, est <strong>déclarée non élevable</strong> — construction d'auteur, « thèse à attribuer, jamais un fait » — et son calibrage de R-13 est <strong>non rejouable</strong>, les désignations de l'échelle 0-5 vivant dans un fichier retiré du dépôt le 22 juillet 2026. <strong>Aucun énoncé n'est central au sens de CA-IV-01</strong> — les dix-sept entrées du Vol. I sont au demeurant toutes <code>[C]</code></dd>
-    <dt>Garde-fous balayés</dt>
-    <dd><strong>Les deux séries, intégralement.</strong> ⚠ <strong>Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026</strong> : un décompte d'occurrences porte sur le <strong>marqueur littéral de l'identifiant</strong> dans le <strong>corps</strong> de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué <strong>sans identifiant écrit</strong> se déclare par son <strong>domaine balayé, sans cardinal</strong>. Vol. II — <strong>R-1 à R-8 : zéro occurrence</strong> (aucune matière réglementaire canadienne, aucun énoncé sur E-23 ni le RTR) ; ⚠ <strong>une version antérieure de cet en-tête portait « R-8 : une occurrence, § 4.1.4 »</strong> : le corps n'y porte <strong>aucun marqueur R-8</strong>, et l'emploi d'« autonomie graduée » relève de <strong>R-13 du Vol. III</strong> — série que la sous-entrée 4.1.4 du TOC est seule à désigner. <em>Une occurrence attribuée à un identifiant qui ne l'écrit nulle part est une extension d'identifiant, non un balayage</em> ; <strong>métriques auto-déclarées (PRD Vol. II §7.5) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au § 4.0.1</strong>, la métrique attribuée à sa source ; ⚠ <strong>réserve F-01 du Vol. II (MCP « cadre » d'autorisation, jamais « sécurisé ») : sans objet ici</strong> — l'anatomie protocolaire part au ch. 8, et ce chapitre s'arrête à l'usage d'outils au niveau ingénierie. Vol. III — <strong>R-13 (« autonomie graduée » jamais nue) : une occurrence</strong>, § 4.1.4, avec l'échelle nommée ; <strong>R-14 : deux occurrences</strong>, § 4.1.1 et § 4.3.3. R-01 à R-12 : <strong>zéro occurrence</strong></dd>
-    <dt>Volumétrie cible</dt>
-    <dd>≈ 9 000 mots de corps (§ 4.0 à § 4.5). Enveloppe <strong>dérivée, non prescrite</strong>. ☑ <strong>Décompte publiable depuis le franchissement de G-2</strong> (27 juillet 2026). <strong>Réel : 7 262 mots</strong> de corps, re-mesurés le 28 juillet 2026 par <a class="lien" href="../PRD/decompte.sh"> 0 </a>, seule autorité de décompte du volume — <strong>−19,3 %</strong> de la cible (7 145 mots et −20,6 % à la rédaction ; les <strong>deux</strong> passes de relecture du 28 juillet ont ajouté <strong>117 mots</strong> — 79 d'attribution et de bornage, 38 de mise en conformité de CA-IV-07). ⚠ <strong>L'écart individuel ne se lit pas seul</strong> : la somme des onze cibles dérivées atteint <strong>93 000 mots</strong> pour une enveloppe de Livre de <strong>65 000</strong> — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le <strong>réel du Livre était de 64 750 mots au 27 juillet 2026, soit −0,4 % de l'enveloppe</strong> : c'est la cible dérivée qui était fausse, non la pièce qui est courte. ⚠ <strong>Ce cardinal de Livre n'est PAS re-mesuré ici</strong> — les onze pièces sont relues en parallèle, et <em>un agrégat mesuré pendant que ses termes bougent est faux à la seconde où on le publie</em> : il se re-mesure au commit de la passe (décision 16). <em>Un écart se documente ; il ne se corrige ni par amputation ni par gonflement</em></dd>
-  </dl>
-</section>
-
-<div class="these">
-  <span class="these__label">Thèse</span>
-  <p>l'agent est un LLM augmenté d'une boucle perception-raisonnement-action-observation ; son ingénierie est une discipline distincte du prompt, gouvernée par des régimes de contrôle et des niveaux d'autonomie.</p>
-  <span class="prov">Citée depuis le <code>TOC.md</code> v0.23, entrée du chapitre 4.</span>
-</div>
 
 <h2 id="s40"><span class="sig">§ 4.0</span>Introduction : de l'agent conversationnel à l'agent qui agit</h2>
 
@@ -971,55 +946,9 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <p><span class="auteur">Lecture de l'auteur</span> ce dernier point est celui qui relie ce chapitre au Livre III. Le choix du modèle cesse d'être une décision de performance dès lors qu'une contrainte de résidence ou de confidentialité s'applique : il devient une décision d'architecture réglementée, au même titre que le choix d'un hébergement. Le socle <strong>établit</strong> le compromis entre débit, coût et souveraineté, et que l'exécution locale d'un petit modèle répond à des exigences de confidentialité qu'une interface fermée ne satisfait pas ; il <strong>n'établit pas</strong> cette conséquence réglementaire, proposée comme lecture, et que les ch. 25 à 31 instruisent sur le terrain canadien.</p>
 
-<section class="statut" id="s46">
-
-<h2><span class="sig">§ 4.6</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
-
-<div class="avert">
-  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong> Elle consigne l'écart de gouvernance sous lequel ce chapitre a été rédigé, conformément à la règle d'escalade du <a class="lien" href="../PRD/PRD.md">PRD</a> Annexe A : <em>un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il remonte.</em></p>
-</div>
-
-<p><strong>Ce qui était enfreint à la rédaction</strong> — les portes <strong>G-1</strong>, <strong>G-2</strong> et <strong>G-3</strong> étaient ouvertes. Rédaction sur instruction d'auteur du 27 juillet 2026. ⚠ <strong>Les trois sont franchies depuis</strong> — G-2 et le volet Livre I de G-1 le 27 juillet 2026, <strong>G-3 le 28 juillet 2026</strong> —, et <em>une porte franchie après coup ne rattrape pas l'infraction : elle en solde les conséquences une à une.</em> État au 28 juillet 2026 :</p>
-
-<ol class="numeros">
-  <li><strong>Aucun énoncé n'est central au sens de CA-IV-01</strong> — régime <strong>[C]</strong> hérité du Vol. I, et inchangé par le franchissement de G-3 : le socle consolidé ne couvre pas le périmètre de fusion de ce chapitre, et ses dix-sept entrées portant le Vol. I sont toutes <code>[C]</code>.</li>
-  <li><strong>Les décomptes sont publiables depuis le 27 juillet 2026</strong> — G-2 franchie, <code>PRD/decompte.sh</code> versionnée et éprouvée sur les trois corpus entiers.</li>
-  <li><strong>Les renvois « ch. N » sont désormais des renvois de texte</strong> — les cinquante chapitres existent en brouillon, et les renvois de cette pièce ont été re-vérifiés contre eux le 28 juillet 2026. ⚠ <em>Ils résolvent contre des brouillons hors portes, non contre des chapitres recevables.</em></li>
-  <li>⚠ <strong>CA-IV-11 et CA-IV-13 demeurent insatisfaites</strong> : elles exigent un relecteur distinct du rédacteur, que <strong>D-6</strong> ne fournit pas. <em>Une lacune de socle se comble par une source ; celle-ci ne se comble que par une seconde personne.</em></li>
-</ol>
-
-<p><strong>Remontée ouverte par ce chapitre</strong>, à l'instance d'arbitrage (D-6, non désignée) :</p>
-
-<ul class="puces">
-  <li><strong>R-IV-06 — non bloquante, mais de plus courte échéance que R-IV-03 et R-IV-04.</strong> Ce chapitre est celui du Livre I dont la matière se périme le plus vite : nomenclature des familles de modèles de raisonnement, jalons de version des cadriciels, frontière des capacités. <strong>La source elle-même prescrit de revérifier cette nomenclature à toute publication</strong>, et le chapitre a paré le risque en <strong>ne la figeant pas</strong> — il décrit le phénomène (la loi d'échelle au moment du test) plutôt que la liste des modèles qui l'instancient. Cette parade est délibérée et devrait être <strong>conservée</strong> à la révision G-1 : une somme qui nommerait les modèles de 2026 serait périmée avant sa publication.</li>
-</ul>
-
-<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la table détaillée du TOC section par section (§ 4.0 à § 4.5), y compris la refonte du §2.1.3 source en apparat de navigation plutôt qu'en section propre ; la table de couverture est respectée, dont la sortie de périmètre du §2.5.4 vers le ch. 8 et l'<strong>arrivée</strong> du §2.8.5 en § 4.5, déclarée ici comme elle l'est au ch. 6 ; les deux séries de garde-fous sont balayées et déclarées, avec l'occurrence de R-13 marquée et son échelle nommée par son cardinal <strong>et</strong> sa numérotation, et la métrique auto-déclarée du § 4.0.1 attribuée à sa source ; les <strong>deux</strong> constructions d'auteur (§ 4.2.4, § 4.5) portent « Lecture de l'auteur » suivi de ce que le socle <strong>établit</strong> et de ce qu'il <strong>n'établit pas</strong> — les deux volets, comme CA-IV-07 les exige, le second seul ayant d'abord été écrit.</p>
-
-<div class="avert">
-  <p><strong>Écart de régime signalé le 28 juillet 2026, partiellement corrigé — la décision 15 du TOC (v0.29) borne la parade que R-IV-06 avait validée pour ce chapitre.</strong> La parade demeure acquise pour les <strong>dénominations commerciales et les numéros de version</strong> — c'est exactement ce que R-IV-06 couvrait, et le chapitre continue de décrire <em>le phénomène</em> plutôt que la liste des modèles qui l'instancient. Mais la décision pose que <strong>l'attribution ne s'anonymise jamais</strong>, à trois titres, dont <em>l'auteur et la date d'un instrument repris</em>. <strong>Quatre points sont corrigés ici</strong> : la définition canonique et la grille PEAS, que la somme reprend telles quelles, portent désormais leur auteur et leur date (§ 4.1.1, § 4.1.2) ; les deux dates du pilotage d'interface graphique sont rendues <strong>au mois près, comme la source les porte</strong> — le jour ne figure qu'à sa bibliographie (§ 4.0.1) ; la proposition sur les petits modèles agentiques porte son millésime (§ 4.5). ☐ <strong>Ce qui n'est pas corrigé, et pourquoi.</strong> Les patrons de boucle, les techniques de raisonnement structuré, les bancs de planification et les travaux d'entraînement restent décrits <strong>sans nom ni attribution</strong> (§ 4.2.2 à § 4.3.5, § 4.4.1) — <strong>y compris dans les intitulés de sous-section</strong>, que la table détaillée du TOC nomme et que ce chapitre abrège en conséquence (4.2.2, 4.2.3, 4.3.3, 4.3.4, 4.4.3, et « modèle » pour « LLM » aux 4.0.1 et 4.2.1). ⚠ <em>Les intitulés de section proprement dits — § 4.0 à § 4.5 — suivent le plan sans écart</em> (décision 15c). <em>Ce n'est pas un oubli mais une abstention motivée</em> : la décision 15 déclare expressément qu'elle <strong>n'ordonne pas de re-nommer le corpus</strong> et que les pièces se corrigent « là où l'un des trois interdits est atteint, jamais partout » — or <strong>aucune de ces références n'est nommée nulle part dans les cinquante chapitres</strong>, et les rendre à ce seul chapitre y produirait l'inhomogénéité même que la décision prend pour objet. <strong>Remontée à l'instance d'arbitrage</strong> (D-6), identifiant à allouer par la passe qui l'instruira : <em>ces instruments sont-ils « repris » au sens de la décision 15b(ii), ou seulement décrits ?</em> La réponse vaut pour tout le corpus et <strong>ne se tranche pas depuis une pièce</strong>.</p>
-</div>
-
-<h3>Clôture des remontées — 27 juillet 2026</h3>
-
-<div class="avert">
-  <p><strong>Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.</strong> Elle enregistre l'issue des remontées ouvertes par cette pièce. <em>Une remontée ne se clôt pas là où elle s'ouvre : elle se solde là où elle fait foi</em> — au <a class="lien" href="../PRD/PRD.md">PRD</a> pour une décision d'auteur, au <a class="lien" href="../PRD/TOC.md">TOC</a> pour un réalignement de plan, à l'appareil pour une dette d'outillage.</p>
-</div>
-
-<ul class="puces">
-  <li><strong>R-IV-06 — close par le franchissement de G-1 (volet Livre I), et la parade est conservée.</strong> La re-datation confirme le diagnostic : la matière de ce chapitre est bien la plus volatile du Livre. ⚠ <strong>La décision est de ne rien changer</strong>, et c'est un choix, non une omission : le chapitre décrit <strong>le phénomène</strong> — la loi d'échelle au moment du test — plutôt que la liste des modèles qui l'instancient, et cette parade est <strong>reconduite au gel unique</strong>. <em>Une somme qui nommerait les modèles de 2026 serait périmée avant sa publication.</em> La nomenclature reste à revérifier à toute publication, comme la source elle-même le prescrit.</li>
-</ul>
-
-<div class="avert">
-  <p><strong>Ce que le franchissement de G-3 ne change pas, re-mesuré le 28 juillet 2026.</strong> L'Annexe B existe désormais et compte <strong>159 entrées</strong>, mais <strong>aucune ne couvre les §2.1-2.5 ni le §2.8.5 du Vol. I</strong>, d'où procède ce chapitre : <strong>aucun de ses énoncés n'est central au sens de CA-IV-01</strong>, et le régime <strong>[C]</strong> est inchangé. <strong>CA-IV-11 et CA-IV-13 restent insatisfaites</strong>, D-6 ne fournissant pas de relecteur tiers. Cette pièce reste un <strong>brouillon non publiable</strong>. <em>Zéro remontée ouverte ne veut pas dire pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.</em> ⚠ <em>Et un socle qui existe sans couvrir sa pièce n'est pas un socle qui l'appuie : la porte est franchie pour le volume, pas pour ce chapitre.</em></p>
-</div>
-
-</section>
-
 <footer class="pied">
-  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 4. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
-  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.23, entrée du chapitre 4, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
-  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 4. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 
 </main>

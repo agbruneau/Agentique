@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 8 — Anatomie : MCP (agent-outil) et A2A (agent-agent) · La somme agentique</title>
-<meta name="description" content="« MCP dans les agents, A2A entre les agents » — doctrine de complémentarité déclarée par le projet A2A (non un accord des deux projets) qui fournit le premier critère de découpage architectural, sans le contraindre.">
+<meta name="description" content="Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11)">
 <meta name="author" content="André-Guy Bruneau">
 <meta name="color-scheme" content="dark">
 <style>
@@ -537,13 +537,10 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <li><a href="#s84"><span class="num">8.4</span>A2A v1.0 : la délégation entre pairs</a></li>
     <li><a href="#s85"><span class="num">8.5</span>L&#x27;ACP protocolaire, l&#x27;alternative décentralisée et l&#x27;état de la standardisation</a></li>
     <li><a href="#s86"><span class="num">8.6</span>La frontière : une complémentarité déclarée, et par qui</a></li>
-    <li><a href="#s87"><span class="num">8.7</span>Les intégrations infonuagiques : lire le statut, pas la présence</a></li>
-    <li><a href="#s88"><span class="num">8.8</span>Note de statut (hors plan — à retirer à la publication)</a></li>
+    <li><a href="#s87"><span class="num">8.7</span>Les intégrations infonuagiques : lire le statut, pas la présence</a></li>
   </ol>
   <div class="nav__pied">
-    Vol.&nbsp;IV — <em>La somme agentique</em><br>
-    Source&nbsp;: <a href="../PRD/TOC.md">TOC.md</a> v0.30 ·
-    <a href="../PRD/PRD.md">PRD.md</a> v0.7<br>
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
     <a href="08-anatomie-mcp-a2a.md">Version Markdown</a>
   </div>
 </nav>
@@ -556,28 +553,6 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <h1><span class="chap">Chapitre 8</span>Anatomie : MCP (agent-outil) et A2A (agent-agent)</h1>
   <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11)</p>
 </header>
-
-<section class="entete" aria-label="En-tête de pièce à cinq champs">
-  <div class="entete__titre">En-tête de pièce — cinq champs (PRD §6)</div>
-  <dl>
-    <dt>Statut</dt>
-    <dd><strong>Brouillon de rédaction, non publiable</strong> — portes G-1, G-2 et G-3 ouvertes à la rédaction ; rédaction sur instruction d'auteur du 27 juillet 2026. ⚠ <strong>Deux mises à jour postérieures à la rédaction, et la seconde change l'état du volume.</strong> <em>(1)</em> <strong>27 juillet 2026</strong> : <strong>G-2 et le volet Livre I de G-1 franchis</strong> (PRD v0.8), <strong>remontées de cette pièce closes</strong>. <em>(2)</em> <strong>28 juillet 2026</strong> : <strong>G-3 est FRANCHIE</strong> (PRD v0.14) — le socle consolidé existe, <strong>159 entrées <code>S-001</code>…<code>S-159</code></strong> (<a class="lien" href="../PRD/socle-consolide.md"> 2 </a> v1.2). ⚠ <strong>Aucune de ces trois portes ne rend la pièce recevable, et le motif se lit en trois temps.</strong> <em>(a)</em> Elle a été <strong>écrite avant elles</strong>, et ses énoncés <strong>n'ont pas été ré-résolus contre les identifiants <code>S-nnn</code></strong> — <em>une porte franchie après coup ne remonte pas le fil des pièces qu'elle conditionnait</em> : la ré-résolution est <strong>due</strong>, non faite. <em>(b)</em> Tant qu'elle n'est pas faite, <strong>aucun énoncé de cette pièce n'est central au sens de CA-IV-01</strong>. <em>(c)</em> <strong>CA-IV-11 et CA-IV-13 demeurent insatisfaisables</strong>, D-6 ne fournissant pas de relecteur distinct du rédacteur (PRD §11).</dd>
-    <dt>Date de gel</dt>
-    <dd><strong>27 juillet 2026</strong> — gel unique du compendium, <strong>décision d'auteur D-1 prise</strong> ce jour (registre : <a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>). ⚠ <strong>Ce gel n'efface pas ceux des sources</strong>, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Deux gels de source : <strong>juin 2026</strong> (Vol. I), <strong>16 juillet 2026</strong> (Vol. II). ⚠ <strong>Ce chapitre portait la péremption la plus courte de toute la somme, elle se comptait en heures, et ELLE EST ADVENUE.</strong> L'anatomie décrite est celle de la <strong>révision 2025-11-25</strong> ; la <strong>révision candidate, gelée le 21 mai 2026, avait sa ratification annoncée pour le 28 juillet 2026</strong> — soit <strong>le lendemain de la date de rédaction de ce chapitre</strong>. <strong>Constat du 28 juillet 2026</strong> : la ratification a eu lieu à la date annoncée (socle consolidé <code>S-001</code> ; <a class="lien" href="../PRD/gel-2026-07-28-volet-residuel.md">registre du volet résiduel de G-1</a>). ⚠ <strong>La revalidation en bloc des § 8.1 et § 8.2 est donc OUVERTE et NON EXÉCUTÉE</strong> : elle se fait <strong>sur sources primaires extraites</strong>, jamais par retouche de ce texte — <em>ce chapitre décrit un contrat qui n'est plus le contrat courant, et il le dit plutôt que de se corriger à l'aveugle</em></dd>
-    <dt>Socle mobilisé</dt>
-    <dd>⚠ <strong>Le socle consolidé existe depuis le 28 juillet 2026, et cette pièce n'y est PAS encore résolue.</strong> Elle a été rédigée par résolution directe contre le <strong>Vol. I <em>Monographie</em> §3.2-3.3 et §2.5.4</strong> — régime <strong>[C]</strong> (PRD §7.1 : la vérification du Vol. I porte sur ses références, non sur le contenu de ses affirmations) — et contre le <strong>Vol. II <em>Monographie</em> ch. 2</strong>, aux quatre entrées que le TOC lui assigne : <strong><code>F-01</code>, <code>F-02</code>, <code>F-03</code>, <code>F-16</code> du Vol. II</strong>. Ces quatre entrées <strong>résolvent désormais en <code>S-001</code>, <code>S-002</code>, <code>S-003</code> et <code>S-013</code></strong> du socle consolidé, à <strong>niveau conservé</strong> (les quatre y sont <code>[A]</code> à portée générale). ⚠ <strong>La correspondance est établie ici, la ré-résolution ne l'est pas</strong> : <em>rapprocher deux identifiants n'est pas confronter un énoncé à l'entrée qu'il invoque</em>, et la matière du Vol. I n'a pour sa part <strong>aucune entrée consolidée</strong> — les dix-sept entrées héritées du Vol. I (<code>S-143</code>…<code>S-159</code>) ne couvrent pas §3.2-3.3. <strong>Le régime [C] tient donc pour tout ce que ce chapitre tire du Vol. I</strong>. ⚠ <strong>Deux entrées hors assignation sont citées au corps comme CONSTATS, jamais comme socle mobilisé</strong> — <code>S-098</code> au § 8.2.1 (divergence interne à la source, consignée non arbitrée) et <code>S-058</code> au § 8.4.2 (date de la v1.0, <code>[B]</code> non votée) ; <em>citer une entrée pour consigner un état n'est pas s'y appuyer</em></dd>
-    <dt>Garde-fous balayés</dt>
-    <dd>⚠ <strong>Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026</strong> : un décompte d'occurrences porte sur le <strong>marqueur littéral de l'identifiant</strong> dans le <strong>corps</strong> de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué <strong>sans identifiant écrit</strong> se déclare par son <strong>domaine balayé, sans cardinal</strong>. Vol. II — <strong>réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : quatre occurrences</strong>, § 8.1.4, § 8.2.2, § 8.3.1 et § 8.6.1, chacune tenue — ⚠ <em>la formule imposée, elle, est employée au-delà de ces quatre marqueurs, notamment au § 8.7 : la réserve est tenue partout, seul son marqueur est compté ici</em> ; <strong>R-1 : une occurrence</strong>, § 8.5.1 ; <strong>R-8 (sigle jamais nu) : une occurrence</strong>, § 8.5.1 — le siège de l'encadré est au <strong>ch. 7 § 7.5</strong>, auquel ce chapitre renvoie <strong>sans le reconstruire</strong> ; <strong>métriques auto-déclarées (PRD Vol. II §8.2, règle 1 ; règle transversale au §7.5) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au § 8.4.2 et au § 8.6.3</strong>, la première attribuée, la seconde <strong>refusée comme métrique</strong> faute de chiffre, de date et de définition ; s'y ajoute, au § 8.6.1, une <strong>estimation de tiers</strong> attribuée nommément (décision 15 du TOC, branche <em>(i)</em>), et au § 8.4.1 l'<strong>auteur de l'instrument de 1980</strong> restitué (même décision, branche <em>(ii)</em> : l'auteur et la date d'un instrument repris ne s'anonymisent pas). R-2 à R-7 : <strong>zéro occurrence</strong>. Vol. III — <strong>R-02 (qualification par ce que la spécification démontre) : trois occurrences</strong>, § 8.1.4, § 8.2.2 et § 8.4.2 ; <strong>R-13 : une occurrence</strong>, § 8.5.1, même que R-8 ; <strong>R-14 : trois occurrences</strong>, § 8.2.3, § 8.6.1 et § 8.7 — ⚠ <em>le § 8.8, que cet en-tête portait auparavant, est la note de statut : hors domaine de comptage</em>. R-01, R-03 à R-12 : <strong>zéro occurrence</strong></dd>
-    <dt>Volumétrie cible</dt>
-    <dd>≈ 10 000 mots de corps (§ 8.1 à § 8.7) — le plus lourd du Livre I, sept sections contre quatre à six ailleurs. ☑ <strong>Décompte publiable depuis le franchissement de G-2</strong> (27 juillet 2026). <strong>Réel : 5 899 mots</strong> de corps, <strong>re-mesurés au commit du 28 juillet 2026</strong> par <a class="lien" href="../PRD/decompte.sh"> 0 </a>, seule autorité de décompte du volume — <strong>−41,0 %</strong> de la cible (5 138 mots et −48,6 % à la rédaction, puis −43,7 % au terme de la passe de relecture ; la contre-vérification qui l'a suivie a ajouté des <strong>bornes de régime et deux écarts consignés</strong>, <strong>aucune matière neuve</strong>). ⚠ <strong>L'écart individuel ne se lit pas seul</strong> : la somme des onze cibles dérivées atteint <strong>93 000 mots</strong> pour une enveloppe de Livre de <strong>65 000</strong> — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. <strong>Le réel du Livre valait 64 750 mots, soit −0,4 % de l'enveloppe, au relevé du 27 juillet 2026</strong> ; ⚠ <strong>il n'est PAS re-mesuré ici</strong> — <em>un cardinal de Livre mesuré pendant que ses onze pièces sont relues est faux à la seconde où on le publie</em>, et il se re-mesure au terme de la passe, sur le corpus que le commit produit. C'est la cible dérivée qui était fausse, non la pièce qui est courte. <em>Un écart se documente ; il ne se corrige ni par amputation ni par gonflement</em></dd>
-  </dl>
-</section>
-
-<div class="these">
-  <span class="these__label">Thèse</span>
-  <p>« MCP dans les agents, A2A entre les agents » — doctrine de complémentarité <strong>déclarée par le projet A2A</strong> (non un accord des deux projets) qui fournit le premier critère de découpage architectural, sans le contraindre.</p>
-  <span class="prov">Citée depuis le <code>TOC.md</code> v0.30, entrée du chapitre 8.</span>
-</div>
 
 <h2 id="s81"><span class="sig">§ 8.1</span>MCP comme couche de contrat : problème N×M, primitives, transports</h2>
 
@@ -717,7 +692,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 </div>
 
 <div class="avert">
-  <p><strong>Une réserve de statut sur le socle sous-jacent</strong> : le cadre d'autorisation de nouvelle génération sur lequel s'appuie cette pile <strong>demeure un projet à la date d'arrêt des sources</strong>, la version antérieure restant la base normative en vigueur. Le ch. 3 § 3.2.1 porte la même réserve, et le <strong>volet Livre I de la porte G-1 les a instruites toutes deux le 27 juillet 2026</strong> (<a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>, fait 8) : le document <strong>est toujours à l'état de projet</strong>, désormais daté, et <strong>aucune version normative n'en est issue</strong>. <em>La réserve n'est pas levée ; elle est datée</em> — et c'est le seul effet qu'une instruction à la source pouvait avoir sur un texte qui n'a pas bougé.</p>
+  <p><strong>Une réserve de statut sur le socle sous-jacent</strong> : le cadre d'autorisation de nouvelle génération sur lequel s'appuie cette pile <strong>demeure un projet à la date d'arrêt des sources</strong>, la version antérieure restant la base normative en vigueur. Le ch. 3 § 3.2.1 porte la même réserve, et le <strong>volet Livre I de la porte G-1 les a instruites toutes deux le 27 juillet 2026</strong> (<a class="lien" href="../PRD/gel-2026-07-27.md">0</a>, fait 8) : le document <strong>est toujours à l'état de projet</strong>, désormais daté, et <strong>aucune version normative n'en est issue</strong>. <em>La réserve n'est pas levée ; elle est datée</em> — et c'est le seul effet qu'une instruction à la source pouvait avoir sur un texte qui n'a pas bougé.</p>
 </div>
 
 <h3>8.2.3 Vers une sémantique des résultats : sorties structurées et tâches</h3>
@@ -979,86 +954,9 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <p><strong>L'absence d'un inventaire infonuagique de l'axe vertical dans le socle n'établit pas l'absence d'un tel support</strong> : elle établit que <strong>la somme ne peut pas en dresser la carte</strong>. C'est, au sens de R-14 du Vol. III, une <strong>absence de documentation</strong> — degré 3, qui n'autorise aucune conclusion. <em>La distinction est celle entre ce qui n'existe pas et ce qui n'a pas été vérifié ; la somme s'astreint à ne jamais la franchir.</em></p>
 </div>
 
-<section class="statut" id="s88">
-
-<h2><span class="sig">§ 8.8</span>Note de statut <em>(hors plan — à retirer à la publication)</em></h2>
-
-<div class="avert">
-  <p><strong>Cette section n'est pas au TOC et n'a pas vocation à survivre.</strong></p>
-</div>
-
-<p><strong>Ce qui a été enfreint à la rédaction</strong> — portes <strong>G-1</strong>, <strong>G-2</strong> et <strong>G-3</strong> ouvertes ; instruction d'auteur du 27 juillet 2026. Conséquences habituelles : aucun énoncé central au sens de CA-IV-01, aucun décompte publiable, renvois de plan et non de texte.</p>
-
-<div class="avert">
-  <p><strong>Deux de ces trois conséquences sont tombées depuis, et la troisième ne tombe pas.</strong> <em>(1)</em> Le <strong>décompte est publiable</strong> depuis G-2 (27 juillet 2026) ; il est porté au champ <em>Volumétrie cible</em>. <em>(2)</em> Les <strong>renvois sont devenus des renvois de texte</strong> : les cinquante chapitres existent en brouillon depuis le 27 juillet 2026, et les huit cibles de cette pièce — ch. 9, 10, 11, 15, 16, 23, 29 et 49 — sont rédigées. Leurs <strong>numéros de section résolvent</strong> contre le texte ; ⚠ <strong>le fond de ce qu'ils promettent n'a pas été re-vérifié</strong> par cette passe, qui n'ouvre qu'une pièce. <em>(3)</em> ⚠ <strong>La première ne tombe pas</strong> : G-3 est franchie depuis le 28 juillet 2026, mais <strong>cette pièce n'a pas été ré-résolue contre le socle consolidé</strong> — <em>aucun énoncé n'est central au sens de CA-IV-01</em>, et il ne le deviendra pas d'un franchissement dont la pièce n'a pas été relue.</p>
-</div>
-
-<p><strong>Remontée ouverte par ce chapitre — et c'est la plus urgente de tout le Livre I :</strong></p>
-
-<ul class="puces">
-  <li><strong>R-IV-10 — non bloquante, mais d'échéance immédiate.</strong> La <strong>révision candidate</strong> du protocole agent-outil avait sa <strong>ratification annoncée pour le 28 juillet 2026</strong>, soit <strong>le lendemain de la rédaction de ce chapitre</strong>. Elle porte des <strong>changements cassants</strong> : cœur sans état, dépréciation de trois primitives, remplacement du mécanisme d'enregistrement de client. <strong>Si elle est ratifiée, les § 8.1.3, § 8.2.1, § 8.2.2 et § 8.3.1 sont à revalider en bloc</strong>, sources primaires à extraire — et non à retoucher. ⚠ <strong>Elle l'a été le 28 juillet 2026</strong> : voir la clôture ci-dessous.</li>
-</ul>
-
-<p>Le chapitre a paré ce risque de la seule manière défendable : <strong>en déclarant que l'anatomie décrite est celle de la révision 2025-11-25</strong>, et en portant le statut de candidate à chacune de ses mentions. ⚠ <strong>Il ne l'a pas anticipée</strong> : décrire comme acquis un contrat non ratifié aurait été la faute exacte que le régime de preuve de la somme proscrit. <em>Une révision annoncée pour demain reste une révision annoncée.</em></p>
-
-<p><strong>Une observation de méthode, sans remontée.</strong> Ce chapitre est celui où la <strong>réserve F-01</strong> du Vol. II mord le plus — <strong>quatre occurrences marquées</strong> au sens de la décision 16 du TOC, et la formule tenue au-delà de ses marqueurs —, et la répétition est délibérée. La formulation « cadre d'autorisation, jamais sécurisé » n'est pas une précaution de langage : elle sépare <strong>ce qu'une spécification fournit</strong> de <strong>ce qu'une implémentation garantit</strong>, et c'est la même distinction que R-02 du Vol. III impose en matière cryptographique. Les deux garde-fous, venus de volumes différents, disent la même chose. ⚠ <strong>La fusion que cette observation appelait n'a pas eu lieu</strong> : G-3 a été franchie le 28 juillet 2026 <strong>sans que les deux séries héritées soient rapprochées</strong>, et elles restent citées préfixées de leur volume.</p>
-
-<p><strong>Ce qui n'est pas enfreint.</strong> La structure suit la table détaillée (§ 8.1 à § 8.7). La table de couverture est respectée, dont <strong>l'arrivée du Vol. I <em>Monographie</em> §2.5.4 depuis le ch. 4</strong> — déclarée aux deux bouts — et la sortie du Vol. I <em>Monographie</em> §3.6 vers le Livre II. Les <strong>deux écarts que la v0.17 du plan a soldés sont tenus</strong> : le <strong>partage déclaré</strong> sur la fusion de l'ACP protocolaire — mécanique ici, portée de risque au ch. 10 — et l'<strong>écart de titre assumé</strong> sur le protocole décentralisé, nommé à la liste de sections sans retoucher un titre que le plan déclare cité en clair dans huit chapitres. Le <strong>siège de l'encadré R-8 reste au ch. 7 § 7.5</strong> : ce chapitre y renvoie et <strong>ne le reconstruit pas</strong>, et le <strong>siège de la mécanique de la fusion, posé ici au § 8.5.1</strong>, ne recouvre pas la portée de risque qui siège au ch. 10 § 10.5. La <strong>lacune héritée du PRD Vol. II §10.9 est portée, encadrée et non comblée</strong>. R-1, R-8, R-13, R-02 et R-14 sont tenus à toutes leurs occurrences.</p>
-
-<p><strong>Deux applications du régime des métriques auto-déclarées, et elles ne sont pas de même nature.</strong> Au § 8.4.2, le décompte d'organisations de soutien est <strong>attribué à l'organisme qui le publie</strong> et assorti de la réserve <em>soutien n'est pas production</em>. Au § 8.6.3, la formule « de nombreux systèmes utilisent les deux » est <strong>refusée comme métrique</strong> — ni chiffrée, ni datée, ni définie. <em>Refuser une formule au rang de métrique n'est pas l'attribuer : c'est constater qu'il n'y a rien à attribuer.</em> S'y ajoute, au § 8.6.1, une <strong>estimation d'un tiers</strong> attribuée nommément à celui qui la produit (décision 15 du TOC : l'attribution ne s'anonymise jamais).</p>
-
-<h3>Clôture des remontées — 27 juillet 2026</h3>
-
-<div class="avert">
-  <p><strong>Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.</strong> Elle enregistre l'issue des remontées ouvertes par cette pièce. <em>Une remontée ne se clôt pas là où elle s'ouvre : elle se solde là où elle fait foi</em> — au <a class="lien" href="../PRD/PRD.md">PRD</a> pour une décision d'auteur, au <a class="lien" href="../PRD/TOC.md">TOC</a> pour un réalignement de plan, à l'appareil pour une dette d'outillage.</p>
-</div>
-
-<ul class="puces">
-  <li><strong>R-IV-10 — close par le franchissement de G-1 (volet Livre I) : la réserve est confirmée, et l'échéance est désormais datée au lieu d'être ouverte.</strong> Constat à la source primaire le 27 juillet 2026 (registre du gel, fait 11) : la révision est <strong>toujours candidate</strong>, verrouillée depuis le 21 mai 2026, et sa publication finale est fixée au <strong>28 juillet 2026</strong>. Le chapitre est donc <strong>exact à sa date</strong>, et périmé le lendemain. ⚠ <strong>Le gel unique ne s'avance pas d'un jour pour absorber l'événement</strong> — <em>une révision annoncée pour demain reste une révision annoncée</em> : les § 8.1.3, § 8.2.1, § 8.2.2 et § 8.3.1 sont à <strong>revalider en bloc dès le 28 juillet 2026</strong>, sources primaires à extraire et non à retoucher. La portée du changement est relevée au registre du gel pour que la revalidation sache quoi chercher.</li>
-  <li>⚠ <strong>Un contrôle de méthode a été payé sur cette pièce, et il vaut d'être connu.</strong> Le billet d'annonce de la révision décrit un <em>durcissement</em> du mécanisme d'enregistrement de client et ne mentionne aucune dépréciation ; le <strong>journal des changements de la spécification</strong> la porte explicitement, au profit de documents de métadonnées d'identifiant client. L'énoncé de cette pièce — « dépréciation … de l'enregistrement dynamique de client » — est <strong>exact</strong>, et une correction fondée sur le seul billet d'annonce l'aurait <strong>cassé</strong>. <em>Une source secondaire qui résume une source normative n'en est pas un substitut, même quand elle émane du même émetteur.</em></li>
-</ul>
-
-<div class="avert">
-  <p><strong>Ce que la clôture ne changeait pas, à sa date.</strong> La porte <strong>G-3</strong> demeurait ouverte : le socle consolidé comptait <strong>zéro entrée</strong>, l'Annexe B n'existait pas, et <strong>aucun énoncé de cette pièce n'était central au sens de CA-IV-01</strong>. <em>Zéro remontée ouverte ne veut pas dire pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.</em></p>
-</div>
-
-<h3>Passe de relecture — 28 juillet 2026</h3>
-
-<div class="avert">
-  <p><strong>Hors plan comme ce qui précède, et se retire avec.</strong> Trois faits datés du 28 juillet 2026 touchent cette pièce, et <strong>aucun ne la rend recevable</strong>.</p>
-</div>
-
-<ul class="puces">
-  <li>⚠ <strong>La péremption annoncée par R-IV-10 EST ADVENUE, à la date même.</strong> La révision est publiée : la page de spécification courante la sert, l'index documentaire du site ne connaît plus la précédente (socle consolidé <code>S-001</code>, registre du volet résiduel de G-1). <em>Le chapitre était exact à sa date, et il ne l'est plus à celle-ci pour ce qu'il décrit du contrat courant.</em> ⚠ <strong>La revalidation en bloc des § 8.1.3, § 8.2.1, § 8.2.2 et § 8.3.1 est OUVERTE et NON EXÉCUTÉE</strong> : elle appelle une extraction de la révision neuve à sa source, qu'aucune passe n'a conduite — <em>constater une bascule n'est pas lire le texte qui a basculé</em>. La relecture s'est donc bornée à <strong>dater la péremption</strong>, sans réécrire une anatomie qu'elle ne peut pas vérifier.</li>
-  <li><strong>La porte G-3 est franchie et le socle consolidé existe</strong> — 159 entrées, dont les quatre du Vol. II que le TOC assigne à ce chapitre (<code>S-001</code>, <code>S-002</code>, <code>S-003</code>, <code>S-013</code>). ⚠ <strong>La correspondance est portée à l'en-tête ; la ré-résolution des énoncés contre ces entrées reste DUE</strong>, et elle est hors du mandat d'une passe de relecture qui n'ouvre qu'une pièce. <em>Une porte franchie après coup ne relit pas les pièces qu'elle conditionnait.</em></li>
-  <li><strong>Les cardinaux et les attributions de la pièce ont été re-mesurés sous les décisions 15 et 16 du TOC.</strong> Trois écarts d'appareil sont corrigés : la réserve F-01 était annoncée à six occurrences pour <strong>quatre marqueurs</strong>, les métriques auto-déclarées à trois pour <strong>deux applications de nature différente</strong>, et l'estimation du § 8.6.1 était présentée comme « attribuée à sa source » <strong>sans que la source soit nommée</strong> — ce que la décision 15 proscrit expressément.</li>
-</ul>
-
-<div class="avert">
-  <p><strong>Ce que rien de tout cela ne change.</strong> <strong>CA-IV-11 et CA-IV-13 demeurent insatisfaisables</strong>, D-6 ne fournissant pas de relecteur distinct du rédacteur, et <strong>G-4 conditionne encore la collation de fond</strong>. Cette pièce reste un <strong>brouillon non publiable</strong>. <em>Zéro remontée ouverte ne veut pas dire pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.</em></p>
-</div>
-
-<h3>Passe de contre-vérification — 28 juillet 2026</h3>
-
-<div class="avert">
-  <p><strong>Hors plan comme ce qui précède, et se retire avec.</strong> Le journal de la passe précédente <strong>n'est pas réécrit</strong> : ce bloc s'ajoute. Quatre écarts ont été constatés sur pièce et corrigés ; <strong>aucun ne rend la pièce recevable</strong>, et les cardinaux de l'en-tête ont été <strong>re-comptés</strong> sous la décision 16 — <strong>F-01 : 4 · R-1 : 1 · R-8 : 1 · R-13 : 1 · R-02 : 3 · R-14 : 3</strong>, inchangés, comptage littéral du corps, en-tête et notes exclus.</p>
-</div>
-
-<ul class="puces">
-  <li>⚠ <strong>Une régression de la passe de relecture, confirmée et corrigée.</strong> Le § 8.6.3 attestait que ce chapitre « ne reproduit pas la doctrine entre guillemets » alors que <strong>la thèse, le titre de la section et le corps portent tous « dans les agents, entre les agents » entre guillemets</strong>. L'attestation visait le <strong>verbatim anglais</strong> que <code>S-013</code> déclare introuvable, non le rendu français que <code>S-002</code> porte : l'énoncé est <strong>borné</strong> au verbatim, et la distinction est écrite. <em>Une attestation de forme se constate sur la pièce qu'elle décrit.</em></li>
-  <li>⚠ <strong>Un constat rendu comme tranché alors que sa source le consigne comme ouvert</strong> (§ 8.2.1). La bascule de la révision était écrite sans la <strong>divergence interne à la source</strong> que <code>S-001</code> et <code>S-098</code> portent l'une et l'autre — la page de versionnement déclarant encore la révision précédente courante le jour même. Elle est <strong>consignée, non arbitrée</strong>.</li>
-  <li>☐ <strong>Remontée ouverte — non bloquante, sans identifiant alloué.</strong> Le plan (<code>TOC.md</code>, ligne Fusion du ch. 8) et cette pièce écrivent que <strong>la date de la v1.0 n'est pas au socle</strong> ; depuis que le socle consolidé existe, <code>S-058</code> la porte au niveau <code>[B]</code> non voté, quand <code>S-002</code> maintient la lacune pour le périmètre du Vol. II. ⚠ <strong>L'objet est le libellé du plan, hors du mandat d'un relecteur de pièce</strong> — la pièce déclare l'écart au § 8.4.2 et <strong>ne le corrige pas</strong>. ⚠ <em>Le numéro <code>R-IV-nn</code> n'est PAS alloué ici</em> : cinquante pièces étant relues en parallèle dans la même série partagée, <strong>s'attribuer un numéro seul reproduirait la collision d'identifiants du 27 juillet 2026</strong> ; l'allocation revient à la passe d'arbitrage.</li>
-  <li>☑ <strong>Une attribution restituée</strong> (§ 8.4.1) : l'instrument de 1980 était nommé sans son auteur, ce que la <strong>décision 15 du TOC</strong> proscrit pour « l'auteur et la date d'un instrument repris ». <strong>Aucun siège de la somme ne le couvrait</strong> — le ch. 7 § 7.2.1 nomme les instruments de sa propre généalogie, pas celui-ci.</li>
-</ul>
-
-<p>☑ <strong>Ce que la contre-vérification a constaté sans avoir à corriger.</strong> Les <strong>six cardinaux</strong> de garde-fous et le <strong>décompte de corps</strong> de la passe précédente sont <strong>exacts au comptage</strong> ; la <strong>thèse est verbatim</strong> au TOC v0.30 ; le <strong>marqueur de siège du § 8.5.1</strong> et sa signature de titre sont <strong>intacts</strong> ; les <strong>huit renvois avant</strong> — ch. 9 § 9.1, § 9.2, § 9.4 ; ch. 10 § 10.2, § 10.3.2, § 10.5 ; ch. 11, 15, 16, 23, 29, 49 — <strong>résolvent contre le texte rédigé</strong> ; et les attributions nommées au § 8.6.1 — l'organisme de sécurité infonuagique, le cabinet auteur de la divulgation, l'éditeur qui conteste la qualification — sont <strong>fidèles à la bibliographie du Vol. I</strong>. <em>Un vérificateur qui trouve toujours quelque chose ne vérifie rien.</em></p>
-
-</section>
-
 <footer class="pied">
-  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 8. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
-  <p>Spécification de contenu : <code>PRD/TOC.md</code> v0.30, entrée du chapitre 8, table des matières détaillée et table de couverture (décision 6). Gouvernance de la rédaction : <code>PRD/PRD.md</code> v0.7. <strong>Le compendium n'est pas rédigé</strong> : tant qu'il ne l'est pas, les trois volumes sources font foi.</p>
-  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme, qui n'est pas fixé.</p>
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 8. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 
 </main>

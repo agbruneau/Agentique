@@ -14,7 +14,7 @@ Ce que ce script couvre — sept défauts qu'aucun rendu ne signale :
     [3] autonomie        aucune ressource externe (police, script, image, @import)
     [4] césure           lang="fr-CA" présent — la justification en dépend
     [5] légendes         toute table porte une légende, des deux côtés
-    [6] en-tête          les cinq champs du PRD §6, aucun omis
+    [6] appareil         les cinq champs et la thèse au .md — et AUCUN d'eux au .html
     [7] renvois          les liens relatifs pointent vers des cibles existantes
     [8] résidus          du Markdown resté littéral dans le rendu (faute de générateur)
 
@@ -41,6 +41,14 @@ BALISES = [
 ]
 
 CHAMPS_ENTETE = ["Statut", "Date de gel", "Socle mobilisé", "Garde-fous balayés", "Volumétrie cible"]
+
+# Appareil de gouvernance proscrit du rendu .html depuis la purge du 29 juillet 2026 : les trois
+# blocs que `build/assemble.py` retire déjà du PDF. Le .md les conserve — il est la seule source.
+APPAREIL_HTML = [
+    ("entete", "en-tête de pièce à cinq champs"),
+    ("these", "thèse citée depuis le TOC"),
+    ("statut", "note de statut"),
+]
 
 
 def _sans_commentaires(html):
@@ -129,13 +137,21 @@ def controle_legendes(md, html, ecarts):
 
 
 def controle_entete(md, html, ecarts):
+    """L'appareil de gouvernance vit au .md, et nulle part ailleurs.
+
+    Le .md porte les cinq champs et la thèse (PRD §6) ; le .html est un **rendu de lecture** qui
+    ne porte que le corps technique — même coupe que `build/assemble.py` pour le PDF, purge du
+    29 juillet 2026. ⚠ Les deux moitiés du contrôle comptent : sans la seconde, un rendu qui
+    recopierait l'en-tête passerait, et l'appareil se remettrait à vivre en deux endroits."""
     for champ in CHAMPS_ENTETE:
         if champ not in md:
             ecarts.append("[6] .md : champ d'en-tête manquant — « %s » (PRD §6)" % champ)
-        if champ not in html:
-            ecarts.append("[6] .html : champ d'en-tête manquant — « %s » (PRD §6)" % champ)
     if "Thèse" not in md:
         ecarts.append("[6] .md : la thèse citée depuis le TOC est absente")
+    for classe, libelle in APPAREIL_HTML:
+        if 'class="%s"' % classe in _sans_commentaires(html):
+            ecarts.append("[6] .html : %s — le rendu ne porte que le corps technique, "
+                          "l'appareil vit au .md" % libelle)
 
 
 def controle_residus(html, ecarts):
@@ -197,7 +213,7 @@ def main(argv):
     print("  [3] autonomie de la page              -> OK")
     print("  [4] justification et césure           -> OK")
     print("  [5] légendes des tables               -> OK")
-    print("  [6] en-tête à cinq champs et thèse    -> OK")
+    print("  [6] appareil au .md, corps seul au .html -> OK")
     print("  [7] renvois relatifs                  -> OK")
     print("  [8] balisage Markdown résiduel        -> OK")
     print("\nTous les contrôles passent.")

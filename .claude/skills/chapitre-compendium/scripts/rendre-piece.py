@@ -144,7 +144,7 @@ def rendre_corps(lignes, num):
     """Rend le corps et construit la navigation. Retourne (html, entrées de nav)."""
     sortie, nav = [], []
     i, n = 0, len(lignes)
-    dans_statut = False
+    sig_statut = None
 
     def vider(tampon):
         if tampon:
@@ -160,13 +160,14 @@ def rendre_corps(lignes, num):
         if m:
             vider(tampon)
             sig, titre = m.group(1), m.group(2).strip()
+            # ⚠ Le rendu s'arrête ici : la note de statut est hors corps, comme l'en-tête et la
+            # thèse (purge du 29 juillet 2026). Elle vit au .md, qui reste la seule source.
+            if "Note de statut" in titre:
+                sig_statut = sig
+                break
             ancre = "s" + sig.replace(".", "")
-            statut = "Note de statut" in titre
-            if statut and not dans_statut:
-                sortie.append('<section class="statut" id="%s">' % ancre)
-                dans_statut = True
-            sortie.append('<h2%s><span class="sig">§ %s</span>%s</h2>'
-                          % ("" if dans_statut else ' id="%s"' % ancre, sig, _inline(titre)))
+            sortie.append('<h2 id="%s"><span class="sig">§ %s</span>%s</h2>'
+                          % (ancre, sig, _inline(titre)))
             nav.append((sig, re.sub(r"<[^>]+>", "", _inline(titre)), ancre))
             i += 1
             continue
@@ -274,9 +275,15 @@ def rendre_corps(lignes, num):
         i += 1
 
     vider(tampon)
-    if dans_statut:
-        sortie.append("</section>")
-    return "\n\n".join(sortie), nav
+    corps = "\n\n".join(sortie)
+    # Le corps renvoie parfois à la note de statut qu'on vient de couper : le renvoi n'est pas
+    # effacé, il est marqué d'une dague, dont le pied de page donne la lecture. Même règle que
+    # `build/assemble.py` pour le PDF — un renvoi pendant serait pire que la coupe.
+    dagues = 0
+    if sig_statut:
+        corps, dagues = re.subn(r"§(&nbsp;|\s)*" + re.escape(sig_statut) + r"(?!\d)",
+                                "§&nbsp;%s&nbsp;†" % sig_statut, corps)
+    return corps, nav, dagues
 
 
 # --------------------------------------------------------------------------- assemblage
@@ -289,23 +296,19 @@ def main(argv):
         chemin_md += ".md"
     md = open(chemin_md, encoding="utf-8").read()
     titre, num, situation, champs, these, these_prov, corps_lignes = decouper(md)
-    corps, nav = rendre_corps(corps_lignes, num)
+    corps, nav, dagues = rendre_corps(corps_lignes, num)
 
     livre = re.search(r"Livre ([IVX]+)", situation or "")
     livre_num = livre.group(1) if livre else "I"
     livre_court = "Livre %s" % livre_num
     fil = re.sub(r"\s+", " ", (situation or "")).strip().rstrip(".")
 
-    entete_html = "\n".join(
-        "    <dt>%s</dt>\n    <dd>%s</dd>" % (html.escape(c), _inline(v)) for c, v in champs)
+    # ⚠ `champs` et `these` restent EXIGÉS à la lecture par `decouper()` — une pièce sans en-tête
+    # ni thèse échoue —, mais ils n'entrent plus au rendu : l'appareil vit au .md (purge du
+    # 29 juillet 2026). Les exiger sans les rendre est le même geste que `build/assemble.py`.
     nav_html = "\n".join(
         '    <li><a href="#%s"><span class="num">%s</span>%s</a></li>' % (a, s, html.escape(t))
         for s, t, a in nav)
-
-    toc_version = "v0.23"
-    m = re.search(r"TOC\.md`?\)?\s*(v[\d.]+)", md)
-    if m:
-        toc_version = m.group(1)
 
     gabarit = open(GABARIT, encoding="utf-8").read()
     # Le gabarit porte ses points de substitution en commentaire ; on les remplace en bloc.
@@ -316,22 +319,25 @@ def main(argv):
     page = page.replace("{{LIVRE_COURT}}", livre_court)
     page = page.replace("{{LIVRE}}", html.escape(fil.split(".")[0]))
     page = page.replace("{{SITUATION}}", _inline(fil))
+    # La description reprend la ligne de situation, jamais la thèse : la recopier ici la ferait
+    # vivre dans le rendu par une porte dérobée.
     page = page.replace("{{RESUME_META}}",
-                        html.escape(re.sub(r"<[^>]+>", "", _inline(these))[:300], quote=True))
-    page = page.replace("{{THESE}}", _inline(these))
-    page = page.replace("{{TOC_VERSION}}", toc_version)
+                        html.escape(re.sub(r"<[^>]+>", "", _inline(fil))[:300], quote=True))
     page = page.replace("{{FICHIER_MD}}", os.path.basename(chemin_md))
     page = re.sub(r"  <ol>\n(?:.*?)\n  </ol>", "  <ol>\n%s\n  </ol>" % nav_html, page, count=1,
                   flags=re.S)
-    page = re.sub(r"  <dl>\n(?:.*?)\n  </dl>", "  <dl>\n%s\n  </dl>" % entete_html, page, count=1,
-                  flags=re.S)
     page = re.sub(r"<!-- \{\{CORPS\}\}.*?-->", corps, page, count=1, flags=re.S)
+    if dagues:
+        page = page.replace("\n</footer>", "\n  <p><strong>†</strong> Renvoi à une section retirée "
+                            "de ce rendu — la note de statut, hors corps — conservée au fichier "
+                            "Markdown jumeau.</p>\n</footer>", 1)
 
     chemin_html = chemin_md[:-3] + ".html"
     with open(chemin_html, "w", encoding="utf-8") as f:
         f.write(page)
-    print("rendu : %s  (%d sections, %d champs d'en-tête, %d octets)"
-          % (os.path.basename(chemin_html), len(nav), len(champs), len(page)))
+    print("rendu : %s  (%d sections, %d champs d'en-tête lus et non rendus, "
+          "%d renvoi(s) marqué(s) d'une dague, %d octets)"
+          % (os.path.basename(chemin_html), len(nav), len(champs), dagues, len(page)))
     return 0
 
 

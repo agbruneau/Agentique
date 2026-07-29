@@ -38,8 +38,11 @@ MUTATIONS = [
     ("M1b", "[1]", "html",
      lambda s: _remplacer_une_fois(s, r'<a href="[^"]*\.md">Version Markdown</a>',
                                    '<a href="ailleurs.txt">Version Markdown</a>')),
+    # ⚠ Le motif portait `</section>` — inapplicable depuis la purge du 29 juillet 2026 : les trois
+    # seules sections du rendu étaient l'appareil, et le corps n'en porte plus aucune. Ancré sur
+    # `</main>`, qui existe dans tout rendu.
     ("M2a", "[2]", "html",
-     lambda s: _remplacer_une_fois(s, r"</section>", "")),
+     lambda s: _remplacer_une_fois(s, r"</main>", "")),
     # ⚠ Le motif est générique EXPRÈS. Il portait `<h2 id="s11">` en dur — l'ancre de la § N.1 d'un
     # chapitre à un chiffre —, et il est devenu inapplicable au ch. 11, dont les ancres vont de
     # `s110` à `s115`. Une mutation inapplicable ne fait pas passer le harnais (elle lève), mais
@@ -62,8 +65,17 @@ MUTATIONS = [
      lambda s: _remplacer_une_fois(s, r'<p class="legende">', "<p>")),
     ("M6a", "[6]", "md",
      lambda s: _remplacer_une_fois(s, r"\*\*Volumétrie cible\*\*", "**Longueur**")),
+    # ⚠ La mutation a changé de sens le 29 juillet 2026, avec le contrôle. Elle vérifiait que le
+    # .html portait bien l'en-tête ; elle vérifie désormais qu'il ne le porte PAS — la purge des
+    # rendus a fait de l'appareil une exclusivité du .md.
     ("M6b", "[6]", "html",
-     lambda s: _remplacer_une_fois(s, r"<dt>Garde-fous balayés</dt>", "<dt>Garde-fous</dt>")),
+     lambda s: _remplacer_une_fois(
+         s, r'<main class="corps">',
+         '<main class="corps"><section class="entete"><dl><dt>Statut</dt></dl></section>')),
+    ("M6c", "[6]", "html",
+     lambda s: _remplacer_une_fois(
+         s, r'<main class="corps">',
+         '<main class="corps"><div class="these"><p>thèse recopiée</p></div>')),
     ("M8", "[8]", "html",
      lambda s: _remplacer_une_fois(s, r"<h3>", "<h3>**")),
     ("M7", "[7]", "md",

@@ -194,9 +194,25 @@ Chaque pièce existe en `.md` et en `.html`, **versionnés ensemble**, dans
 
 Le `.md` **fait foi**. Le `.html` est un **rendu** : toute correction se fait dans le `.md` puis se
 reporte, au même commit — jamais l'inverse, jamais l'un sans l'autre. C'est la transposition de la
-règle « PDF versionné avec sa source » du dépôt. Le compendium n'a **pas** de pipeline de rendu : les
-trois copies du FESP appartiennent aux Vol. I, II et III, et aucune n'a été copiée ici — le `.html`
-s'écrit à la main depuis le gabarit.
+règle « PDF versionné avec sa source » du dépôt. ⚠ **Depuis le 29 juillet 2026, le volume a en outre
+son propre pipeline PDF** — [`2 - Compendium/build/`](../../../2%20-%20Compendium/build/), qui compose
+les cinquante pièces en `compendium.pdf` : *la phrase « le compendium n'a pas de pipeline de rendu »
+n'est plus vraie.* Ce n'est **pas** une quatrième copie du FESP — les trois copies appartiennent aux
+Vol. I, II et III, et aucune n'a été copiée ici.
+
+⚠ **LE `.html` NE PORTE QUE LE CORPS TECHNIQUE — purge du 29 juillet 2026.** Les trois appareils que
+la pièce porte hors corps — **l'en-tête à cinq champs, la thèse citée depuis le TOC, la note de
+statut** (et sa clôture des remontées) — **ne sont pas rendus** : ils vivent au `.md`, qui reste la
+seule source. C'est **exactement la coupe** que `build/assemble.py` opère pour le PDF, appliquée au
+rendu de lecture. Quatre conséquences. *(a)* ⚠ **Retirer n'est pas ignorer** : le générateur
+**exige** les trois à la lecture et **échoue** si l'un manque — une pièce sans en-tête ni thèse ne se
+rend pas. *(b)* ⚠ **Les renvois du corps vers la note de statut sont marqués d'une dague, jamais
+supprimés** (`§ 40.7 †`), et le pied de page en donne la lecture ; le script publie leur cardinal à
+chaque exécution. *Un renvoi supprimé serait plus commode et moins honnête qu'un renvoi marqué.*
+*(c)* **La description `<meta>` reprend la ligne de situation, jamais la thèse** — l'y recopier la
+ferait vivre dans le rendu par une porte dérobée. *(d)* ⚠ **Le contrôle [6] a changé de sens avec la
+purge** : il exige les cinq champs et la thèse **au `.md`**, et **refuse** un `.html` qui porterait
+`class="entete"`, `class="these"` ou `class="statut"` (mutations M6b et M6c du harnais).
 
 **Le rendu se génère, il ne se recopie pas** :
 

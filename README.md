@@ -178,7 +178,8 @@ le 29 juillet 2026 — leur rendu paginé,
 ⚠ **Les cinquante chapitres sont rédigés, et ils le sont hors portes.** Le 27 juillet 2026, sur
 instruction d'auteur, les cinq répertoires [`Livre I/`](2%20-%20Compendium/Livre%20I/) à
 [`Livre V/`](2%20-%20Compendium/Livre%20V/) ont été créés et **leurs cinquante chapitres** y ont été
-rédigés en deux rendus chacun (`.md` source, `.html` de lecture à thème sombre), **avant** le
+rédigés en deux rendus chacun (`.md` source, `.html` de lecture à thème sombre — **corps technique
+seul depuis la purge du 29 juillet 2026**, l'appareil de gouvernance restant au `.md`), **avant** le
 franchissement des portes que le PRD pose comme préalables ; chaque pièce se déclare elle-même
 **brouillon, non publiable** et porte, en section hors plan, les conséquences de cet écart. Les passes
 d'arbitrage qui ont suivi ont soldé leurs remontées, puis un **audit intégral des cinq Livres**
