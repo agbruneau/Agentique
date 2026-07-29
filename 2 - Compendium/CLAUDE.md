@@ -163,7 +163,7 @@ du dernier maillon masquant son échec — faute déjà commise sur le ch. 6, po
 rendu alors que le contrôle échouait.
 
 ⚠ **Un TROISIÈME rendu existe depuis le 29 juillet 2026 : [`compendium.pdf`](compendium.pdf),
-893 pages, composé par [`build/build-pdf.sh`](build/build-pdf.sh).** La phrase « le compendium n'a
+891 pages, composé par [`build/build-pdf.sh`](build/build-pdf.sh).** La phrase « le compendium n'a
 pas de pipeline de rendu », vraie jusque-là, ne l'est plus. **Ce pipeline n'est PAS une quatrième
 copie du FESP** : les trois copies du FESP appartiennent aux Vol. I, II et III, et aucune n'a été
 copiée ici — celui-ci est propre au volume (gabarit `build/springer.template`, format 155 × 235 mm,

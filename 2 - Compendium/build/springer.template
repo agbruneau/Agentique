@@ -193,14 +193,8 @@
 
 #let filet-titre = line(length: 100%, stroke: 0.8pt + black)
 
-// -- faux-titre --
-#v(4.2cm)
-#align(center, text(font: SERIF, size: 15pt, weight: "bold", smallcaps[La somme agentique]))
-#pagebreak(weak: false)
-#pagebreak(weak: false)
-
-// -- page de titre --
-#v(3.4cm)
+// -- page de titre : titre en tête, colophon en pied, une seule page --
+#v(3.2cm)
 #block(width: 100%, {
   set par(justify: false, first-line-indent: 0pt)
   text(font: SERIF, size: 11pt, fill: GRIS, smallcaps[Volume IV — compendium intégral])
@@ -216,10 +210,11 @@
   v(2.4cm)
   text(font: SERIF, size: 13pt)[André-Guy Bruneau]
 })
-#pagebreak(weak: false)
 
-// -- colophon --
+// -- colophon, au pied de la page de titre --
 #v(1fr)
+#line(length: 100%, stroke: 0.4pt + FILET)
+#v(0.7em)
 #block(width: 100%, {
   set text(size: 8.5pt, fill: GRIS)
   set par(justify: false, leading: 0.62em, spacing: 0.75em, first-line-indent: 0pt)
