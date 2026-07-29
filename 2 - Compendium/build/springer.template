@@ -227,9 +227,12 @@
   line(length: 100%, stroke: 0.4pt + FILET)
   v(0.8em)
   align(center, block(width: 90%, text(size: 9pt, style: "italic")[
-    Faire parler des agents est un problème de protocole ; leur faire confiance,
-    un problème de preuve opposable — et c'est la seconde question, jamais la
-    première, qui décide d'un déploiement en milieu réglementé.
+    L'interopérabilité agentique est une propriété à maintenir, non un état
+    atteint : elle suppose un contrat protocolaire découplé de ses mises en
+    œuvre, une identité et une délégation vérifiables au point d'application,
+    un contrôle de finalité opposable, une provenance attestée de l'artefact et
+    une mesure du comportement en exploitation — cinq termes dont aucun ne
+    supplée l'absence d'un autre.
   ]))
   v(0.8em)
   [© André-Guy Bruneau, M.Sc. IT. Tous droits réservés.]
