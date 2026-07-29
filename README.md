@@ -4,14 +4,15 @@ Travaux d'André-Guy Bruneau sur les agents d'IA en écosystème d'entreprise, e
 particulièrement en services financiers. Le dépôt réunit **trois monographies** conçues en
 progression — les protocoles, puis les cadres réglementaires, puis l'organisation qui doit les
 faire tenir ensemble —, **une veille technologique autonome** qui les traverse et les tient à jour,
-et **un compendium** qui projette de les refondre en un seul ouvrage.
+et **un compendium** qui les refond en un seul ouvrage — arrêté en révision finale, non publiable.
 
 > **Où entrer.** Le lecteur pressé lit la [veille technologique](Veille%20Technologique.md) : c'est
 > l'état de l'art le plus récent (18 juillet 2026), et le seul document publié qui cite les volumes
 > du dépôt. Le lecteur méthodique suit l'ordre des volumes, du général au spécifique. Le compendium
 > se feuillette depuis le 29 juillet 2026 — [`compendium.pdf`](2%20-%20Compendium/compendium.pdf),
-> **847 pages** —, mais ses cinquante chapitres sont un **brouillon écrit hors portes** : il se lit,
-> il ne fait pas foi. *Composer n'est pas publier.*
+> **847 pages** —, et il est **arrêté en révision finale pour la bibliothèque personnelle de
+> l'auteur** le même jour. Ses cinquante chapitres restent un **brouillon écrit hors portes** : il se
+> lit, il ne fait pas foi, et il ne se diffuse pas. *Arrêter n'est ni terminer ni publier.*
 
 ## Les cinq livrables
 
@@ -29,7 +30,7 @@ Les trois volumes vivent sous [`1 - Corpus/`](1%20-%20Corpus/) ; la veille est
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | 27 juillet 2026 (décision d'auteur D-1) ; volet des faits levé le 28 juillet 2026 |
-| **État** | Publiée (146 p., 257 références) | Rédaction terminée (569 p., ≈ 263 600 mots ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Brouillon non publiable** — TOC v0.30 / PRD v0.14 ; les **cinquante chapitres** des cinq Livres sont rédigés **hors portes** (27 juillet 2026), relus et arbitrés ; socle consolidé de **159 entrées** et **porte G-3 franchie** le 28 juillet 2026 ; ⚠ **composé en PDF depuis le 29 juillet 2026** — [`compendium.pdf`](2%20-%20Compendium/compendium.pdf), **847 p.**, pipeline propre au volume : *composer n'est pas publier* |
+| **État** | Publiée (146 p., 257 références) | Rédaction terminée (569 p., ≈ 263 600 mots ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Arrêté en révision finale — bibliothèque personnelle** (D-10, 29 juillet 2026 ; TOC v0.31 / PRD v0.15) : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) (**847 p.**). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** |
 
 ## Veille technologique — le document transversal
 
@@ -157,7 +158,7 @@ Le volume naît des lacunes des deux précédents : identité non humaine et dé
 
 ## Vol. IV — La somme agentique (compendium)
 
-**Rédigé hors portes, composé en PDF, non publiable.** Le dossier
+**Arrêté en révision finale, pour une bibliothèque personnelle.** Le dossier
 [`2 - Compendium/`](2%20-%20Compendium/) porte une table des matières
 commentée ([`TOC.md`](2%20-%20Compendium/PRD/TOC.md), **v0.30 du 28 juillet 2026** — chaque
 entrée de chapitre y est suivie de sa **table des matières détaillée**, provenance par
@@ -191,6 +192,22 @@ franchit aucune porte* — et *zéro remontée ouverte ne veut pas dire pièce r
 Livre vit aux `README.md` des cinq dossiers et au
 [`CLAUDE.md`](2%20-%20Compendium/CLAUDE.md) du volume.
 
+⚠ **Le volume est arrêté depuis le 29 juillet 2026 — et « arrêté » n'est ni « terminé » ni
+« publiable ».** La décision d'auteur **D-10** (PRD [v0.15 §14](2%20-%20Compendium/PRD/PRD.md), TOC
+v0.31) place le compendium au statut de révision **RÉVISION FINALE**, sous un **régime de diffusion en
+bibliothèque personnelle** : lecture par l'auteur, **aucune mise à disposition d'un tiers**, aucun
+dépôt public, **aucune opposabilité**. La conformité est arrêtée sous **trois états qui ne se
+confondent pas** — **satisfaite sur pièce** pour G-2, G-3 et G-7 (plus les quatre contrôles outillés,
+rejoués le même jour, sorties 0) ; **close pour ce seul régime, par dérogation nommée**, pour G-1
+(volets résiduels), G-4 (volet de fond), G-5 (balayage du Livre IV) et G-6 (trois lots, socle du
+ch. 41), **dont le résidu reste entier et écrit** ; **non satisfaisable** pour **CA-IV-11 et
+CA-IV-13**, qui exigent un relecteur distinct du rédacteur. ⚠ **Le motif de la dérogation est unique
+et étroit** — *lecteur et rédacteur sont la même personne, il n'y a aucun tiers à protéger d'une
+affirmation non réfutée* — et **elle tombe avec lui** : à la première diffusion, les quatre portes et
+les deux critères redeviennent exigibles dans leur état. **Aucun énoncé n'est central** au sens de
+CA-IV-01, **aucun vote adversarial n'a été conduit**, et **les trois volumes sources font toujours
+foi**.
+
 ⚠ **Un rendu paginé existe depuis le 29 juillet 2026, et il ne requalifie rien non plus.**
 [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) — **847 pages**, les cinquante chapitres des
 cinq Livres, format 155 × 235 mm au style des monographies Springer, **sans aucune page blanche** —
@@ -198,9 +215,10 @@ est composé par [`build/build-pdf.sh`](2%20-%20Compendium/build/build-pdf.sh), 
 du dépôt et le seul qui ne dérive pas du FESP**. Le rendu retire du corps les trois appareils que le
 volume tient hors corps (en-tête à cinq champs, thèse citée depuis le TOC, note de statut) et
 **marque d'une dague les vingt-trois renvois** que cette coupe laisserait pendre, plutôt que de les
-supprimer ; le statut non publiable est déclaré au colophon de la page de titre, une fois pour les
-cinquante. *Composer n'est pas publier* : le `.md` reste la seule source, et le PDF se régénère avec
-elle.
+supprimer ; le **colophon de la page de titre** déclare, une fois pour les cinquante, le **statut de
+révision finale, son régime de diffusion et ses réserves** — portes dérogées, vote adversarial non
+conduit, CA-IV-11 et CA-IV-13 non satisfaits, aucun énoncé central. *Composer n'est pas publier* : le
+`.md` reste la seule source, et le PDF se régénère avec elle.
 
 Sa nature le distingue des trois autres : ce n'est ni un quatrième panneau ni un méta-index, mais
 un **omnibus qui absorbe les Vol. I, II et III** en un seul ouvrage réordonné et dédoublonné, à
@@ -223,8 +241,8 @@ re-mesurer les trois corpus par une commande de référence unique.
 ## Ordre de lecture et renvois
 
 **Vol. I → Vol. II → Vol. III**, la veille servant d'entrée rapide ou de mise à jour ; le Vol. IV
-les remplacera tous les trois **une fois recevable** — il est écrit et composé, il n'est pas
-publiable, et [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) se feuillette sans faire foi.
+les remplacera tous les trois **une fois recevable** — il est écrit, composé et arrêté, il n'est
+pas publiable, et [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) se feuillette sans faire foi.
 
 - **Vol. II présuppose Vol. I** pour la théorie du découplage, l'ingénierie des agents LLM,
   l'anatomie des protocoles, la sécurité de la couche agentique et la cryptographie post-quantique.
@@ -466,6 +484,19 @@ Vol. IV réalignée sur ses cinq Livres et son `build/`, règle du « PDF versio
 non publiable, et *composer n'est pas publier*. Le reste de l'état du Vol. IV — issues des remontées,
 volumétrie par Livre, décisions d'auteur — vit au [`CLAUDE.md` du
 dossier](2%20-%20Compendium/CLAUDE.md) et n'est pas repris ici.
+
+**Le 29 juillet 2026, seconde passe du même jour** : le Vol. IV est **arrêté en révision finale pour
+une diffusion en bibliothèque personnelle** (décision d'auteur **D-10**, PRD **v0.15** §14, TOC
+**v0.31**), et les quatre porteurs de statut ont été réalignés — ce `README.md`, le
+[`CLAUDE.md`](CLAUDE.md) de la racine, et les deux fichiers du volume. Le **colophon** du rendu a été
+récrit et [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) **recomposé** : **847 pages**,
+re-mesurées (`pypdf`). ⚠ **Un défaut de composition a été trouvé et corrigé dans la passe** : le
+colophon allongé débordait sur une seconde page — *la page de titre doit rester unique*, et seul le
+décompte de pages l'a montré, aucun contrôle ne voyant cette classe. **Conformité arrêtée sous trois
+états** : **satisfaite sur pièce** (G-2, G-3, G-7, plus les quatre contrôles rejoués le même jour,
+sorties 0), **close pour ce seul régime par dérogation nommée** (G-1 résiduel, G-4 fond, G-5 balayage,
+G-6 lots), **non satisfaisable** (CA-IV-11, CA-IV-13). ⚠ **Aucun de ces gestes ne rend l'ouvrage
+publiable** : *arrêter n'est ni terminer ni publier*, et la dérogation tombe à la première diffusion.
 
 ⚠ Le décompte des diagrammes du Vol. I se mesure avec un motif **ancré** :
 `grep -c '^```mermaid'` donne 28. Le motif non ancré en retourne 29 — il attrape une ligne de prose

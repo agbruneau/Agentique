@@ -6,8 +6,29 @@ plus spécifique gagne** : ici, celui-ci ; les règles valant pour tout le dép�
 faits datés, périmètre des fichiers de doc) sont au [`CLAUDE.md` racine](../CLAUDE.md) et ne sont
 pas répétées.
 
+⚠ **ÉTAT AU 29 JUILLET 2026 — L'OUVRAGE EST ARRÊTÉ, et c'est la première chose à savoir avant
+d'éditer quoi que ce soit ici.** La décision d'auteur **D-10** (PRD **v0.15** §14, TOC **v0.31**) place
+le compendium au statut de révision **RÉVISION FINALE**, sous un **régime de diffusion en bibliothèque
+personnelle** : lecture par l'auteur, **aucune mise à disposition d'un tiers**, aucun dépôt public,
+**aucune opposabilité**. **Quatre choses en découlent pour qui édite.** *(1)* ⚠ **Plus aucune passe de
+rédaction n'est prévue** : les cinquante chapitres sont **arrêtés dans leur état du 29 juillet 2026**.
+Une modification de pièce reste possible — une faute se corrige —, mais elle **rouvre la passe** :
+elle se recompose (`bash build/build-pdf.sh`) et se déclare. *(2)* ⚠ **« Arrêté » n'est ni « terminé »
+ni « conforme », et les trois ne se substituent jamais l'un à l'autre.** **G-2, G-3 et G-7 sont
+satisfaites sur pièce** ; **G-1 (deux volets résiduels), G-4 (fond), G-5 (balayage) et G-6 (trois
+lots, socle du ch. 41) sont closes POUR CE SEUL RÉGIME, par dérogation nommée**, leur résidu entier et
+écrit ; **CA-IV-11 et CA-IV-13 sont dérogés, non satisfaits** — il n'y a toujours pas de relecteur
+distinct du rédacteur. *(3)* ⚠ **Le motif de la dérogation est étroit et il est unique** : *lecteur et
+rédacteur sont la même personne, il n'y a aucun tiers à protéger d'une affirmation non réfutée.* **La
+dérogation tombe avec ce motif** — à la première diffusion, les quatre portes et les deux critères
+redeviennent exigibles dans leur état du PRD §5 et §11, et **citer le §14 hors de son régime serait
+une fausse attestation** (CA-IV-14). *(4)* ⚠ **Rien de tout cela ne rend un énoncé central** :
+CA-IV-01 reste tenu **par abstention**, **aucun vote adversarial n'a été conduit**, et **les trois
+volumes sources font toujours foi**. *Ne jamais écrire « conforme à toutes les portes », « publiable »
+ni « terminé » : écrire « arrêté », et renvoyer au PRD §14.*
+
 ⚠ **ÉTAT AU 28 JUILLET 2026 — la passe d'audit, et le seul changement de statut que le volume ait
-connu depuis son ouverture.** Un **audit intégral des cinq Livres** ([`audit.md`](audit.md), cent
+connu jusque-là depuis son ouverture.** Un **audit intégral des cinq Livres** ([`audit.md`](audit.md), cent
 constats sur le corpus du commit `8cb40fa`, un seul bloquant) a été conduit, puis **ses huit
 remontées soldées** — TOC **v0.29**, PRD **v0.13**. **Cinq faits conditionnent toute édition ici.**
 *(1)* ⚠ **LE SOCLE CONSOLIDÉ EXISTE** : [`PRD/socle-consolide.md`](PRD/socle-consolide.md) v1.0 porte
@@ -184,10 +205,16 @@ supprimé serait plus commode et moins honnête qu'un renvoi marqué.* *(d)* ⚠
 AUCUNE page blanche** *(instruction d'auteur du 29 juillet 2026)* : ni faux-titre, ni verso blanc, ni
 ouverture forcée au recto — d'où des marges symétriques et **un seul titre courant**, la parité
 recto-verso n'ayant plus d'objet. **Ne pas y réintroduire de `pagebreak(to: "odd")`** sans rouvrir la
-consigne. *(e)* ⚠ **Le statut du volume n'est pas touché par l'existence d'un rendu paginé** : les
-cinquante chapitres demeurent un **brouillon non publiable**, et le **colophon de la page de titre**
-le déclare une fois pour les cinquante — la page d'avertissement séparée a été retirée le 29 juillet
-2026, **sa substance repliée au colophon, non supprimée**. *Composer n'est pas publier.*
+consigne. *(e)* ⚠ **Le statut du volume n'est pas touché par l'existence d'un rendu paginé** — *composer n'est
+pas publier* —, et le **colophon de la page de titre** le déclare une fois pour les cinquante ; la
+page d'avertissement séparée a été retirée le 29 juillet 2026, **sa substance repliée au colophon,
+non supprimée**. ⚠ **Depuis D-10 (29 juillet 2026), ce colophon porte le statut « révision finale —
+diffusion en bibliothèque personnelle » et ses réserves** : portes dérogées, vote adversarial non
+conduit, CA-IV-11 et CA-IV-13 non satisfaits, aucun énoncé central. **Toute modification du colophon
+se fait au gabarit [`build/springer.template`](build/springer.template) et se recompose dans le même
+commit** ; ⚠ *le colophon tient au pied d'une page de titre qui doit rester **une seule page*** — y
+ajouter un paragraphe sans reprendre les deux `#v(…)` de tête l'a déjà fait déborder sur la page 2,
+défaut qu'aucun contrôle ne voit et que seul le décompte de pages a montré.
 
 ## ⚠ Livre III — quinze chapitres rédigés hors portes, D-9 enfreinte deux fois (27 juillet 2026)
 

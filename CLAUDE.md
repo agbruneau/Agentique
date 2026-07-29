@@ -47,8 +47,27 @@ divergent volontairement. Ce fichier régit deux choses seulement — la **racin
 | Vol. III — *L'entreprise agentique* (rédaction, gouvernance PRD) | [`1 - Corpus/3 - EntrepriseAgentique/CLAUDE.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/CLAUDE.md) |
 | Vol. IV — *La somme agentique* (compendium, cadrage) | [`2 - Compendium/CLAUDE.md`](2%20-%20Compendium/CLAUDE.md) — le `TOC.md` du dossier reste la spécification de contenu |
 
-⚠ **Le 28 juillet 2026, le Vol. IV a changé de statut pour la première fois depuis son ouverture, et
-trois faits valent au niveau de la racine.** Un **audit intégral de ses cinq Livres** a été conduit
+⚠ **Le 29 juillet 2026, le Vol. IV est ARRÊTÉ — statut de révision finale, diffusion en bibliothèque
+personnelle — et c'est le fait de racine qui prime sur tous ceux qui suivent.** La décision d'auteur
+**D-10** (PRD **v0.15** §14, TOC **v0.31**) close le travail d'écriture : les cinquante chapitres sont
+arrêtés dans leur état du 29 juillet 2026, et le colophon de
+[`compendium.pdf`](2%20-%20Compendium/compendium.pdf) porte le statut, son régime et ses réserves.
+**Quatre points valent ici, et le détail ne s'y reprend pas** — il vit au [`CLAUDE.md` du
+dossier](2%20-%20Compendium/CLAUDE.md) et au PRD §14. *(a)* ⚠ **« Arrêté » n'est ni « terminé », ni
+« conforme », ni « publiable »** : **trois portes sont satisfaites sur pièce** (G-2, G-3, G-7),
+**quatre sont closes POUR CE SEUL RÉGIME par dérogation nommée** (G-1 résiduel, G-4 fond, G-5
+balayage, G-6 lots) et **CA-IV-11 comme CA-IV-13 sont dérogés, non satisfaits** — le relecteur tiers
+n'existe toujours pas. *(b)* ⚠ **La diffusion est bornée** : lecture par l'auteur, **aucune mise à
+disposition d'un tiers**, aucun dépôt public, **aucune opposabilité** — et *la dérogation tombe à la
+première diffusion*, rouvrant les quatre portes dans leur état. *(c)* ⚠ **Aucun énoncé n'est central**
+au sens de CA-IV-01, aucun vote adversarial n'a été conduit, et **les trois volumes sources font
+toujours foi** : ne pas requalifier le Vol. IV en source de fait ni écrire « la somme se substitue aux
+volumes ». *(d)* **Le régime de la veille ne bouge pas davantage** — sa réf. [220] décrit un cadrage
+sans chapitre, vrai à sa date : quatrième écart de la même famille, **signalé ici, jamais corrigé
+là-bas**.
+
+⚠ **Le 28 juillet 2026, le Vol. IV avait changé de statut pour la première fois depuis son ouverture,
+et trois faits valent au niveau de la racine.** Un **audit intégral de ses cinq Livres** a été conduit
 ([`2 - Compendium/audit.md`](2%20-%20Compendium/audit.md) — cent constats, un seul bloquant) et **ses
 huit remontées ont été soldées** (TOC v0.29, PRD v0.13). *(a)* ⚠ **Le socle consolidé existe** —
 [`socle-consolide.md`](2%20-%20Compendium/PRD/socle-consolide.md), **159 entrées `S-001`…`S-159`**,

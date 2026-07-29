@@ -179,7 +179,7 @@
 #let filet-titre = line(length: 100%, stroke: 0.8pt + black)
 
 // -- page de titre : titre en tête, colophon en pied, une seule page --
-#v(3.2cm)
+#v(2.1cm)
 #block(width: 100%, {
   set par(justify: false, first-line-indent: 0pt)
   align(center, text(font: SERIF, size: 11pt, fill: GRIS, tracking: 0.22em)[COMPENDIUM])
@@ -192,7 +192,7 @@
     Interopérabilité, autonomie encadrée et fabrique de confiance :
     déployer des agents en services financiers réglementés (2024-2032)
   ]
-  v(2.4cm)
+  v(1.7cm)
   text(font: SERIF, size: 13pt)[André-Guy Bruneau]
 })
 
@@ -207,13 +207,21 @@
    en cinq livres, condensés des volumes I (*Interopérabilité agentique*),
    II (*L'autonomie encadrée*) et III (*L'entreprise agentique*).]
   parbreak()
-  [*Brouillon de rédaction, non publiable.* Les cinquante chapitres ont été
-   rédigés sur instruction d'auteur avant le franchissement des portes de
-   lancement du volume ; G-4, G-5 et G-6 restent ouvertes, aucun vote
-   adversarial n'a été conduit sur le socle consolidé, et les critères CA-IV-11
-   et CA-IV-13 exigent un relecteur distinct du rédacteur, que la gouvernance
-   du volume ne fournit pas. *Aucun énoncé de cet ouvrage n'est central* au sens
-   du critère CA-IV-01.]
+  [*Révision finale — diffusion en bibliothèque personnelle.* Les cinquante
+   chapitres sont arrêtés dans leur état du 29 juillet 2026 (décision d'auteur
+   D-10) : plus aucune passe de rédaction n'est prévue. *Arrêté n'est ni terminé
+   ni publiable.* Ils ont été rédigés avant le franchissement des portes de
+   lancement du volume ; G-1, G-4, G-5 et G-6 sont closes pour ce seul régime,
+   par dérogation nommée, et le résidu de chacune reste entier ; aucun vote
+   adversarial n'a été conduit sur le socle consolidé ; et les critères CA-IV-11
+   et CA-IV-13, qui exigent un relecteur distinct du rédacteur, sont dérogés et
+   non satisfaits. *Aucun énoncé de cet ouvrage n'est central* au sens du critère
+   CA-IV-01.]
+  parbreak()
+  [*Diffusion.* Lecture par l'auteur. Aucune mise à disposition d'un tiers, aucun
+   dépôt public, aucune citation opposable : la dérogation qui autorise ce rendu
+   tombe avec le régime qui la motive, et les portes qu'elle couvre se rouvrent
+   alors dans leur état. Les trois volumes sources — I, II et III — font foi.]
   parbreak()
   [Gel unique du compendium : 27 juillet 2026 (décision d'auteur D-1). Les faits
    périssables portent en outre le gel de leur source.]
