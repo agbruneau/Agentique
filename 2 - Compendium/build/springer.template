@@ -4,7 +4,7 @@
 
 #set document(
   title: "La somme agentique",
-  author: "André-Guy Bruneau",
+  author: "André-Guy Bruneau, M.Sc. IT",
   keywords: ("interopérabilité agentique", "identité", "orchestration",
              "services financiers", "Canada"),
 )
@@ -237,7 +237,7 @@
   [Rendu composé avec Pandoc et Typst au format 155 × 235 mm. Les sources
    `.md` font foi ; ce PDF en est un rendu.]
   parbreak()
-  [© André-Guy Bruneau. Tous droits réservés.]
+  [© André-Guy Bruneau, M.Sc. IT. Tous droits réservés.]
 })
 #pagebreak(weak: false)
 
