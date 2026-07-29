@@ -14,6 +14,35 @@ et **un compendium** qui les refond en un seul ouvrage — arrêté en révision
 > l'auteur** le même jour. Ses cinquante chapitres restent un **brouillon écrit hors portes** : il se
 > lit, il ne fait pas foi, et il ne se diffuse pas. *Arrêter n'est ni terminer ni publier.*
 
+## État au dépôt — 29 juillet 2026
+
+Le dépôt est arrêté dans cet état. Les chiffres ci-dessous ont été **re-mesurés sur pièce à cette
+date**, jamais recopiés d'un autre document ; les commandes qui les produisent sont données plus bas
+(« Construire les PDF », « Ce qui reste vivant ») et au [`CLAUDE.md`](CLAUDE.md).
+
+| Livrable | Rendu mesuré (`pypdf`) | Pièces | Appareil de contrôle |
+|---|---|---|---|
+| Veille technologique | **161 p.**, 269 références | 14 sections, 15 tableaux, 25 questions ouvertes | `python check-veille.py` → **sortie 0** |
+| Vol. I — *Interopérabilité* | **569 p.** | 7 chapitres + 7 bibliographies + Annexe B, **28 diagrammes** | — (vérification adverse des citations) |
+| Vol. II — *L'autonomie encadrée* | **387 p.** | **29 pièces** + registre de gel, socle de 46 entrées | grille CA-1…CA-8 |
+| Vol. III — *L'entreprise agentique* | **427 p.** | **34 pièces** + registre de gel, **30 rapports** de vérification | CA-01…CA-14, 15 remontées ouvertes |
+| Vol. IV — *La somme agentique* | **810 p.** | **50 chapitres** en 5 Livres + 1 annexe hors plan, socle de **159 entrées** | `check-toc.py` (C1-C15), `check-sieges.py` (**26 sièges / 50 pièces**), `check-compendium.py` (**P1-P8**), `decompte.sh` → **sortie 0** pour les quatre |
+
+Gouvernance du Vol. IV à sa date d'arrêt : **TOC v0.31**, **PRD v0.15**, décision d'auteur **D-10**.
+
+⚠ **Ce que ce dépôt n'arrête pas, et qu'il faut lire avant d'en tirer quoi que ce soit.** *(a)* **Deux
+volumes ne sont pas publiables et le déclarent** : le Vol. III (quinze remontées ouvertes R-G-43 à
+R-G-57, dette de vote sur F-92 et F-96) et le Vol. IV (**arrêté**, non terminé — quatre portes closes
+par dérogation nommée pour le seul régime de bibliothèque personnelle, **CA-IV-11 et CA-IV-13 non
+satisfaits** faute de relecteur tiers). *Arrêter n'est ni terminer ni publier.* *(b)* **Trois décisions
+restent à l'auteur, et aucune n'est du ressort d'une passe documentaire** : poser (ou retirer des
+documents de gouvernance) l'étiquette git `mono-v1.0` du Vol. II ; déposer une licence à la racine du
+dépôt, qui n'en porte aucune — seul le Vol. I en a une ; retirer du suivi git les **trois fichiers de
+bytecode Python** encore versionnés (voir « Restent ouverts »). *(c)* **Les reliquats de code et de
+contenu listés en fin de fichier ne sont pas résorbés** — dont l'assemblage du Vol. II, hors service.
+*(d)* **La veille n'est pas rattrapée** : ses références [217], [219] et [220] décrivent l'état de
+leurs sources au gel de leur édition, et cela ne se corrige pas après coup.
+
 ## Les cinq livrables
 
 Les trois volumes vivent sous [`1 - Corpus/`](1%20-%20Corpus/) ; la veille est
@@ -142,6 +171,8 @@ ouvertes** (R-G-43 à R-G-57), dont plusieurs relèvent de l'auteur. **Le PDF es
 
 Le dossier porte trois répertoires — la gouvernance dans `prd/`, la rédaction dans `monographie/`,
 les rapports de vérification dans `verification/` —, plus un
+[`README.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/README.md) au lecteur *(déposé le
+29 juillet 2026 : le volume était le seul des trois à n'en porter aucun)* et un
 [`CLAUDE.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/CLAUDE.md) à l'agent qui
 édite. Documents de gouvernance, par ordre d'autorité :
 
@@ -161,12 +192,12 @@ Le volume naît des lacunes des deux précédents : identité non humaine et dé
 
 **Arrêté en révision finale, pour une bibliothèque personnelle.** Le dossier
 [`2 - Compendium/`](2%20-%20Compendium/) porte une table des matières
-commentée ([`TOC.md`](2%20-%20Compendium/PRD/TOC.md), **v0.30 du 28 juillet 2026** — chaque
+commentée ([`TOC.md`](2%20-%20Compendium/PRD/TOC.md), **v0.31 du 29 juillet 2026** — chaque
 entrée de chapitre y est suivie de sa **table des matières détaillée**, provenance par
 sous-section et table de couverture, **portée en titres markdown depuis la v0.18** : le plan du
 fichier expose la hiérarchie livre → chapitre → section), son
-**PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium/PRD/PRD.md), **v0.14 du
-28 juillet 2026** — portes de lancement, régimes de preuve, critères d'acceptation, jalons), son
+**PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium/PRD/PRD.md), **v0.15 du
+29 juillet 2026** — portes de lancement, régimes de preuve, critères d'acceptation, jalons), son
 **socle consolidé** ([`socle-consolide.md`](2%20-%20Compendium/PRD/socle-consolide.md), **159 entrées**
 `S-001`…`S-159`), sa vue synoptique dérivée ([`README.md`](2%20-%20Compendium/README.md)), ses
 exécutables de contrôle ([`check-toc.py`](2%20-%20Compendium/PRD/check-toc.py) et trois autres,
@@ -313,6 +344,7 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
 │   │   ├── build/                             assemblage + pipeline Pandoc → Typst
 │   │   └── Monographie.md / .pdf              assemblage (387 p.)
 │   └── 3 - EntrepriseAgentique/             Vol. III
+│       ├── README.md                          présentation du volume (déposée le 29 juill. 2026)
 │       ├── CLAUDE.md                          conventions du volume
 │       ├── prd/                               PRD v1.3, TOC v0.8, PRDPlan v0.5 — gouvernance
 │       ├── monographie/                       34 pièces rédigées + registre des gels
@@ -334,22 +366,30 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
     │   ├── README.md                          état du livre, issues des remontées, sièges, volumétrie
     │   └── NN-….md / .html                    un chapitre par pièce — source + page à thème sombre
     └── PRD/                                 gouvernance de la rédaction (sous-dossier)
-        ├── PRD.md                           v0.14 — portes, régimes de preuve, jalons
-        ├── TOC.md                           table des matières commentée (v0.30) — spécification
+        ├── PRD.md                           v0.15 — portes, régimes de preuve, jalons
+        ├── TOC.md                           table des matières commentée (v0.31) — spécification
         ├── socle-consolide.md               socle consolidé S-001…S-159 (porte G-3, 28 juill. 2026)
         ├── registre-gel.md                  registre de gel, une ligne par chapitre
         ├── check-toc.py                     contrôles C1-C15 (python PRD/check-toc.py)
-        ├── check-sieges.py                  contrôles S1-S5 inter-pièces — sièges déclarés
+        ├── check-sieges.py                  contrôles S1-S5 inter-pièces — 26 sièges sur 50 pièces
         ├── check-compendium.py              contrôles P1-P8 du socle consolidé
         ├── decompte.sh                      commande de décompte de référence (porte G-2)
         └── *-mutations.py                   validation par mutation des trois contrôles
 ```
 
-**Où sont les `CLAUDE.md`.** **Cinq**, un par périmètre, sans recouvrement : la racine porte les
-conventions communes et celles de la veille ; les Vol. I, II, III et IV portent chacun les siennes.
-Le `CLAUDE.md` du Vol. IV renvoie à son `TOC.md` comme spécification de contenu. *(Le sixième — celui
-du démonstrateur Go, qui primait dans son répertoire — est parti avec lui le 25 juillet 2026 :
-aucun `CLAUDE.md` de code ne subsiste au dépôt.)*
+**Où sont les `CLAUDE.md`.** **Six**, un par périmètre, sans recouvrement — cardinal re-compté sur
+l'arbre le 29 juillet 2026 : la racine porte les conventions communes et celles de la veille ;
+[`1 - Corpus/`](1%20-%20Corpus/CLAUDE.md) porte celles du **conteneur** du triptyque et de sa synthèse
+consolidée ; les Vol. I, II, III et IV portent chacun les siennes. Le `CLAUDE.md` du Vol. IV renvoie à
+son `TOC.md` comme spécification de contenu. ⚠ *Ce paragraphe annonçait **cinq** jusqu'au
+29 juillet 2026 : il oubliait celui du conteneur `1 - Corpus/`, qui existe et fait autorité dans son
+périmètre.* *(Un septième — celui du démonstrateur Go, qui primait dans son répertoire — est parti avec
+lui le 25 juillet 2026 : **aucun `CLAUDE.md` de code ne subsiste au dépôt**.)*
+
+**Où sont les `README.md`.** **Douze**, même date de comptage : la racine, le conteneur
+[`1 - Corpus/`](1%20-%20Corpus/README.md) (la synthèse consolidée), les **trois** volumes du triptyque
+— celui du Vol. III déposé le 29 juillet 2026 —, l'index de lecture des 29 pièces du Vol. II, le
+conspectus du Vol. IV, et les **cinq** répertoires de Livres du compendium.
 
 ## Construire les PDF
 
@@ -421,7 +461,7 @@ avant toute réutilisation ou publication :
 
 | Échéance | Objet | Documents touchés |
 |---|---|---|
-| 28 juillet 2026 | Révision de la spécification MCP (protocole sans état) | Veille §4.1 ; Vol. I ch. 3 ; Vol. II ch. 1, 2, 7 |
+| ☑ **échue le 28 juillet 2026** | Révision de la spécification MCP (protocole sans état) — **la révision `2026-07-28` est versée à la veille** (§4.1 : noyau sans état, `server/discover`, dépréciation de Roots, Sampling, Logging et de l'enregistrement dynamique de client). ⚠ **Les volumes ne sont PAS rattrapés** : le Vol. I ch. 3 et le Vol. II ch. 1, 2, 7 décrivent l'état antérieur **à leur date de gel**, et le Vol. II l'écrit lui-même en toutes lettres — *un chapitre gelé douze jours avant une révision annoncée décrit en connaissance de cause un état daté* | Veille §4.1 (**à jour**) ; Vol. I ch. 3, Vol. II ch. 1, 2, 7 (**périmés, non corrigés**) |
 | après le 26 août 2026 | Texte final du règlement du cadre bancaire canadien ; arrêté désignant l'organisme de normalisation | Veille §8.4 ; Vol. II ch. 14, 15, 24 |
 | cible T4 2026 | Lancement effectif du RTR — cible précédée de quatre cibles abandonnées depuis 2019 | Veille §8.4 ; Vol. II ch. 15, 24 |
 | 2 décembre 2026 | Marquage des contenus générés (règlement européen sur l'IA) | Veille §8.1, §12 |
@@ -614,6 +654,33 @@ très cité « LangGraph dans 43 % des déploiements agentiques d'entreprise » 
 primaire atteinte. Décomptes re-mesurés : **161 p. / 269 réf.**, `check-veille.py` en sortie 0, et
 **les deux budgets de mise en page tiennent** (résumé à y = 104,8 pt ; sommaire en pages 5-7).
 
+**Le 29 juillet 2026, huitième passe du même jour — la passe de dépôt final** : les **onze `README.md`**
+et les **six `CLAUDE.md`** que portait le dépôt ont été relus et resynchronisés, sur instruction
+d'auteur, et **un douzième `README.md` a été déposé** — celui du Vol. III. *(Cardinaux re-comptés sur
+l'arbre à cette date : **12 `README.md`, 6 `CLAUDE.md`** après la passe.)* **Ce que la passe a trouvé, et corrigé.** *(1)* **Six estampilles de version périmées**, toutes
+décrivant un état *courant* et non un fait daté : ce `README.md` annonçait **TOC v0.30 / PRD v0.14** en
+deux endroits (section du Vol. IV et arborescence) alors que le dépôt porte **v0.31 / v0.15** ; le
+[`CLAUDE.md` du Vol. IV](2%20-%20Compendium/CLAUDE.md) annonçait **PRD v0.11 et TOC v0.26** dans sa
+section d'autorité, soit quatre et cinq versions de retard, et créditait `check-compendium.py` de
+**P1-P7 / 15 mutations** quand le script en porte **P1-P8 / 17**. ⚠ *Une estampille de version en retard
+ne se distingue d'un constat daté que par sa fonction : celle qui dit « voici l'autorité courante » est
+fausse, celle qui dit « voici ce que la passe a lu » est exacte.* *(2)* **Le Vol. III a reçu son premier
+[`README.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/README.md)** : il était **le seul des trois
+volumes à n'en porter aucun**, et le lecteur n'avait d'autre entrée que le `CLAUDE.md`, qui s'adresse à
+l'agent. Document **dérivé**, sans fait neuf. *(3)* **Deux `.pyc` versionnés de plus** ont été relevés
+sous `2 - Compendium/PRD/__pycache__/` — le total suivi est de **trois**, non d'un —, et l'**absence de
+licence à la racine** est portée au tableau des reliquats. ⚠ **Ni l'un ni l'autre n'est corrigé ici** :
+retirer un fichier versionné et déposer une licence sont des gestes qui se demandent. **Décomptes
+re-mesurés sur pièce à cette date, tous inchangés** : veille **161 p. / 269 réf.**
+(`check-veille.py`, sortie 0), Vol. I **569 p. / 28 diagrammes** (motif ancré), Vol. II **387 p. /
+29 pièces**, Vol. III **427 p. / 34 pièces / 30 rapports**, Vol. IV **810 p. / 50 chapitres /
+159 entrées de socle**, et les **quatre contrôles du Vol. IV en sortie 0** — `check-toc.py`,
+`check-sieges.py` (**26 sièges sur 50 pièces**), `check-compendium.py` (**P1-P8**, trois rapports
+déclaratifs), `decompte.sh`. ⚠ **Ce que la passe ne fait pas** : elle **ne requalifie aucun statut** —
+le Vol. III reste non publiable, le Vol. IV **arrêté et non publiable** —, **ne touche à aucune pièce
+rédigée**, **ne corrige pas la veille** et **ne referme aucune remontée**. *Resynchroniser des
+porteurs de décomptes n'avance aucune porte.*
+
 ⚠ Le décompte des diagrammes du Vol. I se mesure avec un motif **ancré** :
 `grep -c '^```mermaid'` donne 28. Le motif non ancré en retourne 29 — il attrape une ligne de prose
 de la note de production qui cite la balise.
@@ -628,6 +695,9 @@ périmètre de cette passe documentaire :
 | `…/2 - OrchestrationAgentique/prd/audit.md` | renvois `](monographie/…)` → `../monographie/…` |
 | `…/2 - OrchestrationAgentique/verification/relecture-CA.md` | renvois `](../PRD.md)`, `](../PRDPlan.md)`, `](../audit.md)` → `../prd/…` |
 | `…/2 - OrchestrationAgentique/build/__pycache__/` | bytecode Python (`.pyc`) versionné par mégarde — à retirer du suivi et à ignorer |
+| `2 - Compendium/PRD/__pycache__/` | **deux** `.pyc` de plus versionnés par mégarde (`check-compendium`, `check-sieges`), relevés le 29 juillet 2026 : `git ls-files \| grep pycache` en rend **trois** au total. Même régime que ci-dessus — le retrait du suivi est un geste destructif, il se demande |
+| racine du dépôt | **aucune licence** : seul le Vol. I porte un `LICENSE`. Un dépôt final sans licence de tête laisse les quatre autres livrables sans régime déclaré — décision d'auteur, non de passe documentaire |
+| `1 - Corpus/2 - OrchestrationAgentique/` | l'étiquette git `mono-v1.0` **n'est toujours pas posée** alors que quatre documents de gouvernance l'annoncent comme telle : poser le tag, ou corriger ces mentions |
 | Vol. III — `monographie/`, `prd/`, `verification/` | citent le démonstrateur `Borealis-Go`, retiré du dépôt le 25 juillet 2026 (ch. 28, PRD, TOC, confrontation des thèses) : même régime que `Synthese Monographie.md` — **citations exactes, plus opposables**, à consigner et non à réécrire |
 
 Le `monographie/` du Vol. II concentre à lui seul **48 de ces renvois cassés**, sur 28 de ses

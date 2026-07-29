@@ -13,8 +13,8 @@ autres livrables du dépôt *Agentique* :
 | Place du volume I dans le corpus, ordre de lecture, divergences entre volumes | [README du dépôt](../../README.md) |
 | Conventions communes et **conventions de la veille technologique** (à la racine) | [`CLAUDE.md` du dépôt](../../CLAUDE.md) |
 | Volume II — *L'autonomie encadrée* (cas canadien) | [`2 - OrchestrationAgentique/CLAUDE.md`](../2%20-%20OrchestrationAgentique/CLAUDE.md) |
-| Volume III — *L'entreprise agentique* (rédigé, non publiable) | [`3 - EntrepriseAgentique/CLAUDE.md`](../3%20-%20EntrepriseAgentique/CLAUDE.md) |
-| Volume IV — *La somme agentique* (compendium, cadrage) | [`2 - Compendium/`](../../2%20-%20Compendium/) |
+| Volume III — *L'entreprise agentique* (rédigé, non publiable) | [`3 - EntrepriseAgentique/CLAUDE.md`](../3%20-%20EntrepriseAgentique/CLAUDE.md) — et son [`README.md`](../3%20-%20EntrepriseAgentique/README.md) |
+| Volume IV — *La somme agentique* (compendium, **50 chapitres rédigés hors portes, arrêté en révision finale, non publiable**) | [`2 - Compendium/`](../../2%20-%20Compendium/) |
 
 ⚠ **Le dépôt s'appelle `Agentique`** (`github.com/agbruneau/Agentique`), pas « Monographies ». Ce
 nom-là ne survit que dans du contenu gelé (les références [217]-[218] de la veille) ; partout

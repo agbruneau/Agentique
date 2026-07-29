@@ -10,6 +10,24 @@ réalignées ici* (constat sur pièce, 27 juillet 2026) — et la gouvernance de
 prime** — sauf déviation fondée, qui se déclare (décision 8 du TOC) et **se remonte, jamais se corrige
 au plan depuis ici**.
 
+## ⚠ Le volume est ARRÊTÉ depuis le 29 juillet 2026 — et « arrêté » n'est ni « terminé » ni « publiable »
+
+La décision d'auteur **D-10** ([PRD **v0.15** §14](../PRD/PRD.md), [TOC **v0.31**](../PRD/TOC.md)) arrête
+le compendium au statut **RÉVISION FINALE**, sous un **régime de diffusion en bibliothèque personnelle** :
+lecture par l'auteur, **aucune mise à disposition d'un tiers**, aucun dépôt public, **aucune
+opposabilité**. **Quatre conséquences pour ce Livre, qui est le seul à en porter une quatrième.**
+*(1)* **Ses quatre chapitres sont arrêtés dans leur état du 29 juillet 2026** — plus aucune passe de
+rédaction n'est prévue ; une faute se corrige encore, mais la correction **rouvre la passe** : elle se
+recompose (`bash build/build-pdf.sh` depuis `2 - Compendium/`) et se déclare. *(2)* ⚠ **Rien de ce qui
+suit n'est levé** : **G-1 résiduel, G-4 fond, G-5 balayage et G-6 lots sont clos POUR CE SEUL RÉGIME par
+dérogation nommée**, leur résidu entier — *la dérogation tombe à la première diffusion et rouvre tout ce
+qu'elle couvrait*. *(3)* ⚠ **CA-IV-11 et CA-IV-13 sont dérogés, non satisfaits** : pas de relecteur
+distinct du rédacteur, et **aucun énoncé n'est central** au sens de CA-IV-01. *(4)* ⚠ **D-3 n'est pas
+levée par D-10, et c'est le point propre à ce Livre** : la **publication du premier mouvement (ch. 47-48)
+demeure bloquée** jusqu'à la clôture de ses trois lots d'instruction, **une instruction infructueuse
+valant retrait**. *Arrêter un ouvrage ne débloque pas ce qu'une autre décision bloque.* Les pièces sont
+composées dans [`compendium.pdf`](../compendium.pdf) (**810 p.**) : *composer n'est pas publier.*
+
 ## ⚠ État : le Livre est rédigé, arbitré, et le seul dont la publication soit bloquée par une décision d'auteur
 
 Le Livre V compte **quatre chapitres** au plan (ch. 47-50), en **deux mouvements** — l'agent comme

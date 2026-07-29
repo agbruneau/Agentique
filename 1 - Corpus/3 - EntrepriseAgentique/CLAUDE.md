@@ -8,6 +8,7 @@ Ce `CLAUDE.md` ne régit que le **volume III**, sous `1 - Corpus/3 - EntrepriseA
 
 | Ce que vous cherchez | Où |
 |---|---|
+| Présentation du volume au **lecteur** — thèse, structure, état, régénération du PDF | [`README.md`](README.md) *(déposé le 29 juillet 2026 : le volume en était dépourvu jusque-là)* |
 | Place du volume III dans le corpus, ordre de lecture, divergences entre volumes | [README du dépôt](../../README.md) |
 | Conventions communes et conventions de la veille technologique (racine) | [`CLAUDE.md` du dépôt](../../CLAUDE.md) |
 | Volume I — *Interopérabilité agentique* (cadre mondial), **dont ce volume hérite 17 entrées** | [`1 - InteroperabiliteAgentique/CLAUDE.md`](../1%20-%20InteroperabiliteAgentique/CLAUDE.md) |
@@ -216,6 +217,15 @@ Chaque pièce porte sa propre date de gel, consignée au registre [`monographie/
 - **Attestations** : « conforme », « vérifié », « résolu » s'écrivent depuis une **constatation sur pièce**, jamais depuis un document amont qui le déclare ni depuis le souvenir de l'avoir fait (CA-14). ⚠ **Et l'attestation auto-délivrée est proscrite même exacte** : c'est le geste qui l'est, non son résultat (§8.5, CA-12).
 
 ## État du projet (22 juillet 2026)
+
+☑ **Re-mesuré sur pièce le 29 juillet 2026, à la passe de dépôt final du dépôt : tout est inchangé** —
+`Monographie.pdf` **427 p.** (`pypdf`), **34 pièces** sous `monographie/` (plus le registre de gel),
+**30 rapports** sous `verification/`, **PRD v1.3 / TOC v0.8 / PRDPlan v0.5**. ⚠ **Le statut ne bouge pas
+davantage** : **P5 demeure ouverte**, les **quinze remontées R-G-43 à R-G-57 demeurent ouvertes**, et la
+dette de vote sur **F-92 et F-96** n'est pas résorbée — *une re-mesure qui confirme des chiffres ne
+franchit aucun jalon.* La passe a par ailleurs déposé le [`README.md`](README.md) du volume, **document
+dérivé sans fait neuf**, qui devient un **siège de décomptes de plus** à tenir avec les autres (voir la
+convention *Décomptes*, plus haut).
 
 **Les 34 pièces sont rédigées, relues adversarialement et corrigées — J-5 atteint.** Trois documents de gouvernance : **PRD v1.3, TOC v0.8, PRDPlan v0.5** — versions lues dans les en-têtes des trois fichiers le 22 juillet 2026, sous `prd/`. S'y ajoutent l'arborescence `monographie/` (34 pièces + registre de gel) et `verification/` (**30 fichiers**, recomptés sur le répertoire le 24 juillet 2026 — le trentième est la relecture de révision du même jour ; antérieurement 29 au 22 juillet 2026 en fin de chaîne P5.3 — **trois de plus qu'à la clôture de P4** : **15 rapports de lot** — L-01 à L-14 et **L-14b** —, **11 rapports de relecture** — P1, P3 Partie I, P3, CA-12 P3, CA-09 P4, CA-13 P4, CA-12 lots, P4, CA-12 P5, la grille CA **et la relecture de révision du 24 juillet 2026** —, **deux rapports de revalidation** (ouverture du 21 et finale du 22 juillet 2026), la confrontation des thèses de P4, le registre des remontées).
 

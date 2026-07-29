@@ -350,6 +350,8 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 │   ├── build/                                 assemblage + pipeline Pandoc → Typst
 │   └── Monographie.md / .pdf                  assemblage
 └── 3 - EntrepriseAgentique/                 Vol. III (427 p., ≈ 160 900 mots)
+    ├── README.md                              présentation du volume (déposée le 29 juill. 2026)
+    ├── CLAUDE.md                              conventions du volume
     ├── monographie/                           34 pièces rédigées + registre des gels
     ├── prd/                                   PRD v1.3, TOC v0.8, PRDPlan v0.5 — gouvernance
     ├── verification/                          30 rapports de vérification
@@ -359,4 +361,20 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 
 ---
 
-*Synthèse consolidée — juillet 2026*
+## Décomptes du dépôt final
+
+☑ **Toute la volumétrie de ce document a été re-mesurée sur pièce le 29 juillet 2026**, à la passe de
+dépôt final, et elle est **inchangée** : les trois paginations (`pypdf`), les 29 et 34 pièces des
+Vol. II et III, les 28 diagrammes du Vol. I (motif ancré) et le total du corpus — **1 383 p. /
+≈ 516 500 mots / 70 pièces / 144 entrées de socle codifiées**. ⚠ **Une re-mesure qui confirme ne change
+aucun état** : le Vol. III demeure **rédigé et non publiable**.
+
+⚠ **Ce document ne couvre pas le Vol. IV**, et c'est délibéré : la synthèse porte sur le **triptyque**.
+Le compendium — *La somme agentique*, **arrêté en révision finale le 29 juillet 2026, 810 p., non
+publiable** — se situe au [README du dépôt](../README.md) et vit sous
+[`2 - Compendium/`](../2%20-%20Compendium/). **Il ne se substitue pas à ces trois volumes tant qu'il
+n'est pas recevable, et il ne l'est pas** : les trois volumes sources font foi.
+
+---
+
+*Synthèse consolidée — juillet 2026 · décomptes re-mesurés au dépôt final du 29 juillet 2026*

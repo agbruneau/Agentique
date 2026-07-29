@@ -77,6 +77,17 @@ Le domaine évolue par trimestres ; les faits sensibles au temps s'échelonnent 
 
 ## État du projet (17 juillet 2026)
 
+☑ **Re-mesuré sur pièce le 29 juillet 2026, à la passe de dépôt final du dépôt : tout est inchangé** —
+`Monographie.pdf` **387 p.** (`pypdf`), **29 pièces** sous `monographie/` (plus le registre des gels),
+et **le gisement de renvois cassés est intact au chiffre comme au siège** : **48** renvois `TOC.md` sur
+**28 des 29 pièces**, **1** dans `prd/PRDPlan.md`, **15** dans `prd/audit.md`, **3** dans
+`verification/relecture-CA.md`, et `build/assemble.py` **ligne 78** lit toujours `ROOT / "TOC.md"` —
+**l'assemblage demeure hors service**. ⚠ **Deux dettes de dépôt sont consignées et non payées ici, l'une
+et l'autre parce qu'elles ne relèvent pas d'une passe documentaire** : *(a)* l'**étiquette git
+`mono-v1.0` n'est toujours pas posée** (voir plus bas) ; *(b)* `build/__pycache__/assemble.cpython-314.pyc`
+**est toujours versionné** — `git ls-files | grep pycache` en rend **trois** au dépôt, les deux autres
+étant sous `2 - Compendium/PRD/`. *Retirer un fichier versionné est un geste destructif : il se demande.*
+
 **Monographie publiée, sous le millésime `mono-v1.0`.** ⚠ **L'étiquette git correspondante n'a jamais été posée** — `git tag -l` et `git ls-remote --tags origin` ne rendent rien, ni en local ni sur le distant (constaté le 18 juillet 2026). `mono-v1.0` est donc un **millésime éditorial**, pas une référence git : ne pas le traiter comme un point de restauration. Les documents qui annoncent l'étiquette comme posée (`prd/PRD.md`, `prd/PRDPlan.md`, `prd/audit.md`, les bandeaux de gel) sont, sur ce point, en avance sur le dépôt — poser le tag ou corriger ces mentions. Tous les jalons sont atteints (J-0 à J-5, PRD §12) et toutes les phases exécutées (P0 à P4, PRDPlan §1.4 — 47 activités closes, aucune en attente). Documents à jour : **PRD v1.10, PRDPlan v1.4, TOC v1.5** (versions relevées le 17 juill. 2026 par les suites de l'audit global — [`audit.md`](prd/audit.md)).
 
 Livrable : **29 pièces, 92 059 mots** (90 362 à la publication ; re-mesuré après la passe corrective de l'audit) — 24 chapitres, avant-propos, annexes A à D. Index de lecture : [`monographie/README.md`](monographie/README.md). Socle : **46 entrées** (F-01 à F-48 ; F-12 à F-14 non attribués ; F-23b). Conformité : **CA-1 à CA-8** — le « 8/8 » de la relecture de publication a été **partiellement démenti** par l'audit du 17 juill. 2026 (CA-1 et CA-7 portaient des écarts, depuis corrigés) ; voir l'addendum de [`verification/relecture-CA.md`](verification/relecture-CA.md). Revalidation temporelle du 17 juillet 2026 : aucun amendement matériel des faits chauds. **Audit global du 17 juillet 2026 : deux élévations du socle (F-33, F-43), 15 constats majeurs et 44 mineurs traités, relus adversarialement.**

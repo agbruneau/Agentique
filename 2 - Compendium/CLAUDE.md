@@ -39,8 +39,10 @@ l'ouverture du volume, ne l'est plus — ne plus l'écrire.** *(2)* ☑ ⚠ **LA
 28 juillet (ancrage de la *Synthèse* du Vol. I à l'arbre gelé `fd8f1be~1`, vérifié sur pièce ;
 restauration écartée, repointage interdit). *Ne plus écrire « sept sur neuf » ni « huit sur neuf ».*
 *(4)* **L'appareil compte quatre contrôles**, chacun exécuté seul : `check-toc.py` (C1-C15),
-`check-sieges.py` (**26 sièges** sur 50 pièces, 108 mutations), **`check-compendium.py` (P1-P7,
-15 mutations)** et `decompte.sh`, plus le **registre de gel** à 50 lignes. *(5)* ⚠ **La volumétrie a
+`check-sieges.py` (**26 sièges** sur 50 pièces, 108 mutations), **`check-compendium.py` (P1-P8,
+17 mutations)** et `decompte.sh`, plus le **registre de gel** à 50 lignes. ⚠ *Cette rangée portait
+« P1-P7, 15 mutations » — la valeur d'avant le versement de **P8**, que le franchissement de G-3 a
+justement ajouté ; corrigée le 29 juillet 2026 sur la sortie du script.* *(5)* ⚠ **La volumétrie a
 bougé et se re-mesure, jamais ne se recopie** : **300 780 mots** de corps (I 64 750 · II 62 054 ·
 III 91 477 · IV 56 025 · V 26 474) pour 308 000 d'enveloppe, **−2,3 %** — mais **cent trois points
 d'amplitude** entre les pièces extrêmes. ⚠ **Le statut du volume ne change pas pour autant** : les
@@ -81,16 +83,25 @@ désormais dans le sous-dossier [`PRD/`](PRD/) ; le README (conspectus) et ce `C
 la racine du dossier. Les chemins ci-dessous et la commande de contrôle (§ protocole) en tiennent
 compte.
 
-Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.11, 27 juillet 2026** — ⚠ **troisième passe d'arbitrage, celle du Livre V** : **D-2** tranchée — risque 14 en *sections dans l'existant, sans chapitre neuf* — et **D-3** — matière neuve en *trois lots ouverts, retrait non exécuté, publication du premier mouvement bloquée* ; **seize remontées soldées**, **sept décisions sur neuf**, **aucune porte franchie** ; seconde passe d'arbitrage : **D-4 tranchée** — enveloppes maintenues, amputation interdite — et **D-9 ouverte et prise** — lot d'instruction du § 17.5, bloquant pour les ch. 25 et 27 ; **vingt-quatre remontées soldées**, **aucune porte franchie** ; cumul : **cinq décisions sur neuf**, **deux portes sur sept**. ⚠ C'est aussi la version qui déclare **CA-IV-11 et CA-IV-13 insatisfaisables en l'état**, D-6 ne fournissant pas de relecteur tiers) régit la
+Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.15, 29 juillet 2026 — version
+courante, celle de l'arrêt : D-10, régime de diffusion déclaré, conformité arrêtée porte par porte** ;
+⚠ *la rangée annonçait « v0.11, 27 juillet 2026 » jusqu'au 29 juillet 2026, soit quatre versions de
+retard — une estampille d'autorité en retard est fausse, à la différence d'un constat daté, et ce qui
+suit est désormais lu comme **historique**.* — ⚠ **troisième passe d'arbitrage, celle du Livre V** : **D-2** tranchée — risque 14 en *sections dans l'existant, sans chapitre neuf* — et **D-3** — matière neuve en *trois lots ouverts, retrait non exécuté, publication du premier mouvement bloquée* ; **seize remontées soldées**, **sept décisions sur neuf**, **aucune porte franchie** ; seconde passe d'arbitrage : **D-4 tranchée** — enveloppes maintenues, amputation interdite — et **D-9 ouverte et prise** — lot d'instruction du § 17.5, bloquant pour les ch. 25 et 27 ; **vingt-quatre remontées soldées**, **aucune porte franchie** ; cumul : **cinq décisions sur neuf**, **deux portes sur sept**. ⚠ C'est aussi la version qui déclare **CA-IV-11 et CA-IV-13 insatisfaisables en l'état**, D-6 ne fournissant pas de relecteur tiers) régit la
 **gouvernance de la rédaction** — portes de lancement, ordre, régimes de preuve, seuil de vote,
 critères CA-IV, jalons, décisions d'auteur — et **prime en cas de conflit sur la gouvernance, le
-socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.26, 27 juillet 2026 — troisième arbitrage : structure inchangée, trois thèses réalignées (ch. 47 second mouvement, ch. 48, ch. 49 second mouvement), deux sièges désignés et versés, inventaire des lacunes du Vol. III requalifié ; second arbitrage : structure inchangée, cinq thèses réalignées (ch. 14, 15, 16, 17, 19), décision 14 posée, risque 17 ouvert, troisième table à l'Annexe C ; 50 chapitres en 5 livres,
+socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.31, 29 juillet 2026 — version courante : le plan
+est arrêté, aucune structure ne bouge** ; ⚠ *la rangée annonçait « v0.26, 27 juillet 2026 » jusqu'au
+29 juillet 2026, cinq versions de retard, corrigé dans la même passe que celle du PRD ci-dessus* — **historique — troisième arbitrage : structure inchangée, trois thèses réalignées (ch. 47 second mouvement, ch. 48, ch. 49 second mouvement), deux sièges désignés et versés, inventaire des lacunes du Vol. III requalifié ; second arbitrage : structure inchangée, cinq thèses réalignées (ch. 14, 15, 16, 17, 19), décision 14 posée, risque 17 ouvert, troisième table à l'Annexe C ; 50 chapitres en 5 livres,
 projection ≈ 376 000–401 000 mots ; plafond de cinquante chapitres posé en décision 13 et contrôlé par C15 ;
 le ch. 41, la fabrique d'agents, entré en v0.22, est payé par la fusion des ch. 47 et 48**) reste la *spécification de contenu* du compendium — autorité
 sur le découpage et sur chaque chapitre (thèse, sections, ligne Fusion, socle, garde-fous) ;
-**aucun chapitre n'est rédigé au sens des portes**. Tant que la somme n'est pas écrite, les trois
-volumes sources font foi (champ Statut du TOC), et une thèse de ce plan n'est pas une source (sa
-propre décision 8). [`README.md`](README.md) est la **vue synoptique dérivée** du TOC (le « conspectus » du volume, même
+**aucun chapitre n'est rédigé au sens des portes**. ⚠ **Tant que la somme n'est pas *recevable*, les
+trois volumes sources font foi** (champ Statut du TOC), et une thèse de ce plan n'est pas une source
+(sa propre décision 8). ⚠ *La formule antérieure — « tant que la somme n'est pas **écrite** » — est
+périmée depuis le 27 juillet 2026 et corrigée le 29 : **les cinquante chapitres sont écrits**, et
+c'est précisément le cas où la formule ancienne se lirait comme une levée de la règle de
+substitution. **Écrit, arbitré, audité, composé et arrêté ne valent pas recevable.*** [`README.md`](README.md) est la **vue synoptique dérivée** du TOC (le « conspectus » du volume, même
 version en tête) : il ne porte aucune décision, aucun socle, aucun garde-fou propre — en cas
 d'écart, **le TOC prime**, et toute passe qui modifie le TOC réaligne le conspectus (version,
 faits touchés) ou y déclare le retard en tête.
@@ -508,12 +519,23 @@ sans payer ne l'est pas.
    gestes sont indépendants (décision 13b).
 6. **Exécuter `python PRD/check-toc.py`** : **C15** refuse le dépassement, **C1** la discontinuité.
 
-⚠ **Trois contrôles vivent désormais dans `PRD/`, et ils ne se tuyautent jamais l'un dans l'autre** —
+⚠ **QUATRE contrôles vivent dans `PRD/`, et ils ne se tuyautent jamais l'un dans l'autre** —
 le code de sortie du dernier maillon masquerait l'échec des précédents : `check-toc.py` (C1-C15, le
 plan), **`check-sieges.py` (S1-S5, inter-pièces — qu'un siège déclaré ne soit pas reconstruit
-ailleurs, et que toute pièce touchant sa matière y renvoie)**, et `decompte.sh --verifier` (la
-volumétrie, quatre points d'ancrage sur les trois corpus sources). Chacun a son harnais de mutation
-et se vérifie comme le reste : *un script de contrôle est du contenu.*
+ailleurs, et que toute pièce touchant sa matière y renvoie ; **26 sièges sur 50 pièces**)**,
+**`check-compendium.py` (P1-P8, le socle consolidé — trois de ses rapports sont **déclaratifs** et
+n'échouent pas)**, et `decompte.sh --verifier` (la volumétrie, quatre points d'ancrage sur les trois
+corpus sources). Chacun a son harnais de mutation et se vérifie comme le reste : *un script de
+contrôle est du contenu.* ⚠ *Ce paragraphe annonçait « trois contrôles » jusqu'au 29 juillet 2026 : il
+datait d'avant `check-compendium.py`, que le franchissement de G-3 a versé, et **le bloc d'en-tête de
+ce fichier en comptait quatre au même moment** — c'est le genre d'écart interne qu'aucun script ne
+voit. **Les quatre ont été exécutés le 29 juillet 2026, sortie 0 pour les quatre.***
+
+⚠ **Deux fichiers de bytecode sont versionnés par mégarde sous [`PRD/__pycache__/`](PRD/)** —
+`check-compendium` et `check-sieges` —, relevés le 29 juillet 2026 (`git ls-files | grep pycache` en
+rend **trois** au dépôt, le troisième étant au Vol. II). **Ne pas les retirer d'autorité** : retirer un
+fichier versionné est un geste destructif, il se demande. Le fait est consigné au tableau des reliquats
+du [`README.md` du dépôt](../README.md).
 
 ⚠ **Elle est passée de sept à NEUF le 27 juillet 2026, avec la rédaction du Livre V** (remontées
 R-IV-64 et R-IV-68), et s'éprouve désormais sur **25 pièces** : s'ajoutent le **siège de la sémantique

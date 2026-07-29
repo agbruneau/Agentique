@@ -20,6 +20,12 @@ page de présentation ni de publication GitHub Pages — voir « Structure du do
 | Socle factuel | **46 entrées** F-01 à F-48 (F-12 à F-14 non attribués ; F-23b) |
 | Conformité | CA-1 à CA-8 |
 
+☑ **Re-mesuré sur pièce le 29 juillet 2026**, à la passe de dépôt final du dépôt, et **inchangé** :
+`Monographie.pdf` **387 p.** (`pypdf`), **29 pièces** sous `monographie/` (plus le registre des gels).
+⚠ **Un point n'a pas bougé non plus, et il reste dû** : l'**étiquette git `mono-v1.0` n'est toujours pas
+posée** alors que quatre documents de gouvernance l'annoncent comme telle — *un millésime éditorial n'est
+pas un point de restauration*. Poser le tag ou corriger ces mentions est une décision d'auteur.
+
 **Contribution la plus citable — un résultat négatif :** en croisant trois protocoles (MCP, A2A, AP2) et cinq corpus de textes canadiens, **aucun lien documenté par source primaire** — quinze croisements, zéro lien. D'où la thèse : sous exigence réglementaire stricte, le cadre déterministe invoque les agents, jamais l'inverse.
 
 ## Par où commencer

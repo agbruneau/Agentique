@@ -2,6 +2,51 @@
 
 Guide pour Claude Code (claude.ai/code) à la **racine** du dépôt.
 
+## ⚠ ÉTAT AU DÉPÔT — 29 JUILLET 2026, ET C'EST LA PREMIÈRE CHOSE À LIRE
+
+**Le dépôt est arrêté dans cet état.** Ce bloc est le **seul état courant** de ce fichier ; **tout ce
+qui le suit est un journal daté**, écrit passe par passe, et se lit comme tel. ⚠ **Trois formules de
+ce fichier sont périmées partout où elles subsistent en aval, et aucune ne se corrige là où elle est**
+— elles datent la passe qui les a écrites : **« socle consolidé à zéro entrée »** (le socle porte
+**159 entrées** depuis le 28 juillet), **« deux portes sur sept »** (il en est **trois** depuis le
+28 juillet) et **« sept sur neuf » / « huit sur neuf » décisions d'auteur** (les **neuf** sont prises,
+D-10 comprise). *Un journal qui se réécrit cesse d'être un journal ; c'est cet en-tête qui fait
+autorité.*
+
+**Décomptes re-mesurés sur pièce le 29 juillet 2026** — jamais recopiés, commandes aux sections
+correspondantes de ce fichier et du [`README.md`](README.md) :
+
+| Livrable | Rendu (`pypdf`) | Pièces | Contrôles exécutés |
+|---|---|---|---|
+| Veille technologique | **161 p.**, 269 réf. | 14 sections, 15 tableaux, 25 QO | `python check-veille.py` → **0** |
+| Vol. I | **569 p.** | 7 ch. + Annexe B, **28 diagrammes** (motif ancré) | — |
+| Vol. II | **387 p.** | **29 pièces**, socle 46 entrées | CA-1…CA-8 |
+| Vol. III | **427 p.** | **34 pièces**, **30 rapports** | CA-01…CA-14 |
+| Vol. IV | **810 p.** | **50 chapitres** + 1 annexe hors plan, socle **159 entrées** | `check-toc.py`, `check-sieges.py` (**26 sièges / 50 pièces**), `check-compendium.py` (**P1-P8**, 3 rapports déclaratifs), `decompte.sh` → **0** pour les quatre |
+
+**Gouvernance du Vol. IV à sa date d'arrêt : TOC v0.31, PRD v0.15, décision d'auteur D-10.** Ne citer
+aucune version antérieure comme courante ; les v0.26 à v0.30 et v0.11 à v0.14 sont des **historiques**.
+
+**Six `CLAUDE.md` et douze `README.md`, sans recouvrement** — cardinaux re-comptés sur l'arbre le
+29 juillet 2026. Le Vol. III a reçu le sien ce jour-là, en **douzième** : il était le seul des trois
+volumes sans document de lecteur.
+
+⚠ **Ce que le dépôt final ne clôt pas, et qu'aucune passe documentaire ne peut clore.** *(a)* **Deux
+volumes se déclarent non publiables** — Vol. III (quinze remontées ouvertes R-G-43 à R-G-57, dette de
+vote sur F-92 et F-96) et Vol. IV (**arrêté** : quatre portes closes par dérogation nommée pour le seul
+régime de bibliothèque personnelle, **CA-IV-11 et CA-IV-13 non satisfaits**). *Arrêter n'est ni terminer
+ni publier ; ne jamais écrire « conforme », « publiable » ni « terminé » — écrire « arrêté ».*
+*(b)* **Trois gestes restent à l'auteur, parce qu'ils sont destructifs ou juridiques** : retirer du suivi
+les **trois fichiers de bytecode** encore versionnés (`git ls-files | grep pycache` — un au Vol. II, deux
+sous `2 - Compendium/PRD/`), déposer une **licence à la racine** (le dépôt n'en porte aucune ; seul le
+Vol. I en a une), et **poser ou démentir l'étiquette git `mono-v1.0`** du Vol. II, que quatre documents
+de gouvernance annoncent comme posée. *(c)* **Les reliquats de code du tableau final du
+[`README.md`](README.md) ne sont pas résorbés** — dont l'assemblage du Vol. II, hors service.
+*(d)* **La veille n'est pas rattrapée** : ses réf. [217], [219] et [220] décrivent l'état de leurs
+sources au gel de leur édition, et c'est la règle du dépôt.
+
+---
+
 ⚠ **Le dépôt s'appelle `Agentique`** (`github.com/agbruneau/Agentique`), pas « Monographies ». Ce
 nom-là ne survit plus que dans le contenu gelé de la veille — les références [217] et [218] — et
 **il n'y est pas corrigé en silence** : la veille est publiée. Les deux `index.html` qui portaient
@@ -42,10 +87,11 @@ divergent volontairement. Ce fichier régit deux choses seulement — la **racin
 | Périmètre | Fichier qui fait autorité |
 |---|---|
 | Racine, veille technologique, arbitrages inter-volumes | **ce fichier** |
+| Conteneur `1 - Corpus/` et sa **synthèse consolidée** des trois monographies | [`1 - Corpus/CLAUDE.md`](1%20-%20Corpus/CLAUDE.md) — ⚠ *ce sixième `CLAUDE.md` manquait à cette table jusqu'au 29 juillet 2026* |
 | Vol. I — *Interopérabilité agentique* (rédaction) | [`1 - Corpus/1 - InteroperabiliteAgentique/CLAUDE.md`](1%20-%20Corpus/1%20-%20InteroperabiliteAgentique/CLAUDE.md) |
 | Vol. II — *L'autonomie encadrée* (rédaction, gouvernance PRD) | [`1 - Corpus/2 - OrchestrationAgentique/CLAUDE.md`](1%20-%20Corpus/2%20-%20OrchestrationAgentique/CLAUDE.md) |
 | Vol. III — *L'entreprise agentique* (rédaction, gouvernance PRD) | [`1 - Corpus/3 - EntrepriseAgentique/CLAUDE.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/CLAUDE.md) |
-| Vol. IV — *La somme agentique* (compendium, cadrage) | [`2 - Compendium/CLAUDE.md`](2%20-%20Compendium/CLAUDE.md) — le `TOC.md` du dossier reste la spécification de contenu |
+| Vol. IV — *La somme agentique* (compendium, **50 chapitres rédigés hors portes, arrêté en révision finale**) | [`2 - Compendium/CLAUDE.md`](2%20-%20Compendium/CLAUDE.md) — le `TOC.md` du dossier reste la spécification de contenu |
 
 ⚠ **Le 29 juillet 2026, le Vol. IV est ARRÊTÉ — statut de révision finale, diffusion en bibliothèque
 personnelle — et c'est le fait de racine qui prime sur tous ceux qui suivent.** La décision d'auteur

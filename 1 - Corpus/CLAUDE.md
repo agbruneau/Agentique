@@ -13,8 +13,8 @@ Ce `CLAUDE.md` régit le **dossier `1 - Corpus/`** lui-même : son [`README.md`]
 | Synthèse consolidée des trois monographies | [`README.md` de ce dossier](README.md) |
 | Vol. I — *Interopérabilité agentique* | [`1 - InteroperabiliteAgentique/CLAUDE.md`](1%20-%20InteroperabiliteAgentique/CLAUDE.md) |
 | Vol. II — *L'autonomie encadrée* | [`2 - OrchestrationAgentique/CLAUDE.md`](2%20-%20OrchestrationAgentique/CLAUDE.md) |
-| Vol. III — *L'entreprise agentique* | [`3 - EntrepriseAgentique/CLAUDE.md`](3%20-%20EntrepriseAgentique/CLAUDE.md) |
-| Vol. IV — *La somme agentique* (compendium, cadrage) | [`../2 - Compendium/CLAUDE.md`](../2%20-%20Compendium/CLAUDE.md) |
+| Vol. III — *L'entreprise agentique* | [`3 - EntrepriseAgentique/CLAUDE.md`](3%20-%20EntrepriseAgentique/CLAUDE.md) — et son [`README.md`](3%20-%20EntrepriseAgentique/README.md) au lecteur, déposé le 29 juillet 2026 |
+| Vol. IV — *La somme agentique* (compendium, **50 chapitres rédigés hors portes, arrêté en révision finale**) | [`../2 - Compendium/CLAUDE.md`](../2%20-%20Compendium/CLAUDE.md) |
 
 > [!IMPORTANT]
 > **Le fichier le plus spécifique gagne.** En travaillant dans un volume, appliquer son `CLAUDE.md`, pas celui-ci. Ce fichier n'intervient que pour le `README.md` du dossier et pour les questions qui touchent **plusieurs volumes à la fois**.
@@ -91,13 +91,20 @@ Les volumes portent des conventions qui **divergent volontairement**. Les corrig
 > **Indépendance des pipelines PDF**
 > Les trois pipelines PDF sont des copies indépendantes : un correctif apporté à l'un ne se propage pas automatiquement aux autres.
 
-### États au 25 juillet 2026
+### États au dépôt final — re-mesurés sur pièce le 29 juillet 2026
 
 | Volume | État | Pages | Mots |
 |---|---|---|---|
 | **Vol. I** | Rédaction terminée, PDF final | **569 p.** | **≈ 263 600** |
 | **Vol. II** | Publié (millésime éditorial `mono-v1.0`, étiquette git **non posée**) | **387 p.** | **92 059** |
 | **Vol. III** | Rédigé, **non publiable** — 15 remontées ouvertes (R-G-43 à R-G-57) | **427 p.** | **≈ 160 900** |
+
+☑ **Les trois paginations ont été re-mesurées à cette date (`pypdf`) et sont inchangées depuis le
+25 juillet 2026** ; les trois états sont inchangés eux aussi. ⚠ **Une re-mesure qui confirme n'est pas un
+changement d'état** : le Vol. II reste sans étiquette git, et *rédigé ne vaut toujours pas publiable*
+pour le Vol. III. **Le Vol. III porte désormais son propre [`README.md`](3%20-%20EntrepriseAgentique/README.md)**
+— déposé le 29 juillet 2026, document dérivé sans fait neuf : c'est un **siège de décomptes
+supplémentaire**, à mettre à jour avec ceux de la table ci-dessus.
 
 ### Filiation et héritage entre volumes
 

@@ -11,6 +11,22 @@ huit autres restent à v0.23, qui est la version d'où ils ont été copiés et 
 bougé. *Une étiquette de citation date la copie, pas la lecture du fichier.* En cas d'écart entre une pièce de ce dossier et le TOC, **le TOC prime** — sauf déviation
 fondée, qui se déclare (décision 8 du TOC) et se remonte, jamais se corrige au plan depuis ici.
 
+## ⚠ Le volume est ARRÊTÉ depuis le 29 juillet 2026 — et « arrêté » n'est ni « terminé » ni « publiable »
+
+La décision d'auteur **D-10** ([PRD **v0.15** §14](../PRD/PRD.md), [TOC **v0.31**](../PRD/TOC.md)) arrête
+le compendium au statut **RÉVISION FINALE**, sous un **régime de diffusion en bibliothèque personnelle** :
+lecture par l'auteur, **aucune mise à disposition d'un tiers**, aucun dépôt public, **aucune
+opposabilité**. **Trois conséquences pour ce Livre.** *(1)* **Ses onze chapitres sont arrêtés dans leur
+état du 29 juillet 2026** — plus aucune passe de rédaction n'est prévue ; une faute se corrige encore,
+mais la correction **rouvre la passe** : elle se recompose (`bash build/build-pdf.sh` depuis
+`2 - Compendium/`) et se déclare. *(2)* ⚠ **Rien de ce qui suit n'est levé** : les écarts de portes de ce
+Livre restent écrits, et **G-1 résiduel, G-4 fond, G-5 balayage et G-6 lots sont clos POUR CE SEUL RÉGIME
+par dérogation nommée**, leur résidu entier — *la dérogation tombe à la première diffusion et rouvre tout
+ce qu'elle couvrait*. *(3)* ⚠ **CA-IV-11 et CA-IV-13 sont dérogés, non satisfaits** : il n'y a toujours
+pas de relecteur distinct du rédacteur, et **aucun énoncé n'est central** au sens de CA-IV-01. *Ne jamais
+écrire « conforme », « publiable » ni « terminé » — écrire « arrêté », et renvoyer au PRD §14.* Les pièces
+sont composées dans [`compendium.pdf`](../compendium.pdf) (**810 p.**) : *composer n'est pas publier.*
+
 ## ⚠ État : le Livre est rédigé, arbitré, et toujours non publiable
 
 Le Livre I compte **onze chapitres** au plan (ch. 1-11), en deux mouvements — les fondements
