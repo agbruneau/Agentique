@@ -182,7 +182,9 @@
 #v(2.1cm)
 #block(width: 100%, {
   set par(justify: false, first-line-indent: 0pt)
-  align(center, text(font: SERIF, size: 11pt, fill: GRIS, tracking: 0.22em)[COMPENDIUM])
+  // Tracking ramené de 0,22 à 0,16 em : à 0,22 la ligne mesure 120,5 mm pour
+  // 117 mm de justification et se replie en deux lignes. 0,16 em -> 110,7 mm.
+  align(center, text(font: SERIF, size: 11pt, fill: GRIS, tracking: 0.16em)[COMPENDIUM - Science et Génie Informatiques])
   v(0.6em)
   filet-titre
   v(1.0em)
@@ -193,7 +195,7 @@
     déployer des agents en services financiers réglementés (2024-2032)
   ]
   v(1.7cm)
-  text(font: SERIF, size: 13pt)[André-Guy Bruneau]
+  text(font: SERIF, size: 13pt)[André-Guy Bruneau, M.Sc. IT]
 })
 
 // -- colophon, au pied de la page de titre --
