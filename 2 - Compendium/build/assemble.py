@@ -55,6 +55,11 @@ RE_TITRE = re.compile(r"^# Chapitre (\d+) — (.+)$")
 RE_SECTION = re.compile(r"^## § (\d+\.\d+) — (.+)$")
 RE_MOUVEMENT = re.compile(r"^# ((?:Premier|Second|Troisième) mouvement — .+)$")
 RE_NOTE_STATUT = re.compile(r"^## § (\d+\.\d+) — Note de statut\b")
+# Les deux monographies Springer relevees en gabarit composent leur legende de
+# tableau « Table N.M » en GRAS, la suite en romain. Le corpus ecrit
+# « : Tableau N.M — … » : seule l'etiquette passe en gras, le tiret cadratin
+# et le texte de la legende sont du contenu d'auteur et ne bougent pas.
+RE_LEGENDE = re.compile(r"^(:\s*)(Tableaux? \d+\.\d+)")
 
 
 def echappe_typst(texte):
@@ -145,7 +150,7 @@ def piece(chemin, numero):
         if m:
             corps.append(f"## {m.group(1)}\n")
             continue
-        corps.append(ligne + "\n")
+        corps.append(RE_LEGENDE.sub(r"\1**\2**", ligne) + "\n")
     if note is None:
         sys.exit(f"[assemble] {chemin} : note de statut absente (borne de coupe)")
 
@@ -191,7 +196,8 @@ def annexe(chemin):
         sortie.append(brut("]"))
     else:
         sys.exit(f"[assemble] {chemin} : ligne de situation introuvable")
-    sortie.append("\n".join(l for l in lignes[i:] if l.strip() != "---") + "\n")
+    sortie.append("\n".join(RE_LEGENDE.sub(r"\1**\2**", l)
+                            for l in lignes[i:] if l.strip() != "---") + "\n")
     return "".join(sortie)
 
 

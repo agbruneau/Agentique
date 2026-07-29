@@ -1,6 +1,47 @@
 // ============ Gabarit « Springer » — compendium (Vol. IV) ============
-// Format 155 x 235 mm, recto-verso, Palatino, ouvertures de chapitre au recto,
-// titres courants en petites capitales, folios en marge externe.
+// Refonte du 29 juillet 2026 : le gabarit n'imite plus « le style Springer » de
+// memoire, il est RELEVE sur deux monographies Springer fournies en PDF —
+// « Interoperability Principles and Standards » (ACES 16, 2025) et « Agentic AI:
+// Theories and Practices » (2025). Les deux partagent exactement la meme
+// maquette, mesuree au point pres sur leurs pages interieures :
+//
+//   format ................ 155 x 235 mm (439,37 x 666,14 pt)
+//   pave ................... 117 x 190 mm ; marges 19 mm laterales,
+//                            21 mm en tete, 24 mm en pied
+//   corps .................. Times 10 pt sur 12 pt (45 lignes par page)
+//   alinea ................. 1,2 em ; aucun alinea apres un titre
+//   titre courant .......... Times 8,5 pt, NOIR, sans petites capitales,
+//                            alterne : verso = folio + « N Titre du chapitre »,
+//                            recto = « N.M Titre de section » + folio
+//   ouverture de chapitre .. « Chapitre N » gras 13,9 pt, titre gras 15,9 pt,
+//                            et la ligne de situation TOUJOURS a 132,7 pt de la
+//                            marge de tete — position FIXE, qu'un titre tienne
+//                            sur une ou deux lignes (verifie ch. 3 et ch. 8 de
+//                            la monographie ACES)
+//   titres ................. § N.M gras 12 pt ; § N.M.K gras italique 12 pt ;
+//                            § N.M.K.L gras 10 pt ; 30 pt au-dessus, 17 pt en
+//                            dessous
+//   tableaux ............... legende EN TETE, « Tableau N.M » en gras puis le
+//                            texte en romain, 8,5 pt ; corps 8,5 pt ; rangee de
+//                            tete NON grasse et SANS fond ; filets gris clair
+//                            0,5 pt sur toutes les rangees, verticaux entre
+//                            colonnes seulement, 1 pt sous la rangee de tete
+//   couleur ................ AUCUNE : tout le texte est noir. Le gris ne sert
+//                            qu'aux filets de tableau.
+//
+// Trois ecarts assumes par rapport aux deux modeles, et ils sont nommes ici
+// parce qu'ils tiennent a des instructions d'auteur, non a un defaut de releve :
+//   (1) AUCUNE PAGE BLANCHE (instruction du 29 juillet 2026) : pas de
+//       faux-titre, pas de verso blanc, aucune ouverture forcee au recto. Les
+//       deux modeles ouvrent leurs chapitres au recto ; le compendium ne le
+//       fait pas. Le titre courant reste neanmoins alterne : la parite d'une
+//       page reliee est un fait physique, que l'ouverture au recto ou non ne
+//       change pas.
+//   (2) COLOPHON au pied de la page de titre : les deux modeles portent ces
+//       mentions sur une page de copyright separee, que la regle (1) interdit.
+//   (3) ENCADRES gris (« Perspective recherche », « Mise en oeuvre ») : les deux
+//       modeles n'en comportent pas ; le dispositif retenu est celui de
+//       `svgraybox` de la classe svmono — fond gris, aucun filet.
 
 #set document(
   title: "La somme agentique",
@@ -9,13 +50,15 @@
              "services financiers", "Canada"),
 )
 
-#let SERIF = ("Palatino Linotype", "Book Antiqua", "Libertinus Serif", "Segoe UI Symbol")
-#let GRIS = rgb("#55595f")
-#let FILET = rgb("#8d939b")
+#let SERIF = ("Times New Roman", "Libertinus Serif", "Segoe UI Symbol")
+// Seule couleur du gabarit, et elle ne touche aucun texte : les filets de
+// tableau des deux modeles sont a 0,61 de gris (livre ACES : 0,50).
+#let FILET = luma(61%)
 
 // ---- texte plat d'un contenu (titres courants tronqués) ----
 #let plat(c) = {
   if type(c) == str { c }
+  else if type(c) == int { str(c) }
   else if type(c) != content { "" }
   // Typst construit un élément `smartquote` pour chaque ' et " — même
   // désactivé, il n'a pas de champ `text` : sans ce cas, les apostrophes
@@ -41,114 +84,173 @@
     .filter(e => e.location().page() == p).len() > 0
 }
 
-// ---- titre courant : chapitre et section à gauche, folio à droite ----
-// Le rendu ne comporte aucune page blanche, donc aucune parité recto/verso :
-// un titre courant qui alternerait selon la parité alternerait sans objet.
+// ---- titre courant, alterné comme celui des deux modèles ----
+// verso : folio à l'extérieur (gauche), puis « N Titre du chapitre » à droite.
+// recto : « N.M Titre de section » à gauche, folio à l'extérieur (droite).
+// Times 8,5 pt noir, sans filet — relevé p. 11-13 de la monographie ACES.
 #let entete = context {
   if not ouvre-ici() {
     let chs = query(selector(heading.where(level: 1)).before(here()))
     if chs.len() > 0 {
-      let secs = query(selector(heading.where(level: 2)).before(here()))
-      // Le numéro de section porte déjà celui du chapitre : le titre de
-      // chapitre en plus déborderait sur une seconde ligne, qui décalerait
-      // le folio. 58 grappes tiennent en petites capitales à 8 pt.
-      let st = if secs.len() > 0 { secs.last().body } else {
-        [Chapitre #chs.len() · #chs.last().body] }
-      set text(font: SERIF, size: 8pt, fill: GRIS)
-      grid(columns: (1fr, auto), column-gutter: 1em, align: (left + bottom, right + bottom),
-        smallcaps(court(st, 58)), counter(page).display())
+      set text(font: SERIF, size: 8.5pt, hyphenate: false)
+      let folio = counter(page).display()
+      // L'annexe hors plan ne porte pas de numéro : après son marqueur, le
+      // titre courant cite son titre nu, sans rang de chapitre.
+      let annexe = query(selector(<ouverture-annexe>).before(here())).len() > 0
+      if calc.even(here().page()) {
+        let t = if annexe { court(chs.last().body, 66) } else {
+          str(chs.len()) + "  " + court(chs.last().body, 62) }
+        grid(columns: (auto, 1fr), column-gutter: 1em,
+             align: (left + bottom, right + bottom), folio, t)
+      } else {
+        let secs = query(selector(heading.where(level: 2)).before(here()))
+        // Une section du chapitre précédent ne titre pas le chapitre courant :
+        // sans cette garde, la première page d'un chapitre porte en tête la
+        // dernière section de celui d'avant.
+        let st = if (secs.len() > 0
+                     and secs.last().location().page() >= chs.last().location().page()) {
+          court(secs.last().body, 66)
+        } else { court(chs.last().body, 66) }
+        grid(columns: (1fr, auto), column-gutter: 1em,
+             align: (left + bottom, right + bottom), st, folio)
+      }
     }
   }
 }
 
-// ---- folio centré sur les pages d'ouverture seulement ----
+// ---- folio en pied, à l'extérieur, sur les pages d'ouverture seulement ----
 #let pied = context {
   if ouvre-ici() {
-    set text(font: SERIF, size: 9pt, fill: GRIS)
-    align(center, counter(page).display())
+    set text(font: SERIF, size: 8.5pt)
+    if calc.even(here().page()) { align(left, counter(page).display()) }
+    else { align(right, counter(page).display()) }
   }
 }
 
+// ⚠ TOUTE VALEUR VERTICALE DE CE GABARIT EST CALIBREE SUR LE MODELE DE LIGNE DE
+// TYPST, ET CE MODELE N'EST PAS CELUI DE LATEX. Typst place par defaut le bord
+// haut d'une ligne a sa HAUTEUR DE CAPITALE et son bord bas a la LIGNE DE BASE
+// (`top-edge: "cap-height"`, `bottom-edge: "baseline"`) : la hauteur d'une ligne
+// vaut donc 0,662 em pour Times New Roman, non 1,107 em (ascendante+descendante).
+// D'ou, pour un pas de 12 pt a 10 pt de corps : leading = 12 − 6,62 = 5,38 pt,
+// soit 0,538 em — et la meme valeur relative tient a tous les corps.
+//   Poser 0,09 em, comme le ferait un calcul sur l'ascendante, donne un pas de
+//   7,5 pt : le rendu passe de 857 a 561 pages sans qu'aucun controle proteste.
+// Les blancs verticaux (`above`/`below`) se comptent de la meme facon : d'une
+// ligne de base a la suivante, jamais d'un bord de bloc a l'autre.
+#let PAS = 12pt          // pas de la grille des deux modeles
+#let CAP = 0.662         // hauteur de capitale de Times New Roman, en em
+#let INTER = 0.538em     // interligne qui donne PAS a 10 pt
+
 #set page(
   width: 155mm, height: 235mm,
-  margin: (x: 19mm, top: 19mm, bottom: 20mm),
+  // 22 mm de tete place la premiere ligne de base a 69,0 pt du bord — la mesure
+  // des deux modeles. 24 mm de pied laisse tenir 45 lignes (derniere ligne de
+  // base a 597,0 pt) et en refuse une 46e.
+  margin: (x: 19mm, top: 22mm, bottom: 24mm),
   numbering: none,
   header: none,
   footer: none,
-  header-ascent: 35%,
-  footer-descent: 32%,
+  // Ligne de base du titre courant a 42,5 pt du bord, mesure des deux modeles.
+  header-ascent: 21pt,
+  footer-descent: 12pt,
 )
 
-#set text(font: SERIF, size: 10pt, lang: "fr", region: "ca", hyphenate: true)
-#set par(justify: true, leading: 0.66em, spacing: 0.66em,
-         first-line-indent: (amount: 1.3em, all: false))
+// `top-edge` et `bottom-edge` sont FIGES aux métriques de Times New Roman plutôt
+// que laissés à la police effective : sans cela, une ligne qui contient un ⚠ ou
+// un ☑ — rendus par la police de repli — prend 12,4 pt au lieu de 12,0 et
+// décroche de la grille. Onze pour cent des lignes du corpus en portent un.
+#set text(font: SERIF, size: 10pt, lang: "fr", region: "ca", hyphenate: true,
+          top-edge: 0.662em, bottom-edge: 0em)
+#set par(justify: true, leading: INTER, spacing: INTER,
+         first-line-indent: (amount: 1.2em, all: false))
 #set smartquote(enabled: false)
 #show link: set text(fill: black)
 
-#set list(indent: 0.5em, spacing: 0.62em, marker: text(fill: GRIS)[•])
-#set enum(indent: 0.5em, spacing: 0.62em)
+// Listes : puce à la marge, corps à 1,2 em — et items sur le même pas que les
+// lignes, comme les deux modèles (aucun blanc supplémentaire entre items).
+#set list(indent: 0pt, body-indent: 0.85em, spacing: INTER, marker: [•])
+#set enum(indent: 0pt, body-indent: 0.6em, spacing: INTER)
 
 // ---- titres ----
 #set heading(numbering: none)
-#show heading: set text(font: SERIF, weight: "bold", hyphenate: false)
-#show heading: set par(justify: false, first-line-indent: 0pt)
-#show heading.where(level: 2): it => block(above: 1.7em, below: 0.7em,
-  text(size: 12.5pt, it.body))
-#show heading.where(level: 3): it => block(above: 1.25em, below: 0.5em,
-  text(size: 10.5pt, it.body))
-#show heading.where(level: 4): it => block(above: 1.0em, below: 0.4em,
-  text(size: 10pt, style: "italic", weight: "regular", it.body))
+#show heading: set text(font: SERIF, weight: "bold", hyphenate: false, fill: black)
+// Un titre replié sur deux lignes garde le pas de son corps : 1,126 × 15,9 pt
+// pour un titre de chapitre, mesuré au chapitre 3 de la monographie ACES.
+#show heading: set par(justify: false, leading: 0.46em, first-line-indent: 0pt)
+// Un § N.M occupe exactement six intervalles de la grille : 43,6 pt de la
+// dernière ligne de base du texte à celle du titre, 28,4 pt jusqu'à la suivante.
+#show heading.where(level: 2): it => block(above: 35.7pt, below: 21.8pt,
+  text(size: 12pt, it.body))
+#show heading.where(level: 3): it => block(above: 35.7pt, below: 21.8pt,
+  text(size: 12pt, style: "italic", it.body))
+// § N.M.K.L : trois intervalles — deux au-dessus, un en dessous.
+#show heading.where(level: 4): it => block(above: 17.4pt, below: 5.4pt,
+  text(size: 10pt, it.body))
 
 // ---- tableaux ----
 #show figure: set block(breakable: true)
-#set figure(gap: 0.7em)
+#set figure(gap: 5pt)
 // Les légendes portent déjà « Tableau N.M — … » ; la numérotation Typst
 // ajouterait un second « Tableau 1. – » devant.
 #show figure.where(kind: table): set figure(numbering: none)
 #show figure.where(kind: table): set figure.caption(position: top)
-#show figure.caption: set text(size: 8pt, fill: GRIS)
+#show figure.caption: set text(size: 8.5pt, fill: black)
+#show figure.caption: set par(justify: false, leading: INTER, first-line-indent: 0pt)
+// Typst centre la légende d'une figure ; les deux modèles l'alignent à la marge.
+#show figure.caption: it => align(left, it)
 // Sans « sticky », une légende de tête peut rester seule en bas de page,
 // son tableau passant à la suivante.
 #show figure.caption: set block(sticky: true)
+// Filets : horizontaux sur toutes les rangées, verticaux ENTRE colonnes
+// seulement, 1 pt sous la rangée de tête. Aucun fond — relevé sur les
+// tableaux 3.1 (Agentic AI) et 4.1 (ACES).
 #set table(
-  inset: (x: 5pt, y: 4pt),
+  inset: (x: 2.8pt, y: 1.6pt),
   align: left + top,
-  stroke: (x, y) => (top: 0.4pt + FILET, bottom: 0.4pt + FILET),
-  fill: (x, y) => if y == 0 { rgb("#eef0f3") },
+  stroke: (x, y) => (
+    left: if x > 0 { 0.5pt + FILET } else { none },
+    right: none,
+    // Le filet de 1 pt sous la rangée de tête se pose des DEUX côtés de la
+    // frontière : entre deux cellules qui la déclarent différemment, Typst
+    // retient celle qui vient après — la seule `bottom` de la rangée 0 se
+    // ferait donc écraser par le `top` de la rangée 1.
+    top: if y == 1 { 1pt + FILET } else { 0.5pt + FILET },
+    bottom: if y == 0 { 1pt + FILET } else { 0.5pt + FILET },
+  ),
 )
-#show table: set par(justify: false, leading: 0.5em, first-line-indent: 0pt)
-#show table: set text(size: 8pt, hyphenate: true)
-#show table.cell.where(y: 0): set text(weight: "bold")
+#show table: set par(justify: false, leading: INTER, first-line-indent: 0pt)
+#show table: set text(size: 8.5pt, hyphenate: true)
 
 // ---- encadrés « Perspective recherche » / « Mise en œuvre » ----
+// Dispositif `svgraybox` de svmono : fond gris, aucun filet.
 #show quote.where(block: true): it => block(
   width: 100%, breakable: true,
-  fill: rgb("#f4f5f7"),
-  stroke: (left: 2pt + rgb("#6b7382")),
-  inset: (left: 9pt, right: 8pt, top: 7pt, bottom: 7pt),
-  above: 1.0em, below: 1.0em,
+  fill: luma(93%),
+  inset: (x: 8pt, y: 7pt),
+  above: 14pt, below: 14pt,
   {
     set text(size: 9pt)
-    set par(leading: 0.6em, spacing: 0.6em, first-line-indent: 0pt)
+    set par(leading: INTER, spacing: INTER, first-line-indent: 0pt)
     it.body
   },
 )
 
 #let horizontalrule = align(center, line(length: 30%, stroke: 0.4pt + FILET))
 
-// ---- ouverture de livre (page de partie, au recto) ----
+// ---- ouverture de livre (page de partie) ----
 #let ouverture-livre(romain, verbe, sous) = {
   pagebreak(weak: true)
   [#metadata((romain: romain, verbe: verbe, sous: sous))<ouverture-livre>]
   v(6.2cm)
-  set par(justify: false, first-line-indent: 0pt)
-  text(font: SERIF, size: 11pt, fill: GRIS, smallcaps[Livre #romain])
-  v(0.5em)
-  line(length: 100%, stroke: 1.1pt + black)
-  v(0.9em)
-  text(font: SERIF, size: 22pt, weight: "bold", verbe)
-  v(0.7em)
-  text(font: SERIF, size: 11.5pt, style: "italic", fill: GRIS, sous)
+  set par(justify: false, leading: 0.16em, first-line-indent: 0pt)
+  text(font: SERIF, size: 13.9pt, weight: "bold")[Livre #romain]
+  v(0.6em)
+  line(length: 100%, stroke: 0.8pt + black)
+  v(1.0em)
+  text(font: SERIF, size: 20pt, weight: "bold", verbe)
+  v(0.8em)
+  text(font: SERIF, size: 11.5pt, style: "italic", sous)
 }
 
 // ---- ouverture d'annexe (hors plan, apres le chapitre 50) ----
@@ -157,69 +259,68 @@
 #let ouverture-annexe() = {
   pagebreak(weak: true)
   [#metadata("annexe")<ouverture-annexe>]
-  v(1.1cm)
   set par(justify: false, first-line-indent: 0pt)
-  text(font: SERIF, size: 10pt, fill: GRIS, smallcaps[Annexe])
-  v(0.35em)
-  line(length: 100%, stroke: 0.9pt + black)
-  v(0.55em)
+  text(font: SERIF, size: 13.9pt, weight: "bold")[Annexe]
+  v(7.5pt, weak: false)
 }
 
 // ---- ouverture de chapitre ----
+// « Chapitre N » en gras 13,9 pt, ligne de base à 71,4 pt du bord, puis 18 pt
+// (une ligne et demie) jusqu'à la ligne de base du titre.
 #let ouverture-chapitre(n) = {
   pagebreak(weak: true)
-  v(1.1cm)
   set par(justify: false, first-line-indent: 0pt)
-  text(font: SERIF, size: 10pt, fill: GRIS, smallcaps[Chapitre])
-  h(0.55em)
-  text(font: SERIF, size: 26pt, weight: "bold", fill: GRIS, str(n))
-  v(0.35em)
-  line(length: 100%, stroke: 0.9pt + black)
-  v(0.55em)
+  text(font: SERIF, size: 13.9pt, weight: "bold")[Chapitre #n]
+  v(7.5pt, weak: false)
 }
 
-#show heading.where(level: 1): it => block(below: 1.1em, width: 100%,
-  text(size: 17pt, hyphenate: false, it.body))
+// Le titre de chapitre vit dans un pavé de HAUTEUR FIXE : c'est ce qui place la
+// ligne de situation toujours à la même ordonnée — ligne de base à 199,7 pt du
+// bord —, qu'un titre tienne sur une ou deux lignes. Les deux modèles font
+// exactement cela : l'« Abstract » de leurs chapitres 3 (titre sur deux lignes)
+// et 8 (une seule) commence à la même ordonnée, 190,6 pt du bord.
+// ⚠ La hauteur est fixe, non minimale : un titre de trois lignes déborderait
+// vers le bas plutôt que de repousser la suite. Aucun des cinquante n'y arrive.
+#show heading.where(level: 1): it => block(height: 114pt, width: 100%,
+  above: 0pt, below: 0pt, text(size: 15.9pt, it.body))
 
 // ---- ligne de situation, sous le titre de chapitre ----
-#let situation(body) = block(above: -0.2em, below: 1.1em, width: 100%, {
-  set text(size: 9pt, fill: GRIS)
-  set par(justify: false, leading: 0.55em, first-line-indent: 0pt)
+// Elle occupe la place de l'« Abstract » des deux modèles : même corps que le
+// texte, et 41,8 pt de ligne de base à ligne de base jusqu'au premier
+// paragraphe (soit deux intervalles et demi de blanc).
+#let situation(body) = block(above: 0pt, below: 35.2pt, width: 100%, {
+  set par(justify: true, leading: INTER, first-line-indent: 0pt)
   body
 })
 
 // ================= Liminaires =================
 
-#let filet-titre = line(length: 100%, stroke: 0.8pt + black)
-
 // -- page de titre : titre en tête, colophon en pied, une seule page --
 #v(2.1cm)
 #block(width: 100%, {
-  set par(justify: false, first-line-indent: 0pt)
-  // Tracking ramené de 0,22 à 0,16 em : à 0,22 la ligne mesure 120,5 mm pour
-  // 117 mm de justification et se replie en deux lignes. 0,16 em -> 110,7 mm.
-  align(center, text(font: SERIF, size: 11pt, fill: GRIS, tracking: 0.16em)[COMPENDIUM - Science et Génie Informatiques])
+  set par(justify: false, leading: 0.5em, first-line-indent: 0pt)
+  align(center, text(font: SERIF, size: 10.5pt, tracking: 0.16em)[COMPENDIUM - Science et Génie Informatiques])
   v(0.6em)
-  filet-titre
+  line(length: 100%, stroke: 0.8pt + black)
+  v(1.1em)
+  text(font: SERIF, size: 26pt, weight: "bold")[La somme agentique]
   v(1.0em)
-  text(font: SERIF, size: 27pt, weight: "bold")[La somme agentique]
-  v(0.9em)
-  text(font: SERIF, size: 12.5pt, style: "italic")[
+  text(font: SERIF, size: 13pt, style: "italic")[
     Interopérabilité, autonomie encadrée et fabrique de confiance :
     déployer des agents en services financiers réglementés (2024-2032)
   ]
   v(1.7cm)
-  text(font: SERIF, size: 13pt)[André-Guy Bruneau, M.Sc. IT]
+  text(font: SERIF, size: 12.5pt)[André-Guy Bruneau, M.Sc. IT]
 })
 
 // -- colophon, au pied de la page de titre --
 #v(1fr)
-#line(length: 100%, stroke: 0.4pt + FILET)
-#v(0.7em)
+#line(length: 100%, stroke: 0.5pt + FILET)
+#v(0.8em)
 #block(width: 100%, {
-  set text(size: 8.5pt, fill: GRIS)
-  set par(justify: false, leading: 0.62em, spacing: 0.75em, first-line-indent: 0pt)
-  list(indent: 0pt, body-indent: 0.55em, spacing: 0.75em,
+  set text(size: 8.5pt)
+  set par(justify: false, leading: 0.42em, spacing: 0.8em, first-line-indent: 0pt)
+  list(indent: 0pt, body-indent: 0.5em, spacing: 0.8em,
     [*Livre I — Coopérer.* Fondements de l'interopérabilité et couche
      protocolaire : l'agent comme boucle, l'accord sur le sens que les
      protocoles présupposent, MCP et A2A, découverte et registres, modes
@@ -237,9 +338,9 @@
      des composants, mise en service d'un artefact non reproductible,
      sémantique d'effet, horizon et frontière.],
   )
-  v(0.5em)
-  line(length: 100%, stroke: 0.4pt + FILET)
-  v(0.8em)
+  v(0.6em)
+  line(length: 100%, stroke: 0.5pt + FILET)
+  v(0.9em)
   // `hyphenate: false` : la maxime se replie au mot, jamais par césure.
   align(center, block(width: 90%, text(size: 9pt, style: "italic", hyphenate: false)[
     L'interopérabilité agentique est une propriété à maintenir, non un état
@@ -249,26 +350,32 @@
     une mesure du comportement en exploitation — cinq termes dont aucun ne
     supplée l'absence d'un autre.
   ]))
-  v(0.8em)
+  v(0.9em)
   [© André-Guy Bruneau, M.Sc. IT. Tous droits réservés.]
 })
 #pagebreak(weak: false)
 
 // ================= Table des matières =================
+// Maquette du « Contents » des deux modèles : titre gras 15,9 pt, même chute
+// qu'une ouverture de chapitre, entrées à 10 pt sur 12 pt, conduits de points,
+// rang de chapitre en gras dans une colonne de 14,7 pt, folio à droite.
 
 #set page(numbering: "i", footer: context {
-  set text(font: SERIF, size: 9pt, fill: GRIS)
-  align(center, counter(page).display())
+  set text(font: SERIF, size: 8.5pt)
+  if calc.even(here().page()) { align(left, counter(page).display()) }
+  else { align(right, counter(page).display()) }
 })
 #counter(page).update(1)
 
-#block(width: 100%, {
+// Le « Contents » des deux modèles tombe plus bas qu'une ouverture de chapitre :
+// première entrée à 235,3 pt du bord, contre 199,7 pt pour une ligne de
+// situation. La hauteur du pavé de titre le reproduit.
+#block(width: 100%, height: 142pt, above: 0pt, below: 0pt, {
   set par(justify: false, first-line-indent: 0pt)
-  text(font: SERIF, size: 16pt, weight: "bold")[Table des matières]
-  v(0.5em)
-  line(length: 100%, stroke: 0.6pt + FILET)
+  text(font: SERIF, size: 15.9pt, weight: "bold")[Table des matières]
 })
-#v(1.0em)
+
+#let conduit = box(width: 1fr, inset: (x: 4pt), repeat[#h(1.1pt).#h(1.1pt)])
 
 #context {
   let items = query(selector.or(<ouverture-livre>, <ouverture-annexe>,
@@ -278,7 +385,8 @@
   // marqueur, le compteur se fige — sans quoi elle s'annoncerait « 51 » et
   // contredirait le plafond de cinquante.
   let en-annexe = false
-  set par(justify: false, leading: 0.5em, spacing: 0.32em, first-line-indent: 0pt)
+  set par(justify: false, leading: INTER, spacing: INTER, first-line-indent: 0pt)
+  set text(size: 10pt)
   for it in items {
     let p = counter(page).at(it.location()).first()
     if it.func() == metadata {
@@ -286,25 +394,29 @@
         en-annexe = true
       } else {
         let v = it.value
-        block(above: 1.3em, below: 0.6em, sticky: true, {
-          set text(size: 10pt, fill: GRIS)
-          smallcaps[Livre #v.romain — #v.verbe]
-        })
+        block(above: 22pt, below: 6pt, sticky: true,
+          text(weight: "bold")[Livre #v.romain#h(1.2em)#v.verbe])
       }
     } else if it.level == 1 {
       if not en-annexe { n = n + 1 }
-      let rang = if en-annexe { [] } else { [#n] }
       // « sticky » : sans lui, une entrée de chapitre tombe seule en bas de
       // page et ses sections passent à la suivante (cas du ch. 15).
-      block(above: if en-annexe { 1.3em } else { 0.75em }, below: 0.2em, sticky: true, {
-        set text(size: 9.5pt, weight: "bold")
-        grid(columns: (1.6em, 1fr, auto), column-gutter: 0.4em,
-          rang, link(it.location(), it.body), [#p])
-      })
+      // Le folio vit dans SA PROPRE colonne, jamais à la suite du conduit :
+      // collé au texte, il se replie sur la ligne suivante dès qu'un titre
+      // remplit la sienne — défaut vu à l'entrée « 1.0 » du chapitre 1.
+      // Il est en romain, non en gras, même sous une entrée de chapitre.
+      block(above: if en-annexe { 22pt } else { 12pt }, below: INTER, sticky: true,
+        grid(columns: (14.7pt, 1fr, auto), column-gutter: (0pt, 4pt),
+          // Le folio s'aligne sur la DERNIERE ligne de l'entrée, comme celui
+          // des deux modèles : sur un titre replié, il suit le conduit.
+          align: (left + top, left + top, right + bottom),
+          text(weight: "bold")[#if en-annexe [] else [#n]],
+          text(weight: "bold")[#link(it.location(), it.body)#conduit],
+          [#p]))
     } else {
-      set text(size: 8.5pt)
-      grid(columns: (1.6em, 1fr, auto), column-gutter: 0.4em,
-        [], link(it.location(), it.body), text(fill: GRIS)[#p])
+      grid(columns: (14.7pt, 1fr, auto), column-gutter: (0pt, 4pt),
+        align: (left + top, left + top, right + bottom),
+        [], [#link(it.location(), it.body)#conduit], [#p])
     }
   }
 }

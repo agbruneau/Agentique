@@ -196,11 +196,11 @@ du dernier maillon masquant son échec — faute déjà commise sur le ch. 6, po
 rendu alors que le contrôle échouait.
 
 ⚠ **Un TROISIÈME rendu existe depuis le 29 juillet 2026 : [`compendium.pdf`](compendium.pdf),
-857 pages, composé par [`build/build-pdf.sh`](build/build-pdf.sh).** La phrase « le compendium n'a
+810 pages, composé par [`build/build-pdf.sh`](build/build-pdf.sh).** La phrase « le compendium n'a
 pas de pipeline de rendu », vraie jusque-là, ne l'est plus. **Ce pipeline n'est PAS une quatrième
 copie du FESP** : les trois copies du FESP appartiennent aux Vol. I, II et III, et aucune n'a été
 copiée ici — celui-ci est propre au volume (gabarit `build/springer.template`, format 155 × 235 mm,
-Palatino, titres courants en petites capitales) et un correctif à l'un des quatre ne se propage à
+Times 10/12, titres courants alternés) et un correctif à l'un des quatre ne se propage à
 aucun autre. **Cinq points à connaître avant d'y toucher.** *(a)* ⚠ **Le
 `.md` reste la seule source** : le PDF se régénère (`bash build/build-pdf.sh`), il ne se corrige
 jamais — et il se régénère **dans le commit qui touche une pièce**, la règle du PDF versionné avec sa
@@ -215,9 +215,13 @@ visent** — **vingt-trois** —, et ils sont **marqués d'une dague, jamais sup
 publie le cardinal à chaque exécution, et le colophon en donne la lecture. *Un renvoi
 supprimé serait plus commode et moins honnête qu'un renvoi marqué.* *(d)* ⚠ **Le rendu ne comporte
 AUCUNE page blanche** *(instruction d'auteur du 29 juillet 2026)* : ni faux-titre, ni verso blanc, ni
-ouverture forcée au recto — d'où des marges symétriques et **un seul titre courant**, la parité
-recto-verso n'ayant plus d'objet. **Ne pas y réintroduire de `pagebreak(to: "odd")`** sans rouvrir la
-consigne. *(e)* ⚠ **Le statut du volume n'est pas touché par l'existence d'un rendu paginé** — *composer n'est
+ouverture forcée au recto — d'où des **marges symétriques**. **Ne pas y réintroduire de
+`pagebreak(to: "odd")`** sans rouvrir la consigne. ⚠ **En revanche, la phrase « un seul titre
+courant », vraie du premier gabarit, ne l'est plus** : la refonte du 29 juillet 2026 sur les deux
+monographies Springer a repris leur **titre courant alterné**, et *la parité d'une page reliée reste
+un fait physique que l'absence d'ouverture au recto ne supprime pas* — le folio va toujours à
+l'extérieur, le verso porte le chapitre, le recto la section. **Ce n'est pas une réouverture de la
+consigne** : aucune page blanche n'y revient. *(e)* ⚠ **Le statut du volume n'est pas touché par l'existence d'un rendu paginé** — *composer n'est
 pas publier* —, et le **colophon de la page de titre** le déclare une fois pour les cinquante ; la
 page d'avertissement séparée a été retirée le 29 juillet 2026, **sa substance repliée au colophon,
 non supprimée**. ⚠ **Depuis D-10 (29 juillet 2026), ce colophon porte le statut « révision finale —
@@ -250,9 +254,57 @@ champs, ni thèse citée, ni note de statut — la fonction `annexe()` de
 cinq critères — **rapport de mesure sans autorité**, du régime d'[`audit.md`](audit.md) : ni source,
 ni socle, ni décision, **jamais citable à l'appui d'un énoncé**, ses constats étant des **remontées
 non arbitrées**, et il n'alloue aucun identifiant (PRD §13). *Les deux se distinguent par leur nom :
-l'`annexe-` est reliée, l'`audit-` ne l'est pas.* *(f)* **Le décompte de pages a bougé — 847 →
-857 —, et il vit en cinq endroits** : les deux `README.md` et les deux `CLAUDE.md`, plus la rangée
-d'état du dépôt. *Les journaux datés, eux, gardent le chiffre de leur passe.*
+l'`annexe-` est reliée, l'`audit-` ne l'est pas.* *(f)* **Le décompte de pages a bougé deux fois le
+même jour — 847 → 857 par l'annexe, puis 857 → 810 par la refonte du gabarit —, et il vit en cinq
+endroits** : les deux `README.md` et les deux `CLAUDE.md`, plus la rangée d'état du dépôt. ⚠ *Les
+deux mouvements ne se composent pas* : le premier mesure l'annexe **au gabarit Palatino**, le second
+mesure le corpus entier — annexe comprise — **au gabarit Times**. Le coût de l'annexe n'a pas été
+re-mesuré après la refonte, et **écrire « 810 contre 800 auparavant » serait une extrapolation, non
+une mesure**. *Les journaux datés, eux, gardent le chiffre de leur passe.*
+
+## ⚠ Refonte du gabarit sur deux monographies Springer (29 juillet 2026)
+
+⚠ **Sur instruction d'auteur, [`build/springer.template`](build/springer.template) a été RELEVÉ sur
+deux monographies Springer fournies en PDF au dossier** — *Interoperability Principles and Standards*
+(ACES 16, 2025) et *Agentic AI: Theories and Practices* (2025) —, et le rendu recomposé en entier :
+**810 pages**, contre 857 au gabarit précédent. **Le gabarit n'imitait « le style Springer » que de
+mémoire ; il en porte désormais les mesures.** **Cinq faits avant d'y toucher.**
+
+*(a)* **Les deux modèles partagent exactement la même maquette, et elle est mesurée au point près** :
+155 × 235 mm, pavé **117 × 190 mm** (marges 19 mm latérales, **21 mm** en tête, **24 mm** en pied),
+corps **Times 10 sur 12** — **45 lignes par page** —, alinéa 1,2 em et aucun alinéa après un titre,
+titre courant **Times 8,5 pt noir**, § N.M gras 12 pt, § N.M.K gras italique 12 pt, § N.M.K.L gras
+10 pt. ⚠ **Le gris a disparu du texte** : les deux modèles n'en portent nulle part, et il ne sert
+plus qu'aux filets de tableau (0,61 de gris, la valeur relevée).
+
+*(b)* ⚠ **LE PIÈGE DE CETTE REFONTE EST UN MODÈLE DE LIGNE, ET IL A COÛTÉ UN RENDU ENTIER.** Typst
+place par défaut le bord haut d'une ligne à sa **hauteur de capitale** et son bord bas à la **ligne de
+base** (`top-edge: "cap-height"`, `bottom-edge: "baseline"`) : une ligne de Times 10 pt mesure donc
+**6,62 pt**, non 11,07 pt comme le donnerait un calcul sur l'ascendante et la descendante. Un
+interligne calculé sur le mauvais modèle — 0,09 em au lieu de **0,538 em** — a produit un pas de
+7,5 pt et **un rendu de 561 pages qu'aucun contrôle n'a signalé**. *Toute valeur verticale de ce
+gabarit se compte de ligne de base à ligne de base, jamais de bord de bloc à bord de bloc*, et
+`top-edge`/`bottom-edge` y sont **figés aux métriques de Times** pour qu'une ligne portant un ⚠ ou un
+☑ — rendu par la police de repli — ne décroche pas de la grille (onze pour cent des lignes du corpus).
+
+*(c)* ⚠ **L'ouverture de chapitre place sa ligne de situation à une ordonnée FIXE**, pas à une
+distance fixe du titre : dans les deux modèles, l'« Abstract » commence à 190,6 pt du bord que le
+titre tienne sur une ou deux lignes (vérifié à leurs chapitres 3 et 8). Le gabarit le reproduit par un
+pavé de titre de **hauteur fixe, 114 pt** — ⚠ *fixe, non minimale* : un titre de trois lignes
+déborderait vers le bas plutôt que de repousser la suite. Aucun des cinquante n'y arrive.
+
+*(d)* ⚠ **Deux défauts de la sortie Pandoc sont corrigés dans `build-pdf.sh`, par `sed`, et ils ne
+sont pas interchangeables** : le `align(center)` autour des tableaux (déjà là), et un
+`table.hline()` explicite sous la rangée de tête qui **écrase en 0,5 pt le filet de 1 pt** que les
+deux modèles y portent. *Le second ne se voit pas à la lecture du gabarit : il se voit en mesurant
+les filets du PDF.*
+
+*(e)* ⚠ **Le contrôle de cette refonte n'est pas outillé et il n'existe aucun script qui le tienne.**
+Ce qui l'a vérifiée est une **confrontation de mesures** entre le rendu et les deux modèles —
+première et dernière ligne de base (69,0 et 597,0), pas de grille (12,0), ordonnée du titre courant
+(34,9), chute d'ouverture (132,7), largeur et couleur des filets, parité des titres courants sur les
+**740 pages** qui en portent. *Une refonte de gabarit ne se déclare pas conforme depuis sa source :
+elle se mesure sur son PDF* — c'est la règle des livrables rendus par un pipeline, appliquée ici.
 
 ## ⚠ Livre III — quinze chapitres rédigés hors portes, D-9 enfreinte deux fois (27 juillet 2026)
 

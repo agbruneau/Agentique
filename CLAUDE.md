@@ -225,17 +225,36 @@ l'auteur, au gabarit FESP des monographies : c'était bien une troisième copie,
 
 ⚠ **Un QUATRIÈME pipeline existe depuis le 29 juillet 2026, et ce n'est pas une quatrième copie du
 FESP.** Le Vol. IV a reçu le sien — [`2 - Compendium/build/`](2%20-%20Compendium/build/) : gabarit
-Typst propre, format 155 × 235 mm au style des monographies Springer, sortie
-[`compendium.pdf`](2%20-%20Compendium/compendium.pdf), **857 pages, sans aucune page blanche**. Il ne dérive d'aucune des trois
+Typst propre, format 155 × 235 mm, sortie
+[`compendium.pdf`](2%20-%20Compendium/compendium.pdf), **810 pages, sans aucune page blanche**. Il ne dérive d'aucune des trois
 copies et aucune ne dérive de lui ; la règle d'indépendance vaut donc pour **quatre**. ⚠ **Composer
 n'est pas publier** : le rendu ne requalifie rien, les cinquante chapitres demeurent un **brouillon
 non publiable** et le PDF le déclare en liminaire. Le détail — ce que le rendu retire, et comment il
 marque les renvois que la coupe laisserait pendre — vit au [`CLAUDE.md` du
 dossier](2%20-%20Compendium/CLAUDE.md) et **n'est pas repris ici**.
 
+⚠ **Ce gabarit a été REFONDU le 29 juillet 2026, sur instruction d'auteur, et la formule « au style
+des monographies Springer » n'y a plus cours** : il est **relevé** sur deux monographies Springer
+fournies en PDF au dossier du volume — *Interoperability Principles and Standards* (ACES 16, 2025) et
+*Agentic AI: Theories and Practices* (2025) —, dont il reprend les mesures (pavé 117 × 190 mm,
+**Times 10 sur 12**, 45 lignes par page, titre courant alterné, aucun gris dans le texte). Le rendu
+est passé de **857 à 810 pages**. **Trois faits valent au niveau de la racine.** *(a)* ⚠ **La règle
+d'indépendance des quatre pipelines n'est pas entamée** : rien n'a été copié depuis ni vers les trois
+copies du FESP, et *un correctif à ce gabarit ne se propage à aucun autre*. *(b)* ⚠ **La phrase « un
+seul titre courant », consignée plus bas comme conséquence de l'instruction « aucune page blanche »,
+ne décrit plus le rendu** : les deux modèles portent un titre courant **alterné**, le gabarit le
+reprend, et *aucune page blanche n'y revient pour autant* — l'instruction du 29 juillet tient
+entière. *(c)* ⚠ **Le défaut de cette passe se consigne parce qu'il est invisible à tout contrôle** :
+un interligne calculé sur le mauvais modèle de ligne de Typst a produit **un rendu de 561 pages** que
+ni `check-toc.py`, ni `check-sieges.py`, ni l'assemblage n'ont signalé — *seule la confrontation des
+mesures du PDF à celles des deux modèles l'a montré.* Le détail vit au [`CLAUDE.md` du
+dossier](2%20-%20Compendium/CLAUDE.md) et **n'est pas repris ici**.
+
 ⚠ **Le rendu porte, depuis le 29 juillet 2026, une ANNEXE HORS PLAN après le chapitre 50 —
 [`annexe-references.md`](2%20-%20Compendium/annexe-references.md), la LISTE des 159 entrées du socle
-consolidé**, ajoutée sur instruction d'auteur (857 pages, contre 847 auparavant). **Trois choses
+consolidé**, ajoutée sur instruction d'auteur (elle a porté le rendu de 847 à 857 pages **au gabarit
+d'alors** ; la refonte l'a ensuite ramené à **810**, annexe comprise — ⚠ *le coût propre de l'annexe
+n'a pas été re-mesuré au gabarit neuf, et il ne se déduit pas de la soustraction*). **Trois choses
 valent au niveau de la racine.** *(a)* ⚠ **Elle n'est aucune des neuf annexes A à I du `TOC.md`, et
 elle ne prend leur place pour aucune** — l'**Annexe I, la bibliographie générale consolidée, reste à
 écrire** (plancher déclaré : 1 270 entrées pour le seul Vol. I). ⚠ *Ce n'est pas non plus une
