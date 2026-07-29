@@ -1,0 +1,334 @@
+// ============ Gabarit « Springer » — compendium (Vol. IV) ============
+// Format 155 x 235 mm, recto-verso, Palatino, ouvertures de chapitre au recto,
+// titres courants en petites capitales, folios en marge externe.
+
+#set document(
+  title: "La somme agentique",
+  author: "André-Guy Bruneau",
+  keywords: ("interopérabilité agentique", "identité", "orchestration",
+             "services financiers", "Canada"),
+)
+
+#let SERIF = ("Palatino Linotype", "Book Antiqua", "Libertinus Serif", "Segoe UI Symbol")
+#let GRIS = rgb("#55595f")
+#let FILET = rgb("#8d939b")
+
+// ---- texte plat d'un contenu (titres courants tronqués) ----
+#let plat(c) = {
+  if type(c) == str { c }
+  else if type(c) != content { "" }
+  // Typst construit un élément `smartquote` pour chaque ' et " — même
+  // désactivé, il n'a pas de champ `text` : sans ce cas, les apostrophes
+  // disparaissent des titres courants.
+  else if c.func() == smartquote { if c.at("double", default: true) { "\"" } else { "'" } }
+  else if c.has("text") { c.text }
+  else if c.has("children") { c.children.map(plat).join("") }
+  else if c.has("body") { plat(c.body) }
+  else if c == [ ] { " " }
+  else { "" }
+}
+#let court(c, n) = {
+  // `len()` compte des octets : passer par les grappes, sinon la coupe tombe
+  // au milieu d'un caractère accentué et Typst refuse la tranche.
+  let g = plat(c).clusters()
+  if g.len() > n { g.slice(0, n).join("").trim() + "…" } else { g.join("") }
+}
+
+// ---- une ouverture (chapitre ou livre) commence-t-elle sur cette page ? ----
+#let ouvre-ici() = {
+  let p = here().page()
+  query(selector.or(heading.where(level: 1), <ouverture-livre>))
+    .filter(e => e.location().page() == p).len() > 0
+}
+
+// ---- titre courant : verso = chapitre, recto = section ----
+#let entete = context {
+  if not ouvre-ici() {
+    let chs = query(selector(heading.where(level: 1)).before(here()))
+    if chs.len() > 0 {
+      let n = chs.len()
+      set text(font: SERIF, size: 8pt, fill: GRIS)
+      let folio = counter(page).display()
+      if calc.even(here().page()) {
+        grid(columns: (auto, 1fr), column-gutter: 1em, align: (left + bottom, right + bottom),
+          folio, smallcaps(court([Chapitre #n · #chs.last().body], 74)))
+      } else {
+        let secs = query(selector(heading.where(level: 2)).before(here()))
+        let st = if secs.len() > 0 { secs.last().body } else { chs.last().body }
+        grid(columns: (1fr, auto), column-gutter: 1em, align: (left + bottom, right + bottom),
+          smallcaps(court(st, 74)), folio)
+      }
+    }
+  }
+}
+
+// ---- folio centré sur les pages d'ouverture seulement ----
+#let pied = context {
+  if ouvre-ici() {
+    set text(font: SERIF, size: 9pt, fill: GRIS)
+    align(center, counter(page).display())
+  }
+}
+
+#set page(
+  width: 155mm, height: 235mm,
+  margin: (inside: 21mm, outside: 16mm, top: 19mm, bottom: 20mm),
+  binding: left,
+  numbering: none,
+  header: none,
+  footer: none,
+  header-ascent: 35%,
+  footer-descent: 32%,
+)
+
+#set text(font: SERIF, size: 10pt, lang: "fr", region: "ca", hyphenate: true)
+#set par(justify: true, leading: 0.66em, spacing: 0.66em,
+         first-line-indent: (amount: 1.3em, all: false))
+#set smartquote(enabled: false)
+#show link: set text(fill: black)
+
+#set list(indent: 0.5em, spacing: 0.62em, marker: text(fill: GRIS)[•])
+#set enum(indent: 0.5em, spacing: 0.62em)
+
+// ---- titres ----
+#set heading(numbering: none)
+#show heading: set text(font: SERIF, weight: "bold", hyphenate: false)
+#show heading: set par(justify: false, first-line-indent: 0pt)
+#show heading.where(level: 2): it => block(above: 1.7em, below: 0.7em,
+  text(size: 12.5pt, it.body))
+#show heading.where(level: 3): it => block(above: 1.25em, below: 0.5em,
+  text(size: 10.5pt, it.body))
+#show heading.where(level: 4): it => block(above: 1.0em, below: 0.4em,
+  text(size: 10pt, style: "italic", weight: "regular", it.body))
+
+// ---- tableaux ----
+#show figure: set block(breakable: true)
+#set figure(gap: 0.7em)
+// Les légendes portent déjà « Tableau N.M — … » ; la numérotation Typst
+// ajouterait un second « Tableau 1. – » devant.
+#show figure.where(kind: table): set figure(numbering: none)
+#show figure.where(kind: table): set figure.caption(position: top)
+#show figure.caption: set text(size: 8pt, fill: GRIS)
+// Sans « sticky », une légende de tête peut rester seule en bas de page,
+// son tableau passant à la suivante.
+#show figure.caption: set block(sticky: true)
+#set table(
+  inset: (x: 5pt, y: 4pt),
+  align: left + top,
+  stroke: (x, y) => (top: 0.4pt + FILET, bottom: 0.4pt + FILET),
+  fill: (x, y) => if y == 0 { rgb("#eef0f3") },
+)
+#show table: set par(justify: false, leading: 0.5em, first-line-indent: 0pt)
+#show table: set text(size: 8pt, hyphenate: true)
+#show table.cell.where(y: 0): set text(weight: "bold")
+
+// ---- encadrés « Perspective recherche » / « Mise en œuvre » ----
+#show quote.where(block: true): it => block(
+  width: 100%, breakable: true,
+  fill: rgb("#f4f5f7"),
+  stroke: (left: 2pt + rgb("#6b7382")),
+  inset: (left: 9pt, right: 8pt, top: 7pt, bottom: 7pt),
+  above: 1.0em, below: 1.0em,
+  {
+    set text(size: 9pt)
+    set par(leading: 0.6em, spacing: 0.6em, first-line-indent: 0pt)
+    it.body
+  },
+)
+
+#let horizontalrule = align(center, line(length: 30%, stroke: 0.4pt + FILET))
+
+// ---- ouverture de livre (page de partie, au recto) ----
+#let ouverture-livre(romain, verbe, sous) = {
+  pagebreak(to: "odd", weak: true)
+  [#metadata((romain: romain, verbe: verbe, sous: sous))<ouverture-livre>]
+  v(6.2cm)
+  set par(justify: false, first-line-indent: 0pt)
+  text(font: SERIF, size: 11pt, fill: GRIS, smallcaps[Livre #romain])
+  v(0.5em)
+  line(length: 100%, stroke: 1.1pt + black)
+  v(0.9em)
+  text(font: SERIF, size: 22pt, weight: "bold", verbe)
+  v(0.7em)
+  text(font: SERIF, size: 11.5pt, style: "italic", fill: GRIS, sous)
+  pagebreak(weak: false)
+}
+
+// ---- ouverture de chapitre (au recto) ----
+#let ouverture-chapitre(n) = {
+  {
+    set page(header: none, footer: none)
+    pagebreak(to: "odd", weak: true)
+  }
+  v(1.1cm)
+  set par(justify: false, first-line-indent: 0pt)
+  text(font: SERIF, size: 10pt, fill: GRIS, smallcaps[Chapitre])
+  h(0.55em)
+  text(font: SERIF, size: 26pt, weight: "bold", fill: GRIS, str(n))
+  v(0.35em)
+  line(length: 100%, stroke: 0.9pt + black)
+  v(0.55em)
+}
+
+#show heading.where(level: 1): it => block(below: 1.1em, width: 100%,
+  text(size: 17pt, hyphenate: false, it.body))
+
+// ---- ligne de situation, sous le titre de chapitre ----
+#let situation(body) = block(above: -0.2em, below: 1.1em, width: 100%, {
+  set text(size: 9pt, fill: GRIS)
+  set par(justify: false, leading: 0.55em, first-line-indent: 0pt)
+  body
+})
+
+// ---- thèse : le résumé d'ouverture ----
+#let these(body) = block(width: 100%, above: 0.9em, below: 1.9em,
+  inset: (top: 8pt, bottom: 8pt),
+  stroke: (top: 0.5pt + FILET, bottom: 0.5pt + FILET), {
+    set text(size: 9.5pt)
+    set par(leading: 0.6em, spacing: 0.6em, first-line-indent: 0pt, justify: true)
+    body
+  })
+
+// ================= Liminaires =================
+
+#let filet-titre = line(length: 100%, stroke: 0.8pt + black)
+
+// -- faux-titre --
+#v(4.2cm)
+#align(center, text(font: SERIF, size: 15pt, weight: "bold", smallcaps[La somme agentique]))
+#pagebreak(weak: false)
+#pagebreak(weak: false)
+
+// -- page de titre --
+#v(3.4cm)
+#block(width: 100%, {
+  set par(justify: false, first-line-indent: 0pt)
+  text(font: SERIF, size: 11pt, fill: GRIS, smallcaps[Volume IV — compendium intégral])
+  v(0.6em)
+  filet-titre
+  v(1.0em)
+  text(font: SERIF, size: 27pt, weight: "bold")[La somme agentique]
+  v(0.9em)
+  text(font: SERIF, size: 12.5pt, style: "italic")[
+    Interopérabilité, autonomie encadrée et fabrique de confiance :
+    déployer des agents en services financiers réglementés (2024-2032)
+  ]
+  v(2.4cm)
+  text(font: SERIF, size: 13pt)[André-Guy Bruneau]
+})
+#pagebreak(weak: false)
+
+// -- colophon --
+#v(1fr)
+#block(width: 100%, {
+  set text(size: 8.5pt, fill: GRIS)
+  set par(justify: false, leading: 0.62em, spacing: 0.75em, first-line-indent: 0pt)
+  [*La somme agentique* — Volume IV du corpus *Agentique*. Cinquante chapitres
+   en cinq livres, condensés des volumes I (*Interopérabilité agentique*),
+   II (*L'autonomie encadrée*) et III (*L'entreprise agentique*).]
+  parbreak()
+  [Gel unique du compendium : 27 juillet 2026 (décision d'auteur D-1). Les faits
+   périssables portent en outre le gel de leur source.]
+  parbreak()
+  [Rendu composé avec Pandoc et Typst au format 155 × 235 mm. Les sources
+   `.md` font foi ; ce PDF en est un rendu.]
+  parbreak()
+  [© André-Guy Bruneau. Tous droits réservés.]
+})
+#pagebreak(weak: false)
+
+// -- avertissement --
+#v(2.2cm)
+#block(width: 100%, {
+  set par(justify: true, leading: 0.66em, spacing: 1.15em, first-line-indent: 0pt)
+  text(font: SERIF, size: 14pt, weight: "bold")[Avertissement — état du volume]
+  v(0.9em)
+  line(length: 100%, stroke: 0.6pt + FILET)
+  v(1.0em)
+  set text(size: 9.5pt)
+  [Les cinquante chapitres réunis ici sont un *brouillon de rédaction, non
+   publiable*. Ils ont été rédigés sur instruction d'auteur avant le
+   franchissement des portes de lancement que leur cahier des charges pose
+   comme préalables, et cet écart n'est pas résorbé par le présent rendu.]
+  parbreak()
+  [Trois conditions demeurent insatisfaites à la date de composition. Les
+   portes G-4, G-5 et G-6 restent ouvertes. Aucun vote adversarial n'a été
+   conduit sur les entrées du socle consolidé, dont vingt-deux portent une date
+   non re-vérifiée et vingt-huit sont partielles ; en conséquence, *aucun
+   énoncé de cet ouvrage n'est central* au sens du critère CA-IV-01. Enfin, les
+   critères CA-IV-11 et CA-IV-13 exigent un relecteur distinct du rédacteur, que
+   la gouvernance du volume ne fournit pas : le texte a été arbitré, il n'a pas
+   été relu par un tiers.]
+  parbreak()
+  [Ce rendu retire deux appareils que les sources portent et qui ne sont pas du
+   corps : l'en-tête de gouvernance à cinq champs qui ouvre chaque pièce, et la
+   note de statut qui la referme — l'un et l'autre déclarés hors plan, et
+   exclus du corps par la commande de décompte du volume. Ils demeurent aux
+   fichiers `.md`, qui font foi. Le présent avertissement tient lieu, une fois,
+   de ce que ces cinquante déclarations disaient chapitre par chapitre.]
+  parbreak()
+  [Vingt-trois renvois du corps désignaient cette note de statut. Ils sont
+   conservés et suivis d'une dague — *§ 25.9 †* —, qui se lit : « section
+   retirée du présent rendu, à consulter au fichier source ». Un renvoi
+   supprimé serait plus commode et moins honnête qu'un renvoi marqué.]
+  parbreak()
+  [Une porte franchie n'est pas un ouvrage recevable ; c'est une condition qui
+   cesse de manquer. Le lecteur est prévenu de la différence.]
+})
+#pagebreak(weak: false)
+
+// ================= Table des matières =================
+
+#set page(numbering: "i", footer: context {
+  set text(font: SERIF, size: 9pt, fill: GRIS)
+  align(center, counter(page).display())
+})
+#counter(page).update(1)
+
+#block(width: 100%, {
+  set par(justify: false, first-line-indent: 0pt)
+  text(font: SERIF, size: 16pt, weight: "bold")[Table des matières]
+  v(0.5em)
+  line(length: 100%, stroke: 0.6pt + FILET)
+})
+#v(1.0em)
+
+#context {
+  let items = query(selector.or(<ouverture-livre>, heading.where(level: 1),
+                                heading.where(level: 2)))
+  let n = 0
+  set par(justify: false, leading: 0.5em, spacing: 0.32em, first-line-indent: 0pt)
+  for it in items {
+    let p = counter(page).at(it.location()).first()
+    if it.func() == metadata {
+      let v = it.value
+      block(above: 1.3em, below: 0.6em, {
+        set text(size: 10pt, fill: GRIS)
+        smallcaps[Livre #v.romain — #v.verbe]
+      })
+    } else if it.level == 1 {
+      n = n + 1
+      block(above: 0.75em, below: 0.2em, {
+        set text(size: 9.5pt, weight: "bold")
+        grid(columns: (1.6em, 1fr, auto), column-gutter: 0.4em,
+          [#n], link(it.location(), it.body), [#p])
+      })
+    } else {
+      set text(size: 8.5pt)
+      grid(columns: (1.6em, 1fr, auto), column-gutter: 0.4em,
+        [], link(it.location(), it.body), text(fill: GRIS)[#p])
+    }
+  }
+}
+
+// ================= Corps =================
+
+#pagebreak(to: "odd", weak: true)
+#counter(page).update(1)
+#set page(numbering: "1", header: entete, footer: pied)
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+$body$

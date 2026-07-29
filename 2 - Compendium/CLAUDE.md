@@ -157,11 +157,28 @@ exigent un **relecteur distinct du rédacteur**, et **D-6 ne fournit pas de tier
 pas relire*. L'écart est déclaré au PRD §11 ; *une lacune de socle se comble par une source, celle-ci
 par une seconde personne.*
 *(d)* **Le `.html` est un rendu, jamais une seconde source** : toute correction se fait au `.md` et
-se reporte au même commit. Le compendium n'a **pas** de pipeline de rendu — les trois copies du
-FESP appartiennent aux Vol. I, II et III, et aucune n'a été copiée ici. Le rendu et ses huit
-contrôles sont outillés par le skill (voir plus bas) ; ⚠ **le vérificateur ne se tuyaute jamais dans
-un enchaînement `&&`**, le code de sortie du dernier maillon masquant son échec — faute déjà commise
-sur le ch. 6, poussé avec un défaut de rendu alors que le contrôle échouait.
+se reporte au même commit. Le rendu `.html` et ses huit contrôles sont outillés par le skill (voir
+plus bas) ; ⚠ **le vérificateur ne se tuyaute jamais dans un enchaînement `&&`**, le code de sortie
+du dernier maillon masquant son échec — faute déjà commise sur le ch. 6, poussé avec un défaut de
+rendu alors que le contrôle échouait.
+
+⚠ **Un TROISIÈME rendu existe depuis le 29 juillet 2026 : [`compendium.pdf`](compendium.pdf),
+893 pages, composé par [`build/build-pdf.sh`](build/build-pdf.sh).** La phrase « le compendium n'a
+pas de pipeline de rendu », vraie jusque-là, ne l'est plus. **Ce pipeline n'est PAS une quatrième
+copie du FESP** : les trois copies du FESP appartiennent aux Vol. I, II et III, et aucune n'a été
+copiée ici — celui-ci est propre au volume (gabarit `build/springer.template`, format 155 × 235 mm,
+Palatino, pages de livre au recto, titres courants en petites capitales) et un correctif à l'un des
+quatre ne se propage à aucun autre. **Quatre points à connaître avant d'y toucher.** *(a)* ⚠ **Le
+`.md` reste la seule source** : le PDF se régénère, il ne se corrige jamais. *(b)* ⚠ **Le rendu
+RETIRE deux appareils, et il les retire parce que le volume les déclare hors corps** : l'en-tête à
+cinq champs et la **note de statut**, que `PRD/decompte.sh` exclut déjà du corps mesuré (PRD §6,
+skill §7). *(c)* ⚠ **La coupe de la note de statut laisse pendre les renvois du corps qui la
+visent** — **vingt-trois** —, et ils sont **marqués d'une dague, jamais supprimés** ; le script en
+publie le cardinal à chaque exécution, et l'avertissement liminaire en donne la lecture. *Un renvoi
+supprimé serait plus commode et moins honnête qu'un renvoi marqué.* *(d)* ⚠ **Le statut du volume
+n'est pas touché par l'existence d'un rendu paginé** : les cinquante chapitres demeurent un
+**brouillon non publiable**, et l'avertissement liminaire du PDF le déclare une fois pour les
+cinquante. *Composer n'est pas publier.*
 
 ## ⚠ Livre III — quinze chapitres rédigés hors portes, D-9 enfreinte deux fois (27 juillet 2026)
 

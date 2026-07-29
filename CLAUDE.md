@@ -199,10 +199,20 @@ croisées ou l'historique d'un volume.
 | Traçabilité des faits | vérification adverse des citations, bilan par bibliographie | socle factuel **F-xx** avec niveaux **[A]/[B]/[C]** |
 | Pipeline PDF | FESP (Mermaid → Pandoc → Typst) | **copie** du FESP + `assemble.py` en amont |
 
-Les trois pipelines PDF (Vol. I, Vol. II et — depuis le 23 juillet 2026 — Vol. III) sont des copies
-indépendantes : **un correctif à l'un ne se propage pas aux autres.** La veille, elle, n'utilise
-aucun des trois (voir plus bas). Le Vol. III a reçu sa copie en P5.4, sur demande de l'auteur, au
-gabarit FESP des monographies : c'était bien une troisième copie, décidée et datée.
+Les trois pipelines PDF **FESP** (Vol. I, Vol. II et — depuis le 23 juillet 2026 — Vol. III) sont des
+copies indépendantes : **un correctif à l'un ne se propage pas aux autres.** La veille, elle,
+n'utilise aucun des trois (voir plus bas). Le Vol. III a reçu sa copie en P5.4, sur demande de
+l'auteur, au gabarit FESP des monographies : c'était bien une troisième copie, décidée et datée.
+
+⚠ **Un QUATRIÈME pipeline existe depuis le 29 juillet 2026, et ce n'est pas une quatrième copie du
+FESP.** Le Vol. IV a reçu le sien — [`2 - Compendium/build/`](2%20-%20Compendium/build/) : gabarit
+Typst propre, format 155 × 235 mm au style des monographies Springer, sortie
+[`compendium.pdf`](2%20-%20Compendium/compendium.pdf), **893 pages**. Il ne dérive d'aucune des trois
+copies et aucune ne dérive de lui ; la règle d'indépendance vaut donc pour **quatre**. ⚠ **Composer
+n'est pas publier** : le rendu ne requalifie rien, les cinquante chapitres demeurent un **brouillon
+non publiable** et le PDF le déclare en liminaire. Le détail — ce que le rendu retire, et comment il
+marque les renvois que la coupe laisserait pendre — vit au [`CLAUDE.md` du
+dossier](2%20-%20Compendium/CLAUDE.md) et **n'est pas repris ici**.
 
 Le Vol. III prolonge l'appareil du Vol. II mais s'en écarte sur quatre points (motifs de balayage,
 commande de décompte, escalade de gouvernance, numérotation des garde-fous). Ces écarts sont
