@@ -30,13 +30,13 @@ Les trois volumes vivent sous [`1 - Corpus/`](1%20-%20Corpus/) ; la veille est
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 29 juillet 2026 (édition d'août 2026 ; les sections antérieures gardent leur date d'état) | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | 27 juillet 2026 (décision d'auteur D-1) ; volet des faits levé le 28 juillet 2026 |
-| **État** | Publiée (159 p., 266 références) | Rédaction terminée (569 p., ≈ 263 600 mots ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Arrêté en révision finale — bibliothèque personnelle** (D-10, 29 juillet 2026 ; TOC v0.31 / PRD v0.15) : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) (**857 p.**, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** |
+| **État** | Publiée (158 p., 266 références) | Rédaction terminée (569 p., ≈ 263 600 mots ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Arrêté en révision finale — bibliothèque personnelle** (D-10, 29 juillet 2026 ; TOC v0.31 / PRD v0.15) : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) (**857 p.**, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** |
 
 ## Veille technologique — le document transversal
 
-[`Veille Technologique.md`](Veille%20Technologique.md) → `Veille Technologique.pdf` (**159 p.**,
+[`Veille Technologique.md`](Veille%20Technologique.md) → `Veille Technologique.pdf` (**158 p.**,
 14 sections numérotées, **266 références**, 15 tableaux — **édition d'août 2026**, faits gelés au
-29 juillet 2026). Revue vérifiée où chaque énoncé factuel
+29 juillet 2026 ; résumé sur la page de titre, sommaire exécutif sur trois pages). Revue vérifiée où chaque énoncé factuel
 est adossé à une source primaire consultée et soumis à contradiction — vérificateurs indépendants
 chargés de *réfuter*, contre-vérification directe sinon. Elle couvre les trois protocoles
 structurants (MCP, A2A, ANP), leur gouvernance, l'adoption documentée, la sécurité, et **sept
@@ -300,7 +300,7 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
 .
 ├── README.md                              ← ce fichier (avant-propos croisé)
 ├── CLAUDE.md                              ← conventions du dépôt + conventions de la veille
-├── Veille Technologique.md / .pdf         ← veille autonome, édition d'août 2026, faits gelés au 29 juillet (159 p., 266 réf.)
+├── Veille Technologique.md / .pdf         ← veille autonome, édition d'août 2026, faits gelés au 29 juillet (158 p., 266 réf.)
 ├── 1 - Corpus/                            ← le triptyque
 │   ├── 1 - InteroperabiliteAgentique/       Vol. I
 │   │   ├── Chapitres/                         7 chapitres + 7 bibliographies + Annexe B (ADS)
@@ -563,6 +563,25 @@ mauvaise section, aucun contrôle ne le voit* — seule la collation du plan ré
 sixième écart est **signalé sans être corrigé**, la règle du dépôt l'interdisant : la réf. [217]
 pointe un démonstrateur retiré de l'arbre le 25 juillet 2026, et la limite est portée à la §10 de
 l'édition plutôt qu'à la référence.
+
+**Le 29 juillet 2026, sixième passe du même jour** : deux **budgets de mise en page** posés par
+l'auteur sur la veille — le **résumé doit tenir sur la page de titre**, le **sommaire exécutif sur
+trois pages** (5, 6 et 7). Les deux étaient enfreints par la passe précédente, et **le premier
+silencieusement** : le gabarit Typst compose le résumé dans un bloc **qui ne se scinde pas**, si bien
+qu'un résumé trop long ne passe pas à la page suivante — il **se fait rogner sous la marge**, et
+`pandoc` sort sans erreur. Mesuré sur le PDF : la dernière ligne du résumé tombait à **y = −24,6 pt**,
+soit **98 pt sous la marge basse** (73,7 pt), et le sommaire mordait de **344 caractères** sur une
+quatrième page. **Corrigé par condensation, en trois passes mesurées** : le résumé passe de
+**3 451 à 2 750 caractères** et de six paragraphes à quatre — la grille des cinq questions rejoint le
+paragraphe des couches, dont elle est le diagnostic — ; les constats 11 et 12 sont resserrés ; et
+« Méthode en bref » perd son détail par édition, qui vit déjà en §2.2 et n'a rien à faire dans un
+sommaire. **Aucun énoncé n'est retiré**, et l'occasion a servi à corriger une formule que la §13.8
+avait périmée : le résumé disait « deux cadrages », il dit désormais **quatre volumes tous rédigés
+dont deux ne fournissent aucun fait**. **État vérifié sur le rendu** : résumé à **y = 104,8 pt**
+(31 pt de dégagement), sommaire **pages 5-7**, « 1 Introduction » en page **8**. Décomptes re-mesurés :
+**158 p. / 266 réf.**, `check-veille.py` en sortie 0. ⚠ **Le budget est écrit au
+[`CLAUDE.md`](CLAUDE.md) avec sa commande de mesure, parce qu'aucun contrôle ne le voit** — ni
+`check-veille.py`, ni le rendu : *un débordement qui se fait rogner ne lève aucune erreur.*
 
 ⚠ Le décompte des diagrammes du Vol. I se mesure avec un motif **ancré** :
 `grep -c '^```mermaid'` donne 28. Le motif non ancré en retourne 29 — il attrape une ligne de prose

@@ -256,7 +256,7 @@ consignés et motivés dans [son propre `CLAUDE.md`](1%20-%20Corpus/3%20-%20Entr
 
 ## Veille technologique — le livrable de la racine
 
-`Veille Technologique.md` → `Veille Technologique.pdf` (**159 p.**, 14 sections numérotées,
+`Veille Technologique.md` → `Veille Technologique.pdf` (**158 p.**, 14 sections numérotées,
 **266 références**, 15 tableaux — **édition d'août 2026, faits gelés au 29 juillet 2026** ; elle
 succède à l'**édition intégrale du 18 juillet 2026** et à la **passe complémentaire du
 23 juillet 2026** : sous-section 12.4, l'après-agentique en préimpression, références [245] à [256],
@@ -402,6 +402,23 @@ intact — sans cette seconde vérification, un script cassé « détecte » tou
 - **Sauts de page** via blocs Typst bruts ` ```{=typst} #pagebreak(weak: true) ``` ` ; le saut avant
   la table des matières passe par `header-includes`
   (`#show outline: it => [#pagebreak(weak: true) #it]`).
+- ⚠ **Deux budgets de mise en page, posés par l'auteur le 29 juillet 2026, qu'aucun contrôle ne
+  voit.** *(a)* Le **résumé tient entièrement sur la page de titre** ; *(b)* le **sommaire exécutif
+  tient sur trois pages** — 5, 6 et 7, l'introduction ouvrant la page 8. ⚠ **Le résumé est le piège,
+  parce qu'il ne se signale pas** : le gabarit Typst par défaut le compose dans un bloc **qui ne se
+  scinde pas**, si bien qu'un résumé trop long ne passe pas à la page suivante — il **se fait rogner
+  sous la marge**, et le rendu sort sans erreur. Ajouter un paragraphe au résumé l'a déjà fait
+  déborder de 98 pt. `check-veille.py` n'en voit rien, et `pandoc` non plus. **Mesurer sur le PDF,
+  jamais à l'œil** — la dernière ligne du résumé doit rester **au-dessus de 73,7 pt** (marge basse de
+  2,6 cm) :
+
+  ```bash
+  python -c "import pypdf; ys=[]; r=pypdf.PdfReader('Veille Technologique.pdf'); r.pages[0].extract_text(visitor_text=lambda t,cm,tm,f,s: ys.append(tm[5]*cm[3]+cm[5]) if t.strip() else None); print('y min', round(min(ys),1), '/ marge 73.7')"
+  ```
+
+  Et pour le sommaire, vérifier que la page 5 commence par « Sommaire exécutif » et la page 8 par
+  « 1 Introduction ». ⚠ **Tout ajout au résumé ou au sommaire se paie dans le même bloc** : c'est un
+  budget, pas une cible — condenser, jamais laisser déborder.
 
 ### Méthode
 
