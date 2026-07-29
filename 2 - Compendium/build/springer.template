@@ -182,7 +182,7 @@
 #v(3.2cm)
 #block(width: 100%, {
   set par(justify: false, first-line-indent: 0pt)
-  text(font: SERIF, size: 11pt, fill: GRIS, smallcaps[Volume IV — compendium intégral])
+  align(center, text(font: SERIF, size: 11pt, fill: GRIS, tracking: 0.22em)[COMPENDIUM])
   v(0.6em)
   filet-titre
   v(1.0em)
@@ -256,13 +256,15 @@
     let p = counter(page).at(it.location()).first()
     if it.func() == metadata {
       let v = it.value
-      block(above: 1.3em, below: 0.6em, {
+      block(above: 1.3em, below: 0.6em, sticky: true, {
         set text(size: 10pt, fill: GRIS)
         smallcaps[Livre #v.romain — #v.verbe]
       })
     } else if it.level == 1 {
       n = n + 1
-      block(above: 0.75em, below: 0.2em, {
+      // « sticky » : sans lui, une entrée de chapitre tombe seule en bas de
+      // page et ses sections passent à la suivante (cas du ch. 15).
+      block(above: 0.75em, below: 0.2em, sticky: true, {
         set text(size: 9.5pt, weight: "bold")
         grid(columns: (1.6em, 1fr, auto), column-gutter: 0.4em,
           [#n], link(it.location(), it.body), [#p])
