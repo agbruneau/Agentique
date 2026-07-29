@@ -196,7 +196,7 @@ du dernier maillon masquant son échec — faute déjà commise sur le ch. 6, po
 rendu alors que le contrôle échouait.
 
 ⚠ **Un TROISIÈME rendu existe depuis le 29 juillet 2026 : [`compendium.pdf`](compendium.pdf),
-847 pages, composé par [`build/build-pdf.sh`](build/build-pdf.sh).** La phrase « le compendium n'a
+863 pages, composé par [`build/build-pdf.sh`](build/build-pdf.sh).** La phrase « le compendium n'a
 pas de pipeline de rendu », vraie jusque-là, ne l'est plus. **Ce pipeline n'est PAS une quatrième
 copie du FESP** : les trois copies du FESP appartiennent aux Vol. I, II et III, et aucune n'a été
 copiée ici — celui-ci est propre au volume (gabarit `build/springer.template`, format 155 × 235 mm,
@@ -227,6 +227,28 @@ se fait au gabarit [`build/springer.template`](build/springer.template) et se re
 commit** ; ⚠ *le colophon tient au pied d'une page de titre qui doit rester **une seule page*** — y
 ajouter un paragraphe sans reprendre les deux `#v(…)` de tête l'a déjà fait déborder sur la page 2,
 défaut qu'aucun contrôle ne voit et que seul le décompte de pages a montré.
+
+⚠ **Le rendu porte, depuis le 29 juillet 2026, une SIXIÈME pièce que le plan ne connaît pas : une
+annexe hors plan, placée après le chapitre 50** — [`audit-references.md`](audit-references.md),
+l'inventaire et la validation des **159 références** du socle consolidé, ajoutée **sur instruction
+d'auteur**. **Six points avant d'y toucher.** *(a)* ⚠ **Elle n'est aucune des neuf annexes A à I du
+[`TOC.md`](PRD/TOC.md) et n'en tient lieu pour aucune** — l'**Annexe I, la bibliographie générale
+consolidée, reste à écrire**. *Ne pas la requalifier en annexe du plan, ni écrire que le compendium
+porte désormais une bibliographie.* *(b)* ⚠ **Être relié n'est pas faire autorité.** C'est un
+**rapport de mesure sans autorité**, du régime d'[`audit.md`](audit.md) : ni source, ni socle, ni
+décision, **jamais citable à l'appui d'un énoncé**, et ses constats sont des **remontées non
+arbitrées** — il n'alloue aucun identifiant (PRD §13). *(c)* **Elle ne consomme aucun numéro de
+chapitre** : le plafond de cinquante tient. Le gabarit porte pour cela `#ouverture-annexe()`, sans
+numéro, et la table des matières **fige son compteur** au marqueur `<ouverture-annexe>` — *sans quoi
+l'annexe s'annoncerait « 51 » et contredirait la décision 13a.* *(d)* **Son gabarit de lecture n'est
+pas celui d'une pièce** : ni en-tête à cinq champs, ni thèse citée, ni note de statut — la fonction
+`annexe()` de [`build/assemble.py`](build/assemble.py) exige un titre et une ligne de situation, et
+rien d'autre. *(e)* ⚠ **Une ligne de `sed` du script de composition lui est propre** : Pandoc donne
+des colonnes **égales** à toute table de tuyaux, ce qui réduisait la colonne « Objet » de la grille
+des 159 entrées au septième de la justification ; les **trois tables à sept colonnes** du document
+sont ses trois bandes, et le motif ne vaut que pour elles. *(f)* **Le décompte de pages a bougé —
+847 → 863 —, et il vit en cinq endroits** : les deux `README.md` et les deux `CLAUDE.md`, plus la
+rangée d'état du dépôt. *Les journaux datés, eux, gardent le chiffre de leur passe.*
 
 ## ⚠ Livre III — quinze chapitres rédigés hors portes, D-9 enfreinte deux fois (27 juillet 2026)
 

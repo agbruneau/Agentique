@@ -151,6 +151,20 @@
   text(font: SERIF, size: 11.5pt, style: "italic", fill: GRIS, sous)
 }
 
+// ---- ouverture d'annexe (hors plan, apres le chapitre 50) ----
+// Meme dispositif que l'ouverture de chapitre, sans numero : l'annexe n'est pas
+// un cinquante et unieme chapitre, et le plafond de cinquante reste tenu.
+#let ouverture-annexe() = {
+  pagebreak(weak: true)
+  [#metadata("annexe")<ouverture-annexe>]
+  v(1.1cm)
+  set par(justify: false, first-line-indent: 0pt)
+  text(font: SERIF, size: 10pt, fill: GRIS, smallcaps[Annexe])
+  v(0.35em)
+  line(length: 100%, stroke: 0.9pt + black)
+  v(0.55em)
+}
+
 // ---- ouverture de chapitre ----
 #let ouverture-chapitre(n) = {
   pagebreak(weak: true)
@@ -257,26 +271,35 @@
 #v(1.0em)
 
 #context {
-  let items = query(selector.or(<ouverture-livre>, heading.where(level: 1),
-                                heading.where(level: 2)))
+  let items = query(selector.or(<ouverture-livre>, <ouverture-annexe>,
+                                heading.where(level: 1), heading.where(level: 2)))
   let n = 0
+  // L'annexe hors plan ne consomme pas de numéro de chapitre : passé son
+  // marqueur, le compteur se fige — sans quoi elle s'annoncerait « 51 » et
+  // contredirait le plafond de cinquante.
+  let en-annexe = false
   set par(justify: false, leading: 0.5em, spacing: 0.32em, first-line-indent: 0pt)
   for it in items {
     let p = counter(page).at(it.location()).first()
     if it.func() == metadata {
-      let v = it.value
-      block(above: 1.3em, below: 0.6em, sticky: true, {
-        set text(size: 10pt, fill: GRIS)
-        smallcaps[Livre #v.romain — #v.verbe]
-      })
+      if it.at("label", default: none) == <ouverture-annexe> {
+        en-annexe = true
+      } else {
+        let v = it.value
+        block(above: 1.3em, below: 0.6em, sticky: true, {
+          set text(size: 10pt, fill: GRIS)
+          smallcaps[Livre #v.romain — #v.verbe]
+        })
+      }
     } else if it.level == 1 {
-      n = n + 1
+      if not en-annexe { n = n + 1 }
+      let rang = if en-annexe { [] } else { [#n] }
       // « sticky » : sans lui, une entrée de chapitre tombe seule en bas de
       // page et ses sections passent à la suivante (cas du ch. 15).
-      block(above: 0.75em, below: 0.2em, sticky: true, {
+      block(above: if en-annexe { 1.3em } else { 0.75em }, below: 0.2em, sticky: true, {
         set text(size: 9.5pt, weight: "bold")
         grid(columns: (1.6em, 1fr, auto), column-gutter: 0.4em,
-          [#n], link(it.location(), it.body), [#p])
+          rang, link(it.location(), it.body), [#p])
       })
     } else {
       set text(size: 8.5pt)

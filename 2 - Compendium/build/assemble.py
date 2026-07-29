@@ -19,6 +19,10 @@ echouer l'assemblage, faute de quoi une piece deformee passerait sans bruit.
 Ce qu'il conserve : titre, ligne de situation, et tout le corps. L'etat du
 volume (brouillon non publiable) est declare une fois, au colophon du gabarit —
 retire des pieces, il n'est pas efface.
+
+Depuis le 29 juillet 2026, l'assemblage ajoute apres le chapitre 50 une ANNEXE
+HORS PLAN, `audit-references.md` : un rapport de mesure sans autorite, qui n'est
+aucune des neuf annexes A a I du TOC et ne consomme aucun numero de chapitre.
 """
 import re
 import sys
@@ -154,6 +158,42 @@ def piece(chemin, numero):
     return "".join(sortie), marques
 
 
+def annexe(chemin):
+    """Rend l'annexe hors plan placee apres le chapitre 50.
+
+    Elle n'a ni en-tete a cinq champs, ni these, ni note de statut : ce n'est
+    pas une piece du plan, et l'ouverture ne porte aucun numero — le plafond de
+    cinquante chapitres reste tenu.
+    """
+    lignes = chemin.read_text(encoding="utf-8").splitlines()
+    i = 0
+    while i < len(lignes) and not lignes[i].startswith("# "):
+        i += 1
+    if i == len(lignes):
+        sys.exit(f"[assemble] {chemin} : titre d'annexe introuvable")
+    # L'ouverture imprime deja « Annexe » : le titre ne le redit pas.
+    titre = re.sub(r"^Annexe\s+[—-]\s+", "", lignes[i][2:].strip())
+    i += 1
+
+    situation = []
+    while i < len(lignes) and not lignes[i].strip():
+        i += 1
+    if i < len(lignes) and lignes[i].startswith("*"):
+        while i < len(lignes) and lignes[i].strip():
+            situation.append(lignes[i])
+            i += 1
+
+    sortie = [brut("#ouverture-annexe()"), f"# {titre}\n"]
+    if situation:
+        sortie.append(brut("#situation["))
+        sortie.append("\n".join(situation) + "\n")
+        sortie.append(brut("]"))
+    else:
+        sys.exit(f"[assemble] {chemin} : ligne de situation introuvable")
+    sortie.append("\n".join(l for l in lignes[i:] if l.strip() != "---") + "\n")
+    return "".join(sortie)
+
+
 def main():
     dest = Path(sys.argv[1]) if len(sys.argv) > 1 else RACINE / "build" / "compendium-assemble.md"
     morceaux = []
@@ -170,8 +210,9 @@ def main():
             dagues += marques
     if numero != 50:
         sys.exit(f"[assemble] {numero} chapitres assembles, 50 attendus")
+    morceaux.append(annexe(RACINE / "audit-references.md"))
     dest.write_text("\n".join(morceaux), encoding="utf-8")
-    print(f"[assemble] {numero} chapitres, 5 livres, "
+    print(f"[assemble] {numero} chapitres, 5 livres, 1 annexe hors plan, "
           f"{dagues} renvois a la note de statut marques -> {dest}")
 
 
