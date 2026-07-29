@@ -6,10 +6,10 @@ Premier mouvement — émettre (ch. 12-18). Deuxième chapitre du mouvement.*
 | Champ | Valeur |
 |---|---|
 | **Statut** | **Brouillon de rédaction, non publiable** — rédigé le 27 juillet 2026 sur instruction d'auteur, portes **G-3** et **G-4** alors ouvertes. ⚠ **G-3 a été franchie depuis, le 28 juillet 2026** (PRD v0.14 ; socle consolidé [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées `S-001`…`S-159`**) : *une porte franchie après coup ne rend pas recevable la pièce écrite avant elle* — elle lui donne le socle contre lequel se relire, ce que la présente passe a fait. **G-4 demeure ouverte**, et le régime de preuve du Livre II reste celui de la **source rédigée non publiable** (PRD §7.2) : le Vol. III déclare lui-même que « rédigé ne vaut pas publiable ». Détail et remontées en clôture, où **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** et ne sont pas rouvertes |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ☑ **Le volet de faits du volet résiduel de G-1 est levé le 28 juillet 2026** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) : les entrées de socle mobilisées ici ont été **portées à leur source primaire**, et **deux verdicts touchent ce chapitre** — la date du rapport d'interopérabilité du § 13.5 **changée** (Vol. III F-31) et le décompte de participants du § 13.3 **changé** (Vol. III F-83) ; la spécification SPIFFE-ID du § 13.4 (Vol. III F-87) est **hors domaine**, sans sensibilité temporelle. ⚠ **Instruire n'est pas confirmer et re-dater n'est pas relire** : aucun niveau n'est promu, aucun énoncé n'est reconfronté à sa source. Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Ce chapitre est le plus périssable du mouvement** : **trois des cinq documents dont il relève le stade sont en cours de procédure** — la version 2.1 du modèle de données, la version 1.1 des identifiants décentralisés, le brouillon d'architecture WIMSE —, et l'un d'eux avait dépassé sa propre échéance auto-déclarée dès le relevé |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ☑ **Le volet de faits du volet résiduel de G-1 est levé le 28 juillet 2026** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) : les entrées de socle mobilisées ici ont été **portées à leur source primaire**, et **quatre verdicts de changement portent sur elles — deux seulement atteignent le texte** : la date du rapport d'interopérabilité du § 13.5 (Vol. III F-31) et le décompte de participants du § 13.3 (Vol. III F-83), l'un et l'autre reportés au corps. ⚠ **Les deux autres changent une composante que ce chapitre ne cite pas** — un décompte de participants sur un groupe que l'entrée ne nomme pas (Vol. III F-50) et la révision du brouillon d'architecture WIMSE (entrée héritée H-18), que le § 13.4 date déjà par Vol. III F-86 ; *ne dénombrer que les verdicts qui atteignent le texte ferait passer un relevé pour une couverture.* La spécification SPIFFE-ID du § 13.4 (Vol. III F-87) est **hors domaine**, sans sensibilité temporelle. ⚠ **Instruire n'est pas confirmer et re-dater n'est pas relire** : aucun niveau n'est promu, aucun énoncé n'est reconfronté à sa source. Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Ce chapitre est le plus périssable du mouvement** : **trois des cinq documents dont il relève le stade sont en cours de procédure** — la version 2.1 du modèle de données, la version 1.1 des identifiants décentralisés, le brouillon d'architecture WIMSE —, et l'un d'eux avait dépassé sa propre échéance auto-déclarée dès le relevé |
 | **Socle mobilisé** | ☑ **Le socle consolidé existe depuis le 28 juillet 2026** (Annexe B, **159 entrées**), G-3 franchie. ⚠ **La pièce continue néanmoins de citer les identifiants sources préfixés de leur volume**, que les deux tables de correspondance résolvent : *les cinquante pièces n'ont pas été re-citées en `S-nnn`* (PRD §7.1). Résolution contre le **Vol. III *Monographie* ch. 3**, dont les entrées **F-30**, **F-31**, **F-32**, **F-49**, **F-50**, **F-79**, **F-80**, **F-81**, **F-82**, **F-83**, **F-86** et **F-87** conservent leurs niveaux d'origine ; et contre le **Vol. I *Monographie* §3.6.4 et §7.4.3**, en régime **[C]** (PRD §7.1). ⚠ **Trois entrées héritées sont en [C], et leur sort diffère** : **H-18** et **H-20** sont **mobilisées** — elles **situent** l'objet, elles ne le portent pas ; **H-19** est **consultée et non mobilisée**, sa matière — le KYA, la *trust fabric* — siégeant au ch. 18. ⚠ **Aucun énoncé n'est central au sens de CA-IV-01**, et le franchissement de G-3 ne l'a pas changé : **aucun vote adversarial n'a été conduit** et **CA-IV-13 n'est pas satisfaite** |
 | **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les six sections du corps, § 13.0 à § 13.5.** Vol. III — **R-14 : trois marqueurs**, § 13.0, § 13.4 et § 13.5 ; **R-02 : deux marqueurs**, § 13.0 et § 13.4 ; **R-09 (une charte de groupe n'est pas un standard ; les stades se disent à chaque mention) : un marqueur**, § 13.1 ; la clause de stade est en outre reprise **à chaque mention** sans marqueur, aux § 13.1, § 13.3, § 13.4 et § 13.5 — *couverture déclarée, non dénombrée*. **R-01, R-03 à R-08, R-10 à R-13 : zéro marqueur.** Vol. II — **§8.2 (métriques auto-déclarées) : zéro marqueur** ; les métriques des § 13.3 et § 13.5 sont **attribuées à la page qui les affiche**, sans que le renvoi au garde-fou soit écrit ; **PRD Vol. II §8.2.5 (statuts pré-normatifs) : zéro marqueur** ; les stades pré-normatifs sont portés aux § 13.1 et § 13.3. **R-1 à R-8 : zéro marqueur** |
-| **Volumétrie cible** | ≈ **4 000 mots** de corps (§ 13.0 à § 13.5), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.30) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 4 358 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+9,0 %**, re-mesuré au commit du 28 juillet 2026 (**3 947 mots à la rédaction**, soit −1,3 %). ⚠ **L'écart vient des constats de re-datation versés au corps par la relecture, jamais d'un gonflement** — *rien n'a été amputé pour le contenir, D-4 l'interdisant, et une borne coûte des mots là où une coupe en épargne.* ⚠ **Un écart individuel ne se lit pas seul** : la volumétrie du Livre est relevée pièce par pièce au [`README.md`](README.md) du dossier, et c'est elle qui alimente la **décision d'auteur D-4**, ouverte, par la remontée **R-IV-17** du ch. 12 |
+| **Volumétrie cible** | ≈ **4 000 mots** de corps (§ 13.0 à § 13.5), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.30) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 4 529 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+13,2 %**, re-mesuré au commit du 28 juillet 2026 (**3 947 mots à la rédaction**, soit −1,3 % ; **4 358 mots** au terme de la première passe de relecture, soit +9,0 %). ⚠ **L'écart vient des constats de re-datation et des bornes versés au corps par les deux passes de relecture, jamais d'un gonflement** — *rien n'a été amputé pour le contenir, D-4 l'interdisant, et une borne coûte des mots là où une coupe en épargne.* ⚠ **Un écart individuel ne se lit pas seul** : la volumétrie du Livre est relevée pièce par pièce au [`README.md`](README.md) du dossier, et c'est elle qui alimente la **décision d'auteur D-4**, ouverte, par la remontée **R-IV-17** du ch. 12 |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 13 — l'entrée ne porte aucune note de réalignement : la collation de la décision 14 n'a rien trouvé à borner ici)* — le corpus W3C (VC, DID) fournit le vocabulaire du « passeport d'agent », mais son adoption en entreprise financière reste à démontrer — la distinction promesse/production est le fil.
 
@@ -25,14 +25,16 @@ statut de leurs supports. Une autre voie existe, et elle ne procède pas par ét
 portables, vérifiables et détachées de l'annuaire qui les a émises.
 
 C'est de ce vocabulaire que la somme tire les mots du **passeport d'agent**. ⚠ **Et c'est tout ce
-qu'elle en tire à ce stade** : le « passeport d'agent » **n'est défini par aucune des spécifications
-que ce chapitre relève**, et le Vol. I, qui porte le terme au titre d'une section, **ne le définit ni
-ne le réemploie dans le corps de celle-ci** (Vol. III H-18, **[C]**). ⚠ **La borne est celle du
-corpus consulté, non celle du domaine** : écrire que le terme ne figure dans aucune spécification de
-2026 serait un quantificateur universel négatif sur un corpus non balayé. C'est un **objet de
-synthèse** que le **ch. 16** construit en assemblant une carte signée, une inscription au registre,
-une chaîne de mandat et des attestations. Le présent chapitre fournit le lexique ; il ne fournit pas
-l'objet.
+qu'elle en tire à ce stade** : le Vol. I, qui porte le terme au titre d'une section, **ne le définit
+ni ne le réemploie dans le corps de celle-ci** (Vol. III H-18, **[C]**) — et **le socle n'a extrait
+aucun contenu des spécifications que ce chapitre relève**, de sorte que ce qu'elles en diraient est
+une **absence de documentation, non un fait négatif vérifié**. ⚠ **La borne est celle du corpus
+consulté, non celle du domaine, et elle vaut aux deux échelles** : écrire que le terme ne figure dans
+aucune spécification de 2026 serait un quantificateur universel négatif sur un corpus non balayé ;
+écrire qu'aucune des spécifications relevées ici ne le définit supposerait ouvert le contenu que le
+régime de traçabilité posé plus bas déclare non extrait. C'est un **objet de synthèse** que le
+**ch. 16** construit en assemblant une carte signée, une inscription au registre, une chaîne de
+mandat et des attestations. Le présent chapitre fournit le lexique ; il ne fournit pas l'objet.
 
 **Le fil du chapitre est une distinction, et il faut la poser avant les faits : promesse contre
 production.** Un stade de normalisation dit où en est un texte ; il ne dit pas qui l'emploie. Les
@@ -86,8 +88,10 @@ ce qui est une **absence de documentation, non un fait négatif vérifié**.
 résiduel de G-1) : aucune entrée postérieure au 15 mai 2025 à l'historique de la version 2.0
 (Vol. III F-79) ; la 2.1 toujours brouillon de travail du 11 mai 2026 (Vol. III F-80) ; la version
 1.0 des identifiants décentralisés toujours Recommandation à *errata* signalés — ⚠ **dont le contenu
-n'a toujours pas été ouvert** (Vol. III F-81). ⚠ **Un stade reconduit n'est pas un stade promu** :
-les niveaux ne bougent pas, et le tableau garde la date de son relevé.
+n'a toujours pas été ouvert** (Vol. III F-81) ; le quatrième, la version 1.1 des identifiants
+décentralisés (Vol. III F-82), est repris plus bas, avec l'échéance qu'il a dépassée. ⚠ **Un stade
+reconduit n'est pas un stade promu** : les niveaux ne bougent pas, et le tableau garde la date de son
+relevé.
 
 **Quatre stades, et ils ne se valent pas** — c'est la discipline que R-09 du Vol. III impose à chaque
 mention. La version 2.0 du modèle de données et la version 1.0 des identifiants décentralisés portent
@@ -158,13 +162,15 @@ pour toute la somme, et le présent § s'y borne à les nommer pour dire ce que 
 porte pas** dans ce corpus. *Le sigle n'est ni défini ni employé ailleurs dans ce chapitre.*
 
 **Un élément a été relevé et délibérément non converti en affirmation, et le motif est celui qui
-compte.** Un cadre d'architecture européen porte une matière directement pertinente pour une section
-consacrée aux profils d'interopérabilité. Le lot l'a écarté parce que **la version et la date du
-document n'étaient attestées que par son adresse**, le corps de la page n'en affichant aucune ; deux
-tentatives d'accès à ce corpus figurent parmi les échecs de source consignés. ⚠ **Ni l'objet de sa
-note, ni le sens de sa portée ne sont rapportés ici** — les nommer transmettrait la substance que le
-lot a refusé de retenir. *Un document dont la version n'est attestée que par son adresse est un
-document dont on ignore ce qu'on a lu.*
+compte.** Le **cadre d'architecture du portefeuille européen d'identité numérique** porte une matière
+directement pertinente pour une section consacrée aux profils d'interopérabilité. Le lot l'a écarté
+parce que **la version et la date du document n'étaient attestées que par son adresse**, le corps de
+la page n'en affichant aucune ; deux tentatives d'accès à ce corpus figurent parmi les échecs de
+source consignés. ⚠ **Le document est nommé, sa substance ne l'est pas** : ni l'objet de sa note, ni
+le sens de sa portée ne sont rapportés ici — les rapporter transmettrait ce que le lot a refusé de
+retenir, tandis que taire son identité rendrait inexécutable l'instruction qui doit le reprendre.
+*Un document dont la version n'est attestée que par son adresse est un document dont on ignore ce
+qu'on a lu.*
 
 ## § 13.3 — Les Community Groups agentiques du W3C
 
@@ -321,22 +327,28 @@ du W3C* : le contenu de la seconde partie des exigences techniques n'a pas été
 intitulé n'est pas un contenu**. ☑ **Reporté à sa source le 28 juillet 2026, le cadre ne porte
 aucune version postérieure au 25 mars 2026** (Vol. III F-32).
 
-Une revue de banque centrale du 10 avril 2026 figure au dossier, et il faut dire à quel titre
-exactement. ⚠ **Elle n'est portée par aucune entrée du socle** : seule sa page de présentation a pu
-être lue, son texte intégral n'ayant pas pu être extrait. Cette page situe l'emploi des accréditations
-vérifiables en finance **au registre de l'exploration** ; **la qualification n'est donc pas portée ici
-comme fait**, et l'affirmation n'est pas centrale. La revue porte enfin la réserve d'usage de son
-éditeur, en langue originale : « Views expressed are those of the author(s) and do not necessarily
-reflect those of the Bank. »
+La *Bank of Japan Review* **2026-E-6**, du **10 avril 2026**, figure au dossier, et il faut dire à
+quel titre exactement. ⚠ **Elle n'est portée par aucune entrée du socle** : seule sa page de
+présentation a pu être lue, son texte intégral n'ayant pas pu être extrait. Cette page situe l'emploi
+des accréditations vérifiables en finance **au registre de l'exploration** ; **la qualification n'est
+donc pas portée ici comme fait**, et l'affirmation n'est pas centrale. ⚠ **L'attributeur est nommé
+plutôt qu'abrégé en « une revue de banque centrale »** : la parade de péremption couvre les
+dénominations commerciales et les versions, **jamais l'attributeur d'une affirmation** (décision 15
+du TOC). La revue porte enfin la réserve d'usage de son éditeur, en langue originale : « Views
+expressed are those of the author(s) and do not necessarily reflect those of the Bank. »
 
 ⚠ **Six échecs de source bornent ce chapitre autant que ses résultats**, et ils sont exposés au même
-titre : la fiche de la norme ISO relative au vLEI, inaccessible ; le glossaire du cadre de
-gouvernance vLEI, introuvable ; deux accès au cadre d'architecture européen, l'un introuvable et
-l'autre redirigé hors de son hôte ; le texte intégral de la revue de banque centrale, récupéré mais
-non extractible ; une section du processus des groupes communautaires du W3C, consultée sans que la
-phrase recherchée soit restituée. *Chacun retire quelque chose au chapitre.* L'existence d'une norme
-ISO relative au vLEI, en particulier, n'est établie que par une **source secondaire** et **n'a pas été
-retenue comme affirmation** : elle n'est donc pas invoquée.
+titre : la fiche de la norme **ISO 17442-3** relative au vLEI, inaccessible ; le glossaire du cadre
+de gouvernance vLEI, introuvable ; deux accès au **cadre d'architecture du portefeuille européen
+d'identité numérique**, l'un introuvable et l'autre redirigé hors de son hôte ; le texte intégral de
+la *Bank of Japan Review* 2026-E-6, récupéré mais non extractible ; une section du processus des
+groupes communautaires du W3C, consultée sans que la phrase recherchée soit restituée. *Chacun retire
+quelque chose au chapitre.* ⚠ **Les identifiants sont portés parce qu'ils conditionnent la reprise** :
+*un échec de source dont on tait l'identité rend inexécutable l'instruction qui doit le solder*
+(décision 15 du TOC). L'existence d'une norme ISO relative au vLEI, en particulier, n'est établie que
+par une **source secondaire** — la revue ci-dessus, qui en porte le numéro — et **n'a pas été retenue
+comme affirmation** : le numéro figure ici comme **identifiant d'une source à instruire**, jamais
+comme fait.
 
 Lecture de l'auteur — ce que le socle établit est un **écart entre deux registres** : d'un côté,
 quatre documents du W3C dont deux portent le stade de Recommandation depuis 2022 et 2025
@@ -395,7 +407,7 @@ passe l'a conduite.
    sont elles-mêmes en [C]** — H-18, H-20 : elles situent, elles ne portent pas. **H-19 est consultée
    et non mobilisée**, sa matière siégeant au ch. 18. ⚠ **Le franchissement de G-3 n'élève aucun
    niveau** : aucun vote adversarial n'a été conduit, et **CA-IV-13 reste insatisfaite**.
-2. **Les décomptes sont publiables** (G-2). Écart de **+9,0 %** sur la cible dérivée, re-mesuré au
+2. **Les décomptes sont publiables** (G-2). Écart de **+13,2 %** sur la cible dérivée, re-mesuré au
    commit du 28 juillet 2026 ; l'écart du Livre alimente **D-4** par la remontée **R-IV-17** du
    ch. 12, et n'est corrigé nulle part — *ni par amputation, ni par gonflement*.
 3. **Les renvois de ce chapitre, et à quoi ils résolvent.** Le renvoi interne au **Livre I** — ch. 3 —
@@ -405,8 +417,12 @@ passe l'a conduite.
 4. **Les faits périssables du socle ONT été repris à leur source le 28 juillet 2026**, et ce chapitre
    est celui du Livre où la conséquence était la plus lourde : **trois des cinq documents dont il
    relève le stade sont en cours de procédure**, et l'un d'eux avait dépassé son échéance
-   auto-déclarée dès le relevé du 21 juillet 2026. **Deux verdicts l'ont touché** — une date de
-   rapport et un décompte d'inscrits, tous deux **changés**, l'un et l'autre reportés au corps.
+   auto-déclarée dès le relevé du 21 juillet 2026. **Quatre verdicts de changement portent sur ses
+   entrées ; deux seulement atteignent son texte** — une date de rapport et un décompte d'inscrits,
+   l'un et l'autre reportés au corps —, les **deux autres** frappant une composante qu'il ne cite
+   pas : un décompte de participants sur un groupe que l'entrée ne nomme pas (Vol. III F-50) et la
+   révision du brouillon d'architecture WIMSE (entrée héritée H-18), que le § 13.4 date déjà par
+   Vol. III F-86.
    ⚠ **Ce qui reste dû n'est pas la datation mais la confrontation** : *instruire la date d'une entrée
    n'est pas confronter son énoncé à sa source*, et **aucun énoncé de ce chapitre n'a subi cette
    épreuve**. *Un stade est un fait daté du jour où on l'a lu.*
@@ -459,7 +475,7 @@ n'établit pas.
 a *(a)* **borné un quantificateur universel négatif** du § 13.0 — « le passeport d'agent ne figure
 dans aucune spécification de 2026 » portait sur un corpus non balayé, et l'énoncé est ramené aux
 spécifications que le chapitre relève ; *(b)* **reporté au corps les deux verdicts de re-datation**
-qui touchent la pièce (§ 13.3 et § 13.5) et ses **sept constats de reconduction** (§ 13.1 pour
+qui atteignent le texte de la pièce (§ 13.3 et § 13.5) et ses **sept constats de reconduction** (§ 13.1 pour
 quatre, § 13.3, § 13.4 et § 13.5 pour un chacun) ; *(c)* **corrigé la date du rapport
 d'interopérabilité** et retiré la seule date que le chapitre portait sur un document régénéré à
 chaque exécution ; *(d)* **aligné le renvoi au siège du tri prospectif** ; *(e)* **corrigé les
@@ -471,6 +487,23 @@ rapprochent par aucun instrument versionné*, et une passe qui relit cinquante p
 alloue des numéros qu'elle ne peut pas voir. Les écarts relevés hors de cette pièce — dont
 **l'intitulé « Table des matières détaillée du chapitre 14 » sous l'entrée du chapitre 13** au TOC —
 sont **remontés hors du fichier**, jamais corrigés ici.
+
+⚠ **Contre-relecture du 28 juillet 2026 — ce qu'elle a repris à la passe précédente.** Elle a
+*(a)* **rectifié un cardinal faux** : la passe précédente déclarait **deux** verdicts de re-datation
+touchant la pièce là où **quatre** portent sur des entrées qu'elle mobilise (Vol. III F-31 et F-83,
+qui atteignent le texte ; Vol. III F-50 et l'entrée héritée H-18, qui n'atteignent aucun énoncé
+cité) — *un cardinal se re-mesure sur le domaine entier, non sur la part qui se voit* ;
+*(b)* **replacé sous son degré** l'énoncé borné du § 13.0 — ramener « aucune spécification de 2026 »
+aux seules spécifications relevées ici corrigeait le quantificateur mais laissait une **affirmation
+sur le contenu de documents que le socle déclare non extraits**, ce que la même section interdit
+quatre paragraphes plus bas ; *(c)* **complété une énumération de quatre stades qui n'en nommait que
+trois** au § 13.1 ; *(d)* **appliqué la décision 15 aux trois attributions que la pièce
+anonymisait** — la *Bank of Japan Review* 2026-E-6, la norme ISO 17442-3 et le cadre d'architecture
+du portefeuille européen d'identité numérique : *la parade de péremption couvre les dénominations
+commerciales et les versions, jamais l'attributeur d'une affirmation ni l'identifiant d'une source
+qu'un lot doit instruire.* ⚠ **Elle n'a ouvert aucune remontée, pour le motif de la passe
+précédente**, et n'a touché ni le TOC, ni le PRD, ni le conspectus. ⚠ **Elle ne satisfait pas
+davantage CA-IV-13** : *une seconde passe du même appareil n'est pas une seconde personne.*
 
 
 ---

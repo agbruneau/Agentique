@@ -9,8 +9,8 @@ deux mouvements, issu de la fusion v0.20 des anciens ch. 21 et 22.*
 | **Statut** | **Brouillon de rédaction, non publiable** — pièce rédigée **hors portes** le 27 juillet 2026, sur instruction d'auteur, **G-3** et **G-4** alors ouvertes. ⚠ **G-3 a été franchie depuis, le 28 juillet 2026** (PRD v0.14, jalon J-IV-2) : *une porte franchie après coup solde l'infraction, elle ne la rattrape pas* — la pièce n'a pas été re-rédigée sur le socle consolidé. **G-4 demeure ouverte.** ⚠ **CA-IV-11 n'est pas satisfaite** : ce chapitre relève, comme le ch. 19, du régime de **relecture dédiée par un relecteur distinct**, dont le compte rendu doit être **déposé et nommé dans la pièce** ; **aucune n'a eu lieu**, et *l'attestation auto-délivrée est proscrite même exacte* — **rien ici ne doit être lu comme une attestation**. Voir **R-IV-33**, ouverte au ch. 19. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 : son volet de FAITS est levé au socle le 28 juillet 2026** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)), **non reporté sur cette pièce** — le corps n'a pas été re-collationné contre les entrées re-datées ; *ses deux autres volets restent dus*. Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Ce chapitre est le plus exposé du Livre à la péremption produit** : trois offres de sécurité y sont datées, dont **deux en préversion** et **une sans date de disponibilité** ; et un **corpus de référence a changé de chemin de distribution et de convention de version** entre deux relevés |
 | **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** — [`socle-consolide.md`](../PRD/socle-consolide.md), **v1.2, 159 entrées `S-001`…`S-159`** —, **mais aucun énoncé de cette pièce n'y a été re-résolu** : le corps cite les identifiants de ses volumes d'origine, que la table de correspondance n° 2 du socle (§5) résout. Résolution contre le **Vol. III *Monographie* ch. 13-15**, dont les entrées **F-01** à **F-07**, **F-10**, **F-12**, **F-13**, **F-15**, **F-16**, **F-18** à **F-21**, **F-25**, **F-26**, **F-36**, **F-38**, **F-43**, **F-46**, **F-47**, **F-52** à **F-58**, **F-73** et les entrées héritées **H-01**, **H-09**, **H-19**, **H-21**, **H-22**, **H-24** à **H-26**, **H-28**, **H-33** conservent leurs niveaux d'origine ; et contre le **Vol. I *Monographie* §7.5.1 à §7.5.4**, en **[C]**. ⚠ **Dix entrées mobilisées sont en [C]** — F-36, F-55, H-19, H-21, H-22, H-24, H-25, H-26, H-28, H-33 : elles corroborent, elles ne portent pas ; **H-33 est mobilisée sans marqueur littéral**, au tri prospectif des § 20.1 et § 20.7. ⚠ **Une onzième s'y est ajoutée à la refonte** : **F-56 est rétrogradée de `[B]` en `[C]`** — `S-102`, règle de composition, 28 juillet 2026 —, ce qui **tranche la contestation de niveau** que cette pièce avait remontée et **retire au § 20.10 tout appui central**. ⚠ **F-58 a été bornée à la même refonte** (`S-104`) : l'intitulé « le marché… » n'est plus porté par le socle. **F-26 conserve un vote incomplet.** **Aucun énoncé n'est central au sens de CA-IV-01** |
-| **Garde-fous balayés** | ⚠ **Règle de comptage (décision 16), re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les douze sections du corps, § 20.0 à § 20.11.** Vol. III — **R-02 : sept marqueurs**, § 20.2, § 20.3 (quatre), § 20.5 et § 20.9. **R-01, R-03 à R-14 : zéro marqueur.** ⚠ **Quatre garde-fous sont pourtant appliqués sur tout le domaine, sans marqueur littéral** : **R-12** (tout le chapitre est tenu au niveau du maillon, aucune recette), **R-14** (les absences portent leur degré, **treize marqueurs « degré 3 »** ; *le rang de ce cardinal au sein du Livre n'est pas re-mesuré, les autres pièces étant en cours de relecture*), **R-09** (le stade se dit à chaque mention) et **R-03** (§ 20.9, « entreprise agentique » jamais une catégorie établie). ⚠ **La restriction du garde-fou sur l'usurpation est renvoyée à son siège du ch. 19 § 19.6 aux § 20.0, § 20.9 et à la note de statut, mais la pièce n'écrit nulle part l'identifiant R-08** : le renvoi est **de section, non d'identifiant** — *écart mesuré, remonté et non corrigé ici* ; **même forme pour le garde-fou d'homonymie du Vol. II renvoyé au ch. 7 § 7.5 (§ 20.9), dont l'identifiant R-8 n'est pas davantage écrit**. ⚠ **Le § 20.9 porte l'unique occurrence d'une expression que R-13 proscrit nue** — elle y est **citée en langue originale, attribuée à sa source et renvoyée à son siège**, jamais employée en propre : *l'exigence est satisfaite par la forme, non par l'abstention*. Vol. II — **réserve de l'entrée F-01 du Vol. II (« cadre d'autorisation », jamais « sécurisé ») : zéro marqueur** — appliquée au § 20.1, et *le mot « sécurisé » n'est appliqué à aucun protocole du chapitre* ; ⚠ **les trois emplois littéraux de « F-01 » au corps — § 20.0, § 20.2 et § 20.3 — désignent l'entrée du VOL. III, non celle du Vol. II** : la mention est portée ici parce qu'un `F-xx` nu est indécidable entre deux socles (décision 7). **PRD Vol. II §8.2 (métriques et qualifications auto-déclarées) : zéro marqueur** — les métriques et qualifications des § 20.8 à § 20.10 sont néanmoins attribuées **à l'éditeur nommé** qui les avance, à chaque occurrence, *la parade d'anonymisation ne couvrant pas l'attribution* (décision 15). **PRD Vol. II §8.4 (quatre statuts de produit, dits à chaque mention) : zéro marqueur** ; les statuts sont portés au § 20.8, à chaque offre nommée. **R-1 à R-8 : zéro marqueur** |
-| **Volumétrie cible** | ≈ **6 200 mots** de corps (§ 20.0 à § 20.11), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.30) au prorata des sections — **onze sections au plan pour deux mouvements**, le plus grand nombre du Livre. ☑ **Décompte publiable depuis G-2** ; **réel : 9 560 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+54,2 %** (re-mesuré au terme de la passe de relecture du 28 juillet 2026 ; l'écart s'est creusé de 8 868 mots, la restitution des attributions et les bornes ajoutées n'ayant rien retranché). ⚠ **Le rang de cet écart au sein du Livre n'est pas re-mesuré** : les autres pièces sont en cours de relecture, et *un rang mesuré pendant que ses termes bougent est faux à la seconde où on le publie*. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage (décision 16), re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les douze sections du corps, § 20.0 à § 20.11.** Vol. III — **R-02 : sept marqueurs**, § 20.2, § 20.3 (quatre), § 20.5 et § 20.9. **R-01, R-03 à R-14 : zéro marqueur.** ⚠ **Quatre garde-fous sont pourtant appliqués sur tout le domaine, sans marqueur littéral** : **R-12** (tout le chapitre est tenu au niveau du maillon, aucune recette), **R-14** (les absences portent leur degré, **treize marqueurs « degré 3 »** ; *le rang de ce cardinal au sein du Livre n'est pas re-mesuré, les autres pièces étant en cours de relecture*), **R-09** (le stade se dit à chaque mention) et **R-03** (§ 20.9, « entreprise agentique » jamais une catégorie établie). ⚠ **La restriction du garde-fou sur l'usurpation est renvoyée à son siège du ch. 19 § 19.6 aux § 20.0, § 20.9 et à la note de statut, mais la pièce n'écrit nulle part l'identifiant R-08** : le renvoi est **de section, non d'identifiant** — *écart mesuré, remonté et non corrigé ici* ; **même forme pour le garde-fou d'homonymie du Vol. II renvoyé au ch. 7 § 7.5 (§ 20.9), dont l'identifiant R-8 n'est pas davantage écrit**. ⚠ **Le § 20.9 porte l'unique occurrence d'une expression que R-13 proscrit nue** — elle y est **citée en langue originale, attribuée à sa source et renvoyée à son siège**, jamais employée en propre : *l'exigence est satisfaite par la forme, non par l'abstention*. Vol. II — **réserve de l'entrée F-01 du Vol. II (« cadre d'autorisation », jamais « sécurisé ») : zéro marqueur** — appliquée au § 20.1, et *le mot « sécurisé » n'est appliqué à aucun protocole du chapitre* ; ⚠ **les trois emplois littéraux de « F-01 » au corps — § 20.0, § 20.2 et § 20.3 — désignent l'entrée du VOL. III, non celle du Vol. II** : la mention est portée ici parce qu'un `F-xx` nu est indécidable entre deux socles (décision 7). **PRD Vol. II §8.2 (métriques et qualifications auto-déclarées) : zéro marqueur** — les métriques et qualifications des § 20.8 à § 20.10 sont néanmoins attribuées **à l'éditeur nommé** qui les avance, à chaque occurrence, *la parade d'anonymisation ne couvrant pas l'attribution* (décision 15). **PRD Vol. II §8.4 (quatre statuts de produit, dits à chaque mention) : zéro marqueur** ; les statuts sont portés au § 20.8, à chaque offre nommée. ⚠ **Même collision que pour « F-01 », et elle est portée ici pour la même raison** : *les deux emplois littéraux de « §8.4 » au corps — § 20.2 et Tableau 20.1 — désignent la **section de la spécification A2A v1.0.0**, non celle du PRD du Vol. II* (décision 7 ; la source du chapitre nomme elle-même cette collision). **R-1 à R-8 : zéro marqueur** |
+| **Volumétrie cible** | ≈ **6 200 mots** de corps (§ 20.0 à § 20.11), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.30) au prorata des sections — **onze sections au plan pour deux mouvements**, le plus grand nombre du Livre. ☑ **Décompte publiable depuis G-2** ; **réel : 9 623 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+55,2 %** (re-mesuré au terme de la **contre-relecture** du 28 juillet 2026). ⚠ **Valeurs antérieures conservées et périmées : 9 560 mots / +54,2 %** à la relecture du même jour, et **8 868 mots / +43,0 %** à la rédaction — *l'écart s'est creusé à chaque passe parce que chacune a **rétabli des bornes et des attributions**, aucune n'ayant rien retranché.* ⚠ **Le rang de cet écart au sein du Livre n'est pas re-mesuré** : les autres pièces sont en cours de relecture, et *un rang mesuré pendant que ses termes bougent est faux à la seconde où on le publie*. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 20, premier mouvement)* — la vérification à l'admission ne protège pas contre la dérive après admission (rug-pull d'un serveur d'outils ou d'un agent tiers) ; et chaque mécanisme spécifie l'émission avec soin et la révocation avec négligence — asymétrie qui reproduit l'histoire des PKI.
 
@@ -70,7 +70,7 @@ verdict sans terme, et une attaque qui opère après ce verdict n'a pas à le d�
 Le Vol. I a nommé l'objet avant que le Vol. III ne l'instruise, et **la trace de cette nomination est
 explicite**. Il range le retournement parmi trois familles d'attaques visant les frontières, et le
 décrit comme le cas où *« un serveur initialement bénin modifie après coup la définition d'un outil
-approuvé, posant le problème de la chaîne d'approvisionnement »* (H-25, **[C]** ; H-26, **[C]**, qui en
+approuvé, posant le problème de la chaîne d'approvisionnement MCP »* (H-25, **[C]** ; H-26, **[C]**, qui en
 fait la **variante temporelle** de l'empoisonnement d'outils par les descriptions en langage naturel).
 Le même volume en tire le verrou qui donne son sujet à ce chapitre : *« la vérification d'intégrité
 **continue**, seule réponse robuste au retournement, demeure immature — la signature au moment de la
@@ -157,8 +157,9 @@ pièce n'a pas de quoi lui en donner un.* **Aucun énoncé du présent chapitre 
 ⚠ **Une réserve temporelle ferme cette section.** Tout ce qui précède du côté du *Model Context
 Protocol* est **borné à la révision 2025-11-25**. Une **révision majeure est annoncée au brouillon** —
 protocole sans état, retrait de l'en-tête de session —, et la revalidation en **confirme la substance
-sans en confirmer la date**. ⚠ *Le tri prospectif ne peut pas être arrêté ici : **PROGRAMMÉ** suppose un
-engagement daté portant sa source et sa date.* **Le chapitre écrit donc « annoncé au
+sans en confirmer la date**. ⚠ *Le tri prospectif — dont le siège dans la somme est le
+**ch. 49 § 49.0**, et qui n'est pas redéfini ici — ne peut pas être arrêté ici : **PROGRAMMÉ** suppose
+un engagement daté portant sa source et sa date.* **Le chapitre écrit donc « annoncé au
 brouillon » et s'en tient là** ; les constats sont **à rejouer sur la révision publiée avant toute
 reprise**, et **ils ne valent pas par avance pour elle**.
 
@@ -484,11 +485,14 @@ qui le porte vient du **Vol. I *Monographie* §7.5.1** et entre en **[C]** : *re
 la vérification du Vol. I porte sur ses références, non sur le contenu de ses affirmations.* **Aucun
 énoncé de cette section n'est central.**
 
-Le Vol. I range ce fait au statut de **fait établi, adossé à une source primaire** : une campagne
-d'espionnage documentée en novembre 2025, dont le rapport établit qu'une opération d'intrusion a été
-conduite **très majoritairement de façon autonome**, l'agent orchestrant lui-même les phases de
-reconnaissance, d'exploitation et d'exfiltration en mobilisant des outils exposés par le protocole
-agent-outil, **l'opérateur humain n'intervenant qu'à des points de décision épars**.
+Le Vol. I range ce fait au statut de **fait établi, adossé à une source primaire** : la campagne
+d'espionnage désignée **GTG-1002**, documentée par **Anthropic** en novembre 2025, dont le rapport
+établit qu'une opération d'intrusion a été conduite **très majoritairement de façon autonome**,
+l'agent orchestrant lui-même les phases de reconnaissance, d'exploitation et d'exfiltration en
+mobilisant des outils exposés selon le *Model Context Protocol*, **l'opérateur humain n'intervenant
+qu'à des points de décision épars**. ⚠ **La désignation de la campagne et l'auteur du rapport sont
+nommés parce que l'attribution ne s'anonymise pas** (décision 15b-i et 15b-ii) : *la proportion
+exacte que ce rapport avance n'est pas reprise ici, et rien de ce qui suit n'en dépend.*
 
 **La portée prospective de ce constat est claire, et le Vol. I la formule ainsi** : *la course entre
 l'attaque et la défense ne se joue plus entre opérateurs humains s'appuyant sur des outils, mais entre
@@ -810,18 +814,20 @@ satisfaite** — voir **R-IV-33**, ouverte au ch. 19 et **non rouverte ici**. In
    composition** qui consomme le ch. 15 sans source nouvelle. ⚠ **Le franchissement de G-3 ne relève
    aucune de ces bornes** : *il n'a promu aucune entrée, et aucun vote adversarial n'a été conduit sur
    celles que cette pièce mobilise.*
-2. **Les décomptes sont publiables** (G-2). Écart de **+54,2 %** ; ⚠ **son rang au sein du Livre n'est
+2. **Les décomptes sont publiables** (G-2). Écart de **+55,2 %** ; ⚠ **son rang au sein du Livre n'est
    pas re-mesuré**, les autres pièces étant en cours de relecture. La volumétrie du Livre alimente
    **D-4** par **R-IV-17**.
 3. **Les renvois « ch. N » vers les Livres III à V résolvent désormais contre du texte** — les cinquante
    chapitres existent en brouillon hors portes depuis le 27 juillet 2026 — **et ce chapitre en porte
-   quatre** : **ch. 37 § 37.3** (non-compositionnalité), **ch. 39** (dérive en exploitation), **ch. 45**
-   (révocation dans le cycle de vie) et **ch. 47 § 47.7** (incident public candidat de la relève sur le
-   harnais). ⚠ **Une passe antérieure en annonçait cinq et comptait un « ch. 38 » que le corps ne porte
-   pas** ; de même, elle déclarait des renvois vers les **ch. 5 et 11**, absents du corps. **Les renvois
+   cinq** : **ch. 37 § 37.3** (non-compositionnalité), **ch. 39** (dérive en exploitation), **ch. 45**
+   (révocation dans le cycle de vie), **ch. 47 § 47.7** (incident public candidat de la relève sur le
+   harnais) et **ch. 49 § 49.0** (siège du tri prospectif, ⚠ **renvoi ajouté à la contre-relecture du
+   28 juillet 2026** — le § 20.1 employait le tri sans nommer son siège). ⚠ **Une passe antérieure en
+   annonçait cinq elle aussi, mais comptait un « ch. 38 » que le corps ne porte pas** ; de même, elle
+   déclarait des renvois vers les **ch. 5 et 11**, absents du corps. **Les renvois
    sortants effectivement écrits sont : ch. 3, ch. 7 § 7.5, ch. 14, ch. 15, ch. 16, ch. 17 § 17.6,
-   ch. 19, ch. 21 § 21.5, ch. 37 § 37.3, ch. 39, ch. 45, ch. 47 § 47.7** — *cardinal re-mesuré au commit
-   du 28 juillet 2026 (décision 16).*
+   ch. 19, ch. 21 § 21.5, ch. 37 § 37.3, ch. 39, ch. 45, ch. 47 § 47.7, ch. 49 § 49.0** — *cardinal
+   re-mesuré au commit du 28 juillet 2026 (décision 16).*
 4. **Trois relèves atterrissent ici et aucune n'est consommée** : l'extension déclarative du harnais
    (§ 20.1), la préimpression de durcissement structurel (§ 20.10), et le versement au socle de l'état
    du fichier de distribution historique (§ 20.10). ⚠ **Les deux premières ne portent aucun identifiant
@@ -857,7 +863,8 @@ leurs quatre lignes**, deux par mouvement. La **restriction du garde-fou sur l'u
 reformulée** : son siège reste le **ch. 19 § 19.6**, auquel le § 20.0 et le § 20.9 renvoient. La
 **triade létale n'est pas reconstruite** : son siège reste le **ch. 19 § 19.2**. La
 **non-compositionnalité reste au ch. 37 § 37.3** ; l'**encadré de désambiguïsation au ch. 7 § 7.5** ;
-le **socle IAM au ch. 3** ; la **frontière des deux sauts au ch. 17 § 17.6**. ⚠ **Le traitement est
+le **socle IAM au ch. 3** ; la **frontière des deux sauts au ch. 17 § 17.6** ; le **tri prospectif au
+ch. 49 § 49.0**. ⚠ **Le traitement est
 défensif sur tout le domaine balayé** : chaque entrée nomme le maillon et la raison pour laquelle il
 cède, **et s'arrête là** — *R-12 n'y porte aucun marqueur littéral, et la couverture se déclare plutôt
 qu'elle ne se dénombre.* Les absences **portent leur degré**, avec **treize marqueurs « degré 3 »**. Les
@@ -956,3 +963,43 @@ sans allocation préalable* (PRD §13). **La passe d'arbitrage alloue.**
 - **De plan, non bloquante — deux relèves atterrissent ici sans identifiant de source** (§ 20.1,
   § 20.10). *Un critère d'instruction qui ne nomme pas ce qu'il faut instruire est inexécutable*
   (décision 15b-iii). **Demande** : versement des identifiants au TOC, ou retrait des relèves.
+
+---
+
+### Contre-relecture du 28 juillet 2026 — ce que la première passe avait manqué
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** *Une
+attestation de relecture est une attestation comme une autre : elle se constate sur pièce.*
+
+**Ce qui a été re-mesuré et tient.** Tous les cardinaux de l'en-tête et de la note ont été recomptés
+un à un sur le corps (§ 20.0 à § 20.11), et **aucun n'est faux** : **treize** marqueurs « degré 3 »,
+**sept** marqueurs R-02 — § 20.2 (un), § 20.3 (quatre), § 20.5 (un), § 20.9 (un), répartition exacte
+—, **onze** marqueurs « Lecture de l'auteur », **trois** emplois littéraux de « F-01 » aux sections
+nommées, **dix** entrées mobilisées en **[C]**, **quatre** lignes de tables de couverture, et
+**zéro** marqueur pour R-01, R-03 à R-14 comme pour R-1 à R-8. La liste des entrées mobilisées
+coïncide exactement avec les identifiants du corps, `H-33` mis à part, que l'en-tête déclare
+lui-même sans marqueur littéral. **Les deux thèses sont verbatim** au collationnement mot à mot
+contre le TOC v0.30. Le renvoi `H-29` → `H-19` est **juste** : le verrou « révocation quasi-temps
+réel d'une autorité déléguée » est bien celui que la source range sous H-19. La liste des renvois
+sortants était exacte elle aussi ; *elle change ci-dessous parce que la contre-relecture y **ajoute**
+un renvoi, non parce qu'elle en corrige un.*
+
+**Ce que la contre-relecture a corrigé.** *(a)* ⚠ **La restitution des attributions n'était pas
+faite au § 20.7, alors que la relecture la déclarait faite** : la campagne était rendue anonyme —
+ni **GTG-1002**, ni l'auteur du rapport —, quand le § 20.6 nommait déjà **UNC6395** ; *nommer une
+campagne et taire l'autre n'est pas une parade de péremption, c'est une attribution manquante*
+(décision 15b-i et 15b-ii). Le protocole y était en outre désigné par sa périphrase quand le reste
+de la pièce le nomme. *(b)* **Citation tronquée au § 20.1** : la reprise verbatim de H-25 avait
+perdu le dernier mot de la formule citée. *(c)* **Renvoi de siège manquant au § 20.1** : le tri
+prospectif y était employé sans que son siège — **ch. 49 § 49.0** — soit nommé ; le renvoi est posé,
+les cardinaux de renvois sortants re-mesurés en conséquence. *(d)* ⚠ **Collision d'identifiant non
+déclarée à l'en-tête** : le champ *Garde-fous balayés* annonçait « PRD Vol. II §8.4 : zéro
+marqueur » alors que **« §8.4 » figure deux fois au corps**, y désignant la section de la
+spécification A2A — *même classe que la collision « F-01 », que l'en-tête déclarait déjà, et que la
+source du chapitre nomme expressément* (décision 7). *(e)* **Volumétrie re-mesurée** après ces
+corrections.
+
+**Ce qui reste ouvert et n'est pas corrigé ici.** Les quatre remontées de la relecture demeurent,
+sans numéro d'allocation. ⚠ **Aucune ne devient bloquante**, et **rien de ce qui précède ne vaut
+attestation** : **CA-IV-11 et CA-IV-13 restent insatisfaites** — *deux relectures sans relecteur
+tiers ne font pas la relecture qu'elles exigent*.

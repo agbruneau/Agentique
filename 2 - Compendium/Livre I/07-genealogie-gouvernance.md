@@ -7,9 +7,9 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11). **Premier chap
 |---|---|
 | **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes **à la rédaction** ; celle-ci a eu lieu sur instruction d'auteur du 27 juillet 2026. ⚠ **Premier chapitre du Livre I à consommer le Vol. II**, dont le régime de preuve diffère : ses faits portent des niveaux **[A]/[B]/[C]** explicites et conservent leur niveau d'origine (PRD §7.1), là où ceux du Vol. I entrent en [C] ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. ⚠ **Seconde mise à jour, du 28 juillet 2026 : G-3 est FRANCHIE** (PRD v0.14, TOC v0.30) — le socle consolidé existe, **159 entrées `S-001`…`S-159`**, et les deux régimes hérités que ce chapitre faisait coexister y sont fondus. ⚠ **La conséquence pour la pièce ne change pas, seul son motif change** : **G-4 demeure ouverte**, **aucun vote adversarial n'est conduit** — il reste dû pour toute entrée appelée à porter un fait central —, et **CA-IV-11 comme CA-IV-13 demeurent insatisfaisables**, faute d'un relecteur distinct du rédacteur. La pièce reste un **brouillon non publiable**, et **aucun de ses énoncés n'est central au sens de CA-IV-01**. |
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. ⚠ **Ce chapitre porte deux gels de source distincts** — **juin 2026** (Vol. I) et **16 juillet 2026** (Vol. II) — et c'est le premier du Livre où l'écart compte : la chronologie qu'il établit s'arrête au bilan public d'avril 2026, et une révision protocolaire majeure était attendue **douze jours après** le gel du Vol. II |
-| **Socle mobilisé** | Les énoncés résolvent contre le **Vol. I *Monographie* §3.0-3.1 et §3.13.1** (régime **[C]**), le **Vol. II *Monographie* ch. 1** et son **§3.4** — versant protocolaire de la désambiguïsation, reçu au § 7.5. ⚠ **Depuis le franchissement de G-3, les entrées que le TOC assigne à ce chapitre portent leur identifiant consolidé** (table de correspondance n° 1 de [`socle-consolide.md`](../PRD/socle-consolide.md)) : **F-01 → `S-001`**, **F-02 → `S-002`**, **F-04 → `S-004`**, **F-05 → `S-005`**, **F-43 → `S-041`**, à niveau conservé. ⚠ **Le § 7.5 en mobilise une sixième que la ligne Fusion n'assigne pas** — **F-48 → `S-046`**, l'homonymie du consortium —, écart **remonté, non corrigé ici**. ⚠ **Le corps n'est pas réancré sur les `S-nnn`** : il cite ses volumes sources, comme il a été rédigé, et un « F-01 » nu resterait de toute façon indécidable entre deux séries |
-| **Garde-fous balayés** | **Les deux séries — et ce chapitre est le siège d'un garde-fou.** ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **R-1 (l'ACP protocolaire n'est pas un standard vivant) : trois occurrences**, § 7.3, § 7.4.1 et § 7.5 ; **R-8 (sigle jamais nu, quatre branches) : trois occurrences**, § 7.5 — l'intitulé de la section, le **SIÈGE** de l'encadré pour toute la somme, et le corps ; *la première est entrée le 28 juillet 2026 avec la restitution de l'intitulé du plan (décision 15c), et le cardinal passe de deux à trois pour ce seul motif* — ⚠ *le sigle littéral, lui, figure **quatorze fois** dans le corps : **douze emplois, tous qualifiés**, et **deux mentions du sigle lui-même** (§ 7.5, phrase d'ouverture et légende du tableau 7.3) ; c'est un décompte d'emplois, non de marqueurs, et il ne se confond pas avec celui du garde-fou* ; **métriques auto-déclarées (PRD Vol. II §8.2.1) — sans identifiant écrit, donc sans cardinal de marqueur re-mesurable : appliqué au seul § 7.6**, où **cinq occurrences** portent un chiffre et **les cinq sont attribuées à la Linux Foundation** ; ⚠ *le § 7.3, que cet en-tête portait auparavant, n'en porte aucune*. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-13 : une occurrence**, § 7.5, mêmes termes ; **R-14 : deux occurrences**, § 7.4.2 et § 7.5. R-01 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 8 000 mots de corps (§ 7.0 à § 7.6). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 4 928 mots** de corps, re-mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh) au terme de la passe de relecture du 28 juillet 2026, seule autorité de décompte du volume — **−38,4 %** de la cible (4 887 mots et −38,9 % à la rédaction). ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le réel du Livre valait **64 750 mots, soit −0,4 % de l'enveloppe** à la passe de rédaction : c'est la cible dérivée qui était fausse, non la pièce qui est courte. ⚠ **Ce chiffre de Livre ne se re-mesure pas depuis une pièce** — cinquante relectures ont couru en parallèle le 28 juillet 2026 — et **il est remonté**. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Socle mobilisé** | Les énoncés résolvent contre le **Vol. I *Monographie* §3.0-3.1 et §3.13.1** (régime **[C]**), le **Vol. II *Monographie* ch. 1** et son **ch. 3 §3.4** — versant protocolaire de la désambiguïsation, reçu au § 7.5. ⚠ **Depuis le franchissement de G-3, les entrées que le TOC assigne à ce chapitre portent leur identifiant consolidé** (table de correspondance n° 1 de [`socle-consolide.md`](../PRD/socle-consolide.md)) : **F-01 → `S-001`**, **F-02 → `S-002`**, **F-04 → `S-004`**, **F-05 → `S-005`**, **F-43 → `S-041`**, à niveau conservé. ⚠ **Le § 7.5 en mobilise deux autres que la ligne Fusion n'assigne pas** — **F-48 → `S-046`**, l'homonymie du consortium, et **F-42 → `S-040`**, la branche (c) et son obligation d'attribution —, écart **remonté, non corrigé ici**. ⚠ **Le corps n'est pas réancré sur les `S-nnn`** : il cite ses volumes sources, comme il a été rédigé, et un « F-01 » nu resterait de toute façon indécidable entre deux séries |
+| **Garde-fous balayés** | **Les deux séries — et ce chapitre est le siège d'un garde-fou.** ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **R-1 (l'ACP protocolaire n'est pas un standard vivant) : trois occurrences**, § 7.3, § 7.4.1 et § 7.5 ; **R-8 (sigle jamais nu, quatre branches) : trois occurrences**, § 7.5 — l'intitulé de la section, le **SIÈGE** de l'encadré pour toute la somme, et le corps ; *la première est entrée le 28 juillet 2026 avec la restitution de l'intitulé du plan, et le cardinal passe de deux à trois pour ce seul motif* — ⚠ *le sigle littéral, lui, figure **quatorze fois** dans le corps : **douze emplois, tous qualifiés**, et **deux mentions du sigle lui-même** (§ 7.5, phrase d'ouverture et légende du tableau 7.3) ; c'est un décompte d'emplois, non de marqueurs, et il ne se confond pas avec celui du garde-fou* ; **métriques auto-déclarées (PRD Vol. II §8.2.1) — sans identifiant écrit, donc sans cardinal de marqueur re-mesurable : appliqué au seul § 7.6**, où **cinq occurrences** portent un chiffre et **les cinq sont attribuées à la Linux Foundation** ; ⚠ *le § 7.3, que cet en-tête portait auparavant, n'en porte aucune*. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-13 : une occurrence**, § 7.5, mêmes termes ; **R-14 : deux occurrences**, § 7.4.2 et § 7.5. R-01 à R-12 : **zéro occurrence** |
+| **Volumétrie cible** | ≈ 8 000 mots de corps (§ 7.0 à § 7.6). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 4 951 mots** de corps, re-mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh) au terme de la **seconde** passe de relecture du 28 juillet 2026, seule autorité de décompte du volume — **−38,1 %** de la cible (4 887 mots et −38,9 % à la rédaction ; 4 928 et −38,4 % à la première passe de relecture). ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le réel du Livre valait **64 750 mots, soit −0,4 % de l'enveloppe** à la passe de rédaction : c'est la cible dérivée qui était fausse, non la pièce qui est courte. ⚠ **Ce chiffre de Livre ne se re-mesure pas depuis une pièce** — cinquante relectures ont couru en parallèle le 28 juillet 2026 — et **il est remonté**. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 7 — **forme inchangée en v0.29 et v0.30, re-collationnée mot à mot le 28 juillet 2026** ; la note ⚠ que le plan attache à la thèse est reprise deux paragraphes plus bas)* — en dix-sept mois, la couche protocolaire agentique s'est consolidée sous gouvernance neutre (Linux Foundation) — condition **nécessaire et non suffisante** de sa crédibilité en entreprise réglementée (formulation du ch. 1 du Vol. II, que les v0.1-v0.5 amputaient de sa restriction) ; mais « soutien ≠ production », et le transfert de gouvernance d'AP2 **est documenté depuis la v0.24** : don à la FIDO Alliance le **28 avril 2026**, version v0.2, cas *Human-Not-Present*, deux groupes de travail techniques — fait **constaté à la source primaire le 27 juillet 2026** (registre du gel, fait 12), instruit au ch. 10.
 
@@ -422,15 +422,16 @@ concurrents précisément parce que sa neutralité est garantie**.
 > reconstruire** — c'est un partage déclaré (décision 6 du TOC), et l'un des deux écarts que la
 > révision v0.17 du plan a soldés.
 
-Le sigle **« ACP »** désigne **au moins quatre objets distincts**, tous actifs, et le garde-fou R-8
-du Vol. II — comme R-13 du Vol. III — **proscrit son emploi nu dans tout l'ouvrage**. Chaque emploi
-porte son qualificatif complet.
+Le sigle **« ACP »** désigne **au moins quatre objets distincts**, et le garde-fou R-8 du Vol. II —
+comme R-13 du Vol. III — **proscrit son emploi nu dans tout l'ouvrage**. Chaque emploi porte son
+qualificatif complet. ⚠ *« Distincts » ne veut pas dire « tous vivants » : la branche (a) a cessé
+d'être un standard vivant, et la table le dit.*
 
 | | Objet | Statut |
 | --- | --- | --- |
 | **(a)** | **l'ACP protocolaire** — *Agent Communication Protocol* d'IBM Research et BeeAI | fusionné dans le protocole agent-agent en août 2025 ; ⚠ **jamais un standard vivant** (R-1 du Vol. II) |
 | **(b)** | l'**Agentic Control Plane** d'un consortium d'institutions financières et de télécommunications | programme annoncé en juillet 2026 ; traité au Livre III |
-| **(c)** | l'expression **agentic control plane** employée par un éditeur pour positionner un produit d'orchestration | positionnement commercial ; traité au Livre III |
+| **(c)** | l'expression **agentic control plane** employée par **IBM** pour positionner un produit d'orchestration | positionnement commercial, **à attribuer à IBM à chaque occurrence** ; traité au Livre III |
 | **(d)** | la **composante ACP** de la couche d'infrastructure agentique | ⚠ **ni intitulé complet ni identité établis** — voir la lacune ci-dessous |
 
 : Tableau 7.3 — Les quatre branches de la collision « ACP » / « (agentic) control plane », et le statut de chacune.
@@ -439,8 +440,8 @@ porte son qualificatif complet.
 sur ce que « distincts » recouvre. Une entrée du socle du Vol. II pose que l'*Agentic Control Plane*
 du consortium **n'a aucun lien** avec l'ACP protocolaire — **pure homonymie**, et c'est un **fait
 négatif établi**. Sur le couple **(a)/(c)**, en revanche, **le socle ne dit rien de tel, et le
-silence mérite d'être relevé plutôt que comblé** : ce sont **deux objets du même éditeur**, et rien
-n'établit qu'ils soient étrangers l'un à l'autre — **ni qu'ils soient liés**. C'est une **absence de
+silence mérite d'être relevé plutôt que comblé** : ce sont **deux objets d'IBM**, et rien n'établit
+qu'ils soient étrangers l'un à l'autre — **ni qu'ils soient liés**. C'est une **absence de
 documentation** au sens de R-14 du Vol. III, **non un fait négatif vérifié**.
 
 ⚠ **Lacune héritée, portée et non comblée** *(PRD du Vol. II §10.7)*. La **quatrième branche (d)**
@@ -578,15 +579,18 @@ propres à ce chapitre :
 5. **⚠ Le chapitre porte deux gels de source distincts** — juin 2026 et 16 juillet 2026 — et une
    révision protocolaire majeure était attendue **douze jours après le second**. La chronologie du
    § 7.3 est exacte **à sa date** et le déclare.
-6. **⚠ Sept intitulés de sous-section s'écartent encore de la table détaillée du TOC, et l'écart se
-   déclare plutôt qu'il ne se lisse** (décision 15c) : les **7.1.2**, **7.1.3**, **7.1.4**, **7.1.5**
+6. **⚠ Huit intitulés de sous-section s'écartent encore de la table détaillée du TOC, et l'écart se
+   déclare plutôt qu'il ne se lisse** (décision 8) : les **7.1.2**, **7.1.3**, **7.1.4**, **7.1.5**
    et **7.1.6** abrègent le libellé du plan — l'énumération des cinq niveaux, « (L4) » et « (L5) »,
    « et pilotés par LLM », « contrat / découplage / évolution », « (RPC/API/ESB) » —, la **7.2.2** en
-   retranche l'adjectif « structurante », et la **7.4.1** est reformulée en « Trois arrangements sous
-   une destination commune ». ⚠ *Aucun de ces sept écarts ne retranche un nom propre ni une
-   attribution.* **Les trois qui le faisaient ont été restitués au plan** le 28 juillet 2026 — les
-   sous-sections **7.2.1** et **7.4.2**, et la section **§ 7.5** —, ce qui a rendu au corps les
-   instruments, les fondations et le garde-fou qu'ils taisaient.
+   retranche l'adjectif « structurante », la **7.4.1** est reformulée en « Trois arrangements sous
+   une destination commune », et la **7.4.2** développe le sigle du plan (« AAIF » → « l'Agentic AI
+   Foundation ») — **seul des huit qui ajoute au libellé au lieu d'en retrancher**. ⚠ *Aucun de ces
+   huit écarts ne retranche un nom propre ni une attribution.* **Les trois qui le faisaient ont été
+   restitués au plan** le 28 juillet 2026 — la sous-section **7.2.1** et la section **§ 7.5** mot à
+   mot, la **7.4.2** en développant le sigle —, ce qui a rendu au corps les instruments, les
+   fondations et le garde-fou qu'ils taisaient (décision 15 : l'auteur d'un instrument repris ne
+   s'anonymise pas).
 
 **Remontées ouvertes par ce chapitre :**
 
@@ -625,29 +629,45 @@ pièce**. La passe d'arbitrage leur attribue leur numéro.
 
 - **Le socle assigné à ce chapitre est plus étroit que ce que le plan y route** — non bloquante. La
   ligne Fusion assigne **F-01, F-02, F-04, F-05, F-43** (soit `S-001`, `S-002`, `S-004`, `S-005`,
-  `S-041`), mais la table de couverture route ici le **Vol. II *Monographie* §3.4**, dont l'encadré
-  repose sur **F-48** (`S-046`) — l'homonymie du consortium, qui est le seul **fait négatif établi**
-  du § 7.5. *La pièce ne peut pas s'en passer et le plan ne le lui assigne pas* : c'est un
-  réalignement de ligne Fusion, au titre de la décision 8.
+  `S-041`), mais la table de couverture route ici le **Vol. II *Monographie* ch. 3 §3.4**, dont
+  l'encadré repose sur **deux entrées qu'elle n'assigne pas** : **F-48** (`S-046`) — l'homonymie du
+  consortium, seul **fait négatif établi** du § 7.5 — et **F-42** (`S-040`), qui porte la branche (c)
+  et l'obligation de l'attribuer à IBM à chaque occurrence. *La pièce ne peut se passer ni de l'une
+  ni de l'autre et le plan ne les lui assigne pas* : c'est un réalignement de ligne Fusion, au titre
+  de la décision 8.
+- **Le siège de R-8 déclare quatre branches là où le socle consolidé en recense six** — non
+  bloquante, à échéance G-4. Le § 7.5 est le **siège du garde-fou pour toute la somme**, et son
+  intitulé comme sa table sont ceux du plan : **quatre branches**, périmètre du Vol. II. Or le socle
+  consolidé (§6.2, rangée `R-8`) porte que **le Vol. III en ajoute deux** — le plan de contrôle au
+  sens infrastructure et l'« AgentMesh » du cadrage du Vol. IV —, **portant le total à six emplois**.
+  ⚠ *Un siège qui couvre moins que la matière qu'il est censé poser une seule fois oblige un
+  chapitre aval à compléter ce qu'il ne doit pas reconstruire.* La pièce **n'ajoute pas les deux
+  branches** — elles sont hors de son périmètre de fusion et l'intitulé du plan les exclut —, et
+  écrit « **au moins** quatre objets distincts », forme compatible avec six. Réalignement de plan à
+  instruire à la collation de fond.
 - **Le corps n'est pas réancré sur le socle consolidé** — non bloquante, à échéance G-4. Depuis le
   28 juillet 2026, les entrées mobilisées portent un identifiant `S-nnn` ; **le corps continue de
-  citer ses volumes sources**, ce qui reste exact mais ne se contrôle pas par `check-compendium.py`
-  P4. ⚠ *Le versement des `S-nnn` au corps est un geste de socle, non de relecture* — et le PRD §9
-  déclare P3 et P4 encore déclaratifs pour ce motif précis.
+  citer ses volumes sources**, ce qui reste exact mais ne donne rien à résoudre à
+  `check-compendium.py` **P4**. ⚠ *Le versement des `S-nnn` au corps est un geste de socle, non de
+  relecture* — et le PRD §9 déclare **P3** encore déclaratif en nommant ce versement même comme
+  condition de sa réactivation. **P4** y est déclaratif aussi, mais pour un autre motif — treize
+  citations d'entrées connues et non versées.
 - **La volumétrie du Livre ne se re-mesure pas depuis une pièce** — non bloquante. Le champ
   *Volumétrie cible* cite **64 750 mots pour le Livre I** ; ce chiffre date de la passe de rédaction
   et **cinquante pièces ont été relues en parallèle**. *Un cardinal mesuré pendant que des pièces
   s'écrivent est faux à la seconde où on le publie* : il se re-mesure au commit qui clôt la passe.
 
 **Ce qui n'est pas enfreint.** La structure suit la table détaillée du TOC (§ 7.0 à § 7.6), **aux
-sept écarts d'intitulé de sous-section déclarés au point 6 près** ; la table de couverture est
+huit écarts d'intitulé de sous-section déclarés au point 6 près** ; la table de couverture est
 respectée, dont les **deux sorties de périmètre vers le ch. 49** — le reste du §3.13 du Vol. I et le
 §7.3 **du même volume** — et le **siège de l'encadré R-8 en § 7.5**. La **thèse est citée dans sa
 forme intégrale**, restriction « et non suffisante » comprise, **par copie et non par re-frappe**
 (décision 17). La chronologie est ordonnée **par protocole**, avec les deux séquences inverses
 explicitées. Les **métriques auto-déclarées du § 7.6 sont attribuées à chacune de leurs cinq
 occurrences**, R-1 est tenu à ses trois occurrences, le sigle à quatre branches est **toujours
-qualifié**, et la lacune héritée est **encadrée sans être comblée**.
+qualifié**, sa **branche (c) est attribuée à IBM à chacune de ses deux occurrences** — obligation de
+`R-8`c que la rédaction avait anonymisée et que la relecture du 28 juillet 2026 a restituée —, et la
+lacune héritée est **encadrée sans être comblée**.
 
 ---
 

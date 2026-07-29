@@ -7,9 +7,9 @@ Premier mouvement — les fondements (ch. 1-6).*
 |---|---|
 | **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes G-1, G-2 et G-3 du [PRD](../PRD/PRD.md) §5 ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. ⚠ **Mise à jour du 28 juillet 2026, passe de relecture** : **G-3 est franchie à son tour** (PRD v0.14, TOC v0.30) et le socle consolidé existe — **159 entrées** —, mais **aucune ne couvre le périmètre de fusion de ce chapitre** (voir *Socle mobilisé*). La pièce reste donc un **brouillon non publiable** : aucun de ses énoncés n'est central au sens de CA-IV-01, et **CA-IV-11 comme CA-IV-13 demeurent insatisfaites**, D-6 ne fournissant pas de relecteur distinct du rédacteur. |
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Matière condensée au gel de sa source — **juin 2026** (Vol. I). ⚠ **Deux fonctions produit citées y étaient en bêta à cette date ; il n'en reste qu'une au gel unique** — l'**édition de contexte** (§ 5.1.3) est toujours en bêta, en-tête d'activation daté inchangé ; l'**outil de mémoire** (§ 5.1.4) est passé en **disponibilité générale**. Constats pris à la source primaire le 27 juillet 2026 (registre du gel, faits 9 et 10). *Le seul écart que la re-datation du Livre I ait trouvé va dans le sens favorable : la pièce était trop prudente, non fausse* |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé — et depuis le 28 juillet 2026 ce n'est plus faute d'Annexe B, mais faute de couverture.** L'[Annexe B](../PRD/socle-consolide.md) est constituée (G-3 franchie, **159 entrées `S-001`…`S-159`**) ; ⚠ **aucune de ses entrées ne procède des §2.6-2.7 du Vol. I *Monographie***, périmètre de fusion de ce chapitre — balayage exhaustif de la colonne *Provenance* des 159 entrées, les **dix-sept** entrées héritées du Vol. I (`S-143`…`S-159`) venant de ses §7.x, §3.10.x, §2.10.2.x, §5.0.2-§5.1.1, §1.0.2, de son Annexe B et de sa *Synthèse*. **Fait négatif vérifié** au sens de R-14 du Vol. III, domaine déclaré. Les énoncés résolvent donc contre le **Vol. I *Monographie* §2.6-2.7**, en régime **[C]** (PRD §7.1), comme avant la porte. **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ *Les seules entrées consolidées touchant la mémoire et la récupération portent sur leur empoisonnement — ainsi `S-069` et `S-152` —, matière affectée au **ch. 19** et exclue au § 5.0 : la couverture du socle et la sortie de périmètre du plan concordent* |
+| **Socle mobilisé** | **Aucune entrée du socle consolidé — et depuis le 28 juillet 2026 ce n'est plus faute d'Annexe B, mais faute de couverture.** L'[Annexe B](../PRD/socle-consolide.md) est constituée (G-3 franchie, **159 entrées `S-001`…`S-159`**) ; ⚠ **aucune de ses entrées ne procède des §2.6-2.7 du Vol. I *Monographie***, périmètre de fusion de ce chapitre — balayage exhaustif de la colonne *Provenance* des 159 entrées, les **dix-sept** entrées héritées du Vol. I (`S-143`…`S-159`) venant de ses §7.x, §3.10.x, §2.10.2.x, §5.0.2-§5.1.1, de son Annexe B et de sa *Synthèse*. **Fait négatif vérifié** au sens de R-14 du Vol. III, domaine déclaré. Les énoncés résolvent donc contre le **Vol. I *Monographie* §2.6-2.7**, en régime **[C]** (PRD §7.1), comme avant la porte. **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ *Les seules entrées consolidées touchant la mémoire et la récupération portent sur leur empoisonnement — ainsi `S-069` et `S-152` —, matière affectée au **ch. 19** et exclue au § 5.0 : la couverture du socle et la sortie de périmètre du plan concordent* |
 | **Garde-fous balayés** | **Les deux séries, intégralement.** ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — R-1 à R-8 : **zéro occurrence** ; ⚠ **une réserve d'usage tenue** : les fonctions produit non généralement disponibles sont nommées comme telles, jamais présentées comme disponibles en général — c'est la doctrine que R-4 du Vol. II impose au RTR, appliquée ici par analogie hors de son domaine propre. ⚠ **Elles étaient deux au gel de la source, il n'en reste qu'une au gel unique** (§ 5.1.3) ; la réserve **est levée pour la seconde** (§ 5.1.4), sur constat à la source primaire — *une réserve se lève sur pièce, comme elle se pose.* ⚠ **Réserve `F-01` du Vol. II (MCP « cadre » d'autorisation, jamais « sécurisé ») : applicable depuis le 28 juillet 2026** — la décision 15 du TOC ayant fait nommer le protocole que la pièce désignait par périphrase, **trois occurrences de « MCP » entrent au corps** (§ 5.0, § 5.4.1 deux fois) ; **aucune ne le qualifie de sécurisé**, l'anatomie protocolaire partant au ch. 8. Vol. III — R-01 à R-13 : **zéro occurrence** ; **R-14 (trois degrés d'absence) : deux occurrences**, § 5.0 et § 5.2.2 — la première est un **fait négatif vérifié**, cas rare dans ce Livre, établi par le balayage documenté que le TOC porte sous l'entrée de ce chapitre |
-| **Volumétrie cible** | ≈ 7 500 mots de corps (§ 5.1 à § 5.4). Enveloppe **dérivée, non prescrite**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 4 787 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh) le 28 juillet 2026, seule autorité de décompte du volume — **−36,2 %** de la cible. ⚠ **Le réel a bougé de +390 mots à la passe de relecture, et le motif est un régime de preuve, non un gonflement** : la décision 15 du TOC a fait rétablir les auteurs, les dates et les noms d'instruments que la pièce désignait par périphrase (§ 5.5). *Aucun écart n'a été corrigé ni par amputation ni par gonflement* (D-4). ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées du Livre atteint **93 000 mots** pour une enveloppe de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations, de sorte que la cible dérivée est fausse autant que la pièce est courte. ⚠ **Le réel du LIVRE n'est pas reporté ici** : il n'est pas re-mesurable pendant que les onze pièces sont en relecture simultanée, et **se re-mesure au terme de la passe**, sur le corpus que le commit produit |
+| **Volumétrie cible** | ≈ 7 500 mots de corps (§ 5.1 à § 5.4). Enveloppe **dérivée, non prescrite**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 4 864 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh) le 28 juillet 2026, seule autorité de décompte du volume — **−35,1 %** de la cible. ⚠ **Le réel a bougé DEUX fois le même jour, et les deux motifs sont un régime de preuve, non un gonflement** : **+390 mots** à la passe de relecture — la décision 15 du TOC a fait rétablir les auteurs, les dates et les noms d'instruments que la pièce désignait par périphrase —, puis **+77 mots** à la contre-vérification, qui a marqué **deux constructions d'auteur restées nues** (CA-IV-07, § 5.1.2 et § 5.2.2). Les deux passes sont journalisées au § 5.5. *Aucun écart n'a été corrigé ni par amputation ni par gonflement* (D-4). ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées du Livre atteint **93 000 mots** pour une enveloppe de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations, de sorte que la cible dérivée est fausse autant que la pièce est courte. ⚠ **Le réel du LIVRE n'est pas reporté ici** : il n'est pas re-mesurable pendant que les onze pièces sont en relecture simultanée, et **se re-mesure au terme de la passe**, sur le corpus que le commit produit |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 5 — citée par copie, identique à la forme reprise depuis la v0.23)* — l'agent persistant se construit par l'ingénierie du contexte et une pile de récupération gouvernée.
 
@@ -137,8 +137,13 @@ formulation de LangChain (2025) ordonne en **quatre verbes** :
 ⚠ **Le quatrième verbe fait débat, et le débat mérite d'être rapporté plutôt que tranché.** Cognition
 (Yan, 2025) plaide au contraire pour un **fil de contexte continu et un rédacteur unique**
 (*single writer*) plutôt qu'un cloisonnement multi-agents, au motif que l'isolation **fragmente le
-contexte partagé** dont dépend la cohérence. Les deux positions ne portent pas sur les mêmes tâches,
-et le ch. 6 § 6.1 retrouvera exactement cette tension en pesant le surcoût du multi-agent.
+contexte partagé** dont dépend la cohérence. Le ch. 6 § 6.1 retrouvera exactement cette tension en
+pesant le surcoût du multi-agent.
+
+Lecture de l'auteur — les deux positions ne portent vraisemblablement pas sur les mêmes tâches, ce
+qui expliquerait qu'elles coexistent sans se réfuter. Le socle **rapporte les deux prises de position
+et le motif de la seconde** ; il **n'établit pas** leurs domaines de validité respectifs, qu'aucune
+des deux ne déclare. La conciliation est proposée comme lecture, non comme constat.
 
 Anthropic (2025) présente l'ensemble de ces opérations comme la pratique consistant à **curer
 délibérément l'ensemble minimal de jetons à haute valeur informationnelle**, plutôt qu'à accumuler.
@@ -286,8 +291,12 @@ besoin, **oubliée**. Ces trois opérations sont distinctes :
 
 ⚠ **Ces opérations touchent directement à la fiabilité, et par un mécanisme qu'il faut nommer.** Une
 mémoire mal gérée devient **une source d'hallucinations** : un agent qui rappelle un fait erroné avec
-aplomb propage l'erreur sur toute la trajectoire. La différence avec une hallucination ordinaire est
-que celle-ci est *persistante* et *auto-confirmante* — l'agent la relira à la session suivante.
+aplomb propage l'erreur sur toute la trajectoire.
+
+Lecture de l'auteur — la différence avec une hallucination ordinaire tiendrait à ce que celle-ci est
+*persistante* et *auto-confirmante*, l'agent relisant le souvenir erroné à la session suivante. Le
+socle **établit la propagation de l'erreur sur la trajectoire** ; il **ne caractérise pas** cette
+persistance entre sessions, et ne la mesure pas.
 
 Deux pratiques atténuent ce risque, et elles reviendront à l'identique côté récupération (§ 5.4.2) :
 
@@ -604,7 +613,7 @@ qu'une passe de relecture a changé dans la pièce, et ce qu'elle n'a pas pu cha
 ⚠ **Ce socle ne couvre pas la matière de ce chapitre, et le constat est un fait négatif vérifié.**
 Balayage exhaustif de la colonne *Provenance* des 159 entrées : **aucune ne procède des §2.6-2.7 du
 Vol. I *Monographie***, périmètre de fusion de ce chapitre. Les **dix-sept** entrées héritées du
-Vol. I (`S-143` à `S-159`) proviennent de ses §7.x, §3.10.x, §2.10.2.x, §5.0.2-§5.1.1, §1.0.2, de son
+Vol. I (`S-143` à `S-159`) proviennent de ses §7.x, §3.10.x, §2.10.2.x, §5.0.2-§5.1.1, de son
 Annexe B et de sa *Synthèse* — jamais de §2.6 ni de §2.7. C'est un **fait négatif vérifié** au sens de
 R-14 du Vol. III, domaine déclaré, et non une absence de documentation. **Trois conséquences.**
 *(1)* Les énoncés de cette pièce continuent de résoudre contre le **Vol. I *Monographie* §2.6-2.7**,
@@ -663,3 +672,49 @@ défaut que R-IV-75 a payé.* L'allocation revient à la passe d'arbitrage.
   Livre sont en relecture simultanée**. Il est retiré au profit du seul réel de la pièce, mesuré.
   **Le total du Livre se re-mesure au terme de la passe**, par `PRD/decompte.sh`, sur le corpus que le
   commit produit.
+
+---
+
+### Contre-vérification de la relecture — 28 juillet 2026
+
+⚠ **Hors plan comme la note qui la porte.** Une seconde passe a repris la relecture ci-dessus **en
+cherchant à la prendre en défaut**, plutôt qu'à la confirmer : *une attestation de relecture est une
+attestation comme une autre — elle se constate sur pièce.* Ce qu'elle a constaté, dans les deux sens.
+
+**Ce que la re-mesure confirme.** Les attributions rétablies au titre de la décision 15 résolvent
+**une à une** contre les §2.6-2.7 du Vol. I *Monographie* — auteurs, millésimes, noms d'instruments et
+date du 9 décembre 2025 comprises : **aucune source n'a été inventée**. ⚠ **Domaine déclaré sans
+cardinal** (décision 16c) : *le balayage a porté sur **toutes** les mentions d'auteur, de millésime et
+de nom d'instrument des § 5.1.1 à § 5.4.2, confrontées au texte des §2.6.1 à §2.7.4 de la source ; le
+nombre d'« attributions » n'est pas publiable, faute d'une règle qui dise si l'unité est l'instrument
+ou l'occurrence.* Le réel de **4 787 mots** que la relecture déclarait est re-mesuré par
+`PRD/decompte.sh` et retrouvé **à l'unité près** — *le champ porte aujourd'hui 4 864, les 77 mots
+d'écart étant ceux que la présente passe a ajoutés.* Les **quatorze intitulés** de la table détaillée
+sont recomptés (quatre sections, dix sous-sections) et les **treize** repris le sont mot à mot. La
+thèse est identique à celle de l'entrée du chapitre au TOC v0.30. Les cardinaux du corps, les
+**trois** occurrences de « MCP » et les **deux** de « R-14 » sont recomptés au marqueur littéral
+(décision 16). **Aucune régression n'a été trouvée dans le diff de la relecture.**
+
+**Ce que la re-mesure contredit — une correction fausse, rectifiée.** L'énumération des provenances du
+socle portait « **§1.0.2** » parmi les sections du Vol. I dont procèdent les dix-sept entrées héritées.
+⚠ **Aucune cellule *Provenance* de `S-143` à `S-159` ne porte cette section** : elle n'apparaît qu'à
+l'**intérieur** de l'énoncé de `S-153`, et sous la forme §1.0.2.1. La mention est retirée aux **deux
+sites** (en-tête, § 5.5). *Le fait négatif vérifié qu'elle accompagnait n'est pas touché — il porte sur
+l'absence de §2.6 et de §2.7, et cette absence est confirmée par le même balayage.* ⚠ **La leçon est de
+méthode** : *un balayage qui déclare son domaine doit énumérer ce qu'il a vu, non ce qu'il croit avoir
+vu — une provenance de trop suffit à rendre l'attestation invérifiable.*
+
+**Ce que la relecture avait manqué — deux constructions d'auteur non marquées.** La pièce ne portait
+**aucune** occurrence de « Lecture de l'auteur », alors que deux de ses énoncés sont des inférences que
+la source ne fait pas : la conciliation des deux positions sur l'isolation (§ 5.1.2) et la
+caractérisation de l'hallucination mémorielle comme *persistante* et *auto-confirmante* (§ 5.2.2).
+**Les deux portent désormais leur marqueur** et disent ce que le socle établit et n'établit pas
+(**CA-IV-07**). ⚠ *La passe qui a nommé les attributeurs a rendu ces deux inférences plus visibles sans
+les marquer : nommer une source ne dispense pas de marquer ce qu'on lui ajoute.* ⚠ **Le cardinal des
+pièces du Livre qui portent le marqueur n'est pas publié** : il n'est pas re-mesurable pendant que les
+onze sont en relecture simultanée (décision 16b).
+
+⚠ **Ce que la contre-vérification ne change pas.** Elle **ne relève d'aucune porte** et **ne satisfait
+ni CA-IV-11 ni CA-IV-13** : D-6 désigne l'auteur comme instance unique, et *deux passes du même
+appareil ne font pas un relecteur distinct du rédacteur*. La pièce demeure un **brouillon non
+publiable**.

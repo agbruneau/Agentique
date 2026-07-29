@@ -441,9 +441,10 @@ agentiques ?
 ⚠ **La réponse examinée ici vient d'un texte de recherche, et son statut commande tout ce qui suit.**
 C'est un **manifeste** sur l'*Agentic Business Process Management* (APM) — Calvanese, De Giacomo,
 Dumas, Kampik, Montali, Rinderle-Ma, Weber et coll. —, signé par **dix-huit auteurs** issus du monde
-universitaire et de l'industrie, né d'un séminaire, déposé en préimpression le **12 avril 2026** et
-publié en revue (Vol. II F-36). Un manifeste de recherche **n'établit pas des faits** : il propose un
-vocabulaire, une architecture
+universitaire et de l'industrie, né d'un séminaire, déposé en préimpression — **arXiv, troisième
+version datée du 12 avril 2026** — et publié en revue (Vol. II F-36). ⚠ *Le socle date la version, non
+le dépôt initial : il porte trois versions au registre et ne donne la date que de la dernière.* Un
+manifeste de recherche **n'établit pas des faits** : il propose un vocabulaire, une architecture
 conceptuelle et un programme de travail. Le socle lui attribue une confiance haute **pour
 l'attribution** — ce que la somme affirme avec certitude, c'est que ces auteurs soutiennent ces thèses,
 avec ces arguments. Sa valeur pour une institution financière canadienne ne tient donc pas à une
@@ -515,15 +516,18 @@ dise ce que le second contient. **Ce que le socle établit** : la distinction. *
 pas** : le contenu du second terme — et *une distinction dont un terme n'est pas caractérisé se cite,
 elle ne s'exploite pas comme un critère.*
 
-⚠ **Ce que la confusion des deux cadres coûte mérite d'être écrit, et ce paragraphe entier est une
-construction d'auteur.** Un frame normatif sans frame opérationnel correspondant énonce une règle que
-rien n'empêche de violer : c'est la politique interne que l'agent ignore parce qu'aucun mécanisme ne la
-lui impose. Un frame opérationnel sans frame normatif correspondant restreint l'agent **sans dire au
+⚠ Lecture de l'auteur — **ce que la confusion des deux cadres coûte mérite d'être écrit, et ce
+paragraphe entier est une construction d'auteur, dont le marquage se porte à l'ouverture.** Un frame
+normatif sans frame opérationnel correspondant énonce une règle que rien n'empêche de violer : c'est
+la politique interne que l'agent ignore parce qu'aucun mécanisme ne la lui impose. Un frame
+opérationnel sans frame normatif correspondant restreint l'agent **sans dire au
 nom de quoi** : c'est le contrôle technique dont personne ne sait, deux ans plus tard, quelle exigence
 il servait — et que le premier gain d'efficacité fera sauter. Les deux frames ne sont donc pas deux
 couches d'un même dispositif mais **deux objets qui doivent se répondre**, et le travail de gouvernance
-consiste précisément à **tenir la correspondance entre eux**. Le **ch. 29** reprend cette exigence de
-traçabilité pour son propre compte, et en fait une contrainte d'architecture.
+consiste précisément à **tenir la correspondance entre eux**. **Ce que le socle établit** : la
+distinction des deux natures de cadres. **Ce qu'il n'établit pas** : qu'elles doivent se répondre, ni
+ce que leur confusion coûte — *le second terme n'y est pas même caractérisé.* Le **ch. 29** reprend
+cette exigence de traçabilité pour son propre compte, et en fait une contrainte d'architecture.
 
 Le manifeste ne s'arrête pas à la typologie : il énumère **trois scénarios types** d'encadrement, qui
 se distinguent par le **nombre de décideurs** et par le **niveau auquel le cadre s'applique**.
@@ -799,8 +803,11 @@ Vol. II et le Vol. I.
    § 23.3** et **§ 23.5**,
    **ch. 24 § 24.9**, **ch. 29 § 29.2** et **§ 29.3**, **ch. 30 § 30.1.5**, **ch. 31 § 31.3** et
    **ch. 34 § 34.6**. ⚠ **Ce contrôle est de résolution, non de fond** : *qu'un titre existe ne dit pas
-   que la matière annoncée s'y trouve*, et la collation de contenu des **renvois de chapitre nus** —
-   ch. 11, 19, 25, 26, 27, 33, 48, 49 et le Livre IV dans son ensemble — **n'a pas été conduite**.
+   que la matière annoncée s'y trouve*, et **aucune collation de contenu n'a été conduite** — ni pour
+   ces treize, ni pour les **chapitres cités sans aucun renvoi de section** : ch. 11, 19, 25, 27, 32,
+   33, 48, 49 et le Livre IV dans son ensemble. ⚠ *Liste re-mesurée par balayage : « ch. 26 » ne figure
+   au corps qu'en marqueur de correspondance — « ancien ch. 26 », décision 11 —, et n'est donc pas un
+   renvoi ; « ch. 32 » en est un, porté par le seul en-tête.*
 4. **Une matière est reçue et une autre est refusée, et les deux se déclarent.** Le § 22.5 **reçoit en
    entier** le §1.6.3 du Vol. I, dont le ch. 1 déclare le départ à sa table de couverture — *l'arrivée
    est donc déclarée aux deux bouts*, ce que la classe de défaut soldée en v0.17 du TOC impose. À
@@ -854,9 +861,11 @@ pas reconstruite et renvoie au **ch. 8 § 8.5.1**. Les **absences portent toutes
 occurrences du sigle R-14, six du marqueur « degré 3 » et deux de « fait négatif vérifié »*, localisées
 à l'en-tête —, et les **deux occurrences de R-02** qualifient par ce que la source démontre. Les
 **constructions d'auteur portent « Lecture de l'auteur »** suivi de ce que le socle établit et n'établit
-pas (CA-IV-07) — ⚠ **dix-neuf occurrences**, *re-comptées au commit du 28 juillet 2026 sous la règle de
-la décision 16 du TOC ; l'attestation antérieure en annonçait quinze* —, **auxquelles s'ajoutent deux
-tableaux dont une colonne entière est marquée telle** : *ces deux-là ne portent pas le marqueur
+pas (CA-IV-07) — ⚠ **vingt occurrences**, *re-comptées au commit du 28 juillet 2026 sous la règle de la
+décision 16 du TOC ; l'attestation d'origine en annonçait quinze, et la première relecture dix-neuf —
+**la vingtième est un marqueur ajouté**, au § 22.7, où un paragraphe se déclarait construction
+d'auteur sans le porter* —, **auxquelles s'ajoutent deux tableaux dont une colonne entière est
+marquée telle** : *ces deux-là ne portent pas le marqueur
 littéral et n'entrent donc pas dans le décompte.* La **lacune PRD Vol. II
 §10.10 est portée et non comblée**, ses trois volets étant nommés à leur section — *(a)* au § 22.7,
 *(b)* au § 22.8, *(c)* au § 22.4 —, avec son renvoi au **ch. 49**. Enfin, **aucune métrique
@@ -961,3 +970,53 @@ R-IV-60…69, reproduite si on la devine.
   relecture, qui a ajouté de l'appareil sans toucher au propos. ⚠ *Le rédacteur ne corrige pas le
   conspectus ni le README du Livre* ; **`decompte.sh` demeure la seule autorité**, et la re-mesure est
   due au commit de la passe. *D-4 interdit toujours l'amputation comme le gonflement.*
+
+---
+
+### Contre-relecture — 28 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+**prolonge** le bloc précédent plutôt que de le corriger : *un journal publié se prolonge.* Une
+seconde passe a éprouvé la relecture ci-dessus **en cherchant à la prendre en défaut**, sur le seul
+`.md` de cette pièce et son rendu. ⚠ **Elle ne satisfait NI CA-IV-11 NI CA-IV-13** : *deux relectures
+successives ne font pas un tiers*, et **D-6** ne fournit toujours pas de relecteur distinct du
+rédacteur.
+
+**Ce que la contre-vérification a confirmé, sur pièce et non sur parole.** Les **deux thèses**
+comparées caractère à caractère à l'entrée courante du TOC v0.30 — **zéro écart** ; les **treize
+renvois de section** résolus un à un contre un titre existant du corpus — **treize sur treize** ; les
+**décomptes de garde-fous** re-mesurés par balayage exhaustif du corps sous la décision 16 —
+*R-14 : 2, R-02 : 2, « degré 3 » : 6, « fait négatif vérifié » : 2, R-1 : 1, R-8 : 1, R-13 : 1*, et
+**zéro occurrence pour les dix-sept autres identifiants des deux séries** — six du Vol. II, onze du
+Vol. III —, localisations comprises ; les **cinq attributions nommées** re-résolues contre
+l'Annexe B — auteurs et date du préprint (`S-035`),
+directive **2002/98/CE** (`S-035`), auteurs du manifeste (`S-034`), cosignature de Rinderle-Ma
+(`S-044`), deux instruments européens (`S-034`) ; les **trois volets de la lacune PRD Vol. II §10.10**
+re-lus à leur source et **correctement répartis** entre les § 22.7, § 22.8 et § 22.4 ; les **deux
+volets de G-1 restant dus** re-lus à la rangée G-1 du PRD v0.14. *Une attestation de relecture est une
+attestation comme une autre : elle se constate sur pièce.*
+
+**Ce qu'elle a corrigé — trois points, dont deux étaient des attestations fausses.**
+
+1. ⚠ **Une construction d'auteur ne portait pas son marqueur** (§ 22.7). Un paragraphe se déclarait
+   *« construction d'auteur »* en toutes lettres **sans porter « Lecture de l'auteur »** ni le couple
+   *ce que le socle établit / n'établit pas* qu'exige **CA-IV-07** — la forme même que les ch. 15 et 21
+   du Livre II emploient pour ce cas. Marqueur et couple ajoutés ; **le cardinal du corps passe de
+   dix-neuf à vingt**, re-mesuré au commit sous la décision 16.
+2. ⚠ **Une date nommée l'était par excès** (§ 22.6). Le manifeste était donné pour *« déposé en
+   préimpression le 12 avril 2026 »* : l'Annexe B (`S-034`) date de ce jour la **troisième version** et
+   porte **trois versions au registre** — elle ne date pas le dépôt. *Nommer l'attribution est une
+   obligation (décision 15b) ; la nommer au-delà de ce que le socle porte en est l'inverse.* Corrigé,
+   et l'écart de portée déclaré à la phrase.
+3. ⚠ **Une liste de renvois non collationnés était fausse aux deux bouts** (note de statut, point 3).
+   Elle inscrivait un **« ch. 26 » qui n'est pas un renvoi** — le corps ne le porte qu'en marqueur de
+   correspondance de la décision 11, *« ancien ch. 26 »* — et **omettait le ch. 32**, cité sans section
+   au champ *Garde-fous balayés*. Liste re-mesurée par balayage et son critère écrit.
+
+⚠ **Ce que la contre-relecture ne change pas.** **G-3 est franchie, la pièce n'est pas réadossée** ;
+**G-4, G-5 et G-6 restent ouvertes** ; **aucun énoncé n'est central au sens de CA-IV-01** ; le § 22.5
+demeure en **[C]** sans entrée au socle consolidé. Cette pièce reste un **brouillon non publiable**.
+Les **quatre remontées du bloc précédent restent ouvertes**, identifiants toujours non alloués, et
+**la remontée *(iv)* s'aggrave** : la volumétrie du README est périmée d'une passe de plus.
+*Deux relectures ne valent pas une relecture par un tiers ; elles mesurent seulement ce qu'une seule
+laisse passer.*

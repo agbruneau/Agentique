@@ -10,7 +10,7 @@ Livre.** Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 12
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet de G-1 franchi ce jour portait sur le Livre I seul** : les faits périssables du présent chapitre relevaient du **volet résiduel, alors explicitement non instruit** — aucun d'eux n'avait été repris à la source primaire le 27 juillet 2026. ⚠ **Le volet de FAITS de ce résidu a été levé le 28 juillet 2026** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) : les **123 entrées à sensibilité temporelle** du socle consolidé ont été portées à leur source — **91 inchangées, 10 changées, 22 non établies**. **Deux entrées mobilisées ici portent la marque « changée »** : celle des pairs infonuagiques (Vol. III F-36), **reportée au § 12.1** parce que le fait qu'elle date est **antérieur au gel de neuf mois** ; et celle du protocole agent-outil (Vol. III H-09), **non reportée** — *sa bascule est postérieure au gel du 27 juillet 2026, d'un jour exactement, et une pièce ne se date pas de ce qui suit son gel.* Gels de source, qui ne tiennent pas lieu de gel de la somme : **juin 2026** (Vol. I), **16-17 juillet 2026** (Vol. II), **21 juillet 2026** (Vol. III). ⚠ Trois objets de ce chapitre se périment par leur propre horloge : deux dates d'expiration d'*Internet-Drafts* (7 janvier 2027) et le statut de préversion de plusieurs capacités d'un produit d'éditeur |
 | **Socle mobilisé** | ⚠ **Résolution par les identifiants des volumes sources, non par le socle consolidé** — celui-ci existe depuis le 28 juillet 2026 et les deux tables de correspondance de l'Annexe B rapprochent chaque entrée citée ici de son `S-nnn` ; **la pièce n'a pas été re-adossée**. **Vol. III *Monographie* ch. 1-2**, entrées propres **F-16**, **F-19**, **F-20**, **F-21**, **F-27**, **F-28**, **F-29**, **F-33**, **F-36**, **F-38**, **F-40**, **F-41**, **F-42**, **F-84**, **F-85**, **F-86**, **F-87**, **F-88** et entrées héritées **H-02**, **H-03**, **H-04**, **H-07**, **H-09**, toutes à leurs niveaux d'origine — **[A]**, **[A, statut BROUILLON]**, **[A/B mixte]**, **[B]**, **[B, degré 1]**, **[B, degré 2]** ou **[C]** selon l'entrée, et **le socle consolidé les reconduit sans en rétrograder aucune**. ⚠ **Une dix-neuvième entrée propre sort du périmètre de fusion et le déclare** : **F-37**, prélevée au **Vol. III *Monographie* §6.1** — source du **ch. 15** —, pour le seul volet du **vocabulaire d'annuaire** (§ 12.7) ; déviation déclarée au titre de la décision 8 du TOC. Résolution également contre le **Vol. II *Monographie* ch. 8**, par **Vol. II F-07** (§ 12.7, **[A]**) et **Vol. II F-01** (§ 12.5, réserve de formulation) ; ⚠ **Vol. II F-08, que la ligne Fusion nomme, n'est pas cité au corps** — sa matière, la spécification CSA, y entre par **Vol. III H-03**, avec laquelle l'Annexe B la fond. Enfin contre le **Vol. I *Monographie* §3.6.1-3.6.2** et **§4.1.3**, en régime **[C]** (PRD §7.1). ⚠ **Deux séries F-xx coexistent dans ce chapitre** et chaque identifiant porte son volume : un « F-07 » nu y serait indécidable entre le socle du Vol. II et celui du Vol. III. ⚠ **Aucun énoncé n'est central au sens de CA-IV-01**, et le franchissement de G-3 n'y change rien : **aucun vote adversarial n'a été conduit** sur les entrées consolidées (PRD v0.14), **G-4 reste ouverte**, et les apports du Vol. I sont **[C]** |
 | **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les neuf sections du corps, § 12.0 à § 12.8.** Vol. II — **PRD Vol. II §8.2.5 (statuts pré-normatifs) : un marqueur**, § 12.1 ; la qualification pré-normative est en outre portée **à chaque mention** sans marqueur, sur tout le domaine ; **PRD Vol. II §8.2 (métriques et qualifications auto-déclarées) : deux marqueurs**, § 12.2 (deux) ; **Vol. II *Monographie* §8.4 : un marqueur**, § 12.8 ; **réserve F-01 : un marqueur**, § 12.5 ; **R-2 : un marqueur** et **R-3 : deux marqueurs**, tous au § 12.0 et tous **renvois à leur siège unique — le ch. 16 § 16.2** —, aucune application ici, le second marqueur de R-3 nommant seulement le **ch. 15 § 15.3.1** comme site d'application ; **R-8 : un marqueur**, § 12.2, la formule laissée en langue originale et renvoyée à son siège. **R-1, R-4 à R-7 : zéro marqueur.** Vol. III — **R-09 (quatre statuts, dits à chaque mention) : quatre marqueurs**, § 12.1 (deux) et § 12.5 (deux) ; **R-02 : trois marqueurs**, § 12.1, § 12.5 et § 12.6 ; **R-14 : trois marqueurs**, § 12.0, § 12.2 et § 12.8 — *le § 12.8 produit les trois degrés, une fois chacun, sous un marqueur unique* ; **R-04 : un marqueur**, § 12.2 ; **R-13 : un marqueur**, § 12.2. **R-01, R-03, R-05 à R-08, R-10 à R-12 : zéro marqueur.** ⚠ **Faux ami déclaré** : le « plan de contrôle » du maillage de services pré-agentique (ch. 1 § 1.3.4) n'apparaît pas dans ce chapitre ; la seule occurrence du syntagme y est la formule anglaise d'un rapport daté, non reprise au compte de la somme |
-| **Volumétrie cible** | ≈ **6 200 mots** de corps (§ 12.0 à § 12.8), **cible dérivée** de l'enveloppe du Livre — 50 000 mots, **inchangée du TOC v0.24 au TOC v0.28** — répartie entre les dix chapitres au prorata de leurs sections, ce chapitre en portant neuf pour deux mouvements. ☑ **La somme des dix cibles dérivées a été additionnée avant rédaction et vaut 50 000 mots** : c'est la leçon du Livre I, dont les onze cibles dérivées totalisaient 93 000 mots pour une enveloppe de 65 000, soit **+43 %**, sans que personne ne fasse l'addition. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026) ; **réel : 7 668 mots**, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **+23,7 %** de la cible, **re-mesuré au terme de la passe de relecture du 28 juillet 2026** (7 372 et +18,9 % au commit précédent ; 7 301 et +17,8 % à la rédaction). ⚠ **La hausse vient de bornes ajoutées, non d'un développement** : degré d'absence rétabli au § 12.1, statut d'une offre re-daté à la source, métrique attribuée nominativement au § 12.2, déviation de périmètre déclarée au § 12.7. ⚠ **Cet écart n'est pas corrigé par amputation, et il n'est pas non plus une surprise** : le PRD §13 déclare pour ce Livre précisément une « condensation réelle d'environ 52 % sur les enveloppes héritées », avec pour parade la **décision d'auteur D-4** — re-calibrage éventuel —, **toujours ouverte**. La pièce fournit donc à D-4 une mesure plutôt qu'un avis ; remontée **R-IV-17** |
+| **Volumétrie cible** | ≈ **6 200 mots** de corps (§ 12.0 à § 12.8), **cible dérivée** de l'enveloppe du Livre — 50 000 mots, **inchangée du TOC v0.24 au TOC v0.28** — répartie entre les dix chapitres au prorata de leurs sections, ce chapitre en portant neuf pour deux mouvements. ☑ **La somme des dix cibles dérivées a été additionnée avant rédaction et vaut 50 000 mots** : c'est la leçon du Livre I, dont les onze cibles dérivées totalisaient 93 000 mots pour une enveloppe de 65 000, soit **+43 %**, sans que personne ne fasse l'addition. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026) ; **réel : 7 710 mots**, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **+24,4 %** de la cible, **re-mesuré au terme de la contre-relecture du 28 juillet 2026** (7 668 et +23,7 % à la relecture du même jour ; 7 372 et +18,9 % au commit précédent ; 7 301 et +17,8 % à la rédaction). ⚠ **La hausse vient de bornes ajoutées, non d'un développement** : degré d'absence rétabli au § 12.1, statut d'une offre re-daté à la source, métrique attribuée nominativement au § 12.2, déviation de périmètre déclarée au § 12.7, et **écart de tri prospectif déclaré avec la source** au § 12.1. ⚠ **Cet écart n'est pas corrigé par amputation, et il n'est pas non plus une surprise** : le PRD §13 déclare pour ce Livre précisément une « condensation réelle d'environ 52 % sur les enveloppes héritées », avec pour parade la **décision d'auteur D-4** — re-calibrage éventuel —, **toujours ouverte**. La pièce fournit donc à D-4 une mesure plutôt qu'un avis ; remontée **R-IV-17** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 12, premier mouvement)* — l'identité machine n'est pas née avec les agents — comptes de service, X.509, clés d'API forment un passif mal gouverné dont l'entreprise agentique hérite avant d'y ajouter le sien.
 
@@ -146,7 +146,10 @@ rien et peut changer à la révision suivante. ⚠ **Le tri prospectif ne trouve
 relevé, et c'est le constat** : **aucune date de publication en RFC n'est annoncée pour aucun des
 sept documents** (Vol. III F-85). Or un **PROGRAMMÉ** suppose un *engagement daté réel* — le siège
 des trois statuts est au **ch. 49 § 49.0** et n'est pas redéfini ici. *À défaut de date, la mise en
-RFC ne reçoit aucun statut prospectif, et un état de procédure n'en tient pas lieu.*
+RFC ne reçoit aucun statut prospectif, et un état de procédure n'en tient pas lieu.* ⚠ **Écart
+déclaré avec la source, et il n'est pas arbitré ici** : le Vol. III *Monographie* §2.2 classe cette
+mise en RFC « **PROGRAMMÉE sans date d'engagement** » ; le siège rend ce classement indisponible à
+la somme. *Les deux états sont exposés, aucun n'est corrigé.*
 
 **2026, encore — et la boucle se referme sur 2015.** La spécification « Agent Registry » de CSA
 Labs, publiée le **27 mars 2026**, ancre son profil d'agent sur SCIM 2.0 — c'est-à-dire sur le
@@ -201,12 +204,12 @@ Vol. I *Monographie* §4.1.3 rapporte, sur le ratio des identités non humaines 
 humaines, un rapport de **82 pour 1** **attribué à Rubrik Zero Labs (2025)** — chiffre de
 fournisseur, issu d'une enquête commanditée, que le Vol. I marque lui-même « à re-vérifier à la
 publication ». ⚠ **Cela ne comble pas la lacune du Vol. III, et il faut dire pourquoi** : une
-métrique auto-déclarée est une illustration, jamais une preuve, à chaque occurrence et sans exception d'usage
-illustratif — c'est la règle que les deux volumes appliquent également. *Un chiffre auto-déclaré
-qu'on cesse d'attribuer devient, en trois citations, un fait.* La lacune du Vol. III reste donc
-ouverte au degré 3, et le chiffre du Vol. I reste une illustration attribuée : **les deux énoncés
-sont exacts dans leur périmètre, et ils ne se corrigent pas l'un l'autre**. Le fait est remonté au
-plan (voir la note de statut), non arbitré ici.
+métrique auto-déclarée est une illustration, jamais une preuve, à chaque occurrence et sans
+exception d'usage illustratif — c'est la règle que les deux volumes appliquent également. *Un
+chiffre auto-déclaré qu'on cesse d'attribuer devient, en trois citations, un fait.* La lacune du
+Vol. III reste donc ouverte au degré 3, et le chiffre du Vol. I reste une illustration attribuée :
+**les deux énoncés sont exacts dans leur périmètre, et ils ne se corrigent pas l'un l'autre**. Le
+fait est remonté au plan (voir la note de statut), non arbitré ici.
 
 **Ce qui tient sans chiffre : un incident public, daté, à l'échelle.** La campagne suivie sous la
 désignation **UNC6395** a donné accès, du **8 août 2025** à au moins le **18 août 2025**, à des
@@ -287,14 +290,14 @@ en rapport.
 et ce sont des superviseurs qui la nomment.** La ligne directrice **E-23** du BSIF, publiée le
 11 septembre 2025 et en vigueur le **1ᵉʳ mai 2027**, range expressément parmi les objets de sa
 surveillance continue l'« autonomous decision making, autonomous re-parametrization » (Vol. III H-04,
-**[A/B mixte]** ; siège au ch. 25). ⚠ **Modalité, et elle n'est pas négociable** : E-23 est une ligne
-directrice fondée sur des principes, rédigée au conditionnel — ce qu'elle formule est **attendu par** E-23, jamais
-« exigé ». ⚠ Et sa portée agentique n'est pas écrite : vérification mécanique sur le texte intégral,
-en anglais comme en français, « agentique » et « agent(s) » comptent **zéro occurrence**,
-« orchestration » également, « autonom\* » en compte **huit** (Vol. III H-04, fait négatif vérifié).
-Du côté des valeurs mobilières, l'avis **11-348** des ACVM, publié le 5 décembre 2024, définit le
-système d'IA en y incluant des **niveaux variables d'autonomie et d'adaptativité après déploiement**
-(Vol. III H-07, **[B]** ; siège au ch. 28).
+**[A/B mixte]** ; siège au ch. 25). ⚠ **Modalité, et elle n'est pas négociable** : E-23 est une
+ligne directrice fondée sur des principes, rédigée au conditionnel — ce qu'elle formule est
+**attendu par** E-23, jamais « exigé ». ⚠ Et sa portée agentique n'est pas écrite : vérification
+mécanique sur le texte intégral, en anglais comme en français, « agentique » et « agent(s) »
+comptent **zéro occurrence**, « orchestration » également, « autonom\* » en compte **huit**
+(Vol. III H-04, fait négatif vérifié). Du côté des valeurs mobilières, l'avis **11-348** des ACVM,
+publié le 5 décembre 2024, définit le système d'IA en y incluant des **niveaux variables
+d'autonomie et d'adaptativité après déploiement** (Vol. III H-07, **[B]** ; siège au ch. 28).
 
 ⚠ **Ces deux textes sont cités ici pour un seul motif — ils nomment la variabilité après
 déploiement — et pour rien d'autre.** Ce qu'ils demandent, à qui, et sous quelle modalité relève du
@@ -314,17 +317,16 @@ cinquième de ses cinq questions.*
 
 ## § 12.4 — OAuth 2.x et l'agent : *client* ou détenteur de ressource ?
 
-Le RFC 6749 définit ses rôles en sa §1.1, et deux d'entre eux décident du sort de l'agent. Les
-définitions ont été citées au § 12.1 ; ce qui appartient ici est ce qu'on en tire.
+Le RFC 6749 répartit **quatre rôles** en sa §1.1, et deux d'entre eux décident du sort de l'agent.
+Les définitions ont été citées au § 12.1 ; ce qui appartient ici est ce qu'on en tire.
 
 Deux constats en découlent, sans autre appui que ces définitions. Le premier : le détenteur de
 ressource est une *entité*, et le terme d'utilisateur final est **réservé** au cas où cette entité
-est une personne. Le
-second : le client est déjà, par construction, une application agissant pour le compte d'autrui. Rien
-dans ces deux phrases n'écarte un mandataire logiciel de l'un ou l'autre rôle (Vol. III F-27,
-**[B]**). *Le point mérite d'être tenu contre une facilité de lecture* : écrire qu'« OAuth suppose un
-humain » prête au texte une interdiction qu'il ne porte pas, et déplace le débat vers une réécriture
-de la norme là où le problème est ailleurs.
+est une personne. Le second : le client est déjà, par construction, une application agissant pour le
+compte d'autrui. Rien dans ces deux phrases n'écarte un mandataire logiciel de l'un ou l'autre rôle
+(Vol. III F-27, **[B]**). *Le point mérite d'être tenu contre une facilité de lecture* : écrire
+qu'« OAuth suppose un humain » prête au texte une interdiction qu'il ne porte pas, et déplace le
+débat vers une réécriture de la norme là où le problème est ailleurs.
 
 L'hypothèse humaine siège en effet dans le **flux**. L'agent utilisateur interposé — un navigateur,
 en pratique — n'est pas un détail d'implémentation : c'est le lieu où le détenteur de ressource
@@ -610,10 +612,10 @@ l'IETF 125 a été renvoyée à ses cas d'usage (Vol. III F-42).
 Vol. II *Monographie* l'écrivait déjà en son ch. 8 §8.4, et l'énoncé entre ici comme **thèse d'un
 volume antérieur, attribuée** : « Un architecte qui chercherait aujourd'hui, pour son dossier de
 conformité, la norme d'identité et de registre des agents ne la trouverait pas : elle n'existe
-pas. » ⚠ **Le « passeport
-d'agent » ne figure dans aucune spécification de 2026** : c'est un **objet de synthèse** que la somme
-construit au **ch. 16**, en assemblant une carte signée, une inscription au registre, une chaîne de
-mandat et des attestations. Jusque-là, il n'existe pas — et ce chapitre n'en préjuge rien.
+pas. » ⚠ **Le « passeport d'agent » ne figure dans aucune spécification de 2026** : c'est un **objet
+de synthèse** que la somme construit au **ch. 16**, en assemblant une carte signée, une inscription
+au registre, une chaîne de mandat et des attestations. Jusque-là, il n'existe pas — et ce chapitre
+n'en préjuge rien.
 
 ### Synthèse : ce que le chapitre lègue à la somme
 
@@ -682,9 +684,11 @@ c'est la porte que le PRD nomme pour ce Livre précisément.
    autant.** À la rédaction, les renvois vers les Livres III et V — **ch. 25**, **ch. 28** et
    **ch. 49**, les trois seuls que la pièce porte hors des Livres I et II — étaient des renvois de
    **plan** ; les cinquante chapitres existant en brouillon depuis le 27 juillet 2026, ils résolvent
-   contre du **texte**, comme ceux du **Livre I** (ch. 1, ch. 3, ch. 7 § 7.5, ch. 8 § 8.5.1) et ceux
-   du **Livre II** (ch. 13, 14, 15, 16, 17, 18, 19, 20). ⚠ *Résoudre n'est pas opposer* : toutes les
-   pièces visées sont elles-mêmes des brouillons non publiables.
+   contre du **texte**, comme ceux du **Livre I** — **ch. 3** et **ch. 7 § 7.5** au corps, **ch. 1
+   § 1.3.4** au seul champ des garde-fous, où il déclare un faux ami — et ceux du **Livre II**
+   (ch. 13, 14, 15, 16, 17, 18, 19, 20). ⚠ **Le « ch. 8 § 8.5.1 » que cette liste portait a été
+   retiré à la contre-relecture du 28 juillet 2026 : la pièce ne le cite nulle part.** ⚠ *Résoudre
+   n'est pas opposer* : toutes les pièces visées sont elles-mêmes des brouillons non publiables.
 4. **Aucun fait périssable n'a été repris à la source primaire par la rédaction.** Le volet résiduel
    de G-1 n'étant pas ouvert ce jour-là, les statuts d'*Internet-Drafts*, les états de préversion et
    les dates de disponibilité générale cités ici sont ceux que les volumes sources portaient **à leur
@@ -725,12 +729,14 @@ c'est la porte que le PRD nomme pour ce Livre précisément.
   ⚠ **Aucune parade n'est prise ici** : la remontée constate le coût, elle ne le paie pas.
 - **R-IV-17 — non bloquante, de volumétrie ; elle vaut pour tout le Livre et n'est ouverte qu'une
   fois.** La cible dérivée de ce chapitre était de 6 200 mots ; le réel valait **7 301** (**+17,8 %**)
-  à la rédaction, **7 372** (**+18,9 %**) au commit suivant, et **7 668** (**+23,7 %**) au terme de la
-  relecture du 28 juillet 2026, seule mesure opposable — *le champ Volumétrie de l'en-tête et la
-  présente note portent le même chiffre à chaque commit, ce qui n'a pas toujours été le cas.*
-  ⚠ **Et la dernière hausse alourdit la démonstration au lieu de l'affaiblir** : elle vient de
-  **bornes ajoutées par la relecture**, non de développement — *une pièce qui borne davantage compte
-  davantage de mots, et c'est exactement la variable que l'enveloppe héritée n'avait pas budgétée.*
+  à la rédaction, **7 372** (**+18,9 %**) au commit suivant, **7 668** (**+23,7 %**) au terme de la
+  relecture du 28 juillet 2026, et **7 710** (**+24,4 %**) au terme de la contre-relecture du même
+  jour, seule mesure opposable — *le champ Volumétrie de l'en-tête et la présente note portent le
+  même chiffre à chaque commit, ce qui n'a pas toujours été le cas.*
+  ⚠ **Et les deux dernières hausses alourdissent la démonstration au lieu de l'affaiblir** : elles
+  viennent de **bornes ajoutées par la relecture**, non de développement — *une pièce qui borne
+  davantage compte davantage de mots, et c'est exactement la variable que l'enveloppe héritée
+  n'avait pas budgétée.*
   ⚠ **L'écart n'est pas un défaut de rédaction : c'est la mesure que la décision d'auteur
   D-4 attendait.** Le PRD §13 déclare que les enveloppes héritées du Livre II supposent une
   condensation d'environ **52 %** des sources, et range l'issue parmi les décisions d'auteur : « les

@@ -45,7 +45,9 @@ byzantine, elle décide de ce qu'une institution inscrit à son registre d'oblig
 ce vide persistant, **la charge réglementaire effective repose entièrement sur les régulateurs
 sectoriels** — le Bureau du surintendant des institutions financières, l'Autorité des marchés
 financiers et les Autorités canadiennes en valeurs mobilières —, dont les ch. 25, 27 et 28 traitent
-respectivement.
+respectivement. ⚠ **Une réserve borne cette troisième proposition, et le § 26.3 la pose** : *des
+quatre instruments qui portent effectivement la charge, **l'un relève du droit général québécois et
+non d'un régulateur sectoriel** — l'y ranger serait inexact.*
 
 ## § 26.1 — La prorogation du 6 janvier 2025 et la mort de C-27
 
@@ -159,8 +161,8 @@ personnels — *une loi dont l'objet est le traitement des renseignements person
 n'établit pas** : le périmètre d'application des volets d'IA du projet, et le § 26.2 dit pourquoi. Mais
 **la nature du véhicule autorise au moins une lecture prudente** : *un régime greffé sur une loi de
 protection des renseignements personnels a vocation à saisir les traitements de renseignements
-personnels, non l'ensemble des décisions d'un système agentique.*
-Un agent qui orchestre un rapprochement comptable, une chaîne de messages de paiement
+personnels, non l'ensemble des décisions d'un système agentique.* Un agent qui orchestre un
+rapprochement comptable, une chaîne de messages de paiement
 interbancaires ou une supervision d'infrastructure ne manipule pas nécessairement de renseignements
 personnels ; **un agent de pré-adjudication hypothécaire, lui, en manipule par construction — et le
 ch. 35 § 35.1 en documente un cas canadien.** ⚠ *L'inférence porte sur la logique du véhicule
@@ -253,7 +255,11 @@ fondaient cette note sont donc tombés — et une porte franchie après coup ne 
    reprise à sa source le 28 juillet 2026** et **reconduite inchangée** — deuxième lecture, aucune
    progression consignée en douze jours. ⚠ **Cela ne clôt pas l'obligation** : l'étape et les deux
    comptes à rebours du chapitre sont **inscrits au registre du résidu** (R-IV-86), à re-mesurer au
-   **gel de publication** ; le **ch. 50 § 50.2** est le siège des événements de péremption.
+   **gel de publication**. ⚠ **Mais le tableau des événements de péremption de la somme ne la porte
+   pas** : *le **ch. 50 § 50.2** en inventorie **onze**, et **C-36 n'y figure sous aucune des onze
+   rangées** — balayage du chapitre rédigé, **zéro occurrence du sigle**.* **L'écart est remonté
+   ci-dessous**, et cette pièce ne le comble pas : *inscrire une rangée au tableau d'un autre
+   chapitre serait corriger le plan depuis une pièce.*
 3. **Les décomptes sont publiables** (G-2). L'écart à la cible est relevé au [`README.md`](README.md) du
    dossier et alimente **D-4**, déjà tranchée — ⚠ *la mesure qui y figure précède la passe de relecture
    du 28 juillet 2026 et se re-mesure au commit.*
@@ -277,7 +283,7 @@ fondaient cette note sont donc tombés — et une porte franchie après coup ne 
 
 - **Remontée de la passe de relecture du 28 juillet 2026 — non bloquante, sans numéro alloué.**
   ⚠ *Un relecteur n'alloue pas d'identifiant dans une série partagée pendant que d'autres passes y
-  puisent : la collision du 27 juillet 2026 est née de ce geste exact.* **Trois objets, tous hors du
+  puisent : la collision du 27 juillet 2026 est née de ce geste exact.* **Cinq objets, tous hors du
   mandat d'une pièce.** *(a)* **Le constat de CA-IV-01 pour cette pièce** : `S-022` est en [B] et
   l'exclusion des entrées [C] ne joue donc pas, mais **constater qu'une affirmation est centrale et
   tracée est un acte de gouvernance**, non un geste de relecture. *(b)* **La volumétrie du Livre III
@@ -287,9 +293,30 @@ fondaient cette note sont donc tombés — et une porte franchie après coup ne 
   *Date* et *Statut* datent de la v0.12 et écrivent encore « socle consolidé à 0 entrée (G-3, non
   entamée) » quand la v0.14 déclare la porte franchie. *La pièce s'est adossée aux rangées de portes,
   qui font foi ; elle signale l'écart plutôt que d'en choisir un terme.*
+  *(d)* ⚠ **L'événement de péremption de ce chapitre n'a aucune rangée au tableau 50.1**, alors que le
+  socle qualifie son objet de **fait le plus périssable du socle du Vol. II** et que cette pièce se
+  déclare la plus vite périmée de son mouvement. *Le **ch. 50 § 50.2** inventorie **onze** événements ;
+  **aucun n'est C-36**, et sa rangée « textes réglementaires finaux postérieurs à l'été 2026 » renvoie
+  aux ch. 32 et 33, non ici.* **Demande remontée** : que l'étape parlementaire y entre, **ou que son
+  exclusion porte son motif**. ⚠ *La demande est jumelle de celle que la relecture du ch. 28 a ouverte
+  le même jour pour la doctrine de l'avis 11-348 — **deux pièces du même mouvement, même manque** ; les
+  arbitrer ensemble évitera de motiver deux fois la même exclusion.*
+  *(e)* ⚠ **Le titre de la table détaillée du ch. 26 au TOC nomme un autre chapitre** — de la classe
+  *désalignement interne au plan*, celle qu'aucun des quinze contrôles ne voit. L'entrée du chapitre 26
+  est suivie de « **Table des matières détaillée du chapitre 30** », et **30 est le numéro de ce
+  chapitre avant la condensation v0.20**. ⚠ **Le défaut n'est pas isolé, et le domaine se déclare
+  plutôt qu'un cardinal ne s'annonce nu** : *balayage des cinquante entrées du TOC v0.30, appariement de
+  chaque titre `### Chapitre N` avec le titre de sa table — **cinquante-huit tables, quarante-cinq
+  annoncent l'ancienne numérotation**, et les treize concordantes sont exactement celles que la
+  condensation n'a pas renumérotées (ch. 1-12) plus le ch. 41, inséré après elle.* **Demande
+  remontée** : que la passe d'arbitrage tranche
+  **d'un seul geste** si ces titres sont des marqueurs de correspondance gelés (décisions 11-13, qu'un
+  remappage ne touche jamais) ou des titres non remappés, ⚠ *et qu'elle ne les corrige pas un par un —
+  une pièce en corrigerait un et laisserait quarante-quatre.*
 
 **Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.30** — § 26.1 à § 26.3,
-dans l'ordre exact —, le § 26.0 étant une **ouverture de chapitre**. La **table de couverture est
+dans l'ordre exact —, le § 26.0 étant une **ouverture de chapitre** ; ⚠ *son **titre**, lui, nomme un
+autre chapitre, et l'écart est remonté ci-dessus (objet **e**) plutôt que corrigé ici.* La **table de couverture est
 respectée pour son unique ligne** : le Vol. II §10.1-10.3 est condensé aux § 26.1-26.3, **rien n'en est
 coupé**. La **décision 14 a été exécutée avant la rédaction**, domaine déclaré : une thèse examinée,
 zéro réalignée. ⚠ **R-5 du Vol. II est tenu sur les trois objets où il porte** — *ce qui n'est pas publié

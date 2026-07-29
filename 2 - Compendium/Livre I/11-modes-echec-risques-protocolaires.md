@@ -7,10 +7,10 @@ dernier chapitre du Livre.***
 | Champ | Valeur |
 |---|---|
 | **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes ; instruction d'auteur du 27 juillet 2026. ⚠ **Chapitre où la réserve F-01 est la plus exposée de tout le Livre** : le mot « sécurisé » n'y est appliqué à aucun protocole, à aucune occurrence. ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. ⚠ **Seconde mise à jour, 28 juillet 2026 — G-3 EST FRANCHIE** (PRD v0.14) : le socle consolidé existe et compte **159 entrées**, `S-001`…`S-159` ([Annexe B](../PRD/socle-consolide.md), v1.2). ⚠ **La pièce demeure pourtant un brouillon non publiable, et le motif se dit plutôt qu'il ne se devine** : ses énoncés **n'ont pas été ré-adossés au socle consolidé entrée par entrée** — la passe de relecture du 28 juillet 2026 en nomme les entrées mobilisables, elle ne substitue pas une résolution à l'autre —, et **CA-IV-11 comme CA-IV-13 demeurent insatisfaites**, D-6 ne fournissant pas de relecteur distinct du rédacteur. *Une porte franchie n'est pas une pièce recevable.* |
-| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Gels de source : **juin 2026** (Vol. I) et **16 juillet 2026** (Vol. II). ⚠ **Les identifiants de vulnérabilité et les incidents datés du § 11.1.3 se périment par publication de correctif** ; ils sont cités comme **jalons datés**, jamais comme état courant d'exposition |
+| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [gel-2026-07-27.md](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Gels de source : **juin 2026** (Vol. I) et **16 juillet 2026** (Vol. II). ⚠ **Les identifiants de vulnérabilité et les incidents datés du § 11.1.3 se périment par publication de correctif** ; ils sont cités comme **jalons datés**, jamais comme état courant d'exposition |
 | **Socle mobilisé** | ⚠ **Pièce écrite avant G-3 et non ré-adossée depuis** : la résolution du corps porte contre le **Vol. I *Monographie* §3.10-3.11** (régime **[C]**) et contre le **Vol. II *Monographie* ch. 4**, dont les entrées **F-01** (et sa réserve), **F-02** et **F-36** conservent leurs niveaux **[A]**, **[A]** et **[B]**. ☑ **Depuis le 28 juillet 2026, ces mêmes faits sont domiciliés au socle consolidé**, et les entrées se nomment : **`S-001`** (Vol. II `F-01`, fondue), **`S-002`** (Vol. II `F-02`, fondue) et **`S-034`** (Vol. II `F-36`, fondue) ; côté Vol. I, **`S-150`** (la non-compositionnalité de la sûreté), **`S-151`** (la révocation après approbation et l'intégrité continue) et **`S-152`** (injection et empoisonnement), **toutes trois en `[C]`**. ⚠ **Nommer n'est pas ré-adosser** : la correspondance se lit aux tables normatives de l'Annexe B, aucun énoncé de la pièce n'a été repris contre son entrée, et **aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **réserve F-01 : quatre occurrences**, § 11.1.3, § 11.3.1, § 11.3.2 et § 11.4.1 — ⚠ *la formule imposée « cadre d'autorisation » est employée bien au-delà de ces quatre marqueurs, dès le § 11.0, et « sécurisé » n'est appliqué à aucun protocole nulle part : la réserve est tenue partout, seul son marqueur est compté ici* ; **§8.2 (attribution des auto-qualifications) : une occurrence**, § 11.3.1, la qualification de maturité attribuée à l'annonce du projet ; **R-1 : une occurrence**, § 11.1.1, l'ACP protocolaire jamais présenté comme un standard vivant ; **R-8 : une occurrence**, § 11.1.1. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 : cinq occurrences**, § 11.1.2, § 11.1.4, § 11.3.1, § 11.3.2 et § 11.3.3 ; **R-13 : une occurrence**, § 11.1.1 ; **R-14 : huit occurrences**, toutes de **degré 3** — § 11.1.3 (deux), § 11.1.4 (deux), § 11.2.2, § 11.3.2, § 11.3.3 et § 11.4.2. ⚠ *Le rang de ce cardinal dans le Livre n'est plus déclaré : un décompte inter-pièces se mesure sur des pièces stables, et onze relectures couraient en parallèle le 28 juillet 2026.* R-01, R-03 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 6 000 mots de corps (§ 11.0 à § 11.4), **dérivée et non estimée** — cible basse, et c'est une conséquence du plan : quatre objets majeurs de ce chapitre (triade de conditions, passerelles, taxonomie d'identité, inventaire gouverné) siègent **ailleurs** et n'y sont que renvoyés. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 6 129 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **+2,2 %** de la cible, re-mesurés au terme de la passe de relecture du 28 juillet 2026 (à la rédaction : **5 795 mots**, −3,4 %). ⚠ **L'écart de la passe est motivé, non subi** : il vient des **identifiants, dates et attributions** versés aux § 11.1.3 et § 11.2.2, et de la remontée de relecture — *borner allonge, et c'est la mesure que D-4 attend.* ⚠ **L'écart individuel ne se lit toujours pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations, et *c'est la cible dérivée qui est fausse, non la pièce.* ⚠ **Le réel du LIVRE n'est plus déclaré ici** : il valait **64 750 mots** (−0,4 %) au 27 juillet 2026, et **onze relectures ont couru en parallèle le 28** — *un agrégat mesuré pendant que ses pièces s'écrivent est faux à la seconde où on le publie.* Il se re-mesure au terme des onze passes. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Volumétrie cible** | ≈ 6 000 mots de corps (§ 11.0 à § 11.4), **dérivée et non estimée** — cible basse, et c'est une conséquence du plan : quatre objets majeurs de ce chapitre (triade de conditions, passerelles, taxonomie d'identité, inventaire gouverné) siègent **ailleurs** et n'y sont que renvoyés. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 6 129 mots** de corps, mesurés par [PRD/decompte.sh](../PRD/decompte.sh), seule autorité de décompte du volume — **+2,2 %** de la cible, re-mesurés au terme de la passe de relecture du 28 juillet 2026 (à la rédaction : **5 795 mots**, −3,4 %). ⚠ **L'écart de la passe est motivé, non subi** : il vient des **identifiants, dates et attributions** versés aux § 11.1.3 et § 11.2.2, et de la remontée de relecture — *borner allonge, et c'est la mesure que D-4 attend.* ⚠ **L'écart individuel ne se lit toujours pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations, et *c'est la cible dérivée qui est fausse, non la pièce.* ⚠ **Le réel du LIVRE n'est plus déclaré ici** : il valait **64 750 mots** (−0,4 %) au 27 juillet 2026, et **onze relectures ont couru en parallèle le 28** — *un agrégat mesuré pendant que ses pièces s'écrivent est faux à la seconde où on le publie.* Il se re-mesure au terme des onze passes. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 11 — **requalifiée en v0.24 : sa seconde moitié était vraie du Vol. II et fausse de la somme**)* — la sécurité des protocoles dépend de l'implémentation ; empoisonnement d'outils et injection d'invites sont **nommés par les protocoles comme risques attachés**, sans que **le socle du Vol. II** en date la documentation ni en établisse la mécanique.
 
@@ -665,7 +665,7 @@ Livre III non rédigés **à cette date**).
 
 ⚠ **Deux de ces conséquences ont cessé de valoir depuis ; la troisième a changé de motif sans cesser
 de valoir — et aucune ne rend la pièce recevable.** *(1)* **G-2 est franchie** (27 juillet 2026) : les
-décomptes de cette pièce **sont publiables**, et [`decompte.sh`](../PRD/decompte.sh) les mesure.
+décomptes de cette pièce **sont publiables**, et [decompte.sh](../PRD/decompte.sh) les mesure.
 *(2)* **Les cinquante chapitres du plan existent en brouillon hors portes** : les renvois « ch. N » se
 re-vérifient désormais **contre du texte**, et ⚠ **cette passe ne l'a pas fait** — elle a constaté que
 chacun résout dans l'intervalle 1-50 et que l'objet annoncé correspond au titre porté au TOC, *ce qui
@@ -722,6 +722,44 @@ collision** — la remontée se formule, son numéro s'alloue à la passe d'arbi
   chapitre sur les risques d'un protocole dont la spécification courante vient de changer ne se
   publie pas sans cette revalidation.*
 
+**Remontées ouvertes par la contre-relecture du 28 juillet 2026 — mêmes motifs d'allocation : sans
+identifiant.**
+
+- ⚠ **Dette d'appareil, et elle est de portée CORPUS : le générateur de page vide le texte de tout
+  lien dont le libellé est un fragment de code.** `rendre-piece.py` remplace d'abord les fragments
+  encadrés d'accents graves par un jeton, puis les liens ; à la restitution, il parcourt les jetons
+  **en ordre croissant**, de sorte que le jeton de code — désormais imbriqué dans le jeton de lien —
+  n'est **jamais** rétabli. La page servait trois libellés vides et **six octets nuls**, qu'aucun des huit
+  contrôles de `verifier-piece.py` ne voit et qui font lire le fichier comme binaire par les outils
+  de recherche. ⚠ **La cause est unique et le correctif tient en un mot** — restituer les jetons en
+  ordre **décroissant** —, mais il vit dans un fichier partagé par les cinquante pièces, qu'une
+  relecture ne touche pas : *payer une dette d'outillage pendant que d'autres passes écrivent le même
+  fichier produirait une table incohérente que le harnais de mutation ne détecterait pas.* **Parade
+  locale appliquée ici, et déclarée telle** : les trois libellés de cette pièce sont dé-balisés
+  (champs *Date de gel* et *Volumétrie cible*, conséquence *(1)* ci-dessus), *conformément à la règle qui
+  veut qu'on n'emploie que le balisage que le pipeline accepte*. **La forme se rétablit à la passe
+  qui corrigera le générateur** ; ⚠ **le même défaut court sur les cinquante pièces**, et le
+  contrôle qui l'attraperait — un octet nul dans le rendu — reste à écrire.
+  ⚠ **Un second fait de la même famille est constaté au passage** : le gabarit partagé **inscrit en
+  dur « PRD.md v0.7 »** à son pied de navigation et à son colophon, là où le PRD est en **v0.14** —
+  *la version du TOC y est substituée, celle du PRD ne l'est pas.* **La page de cette pièce porte
+  donc une version de gouvernance fausse que son `.md` ne dit nulle part**, et les cinquante pages
+  la portent avec elle. Même régime : constaté ici, corrigé à l'appareil.
+- ☐ **Arbitrage dû sur la décision 15(b) : l'attribution par le RÔLE tient-elle lieu
+  d'attribution ?** Deux matières de cette pièce désignent un attributeur sans le nommer en propre —
+  le **score de gravité** du § 11.1.3 (« l'autorité de numérotation de l'éditeur », « l'organisme national ») et le
+  **référentiel des dix risques** des § 11.2.2 et § 11.3.2 (« l'organisme de sécurité applicative »).
+  ⚠ **Rien n'est corrigé ici, et le motif est que les deux autorités se contredisent** : la décision
+  15(b) proscrit d'anonymiser l'attributeur d'une métrique et l'auteur d'un instrument repris, mais
+  **`S-152` du socle consolidé écrit elle-même « le CNA (l'éditeur) » et « l'organisme national »**,
+  là où le **Vol. I *Monographie* §3.10.4, §4.7 et sa bibliographie nomment les trois attributeurs en
+  propre**.
+  *Un relecteur qui trancherait entre le socle et sa source ferait à sa place le geste que la
+  décision 8 réserve à une passe de plan.* ⚠ **Ce que la contre-relecture constate en revanche sans
+  réserve** : le paragraphe du § 11.1.3 énonce la règle — « écrire “gravité 9,3” sans nommer qui la
+  prononce, c'est trancher en silence » — **et ne la tient qu'au rôle** ; l'écart est décidable pour
+  un lecteur qui a l'identifiant sous les yeux, il ne l'est pas pour un lecteur pressé.
+
 **Ce qui n'est pas enfreint.** La structure suit la table détaillée (§ 11.1 à § 11.4) ; le § 11.0 est
 une **introduction de chapitre**, non une section de plan, et la table de couverture du TOC est
 respectée pour les six provenances. La **triade de conditions n'est pas reconstruite** : elle reste au
@@ -762,8 +800,11 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
   `[B]` est à une lecture de distance* — elle n'a pas été faite ici. **Franchir la porte a domicilié
   ces faits ; cela ne leur a fait subir aucune épreuve nouvelle.**
 
-⚠ **Ce que la clôture ne change pas.** La porte **G-3** demeure ouverte : le socle consolidé compte
-**zéro entrée**, l'Annexe B n'existe pas, et **aucun énoncé de cette pièce n'est central au sens de
-CA-IV-01**. Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
-pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
-tranchée.*
+⚠ **Ce que la clôture ne change pas — état au 27 juillet 2026, et une seule de ses clauses a bougé
+depuis.** À cette date, la porte **G-3** demeurait ouverte : le socle consolidé comptait **zéro
+entrée** et l'Annexe B n'existait pas. ⚠ **Elle est franchie depuis le 28 juillet 2026** (PRD v0.14 ;
+[Annexe B](../PRD/socle-consolide.md) v1.2, 159 entrées), **et la conclusion ne change pas pour
+autant** : **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**, les entrées du Vol. I
+entrant en `[C]` et la pièce n'ayant pas été ré-adossée entrée par entrée. Cette pièce reste un
+**brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable — cela veut dire
+qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*

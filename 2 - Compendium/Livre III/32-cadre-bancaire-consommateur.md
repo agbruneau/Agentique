@@ -6,13 +6,13 @@ Deuxième chapitre du mouvement : **un cadre légiféré dont l'interface techni
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — porte **G-3** ouverte (socle consolidé à zéro entrée) ; volet résiduel de **G-1** non instruit ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 32.5. ⚠ **G-4 ne conditionne pas ce chapitre** : sa ligne Fusion ne cite que le Vol. II ; ⚠ **D-9 ne le bloque pas** |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 non instruit — et il porte ici sur une échéance qui tombe après le gel de la somme** : la période de commentaires du règlement prépublié **se clôt le 26 août 2026**, soit **trente jours après** la date de gel. *Tout ce que ce chapitre rapporte du règlement devra être revalidé à cette date.* Gel de source consommé : **16-17 juillet 2026** (Vol. II ch. 14) — ⚠ **il ne tient pas lieu du gel de la somme** |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte). Les énoncés résolvent contre le **Vol. II *Monographie* ch. 14**, dont les entrées **F-11**, **F-23**, **F-34** et **F-35** conservent leurs niveaux d'origine ; ⚠ **F-35 porte le fait négatif du § 32.4 et le porte au niveau de preuve le plus élevé du volume** — *balayage documenté, non absence de trouvaille.* **F-09**, **F-25** et **F-24** y sont mobilisées **en renvoi seulement**. ⚠ **Toutes ces entrées sont du Vol. II** et se préfixent comme telles (décision 7 du TOC). **Aucun énoncé n'est central au sens de CA-IV-01** |
+| **Statut** | **Brouillon de rédaction, non publiable** — pièce **rédigée le 27 juillet 2026, avant G-3**, sur instruction d'auteur. ⚠ **La règle cardinale du PRD §5 a été enfreinte, et l'arbitrage qui a suivi la solde sans la rattraper.** ☑ **G-3 est franchie depuis le 28 juillet 2026** (PRD v0.14, socle consolidé de **159 entrées**) : les énoncés du chapitre y sont désormais **ré-ancrés**, et le champ *Socle mobilisé* le dit entrée par entrée. ⚠ **La pièce n'en devient pas recevable pour autant** : **CA-IV-11 et CA-IV-13 demeurent insatisfaites**, *D-6 ne fournissant pas de relecteur distinct du rédacteur.* Voir la note de statut, § 32.5. ⚠ **G-4 ne conditionne pas ce chapitre** : sa ligne Fusion ne cite que le Vol. II ; ⚠ **D-9 ne le bloque pas** |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ☑ **Le volet de FAITS du volet résiduel de G-1 est levé le 28 juillet 2026** — *les 123 entrées à sensibilité temporelle portées à leur source primaire*, registre à [`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md) ; ☐ **les obligations de pièce des Livres II et III restent dues**, et celle-ci en relève. ⚠ **Le résidu porte ici sur une échéance qui tombe après le gel de la somme** : la période de commentaires du règlement prépublié **se clôt le 26 août 2026**, soit **trente jours après** la date de gel. *Tout ce que ce chapitre rapporte du règlement devra être revalidé à cette date.* Gel de source consommé : **16-17 juillet 2026** (Vol. II ch. 14) — ⚠ **il ne tient pas lieu du gel de la somme** |
+| **Socle mobilisé** | ☑ **Le socle consolidé existe depuis le 28 juillet 2026** — [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées `S-001`…`S-159`** — *et ce chapitre a été rédigé avant lui* : ses énoncés résolvent contre les identifiants du **Vol. II *Monographie* ch. 14**, que les tables de correspondance normatives du socle rattachent à la série consolidée. **Quatre entrées portantes** : **F-11 → `S-011`** (`[A]` — la loi, son périmètre et le droit à la mobilité), **F-23 → `S-020`** (`[A]` — accréditation et registre), **F-34 → `S-032`** (`[A]` — le règlement prépublié) et **F-35 → `S-033`** — ⚠ **`[A, degré 1 — fait négatif vérifié 9-0]`, l'entrée qui porte le § 32.4 au niveau de preuve le plus élevé du volume** : *balayage documenté, non absence de trouvaille.* ⚠ **Et `S-033` fond `F-35` du Vol. II avec `H-08` du Vol. III : c'est exactement la déduplication que la remontée R-IV-95 demandait, exécutée en G-3** (PRD §7.1). **Trois entrées en renvoi seulement** : **F-09 → `S-009`**, **F-24 → `S-022`**, **F-25 → `S-023`**. ⚠ **La re-datation du 28 juillet 2026 ne laisse pas ces sept entrées au même état, et la conséquence est opposable** : *`S-033` est **☑ inchangée** — le balayage négatif a été **rejoué** sur le règlement prépublié et il tient, quatre chaînes, zéro occurrence ; `S-022` est **☑ inchangée** ; `S-009`, `S-011`, `S-020` et `S-032` sont **☑ inchangées (partielles)** ; **`S-023` est ☐ non établie**, accès refusé par l'hôte — le § 32.3 ne l'invoque qu'en renvoi, pour une date d'entrée en vigueur qui n'a donc pas été re-constatée.* ⚠ **`S-020` ajoute une proscription que le § 32.2 applique** : *aucun registre ni liste de participants accrédités n'est publié — **ne jamais écrire que le registre existe**.* ⚠ **Toutes les entrées sources sont du Vol. II** et se préfixent comme telles (décision 7 du TOC) ; la série `S-nnn` est la seule que le socle alloue. **Aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **R-5 (attente réglementaire — ne rien anticiper) : trois occurrences du sigle**, § 32.0, § 32.1 et § 32.4 — ⚠ *c'est le chapitre du Livre où ce garde-fou travaille le plus, et **il est appliqué aux § 32.0 à § 32.4 sans exception*** ; **PRDPlan Vol. II §4.4 — écrire « attendu par E-23 », jamais « exigé » : ni le renvoi ni la formule ne sont écrits au corps** ; *la modalité s'y écrit « E-23 … **attend** plutôt qu'elle n'exige », § 32.2, **en renvoi au ch. 25*** ; **PRD §8.4 (neutralité fournisseur) : le renvoi n'est pas écrit au corps** ; *la formule l'est **une fois**, § 32.4* ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : trois occurrences du sigle**, **une par section** — note de collation de la thèse, § 32.1, § 32.4 — ⚠ *et les degrés se marquent en toutes lettres : « degré 1 » **quatre fois** — note de collation, § 32.4 (deux), synthèse —, « degré 3 » **six fois** — § 32.1 (deux), § 32.2 (deux), § 32.4 (deux)* ; ⚠ **dont un fait négatif VÉRIFIÉ, degré 1**, au § 32.4, *à distinguer soigneusement des absences de documentation qui l'accompagnent* ; **R-09 : une occurrence du sigle**, § 32.3 ; **R-11 : une occurrence du sigle**, § 32.3 ; **R-01 à R-08, R-10, R-12, R-13 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **3 500 mots** de corps (§ 32.0 à § 32.4), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant quatre. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier. ⚠ **D-4 interdit l'amputation comme le gonflement** |
+| **Volumétrie cible** | ≈ **3 500 mots** de corps (§ 32.0 à § 32.4), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.30 — au prorata des sections, ce chapitre en portant quatre. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier. ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 32)* — le cadre est légiféré (C-15), supervisé par la Banque du Canada, réglementairement en cours — et son standard technique n'est **pas** désigné (fait négatif vérifié).
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 32 — **reprise par copie**, décision 17)* — le cadre est légiféré (C-15), supervisé par la Banque du Canada, réglementairement en cours — et son standard technique n'est **pas** désigné (fait négatif vérifié).
 
 ---
 
@@ -66,7 +66,8 @@ Le Canada s'est doté d'une **première loi** sur les services bancaires axés s
 **2024**. ⚠ **Cette loi était *partielle*** : *elle posait une architecture législative dont les pièces
 manquantes devaient venir plus tard.* ⚠ **Ce qui est venu plus tard n'est pas un amendement** : le
 projet de loi **C-15**, déposé le **18 novembre 2025** et **sanctionné le 26 mars 2026** — *quatre mois
-et huit jours plus tard* —, a ***abrogé et remplacé*** la loi partielle de 2024 (Vol. II F-23).
+et huit jours plus tard* —, a ***abrogé et remplacé*** la loi partielle de 2024 (Vol. II **F-11**,
+entrée **S-011** du socle consolidé).
 
 ⚠ **La distinction n'est pas doctrinale : une analyse de conformité conduite sur l'instrument de 2024
 porte sur un texte que le législateur a écarté.**
@@ -80,7 +81,7 @@ l'écart.
 
 **Ce que le socle porte, en revanche, est le périmètre de la loi complète issue de C-15** : *elle couvre
 l'accréditation, la sécurité, la sécurité nationale, la responsabilité et le consentement* (Vol. II
-**F-23**).
+**F-11**, **S-011**).
 
 **Le second acquis de C-15 déborde largement les services bancaires, et c'est peut-être l'élément que
 les architectes d'entreprise sous-estiment le plus.** En modifiant la loi fédérale sur la protection des
@@ -94,7 +95,8 @@ application**.*
 
 ⚠ **Le véhicule législatif retenu — une loi sur la protection des renseignements personnels — n'est pas
 anodin**, *et il est **le même** que celui qu'emprunte le projet de loi que le **ch. 26 § 26.2** examine
-(Vol. II **F-24**, **[B]**, **en renvoi seulement** — le projet de loi lui-même n'est pas instruit ici)* :
+(Vol. II **F-24** → **`S-022`**, **[B]**, **en renvoi seulement** — le projet de loi lui-même n'est pas
+instruit ici)* :
 **un instrument adopté et un projet de loi distinct visent le même véhicule législatif**, ⚠ **sans
 qu'aucune interaction entre eux ne soit documentée au socle** — *absence de documentation, degré 3.*
 
@@ -114,7 +116,7 @@ par un document budgétaire.**
 **Un document budgétaire de 2025 a réorienté le cadre** : la **supervision et la mise en œuvre ont été
 déléguées à la banque centrale**, et **non à l'agence de protection du consommateur financier** comme le
 prévoyait le dispositif de 2024 ; l'ancrage retenu est celui de la loi sur les activités associées aux
-paiements de détail (Vol. II F-23, F-11).
+paiements de détail (Vol. II **F-11**, **S-011**).
 
 **Le partage des rôles qui en résulte est explicite** : *la banque centrale supervisera **les entités
 participantes, les fournisseurs tiers accrédités, l'organisme de normalisation technique et l'organisme
@@ -132,10 +134,11 @@ consommateur** avec l'agence.* ⚠ ***Trois autorités, trois dossiers, et aucun
 leurs calendriers s'accordent.***
 
 **La porte d'entrée du régime est l'accréditation.** *La participation au cadre y est conditionnelle,
-l'accréditation relève de la banque centrale, ⚠ **ses modalités restent à définir par règlement**, et la
-banque centrale tient le registre des participants* (Vol. II F-34). ⚠ **Le socle nomme une
-institution** : *sa participation au cadre est, **comme celle de toute entité candidate**, conditionnelle
-à l'accréditation* — **et le ch. 35 § 35.5 l'examine pour elle-même.**
+l'accréditation relève de la banque centrale, ⚠ **ses modalités restent à définir par règlement**, et
+**la tenue du registre des participants lui revient*** (Vol. II **F-23**, entrée **S-020** du socle
+consolidé). ⚠ **Le socle nomme une institution** : *sa participation au cadre est, **comme celle de
+toute entité candidate**, conditionnelle à l'accréditation* — **et le ch. 35 § 35.5 l'examine pour
+elle-même.**
 
 **Trois observations, en montant en exigence.**
 
@@ -152,9 +155,12 @@ défaut de recherche** : ⚠ **elles sont *à définir par règlement*, et le r�
 sans en connaître le critère.***
 
 **Enfin, le registre.** Le socle mentionne **un registre public** que tiendra la banque centrale **et un
-registre des participants** tenu par elle ; ⚠ **il n'établit pas qu'il s'agisse du même instrument**, et
-**n'en établit ni le contenu, ni le format, ni les modalités d'accès** — *absence de documentation,
-degré 3.*
+registre des participants** dont la tenue lui revient ; ⚠ **il n'établit pas qu'il s'agisse du même
+instrument**, et **n'en établit ni le contenu, ni le format, ni les modalités d'accès** — *absence de
+documentation, degré 3.* ⚠ **Et la re-datation du 28 juillet 2026 ajoute une borne que le socle
+consolidé rend opposable** : *aucun registre ni liste de participants accrédités n'est publié à cette
+date, et **`S-020` proscrit d'écrire que le registre existe** — une compétence attribuée n'est pas un
+registre existant.*
 
 Lecture de l'auteur — ⚠ **un registre public tenu par une autorité est structurellement le genre d'objet
 dont une architecture agentique fait une *source d'autorité*** — *la question « cette contrepartie
@@ -169,8 +175,8 @@ l'autre des agents logiciels.*
 
 **Le 27 juin 2026, le projet de règlement du cadre a été *prépublié* dans la partie I de la gazette
 officielle**, au lendemain d'un communiqué du ministère des Finances daté du **26 juin 2026**, sous la
-loi issue de C-15 (Vol. II F-34). **La prépublication ouvre une période de commentaires de soixante
-jours, close le 26 août 2026.** *Le décompte est exact.*
+loi issue de C-15 (Vol. II **F-34**, entrée **S-032** du socle consolidé). **La prépublication ouvre une
+période de commentaires de soixante jours, close le 26 août 2026.** *Le décompte est exact.*
 
 ⚠ **Trois mois et un jour séparent la sanction royale du 26 mars 2026 de cette prépublication du
 27 juin 2026.** ⚠ **Et au gel de la somme — le 27 juillet 2026 —, il reste *trente jours* avant la
@@ -215,8 +221,9 @@ inférence.*
 et qui exige la formulation la plus stricte du Livre.**
 
 **La loi impose un *standard technique unique*.** Ce standard doit être fixé par un **organisme de
-normalisation technique désigné par le ministre des Finances par arrêté ministériel** (Vol. II F-35 ;
-⚠ **le ch. 30 § 30.3 en porte l'état de désignation**, et il n'est pas doublé ici).
+normalisation technique désigné par le ministre des Finances par arrêté ministériel** (Vol. II **F-35**,
+entrée **S-033** du socle consolidé ; ⚠ **le ch. 30 § 30.3 en porte l'état de désignation**, et il n'est
+pas doublé ici).
 
 **Les critères de désignation de cet organisme sont énoncés** : *être « **meaningfully Canadian** »,
 présenter une **gouvernance équitable, ouverte et accessible**, et **décider de façon indépendante**.*
@@ -253,6 +260,12 @@ et a établi qu'**aucun arrêté de désignation n'avait été publié à cette 
 socle porte au niveau de preuve le plus élevé*** : **degré 1 de l'échelle R-14 du Vol. III, fait négatif
 VÉRIFIÉ.**
 
+⚠ **Le balayage a été rejoué à la source primaire le 28 juillet 2026, à la re-datation du socle
+consolidé, et il tient** : *les quatre chaînes retournent zéro occurrence dans le règlement prépublié,
+la désignation y demeurant posée **au futur**, et aucun arrêté n'est constaté* (**`S-033`**). ⚠ ***Un
+fait négatif vérifié à durée de vie courte reste vérifié — et il cesse d'être exact dès la désignation,
+sans préavis.***
+
 ⚠ **Et la borne voyage avec le fait, sans quoi il ne vaut rien** : *il ne s'étend à **aucun texte non
 balayé**, ⚠ **ni à une désignation qui n'emploierait aucune des quatre chaînes cherchées**.* **Le ch. 30
 § 30.3.1 en donne la table complète, avec les trois régimes qu'il faut séparer** — *et l'un des trois,
@@ -269,7 +282,8 @@ pas : le second est plus faible, et c'est le seul que le balayage soutienne**.
 
 ⚠ **L'anticipation de l'organisme candidat existe, elle est réelle, et elle est correctement située** :
 *elle relève du **commentaire d'industrie**, et ce commentaire porte des noms — **Fasken**, **Bennett
-Jones**, la **NCFA** (Vol. II F-35).* ⚠ **L'attribution ne s'anonymise pas** (décision 15 du TOC) :
+Jones**, la **NCFA** (Vol. II **F-35**, **S-033**).* ⚠ **L'attribution ne s'anonymise pas** (décision 15
+du TOC) :
 *« des cabinets » n'est pas une attribution, et c'est l'attributeur qui dit exactement ce que
 l'anticipation vaut.* ⚠ ***Un cabinet qui anticipe n'est pas un ministre qui désigne.*** ⚠ **Écrire que
 cet organisme serait le standard technique retenu du cadre bancaire canadien est une affirmation que la
@@ -333,30 +347,40 @@ date d'entrée en vigueur de C-15 article par article**. Et il ne lègue **aucun
 gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A) : *un rédacteur ne corrige jamais le
 TOC, ce PRD ni le Conspectus — il **remonte**.*
 
-**Ce qui est enfreint.** La porte **G-3** et le **volet résiduel de G-1**. Instruction d'auteur du
-27 juillet 2026. ⚠ **G-4 ne conditionne pas ce chapitre** : sa ligne Fusion ne cite que le Vol. II.
-⚠ **D-9 ne le bloque pas** : *il ne prescrit aucune parade humaine.*
+**Ce qui est enfreint.** La pièce a été **rédigée le 27 juillet 2026, avant G-3 et avant le volet
+résiduel de G-1**, sur instruction d'auteur. ☑ **Les deux ont été franchis le lendemain** — G-3 (PRD
+v0.14, socle consolidé de 159 entrées) et le volet de faits du résiduel de G-1 — ⚠ *et une porte
+franchie après coup solde la rédaction qui l'a devancée : elle ne la rattrape pas.* ⚠ **G-4 ne
+conditionne pas ce chapitre** : sa ligne Fusion ne cite que le Vol. II. ⚠ **D-9 ne le bloque pas** :
+*il ne prescrit aucune parade humaine.*
 
-1. **Aucun énoncé n'est central au sens de CA-IV-01.** Le socle consolidé compte zéro entrée ; les
-   identifiants cités — F-11, F-23, F-34, F-35, et en renvoi F-09, F-24, F-25 — sont **ceux du Vol. II**,
-   préfixés à chaque emploi (décision 7).
-2. ⚠ **Le volet résiduel de G-1 pèse ici sur une échéance qui tombe *après* le gel de la somme.** *La
+1. **Aucun énoncé n'est central au sens de CA-IV-01.** Les identifiants cités au corps — F-11, F-23,
+   F-34, F-35, et en renvoi F-09, F-24, F-25 — sont **ceux du Vol. II**, préfixés à chaque emploi
+   (décision 7) ; leurs entrées consolidées sont `S-011`, `S-020`, `S-032`, `S-033`, `S-009`, `S-022`
+   et `S-023`. ⚠ **Une entrée consolidée ne rend pas l'énoncé central** : *`S-023` est **☐ non
+   établie** à la re-datation, et la sortie de G-3 ne promeut aucune entrée.*
+2. ⚠ **Le résidu du gel pèse ici sur une échéance qui tombe *après* le gel de la somme.** *La
    période de commentaires du règlement se clôt le **26 août 2026**, soit trente jours après le
    27 juillet 2026.* ⚠ **Tout ce que le § 32.3 rapporte du règlement est daté et devra être revalidé** ;
    *le **ch. 50** l'enregistrera comme événement de péremption, au même titre que la désignation de
-   l'organisme.*
+   l'organisme.* ☐ **L'obligation de pièce du Livre III reste due** : *le registre du 28 juillet 2026
+   porte les entrées du socle, non les pièces qui les consomment.*
 3. ⚠ **Un compte à rebours a été re-mesuré au gel et il a bougé.** *Le Vol. II comptait **quarante et un
    jours** avant la clôture des commentaires à son propre gel ; il en reste **trente** au gel de la
    somme.* **Le chiffre n'a pas été recopié**, il a été refait — *c'est ce que la règle des cardinaux
    impose.*
 4. **Les décomptes sont publiables** (G-2). L'écart à la cible est relevé au [`README.md`](README.md) du
    dossier et alimente **D-4**, déjà tranchée.
-5. **Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan.** ⚠ *La liste a été
+5. **Les renvois « ch. N » se résolvent désormais tous contre du texte rédigé.** ⚠ *La liste a été
    re-mesurée sur le corps le 28 juillet 2026 : elle annonçait **ch. 33** et **ch. 34**, que le corps ne
-   cite nulle part.* Résolvent contre l'entrée du TOC : **ch. 35 § 35.5** et **ch. 36** (présent Livre,
-   même passe), **ch. 49** et **ch. 50** (Livre V). Résolvent contre du **texte rédigé** : **ch. 15**,
-   **ch. 25**, **ch. 26** et **ch. 26 § 26.2**, **ch. 27**, **ch. 30 § 30.3 et § 30.3.1** et
-   **ch. 31 § 31.2**.
+   cite nulle part.* ⚠ **Elle a été re-mesurée une seconde fois à la passe de vérification du même
+   jour, et son régime a changé** : *les cinquante chapitres existent, et les quatre renvois qui
+   résolvaient contre l'entrée du TOC — **ch. 35 § 35.5**, **ch. 36**, **ch. 49** et **ch. 50** —
+   résolvent maintenant contre la pièce.* **Domaine : dix chapitres cités, tous résolus** — **ch. 15**,
+   **ch. 25**, **ch. 26** et **ch. 26 § 26.2**, **ch. 27**, **ch. 30 § 30.3 et § 30.3.1**,
+   **ch. 31 § 31.2**, **ch. 35 § 35.5**, **ch. 36**, **ch. 49** et **ch. 50**. ⚠ **Un renvoi résolu
+   n'est pas un renvoi vérifié au fond** : *seule la concordance du numéro et de l'intitulé a été
+   constatée.*
 
 **Remontée ouverte par ce chapitre :**
 
@@ -373,7 +397,7 @@ TOC, ce PRD ni le Conspectus — il **remonte**.*
   entrées pour un seul balayage**, et un chapitre aval pourra en tirer une corroboration qui n'existe
   pas.*
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 32.1 à § 32.4,
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.30** — § 32.1 à § 32.4,
 dans l'ordre exact —, le § 32.0 étant une **ouverture de chapitre**. La **table de couverture est
 respectée pour son unique ligne** : le Vol. II §14.1-14.4 est condensé aux § 32.1-32.4, **rien n'en est
 coupé**. La **décision 14 a été exécutée avant la rédaction**, domaine déclaré : une thèse examinée,
@@ -402,6 +426,28 @@ parade de péremption couvre les dénominations, **jamais l'attributeur d'une af
 Enfin, ⚠ **le registre du cadre bancaire n'est pas confondu avec le registre d'agents du ch. 15** : *la
 distinction est écrite au § 32.2, comme le plan l'exige.*
 
+⚠ **Une passe de vérification a suivi la relecture le 28 juillet 2026, chargée de la réfuter, et son
+résultat est mêlé — il se consigne en entier.** *Les décomptes et la ventilation annoncés par la
+relecture ont été **re-mesurés par balayage exhaustif du corps** et sont **exacts** : trois occurrences
+de R-5, trois de R-14 réparties une par section, quatre « degré 1 », six « degré 3 », une de R-09, une
+de R-11 ; la liste des renvois « ch. N » se referme sur les dix chapitres que le corps cite réellement ;
+et les trois attributeurs rétablis au § 32.4 sont ceux que `S-033` porte.* ⚠ **Trois défauts que la
+relecture n'a pas vus ont en revanche été corrigés, et deux d'entre eux touchent le régime de preuve.**
+*(a)* ⚠ **Quatre renvois d'entrée de socle étaient faux, et la relecture en a ajouté un cinquième** :
+*l'abrogation-remplacement de 2024, le périmètre de la loi issue de C-15 et l'ancrage dans la loi sur
+les paiements de détail relèvent de **F-11**, non de F-23 ; l'accréditation et le registre relèvent de
+**F-23**, non de F-34.* ⚠ ***Une affirmation renvoyée à la mauvaise entrée est intraçable, et le lecteur
+qui remonte à l'entrée n'y trouve pas le fait*** — les cinq renvois sont rectifiés contre les notes de
+la source et contre les tables de correspondance du socle consolidé. *(b)* ⚠ **La pièce était la seule
+des cinquante à déclarer encore G-3 ouverte et le socle consolidé à zéro entrée** : *l'en-tête, la note
+de statut et la clôture des remontées sont ré-ancrés sur les 159 entrées, avec l'état de re-datation de
+chacune des sept.* *(c)* ⚠ **Le § 32.2 écrivait le registre des participants au présent** là où la
+re-datation du 28 juillet 2026 constate qu'**aucun registre n'est publié** et où `S-020` proscrit
+d'écrire qu'il existe ; *la formulation est mise à la forme que le socle soutient, et la borne est
+écrite avec elle.* ⚠ **Les cardinaux de garde-fou n'ont pas bougé pour autant** : *les ajouts de cette
+passe vivent à l'en-tête et à la note de statut, exclus du domaine de comptage par la décision 16, et
+la borne du § 32.2 s'attache à une occurrence de « degré 3 » déjà déclarée.*
+
 
 ---
 
@@ -423,10 +469,18 @@ découverte de la collision — **aucun numéro n'est partagé**.*
   première. ⚠ **La déduplication doit être explicite** : *sans elle, le socle consolidé portera **deux
   entrées pour un seul balayage**, et **un chapitre aval en tirera une corroboration qui n'existe
   pas**.* ☑ *Le recouvrement est déclaré ici et au ch. 30 § 30.3.1, chacun depuis sa source.*
+  ☑ **La demande est exécutée depuis le 28 juillet 2026** : *la refonte du socle fond `F-35` et `H-08`
+  dans l'entrée unique **`S-033`**, et le socle nomme lui-même cette déduplication **condition de
+  sortie de G-3** (PRD §7.1).* ⚠ **La remontée était donc juste, et sa clôture par versement au
+  registre des corrections dues n'était pas la fin de l'affaire** : *un versement au registre promet le
+  geste ; c'est la porte qui l'exécute — et tant que le geste n'est pas constaté à la pièce, la
+  remontée est soldée sans être satisfaite.*
 
-⚠ **Ce que la clôture ne change pas.** Les portes **G-3** et — pour les chapitres qui citent le
-Vol. III — **G-4** demeurent ouvertes ; le socle consolidé compte **zéro entrée** ; **aucun énoncé de
-cette pièce n'est central au sens de CA-IV-01**. **CA-IV-11 et CA-IV-13 ne sont pas satisfaites** —
+⚠ **Ce que la clôture ne change pas.** ☑ **G-3 est franchie depuis le 28 juillet 2026** et le socle
+consolidé compte **159 entrées** — ⚠ **mais G-4 demeure ouverte pour les chapitres qui citent le
+Vol. III**, et **aucun énoncé de cette pièce n'est central au sens de CA-IV-01** : *la sortie de G-3 ne
+promeut aucune entrée, et l'une des sept que la pièce mobilise est **☐ non établie** à la re-datation.*
+**CA-IV-11 et CA-IV-13 ne sont pas satisfaites** —
 *aucune relecture par un relecteur distinct du rédacteur*. Cette pièce reste un **brouillon non
 publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune
 question n'attend plus de réponse qui ne soit déjà tranchée.*

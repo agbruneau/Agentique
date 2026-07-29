@@ -9,7 +9,7 @@ Troisième chapitre du mouvement : **un rail accompli et un rail visé, à ne ja
 | **Statut** | **Brouillon de rédaction, non publiable** — pièce **rédigée le 27 juillet 2026, avant G-3**, sur instruction d'auteur. ⚠ **La règle cardinale du PRD §5 a été enfreinte, et l'arbitrage qui a suivi la solde sans la rattraper.** ☑ **G-3 est franchie depuis le 28 juillet 2026** (PRD v0.14, socle consolidé de **159 entrées**) : les énoncés du chapitre y sont désormais **ré-ancrés**, et le champ *Socle mobilisé* le dit entrée par entrée. ⚠ **La pièce n'en devient pas recevable pour autant** : **CA-IV-11 et CA-IV-13 demeurent insatisfaites**, *D-6 ne fournissant pas de relecteur distinct du rédacteur.* Voir la note de statut, § 33.5. ⚠ **G-4 ne conditionne pas ce chapitre** ; ⚠ **D-9 ne le bloque pas** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ☑ **Le volet de FAITS du volet résiduel de G-1 est levé le 28 juillet 2026** — *les 123 entrées à sensibilité temporelle portées à leur source primaire*, registre à [`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md) ; ☐ **les obligations de pièce des Livres II et III restent dues**, et celle-ci en relève. ⚠ **Ce chapitre porte deux échéances qui tombent après le gel de la somme** : *l'entrée en vigueur d'un règlement administratif le **24 août 2026**, et la cible de lancement d'un rail au **T4 2026**.* ⚠ **Aucune des deux n'est constatée** ; *elles sont annoncées* — **et la re-datation du 28 juillet 2026 les a l'une et l'autre re-constatées comme telles**. Gel de source consommé : **16-17 juillet 2026** (Vol. II ch. 15) |
 | **Socle mobilisé** | ☑ **Trois entrées du socle consolidé**, G-3 franchie : **S-026** (← Vol. II **F-28**, `[A]`), **S-027** (← Vol. II **F-29**, `[A]`) et **S-043** (← Vol. II **F-45**, `[B]`). ⚠ **S-027 est l'entrée la mieux votée du chapitre** — *neuf affirmations confirmées par vote adversarial unanime, sur quatre pages officielles de Paiements Canada* — **et c'est elle qui porte la réserve la plus stricte du Livre** : *ne jamais écrire « lancé » ni « en production ».* ⚠ **Les trois entrées ne sortent pas de la re-datation au même état** : *S-026 et S-027 sont **☑ inchangée**, **S-043 est ☐ non établie** — accès refusé par l'hôte —, et **le seul de ses volets re-constaté à une source tierce n'est pas celui que le § 33.1 mobilise**.* ⚠ **Conséquence opposable, posée au franchissement de G-3** : *aucun énoncé adossé à S-043 n'est central au sens de CA-IV-01.* ⚠ **La pièce, elle, ne déclare aucun énoncé central** — *l'arbitrage appartient à l'auteur, non au rédacteur* ; **remontée ouverte au § 33.5**. ⚠ **Toutes les entrées sources sont du Vol. II** (décision 7 du TOC) |
-| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — ⚠ **réserve F-29 (S-027) — ne jamais écrire « lancé » ni « en production » du rail en temps réel** ; *le mot « lancé » est écrit **onze fois** au corps — § 33.0 (deux), § 33.1 (trois), § 33.2, § 33.4 (trois) et la synthèse (deux) — ⚠ **et son domaine se départage** : les **trois du § 33.1 portent sur le rail de grande valeur**, dont le lancement est un fait daté du socle (F-45, S-043) et que la réserve ne vise pas ; **les huit autres sont soit au conditionnel attribué, soit dans la formule qui l'interdit**. « En production » est écrit **trois fois** — § 33.0, § 33.2 et la synthèse —, **une fois au négatif et deux fois dans la formule qui l'interdit*** ; ⚠ **formulation imposée PRDPlan Vol. II §4.4 — « quatre *cibles successives* — 2019, 2022, 2023, 2026 », jamais « quatre reports »** : *le renvoi est écrit **une fois**, § 33.2 ; la formulation est reprise **mot pour mot deux fois** (§ 33.2, § 33.4), le terme « cibles successives » **trois fois** (§ 33.2 deux, synthèse), et la forme proscrite **deux fois**, **aux deux seuls endroits où la somme la cite pour l'interdire*** ; **R-4 (la cible T4 2026 *est* officiellement annoncée — l'attribuer, ne pas l'affirmer au futur catégorique) : deux occurrences du sigle**, § 33.2 et § 33.4 ; **PRD Vol. II §8.4 (neutralité fournisseur) : une occurrence du renvoi**, § 33.1, **et trois de la formule**, § 33.1 (deux) et § 33.2 ; ⚠ **métriques d'exploitant et jalons de programme attribués à Paiements Canada à chaque occurrence** (PRD Vol. II §8.2) : *le nom est écrit **onze fois** au corps, et **« l'opérateur » n'y subsiste nulle part*** ; **R-1 à R-3, R-5 à R-8 : zéro occurrence** — ⚠ *R-5 (aucun standard technique désigné) était invoqué à tort au § 33.3 pour interdire de décrire le contenu d'un règlement ; l'invocation est retirée, la borne demeure et se tient sur le seul socle.* Vol. III — **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 33.1 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 33.1, § 33.2, § 33.3 et § 33.4 (deux), « fait négatif vérifié » au § 33.1* ; **R-11 (jalons visés, jamais fixés) : quatre occurrences du sigle**, § 33.0 (trois) et § 33.4 — ⚠ *le garde-fou du Vol. III et celui du Vol. II se recouvrent ici, et les deux sont nommés* ; **R-09 : une occurrence du sigle**, § 33.3 ; ⚠ **R-09 et R-11 sont l'un et l'autre appliqués HORS de leur domaine d'origine** — *statuts de normalisation pour le premier, jalons du NIST pour le second* —, **et les deux extensions se déclarent au corps** ; **R-01 à R-08, R-10, R-12, R-13 : zéro occurrence** |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — ⚠ **réserve F-29 (S-027) — ne jamais écrire « lancé » ni « en production » du rail en temps réel** ; *le mot « lancé » est écrit **onze fois** au corps — § 33.0 (deux), § 33.1 (trois), § 33.2, § 33.4 (trois) et la synthèse (deux) — ⚠ **et son domaine se départage** : des **trois du § 33.1**, une seule est **indicative** — le lancement du **rail de grande valeur**, fait daté du socle (F-45, S-043) que la réserve ne vise pas —, les **deux autres étant des mentions du mot entre guillemets** ; **les huit autres occurrences se répartissent en deux au conditionnel, deux au négatif et quatre dans la formule qui l'interdit**. « En production » est écrit **trois fois** — § 33.0, § 33.2 et la synthèse —, **une fois au négatif et deux fois dans la formule qui l'interdit*** ; ⚠ **formulation imposée PRDPlan Vol. II §4.4 — « quatre *cibles successives* — 2019, 2022, 2023, 2026 », jamais « quatre reports »** : *le renvoi est écrit **une fois**, § 33.2 ; la formulation est reprise **mot pour mot deux fois** (§ 33.2, § 33.4), le terme « cibles successives » **trois fois** (§ 33.2 deux, synthèse), et la forme proscrite **deux fois**, **aux deux seuls endroits où la somme la cite pour l'interdire*** ; **R-4 (la cible T4 2026 *est* officiellement annoncée — l'attribuer, ne pas l'affirmer au futur catégorique) : deux occurrences du sigle**, § 33.2 et § 33.4 ; **PRD Vol. II §8.4 (neutralité fournisseur) : une occurrence du renvoi**, § 33.1, **et trois de la formule**, § 33.1 (deux) et § 33.2 ; ⚠ **métriques d'exploitant et jalons de programme attribués à Paiements Canada à chaque occurrence** (PRD Vol. II §8.2) : *le nom est écrit **onze fois** au corps, et **« l'opérateur » n'y subsiste nulle part*** ; **R-1 à R-3, R-5 à R-8 : zéro occurrence** — ⚠ *R-5 (aucun standard technique désigné) était invoqué à tort au § 33.3 pour interdire de décrire le contenu d'un règlement ; l'invocation est retirée, la borne demeure et se tient sur le seul socle.* Vol. III — **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 33.1 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 33.1, § 33.2, § 33.3 et § 33.4 (deux), « fait négatif vérifié » au § 33.1* ; **R-11 (jalons visés, jamais fixés) : quatre occurrences du sigle**, § 33.0 (trois) et § 33.4 — ⚠ *le garde-fou du Vol. III et celui du Vol. II se recouvrent ici, et les deux sont nommés* ; **R-09 : une occurrence du sigle**, § 33.3 ; ⚠ **R-09 et R-11 sont l'un et l'autre appliqués HORS de leur domaine d'origine** — *statuts de normalisation pour le premier, jalons du NIST pour le second* —, **et les deux extensions se déclarent au corps** ; **R-01 à R-08, R-10, R-12, R-13 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **3 500 mots** de corps (§ 33.0 à § 33.4), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.30 — au prorata des sections, ce chapitre en portant quatre. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier. ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 33 — **reprise par copie**, décision 17)* — la couche sémantique commune des paiements canadiens est en place — Lynx a achevé sa bascule ; Paiements Canada annonce un RTR nativement ISO 20022 dès son lancement, **visé** au T4 2026 (cible plusieurs fois repoussée — attribuer, ne pas affirmer au futur catégorique).
@@ -183,8 +183,8 @@ l'attribuer à son auteur, **ne pas l'affirmer au futur catégorique**.*
 source vieillie.** *Aucune source primaire du socle **ne mentionne deux organisations souvent citées**
 parmi les partenaires **actuels** du rail — ⚠ **l'entrée S-027 les nomme l'une et l'autre**, et c'est
 là que se vérifie qui la réserve vise ; les partenaires établis sont les **quatre** que la page
-officielle des partenaires liste (tableau 33.1, légende).* ⚠ **Un dossier qui citerait les deux
-premières comme partenaires actuels contredirait les sources primaires disponibles au 16 juillet
+officielle des partenaires liste (tableau 33.1, légende).* ⚠ **Un dossier qui citerait ces deux
+organisations-là comme partenaires actuels contredirait les sources primaires disponibles au 16 juillet
 2026**, ⚠ **et la réserve a été re-constatée au gel du 28 juillet 2026** — ⚠ *le socle ne dit rien, en
 revanche, d'une éventuelle association **passée**, et la somme n'en infère aucune : absence de
 documentation, degré 3.* ⚠ **Neutralité fournisseur** : *aucun partenaire n'est nommé dans ce chapitre ;
@@ -322,8 +322,11 @@ change les conséquences, non l'infraction.*
    comme événements de péremption, et ce chapitre est **celui du Livre dont le plus grand nombre
    d'énoncés changera de temps grammatical**.* ☑ **Les deux ont été re-portées à leur source le
    28 juillet 2026** — *et re-constatées comme annoncées, non comme accomplies.*
-3. ⚠ **Deux comptes à rebours ont été re-mesurés au gel et ont bougé** : *vingt-huit jours avant l'entrée
-   en vigueur du règlement, contre trente-neuf au gel du Vol. II.* **Ils n'ont pas été recopiés.**
+3. ⚠ **Le seul compte à rebours du chapitre a été re-mesuré au gel, et il a bougé** : *vingt-huit jours
+   avant l'entrée en vigueur du règlement, contre trente-neuf au gel du Vol. II.* **Il n'a pas été
+   recopié.** ⚠ *L'attestation antérieure en annonçait **deux** et n'en nommait qu'un : la source en
+   portait bien deux — quinze jours de la publication à son propre gel —, mais **la somme ne reprend
+   pas le second**.*
 4. **Les décomptes sont publiables** (G-2). L'écart à la cible est relevé au [`README.md`](README.md) du
    dossier et alimente **D-4**, déjà tranchée.
 5. **Les renvois « ch. N » vers les chapitres non rédigés sont des renvois de plan.** Ils résolvent
@@ -363,6 +366,16 @@ change les conséquences, non l'infraction.*
   relecture court en parallèle sur les autres pièces du compendium, et trois passes numérotant dans une
   série partagée sans allocation préalable ont déjà alloué dix numéros deux fois* (PRD §13).
 
+- **Remontée neuve, non bloquante — dette d'appareil : le vérificateur ne voit pas l'italique
+  déséquilibrée.** *Le contrôle [8] de `verifier-piece.py` cherche le marqueur de gras, celui de lien
+  et celui de titre ; **il ne cherche pas l'astérisque seule**. Une emphase ouverte et non refermée
+  laisse donc une astérisque littérale dans la prose rendue, **les huit contrôles au vert**.* ⚠ **Le
+  défaut n'est pas théorique** : *la version de cette pièce publiée le 27 juillet 2026 en portait
+  **deux** — au § 33.0 et au § 33.4 —, et elles n'ont été trouvées qu'en comptant les astérisques du
+  rendu hors feuille de style et hors script.* **Demande remontée** : *que l'astérisque isolée entre au
+  contrôle [8], avec sa mutation au harnais.* ⚠ **Le numéro n'est pas alloué ici**, pour le motif
+  ci-dessus.
+
 **Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.30** — § 33.1 à § 33.4,
 dans l'ordre exact et **sous leurs intitulés du plan** —, le § 33.0 étant une **ouverture de chapitre**.
 La **table de couverture est respectée pour son unique ligne** : le Vol. II §15.1-15.4 est condensé aux
@@ -372,9 +385,11 @@ réalignée — ⚠ **et le réalignement déjà opéré par le plan, dans le se
 
 ⚠ **La réserve F-29 est tenue sur tout son domaine** : *sur le **rail en temps réel**, seul domaine
 qu'elle vise, le mot « lancé » n'apparaît qu'au **conditionnel attribué** ou dans la formule qui
-l'interdit, et **« en production » n'apparaît qu'au négatif ou dans cette même formule**.* ⚠ **Les
-trois occurrences indicatives du § 33.1 portent sur le rail de grande valeur**, *dont le lancement est
-un fait daté du socle (F-45, S-043) que la réserve ne vise pas.* ⚠ **La formulation imposée sur les
+l'interdit, et **« en production » n'apparaît qu'au négatif ou dans cette même formule**.* ⚠ **Des trois
+occurrences du § 33.1, une seule est indicative** — *« le système est **lancé** le 1ᵉʳ septembre 2021 »,
+du **rail de grande valeur**, dont le lancement est un fait daté du socle (F-45, S-043) que la réserve
+ne vise pas* ; **les deux autres sont des mentions du mot entre guillemets**, *dont l'une nomme
+précisément le rail que la réserve vise.* ⚠ **La formulation imposée sur les
 cibles successives est reprise mot pour mot à ses deux occurrences** — § 33.2 et § 33.4 —, *le terme
 « cibles successives » revenant trois fois*, et **« quatre reports » n'est écrit qu'aux deux endroits
 où la somme le proscrit**. **R-4 du Vol. II est tenu** — *la cible est attribuée, jamais affirmée au
@@ -400,13 +415,19 @@ mot au lieu de deux ; la neutralité fournisseur pour deux occurrences de sa for
 la troisième — au § 33.2 — n'étant pas déclarée ; « en production » pour « toujours au négatif » là où
 deux de ses trois occurrences sont dans la formule qui l'interdit ; la remontée R-IV-96 pour quatre
 intervalles ancrés au lieu de deux ; le § 31.2 du ch. 31 pour un siège que l'appareil ne lui déclare
-pas ; le tableau 33.1 pour nommer des partenaires qu'il ne nomme pas ; et le socle consolidé pour
-zéro entrée alors que G-3 est franchie.* ⚠ **S'y ajoute une invocation fautive de garde-fou** :
+pas ; le tableau 33.1 pour nommer des partenaires qu'il ne nomme pas ; le mot « lancé » au § 33.1 pour
+trois occurrences indicatives là où **une seule** l'est, les deux autres étant des mentions entre
+guillemets ; les comptes à rebours pour deux là où le chapitre n'en porte qu'un ; et le socle consolidé
+pour zéro entrée alors que G-3 est franchie.* ⚠ **S'y ajoute une invocation fautive de garde-fou** :
 ***R-5 du Vol. II était invoqué au § 33.3 pour une règle qu'il ne porte pas*** — *sa matière est le
 standard technique non désigné du cadre bancaire, et sa source le déclare hors périmètre pour ce
 chapitre précis.* ⚠ **La borne que R-5 était censé appuyer n'a pas bougé** : *le contenu du By-law
 No. 10 n'est pas décrit, le socle n'en portant que trois dates* — ***retirer une invocation fautive
-n'est pas retirer une borne***.
+n'est pas retirer une borne***. ⚠ **S'y ajoute enfin une revendication de siège retirée** : *la
+synthèse posait la formulation imposée « une fois pour toute la somme » alors qu'**aucun siège n'est
+déclaré à ce chapitre** à [`check-sieges.py`](../PRD/check-sieges.py) ; la formulation reste posée
+ici et le ch. 36 la reprend telle quelle, mais **un siège ne se pose pas en un seul geste** — le
+demander est une remontée, non une correction de rédacteur.*
 
 
 ---

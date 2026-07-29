@@ -8,8 +8,8 @@ Deuxième mouvement — la confiance hostile (ch. 19-20). **Premier chapitre du 
 | **Statut** | **Brouillon de rédaction, non publiable** — **rédigé le 27 juillet 2026 avant G-3 et G-4**, sur instruction d'auteur. ⚠ **G-3 a été franchie depuis, le 28 juillet 2026** (PRD v0.14 ; socle consolidé [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées `S-001`…`S-159`**), et **G-4 demeure ouverte** : *une porte franchie après coup ne rattrape pas la pièce écrite avant elle* — **celle-ci n'a pas été ré-adossée entrée par entrée au socle consolidé**, et le ré-adossement reste dû. ⚠ **Deux obligations propres à ce chapitre, et une seule subsiste.** *(a)* Le TOC déclarait la thèse **premier énoncé à instruire avant rédaction**, sa proportion devant être établie par dénombrement sur un corpus déclaré : ⚠ **l'exigence est éteinte avec son objet depuis le TOC v0.25** — la thèse ne porte plus de proportion (**R-IV-32**), le corps **n'en écrit aucune**, et le corpus candidat reste nommé au § 19.1 sans être exploité. *(b)* ⚠ **Celle-ci subsiste** : **CA-IV-11 exige une relecture dédiée par un relecteur distinct, dont le compte rendu est déposé et nommé dans la pièce, l'attestation auto-délivrée étant proscrite même exacte** — **aucune relecture dédiée n'a eu lieu**, et **rien dans cette pièce ne doit être lu comme une attestation**. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet de faits de G-1 levé le 28 juillet 2026** — 123 entrées à sensibilité temporelle portées à leur source ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) ; ⚠ **l'obligation de pièce du Livre II, elle, reste due**. Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Les identifiants de vulnérabilité et les incidents datés se périment par publication de correctif** : ils sont cités comme **jalons datés**, jamais comme état courant d'exposition — et **quatre des identifiants mobilisés portent un vote adversarial incomplet** |
 | **Socle mobilisé** | Résolution contre le **Vol. III *Monographie* ch. 12**, dont **dix-sept entrées propres** sont mobilisées — **F-03**, **F-04**, **F-13** à **F-26**, **F-56** — et **quatre entrées héritées** : **H-09** en **[A]**, **H-11** en **[B]**, **H-24** et **H-26** en **[C]**. Toutes conservent leurs **niveaux d'origine** : sur **F-13 à F-26**, **treize en [A]** et **une en [B]** (F-26) ; **F-03** et **F-04** en **[A]** ; **F-56** en **[B]**. Le **Vol. I *Monographie* §2.10.1 et §2.10.2** fournit les § 19.2 et § 19.3, en **[C]**. ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** et ces entrées y résolvent par la **table de correspondance n° 2** ([`socle-consolide.md`](../PRD/socle-consolide.md) §5) ; la pièce les cite **dans la série du Vol. III, préfixées de leur volume** (décision 7) — **la re-citation en `S-nnn` n'est pas faite et reste due**. ⚠ **F-26 porte un vote adversarial incomplet**, et *un vote incomplet n'est pas un vote favorable* : ses quatre identifiants **illustrent** et ne portent aucun énoncé central. **Aucun énoncé n'est central au sens de CA-IV-01** : le PRD v0.14 déclare le **vote adversarial dû pour toute entrée appelée à porter un fait central**, et la consolidation n'en a conduit aucun |
-| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les sept sections du corps, § 19.0 à § 19.6.** Vol. III — **R-08 (l'absence porte sur l'usurpation du justificatif propre d'un agent, et sur cela seul) : ce chapitre en est le SIÈGE — un marqueur**, § 19.6, celui du siège lui-même ; **R-02 : un marqueur**, § 19.1 ; **R-14 : un marqueur**, § 19.6. **R-01, R-03 à R-07, R-09 à R-13 : zéro marqueur.** ⚠ **R-12 est appliqué sur tout le domaine sans être marqué une seule fois, et c'est le garde-fou structurant du chapitre** : traitement défensif exclusif, au niveau architectural, **aucune recette d'exploitation** — chacune des six lignes du tableau 19.1 nomme **le maillon qui cède** et s'arrête là. Même régime pour **R-14** hors de son marqueur : les absences portent leur degré, et **les marqueurs littéraux de degré sont quatre — « degré 1 » aux § 19.4 et § 19.6, « degré 3 » aux § 19.5 et § 19.6** ; les autres absences sont **qualifiées sans marqueur** (§ 19.1, § 19.6 et tableau 19.2) et relèvent du domaine déclaré. Même régime pour **R-09** (statut dit à chaque mention) et pour **R-04** et **R-13** (§ 19.1 : la formule « identity as the new control plane » est **laissée en langue originale**, déclarée homonyme et renvoyée à son siège, le ch. 7 § 7.5 — *elle n'est employée nue à aucune occurrence*). Vol. II — **§8.2 (métriques auto-déclarées) : zéro marqueur** ; les métriques des § 19.1 et § 19.5 sont attribuées à leur source à chaque occurrence ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : zéro marqueur** ; la formule imposée est tenue aux § 19.1 et § 19.6 ; **R-1 à R-8 : zéro marqueur** |
-| **Volumétrie cible** | ≈ **5 000 mots** de corps (§ 19.0 à § 19.6), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 5 764 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+15,3 %**, re-mesuré à la relecture du 28 juillet 2026 (⚠ *valeur antérieure périmée : 5 529, +10,6 %* ; les **235 mots** de l'écart sont ceux des attributions rétablies au titre de la décision 15 — **aucune amputation n'a été faite**, D-4). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les sept sections du corps, § 19.0 à § 19.6.** Vol. III — **R-08 (l'absence porte sur l'usurpation du justificatif propre d'un agent, et sur cela seul) : ce chapitre en est le SIÈGE — un marqueur**, § 19.6, celui du siège lui-même ; **R-02 : un marqueur**, § 19.1 ; **R-14 : un marqueur**, § 19.6. **R-01, R-03 à R-07, R-09 à R-13 : zéro marqueur.** ⚠ **R-12 est appliqué sur tout le domaine sans être marqué une seule fois, et c'est le garde-fou structurant du chapitre** : traitement défensif exclusif, au niveau architectural, **aucune recette d'exploitation** — chacune des six lignes du tableau 19.1 nomme **le maillon qui cède** et s'arrête là. Même régime pour **R-14** hors de son marqueur : les absences portent leur degré, et **les marqueurs littéraux de degré sont quatre — « degré 1 » aux § 19.4 et § 19.6, « degré 3 » aux § 19.5 et § 19.6** ; les autres absences sont **qualifiées sans marqueur** (§ 19.1, § 19.6 et tableau 19.2) et relèvent du domaine déclaré. Même régime pour **R-09** (statut dit à chaque mention) et pour **R-04**, garde-fou d'homonymie du plan de contrôle (§ 19.0 et § 19.1 : la formule « identity as the new control plane » est **laissée en langue originale**, sa traduction porte ses guillemets, et l'une comme l'autre sont déclarées homonymes et renvoyées à leur siège, le ch. 7 § 7.5 — *elle n'est employée nue à aucune occurrence*). ⚠ **R-13 du Vol. III ne s'applique pas ici et ne doit pas y être rattaché** : *il régit les échelles d'autonomie du Vol. I*, dont ce chapitre ne porte aucune occurrence — l'homonymie du plan de contrôle relève de **R-04** dans cette série, et de **R-8** dans celle du Vol. II. Vol. II — **§8.2 (métriques auto-déclarées) : zéro marqueur** ; les métriques des § 19.1 et § 19.5 sont attribuées à leur source à chaque occurrence ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : zéro marqueur** ; la formule imposée est tenue aux § 19.1 et § 19.6 ; **R-1 à R-8 : zéro marqueur** |
+| **Volumétrie cible** | ≈ **5 000 mots** de corps (§ 19.0 à § 19.6), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 5 779 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+15,6 %**, re-mesuré au commit de la contre-relecture du 28 juillet 2026 (⚠ *deux valeurs antérieures sont périmées : **5 529**, +10,6 % à la rédaction, et **5 764**, +15,3 % à la première relecture*). Les **250 mots** de l'écart cumulé se ventilent en **235** pour les attributions rétablies au titre de la décision 15 et **15** pour le garde-fou d'homonymie rétabli au § 19.0 et la date d'avril 2026 rétablie au § 19.5 — **aucune amputation n'a été faite**, D-4. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 19)* — l'identité est le **verrou architectural** de la sécurité agentique — un agent dépourvu d'identité propre et gouvernée opère dans un écart d'attribution qui rend le moindre privilège inapplicable —, et les référentiels du domaine la traitent désormais comme un plan de contrôle à part entière : c'est ce qui justifie d'absorber la sécurité dans le cadre identitaire.
 >
@@ -44,9 +44,10 @@ pour non soutenu aurait produit un chiffre sans thèse à porter.*
 
 **Ce que ce chapitre soutient, et ce que le socle en porte.** Lecture de l'auteur — **ce que le socle
 établit** : l'énoncé d'imputation architecturale de l'entrée **ASI03** du référentiel de sécurité
-applicative de l'**OWASP** (F-19, **[A]**) ; la qualification de l'identité d'agent en nouveau plan de
-contrôle par le rapport *State of Agentic AI Security and Governance*, version 2.01 de **juin 2026**
-(F-20, **[A]**) ; l'existence de techniques et de contre-mesures nommant **l'écart
+applicative de l'**OWASP** (F-19, **[A]**) ; la qualification de l'identité d'agent en « **nouveau
+plan de contrôle** » par le rapport *State of Agentic AI Security and Governance*, version 2.01 de
+**juin 2026** — ⚠ *formule de ce rapport, dont l'homonymie est traitée au § 19.1* — (F-20, **[A]**) ;
+l'existence de techniques et de contre-mesures nommant **l'écart
 d'autorité entre mandant et mandataire** (F-14, F-15, F-24) ; et **un** incident public daté de
 défaillance d'identité **non humaine** (F-21, **[A]**). **Ce qu'il n'établit pas** : que l'identité
 soit *le* verrou de la sécurité agentique **plutôt qu'un verrou parmi d'autres**, ni qu'un tri par
@@ -385,8 +386,8 @@ une technique.**
 normalisé de provenance des entrées de mémoire longue ni des documents récupérés — absence de
 documentation, degré 3.** Une préimpression porte bien la réserve qu'**aucun cadre d'évaluation du
 risque centré sur les protocoles de communication d'agents n'était établi à sa date** — ⚠ *réserve
-d'auteurs, datée et périssable, dont il ne se tire rien sur le contenu des spécifications*, et **non
-versée au socle**.
+d'auteurs, **datée d'avril 2026** et périssable, dont il ne se tire rien sur le contenu des
+spécifications*, et **non versée au socle**.
 
 ⚠ **Ce versant hostile est le pendant de l'ancrage informationnel posé au ch. 5**, qui n'en porte
 **aucune occurrence** : *la provenance des sources y est traitée comme une propriété de qualité, ici
@@ -478,7 +479,7 @@ et la distinction entre elles est le contenu, non la nuance.**
 
 : Tableau 19.2 — Trois régimes d'absence côté protocolaire, et ce que chacun autorise à écrire, au 21 juillet 2026.
 
-⚠ **Et le mot que ce chapitre n'emploie à aucune occurrence** : *sécurisé*. MCP
+⚠ **Et le mot que ce chapitre n'applique à aucun protocole, à aucune occurrence** : *sécurisé*. MCP
 porte un **cadre d'autorisation** — formule imposée par la réserve du socle du Vol. II —, *parce que la
 sécurité dépend de l'implémentation.*
 
@@ -515,18 +516,27 @@ n'a pas été conduit — ⚠ **l'exigence est éteinte avec son objet depuis le
 portant plus de proportion ; *(b)* **CA-IV-11** — relecture dédiée par un
 relecteur distinct, compte rendu déposé et nommé — **n'est toujours pas satisfaite**. ⚠ *L'attestation
 auto-délivrée est proscrite même exacte : rien dans cette pièce, y compris la présente note, ne doit
-être lu comme une attestation de traitement défensif conforme.*
+être lu comme une attestation de traitement défensif conforme.* ⚠ **Les deux passes de relecture du
+28 juillet 2026 ne la satisfont pas davantage, et le dire est le seul geste qui l'empêche d'être prise
+pour elle** : *aucun compte rendu n'a été déposé ni nommé, aucun relecteur n'a été désigné au titre du
+jalon J-IV-6, et la seconde passe a trouvé dans la première une attribution de garde-fou fausse —
+**R-13 du Vol. III rattaché à l'homonymie du plan de contrôle**, qui relève de **R-04**. Cela mesure ce
+qu'une passe non désignée vaut ; cela n'atteste rien.*
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ **Et quatre identifiants de vulnérabilité
    portent un vote adversarial incomplet** (F-26) : *un vote incomplet n'est pas un vote favorable*, et
    ils sont employés en illustration seule, jamais comme appui.
-2. **Les décomptes sont publiables** (G-2). Écart de **+15,3 %**, re-mesuré au commit du 28 juillet
-   2026 ; la volumétrie du Livre alimente **D-4** par **R-IV-17**.
+2. **Les décomptes sont publiables** (G-2). Écart de **+15,6 %** — **5 779 mots** —, re-mesuré au
+   commit de la contre-relecture du 28 juillet 2026 ; la volumétrie du Livre alimente **D-4** par
+   **R-IV-17**.
 3. **Tous les renvois « ch. N » de cette pièce résolvent désormais contre du texte**, les cinq Livres
-   ayant été rédigés le 27 juillet 2026 : **ch. 5, 6, 7 § 7.5, 11 § 11.1.2, 12, 14, 15, 20** au
+   ayant été rédigés le 27 juillet 2026 : **ch. 5, 6, 7 § 7.5, 11 § 11.1.2, 12 § 12.2, 14, 20** au
    Livre I et au Livre II ; **ch. 37 § 37.3** — siège de la non-compositionnalité, invoqué **deux
    fois** — au Livre IV ; **ch. 47 § 47.7** — où l'incident public candidat de la relève sur le
-   harnais est décrit — au Livre V. ⚠ *Résoudre contre du texte ne vaut pas recevabilité de la
+   harnais est décrit — au Livre V. ⚠ **Liste re-mesurée par balayage exhaustif au commit du
+   28 juillet 2026** : *un « ch. 15 » y figurait, que la pièce ne porte à aucune ligne* — le seul
+   autre renvoi « ch. N » du corps est **Vol. II *Monographie* ch. 21 §21.2**, qui résout contre sa
+   source et non contre la somme. ⚠ *Résoudre contre du texte ne vaut pas recevabilité de la
    cible* : les cinq Livres sont des brouillons hors portes.
 4. **Deux relèves atterrissent ici et ne sont pas consommées** : le corpus candidat du dénombrement, et
    la classe d'attaques dont le vecteur est le harnais. ⚠ *La seconde entrerait **contre** la thèse de

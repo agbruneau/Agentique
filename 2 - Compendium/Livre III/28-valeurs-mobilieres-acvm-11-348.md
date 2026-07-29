@@ -7,10 +7,10 @@ n'en a pas besoin**.*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — **rédigé le 27 juillet 2026 avant G-3**, sur instruction d'auteur ; ⚠ **la règle cardinale du PRD §5 était donc enfreinte** (voir la note de statut, § 28.4). ⚠ **G-3 a été franchie depuis, le 28 juillet 2026** (PRD v0.14 ; socle consolidé [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées `S-001`…`S-159`**), et le **volet de faits de G-1 levé le même jour** : *une porte franchie après coup ne rattrape pas la pièce écrite avant elle* — **celle-ci n'a pas été ré-adossée entrée par entrée au socle consolidé**, et le ré-adossement reste dû. ⚠ **Ce chapitre n'est pas conditionné par G-4** : sa ligne Fusion ne cite que le Vol. II ; le Vol. III y est mentionné **une fois, en renvoi**, au titre de la lecture C de la cartographie du ch. 27 § 27.7 |
+| **Statut** | **Brouillon de rédaction, non publiable** — **rédigé le 27 juillet 2026 avant G-3**, sur instruction d'auteur ; ⚠ **la règle cardinale du PRD §5 était donc enfreinte** (voir la note de statut, § 28.4). ⚠ **G-3 a été franchie depuis, le 28 juillet 2026** (PRD v0.14 ; socle consolidé [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées `S-001`…`S-159`**), et le **volet de faits de G-1 levé le même jour** : *une porte franchie après coup ne rattrape pas la pièce écrite avant elle* — **celle-ci n'a pas été ré-adossée entrée par entrée au socle consolidé**, et le ré-adossement reste dû. ⚠ **Ce chapitre n'est pas conditionné par G-4** : sa ligne Fusion ne cite que le Vol. II ; **son socle n'y est mobilisé qu'une fois, en renvoi**, au titre de la lecture C de la cartographie du ch. 27 § 27.7 — ⚠ *ses deux garde-fous R-09 et R-14 sont balayés, ce qui n'est pas une consommation de son texte* |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet de faits de G-1 est levé le 28 juillet 2026** — 123 entrées à sensibilité temporelle portées à leur source ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) —, ⚠ **et l'entrée qui porte cet avis en est revenue ☐ NON ÉTABLIE** : *six routes tentées*, source primaire servie mais **non extractible**, les autres en accès refusé ou introuvables. ⚠ ***Instruire n'est pas confirmer*** : la date de l'avis n'a pas été re-constatée au gel, et **aucun énoncé de ce chapitre ne peut être central sur cette composante** (CA-IV-01). ⚠ **Une question du chapitre est en outre datée d'une absence** — les suites de la consultation close le 31 mars 2025 ne sont documentées par aucune source du socle, **et la fenêtre d'absence s'allonge d'un jour par jour**. Gel de source consommé : **16-17 juillet 2026** (Vol. II ch. 12) — ⚠ **il ne tient pas lieu du gel de la somme** |
 | **Socle mobilisé** | Les énoncés résolvent contre le **Vol. II *Monographie* ch. 12**, dont l'entrée **F-26** est en **[B]** — consultée directement le 16 juillet 2026 sur la page officielle de l'instrument, son communiqué et son texte officiel. L'entrée héritée **H-07** du **Vol. III** est citée **une fois, en renvoi**. ⚠ **F-09 et F-25 du Vol. II ne sont pas citées au corps** : leur matière est atteinte **par renvoi** aux **ch. 25 § 25.3** et **ch. 27 § 27.1**, et *déclarer un identifiant qu'on n'emploie pas est une attestation vide*. ⚠ **Deux séries F-xx coexistent et se préfixent à chaque emploi** (décision 7 du TOC). ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** et ces entrées y résolvent par ses deux tables de correspondance ([`socle-consolide.md`](../PRD/socle-consolide.md) §4 et §5) : ⚠ **F-26 du Vol. II et H-07 du Vol. III y sont FONDUES en une seule entrée — `S-024`, en [B]** —, **F-09 → `S-009`**, **F-25 → `S-023`**. **La re-citation en `S-nnn` n'est pas faite et reste due.** **Aucun énoncé n'est central au sens de CA-IV-01** : aucun vote adversarial n'a été conduit par la consolidation, et `S-024` porte de surcroît une **re-datation non établie** |
-| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés à la relecture du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus.* Vol. II — **CA-5 (fidélité des citations) : deux occurrences du sigle**, § 28.1 et § 28.2 — ⚠ **l'instrument est en anglais, et la doctrine française du socle n'est pas présentée comme une citation verbatim** ; **garde-fou « aucun avis juridique » (PRD Vol. II §3) : une occurrence de la formule et une du renvoi**, § 28.0 — *le garde-fou est **appliqué à tout le chapitre**, aucun énoncé n'y étant un avis* ; **PRD §8.2.4 : une occurrence du renvoi**, § 28.2, **en renvoi au ch. 25** ; **PRDPlan Vol. II §4.4 — « attendu par E-23 » : une occurrence du renvoi et une de la formule**, § 28.2 ; **R-7 (correspondance produit ↔ réglementation) : zéro occurrence — et il est sans objet ici**, ce chapitre étant en contexte réglementaire pur ; **R-1 à R-6, R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : deux occurrences du sigle**, § 28.2 et § 28.3 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 », **deux occurrences**, § 28.2 et § 28.3 ; « fait négatif vérifié », **deux occurrences**, § 28.2 et § 28.3, l'une et l'autre **en négation** — *les deux absences du chapitre sont au degré 3, aucune n'est un fait négatif vérifié* ; **R-09 : une occurrence du sigle**, § 28.1 ; **R-01 à R-08, R-10 à R-13 : zéro occurrence** |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés à la relecture du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus.* Vol. II — **CA-5 (fidélité des citations) : deux occurrences du sigle**, § 28.1 et § 28.2 — ⚠ **l'instrument est en anglais, et la doctrine française du socle n'est pas présentée comme une citation verbatim** ; **garde-fou « aucun avis juridique » (PRD Vol. II §3) : une occurrence de la formule et une du renvoi**, § 28.0 — *le garde-fou est **appliqué à tout le chapitre**, aucun énoncé n'y étant un avis* ; **PRD Vol. II §8.2.4 : une occurrence du renvoi**, § 28.2, **en renvoi au ch. 25** ; **PRDPlan Vol. II §4.4 — « attendu par E-23 » : une occurrence du renvoi et une de la formule**, § 28.2 ; **R-7 (correspondance produit ↔ réglementation) : zéro occurrence — et il est sans objet ici**, ce chapitre étant en contexte réglementaire pur ; **R-1 à R-6, R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : deux occurrences du sigle**, § 28.2 et § 28.3 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 », **deux occurrences**, § 28.2 et § 28.3 ; « fait négatif vérifié », **deux occurrences**, § 28.2 et § 28.3, l'une et l'autre **en négation** — les deux absences du chapitre sont au degré 3, aucune n'est un fait négatif vérifié* ; **R-09 : une occurrence du sigle**, § 28.1 ; **R-01 à R-08, R-10 à R-13 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **2 500 mots** de corps (§ 28.0 à § 28.3), **cible dérivée** de l'enveloppe du Livre — 90 000 mots au TOC v0.25 — au prorata des sections, ce chapitre en portant trois : **la plus basse du Livre avec le ch. 26**. ☑ **Décompte publiable depuis G-2** ; **réel : 2 531 mots**, soit **+1,2 %**, re-mesuré à la relecture du 28 juillet 2026 par [`PRD/decompte.sh`](../PRD/decompte.sh) — ⚠ *valeur antérieure périmée : 2 379, −4,8 %*. Les **152 mots** de l'écart sont ceux des bornes, des attributions et des re-vérifications ajoutées par la relecture : ⚠ **aucune amputation n'a été faite**, et **D-4 interdit l'amputation comme le gonflement**. Le tableau du [`README.md`](README.md) du dossier porte encore la mesure antérieure |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 28)* — les lois existantes s'appliquent — la définition retenue des systèmes d'IA (autonomie et adaptativité variables) capture nativement l'agentique.
@@ -255,9 +255,10 @@ TOC, ce PRD ni le Conspectus — il **remonte**.*
 d'auteur du 27 juillet 2026. ⚠ **Les deux ont bougé le 28 juillet 2026 — G-3 franchie, volet de faits
 de G-1 levé — et cela ne rattrape rien** : *la pièce a été écrite sur un socle qui n'existait pas, et
 elle n'a pas été ré-adossée à celui qui existe désormais.* ⚠ **La porte G-4 ne conditionne pas ce
-chapitre** : sa ligne Fusion ne cite que le Vol. II, et la seule mention du Vol. III y est **un renvoi**
-vers le ch. 27 § 27.7. ⚠ **La décision D-9 ne le bloque pas** : *il ne prescrit aucune parade humaine —
-l'avis ne prescrit rien du tout.*
+chapitre** : sa ligne Fusion ne cite que le Vol. II, et **son socle n'y est mobilisé qu'une fois, en
+renvoi** vers le ch. 27 § 27.7 — ⚠ *le balayage de ses garde-fous R-09 et R-14 n'est pas une
+consommation de son texte, et G-4 porte sur le texte.* ⚠ **La décision D-9 ne le bloque pas** : *il ne
+prescrit aucune parade humaine — l'avis ne prescrit rien du tout.*
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01.** Le socle consolidé existe depuis le 28 juillet
    2026, mais **aucun vote adversarial n'a été conduit par la consolidation** et l'entrée qui porte cet
@@ -303,7 +304,7 @@ l'avis ne prescrit rien du tout.*
 
 **Remontées ouvertes par la relecture du 28 juillet 2026 — sans numéro alloué.** ⚠ *La série `R-IV-NN`
 n'a pas d'allocateur et la relecture court en parallèle sur les cinquante pièces ; **prendre un numéro
-ici reproduirait la collision de dix identifiants du 27 juillet 2026** (PRD §13). Les quatre demandes
+ici reproduirait la collision de dix identifiants du 27 juillet 2026** (PRD §13). Les six demandes
 ci-dessous se numérotent à la passe d'arbitrage.*
 
 - **Le ch. 50 n'inventorie pas les suites de cette consultation — non bloquante, d'écart entre une
@@ -332,6 +333,33 @@ ci-dessous se numérotent à la passe d'arbitrage.*
   **−4,8 %** à **+1,2 %**, et le total du Livre s'en trouve décalé d'autant. **Demande remontée** : que
   la ligne et le total soient re-mesurés à la passe qui committe. ⚠ **Les 152 mots sont de l'appareil,
   non de la matière**, et **aucune amputation n'a été faite** (D-4).
+- **Le contrôle [8] de `verifier-piece.py` ne voit pas une emphase déséquilibrée dans une cellule de
+  tableau — non bloquante, de dette d'appareil** *(ouverte par la seconde relecture du 28 juillet
+  2026)*. La première relecture avait imbriqué un second `*…*` dans une italique déjà ouverte du champ
+  *Garde-fous balayés* ; l'astérisque orphelin **a traversé le générateur et s'est rendu littéral dans
+  la page**, et ⚠ **les huit contrôles de pièce sont passés sur les deux rendus fautifs** — *le
+  contrôle « balisage Markdown résiduel » existe précisément pour cette classe et ne l'a pas vue.*
+  **Demande remontée** : que le contrôle [8] compte les délimiteurs d'emphase par cellule de l'en-tête,
+  ou qu'il refuse tout `*` littéral survivant dans le corps de la page. ⚠ *Le défaut n'a été trouvé
+  qu'en comparant le compte d'astérisques du rendu avant et après la passe — aucun instrument
+  versionné ne le fait.*
+- ⚠ **`rendre-piece.py` détruit le libellé de tout lien dont le texte est un span de code — non
+  bloquante, de dette d'appareil, et elle dépasse cette pièce** *(ouverte par la seconde relecture du
+  28 juillet 2026)*. Un lien dont le libellé est un nom de fichier entre accents graves — la forme
+  employée partout dans les en-têtes de pièce — sort du générateur avec un **libellé réduit au numéro
+  de la marque interne qui protège les spans de code** : la page affiche un chiffre nu là où le `.md`
+  écrit le nom du fichier. ⚠ **Le balayage déclare son domaine : les cinquante pages du compendium ont
+  été mesurées, quarante-neuf sont touchées, pour deux cent soixante-dix-sept libellés détruits** —
+  *ce n'est pas un défaut de cette
+  pièce, c'en est un du générateur, et **la pièce n'est pas l'endroit où il se paie**.* ⚠ **Les
+  contrôles [7] et [8] passent sur ces pages** : *le lien résout, seul son libellé a disparu, et aucun
+  des huit contrôles ne compare un libellé rendu à sa source.* **Demande remontée** : que le
+  générateur restaure les spans de code à l'intérieur du texte de lien, et que le contrôle [7] refuse
+  un libellé réduit à une marque de protection. ⚠ **Un second défaut du même générateur est signalé
+  sans demande propre, parce qu'il est de la même main** : *l'emphase forte et italique combinée sort
+  en **balises croisées** plutôt qu'imbriquées — **318 occurrences sur les cinquante pages**. Les
+  fureteurs s'en relèvent, le contrôle [2] ne le voit pas, et **la corriger pièce par pièce serait
+  exactement le geste que ce registre proscrit** : la dette est au générateur.*
 
 **Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25** — § 28.1 à § 28.3,
 dans l'ordre exact —, le § 28.0 étant une **ouverture de chapitre**. La **table de couverture est
@@ -399,5 +427,30 @@ deux de ses termes ont bougé depuis.* **G-3 est franchie** (PRD v0.14) et **le 
 cela ne rend la pièce recevable** : elle n'a pas été ré-adossée au socle consolidé, `S-024` revient du
 gel **☐ non établie**, **aucun énoncé n'est central au sens de CA-IV-01**, et **CA-IV-11 comme CA-IV-13
 restent insatisfaites**, D-6 ne fournissant pas de relecteur tiers. ⚠ **Le compte de remontées n'est
-plus nul non plus** : la relecture du 28 juillet 2026 en a ouvert **quatre**, listées plus haut et
-**sans numéro alloué**.
+plus nul non plus** : les relectures du 28 juillet 2026 en ont ouvert **six**, listées plus haut et
+**sans numéro alloué** — ⚠ **quatre à la première passe, deux de plus à la seconde**.
+
+⚠ **Second addendum du 28 juillet 2026 — la relecture de la relecture, et ce qu'elle a constaté.**
+*Les attestations de la première relecture ont été re-constatées sur pièce plutôt que reprises*
+(décision 16) : **les treize décomptes du champ *Garde-fous balayés* sont exacts**, marqueur littéral
+et localisation — ⚠ *les deux plages annoncées à zéro ont été balayées garde-fou par garde-fou, non
+présumées* ; **les dix renvois de section résolvent** contre le titre `## § N.M` de leur pièce
+rédigée, et ⚠ **le constat le plus lourd de la première passe est vérifié — le § 50.2 rédigé porte
+onze événements de péremption, dont aucun n'est la consultation 11-348** ; **la thèse est identique
+caractère par caractère** à l'entrée du plan ; **la volumétrie vaut bien 2 531 mots** par
+`decompte.sh` ; **les deux documents nommés au § 28.2 sont ceux que la note `F-26` du Vol. II
+établit** — rapport CVMO/EY et document de réflexion de l'AMF (décision 15b) ; et **les trois états de
+la date de la ligne directrice de l'AMF valident la borne « au moins quinze mois »**. ⚠ **Trois
+défauts ont en revanche été corrigés, et le premier est une régression de la première passe** : *(1)*
+une **emphase imbriquée** dans le champ *Garde-fous balayés* laissait un astérisque littéral dans la
+page ; *(2)* ce même champ écrivait **« PRD §8.2.4 » nu** — indécidable entre deux PRD, quand le corps
+écrit correctement « PRD Vol. II §8.2.4 » (décision 7) ; *(3)* le Statut et cette note affirmaient que
+**le Vol. III n'était « mentionné qu'une fois »**, ce que le champ voisin contredisait en déclarant
+trois occurrences de ses garde-fous — *la portée de l'énoncé est le socle, non le volume, et elle est
+désormais écrite.* ⚠ **Aucune de ces corrections ne touche le corps** : *la volumétrie ne bouge pas —
+elle vaut toujours 2 531 mots, re-mesurée après correction.* ⚠ **Deux dettes d'appareil s'ouvrent en
+outre, et la seconde dépasse cette pièce** : *le vérificateur ne voit pas une emphase déséquilibrée
+dans une cellule d'en-tête, et le générateur détruit le libellé de tout lien écrit en span de code —
+**quarante-neuf pages sur cinquante, deux cent soixante-dix-sept libellés**.* ⚠ ***Une passe de
+relecture qui ne regarde que la source ne voit ni l'une ni l'autre*** : *les deux ne se constatent
+que sur le rendu, et la première ne se constate que sur le rendu **comparé** à celui d'avant.*

@@ -8,9 +8,9 @@ frontière de l'organisation, là où l'émission cesse d'être un acte interne.
 |---|---|
 | **Statut** | **Brouillon de rédaction, non publiable** — **écrit avant G-3**, franchie depuis le **28 juillet 2026** (PRD v0.14) ; **G-4 demeure ouverte** ; instruction d'auteur du 27 juillet 2026. ⚠ *Une porte franchie après coup ne rattrape pas la rédaction qui l'a devancée* : aucune entrée du socle consolidé n'était mobilisable quand cette pièce a été écrite. ⚠ **Ce chapitre porte le SIÈGE UNIQUE du KYA pour toute la somme** (§ 18.1) : les ch. 13 § 13.2, 15 § 15.2.3 et 16 § 16.3 y renvoient et **n'instruisent pas le sigle**. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet de FAITS de G-1 est levé** depuis le 28 juillet 2026 — 123 entrées à sensibilité temporelle portées à leur source ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) —, mais **le volet des relèves atterrissant hors du Livre I reste dû, et il porte celle du § 18.4**. Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Ce chapitre est le plus dense en objets périssables du mouvement** : neuf chantiers relevés, dont **deux dates d'expiration d'*Internet-Drafts* postérieures au gel et antérieures à toute publication vraisemblable**, et une ratification annoncée **sans date** |
-| **Socle mobilisé** | ⚠ **Aucune entrée du socle consolidé n'était mobilisable à la rédaction** ; l'Annexe B existe depuis le 28 juillet 2026 ([`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, 159 entrées `S-001`…`S-159`), et **la pièce n'a pas été réancrée sur la série consolidée** : elle cite ses appuis dans la série de leur volume d'origine, et ⚠ **tous les `F-xx` du corps sont ceux du Vol. III** (décision 7 — un `F-xx` nu est indécidable entre deux socles). Résolution contre le **Vol. III *Monographie* ch. 11**, dont les entrées **F-04**, **F-06**, **F-07**, **F-09**, **F-30**, **F-32**, **F-33** à **F-35**, **F-38**, **F-40**, **F-43**, **F-48** à **F-51**, **F-56**, **F-73**, **F-83**, **F-86**, **F-87** et l'entrée héritée **H-19** conservent leurs niveaux d'origine ; la correspondance vers `S-nnn` se lit à l'**Annexe B §5**, **seul instrument de résolution** — *le numéro consolidé ne se dérive pas du numéro source*. Et contre le **Vol. I *Monographie* §5.5.4, §3.6.5 et §7.4.3**, en **[C]**. ⚠ **Trois entrées mobilisées ici ont bougé à la refonte, et le corps en porte la trace** : **F-56** (`S-102`) est **rétrogradée `[B]` → `[C]`** par la règle de composition, *et c'est précisément la composante employée au § 18.1 — le volet identité — qui porte le `[C]`* ; **F-50** (`S-096`) et **F-83** (`S-129`) voient leurs **décomptes de participants re-datés** au 28 juillet 2026, leurs composantes de fond confirmées. ⚠ **H-19 est en [C]** (`S-145`) : l'énoncé « aucun forum n'avait tranché » entre comme **thèse d'un volume antérieur, attribuée et datée de son gel de juin 2026**, non comme fait vérifié. ⚠ **Aucun énoncé n'est central au sens de CA-IV-01, et le franchissement de G-3 n'y change rien** : la refonte **n'a conduit aucun vote adversarial** et **n'a confronté aucun énoncé à sa source primaire** |
+| **Socle mobilisé** | ⚠ **Aucune entrée du socle consolidé n'était mobilisable à la rédaction** ; l'Annexe B existe depuis le 28 juillet 2026 ([`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, 159 entrées `S-001`…`S-159`), et **la pièce n'a pas été réancrée sur la série consolidée** : elle cite ses appuis dans la série de leur volume d'origine, et ⚠ **tous les `F-xx` du corps sont ceux du Vol. III** (décision 7 — un `F-xx` nu est indécidable entre deux socles). Résolution contre le **Vol. III *Monographie* ch. 11**, dont les entrées **F-04**, **F-06**, **F-07**, **F-09**, **F-30**, **F-32**, **F-35**, **F-38**, **F-40**, **F-43**, **F-48** à **F-51**, **F-56**, **F-73**, **F-83**, **F-86**, **F-87** et l'entrée héritée **H-19** conservent leurs niveaux d'origine — ⚠ **la plage annonçait « F-33 à F-35 » jusqu'à la contre-relecture du 28 juillet 2026**, alors que **F-33** et **F-34** ne sont mobilisées nulle part au corps ; la correspondance vers `S-nnn` se lit à l'**Annexe B §5**, **seul instrument de résolution** — *le numéro consolidé ne se dérive pas du numéro source*. Et contre le **Vol. I *Monographie* §5.5.4, §3.6.5 et §7.4.3**, en **[C]**. ⚠ **Trois entrées mobilisées ici ont bougé à la refonte, et le corps en porte la trace** : **F-56** (`S-102`) est **rétrogradée `[B]` → `[C]`** par la règle de composition, *et c'est précisément la composante employée au § 18.1 — le volet identité — qui porte le `[C]`* ; **F-50** (`S-096`) et **F-83** (`S-129`) voient leurs **décomptes de participants re-datés** au 28 juillet 2026, leurs composantes de fond confirmées — ⚠ **celle de `S-096` sous réserve d'identification déclarée** : l'entrée **ne nomme pas le groupe** dont elle compte les participants, et son rattachement n'est que *probable* (§ 18.1). ⚠ **H-19 est en [C]** (`S-145`) : l'énoncé « aucun forum n'avait tranché » entre comme **thèse d'un volume antérieur, attribuée et datée de son gel de juin 2026**, non comme fait vérifié. ⚠ **Aucun énoncé n'est central au sens de CA-IV-01, et le franchissement de G-3 n'y change rien** : la refonte **n'a conduit aucun vote adversarial** et **n'a confronté aucun énoncé à sa source primaire** |
 | **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les cinq sections du corps, § 18.0 à § 18.4.** Vol. III — **R-02 : trois marqueurs**, § 18.2 (deux) et § 18.3 ; **R-14 : un marqueur**, § 18.3 ; les absences du chapitre portent néanmoins leur degré, dont **neuf au degré 3** — les deux occurrences de « `[B, degré 3]` », qui qualifient une **entrée du socle** et non une absence de la pièce, n'y entrent pas —, sur tout le domaine. **R-01, R-03 à R-13 : zéro marqueur.** ⚠ **R-05 est appliqué sans être marqué, et ce chapitre en est pourtant le SIÈGE** : le KYA n'est pas un standard établi, et « terme de marché » est une **construction d'auteur, non une formule du Vol. I** — la clause est portée aux § 18.0, § 18.1 et § 18.3, **sans renvoi à l'identifiant**. Même régime pour **R-09** (le stade se dit à chaque mention, clause du groupe communautaire comprise), **R-03** (« entreprise agentique », jamais une catégorie établie, § 18.3) et **R-13** (§ 18.3, les niveaux de certification jamais confondus avec une échelle d'autonomie). Vol. II — **§8.2 : zéro marqueur** ; les deux décomptes de participants du § 18.1 sont attribués à la page qui les affiche et à l'organisme qui la publie, et leur re-datation du 28 juillet 2026 y est portée ; **PRD Vol. II §8.2.5 : zéro marqueur** ; **R-1 à R-8 : zéro marqueur** |
-| **Volumétrie cible** | ≈ **3 800 mots** de corps (§ 18.0 à § 18.4), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 4 462 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+17,4 %** (re-mesuré au terme de la relecture du 28 juillet 2026 ; **4 252**, soit +11,9 %, à la passe de correction de l'audit qui l'a précédée). ⚠ **L'écart s'est creusé de cinq points et demi par bornage, jamais par ajout de matière** : les **deux cent dix mots** de la relecture portent une rétrogradation de niveau, une re-datation de décompte, un renvoi de siège et deux marquages de construction d'auteur — *amputer une borne et couper un hors-périmètre produisent le même chiffre, et seule la seconde est légitime* (D-4). ⚠ Le [registre de gel](../PRD/registre-gel.md) porte encore **4 252** : son réalignement est **remonté**. La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
+| **Volumétrie cible** | ≈ **3 800 mots** de corps (§ 18.0 à § 18.4), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections. ☑ **Décompte publiable depuis G-2** ; **réel : 4 545 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+19,6 %**, re-mesuré au terme de la **contre-relecture du 28 juillet 2026** (**4 462**, soit +17,4 %, à la relecture du même jour ; **4 252**, soit +11,9 %, à la passe de correction de l'audit qui l'a précédée). ⚠ **L'écart s'est creusé par bornage, jamais par ajout de matière** : les **deux cent dix mots** de la relecture portent une rétrogradation de niveau, une re-datation de décompte, un renvoi de siège et deux marquages de construction d'auteur ; les **quatre-vingt-trois** de la contre-relecture restituent une **réserve d'identification** perdue au § 18.1 et rendent au § 18.0 la **date de gel et le régime [C]** de l'énoncé du Vol. I — *amputer une borne et couper un hors-périmètre produisent le même chiffre, et seule la seconde est légitime* (D-4). ⚠ **Le [registre de gel](../PRD/registre-gel.md) a été réaligné sur 4 462 au commit de la relecture** — il porte donc la mesure de la passe précédente, non celle-ci ; son réalignement sur **4 545** est **remonté**. La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 18)* — le KYA transpose la logique du KYC — vérifier avant d'admettre — sans l'infrastructure institutionnelle qui rend le KYC possible ; la *trust fabric* inter-entreprises reste privée et fragmentée, et c'est elle qui décide si l'entreprise agentique s'arrête à ses murs.
 
@@ -27,11 +27,11 @@ trancher, que de **ce que le tiers veut bien lui présenter**.
 frontière.* C'est aussi le point où **le vocabulaire du domaine devance ses institutions**, et le
 chapitre commence par poser cet écart plutôt que de l'employer.
 
-**Le statut du terme, posé avant tout usage.** *La connaissance de l'agent **n'est pas un standard
-établi** ; les initiatives existantes relèvent du **positionnement fournisseur*** (Vol. I
-*Monographie* §5.5.4). ⚠ Et **aucun forum n'avait tranché à juin 2026** quelle instance porterait le
-standard — ni l'alliance industrielle, ni le consortium du Web, ni l'organisme international de
-normalisation (Vol. III H-19, **[C]**).
+**Le statut du terme, posé avant tout usage.** *À juin 2026, la connaissance de l'agent **n'est pas un
+standard établi** ; les initiatives existantes relèvent du **positionnement fournisseur*** (Vol. I
+*Monographie* §5.5.4, en **[C]**, à son gel). ⚠ Et **aucun forum n'avait tranché à juin 2026** quelle
+instance porterait le standard — ni l'alliance industrielle, ni le consortium du Web, ni l'organisme
+international de normalisation (Vol. III H-19, **[C]**).
 
 ⚠ **Deux précisions que la somme doit à sa propre vérification, et elles ne sont pas de forme.**
 *Premièrement* : la formule commode « **terme de marché avant d'être terme de norme** » **ne figure
@@ -114,8 +114,12 @@ Protocol » du Consortium du Web**, à qui il est attribué à chaque occurrence
 ⚠ **Les deux décomptes du tableau ont été re-datés depuis, et ils ont bougé** : au 28 juillet 2026, les
 pages du même consortium affichent **37 participants non-présidents** pour le groupe de registre
 (`S-096`) et **260** pour celui-ci (`S-129`), les composantes de fond des deux entrées étant confirmées.
-*Un compteur affiché n'est pas un fait stable* — le tableau conserve le relevé du 21 juillet 2026, qui
-porte sa date.
+⚠ **La première des deux re-datations porte une réserve d'identification que la refonte déclare, et
+elle n'est pas de forme** : `S-096` **ne nomme pas le groupe** dont elle compte les participants —
+quatre groupes communautaires du domaine sont candidats et rien dans l'entrée ne tranche —, de sorte
+que *le rattachement de ce décompte au groupe de registre n'est que **probable***. C'est la classe même
+que la décision 7 du TOC proscrit, rencontrée cette fois dans le socle. *Un compteur affiché n'est pas
+un fait stable* — le tableau conserve le relevé du 21 juillet 2026, qui porte sa date.
 
 **L'instance qui a compilé le livre blanc de référence décline la normalisation, et elle le fait par
 écrit.** C'est **la seule entrée du lot à porter le niveau [A]** : la charte place **hors de son
@@ -390,11 +394,12 @@ instruit ; ordre de rédaction du PRD §6. Instruction d'auteur du 27 juillet 20
    refonte du socle **n'a conduit aucun vote adversarial** et **n'a confronté aucun énoncé à sa source
    primaire**. ⚠ **Le § 18.4 est d'un régime encore plus bas** : préimpression, résumé seul consulté,
    **repérage [C]** — *il ne porte aucun énoncé du tout, et la pièce l'écrit.*
-2. **Les décomptes sont publiables** (G-2). Écart de **+17,4 %** — **4 462 mots** pour une cible de
-   3 800 ; la volumétrie du Livre alimente **D-4** par **R-IV-17**. ⚠ **La relecture du 28 juillet 2026
-   a modifié le corps, et la mesure avec lui** : le [registre de gel](../PRD/registre-gel.md) porte
-   encore l'ancienne valeur, **4 252** — son réalignement est **remonté**, un rédacteur ne corrigeant
-   pas l'appareil.
+2. **Les décomptes sont publiables** (G-2). Écart de **+19,6 %** — **4 545 mots** pour une cible de
+   3 800 ; la volumétrie du Livre alimente **D-4** par **R-IV-17**. ⚠ **Trois passes successives ont
+   modifié le corps, et la mesure avec elles** — 4 252, puis 4 462, puis 4 545. Le [registre de
+   gel](../PRD/registre-gel.md) **a été réaligné sur 4 462 au commit de la relecture** ; son
+   réalignement sur la mesure de la contre-relecture est **remonté**, un rédacteur ne corrigeant pas
+   l'appareil.
 3. **Tous les renvois « ch. N » de cette pièce résolvent désormais contre du texte** : les **ch. 3, 12,
    13, 14, 15, 16, 17, 20, 21** du présent Livre et des Livres amont, le **ch. 37** (Livre IV) et le
    **ch. 49** (Livre V), rédigés depuis. ⚠ **Un seul renvoi reste un renvoi de plan** : celui du § 18.3
@@ -511,4 +516,46 @@ allouera leurs identifiants.
    le Vol. II et y est pourtant compté. *Frontière ou anticipation négative obligatoire.*
 
 ☐ **Et une réconciliation reste due, hors mandat d'un relecteur** : le [registre de
-gel](../PRD/registre-gel.md) porte la volumétrie antérieure à cette relecture.
+gel](../PRD/registre-gel.md), réaligné sur **4 462** au commit de cette relecture, porte désormais la
+volumétrie antérieure à la contre-relecture ci-dessous.
+
+---
+
+### Contre-relecture du 28 juillet 2026 — ce que la relecture avait laissé
+
+⚠ **Cette sous-section est hors plan comme celles qui la précèdent, et se retire avec elles.** Quatre
+corrections, **aucune remontée neuve** : les quatre objets ci-dessus tiennent tels quels.
+
+1. ⚠ **Une attestation de la relecture était fausse au commit qui la portait, et c'est la correction
+   qui compte.** Elle déclarait en **trois endroits** que le registre de gel « porte encore **4 252** »
+   et que son réalignement restait dû ; ⚠ **le même commit l'avait réaligné sur 4 462**. *Une dette
+   déclarée que la passe a payée dans le même geste est une dette fausse* — et **la règle de comptage
+   de la décision 16 le prescrivait déjà** : un décompte se re-mesure **au commit**, y compris celui
+   qu'on impute à l'appareil. Corrigé aux trois sites, la mesure de la présente passe y étant portée à
+   son tour.
+2. ⚠ **Une réserve du socle avait été perdue en écrivant la re-datation des décomptes de
+   participants.** `S-096` **ne nomme pas le groupe** dont elle compte les participants — quatre
+   groupes communautaires du domaine sont candidats —, et la refonte déclare son rattachement
+   *probable* seulement ; la relecture l'attribuait au groupe de registre sans réserve. Restituée au
+   § 18.1 et à l'en-tête : *une re-datation reprise sans sa réserve élève son régime en silence.*
+3. **Le statut du terme est rendu à sa borne**, au § 18.0. L'énoncé du Vol. I *Monographie* §5.5.4
+   porte désormais **sa date de gel — juin 2026 — et son régime [C] à l'occurrence**, là où il les
+   tenait du seul voisinage de la phrase suivante.
+4. **La déclaration de socle est ramenée à ce que le corps cite.** L'en-tête annonçait « **F-33** à
+   **F-35** » quand **F-33** et **F-34** — la disponibilité générale d'un annuaire d'éditeur et ses
+   capacités demeurées en préversion — ne sont mobilisées nulle part au corps. *Une plage d'entrées
+   déclarée plus large que son usage est une couverture qu'on ne peut pas re-mesurer.*
+
+⚠ **Ce que la contre-relecture confirme sur pièce, plutôt que sur parole.** Les cardinaux de l'en-tête
+se re-mesurent exacts : **neuf absences au degré 3** sur onze occurrences littérales de la formule —
+les deux « `[B, degré 3]` » qualifiant une entrée du socle —, **trois marqueurs R-02** (§ 18.2 deux,
+§ 18.3 un), **un marqueur R-14** (§ 18.3), **cinq marqueurs de « Lecture de l'auteur »**. La **thèse
+est verbatim** du TOC v0.28, forme que les v0.29 et v0.30 laissent intacte. **Tous les renvois
+résolvent contre du texte** — ch. 3 ; 12 § 12.1 ; 13 § 13.2 et § 13.5 ; 14 § 14.1 et § 14.4 ;
+15 § 15.2.3 et § 15.3.1 ; 16 § 16.3 ; 17 § 17.0 ; 20 § 20.1, § 20.2 et § 20.4 ; 21 § 21.5 ; 37 ;
+49 § 49.0 —, le seul renvoi de plan restant celui de l'avant-propos. Le **marqueur du siège du KYA est
+intact**, à la signature versée à [`PRD/check-sieges.py`](../PRD/check-sieges.py). Et les **quatre
+remontées ci-dessus sont re-constatées à leur source** : le titre « chapitre 19 » au-dessus de la table
+détaillée du chapitre 18, la définition d'avant-propos qui porte l'*agent d'entreprise* et non
+l'*entreprise agentique*, le déclencheur `tri prospectif` compilé sans indifférence à la casse, et la
+garde `"Vol. II" in b and "Vol. III" in b` du contrôle P3.

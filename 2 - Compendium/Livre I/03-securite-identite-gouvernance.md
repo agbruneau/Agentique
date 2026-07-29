@@ -9,7 +9,7 @@ Premier mouvement — les fondements (ch. 1-6).*
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Matière condensée au gel de sa source — **juin 2026** (Vol. I) —, qui n'est pas celui de la somme. ⚠ Trois faits datés y appellent une re-vérification à G-1 : la finalisation d'un profil de haute sécurité (22 février 2025), une recommandation du W3C sur les attestations vérifiables (15 mai 2025), et le statut d'**OAuth 2.1**, **encore à l'état de projet à la mi-2026** |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé.** ⚠ **L'Annexe B existe depuis le 28 juillet 2026** — 159 entrées, `S-001`…`S-159` —, mais **cette pièce n'y est pas ré-adossée** : le ré-adossement est dû et n'est pas opéré ici. Les énoncés résolvent contre le **Vol. I *Monographie* §1.9-1.10**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ Réserve renforcée pour ce chapitre : la matière cryptographique est celle où un énoncé [C] non élevé fait le plus de dégâts, puisqu'elle est citée comme garantie |
 | **Garde-fous balayés** | **Les deux séries, intégralement.** ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — R-1 à R-8 : **zéro occurrence** (aucune matière réglementaire canadienne, aucune métrique d'adoption auto-déclarée, aucun énoncé sur E-23, le RTR ou MCP). Vol. III — **R-02 (qualification cryptographique) : quatre occurrences**, § 3.2.2, § 3.3.1 et § 3.3.2 (deux) — chaque mécanisme y est qualifié par ce que sa spécification **démontre**, jamais par ce qu'elle promet ; ⚠ *le § 3.2.2 porte **un** marqueur pour **deux** mécanismes qualifiés : le cardinal compte les marqueurs, non les mécanismes* ; **R-11 (jalons NIST « visés », jamais « fixés ») : une occurrence**, § 3.3.2, avec statut du document porté ; **R-14 (trois degrés d'absence) : deux occurrences**, § 3.1.1 et § 3.4.3 ; **R-13 : le marqueur figure une fois, § 3.3.1, en déclaration de non-déclenchement** — ⚠ « point d'application de politique » y figure au sens **pré-agentique** du zero-trust, où il n'est pas le terme que R-13 vise. R-01, R-03 à R-10, R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 9 000 mots de corps (§ 3.1 à § 3.4). Enveloppe **dérivée, non prescrite** ; ce chapitre pèse plus que la moyenne parce qu'il est **posé une seule fois pour cinq chapitres aval**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 104 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−43,3 %** de la cible. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre était, au 27 juillet 2026, de 64 750 mots, soit −0,4 % de l'enveloppe** — ⚠ **cardinal de Livre à re-mesurer au terme de la passe de relecture**, les onze pièces étant révisées en parallèle : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Volumétrie cible** | ≈ 9 000 mots de corps (§ 3.1 à § 3.4). Enveloppe **dérivée, non prescrite** ; ce chapitre pèse plus que la moyenne parce qu'il est **posé une seule fois pour cinq chapitres aval**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 180 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−42,4 %** de la cible, re-mesurés au commit de la seconde passe de relecture (5 104 mots et −43,3 % au terme de la première ; l'écart vient de six instruments repris nommés et de deux constructions d'auteur marquées). ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre était, au 27 juillet 2026, de 64 750 mots, soit −0,4 % de l'enveloppe** — ⚠ **cardinal de Livre à re-mesurer au terme de la passe de relecture**, les onze pièces étant révisées en parallèle : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 3)* — le passage du périmètre réseau à la confiance par échange, et l'identité fédérée à autorisation déléguée, sont l'héritage IAM que la fabrique de confiance agentique (Livre II) étire jusqu'à rupture.
 
@@ -132,13 +132,13 @@ avec preuve de clé devient obligatoire, et le flux implicite est retiré.
 
 ⚠ **Point de statut à ne pas lisser** : à la date d'arrêt des sources (mi-2026), **OAuth 2.1 est
 encore à l'état de projet**. La consolidation est en revanche codifiée comme *bonne pratique de
-sécurité actuelle* par un document normatif publié, qui constitue la référence pour durcir un
-déploiement existant **sans attendre** la finalisation. Citer OAuth 2.1 comme un standard établi
-serait une faute de fait ; s'appuyer sur la bonne pratique publiée ne l'est pas.
+sécurité actuelle* par la **BCP 240** de l'IETF (**RFC 9700**, 2025), qui constitue la référence pour
+durcir un déploiement existant **sans attendre** la finalisation. Citer OAuth 2.1 comme un standard
+établi serait une faute de fait ; s'appuyer sur la BCP 240 ne l'est pas.
 
 > **Mise en œuvre.** Pour un nouveau service, le couple OpenID Connect pour l'authentification et
 > OAuth 2.1 avec preuve de clé obligatoire pour l'autorisation déléguée constitue le défaut
-> raisonnable, en appliquant dès la conception les recommandations de la bonne pratique publiée.
+> raisonnable, en appliquant dès la conception les recommandations de la **BCP 240**.
 > SAML 2.0 demeure pertinent pour interopérer avec un parc applicatif existant, sans être retenu pour
 > de nouvelles intégrations orientées API.
 
@@ -170,10 +170,11 @@ relèvent de la protection de la clé, non du protocole de liaison. Écrire qu'u
 rejouable » serait qualifier par la promesse ; écrire qu'il « n'est plus rejouable par un tiers ne
 possédant pas la clé » est qualifier par ce qui est démontré.
 
-Ces mécanismes se composent en **profils de haute sécurité** pour les contextes les plus exposés.
-L'un d'eux, **finalisé le 22 février 2025**, agrège ces exigences — jetons liés au
-porteur, indication explicite de la ressource cible, validation stricte des paramètres — en une cible
-de conformité éprouvée, notamment dans l'écosystème de la finance ouverte que le Livre III reprendra.
+Ces mécanismes se composent en **profils de haute sécurité** pour les contextes les plus exposés. Le
+profil **FAPI 2.0** de l'**OpenID Foundation**, **finalisé le 22 février 2025**, agrège ces exigences
+— jetons liés au porteur, indication explicite de la ressource cible, validation stricte des
+paramètres — en une cible de conformité éprouvée, notamment dans l'écosystème de la finance ouverte
+que le Livre III reprendra.
 
 Adopter un tel profil revient à **figer un contrat de sécurité interopérable et certifiable**, plutôt
 qu'à recomposer *ad hoc* un assemblage de contrôles. C'est le même geste que celui du modèle de
@@ -248,9 +249,9 @@ qui **remplace les secrets statiques à longue durée de vie par une attestation
 éphémère**. Des travaux de standardisation **encore pré-normatifs** — le groupe **WIMSE** de l'IETF —
 visent à harmoniser ces mécanismes.
 
-⚠ **Qualification, au sens de R-02.** Ce que SPIFFE démontre est précis et borné : qu'une charge
-présentant un document d'identité valide **a été attestée par le nœud d'émission au moment de
-l'émission**, et que ce document n'a pas expiré. Il ne démontre pas que la charge n'a pas été
+⚠ **Qualification, au sens de R-02 du Vol. III.** Ce que SPIFFE démontre est précis et borné :
+qu'une charge présentant un document d'identité valide **a été attestée par le nœud d'émission au
+moment de l'émission**, et que ce document n'a pas expiré. Il ne démontre pas que la charge n'a pas été
 compromise depuis, ni que le processus attesté est celui qu'il prétend être au-delà de ce que la
 plateforme d'attestation peut établir. La différence entre « identité vérifiable » et « identité
 vérifiée en continu » n'est pas rhétorique : c'est l'écart que l'évaluation continue du zero-trust
@@ -259,8 +260,11 @@ est censée combler, et qu'elle ne comble qu'à la granularité de la requête.
 Le découplage s'applique ici à l'identité elle-même : elle devient un **contrat émis par
 l'infrastructure**, indépendant de l'adresse réseau, et **révocable par expiration plutôt que par
 rotation manuelle de secrets**. C'est le remplacement d'un geste opérationnel faillible par une
-propriété structurelle — et c'est l'un des rares endroits de ce Livre où une classe entière
-d'incidents disparaît plutôt que de se déplacer.
+propriété structurelle.
+
+Lecture de l'auteur — c'est l'un des rares endroits de ce Livre où une classe entière d'incidents
+disparaît plutôt que de se déplacer. Le socle n'établit ni cette disparition ni sa rareté ; l'une et
+l'autre sont proposées comme lecture.
 
 > **Perspective recherche.** L'identité non humaine à durée de vie courte déplace la sécurité d'un
 > modèle de **secrets partagés** vers un modèle d'**attestation continue**. La question ouverte porte
@@ -287,9 +291,9 @@ Le cadre réglementaire européen **eIDAS 2.0** ancre cette logique dans le droi
 déploiement d'un portefeuille d'identité numérique, dont la généralisation est **attendue à compter
 de 2026** — échéance à re-vérifier, et non à citer comme acquise.
 
-⚠ **Qualification, au sens de R-02.** Une attestation vérifiable démontre qu'un émetteur identifié a
-signé un ensemble de revendications à une date donnée, et que le porteur peut en prouver la
-possession. Elle **ne démontre pas** que les revendications sont vraies, ni que l'émetteur était
+⚠ **Qualification, au sens de R-02 du Vol. III.** Une attestation vérifiable démontre qu'un émetteur
+identifié a signé un ensemble de revendications à une date donnée, et que le porteur peut en prouver
+la possession. Elle **ne démontre pas** que les revendications sont vraies, ni que l'émetteur était
 fondé à les émettre, ni que le sujet n'a pas changé d'état depuis. La confiance dans une attestation
 reste une confiance dans son **émetteur** — le format déplace le problème de la confiance, il ne le
 résout pas. Le ch. 16 rencontrera exactement cette limite en posant qu'un passeport d'agent ne vaut
@@ -307,11 +311,11 @@ porte a son propre statut, qu'il faut citer avec lui. Écrire qu'une date de dé
 « fixée » serait attribuer à une projection l'autorité d'une norme. Le ch. 21, qui prend l'horloge
 post-quantique pour objet, porte cette distinction comme règle de rédaction.
 
-⚠ **Qualification, au sens de R-02 — la plus importante du chapitre.** Ces algorithmes sont conçus
-pour résister à des attaques par calculateur quantique **sur la base de problèmes mathématiques dont
-aucune attaque quantique efficace n'est connue**. Ce n'est pas la même chose qu'une preuve de
-résistance, et la nuance n'est pas académique : la sélection a déjà éliminé des candidats après
-publication de leur analyse. La formulation défendable est « résistant en l'état des attaques
+⚠ **Qualification, au sens de R-02 du Vol. III — la plus importante du chapitre.** Ces algorithmes
+sont conçus pour résister à des attaques par calculateur quantique **sur la base de problèmes
+mathématiques dont aucune attaque quantique efficace n'est connue**. Ce n'est pas la même chose
+qu'une preuve de résistance, et la nuance n'est pas académique : la sélection a déjà éliminé des
+candidats après publication de leur analyse. La formulation défendable est « résistant en l'état des attaques
 connues », jamais « inviolable » ni « sûr contre le quantique ».
 
 Ces algorithmes appellent une migration des jetons, certificats et canaux qui sous-tendent toute
@@ -370,16 +374,17 @@ règle sans motif exécutable qui la contrôle n'en est pas une.
 > **Mise en œuvre.** Une chaîne d'intégration continue typique enchaîne, à chaque modification d'un
 > contrat : un contrôle de style **bloquant** sur les règles critiques, la publication de la version
 > validée dans un registre de schémas, et la propagation contrôlée vers les consommateurs. La
-> gouvernance d'ensemble peut s'aligner sur une norme internationale de gouvernance des systèmes
-> d'information pour articuler responsabilités, conformité et performance.
+> gouvernance d'ensemble peut s'aligner sur **ISO/IEC 38500:2024**, norme internationale de
+> gouvernance des systèmes d'information, pour articuler responsabilités, conformité et performance.
 
 ### 3.4.2 Cycle de vie des contrats, niveaux de service et application à l'exécution
 
 Un contrat d'interface **vit** : il naît, évolue et meurt. Maintenir l'interopérabilité sous
 changement (ch. 1 § 1.1.4) exige une discipline de versionnement et de **dépréciation explicite**.
-L'écosystème HTTP fournit des en-têtes normalisés permettant d'annoncer, dans la réponse même, qu'une
-ressource est dépréciée et la date à laquelle elle cessera d'être servie — donnant aux consommateurs
-une **fenêtre de migration prévisible** plutôt qu'une rupture silencieuse.
+L'écosystème HTTP fournit deux en-têtes normalisés par l'IETF — **`Deprecation`** et **`Sunset`** —
+permettant d'annoncer, dans la réponse même, qu'une ressource est dépréciée et la date à laquelle
+elle cessera d'être servie, donnant aux consommateurs une **fenêtre de migration prévisible** plutôt
+qu'une rupture silencieuse.
 
 Ce mécanisme est modeste, et sa fréquence d'emploi n'est établie nulle part dans le corpus mobilisé.
 
@@ -423,11 +428,11 @@ Le test d'interopérabilité vise donc l'**appariement réel**, là où le test 
 l'adéquation au modèle. Une suite de conformité verte des deux côtés ne prouve rien sur leur
 coopération.
 
-Le **test de contrat piloté par le consommateur** opérationnalise cette distinction : le consommateur
-exprime ses attentes sous forme d'un contrat ; le producteur vérifie **en continu** qu'il les
-honore. L'outillage automatise ce cycle — chaque partie publie ses contrats, et une commande
-d'autorisation de déploiement interroge le registre pour n'autoriser une livraison que si toutes les
-paires consommateur-producteur restent compatibles.
+Le **test de contrat piloté par le consommateur** (*consumer-driven contract testing*)
+opérationnalise cette distinction : le consommateur exprime ses attentes sous forme d'un contrat ; le
+producteur vérifie **en continu** qu'il les honore. L'outillage automatise ce cycle — chaque partie
+publie ses contrats, et une commande d'autorisation de déploiement interroge le registre pour
+n'autoriser une livraison que si toutes les paires consommateur-producteur restent compatibles.
 
 On rejoint ici la vérification de compatibilité comportementale (ch. 1 § 1.1.4) : ce test en fournit
 une approximation **pragmatique et automatisable**, fondée sur des exemples plutôt que sur une preuve
@@ -449,8 +454,8 @@ n'en recense pas, ce qui n'établit pas qu'il n'en existe aucune.
 Lorsque l'interopérabilité doit être garantie à l'échelle d'un **écosystème ouvert**, les acteurs
 s'appuient sur des **profils d'interopérabilité** — sous-ensembles précisés d'une norme, fermant les
 options ambiguës — et sur une **certification tierce** qui atteste leur respect. Dans le domaine de
-l'identité, des programmes de certification valident qu'une implémentation se comporte comme attendu ;
-d'autres, dont celui de la **FIDO Alliance**, certifient l'authentification forte.
+l'identité, le programme de certification de l'**OpenID Foundation** valide qu'une implémentation se
+comporte comme attendu ; celui de la **FIDO Alliance** certifie l'authentification forte.
 
 Cette certification transforme une compatibilité **espérée** en compatibilité **attestée** —
 condition d'adoption dans les secteurs régulés, comme le Livre III le montrera. C'est aussi
@@ -507,16 +512,19 @@ l'instruit.
 L'observabilité ne sert pas que le diagnostic : elle fonde l'**auditabilité**, c'est-à-dire la
 capacité à **démontrer après coup, preuves à l'appui**, comment une intégration s'est comportée.
 
-La différence entre les deux est celle du destinataire. Le diagnostic sert l'exploitant, qui sait ce
-qu'il cherche ; l'auditabilité sert un **tiers**, qui ne le sait pas et qui n'accordera aucun crédit
-à une reconstitution produite par la partie contrôlée. C'est cette asymétrie qui rend l'auditabilité
-coûteuse, et c'est elle que le Livre III retrouvera comme contrainte plutôt que comme confort.
+Lecture de l'auteur — la différence entre les deux est celle du destinataire. Le diagnostic sert
+l'exploitant, qui sait ce qu'il cherche ; l'auditabilité sert un **tiers**, qui ne le sait pas et qui
+n'accordera aucun crédit à une reconstitution produite par la partie contrôlée. C'est cette asymétrie
+qui rend l'auditabilité coûteuse, et c'est elle que le Livre III retrouvera comme contrainte plutôt
+que comme confort. Le socle établit que l'observabilité fonde l'auditabilité ; il n'établit ni cette
+asymétrie de destinataire ni le coût qui en découlerait — l'une et l'autre sont proposées comme
+lecture.
 
 Cette exigence devient contraignante dès lors que la réglementation impose des **interfaces
-ouvertes** et la **traçabilité des accès**. Dans la banque ouverte, une directive européenne oblige
-les établissements à exposer des interfaces d'accès aux comptes, dont l'usage par des tiers doit être
-journalisé et vérifiable ; l'auditabilité des appels y est une **condition de conformité**, non un
-agrément.
+ouvertes** et la **traçabilité des accès**. Dans la banque ouverte, la directive européenne **PSD2**
+(2015) oblige les établissements à exposer des interfaces d'accès aux comptes, dont l'usage par des
+tiers doit être journalisé et vérifiable ; l'auditabilité des appels y est une **condition de
+conformité**, non un agrément.
 
 ⚠ **Ce cas est cité comme illustration du mécanisme, et à ce titre seul.** Il n'est ni un modèle pour
 le cadre canadien, ni un précédent transposable au vertical financier que le Livre III instruit à son
@@ -612,10 +620,17 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
   Et le **siège du socle IAM ne portait aucun marqueur** : il en porte un désormais, au § 3.2, sans
   lequel aucun rédacteur aval ne pouvait savoir qu'il devait s'abstenir.
 
-⚠ **Ce que la clôture ne change pas.** **Aucun énoncé de cette pièce n'est central au sens de
-CA-IV-01**, et elle reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire
-pièce recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà
-tranchée.*
+⚠ **Ce que la clôture ne change pas.** ⚠ **Ce paragraphe portait, à sa date, « la porte G-3 demeure
+ouverte : le socle consolidé compte zéro entrée, l'Annexe B n'existe pas », et l'énoncé est restauré
+ici parce qu'il était exact au 27 juillet 2026** — *un enregistrement daté ne se réécrit pas ; son
+écart se consigne à la passe suivante.* ⚠ **Il est périmé depuis le 28 juillet 2026** : **G-3 est
+franchie** (PRD v0.14), le socle consolidé compte **159 entrées**, et l'**Annexe B** renvoie à
+[`socle-consolide.md`](../PRD/socle-consolide.md). ⚠ **La conclusion, elle, ne bouge pas** : les
+dix-sept entrées héritées du Vol. I y sont **toutes en `[C]`**, **aucun vote adversarial n'est
+conduit**, **CA-IV-13 demeure insatisfaite** faute d'un relecteur distinct du rédacteur (D-6), et
+**aucun énoncé de cette pièce n'est central au sens de CA-IV-01**. Elle reste un **brouillon non
+publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable — cela veut dire qu'aucune
+question n'attend plus de réponse qui ne soit déjà tranchée.*
 
 ---
 
@@ -657,3 +672,67 @@ de banque ouverte du § 3.4.6 : *ce qui n'a pas été vu à la source ne s'écri
 **Le cardinal de volumétrie du Livre n'est pas re-mesuré ici** : onze pièces sont révisées en
 parallèle, et *un cardinal mesuré pendant que des pièces s'écrivent est faux à la seconde où on le
 publie*.
+
+---
+
+### Seconde passe de relecture — 28 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre ce qu'une seconde relecture, conduite pour **éprouver la première**, a trouvé sur la pièce
+corrigée. *La sous-section qui précède n'est pas réécrite : un enregistrement daté se conserve, et
+ses écarts se consignent ici.*
+
+**Une régression, confirmée et corrigée.** La première passe avait **supprimé** de la clôture du
+27 juillet 2026 la phrase « la porte G-3 demeure ouverte : le socle consolidé compte zéro entrée,
+l'Annexe B n'existe pas », **exacte à sa date**. ⚠ *Effacer un énoncé daté parce qu'il a cessé d'être
+vrai supprime la seule information qu'il portait — sa date* ; c'est la règle que le dépôt applique à
+sa veille publiée, et les **ch. 1, 5, 6 et 7 du même Livre** ont conservé la leur, annotée. L'énoncé
+est **restauré**, avec sa péremption déclarée à la suite.
+
+**Deux corrections de la première passe étaient fausses, et elles le sont pour le même motif — une
+attestation posée sans être constatée sur pièce.**
+
+1. ⚠ **« Les termes anglais du plan figurant au corps » était faux pour l'un des trois intitulés
+   traduits.** Le § 3.4.3 rend « *contract testing* piloté par le consommateur » par « test piloté
+   par le consommateur », et **le terme anglais ne figurait nulle part dans le corps** — les deux
+   autres, *policy-as-code* (§ 3.4.1) et SLI/SLO/SLA (§ 3.4.2), y figurent bien. Le terme est rétabli
+   à sa première occurrence, sous la forme que la source emploie : *consumer-driven contract
+   testing*. **L'attestation est désormais vraie pour les trois.**
+2. ⚠ **« Faute d'identification au corpus mobilisé » était faux pour les sept instruments restants.**
+   Le corpus mobilisé est le Vol. I *Monographie* §1.9-1.10, et **il les nomme tous** : FAPI 2.0 de
+   l'OpenID Foundation (§1.9.2.2), la BCP 240 / RFC 9700 (§1.9.2.1), les en-têtes `Deprecation` et
+   `Sunset` (§1.10.1.2), ISO/IEC 38500:2024 (§1.10.1.1), Pact et PactFlow (§1.10.2.1), le programme
+   de certification de l'OpenID Foundation (§1.10.2.2), la directive PSD2 (§1.10.3.2). **Six sont
+   nommés au corps** — le motif de leur anonymat n'existait pas. ☑ **Le septième reste anonymisé et
+   son motif change** : l'outillage de test de contrat est une **dénomination commerciale**, cas que
+   la parade de péremption couvre expressément ; il en va de même du vérificateur de description
+   d'API du § 3.4.1. *Une exemption nommée n'est pas une lacune ; une lacune inventée en est une.*
+
+**Trois manques de la première passe, corrigés.** *(a)* **Trois renvois « R-02 » nus** — § 3.3.1 et
+§ 3.3.2 (deux) — nomment désormais leur volume, la première passe n'ayant qualifié que le « R-14 » du
+§ 3.4.3 alors que la décision 7 vaut à **toute** occurrence ; c'est en outre la forme que les pièces
+voisines du Livre — ch. 8, 9, 10 et 11 — emploient à leurs propres marqueurs de qualification.
+⚠ **Les cardinaux d'en-tête ne bougent pas** : la décision 16 compte le **marqueur littéral**, et
+« R-02 » y figure toujours quatre fois. *(b)* **Deux constructions
+d'auteur ne portaient pas leur marquage** (CA-IV-07) — la disparition d'une « classe entière
+d'incidents » au § 3.3.1, l'asymétrie de destinataire entre diagnostic et auditabilité au § 3.4.6 —,
+alors que la première passe avait marqué la troisième, au § 3.4.2. Les deux portent « Lecture de
+l'auteur » et déclarent ce que le socle n'établit pas. *(c)* **Le § 3.4.4 opposait un programme de
+certification nommé à un programme anonyme** ; les deux sont nommés.
+
+**Ce que cette passe confirme sur pièce, et qui n'appelait donc aucune correction.** La **thèse est
+identique caractère pour caractère** à celle du TOC (décision 17). Les **cardinaux de garde-fous de
+l'en-tête sont exacts** au balayage exhaustif : R-02 quatre marqueurs, R-11 un, R-14 deux, R-13 un,
+et zéro pour R-01, R-03 à R-10, R-12 comme pour les huit garde-fous du Vol. II. Les **huit renvois de
+section aux ch. 1 et 2 résolvent** contre le texte rédigé, ainsi que le siège du **ch. 7 § 7.5** —
+dont la première passe a **correctement** rétabli l'antécédent flottant sur « ACP », forme que ce
+siège emploie mot pour mot. Le **marqueur du siège du socle IAM est intact**, et la signature
+versée à [`check-sieges.py`](../PRD/check-sieges.py) résout toujours contre les intitulés du § 3.2 et
+du § 3.3. Le **volume annoncé par la première passe — 5 104 mots** — est **confirmé** par
+[`PRD/decompte.sh`](../PRD/decompte.sh) sur la pièce telle qu'elle la laissait ; il est **re-mesuré
+au commit de cette seconde passe à 5 180 mots**, et l'en-tête porte les deux.
+
+**Ce qui reste remonté, sans être corrigé.** Le **ré-adossement au socle consolidé** et l'**élévation
+en [B]** de la matière cryptographique demeurent dus — la première passe les a remontés à bon droit,
+et *une relecture ne conduit pas un vote adversarial*. La **volumétrie du Livre** reste à re-mesurer
+au terme des onze passes.

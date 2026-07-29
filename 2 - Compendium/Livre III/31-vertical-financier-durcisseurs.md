@@ -11,9 +11,9 @@ ailleurs** — quatre patrons, un risque et un critère.*
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Aucun fait de ce chapitre n'a été repris à sa source primaire**, et **le chapitre porte une vingtaine de jalons datés**. *La re-datation du 28 juillet 2026 ne l'a pas atteint* : elle a porté les **123 entrées à sensibilité temporelle du socle consolidé** à leur source, et **aucun jalon de ce chapitre n'y figure** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)). Gel de source consommé : **juin 2026** (Vol. I ch. 5) — ⚠ **il ne tient pas lieu du gel de la somme**, et l'écart est de **plus d'un mois** sur un domaine qui se périme par trimestres |
 | **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** ([`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées** `S-001`…`S-159`) — *mais il ne porte du Vol. I que **17 entrées héritées, toutes en `[C]`***, et **deux seulement touchent ce chapitre**. **`S-157`** couvre le patron du § 31.1.1 et l'homonymie de « copilote » (Vol. I *Monographie* §5.0.2 et §5.1.1) — ⚠ ***entrée déclarée NON ÉLEVABLE*** : construction d'auteur du Vol. I, qui « entre comme thèse à attribuer, jamais comme fait ». **`S-159`** est le tri prospectif, **appliqué** au § 31.1.2. *(`S-145`, le KYA, est **renvoyée au ch. 18 § 18.1** et non reprise ici.)* ⚠ **Tout le reste — les §5.2 à §5.6 du Vol. I — n'a AUCUNE entrée au socle consolidé** : *absence de couverture, non contradiction*, et cette matière entre en **[C]** par le PRD §7.1, la vérification du Vol. I portant sur ses **références** et non sur le **contenu de ses affirmations**. ⚠ **Conséquence inchangée par le franchissement : aucun énoncé de ce chapitre n'est central au sens de CA-IV-01**, et l'élévation en [B] passerait par la lecture des sources primaires que le Vol. I cite — *plusieurs dizaines pour ce seul chapitre.* Les seuls appuis à un autre régime sont des **renvois** vers les sièges et domiciles des Livres I, II, III et V, qui ne sont pas reconstruits |
 | **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **PRD §8.2.3 et §7.5 (métriques auto-déclarées, projections) : les deux renvois ne sont pas écrits au corps** ; *les marqueurs le sont — « auto-déclaré » **deux fois** (§ 31.2.2, § 31.4.2), « projection d'analyste » **trois fois** (§ 31.1.2, deux occurrences ; § 31.4.3), plus sa forme plurielle « projections d'analystes » au § 31.4.2 et « estimation d'analyste » au § 31.5.2 —, et **le garde-fou est appliqué aux § 31.1.2, § 31.2.2, § 31.2.3, § 31.2.5, § 31.3.1, § 31.4.1, § 31.4.2, § 31.4.3 et § 31.5.2** — ⚠ **neuf sections, chaque chiffre y étant attribué à sa source ou déclaré non attribuable par elle*** ; **PRD §8.4 (neutralité fournisseur) : deux occurrences du renvoi**, § 31.2.6 et § 31.4.3 — *le marqueur seul, trois fois : § 31.2.6, § 31.4.3 et § 31.5.2* ; **R-5 : une occurrence du sigle**, § 31.2.5 ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-09 (quatre statuts, dits à chaque mention) : deux occurrences du sigle**, § 31.2.4 et § 31.3.3 — *le garde-fou est en outre **appliqué aux § 31.2.2, § 31.2.5 et § 31.2.6**, chaque statut y étant dit sans que le sigle soit repris* ; **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 31.1.2 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » aux § 31.1.2, § 31.2.4, § 31.2.6, § 31.4.2 et § 31.5.1* ; **R-02 : trois occurrences du sigle**, § 31.2.4, § 31.3.2 et § 31.5.1 ; **R-13 : une occurrence du sigle**, § 31.1.3 — ⚠ *la distinction copilote / autonomie transactionnelle n'est **pas** une échelle d'autonomie et se déclare telle* ; **R-11 : une occurrence du sigle**, § 31.2.2 ; **R-01, R-03 à R-08, R-10, R-12 : zéro occurrence**. ⚠ **Décision 15 du TOC (régime de l'anonymisation) : quatre occurrences du renvoi** — § 31.1.2, § 31.1.3, § 31.3.3 et § 31.4.3, aux quatre endroits où une **attribution anonymisée a été levée** ; *la parade de péremption demeure, elle, pour les dénominations commerciales et les numéros de version* |
-| **Volumétrie cible** | ≈ **8 500 mots** de corps (§ 31.0 à § 31.5), **cible dérivée** de l'enveloppe du Livre — 90 000 mots, inchangée du TOC v0.25 à la v0.29 — au prorata des **dix-neuf sous-sections** qu'il déplie, et non des cinq sections de tête. ☑ **Décompte publiable depuis G-2** : **9 177 mots** mesurés le 28 juillet 2026 par [`decompte.sh`](../PRD/decompte.sh), **seule autorité**, soit **+8,0 %** ; la mesure d'ensemble est portée au [`README.md`](README.md) du dossier. ⚠ **L'écart a crû de +0,5 % à +8,0 % à la relecture du 28 juillet 2026, et sa cause s'écrit** : *aucune matière n'a été ajoutée — **l'appareil de régime de preuve l'a été**, attributions levées, exclusion de socle nommée, omissions de renvoi consignées.* ⚠ **D-4 interdit l'amputation comme le gonflement** : *le bornage allonge, et raccourcir ici reviendrait à retirer une borne* |
+| **Volumétrie cible** | ≈ **8 500 mots** de corps (§ 31.0 à § 31.5), **cible dérivée** de l'enveloppe du Livre — 90 000 mots, valeur constatée à la **v0.30** du TOC et inchangée depuis la v0.25 — au prorata des **dix-neuf sous-sections** qu'il déplie, et non des cinq sections de tête. ☑ **Décompte publiable depuis G-2** : **9 279 mots** mesurés le 28 juillet 2026 par [`decompte.sh`](../PRD/decompte.sh), **seule autorité**, soit **+9,2 %** ; la mesure d'ensemble est portée au [`README.md`](README.md) du dossier. ⚠ **L'écart a crû par paliers, et chacun se date** : **+0,5 %** à la rédaction, **+8,0 %** après la première relecture du 28 juillet 2026, **+9,2 %** après la seconde du même jour. *Aucune matière n'a été ajoutée à aucun des deux paliers — **l'appareil de régime de preuve l'a été** : attributions levées, exclusion de socle nommée, omissions de renvoi consignées, puis une omission fausse défaite et un marquage CA-IV-07 manquant posé au § 31.2.4.* ⚠ **D-4 interdit l'amputation comme le gonflement** : *le bornage allonge, et raccourcir ici reviendrait à retirer une borne* |
 
-> **Thèse** *(citée par copie depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 31 ; **re-collationnée mot à mot contre la v0.29 le 28 juillet 2026 — identique**, la passe d'audit n'ayant touché aucune thèse)* — la finance durcit l'agentique par des contraintes transverses (standards de données, maillage réglementaire, risque-modèle, sécurité/AML-KYC/KYA, résidence/souveraineté) qui préexistent à l'agent et le contraignent.
+> **Thèse** *(citée par copie depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 31 ; **re-collationnée mot à mot le 28 juillet 2026 contre la v0.29 puis contre la v0.30, version courante — identique aux deux**, ni la passe d'audit ni celle de la porte G-3 n'ayant touché aucune thèse)* — la finance durcit l'agentique par des contraintes transverses (standards de données, maillage réglementaire, risque-modèle, sécurité/AML-KYC/KYA, résidence/souveraineté) qui préexistent à l'agent et le contraignent.
 
 ---
 
@@ -358,7 +358,10 @@ modèle a-t-il bien compris ? » mais « **la sortie est-elle conforme au modèl
 central qui rend tolérable l'emploi d'un modèle de langage dans une chaîne réglementée**, et elle est le
 pendant sectoriel du principe directeur du **ch. 29 § 29.4**. ⚠ **Un mécanisme se qualifie par ce que sa
 spécification démontre** (R-02 du Vol. III) : *un modèle exécutable démontre la conformité d'une sortie
-à une règle codifiée ; il ne démontre pas que la règle codifiée soit la bonne.*
+à une règle codifiée ; il ne démontre pas que la règle codifiée soit la bonne.* **Ce que le socle
+établit** : les deux corpus, l'extension de déclaration réglementaire et les travaux de recherche
+cités. **Ce qu'il n'établit pas** : que cette séparation soit *le* mécanisme central, ni qu'elle
+suffise — *c'est une lecture, et le socle n'en porte aucune mesure d'effet.*
 
 ### 31.2.5 Standards verticaux : assurance, banque ouverte, hypothèque
 
@@ -546,17 +549,21 @@ usage réel.
 ### 31.3.4 Ségrégation des tâches, quatre yeux et indépendance anti-collusion — SIÈGE DU QUATRE-YEUX
 
 ⚠ **SIÈGE DU PATRON DU QUATRE-YEUX POUR TOUTE LA SOMME.** *Renvois entrants **re-mesurés le
-28 juillet 2026** — le relevé antérieur nommait le § 31.4.1, qui n'en porte aucun. **À l'intérieur du
-chapitre** : § 31.1.1, § 31.3.3 et § 31.4.3. **Hors du chapitre** : le **ch. 34** six fois (§ 34.1.1,
-§ 34.2.5, § 34.4.6, § 34.4.7, § 34.5.4 et § 34.7.2) et le **ch. 36** deux fois (§ 36.2.6 et § 36.6).
-**Aucun ne le re-dérive.***
+28 juillet 2026**, par balayage exhaustif des cinquante pièces — le relevé antérieur nommait le
+§ 31.4.1, qui n'en porte aucun. **À l'intérieur du chapitre** : § 31.1.1, § 31.3.3 et § 31.4.3.
+**Hors du chapitre** : le **ch. 34** six fois (§ 34.1.1, § 34.2.5, § 34.4.6, § 34.4.7, § 34.5.4 et
+§ 34.7.2), le **ch. 36** deux fois (§ 36.2.6 et § 36.6) et le **ch. 44** au **§ 44.1.7** — sa note de
+statut hors plan, § 44.10, ne compte pas, se retirant à la publication. **Aucun ne le re-dérive.***
 
-⚠ **Une pièce touche la matière sans nommer ce siège** : *le **ch. 44 § 44.1.7** déclare justifier
-« une seule fois » la construction du contrôle à quatre yeux et **ne cite le ch. 31 nulle part**.* ⚠ *Ce
-qu'il construit est le rendu en langage de modélisation, non le patron, de sorte qu'il ne le re-dérive
-pas ; mais **une pièce qui justifie « une seule fois » une matière dont le siège est ailleurs doit
-nommer ce siège**.* **Omission constatée le 28 juillet 2026, hors de la portée de cette pièce** — *et
-motif pour lequel le contrôle **S5** demeure désactivé sur ce siège.*
+⚠ **L'omission qui motivait la désactivation du contrôle S5 sur ce siège est comblée, et le fait se
+constate plutôt qu'il ne se présume.** *Le **ch. 44 § 44.1.7** déclare bien justifier « une seule
+fois » la construction du contrôle à quatre yeux — mais **ce qu'il construit est le rendu en langage
+de modélisation, non le patron**, et il écrit désormais que **le patron lui-même siège au ch. 31
+§ 31.3.4**.* ⚠ **Le contrôle S5 demeure pourtant désactivé sur ce siège à la table `SIEGES` de
+`check-sieges.py`, et son motif y est périmé** : *la table impute
+l'omission à un « ch. 44 § 44.5 » qui ne porte pas cette matière.* **Constaté sur pièce le 28 juillet
+2026 ; la réactivation de S5 est due et se remonte** — *la table est hors de la portée d'un relecteur
+de chapitre.*
 
 **La finance impose de longue date la séparation des fonctions : celui qui prépare une opération ne doit
 pas être celui qui l'approuve.** ⚠ **Transposé à l'acteur-agent, ce principe énonce que *l'agent qui
@@ -922,17 +929,19 @@ résolue.*
    péremption.** ⚠ **La re-datation du 28 juillet 2026 ne les a pas touchés** : *elle a porté les 123
    entrées à sensibilité temporelle du socle consolidé, et aucun de ces jalons n'y a d'entrée* — *le
    volet levé est celui des faits du socle, non celui des pièces des Livres II et III.*
-3. **Les décomptes sont publiables** (G-2). La mesure du corps est de **9 177 mots** au 28 juillet 2026
-   — *cible ≈ 8 500, soit **+8,0 %***, par [`decompte.sh`](../PRD/decompte.sh), seule autorité. *L'écart
-   valait **+0,5 %** avant la relecture du 28 juillet ; **il est entièrement imputable à l'appareil de
-   régime de preuve**, non à de la matière neuve.* Elle alimente **D-4**, déjà tranchée, qui **interdit
-   l'amputation comme le gonflement**.
+3. **Les décomptes sont publiables** (G-2). La mesure du corps est de **9 279 mots** au 28 juillet 2026
+   — *cible ≈ 8 500, soit **+9,2 %***, par [`decompte.sh`](../PRD/decompte.sh), seule autorité. *L'écart
+   valait **+0,5 %** à la rédaction et **+8,0 %** après la première relecture du 28 juillet ; **il est
+   entièrement imputable à l'appareil de régime de preuve**, non à de la matière neuve.* Elle alimente
+   **D-4**, déjà tranchée, qui **interdit l'amputation comme le gonflement**.
 4. **Les renvois « ch. N » ne sont plus des renvois de plan.** *Les cinquante pièces existent en
-   brouillon depuis le 27 juillet 2026* : les **112 occurrences de « ch. N »** de la pièce entière ont
+   brouillon depuis le 27 juillet 2026* : les **116 occurrences de « ch. N »** de la pièce entière ont
    été **re-résolues contre le texte rédigé le 28 juillet 2026**, section par section, et **toutes
-   résolvent** — *aucune ne pointe hors de la plage 1-50, aucune ne vise une section absente de sa
-   pièce cible.* ⚠ **Résoudre n'est pas concorder** : *un renvoi vers un brouillon reste un renvoi vers
-   un brouillon*, et il se re-vérifiera contre la version recevable de sa cible.
+   résolvent** — *aucune ne pointe hors de la plage 1-50, et les **trente-cinq** qui nomment une
+   section la trouvent à sa pièce cible.* ⚠ **Résoudre n'est pas concorder** : *un renvoi vers un
+   brouillon reste un renvoi vers un brouillon*, et il se re-vérifiera contre la version recevable de
+   sa cible. ⚠ **Et résoudre à une date n'est pas résoudre** : *la seconde relecture du 28 juillet 2026
+   a trouvé un relevé d'omission déjà périmé chez sa cible* (§ 31.3.4).
 
 **Remontée ouverte par ce chapitre :**
 
@@ -955,14 +964,15 @@ leurs **dix-neuf sous-sections**, dans l'ordre exact —, le § 31.0 étant une 
 *les **intitulés** des sous-sections s'écartent de ceux du plan, dénominations de normes et
 anglicismes retirés au titre de la parade de péremption ; **présence, ordre et matière sont
 conformes**, et la v0.29 du TOC a elle-même retenu la forme française de la pièce pour les deux
-sièges des § 31.2.6 et § 31.3.4.* La **table de couverture est respectée pour ses huit lignes**,
+sièges des § 31.2.6 et § 31.3.4 — *forme que la v0.30, version courante, reconduit.* La **table de
+couverture est respectée pour ses huit lignes**,
 ⚠ **y compris les trois qui sortent du chapitre — un acheminement et deux hors-périmètre** : *le §5.0
 est **acheminé à l'avant-propos**, le §5.3 va au **ch. 30**, et le §5.5.4 — **siège unique du KYA** —
 est **déjà consolidé au ch. 18** et n'est pas repris.* ⚠ **Les trois sont nommées dans le corps au
 moment où le lecteur les attendrait**, au § 31.0 et au § 31.4. La **décision 14 a été exécutée avant la
 rédaction**, domaine déclaré : une thèse examinée, zéro réalignée, **deux bornes de périmètre
-portées** ; *la thèse a été **re-collationnée mot à mot contre la v0.29 le 28 juillet 2026** et
-demeure identique.* ⚠ **Les six sièges portent leur marqueur explicite**, et **les six sièges ou
+portées** ; *la thèse a été **re-collationnée mot à mot le 28 juillet 2026, contre la v0.29 puis
+contre la v0.30 du TOC**, et demeure identique aux deux.* ⚠ **Les six sièges portent leur marqueur explicite**, et **les six sièges ou
 domiciles amont que le chapitre touche sont renvoyés et non reconstruits** : *la triade létale
 (**ch. 19 § 19.2**), le KYA (**ch. 18 § 18.1**), le socle IAM (**ch. 3**),
 l'application des permissions à la récupération (**ch. 24 § 24.4.2**), la sémantique d'effet
@@ -981,10 +991,13 @@ et l'homonymie avec les trois échelles du ch. 14 § 14.4 est nommée plutôt qu
 cardinaux ont été re-mesurés au commit du 28 juillet 2026** (décision 16 du TOC) ; *l'attestation
 antérieure annonçait « projection d'analyste » aux § 31.1.2, § 31.4.2 et § 31.4.3, et une seule
 occurrence du renvoi §8.4 — deux nombres que le corps ne soutient plus.* ⚠ **Les six bandeaux de siège
-ont vu leurs listes de renvois entrants re-mesurées par balayage des cinquante pièces**, et **trois
-omissions de renvoi chez autrui y sont désormais nommées** : *le ch. 49 § 49.11.3 et le ch. 49 § 49.9
-pour les deux sièges du § 31.1, le ch. 44 § 44.1.7 pour celui du § 31.3.4* — **hors de la portée de
-cette pièce, qui les signale plutôt que de les corriger.** Enfin, ⚠ **le patron du § 31.1.1 est écrit
+ont vu leurs listes de renvois entrants re-mesurées par balayage des cinquante pièces**, et **deux
+omissions de renvoi chez autrui y sont nommées** : *le ch. 49 § 49.11.3 et le ch. 49 § 49.9, pour les
+deux sièges du § 31.1* — **hors de la portée de cette pièce, qui les signale plutôt que de les
+corriger.** ⚠ **Une troisième, portée contre le ch. 44 § 44.1.7, était déjà comblée à la date où elle
+a été écrite, et la seconde relecture a dû la défaire** : *cette pièce nomme désormais le siège, et
+**un relevé d'omission chez autrui se re-constate à chaque passe** — la pièce visée bouge, le relevé
+ne bouge pas tout seul.* Enfin, ⚠ **le patron du § 31.1.1 est écrit
 avec sa limite empirique** : *le ch. 17 § 17.5 déclare qu'on ne sait rien de l'efficacité de la
 supervision humaine, et le chapitre l'écrit là où il pose le patron qui en dépend.*
 
@@ -1019,12 +1032,15 @@ découverte de la collision — **aucun numéro n'est partagé**.*
   *et un contrôle exécuté sur un corpus instable atteste un état que le commit ne produira pas.*
   ⚠ **Le versement est partiel sur trois des six, et le motif est écrit à la table** : *le contrôle
   **S5** — « toute pièce touchant la matière renvoie au siège » — y est **désactivé** pour les
-  § 31.1.1, § 31.1.2 et § 31.3.4*, **trois pièces hors passe consommant leur matière sans les
-  nommer** — ch. 49 § 49.11.3, ch. 49 § 49.9 et ch. 44 § 44.1.7, **les trois vérifiées sur pièce le
-  28 juillet 2026**. ⚠ *Les aligner dépasse le mandat d'un relecteur de chapitre, et **un contrôle
-  bruyant est un contrôle ignoré**.* **S5 est actif** pour les § 31.1.4, § 31.2.6 et § 31.4.3.
-  ☐ **La réactivation des trois autres reste due, après alignement des pièces qui omettent le
-  renvoi.**
+  § 31.1.1, § 31.1.2 et § 31.3.4*. ⚠ **Deux des trois motifs tiennent, le troisième est périmé, et
+  la seconde relecture du 28 juillet 2026 l'a constaté sur pièce.** *Tiennent : le **ch. 49
+  § 49.11.3** et le **ch. 49 § 49.9**, qui consomment la matière des deux sièges du § 31.1 sans les
+  nommer — **zéro occurrence de « ch. 31 » dans toute la pièce**.* ⚠ *Ne tient plus : le motif du
+  § 31.3.4, que la table impute à un « **ch. 44 § 44.5** » — section qui ne porte pas cette matière,
+  le patron étant touché au **§ 44.1.7**, **qui nomme désormais le siège**.* ⚠ *Les aligner dépasse
+  le mandat d'un relecteur de chapitre, et **un contrôle bruyant est un contrôle ignoré**.* **S5 est
+  actif** pour les § 31.1.4, § 31.2.6 et § 31.4.3. ☐ **La réactivation du § 31.3.4 est due sans autre
+  préalable** ; ☐ **celle des § 31.1.1 et § 31.1.2 reste due après alignement du ch. 49.**
 
 ⚠ **Ce que la clôture ne change pas.** **G-3 a été franchie le 28 juillet 2026**, mais *le socle
 consolidé ne porte du Vol. I que dix-sept entrées héritées, toutes en `[C]`, dont **une seule couvre

@@ -11,9 +11,9 @@ leurs verdicts.*
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet de faits de G-1 levé le 28 juillet 2026** — 123 entrées à sensibilité temporelle portées à leur source ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) ; ⚠ **l'obligation de pièce du Livre II, elle, reste due**. Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Un instrument ne se périme pas comme un fait** : ce qui se périme ici est l'**application-témoin** du § 14.2, dont chaque verdict est daté du 21 juillet 2026 et se rejouera à chaque révision des trois mécanismes qu'elle éprouve |
 | **Socle mobilisé** | ⚠ **Aucune entrée n'est requise pour la grille elle-même** : elle est spécifiée au **PRD du Vol. III, Annexe C**, document de cadrage, non versée par un lot d'instruction. Les **verdicts** du § 14.2 résolvent, eux, contre le **Vol. III *Monographie* ch. 4**, dont **vingt et une entrées propres** sont mobilisées — **F-01**, **F-02**, **F-04** à **F-09**, **F-11**, **F-14**, **F-15**, **F-19**, **F-21**, **F-33** à **F-35**, **F-37**, **F-38**, **F-40**, **F-47**, **F-87** — plus les **entrées héritées H-02 et H-03** ; toutes conservent leurs **niveaux d'origine**. L'échelle d'autonomie du § 14.4 vient du **Vol. I *Monographie* §5.0.2**, portée par **H-31**, en **[C]** et **non élevable**. ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** et ces entrées y résolvent par la **table de correspondance n° 2** ([`socle-consolide.md`](../PRD/socle-consolide.md) §5) ; la pièce les cite **dans la série du Vol. III, préfixées de leur volume** (décision 7) — **la re-citation en `S-nnn` n'est pas faite et reste due**. **Aucun énoncé n'est central au sens de CA-IV-01** : le PRD v0.14 déclare le **vote adversarial dû pour toute entrée appelée à porter un fait central**, et aucun n'a été conduit par la consolidation |
 | **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les cinq sections du corps, § 14.0 à § 14.4.** Vol. III — **R-02 : deux marqueurs**, § 14.2 (deux) ; **R-13 : un marqueur**, § 14.4 ; **R-14 (trois degrés d'absence) : un marqueur**, § 14.1 ; les **sept cases vides du tableau 14.2** sont chacune déclarée **degré 3** dans le corps du tableau, **sans marqueur** — *couverture déclarée, non dénombrée*. **R-01, R-03 à R-12 : zéro marqueur.** ⚠ **Deux garde-fous sont appliqués au-delà de ce que leur marqueur signale** : **R-13** — les **trois échelles homonymes du Vol. I** sont nommées au § 14.4 par leur cardinal et leur numérotation, **jamais nues**, sur toute la section et non au seul endroit marqué — et **R-12**, le § 14.3 rangeant les attaques par maillon en **traitement défensif exclusif, sans recette d'exploitation**, sans porter l'identifiant. Vol. II — **réserve F-01, §8.2, R-1 à R-8 : zéro marqueur**, leurs sièges étant les ch. 15 et 16. ⚠ **Collision de séries déclarée** : l'unique occurrence littérale de « F-01 » au § 14.2 est celle du **Vol. III**, non celle du Vol. II — *un `F-xx` nu est indécidable entre deux socles* (décision 7) —, et la réserve du Vol. II sur ce protocole est **sans objet ici**, la condensation du F-40 ne le nommant pas. ⚠ **Faux ami déclaré** : le « corpus d'appui » nommé au § 14.4 est un **marqueur conditionnel de réouverture**, jamais une source |
-| **Volumétrie cible** | ≈ **3 000 mots** de corps (§ 14.0 à § 14.4), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — **la plus basse du Livre**, ce chapitre ne portant que quatre sections et aucun corpus propre. ☑ **Décompte publiable depuis G-2** ; **réel : 3 725 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+24,2 %**, re-mesuré à la relecture du 28 juillet 2026 (⚠ *valeur antérieure périmée : 3 514, +17,1 %* ; les **211 mots** de l'écart sont ceux des bornes et des attributions ajoutées par la relecture — **aucune amputation n'a été faite**, D-4). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
+| **Volumétrie cible** | ≈ **3 000 mots** de corps (§ 14.0 à § 14.4), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — **la plus basse du Livre**, ce chapitre ne portant que quatre sections et aucun corpus propre. ☑ **Décompte publiable depuis G-2** ; **réel : 3 784 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+26,1 %**, re-mesuré au commit de la **seconde relecture du 28 juillet 2026** (⚠ *deux valeurs antérieures périmées, conservées parce que l'écart est l'instruction* : **3 514, +17,1 %** à la rédaction, puis **3 725, +24,2 %** à la première relecture — vérifiée sur pièce et exacte. Les **211 mots** du premier écart sont ceux des bornes et des attributions rétablies ; les **59** du second, ceux du siège rectifié au § 14.3 et de la borne de F-87. ⚠ **Aucune amputation n'a été faite ni ne sera faite**, D-4 — *le dépassement se mesure, il ne se corrige pas en coupant une borne*). ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 14)* — cinq questions — *qui es-tu, qui t'a créé, pour qui agis-tu, que peux-tu faire, qui en répond* — forment la grille de lecture de tout mécanisme d'identité agentique ; ce sont les questions que l'entreprise doit pouvoir poser à chacun de ses agents, et **aucun des trois mécanismes instruits par le Vol. III ne répond aux cinq**.
+> **Thèse** *(citée par copie depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 14 — décision 17 ; les v0.29 et v0.30 déclarent thèses et tables détaillées **strictement inchangées**, la forme citée est donc celle qu'a arrêtée la v0.25)* — cinq questions — *qui es-tu, qui t'a créé, pour qui agis-tu, que peux-tu faire, qui en répond* — forment la grille de lecture de tout mécanisme d'identité agentique ; ce sont les questions que l'entreprise doit pouvoir poser à chacun de ses agents, et **aucun des trois mécanismes instruits par le Vol. III ne répond aux cinq**.
 >
 > ⚠ **Thèse réalignée au TOC v0.25** (décisions 8 et 14), sur la remontée **R-IV-20** ouverte par cette pièce. La forme citée par la version antérieure — « aucun mécanisme de 2026 ne répond aux cinq » — était un **quantificateur universel négatif sur un corpus non balayé**, que le garde-fou **R-14 du Vol. III** proscrit ; sa source l'avait bornée le **21 juillet 2026** et reportée dans sa pièce le 22, sans que le plan du compendium suive. ⚠ *Ce n'était donc pas une divergence à arbitrer, mais un report qui n'avait pas été fait.* **Le corps du chapitre n'a pas changé** : il était déjà écrit sous la forme bornée, et le § 14.2 déclarait la portée limitée à l'échantillon.
 
@@ -156,9 +156,9 @@ d'utilisateur de l'agent, et une politique ciblant « tous les utilisateurs » *
 identités d'agent (Vol. III F-35, **[A]**, fait négatif **établi**, degré 2). *Un identifiant qui
 n'est pas unique au point d'application ne répond qu'à moitié à « qui es-tu ».* Sur **Q-B**, **répond
 partiellement** : ce qui se cite en **[B]** est la spécification elle-même — **SPIFFE-ID** énonce
-qu'un SVID est valide s'il a été signé par une autorité du domaine de confiance de l'**identité
-SPIFFE** qu'il porte (Vol. III F-87) —, et ce qu'elle **démontre** est une vérification de signature
-dans un domaine, **non l'ancrage de confiance de cette autorité** (R-02). Sur **Q-C**, **répond
+qu'un SVID est **considéré** valide s'il a été signé par une autorité du domaine de confiance de
+l'**identité SPIFFE** qu'il porte (Vol. III F-87) —, et ce qu'elle **démontre** est une vérification
+de signature dans un domaine, **non l'ancrage de confiance de cette autorité** (R-02). Sur **Q-C**, **répond
 partiellement**, et la borne vient de la norme sous-jacente : le **RFC 8693** définit l'attribut `act`
 comme le moyen d'exprimer **qu'une délégation a eu lieu** et place explicitement hors de son périmètre
 les caractéristiques de sécurité des jetons eux-mêmes (Vol. III F-47, **[A]**) — le mandat s'exprime
@@ -202,8 +202,12 @@ se tient donc comme hypothèse falsifiable, éprouvée mécanisme par mécanisme
 La grille n'est pas un ornement méthodologique : **elle décide de ce qu'un chapitre doit produire.**
 Elle est appliquée, verdict à l'appui, au **ch. 15 § 15.1.4** (la carte signée), **§ 15.2.4** (les
 annuaires), **ch. 16 § 16.5** (l'objet de synthèse), **ch. 19 § 19.4** (la taxonomie des attaques) et,
-hors du présent Livre, aux **ch. 25 § 25.1** et **ch. 37 § 37.4**. Elle sert enfin de colonne à
-l'annexe des mécanismes. *Toute pièce qui ne l'applique pas s'en explique.*
+hors du présent Livre, au **ch. 37 § 37.4** (le maillage). ⚠ **Deux sièges de plus l'appliquent sans
+rendre aucun verdict** — le **ch. 25 § 25.4** (la ligne directrice E-23) et le **ch. 27 § 27.5** (la
+ligne directrice de l'AMF) —, en **lecture inversée** : ils demandent non ce qu'un texte produit comme
+réponse, mais ce qu'il suppose que l'institution puisse établir, *une ligne directrice n'étant ni un
+mécanisme ni un produit* (règle d'emploi 1). Elle sert enfin de colonne à l'annexe des mécanismes.
+*Toute pièce qui ne l'applique pas s'en explique.*
 
 **Le ch. 17 est l'exception, et c'est la plus instructive.** Il ne porte **aucun verdict** : il
 **instruit Q-C** — *pour qui agis-tu ?* — au lieu de l'appliquer mécanisme par mécanisme, et il le
@@ -352,12 +356,15 @@ requalifie pas la pièce écrite avant elle ; elle en rend le ré-adossement pos
    ⚠ **le socle est refondu depuis, et ils n'y sont pas encore ré-adossés** — la consolidation
    n'ayant d'ailleurs **promu aucune entrée** ni conduit aucun vote adversarial, la centralité reste
    hors de portée.
-2. **Les décomptes sont publiables** (G-2). Écart de **+24,2 %**, re-mesuré au commit ; il alimente
+2. **Les décomptes sont publiables** (G-2). Écart de **+26,1 %**, re-mesuré au commit ; il alimente
    **D-4** par **R-IV-17**.
-3. **Les renvois « ch. N » vers les Livres III à V sont des renvois de plan** : ch. 25 § 25.1, ch. 37
-   § 37.4 et ch. 42 ne sont pas rédigés. Les renvois vers le **ch. 7 § 7.2.2** résolvent contre du
-   texte ; ceux vers les **ch. 15, 16, 17, 18, 19 et 20** résolvent contre du texte au terme de la
-   présente passe.
+3. ⚠ **Les renvois « ch. N » vers les Livres III et IV NE SONT PLUS des renvois de plan, et l'énoncé
+   antérieur — « ch. 25 § 25.1, ch. 37 § 37.4 et ch. 42 ne sont pas rédigés » — est périmé** : les
+   **ch. 25, 27, 37 et 42** sont rédigés depuis le 27 juillet 2026. **Résolus contre leur texte le
+   28 juillet 2026**, ils ont déplacé un siège : le § 14.3 nommait « ch. 25 § 25.1 » — *Genèse et
+   calendrier* — là où la grille est relue au **§ 25.4**, moitié E-23, la moitié AMF siégeant au
+   **ch. 27 § 27.5** ; et ni l'une ni l'autre ne rend de verdict. Les renvois vers le **ch. 7
+   § 7.2.2** et vers les **ch. 15, 16, 17, 18, 19, 20 et 21** résolvent également contre du texte.
 4. **Les sept cases vides du § 14.2 sont des états de preuve, non des verdicts.** ⚠ **G-3 n'en a
    rempli aucune** : la consolidation reprend les entrées des trois socles sans en verser de neuve.
    Elles se rempliront ou non selon ce que **G-4** et l'instruction de sources primaires établiront,
@@ -387,7 +394,7 @@ ci-dessous, et les deux sont closes)* **:**
   qu'elle ne mentionne pas. ⚠ **Une arrivée se déclare aux deux bouts** — c'est la classe de défaut
   que la v0.17 du TOC a soldée sur le §2.8.5 du Vol. I, et elle se reproduit ici à l'identique.
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.28** — § 14.1 à
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.30** — § 14.1 à
 § 14.4, dans l'ordre exact —, et le § 14.0 est une introduction de chapitre. La **table de couverture
 est respectée pour ses trois lignes** — ⚠ *elle en portait deux à la rédaction : la v0.25 y a ajouté
 la ligne des **deux arrivées** du § 14.3, sur la remontée **R-IV-21** de cette pièce* —, y compris la
@@ -437,6 +444,35 @@ chapitre 14. ⚠ **Aucun identifiant `R-IV-nn` n'est alloué par cette relecture
 lisent le corpus le même jour, et deux passes qui numérotent dans une série partagée sans allocation
 préalable produisent la collision que le PRD §13 a déjà eu à défaire* — l'allocation revient à la
 passe d'arbitrage.
+
+**Seconde relecture du 28 juillet 2026 — la première éprouvée sur pièce.** *Toujours la même main :
+**CA-IV-11 et CA-IV-13 demeurent insatisfaites**, et rien ci-dessous n'y change quoi que ce soit.*
+⚠ **Ce qui a été re-mesuré et tient** : le décompte de **3 725 mots** annoncé par la première
+relecture, rejoué par [`PRD/decompte.sh`](../PRD/decompte.sh) **sur la pièce telle que reçue** et
+exact à l'unité — *les 3 784 du champ ci-dessus sont ceux de la pièce augmentée des corrections de la
+présente passe* ; les cardinaux de marqueurs du champ **Garde-fous** (**R-02** deux, **R-13** un,
+**R-14** un, **R-01** et **R-03 à R-12** zéro, **F-01** une occurrence et elle est du Vol. III) ; les **vingt et une entrées propres et les deux héritées** du champ **Socle
+mobilisé**, et les **dix retraits** que la première relecture y annonce ; les **huit verdicts sur
+quinze cases** et les **sept cases vides** du tableau 14.2 ; les **quatre marqueurs de « Lecture de
+l'auteur »**. ⚠ **Les six additions de source de la première relecture ont été résolues à la
+source** — **F-14/AML.T0053**, **F-15/AML.M0027**, **F-19/ASI03**, **F-47/RFC 8693**, **F-87/SPIFFE-ID**
+et le verbatim de **H-31** —, et **les six résolvent**. **Quatre corrections.** *(1)* ⚠ **Le § 14.3
+nommait un siège qui n'existe pas** : « ch. 25 § 25.1 » désigne *Genèse et calendrier*, la grille
+étant relue au **§ 25.4** pour la moitié E-23 et au **ch. 27 § 27.5** pour la moitié AMF — *et ni
+l'une ni l'autre ne rend de verdict, une ligne directrice n'étant pas un mécanisme.* La phrase
+attribuait donc un verdict là où le texte en refuse un. *(2)* La note de statut déclarait les **ch. 25,
+37 et 42 non rédigés** : ils le sont depuis le **27 juillet 2026**, et la liste des renvois taisait le
+**ch. 21**, que le corps nomme. *(3)* La pièce citait le **TOC v0.28** pour la thèse et pour la table
+détaillée alors qu'elle se repositionnait sur le **PRD v0.14** : *une passe qui prend la version
+courante d'un document et la version périmée de l'autre atteste deux états à deux dates.* Les deux
+sites passent en **v0.30**, dont le journal déclare thèses et tables **strictement inchangées** — la
+forme citée reste celle de la v0.25. *(4)* Le § 14.2 écrivait qu'un SVID « **est** valide s'il a été
+signé » là où **F-87** porte « est **considéré** valide » ; le verbe est rétabli. ⚠ **Ce qui est
+remonté et non corrigé ici** : la **table de couverture du TOC** porte encore « **ch. 25 § 25.1** »
+comme arrivée de la grille (ligne ajoutée en v0.25 sur **R-IV-21**), alors que le chapitre rédigé la
+place au **§ 25.4** et en ouvre une seconde au **ch. 27 § 27.5** — *c'est la décision 8 qui commande,
+et le rédacteur ne réaligne pas le plan.* ⚠ **Aucun identifiant `R-IV-nn` n'est alloué non plus par
+cette passe**, pour le motif déjà écrit.
 
 ---
 

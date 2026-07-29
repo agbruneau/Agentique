@@ -9,9 +9,9 @@ mécanisme.*
 |---|---|
 | **Statut** | **Brouillon de rédaction, non publiable** — rédigé le 27 juillet 2026 sur instruction d'auteur, **avant le franchissement de G-3**. ⚠ **G-3 est franchie depuis le 28 juillet 2026** (PRD v0.14 ; socle consolidé de **159 entrées**, `S-001` à `S-159`) et **G-4 demeure ouverte** : *une porte franchie après coup ne rattrape pas une rédaction qui l'a devancée*. ⚠ **Une section de ce chapitre est en outre rédigée contre une consigne explicite du plan** : le TOC déclare le § 17.5 « **front neuf — aucun des trois volumes ne le porte : sources primaires à établir avant rédaction** », et **ces sources n'ont pas été établies**. Le § 17.5 **expose donc le vide au lieu de le combler**, et ouvre la remontée **R-IV-27**. **R-IV-16 et R-IV-17, ouvertes au ch. 12, valent pour tout le Livre** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet de faits de G-1 est levé depuis le 28 juillet 2026** — les **123 entrées à sensibilité temporelle** du socle consolidé portées à leur source, **91 inchangées, 10 changées, 22 non établies** ; ⚠ **les obligations de pièce du Livre II restent dues**. Gels de source : **juin 2026** (Vol. I), **21 juillet 2026** (Vol. III). ⚠ **Une relève du plan porte une date postérieure au gel de sa source** — un document normatif consulté le **26 juillet 2026** — et elle est **reprise comme relève, jamais comme entrée de socle** (§ 17.1) |
-| **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** (Annexe B, `S-001` à `S-159`) ; **cette pièce ne s'y adosse pas encore** — le versement des identifiants consolidés au corps des pièces reste dû, et la résolution se lit ici contre les **identifiants sources**. Résolution contre le **Vol. III *Monographie* ch. 9-10**, dont les entrées **F-07**, **F-14**, **F-15**, **F-29** à **F-31**, **F-46**, **F-47**, **F-50**, **F-53**, **F-65**, **F-74** à **F-80**, **F-82**, **F-89** et les entrées héritées **H-01**, **H-04**, **H-06**, **H-12**, **H-19**, **H-28**, **H-29**, **H-33** conservent leurs niveaux d'origine ; et contre le **Vol. I *Monographie* §2.11.2 et §3.6.6**, en **[C]**. ⚠ **Cinq entrées mobilisées sont en [C]** — F-31, H-19, H-28, H-29, H-33 : elles **situent**, elles ne portent pas. **H-15/PC3 du Vol. II**, construction d'auteur, est **hors socle factuel** et **n'est versée au socle consolidé à aucun niveau** : citable avec sa réserve, jamais versable. ⚠ **État de re-datation des vingt-huit entrées au 28 juillet 2026** : **treize inchangées**, dont deux partiellement (H-04, F-46) ; **trois changées** (F-31, F-50, F-78) ; **quatre non établies**, obstacle nommé (H-06, F-89, H-28, H-29) ; **huit sans objet**, faute de sensibilité temporelle. ⚠ **Le § 17.5 ne mobilise aucun socle** : il n'en a pas. **Aucun énoncé n'est central au sens de CA-IV-01** — *ni la pièce n'est adossée au socle consolidé, ni aucune de ses entrées n'a subi le vote adversarial que le régime de preuve réserve à un fait central* |
-| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les sept sections du corps, § 17.0 à § 17.6, et les trois sous-sections du § 17.6.** Vol. III — **R-02 : quatre marqueurs**, le bloc de thèse, § 17.0, § 17.1 et § 17.6.2. **R-01, R-03 à R-14 : zéro marqueur.** ⚠ **Ce chapitre est celui du Livre où l'écart entre marqueurs et applications est le plus large, et le motif tient au sujet** : *un chapitre qui prend une frontière pour objet écrit surtout des absences.* Les applications non marquées, portées sur tout le domaine balayé, sont celles de **R-14** — les absences portent leur degré, dont dix au **degré 3** —, de **R-09** (statut dit à chaque mention), de **R-01** (§ 17.2 et § 17.6), de **R-12** (traitement au niveau du maillon, aucune recette, § 17.6.1) et de **R-13** (§ 17.4, l'échelle d'autonomie jamais nue) : *l'application est réelle, le renvoi à l'identifiant absent.* Vol. II — **§8.2 : zéro marqueur** ; la métrique du § 17.6.2 est attribuée à sa source ; **R-1 à R-8 : zéro marqueur**. ⚠ **Un faux ami est déclaré** : le « point de contrôle » du glossaire du Vol. II traduit une notion de reprise sur incident et **n'est pas** le « point de contrôle obligatoire » de son ch. 19 ; la collision est **signalée et non résolue** (§ 17.4) |
-| **Volumétrie cible** | ≈ **5 700 mots** de corps (§ 17.0 à § 17.6), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — six sections dont une à trois sous-sections. ☑ **Décompte publiable depuis G-2** ; **réel : 7 190 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+26,1 %** (re-mesuré au commit du 28 juillet 2026, au terme de la passe de relecture ; **6 970 mots**, soit **+22,3 %**, à la passe de correction de l'audit). ⚠ **La croissance est celle de l'appareil de preuve, non de la matière** : elle vient du report de l'état du socle et de la re-datation du 28 juillet 2026 — *documenter un régime coûte des mots, et D-4 interdit de les reprendre par amputation*. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** ; ⚠ **la ligne du registre de gel porte encore 6 970 et reste à réaligner** — *l'en-tête et `decompte.sh` font foi* |
+| **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** (Annexe B, `S-001` à `S-159`) ; **cette pièce ne s'y adosse pas encore** — le versement des identifiants consolidés au corps des pièces reste dû, et la résolution se lit ici contre les **identifiants sources**. Résolution contre le **Vol. III *Monographie* ch. 9-10**, dont les entrées **F-07**, **F-14**, **F-15**, **F-29** à **F-31**, **F-46**, **F-47**, **F-50**, **F-53**, **F-65**, **F-74** à **F-80**, **F-82**, **F-89** et les entrées héritées **H-01**, **H-04**, **H-06**, **H-12**, **H-19**, **H-28**, **H-29**, **H-33** conservent leurs niveaux d'origine ; et contre le **Vol. I *Monographie* §2.11.2 et §3.6.6**, en **[C]**. ⚠ **Cinq entrées mobilisées sont en [C]** — F-31, H-19, H-28, H-29, H-33 : elles **situent**, elles ne portent pas. **H-15/PC3 du Vol. II**, construction d'auteur, est **hors socle factuel** et **n'est versée au socle consolidé à aucun niveau** : citable avec sa réserve, jamais versable. ⚠ **État de re-datation des vingt-huit entrées au 28 juillet 2026** : **treize inchangées**, dont deux partiellement (H-04, F-46) ; **trois changées** (F-31, F-50, F-78) ; **quatre non établies**, obstacle nommé (H-06, F-89, H-28, H-29) ; **huit sans objet**, faute de sensibilité temporelle. ⚠ **L'OBJET du § 17.5 ne mobilise aucun socle** : il n'en a pas — *aucune entrée des trois volumes ne porte le tamponnage ni le paradoxe de l'explicabilité*. **Trois des vingt-huit entrées y sont pourtant citées** — F-89, F-65, H-04 —, et **elles n'établissent pas l'objet** : elles établissent l'**obligation** et la **surveillance attendue** dont cet objet serait la limite empirique. *Une section sans socle sur son objet n'est pas une section sans citation ; confondre les deux effacerait ce qui rend la lacune structurante.* **Aucun énoncé n'est central au sens de CA-IV-01** — *ni la pièce n'est adossée au socle consolidé, ni aucune de ses entrées n'a subi le vote adversarial que le régime de preuve réserve à un fait central* |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** de l'identifiant dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les sept sections du corps, § 17.0 à § 17.6, et les trois sous-sections du § 17.6.** Vol. III — **R-02 : trois marqueurs**, § 17.0, § 17.1 et § 17.6.2. ⚠ **Un quatrième marqueur littéral figure au bloc de thèse et n'est PAS compté** : *le corps commence au premier `---`, comme [`PRD/decompte.sh`](../PRD/decompte.sh) le délimite, et le domaine déclaré ci-dessus s'arrête aux sept sections* — le compter contredirait la règle de comptage dans la phrase qui la pose. **R-01, R-03 à R-14 : zéro marqueur.** ⚠ **Ce chapitre est celui du Livre où l'écart entre marqueurs et applications est le plus large, et le motif tient au sujet** : *un chapitre qui prend une frontière pour objet écrit surtout des absences.* Les applications non marquées, portées sur tout le domaine balayé, sont celles de **R-14** — les absences portent leur degré, dont dix au **degré 3** —, de **R-09** (statut dit à chaque mention), de **R-01** (§ 17.2 et § 17.6), de **R-12** (traitement au niveau du maillon, aucune recette, § 17.6.1) et de **R-13** (§ 17.4, l'échelle d'autonomie jamais nue) : *l'application est réelle, le renvoi à l'identifiant absent.* Vol. II — **§8.2 : zéro marqueur** ; la métrique du § 17.6.2 est attribuée à sa source ; **R-1 à R-8 : zéro marqueur**. ⚠ **Un faux ami est déclaré** : le « point de contrôle » du glossaire du Vol. II traduit une notion de reprise sur incident et **n'est pas** le « point de contrôle obligatoire » de son ch. 19 ; la collision est **signalée et non résolue** (§ 17.4) |
+| **Volumétrie cible** | ≈ **5 700 mots** de corps (§ 17.0 à § 17.6), **cible dérivée** de l'enveloppe du Livre (50 000 mots, TOC v0.24) au prorata des sections — six sections dont une à trois sous-sections. ☑ **Décompte publiable depuis G-2** ; **réel : 7 255 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh) — **+27,3 %** (re-mesuré au commit du 28 juillet 2026, au terme de la contre-relecture ; **7 190 mots**, soit **+26,1 %**, à la passe de relecture ; **6 970 mots**, soit **+22,3 %**, à la passe de correction de l'audit). ⚠ **La croissance est celle de l'appareil de preuve, non de la matière** : elle vient du report de l'état du socle, de la re-datation du 28 juillet 2026 et du retrait d'une attestation de legs non mesurable — *documenter un régime coûte des mots, et D-4 interdit de les reprendre par amputation*. ⚠ La volumétrie du Livre est relevée au [`README.md`](README.md) du dossier et alimente **D-4** par **R-IV-17** ; ⚠ **la ligne du [registre de gel](../PRD/registre-gel.md) porte 7 190 — la mesure de la passe précédente — et son réalignement redevient dû du fait de la présente passe** : *l'en-tête et `decompte.sh` font foi, le registre suit* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 17)* — la délégation est le maillon faible — les mécanismes instruits par le Vol. III **documentent** qu'un agent *a* une identité, **aucun d'eux ne documente** *au nom de qui* il agit à l'instant t ; au-delà de deux sauts, **aucun des mécanismes instruits ne documente** une traçabilité opposable de bout en bout.
 >
@@ -596,8 +596,12 @@ d'ignorance.*
 
 *Section de sortie sans homologue direct dans la source — construction d'éditeur.*
 
-1. **La définition du saut de délégation**, déclarée faute d'être héritée. Les **ch. 18, 20 et 21** la
-   citent ; aucun ne la redéfinit.
+1. **La définition du saut de délégation**, déclarée faute d'être héritée et posée ici **une seule
+   fois**. ⚠ **L'attestation antérieure — « les ch. 18, 20 et 21 la citent » — est retirée, faute
+   d'être vraie** : au balayage du corpus que porte le commit `8ee20df`, *la formule ne figure dans
+   aucune autre pièce de la somme*. Ce qui existe est un **renvoi à la frontière**, non à la
+   définition — ch. 20 § 20.6, vers le § 17.6. *Un legs se mesure sur les pièces qui le reprennent,
+   pas sur celles qu'on suppose l'avoir repris.*
 2. **La localisation de la frontière** : *au premier changement de régime*, non à un rang numéroté.
    C'est ce qui transforme « deux sauts » d'un décompte en un critère.
 3. **Le point d'arrêt humain comme acte de délégation daté et signé** — proposition de la somme, qui
@@ -624,9 +628,12 @@ une consigne explicite du plan est enfreinte** : le § 17.5 est déclaré
 **R-IV-27**. Instruction d'auteur du 27 juillet 2026.
 
 1. **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ **Et le § 17.5 est un cas à part dans tout le
-   Livre** : il ne mobilise **aucune entrée**, à aucun niveau. *Il ne s'agit pas d'un énoncé faible,
-   mais d'une section qui n'en porte aucun.*
-2. **Les décomptes sont publiables** (G-2). Écart de **+26,1 %** ; la volumétrie du Livre alimente
+   Livre** : **aucune entrée, à aucun niveau, ne porte son objet** — le tamponnage et le paradoxe de
+   l'explicabilité. *Il ne s'agit pas d'un énoncé faible, mais d'une section dont l'objet n'en porte
+   aucun.* ⚠ **Elle cite néanmoins trois entrées — F-89, F-65, H-04 —, et c'est ce qui rend la lacune
+   structurante plutôt qu'anecdotique** : *ce sont l'obligation légale et la surveillance attendue par
+   E-23 qui reposent sur une parade dont rien n'établit l'efficacité.*
+2. **Les décomptes sont publiables** (G-2). Écart de **+27,3 %** ; la volumétrie du Livre alimente
    **D-4** par **R-IV-17**.
 3. **Tous les renvois « ch. N » résolvent désormais contre du texte** — les cinquante chapitres du
    plan existent en brouillon hors portes depuis le 27 juillet 2026 —, ⚠ **et résoudre contre un
@@ -683,14 +690,18 @@ verdict de grille n'est rendu**, conformément à la **règle d'emploi 5 du Vol.
 au **ch. 10**. Le **socle IAM reste au ch. 3** ; l'**inventaire de la révocation au ch. 20 § 20.4** ;
 la **taxonomie des attaques au ch. 19** ; le **versant québécois du mandat au ch. 27**. Les absences
 **portent leur degré**, dont dix au **degré 3**, sur tout le domaine balayé — *application de R-14
-déclarée, non dénombrée, faute de marqueur littéral.* Les **quatre marqueurs de R-02** portent la
-règle plutôt qu'ils ne l'énoncent deux fois : le **bloc de thèse** et le **§ 17.0** nomment le verbe
-qu'elle proscrit, le **§ 17.1** et le **§ 17.6.2** qualifient chaque mécanisme par ce que sa
-spécification démontre **et** ne démontre pas. Le **traitement défensif du § 17.6.1**
+déclarée, non dénombrée, faute de marqueur littéral.* Les **trois marqueurs de R-02** portent la
+règle plutôt qu'ils ne l'énoncent deux fois : le **§ 17.0** nomme le verbe qu'elle proscrit, le
+**§ 17.1** et le **§ 17.6.2** qualifient chaque mécanisme par ce que sa spécification démontre **et**
+ne démontre pas — *le quatrième marqueur littéral, au bloc de thèse, est hors du corps et hors du
+domaine déclaré.* Le **traitement défensif du § 17.6.1**
 est tenu **au niveau du maillon**, identifiants cités, **aucune recette reproduite**. La **collision
 terminologique du Vol. II est signalée et non résolue**. Et les **dix occurrences de « Lecture de
-l'auteur »** sont suivies de ce que le socle établit et n'établit pas — dont **une section entière**,
-le § 17.4, marquée à l'ouverture.
+l'auteur »** se répartissent en **neuf marquages de cette pièce**, chacun suivi de ce que le socle
+établit et n'établit pas — dont **une section entière**, le § 17.4, marquée à l'ouverture —, et **une
+mention** du marquage que porte la thèse du Vol. II reprise au § 17.4 : *citer le marquage d'une
+source n'est pas marquer une construction propre, et les additionner ferait passer une attribution
+pour une inférence.*
 
 
 ---
@@ -747,8 +758,9 @@ passe d'arbitrage* (PRD §13), et **numéroter depuis une pièce dans une série
 le geste qui a produit dix numéros alloués deux fois** le 27 juillet 2026.
 
 **Corrigé dans la pièce.** L'état des portes et du socle consolidé, périmé par le franchissement de
-G-3 (en-tête, § 17.1, note de statut) ; **deux cardinaux faux** — R-02 déclaré à trois marqueurs pour
-quatre, les absences au degré 3 déclarées à douze pour dix — ; la **liste des entrées mobilisées**,
+G-3 (en-tête, § 17.1, note de statut) ; **un cardinal faux** — les absences au degré 3 déclarées à
+douze pour dix — ⚠ *(la même passe en a « corrigé » un second qui ne l'était pas : voir la
+contre-relecture ci-dessous)* ; la **liste des entrées mobilisées**,
 qui déclarait F-44, F-45 et H-15 que le corps ne porte pas et taisait F-07, F-30, F-50, F-65 et H-04
 qu'il porte ; la **version du TOC** d'où la thèse est citée ; l'issue de **D-5**, prise depuis ; la
 **qualification de F-78**, que la re-datation du 28 juillet 2026 a changée ; et trois renvois que la
@@ -775,4 +787,65 @@ document, un « ch. 19 » sans volume.
   le renvoi est posé, et le motif de désactivation de S5 pour ce siège tombe avec lui.
 - **D'appareil — la volumétrie de cette pièce est re-mesurée**, et la ligne du **registre de gel** ne
   l'est pas : *l'en-tête et `decompte.sh` font foi, le registre suit*, et son réalignement se fait à
-  la passe qui clôt la relecture des cinquante pièces.
+  la passe qui clôt la relecture des cinquante pièces. ⚠ **Cette remontée est fausse et se retire** —
+  voir la contre-relecture ci-dessous.
+
+---
+
+### Contre-relecture — 28 juillet 2026
+
+⚠ **Cette sous-section est hors plan comme la note qui la porte, et se retire avec elle.** Elle
+enregistre ce qu'une **seconde lecture, distincte de la première**, a trouvé en éprouvant la passe
+qui précède. ⚠ **Elle ne satisfait pas CA-IV-13** : *les deux lectures relèvent du même dispositif,
+et le critère demande un relecteur distinct du **rédacteur**, constaté comme tel par la gouvernance* —
+D-6 ne fournit toujours pas de tiers.
+
+**Deux corrections de la première passe étaient fausses, et elles sont défaites.**
+
+- ⚠ **Le cardinal de R-02 était juste à trois, et il a été porté à quatre à tort.** Le quatrième
+  marqueur allégué est au **bloc de thèse**, que la même phrase exclut deux fois : le **domaine
+  déclaré** s'arrête aux sept sections § 17.0 à § 17.6, et [`PRD/decompte.sh`](../PRD/decompte.sh)
+  fait commencer le corps au **premier `---`**, qui suit ce bloc. *Un cardinal qui contredit la règle
+  de comptage posée dans la même phrase n'est pas une re-mesure, c'est une re-frappe.* **Rétabli à
+  trois**, aux deux sites, l'occurrence hors corps étant désormais déclarée plutôt que tue — *faute
+  de quoi la prochaine passe la « retrouverait ».*
+- ⚠ **La dette du registre de gel n'existait pas au moment où elle était déclarée.** La pièce disait
+  la ligne du [registre](../PRD/registre-gel.md) restée à 6 970 mots ; *elle porte 7 190 et +26,1 %
+  au commit `8ee20df`, réalignée par la passe même qui la déclarait en retard.* **Déclarer due une
+  dette payée est du même ordre que taire une dette due** : les deux font écrire au lecteur un état
+  que le dépôt ne porte pas. ⚠ **Et la dette renaît ici, de mon fait, ce qui se déclare plutôt que
+  se tait** : la présente passe corrige le corps, le décompte passe à **7 255 mots (+27,3 %)**, et
+  **le registre porte encore la mesure de la passe précédente**. *Le réalignement se fait à la passe
+  qui clôt la relecture des cinquante pièces, hors mandat d'un relecteur* — mais il est dû **pour la
+  bonne raison**, non pour une raison inventée.
+
+**Trois manques de la première passe sont corrigés.**
+
+- **Le § 17.5 était dit sans socle, sans que la phrase distingue l'objet de la citation.** La section
+  cite **F-89, F-65 et H-04** — que la première passe a précisément versés à la liste des entrées
+  mobilisées —, et sa lacune porte sur son **objet**, non sur son appareil. *Une section dont on dit
+  qu'elle ne mobilise « aucune entrée, à aucun niveau » alors qu'elle en cite trois affaiblit la
+  seule chose qu'elle établit : que la parade prescrite par deux chapitres du Livre III n'a pas de
+  limite empirique documentée.* Bornage porté à l'en-tête et au point 1.
+- **L'attestation sur les dix « Lecture de l'auteur » comptait ensemble deux objets distincts** : neuf
+  marquages de cette pièce et **une mention** du marquage que porte sa source au § 17.4. *Le cardinal
+  littéral reste dix* (décision 16) ; c'est la clause « suivies de ce que le socle établit et
+  n'établit pas » qui était fausse pour l'une d'elles.
+- **Le legs 1 de la synthèse attestait un emploi aval qui n'existe pas.** Balayage du corpus du commit
+  `8ee20df` : la formule « saut de délégation » **ne figure dans aucune autre pièce**, et le seul
+  renvoi entrant vise la **frontière** (ch. 20 § 20.6 → § 17.6), non la définition.
+
+**Remonté sans correction.**
+
+- **De plan — le TOC se contredit à l'entrée de ce chapitre**, et *un rédacteur ne corrige jamais le
+  TOC* : sous `### Chapitre 17`, le dépliage s'intitule « **Table des matières détaillée du chapitre
+  18** » alors que ses sections sont bien les § 17.1 à § 17.6, et que le chapitre 18 porte sa propre
+  entrée plus bas. ⚠ **C'est la classe de désalignement *interne au plan* déjà nommée au Livre IV** —
+  un titre contredit par ce qu'il chapeaute —, et **aucun des quinze contrôles de `check-toc.py` ne
+  la voit**, ses motifs portant sur les lignes de chapitre et non sur les tables détaillées.
+- **D'appareil — la remontée « le siège des cinq points de contrôle obligatoires peut armer son
+  contrôle » n'est pas re-mesurable aujourd'hui.** Elle affirme que cette pièce était la **seule**
+  hors siège à employer la matière sans renvoyer au ch. 43 § 43.3 ; *un cardinal d'unicité pris sur
+  un arbre de travail que quarante-neuf autres passes modifient n'est pas opposable* (règle
+  d'attestation du dépôt). **Le renvoi posé au § 17.4 tient** ; **la réactivation de S5 se décide sur
+  le corpus que le commit produit**, pas ici.

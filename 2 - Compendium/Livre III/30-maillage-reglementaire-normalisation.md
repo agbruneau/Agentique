@@ -7,8 +7,8 @@ troisième mouvement n'ouvre le terrain**.*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — pièce rédigée **avant** la porte **G-3**, sur instruction d'auteur du 27 juillet 2026. ⚠ **G-3 est franchie depuis le 28 juillet 2026** (PRD v0.14 ; socle consolidé à **159 entrées**) — *une porte franchie après coup solde la rédaction qui l'a devancée, elle ne la rattrape pas.* ⚠ **G-4 demeure ouverte et opposable à ce chapitre**, dont le § 30.3 provient intégralement du Vol. III. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 30.4. ⚠ **D-9 ne bloque pas ce chapitre** : *il ne prescrit aucune parade humaine.* ⚠ **Ce chapitre est celui du Livre dont la matière est la plus périssable** : *un calendrier réglementaire européen en cours de publication, un arrêté qui n'a pas été pris, et les **sept rangées d'instances du tableau 30.3**, dont les travaux spécifiques à l'identité d'agent sont pré-normatifs sans exception relevée **partout où le socle en documente***. ⚠ **La formule ne dit pas que ces instances n'auraient rien publié** : *deux de ces rangées portent des **Recommandations** (modèle de données des accréditations v2.0, 15 mai 2025 ; identifiants décentralisés v1.0, 19 juillet 2022), mais ce sont des **formats génériques, non écrits pour l'agent** — c'est la partition exacte que le § 30.3.3 établit.* ⚠ **Et la septième rangée ne documente rien** : *les travaux du sous-comité international d'IA et de l'organisme européen de normalisation ne sont portés par aucune entrée, et rien n'est affirmé d'eux — pas même leur caractère pré-normatif.* |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet de FAITS de G-1 est levé depuis le 28 juillet 2026** (registre : [`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) : *les entrées du socle que ce chapitre mobilise y ont été portées à leur source primaire, et **deux ont changé — toutes deux sur un décompte de participants** ; seul celui du § 30.3.3 est écrit ici, et il y est re-daté.* ⚠ **Les volets de pièce des Livres II et III restent dus**, et ils pèsent ici sur une douzaine de dates réglementaires européennes que le socle ne porte pas. Gels de source consommés : **juin 2026** (Vol. I §4.8, §5.3, §2.11.3), **16-17 juillet 2026** (Vol. II ch. 21 §21.2) et **21 juillet 2026** (Vol. III ch. 21) — ⚠ **aucun ne tient lieu du gel de la somme**, et l'écart entre le plus ancien et le plus récent est de **plus d'un mois** sur une matière qui se périme par trimestres |
+| **Statut** | **Brouillon de rédaction, non publiable** — pièce rédigée **avant** la porte **G-3**, sur instruction d'auteur du 27 juillet 2026. ⚠ **G-3 est franchie depuis le 28 juillet 2026** (PRD v0.14 ; socle consolidé à **159 entrées**) — *une porte franchie après coup solde la rédaction qui l'a devancée, elle ne la rattrape pas.* ⚠ **G-4 demeure ouverte et opposable à ce chapitre**, dont le § 30.3 provient intégralement du Vol. III. ⚠ **La règle cardinale du PRD §5 est enfreinte.** Voir la note de statut, § 30.4. ⚠ **D-9 ne bloque pas ce chapitre** : *il ne prescrit aucune parade humaine.* ⚠ **Ce chapitre est celui du Livre dont la matière est la plus périssable** : *un calendrier réglementaire européen en cours de publication, un arrêté qui n'a pas été pris, et les **sept rangées d'instances du tableau 30.3**, dont les travaux spécifiques à l'identité d'agent sont pré-normatifs sans exception relevée **partout où le socle en documente***. ⚠ **La formule ne dit pas que ces instances n'auraient rien publié** : *deux de ces rangées portent des **Recommandations du W3C** (modèle de données des accréditations v2.0, 15 mai 2025 ; identifiants décentralisés v1.0, 19 juillet 2022), mais ce sont des **formats génériques, non écrits pour l'agent** — c'est la partition exacte que le § 30.3.3 établit.* ⚠ **Et la septième rangée ne documente rien** : *les travaux du sous-comité international d'IA et de l'organisme européen de normalisation ne sont portés par aucune entrée, et rien n'est affirmé d'eux — pas même leur caractère pré-normatif.* |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet de FAITS de G-1 est levé depuis le 28 juillet 2026** (registre : [`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) : *sur les **seize entrées** que ce chapitre mobilise, **quatorze** y ont été portées à leur source primaire, et **deux ont changé — toutes deux sur un décompte de participants** ; seul celui du § 30.3.3 est écrit ici, et il y est re-daté.* ⚠ **Les deux autres sont HORS du domaine instruit, et ce n'est pas un détail** : *`F-48` (→ `S-094`) et `F-51` (→ `S-097`) sont classées **sans sensibilité temporelle** par leur socle source — leur re-datation est déclarée **sans objet**, non faite —, et elles portent l'une le second enseignement du § 30.3.3, l'autre le précédent des deux fédérations de confiance ; **une entrée non re-datée n'est pas une entrée inchangée** : c'est une entrée qu'on n'a pas regardée.* ⚠ **Les volets de pièce des Livres II et III restent dus**, et ils pèsent ici sur une douzaine de dates réglementaires européennes que le socle ne porte pas. Gels de source consommés : **juin 2026** (Vol. I §4.8, §5.3, §2.11.3), **16-17 juillet 2026** (Vol. II ch. 21 §21.2) et **21 juillet 2026** (Vol. III ch. 21) — ⚠ **aucun ne tient lieu du gel de la somme**, et l'écart entre le plus ancien et le plus récent est de **plus d'un mois** sur une matière qui se périme par trimestres |
 | **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** — [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées `S-001`…`S-159`** — *et ce chapitre a été rédigé avant lui* : ses énoncés résolvent contre les identifiants de leurs volumes d'origine, que les tables de correspondance normatives du socle rattachent à la série consolidée. ⚠ **Trois régimes coexistent dans ce seul chapitre, et la distinction commande la lecture.** Le **Vol. I** — §4.8, §5.3, §2.11.3 — entre **intégralement en [C]** (PRD §7.1) : *repérage documentaire, aucun fait central.* Le **Vol. III *Monographie* ch. 21** conserve ses niveaux : **H-08** (→ `S-033`, fondue dans son origine du Vol. II), **F-69** (→ `S-115`), **F-48** (→ `S-094`), **F-34** (→ `S-080`) et **F-82** (→ `S-128`) en **[A]** ; **F-33**, **F-50**, **F-51**, **F-73**, **F-79**, **F-80**, **F-81**, **F-83**, **F-85** et **F-86** en **[B]**. ⚠ **Une entrée a changé de niveau à la refonte, et le corps le porte** : **F-56** (→ `S-102`) est **rétrogradée de [B] en [C]** le 28 juillet 2026 par la règle de composition — *jamais un fait central* —, et le tableau 30.3 le dit à sa rangée. ⚠ **Le champ a été re-mesuré contre le corps** : *F-33 et F-34, citées au § 30.3.2, y manquaient ; **H-19**, qui y était déclarée en **[C]**, n'est mobilisée par aucun énoncé du corps et en est retirée.* Le **Vol. II ch. 21 §21.2** y verse **Q5**, ⚠ *question d'agenda, non entrée factuelle*. ⚠ **Deux séries F-xx coexistent et se préfixent** (décision 7) ; la série `S-nnn` est la seule que le socle alloue. ⚠ **Aucun énoncé n'est central au sens de CA-IV-01** : *la matière des § 30.1 et § 30.2 est en **[C]**, celle du § 30.3 relève d'une source dont **G-4** n'est pas franchie, et **trois affirmations reprises du Vol. I sont exclues du socle à tout niveau** — voir § 30.2.3, § 30.2.6 et § 30.2.7.* |
 | **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **R-5 (attente réglementaire — ne rien anticiper) : quatre occurrences du sigle**, § 30.1.1, § 30.2.3, § 30.3.1 et § 30.3.2 ; **PRD §8.2.3 et §7.5 (métriques auto-déclarées) : les deux renvois ne sont pas écrits au corps** ; *le garde-fou est **appliqué aux § 30.2.2 et § 30.3.3** — ⚠ **avec une issue opposée aux deux endroits**, et c'est le résultat : le chiffre du § 30.3.3 est **attribué et daté aux deux relevés**, celui du § 30.2.2 **ne l'est pas** — sa source ne nomme pas l'étude, et **l'attribution manquante est déclarée due sur place*** ; **PRD §8.4 (neutralité fournisseur) : une occurrence du renvoi**, § 30.3.2 ; **PRDPlan Vol. II §4.4 — écrire « attendu par E-23 », jamais « exigé » : une occurrence du renvoi**, § 30.2.4 ; *la modalité s'écrit « E-23 **attend** », « elle **n'exige pas** », aux § 30.2.4 et § 30.2.7 — **le décompte de la formule n'est pas re-mesurable et n'est donc pas annoncé*** ; **R-1 à R-4, R-6 à R-8 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : deux occurrences du sigle**, § 30.3.1 — ⚠ *et les degrés se marquent en toutes lettres : « degré 1 » au § 30.3.1, « degré 2 » aux § 30.3.2 et § 30.3.3 (deux), « degré 3 » aux § 30.1.4, § 30.3.1 et § 30.3.3 (deux), « fait négatif vérifié » aux § 30.3.1 et § 30.3.3 (deux)* ; **R-09 (quatre statuts, dits à chaque mention) : six occurrences du sigle**, § 30.1.2, § 30.2.3, § 30.3.2 (deux) et § 30.3.3 (deux) — *le garde-fou est en outre **appliqué à toutes les rangées du tableau 30.3***, où chaque statut est dit sans que le sigle soit repris ; **R-11 (jalons visés, jamais fixés) : deux occurrences du sigle**, § 30.3.1 et § 30.3.3 ; **R-02 : une occurrence du sigle**, § 30.3.3 ; **R-01 : une occurrence du sigle**, § 30.3.2 ; **R-13 : deux occurrences du sigle**, § 30.0 et § 30.1.1 ; **R-03 à R-08, R-10, R-12 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **7 500 mots** de corps (§ 30.0 à § 30.3), **cible dérivée** de l'enveloppe du Livre — 90 000 mots, inchangée du TOC v0.25 au TOC v0.30 — au prorata des **quinze sous-sections** qu'il déplie, et non des trois sections de tête. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, ⚠ **et elle a bougé à la relecture du 28 juillet 2026** — *la pièce a reçu des bornes de régime qu'elle n'avait pas (trois réserves d'exclusion, une attribution due, un trio de textes corrigé), et **le bornage allonge***. **Le chiffre se re-mesure au commit** (décision 16). ⚠ **D-4 interdit l'amputation comme le gonflement** : *une borne ne se coupe pas pour tenir une cible.* |
@@ -614,10 +614,10 @@ de source.**
 ⚠ **Une conséquence traverse les trois familles, et c'est elle que la sous-section retient.** *Quelle
 que soit l'issue, **la désignation ne clôt pas à elle seule le verrou dont le Livre II est né**.* Aucune
 des propositions consultées par l'instruction du Vol. III **n'est ratifiée ni adoptée** : une
-spécification déposée à une fondation n'était pas ratifiée à sa date de relevé, deux *Internet-Drafts*
+spécification déposée à la **DIF** n'était pas ratifiée à sa date de relevé, deux *Internet-Drafts*
 consultés sur l'identité d'agent sont des **soumissions individuelles non adoptées**, et le groupe
-communautaire correspondant d'un consortium du web — ⚠ *statut qui, selon les règles de publication de
-ce consortium, **ne place ses travaux ni sur la voie des normes ni au rang de norme** : il ne produit pas
+communautaire correspondant du **W3C** — ⚠ *statut qui, selon les règles de publication de ce
+consortium, **ne place ses travaux ni sur la voie des normes ni au rang de norme** : il ne produit pas
 de Recommandation et n'engage aucun calendrier normatif* (R-09) — **n'avait publié ni rapport ni
 brouillon** (Vol. III F-50, **[B]**, *fait négatif ÉTABLI, degré 2*). ⚠ **Un organisme désigné qui
 voudrait s'adosser à l'un de ces travaux s'adosserait donc, à cette date, à des textes que leurs propres
@@ -645,11 +645,11 @@ dans ses cellules.**
 | Instance | Objet relevé | État au 21 juillet 2026 | Borne du relevé |
 |---|---|---|---|
 | **Groupe d'identité de charge de travail (IETF)** | sept *Internet-Drafts* de groupe de travail, dont l'architecture | ⚠ **aucun publié en RFC** ; un seul porte une soumission pour publication, en visée informative (F-85, **[B]**) | relevé **horodaté et périssable** ; porte sur les documents de groupe, **les brouillons individuels n'ayant été ni ouverts ni énumérés** |
-| **Consortium du web — accréditations vérifiables** | modèle de données v2.0 ; v2.1 | v2.0 : **Recommandation** du 15 mai 2025 (F-79) ; v2.1 : ⚠ **brouillon de travail** du 11 mai 2026, portant son propre avertissement — *travaux émergents, non une norme ratifiée* (F-80) | ⚠ l'aboutissement de la v2.1 est **SPÉCULATIF** : *aucune date de passage à un stade ultérieur n'a été relevée* |
-| **Consortium du web — identifiants décentralisés** | v1.0 ; v1.1 | v1.0 : **Recommandation** du 19 juillet 2022, ⚠ *page signalant des errata dont le contenu n'a pas été ouvert — degré 3* (F-81) ; v1.1 : **instantané de recommandation candidate** du 5 mars 2026 (F-82, **[A]**) | pour la v1.1, ⚠ **relevé de liste et non balayage de texte** : *aucun degré d'absence n'est porté* |
-| **Groupe communautaire « protocole d'agent d'IA »** | charte déclarant, **parmi d'autres objets**, un modèle d'identité pour les agents | hébergé depuis le 8 mai 2025 ; ⚠ **groupe communautaire** — *statut qui ne place ses travaux ni sur la voie des normes ni au rang de norme* (F-83, **[B]** ; R-09) | ⚠ **aucun document produit par ce groupe n'a été ouvert** |
-| **Fondation d'identité ouverte** | charte d'un groupe communautaire sur l'identité et l'IA | ⚠ place **hors de son périmètre** le développement de tout protocole de normalisation mondiale sur les agents et l'identité, et **renvoie ce travail à un groupe de travail** (F-48, **[A]**, *fait négatif ÉTABLI, degré 2*) | ⚠ **le socle ne documente pas** le régime de publication d'un groupe communautaire de cette fondation — *degré 3* |
-| **Institut national de normalisation (États-Unis)** | une publication spéciale de 2020 ; un document sur l'identité et l'autorisation des agents ; une initiative de standards | la publication de **août 2020** pose l'authentification et l'autorisation comme fonctions discrètes préalables à l'établissement d'une session ; le document du 5 février 2026 est ⚠ **un document de concept à l'état de projet public initial** ; l'initiative annoncée le 17 février 2026 prend en 2026 la forme d'⚠ **un projet de document de concept, non d'une publication finale** (F-73, **[B]** ; F-56, ⚠ **[C]** depuis sa rétrogradation du 28 juillet 2026 — *jamais un fait central*) | ⚠ **aucun de ces trois documents n'est une publication finale sur l'identité d'agent** |
+| **W3C — accréditations vérifiables** | modèle de données v2.0 ; v2.1 | v2.0 : **Recommandation** du 15 mai 2025 (F-79) ; v2.1 : ⚠ **brouillon de travail** du 11 mai 2026, portant son propre avertissement — *travaux émergents, non une norme ratifiée* (F-80) | ⚠ l'aboutissement de la v2.1 est **SPÉCULATIF** : *aucune date de passage à un stade ultérieur n'a été relevée* |
+| **W3C — identifiants décentralisés** | v1.0 ; v1.1 | v1.0 : **Recommandation** du 19 juillet 2022, ⚠ *page signalant des errata dont le contenu n'a pas été ouvert — degré 3* (F-81) ; v1.1 : **instantané de recommandation candidate** du 5 mars 2026 (F-82, **[A]**) | pour la v1.1, ⚠ **relevé de liste et non balayage de texte** : *aucun degré d'absence n'est porté* |
+| **Groupe communautaire « protocole d'agent d'IA » (W3C)** | charte déclarant, **parmi d'autres objets**, un modèle d'identité pour les agents | hébergé depuis le 8 mai 2025 ; ⚠ **groupe communautaire** — *statut qui ne place ses travaux ni sur la voie des normes ni au rang de norme* (F-83, **[B]** ; R-09) | ⚠ **aucun document produit par ce groupe n'a été ouvert** |
+| **OpenID Foundation** | charte d'un groupe communautaire sur l'identité et l'IA | ⚠ place **hors de son périmètre** le développement de tout protocole de normalisation mondiale sur les agents et l'identité, et **renvoie ce travail à un groupe de travail** (F-48, **[A]**, *fait négatif ÉTABLI, degré 2*) | ⚠ **le socle ne documente pas** le régime de publication d'un groupe communautaire de cette fondation — *degré 3* |
+| **NIST (États-Unis)** | une publication spéciale de 2020 ; un document du **NCCoE** sur l'identité et l'autorisation des agents ; une initiative de standards | la publication de **août 2020** pose l'authentification et l'autorisation comme fonctions discrètes préalables à l'établissement d'une session ; le document du 5 février 2026 est ⚠ **un document de concept à l'état de projet public initial** ; l'initiative annoncée le 17 février 2026 prend en 2026 la forme d'⚠ **un projet de document de concept, non d'une publication finale** (F-73, **[B]** ; F-56, ⚠ **[C]** depuis sa rétrogradation du 28 juillet 2026 — *jamais un fait central*) | ⚠ **aucun de ces trois documents n'est une publication finale sur l'identité d'agent** |
 | **Sous-comité international d'IA ; organisme européen de normalisation** | — | ⚠ **le socle ne documente pas leurs travaux** : *absence de documentation dans le corpus, non un fait négatif vérifié* | — |
 
 : Tableau 30.3 — Les instances de normalisation et l'état de leurs travaux applicables à l'identité d'agent, au 21 juillet 2026. ⚠ **Chaque statut est dit à sa mention** (R-09 du Vol. III) ; **aucune ligne n'a été reprise à la source primaire pour la somme.** ⚠ **Les qualifications prospectives de la dernière colonne relèvent du tri du ch. 49 § 49.0**, siège de la discipline pour toute la somme — *appliqué ici, jamais re-dérivé*.
@@ -668,9 +668,10 @@ l'un des sept brouillons relevés expirant six semaines après la consultation.*
 pas *fixés* : ils sont **visés**, et leurs statuts se disent** (R-11 du Vol. III).
 
 ⚠ **Le second tient à ce que les instances déclarent elles-mêmes, et il est plus instructif qu'un
-inventaire.** *La charte du groupe d'identité pour l'IA d'une fondation **place hors de son périmètre**
-le développement de tout protocole de normalisation mondiale sur les agents et l'identité, et **renvoie
-ce travail à un groupe de travail** — énoncé de **degré 2**, réserve explicite portée par la source.*
+inventaire.** *La charte du groupe d'identité pour l'IA de la **OpenID Foundation** place **hors de son
+périmètre** le développement de tout protocole de normalisation mondiale sur les agents et l'identité,
+et **renvoie ce travail à un groupe de travail** — énoncé de **degré 2**, réserve explicite portée par
+la source.*
 ⚠ **Le verrou n'est donc pas que personne ne travaille : c'est que l'instance qui a compilé la matière
 décline la charge de la normaliser.** *C'est le sens de la réserve que le Vol. I porte sur la
 connaissance de l'agent tiers* — ⚠ **dont le siège unique est le ch. 18 § 18.1**, et qui **n'est pas
@@ -678,22 +679,22 @@ reconstruit ici**.
 
 ⚠ **Il vaut la peine de mesurer l'écart avec ce qu'une normalisation institutionnelle porte
 réellement lorsqu'elle existe.** *Le socle documente **deux précédents de fédération de confiance**
-: un règlement européen inscrit dans son texte un **audit des prestataires qualifiés au moins tous
-les 24 mois, à leurs frais** ; une alliance industrielle exploite un **programme de certification
-par laboratoires accrédités** et un service de métadonnées (Vol. III F-51, **[B]**).* ⚠ **Ce ne sont
-pas des spécifications : ce sont des dispositifs de contrôle périodique, financés, avec des tiers
-accrédités.** ***C'est cet appareil-là qui manque au champ agentique*** — *et c'est lui qu'une
+: le règlement européen **eIDAS** inscrit dans son texte un **audit des prestataires qualifiés au
+moins tous les 24 mois, à leurs frais** ; la **FIDO Alliance** exploite un **programme de
+certification par laboratoires accrédités** et un service de métadonnées (Vol. III F-51, **[B]**).*
+⚠ **Ce ne sont pas des spécifications : ce sont des dispositifs de contrôle périodique, financés,
+avec des tiers accrédités.** ***C'est cet appareil-là qui manque au champ agentique*** — *et c'est lui qu'une
 désignation ministérielle mettrait en mouvement, ou ne mettrait pas.* ⚠ **Un mécanisme se qualifie
 par ce que sa spécification démontre** (R-02 du Vol. III) : *un programme de certification démontre
 un contrôle périodique ; une charte qui décline la charge ne démontre rien.*
 
 ⚠ **Une remarque d'attribution, enfin, pour un chiffre qui circule.** *Au relevé du 21 juillet 2026,
-la page des participants du groupe communautaire affichait **254 participants non-présidents** ; la
-re-datation à la source primaire du 28 juillet 2026 en compte **260**, et l'entrée porte les deux
-états.* ⚠ **Cette donnée est affichée par la plateforme et n'a fait l'objet d'aucune vérification
-indépendante** ; *elle compte des **inscriptions individuelles**, non des organisations
-contributrices ni une activité rédactionnelle.* ⚠ **Elle mesure une attention, pas une production**
-— et aucun document de ce groupe n'a été ouvert. ***Un chiffre d'inscription qu'on cesse d'attribuer
+la page du **W3C** recensant les participants de son groupe communautaire affichait **254
+participants non-présidents** ; la re-datation à la source primaire du 28 juillet 2026 en compte
+**260**, et l'entrée porte les deux états.* ⚠ **Cette donnée est affichée par le W3C et n'a fait
+l'objet d'aucune vérification indépendante** ; *elle compte des **inscriptions individuelles**, non
+des organisations contributrices ni une activité rédactionnelle.* ⚠ **Elle mesure une attention, pas
+une production** — et aucun document de ce groupe n'a été ouvert. ***Un chiffre d'inscription qu'on cesse d'attribuer
 devient, en trois citations, un indicateur d'avancement qu'il n'est pas.***
 
 ### Synthèse : ce que le chapitre lègue à la somme
@@ -814,6 +815,34 @@ pièces**. *Prendre un numéro sous cette contrainte reproduirait la collision d
   eu lieu** (F-56 → `S-102`, [B] → [C]). *Une pièce qui cite un identifiant source pendant que le socle
   alloue les siens vieillit à chaque révision du socle.* **Demande remontée** : une passe unique de
   ré-ancrage des cinquante pièces sur la série `S-nnn`, jamais pièce à pièce.
+- **Non bloquante, de divergence de nommage entre une pièce et le siège auquel elle renvoie** *(ouverte
+  par la contre-relecture)*. Le § 30.3.3 nomme désormais la **OpenID Foundation**, comme la décision 15b
+  l'exige d'un attributeur ; ⚠ **le siège du KYA — ch. 18 § 18.1 —, auquel cette même sous-section
+  renvoie, la désigne « Fondation d'identité ouverte »**, et cette forme est la **signature versée à
+  [`check-sieges.py`](../PRD/check-sieges.py)**. *La décision 15b(ii) vise nommément le cas — « a fortiori
+  quand la somme en fait un siège » —, et **une signature d'appareil ne se réécrit pas depuis une pièce
+  qui n'est pas le siège**.* **Demande remontée** : aligner le ch. 18 § 18.1 et sa signature dans la même
+  passe, jamais l'un sans l'autre.
+- **Non bloquante, de tension entre deux règles opposables, non arbitrée ici.** Au § 30.3.2, la date de
+  disponibilité générale d'une offre d'identité d'agent est attribuée à « **son éditeur** ». ⚠ **La
+  décision 15b(i) écarte nommément « un éditeur » comme attribution ; le PRD Vol. II §8.4 — neutralité
+  fournisseur — est précisément le motif pour lequel le fournisseur n'est pas nommé.** *Les deux règles
+  ne peuvent pas être satisfaites ensemble à cet endroit, et **une pièce ne tranche pas entre deux règles
+  de son propre cahier des charges**.* **Demande remontée** : dire laquelle prime lorsqu'un attributeur
+  est un fournisseur, et l'écrire une fois pour toute la somme.
+- **Non bloquante, de contradiction interne au plan — seconde du même bloc, et elle dépasse ce
+  chapitre.** Sous l'entrée du **chapitre 30** du TOC v0.30, le titre de la table détaillée écrit
+  ⚠ **« Table des matières détaillée du chapitre 34 »**. *Le dépliage qui suit est bien celui du
+  ch. 30 — § 30.1 à § 30.3 —, et le ch. 34 porte ailleurs la sienne : c'est un **intitulé resté à
+  l'ancienne numérotation**, non un déplacement de matière.* ⚠ **Le balayage du fichier entier le
+  donne pour un résidu des renumérotations des v0.20, v0.22 et v0.23, non pour un cas isolé** :
+  ***quarante-cinq titres de table sur cinquante-huit portent un numéro autre que celui de l'entrée
+  qui les porte***, l'écart croissant de +1 au ch. 12 à +7 au ch. 50 — *exactement le compte des sept
+  fusions et de l'insertion*. ⚠ **Aucun des quinze contrôles du plan ne rapproche un titre de table de
+  l'entrée qui la porte** — `check-toc.py` porte sur des motifs de ligne et **ne connaît pas les tables
+  détaillées** —, classe de défaut déjà nommée par la passe du Livre IV. **Demande remontée** :
+  réaligner les titres de table en une passe unique de plan, domaine déclaré, et non chapitre par
+  chapitre. *Une pièce ne renumérote pas le plan dont elle dérive.*
 
 **Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.30** — § 30.1 à §
 30.3, avec leurs **quinze sous-sections**, dans l'ordre exact —, le § 30.0 étant une **ouverture de
@@ -823,8 +852,18 @@ prescrit — trois sections et quinze sous-sections —, dont douze rétablis** 
 et onze sous-sections* ; *la réécriture retranchait systématiquement les noms propres d'instruments
 — AI Act, ISO/IEC 42001, famille 42000, NIST AI RMF, policy-as-code, RGPD, DORA, annexe III, MiFID
 II, MiCA, AMLA, Bâle III.* **Ces noms sont rendus au corps là où l'attribution d'un instrument
-repris était anonymisée**, et **nulle part ailleurs** — *la parade de péremption demeure pour les
-dénominations commerciales, dont les opérateurs d'infrastructure infonuagique du § 30.2.2.* La
+repris était anonymisée** — *la parade de péremption demeure pour les dénominations commerciales,
+dont les opérateurs d'infrastructure infonuagique du § 30.2.2 et l'offre d'identité d'agent du
+§ 30.3.2.* ⚠ **La passe de contre-relecture du 28 juillet 2026 a trouvé la même anonymisation dans
+le § 30.3, que la première passe n'avait pas balayé, et l'a levée là où la décision 15b la
+proscrit** : *sont nommés le **W3C** — auteur des deux Recommandations du tableau 30.3, hôte du
+groupe communautaire et **attributeur du décompte de participants** —, la **OpenID Foundation**
+— attributrice de la charte qui décline la normalisation —, le **NIST** et le **NCCoE**, la
+**DIF**, **eIDAS** et la **FIDO Alliance**.* ⚠ **Domaine restant, déclaré plutôt que tu** : *le
+sigle de l'organisme candidat du § 30.3.1 demeure non écrit — **R-5 du Vol. II en fait le point
+d'application le plus strict du chapitre** —, et les **deux instances que le socle ne documente
+pas** gardent la désignation descriptive du chapitre, la décision 15b ne les atteignant ni comme
+attributeur ni comme auteur d'un instrument repris.* La
 **table de couverture est respectée pour ses sept lignes**, ⚠ **y compris son écart déclaré et le
 recouvrement que la v0.27 y a ajouté** : *le « volet RGPD » du ch. 20 du Vol. III **n'existe plus**,
 la ligne Fusion le porte corrigé depuis la v0.17, et **le chapitre ne perd rien** — sa matière
@@ -846,10 +885,13 @@ au commit du 28 juillet 2026** (décision 16 du TOC) ; *l'attestation antérieur
 occurrences de R-14, quinze de R-09, trois de R-11 et sept de R-5, aucun de ces quatre nombres
 n'étant re-mesurable contre le corps.* ⚠ **Les deux métriques du chapitre ne sont pas au même
 régime, et l'attestation antérieure les confondait** : *le **décompte de participants** du § 30.3.3
-est **attribué** — à la plateforme qui l'affiche —, daté aux deux relevés et assorti de la réserve
-que sa source lui attache ; la **part d'entités dépendantes** du § 30.2.2 ne l'est **pas**, « une
-étude tierce » n'étant pas une attribution (décision 15b), et **le Vol. I ne nomme pas l'étude*** —
+est **attribué au W3C**, qui l'affiche, daté aux deux relevés et assorti de la réserve que sa source
+lui attache ; la **part d'entités dépendantes** du § 30.2.2 ne l'est **pas**, « une étude tierce »
+n'étant pas une attribution (décision 15b), et **le Vol. I ne nomme pas l'étude*** —
 **l'attribution est déclarée due à cet endroit même, et aucun énoncé ne s'adosse au chiffre**.
+⚠ **La contre-relecture a corrigé ici l'attestation elle-même** : *elle donnait ce décompte pour
+« attribué à la plateforme qui l'affiche », or **« la plateforme » n'est pas plus une attribution
+que « un éditeur »** — c'est nommément l'exemple que la décision 15b(i) écarte.*
 Enfin, ⚠ **la lacune §10.4 du Vol. II n'est pas comblée** : *ce que le Vol. I décrit du contenu de
 la ligne directrice québécoise est écrit **en [C]**, avec la mention que **couverte en [C] ne vaut
 pas comblée** — et l'écart est remonté au ch. 25, non arbitré ici.*

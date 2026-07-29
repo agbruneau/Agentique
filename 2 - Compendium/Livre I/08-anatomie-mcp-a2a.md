@@ -7,9 +7,9 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11).*
 |---|---|
 | **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes à la rédaction ; rédaction sur instruction d'auteur du 27 juillet 2026. ⚠ **Deux mises à jour postérieures à la rédaction, et la seconde change l'état du volume.** *(1)* **27 juillet 2026** : **G-2 et le volet Livre I de G-1 franchis** (PRD v0.8), **remontées de cette pièce closes**. *(2)* **28 juillet 2026** : **G-3 est FRANCHIE** (PRD v0.14) — le socle consolidé existe, **159 entrées `S-001`…`S-159`** ([`socle-consolide.md`](../PRD/socle-consolide.md) v1.2). ⚠ **Aucune de ces trois portes ne rend la pièce recevable, et le motif se lit en trois temps.** *(a)* Elle a été **écrite avant elles**, et ses énoncés **n'ont pas été ré-résolus contre les identifiants `S-nnn`** — *une porte franchie après coup ne remonte pas le fil des pièces qu'elle conditionnait* : la ré-résolution est **due**, non faite. *(b)* Tant qu'elle n'est pas faite, **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**. *(c)* **CA-IV-11 et CA-IV-13 demeurent insatisfaisables**, D-6 ne fournissant pas de relecteur distinct du rédacteur (PRD §11). |
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Deux gels de source : **juin 2026** (Vol. I), **16 juillet 2026** (Vol. II). ⚠ **Ce chapitre portait la péremption la plus courte de toute la somme, elle se comptait en heures, et ELLE EST ADVENUE.** L'anatomie décrite est celle de la **révision 2025-11-25** ; la **révision candidate, gelée le 21 mai 2026, avait sa ratification annoncée pour le 28 juillet 2026** — soit **le lendemain de la date de rédaction de ce chapitre**. **Constat du 28 juillet 2026** : la ratification a eu lieu à la date annoncée (socle consolidé `S-001` ; [registre du volet résiduel de G-1](../PRD/gel-2026-07-28-volet-residuel.md)). ⚠ **La revalidation en bloc des § 8.1 et § 8.2 est donc OUVERTE et NON EXÉCUTÉE** : elle se fait **sur sources primaires extraites**, jamais par retouche de ce texte — *ce chapitre décrit un contrat qui n'est plus le contrat courant, et il le dit plutôt que de se corriger à l'aveugle* |
-| **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026, et cette pièce n'y est PAS encore résolue.** Elle a été rédigée par résolution directe contre le **Vol. I *Monographie* §3.2-3.3 et §2.5.4** — régime **[C]** (PRD §7.1 : la vérification du Vol. I porte sur ses références, non sur le contenu de ses affirmations) — et contre le **Vol. II *Monographie* ch. 2**, aux quatre entrées que le TOC lui assigne : **`F-01`, `F-02`, `F-03`, `F-16` du Vol. II**. Ces quatre entrées **résolvent désormais en `S-001`, `S-002`, `S-003` et `S-013`** du socle consolidé, à **niveau conservé** (les quatre y sont `[A]` à portée générale). ⚠ **La correspondance est établie ici, la ré-résolution ne l'est pas** : *rapprocher deux identifiants n'est pas confronter un énoncé à l'entrée qu'il invoque*, et la matière du Vol. I n'a pour sa part **aucune entrée consolidée** — les dix-sept entrées héritées du Vol. I (`S-143`…`S-159`) ne couvrent pas §3.2-3.3. **Le régime [C] tient donc pour tout ce que ce chapitre tire du Vol. I** |
-| **Garde-fous balayés** | ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : quatre occurrences**, § 8.1.4, § 8.2.2, § 8.3.1 et § 8.6.1, chacune tenue — ⚠ *la formule imposée, elle, est employée au-delà de ces quatre marqueurs, notamment au § 8.7 : la réserve est tenue partout, seul son marqueur est compté ici* ; **R-1 : une occurrence**, § 8.5.1 ; **R-8 (sigle jamais nu) : une occurrence**, § 8.5.1 — le siège de l'encadré est au **ch. 7 § 7.5**, auquel ce chapitre renvoie **sans le reconstruire** ; **métriques auto-déclarées (PRD Vol. II §8.2, règle 1 ; règle transversale au §7.5) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au § 8.4.2 et au § 8.6.3**, la première attribuée, la seconde **refusée comme métrique** faute de chiffre, de date et de définition ; s'y ajoute, au § 8.6.1, une **estimation de tiers** attribuée nommément (décision 15 du TOC). R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 (qualification par ce que la spécification démontre) : trois occurrences**, § 8.1.4, § 8.2.2 et § 8.4.2 ; **R-13 : une occurrence**, § 8.5.1, même que R-8 ; **R-14 : trois occurrences**, § 8.2.3, § 8.6.1 et § 8.7 — ⚠ *le § 8.8, que cet en-tête portait auparavant, est la note de statut : hors domaine de comptage*. R-01, R-03 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 10 000 mots de corps (§ 8.1 à § 8.7) — le plus lourd du Livre I, sept sections contre quatre à six ailleurs. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 635 mots** de corps, **re-mesurés le 28 juillet 2026** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−43,7 %** de la cible (5 138 mots et −48,6 % à la rédaction ; la passe de relecture a ajouté des constats datés et des bornes de régime, **aucune matière neuve**). ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. **Le réel du Livre valait 64 750 mots, soit −0,4 % de l'enveloppe, au relevé du 27 juillet 2026** ; ⚠ **il n'est PAS re-mesuré ici** — *un cardinal de Livre mesuré pendant que ses onze pièces sont relues est faux à la seconde où on le publie*, et il se re-mesure au terme de la passe, sur le corpus que le commit produit. C'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026, et cette pièce n'y est PAS encore résolue.** Elle a été rédigée par résolution directe contre le **Vol. I *Monographie* §3.2-3.3 et §2.5.4** — régime **[C]** (PRD §7.1 : la vérification du Vol. I porte sur ses références, non sur le contenu de ses affirmations) — et contre le **Vol. II *Monographie* ch. 2**, aux quatre entrées que le TOC lui assigne : **`F-01`, `F-02`, `F-03`, `F-16` du Vol. II**. Ces quatre entrées **résolvent désormais en `S-001`, `S-002`, `S-003` et `S-013`** du socle consolidé, à **niveau conservé** (les quatre y sont `[A]` à portée générale). ⚠ **La correspondance est établie ici, la ré-résolution ne l'est pas** : *rapprocher deux identifiants n'est pas confronter un énoncé à l'entrée qu'il invoque*, et la matière du Vol. I n'a pour sa part **aucune entrée consolidée** — les dix-sept entrées héritées du Vol. I (`S-143`…`S-159`) ne couvrent pas §3.2-3.3. **Le régime [C] tient donc pour tout ce que ce chapitre tire du Vol. I**. ⚠ **Deux entrées hors assignation sont citées au corps comme CONSTATS, jamais comme socle mobilisé** — `S-098` au § 8.2.1 (divergence interne à la source, consignée non arbitrée) et `S-058` au § 8.4.2 (date de la v1.0, `[B]` non votée) ; *citer une entrée pour consigner un état n'est pas s'y appuyer* |
+| **Garde-fous balayés** | ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : quatre occurrences**, § 8.1.4, § 8.2.2, § 8.3.1 et § 8.6.1, chacune tenue — ⚠ *la formule imposée, elle, est employée au-delà de ces quatre marqueurs, notamment au § 8.7 : la réserve est tenue partout, seul son marqueur est compté ici* ; **R-1 : une occurrence**, § 8.5.1 ; **R-8 (sigle jamais nu) : une occurrence**, § 8.5.1 — le siège de l'encadré est au **ch. 7 § 7.5**, auquel ce chapitre renvoie **sans le reconstruire** ; **métriques auto-déclarées (PRD Vol. II §8.2, règle 1 ; règle transversale au §7.5) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au § 8.4.2 et au § 8.6.3**, la première attribuée, la seconde **refusée comme métrique** faute de chiffre, de date et de définition ; s'y ajoute, au § 8.6.1, une **estimation de tiers** attribuée nommément (décision 15 du TOC, branche *(i)*), et au § 8.4.1 l'**auteur de l'instrument de 1980** restitué (même décision, branche *(ii)* : l'auteur et la date d'un instrument repris ne s'anonymisent pas). R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 (qualification par ce que la spécification démontre) : trois occurrences**, § 8.1.4, § 8.2.2 et § 8.4.2 ; **R-13 : une occurrence**, § 8.5.1, même que R-8 ; **R-14 : trois occurrences**, § 8.2.3, § 8.6.1 et § 8.7 — ⚠ *le § 8.8, que cet en-tête portait auparavant, est la note de statut : hors domaine de comptage*. R-01, R-03 à R-12 : **zéro occurrence** |
+| **Volumétrie cible** | ≈ 10 000 mots de corps (§ 8.1 à § 8.7) — le plus lourd du Livre I, sept sections contre quatre à six ailleurs. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 899 mots** de corps, **re-mesurés au commit du 28 juillet 2026** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−41,0 %** de la cible (5 138 mots et −48,6 % à la rédaction, puis −43,7 % au terme de la passe de relecture ; la contre-vérification qui l'a suivie a ajouté des **bornes de régime et deux écarts consignés**, **aucune matière neuve**). ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. **Le réel du Livre valait 64 750 mots, soit −0,4 % de l'enveloppe, au relevé du 27 juillet 2026** ; ⚠ **il n'est PAS re-mesuré ici** — *un cardinal de Livre mesuré pendant que ses onze pièces sont relues est faux à la seconde où on le publie*, et il se re-mesure au terme de la passe, sur le corpus que le commit produit. C'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 8 — copiée, non re-frappée ; forme inchangée depuis la v0.23)* — « MCP dans les agents, A2A entre les agents » — doctrine de complémentarité **déclarée par le projet A2A** (non un accord des deux projets) qui fournit le premier critère de découpage architectural, sans le contraindre.
 
@@ -140,11 +140,19 @@ date de rédaction — le 27 juillet 2026 —, **elle n'était pas ratifiée**, 
 ⚠ **Constat postérieur, daté du 28 juillet 2026 : la ratification a eu lieu, à la date même que la
 source annonçait.** La page de spécification courante sert désormais la révision `2026-07-28`, et
 l'index documentaire du site ne connaît plus la précédente (socle consolidé `S-001`, instruit au
-[registre du volet résiduel de G-1](../PRD/gel-2026-07-28-volet-residuel.md)). ⚠ **Ce constat porte
-sur la bascule, non sur le contenu de la révision neuve, qui n'a pas été extrait.** *La péremption que
-ce chapitre avait datée est advenue* : les § 8.1.3, § 8.2.1, § 8.2.2 et § 8.3.1 se revalident **en
-bloc et sur sources primaires**, non par retouche — et ils décrivent, en attendant, l'état arrêté au
-gel.
+[registre du volet résiduel de G-1](../PRD/gel-2026-07-28-volet-residuel.md)).
+
+⚠ **Et la source se contredit sur ce point le jour même, ce qui se consigne sans s'arbitrer.** La page
+de versionnement du site déclarait encore, le 28 juillet 2026, que la version courante est la
+précédente (socle consolidé `S-098`), et la page servie sous la révision neuve **range la précédente
+parmi les révisions héritées tout en la nommant courante** — divergence **interne à une seule page**.
+Les deux états sont portés à leur entrée et **laissés ouverts** par le registre. *Deux constats pris
+le même jour sur le même site ne se départagent pas depuis ce chapitre.*
+
+⚠ **Ce constat porte sur la bascule, non sur le contenu de la révision neuve, qui n'a pas été
+extrait.** *La péremption que ce chapitre avait datée est advenue* : les § 8.1.3, § 8.2.1, § 8.2.2 et
+§ 8.3.1 se revalident **en bloc et sur sources primaires**, non par retouche — et ils décrivent, en
+attendant, l'état arrêté au gel.
 
 *(b)* **Cette révision porte des changements cassants**, et non seulement des ajouts : suppression de
 la poignée de main et de l'identifiant de session, dépréciation de trois primitives, remplacement du
@@ -274,7 +282,7 @@ maîtrisée d'un serveur est elle-même un risque.*
 ### 8.4.1 Du Contract Net aux patrons transposés
 
 La coordination par appel d'offres **précède de plusieurs décennies** l'ère des grands modèles. Le
-**Contract Net** formalisait dès 1980 un cycle d'allocation de tâches entre nœuds d'un solveur
+**Contract Net** de Reid G. Smith formalisait dès 1980 un cycle d'allocation de tâches entre nœuds d'un solveur
 distribué : **annonce → appel d'offres → soumissions → attribution**. Ce schéma a été repris et
 standardisé, aux côtés d'un langage de communication à performatifs (ch. 7 § 7.2.1).
 
@@ -330,8 +338,16 @@ protocole agent-outil (§ 8.7). Ils sont **signalés ici, encadrés, et renvoyé
 par une source de moindre qualité serait la faute que la règle du dépôt proscrit. ⚠ **Constat du
 28 juillet 2026, qui ne comble rien** : l'instruction du volet résiduel de G-1 a relevé un matériau
 touchant la **date de la v1.0** et **ne l'a pas versé au socle**, l'instruction d'une lacune relevant
-d'une passe de socle. *Un matériau relevé n'est pas une entrée* : les quatre objets restent hors socle,
-et ce chapitre continue de s'en abstenir.
+d'une passe de socle. *Un matériau relevé n'est pas une entrée.*
+
+⚠ **Mais « la date n'est pas au socle » ne se tient plus tel quel depuis que le socle consolidé
+existe, et l'écart se déclare plutôt qu'il ne se lisse.** `S-002` continue de porter la lacune pour le
+périmètre du Vol. II ; `S-058`, entrée du socle propre du Vol. III au niveau `[B]` **non voté**, porte
+la date de publication de la v1.0. *Ce n'est pas une contradiction mais une lacune de couverture :
+l'énoncé du Vol. II reste exact dans son périmètre.* **Les deux états sont consignés, aucun n'est
+arbitré ici, et la lacune n'est PAS close** — ses trois autres objets ne sont pas touchés, et une date
+à `[B]` non votée ne comble pas une lacune de socle. L'écart au plan est **remonté** (note de statut) ;
+ce chapitre continue de s'abstenir sur les quatre objets.
 
 ⚠ **Métrique auto-déclarée, attribuée** : le franchissement d'un seuil de **plus de 150 organisations
 de soutien** en avril 2026 est **rapporté par la Linux Foundation**, qui gère le protocole. Le socle
@@ -535,8 +551,10 @@ ne vaut pas déploiement* — **dans une variante plus discrète, et pour cela p
 ⚠ **Précision de régime, datée du 28 juillet 2026, et elle porte sur la forme de la trace, non sur son
 fond.** L'instruction à la source primaire **confirme la doctrine** et **échoue à retrouver le
 verbatim** que le socle citait, à une adresse qui ne résout plus (`S-013`). *Le fond est attesté, la
-citation littérale ne l'est pas* — ce chapitre rend donc la doctrine en français et **ne la reproduit
-entre guillemets nulle part**.
+citation littérale ne l'est pas* — ce chapitre rend donc la doctrine en français et **ne reproduit ce
+verbatim nulle part**. ⚠ **À ne pas confondre avec la formule « dans les agents, entre les agents »**,
+que la thèse et le titre de cette section portent bien entre guillemets : c'est le rendu français du
+positionnement, porté comme tel par le socle (`S-002`), **non** le verbatim demeuré introuvable.
 
 Ces réserves posées, reste à dire ce que la doctrine vaut. Lecture de l'auteur — **sa valeur n'est pas
 descriptive mais prescriptive**. Elle fournit un **critère de découpage** — l'accès aux outils d'un
@@ -735,3 +753,45 @@ cette pièce, et **aucun ne la rend recevable**.
 fournissant pas de relecteur distinct du rédacteur, et **G-4 conditionne encore la collation de fond**.
 Cette pièce reste un **brouillon non publiable**. *Zéro remontée ouverte ne veut pas dire pièce
 recevable — cela veut dire qu'aucune question n'attend plus de réponse qui ne soit déjà tranchée.*
+
+---
+
+### Passe de contre-vérification — 28 juillet 2026
+
+⚠ **Hors plan comme ce qui précède, et se retire avec.** Le journal de la passe précédente **n'est pas
+réécrit** : ce bloc s'ajoute. Quatre écarts ont été constatés sur pièce et corrigés ; **aucun ne rend
+la pièce recevable**, et les cardinaux de l'en-tête ont été **re-comptés** sous la décision 16 —
+**F-01 : 4 · R-1 : 1 · R-8 : 1 · R-13 : 1 · R-02 : 3 · R-14 : 3**, inchangés, comptage littéral du
+corps, en-tête et notes exclus.
+
+- ⚠ **Une régression de la passe de relecture, confirmée et corrigée.** Le § 8.6.3 attestait que ce
+  chapitre « ne reproduit pas la doctrine entre guillemets » alors que **la thèse, le titre de la
+  section et le corps portent tous « dans les agents, entre les agents » entre guillemets**.
+  L'attestation visait le **verbatim anglais** que `S-013` déclare introuvable, non le rendu français
+  que `S-002` porte : l'énoncé est **borné** au verbatim, et la distinction est écrite. *Une
+  attestation de forme se constate sur la pièce qu'elle décrit.*
+- ⚠ **Un constat rendu comme tranché alors que sa source le consigne comme ouvert** (§ 8.2.1). La
+  bascule de la révision était écrite sans la **divergence interne à la source** que `S-001` et
+  `S-098` portent l'une et l'autre — la page de versionnement déclarant encore la révision précédente
+  courante le jour même. Elle est **consignée, non arbitrée**.
+- ☐ **Remontée ouverte — non bloquante, sans identifiant alloué.** Le plan (`TOC.md`, ligne Fusion du
+  ch. 8) et cette pièce écrivent que **la date de la v1.0 n'est pas au socle** ; depuis que le socle
+  consolidé existe, `S-058` la porte au niveau `[B]` non voté, quand `S-002` maintient la lacune pour
+  le périmètre du Vol. II. ⚠ **L'objet est le libellé du plan, hors du mandat d'un relecteur de
+  pièce** — la pièce déclare l'écart au § 8.4.2 et **ne le corrige pas**. ⚠ *Le numéro `R-IV-nn` n'est
+  PAS alloué ici* : cinquante pièces étant relues en parallèle dans la même série partagée,
+  **s'attribuer un numéro seul reproduirait la collision d'identifiants du 27 juillet 2026** ;
+  l'allocation revient à la passe d'arbitrage.
+- ☑ **Une attribution restituée** (§ 8.4.1) : l'instrument de 1980 était nommé sans son auteur, ce que
+  la **décision 15 du TOC** proscrit pour « l'auteur et la date d'un instrument repris ». **Aucun
+  siège de la somme ne le couvrait** — le ch. 7 § 7.2.1 nomme les instruments de sa propre généalogie,
+  pas celui-ci.
+
+☑ **Ce que la contre-vérification a constaté sans avoir à corriger.** Les **six cardinaux** de
+garde-fous et le **décompte de corps** de la passe précédente sont **exacts au comptage** ; la
+**thèse est verbatim** au TOC v0.30 ; le **marqueur de siège du § 8.5.1** et sa signature de titre
+sont **intacts** ; les **huit renvois avant** — ch. 9 § 9.1, § 9.2, § 9.4 ; ch. 10 § 10.2, § 10.3.2,
+§ 10.5 ; ch. 11, 15, 16, 23, 29, 49 — **résolvent contre le texte rédigé** ; et les attributions
+nommées au § 8.6.1 — l'organisme de sécurité infonuagique, le cabinet auteur de la divulgation,
+l'éditeur qui conteste la qualification — sont **fidèles à la bibliographie du Vol. I**. *Un
+vérificateur qui trouve toujours quelque chose ne vérifie rien.*

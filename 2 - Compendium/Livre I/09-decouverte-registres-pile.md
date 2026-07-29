@@ -9,7 +9,7 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11).*
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Gel de source : **juin 2026** (Vol. I). ⚠ La **matrice de maturité** du § 9.2.5 est un **livrable daté** : son intérêt tient à ce qu'elle situe chaque protocole à une date, et elle **se périme en bloc** — c'est un instantané, non un classement durable |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** — ⚠ *non plus parce qu'il n'existe pas, mais parce qu'aucune de ses entrées ne couvre le périmètre de cette pièce* : balayage exhaustif des **dix-sept entrées héritées du Vol. I** (`S-143`…`S-159`, socle v1.2, 28 juillet 2026), **zéro** ne porte les §3.4, §3.5, §3.7-3.8 ni §3.12. Résolution contre le **Vol. I *Monographie* §3.4, §3.5, §3.7-3.8 et §3.12**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **R-1 : une occurrence**, § 9.2.1 ; **R-8 : une occurrence**, § 9.2.1, le sigle toujours qualifié à ses emplois, le siège de l'encadré restant au **ch. 7 § 7.5** ; **réserve F-01 : une occurrence**, § 9.5.2 ; **métriques auto-déclarées (PRD Vol. II §8.2, règle 1) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au seul § 9.2.5**, la métrique attribuée à sa source. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 : deux occurrences**, § 9.1.5 et § 9.4.4 ; **R-13 : une occurrence**, § 9.2.1, même que R-8 ; **R-14 : quatre occurrences** — § 9.1.1, § 9.3.4, § 9.4.4 et § 9.5.3 — ; ⚠ *la mention « le chapitre du Livre le plus dense en énoncés d'absence », que cet en-tête portait auparavant, est retirée : d'autres pièces du Livre en portent davantage, et **un cardinal mesuré sur le corps d'une AUTRE pièce n'est pas re-mesurable au commit de celle-ci*** ; ⚠ *le § 9.6, que cet en-tête portait auparavant, est la note de statut : hors domaine de comptage*. R-01, R-03 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 9 000 mots de corps (§ 9.1 à § 9.5). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 698 mots** de corps, **re-mesurés le 28 juillet 2026** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−36,7 %** de la cible. Le chiffre a bougé de **+168 mots** à la passe de relecture du 28 juillet 2026 — attributions rétablies, renvois corrigés, déviation d'intitulés déclarée ; *un cardinal se re-mesure après tout ajout, il ne se recopie pas.* ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. *C'est la cible dérivée qui était fausse, non la pièce qui est courte ; un écart se documente, il ne se corrige ni par amputation ni par gonflement.* ⚠ **Le total du Livre n'est PAS repris ici, et l'abstention est le geste juste** : *une passe qui court en parallèle sur les dix autres pièces ne peut pas en mesurer la somme* — il valait **64 750 mots** au 28 juillet 2026 et **se re-mesure au terme des passes**, au [`README.md` du Livre](README.md) |
+| **Volumétrie cible** | ≈ 9 000 mots de corps (§ 9.1 à § 9.5). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 822 mots** de corps, **re-mesurés le 28 juillet 2026 au terme de la SECONDE passe de relecture** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−35,3 %** de la cible. ⚠ **Le chiffre a bougé DEUX fois le même jour, et la seconde parce que la première passe avait laissé des défauts** : **+168 mots** d'abord — attributions rétablies, renvois corrigés, déviation d'intitulés déclarée —, puis **+124** — thèse du ch. 2 restituée par copie, regroupements du tableau 9.3 déclarés, deux identifiants nommés par leur volume. *Un cardinal se re-mesure après tout ajout ; il se re-mesure aussi après la passe qui atteste l'avoir re-mesuré.* ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. *C'est la cible dérivée qui était fausse, non la pièce qui est courte ; un écart se documente, il ne se corrige ni par amputation ni par gonflement.* ⚠ **Le total du Livre n'est PAS repris ici, et l'abstention est le geste juste** : *une passe qui court en parallèle sur les dix autres pièces ne peut pas en mesurer la somme* — il valait **64 750 mots** au 28 juillet 2026 et **se re-mesure au terme des passes**, au [`README.md` du Livre](README.md) |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 9 — **forme inchangée au TOC v0.30**, re-collationnée mot à mot le 28 juillet 2026 ; décisions 14 et 17)* — la découverte et le nommage des agents, et la portabilité inter-modèles/inter-cadriciels, sont les propriétés que l'étagement de la pile protocolaire rend possibles — ou trahit.
 
@@ -186,7 +186,8 @@ strict des couches. C'est la première qui structure la suite.
 ⚠ Parmi les spécifications de cette famille figure l'**ACP protocolaire**, dont le ch. 8 § 8.5.1 a
 établi qu'il **a fusionné** et **n'est pas un standard vivant** (R-1 du Vol. II). Il figure à la
 généalogie de la pile, **jamais à son état courant** — et son sigle, comme les trois autres branches
-de la collision, n'est **jamais employé nu** (R-8, R-13 ; siège de l'encadré au ch. 7 § 7.5).
+de la collision, n'est **jamais employé nu** (R-8 du Vol. II, R-13 du Vol. III ; siège de l'encadré
+au ch. 7 § 7.5).
 
 ### 9.2.2 L'analogie en couches et ses limites
 
@@ -252,10 +253,10 @@ autre fournisseur ; une **couche d'interface** pour solliciter une validation ou
 d'information de l'humain ; puis, si la tâche aboutit à un achat, une **couche de règlement** pour
 autoriser et exécuter le paiement (ch. 10).
 
-La **configuration de référence** observable en production combine d'abord **les deux axes
-principaux** : c'est le **socle minimal** d'un système agentique interopérable franchissant les
-frontières de cadriciel et d'organisation. Les couches agent-humain et règlement **s'ajoutent selon
-le besoin applicatif**.
+La **configuration de référence** observable en production **à juin 2026, gel de la source**, combine
+d'abord **les deux axes principaux** : c'est le **socle minimal** d'un système agentique
+interopérable franchissant les frontières de cadriciel et d'organisation. Les couches agent-humain et
+règlement **s'ajoutent selon le besoin applicatif**.
 
 Cet emboîtement **matérialise l'invariant** : chaque couche est un **contrat distinct**, ce qui
 **découple** les préoccupations — *un changement de moyen de paiement n'affecte pas le contrat
@@ -270,9 +271,13 @@ la composition réelle relève d'un **choix d'ingénierie**, non d'une prescript
 > Repris du **Vol. I *Monographie* §3.7.5**, à l'état de **juin 2026**, il croise, pour chacun des
 > protocoles retenus, l'axe couvert, le statut de maturité, la gouvernance et la recommandation
 > d'usage. **Les statuts reprennent strictement les qualifications des sections amont** : *ce qui est
-> marqué candidat ou expérimental ne doit pas être déployé comme acquis.* ⚠ **Sept lignes, non la
-> totalité des spécifications recensées** : la couche commerciale n'y tient qu'une ligne, son
-> développement étant au ch. 10.
+> marqué candidat ou expérimental ne doit pas être déployé comme acquis.* ⚠ **Sept lignes ici pour
+> les neuf de la source, et l'écart tient à DEUX REGROUPEMENTS, non à un retrait** : la couche
+> commerciale y tient **une ligne pour deux spécifications** — son développement est au ch. 10 —, et
+> la couche agent-humain **une ligne pour deux** également, d'où sa gouvernance à deux termes ; cette
+> dernière **retient le statut le plus prudent des deux**, l'une des spécifications réunies étant
+> expérimentale et l'autre seulement émergente. *Aucune ligne de la source n'est omise ; deux paires
+> sont réunies.*
 
 | Protocole | Axe | Statut | Gouvernance | Usage recommandé |
 | --- | --- | --- | --- | --- |
@@ -429,10 +434,12 @@ Les sections précédentes ont montré que les protocoles **stabilisent rapideme
 syntaxe**, mais laissent ouverte la question décisive : **deux agents qui échangent des messages
 valides partagent-ils la même interprétation de ce qu'ils s'échangent ?**
 
-C'est ici que se referme la thèse du ch. 2 — *l'interopérabilité sémantique est le niveau que les
-protocoles agentiques **présupposent** et que **peu savent établir*** — et que s'en mesure le prix.
-⚠ *La formulation est celle du ch. 2, et elle se reprend telle quelle* : « peu savent établir »
-affirme moins que « ne fournissent pas », et c'est la forme bornée qui prime.
+C'est ici que se referme la thèse du ch. 2, reprise **par copie** : « l'interopérabilité sémantique —
+accord sur le sens, pas seulement sur le format — est le niveau que les protocoles agentiques
+**présupposent** et que **peu savent établir** ». Et c'est ici que s'en mesure le prix.
+⚠ *La forme est celle du ch. 2, reprise sans retrait* — l'apposition qui borne la notion en fait
+partie : « peu savent établir » affirme moins que « ne fournissent pas », et c'est la forme bornée
+qui prime.
 
 ### 9.4.1 L'écart entre accord de protocole et compréhension
 
@@ -601,7 +608,9 @@ différents transports, outils d'inspection visuelle. Côté agent-agent, une tr
 couvre les liaisons de transport et **filtre les exigences selon leur force normative**, et la
 validation de carte devient un point de contrôle propre depuis l'introduction des cartes signées.
 
-⚠ **Rappel de la réserve F-01** : ces outils attestent qu'une implémentation **respecte une révision
+⚠ **Rappel de la réserve portée par F-01 du Vol. II** — *nommer le volume n'est pas un ornement : le
+socle du Vol. III porte un homonyme, qui traite de signature de carte, matière voisine de celle-ci*
+(décision 7). Ces outils attestent qu'une implémentation **respecte une révision
 datée**. Ils ne la déclarent pas sécurisée, et le ch. 11 traite ce qui leur échappe.
 
 ⚠ **Le test le plus spécifique à l'interopérabilité agentique porte sur la négociation** — de version
@@ -767,3 +776,58 @@ relève du **PRD §13**, et *une passe qui numérote dans une série partagée p
    chapitre procède. ⚠ *La question n'est pas de savoir si la pièce doit citer des `S-nnn` : c'est de
    savoir si sa matière doit entrer au socle, et à quel niveau.* **Non bloquante pour la pièce ;
    destinataire : le PRD §7.1.**
+
+---
+
+### Seconde passe de relecture — 28 juillet 2026
+
+⚠ **Hors plan comme les trois sections qui précèdent, et se retire avec elles.** Passe d'épreuve de la
+précédente, menée **contre elle** : chercher ce qu'elle a cassé, ce qu'elle a affirmé sans preuve, ce
+qu'elle a manqué. Même périmètre — cette pièce seule, son `.md` et son `.html` régénéré ; ni TOC, ni
+PRD, ni conspectus. ⚠ **Elle ne satisfait pas davantage CA-IV-13** : *deux rédacteurs successifs ne
+font pas un relecteur tiers*, et **D-6** n'en fournit toujours pas.
+
+**Ce que la re-mesure a CONFIRMÉ, et qui n'est donc pas à revérifier.** Les cardinaux de garde-fous de
+l'en-tête sont **exacts au marqueur littéral et à la section** (décision 16), re-comptés par balayage
+exhaustif du corps : R-1 → 1, R-8 → 1, R-13 → 1, F-01 → 1, R-02 → 2, R-14 → 4, aux sections
+déclarées ; R-2 à R-7, R-01 et R-03 à R-12 → zéro. La **volumétrie** de 5 698 mots et le delta de
++168 se rejouent à l'unité. Les **vingt-neuf renvois distincts** de forme « ch. N § N.M »
+**résolvent tous** contre un titre existant. La **thèse est verbatim** au TOC v0.30. La **déviation d'intitulés** est exacte —
+vingt-trois sous-sections, trois identiques, neuf par parade, onze par resserrement — et la
+répartition résiste au recomptage titre à titre. Les **trois attributions rétablies** — Yuan et coll.
+(2026), Tuan et Sanyal (2026), la prise de position du Vol. I *Monographie* §3.5.4 — figurent bien
+à leur source, aux formes citées ; le **jalon d'adoption** et sa date aussi ; la **quantité** *plus
+d'une centaine* aussi. Le renvoi congédié — ch. 1 § 1.1.1 — **ne portait effectivement pas** la
+distinction, vérifié par balayage de la pièce entière : zéro occurrence de « de droit », « de jure »
+ou « de facto ».
+
+**Ce que cette passe a corrigé, et qui vient de la précédente.** *(a)* ⚠ **Une régression** : la thèse
+du ch. 2, réécrite pour être citée, avait **perdu son apposition** — « accord sur le sens, pas
+seulement sur le format » — pendant que la ligne suivante attestait qu'elle *se reprend telle quelle*.
+*Une citation amputée sous une attestation de fidélité est pire que la citation approximative qu'elle
+remplaçait* ; elle est **restituée par copie** (décision 17b). *(b)* **Une correction incomplète** :
+la note ajoutée au § 9.2.5 déclarait « sept lignes, non la totalité », en n'imputant l'écart qu'à la
+couche commerciale — or la source en compte **neuf**, et il fallait **deux** regroupements pour en
+faire sept ; la couche agent-humain était le second, et elle réunit deux statuts distincts. *(c)*
+**Deux identifiants nus** que la première passe n'a pas vus : la **réserve F-01** du § 9.5.2 — dont le
+Vol. III porte un homonyme traitant de signature de carte, *matière voisine de la section même où le
+renvoi tombe* — et le couple **R-8, R-13** du § 9.2.1, groupé comme s'il relevait d'une seule série
+quand il en croise deux. Décision 7, dans les deux cas. *(d)* **Un état de production non daté** au
+§ 9.2.4, là où sa source écrit « en juin 2026 » et où la passe précédente avait daté les deux cas
+frères des § 9.3.3 et § 9.5.3.
+
+**Ce que cette passe n'a PAS corrigé, et le motif.** Trois occurrences de **R-14** demeurent sans leur
+volume (§ 9.3.4, § 9.4.4, § 9.5.3). ⚠ *Elles sont décidables, et le dire n'est pas de la
+complaisance* : la série du Vol. II s'arrête à R-8 et celle du Vol. III écrit ses unités avec un zéro
+initial — **aucun R-14 n'existe hors du Vol. III**, et le § 9.1.1 le nomme à la première occurrence,
+ce qui fixe la série pour la pièce. ⚠ **Les deux cas corrigés ne sont pas de la même espèce, et c'est
+le critère** : `F-01` **existe littéralement dans les deux socles** ; le couple `R-8`/`R-13` est
+décidable pièce par pièce, mais **groupé dans une parenthèse ouverte par un « du Vol. II »**, il fait
+porter ce volume au second — *l'ambiguïté n'y est pas dans l'identifiant, elle est dans la syntaxe qui
+le présente.* *Un contrôle qui traite l'indécidable et le décidable au même titre devient bruyant,
+donc ignoré.*
+
+**Remontées de cette passe** — ⚠ **aucune n'est neuve, et c'est le résultat** : les trois remontées de
+la passe précédente sont **confirmées sur pièce** et reconduites telles quelles, sans identifiant
+alloué (PRD §13). *Une passe adverse qui n'ajoute aucune remontée n'a pas échoué : elle atteste que
+les questions ouvertes l'étaient déjà toutes.*

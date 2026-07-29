@@ -6,9 +6,9 @@ mouvement : il éprouve sur l'offre réelle le vocabulaire que le ch. 22 a posé
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — pièce **rédigée le 27 juillet 2026 sur instruction d'auteur, alors que la porte G-3 était ouverte** ; ⚠ **la règle cardinale du PRD §5 était enfreinte à sa date, et l'arbitrage qui a suivi la solde sans la rattraper**. ☑ **G-3 est franchie depuis le 28 juillet 2026** (PRD v0.14, TOC v0.30) : le **socle consolidé existe** — [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, 159 entrées `S-001`…`S-159` — et le **volet de faits de G-1** est levé. ⚠ **La pièce n'en devient pas recevable** : **aucun vote adversarial** n'a porté sur les entrées qu'elle mobilise, **CA-IV-11 et CA-IV-13 demeurent insatisfaites** faute d'un relecteur distinct du rédacteur, et **l'obligation de pièce du ch. 23 au volet Livre III de G-1 reste due**. Voir la note de statut, § 23.6. ⚠ **Ce chapitre est celui du Livre dont les faits se périment le plus vite** : quatre des cinq offres qu'il examine portent un statut de disponibilité — **trois d'entre eux datés** —, deux étaient pré-disponibilité générale au gel de leur source, et ⚠ **l'un de ces deux était déjà périmé à ce gel** : le passage en disponibilité générale date du **19 mai 2026**, deux mois avant (§ 23.3) |
+| **Statut** | **Brouillon de rédaction, non publiable** — pièce **rédigée le 27 juillet 2026 sur instruction d'auteur, alors que la porte G-3 était ouverte** ; ⚠ **la règle cardinale du PRD §5 était enfreinte à sa date, et l'arbitrage qui a suivi la solde sans la rattraper**. ☑ **G-3 est franchie depuis le 28 juillet 2026** (PRD v0.14, TOC v0.30) : le **socle consolidé existe** — [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, 159 entrées `S-001`…`S-159` — et le **volet de faits de G-1** est levé. ⚠ **La pièce n'en devient pas recevable** : **aucun vote adversarial** n'a porté sur les entrées qu'elle mobilise, **CA-IV-11 et CA-IV-13 demeurent insatisfaites** faute d'un relecteur distinct du rédacteur, et **l'obligation de pièce du ch. 23 au volet Livre III de G-1 reste due**. Voir la note de statut, § 23.6. ⚠ **Ce chapitre est celui du Livre dont les faits se périment le plus vite** : quatre des cinq offres qu'il examine portent un statut de disponibilité — **trois d'entre eux datés** —, deux étaient pré-disponibilité générale au gel de leur source, et ⚠ **l'un de ces deux était déjà périmé à ce gel** : le passage en disponibilité générale date du **19 mai 2026**, deux mois avant (§ 23.3) — ⚠ **pour deux de ses trois objets seulement**, *son volet d'interopérabilité inter-agents demeurant en préversion publique*, et **c'est de ce volet-là que dépend le scénario d'orchestration du § 23.3** |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ☑ **Le volet de faits de G-1 est levé le 28 juillet 2026** (registre : [`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) : les statuts des **trois offres qui ont une entrée au socle consolidé** — Agent Framework, LangGraph Platform, Confluent — **ont été portés à leur source primaire** : **deux inchangés**, dont un partiellement, et **un changé**. ⚠ **La couverture s'arrête là** : **Temporal et CrewAI n'ont aucune entrée consolidée** (voir le champ suivant), et leurs statuts demeurent **ceux que le Vol. II constatait à son propre gel**. Gels de source consommés : **16-17 juillet 2026** (Vol. II ch. 7) et **juin 2026** (Vol. I §2.8.4) — ⚠ **aucun des deux ne tient lieu du gel de la somme** |
-| **Socle mobilisé** | ☑ **Le socle consolidé existe** ([`socle-consolide.md`](../PRD/socle-consolide.md) v1.2) : les cinq entrées du **Vol. II *Monographie* ch. 7** que la pièce mobilise y résolvent par la **table de correspondance n° 1, normative** — **F-15 → `S-012`**, **F-16 → `S-013`**, **F-32 → `S-030`**, **F-33 → `S-031`**, **F-41 → `S-039`**. ⚠ **Deux de ces niveaux ne sont pas ceux que cette pièce avait déclarés, et la correction va dans le sens qu'on n'attend pas** : `S-012` et `S-013` portent **`[A]`** et non `[B]` — elles tombent dans l'intervalle `F-01…F-25` que le PRD du Vol. II couvre par une **phrase de portée générale** et **ne portent aucun marquage individuel** ; `S-030` et `S-031` portent **`[B]`** marqué individuellement (annonces primaires extraites, citations verbatim) ; `S-039` porte **`[B]`** sous la **portée §7.8** du même volume. ⚠ *La dépendance à une portée de section est **rendue visible, non résolue** — c'est la réserve que le socle consolidé inscrit à ces entrées, et elle vaut lecture avant tout emploi.* ⚠ **Temporal et CrewAI n'ont AUCUN identifiant consolidé** : la puce « niveau [C] — à confirmer avant usage central » du **PRD Vol. II §7.6** ne porte pas d'identifiant `F`, **n'entre dans aucune table de correspondance et n'est pas dénombrable** ; leur sort est une **décision d'auteur, pas de passe**. Ils gardent donc le régime que la pièce leur applique — **Temporal au repérage [C]**, **CrewAI à trois niveaux distincts** que le § 23.4 sépare. Le **Vol. I *Monographie* §2.8.4** entre en **[C]** — repérage documentaire (PRD §7.1) —, et ⚠ **aucune des dix-sept entrées du Vol. I consolidées (`S-143`…`S-159`) ne le couvre**. ⚠ **Aucun énoncé n'est central au sens de CA-IV-01** : *le motif a changé sans que la conclusion bouge* — non plus un socle vide, mais l'**absence de tout vote adversarial** sur ces entrées, que le PRD déclare dû pour toute entrée appelée à porter un fait central |
+| **Socle mobilisé** | ☑ **Le socle consolidé existe** ([`socle-consolide.md`](../PRD/socle-consolide.md) v1.2) : les cinq entrées du **Vol. II *Monographie* ch. 7** que la pièce mobilise y résolvent par la **table de correspondance n° 1, normative** — **F-15 → `S-012`**, **F-16 → `S-013`**, **F-32 → `S-030`**, **F-33 → `S-031`**, **F-41 → `S-039`**. ⚠ **Deux de ces niveaux ne sont pas ceux que cette pièce avait déclarés, et la correction va dans le sens qu'on n'attend pas** : `S-012` et `S-013` portent **`[A]`** et non `[B]` — elles tombent dans l'intervalle `F-01…F-25` que le PRD du Vol. II couvre par une **phrase de portée générale** et **ne portent aucun marquage individuel** ; `S-030` et `S-031` portent **`[B]`** marqué individuellement (annonces primaires extraites, citations verbatim) ; `S-039` porte **`[B]`** sous la **portée §7.8** du même volume. ⚠ *La dépendance à une portée héritée — **générale** pour les deux premières, **de section** pour la dernière — est **rendue visible, non résolue** : c'est la réserve que le socle consolidé inscrit à ces entrées, et elle vaut lecture avant tout emploi ; **les deux marqueurs ne se confondent pas**, ils nomment deux phrases différentes.* ⚠ **Temporal et CrewAI n'ont AUCUN identifiant consolidé** : la puce « niveau [C] — à confirmer avant usage central » du **PRD Vol. II §7.6** ne porte pas d'identifiant `F`, **n'entre dans aucune table de correspondance et n'est pas dénombrable** ; leur sort est une **décision d'auteur, pas de passe**. Ils gardent donc le régime que la pièce leur applique — **Temporal au repérage [C]**, **CrewAI à trois niveaux distincts** que le § 23.4 sépare. Le **Vol. I *Monographie* §2.8.4** entre en **[C]** — repérage documentaire (PRD §7.1) —, et ⚠ **aucune des dix-sept entrées du Vol. I consolidées (`S-143`…`S-159`) ne le couvre**. ⚠ **Aucun énoncé n'est central au sens de CA-IV-01** : *le motif a changé sans que la conclusion bouge* — non plus un socle vide, mais l'**absence de tout vote adversarial** sur ces entrées, que le PRD déclare dû pour toute entrée appelée à porter un fait central |
 | **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus —, et **là où le garde-fou est appliqué sans que son identifiant soit écrit, c'est le domaine balayé qui est déclaré, sans cardinal**.* Vol. II — **PRD §8.2.3 (chiffres d'éditeurs auto-déclarés) : deux occurrences du renvoi**, § 23.2 et § 23.4 ; ⚠ *le marqueur « auto-déclaré » y est écrit **six fois** — § 23.0, § 23.2 (deux), § 23.3 et § 23.4 (deux) —, chacune attribuée à sa source à l'endroit même où elle est citée* ; **PRD §8.4 (neutralité fournisseur) : le renvoi n'est pas écrit au corps** ; *la formule « neutralité fournisseur » l'est **deux fois**, § 23.0 — en tête de phrase — et § 23.3, et **le garde-fou est appliqué aux § 23.0, § 23.3 et § 23.5** — aucune offre recommandée* ; **R-1 : zéro occurrence** ; **R-8 : zéro occurrence** — le sigle n'apparaît pas dans ce chapitre ; **R-2 à R-7 : zéro occurrence**. Vol. III — **R-09 (quatre statuts, dits à chaque mention) : zéro occurrence du sigle** ; ⚠ *le garde-fou est **appliqué aux § 23.1 à § 23.4**, chaque statut étant dit en toutes lettres à sa mention — **le décompte n'est pas re-mesurable et n'est donc pas annoncé*** ; **R-14 (trois degrés d'absence) : une occurrence du sigle**, § 23.0 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » **cinq fois** — § 23.0, § 23.1 (deux), § 23.2 et § 23.5 —, « fait négatif vérifié » **deux fois**, § 23.0 et § 23.2* ; **R-02 : une occurrence du sigle**, § 23.1 ; **R-13 : une occurrence du sigle**, § 23.5 ; ⚠ **faux ami déclaré** — le « plan de contrôle » du maillage de services pré-agentique (ch. 1 § 1.3.4) n'apparaît pas ici. **R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **5 000 mots** de corps (§ 23.0 à § 23.5), **cible dérivée** de l'enveloppe du Livre — 90 000 mots, **inchangée du TOC v0.25 au TOC v0.30** — au prorata des sections, ce chapitre en portant cinq. ☑ **Décompte publiable depuis G-2** ; la mesure réelle est portée au [`README.md`](README.md) du dossier, par [`PRD/decompte.sh`](../PRD/decompte.sh), **seule autorité de décompte**. ⚠ **La mesure qui y figure est antérieure à la relecture du 28 juillet 2026 et se re-mesure au commit** — *un chiffre publié pendant qu'on écrit est faux à la seconde où on le publie.* ⚠ **D-4 interdit l'amputation comme le gonflement** |
 
@@ -61,9 +61,10 @@ ni aucune adoption en production dans une institution financière canadienne —
 
 Le premier des trois jalons est daté du **3 avril 2026** : Microsoft Agent Framework atteint sa
 **disponibilité générale** (*general availability*, GA) en version 1.0 (Vol. II F-15, **[A]** — niveau
-tenu d'une **phrase de portée de section**, l'entrée ne portant aucun marquage individuel). ⚠ **Cette
-date est le seul fait du chapitre que l'instruction à la source primaire du 28 juillet 2026 n'a PAS
-re-établi** : la page de documentation de l'éditeur, mise à jour le 10 juillet 2026, **ne la porte pas
+tenu de la **phrase de portée générale** couvrant `F-01…F-25`, l'entrée ne portant aucun marquage
+individuel). ⚠ **Cette date est le seul fait du chapitre que l'instruction à la source primaire du
+28 juillet 2026 n'a PAS re-établi** : la page de documentation de l'éditeur, mise à jour le
+10 juillet 2026, **ne la porte pas
 et ne la contredit pas davantage** — *absence de documentation, degré 3*, non infirmation. Tout le
 reste de l'entrée y est confirmé, dont la filiation et la réserve de préversion ci-dessous. Le fait
 notable n'est pas la version, c'est la **généalogie**. Agent Framework est le successeur direct de deux
@@ -85,7 +86,7 @@ locaux et outils hébergés. La **bidirectionnalité** mérite qu'on s'y arrête
 outils exposés par des serveurs tiers, et peut lui-même en exposer. C'est exactement la doctrine
 officielle de complémentarité que le **ch. 8** examine — le protocole agent-outil pour l'intégration
 d'outils et de contexte au niveau de l'agent individuel, le protocole agent-agent pour la coordination
-entre agents (Vol. II F-16, **[A]** sous la même portée de section) —, appliquée ici du premier côté.
+entre agents (Vol. II F-16, **[A]** sous la même portée générale) —, appliquée ici du premier côté.
 ⚠ **La formule dont cette doctrine était résumée ne se reproduit plus entre guillemets** :
 l'instruction du 28 juillet 2026 **ne l'a pas retrouvée** et l'adresse que l'entrée nomme **ne résout
 plus**. Ce qui est re-attesté à la source primaire du projet est le **fond** — deux protocoles
@@ -189,7 +190,7 @@ précisément encore.**
 
 | Offre | Protocole agent-outil | Protocole agent-agent | Niveau |
 |---|---|---|---|
-| **Agent Framework** | documenté **de première main** | non documenté | **[A]** ⚠ portée de section (Vol. II F-15) |
+| **Agent Framework** | documenté **de première main** | non documenté | **[A]** ⚠ portée générale (Vol. II F-15) |
 | **LangGraph** | **non documenté** | **plateforme commerciale seulement** — pas la bibliothèque libre | **[B]** (Vol. II F-32) |
 | **Confluent / Kafka** | documenté **de première main** | **préversion publique** | **[B]** (Vol. II F-33) |
 | **Temporal** | **repéré, non extrait** | non documenté | **[C]** — ne porte aucun fait central |
@@ -302,8 +303,8 @@ Les deux offres restantes **ne se traitent pas au même niveau de preuve**, et c
 mise en encadré. ⚠ **Un fait de socle s'y ajoute depuis le 28 juillet 2026, et il vaut pour les deux :
 ni l'une ni l'autre n'a d'identifiant au socle consolidé.** La puce du **PRD Vol. II §7.6** qui les
 couvre — « niveau [C] — à confirmer avant usage central » — **ne porte aucun identifiant `F`**, n'entre
-dans aucune table
-de correspondance et **n'est pas dénombrable** ; son sort est une **décision d'auteur, pas de passe**.
+dans aucune table de correspondance et **n'est pas dénombrable** ; son sort est une **décision
+d'auteur, pas de passe**.
 *Deux conséquences, et elles tirent en sens contraire* : ces deux offres **n'ont pas été instruites à la
 source primaire** avec les trois autres — le volet résiduel de G-1 leur demeure dû — et **rien n'a pu
 les élever**, ce qui **laisse intact** le décompte du § 23.2 dont la thèse dépend.
@@ -515,7 +516,21 @@ nommés :
 - **À l'appareil, de niveau.** Cette pièce déclarait **[B]** deux entrées que le Vol. II couvre par une
   **phrase de portée générale à [A]** ; l'erreur est corrigée ici. ⚠ *La classe est générale* — toute
   pièce citant une entrée de l'intervalle `F-01…F-25` du Vol. II sans marquage individuel peut la porter,
-  et **aucun contrôle ne rapproche un niveau cité d'un niveau de socle**.
+  et **aucun contrôle ne rapproche un niveau cité d'un niveau de socle**. ⚠ **Un second geste a été
+  requis à la vérification du même jour** : la correction avait d'abord écrit « **portée de section** »
+  au corps et au tableau 23.1 là où l'en-tête écrivait « portée générale ». *Le socle porte deux
+  marqueurs distincts* — `⚠ portée gén.` (vingt entrées, `F-01…F-25`) et `⚠ portée §7.8` (neuf
+  entrées) —, **et les confondre effacerait justement ce que le marqueur sert à rendre visible** : de
+  quelle phrase le niveau est hérité. Les trois occurrences sont alignées sur l'en-tête.
+- **Au plan, de siège, non bloquante.** Le § 23.5 écrit que « le **ch. 14 § 14.4** en est le lieu de
+  croisement **pour toute la somme** » pour les échelles d'autonomie, alors que le **ch. 43 § 43.5**
+  porte le marqueur de **siège du modèle de maturité et de la désambiguïsation des trois échelles
+  d'autonomie, pour toute la somme**, et nomme ses renvoyants — ch. 39, 40, 41 et 46, dont ce chapitre
+  n'est pas. ⚠ **Les deux formules ne portent pas manifestement sur le même objet** — un croisement
+  d'un côté, une désambiguïsation de l'autre — *et c'est précisément pourquoi un relecteur de pièce ne
+  tranche pas* : **le contrôle `check-sieges.py` a S5 désactivé pour ce siège**, de sorte qu'aucun
+  instrument ne rapproche les deux désignations. **Demande remontée** : que le plan dise laquelle est
+  le siège.
 - **À l'appareil, de décompte.** La relecture a modifié le corps : **la volumétrie du ch. 23 portée au
   [`README.md`](README.md) du Livre est périmée** et se re-mesure au commit, avec celle des autres pièces
   relues.
@@ -523,8 +538,8 @@ nommés :
 **Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC** — inchangée de la v0.25
 à la v0.30 —, § 23.1 à § 23.5 dans l'ordre exact, le § 23.0 étant une **ouverture de chapitre**. La
 **table de couverture est respectée pour ses deux lignes** : le Vol. II §7.1-7.5 est condensé aux
-§ 23.1-23.5, et le Vol. I
-§2.8.4 **arrive** aux § 23.1-23.4, **arrivée déclarée aux deux bouts** — le ch. 6 en déclare le départ.
+§ 23.1-23.5, et le Vol. I §2.8.4 **arrive** aux § 23.1-23.4, **arrivée déclarée aux deux bouts** — le
+ch. 6 en déclare le départ.
 ⚠ **Les quatre sous-sections du Vol. I sont toutes reçues** : §2.8.4.1 au § 23.2, §2.8.4.2 au § 23.1,
 §2.8.4.3 au § 23.3, §2.8.4.4 au § 23.4 — *aucune n'est perdue en chemin*, ce qui était le risque de la
 répartition d'une source unique sur quatre destinations. La **décision 14 a été exécutée avant la
@@ -536,7 +551,9 @@ occurrence, sans exception d'usage illustratif** (PRD Vol. II §7.5 et §8.2.3) 
 sont dits à chaque mention** aux § 23.1 à § 23.4 (R-09 du Vol. III). Les **absences portent toutes leur
 degré** : *une occurrence du sigle R-14, **cinq** du marqueur « degré 3 » et deux de « fait négatif
 vérifié »*. ⚠ **Ces cardinaux ont été re-mesurés au commit du 28 juillet 2026, puis une seconde fois à
-la relecture du même jour** (décision 16 du TOC) ; *l'attestation antérieure annonçait quatre métriques,
+la relecture du même jour, puis une troisième fois à la vérification qui l'a suivie — sur le corps
+corrigé, par balayage exhaustif du marqueur littéral, et aucun n'a bougé** (décision 16 du TOC) ;
+*l'attestation antérieure annonçait quatre métriques,
 neuf statuts et sept occurrences de R-14, aucun de ces trois nombres n'étant re-mesurable contre le
 corps.* La **lacune PRD Vol. II §10.3 est portée et non comblée** : elle est déclarée subsistante
 **faute de tentative**, non par échec de recherche — *la distinction est celle que le Vol. II a
@@ -576,3 +593,32 @@ cette pièce n'est central au sens de CA-IV-01**. **CA-IV-11 et CA-IV-13 ne sont
 *aucune relecture par un relecteur distinct du rédacteur*. Cette pièce reste un **brouillon non
 publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune
 question n'attend plus de réponse qui ne soit déjà tranchée.*
+
+---
+
+### Ce que le 28 juillet 2026 a changé — addendum daté
+
+⚠ **Le bloc qui précède est daté du 27 juillet 2026 et n'est pas réécrit** : *un état vrai à sa date se
+complète, il ne se corrige pas.* Trois de ses termes ont bougé le lendemain, et le reste tient.
+
+- ☑ **G-3 est franchie** (PRD **v0.14**, TOC **v0.30**, jalon J-IV-2 atteint) : le socle consolidé
+  existe — **159 entrées** `S-001`…`S-159` —, et **« le socle consolidé compte zéro entrée » cesse
+  d'être vrai**. Les cinq entrées de ce chapitre s'y résolvent par la **table de correspondance n° 1**
+  (voir l'en-tête).
+- ☑ **Le volet de FAITS du résiduel de G-1 est levé** : sur ces cinq entrées, **quatre ☑ inchangées** —
+  dont **deux partiellement**, `S-012` et `S-013` — et **une ☑ changée**, `S-031` ; **aucune ☐ non
+  établie**. ☐ **Le volet des obligations de pièce reste dû**, et il l'est nommément pour ce chapitre —
+  *les deux offres sans identifiant consolidé n'ont pas été instruites.*
+- ☑ **Les renvois « ch. N » ne sont plus des renvois de plan** : les **cinquante pièces existent**, et
+  le point 4 ci-dessus a été **résolu contre le texte rédigé** le 28 juillet 2026, **domaine déclaré —
+  dix-sept chapitres nommés, plus le Livre IV dans son ensemble ; dix-sept sur dix-sept résolvent**,
+  sections comprises là où la note en nomme une. ⚠ *Le point 4 porte donc l'état de sa date et non
+  celui d'aujourd'hui* — et **le partage qu'il opère entre « entrée du TOC » et « texte rédigé » est
+  périmé, non faux**.
+
+⚠ **Ce que l'addendum ne change pas, et c'est l'essentiel.** **Aucun vote adversarial n'a porté sur les
+cinq entrées**, que le PRD déclare dû pour toute entrée appelée à porter un fait central : **aucun
+énoncé n'est central au sens de CA-IV-01**, et le motif a seulement changé de nature. **CA-IV-11 et
+CA-IV-13 demeurent insatisfaites**, D-6 ne fournissant pas de relecteur tiers. Cette pièce reste un
+**brouillon non publiable**. ⚠ **Et le compte de remontées n'est plus nul** : la relecture du 28 juillet
+2026 en a ouvert **six**, listées plus haut et **sans numéro alloué**.

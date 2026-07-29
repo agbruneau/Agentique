@@ -9,7 +9,7 @@ Premier mouvement — les fondements (ch. 1-6). **Dernier chapitre du mouvement.
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Matière condensée au gel de sa source — **juin 2026** (Vol. I). ⚠ Trois faits datés y appellent une re-vérification : le passage d'A2A sous la Linux Foundation, la création de l'Agentic AI Foundation en décembre 2025, et un chiffre d'adoption **auto-déclaré** relevé au premier anniversaire d'A2A |
 | **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** — Annexe B, [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, `S-001`…`S-159` —, **mais cette pièce, rédigée avant lui, n'y est pas adossée entrée par entrée** : elle continue de citer ses identifiants sources, comme le PRD §7.1 le constate pour les cinquante pièces. Ses énoncés résolvent contre le **Vol. I *Monographie* §2.8.1-2.8.3, §2.9.1-2.9.5 et §2.10.3-2.10.5**, en régime **[C]** (PRD §7.1) — régime que le socle **confirme** plutôt qu'il ne le relève : ses **dix-sept entrées héritées du Vol. I sont toutes en [C]**. **Aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | **Les deux séries, intégralement — et c'est le chapitre du Livre I où ils mordent le plus.** ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **R-8 (« ACP » jamais nu) : une occurrence**, § 6.2, où le sigle est développé à sa première apparition et jamais employé seul ; **métriques auto-déclarées (PRD Vol. II §7.5) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au § 6.1.1, au § 6.2 et au § 6.5.2**, **chaque chiffre attribué à sa source, sans exception d'usage illustratif**. R-1 à R-7 : **zéro occurrence**. Vol. III — **R-13 (mêmes termes jamais nus) : une occurrence**, § 6.2, la même ; **R-14 : trois occurrences**, § 6.4.1, § 6.5.1 et § 6.5.3. R-01 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 8 500 mots de corps (§ 6.1 à § 6.5). Enveloppe **dérivée, non prescrite**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 4 038 mots** de corps, **re-mesurés au commit du 28 juillet 2026** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−52,5 %** de la cible. *L'écart s'est réduit de trois points sous la passe de relecture : restituer une attribution allonge, et c'est un allongement de borne, non un gonflement.* ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations ; c'est la cible dérivée qui était fausse, non la pièce qui est courte. ⚠ **Le total du Livre n'est PAS re-mesuré ici** : il valait **64 750 mots, soit −0,4 % de l'enveloppe**, au 27 juillet 2026, et les onze pièces sont relues **en parallèle** — *un cardinal mesuré pendant que d'autres pièces changent est faux à la seconde où on le publie*. Sa re-mesure est due à la clôture de la passe. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Volumétrie cible** | ≈ 8 500 mots de corps (§ 6.1 à § 6.5). Enveloppe **dérivée, non prescrite**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 4 062 mots** de corps, **re-mesurés au commit du 28 juillet 2026** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−52,2 %** de la cible. *L'écart s'est réduit de trois points sous les deux passes de relecture du 28 juillet 2026 — il valait **−55,5 %** à la rédaction : restituer une attribution allonge, et c'est un allongement de borne, non un gonflement.* ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations ; c'est la cible dérivée qui était fausse, non la pièce qui est courte. ⚠ **Le total du Livre n'est PAS re-mesuré ici** : il valait **64 750 mots, soit −0,4 % de l'enveloppe**, au 27 juillet 2026, et les onze pièces sont relues **en parallèle** — *un cardinal mesuré pendant que d'autres pièces changent est faux à la seconde où on le publie*. Sa re-mesure est due à la clôture de la passe. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 6)* — le multi-agent a un surcoût que seuls certains gains justifient ; son évaluation (succès de tâche vs trajectoire) et sa sûreté (triade létale, vecteurs d'attaque) sont les deux fronts encore ouverts.
 
@@ -113,19 +113,18 @@ Ce qui suit est le strict nécessaire pour que le lecteur du premier mouvement s
 protocoles existent et **où** ils sont traités.
 
 Le protocole **Agent2Agent** (A2A) a été ouvert par **Google** en avril 2025, puis confié à la
-**Linux Foundation**. Il repose sur des **Agent Cards** — descripteurs de capacités pouvant être signés — qui permettent à
-un agent de découvrir et d'invoquer un pair par un **contrat explicite**. Cette logique de
-description signée prolonge directement l'invariant du Livre au niveau de l'orchestration et de la
-chorégraphie **inter-organisationnelles** (ch. 1 § 1.6.2).
+**Linux Foundation**. Il repose sur des **Agent Cards** — descripteurs de capacités pouvant être
+signés — qui permettent à un agent de découvrir et d'invoquer un pair par un **contrat explicite**.
+Cette logique de description signée prolonge directement l'invariant du Livre au niveau de
+l'orchestration et de la chorégraphie **inter-organisationnelles** (ch. 1 § 1.6.2).
 
 La pile s'est consolidée autour de lui. L'**Agent Communication Protocol**, lancé par **IBM** en mars
 2025, **a convergé dans A2A** ; un troisième effort, initié par **Cisco**, vise une interopérabilité
 d'échelle réseau alignée sur les deux précédents ; et plusieurs revues comparent ces protocoles
-émergents. ⚠ Le
-sigle **ACP** est développé ici à sa première occurrence et n'est jamais employé seul, conformément
-aux garde-fous R-8 du Vol. II et R-13 du Vol. III : **il désigne au moins quatre objets distincts, et
-l'encadré de désambiguïsation qui en fait le partage est au ch. 7 § 7.5, siège unique pour toute la
-somme, auquel ce chapitre renvoie sans le reconstruire.**
+émergents. ⚠ Le sigle **ACP** est développé ici à sa première occurrence et n'est jamais employé
+seul, conformément aux garde-fous R-8 du Vol. II et R-13 du Vol. III : **il désigne au moins quatre
+objets distincts, et l'encadré de désambiguïsation qui en fait le partage est au ch. 7 § 7.5, siège
+unique pour toute la somme, auquel ce chapitre renvoie sans le reconstruire.**
 
 Le fait marquant de **gouvernance** est la création, en **décembre 2025**, de l'**Agentic AI
 Foundation** sous l'égide de la Linux Foundation : elle co-gouverne le protocole agent-outil et le
@@ -285,11 +284,11 @@ seule foi de ses performances fonctionnelles.
 > **Perspective recherche.** L'évaluation systématique des attaques par injection conduite par
 > **Liu et coll. (2024)** montre qu'**aucune défense connue n'élimine la vulnérabilité** — elles n'en
 > réduisent que la surface. Cela ancre empiriquement la proposition de **non-résolubilité au niveau
-> du modèle** posée au ch. 4 § 4.0.1. ⚠ Les bancs adversariaux sont donc à interpréter comme des **mesures de réduction de
-> risque, non comme des certificats d'innocuité** : leurs scores évoluent à mesure que de nouvelles
-> attaques sont publiées, et qu'aucune défense n'existe relève d'une **absence de documentation** au
-> sens de R-14 du Vol. III — le corpus consulté n'en recense pas, ce qui n'établit pas leur
-> impossibilité.
+> du modèle** posée au ch. 4 § 4.0.1. ⚠ Les bancs adversariaux sont donc à interpréter comme des
+> **mesures de réduction de risque, non comme des certificats d'innocuité** : leurs scores évoluent
+> à mesure que de nouvelles attaques sont publiées, et qu'aucune défense n'existe relève d'une
+> **absence de documentation** au sens de R-14 du Vol. III — le corpus consulté n'en recense pas, ce
+> qui n'établit pas leur impossibilité.
 
 ### 6.4.2 Fiabilité, coût et taxonomie d'échecs
 
@@ -303,10 +302,10 @@ erreur.**
 
 : Tableau 6.2 — Potentiel contre consistance : deux métriques dont la confusion masque l'effondrement des agents sur les tâches longues.
 
-La seconde — *pass^k* — révèle **l'effondrement des agents sur les tâches longues et multi-étapes**. Cette
-dégradation — où une probabilité d'échec par pas même faible **se compose géométriquement** sur une
-longue trajectoire — est **l'un des constats les plus robustes du domaine**, et l'une des questions
-que le ch. 49 laisse ouvertes.
+La seconde — *pass^k*, **introduite par τ-bench** (Yao et coll., 2024) — révèle **l'effondrement des
+agents sur les tâches longues et multi-étapes**. Cette dégradation — où une probabilité d'échec par
+pas même faible **se compose géométriquement** sur une longue trajectoire — est **l'un des constats
+les plus robustes du domaine**, et l'une des questions que le ch. 49 laisse ouvertes.
 
 Le **coût**, second axe de fiabilité, exige des **classements contrôlés en budget** plutôt qu'à
 performance brute — le **Holistic Agent Leaderboard** (Kapoor et coll., 2025) fournit cette
@@ -338,10 +337,12 @@ la défense, pas la menace* — et cette asymétrie est un arbitrage du plan, no
 À l'injection non résoluble répond une **discipline de défense en profondeur** outillée par des
 référentiels et des patrons.
 
-**Côté référentiels**, deux corpus structurent le domaine : **OWASP**, par ses classements des risques
-applicatifs des modèles de langage puis des applications agentiques et par son corpus *Agentic AI —
-Threats and Mitigations*, qui formalise le cadre de modélisation **MAESTRO** ; et **MITRE ATLAS**, qui
-fournit la matrice adverse des techniques observées contre les systèmes d'IA.
+**Côté référentiels**, deux corpus structurent le domaine : **OWASP**, par ses classements des
+risques applicatifs des modèles de langage (**2025**) puis des applications agentiques (**pour
+2026**) et par son corpus *Agentic AI — Threats and Mitigations*, qui formalise le cadre de
+modélisation **MAESTRO** ; et **MITRE ATLAS**, qui fournit la matrice adverse des techniques
+observées contre les systèmes d'IA — ⚠ **instrument que le socle hérité reprend sans date**, qui
+n'est donc pas écrite ici.
 
 **Côté patrons**, plusieurs propositions cherchent à rétablir une séparation de privilège **hors du
 modèle** — et c'est la formule qui compte, parce qu'elle dit où la garantie doit résider :
@@ -369,10 +370,10 @@ négatif vérifié.
 > **Perspective recherche.** Ces patrons déplacent la garantie **de l'apprentissage statistique vers
 > une vérification systémique auditable** : CaMeL et la règle de non-cumul énoncent des
 > **invariants** — séparation de privilège, non-cumul — que l'on peut vérifier **à la conception,
-> indépendamment du modèle sous-jacent**. C'est
-> la transposition agentique du masquage de l'information et de la conception orientée contrat
-> (ch. 1 § 1.1.3) : **la sécurité naît du découplage explicite entre canal de confiance et canal non
-> fiable, non d'un agent supposé infaillible.**
+> indépendamment du modèle sous-jacent**. C'est la transposition agentique du masquage de
+> l'information et de la conception orientée contrat (ch. 1 § 1.1.3) : **la sécurité naît du
+> découplage explicite entre canal de confiance et canal non fiable, non d'un agent supposé
+> infaillible.**
 
 ### 6.5.2 Garde-fous d'exécution et chaîne d'approvisionnement
 
@@ -459,14 +460,20 @@ lourde que pour les précédents — parce que l'écart l'est.
 **Première infraction, commune au Livre.** À la rédaction, les portes **G-1**, **G-2** et **G-3**
 étaient ouvertes. Conséquences alors énoncées : aucun énoncé central au sens de CA-IV-01 (régime
 **[C]**), aucun décompte publiable, et les renvois « ch. N » n'étaient que des **renvois de plan**,
-les ch. 7, 8, 9, 19, 23, 30, 37, 38, 47 et 49 n'étant pas rédigés.
+les ch. 7, 8, 9, 19, 37, 38, 47 et 49 n'étant pas rédigés. ⚠ **Domaine déclaré : les renvois du
+CORPS**, à l'exclusion de ceux que porte la présente note — *une passe de relecture du 28 juillet
+2026 y avait ajouté les ch. 23 et 30, qui ne sont cités qu'ici, sans ajouter les ch. 17, 39, 43 et
+48, qui le sont aussi : un cardinal élargi sans que son domaine le soit produit une liste qu'aucun
+critère ne ferme.*
 
 ⚠ **Deux de ces trois conséquences sont levées, la première ne l'est pas, et la distinction est tout
 ce que ce paragraphe doit transmettre.** Les **cinquante chapitres du plan existent en brouillon hors
 portes** depuis le 27 juillet 2026 : les renvois de cette pièce **résolvent désormais contre du
-texte**, et les treize renvois de section qu'elle porte ont été re-vérifiés à ce titre. **G-2 est
-franchie** (27 juillet 2026) : le décompte est publiable, et il figure à l'en-tête. **G-3 est
-franchie** (28 juillet 2026) : le socle consolidé existe. ⚠ **Mais le régime de preuve, lui, ne bouge
+texte**, et les **quatorze renvois de section du corps — treize cibles distinctes, le ch. 4 § 4.3.4
+étant cité deux fois** — ont été résolus à ce titre, un à un, contre le texte des pièces visées
+(décompte re-mesuré au commit, décision 16 du TOC). **G-2 est franchie** (27 juillet 2026) : le
+décompte est publiable, et il figure à l'en-tête. **G-3 est franchie** (28 juillet 2026) : le socle
+consolidé existe. ⚠ **Mais le régime de preuve, lui, ne bouge
 pas** : les dix-sept entrées héritées du Vol. I y sont **toutes en [C]**, et **aucun énoncé de cette
 pièce n'est central au sens de CA-IV-01**. *Une porte franchie après coup ne requalifie pas la pièce
 écrite avant elle ; elle change ce qu'il faudrait faire pour la rendre recevable.*
@@ -535,14 +542,34 @@ Vol. III** portent leur degré.
 ⚠ **Une passe de relecture a resserré l'attribution le 28 juillet 2026, et elle ne l'a pas fait
 partout.** La **décision 15 du TOC** borne la parade de péremption par trois interdits ; deux
 mordaient ici. *(a)* **Des instruments repris étaient anonymisés** — la taxonomie des modes de
-défaillance que le § 6.4.2 érige en grille prescriptive, les deux référentiels du § 6.5.1, les trois
-patrons de défense, les bancs d'essai du § 6.3.3 dont deux portent un chiffre : ils portent désormais
-leur **auteur et leur date**. *(b)* **Des affirmations étaient données sans attributeur** — « des
+défaillance que le § 6.4.2 érige en grille prescriptive, la métrique de consistance du même § 6.4.2,
+les deux référentiels du § 6.5.1, les trois patrons de défense, les bancs d'essai du § 6.3.3 dont
+deux portent un chiffre : ils portent désormais leur **auteur et, quand le socle hérité la porte,
+leur date** — ⚠ *celle de MITRE ATLAS n'y figure pas, et la pièce l'écrit plutôt que de la
+suppléer* (§ 6.5.1). *(b)* **Des affirmations étaient données sans attributeur** — « des
 travaux montrent », « une position concurrente soutient », « a été mis en évidence » : les
 attributeurs sont nommés, en particulier au § 6.5.3, où le statut épistémique du constat dépend de
 qui l'a observé. ⚠ **Ce qui n'a pas été touché** : les **dénominations commerciales** de produits et
 de cadriciels, que la décision 15a maintient sous la parade. *Une pièce qui nomme ses instruments et
 tait ses produits applique la décision ; une pièce qui nomme tout la déborde.*
+
+⚠ **Une SECONDE relecture, le même jour, a éprouvé la première et l'a prise en défaut sur trois
+attestations — le fait est consigné parce qu'il est du même ordre que ceux que cette note enregistre
+déjà.** *(1)* La liste des chapitres non rédigés avait été **élargie sans que son domaine le soit**
+(ci-dessus). *(2)* Les renvois de section étaient annoncés « treize » sans dire si le cardinal
+comptait les **occurrences** ou les **cibles** — quatorze contre treize, écart d'une seule
+répétition, mais que la décision 16a rend décidable : *le domaine est désormais écrit.* *(3)*
+L'attestation *(a)* déclarait des dates que deux instruments du § 6.5.1 ne portaient pas ; les deux
+éditions d'OWASP sont versées depuis le socle hérité, et l'absence de date de MITRE ATLAS est
+déclarée au lieu d'être comblée. ⚠ **Ce que la seconde passe a constaté sans avoir à le corriger** :
+les attributions restituées par la première **résolvent toutes contre le Vol. I *Monographie*
+§2.8-2.10** — *domaine déclaré sans cardinal : toute occurrence d'auteur, d'organisme ou de date
+que cette passe a ajoutée* —, et **aucune n'est inventée** ; les cardinaux de garde-fous de l'en-tête
+(R-8 : 1, R-13 : 1, R-14 : 3, tout le reste à zéro) sont **exacts au marqueur littéral** ; le
+décompte de volumétrie et le taux d'écart sont **exacts à l'unité** ; la thèse est **verbatim** ; et
+les treize cibles de renvoi **résolvent** contre le texte des pièces visées. *Une attestation de
+relecture est une attestation comme une autre : celle-ci a été constatée sur pièce, et elle tient
+sur l'essentiel.*
 
 ---
 

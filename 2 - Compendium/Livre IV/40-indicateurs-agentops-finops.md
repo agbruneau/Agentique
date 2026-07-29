@@ -11,7 +11,7 @@ troisième capacité — **mesurer un parc**.*
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Le volet de faits du résidu de G-1 a été instruit le 28 juillet 2026** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)), et **son résultat est contrasté pour ce chapitre**. Le **relevé d'instrumentation tient à sa source** — `S-136`, `S-137`, `S-139` et `S-141` **☑ inchangée**, `S-138` et `S-140` **☑ inchangée (partielle)**, leurs décomptes d'outil demeurant non recomptés localement. **Un cardinal a CHANGÉ** — `S-142` : neuf dimensions relevées, **quatre constatées** (§ 40.1.6). Et **les entrées réglementaires sont revenues ☐ non établie**, l'hôte refusant l'accès : `S-114` — ⚠ **l'effet au 1ᵉʳ mai 2027 n'a pas été re-constaté**, et *un fait à échéance dont la re-datation manque se déclare, il ne se présume pas stable* —, `S-135` et `S-025` (article 12.1), `S-024` (avis 11-348), `S-042` (le seul statut de préversion, les deux réserves de fond demeurant entières). ⚠ *Instruire n'est pas confirmer* : la tentative a eu lieu, le constat manque. Gels de source : **21 juillet 2026** (Vol. III), **juin 2026** (Vol. I) |
 | **Socle mobilisé** | ☑ **Le socle consolidé existe depuis le 28 juillet 2026** ([`socle-consolide.md`](../PRD/socle-consolide.md), **159 entrées**) ; ⚠ **la pièce n'y a pas été écrite et n'est pas réancrée sur la série consolidée** : elle cite ses appuis dans la série de leur volume d'origine, et **la correspondance vers `S-nnn` se lit à l'Annexe B §5, seul instrument de résolution** — *le numéro consolidé ne se dérive pas du numéro source*. Les énoncés résolvent contre le **Vol. III *Monographie* ch. 26**, dont les entrées **F-06**, **F-07**, **F-53**, **F-55**, **F-64**, **F-65**, **F-66**, **F-68**, **F-71**, **F-75**, **F-76**, **F-89**, **F-90**, **F-91**, **F-92**, **F-93**, **F-94**, **F-95**, **F-96**, **F-97**, **F-98** et les entrées héritées **H-04**, **H-06**, **H-07**, **H-08**, **H-12**, **H-14**, **H-15**, **H-23**, **H-27**, **H-28**, **H-33** **conservent leurs niveaux d'origine** ; et contre le **Vol. I *Monographie* §2.11.1 et §4.9.3-4.9.5**, qui entre **en [C]**. ⚠ **DEUX de ces entrées sont EXCLUES du socle consolidé, et l'exclusion est désormais prononcée plutôt qu'annoncée** (Annexe B §6.1) : **F-92** et **F-96**, pour **dette de vote adversarial déclarée et non conduite** — *et ce sont précisément les deux qui porteraient seules la thèse du chapitre.* Elles portent **« ⚖ vote dû, non conduit »** à chacune de leurs mobilisations, **chacune est adossée au relevé d'ensemble**, et **ce relevé, lui, est entré** : `S-136`, `S-137`, `S-139` et `S-140` portent la matière (Annexe B §6.1, alinéa d). ⚠ **H-15 n'entre pas davantage** — *hors socle factuel*, thèse du Vol. II à attribuer —, et la deuxième ligne du tableau 40.2 le déclare dans la cellule même. ⚠ **Aucun énoncé n'est central au sens de CA-IV-01, et le franchissement de G-3 n'y change rien** : la refonte **n'a conduit aucun vote adversarial** et **n'a confronté aucun énoncé à sa source primaire** |
 | **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** Vol. III — **R-09 : deux occurrences**, § 40.1 et § 40.6 ; **R-01 (le passeport n'existe dans aucune spécification) : une occurrence**, § 40.2 ; **R-03 (« AgentOps » au sens du ch. 38 § 38.0, siège unique, non redéfini) : une occurrence**, § 40.0 ; **R-06 (« attendu par E-23 », jamais « exigé ») : une occurrence**, § 40.2, ⚠ **et c'est la contrainte structurante du chapitre — deux régimes qui ne se confondent pas, appliqués à chaque rangée du tableau 40.1 sans que l'identifiant y soit répété** ; **R-07 (inférence produit ↔ réglementation) : une occurrence**, § 40.1 ; **R-13 : une occurrence**, § 40.6 — *l'autonomie graduée y est nommée par son cardinal, jamais nue* ; **R-14 (trois degrés d'absence) : une occurrence**, § 40.4. **R-02 : zéro occurrence de l'identifiant** — ⚠ *garde-fou appliqué, domaine déclaré sans cardinal (décision 16, alinéa c)* ; **R-04, R-05, R-08, R-10 à R-12 : zéro occurrence.** Vol. II — **métriques et qualifications auto-déclarées (marqueur « auto-déclaré ») : six occurrences**, § 40.1 (deux), § 40.2 (deux), § 40.5 et § 40.6, **chacune attribuée à son éditeur ou à ses auteurs nommés, sans exception d'usage illustratif** ; **R-7 : une occurrence**, § 40.1, *nommé par volume*. **R-1 à R-6, R-8 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **6 500 mots** de corps (§ 40.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des six sections et du volume de source consommé. ☑ **Décompte publiable depuis G-2** ; **réel : 5 993 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh), soit **−7,8 %** — re-mesuré au terme de la relecture du 28 juillet 2026 ; **5 564**, soit −14,4 %, à la passe qui l'a précédée. ⚠ **L'écart s'est réduit par bornage et par attribution, jamais par ajout de matière** — noms propres rétablis, re-datations portées, sièges nommés. ⚠ Le [`README.md`](README.md) du dossier porte encore **5 564** : son réalignement est **remonté**. **D-4 s'applique, et elle interdit l'amputation comme le gonflement** |
+| **Volumétrie cible** | ≈ **6 500 mots** de corps (§ 40.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des six sections et du volume de source consommé. ☑ **Décompte publiable depuis G-2** ; **réel : 6 080 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh), soit **−6,5 %** — re-mesuré au terme de la **troisième** relecture du 28 juillet 2026 ; **6 075** (−6,5 %) à la deuxième, **5 993** (−7,8 %) à la première, **5 564** (−14,4 %) au commit d'arbitrage qui les a précédées. ⚠ **L'écart s'est réduit par bornage et par attribution, jamais par ajout de matière** — noms propres rétablis, re-datations portées, sièges nommés. ⚠ Le [`README.md`](README.md) du dossier porte encore **5 564** : son réalignement est **remonté**. **D-4 s'applique, et elle interdit l'amputation comme le gonflement** |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 40 — **thèse réalignée en v0.28**, décisions 8 et 14, remontée R-IV-48, TRIPLE)* — la discipline naissante n'a pas d'indicateur de référence **dans le corpus que le Vol. III a ouvert** ; les métriques **relevées** y sont **au grain de l'opération et auto-déclarées**, ⚠ **trois sources ne faisant pas un marché et aucun balayage de marché n'ayant été conduit** ; grille minimale dérivée de **ce que les cadres des Livres III-IV attendent ou imposent** — ⚠ **et les deux régimes ne se confondent pas : un seul des quatre instruments impose, deux attendent à échéance du 1ᵉʳ mai 2027, le quatrième déclare ne créer aucune exigence** (R-06 du Vol. III) —, présentée comme **construction d'auteur en totalité** ; le modèle de coût agentique est une contrainte d'ingénierie de premier ordre.
 
@@ -26,7 +26,7 @@ celles-ci.**
 1. **« n'a pas ses indicateurs de référence », sans borne.** Le Vol. III a **réécrit sa thèse le
    21 juillet 2026** (écarts ÉC-13 à ÉC-16) et écrit : « n'a pas d'indicateur de référence **dans le
    corpus que ce volume a ouvert** ». *La forme large est un fait négatif de corpus sur un corpus non
-   balayé* — la forme même que R-14 proscrit.
+   balayé* — la forme même que R-14 du Vol. III proscrit.
 2. **« les métriques publiées sont hétérogènes ».** Le Vol. III **refuse expressément le mot
    « publiées »** comme qualification de son corpus : ce qui a été ouvert est **un corpus de
    spécification à son premier échelon de maturité et deux catalogues d'éditeurs**, et **aucun
@@ -79,21 +79,22 @@ conception (§ 40.5) ; et son pilotage à l'échelle (§ 40.6).
 ### 40.1.1 Le périmètre d'abord, parce que tout le reste s'y borne
 
 **Trois fichiers** d'un dépôt dédié ont été **balayés** le 21 juillet 2026 — un document de métriques,
-un document de jonction, un fichier de modèle de métriques —, **ainsi que deux pages d'éditeurs**.
+un document de jonction, un fichier de modèle de métriques ; **deux pages d'éditeurs ont par ailleurs
+été consultées**, hors de ce périmètre de balayage.
 ⚠ **« Balayés » n'est pas « ouverts », et la distinction porte la borne** : les entrées mobilisées
 plus bas citent en outre **deux groupes d'attributs** d'un fichier de segments et **la définition et
 la note du registre d'attributs**, qui sont des **consultations ponctuelles, hors du périmètre de
 balayage**. *La borne des faits négatifs qui suivent porte sur les trois fichiers balayés, non sur ces
 consultations.*
 
-**Ce que ce lot n'a pas balayé est énuméré** : les **neuf** autres fichiers du répertoire, le fichier
-de segments hors deux groupes, et le fichier d'événements (Vol. III **F-96**, **[B, degré 1]** ;
-⚖ **vote dû, non conduit**).
+**Ce que ce lot n'a pas balayé est énuméré** : les **neuf** autres fichiers Markdown du répertoire, le
+fichier de segments hors deux groupes, et le fichier d'événements (Vol. III **F-96**,
+**[B, degré 1]** ; ⚖ **vote dû, non conduit**).
 
 ⚠ **Aucun numéro de version n'est citable** — le dépôt dédié ne porte **ni publication ni étiquette**
 (Vol. III **F-75**, **[B, degré 2]** ; **siège ch. 38 § 38.2**) —, et les conventions relevées sont au
 **premier des cinq échelons** de maturité (Vol. III **F-76**, **[B]** ; même siège). *C'est le statut
-le plus volatil de l'échelle, et R-09 impose de le dire à chaque mention.*
+le plus volatil de l'échelle, et R-09 du Vol. III impose de le dire à chaque mention.*
 
 ### 40.1.2 Ce que le corpus compte
 
@@ -194,27 +195,28 @@ soutient aucun énoncé sur l'état du marché de l'observabilité agentique**, 
 sur une divergence générale. **Huit plateformes n'ont pas été instruites par le lot, et elles se nomment** :
 **Arize Phoenix**, **LangSmith**, **W&B Weave**, **Traceloop**, **Grafana**, **Elastic**, **AWS** et
 **Datadog** — **Datadog étant la seule des huit dont deux pages ouvertes n'ont nommé aucun
-identifiant de métrique**, et **Arize Phoenix la seule dont l'échec est un 404 sur une adresse
-construite par déduction** — ⚠ *une adresse devinée qui échoue n'établit aucune absence.* ⚠ **Les
-nommer est obligatoire** (décision 15 du TOC, alinéa b) : *un lot dont les sources à instruire ne sont
-pas nommées a un critère de clôture inexécutable.* ⚠ **Aucune métrique d'adoption n'a été cherchée ni relevée**
-pour aucun des trois.
+identifiant de métrique**, et **l'échec sur Arize Phoenix un 404 sur une adresse construite par
+déduction** — ⚠ *une adresse devinée qui échoue n'établit aucune absence.* ⚠ **Les nommer est
+obligatoire** (décision 15 du TOC, alinéa b) : *un lot dont les sources à instruire ne sont pas
+nommées a un critère de clôture inexécutable.* ⚠ **Aucune métrique d'adoption n'a été cherchée ni
+relevée** pour aucun des trois.
 
 ⚠ **Et le rapprochement entre un instrument d'observabilité et une attente réglementaire demeure en
 tout état de cause une inférence d'auteur** (R-07 du Vol. III ; ⚠ **et R-7 du Vol. II pour
 l'instrumentation d'E-23 par le produit de gouvernance que ce garde-fou nomme — deux garde-fous
-distincts sur le même geste, nommés par volume**). Le socle n'attache sa clause renforcée qu'à **un produit de gouvernance
-de modèles** — pour lequel **l'éditeur ne revendique aucune conformité et aucune source ne documente
-le lien avec E-23** : fait négatif **ÉTABLI**, degré 2 (Vol. III **H-14**, **[B]**) ; ⚠ **pour les
-deux catalogues ci-dessus, le socle ne documente aucun lien avec un cadre réglementaire** — absence
-de documentation, **degré 3**. *Les deux formules ne s'échangent pas — on a cherché et consigné une
-réserve d'un côté, on n'a rien de l'autre ; le tableau du ch. 38 § 38.4 en est le siège.*
+distincts sur le même geste, nommés par volume**). Le socle n'attache sa clause renforcée qu'à
+**watsonx.governance**, produit de gouvernance de modèles d'**IBM** — pour lequel **cet éditeur ne
+revendique aucune conformité et aucune source ne documente le lien avec E-23** : fait négatif
+**ÉTABLI**, degré 2 (Vol. III **H-14**, **[B]**) ; ⚠ **pour les deux catalogues ci-dessus, le socle ne
+documente aucun lien avec un cadre réglementaire** — absence de documentation, **degré 3**. *Les deux
+formules ne s'échangent pas — on a cherché et consigné une réserve d'un côté, on n'a rien de l'autre ;
+le tableau du ch. 38 § 38.4 en est le siège.*
 
-**Le dernier apport vient du socle hérité, et il porte sa réserve.** Un cadre empirique relève que
-**quatre propriétés sur cinq sont instrumentées, l'autonomie n'en ayant aucune** (Vol. III **H-12**,
-**[B]** — ⚠ **préimpression non révisée par les pairs, source unique, sans reproduction
-indépendante**). *Constat d'une préimpression, non propriété établie du domaine : il **corrobore**
-l'asymétrie que le relevé montre, il ne la fonde pas.*
+**Le dernier apport vient du socle hérité, et il porte sa réserve.** Le cadre empirique de
+**Rinderle-Ma, Mangler et coll.** relève que **quatre propriétés sur cinq sont instrumentées,
+l'autonomie n'en ayant aucune** (Vol. III **H-12**, **[B]** — ⚠ **préimpression non révisée par les
+pairs, source unique, sans reproduction indépendante**). *Constat d'une préimpression, non propriété
+établie du domaine : il **corrobore** l'asymétrie que le relevé montre, il ne la fonde pas.*
 
 ## § 40.2 — La grille minimale : ce que l'architecte doit pouvoir répondre à l'auditeur
 
@@ -230,7 +232,11 @@ portent pas le même mode**, et **les deux régimes ne se confondent pas** (R-06
 | **Avis 11-348 des ACVM** | **n'impose pas** | ⚠ **borné aux marchés de capitaux**, le socle n'établissant pas qu'il porte au-delà, et **déclarant lui-même que ses indications ne créent ni ne modifient aucune exigence** — *rendu français, l'instrument étant en anglais* (**H-07**, [B] ; instruit au **ch. 28**) | sans effet obligatoire |
 | **Article 12.1** | **impose** | obligation d'informer et, **sur demande**, de communiquer « des raisons, ainsi que des principaux facteurs et paramètres, ayant mené à la décision » (**F-89**, [B] ; **H-06**, [B]) | **en vigueur depuis le 22 septembre 2023** — ⚠ **texte non re-récupéré au 28 juillet 2026**, l'éditeur officiel refusant l'accès (`S-135` et `S-025`, ☐ non établie) |
 
-: Tableau 40.1 — Les quatre instruments dont la grille dérive, et leur mode. ⚠ **Des quatre, un seul impose et il est le seul en vigueur à la date du gel de source.** *Une grille qui présenterait au présent ce qui n'a pas d'effet avant 2027 fabriquerait l'obligation que ce paragraphe s'emploie à ne pas fabriquer.*
+: Tableau 40.1 — Les quatre instruments dont la grille dérive, et leur mode. ⚠ **Des quatre, un seul impose, et son obligation est la seule en vigueur à la date du gel de source.** *Une grille qui présenterait au présent ce qui n'a pas d'effet avant 2027 fabriquerait l'obligation que ce paragraphe s'emploie à ne pas fabriquer.*
+
+⚠ **« PROGRAMMÉE » n'est pas un mot du chapitre mais une étiquette de tri** : elle vient
+du **tri prospectif** hérité du Vol. I (Vol. III **H-33**, **[C]**, thèse attribuée), dont **le siège
+dans la somme est au ch. 49 § 49.0** — *ce chapitre l'emploie, il ne le définit pas.*
 
 ⚠ **Le rang est borné à ces quatre instruments et ne porte pas sur le Livre III entier** — le **ch. 32**
 en instruit un cinquième, dont **la loi impose une norme technique unique** fixée par un organisme
@@ -250,7 +256,7 @@ l'auditeur porte sur l'inventaire, non sur la panne**.
 |---|---|---|---|---|
 | **Disponibilité du parc** — dénombrement des agents identifiables à l'instant *t* | E-23 **attend** — au titre de son document d'information — un **inventaire à l'échelle de l'entreprise des modèles à risque inhérent non négligeable** ; ⚠ **attente sous condition de matérialité, non inventaire universel**, et **PROGRAMMÉE** (**F-65**, [B] ; **H-04**, [A/B mixte]) | le mécanisme d'autorisation par arête **ne répond pas à Q-A** — *première question de la grille du **ch. 14*** : évaluation d'une politique, **non émission, vérification ni révocation d'un identifiant** (**F-71**, [B] ; siège ch. 37 § 37.4) | une dimension d'agent qui est un **nom lisible**, **facultative**, et un nom de flux contraint à faible cardinalité (**F-92**, ⚖ vote dû ; **F-94**) | un **dénominateur** : ⚠ **le socle ne documente aucune source d'énumération du parc opposable à l'inventaire attendu** — degré 3 |
 | **Couverture de traçabilité** — part des actions tracées **et** rattachées à une identité émise et à un mandat | l'art. 12.1 **impose** la restitution des facteurs et paramètres **sur demande** (**F-89**) ; E-23 **attend** une **surveillance continue** visant la décision et la re-paramétrisation autonomes, **PROGRAMMÉE** (**H-04**, **F-65**) | ⚠ **Lecture de l'auteur reprise du ch. 37 § 37.8, qui la marque comme telle** — un point d'application que toute interaction traverse est **structurellement** producteur de trace non délégué à l'observé, **propriété d'emplacement, non de qualité**. *Ce que le socle établit s'arrête aux deux énoncés qu'elle compose* : la trace produite par le cadre (**H-15**, thèse du Vol. II, **hors socle factuel**) et la journalisation confiée aux agents « n'est généralement pas recommandée » (**H-12**, [B], préimpression, source unique) | des **durées d'opération**, **aucune dimension d'identité, de mandat ni de conversation** (**F-93**, [B, degré 1]) | la **clé de jointure** entre la trace et la chaîne de mandat — ⚠ **lacune ouverte, aucune passe conduite** (siège **ch. 38 § 38.5** ; **F-95**) |
-| **Délai de révocation** — durée entre la décision de retrait et le refus par le dernier point d'application | ⚠ **Le socle ne documente pas qu'un des cadres canadiens instruits fixe un délai de propagation d'un retrait** — **aucun balayage de ces textes sur cette question n'a été conduit** : degré 3 | un point d'application **ne peut pas vérifier une fraîcheur dont aucun mécanisme ne lui fournit le moyen** (ch. 37 § 37.8) ; la révocation en cascade est au **degré 3** (ch. 20) | **zéro occurrence** de « revocation » dans le document de métriques (**F-93**) ; **aucune métrique de statut** | **les deux bornes de la mesure** : l'interdiction d'employer une clé révoquée est au **MUST NOT** **sans mécanisme d'établir ce statut** (**F-07**, [A] ; **F-06**, [A, degré 1], borné à une seule section) ; le précédent des infrastructures à clés publiques **n'offre pas le secours qu'on lui prête** (**F-53**, [B]) ; un régime d'états **prescrit sans délai de propagation** n'entre qu'en **corroboration** (**F-55**, [C]) |
+| **Délai de révocation** — durée entre la décision de retrait et le refus par le dernier point d'application | ⚠ **Le socle ne documente pas qu'un des cadres canadiens instruits fixe un délai de propagation d'un retrait** — **aucun balayage de ces textes sur cette question n'a été conduit** : degré 3 | un point d'application **ne peut pas vérifier une fraîcheur dont aucun mécanisme ne lui fournit le moyen** (ch. 37 § 37.8) ; la révocation en cascade est au **degré 3** (ch. 20) | **zéro occurrence** de « revocation » dans le document de métriques (**F-93**) ; **aucune métrique de statut** | **les deux bornes de la mesure** : l'interdiction d'employer une clé révoquée est au **MUST NOT** **sans mécanisme d'établir ce statut** (**F-07**, [A] ; **F-06**, [A, degré 1], borné à une seule section) ; le précédent des infrastructures à clés publiques **n'offre pas le secours qu'on lui prête** (**F-53**, [B]) ; un régime d'états **prescrit sans délai de propagation** n'entre qu'en **corroboration** (**F-55**, [C, degré 1]) |
 | **Fraîcheur des évaluations** — âge de la dernière évaluation de chaque agent, rapporté à un seuil | E-23 **attend** une surveillance continue (**H-04**, **F-65**) ; l'AMF **s'attend à ce que…** (**F-68**) — ⚠ **deux attentes, aucune exigence**, l'une et l'autre **PROGRAMMÉES** | ⚠ **Le socle ne documente pas ce qu'un maillage produit d'imputabilité traçable jusqu'à une personne ou une entité juridique** — **Q-E, cinquième question de la grille du ch. 14, est une case vide au degré 3** (siège **ch. 37 § 37.4**) | onze évaluateurs nommés par **Microsoft Foundry**, **cinq en préversion déclarée** (**F-97**, [B]), à deux niveaux d'évaluation (**F-98**, [B]) — ⚠ **qualifications auto-déclarées par cet éditeur** | un **horodatage d'évaluation exportable** : **aucune des seize métriques n'en porte**, et **aucune page ouverte n'établit de correspondance** entre un évaluateur d'éditeur et un attribut d'instrumentation (**F-97**) |
 
 : Tableau 40.2 — Grille minimale d'indicateurs de l'AgentOps — **construction d'auteur en totalité**, au 21 juillet 2026. ⚠ **Aucune valeur, aucun seuil, aucun barème : la colonne de droite est le résultat.**
@@ -355,9 +361,9 @@ d'instruction** en maintenant le blocage des **ch. 25 et 27**.
 discernement.* **Un délai médian de révision élevé ne prouve pas l'attention**, et **un taux de
 renversement bas ne prouve pas la justesse de l'acte** — il est **exactement aussi compatible avec un
 agent qui a raison qu'avec un réviseur qui ne lit pas**. **Le socle ne documente aucun moyen de
-distinguer les deux** : absence de documentation, non fait négatif vérifié (R-14, degré 3). *Deux
-indicateurs qui ne discriminent pas entre l'hypothèse favorable et l'hypothèse défavorable ne
-mesurent pas ; ils rassurent.*
+distinguer les deux** : absence de documentation, non fait négatif vérifié (R-14 du Vol. III,
+degré 3). *Deux indicateurs qui ne discriminent pas entre l'hypothèse favorable et l'hypothèse
+défavorable ne mesurent pas ; ils rassurent.*
 
 ⚠ **Ce que la somme peut donc écrire ici est borné à trois choses**, et elles sont dites plutôt
 qu'étendues : *(a)* les deux grandeurs sont **calculables** — un point d'arrêt humain outillé produit
@@ -404,10 +410,11 @@ elle n'est pas centrale** : *elle oriente la conception du contexte — stabilis
 isoler la partie volatile en fin de fenêtre — et rien de plus.*
 
 ⚠ **Et une conséquence d'évaluation en découle, qui appartient à ce chapitre.** Les **classements
-coût-contrôlés** — où la justesse n'est créditée qu'à **dépense bornée** — déplacent l'évaluation d'un
-optimum de capacité brute vers un **optimum de frontière coût-justesse**. *C'est la condition pour
-qu'une comparaison entre agents soit honnête en production* — et **le seul lien que ce chapitre
-établisse entre coût et évaluation**.
+coût-contrôlés** — où la justesse n'est créditée qu'à **dépense bornée**, et dont le Vol. I nomme un
+exemple, la plateforme **HAL** (Kapoor et coll., 2025) — déplacent l'évaluation d'un optimum de
+capacité brute vers un **optimum de frontière coût-justesse**. *C'est la condition pour qu'une
+comparaison entre agents soit honnête en production* — et **le seul lien que ce chapitre établisse
+entre coût et évaluation**.
 
 ## § 40.6 — FinOps des agents
 
@@ -447,8 +454,8 @@ indiscernable d'une dérive d'agent par les instruments du § 40.1.*
 volatile, dupliquée et difficilement imputable.** Le cadre de référence relevé par le Vol. I est le
 travail de la **FinOps Foundation**, dont **la spécification ouverte de format de coûts a été ratifiée
 en version 1.4 le 4 juin 2026, l'économie des jetons étant cadrée pour la version suivante** ⚠ **—
-ressource vivante, statut et version à re-dater au gel** (R-09). ⚠ **L'auteur de l'instrument se nomme
-même quand sa dénomination se périme** (décision 15 du TOC, alinéas a et b).
+ressource vivante, statut et version à re-dater au gel** (R-09 du Vol. III). ⚠ **L'auteur de
+l'instrument se nomme même quand sa dénomination se périme** (décision 15 du TOC, alinéas a et b).
 
 **Le patron d'allocation** consiste à **attacher des métadonnées — équipe, produit, centre de coûts —
 à chaque appel transitant par la passerelle**, ⚠ *et c'est le point où ce chapitre rejoint le ch. 37 :
@@ -556,8 +563,8 @@ Livre entier**.
    pièce dont les deux entrées porteuses sont exclues ne devient pas recevable en le déclarant ; elle
    devient lisible.*
 2. **Les décomptes sont publiables** (G-2), et **le réel est porté à l'en-tête** — re-mesuré au terme
-   de la relecture du 28 juillet 2026 ; ⚠ **le [`README.md`](README.md) du dossier porte encore la
-   mesure de la passe précédente**, et son réalignement est **remonté**.
+   de chacune des trois relectures du 28 juillet 2026 ; ⚠ **le [`README.md`](README.md) du dossier
+   porte encore la mesure du commit d'arbitrage**, et son réalignement est **remonté**.
 3. **Les renvois « ch. N » : état FINAL de la passe, et non ordre d'écriture.** ⚠ *La forme
    antérieure de ce point photographiait l'instant où cette pièce a été écrite et déclarait « ne
    sont pas rédigés : ch. 41, ch. 43 et ch. 45 » — alors que **la même passe les a écrits
@@ -650,16 +657,28 @@ sans exception d'usage illustratif**. ⚠ **Elles ne l'étaient pas toutes avant
 parade de péremption reste en vigueur pour les dénominations commerciales** (décision 15, alinéa a) ;
 **elle ne couvre ni l'attributeur d'une métrique, ni l'auteur d'un instrument repris, ni l'identifiant
 d'une source qu'un lot doit instruire** (alinéa b) — d'où les huit plateformes non instruites du
-§ 40.1.6, désormais nommées. Les **deux entrées en dette de vote portent leur marqueur à
-chacune de leurs mobilisations**, et **aucune ne porte seule un énoncé**. Les **trois degrés
-d'absence** portent leur degré **à chaque énoncé négatif du corps — domaine déclaré, sans cardinal**
+§ 40.1.6, désormais nommées. ⚠ **Deux anonymats de la même classe avaient survécu à cette passe et
+sont levés par la seconde relecture du 28 juillet 2026** : le produit auquel le socle attache sa clause
+renforcée — **watsonx.governance**, d'IBM —, dont la forme même qu'impose R-07 du Vol. III commence par
+nommer l'éditeur, et la plateforme de classement coût-contrôlé du § 40.5, **HAL** (Kapoor et coll.,
+2025), que le Vol. I nomme à la section d'où ce paragraphe est condensé. ⚠ **Un TROISIÈME anonymat de
+la même classe a survécu aux deux relectures et n'est levé qu'à la troisième** : le **cadre empirique
+de H-12**, écrit « un cadre empirique » là où le socle du Vol. III nomme **Rinderle-Ma, Mangler et
+coll.** — *un cadre est un instrument repris, et son auteur ne s'anonymise pas* (décision 15,
+alinéa b). ⚠ **La deuxième relecture a retiré une exclusivité que la source ne soutient pas** : le
+rapport de lot dont **F-98** procède consigne un 404 sur adresse déduite pour **deux** plateformes,
+non pour la seule. Les **deux entrées en dette de vote
+portent leur marqueur à chacune de leurs mobilisations**, et **aucune ne porte seule un énoncé**.
+Les **trois degrés d'absence** portent leur degré **à chaque énoncé négatif du corps — domaine
+déclaré, sans cardinal**
 (alinéa c) ; le marqueur littéral « degré 3 » y compte **sept occurrences**. **Aucun siège neuf n'est
-posé**, et ⚠ **le cardinal des sièges touchés est corrigé à la relecture du 28 juillet 2026 : ils sont
-NEUF, non quatre** — *la forme antérieure n'en comptait que les quatre derniers, et un cardinal qu'on
-ne peut pas re-mesurer est un ornement* (décision 16). Les neuf, tous nommés au corps avec leur
+posé**, et ⚠ **le cardinal des sièges touchés a été porté de quatre à neuf par la première relecture
+du 28 juillet 2026, puis à DIX par la seconde** — celle-ci ayant nommé le **siège du tri prospectif**,
+dont le chapitre employait l'étiquette « PROGRAMMÉE » sans renvoyer nulle part ; *un cardinal qu'on ne
+peut pas re-mesurer est un ornement* (décision 16). Les dix, tous nommés au corps avec leur
 renvoi : l'AgentOps au **ch. 38 § 38.0** ; le statut des conventions au **ch. 38 § 38.2** ; les deux
 degrés d'absence au **ch. 38 § 38.4** ; la clé de jointure au **ch. 38 § 38.5** ; l'instrument
 d'épreuve adverse au **ch. 39 § 39.1** ; le verdict de grille au **ch. 37 § 37.4** ; le passeport au
 **ch. 16** ; le biais d'automatisation au **ch. 17 § 17.5** ; le modèle de maturité au **ch. 43
-§ 43.5**. S'y ajoute la **grille des cinq questions du ch. 14**, nommée à ses deux emplois — *un
-« Q-A » nu est indécidable* (décision 7).
+§ 43.5** ; le tri prospectif au **ch. 49 § 49.0**. S'y ajoute la **grille des cinq questions du
+ch. 14**, nommée à ses deux emplois — *un « Q-A » nu est indécidable* (décision 7).

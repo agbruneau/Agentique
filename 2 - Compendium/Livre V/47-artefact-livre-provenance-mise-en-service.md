@@ -9,12 +9,12 @@ d'appuis, conservées intégralement (décision 13 du TOC).*
 | Champ | Valeur |
 |---|---|
 | **Statut** | **Brouillon de rédaction, non publiable** — rédigé avant **G-3**, ⚠ **franchie depuis, le 28 juillet 2026** (PRD v0.14) ; portes **G-5** et **G-6** **toujours ouvertes** ; volet résiduel de **G-1** non instruit pour ce chapitre ; **ordre de rédaction du PRD §6 enfreint** (ce mouvement vient en cinquième position, après les ch. 41-46) ; instruction d'auteur du 27 juillet 2026. ⚠ **La règle cardinale du PRD §5 a été enfreinte à son degré maximal, et le franchissement de G-3 ne la rattrape pas** : *un chapitre écrit sur un socle vide n'est pas un chapitre en avance, c'est une inférence longue.* Pour les vingt et une pièces des Livres I et II, « socle vide » désignait un socle **non refondu** (G-3) mais existant chez les volumes sources. Ici, il n'y en avait **aucun**, et le socle consolidé publié depuis n'y change rien : « Fusion : aucune » (décision 9 du TOC). Voir la note de statut, § 47.13 |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Aucun gel de source n'est consommé ici, et cette ligne est vide pour une raison propre à ce chapitre** : il n'a pas de volume source dont il pourrait hériter une date. Les relèves qu'il porte ont été relevées au plan — v0.7 et v0.10 à des dates que leurs journaux ne consignent pas au quantième, **v0.19 le 26 juillet 2026** —, et *une date de relevé n'est pas une date de gel*. ⚠ **Le volet résiduel de G-1 couvre ce Livre et n'est pas instruit** : **aucune** des cinq spécifications nommées au § 47.2, ni le document d'architecture du § 47.3, n'a été reprise à sa source primaire par la présente passe |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé** (G-3 ouverte, Annexe B inexistante) **et aucune entrée d'aucun socle source** — c'est le propre de la matière neuve. Ce à quoi les énoncés résolvent réellement est de deux natures, jamais fondues. *(a)* **Adossements internes** aux pièces rédigées : **ch. 1 § 1.6**, **ch. 6 § 6.3**, **ch. 15 § 15.3**, **ch. 16 § 16.1** et **§ 16.2**, **ch. 17 § 17.6**, **ch. 20 § 20.1** et **§ 20.3** — chacune porte ses propres entrées avec leurs niveaux, **qui ne sont pas retranscrits ici** : *un renvoi n'importe pas le niveau de sa cible*. *(b)* **Relèves du plan** — relève 7 de la v0.7, relèves v0.10, cinq relèves v0.19 —, toutes en **repérage [C]**, **aucune extraite**. ⚠ **Le régime de preuve applicable est le plus dur des trois** (PRD §7.2, ligne « Matière neuve ») : *toutes* les affirmations centrales au vote adversarial, plancher « sources primaires seules ». **Aucun vote n'a eu lieu, aucune source primaire n'a été extraite : aucun énoncé n'est central au sens de CA-IV-01**, et **CA-IV-07 est porté à l'ouverture**, comme le PRD §11 l'exige nommément pour ce chapitre |
-| **Garde-fous balayés** | Vol. III — **R-14 (trois degrés d'absence) : quatorze occurrences au corps** — ⚠ **décompte re-mesuré au commit du 28 juillet 2026 sous la règle littérale : le marqueur de la formule dans le corps (§ 47.1 à § 47.12), en-tête et note de statut exclus** — soit **onze énoncés d'absence portant le degré 3** (§ 47.1, § 47.2, § 47.3, § 47.5, § 47.6 *(deux)*, § 47.7 *(deux)*, § 47.9, § 47.11, § 47.12) et **trois qualifications de fait négatif** (§ 47.1, *deux* ; § 47.12, *une*), ⚠ **dont aucune n'est écrite « vérifié » sans que sa source l'ait établie par balayage**. ⚠ **Le relevé antérieur — « quinze occurrences, douze au degré 3 », qualifications créditées au § 47.4 — annonçait un cardinal qu'aucun comptage ne reproduit et une localisation que le texte contredit ; il est corrigé ici** : *une attestation de balayage qui ne se re-mesure pas est un relevé, non une couverture* ; **R-02 (qualifier par ce que la spécification démontre, jamais par ce qu'elle promet) : sept occurrences**, ancrées sur la forme « ce que la source démontre / ne démontre pas » — § 47.2, § 47.3, § 47.9, § 47.12 ; **R-11 (jalons « visés », statut du document porté) : deux occurrences**, § 47.2 et § 47.3, sur le statut *approuvé* et le statut *Informational* ; **R-13 (« control plane », « autonomie graduée » jamais nus) : une occurrence**, § 47.10 — ⚠ **faux ami déclaré** : le « plan de contrôle » du maillage de services **pré-agentique** (ch. 1 § 1.3.4) n'est pas le *control plane* que R-13 vise, et il n'est pas employé ici ; **R-09 : une occurrence**, § 47.4, sur la révision protocolaire annoncée au brouillon ; **R-01, R-03 à R-08, R-10, R-12 : zéro occurrence**. Vol. II — **R-8 (« agentic control plane » jamais nu) : zéro occurrence** ; **R-1 à R-7 : zéro occurrence**, la matière de ce chapitre ne touchant ni le RTR, ni la désignation du cadre bancaire, ni les affirmations écartées du ch. 16 § 16.2, auquel le § 47.5 renvoie **sans le reconstruire**. ⚠ **Un garde-fou de désambiguïsation propre au plan s'applique et il est tenu** : « fabrique » (décision 12c) n'est employé nulle part dans ce chapitre |
-| **Volumétrie cible** | ≈ **9 300 mots** de corps (§ 47.1 à § 47.12), **cible dérivée par front et non par section** : l'enveloppe du Livre est de 34 000 mots (TOC v0.25), dont **14 000 au premier mouvement** — le chiffre que l'audit v0.3 avait attaché aux **trois fronts** de matière neuve — et 20 000 au second ; ce chapitre porte **deux fronts sur trois**, soit ≈ 9 300, le ch. 48 en portant un (≈ 4 700). ⚠ **La dérivation suit le front parce que c'est le front qui a été chiffré** : dériver au prorata des douze sections aurait produit un chiffre sans rapport avec l'estimation d'origine. La somme des quatre cibles du Livre — 9 300 + 4 700 + 15 800 + 4 200 — vaut **exactement 34 000**, addition faite avant la première ligne (leçon de **D-4**). ☑ **Décompte publiable depuis G-2** ; **réel : 5 897 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte — **−36,6 %**, ⚠ **re-mesuré au commit du 28 juillet 2026** (5 326 et −42,7 % au commit de rédaction ; la passe de correction a ajouté de l'appareil, jamais du contenu de section-lot). ⚠ **Cet écart est en défaut et il est le résultat, non le défaut** : *sur un chapitre sans socle, l'écart de volumétrie mesure l'absence de sources* — le combler par du contenu plausible serait la faute exacte que **D-4** interdit sous le nom de gonflement, et que le régime de preuve de la matière neuve interdit deux fois |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Aucun gel de source n'est consommé ici, et cette ligne ne porte que le gel de la somme, pour une raison propre à ce chapitre** : il n'a pas de volume source dont il pourrait hériter une date. Les relèves qu'il porte ont été relevées au plan — v0.7 et v0.10 à des dates que leurs journaux ne consignent pas au quantième, **v0.19 le 26 juillet 2026** —, et *une date de relevé n'est pas une date de gel*. ⚠ **Le volet résiduel de G-1 couvre ce Livre et n'est pas instruit** : **aucune** des cinq spécifications nommées au § 47.2, ni le document d'architecture du § 47.3, n'a été reprise à sa source primaire par la présente passe |
+| **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** — [`socle-consolide.md`](../PRD/socle-consolide.md), **v1.2, 159 entrées `S-001`…`S-159`** —, **et ce chapitre n'en mobilise aucune**, non plus qu'aucune entrée d'aucun socle source : c'est le propre de la matière neuve, « Fusion : aucune » (décision 9 du TOC). Ce à quoi les énoncés résolvent réellement est de deux natures, jamais fondues. *(a)* **Adossements internes** aux pièces rédigées : **ch. 1 § 1.3.4**, **ch. 3**, **ch. 6 § 6.3**, **ch. 15 § 15.3** et **§ 15.3.1**, **ch. 16 § 16.1** et **§ 16.2**, **ch. 17 § 17.6**, **ch. 20 § 20.0**, **§ 20.1**, **§ 20.3**, **§ 20.4** et **§ 20.6**, **ch. 21 § 21.1** — chacune porte ses propres entrées avec leurs niveaux, **qui ne sont pas retranscrits ici** : *un renvoi n'importe pas le niveau de sa cible* ; le classement complet, y compris les renvois vers les Livres IV et V, est au § 47.13 (3). *(b)* **Relèves du plan** — relève 7 de la v0.7, relèves v0.10, cinq relèves v0.19 —, toutes en **repérage [C]**, **aucune extraite**. ⚠ **Le régime de preuve applicable est le plus dur des trois** (PRD §7.2, ligne « Matière neuve ») : *toutes* les affirmations centrales au vote adversarial, plancher « sources primaires seules ». **Aucun vote n'a eu lieu, aucune source primaire n'a été extraite : aucun énoncé n'est central au sens de CA-IV-01**, et **CA-IV-07 est porté à l'ouverture**, comme le PRD §11 l'exige nommément pour ce chapitre. ⚠ **Les énoncés d'absence du corps ont été écrits contre un socle qui n'existait pas ; ils résolvent désormais contre les 159 entrées** — *et un balayage par motifs de la présente passe n'y trouve aucune entrée sur les matières qu'ils nomment* (chaîne d'approvisionnement, nomenclature, extension déclarative, test métamorphique, retour arrière, harnais, champ de version). **Balayage par motifs, non entrée par entrée : leur re-vérification exhaustive reste due** |
+| **Garde-fous balayés** | ⚠ **Règle de comptage (décision 16), re-mesurée au commit du 28 juillet 2026** : *un cardinal déclaré ici porte sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus* ; les **applications non marquées** ne se dénombrent pas et relèvent du **domaine balayé**, déclaré sans cardinal. **Domaine balayé : les douze sections du corps, § 47.1 à § 47.12.** Vol. III — **R-14 (trois degrés d'absence) : un marqueur d'identifiant**, § 47.1 ; et le **vocabulaire imposé compte quatorze marqueurs** — **onze « degré 3 »** (§ 47.1, § 47.2, § 47.3, § 47.5, § 47.6 *(deux)*, § 47.7 *(deux)*, § 47.9, § 47.11, § 47.12) et **trois qualifications de « fait négatif »** (§ 47.1, *deux* ; § 47.12, *une*), ⚠ **dont aucune n'est écrite « vérifié » sans que sa source l'ait établie par balayage**. **R-02 (qualifier par ce que la spécification démontre, jamais par ce qu'elle promet) : deux marqueurs d'identifiant**, § 47.2 et § 47.12 ; le **verbe *démontrer***, sur lequel le garde-fou s'ancre, compte **six occurrences** — § 47.1, § 47.2 *(deux)*, § 47.5 *(deux)*, § 47.12. ⚠ **Le relevé antérieur — « sept occurrences, § 47.2, § 47.3, § 47.9, § 47.12 » — n'était reproductible sous aucune règle** : son cardinal n'appariait ni les marqueurs ni les verbes, et **deux des quatre sections qu'il nommait ne portent ni l'un ni l'autre** — *le garde-fou y est tenu sous la forme « ce que la relève établit et ce qu'elle n'établit pas », qui relève du domaine balayé et ne se dénombre pas.* **R-09 (une charte de groupe communautaire n'est pas une norme ; un stade pré-normatif se dit à chaque mention) : un marqueur**, § 47.4, sur la révision protocolaire annoncée au brouillon ; ⚠ **appliqué sans marqueur sur trois autres sites** — statut *approuvé* de SLSA v1.2 (§ 47.2), statut *Informational* de RFC 9334 (§ 47.3), statut de brouillon de laboratoire du registre (§ 47.12, **un site, un marqueur littéral** — ⚠ *le relevé de la passe de relecture écrivait « à ses deux mentions », cardinal qu'aucun comptage ne reproduit : la formule n'apparaît qu'une fois au corps, les reprises du dispositif renvoyant au site qui la porte*) : PRD Vol. III §8.2 règle 6, PRD Vol. II §8.2 règle 5 pour le dernier. **R-13 (« control plane », « autonomie graduée » jamais nus) : un marqueur**, § 47.10 — ⚠ **faux ami déclaré** : le « plan de contrôle » du maillage de services **pré-agentique** (ch. 1 § 1.3.4) n'est pas le *control plane* que R-13 vise, et il n'est pas employé ici. **R-01, R-03 à R-08, R-10 à R-12 : zéro marqueur** ; ⚠ **deux d'entre eux sont pourtant appliqués sur tout le domaine, sans marqueur littéral** — **R-01** (le passeport d'agent n'est jamais un objet existant : il est *déclaré par le ch. 16 comme objet de synthèse construit par la somme*, § 47.5, et la cinquième pièce qu'on lui propose y reste **candidate**) et **R-11** (§ 47.2, où **NIST SP 800-218A** est qualifié de **profil communautaire**, non de norme imposant conformité). ⚠ **Le relevé antérieur rangeait à R-11 les statuts *approuvé* et *Informational*, qui relèvent de R-09** ; le classement est corrigé, aucune section ne perd sa réserve. Vol. II — **R-8 (« agentic control plane » jamais nu) : zéro marqueur** ; **R-1 à R-7 : zéro marqueur**, la matière de ce chapitre ne touchant ni le RTR, ni la désignation du cadre bancaire, ni les affirmations écartées du ch. 16 § 16.2, auquel le § 47.5 renvoie **sans le reconstruire**. ⚠ **Un garde-fou de désambiguïsation propre au plan s'applique et il est tenu** : **ni le nom « fabrique » ni le verbe « fabriquer » n'apparaissent au corps** (décision 12c) |
+| **Volumétrie cible** | ≈ **9 300 mots** de corps (§ 47.1 à § 47.12), **cible dérivée par front et non par section** : l'enveloppe du Livre est de 34 000 mots (TOC v0.30, inchangée depuis la v0.25), dont **14 000 au premier mouvement** — le chiffre que l'audit v0.3 avait attaché aux **trois fronts** de matière neuve — et 20 000 au second ; ce chapitre porte **deux fronts sur trois**, soit ≈ 9 300, le ch. 48 en portant un (≈ 4 700). ⚠ **La dérivation suit le front parce que c'est le front qui a été chiffré** : dériver au prorata des douze sections aurait produit un chiffre sans rapport avec l'estimation d'origine. La somme des quatre cibles du Livre — 9 300 + 4 700 + 15 800 + 4 200 — vaut **exactement 34 000**, addition faite avant la première ligne (leçon de **D-4**). ☑ **Décompte publiable depuis G-2** ; **réel : 6 423 mots** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte — **−30,9 %**, ⚠ **re-mesuré au terme de la contre-relecture du 28 juillet 2026** (5 326 et −42,7 % au commit de rédaction, 5 897 et −36,6 % à la passe de correction, 6 287 et −32,4 % à la relecture ; les trois passes suivantes n'ont ajouté que de l'appareil — décomptes re-mesurés, renvois re-vérifiés, réserves reclassées, deux attestations de relecture rectifiées —, **jamais du contenu de section-lot**). ⚠ **Cet écart est en défaut et il est le résultat, non le défaut** : *sur un chapitre sans socle, l'écart de volumétrie mesure l'absence de sources* — le combler par du contenu plausible serait la faute exacte que **D-4** interdit sous le nom de gonflement, et que le régime de preuve de la matière neuve interdit deux fois |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.26, entrée du chapitre 47, premier mouvement)* — l'identité du Livre II certifie le *porteur* d'un agent, jamais sa *composition* — poids de modèle, serveurs d'outils, bibliothèques, invites ; la provenance des composants (nomenclatures logicielles et d'IA, signature et attestation d'artefacts) est le chaînon entre le passeport du ch. 16 et l'intégrité en exécution du ch. 20 — et le front le plus mûr des trois (jugement v0.3, que les relèves 2 et 7 de la v0.7 confirment : politique de dépréciation protocolaire, compromissions de chaîne d'approvisionnement d'agents).
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 47, premier mouvement)* — l'identité du Livre II certifie le *porteur* d'un agent, jamais sa *composition* — poids de modèle, serveurs d'outils, bibliothèques, invites ; la provenance des composants (nomenclatures logicielles et d'IA, signature et attestation d'artefacts) est le chaînon entre le passeport du ch. 16 et l'intégrité en exécution du ch. 20 — et le front le plus mûr des trois (jugement v0.3, que les relèves 2 et 7 de la v0.7 confirment : politique de dépréciation protocolaire, compromissions de chaîne d'approvisionnement d'agents).
 
 ---
 
@@ -28,10 +28,11 @@ v0.22)* — thèse citée en tête ; sections **§ 47.1 à § 47.7**.
 **Second mouvement — La mise en service d'un artefact non reproductible** *(ch. 48 de la v0.22)* —
 thèse ci-dessous ; sections **§ 47.8 à § 47.12**, renumérotées à la suite du premier mouvement.
 
-> **Thèse du second mouvement**, citée depuis le TOC v0.26, entrée du chapitre 47 — mettre en service un agent dont le comportement n'est pas reproductible à l'identique exige une discipline propre — jeux d'essai de référence, barrière d'évaluation au déploiement, versionnement à **cinq** horloges (modèle, invites, outils, politique — et le **harnais**, porteur de version autonome des quatre) — sans laquelle l'évaluation continue du ch. 39 mesure un artefact que l'organisation ne sait pas même désigner.
+> **Thèse du second mouvement**, citée depuis le TOC v0.30, entrée du chapitre 47 — mettre en service un agent dont le comportement n'est pas reproductible à l'identique exige une discipline propre — jeux d'essai de référence, barrière d'évaluation au déploiement, versionnement à **cinq** horloges (modèle, invites, outils, politique — et le **harnais**, porteur de version autonome des quatre) — sans laquelle l'évaluation continue du ch. 39 mesure un artefact que l'organisation ne sait pas même désigner.
 
 ⚠ **Thèse réalignée au TOC v0.26** (décisions 8 et 14), sur la remontée **R-IV-62** ouverte par cette
-pièce. La forme antérieure comptait **quatre** horloges ; la relève v0.10 en exhibait un **cinquième
+pièce, **et inchangée depuis — les deux thèses ont été collationnées mot à mot contre la v0.30, sans
+écart**. La forme antérieure comptait **quatre** horloges ; la relève v0.10 en exhibait un **cinquième
 porteur** — le harnais —, et *la pièce avait écrit son corps sous la forme bornée avant de remonter,
 parce que la cinquième horloge est la matière du **risque 14**, dont l'arbitrage est une décision
 d'auteur.* ☑ **D-2 est prise le 27 juillet 2026 — sections dans l'existant, sans chapitre neuf** : le
@@ -52,12 +53,14 @@ de travail**, et la décision 8 du TOC s'y applique doublement, comme le TOC l'�
 Les vingt et un chapitres rédigés du Livre I et du Livre II ont traité l'agent comme un
 **interlocuteur** : qui parle à quoi (ch. 8 à 11), sous quelle autorité (ch. 12 à 21). Ce chapitre
 le traite comme un **artefact** — une chose qu'une organisation assemble, signe, livre, met en
-service, remplace. C'est le déplacement que l'audit de couverture du 19 juillet 2026 a nommé, et
-qu'aucun des trois volumes ne porte.
+service, remplace. C'est le déplacement que l'audit de couverture du 19 juillet 2026 a nommé en
+établissant qu'aucun des trois volumes ne le porte — ⚠ *constat de cet audit, non balayage de la
+présente pièce.*
 
 Lecture de l'auteur — l'inventaire qui suit est une construction de ce chapitre. **Ce que le socle
-établit** : rien, et cette ligne n'est pas une figure de style — il n'y a pas de socle, et aucune
-des cinq lignes du tableau 47.1 ne résout contre une entrée numérotée d'aucun volume. **Ce qu'il
+établit** : rien, et cette ligne n'est pas une figure de style — le socle consolidé existe depuis le
+28 juillet 2026, ce chapitre n'y a **aucune entrée**, et aucune des cinq lignes du tableau 47.1 ne
+résout contre une entrée numérotée d'aucun socle. **Ce qu'il
 n'établit pas** : que ces cinq composants soient les bons, qu'ils épuisent la composition d'un
 agent, ni qu'un inventaire soit le bon instrument pour la décrire. L'inventaire vaut comme
 **vocabulaire de travail**, non comme résultat.
@@ -77,8 +80,9 @@ sont pas synchrones, et une seule appartient à l'exploitant.** Un agent dont la
 changé depuis six mois peut avoir changé quatre fois de comportement observable : nouveau millésime
 de modèle, définition d'outil révisée, dépendance mise à jour, fichier d'instructions édité. *La
 question « quelle version de cet agent est en production » n'a donc pas de réponse à un seul
-terme* — c'est le constat que le § 47.8 reprend sous le nom de versionnement à quatre horloges, et
-que la relève v0.10 y porte à cinq.
+terme* — c'est le constat que le § 47.8 reprend sous le nom de **versionnement à cinq horloges**,
+⚠ *dont le quintet ne se superpose pas à celui de ce tableau : le § 47.8 le déclare plutôt que de les
+fondre.*
 
 ⚠ **Ce que la thèse citée affirme, et le seul point où ce chapitre peut l'appuyer sur du texte
 rédigé.** « L'identité du Livre II certifie le porteur, jamais la composition » : le **tableau 16.1
@@ -89,8 +93,8 @@ outils invocables et des bornes de portée, la chaîne de mandat exprime une dé
 attestations de conformité n'ont qu'un nom de champ facultatif. *La thèse se vérifie donc par
 l'absence d'une ligne dans une table rédigée, ce qui est une vérification faible mais réelle* — et
 c'est tout ce dont ce chapitre dispose. **Elle ne se vérifie pas comme un fait négatif** : le socle
-du Livre II ne documente pas de mécanisme d'identité portant la composition, et *c'est une absence
-de documentation, non un fait négatif vérifié* (degré 3 de l'échelle R-14 du Vol. III).
+que mobilise le ch. 16 ne documente pas de mécanisme d'identité portant la composition, et *c'est une
+absence de documentation, non un fait négatif vérifié* (degré 3 de l'échelle R-14 du Vol. III).
 
 ## § 47.2 — Nomenclatures logicielles et d'IA : état des normes et de l'outillage
 
@@ -112,7 +116,7 @@ Le tableau ci-dessous les reprend **avec leurs réserves d'origine**, sans en aj
 | ***in-toto Attestation Framework*** (spécification v1) | cadre d'attestation du projet *in-toto*, hébergé par la **CNCF** | ⚠ le **niveau de maturité CNCF** du projet **n'est pas porté** par la page relevée |
 | **CycloneDX 1.7** | publiée le **21 octobre 2025** par l'**OWASP** et **Ecma International**, **normalisée ECMA-424 le 10 décembre 2025** | fait à distinguer d'un format d'éditeur : c'est une nomenclature devenue **norme d'organisme** |
 | **SPDX 3.0** | courante ; le projet se déclare norme internationale **ISO/IEC 5962:2021** | ⚠ la page relevée **ne précise pas quelle version de SPDX cette norme fixe** — la citer sans cette précision serait, sur une norme, la faute que la décision 7 du TOC proscrit sur les renvois |
-| **NIST SP 800-218A** | *Secure Software Development Practices for Generative AI and Dual-Use Foundation Models: An SSDF Community Profile*, **finale, 26 juillet 2024** ; profil communautaire d'un cadre de développement, adressé aux producteurs de modèles, aux producteurs de systèmes qui les emploient et à leurs acquéreurs | **profil**, non norme imposant conformité |
+| **NIST SP 800-218A** | *Secure Software Development Practices for Generative AI and Dual-Use Foundation Models: An SSDF Community Profile*, **finale, 26 juillet 2024** ; profil communautaire du **SSDF v1.1**, adressé aux producteurs de modèles, aux producteurs de systèmes qui les emploient et à leurs acquéreurs | **profil**, non norme imposant conformité |
 
 : Tableau 47.2 — Les cinq documents de la relève v0.19 pour les nomenclatures et la signature d'artefacts, relevés à leur source le 26 juillet 2026. ⚠ **Aucun n'entre au socle** — ce chapitre n'en a pas, la décision 9 du TOC le déclare : ce sont des **candidates à instruire**, jamais des faits acquis. ⚠ **Les organismes publiants sont nommés, et ils ne sont pas anonymisables** : *un lot d'instruction dont le corpus ne porte pas l'identifiant de ses sources n'a pas de critère de clôture exécutable*, et la parade de péremption qui vaut pour une dénomination commerciale ne vaut pas pour l'éditeur d'une spécification.
 
@@ -120,7 +124,7 @@ Le tableau ci-dessous les reprend **avec leurs réserves d'origine**, sans en aj
 dit pas **ce que chacune de ces spécifications prescrit** : le contenu normatif n'a pas été ouvert,
 et *une notice de page n'est pas un texte*. *(2)* Elle ne dit pas qu'elles soient **adoptées** par
 quiconque : aucune métrique d'adoption n'a été relevée, et une métrique auto-déclarée devrait de
-toute façon être attribuée à sa source à chaque occurrence (PRD Vol. II §7.5). *(3)* Elle ne dit pas
+toute façon être attribuée à sa source à chaque occurrence (PRD Vol. II §8.2). *(3)* Elle ne dit pas
 qu'elles **s'appliquent à un agent** : quatre des cinq portent sur le logiciel en général, la
 cinquième sur le développement de modèles, et *aucune ne nomme l'objet composé du § 47.1*. **Le
 socle ne documente aucune nomenclature dont le périmètre déclaré couvre les cinq composants du
@@ -139,10 +143,11 @@ produisent le même inventaire d'un même agent.
 **Le lot d'instruction, formulé pour qu'il puisse être ouvert.** *Question* : existe-t-il une
 nomenclature dont la spécification prescrit la description des cinq composants d'un agent — poids de
 modèle, serveurs d'outils, bibliothèques, invites, politique —, et sous quelle forme vérifiable ?
-*Corpus à ouvrir* : les cinq documents du tableau 47.2 dans leur texte intégral ; les profils d'IA
-de CycloneDX et de SPDX s'ils existent ; le corps de NIST SP 800-218A pour ce qu'il attend d'un
-producteur de systèmes. *Critère de clôture* : un énoncé normatif, cité et daté, nommant un champ
-qui porte un composant de modèle ou d'invite — non une page de présentation, non un billet de
+*Corpus à ouvrir* : les cinq documents du tableau 47.2 dans leur texte intégral, **et la RFC 9334 du
+§ 47.3** ; les profils d'IA de CycloneDX et de SPDX s'ils existent ; le corps de NIST SP 800-218A
+pour ce qu'il attend d'un producteur de systèmes. *Critère de clôture* : un énoncé normatif, cité et
+daté, nommant un champ qui porte un composant de modèle ou d'invite — non une page de présentation,
+non un billet de
 projet. *Résultat d'un échec* : si le corpus ne porte pas cette description, l'échec est un
 résultat, il s'écrit, et la section garde la forme qu'elle a ici.
 
@@ -151,11 +156,13 @@ résultat, il s'écrit, et la section garde la forme qu'elle a ici.
 **Le point de départ n'est pas dans ce chapitre : il est dans une section rédigée du Livre II, et il
 est négatif.** Le **ch. 20 § 20.3** a posé la question — *existe-t-il un mécanisme documenté par
 lequel un vérificateur établit, à l'exécution, que ce qui s'exécute est ce qui avait été vérifié ?*
-— et conclu sur quatre constats de portées inégales, dont le quatrième est un trou déclaré : la
-recherche d'un mécanisme normalisé d'attestation d'intégrité **au-delà du protocole examiné** n'a
-pas été menée, registres officiels, mécanismes de provenance de paquets et catalogues d'éditeurs
-n'ayant pas été ouverts. *Le socle du Vol. III ne documente ni l'existence ni l'absence d'un tel
-mécanisme du côté de la chaîne d'approvisionnement — degré 3.*
+— et conclu sur **trois constats de portées très inégales, dont le troisième est un trou déclaré** :
+la recherche d'un mécanisme normalisé d'attestation d'intégrité **au-delà du protocole examiné** n'a
+pas été menée, registre officiel, mécanismes de provenance de paquets et catalogues d'éditeurs
+n'ayant pas été ouverts. *Le socle ne documente ni l'existence ni l'absence d'un tel mécanisme du
+côté de la chaîne d'approvisionnement — degré 3.* ⚠ **Cardinal et ordinal repris de la section citée,
+et re-vérifiés contre elle au 28 juillet 2026** ; le relevé antérieur écrivait « quatre constats,
+dont le quatrième » — *un renvoi se re-vérifie contre sa cible, non contre le souvenir qu'on en a.*
 
 ⚠ **Ce chapitre ne comble pas ce trou, et il faut dire précisément ce qu'il fait à la place.** Il
 **nomme** deux des candidates que ce balayage n'avait pas ouvertes — SLSA v1.2 et le cadre
@@ -167,11 +174,14 @@ d'une instruction et non son résultat.
 
 ### 47.3.1 « Attestation » recouvre deux objets, et un seul est sourcé dans la somme
 
-⚠ **C'est la distinction la plus facile à perdre de tout le Livre, et elle décide de ce que le mot
-signifie dans chacun des vingt-deux chapitres qui l'emploient.** Dans le Livre II, « attestation »
-désigne partout l'attestation d'**identité ou de mandat** — ce que la quatrième pièce du passeport
-porterait (ch. 16 § 16.1). L'attestation de **plate-forme** — établir qu'un hôte exécute bien l'état
-attendu — est un **objet différent**, et la relève v0.19 en nomme l'architecture : **RFC 9334**,
+⚠ **C'est une distinction facile à perdre, et elle décide de ce que le mot signifie dans chacun des
+chapitres de la somme qui l'emploient.** ⚠ *Le cardinal que cette phrase portait — « vingt-deux
+chapitres » — est retiré : son domaine n'avait jamais été balayé, et une pièce ne peut pas re-mesurer
+au commit un décompte de corpus que d'autres passes éditent (décision 16). Le domaine est déclaré,
+sans cardinal.* Dans le Livre II, « attestation » désigne partout l'attestation d'**identité ou de
+mandat** — ce que la quatrième pièce du passeport porterait (ch. 16 § 16.1). L'attestation de
+**plate-forme** — établir qu'un hôte exécute bien l'état attendu — est un **objet différent**, et la
+relève v0.19 en nomme l'architecture : **RFC 9334**,
 *Remote ATtestation procedureS (RATS) Architecture*, **janvier 2023**, dont les rôles relevés sont
 l'*Attester* qui produit l'**évidence**, le *Verifier* qui l'apprécie et émet des **résultats
 d'attestation**, la *Relying Party* qui en tire une décision d'autorisation, l'*Endorser* et le
@@ -213,12 +223,17 @@ aucun ne porte de version, d'empreinte ni de signature, sur une page nommée d'u
 retournement, ni qu'un retournement ait été observé en production. *Le chapitre décrit un maillon,
 non un incident* — c'est la formule du ch. 20, et elle vaut ici mot pour mot.
 
-⚠ **Le renvoi entrant se referme ici, et c'est le seul de tout le Livre à l'être.** Le ch. 20 § 20.1
-porte une relève « portée ici et non consommée » qui désigne nommément ce chapitre : *le retournement
-a un grain plus fin que le serveur d'outils — l'extension déclarative du harnais —, et l'incident
-public candidat est décrit au ch. 47, non rédigé.* Il l'est désormais, au § 47.7, et **il est décrit
-comme candidat**, exactement comme le ch. 20 l'annonçait : *aucun énoncé du ch. 20 ne s'y adosse, et
-aucun énoncé du présent chapitre ne l'établit.*
+⚠ **Un renvoi entrant se referme ici.** Le ch. 20 § 20.1 porte une relève « portée ici et non
+consommée » qui désigne nommément ce chapitre : *le retournement a un grain plus fin que le serveur
+d'outils — l'extension déclarative du harnais —, et l'incident public candidat est décrit au ch. 47
+§ 47.7, qui l'instruit et déclare son propre défaut d'attribution.* ⚠ **Forme re-vérifiée mot à mot
+contre sa cible au 28 juillet 2026** : le relevé antérieur en citait une variante que le ch. 20 ne
+porte pas — « décrit au ch. 47, non rédigé » —, et *une relève citée de mémoire est une relève qu'on
+n'a pas rouverte.* Les deux termes de l'annonce sont tenus au § 47.7 : **l'incident y est décrit
+comme candidat**, et **le défaut d'attribution y est déclaré** — *aucun énoncé du ch. 20 ne s'y
+adosse, et aucun énoncé du présent chapitre ne l'établit.* ⚠ *Le superlatif que ce paragraphe portait
+— « le seul de tout le Livre à l'être » — est retiré : le domaine des renvois entrants du Livre n'a
+pas été relevé, et un superlatif sans domaine balayé est un relevé, non une couverture.*
 
 ## § 47.5 — La provenance comme pièce candidate du passeport du ch. 16
 
@@ -256,8 +271,12 @@ la faute que le § 17.5 du ch. 17 a refusé de commettre au prix d'une remontée
 **Ce que la relève porte, tel quel et sans ajout** : des candidats du 1ᵉʳ semestre 2026 **existent**
 — compromissions de plateformes d'agents, divulgations en conférence de sécurité —, et ils sont **à
 instruire à sources primaires avant de déclarer l'événement survenu**. C'est aussi, mot pour mot, ce
-que le ch. 50 § 50.2 porte pour l'événement de péremption « premier incident public d'identité
-agentique », dont l'intitulé a été corrigé par sa source (voir § 50.2).
+que le ch. 50 § 50.2 porte pour son septième événement de péremption — ⚠ **dont l'intitulé se lit
+désormais « premier incident public documentant l'usurpation du justificatif propre d'un agent »**,
+la forme « premier incident public d'identité agentique » que le TOC portait ayant été corrigée par
+sa source le 22 juillet 2026. ⚠ **La formulation restreinte de cette absence a son siège au
+ch. 19 § 19.6**, qui la pose une seule fois pour toute la somme ; elle est **reprise ici, non
+reformulée**.
 
 ⚠ **Trois bornes, parce qu'une section vide se lit mal.** *(1)* **Le socle ne documente aucune
 divulgation de compromission de chaîne d'approvisionnement visant un agent d'entreprise, à aucun
@@ -321,7 +340,7 @@ extension déclarative — degré 3.**
 **Second mouvement — La mise en service d'un artefact non reproductible** *(ch. 48 de la v0.22 ;
 ancien titre conservé, décision 13a du TOC ; thèse citée en tête)*
 
-## § 47.8 — Le versionnement à quatre horloges
+## § 47.8 — Le versionnement à cinq horloges
 
 **La thèse du second mouvement pose cinq horloges — modèle, invites, outils, politique, et le
 harnais — et le § 47.1 en a inventorié cinq composants ; les deux quintets ne se recouvrent pas.**
@@ -330,9 +349,10 @@ l'hôte d'exécution des serveurs d'outils, là où la thèse les range ensemble
 harnais**, que la thèse porte depuis son réalignement en v0.26. *Le chapitre suit la thèse pour le
 décompte et le tableau pour l'inventaire, et le signale plutôt que d'aligner l'un sur l'autre* — la
 décision 8 du TOC veut que le chapitre corrige le plan, et **ce chapitre n'est pas en position de le
-faire** : il n'a pas de socle qui autoriserait à trancher. ⚠ **Le titre de cette section, hérité de la
-table détaillée du TOC, écrit encore « quatre horloges » ; l'écart est remonté, non corrigé ici** —
-*un rédacteur ne réécrit pas un intitulé de plan.*
+faire** : il n'a pas de socle qui l'autoriserait à trancher. ☑ **L'intitulé de cette section portait
+« quatre horloges » et suit désormais le plan** : *la table détaillée du TOC a été réalignée en v0.29
+sur la remontée que cette pièce avait ouverte, et c'est le sens de l'escalade — le rédacteur remonte,
+le plan tranche, la pièce s'aligne ensuite.*
 
 Lecture de l'auteur — **ce que « version d'un agent » veut dire, et pourquoi la question n'est pas
 rhétorique.** Une version, dans l'ingénierie logicielle ordinaire, est un identifiant qui suffit à
@@ -369,7 +389,10 @@ franchie*, et l'infraction de rédaction n'est pas rattrapée par l'arbitrage qu
 **Le régime de preuve n'a pas bougé** : la relève reste un repérage [C] non extrait, et *le contenu
 de la cinquième horloge ne peut pas davantage s'écrire ici qu'hier* — ce qui a changé est qu'il a
 désormais un domicile, non une source. La section porte donc la relève, sa qualification et son
-domicile, et la remontée qui l'a produite est **R-IV-60** (§ 47.13).
+domicile, et la remontée qui l'a produite est **R-IV-60** (§ 47.13). ☐ **Une obligation en découle et
+elle n'est pas payée** : le jalon **J-IV-7** exige que *la cinquième horloge du présent § 47.8.1 soit
+confrontée au texte des ch. 37 à 40*, rédigés hors de la passe qui a pris D-2 — **confrontation non
+faite**, et *elle n'est pas de la compétence d'une passe qui ne relit qu'une pièce.*
 
 ## § 47.9 — Jeux d'essai de référence et barrière d'évaluation au déploiement
 
@@ -398,17 +421,25 @@ non franchie à un instant, sur un artefact nommé, avec une conséquence de dé
 ⚠ **Deux barrières, deux grains, à ne jamais fondre.** Celle-ci porte sur **l'artefact et sa mise en
 service** ; la barrière de **certification** du ch. 41 § 41.4 porte sur **l'admission au parc**. *Le
 problème de l'oracle vaut pour les deux et ne se dissout pas en changeant d'échelle* — c'est la seule
-chose que ce chapitre puisse dire du ch. 41, **rédigé le même jour hors de la présente passe**, et
-dont le sort dépend toujours de la décision d'auteur **D-8**, non prise.
+chose que ce chapitre puisse dire du ch. 41, **rédigé le même jour hors de la présente passe**. ☑ **Son
+sort a été tranché depuis, et l'arbitrage n'est pas un acquittement** : **D-8 est prise le 27 juillet
+2026 — socle non constitué, chapitre maintenu sous réserve, retrait non exécuté** ; le **risque 16 du
+TOC reste ouvert**, et *le retrait demeure l'issue si les lots d'instruction du ch. 41 échouent.*
 
 ## § 47.10 — Promotion par environnements et GitOps du parc
 
 **Cette section applique au grain du déploiement ce que le ch. 39 § 39.4 traite au grain du cycle de
 vie, et elle ne le reconstruit pas.** ⚠ **Les ch. 39 et 40 ont été rédigés le même jour, hors de la
-présente passe et non committés à l'heure où ces lignes s'écrivent** : ces renvois résolvent contre du
-texte que la présente passe n'a pas relu, et *la nuance est déclarée plutôt que lissée* — ils **se
-re-vérifient au commit**, comme la décision 8 du TOC l'exige de tout renvoi dont la cible vient
-d'exister.
+présente passe, et n'étaient pas committés à l'heure où ces lignes ont été écrites** : la nuance a été
+déclarée plutôt que lissée, et ☑ **la re-vérification due est faite au 28 juillet 2026** — les deux
+pièces sont au dépôt, et les renvois de cette section résolvent contre leur texte.
+
+☑ **Un renvoi entrant se referme ici.** Le **ch. 40 § 40.6** déclare son pont vers ce chapitre sans
+le franchir : *ce que devient la pré-production gouvernée — jeux d'évaluation figés, déploiement
+fantôme, non-régression avant promotion — quand l'objet promu est un artefact non reproductible y
+est renvoyé au ch. 47.* **Le présent chapitre est ce domicile, et ce qu'il peut en dire est borné par
+ce qui suit** : il ne dispose d'aucune source sur la promotion d'un tel artefact, et *nommer un
+domicile n'est pas répondre à la question qu'on y adresse.*
 
 Lecture de l'auteur — **ce que la promotion par environnements suppose, et que les cinq horloges du
 § 47.1 rendent problématique.** Promouvoir un artefact d'un environnement au suivant suppose que
@@ -427,15 +458,19 @@ contourne un mot ne prouve pas qu'il a balayé le garde-fou.
 
 ## § 47.11 — Retour arrière d'un artefact à état
 
-**La question de cette section est étroite et elle a une réponse partiellement adossée : que le
-retour arrière ne restaure pas.** Un retour arrière restitue un artefact ; il ne restitue ni la
-mémoire accumulée, ni les délégations en cours. Les deux termes ont des sièges dans la somme, et
-c'est ce qui rend la section défendable là où les autres du mouvement le sont moins.
+**La question de cette section est étroite, et son étroitesse est ce qui rend sa réponse
+partiellement adossée : elle porte sur ce que le retour arrière *ne restaure pas*.** Un retour
+arrière restitue un artefact ; il ne restitue ni la mémoire accumulée, ni les délégations en cours.
+Les deux termes ont des sièges dans la somme, et c'est ce qui rend la section défendable là où les
+autres du mouvement le sont moins.
 
-**La mémoire.** Le plan situe la dérive de mémoire au ch. 39 § 39.2 — ⚠ **rédigé le même jour hors de
-cette passe, à re-vérifier au commit**. Le Vol. I range par ailleurs la mémoire persistante et
-l'apprentissage continu parmi
-ses **frontières non résolues** (`Monographie.md` §2.13.2, en **[C]**), et le ch. 49 § 49.13 reprend
+**La mémoire.** Le plan situe la dérive de mémoire au ch. 39 § 39.2 — ☑ **renvoi re-vérifié au
+28 juillet 2026, et la re-vérification le borne plutôt qu'elle ne le confirme** : la section existe,
+mais elle traite **la dérive de modèle, d'outil et d'autonomie**, et son § 39.2.4 déclare la mémoire
+**quatrième source de dérive portée par le plan, repérage [C] non consommé, hors socle**. *Le siège
+que ce paragraphe invoque est donc lui-même un front ouvert*, et c'est ce que la suite constate. Le Vol. I
+range par ailleurs la mémoire persistante et l'apprentissage continu parmi ses **frontières non
+résolues** (Vol. I *Monographie* §2.13.2, en **[C]**), et le ch. 49 § 49.13 reprend
 cette question transmise. *Ce chapitre n'en ajoute rien* : il constate que l'objet dont le retour
 arrière devrait rendre compte est, chez sa source, un front ouvert.
 
@@ -486,10 +521,13 @@ section s'arrête à une proposition nommée.
 gouvernance sous lequel la pièce a été rédigée, conformément à la règle d'escalade du PRD
 (Annexe A) : *un rédacteur ne corrige jamais le TOC, ce PRD ni le Conspectus — il remonte.*
 
-**Ce qui est enfreint.** Portes **G-3** (socle consolidé à zéro entrée), **G-5** (arbitrage du risque
-14 — le harnais) et **G-6** (sort de la matière neuve) ; volet résiduel de **G-1** non instruit ;
-**ordre de rédaction du PRD §6**, qui place ce mouvement en cinquième position, après les ch. 41-46.
-Instruction d'auteur du 27 juillet 2026.
+**Ce qui est enfreint.** Portes **G-3** (socle consolidé à zéro entrée à la rédaction — ☑ **franchie
+depuis, le 28 juillet 2026**), **G-5** (arbitrage du risque 14 — le harnais) et **G-6** (sort de la
+matière neuve) ; volet résiduel de **G-1** non instruit ; **ordre de rédaction du PRD §6**, qui place
+ce mouvement en cinquième position, après les ch. 41-46. Instruction d'auteur du 27 juillet 2026.
+⚠ **Le franchissement de G-3 ne rétroagit pas** : *un chapitre écrit sur un socle vide reste un
+chapitre écrit sur un socle vide*, et **G-5 comme G-6 — les deux portes que le PRD §5 nomme pour ce
+mouvement précisément — demeurent ouvertes**.
 
 ⚠ **Deux décisions d'auteur ont été prises depuis, et l'état se lit en deux temps.** *À la rédaction*,
 **D-2** (risque 14, la couche d'exécution) et **D-3** (sort de la matière neuve) **n'étaient prises
@@ -500,91 +538,128 @@ et ⚠ **publication du premier mouvement bloquée jusqu'à leur clôture, une i
 valant retrait**. ⚠ **Aucune des trois portes n'est franchie pour autant** : *une décision prise n'est
 pas une porte franchie* — D-3 ouvre des lots, elle ne constitue pas un socle —, et **l'infraction de
 rédaction n'est pas rattrapée par l'arbitrage qui l'a suivie**. Les deux lots que ce chapitre formule
-(§ 47.2, § 47.6) sont **L1** et **L2** de D-3 ; le troisième est au ch. 48 (§ 48.2, § 48.5).
+(§ 47.2, § 47.6) sont **L1** et **L2** de D-3 — ⚠ **D-3 étend le périmètre de L1 au § 47.3 et ajoute
+la RFC 9334 à son corpus, ce que le § 47.2 reporte** ; le troisième est au ch. 48 (§ 48.2, § 48.5).
 
-1. **Aucun énoncé n'est central au sens de CA-IV-01, et l'écart est ici plus grand que pour toute
-   pièce déjà rédigée.** Les vingt et un chapitres du Livre I et du Livre II résolvaient contre des
-   socles **existants mais non refondus** ; ce chapitre ne résout contre **aucun socle**. Son régime
-   de preuve est le plus dur des trois (PRD §7.2) et **aucune de ses exigences n'est satisfaite** :
-   zéro vote adversarial, zéro source primaire extraite.
-2. **Les décomptes sont publiables** (G-2). Écart de **−36,6 %** sur la cible dérivée — **le plus fort
-   du Livre**. ⚠ **Chiffre re-mesuré au commit du 28 juillet 2026** : il valait **−42,7 %** au commit
-   de rédaction, et *la passe de correction a ajouté de l'appareil — décomptes re-mesurés, identifiants
-   de lots, titres de mouvement —, jamais du contenu de section-lot*. ⚠ **Le superlatif de corpus que
-   ce point portait — « le plus fort du corpus rédigé à ce jour » — est retiré : il n'a pas été
-   re-mesuré sur les cinquante pièces, et *un superlatif dont le domaine n'est pas balayé est un
-   relevé, non une couverture*.** ⚠ **L'écart
-   est en défaut et il est déclaré comme un résultat** : *sur un chapitre sans socle, la volumétrie
-   mesure ce qu'on peut écrire sans fabriquer.* Le combler serait un gonflement, que **D-4** interdit
-   au même titre que l'amputation.
-3. **Les renvois « ch. N » se partagent en TROIS régimes, et ce partage est propre à la présente
-   passe.** ⚠ **Relevé horodaté, arrêté au commit de cette passe (27 juillet 2026)** : **les cinquante chapitres du plan existent désormais en brouillon** — ⚠ *et ce décompte a bougé DEUX FOIS pendant la rédaction de cette pièce*, les Livres III et IV ayant été écrits puis committés **en parallèle, hors de cette passe**, portant le corpus de 25 à 50 pièces de chapitre. **Aucun renvoi de plan ne subsiste donc dans cette pièce** ; ce qui subsiste est plus exigeant à déclarer : **dix-neuf pièces sur cinquante que la présente passe n'a pas relues**. **(a)** Résolvent contre du **texte rédigé, relu par cette passe** :
-   ch. 1 § 1.6, ch. 3, ch. 6 § 6.3, ch. 15 § 15.3, ch. 16 § 16.1-16.2, ch. 17 § 17.6, ch. 20
-   § 20.1, § 20.3, § 20.4, § 20.6 — et **ch. 48, ch. 49, ch. 50**, rédigés dans la présente passe.
-   **(b)** Résolvent contre du **texte rédigé le même jour, hors de cette passe et non relu par
-   elle** : ch. 39 § 39.2 et § 39.4, ch. 40 § 40.6, ch. 41 § 41.4 — ⚠ *à re-vérifier au commit.*
-   **(c)** **Renvois de plan : aucun** — les **quatre** cibles du groupe (b) — ch. 39 § 39.2, ch. 39
-   § 39.4, ch. 40 § 40.6, ch. 41 § 41.4 — existent toutes en brouillon au commit. ⚠ *Le cardinal
-   « dix » qu'annonçait ce point était orphelin : il ne se re-mesure sur aucune énumération de cette
-   note.*
+1. **Aucun énoncé n'est central au sens de CA-IV-01.** Les vingt et un chapitres du Livre I et du
+   Livre II résolvaient contre des socles **existants mais non refondus** ; ce chapitre ne résout
+   contre **aucun socle**. Son régime de preuve est le plus dur des trois (PRD §7.2) et **aucune de
+   ses exigences n'est satisfaite** : zéro vote adversarial, zéro source primaire extraite.
+   ⚠ **Le franchissement de G-3 n'y change rien** : le socle consolidé compte **159 entrées**, et *ce
+   chapitre n'en mobilise aucune* — une porte franchie ailleurs ne fournit pas de source à une
+   matière qui n'en a pas.
+2. **Les décomptes sont publiables** (G-2). Écart de **−31,2 %** sur la cible dérivée. ⚠ **Chiffre
+   re-mesuré au terme de la contre-relecture du 28 juillet 2026** : il valait **−42,7 %** au commit de
+   rédaction, **−36,6 %** à la passe de correction et **−32,4 %** à la relecture, *les trois passes
+   suivantes n'ayant ajouté que de l'appareil — décomptes re-mesurés, renvois re-vérifiés, réserves
+   reclassées, deux attestations de relecture rectifiées —, jamais du contenu de section-lot*. ⚠ **Le superlatif que ce point portait — « le plus fort écart du Livre » — est retiré
+   avec celui, plus large, qui l'avait précédé : ni l'un ni l'autre n'a été re-mesuré sur son
+   domaine**, et *un superlatif dont le domaine n'est pas balayé est un relevé, non une couverture.*
+   ⚠ **L'écart est en défaut et il est déclaré comme un résultat** : *sur un chapitre sans socle, la
+   volumétrie mesure ce qu'on peut écrire sans fabriquer.* Le combler serait un gonflement, que
+   **D-4** interdit au même titre que l'amputation.
+3. **Les renvois « ch. N » se partageaient en TROIS régimes à la rédaction ; le troisième est vide,
+   et les deux autres ne se distinguent plus que par ce que la passe a relu, non par ce qui
+   existe.** ⚠ **Relevé horodaté, arrêté au commit du 28 juillet 2026** : **les cinquante chapitres du
+   plan existent en brouillon** — ⚠ *et ce décompte a bougé DEUX FOIS pendant la rédaction de cette
+   pièce*, les Livres III et IV ayant été écrits puis committés **en parallèle, hors de cette passe**,
+   portant le corpus de 25 à 50 pièces de chapitre. **Aucun renvoi de plan ne subsiste donc**, et les
+   pièces que la passe de rédaction n'avait pas relues sont exactement **les vingt-cinq des Livres III
+   et IV** — ⚠ *le cardinal « dix-neuf » que ce point annonçait ne se dérive d'aucune énumération de
+   cette note : 50 − 25 = 25, et c'est la seule arithmétique dont elle dispose.*
+   **(a)** Résolvent contre du **texte rédigé, relu par la passe de rédaction** : ch. 1 § 1.3.4,
+   ch. 3, ch. 6 § 6.3, ch. 15 § 15.3 et § 15.3.1, ch. 16 § 16.1-16.2, ch. 17 § 17.6, ch. 20 § 20.0,
+   § 20.1, § 20.3, § 20.4, § 20.6, ch. 21 § 21.1 — et **ch. 48, ch. 49, ch. 50**, rédigés dans la
+   même passe.
+   **(b)** Résolvaient contre du **texte rédigé le même jour, hors de cette passe et non relu par
+   elle** : ch. 39 § 39.2 et § 39.4, ch. 40 § 40.6, ch. 41 § 41.4 — ☑ **les quatre cibles ont été
+   re-vérifiées au 28 juillet 2026 : elles existent, et les quatre renvois résolvent.** ⚠ *Vérifier
+   qu'une cible existe n'est pas l'avoir relue* : le fond de ces quatre pièces n'a pas été collationné
+   ici.
+   **(c)** **Renvois de plan : aucun.**
 4. **Deux sections sur douze n'ont pas de contenu, et c'est le geste que le plan prescrivait** :
    le § 47.2 et le § 47.6 portent des sections dont la ligne Fusion déclare le socle « à constituer
    **avant** rédaction ». Elles exposent l'état des relèves et **formulent leur lot d'instruction**,
    sans écrire une ligne de contenu plausible — précédent du § 17.5 du ch. 17, clos par **D-9**.
 
-**Remontées ouvertes par ce chapitre :**
+**Les quatre remontées ouvertes par ce chapitre — trois soldées le 27 juillet 2026, la quatrième
+soldée pour moitié seulement.** ⚠ *Une remontée close ne rend pas la pièce recevable : elle rend la
+question tranchée, et deux des quatre l'ont été par une décision d'auteur qui borne sans combler.*
+⚠ **Et une issue déclarée ne se croit pas plus qu'un fait déclaré** : R-IV-63 était donnée pour close
+par le relevé de la passe de relecture ; *elle ne l'est qu'à moitié, et c'est constaté sur pièce, non
+repris du relevé qui l'annonçait.*
 
-- **R-IV-60 — BLOQUANTE pour ce mouvement, et elle porte sur une porte, non sur un renvoi.** Le
+- **R-IV-60 — BLOQUANTE pour ce mouvement, et elle portait sur une porte, non sur un renvoi.** Le
   § 47.8.1 rencontre le **cinquième porteur de version — le harnais** —, qui est la matière même du
   **risque 14** du TOC. Son arbitrage est la décision **D-2**, et la porte **G-5** conditionne
-  nommément « le premier mouvement du Livre V ». **Ni D-2 n'est prise, ni G-5 n'est franchie, et le
-  mouvement est rédigé.** *La section ne tranche pas* : elle porte la relève, sa qualification par le
-  TOC — *thèse sous-spécifiée, non fausse* — et son blocage. **Demande remontée** : que **D-2 soit
-  prise avant toute publication de ce mouvement**, et que son issue dise si la cinquième horloge
-  entre à la thèse du second mouvement (réalignement au titre de la décision 8) ou si le périmètre
-  est assumé et déclaré (issue de **D-7**, appliquée à un autre objet). ⚠ *Une thèse
-  sous-spécifiée publiée est une thèse fausse à la première instruction.*
-- **R-IV-61 — BLOQUANTE pour la publication du chapitre : les deux sections sans socle appellent la
-  même décision que le § 17.5, et elle n'existe pas pour cet objet.** Le **§ 47.2** et le **§ 47.6**
-  sont écrits comme lots d'instruction. **D-9** a réglé le cas d'**une** section dans ce cas ; ici, le
-  cas est celui d'un **chapitre entier** dont la ligne Fusion porte « sources primaires à constituer
-  avant rédaction » pour **ses deux mouvements**. **Demande remontée** : que **D-3** — constitution du
-  socle propre ou retrait, les trois fronts se décidant ensemble — soit prise **avant** J-IV-7, et que
-  les deux lots formulés ici (§ 47.2, § 47.6) soient versés à son instruction ou déclarés
-  infructueux. ⚠ *Une instruction infructueuse est un résultat ; une instruction jamais ouverte n'en
-  est pas un.*
-- **R-IV-62 — non bloquante, de cardinal et de thèse.** La thèse du second mouvement compte
-  **quatre** horloges ; l'inventaire du § 47.1 compte **cinq** composants ; la relève v0.10 en propose
-  un **cinquième porteur de version** distinct des deux décomptes. **Trois cardinaux coexistent donc
-  pour le même objet**, et le chapitre ne les aligne pas — il n'a pas de socle qui l'autoriserait.
-  **Demande remontée** : arbitrage du décompte à la thèse, après D-2, avec inscription du choix à la
-  décision 8 du TOC. ⚠ *Un cardinal annoncé en toutes lettres dans une thèse citée verbatim ne se
-  corrige pas depuis une pièce.*
+  nommément « le premier mouvement du Livre V ». **À la rédaction, ni D-2 n'était prise, ni G-5
+  franchie, et le mouvement a été écrit quand même.** *La section ne tranche pas* : elle porte la
+  relève, sa qualification par le TOC — *thèse sous-spécifiée, non fausse* — et son blocage.
+  **Demande remontée** : que D-2 soit prise avant toute publication de ce mouvement, et que son issue
+  dise si la cinquième horloge entre à la thèse du second mouvement (réalignement au titre de la
+  décision 8) ou si le périmètre est assumé et déclaré (issue de **D-7**, appliquée à un autre objet).
+  ☑ **Issue — D-2 prise le 27 juillet 2026** : *sections dans l'existant, sans chapitre neuf* ; le
+  § 47.8.1 et le ch. 50 § 50.2 en sont les deux points d'atterrissage, et la cinquième horloge entre
+  à la thèse. ⚠ **Le risque 14 est borné, non comblé, et G-5 n'est pas franchie.**
+- **R-IV-61 — BLOQUANTE pour la publication du chapitre : les deux sections sans socle appelaient la
+  même décision que le § 17.5, et elle n'existait pas pour cet objet.** Le **§ 47.2** et le **§ 47.6**
+  sont écrits comme lots d'instruction. **D-9** avait réglé le cas d'**une** section dans ce cas ;
+  ici, le cas est celui d'un **chapitre entier** dont la ligne Fusion porte « sources primaires à
+  constituer avant rédaction » pour **ses deux mouvements**. **Demande remontée** : que **D-3** —
+  constitution du socle propre ou retrait, les trois fronts se décidant ensemble — soit prise
+  **avant** J-IV-7, et que les deux lots formulés ici soient versés à son instruction ou déclarés
+  infructueux. ☑ **Issue — D-3 prise le 27 juillet 2026** : **trois lots ouverts**, retrait non
+  exécuté, ⚠ **publication du premier mouvement bloquée jusqu'à leur clôture**. *Une instruction
+  infructueuse est un résultat ; une instruction jamais ouverte n'en est pas un — et elle vaut
+  retrait.*
+- **R-IV-62 — non bloquante, de cardinal et de thèse.** La thèse du second mouvement comptait
+  **quatre** horloges ; l'inventaire du § 47.1 en compte **cinq** composants ; la relève v0.10
+  proposait un **cinquième porteur de version** distinct des deux décomptes. **Trois cardinaux
+  coexistaient pour le même objet**, et le chapitre ne les a pas alignés — il n'avait pas de socle qui
+  l'y autorisât. **Demande remontée** : arbitrage du décompte à la thèse, après D-2, avec inscription
+  du choix à la décision 8 du TOC. ☑ **Issue — TOC v0.26, décisions 8 et 14** : la thèse compte
+  **cinq** horloges, le harnais y entrant comme cinquième porteur ; **l'intitulé du § 47.8 a suivi en
+  v0.29**, et la présente pièce s'y est alignée. ⚠ **Les deux quintets ne se recouvrent toujours
+  pas** — le § 47.8 le déclare plutôt que de les fondre.
 - **R-IV-63 — non bloquante, d'appareil.** Le [`gabarit de pièce`](../../.claude/skills/chapitre-compendium/references/gabarit-piece.md)
   et les [`conventions`](../../.claude/skills/chapitre-compendium/references/conventions.md) du skill
-  font encore écrire « tant que G-2 est ouverte, aucun décompte n'est publiable », alors que **G-2 est
-  franchie depuis le 27 juillet 2026** et que le `SKILL.md` porte la règle à jour. *Deux pièces
-  d'appareil se contredisent, et c'est celle que le rédacteur copie qui est périmée.* **Demande
-  remontée** : alignement des deux fichiers de référence sur le `SKILL.md`.
+  faisaient écrire « tant que G-2 est ouverte, aucun décompte n'est publiable », alors que **G-2 est
+  franchie depuis le 27 juillet 2026** et que le `SKILL.md` portait la règle à jour. *Deux pièces
+  d'appareil se contredisaient, et c'est celle que le rédacteur copie qui était périmée.* **Demande
+  remontée** : alignement des deux fichiers de référence sur le `SKILL.md`. ⚠ **Issue — PARTIELLE,
+  constatée sur pièce le 28 juillet 2026, et le relevé de la passe de relecture la donnait pour
+  complète.** ☑ Les `conventions` §4 et le champ *Volumétrie cible* du `gabarit` portent désormais la
+  règle à jour. ☐ **Le squelette de note de statut du `gabarit` ne l'a pas suivie** : il fait toujours
+  écrire « Aucun décompte n'est publiable (G-2) » — *et c'est exactement le bloc que le rédacteur
+  copie, donc le seul endroit où la contradiction se propage.* **La remontée reste ouverte pour ce
+  point.**
 
-**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25 (structure inchangée en v0.26)** — § 47.1 à
-§ 47.12, dans l'ordre exact, les deux mouvements dans leur ordre, sections du second mouvement
-renumérotées à la suite du premier comme la décision 13d le prescrit. Les **deux tables d'appuis**
-sont respectées : les adossements internes sont **des renvois, jamais des sources**, et **aucune
-entrée F-xx, aucun garde-fou hérité** n'est revendiqué. **Les deux thèses sont citées verbatim** et
-portées comme constructions d'auteur, avec la double application de la décision 8 que le TOC exige.
+**Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.30 (structure
+inchangée depuis la v0.25)** — § 47.1 à § 47.12, dans l'ordre exact, les deux mouvements dans leur
+ordre, sections du second mouvement renumérotées à la suite du premier comme la décision 13d le
+prescrit ; **l'intitulé du § 47.8 a été aligné sur la forme réalignée en v0.29**. Les **deux tables
+d'appuis** sont respectées : les adossements internes sont **des renvois, jamais des sources**, et
+**aucune entrée F-xx, aucune entrée S-xxx, aucun garde-fou hérité** n'est revendiqué. **Les deux
+thèses sont citées verbatim** — *collationnées mot à mot contre la v0.30, sans écart* — et portées
+comme constructions d'auteur, avec la double application de la décision 8 que le TOC exige.
 **Aucun siège n'est reconstruit** : le retournement reste au **ch. 20 § 20.1**, l'attestation
 d'intégrité à l'exécution au **ch. 20 § 20.3**, l'inventaire de la révocation au **ch. 20 § 20.4**,
 l'assemblage du passeport au **ch. 16 § 16.1**, l'encadré des affirmations écartées au **ch. 16
 § 16.2**, le socle IAM au **ch. 3**, les registres gouvernés au **ch. 15 § 15.3**, la chaîne de
-mandat au **ch. 17**. **Les quatorze occurrences de R-14 portent leur degré**, dont onze au
-**degré 3** — ⚠ **cardinal re-mesuré au commit du 28 juillet 2026 sous la règle littérale, corps
-seul** — et **aucune absence propre à ce chapitre n'est écrite comme fait négatif vérifié**, les
-trois qualifications de fait négatif étant reprises de pièces qui les ont établies. **Les sept
-occurrences de R-02**
-énoncent ce que la source relevée démontre **et** ne démontre pas, y compris sur le statut de norme
-d'organisme du § 47.2. **Les deux statuts de document sont portés à chaque mention** (R-11) : le
-statut *approuvé* de SLSA v1.2 sans sa date d'approbation, le statut *Informational* de RFC 9334.
-**Le faux ami de R-13 est déclaré** (§ 47.10) plutôt que contourné. **Le mot « fabrique » n'apparaît
-pas** (décision 12c). Enfin, **aucune des deux sections sans socle n'a été remplie** : c'est le seul
-point sur lequel cette pièce peut être tenue pour exemplaire, et il consiste à n'avoir rien écrit.
+mandat au **ch. 17**. **Le vocabulaire des trois degrés compte quatorze marqueurs au corps**, dont
+onze « degré 3 » — ⚠ **cardinaux re-mesurés au commit du 28 juillet 2026 sous la règle de comptage de
+la décision 16, en-tête et note de statut exclus** — et **aucune absence propre à ce chapitre n'est
+écrite comme fait négatif vérifié** : *des trois qualifications de fait négatif, deux refusent
+expressément ce degré à un énoncé du chapitre (§ 47.1) et la troisième reprend un fait négatif
+**établi** par le ch. 16 § 16.1.* **Les six occurrences du verbe *démontrer*** énoncent ce que la source relevée
+démontre **et** ne démontre pas, y compris sur le statut de norme d'organisme du § 47.2. **Les statuts
+de document sont portés au site où chacun est introduit** — statut *approuvé* de SLSA v1.2 sans sa
+date d'approbation (§ 47.2), statut *Informational* de RFC 9334 (§ 47.3), statut de brouillon de
+laboratoire du registre (§ 47.12) —, et ⚠ **les reprises qui ne les répètent pas renvoient au site qui
+les porte** : *aucune n'est un site de qualification neuf.* ⚠ **La forme antérieure — « portés à
+chaque mention » — était plus forte que le texte** : trois reprises ne répètent pas le statut, et *une
+attestation qui promet plus que le corps ne tient est une attestation fausse, fût-ce par excès.*
+**Le faux ami de R-13 est déclaré** (§ 47.10) plutôt que contourné. **Ni le nom « fabrique » ni le
+verbe « fabriquer » n'apparaissent au corps** (décision 12c). Enfin, **aucune des deux sections sans
+socle n'a été remplie** : c'est le seul point sur lequel cette pièce peut être tenue pour exemplaire,
+et il consiste à n'avoir rien écrit.

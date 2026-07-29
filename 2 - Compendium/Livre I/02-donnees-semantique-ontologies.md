@@ -6,12 +6,12 @@ Premier mouvement — les fondements (ch. 1-6).*
 | Champ | Valeur |
 |---|---|
 | **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes G-1, G-2 et G-3 du [PRD](../PRD/PRD.md) §5. Même régime que le ch. 1 : l'écart est déclaré, non dissimulé ; ses conséquences sont énumérées en § 2.5. ⚠ **Mise à jour du 27 juillet 2026, postérieure à la rédaction** : **G-2 et le volet Livre I de G-1 ont été franchis depuis** (PRD v0.8), et les **remontées de cette pièce sont closes**. ⚠ **Mise à jour du 28 juillet 2026** : **G-3 est franchie** (PRD v0.14), **trois portes sur sept le sont désormais**, et le socle consolidé existe — *la phrase « socle consolidé à zéro entrée », que cette pièce portait, a cessé d'être vraie*. **La pièce reste néanmoins un brouillon non publiable**, pour deux motifs qui ne se recouvrent pas : elle a été **rédigée hors portes**, et *un franchissement postérieur solde une infraction sans la rattraper* ; et **CA-IV-11 et CA-IV-13 demeurent insatisfaisables** faute d'un relecteur distinct du rédacteur (D-6). **Aucun de ses énoncés n'est central au sens de CA-IV-01** — le motif est au champ *Socle mobilisé*, et il a changé sans que la conclusion bouge. |
-| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. La matière condensée porte le gel de sa source — **juin 2026** (Vol. I) —, qui n'est pas celui de la somme et ne peut en tenir lieu. ⚠ Ce chapitre est particulièrement exposé à la péremption : **quatre spécifications qu'il cite étaient en cours au gel de la source** (SPARQL 1.2, SHACL 1.2, RDF 1.2/RDF-star, et la refonte majeure d'OpenAPI), et une graduation de projet y est datée de février 2026 |
+| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. La matière condensée porte le gel de sa source — **juin 2026** (Vol. I) —, qui n'est pas celui de la somme et ne peut en tenir lieu. ⚠ Ce chapitre est particulièrement exposé à la péremption : **trois spécifications que son corps cite étaient en cours au gel de la source** (SPARQL 1.2, SHACL 1.2, RDF 1.2/RDF-star), et une graduation de projet y est datée de février 2026. ⚠ **Un quatrième objet périssable est porté ICI sans l'être au corps** — la refonte majeure d'OpenAPI —, et le décompte « quatre » que cette pièce annonçait depuis sa rédaction le tenait pour cité : le corps ne cite d'OpenAPI que l'**alignement acquis de la version 3.1.0** (§ 2.1.4), et la matière de la refonte est au **Vol. I *Monographie* §1.4.2.1**, **hors du périmètre de fusion §1.7-1.8** — elle est traitée au **ch. 1 § 1.4.2**. *Le registre du gel le localisait déjà « ch. 2, en-tête » (fait 5) ; c'est le cardinal de la pièce qui tenait une localisation pour une citation.* **Corrigé le 28 juillet 2026 ; la re-datation de G-1, elle, n'est pas touchée** — l'objet a bien été instruit, et la clôture qui l'enregistre est gelée |
 | **Socle mobilisé** | ⚠ **Aucune entrée du socle consolidé — et depuis le 28 juillet 2026 ce constat a changé de motif sans changer de portée.** L'Annexe B **existe** ([`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, **159 entrées `S-001`…`S-159`**, porte G-3 franchie) ; **aucune de ses entrées ne couvre le périmètre de ce chapitre**. Balayage du domaine entier le 28 juillet 2026 : les **dix-sept entrées héritées du Vol. I** (`S-143`…`S-159`) proviennent des §2.10, §3.10, §5.0-5.1, §7.x et de l'Annexe B de sa *Monographie*, ou des §10-§11 de sa *Synthèse* (quatre d'entre elles, dont le fichier a quitté le dépôt le 22 juillet 2026) ; **aucune** ne provient du **§1.7** ni du **§1.8**. *Ce n'est plus « le socle est vide », c'est « le socle ne couvre pas cette matière » — constat de balayage sur un domaine clos, non estimation.* Les énoncés résolvent donc contre le **Vol. I *Monographie* §1.7-1.8** directement, **hors socle**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01** avant élévation en [B] par lecture des sources primaires que le Vol. I cite |
 | **Garde-fous balayés** | **Les deux séries, intégralement, y compris les zéros.** ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — R-1 à R-8 : **zéro occurrence** (aucune matière réglementaire canadienne, aucun énoncé sur E-23, le RTR ou MCP). Vol. III — R-01, R-03 à R-13 : **zéro occurrence** ; **R-02 : le marqueur figure une fois, § 2.4.1, sans que le garde-fou soit déclenché** — ⚠ le § 2.4 approche R-02 (qualification par ce que la spécification démontre) sans le déclencher, l'objet n'étant pas cryptographique ; la règle y est néanmoins appliquée par analogie à la fiabilité des correspondances produites par modèle. **R-14 (trois degrés d'absence) : trois occurrences**, § 2.1.5, § 2.3.3 et § 2.4.1, marquées en toutes lettres |
-| **Volumétrie cible** | ≈ 8 000 mots de corps (§ 2.1 à § 2.4). Enveloppe **dérivée, non prescrite** — le TOC n'en donne qu'au Livre (~65 000 mots pour onze chapitres). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 443 mots** de corps, **re-mesurés le 28 juillet 2026** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−32,0 %** de la cible ; la passe de relecture du 28 juillet a ajouté 198 mots, tous d'appareil de preuve ou de renvoi, **aucun de contenu neuf**. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre valait 64 750 mots, soit −0,4 % de l'enveloppe**, à la mesure antérieure à cette relecture : c'est la cible dérivée qui était fausse, non la pièce qui est courte. ⚠ **Ce total de Livre n'est PAS re-mesuré ici, et il ne doit pas l'être** — les onze pièces sont relues en parallèle, et *un cardinal mesuré pendant que ses termes changent est faux à la seconde où on le publie* ; il se re-mesure au terme de la passe. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Volumétrie cible** | ≈ 8 000 mots de corps (§ 2.1 à § 2.4). Enveloppe **dérivée, non prescrite** — le TOC n'en donne qu'au Livre (~65 000 mots pour onze chapitres). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 501 mots** de corps, **re-mesurés au terme de la contre-passe du 28 juillet 2026** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−31,2 %** de la cible. Les deux passes du 28 juillet ont ajouté **256 mots** au corps rédigé le 27 (5 245) — **198** à la relecture, **58** à la contre-passe —, tous d'appareil de preuve, de bornage ou de renvoi, **aucun de contenu neuf**. ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre valait 64 750 mots, soit −0,4 % de l'enveloppe**, à la mesure antérieure à cette relecture : c'est la cible dérivée qui était fausse, non la pièce qui est courte. ⚠ **Ce total de Livre n'est PAS re-mesuré ici, et il ne doit pas l'être** — les onze pièces sont relues en parallèle, et *un cardinal mesuré pendant que ses termes changent est faux à la seconde où on le publie* ; il se re-mesure au terme de la passe. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 2 ; forme **inchangée en v0.29**, re-collationnée mot à mot le 28 juillet 2026 — décisions 14 et 17)* — l'interopérabilité sémantique — accord sur le sens, pas seulement sur le format — est le niveau que les protocoles agentiques présupposent et que peu savent établir.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 2 ; forme **inchangée en v0.30**, re-collationnée mot à mot **par copie** le 28 juillet 2026 — décisions 14 et 17)* — l'interopérabilité sémantique — accord sur le sens, pas seulement sur le format — est le niveau que les protocoles agentiques présupposent et que peu savent établir.
 
 ---
 
@@ -198,8 +198,8 @@ des règles de compatibilité**. À l'enregistrement d'une nouvelle version, le 
 **garde-fou exécutable au moment de l'évolution**, et non une recommandation qu'une relecture
 pourrait laisser passer.
 
-C'est le principe que le ch. 1 § 1.2.2 identifiait dans la lignée LISI : *une règle sans motif
-exécutable qui la contrôle n'en est pas une*. Un registre de
+C'est le principe que le ch. 1 § 1.2.2 tire de la lignée LISI — *l'évaluation par preuves plutôt que
+par déclaration d'intention*, la maturité liée à des artefacts concrets et vérifiables. Un registre de
 schémas est l'instrument par lequel une organisation rend non négociable, à l'échelle de centaines de
 sujets, le contrat d'évolution qui autorise le déploiement indépendant.
 
@@ -289,7 +289,8 @@ standardise l'interface entre moteurs et catalogue, transformant celui-ci d'un c
 en un contrat ouvert et interchangeable. Plusieurs implémentations se disputent ce rôle, dont l'une a
 gradué au rang de projet de premier niveau de sa fondation le **19 février 2026**.
 
-⚠ **Cette date est le seul fait daté du chapitre, et elle a été reprise à sa source primaire** :
+⚠ **Cette date est le seul fait daté du chapitre qui appelle une re-vérification au gel — la
+normalisation d'avril 2024 du § 2.3.5 étant acquise —, et elle a été reprise à sa source primaire** :
 une graduation de projet est un événement de gouvernance, non une propriété technique, et la carte
 des implémentations en concurrence bouge par trimestres. Le volet Livre I de la porte G-1 l'a
 **confirmée au 19 février 2026** le 27 juillet 2026 (registre du gel, fait 1) ; la réserve porte
@@ -540,11 +541,13 @@ condition, non comme confort.
 relations défini, l'organisation **circonscrit l'espace des inférences admissibles** et fait du
 contrat sémantique une frontière de sûreté pour le système génératif.
 
-Ce troisième volet est le plus important pour la thèse du chapitre, et il opère un renversement qu'il
-faut nommer. Jusqu'ici, la sémantique servait à ce que deux systèmes se comprennent ; ici, elle sert
-à **borner ce qu'un système a le droit de conclure**. Le contrat de sens cesse d'être un instrument
-de coopération pour devenir un instrument de contrainte — et c'est sous cette seconde forme que les
-Livres II et IV le réemploieront.
+Lecture de l'auteur — ce troisième volet est le plus important pour la thèse du chapitre, et il opère
+un renversement qu'il faut nommer. Jusqu'ici, la sémantique servait à ce que deux systèmes se
+comprennent ; ici, elle sert à **borner ce qu'un système a le droit de conclure**. Le contrat de sens
+cesse d'être un instrument de coopération pour devenir un instrument de contrainte — et c'est sous
+cette seconde forme que les Livres II et IV le réemploieront. Ce que le socle établit s'arrête à
+l'ontologie comme garde-fou circonscrivant l'espace des inférences admissibles ; **il n'établit ni la
+hiérarchie des trois volets, ni le réemploi** par les Livres II et IV, proposés ici comme lecture.
 
 ⚠ **Ce que ce chapitre ne traite pas, et où cela se trouve.** Le versant proprement **agentique** de
 la sémantique — l'écart entre accord de protocole et compréhension, la sémantique lue-par-le-modèle,
@@ -582,16 +585,23 @@ d'auteur du 27 juillet 2026. Quatre conséquences :
    TOC proscrit ; il ne survit plus ici.*
 4. **Une remontée est ouverte par ce chapitre**, à l'instance d'arbitrage (D-6, non désignée) :
    **R-IV-03 — non bloquante, mais à échéance G-1.** Ce chapitre est le plus exposé du Livre I à la
-   péremption : **quatre spécifications qu'il cite étaient en cours au gel de la source** (juin 2026)
-   — la révision du langage de requête sémantique, celle du langage de validation, celle du modèle de
-   graphe **avec** son extension d'assertions qualifiées, et la refonte majeure du langage de
+   péremption : **quatre spécifications en cours au gel de la source** (juin 2026) lui étaient
+   rattachées — la révision du langage de requête sémantique, celle du langage de validation, celle du
+   modèle de graphe **avec** son extension d'assertions qualifiées, et la refonte majeure du langage de
    description d'API —, et il porte **un fait daté de février 2026** (graduation d'un projet de
    catalogue). ⚠ *Cette énumération divergeait de celle de l'en-tête, qui est la bonne : les deux
    annonçaient « quatre » et n'en nommaient pas les mêmes, le modèle de graphe et son extension
    comptant ici pour deux et la refonte du langage de description d'API étant omise. Aligné le
-   27 juillet 2026 — un cardinal juste sur une liste fausse reste une liste fausse.* La re-datation de G-1 doit les reprendre une à une. Le
-   chapitre les signale toutes en réserve ⚠ et **n'en présente aucune comme acquise** ; il n'y a donc
-   pas de faute à corriger, mais une échéance à tenir.
+   27 juillet 2026 — un cardinal juste sur une liste fausse reste une liste fausse.*
+   ⚠ **Précision de la contre-passe du 28 juillet 2026, qui borne le rattachement sans toucher au
+   périmètre instruit** : **trois** de ces quatre spécifications sont citées **au corps** ; la
+   quatrième — la refonte du langage de description d'API — n'est portée qu'à l'**en-tête**, sa
+   matière étant au **ch. 1 § 1.4.2** (Vol. I *Monographie* §1.4.2.1, hors du périmètre de fusion de ce
+   chapitre). *Les deux listes disaient « qu'il cite » d'un objet que le corps ne cite pas ; l'en-tête
+   est corrigé, la clôture ci-dessous ne l'est pas.* La re-datation de G-1 doit les reprendre une à
+   une, et **elle l'a fait sur les cinq** — le rattachement était trop large, non le domaine instruit.
+   Le chapitre signale toutes celles qu'il cite en réserve ⚠ et **n'en présente aucune comme
+   acquise** ; il n'y a donc pas de faute à corriger, mais une échéance à tenir.
 
 **Ce qui n'est pas enfreint.** La structure suit la table détaillée du TOC section par section
 (§ 2.1 à § 2.4, aucune section de synthèse n'étant prévue pour ce chapitre) ; la table de couverture
@@ -659,3 +669,45 @@ qu'une autre passe y puise est exactement la collision du 27 juillet 2026*.
   est **levée pour son premier terme**. ⚠ **Le second reste dû** : le ch. 43, second consommateur
   déclaré, n'emploie pas « verrou », et **une pièce ne modifie pas l'appareil** — *un rédacteur ne
   corrige pas le contrôle qu'il vient de satisfaire.*
+
+---
+
+### Contre-passe de relecture — 28 juillet 2026
+
+⚠ **Seconde lecture de la pièce, chargée de réfuter la première plutôt que de la confirmer.** Elle
+est hors plan comme celles qui la précèdent et se retire avec elles. ⚠ **Elle ne satisfait NI
+CA-IV-11 NI CA-IV-13** : *deux passes du même rédacteur ne font pas un relecteur tiers* (**D-6**).
+Les huit attributions ajoutées par la première passe ont été **résolues une à une contre la
+bibliographie du Vol. I** — Zaharia et coll. 2021, Hohpe et Woolf 2003, Dehghani 2022, Gruber 1993,
+Euzenat et Shvaiko 2013, Poggi et coll. 2008, Babaei Giglou et coll. 2023, Edge et coll. 2024 :
+**aucune n'est inventée**, et les décomptes de l'en-tête ont été **re-mesurés** plutôt que crus. Trois
+défauts ont survécu à la première passe, et **deux d'entre eux y avaient leur origine**.
+
+- ⚠ **Le cardinal des objets périssables était faux, et il l'était depuis la rédaction** : l'en-tête
+  annonçait **quatre spécifications « qu'il cite »** là où le corps n'en cite que **trois**, la
+  quatrième — la refonte majeure du langage de description d'API — n'ayant sa matière ni dans le
+  périmètre de fusion §1.7-1.8 ni dans le corps, mais au **ch. 1 § 1.4.2**. *Le registre du gel
+  l'avait localisée « ch. 2, en-tête » sans que la pièce en tire la conséquence.* En-tête corrigé ;
+  ⚠ **la clôture de R-IV-03 du 27 juillet n'est PAS réécrite** — *un journal publié ne se réécrit
+  pas, son écart se consigne à la passe suivante* —, et la re-datation de G-1 reste acquise : l'objet
+  a bien été instruit, seule sa domiciliation était fausse.
+- ⚠ **Une correction de la première passe avait introduit un énoncé faux** : « cette date est le seul
+  fait daté du chapitre » (§ 2.2.3), alors que le § 2.3.5 en porte un second — la normalisation
+  internationale d'**avril 2024**. La formulation d'origine, qui bornait à « le seul qui appelle une
+  re-vérification à G-1 », était exacte ; *alléger une borne l'a transformée en affirmation
+  réfutable par la pièce elle-même.* Borne rétablie sous sa forme mesurée.
+- ⚠ **Une maxime restait attribuée à un renvoi qui ne la porte pas** (§ 2.1.6) : « une règle sans
+  motif exécutable qui la contrôle n'en est pas une » était donnée pour ce que le **ch. 1 § 1.2.2**
+  identifie dans la lignée LISI, or ce chapitre y écrit *l'évaluation par preuves plutôt que par
+  déclaration d'intention*. *Le renvoi résolvait, son contenu non — et la première passe avait
+  retiré la seule source qui portait réellement la maxime.* Renvoi aligné sur le texte cité.
+- ☑ **Une construction d'auteur non marquée a été marquée** (§ 2.4.2, dernier paragraphe) : la
+  hiérarchie des trois volets de GraphRAG et leur réemploi annoncé aux Livres II et IV sont une
+  lecture, non un acquis du socle — la pièce marquait déjà la filiation jumelle du § 2.2.2 et pas
+  celle-ci (**CA-IV-07**).
+
+☑ **Ce qui a été re-mesuré et tient** : les **trois occurrences de R-14** (§ 2.1.5, § 2.3.3, § 2.4.1)
+et l'**occurrence unique de R-02** (§ 2.4.1), par balayage du corps seul (décision 16) ; les **159
+entrées** du socle consolidé et les **dix-sept héritées du Vol. I**, dont **quatre** de la *Synthèse*
+supprimée, **aucune** issue du §1.7 ni du §1.8 ; la **thèse**, identique caractère pour caractère à
+l'entrée du TOC ; **tous les renvois sortants**, résolus contre le texte de leur cible.

@@ -9,7 +9,7 @@ trois capacités que l'exploitation distingue — **voir**.*
 |---|---|
 | **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6. ⚠ **Les remontées R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre** et ne sont pas rouvertes ici : **G-5 conditionne le Livre entier**, et l'arbitrage du risque 14 (**D-2**) n'est pas pris |
 | **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ☑ ⚠ **Le volet de faits de G-1 a été levé le 28 juillet 2026 — le LENDEMAIN du gel — et les entrées de ce chapitre en relèvent** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) : sur les vingt-deux identifiants nommés au champ suivant, **H-15 n'entre pas au socle consolidé** — exclusion déclarée, thèse attribuée et non fait — et des **vingt et un** qui y résolvent, **douze sont ☑ inchangées** (dont **quatre partielles**), **une est ☑ changée** — la conformité annoncée du § 38.2.3 —, **cinq sont ☐ non établies**, faute d'accès ou de source encore au dépôt, et **trois sont sans sensibilité temporelle**. ⚠ **Le gel ne s'avance pas d'un jour pour absorber cette passe** (D-1) : *le chapitre reste daté du 27, et les constats du 28 s'y déclarent comme tels.* ⚠ **Ce chapitre reste celui du Livre où la volatilité coûte le plus** — son objet principal est un corpus **sans version citable**, dont la seule ancre demeure une date de consultation. Gels de source : **21 juillet 2026** (Vol. III), **juin 2026** (Vol. I) ; *ils ne sont pas celui de la somme et ne peuvent en tenir lieu* |
-| **Socle mobilisé** | **Aucune entrée du socle consolidé n'est mobilisée** — ⚠ la pièce a été rédigée **avant le franchissement de G-3**, acquis le **28 juillet 2026**, et **elle n'a pas été ré-adossée** à l'[Annexe B](../PRD/socle-consolide.md), qui existe désormais et alloue les identifiants `S-nnn` ; *le socle consolidé n'est plus vide, et cette pièce ne s'y adosse pas encore.* Les énoncés résolvent contre le **Vol. III *Monographie* ch. 24**, dont les entrées **F-64**, **F-65**, **F-66**, **F-74**, **F-75**, **F-76**, **F-77**, **F-78**, **F-89**, **F-90**, **F-91**, **F-95** et les entrées héritées **H-04**, **H-06**, **H-11**, **H-12**, **H-14**, **H-15**, **H-23**, **H-27**, **H-28**, **H-33** **conservent leurs niveaux d'origine** ; et contre le **Vol. I *Monographie* §2.9.6, §3.12.3 et §4.9.1-4.9.2**, qui entre **en [C]**. ⚠ **Régime « source rédigée non publiable »** (PRD §7.2) : **G-4 non close, aucun vote adversarial conduit**. **Aucun énoncé n'est central au sens de CA-IV-01** |
+| **Socle mobilisé** | **Aucune entrée du socle consolidé n'est mobilisée** — ⚠ la pièce a été rédigée **avant le franchissement de G-3**, acquis le **28 juillet 2026**, et **elle n'a pas été ré-adossée** à l'[Annexe B](../PRD/socle-consolide.md), qui existe désormais et alloue les identifiants `S-nnn` ; *le socle consolidé n'est plus vide, et cette pièce ne s'y adosse pas encore.* Les énoncés résolvent contre le **Vol. III *Monographie* ch. 24**, dont les entrées **F-64**, **F-65**, **F-66**, **F-74**, **F-75**, **F-76**, **F-77**, **F-78**, **F-89**, **F-90**, **F-91**, **F-95** et les entrées héritées **H-04**, **H-06**, **H-11**, **H-12**, **H-14**, **H-15**, **H-23**, **H-27**, **H-28**, **H-33** **conservent leurs niveaux d'origine** ; et contre le **Vol. I *Monographie* §2.9.6, §3.12.3 et §4.9.1-4.9.2**, qui entre **en [C]**. ⚠ **Ce champ sur-déclarait, et la re-mesure le borne : sur les vingt-deux, DIX-HUIT portent leur identifiant dans le corps, quatre n'en portent aucun.** *(a)* **H-33** y est **appliquée sans son identifiant** — le tri prospectif du § 38.2.3 et du § 38.5, dont le siège est au **ch. 49 § 49.0**. *(b)* **H-23** relève d'une **sortie de périmètre déclarée au § 38.0** — horizon de tâche déléguée au **ch. 40 § 40.3**, fondements de l'évaluation au **ch. 6**. *(c)* **H-27 et H-28 sont déclarées et non mobilisées** ; ce sont aussi **les deux dont la source a été retirée du dépôt** le 22 juillet 2026. ⚠ *Leur retrait de ce champ modifierait le socle déclaré de la pièce : il relève d'une passe de plan, non d'une relecture — l'écart est mesuré et déclaré, non corrigé en silence.* ⚠ **Régime « source rédigée non publiable »** (PRD §7.2) : **G-4 non close, aucun vote adversarial conduit**. **Aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** Vol. III — **R-14 (trois degrés d'absence) : quatre occurrences**, § 38.0, § 38.1, § 38.2 et § 38.4 ; **R-09 (statut pré-normatif dit à chaque mention) : deux occurrences**, § 38.3 et § 38.5 ; **R-01 : une occurrence**, § 38.5 ; **R-02 : une occurrence**, § 38.5 ; **R-03 (« AgentOps » terme de fournisseur) : une occurrence**, § 38.0 ; **R-04 : une occurrence**, § 38.1 (homonymie du sigle « APM », héritée et déclarée) ; **R-06 (« attendu par E-23 », jamais « exigé ») : une occurrence**, § 38.4 ; **R-07 (inférence produit ↔ réglementation) : une occurrence**, § 38.4, ⚠ **avec ses deux régimes d'absence distincts, qui ne s'échangent pas**. **R-05, R-08, R-10 à R-13 : zéro occurrence.** Vol. II — **R-7 (instrumentation d'une attente réglementaire par un produit = inférence d'auteur) : une occurrence**, § 38.4, ⚠ **nommé par volume, à ne pas confondre avec R-07 du Vol. III** ; **R-8 (sigle jamais nu) : une occurrence**, § 38.1, **renvoyée au siège du ch. 7 § 7.5** — ⚠ *l'en-tête antérieur la comptait à zéro* ; **métriques et conformités auto-déclarées (marqueur « auto-déclaré ») : une occurrence**, § 38.2, attribuée à son éditeur nommé. **R-1 à R-6 : zéro occurrence.** ⚠ **Faux ami déclaré** : le sigle « APM » sert à **deux objets sans rapport** dans le Vol. III — la supervision des performances applicatives et un manifeste de recherche homonyme ; le syntagme complet est écrit à chaque emploi, jamais le sigle nu |
 | **Volumétrie cible** | ≈ **6 000 mots** de corps (§ 38.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des cinq sections et du volume de source consommé. ☑ **Décompte publiable depuis G-2** ; **réel reporté au [`README.md`](README.md)** du Livre, mesuré par [`PRD/decompte.sh`](../PRD/decompte.sh). ⚠ **D-4 s'applique** : l'écart se documente, **ni amputation ni gonflement** |
 
@@ -27,7 +27,10 @@ elle-même comme **un ordonnancement d'auteur, non un fait** : aucune entrée n'
 les capacités d'exploitation. **Le corps a été écrit sous la forme bornée** et l'écart avait été
 **remonté** (R-IV-42, § 38.6). ☑ **La remontée est soldée par l'arbitrage v0.28 du TOC** (décisions 8
 et 14), et **la citation ci-dessus porte la forme réalignée**, reportée **par copie** depuis l'entrée
-courante du plan. *La v0.29 du TOC ne modifie aucune thèse du Livre.*
+courante du plan — ☑ **re-collationnée caractère par caractère contre le TOC v0.30, identique**.
+*Ni la v0.29 ni la v0.30 ne modifient une thèse du Livre : la v0.30 déclare 50 chapitres, cinq
+livres, enveloppes, thèses et tables détaillées **strictement inchangés**, et n'enregistre au plan
+que le franchissement de G-3.*
 
 ⚠ **Un second désalignement porte sur la ligne de sections du plan, et il est de fait daté** — voir
 § 38.2.1 et la remontée **R-IV-43**.
@@ -476,10 +479,14 @@ déclare que **son volet de corrélation demeure non instruit** (Vol. III **F-95
 > mécanisme transporte-t-il quoi que ce soit du **mandat sous lequel l'appel est fait** ? **État** :
 > lacune ouverte le 21 juillet 2026 chez sa source ; **aucune passe de recherche n'a été conduite** —
 > le lot n'a pas ouvert le document, le lot complémentaire ne l'a ouvert que sur ses métriques.
-> **Corpus à ouvrir** : le document de jonction du dépôt dédié, sur son volet de propagation de
-> contexte. **Critère de clôture** : que le volet soit extrait à la source primaire et que la présence
-> ou l'absence d'un identifiant de chaîne de mandat exportable y soit constatée. ⚠ **La question reste
-> ouverte ; aucune inférence n'est proposée ici.**
+> **Corpus à ouvrir** : le document `docs/gen-ai/mcp.md` du dépôt
+> `open-telemetry/semantic-conventions-genai`, branche `main`, sur son volet de propagation de
+> contexte — `traceparent`, `tracestate` et `baggage` dans le champ `_meta`. ⚠ **L'identifiant de la
+> source est écrit** : *un critère de clôture qui désigne son corpus par sa fonction est
+> inexécutable* (décision 15 du TOC, alinéa b-iii ; identité du fichier portée par le Vol. III
+> *Monographie* §24.4, **hors socle**). **Critère de clôture** : que le volet soit extrait à la
+> source primaire et que la présence ou l'absence d'un identifiant de chaîne de mandat exportable y
+> soit constatée. ⚠ **La question reste ouverte ; aucune inférence n'est proposée ici.**
 
 ⚠ **Une seconde source s'est périmée pendant que cette lacune restait ouverte, et l'événement est
 advenu au lendemain du gel.** La révision majeure de la spécification agent-outil — protocole sans
@@ -567,24 +574,26 @@ et G-5 restent entières.**
    brouillon est entrée en service** (§ 38.5). ⚠ **Le résidu se cite avec le franchissement** :
    **cinq entrées demeurent ☐ non établies**, dont deux dont la source a été **retirée du dépôt**,
    et *re-datée ne veut pas dire confirmée.* **Rien de cela ne rend un énoncé central** : le régime
-   de preuve du chapitre est inchangé. 2. **Les décomptes sont publiables** (G-2) ; le réel est
-   reporté au [`README.md`](README.md) du Livre. 3. **Les renvois « ch. N » : état FINAL de la
-   passe, et non ordre d'écriture.** ⚠ *La forme antérieure de ce point photographiait l'instant où
-   cette pièce a été écrite et déclarait « ne sont pas rédigés : ch. 41, ch. 43 et ch. 45 » — alors
-   que **la même passe les a écrits ensuite** ; elle est corrigée ici sur l'état que le commit
-   produit.* **Les dix chapitres du Livre IV (ch. 37 à 46) sont rédigés**, comme le sont les
-   **cinquante chapitres des cinq Livres** : *tous les renvois « ch. N » de cette pièce résolvent
-   donc contre du texte.* ⚠ **Ce qui reste vrai de la forme antérieure, et qui est daté** : à
-   l'heure où ce chapitre a été écrit, n'étaient rédigés ni les ch. 48 et 49 du Livre V, ni les
-   chapitres du Livre III au-delà du ch. 26 — dont le ch. 25, siège de R-06, et le ch. 27, siège de
-   l'article 12.1 —, non plus que les ch. 41, ch. 43 et ch. 45 — *les renvois qui les visent ont été
-   posés comme renvois de plan et n'ont pas été re-vérifiés contre le texte paru après eux.* ⚠ **Et
-   « résoudre contre du texte » ne vaut pas recevabilité** : *le texte visé est lui-même un
-   brouillon hors portes.* 4. **La lacune de corrélation du § 38.5 est exposée, non comblée**, et sa
-   question instruisible est formulée avec son corpus et son critère de clôture. ⚠ **Elle n'est pas
-   rédigée** : *le seul geste admissible sur un front dont le plan déclare le socle non constitué
-   est d'exposer le vide.* 5. **CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur
-   distinct du rédacteur (PRD §11).
+   de preuve du chapitre est inchangé.
+2. **Les décomptes sont publiables** (G-2) ; le réel est reporté au [`README.md`](README.md) du
+   Livre.
+3. **Les renvois « ch. N » : état FINAL de la passe, et non ordre d'écriture.** ⚠ *La forme
+   antérieure de ce point photographiait l'instant où cette pièce a été écrite et déclarait « ne
+   sont pas rédigés : ch. 41, ch. 43 et ch. 45 » — alors que **la même passe les a écrits
+   ensuite** ; elle est corrigée ici sur l'état que le commit produit.* **Les dix chapitres du
+   Livre IV (ch. 37 à 46) sont rédigés**, comme le sont les **cinquante chapitres des cinq
+   Livres** : *tous les renvois « ch. N » de cette pièce résolvent donc contre du texte.* ⚠ **Ce
+   qui reste vrai de la forme antérieure, et qui est daté** : à l'heure où ce chapitre a été
+   écrit, n'étaient rédigés ni les ch. 48 et 49 du Livre V, ni les chapitres du Livre III au-delà
+   du ch. 26 — dont le ch. 25, siège de R-06, et le ch. 27, siège de l'article 12.1 —, non plus
+   que les ch. 41, ch. 43 et ch. 45 — *les renvois qui les visent ont été posés comme renvois de
+   plan et n'ont pas été re-vérifiés contre le texte paru après eux.* ⚠ **Et « résoudre contre du
+   texte » ne vaut pas recevabilité** : *le texte visé est lui-même un brouillon hors portes.*
+4. **La lacune de corrélation du § 38.5 est exposée, non comblée**, et sa question instruisible est
+   formulée avec son corpus et son critère de clôture. ⚠ **Elle n'est pas rédigée** : *le seul geste
+   admissible sur un front dont le plan déclare le socle non constitué est d'exposer le vide.*
+5. **CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur
+   (PRD §11).
 
 **Remontées ouvertes par ce chapitre :**
 
@@ -600,7 +609,7 @@ et G-5 restent entières.**
   standardisation est** » tombe : *la source écrit que **leur état interdit de parler d'un socle
   acquis*** ; et « l'AgentOps commence par l'observabilité » est déclaré **ordonnancement
   d'auteur**. **La citation en tête de cette pièce porte la forme réalignée** (décision 17 du TOC).
-  - **R-IV-43 — non bloquante, de fait daté et de forme, portant sur la LIGNE DE SECTIONS du plan et
+- **R-IV-43 — non bloquante, de fait daté et de forme, portant sur la LIGNE DE SECTIONS du plan et
   non sur sa thèse.** Deux défauts distincts au même endroit. *(a)* La ligne annonce un « statut
   exact des conventions — **stable/expérimental** — à dater au gel » : **cette alternative binaire
   est réfutée par le socle**, l'échelle des groupes de conventions comptant **cinq échelons** (Vol.
@@ -614,9 +623,10 @@ et G-5 restent entières.**
   correspondante au domaine de G-1** pour reprise à la source primaire. ☑ **Issue, 27 juillet 2026**
   — **TOC** (ligne de sections) **et PRD** (domaine de G-1) — l'alternative binaire
   *stable/expérimental* est **réfutée par l'échelle à cinq échelons** ; ⚠ **et l'ancre de version du
-  plan est antérieure de deux mois au déplacement qui l'a périmée** — *exactement le défaut que le §
-  38.2.3 documente chez un éditeur.* - **R-IV-44 — non bloquante, de qualification de relève.** Le
-  TOC porte au § 38.4 une **relève v0.10** posant que la propriété porteuse d'un environnement
+  plan est antérieure de deux mois au déplacement qui l'a périmée** — *exactement le défaut que le
+  § 38.2.3 documente chez un éditeur.*
+- **R-IV-44 — non bloquante, de qualification de relève.** Le TOC porte au § 38.4 une **relève
+  v0.10** posant que la propriété porteuse d'un environnement
   d'exécution agentique est la **détection de la divergence entre l'action effectuée et son
   enregistrement d'audit**, avec le **journal chaîné par empreintes** pour parade. ⚠ **Le Vol. I
   documente la parade, en [C]** (*Monographie* §4.9.2 : ajout seul, chaînage cryptographique,
@@ -643,9 +653,16 @@ aucune règle écrite.* Les **trois degrés d'absence** portent leur degré **à
 corps — domaine déclaré, sans cardinal** (alinéa c) ; le marqueur littéral « degré 3 » y compte
 **cinq occurrences**, et ⚠ **les deux régimes du tableau 38.2 sont écrits comme deux régimes
 distincts, jamais échangés**. La **conformité auto-déclarée du § 38.2 — une occurrence du marqueur «
-auto-déclaré »** — est attribuée à son éditeur nommé. Les **six occurrences de « Lecture de l'auteur
-»** sont suivies de ce que le socle établit et n'établit pas. **Aucun siège neuf n'est posé** ; les
-deux sièges touchés — l'encadré du **ch. 7 § 7.5** et les points de contrôle obligatoires du **ch.
-43 § 43.3** — portent leur renvoi, et *le second visait, à la rédaction, un chapitre non encore
+auto-déclaré »** — est attribuée à son éditeur nommé. ⚠ **Le marqueur « Lecture de l'auteur » compte
+six occurrences, et elles ne sont pas de même nature — la forme antérieure de cette phrase les
+déclarait toutes six « suivies de ce que le socle établit et n'établit pas », ce que la re-mesure
+réfute** : **quatre** ouvrent le diptyque *ce que le socle établit / ce qu'il n'établit pas*
+(§ 38.1.3, § 38.2.3, § 38.3, § 38.5) ; les **deux** du § 38.4.1 sont l'une la **mention** du
+marquage que les cinq points de contrôle portent dans leur volume d'origine, l'autre une
+**décision d'architecture** qui nomme ce que la source gradue et ce que la somme absolutise.
+*Toutes six déclarent la construction ; quatre seulement en bornent le socle.* **Aucun siège neuf
+n'est posé** ; les deux sièges touchés — l'encadré du **ch. 7 § 7.5** et les points de contrôle
+obligatoires du **ch. 43 § 43.3** — portent leur renvoi, et *le second visait, à la rédaction, un
+chapitre non encore
 écrit ; **le ch. 43 est rédigé au terme de la passe**, et le renvoi résout contre du texte — voir le
 point 3 ci-dessus.*

@@ -2,16 +2,16 @@
 
 *Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier.
 Troisième mouvement — le terrain canadien : interopérabilité financière et adoption (ch. 31-36).
-Cinquième chapitre du mouvement, **conservé intact au plan** : c'est **le seul de la somme dont la
-matière repose principalement sur des déclarations d'entreprises**.*
+Cinquième chapitre du mouvement, **conservé intact au plan** : sa matière repose **principalement sur
+des déclarations d'entreprises** — trait que sa source déclarait unique dans son propre ouvrage.*
 
 | Champ | Valeur |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable.** ⚠ **La pièce a été rédigée le 27 juillet 2026, sur instruction d'auteur, alors que la porte G-3 était ouverte et le socle consolidé à zéro entrée** — *la règle cardinale du PRD §5 était alors enfreinte.* ☑ **G-3 est franchie depuis le 28 juillet 2026** (PRD **v0.14**) et **le volet de faits de G-1 est levé** : ⚠ *l'infraction est datée et soldée, elle n'est pas effacée — un arbitrage qui suit une infraction la solde, il ne la rattrape pas.* ⚠ **Ce qui maintient la pièce hors publication est désormais ailleurs** : *aucun vote adversarial n'a été conduit sur ses entrées, et **CA-IV-11 comme CA-IV-13 demeurent insatisfaites**, faute d'un relecteur distinct du rédacteur.* Voir la note de statut, § 35.10. ⚠ **G-4 ne conditionne pas ce chapitre** ; ⚠ **D-9 ne le bloque pas.** ⚠ **Ce chapitre est le plus périssable de la somme** : *sa source déclare elle-même qu'« à ce rythme d'annonces, un trimestre suffit à le rendre incomplet »* |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ☑ **Le volet résiduel de G-1 a été instruit le 28 juillet 2026** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) : **les douze entrées de ce chapitre ont été portées à leur source primaire**, et ⚠ **c'est ici que l'instruction a le moins abouti** — *deux entrées ré-établies intégralement, six confirmées partiellement, **quatre non établies***. ⚠ **Instruire n'est pas confirmer** : *une entrée non établie **a été portée** à sa source ; ce qui manque est le constat, non la tentative.* Gel de source consommé : **16-17 juillet 2026** (Vol. II ch. 17) — ⚠ **et l'écart avec le gel de la somme est de onze jours** ; *l'un des faits du chapitre est daté du **7 juillet 2026**, soit **neuf jours avant le gel de sa source**.* |
+| **Statut** | **Brouillon de rédaction, non publiable.** ⚠ **La pièce a été rédigée le 27 juillet 2026, sur instruction d'auteur, alors que la porte G-3 était ouverte et le socle consolidé à zéro entrée** — *la règle cardinale du PRD §5 était alors enfreinte.* ☑ **G-3 est franchie depuis le 28 juillet 2026** (PRD **v0.14**) et **le volet de faits de G-1 est levé** : ⚠ *l'infraction est datée et soldée, elle n'est pas effacée — un arbitrage qui suit une infraction la solde, il ne la rattrape pas.* ⚠ **Ce qui maintient la pièce hors publication est désormais ailleurs** : *aucun vote adversarial n'a été conduit sur ses entrées, et **CA-IV-11 comme CA-IV-13 demeurent insatisfaites**, faute d'un relecteur distinct du rédacteur.* Voir la note de statut, § 35.10. ⚠ **G-4 ne conditionne pas ce chapitre** ; ⚠ **D-9 ne le bloque pas.** ⚠ **La matière de ce chapitre se périme vite, et sa source le déclare d'elle-même** : *« à ce rythme d'annonces, un trimestre suffit à le rendre incomplet »* |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ☑ **Le volet résiduel de G-1 a été instruit le 28 juillet 2026** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)) : **les douze entrées de ce chapitre ont été portées à leur source primaire**, et ⚠ **l'instruction y aboutit moins que sur l'ensemble du domaine instruit** — *deux entrées ré-établies intégralement, six confirmées partiellement, **quatre non établies**, soit **un tiers** contre **17,9 %** sur les 123 entrées à sensibilité temporelle du socle*. ⚠ **Instruire n'est pas confirmer** : *une entrée non établie **a été portée** à sa source ; ce qui manque est le constat, non la tentative.* Gel de source consommé : **16-17 juillet 2026** (Vol. II ch. 17) — ⚠ **et l'écart avec le gel de la somme est de onze jours** ; *l'un des faits du chapitre est daté du **7 juillet 2026**, soit **neuf jours avant le gel de sa source**.* |
 | **Socle mobilisé** | Les énoncés résolvent contre le **Vol. II *Monographie* ch. 17**, dont **douze entrées** sont mobilisées — **F-17**, **F-18**, **F-19**, **F-20**, **F-21**, **F-22**, **F-23**, **F-23b**, **F-30**, **F-31**, **F-47** et **F-48** —, toutes du **Vol. II** et toutes conservant leurs niveaux d'origine. ⚠ **Le plan prescrit de les nommer une à une, la plage seule ne les désignant pas** (décision 7 du TOC) — *ce qui est fait ici.* ⚠ **Deux d'entre elles — F-47 et F-48 — sont de niveau mixte [B/C]** : *le détour d'accès a permis d'établir **une part** du dossier et non la totalité.* ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** et ces douze entrées y résolvent par la **table de correspondance n° 1** ([`socle-consolide.md`](../PRD/socle-consolide.md) §4) ; **la pièce continue de les citer dans la série du Vol. II, préfixées de leur volume** — *la re-citation en `S-nnn` n'est pas faite et reste due, le PRD §7.1 l'ayant expressément écartée de la passe qui publie le socle.* ⚠ **État de re-datation des douze, au 28 juillet 2026** : *deux ☑ ré-établies intégralement — **F-17**, **F-30** —, six ☑ confirmées partiellement — **F-18**, **F-20**, **F-22**, **F-23**, **F-47**, **F-48** —, **quatre ☐ non établies** — **F-19**, **F-21**, **F-23b**, **F-31***. **Chaque section porte l'état de la sienne.** ⚠ **Aucun énoncé n'est central au sens de CA-IV-01**, et **le motif a changé sans que la conclusion bouge** : *ce n'est plus l'inexistence du socle, c'est que le **vote adversarial reste dû pour toute entrée appelée à porter un fait central** (PRD v0.14) et qu'**aucune des dix entrées non intégralement ré-établies ne porte de fait central sur sa composante non re-vérifiée**.* |
-| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus.* Vol. II — ⚠ **PRD §7.5 (métriques institutionnelles auto-déclarées, attribution à chaque occurrence) : sept occurrences du renvoi**, § 35.0, § 35.1, § 35.2, § 35.3, § 35.4, § 35.7 et § 35.8.2 ; *le marqueur « auto-déclaré » est écrit **vingt-cinq fois**, réparties sur **dix sièges** — § 35.0, § 35.1, § 35.2, § 35.3, § 35.4, § 35.6, § 35.7, § 35.8.1, § 35.8.2 et la synthèse ;* ⚠ **trois sections n'en portent aucun**, § 35.5, § 35.8.3 et § 35.9, *et c'est cohérent : ce sont les trois qui ne rapportent aucune métrique* — *c'est **le chapitre du Livre où ce garde-fou travaille le plus**, et **aucune métrique n'y figure sans son attributeur, sa date et son support*** ; ⚠ **R-8 (le sigle du plan de contrôle agentique jamais nu) : deux occurrences du marqueur « R-8 »**, § 35.2 et § 35.8.2, avec **renvoi à l'encadré de désambiguïsation du ch. 7 § 7.5** — ⚠ *et **zéro occurrence du sigle nu dans le corps**, ce que le garde-fou demande précisément* ; **PRD Vol. II §3 (aucun conseil juridique) : quatre occurrences du renvoi**, § 35.1, § 35.6, § 35.7 et § 35.8.1 ; *la formule « aucun avis juridique » est écrite **trois fois**, § 35.1, § 35.6 et la synthèse* ; **R-5 : une occurrence du sigle**, § 35.5 ; **R-1 à R-4, R-6, R-7 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : deux occurrences du sigle**, § 35.1 et § 35.8.3 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » **treize fois** — § 35.1 et § 35.3 **deux fois chacun**, § 35.4, § 35.5, § 35.6, § 35.7, § 35.8.3, § 35.9 **trois fois**, synthèse —, « fait négatif vérifié » **trois fois** (§ 35.8.3, § 35.9 et la synthèse)* — ⚠ **le fait négatif vérifié lui-même est POSÉ au § 35.6**, *l'absence du terme « agentique » dans le communiqué d'une institution*, **et les trois occurrences de la formule le REPRENNENT pour l'opposer à l'absence de documentation du § 35.8.3** ; **R-09 : une occurrence du sigle**, § 35.4 ; **R-13 : une occurrence du sigle**, § 35.5 — ⚠ *l'échelle à trois degrés du § 35.5 est **déclarée grille de lecture d'éditeur**, non une échelle d'autonomie* ; **R-02 : une occurrence du sigle**, § 35.8.2 ; **R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **6 000 mots** de corps (§ 35.0 à § 35.9), **cible dérivée** de l'enveloppe du Livre — 90 000 mots, **inchangée du TOC v0.25 à la v0.30** — au prorata des sections, ce chapitre en portant neuf. ☑ **Décompte publiable depuis G-2**, [`decompte.sh`](../PRD/decompte.sh) seule autorité ; la mesure est portée au [`README.md`](README.md) du dossier et au [registre de gel](../PRD/registre-gel.md). ⚠ **La relecture du 28 juillet 2026 a modifié le corps** : *la mesure des deux registres est **à re-mesurer au commit** et l'écart y sera relevé.* ⚠ **D-4 interdit l'amputation comme le gonflement** |
+| **Garde-fous balayés** | ⚠ **Décomptes re-mesurés au commit du 28 juillet 2026, règle de comptage de la décision 16 du TOC** : *ils portent sur le **marqueur littéral** dans le **corps** — en-tête et note de statut exclus.* Vol. II — ⚠ **PRD §7.5 (métriques institutionnelles auto-déclarées, attribution à chaque occurrence) : sept occurrences du renvoi**, § 35.0, § 35.1, § 35.2, § 35.3, § 35.4, § 35.7 et § 35.8.2 ; *le marqueur « auto-déclaré » est écrit **vingt-cinq fois**, réparties sur **dix sièges** — § 35.0, § 35.1, § 35.2, § 35.3, § 35.4, § 35.6, § 35.7, § 35.8.1, § 35.8.2 et la synthèse ;* ⚠ **trois sections n'en portent aucun**, § 35.5, § 35.8.3 et § 35.9, *et c'est cohérent : ce sont les trois qui ne rapportent aucune métrique* — ***aucune métrique n'y figure sans son attributeur, sa date et son support*** ; ⚠ **R-8 (le sigle du plan de contrôle agentique jamais nu) : deux occurrences du marqueur « R-8 »**, § 35.2 et § 35.8.2, avec **renvoi à l'encadré de désambiguïsation du ch. 7 § 7.5** — ⚠ *et **zéro occurrence du sigle nu dans le corps**, ce que le garde-fou demande précisément* ; **PRD Vol. II §3 (aucun conseil juridique) : quatre occurrences du renvoi**, § 35.1, § 35.6, § 35.7 et § 35.8.1 ; *la formule « aucun avis juridique » est écrite **trois fois**, § 35.1, § 35.6 et la synthèse* ; **R-5 : une occurrence du sigle**, § 35.5 ; **R-1 à R-4, R-6, R-7 : zéro occurrence**. Vol. III — **R-14 (trois degrés d'absence) : deux occurrences du sigle**, § 35.1 et § 35.8.3 — ⚠ *et les degrés se marquent en toutes lettres : « degré 3 » **treize fois** — § 35.1 et § 35.3 **deux fois chacun**, § 35.4, § 35.5, § 35.6, § 35.7, § 35.8.3, § 35.9 **trois fois**, synthèse —, « fait négatif vérifié » **trois fois** (§ 35.8.3, § 35.9 et la synthèse)* — ⚠ **le fait négatif vérifié lui-même est POSÉ au § 35.6**, *l'absence du terme « agentique » dans le communiqué d'une institution*, **et les trois occurrences de la formule le REPRENNENT pour l'opposer à l'absence de documentation du § 35.8.3** ; **R-09 : une occurrence du sigle**, § 35.4 ; **R-13 : une occurrence du sigle**, § 35.5 — ⚠ *l'échelle à trois degrés du § 35.5 est **déclarée grille de lecture d'éditeur**, non une échelle d'autonomie* ; **R-02 : une occurrence du sigle**, § 35.8.2 ; **R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence** |
+| **Volumétrie cible** | ≈ **6 000 mots** de corps (§ 35.0 à § 35.9), **cible dérivée** de l'enveloppe du Livre — 90 000 mots, **inchangée du TOC v0.25 à la v0.30** — au prorata des sections, ce chapitre en portant neuf. ☑ **Décompte publiable depuis G-2**, [`decompte.sh`](../PRD/decompte.sh) seule autorité ; ☑ **Réel mesuré à la contre-relecture du 28 juillet 2026, APRÈS ses corrections : 9 091 mots**, soit **+51,5 %** sur la cible dérivée. ⚠ **L'écart n'est pas corrigé** : *D-4 interdit l'amputation comme le gonflement*, et il alimente le re-calibrage remis à une passe unique de clôture. ⚠ **Les deux registres portent chacun une mesure antérieure, et ce n'est PAS la même** — *6 800 mots au [`README.md`](README.md) du dossier, **8 935** au [registre de gel](../PRD/registre-gel.md)* — : **leur réalignement est dû au commit** et remonté en R-IV-112 |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.30**, entrée du chapitre 35)* — l'agentique canadienne est en production, documentée par sources primaires, gouvernée au niveau C-suite — et inégalement documentable selon les institutions.
 
@@ -25,18 +25,19 @@ ici et celle que le plan porte***. ⚠ **Une borne se transporte avec elle et n'
 *le chapitre documente **la couverture publique** de l'agentique par ces institutions, **non leur état
 interne*** — *et le § 35.8 en fait la démonstration.*
 
-## § 35.0 — Ouverture : le seul chapitre bâti sur des déclarations d'entreprises
+## § 35.0 — Ouverture : un chapitre bâti sur des déclarations d'entreprises
 
 **Les quatre chapitres précédents du mouvement ont décrit un décor** : *des durcisseurs de domaine, un
 cadre bancaire légiféré, des rails de paiement, cinq sous-domaines.* ⚠ **Rien de tout cela ne dit ce
 que les institutions financières canadiennes *font* réellement.**
 
-⚠ **C'est l'objet de ce chapitre, et c'est *le seul de la somme dont la matière repose principalement
-sur des déclarations d'entreprises*.** *Les appuis extérieurs y sont rares, et **pour cette raison même
-il faut les nommer d'emblée** — en n'appelant « appui extérieur » que ce qui émane **d'un tiers**, et
-rien d'autre : la **page officielle de l'organisme qui décerne un prix** (§ 35.1) ; **une revue de
-gestion universitaire** qui corrobore un dispositif de gouvernance (§ 35.2) ; **un indice sectoriel**
-qui classe un assureur (§ 35.4) ; et **l'étude de cas d'un institut partenaire** qui documente une
+⚠ **C'est l'objet de ce chapitre, et sa matière repose *principalement sur des déclarations
+d'entreprises*.** ⚠ *Sa source déclarait ce trait unique dans son propre ouvrage ; **la somme ne
+reconduit pas cette unicité**, aucun balayage de ses cinquante chapitres ne l'établissant.* *Les appuis
+extérieurs y sont rares, et **pour cette raison même il faut les nommer d'emblée** — en n'appelant
+« appui extérieur » que ce qui émane **d'un tiers**, et rien d'autre : la **page officielle de
+l'organisme qui décerne un prix** (§ 35.1) ; **une revue de gestion universitaire** qui corrobore un
+dispositif de gouvernance (§ 35.2) ; **un indice sectoriel** qui classe un assureur (§ 35.4) ; et **l'étude de cas d'un institut partenaire** qui documente une
 activité de formation (§ 35.8.1). **Quatre appuis, et chacun est nommé à sa section** — ⚠ *l'attribution
 ne s'anonymise jamais* (décision 15 du TOC).*
 
@@ -54,7 +55,7 @@ destinataire** de la déclaration, non **son auteur***. ⚠ *Les compter parmi l
 reviendrait à **tenir pour vérifié par un tiers ce qu'une institution dit d'elle-même sur un papier à
 en-tête plus solennel**.*
 
-⚠ **Cette particularité commande la méthode, et le garde-fou est le plus strict du Livre**
+⚠ **Cette particularité commande la méthode, et elle appelle le garde-fou le plus exigeant du chapitre**
 (PRD Vol. II §7.5) :
 
 > **Toutes les métriques rapportées ici sont auto-déclarées par les institutions — communiqués,
@@ -115,15 +116,15 @@ donnent à un employé **un accès outillé à de l'information**, sans qu'aucun
 d'action autonome leur soit attribuée au socle ; **la seule exception** greffe des capacités agentiques
 sur une plateforme documentaire en service depuis 2018.* ⚠ ***L'année 2026 est celle de la structure et
 du cœur de métier*** : *création d'un groupe rattaché au chef de la direction le **18 février 2026** ;
-annonce d'un temps d'exécution le **10 mars 2026** ; premier modèle agentique en pré-adjudication
-hypothécaire le **21 mai 2026** ; lancement d'un consortium le **7 juillet 2026**.*
+annonce d'un environnement d'exécution (*runtime*) le **10 mars 2026** ; premier modèle agentique en
+pré-adjudication hypothécaire le **21 mai 2026** ; lancement d'un consortium le **7 juillet 2026**.*
 
 Lecture de l'auteur — **ce que le socle établit, ce sont des dates et leurs sources. Ce qu'il n'établit
 pas, c'est une causalité entre elles** — *ni imitation concurrentielle, ni maturation technologique
 commune, ni anticipation réglementaire coordonnée.* ⚠ ***La densité de la séquence de 2026 est un fait ;
 son explication n'en est pas un.***
 
-## § 35.1 — TD : la pré-adjudication hypothécaire
+## § 35.1 — TD : la pré-adjudication hypothécaire, ou l'agentique dans la chaîne d'octroi
 
 Lecture de l'auteur — **parmi les cas documentés, cette institution est la seule dont le socle situe
 l'application dans la chaîne d'octroi de crédit.** ⚠ **Ce que le socle n'établit pas** : *aucun
@@ -359,13 +360,13 @@ pour lequel le § 35.0 a retiré cette participation de ses appuis extérieurs**
 demeurent documentés, mais **par l'entrée du Vol. II**, à sa date et à son niveau — c'est-à-dire par la
 déclaration de l'institution, non par la corroboration d'un tiers.*
 
-## § 35.4 — Manuvie : le temps d'exécution nommé, la cible chiffrée
+## § 35.4 — Manuvie : l'environnement d'exécution nommé, la cible chiffrée
 
 **Cette institution est le seul cas du chapitre où le socle documente *un choix d'infrastructure
 d'exécution nommé*.**
 
-Le **10 mars 2026**, *un communiqué conjoint annonce qu'un temps d'exécution nommé est retenu pour la
-plateforme d'IA agentique d'entreprise de l'institution, ⚠ **alors en bêta*** (Vol. II F-22).
+Le **10 mars 2026**, *un communiqué conjoint annonce qu'un environnement d'exécution nommé est retenu
+pour la plateforme d'IA agentique d'entreprise de l'institution, ⚠ **alors en bêta*** (Vol. II F-22).
 
 ⚠ **Le fait est mince en apparence et considérable en portée** : *c'est **la seule institution canadienne
 dont le socle atteste, par source primaire, le composant technique** sur lequel repose son exécution
@@ -383,9 +384,9 @@ l'institution déclare viser **plus d'un milliard de dollars** de valeur d'entre
 millions à la fin de 2025**.* **Données auto-déclarées, non vérifiées indépendamment.**
 
 **Posons les rapports, puisqu'ils sont posables** : *les 300 millions déclarés réalisés représentent
-**environ 30 % de la borne inférieure** de la cible, laissant **environ 700 millions à couvrir** ; et le
-cinquième déclaré correspond, sur cette même borne, à **environ 200 millions**.* ⚠ ***Ces trois calculs
-découlent directement des chiffres du socle et ne lui ajoutent rien.*** ⚠ **Ce que le socle n'établit
+**environ 30 % de la borne inférieure** de la cible — un milliard —, laissant **environ 700 millions à
+couvrir** ; et le cinquième déclaré correspond, sur cette même borne, à **environ 200 millions**.*
+⚠ ***Ces trois calculs découlent directement des chiffres du socle et ne lui ajoutent rien.*** ⚠ **Ce que le socle n'établit
 pas** : *la méthode de valorisation, la période de réalisation, ni le rapport entre la plateforme
 agentique et la valeur déclarée.*
 
@@ -397,11 +398,11 @@ documente ; **le faire siéger à l'organe de direction exécutive en est une au
 moyens.*
 
 ⚠ **Un dernier élément échappe à la règle d'auto-déclaration, et il mérite d'être signalé pour cette
-raison même** : *selon l'**Evident AI Index de juin 2026**, l'institution occupe le premier rang de son
-secteur.* ⚠ ***C'est une évaluation de tiers, non une déclaration de l'institution*** — *et à ce titre,
-**l'un des quatre appuis extérieurs du chapitre**.* ⚠ *Le socle n'en documente **ni la méthodologie, ni
-le périmètre des institutions comparées, ni le modèle économique de l'indice** ; il est rapporté **avec
-son attribution, et sans qu'aucune conclusion en soit tirée**.*
+raison même** : *selon l'**Evident AI Index de juin 2026**, l'institution occupe le **premier rang des
+assureurs-vie**.* ⚠ ***C'est une évaluation de tiers, non une déclaration de l'institution*** — *et à
+ce titre, **l'un des quatre appuis extérieurs du chapitre**.* ⚠ *Le socle n'en documente **ni la
+méthodologie, ni le périmètre des institutions comparées, ni le modèle économique de l'indice** ; il
+est rapporté **avec son attribution, et sans qu'aucune conclusion en soit tirée**.*
 
 ⚠ **Une réserve de méthode** : *le domaine de l'institution **refuse le chargement automatisé** aux
 outils employés, et le communiqué **a été lu sur des miroirs**.* ⚠ ***Le fait est vérifié ; sa source
@@ -440,9 +441,9 @@ rapport de gestion qui, lui, ne l'est pas au même titre**.* ⚠ ***La distincti
 la gomme pas.***
 
 ⚠ **Ce que le socle *ne documente pas* mérite d'être dit avec la même netteté** : *aucun système
-agentique en production, **aucune métrique de déploiement**, **aucun temps d'exécution nommé**, **aucune
-cible de valeur chiffrée**. Six orientations stratégiques et deux priorités technologiques.* ⚠ ***C'est
-un état d'avancement déclaré, non un état d'exploitation.***
+agentique en production, **aucune métrique de déploiement**, **aucun environnement d'exécution nommé**,
+**aucune cible de valeur chiffrée**. Six orientations stratégiques et deux priorités technologiques.*
+⚠ ***C'est un état d'avancement déclaré, non un état d'exploitation.***
 
 ☐ **Re-datation du 28 juillet 2026 : l'entrée n'est PAS ré-établie, et l'obstacle est instructif.** *La
 page publique du rapport annuel porte le message du président, les faits saillants financiers et les
@@ -457,13 +458,15 @@ Lecture de l'auteur — ⚠ **on peut proposer, pour lire ce chapitre, une éche
 *production déclarée, structuration outillée, intention formalisée.* ⚠ ***C'est une grille de lecture
 d'éditeur, non un classement que le socle porterait*** : *les entrées documentent **des états déclarés
 institution par institution**, et **aucune ne les ordonne**.* ⚠ **Et ce n'est pas une échelle
-d'autonomie** (R-13 du Vol. III) : *les échelles d'autonomie de la somme sont au **ch. 14 § 14.4**.*
+d'autonomie** (R-13 du Vol. III) : *les trois échelles d'autonomie de la somme sont désambiguïsées au
+**ch. 43 § 43.5**, qui en est le siège, et **l'une d'elles est mobilisée au ch. 14 § 14.4**.*
 
 ⚠ **Un second élément rattache cette institution à un enjeu du ch. 34 et du ch. 32** : *sa participation
 au cadre des services bancaires axés sur le consommateur est — **comme celle de toute entité
 candidate** — **conditionnelle à l'accréditation par la banque centrale**, dont **les modalités restent
-à définir par règlement** (Vol. II F-23).* ⚠ **Le ch. 32 § 32.2 a établi l'état de ce cadre** ; *on
-retiendra seulement ici que **l'ambition agentique d'une institution coopérative croisera une exigence
+à définir par règlement**, et **un registre des participants doit être tenu par cette même banque
+centrale** (Vol. II F-23).* ⚠ **Le ch. 32 § 32.2 a établi l'état de ce cadre** ; *on retiendra
+seulement ici que **l'ambition agentique d'une institution coopérative croisera une exigence
 d'accréditation dont les modalités ne sont pas encore écrites**.* ⚠ **Le socle n'établit aucun lien entre
 les deux** — *et R-5 du Vol. II interdit d'anticiper.*
 
@@ -537,8 +540,8 @@ documente une capacité déclarée **dont l'échelle n'a d'équivalent chez aucu
 chapitre*** — *plus de **600 experts** au Canada et en Asie exploitant **près de 600 modèles en
 production** ; **plus de 200 millions de dollars de bénéfices annuels** attribués à cette capacité, avec
 une attente déclarée de **dépasser 500 millions d'ici la fin de la décennie** ; **plus de 90 % du
-portefeuille des lignes personnelles au Canada tarifé par apprentissage machine**, **60 % en lignes
-commerciales** ; **plus de 200 outils déployés depuis 2025** ; et **un tiers de la surperformance du
+portefeuille des lignes personnelles au Canada tarifé par apprentissage machine** (**60 %** en lignes
+commerciales) ; **plus de 200 outils déployés depuis 2025** ; et **un tiers de la surperformance du
 rendement des capitaux propres** attribué aux données et à l'IA prédictive* (Vol. II F-31). **Ces
 données sont auto-déclarées et n'ont pas fait l'objet d'une vérification indépendante.**
 
@@ -565,9 +568,10 @@ terminologie agentique à cette institution sans re-vérification directe.***
 
 ☐ **Re-datation du 28 juillet 2026 : l'entrée n'est PAS ré-établie, et c'est ici que la conséquence est
 la plus lourde du chapitre.** *L'hôte a **refusé l'accès** au rapport annuel comme à la page
-d'investisseurs ; ⚠ **aucun des sept éléments chiffrés du paragraphe précédent n'a été re-constaté**, et
-seule la date de publication est corroborée par des reprises de fil — ⚠ ***ce qui ne vaut pas
-extraction***.* ⚠ **La divergence entre agents de recherche n'a donc PAS pu être re-tranchée** :
+d'investisseurs ; ⚠ **aucun des sept éléments chiffrés du paragraphe précédent n'a été re-constaté** —
+les **deux taux de tarification** comptant pour un seul élément, comme à l'entrée du socle —, et seule
+la date de publication est corroborée par des reprises de fil — ⚠ ***ce qui ne vaut pas extraction***.*
+⚠ **La divergence entre agents de recherche n'a donc PAS pu être re-tranchée** :
 *l'arbitrage en faveur de l'extraction demeure celui du Vol. II, à son gel*, ⚠ ***et la mise en garde
 s'alourdit au lieu de se lever***. ⚠ **Un signal contradictoire a en outre été aperçu en reprise
 secondaire** — *un montant et un horizon distincts de ceux de l'entrée* — ⚠ ***il est signalé, non
@@ -673,8 +677,8 @@ déclare que son programme phare est **déjà en production en environnement ré
 de deux mille milliards de jetons par mois** à travers les organisations membres.* **Donnée
 auto-déclarée, non vérifiée indépendamment.**
 
-Lecture de l'auteur — ⚠ **trois observations, qu'il faut tenir ensemble.** *D'abord, **« en production en
-environnement réglementé » est l'affirmation la plus lourde qu'une source puisse porter** dans le
+Lecture de l'auteur — ⚠ **trois observations, qu'il faut tenir ensemble.** *D'abord, **la production en
+environnement réglementé est l'affirmation la plus lourde qu'une source puisse porter** dans le
 vocabulaire de la somme — le **ch. 7** a montré tout ce qui sépare **le soutien déclaré du déploiement
 réel**, et voici une source qui **franchit explicitement cette ligne**. Ensuite, ⚠ **le volume de jetons
 est une mesure de consommation, non de valeur ni de correction** : le **ch. 22 § 22.2** a rappelé que
@@ -737,21 +741,26 @@ depuis le 18 février 2026** (§ 35.3).* ⚠ **Les trois intitulés portent « I
 revanche, ne se recouvrent pas*** — *un siège à l'organe de direction exécutive, un rattachement direct
 au chef de la direction, et **un intitulé dont le socle ne documente pas la ligne hiérarchique**.*
 
-⚠ **Deux de ces trois rangs reposent sur une composante que l'instruction du 28 juillet 2026 n'a pas
-ré-établie, et la comparaison doit le porter** : *ni **le siège à l'organe de direction exécutive**
-(§ 35.4), ni **le rattachement direct au chef de la direction** (§ 35.3) ne sont re-constatés à la
-source primaire — degré 3 dans les deux cas.* ⚠ ***Ils demeurent documentés par les entrées du Vol. II,
-à leur date et à leur niveau*** — *et **c'est une raison de plus de ne pas les ordonner** : classer trois
-rangs dont deux ne sont attestés qu'en un seul point serait bâtir une hiérarchie sur l'appui le plus
-mince du chapitre.*
+⚠ **Aucun des trois RANGS n'a été re-constaté à la source primaire par l'instruction du 28 juillet
+2026, et la comparaison doit le porter** : *ni **le siège à l'organe de direction exécutive**
+(§ 35.4), ni **le rattachement direct au chef de la direction** (§ 35.3) n'y figurent — degré 3 dans
+les deux cas —, et **le troisième n'a aucune ligne hiérarchique à re-constater**, l'entrée du § 35.2
+n'étant pas ré-établie et **aucune des pages atteintes ne nommant son responsable en chef de l'IA**.*
+⚠ **La distinction entre le rang et le titulaire vaut d'être tenue, parce que l'instruction les sépare** :
+*deux des trois **titulaires** sont, eux, re-constatés — **le titre du responsable du § 35.3** l'est par
+deux pages de l'émetteur, **les deux dirigeants du § 35.4** le sont verbatim au communiqué — ⚠ **et
+c'est précisément leur rang qui ne l'est pas**.* ⚠ ***Les trois rangs demeurent documentés par les
+entrées du Vol. II, à leur date et à leur niveau*** — *et **c'est une raison de plus de ne pas les
+ordonner** : classer trois rangs que **rien n'atteste hors l'entrée du Vol. II** serait bâtir une
+hiérarchie sur l'appui le plus mince du chapitre.*
 
 ⚠ **Un quatrième nom figure dans les sources sans appartenir à ce décompte, et la raison de l'en écarter
 mérite d'être posée** : *une dirigeante est **responsable en chef des données et de l'analytique** de
 l'institution du § 35.8.1, et c'est **à ce titre** que son communiqué — celui du **17 juin 2025** — lui
-attribue la citation officielle.* ⚠ **Le socle établit *un intitulé et une qualité de porte-parole*** ; ⚠ ***il n'établit pas
-que cette institution ait doté l'IA d'un titulaire nommé***, *et **l'intitulé lui-même situe la fonction
-dans une continuité analytique plutôt que dans une rupture**.* ⚠ ***La ranger parmi les trois
-précédentes reviendrait à déduire une nomination de gouvernance d'une signature de communiqué — l'espèce
+attribue la citation officielle.* ⚠ **Le socle établit *un intitulé et une qualité de porte-parole*** ;
+⚠ ***il n'établit pas que cette institution ait doté l'IA d'un titulaire nommé***, *et **l'intitulé
+lui-même situe la fonction dans une continuité analytique plutôt que dans une rupture**.*
+⚠ ***La ranger parmi les trois précédentes reviendrait à déduire une nomination de gouvernance d'une signature de communiqué — l'espèce
 d'inférence que ce chapitre refuse partout ailleurs.***
 
 ⚠ **Le socle établit des intitulés et des rattachements ; il n'établit ni les mandats, ni les pouvoirs,
@@ -765,10 +774,11 @@ modèle, graduée par niveau de risque** (§ 35.2). Une quatrième adhère à **
 (§ 35.6). Une cinquième **fait siéger son titulaire à l'organe de direction** (§ 35.4).*
 
 Lecture de l'auteur — **ce que ces cinq dispositifs ont en commun est plus mince qu'il n'y paraît, et
-c'est le résultat du chapitre** : ***tous portent sur le modèle ou sur le principe, aucun sur la chaîne
-de mandat***. ⚠ **Ce que le socle établit** : *les cinq dispositifs et leur contenu déclaré.* **Ce qu'il
-n'établit pas** : *qu'aucun ne traite la chaîne de mandat — **absence de documentation, degré 3**, et
-non un fait négatif vérifié.* ⚠ *Le **ch. 17** en porte l'objet, et **le ch. 25 § 25.4** a montré que
+c'est le résultat du chapitre** : ***tous portent sur le modèle, sur le principe ou sur le rang de leur
+titulaire ; aucun sur la chaîne de mandat***. ⚠ **Ce que le socle établit** : *les cinq dispositifs et
+leur contenu déclaré.* **Ce qu'il n'établit pas** : *qu'aucun ne traite la chaîne de mandat —
+**absence de documentation, degré 3**, et non un fait négatif vérifié.* ⚠ *Le **ch. 17** en porte
+l'objet, et **le ch. 25 § 25.4** a montré que
 **Q-C — « pour qui agis-tu ? » — est une case vide au degré 3 du côté prudentiel**.* ⚠ ***La convergence
 entre ce que les institutions gouvernent et ce que la grille des cinq questions demande n'est pas
 établie ; le chapitre l'observe et ne la conclut pas.***
@@ -802,7 +812,7 @@ entre ce que les institutions gouvernent et ce que la grille des cinq questions 
 7. ⚠ **L'homonymie du § 35.8.2**, *désamorcée par renvoi au **ch. 7 § 7.5*** — ***jamais par une seconde
    désambiguïsation.***
 8. ⚠ **Ce que cinq gouvernances ont en commun, et ce qu'aucune ne porte** : *toutes portent sur **le
-   modèle ou le principe** ; **aucune sur la chaîne de mandat**, au degré 3.*
+   modèle, le principe ou le rang du titulaire** ; **aucune sur la chaîne de mandat**, au degré 3.*
 
 ⚠ **Ce que le chapitre ne lègue pas.** Il ne lègue **aucune métrique vérifiée** : *toutes sont
 auto-déclarées, et **deux entrées seulement sont ré-établies intégralement à la source***. Il ne lègue
@@ -834,32 +844,35 @@ conditionne pas ce chapitre** ; ⚠ **D-9 ne le bloque pas.**
    correspondance n° 1**, ⚠ **et la re-citation en `S-nnn` reste due** (PRD §7.1).
 2. ⚠ **Le volet résiduel de G-1 pesait ici plus lourd que la moyenne, et l'instruction l'a confirmé.**
    *Ce chapitre repose sur **des déclarations d'entreprises** ; les douze entrées ont été portées à leur
-   source primaire le 28 juillet 2026, et **quatre ne sont pas établies** — c'est **le plus mauvais
-   rendement du Livre III**.* ⚠ **Et sa source déclare elle-même sa péremption** : *« à ce rythme
+   source primaire le 28 juillet 2026, et **quatre ne sont pas établies** — soit **un tiers des entrées
+   du chapitre**.* ⚠ **Et sa source déclare elle-même sa péremption** : *« à ce rythme
    d'annonces, un trimestre suffit à le rendre incomplet »* — ⚠ *un trimestre s'est écoulé depuis son
    gel au moment où ce Livre sera relu.* **Le ch. 50 l'enregistrera.**
-3. **Les décomptes sont publiables** (G-2). ⚠ **La relecture du 28 juillet 2026 a modifié le corps** :
-   *la mesure du [`README.md`](README.md) du dossier et celle du [registre de gel](../PRD/registre-gel.md)
-   sont **à re-mesurer au commit**, et l'écart alimente **D-4**, déjà tranchée* — ⚠ **sans amputation ni
-   gonflement**.
+3. **Les décomptes sont publiables** (G-2), et **le corps est re-mesuré** : ☑ **9 091 mots** contre une
+   cible dérivée de 6 000, soit **+51,5 %** — ⚠ *mesure prise **après** les corrections de la
+   contre-relecture, et non avant.* ⚠ **Les relectures du 28 juillet 2026 ont modifié le corps, et les
+   deux registres ont divergé** : *le [`README.md`](README.md) du dossier porte
+   encore **6 800**, le [registre de gel](../PRD/registre-gel.md) **8 935** — deux mesures antérieures et
+   **distinctes**, **à réaligner au commit** sur la mesure de la pièce ; remontée **R-IV-112**, et l'écart
+   alimente **D-4**, déjà tranchée* — ⚠ **sans amputation ni gonflement**.
 4. **Tous les renvois « ch. N » de la pièce résolvent désormais contre du texte rédigé**, ⚠ *les cinquante
    chapitres existant en brouillon depuis le 27 juillet 2026 — ce qui ne les rend recevables ni les uns
    ni les autres* : **ch. 7 § 7.5**, **ch. 10**, **ch. 14 § 14.4**, **ch. 17**, **ch. 22 § 22.1 et
    § 22.2**, **ch. 23**, **ch. 25 § 25.4**, **ch. 26**, **ch. 27 § 27.2 et § 27.3**, **ch. 29 § 29.3**,
-   **ch. 32 § 32.2**, **ch. 34 § 34.1.4** et **ch. 50**.
+   **ch. 32 § 32.2**, **ch. 34 § 34.1.4**, **ch. 43 § 43.5** et **ch. 50**.
 
 **Remontées ouvertes par ce chapitre :**
 
-⚠ **Avertissement d'allocation, à lire avant les deux numéros neufs.** *Les identifiants **R-IV-110** et
-**R-IV-111** sont **proposés**, non alloués : la relecture du 28 juillet 2026 a couru **en parallèle sur
-les cinquante pièces**, dans une série unique et partagée, et **c'est exactement la configuration qui a
-produit dix numéros alloués deux fois le 27 juillet 2026**.* ⚠ ***La passe qui consolide ces remontées
+⚠ **Avertissement d'allocation, à lire avant les trois numéros neufs.** *Les identifiants **R-IV-110**,
+**R-IV-111** et **R-IV-112** sont **proposés**, non alloués : la relecture du 28 juillet 2026 a couru
+**en parallèle sur les cinquante pièces**, dans une série unique et partagée, et **c'est exactement la
+configuration qui a produit dix numéros alloués deux fois le 27 juillet 2026**.* ⚠ ***La passe qui consolide ces remontées
 vérifie l'unicité avant de les inscrire*** — *aucun instrument versionné ne rapproche deux plages de
 remontées, et la dette d'appareil est déclarée au `CLAUDE.md` de la racine.*
 
 - **R-IV-98 — non bloquante, de fait daté entre deux gels.** Le § 35.8.2 rapporte un fait du **7 juillet
   2026** — le lancement d'un consortium — ⚠ **daté de neuf jours avant le gel de sa source et de vingt
-  jours avant celui de la somme**. *C'est **le fait le plus récent de tout le Livre III**, et il porte
+  jours avant celui de la somme**. *C'est **le fait le plus récent du socle du Vol. II**, et il porte
   **l'affirmation la plus lourde du chapitre** : la production en environnement réglementé.*
   ⚠ **Demande remontée** : que ce fait entre au **registre des faits à re-vérifier au gel de
   publication**, avec **deux points nommés** — *(a)* le maintien de l'affirmation de production, et
@@ -883,12 +896,26 @@ remontées, et la dette d'appareil est déclarée au `CLAUDE.md` de la racine.*
   l'appareil et la seconde non.* ⚠ **Et un point y est nommé comme prioritaire** : *la **moitié positive**
   de la correction chiffrée du § 35.8.1 — que le nombre en cause désigne des employés — **n'est pas
   re-constatée**, et une page non récupérée **paraît l'assigner à des documents**.*
+- **R-IV-112 — non bloquante, de décompte multi-sites.** *Le corps mesure **9 091 mots** au
+  [`decompte.sh`](../PRD/decompte.sh) le 28 juillet 2026, quand le [`README.md`](README.md) du dossier
+  porte **6 800** et le [registre de gel](../PRD/registre-gel.md) **8 935**.* ⚠ **Les deux registres ne
+  portent donc pas la même mesure antérieure, et c'est le fait à remonter autant que l'écart lui-même** :
+  ***trois chiffres coexistent pour un seul corps***, *et un décompte multi-sites qui diverge d'un site à
+  l'autre ne se réaligne pas en recopiant l'un des deux.* ⚠ **Demande remontée** : *que les deux registres
+  soient réalignés **au commit**, la mesure de la pièce faisant foi.* ⚠ ***Un rédacteur ne corrige ni le
+  conspectus ni le registre*** — *et l'écart de +51,5 % sur la cible dérivée se déclare plutôt qu'il ne
+  se résorbe, D-4 interdisant l'amputation.*
 
 **Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC**, dont l'entrée du
 chapitre est **inchangée de la v0.25 à la v0.30** — § 35.1 à § 35.9, dans l'ordre exact —, le § 35.0
-étant une **ouverture de chapitre**. ⚠ **Le chapitre est conservé intact** : *les neuf sections de la
-source sont reprises **sans redécoupage**, et **le § 35.8 conserve ses trois institutions dans une seule
-section**, comme le plan l'impose* — ⚠ **sa subdivision interne est remontée en R-IV-110 plutôt que
+étant une **ouverture de chapitre**. ⚠ **Deux intitulés s'écartent de la lettre du plan, et l'écart se
+déclare plutôt qu'il ne se tait** : *le § 35.2 **retire la dénomination commerciale** que le plan porte
+(parade de péremption, décision 15 du TOC), et le § 35.4 **rend en français** le terme anglais du plan,
+celui-ci étant conservé entre parenthèses à sa première occurrence dans le corps* ; ⚠ **la relecture du
+28 juillet 2026 a restauré l'intitulé complet du § 35.1**, *qu'une abréviation avait amputé sans motif.*
+⚠ **Le chapitre est conservé intact** : *les neuf sections de la source sont reprises **sans
+redécoupage**, et **le § 35.8 conserve ses trois institutions dans une seule section**, comme le plan
+l'impose* — ⚠ **sa subdivision interne est remontée en R-IV-110 plutôt que
 défaite**. La **table de couverture est respectée pour son unique ligne**. ☑ **Les deux résidus [C] du
 § 35.8 vivent désormais en encadrés**, *comme l'entrée du plan le prescrit* — *ils étaient en texte
 courant gras jusqu'au 28 juillet 2026*. La **décision 14 a été exécutée avant la rédaction**, domaine
@@ -911,6 +938,15 @@ distingué de l'absence de documentation du § 35.8.3**. ⚠ **Les cardinaux ont
 28 juillet 2026, puis à celui de la relecture du même jour** (décision 16 du TOC) ; *l'attestation du
 27 juillet annonçait vingt-neuf attributions, quatre occurrences de R-8 et onze de R-14, et celle du
 28 juillet portait une ventilation de « auto-déclaré » qui incluait trois sections n'en portant aucune.*
+☑ **La relecture les a re-mesurés une troisième fois par balayage exhaustif du corps** : *tous les
+cardinaux du champ **Garde-fous balayés** sont **inchangés**, et **aucune correction de la présente
+passe n'en déplace un** — les reformulations des § 35.0, § 35.4, § 35.5, § 35.7 et § 35.9 ne touchent
+aucun marqueur compté.* ☑ **La contre-relecture du 28 juillet 2026 les a re-mesurés une quatrième
+fois, par le même balayage exhaustif du corps** — *domaine déclaré : **tout** cardinal et **toute**
+ventilation par section du champ, sans exception ni échantillon, ⚠ **zéro écart** ; ses corrections
+des § 35.5, § 35.7, § 35.8.2 et § 35.9 n'en déplacent aucun.* ⚠ **La volumétrie, elle, a bougé et a été re-prise** : *la contre-relecture ajoute du texte,
+et **une mesure publiée avant la dernière correction est fausse à la correction suivante** — le
+chiffre porté à l'en-tête est celui du corps corrigé.*
 ⚠ **R-13 est tenu** : *l'échelle à trois degrés du § 35.5 est **déclarée grille de lecture d'éditeur**,
 non un classement du socle ni une échelle d'autonomie.* Enfin, ⚠ **aucun avis juridique n'est émis**
 (PRD Vol. II §3), et ⚠ **aucune position sur la taxonomie du ch. 22 n'est attribuée à un système**,
@@ -932,7 +968,8 @@ le même jour** et les avait consommés. **Le Livre III a été renuméroté en 
 découverte de la collision — **aucun numéro n'est partagé**.*
 
 - **R-IV-98 — close par versement au registre du volet résiduel de G-1 (PRD v0.10 §5).** Le fait du
-  **7 juillet 2026** — *le plus récent du Livre, portant **l'affirmation la plus lourde du chapitre*** —
+  **7 juillet 2026** — *le plus récent du socle du Vol. II, portant **l'affirmation la plus lourde du
+  chapitre*** —
   entre au registre **avec ses deux points nommés** : *(a)* **le maintien de l'affirmation de production
   en environnement réglementé**, *(b)* **le décompte de jetons**, ⚠ *cardinal auto-déclaré cité à
   distance*. ⚠ ***Un fait de quelques jours avant un gel est le premier à périmer, et le dernier qu'une
@@ -958,5 +995,5 @@ CA-IV-01** — *vote adversarial dû, aucun conduit*. **CA-IV-11 et CA-IV-13 ne 
 *aucune relecture par un relecteur distinct du rédacteur ; la relecture du 28 juillet 2026 est une passe
 de la même main et **ne les satisfait pas davantage***. Cette pièce reste un **brouillon non
 publiable**. *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune
-question n'attend plus de réponse qui ne soit déjà tranchée* — ⚠ **et deux remontées neuves, R-IV-110 et
-R-IV-111, sont ouvertes par la relecture.**
+question n'attend plus de réponse qui ne soit déjà tranchée* — ⚠ **et trois remontées neuves, R-IV-110,
+R-IV-111 et R-IV-112, sont ouvertes par les relectures du 28 juillet 2026.**
