@@ -7,7 +7,7 @@ faire tenir ensemble —, **une veille technologique autonome** qui les traverse
 et **un compendium** qui les refond en un seul ouvrage — arrêté en révision finale, non publiable.
 
 > **Où entrer.** Le lecteur pressé lit la [veille technologique](Veille%20Technologique.md) : c'est
-> l'état de l'art le plus récent (18 juillet 2026), et le seul document publié qui cite les volumes
+> l'état de l'art le plus récent (édition d'août 2026, faits gelés au 29 juillet), et le seul document publié qui cite les volumes
 > du dépôt. Le lecteur méthodique suit l'ordre des volumes, du général au spécifique. Le compendium
 > se feuillette depuis le 29 juillet 2026 — [`compendium.pdf`](2%20-%20Compendium/compendium.pdf),
 > **810 pages** —, et il est **arrêté en révision finale pour la bibliothèque personnelle de
@@ -24,18 +24,18 @@ Les trois volumes vivent sous [`1 - Corpus/`](1%20-%20Corpus/) ; la veille est
 | | **Veille technologique** | **Vol. I — Interopérabilité** | **Vol. II — Orchestration** | **Vol. III — Entreprise** | **Vol. IV — Compendium** |
 |---|---|---|---|---|---|
 | **Dossier** | racine du dépôt | [`1 - Corpus/1 - InteroperabiliteAgentique/`](1%20-%20Corpus/1%20-%20InteroperabiliteAgentique/) | [`1 - Corpus/2 - OrchestrationAgentique/`](1%20-%20Corpus/2%20-%20OrchestrationAgentique/) | [`1 - Corpus/3 - EntrepriseAgentique/`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/) | [`2 - Compendium/`](2%20-%20Compendium/) |
-| **Titre** | Interopérabilité agentique et orchestration des processus d'affaires en entreprise | Interopérabilité agentique en entreprise dans le domaine des services financiers | L'autonomie encadrée | L'entreprise agentique — la fabrique de confiance | La somme agentique |
+| **Titre** | Interopérabilité et orchestration agentique en entreprise | Interopérabilité agentique en entreprise dans le domaine des services financiers | L'autonomie encadrée | L'entreprise agentique — la fabrique de confiance | La somme agentique |
 | **Rôle** | État de l'art vérifié, mis à jour par éditions | Cadre général, mondial et théorique | Cas canadien réglementé, instruit au grain du droit | Le verrou commun : identité, maillage, exploitation | Omnibus terminal : absorbe et remplace les trois volumes |
 | **Portée** | Mondiale | Mondiale (UE / É.-U. / R.-U. / Asie) | Canada-Québec (E-23, AMF, Loi 25, ACVM, Lynx/RTR) | Organisation et cycle de vie (NHI, *agent mesh*, AgentOps) | Les trois portées réunies (2024-2032) |
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 29 juillet 2026 (édition d'août 2026 ; les sections antérieures gardent leur date d'état) | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | 27 juillet 2026 (décision d'auteur D-1) ; volet des faits levé le 28 juillet 2026 |
-| **État** | Publiée (158 p., 266 références) | Rédaction terminée (569 p., ≈ 263 600 mots ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Arrêté en révision finale — bibliothèque personnelle** (D-10, 29 juillet 2026 ; TOC v0.31 / PRD v0.15) : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) (**810 p.**, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026 ; gabarit relevé sur deux monographies Springer le même jour). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** |
+| **État** | Publiée (161 p., 269 références) | Rédaction terminée (569 p., ≈ 263 600 mots ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Arrêté en révision finale — bibliothèque personnelle** (D-10, 29 juillet 2026 ; TOC v0.31 / PRD v0.15) : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) (**810 p.**, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026 ; gabarit relevé sur deux monographies Springer le même jour). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** |
 
 ## Veille technologique — le document transversal
 
-[`Veille Technologique.md`](Veille%20Technologique.md) → `Veille Technologique.pdf` (**158 p.**,
-14 sections numérotées, **266 références**, 15 tableaux — **édition d'août 2026**, faits gelés au
+[`Veille Technologique.md`](Veille%20Technologique.md) → `Veille Technologique.pdf` (**161 p.**,
+14 sections numérotées, **269 références**, 15 tableaux — **édition d'août 2026**, faits gelés au
 29 juillet 2026 ; résumé sur la page de titre, sommaire exécutif sur trois pages). Revue vérifiée où chaque énoncé factuel
 est adossé à une source primaire consultée et soumis à contradiction — vérificateurs indépendants
 chargés de *réfuter*, contre-vérification directe sinon. Elle couvre les trois protocoles
@@ -300,7 +300,7 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
 .
 ├── README.md                              ← ce fichier (avant-propos croisé)
 ├── CLAUDE.md                              ← conventions du dépôt + conventions de la veille
-├── Veille Technologique.md / .pdf         ← veille autonome, édition d'août 2026, faits gelés au 29 juillet (158 p., 266 réf.)
+├── Veille Technologique.md / .pdf         ← veille autonome, édition d'août 2026, faits gelés au 29 juillet (161 p., 269 réf.)
 ├── 1 - Corpus/                            ← le triptyque
 │   ├── 1 - InteroperabiliteAgentique/       Vol. I
 │   │   ├── Chapitres/                         7 chapitres + 7 bibliographies + Annexe B (ADS)
@@ -583,6 +583,36 @@ dont deux ne fournissent aucun fait**. **État vérifié sur le rendu** : résum
 **158 p. / 266 réf.**, `check-veille.py` en sortie 0. ⚠ **Le budget est écrit au
 [`CLAUDE.md`](CLAUDE.md) avec sa commande de mesure, parce qu'aucun contrôle ne le voit** — ni
 `check-veille.py`, ni le rendu : *un débordement qui se fait rogner ne lève aucune erreur.*
+
+**Le 29 juillet 2026, septième passe du même jour** : la veille reçoit le titre que l'auteur énonce —
+**« Interopérabilité et orchestration agentique en entreprise »** — et, avec lui, la section qui le
+rend exact. ⚠ **Le titre antérieur disait « orchestration des processus d'affaires », et l'écart
+n'était pas de style mais de périmètre** : les six sous-sections de la §4.11 traitent toutes de
+l'orchestration des *processus*. Le balayage du document entier a mesuré l'autre orchestration —
+celle des *agents* — à **zéro occurrence** sur douze motifs (« orchestration multi-agent », « patron
+d'orchestration », « agent superviseur », « framework d'agents », « planificateur », *handoff*,
+*swarm*, « sous-agent », « graphe d'agents », « délégation hiérarchique », « mémoire partagée »,
+ReAct). **La réponse est une sous-section neuve, la §4.14**, fondée sur la recherche `/last30days`
+(« Agentic interoperability and orchestration in the enterprise » — 45 éléments, 3 sources sur 5 ;
+X et YouTube absents faute d'authentification) puis **sur sources primaires vérifiées** : la
+taxonomie **MAST** (quatorze modes en trois catégories, 150 traces annotées, validée sur plus de
+1 600 traces de sept cadriciels), la documentation du SDK d'agents d'OpenAI (les transferts *sont*
+des outils, `transfer_to_<nom_agent>`, historique complet transmis par défaut), la bibliothèque
+`langgraph-supervisor`, et l'annonce de disponibilité générale du harnais géré d'AgentCore — **déjà
+au corpus en réf. [106]**, doublon que `check-veille.py` a repris. Trois références neuves, [267] à
+[269]. ⚠ **Le fait négatif est le cœur de la section** : *aucun* des trois protocoles ne décrit de
+topologie d'orchestration, et c'est pourquoi elle **n'est pas comptée comme une huitième couche** —
+les sept ont chacune un porteur candidat, celle-ci n'en a aucun. **Le décompte de sept est
+maintenu.** ⚠ **Et la passe a trouvé mieux qu'un manque : la lacune était celle de la veille
+seule.** Le **ch. 2 du Vol. I** traite ce front depuis juin 2026 — balayage sur pièce : six
+occurrences de MAST, sept de ReAct, sept de l'orchestrateur, trois du sous-agent, deux du
+superviseur, trente-sept de la mémoire. *C'est exactement la classe de défaut que la §13 prend pour
+objet — une lacune de couverture d'un document du dépôt, comblée par le texte rédigé d'un autre.*
+Une question ouverte s'ajoute (**QO 25**, cardinal porté à vingt-cinq). ⚠ **Ce que la passe a refusé
+de verser** : les cinq patrons canoniques tels que les publient les blogues de contenu, et le chiffre
+très cité « LangGraph dans 43 % des déploiements agentiques d'entreprise » — aucune publication
+primaire atteinte. Décomptes re-mesurés : **161 p. / 269 réf.**, `check-veille.py` en sortie 0, et
+**les deux budgets de mise en page tiennent** (résumé à y = 104,8 pt ; sommaire en pages 5-7).
 
 ⚠ Le décompte des diagrammes du Vol. I se mesure avec un motif **ancré** :
 `grep -c '^```mermaid'` donne 28. Le motif non ancré en retourne 29 — il attrape une ligne de prose

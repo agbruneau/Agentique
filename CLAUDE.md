@@ -275,8 +275,8 @@ consignés et motivés dans [son propre `CLAUDE.md`](1%20-%20Corpus/3%20-%20Entr
 
 ## Veille technologique — le livrable de la racine
 
-`Veille Technologique.md` → `Veille Technologique.pdf` (**158 p.**, 14 sections numérotées,
-**266 références**, 15 tableaux — **édition d'août 2026, faits gelés au 29 juillet 2026** ; elle
+`Veille Technologique.md` → `Veille Technologique.pdf` (**161 p.**, 14 sections numérotées,
+**269 références**, 15 tableaux — **édition d'août 2026, faits gelés au 29 juillet 2026** ; elle
 succède à l'**édition intégrale du 18 juillet 2026** et à la **passe complémentaire du
 23 juillet 2026** : sous-section 12.4, l'après-agentique en préimpression, références [245] à [256],
 régime déclaré — résumés arXiv seuls consultés, sans vérification adverse ; la 257e, ajoutée le même
