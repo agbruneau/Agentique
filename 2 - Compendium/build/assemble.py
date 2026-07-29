@@ -21,8 +21,9 @@ volume (brouillon non publiable) est declare une fois, au colophon du gabarit �
 retire des pieces, il n'est pas efface.
 
 Depuis le 29 juillet 2026, l'assemblage ajoute apres le chapitre 50 une ANNEXE
-HORS PLAN, `audit-references.md` : un rapport de mesure sans autorite, qui n'est
-aucune des neuf annexes A a I du TOC et ne consomme aucun numero de chapitre.
+HORS PLAN, `annexe-references.md` : la liste des 159 entrees du socle consolide.
+Elle n'est aucune des neuf annexes A a I du TOC — l'Annexe I, la bibliographie
+generale, reste a ecrire — et ne consomme aucun numero de chapitre.
 """
 import re
 import sys
@@ -210,7 +211,7 @@ def main():
             dagues += marques
     if numero != 50:
         sys.exit(f"[assemble] {numero} chapitres assembles, 50 attendus")
-    morceaux.append(annexe(RACINE / "audit-references.md"))
+    morceaux.append(annexe(RACINE / "annexe-references.md"))
     dest.write_text("\n".join(morceaux), encoding="utf-8")
     print(f"[assemble] {numero} chapitres, 5 livres, 1 annexe hors plan, "
           f"{dagues} renvois a la note de statut marques -> {dest}")

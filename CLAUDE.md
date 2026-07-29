@@ -226,7 +226,7 @@ l'auteur, au gabarit FESP des monographies : c'était bien une troisième copie,
 ⚠ **Un QUATRIÈME pipeline existe depuis le 29 juillet 2026, et ce n'est pas une quatrième copie du
 FESP.** Le Vol. IV a reçu le sien — [`2 - Compendium/build/`](2%20-%20Compendium/build/) : gabarit
 Typst propre, format 155 × 235 mm au style des monographies Springer, sortie
-[`compendium.pdf`](2%20-%20Compendium/compendium.pdf), **863 pages, sans aucune page blanche**. Il ne dérive d'aucune des trois
+[`compendium.pdf`](2%20-%20Compendium/compendium.pdf), **857 pages, sans aucune page blanche**. Il ne dérive d'aucune des trois
 copies et aucune ne dérive de lui ; la règle d'indépendance vaut donc pour **quatre**. ⚠ **Composer
 n'est pas publier** : le rendu ne requalifie rien, les cinquante chapitres demeurent un **brouillon
 non publiable** et le PDF le déclare en liminaire. Le détail — ce que le rendu retire, et comment il
@@ -234,16 +234,20 @@ marque les renvois que la coupe laisserait pendre — vit au [`CLAUDE.md` du
 dossier](2%20-%20Compendium/CLAUDE.md) et **n'est pas repris ici**.
 
 ⚠ **Le rendu porte, depuis le 29 juillet 2026, une ANNEXE HORS PLAN après le chapitre 50 —
+[`annexe-references.md`](2%20-%20Compendium/annexe-references.md), la LISTE des 159 entrées du socle
+consolidé**, ajoutée sur instruction d'auteur (857 pages, contre 847 auparavant). **Trois choses
+valent au niveau de la racine.** *(a)* ⚠ **Elle n'est aucune des neuf annexes A à I du `TOC.md`, et
+elle ne prend leur place pour aucune** — l'**Annexe I, la bibliographie générale consolidée, reste à
+écrire** (plancher déclaré : 1 270 entrées pour le seul Vol. I). ⚠ *Ce n'est pas non plus une
+bibliographie* : elle inventorie les **faits** sur lesquels la somme s'adosse, non les **documents**
+dont ces faits proviennent. *(b)* **Elle ne consomme aucun numéro de chapitre** : le plafond de
+cinquante tient, l'ouverture ne porte pas de numéro et la table des matières ne lui en donne pas.
+*(c)* ⚠ **Un second fichier existe et il n'est PAS au rendu** :
 [`audit-references.md`](2%20-%20Compendium/audit-references.md), l'inventaire et la validation des
-159 références du volume**, ajoutée sur instruction d'auteur (863 pages, contre 847 auparavant).
-**Trois choses valent au niveau de la racine.** *(a)* ⚠ **Elle n'est aucune des neuf annexes A à I
-du `TOC.md`, et elle ne prend leur place pour aucune** — l'**Annexe I, la bibliographie générale
-consolidée, reste à écrire** (plancher déclaré : 1 270 entrées pour le seul Vol. I). *(b)* ⚠ **Être
-relié n'est pas faire autorité** : c'est un **rapport de mesure sans autorité**, du régime
-d'[`audit.md`](2%20-%20Compendium/audit.md) — ni source, ni socle, ni décision —, et **il ne se cite
-pas à l'appui d'un énoncé** ; ses constats sont des **remontées non arbitrées**. *(c)* **Elle ne
-consomme aucun numéro de chapitre** : le plafond de cinquante tient, l'ouverture ne porte pas de
-numéro et la table des matières ne lui en donne pas.
+159 références sur cinq critères — **rapport de mesure sans autorité**, du régime
+d'[`audit.md`](2%20-%20Compendium/audit.md), **jamais citable à l'appui d'un énoncé**, ses constats
+étant des **remontées non arbitrées**. *Les deux se distinguent par leur nom : l'`annexe-` est
+reliée, l'`audit-` ne l'est pas.*
 
 Le Vol. III prolonge l'appareil du Vol. II mais s'en écarte sur quatre points (motifs de balayage,
 commande de décompte, escalade de gouvernance, numérotation des garde-fous). Ces écarts sont

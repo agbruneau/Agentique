@@ -10,7 +10,7 @@ et **un compendium** qui les refond en un seul ouvrage — arrêté en révision
 > l'état de l'art le plus récent (18 juillet 2026), et le seul document publié qui cite les volumes
 > du dépôt. Le lecteur méthodique suit l'ordre des volumes, du général au spécifique. Le compendium
 > se feuillette depuis le 29 juillet 2026 — [`compendium.pdf`](2%20-%20Compendium/compendium.pdf),
-> **863 pages** —, et il est **arrêté en révision finale pour la bibliothèque personnelle de
+> **857 pages** —, et il est **arrêté en révision finale pour la bibliothèque personnelle de
 > l'auteur** le même jour. Ses cinquante chapitres restent un **brouillon écrit hors portes** : il se
 > lit, il ne fait pas foi, et il ne se diffuse pas. *Arrêter n'est ni terminer ni publier.*
 
@@ -30,7 +30,7 @@ Les trois volumes vivent sous [`1 - Corpus/`](1%20-%20Corpus/) ; la veille est
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | 27 juillet 2026 (décision d'auteur D-1) ; volet des faits levé le 28 juillet 2026 |
-| **État** | Publiée (146 p., 257 références) | Rédaction terminée (569 p., ≈ 263 600 mots ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Arrêté en révision finale — bibliothèque personnelle** (D-10, 29 juillet 2026 ; TOC v0.31 / PRD v0.15) : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) (**863 p.**, dont une **annexe hors plan** — l'inventaire des références, ajoutée au rendu le 29 juillet 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** |
+| **État** | Publiée (146 p., 257 références) | Rédaction terminée (569 p., ≈ 263 600 mots ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Arrêté en révision finale — bibliothèque personnelle** (D-10, 29 juillet 2026 ; TOC v0.31 / PRD v0.15) : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) (**857 p.**, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** |
 
 ## Veille technologique — le document transversal
 
@@ -64,7 +64,7 @@ points — signalés ici, non corrigés là-bas.** Le **Vol. III est rédigé de
 **démonstrateur de la réf. [217] a été retiré du dépôt le 25 juillet 2026** (commit `60f57f6`) — la
 citation reste exacte, elle cesse d'être vérifiable ailleurs que dans l'historique git ; et le
 **Vol. IV a cinquante chapitres rédigés depuis le 27 juillet 2026, un socle consolidé de 159 entrées
-depuis le 28 et un PDF de 863 pages depuis le 29**, alors que la réf. [220] le décrit comme un
+depuis le 28 et un PDF de 857 pages depuis le 29**, alors que la réf. [220] le décrit comme un
 cadrage sans chapitre. ⚠ **Le troisième écart ne fait pas du Vol. IV une source de fait pour
 autant** : ses pièces se déclarent brouillon non publiable, et *un brouillon ne porte pas plus de
 fait qu'un cadrage*. Une revue publiée décrit l'état de ses sources à sa date : la rattraper après
@@ -210,9 +210,9 @@ CA-IV-01, **aucun vote adversarial n'a été conduit**, et **les trois volumes s
 foi**.
 
 ⚠ **Un rendu paginé existe depuis le 29 juillet 2026, et il ne requalifie rien non plus.**
-[`compendium.pdf`](2%20-%20Compendium/compendium.pdf) — **863 pages**, les cinquante chapitres des
-cinq Livres **et une annexe hors plan** (l'inventaire et la validation des 159 références, ajoutée
-le 29 juillet 2026), format 155 × 235 mm au style des monographies Springer, **sans aucune page
+[`compendium.pdf`](2%20-%20Compendium/compendium.pdf) — **857 pages**, les cinquante chapitres des
+cinq Livres **et une annexe hors plan** (la liste des 159 références du socle, ajoutée le
+29 juillet 2026), format 155 × 235 mm au style des monographies Springer, **sans aucune page
 blanche** —
 est composé par [`build/build-pdf.sh`](2%20-%20Compendium/build/build-pdf.sh), **quatrième pipeline
 du dépôt et le seul qui ne dérive pas du FESP**. Le rendu retire du corps les trois appareils que le
@@ -322,8 +322,9 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
     ├── CLAUDE.md                            conventions du volume
     ├── README.md                            vue synoptique dérivée du TOC (le « conspectus » du volume)
     ├── audit.md                             rapport d'audit des cinq Livres (28 juill. 2026) — sans autorité
-    ├── audit-references.md                  inventaire et validation des 159 références (29 juill. 2026) — sans autorité
-    ├── compendium.pdf                       rendu paginé des 50 chapitres + 1 annexe (863 p.) — brouillon non publiable
+    ├── annexe-references.md                 liste des 159 références du socle — annexe hors plan du rendu
+    ├── audit-references.md                  inventaire et validation des 159 références (29 juill. 2026) — sans autorité, hors rendu
+    ├── compendium.pdf                       rendu paginé des 50 chapitres + 1 annexe (857 p.) — brouillon non publiable
     ├── build/                               pipeline propre au volume (PAS une copie du FESP)
     │   ├── assemble.py                        50 pièces + annexe → compendium.md, 23 renvois marqués d'une dague
     │   ├── springer.template                  gabarit Typst 155 × 235 mm, Palatino
@@ -397,7 +398,7 @@ et à la dette de vote sur F-92 et F-96.
 le 29 juillet 2026, gabarit Typst au style des monographies Springer) ; depuis `2 - Compendium/` :
 
 ```bash
-bash build/build-pdf.sh                     # Livre I/ … Livre V/ + annexe → compendium.pdf (863 p.)
+bash build/build-pdf.sh                     # Livre I/ … Livre V/ + annexe → compendium.pdf (857 p.)
 ```
 
 ⚠ Ce quatrième pipeline **ne dérive d'aucune des trois copies du FESP, et aucune ne dérive de lui** :
@@ -516,6 +517,20 @@ citable à l'appui d'un énoncé** ; ses constats sont des **remontées non arbi
 consomme aucun numéro de chapitre** — le plafond de cinquante tient —, **ne franchit aucune porte** et
 **ne requalifie rien**. Le `TOC.md` et le `PRD.md` **ne sont pas touchés** : *un rapport remonte, il ne
 tranche pas.*
+
+**Le 29 juillet 2026, quatrième passe du même jour** : l'annexe reliée est **simplifiée en une liste**,
+sur instruction d'auteur. Le rendu reçoit désormais
+[`annexe-references.md`](2%20-%20Compendium/annexe-references.md) — les **159 entrées** du socle,
+identifiant, objet, niveau, provenance et datation de la source, groupées par volume d'origine — à la
+place du rapport d'analyse. **Le rapport n'est pas retiré du dépôt** : il reste à
+[`audit-references.md`](2%20-%20Compendium/audit-references.md), **hors rendu**, avec son régime
+inchangé — sans autorité, jamais citable à l'appui d'un énoncé. *Les deux se distinguent par leur nom :
+l'`annexe-` est reliée, l'`audit-` ne l'est pas.* Décomptes **re-mesurés sur pièce** : **857 pages**
+(`pypdf`), l'annexe pesant dix pages contre vingt-sept pour le rapport. La ligne de `sed` qui élargissait
+les tables à sept colonnes est **retirée du script**, sa grille n'étant plus composée. ⚠ **Ce que la
+passe ne change pas** : l'annexe **n'est toujours aucune des neuf annexes A à I**, elle **n'est pas une
+bibliographie** — elle inventorie des **faits**, non les **documents** dont ils proviennent —, et
+l'**Annexe I reste à écrire**.
 
 ⚠ Le décompte des diagrammes du Vol. I se mesure avec un motif **ancré** :
 `grep -c '^```mermaid'` donne 28. Le motif non ancré en retourne 29 — il attrape une ligne de prose

@@ -23,11 +23,6 @@ python3 "$DIR/build/assemble.py" "$TMP/compendium.md"
 pandoc "$TMP/compendium.md" -f markdown-raw_html --template="$DIR/build/springer.template" \
        -t typst -o "$TMP/doc.typ"
 sed -i 's/align(center)\[#table/align(left)[#table/g' "$TMP/doc.typ"
-# Pandoc donne des colonnes EGALES a toute table de tuyaux : la grille des 159
-# entrees de l'annexe y perdait sa colonne « Objet », reduite au septieme de la
-# justification. Les trois tables a sept colonnes du document sont ses trois
-# bandes ; elles sont les seules, et le motif ne vaut que pour elles.
-sed -i 's/columns: (14\.29%, 14\.29%, 14\.29%, 14\.29%, 14\.29%, 14\.29%, 14\.29%)/columns: (10%, 15%, 9%, 10%, 11%, 8%, 37%)/g' "$TMP/doc.typ"
 typst compile --root "$TMP" "$TMP/doc.typ" "$OUT"
 
 OUT_NATIVE="$(cygpath -w "$OUT" 2>/dev/null || echo "$OUT")"
