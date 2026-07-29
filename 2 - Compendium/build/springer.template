@@ -205,38 +205,33 @@
 #block(width: 100%, {
   set text(size: 8.5pt, fill: GRIS)
   set par(justify: false, leading: 0.62em, spacing: 0.75em, first-line-indent: 0pt)
-  [*La somme agentique* — Volume IV du corpus *Agentique*. Cinquante chapitres
-   en cinq livres, condensés des volumes I (*Interopérabilité agentique*),
-   II (*L'autonomie encadrée*) et III (*L'entreprise agentique*).]
-  parbreak()
-  [*Révision finale — diffusion en bibliothèque personnelle.* Les cinquante
-   chapitres sont arrêtés dans leur état du 29 juillet 2026 (décision d'auteur
-   D-10) : plus aucune passe de rédaction n'est prévue. *Arrêté n'est ni terminé
-   ni publiable.* Ils ont été rédigés avant le franchissement des portes de
-   lancement du volume ; G-1, G-4, G-5 et G-6 sont closes pour ce seul régime,
-   par dérogation nommée, et le résidu de chacune reste entier ; aucun vote
-   adversarial n'a été conduit sur le socle consolidé ; et les critères CA-IV-11
-   et CA-IV-13, qui exigent un relecteur distinct du rédacteur, sont dérogés et
-   non satisfaits. *Aucun énoncé de cet ouvrage n'est central* au sens du critère
-   CA-IV-01.]
-  parbreak()
-  [*Diffusion.* Lecture par l'auteur. Aucune mise à disposition d'un tiers, aucun
-   dépôt public, aucune citation opposable : la dérogation qui autorise ce rendu
-   tombe avec le régime qui la motive, et les portes qu'elle couvre se rouvrent
-   alors dans leur état. Les trois volumes sources — I, II et III — font foi.]
-  parbreak()
-  [Gel unique du compendium : 27 juillet 2026 (décision d'auteur D-1). Les faits
-   périssables portent en outre le gel de leur source.]
-  parbreak()
-  [Ce rendu retire trois appareils que les pièces portent et qui ne sont pas du
-   corps : l'en-tête de gouvernance à cinq champs, la thèse citée depuis le plan,
-   et la note de statut de clôture. Les renvois du corps vers cette note sont
-   conservés et suivis d'une dague — *§ 25.9 †* —, qui se lit : section retirée
-   du présent rendu, à consulter au fichier source.]
-  parbreak()
-  [Rendu composé avec Pandoc et Typst au format 155 × 235 mm. Les sources
-   `.md` font foi ; ce PDF en est un rendu.]
-  parbreak()
+  list(indent: 0pt, body-indent: 0.55em, spacing: 0.75em,
+    [*Livre I — Coopérer.* Fondements de l'interopérabilité et couche
+     protocolaire : l'agent comme boucle, l'accord sur le sens que les
+     protocoles présupposent, MCP et A2A, découverte et registres, modes
+     d'échec.],
+    [*Livre II — Faire confiance.* Identité non humaine, délégation vérifiable
+     et fabrique de confiance : émettre un passeport opposable, tenir sous
+     confiance hostile, compter avec l'horloge post-quantique.],
+    [*Livre III — Encadrer.* Orchestration déterministe en entreprise, cadre
+     réglementaire canadien et terrain des services financiers : l'autonomie
+     sous contrôle de finalité.],
+    [*Livre IV — Appliquer, exploiter, produire et composer.* AgentMesh,
+     AgentOps, fabrique d'agents et synthèse architecturale : le maillage
+     admet, la mesure condamne, la fabrique réémet.],
+    [*Livre V — Livrer et clore.* L'agent comme artefact logiciel : provenance
+     des composants, mise en service d'un artefact non reproductible,
+     sémantique d'effet, horizon et frontière.],
+  )
+  v(0.5em)
+  line(length: 100%, stroke: 0.4pt + FILET)
+  v(0.8em)
+  align(center, block(width: 90%, text(size: 9pt, style: "italic")[
+    Faire parler des agents est un problème de protocole ; leur faire confiance,
+    un problème de preuve opposable — et c'est la seconde question, jamais la
+    première, qui décide d'un déploiement en milieu réglementé.
+  ]))
+  v(0.8em)
   [© André-Guy Bruneau, M.Sc. IT. Tous droits réservés.]
 })
 #pagebreak(weak: false)
