@@ -51,7 +51,7 @@ git : `git show 60f57f6~1:'1 - Corpus Agentique/1 - InteroperabiliteAgentique/Bo
 - ne pas rétablir de renvoi vers ces fichiers ni de chaîne de rendu qui les vise ;
 - les renvois **entrants** des volumes aval qui résolvaient contre `Synthese Monographie.md` (§10, §11.5 et tableau 15 — voir [`Chapitres/TOC.md`](Chapitres/TOC.md) §Filiation) n'ont plus de cible dans le dépôt. Les corriger relève des volumes émetteurs, pas d'ici.
 
-⚠ **La veille technologique n'est plus un livrable de ce dossier.** Elle a été déplacée à la racine du dépôt (`Veille Technologique.md`), couvre désormais les quatre volumes et porte sa propre édition (édition intégrale du 18 juillet 2026, passe complémentaire du 23 juillet 2026, **146 p., 257 références**) : ses conventions et sa chaîne de rendu sont au [`CLAUDE.md` du dépôt](../../CLAUDE.md). Ne pas la traiter ici.
+⚠ **La veille technologique n'est plus un livrable de ce dossier.** Elle a été déplacée à la racine du dépôt (`Veille Technologique.md`), couvre désormais les quatre volumes et porte sa propre édition (**édition d'août 2026**, faits gelés au 29 juillet 2026, **159 p., 266 références**) : ses conventions et sa chaîne de rendu sont au [`CLAUDE.md` du dépôt](../../CLAUDE.md). Ne pas la traiter ici.
 
 **État : rédaction terminée.** Le travail courant est la finalisation et la maintenance — corrections, vérification adverse des citations, régénération du PDF. Outillage : `git` et le pipeline de rendu (voir *Commandes*) — plus de chaîne Go dans ce dossier.
 

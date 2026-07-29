@@ -29,13 +29,14 @@ Les trois volumes vivent sous [`1 - Corpus/`](1%20-%20Corpus/) ; la veille est
 | **Portée** | Mondiale | Mondiale (UE / É.-U. / R.-U. / Asie) | Canada-Québec (E-23, AMF, Loi 25, ACVM, Lynx/RTR) | Organisation et cycle de vie (NHI, *agent mesh*, AgentOps) | Les trois portées réunies (2024-2032) |
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
-| **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | 27 juillet 2026 (décision d'auteur D-1) ; volet des faits levé le 28 juillet 2026 |
-| **État** | Publiée (146 p., 257 références) | Rédaction terminée (569 p., ≈ 263 600 mots ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Arrêté en révision finale — bibliothèque personnelle** (D-10, 29 juillet 2026 ; TOC v0.31 / PRD v0.15) : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) (**857 p.**, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** |
+| **Gel de l'information** | 29 juillet 2026 (édition d'août 2026 ; les sections antérieures gardent leur date d'état) | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | 27 juillet 2026 (décision d'auteur D-1) ; volet des faits levé le 28 juillet 2026 |
+| **État** | Publiée (159 p., 266 références) | Rédaction terminée (569 p., ≈ 263 600 mots ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Arrêté en révision finale — bibliothèque personnelle** (D-10, 29 juillet 2026 ; TOC v0.31 / PRD v0.15) : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) (**857 p.**, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** |
 
 ## Veille technologique — le document transversal
 
-[`Veille Technologique.md`](Veille%20Technologique.md) → `Veille Technologique.pdf` (**146 p.**,
-14 sections numérotées, **257 références**, 15 tableaux). Revue vérifiée où chaque énoncé factuel
+[`Veille Technologique.md`](Veille%20Technologique.md) → `Veille Technologique.pdf` (**159 p.**,
+14 sections numérotées, **266 références**, 15 tableaux — **édition d'août 2026**, faits gelés au
+29 juillet 2026). Revue vérifiée où chaque énoncé factuel
 est adossé à une source primaire consultée et soumis à contradiction — vérificateurs indépendants
 chargés de *réfuter*, contre-vérification directe sinon. Elle couvre les trois protocoles
 structurants (MCP, A2A, ANP), leur gouvernance, l'adoption documentée, la sécurité, et **sept
@@ -299,7 +300,7 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
 .
 ├── README.md                              ← ce fichier (avant-propos croisé)
 ├── CLAUDE.md                              ← conventions du dépôt + conventions de la veille
-├── Veille Technologique.md / .pdf         ← veille autonome, 18 juillet 2026, passe du 23 juillet 2026 (146 p., 257 réf.)
+├── Veille Technologique.md / .pdf         ← veille autonome, édition d'août 2026, faits gelés au 29 juillet (159 p., 266 réf.)
 ├── 1 - Corpus/                            ← le triptyque
 │   ├── 1 - InteroperabiliteAgentique/       Vol. I
 │   │   ├── Chapitres/                         7 chapitres + 7 bibliographies + Annexe B (ADS)
@@ -531,6 +532,37 @@ les tables à sept colonnes est **retirée du script**, sa grille n'étant plus 
 passe ne change pas** : l'annexe **n'est toujours aucune des neuf annexes A à I**, elle **n'est pas une
 bibliographie** — elle inventorie des **faits**, non les **documents** dont ils proviennent —, et
 l'**Annexe I reste à écrire**.
+
+**Le 29 juillet 2026, cinquième passe du même jour** : l'**édition d'août 2026 de la veille
+technologique**, sur instruction d'auteur — « fondée sur le compendium et une recherche exhaustive
+sur le net ». Faits **gelés au 29 juillet 2026**, édition datée du 1er août. Décomptes
+**re-mesurés sur le PDF régénéré** : **159 p. / 266 réf.** (contre 146 / 257), 14 sections et
+15 tableaux inchangés, `python check-veille.py` en sortie 0. **Ce que la passe verse** : la révision
+**2026-07-28** de MCP — noyau sans état, `server/discover`, requêtes à plusieurs allers-retours,
+routage par en-têtes, dépréciation de Roots, Sampling, Logging et de l'enregistrement dynamique de
+client, et **première politique de dépréciation datée** du corpus protocolaire (§4.1) ; le fait de
+tempo qui lui répond — **A2A n'a rien publié depuis le 28 mai 2026** (§4.2) ; le **règlement (UE)
+2026/1744**, publié au JO le 24 juillet et en vigueur le 27, avec ce qui s'applique **le 2 août
+2026** malgré le report du haut risque (§8.1) ; la charte du second groupe communautaire du W3C
+(§5.2) ; les superpositions COSAiS du NIST (§8.2) ; l'échéance du rail canadien (§8.4) ; et
+**deux sous-sections neuves sur le corpus compagnon** (§13.8, §13.9). ⚠ **Trois choses que cette
+passe ne fait pas.** *(1)* **Son régime est plus faible et il est déclaré** : consultation directe
+des sources primaires, **sans ronde de vérification adverse** — celui de la §12.4, non celui des
+§4.6 à §4.13 (§2.2 et §10). *(2)* Elle **n'a pas versé** les métriques d'adoption les plus citées du
+domaine, faute d'avoir atteint leur publication primaire (§6.5) — *un chiffre qu'on ne peut pas
+rattacher à son éditeur n'est pas un fait affaibli, ce n'est pas un fait*. *(3)* Elle **ne fait
+reposer aucun énoncé sur le Vol. IV arrêté** : le refus est inchangé, ses **motifs le sont
+entièrement** — diffusion bornée sans opposabilité, socle dérivé sans source primaire propre,
+dérogation conditionnelle (§13.8). ⚠ **Deux défauts de la passe sont consignés plutôt que tus, et
+aucun des deux n'a été trouvé par le contrôle seul.** `check-veille.py` a rattrapé **trois doublons
+bibliographiques** que la rédaction avait introduits — AIP [23], le groupe W3C d'identité d'agents
+[31] et la page des publications d'A2A [98] figuraient **déjà** au corpus, et le protocole AIP y
+était même **discuté au corps** ; les entrées surnuméraires ont été retirées. Mais **cinq renvois
+visaient la section 4.2 pour MCP, qui est la section 4.1** : *un renvoi qui existe mais désigne la
+mauvaise section, aucun contrôle ne le voit* — seule la collation du plan réel l'a montré. Un
+sixième écart est **signalé sans être corrigé**, la règle du dépôt l'interdisant : la réf. [217]
+pointe un démonstrateur retiré de l'arbre le 25 juillet 2026, et la limite est portée à la §10 de
+l'édition plutôt qu'à la référence.
 
 ⚠ Le décompte des diagrammes du Vol. I se mesure avec un motif **ancré** :
 `grep -c '^```mermaid'` donne 28. Le motif non ancré en retourne 29 — il attrape une ligne de prose

@@ -256,13 +256,37 @@ consignés et motivés dans [son propre `CLAUDE.md`](1%20-%20Corpus/3%20-%20Entr
 
 ## Veille technologique — le livrable de la racine
 
-`Veille Technologique.md` → `Veille Technologique.pdf` (**146 p.**, 14 sections numérotées,
-**257 références**, 15 tableaux — **édition intégrale du 18 juillet 2026, passe complémentaire du
+`Veille Technologique.md` → `Veille Technologique.pdf` (**159 p.**, 14 sections numérotées,
+**266 références**, 15 tableaux — **édition d'août 2026, faits gelés au 29 juillet 2026** ; elle
+succède à l'**édition intégrale du 18 juillet 2026** et à la **passe complémentaire du
 23 juillet 2026** : sous-section 12.4, l'après-agentique en préimpression, références [245] à [256],
 régime déclaré — résumés arXiv seuls consultés, sans vérification adverse ; la 257e, ajoutée le même
 jour, réattribue les métriques du cas Block du playbook [62] à l'exposé public qui les porte [257],
 sous réserve de régime). Document **autonome** :
 il n'est repris dans aucune monographie, et il est le seul à citer les volumes du dépôt.
+
+⚠ **L'édition d'août 2026 procède d'un régime PLUS FAIBLE que celui de l'édition intégrale, et il
+est déclaré à trois endroits du document** (§2.2, §10, Divulgation) : consultation directe des
+sources primaires atteignables — texte de spécification et journal des changements, Journal
+officiel de l'Union, page institutionnelle du W3C, page de projet du NIST, pages de publication des
+dépôts, métadonnées arXiv —, **sans aucune ronde de vérification adverse à plusieurs votants**.
+C'est le régime de la §12.4, non celui des §4.6 à §4.13. **Ne pas présenter ses neuf références
+neuves [258]-[266] comme vérifiées au même titre que les précédentes** ; deux de ses énoncés sont
+portés **sous attribution** et nommés comme tels. ⚠ **Elle a en outre REFUSÉ de verser** les
+métriques d'adoption les plus citées du domaine (§6.5), faute d'avoir atteint leur publication
+primaire — *un chiffre qu'on ne peut pas rattacher à son éditeur n'est pas un fait affaibli, ce
+n'est pas un fait* : ne pas les y réintroduire depuis une compilation secondaire.
+
+⚠ **Deux défauts de cette passe sont consignés au journal du [`README.md`](README.md) et valent
+avertissement pour la suivante.** *(a)* La rédaction a introduit **trois doublons
+bibliographiques** — AIP [23], le groupe communautaire du W3C sur l'identité des agents [31] et la
+page des publications d'A2A [98] étaient **déjà** au corpus, le premier **discuté au corps** :
+`check-veille.py` les a tous trois trouvés, ce qui est exactement sa raison d'être. *(b)* Cinq
+renvois visaient **la section 4.2 pour MCP, qui est la section 4.1** — A2A occupe la 4.2. ⚠ *Un
+renvoi qui existe mais désigne la mauvaise section, aucun contrôle du dépôt ne le voit* : `piege1`
+vérifie qu'un numéro de section **existe**, jamais qu'il désigne la bonne. **Toute passe qui ajoute
+un renvoi en clair collationne le numéro contre le plan réel**, en dérivant la numérotation comme
+Pandoc la produira — jamais de mémoire.
 
 ⚠ **Depuis l'édition intégrale, la veille cite les quatre volumes — mais à deux régimes distincts,
 et l'écart est la règle qui compte.** Les Vol. I et II sont **rédigés** et fournissent des faits :
@@ -281,6 +305,20 @@ réf. [217] a été retiré du dépôt le 25 juillet 2026**. Les deux écarts se
 dans la veille** : une revue publiée décrit l'état de ses sources à son gel, et la rattraper
 après coup effacerait la seule information qu'elle porte — sa date. Une future édition les reprendra
 comme faits nouveaux, sous son propre régime de vérification.
+
+☑ ⚠ **C'est fait depuis l'édition d'août 2026, et il faut lire COMMENT.** Les deux écarts, plus le
+changement d'état du Vol. IV, sont repris comme **faits nouveaux** en **§13.8 et §13.9** — deux
+sous-sections neuves, avec leurs propres références [265] et [266] — et le retrait du démonstrateur
+est porté **aux limites (§10)**, sous la formule qui en donne l'état exact : *un renvoi exact vers un
+fichier absent reste exact ; il cesse d'être opposable*. ⚠ **Les réf. [217], [219] et [220] ne sont
+PAS corrigées, et ne doivent pas l'être** : elles décrivent l'état de leurs sources au gel de leur
+édition. ⚠ **Et le régime de citation ne bouge pas** : **aucun fait de la veille ne repose sur le
+Vol. III ni sur le Vol. IV**, alors même qu'ils sont désormais rédigés. *Le motif du refus a
+entièrement changé — il ne tient plus à l'absence de chapitres, mais à trois raisons que le Vol. IV
+déclare lui-même : diffusion bornée sans opposabilité, socle **dérivé** des trois volumes sources
+sans source primaire propre, et dérogation **conditionnelle** qui tombe à la première diffusion.*
+**Ne pas conclure de « rédigé » à « citable »** : c'est le résultat que la §13.8 établit, et elle
+existe pour cela.
 
 ⚠ **La section 13 porte une date propre.** Elle est passée sur la **v0.3 du `TOC.md` du Vol. IV,
 datée du 19 juillet 2026** — soit le lendemain de la date d'édition de la veille. L'écart est
