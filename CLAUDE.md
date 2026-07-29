@@ -357,7 +357,11 @@ occurrence ; un statut *preview* n'est jamais présenté comme une disponibilit�
   (pas de marketing, pas de première personne). Terminologie technique anglaise entre parenthèses à
   la première occurrence ; citations verbatim en langue originale.
 - **PDF versionné avec sa source.** Régénérer et pousser le `.pdf` avec le `.md` — jamais la source
-  seule. Vaut pour la veille comme pour les **trois** monographies.
+  seule. Vaut pour la veille, pour les **trois** monographies et — depuis le 29 juillet 2026 — pour
+  le **compendium** : toucher une pièce d'un Livre du Vol. IV oblige à recomposer
+  [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) dans le même commit
+  (`bash build/build-pdf.sh` depuis `2 - Compendium/`). ⚠ **Cinq rendus, pas quatre**, et le PDF du
+  compendium est le seul qui compose des pièces qui se déclarent elles-mêmes non publiables.
 - **Décomptes.** Toute pagination, tout compte de références, de chapitres ou de pièces annoncé
   dans un `README.md` ou un `CLAUDE.md` doit être **re-mesuré** avant d'être modifié, jamais
   recopié d'un autre document. Un même chiffre vit souvent à plusieurs endroits (README du dépôt,

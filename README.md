@@ -9,7 +9,9 @@ et **un compendium** qui projette de les refondre en un seul ouvrage.
 > **Où entrer.** Le lecteur pressé lit la [veille technologique](Veille%20Technologique.md) : c'est
 > l'état de l'art le plus récent (18 juillet 2026), et le seul document publié qui cite les volumes
 > du dépôt. Le lecteur méthodique suit l'ordre des volumes, du général au spécifique. Le compendium
-> n'est encore qu'un plan : il ne se lit pas.
+> se feuillette depuis le 29 juillet 2026 — [`compendium.pdf`](2%20-%20Compendium/compendium.pdf),
+> **847 pages** —, mais ses cinquante chapitres sont un **brouillon écrit hors portes** : il se lit,
+> il ne fait pas foi. *Composer n'est pas publier.*
 
 ## Les cinq livrables
 
@@ -26,8 +28,8 @@ Les trois volumes vivent sous [`1 - Corpus/`](1%20-%20Corpus/) ; la veille est
 | **Portée** | Mondiale | Mondiale (UE / É.-U. / R.-U. / Asie) | Canada-Québec (E-23, AMF, Loi 25, ACVM, Lynx/RTR) | Organisation et cycle de vie (NHI, *agent mesh*, AgentOps) | Les trois portées réunies (2024-2032) |
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
-| **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | — (à fixer au lancement) |
-| **État** | Publiée (146 p., 257 références) | Rédaction terminée (569 p., ≈ 263 600 mots ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Cadrage seul** — TOC v0.24 (+ conspectus et PRD v0.8) ; ⚠ **deux livres entiers hors portes** depuis le 27 juillet 2026 — `Livre I/` (onze chapitres, 64 611 mots) et `Livre II/` (dix chapitres, 61 165 mots), brouillons déclarés non publiables ; les treize remontées du Livre I sont soldées, **les vingt-quatre du Livre II sont ouvertes**, dont deux bloquantes |
+| **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | 27 juillet 2026 (décision d'auteur D-1) ; volet des faits levé le 28 juillet 2026 |
+| **État** | Publiée (146 p., 257 références) | Rédaction terminée (569 p., ≈ 263 600 mots ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Brouillon non publiable** — TOC v0.30 / PRD v0.14 ; les **cinquante chapitres** des cinq Livres sont rédigés **hors portes** (27 juillet 2026), relus et arbitrés ; socle consolidé de **159 entrées** et **porte G-3 franchie** le 28 juillet 2026 ; ⚠ **composé en PDF depuis le 29 juillet 2026** — [`compendium.pdf`](2%20-%20Compendium/compendium.pdf), **847 p.**, pipeline propre au volume : *composer n'est pas publier* |
 
 ## Veille technologique — le document transversal
 
@@ -55,13 +57,17 @@ régimes strictement distincts, et c'est l'écart qui compte :
   les décisions de fusion du Vol. IV servent de contrôle de couverture. Traiter un plan comme un
   corpus serait la faute que ces deux cadrages prennent eux-mêmes pour objet.
 
-⚠ **Ce tableau de régimes est celui de la veille à son gel, et le dépôt l'a dépassé sur deux
+⚠ **Ce tableau de régimes est celui de la veille à son gel, et le dépôt l'a dépassé sur trois
 points — signalés ici, non corrigés là-bas.** Le **Vol. III est rédigé depuis le 22 juillet 2026**
-(34 pièces, socle propre de 98 entrées), alors que la réf. [219] le décrit sans chapitre ; et le
+(34 pièces, socle propre de 98 entrées), alors que la réf. [219] le décrit sans chapitre ; le
 **démonstrateur de la réf. [217] a été retiré du dépôt le 25 juillet 2026** (commit `60f57f6`) — la
-citation reste exacte, elle cesse d'être vérifiable ailleurs que dans l'historique git. Une revue
-publiée décrit l'état de ses sources à sa date : la rattraper après coup effacerait la seule
-information qu'elle porte.
+citation reste exacte, elle cesse d'être vérifiable ailleurs que dans l'historique git ; et le
+**Vol. IV a cinquante chapitres rédigés depuis le 27 juillet 2026, un socle consolidé de 159 entrées
+depuis le 28 et un PDF de 847 pages depuis le 29**, alors que la réf. [220] le décrit comme un
+cadrage sans chapitre. ⚠ **Le troisième écart ne fait pas du Vol. IV une source de fait pour
+autant** : ses pièces se déclarent brouillon non publiable, et *un brouillon ne porte pas plus de
+fait qu'un cadrage*. Une revue publiée décrit l'état de ses sources à sa date : la rattraper après
+coup effacerait la seule information qu'elle porte.
 
 L'échange est bidirectionnel : la veille rend au corpus deux corrections de datation, referme une
 lacune que le Vol. II déclarait ouverte (les dépôts ACP d'AGNTCY, archivés le 11 avril 2026) — et
@@ -151,40 +157,50 @@ Le volume naît des lacunes des deux précédents : identité non humaine et dé
 
 ## Vol. IV — La somme agentique (compendium)
 
-**Au stade du cadrage seul.** Le dossier
+**Rédigé hors portes, composé en PDF, non publiable.** Le dossier
 [`2 - Compendium/`](2%20-%20Compendium/) porte une table des matières
-commentée ([`TOC.md`](2%20-%20Compendium/PRD/TOC.md), **v0.25 du 27 juillet 2026** — chaque
-entrée de chapitre y est désormais suivie de sa **table des matières détaillée**, provenance par
+commentée ([`TOC.md`](2%20-%20Compendium/PRD/TOC.md), **v0.30 du 28 juillet 2026** — chaque
+entrée de chapitre y est suivie de sa **table des matières détaillée**, provenance par
 sous-section et table de couverture, **portée en titres markdown depuis la v0.18** : le plan du
 fichier expose la hiérarchie livre → chapitre → section), son
-**PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium/PRD/PRD.md), v0.9 du
-27 juillet 2026 — portes de lancement, régimes de preuve, critères d'acceptation, jalons), sa vue
-synoptique dérivée ([`README.md`](2%20-%20Compendium/README.md)), son exécutable
-de contrôle ([`check-toc.py`](2%20-%20Compendium/PRD/check-toc.py), avec son harnais de
-validation par mutation) et un
-[`CLAUDE.md`](2%20-%20Compendium/CLAUDE.md) de conventions —
-**c'est un plan de refonte, pas une nouvelle thèse.**
+**PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium/PRD/PRD.md), **v0.14 du
+28 juillet 2026** — portes de lancement, régimes de preuve, critères d'acceptation, jalons), son
+**socle consolidé** ([`socle-consolide.md`](2%20-%20Compendium/PRD/socle-consolide.md), **159 entrées**
+`S-001`…`S-159`), sa vue synoptique dérivée ([`README.md`](2%20-%20Compendium/README.md)), ses
+exécutables de contrôle ([`check-toc.py`](2%20-%20Compendium/PRD/check-toc.py) et trois autres,
+chacun avec son harnais de validation par mutation), un
+[`CLAUDE.md`](2%20-%20Compendium/CLAUDE.md) de conventions, ses **cinq Livres rédigés** et — depuis
+le 29 juillet 2026 — leur rendu paginé,
+[`compendium.pdf`](2%20-%20Compendium/compendium.pdf) —
+**c'est une refonte des trois volumes, pas une nouvelle thèse.**
 
-⚠ **Deux livres entiers y sont rédigés, et ils sont hors portes.** Le 27 juillet 2026, sur
-instruction d'auteur, les répertoires [`Livre I/`](2%20-%20Compendium/Livre%20I/) et
-[`Livre II/`](2%20-%20Compendium/Livre%20II/) ont été créés et **leurs vingt et un chapitres** — les
-fondements et la couche protocolaire (ch. 1-11), puis l'identité, la délégation et la fabrique de
-confiance (ch. 12-21) — y ont été rédigés en deux rendus chacun (`.md` source, `.html` de lecture à
-thème sombre), **avant** le franchissement des portes que le PRD pose comme préalables. Chaque pièce
-se déclare elle-même **brouillon, non publiable** et porte, en section hors plan, les conséquences de
-cet écart et les remontées qu'elle ouvre. ⚠ **Les deux écarts ne sont pas du même ordre** : le Livre I
-a été écrit avant G-1, G-2 et G-3 ; le **Livre II** l'est avant **G-3 et G-4** — et G-4, la collation
-de fond contre le Vol. III rédigé, est le préalable que le PRD nomme **pour ce Livre précisément**, sa
-source se déclarant elle-même non publiable. **Les trente-sept remontées des deux Livres sont
-soldées** — treize au Livre I, **vingt-quatre au Livre II, R-IV-14 à R-IV-37** —, chacune portée là où
-elle fait foi par deux passes d'arbitrage distinctes. Le fait central de la seconde : **cinq des
-treize thèses du Livre II portaient une forme que leur source avait bornée un mois plus tôt** sans que
-le plan suive — *cinq reports qui n'avaient pas été faits, non cinq divergences à arbitrer*, et
-**aucune pièce ne pouvait le voir seule**. **Le statut du volume n'en est pas changé** : socle
-consolidé à zéro entrée, cinq portes sur sept ouvertes, quatre décisions d'auteur sur neuf à prendre —
-et le TOC, le PRD et le conspectus n'ont été touchés par aucune rédaction, la règle d'escalade du PRD
-interdisant à un rédacteur de les corriger. *Un brouillon écrit hors portes ne franchit aucune
-porte* — et *zéro remontée ouverte ne veut pas dire pièce recevable.*
+⚠ **Les cinquante chapitres sont rédigés, et ils le sont hors portes.** Le 27 juillet 2026, sur
+instruction d'auteur, les cinq répertoires [`Livre I/`](2%20-%20Compendium/Livre%20I/) à
+[`Livre V/`](2%20-%20Compendium/Livre%20V/) ont été créés et **leurs cinquante chapitres** y ont été
+rédigés en deux rendus chacun (`.md` source, `.html` de lecture à thème sombre), **avant** le
+franchissement des portes que le PRD pose comme préalables ; chaque pièce se déclare elle-même
+**brouillon, non publiable** et porte, en section hors plan, les conséquences de cet écart. Les passes
+d'arbitrage qui ont suivi ont soldé leurs remontées, puis un **audit intégral des cinq Livres**
+([`audit.md`](2%20-%20Compendium/audit.md), cent constats) et une relecture des cinquante pièces ont
+précédé le franchissement de la **porte G-3** le 28 juillet 2026 — le socle consolidé, resté vide
+depuis l'ouverture du volume, porte désormais **159 entrées**. ⚠ **Rien de cela ne requalifie
+l'ouvrage** : *une porte franchie n'est pas un ouvrage recevable, c'est une condition qui cesse de
+manquer* — **G-4, G-5 et G-6 restent ouvertes**, et **CA-IV-11 comme CA-IV-13 demeurent
+insatisfaisables** faute d'un relecteur distinct du rédacteur. *Un brouillon écrit hors portes ne
+franchit aucune porte* — et *zéro remontée ouverte ne veut pas dire pièce recevable.* Le détail par
+Livre vit aux `README.md` des cinq dossiers et au
+[`CLAUDE.md`](2%20-%20Compendium/CLAUDE.md) du volume.
+
+⚠ **Un rendu paginé existe depuis le 29 juillet 2026, et il ne requalifie rien non plus.**
+[`compendium.pdf`](2%20-%20Compendium/compendium.pdf) — **847 pages**, les cinquante chapitres des
+cinq Livres, format 155 × 235 mm au style des monographies Springer, **sans aucune page blanche** —
+est composé par [`build/build-pdf.sh`](2%20-%20Compendium/build/build-pdf.sh), **quatrième pipeline
+du dépôt et le seul qui ne dérive pas du FESP**. Le rendu retire du corps les trois appareils que le
+volume tient hors corps (en-tête à cinq champs, thèse citée depuis le TOC, note de statut) et
+**marque d'une dague les vingt-trois renvois** que cette coupe laisserait pendre, plutôt que de les
+supprimer ; le statut non publiable est déclaré au colophon de la page de titre, une fois pour les
+cinquante. *Composer n'est pas publier* : le `.md` reste la seule source, et le PDF se régénère avec
+elle.
 
 Sa nature le distingue des trois autres : ce n'est ni un quatrième panneau ni un méta-index, mais
 un **omnibus qui absorbe les Vol. I, II et III** en un seul ouvrage réordonné et dédoublonné, à
@@ -193,10 +209,10 @@ est un **plafond dur** depuis la v0.23 (décision 13 du TOC, contrôle `C15`) : 
 jamais cinquante chapitres, et toute insertion se paie par une **fusion** dans la même passe — les
 deux entrées fusionnées étant conservées intégralement, en deux mouvements. C'est ainsi que le
 **ch. 41, la fabrique d'agents** (entré en v0.22 sur instruction d'auteur, matière neuve sans volume
-source, déclarée telle) a été payé par la fusion des ch. 47 et 48. Une fois
-rédigé, il se substitue à la lecture des trois volumes ; **jusque-là, les trois volumes sources
-font foi.** Ses décisions structurantes : numérotation continue, déduplication tracée sous chaque
-entrée, divergences héritées tranchées (et non plus signalées), méthode et gel unifiés, couverture
+source, déclarée telle) a été payé par la fusion des ch. 47 et 48. Une fois **recevable** — et il ne
+l'est pas : rédigé et composé ne valent pas publiable —, il se substituera à la lecture des trois
+volumes ; **jusque-là, les trois volumes sources font foi.** Ses décisions structurantes :
+numérotation continue, déduplication tracée sous chaque entrée, divergences héritées tranchées (et non plus signalées), méthode et gel unifiés, couverture
 totale tracée — chaque section des sources est affectée à un chapitre d'arrivée ou marquée « coupe
 assumée ».
 
@@ -207,7 +223,8 @@ re-mesurer les trois corpus par une commande de référence unique.
 ## Ordre de lecture et renvois
 
 **Vol. I → Vol. II → Vol. III**, la veille servant d'entrée rapide ou de mise à jour ; le Vol. IV
-les remplacera tous les trois une fois écrit.
+les remplacera tous les trois **une fois recevable** — il est écrit et composé, il n'est pas
+publiable, et [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) se feuillette sans faire foi.
 
 - **Vol. II présuppose Vol. I** pour la théorie du découplage, l'ingénierie des agents LLM,
   l'anatomie des protocoles, la sécurité de la couche agentique et la cryptographie post-quantique.
@@ -247,8 +264,9 @@ sources secondaires, et n'est donc pas mieux étayée que celle du Vol. II.
 AMF finale au 30 mars 2026 (ch. 31), aucun transfert de gouvernance d'AP2 documenté (ch. 10) —
 donc *contre* les lectures de la veille. L'arbitrage est consigné à son Annexe C. Sur AP2 il est
 **périmé par une source primaire datée** ; sur l'AMF il n'est **ni confirmé ni infirmé**. Et de
-toute manière, tant que le compendium n'est pas rédigé, **cet arbitrage n'a aucune autorité** : les
-volumes sources font foi et la divergence reste ouverte — le cadrage le dit lui-même.
+toute manière, tant que le compendium n'est pas **recevable** — ses cinquante chapitres sont un
+brouillon écrit hors portes, que le PDF compose sans le publier —, **cet arbitrage n'a aucune
+autorité** : les volumes sources font foi et la divergence reste ouverte — le plan le dit lui-même.
 
 > ⚠ Le fichier `commun/faits-partages.md`, évoqué par le cadrage du Vol. III comme source unique
 > de vérité pour les faits partagés, **n'existe pas et ne sera pas créé** : son PRD §7.5 a tranché
@@ -282,19 +300,25 @@ volumes sources font foi et la divergence reste ouverte — le cadrage le dit lu
 └── 2 - Compendium/                        ← Vol. IV
     ├── CLAUDE.md                            conventions du volume
     ├── README.md                            vue synoptique dérivée du TOC (le « conspectus » du volume)
-    ├── Livre I/                             ⚠ rédaction hors portes — 11 pièces sur 11, brouillons
-    │   ├── README.md                          état du livre, 13 remontées soldées, deux rendus
-    │   └── 01-… à 11-….md / .html             chapitres 1 à 11 — source + page à thème sombre
-    ├── Livre II/                            ⚠ rédaction hors portes — 10 pièces sur 10, brouillons
-    │   ├── README.md                          état du livre, 24 remontées soldées, 4 sièges, volumétrie
-    │   └── 12-… à 21-….md / .html             chapitres 12 à 21 — source + page à thème sombre
+    ├── audit.md                             rapport d'audit des cinq Livres (28 juill. 2026) — sans autorité
+    ├── compendium.pdf                       rendu paginé des 50 chapitres (847 p.) — brouillon non publiable
+    ├── build/                               pipeline propre au volume (PAS une copie du FESP)
+    │   ├── assemble.py                        50 pièces → compendium.md, 23 renvois marqués d'une dague
+    │   ├── springer.template                  gabarit Typst 155 × 235 mm, Palatino
+    │   └── build-pdf.sh                       bash build/build-pdf.sh → compendium.pdf
+    ├── Livre I/ … Livre V/                  ⚠ rédaction hors portes — 50 pièces sur 50, brouillons
+    │   ├── README.md                          état du livre, issues des remontées, sièges, volumétrie
+    │   └── NN-….md / .html                    un chapitre par pièce — source + page à thème sombre
     └── PRD/                                 gouvernance de la rédaction (sous-dossier)
-        ├── PRD.md                           v0.9 — portes, régimes de preuve, jalons
-        ├── TOC.md                           table des matières commentée (v0.25) — spécification
+        ├── PRD.md                           v0.14 — portes, régimes de preuve, jalons
+        ├── TOC.md                           table des matières commentée (v0.30) — spécification
+        ├── socle-consolide.md               socle consolidé S-001…S-159 (porte G-3, 28 juill. 2026)
+        ├── registre-gel.md                  registre de gel, une ligne par chapitre
         ├── check-toc.py                     contrôles C1-C15 (python PRD/check-toc.py)
-        ├── check-sieges.py                  contrôles S1-S5 inter-pièces — 7 sièges, 21 pièces
+        ├── check-sieges.py                  contrôles S1-S5 inter-pièces — sièges déclarés
+        ├── check-compendium.py              contrôles P1-P8 du socle consolidé
         ├── decompte.sh                      commande de décompte de référence (porte G-2)
-        └── check-toc-mutations.py           validation par mutation
+        └── *-mutations.py                   validation par mutation des trois contrôles
 ```
 
 **Où sont les `CLAUDE.md`.** **Cinq**, un par périmètre, sans recouvrement : la racine porte les
@@ -305,7 +329,7 @@ aucun `CLAUDE.md` de code ne subsiste au dépôt.)*
 
 ## Construire les PDF
 
-Quatre chaînes distinctes, à lancer depuis le dossier concerné.
+**Cinq** chaînes distinctes, à lancer depuis le dossier concerné.
 
 **Veille technologique** (racine) — invocation Pandoc directe, gabarit Typst par défaut :
 
@@ -341,15 +365,28 @@ python build/assemble.py                    # monographie/ → Monographie.md
 bash   build/build-pdf.sh Monographie.md    # → Monographie.pdf (427 p.)
 ```
 
-Les trois copies du pipeline évoluent séparément. ⚠ La **note d'état** que le PDF portait en page 2
-a été **retirée le 24 juillet 2026** sur demande de l'auteur (constante `ETAT` supprimée de
+Les trois copies du FESP évoluent séparément. ⚠ La **note d'état** que le PDF du Vol. III portait en
+page 2 a été **retirée le 24 juillet 2026** sur demande de l'auteur (constante `ETAT` supprimée de
 `build/assemble.py`) : la page de titre est directement suivie du résumé. *Le statut non publiable
 ne dépend d'aucune page qui le déclare* — il tient aux quinze remontées ouvertes (R-G-43 à R-G-57)
 et à la dette de vote sur F-92 et F-96.
 
+**Vol. IV** — assemblage des 50 pièces des cinq Livres, puis un pipeline **propre au volume** (créé
+le 29 juillet 2026, gabarit Typst au style des monographies Springer) ; depuis `2 - Compendium/` :
+
+```bash
+bash build/build-pdf.sh                     # Livre I/ … Livre V/ → compendium.pdf (847 p.)
+```
+
+⚠ Ce quatrième pipeline **ne dérive d'aucune des trois copies du FESP, et aucune ne dérive de lui** :
+la règle d'indépendance vaut donc pour **quatre**. Le script publie à chaque exécution ce qu'il a
+assemblé et marqué (50 chapitres, 5 livres, 23 renvois marqués d'une dague), et il **échoue** si une
+pièce ne porte pas les trois appareils qu'il retire — une pièce déformée passerait sinon sans bruit.
+
 **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, `python3` + `pypdf` ; polices Liberation Sans et
-DejaVu Sans (pipeline FESP), New Computer Modern (veille) ; pour les diagrammes, Node ≥ 18 +
-[`@mermaid-js/mermaid-cli`](https://github.com/mermaid-js/mermaid-cli) et un Chromium. Les trois
+DejaVu Sans (pipeline FESP), New Computer Modern (veille), Palatino Linotype (compendium — repli
+Book Antiqua / Libertinus, signalé à l'exécution) ; pour les diagrammes, Node ≥ 18 +
+[`@mermaid-js/mermaid-cli`](https://github.com/mermaid-js/mermaid-cli) et un Chromium. Les quatre
 `build-pdf.sh` exportent eux-mêmes `PYTHONUTF8=1` — inutile de le faire à la main sous Windows.
 **Règle permanente :** régénérer et versionner le PDF avec sa source — jamais la source seule.
 
@@ -417,6 +454,18 @@ sortie 0), Vol. I **569 p. / 28 diagrammes**, Vol. II **387 p. / 29 pièces**, V
 34 pièces / 30 rapports de vérification**. Un renvoi cassé a été corrigé dans le périmètre de la
 passe — les quatre lignes `../doc/…` de `…/2 - OrchestrationAgentique/monographie/README.md`,
 repointées vers `../prd/…`.
+
+**Le 29 juillet 2026**, ce `README.md` et le [`CLAUDE.md`](CLAUDE.md) de la racine ont été
+resynchronisés sur **l'ajout de [`compendium.pdf`](2%20-%20Compendium/compendium.pdf)** et sur le
+quatrième pipeline qui le compose : chaînes de rendu portées de quatre à **cinq**, arborescence du
+Vol. IV réalignée sur ses cinq Livres et son `build/`, règle du « PDF versionné avec sa source »
+étendue au compendium. Décomptes **re-mesurés sur pièce** à cette date : **847 pages**
+(`pypdf`, sur le PDF versionné), **50 chapitres en 5 livres** et **23 renvois marqués d'une dague**
+(sortie de `build/assemble.py`), **159 entrées** au socle consolidé, TOC **v0.30** et PRD **v0.14**.
+⚠ **Aucun de ces chiffres ne requalifie le volume** : les cinquante chapitres demeurent un brouillon
+non publiable, et *composer n'est pas publier*. Le reste de l'état du Vol. IV — issues des remontées,
+volumétrie par Livre, décisions d'auteur — vit au [`CLAUDE.md` du
+dossier](2%20-%20Compendium/CLAUDE.md) et n'est pas repris ici.
 
 ⚠ Le décompte des diagrammes du Vol. I se mesure avec un motif **ancré** :
 `grep -c '^```mermaid'` donne 28. Le motif non ancré en retourne 29 — il attrape une ligne de prose

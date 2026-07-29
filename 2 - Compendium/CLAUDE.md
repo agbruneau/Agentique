@@ -169,7 +169,10 @@ copie du FESP** : les trois copies du FESP appartiennent aux Vol. I, II et III, 
 copiée ici — celui-ci est propre au volume (gabarit `build/springer.template`, format 155 × 235 mm,
 Palatino, titres courants en petites capitales) et un correctif à l'un des quatre ne se propage à
 aucun autre. **Cinq points à connaître avant d'y toucher.** *(a)* ⚠ **Le
-`.md` reste la seule source** : le PDF se régénère, il ne se corrige jamais. *(b)* ⚠ **Le rendu
+`.md` reste la seule source** : le PDF se régénère (`bash build/build-pdf.sh`), il ne se corrige
+jamais — et il se régénère **dans le commit qui touche une pièce**, la règle du PDF versionné avec sa
+source ([`CLAUDE.md` racine](../CLAUDE.md)) valant pour ce rendu comme pour les trois monographies.
+*Un `.md` de chapitre poussé sans son PDF recomposé est un commit incomplet.* *(b)* ⚠ **Le rendu
 RETIRE trois appareils, et il les retire parce que le volume les déclare hors corps** : l'en-tête à
 cinq champs, la **thèse citée depuis le TOC** et la **note de statut** — les trois hors du corps que
 mesure `PRD/decompte.sh` (PRD §6, skill §7). ⚠ **Retirer n'est pas ignorer** : l'assemblage **exige**
