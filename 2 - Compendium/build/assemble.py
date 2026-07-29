@@ -11,10 +11,14 @@ Ce que l'assemblage RETIRE, et pourquoi :
   - l'en-tete a cinq champs (Statut / Date de gel / Socle mobilise /
     Garde-fous balayes / Volumetrie ciblee), appareil de gouvernance et non
     corps de chapitre (idem : hors du corps mesure par `decompte.sh`) ;
+  - la these citee depuis le TOC, qui est le cahier des charges de la piece et
+    non son propos (idem : hors du corps mesure) ;
   - les filets `---`, qui ne sont que des separateurs de section.
-Ce qu'il conserve : titre, ligne de situation, these citee, et tout le corps.
-L'etat du volume (brouillon non publiable) est declare une fois, en liminaire,
-par le gabarit — retire des pieces, il n'est pas efface.
+Les trois appareils sont neanmoins EXIGES a la lecture : leur absence fait
+echouer l'assemblage, faute de quoi une piece deformee passerait sans bruit.
+Ce qu'il conserve : titre, ligne de situation, et tout le corps. L'etat du
+volume (brouillon non publiable) est declare une fois, au colophon du gabarit —
+retire des pieces, il n'est pas efface.
 """
 import re
 import sys
@@ -100,12 +104,12 @@ def piece(chemin, numero):
             break
         i += 1
 
-    # --- these ---
+    # --- these : retiree du rendu, comme l'en-tete et la note de statut ---
     while i < len(lignes) and not lignes[i].strip():
         i += 1
     if i < len(lignes) and lignes[i].startswith(">"):
         while i < len(lignes) and lignes[i].startswith(">"):
-            these.append(re.sub(r"^>\s?", "", lignes[i]))
+            these.append(lignes[i])
             i += 1
 
     # --- ouverture de chapitre ---
@@ -115,10 +119,8 @@ def piece(chemin, numero):
         sortie.append(brut("#situation["))
         sortie.append("\n".join(situation) + "\n")
         sortie.append(brut("]"))
-    if these:
-        sortie.append(brut("#these["))
-        sortie.append("\n".join(these) + "\n")
-        sortie.append(brut("]"))
+    if not these:
+        sys.exit(f"[assemble] {chemin} : these introuvable (borne d'en-tete)")
 
     # --- corps ---
     corps = []

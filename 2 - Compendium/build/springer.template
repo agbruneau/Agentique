@@ -41,23 +41,22 @@
     .filter(e => e.location().page() == p).len() > 0
 }
 
-// ---- titre courant : verso = chapitre, recto = section ----
+// ---- titre courant : chapitre et section à gauche, folio à droite ----
+// Le rendu ne comporte aucune page blanche, donc aucune parité recto/verso :
+// un titre courant qui alternerait selon la parité alternerait sans objet.
 #let entete = context {
   if not ouvre-ici() {
     let chs = query(selector(heading.where(level: 1)).before(here()))
     if chs.len() > 0 {
-      let n = chs.len()
+      let secs = query(selector(heading.where(level: 2)).before(here()))
+      // Le numéro de section porte déjà celui du chapitre : le titre de
+      // chapitre en plus déborderait sur une seconde ligne, qui décalerait
+      // le folio. 58 grappes tiennent en petites capitales à 8 pt.
+      let st = if secs.len() > 0 { secs.last().body } else {
+        [Chapitre #chs.len() · #chs.last().body] }
       set text(font: SERIF, size: 8pt, fill: GRIS)
-      let folio = counter(page).display()
-      if calc.even(here().page()) {
-        grid(columns: (auto, 1fr), column-gutter: 1em, align: (left + bottom, right + bottom),
-          folio, smallcaps(court([Chapitre #n · #chs.last().body], 74)))
-      } else {
-        let secs = query(selector(heading.where(level: 2)).before(here()))
-        let st = if secs.len() > 0 { secs.last().body } else { chs.last().body }
-        grid(columns: (1fr, auto), column-gutter: 1em, align: (left + bottom, right + bottom),
-          smallcaps(court(st, 74)), folio)
-      }
+      grid(columns: (1fr, auto), column-gutter: 1em, align: (left + bottom, right + bottom),
+        smallcaps(court(st, 58)), counter(page).display())
     }
   }
 }
@@ -72,8 +71,7 @@
 
 #set page(
   width: 155mm, height: 235mm,
-  margin: (inside: 21mm, outside: 16mm, top: 19mm, bottom: 20mm),
-  binding: left,
+  margin: (x: 19mm, top: 19mm, bottom: 20mm),
   numbering: none,
   header: none,
   footer: none,
@@ -140,7 +138,7 @@
 
 // ---- ouverture de livre (page de partie, au recto) ----
 #let ouverture-livre(romain, verbe, sous) = {
-  pagebreak(to: "odd", weak: true)
+  pagebreak(weak: true)
   [#metadata((romain: romain, verbe: verbe, sous: sous))<ouverture-livre>]
   v(6.2cm)
   set par(justify: false, first-line-indent: 0pt)
@@ -151,15 +149,11 @@
   text(font: SERIF, size: 22pt, weight: "bold", verbe)
   v(0.7em)
   text(font: SERIF, size: 11.5pt, style: "italic", fill: GRIS, sous)
-  pagebreak(weak: false)
 }
 
-// ---- ouverture de chapitre (au recto) ----
+// ---- ouverture de chapitre ----
 #let ouverture-chapitre(n) = {
-  {
-    set page(header: none, footer: none)
-    pagebreak(to: "odd", weak: true)
-  }
+  pagebreak(weak: true)
   v(1.1cm)
   set par(justify: false, first-line-indent: 0pt)
   text(font: SERIF, size: 10pt, fill: GRIS, smallcaps[Chapitre])
@@ -179,15 +173,6 @@
   set par(justify: false, leading: 0.55em, first-line-indent: 0pt)
   body
 })
-
-// ---- thèse : le résumé d'ouverture ----
-#let these(body) = block(width: 100%, above: 0.9em, below: 1.9em,
-  inset: (top: 8pt, bottom: 8pt),
-  stroke: (top: 0.5pt + FILET, bottom: 0.5pt + FILET), {
-    set text(size: 9.5pt)
-    set par(leading: 0.6em, spacing: 0.6em, first-line-indent: 0pt, justify: true)
-    body
-  })
 
 // ================= Liminaires =================
 
@@ -222,53 +207,27 @@
    en cinq livres, condensés des volumes I (*Interopérabilité agentique*),
    II (*L'autonomie encadrée*) et III (*L'entreprise agentique*).]
   parbreak()
+  [*Brouillon de rédaction, non publiable.* Les cinquante chapitres ont été
+   rédigés sur instruction d'auteur avant le franchissement des portes de
+   lancement du volume ; G-4, G-5 et G-6 restent ouvertes, aucun vote
+   adversarial n'a été conduit sur le socle consolidé, et les critères CA-IV-11
+   et CA-IV-13 exigent un relecteur distinct du rédacteur, que la gouvernance
+   du volume ne fournit pas. *Aucun énoncé de cet ouvrage n'est central* au sens
+   du critère CA-IV-01.]
+  parbreak()
   [Gel unique du compendium : 27 juillet 2026 (décision d'auteur D-1). Les faits
    périssables portent en outre le gel de leur source.]
+  parbreak()
+  [Ce rendu retire trois appareils que les pièces portent et qui ne sont pas du
+   corps : l'en-tête de gouvernance à cinq champs, la thèse citée depuis le plan,
+   et la note de statut de clôture. Les renvois du corps vers cette note sont
+   conservés et suivis d'une dague — *§ 25.9 †* —, qui se lit : section retirée
+   du présent rendu, à consulter au fichier source.]
   parbreak()
   [Rendu composé avec Pandoc et Typst au format 155 × 235 mm. Les sources
    `.md` font foi ; ce PDF en est un rendu.]
   parbreak()
   [© André-Guy Bruneau. Tous droits réservés.]
-})
-#pagebreak(weak: false)
-
-// -- avertissement --
-#v(2.2cm)
-#block(width: 100%, {
-  set par(justify: true, leading: 0.66em, spacing: 1.15em, first-line-indent: 0pt)
-  text(font: SERIF, size: 14pt, weight: "bold")[Avertissement — état du volume]
-  v(0.9em)
-  line(length: 100%, stroke: 0.6pt + FILET)
-  v(1.0em)
-  set text(size: 9.5pt)
-  [Les cinquante chapitres réunis ici sont un *brouillon de rédaction, non
-   publiable*. Ils ont été rédigés sur instruction d'auteur avant le
-   franchissement des portes de lancement que leur cahier des charges pose
-   comme préalables, et cet écart n'est pas résorbé par le présent rendu.]
-  parbreak()
-  [Trois conditions demeurent insatisfaites à la date de composition. Les
-   portes G-4, G-5 et G-6 restent ouvertes. Aucun vote adversarial n'a été
-   conduit sur les entrées du socle consolidé, dont vingt-deux portent une date
-   non re-vérifiée et vingt-huit sont partielles ; en conséquence, *aucun
-   énoncé de cet ouvrage n'est central* au sens du critère CA-IV-01. Enfin, les
-   critères CA-IV-11 et CA-IV-13 exigent un relecteur distinct du rédacteur, que
-   la gouvernance du volume ne fournit pas : le texte a été arbitré, il n'a pas
-   été relu par un tiers.]
-  parbreak()
-  [Ce rendu retire deux appareils que les sources portent et qui ne sont pas du
-   corps : l'en-tête de gouvernance à cinq champs qui ouvre chaque pièce, et la
-   note de statut qui la referme — l'un et l'autre déclarés hors plan, et
-   exclus du corps par la commande de décompte du volume. Ils demeurent aux
-   fichiers `.md`, qui font foi. Le présent avertissement tient lieu, une fois,
-   de ce que ces cinquante déclarations disaient chapitre par chapitre.]
-  parbreak()
-  [Vingt-trois renvois du corps désignaient cette note de statut. Ils sont
-   conservés et suivis d'une dague — *§ 25.9 †* —, qui se lit : « section
-   retirée du présent rendu, à consulter au fichier source ». Un renvoi
-   supprimé serait plus commode et moins honnête qu'un renvoi marqué.]
-  parbreak()
-  [Une porte franchie n'est pas un ouvrage recevable ; c'est une condition qui
-   cesse de manquer. Le lecteur est prévenu de la différence.]
 })
 #pagebreak(weak: false)
 
@@ -318,7 +277,7 @@
 
 // ================= Corps =================
 
-#pagebreak(to: "odd", weak: true)
+#pagebreak(weak: true)
 #counter(page).update(1)
 #set page(numbering: "1", header: entete, footer: pied)
 

@@ -207,7 +207,7 @@ l'auteur, au gabarit FESP des monographies : c'était bien une troisième copie,
 ⚠ **Un QUATRIÈME pipeline existe depuis le 29 juillet 2026, et ce n'est pas une quatrième copie du
 FESP.** Le Vol. IV a reçu le sien — [`2 - Compendium/build/`](2%20-%20Compendium/build/) : gabarit
 Typst propre, format 155 × 235 mm au style des monographies Springer, sortie
-[`compendium.pdf`](2%20-%20Compendium/compendium.pdf), **891 pages**. Il ne dérive d'aucune des trois
+[`compendium.pdf`](2%20-%20Compendium/compendium.pdf), **847 pages, sans aucune page blanche**. Il ne dérive d'aucune des trois
 copies et aucune ne dérive de lui ; la règle d'indépendance vaut donc pour **quatre**. ⚠ **Composer
 n'est pas publier** : le rendu ne requalifie rien, les cinquante chapitres demeurent un **brouillon
 non publiable** et le PDF le déclare en liminaire. Le détail — ce que le rendu retire, et comment il
