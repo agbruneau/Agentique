@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapport d'arbitrage — La somme agentique</title>
+<style>
+  :root{
+    --encre:#1a1c20; --gris:#54575e; --gris-pale:#8a8d94;
+    --fond:#fbfaf7; --carte:#ffffff; --filet:#e3e0d8;
+    --accent:#7a2e2e; --accent-pale:#f3e8e8;
+    --ok:#2e6b45; --ok-pale:#e7f1ea;
+    --moyen:#8a6d1f; --moyen-pale:#f6efdb;
+    --alerte:#9c3a2e; --alerte-pale:#f7e8e5;
+    --info:#31536e; --info-pale:#e8eff5;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--fond);color:var(--encre);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    font-size:16.5px;line-height:1.62;}
+  .page{max-width:960px;margin:0 auto;padding:0 28px 90px}
+  header.entete{border-bottom:3px double var(--filet);padding:56px 0 30px;margin-bottom:36px}
+  .surtitre{font-family:Avenir,"Segoe UI",Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+  h1{font-size:34px;line-height:1.2;margin:0 0 10px;font-weight:600}
+  .soustitre{font-size:19px;color:var(--gris);font-style:italic;margin:0 0 26px;line-height:1.45}
+  .cartouche{display:grid;grid-template-columns:170px 1fr;gap:6px 18px;font-size:14.5px;
+    border-top:1px solid var(--filet);padding-top:18px}
+  .cartouche dt{color:var(--gris-pale);font-family:Avenir,"Segoe UI",sans-serif;font-size:12.5px;
+    text-transform:uppercase;letter-spacing:.08em;padding-top:2px}
+  .cartouche dd{margin:0}
+  h2{font-size:25px;font-weight:600;margin:60px 0 6px;padding-top:14px;border-top:1px solid var(--filet)}
+  h2 .num{color:var(--accent);margin-right:10px;font-variant-numeric:lining-nums}
+  h3{font-size:19px;font-weight:600;margin:34px 0 10px}
+  h4{font-size:16px;font-weight:600;margin:24px 0 6px}
+  p{margin:0 0 15px}
+  .chapo{font-size:18px;color:var(--gris);margin:8px 0 22px;font-style:italic}
+  .verdict{background:var(--carte);border:1px solid var(--filet);border-left:5px solid var(--accent);
+    padding:24px 28px;margin:26px 0;border-radius:0 6px 6px 0}
+  .verdict .decision{font-family:Avenir,"Segoe UI",sans-serif;font-size:13px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .verdict p:last-child{margin-bottom:0}
+  .encadre{background:var(--info-pale);border:1px solid #cfdde9;padding:18px 22px;margin:20px 0;
+    border-radius:6px;font-size:15.5px}
+  .encadre.methode{background:#f4f2ec;border-color:var(--filet)}
+  table{width:100%;border-collapse:collapse;margin:18px 0 26px;font-size:14.5px;background:var(--carte)}
+  th{font-family:Avenir,"Segoe UI",sans-serif;font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;
+    text-align:left;color:var(--gris);border-bottom:2px solid var(--encre);padding:9px 12px;background:#f6f4ee}
+  td{border-bottom:1px solid var(--filet);padding:10px 12px;vertical-align:top}
+  tr:last-child td{border-bottom:2px solid var(--filet)}
+  td.num, th.num{text-align:center;font-variant-numeric:lining-nums;white-space:nowrap}
+  .badge{display:inline-block;font-family:Avenir,"Segoe UI",sans-serif;font-size:11.5px;font-weight:600;
+    letter-spacing:.05em;padding:3px 9px;border-radius:99px;white-space:nowrap}
+  .b-ok{background:var(--ok-pale);color:var(--ok)}
+  .b-part{background:var(--moyen-pale);color:var(--moyen)}
+  .b-alerte{background:var(--alerte-pale);color:var(--alerte)}
+  .b-info{background:var(--info-pale);color:var(--info)}
+  .b-statut{background:#eee9df;color:#6c6350}
+  ul,ol{margin:0 0 16px;padding-left:26px}
+  li{margin-bottom:9px}
+  li::marker{color:var(--accent)}
+  .toc{background:var(--carte);border:1px solid var(--filet);border-radius:6px;padding:22px 28px;margin:28px 0;
+    columns:2;column-gap:40px;font-size:15px}
+  .toc a{color:var(--encre);text-decoration:none;display:block;padding:3px 0;border-bottom:1px dotted transparent}
+  .toc a:hover{color:var(--accent)}
+  .toc .toc-num{color:var(--accent);display:inline-block;width:26px;font-variant-numeric:lining-nums}
+  a{color:var(--info)}
+  .note-glob{display:flex;gap:14px;flex-wrap:wrap;margin:22px 0}
+  .tuile{flex:1 1 150px;background:var(--carte);border:1px solid var(--filet);border-radius:6px;
+    padding:14px 16px;text-align:center}
+  .tuile .val{font-size:27px;font-weight:600;font-variant-numeric:lining-nums;color:var(--accent)}
+  .tuile .lib{font-family:Avenir,"Segoe UI",sans-serif;font-size:11.5px;text-transform:uppercase;
+    letter-spacing:.08em;color:var(--gris);margin-top:3px}
+  .tuile .just{font-size:12.5px;color:var(--gris-pale);margin-top:6px;line-height:1.4}
+  .livre-bloc{background:var(--carte);border:1px solid var(--filet);border-radius:6px;
+    padding:26px 30px;margin:26px 0}
+  .livre-bloc h3{margin-top:0}
+  .epigraphe{border-left:3px solid var(--filet);padding-left:18px;color:var(--gris);font-style:italic;margin:18px 0}
+  .statut-note{font-size:13.5px;color:var(--gris-pale);font-style:italic}
+  .pied{margin-top:70px;border-top:3px double var(--filet);padding-top:20px;font-size:13.5px;color:var(--gris)}
+  code{font-family:"SF Mono",Consolas,Menlo,monospace;font-size:.85em;background:#f1efe8;
+    padding:1px 5px;border-radius:4px}
+  @media(max-width:720px){.toc{columns:1}.cartouche{grid-template-columns:1fr}}
+  @media print{body{background:#fff}.page{max-width:none}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="entete">
+  <p class="surtitre">Rapport d'arbitrage académique — évaluation par les pairs (simulée)</p>
+  <h1>La somme agentique</h1>
+  <p class="soustitre">Interopérabilité, autonomie encadrée et fabrique de confiance : déployer des agents en services financiers réglementés (2024-2032) — André-Guy Bruneau, M.Sc.&nbsp;IT. Compendium, 810&nbsp;pages, 50&nbsp;chapitres en 5&nbsp;livres, arrêté le 29&nbsp;juillet 2026 (D-10).</p>
+  <dl class="cartouche">
+    <dt>Pièce évaluée</dt><dd><code>Compendium.pdf</code> (rendu Typst du 29 juillet 2026) et les cinquante chapitres sources <code>.md</code> des Livres I à V</dd>
+    <dt>Date du rapport</dt><dd>30 juillet 2026</dd>
+    <dt>Nature</dt><dd>Rapport d'arbitrage de type presse universitaire : verdict motivé, forces, faiblesses majeures et mineures, examen par livre et par chapitre, vérification factuelle d'échantillon, recommandations priorisées</dd>
+    <dt>Dispositif</dt><dd>Dix rapporteurs spécialisés (deux par livre en moyenne, profils : architecture d'entreprise, protocoles, IAM/cryptographie, droit financier canadien, paiements, infonuagique, génie logiciel) et deux vérificateurs factuels en ligne — l'ensemble instrumenté par IA (Claude), sous la réserve de la §&nbsp;10</dd>
+    <dt>Longueur</dt><dd>≈ 9 000 mots</dd>
+  </dl>
+</header>
+
+<nav class="toc">
+  <a href="#s1"><span class="toc-num">1</span>Verdict et décision motivée</a>
+  <a href="#s2"><span class="toc-num">2</span>L'objet et sa singularité</a>
+  <a href="#s3"><span class="toc-num">3</span>Forces de l'ouvrage</a>
+  <a href="#s4"><span class="toc-num">4</span>Faiblesses majeures</a>
+  <a href="#s5"><span class="toc-num">5</span>Faiblesses mineures</a>
+  <a href="#s6"><span class="toc-num">6</span>Vérification factuelle d'échantillon</a>
+  <a href="#s7"><span class="toc-num">7</span>Examen par livre et par chapitre</a>
+  <a href="#s8"><span class="toc-num">8</span>Notes indicatives consolidées</a>
+  <a href="#s9"><span class="toc-num">9</span>Recommandations priorisées</a>
+  <a href="#s10"><span class="toc-num">10</span>Limites de la présente évaluation</a>
+</nav>
+
+<!-- ===================== 1. VERDICT ===================== -->
+<h2 id="s1"><span class="num">1</span>Verdict et décision motivée</h2>
+
+<div class="verdict">
+  <div class="decision">Décision : révision majeure — accepté sur le fond, non diffusable en l'état</div>
+  <p><strong>L'ouvrage est une contribution substantielle, d'une discipline épistémique supérieure à tout ce que la littérature praticienne du domaine offre à ce jour, et il n'est pas publiable en l'état — ce qu'il est le premier à déclarer.</strong> Les dix rapports de lecture convergent sans exception sur ce double constat. La vérification factuelle d'échantillon (22 affirmations, §&nbsp;6) le corrobore : aucune affirmation n'est infirmée dans sa substance, résultat rare pour un corpus de cette volatilité. Le verdict « révision majeure » ne sanctionne donc ni la fabrication ni l'erreur, mais l'<em>inachèvement déclaré</em> : un régime de preuve [C] dominant dont l'élévation aux sources primaires reste due, l'absence structurelle de relecteur distinct du rédacteur (CA-IV-11/13, insatisfaites de l'aveu du volume), un appareil de gouvernance hypertrophié qui étouffe le corps, et une politique d'anonymisation qui contredit la vérifiabilité que la méthode revendique.</p>
+  <p style="margin-top:12px">Le statut que l'ouvrage s'assigne — « brouillon arrêté, non publiable », diffusion en bibliothèque personnelle sous dérogation nommée — est exactement celui que le présent arbitrage lui aurait assigné. La convergence entre l'auto-évaluation de l'auteur et l'évaluation externe est en soi un résultat : le dispositif de gouvernance interne, malgré ses défauts de forme, produit un diagnostic juste.</p>
+</div>
+
+<div class="note-glob">
+  <div class="tuile"><div class="val">3,9</div><div class="lib">Originalité /5</div><div class="just">Instruments propres réels ; matière largement dérivée, assumée telle</div></div>
+  <div class="tuile"><div class="val">4,3</div><div class="lib">Rigueur /5</div><div class="just">Discipline d'énoncé exceptionnelle ; intégralement auto-attestée</div></div>
+  <div class="tuile"><div class="val">3,3</div><div class="lib">Structure /5</div><div class="just">Composition réelle par sièges ; appareil envahissant</div></div>
+  <div class="tuile"><div class="val">3,0</div><div class="lib">Sources /5</div><div class="just">Datation exemplaire ; régime [C] dominant, anonymisation</div></div>
+  <div class="tuile"><div class="val">3,7</div><div class="lib">Utilité praticienne /5</div><div class="just">Grilles et patrons actionnables ; peu de seuils et de valeurs</div></div>
+</div>
+<p class="statut-note">Moyennes des notes attribuées par les dix rapporteurs (détail à la §&nbsp;8). Échelle 1-5 ; construction d'évaluateur, indicative et non normalisée.</p>
+
+<!-- ===================== 2. OBJET ===================== -->
+<h2 id="s2"><span class="num">2</span>L'objet et sa singularité</h2>
+
+<p>La thèse de l'ouvrage tient en une phrase que la page de titre porte déjà : l'interopérabilité agentique est une propriété à maintenir, non un état atteint, et elle exige conjointement cinq termes — contrat protocolaire découplé, identité et délégation vérifiables au point d'application, contrôle de finalité opposable, provenance attestée de l'artefact, mesure du comportement en exploitation — dont aucun ne supplée l'absence d'un autre. Les cinq livres sont les cinq coupes de cet objet unique (coopérer, faire confiance, encadrer, appliquer-exploiter-produire-composer, livrer et clore), tendues par une horloge datée : convergence protocolaire 2024-2026, entrée en vigueur commune E-23/AMF au 1ᵉʳ&nbsp;mai 2027, jalons post-quantiques 2030/2035 du NIST&nbsp;IR&nbsp;8547.</p>
+
+<p>Trois traits distinguent l'objet de tout comparable connu des rapporteurs. D'abord, le croisement effectif de trois corpus qui ne se rencontrent jamais dans la même reliure : la théorie de l'intégration d'entreprise, la couche protocolaire agentique naissante (MCP, A2A, AP2), et le droit financier canadien au grain de la ligne directrice et de l'article. Ensuite, un appareil épistémique déclaré et outillé — niveaux de preuve [A]/[B]/[C], trois degrés d'absence, tri PROGRAMMÉ/PROJETÉ/SPÉCULATIF, attribution systématique des métriques auto-déclarées — appliqué avec une constance que les dix rapports qualifient unanimement de rare à exceptionnelle. Enfin, une gouvernance de rédaction (portes, socle consolidé de 159 entrées, décisions d'auteur numérotées, registre de gel, événements de péremption datés) qui fait de l'ouvrage à la fois un texte et une expérience de méthode — et c'est précisément cette dualité qui produit ses défauts de forme les plus lourds.</p>
+
+<p>Il faut dire clairement ce que l'ouvrage n'est pas : ce n'est ni un manuel (il refuse les seuils et les recettes), ni une monographie de recherche (la matière est majoritairement une condensation de trois volumes antérieurs du même auteur, ce que le chapitre&nbsp;1 déclare : « rien de ce chapitre n'est neuf »), ni un avis de conformité (le garde-fou « aucun avis juridique » est tenu). C'est une <em>somme</em> au sens médiéval revendiqué : l'ordonnancement daté et discipliné d'un état de connaissance, avec ses vides déclarés plutôt que comblés.</p>
+
+<!-- ===================== 3. FORCES ===================== -->
+<h2 id="s3"><span class="num">3</span>Forces de l'ouvrage</h2>
+
+<h3>3.1 Une discipline épistémique sans équivalent dans le genre</h3>
+<p>C'est le jugement le plus unanime des dix rapports. Chaque énoncé porte son niveau de preuve, chaque absence son degré (fait négatif vérifié avec borne de balayage déclarée, absence de documentation, absence non instruite), chaque inférence son auteur (« Lecture de l'auteur »), chaque métrique son attributeur et son millésime. Les exemples exemplaires abondent : le traitement du chiffre « +90&nbsp;% / 15× les jetons » avec ses trois réserves et la charge de preuve inversée (ch.&nbsp;6, §&nbsp;6.1.1) ; la discipline lexicale du chapitre&nbsp;33 (« lancé » et « en production » proscrits pour le RTR, domaine départagé rail par rail) ; le traitement des jalons du NIST&nbsp;IR&nbsp;8547 au chapitre&nbsp;21 — statut de brouillon rappelé à chaque mention, « visée » jamais « fixée », 2035 lu comme plafond en lecture d'auteur marquée ; l'arithmétique adversariale sur les chiffres d'entreprise du chapitre&nbsp;35 (1&nbsp;500 courriels/jour × 30 ≠ 60-70&nbsp;000 demandes/mois). La distinction entre <em>lacune de couverture</em> et <em>contradiction entre volumes</em> (ch.&nbsp;10-11) mériterait d'être enseignée.</p>
+
+<h3>3.2 Une fiabilité factuelle qui résiste à la contre-vérification</h3>
+<p>Sur les 22 affirmations vérifiées en ligne par sondage ciblé (§&nbsp;6), 19 sont confirmées sur source primaire, 3 partiellement, 0 infirmées. Les énoncés les plus périssables tiennent tous à la date d'arrêt : statut de brouillon d'IR&nbsp;8547, statut <em>Development</em> des conventions OpenTelemetry GenAI, stade <em>Candidate Recommendation</em> de DID&nbsp;1.1, fait négatif du normalisateur technique non désigné en services bancaires axés sur le consommateur. Fait remarquable : la ratification de la révision MCP, que l'ouvrage annonçait pour le 28&nbsp;juillet 2026 en la déclarant premier événement de péremption daté, <strong>a effectivement eu lieu ce jour-là</strong> — le dispositif de péremption a été éprouvé par le réel avant même la clôture, et l'ouvrage a constaté la bascule selon sa propre règle sans avancer le gel (D-1).</p>
+
+<h3>3.3 Des instruments conceptuels propres et opposables</h3>
+<p>Au-delà de la condensation, l'arbitrage reconnaît des contributions originales réelles : la <strong>grille des cinq questions</strong> (ch.&nbsp;14), dont la valeur tient moins à ses questions — classiques en IAM — qu'à sa discipline d'application (trois verdicts seulement, case vide lue comme état de la preuve, falsifiabilité déclarée) ; le <strong>passeport d'agent</strong> (ch.&nbsp;16) comme <em>absence nommée</em>, avec le résultat doctrinal le plus solide du Livre&nbsp;II (« l'assemblage n'est pas une somme : aucune pièce ne fournit à une autre l'ancrage qui lui manque ») ; le <strong>chapitre-pivot&nbsp;29</strong>, traduction des exigences canadiennes en frames déterministes, traçable exigence par exigence avec ses sauts inférentiels déclarés ligne à ligne ; la <strong>requalification du <em>harvest now, decrypt later</em> en forgeabilité rétroactive</strong> des artefacts d'identité (ch.&nbsp;21), techniquement fondée ; la <strong>typologie des vides</strong> de la matrice protocoles × exigences (ch.&nbsp;42), exploitée en cahier des charges plutôt que constatée ; le <strong>couple péremption/revalidation outillé</strong> (ch.&nbsp;50), dont deux rangées ont changé de tri en vingt-quatre heures « et le tableau fonctionne quand il change » ; l'asymétrie émission soignée / révocation négligée (ch.&nbsp;20), conforme à vingt ans d'histoire des PKI et correctement transposée.</p>
+
+<h3>3.4 Une composition réelle, non une juxtaposition</h3>
+<p>Le mécanisme des « sièges » (une matière posée une fois, citée partout sans reconstruction) et les sections « ce que le chapitre lègue » assurent une intégration effective sur 810 pages : les cinq zones de compensation du chapitre&nbsp;42 deviennent le cahier des charges du chapitre&nbsp;43, formalisé au&nbsp;44, instancié au&nbsp;45, séquencé au&nbsp;46. Les deux armatures héritées (l'invariant à quatre termes ; les trois capacités émettre/appliquer/exploiter) traversent l'ensemble sans se démentir. Le rapporteur du Livre&nbsp;IV, le plus sévère sur la forme, conclut néanmoins : « le mouvement compose, il ne juxtapose pas ».</p>
+
+<h3>3.5 L'honnêteté érigée en méthode</h3>
+<p>L'ouvrage déclare ses angles morts (le harnais d'exécution, risque&nbsp;14 ; l'accord sous défaillance, risque&nbsp;15 ; la quatrième pièce du passeport, risque&nbsp;17) plutôt que de les combler en surface ; il consigne ses propres infractions (D-9 enfreinte nommément aux ch.&nbsp;25 et&nbsp;27) ; il abandonne une thèse quantitative réfutée au vote plutôt que de la maintenir (ch.&nbsp;19, « part majoritaire ») — la bonne décision scientifique, relevée comme telle par le rapporteur sécurité. Cette honnêteté n'est pas décorative : elle est outillée (contrôles exécutables, registre de gel, commande de décompte) et elle a un coût assumé que la §&nbsp;4 détaille.</p>
+
+<!-- ===================== 4. FAIBLESSES MAJEURES ===================== -->
+<h2 id="s4"><span class="num">4</span>Faiblesses majeures</h2>
+<p class="chapo">Huit faiblesses transversales, par ordre décroissant de gravité. Chacune est documentée par au moins deux rapports de lecture indépendants ; aucune n'est une découverte — toutes recoupent des réserves que l'ouvrage déclare lui-même, ce qui en confirme le diagnostic mais n'en éteint pas la charge.</p>
+
+<h3>F-1 — Le régime de preuve [C] domine là où l'ouvrage porte le plus</h3>
+<p>La hiérarchie [A]/[B]/[C] est déclarée partout et exercée inégalement. Des pans entiers — le chapitre&nbsp;24 (passage à l'échelle, le plus long du Livre&nbsp;III), les chapitres&nbsp;30-31 (maillage réglementaire international, durcisseurs financiers), le chapitre&nbsp;34 (sous-domaines, jamais ré-adossé au socle consolidé), le chapitre&nbsp;44 (ArchiMate, intégralement en [C] avec préalable C260 déclaré non exécuté), le premier mouvement des chapitres&nbsp;47 et&nbsp;49 — reposent sur du repérage documentaire dont la vérification a porté sur les références, non le contenu. Le premier mouvement du Livre&nbsp;I résout intégralement contre une source dérivée unique. Des pièces maîtresses n'ont jamais été lues à leur source pour la somme : la ligne directrice de l'AMF (dont seules les dates sont au socle — règle assumée, mais qui laisse le chapitre&nbsp;27 qualifier de « cadre le plus explicite » un texte non lu), l'appendice d'E-23 portant les champs d'inventaire, l'avis&nbsp;11-348 (entrée S-024 « non extractible »), les cinq spécifications de provenance du chapitre&nbsp;47 (SLSA, in-toto, CycloneDX, SPDX, SP&nbsp;800-218A — « des notices de page, non des textes lus »). L'élévation en [B] n'est pas un raffinement : c'est la condition pour que les grilles praticiennes de l'ouvrage soient opposables dans un dossier de conformité, usage que l'ouvrage vise explicitement.</p>
+
+<h3>F-2 — L'auto-attestation intégrale : aucune relecture tierce</h3>
+<p>CA-IV-11 et CA-IV-13 sont déclarées insatisfaisables faute d'un relecteur distinct du rédacteur, et l'arrêt D-10 les déroge plutôt qu'il ne les satisfait. Or l'ouvrage démontre lui-même pourquoi cette dérogation est coûteuse : les relectures successives ont trouvé des attestations fausses (douze pièces sur quinze du Livre&nbsp;III portaient au moins un cardinal erroné au premier comptage ; trois mesures volumétriques divergentes coexistent au chapitre&nbsp;35 ; le second passage de relecture du chapitre&nbsp;50 prend le premier en défaut sur quatre points). La rigueur est réelle, mais elle est intégralement auto-attestée — et l'auto-attestation s'est avérée faillible à un taux mesuré. Sur la matière juridique (Livre&nbsp;III) et cryptographique (ch.&nbsp;21), la relecture par un tiers qualifié n'est pas un luxe éditorial : c'est la condition de recevabilité que l'ouvrage énonce et ne remplit pas.</p>
+
+<h3>F-3 — L'appareil de gouvernance étouffe le corps</h3>
+<p>Les dix rapports convergent : en-têtes de conformité, notes de statut, journaux de relecture, clôtures de remontées et attestations de cardinaux occupent de 30 à 45&nbsp;% de nombreuses pièces (jusqu'à près de la moitié du chapitre&nbsp;35 ; l'en-tête du chapitre&nbsp;42 représente près du tiers de la pièce ; certaines notes de statut du Livre&nbsp;V sont plus longues que des sections). Cet appareil, destiné à l'auteur et à ses contrôles, est publié dans le corps destiné au lecteur. L'effet est double : la lecture est ardue au point de compromettre la recevabilité éditoriale, et — plus grave — la précision extrême des décomptes de marqueurs contraste avec l'absence d'extraction primaire là où elle est due, donnant par endroits l'impression que la rigueur procédurale tient lieu de rigueur matérielle (constat du rapporteur du Livre&nbsp;V). Le système de renvois internes (F-xx, H-xx, S-nnn), indispensable à l'auteur, est opaque pour tout lecteur externe sans l'Annexe&nbsp;B — qui reste à écrire.</p>
+
+<h3>F-4 — L'anonymisation contredit la vérifiabilité revendiquée</h3>
+<p>La « parade de péremption » (décision&nbsp;15) anonymise dénominations commerciales et versions, mais son application déborde son mandat : le chapitre&nbsp;4 décrit des travaux identifiables (ReAct, Reflexion, arbres de pensée) sans nom ni référence — indéfendable devant un comité, la péremption se gérant par datation, non par anonymat ; le chapitre&nbsp;9 fonde son paradoxe du verrouillage inverse sur un « standard de fait » jamais nommé — une démonstration sans témoin ; le chapitre&nbsp;18 désigne le W3C par périphrase (« consortium du Web ») ; le chapitre&nbsp;49 reconnaît lui-même que l'attribution anonyme du §&nbsp;49.3.2 viole CA-IV-03 ; le chapitre&nbsp;11 attribue « par le rôle » en contradiction avec la règle qu'il énonce. La décision&nbsp;15 a borné le principe (l'attribution ne s'anonymise jamais) ; son application reste inégale d'un chapitre à l'autre.</p>
+
+<h3>F-5 — La péremption a déjà frappé : la revalidation MCP est due et non exécutée</h3>
+<p>La révision MCP 2026-07-28 a été ratifiée à la date annoncée (confirmé en ligne, §&nbsp;6) : le premier événement de péremption de l'ouvrage est <em>échu</em>. Les chapitres&nbsp;8 et&nbsp;11 décrivent donc sciemment un contrat qui n'est plus le contrat courant — cœur sans état, cadre d'extensions, politique de dépréciation, primitives dépréciées — et la « revalidation en bloc » que le protocole du chapitre&nbsp;50 prescrit reste entière. L'ouvrage a constaté la bascule selon sa règle (« constater une bascule n'est pas lire le texte qui a basculé ») ; mais un arrêt D-10 qui fige cette dette transforme le premier test réussi du dispositif en première dette non payée. Le protocole a prouvé qu'il détecte ; il n'a pas encore prouvé qu'il répare.</p>
+
+<h3>F-6 — Des omissions canoniques localisées</h3>
+<p>Pour un ouvrage de cette ambition, quelques absences de littérature de référence sont difficilement explicables, chacune au chapitre exact où elle porterait : l'inégalité de Mosca, réinventée sans citation au §&nbsp;21.9 (« calendrier inverse ») — omission canonique dans un chapitre post-quantique ; RFC&nbsp;7662 (introspection de jeton) absente de l'inventaire de la révocation du chapitre&nbsp;20 ; les jetons à atténuation par caveats (Macaroons, Biscuit) et GNAP, état de l'art académique de la délégation multi-saut, absents du chapitre&nbsp;17 dont ils sont l'objet exact ; le brouillon IETF <em>Idempotency-Key</em>, non identifié au chapitre&nbsp;48 alors qu'il est public ; l'UETR et la pratique de réconciliation ISO&nbsp;20022 (appariement, messages d'exception et d'investigation), qui fournissent des demi-réponses à la « jointure appel↔effet » que le §&nbsp;48.5 déclare introuvable ; la lignée du <em>confused deputy</em> (Hardy 1988) au chapitre&nbsp;19 ; le corpus canadien de cybersécurité post-quantique, lacune que le chapitre&nbsp;21 déclare lui-même « la plus coûteuse » pour un ouvrage visant les services financiers canadiens.</p>
+
+<h3>F-7 — Des chapitres porteurs structurellement sous-dimensionnés ou circulaires</h3>
+<p>Les volumétries s'écartent des cibles de −52&nbsp;% à +55&nbsp;% : le chapitre&nbsp;3, « chapitre-charnière posé une seule fois pour cinq chapitres aval », est à −42&nbsp;% et expédie SAML en un paragraphe ; le chapitre&nbsp;6, intitulé « systèmes multi-agents », consacre une page à la communication inter-agents — « un titre non honoré » ; le chapitre&nbsp;13 (VC/DID) reconnaît n'avoir extrait ni modèle de données, ni mécanismes de preuve, ni méthodes de résolution ; le chapitre&nbsp;45 (« blueprint instancié ») renvoie plus qu'il n'instancie (−43,5&nbsp;%) ; le chapitre&nbsp;46, finale de 810 pages, tient en 2&nbsp;900 mots. S'y ajoute l'adossement circulaire déclaré des chapitres sans socle (39↔41 : la boucle de réémission se fonde sur un chapitre qui la lui renvoie), et le fait que le Livre&nbsp;V premier mouvement livre des programmes de travail (lots d'instruction) là où le titre promet un contenu.</p>
+
+<h3>F-8 — Les angles morts déclarés demeurent des angles morts</h3>
+<p>Déclarer n'est pas combler, et l'ouvrage le dit — mais l'évaluation doit peser ce qui manque : ni le harnais d'exécution (risque&nbsp;14, tranché D-2 en « sections dans l'existant » non rédigées), ni l'accord entre agents sous défaillance (risque&nbsp;15, périmètre assumé par D-7) ne sont traités, alors que l'ouvrage prescrit des architectures inter-institutionnelles dont le régime de défaillance n'est pas caractérisé — révoquer un porteur ne dit pas ce que le système tient pour vrai pendant la fenêtre où il répondait encore. La quatrième pièce du passeport (attestations, risque&nbsp;17) n'a ni chapitre ni socle : le passeport revendiqué à quatre pièces n'en a que trois d'instruites. Ces choix de périmètre sont défendables un à un ; leur cumul entame la prétention de « somme ».</p>
+
+<!-- ===================== 5. FAIBLESSES MINEURES ===================== -->
+<h2 id="s5"><span class="num">5</span>Faiblesses mineures</h2>
+<ul>
+  <li><strong>Saturation typographique.</strong> Gras, italiques et pictogrammes d'avertissement (⚠) écrasent la hiérarchie de l'important ; quand tout est marqué, rien ne l'est.</li>
+  <li><strong>Redondances rituelles.</strong> Les clauses de statut (R-01, R-02, renvois de siège) se répètent jusqu'à la saturation — sept marqueurs « Lecture de l'auteur » de natures hétérogènes au chapitre&nbsp;39, une vingtaine au chapitre&nbsp;22 ; elles gagneraient à être mutualisées en tête de livre.</li>
+  <li><strong>Écarts résiduels de datation.</strong> La date de publication de la ligne directrice AMF portée au conspectus (« 30 mars 2026 ») n'est retrouvée nulle part en ligne — les sources secondaires rapportent le 7 avril 2026 <span class="badge b-part">à vérifier</span> ; les chapitres, eux, sont plus prudents que le conspectus (divergence à trois termes déclarée, « Avril 2026 » sans quantième). Le cardinal « quatre cibles successives » du RTR n'est pas attestable sur source primaire — reformuler en « reports successifs documentés ». La graduation SPIFFE/SPIRE (22/23 août 2022) diverge des communiqués publics de septembre 2022.</li>
+  <li><strong>Réserves de relevé désormais levables.</strong> SLSA v1.2 : approuvée le 24 novembre 2025 ; ISO/IEC 5962:2021 fixe SPDX 2.2.1 (non 3.x) ; CycloneDX 1.7 = ECMA-424, 2ᵉ édition, décembre 2025 — trois lignes du chapitre&nbsp;47 peuvent être closes.</li>
+  <li><strong>Renvois non vérifiés au fond.</strong> Le chapitre&nbsp;1 admet que ses renvois aval ont été résolus « contre le titre et la thèse » des cibles ; deux renvois sortants du chapitre&nbsp;16 se sont révélés faux à la relecture ; la table détaillée du chapitre&nbsp;36 au TOC est intitulée « chapitre 40 » (relevé, non corrigé).</li>
+  <li><strong>Préimpressions en appui.</strong> Plusieurs sections s'appuient sur des résumés arXiv seuls (ch.&nbsp;18 §&nbsp;18.4, ch.&nbsp;36 §&nbsp;36.5, ch.&nbsp;48 §&nbsp;48.5) — borné loyalement, mais l'agent mutable (§&nbsp;18.4) porte sur la persistance d'identité, prémisse du Livre&nbsp;II entier.</li>
+  <li><strong>L'Annexe&nbsp;I (bibliographie générale consolidée) reste à écrire</strong> ; l'annexe hors plan des 159 entrées inventorie des faits, non des documents — l'ouvrage le déclare, mais un compendium de 810 pages sans bibliographie reliée demeure inachevé au sens le plus classique.</li>
+</ul>
+
+<!-- ===================== 6. VÉRIFICATION FACTUELLE ===================== -->
+<h2 id="s6"><span class="num">6</span>Vérification factuelle d'échantillon</h2>
+<p class="chapo">Vingt-deux affirmations vérifiées en ligne le 30 juillet 2026, sources primaires prioritaires (éditeurs de protocoles, fondations, NIST, W3C, IETF, Ecma, BSIF, AMF, ACVM, LégisQuébec, LEGISinfo, Gazette du Canada, Paiements Canada). Échantillon ciblé sur les faits porteurs, non aléatoire.</p>
+
+<div class="encadre">
+<strong>Bilan : 19 confirmées · 3 partiellement confirmées · 0 infirmées.</strong> Aucune affirmation de l'ouvrage n'est infirmée dans sa substance à sa date d'arrêt. Les trois écarts sont des écarts de détail : date de publication AMF (conspectus), cardinal RTR, et la question ArchiMate — où la vérification <em>corrobore</em> en réalité la thèse du chapitre&nbsp;44 (aucun élément natif agentique dans ArchiMate&nbsp;4 ; le support passe par le modèle générique Role/Assignment), tout en confirmant que le préalable de re-vérification C260 reste dû.
+</div>
+
+<h3>6.1 Socle protocolaire et normatif</h3>
+<table>
+  <tr><th class="num">n°</th><th>Affirmation</th><th>Verdict</th><th>Constat</th></tr>
+  <tr><td class="num">1</td><td>Révision MCP — ratification annoncée pour le 28 juillet 2026 (cœur sans état, extensions, politique de dépréciation)</td><td><span class="badge b-ok">Confirmé</span></td><td>Spécification 2026-07-28 ratifiée le jour dit ; version courante. Les entrées du socle citant la révision 2025-11-25 restent exactes comme constats datés mais désignent une version remplacée → revalidation des ch. 8 et 11 due (F-5).</td></tr>
+  <tr><td class="num">2</td><td>« MCP dans les agents, A2A entre les agents » : doctrine du seul projet A2A ; A2A sous Linux Foundation</td><td><span class="badge b-ok">Confirmé</span></td><td>Formule textuelle publiée par le projet A2A ; don de Google à la Linux Foundation annoncé le 23 juin 2025. L'attribution unilatérale relevée par l'ouvrage est exacte.</td></tr>
+  <tr><td class="num">3</td><td>Don d'AP2 à la FIDO Alliance annoncé en avril 2026, avec AP2 v0.2 (<em>Human Not Present</em>)</td><td><span class="badge b-ok">Confirmé</span></td><td>Annonces Google et FIDO fin avril 2026 (28-29 avril). Le statut « à instruire à la source primaire » que l'ouvrage maintenait était prudent ; le fait tient.</td></tr>
+  <tr><td class="num">4</td><td>NIST IR 8547 : dépréciation visée 2030, retrait visé 2035, statut de brouillon</td><td><span class="badge b-ok">Confirmé</span></td><td>Toujours <em>Initial Public Draft</em> au 30 juillet 2026 ; jalons exacts (dépréciées après 2030, retirées après 2035). Le traitement du ch. 21 est conforme au document.</td></tr>
+  <tr><td class="num">5</td><td>Conventions OpenTelemetry GenAI/agents encore au statut <em>Development</em> à la mi-2026</td><td><span class="badge b-ok">Confirmé</span></td><td>Aucun signal GenAI/agent <em>Stable</em> ; dépôt dédié sans publication versionnée — conforme au constat central du ch. 38.</td></tr>
+  <tr><td class="num">6</td><td>SLSA v1.2 : existence et statut</td><td><span class="badge b-ok">Confirmé</span></td><td>Version approuvée courante, annoncée le 24 novembre 2025. La réserve de relevé de l'ouvrage peut être levée avec cette date.</td></tr>
+  <tr><td class="num">7</td><td>CycloneDX 1.7 = ECMA-424 ; rapport SPDX / ISO 5962:2021</td><td><span class="badge b-part">Partiel</span></td><td>ECMA-424 2ᵉ éd. (déc. 2025) = CycloneDX 1.7 : exact. Mais ISO/IEC 5962:2021 fixe SPDX 2.2.1, non 3.x — la réserve du ch. 47 se résout dans le sens de la prudence de l'ouvrage.</td></tr>
+  <tr><td class="num">8</td><td>NIST AI 100-2 E2025 (taxonomie ML adversarial) : version courante</td><td><span class="badge b-ok">Confirmé</span></td><td>Finalisée en mars 2025 ; remplace E2023.</td></tr>
+  <tr><td class="num">9</td><td>NIST SP 800-218A : statut final</td><td><span class="badge b-ok">Confirmé</span></td><td>Finale depuis juillet 2024.</td></tr>
+  <tr><td class="num">10</td><td>ArchiMate 4 (C260) : existence, refonte du métamodèle, absence d'éléments natifs agentiques</td><td><span class="badge b-part">Partiel</span></td><td>C260 publié en avril 2026 ; refonte réelle (sept domaines pairs, ~60 → ~42 éléments) ; aucun élément natif agentique attesté — la thèse du ch. 44 est corroborée. « Partiel » car le préalable de re-vérification sur le texte C260, déclaré par le plan, demeure non exécuté par l'ouvrage.</td></tr>
+  <tr><td class="num">11</td><td>RFC 8693 (OAuth 2.0 Token Exchange) et RFC 9334 (RATS) : titres et objets</td><td><span class="badge b-ok">Confirmé</span></td><td>Titres et objets exacts (janv. 2020 ; janv. 2023).</td></tr>
+  <tr><td class="num">12</td><td>W3C : VC 2.0 Recommandation ; DID 1.1 en <em>Candidate Recommendation</em></td><td><span class="badge b-ok">Confirmé</span></td><td>VC Data Model 2.0 Recommandation depuis le 15 mai 2025 ; DID 1.1 CR Snapshot du 5 mars 2026, non encore Recommandation — conforme au tableau 13.1.</td></tr>
+</table>
+
+<h3>6.2 Socle réglementaire canadien</h3>
+<table>
+  <tr><th class="num">n°</th><th>Affirmation</th><th>Verdict</th><th>Constat</th></tr>
+  <tr><td class="num">13</td><td>E-23 (BSIF) : finale du 11 septembre 2025, en vigueur le 1ᵉʳ mai 2027 ; agentique couverte par inférence via la définition de « modèle » ; attentes au « should »</td><td><span class="badge b-ok">Confirmé</span></td><td>La définition inclut « including AI/ML methods » ; l'agentique n'est nommée nulle part — la lecture « par inférence » du ch. 25 est exactement calibrée. Langage en « should » confirmé.</td></tr>
+  <tr><td class="num">14</td><td>Mort de la LIAD (C-27) à la prorogation du 6 janvier 2025 ; C-36 (45ᵉ législature) ne comble pas le vide IA</td><td><span class="badge b-ok">Confirmé</span></td><td>C-36 est une réforme de la vie privée (LPRPDE), sans loi-cadre IA ; aucun projet fédéral IA dédié en cours. La « lecture prudente » du ch. 26 est corroborée.</td></tr>
+  <tr><td class="num">15</td><td>Ligne directrice IA de l'AMF : finale au printemps 2026, en vigueur le 1ᵉʳ mai 2027</td><td><span class="badge b-part">Partiel</span></td><td>Entrée en vigueur confirmée sur la page de l'AMF. La date « 30 mars 2026 » du conspectus n'est retrouvée nulle part ; les sources rapportent le 7 avril 2026. Les chapitres (divergence déclarée, « Avril 2026 ») étaient plus prudents que le conspectus.</td></tr>
+  <tr><td class="num">16</td><td>Article 12.1, Loi 25 (P-39.1) : contenu (information, motifs, rectification, observations à un humain en mesure de réviser) et déclenchement « exclusivement automatisé »</td><td><span class="badge b-ok">Confirmé</span></td><td>Texte vérifié à LégisQuébec ; en vigueur depuis le 22 septembre 2023. L'articulation corrigée du tableau 27.2 est exacte au texte officiel.</td></tr>
+  <tr><td class="num">17</td><td>Avis ACVM 11-348 (5 décembre 2024) : les lois existantes s'appliquent</td><td><span class="badge b-ok">Confirmé</span></td><td>Avis et consultation ; neutralité technologique confirmée.</td></tr>
+  <tr><td class="num">18</td><td>Services bancaires axés sur le consommateur : cadre légiféré, ACFC responsable, standard technique non désigné (fait négatif)</td><td><span class="badge b-ok">Confirmé</span></td><td>Prépublication des règlements dans la Gazette (27 juin 2026, consultation en cours) ; désignation du normalisateur par arrêté ministériel toujours à venir au 30 juillet 2026.</td></tr>
+  <tr><td class="num">19</td><td>Lynx : adoption ISO 20022 (MX) complète ; RTR visé au T4 2026 après reports successifs</td><td><span class="badge b-part">Partiel</span></td><td>Lynx confirmé (fin de coexistence nov. 2025). Cible T4 2026 confirmée sur la page officielle de Paiements Canada ; le cardinal « quatre cibles successives » n'est pas attestable sur source primaire.</td></tr>
+  <tr><td class="num">20</td><td>AI Act : jalons GPAI août 2025, application générale août 2026</td><td><span class="badge b-ok">Confirmé</span></td><td>2 août 2025 (GPAI/gouvernance) et 2 août 2026 (application générale) exacts ; art. 6(1) reporté à 2027.</td></tr>
+  <tr><td class="num">21</td><td>ISO/IEC 42001:2023 : norme certifiable de management de l'IA</td><td><span class="badge b-ok">Confirmé</span></td><td>Publiée déc. 2023 ; certification accréditée en place.</td></tr>
+  <tr><td class="num">22</td><td>Simultanéité E-23 / ligne directrice AMF au 1ᵉʳ mai 2027 (clef de l'« horloge de l'ouvrage »)</td><td><span class="badge b-ok">Confirmé</span></td><td>Les deux textes portent la même date d'entrée en vigueur — le pivot calendaire de l'ouvrage tient.</td></tr>
+</table>
+<p class="statut-note">Statuts épistémiques : « Confirmé » = vérifié sur source primaire le 30 juillet 2026 ; « Partiel » = fait de fond tenu, détail divergent ou non attestable. Un échantillon de 22 sur 159 entrées de socle ne constitue pas un audit exhaustif : les constats d'ensemble sont probables, non certains.</p>
+
+<!-- ===================== 7. EXAMEN PAR LIVRE ===================== -->
+<h2 id="s7"><span class="num">7</span>Examen par livre et par chapitre</h2>
+<p class="chapo">Synthèse des dix rapports de lecture. Pour chaque livre : appréciation, constats saillants, puis un tableau chapitre par chapitre (appréciation condensée et recommandation principale). Les notes par axe figurent à la §&nbsp;8.</p>
+
+<!-- LIVRE I -->
+<div class="livre-bloc">
+<h3>Livre I — Coopérer (ch. 1-11)</h3>
+<p><strong>Appréciation.</strong> Thèse cohérente et bien tenue — l'interopérabilité comme propriété à maintenir, que la couche agentique hérite sans la résoudre — et progression maîtrisée du socle pré-agentique (ch.&nbsp;1-3) à l'ingénierie de l'agent (ch.&nbsp;4-6) puis à la couche protocolaire (ch.&nbsp;7-11). Le second mouvement est supérieur au premier : sa gestion de la péremption (MCP, A2A, AP2) est « la vertu cardinale du mouvement », avec l'arbitrage exemplaire de la divergence interne sur le don d'AP2 (§&nbsp;10.1.3) et le traitement des CVE datées du chapitre&nbsp;11. Les réserves lourdes : le premier mouvement résout intégralement en [C] contre une source dérivée unique ; l'anonymisation du chapitre&nbsp;4 (travaux identifiables décrits sans citation) est indéfendable en évaluation par les pairs ; quatre chapitres sont en déficit volumétrique de 31 à 52&nbsp;% ; et l'exclusion D-7 de l'accord sous défaillance ampute un ouvrage qui prescrit des architectures inter-institutionnelles.</p>
+<table>
+  <tr><th style="width:44px" class="num">Ch.</th><th style="width:46%">Appréciation condensée</th><th>Recommandation principale</th></tr>
+  <tr><td class="num">1</td><td>Le meilleur instrument analytique du mouvement (typologie intégrée/unifiée/fédérée, résultats d'impossibilité exacts) ; mais une vingtaine de renvois aval résolus « contre le titre », non contre le corps.</td><td>Vérifier au fond les renvois vers les ch. 22, 29 et 37 ; renvoyer le lecteur exclu par D-7 vers la littérature du consensus.</td></tr>
+  <tr><td class="num">2</td><td>OWL/SHACL et l'échec silencieux de la fédération SPARQL : apports praticiens de premier ordre ; le § 2.4 (LLM), le plus original, est le plus mince.</td><td>Étoffer § 2.4 (campagnes OAEI chiffrées) ; nommer le projet de catalogue anonymisé ou retirer la date.</td></tr>
+  <tr><td class="num">3</td><td>Les qualifications R-02 (ce que chaque mécanisme démontre et ne démontre pas) sont ce que le compendium fait de mieux ; à −42 %, trop mince pour un chapitre-charnière — la « rupture » annoncée n'est jamais argumentée ici.</td><td>Densifier § 3.2 (SAML, SCIM) à hauteur de son statut de siège.</td></tr>
+  <tr><td class="num">4</td><td>Excellent sur les limites des modèles planificateurs et la non-fidélité de la trace ; l'anonymisation systématique des patrons (ReAct, Reflexion…) est la faute rédhibitoire du chapitre.</td><td>Citer nominativement tous les travaux repris — condition de recevabilité.</td></tr>
+  <tr><td class="num">5</td><td>Le mieux sourcé du mouvement (~40 références nominatives datées) ; le contournement du contrôle d'accès par index vectoriel (§ 5.4.2) est le point praticien le plus précieux des six premiers chapitres.</td><td>Ajouter une grille de sélection des architectures de mémoire (§ 5.2.1, actuellement un catalogue sans critère).</td></tr>
+  <tr><td class="num">6</td><td>Attribution modèle du « +90 % / 15× » ; mais à −52 %, un chapitre « multi-agents » qui ne traite ni la coordination sous défaillance ni les protocoles n'honore pas son titre ; rédigé malgré une remontée bloquante.</td><td>Rééquilibrer § 6.2 ou requalifier le titre ; dater les bancs d'essai cités.</td></tr>
+  <tr><td class="num">7</td><td>Chronologie corrective précieuse (lancement vs passage sous fondation) et lecture critique des métriques d'adoption exemplaire ; empilement de « lectures de l'auteur » au § 7.4, siège R-8 incomplet (quatre branches sur six).</td><td>Verser les six branches au siège R-8 ; réduire les inférences du § 7.4 à deux, argumentées.</td></tr>
+  <tr><td class="num">8</td><td>Anatomie MCP/A2A de grande qualité (jalons, primitives lues comme clauses de gouvernance) — mais sciemment périmée : la révision 2026-07-28 est ratifiée et la revalidation est ouverte, non exécutée.</td><td>Exécuter la revalidation en bloc sur la révision 2026-07-28 avant toute diffusion.</td></tr>
+  <tr><td class="num">9</td><td>Leçon d'UDDI, grille des dix-huit protocoles et pyramide d'évaluation solides ; le « standard de fait » d'invocation jamais nommé rend le paradoxe central invérifiable.</td><td>Nommer le standard de fait du § 9.3.1 — une démonstration sans témoin n'est pas citable.</td></tr>
+  <tr><td class="num">10</td><td>La meilleure page du mouvement (arbitrage de la divergence AP2/FIDO entre volumes) ; deux décomptes structurants (« plus de soixante », « plus de soixante-cinq ») invérifiables, repris en clôture avec réserve allégée.</td><td>Restituer les identifiants normatifs du § 10.3.3 ; requalifier les décomptes dans les acquis de clôture.</td></tr>
+  <tr><td class="num">11</td><td>Non-compositionnalité de la sûreté et triade létale : les résultats les plus transférables du Livre ; CVE datées et identifiées — mais attribution « par le rôle » en contradiction avec la règle du chapitre, et matière pré-bascule MCP.</td><td>Nommer les attributeurs en propre ; conditionner la diffusion à la revalidation post-bascule.</td></tr>
+</table>
+</div>
+
+<!-- LIVRE II -->
+<div class="livre-bloc">
+<h3>Livre II — Faire confiance (ch. 12-21)</h3>
+<p><strong>Appréciation.</strong> La prétention au « cœur doctrinal » est partiellement tenue : l'apport le plus original du Livre est son régime probatoire transversal plus que sa doctrine, et la grille comme le passeport sont des reformulations bien exécutées plutôt que des nouveautés. Le versant hostile (ch.&nbsp;19-20) et l'horloge post-quantique (ch.&nbsp;21) sont d'une qualité supérieure : l'abandon de la thèse quantitative réfutée, l'inventaire de la révocation (tableau&nbsp;20.1), la requalification en forgeabilité rétroactive et le traitement des jalons IR&nbsp;8547 sont défendables face à l'état de l'art (MITRE ATLAS, OWASP, littérature PKI). Réserves lourdes : le chapitre&nbsp;13 est un relevé de stades de normalisation, non une instruction de VC/DID ; le chapitre&nbsp;15, pivot du Livre et déclaré « à plus haut risque de surinterprétation », maîtrise ce risque mais reste arrimé à une version (v1.0.0) que le registre a remplacée ; les omissions canoniques (Mosca, RFC&nbsp;7662, Macaroons/Biscuit/GNAP) touchent les chapitres exacts où elles porteraient ; la lacune canadienne post-quantique est « la plus coûteuse » de l'ouvrage.</p>
+<table>
+  <tr><th style="width:44px" class="num">Ch.</th><th style="width:46%">Appréciation condensée</th><th>Recommandation principale</th></tr>
+  <tr><td class="num">12</td><td>Généalogie exemplaire (dissymétrie lexicale vs hypothèse humaine procédurale du RFC 6749) ; mais le titre promet OIDC et « un demi-siècle » que le corps n'établit pas — écart déclaré, non résolu.</td><td>Instruire OpenID Connect à la source ou retirer le sigle du titre.</td></tr>
+  <tr><td class="num">13</td><td>Tableau des stades W3C et contrepoint vLEI/GLEIF bien choisis ; ni modèle de données, ni preuves, ni révocation (Status List) — un chapitre « VC/DID » sans son contenu technique.</td><td>Extraire VC 2.0 et DID 1.0 (Recommandations stables, extraction peu risquée) ou retitrer en « état de la normalisation ».</td></tr>
+  <tr><td class="num">14</td><td>La discipline d'application (trois verdicts, case vide = état de preuve, falsifiabilité) est la meilleure idée méthodologique du Livre ; rendement empirique maigre (8 verdicts sur 15 cases) et nouveauté modeste, non étalonnée.</td><td>Confronter la grille aux cadres existants (IAM, KYA, zero-trust) pour établir sa valeur différentielle.</td></tr>
+  <tr><td class="num">15</td><td>La meilleure section technique du Livre (anatomie de l'Agent Card, § 15.1 ; <em>integrity</em> ≠ <em>identity</em>) ; non revalidé sur la v1.0.1, appuis « hors socle, non versés », +46 % de volumétrie.</td><td>Revalider sur la v1.0.1 ; verser au socle les relevés hors socle mobilisés dans l'argument.</td></tr>
+  <tr><td class="num">16</td><td>« L'assemblage n'est pas une somme » : le résultat doctrinal le plus solide du Livre ; mais « rien n'entre au maillage sans lui » prescrit un artefact que personne ne délivre, sans régime transitoire, et la quatrième pièce n'a ni chapitre ni socle (risque 17).</td><td>Ajouter une section d'équivalents provisoires 2026 ; trancher le risque 17.</td></tr>
+  <tr><td class="num">17</td><td>L'extraction du RFC 8693 (« informational only » par prescription) renverse l'hypothèse initiale — le meilleur moment du Livre ; mais l'objet exact du chapitre (chaînage inter-domaines) est « consulté non extrait », et Macaroons/Biscuit/GNAP manquent.</td><td>Extraire le brouillon IETF de chaînage ; ajouter la piste « jetons à atténuation par caveats » avec son statut.</td></tr>
+  <tr><td class="num">18</td><td>Instantané daté des neuf chantiers KYA et triplet institutionnel (autorité/rythme/liste) réutilisables ; la moitié KYC de la thèse reste en creux et l'anonymisation (« consortium du Web ») contredit la vérifiabilité.</td><td>Décrire positivement l'infrastructure du KYC (GAFI, registres) ; instruire la préimpression « agent mutable ».</td></tr>
+  <tr><td class="num">19</td><td>Le renoncement à la thèse « part majoritaire » après réfutation au vote est la bonne décision scientifique ; tri par « maillon qui cède » avec son cas non rangé affiché ; couverture de la délégation mince (ni confused deputy, ni taxonomies rivales).</td><td>Confronter le principe de tri à une taxonomie externe (ATLAS par tactiques) et motiver l'écart.</td></tr>
+  <tr><td class="num">20</td><td>Inventaire de la révocation (tableau 20.1) : la pièce la plus utile du mouvement ; +55 % de volumétrie, second mouvement (<em>agentic SOC</em>) presque entièrement en [C], RFC 7662 omise.</td><td>Instruire RFC 7662 et les listes d'état W3C ; resserrer le second mouvement de moitié.</td></tr>
+  <tr><td class="num">21</td><td>Modèle de traitement des jalons IR 8547 et forgeabilité rétroactive : contribution originale fondée ; l'inégalité de Mosca réinventée sans citation, et la lacune canadienne déclarée « la plus coûteuse » — réelle.</td><td>Instruire le corpus canadien (Centre canadien pour la cybersécurité) avant diffusion ; nommer Mosca au § 21.9.</td></tr>
+</table>
+</div>
+
+<!-- LIVRE III -->
+<div class="livre-bloc">
+<h3>Livre III — Encadrer (ch. 22-36)</h3>
+<p><strong>Appréciation.</strong> Le cœur juridico-architectural de l'ouvrage et, pour les trois rapporteurs concernés, sa portion la plus originale : le croisement taxonomie d'orchestration × cadre réglementaire canadien × terrain financier « n'existe nulle part ailleurs sous cette forme ». Le traitement du droit, pour un auteur non juriste, est d'une prudence remarquable — souvent supérieure à la littérature praticienne — et la vérification en ligne (§&nbsp;6.2) confirme la quasi-totalité des faits porteurs. Le chapitre-pivot&nbsp;29 est défendable et traçable, ses sauts inférentiels déclarés ligne à ligne. Réserves lourdes : la taxonomie OO1-OO4, ossature du Livre, repose sur un préprint unique non révisé ; les chapitres&nbsp;24, 30, 31 et 34 sont massivement en [C] ; cinq lieux où la lecture d'auteur porte plus d'autorité que son statut (dont l'interprétation de C-36 « sans le texte ») justifient la relecture juridique manquante ; l'infraction à D-9 est consignée aux ch.&nbsp;25 et&nbsp;27 sans être résolue ; et l'entrée S-024 (avis 11-348) comme la ligne directrice AMF n'ont jamais été lues à la source pour la somme.</p>
+<table>
+  <tr><th style="width:44px" class="num">Ch.</th><th style="width:46%">Appréciation condensée</th><th>Recommandation principale</th></tr>
+  <tr><td class="num">22</td><td>Refus exemplaire de transposer les F1 expérimentaux ; discontinuité OO2→OO3 lue comme changement de régime de responsabilité ; mais toute la taxonomie tient sur un préprint unique et le « frame opérationnel » pivot n'est pas caractérisé au socle.</td><td>Seconde source indépendante pour OO1-OO4, ou rétrograder son rôle de vocabulaire de la somme.</td></tr>
+  <tr><td class="num">23</td><td>Traitement modèle des métriques d'éditeurs (LangChain, CrewAI à trois niveaux de preuve) ; le cardinal fondant la thèse (« deux offres sur cinq de première main ») repose sur des offres non instruites, et le tableau de positionnement est intégralement d'auteur.</td><td>Instruire Temporal et CrewAI, ou reformuler la thèse sans le cardinal.</td></tr>
+  <tr><td class="num">24</td><td>Couverture praticienne remarquable (identités, permissions dans la recherche, grille NHI) et régime de repli exemplaire au § 24.8 ; mais le plus long chapitre du Livre, intégralement en [C], à texture de rapport de marché par endroits.</td><td>Élever § 24.3-24.4 en [B] par lecture des sources primaires ; élaguer.</td></tr>
+  <tr><td class="num">25</td><td>Décomposition membre à membre de l'inférence E-23 et distinction opinion juridique / état du droit exemplaires ; appendice d'E-23 non extrait, faisceau des cinq cabinets sans examen d'indépendance, D-9 enfreinte.</td><td>Extraire l'appendice d'E-23 ; relecture par un juriste en droit des institutions financières.</td></tr>
+  <tr><td class="num">26</td><td>Requalification de C-36 juste et corroborée en ligne ; mais l'inférence de périmètre est conduite sans le texte du projet de loi, et l'analyse parlementaire reste mince (2 300 mots).</td><td>Extraire le texte de première lecture de C-36 ; étoffer l'écosystème institutionnel fédéral.</td></tr>
+  <tr><td class="num">27</td><td>Distinction humain-dans-la-boucle / révision a posteriori doctrinalement juste ; articulation de l'art. 12.1 exacte au texte officiel (vérifiée) ; l'enjeu constitutionnel de l'applicabilité aux institutions fédérales n'est pas même nommé.</td><td>Obtenir le texte intégral de la ligne directrice AMF ; faire qualifier la question fédéral-provincial.</td></tr>
+  <tr><td class="num">28</td><td>Lecture fine (trois des sept catégories d'assujettis sont des infrastructures) ; mais S-024 non extractible : le chapitre entier repose sur une lecture non re-confirmée.</td><td>Extraire l'avis à sa source (sites ACVM) et vérifier le libellé anglais de la définition.</td></tr>
+  <tr><td class="num">29</td><td>Le chapitre-pivot tient : traduction traçable, sauts déclarés, auto-démolition de la fausse « convergence à trois sources » de la meilleure facture critique ; « exigence réglementaire stricte » demeure indéfini, ce qui rend le principe directeur inapplicable sans travail complémentaire.</td><td>Définir opérationnellement « exigence stricte » ; couvrir les deux éléments de l'art. 12.1 sans ligne.</td></tr>
+  <tr><td class="num">30</td><td>Grille de qualification multiple (système TIC / modèle / décision automatisée) et tableau des trois régimes de preuve négatifs qui « devraient faire école » ; le chapitre le plus périssable du Livre, intégralement en [C] là où vivent les dates opposables.</td><td>Élever en [B] la douzaine de dates européennes porteuses (EUR-Lex).</td></tr>
+  <tr><td class="num">31</td><td>Patron d'irréversibilité et double-qualification : les deux apports conceptuels les plus solides du Livre ; aucun fait en [B], et même <em>Moffatt v. Air Canada</em> n'a jamais été lu au recueil pour la somme.</td><td>Élever en [B] les sources des quatre patrons (§ 31.1.1-31.1.4).</td></tr>
+  <tr><td class="num">32</td><td>Correction d'histoire législative utile et fait négatif du standard non désigné vérifié (corroboré en ligne) ; cinq renvois de socle étaient faux avant correction — densité de défauts corrigés in extremis qui interroge.</td><td>Externaliser la note de statut ; faire vérifier les renvois par un tiers.</td></tr>
+  <tr><td class="num">33</td><td>Le meilleur chapitre du lot en discipline lexicale (« lancé »/« en production » proscrits pour le RTR) ; l'histoire industrielle de Lynx repose sur une entrée non ré-établie, présentée à l'indicatif.</td><td>Marquer dans le corps les énoncés adossés à des entrées non ré-établies.</td></tr>
+  <tr><td class="num">34</td><td>Asymétrie d'autorité en prestations (approuver délégable, refuser jamais) et désambiguïsation moteur de règles / agent : les apports les plus transférables ; le chapitre le plus long du lot est le plus faiblement fondé (tout en [C], ~40 annonces sans source primaire).</td><td>Instruire les dix annonces les plus portantes ; alléger d'un tiers.</td></tr>
+  <tr><td class="num">35</td><td>Arithmétique adversariale sur les chiffres d'entreprise : le meilleur service rendu au praticien ; mais 2 entrées sur 12 seulement ré-établies intégralement, et Intact — l'institution aux déclarations les plus engageantes — est la moins établie. +51 % de volumétrie, trois mesures divergentes de sa propre longueur.</td><td>Résorber la dette d'outillage (F-31/Intact en priorité) avant diffusion.</td></tr>
+  <tr><td class="num">36</td><td>Les cinq questions falsifiables du § 36.4 sont « de qualité doctorale » et la discipline prospective est tenue — sauf au § 36.2, où des patrons FMI passent en prescription normative (« doit rester déterministe ») sans tri déclaré.</td><td>Appliquer le tri PROGRAMMÉ/PROJETÉ/SPÉCULATIF aux patrons du § 36.2 ; exécuter le balayage de chaînes déclaré non mené.</td></tr>
+</table>
+</div>
+
+<!-- LIVRE IV -->
+<div class="livre-bloc">
+<h3>Livre IV — Appliquer, exploiter, produire et composer (ch. 37-46)</h3>
+<p><strong>Appréciation.</strong> Deux mouvements inégaux. Le premier (AgentMesh, AgentOps, fabrique) documente honnêtement un état de non-maturité du domaine — conventions OpenTelemetry sans version citable (constat vérifié en ligne), corrélation trace↔chaîne de mandat manquante, indicateurs sans référentiel — mais son corpus effectif est étroit (deux fichiers ouverts sur onze pour l'observabilité, huit plateformes non instruites) et il « outille le refus, pas encore la décision ». Fait notable d'arbitrage : la formule « le maillage est à l'identité ce que le tribunal est à la loi » citée par le conspectus <em>ne figure plus</em> dans la pièce livrée — la thèse réalignée est plus modeste et plus juste, le tri du chapitre&nbsp;37 étant un tri par statut, non un démenti du marketing. Le chapitre&nbsp;41 (sans socle) est « la lecture la plus rigoureuse d'un régime matière neuve » arbitrée par le rapporteur — huit questions présentées comme huit questions — mais cet état ne doit pas se fossiliser. Le second mouvement (synthèse) est le plus abouti structurellement : la composition est réelle, la matrice des vides exploitée, la formalisation ArchiMate correctement argumentée — sous le préalable C260 non exécuté qui propage sa réserve aux chapitres&nbsp;45 et à l'Annexe&nbsp;H.</p>
+<table>
+  <tr><th style="width:44px" class="num">Ch.</th><th style="width:46%">Appréciation condensée</th><th>Recommandation principale</th></tr>
+  <tr><td class="num">37</td><td>L'application de la grille Q-A/Q-E à l'autorisation par arête est « le meilleur moment du Livre », et les cinq conditions de réfutation tabulées sont exemplaires ; la filiation service mesh est posée sur un régime de preuve déclaré insuffisant, et coût/latence/disponibilité — objections évidentes — restent au degré 3.</td><td>Ouvrir un lot dédié coût/latence/disponibilité ; fusionner les trois strates temporelles de datation.</td></tr>
+  <tr><td class="num">38</td><td>La démonstration qu'aucune conformité OpenTelemetry n'est « écrivable » faute de version citable est une pièce d'analyse remarquable (corroborée en ligne) ; mais l'objet central du chapitre n'a pas été lu là où il compte (deux fichiers sur onze).</td><td>Exécuter le lot § 38.5 (corrélation trace↔mandat) en priorité absolue — la portée du Livre en dépend.</td></tr>
+  <tr><td class="num">39</td><td>« Révoquer tout ou confiner en partie » : l'analyse du geste intermédiaire manquant est le constat le plus transférable ; chapitre de composition sans lot propre, deux entrées « changées » au socle sans report au corps.</td><td>Passe unique de report des re-datations ; instruire le front « restitution datée ».</td></tr>
+  <tr><td class="num">40</td><td>« La dimension d'agent est un nom, pas une identité » et la contrainte de modalité du tableau 40.1 sont exemplaires ; les deux seules entrées qui porteraient la thèse sont exclues du socle pour dette de vote, et la grille ne produit aucune valeur.</td><td>Résorber la dette de vote F-92/F-96 ; instruire au moins une des huit plateformes nommées.</td></tr>
+  <tr><td class="num">41</td><td>Statut « matière neuve » maintenu avec une constance remarquable (« Ce que le socle établit : rien ») ; conditions de renversement bien formulées, non instruites ; adossement circulaire 39↔41 assumé mais réel.</td><td>Exécuter le lot gabarits (§ 41.2) ; au terme, verser des faits ou exécuter le retrait prévu.</td></tr>
+  <tr><td class="num">42</td><td>Les trois règles de remplissage immunisent la matrice contre la fabrication de correspondances, et les vides sont typés puis convertis en cahier des charges — l'honnêteté exploitée, non constatée ; la ligne AMF vide du côté des attentes fragilise l'exhaustivité des cinq zones.</td><td>Quantifier la dépendance de chaque zone à la ligne AMF vide ; prioriser les vides par échéance réglementaire.</td></tr>
+  <tr><td class="num">43</td><td>Tableau des couches avec colonne « ce qu'elle ne porte pas » et désambiguïsation des trois échelles d'autonomie homonymes de grande valeur ; le modèle de maturité, pièce maîtresse praticienne, n'a aucun ancrage de socle, et « obligatoire » excède le régime de preuve des points de contrôle.</td><td>Requalifier PC1-PC5 (« points de production exigibles ») ; une source primaire tierce pour la maturité.</td></tr>
+  <tr><td class="num">44</td><td>Patrons techniquement justes (Serving vs Realization, l'absence de Flow comme preuve de non-collusion) et les quatre limites structurelles exactes ; mais le préalable C260 déclaré par le plan n'a pas été tenu et tout le chapitre est en [C] — la thèse affirme un fait sur un document non lu (thèse corroborée en ligne, ce qui atténue sans dispenser).</td><td>Exécuter la re-vérification C260 avant diffusion ; porter la réserve dans la thèse elle-même.</td></tr>
+  <tr><td class="num">45</td><td>Les cinq régimes de lien du § 45.4 (« une continuité opérationnelle ne vaut pas agrément réglementaire ») : la meilleure section du mouvement ; −43,5 % de volumétrie, huit sections sur quinze en renvoi — le blueprint renvoie plus qu'il n'instancie, et sa confrontation est interne au corpus.</td><td>Développer au moins un flux au grain d'un modèle ArchiMate complet ; déclarer en tête l'inopposabilité du principe 1.</td></tr>
+  <tr><td class="num">46</td><td>Compte à rebours recalculé, asymétrie des dépendances (« l'inventaire ne dépend d'aucune réserve ») — legs réellement opératoire ; mais la feuille de route se séquence sur deux textes dont un seul est au socle par son contenu, et le finale est très court.</td><td>Instruire le contenu de la ligne directrice AMF ; rejouer la re-datation de F-25/F-44 par un autre canal.</td></tr>
+</table>
+</div>
+
+<!-- LIVRE V -->
+<div class="livre-bloc">
+<h3>Livre V — Livrer et clore (ch. 47-50)</h3>
+<p><strong>Appréciation.</strong> Le pari — clore une somme par un livre déclaré sans socle — « est tenu à moitié, et la moitié tenue est la bonne ». Le second mouvement (ch.&nbsp;49-50) livre une clôture épistémique d'une rigueur rare, jugée majoritairement <em>opérante</em> et non rituelle : événements de péremption falsifiables dont un est survenu et a été traité selon la règle, registre de gel confronté aux pièces par contrôle exécutable, trente-trois lacunes héritées reprises une à une par identifiant. Le premier mouvement (ch.&nbsp;47-48) est un programme de travail plus qu'un contenu : aucune extraction primaire, lots d'instruction en lieu de sections, volumétries en défaut de 19 à 31&nbsp;%. La réserve structurelle du rapporteur mérite citation : « la précision extrême des décomptes de marqueurs contraste avec l'absence de toute extraction primaire — la rigueur procédurale risque d'y tenir lieu de rigueur matérielle ». Le chapitre&nbsp;48 nomme une question authentiquement neuve (des compensations impossibles à pré-écrire pour des trajectoires composées à l'exécution) sans inventorier les demi-réponses que le domaine possède déjà.</p>
+<table>
+  <tr><th style="width:44px" class="num">Ch.</th><th style="width:46%">Appréciation condensée</th><th>Recommandation principale</th></tr>
+  <tr><td class="num">47</td><td>L'inventaire des cinq composants aux horloges asynchrones (« quelle version est en production » n'a pas de réponse à un seul terme) est la meilleure idée du mouvement ; mais rien n'est ouvert — un chapitre « provenance » qui n'a extrait ni SLSA ni in-toto « reste une table des matières », et la cinquième pièce du passeport est une construction sur un objet virtuel.</td><td>Exécuter les lots L1-L2 (CycloneDX profil ML, SPDX profil AI/Dataset — textes publics) ; trancher l'articulation des deux quintets.</td></tr>
+  <tr><td class="num">48</td><td>Taxonomie lecture/écriture/engagement juste (« que produit son rejeu ») et dissymétrie idempotence-outil/protocole défendable ; 3 800 mots pour le siège de toute la somme, réconciliation traitée en pure absence sans engager la pratique ISO 20022 (UETR, exceptions et investigations).</td><td>Ouvrir le lot Idempotency-Key (trivial) ; instruire l'UETR comme clé de jointure candidate.</td></tr>
+  <tr><td class="num">49</td><td>Le siège du tri prospectif et la reprise des 33 lacunes par identifiant sont « le sommet du Livre » ; mais la frise de dates au quantième n'est re-vérifiée qu'en deux entrées — « un objet dangereux », selon ses propres mots — et l'anonymisation du § 49.3 viole CA-IV-03 de l'aveu de la note.</td><td>Re-tracer le registre § 49.12 contre les 159 entrées S-nnn ; nommer les attributeurs.</td></tr>
+  <tr><td class="num">50</td><td>« Périmer n'est pas falsifier » et le tableau des onze événements avec « ce qui tombe » : un dispositif que peu d'ouvrages osent, éprouvé par la bascule MCP survenue au jour dit ; la revalidation déclenchée reste entière — le protocole a constaté sa première bascule, il ne l'a pas payée.</td><td>Exécuter la revalidation du ch. 8 — seul événement échu ; la laisser ouverte contredit la promesse du § 50.3.</td></tr>
+</table>
+</div>
+
+<!-- ===================== 8. NOTES ===================== -->
+<h2 id="s8"><span class="num">8</span>Notes indicatives consolidées</h2>
+<p>Notes attribuées par les rapporteurs (échelle 1-5, demi-points), moyennées par livre lorsque plusieurs rapports le couvrent. Elles sont indicatives : dix rapporteurs distincts, sans normalisation croisée — les comparaisons fines entre livres ne sont pas significatives ; les tendances le sont.</p>
+<table>
+  <tr><th>Livre</th><th class="num">Originalité</th><th class="num">Rigueur</th><th class="num">Structure</th><th class="num">Sources</th><th class="num">Utilité praticienne</th><th class="num">Moyenne</th></tr>
+  <tr><td>I — Coopérer</td><td class="num">3,5</td><td class="num">4,0</td><td class="num">3,5</td><td class="num">2,8</td><td class="num">4,0</td><td class="num"><strong>3,6</strong></td></tr>
+  <tr><td>II — Faire confiance</td><td class="num">3,5</td><td class="num">4,5</td><td class="num">3,3</td><td class="num">3,8</td><td class="num">3,8</td><td class="num"><strong>3,8</strong></td></tr>
+  <tr><td>III — Encadrer</td><td class="num">4,2</td><td class="num">4,2</td><td class="num">3,2</td><td class="num">3,2</td><td class="num">4,2</td><td class="num"><strong>3,8</strong></td></tr>
+  <tr><td>IV — Appliquer, exploiter, produire, composer</td><td class="num">4,0</td><td class="num">4,3</td><td class="num">3,5</td><td class="num">3,0</td><td class="num">3,3</td><td class="num"><strong>3,6</strong></td></tr>
+  <tr><td>V — Livrer et clore</td><td class="num">4,5</td><td class="num">4,0</td><td class="num">3,0</td><td class="num">2,5</td><td class="num">3,5</td><td class="num"><strong>3,5</strong></td></tr>
+  <tr><td><strong>Ensemble</strong></td><td class="num"><strong>3,9</strong></td><td class="num"><strong>4,3</strong></td><td class="num"><strong>3,3</strong></td><td class="num"><strong>3,0</strong></td><td class="num"><strong>3,7</strong></td><td class="num"><strong>3,6</strong></td></tr>
+</table>
+<p>Le profil est net et constant : la <strong>rigueur d'énoncé</strong> est l'axe fort partout (4,0-4,5), l'axe <strong>sources</strong> est le plus faible partout (2,5-3,8) — c'est le miroir exact du diagnostic F-1/F-2 : une discipline exceptionnelle appliquée à un substrat documentaire inégalement élevé. La <strong>structure</strong> est systématiquement pénalisée par le même facteur (l'appareil, F-3), jamais par le plan lui-même. L'<strong>originalité</strong> croît avec la profondeur de l'ouvrage : elle culmine là où l'auteur cesse de condenser et construit (Livres III et V).</p>
+
+<!-- ===================== 9. RECOMMANDATIONS ===================== -->
+<h2 id="s9"><span class="num">9</span>Recommandations priorisées</h2>
+<p class="chapo">Ordonnées par rapport coût/effet sur la recevabilité. Les recommandations R-1 à R-4 sont les conditions de toute diffusion au-delà du régime actuel de bibliothèque personnelle ; R-5 à R-10 relèvent de la réédition. La numérotation est celle de l'arbitrage, sans rapport avec les identifiants internes de l'ouvrage.</p>
+
+<h3>Conditions de diffusion</h3>
+<ol>
+  <li><strong>R-1 — Relecture tierce effective.</strong> Un relecteur qualifié distinct du rédacteur, en deux passes : un juriste en droit des institutions financières pour les chapitres 25-30 (les cinq lieux de sur-autorité relevés à la §&nbsp;7, Livre III), un pair architecte pour l'ensemble. C'est la condition que l'ouvrage énonce lui-même (CA-IV-11/13) et la seule que ni méthode ni outillage ne peuvent remplacer — l'auto-attestation s'étant avérée faillible à un taux mesuré (F-2).</li>
+  <li><strong>R-2 — Élévation ciblée hors du régime [C].</strong> Non pas tout le socle, mais les pièces porteuses : la ligne directrice AMF lue en entier (le « seul vide de socle comblable », dixit le chapitre&nbsp;42), l'appendice d'E-23, l'avis 11-348, les cinq spécifications de provenance du chapitre&nbsp;47, la douzaine de dates européennes du chapitre&nbsp;30, les sources des quatre patrons du chapitre&nbsp;31, et une source indépendante pour OO1-OO4. Une trentaine d'extractions changerait la classe de l'ouvrage.</li>
+  <li><strong>R-3 — Payer la première péremption.</strong> Exécuter la revalidation en bloc des chapitres 8 et 11 sur la spécification MCP 2026-07-28, ratifiée au jour annoncé. Le dispositif du chapitre&nbsp;50 a détecté ; il doit maintenant réparer, sans quoi sa crédibilité — le résultat le plus original du Livre V — se retourne contre l'ouvrage.</li>
+  <li><strong>R-4 — Trancher l'anonymisation dans le sens de la citation.</strong> Étendre la décision 15 : citation nominative de tous les travaux et standards repris (ch.&nbsp;4 en priorité absolue, puis ch.&nbsp;9 §&nbsp;9.3.1, ch.&nbsp;18, ch.&nbsp;49 §&nbsp;49.3), la péremption se gérant par datation. Un ouvrage qui décrit des travaux identifiables sans les citer est irrecevable en évaluation par les pairs, quelle que soit la qualité du reste.</li>
+</ol>
+
+<h3>Chantiers de réédition</h3>
+<ol start="5">
+  <li><strong>R-5 — Séparer le texte de son échafaudage.</strong> Déplacer en-têtes de conformité, notes de statut, journaux de relecture et attestations vers une annexe de gouvernance (ou le seul dépôt), en ne conservant dans le corps qu'un cartouche d'une demi-page par chapitre : statut, régime de preuve, date de gel, réserves. Gain estimé : 25-35&nbsp;% du volume, et la lisibilité que 810 pages exigent.</li>
+  <li><strong>R-6 — Corriger les écarts factuels résiduels.</strong> Date de publication de la ligne directrice AMF au conspectus (30 mars → à établir, probablement 7 avril 2026) <span class="badge b-statut">à vérifier</span> ; « quatre cibles successives » du RTR reformulé ou adossé à un inventaire daté des annonces ; graduation SPIFFE/SPIRE recoupée ; réserves SLSA v1.2 (24 novembre 2025) et SPDX/ISO 5962 (2.2.1) levées.</li>
+  <li><strong>R-7 — Combler les omissions canoniques localisées.</strong> Mosca (§&nbsp;21.9), RFC 7662 (ch.&nbsp;20), Macaroons/Biscuit/GNAP (ch.&nbsp;17), <em>confused deputy</em> (ch.&nbsp;19), Idempotency-Key et UETR/réconciliation ISO 20022 (ch.&nbsp;48), corpus canadien post-quantique (ch.&nbsp;21). Chacune est un demi-paragraphe sourcé ; leur absence coûte plus que leur ajout.</li>
+  <li><strong>R-8 — Rééquilibrer les chapitres porteurs.</strong> Densifier les ch.&nbsp;3, 6, 13 et 46 à hauteur de leur charge structurelle ; resserrer les ch.&nbsp;20, 24, 34 et 35 ; exécuter les lots du Livre V premier mouvement (D-3) puis trancher : verser des faits ou exécuter le retrait prévu — l'état intermédiaire ne doit pas se fossiliser.</li>
+  <li><strong>R-9 — Donner un régime transitoire au passeport.</strong> Le chapitre 16 prescrit de conditionner l'admission à un artefact que personne ne délivre : ajouter la section « équivalents provisoires 2026 » (ce qui, aujourd'hui, tient lieu de chaque pièce) et trancher le risque 17 (attestations). Symétriquement, définir « exigence réglementaire stricte » (ch.&nbsp;29) pour rendre le principe directeur applicable.</li>
+  <li><strong>R-10 — Écrire l'Annexe I et l'Annexe B.</strong> La bibliographie générale consolidée et le socle sous numérotation unique sont les deux pièces sans lesquelles le système de renvois F-xx/S-nnn — colonne vertébrale de la méthode — reste illisible pour tout lecteur externe. Leur absence est le dernier obstacle entre l'ouvrage et son lectorat.</li>
+</ol>
+
+<!-- ===================== 10. LIMITES ===================== -->
+<h2 id="s10"><span class="num">10</span>Limites de la présente évaluation</h2>
+<p>Ce rapport doit être lu avec les réserves suivantes, énoncées dans l'esprit de la méthode qu'il évalue.</p>
+<ul>
+  <li><strong>Évaluation instrumentée par IA.</strong> Les dix rapports de lecture et les deux vérifications factuelles ont été produits par des agents d'un même modèle de langage (Claude), sur instructions de rôles distincts. Ce dispositif ne constitue pas une évaluation par les pairs au sens de CA-IV-11/13 : les convergences entre rapports ne sont pas des convergences entre esprits indépendants, et le présent rapport ne satisfait donc pas la condition R-1 qu'il énonce — il la documente. Un relecteur humain qualifié demeure requis.</li>
+  <li><strong>Couverture asymétrique.</strong> Les cinquante chapitres sources (.md) ont été lus intégralement, ainsi que les README de livres et le conspectus ; le rendu PDF n'a été inspecté que pour ses métadonnées, sa page de titre et sa table des matières — la fidélité de la composition Typst au source n'a pas été auditée. Les annexes du plan (A à I) et l'appareil du dépôt (TOC.md, PRD, socle consolidé) n'ont pas été évalués en propre ; leurs propriétés sont rapportées telles que les pièces les déclarent.</li>
+  <li><strong>Échantillonnage factuel.</strong> 22 affirmations vérifiées sur les 159 entrées du socle et les centaines de faits datés du corps : un sondage ciblé sur les faits porteurs, non un audit. Le bilan très favorable (0 infirmée) est un signal fort, non une garantie d'ensemble.</li>
+  <li><strong>Horizon de péremption partagé.</strong> Cette évaluation est datée du 30 juillet 2026 et périt avec les mêmes événements que l'ouvrage : finalisation d'IR 8547, stabilisation des conventions OpenTelemetry, désignation du normalisateur bancaire canadien, lancement du RTR, jalons de la 45ᵉ législature. Le protocole de revalidation du chapitre 50 s'applique, mutatis mutandis, au présent rapport.</li>
+  <li><strong>Notes non normalisées.</strong> Les notes de la §&nbsp;8 proviennent de rapporteurs distincts sans étalonnage croisé ; elles indiquent des profils, non des mesures.</li>
+</ul>
+
+<div class="verdict" style="margin-top:40px">
+  <div class="decision">Mot de clôture</div>
+  <p>Peu d'ouvrages praticiens savent ce qu'ils ne savent pas ; celui-ci le sait, le date, l'outille et le déclare — au point que le présent arbitrage retrouve, presque terme à terme, le diagnostic que l'ouvrage porte sur lui-même. C'est sa réussite la plus singulière et la mesure exacte de ce qui lui reste : transformer une probité auto-attestée en recevabilité attestée. Les quatre conditions de diffusion (R-1 à R-4) sont finies, nommées et exécutables ; aucune ne demande de réécrire — toutes demandent de finir. <em>Arrêter n'est ni terminer ni publier</em>, écrit l'ouvrage. L'arbitrage confirme : il mérite d'être terminé.</p>
+</div>
+
+<footer class="pied">
+  <p><strong>Rapport d'arbitrage — <em>La somme agentique</em></strong> · 30 juillet 2026 · Dispositif d'évaluation instrumenté par IA (Claude) : dix rapporteurs de lecture spécialisés couvrant les cinquante chapitres sources, deux vérificateurs factuels en ligne (22 affirmations, sources primaires). Ce rapport est un document de travail à l'usage de l'auteur ; il ne constitue ni une évaluation par les pairs au sens institutionnel, ni un avis juridique, ni une attestation de conformité.</p>
+</footer>
+
+</div>
+</body>
+</html>
