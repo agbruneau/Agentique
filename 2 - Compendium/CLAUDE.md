@@ -39,12 +39,18 @@ uniques** (1 263 relevées, 109 doublons fondus), assemblée par
 [`build/assemble-bibliographie.py`](build/assemble-bibliographie.py) et **reproductible** (`--verifier`).
 ⚠ **Elle ne tient pas son programme, et l'écart est mesuré** : les socles des Vol. II et III **citent
 leurs sources en prose**, rendant **une seule adresse pour les deux volumes** — *l'annexe réunit une
-bibliographie et constate l'absence des deux autres.* *(4)* ⚠ **UN DÉFAUT DU GABARIT A ÉTÉ TROUVÉ EN
-MESURANT LE PDF, et il est de la classe la plus grave** : le **colophon ne portait NI le statut NI les
-réserves** que D-10 exige, alors que le PRD et les deux `CLAUDE.md` le déclaraient présent depuis le
-29 juillet. *Le seul avertissement du livrable manquait au livrable.* Corrigé ; ⚠ **le piège documenté
-s'est produit** — la page de titre a débordé, et **les deux `#v()` de tête ont été repris**, comme la
-règle le prescrit. *(5)* ⚠ **CE QUE LA PASSE NE FAIT PAS** : **la relecture tierce n'est pas fournie et
+bibliographie et constate l'absence des deux autres.* *(4)* ⚠ **LE RENDU NE PORTE AUCUN AVERTISSEMENT DE STATUT, ET C'EST UNE
+INSTRUCTION D'AUTEUR — non un défaut.** *Trois états se sont succédé le même jour et aucun ne se
+déduit des autres.* **(i)** Une **mesure du PDF** a montré que le **colophon ne portait NI le statut
+NI les réserves** que D-10 exige, alors que le PRD et les deux `CLAUDE.md` le déclaraient présent
+depuis le 29 juillet — *le seul avertissement du livrable manquait au livrable, et aucune lecture de
+la source ne pouvait le voir.* **(ii)** Le bloc a été **écrit**, et *le piège documenté s'est
+produit* : la page de titre a débordé, les deux `#v()` de tête ont été repris. **(iii)** ⚠ **Le bloc
+a été RETIRÉ le 30 juillet 2026 sur instruction d'auteur**, et les deux `#v()` rendus à leurs valeurs
+d'origine. ⚠ **Ce qu'il faut en retenir** : *le régime de diffusion de D-10 vit **au dépôt seul**,
+et un lecteur qui n'aurait que le PDF ne le lit nulle part.* **Ne pas rétablir le bloc** — le
+rétablir rouvrirait l'instruction ; *si le PDF devait sortir de la bibliothèque personnelle, c'est
+cette absence qu'il faudrait d'abord reprendre.* *(5)* ⚠ **CE QUE LA PASSE NE FAIT PAS** : **la relecture tierce n'est pas fournie et
 ne peut l'être** — *le rapport qui l'exige ne la fournit pas davantage* ; **CA-IV-11 et CA-IV-13 restent
 dérogés** ; **les quatre portes dérogées le restent** ; **aucun énoncé n'est central** ; **le statut
 demeure *révision finale, diffusion en bibliothèque personnelle***. ⚠ **Et un grief de l'arbitrage a été
@@ -281,15 +287,23 @@ monographies Springer a repris leur **titre courant alterné**, et *la parité d
 un fait physique que l'absence d'ouverture au recto ne supprime pas* — le folio va toujours à
 l'extérieur, le verso porte le chapitre, le recto la section. **Ce n'est pas une réouverture de la
 consigne** : aucune page blanche n'y revient. *(e)* ⚠ **Le statut du volume n'est pas touché par l'existence d'un rendu paginé** — *composer n'est
-pas publier* —, et le **colophon de la page de titre** le déclare une fois pour les cinquante ; la
-page d'avertissement séparée a été retirée le 29 juillet 2026, **sa substance repliée au colophon,
-non supprimée**. ⚠ **Depuis D-10 (29 juillet 2026), ce colophon porte le statut « révision finale —
-diffusion en bibliothèque personnelle » et ses réserves** : portes dérogées, vote adversarial non
-conduit, CA-IV-11 et CA-IV-13 non satisfaits, aucun énoncé central. **Toute modification du colophon
+pas publier*. ⚠ **MAIS LE RENDU NE LE DÉCLARE NULLE PART, et c'est une instruction d'auteur du
+30 juillet 2026.** *L'historique se conserve, parce qu'il porte trois états et qu'aucun ne se déduit
+des autres* : la **page d'avertissement séparée** a été retirée le 29 juillet 2026, sa substance
+étant réputée repliée au colophon ; ⚠ **elle ne l'a jamais été** — la refonte du gabarit du même jour
+n'a pas porté le bloc, alors que le PRD et les deux `CLAUDE.md` l'ont déclaré présent pendant
+vingt-quatre heures ; le bloc a été **écrit le 30 juillet 2026** après que la mesure du PDF l'eut
+montré manquant, puis **RETIRÉ le même jour sur instruction d'auteur**. ⚠ **Conséquence, et elle est
+la seule chose à retenir de ce paragraphe** : *le régime de diffusion de D-10 vit désormais **au dépôt
+seul*** — PRD §14 et §15, TOC, conspectus, en-tête des cinquante pièces sources —, et **un lecteur
+qui n'aurait que le PDF ne le lit nulle part**. *Ne pas « rétablir » le bloc en croyant réparer un
+défaut : le rétablir rouvrirait l'instruction. Et si le PDF devait sortir de la bibliothèque
+personnelle, c'est cette absence qu'il faudrait d'abord reprendre.* **Toute modification du colophon
 se fait au gabarit [`build/springer.template`](build/springer.template) et se recompose dans le même
 commit** ; ⚠ *le colophon tient au pied d'une page de titre qui doit rester **une seule page*** — y
-ajouter un paragraphe sans reprendre les deux `#v(…)` de tête l'a déjà fait déborder sur la page 2,
-défaut qu'aucun contrôle ne voit et que seul le décompte de pages a montré.
+ajouter un paragraphe sans reprendre les deux `#v(…)` de tête l'a fait déborder sur la page 2 le
+30 juillet 2026, **défaut qu'aucun contrôle ne voit et que seul le décompte de pages a montré** ; les
+deux `#v(…)` sont revenus à 2,1 cm et 1,7 cm au retrait du bloc.
 
 ⚠ **Le rendu porte, depuis le 29 juillet 2026, une SIXIÈME pièce que le plan ne connaît pas : une
 annexe hors plan, placée après le chapitre 50** — [`annexe-references.md`](annexe-references.md), la

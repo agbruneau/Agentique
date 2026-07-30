@@ -250,7 +250,13 @@ il ne franchit aucune porte, n'élève aucune entrée de socle et ne rend centra
 ([`../audit.md`](../audit.md), cent constats), relus, puis composés. ⚠ **« Arrêté » n'est pas
 « validé »** — *une révision finale close le travail d'écriture ; elle ne produit pas la preuve que
 l'écriture n'a pas faite.* Les réserves énumérées au §14.3 et au §14.4 sont **maintenues visibles**
-dans le livrable, au colophon du rendu et à l'en-tête de chaque pièce source.
+à l'en-tête de chaque pièce source. ⚠ **Corrigé le 30 juillet 2026 : cette phrase ajoutait « et au
+colophon du rendu », et c'était FAUX pendant vingt-quatre heures** — le gabarit ne portait pas le
+bloc, ce qu'une mesure du PDF a montré et qu'aucune lecture de la source ne pouvait voir. Le bloc a
+été écrit puis **retiré le même jour sur instruction d'auteur** (§15.4). ⚠ ***Le rendu ne porte donc
+aucun avertissement de statut, et le régime de D-10 vit au dépôt seul*** : ce §14, le §15, le TOC,
+le conspectus et les cinquante en-têtes. *Un lecteur qui n'aurait que le PDF ne le lit nulle part —
+et c'est précisément pourquoi la diffusion en est bornée.*
 
 ### 14.3 Conformité des sept portes — trois états qui ne se confondent pas
 
@@ -374,6 +380,36 @@ occupe 30 à 45 % de nombreuses pièces » — est **mesuré sur les `.md` et ne
 l'appareil pèse **26 % du corpus source, et `build/assemble.py` en retire 100 % du PDF**. *Le rapport
 déclare n'avoir inspecté du rendu que ses métadonnées et sa table des matières ; sa mesure est exacte
 et son objet ne l'est pas.*
+
+### 15.4 Le colophon du rendu — trois états en un jour, et une instruction
+
+⚠ **Le rendu ne porte AUCUN avertissement de statut, et c'est une instruction d'auteur du 30 juillet
+2026.** *Trois états se sont succédé, aucun ne se déduit des autres, et les trois se conservent parce
+que le second est un défaut que seul le troisième rend inoffensif.*
+
+| Date | État du colophon | Ce que les documents en disaient |
+|---|---|---|
+| 29 juillet 2026 | La **page d'avertissement séparée est retirée**, sa substance réputée « repliée au colophon » | Ce §14, le `CLAUDE.md` du dossier et celui de la racine déclarent le colophon porteur du statut |
+| 29-30 juillet 2026 | ⚠ **Le gabarit ne porte PAS le bloc** — la refonte du même jour ne l'a jamais écrit | **Les trois déclarations étaient fausses**, et *aucune lecture de la source ne pouvait le montrer* : il a fallu **mesurer le PDF** |
+| 30 juillet 2026, matin | Le bloc est **écrit** — statut, régime de diffusion, portes dérogées, CA-IV-11 et CA-IV-13 | ⚠ *Le piège documenté s'est produit* : la page de titre a débordé sur la page 2, et les deux `#v(…)` de tête ont été repris à 0,9 cm |
+| 30 juillet 2026 | ☑ **Le bloc est RETIRÉ sur instruction d'auteur** ; les deux `#v(…)` reviennent à 2,1 cm et 1,7 cm | *Le présent §15.4, et les corrections portées au §14.2 et aux deux `CLAUDE.md`* |
+
+: Tableau 15.1 — Les quatre états du colophon entre le 29 et le 30 juillet 2026.
+
+⚠ **La conséquence, et c'est la seule chose que ce paragraphe doit transmettre** : ***le régime de
+diffusion de D-10 vit désormais AU DÉPÔT SEUL*** — ce §14, ce §15, le `TOC.md`, le conspectus et
+l'en-tête des cinquante pièces sources. **Un lecteur qui n'aurait que [`../compendium.pdf`](../compendium.pdf)
+ne lit nulle part qu'il est arrêté, non recevable, sans opposabilité, et que sa diffusion est bornée
+à la bibliothèque personnelle.**
+
+⚠ **Trois règles en sortent.** **(a) Ne pas « rétablir » le bloc en croyant réparer un défaut** : le
+rétablir rouvrirait l'instruction du 30 juillet. **(b) ⚠ Si le PDF doit sortir de la bibliothèque
+personnelle, c'est cette absence qu'il faut reprendre AVANT tout le reste** — *un rendu sans
+avertissement, mis entre les mains d'un tiers, est exactement ce que le §14.1 exclut, et il n'y a
+plus rien dans le fichier pour l'en avertir.* **(c) La leçon de méthode se garde** : *une déclaration
+de gouvernance sur un livrable rendu par un pipeline se vérifie **sur la sortie**, jamais sur la
+source ni sur un document amont* — trois documents ont affirmé pendant vingt-quatre heures une
+propriété que le fichier ne portait pas.
 
 ### 15.3 Ce que D-11 ne fait pas
 

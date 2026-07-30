@@ -250,10 +250,15 @@ est composé par [`build/build-pdf.sh`](2%20-%20Compendium/build/build-pdf.sh), 
 du dépôt et le seul qui ne dérive pas du FESP**. Le rendu retire du corps les trois appareils que le
 volume tient hors corps (en-tête à cinq champs, thèse citée depuis le TOC, note de statut) et
 **marque d'une dague les vingt-trois renvois** que cette coupe laisserait pendre, plutôt que de les
-supprimer ; le **colophon de la page de titre** déclare, une fois pour les cinquante, le **statut de
-révision finale, son régime de diffusion et ses réserves** — portes dérogées, vote adversarial non
-conduit, CA-IV-11 et CA-IV-13 non satisfaits, aucun énoncé central. *Composer n'est pas publier* : le
-`.md` reste la seule source, et le PDF se régénère avec elle.
+supprimer. ⚠ **Le rendu ne porte AUCUN avertissement de statut, et c'est une instruction d'auteur du
+30 juillet 2026** : un bloc de colophon portant le **statut de révision finale, son régime de
+diffusion et ses réserves** — portes dérogées, vote adversarial non conduit, CA-IV-11 et CA-IV-13 non
+satisfaits, aucun énoncé central — a été écrit ce jour-là, **après qu'une mesure du PDF eut montré
+qu'il manquait alors que trois documents de gouvernance le déclaraient présent**, puis **retiré sur
+instruction**. ⚠ ***Le régime de diffusion vit donc au dépôt seul*** — PRD §14 et §15, TOC,
+conspectus, en-tête des cinquante pièces —, et **un lecteur qui n'aurait que le PDF ne le lit nulle
+part**. *Composer n'est pas publier* : le `.md` reste la seule source, et le PDF se régénère avec
+elle.
 
 Sa nature le distingue des trois autres : ce n'est ni un quatrième panneau ni un méta-index, mais
 un **omnibus qui absorbe les Vol. I, II et III** en un seul ouvrage réordonné et dédoublonné, à

@@ -45,11 +45,17 @@ sur 50**. *(b)* ☑ ⚠ **Le premier événement de péremption du dépôt est P
 protocole du ch. 50 avait prouvé qu'il détecte ; il a prouvé qu'il répare.* *(c)* ☑ **L'Annexe I
 existe** et **un quatrième script d'assemblage** entre au dépôt
 ([`build/assemble-bibliographie.py`](2%20-%20Compendium/build/assemble-bibliographie.py), reproductible).
-*(d)* ⚠ **Un défaut du livrable a été trouvé en MESURANT le PDF** : le **colophon ne portait ni le
-statut ni les réserves** que D-10 exige, alors que trois documents de gouvernance le déclaraient
-présent depuis le 29 juillet. *Le seul avertissement du rendu manquait au rendu* — corrigé, et **la
-règle des livrables rendus par un pipeline en sort renforcée : on mesure la sortie, jamais la
-source.*
+*(d)* ⚠ **LE RENDU NE PORTE AUCUN AVERTISSEMENT DE STATUT, et c'est une instruction d'auteur du
+30 juillet 2026.** Une **mesure du PDF** a d'abord montré que le **colophon ne portait ni le statut ni
+les réserves** que D-10 exige, alors que **trois documents de gouvernance le déclaraient présent
+depuis le 29 juillet** — *le seul avertissement du rendu manquait au rendu, et aucune lecture de la
+source ne pouvait le voir.* Le bloc a été **écrit**, puis **retiré le même jour sur instruction**.
+⚠ **Conséquence** : *le régime de diffusion de D-10 vit **au dépôt seul*** — PRD §14 et §15, TOC,
+conspectus, en-tête des cinquante pièces —, et **un lecteur qui n'aurait que le PDF ne le lit nulle
+part**. **Ne pas rétablir le bloc** ; *si le PDF doit sortir de la bibliothèque personnelle, c'est
+cette absence qu'il faut reprendre avant tout le reste* (PRD §15.4). ⚠ **Et la règle des livrables
+rendus par un pipeline en sort renforcée : on mesure la SORTIE, jamais la source ni un document
+amont.***
 
 ⚠ **Ce que la passe NE FAIT PAS, et qui reste la limite de tout le dépôt** : **la relecture par un
 tiers qualifié n'est pas fournie et ne peut l'être par aucune passe instrumentée** — *le rapport qui
