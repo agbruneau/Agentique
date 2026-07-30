@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 49 — L&#x27;horizon 2027-2032 et la frontière de la connaissance vérifiable · La somme agentique</title>
-<meta name="description" content="Livre V — Livrer et clore : l'agent comme livrable logiciel, horizon et frontière. Second mouvement — horizon et frontière de la connaissance vérifiable (ch. 49-50). Premier des deux chapitres de clôture, et chapitre à deux mouvements issu de la fusion v0.20 des anciens ch. 55 et 56 (décision 11 du ">
+<meta name="description" content="Livre V — Livrer et clore : l&#x27;agent comme livrable logiciel, horizon et frontière. Second mouvement — horizon et frontière de la connaissance vérifiable (ch. 49-50). Premier des deux chapitres de clôture, et chapitre à deux mouvements issu de la fusion v0.20 des anciens ch. 55 et 56 (décision 11 du ">
 <meta name="author" content="André-Guy Bruneau">
 <meta name="color-scheme" content="dark">
 <style>
@@ -545,10 +545,10 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <li><a href="#s4911"><span class="num">49.11</span>Scénarios 2027-2032 et synthèse</a></li>
     <li><a href="#s4912"><span class="num">49.12</span>Les lacunes résiduelles du socle unifié</a></li>
     <li><a href="#s4913"><span class="num">49.13</span>Les questions de recherche transmises</a></li>
-    <li><a href="#s4914"><span class="num">49.14</span>Les frontières de la fabrique de confiance</a></li>
+    <li><a href="#s4914"><span class="num">49.14</span>Les frontières de la fabrique de confiance</a></li>
   </ol>
   <div class="nav__pied">
-    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
     <a href="49-horizon-frontiere-connaissance-verifiable.md">Version Markdown</a>
   </div>
 </nav>
@@ -561,6 +561,11 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <h1><span class="chap">Chapitre 49</span>L&#x27;horizon 2027-2032 et la frontière de la connaissance vérifiable</h1>
   <p class="titre__situe">Livre V — Livrer et clore : l'agent comme livrable logiciel, horizon et frontière. Second mouvement — horizon et frontière de la connaissance vérifiable (ch. 49-50). Premier des deux chapitres de clôture, et <strong>chapitre à deux mouvements</strong> issu de la fusion v0.20 des anciens ch. 55 et 56 (décision 11 du TOC)</p>
 </header>
+
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
+     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
 
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Note</span>
@@ -711,7 +716,11 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <h3>49.3.2 Neutralité contestée</h3>
 
-<p><strong>La dispersion des forums et la nature de leurs sponsors exposent la normalisation agentique à un risque de capture, que la neutralité affichée ne neutralise pas.</strong> Le Vol. I relève, au <strong>17 juin 2026</strong>, l'analyse critique d'une organisation de défense des libertés numériques soutenant que les travaux de signature de trafic automatisé menés dans un organisme de normalisation de l'Internet risquent de <strong>consolider des positions dominantes</strong> plutôt que d'ouvrir le web aux agents.</p>
+<p><strong>La dispersion des forums et la nature de leurs sponsors exposent la normalisation agentique à un risque de capture, que la neutralité affichée ne neutralise pas.</strong> Le Vol. I relève l'analyse critique de l'<strong>Electronic Frontier Foundation</strong> — <strong>McSherry et Noble</strong>, <em>The Free and Open Web Is Under Attack at the IETF</em>, blogue <em>Deeplinks</em>, <strong>17 juin 2026</strong> —, qui soutient que les travaux de <strong>Web Bot Auth</strong> menés à l'<strong>IETF</strong> risquent de <strong>consolider des positions dominantes</strong> plutôt que d'ouvrir le web aux agents.</p>
+
+<div class="avert">
+  <p><strong>L'attribution est restituée le 30 juillet 2026, et elle l'est parce que ce paragraphe la devait.</strong> Une analyse critique est <strong>une prise de position d'un acteur nommé</strong>, non un constat d'état : la rendre anonyme — « une organisation de défense des libertés numériques » — la déguisait en fait sans auteur, ce que <strong>CA-IV-03</strong> interdit et que la note de clôture de ce chapitre relevait elle-même comme une infraction. <em>Un argument qu'on ne peut pas rattacher à qui le porte ne se pèse pas ; il se subit.</em></p>
+</div>
 
 <p><strong>L'argument est structurel, et c'est pour cela qu'il compte</strong> : un mécanisme d'authentification du trafic automatisé, en imposant des identités signées et reconnues, <em>peut servir d'outil de filtrage et d'exclusion autant que d'ouverture, selon qui contrôle la liste des émetteurs admis</em>. Que l'architecture soit co-portée par des acteurs d'infrastructure majeurs n'invalide pas la démarche ; cela illustre pourquoi <strong>ceux qui maîtrisent l'infrastructure de vérification maîtrisent la porte</strong>.</p>
 
@@ -721,7 +730,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <h3>49.3.3 La normalisation institutionnelle</h3>
 
-<p>À côté des forums techniques rapides, une couche <strong>plus lente mais juridiquement structurante</strong> : travaux de sous-comité international sur l'IA — dont un amendement d'IA générative et des items de travail sur la taxonomie des capacités et sur les <strong>orientations de supervision humaine</strong>, tous à des stades intermédiaires —, normes harmonisées européennes qui conditionnent l'application effective du régime haut-risque, et une initiative de standards d'agents lancée le <strong>17 février 2026</strong> par un institut national de normalisation, avec un volet identité et sécurité.</p>
+<p>À côté des forums techniques rapides, une couche <strong>plus lente mais juridiquement structurante</strong> : les travaux de l'<strong>ISO/IEC JTC 1/SC 42</strong> — l'amendement 1 « Generative AI » de l'<strong>ISO/IEC 22989</strong> (stade DAmd), l'<strong>ISO/IEC DIS 42102</strong> (taxonomie des méthodes et capacités) et l'<strong>ISO/IEC DIS 42105</strong> (orientations sur la supervision humaine), tous à des stades intermédiaires de leur cycle —, les normes harmonisées du <strong>CEN-CENELEC JTC 21</strong> qui conditionnent l'application effective du régime haut-risque de l'AI Act, et l'<strong>AI Agent Standards Initiative</strong> lancée le <strong>17 février 2026</strong> par le <strong>NIST</strong>, au sein de son <em>Center for AI Standards and Innovation</em> (CAISI), avec un volet identité et sécurité.</p>
 
 <div class="avert">
   <p><strong>Le constat que le Vol. I en tire est le cœur du verrou institutionnel, et il est repris tel quel</strong> : à juin 2026, et selon toute trajectoire projetée pour 2027-2032, <strong>aucun standard mondial d'identité, de découverte ou d'interopérabilité des agents n'est juridiquement ancré</strong>. <em>Cette absence n'est pas un détail technique : c'est le verrou.</em> ⚠ <strong>Et elle s'énonce au degré exact</strong> : le corpus du Vol. I n'en documente aucun — <em>absence de documentation dans un corpus, degré 3</em>, non fait négatif vérifié.</p>
@@ -979,7 +988,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <tr><td><strong>§10.1</strong></td><td>Désignation de l'organisme de normalisation technique du cadre bancaire — <strong>fait négatif vérifié</strong> au 16 juillet 2026, aucun arrêté</td><td>ch. 30 (instruit), ch. 32 (R-5)</td><td>ouverte — <em>attend un acte réglementaire</em></td></tr>
     <tr><td><strong>§10.2</strong></td><td>Institutions sans socle complet — résidus [C] et absence de sources primaires agentiques pour une banque nommée</td><td>ch. 35</td><td>ouverte</td></tr>
     <tr><td><strong>§10.3</strong></td><td>Frameworks d'orchestration — réduite en amont, ne subsiste qu'un moteur d'exécution durable ; chiffres d'adoption non vérifiés</td><td>ch. 23</td><td>ouverte</td></tr>
-    <tr><td><strong>§10.4</strong></td><td>Réglementaire fin : <strong>contenu de la ligne directrice IA de l'AMF article par article</strong>, positions de la commission d'accès à l'information sur l'art. 12.1, suites de la consultation en valeurs mobilières — ⚠ <strong>la plus coûteuse de l'ouvrage</strong></td><td>ch. 27, ch. 28, ch. 29</td><td>ouverte — ⚠ <em>elle n'attend pas une autorité mais <strong>un lecteur</strong> : le texte est final depuis le 30 mars 2026, et c'est l'extraction primaire qui n'a pas été faite</em></td></tr>
+    <tr><td><strong>§10.4</strong></td><td>Réglementaire fin : <strong>contenu de la ligne directrice IA de l'AMF article par article</strong>, positions de la commission d'accès à l'information sur l'art. 12.1, suites de la consultation en valeurs mobilières — ⚠ <strong>la plus coûteuse de l'ouvrage</strong></td><td>ch. 27, ch. 28, ch. 29</td><td>ouverte — ⚠ <em>elle n'attend pas une autorité mais <strong>un lecteur</strong> : le texte est final depuis <strong>avril 2026</strong>, et c'est l'extraction primaire qui n'a pas été faite</em>. ⚠ <strong>Corrigé le 30 juillet 2026</strong> : cette ligne écrivait « depuis le 30 mars 2026 », date que <strong>R-IV-88 a défaite</strong> — <em>aucun des deux quantièmes arbitrés ne figure aux pages officielles</em>, et le ch. 27 § 27.1 déclare les trois états. <strong>Ne jamais rétablir « 30 mars 2026 »</strong></td></tr>
     <tr><td><strong>§10.5</strong></td><td>Articulation d'un protocole de paiement agentique avec les rails canadiens</td><td>ch. 36 (prospectif)</td><td>ouverte</td></tr>
     <tr><td><strong>§10.6</strong></td><td>Portefeuille d'intégration : position au quadrant iPaaS <strong>non vérifiée</strong> (R-6), chaîne de transformation de messagerie financière au niveau <strong>[C]</strong> après élévation tentée et <strong>échouée</strong>, annonces canadiennes</td><td>ch. 45, ch. 50</td><td>ouverte — <em>une élévation peut échouer sans négligence, et l'échec s'écrit</em></td></tr>
     <tr><td><strong>§10.7</strong></td><td>Composante homonyme d'un cadre d'écosystème — <strong>quatrième branche du garde-fou R-8 du Vol. II</strong> ; ni intitulé complet ni identité avec le protocole homonyme</td><td>ch. 7</td><td>ouverte — <em>aucune passe de recherche conduite</em></td></tr>
@@ -1153,7 +1162,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <p><strong>C'est le seul engagement qu'une somme datée puisse honnêtement tenir. Elle ne promet pas d'avoir raison longtemps. Elle promet de dire où elle ignore.</strong></p>
 
 <footer class="pied">
-  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre V, chapitre 49. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre V, chapitre 49. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
   <p><strong>†</strong> Renvoi à une section retirée de ce rendu — la note de statut, hors corps — conservée au fichier Markdown jumeau.</p>
 </footer>

@@ -309,10 +309,58 @@ préimpression, cité par son identifiant et sa version, énonçant la clé de j
 absence. *Échec documenté* : si le texte ne la porte pas, l'énoncé qui en sort reste au **degré 3**,
 et la préimpression sort du corpus candidat plutôt que d'y demeurer indéfinie.
 
+☑ ⚠ **DEUX DEMI-RÉPONSES EXISTENT DÉJÀ, et ne pas les inventorier était le reproche le plus fondé
+que l'arbitrage externe adresse à ce chapitre.** *La question qu'il pose est neuve ; le domaine n'est
+pas vierge, et une question neuve posée sur un domaine réputé vierge est une question mal posée.*
+Les deux ont été relevées à leur source le 30 juillet 2026 — **fiches de document, non textes
+extraits**.
+
+**Première demi-réponse — l'en-tête d'idempotence, côté appel** (relève le § 48.2). Le brouillon
+**`draft-ietf-httpapi-idempotency-key-header`**, *The Idempotency-Key HTTP Header Field*, de **Jena et
+Dalal**, groupe de travail **httpapi** de l'IETF, spécifie un en-tête par lequel un client marque une
+requête non idempotente — POST, PATCH — d'une clé permettant au serveur de **reconnaître un réessai
+plutôt que de l'exécuter deux fois**. ⚠ **Son statut se dit à chaque mention et il est sévère
+(R-09)** : **révision -07 du 15 octobre 2025**, et le document est **EXPIRÉ** — *il n'a pas atteint
+le stade de RFC, et rien n'établit qu'il l'atteindra.* ⚠ **La conclusion du § 48.2 n'est donc pas
+levée** : *l'écosystème n'a même pas d'en-tête normalisé pour dire « ceci est un réessai » — il en a
+eu un projet, et ce projet a expiré*, ce qui est un constat plus dur que l'absence pure.
+
+**Seconde demi-réponse — la clé de bout en bout, côté effet** (relève le § 48.4 et la question
+propre de cette section). L'écosystème des paiements normalisés porte depuis des années **exactement
+l'objet que ce chapitre déclare introuvable** : l'**UETR** — *Unique End-to-end Transaction
+Reference* —, identifiant **UUID de version 4** (RFC 4122), **obligatoire** dans les messages de
+valeur ISO 20022 `pacs.008`, `pacs.009` et `pacs.004`, **inchangé sur toute la chaîne de paiement**,
+et exploité par le dispositif de suivi qui recueille l'état auprès de chaque établissement traversé.
+S'y ajoute la **pratique de réconciliation** attachée — messages d'exception et d'investigation
+adossés à cette même clé.
+
+⚠ **Quatre bornes, et la troisième interdit d'en conclure ce qu'on aimerait en conclure.** *(1)*
+**L'UETR répond à la question dans le domaine du paiement, et il y répond bien** : *une clé unique,
+obligatoire, immuable, portée par le message lui-même et non par l'infrastructure qui le transporte.*
+*(2)* ⚠ **Il ne rattache pas un effet à l'appel d'agent qui l'a produit** : il rattache un **message
+de paiement** à ses **états successifs**. *Entre l'appel d'outil qu'un agent émet et le `pacs.008`
+qu'un système bancaire finit par produire, l'UETR ne dit rien* — **la jointure que ce chapitre cherche
+reste absente, degré 3**, et l'écrire autrement serait la transposition abusive que le ch. 22
+proscrit. *(3)* ⚠ **Le patron, en revanche, est instructif et il est transférable** : *une clé de
+jointure ne s'obtient pas en corrélant des traces après coup — elle s'obtient en la rendant
+**obligatoire dans le contrat**, portée par la charge utile, immuable, et vérifiable par chaque
+maillon.* **Lecture de l'auteur** : c'est la seule voie que ce chapitre puisse nommer, et **le socle
+ne l'établit pour aucun protocole agentique** — ni MCP, ni A2A, ni AP2 n'imposent un identifiant de
+bout en bout de cette nature. *(4)* **Aucun des deux ne monte au socle** : repérages datés, ni l'un ni
+l'autre extrait.
+
+⚠ **Le lot du § 48.5 s'en trouve élargi, non clos** : à la préimpression de mai 2026 s'ajoutent
+**deux corpus nommés et opposables** — le registre de documents de l'IETF pour l'en-tête
+d'idempotence, le corpus ISO 20022 pour l'UETR et les messages d'investigation. *Un lot qui nomme
+trois corpus est exécutable ; un lot qui n'en nommait qu'un, dont l'identifiant manquait, ne l'était
+pas.*
+
 ⚠ **Ce que ce chapitre lègue, et ce qu'il ne lègue pas.** Il lègue **une taxonomie de travail**
-(§ 48.1), **deux lots d'instruction** (§ 48.2, § 48.5) et **le siège** que cinq pièces rédigées
-attendaient. Il ne lègue **aucun mécanisme** : ni idempotence prescrite, ni compensation spécifiée,
-ni clé de jointure. *La somme sait désormais nommer ce qui advient quand une action d'agent réussit à
+(§ 48.1), **deux lots d'instruction** (§ 48.2, § 48.5) — ⚠ *le second élargi le 30 juillet 2026 à
+deux corpus nommés* — et **le siège** que cinq pièces rédigées attendaient. Il ne lègue **aucun
+mécanisme** : ni idempotence prescrite, ni compensation spécifiée, ni clé de jointure — ⚠ *mais il
+lègue désormais le **patron** d'une clé de jointure qui fonctionne ailleurs, et la borne qui interdit
+de la transposer sans travail.* *La somme sait désormais nommer ce qui advient quand une action d'agent réussit à
 moitié ; elle ne sait pas encore ce qu'un exploitant doit en faire, et le ch. 49 § 49.14 l'enregistre
 à ce titre.*
 

@@ -6,10 +6,10 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11).*
 | Champ | Valeur |
 |---|---|
 | **Statut** | **Brouillon de rédaction, non publiable** — portes G-1, G-2 et G-3 ouvertes à la rédaction ; rédaction sur instruction d'auteur du 27 juillet 2026. ⚠ **Deux mises à jour postérieures à la rédaction, et la seconde change l'état du volume.** *(1)* **27 juillet 2026** : **G-2 et le volet Livre I de G-1 franchis** (PRD v0.8), **remontées de cette pièce closes**. *(2)* **28 juillet 2026** : **G-3 est FRANCHIE** (PRD v0.14) — le socle consolidé existe, **159 entrées `S-001`…`S-159`** ([`socle-consolide.md`](../PRD/socle-consolide.md) v1.2). ⚠ **Aucune de ces trois portes ne rend la pièce recevable, et le motif se lit en trois temps.** *(a)* Elle a été **écrite avant elles**, et ses énoncés **n'ont pas été ré-résolus contre les identifiants `S-nnn`** — *une porte franchie après coup ne remonte pas le fil des pièces qu'elle conditionnait* : la ré-résolution est **due**, non faite. *(b)* Tant qu'elle n'est pas faite, **aucun énoncé de cette pièce n'est central au sens de CA-IV-01**. *(c)* **CA-IV-11 et CA-IV-13 demeurent insatisfaisables**, D-6 ne fournissant pas de relecteur distinct du rédacteur (PRD §11). |
-| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Deux gels de source : **juin 2026** (Vol. I), **16 juillet 2026** (Vol. II). ⚠ **Ce chapitre portait la péremption la plus courte de toute la somme, elle se comptait en heures, et ELLE EST ADVENUE.** L'anatomie décrite est celle de la **révision 2025-11-25** ; la **révision candidate, gelée le 21 mai 2026, avait sa ratification annoncée pour le 28 juillet 2026** — soit **le lendemain de la date de rédaction de ce chapitre**. **Constat du 28 juillet 2026** : la ratification a eu lieu à la date annoncée (socle consolidé `S-001` ; [registre du volet résiduel de G-1](../PRD/gel-2026-07-28-volet-residuel.md)). ⚠ **La revalidation en bloc des § 8.1 et § 8.2 est donc OUVERTE et NON EXÉCUTÉE** : elle se fait **sur sources primaires extraites**, jamais par retouche de ce texte — *ce chapitre décrit un contrat qui n'est plus le contrat courant, et il le dit plutôt que de se corriger à l'aveugle* |
+| **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Deux gels de source : **juin 2026** (Vol. I), **16 juillet 2026** (Vol. II). ⚠ **Ce chapitre portait la péremption la plus courte de toute la somme, elle se comptait en heures, et ELLE EST ADVENUE.** L'anatomie décrite est celle de la **révision 2025-11-25** ; la **révision candidate, gelée le 21 mai 2026, avait sa ratification annoncée pour le 28 juillet 2026** — soit **le lendemain de la date de rédaction de ce chapitre**. **Constat du 28 juillet 2026** : la ratification a eu lieu à la date annoncée (socle consolidé `S-001` ; [registre du volet résiduel de G-1](../PRD/gel-2026-07-28-volet-residuel.md)). ☑ ⚠ **La revalidation en bloc est EXÉCUTÉE le 30 juillet 2026** (D-11), sur le **journal des changements de la révision `2026-07-28` extrait à sa source** : cinq sous-sections revalidées d'un coup — § 8.1.2 (primitives client dépréciées, patron MRTR), § 8.1.3 (sessions, poignée de main et reprise de flux retirées), § 8.2.1 (jalon ratifié), § 8.2.2 (enregistrement dynamique de client déprécié) et § 8.2.3 (tâches sorties du cœur vers une extension), plus le § 8.3.1 pour la politique de dépréciation en vigueur. ⚠ **Ce chapitre décrit désormais le contrat courant**, et *il l'a fait sans retoucher le texte gelé : chaque revalidation est écrite à côté de l'état qu'elle périme, jamais à sa place.* ⚠ **Le socle n'est pas modifié par cette pièce** — le versement de `S-001` et `S-098` est **dû** et remonté |
 | **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026, et cette pièce n'y est PAS encore résolue.** Elle a été rédigée par résolution directe contre le **Vol. I *Monographie* §3.2-3.3 et §2.5.4** — régime **[C]** (PRD §7.1 : la vérification du Vol. I porte sur ses références, non sur le contenu de ses affirmations) — et contre le **Vol. II *Monographie* ch. 2**, aux quatre entrées que le TOC lui assigne : **`F-01`, `F-02`, `F-03`, `F-16` du Vol. II**. Ces quatre entrées **résolvent désormais en `S-001`, `S-002`, `S-003` et `S-013`** du socle consolidé, à **niveau conservé** (les quatre y sont `[A]` à portée générale). ⚠ **La correspondance est établie ici, la ré-résolution ne l'est pas** : *rapprocher deux identifiants n'est pas confronter un énoncé à l'entrée qu'il invoque*, et la matière du Vol. I n'a pour sa part **aucune entrée consolidée** — les dix-sept entrées héritées du Vol. I (`S-143`…`S-159`) ne couvrent pas §3.2-3.3. **Le régime [C] tient donc pour tout ce que ce chapitre tire du Vol. I**. ⚠ **Deux entrées hors assignation sont citées au corps comme CONSTATS, jamais comme socle mobilisé** — `S-098` au § 8.2.1 (divergence interne à la source, consignée non arbitrée) et `S-058` au § 8.4.2 (date de la v1.0, `[B]` non votée) ; *citer une entrée pour consigner un état n'est pas s'y appuyer* |
 | **Garde-fous balayés** | ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : quatre occurrences**, § 8.1.4, § 8.2.2, § 8.3.1 et § 8.6.1, chacune tenue — ⚠ *la formule imposée, elle, est employée au-delà de ces quatre marqueurs, notamment au § 8.7 : la réserve est tenue partout, seul son marqueur est compté ici* ; **R-1 : une occurrence**, § 8.5.1 ; **R-8 (sigle jamais nu) : une occurrence**, § 8.5.1 — le siège de l'encadré est au **ch. 7 § 7.5**, auquel ce chapitre renvoie **sans le reconstruire** ; **métriques auto-déclarées (PRD Vol. II §8.2, règle 1 ; règle transversale au §7.5) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au § 8.4.2 et au § 8.6.3**, la première attribuée, la seconde **refusée comme métrique** faute de chiffre, de date et de définition ; s'y ajoute, au § 8.6.1, une **estimation de tiers** attribuée nommément (décision 15 du TOC, branche *(i)*), et au § 8.4.1 l'**auteur de l'instrument de 1980** restitué (même décision, branche *(ii)* : l'auteur et la date d'un instrument repris ne s'anonymisent pas). R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 (qualification par ce que la spécification démontre) : trois occurrences**, § 8.1.4, § 8.2.2 et § 8.4.2 ; **R-13 : une occurrence**, § 8.5.1, même que R-8 ; **R-14 : trois occurrences**, § 8.2.3, § 8.6.1 et § 8.7 — ⚠ *le § 8.8, que cet en-tête portait auparavant, est la note de statut : hors domaine de comptage*. R-01, R-03 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 10 000 mots de corps (§ 8.1 à § 8.7) — le plus lourd du Livre I, sept sections contre quatre à six ailleurs. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 899 mots** de corps, **re-mesurés au commit du 28 juillet 2026** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−41,0 %** de la cible (5 138 mots et −48,6 % à la rédaction, puis −43,7 % au terme de la passe de relecture ; la contre-vérification qui l'a suivie a ajouté des **bornes de régime et deux écarts consignés**, **aucune matière neuve**). ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. **Le réel du Livre valait 64 750 mots, soit −0,4 % de l'enveloppe, au relevé du 27 juillet 2026** ; ⚠ **il n'est PAS re-mesuré ici** — *un cardinal de Livre mesuré pendant que ses onze pièces sont relues est faux à la seconde où on le publie*, et il se re-mesure au terme de la passe, sur le corpus que le commit produit. C'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Volumétrie cible** | ≈ 10 000 mots de corps (§ 8.1 à § 8.7) — le plus lourd du Livre I, sept sections contre quatre à six ailleurs. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 7 050 mots** de corps, ⚠ **re-mesurés au commit du 30 juillet 2026** (décision 16b — *le chiffre antérieur datait de la contre-passe du 28 juillet, et la passe de révision l'a périmé*) par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **-29,5 %** de la cible ⚠ **Ce réel est re-mesuré au commit du 30 juillet 2026** (décision 16b) : *toute date de mesure antérieure citée dans ce champ décrit une passe précédente, et la passe de révision D-11 l'a périmée.* (5 138 mots et −48,6 % à la rédaction, puis −43,7 % au terme de la passe de relecture ; la contre-vérification qui l'a suivie a ajouté des **bornes de régime et deux écarts consignés**, **aucune matière neuve**). ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. **Le réel du Livre valait 64 750 mots, soit −0,4 % de l'enveloppe, au relevé du 27 juillet 2026** ; ⚠ **il n'est PAS re-mesuré ici** — *un cardinal de Livre mesuré pendant que ses onze pièces sont relues est faux à la seconde où on le publie*, et il se re-mesure au terme de la passe, sur le corpus que le commit produit. C'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 8 — copiée, non re-frappée ; forme inchangée depuis la v0.23)* — « MCP dans les agents, A2A entre les agents » — doctrine de complémentarité **déclarée par le projet A2A** (non un accord des deux projets) qui fournit le premier critère de découpage architectural, sans le contraindre.
 
@@ -76,12 +76,34 @@ Ces canaux instaurent une interopérabilité **négociée et interactive, bidire
 modèle requête-réponse unidirectionnel. *Le contrat n'est plus un appel et son retour, mais un échange
 où le serveur peut, à son tour, interroger l'hôte.*
 
+☑ ⚠ **Revalidation du 30 juillet 2026 — et c'est ici que la révision `2026-07-28` mord le plus
+fort.** La description ci-dessus est celle de la révision **2025-11-25**, et elle reste exacte pour
+elle. Le texte neuf, lu à sa source, **retire le mécanisme et déprécie deux des trois primitives** :
+*(1)* les **racines** et l'**échantillonnage** passent à l'état **déprécié** — avec la
+**journalisation** —, la spécification recommandant de leur substituer, respectivement, le passage
+des répertoires par paramètres d'outil ou URI de ressource, et l'intégration directe aux interfaces
+des fournisseurs de modèles ; *(2)* le **mécanisme** de requête serveur-vers-client est remplacé par
+le patron des **requêtes à tours multiples** (*Multi Round-Trip Requests*, MRTR) : le serveur ne
+lance plus une requête à l'hôte, il **renvoie un résultat typé `input_required`** portant ses
+demandes, et le client **rejoue la requête d'origine** en y joignant ses réponses.
+
+⚠ **Le renversement que ce paragraphe analysait n'est pas annulé — il change de forme, et la nuance
+est le résultat de la revalidation.** L'appelé peut toujours exiger de l'appelant une information
+qu'il n'avait pas ; mais il l'exige désormais **par la valeur de retour et non par un appel
+entrant**, ce qui rétablit un flux à sens unique au niveau du transport tout en conservant la
+négociation au niveau du contrat. *Le protocole de conversation subsiste ; il cesse d'être un
+protocole à deux appelants.* ⚠ **La sollicitation, elle, n'est pas dépréciée** : elle passe sous
+MRTR, et sa notification de complétion — introduite en 2025-11-25 — est **retirée**.
+
 Lecture de l'auteur — c'est le premier endroit de la somme où un contrat d'interface autorise
 explicitement l'appelé à solliciter l'appelant. Le ch. 1 § 1.1.3 posait le contrat comme publication
 de ce qu'un système offre et exige ; ici, il devient un **protocole de conversation**. Le socle
 établit l'existence des trois primitives client et la direction de leur appel ; il **n'établit ni
 cette lecture, ni le caractère inédit qu'elle prête à ce renversement** dans l'histoire des contrats
-d'interface. Elle est proposée comme telle.
+d'interface. Elle est proposée comme telle. ⚠ **Et la lecture survit à la revalidation sous une forme
+bornée** : *ce que la révision `2026-07-28` montre, c'est qu'un renversement de sens d'appel est une
+propriété coûteuse qu'un standard peut choisir de rendre à l'état de résultat typé* — la
+bidirectionnalité était un choix, non une nécessité de la couche agentique.
 
 ### 8.1.3 Transports : une trajectoire du couplage vers le découplage
 
@@ -93,13 +115,28 @@ l'illustration la plus nette de l'invariant du Livre dans tout le mouvement.
 | **Entrée-sortie standard** | le serveur est un sous-processus local de l'hôte | **fort** — cycle de vie et machine partagés |
 | **HTTP à deux points d'accès** | un point pour les requêtes, un pour le flux d'événements | déprécié dès la révision suivante |
 | **HTTP diffusable à point unique** | un seul point d'accès | **résiduel** — un identifiant de session épingle un client à une instance |
-| **Cœur sans état** *(candidat au gel)* | suppression de la poignée de main et de l'identifiant de session | **aucun** — serveur déployable derrière un répartiteur à tourniquet |
+| **Cœur sans état** *(ratifié le 28 juill. 2026)* | suppression de la poignée de main, de l'identifiant de session et de la reprise de flux | **aucun** — serveur déployable derrière un répartiteur à tourniquet |
 
 : Tableau 8.2 — La trajectoire des transports : quatre étapes, un couplage qui décroît jusqu'à l'absence d'état partagé.
 
-⚠ **La dernière étape est une cible architecturale, non un acquis déployé.** Elle relevait, au gel,
-d'une **révision candidate** ; le § 8.2.1 en donne le statut exact et le constat de bascule qui a
-suivi.
+☑ ⚠ **Revalidation du 30 juillet 2026 : la dernière étape n'est plus une cible, elle est le
+contrat.** Trois termes du texte neuf, lus à sa source. *(1)* Les **sessions de protocole** et
+l'en-tête qui les portait disparaissent du transport diffusable ; l'état qu'un serveur doit conserver
+d'un appel à l'autre passe par des **poignées explicites, frappées par le serveur et transmises
+comme arguments d'outil ordinaires**. *(2)* La **poignée de main d'initialisation** disparaît :
+chaque requête porte désormais sa version de protocole et les capacités du client dans ses
+métadonnées, et une méthode de **découverte** permet la sélection de version en amont. *(3)* ⚠ **Le
+découplage se paie, et le prix n'était pas au tableau** : la **reprise de flux et la retransmission
+de messages sont retirées** — un flux de réponse interrompu **perd la requête en vol**, que le client
+doit réémettre sous un identifiant neuf.
+
+⚠ **C'est le fait le plus instructif de la revalidation, et il corrige la lecture d'origine.** Le
+tableau lisait la trajectoire comme une décroissance monotone du couplage ; la révision montre que
+*la dernière marche échange un couplage d'infrastructure contre une obligation de réémission côté
+client*. **Le couplage ne disparaît pas davantage ici qu'ailleurs : il se déplace vers l'appelant** —
+exactement ce que le ch. 1 § 1.3 énonce, et que ce chapitre croyait pour une fois pouvoir écarter.
+L'**HTTP à deux points d'accès**, déprécié depuis 2025-03-26, est en outre **reclassé** sous la
+politique de cycle de vie neuve.
 
 ### 8.1.4 Une interface d'outillage assortie d'un cadre d'autorisation
 
@@ -126,38 +163,41 @@ La succession des révisions constitue une **étude de cas de gouvernance d'un s
 | **2025-03-26** | 26 mars 2025 | transport diffusable à point unique ; **cadre** d'autorisation |
 | **2025-06-18** | 18 juin 2025 | sorties structurées ; sollicitation ; racines ; serveur qualifié serveur de ressources |
 | **2025-11-25** | 25 nov. 2025 | découverte d'identité ; schémas 2020-12 ; tâches asynchrones **expérimentales** |
-| **2026-07-28** *(candidate au gel)* | gelée le 21 mai 2026 | cœur sans état ; cadre d'extensions à nommage inversé ; **politique de dépréciation formelle** ; dépréciation de trois primitives et de l'enregistrement dynamique de client |
+| **2026-07-28** | **ratifiée le 28 juill. 2026** | cœur **sans état** — suppression des sessions de protocole et de la poignée de main ; `server/discover` ; **cadre d'extensions** ; **politique de cycle de vie et de dépréciation** à fenêtre de douze mois ; dépréciation des **racines, de l'échantillonnage et de la journalisation** ; dépréciation de l'**enregistrement dynamique de client** |
 
-: Tableau 8.3 — Cinq jalons en moins de deux ans, et un cinquième qui n'était pas acquis au gel.
+: Tableau 8.3 — Cinq jalons en moins de deux ans, et un cinquième qui n'était pas acquis au gel — il l'est depuis.
 
-⚠ **Trois précisions de statut, et la première est la plus importante de tout le chapitre.**
+☑ ⚠ **REVALIDATION EXÉCUTÉE LE 30 JUILLET 2026, sur la source primaire.** *L'historique de la
+péremption se conserve ci-dessous, au passé, parce qu'il est le seul cas du corpus où le dispositif
+du ch. 50 a été éprouvé par le réel* (décision 17c).
 
-*(a)* **Le cinquième jalon était, à la rédaction, une révision candidate et non une révision
-publiée.** Gelée le **21 mai 2026**, sa **ratification était annoncée pour le 28 juillet 2026** ; à la
-date de rédaction — le 27 juillet 2026 —, **elle n'était pas ratifiée**, et l'anatomie décrite aux
-§ 8.1 et § 8.2 est celle de la **révision 2025-11-25**.
+**Ce que le chapitre déclarait, et ce qui a été fait.** À la rédaction — 27 juillet 2026 —, le
+cinquième jalon était **une révision candidate et non une révision publiée** : gelée le **21 mai
+2026**, sa ratification était **annoncée pour le lendemain**, et l'anatomie des § 8.1 et § 8.2
+décrivait la révision **2025-11-25**. Le **28 juillet 2026**, la bascule a été **constatée** à la date
+annoncée (socle consolidé `S-001` ; [registre du volet résiduel de
+G-1](../PRD/gel-2026-07-28-volet-residuel.md)), et le chapitre a écrit — c'était le geste juste —
+que *constater une bascule n'est pas lire le texte qui a basculé*, laissant la revalidation
+**ouverte et non exécutée**. ⚠ **Elle est exécutée ici** : le **journal des changements de la
+révision `2026-07-28`** a été extrait à sa source le **30 juillet 2026**, et les § 8.1.2, § 8.1.3,
+§ 8.2.1, § 8.2.2 et § 8.2.3 sont revalidés **en bloc**, comme la règle l'exigeait — *non par
+retouche d'un texte gelé, mais par confrontation de chaque énoncé au texte neuf*.
 
-⚠ **Constat postérieur, daté du 28 juillet 2026 : la ratification a eu lieu, à la date même que la
-source annonçait.** La page de spécification courante sert désormais la révision `2026-07-28`, et
-l'index documentaire du site ne connaît plus la précédente (socle consolidé `S-001`, instruit au
-[registre du volet résiduel de G-1](../PRD/gel-2026-07-28-volet-residuel.md)).
+⚠ **Ce que la revalidation change de régime, et ce qu'elle ne change pas.** Les énoncés portant sur
+la révision `2026-07-28` résolvent désormais contre **un texte lu**, non contre une annonce : ils
+quittent le repérage pour l'extraction. ⚠ **Mais le socle n'est pas modifié par cette pièce** —
+`S-001` et `S-098` conservent leur état, et *un rédacteur ne verse pas au socle : il remonte*. Le
+versement est **dû**, et il est porté à la passe de socle.
 
-⚠ **Et la source se contredit sur ce point le jour même, ce qui se consigne sans s'arbitrer.** La page
-de versionnement du site déclarait encore, le 28 juillet 2026, que la version courante est la
-précédente (socle consolidé `S-098`), et la page servie sous la révision neuve **range la précédente
-parmi les révisions héritées tout en la nommant courante** — divergence **interne à une seule page**.
-Les deux états sont portés à leur entrée et **laissés ouverts** par le registre. *Deux constats pris
-le même jour sur le même site ne se départagent pas depuis ce chapitre.*
+⚠ **La divergence interne à la source, elle, n'est pas rejouée et reste consignée.** Le 28 juillet
+2026, la page de versionnement déclarait encore courante la révision précédente (`S-098`), quand la
+page servie sous la révision neuve la rangeait parmi les révisions héritées **tout en la nommant
+courante** — divergence interne à une seule page. *Ce constat est daté du 28 juillet et ne se
+corrige pas depuis le 30* : il décrit l'état du site à sa date, et le registre le laisse ouvert.
 
-⚠ **Ce constat porte sur la bascule, non sur le contenu de la révision neuve, qui n'a pas été
-extrait.** *La péremption que ce chapitre avait datée est advenue* : les § 8.1.3, § 8.2.1, § 8.2.2 et
-§ 8.3.1 se revalident **en bloc et sur sources primaires**, non par retouche — et ils décrivent, en
-attendant, l'état arrêté au gel.
-
-*(b)* **Cette révision porte des changements cassants**, et non seulement des ajouts : suppression de
-la poignée de main et de l'identifiant de session, dépréciation de trois primitives, remplacement du
-mécanisme d'enregistrement de client. Sa ratification **périme donc l'anatomie en bloc**, et non par
-retouches.
+*(b)* **Cette révision porte des changements cassants**, et non seulement des ajouts — le § 8.1.2 et
+le § 8.1.3 en portent désormais le détail lu. Sa ratification **a périmé l'anatomie en bloc**, et non
+par retouches : c'est pourquoi la revalidation a porté sur cinq sous-sections d'un coup.
 
 *(c)* **La cadence elle-même est un fait d'interopérabilité** : cinq jalons en moins de deux ans
 témoignent d'un standard **en maturation rapide**, où la rétrocompatibilité et la dépréciation
@@ -189,6 +229,24 @@ Une révision ultérieure ajoute la découverte d'identité, des documents de m�
 d'emblée une autorisation large. C'est le moindre privilège du ch. 6 § 6.5.2, porté par le protocole
 plutôt que par l'exploitant.
 
+☑ ⚠ **Revalidation du 30 juillet 2026 : la révision `2026-07-28` déplace l'enregistrement du client,
+et c'est un changement d'ancrage de confiance.** L'**enregistrement dynamique de client** (RFC 7591)
+est **déprécié** comme mécanisme d'enregistrement, au profit des **documents de métadonnées d'identifiant
+client** (*Client ID Metadata Documents*) ; il demeure disponible pour compatibilité avec les serveurs
+d'autorisation qui ne les prennent pas en charge. S'y ajoutent trois durcissements : le serveur
+d'autorisation **devrait** porter le paramètre `iss` de la RFC 9207 et le client **doit** le valider
+contre l'émetteur enregistré avant d'échanger le code ; le client **doit** déclarer un
+`application_type` approprié à l'enregistrement, pour éviter les conflits d'URI de redirection avec
+OpenID Connect ; et les **identifiants de client sont liés au serveur d'autorisation qui les a émis** —
+ils se conservent indexés par émetteur, ne se réutilisent pas ailleurs, et un changement de serveur
+**impose un réenregistrement**.
+
+⚠ **Qualification, au sens de R-02 : ce que ce déplacement démontre et ne démontre pas.** Il
+**démontre** que la spécification a nommé et fermé une classe de confusion d'émetteur au niveau du
+contrat. Il **ne démontre pas** que le parc déployé suive : *une dépréciation ouvre une fenêtre de
+douze mois pendant laquelle les deux mécanismes coexistent*, et c'est précisément la fenêtre où une
+institution doit savoir lequel elle exploite.
+
 ⚠ **Qualification, au sens de R-02 du Vol. III, et rappel de la réserve F-01.** Ce que ce cadre
 **démontre** : qu'un jeton présenté est confiné à l'audience déclarée, et que les métadonnées du
 serveur sont découvrables par un chemin normalisé. Ce qu'il **ne démontre pas** : que
@@ -219,6 +277,22 @@ d'entreprise : il gère la longue durée, mais **ne fournit pas les garanties de
 d'idempotence** d'un moteur durable. Le contrat de ces tâches **ne saurait être présenté comme
 stable**.
 
+☑ ⚠ **Revalidation du 30 juillet 2026 : la réserve ci-dessus a été validée par l'événement, et c'est
+le seul endroit de la somme où cela se produit.** La révision `2026-07-28` **sort les tâches du cœur
+du protocole** et les reverse à une **extension officielle** ; la refonte remplace la récupération
+bloquante par une **interrogation périodique**, ajoute une méthode d'**apport client** en cours de
+tâche, **supprime l'énumération des tâches**, et autorise le serveur à renvoyer une poignée de tâche
+**sans opt-in préalable de la requête**. *Le chapitre écrivait que « le contrat de ces tâches ne
+saurait être présenté comme stable » ; huit mois plus tard, il a changé de cœur et de forme.* ⚠ **Ce
+n'est pas une confirmation de la thèse du chapitre, c'est une confirmation de sa prudence** — la
+distinction importe : *avoir eu raison de ne pas s'engager n'est pas avoir établi un fait.*
+
+⚠ **Et un résultat s'ajoute au corps de la section, qui n'y était pas** : tous les résultats du
+protocole portent désormais un champ de type obligatoire — `complete` pour un résultat ordinaire,
+`input_required` pour un tour intermédiaire —, et les résultats des méthodes d'énumération et de
+lecture portent une **durée de fraîcheur** et une **portée de cache**. *La sémantique des résultats,
+que cette section décrivait comme un chantier, a reçu sa première clause de cache.*
+
 ⚠ **Une limite de fond demeure, et elle est la plus importante de la section : un schéma n'est pas une
 ontologie.** Un dialecte de schéma contraint la **forme** d'une sortie, **non son interprétation** ; il
 ne dit ni ce que les valeurs signifient, ni comment elles se relient à un vocabulaire partagé. Que ce
@@ -247,6 +321,16 @@ constitue un mécanisme de maturité **comparable à ceux des organismes de norm
 (ch. 3 § 3.4.4) : *elle rend l'évolution du contrat prévisible*. C'est, de toutes les nouveautés
 annoncées, celle qui intéresse le plus une institution réglementée — et celle dont le ch. 7 § 7.1.5
 faisait le troisième terme de l'invariant.
+
+☑ ⚠ **Revalidation du 30 juillet 2026 : la politique est en vigueur, et elle s'est appliquée à
+elle-même dès sa ratification.** Le texte neuf adopte la politique **et l'exerce dans la même
+révision** : trois primitives dépréciées, un transport reclassé, un mécanisme d'enregistrement
+déprécié, et un **registre des fonctions dépréciées** publié comme pièce de la spécification.
+⚠ **C'est ce qu'une institution réglementée doit lire, et le sens n'est pas celui qu'on attend** :
+*la première application d'une politique de dépréciation est toujours une vague, parce qu'elle solde
+l'arriéré accumulé avant elle.* La cadence des retraits à venir ne se déduit donc pas de celle-ci —
+et la fenêtre de douze mois place le premier retrait possible **après juillet 2027**, soit **au-delà
+de l'entrée en vigueur commune du 1ᵉʳ mai 2027** que l'horloge de la somme prend pour pivot.
 
 La bascule la plus significative reste le **passage du projet d'un éditeur à une fondation neutre**,
 en décembre 2025 (ch. 7 § 7.4) : le standard est soustrait au contrôle d'un acteur unique.

@@ -520,7 +520,39 @@ empirique hérité du Vol. II enseigne que **la journalisation confiée aux agen
 pas recommandée »** (H-12, **[B]**) — ⚠ *source unique, préimpression non révisée par les pairs, sans
 reproduction indépendante*, réserve que le socle porte expressément.
 
-Lecture de l'auteur — **le classement des trois pistes en un ordre de promesse n'est pas proposé.**
+☑ ⚠ **QUATRIÈME PISTE, ajoutée le 30 juillet 2026 : l'atténuation par caveats — et son absence de ce
+tableau était une omission canonique.** Le rapport d'arbitrage externe relève que l'état de l'art
+académique de la délégation multi-saut manquait au chapitre dont il est l'objet exact. Trois
+identifiants, relevés à leur source ce jour :
+
+- **Macaroons** — **Birgisson, Politz, Erlingsson, Taly et coll. (2014)**, *Macaroons: Cookies with
+  Contextual Caveats for Decentralized Authorization in the Cloud*, actes du NDSS 2014. Le principe
+  est **exactement celui que ce chapitre cherche** : un porteur peut **atténuer** un justificatif
+  qu'il détient — y ajouter des *caveats* qui en restreignent la portée — **sans revenir à
+  l'émetteur**, la chaîne d'atténuations étant vérifiable par construction cryptographique.
+- **Biscuit** — jeton d'autorisation à atténuation hors ligne et à politique embarquée, **spécification
+  de projet libre**, sans organisme de normalisation.
+- **GNAP** — *Grant Negotiation and Authorization Protocol*, **RFC 9635**, J. Richer et F. Imbault,
+  **octobre 2024**, **Proposed Standard** : refonte du modèle de délégation en rupture avec OAuth 2.0.
+
+⚠ **Ce que leur versement change, et ce qu'il ne change pas — quatre bornes, dont la troisième est la
+plus importante.** *(1)* **La lecture d'ensemble du § 17.6.2 est atténuée, non renversée.** Le
+paragraphe de clôture concluait qu'*aucune des trois pistes n'a été conçue pour l'objet cherché* ;
+⚠ **l'atténuation par caveats, elle, a bien été conçue pour lui** — la délégation restreinte sans
+retour à l'émetteur est son objet déclaré. *La lacune du chapitre n'est donc pas « personne n'a pensé
+au problème » ; elle est « ce qui l'a pensé n'a pas été repris par la couche agentique », ce qui est
+un constat plus dur et plus utile.* *(2)* ⚠ **Aucun des trois n'entre au socle, à aucun niveau.** La
+passe a lu **une notice bibliographique et deux fiches de document** — titre, auteurs, date, statut —,
+**non les textes** : *ce sont des repérages datés*, et le § 17.5 de ce même chapitre est le cas de
+référence qui interdit d'écrire davantage. *(3)* ⚠ **Aucune des trois n'est documentée comme
+résolvant le problème des deux sauts pour un agent** : Macaroons et Biscuit atténuent une **portée**,
+ils ne portent pas l'**identité de chaque maillon** que le § 17.6.1 déclare perdue ; GNAP refond la
+négociation d'octroi, **le socle ne documentant ni son adoption ni son emploi agentique** — *absence
+de documentation, degré 3*, non fait négatif vérifié. *(4)* **La question de recherche du § 17.6.3
+n'est pas close** : elle **s'enrichit d'un corpus nommé à instruire**, ce qui la rend exécutable là
+où elle ne l'était pas.
+
+Lecture de l'auteur — **le classement des quatre pistes en un ordre de promesse n'est pas proposé.**
 **Ce que le socle établit** : trois objets documentés de nature différente — un attribut de jeton et
 un mécanisme de propagation pré-normatif, un format d'attestation avec son historique, un jeu de
 conventions au premier échelon de son échelle et sans version citable. **Ce qu'il n'établit pas** :

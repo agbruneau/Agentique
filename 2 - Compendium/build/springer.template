@@ -296,7 +296,10 @@
 // ================= Liminaires =================
 
 // -- page de titre : titre en tête, colophon en pied, une seule page --
-#v(2.1cm)
+// ⚠ Ces deux #v() sont le budget de la page : le colophon a grandi le
+// 30 juillet 2026 (statut D-10/D-11), et ils ont été repris en conséquence.
+// Toute addition au colophon se paie ICI, jamais en laissant déborder.
+#v(0.9cm)
 #block(width: 100%, {
   set par(justify: false, leading: 0.5em, first-line-indent: 0pt)
   align(center, text(font: SERIF, size: 10.5pt, tracking: 0.16em)[COMPENDIUM - Science et Génie Informatiques])
@@ -309,7 +312,7 @@
     Interopérabilité, autonomie encadrée et fabrique de confiance :
     déployer des agents en services financiers réglementés (2024-2032)
   ]
-  v(1.7cm)
+  v(0.9cm)
   text(font: SERIF, size: 12.5pt)[André-Guy Bruneau, M.Sc. IT]
 })
 
@@ -351,6 +354,35 @@
     supplée l'absence d'un autre.
   ]))
   v(0.9em)
+  // -- Statut et réserves : exigés par D-10 (PRD §14) et maintenus par D-11
+  // (§15). Ce bloc EST le seul avertissement que porte le rendu : la page
+  // d'avertissement séparée a été retirée le 29 juillet 2026 et sa substance
+  // repliée ici. ⚠ Il manquait au gabarit jusqu'au 30 juillet 2026, alors que
+  // le PRD et les deux CLAUDE.md le déclaraient présent — écart trouvé en
+  // mesurant le PDF, invisible à la lecture de la source.
+  block(width: 100%, {
+    set text(size: 7.6pt)
+    set par(justify: true, leading: 0.40em, first-line-indent: 0pt)
+    [*Statut — révision finale, diffusion en bibliothèque personnelle.* Les
+     cinquante chapitres sont *arrêtés*, non recevables : arrêter n'est ni
+     terminer ni publier. *Diffusion autorisée* : lecture par l'auteur.
+     *Exclue* : toute mise à disposition d'un tiers, tout dépôt public, toute
+     citation dans un travail destiné à autrui. *Opposabilité : nulle.* Trois
+     portes sont satisfaites sur pièce (G-2, G-3, G-7) ; quatre sont closes
+     pour ce seul régime par dérogation nommée (G-1 résiduel, G-4 fond, G-5
+     balayage, G-6 lots). *CA-IV-11 et CA-IV-13 sont dérogés, non satisfaits* :
+     il n'existe pas de relecteur distinct du rédacteur. Aucun vote adversarial
+     n'a été conduit ; aucun énoncé n'est central au sens de CA-IV-01 ; les
+     trois volumes sources font foi. La dérogation tombe à la première
+     diffusion, et les portes redeviennent exigibles dans leur état.]
+    v(0.5em)
+    [*Passe de révision du 30 juillet 2026 (D-11).* Ouverte sur un rapport
+     d'arbitrage externe qui conclut à une révision majeure — accepté sur le
+     fond, non diffusable en l'état. Le statut ci-dessus est *inchangé* pendant
+     la passe. La condition qu'elle ne peut pas remplir est la première :
+     *la relecture par un tiers qualifié.*]
+  })
+  v(0.7em)
   [© André-Guy Bruneau, M.Sc. IT. Tous droits réservés.]
 })
 #pagebreak(weak: false)

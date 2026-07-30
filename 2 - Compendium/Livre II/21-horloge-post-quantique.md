@@ -608,16 +608,52 @@ ni le coût unitaire de migration d'un artefact d'identité d'agent, ni aucun or
 applicable à un parc d'entreprise — degré 3.** ***Le chapitre ne propose donc aucun ratio, aucune
 fourchette et aucune règle de trois — et ce refus est le résultat de la passe, non un pis-aller.***
 
-⚠ **Une lacune est ouverte ici et elle est la plus coûteuse du chapitre pour un volume canadien** :
-*quelles échéances les autorités canadiennes énoncent-elles, et sous quel régime ?* **Aucune passe de
-recherche n'a été conduite** — le lot déclare n'avoir rien instruit hors du couple États-Unis / Union
-européenne, **et signale lui-même que cette lacune est la plus coûteuse de celles qu'il laisse.**
-*Sources à retrouver : les publications du **Centre canadien pour la cybersécurité** et les travaux du
-groupe de travail canadien **CFDIR**, dont le rapport de lot précise que **la mention ne repose que sur
-des communiqués de presse** — le sigle « CFDIR » comptant **zéro occurrence** dans le texte extrait du
-rapport européen.* ⚠ **Les deux identifiants sont nommés plutôt qu'élidés** : *un critère de clôture qui
-ne porte pas l'identifiant de la source à instruire est inexécutable.* **La question reste ouverte ;
-aucune inférence n'est proposée.**
+⚠ **Une lacune était ouverte ici et le chapitre la déclarait la plus coûteuse de celles qu'il
+laisse** : *quelles échéances les autorités canadiennes énoncent-elles, et sous quel régime ?*
+**Aucune passe de recherche n'avait été conduite** — le lot déclarait n'avoir rien instruit hors du
+couple États-Unis / Union européenne. *L'état d'origine se conserve ici, au passé* (décision 17c) ;
+les sources à retrouver y étaient **nommées plutôt qu'élidées**, et c'est ce qui a rendu l'instruction
+exécutable — *un critère de clôture qui ne porte pas l'identifiant de la source à instruire est
+inexécutable.*
+
+☑ ⚠ **LOT INSTRUIT LE 30 JUILLET 2026 (D-11), par extraction à la source primaire.** Le **Centre
+canadien pour la cybersécurité** — l'un des deux identifiants que le critère de clôture nommait —
+publie le **23 juin 2025** la **Feuille de route pour la migration vers la cryptographie
+post-quantique au sein du gouvernement du Canada, ITSM.40.001**. Ses termes, lus à la page de
+l'organisme :
+
+| | |
+|---|---|
+| **Portée** | les **systèmes de TI non classifiés du gouvernement du Canada** — réseaux traitant l'information NON CLASSIFIÉ, PROTÉGÉ A et PROTÉGÉ B |
+| **Échéance des systèmes hautement prioritaires** | **fin de 2031** |
+| **Échéance des autres systèmes** | **fin de 2035** |
+| **Jalons intermédiaires** | plans de migration ministériels **d'ici avril 2026**, puis **rapports de progrès annuels** |
+| **Régime** | ⚠ **orientation, non obligation légale** — le document recommande et trace une feuille de route ; *il ne crée aucune contrainte opposable, et l'écrire autrement serait la faute que R-11 proscrit* |
+
+: Tableau 21.4 — La feuille de route canadienne ITSM.40.001, extraite à la page du Centre canadien pour la cybersécurité le 30 juillet 2026. ⚠ **Portée fédérale et régime d'orientation** : aucune de ses deux échéances n'est opposable à une institution financière.
+
+⚠ **Trois conséquences, et la première renverse une lecture du § 21.9.** *(1)* **Le Canada porte une
+échéance intermédiaire que ni le NIST ni l'Union européenne ne portent : la fin de 2031.** *Elle est
+antérieure de quatre ans à l'échéance de 2035 que le § 21.9 traite comme borne de droite, et
+**antérieure d'un an à l'ouverture de la fenêtre 2026-2029 augmentée d'un cycle**.* *(2)* ⚠ **Les
+origines ne se fusionnent pas** (**R-11**) : *2030/2035 du NIST, 2031/2035 du Centre canadien et le
+séquencement européen sont **trois calendriers distincts, de trois autorités distinctes, à trois
+régimes distincts*** — et le fait que deux d'entre eux partagent 2035 **n'est pas une convergence
+établie**, seulement une coïncidence de millésime. *(3)* ⚠ **La portée exclut les institutions
+financières.** ITSM.40.001 vise le **gouvernement fédéral**, non les banques ni les assureurs : *une
+institution qui s'en réclamerait comme d'une échéance applicable lirait, encore une fois, le plafond
+d'un autre* — c'est exactement l'avertissement du § 21.9, et il vaut pour cette source neuve comme
+pour les précédentes.
+
+☐ ⚠ **La lacune n'est pas close pour autant, et la part qui demeure se nomme.** Le second identifiant
+du critère de clôture — le groupe de travail **CFDIR** — **n'a pas été instruit** ; le rapport de lot
+précisait que sa mention ne repose que sur des communiqués de presse, et *rien de cette passe ne
+change cet état*. **Reste également ouvert** : ⚠ *aucune autorité canadienne de réglementation
+financière — ni le BSIF, ni l'AMF — n'est documentée comme ayant énoncé d'échéance post-quantique*.
+**Absence de documentation, degré 3**, non fait négatif vérifié : *aucun balayage de leurs
+publications n'a été conduit, et le déclarer autrement serait s'attribuer un travail qu'on n'a pas
+fait.* **La lacune passe donc d'ouverte à REQUALIFIÉE** — sa couverture a changé, son motif a changé,
+et *une lacune requalifiée reste une lacune*.
 
 ## § 21.9 — Fenêtre d'action 2026-2029 : le calendrier inverse
 
@@ -629,6 +665,25 @@ aucun délai de mise en œuvre applicable à une institution**.*
 la date la plus contraignante qui s'applique réellement à l'institution, en remontant vers l'instant
 présent.* ⚠ **Encore faut-il savoir laquelle des dates publiées s'applique — et le socle établit
 qu'elles ne sont ni de même nature, ni de même force, ni de même statut** (§ 21.1).
+
+⚠ **Ce raisonnement à rebours porte un nom depuis 2018, et ne pas le citer serait une omission
+canonique dans un chapitre post-quantique.** C'est l'**inégalité de Mosca** — **Michele Mosca**,
+*Cybersecurity in an Era with Quantum Computers: Will We Be Ready?*, *IEEE Security & Privacy*,
+16(5), 38-41, 2018 —, qui pose la condition sous laquelle une organisation est **déjà en retard** :
+si l'on note **x** la durée pendant laquelle un secret doit rester confidentiel, **y** la durée de la
+migration du parc, et **z** le délai avant qu'une machine quantique pertinente n'existe, alors ***x
++ y > z* signifie que l'exposition est déjà engagée** — *et la seule variable que l'exploitant
+contrôle est **y***.
+
+⚠ **Deux bornes, sans lesquelles la citation vaudrait caution.** *(1)* **Le socle ne fournit aucune
+des trois grandeurs** : ni la durée de confidentialité exigible d'un artefact d'identité d'agent, ni
+la durée de migration d'un parc — **degré 3**, comme le § 21.8 vient de l'établir —, ni *a fortiori*
+une estimation de **z**, qui est une projection et non un fait. *L'inégalité est donc versée ici comme
+**forme de raisonnement**, jamais comme instrument de calcul* : la somme ne l'instancie sur aucun
+chiffre. *(2)* ⚠ **Elle ne remplace pas la fenêtre 2026-2029, et ne la fonde pas non plus** : celle-ci
+reste une **construction de la somme** bornée à droite par une échéance datée du socle, quand Mosca
+raisonne sur un **z** qui n'y figure pas. *Nommer le patron dont une construction s'approche n'élève
+pas cette construction au rang de la source.*
 
 **Trois lectures se tirent du tableau du § 21.1, et deux d'entre elles sont des constructions
 d'auteur : la première seule est un fait.**

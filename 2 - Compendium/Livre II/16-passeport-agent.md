@@ -128,6 +128,38 @@ résout contre un texte, non contre une preuve.* Le présent chapitre **ne préj
 que ce siège établira du registre comme pièce de conformité ; il compose sur ce que le ch. 15
 § 15.3.3 porte, et **déclare l'autre moitié en attente**.
 
+### 16.1.1 Équivalents provisoires — ce qui tient lieu de chaque pièce en 2026
+
+⚠ **Cette sous-section est ajoutée le 30 juillet 2026 (D-11), et son motif est un défaut de
+prescription que l'arbitrage externe a nommé.** La thèse du chapitre écrit *« rien n'entre au maillage
+sans lui »* — **une règle d'admission adossée à un artefact que personne n'émet**. ⚠ ***Une
+prescription sans régime transitoire n'est pas une exigence : c'est une interdiction générale***, et
+un exploitant qui la lirait au pied de la lettre devrait fermer son maillage à tout agent, y compris
+les siens. Le chapitre le prescrivait sans le dire ; il le dit désormais.
+
+| Pièce | Ce qui en tient lieu aujourd'hui | Ce que le substitut ne fournit pas |
+|---|---|---|
+| **Carte signée** | la carte d'agent du protocole agent-agent, **signée et vérifiée hors bande** — le mécanisme existe et il est spécifié (ch. 15 § 15.1) | l'**ancrage organisationnel** de la clé : le vérificateur établit l'intégrité, jamais l'appartenance (F-09). *Le substitut est le plus proche du besoin, et c'est celui dont l'écart est le plus étroit* |
+| **Inscription au registre** | un **registre interne à l'organisation**, tenu par l'exploitant du maillage, avec ses propres champs de bornes et d'accès aux outils | l'**opposabilité inter-organisationnelle**. ⚠ *Un registre interne fait entrer l'agent chez soi ; il ne le fait entrer chez personne d'autre* — et c'est exactement la frontière que le ch. 17 déclare non franchie |
+| **Chaîne de mandat** | l'**échange de jeton** de la RFC 8693 et son attribut d'acteur, à **un saut**, dans un domaine de confiance unique | la composition **au-delà du premier saut** (ch. 17 § 17.6, degré 3), et l'**interrogeabilité de la chaîne à l'instant t** — ⚠ *à quoi s'ajoute que la RFC exclut de son champ la sécurité du jeton lui-même* |
+| **Attestations de conformité** | ⚠ **rien de protocolaire.** Ce qui en tient lieu est **documentaire** : l'inventaire de modèles que les cadres canadiens **attendent** (F-65, F-68 ; H-04), tenu hors du maillage et lu par des humains | **tout ce qui en ferait une pièce** : format, contenu, émetteur, vérifiabilité machine — **degré 3**, inchangé. *La quatrième pièce n'a pas d'équivalent provisoire ; elle a un substitut d'un autre ordre* |
+
+: Tableau 16.2 — Ce qui tient lieu de chaque pièce du passeport au 30 juillet 2026, et l'écart que le substitut laisse ouvert.
+
+⚠ **Trois bornes, et la première interdit de lire ce tableau comme une recommandation.** *(1)*
+**Aucune ligne n'est prescrite par une source** : les quatre substituts sont des **constructions de
+l'auteur** au sens de CA-IV-07, assemblées à partir de mécanismes que le socle documente séparément.
+*Le socle établit que ces mécanismes existent ; il n'établit ni qu'ils tiennent lieu de passeport, ni
+qu'un exploitant qui les emploie soit fondé à admettre un agent.* *(2)* ⚠ **Les quatre substituts
+partagent le défaut que le § 16.2 va nommer** : ils fonctionnent **dans une organisation**, et
+l'objet du passeport est l'admission **entre organisations**. *Un régime transitoire qui ne franchit
+pas la frontière n'est pas un régime transitoire vers le passeport ; c'est un régime stable d'un
+autre problème.* *(3)* **La thèse n'est pas amendée** — *elle se cite verbatim depuis le plan et un
+rédacteur ne la corrige pas* : ce qui change est que le chapitre **borne désormais sa portée
+pratique** au lieu de la laisser lire comme une règle immédiatement applicable. **Remontée ouverte**,
+à l'instance d'arbitrage : *la formule « rien n'entre au maillage sans lui » doit-elle porter sa
+clause transitoire au plan ?*
+
 ## § 16.2 — Ce qui n'existe toujours pas — et à quel degré
 
 > ⚠ **SIÈGE DE L'ENCADRÉ DES AFFIRMATIONS ÉCARTÉES POUR TOUTE LA SOMME.** Les garde-fous **R-2 et

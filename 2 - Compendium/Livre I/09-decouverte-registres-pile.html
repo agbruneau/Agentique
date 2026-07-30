@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 9 — Découverte, registres, portabilité et pile protocolaire · La somme agentique</title>
-<meta name="description" content="Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11)">
+<meta name="description" content="Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11)">
 <meta name="author" content="André-Guy Bruneau">
 <meta name="color-scheme" content="dark">
 <style>
@@ -535,10 +535,10 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <li><a href="#s92"><span class="num">9.2</span>La pile de protocoles agentiques et son étagement</a></li>
     <li><a href="#s93"><span class="num">9.3</span>Portabilité inter-modèles et inter-cadriciels</a></li>
     <li><a href="#s94"><span class="num">9.4</span>Interopérabilité sémantique des agents : de l&#x27;accord de protocole à la compréhension</a></li>
-    <li><a href="#s95"><span class="num">9.5</span>Test de conformité et certification des protocoles</a></li>
+    <li><a href="#s95"><span class="num">9.5</span>Test de conformité et certification des protocoles</a></li>
   </ol>
   <div class="nav__pied">
-    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
     <a href="09-decouverte-registres-pile.md">Version Markdown</a>
   </div>
 </nav>
@@ -551,6 +551,11 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <h1><span class="chap">Chapitre 9</span>Découverte, registres, portabilité et pile protocolaire</h1>
   <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11)</p>
 </header>
+
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
+     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
 
 <h2 id="s91"><span class="sig">§ 9.1</span>Découverte, registres et nommage des agents et des outils</h2>
 
@@ -772,7 +777,11 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <h3>9.3.1 Le standard de fait et le paradoxe du verrouillage inverse</h3>
 
-<p>Une interface d'invocation de modèles <strong>s'est imposée comme norme de fait, sans qu'aucun organisme de normalisation ne l'ait spécifiée</strong>. Sa diffusion procède de <strong>l'adoption en masse plutôt que d'un processus délibératif</strong> : les serveurs d'inférence ouverts et les passerelles tierces l'émulent <strong>précisément parce qu'elle est le format que la plupart des outils savent déjà parler</strong>.</p>
+<p>L'interface <strong>Chat Completions d'OpenAI</strong> — le point de terminaison <code>/v1/chat/completions</code> et le schéma de message qu'il impose — <strong>s'est imposée comme norme de fait, sans qu'aucun organisme de normalisation ne l'ait spécifiée</strong>. Sa diffusion procède de <strong>l'adoption en masse plutôt que d'un processus délibératif</strong> : les serveurs d'inférence ouverts et les passerelles tierces l'émulent <strong>précisément parce qu'elle est le format que la plupart des outils savent déjà parler</strong>.</p>
+
+<div class="avert">
+  <p><strong>Le nommer est une condition de la démonstration qui suit, et non un détail d'exposition.</strong> Le paradoxe du verrouillage inverse porte sur <em>une grammaire d'échange identifiable, gouvernée par un éditeur nommé</em> ; énoncé sur un standard anonyme, il serait invérifiable — <em>une démonstration sans témoin</em>. ⚠ <strong>Et le fait est daté</strong> : l'énoncé décrit l'état du 30 juillet 2026, où cette interface est encore le pivot d'émulation de l'écosystème, alors même que son éditeur en pousse la relève (§ 9.3.2).</p>
+</div>
 
 <p>On retrouve ici la distinction classique entre standard <strong>de fait</strong> et standard <strong>de droit</strong> — <em>la conformité n'est pas certifiée mais constatée à l'usage</em>. Le <strong>ch. 15 § 15.2.3</strong> en est le domicile dans la somme, et le <strong>ch. 3 § 3.4.4</strong> en tient l'autre versant : la certification tierce, qui convertit une compatibilité <strong>espérée</strong> en compatibilité <strong>attestée</strong>. Ce chapitre y renvoie et <strong>ne les reconstruit pas</strong>.</p>
 
@@ -786,7 +795,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
-  <p>Trois familles de contrats coexistent : la plus portable, <strong>sans état</strong> ; une interface unifiée à <strong>primitives agentiques et à état</strong>, dont une variante antérieure porte une <strong>dépréciation annoncée et un retrait visé</strong> ; et un format <strong>sans état</strong> de référence chez un autre éditeur, souvent émulé par les passerelles. ⚠ <strong>La fragmentation n'est pas tant dans le tronc commun que dans les capacités avancées</strong> — appel d'outils, sorties structurées, gestion d'état serveur — <strong>qui divergent d'un fournisseur à l'autre et brisent la substituabilité</strong>.</p>
+  <p>Trois familles de contrats coexistent, et il faut les nommer pour que l'arbitrage soit reproductible. <strong>Chat Completions</strong> (OpenAI) est la plus portable et <strong>sans état</strong> : c'est le format que les passerelles émulent. La <strong>Responses API</strong> du même éditeur unifie derrière une interface unique des <strong>primitives agentiques et un état serveur</strong> ; elle <strong>remplace l'Assistants API</strong>, dont OpenAI a annoncé la dépréciation le <strong>26 août 2025</strong> et fixé le retrait au <strong>26 août 2026</strong> — ⚠ <em>soit moins d'un mois après la date d'arrêt de cet ouvrage.</em> ⚠ <strong>Cette échéance n'est PAS au tableau 50.1, et l'écart se déclare plutôt qu'il ne se comble</strong> : le tableau porte <strong>onze</strong> événements, cardinal contrôlé et cité à trois endroits de la somme, et <em>y ajouter une rangée depuis une pièce du Livre I serait le geste qu'un rédacteur ne fait jamais — il remonte.</em> <strong>Remontée ouverte</strong>, à l'instance d'arbitrage : <em>un retrait d'interface daté, public et situé à vingt-sept jours de la date d'arrêt satisfait-il le critère du PROGRAMMÉ du § 49.0 ?</em> Chez <strong>Anthropic</strong>, l'API <strong>Messages</strong> est le format <strong>sans état</strong> de référence, souvent émulé lui aussi. ⚠ <strong>La fragmentation n'est pas tant dans le tronc commun que dans les capacités avancées</strong> — appel d'outils, sorties structurées, gestion d'état serveur — <strong>qui divergent d'un fournisseur à l'autre et brisent la substituabilité</strong>.</p>
 </div>
 
 <p>La réponse de l'industrie est une <strong>couche d'adaptation</strong> qui normalise ces formats derrière une interface unique : bibliothèques et mandataires traduisant <strong>plus d'une centaine</strong> d'interfaces, plans de contrôle multi-fournisseurs, routage et repli.</p>
@@ -1004,7 +1013,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 </div>
 
 <footer class="pied">
-  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 9. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 9. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

@@ -30,8 +30,8 @@ chapitre commence par poser cet écart plutôt que de l'employer.
 **Le statut du terme, posé avant tout usage.** *À juin 2026, la connaissance de l'agent **n'est pas un
 standard établi** ; les initiatives existantes relèvent du **positionnement fournisseur*** (Vol. I
 *Monographie* §5.5.4, en **[C]**, à son gel). ⚠ Et **aucun forum n'avait tranché à juin 2026** quelle
-instance porterait le standard — ni l'alliance industrielle, ni le consortium du Web, ni l'organisme
-international de normalisation (Vol. III H-19, **[C]**).
+instance porterait le standard — **ni la FIDO Alliance, ni le W3C, ni l'ISO** (Vol. III H-19,
+**[C]** ; les trois noms sont ceux que la source écrit, restitués ici par la décision 18 du TOC).
 
 ⚠ **Deux précisions que la somme doit à sa propre vérification, et elles ne sont pas de forme.**
 *Premièrement* : la formule commode « **terme de marché avant d'être terme de norme** » **ne figure

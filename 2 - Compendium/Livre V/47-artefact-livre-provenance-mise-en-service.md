@@ -112,10 +112,10 @@ Le tableau ci-dessous les reprend **avec leurs réserves d'origine**, sans en aj
 
 | Document relevé | Ce que la relève porte | Réserve portée par la relève elle-même |
 |---|---|---|
-| **SLSA v1.2** | statut *approuvé*, publiée sous la **Fondation Linux**, organisée en **deux pistes** — *Build* et *Source* | ⚠ la page relevée **ne porte ni la date d'approbation ni l'énumération des niveaux** : *à établir avant citation* |
+| **SLSA v1.2** | statut *approuvé*, publiée sous la **Fondation Linux**, organisée en **deux pistes** — *Build* et *Source* ; ☑ **approuvée le 24 novembre 2025**, précédée de deux candidates (20 juin et 10 novembre 2025) | ☑ **Réserve LEVÉE le 30 juillet 2026** sur le journal du projet, lu à sa source : *la page de spécification porte le statut sans la date, l'annonce porte la date* — ⚠ **l'énumération des niveaux, elle, reste non relevée** |
 | ***in-toto Attestation Framework*** (spécification v1) | cadre d'attestation du projet *in-toto*, hébergé par la **CNCF** | ⚠ le **niveau de maturité CNCF** du projet **n'est pas porté** par la page relevée |
-| **CycloneDX 1.7** | publiée le **21 octobre 2025** par l'**OWASP** et **Ecma International**, **normalisée ECMA-424 le 10 décembre 2025** | fait à distinguer d'un format d'éditeur : c'est une nomenclature devenue **norme d'organisme** |
-| **SPDX 3.0** | courante ; le projet se déclare norme internationale **ISO/IEC 5962:2021** | ⚠ la page relevée **ne précise pas quelle version de SPDX cette norme fixe** — la citer sans cette précision serait, sur une norme, la faute que la décision 7 du TOC proscrit sur les renvois |
+| **CycloneDX 1.7** | publiée le **21 octobre 2025** par l'**OWASP** et **Ecma International**, **normalisée ECMA-424 le 10 décembre 2025** ; ☑ précision relevée le 30 juillet 2026 : c'en est la **2ᵉ édition**, la 1ʳᵉ ayant normalisé **CycloneDX 1.6** en juin 2024 | fait à distinguer d'un format d'éditeur : c'est une nomenclature devenue **norme d'organisme**. ⚠ **Et l'édition compte** : *une norme d'organisme qui en est à sa deuxième édition en dix-huit mois se cite avec son édition, faute de quoi « ECMA-424 » désigne deux textes* |
+| **SPDX 3.0** | courante ; le projet se déclare norme internationale **ISO/IEC 5962:2021** | ☑ ⚠ **Réserve LEVÉE le 30 juillet 2026, et elle se résout CONTRE l'énoncé du projet.** La norme s'intitule *Information technology — SPDX® Specification V2.2.1* : **ISO/IEC 5962:2021 fixe SPDX 2.2.1, non 3.x.** *Le projet est fondé à se dire normalisé et il ne l'est pas dans la version qu'il sert* — c'est exactement l'écart que la réserve pressentait, et la prudence du relevé était justifiée |
 | **NIST SP 800-218A** | *Secure Software Development Practices for Generative AI and Dual-Use Foundation Models: An SSDF Community Profile*, **finale, 26 juillet 2024** ; profil communautaire du **SSDF v1.1**, adressé aux producteurs de modèles, aux producteurs de systèmes qui les emploient et à leurs acquéreurs | **profil**, non norme imposant conformité |
 
 : Tableau 47.2 — Les cinq documents de la relève v0.19 pour les nomenclatures et la signature d'artefacts, relevés à leur source le 26 juillet 2026. ⚠ **Aucun n'entre au socle** — ce chapitre n'en a pas, la décision 9 du TOC le déclare : ce sont des **candidates à instruire**, jamais des faits acquis. ⚠ **Les organismes publiants sont nommés, et ils ne sont pas anonymisables** : *un lot d'instruction dont le corpus ne porte pas l'identifiant de ses sources n'a pas de critère de clôture exécutable*, et la parade de péremption qui vaut pour une dénomination commerciale ne vaut pas pour l'éditeur d'une spécification.
@@ -150,6 +150,55 @@ daté, nommant un champ qui porte un composant de modèle ou d'invite — non un
 non un billet de
 projet. *Résultat d'un échec* : si le corpus ne porte pas cette description, l'échec est un
 résultat, il s'écrit, et la section garde la forme qu'elle a ici.
+
+### 47.2.1 Exécution partielle du lot L1 — ce que les profils d'IA portent, et ce qu'ils ne portent pas
+
+☑ ⚠ **Le volet « profils d'IA » du corpus est INSTRUIT le 30 juillet 2026 (D-11), par lecture des
+schémas à leur source.** *Deux des cinq documents cessent d'être des notices de page ; trois le
+demeurent.* Le critère de clôture exigeait « un énoncé normatif, cité et daté, nommant un champ qui
+porte un composant de modèle ou d'invite » — **il est satisfait pour le modèle, et il ne l'est pas
+pour l'invite.**
+
+| Source lue | Ce que la spécification nomme |
+|---|---|
+| **CycloneDX 1.7**, schéma JSON (ECMA-424 2ᵉ éd.) | deux valeurs énumérées du type de composant : **`machine-learning-model`** — « un modèle fondé sur des données d'entraînement, capable de prédire ou de décider sans avoir été explicitement programmé pour cela » — et **`data`**, « une collection de valeurs discrètes porteuses d'information » |
+| **SPDX 3.0**, profil **AI** | la classe **`AIPackage`** et ses **dix-huit propriétés**, dont **`typeOfModel`**, **`hyperparameter`**, **`modelDataPreprocessing`**, **`modelExplainability`**, **`limitation`**, **`metric`**, **`metricDecisionThreshold`**, **`autonomyType`**, **`safetyRiskAssessment`**, **`standardCompliance`**, **`useSensitivePersonalInformation`** |
+| **SPDX 3.0**, profil **Dataset** | la classe **`DatasetPackage`** et ses **treize propriétés**, dont **`datasetType`**, **`dataCollectionProcess`**, **`knownBias`**, **`intendedUse`**, **`confidentialityLevel`**, **`anonymizationMethodUsed`**, **`hasSensitivePersonalInformation`**, **`sensor`** |
+
+: Tableau 47.3 — Les champs normatifs relevés dans les profils d'IA et de jeu de données, lus à leur source le 30 juillet 2026.
+
+⚠ **La réponse à la question du lot est donc PARTIELLE, et sa partition est le résultat.** Des cinq
+composants du § 47.1 : les **poids de modèle** sont couverts par des champs nommés dans les deux
+nomenclatures ; les **bibliothèques** le sont par la nomenclature logicielle ordinaire, qui est
+l'objet historique des deux formats ; les **jeux de données** — que le § 47.1 ne comptait pas parmi
+les cinq — reçoivent un profil entier. ⚠ **Mais les deux composants proprement agentiques n'ont AUCUN
+champ** : *ni les **invites**, ni la **politique** d'autorisation ne portent de propriété dans l'un
+ou l'autre schéma*, et les **serveurs d'outils** n'y sont descriptibles que comme des composants
+logiciels quelconques, sans que rien n'exprime qu'un agent en dépend pour agir.
+
+⚠ **Trois bornes sur ce résultat, et la seconde est celle qui compte pour la suite du chapitre.**
+*(1)* **Le relevé porte sur les schémas et les modèles de données, non sur les textes normatifs
+complets** : *l'existence d'un champ est établie ; ce que la spécification en prescrit — obligation,
+cardinalité, sémantique — ne l'est pas.* **Élévation partielle**, et le lot L1 **reste ouvert** pour
+les trois autres documents (in-toto, SLSA, NIST SP 800-218A) et pour la RFC 9334. *(2)* ⚠ **Le constat
+central du § 47.2 n'est pas levé — il est PRÉCISÉ, et il en sort plus fort.** La formule « le socle ne
+documente aucune nomenclature dont le périmètre déclaré couvre les cinq composants — degré 3 » cesse
+d'être une absence de documentation : c'est désormais un **fait négatif établi**, borné aux deux
+nomenclatures lues et à leurs profils d'IA. ***Deux nomenclatures qui décrivent finement un modèle,
+ses hyperparamètres, son seuil de décision et son évaluation de risque, et qui n'ont pas un champ pour
+l'invite qui pilote l'agent : c'est la mesure exacte de l'écart entre l'outillage de l'IA et
+l'outillage de l'agentique.*** *(3)* ⚠ **Rien de cela n'entre au socle** : ce chapitre n'en a pas
+(décision 9 du TOC), et **D-8 comme D-3 demeurent** — *instruire un lot n'est pas constituer un
+socle*, et le retrait reste l'issue si les lots échouent.
+
+⚠ **Un fait secondaire mérite d'être relevé parce qu'il touche le Livre III.** Le profil **AI** de
+SPDX porte **`standardCompliance`**, **`safetyRiskAssessment`** et **`useSensitivePersonalInformation`**,
+et le profil **Dataset** porte **`hasSensitivePersonalInformation`** et **`anonymizationMethodUsed`** :
+*une nomenclature logicielle a commencé à porter des champs de conformité réglementaire.* **Lecture de
+l'auteur** — c'est un déplacement de la frontière entre inventaire technique et dossier de conformité,
+et **le socle ne l'établit pas** : ni l'usage effectif de ces champs, ni leur reconnaissance par un
+régulateur ne sont documentés. *Le champ existe ; que quiconque le remplisse ou l'exige demeure au
+degré 3.*
 
 ## § 47.3 — Signature et attestation d'artefacts
 
@@ -653,10 +702,22 @@ la décision 16, en-tête et note de statut exclus** — et **aucune absence pro
 expressément ce degré à un énoncé du chapitre (§ 47.1) et la troisième reprend un fait négatif
 **établi** par le ch. 16 § 16.1.* **Les six occurrences du verbe *démontrer*** énoncent ce que la source relevée
 démontre **et** ne démontre pas, y compris sur le statut de norme d'organisme du § 47.2. **Les statuts
-de document sont portés au site où chacun est introduit** — statut *approuvé* de SLSA v1.2 sans sa
-date d'approbation (§ 47.2), statut *Informational* de RFC 9334 (§ 47.3), statut de brouillon de
-laboratoire du registre (§ 47.12) —, et ⚠ **les reprises qui ne les répètent pas renvoient au site qui
-les porte** : *aucune n'est un site de qualification neuf.* ⚠ **La forme antérieure — « portés à
+de document sont portés au site où chacun est introduit** — statut *approuvé* de SLSA v1.2, ☑ **avec
+sa date d'approbation depuis le 30 juillet 2026** (§ 47.2), statut *Informational* de RFC 9334
+(§ 47.3), statut de brouillon de laboratoire du registre (§ 47.12) —, et ⚠ **les reprises qui ne les
+répètent pas renvoient au site qui les porte** : *aucune n'est un site de qualification neuf.*
+
+☑ ⚠ **Les trois réserves de relevé du § 47.2 sont LEVÉES le 30 juillet 2026** (D-11), sur leurs
+sources respectives lues ce jour, en réponse au grief mineur du rapport d'arbitrage externe. **Et
+l'une des trois se résout contre l'énoncé qu'elle bornait, ce qui est le résultat le plus utile de la
+levée** : *(1)* **SLSA v1.2 est approuvée le 24 novembre 2025** — journal du projet ; *(2)*
+**CycloneDX 1.7 est ECMA-424 2ᵉ édition**, la 1ʳᵉ ayant porté la version 1.6 ; *(3)* ⚠ **ISO/IEC
+5962:2021 fixe SPDX 2.2.1, et non SPDX 3.x** — le titre même de la norme le porte. *Le projet SPDX
+sert une version 3.0 tout en se réclamant d'une norme qui en fixe une autre ; le § 47.2 le dit
+désormais, et la prudence du relevé d'origine — « la citer sans cette précision serait une faute » —
+était exactement fondée.* ⚠ **La levée ne change pas le régime du chapitre** : les cinq
+spécifications de provenance demeurent **des notices de page, non des textes lus** — *lever une
+réserve de relevé n'est pas exécuter une extraction*, et les lots L1-L2 restent entiers. ⚠ **La forme antérieure — « portés à
 chaque mention » — était plus forte que le texte** : trois reprises ne répètent pas le statut, et *une
 attestation qui promet plus que le corps ne tient est une attestation fausse, fût-ce par excès.*
 **Le faux ami de R-13 est déclaré** (§ 47.10) plutôt que contourné. **Ni le nom « fabrique » ni le

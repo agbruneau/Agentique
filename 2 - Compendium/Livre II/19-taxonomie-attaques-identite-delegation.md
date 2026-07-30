@@ -340,6 +340,31 @@ tranche la question quantitative dans un sens ni dans l'autre**, et le lot charg
 ***La justification d'absorber la sécurité dans le cadre identitaire est donc architecturale et non
 statistique : verrou portant, non catégorie majoritaire.***
 
+☑ ⚠ **Une lignée manquait à ce chapitre, et son absence était une omission canonique relevée par
+l'arbitrage externe : le *confused deputy*.** **Norm Hardy (1988)**, *The Confused Deputy (or why
+capabilities might have been invented)*, *ACM SIGOPS Operating Systems Review*, 22(4), 36-38, nomme
+le patron dont toute cette taxonomie est une réinstanciation : ***un programme légitime, porteur
+d'une autorité qui lui est propre, est amené par un tiers à exercer cette autorité pour le compte de
+ce tiers*** — le mandataire n'est ni compromis ni malveillant, **il est confus sur le donneur
+d'ordre**.
+
+⚠ **Ce que la citation apporte au chapitre, et il faut le dire précisément, sans quoi elle ne serait
+qu'un ornement d'érudition.** *(1)* **Elle donne son nom au verrou que le § 19.4 vient de qualifier
+de portant.** L'injection indirecte, l'empoisonnement d'outil et le détournement de délégation
+multi-saut sont **trois formes d'un même patron vieux de trente-huit ans** : *la couche agentique
+n'invente pas la classe, elle en abaisse spectaculairement le coût d'exploitation* — un agent lit du
+contenu non fiable **par construction**, là où le compilateur de Hardy devait être trompé par un
+argument forgé. *(2)* ⚠ **Elle porte sa propre parade dans son sous-titre**, et c'est le point le
+plus utile : *« or why capabilities might have been invented »* — **le remède historique est la
+capacité**, c'est-à-dire un justificatif qui **désigne à la fois l'autorité et son porteur**, plutôt
+qu'une identité ambiante qu'un appelant peut emprunter. ⚠ **C'est exactement l'objet de la quatrième
+piste du ch. 17 § 17.6.2** — l'atténuation par caveats —, et *les deux chapitres se répondent sans
+que ni l'un ni l'autre l'ait su avant cette passe.* *(3)* ⚠ **Le versement ne change aucun régime de
+preuve** : la référence est **repérée à sa notice bibliographique**, non extraite, et **elle n'entre
+au socle à aucun niveau** ; **aucun énoncé du chapitre n'est réécrit sur elle**, et la lecture
+proposée ci-dessus est une **lecture de l'auteur** au sens de CA-IV-07. *Le socle établit les trois
+formes ; il n'établit pas leur identité de patron.*
+
 ## § 19.5 — L'empoisonnement de la mémoire et des sources
 
 Les attaques précédentes visent **l'agent**. Celles-ci visent **ce dont l'agent se nourrit**, et elles

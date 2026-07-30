@@ -2,18 +2,19 @@
 
 Guide pour Claude Code (claude.ai/code) à la **racine** du dépôt.
 
-## ⚠ ÉTAT AU DÉPÔT — 29 JUILLET 2026, ET C'EST LA PREMIÈRE CHOSE À LIRE
+## ⚠ ÉTAT AU DÉPÔT — 30 JUILLET 2026, ET C'EST LA PREMIÈRE CHOSE À LIRE
 
-**Le dépôt est arrêté dans cet état.** Ce bloc est le **seul état courant** de ce fichier ; **tout ce
-qui le suit est un journal daté**, écrit passe par passe, et se lit comme tel. ⚠ **Trois formules de
-ce fichier sont périmées partout où elles subsistent en aval, et aucune ne se corrige là où elle est**
-— elles datent la passe qui les a écrites : **« socle consolidé à zéro entrée »** (le socle porte
-**159 entrées** depuis le 28 juillet), **« deux portes sur sept »** (il en est **trois** depuis le
-28 juillet) et **« sept sur neuf » / « huit sur neuf » décisions d'auteur** (les **neuf** sont prises,
-D-10 comprise). *Un journal qui se réécrit cesse d'être un journal ; c'est cet en-tête qui fait
-autorité.*
+**Une passe de révision est ouverte sur le Vol. IV, sur arbitrage externe.** Ce bloc est le **seul
+état courant** de ce fichier ; **tout ce qui le suit est un journal daté**, écrit passe par passe, et
+se lit comme tel. ⚠ **Quatre formules de ce fichier sont périmées partout où elles subsistent en aval,
+et aucune ne se corrige là où elle est** — elles datent la passe qui les a écrites : **« socle
+consolidé à zéro entrée »** (le socle porte **159 entrées** depuis le 28 juillet), **« deux portes sur
+sept »** (il en est **trois** depuis le 28 juillet), **« sept » / « huit » / « neuf » décisions
+d'auteur** (elles sont **douze** depuis le 30 juillet, D-11 et D-12 comprises) et **« 810 pages »**
+(le rendu en compte **921** depuis le 30 juillet). *Un journal qui se réécrit cesse d'être un journal ;
+c'est cet en-tête qui fait autorité.*
 
-**Décomptes re-mesurés sur pièce le 29 juillet 2026** — jamais recopiés, commandes aux sections
+**Décomptes re-mesurés sur pièce le 30 juillet 2026** — jamais recopiés, commandes aux sections
 correspondantes de ce fichier et du [`README.md`](README.md) :
 
 | Livrable | Rendu (`pypdf`) | Pièces | Contrôles exécutés |
@@ -22,10 +23,38 @@ correspondantes de ce fichier et du [`README.md`](README.md) :
 | Vol. I | **569 p.** | 7 ch. + Annexe B, **28 diagrammes** (motif ancré) | — |
 | Vol. II | **387 p.** | **29 pièces**, socle 46 entrées | CA-1…CA-8 |
 | Vol. III | **427 p.** | **34 pièces**, **30 rapports** | CA-01…CA-14 |
-| Vol. IV | **810 p.** | **50 chapitres** + 1 annexe hors plan, socle **159 entrées** | `check-toc.py`, `check-sieges.py` (**26 sièges / 50 pièces**), `check-compendium.py` (**P1-P8**, 3 rapports déclaratifs), `decompte.sh` → **0** pour les quatre |
+| Vol. IV | **921 p.**, aucune page blanche | **50 chapitres** + **2 annexes** — l'annexe hors plan des 159 entrées et l'**Annexe I** du plan (**1 154 entrées**, neuve) —, socle **159 entrées**, corps **330 003 mots** | `check-toc.py`, `check-sieges.py` (**26 sièges / 50 pièces**), `check-compendium.py` (**P1-P8**, 3 rapports déclaratifs), `decompte.sh`, `verifier-piece.py` sur **21 pièces** → **0** pour tous |
 
-**Gouvernance du Vol. IV à sa date d'arrêt : TOC v0.31, PRD v0.15, décision d'auteur D-10.** Ne citer
-aucune version antérieure comme courante ; les v0.26 à v0.30 et v0.11 à v0.14 sont des **historiques**.
+**Gouvernance du Vol. IV : TOC v0.32, PRD v0.16, décisions d'auteur D-1 à D-12.** Ne citer aucune
+version antérieure comme courante ; les v0.26 à v0.31 et v0.11 à v0.15 sont des **historiques**.
+
+⚠ **Ce que la passe de révision du 30 juillet 2026 change, et ce qu'elle ne change pas.** La décision
+**D-11** **rouvre D-10** en réponse à un **rapport d'arbitrage externe** — [`2 - Compendium/eval.html`](2%20-%20Compendium/eval.html),
+« révision majeure — accepté sur le fond, non diffusable en l'état », **22 affirmations vérifiées :
+19 confirmées, 3 partielles, 0 infirmée**. ⚠ **Elle rouvre le TRAVAIL, non le RÉGIME** : le statut
+demeure **révision finale, diffusion en bibliothèque personnelle**, les quatre portes dérogées le
+restent, **CA-IV-11 et CA-IV-13 restent dérogés**, et **aucun énoncé n'est central**. ⚠ **Le rapport
+n'a AUCUNE autorité** — il déclare lui-même ne satisfaire ni CA-IV-11 ni CA-IV-13 : ses constats sont
+des **remontées**, du régime d'[`audit.md`](2%20-%20Compendium/audit.md), **jamais citables à l'appui
+d'un énoncé**. **Quatre faits valent au niveau de la racine ; le détail vit au [`CLAUDE.md` du
+dossier](2%20-%20Compendium/CLAUDE.md) et n'est pas repris ici.** *(a)* ☑ ⚠ **La décision 15a du TOC
+est RENVERSÉE** (décision 18) : *la citation nominative l'emporte, la péremption se gère par
+**datation**, non par anonymat* — **domaine résiduel déclaré : 261 tournures indéfinies dans 44 pièces
+sur 50**. *(b)* ☑ ⚠ **Le premier événement de péremption du dépôt est PAYÉ** : la révision protocolaire
+`2026-07-28` extraite à sa source, **six sous-sections du ch. 8** et le **§ 11.3.1** revalidés — *le
+protocole du ch. 50 avait prouvé qu'il détecte ; il a prouvé qu'il répare.* *(c)* ☑ **L'Annexe I
+existe** et **un quatrième script d'assemblage** entre au dépôt
+([`build/assemble-bibliographie.py`](2%20-%20Compendium/build/assemble-bibliographie.py), reproductible).
+*(d)* ⚠ **Un défaut du livrable a été trouvé en MESURANT le PDF** : le **colophon ne portait ni le
+statut ni les réserves** que D-10 exige, alors que trois documents de gouvernance le déclaraient
+présent depuis le 29 juillet. *Le seul avertissement du rendu manquait au rendu* — corrigé, et **la
+règle des livrables rendus par un pipeline en sort renforcée : on mesure la sortie, jamais la
+source.*
+
+⚠ **Ce que la passe NE FAIT PAS, et qui reste la limite de tout le dépôt** : **la relecture par un
+tiers qualifié n'est pas fournie et ne peut l'être par aucune passe instrumentée** — *le rapport qui
+l'exige ne la fournit pas davantage, et il le déclare.* **Ne jamais écrire « conforme », « publiable »
+ni « terminé ».**
 
 **Six `CLAUDE.md` et douze `README.md`, sans recouvrement** — cardinaux re-comptés sur l'arbre le
 29 juillet 2026. Le Vol. III a reçu le sien ce jour-là, en **douzième** : il était le seul des trois

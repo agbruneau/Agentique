@@ -337,6 +337,47 @@ proscrit nu.*
    qu'il doit **décider**.* ⚠ **Et de la ligne directrice de l'AMF, l'un des deux textes dont l'entrée en
    vigueur commune est fixée au 1ᵉʳ mai 2027, ce chapitre ne dit toujours rien.**
 
+### 29.4.1 Rendre la condition 2 exécutable — un test, et ce qu'il n'est pas
+
+⚠ **Cette sous-section est ajoutée le 30 juillet 2026 (D-11), et elle répond à un reproche exact de
+l'arbitrage externe : le principe directeur est inapplicable tant que son antécédent n'est pas
+décidable.** *Un praticien qui lit « sous exigence réglementaire stricte » doit pouvoir dire si son
+processus y tombe ; à défaut, le principe ne se réfute ni ne s'applique — il s'invoque.*
+
+⚠ **Ce qui suit n'est PAS une définition, et le confondre avec une définition annulerait la
+condition 2 plutôt que de la satisfaire.** *Le socle ne définit pas le terme, et cette passe ne le
+définit pas davantage* — elle propose un **test de qualification, construction d'auteur**, dérivé des
+seuls éléments que le socle porte : le déclencheur écrit de l'article 12.1 (ch. 27 § 27.2), la
+distinction attente / obligation du § 29.2, et les trois régimes de preuve négatifs du ch. 30.
+
+**Un processus relève de l'exigence réglementaire stricte si les trois conditions sont réunies.**
+
+1. **Un texte opposable en nomme le résultat.** *Non pas « attend » un programme, mais **impose** un
+   résultat à l'égard d'une personne — une décision, un refus, une communication.* ⚠ **Le critère
+   discriminant est le verbe du texte, pas son sujet** : « doit » qualifie, « devrait » ne qualifie
+   pas — c'est la distinction que le § 29.2 pose et que le ch. 25 tient sur E-23.
+2. **Une trace en est exigible par un tiers.** *Quelqu'un d'autre que l'exploitant — un régulateur,
+   une personne concernée, un tribunal — peut demander **comment** le résultat a été produit, et
+   l'exploitant doit pouvoir répondre.* ⚠ *C'est cette condition, et non la première, qui impose le
+   déterminisme* : **un processus dont nul ne peut demander le chemin n'a pas besoin d'un chemin
+   reproductible.**
+3. **L'écart au résultat n'est pas réparable par la reprise.** *Si une erreur se corrige en rejouant
+   le processus sans dommage subsistant, l'exigence n'est pas stricte au sens utile ici.* ⚠ **C'est
+   le patron d'irréversibilité du ch. 31**, appliqué à la qualification plutôt qu'à la conception.
+
+⚠ **Quatre bornes, et la dernière est celle qui compte pour la condition 2.** *(a)* **Les trois
+conditions sont cumulatives** : deux sur trois ne qualifient pas. *(b)* **Le test qualifie un
+processus, jamais une technologie** — *« l'agentique est-elle sous exigence stricte » est une question
+mal formée*, exactement comme au ch. 27 où le déclencheur de l'article 12.1 est une propriété
+d'architecture et non un vocabulaire. *(c)* **Aucune des trois conditions n'est portée par une
+source** : ce sont des **lectures de l'auteur** (CA-IV-07), et *le socle établit les matériaux, non
+leur composition en test.* *(d)* ⚠ **La condition 2 du principe directeur n'est donc PAS levée** :
+elle disait que *« qualifier un processus canadien au regard de ce critère reste un travail
+d'institution »*, et **cela demeure vrai** — *ce test dit à une institution **quoi** décider, il ne
+décide à sa place ni ne l'en dispense.* **Ce qui change est qu'il y a désormais quelque chose à
+réfuter** : un praticien qui juge le test faux peut dire laquelle des trois conditions il rejette, ce
+qu'un terme indéfini ne permettait pas.
+
 ### Synthèse : ce que le chapitre lègue à la somme
 
 *Section de sortie sans homologue direct dans la source — construction d'éditeur.*

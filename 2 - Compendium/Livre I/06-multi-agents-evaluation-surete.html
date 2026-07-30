@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 6 — Systèmes multi-agents, évaluation et sûreté · La somme agentique</title>
-<meta name="description" content="Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6). Dernier chapitre du mouvement.">
+<meta name="description" content="Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6). Dernier chapitre du mouvement.">
 <meta name="author" content="André-Guy Bruneau">
 <meta name="color-scheme" content="dark">
 <style>
@@ -535,10 +535,10 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <li><a href="#s62"><span class="num">6.2</span>Communication inter-agents : A2A, ACP et pile d&#x27;interopérabilité</a></li>
     <li><a href="#s63"><span class="num">6.3</span>Évaluation et bancs d&#x27;essai</a></li>
     <li><a href="#s64"><span class="num">6.4</span>Sûreté, red-teaming et taxonomie d&#x27;échecs</a></li>
-    <li><a href="#s65"><span class="num">6.5</span>Défense architecturale, garde-fous et alignement</a></li>
+    <li><a href="#s65"><span class="num">6.5</span>Défense architecturale, garde-fous et alignement</a></li>
   </ol>
   <div class="nav__pied">
-    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
     <a href="06-multi-agents-evaluation-surete.md">Version Markdown</a>
   </div>
 </nav>
@@ -551,6 +551,11 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <h1><span class="chap">Chapitre 6</span>Systèmes multi-agents, évaluation et sûreté</h1>
   <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6). <strong>Dernier chapitre du mouvement.</strong></p>
 </header>
+
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
+     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
 
 <h2 id="s61"><span class="sig">§ 6.1</span>Pourquoi le multi-agent : gains, surcoût, topologies</h2>
 
@@ -630,6 +635,24 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <div class="avert">
   <p><strong>Un chiffre d'adoption est relevé au premier anniversaire d'A2A</strong> — plus de 150 organisations —, et il est <strong>auto-déclaré</strong>. Il est attribué ici à sa source — <strong>la Linux Foundation</strong>, fondation faîtière du protocole, qui le rapporte en avril 2026 (ch. 7 § 7.6) —, et il mesure un <strong>soutien</strong>, non une mise en production. La distinction est celle que le ch. 7 érige en critère, et elle vaut d'être posée dès maintenant : <em>soutien n'est pas production</em>.</p>
 </div>
+
+<h3>6.2.1 Ce que « communiquer » veut dire, et ce que ces protocoles n'en portent pas</h3>
+
+<div class="avert">
+  <p><strong>Cette sous-section est ajoutée le 30 juillet 2026 (D-11), et son motif est un reproche fondé de l'arbitrage externe : une section intitulée « communication inter-agents » qui n'énumérait que des protocoles et leur gouvernance n'honorait pas son titre.</strong> <em>Le renvoi de l'anatomie au ch. 8 et de la pile au ch. 9 reste un arbitrage de plan légitime ; ce qui manquait n'est ni l'une ni l'autre — c'est la question de la <strong>sémantique</strong> de l'échange, qui n'a de siège nulle part ailleurs.</em></p>
+</div>
+
+<p><strong>Communiquer suppose trois accords, et les protocoles agentiques n'en portent qu'un.</strong> <em>(a)</em> Un accord sur le <strong>transport</strong> — comment le message circule : <em>porté</em>, par le protocole agent-agent comme par le protocole agent-outil. <em>(b)</em> Un accord sur la <strong>forme</strong> — comment le message est structuré : <em>porté aussi</em>, par les schémas de tâche et de message. <em>(c)</em> ⚠ Un accord sur la <strong>force illocutoire</strong> — <em>ce que l'émetteur <strong>fait</strong> en émettant : demande-t-il, informe-t-il, s'engage-t-il, refuse-t-il, propose-t-il ?</em> <strong>C'est celui-là qui manque.</strong></p>
+
+<div class="avert">
+  <p><strong>Le contraste avec l'héritage multi-agents classique est net, et il a été nommé au ch. 4 § 4.1.3.</strong> <strong>KQML</strong> (Finin, Fritzson, McKay et McEntire, 1994) puis <strong>FIPA-ACL</strong> — dont la bibliothèque <strong>SC00037J</strong> énumère ses actes communicatifs, chacun assorti d'une précondition, d'un effet rationnel et d'un schéma de contenu — avaient fait de la force illocutoire <strong>un champ obligatoire du message</strong>. <em>Un agent FIPA qui reçoit un message sait s'il est mis en demeure ou simplement informé, parce que le protocole le lui dit.</em> <strong>Les protocoles agentiques de 2025-2026 ne portent pas cette information</strong> : un message y transporte une charge utile typée dont <em>l'intention se déduit du contenu, c'est-à-dire du langage naturel, c'est-à-dire du modèle</em>.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Trois bornes, et la deuxième interdit la lecture nostalgique.</strong> <em>(1)</em> <strong>Le socle ne documente pas cette absence comme un fait négatif vérifié</strong> : aucun balayage systématique des spécifications agentiques n'a été conduit sous cet angle — <strong>absence de documentation, degré 3</strong> (R-14 du Vol. III). <em>(2)</em> ⚠ <strong><em>Que FIPA-ACL ait porté les actes communicatifs n'établit pas que sa démarche ait réussi</strong></em>. Le socle ne documente ni son adoption industrielle, ni sa performance, ni les motifs de son déclin ; <em>écrire que la couche agentique « a oublié » quelque chose qui marchait serait un jugement que rien n'appuie.</em> <strong>Ce qui est établi est plus étroit et plus sûr : le problème avait été posé, il avait reçu une réponse normalisée, et la couche neuve le repose sans la reprendre.</strong> <em>(3)</em> <strong>La coordination sous défaillance n'est pas traitée ici et ne le sera pas</strong> : elle est <strong>hors périmètre par décision d'auteur D-7</strong>, déclarée au risque 15 du TOC, et ce chapitre y est <strong>fermé</strong> — <em>y ajouter une section rouvrirait la décision, non le seul chapitre.</em></p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> cette absence est de la même famille que celle du ch. 8 § 8.2.3 : <em>un schéma contraint la forme d'un message, il n'en dit pas l'interprétation.</em> <strong>Le ch. 48 la retrouvera au niveau de l'effet</strong> — <em>que produit le rejeu de ce message ?</em> — et <strong>le ch. 9 § 9.4 l'instruit</strong> au niveau du vocabulaire. <em>Les trois sont la même question posée à trois étages, et la somme ne la résout à aucun.</em></p>
 
 <h2 id="s63"><span class="sig">§ 6.3</span>Évaluation et bancs d'essai</h2>
 
@@ -833,7 +856,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 </div>
 
 <footer class="pied">
-  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 6. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 6. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

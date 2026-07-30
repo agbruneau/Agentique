@@ -9,7 +9,7 @@ Premier mouvement — les fondements (ch. 1-6).*
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Matière condensée au gel de sa source — **juin 2026** (Vol. I) —, qui n'est pas celui de la somme. ⚠ Trois faits datés y appellent une re-vérification à G-1 : la finalisation d'un profil de haute sécurité (22 février 2025), une recommandation du W3C sur les attestations vérifiables (15 mai 2025), et le statut d'**OAuth 2.1**, **encore à l'état de projet à la mi-2026** |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé.** ⚠ **L'Annexe B existe depuis le 28 juillet 2026** — 159 entrées, `S-001`…`S-159` —, mais **cette pièce n'y est pas ré-adossée** : le ré-adossement est dû et n'est pas opéré ici. Les énoncés résolvent contre le **Vol. I *Monographie* §1.9-1.10**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01.** ⚠ Réserve renforcée pour ce chapitre : la matière cryptographique est celle où un énoncé [C] non élevé fait le plus de dégâts, puisqu'elle est citée comme garantie |
 | **Garde-fous balayés** | **Les deux séries, intégralement.** ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — R-1 à R-8 : **zéro occurrence** (aucune matière réglementaire canadienne, aucune métrique d'adoption auto-déclarée, aucun énoncé sur E-23, le RTR ou MCP). Vol. III — **R-02 (qualification cryptographique) : quatre occurrences**, § 3.2.2, § 3.3.1 et § 3.3.2 (deux) — chaque mécanisme y est qualifié par ce que sa spécification **démontre**, jamais par ce qu'elle promet ; ⚠ *le § 3.2.2 porte **un** marqueur pour **deux** mécanismes qualifiés : le cardinal compte les marqueurs, non les mécanismes* ; **R-11 (jalons NIST « visés », jamais « fixés ») : une occurrence**, § 3.3.2, avec statut du document porté ; **R-14 (trois degrés d'absence) : deux occurrences**, § 3.1.1 et § 3.4.3 ; **R-13 : le marqueur figure une fois, § 3.3.1, en déclaration de non-déclenchement** — ⚠ « point d'application de politique » y figure au sens **pré-agentique** du zero-trust, où il n'est pas le terme que R-13 vise. R-01, R-03 à R-10, R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 9 000 mots de corps (§ 3.1 à § 3.4). Enveloppe **dérivée, non prescrite** ; ce chapitre pèse plus que la moyenne parce qu'il est **posé une seule fois pour cinq chapitres aval**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 180 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−42,4 %** de la cible, re-mesurés au commit de la seconde passe de relecture (5 104 mots et −43,3 % au terme de la première ; l'écart vient de six instruments repris nommés et de deux constructions d'auteur marquées). ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre était, au 27 juillet 2026, de 64 750 mots, soit −0,4 % de l'enveloppe** — ⚠ **cardinal de Livre à re-mesurer au terme de la passe de relecture**, les onze pièces étant révisées en parallèle : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Volumétrie cible** | ≈ 9 000 mots de corps (§ 3.1 à § 3.4). Enveloppe **dérivée, non prescrite** ; ce chapitre pèse plus que la moyenne parce qu'il est **posé une seule fois pour cinq chapitres aval**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 701 mots** de corps, mesurés par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **-36,7 %** de la cible ⚠ **Ce réel est re-mesuré au commit du 30 juillet 2026** (décision 16b) : *toute date de mesure antérieure citée dans ce champ décrit une passe précédente, et la passe de révision D-11 l'a périmée.*, re-mesurés au commit de la seconde passe de relecture (5 104 mots et −43,3 % au terme de la première ; l'écart vient de six instruments repris nommés et de deux constructions d'auteur marquées). ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. Le **réel du Livre était, au 27 juillet 2026, de 64 750 mots, soit −0,4 % de l'enveloppe** — ⚠ **cardinal de Livre à re-mesurer au terme de la passe de relecture**, les onze pièces étant révisées en parallèle : c'est la cible dérivée qui était fausse, non la pièce qui est courte. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 3)* — le passage du périmètre réseau à la confiance par échange, et l'identité fédérée à autorisation déléguée, sont l'héritage IAM que la fabrique de confiance agentique (Livre II) étire jusqu'à rupture.
 
@@ -126,6 +126,26 @@ trajectoire dominante est néanmoins une migration vers **OpenID Connect**, qui 
 l'authentification à la couche d'autorisation **OAuth 2.0** et substitue à l'assertion XML un jeton
 d'identité JSON plus léger, mieux adapté aux API et aux clients publics.
 
+⚠ **Ce chapitre est le SIÈGE du socle IAM pour toute la somme, et cinq chapitres aval y renvoient
+sans le reconstruire** — ce qui interdit d'expédier SAML en une phrase. *Trois traits de l'assertion
+SAML 2.0 sont donc posés ici une fois, parce que les Livres II et IV s'y adossent.* **(a) Le porteur
+de la confiance est le document, non le canal** : une assertion est un fragment XML **signé par
+l'émetteur**, que le consommateur valide contre une clé publiée d'avance — *la fédération SAML est
+un échange de documents signés entre deux domaines qui se sont préalablement reconnus, et cette
+reconnaissance préalable est hors protocole.* **(b) Le lien de confiance est bilatéral et négocié
+hors bande** : chaque couple fournisseur d'identité / fournisseur de service échange ses métadonnées
+et ses certificats, ce qui rend l'ajout d'un partenaire **linéairement coûteux** — *c'est le problème
+N×M du ch. 1 § 1.1, appliqué à la confiance plutôt qu'aux données.* **(c) L'assertion transporte des
+attributs, non une autorisation** : elle dit *qui* est le sujet et ce qu'on sait de lui ; *ce que le
+sujet a le droit de faire reste une décision du consommateur*.
+
+⚠ **C'est le troisième trait qui voyage le plus loin dans la somme, et il faut le retenir sous cette
+forme** : *la fédération d'identité résout l'authentification entre domaines et laisse l'autorisation
+entière* — **le ch. 17 retrouve exactement cette frontière au niveau du mandat d'agent**, et le
+ch. 14 en fait l'une de ses cinq questions. **Lecture de l'auteur** : la migration de SAML vers
+OpenID Connect change le **format** et le **poids** du jeton, non cette répartition ; *le socle
+établit la substitution de format, il n'établit pas que le partage des rôles ait bougé.*
+
 Sur le versant de l'**autorisation déléguée**, le socle évolue d'OAuth 2.0 vers **OAuth 2.1**, dont
 l'objet est de consolider les flux éprouvés et de proscrire ceux jugés dangereux : l'échange de code
 avec preuve de clé devient obligatoire, et le flux implicite est retiré.
@@ -184,9 +204,28 @@ locales.
 ### 3.2.3 Provisionnement et propagation de contexte
 
 L'identité fédérée présuppose que les comptes **existent et restent synchronisés** entre domaines :
-c'est le rôle du provisionnement. Le standard **SCIM** en fournit le schéma et le protocole,
-automatisant le cycle de vie des comptes — création, mise à jour, désactivation — d'un fournisseur
-d'identité vers les applications consommatrices.
+c'est le rôle du provisionnement. Le standard **SCIM** — *System for Cross-domain Identity
+Management* — en fournit le schéma et le protocole, automatisant le cycle de vie des comptes
+— création, mise à jour, désactivation — d'un fournisseur d'identité vers les applications
+consommatrices.
+
+⚠ **Deux traits de SCIM sont posés ici, au titre du siège, parce que le Livre II les mobilise et que
+le ch. 12 est nommément chargé de leur transposition aux agents.** **(a) SCIM est un protocole de
+*ressource*, pas de *session*** : il expose des collections d'utilisateurs et de groupes sur une
+interface REST, avec un schéma extensible, et il agit **hors du chemin de l'authentification** — *le
+provisionnement se fait avant, l'authentification pendant, et les deux ne se voient pas.* **(b) Sa
+désactivation est un état, non un événement** : SCIM porte un attribut d'activité que le fournisseur
+d'identité met à jour, et *rien dans le protocole ne garantit qu'une application consommatrice
+observe ce changement dans un délai borné.*
+
+⚠ **Le second trait est le plus lourd, et c'est la raison pour laquelle ce paragraphe existe.** *Un
+protocole de provisionnement qui pousse un état sans borner sa propagation ne ferme pas la fenêtre de
+révocation — il la déplace du poste manuel vers le calendrier de synchronisation.* **C'est exactement
+la question que le ch. 20 pose à la couche agentique** — un budget de fraîcheur écrit dans un texte —
+et **le socle IAM pré-agentique n'y répond pas davantage que les protocoles d'agents** : *absence de
+documentation, non fait négatif vérifié.* **Lecture de l'auteur** — la couche agentique n'hérite donc
+pas d'une solution qu'elle aurait perdue : *elle hérite d'un problème que l'entreprise avait appris à
+tolérer sur des cycles humains, et que des agents parcourent en secondes.*
 
 Sans ce maillon, la révocation d'accès reste manuelle et tardive, ce qui **rouvre la fenêtre
 d'attaque que l'authentification fédérée prétendait fermer**. Le provisionnement est donc la facette

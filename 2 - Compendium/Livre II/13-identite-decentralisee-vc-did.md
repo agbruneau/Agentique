@@ -48,13 +48,59 @@ l'écrire (§ 13.5).
 ⚠ **Régime de traçabilité, posé d'entrée parce qu'il commande la lecture.** Le lot d'instruction du
 Vol. III a ouvert les quatre documents du W3C le 21 juillet 2026 et en a extrait **le stade et sa
 date** ; il n'a extrait **ni le modèle de données, ni les mécanismes de preuve, ni les méthodes de
-résolution** que ces documents spécifient. **Le socle ne documente donc pas le contenu technique du
-*Verifiable Credentials Data Model* ni de *Decentralized Identifiers* : c'est une absence de
-documentation, non un fait négatif vérifié** (R-14 du Vol. III, degré 3). ⚠ **Ce chapitre ne décrit
-par conséquent aucune mécanique cryptographique de ces deux corpus et n'en tire aucune
-qualification** — un mécanisme cryptographique se qualifie par ce que sa spécification **démontre**,
-jamais par ce qu'elle promet (R-02 du Vol. III), et rien n'a été extrait ici dont la démonstration
-puisse être rapportée.
+résolution** que ces documents spécifient. *L'état d'origine se conserve ici, au passé* (décision 17c).
+**Le socle ne documentait donc pas le contenu technique du *Verifiable Credentials Data Model* ni de
+*Decentralized Identifiers* : absence de documentation, non fait négatif vérifié** (R-14 du Vol. III,
+degré 3).
+
+☑ ⚠ **EXTRACTION CONDUITE LE 30 JUILLET 2026 (D-11), et elle porte sur les deux Recommandations
+elles-mêmes.** L'arbitrage externe relevait qu'un chapitre intitulé « identité décentralisée : VC et
+DID » sans son contenu technique n'honore pas son titre. Les deux documents ont été lus à leur source
+ce jour.
+
+**Le modèle de données** — *Verifiable Credentials Data Model 2.0*, Recommandation du W3C. Une
+accréditation vérifiable conforme **doit** porter quatre propriétés : **`@context`**, dont le premier
+élément **doit** être `https://www.w3.org/ns/credentials/v2` ; **`type`**, dont la valeur **doit**
+inclure `VerifiableCredential` ; **`issuer`** ; et **`credentialSubject`**. ⚠ **Un document conforme
+doit en outre être *sécurisé par au moins un mécanisme de sécurisation***, ce qui n'est pas une
+propriété de plus mais une condition de conformité distincte.
+
+**Les mécanismes de preuve, et leur partition est le fait le plus utile de l'extraction.** La
+Recommandation en admet **deux familles, non une** : la **preuve incorporée**, portée par la
+propriété **`proof`** — dont les exemples portent `type`, `created`, `verificationMethod`,
+`cryptosuite` et `proofValue` —, et la **preuve enveloppante**, où l'accréditation est encapsulée
+dans un format JOSE ou COSE. ⚠ **Deux familles de preuve pour un même modèle de données signifie que
+deux implémentations conformes peuvent être mutuellement illisibles** : *c'est, transposé au niveau
+du justificatif, exactement le constat de conformité ≠ interopérabilité du ch. 3 § 3.4.4*, et le
+§ 13.2 le retrouvera du côté des profils.
+
+**Le statut, et il n'est pas dans ce document.** La propriété **`credentialStatus`** existe au modèle
+de données, mais *la vérification du statut est renvoyée aux spécifications de mécanisme de
+sécurisation* et à une spécification distincte de liste d'état. ⚠ **La révocation n'est donc pas
+spécifiée par la Recommandation qui définit l'accréditation** — c'est le versant W3C du constat que
+le **tableau 20.1** du ch. 20 dresse pour toute la couche.
+
+**Les identifiants décentralisés** — *Decentralized Identifiers v1.1*, **instantané de recommandation
+candidate du 5 mars 2026**, dont le document déclare lui-même qu'il *n'est pas attendu au rang de
+Recommandation avant le 5 avril 2026*. ⚠ **Une seule propriété y est obligatoire : `id`.**
+`controller`, `verificationMethod`, `authentication`, `service` sont **toutes facultatives**.
+**La résolution** est confiée à un composant — le résolveur — qui prend un identifiant et rend un
+document ; ⚠ ***la résolution d'une méthode donnée est déclarée hors périmètre de la
+spécification*** et renvoyée à un document distinct, chaque méthode définissant ses propres
+opérations.
+
+⚠ **Trois conséquences, et la troisième est celle qui compte pour la thèse du Livre.** *(1)* **Le
+régime de preuve du chapitre s'élève partiellement** : le stade et la date restaient le seul acquis,
+le **contenu normatif des deux documents est désormais lu** — mais *lu, non collationné
+adversarialement*, et **rien n'entre au socle**, le versement relevant d'une passe de socle. *(2)*
+⚠ **Aucune qualification cryptographique n'est tirée** : R-02 tient, et *ce qui précède décrit ce que
+les documents **spécifient**, jamais ce qu'une implémentation **démontre***. *(3)* ⚠ **L'extraction
+mesure l'écart au besoin du passeport du ch. 16, et il est plus large qu'il n'y paraissait** : un
+modèle de données à quatre propriétés obligatoires et **deux familles de preuve incompatibles**, un
+identifiant à **une seule propriété obligatoire** et une **résolution hors périmètre** — *ce corpus
+spécifie un format d'attestation, il ne fournit ni ancrage organisationnel, ni chaînage, ni statut
+interrogeable.* **C'est exactement ce que le ch. 17 § 17.6.2 en disait sans l'avoir lu ; la lecture
+le confirme, et ce n'est pas rien : une prudence validée par extraction cesse d'être une prudence.**
 
 ⚠ **Ce que ce chapitre ne traite pas.** Le socle *zero-trust* pré-agentique et l'identité de charge
 de travail au sens de l'infrastructure d'entreprise sont **posés au ch. 3** et n'y sont pas

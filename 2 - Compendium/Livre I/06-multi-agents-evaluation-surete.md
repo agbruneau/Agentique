@@ -9,7 +9,7 @@ Premier mouvement — les fondements (ch. 1-6). **Dernier chapitre du mouvement.
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Matière condensée au gel de sa source — **juin 2026** (Vol. I). ⚠ Trois faits datés y appellent une re-vérification : le passage d'A2A sous la Linux Foundation, la création de l'Agentic AI Foundation en décembre 2025, et un chiffre d'adoption **auto-déclaré** relevé au premier anniversaire d'A2A |
 | **Socle mobilisé** | ⚠ **Le socle consolidé existe depuis le 28 juillet 2026** — Annexe B, [`socle-consolide.md`](../PRD/socle-consolide.md) v1.2, `S-001`…`S-159` —, **mais cette pièce, rédigée avant lui, n'y est pas adossée entrée par entrée** : elle continue de citer ses identifiants sources, comme le PRD §7.1 le constate pour les cinquante pièces. Ses énoncés résolvent contre le **Vol. I *Monographie* §2.8.1-2.8.3, §2.9.1-2.9.5 et §2.10.3-2.10.5**, en régime **[C]** (PRD §7.1) — régime que le socle **confirme** plutôt qu'il ne le relève : ses **dix-sept entrées héritées du Vol. I sont toutes en [C]**. **Aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | **Les deux séries, intégralement — et c'est le chapitre du Livre I où ils mordent le plus.** ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **R-8 (« ACP » jamais nu) : une occurrence**, § 6.2, où le sigle est développé à sa première apparition et jamais employé seul ; **métriques auto-déclarées (PRD Vol. II §7.5) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au § 6.1.1, au § 6.2 et au § 6.5.2**, **chaque chiffre attribué à sa source, sans exception d'usage illustratif**. R-1 à R-7 : **zéro occurrence**. Vol. III — **R-13 (mêmes termes jamais nus) : une occurrence**, § 6.2, la même ; **R-14 : trois occurrences**, § 6.4.1, § 6.5.1 et § 6.5.3. R-01 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 8 500 mots de corps (§ 6.1 à § 6.5). Enveloppe **dérivée, non prescrite**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 4 062 mots** de corps, **re-mesurés au commit du 28 juillet 2026** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−52,2 %** de la cible. *L'écart s'est réduit de trois points sous les deux passes de relecture du 28 juillet 2026 — il valait **−55,5 %** à la rédaction : restituer une attribution allonge, et c'est un allongement de borne, non un gonflement.* ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations ; c'est la cible dérivée qui était fausse, non la pièce qui est courte. ⚠ **Le total du Livre n'est PAS re-mesuré ici** : il valait **64 750 mots, soit −0,4 % de l'enveloppe**, au 27 juillet 2026, et les onze pièces sont relues **en parallèle** — *un cardinal mesuré pendant que d'autres pièces changent est faux à la seconde où on le publie*. Sa re-mesure est due à la clôture de la passe. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Volumétrie cible** | ≈ 8 500 mots de corps (§ 6.1 à § 6.5). Enveloppe **dérivée, non prescrite**. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 4 579 mots** de corps, ⚠ **re-mesurés au commit du 30 juillet 2026** (décision 16b — *le chiffre antérieur datait de la contre-passe du 28 juillet, et la passe de révision l'a périmé*) par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **-46,1 %** de la cible ⚠ **Ce réel est re-mesuré au commit du 30 juillet 2026** (décision 16b) : *toute date de mesure antérieure citée dans ce champ décrit une passe précédente, et la passe de révision D-11 l'a périmée.*. *L'écart s'est réduit de trois points sous les deux passes de relecture du 28 juillet 2026 — il valait **−55,5 %** à la rédaction : restituer une attribution allonge, et c'est un allongement de borne, non un gonflement.* ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations ; c'est la cible dérivée qui était fausse, non la pièce qui est courte. ⚠ **Le total du Livre n'est PAS re-mesuré ici** : il valait **64 750 mots, soit −0,4 % de l'enveloppe**, au 27 juillet 2026, et les onze pièces sont relues **en parallèle** — *un cardinal mesuré pendant que d'autres pièces changent est faux à la seconde où on le publie*. Sa re-mesure est due à la clôture de la passe. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 6)* — le multi-agent a un surcoût que seuls certains gains justifient ; son évaluation (succès de tâche vs trajectoire) et sa sûreté (triade létale, vecteurs d'attaque) sont les deux fronts encore ouverts.
 
@@ -137,6 +137,48 @@ et il est **auto-déclaré**. Il est attribué ici à sa source — **la Linux F
 fondation faîtière du protocole, qui le rapporte en avril 2026 (ch. 7 § 7.6) —, et il mesure un
 **soutien**, non une mise en production. La distinction est celle que le ch. 7 érige en
 critère, et elle vaut d'être posée dès maintenant : *soutien n'est pas production*.
+
+### 6.2.1 Ce que « communiquer » veut dire, et ce que ces protocoles n'en portent pas
+
+⚠ **Cette sous-section est ajoutée le 30 juillet 2026 (D-11), et son motif est un reproche fondé de
+l'arbitrage externe : une section intitulée « communication inter-agents » qui n'énumérait que des
+protocoles et leur gouvernance n'honorait pas son titre.** *Le renvoi de l'anatomie au ch. 8 et de la
+pile au ch. 9 reste un arbitrage de plan légitime ; ce qui manquait n'est ni l'une ni l'autre — c'est
+la question de la **sémantique** de l'échange, qui n'a de siège nulle part ailleurs.*
+
+**Communiquer suppose trois accords, et les protocoles agentiques n'en portent qu'un.** *(a)* Un
+accord sur le **transport** — comment le message circule : *porté*, par le protocole agent-agent
+comme par le protocole agent-outil. *(b)* Un accord sur la **forme** — comment le message est
+structuré : *porté aussi*, par les schémas de tâche et de message. *(c)* ⚠ Un accord sur la **force
+illocutoire** — *ce que l'émetteur **fait** en émettant : demande-t-il, informe-t-il, s'engage-t-il,
+refuse-t-il, propose-t-il ?* **C'est celui-là qui manque.**
+
+⚠ **Le contraste avec l'héritage multi-agents classique est net, et il a été nommé au ch. 4 § 4.1.3.**
+**KQML** (Finin, Fritzson, McKay et McEntire, 1994) puis **FIPA-ACL** — dont la bibliothèque
+**SC00037J** énumère ses actes communicatifs, chacun assorti d'une précondition, d'un effet
+rationnel et d'un schéma de contenu — avaient fait de la force illocutoire **un champ obligatoire du
+message**. *Un agent FIPA qui reçoit un message sait s'il est mis en demeure ou simplement informé,
+parce que le protocole le lui dit.* **Les protocoles agentiques de 2025-2026 ne portent pas cette
+information** : un message y transporte une charge utile typée dont *l'intention se déduit du
+contenu, c'est-à-dire du langage naturel, c'est-à-dire du modèle*.
+
+⚠ **Trois bornes, et la deuxième interdit la lecture nostalgique.** *(1)* **Le socle ne documente pas
+cette absence comme un fait négatif vérifié** : aucun balayage systématique des spécifications
+agentiques n'a été conduit sous cet angle — **absence de documentation, degré 3** (R-14 du Vol. III).
+*(2)* ⚠ ***Que FIPA-ACL ait porté les actes communicatifs n'établit pas que sa démarche ait
+réussi***. Le socle ne documente ni son adoption industrielle, ni sa performance, ni les motifs de
+son déclin ; *écrire que la couche agentique « a oublié » quelque chose qui marchait serait un
+jugement que rien n'appuie.* **Ce qui est établi est plus étroit et plus sûr : le problème avait été
+posé, il avait reçu une réponse normalisée, et la couche neuve le repose sans la reprendre.** *(3)*
+**La coordination sous défaillance n'est pas traitée ici et ne le sera pas** : elle est **hors
+périmètre par décision d'auteur D-7**, déclarée au risque 15 du TOC, et ce chapitre y est **fermé** —
+*y ajouter une section rouvrirait la décision, non le seul chapitre.*
+
+**Lecture de l'auteur** — cette absence est de la même famille que celle du ch. 8 § 8.2.3 : *un
+schéma contraint la forme d'un message, il n'en dit pas l'interprétation.* **Le ch. 48 la retrouvera
+au niveau de l'effet** — *que produit le rejeu de ce message ?* — et **le ch. 9 § 9.4 l'instruit** au
+niveau du vocabulaire. *Les trois sont la même question posée à trois étages, et la somme ne la
+résout à aucun.*
 
 ---
 

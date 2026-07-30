@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 16 — Le passeport d&#x27;agent : synthèse d&#x27;un objet encore virtuel · La somme agentique</title>
-<meta name="description" content="Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). Cinquième chapitre du mouvement, et chapitre-pivot : il compose ce que les trois précédents ont instruit séparément, et il n'a pas de source propre">
+<meta name="description" content="Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). Cinquième chapitre du mouvement, et chapitre-pivot : il compose ce que les trois précédents ont instruit séparément, et il n&#x27;a pas de source propre">
 <meta name="author" content="André-Guy Bruneau">
 <meta name="color-scheme" content="dark">
 <style>
@@ -536,10 +536,10 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <li><a href="#s162"><span class="num">16.2</span>Ce qui n&#x27;existe toujours pas — et à quel degré</a></li>
     <li><a href="#s163"><span class="num">16.3</span>Qui l&#x27;émettrait, qui le vérifierait</a></li>
     <li><a href="#s164"><span class="num">16.4</span>Trois scénarios de normalisation, et ce que leur tri prospectif interdit d&#x27;écrire</a></li>
-    <li><a href="#s165"><span class="num">16.5</span>Le passeport par la grille du ch. 14</a></li>
+    <li><a href="#s165"><span class="num">16.5</span>Le passeport par la grille du ch. 14</a></li>
   </ol>
   <div class="nav__pied">
-    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
     <a href="16-passeport-agent.md">Version Markdown</a>
   </div>
 </nav>
@@ -552,6 +552,11 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <h1><span class="chap">Chapitre 16</span>Le passeport d&#x27;agent : synthèse d&#x27;un objet encore virtuel</h1>
   <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). Cinquième chapitre du mouvement, et <strong>chapitre-pivot</strong> : il compose ce que les trois précédents ont instruit séparément, et il n'a pas de source propre</p>
 </header>
+
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
+     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
 
 <h2 id="s160"><span class="sig">§ 16.0</span>Introduction : ce que trois chapitres d'instruction ne composent pas</h2>
 
@@ -595,6 +600,30 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <div class="avert">
   <p><strong>Un écart de régime est déclaré, non contourné.</strong> Des deux sièges de la quatrième pièce, <strong>un seul appartient à ce Livre</strong>. L'autre, le <strong>ch. 25 § 25.5</strong>, est rédigé depuis le 27 juillet 2026, mais en <strong>brouillon hors portes</strong>, et <strong>G-4 le conditionne nommément</strong> : <em>un renvoi vers un tel brouillon résout contre un texte, non contre une preuve.</em> Le présent chapitre <strong>ne préjuge donc de rien</strong> de ce que ce siège établira du registre comme pièce de conformité ; il compose sur ce que le ch. 15 § 15.3.3 porte, et <strong>déclare l'autre moitié en attente</strong>.</p>
+</div>
+
+<h3>16.1.1 Équivalents provisoires — ce qui tient lieu de chaque pièce en 2026</h3>
+
+<div class="avert">
+  <p><strong>Cette sous-section est ajoutée le 30 juillet 2026 (D-11), et son motif est un défaut de prescription que l'arbitrage externe a nommé.</strong> La thèse du chapitre écrit <em>« rien n'entre au maillage sans lui »</em> — <strong>une règle d'admission adossée à un artefact que personne n'émet</strong>. ⚠ <strong><em>Une prescription sans régime transitoire n'est pas une exigence : c'est une interdiction générale</strong></em>, et un exploitant qui la lirait au pied de la lettre devrait fermer son maillage à tout agent, y compris les siens. Le chapitre le prescrivait sans le dire ; il le dit désormais.</p>
+</div>
+
+<div class="tableau">
+<table>
+  <thead><tr><th>Pièce</th><th>Ce qui en tient lieu aujourd'hui</th><th>Ce que le substitut ne fournit pas</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Carte signée</strong></td><td>la carte d'agent du protocole agent-agent, <strong>signée et vérifiée hors bande</strong> — le mécanisme existe et il est spécifié (ch. 15 § 15.1)</td><td>l'<strong>ancrage organisationnel</strong> de la clé : le vérificateur établit l'intégrité, jamais l'appartenance (F-09). <em>Le substitut est le plus proche du besoin, et c'est celui dont l'écart est le plus étroit</em></td></tr>
+    <tr><td><strong>Inscription au registre</strong></td><td>un <strong>registre interne à l'organisation</strong>, tenu par l'exploitant du maillage, avec ses propres champs de bornes et d'accès aux outils</td><td>l'<strong>opposabilité inter-organisationnelle</strong>. ⚠ <em>Un registre interne fait entrer l'agent chez soi ; il ne le fait entrer chez personne d'autre</em> — et c'est exactement la frontière que le ch. 17 déclare non franchie</td></tr>
+    <tr><td><strong>Chaîne de mandat</strong></td><td>l'<strong>échange de jeton</strong> de la RFC 8693 et son attribut d'acteur, à <strong>un saut</strong>, dans un domaine de confiance unique</td><td>la composition <strong>au-delà du premier saut</strong> (ch. 17 § 17.6, degré 3), et l'<strong>interrogeabilité de la chaîne à l'instant t</strong> — ⚠ <em>à quoi s'ajoute que la RFC exclut de son champ la sécurité du jeton lui-même</em></td></tr>
+    <tr><td><strong>Attestations de conformité</strong></td><td>⚠ <strong>rien de protocolaire.</strong> Ce qui en tient lieu est <strong>documentaire</strong> : l'inventaire de modèles que les cadres canadiens <strong>attendent</strong> (F-65, F-68 ; H-04), tenu hors du maillage et lu par des humains</td><td><strong>tout ce qui en ferait une pièce</strong> : format, contenu, émetteur, vérifiabilité machine — <strong>degré 3</strong>, inchangé. <em>La quatrième pièce n'a pas d'équivalent provisoire ; elle a un substitut d'un autre ordre</em></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 16.2 — Ce qui tient lieu de chaque pièce du passeport au 30 juillet 2026, et l'écart que le substitut laisse ouvert.</p>
+
+<div class="avert">
+  <p><strong>Trois bornes, et la première interdit de lire ce tableau comme une recommandation.</strong> <em>(1)</em> <strong>Aucune ligne n'est prescrite par une source</strong> : les quatre substituts sont des <strong>constructions de l'auteur</strong> au sens de CA-IV-07, assemblées à partir de mécanismes que le socle documente séparément. <em>Le socle établit que ces mécanismes existent ; il n'établit ni qu'ils tiennent lieu de passeport, ni qu'un exploitant qui les emploie soit fondé à admettre un agent.</em> <em>(2)</em> ⚠ <strong>Les quatre substituts partagent le défaut que le § 16.2 va nommer</strong> : ils fonctionnent <strong>dans une organisation</strong>, et l'objet du passeport est l'admission <strong>entre organisations</strong>. <em>Un régime transitoire qui ne franchit pas la frontière n'est pas un régime transitoire vers le passeport ; c'est un régime stable d'un autre problème.</em> <em>(3)</em> <strong>La thèse n'est pas amendée</strong> — <em>elle se cite verbatim depuis le plan et un rédacteur ne la corrige pas</em> : ce qui change est que le chapitre <strong>borne désormais sa portée pratique</strong> au lieu de la laisser lire comme une règle immédiatement applicable. <strong>Remontée ouverte</strong>, à l'instance d'arbitrage : <em>la formule « rien n'entre au maillage sans lui » doit-elle porter sa clause transitoire au plan ?</em></p>
 </div>
 
 <h2 id="s162"><span class="sig">§ 16.2</span>Ce qui n'existe toujours pas — et à quel degré</h2>
@@ -728,7 +757,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 </ol>
 
 <footer class="pied">
-  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre II, chapitre 16. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre II, chapitre 16. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

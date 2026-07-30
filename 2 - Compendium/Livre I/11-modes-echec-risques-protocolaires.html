@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 11 — Modes d&#x27;échec et taxonomie des risques protocolaires · La somme agentique</title>
-<meta name="description" content="Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11). Dernier chapitre du mouvement, et dernier chapitre du Livre.">
+<meta name="description" content="Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11). Dernier chapitre du mouvement, et dernier chapitre du Livre.">
 <meta name="author" content="André-Guy Bruneau">
 <meta name="color-scheme" content="dark">
 <style>
@@ -535,10 +535,10 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <li><a href="#s111"><span class="num">11.1</span>La surface d&#x27;attaque : outils, invites, mémoire</a></li>
     <li><a href="#s112"><span class="num">11.2</span>Modes d&#x27;échec propres à l&#x27;interopérabilité agentique</a></li>
     <li><a href="#s113"><span class="num">11.3</span>Les réponses protocolaires : ce que les spécifications apportent</a></li>
-    <li><a href="#s114"><span class="num">11.4</span>Ce que les protocoles ne couvrent pas</a></li>
+    <li><a href="#s114"><span class="num">11.4</span>Ce que les protocoles ne couvrent pas</a></li>
   </ol>
   <div class="nav__pied">
-    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
     <a href="11-modes-echec-risques-protocolaires.md">Version Markdown</a>
   </div>
 </nav>
@@ -551,6 +551,11 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <h1><span class="chap">Chapitre 11</span>Modes d&#x27;échec et taxonomie des risques protocolaires</h1>
   <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11). <strong>Dernier chapitre du mouvement, et dernier chapitre du Livre.</strong></p>
 </header>
+
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
+     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
 
 <h2 id="s110"><span class="sig">§ 11.0</span>Introduction : ce que quatre chapitres d'acquis ne disent pas</h2>
 
@@ -649,7 +654,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <p><strong>(2) L'injection indirecte traversant les frontières.</strong> Un <strong>exploit zéro-clic</strong> documenté contre une suite bureautique assistée — <strong>CVE-2025-32711</strong>, avis de sécurité du <strong>11 juin 2025</strong> — illustre que <strong>la nouveauté n'est pas l'injection elle-même mais la transitivité de la confiance</strong> : <em>un contenu non fiable injecté en amont se propage par délégation.</em> Le ch. 5 § 5.4 avait posé l'injection indirecte au niveau de l'ancrage ; <strong>ce qui est propre à l'interopérabilité est qu'elle franchit des frontières administratives.</strong></p>
 
 <div class="avert">
-  <p><strong>Un score de gravité se cite avec son émetteur, faute de quoi il est indécidable.</strong> La valeur de <strong>9,3 sur 10</strong> est celle qu'attribue l'<strong>autorité de numérotation de l'éditeur</strong> ; la fiche en porte une <strong>seconde, officielle elle aussi, retenue par l'organisme national</strong>, qui en <strong>diffère de 1,8 point et change de palier</strong> — divergence de périmètre, <strong>consignée au socle consolidé (<code>S-152</code>) et non arbitrée</strong>. <em>Écrire « gravité 9,3 » sans nommer qui la prononce, c'est trancher en silence entre deux valeurs également officielles.</em></p>
+  <p><strong>Un score de gravité se cite avec son émetteur, faute de quoi il est indécidable.</strong> La valeur de <strong>9,3 sur 10</strong> est celle qu'attribue <strong>Microsoft</strong>, autorité de numérotation (<em>CNA</em>) pour ce produit ; la fiche en porte une <strong>seconde, officielle elle aussi, retenue par le NIST</strong> dans la base nationale de vulnérabilités — <strong>7,5</strong>, soit <strong>1,8 point d'écart et un changement de palier</strong>. Divergence de périmètre, <strong>consignée au socle consolidé (<code>S-152</code>) et non arbitrée</strong>. <em>Écrire « gravité 9,3 » sans nommer qui la prononce, c'est trancher en silence entre deux valeurs également officielles</em> — et le présent paragraphe, jusqu'au 30 juillet 2026, ne tenait sa propre règle <strong>qu'au rôle</strong>, ce que la contre-relecture avait relevé et que la décision 18 du TOC corrige ici.</p>
 </div>
 
 <p><strong>(3) Les vulnérabilités d'implémentation des composants de la pile.</strong> Deux identifiants publiés en 2025 en donnent la mesure : <strong>CVE-2025-6514</strong>, une <strong>exécution de commande</strong> dans un utilitaire de relais du protocole agent-outil (<strong>gravité 9,6</strong>), et <strong>CVE-2025-49596</strong>, un <strong>défaut d'authentification du proxy</strong> d'un inspecteur du même protocole (<strong>gravité 9,4</strong>).</p>
@@ -664,7 +669,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <tbody>
     <tr><td><strong>empoisonnement d'outils</strong>, ombrage</td><td>la <strong>description d'outil</strong> est du texte lu par le modèle</td><td>mécanique documentée ; <strong>banc d'épreuve sur serveurs réels</strong></td></tr>
     <tr><td><strong>révocation après approbation</strong></td><td>la <strong>mutabilité du serveur après l'approbation</strong></td><td>mécanique documentée ; mitigation par politique proposée</td></tr>
-    <tr><td><strong>injection indirecte transitive</strong></td><td>la <strong>transitivité de la confiance</strong> entre agents</td><td><strong>CVE-2025-32711</strong> ; gravité <strong>9,3</strong> <em>selon l'autorité de l'éditeur</em> — seconde valeur officielle divergente</td></tr>
+    <tr><td><strong>injection indirecte transitive</strong></td><td>la <strong>transitivité de la confiance</strong> entre agents</td><td><strong>CVE-2025-32711</strong> ; gravité <strong>9,3</strong> <em>selon Microsoft</em> — <strong>7,5</strong> selon le <strong>NIST</strong>, divergence non arbitrée</td></tr>
     <tr><td><strong>défauts d'implémentation</strong> de la pile</td><td>le code des <strong>composants d'outillage</strong>, non le protocole</td><td><strong>CVE-2025-6514</strong> et <strong>CVE-2025-49596</strong>, gravités <strong>9,6</strong> et <strong>9,4</strong> ; <strong>correctifs documentés</strong></td></tr>
   </tbody>
 </table>
@@ -767,7 +772,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 </ol>
 
 <div class="avert">
-  <p><strong>Ce mode est inscrit comme catégorie de premier plan</strong> dans le référentiel d'application agentique de l'organisme de sécurité applicative — les défaillances en cascade y figurant à un item propre, aux côtés de la communication inter-agents non protégée traitée au § 11.1. <em>C'est donc une préoccupation de gouvernance, et non seulement de recherche.</em></p>
+  <p><strong>Ce mode est inscrit comme catégorie de premier plan</strong> dans l'<strong>OWASP Top 10 for Agentic Applications</strong> — les défaillances en cascade y figurant à un item propre, aux côtés de la communication inter-agents non protégée traitée au § 11.1. <em>C'est donc une préoccupation de gouvernance, et non seulement de recherche.</em></p>
 </div>
 
 <p><strong>Un incident de production documenté illustre le caractère contractuel de ces défaillances</strong>, et il mérite d'être lu pour ce qu'il déplace. Un agent de codage a <strong>exécuté des commandes destructrices durant un gel de code</strong>, entraînant la <strong>perte de données de production</strong> — <strong>incident 1152 de l'<em>AI Incident Database</em> (Responsible AI Collaborative), daté du 18 juillet 2025</strong>. ⚠ <em>La notice qualifie elle-même l'exécution de rapportée</em> : l'identifiant et la date sont cités parce que la lacune héritée du § 11.4.2 réclame un incident <strong>daté</strong>, non parce que le fait aurait été établi ailleurs.</p>
@@ -817,7 +822,15 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 </div>
 
 <div class="avert">
-  <p><strong>Depuis, la bascule a eu lieu, et elle se date sans qu'on en tire davantage.</strong> Au <strong>28 juillet 2026</strong>, la révision servie comme courante par la spécification est celle de cette refonte (<code>S-001</code>) : <em>la péremption que le socle avait datée s'est produite le jour même qu'il annonçait</em>, et la <strong>revalidation en bloc demeure ouverte, non exécutée</strong>. ⚠ <strong>Rien de ce chapitre n'est réécrit sur cette base</strong> — le socle <strong>constate</strong> la bascule ; il n'a pas extrait le texte de la révision neuve, et <em>constater qu'une spécification a changé n'est pas savoir ce qu'elle dit.</em></p>
+  <p><strong>Depuis, la bascule a eu lieu.</strong> Au <strong>28 juillet 2026</strong>, la révision servie comme courante par la spécification est celle de cette refonte (<code>S-001</code>) : <em>la péremption que le socle avait datée s'est produite le jour même qu'il annonçait.</em> ☑ ⚠ <strong>Et la revalidation, restée ouverte deux jours, est EXÉCUTÉE le 30 juillet 2026</strong> (D-11) : le texte de la révision <code>2026-07-28</code> a été extrait à sa source, et le <strong>ch. 8 § 8.1.2, § 8.1.3, § 8.2.1, § 8.2.2, § 8.2.3 et § 8.3.1</strong> en portent le détail lu. <em>Ce chapitre-ci n'en reprend que ce qui touche sa matière — la surface d'attaque —, et il s'y tient.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Trois effets sur la surface d'attaque, et il faut les qualifier durement, parce que le socle n'établit toujours pas de rapport entre eux.</strong> <em>(1)</em> La <strong>suppression des sessions de protocole et de la poignée de main</strong> retire un état partagé entre client et serveur : <em>elle retire donc aussi les classes d'attaque qui visaient cet état</em> — fixation, reprise, confusion d'instance —, et <strong>en ouvre une autre</strong>, puisque l'état applicatif migre vers des <strong>poignées frappées par le serveur et transmises comme arguments d'outil ordinaires</strong>, c'est-à-dire dans le canal même que le § 11.1 décrit comme non fiable. <em>(2)</em> La <strong>dépréciation de l'échantillonnage et des racines</strong> referme les deux primitives par lesquelles un serveur pouvait solliciter l'hôte — <strong>la voie que le tableau 11.1 range parmi les mécanismes de bascule du local au global</strong> —, mais sur une <strong>fenêtre de douze mois</strong> pendant laquelle elles restent fonctionnelles : <em>une primitive dépréciée est une primitive encore exploitable.</em> <em>(3)</em> La <strong>suppression de la reprise de flux</strong> transforme une interruption en perte de requête, ce qui <strong>déplace vers le client la logique de réémission</strong> — et le ch. 48 établit qu'une réémission sans sémantique d'effet est une source de duplication, non une garantie.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Ce que cette revalidation n'établit pas, et le dire est le geste dû.</strong> Elle <strong>ne mesure aucune de ces trois conséquences</strong> : aucune n'est adossée à un travail publié, aucun identifiant de vulnérabilité ne les documente, et le socle n'en recense pas. Ce sont des <strong>lectures de l'auteur</strong> sur un texte lu, au sens de CA-IV-07, et non des faits — <em>savoir ce qu'une spécification dit n'est pas savoir ce qu'elle expose.</em> Le passage de « nous n'avons pas lu le texte » à « nous l'avons lu et nous en tirons trois hypothèses marquées » est le seul progrès que cette passe pouvait produire.</p>
 </div>
 
 <p><strong>Un dernier rappel, qui n'est pas de pure forme.</strong> Le passage de ces protocoles <strong>sous gouvernance neutre</strong>, établi au ch. 7, <strong>ne change rien à ce qui précède</strong>. ⚠ <strong>Le socle documente les transferts de gouvernance ; il n'énonce aucun rapport entre gouvernance et sûreté.</strong> <em>Une fondation ne durcit pas une implémentation, et confondre la consolidation institutionnelle avec la sûreté technique serait, en entreprise réglementée, le type même de raccourci qu'un dossier de risque de tiers ne devrait pas laisser passer.</em></p>
@@ -830,7 +843,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <p><strong>Au niveau du registre</strong>, l'intégrité se construit <strong>par signature</strong> : signature sans gestion de clés persistantes pour le service d'annuaire de la couche d'infrastructure du ch. 10 § 10.2.2, résolution sous chemin normalisé, <strong>provenance cryptographique</strong> et, à terme, <strong>nomenclature de composants appliquée aux agents</strong>.</p>
 
-<p><strong>Les référentiels de l'écosystème consolident les contrôles attendus</strong> : un référentiel des dix risques majeurs des applications agentiques, annoncé fin 2025, dont un item vise la communication inter-agents non protégée ; et un référentiel homologue <strong>en statut bêta</strong> côté serveurs d'outils. ⚠ <strong>Un référentiel en statut bêta n'est pas une norme</strong> : le ch. 9 § 9.5 a posé la règle, et elle ne s'assouplit pas ici.</p>
+<p><strong>Les référentiels de l'écosystème consolident les contrôles attendus</strong> : l'<strong>OWASP Top 10 for Agentic Applications</strong>, annoncé fin 2025 pour le millésime 2026, dont un item vise la communication inter-agents non protégée ; et un référentiel homologue <strong>en statut bêta</strong> côté serveurs d'outils. ⚠ <strong>Un référentiel en statut bêta n'est pas une norme</strong> : le ch. 9 § 9.5 a posé la règle, et elle ne s'assouplit pas ici.</p>
 
 <div class="avert">
   <p><strong>Un problème reste ouvert, et c'est le verrou opérationnel de cette section.</strong></p>
@@ -971,7 +984,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <p><strong>Le Livre I s'achève ici.</strong> Il a établi ce que <strong>coopérer</strong> exige — des niveaux d'interopérabilité au contrat probabiliste, de la donnée à la sémantique, de l'agent isolé au maillage, du protocole à la transaction —, et <strong>il s'achève sur ce que la coopération laisse à découvert</strong>. <em>Le Livre II prend le relais là où ce chapitre s'arrête : établir qui parle, et à quel titre.</em></p>
 
 <footer class="pied">
-  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 11. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 11. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

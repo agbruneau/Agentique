@@ -10,7 +10,7 @@ dernier chapitre du Livre.***
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [gel-2026-07-27.md](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Gels de source : **juin 2026** (Vol. I) et **16 juillet 2026** (Vol. II). ⚠ **Les identifiants de vulnérabilité et les incidents datés du § 11.1.3 se périment par publication de correctif** ; ils sont cités comme **jalons datés**, jamais comme état courant d'exposition |
 | **Socle mobilisé** | ⚠ **Pièce écrite avant G-3 et non ré-adossée depuis** : la résolution du corps porte contre le **Vol. I *Monographie* §3.10-3.11** (régime **[C]**) et contre le **Vol. II *Monographie* ch. 4**, dont les entrées **F-01** (et sa réserve), **F-02** et **F-36** conservent leurs niveaux **[A]**, **[A]** et **[B]**. ☑ **Depuis le 28 juillet 2026, ces mêmes faits sont domiciliés au socle consolidé**, et les entrées se nomment : **`S-001`** (Vol. II `F-01`, fondue), **`S-002`** (Vol. II `F-02`, fondue) et **`S-034`** (Vol. II `F-36`, fondue) ; côté Vol. I, **`S-150`** (la non-compositionnalité de la sûreté), **`S-151`** (la révocation après approbation et l'intégrité continue) et **`S-152`** (injection et empoisonnement), **toutes trois en `[C]`**. ⚠ **Nommer n'est pas ré-adosser** : la correspondance se lit aux tables normatives de l'Annexe B, aucun énoncé de la pièce n'a été repris contre son entrée, et **aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **réserve F-01 : quatre occurrences**, § 11.1.3, § 11.3.1, § 11.3.2 et § 11.4.1 — ⚠ *la formule imposée « cadre d'autorisation » est employée bien au-delà de ces quatre marqueurs, dès le § 11.0, et « sécurisé » n'est appliqué à aucun protocole nulle part : la réserve est tenue partout, seul son marqueur est compté ici* ; **§8.2 (attribution des auto-qualifications) : une occurrence**, § 11.3.1, la qualification de maturité attribuée à l'annonce du projet ; **R-1 : une occurrence**, § 11.1.1, l'ACP protocolaire jamais présenté comme un standard vivant ; **R-8 : une occurrence**, § 11.1.1. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 : cinq occurrences**, § 11.1.2, § 11.1.4, § 11.3.1, § 11.3.2 et § 11.3.3 ; **R-13 : une occurrence**, § 11.1.1 ; **R-14 : huit occurrences**, toutes de **degré 3** — § 11.1.3 (deux), § 11.1.4 (deux), § 11.2.2, § 11.3.2, § 11.3.3 et § 11.4.2. ⚠ *Le rang de ce cardinal dans le Livre n'est plus déclaré : un décompte inter-pièces se mesure sur des pièces stables, et onze relectures couraient en parallèle le 28 juillet 2026.* R-01, R-03 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 6 000 mots de corps (§ 11.0 à § 11.4), **dérivée et non estimée** — cible basse, et c'est une conséquence du plan : quatre objets majeurs de ce chapitre (triade de conditions, passerelles, taxonomie d'identité, inventaire gouverné) siègent **ailleurs** et n'y sont que renvoyés. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 6 129 mots** de corps, mesurés par [PRD/decompte.sh](../PRD/decompte.sh), seule autorité de décompte du volume — **+2,2 %** de la cible, re-mesurés au terme de la passe de relecture du 28 juillet 2026 (à la rédaction : **5 795 mots**, −3,4 %). ⚠ **L'écart de la passe est motivé, non subi** : il vient des **identifiants, dates et attributions** versés aux § 11.1.3 et § 11.2.2, et de la remontée de relecture — *borner allonge, et c'est la mesure que D-4 attend.* ⚠ **L'écart individuel ne se lit toujours pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations, et *c'est la cible dérivée qui est fausse, non la pièce.* ⚠ **Le réel du LIVRE n'est plus déclaré ici** : il valait **64 750 mots** (−0,4 %) au 27 juillet 2026, et **onze relectures ont couru en parallèle le 28** — *un agrégat mesuré pendant que ses pièces s'écrivent est faux à la seconde où on le publie.* Il se re-mesure au terme des onze passes. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
+| **Volumétrie cible** | ≈ 6 000 mots de corps (§ 11.0 à § 11.4), **dérivée et non estimée** — cible basse, et c'est une conséquence du plan : quatre objets majeurs de ce chapitre (triade de conditions, passerelles, taxonomie d'identité, inventaire gouverné) siègent **ailleurs** et n'y sont que renvoyés. ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 6 462 mots** de corps, mesurés par [PRD/decompte.sh](../PRD/decompte.sh), seule autorité de décompte du volume — **+7,7 %** de la cible ⚠ **Ce réel est re-mesuré au commit du 30 juillet 2026** (décision 16b) : *toute date de mesure antérieure citée dans ce champ décrit une passe précédente, et la passe de révision D-11 l'a périmée.*, re-mesurés au terme de la passe de relecture du 28 juillet 2026 (à la rédaction : **5 795 mots**, −3,4 %). ⚠ **L'écart de la passe est motivé, non subi** : il vient des **identifiants, dates et attributions** versés aux § 11.1.3 et § 11.2.2, et de la remontée de relecture — *borner allonge, et c'est la mesure que D-4 attend.* ⚠ **L'écart individuel ne se lit toujours pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations, et *c'est la cible dérivée qui est fausse, non la pièce.* ⚠ **Le réel du LIVRE n'est plus déclaré ici** : il valait **64 750 mots** (−0,4 %) au 27 juillet 2026, et **onze relectures ont couru en parallèle le 28** — *un agrégat mesuré pendant que ses pièces s'écrivent est faux à la seconde où on le publie.* Il se re-mesure au terme des onze passes. *Un écart se documente ; il ne se corrige ni par amputation ni par gonflement* |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 11 — **requalifiée en v0.24 : sa seconde moitié était vraie du Vol. II et fausse de la somme**)* — la sécurité des protocoles dépend de l'implémentation ; empoisonnement d'outils et injection d'invites sont **nommés par les protocoles comme risques attachés**, sans que **le socle du Vol. II** en date la documentation ni en établisse la mécanique.
 
@@ -174,11 +174,13 @@ niveau de l'ancrage ; **ce qui est propre à l'interopérabilité est qu'elle fr
 administratives.**
 
 ⚠ **Un score de gravité se cite avec son émetteur, faute de quoi il est indécidable.** La valeur de
-**9,3 sur 10** est celle qu'attribue l'**autorité de numérotation de l'éditeur** ; la fiche en porte une
-**seconde, officielle elle aussi, retenue par l'organisme national**, qui en **diffère de 1,8 point et
-change de palier** — divergence de périmètre, **consignée au socle consolidé (`S-152`) et non
-arbitrée**. *Écrire « gravité 9,3 » sans nommer qui la prononce, c'est trancher en silence entre deux
-valeurs également officielles.*
+**9,3 sur 10** est celle qu'attribue **Microsoft**, autorité de numérotation (*CNA*) pour ce produit ;
+la fiche en porte une **seconde, officielle elle aussi, retenue par le NIST** dans la base nationale
+de vulnérabilités — **7,5**, soit **1,8 point d'écart et un changement de palier**. Divergence de
+périmètre, **consignée au socle consolidé (`S-152`) et non arbitrée**. *Écrire « gravité 9,3 » sans
+nommer qui la prononce, c'est trancher en silence entre deux valeurs également officielles* — et le
+présent paragraphe, jusqu'au 30 juillet 2026, ne tenait sa propre règle **qu'au rôle**, ce que la
+contre-relecture avait relevé et que la décision 18 du TOC corrige ici.
 
 **(3) Les vulnérabilités d'implémentation des composants de la pile.** Deux identifiants publiés en
 2025 en donnent la mesure : **CVE-2025-6514**, une **exécution de commande** dans un utilitaire de
@@ -196,7 +198,7 @@ laisser croire l'inverse.
 |---|---|---|
 | **empoisonnement d'outils**, ombrage | la **description d'outil** est du texte lu par le modèle | mécanique documentée ; **banc d'épreuve sur serveurs réels** |
 | **révocation après approbation** | la **mutabilité du serveur après l'approbation** | mécanique documentée ; mitigation par politique proposée |
-| **injection indirecte transitive** | la **transitivité de la confiance** entre agents | **CVE-2025-32711** ; gravité **9,3** *selon l'autorité de l'éditeur* — seconde valeur officielle divergente |
+| **injection indirecte transitive** | la **transitivité de la confiance** entre agents | **CVE-2025-32711** ; gravité **9,3** *selon Microsoft* — **7,5** selon le **NIST**, divergence non arbitrée |
 | **défauts d'implémentation** de la pile | le code des **composants d'outillage**, non le protocole | **CVE-2025-6514** et **CVE-2025-49596**, gravités **9,6** et **9,4** ; **correctifs documentés** |
 
 : Tableau 11.2 — Les trois familles d'attaques sur les frontières, la première dépliée en ses deux mécanismes — jalons datés, non état courant d'exposition.
@@ -337,8 +339,8 @@ qui la propage et l'aggrave* — phénomène modélisé sous les noms de **casca
 3. **L'effet cumulatif sur long horizon**, où l'erreur, **mémorisée et réutilisée**, contamine
    durablement les décisions ultérieures.
 
-⚠ **Ce mode est inscrit comme catégorie de premier plan** dans le référentiel d'application agentique
-de l'organisme de sécurité applicative — les défaillances en cascade y figurant à un item propre,
+⚠ **Ce mode est inscrit comme catégorie de premier plan** dans l'**OWASP Top 10 for Agentic
+Applications** — les défaillances en cascade y figurant à un item propre,
 aux côtés de la communication inter-agents non protégée traitée au § 11.1. *C'est donc une
 préoccupation de gouvernance, et non seulement de recherche.*
 
@@ -418,12 +420,34 @@ détail avec la remontée qui l'accompagne. ⚠ **On se gardera ici d'anticiper 
 d'attaque** : *le socle documente le changement, non ses conséquences* — et une révision de cette
 ampleur est précisément le genre d'événement qui commande une revalidation avant publication.
 
-⚠ **Depuis, la bascule a eu lieu, et elle se date sans qu'on en tire davantage.** Au **28 juillet
-2026**, la révision servie comme courante par la spécification est celle de cette refonte (`S-001`) :
-*la péremption que le socle avait datée s'est produite le jour même qu'il annonçait*, et la
-**revalidation en bloc demeure ouverte, non exécutée**. ⚠ **Rien de ce chapitre n'est réécrit sur
-cette base** — le socle **constate** la bascule ; il n'a pas extrait le texte de la révision neuve, et
-*constater qu'une spécification a changé n'est pas savoir ce qu'elle dit.*
+⚠ **Depuis, la bascule a eu lieu.** Au **28 juillet 2026**, la révision servie comme courante par la
+spécification est celle de cette refonte (`S-001`) : *la péremption que le socle avait datée s'est
+produite le jour même qu'il annonçait.* ☑ ⚠ **Et la revalidation, restée ouverte deux jours, est
+EXÉCUTÉE le 30 juillet 2026** (D-11) : le texte de la révision `2026-07-28` a été extrait à sa
+source, et le **ch. 8 § 8.1.2, § 8.1.3, § 8.2.1, § 8.2.2, § 8.2.3 et § 8.3.1** en portent le détail
+lu. *Ce chapitre-ci n'en reprend que ce qui touche sa matière — la surface d'attaque —, et il s'y
+tient.*
+
+⚠ **Trois effets sur la surface d'attaque, et il faut les qualifier durement, parce que le socle
+n'établit toujours pas de rapport entre eux.** *(1)* La **suppression des sessions de protocole et
+de la poignée de main** retire un état partagé entre client et serveur : *elle retire donc aussi les
+classes d'attaque qui visaient cet état* — fixation, reprise, confusion d'instance —, et **en ouvre
+une autre**, puisque l'état applicatif migre vers des **poignées frappées par le serveur et
+transmises comme arguments d'outil ordinaires**, c'est-à-dire dans le canal même que le § 11.1
+décrit comme non fiable. *(2)* La **dépréciation de l'échantillonnage et des racines** referme les
+deux primitives par lesquelles un serveur pouvait solliciter l'hôte — **la voie que le tableau 11.1
+range parmi les mécanismes de bascule du local au global** —, mais sur une **fenêtre de douze mois**
+pendant laquelle elles restent fonctionnelles : *une primitive dépréciée est une primitive encore
+exploitable.* *(3)* La **suppression de la reprise de flux** transforme une interruption en perte de
+requête, ce qui **déplace vers le client la logique de réémission** — et le ch. 48 établit qu'une
+réémission sans sémantique d'effet est une source de duplication, non une garantie.
+
+⚠ **Ce que cette revalidation n'établit pas, et le dire est le geste dû.** Elle **ne mesure aucune de
+ces trois conséquences** : aucune n'est adossée à un travail publié, aucun identifiant de
+vulnérabilité ne les documente, et le socle n'en recense pas. Ce sont des **lectures de l'auteur**
+sur un texte lu, au sens de CA-IV-07, et non des faits — *savoir ce qu'une spécification dit n'est
+pas savoir ce qu'elle expose.* Le passage de « nous n'avons pas lu le texte » à « nous l'avons lu et
+nous en tirons trois hypothèses marquées » est le seul progrès que cette passe pouvait produire.
 
 **Un dernier rappel, qui n'est pas de pure forme.** Le passage de ces protocoles **sous gouvernance
 neutre**, établi au ch. 7, **ne change rien à ce qui précède**. ⚠ **Le socle documente les transferts
@@ -449,8 +473,8 @@ persistantes pour le service d'annuaire de la couche d'infrastructure du ch. 10 
 sous chemin normalisé, **provenance cryptographique** et, à terme, **nomenclature de composants
 appliquée aux agents**.
 
-**Les référentiels de l'écosystème consolident les contrôles attendus** : un référentiel des dix
-risques majeurs des applications agentiques, annoncé fin 2025, dont un item vise la communication
+**Les référentiels de l'écosystème consolident les contrôles attendus** : l'**OWASP Top 10 for
+Agentic Applications**, annoncé fin 2025 pour le millésime 2026, dont un item vise la communication
 inter-agents non protégée ; et un référentiel homologue **en statut bêta** côté serveurs d'outils. ⚠ **Un
 référentiel en statut bêta n'est pas une norme** : le ch. 9 § 9.5 a posé la règle, et elle ne
 s'assouplit pas ici.
@@ -717,10 +741,15 @@ collision** — la remontée se formule, son numéro s'alloue à la passe d'arbi
   **`CVE-2025-32711` et `CVE-2025-6514` au niveau `[B]`**, là où ce chapitre les résout en `[C]` par
   la voie du Vol. I : *la pièce sous-déclare son propre régime*, ce qui est le sens sûr de l'erreur,
   mais qui reste une résolution à trancher — **et l'entrée porte une dette de vote explicite, « à
-  revalider avant tout emploi central »**. *(b)* **`S-001` déclare la revalidation en bloc du
+  revalider avant tout emploi central »**. *(b)* ☑ **`S-001` déclarait la revalidation en bloc du
   protocole agent-outil OUVERTE, NON EXÉCUTÉE** après la bascule du 28 juillet 2026 (§ 11.3.1) : *un
   chapitre sur les risques d'un protocole dont la spécification courante vient de changer ne se
-  publie pas sans cette revalidation.*
+  publie pas sans cette revalidation.* ⚠ **Elle est EXÉCUTÉE le 30 juillet 2026** (D-11), sur le texte
+  de la révision `2026-07-28` extrait à sa source : le § 11.3.1 en tire **trois effets sur la surface
+  d'attaque, marqués « lecture de l'auteur »**, et le ch. 8 en porte le détail protocolaire.
+  ⚠ **L'entrée `S-001` du socle n'est pas modifiée pour autant** — *un rédacteur ne verse pas au
+  socle, il remonte* : le versement reste **dû**, et c'est la seule part de cette remontée qui
+  demeure ouverte.
 
 **Remontées ouvertes par la contre-relecture du 28 juillet 2026 — mêmes motifs d'allocation : sans
 identifiant.**
@@ -749,16 +778,19 @@ identifiant.**
   d'attribution ?** Deux matières de cette pièce désignent un attributeur sans le nommer en propre —
   le **score de gravité** du § 11.1.3 (« l'autorité de numérotation de l'éditeur », « l'organisme national ») et le
   **référentiel des dix risques** des § 11.2.2 et § 11.3.2 (« l'organisme de sécurité applicative »).
-  ⚠ **Rien n'est corrigé ici, et le motif est que les deux autorités se contredisent** : la décision
-  15(b) proscrit d'anonymiser l'attributeur d'une métrique et l'auteur d'un instrument repris, mais
-  **`S-152` du socle consolidé écrit elle-même « le CNA (l'éditeur) » et « l'organisme national »**,
-  là où le **Vol. I *Monographie* §3.10.4, §4.7 et sa bibliographie nomment les trois attributeurs en
-  propre**.
-  *Un relecteur qui trancherait entre le socle et sa source ferait à sa place le geste que la
-  décision 8 réserve à une passe de plan.* ⚠ **Ce que la contre-relecture constate en revanche sans
-  réserve** : le paragraphe du § 11.1.3 énonce la règle — « écrire “gravité 9,3” sans nommer qui la
-  prononce, c'est trancher en silence » — **et ne la tient qu'au rôle** ; l'écart est décidable pour
-  un lecteur qui a l'identifiant sous les yeux, il ne l'est pas pour un lecteur pressé.
+  ☑ ⚠ **CORRIGÉ le 30 juillet 2026 — décision 18 du TOC (v0.32).** *L'état d'origine se conserve
+  ci-dessus, au passé* (décision 17c). **Le motif du report a été levé, et il faut dire comment** : la
+  note tenait le report parce que « les deux autorités se contredisent » — `S-152` du socle écrivant
+  « le CNA (l'éditeur) » et « l'organisme national » là où le Vol. I nomme en propre —, et parce
+  qu'*un relecteur qui tranche entre le socle et sa source fait le geste que la décision 8 réserve à
+  une passe de plan.* **La décision 18 est cette passe.** Elle tranche en faveur de la source, dont le
+  socle est l'abrégé : **Microsoft** comme CNA (9,3), le **NIST** pour la base nationale de
+  vulnérabilités (**7,5**), l'**OWASP** pour le référentiel des dix risques. ⚠ **Le socle n'est pas
+  réécrit par cette pièce** — *un rédacteur ne corrige pas le socle, il remonte* : `S-152` conserve sa
+  formulation de rôle, et l'écart entre l'entrée et sa source est porté à la passe de socle.
+  ⚠ **Un fait était en outre masqué par l'anonymat et il apparaît en clair** : la seconde valeur est
+  **7,5**, que la formulation « diffère de 1,8 point » laissait calculer sans jamais l'écrire. *Une
+  divergence dont un terme n'est pas écrit n'est pas consultable ; elle est seulement annoncée.*
 
 **Ce qui n'est pas enfreint.** La structure suit la table détaillée (§ 11.1 à § 11.4) ; le § 11.0 est
 une **introduction de chapitre**, non une section de plan, et la table de couverture du TOC est

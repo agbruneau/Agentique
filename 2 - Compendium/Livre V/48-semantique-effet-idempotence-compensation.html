@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 48 — La sémantique d&#x27;effet : idempotence, compensation, réconciliation · La somme agentique</title>
-<meta name="description" content="Livre V — Livrer et clore : l'agent comme livrable logiciel, horizon et frontière. Premier mouvement — l'agent comme livrable logiciel : provenance, mise en service, sémantique d'effet (ch. 47-48). Second et dernier chapitre du mouvement, et troisième des trois fronts de matière neuve que l'audit v0">
+<meta name="description" content="Livre V — Livrer et clore : l&#x27;agent comme livrable logiciel, horizon et frontière. Premier mouvement — l&#x27;agent comme livrable logiciel : provenance, mise en service, sémantique d&#x27;effet (ch. 47-48). Second et dernier chapitre du mouvement, et troisième des trois fronts de matière neuve que l&#x27;audit v0">
 <meta name="author" content="André-Guy Bruneau">
 <meta name="color-scheme" content="dark">
 <style>
@@ -535,10 +535,10 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <li><a href="#s482"><span class="num">48.2</span>Idempotence et rejouabilité des appels d&#x27;outils</a></li>
     <li><a href="#s483"><span class="num">48.3</span>Compensation et sagas au grain de l&#x27;agent</a></li>
     <li><a href="#s484"><span class="num">48.4</span>Réconciliation des flux financiers</a></li>
-    <li><a href="#s485"><span class="num">48.5</span>Tracer l&#x27;effet, pas seulement l&#x27;appel</a></li>
+    <li><a href="#s485"><span class="num">48.5</span>Tracer l&#x27;effet, pas seulement l&#x27;appel</a></li>
   </ol>
   <div class="nav__pied">
-    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
     <a href="48-semantique-effet-idempotence-compensation.md">Version Markdown</a>
   </div>
 </nav>
@@ -551,6 +551,11 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <h1><span class="chap">Chapitre 48</span>La sémantique d&#x27;effet : idempotence, compensation, réconciliation</h1>
   <p class="titre__situe">Livre V — Livrer et clore : l'agent comme livrable logiciel, horizon et frontière. Premier mouvement — l'agent comme livrable logiciel : provenance, mise en service, sémantique d'effet (ch. 47-48). Second et dernier chapitre du mouvement, et <strong>troisième des trois fronts</strong> de matière neuve que l'audit v0.3 avait nommés puis écartés (décision 9 du TOC)</p>
 </header>
+
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
+     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
 
 <div class="avert">
   <p><strong>Thèse réalignée au TOC v0.26</strong> (décisions 8 et 14), sur la remontée <strong>R-IV-65</strong> ouverte par cette pièce, <strong>et inchangée depuis</strong> : le plan est passé en v0.29 puis en <strong>v0.30</strong>, versions qui déclarent l'une et l'autre n'avoir touché aucune thèse, et <em>la concordance mot à mot de la thèse citée ci-dessus avec l'entrée du ch. 48 du TOC courant a été re-vérifiée le 28 juillet 2026</em>. La forme antérieure écrivait « <strong>n'est spécifié ni</strong> par les protocoles <strong>ni</strong> par l'encadrement » — un <strong>quantificateur universel négatif qu'aucun balayage ne soutient</strong>. Ce que le corpus établit est une <strong>absence de documentation</strong>, au <strong>degré 3</strong> de l'échelle R-14 du Vol. III, et <em>non un fait négatif vérifié</em>. <strong>Le corps du chapitre n'a pas changé à la rédaction</strong> : il écrivait déjà l'énoncé sous la forme bornée. ⚠ <strong>Le chapeau, en revanche, disséquait encore le libellé antérieur ; il est réécrit sur la forme courante au commit du 28 juillet 2026</strong> — <em>un corps qui commente une thèse que sa propre tête ne porte plus fait se contredire la pièce sous les yeux du lecteur qui ne lit pas ce bloc.</em></p>
@@ -668,12 +673,26 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <p><strong>Le lot d'instruction, et il commence par un identifiant qui manque.</strong> <em>Question</em> : la taxonomie des quatre divergences résiste-t-elle à l'ouverture de son texte, et l'une des quatre porte-t-elle une clé rattachant un effet enregistré à l'appel qui l'a produit ? <em>Corpus à ouvrir</em> : ⚠ <strong>la relève v0.10 du plan ne porte ni identifiant arXiv, ni titre, ni auteurs pour cette préimpression de mai 2026 — seule sa date et ses quatre divergences nommées la désignent.</strong> <em>Établir cet identifiant est le premier acte du lot, non son résultat</em> : sans lui, aucun tiers ne peut ouvrir la même source, et <em>un critère de clôture qui ne nomme pas la source qu'il attend n'est pas opposable.</em> S'y ajoutent les entrées nommées ci-dessus : <strong><code>S-140</code></strong> pour la <strong>lacune 21</strong>, et <strong><code>F-96</code> du Vol. III</strong> pour le <code>Monographie</code> <strong>§26.3</strong> — ⚠ <em>cette dernière hors socle consolidé, l'instruction du lot devant donc passer par sa source et non par une ligne de l'Annexe B.</em> <em>Critère de clôture</em> : le texte de la préimpression, cité par son identifiant et sa version, énonçant la clé de jointure <strong>ou</strong> son absence. <em>Échec documenté</em> : si le texte ne la porte pas, l'énoncé qui en sort reste au <strong>degré 3</strong>, et la préimpression sort du corpus candidat plutôt que d'y demeurer indéfinie.</p>
 </div>
 
+<p>☑ ⚠ <strong>DEUX DEMI-RÉPONSES EXISTENT DÉJÀ, et ne pas les inventorier était le reproche le plus fondé que l'arbitrage externe adresse à ce chapitre.</strong> <em>La question qu'il pose est neuve ; le domaine n'est pas vierge, et une question neuve posée sur un domaine réputé vierge est une question mal posée.</em> Les deux ont été relevées à leur source le 30 juillet 2026 — <strong>fiches de document, non textes extraits</strong>.</p>
+
+<p><strong>Première demi-réponse — l'en-tête d'idempotence, côté appel</strong> (relève le § 48.2). Le brouillon <strong><code>draft-ietf-httpapi-idempotency-key-header</code></strong>, <em>The Idempotency-Key HTTP Header Field</em>, de <strong>Jena et Dalal</strong>, groupe de travail <strong>httpapi</strong> de l'IETF, spécifie un en-tête par lequel un client marque une requête non idempotente — POST, PATCH — d'une clé permettant au serveur de <strong>reconnaître un réessai plutôt que de l'exécuter deux fois</strong>. ⚠ <strong>Son statut se dit à chaque mention et il est sévère (R-09)</strong> : <strong>révision -07 du 15 octobre 2025</strong>, et le document est <strong>EXPIRÉ</strong> — <em>il n'a pas atteint le stade de RFC, et rien n'établit qu'il l'atteindra.</em> ⚠ <strong>La conclusion du § 48.2 n'est donc pas levée</strong> : <em>l'écosystème n'a même pas d'en-tête normalisé pour dire « ceci est un réessai » — il en a eu un projet, et ce projet a expiré</em>, ce qui est un constat plus dur que l'absence pure.</p>
+
+<p><strong>Seconde demi-réponse — la clé de bout en bout, côté effet</strong> (relève le § 48.4 et la question propre de cette section). L'écosystème des paiements normalisés porte depuis des années <strong>exactement l'objet que ce chapitre déclare introuvable</strong> : l'<strong>UETR</strong> — <em>Unique End-to-end Transaction Reference</em> —, identifiant <strong>UUID de version 4</strong> (RFC 4122), <strong>obligatoire</strong> dans les messages de valeur ISO 20022 <code>pacs.008</code>, <code>pacs.009</code> et <code>pacs.004</code>, <strong>inchangé sur toute la chaîne de paiement</strong>, et exploité par le dispositif de suivi qui recueille l'état auprès de chaque établissement traversé. S'y ajoute la <strong>pratique de réconciliation</strong> attachée — messages d'exception et d'investigation adossés à cette même clé.</p>
+
 <div class="avert">
-  <p><strong>Ce que ce chapitre lègue, et ce qu'il ne lègue pas.</strong> Il lègue <strong>une taxonomie de travail</strong> (§ 48.1), <strong>deux lots d'instruction</strong> (§ 48.2, § 48.5) et <strong>le siège</strong> que cinq pièces rédigées attendaient. Il ne lègue <strong>aucun mécanisme</strong> : ni idempotence prescrite, ni compensation spécifiée, ni clé de jointure. <em>La somme sait désormais nommer ce qui advient quand une action d'agent réussit à moitié ; elle ne sait pas encore ce qu'un exploitant doit en faire, et le ch. 49 § 49.14 l'enregistre à ce titre.</em></p>
+  <p><strong>Quatre bornes, et la troisième interdit d'en conclure ce qu'on aimerait en conclure.</strong> <em>(1)</em> <strong>L'UETR répond à la question dans le domaine du paiement, et il y répond bien</strong> : <em>une clé unique, obligatoire, immuable, portée par le message lui-même et non par l'infrastructure qui le transporte.</em> <em>(2)</em> ⚠ <strong>Il ne rattache pas un effet à l'appel d'agent qui l'a produit</strong> : il rattache un <strong>message de paiement</strong> à ses <strong>états successifs</strong>. <em>Entre l'appel d'outil qu'un agent émet et le <code>pacs.008</code> qu'un système bancaire finit par produire, l'UETR ne dit rien</em> — <strong>la jointure que ce chapitre cherche reste absente, degré 3</strong>, et l'écrire autrement serait la transposition abusive que le ch. 22 proscrit. <em>(3)</em> ⚠ <strong>Le patron, en revanche, est instructif et il est transférable</strong> : <em>une clé de jointure ne s'obtient pas en corrélant des traces après coup — elle s'obtient en la rendant <strong>obligatoire dans le contrat</strong>, portée par la charge utile, immuable, et vérifiable par chaque maillon.</em> <strong>Lecture de l'auteur</strong> : c'est la seule voie que ce chapitre puisse nommer, et <strong>le socle ne l'établit pour aucun protocole agentique</strong> — ni MCP, ni A2A, ni AP2 n'imposent un identifiant de bout en bout de cette nature. <em>(4)</em> <strong>Aucun des deux ne monte au socle</strong> : repérages datés, ni l'un ni l'autre extrait.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Le lot du § 48.5 s'en trouve élargi, non clos</strong> : à la préimpression de mai 2026 s'ajoutent <strong>deux corpus nommés et opposables</strong> — le registre de documents de l'IETF pour l'en-tête d'idempotence, le corpus ISO 20022 pour l'UETR et les messages d'investigation. <em>Un lot qui nomme trois corpus est exécutable ; un lot qui n'en nommait qu'un, dont l'identifiant manquait, ne l'était pas.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Ce que ce chapitre lègue, et ce qu'il ne lègue pas.</strong> Il lègue <strong>une taxonomie de travail</strong> (§ 48.1), <strong>deux lots d'instruction</strong> (§ 48.2, § 48.5) — ⚠ <em>le second élargi le 30 juillet 2026 à deux corpus nommés</em> — et <strong>le siège</strong> que cinq pièces rédigées attendaient. Il ne lègue <strong>aucun mécanisme</strong> : ni idempotence prescrite, ni compensation spécifiée, ni clé de jointure — ⚠ <em>mais il lègue désormais le <strong>patron</strong> d'une clé de jointure qui fonctionne ailleurs, et la borne qui interdit de la transposer sans travail.</em> <em>La somme sait désormais nommer ce qui advient quand une action d'agent réussit à moitié ; elle ne sait pas encore ce qu'un exploitant doit en faire, et le ch. 49 § 49.14 l'enregistre à ce titre.</em></p>
 </div>
 
 <footer class="pied">
-  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre V, chapitre 48. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre V, chapitre 48. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
   <p><strong>†</strong> Renvoi à une section retirée de ce rendu — la note de statut, hors corps — conservée au fichier Markdown jumeau.</p>
 </footer>

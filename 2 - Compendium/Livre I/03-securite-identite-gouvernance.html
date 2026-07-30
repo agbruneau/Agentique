@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 3 — Sécurité, identité et gouvernance de l&#x27;interopérabilité · La somme agentique</title>
-<meta name="description" content="Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6)">
+<meta name="description" content="Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6)">
 <meta name="author" content="André-Guy Bruneau">
 <meta name="color-scheme" content="dark">
 <style>
@@ -534,10 +534,10 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <li><a href="#s31"><span class="num">3.1</span>Du périmètre réseau à la confiance par échange</a></li>
     <li><a href="#s32"><span class="num">3.2</span>Identité fédérée et autorisation déléguée</a></li>
     <li><a href="#s33"><span class="num">3.3</span>Zero-trust, identité de charge de travail et confiance décentralisée</a></li>
-    <li><a href="#s34"><span class="num">3.4</span>Gouvernance, test et observabilité de l&#x27;interopérabilité</a></li>
+    <li><a href="#s34"><span class="num">3.4</span>Gouvernance, test et observabilité de l&#x27;interopérabilité</a></li>
   </ol>
   <div class="nav__pied">
-    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
     <a href="03-securite-identite-gouvernance.md">Version Markdown</a>
   </div>
 </nav>
@@ -550,6 +550,11 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <h1><span class="chap">Chapitre 3</span>Sécurité, identité et gouvernance de l&#x27;interopérabilité</h1>
   <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6)</p>
 </header>
+
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
+     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
 
 <h2 id="s31"><span class="sig">§ 3.1</span>Du périmètre réseau à la confiance par échange</h2>
 
@@ -605,6 +610,14 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <p>Le format historique de cette fédération est l'<strong>assertion SAML 2.0</strong>, encore omniprésente dans l'intégration interentreprises et l'authentification unique vers les applications d'entreprise. La trajectoire dominante est néanmoins une migration vers <strong>OpenID Connect</strong>, qui adosse l'authentification à la couche d'autorisation <strong>OAuth 2.0</strong> et substitue à l'assertion XML un jeton d'identité JSON plus léger, mieux adapté aux API et aux clients publics.</p>
 
+<div class="avert">
+  <p><strong>Ce chapitre est le SIÈGE du socle IAM pour toute la somme, et cinq chapitres aval y renvoient sans le reconstruire</strong> — ce qui interdit d'expédier SAML en une phrase. <em>Trois traits de l'assertion SAML 2.0 sont donc posés ici une fois, parce que les Livres II et IV s'y adossent.</em> <strong>(a) Le porteur de la confiance est le document, non le canal</strong> : une assertion est un fragment XML <strong>signé par l'émetteur</strong>, que le consommateur valide contre une clé publiée d'avance — <em>la fédération SAML est un échange de documents signés entre deux domaines qui se sont préalablement reconnus, et cette reconnaissance préalable est hors protocole.</em> <strong>(b) Le lien de confiance est bilatéral et négocié hors bande</strong> : chaque couple fournisseur d'identité / fournisseur de service échange ses métadonnées et ses certificats, ce qui rend l'ajout d'un partenaire <strong>linéairement coûteux</strong> — <em>c'est le problème N×M du ch. 1 § 1.1, appliqué à la confiance plutôt qu'aux données.</em> <strong>(c) L'assertion transporte des attributs, non une autorisation</strong> : elle dit <em>qui</em> est le sujet et ce qu'on sait de lui ; <em>ce que le sujet a le droit de faire reste une décision du consommateur</em>.</p>
+</div>
+
+<div class="avert">
+  <p><strong>C'est le troisième trait qui voyage le plus loin dans la somme, et il faut le retenir sous cette forme</strong> : <em>la fédération d'identité résout l'authentification entre domaines et laisse l'autorisation entière</em> — <strong>le ch. 17 retrouve exactement cette frontière au niveau du mandat d'agent</strong>, et le ch. 14 en fait l'une de ses cinq questions. <strong>Lecture de l'auteur</strong> : la migration de SAML vers OpenID Connect change le <strong>format</strong> et le <strong>poids</strong> du jeton, non cette répartition ; <em>le socle établit la substitution de format, il n'établit pas que le partage des rôles ait bougé.</em></p>
+</div>
+
 <p>Sur le versant de l'<strong>autorisation déléguée</strong>, le socle évolue d'OAuth 2.0 vers <strong>OAuth 2.1</strong>, dont l'objet est de consolider les flux éprouvés et de proscrire ceux jugés dangereux : l'échange de code avec preuve de clé devient obligatoire, et le flux implicite est retiré.</p>
 
 <div class="avert">
@@ -639,7 +652,15 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <h3>3.2.3 Provisionnement et propagation de contexte</h3>
 
-<p>L'identité fédérée présuppose que les comptes <strong>existent et restent synchronisés</strong> entre domaines : c'est le rôle du provisionnement. Le standard <strong>SCIM</strong> en fournit le schéma et le protocole, automatisant le cycle de vie des comptes — création, mise à jour, désactivation — d'un fournisseur d'identité vers les applications consommatrices.</p>
+<p>L'identité fédérée présuppose que les comptes <strong>existent et restent synchronisés</strong> entre domaines : c'est le rôle du provisionnement. Le standard <strong>SCIM</strong> — <em>System for Cross-domain Identity Management</em> — en fournit le schéma et le protocole, automatisant le cycle de vie des comptes — création, mise à jour, désactivation — d'un fournisseur d'identité vers les applications consommatrices.</p>
+
+<div class="avert">
+  <p><strong>Deux traits de SCIM sont posés ici, au titre du siège, parce que le Livre II les mobilise et que le ch. 12 est nommément chargé de leur transposition aux agents.</strong> <strong>(a) SCIM est un protocole de <em>ressource</em>, pas de <em>session</strong></em> : il expose des collections d'utilisateurs et de groupes sur une interface REST, avec un schéma extensible, et il agit <strong>hors du chemin de l'authentification</strong> — <em>le provisionnement se fait avant, l'authentification pendant, et les deux ne se voient pas.</em> <strong>(b) Sa désactivation est un état, non un événement</strong> : SCIM porte un attribut d'activité que le fournisseur d'identité met à jour, et <em>rien dans le protocole ne garantit qu'une application consommatrice observe ce changement dans un délai borné.</em></p>
+</div>
+
+<div class="avert">
+  <p><strong>Le second trait est le plus lourd, et c'est la raison pour laquelle ce paragraphe existe.</strong> <em>Un protocole de provisionnement qui pousse un état sans borner sa propagation ne ferme pas la fenêtre de révocation — il la déplace du poste manuel vers le calendrier de synchronisation.</em> <strong>C'est exactement la question que le ch. 20 pose à la couche agentique</strong> — un budget de fraîcheur écrit dans un texte — et <strong>le socle IAM pré-agentique n'y répond pas davantage que les protocoles d'agents</strong> : <em>absence de documentation, non fait négatif vérifié.</em> <span class="auteur">Lecture de l'auteur</span> la couche agentique n'hérite donc pas d'une solution qu'elle aurait perdue : <em>elle hérite d'un problème que l'entreprise avait appris à tolérer sur des cycles humains, et que des agents parcourent en secondes.</em></p>
+</div>
 
 <p>Sans ce maillon, la révocation d'accès reste manuelle et tardive, ce qui <strong>rouvre la fenêtre d'attaque que l'authentification fédérée prétendait fermer</strong>. Le provisionnement est donc la facette <em>évolution</em> du contrat d'identité : il garantit que l'état d'autorisation suit l'état réel des personnes et des charges. Une identité fédérée sans provisionnement n'est pas une identité fédérée imparfaite — c'est une identité fédérée dont la principale garantie est absente.</p>
 
@@ -828,7 +849,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <p>Cette section clôt le socle pré-agentique de l'identité et de la gouvernance. Ce qui suit, dans le Livre I, est la couche protocolaire proprement agentique — et ce qui la précède, dans les ch. 4 à 6, est l'ingénierie de l'agent lui-même. Le lecteur qui arrive au ch. 12 y trouvera ces mécanismes <strong>transposés</strong>, jamais réexpliqués : c'est le contrat que ce chapitre passe avec le reste de la somme.</p>
 
 <footer class="pied">
-  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 3. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 3. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

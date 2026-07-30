@@ -217,9 +217,16 @@ def main():
             dagues += marques
     if numero != 50:
         sys.exit(f"[assemble] {numero} chapitres assembles, 50 attendus")
-    morceaux.append(annexe(RACINE / "annexe-references.md"))
+    # Deux annexes suivent le chapitre 50, et elles n'ont pas le meme statut :
+    # `annexe-references.md` est HORS PLAN (les faits, abreges du socle) ;
+    # `annexe-bibliographie.md` est l'ANNEXE I DU PLAN (les documents), ecrite
+    # le 30 juillet 2026 sous D-11. Ni l'une ni l'autre ne consomme de numero
+    # de chapitre : le plafond de cinquante tient.
+    annexes = ["annexe-references.md", "annexe-bibliographie.md"]
+    for nom in annexes:
+        morceaux.append(annexe(RACINE / nom))
     dest.write_text("\n".join(morceaux), encoding="utf-8")
-    print(f"[assemble] {numero} chapitres, 5 livres, 1 annexe hors plan, "
+    print(f"[assemble] {numero} chapitres, 5 livres, {len(annexes)} annexes, "
           f"{dagues} renvois a la note de statut marques -> {dest}")
 
 

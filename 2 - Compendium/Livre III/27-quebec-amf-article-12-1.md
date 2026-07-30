@@ -94,6 +94,23 @@ que le Vol. II avait rencontrée le 17 juillet 2026 s'est reproduite onze jours 
 qualifie de durable* — **et une entrée non re-datée n'est ni infirmée ni confirmée : elle est dans
 l'état où sa source l'a laissée.**
 
+⚠ **Troisième tentative, 30 juillet 2026 (D-11), en réponse au grief mineur du rapport d'arbitrage
+externe : l'hôte refuse toujours l'accès, et l'obstacle est désormais constaté à trois dates
+distinctes** — 17 juillet (Vol. II), 21 et 28 juillet (Vol. III et gel résiduel), 30 juillet.
+*Trois refus à treize jours d'intervalle ne sont plus un incident : c'est une propriété de la source,
+et elle se déclare comme telle.* **La position du chapitre est donc inchangée : avril 2026, sans
+quantième.**
+
+⚠ **Ce que la tentative apporte, et ce qu'elle n'apporte pas.** *Ce qu'elle apporte* : **deux
+analyses de cabinets juridiques indépendants**, consultées ce jour, datent la publication de la
+version finale du **7 avril 2026** — soit **le terme du Vol. I**, qui cesse d'être isolé. *Ce
+qu'elle n'apporte pas* : **aucune des deux n'est une source primaire**, et elles entrent au même
+titre que la corroboration secondaire que le Vol. II mobilisait déjà pour son propre terme.
+⚠ ***Deux secondaires concordantes ne valent pas une primaire, et la somme n'élève rien sur cette
+base*** — le tableau 27.1 n'est pas réécrit, aucune de ses trois lignes ne change de régime, et
+*« avril 2026 » demeure ce que ce chapitre écrit*. **Ce qui se déplace est seulement le poids
+relatif des trois positions, et c'est un déplacement qu'on note sans en tirer d'arbitrage.**
+
 **Ce qui concorde suffit à ce que le chapitre établit** : ⚠ **l'entrée en vigueur au 1ᵉʳ mai 2027
 ne dépend d'aucune des trois positions.** *C'est le seul fait que ce chapitre fait porter à la
 chronologie.*

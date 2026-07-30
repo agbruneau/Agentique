@@ -6,6 +6,54 @@ plus spécifique gagne** : ici, celui-ci ; les règles valant pour tout le dép�
 faits datés, périmètre des fichiers de doc) sont au [`CLAUDE.md` racine](../CLAUDE.md) et ne sont
 pas répétées.
 
+⚠ **ÉTAT AU 30 JUILLET 2026 — UNE PASSE DE RÉVISION EST OUVERTE SUR ARBITRAGE EXTERNE, ET C'EST CE
+BLOC QUI FAIT AUTORITÉ ; tout ce qui suit est un journal daté.** La décision d'auteur **D-11**
+(PRD **v0.16** §15, TOC **v0.32**) **rouvre D-10** — *elle rouvre le **travail**, non le **régime***.
+Déclencheur : un **rapport d'arbitrage externe** ([`eval.html`](eval.html)) concluant à une **révision
+majeure — accepté sur le fond, non diffusable en l'état**, avec **22 affirmations vérifiées : 19
+confirmées, 3 partielles, 0 infirmée**. ⚠ **Ce rapport n'a AUCUNE autorité** : il déclare lui-même ne
+satisfaire ni CA-IV-11 ni CA-IV-13 ; ses constats sont des **remontées**, du régime d'[`audit.md`](audit.md),
+**jamais citables à l'appui d'un énoncé**.
+
+**Décomptes re-mesurés sur pièce le 30 juillet 2026** — jamais recopiés :
+
+| | |
+|---|---|
+| Rendu [`compendium.pdf`](compendium.pdf) | **921 pages**, **aucune page blanche** (810 p. au 29 juillet) |
+| Annexes reliées | **deux** — l'annexe hors plan des 159 entrées, et l'**Annexe I du plan**, neuve |
+| Volumétrie de corps | **330 003 mots** (I 71 980 · II 68 460 · III 99 464 · IV 59 536 · V 30 563) pour 308 000 d'enveloppe, **+7,1 %** |
+| Décisions d'auteur | **douze**, D-1 à D-12 — *ne plus écrire « neuf »* |
+| Contrôles | `check-toc.py`, `check-sieges.py`, `check-compendium.py`, `decompte.sh`, `verifier-piece.py` sur 21 pièces — **sortie 0 pour tous** |
+
+**Cinq choses à savoir avant d'éditer ici.** *(1)* ☑ ⚠ **LA DÉCISION 15a EST RENVERSÉE** — **décision 18
+du TOC** : *la citation nominative l'emporte, la péremption se gère par **datation**, non par anonymat*.
+La 15b est **absorbée**, la 15c **inchangée**. ⚠ **Deux bornes opposables** : *un nom se restitue depuis
+sa source, jamais depuis l'inférence* — la passe a **déduit à tort « OpenID Foundation » au ch. 18 là où
+le Vol. III écrit **FIDO Alliance** —, et *nommer n'élève aucun régime de preuve*. **Domaine résiduel
+déclaré : 261 tournures indéfinies dans le corps de 44 pièces sur 50.** *(2)* ☑ ⚠ **LE PREMIER
+ÉVÉNEMENT DE PÉREMPTION EST PAYÉ** : la révision protocolaire `2026-07-28` a été **extraite à sa source**
+et **six sous-sections du ch. 8** plus le **§ 11.3.1** revalidés en bloc. *Le dispositif du ch. 50 avait
+prouvé qu'il détecte ; il a désormais prouvé qu'il répare.* ⚠ **Le versement au socle reste dû.**
+*(3)* ☑ **L'ANNEXE I EXISTE** — [`annexe-bibliographie.md`](annexe-bibliographie.md), **1 154 entrées
+uniques** (1 263 relevées, 109 doublons fondus), assemblée par
+[`build/assemble-bibliographie.py`](build/assemble-bibliographie.py) et **reproductible** (`--verifier`).
+⚠ **Elle ne tient pas son programme, et l'écart est mesuré** : les socles des Vol. II et III **citent
+leurs sources en prose**, rendant **une seule adresse pour les deux volumes** — *l'annexe réunit une
+bibliographie et constate l'absence des deux autres.* *(4)* ⚠ **UN DÉFAUT DU GABARIT A ÉTÉ TROUVÉ EN
+MESURANT LE PDF, et il est de la classe la plus grave** : le **colophon ne portait NI le statut NI les
+réserves** que D-10 exige, alors que le PRD et les deux `CLAUDE.md` le déclaraient présent depuis le
+29 juillet. *Le seul avertissement du livrable manquait au livrable.* Corrigé ; ⚠ **le piège documenté
+s'est produit** — la page de titre a débordé, et **les deux `#v()` de tête ont été repris**, comme la
+règle le prescrit. *(5)* ⚠ **CE QUE LA PASSE NE FAIT PAS** : **la relecture tierce n'est pas fournie et
+ne peut l'être** — *le rapport qui l'exige ne la fournit pas davantage* ; **CA-IV-11 et CA-IV-13 restent
+dérogés** ; **les quatre portes dérogées le restent** ; **aucun énoncé n'est central** ; **le statut
+demeure *révision finale, diffusion en bibliothèque personnelle***. ⚠ **Et un grief de l'arbitrage a été
+RÉFUTÉ sur mesure** : **F-3** — « l'appareil occupe 30 à 45 % de nombreuses pièces » — *est mesuré sur
+les `.md` et ne décrit pas le livrable* : l'appareil pèse **26 % du corpus source et 0 % du PDF**,
+`build/assemble.py` le retirant intégralement.
+
+---
+
 ⚠ **ÉTAT AU 29 JUILLET 2026 — L'OUVRAGE EST ARRÊTÉ, et c'est la première chose à savoir avant
 d'éditer quoi que ce soit ici.** La décision d'auteur **D-10** (PRD **v0.15** §14, TOC **v0.31**) place
 le compendium au statut de révision **RÉVISION FINALE**, sous un **régime de diffusion en bibliothèque

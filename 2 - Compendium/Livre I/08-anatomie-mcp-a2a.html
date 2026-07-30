@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 8 — Anatomie : MCP (agent-outil) et A2A (agent-agent) · La somme agentique</title>
-<meta name="description" content="Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11)">
+<meta name="description" content="Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11)">
 <meta name="author" content="André-Guy Bruneau">
 <meta name="color-scheme" content="dark">
 <style>
@@ -537,10 +537,10 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <li><a href="#s84"><span class="num">8.4</span>A2A v1.0 : la délégation entre pairs</a></li>
     <li><a href="#s85"><span class="num">8.5</span>L&#x27;ACP protocolaire, l&#x27;alternative décentralisée et l&#x27;état de la standardisation</a></li>
     <li><a href="#s86"><span class="num">8.6</span>La frontière : une complémentarité déclarée, et par qui</a></li>
-    <li><a href="#s87"><span class="num">8.7</span>Les intégrations infonuagiques : lire le statut, pas la présence</a></li>
+    <li><a href="#s87"><span class="num">8.7</span>Les intégrations infonuagiques : lire le statut, pas la présence</a></li>
   </ol>
   <div class="nav__pied">
-    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
     <a href="08-anatomie-mcp-a2a.md">Version Markdown</a>
   </div>
 </nav>
@@ -553,6 +553,11 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <h1><span class="chap">Chapitre 8</span>Anatomie : MCP (agent-outil) et A2A (agent-agent)</h1>
   <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11)</p>
 </header>
+
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
+     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
 
 <h2 id="s81"><span class="sig">§ 8.1</span>MCP comme couche de contrat : problème N×M, primitives, transports</h2>
 
@@ -601,7 +606,13 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <p>Ces canaux instaurent une interopérabilité <strong>négociée et interactive, bidirectionnelle</strong>, absente du modèle requête-réponse unidirectionnel. <em>Le contrat n'est plus un appel et son retour, mais un échange où le serveur peut, à son tour, interroger l'hôte.</em></p>
 
-<p><span class="auteur">Lecture de l'auteur</span> c'est le premier endroit de la somme où un contrat d'interface autorise explicitement l'appelé à solliciter l'appelant. Le ch. 1 § 1.1.3 posait le contrat comme publication de ce qu'un système offre et exige ; ici, il devient un <strong>protocole de conversation</strong>. Le socle établit l'existence des trois primitives client et la direction de leur appel ; il <strong>n'établit ni cette lecture, ni le caractère inédit qu'elle prête à ce renversement</strong> dans l'histoire des contrats d'interface. Elle est proposée comme telle.</p>
+<p>☑ ⚠ <strong>Revalidation du 30 juillet 2026 — et c'est ici que la révision <code>2026-07-28</code> mord le plus fort.</strong> La description ci-dessus est celle de la révision <strong>2025-11-25</strong>, et elle reste exacte pour elle. Le texte neuf, lu à sa source, <strong>retire le mécanisme et déprécie deux des trois primitives</strong> : <em>(1)</em> les <strong>racines</strong> et l'<strong>échantillonnage</strong> passent à l'état <strong>déprécié</strong> — avec la <strong>journalisation</strong> —, la spécification recommandant de leur substituer, respectivement, le passage des répertoires par paramètres d'outil ou URI de ressource, et l'intégration directe aux interfaces des fournisseurs de modèles ; <em>(2)</em> le <strong>mécanisme</strong> de requête serveur-vers-client est remplacé par le patron des <strong>requêtes à tours multiples</strong> (<em>Multi Round-Trip Requests</em>, MRTR) : le serveur ne lance plus une requête à l'hôte, il <strong>renvoie un résultat typé <code>input_required</code></strong> portant ses demandes, et le client <strong>rejoue la requête d'origine</strong> en y joignant ses réponses.</p>
+
+<div class="avert">
+  <p><strong>Le renversement que ce paragraphe analysait n'est pas annulé — il change de forme, et la nuance est le résultat de la revalidation.</strong> L'appelé peut toujours exiger de l'appelant une information qu'il n'avait pas ; mais il l'exige désormais <strong>par la valeur de retour et non par un appel entrant</strong>, ce qui rétablit un flux à sens unique au niveau du transport tout en conservant la négociation au niveau du contrat. <em>Le protocole de conversation subsiste ; il cesse d'être un protocole à deux appelants.</em> ⚠ <strong>La sollicitation, elle, n'est pas dépréciée</strong> : elle passe sous MRTR, et sa notification de complétion — introduite en 2025-11-25 — est <strong>retirée</strong>.</p>
+</div>
+
+<p><span class="auteur">Lecture de l'auteur</span> c'est le premier endroit de la somme où un contrat d'interface autorise explicitement l'appelé à solliciter l'appelant. Le ch. 1 § 1.1.3 posait le contrat comme publication de ce qu'un système offre et exige ; ici, il devient un <strong>protocole de conversation</strong>. Le socle établit l'existence des trois primitives client et la direction de leur appel ; il <strong>n'établit ni cette lecture, ni le caractère inédit qu'elle prête à ce renversement</strong> dans l'histoire des contrats d'interface. Elle est proposée comme telle. ⚠ <strong>Et la lecture survit à la revalidation sous une forme bornée</strong> : <em>ce que la révision <code>2026-07-28</code> montre, c'est qu'un renversement de sens d'appel est une propriété coûteuse qu'un standard peut choisir de rendre à l'état de résultat typé</em> — la bidirectionnalité était un choix, non une nécessité de la couche agentique.</p>
 
 <h3>8.1.3 Transports : une trajectoire du couplage vers le découplage</h3>
 
@@ -614,15 +625,17 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <tr><td><strong>Entrée-sortie standard</strong></td><td>le serveur est un sous-processus local de l'hôte</td><td><strong>fort</strong> — cycle de vie et machine partagés</td></tr>
     <tr><td><strong>HTTP à deux points d'accès</strong></td><td>un point pour les requêtes, un pour le flux d'événements</td><td>déprécié dès la révision suivante</td></tr>
     <tr><td><strong>HTTP diffusable à point unique</strong></td><td>un seul point d'accès</td><td><strong>résiduel</strong> — un identifiant de session épingle un client à une instance</td></tr>
-    <tr><td><strong>Cœur sans état</strong> <em>(candidat au gel)</em></td><td>suppression de la poignée de main et de l'identifiant de session</td><td><strong>aucun</strong> — serveur déployable derrière un répartiteur à tourniquet</td></tr>
+    <tr><td><strong>Cœur sans état</strong> <em>(ratifié le 28 juill. 2026)</em></td><td>suppression de la poignée de main, de l'identifiant de session et de la reprise de flux</td><td><strong>aucun</strong> — serveur déployable derrière un répartiteur à tourniquet</td></tr>
   </tbody>
 </table>
 </div>
 
 <p class="legende">Tableau 8.2 — La trajectoire des transports : quatre étapes, un couplage qui décroît jusqu'à l'absence d'état partagé.</p>
 
+<p>☑ ⚠ <strong>Revalidation du 30 juillet 2026 : la dernière étape n'est plus une cible, elle est le contrat.</strong> Trois termes du texte neuf, lus à sa source. <em>(1)</em> Les <strong>sessions de protocole</strong> et l'en-tête qui les portait disparaissent du transport diffusable ; l'état qu'un serveur doit conserver d'un appel à l'autre passe par des <strong>poignées explicites, frappées par le serveur et transmises comme arguments d'outil ordinaires</strong>. <em>(2)</em> La <strong>poignée de main d'initialisation</strong> disparaît : chaque requête porte désormais sa version de protocole et les capacités du client dans ses métadonnées, et une méthode de <strong>découverte</strong> permet la sélection de version en amont. <em>(3)</em> ⚠ <strong>Le découplage se paie, et le prix n'était pas au tableau</strong> : la <strong>reprise de flux et la retransmission de messages sont retirées</strong> — un flux de réponse interrompu <strong>perd la requête en vol</strong>, que le client doit réémettre sous un identifiant neuf.</p>
+
 <div class="avert">
-  <p><strong>La dernière étape est une cible architecturale, non un acquis déployé.</strong> Elle relevait, au gel, d'une <strong>révision candidate</strong> ; le § 8.2.1 en donne le statut exact et le constat de bascule qui a suivi.</p>
+  <p><strong>C'est le fait le plus instructif de la revalidation, et il corrige la lecture d'origine.</strong> Le tableau lisait la trajectoire comme une décroissance monotone du couplage ; la révision montre que <em>la dernière marche échange un couplage d'infrastructure contre une obligation de réémission côté client</em>. <strong>Le couplage ne disparaît pas davantage ici qu'ailleurs : il se déplace vers l'appelant</strong> — exactement ce que le ch. 1 § 1.3 énonce, et que ce chapitre croyait pour une fois pouvoir écarter. L'<strong>HTTP à deux points d'accès</strong>, déprécié depuis 2025-03-26, est en outre <strong>reclassé</strong> sous la politique de cycle de vie neuve.</p>
 </div>
 
 <h3>8.1.4 Une interface d'outillage assortie d'un cadre d'autorisation</h3>
@@ -645,32 +658,26 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <tr><td><strong>2025-03-26</strong></td><td>26 mars 2025</td><td>transport diffusable à point unique ; <strong>cadre</strong> d'autorisation</td></tr>
     <tr><td><strong>2025-06-18</strong></td><td>18 juin 2025</td><td>sorties structurées ; sollicitation ; racines ; serveur qualifié serveur de ressources</td></tr>
     <tr><td><strong>2025-11-25</strong></td><td>25 nov. 2025</td><td>découverte d'identité ; schémas 2020-12 ; tâches asynchrones <strong>expérimentales</strong></td></tr>
-    <tr><td><strong>2026-07-28</strong> <em>(candidate au gel)</em></td><td>gelée le 21 mai 2026</td><td>cœur sans état ; cadre d'extensions à nommage inversé ; <strong>politique de dépréciation formelle</strong> ; dépréciation de trois primitives et de l'enregistrement dynamique de client</td></tr>
+    <tr><td><strong>2026-07-28</strong></td><td><strong>ratifiée le 28 juill. 2026</strong></td><td>cœur <strong>sans état</strong> — suppression des sessions de protocole et de la poignée de main ; <code>server/discover</code> ; <strong>cadre d'extensions</strong> ; <strong>politique de cycle de vie et de dépréciation</strong> à fenêtre de douze mois ; dépréciation des <strong>racines, de l'échantillonnage et de la journalisation</strong> ; dépréciation de l'<strong>enregistrement dynamique de client</strong></td></tr>
   </tbody>
 </table>
 </div>
 
-<p class="legende">Tableau 8.3 — Cinq jalons en moins de deux ans, et un cinquième qui n'était pas acquis au gel.</p>
+<p class="legende">Tableau 8.3 — Cinq jalons en moins de deux ans, et un cinquième qui n'était pas acquis au gel — il l'est depuis.</p>
+
+<p>☑ ⚠ <strong>REVALIDATION EXÉCUTÉE LE 30 JUILLET 2026, sur la source primaire.</strong> <em>L'historique de la péremption se conserve ci-dessous, au passé, parce qu'il est le seul cas du corpus où le dispositif du ch. 50 a été éprouvé par le réel</em> (décision 17c).</p>
+
+<p><strong>Ce que le chapitre déclarait, et ce qui a été fait.</strong> À la rédaction — 27 juillet 2026 —, le cinquième jalon était <strong>une révision candidate et non une révision publiée</strong> : gelée le <strong>21 mai 2026</strong>, sa ratification était <strong>annoncée pour le lendemain</strong>, et l'anatomie des § 8.1 et § 8.2 décrivait la révision <strong>2025-11-25</strong>. Le <strong>28 juillet 2026</strong>, la bascule a été <strong>constatée</strong> à la date annoncée (socle consolidé <code>S-001</code> ; <a class="lien" href="../PRD/gel-2026-07-28-volet-residuel.md">registre du volet résiduel de G-1</a>), et le chapitre a écrit — c'était le geste juste — que <em>constater une bascule n'est pas lire le texte qui a basculé</em>, laissant la revalidation <strong>ouverte et non exécutée</strong>. ⚠ <strong>Elle est exécutée ici</strong> : le <strong>journal des changements de la révision <code>2026-07-28</code></strong> a été extrait à sa source le <strong>30 juillet 2026</strong>, et les § 8.1.2, § 8.1.3, § 8.2.1, § 8.2.2 et § 8.2.3 sont revalidés <strong>en bloc</strong>, comme la règle l'exigeait — <em>non par retouche d'un texte gelé, mais par confrontation de chaque énoncé au texte neuf</em>.</p>
 
 <div class="avert">
-  <p><strong>Trois précisions de statut, et la première est la plus importante de tout le chapitre.</strong></p>
-</div>
-
-<p><em>(a)</em> <strong>Le cinquième jalon était, à la rédaction, une révision candidate et non une révision publiée.</strong> Gelée le <strong>21 mai 2026</strong>, sa <strong>ratification était annoncée pour le 28 juillet 2026</strong> ; à la date de rédaction — le 27 juillet 2026 —, <strong>elle n'était pas ratifiée</strong>, et l'anatomie décrite aux § 8.1 et § 8.2 est celle de la <strong>révision 2025-11-25</strong>.</p>
-
-<div class="avert">
-  <p><strong>Constat postérieur, daté du 28 juillet 2026 : la ratification a eu lieu, à la date même que la source annonçait.</strong> La page de spécification courante sert désormais la révision <code>2026-07-28</code>, et l'index documentaire du site ne connaît plus la précédente (socle consolidé <code>S-001</code>, instruit au <a class="lien" href="../PRD/gel-2026-07-28-volet-residuel.md">registre du volet résiduel de G-1</a>).</p>
-</div>
-
-<div class="avert">
-  <p><strong>Et la source se contredit sur ce point le jour même, ce qui se consigne sans s'arbitrer.</strong> La page de versionnement du site déclarait encore, le 28 juillet 2026, que la version courante est la précédente (socle consolidé <code>S-098</code>), et la page servie sous la révision neuve <strong>range la précédente parmi les révisions héritées tout en la nommant courante</strong> — divergence <strong>interne à une seule page</strong>. Les deux états sont portés à leur entrée et <strong>laissés ouverts</strong> par le registre. <em>Deux constats pris le même jour sur le même site ne se départagent pas depuis ce chapitre.</em></p>
+  <p><strong>Ce que la revalidation change de régime, et ce qu'elle ne change pas.</strong> Les énoncés portant sur la révision <code>2026-07-28</code> résolvent désormais contre <strong>un texte lu</strong>, non contre une annonce : ils quittent le repérage pour l'extraction. ⚠ <strong>Mais le socle n'est pas modifié par cette pièce</strong> — <code>S-001</code> et <code>S-098</code> conservent leur état, et <em>un rédacteur ne verse pas au socle : il remonte</em>. Le versement est <strong>dû</strong>, et il est porté à la passe de socle.</p>
 </div>
 
 <div class="avert">
-  <p><strong>Ce constat porte sur la bascule, non sur le contenu de la révision neuve, qui n'a pas été extrait.</strong> <em>La péremption que ce chapitre avait datée est advenue</em> : les § 8.1.3, § 8.2.1, § 8.2.2 et § 8.3.1 se revalident <strong>en bloc et sur sources primaires</strong>, non par retouche — et ils décrivent, en attendant, l'état arrêté au gel.</p>
+  <p><strong>La divergence interne à la source, elle, n'est pas rejouée et reste consignée.</strong> Le 28 juillet 2026, la page de versionnement déclarait encore courante la révision précédente (<code>S-098</code>), quand la page servie sous la révision neuve la rangeait parmi les révisions héritées <strong>tout en la nommant courante</strong> — divergence interne à une seule page. <em>Ce constat est daté du 28 juillet et ne se corrige pas depuis le 30</em> : il décrit l'état du site à sa date, et le registre le laisse ouvert.</p>
 </div>
 
-<p><em>(b)</em> <strong>Cette révision porte des changements cassants</strong>, et non seulement des ajouts : suppression de la poignée de main et de l'identifiant de session, dépréciation de trois primitives, remplacement du mécanisme d'enregistrement de client. Sa ratification <strong>périme donc l'anatomie en bloc</strong>, et non par retouches.</p>
+<p><em>(b)</em> <strong>Cette révision porte des changements cassants</strong>, et non seulement des ajouts — le § 8.1.2 et le § 8.1.3 en portent désormais le détail lu. Sa ratification <strong>a périmé l'anatomie en bloc</strong>, et non par retouches : c'est pourquoi la revalidation a porté sur cinq sous-sections d'un coup.</p>
 
 <p><em>(c)</em> <strong>La cadence elle-même est un fait d'interopérabilité</strong> : cinq jalons en moins de deux ans témoignent d'un standard <strong>en maturation rapide</strong>, où la rétrocompatibilité et la dépréciation deviennent des objets de spécification à part entière. C'est un signe de maturité — et, simultanément, un coût pour qui doit épingler une version.</p>
 
@@ -687,12 +694,18 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <p>Une révision ultérieure ajoute la découverte d'identité, des documents de métadonnées de client, et le <strong>consentement incrémental</strong> — élargir le périmètre d'accès au fil des besoins plutôt que d'exiger d'emblée une autorisation large. C'est le moindre privilège du ch. 6 § 6.5.2, porté par le protocole plutôt que par l'exploitant.</p>
 
+<p>☑ ⚠ <strong>Revalidation du 30 juillet 2026 : la révision <code>2026-07-28</code> déplace l'enregistrement du client, et c'est un changement d'ancrage de confiance.</strong> L'<strong>enregistrement dynamique de client</strong> (RFC 7591) est <strong>déprécié</strong> comme mécanisme d'enregistrement, au profit des <strong>documents de métadonnées d'identifiant client</strong> (<em>Client ID Metadata Documents</em>) ; il demeure disponible pour compatibilité avec les serveurs d'autorisation qui ne les prennent pas en charge. S'y ajoutent trois durcissements : le serveur d'autorisation <strong>devrait</strong> porter le paramètre <code>iss</code> de la RFC 9207 et le client <strong>doit</strong> le valider contre l'émetteur enregistré avant d'échanger le code ; le client <strong>doit</strong> déclarer un <code>application_type</code> approprié à l'enregistrement, pour éviter les conflits d'URI de redirection avec OpenID Connect ; et les <strong>identifiants de client sont liés au serveur d'autorisation qui les a émis</strong> — ils se conservent indexés par émetteur, ne se réutilisent pas ailleurs, et un changement de serveur <strong>impose un réenregistrement</strong>.</p>
+
+<div class="avert">
+  <p><strong>Qualification, au sens de R-02 : ce que ce déplacement démontre et ne démontre pas.</strong> Il <strong>démontre</strong> que la spécification a nommé et fermé une classe de confusion d'émetteur au niveau du contrat. Il <strong>ne démontre pas</strong> que le parc déployé suive : <em>une dépréciation ouvre une fenêtre de douze mois pendant laquelle les deux mécanismes coexistent</em>, et c'est précisément la fenêtre où une institution doit savoir lequel elle exploite.</p>
+</div>
+
 <div class="avert">
   <p><strong>Qualification, au sens de R-02 du Vol. III, et rappel de la réserve F-01.</strong> Ce que ce cadre <strong>démontre</strong> : qu'un jeton présenté est confiné à l'audience déclarée, et que les métadonnées du serveur sont découvrables par un chemin normalisé. Ce qu'il <strong>ne démontre pas</strong> : que l'implémentation valide effectivement l'audience, que le serveur est digne de confiance, ni que l'outil invoqué se comporte comme sa description l'annonce. <strong>Cadre d'autorisation, jamais « sécurisé ».</strong></p>
 </div>
 
 <div class="avert">
-  <p><strong>Une réserve de statut sur le socle sous-jacent</strong> : le cadre d'autorisation de nouvelle génération sur lequel s'appuie cette pile <strong>demeure un projet à la date d'arrêt des sources</strong>, la version antérieure restant la base normative en vigueur. Le ch. 3 § 3.2.1 porte la même réserve, et le <strong>volet Livre I de la porte G-1 les a instruites toutes deux le 27 juillet 2026</strong> (<a class="lien" href="../PRD/gel-2026-07-27.md">0</a>, fait 8) : le document <strong>est toujours à l'état de projet</strong>, désormais daté, et <strong>aucune version normative n'en est issue</strong>. <em>La réserve n'est pas levée ; elle est datée</em> — et c'est le seul effet qu'une instruction à la source pouvait avoir sur un texte qui n'a pas bougé.</p>
+  <p><strong>Une réserve de statut sur le socle sous-jacent</strong> : le cadre d'autorisation de nouvelle génération sur lequel s'appuie cette pile <strong>demeure un projet à la date d'arrêt des sources</strong>, la version antérieure restant la base normative en vigueur. Le ch. 3 § 3.2.1 porte la même réserve, et le <strong>volet Livre I de la porte G-1 les a instruites toutes deux le 27 juillet 2026</strong> (<a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>, fait 8) : le document <strong>est toujours à l'état de projet</strong>, désormais daté, et <strong>aucune version normative n'en est issue</strong>. <em>La réserve n'est pas levée ; elle est datée</em> — et c'est le seul effet qu'une instruction à la source pouvait avoir sur un texte qui n'a pas bougé.</p>
 </div>
 
 <h3>8.2.3 Vers une sémantique des résultats : sorties structurées et tâches</h3>
@@ -700,6 +713,12 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <p>L'effort pour donner un <strong>sens machine-vérifiable</strong> aux résultats d'outils progresse par étapes : des <strong>sorties structurées</strong> et des <strong>liens de ressources</strong> permettent à un serveur de renvoyer non plus un bloc de texte libre mais une <strong>charge utile typée</strong> ; une révision ultérieure adopte un dialecte de schéma normalisé pour les décrire.</p>
 
 <p>S'y ajoutent les <strong>tâches asynchrones</strong>, ⚠ <strong>expérimentales</strong> : un appel d'outil peut renvoyer un identifiant de tâche — logique « appeler maintenant, récupérer plus tard » — au lieu d'un résultat immédiat. Ce mécanisme <strong>se rapproche, sans s'y identifier</strong>, de l'exécution durable de l'intégration d'entreprise : il gère la longue durée, mais <strong>ne fournit pas les garanties de reprise et d'idempotence</strong> d'un moteur durable. Le contrat de ces tâches <strong>ne saurait être présenté comme stable</strong>.</p>
+
+<p>☑ ⚠ <strong>Revalidation du 30 juillet 2026 : la réserve ci-dessus a été validée par l'événement, et c'est le seul endroit de la somme où cela se produit.</strong> La révision <code>2026-07-28</code> <strong>sort les tâches du cœur du protocole</strong> et les reverse à une <strong>extension officielle</strong> ; la refonte remplace la récupération bloquante par une <strong>interrogation périodique</strong>, ajoute une méthode d'<strong>apport client</strong> en cours de tâche, <strong>supprime l'énumération des tâches</strong>, et autorise le serveur à renvoyer une poignée de tâche <strong>sans opt-in préalable de la requête</strong>. <em>Le chapitre écrivait que « le contrat de ces tâches ne saurait être présenté comme stable » ; huit mois plus tard, il a changé de cœur et de forme.</em> ⚠ <strong>Ce n'est pas une confirmation de la thèse du chapitre, c'est une confirmation de sa prudence</strong> — la distinction importe : <em>avoir eu raison de ne pas s'engager n'est pas avoir établi un fait.</em></p>
+
+<div class="avert">
+  <p><strong>Et un résultat s'ajoute au corps de la section, qui n'y était pas</strong> : tous les résultats du protocole portent désormais un champ de type obligatoire — <code>complete</code> pour un résultat ordinaire, <code>input_required</code> pour un tour intermédiaire —, et les résultats des méthodes d'énumération et de lecture portent une <strong>durée de fraîcheur</strong> et une <strong>portée de cache</strong>. <em>La sémantique des résultats, que cette section décrivait comme un chantier, a reçu sa première clause de cache.</em></p>
+</div>
 
 <div class="avert">
   <p><strong>Une limite de fond demeure, et elle est la plus importante de la section : un schéma n'est pas une ontologie.</strong> Un dialecte de schéma contraint la <strong>forme</strong> d'une sortie, <strong>non son interprétation</strong> ; il ne dit ni ce que les valeurs signifient, ni comment elles se relient à un vocabulaire partagé. Que ce verrou n'ait pas de réponse protocolaire relève d'une <strong>absence de documentation</strong> au sens de R-14 : le socle n'en recense aucune, ce qui n'établit pas qu'il n'en existe pas. Le ch. 9 § 9.4 l'instruit.</p>
@@ -716,6 +735,12 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <p>Le versant <strong>conformité</strong> s'appuie sur un cadre dédié et un outil d'inspection, qui <strong>ciblent les révisions datées</strong>. ⚠ Conformément à la réserve F-01, ces outils valident qu'une implémentation <strong>respecte une révision</strong> ; ils ne la déclarent pas sécurisée.</p>
 
 <p>La <strong>politique de dépréciation formelle</strong> introduite par la cinquième révision — statuts <em>actif</em>, <em>déprécié</em>, <em>retiré</em>, assortis d'un préavis d'au moins douze mois entre dépréciation et retrait — constitue un mécanisme de maturité <strong>comparable à ceux des organismes de normalisation classiques</strong> (ch. 3 § 3.4.4) : <em>elle rend l'évolution du contrat prévisible</em>. C'est, de toutes les nouveautés annoncées, celle qui intéresse le plus une institution réglementée — et celle dont le ch. 7 § 7.1.5 faisait le troisième terme de l'invariant.</p>
+
+<p>☑ ⚠ <strong>Revalidation du 30 juillet 2026 : la politique est en vigueur, et elle s'est appliquée à elle-même dès sa ratification.</strong> Le texte neuf adopte la politique <strong>et l'exerce dans la même révision</strong> : trois primitives dépréciées, un transport reclassé, un mécanisme d'enregistrement déprécié, et un <strong>registre des fonctions dépréciées</strong> publié comme pièce de la spécification.</p>
+
+<div class="avert">
+  <p><strong>C'est ce qu'une institution réglementée doit lire, et le sens n'est pas celui qu'on attend</strong> : <em>la première application d'une politique de dépréciation est toujours une vague, parce qu'elle solde l'arriéré accumulé avant elle.</em> La cadence des retraits à venir ne se déduit donc pas de celle-ci — et la fenêtre de douze mois place le premier retrait possible <strong>après juillet 2027</strong>, soit <strong>au-delà de l'entrée en vigueur commune du 1ᵉʳ mai 2027</strong> que l'horloge de la somme prend pour pivot.</p>
+</div>
 
 <p>La bascule la plus significative reste le <strong>passage du projet d'un éditeur à une fondation neutre</strong>, en décembre 2025 (ch. 7 § 7.4) : le standard est soustrait au contrôle d'un acteur unique.</p>
 
@@ -955,7 +980,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 </div>
 
 <footer class="pied">
-  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 8. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre I, chapitre 8. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

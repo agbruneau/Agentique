@@ -9,7 +9,7 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11).*
 | **Date de gel** | **27 juillet 2026** — gel unique du compendium, **décision d'auteur D-1 prise** ce jour (registre : [`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Ce gel n'efface pas ceux des sources**, qui restent portés ci-dessous : il date la reprise de chaque fait périssable à sa source primaire, non la matière elle-même. Gel de source : **juin 2026** (Vol. I). ⚠ La **matrice de maturité** du § 9.2.5 est un **livrable daté** : son intérêt tient à ce qu'elle situe chaque protocole à une date, et elle **se périme en bloc** — c'est un instantané, non un classement durable |
 | **Socle mobilisé** | **Aucune entrée du socle consolidé** — ⚠ *non plus parce qu'il n'existe pas, mais parce qu'aucune de ses entrées ne couvre le périmètre de cette pièce* : balayage exhaustif des **dix-sept entrées héritées du Vol. I** (`S-143`…`S-159`, socle v1.2, 28 juillet 2026), **zéro** ne porte les §3.4, §3.5, §3.7-3.8 ni §3.12. Résolution contre le **Vol. I *Monographie* §3.4, §3.5, §3.7-3.8 et §3.12**, en régime **[C]** (PRD §7.1). **Aucun énoncé n'est central au sens de CA-IV-01** |
 | **Garde-fous balayés** | ⚠ **Règle de décompte, et les cardinaux ci-dessous ont été re-mesurés sous elle le 28 juillet 2026** : un décompte d'occurrences porte sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — en-tête et note de statut exclus —, et il se re-mesure au commit ; un garde-fou appliqué **sans identifiant écrit** se déclare par son **domaine balayé, sans cardinal**. Vol. II — **R-1 : une occurrence**, § 9.2.1 ; **R-8 : une occurrence**, § 9.2.1, le sigle toujours qualifié à ses emplois, le siège de l'encadré restant au **ch. 7 § 7.5** ; **réserve F-01 : une occurrence**, § 9.5.2 ; **métriques auto-déclarées (PRD Vol. II §8.2, règle 1) — sans identifiant écrit, donc sans cardinal re-mesurable : appliqué au seul § 9.2.5**, la métrique attribuée à sa source. R-2 à R-7 : **zéro occurrence**. Vol. III — **R-02 : deux occurrences**, § 9.1.5 et § 9.4.4 ; **R-13 : une occurrence**, § 9.2.1, même que R-8 ; **R-14 : quatre occurrences** — § 9.1.1, § 9.3.4, § 9.4.4 et § 9.5.3 — ; ⚠ *la mention « le chapitre du Livre le plus dense en énoncés d'absence », que cet en-tête portait auparavant, est retirée : d'autres pièces du Livre en portent davantage, et **un cardinal mesuré sur le corps d'une AUTRE pièce n'est pas re-mesurable au commit de celle-ci*** ; ⚠ *le § 9.6, que cet en-tête portait auparavant, est la note de statut : hors domaine de comptage*. R-01, R-03 à R-12 : **zéro occurrence** |
-| **Volumétrie cible** | ≈ 9 000 mots de corps (§ 9.1 à § 9.5). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 5 822 mots** de corps, **re-mesurés le 28 juillet 2026 au terme de la SECONDE passe de relecture** par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **−35,3 %** de la cible. ⚠ **Le chiffre a bougé DEUX fois le même jour, et la seconde parce que la première passe avait laissé des défauts** : **+168 mots** d'abord — attributions rétablies, renvois corrigés, déviation d'intitulés déclarée —, puis **+124** — thèse du ch. 2 restituée par copie, regroupements du tableau 9.3 déclarés, deux identifiants nommés par leur volume. *Un cardinal se re-mesure après tout ajout ; il se re-mesure aussi après la passe qui atteste l'avoir re-mesuré.* ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. *C'est la cible dérivée qui était fausse, non la pièce qui est courte ; un écart se documente, il ne se corrige ni par amputation ni par gonflement.* ⚠ **Le total du Livre n'est PAS repris ici, et l'abstention est le geste juste** : *une passe qui court en parallèle sur les dix autres pièces ne peut pas en mesurer la somme* — il valait **64 750 mots** au 28 juillet 2026 et **se re-mesure au terme des passes**, au [`README.md` du Livre](README.md) |
+| **Volumétrie cible** | ≈ 9 000 mots de corps (§ 9.1 à § 9.5). ☑ **Décompte publiable depuis le franchissement de G-2** (27 juillet 2026). **Réel : 6 037 mots** de corps, ⚠ **re-mesurés au commit du 30 juillet 2026** (décision 16b — *le chiffre antérieur datait de la contre-passe du 28 juillet, et la passe de révision l'a périmé*) par [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — **-32,9 %** de la cible ⚠ **Ce réel est re-mesuré au commit du 30 juillet 2026** (décision 16b) : *toute date de mesure antérieure citée dans ce champ décrit une passe précédente, et la passe de révision D-11 l'a périmée.*. ⚠ **Le chiffre a bougé DEUX fois le même jour, et la seconde parce que la première passe avait laissé des défauts** : **+168 mots** d'abord — attributions rétablies, renvois corrigés, déviation d'intitulés déclarée —, puis **+124** — thèse du ch. 2 restituée par copie, regroupements du tableau 9.3 déclarés, deux identifiants nommés par leur volume. *Un cardinal se re-mesure après tout ajout ; il se re-mesure aussi après la passe qui atteste l'avoir re-mesuré.* ⚠ **L'écart individuel ne se lit pas seul** : la somme des onze cibles dérivées atteint **93 000 mots** pour une enveloppe de Livre de **65 000** — chaque pièce a dérivé sa cible de l'enveloppe sans que personne n'additionne les dérivations. *C'est la cible dérivée qui était fausse, non la pièce qui est courte ; un écart se documente, il ne se corrige ni par amputation ni par gonflement.* ⚠ **Le total du Livre n'est PAS repris ici, et l'abstention est le geste juste** : *une passe qui court en parallèle sur les dix autres pièces ne peut pas en mesurer la somme* — il valait **64 750 mots** au 28 juillet 2026 et **se re-mesure au terme des passes**, au [`README.md` du Livre](README.md) |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 9 — **forme inchangée au TOC v0.30**, re-collationnée mot à mot le 28 juillet 2026 ; décisions 14 et 17)* — la découverte et le nommage des agents, et la portabilité inter-modèles/inter-cadriciels, sont les propriétés que l'étagement de la pile protocolaire rend possibles — ou trahit.
 
@@ -313,10 +313,18 @@ sans réécriture** — c'est-à-dire de la lutte contre la **dépendance captiv
 
 ### 9.3.1 Le standard de fait et le paradoxe du verrouillage inverse
 
-Une interface d'invocation de modèles **s'est imposée comme norme de fait, sans qu'aucun organisme de
+L'interface **Chat Completions d'OpenAI** — le point de terminaison `/v1/chat/completions` et le
+schéma de message qu'il impose — **s'est imposée comme norme de fait, sans qu'aucun organisme de
 normalisation ne l'ait spécifiée**. Sa diffusion procède de **l'adoption en masse plutôt que d'un
 processus délibératif** : les serveurs d'inférence ouverts et les passerelles tierces l'émulent
 **précisément parce qu'elle est le format que la plupart des outils savent déjà parler**.
+
+⚠ **Le nommer est une condition de la démonstration qui suit, et non un détail d'exposition.** Le
+paradoxe du verrouillage inverse porte sur *une grammaire d'échange identifiable, gouvernée par un
+éditeur nommé* ; énoncé sur un standard anonyme, il serait invérifiable — *une démonstration sans
+témoin*. ⚠ **Et le fait est daté** : l'énoncé décrit l'état du 30 juillet 2026, où cette interface
+est encore le pivot d'émulation de l'écosystème, alors même que son éditeur en pousse la relève
+(§ 9.3.2).
 
 On retrouve ici la distinction classique entre standard **de fait** et standard **de droit** — *la
 conformité n'est pas certifiée mais constatée à l'usage*. Le **ch. 15 § 15.2.3** en est le domicile
@@ -338,12 +346,21 @@ se déplace.
 
 ### 9.3.2 Fragmentation des formats et passerelles de médiation
 
-> **Mise en œuvre.** Trois familles de contrats coexistent : la plus portable, **sans état** ; une
-> interface unifiée à **primitives agentiques et à état**, dont une variante antérieure porte une
-> **dépréciation annoncée et un retrait visé** ; et un format **sans état** de référence chez un autre
-> éditeur, souvent émulé par les passerelles. ⚠ **La fragmentation n'est pas tant dans le tronc commun
-> que dans les capacités avancées** — appel d'outils, sorties structurées, gestion d'état serveur —
-> **qui divergent d'un fournisseur à l'autre et brisent la substituabilité**.
+> **Mise en œuvre.** Trois familles de contrats coexistent, et il faut les nommer pour que
+> l'arbitrage soit reproductible. **Chat Completions** (OpenAI) est la plus portable et **sans
+> état** : c'est le format que les passerelles émulent. La **Responses API** du même éditeur unifie
+> derrière une interface unique des **primitives agentiques et un état serveur** ; elle **remplace
+> l'Assistants API**, dont OpenAI a annoncé la dépréciation le **26 août 2025** et fixé le retrait
+> au **26 août 2026** — ⚠ *soit moins d'un mois après la date d'arrêt de cet ouvrage.* ⚠ **Cette
+> échéance n'est PAS au tableau 50.1, et l'écart se déclare plutôt qu'il ne se comble** : le tableau
+> porte **onze** événements, cardinal contrôlé et cité à trois endroits de la somme, et *y ajouter une
+> rangée depuis une pièce du Livre I serait le geste qu'un rédacteur ne fait jamais — il remonte.*
+> **Remontée ouverte**, à l'instance d'arbitrage : *un retrait d'interface daté, public et situé à
+> vingt-sept jours de la date d'arrêt satisfait-il le critère du PROGRAMMÉ du § 49.0 ?* Chez
+> **Anthropic**, l'API **Messages**
+> est le format **sans état** de référence, souvent émulé lui aussi. ⚠ **La fragmentation n'est pas
+> tant dans le tronc commun que dans les capacités avancées** — appel d'outils, sorties structurées,
+> gestion d'état serveur — **qui divergent d'un fournisseur à l'autre et brisent la substituabilité**.
 
 La réponse de l'industrie est une **couche d'adaptation** qui normalise ces formats derrière une
 interface unique : bibliothèques et mandataires traduisant **plus d'une centaine** d'interfaces,

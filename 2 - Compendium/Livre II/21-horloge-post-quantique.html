@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 21 — L&#x27;horloge post-quantique : menace sur la pile identitaire, crypto-agilité et dette de migration · La somme agentique</title>
-<meta name="description" content="Livre II — Faire confiance : identité, délégation et fabrique de confiance. Troisième mouvement — l'horloge post-quantique (ch. 21). Chapitre unique du mouvement, et dernier chapitre du Livre. Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 23 et 24">
+<meta name="description" content="Livre II — Faire confiance : identité, délégation et fabrique de confiance. Troisième mouvement — l&#x27;horloge post-quantique (ch. 21). Chapitre unique du mouvement, et dernier chapitre du Livre. Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 23 et 24">
 <meta name="author" content="André-Guy Bruneau">
 <meta name="color-scheme" content="dark">
 <style>
@@ -540,10 +540,10 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <li><a href="#s216"><span class="num">21.6</span>Patrons de migration sans rupture de la chaîne de confiance</a></li>
     <li><a href="#s217"><span class="num">21.7</span>Ce que les études de coût publiées couvrent (et ne couvrent pas)</a></li>
     <li><a href="#s218"><span class="num">21.8</span>Méthode d&#x27;inventaire pour une institution</a></li>
-    <li><a href="#s219"><span class="num">21.9</span>Fenêtre d&#x27;action 2026-2029 : le calendrier inverse</a></li>
+    <li><a href="#s219"><span class="num">21.9</span>Fenêtre d&#x27;action 2026-2029 : le calendrier inverse</a></li>
   </ol>
   <div class="nav__pied">
-    Vol.&nbsp;IV — <em>La somme agentique</em><br>
+    Vol.&nbsp;IV — <em>La somme agentique</em><br>
     <a href="21-horloge-post-quantique.md">Version Markdown</a>
   </div>
 </nav>
@@ -556,6 +556,11 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <h1><span class="chap">Chapitre 21</span>L&#x27;horloge post-quantique : menace sur la pile identitaire, crypto-agilité et dette de migration</h1>
   <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Troisième mouvement — l'horloge post-quantique (ch. 21). <strong>Chapitre unique du mouvement, et dernier chapitre du Livre.</strong> Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 23 et 24</p>
 </header>
+
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
+     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
 
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Note</span>
@@ -818,14 +823,45 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 </div>
 
 <div class="avert">
-  <p><strong>Une lacune est ouverte ici et elle est la plus coûteuse du chapitre pour un volume canadien</strong> : <em>quelles échéances les autorités canadiennes énoncent-elles, et sous quel régime ?</em> <strong>Aucune passe de recherche n'a été conduite</strong> — le lot déclare n'avoir rien instruit hors du couple États-Unis / Union européenne, <strong>et signale lui-même que cette lacune est la plus coûteuse de celles qu'il laisse.</strong> <em>Sources à retrouver : les publications du <strong>Centre canadien pour la cybersécurité</strong> et les travaux du groupe de travail canadien <strong>CFDIR</strong>, dont le rapport de lot précise que <strong>la mention ne repose que sur des communiqués de presse</strong> — le sigle « CFDIR » comptant <strong>zéro occurrence</strong> dans le texte extrait du rapport européen.</em> ⚠ <strong>Les deux identifiants sont nommés plutôt qu'élidés</strong> : <em>un critère de clôture qui ne porte pas l'identifiant de la source à instruire est inexécutable.</em> <strong>La question reste ouverte ; aucune inférence n'est proposée.</strong></p>
+  <p><strong>Une lacune était ouverte ici et le chapitre la déclarait la plus coûteuse de celles qu'il laisse</strong> : <em>quelles échéances les autorités canadiennes énoncent-elles, et sous quel régime ?</em> <strong>Aucune passe de recherche n'avait été conduite</strong> — le lot déclarait n'avoir rien instruit hors du couple États-Unis / Union européenne. <em>L'état d'origine se conserve ici, au passé</em> (décision 17c) ; les sources à retrouver y étaient <strong>nommées plutôt qu'élidées</strong>, et c'est ce qui a rendu l'instruction exécutable — <em>un critère de clôture qui ne porte pas l'identifiant de la source à instruire est inexécutable.</em></p>
 </div>
+
+<p>☑ ⚠ <strong>LOT INSTRUIT LE 30 JUILLET 2026 (D-11), par extraction à la source primaire.</strong> Le <strong>Centre canadien pour la cybersécurité</strong> — l'un des deux identifiants que le critère de clôture nommait — publie le <strong>23 juin 2025</strong> la <strong>Feuille de route pour la migration vers la cryptographie post-quantique au sein du gouvernement du Canada, ITSM.40.001</strong>. Ses termes, lus à la page de l'organisme :</p>
+
+<div class="tableau">
+<table>
+  <thead><tr><th></th><th></th></tr></thead>
+  <tbody>
+    <tr><td><strong>Portée</strong></td><td>les <strong>systèmes de TI non classifiés du gouvernement du Canada</strong> — réseaux traitant l'information NON CLASSIFIÉ, PROTÉGÉ A et PROTÉGÉ B</td></tr>
+    <tr><td><strong>Échéance des systèmes hautement prioritaires</strong></td><td><strong>fin de 2031</strong></td></tr>
+    <tr><td><strong>Échéance des autres systèmes</strong></td><td><strong>fin de 2035</strong></td></tr>
+    <tr><td><strong>Jalons intermédiaires</strong></td><td>plans de migration ministériels <strong>d'ici avril 2026</strong>, puis <strong>rapports de progrès annuels</strong></td></tr>
+    <tr><td><strong>Régime</strong></td><td>⚠ <strong>orientation, non obligation légale</strong> — le document recommande et trace une feuille de route ; <em>il ne crée aucune contrainte opposable, et l'écrire autrement serait la faute que R-11 proscrit</em></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="legende">Tableau 21.4 — La feuille de route canadienne ITSM.40.001, extraite à la page du Centre canadien pour la cybersécurité le 30 juillet 2026. ⚠ <strong>Portée fédérale et régime d'orientation</strong> : aucune de ses deux échéances n'est opposable à une institution financière.</p>
+
+<div class="avert">
+  <p><strong>Trois conséquences, et la première renverse une lecture du § 21.9.</strong> <em>(1)</em> <strong>Le Canada porte une échéance intermédiaire que ni le NIST ni l'Union européenne ne portent : la fin de 2031.</strong> <em>Elle est antérieure de quatre ans à l'échéance de 2035 que le § 21.9 traite comme borne de droite, et <strong>antérieure d'un an à l'ouverture de la fenêtre 2026-2029 augmentée d'un cycle</strong>.</em> <em>(2)</em> ⚠ <strong>Les origines ne se fusionnent pas</strong> (<strong>R-11</strong>) : <em>2030/2035 du NIST, 2031/2035 du Centre canadien et le séquencement européen sont <strong>trois calendriers distincts, de trois autorités distinctes, à trois régimes distincts</strong></em> — et le fait que deux d'entre eux partagent 2035 <strong>n'est pas une convergence établie</strong>, seulement une coïncidence de millésime. <em>(3)</em> ⚠ <strong>La portée exclut les institutions financières.</strong> ITSM.40.001 vise le <strong>gouvernement fédéral</strong>, non les banques ni les assureurs : <em>une institution qui s'en réclamerait comme d'une échéance applicable lirait, encore une fois, le plafond d'un autre</em> — c'est exactement l'avertissement du § 21.9, et il vaut pour cette source neuve comme pour les précédentes.</p>
+</div>
+
+<p>☐ ⚠ <strong>La lacune n'est pas close pour autant, et la part qui demeure se nomme.</strong> Le second identifiant du critère de clôture — le groupe de travail <strong>CFDIR</strong> — <strong>n'a pas été instruit</strong> ; le rapport de lot précisait que sa mention ne repose que sur des communiqués de presse, et <em>rien de cette passe ne change cet état</em>. <strong>Reste également ouvert</strong> : ⚠ <em>aucune autorité canadienne de réglementation financière — ni le BSIF, ni l'AMF — n'est documentée comme ayant énoncé d'échéance post-quantique</em>. <strong>Absence de documentation, degré 3</strong>, non fait négatif vérifié : <em>aucun balayage de leurs publications n'a été conduit, et le déclarer autrement serait s'attribuer un travail qu'on n'a pas fait.</em> <strong>La lacune passe donc d'ouverte à REQUALIFIÉE</strong> — sa couverture a changé, son motif a changé, et <em>une lacune requalifiée reste une lacune</em>.</p>
 
 <h2 id="s219"><span class="sig">§ 21.9</span>Fenêtre d'action 2026-2029 : le calendrier inverse</h2>
 
 <p><span class="auteur">Lecture de l'auteur</span> <strong>la fenêtre qui donne son titre à ce paragraphe est une construction de la somme</strong>, développée et bornée en fin de section. <em>Le socle porte des échéances datées ; <strong>il ne porte aucun délai de mise en œuvre applicable à une institution</strong>.</em></p>
 
 <p><em>Un calendrier de migration ne se lit pas dans le sens de la lecture. <strong>Il se lit à rebours</strong>, depuis la date la plus contraignante qui s'applique réellement à l'institution, en remontant vers l'instant présent.</em> ⚠ <strong>Encore faut-il savoir laquelle des dates publiées s'applique — et le socle établit qu'elles ne sont ni de même nature, ni de même force, ni de même statut</strong> (§ 21.1).</p>
+
+<div class="avert">
+  <p><strong>Ce raisonnement à rebours porte un nom depuis 2018, et ne pas le citer serait une omission canonique dans un chapitre post-quantique.</strong> C'est l'<strong>inégalité de Mosca</strong> — <strong>Michele Mosca</strong>, <em>Cybersecurity in an Era with Quantum Computers: Will We Be Ready?</em>, <em>IEEE Security &amp; Privacy</em>, 16(5), 38-41, 2018 —, qui pose la condition sous laquelle une organisation est <strong>déjà en retard</strong> : si l'on note <strong>x</strong> la durée pendant laquelle un secret doit rester confidentiel, <strong>y</strong> la durée de la migration du parc, et <strong>z</strong> le délai avant qu'une machine quantique pertinente n'existe, alors <strong><em>x + y &gt; z</em> signifie que l'exposition est déjà engagée</strong> — <em>et la seule variable que l'exploitant contrôle est <strong>y</strong></em>.</p>
+</div>
+
+<div class="avert">
+  <p><strong>Deux bornes, sans lesquelles la citation vaudrait caution.</strong> <em>(1)</em> <strong>Le socle ne fournit aucune des trois grandeurs</strong> : ni la durée de confidentialité exigible d'un artefact d'identité d'agent, ni la durée de migration d'un parc — <strong>degré 3</strong>, comme le § 21.8 vient de l'établir —, ni <em>a fortiori</em> une estimation de <strong>z</strong>, qui est une projection et non un fait. <em>L'inégalité est donc versée ici comme <strong>forme de raisonnement</strong>, jamais comme instrument de calcul</em> : la somme ne l'instancie sur aucun chiffre. <em>(2)</em> ⚠ <strong>Elle ne remplace pas la fenêtre 2026-2029, et ne la fonde pas non plus</strong> : celle-ci reste une <strong>construction de la somme</strong> bornée à droite par une échéance datée du socle, quand Mosca raisonne sur un <strong>z</strong> qui n'y figure pas. <em>Nommer le patron dont une construction s'approche n'élève pas cette construction au rang de la source.</em></p>
+</div>
 
 <p><strong>Trois lectures se tirent du tableau du § 21.1, et deux d'entre elles sont des constructions d'auteur : la première seule est un fait.</strong></p>
 
@@ -864,7 +900,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 </ol>
 
 <footer class="pied">
-  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre II, chapitre 21. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
+  <p><strong>Vol. IV — <em>La somme agentique</em></strong> · Livre II, chapitre 21. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau.</p>
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

@@ -311,10 +311,18 @@ SPÉCULATIVE.**
 ### 49.3.2 Neutralité contestée
 
 **La dispersion des forums et la nature de leurs sponsors exposent la normalisation agentique à un
-risque de capture, que la neutralité affichée ne neutralise pas.** Le Vol. I relève, au **17 juin
-2026**, l'analyse critique d'une organisation de défense des libertés numériques soutenant que les
-travaux de signature de trafic automatisé menés dans un organisme de normalisation de l'Internet
-risquent de **consolider des positions dominantes** plutôt que d'ouvrir le web aux agents.
+risque de capture, que la neutralité affichée ne neutralise pas.** Le Vol. I relève l'analyse
+critique de l'**Electronic Frontier Foundation** — **McSherry et Noble**, *The Free and Open Web Is
+Under Attack at the IETF*, blogue *Deeplinks*, **17 juin 2026** —, qui soutient que les travaux de
+**Web Bot Auth** menés à l'**IETF** risquent de **consolider des positions dominantes** plutôt que
+d'ouvrir le web aux agents.
+
+⚠ **L'attribution est restituée le 30 juillet 2026, et elle l'est parce que ce paragraphe la
+devait.** Une analyse critique est **une prise de position d'un acteur nommé**, non un constat
+d'état : la rendre anonyme — « une organisation de défense des libertés numériques » — la déguisait
+en fait sans auteur, ce que **CA-IV-03** interdit et que la note de clôture de ce chapitre relevait
+elle-même comme une infraction. *Un argument qu'on ne peut pas rattacher à qui le porte ne se pèse
+pas ; il se subit.*
 
 **L'argument est structurel, et c'est pour cela qu'il compte** : un mécanisme d'authentification du
 trafic automatisé, en imposant des identités signées et reconnues, *peut servir d'outil de filtrage et
@@ -330,11 +338,13 @@ quelle voie de recours ?* **Un mécanisme techniquement ouvert peut produire une
 ### 49.3.3 La normalisation institutionnelle
 
 À côté des forums techniques rapides, une couche **plus lente mais juridiquement structurante** :
-travaux de sous-comité international sur l'IA — dont un amendement d'IA générative et des items de
-travail sur la taxonomie des capacités et sur les **orientations de supervision humaine**, tous à des
-stades intermédiaires —, normes harmonisées européennes qui conditionnent l'application effective du
-régime haut-risque, et une initiative de standards d'agents lancée le **17 février 2026** par un
-institut national de normalisation, avec un volet identité et sécurité.
+les travaux de l'**ISO/IEC JTC 1/SC 42** — l'amendement 1 « Generative AI » de l'**ISO/IEC 22989**
+(stade DAmd), l'**ISO/IEC DIS 42102** (taxonomie des méthodes et capacités) et l'**ISO/IEC DIS 42105**
+(orientations sur la supervision humaine), tous à des stades intermédiaires de leur cycle —, les
+normes harmonisées du **CEN-CENELEC JTC 21** qui conditionnent l'application effective du régime
+haut-risque de l'AI Act, et l'**AI Agent Standards Initiative** lancée le **17 février 2026** par le
+**NIST**, au sein de son *Center for AI Standards and Innovation* (CAISI), avec un volet identité et
+sécurité.
 
 ⚠ **Le constat que le Vol. I en tire est le cœur du verrou institutionnel, et il est repris tel
 quel** : à juin 2026, et selon toute trajectoire projetée pour 2027-2032, **aucun standard mondial
@@ -930,7 +940,7 @@ silence*, et c'est ainsi que cette onzième est apparue.
 | **§10.1** | Désignation de l'organisme de normalisation technique du cadre bancaire — **fait négatif vérifié** au 16 juillet 2026, aucun arrêté | ch. 30 (instruit), ch. 32 (R-5) | ouverte — *attend un acte réglementaire* |
 | **§10.2** | Institutions sans socle complet — résidus [C] et absence de sources primaires agentiques pour une banque nommée | ch. 35 | ouverte |
 | **§10.3** | Frameworks d'orchestration — réduite en amont, ne subsiste qu'un moteur d'exécution durable ; chiffres d'adoption non vérifiés | ch. 23 | ouverte |
-| **§10.4** | Réglementaire fin : **contenu de la ligne directrice IA de l'AMF article par article**, positions de la commission d'accès à l'information sur l'art. 12.1, suites de la consultation en valeurs mobilières — ⚠ **la plus coûteuse de l'ouvrage** | ch. 27, ch. 28, ch. 29 | ouverte — ⚠ *elle n'attend pas une autorité mais **un lecteur** : le texte est final depuis le 30 mars 2026, et c'est l'extraction primaire qui n'a pas été faite* |
+| **§10.4** | Réglementaire fin : **contenu de la ligne directrice IA de l'AMF article par article**, positions de la commission d'accès à l'information sur l'art. 12.1, suites de la consultation en valeurs mobilières — ⚠ **la plus coûteuse de l'ouvrage** | ch. 27, ch. 28, ch. 29 | ouverte — ⚠ *elle n'attend pas une autorité mais **un lecteur** : le texte est final depuis **avril 2026**, et c'est l'extraction primaire qui n'a pas été faite*. ⚠ **Corrigé le 30 juillet 2026** : cette ligne écrivait « depuis le 30 mars 2026 », date que **R-IV-88 a défaite** — *aucun des deux quantièmes arbitrés ne figure aux pages officielles*, et le ch. 27 § 27.1 déclare les trois états. **Ne jamais rétablir « 30 mars 2026 »** |
 | **§10.5** | Articulation d'un protocole de paiement agentique avec les rails canadiens | ch. 36 (prospectif) | ouverte |
 | **§10.6** | Portefeuille d'intégration : position au quadrant iPaaS **non vérifiée** (R-6), chaîne de transformation de messagerie financière au niveau **[C]** après élévation tentée et **échouée**, annonces canadiennes | ch. 45, ch. 50 | ouverte — *une élévation peut échouer sans négligence, et l'échec s'écrit* |
 | **§10.7** | Composante homonyme d'un cadre d'écosystème — **quatrième branche du garde-fou R-8 du Vol. II** ; ni intitulé complet ni identité avec le protocole homonyme | ch. 7 | ouverte — *aucune passe de recherche conduite* |
@@ -1326,15 +1336,30 @@ règle (c) exige que les intitulés suivent le plan. **La déviation est donc d�
 justifiée** ; *c'est la seule des quinze sections dont le titre s'écarte du plan*, et le retour au
 titre du plan appartient à une passe qui rouvrira la nomenclature des organismes.
 
-⚠ **Un second écart de la même famille est trouvé et il est plus lourd, parce qu'il touche une
-ATTRIBUTION** : le **§ 49.3.2** attribue l'analyse critique de la signature de trafic automatisé à
-« **une organisation de défense des libertés numériques** », **sans la nommer** — ce que la
-décision 15 (b) (i) interdit sans réserve, et que **CA-IV-03** exige à chaque occurrence. ⚠ **Il n'est
-pas corrigé ici, et le motif est un régime de preuve** : *le nom de cette organisation n'est porté par
-aucune entrée du socle consolidé* — la matière du §7.3.3 du Vol. I n'y est pas versée —, et **écrire
-un nom qu'on n'a pas lu à sa source serait la faute exacte que ce chapitre prend pour objet**.
-**Demande remontée** : nomination de l'attributeur par extraction au Vol. I `Monographie` §7.3.3, puis
-report ici.
+☑ ⚠ **Un second écart de la même famille avait été trouvé, plus lourd parce qu'il touchait une
+ATTRIBUTION — il est CORRIGÉ le 30 juillet 2026.** Le **§ 49.3.2** attribuait l'analyse critique de
+la signature de trafic automatisé à « **une organisation de défense des libertés numériques** »,
+**sans la nommer** — ce que la décision 15 (b) (i) interdisait sans réserve, et que **CA-IV-03**
+exige à chaque occurrence. *L'état d'origine se conserve ici, au passé, parce qu'il porte l'histoire
+de l'écart* (décision 17c).
+
+**Le motif du report était un régime de preuve, et il a été levé par la seule voie admissible :
+l'extraction.** La note demandait « la nomination de l'attributeur par extraction au Vol. I
+*Monographie* §7.3.3, puis report ici ». Cette extraction a été faite : le §7.3.3 et la bibliographie
+du ch. 7 du Vol. I portent **Electronic Frontier Foundation — McSherry, C. et Noble, T. (2026)**,
+*The Free and Open Web Is Under Attack at the IETF*, blogue *Deeplinks*, **17 juin 2026** ; l'organisme
+visé est l'**IETF**, et les travaux sont ceux de **Web Bot Auth**. Les quatre noms sont désormais au
+corps. ⚠ **Le régime de l'énoncé ne change pas pour autant** : c'est toujours une **prise de position
+attribuée et datée**, jamais un fait établi par la somme — *nommer qui porte un argument le rend
+pesable, cela ne le rend pas vrai.*
+
+**Deux autres sections du chapitre sont dénominalisées dans la même passe**, sous la décision 18 :
+le **§ 49.3.3**, dont les organismes et les items de travail — ISO/IEC JTC 1/SC 42, ISO/IEC 22989
+Amd 1, ISO/IEC DIS 42102 et DIS 42105, CEN-CENELEC JTC 21, NIST CAISI — sont restitués depuis le
+Vol. I *Monographie* §7.3.4 ; et le titre du **§ 49.3.1**, qui reste toutefois **celui du plan**.
+⚠ **La déviation de titre relevée ci-dessus n'est donc pas résorbée par cette passe** : elle demandait
+« une passe qui rouvrira la nomenclature des organismes », et la décision 18 rouvre le **corps**, non
+le **lettrage des intitulés** (décision 15c, non renversée).
 
 **Ce qui n'est pas enfreint.** La structure suit la **table détaillée du TOC v0.25, inchangée jusqu'à la v0.30 incluse** — § 49.0 à
 § 49.14, dans l'ordre exact, les deux mouvements dans leur ordre. Les **deux tables de couverture

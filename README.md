@@ -10,7 +10,7 @@ et **un compendium** qui les refond en un seul ouvrage — arrêté en révision
 > l'état de l'art le plus récent (édition d'août 2026, faits gelés au 29 juillet), et le seul document publié qui cite les volumes
 > du dépôt. Le lecteur méthodique suit l'ordre des volumes, du général au spécifique. Le compendium
 > se feuillette depuis le 29 juillet 2026 — [`compendium.pdf`](2%20-%20Compendium/compendium.pdf),
-> **810 pages** —, et il est **arrêté en révision finale pour la bibliothèque personnelle de
+> **921 pages** —, et il est **arrêté en révision finale pour la bibliothèque personnelle de
 > l'auteur** le même jour. Ses cinquante chapitres restent un **brouillon écrit hors portes** : il se
 > lit, il ne fait pas foi, et il ne se diffuse pas. *Arrêter n'est ni terminer ni publier.*
 
@@ -26,7 +26,7 @@ date**, jamais recopiés d'un autre document ; les commandes qui les produisent 
 | Vol. I — *Interopérabilité* | **569 p.** | 7 chapitres + 7 bibliographies + Annexe B, **28 diagrammes** | — (vérification adverse des citations) |
 | Vol. II — *L'autonomie encadrée* | **387 p.** | **29 pièces** + registre de gel, socle de 46 entrées | grille CA-1…CA-8 |
 | Vol. III — *L'entreprise agentique* | **427 p.** | **34 pièces** + registre de gel, **30 rapports** de vérification | CA-01…CA-14, 15 remontées ouvertes |
-| Vol. IV — *La somme agentique* | **810 p.** | **50 chapitres** en 5 Livres + 1 annexe hors plan, socle de **159 entrées** | `check-toc.py` (C1-C15), `check-sieges.py` (**26 sièges / 50 pièces**), `check-compendium.py` (**P1-P8**), `decompte.sh` → **sortie 0** pour les quatre |
+| Vol. IV — *La somme agentique* | **921 p.** | **50 chapitres** en 5 Livres + **2 annexes** (hors plan : 159 entrées ; **Annexe I** : 1 154 entrées), socle de **159 entrées** | `check-toc.py` (C1-C15), `check-sieges.py` (**26 sièges / 50 pièces**), `check-compendium.py` (**P1-P8**), `decompte.sh` → **sortie 0** pour les quatre |
 
 Gouvernance du Vol. IV à sa date d'arrêt : **TOC v0.31**, **PRD v0.15**, décision d'auteur **D-10**.
 
@@ -242,7 +242,7 @@ CA-IV-01, **aucun vote adversarial n'a été conduit**, et **les trois volumes s
 foi**.
 
 ⚠ **Un rendu paginé existe depuis le 29 juillet 2026, et il ne requalifie rien non plus.**
-[`compendium.pdf`](2%20-%20Compendium/compendium.pdf) — **810 pages**, les cinquante chapitres des
+[`compendium.pdf`](2%20-%20Compendium/compendium.pdf) — **921 pages**, les cinquante chapitres des
 cinq Livres **et une annexe hors plan** (la liste des 159 références du socle, ajoutée le
 29 juillet 2026), format 155 × 235 mm, gabarit relevé sur deux monographies Springer, **sans aucune page
 blanche** —
@@ -357,7 +357,7 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
     ├── audit.md                             rapport d'audit des cinq Livres (28 juill. 2026) — sans autorité
     ├── annexe-references.md                 liste des 159 références du socle — annexe hors plan du rendu
     ├── audit-references.md                  inventaire et validation des 159 références (29 juill. 2026) — sans autorité, hors rendu
-    ├── compendium.pdf                       rendu paginé des 50 chapitres + 1 annexe (810 p.) — brouillon non publiable
+    ├── compendium.pdf                       rendu paginé des 50 chapitres + 2 annexes (921 p.) — brouillon non publiable
     ├── build/                               pipeline propre au volume (PAS une copie du FESP)
     │   ├── assemble.py                        50 pièces + annexe → compendium.md, 23 renvois marqués d'une dague
     │   ├── springer.template                  gabarit Typst relevé sur deux monographies Springer — 155 × 235 mm, Times 10/12
@@ -439,7 +439,7 @@ et à la dette de vote sur F-92 et F-96.
 le 29 juillet 2026, gabarit Typst relevé sur deux monographies Springer) ; depuis `2 - Compendium/` :
 
 ```bash
-bash build/build-pdf.sh                     # Livre I/ … Livre V/ + annexe → compendium.pdf (810 p.)
+bash build/build-pdf.sh                     # Livre I/ … Livre V/ + 2 annexes → compendium.pdf (921 p.)
 ```
 
 ⚠ Ce quatrième pipeline **ne dérive d'aucune des trois copies du FESP, et aucune ne dérive de lui** :
@@ -566,7 +566,7 @@ identifiant, objet, niveau, provenance et datation de la source, groupées par v
 place du rapport d'analyse. **Le rapport n'est pas retiré du dépôt** : il reste à
 [`audit-references.md`](2%20-%20Compendium/audit-references.md), **hors rendu**, avec son régime
 inchangé — sans autorité, jamais citable à l'appui d'un énoncé. *Les deux se distinguent par leur nom :
-l'`annexe-` est reliée, l'`audit-` ne l'est pas.* Décomptes **re-mesurés sur pièce** : **810 pages**
+l'`annexe-` est reliée, l'`audit-` ne l'est pas.* Décomptes **re-mesurés sur pièce** : **921 pages**
 (`pypdf`) depuis la refonte du gabarit ; l'annexe pesait dix pages au gabarit d'alors, contre vingt-sept
 pour le rapport — ⚠ *ce coût-là n'a pas été re-mesuré au gabarit neuf.* La ligne de `sed` qui élargissait
 les tables à sept colonnes est **retirée du script**, sa grille n'étant plus composée. ⚠ **Ce que la
@@ -673,7 +673,7 @@ licence à la racine** est portée au tableau des reliquats. ⚠ **Ni l'un ni l'
 retirer un fichier versionné et déposer une licence sont des gestes qui se demandent. **Décomptes
 re-mesurés sur pièce à cette date, tous inchangés** : veille **161 p. / 269 réf.**
 (`check-veille.py`, sortie 0), Vol. I **569 p. / 28 diagrammes** (motif ancré), Vol. II **387 p. /
-29 pièces**, Vol. III **427 p. / 34 pièces / 30 rapports**, Vol. IV **810 p. / 50 chapitres /
+29 pièces**, Vol. III **427 p. / 34 pièces / 30 rapports**, Vol. IV **921 p. / 50 chapitres /
 159 entrées de socle**, et les **quatre contrôles du Vol. IV en sortie 0** — `check-toc.py`,
 `check-sieges.py` (**26 sièges sur 50 pièces**), `check-compendium.py` (**P1-P8**, trois rapports
 déclaratifs), `decompte.sh`. ⚠ **Ce que la passe ne fait pas** : elle **ne requalifie aucun statut** —

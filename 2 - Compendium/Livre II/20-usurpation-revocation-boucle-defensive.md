@@ -319,8 +319,25 @@ inexécutable* (décision 15b-iii).
 | **Entrée de registre — annuaire AGNTCY** | intégrité fondée sur l'adressage par contenu, **présentée sans démonstration** ; aucune occurrence des chaînes de révocation cherchées | *Internet-Draft* `draft-mp-agntcy-ads`, de **soumission individuelle** ; balayage sur la **révision -01, supplantée par la -02 du 6 juillet 2026, non rebalayée** | **F-55** **[C]**, **F-43** **[B, degré 2]** |
 | **Mandat de paiement AP2** | attributs temporels d'émission et d'échéance, sérialisation, attribut de type versionné ; ⚠ **le socle ne documente pas de mécanisme de retrait — degré 3** | version v0.2.0 du 28 avril 2026 | **F-46** **[B]** |
 | **Délégation — RFC 8693** | l'attribut `act` exprime qu'une délégation a eu lieu et identifie la partie agissante ; la §1 place **hors périmètre** la sécurité des jetons eux-mêmes | §1 et §4.1 | **F-47** **[A]** |
+| **Jeton OAuth — RFC 7662** ⚠ *(rangée ajoutée le 30 juillet 2026)* | **l'interrogation d'état, versant vérificateur** : un point de terminaison d'**introspection** permet à une ressource protégée de demander au serveur d'autorisation si un jeton est **actif**, et d'en obtenir les métadonnées. ⚠ **C'est le seul mécanisme de l'inventaire qui réponde à la question du vérificateur plutôt qu'à celle de l'émetteur** — *RFC 7009 retire, RFC 7662 constate* | *OAuth 2.0 Token Introspection*, **RFC 7662**, J. Richer (éd.), **octobre 2015**, **Proposed Standard** — page du dépôt de normes lue le 30 juillet 2026 | **hors socle**, versé comme **relevé daté** ⚠ |
 
-: Tableau 20.1 — L'inventaire de la révocation, mécanisme par mécanisme, avec sa borne de lecture, au 21 juillet 2026.
+: Tableau 20.1 — L'inventaire de la révocation, mécanisme par mécanisme, avec sa borne de lecture, au 21 juillet 2026 — ⚠ **augmenté d'une rangée le 30 juillet 2026**, dont la borne de lecture est celle de sa propre date.
+
+☑ ⚠ **La onzième rangée comble une omission canonique relevée par l'arbitrage externe, et sa portée
+se borne en trois temps.** *(1)* **Elle change la lecture de l'inventaire** : les dix rangées
+d'origine se lisaient toutes du côté de **l'émetteur** — ce qu'une spécification prévoit pour
+*retirer* un justificatif —, et le § 20.4 en tirait l'asymétrie *émission soignée / révocation
+négligée*. **RFC 7662 occupe l'autre versant** : elle ne retire rien, elle permet à celui qui reçoit
+un jeton de **demander s'il vaut encore**. *L'asymétrie tient — mais elle n'était pas complète, et
+c'est l'omission qui la rendait plus nette qu'elle n'est.* *(2)* ⚠ **Elle n'est PAS versée au socle**
+et n'entre à aucun niveau : la passe a lu **la page du dépôt de normes** — numéro, titre, éditeur,
+date, statut, objet du mécanisme —, **non le texte de la RFC** ; *lire une fiche n'est pas extraire
+un document*, et un **relevé daté** n'est pas une entrée. *(3)* ⚠ **Elle ne comble aucune des
+absences que l'inventaire établit** : ni la carte A2A, ni la page d'autorisation balayée le 21 juillet
+2026 ne référencent RFC 7662 — *le mécanisme existe depuis 2015 dans l'écosystème OAuth, et son
+absence des spécifications agentiques est précisément ce que l'inventaire mesure.* **La rangée
+n'atténue donc pas le constat : elle en durcit la lecture** — *ce qui manque à la couche agentique
+n'est pas un mécanisme à inventer, c'en est un à reprendre.*
 
 **Trois formes distinctes se dégagent, et les confondre ferait perdre ce que l'inventaire a de plus
 utile.**
