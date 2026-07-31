@@ -418,10 +418,17 @@
   v(24pt)
   text(font: SANS, size: 52pt, weight: "bold", fill: ENCRE)[La somme agentique]
   v(20pt)
-  block(width: 88%, text(font: SERIF, size: 15pt, style: "italic", fill: GRIS)[
-    Interopérabilité, autonomie encadrée et fabrique de confiance :
-    déployer des agents en services financiers réglementés (2024-2032)
-  ])
+  // ⚠ La justification est posée ICI et non sur le bloc entier : le titre tient
+  // sur deux lignes, et justifié, sa première ligne — « La somme » — serait
+  // étirée sur toute la largeur. Seuls les PARAGRAPHES se justifient ; les
+  // titres et la signature restent au fer à gauche.
+  block(width: 88%, {
+    set par(justify: true)
+    text(font: SERIF, size: 15pt, style: "italic", fill: GRIS)[
+      Interopérabilité, autonomie encadrée et fabrique de confiance :
+      déployer des agents en services financiers réglementés (2024-2032)
+    ]
+  })
   v(1.5cm)
   text(font: SANS, size: 13pt, fill: ENCRE)[André-Guy Bruneau, M.Sc. IT]
 })
@@ -430,7 +437,9 @@
 #v(1fr)
 #block(width: 100%, {
   set text(font: SANS, size: 8.5pt, fill: GRIS)
-  set par(justify: false, leading: 4.4pt, spacing: 7pt, first-line-indent: 0pt)
+  // Notices de Livre et maxime justifiées. Le `linebreak()` qui sépare l'intitulé
+  // de sa notice ne justifie pas sa ligne — l'intitulé reste au fer à gauche.
+  set par(justify: true, leading: 4.4pt, spacing: 7pt, first-line-indent: 0pt)
   grid(columns: (1fr, 1fr), column-gutter: 9mm, row-gutter: 7pt,
     ..(([I], [Coopérer], [Fondements de l'interopérabilité et couche protocolaire : l'agent comme boucle, l'accord sur le sens que les protocoles présupposent, MCP et A2A, découverte et registres, modes d'échec.]),
        ([II], [Faire confiance], [Identité non humaine, délégation vérifiable et fabrique de confiance : émettre un passeport opposable, tenir sous confiance hostile, compter avec l'horloge post-quantique.]),
