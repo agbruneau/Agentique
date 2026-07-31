@@ -79,7 +79,7 @@ inchangé : onze et neuf.**
 ⚠ **Mais le domaine de la table, lui, a bougé depuis sa mesure — et le chapitre le signale plutôt que
 de l'absorber.** *L'articulation de l'article 12.1 a été **corrigée** par une extraction postérieure du
 texte officiel* : elle compte **une obligation inconditionnelle, trois informations dues sur demande —
-dont le **droit de faire rectifier**, que l'entrée héritée omettait — et un alinéa distinct** (**ch. 27
+dont le *droit de faire rectifier*, que l'entrée héritée omettait — et un alinéa distinct** (**ch. 27
 § 27.2**). *Deux de ces éléments — le 1° et le 3° — n'ont **aucune ligne** dans la table ci-dessus.*
 ⚠ **La somme ne les y ajoute pas** : *ce chapitre est conservé intact au plan, et dériver deux
 contraintes neuves serait le redécouper.* **L'écart est remonté** (§ 29.5, remontée **R-IV-91**).
@@ -464,7 +464,7 @@ parade humaine.*
   § 29.1 compte **onze entrées**, dont **trois** pour l'article 12.1 — informer, expliquer, réviser.
   ⚠ **Or l'articulation de cet article a été corrigée par une extraction postérieure du texte
   officiel** : elle compte **une obligation inconditionnelle, trois informations dues sur demande — dont
-  le **droit de faire rectifier**, que l'entrée héritée omettait — et un alinéa distinct** (**ch. 27
+  le *droit de faire rectifier*, que l'entrée héritée omettait — et un alinéa distinct** (**ch. 27
   § 27.2**). **Deux éléments de l'article n'ont donc aucune ligne dans la table** : le 1° — les
   renseignements personnels utilisés — et le 3° — le droit de rectification. **Demande remontée** :
   que le plan décide si la table doit recevoir deux lignes supplémentaires, et **si oui, par quelle

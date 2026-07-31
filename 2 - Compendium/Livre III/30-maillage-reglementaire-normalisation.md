@@ -263,7 +263,7 @@ Section **reçue du Vol. I *Monographie* §5.3**. ⚠ **Toute sa matière entre 
 la double-qualification est au ch. 31 § 31.1.4** : *le §5.3 déclare lui-même ne faire que l'instancier.*
 
 Le § 30.1 a posé le générique transversal. **Cette section pose la question préalable à toute conception
-de contrôle : *sous quel droit* l'agent tombe-t-il, et **avec quelle force juridique**.** ⚠ **Le principe
+de contrôle : *sous quel droit* l'agent tombe-t-il, et *avec quelle force juridique*.** ⚠ **Le principe
 directeur est que chaque exigence est menée par une obligation nominative, datée et qualifiée — en
 vigueur, en phase d'application, en projet ou en accord provisoire — plutôt que par une généralité
 réglementaire.**
@@ -271,7 +271,7 @@ réglementaire.**
 ### 30.2.1 La grille de qualification multiple : système TIC / modèle / décision automatisée
 
 **Avant de réguler un agent, l'architecte doit déterminer sous quels régimes il tombe.** ⚠ **Le patron
-de fond — la double-qualification, l'agent comme *modèle* **et** comme *tiers TIC* — est posé une fois
+de fond — la double-qualification, l'agent comme *modèle* *et* comme *tiers TIC* — est posé une fois
 pour toutes au ch. 31 § 31.1.4 ; il n'est pas re-dérivé ici, seulement instancié.**
 
 Un agent financier reçoit **jusqu'à trois qualifications cumulatives, non exclusives**.
@@ -665,7 +665,7 @@ une norme sectorielle canadienne à un corpus international *spécifique à l'id
 trouverait, dans ce que le Vol. III a ouvert, que des textes à des stades antérieurs à l'adoption.**
 *Le constat est daté ; il se rejoue à chaque gel — et l'une des entrées porte elle-même sa péremption,
 l'un des sept brouillons relevés expirant six semaines après la consultation.* ⚠ **Ces jalons ne sont
-pas *fixés* : ils sont **visés**, et leurs statuts se disent** (R-11 du Vol. III).
+pas *fixés* : ils sont *visés*, et leurs statuts se disent** (R-11 du Vol. III).
 
 ⚠ **Le second tient à ce que les instances déclarent elles-mêmes, et il est plus instructif qu'un
 inventaire.** *La charte du groupe d'identité pour l'IA de la **OpenID Foundation** place **hors de son

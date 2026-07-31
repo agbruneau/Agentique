@@ -41,6 +41,8 @@ L'*évolution*, enfin, est la dimension temporelle : un contrat doit pouvoir cha
 
 ⚠ **Trois termes ici, quatre à l'avant-propos.** L'invariant de la somme compte **quatre** termes — découplage, contrat, évolution et **exploitation** —, posé en entier à l'avant-propos. Le présent chapitre en éprouve les **trois premiers** sur la matière pré-agentique ; le quatrième n'a pas d'objet ici, faute d'agent à exploiter, et se referme au Livre IV (ch. 38-40). Invoquer le « quatrième terme » dans ce chapitre serait sans antécédent : il n'y est pas éprouvé, il y est seulement annoncé.
 
+![**Figure 1.0** — L'invariant de la somme : les trois termes que le chapitre éprouve, et le quatrième qu'il annonce sans l'éprouver.](../figures/f-01-00-invariant.svg)
+
 ### 1.0.3 Parcours différenciés : lecture recherche et lecture praticien-architecte
 
 La somme s'adresse à deux lectorats dont les attentes diffèrent, et le présent chapitre est conçu pour être lu selon deux parcours. Le *parcours recherche* privilégie les modèles, les taxonomies, les formalismes et les questions ouvertes ; il s'attardera sur la définition opérationnelle de l'interopérabilité, sur les modèles de maturité conceptuelle et sur les formalismes de compatibilité comportementale. Le *parcours praticien-architecte* privilégie les normes, les protocoles, les technologies et les décisions de mise en œuvre ; il suivra plus volontiers les styles d'API, les courtiers de messages et les patrons d'intégration.

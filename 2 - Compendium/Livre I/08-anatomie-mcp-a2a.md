@@ -43,6 +43,8 @@ l'intention de l'agent corresponde au comportement réel de l'outil**.
 le verrou que le ch. 9 § 9.4 prend pour objet, et la première illustration concrète de la thèse du
 ch. 2 — les protocoles agentiques **présupposent** l'accord sémantique et ne le fournissent pas.
 
+![**Figure 8.1** — La réduction de N×M à N+M par une couche de contrat, et les trois choses que cette couche ne porte pas.](../figures/f-08-01-n-fois-m.svg)
+
 ### 8.1.2 Architecture et primitives, sous l'angle de la bidirectionnalité négociée
 
 L'architecture repose sur un triangle **hôte / client / serveur** communiquant par appels de procédure

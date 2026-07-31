@@ -308,7 +308,7 @@ Le second est une **ontologie de production**, exprimée dans un langage formel 
 publiée sous gouvernance de consortium : *elle offre la **sémantique formelle** des instruments,
 contreparties et obligations financières, et l'agent peut l'interroger pour vérifier qu'un terme employé
 dans une invite ou un document **correspond bien au concept réglementaire visé*** — ⚠ **ce qui
-transforme une partie du contrôle en **validation logique** plutôt qu'en jugement du modèle.**
+transforme une partie du contrôle en *validation logique* plutôt qu'en jugement du modèle.**
 
 ⚠ **Un avertissement de désambiguïsation est nécessaire, et il touche le mot central de la somme** :
 *cette ontologie contient des entités modélisées comme « **agents** » **au sens ontologique** — parties,
@@ -318,7 +318,7 @@ langage**.* ⚠ **Confondre les deux acceptions conduirait à des erreurs de con
 Lecture de l'auteur — **le motif d'intégration le plus robuste consiste à placer l'ontologie en
 *validation*, non en *génération*** : *l'agent propose une action ou une classification, un service de
 raisonnement la confronte au modèle avant exécution, et **tout écart déclenche une escalade**.*
-⚠ **L'ontologie devient alors un **contrat sémantique opposable** plutôt qu'un simple vocabulaire de
+⚠ **L'ontologie devient alors un *contrat sémantique opposable* plutôt qu'un simple vocabulaire de
 référence.** **Ce que le socle établit** : les deux corpus et leur contenu. **Ce qu'il n'établit pas** :
 ce motif d'intégration, qui est une lecture. ⚠ **Les volumétries publiées par les consortiums — nombres
 de domaines, de définitions, de classes — sont des chiffres non audités, à traiter comme données

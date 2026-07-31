@@ -16,6 +16,15 @@ Ce que l'assemblage RETIRE, et pourquoi :
   - les filets `---`, qui ne sont que des separateurs de section.
 Les trois appareils sont neanmoins EXIGES a la lecture : leur absence fait
 echouer l'assemblage, faute de quoi une piece deformee passerait sans bruit.
+
+Ce que l'assemblage NE FAIT PAS, et qu'il faut savoir en le lisant :
+l'ACCENTUATION du corps — le gras de proposition rendu au romain, le « ⚠ »
+retire, la proposition qu'il signalait passee a l'italique. Elle se fait sur
+l'arbre Pandoc, dans `build/accentuation.lua`, et non ici : le motif est
+indecidable au niveau du texte (`*A **B***` et `**A *B***` s'ecrivent pareil).
+Le marqueur `#ouverture-annexe()` pose ci-dessous est ce qui l'arrete avant les
+deux annexes — ne pas le deplacer sans relire ce filtre.
+
 Ce qu'il conserve : titre, ligne de situation, et tout le corps. L'etat du
 volume (brouillon non publiable) est declare une fois, au colophon du gabarit —
 retire des pieces, il n'est pas efface.
@@ -66,7 +75,6 @@ RE_NOTE_STATUT = re.compile(r"^## § (\d+\.\d+) — Note de statut\b")
 # « : Tableau N.M — … » : seule l'etiquette passe en gras, le tiret cadratin
 # et le texte de la legende sont du contenu d'auteur et ne bougent pas.
 RE_LEGENDE = re.compile(r"^(:\s*)(Tableaux? \d+\.\d+)")
-
 
 def echappe_typst(texte):
     """Neutralise le balisage Typst dans un texte insere en mode contenu."""

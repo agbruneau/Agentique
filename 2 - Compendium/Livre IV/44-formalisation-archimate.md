@@ -679,7 +679,7 @@ avant elle*, et **G-4, G-5 et le préalable propre au chapitre demeurent entiers
   du ch. 44 numérote **les neuf sous-sections du § 44.1 en « 43.1.1 » à « 43.1.9 »**, ⚠ **soit dans la
   numérotation d'un autre chapitre** ; et sa **table de couverture** dirige la ligne du Vol. III
   *Monographie* §27.2 vers **« § 43 (transverse) »**, ⚠ **alors que le corps de l'entrée du ch. 44
-  écrit que ce §27.2 est **consolidé ici**, dans le formalisme.** **Demande remontée** : réalignement
+  écrit que ce §27.2 est *consolidé ici*, dans le formalisme.** **Demande remontée** : réalignement
   des dix formes sur la numérotation courante (décision 8). ⚠ **C'est très exactement la classe de
   défaut que le `CLAUDE.md` du dossier consigne pour trois passes de structure consécutives** — *un
   remappage qui ne voit qu'une borne, et qu'aucun des quinze contrôles ne signale* : `check-toc.py`

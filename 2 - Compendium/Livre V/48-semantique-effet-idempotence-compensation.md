@@ -106,7 +106,7 @@ chapitre prend pour objet.*
 ## § 48.2 — Idempotence et rejouabilité des appels d'outils
 
 ⚠ **Le plan borne cette section par une formule qu'il faut appliquer à la lettre : « ce que les
-spécifications protocolaires en disent — **à instruire, jamais présumé** ».** Aucune passe
+spécifications protocolaires en disent — *à instruire, jamais présumé* ».** Aucune passe
 d'instruction protocolaire n'a été conduite pour ce chapitre. Ce qui suit est donc **ce que des
 pièces rédigées de la somme portent déjà**, plus l'état de l'absence — jamais une lecture de
 spécification faite ici.

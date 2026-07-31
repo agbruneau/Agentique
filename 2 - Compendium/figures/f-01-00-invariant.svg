@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 156" width="445" height="156" role="img" aria-label="L'invariant de la somme : decouplage, contrat et evolution, les trois termes eprouves dans ce chapitre, et le quatrieme — exploitation — reporte au Livre IV.">
+  <!-- Figure 1.0, derivee du paragraphe 1.0.2 du chapitre 1. Aucune information
+       qui ne soit dans le texte : trois termes solidaires, leur renvoi de
+       section, et le quatrieme terme que le chapitre annonce sans l'eprouver.
+       Elle existe pour la meme raison que la figure 1.1 : ce paragraphe porte
+       un ecart — trois ici, quatre a l'avant-propos — qu'une phrase doit
+       affirmer et qu'un dessin montre.
+
+       CONVENTION DE DESSIN DU VOLUME : le viewBox fait 445 unites de large,
+       soit exactement la largeur du corps en points (157,0 mm). Une unite vaut
+       donc UN POINT au rendu, et les corps de texte se posent a leur valeur
+       finale — 8,5 pour un libelle, 7 pour une annotation.
+       Palette de build/compendium.template. -->
+  <defs>
+    <style>
+      .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+      .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+      .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+      .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+      .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+      .ann    { font-size: 7px;   fill: #4d4d4d; }
+      .renvoi { font-size: 6.2px; fill: #737373; }
+      .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+      .rangg  { font-size: 7px;   font-weight: 700; fill: #737373; }
+    </style>
+  </defs>
+
+  <!-- Fond explicite : la figure se rend aussi dans la page .html de la piece,
+       a theme sombre, ou les textes poses hors des bandes seraient noirs sur
+       noir. -->
+  <rect x="0" y="0" width="445" height="156" fill="#FDFBF9"/>
+
+  <text class="l titre" x="0" y="8">TROIS TERMES, ÉPROUVÉS DANS CE CHAPITRE</text>
+
+  <!-- 1 — découplage -->
+  <rect x="0" y="14" width="137" height="88" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang"  x="10" y="32">1</text>
+  <text class="l bande" x="21" y="32">Découplage</text>
+  <text class="l ann"   x="10" y="48">Réduction des dépendances entre</text>
+  <text class="l ann"   x="10" y="59">systèmes : technologie, format,</text>
+  <text class="l ann"   x="10" y="70">localisation, temporalité, modèle</text>
+  <text class="l ann"   x="10" y="81">d'interaction.</text>
+  <text class="l renvoi" x="10" y="95">§ 1.1.3</text>
+
+  <path d="M 141 58 h 7" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 152 58 l -4 -3 v 6 z" fill="#9A3B12"/>
+
+  <!-- 2 — contrat -->
+  <rect x="154" y="14" width="137" height="88" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang"  x="164" y="32">2</text>
+  <text class="l bande" x="175" y="32">Contrat</text>
+  <text class="l ann"   x="164" y="48">L'interface explicite — syntaxique,</text>
+  <text class="l ann"   x="164" y="59">sémantique, comportementale — sur</text>
+  <text class="l ann"   x="164" y="70">laquelle deux parties s'accordent</text>
+  <text class="l ann"   x="164" y="81">pour évoluer séparément.</text>
+  <text class="l renvoi" x="164" y="95">§ 1.1.3.2</text>
+
+  <path d="M 293 58 h 7" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 304 58 l -4 -3 v 6 z" fill="#9A3B12"/>
+
+  <!-- 3 — évolution -->
+  <rect x="308" y="14" width="137" height="88" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang"  x="318" y="32">3</text>
+  <text class="l bande" x="329" y="32">Évolution</text>
+  <text class="l ann"   x="318" y="48">Le contrat change sans rompre les</text>
+  <text class="l ann"   x="318" y="59">consommateurs : compatibilité</text>
+  <text class="l ann"   x="318" y="70">ascendante et descendante,</text>
+  <text class="l ann"   x="318" y="81">versionnement, lecteurs tolérants.</text>
+  <text class="l renvoi" x="318" y="95">§ 1.1.4.1</text>
+
+  <!-- 4 — le terme annoncé, non éprouvé : trait interrompu, encre grise -->
+  <text class="l titreg" x="0" y="114">QUATRIÈME TERME, ANNONCÉ ET NON ÉPROUVÉ ICI</text>
+  <rect x="0" y="120" width="445" height="34" fill="none" stroke="#C2C2C2" stroke-width=".6" stroke-dasharray="3 2.5"/>
+  <text class="l rangg" x="10" y="135">4</text>
+  <text class="l gris"  x="21" y="135">Exploitation</text>
+  <text class="l ann"   x="10" y="147">Aucun agent à exploiter dans la matière pré-agentique. Posé en entier à l'avant-propos, éprouvé au Livre IV (ch. 38-40).</text>
+</svg>

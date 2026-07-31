@@ -800,7 +800,7 @@ rédaction qui l'a devancée.* **G-4 demeure ouverte.**
   Le TOC porte, pour ce chapitre, une relève « **à instruire à la source primaire** » : *des instruments
   fédéraux américains de juin 2026 — décret exécutif et directive — alignant les systèmes fédéraux sur
   les jalons de 2030 et 2035, ce qui rendrait l'échéance opposable outre-frontière.* ⚠ **Or ces deux
-  instruments sont **déjà au socle du Vol. III**, versés en F-61 avec leurs dates, leur périmètre et
+  instruments sont *déjà au socle du Vol. III*, versés en F-61 avec leurs dates, leur périmètre et
   leur tri** — le § 21.1 les porte à ce titre. **Demande remontée** : que **G-1** enregistre cette
   relève comme **consommée par la source elle-même**, plutôt que comme due. ⚠ *La relève n'est pas
   fausse : elle est **datée d'avant l'instruction du Vol. III**, et le plan ne l'a pas rapprochée de son

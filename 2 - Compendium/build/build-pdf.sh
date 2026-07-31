@@ -29,8 +29,11 @@ trap 'rm -rf "$TMP"' EXIT
 [ -d "$DIR/figures" ] && cp -r "$DIR/figures" "$TMP/"
 
 python3 "$DIR/build/assemble.py" "$TMP/compendium.md"
+# `accentuation.lua` porte la regle d'accentuation du corps — le gras de
+# proposition rendu au romain, le ⚠ retire, une saillance par sous-section. Elle
+# opere sur l'ARBRE et non sur le texte : voir l'en-tete du filtre pour le motif.
 pandoc "$TMP/compendium.md" -f markdown-raw_html --template="$DIR/build/$GABARIT.template" \
-       -t typst -o "$TMP/doc.typ"
+       --lua-filter="$DIR/build/accentuation.lua" -t typst -o "$TMP/doc.typ"
 sed -i 's/align(center)\[#table/align(left)[#table/g' "$TMP/doc.typ"
 # Pandoc pose un `table.hline()` explicite sous la rangee de tete. Le gabarit
 # dessine deja toutes les frontieres de rangee, et cette ligne explicite se

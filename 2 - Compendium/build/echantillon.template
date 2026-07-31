@@ -1,0 +1,592 @@
+// ====== ÉCHANTILLON DE DESIGN — variante du gabarit « identité propre » ======
+// Copie de `compendium.template` au 31 juillet 2026, plus TROIS RÈGLES et rien
+// d'autre. Elle ne compose PAS le volume : elle sert à juger sur mesures une
+// proposition avant de la porter au gabarit courant. Les trois règles sont
+// groupées en un seul bloc, § « delta d'échantillon », et signées en marge.
+// Tout le reste du fichier est identique à l'original — si les deux divergent
+// ailleurs, c'est une dérive, pas une intention.
+//
+// ============ Gabarit « identité propre » — compendium (Vol. IV) ============
+// Refonte du 31 juillet 2026, sur instruction d'auteur. Il SUCCÈDE au gabarit
+// `springer.template`, relevé le 29 juillet sur deux monographies Springer, et
+// il en rompt délibérément trois partis. Les motifs sont mesurés, non de goût :
+//
+//   (1) MESURE DE LIGNE. Le relevé Springer donnait 81 caractères par ligne en
+//       médiane (87 au p90) : au-dessus de la plage de confort (60-75), et le
+//       premier frein de lecture du volume. ⚠ Le levier N'EST PAS la largeur du
+//       corps mais le RAPPORT largeur/corps de texte : depuis le second état du
+//       31 juillet 2026, le corps est large (157,0 mm) et le texte gros (13 pt),
+//       ce qui tient la mesure autour de 77.
+//   (2) FORMAT. 215,9 × 279,4 mm (Letter) au lieu de 155 × 235.
+//   (3) COULEUR. Le relevé n'en portait aucune. Une teinte unique — terre
+//       brûlée, parente du thème des rendus `.html` du volume — porte les
+//       numéros, les filets d'ouverture et le liséré des encadrés. Le texte
+//       courant reste à l'encre.
+//
+// ⚠ DEUX ÉTATS SE SONT SUCCÉDÉ LE MÊME JOUR, et le second est le courant :
+// le premier posait une marge de note de 46 mm à droite ; l'instruction d'auteur
+// qui l'a suivie veut la marge de droite « significativement » rétrécie. Elle
+// vaut 28,9 mm — relevée sur les monographies du dépôt —, la colonne de note a
+// disparu, et le corps de texte a monté pour compenser (voir la grille). Ne pas
+// relire ce fichier comme s'il portait encore une colonne de marge.
+//
+// Ce que la refonte NE change pas, parce que ce sont des instructions d'auteur
+// distinctes du parti graphique :
+//   - AUCUNE PAGE BLANCHE : pas de faux-titre, pas de verso blanc, aucune
+//     ouverture forcée au recto. Ne pas y introduire de `pagebreak(to: "odd")`.
+//   - AUCUN AVERTISSEMENT DE STATUT au colophon (instruction du 30 juillet
+//     2026). Le régime de diffusion de D-10 vit au dépôt seul. Ne pas le
+//     rétablir ici : ce serait rouvrir l'instruction.
+//
+// ⚠ RÈGLE DE VÉRIFICATION, héritée et non négociable : un gabarit ne se déclare
+// pas conforme depuis sa source, il se MESURE sur son PDF. Toute valeur
+// verticale se compte de ligne de base à ligne de base.
+
+#set document(
+  title: "La somme agentique",
+  author: "André-Guy Bruneau, M.Sc. IT",
+  keywords: ("interopérabilité agentique", "identité", "orchestration",
+             "services financiers", "Canada"),
+)
+
+// ---------------- fontes ----------------
+// Constantia et Corbel sont deux fontes de la suite ClearType, dessinées pour
+// aller ensemble : sérif humaniste à forte hauteur d'x pour le corps, linéale
+// humaniste de même squelette pour la titraille et l'appareil. Les replis
+// gardent la même famille de proportions.
+#let SERIF = ("Constantia", "Cambria", "Libertinus Serif", "Segoe UI Symbol")
+#let SANS  = ("Corbel", "Candara", "Segoe UI", "Segoe UI Symbol")
+
+// ---------------- palette ----------------
+// Une seule teinte, et elle ne touche jamais le texte courant : numéros de
+// chapitre et de section, filets d'ouverture, liséré des encadrés, étiquettes.
+#let ENCRE  = luma(13%)          // noir doux : le noir pur vibre à l'écran
+#let ACCENT = rgb("#9A3B12")     // terre brûlée
+#let GRIS   = luma(45%)          // appareil : notes de marge, titres courants
+#let FILET  = luma(76%)
+#let CREME  = rgb("#FAF5F0")     // fond des encadrés
+
+// ---------------- grille ----------------
+// ⚠ MARGES RELEVÉES SUR LES TROIS MONOGRAPHIES DU DÉPÔT, sur instruction
+// d'auteur du 31 juillet 2026 — non décidées ici. Mesure prise sur les PDF
+// ⚠ LA MESURE NE SE PREND PAS SUR LES BOÎTES DE TEXTE, et c'est la leçon de
+// cette passe : le cadre de ligne que rend un extracteur PDF inclut l'avance du
+// dernier glyphe, qui dépend de la fonte — sur Constantia, 83 % des lignes
+// paraissent ainsi déborder de 1,1 mm d'un bloc qui est en réalité juste. Le
+// bloc se mesure sur un OBJET VECTORIEL pleine largeur (filet de tableau, filet
+// d'ouverture), dont la position est exacte :
+//   filet de 30,00 à 187,00 mm, 450 occurrences — largeur 157,0 mm.
+// Les trois monographies donnent le même bloc, à 0,01 mm près :
+//
+//   Vol. I   Letter | G 30,00 mm | bord D 186,97 mm | corps 157,0 mm | 11 pt
+//   Vol. II  Letter | G 30,00 mm | bord D 186,97 mm | corps 157,0 mm |  9,4 pt
+//   Vol. III Letter | G 30,00 mm | bord D 186,98 mm | corps 157,0 mm | 11 pt
+//
+//   30 | corps 157,0 | 28,9
+//
+// ⚠ SEULES LES MARGES SONT REPRISES, pas le corps de texte, et l'écart est
+// délibéré : à 11 pt les monographies rendent 89 caractères par ligne, le
+// Vol. II 99 — au-delà de la plage de confort (60-75), et au-delà même des 81
+// du relevé Springer que cette refonte corrige. Le compendium tient 77 à 13 pt.
+// Aligner aussi le corps rendrait la somme visuellement identique à ses sources
+// et annulerait le gain de lecture ; c'est un arbitrage d'auteur, pas un oubli.
+//
+// ⚠ CE QUI SUIT EST LE COMPROMIS DE LA GRILLE, ET IL EST ARITHMÉTIQUE, NON
+// ESTHÉTIQUE. La marge de droite valait 78 mm — une colonne de note de 46 mm,
+// sa gouttière et 25 mm de tranche ; or sur une largeur de page fixe, rétrécir
+// une marge ÉLARGIT le corps, et un corps de 157,0 mm composé au 10,5 pt du
+// premier état rendrait **96 caractères par ligne** — soit plus mauvais que
+// les 81 du relevé Springer, que la refonte avait justement pour objet de
+// corriger. La compensation est donc le CORPS DE TEXTE : porté de 10,5 à 13 pt,
+// il maintient la mesure autour de 77 caractères.
+//   Toute reprise de ces marges se paie sur le corps de texte, et se MESURE sur
+// le PDF — jamais à l'œil sur la source.
+//
+// ⚠ La colonne de note disparaît avec la marge qui la portait : les vingt-trois
+// renvois à la note de statut retirée passent en NOTE DE PIED, et le rang de
+// chapitre revient contre son titre. La page de titre et les ouvertures de
+// livre gardent leurs marges propres — la première par instruction expresse.
+#let M_INT   = 30mm
+#let M_EXT   = 28.9mm
+#let W_CORPS = 215.9mm - M_INT - M_EXT   // = 157,0 mm
+
+// Le pas de 17 pt sur un corps de 13 pt garde l'interligne de 1,31 du premier
+// état — plus généreux que le 1,20 du relevé Springer, et c'est le second
+// levier de lecture après la mesure de ligne.
+#let CORPS = 13pt
+#let PAS   = 17pt
+// ⚠ `top-edge` est FIGÉ en em plutôt que laissé à la fonte effective : sans
+// cela, une ligne portant un ⚠ ou un ☑ — rendus par la fonte de repli — prend
+// une hauteur différente et décroche de la grille. Onze pour cent des lignes du
+// corpus en portent un. Toute la verticale du gabarit dépend de cette valeur.
+#let HAUT  = 0.72
+#let INTER = PAS - HAUT * CORPS      // = 6,44 pt
+
+#set page(
+  width: 215.9mm, height: 279.4mm,
+  margin: (left: M_INT, right: M_EXT, top: 24mm, bottom: 26mm),
+  numbering: none, header: none, footer: none,
+  header-ascent: 12mm,
+  footer-descent: 12mm,
+)
+
+#set text(font: SERIF, size: CORPS, fill: ENCRE, lang: "fr", region: "ca",
+          hyphenate: true, top-edge: HAUT * 1em, bottom-edge: 0em)
+#set par(justify: true, leading: INTER, spacing: INTER,
+         first-line-indent: (amount: 1.4em, all: false))
+#set smartquote(enabled: false)
+#show link: set text(fill: ENCRE)
+
+#set list(indent: 0pt, body-indent: 0.9em, spacing: INTER, marker: text(fill: ACCENT)[•])
+#set enum(indent: 0pt, body-indent: 0.65em, spacing: INTER)
+
+// ---- texte plat d'un contenu (titres courants tronqués) ----
+#let plat(c) = {
+  if type(c) == str { c }
+  else if type(c) == int { str(c) }
+  else if type(c) != content { "" }
+  // Typst construit un élément `smartquote` pour chaque ' et " — même
+  // désactivé, il n'a pas de champ `text` : sans ce cas, les apostrophes
+  // disparaissent des titres courants.
+  else if c.func() == smartquote { if c.at("double", default: true) { "\"" } else { "'" } }
+  else if c.has("text") { c.text }
+  else if c.has("children") { c.children.map(plat).join("") }
+  else if c.has("body") { plat(c.body) }
+  else if c == [ ] { " " }
+  else { "" }
+}
+#let court(c, n) = {
+  // `len()` compte des octets : passer par les grappes, sinon la coupe tombe
+  // au milieu d'un caractère accentué et Typst refuse la tranche.
+  let g = plat(c).clusters()
+  if g.len() > n { g.slice(0, n).join("").trim() + "…" } else { g.join("") }
+}
+
+// ---------------- note ----------------
+// ⚠ C'était une note de MARGE jusqu'au 31 juillet 2026 ; le rétrécissement de la
+// marge de droite lui a retiré sa colonne. Elle est désormais une note de pied.
+// L'appel reste le même — `assemble.py` écrit `#note[…]` et ne connaît pas le
+// dispositif —, et `springer.template` garde son propre repli sur la dague.
+#let note(body) = footnote(body)
+#show footnote.entry: set text(font: SANS, size: 9.5pt, fill: GRIS)
+
+// ---- une ouverture (chapitre, livre ou annexe) commence-t-elle ici ? ----
+#let ouvre-ici() = {
+  let p = here().page()
+  query(selector.or(heading.where(level: 1), <ouverture-livre>))
+    .filter(e => e.location().page() == p).len() > 0
+}
+
+// ---------------- titre courant ----------------
+// Corbel 8,5 pt gris, filet fin sous la ligne, folio en accent à droite. Une
+// seule maquette, puisque la colonne de note ne change pas de côté — mais elle
+// porte les DEUX repères que l'alternance se partageait :
+//   gauche  : N · Titre du chapitre
+//   milieu  : § N.M, le rang de la section courante
+//   droite  : folio
+// Le rang de section suffit là où son titre ne tiendrait pas : il résout contre
+// la table des matières, qui est à quinze pages de là.
+#let entete = context {
+  if not ouvre-ici() {
+    let chs = query(selector(heading.where(level: 1)).before(here()))
+    if chs.len() > 0 {
+      set text(font: SANS, size: 10.5pt, fill: GRIS, hyphenate: false)
+      // L'annexe hors plan ne porte pas de numéro : après son marqueur, le
+      // titre courant cite son titre nu, sans rang de chapitre.
+      let annexe = query(selector(<ouverture-annexe>).before(here())).len() > 0
+      let titre = if annexe { court(chs.last().body, 62) } else {
+        str(chs.len()) + " · " + court(chs.last().body, 58) }
+      let secs = query(selector(heading.where(level: 2)).before(here()))
+      // Une section du chapitre précédent ne titre pas le chapitre courant :
+      // sans cette garde, la première page d'un chapitre porte en tête la
+      // dernière section de celui d'avant.
+      let rang-sec = if (secs.len() > 0
+                         and secs.last().location().page() >= chs.last().location().page()) {
+        let t = plat(secs.last().body)
+        let m = t.match(regex("^[0-9]+(\.[0-9]+)*"))
+        if m != none { "§ " + m.text } else { "" }
+      } else { "" }
+      block(width: 100%, {
+        // Le rang de section se cale à DROITE, contre le folio : centré, il
+        // flotte au milieu d'une ligne dont les deux autres termes sont calés.
+        grid(columns: (auto, 1fr, auto), column-gutter: (1em, 1.4em),
+             align: (left + bottom, right + bottom, right + bottom),
+             titre, rang-sec,
+             text(fill: ACCENT, weight: "bold", counter(page).display()))
+        v(3pt, weak: true)
+        line(length: 100%, stroke: 0.4pt + FILET)
+      })
+    }
+  }
+}
+
+// ---- folio en pied, sur les pages d'ouverture seulement ----
+#let pied = context {
+  if ouvre-ici() {
+    set text(font: SANS, size: 11pt, fill: ACCENT, weight: "bold")
+    align(right, counter(page).display())
+  }
+}
+
+// ---------------- titres ----------------
+#set heading(numbering: none)
+#show heading: set text(font: SANS, fill: ENCRE, hyphenate: false)
+#show heading: set par(justify: false, leading: 0.30em, first-line-indent: 0pt)
+
+// Le rang numérique passe en accent, le libellé reste à l'encre : c'est ce qui
+// donne au plan sa lisibilité de survol sans colorer une seule ligne de prose.
+#let rang(it, taille, poids, italique) = {
+  show regex("^[0-9]+(\.[0-9]+)*"): m => text(fill: ACCENT)[#m]
+  text(size: taille, weight: poids, style: italique, it.body)
+}
+
+// § N.M — trois pas au-dessus, un et demi en dessous.
+// ⚠ Pas de filet sous un titre de section : il y en a près de trois cents dans
+// le volume, et sur un titre replié sur deux lignes il vient se coller sous la
+// seconde — il se lit alors comme un soulignement. Le rang en accent suffit à
+// marquer le palier.
+#show heading.where(level: 2): it => block(above: 3 * PAS, below: 1.5 * PAS,
+  width: 100%, rang(it, 17pt, "bold", "normal"))
+#show heading.where(level: 3): it => block(above: 2.2 * PAS, below: PAS,
+  rang(it, 14pt, "bold", "normal"))
+#show heading.where(level: 4): it => block(above: 1.5 * PAS, below: 0.5 * PAS,
+  rang(it, 13pt, "bold", "italic"))
+
+// ---------------- tableaux ----------------
+// Filets « booktabs » : un filet de tête, un sous la rangée d'en-tête, un de
+// pied — aucun vertical, aucune zébrure. Le relevé Springer posait un filet sur
+// CHAQUE frontière, ce qui donnait une grille de tableur ; les rangées se
+// distinguent par l'air, pas par le trait.
+#show figure: set block(breakable: true)
+#set figure(gap: 9pt)
+#show figure.where(kind: table): set figure(numbering: none)
+#show figure.where(kind: table): set figure.caption(position: top)
+#show figure.where(kind: image): set figure(numbering: none)
+#show figure.where(kind: image): set figure.caption(position: bottom)
+// Une figure occupe la largeur du corps : les SVG du volume sont dessinés à leur
+// proportion définitive, et `image()` sans largeur prendrait leur taille en
+// pixels — qui déborderait de la colonne sans que rien ne le signale.
+// Les SVG du volume sont dessinés à la largeur du corps (viewBox de 445 unités
+// = 445 pt) : la mise à 100 % les rend donc à l'échelle 1, et les corps de texte
+// qu'ils déclarent sont ceux qu'on lit. Laisser la taille naturelle marcherait
+// aussi, mais rien ne rattraperait une figure dessinée à une autre échelle.
+#set image(width: 100%)
+#show figure.caption: set text(font: SANS, size: 10pt, fill: GRIS)
+#show figure.caption: set par(justify: false, leading: 5.6pt,
+                              first-line-indent: 0pt)
+#show figure.caption: it => align(left, it)
+// Sans « sticky », une légende de tête peut rester seule en bas de page, son
+// tableau passant à la suivante.
+#show figure.caption: set block(sticky: true)
+// Un tableau et une figure sont des objets détachés : ils prennent un pas
+// entier de part et d'autre, là où le relevé les collait au paragraphe.
+#show figure: set block(above: 1.3 * PAS, below: 1.3 * PAS)
+
+#set table(
+  inset: (x: 6pt, y: 5.5pt),
+  align: left + top,
+  stroke: (x, y) => (
+    left: none, right: none,
+    top: if y == 0 { 1.1pt + ENCRE } else if y == 1 { 0.6pt + FILET } else { none },
+    bottom: none,
+  ),
+)
+#show table: set par(justify: false, leading: 5.6pt, first-line-indent: 0pt)
+#show table: set text(font: SANS, size: 11pt, hyphenate: true)
+// Le filet de pied ne se déduit pas d'une règle par cellule — `stroke` ne
+// connaît pas la dernière rangée. Il se pose en BORD BAS du bloc qui enveloppe
+// le tableau : le bloc épouse sa hauteur, là où un `line()` posé à la suite
+// hérite de l'espacement de paragraphe et creuse un trou sous la dernière
+// rangée.
+#show table: it => block(width: 100%, breakable: true, inset: 0pt,
+                         stroke: (bottom: 1.1pt + ENCRE), it)
+// La rangée de tête en linéale grasse, teintée : elle se lit comme une
+// étiquette, jamais comme une première donnée.
+#show table.cell.where(y: 0): set text(weight: "bold", fill: ACCENT)
+
+// ---------------- encadrés ----------------
+// « Perspective recherche », « Mise en œuvre ». Le relevé posait un aplat gris
+// pleine largeur ; ici, un fond crème et un liséré d'accent à gauche — l'œil
+// saute le bloc ou y entre, mais ne le confond plus avec un tableau.
+#show quote.where(block: true): it => block(
+  width: 100%, breakable: true,
+  fill: CREME,
+  stroke: (left: 2.5pt + ACCENT),
+  inset: (left: 11pt, rest: 10pt),
+  above: 1.3 * PAS, below: 1.3 * PAS,
+  {
+    set text(size: 12pt)
+    set par(leading: INTER, spacing: INTER, first-line-indent: 0pt)
+    it.body
+  },
+)
+
+// ================= DELTA D'ÉCHANTILLON =================
+// Deux règles, et elles se tiennent : la première retire un signal saturé, la
+// seconde rend au gras la rareté qui le fait signal. Prises séparément, la
+// première désarme le texte et la seconde ne compense rien.
+//
+// (1) LE « ⚠ » QUITTE LE TEXTE COURANT. Mesure sur `compendium.pdf` du
+//     31 juillet 2026 : 4 395 occurrences sur 1 096 pages — quatre par page,
+//     présentes sur 1 009 d'entre elles. Un signe posé quatre fois par page ne
+//     signale plus ; et il est HORS FAMILLE, rendu par Segoe UI Symbol au
+//     milieu d'un texte en Constantia (les « → » tombent, eux, sur
+//     Cambria-Italic). Le retrait est typographique et non éditorial : la
+//     phrase que le signe introduisait reste, entière, et c'est son relief —
+//     règle (2) — qui la porte désormais.
+#show regex("⚠[ ]*"): _ => none
+
+// (2) BUDGET DE GRAS — IL N'EST PAS ICI, ET C'EST DÉLIBÉRÉ. Mesure sur le même
+//     PDF : 34,7 % des caractères du texte courant en Constantia-Bold, médiane
+//     de 39,0 % par chapitre, de 5,3 % à 65,2 % selon la pièce. Au-delà de ~5 %,
+//     le gras cesse d'être un accent et devient une texture. Mais la règle qui
+//     le ramène est ÉDITORIALE, non typographique : elle distingue un terme
+//     d'une proposition, ce qu'aucune règle de rendu ne sait faire sans se
+//     tromper. Elle vit donc dans `build/echantillon.py`, qui l'applique au
+//     markdown — c'est aussi là que la vraie passe se ferait, sur les pièces.
+//     Un premier essai l'avait posée ici en `#show strong` : il convertissait
+//     35 % de gras en 35 % d'italique, soit la même texture sous une autre
+//     graisse. Ne pas la rétablir ici.
+// ================= fin du delta =================
+
+#let horizontalrule = block(above: PAS, below: PAS,
+  align(center, line(length: 18%, stroke: 0.8pt + ACCENT)))
+
+// ---------------- ouverture de livre, pleine page ----------------
+// Elle sort de la grille du corps : une page à elle, à marges propres, où le
+// filet et le verbe prennent toute la largeur utile. La colonne de note n'a
+// rien à y porter, et un filet de 108 mm au milieu d'une page de 216 en
+// paraîtrait tronqué.
+// ⚠ Le numéral est en SÉRIF, non en linéale : un « I » de linéale en grand
+// format est une barre verticale que rien ne distingue d'un filet — les
+// empattements sont ce qui en fait une lettre. Vaut aussi pour « II » et « V ».
+#let ouverture-livre(romain, verbe, sous) = page(
+  margin: (x: 30mm, top: 40mm, bottom: 26mm),
+  header: none,
+  footer: context {
+    set text(font: SANS, size: 9pt, fill: ACCENT, weight: "bold")
+    align(right, counter(page).display())
+  },
+)[
+  #metadata((romain: plat(romain), verbe: plat(verbe), sous: plat(sous)))<ouverture-livre>
+  #set par(justify: false, leading: 0.30em, first-line-indent: 0pt)
+  #v(1fr)
+  #block(width: 100%, {
+    text(font: SANS, size: 11pt, fill: GRIS, tracking: 0.32em)[LIVRE]
+    v(4pt)
+    text(font: SERIF, size: 104pt, weight: "bold", fill: ACCENT, romain)
+    v(16pt)
+    line(length: 100%, stroke: 1.4pt + ENCRE)
+    v(18pt)
+    text(font: SANS, size: 38pt, weight: "bold", fill: ENCRE, verbe)
+    v(14pt)
+    block(width: 76%, text(font: SERIF, size: 13.5pt, style: "italic",
+                           fill: GRIS, hyphenate: false, sous))
+  })
+  #v(1.7fr)
+]
+
+// ---------------- ouverture de chapitre ----------------
+// ⚠ Le rang vivait dans la colonne de note jusqu'au 31 juillet 2026 ; il revient
+// contre son titre, calé à la tranche, sur la ligne de l'étiquette. Il reste le
+// repère de navigation que mille pages réclament, et il ne mange plus la largeur
+// du titre puisqu'il partage sa ligne avec une étiquette courte.
+#let bandeau-ouverture(etiquette, rang-affiche) = {
+  pagebreak(weak: true)
+  set par(justify: false, leading: 0.30em, first-line-indent: 0pt)
+  v(6mm)
+  block(width: 100%, {
+    grid(columns: (1fr, auto), align: (left + bottom, right + bottom),
+      text(font: SANS, size: 11pt, fill: GRIS, tracking: 0.28em, etiquette),
+      if rang-affiche != none {
+        text(font: SANS, size: 44pt, weight: "bold", fill: ACCENT, rang-affiche)
+      } else { [] })
+    v(5pt)
+    line(length: 100%, stroke: 1.6pt + ACCENT)
+  })
+  v(11pt, weak: false)
+}
+
+#let ouverture-chapitre(n) = bandeau-ouverture("CHAPITRE", str(n))
+
+// L'annexe n'est pas un cinquante et unième chapitre : elle ne porte pas de
+// rang, et le plafond de cinquante reste tenu.
+#let ouverture-annexe() = {
+  bandeau-ouverture("ANNEXE", none)
+  [#metadata("annexe")<ouverture-annexe>]
+}
+
+// Le titre de chapitre vit dans un pavé de HAUTEUR FIXE : c'est ce qui place la
+// ligne de situation toujours à la même ordonnée, qu'un titre tienne sur une ou
+// deux lignes. ⚠ Fixe, non minimale — un titre de trois lignes déborderait vers
+// le bas plutôt que de repousser la suite. Aucun des cinquante n'y arrive.
+#show heading.where(level: 1): it => block(height: 128pt, width: 100%,
+  above: 0pt, below: 0pt,
+  text(font: SANS, size: 30pt, weight: "bold", fill: ENCRE, it.body))
+
+// ---- ligne de situation, sous le titre de chapitre ----
+#let situation(body) = block(above: 0pt, below: 2.4 * PAS, width: 100%, {
+  set par(justify: false, leading: INTER, first-line-indent: 0pt)
+  set text(size: 13.5pt, style: "italic", fill: GRIS)
+  body
+})
+
+// ================= Page de titre =================
+// ⚠ Elle sort de la grille du corps, et c'est nécessaire : composée sur les
+// 108 mm de la colonne de texte, elle déborde — le titre se replie sur deux
+// lignes, le colophon chevauche la signature et la maxime se fait rogner sous
+// la marge, sans que le rendu signale rien. Une page à marges propres lui donne
+// les 148 mm dont elle a besoin.
+// ⚠ Ces #v() et #v(1fr) sont le budget de la page : elle doit rester UNE page,
+// et le décompte de pages est le seul contrôle qui le voie. Toute addition au
+// colophon se paie ici, jamais en laissant déborder.
+#page(margin: (x: 34mm, top: 36mm, bottom: 26mm), header: none, footer: none)[
+#block(width: 100%, {
+  // ⚠ `hyphenate: false` : le titre ne tient pas sur une ligne de 148 mm et se
+  // replie — mais césuré, il sort « La somme agen-tique ». Il se replie au mot.
+  set text(hyphenate: false)
+  set par(justify: false, leading: 0.5em, first-line-indent: 0pt)
+  text(font: SANS, size: 10pt, fill: GRIS, tracking: 0.30em)[COMPENDIUM]
+  h(0.9em)
+  text(font: SANS, size: 10pt, fill: ACCENT, tracking: 0.30em)[SCIENCE ET GÉNIE INFORMATIQUES]
+  v(10pt)
+  line(length: 100%, stroke: 1.6pt + ENCRE)
+  v(24pt)
+  text(font: SANS, size: 52pt, weight: "bold", fill: ENCRE)[La somme agentique]
+  v(20pt)
+  // ⚠ La justification est posée ICI et non sur le bloc entier : le titre tient
+  // sur deux lignes, et justifié, sa première ligne — « La somme » — serait
+  // étirée sur toute la largeur. Seuls les PARAGRAPHES se justifient ; les
+  // titres et la signature restent au fer à gauche.
+  block(width: 88%, {
+    set par(justify: true)
+    text(font: SERIF, size: 15pt, style: "italic", fill: GRIS)[
+      Interopérabilité, autonomie encadrée et fabrique de confiance :
+      déployer des agents en services financiers réglementés (2024-2032)
+    ]
+  })
+  v(1.5cm)
+  text(font: SANS, size: 13pt, fill: ENCRE)[André-Guy Bruneau, M.Sc. IT]
+})
+
+// -- colophon, au pied de la page de titre --
+#v(1fr)
+#block(width: 100%, {
+  set text(font: SANS, size: 8.5pt, fill: GRIS)
+  // Notices de Livre et maxime justifiées. Le `linebreak()` qui sépare l'intitulé
+  // de sa notice ne justifie pas sa ligne — l'intitulé reste au fer à gauche.
+  set par(justify: true, leading: 4.4pt, spacing: 7pt, first-line-indent: 0pt)
+  grid(columns: (1fr, 1fr), column-gutter: 9mm, row-gutter: 7pt,
+    ..(([I], [Coopérer], [Fondements de l'interopérabilité et couche protocolaire : l'agent comme boucle, l'accord sur le sens que les protocoles présupposent, MCP et A2A, découverte et registres, modes d'échec.]),
+       ([II], [Faire confiance], [Identité non humaine, délégation vérifiable et fabrique de confiance : émettre un passeport opposable, tenir sous confiance hostile, compter avec l'horloge post-quantique.]),
+       ([III], [Encadrer], [Orchestration déterministe en entreprise, cadre réglementaire canadien et terrain des services financiers : l'autonomie sous contrôle de finalité.]),
+       ([IV], [Appliquer, exploiter, produire et composer], [AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale : le maillage admet, la mesure condamne, la fabrique réémet.]),
+       ([V], [Livrer et clore], [L'agent comme artefact logiciel : provenance des composants, mise en service d'un artefact non reproductible, sémantique d'effet, horizon et frontière.]),
+      ).map(e => block(width: 100%, {
+        text(fill: ACCENT, weight: "bold")[Livre #e.at(0) — #e.at(1)]
+        linebreak()
+        e.at(2)
+      })))
+  v(11pt)
+  line(length: 100%, stroke: 0.6pt + FILET)
+  v(10pt)
+  // `hyphenate: false` : la maxime se replie au mot, jamais par césure.
+  block(width: 92%, text(font: SERIF, size: 10pt, style: "italic",
+                         fill: ENCRE, hyphenate: false)[
+    L'interopérabilité agentique est une propriété à maintenir, non un état
+    atteint : elle suppose un contrat protocolaire découplé de ses mises en
+    œuvre, une identité et une délégation vérifiables au point d'application,
+    un contrôle de finalité opposable, une provenance attestée de l'artefact et
+    une mesure du comportement en exploitation — cinq termes dont aucun ne
+    supplée l'absence d'un autre.
+  ])
+  v(10pt)
+  // ⚠ LE COLOPHON NE PORTE NI LE STATUT NI LES RÉSERVES, ET C'EST UNE
+  // INSTRUCTION D'AUTEUR DU 30 JUILLET 2026, non un oubli. Le régime de
+  // diffusion de D-10 vit AU DÉPÔT SEUL. Ne pas « rétablir » ce bloc en croyant
+  // réparer un défaut : le rétablir rouvrirait l'instruction.
+  text(size: 8pt)[© André-Guy Bruneau, M.Sc. IT. Tous droits réservés.]
+})
+]
+
+// ================= Table des matières =================
+#set page(numbering: "i", footer: context {
+  set text(font: SANS, size: 11pt, fill: GRIS)
+  align(right, counter(page).display())
+})
+#counter(page).update(1)
+
+#block(width: 100%, above: 0pt, below: 1.8 * PAS, {
+  set par(justify: false, first-line-indent: 0pt)
+  text(font: SANS, size: 32pt, weight: "bold", fill: ENCRE)[Table des matières]
+  v(8pt)
+  line(length: 100%, stroke: 1.4pt + ACCENT)
+})
+
+#let conduit = box(width: 1fr, inset: (x: 5pt),
+                   text(fill: FILET, repeat[#h(1.4pt).#h(1.4pt)]))
+
+#context {
+  let items = query(selector.or(<ouverture-livre>, <ouverture-annexe>,
+                                heading.where(level: 1), heading.where(level: 2)))
+  let n = 0
+  // L'annexe hors plan ne consomme pas de numéro de chapitre : passé son
+  // marqueur, le compteur se fige — sans quoi elle s'annoncerait « 51 » et
+  // contredirait le plafond de cinquante.
+  let en-annexe = false
+  set par(justify: false, leading: INTER, spacing: INTER, first-line-indent: 0pt)
+  set text(size: 12pt)
+  for it in items {
+    let p = counter(page).at(it.location()).first()
+    if it.func() == metadata {
+      if it.at("label", default: none) == <ouverture-annexe> {
+        en-annexe = true
+      } else {
+        // ⚠ ne pas nommer cette variable `v` : elle masquerait `v()`, la
+        // fonction d'espacement, dans tout le bloc.
+        let livre = it.value
+        block(above: 2 * PAS, below: 0.7 * PAS, sticky: true, width: 100%, {
+          set text(font: SANS, size: 14pt, weight: "bold", fill: ACCENT)
+          [Livre #livre.romain#h(1.3em)#livre.verbe]
+          v(4pt)
+          line(length: 100%, stroke: 0.8pt + ACCENT)
+        })
+      }
+    } else if it.level == 1 {
+      if not en-annexe { n = n + 1 }
+      // « sticky » : sans lui, une entrée de chapitre tombe seule en bas de
+      // page et ses sections passent à la suivante.
+      // Le folio vit dans SA PROPRE colonne, jamais à la suite du conduit :
+      // collé au texte, il se replie sur la ligne suivante dès qu'un titre
+      // remplit la sienne.
+      // `below` : sans un demi-pas, l'entrée de chapitre se colle à sa première
+      // section et les deux se lisent comme une seule ligne repliée.
+      block(above: if en-annexe { 2 * PAS } else { 0.9 * PAS }, below: 0.5 * PAS,
+        sticky: true,
+        grid(columns: (11mm, 1fr, auto), column-gutter: (0pt, 5pt),
+          // Le folio s'aligne sur la DERNIÈRE ligne de l'entrée : sur un titre
+          // replié, il suit le conduit.
+          align: (left + top, left + top, right + bottom),
+          text(font: SANS, weight: "bold", fill: ACCENT)[#if en-annexe [] else [#n]],
+          text(font: SANS, weight: "bold")[#link(it.location(), it.body)#conduit],
+          text(font: SANS)[#p]))
+    } else {
+      grid(columns: (11mm, 1fr, auto), column-gutter: (0pt, 5pt),
+        align: (left + top, left + top, right + bottom),
+        [], text(fill: GRIS)[#link(it.location(), it.body)#conduit],
+        text(font: SANS, size: 11pt, fill: GRIS)[#p])
+    }
+  }
+}
+
+// ================= Corps =================
+
+#pagebreak(weak: true)
+#counter(page).update(1)
+#set page(numbering: "1", header: entete, footer: pied)
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+$body$

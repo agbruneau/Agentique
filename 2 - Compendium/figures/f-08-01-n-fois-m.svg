@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 168" width="445" height="168" role="img" aria-label="Le passage de N fois M liaisons point-a-point a N plus M par une couche de contrat, et les trois choses que ce contrat ne porte pas.">
+  <!-- Figure 8.1, derivee du paragraphe 8.1.1 du chapitre 8. Aucune information
+       qui ne soit dans le texte : la reduction combinatoire, et la critique qui
+       la suit immediatement — le contrat est reel mais etroit.
+       ⚠ La figure ne s'arrete PAS au gain combinatoire : le paragraphe le donne
+       comme reconnu, non comme neuf, et consacre sa seconde moitie a ce que la
+       couche ne porte pas. Une figure qui ne montrerait que le pivot dirait le
+       slogan que le texte critique.
+
+       CONVENTION DE DESSIN DU VOLUME : le viewBox fait 445 unites de large,
+       soit exactement la largeur du corps en points (157,0 mm). Une unite vaut
+       donc UN POINT au rendu. Palette de build/compendium.template. -->
+  <defs>
+    <style>
+      .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+      .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+      .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+      .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+      .ann    { font-size: 7px;   fill: #4d4d4d; }
+      .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+      .pivot  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .09em; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="445" height="168" fill="#FDFBF9"/>
+
+  <!-- ============ sans couche de contrat : N x M ============ -->
+  <text class="l titreg" x="0" y="8">SANS COUCHE DE CONTRAT</text>
+
+  <path d="M 56 31 L 149 31 M 56 31 L 149 59 M 56 31 L 149 87
+           M 56 59 L 149 31 M 56 59 L 149 59 M 56 59 L 149 87
+           M 56 87 L 149 31 M 56 87 L 149 59 M 56 87 L 149 87"
+        fill="none" stroke="#C2C2C2" stroke-width=".5"/>
+
+  <rect x="0" y="20" width="56" height="22" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <rect x="0" y="48" width="56" height="22" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <rect x="0" y="76" width="56" height="22" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="12" y="34">Agent</text>
+  <text class="l bande" x="12" y="62">Agent</text>
+  <text class="l bande" x="12" y="90">Agent</text>
+
+  <rect x="149" y="20" width="56" height="22" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <rect x="149" y="48" width="56" height="22" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <rect x="149" y="76" width="56" height="22" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="164" y="34">Outil</text>
+  <text class="l bande" x="164" y="62">Outil</text>
+  <text class="l bande" x="164" y="90">Outil</text>
+
+  <text class="l annf" x="0" y="113">N × M intégrations point-à-point</text>
+
+  <!-- ============ avec couche de contrat : N + M ============ -->
+  <text class="l titre" x="240" y="8">AVEC UNE COUCHE DE CONTRAT</text>
+
+  <path d="M 296 31 L 328 59 M 296 59 L 328 59 M 296 87 L 328 59
+           M 354 59 L 389 31 M 354 59 L 389 59 M 354 59 L 389 87"
+        fill="none" stroke="#9A3B12" stroke-width=".7"/>
+
+  <rect x="240" y="20" width="56" height="22" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <rect x="240" y="48" width="56" height="22" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <rect x="240" y="76" width="56" height="22" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="252" y="34">Agent</text>
+  <text class="l bande" x="252" y="62">Agent</text>
+  <text class="l bande" x="252" y="90">Agent</text>
+
+  <rect x="328" y="20" width="26" height="78" fill="#FFFFFF" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l pivot" transform="translate(345,59) rotate(-90)" text-anchor="middle">COUCHE DE CONTRAT</text>
+
+  <rect x="389" y="20" width="56" height="22" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <rect x="389" y="48" width="56" height="22" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <rect x="389" y="76" width="56" height="22" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="404" y="34">Outil</text>
+  <text class="l bande" x="404" y="62">Outil</text>
+  <text class="l bande" x="404" y="90">Outil</text>
+
+  <text class="l annf" x="240" y="113">N + M — le geste du modèle canonique (ch. 1 § 1.6.1)</text>
+
+  <!-- ============ ce que le contrat ne porte pas ============ -->
+  <text class="l titreg" x="0" y="128">CE QUE LA COUCHE NE PORTE PAS</text>
+  <rect x="0" y="133" width="445" height="32" fill="none" stroke="#C2C2C2" stroke-width=".6" stroke-dasharray="3 2.5"/>
+  <text class="l annf" x="10" y="146">Négociation riche de capacités · confiance établie entre les parties · accord sémantique</text>
+  <text class="l ann"  x="10" y="157">La conformité est au transport et au schéma, non au sens — rien ne garantit que l'intention corresponde au comportement.</text>
+</svg>
