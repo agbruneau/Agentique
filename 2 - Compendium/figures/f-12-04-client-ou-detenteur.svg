@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 156" width="445" height="156" role="img" aria-label="Les deux placements possibles d'un agent dans les roles du RFC 6749.">
+  <!-- § 12.4, chapitre 12, sur le RFC 6749 § 1.1.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="156" fill="#FDFBF9"/>
+  <text class="l titreg" x="0" y="8">L'AGENT COMME CLIENT</text>
+  <rect x="0" y="14" width="210" height="94" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="30">« Une application qui demande des ressources protégées pour le compte d'autrui »</text>
+  <text class="l ann" x="9" y="46">Le client est déjà, par construction, un mandataire</text>
+  <text class="l ann" x="9" y="65">L'agent hérite d'un rôle qui existe</text>
+  <text class="l ann" x="9" y="84">Mais le mandant reste hors du jeton</text>
+  <text class="l annf" x="0" y="121">le rôle existe, la chaîne n'y est pas</text>
+  <text class="l titre" x="236" y="8">L'AGENT COMME DÉTENTEUR DE RESSOURCE</text>
+  <rect x="236" y="14" width="210" height="94" fill="#FFFFFF" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l bande" x="245" y="30">« Une entité capable d'accorder l'accès à une ressource protégée »</text>
+  <text class="l ann" x="245" y="46">Le détenteur est une ENTITÉ, non nécessairement une</text>
+  <text class="l ann" x="245" y="57">personne</text>
+  <text class="l ann" x="245" y="76">« Utilisateur final » est réservé au cas humain</text>
+  <text class="l ann" x="245" y="95">Un agent peut donc en tenir le rôle</text>
+  <text class="l annf" x="236" y="121">la définition l'admet, l'imputabilité s'y perd</text>
+  <path d="M 0 127 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="140">Rien dans les deux définitions n'écarte un mandataire logiciel — et rien ne l'y installe. Le RFC ne tranche pas : il n'avait</text>
+  <text class="l ann" x="0" y="150">pas la question. C'est un standard étiré, non un standard qui répond.</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 150" width="445" height="150" role="img" aria-label="L'identite de charge de travail et l'identite decentralisee, et l'ancrage que chacune propose.">
+  <!-- § 13.4, chapitre 13.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="150" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">TROIS ANCRAGES SOUS LE NIVEAU APPLICATIF</text>
+  <rect x="0" y="14" width="138" height="101" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="32">1</text>
+  <text class="l bande" x="21" y="32">SPIFFE / SPIRE</text>
+  <text class="l ann" x="10" y="47">Une identité d'exécution,</text>
+  <text class="l ann" x="10" y="58">matérialisée par un justificatif à</text>
+  <text class="l ann" x="10" y="69">courte durée de vie ;</text>
+  <text class="l ann" x="10" y="80">authentification mutuelle sans</text>
+  <text class="l ann" x="10" y="91">secret partagé.</text>
+  <text class="l renvoi" x="10" y="105">adapté aux agents éphémères</text>
+  <rect x="153" y="14" width="138" height="101" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="163" y="32">2</text>
+  <text class="l bande" x="174" y="32">Identifiants décentralisés</text>
+  <text class="l ann" x="163" y="47">Un identifiant porté par son</text>
+  <text class="l ann" x="163" y="58">sujet, résolvable sans annuaire</text>
+  <text class="l ann" x="163" y="69">central.</text>
+  <text class="l renvoi" x="163" y="105">W3C — voir § 13.1 pour le stade</text>
+  <rect x="307" y="14" width="138" height="101" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="317" y="32">3</text>
+  <text class="l bande" x="328" y="32">WIMSE</text>
+  <text class="l ann" x="317" y="47">L'extension de l'identité de</text>
+  <text class="l ann" x="317" y="58">charge aux échanges entre charges.</text>
+  <text class="l renvoi" x="317" y="105">travaux IETF</text>
+  <path d="M 0 121 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="134">Le Vol. I les oppose en régime [C] — c'est une lecture reprise, non un balayage de mécanismes conduit par la somme. Aucune des</text>
+  <text class="l ann" x="0" y="144">deux familles ne porte l'ancrage ORGANISATIONNEL que le ch. 15 § 15.1.2 déclare renvoyé hors protocole.</text>
+</svg>

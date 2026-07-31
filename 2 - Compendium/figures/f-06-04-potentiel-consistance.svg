@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 147" width="445" height="147" role="img" aria-label="Comparaison des metriques pass@k et pass^k, potentiel contre consistance.">
+  <!-- Tableau 6.2, § 6.4.2, chapitre 6.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="147" fill="#FDFBF9"/>
+  <text class="l titreg" x="0" y="8">pass@k — LE POTENTIEL</text>
+  <rect x="0" y="14" width="210" height="75" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="30">Au moins une parmi k tentatives réussit</text>
+  <text class="l ann" x="9" y="46">Ce qu'elle mesure : le potentiel</text>
+  <text class="l ann" x="9" y="65">Ce qu'elle flatte : les systèmes capables de trouver</text>
+  <text class="l ann" x="9" y="76">occasionnellement la bonne réponse</text>
+  <text class="l annf" x="0" y="102">monte avec k</text>
+  <text class="l titre" x="236" y="8">pass^k — LA CONSISTANCE</text>
+  <rect x="236" y="14" width="210" height="75" fill="#FFFFFF" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l bande" x="245" y="30">Les k tentatives réussissent toutes</text>
+  <text class="l ann" x="245" y="46">Ce qu'elle mesure : la consistance</text>
+  <text class="l ann" x="245" y="65">Ce qu'elle révèle : la chute brutale dès que la</text>
+  <text class="l ann" x="245" y="76">fiabilité par étape s'éloigne de la perfection</text>
+  <text class="l annf" x="236" y="102">s'effondre avec k</text>
+  <path d="M 0 108 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="121">Une probabilité d'échec par pas même faible SE COMPOSE GÉOMÉTRIQUEMENT sur une longue trajectoire : c'est l'un des constats les</text>
+  <text class="l ann" x="0" y="131">plus robustes du domaine, et la raison pour laquelle un agent se caractérise par sa courbe de consistance, non par son meilleur</text>
+  <text class="l ann" x="0" y="141">potentiel.</text>
+</svg>

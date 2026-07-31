@@ -102,6 +102,8 @@ propres aux systèmes multi-agents, et le § 6.4.2 y revient comme grille d'anal
 
 ---
 
+![**Figure 6.1** — Les quatre topologies de coordination multi-agents et la propriété dominante de chacune.](../figures/f-06-01-topologies.svg)
+
 ## § 6.2 — Communication inter-agents : A2A, ACP et pile d'interopérabilité
 
 C'est le **foyer canonique de l'interopérabilité agent-agent**, complémentaire de l'interopérabilité
@@ -366,6 +368,8 @@ coordination (§ 6.1.2).
 > cause racine plutôt que vers le symptôme.
 
 ---
+
+![**Figure 6.4** — Potentiel contre consistance : deux métriques dont la confusion masque l'effondrement.](../figures/f-06-04-potentiel-consistance.svg)
 
 ## § 6.5 — Défense architecturale, garde-fous et alignement
 

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 148" width="445" height="148" role="img" aria-label="Cinq moments dates de la genealogie des identites non humaines, de 2012 a 2026.">
+  <!-- § 12.1, chapitre 12.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="148" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">CINQ MOMENTS, ET AUCUNE CONTINUITÉ</text>
+  <path d="M 0 40 H 439" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 445 40 l -6 -3 v 6 z" fill="#9A3B12"/>
+  <circle cx="5.0" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="0" y="30">2012</text>
+  <text class="l annf" x="0" y="56">RFC 6749</text>
+  <text class="l ann" x="0" y="69">le détenteur de ressource est</text>
+  <text class="l ann" x="0" y="80">« une entité » ; «</text>
+  <text class="l ann" x="0" y="91">utilisateur final » est</text>
+  <text class="l ann" x="0" y="102">réservé au cas où c'est une</text>
+  <text class="l ann" x="0" y="113">personne</text>
+  <circle cx="116.2" cy="40" r="3.2" fill="#FDFBF9" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l date" x="111" y="30">…</text>
+  <text class="l annf" x="111" y="56">L'hypothèse humaine</text>
+  <text class="l ann" x="111" y="69">elle n'est pas dans les</text>
+  <text class="l ann" x="111" y="80">définitions : elle est dans</text>
+  <text class="l ann" x="111" y="91">le flux</text>
+  <circle cx="227.5" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="222" y="30">…</text>
+  <text class="l annf" x="222" y="56">Identité de charge</text>
+  <text class="l ann" x="222" y="69">l'exécution reçoit une</text>
+  <text class="l ann" x="222" y="80">identité propre, à courte</text>
+  <text class="l ann" x="222" y="91">durée de vie</text>
+  <circle cx="338.8" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="334" y="30">2026</text>
+  <text class="l annf" x="334" y="56">L'agent</text>
+  <text class="l ann" x="334" y="69">identité stable, comportement</text>
+  <text class="l ann" x="334" y="80">variable — § 12.3</text>
+  <path d="M 0 119 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="132">Chacun a sa date, son statut et sa borne. Les fondre en une continuité produirait un RÉCIT là où le socle ne porte que des</text>
+  <text class="l ann" x="0" y="142">jalons — et c'est exactement ce que cette figure refuse de faire.</text>
+</svg>

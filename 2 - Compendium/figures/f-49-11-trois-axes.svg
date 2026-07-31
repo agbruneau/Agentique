@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 127" width="445" height="127" role="img" aria-label="Les trois axes selon lesquels les scenarios 2027-2032 se lisent.">
+  <!-- § 49.11.2, chapitre 49.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="127" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">TROIS AXES, ET AUCUNE PONDÉRATION</text>
+  <rect x="0" y="14" width="138" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="32">1</text>
+  <text class="l bande" x="21" y="32">Les protocoles</text>
+  <text class="l ann" x="10" y="47">Convergence ou coexistence</text>
+  <text class="l ann" x="10" y="58">stratifiée gouvernée — § 49.2.</text>
+  <text class="l renvoi" x="10" y="72">le verrou est la portabilité neutre</text>
+  <rect x="153" y="14" width="138" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="163" y="32">2</text>
+  <text class="l bande" x="174" y="32">La gouvernance</text>
+  <text class="l ann" x="163" y="47">Bifurcation par couche ;</text>
+  <text class="l ann" x="163" y="58">neutralité contestée — § 49.3.</text>
+  <text class="l renvoi" x="163" y="72">les groupes communautaires comme</text>
+  <text class="l renvoi" x="163" y="82">signal faible</text>
+  <rect x="307" y="14" width="138" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="317" y="32">3</text>
+  <text class="l bande" x="328" y="32">La menace</text>
+  <text class="l ann" x="317" y="47">Trajectoire, et l'horloge</text>
+  <text class="l ann" x="317" y="58">post-quantique — § 49.4, § 49.5.</text>
+  <text class="l renvoi" x="317" y="72">la seule échéance datée du Livre II</text>
+  <path d="M 0 98 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="111">SIX CONDITIONS, ET AUCUNE N'EST ACQUISE (§ 49.11.4). Les axes ordonnent des lectures ; ils ne pondèrent aucun scénario, et</text>
+  <text class="l ann" x="0" y="121">les discontinuités à faible probabilité et fort impact (§ 49.11.3) ne s'y rangent pas.</text>
+</svg>

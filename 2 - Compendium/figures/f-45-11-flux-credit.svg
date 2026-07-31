@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 116" width="445" height="116" role="img" aria-label="Le flux de decision de credit assistee par agents, ou le processus commande l'enchainement.">
+  <!-- § 45.11, chapitre 45.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="116" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">LE PROCESSUS COMMANDE, LES AGENTS EXÉCUTENT</text>
+  <rect x="0" y="14" width="95" height="67" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="31">Demande</text>
+  <text class="l ann" x="9" y="44">reçue, qualifiée</text>
+  <path d="M 97.75 47.5 H 110.75" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 114.75 47.5 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="117" y="14" width="95" height="67" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="126" y="31">Agents</text>
+  <text class="l ann" x="126" y="44">invoqués par le cadre,</text>
+  <text class="l ann" x="126" y="55">chacun sur une</text>
+  <text class="l ann" x="126" y="66">capacité bornée</text>
+  <path d="M 214.75 47.5 H 227.75" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 231.75 47.5 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="234" y="14" width="95" height="67" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="243" y="31">Décision</text>
+  <text class="l ann" x="243" y="44">rendue par le</text>
+  <text class="l ann" x="243" y="55">processus, non par un</text>
+  <text class="l ann" x="243" y="66">agent</text>
+  <path d="M 331.75 47.5 H 344.75" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 348.75 47.5 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="350" y="14" width="95" height="67" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="359" y="31">Restitution</text>
+  <text class="l ann" x="359" y="44">informer, expliquer,</text>
+  <text class="l ann" x="359" y="55">offrir la révision —</text>
+  <text class="l ann" x="359" y="66">art. 12.1</text>
+  <path d="M 0 87 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="100">Le processus COMMANDE, et c'est ce qui range ce flux en OO3 ou OO4 : la décision de crédit est une décision opposable au client</text>
+  <text class="l ann" x="0" y="110">(ch. 27), et son enchaînement doit être lisible avant l'exécution.</text>
+</svg>

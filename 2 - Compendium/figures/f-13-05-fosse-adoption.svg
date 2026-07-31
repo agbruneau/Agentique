@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 167" width="445" height="167" role="img" aria-label="Le fosse d'adoption des accreditations verifiables en production, et le degre d'absence.">
+  <!-- § 13.5, chapitre 13.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="167" fill="#FDFBF9"/>
+  <text class="l titreg" x="0" y="8">CE QUE LE CORPUS PORTE</text>
+  <rect x="0" y="14" width="210" height="105" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="30">Des spécifications, et leurs stades</text>
+  <text class="l ann" x="9" y="46">Modèle de données d'accréditation et identifiants</text>
+  <text class="l ann" x="9" y="57">décentralisés du W3C</text>
+  <text class="l ann" x="9" y="76">Des profils d'interopérabilité, avec leur lacune de</text>
+  <text class="l ann" x="9" y="87">couverture déclarée</text>
+  <text class="l ann" x="9" y="106">Des groupes communautaires agentiques</text>
+  <text class="l annf" x="0" y="132">l'appareil normatif existe</text>
+  <text class="l titre" x="236" y="8">CE QU'IL NE PORTE PAS</text>
+  <rect x="236" y="14" width="210" height="105" fill="#FFFFFF" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l bande" x="245" y="30">Aucun établissement financier réglementé, nommément désigné</text>
+  <text class="l ann" x="245" y="46">exploitant EN PRODUCTION</text>
+  <text class="l ann" x="245" y="65">des accréditations vérifiables ou des identifiants</text>
+  <text class="l ann" x="245" y="76">décentralisés</text>
+  <text class="l ann" x="245" y="95">au corpus consulté le 21 juillet 2026</text>
+  <text class="l annf" x="236" y="132">troisième degré d'absence</text>
+  <path d="M 0 138 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="151">C'est une ABSENCE DE DOCUMENTATION, non un fait négatif vérifié (troisième degré, R-14 du Vol. III). Elle ne soutient en</text>
+  <text class="l ann" x="0" y="161">aucun cas l'énoncé « aucune banque n'emploie ces mécanismes » — et la figure ne doit pas laisser lire ce qu'elle ne dit pas.</text>
+</svg>

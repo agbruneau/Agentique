@@ -212,6 +212,8 @@ sujets, le contrat d'évolution qui autorise le déploiement indépendant.
 
 ---
 
+![**Figure 2.1** — Les quatre régimes de compatibilité de schéma, et le sens d'évolution que chacun protège.](../figures/f-02-01-compatibilite-schema.svg)
+
 ## § 2.2 — Transformation, modèle canonique, contrats de données et formats de table
 
 ### 2.2.1 Transformation et ponts inter-formats
@@ -473,6 +475,8 @@ temps**.
 > le poids que la contrainte commerciale lui disputait.
 
 ---
+
+![**Figure 2.3** — La pile du Web sémantique, et ce que chaque étage ajoute au graphe.](../figures/f-02-03-pile-web-semantique.svg)
 
 ## § 2.4 — LLM et automatisation de l'interopérabilité sémantique
 

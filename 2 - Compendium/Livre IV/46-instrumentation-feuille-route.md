@@ -238,6 +238,8 @@ l'AMF que son calendrier** ; *son contenu article par article relève d'une **la
 **Lecture de l'auteur** — ⚠ *la convergence des dates rend rationnel **un programme unique plutôt que
 deux** ; **elle ne dit rien de ce que le second texte attend**, et la somme ne le fabriquera pas.*
 
+![**Figure 46.2** — Le compte à rebours vers le 1ᵉʳ mai 2027 : trois mouvements sur l'axe qui reste.](../figures/f-46-02-compte-a-rebours.svg)
+
 ## § 46.3 — Les jalons externes à surveiller
 
 ⚠ **Cette section porte sa péremption dans son objet même** : *elle recense des événements dont **la
@@ -297,6 +299,8 @@ Aucun **seuil** : *le socle ne dit pas de quelle grandeur.* Aucune **attente de 
 d'auteur, à chaque occurrence, et **IBM ne revendique rien**.*
 
 ---
+
+![**Figure 46.3** — Les jalons externes à surveiller, et le seul qui soit programmé.](../figures/f-46-03-jalons-externes.svg)
 
 ## § 46.4 — Note de statut *(hors plan — à retirer à la publication)*
 

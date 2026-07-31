@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 151" width="445" height="151" role="img" aria-label="Le cycle de vie gouverne d'une identite d'agent, de l'enregistrement a la revocation.">
+  <!-- § 24.3.1, chapitre 24.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="151" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">AUCUNE IDENTITÉ SANS CYCLE DE VIE GOUVERNÉ DE BOUT EN BOUT</text>
+  <rect x="0" y="14" width="95" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="31">Enregistrement</text>
+  <text class="l ann" x="9" y="44">un propriétaire humain</text>
+  <text class="l ann" x="9" y="55">responsable identifié,</text>
+  <text class="l ann" x="9" y="66">un parrainage</text>
+  <text class="l ann" x="9" y="77">explicite</text>
+  <path d="M 97.75 53.0 H 110.75" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 114.75 53.0 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="117" y="14" width="95" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="126" y="31">Attestation</text>
+  <text class="l ann" x="126" y="44">de sa raison d'être</text>
+  <path d="M 214.75 53.0 H 227.75" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 231.75 53.0 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="234" y="14" width="95" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="243" y="31">Certification</text>
+  <text class="l ann" x="243" y="44">périodique, de ses</text>
+  <text class="l ann" x="243" y="55">accès</text>
+  <path d="M 331.75 53.0 H 344.75" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 348.75 53.0 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="350" y="14" width="95" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="359" y="31">Révocation</text>
+  <text class="l ann" x="359" y="44">et ce qui en a été</text>
+  <text class="l ann" x="359" y="55">dérivé</text>
+  <path d="M 398 92 V 102 H 47 V 96" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 47 92 l -3 4 h 6 z" fill="#9A3B12"/>
+  <path d="M 0 112 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="125">Le risque dominant n'est pas l'attribution mais L'ACCUMULATION : sans propriétaire humain responsable, parrainage explicite</text>
+  <text class="l ann" x="0" y="135">et certification périodique, l'organisation accumule des identités dont plus personne ne répond — et la révocation, dernier</text>
+  <text class="l ann" x="0" y="145">maillon, n'a pas de mécanisme en cascade documenté (ch. 20 § 20.6).</text>
+</svg>

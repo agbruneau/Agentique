@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 175" width="445" height="175" role="img" aria-label="La distinction entre un flux de travail orchestre par du code et un agent ou le modele dirige son propre processus.">
+  <!-- § 4.1.4, chapitre 4.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="175" fill="#FDFBF9"/>
+  <text class="l titreg" x="0" y="8">FLUX DE TRAVAIL</text>
+  <rect x="0" y="14" width="210" height="113" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="30">Le code tient la tuyauterie</text>
+  <text class="l ann" x="9" y="46">Modèles et outils orchestrés par des chemins de code</text>
+  <text class="l ann" x="9" y="57">prédéfinis</text>
+  <text class="l ann" x="9" y="76">Coût prévisible et économe</text>
+  <text class="l ann" x="9" y="95">Un chemin de code se teste</text>
+  <text class="l ann" x="9" y="114">Surface d'injection bornée</text>
+  <text class="l annf" x="0" y="140">orchestration déterministe</text>
+  <text class="l titre" x="236" y="8">AGENT</text>
+  <rect x="236" y="14" width="210" height="113" fill="#FFFFFF" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l bande" x="245" y="30">Le modèle tient la tuyauterie</text>
+  <text class="l ann" x="245" y="46">Le modèle dirige dynamiquement son processus</text>
+  <text class="l ann" x="245" y="65">Coût non prévisible</text>
+  <text class="l ann" x="245" y="84">Une délibération émergente s'évalue statistiquement</text>
+  <text class="l ann" x="245" y="103">Surface d'injection élargie, irréductible au niveau du</text>
+  <text class="l ann" x="245" y="114">modèle</text>
+  <text class="l annf" x="236" y="140">autonomie, et son prix</text>
+  <path d="M 0 146 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="159">La dichotomie a un AUTEUR UNIQUE — c'est celle d'Anthropic (§ 4.1.1) —, et sa reprise massive par la littérature praticienne</text>
+  <text class="l ann" x="0" y="169">n'en fait pas un consensus de la discipline : elle en fait une convention de vocabulaire d'un éditeur, adoptée.</text>
+</svg>

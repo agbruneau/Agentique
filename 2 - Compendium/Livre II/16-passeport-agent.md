@@ -128,6 +128,8 @@ résout contre un texte, non contre une preuve.* Le présent chapitre **ne préj
 que ce siège établira du registre comme pièce de conformité ; il compose sur ce que le ch. 15
 § 15.3.3 porte, et **déclare l'autre moitié en attente**.
 
+![**Figure 16.1a** — Les quatre pièces du passeport d'agent : ce que le socle établit de chacune, et ce qu'il n'établit pas.](../figures/f-16-01a-quatre-pieces.svg)
+
 ### 16.1.1 Équivalents provisoires — ce qui tient lieu de chaque pièce en 2026
 
 ⚠ **Cette sous-section est ajoutée le 30 juillet 2026 (D-11), et son motif est un défaut de
@@ -159,6 +161,8 @@ rédacteur ne la corrige pas* : ce qui change est que le chapitre **borne désor
 pratique** au lieu de la laisser lire comme une règle immédiatement applicable. **Remontée ouverte**,
 à l'instance d'arbitrage : *la formule « rien n'entre au maillage sans lui » doit-elle porter sa
 clause transitoire au plan ?*
+
+![**Figure 16.1b** — Ce qui tient lieu de chaque pièce aujourd'hui, et l'écart que le substitut laisse ouvert.](../figures/f-16-01b-substituts.svg)
 
 ## § 16.2 — Ce qui n'existe toujours pas — et à quel degré
 

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 150" width="445" height="150" role="img" aria-label="Les trois classes d'acces documentaire du chapitre d'etudes de cas, avec leur cardinal.">
+  <!-- Tableau 35.1, § 35.0, chapitre 35, au gel du Vol. II.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="150" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">DIX CAS, TROIS RÉGIMES DE PREUVE</text>
+  <rect x="0" y="14" width="138" height="101" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="32">5</text>
+  <text class="l bande" x="21" y="32">Sources primaires directement accessibles</text>
+  <text class="l ann" x="10" y="47">Trois communiqués et deux rapports</text>
+  <text class="l ann" x="10" y="58">annuels.</text>
+  <text class="l renvoi" x="10" y="105">aucune réserve d'accès</text>
+  <rect x="153" y="14" width="138" height="101" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="163" y="32">4</text>
+  <text class="l bande" x="174" y="32">Accès dégradé</text>
+  <text class="l ann" x="163" y="47">Page rendue par script vérifiée</text>
+  <text class="l ann" x="163" y="58">par index ; domaines refusant le</text>
+  <text class="l ann" x="163" y="69">chargement automatisé, lus sur</text>
+  <text class="l ann" x="163" y="80">miroirs ; rapport trop volumineux</text>
+  <text class="l ann" x="163" y="91">pour extraction complète.</text>
+  <text class="l renvoi" x="163" y="105">la réserve accompagne chaque énoncé</text>
+  <rect x="307" y="14" width="138" height="101" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="317" y="32">1</text>
+  <text class="l bande" x="328" y="32">Aucune source primaire</text>
+  <text class="l ann" x="317" y="47">Absence documentée.</text>
+  <text class="l renvoi" x="317" y="105">non absence d'activité — § 35.8</text>
+  <path d="M 0 121 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="134">La troisième classe est une ABSENCE DOCUMENTÉE, non une absence d'activité (§ 35.8). Tout le chapitre se lit à travers cette</text>
+  <text class="l ann" x="0" y="144">échelle : un cas de la première classe et un cas de la troisième ne s'opposent pas au même régime de preuve.</text>
+</svg>

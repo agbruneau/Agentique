@@ -60,6 +60,8 @@ premier ordre, non un raffinement d'optimisation.
 
 ---
 
+![**Figure 5.0** — Mémoire, récupération et protocole d'accès : trois objets que la pratique confond.](../figures/f-05-00-trois-objets.svg)
+
 ## § 5.1 — Du modèle sans état à l'agent persistant : mémoire et ingénierie du contexte
 
 *Le TOC intitule cette section « Du **LLM** sans état à l'agent persistant » ; la pièce traduit le
@@ -418,6 +420,8 @@ neurobiologique pour la récupération multi-sauts.
 > réserve aux quelques dizaines de candidats de tête.
 
 ---
+
+![**Figure 5.3** — Du RAG statique au RAG agentique : d'une passe unique à une boucle de contrôle.](../figures/f-05-03-rag-agentique.svg)
 
 ## § 5.4 — Données structurées, accès d'entreprise et gouvernance d'ancrage
 

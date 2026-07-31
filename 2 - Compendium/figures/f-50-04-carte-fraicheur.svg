@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 241" width="445" height="241" role="img" aria-label="La carte de fraicheur des cinquante chapitres de la somme, par date de gel.">
+  <!-- § 50.4, chapitre 50 — le registre de gel par chapitre.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="241" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">CINQ LIVRES, UN GEL UNIQUE, ET LES ÉVÉNEMENTS QUI L'ENTAMENT</text>
+  <text class="l annf" x="113" y="28">Gel de la somme</text>
+  <text class="l annf" x="282" y="28">Événements de péremption qui le touchent</text>
+  <path d="M 0 41 H 445" fill="none" stroke="#212121" stroke-width="1.1"/>
+  <text class="l annf" x="0" y="59">Livre I — Coopérer</text>
+  <text class="l ann" x="113" y="59">27 juillet 2026</text>
+  <text class="l ann" x="282" y="59">révisions protocolaires — l'un des deux</text>
+  <text class="l ann" x="282" y="70">est survenu et payé</text>
+  <text class="l annf" x="0" y="89">Livre II — Faire confiance</text>
+  <path d="M 0 73 H 445" fill="none" stroke="#C2C2C2" stroke-width=".5"/>
+  <text class="l ann" x="113" y="89">27 juillet 2026</text>
+  <text class="l ann" x="282" y="89">normalisation du passeport ; jalons</text>
+  <text class="l ann" x="282" y="100">post-quantiques ; premier incident public</text>
+  <text class="l annf" x="0" y="119">Livre III — Encadrer</text>
+  <path d="M 0 103 H 445" fill="none" stroke="#C2C2C2" stroke-width=".5"/>
+  <text class="l ann" x="113" y="119">27 juillet 2026</text>
+  <text class="l ann" x="282" y="119">désignation de l'organisme ; lancement du</text>
+  <text class="l ann" x="282" y="130">rail temps réel</text>
+  <text class="l annf" x="0" y="149">Livre IV — Appliquer</text>
+  <path d="M 0 133 H 445" fill="none" stroke="#C2C2C2" stroke-width=".5"/>
+  <text class="l ann" x="113" y="149">27 juillet 2026</text>
+  <text class="l ann" x="282" y="149">conventions sémantiques d'observabilité</text>
+  <text class="l annf" x="0" y="179">Livre V — Livrer et clore</text>
+  <path d="M 0 163 H 445" fill="none" stroke="#C2C2C2" stroke-width=".5"/>
+  <text class="l ann" x="113" y="179">27 juillet 2026</text>
+  <text class="l ann" x="282" y="179">transfert de gouvernance du protocole de</text>
+  <text class="l ann" x="282" y="190">paiement</text>
+  <path d="M 0 193 H 445" fill="none" stroke="#212121" stroke-width="1.1"/>
+  <text class="l renvoi" x="0" y="206">Se reporter au Tableau 50.1 pour les onze événements, leur trace et leur tri prospectif.</text>
+  <path d="M 0 212 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="225">UNE DATE DE GEL N'EST PAS UNE DATE DE PÉREMPTION : un chapitre gelé plus tôt n'est pas faux, il est daté. Ce que la carte</text>
+  <text class="l ann" x="0" y="235">montre est l'ordre dans lequel la revalidation devrait s'exercer, non un classement de fiabilité.</text>
+</svg>

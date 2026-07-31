@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 237" width="445" height="237" role="img" aria-label="La chronologie des quatre protocoles agentiques, de novembre 2024 a avril 2026, en lancements puis en passages sous fondation.">
+  <!-- § 7.3, chapitre 7.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="237" fill="#FDFBF9"/>
+  <text class="l titreg" x="0" y="8">LANCEMENTS</text>
+  <rect x="0" y="14" width="210" height="154" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="30">De novembre 2024 à septembre 2025</text>
+  <text class="l ann" x="9" y="46">nov. 2024 — protocole agent-outil : un éditeur, une</text>
+  <text class="l ann" x="9" y="57">spécification, un intendant</text>
+  <text class="l ann" x="9" y="76">mars 2025 — couche d'infrastructure : annuaires et</text>
+  <text class="l ann" x="9" y="87">transport dédié</text>
+  <text class="l ann" x="9" y="106">17 mars 2025 — ACP protocolaire, en pré-alpha</text>
+  <text class="l ann" x="9" y="125">avril 2025 — protocole agent-agent : délégation de pair</text>
+  <text class="l ann" x="9" y="136">à pair</text>
+  <text class="l ann" x="9" y="155">sept. 2025 — protocole de transaction (ch. 10)</text>
+  <text class="l annf" x="0" y="181">l'infrastructure précède l'agent-agent</text>
+  <text class="l titre" x="236" y="8">PASSAGES SOUS FONDATION</text>
+  <rect x="236" y="14" width="210" height="154" fill="#FFFFFF" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l bande" x="245" y="30">De juin 2025 à décembre 2025</text>
+  <text class="l ann" x="245" y="46">juin 2025 — le protocole agent-agent passe à une</text>
+  <text class="l ann" x="245" y="57">fondation neutre</text>
+  <text class="l ann" x="245" y="76">29 juill. 2025 — la couche d'infrastructure suit</text>
+  <text class="l ann" x="245" y="95">29 août 2025 — l'ACP protocolaire fusionne dans</text>
+  <text class="l ann" x="245" y="106">l'agent-agent</text>
+  <text class="l ann" x="245" y="125">déc. 2025 — la gouvernance du protocole agent-outil est</text>
+  <text class="l ann" x="245" y="136">transférée</text>
+  <text class="l annf" x="236" y="181">quatre protocoles, deux fondations, dont l'une héberge</text>
+  <text class="l annf" x="236" y="192">l'autre</text>
+  <path d="M 0 198 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="211">LES DEUX SÉQUENCES SONT INVERSES L'UNE DE L'AUTRE, et c'est le fait le plus instructif de la section : la flèche «</text>
+  <text class="l ann" x="0" y="221">agent-outil → agent-agent → infrastructure » que le plan a longtemps portée est fausse dans les deux lectures. Le cinquième</text>
+  <text class="l ann" x="0" y="231">protocole, celui de transaction, n'est pas de ce décompte.</text>
+</svg>

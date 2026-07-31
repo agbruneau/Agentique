@@ -155,6 +155,8 @@ plutôt qu'elle ne la tranche** : *l'**authentification forte du client** est co
 services de paiement ne tranche pas la délégation à un acteur-machine**.* ⚠ *La borne de juridiction est celle de la source et
 ne se retire pas.*
 
+![**Figure 36.2a** — La stratification de la chaîne de paiement, et l'endroit où l'agentique est admise.](../figures/f-36-02a-stratification-paiement.svg)
+
 ### 36.2.2 Le mandat vérifiable comme exigence issue de l'irréversibilité
 
 ⚠ **Le *mandat vérifiable* n'est pas une commodité de produit mais *une exigence dérivée de
@@ -290,6 +292,8 @@ périmètre du mandat signé ?***, *ce qui est **la condition pour qu'un mécani
 puisse exister**.* **Ce que le socle établit** : le trou et la voie proposée. **Ce qu'il n'établit
 pas** : que cette conversion suffise. ⚠ **Le ch. 29 § 29.3 en porte le versant canadien**, *et il ne le
 referme pas davantage* ; ⚠ **la sémantique d'effet qu'une réconciliation suppose est au ch. 48.**
+
+![**Figure 36.2b** — L'achat non intentionnel : le trou que les cadres de litige existants ne couvrent pas.](../figures/f-36-02b-trou-responsabilite.svg)
 
 ### 36.2.7 L'angle Canada et Québec
 

@@ -162,6 +162,8 @@ fournisseur et consommateur.
 
 ---
 
+![**Figure 9.1** — Les trois moments de la découverte agentique, que le monde des services web réduisait à un seul.](../figures/f-09-01-trois-moments.svg)
+
 ## § 9.2 — La pile de protocoles agentiques et son étagement
 
 ### 9.2.1 Pourquoi une « pile » : du protocole isolé au modèle en couches
@@ -303,6 +305,8 @@ la pile**. Les protocoles marqués émergents appellent **une veille active plut
 architectural irréversible**.
 
 ---
+
+![**Figure 9.2** — La pile protocolaire agentique : quatre strates, dont une seule ne s'empile pas.](../figures/f-09-02-quatre-strates.svg)
 
 ## § 9.3 — Portabilité inter-modèles et inter-cadriciels
 
@@ -671,6 +675,8 @@ part **en entier au ch. 38** — seule affectation de cette matière. Le socle p
 distribué est au ch. 3 § 3.4.5.
 
 ---
+
+![**Figure 9.5** — La pyramide d'évaluation de l'interopérabilité agentique : trois étages, aucun ne subsumant le suivant.](../figures/f-09-05-pyramide-evaluation.svg)
 
 ## § 9.6 — Note de statut *(hors plan — à retirer à la publication)*
 

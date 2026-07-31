@@ -333,6 +333,8 @@ et dans quel domaine » ; l'identité décentralisée répond à « que puis-je 
 domaine ». La question de l'admission inter-domaines, qui est celle du ch. 18, n'est traitée par
 aucune des deux.*
 
+![**Figure 13.4** — Deux familles qui se disputent l'ancrage de l'identité sous le niveau applicatif.](../figures/f-13-04-ancrages.svg)
+
 ## § 13.5 — Le fossé d'adoption : qui vérifie quoi, en production, à date
 
 La thèse du chapitre porte sur une adoption « à démontrer ». L'énoncé qui la soutient est un énoncé
@@ -434,6 +436,8 @@ reconstruit la moitié de l'autre.*
    transposition.
 
 ---
+
+![**Figure 13.5** — Le fossé d'adoption : ce que le corpus documente, et à quel degré d'absence.](../figures/f-13-05-fosse-adoption.svg)
 
 ## § 13.6 — Note de statut *(hors plan — à retirer à la publication)*
 

@@ -191,6 +191,8 @@ l'énoncé qu'aucune relecture ne peut réfuter.*
 > les quatre pièces dont l'autorité est en cause sont assemblées au **ch. 16 § 16.1**. *Le lot s'ouvre
 > sur ces trois sections, nommées, et non sur « les spécifications déjà relevées ».*
 
+![**Figure 41.3** — Registre gouverné et catalogue interne : deux objets, deux autorités.](../figures/f-41-03-registre-catalogue.svg)
+
 ## § 41.4 — La barrière de certification : ce qu'un agent démontre avant d'être admis au maillage
 
 *Adossement au **ch. 37 § 37.5** (le maillage comme point d'application) et au **ch. 47 § 47.9**
@@ -240,6 +242,8 @@ passeport », et ce chapitre ne l'écrit pas.
 > ⚠ **Ces désignations sont des points d'entrée, non des sources** : *aucune n'a été ouverte par ce
 > chapitre.*
 
+![**Figure 41.4** — La barrière de certification : ce qu'un agent démontre avant d'être admis au maillage.](../figures/f-41-04-barriere-certification.svg)
+
 ## § 41.5 — La boucle de réémission : de l'indicateur et de la dérive au gabarit corrigé
 
 *Adossement au **ch. 39 § 39.2** (dérive), au **ch. 39 § 39.4** (versionnement du parc) et au **ch. 40
@@ -274,6 +278,8 @@ documentation, non fait négatif vérifié (degré 3).
 > nommés — **ch. 39 § 39.2** (les trois dérives, dont une non instrumentée), **ch. 39 § 39.4** (GitOps
 > du parc) et **ch. 40 § 40.2** (la grille minimale et sa colonne de manques) ; *ce sont eux que
 > l'instruction doit confronter à une publication d'exploitation, et non « la littérature ».*
+
+![**Figure 41.5** — La boucle de réémission : de l'indicateur et de la dérive au gabarit corrigé.](../figures/f-41-05-boucle-reemission.svg)
 
 ## § 41.6 — La fabrique comme point de concentration : ce qu'elle centralise, ce qu'elle fragilise
 

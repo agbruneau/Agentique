@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 151" width="445" height="151" role="img" aria-label="La chaine de verification d'une carte d'agent signee, et le point ou l'ancrage sort du protocole.">
+  <!-- § 15.1.1 et § 15.1.2, chapitre 15.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="151" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">CE QUE LA VÉRIFICATION ÉTABLIT, ET OÙ ELLE S'ARRÊTE</text>
+  <rect x="0" y="14" width="95" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="31">Carte publiée</text>
+  <text class="l ann" x="9" y="44">à un emplacement bien</text>
+  <text class="l ann" x="9" y="55">connu, conforme à un</text>
+  <text class="l ann" x="9" y="66">mécanisme normalisé</text>
+  <path d="M 97.75 53.0 H 110.75" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 114.75 53.0 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="117" y="14" width="95" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="126" y="31">Signature</text>
+  <text class="l ann" x="126" y="44">apposition MAY,</text>
+  <text class="l ann" x="126" y="55">vérification SHOULD</text>
+  <text class="l ann" x="126" y="66">(F-04, [A])</text>
+  <path d="M 214.75 53.0 H 227.75" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 231.75 53.0 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="234" y="14" width="95" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="243" y="31">Intégrité</text>
+  <text class="l ann" x="243" y="44">d'un contenu</text>
+  <text class="l ann" x="243" y="55">canonicalisé au regard</text>
+  <text class="l ann" x="243" y="66">d'une clé (F-01, F-02,</text>
+  <text class="l ann" x="243" y="77">[A])</text>
+  <path d="M 331.75 53.0 H 347.75" fill="none" stroke="#737373" stroke-width=".9" stroke-dasharray="2.5 2"/>
+  <text class="l annf" x="339.75" y="47.0" text-anchor="middle">✕</text>
+  <rect x="350" y="14" width="95" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="359" y="31">Appartenance</text>
+  <text class="l ann" x="359" y="44">hors protocole :</text>
+  <text class="l ann" x="359" y="55">`kid`, `jku`, ou un</text>
+  <text class="l ann" x="359" y="66">magasin facultatif</text>
+  <text class="l annf" x="0" y="106">La chaîne casse au dernier maillon : l'appartenance de la clé à une organisation n'est pas spécifiée.</text>
+  <path d="M 0 112 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="125">L'ANCRAGE EST RENVOYÉ HORS DU PROTOCOLE. Le magasin de clés de confiance est un dispositif que les clients « MAY maintain » :</text>
+  <text class="l ann" x="0" y="135">le texte n'en définit ni la provenance, ni le format, ni les critères d'inscription (F-09, [B]). Le vérificateur établit</text>
+  <text class="l ann" x="0" y="145">l'intégrité — jamais l'appartenance.</text>
+</svg>

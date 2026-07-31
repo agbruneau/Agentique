@@ -160,6 +160,8 @@ constats ne sont versés à aucune entrée et ne portent aucune affirmation cent
 remonté.* ⚠ **Le relevé n'établit pas non plus qu'aucune désignation ne soit intervenue hors des
 sources ouvertes** — degré 3.
 
+![**Figure 18.1** — Neuf chantiers, six organisations, zéro texte ratifié.](../figures/f-18-01-neuf-chantiers.svg)
+
 ## § 18.2 — Admettre un agent tiers : ce que les protocoles remettent à celui qui décide
 
 *Admettre est un acte, et un acte a un contenu vérifiable ou n'en a pas.* La question de cette section
@@ -235,6 +237,8 @@ inter-domaines — *aucune entrée du socle ne raisonne sur la composition.* **L
 *l'admission d'un agent tiers est intégralement à la charge de celui qui admet, et les mécanismes de
 2026 lui fournissent des pièces sans lui fournir de procédure* — **est une construction d'auteur, et
 elle se refuse sans qu'aucun des faits cités ne tombe.**
+
+![**Figure 18.2** — Admettre un agent tiers : ce que la frontière reçoit, et ce qu'elle doit produire elle-même.](../figures/f-18-02-admettre.svg)
 
 ## § 18.3 — Fédérations de confiance : ce que trois précédents portent d'institutionnel
 

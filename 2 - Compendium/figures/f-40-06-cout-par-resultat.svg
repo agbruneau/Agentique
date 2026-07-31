@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 155" width="445" height="155" role="img" aria-label="Le deplacement de la grandeur economique du cout par jeton vers le cout par resultat metier.">
+  <!-- § 40.6.2, chapitre 40, et ch. 24 § 24.2.5.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="155" fill="#FDFBF9"/>
+  <text class="l titreg" x="0" y="8">COÛT PAR JETON</text>
+  <rect x="0" y="14" width="210" height="83" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="30">Ce que l'infrastructure facture</text>
+  <text class="l ann" x="9" y="46">Immédiatement mesurable</text>
+  <text class="l ann" x="9" y="65">Baisse quand l'agent échoue vite</text>
+  <text class="l ann" x="9" y="84">Ne dit rien de ce qui a été produit</text>
+  <text class="l annf" x="0" y="110">une grandeur de fournisseur</text>
+  <text class="l titre" x="236" y="8">COÛT PAR RÉSULTAT MÉTIER</text>
+  <rect x="236" y="14" width="210" height="83" fill="#FFFFFF" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l bande" x="245" y="30">Ce que l'organisation obtient</text>
+  <text class="l ann" x="245" y="46">Exige de définir le résultat</text>
+  <text class="l ann" x="245" y="65">Intègre les reprises et les échecs</text>
+  <text class="l ann" x="245" y="84">Rend l'effet de plateforme visible</text>
+  <text class="l annf" x="236" y="110">la seule grandeur qui décide</text>
+  <path d="M 0 116 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="129">Le coût par jeton est mesurable et trompeur : il baisse quand l'agent échoue vite. Le coût par résultat est la seule grandeur</text>
+  <text class="l ann" x="0" y="139">qui rende l'effet de plateforme visible — et c'est aussi celle qui exige de savoir ce qu'est un résultat, ce qu'aucun compteur</text>
+  <text class="l ann" x="0" y="149">ne dit.</text>
+</svg>

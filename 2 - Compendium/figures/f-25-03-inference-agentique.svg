@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 126" width="445" height="126" role="img" aria-label="L'inference par laquelle E-23 couvre l'agentique sans la nommer.">
+  <!-- § 25.3, chapitre 25.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="126" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">TROIS MEMBRES, ET UN SEUL EST UNE LECTURE</text>
+  <rect x="0" y="14" width="134" height="67" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="31">Le texte</text>
+  <text class="l ann" x="9" y="44">E-23 ne nomme ni l'agentique, ni</text>
+  <text class="l ann" x="9" y="55">les agents</text>
+  <path d="M 136.66666666666666 47.5 H 149.66666666666666" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 153.66666666666666 47.5 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="156" y="14" width="134" height="67" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="165" y="31">La définition</text>
+  <text class="l ann" x="165" y="44">sa définition de « modèle »</text>
+  <text class="l ann" x="165" y="55">englobe les méthodes d'IA et</text>
+  <text class="l ann" x="165" y="66">d'apprentissage automatique</text>
+  <path d="M 292.66666666666663 47.5 H 305.66666666666663" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 309.66666666666663 47.5 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="311" y="14" width="134" height="67" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="320" y="31">La lecture</text>
+  <text class="l ann" x="320" y="44">d'où une couverture implicite,</text>
+  <text class="l ann" x="320" y="55">que les analystes juridiques</text>
+  <text class="l ann" x="320" y="66">canadiens tiennent pour acquise</text>
+  <path d="M 0 87 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="100">CHAQUE MEMBRE PORTE DU POIDS, et le dernier n'est pas du même ordre que les deux premiers : que la couverture soit « tenue</text>
+  <text class="l ann" x="0" y="110">pour acquise » par des analystes n'est pas qu'elle soit établie par le texte. La formulation est imposée par la méthode, et</text>
+  <text class="l ann" x="0" y="120">rendue dans sa substance.</text>
+</svg>

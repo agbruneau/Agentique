@@ -188,6 +188,8 @@ son réexamen relève du PRD §7.1, non d'une pièce.
 différentes ; chez un même fournisseur, la même date du 22 avril 2026 en porte deux, et les citer
 ensemble est la seule façon de ne pas lire la préversion pour la disponibilité générale.*
 
+![**Figure 12.1** — Cinq moments documentés, de 2012 à 2026 : l'hypothèse humaine quitte les définitions.](../figures/f-12-01-genealogie.svg)
+
 ## § 12.2 — L'écart de gouvernance des identités non humaines
 
 **Ce que cette section ne chiffrera pas, et pourquoi elle le dit d'entrée.** Le plan annonce pour ce
@@ -371,6 +373,8 @@ plutôt qu'atomique**.
 affirmations. **Aucun énoncé de ce paragraphe n'est central**, et l'élévation en [B] supposerait la
 lecture de la source primaire que le Vol. I cite. *Ce que cet apport fait ici est de nommer la
 question ; ce n'est pas de la trancher.*
+
+![**Figure 12.4** — L'agent dans OAuth : client ou détenteur de ressource ? Les deux placements, et ce que chacun engage.](../figures/f-12-04-client-ou-detenteur.svg)
 
 ## § 12.5 — Les brouillons de l'IETF : quatre statuts, et ce que leurs dates disent ou ne disent pas
 

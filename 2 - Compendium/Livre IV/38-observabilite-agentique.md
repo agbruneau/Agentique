@@ -306,6 +306,8 @@ le Vol. I documente le fonctionnement sans documenter son contenu sémantique.* 
 est que **la propagation résout la continuité et non l'imputation** : *une trace recollée de bout en bout établit
 qu'un même fil d'exécution a traversé n sauts, jamais sous quelle autorité il les a traversés.*
 
+![**Figure 38.3** — La propagation de trace à travers les frontières d'agents, et l'endroit où le contexte se perd.](../figures/f-38-03-propagation-trace.svg)
+
 ## § 38.4 — La journalisation probatoire : quand la trace devient pièce de conformité
 
 **Une trace d'exécution est produite pour diagnostiquer. Une pièce de conformité est produite pour
@@ -552,6 +554,8 @@ outil nommé** — *deux produits sont cités, deux régimes d'absence sont déc
 recommandé.*
 
 ---
+
+![**Figure 38.5** — L'identité comme clé de jointure entre la trace et le passeport.](../figures/f-38-05-trace-passeport.svg)
 
 ## § 38.6 — Note de statut *(hors plan — à retirer à la publication)*
 

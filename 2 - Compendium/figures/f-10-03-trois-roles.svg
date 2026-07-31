@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 127" width="445" height="127" role="img" aria-label="Les trois roles du commerce agentique : mandant humain, agent executant, commercant.">
+  <!-- Tableau 10.1, § 10.3.1, chapitre 10.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="127" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">TROIS RÔLES, ET CE QUE CHACUN PERD</text>
+  <rect x="0" y="14" width="138" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="32">1</text>
+  <text class="l bande" x="21" y="32">Mandant humain</text>
+  <text class="l ann" x="10" y="47">Détient l'intention et l'autorité</text>
+  <text class="l ann" x="10" y="58">de payer.</text>
+  <text class="l renvoi" x="10" y="72">n'a plus la présence à l'écran au</text>
+  <text class="l renvoi" x="10" y="82">moment de l'achat</text>
+  <rect x="153" y="14" width="138" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="163" y="32">2</text>
+  <text class="l bande" x="174" y="32">Agent exécutant</text>
+  <text class="l ann" x="163" y="47">Détient la délégation et</text>
+  <text class="l ann" x="163" y="58">l'opération de la transaction.</text>
+  <text class="l renvoi" x="163" y="72">n'a aucun signal perceptuel prouvant</text>
+  <text class="l renvoi" x="163" y="82">qu'un humain agit</text>
+  <rect x="307" y="14" width="138" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="317" y="32">3</text>
+  <text class="l bande" x="328" y="32">Commerçant</text>
+  <text class="l ann" x="317" y="47">Détient la livraison du bien ou du</text>
+  <text class="l ann" x="317" y="58">service.</text>
+  <text class="l renvoi" x="317" y="72">n'a plus la capacité d'observer un</text>
+  <text class="l renvoi" x="317" y="82">parcours humain</text>
+  <path d="M 0 98 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="111">Ce que la dissociation fait disparaître est le SIGNAL, pas le droit : le commerçant perd la capacité d'observer un parcours</text>
+  <text class="l ann" x="0" y="121">humain, sans perdre l'obligation de savoir à qui il vend.</text>
+</svg>

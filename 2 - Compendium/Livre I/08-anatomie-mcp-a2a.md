@@ -303,6 +303,8 @@ le socle n'en recense aucune, ce qui n'établit pas qu'il n'en existe pas. Le ch
 
 ---
 
+![**Figure 8.2** — Cinq jalons du protocole agent-outil en moins de deux ans, et ce que chacun ajoute au contrat.](../figures/f-08-02-cinq-jalons.svg)
+
 ## § 8.3 — Conformité, registre, dépréciation et gouvernance
 
 ### 8.3.1 Du projet d'éditeur à la fondation : l'appareil de gouvernance
@@ -467,6 +469,8 @@ peut pas produire l'état d'un traitement qu'il a délégué en bloc à un agent
 pas cette tension ; elle est proposée comme lecture, et le ch. 29 l'instruit.
 
 ---
+
+![**Figure 8.4** — L'auto-description et l'unité de travail de l'axe horizontal : la carte, la tâche, le message.](../figures/f-08-04-agent-card-tache.svg)
 
 ## § 8.5 — L'ACP protocolaire, l'alternative décentralisée et l'état de la standardisation
 
@@ -670,6 +674,8 @@ couches plutôt que par les axes**, que le ch. 10 § 10.2 examine. Que ces déco
 commodes ou datés est défendable ; **qu'ils n'existent pas ne l'est pas.**
 
 ---
+
+![**Figure 8.6** — « Dans les agents, entre les agents » : la répartition déclarée des deux axes.](../figures/f-08-06-dans-entre.svg)
 
 ## § 8.7 — Les intégrations infonuagiques : lire le statut, pas la présence
 

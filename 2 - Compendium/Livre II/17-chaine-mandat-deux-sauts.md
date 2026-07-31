@@ -213,6 +213,8 @@ aucune date d'aboutissement. **Son contenu n'a pas été extrait** — consigné
 non retenu », sans affirmation ni citation. *Rien n'est écrit ici de ce que ce document prescrit ou
 omet.*
 
+![**Figure 17.2** — Trois mécanismes, et le rang que chacun accorde à la chaîne de délégation.](../figures/f-17-02-rang-de-la-chaine.svg)
+
 ## § 17.3 — Ce que le droit civil du mandat éclaire — et où l'analogie casse
 
 ⚠ **Le titre de cette section annonce une confrontation que le socle ne permet pas de conduire, et il
@@ -470,6 +472,8 @@ produit pas à un rang numéroté, mais **au premier changement de régime** —
 cesse d'être celui qui a ancré le mandat, ou cesse d'appartenir au domaine où le contexte se propage.
 Sous cette lecture, « deux sauts » nomme le premier cas de figure où ce changement devient inévitable,
 non un seuil mesuré.*
+
+![**Figure 17.6** — Le problème des deux sauts : où chaque mécanisme perd le fil.](../figures/f-17-06-deux-sauts.svg)
 
 ### 17.6.2 Trois pistes, et ce que le socle établit de chacune
 

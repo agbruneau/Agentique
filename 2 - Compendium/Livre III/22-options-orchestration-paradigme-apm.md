@@ -166,6 +166,8 @@ ce cadre, que quatre réponses. **Ce que le socle établit** : la taxonomie et s
 qu'il n'établit pas** : qu'elle suffise à classer tout système réel sans ambiguïté — et la somme ne le
 prétend pas.
 
+![**Figure 22.1** — Les quatre options d'orchestration, lues par les deux axes qui les ordonnent.](../figures/f-22-01-options-orchestration.svg)
+
 ## § 22.2 — Les cinq propriétés d'évaluation
 
 Une taxonomie qui ne se paie pas ne sert à rien. Le cadre associe donc aux quatre options cinq
@@ -494,6 +496,8 @@ Ni l'un ni l'autre n'est reconstruit ici. *Cette mention ne diminue en rien la v
 conceptuel du manifeste : elle rappelle qu'un texte de recherche fixe l'état d'un domaine à la date de
 sa rédaction, et que ce domaine-ci se périme par trimestres.*
 
+![**Figure 22.6** — Encadrer plutôt que superviser : la ligne de partage entre autonomie et automatisation.](../figures/f-22-06-ligne-de-partage.svg)
+
 ## § 22.7 — Frames normatifs, frames opérationnels, trois scénarios
 
 Le mécanisme que le manifeste érige en gouvernance première porte le nom qui donne son titre au Vol. II
@@ -762,6 +766,8 @@ lacune déclarée. Et il ne lègue **aucun produit** : le ch. 23 montrera qu'auc
 l'architecte.
 
 ---
+
+![**Figure 22.10** — L'écart de responsabilité : quatre parties, et personne qui ait décidé.](../figures/f-22-10-ecart-responsabilite.svg)
 
 ## § 22.11 — Note de statut *(hors plan — à retirer à la publication)*
 

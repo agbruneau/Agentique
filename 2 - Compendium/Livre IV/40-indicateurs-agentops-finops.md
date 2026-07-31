@@ -261,6 +261,8 @@ l'auditeur porte sur l'inventaire, non sur la panne**.
 
 : Tableau 40.2 — Grille minimale d'indicateurs de l'AgentOps — **construction d'auteur en totalité**, au 21 juillet 2026. ⚠ **Aucune valeur, aucun seuil, aucun barème : la colonne de droite est le résultat.**
 
+![**Figure 40.2** — La grille minimale d'indicateurs, et ce qui manque pour que chacun se calcule.](../figures/f-40-02-grille-minimale.svg)
+
 ### 40.2.3 Trois règles d'emploi, et c'est la seule chose que la grille prescrit
 
 *Un* : **aucune grandeur ne s'écrit en taux tant que son dénominateur n'est pas établi** — elle
@@ -479,6 +481,8 @@ jetons** qu'un agent unique, ⚠ **métrique auto-déclarée d'Anthropic (Hadfie
 d'usage illustratif.* ⚠ **Le Vol. I porte la même mesure à deux de ses sections sous deux formes de
 référence** — §2.11.1 et §4.9.4 —, *qui désignent le même document ; le fait est signalé, non
 arbitré.*
+
+![**Figure 40.6** — Du coût par jeton au coût par résultat métier.](../figures/f-40-06-cout-par-resultat.svg)
 
 ### 40.6.3 Pré-production gouvernée
 

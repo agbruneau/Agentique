@@ -258,6 +258,8 @@ Ces familles forment la trame que le mouvement spécifie axe par axe, en remonta
 
 ---
 
+![**Figure 7.2** — Les quatre axes de l'interopérabilité agentique et le lieu de traitement de chacun.](../figures/f-07-02-quatre-axes.svg)
+
 ## § 7.3 — Chronologie 2024-2026 : dix-sept mois de consolidation
 
 Une institution financière ne bâtit pas son architecture sur le produit d'un seul éditeur sans se
@@ -323,6 +325,8 @@ de gel du Vol. II, une **révision majeure du protocole agent-outil était atten
 tard**. Le ch. 8 porte cette réserve comme condition de lecture de son anatomie.
 
 ---
+
+![**Figure 7.3** — Dix-sept mois : les lancements, puis les passages sous fondation — et l'ordre s'inverse.](../figures/f-07-03-chronologie.svg)
 
 ## § 7.4 — Gouvernance comparée : ce que « neutre » veut dire
 
@@ -457,6 +461,8 @@ comblée — et la combler par une analyse tierce serait précisément la faute 
 proscrit : *aucune lacune déclarée ne se comble par une source de moindre qualité*.
 
 ---
+
+![**Figure 7.5** — Les quatre branches de la collision « ACP » / « (agentic) control plane », et le statut de chacune.](../figures/f-07-05-collision-acp.svg)
 
 ## § 7.6 — Lecture critique des métriques d'adoption : « soutien » n'est pas « production »
 

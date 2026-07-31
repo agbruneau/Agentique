@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 145" width="445" height="145" role="img" aria-label="La meme attaque lue comme un probleme d'identite au ch. 20 et comme un defaut de provenance ici.">
+  <!-- § 47.4, chapitre 47, et ch. 20 § 20.1.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="145" fill="#FDFBF9"/>
+  <text class="l titreg" x="0" y="8">LU AU CH. 20 — IDENTITÉ</text>
+  <rect x="0" y="14" width="210" height="83" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="30">La particularité est le moment</text>
+  <text class="l ann" x="9" y="46">L'admission a réussi</text>
+  <text class="l ann" x="9" y="65">Le verdict n'est pas borné dans le temps</text>
+  <text class="l ann" x="9" y="84">L'objet vérifié change ensuite</text>
+  <text class="l annf" x="0" y="110">un problème de fraîcheur du verdict</text>
+  <text class="l titre" x="236" y="8">LU ICI — PROVENANCE</text>
+  <rect x="236" y="14" width="210" height="83" fill="#FFFFFF" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l bande" x="245" y="30">La particularité est l'artefact</text>
+  <text class="l ann" x="245" y="46">Le composant n'a pas de provenance attestée</text>
+  <text class="l ann" x="245" y="65">Rien ne lie ce qui s'exécute à ce qui a été admis</text>
+  <text class="l ann" x="245" y="84">La nomenclature ne voit pas tout (§ 47.7)</text>
+  <text class="l annf" x="236" y="110">un problème de composition attestée</text>
+  <path d="M 0 116 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="129">Les deux lectures ne se remplacent pas : l'une explique POURQUOI le verdict d'admission vieillit, l'autre POURQUOI l'artefact a</text>
+  <text class="l ann" x="0" y="139">pu changer sans que rien ne l'atteste. Corriger l'une sans l'autre laisse l'attaque ouverte.</text>
+</svg>

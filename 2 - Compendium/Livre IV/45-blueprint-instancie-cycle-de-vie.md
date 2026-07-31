@@ -167,6 +167,8 @@ datés, non comme des jugements.** *Le pivot est **clôturé** — la trajectoir
 négatif vérifié (degré 3). *Une trajectoire de produit annoncée n'est pas une capacité livrée, et le
 chapitre ne comble pas l'écart.*
 
+![**Figure 45.2** — La vue en couches C1-C8 du blueprint, avec ses statuts datés.](../figures/f-45-02-vue-c1-c8.svg)
+
 ## § 45.3 — La neutralité fournisseur en pratique
 
 ⚠ **Cette section n'est pas une précaution rhétorique : c'est le rendu de compte d'une règle
@@ -462,6 +464,8 @@ s'ancrent pas ; mourir sans chaînage produit **un retrait dont on ne peut pas �
 propagation**.* ⚠ **Le geste intermédiaire — retirer un mandat précis et constater sa propagation —
 n'est documenté par aucune entrée** (siège **ch. 39 § 39.3**).
 
+![**Figure 45.8** — Naissance, vie et mort d'un agent d'entreprise.](../figures/f-45-08-naissance-vie-mort.svg)
+
 ## § 45.11 — Flux 1 — la décision de crédit assistée par agents : le processus commande
 
 **Le premier flux instancie le principe directeur sur l'un des cas d'usage agentiques canadiens les
@@ -493,6 +497,8 @@ l'article 12.1*** — le Vol. II écrit que **« le blueprint ne doit pas préte
 réviser la décision** ; un point d'arrêt technique n'établit ni cette qualité, ni cette mise en
 mesure.*
 
+![**Figure 45.11** — Flux 1 — la décision de crédit assistée par agents : le processus commande.](../figures/f-45-11-flux-credit.svg)
+
 ## § 45.12 — Flux 2 — le paiement normalisé vers le rail de grande valeur : l'agent observe, le rail exécute
 
 **Le deuxième flux est l'inverse du premier, et c'est pour cela qu'il figure ici.**
@@ -515,6 +521,8 @@ conclusion est donc structurelle : l'agent observe, le rail exécute.**
 qui observe sans commander n'est pas au même endroit de l'échelle qu'un agent invoqué par un
 enchaînement* — **mais le socle ne porte toujours aucun positionnement**, et *cette lecture-ci est
 d'auteur comme les autres.*
+
+![**Figure 45.12** — Flux 2 — le paiement normalisé vers le rail de grande valeur : l'agent observe, le rail exécute.](../figures/f-45-12-flux-paiement.svg)
 
 ## § 45.13 — Flux 3 — l'accès au cadre bancaire : concevoir contre une norme qui n'existe pas encore
 
@@ -583,6 +591,8 @@ factuel* : **il montre que les cinq points de contrôle obligatoires du ch. 43 �
 lieu dans un modèle**, *ce qui est une propriété du formalisme et non une propriété du système
 modélisé.* ⚠ **La variante en sinistres ne change ni les patrons ni les points de contrôle** — *et
 c'est ce qu'elle est censée montrer.*
+
+![**Figure 45.14** — L'exemple de bout en bout : la souscription vie augmentée, et sa variante en sinistres.](../figures/f-45-14-souscription-vie.svg)
 
 ## § 45.15 — Confrontation : ce que l'épreuve vaut, et ce qu'elle ne vaut pas
 

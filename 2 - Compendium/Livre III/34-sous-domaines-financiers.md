@@ -77,6 +77,8 @@ désigne trois objets distincts.*
 **projection d'analyste attribuée à McKinsey (2025)** — explique la pression d'adoption.* ⚠ ***Mais la pression économique ne dispense
 pas du tri par criticité***, qui reste le préalable à toute conception.
 
+![**Figure 34.1** — Le tri par régime d'usage : productivité assistée ou autonomie transactionnelle.](../figures/f-34-01-regimes-usage.svg)
+
 ### 34.1.2 Front conversationnel et le revirement humain-dans-la-boucle
 
 **Le front conversationnel illustre la domination du régime de productivité assistée et les limites de
@@ -251,6 +253,8 @@ industrialise l'évaluation de dommages « sans contact ».* ⚠ **Un règlement
 Solutions constitue un signal de concentration et de risque de verrouillage fournisseur** — *à
 surveiller du point de vue de la résilience opérationnelle* (**ch. 30 § 30.2.2**).
 
+![**Figure 34.2** — La chaîne du sinistre : un coordinateur de spécialistes, non un décideur unique.](../figures/f-34-02-chaine-sinistre.svg)
+
 ### 34.2.4 Souscription, tarification, distribution et télématique
 
 **En amont du sinistre, la souscription suit un patron d'enchaînement** : *réception → enrichissement →
@@ -356,6 +360,8 @@ comme des bonds d'intelligence artificielle pour ce sous-domaine — **auto-déc
 annonce / préversion / disponibilité générale à reconfirmer**.* ⚠ *Le cabinet **McKinsey** relève que la modernisation
 des technologies de cœur par l'agentique reste, à juin 2026, **largement en projet plutôt qu'en
 production** — **estimation d'analyste**.*
+
+![**Figure 34.3** — La souscription vie accélérée : la chaîne d'orchestration où la contrainte réglementaire est la plus directe.](../figures/f-34-03-souscription-vie.svg)
 
 ### 34.3.2 La donnée de santé comme contexte d'agent
 

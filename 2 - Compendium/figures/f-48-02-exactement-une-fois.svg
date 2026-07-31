@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 105" width="445" height="105" role="img" aria-label="La composition d'une livraison au-moins-une-fois et d'un consommateur idempotent.">
+  <!-- § 48.2, chapitre 48, sur le siège du ch. 1 § 1.5.2.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="105" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">CE QUI SE COMPOSE, ET CE QUI EN RÉSULTE</text>
+  <rect x="0" y="14" width="134" height="56" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="31">Au moins une fois</text>
+  <text class="l ann" x="9" y="44">la livraison ne perd rien, et</text>
+  <text class="l ann" x="9" y="55">peut répéter</text>
+  <path d="M 136.66666666666666 42.0 H 149.66666666666666" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 153.66666666666666 42.0 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="156" y="14" width="134" height="56" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="165" y="31">Consommateur idempotent</text>
+  <text class="l ann" x="165" y="44">la répétition ne produit pas de</text>
+  <text class="l ann" x="165" y="55">second effet</text>
+  <path d="M 292.66666666666663 42.0 H 305.66666666666663" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 309.66666666666663 42.0 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="311" y="14" width="134" height="56" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="320" y="31">Exactement une fois</text>
+  <text class="l ann" x="320" y="44">un traitement, non une livraison</text>
+  <path d="M 0 76 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="89">La livraison exactement-une-fois est IRRÉALISABLE sous pannes — instance du problème des deux généraux (ch. 1 § 1.5.2). Ce</text>
+  <text class="l ann" x="0" y="99">qui s'obtient est un TRAITEMENT exactement-une-fois, et il se paie du côté du consommateur, jamais du protocole.</text>
+</svg>

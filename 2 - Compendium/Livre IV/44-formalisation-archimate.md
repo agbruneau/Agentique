@@ -103,6 +103,8 @@ conditionnent la défendabilité de chacun** : **Serving** — *un élément en 
 — *une structure active porte un comportement ou une responsabilité* ; **Access** — *un comportement
 lit ou écrit une structure passive*.
 
+![**Figure 44.0** — Le cadre ArchiMate : trois domaines, trois aspects, et où les concepts agentiques se posent.](../figures/f-44-00-cadre-archimate.svg)
+
 ### 44.0.4 Convention de version — et le préalable qui n'a pas été tenu
 
 ⚠ **C'est le point le plus important de cette section, et il conditionne le § 44.1.9.** Le plan
@@ -322,6 +324,8 @@ boîte opaque où aucun contrôle n'a de point d'ancrage.***
 dérive, la mémoire continûment réécrite par des modèles auxiliaires, y est portée comme **relève à
 instruire**, non comme fait.* **Le patron modélise ce que la relève interroge** — *ce qui est
 exactement le rôle d'un formalisme, et exactement sa limite.*
+
+![**Figure 44.1** — Les huit patrons de modélisation, et les éléments ArchiMate que chacun spécialise.](../figures/f-44-01-huit-patrons.svg)
 
 ### 44.1.9 Le registre des stéréotypes du blueprint
 
@@ -548,6 +552,8 @@ d'être retenus parce qu'un chapitre aval les commettrait sans s'en apercevoir.*
 | **Re-expliquer les chapitres amont dans une vue** | de la prose protocolaire ou réglementaire **à la place** d'éléments et de relations | ⚠ **renvoyer**, et porter l'information variable **en carte thermique d'attribut** plutôt qu'en texte — *c'est le garde-fou de non-redondance appliqué à la vue* |
 
 : Tableau 44.2 — Les neuf anti-patrons et leurs corrections. ⚠ **Le dernier est celui que ce chapitre risque à chaque paragraphe**, *puisqu'il suit quarante-trois chapitres au lieu de cinq.*
+
+![**Figure 44.8** — Les neuf anti-patrons, et le dernier — celui que le chapitre risque de commettre.](../figures/f-44-08-anti-patrons.svg)
 
 ## § 44.9 — Questions ouvertes : le formalisme face aux systèmes autonomes
 

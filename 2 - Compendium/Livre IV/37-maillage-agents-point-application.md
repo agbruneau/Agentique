@@ -392,6 +392,8 @@ question « ce mécanisme est-il sûr ? » cesse d'être bien formée ; elle dev
 arête, et qu'en reste-t-il de démontrable ? »**. C'est exactement l'objet de la grille du ch. 14, et
 c'est pourquoi le § 37.4 l'applique plutôt que de conclure par un jugement.
 
+![**Figure 37.3** — La non-compositionnalité de la sûreté : deux arêtes sûres, un chemin qui ne l'est pas.](../figures/f-37-03-non-compositionnalite.svg)
+
 ## § 37.4 — La grille du ch. 14 appliquée au maillage : ce qu'il vérifie, ce qu'il transporte, ce qu'il ignore
 
 **Trois règles d'emploi commandent ce qui suit, et elles sont reprises du ch. 14 sans être
@@ -573,6 +575,8 @@ ne peut pas énumérer les arêtes qu'il ne médiatise pas ne fournit pas d'oppo
 opposabilité partielle dont le complément est inconnu.* Elle se réfute par la production d'un relevé
 de couverture, et **le socle n'en porte aucun**.
 
+![**Figure 37.5** — Où se prend la décision d'autorisation, et où elle s'applique.](../figures/f-37-05-pep-pdp.svg)
+
 ## § 37.6 — Garde-fous d'exécution au grain de l'arête
 
 ⚠ **Partage déclaré avec le ch. 6, et il est déclaré aux deux bouts.** Le ch. 6 § 6.5 **pose** les
@@ -700,6 +704,8 @@ A2A peut ne comporter **aucune signature apposée ni aucune vérification effect
 confiance (F-04, **[A]**). *Une posture qui refuse la confiance héritée de la topologie doit donc
 fournir elle-même, à chaque arête, ce que le protocole rend facultatif.*
 
+![**Figure 37.7** — Zero trust transposé : de « jamais confiance au réseau » à « jamais confiance au graphe ».](../figures/f-37-07-zero-trust-graphe.svg)
+
 ## § 37.8 — Le maillage et la chaîne de mandat protocolaire
 
 Le **ch. 17** a localisé la frontière : elle ne passe pas à un rang numéroté de sauts, mais **au
@@ -801,6 +807,8 @@ se font mutuellement confiance vers **un point unique où l'insuffisance devient
 journalisable**. *Déplacer un défaut là où on le voit n'est pas le corriger ; c'est la condition pour
 pouvoir en rendre compte* — et c'est aussi ce qui fait du même point une vulnérabilité, objet de la
 section suivante.
+
+![**Figure 37.8** — Ce que le maillage voit de la chaîne de mandat, et ce qu'il ne peut pas suppléer.](../figures/f-37-08-ce-qu-il-voit.svg)
 
 ## § 37.9 — Coûts, latence, complexité, point de défaillance : les conditions qui renverseraient ce chapitre
 

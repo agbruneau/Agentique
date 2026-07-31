@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 139" width="445" height="139" role="img" aria-label="Les neuf anti-patrons de modelisation agentique et leurs corrections.">
+  <!-- Tableau 44.2, § 44.8, chapitre 44.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="139" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">NEUF ANTI-PATRONS, ET UNE CORRECTION CHACUN</text>
+  <rect x="0" y="14" width="138" height="90" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="32">1-3</text>
+  <text class="l bande" x="33" y="32">Sur la notation</text>
+  <text class="l ann" x="10" y="47">Confondre un agent avec un</text>
+  <text class="l ann" x="10" y="58">composant, un outil avec un</text>
+  <text class="l ann" x="10" y="69">service, une collaboration avec un</text>
+  <text class="l ann" x="10" y="80">flux.</text>
+  <text class="l renvoi" x="10" y="94">corrections au Tableau 44.2</text>
+  <rect x="153" y="14" width="138" height="90" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="163" y="32">4-6</text>
+  <text class="l bande" x="186" y="32">Sur la gouvernance</text>
+  <text class="l ann" x="163" y="47">Modéliser l'autonomie sans son</text>
+  <text class="l ann" x="163" y="58">point d'arrêt, l'identité sans son</text>
+  <text class="l ann" x="163" y="69">ancrage, la trace sans son</text>
+  <text class="l ann" x="163" y="80">producteur.</text>
+  <text class="l renvoi" x="163" y="94">corrections au Tableau 44.2</text>
+  <rect x="307" y="14" width="138" height="90" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="317" y="32">7-9</text>
+  <text class="l bande" x="340" y="32">Sur la portée</text>
+  <text class="l ann" x="317" y="47">Étendre le formalisme au-delà de</text>
+  <text class="l ann" x="317" y="58">ce qu'il sait dire — dont le</text>
+  <text class="l ann" x="317" y="69">dernier, que ce chapitre risque de</text>
+  <text class="l ann" x="317" y="80">commettre.</text>
+  <text class="l renvoi" x="317" y="94">§ 44.9</text>
+  <path d="M 0 110 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="123">LE DERNIER EST CELUI QUE CE CHAPITRE RISQUE DE COMMETTRE — modéliser pour modéliser, et produire un blueprint que personne</text>
+  <text class="l ann" x="0" y="133">n'instancie. Le tableau source porte les neuf et leur correction ; la figure n'en donne que la structure.</text>
+</svg>

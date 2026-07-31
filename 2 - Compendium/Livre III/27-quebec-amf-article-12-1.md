@@ -226,6 +226,8 @@ instruments, l'article 12.1 énonce une obligation nommée, que la personne conc
 et dont l'objet est précisément le point où l'autonomie de la machine s'arrête.* **C'est en ce sens, et
 en ce sens seulement, que la thèse parle du cadre « le plus explicite ».**
 
+![**Figure 27.2** — L'articulation de l'article 12.1 : une obligation inconditionnelle, trois informations dues sur demande, un alinéa distinct.](../figures/f-27-02-article-12-1.svg)
+
 ## § 27.3 — Le critère « exclusivement » et l'humain-dans-la-boucle
 
 **Tout, désormais, se joue sur un adverbe.**
@@ -288,6 +290,8 @@ décide si les deux régimes de ce mouvement se cumulent sur une même chaîne d
 sur la somme pour ces trois points ; elle doit lire la ligne directrice finale à la source et faire
 qualifier tant le critère d'exclusivité que son propre assujettissement par un conseil juridique.*
 **La somme n'émet aucun avis juridique.**
+
+![**Figure 27.3** — Le critère « exclusivement » : l'adverbe sur lequel tout se joue.](../figures/f-27-03-exclusivement.svg)
 
 ## § 27.4 — L'article 12.1 et la décision automatisée multi-agents : état des positions
 

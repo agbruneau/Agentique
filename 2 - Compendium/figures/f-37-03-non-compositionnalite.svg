@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 108" width="445" height="108" role="img" aria-label="Un contre-exemple montrant que deux arretes individuellement sures ne composent pas un chemin sur.">
+  <!-- § 37.3, chapitre 37.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="108" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">CHAQUE ARÊTE EST AUTORISÉE — LE CHEMIN NE L'EST PAS</text>
+  <rect x="0" y="14" width="134" height="45" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="31">Agent A</text>
+  <text class="l ann" x="9" y="44">autorisé à demander à B</text>
+  <path d="M 136.66666666666666 36.5 H 149.66666666666666" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 153.66666666666666 36.5 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="156" y="14" width="134" height="45" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="165" y="31">Agent B</text>
+  <text class="l ann" x="165" y="44">autorisé à demander à C</text>
+  <path d="M 292.66666666666663 36.5 H 305.66666666666663" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 309.66666666666663 36.5 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="311" y="14" width="134" height="45" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="320" y="31">Agent C</text>
+  <text class="l ann" x="320" y="44">détient l'accès sensible</text>
+  <text class="l annf" x="0" y="73">Aucune arête n'est en faute ; c'est leur composition qui l'est, et aucune ne la voit.</text>
+  <path d="M 0 79 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="92">C'est ce que le maillage NE PEUT PAS corriger par l'arête : une politique vérifiée à chaque saut ne dit rien du chemin complet.</text>
+  <text class="l ann" x="0" y="102">Le même constat porte la composabilité du ch. 11 § 11.1.1 et le détournement multi-agents du ch. 19 § 19.4.</text>
+</svg>

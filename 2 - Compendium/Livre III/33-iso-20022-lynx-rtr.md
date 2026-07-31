@@ -207,6 +207,8 @@ documentation, degré 3.* ⚠ **Neutralité fournisseur** : *aucun partenaire n'
 le rôle industriel, là où il est rapporté, l'est comme **fait de contexte**, avec les mêmes réserves
 qu'au § 33.1 — **montants non publics, aucun argument de conformité**.*
 
+![**Figure 33.2** — La chronologie du rail de paiement en temps réel, telle que l'exploitant la communique.](../figures/f-33-02-chronologie-rtr.svg)
+
 ## § 33.3 — By-law no 10 : l'instrument juridique précède le rail
 
 **Le règlement administratif du rail — le *By-law No. 10* de Paiements Canada — a été publié dans la

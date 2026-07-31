@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 156" width="445" height="156" role="img" aria-label="La distinction entre productivite assistee et autonomie transactionnelle dans le bancaire.">
+  <!-- § 34.1.1, chapitre 34 — le critère est posé au ch. 31 § 31.1.3.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="156" fill="#FDFBF9"/>
+  <text class="l titreg" x="0" y="8">PRODUCTIVITÉ ASSISTÉE</text>
+  <rect x="0" y="14" width="210" height="94" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="30">Un copilote rédige, résume, prépare</text>
+  <text class="l ann" x="9" y="46">Aucune transaction irréversible n'est exécutée sans</text>
+  <text class="l ann" x="9" y="57">intervention humaine</text>
+  <text class="l ann" x="9" y="76">Le seuil du ch. 31 § 31.1.1 n'est pas franchi</text>
+  <text class="l ann" x="9" y="95">La quasi-totalité des déploiements observés</text>
+  <text class="l annf" x="0" y="121">le régime dominant, 2024-2026</text>
+  <text class="l titre" x="236" y="8">AUTONOMIE TRANSACTIONNELLE</text>
+  <rect x="236" y="14" width="210" height="94" fill="#FFFFFF" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l bande" x="245" y="30">L'agent initie une action à effet financier irrévocable</text>
+  <text class="l ann" x="245" y="46">Le seuil de finalité est franchi par l'agent</text>
+  <text class="l ann" x="245" y="65">Le régime réglementaire change avec lui</text>
+  <text class="l ann" x="245" y="84">Rare, et rarement ce que le discours désigne</text>
+  <text class="l annf" x="236" y="121">le régime que le vertical durcit</text>
+  <path d="M 0 127 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="140">LA QUASI-TOTALITÉ DES DÉPLOIEMENTS OBSERVÉS EN 2024-2026 RELÈVENT DU PREMIER RÉGIME. Présenter un copilote comme une</text>
+  <text class="l ann" x="0" y="150">autonomie transactionnelle est la confusion que le discours commercial entretient, et que ce tri existe pour défaire.</text>
+</svg>

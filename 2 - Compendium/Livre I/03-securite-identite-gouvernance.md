@@ -256,6 +256,8 @@ présent chapitre pose ce qu'elle **était** — et l'écart entre les deux est 
 
 ---
 
+![**Figure 3.2** — SAML, OAuth 2.x et OpenID Connect : trois protocoles, et ce que chacun établit.](../figures/f-03-02-saml-oauth-oidc.svg)
+
 ## § 3.3 — Zero-trust, identité de charge de travail et confiance décentralisée
 
 > **Socle pré-agentique, posé ici une seule fois.** Les ch. 37 (zero-trust au grain de
@@ -376,6 +378,8 @@ proposée comme telle, et le ch. 21 l'instruit sous le nom de **dette de migrati
 > évite de figer prématurément des formats appelés à changer.
 
 ---
+
+![**Figure 3.3** — Du périmètre réseau au zero-trust : ce que la confiance cesse de dériver de la localisation.](../figures/f-03-03-zero-trust.svg)
 
 ## § 3.4 — Gouvernance, test et observabilité de l'interopérabilité
 

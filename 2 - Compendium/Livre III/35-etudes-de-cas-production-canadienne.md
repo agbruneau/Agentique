@@ -124,6 +124,8 @@ pas, c'est une causalité entre elles** — *ni imitation concurrentielle, ni ma
 commune, ni anticipation réglementaire coordonnée.* ⚠ ***La densité de la séquence de 2026 est un fait ;
 son explication n'en est pas un.***
 
+![**Figure 35.0** — Les trois classes d'accès documentaire, et ce que chacune autorise à écrire.](../figures/f-35-00-classes-acces.svg)
+
 ## § 35.1 — TD : la pré-adjudication hypothécaire, ou l'agentique dans la chaîne d'octroi
 
 Lecture de l'auteur — **parmi les cas documentés, cette institution est la seule dont le socle situe
@@ -822,6 +824,8 @@ d'aucun de ces systèmes.* Il ne lègue **aucun état interne** — *seulement u
 Et il ne lègue **aucun avis juridique**.
 
 ---
+
+![**Figure 35.9** — Cinq dispositifs de gouvernance sur dix institutions, et ce qu'ils ont en commun.](../figures/f-35-09-gouvernances-comparees.svg)
 
 ## § 35.10 — Note de statut *(hors plan — à retirer à la publication)*
 

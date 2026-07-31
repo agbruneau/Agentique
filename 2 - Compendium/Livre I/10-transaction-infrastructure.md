@@ -491,6 +491,8 @@ seul.*
 
 ---
 
+![**Figure 10.3** — Les trois rôles que le commerce agentique dissocie, et ce que la dissociation fait disparaître.](../figures/f-10-03-trois-roles.svg)
+
 ## § 10.4 — Responsabilité, litiges et non-répudiation : l'interopérabilité organisationnelle
 
 ### 10.4.1 Trois questions qu'aucun message valide ne résout
@@ -560,6 +562,8 @@ remplacé.
 **Livre III** ; la délégation multi-saut et sa taxonomie d'identité, du **ch. 19**.
 
 ---
+
+![**Figure 10.4** — Le mandat comme couche de preuve opposable : la chaîne qui rattache une transaction à un consentement.](../figures/f-10-04-mandat-preuve.svg)
 
 ## § 10.5 — Le destin de l'ACP protocolaire : la portée de risque
 

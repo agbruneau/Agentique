@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 126" width="445" height="126" role="img" aria-label="Le cycle de vie complet d'un agent d'entreprise, de l'enregistrement a l'archivage probatoire.">
+  <!-- § 45.8, § 45.9 et § 45.10, chapitre 45.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="126" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">TROIS TEMPS, ET LE DERNIER EST LE MOINS OUTILLÉ</text>
+  <path d="M 0 40 H 439" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 445 40 l -6 -3 v 6 z" fill="#9A3B12"/>
+  <circle cx="5.0" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="0" y="30">Naissance</text>
+  <text class="l annf" x="0" y="56">Enregistrement</text>
+  <text class="l ann" x="0" y="69">émission du passeport, admission au</text>
+  <text class="l ann" x="0" y="80">maillage — § 45.8</text>
+  <circle cx="153.3" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="148" y="30">Vie</text>
+  <text class="l annf" x="148" y="56">Délégations</text>
+  <text class="l ann" x="148" y="69">vérifications par arête, traces,</text>
+  <text class="l ann" x="148" y="80">évaluations, renouvellements, migration</text>
+  <text class="l ann" x="148" y="91">post-quantique — § 45.9</text>
+  <circle cx="301.7" cy="40" r="3.2" fill="#FDFBF9" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l date" x="297" y="30">Mort</text>
+  <text class="l annf" x="297" y="56">Révocation</text>
+  <text class="l ann" x="297" y="69">cascade dans la chaîne de mandat,</text>
+  <text class="l ann" x="297" y="80">retrait du maillage, archivage</text>
+  <text class="l ann" x="297" y="91">probatoire — § 45.10</text>
+  <path d="M 0 97 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="110">La mort est la partie la moins outillée : la révocation en cascade n'est pas documentée (ch. 20 § 20.6), et l'archivage</text>
+  <text class="l ann" x="0" y="120">probatoire suppose une trace qui vaille pièce — ce que le ch. 38 § 38.4 déclare dissymétrique au socle.</text>
+</svg>

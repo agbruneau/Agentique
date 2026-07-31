@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 159" width="445" height="159" role="img" aria-label="Frise des cinq revisions du protocole agent-outil, de novembre 2024 a juillet 2026.">
+  <!-- Tableau 8.3, § 8.2.1, chapitre 8.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="159" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">CINQ RÉVISIONS, VINGT MOIS</text>
+  <path d="M 0 40 H 439" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 445 40 l -6 -3 v 6 z" fill="#9A3B12"/>
+  <circle cx="5.0" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="0" y="30">2024-11</text>
+  <text class="l annf" x="0" y="56">Version initiale</text>
+  <text class="l ann" x="0" y="69">primitives de base ;</text>
+  <text class="l ann" x="0" y="80">transports local et</text>
+  <text class="l ann" x="0" y="91">HTTP à deux points</text>
+  <text class="l ann" x="0" y="102">d'accès</text>
+  <circle cx="94.0" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="89" y="30">2025-03</text>
+  <text class="l annf" x="89" y="56">Autorisation</text>
+  <text class="l ann" x="89" y="69">transport diffusable à</text>
+  <text class="l ann" x="89" y="80">point unique ; cadre</text>
+  <text class="l ann" x="89" y="91">d'autorisation</text>
+  <circle cx="183.0" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="178" y="30">2025-06</text>
+  <text class="l annf" x="178" y="56">Sorties structurées</text>
+  <text class="l ann" x="178" y="69">sollicitation ; racines</text>
+  <text class="l ann" x="178" y="80">; serveur qualifié</text>
+  <text class="l ann" x="178" y="91">serveur de ressources</text>
+  <circle cx="272.0" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="267" y="30">2025-11</text>
+  <text class="l annf" x="267" y="56">Découverte d'identité</text>
+  <text class="l ann" x="267" y="69">schémas 2020-12 ;</text>
+  <text class="l ann" x="267" y="80">tâches asynchrones</text>
+  <text class="l ann" x="267" y="91">expérimentales</text>
+  <circle cx="361.0" cy="40" r="3.2" fill="#FDFBF9" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l date" x="356" y="30">2026-07</text>
+  <text class="l annf" x="356" y="56">Cœur sans état</text>
+  <text class="l ann" x="356" y="69">suppression des</text>
+  <text class="l ann" x="356" y="80">sessions et de la</text>
+  <text class="l ann" x="356" y="91">poignée de main ; cadre</text>
+  <text class="l ann" x="356" y="102">d'extensions ;</text>
+  <text class="l ann" x="356" y="113">dépréciation à douze</text>
+  <text class="l ann" x="356" y="124">mois</text>
+  <path d="M 0 130 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="143">Le cinquième jalon n'était PAS ACQUIS au gel de la somme : il était annoncé pour le lendemain, et la revalidation du 30 juillet</text>
+  <text class="l ann" x="0" y="153">2026 l'a constaté ratifié à sa source. Une densité de révisions millésimées est elle-même une forme de fragmentation (§ 8.2.1).</text>
+</svg>

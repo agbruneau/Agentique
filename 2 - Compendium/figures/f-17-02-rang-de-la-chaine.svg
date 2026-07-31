@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 138" width="445" height="138" role="img" aria-label="Les trois mecanismes de delegation, distingues par le rang qu'ils accordent a la chaine.">
+  <!-- § 17.2, chapitre 17.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="138" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">TROIS MÉCANISMES, TROIS RANGS</text>
+  <rect x="0" y="14" width="138" height="89" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="32">1</text>
+  <text class="l bande" x="21" y="32">Document d'autorisation d'agent</text>
+  <text class="l ann" x="10" y="47">Décrit la chaîne comme l'objet</text>
+  <text class="l ann" x="10" y="58">qu'il spécifie.</text>
+  <text class="l renvoi" x="10" y="83">F-46, [B] — format versionné,</text>
+  <text class="l renvoi" x="10" y="93">attributs temporels</text>
+  <rect x="153" y="14" width="138" height="89" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="163" y="32">2</text>
+  <text class="l bande" x="174" y="32">Échange de jeton</text>
+  <text class="l ann" x="163" y="47">Exprime la délégation, et laisse</text>
+  <text class="l ann" x="163" y="58">la sécurité du jeton hors</text>
+  <text class="l ann" x="163" y="69">périmètre.</text>
+  <text class="l renvoi" x="163" y="83">F-47, [A]</text>
+  <rect x="307" y="14" width="138" height="89" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="317" y="32">3</text>
+  <text class="l bande" x="328" y="32">Carte d'agent</text>
+  <text class="l ann" x="317" y="47">Porte l'identité, non la chaîne.</text>
+  <text class="l renvoi" x="317" y="83">F-29, [A]</text>
+  <path d="M 0 109 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="122">La mise en rang est une CONSTRUCTION DE LA SOMME. Le socle établit trois faits séparés, un par mécanisme ; il n'établit aucun</text>
+  <text class="l ann" x="0" y="132">classement entre eux — aucun lot n'a balayé de corpus, et « énoncer la chaîne comme structure propre » est un critère d'auteur.</text>
+</svg>

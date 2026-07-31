@@ -242,6 +242,8 @@ Le **maillage d'événements** (*event mesh*) est le pendant événementiel : l�
 
 ---
 
+![**Figure 1.3** — De la SOA au maillage : ce que chaque étage déplace, et le couplage qui décroît.](../figures/f-01-03-soa-vers-maillage.svg)
+
 ## § 1.4 — Styles d'API, conception et gestion
 
 Cette section ouvre le bloc des **mécanismes d'échange**. Après les architectures d'intégration, elle examine l'interface programmatique elle-même : les styles par lesquels deux systèmes se parlent, les contrats machine-lisibles qui en figent la forme, et le plan de gestion qui en gouverne l'exposition. L'invariant s'y lit à l'échelle de l'appel : un style définit le couplage temporel et spatial acceptable, un contrat formalise l'interface partagée et conditionne l'évolution sans rupture, et la couche de gestion industrialise le cycle de vie de ce contrat.
@@ -323,6 +325,8 @@ L'événement, en franchissant la frontière entre systèmes, devient enfin un c
 Le couplage entre enveloppe stable et charge utile gouvernée illustre la maturité de la couche événementielle : le découplage temporel du MOM se complète d'un **découplage d'évolution**, où le contrat d'événement devient l'unité de versionnement partagée entre des systèmes qui ne se connaissent pas. ⚠ Ce dispositif à deux étages — enveloppe normalisée, contenu gouverné séparément — est exactement celui que le ch. 8 retrouvera dans les enveloppes de message des protocoles agentiques, et le ch. 38 dans la corrélation des traces. Le lecteur qui l'a compris ici n'a pas à le réapprendre là-bas.
 
 ---
+
+![**Figure 1.5** — Livraison et traitement : pourquoi « exactement une fois » n'est pas une garantie de livraison.](../figures/f-01-05-exactement-une-fois.svg)
 
 ## § 1.6 — Patrons d'intégration et coordination de processus
 

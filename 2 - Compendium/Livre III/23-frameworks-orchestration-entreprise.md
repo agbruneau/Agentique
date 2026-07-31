@@ -430,6 +430,8 @@ se déclare telle à chacune de ses lignes.*
 
 ---
 
+![**Figure 23.5** — Les patrons livrés, situés sur la taxonomie du ch. 22 — et celui que le niveau de preuve ne permet pas de situer.](../figures/f-23-05-patrons-situes.svg)
+
 ## § 23.6 — Note de statut *(hors plan — à retirer à la publication)*
 
 ⚠ **Cette section n'est pas au TOC et n'a pas vocation à survivre.** Elle consigne l'écart de

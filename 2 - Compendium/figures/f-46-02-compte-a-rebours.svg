@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 115" width="445" height="115" role="img" aria-label="Les trois mouvements de la feuille de route vers le 1er mai 2027, lus a rebours.">
+  <!-- § 46.2, chapitre 46.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="115" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">TROIS MOUVEMENTS, UNE DATE</text>
+  <path d="M 0 40 H 439" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 0 40 l 6 -3 v 6 z" fill="#9A3B12"/>
+  <circle cx="5.0" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="0" y="30">1ᵉʳ mai 2027</text>
+  <text class="l annf" x="0" y="56">E-23 opposable</text>
+  <text class="l ann" x="0" y="69">institutions financières</text>
+  <text class="l ann" x="0" y="80">fédérales</text>
+  <circle cx="116.2" cy="40" r="3.2" fill="#FDFBF9" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l date" x="111" y="30">−3</text>
+  <text class="l annf" x="111" y="56">Surveiller</text>
+  <text class="l ann" x="111" y="69">troisième mouvement — §</text>
+  <text class="l ann" x="111" y="80">46.2.4</text>
+  <circle cx="227.5" cy="40" r="3.2" fill="#FDFBF9" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l date" x="222" y="30">−2</text>
+  <text class="l annf" x="222" y="56">Coter, puis encadrer</text>
+  <text class="l ann" x="222" y="69">deuxième mouvement — § 46.2.3</text>
+  <circle cx="338.8" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="334" y="30">−1</text>
+  <text class="l annf" x="334" y="56">Inventorier</text>
+  <text class="l ann" x="334" y="69">premier mouvement — § 46.2.2</text>
+  <text class="l ann" x="334" y="80">; sans lui, rien ne se cote</text>
+  <path d="M 0 86 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="99">Le compte à rebours est RECALCULÉ, non recopié (§ 46.2.1) : une durée citée d'un document antérieur serait fausse dès sa</text>
+  <text class="l ann" x="0" y="109">publication. La feuille de route est un patron d'auteur ; aucun instrument n'impose cette séquence.</text>
+</svg>

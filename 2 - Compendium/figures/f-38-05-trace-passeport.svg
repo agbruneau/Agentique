@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 116" width="445" height="116" role="img" aria-label="La correlation entre une trace d'observabilite et les pieces du passeport d'agent.">
+  <!-- § 38.5, chapitre 38.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="116" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">CE QUI RATTACHE UNE ACTION À QUELQU'UN</text>
+  <rect x="0" y="14" width="134" height="67" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="31">Trace</text>
+  <text class="l ann" x="9" y="44">ce que l'observabilité a</text>
+  <text class="l ann" x="9" y="55">enregistré de l'action</text>
+  <path d="M 136.66666666666666 47.5 H 149.66666666666666" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 153.66666666666666 47.5 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="156" y="14" width="134" height="67" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="165" y="31">Identité</text>
+  <text class="l ann" x="165" y="44">la clé de jointure — encore</text>
+  <text class="l ann" x="165" y="55">faut-il qu'elle soit la même des</text>
+  <text class="l ann" x="165" y="66">deux côtés</text>
+  <path d="M 292.66666666666663 47.5 H 305.66666666666663" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 309.66666666666663 47.5 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="311" y="14" width="134" height="67" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="320" y="31">Passeport</text>
+  <text class="l ann" x="320" y="44">carte, registre, mandat,</text>
+  <text class="l ann" x="320" y="55">attestations — ch. 16</text>
+  <path d="M 0 87 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="100">La jointure suppose que les deux côtés portent LE MÊME identifiant — et le ch. 16 établit que les quatre pièces du passeport</text>
+  <text class="l ann" x="0" y="110">n'ont pas d'émetteur commun. Corréler est une exigence d'architecture, pas une propriété du socle.</text>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 145" width="445" height="145" role="img" aria-label="La repartition entre la normalisation du chemin de decouverte et la specification du magasin.">
+  <!-- § 15.3.2, chapitre 15.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="145" fill="#FDFBF9"/>
+  <text class="l titreg" x="0" y="8">LE CHEMIN</text>
+  <rect x="0" y="14" width="210" height="83" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="30">Ce que le protocole agent-agent normalise</text>
+  <text class="l ann" x="9" y="46">L'emplacement bien connu où se publie la carte</text>
+  <text class="l ann" x="9" y="65">La forme de l'auto-description</text>
+  <text class="l ann" x="9" y="84">Le chemin par lequel on trouve</text>
+  <text class="l annf" x="0" y="110">normalisé, et le registre décliné</text>
+  <text class="l titre" x="236" y="8">LE MAGASIN</text>
+  <rect x="236" y="14" width="210" height="83" fill="#FFFFFF" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l bande" x="245" y="30">Ce que la couche d'infrastructure spécifie</text>
+  <text class="l ann" x="245" y="46">Le magasin où les descriptions sont tenues</text>
+  <text class="l ann" x="245" y="65">Ses champs d'accès aux outils et de bornes</text>
+  <text class="l ann" x="245" y="84">Ce qui décide de la confiance</text>
+  <text class="l annf" x="236" y="110">spécifié, et à statut déclaré</text>
+  <path d="M 0 116 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="129">Ce paragraphe est le versant IDENTITÉ ET CONFORMITÉ d'une matière partagée : le versant protocolaire — les trois moments de la</text>
+  <text class="l ann" x="0" y="139">découverte, les catalogues fédérés, les modes d'échec des registres — est au ch. 9, et n'est pas reconstruit ici.</text>
+</svg>

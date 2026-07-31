@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 408" width="445" height="408" role="img" aria-label="Les patrons livres par les cadriciels d'orchestration, situes sur la taxonomie OO1 a OO4.">
+  <!-- Tableau 23.2, § 23.5, chapitre 23.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="408" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">CE QUE LE SOCLE ÉTABLIT, ET CE QUE L'AUTEUR EN TIRE</text>
+  <rect x="0" y="14" width="445" height="57" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="32">OO3/OO4</text>
+  <text class="l bande" x="57" y="32">Workflows à base de graphes</text>
+  <text class="l ann" x="10" y="47">Le graphe est un cadre explicite extérieur aux agents — le rang dépend de ce que les agents invoqués savent du processus.</text>
+  <text class="l renvoi" x="10" y="61">Agent Framework, GA 1.0</text>
+  <rect x="0" y="87" width="445" height="57" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="105">—</text>
+  <text class="l bande" x="21" y="105">Points de contrôle</text>
+  <text class="l ann" x="10" y="120">Instrument de la propriété de traçabilité, non une option d'orchestration en soi.</text>
+  <text class="l renvoi" x="10" y="134">limites en multi-conteneurs</text>
+  <rect x="0" y="160" width="445" height="57" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="178">—</text>
+  <text class="l bande" x="21" y="178">Humain-dans-la-boucle</text>
+  <text class="l ann" x="10" y="193">Point d'arrêt de supervision ; critère de sélection du § 22.3, non un positionnement.</text>
+  <text class="l renvoi" x="10" y="207">Agent Framework, GA 1.0</text>
+  <rect x="0" y="233" width="445" height="57" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="251">aucun</text>
+  <text class="l bande" x="45" y="251">Agents durables</text>
+  <text class="l ann" x="10" y="266">Aucun positionnement proposé : le niveau de preuve ne le permet pas.</text>
+  <text class="l renvoi" x="10" y="280">repérage [C], ne porte aucun fait central</text>
+  <rect x="0" y="306" width="445" height="57" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="324">OO1</text>
+  <text class="l bande" x="33" y="324">Bus d'événements</text>
+  <text class="l ann" x="10" y="339">Le protocole agent-agent sans cadre de processus explicite est la définition même d'OO1.</text>
+  <text class="l renvoi" x="10" y="353">préversion publique sur dorsale rejouable</text>
+  <path d="M 0 369 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="382">Le POSITIONNEMENT EST UNE CONSTRUCTION D'AUTEUR. Le socle établit ce que chaque produit livre ; il ne le situe pas sur la</text>
+  <text class="l ann" x="0" y="392">taxonomie. Un patron dont le régime de preuve est un simple repérage [C] ne reçoit AUCUN positionnement — et c'est le cas de</text>
+  <text class="l ann" x="0" y="402">l'un des cinq.</text>
+</svg>

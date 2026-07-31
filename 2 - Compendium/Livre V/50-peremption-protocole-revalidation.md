@@ -143,6 +143,8 @@ nommément le premier mouvement du Livre V. *(3)* ⚠ **Le harnais n'entre pas a
 *la relève v0.10 reste un repérage non extrait, et une rangée de ce tableau se paie d'une trace* —
 **la matière a désormais un domicile, elle n'a pas de source**.
 
+![**Figure 50.2** — Les onze événements de péremption, et ce que chacun ferait refaire.](../figures/f-50-02-evenements-peremption.svg)
+
 ## § 50.3 — Le protocole de revalidation
 
 **Un document daté qui ne dit pas comment se redater n'est daté qu'à moitié.** Le protocole qui suit
@@ -218,6 +220,8 @@ quatre-vingt-onze inchangées ne sont pas quatre-vingt-onze confirmées.* **La b
 découle est écrite au franchissement** : *aucune des cinquante entrées à date non re-vérifiée ou
 partielle ne peut porter un fait central.*
 
+![**Figure 50.3** — Le protocole de revalidation : la boucle, et son déclencheur.](../figures/f-50-03-protocole-revalidation.svg)
+
 ## § 50.4 — Le registre de gel par chapitre
 
 **La convention de datation de la somme tient en deux termes, et ils ne se substituent pas l'un à
@@ -273,6 +277,8 @@ ce qu'il faut refaire.* **Le compendium est daté, et il le dit** — y compris 
 d'être dépassée.
 
 ---
+
+![**Figure 50.4** — La carte de fraîcheur : les cinquante chapitres et la date de gel de chacun.](../figures/f-50-04-carte-fraicheur.svg)
 
 ## § 50.5 — Note de statut *(hors plan — à retirer à la publication)*
 

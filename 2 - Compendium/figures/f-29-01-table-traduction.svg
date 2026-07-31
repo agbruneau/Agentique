@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 315" width="445" height="315" role="img" aria-label="La traduction des exigences reglementaires en contraintes de cadre deterministe.">
+  <!-- Tableau 29.1, § 29.1, chapitre 29 — repris intact de sa source.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="315" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">SIX EXIGENCES, ET CE QUE LE CADRE DOIT PORTER</text>
+  <rect x="0" y="14" width="215" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="32">E-23</text>
+  <text class="l bande" x="39" y="32">Inventaire</text>
+  <text class="l ann" x="10" y="47">Un inventaire d'entreprise des modèles à risque non</text>
+  <text class="l ann" x="10" y="58">négligeable, exact et tenu à jour.</text>
+  <text class="l renvoi" x="10" y="72">le cadre doit porter l'ensemble de ce qui peut être invoqué</text>
+  <rect x="230" y="14" width="215" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="240" y="32">E-23</text>
+  <text class="l bande" x="269" y="32">Cotation</text>
+  <text class="l ann" x="240" y="47">Une cote de risque par modèle ; le degré d'autonomie est</text>
+  <text class="l ann" x="240" y="58">un facteur qualitatif.</text>
+  <text class="l renvoi" x="240" y="72">la cote doit être connue au point d'invocation</text>
+  <rect x="0" y="108" width="215" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="126">E-23</text>
+  <text class="l bande" x="39" y="126">Cycle de vie</text>
+  <text class="l ann" x="10" y="141">Cinq composantes, « pas nécessairement séquentielles » —</text>
+  <text class="l ann" x="10" y="152">dont la mise hors service.</text>
+  <text class="l renvoi" x="10" y="166">la mise hors service s'interpose entre la décision et</text>
+  <text class="l renvoi" x="10" y="176">l'invocation</text>
+  <rect x="230" y="108" width="215" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="240" y="126">E-23</text>
+  <text class="l bande" x="269" y="126">Documentation</text>
+  <text class="l ann" x="240" y="141">Usages approuvés, limites, dépendances, sources de</text>
+  <text class="l ann" x="240" y="152">données.</text>
+  <text class="l renvoi" x="240" y="166">l'usage approuvé doit être opposable, donc porté par ce qui</text>
+  <text class="l renvoi" x="240" y="176">autorise</text>
+  <rect x="0" y="202" width="215" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="220">Art. 12.1</text>
+  <text class="l bande" x="69" y="220">Informer</text>
+  <text class="l ann" x="10" y="235">Au plus tard au moment de la décision — la seule</text>
+  <text class="l ann" x="10" y="246">obligation subordonnée à aucune demande.</text>
+  <text class="l renvoi" x="10" y="260">le moment de la décision doit être un événement émis,</text>
+  <text class="l renvoi" x="10" y="270">identifiable et daté</text>
+  <rect x="230" y="202" width="215" height="78" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="240" y="220">Art. 12.1</text>
+  <text class="l bande" x="299" y="220">Réviser</text>
+  <text class="l ann" x="240" y="235">L'occasion de présenter ses observations à un membre du</text>
+  <text class="l ann" x="240" y="246">personnel.</text>
+  <text class="l renvoi" x="240" y="260">un point de reprise, et des effets aval bornés — donc</text>
+  <text class="l renvoi" x="240" y="270">défaisables</text>
+  <path d="M 0 286 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="299">LE STATUT DU LIEN EST LA COLONNE QUI COMPTE. Plusieurs liens sont des INFÉRENCES D'AUTEUR, un est une LACUNE OUVERTE — le</text>
+  <text class="l ann" x="0" y="309">contenu de la ligne directrice de l'AMF n'est pas au socle, et rien n'en est dérivable. Traduire n'est pas lire (§ 29.0).</text>
+</svg>

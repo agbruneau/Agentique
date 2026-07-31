@@ -65,6 +65,8 @@ vérification continue soit la **seule** réponse à cette classe, ni qu'une ide
 une catégorie de mécanismes. *La composition proposée — un verdict d'admission que rien ne date est un
 verdict sans terme, et une attaque qui opère après ce verdict n'a pas à le défaire — est une lecture.*
 
+![**Figure 20.0** — La classe d'attaques dont la particularité n'est pas le maillon mais le moment.](../figures/f-20-00-le-moment.svg)
+
 ## § 20.1 — Le *rug-pull* documenté : ce que le corpus nomme, et à quel niveau de preuve
 
 Le Vol. I a nommé l'objet avant que le Vol. III ne l'instruise, et **la trace de cette nomination est
@@ -494,6 +496,8 @@ critère repris d'une source. ⚠ **Cette matière descend au ch. 45**, qui trai
 cycle de vie d'un agent d'entreprise, et au **ch. 39**, qui traite la dérive en exploitation ; *l'un et
 l'autre sont rédigés en brouillon hors portes depuis le 27 juillet 2026 — le renvoi résout donc contre
 du texte, et non plus contre le seul plan.*
+
+![**Figure 20.6** — La révocation en cascade : ce qui tombe quand le mandat d'origine est retiré.](../figures/f-20-06-cascade.svg)
 
 ## § 20.7 — Le seuil franchi : l'attaque largement autonome est démontrée
 

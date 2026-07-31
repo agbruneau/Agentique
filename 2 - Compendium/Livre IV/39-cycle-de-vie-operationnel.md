@@ -263,6 +263,8 @@ documentation, non fait négatif vérifié. ⚠ **Et la conséquence pour l'expl
 d'outillage, mais une obligation de conception** : *ce qui n'est pas instrumenté doit être borné à
 l'émission, c'est-à-dire au mandat lui-même.*
 
+![**Figure 39.2** — Les quatre dérives, et le degré de documentation de chacune.](../figures/f-39-02-quatre-derives.svg)
+
 ## § 39.3 — La réponse à incident agentique : révoquer, confiner, imputer
 
 **Trois leviers, et aucun n'est complet : les deux premiers butent sur une limite que leur chapitre
@@ -371,6 +373,8 @@ geste à couverture inconnue** — *révoquer tout, ou confiner en partie* —, 
 intermédiaire — retirer un mandat précis et constater sa propagation — n'est documenté par aucune
 entrée**. Elle se réfute par la production d'un mécanisme de retrait sélectif **dont la propagation
 soit constatable**.
+
+![**Figure 39.3** — Révoquer, confiner, imputer : la séquence de réponse à incident agentique.](../figures/f-39-03-incident.svg)
 
 ## § 39.4 — GitOps du parc d'agents : versionner le mandat protocolaire, promouvoir, revenir en arrière
 

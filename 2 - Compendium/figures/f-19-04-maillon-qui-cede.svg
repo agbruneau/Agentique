@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 453" width="445" height="453" role="img" aria-label="Les attaques du socle triees par le maillon de la chaine d'identite qui cede.">
+  <!-- Tableau 19.1, § 19.4, chapitre 19, au 21 juillet 2026.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="453" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">CINQ MAILLONS, CINQ QUESTIONS EN DÉFAUT</text>
+  <rect x="0" y="14" width="445" height="68" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="32">Q-A</text>
+  <text class="l bande" x="33" y="32">L'identifiant</text>
+  <text class="l ann" x="10" y="47">Jeton porteur non lié à l'appelant, à l'appareil ni à la session — compromission de jetons d'application tierce, août</text>
+  <text class="l ann" x="10" y="58">2025.</text>
+  <text class="l renvoi" x="10" y="72">l'identifiant n'est pas résistant à la détention par un tiers</text>
+  <rect x="0" y="98" width="445" height="68" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="116">Q-B</text>
+  <text class="l bande" x="33" y="116">La provenance</text>
+  <text class="l ann" x="10" y="131">Empoisonnement à la publication, en amont de toute vérification ; entrée de mémoire ou document récupéré sans origine</text>
+  <text class="l ann" x="10" y="142">vérifiable.</text>
+  <text class="l renvoi" x="10" y="156">extension de la grille aux sources</text>
+  <rect x="0" y="182" width="445" height="68" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="200">Q-C</text>
+  <text class="l bande" x="33" y="200">Le mandat</text>
+  <text class="l ann" x="10" y="215">L'instruction inter-agents fait agir le mandataire hors du mandat qu'il détient.</text>
+  <text class="l renvoi" x="10" y="240">chaîne de mandat non interrogeable à l'exécution</text>
+  <rect x="0" y="266" width="445" height="68" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="284">Q-D</text>
+  <text class="l bande" x="33" y="284">Les bornes</text>
+  <text class="l ann" x="10" y="299">Absence de réduction de portée entre mandant et mandataire ; invocation d'outils inaccessibles à l'utilisateur.</text>
+  <text class="l renvoi" x="10" y="324">bornes de privilège non opposables</text>
+  <rect x="0" y="350" width="445" height="68" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="368">—</text>
+  <text class="l bande" x="21" y="368">La composition</text>
+  <text class="l ann" x="10" y="383">Le détournement réussit même lorsque les agents pris isolément ne sont pas vulnérables.</text>
+  <text class="l renvoi" x="10" y="408">aucune question de la grille ne porte sur l'assemblage</text>
+  <path d="M 0 424 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="437">Chaque cellule du tableau source porte LA BORNE DE SON ENTRÉE, et la figure ne la reprend pas : une attaque documentée par une</text>
+  <text class="l ann" x="0" y="447">préimpression non revue et un incident daté ne s'opposent pas au même régime de preuve. Se reporter au tableau pour la borne.</text>
+</svg>

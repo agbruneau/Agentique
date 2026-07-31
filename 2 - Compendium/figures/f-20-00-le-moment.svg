@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 115" width="445" height="115" role="img" aria-label="La sequence d'une attaque par retournement : l'admission reussit, et l'objet verifie change ensuite.">
+  <!-- § 20.0 et § 20.1, chapitre 20.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="115" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">L'ADMISSION RÉUSSIT, PUIS L'OBJET CHANGE</text>
+  <path d="M 0 40 H 439" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 445 40 l -6 -3 v 6 z" fill="#9A3B12"/>
+  <circle cx="5.0" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="0" y="30">t₀</text>
+  <text class="l annf" x="0" y="56">Publication</text>
+  <text class="l ann" x="0" y="69">un serveur d'outils est</text>
+  <text class="l ann" x="0" y="80">publié, décrit, référencé</text>
+  <circle cx="116.2" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="111" y="30">t₁</text>
+  <text class="l annf" x="111" y="56">Admission</text>
+  <text class="l ann" x="111" y="69">le mécanisme fonctionne, le</text>
+  <text class="l ann" x="111" y="80">verdict est rendu</text>
+  <circle cx="227.5" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="222" y="30">t₂</text>
+  <text class="l annf" x="222" y="56">Usage</text>
+  <text class="l ann" x="222" y="69">l'agent l'invoque sur la foi</text>
+  <text class="l ann" x="222" y="80">du verdict de t₁</text>
+  <circle cx="338.8" cy="40" r="3.2" fill="#FDFBF9" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l date" x="334" y="30">t₃</text>
+  <text class="l annf" x="334" y="56">Retournement</text>
+  <text class="l ann" x="334" y="69">l'objet vérifié change — et</text>
+  <text class="l ann" x="334" y="80">rien ne re-pose la question</text>
+  <path d="M 0 86 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="99">L'attaque NE DÉFAIT PAS la vérification : elle attend qu'elle soit faite. La question qu'elle pose n'est donc pas celle de la</text>
+  <text class="l ann" x="0" y="109">robustesse du mécanisme d'admission, mais celle de la DURÉE DE VALIDITÉ d'un verdict que rien ne borne.</text>
+</svg>

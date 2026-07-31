@@ -147,6 +147,8 @@ l'exposition de leur assemblage.
 rattaché à une source primaire datée**, faute de quoi il est écarté — règle du corpus source,
 reconduite ici sans exception.
 
+![**Figure 11.1a** — Ce que la couche d'interopérabilité amplifie : trois mécanismes qui font basculer des propriétés locales.](../figures/f-11-01a-amplification.svg)
+
 ### 11.1.3 Attaques sur les frontières : empoisonnement, révocation après approbation, injection transitive
 
 **Trois familles d'attaques visent spécifiquement les frontières — et la première en réunit deux
@@ -260,6 +262,8 @@ le § 11.4.2 en tire les conséquences pour la somme. *Le Vol. II est exact sur 
 pas sur le corpus.*
 
 ---
+
+![**Figure 11.1b** — Les trois surfaces d'attaque, distinguées par ce que chacune corrompt.](../figures/f-11-01b-trois-surfaces.svg)
 
 ## § 11.2 — Modes d'échec propres à l'interopérabilité agentique
 
@@ -676,6 +680,8 @@ transaction —, et **il s'achève sur ce que la coopération laisse à découve
 relais là où ce chapitre s'arrête : établir qui parle, et à quel titre.*
 
 ---
+
+![**Figure 11.4** — Confiner plutôt que prévenir : ce que le renversement change, et ce qu'il ne promet pas.](../figures/f-11-04-confinement.svg)
 
 ## § 11.5 — Note de statut *(hors plan — à retirer à la publication)*
 

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 155" width="445" height="155" role="img" aria-label="Comparaison du modele de perimetre reseau et du modele zero-trust.">
+  <!-- § 3.3.1, chapitre 3, sur NIST SP 800-207.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="155" fill="#FDFBF9"/>
+  <text class="l titreg" x="0" y="8">PÉRIMÈTRE RÉSEAU</text>
+  <rect x="0" y="14" width="210" height="83" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="30">La confiance dérive de la localisation</text>
+  <text class="l ann" x="9" y="46">Dedans le périmètre : implicitement autorisé</text>
+  <text class="l ann" x="9" y="65">Dehors : authentifié à l'entrée, une fois</text>
+  <text class="l ann" x="9" y="84">Le déplacement latéral n'est pas vérifié</text>
+  <text class="l annf" x="0" y="110">un mur, et ce qu'il laisse passer une fois franchi</text>
+  <text class="l titre" x="236" y="8">ZERO-TRUST</text>
+  <rect x="236" y="14" width="210" height="83" fill="#FFFFFF" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l bande" x="245" y="30">Aucune confiance n'est dérivée de la localisation</text>
+  <text class="l ann" x="245" y="46">Authentification et autorisation à CHAQUE appel</text>
+  <text class="l ann" x="245" y="65">Point de décision et point d'application distincts</text>
+  <text class="l ann" x="245" y="84">TLS mutuel systématique entre charges de travail</text>
+  <text class="l annf" x="236" y="110">SPIFFE/SPIRE porte l'identité de charge ; WIMSE l'étend</text>
+  <path d="M 0 116 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="129">NIST SP 800-207 nomme les composants — point de décision, point d'application, évaluation continue par requête. Il ne dit pas</text>
+  <text class="l ann" x="0" y="139">ce qu'un point d'application doit LIRE quand l'appelant est un agent : c'est l'objet du ch. 37, et le socle n'y répond pas</text>
+  <text class="l ann" x="0" y="149">davantage.</text>
+</svg>

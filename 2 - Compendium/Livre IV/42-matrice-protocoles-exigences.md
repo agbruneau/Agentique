@@ -125,6 +125,8 @@ trois d'E-23, article 12.1 × MCP, article 12.1 × A2A, cadre bancaire × MCP �
 *La première mesure la manière dont l'ouvrage sait qu'il ne sait pas ; la seconde ce que la cellule
 donne à lire.* ⚠ **Le vide est celui du lien, jamais celui de la cellule.**
 
+![**Figure 42.1** — La matrice protocoles × textes canadiens : la couverture, et surtout les cases vides.](../figures/f-42-01-matrice.svg)
+
 ## § 42.2 — Lecture par protocole
 
 **MCP répond à une question : comment un agent atteint un outil.** Interface client-serveur fondée sur
@@ -246,6 +248,8 @@ socle du Vol. II ne porte aucune structure de message, rien ne permet de tranche
 espèces.** *Un vide de socle se comble par une extraction primaire ; qu'un vide de protocole se comble
 ou non, la somme le laisse ouvert.*
 
+![**Figure 42.3** — Les trois espèces de vide, et le renversement qu'elles produisent.](../figures/f-42-03-renversement.svg)
+
 ### 42.3.3 Le croisement avec la grille des cinq questions — construction du compendium
 
 ⚠ **Ce croisement n'est porté par aucune des deux sources, et il est marqué comme construction.** Le
@@ -341,6 +345,8 @@ répondent à une autre question — et que personne, à la date de gel, n'a éc
 relierait au droit canadien.**
 
 ---
+
+![**Figure 42.4** — Les cinq zones de compensation architecturale : ce que l'architecture doit porter là où rien ne le porte.](../figures/f-42-04-zones-compensation.svg)
 
 ## § 42.5 — Note de statut *(hors plan — à retirer à la publication)*
 

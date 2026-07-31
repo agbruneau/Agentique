@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 145" width="445" height="145" role="img" aria-label="La ligne de partage entre autonomie encadree et automatisation.">
+  <!-- § 22.6, chapitre 22.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="145" fill="#FDFBF9"/>
+  <text class="l titreg" x="0" y="8">AUTOMATISATION</text>
+  <rect x="0" y="14" width="210" height="83" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="30">Le chemin est décidé d'avance</text>
+  <text class="l ann" x="9" y="46">Ce qui peut arriver est énumérable</text>
+  <text class="l ann" x="9" y="65">La supervision porte sur l'exécution du chemin</text>
+  <text class="l ann" x="9" y="84">L'audit rejoue le chemin</text>
+  <text class="l annf" x="0" y="110">restreindre les droits suffit</text>
+  <text class="l titre" x="236" y="8">AUTONOMIE ENCADRÉE</text>
+  <rect x="236" y="14" width="210" height="83" fill="#FFFFFF" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l bande" x="245" y="30">Le chemin est décidé à l'exécution</text>
+  <text class="l ann" x="245" y="46">Ce qui peut arriver ne s'énumère pas</text>
+  <text class="l ann" x="245" y="65">La supervision arrive après coup</text>
+  <text class="l ann" x="245" y="84">L'encadrement borne le domaine, non le chemin</text>
+  <text class="l annf" x="236" y="110">d'où l'encadrement comme mécanisme premier</text>
+  <path d="M 0 116 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="129">La réponse examinée vient d'UN TEXTE — un manifeste —, non d'un consensus de la discipline. Que l'encadrement soit présenté</text>
+  <text class="l ann" x="0" y="139">comme le mécanisme premier de gouvernance est une thèse de ce texte, et la somme l'examine sans la ratifier.</text>
+</svg>

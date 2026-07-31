@@ -277,6 +277,8 @@ l'écart entre eux tient en un mot** — celui que R-02 interdit de franchir : *
 démontre est une vérification d'intégrité relative à une clé, et rien de ce qui est établi ici ne
 permet d'en faire une vérification d'identité.*
 
+![**Figure 15.1** — La carte signée et la question de l'ancrage : qui signe les signataires ?](../figures/f-15-01-ancrage-signature.svg)
+
 ## § 15.2 — Les annuaires commerciaux : Entra Agent ID et ses pairs
 
 Le paragraphe précédent instruisait une **spécification** ; celui-ci instruit des **produits**, et le
@@ -718,6 +720,8 @@ cinq questions sur un objet composé** n'existe qu'au **ch. 16 § 16.5**, où il
 *sur le papier*.
 
 ---
+
+![**Figure 15.3** — Deux moitiés d'un même mécanisme : le protocole normalise le chemin, l'infrastructure spécifie le magasin.](../figures/f-15-03-chemin-magasin.svg)
 
 ## § 15.4 — Note de statut *(hors plan — à retirer à la publication)*
 

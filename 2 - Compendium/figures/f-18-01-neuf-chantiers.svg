@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 253" width="445" height="253" role="img" aria-label="Les neuf chantiers de verification d'agent tiers, repartis en six organisations, aucun ratifie.">
+  <!-- Tableau 18.1, § 18.1, chapitre 18, au 21 juillet 2026.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="253" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">SIX ORGANISATIONS, NEUF CHANTIERS, AUCUN TEXTE</text>
+  <rect x="0" y="14" width="138" height="89" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="32">W3C</text>
+  <text class="l bande" x="33" y="32">Deux groupes communautaires</text>
+  <text class="l ann" x="10" y="47">« Agent Identity Registry Protocol</text>
+  <text class="l ann" x="10" y="58">» (22 avr. 2026) et « AI Agent</text>
+  <text class="l ann" x="10" y="69">Protocol » (8 mai 2025).</text>
+  <text class="l renvoi" x="10" y="83">ni voie des normes, ni Recommandation</text>
+  <rect x="153" y="14" width="138" height="89" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="163" y="32">OIDF</text>
+  <text class="l bande" x="192" y="32">Gestion d'identité pour l'IA</text>
+  <text class="l ann" x="163" y="47">Sa charte place hors périmètre le</text>
+  <text class="l ann" x="163" y="58">développement de protocoles de</text>
+  <text class="l ann" x="163" y="69">normalisation mondiaux.</text>
+  <text class="l renvoi" x="163" y="83">renvoie le travail ailleurs</text>
+  <rect x="307" y="14" width="138" height="89" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="317" y="32">DIF</text>
+  <text class="l bande" x="340" y="32">Connaissance de l'agent</text>
+  <text class="l ann" x="317" y="47">Version 1 encore soumise à</text>
+  <text class="l ann" x="317" y="58">relecture et à approbation au 22</text>
+  <text class="l ann" x="317" y="69">juin 2026.</text>
+  <text class="l renvoi" x="317" y="83">F-50 [B, degré 2] — non ratifiée</text>
+  <rect x="0" y="119" width="138" height="89" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="137">IETF</text>
+  <text class="l bande" x="39" y="137">Deux brouillons individuels</text>
+  <text class="l ann" x="10" y="152">Identité d'agent (26 mars 2026) et</text>
+  <text class="l ann" x="10" y="163">registre d'identité (23 mai 2026).</text>
+  <text class="l renvoi" x="10" y="188">non adoptés par un groupe de travail</text>
+  <rect x="153" y="119" width="138" height="89" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="163" y="137">NIST</text>
+  <text class="l bande" x="192" y="137">Deux initiatives</text>
+  <text class="l ann" x="163" y="152">Document de concept (5 févr. 2026)</text>
+  <text class="l ann" x="163" y="163">et initiative de normalisation (17</text>
+  <text class="l ann" x="163" y="174">févr. 2026).</text>
+  <text class="l renvoi" x="163" y="188">projet public initial ; volet identité</text>
+  <text class="l renvoi" x="163" y="198">à l'état de concept</text>
+  <rect x="307" y="119" width="138" height="89" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="317" y="137">Éditeur</text>
+  <text class="l bande" x="364" y="137">Cadre commercial</text>
+  <text class="l ann" x="317" y="152">« Know Your Agent », annoncé le 15</text>
+  <text class="l ann" x="317" y="163">juin 2026.</text>
+  <text class="l renvoi" x="317" y="188">F-49 [B, degré 3] — une offre, pas une</text>
+  <text class="l renvoi" x="317" y="198">norme</text>
+  <path d="M 0 214 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="227">ZÉRO TEXTE RATIFIÉ. Un chantier ouvert n'est pas une norme en cours d'adoption : deux brouillons de l'IETF sont des</text>
+  <text class="l ann" x="0" y="237">soumissions individuelles non adoptées, une charte place la normalisation HORS de son périmètre, et l'un des neuf est un cadre</text>
+  <text class="l ann" x="0" y="247">commercial.</text>
+</svg>

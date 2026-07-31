@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 241" width="445" height="241" role="img" aria-label="La matrice croisant les protocoles agentiques et les textes reglementaires canadiens.">
+  <!-- Tableau 42.1, § 42.1, chapitre 42.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="241" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">CE QUE LES PROTOCOLES PORTENT DES EXIGENCES</text>
+  <text class="l annf" x="113" y="28">Agent-outil</text>
+  <text class="l annf" x="225" y="28">Agent-agent</text>
+  <text class="l annf" x="338" y="28">Paiement agentique</text>
+  <path d="M 0 41 H 445" fill="none" stroke="#212121" stroke-width="1.1"/>
+  <text class="l annf" x="0" y="59">E-23 — inventaire et</text>
+  <text class="l annf" x="0" y="70">cotation</text>
+  <text class="l annf" x="113" y="59">—</text>
+  <text class="l annf" x="225" y="59">—</text>
+  <text class="l annf" x="338" y="59">—</text>
+  <text class="l annf" x="0" y="89">E-23 — surveillance continue</text>
+  <path d="M 0 73 H 445" fill="none" stroke="#C2C2C2" stroke-width=".5"/>
+  <text class="l annf" x="113" y="89">—</text>
+  <text class="l annf" x="225" y="89">—</text>
+  <text class="l annf" x="338" y="89">—</text>
+  <text class="l annf" x="0" y="119">Art. 12.1 — informer,</text>
+  <text class="l annf" x="0" y="130">expliquer, réviser</text>
+  <path d="M 0 103 H 445" fill="none" stroke="#C2C2C2" stroke-width=".5"/>
+  <text class="l annf" x="113" y="119">—</text>
+  <text class="l annf" x="225" y="119">—</text>
+  <text class="l annf" x="338" y="119">~</text>
+  <text class="l ann" x="352" y="119">le mandat porte le</text>
+  <text class="l ann" x="352" y="130">consentement, non</text>
+  <text class="l ann" x="352" y="141">l'explication</text>
+  <text class="l annf" x="0" y="149">ACVM 11-348 — adaptativité</text>
+  <path d="M 0 133 H 445" fill="none" stroke="#C2C2C2" stroke-width=".5"/>
+  <text class="l annf" x="113" y="149">—</text>
+  <text class="l annf" x="225" y="149">—</text>
+  <text class="l annf" x="338" y="149">—</text>
+  <text class="l annf" x="0" y="179">Cadre bancaire — interface</text>
+  <text class="l annf" x="0" y="190">d'accès</text>
+  <path d="M 0 163 H 445" fill="none" stroke="#C2C2C2" stroke-width=".5"/>
+  <text class="l annf" x="113" y="179">—</text>
+  <text class="l annf" x="225" y="179">—</text>
+  <text class="l annf" x="338" y="179">—</text>
+  <path d="M 0 193 H 445" fill="none" stroke="#212121" stroke-width="1.1"/>
+  <text class="l renvoi" x="0" y="206">~ partiel · — rien au socle. Se reporter au Tableau 42.1 pour la borne de chaque cellule.</text>
+  <path d="M 0 212 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="225">Une case vide n'est pas un défaut du protocole : aucun de ces protocoles n'a été écrit pour répondre à un texte canadien. Le</text>
+  <text class="l ann" x="0" y="235">résultat n'est pas un palmarès, c'est une carte de ce que l'architecture devra compenser (§ 42.4).</text>
+</svg>

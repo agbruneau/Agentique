@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 148" width="445" height="148" role="img" aria-label="La chronologie du rail de paiement en temps reel, de 2023 a la mi-2026.">
+  <!-- Tableau 33.1, § 33.2, chapitre 33.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="148" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">UN AVANCEMENT DÉCLARÉ, ET SON DERNIER JALON OUVERT</text>
+  <path d="M 0 40 H 439" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 445 40 l -6 -3 v 6 z" fill="#9A3B12"/>
+  <circle cx="5.0" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="0" y="30">juin 2023</text>
+  <text class="l annf" x="0" y="56">Composante</text>
+  <text class="l annf" x="0" y="67">d'échange</text>
+  <text class="l ann" x="0" y="80">livrée par un</text>
+  <text class="l ann" x="0" y="91">premier partenaire</text>
+  <circle cx="79.2" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="74" y="30">16 avr. 2024</text>
+  <text class="l annf" x="74" y="56">Reprise du</text>
+  <text class="l annf" x="74" y="67">programme</text>
+  <text class="l ann" x="74" y="80">deux nouveaux</text>
+  <text class="l ann" x="74" y="91">partenaires de</text>
+  <text class="l ann" x="74" y="102">livraison et</text>
+  <text class="l ann" x="74" y="113">d'exploitation</text>
+  <circle cx="153.3" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="148" y="30">T3 2025</text>
+  <text class="l annf" x="148" y="56">Compensation et</text>
+  <text class="l annf" x="148" y="67">règlement</text>
+  <text class="l ann" x="148" y="80">construction</text>
+  <text class="l ann" x="148" y="91">complétée</text>
+  <circle cx="227.5" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="222" y="30">T4 2025</text>
+  <text class="l annf" x="222" y="56">Tests internes</text>
+  <text class="l ann" x="222" y="69">complétés</text>
+  <circle cx="301.7" cy="40" r="3.2" fill="#9A3B12"/>
+  <text class="l date" x="297" y="30">T1 2026</text>
+  <text class="l annf" x="297" y="56">Acceptation</text>
+  <text class="l annf" x="297" y="67">utilisateur</text>
+  <text class="l ann" x="297" y="80">complétée</text>
+  <circle cx="375.8" cy="40" r="3.2" fill="#FDFBF9" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l date" x="371" y="30">mi-2026</text>
+  <text class="l annf" x="371" y="56">Tests industriels</text>
+  <text class="l ann" x="371" y="69">en cours</text>
+  <path d="M 0 119 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="132">La chronologie est celle que L'EXPLOITANT COMMUNIQUE : elle décrit un avancement déclaré, non un rail en service. Le dernier</text>
+  <text class="l ann" x="0" y="142">jalon est en cours, et aucune date de mise en service n'y figure.</text>
+</svg>

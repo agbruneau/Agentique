@@ -284,6 +284,8 @@ Un agent financier reçoit **jusqu'à trois qualifications cumulatives, non excl
 
 : Tableau 30.1 — La grille de qualification multiple d'un agent financier. ⚠ **Le point méthodologique décisif est que la coexistence de ces régimes est *le patron, pas une erreur à corriger*** : *la conformité consiste à produire la piste d'audit pour chacun **simultanément**, non à choisir l'un d'eux.*
 
+![**Figure 30.2a** — La grille de qualification multiple : un agent financier peut relever des trois régimes à la fois.](../figures/f-30-02a-qualification-multiple.svg)
+
 ### 30.2.2 DORA et la résilience opérationnelle : l'agent comme service TIC
 
 Le règlement européen de résilience opérationnelle numérique du secteur financier — **DORA** —,
@@ -493,6 +495,8 @@ obligations **depuis le 1ᵉʳ octobre 2025**, une conservation des registres pe
 jamais **porter** la responsabilité réglementaire.* **Le patron est au ch. 31 § 31.4.3.** ⚠ *Un projet
 de loi sanctionné en mars 2026 porte d'autres amendements, dont **l'entrée en vigueur est échelonnée et
 reste à confirmer** — ressource vivante, non un acquis.*
+
+![**Figure 30.2b** — L'axe Canada / Québec : pourquoi la qualification temporelle y décide du sens d'une obligation.](../figures/f-30-02b-axe-canada-quebec.svg)
 
 ## § 30.3 — La normalisation institutionnelle et le cadre bancaire canadien
 

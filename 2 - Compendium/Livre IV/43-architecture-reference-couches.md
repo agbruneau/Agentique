@@ -93,6 +93,8 @@ des quatre emplois, **que ce chapitre ne reconstruit pas**.
 
 : Tableau 43.1 — Les six couches de l'architecture de référence unifiée. ⚠ **Le découpage est imposé par le plan ; sa vertu est d'obliger à dire, couche par couche, ce que les socles documentent et ce qu'ils laissent vide.**
 
+![**Figure 43.1** — Les six couches de l'architecture de référence unifiée, et ce que chacune ne porte pas.](../figures/f-43-01-six-couches.svg)
+
 ### 43.1.2 Quatre réserves qui commandent la lecture du tableau
 
 *Un — la couche protocolaire.* ⚠ **« Cadre d'autorisation », jamais « sécurisé »** : *la sécurité
@@ -231,6 +233,8 @@ en rapport*. La lecture proposée est **un ordre d'application** : *la grille d'
 ensuite ; agentifier ce qui doit l'être, puis décider qui commande.* Elle se réfute par la production
 d'un cas où la position OO déciderait de l'opportunité d'agentifier.
 
+![**Figure 43.2** — Quand agentifier, quand s'abstenir.](../figures/f-43-02-agentifier.svg)
+
 ## § 43.3 — Les points de contrôle obligatoires
 
 > ⚠ **SIÈGE DES CINQ POINTS DE CONTRÔLE OBLIGATOIRES POUR TOUTE LA SOMME.** Ils sont **posés ici une
@@ -281,6 +285,8 @@ chose**, non un endroit où le système doit être bon.*
 (R-01 du Vol. III ; siège **ch. 16**). **Les cinq points sont opposables sans lui** ; *c'est ce qui les
 distingue des huit principes directeurs du blueprint, dont le premier conditionne l'admission à un
 artefact que personne ne délivre* (**ch. 45 § 45.1**).
+
+![**Figure 43.3** — Les cinq points de contrôle obligatoires, posés sur les six couches.](../figures/f-43-03-points-de-controle.svg)
 
 ## § 43.4 — Le plan de contrôle d'agents comme architecture de référence
 
@@ -380,6 +386,8 @@ irréversible*** (Vol. III **H-31**, **[C]**).
 l'ouvrage… », non la reprise d'une source primaire tierce — **l'élévation en [B] par lecture de la
 source est sans objet**.* Elle entre comme **thèse d'un volume antérieur, à attribuer à chaque
 emploi**, jamais comme fait. ⚠ **Le croisement qui suit ne peut donc rien établir ; il ordonne.**
+
+![**Figure 43.5** — Trois échelles d'autonomie homonymes : « copilote » ne désigne pas la même chose trois fois.](../figures/f-43-05-echelles-homonymes.svg)
 
 ### 43.5.2 Le croisement par palier, et ce qu'il ordonne
 

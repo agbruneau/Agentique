@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 348" width="445" height="348" role="img" aria-label="Les cinq questions de la grille d'identite agentique et l'exigence attachee a chacune.">
+  <!-- Tableau 14.1, § 14.1, chapitre 14.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="348" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">CINQ QUESTIONS, CINQ EXIGENCES</text>
+  <rect x="0" y="14" width="445" height="47" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="32">Q-A</text>
+  <text class="l bande" x="33" y="32">Qui es-tu ?</text>
+  <text class="l ann" x="10" y="47">Un identifiant stable, vérifiable, résistant à l'usurpation et révocable.</text>
+  <rect x="0" y="77" width="445" height="47" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="95">Q-B</text>
+  <text class="l bande" x="33" y="95">Qui t'a créé ?</text>
+  <text class="l ann" x="10" y="110">Une chaîne de provenance jusqu'à une autorité d'émission, avec son ancrage de confiance.</text>
+  <rect x="0" y="140" width="445" height="47" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="158">Q-C</text>
+  <text class="l bande" x="33" y="158">Pour qui agis-tu ?</text>
+  <text class="l ann" x="10" y="173">Une chaîne de mandat interrogeable à l'instant t, et non seulement à l'admission.</text>
+  <rect x="0" y="203" width="445" height="47" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="221">Q-D</text>
+  <text class="l bande" x="33" y="221">Que peux-tu faire ?</text>
+  <text class="l ann" x="10" y="236">Des bornes de privilège explicites et opposables au point d'application.</text>
+  <rect x="0" y="266" width="445" height="47" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang" x="10" y="284">Q-E</text>
+  <text class="l bande" x="33" y="284">Qui en répond ?</text>
+  <text class="l ann" x="10" y="299">Une imputabilité traçable jusqu'à une personne ou une entité juridique.</text>
+  <path d="M 0 319 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="332">La grille TRIE, elle ne certifie pas : répondre aux cinq questions n'établit pas qu'un mécanisme est sûr, seulement qu'il porte</text>
+  <text class="l ann" x="0" y="342">ce qu'il faut pour être interrogé. Son inspiration n'autorise pas davantage (§ 14.1).</text>
+</svg>

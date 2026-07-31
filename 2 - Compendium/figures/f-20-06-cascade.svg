@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 129" width="445" height="129" role="img" aria-label="La question de la revocation en cascade dans une chaine de delegation a plusieurs sauts.">
+  <!-- § 20.6, chapitre 20.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="129" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">LE MANDAT D'ORIGINE EST RETIRÉ — ET CE QUI EN A ÉTÉ DÉRIVÉ ?</text>
+  <rect x="0" y="14" width="134" height="56" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="31">Mandant</text>
+  <text class="l ann" x="9" y="44">retire l'autorisation qu'il avait</text>
+  <text class="l ann" x="9" y="55">accordée</text>
+  <path d="M 136.66666666666666 42.0 H 149.66666666666666" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 153.66666666666666 42.0 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="156" y="14" width="134" height="56" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="165" y="31">Agent</text>
+  <text class="l ann" x="165" y="44">détenait le mandat, l'avait</text>
+  <text class="l ann" x="165" y="55">transmis</text>
+  <path d="M 292.66666666666663 42.0 H 308.66666666666663" fill="none" stroke="#737373" stroke-width=".9" stroke-dasharray="2.5 2"/>
+  <text class="l annf" x="300.66666666666663" y="36.0" text-anchor="middle">✕</text>
+  <rect x="311" y="14" width="134" height="56" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="320" y="31">Second agent</text>
+  <text class="l ann" x="320" y="44">l'exerce encore auprès d'un</text>
+  <text class="l ann" x="320" y="55">service</text>
+  <text class="l annf" x="0" y="84">Aucun balayage documenté ne répond de ce qui se propage, ni de la vitesse à laquelle il se propage.</text>
+  <path d="M 0 90 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="103">Le socle NE DOCUMENTE PAS de mécanisme de révocation en cascade dans une chaîne de délégation — absence de documentation, non</text>
+  <text class="l ann" x="0" y="113">fait négatif vérifié (degré 3). La distinction décide de ce qu'une institution peut inscrire dans un dossier de diligence</text>
+  <text class="l ann" x="0" y="123">raisonnable.</text>
+</svg>

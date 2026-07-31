@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 156" width="445" height="156" role="img" aria-label="Le renversement du raisonnement de securite : borner le rayon de la compromission plutot que l'empecher.">
+  <!-- § 11.4.1, chapitre 11.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="156" fill="#FDFBF9"/>
+  <text class="l titreg" x="0" y="8">PRÉVENIR</text>
+  <rect x="0" y="14" width="210" height="94" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="30">Empêcher la compromission</text>
+  <text class="l ann" x="9" y="46">Suppose que les surfaces se referment</text>
+  <text class="l ann" x="9" y="65">Une seule brèche annule la démarche</text>
+  <text class="l ann" x="9" y="84">Non protocolaire : les spécifications ne répondent ni</text>
+  <text class="l ann" x="9" y="95">du contenu ni de l'état</text>
+  <text class="l annf" x="0" y="121">l'ordre habituel du raisonnement</text>
+  <text class="l titre" x="236" y="8">CONFINER</text>
+  <rect x="236" y="14" width="210" height="94" fill="#FFFFFF" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l bande" x="245" y="30">Borner le rayon de la compromission</text>
+  <text class="l ann" x="245" y="46">Restreindre le contexte de chaque agent</text>
+  <text class="l ann" x="245" y="65">Restreindre ses capacités</text>
+  <text class="l ann" x="245" y="84">Le cadre local devient frontière de sécurité et de</text>
+  <text class="l ann" x="245" y="95">confidentialité</text>
+  <text class="l annf" x="236" y="121">ce que le manifeste propose (§ 11.1.3)</text>
+  <path d="M 0 127 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="140">Le renversement ne suppose PAS que les surfaces du § 11.1 soient refermées — il suppose l'inverse, et c'est ce qui le rend</text>
+  <text class="l ann" x="0" y="150">praticable. Une frontière qui borne un rayon ne dit rien de la probabilité de la compromission qu'elle borne.</text>
+</svg>

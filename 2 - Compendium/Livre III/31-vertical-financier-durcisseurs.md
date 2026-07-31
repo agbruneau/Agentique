@@ -114,6 +114,8 @@ ne porte aucune mesure de l'efficacité de cette supervision.* ⚠ **Le patron n
 est le durcisseur que le domaine impose, non une parade que ce chapitre prescrit** ; *mais l'écrire
 sans sa limite serait présenter une contrainte de domaine comme une solution.*
 
+![**Figure 31.1a** — L'irréversibilité : le point de la chaîne au-delà duquel rien ne se défait.](../figures/f-31-01a-irreversibilite.svg)
+
 ### 31.1.2 Capital, risque systémique et agents corrélés — SIÈGE DU RISQUE SYSTÉMIQUE
 
 ⚠ **SIÈGE DU RISQUE SYSTÉMIQUE POUR TOUTE LA SOMME.** *Renvois entrants **re-mesurés le 28 juillet 2026**
@@ -241,6 +243,8 @@ contractualisation** : *le **contrat-modèle** — ce que l'agent est autorisé 
 valide — et le **contrat-service** — de qui l'agent dépend et comment on en sort —, **tous deux
 versionnés et opposables**.*
 
+![**Figure 31.1b** — La double-qualification : l'agent comme modèle et comme tiers TIC.](../figures/f-31-01b-double-qualification.svg)
+
 ## § 31.2 — Standards de données financières : le substrat sémantique
 
 **Le critère qui organise cette section se pose une fois** : ⚠ **ancrer un agent financier sur un
@@ -269,6 +273,8 @@ sont pas interchangeables, ils opèrent à trois niveaux que l'agent consomme di
 faux** si l'agent ignore la couche 3, et une **capacité** (couche 2) **sans message normalisé n'est pas
 interopérable**.* **Le ch. 2 fournit les mécanismes sémantiques génériques ; la finance fournit les
 trois couches déjà peuplées.**
+
+![**Figure 31.2** — Les trois couches du substrat sémantique financier, et ce que l'agent tire de chacune.](../figures/f-31-02-substrat-semantique.svg)
 
 ### 31.2.2 La bascule de novembre 2025 comme événement structurant
 
@@ -816,6 +822,8 @@ pas seulement une exigence de conformité, mais aussi une exigence de confinemen
 basculement de régime, qui est une lecture reprise du Vol. I. ⚠ **Et une absence se déclare** : *aucune
 formalisation consensuelle de la propagation des étiquettes de sensibilité à travers les états
 mémoriels persistants d'un parc n'est documentée — degré 3.*
+
+![**Figure 31.5** — Les quatre plans où circule la donnée régulée dans une boucle agentique.](../figures/f-31-05-quatre-plans.svg)
 
 ### 31.5.2 Offres d'infonuagique souverain et risque de concentration
 

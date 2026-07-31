@@ -225,6 +225,8 @@ raisonnement, non pour l'appuyer.* ⚠ **Ce qui tient sans elle suffit** : les d
 § 21.1 tombent en 2030-2031 — **PROGRAMMÉ** — et en 2035 — **PROJETÉ** — ; et — Lecture de l'auteur —
 *l'horizon de conception d'une pile d'identité d'entreprise n'est vraisemblablement pas plus court.*
 
+![**Figure 21.2** — Récolter maintenant, déchiffrer plus tard : ce que le socle établit, et où le raisonnement le quitte.](../figures/f-21-02-moisson.svg)
+
 ## § 21.3 — Inventaire : quels artefacts de la pile agentique cassent, et quand
 
 *Un inventaire de migration se dresse **par artefact, non par produit**.* ⚠ **C'est la colonne de
@@ -759,6 +761,8 @@ transpose devient, en trois citations, une échéance.***
    repose sur des signatures classiques, et **aucun de ses mécanismes ne documente comment en sortir**.*
 
 ---
+
+![**Figure 21.9** — La fenêtre d'action lue à rebours, depuis l'échéance la plus contraignante.](../figures/f-21-09-calendrier-inverse.svg)
 
 ## § 21.10 — Note de statut *(hors plan — à retirer à la publication)*
 

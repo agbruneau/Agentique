@@ -163,6 +163,8 @@ Le **paysage hétérogène** — ordinateur central, progiciel de gestion, servi
 coexistants — qui interdit toute hypothèse d'homogénéité. La **souveraineté et la résidence** des
 données, qui contraignent le lieu d'exécution de l'inférence et le transit des jetons.
 
+![**Figure 24.1** — L'agent comme acteur du tissu d'intégration : une dualité de rôles.](../figures/f-24-01-acteur-du-tissu.svg)
+
 ### 24.1.2 La plateforme d'intégration comme fabrique de serveurs d'outils
 
 ⚠ **Désambiguïsation obligatoire (décision 12c du TOC).** Le mot « fabrique » désigne ici, et
@@ -436,6 +438,8 @@ préversion à une date postérieure — *et c'est le régime de preuve, non l'o
 nuance.* Des plateformes natives d'identités non humaines ciblent par ailleurs explicitement la
 découverte, le moindre privilège et le cycle de vie.
 
+![**Figure 24.3** — Le cycle de vie de l'identité d'agent à l'échelle du parc, de l'enregistrement à la révocation.](../figures/f-24-03-cycle-identite.svg)
+
 ### 24.3.2 Délégation multi-saut, autorisation fine et gestion des secrets
 
 ⚠ **Le patron directeur est la délégation traçable sans réutilisation de jeton**, et sa règle d'or est
@@ -707,6 +711,8 @@ que le critère de sélection à l'échelle.
 **Le critère décisif d'industrialisation est le découplage entre la logique d'orchestration et
 l'exécution des étapes** — et *le patron retenu doit rester portable d'un cadriciel à l'autre*, faute de
 quoi il redevient un verrou (§ 24.2.4).
+
+![**Figure 24.5** — Les trois échelles d'orchestration, ordonnées par structure de propriété.](../figures/f-24-05-trois-echelles.svg)
 
 ### 24.5.3 Collaboration inter-départementale et inter-organisations
 

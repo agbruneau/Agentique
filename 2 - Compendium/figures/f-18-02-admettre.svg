@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 174" width="445" height="174" role="img" aria-label="La repartition entre ce que le protocole specifie a l'admission et ce qu'il laisse a l'organisation.">
+  <!-- § 18.2, chapitre 18.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="174" fill="#FDFBF9"/>
+  <text class="l titreg" x="0" y="8">CE QUE LA FRONTIÈRE REÇOIT</text>
+  <rect x="0" y="14" width="210" height="102" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="30">Spécifié</text>
+  <text class="l ann" x="9" y="46">Une carte d'agent, publiée et signée</text>
+  <text class="l ann" x="9" y="65">Un chemin de découverte normalisé</text>
+  <text class="l ann" x="9" y="84">Des capacités déclarées par l'agent lui-même</text>
+  <text class="l annf" x="0" y="129">la découverte est spécifiée</text>
+  <text class="l titre" x="236" y="8">CE QU'ELLE DOIT PRODUIRE ELLE-MÊME</text>
+  <rect x="236" y="14" width="210" height="102" fill="#FFFFFF" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l bande" x="245" y="30">Non spécifié</text>
+  <text class="l ann" x="245" y="46">Le critère d'admission</text>
+  <text class="l ann" x="245" y="65">L'ancrage de la clé dans une organisation</text>
+  <text class="l ann" x="245" y="84">La vérification de ce que l'agent déclare</text>
+  <text class="l ann" x="245" y="103">Le verdict, et sa durée de validité</text>
+  <text class="l annf" x="236" y="129">l'admission ne l'est pas</text>
+  <path d="M 0 135 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="148">La grille du ch. 14 N'EST PAS APPLIQUÉE ici : ce chapitre instruit Q-C, il ne rend pas de verdict mécanisme par mécanisme</text>
+  <text class="l ann" x="0" y="158">(ch. 17 § 17.0). La découverte est spécifiée ; l'admission ne l'est pas — et l'écart entre les deux est tout entier à la charge</text>
+  <text class="l ann" x="0" y="168">de celui qui décide.</text>
+</svg>

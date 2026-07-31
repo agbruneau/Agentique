@@ -96,6 +96,8 @@ c'est tout ce dont ce chapitre dispose. **Elle ne se vérifie pas comme un fait 
 que mobilise le ch. 16 ne documente pas de mécanisme d'identité portant la composition, et *c'est une
 absence de documentation, non un fait négatif vérifié* (degré 3 de l'échelle R-14 du Vol. III).
 
+![**Figure 47.1** — Les cinq composants d'un agent et leurs horloges propres : ce qui les fait changer, et qui en décide.](../figures/f-47-01-cinq-horloges.svg)
+
 ## § 47.2 — Nomenclatures logicielles et d'IA : état des normes et de l'outillage
 
 ⚠ **Cette section est l'une des deux du chapitre dont le plan déclare le socle « à constituer avant
@@ -283,6 +285,8 @@ comme candidat**, et **le défaut d'attribution y est déclaré** — *aucun én
 adosse, et aucun énoncé du présent chapitre ne l'établit.* ⚠ *Le superlatif que ce paragraphe portait
 — « le seul de tout le Livre à l'être » — est retiré : le domaine des renvois entrants du Livre n'a
 pas été relevé, et un superlatif sans domaine balayé est un relevé, non une couverture.*
+
+![**Figure 47.4** — Le retournement du ch. 20 relu comme défaut de provenance : la même attaque, vue de l'autre bout.](../figures/f-47-04-provenance-miroir.svg)
 
 ## § 47.5 — La provenance comme pièce candidate du passeport du ch. 16
 

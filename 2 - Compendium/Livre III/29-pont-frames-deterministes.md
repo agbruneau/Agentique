@@ -166,6 +166,8 @@ souvent indéterminables**.* **Si l'on ne peut extraire l'explication du modèle
 raisonnablement la confier à l'agent, il reste ce qui les entoure.** ⚠ **Aucune des trois sources ne
 dit cela ; c'est leur conjonction, et elle est de l'auteur.**
 
+![**Figure 29.1** — La table de traduction : ce que chaque exigence impose au cadre, et le statut du lien.](../figures/f-29-01-table-traduction.svg)
+
 ## § 29.2 — Le verdict empirique et la convergence à trois sources
 
 **L'argument qui suit porte le titre du Livre ; il faut donc l'exposer avec plus de sévérité qu'aucun

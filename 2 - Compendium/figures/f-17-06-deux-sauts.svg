@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 130" width="445" height="130" role="img" aria-label="La chaine de delegation a deux sauts, et le point ou les mecanismes cessent de la porter.">
+  <!-- § 17.6.1, chapitre 17.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="130" fill="#FDFBF9"/>
+  <text class="l titre" x="0" y="8">UN SAUT PORTÉ, LE SECOND NON</text>
+  <rect x="0" y="14" width="95" height="67" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="31">Mandant</text>
+  <text class="l ann" x="9" y="44">l'humain qui délègue,</text>
+  <text class="l ann" x="9" y="55">premier et dernier</text>
+  <text class="l ann" x="9" y="66">maillon (§ 17.4)</text>
+  <path d="M 97.75 47.5 H 110.75" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 114.75 47.5 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="117" y="14" width="95" height="67" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="126" y="31">Agent</text>
+  <text class="l ann" x="126" y="44">détient le mandat,</text>
+  <text class="l ann" x="126" y="55">l'exerce — premier</text>
+  <text class="l ann" x="126" y="66">saut</text>
+  <path d="M 214.75 47.5 H 227.75" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 231.75 47.5 l -4 -3 v 6 z" fill="#9A3B12"/>
+  <rect x="234" y="14" width="95" height="67" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="243" y="31">Sous-agent</text>
+  <text class="l ann" x="243" y="44">reçoit un mandat</text>
+  <text class="l ann" x="243" y="55">dérivé — second saut</text>
+  <path d="M 331.75 47.5 H 347.75" fill="none" stroke="#737373" stroke-width=".9" stroke-dasharray="2.5 2"/>
+  <text class="l annf" x="339.75" y="41.5" text-anchor="middle">✕</text>
+  <rect x="350" y="14" width="95" height="67" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="359" y="31">Service</text>
+  <text class="l ann" x="359" y="44">applique, sans pouvoir</text>
+  <text class="l ann" x="359" y="55">remonter la chaîne à</text>
+  <text class="l ann" x="359" y="66">l'instant t</text>
+  <text class="l annf" x="0" y="95">Au-delà du premier saut : degré 3 — absence de documentation, non fait négatif vérifié.</text>
+  <path d="M 0 101 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="114">« Deux sauts » N'EST PAS UNE MESURE : c'est la formulation d'un front ouvert (H-28, [C]). Aucune entrée du socle propre ne</text>
+  <text class="l ann" x="0" y="124">compte de sauts, n'en fixe le seuil, ni ne définit le terme — la définition employée par le chapitre est déclarée par lui.</text>
+</svg>

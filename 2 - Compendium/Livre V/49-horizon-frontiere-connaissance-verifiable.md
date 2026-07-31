@@ -87,6 +87,8 @@ quelques semaines, de suspendus à PROGRAMMÉS.** De là la marque « **à re-v�
 systématiquement à toute date 2026-2028 : *le programmé d'aujourd'hui peut être le projeté de
 demain.*
 
+![**Figure 49.0** — Le cône d'incertitude et les trois statuts épistémiques.](../figures/f-49-00-cone-incertitude.svg)
+
 ### 49.0.3 Ce que le chapitre ne fait pas
 
 Il ne prédit **ni fonctionnalité produit, ni date d'intelligence générale** : il lit des agendas de
@@ -194,6 +196,8 @@ sa source et son statut, et toute affirmation portant sur 2027-2028 est révisab
 frise qui **périment** des passages de la somme sont **événements de péremption**, et leur registre
 est au **ch. 50 § 50.2**. *Une frise dit quand quelque chose arrive ; un registre de péremption dit
 ce qui tombe quand cela arrive.* Les deux ne se confondent pas, et le second n'est pas dupliqué ici.
+
+![**Figure 49.1** — La grappe d'échéances 2027-2032, et la concentration de 2027.](../figures/f-49-01-grappe-echeances.svg)
 
 ## § 49.2 — Trajectoire des protocoles : vers la coexistence stratifiée gouvernée
 
@@ -831,6 +835,8 @@ qu'elle circule dans un web ouvert et convergent ou dans des jardins clos juridi
 cloisonnés** (ch. 15 § 15.1 pour ce que la signature démontre). *L'intérêt n'est pas de désigner le
 scénario le plus probable, mais de concevoir des décisions **robustes à plusieurs futurs** plutôt
 qu'optimisées pour un seul.*
+
+![**Figure 49.11** — Trois axes, et des futurs qui s'y lisent différemment.](../figures/f-49-11-trois-axes.svg)
 
 ### 49.11.3 Discontinuités à faible probabilité et fort impact
 

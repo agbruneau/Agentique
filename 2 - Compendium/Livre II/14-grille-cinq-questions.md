@@ -112,6 +112,8 @@ négatif vérifié* (R-14 du Vol. III, degré 3). **Une case vide n'est pas un q
 n'est pas le mécanisme qui reçoit une note intermédiaire, c'est **l'état de la preuve** qui est
 déclaré.
 
+![**Figure 14.1** — La grille des cinq questions, et ce que chacune exige d'un mécanisme.](../figures/f-14-01-grille-cinq-questions.svg)
+
 ## § 14.2 — Application-témoin à trois mécanismes
 
 Trois mécanismes ont été instruits à un degré qui permet de les soumettre à la grille : la **carte

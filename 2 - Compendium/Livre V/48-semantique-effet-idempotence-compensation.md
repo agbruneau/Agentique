@@ -103,6 +103,8 @@ idempotent. Ce chapitre en tire la conséquence que le ch. 1 lui assigne : *si l
 être garantie, l'effet doit l'être ; et c'est l'effet, non le message, que la sémantique de ce
 chapitre prend pour objet.*
 
+![**Figure 48.1** — Les trois classes d'effet d'une action d'agent, et ce qu'une reprise produit.](../figures/f-48-01-classes-effet.svg)
+
 ## § 48.2 — Idempotence et rejouabilité des appels d'outils
 
 ⚠ **Le plan borne cette section par une formule qu'il faut appliquer à la lettre : « ce que les
@@ -158,6 +160,8 @@ d'une opération — non une recommandation de bonne pratique dans une page de g
 si le corpus n'en porte pas, l'énoncé qui en sort reste au degré 3, et la thèse du chapitre est
 **confirmée dans sa lettre sans être établie** — nuance qui doit survivre à l'instruction.
 
+![**Figure 48.2** — La seule composition qui tienne sous pannes : livraison au-moins-une-fois et consommateur idempotent.](../figures/f-48-02-exactement-une-fois.svg)
+
 ## § 48.3 — Compensation et sagas au grain de l'agent
 
 **Le patron est acquis et ne se reconstruit pas ici.** Le **ch. 1 § 1.6.2.2** pose la saga —
@@ -203,6 +207,8 @@ ailleurs** : cette section est, selon le TOC — **v0.25 au constat d'origine, m
 jusqu'à la v0.30** —, la **seule occurrence de « sagas » de toute la zone des chapitres**, et elle
 l'est **au grain d'une action unique**. *C'est ce constat, et non une
 préférence d'architecture, qui a fondé le risque 15 — et D-7 l'a borné sans le combler.*
+
+![**Figure 48.3** — Compensation et sagas au grain de l'agent : ce qui se défait, et ce qui se compense.](../figures/f-48-03-compensation.svg)
 
 ## § 48.4 — Réconciliation des flux financiers
 

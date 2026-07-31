@@ -304,6 +304,8 @@ linéaire, qui justifie l'angle d'ingénierie de tout le mouvement.
 
 ---
 
+![**Figure 4.1** — Flux de travail ou agent : qui tient la tuyauterie, le code ou le modèle.](../figures/f-04-01-flux-ou-agent.svg)
+
 ## § 4.2 — Architectures d'agent et boucle agentique
 
 Les fondements fournissent le vocabulaire ; ils ne disent pas comment se construit concrètement le
@@ -464,6 +466,8 @@ elle-même, ses deux régimes et ses deux anti-patrons ; il **n'établit pas** c
 comme lecture, et dont l'instruction relève du Livre III.
 
 ---
+
+![**Figure 4.2** — La boucle agentique, et le critère d'arrêt qui la distingue d'un appel unique.](../figures/f-04-02-boucle-agentique.svg)
 
 ## § 4.3 — Raisonnement, planification et calcul à l'inférence
 
@@ -666,6 +670,8 @@ préférence ; la distillation de raisonnement d'un grand modèle vers un plus p
 > l'autre. C'est l'invariant du Livre appliqué au modèle lui-même.
 
 ---
+
+![**Figure 4.3** — Du raisonnement linéaire à la recherche structurée : trois régimes, et ce que chacun corrige.](../figures/f-04-03-raisonnement.svg)
 
 ## § 4.4 — Utilisation d'outils et accès aux outils
 

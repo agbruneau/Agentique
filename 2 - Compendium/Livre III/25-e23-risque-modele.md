@@ -106,6 +106,8 @@ lesquelles le Bureau entend l'appliquer, ni le contenu de la réserve de compati
 les succursales étrangères. *Une institution qui bâtirait un argumentaire sur cette réserve devrait
 remonter au texte lui-même.*
 
+![**Figure 25.1** — E-23 : de la publication à la date opposable.](../figures/f-25-01-calendrier-e23.svg)
+
 ## § 25.2 — La définition de « modèle » et l'anticipation des systèmes autonomes
 
 Tout, dans ce chapitre, tient à **une définition**.
@@ -231,6 +233,8 @@ c'est cette asymétrie — non une attente du Bureau — qui fonde la recommanda
 « **doivent** traiter » la couverture comme acquise transforme cette asymétrie de risque en
 prescription. *La source écrit « à traiter comme acquise » et marque la recommandation comme sienne ;
 le corps de ce chapitre s'en tient à cette forme.*
+
+![**Figure 25.3** — Comment un texte qui ne nomme pas l'agent l'atteint quand même.](../figures/f-25-03-inference-agentique.svg)
 
 ## § 25.4 — Relecture d'E-23 par la grille des cinq questions
 

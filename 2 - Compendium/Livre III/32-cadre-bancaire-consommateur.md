@@ -341,6 +341,8 @@ date d'entrée en vigueur de C-15 article par article**. Et il ne lègue **aucun
 
 ---
 
+![**Figure 32.4** — Le cadre bancaire axé sur le consommateur : la chaîne, et le maillon qui manque.](../figures/f-32-04-maillon-absent.svg)
+
 ## § 32.5 — Note de statut *(hors plan — à retirer à la publication)*
 
 ⚠ **Cette section n'est pas au TOC et n'a pas vocation à survivre.** Elle consigne l'écart de

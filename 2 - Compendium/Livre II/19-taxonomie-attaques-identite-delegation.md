@@ -238,6 +238,8 @@ son caractère architectural, en **[C]**. **Ce qu'il n'établit pas** : que la r
 identitaire **plutôt qu'autre chose**. *C'est la lecture que la thèse de ce chapitre propose, et le
 § 19.4 est l'endroit où elle s'éprouve.*
 
+![**Figure 19.2** — La triade létale : trois propriétés dont la conjonction suffit.](../figures/f-19-02-triade-letale.svg)
+
 ## § 19.3 — Vecteurs d'attaque
 
 **La surface d'attaque d'un agent épouse exactement son anatomie** : chaque entrée de sa boucle, chaque
@@ -364,6 +366,8 @@ preuve** : la référence est **repérée à sa notice bibliographique**, non ex
 au socle à aucun niveau** ; **aucun énoncé du chapitre n'est réécrit sur elle**, et la lecture
 proposée ci-dessus est une **lecture de l'auteur** au sens de CA-IV-07. *Le socle établit les trois
 formes ; il n'établit pas leur identité de patron.*
+
+![**Figure 19.4** — Le tri des attaques par le maillon qui cède, et la question de la grille en défaut.](../figures/f-19-04-maillon-qui-cede.svg)
 
 ## § 19.5 — L'empoisonnement de la mémoire et des sources
 

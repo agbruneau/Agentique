@@ -228,6 +228,8 @@ charge.**
 
 ---
 
+![**Figure 26.3** — Le vide fédéral, et les quatre instruments qui portent effectivement la charge.](../figures/f-26-03-vide-federal.svg)
+
 ## § 26.4 — Note de statut *(hors plan — à retirer à la publication)*
 
 ⚠ **Cette section n'est pas au TOC et n'a pas vocation à survivre.** Elle consigne l'écart de

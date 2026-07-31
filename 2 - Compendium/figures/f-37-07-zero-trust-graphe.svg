@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 145" width="445" height="145" role="img" aria-label="La transposition du principe zero trust du reseau vers le graphe d'agents.">
+  <!-- § 37.7, chapitre 37.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="145" fill="#FDFBF9"/>
+  <text class="l titreg" x="0" y="8">ZERO TRUST RÉSEAU</text>
+  <rect x="0" y="14" width="210" height="83" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="30">Jamais confiance au réseau</text>
+  <text class="l ann" x="9" y="46">La localisation n'accorde rien</text>
+  <text class="l ann" x="9" y="65">Chaque appel s'authentifie</text>
+  <text class="l ann" x="9" y="84">Le périmètre cesse d'être une frontière</text>
+  <text class="l annf" x="0" y="110">NIST SP 800-207</text>
+  <text class="l titre" x="236" y="8">ZERO TRUST AGENTIQUE</text>
+  <rect x="236" y="14" width="210" height="83" fill="#FFFFFF" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l bande" x="245" y="30">Jamais confiance au graphe</text>
+  <text class="l ann" x="245" y="46">La position dans le graphe n'accorde rien</text>
+  <text class="l ann" x="245" y="65">Chaque arête se vérifie</text>
+  <text class="l ann" x="245" y="84">Être invoqué par un pair n'est pas une autorisation</text>
+  <text class="l annf" x="236" y="110">transposition — ce chapitre</text>
+  <path d="M 0 116 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="129">La transposition est une LECTURE, non un mécanisme : nommer le graphe à la place du réseau ne fournit ni l'identité qui s'y</text>
+  <text class="l ann" x="0" y="139">vérifie, ni la fraîcheur du verdict (§ 37.8.3). Le principe change de domaine ; les manques ne changent pas.</text>
+</svg>
