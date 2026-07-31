@@ -5,15 +5,22 @@
 //
 //   (1) MESURE DE LIGNE. Le relevé Springer donnait 81 caractères par ligne en
 //       médiane (87 au p90) : au-dessus de la plage de confort (60-75), et le
-//       premier frein de lecture du volume. Le corps passe à 108 mm, ce qui
-//       ramène la mesure autour de 68.
-//   (2) FORMAT. 215,9 × 279,4 mm (Letter) au lieu de 155 × 235 : c'est le
-//       format d'impression courant ici, et les 51 mm gagnés en largeur payent
-//       la marge de note SANS rogner le corps.
+//       premier frein de lecture du volume. ⚠ Le levier N'EST PAS la largeur du
+//       corps mais le RAPPORT largeur/corps de texte : depuis le second état du
+//       31 juillet 2026, le corps est large (157,0 mm) et le texte gros (13 pt),
+//       ce qui tient la mesure autour de 77.
+//   (2) FORMAT. 215,9 × 279,4 mm (Letter) au lieu de 155 × 235.
 //   (3) COULEUR. Le relevé n'en portait aucune. Une teinte unique — terre
 //       brûlée, parente du thème des rendus `.html` du volume — porte les
 //       numéros, les filets d'ouverture et le liséré des encadrés. Le texte
 //       courant reste à l'encre.
+//
+// ⚠ DEUX ÉTATS SE SONT SUCCÉDÉ LE MÊME JOUR, et le second est le courant :
+// le premier posait une marge de note de 46 mm à droite ; l'instruction d'auteur
+// qui l'a suivie veut la marge de droite « significativement » rétrécie. Elle
+// vaut 28,9 mm — relevée sur les monographies du dépôt —, la colonne de note a
+// disparu, et le corps de texte a monté pour compenser (voir la grille). Ne pas
+// relire ce fichier comme s'il portait encore une colonne de marge.
 //
 // Ce que la refonte NE change pas, parce que ce sont des instructions d'auteur
 // distinctes du parti graphique :
@@ -52,33 +59,54 @@
 #let CREME  = rgb("#FAF5F0")     // fond des encadrés
 
 // ---------------- grille ----------------
-// Letter, marges asymétriques : le blanc est rassemblé à l'EXTÉRIEUR, où il
-// devient une colonne utile (notes, légendes, repères) au lieu d'être partagé
-// en deux bandes mortes.
+// ⚠ MARGES RELEVÉES SUR LES TROIS MONOGRAPHIES DU DÉPÔT, sur instruction
+// d'auteur du 31 juillet 2026 — non décidées ici. Mesure prise sur les PDF
+// ⚠ LA MESURE NE SE PREND PAS SUR LES BOÎTES DE TEXTE, et c'est la leçon de
+// cette passe : le cadre de ligne que rend un extracteur PDF inclut l'avance du
+// dernier glyphe, qui dépend de la fonte — sur Constantia, 83 % des lignes
+// paraissent ainsi déborder de 1,1 mm d'un bloc qui est en réalité juste. Le
+// bloc se mesure sur un OBJET VECTORIEL pleine largeur (filet de tableau, filet
+// d'ouverture), dont la position est exacte :
+//   filet de 30,00 à 187,00 mm, 450 occurrences — largeur 157,0 mm.
+// Les trois monographies donnent le même bloc, à 0,01 mm près :
 //
-//   30 | corps 107,9 | 7 | note 46 | 25
+//   Vol. I   Letter | G 30,00 mm | bord D 186,97 mm | corps 157,0 mm | 11 pt
+//   Vol. II  Letter | G 30,00 mm | bord D 186,97 mm | corps 157,0 mm |  9,4 pt
+//   Vol. III Letter | G 30,00 mm | bord D 186,98 mm | corps 157,0 mm | 11 pt
 //
-// ⚠ LA COLONNE DE NOTE NE CHANGE PAS DE CÔTÉ, et c'est un choix, non un oubli.
-// Le relevé Springer alternait sur la parité PHYSIQUE de la page ; or les
-// quinze pages liminaires décalent le folio d'un rang, si bien que le folio 1
-// tombe sur une page physique paire et que les deux parités sont INVERSÉES —
-// le lecteur voit un folio pair composé comme un recto. Faire coïncider les
-// deux supposerait d'insérer une page, que l'instruction « aucune page
-// blanche » interdit. Le volume se lisant à l'écran, la colonne reste à droite :
-// le dispositif est celui de la marge de note, il est stable, et la classe de
-// défaut disparaît.
+//   30 | corps 157,0 | 28,9
 //
-#let M_INT   = 30mm     // côté reliure
-#let M_EXT   = 25mm     // tranche extérieure, après la colonne de note
-#let GOUT    = 7mm      // gouttière entre corps et colonne de note
-#let W_NOTE  = 46mm
-#let W_CORPS = 215.9mm - M_INT - M_EXT - GOUT - W_NOTE   // = 107,9 mm
+// ⚠ SEULES LES MARGES SONT REPRISES, pas le corps de texte, et l'écart est
+// délibéré : à 11 pt les monographies rendent 89 caractères par ligne, le
+// Vol. II 99 — au-delà de la plage de confort (60-75), et au-delà même des 81
+// du relevé Springer que cette refonte corrige. Le compendium tient 77 à 13 pt.
+// Aligner aussi le corps rendrait la somme visuellement identique à ses sources
+// et annulerait le gain de lecture ; c'est un arbitrage d'auteur, pas un oubli.
+//
+// ⚠ CE QUI SUIT EST LE COMPROMIS DE LA GRILLE, ET IL EST ARITHMÉTIQUE, NON
+// ESTHÉTIQUE. La marge de droite valait 78 mm — une colonne de note de 46 mm,
+// sa gouttière et 25 mm de tranche ; or sur une largeur de page fixe, rétrécir
+// une marge ÉLARGIT le corps, et un corps de 157,0 mm composé au 10,5 pt du
+// premier état rendrait **96 caractères par ligne** — soit plus mauvais que
+// les 81 du relevé Springer, que la refonte avait justement pour objet de
+// corriger. La compensation est donc le CORPS DE TEXTE : porté de 10,5 à 13 pt,
+// il maintient la mesure autour de 77 caractères.
+//   Toute reprise de ces marges se paie sur le corps de texte, et se MESURE sur
+// le PDF — jamais à l'œil sur la source.
+//
+// ⚠ La colonne de note disparaît avec la marge qui la portait : les vingt-trois
+// renvois à la note de statut retirée passent en NOTE DE PIED, et le rang de
+// chapitre revient contre son titre. La page de titre et les ouvertures de
+// livre gardent leurs marges propres — la première par instruction expresse.
+#let M_INT   = 30mm
+#let M_EXT   = 28.9mm
+#let W_CORPS = 215.9mm - M_INT - M_EXT   // = 157,0 mm
 
-// Le pas de 14 pt sur un corps de 10,5 pt donne un interligne de 1,33 — plus
-// généreux que le 1,20 du relevé Springer, et c'est le second levier de lecture
-// après la mesure de ligne.
-#let CORPS = 10.5pt
-#let PAS   = 14pt
+// Le pas de 17 pt sur un corps de 13 pt garde l'interligne de 1,31 du premier
+// état — plus généreux que le 1,20 du relevé Springer, et c'est le second
+// levier de lecture après la mesure de ligne.
+#let CORPS = 13pt
+#let PAS   = 17pt
 // ⚠ `top-edge` est FIGÉ en em plutôt que laissé à la fonte effective : sans
 // cela, une ligne portant un ⚠ ou un ☑ — rendus par la fonte de repli — prend
 // une hauteur différente et décroche de la grille. Onze pour cent des lignes du
@@ -88,8 +116,7 @@
 
 #set page(
   width: 215.9mm, height: 279.4mm,
-  margin: (left: M_INT, right: M_EXT + W_NOTE + GOUT,
-           top: 24mm, bottom: 26mm),
+  margin: (left: M_INT, right: M_EXT, top: 24mm, bottom: 26mm),
   numbering: none, header: none, footer: none,
   header-ascent: 12mm,
   footer-descent: 12mm,
@@ -127,25 +154,13 @@
   if g.len() > n { g.slice(0, n).join("").trim() + "…" } else { g.join("") }
 }
 
-// ---------------- note de marge ----------------
-// Elle se pose dans la colonne extérieure, à l'ordonnée de son ancre. La
-// colonne est FIXE : le décalage se calcule depuis la position absolue de
-// l'ancre, jamais depuis un décalage relatif au bloc courant — sinon une note
-// posée au milieu d'une ligne dérive avec elle.
-// ⚠ Le `place` vit dans une BOÎTE DE LARGEUR NULLE, et c'est ce qui le rend
-// inline : posé nu dans un paragraphe, `place` est un élément de bloc — il le
-// scinde, et la suite de la phrase repart à la ligne avec un alinéa. La boîte
-// nulle ne prend aucune place et ancre le calcul à la position réelle du renvoi.
-#let note(body) = context {
-  let x = here().position().x
-  box(width: 0pt, place(dx: M_INT + W_CORPS + GOUT - x, dy: 0.15em,
-    box(width: W_NOTE, {
-      set text(font: SANS, size: 8pt, fill: GRIS, hyphenate: true)
-      set par(justify: false, leading: 4.2pt, spacing: 4.2pt,
-              first-line-indent: 0pt)
-      body
-    })))
-}
+// ---------------- note ----------------
+// ⚠ C'était une note de MARGE jusqu'au 31 juillet 2026 ; le rétrécissement de la
+// marge de droite lui a retiré sa colonne. Elle est désormais une note de pied.
+// L'appel reste le même — `assemble.py` écrit `#note[…]` et ne connaît pas le
+// dispositif —, et `springer.template` garde son propre repli sur la dague.
+#let note(body) = footnote(body)
+#show footnote.entry: set text(font: SANS, size: 9.5pt, fill: GRIS)
 
 // ---- une ouverture (chapitre, livre ou annexe) commence-t-elle ici ? ----
 #let ouvre-ici() = {
@@ -167,7 +182,7 @@
   if not ouvre-ici() {
     let chs = query(selector(heading.where(level: 1)).before(here()))
     if chs.len() > 0 {
-      set text(font: SANS, size: 8.5pt, fill: GRIS, hyphenate: false)
+      set text(font: SANS, size: 10.5pt, fill: GRIS, hyphenate: false)
       // L'annexe hors plan ne porte pas de numéro : après son marqueur, le
       // titre courant cite son titre nu, sans rang de chapitre.
       let annexe = query(selector(<ouverture-annexe>).before(here())).len() > 0
@@ -200,7 +215,7 @@
 // ---- folio en pied, sur les pages d'ouverture seulement ----
 #let pied = context {
   if ouvre-ici() {
-    set text(font: SANS, size: 9pt, fill: ACCENT, weight: "bold")
+    set text(font: SANS, size: 11pt, fill: ACCENT, weight: "bold")
     align(right, counter(page).display())
   }
 }
@@ -223,11 +238,11 @@
 // seconde — il se lit alors comme un soulignement. Le rang en accent suffit à
 // marquer le palier.
 #show heading.where(level: 2): it => block(above: 3 * PAS, below: 1.5 * PAS,
-  width: 100%, rang(it, 14pt, "bold", "normal"))
+  width: 100%, rang(it, 17pt, "bold", "normal"))
 #show heading.where(level: 3): it => block(above: 2.2 * PAS, below: PAS,
-  rang(it, 11.5pt, "bold", "normal"))
+  rang(it, 14pt, "bold", "normal"))
 #show heading.where(level: 4): it => block(above: 1.5 * PAS, below: 0.5 * PAS,
-  rang(it, 10.5pt, "bold", "italic"))
+  rang(it, 13pt, "bold", "italic"))
 
 // ---------------- tableaux ----------------
 // Filets « booktabs » : un filet de tête, un sous la rangée d'en-tête, un de
@@ -243,9 +258,13 @@
 // Une figure occupe la largeur du corps : les SVG du volume sont dessinés à leur
 // proportion définitive, et `image()` sans largeur prendrait leur taille en
 // pixels — qui déborderait de la colonne sans que rien ne le signale.
+// Les SVG du volume sont dessinés à la largeur du corps (viewBox de 445 unités
+// = 445 pt) : la mise à 100 % les rend donc à l'échelle 1, et les corps de texte
+// qu'ils déclarent sont ceux qu'on lit. Laisser la taille naturelle marcherait
+// aussi, mais rien ne rattraperait une figure dessinée à une autre échelle.
 #set image(width: 100%)
-#show figure.caption: set text(font: SANS, size: 8.5pt, fill: GRIS)
-#show figure.caption: set par(justify: false, leading: 4.6pt,
+#show figure.caption: set text(font: SANS, size: 10pt, fill: GRIS)
+#show figure.caption: set par(justify: false, leading: 5.6pt,
                               first-line-indent: 0pt)
 #show figure.caption: it => align(left, it)
 // Sans « sticky », une légende de tête peut rester seule en bas de page, son
@@ -256,7 +275,7 @@
 #show figure: set block(above: 1.3 * PAS, below: 1.3 * PAS)
 
 #set table(
-  inset: (x: 5pt, y: 4.5pt),
+  inset: (x: 6pt, y: 5.5pt),
   align: left + top,
   stroke: (x, y) => (
     left: none, right: none,
@@ -264,8 +283,8 @@
     bottom: none,
   ),
 )
-#show table: set par(justify: false, leading: 4.6pt, first-line-indent: 0pt)
-#show table: set text(font: SANS, size: 9pt, hyphenate: true)
+#show table: set par(justify: false, leading: 5.6pt, first-line-indent: 0pt)
+#show table: set text(font: SANS, size: 11pt, hyphenate: true)
 // Le filet de pied ne se déduit pas d'une règle par cellule — `stroke` ne
 // connaît pas la dernière rangée. Il se pose en BORD BAS du bloc qui enveloppe
 // le tableau : le bloc épouse sa hauteur, là où un `line()` posé à la suite
@@ -288,7 +307,7 @@
   inset: (left: 11pt, rest: 10pt),
   above: 1.3 * PAS, below: 1.3 * PAS,
   {
-    set text(size: 9.5pt)
+    set text(size: 12pt)
     set par(leading: INTER, spacing: INTER, first-line-indent: 0pt)
     it.body
   },
@@ -306,7 +325,7 @@
 // format est une barre verticale que rien ne distingue d'un filet — les
 // empattements sont ce qui en fait une lettre. Vaut aussi pour « II » et « V ».
 #let ouverture-livre(romain, verbe, sous) = page(
-  margin: (x: 34mm, top: 40mm, bottom: 26mm),
+  margin: (x: 30mm, top: 40mm, bottom: 26mm),
   header: none,
   footer: context {
     set text(font: SANS, size: 9pt, fill: ACCENT, weight: "bold")
@@ -332,22 +351,24 @@
 ]
 
 // ---------------- ouverture de chapitre ----------------
-// Le rang vit dans la colonne de note, en grand format : il donne le repère de
-// navigation que 921 pages réclament, sans manger la largeur du titre.
+// ⚠ Le rang vivait dans la colonne de note jusqu'au 31 juillet 2026 ; il revient
+// contre son titre, calé à la tranche, sur la ligne de l'étiquette. Il reste le
+// repère de navigation que mille pages réclament, et il ne mange plus la largeur
+// du titre puisqu'il partage sa ligne avec une étiquette courte.
 #let bandeau-ouverture(etiquette, rang-affiche) = {
   pagebreak(weak: true)
   set par(justify: false, leading: 0.30em, first-line-indent: 0pt)
   v(6mm)
-  grid(columns: (1fr,), block(width: 100%, {
-    text(font: SANS, size: 10pt, fill: GRIS, tracking: 0.28em, etiquette)
-    if rang-affiche != none {
-      note(align(right, text(size: 62pt, weight: "bold", fill: ACCENT,
-                             baseline: 26pt, rang-affiche)))
-    }
+  block(width: 100%, {
+    grid(columns: (1fr, auto), align: (left + bottom, right + bottom),
+      text(font: SANS, size: 11pt, fill: GRIS, tracking: 0.28em, etiquette),
+      if rang-affiche != none {
+        text(font: SANS, size: 44pt, weight: "bold", fill: ACCENT, rang-affiche)
+      } else { [] })
     v(5pt)
-    line(length: 100%, stroke: 1.4pt + ACCENT)
-  }))
-  v(9pt, weak: false)
+    line(length: 100%, stroke: 1.6pt + ACCENT)
+  })
+  v(11pt, weak: false)
 }
 
 #let ouverture-chapitre(n) = bandeau-ouverture("CHAPITRE", str(n))
@@ -363,14 +384,14 @@
 // ligne de situation toujours à la même ordonnée, qu'un titre tienne sur une ou
 // deux lignes. ⚠ Fixe, non minimale — un titre de trois lignes déborderait vers
 // le bas plutôt que de repousser la suite. Aucun des cinquante n'y arrive.
-#show heading.where(level: 1): it => block(height: 108pt, width: 100%,
+#show heading.where(level: 1): it => block(height: 128pt, width: 100%,
   above: 0pt, below: 0pt,
-  text(font: SANS, size: 25pt, weight: "bold", fill: ENCRE, it.body))
+  text(font: SANS, size: 30pt, weight: "bold", fill: ENCRE, it.body))
 
 // ---- ligne de situation, sous le titre de chapitre ----
 #let situation(body) = block(above: 0pt, below: 2.4 * PAS, width: 100%, {
   set par(justify: false, leading: INTER, first-line-indent: 0pt)
-  set text(size: 11pt, style: "italic", fill: GRIS)
+  set text(size: 13.5pt, style: "italic", fill: GRIS)
   body
 })
 
@@ -445,14 +466,14 @@
 
 // ================= Table des matières =================
 #set page(numbering: "i", footer: context {
-  set text(font: SANS, size: 9pt, fill: GRIS)
+  set text(font: SANS, size: 11pt, fill: GRIS)
   align(right, counter(page).display())
 })
 #counter(page).update(1)
 
 #block(width: 100%, above: 0pt, below: 1.8 * PAS, {
   set par(justify: false, first-line-indent: 0pt)
-  text(font: SANS, size: 28pt, weight: "bold", fill: ENCRE)[Table des matières]
+  text(font: SANS, size: 32pt, weight: "bold", fill: ENCRE)[Table des matières]
   v(8pt)
   line(length: 100%, stroke: 1.4pt + ACCENT)
 })
@@ -469,7 +490,7 @@
   // contredirait le plafond de cinquante.
   let en-annexe = false
   set par(justify: false, leading: INTER, spacing: INTER, first-line-indent: 0pt)
-  set text(size: 10pt)
+  set text(size: 12pt)
   for it in items {
     let p = counter(page).at(it.location()).first()
     if it.func() == metadata {
@@ -480,7 +501,7 @@
         // fonction d'espacement, dans tout le bloc.
         let livre = it.value
         block(above: 2 * PAS, below: 0.7 * PAS, sticky: true, width: 100%, {
-          set text(font: SANS, size: 12pt, weight: "bold", fill: ACCENT)
+          set text(font: SANS, size: 14pt, weight: "bold", fill: ACCENT)
           [Livre #livre.romain#h(1.3em)#livre.verbe]
           v(4pt)
           line(length: 100%, stroke: 0.8pt + ACCENT)
@@ -497,7 +518,7 @@
       // section et les deux se lisent comme une seule ligne repliée.
       block(above: if en-annexe { 2 * PAS } else { 0.9 * PAS }, below: 0.5 * PAS,
         sticky: true,
-        grid(columns: (9mm, 1fr, auto), column-gutter: (0pt, 5pt),
+        grid(columns: (11mm, 1fr, auto), column-gutter: (0pt, 5pt),
           // Le folio s'aligne sur la DERNIÈRE ligne de l'entrée : sur un titre
           // replié, il suit le conduit.
           align: (left + top, left + top, right + bottom),
@@ -505,10 +526,10 @@
           text(font: SANS, weight: "bold")[#link(it.location(), it.body)#conduit],
           text(font: SANS)[#p]))
     } else {
-      grid(columns: (9mm, 1fr, auto), column-gutter: (0pt, 5pt),
+      grid(columns: (11mm, 1fr, auto), column-gutter: (0pt, 5pt),
         align: (left + top, left + top, right + bottom),
         [], text(fill: GRIS)[#link(it.location(), it.body)#conduit],
-        text(font: SANS, size: 9pt, fill: GRIS)[#p])
+        text(font: SANS, size: 11pt, fill: GRIS)[#p])
     }
   }
 }

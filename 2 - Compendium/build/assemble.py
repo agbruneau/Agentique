@@ -169,7 +169,8 @@ def piece(chemin, numero):
     # — c'est pourquoi l'appel passe par une fonction du gabarit et non par un
     # caractere en dur.
     texte = "".join(corps)
-    renvoi = ("`#note[Renvoi a la note de statut de la piece, "
+    # ⚠ Ce texte est LU DANS LE LIVRABLE : il s'accentue comme le reste du corps.
+    renvoi = ("`#note[Renvoi à la note de statut de la pièce, "
               "hors du rendu.]`{=typst}")
     texte, marques = re.subn(r"§\s*" + re.escape(note) + r"(?!\d)",
                             f"§ {note}{renvoi}", texte)

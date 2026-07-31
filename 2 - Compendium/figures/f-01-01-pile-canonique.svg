@@ -1,14 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 306 186" width="306" height="186" role="img" aria-label="La pile canonique d'interoperabilite a quatre niveaux, son extension LCIM et le palier ou operent MCP et A2A.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 176" width="445" height="176" role="img" aria-label="La pile canonique d'interoperabilite a quatre niveaux, son extension LCIM et le palier ou operent MCP et A2A.">
   <!-- Figure 1.1, derivee du paragraphe 1.1.2 du chapitre 1. Aucune information
        qui ne soit dans le texte : quatre niveaux cumulatifs, extension LCIM de
        la couche semantique, palier de MCP et A2A.
 
-       CONVENTION DE DESSIN DU VOLUME : le viewBox fait 306 unites de large,
-       soit exactement la largeur du corps en points (107,9 mm). Une unite vaut
+       CONVENTION DE DESSIN DU VOLUME : le viewBox fait 445 unites de large,
+       soit exactement la largeur du corps en points (157,0 mm). Une unite vaut
        donc UN POINT au rendu, et les corps de texte se posent a leur valeur
-       finale — 8,5 pour un libelle, 7 pour une annotation. Dessiner plus large
-       et laisser Typst reduire produit un texte de six points que rien ne
-       signale. Palette de build/compendium.template. -->
+       finale — 8,5 pour un libelle, 7 pour une annotation. Dessiner a une autre
+       echelle et laisser Typst mettre a la largeur du corps produit un texte
+       dont la taille ne se lit nulle part dans le fichier.
+       ⚠ Cette largeur a valu 306 unites le 31 juillet 2026 au matin, quand le
+       corps mesurait 107,9 mm. Toute reprise de la grille du gabarit oblige a
+       redessiner les figures — c'est le prix de la convention, et il est
+       assume : l'alternative est un texte de figure a taille imprevisible.
+       Palette de build/compendium.template. -->
   <defs>
     <style>
       .l  { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
@@ -26,49 +31,48 @@
        .html de la piece, a theme SOMBRE, ou les textes poses hors des bandes
        seraient noirs sur noir. Un fond porte par la figure evite d'avoir a
        maintenir deux variantes. -->
-  <rect x="0" y="0" width="306" height="186" fill="#FDFBF9"/>
+  <rect x="0" y="0" width="445" height="176" fill="#FDFBF9"/>
 
   <!-- cumulativite, a gauche -->
-  <path d="M 14 136 L 14 26" fill="none" stroke="#9A3B12" stroke-width=".9"/>
-  <path d="M 14 21 l -3 6 h 6 z" fill="#9A3B12"/>
-  <text class="l cum" transform="translate(9,81) rotate(-90)" text-anchor="middle">chaque palier présuppose les précédents</text>
+  <path d="M 22 136 L 22 26" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 22 21 l -3 6 h 6 z" fill="#9A3B12"/>
+  <text class="l cum" transform="translate(17,81) rotate(-90)" text-anchor="middle">chaque palier présuppose les précédents</text>
 
   <!-- pile canonique -->
-  <text class="l titre" x="26" y="13">PILE CANONIQUE</text>
+  <text class="l titre" x="36" y="13">PILE CANONIQUE</text>
 
-  <rect x="26" y="20"  width="144" height="26" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
-  <text class="l rang"  x="34" y="37">4</text>
-  <text class="l bande" x="46" y="37">Organisationnel</text>
+  <rect x="36" y="20"  width="196" height="26" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang"  x="46" y="37">4</text>
+  <text class="l bande" x="60" y="37">Organisationnel</text>
 
-  <rect x="26" y="50"  width="144" height="26" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
-  <text class="l rang"  x="34" y="67">3</text>
-  <text class="l bande" x="46" y="67">Sémantique</text>
+  <rect x="36" y="50"  width="196" height="26" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang"  x="46" y="67">3</text>
+  <text class="l bande" x="60" y="67">Sémantique</text>
 
-  <rect x="26" y="80"  width="144" height="26" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
-  <text class="l rang"  x="34" y="97">2</text>
-  <text class="l bande" x="46" y="97">Syntaxique</text>
+  <rect x="36" y="80"  width="196" height="26" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang"  x="46" y="97">2</text>
+  <text class="l bande" x="60" y="97">Syntaxique</text>
 
-  <rect x="26" y="110" width="144" height="26" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
-  <text class="l rang"  x="34" y="127">1</text>
-  <text class="l bande" x="46" y="127">Technique</text>
+  <rect x="36" y="110" width="196" height="26" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l rang"  x="46" y="127">1</text>
+  <text class="l bande" x="60" y="127">Technique</text>
 
   <!-- extension LCIM, au-dessus de la couche semantique -->
-  <path d="M 172 63 h 5 V 24 h 4" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
-  <text class="l titre" x="184" y="13">EXTENSION LCIM</text>
-  <text class="l annf"  x="184" y="26">Pragmatique · Dynamique · Conceptuel</text>
-  <text class="l ann"   x="184" y="37">Superposés à la couche sémantique.</text>
-  <text class="l ann"   x="184" y="47">Sept niveaux, du niveau 0 — absence —</text>
-  <text class="l ann"   x="184" y="57">à l'interopérabilité conceptuelle.</text>
+  <path d="M 234 63 h 6 V 24 h 5" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l titre" x="250" y="13">EXTENSION LCIM</text>
+  <text class="l annf"  x="250" y="26">Pragmatique · Dynamique · Conceptuel</text>
+  <text class="l ann"   x="250" y="38">Superposés à la couche sémantique. Sept niveaux,</text>
+  <text class="l ann"   x="250" y="49">du niveau 0 — absence — à l'interopérabilité</text>
+  <text class="l ann"   x="250" y="60">conceptuelle.</text>
 
   <!-- palier de MCP et A2A -->
-  <path d="M 172 82 h 4 v 52 h -4" fill="none" stroke="#9A3B12" stroke-width=".9"/>
-  <path d="M 176 108 h 5" fill="none" stroke="#9A3B12" stroke-width=".9"/>
-  <text class="l annf" x="184" y="97">MCP et A2A</text>
-  <text class="l ann"  x="184" y="108">Syntaxique, partiellement technique.</text>
-  <text class="l ann"  x="184" y="118">Aucun accord sémantique : présupposé.</text>
+  <path d="M 234 82 h 5 v 52 h -5" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <path d="M 239 108 h 6" fill="none" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l annf" x="250" y="97">MCP et A2A</text>
+  <text class="l ann"  x="250" y="109">Syntaxique, et partiellement technique. Aucun</text>
+  <text class="l ann"  x="250" y="120">mécanisme d'accord sémantique : ils le présupposent.</text>
 
   <!-- pied -->
-  <path d="M 26 154 H 296" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
-  <text class="l ann" x="26" y="166">Un accord sémantique est sans effet si la syntaxe diffère ; un accord syntaxique</text>
-  <text class="l ann" x="26" y="176">reste vain si le transport échoue.</text>
+  <path d="M 36 152 H 429" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="36" y="165">Un accord sémantique est sans effet si la syntaxe diffère ; un accord syntaxique reste vain si le transport échoue.</text>
 </svg>
