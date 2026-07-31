@@ -474,7 +474,7 @@ illustre que le commerce agentique compose plusieurs protocoles distincts plutô
 seul.*
 
 > **Perspective de recherche — et c'est le verrou du domaine.** Une évaluation dédiée — **Debi et
-> al., *Whispers of Wealth*, 2026**, nommée ici parce qu'elle est l'attributeur de l'énoncé et que
+> coll., *Whispers of Wealth*, 2026**, nommée ici parce qu'elle est l'attributeur de l'énoncé et que
 > l'anonymiser le rendrait invérifiable — soumet le protocole de paiement du § 10.1 à un **exercice
 > d'attaque par injection d'invite**, et montre que **la signature des mandats ne neutralise pas
 > l'amont** : *un agent dont l'intention est détournée signera un mandat malveillant parfaitement
@@ -687,7 +687,7 @@ prévue — même destination que celle qu'annonce le siège de l'encadré, au c
 
 ### 10.6.1 Une prescription périmée par un événement postérieur de moins de quatre mois
 
-Le **survey de référence de la période** — **Ehtesham et al., arXiv 2505.02279, mai 2025**, nommé ici
+L'**article de synthèse de référence de la période** — **Ehtesham et coll., arXiv 2505.02279, mai 2025**, nommé ici
 parce qu'un instrument repris se désigne par son auteur et sa date — prescrivait une **adoption
 séquentielle en quatre temps** : d'abord le protocole agent-outil, puis l'ACP protocolaire, puis le
 protocole agent-agent, puis le protocole décentralisé.

@@ -138,9 +138,9 @@ produira **avec une certaine probabilité**. Les travaux sur les contrats compor
 
 Le **découplage** s'enrichit de deux dimensions absentes du ch. 1 : le découplage de **modèle** —
 l'application ne doit pas être liée à un fournisseur de modèle particulier — et de **cadriciel** —
-elle ne doit pas être liée à un framework d'orchestration donné. Le ch. 9 § 9.3 les développe.
+elle ne doit pas être liée à un cadriciel d'orchestration donné. Le ch. 9 § 9.3 les développe.
 
-L'**évolution** prend enfin la forme d'un **versionnage des capacités** et d'une **politique de
+L'**évolution** prend enfin la forme d'un **versionnement des capacités** et d'une **politique de
 dépréciation** : un agent ou un outil doit pouvoir faire évoluer ce qu'il offre sans briser ses
 consommateurs.
 
@@ -157,7 +157,7 @@ L'interopérabilité classique — appel de procédure à distance, API REST, bu
 et § 1.4) — atteint ses limites devant les acteurs agentiques sur quatre points :
 
 1. elle **ne prévoit pas d'auto-description exploitable à l'exécution** — un contrat décrit des
-   points de terminaison au temps de conception, non des capacités négociées à l'inférence ;
+   points d'extrémité au temps de conception, non des capacités négociées à l'inférence ;
 2. elle est orientée **ressources** là où les agents sont orientés **actions** ;
 3. elle suppose un **appelant déterministe** capable de composer correctement les requêtes ;
 4. elle n'offre **aucune primitive native** pour les tâches de longue durée ni pour la négociation.
@@ -241,7 +241,7 @@ familles** se dégagent, dont la taxonomie complète est au **ch. 11** :
 
 - **la dérive sémantique en chaîne de délégations** — à mesure qu'une intention est retransmise
   d'agent en agent, son sens **se déforme insensiblement**, chaque relais réinterprétant un message
-  en langue naturelle ;
+  en langage naturel ;
 - **l'échec d'ancrage** — un terme n'est pas rattaché au même référent par l'émetteur et le
   récepteur, **qui croient pourtant s'entendre** ;
 - **l'ambiguïté non résolue** — un acteur agit sur une interprétation arbitraire **au lieu de
@@ -311,8 +311,8 @@ protocolaire et le protocole agent-agent — ont convergé vers **deux fondation
 l'autre**. ⚠ **Le cinquième, le protocole de transaction, n'est pas de ce décompte** : il relève
 d'une autre fondation, que le § 7.4.2 situe.
 
-⚠ **Un mot sur ce que cette chronologie a rendu caduc, et c'est le garde-fou R-1 du Vol. II.** Le
-survey académique de référence de la période (Ehtesham et coll., **mai 2025**) proposait une
+⚠ **Un mot sur ce que cette chronologie a rendu caduc, et c'est le garde-fou R-1 du Vol. II.** L'article
+de synthèse de référence de la période (Ehtesham et coll., **mai 2025**) proposait une
 trajectoire d'adoption séquentielle plaçant l'ACP protocolaire en deuxième étape. **La fusion d'août
 2025 a vidé cette étape de sa substance moins de quatre mois après la publication.** Le document
 conserve toute sa valeur de **jalon historiographique** — il documente ce qu'un observateur informé

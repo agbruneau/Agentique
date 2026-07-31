@@ -394,7 +394,7 @@ par la **fusion de rangs réciproques** (*Reciprocal Rank Fusion*, RRF), qui **c
 recalibrer les scores**, puis un **réordonnanceur** — modèle d'interaction tardive comme ColBERT
 (Khattab et Zaharia, 2020), ou réordonnanceur croisé — affine le classement final sur un petit
 ensemble de candidats. Le choix des encodeurs et des réordonnanceurs s'appuie sur des bancs dédiés :
-BEIR (Thakur et coll., 2021) pour la généralisation zéro-coup, MTEB (Muennighoff et coll., 2023) pour
+BEIR (Thakur et coll., 2021) pour la généralisation sans exemple (*zero-shot*), MTEB (Muennighoff et coll., 2023) pour
 les plongements de texte. Les techniques d'**expansion de requête** — HyDE (Gao et coll., 2023),
 qui génère un document hypothétique pour densifier la recherche — complètent l'arsenal.
 
