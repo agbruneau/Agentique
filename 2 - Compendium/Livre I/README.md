@@ -58,8 +58,8 @@ volume) et une **re-datation à la source primaire**, qui ont trouvé de vrais d
 ce dossier ne doit être lu comme si elle l'était. *Un contrôle mécanique n'est pas une réfutation, et
 se relire soi-même n'est pas être relu.*
 
-⚠ **Le Vol. IV n'est pas requalifié pour autant.** Il demeure un cadrage au regard du dépôt : ni son
-`CLAUDE.md` racine, ni la veille technologique ne le décrivent autrement, et **la veille ne se corrige
+⚠ **Le Vol. IV n'est pas requalifié pour autant.** Il demeure un cadrage au regard du dépôt : la veille
+technologique ne le décrit pas autrement, et **la veille ne se corrige
 jamais** — sa réf. [220] décrit un cadrage sans chapitre, et cela reste vrai à sa date.
 
 ### Volumétrie réelle — publiable depuis G-2
@@ -329,8 +329,8 @@ Chaque pièce existe en **deux rendus**, versionnés ensemble — ⚠ **et depui
   restent au fer à gauche — les justifier y produirait des trous.
 
 ⚠ **Le `.html` est un rendu, pas une seconde source.** Toute correction se fait dans le `.md` puis
-se reporte dans le `.html` au même commit — jamais l'inverse, jamais l'un sans l'autre (même règle
-que « PDF versionné avec sa source » au [`CLAUDE.md`](../../CLAUDE.md) du dépôt). Le compendium n'a
+se reporte dans le `.html` au même commit — jamais l'inverse, jamais l'un sans l'autre — même règle
+que « PDF versionné avec sa source » ailleurs au dépôt. Le compendium n'a
 pas de pipeline de rendu : les trois copies du FESP appartiennent aux Vol. I, II et III, et aucune
 n'a été copiée ici. Le `.html` se **régénère**, il ne s'édite pas :
 
@@ -390,8 +390,8 @@ sa **portée de risque** étant au **ch. 10 § 10.5**.
 la procédure complète** — portes, lectures préalables, squelette, conventions de renvoi, gabarit HTML
 et vérificateur validé par mutation. Ce qui suit en est le rappel minimal.
 
-1. Lire le [`CLAUDE.md`](../CLAUDE.md) du compendium — il porte le plafond dur de cinquante
-   chapitres, le protocole d'insertion et les pièges propres au `TOC.md`.
+1. Tenir le **plafond dur de cinquante chapitres**, le protocole d'insertion et les pièges propres
+   au `TOC.md`.
 2. Reprendre l'entrée du chapitre au [`TOC.md`](../PRD/TOC.md) : thèse, sections, ligne Fusion,
    table détaillée, table de couverture. **Chaque entrée du TOC est le cahier des charges de son
    chapitre** ; ce répertoire n'en contient aucune copie.

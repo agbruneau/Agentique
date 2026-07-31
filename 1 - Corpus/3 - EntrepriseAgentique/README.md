@@ -85,7 +85,7 @@ de révision complémentaire le 24 juillet 2026. **30 rapports** sous [`verifica
 — 15 rapports de lot, 11 relectures, 2 revalidations, la confrontation des thèses et le registre des
 remontées. ⚠ **Aucun des trois contrôles de P5 ne vaut certificat.**
 
-**Ce qui reste ouvert** — le détail vit au [`CLAUDE.md`](CLAUDE.md) et au registre
+**Ce qui reste ouvert** — le détail vit au registre
 [`verification/remontees-gouvernance.md`](verification/remontees-gouvernance.md) :
 
 - **Quinze remontées de gouvernance ouvertes** — R-G-43 à R-G-57 — dont plusieurs siègent au PRD ou au
@@ -141,7 +141,6 @@ ses propres faits datés.
 
 ```
 README.md                    ← ce fichier (présentation du volume)
-CLAUDE.md                    conventions du volume — écarts délibérés avec le Vol. II
 prd/                         gouvernance, par ordre d'autorité
   PRD.md                       v1.3 — contenu, héritage du socle, garde-fous, critères (prime)
   TOC.md                       v0.8 — autorité sur le découpage (28 chapitres, 9 parties, 34 pièces)
@@ -188,6 +187,3 @@ Sans. Le script exporte lui-même `PYTHONUTF8=1` (nécessaire sous Windows).
 - **Assistance par agents.** Ce travail a été produit avec l'assistance de pipelines de recherche
   multi-agents, selon les méthodes de vérification décrites dans l'ouvrage ; la responsabilité
   éditoriale est celle de l'auteur.
-
-Conventions de rédaction, écarts délibérés avec le Vol. II et pièges de renvoi propres au volume : voir
-[`CLAUDE.md`](CLAUDE.md).

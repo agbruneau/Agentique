@@ -32,7 +32,6 @@ pas un point de restauration*. Poser le tag ou corriger ces mentions est une dé
 
 - **Lire la monographie** → [`monographie/README.md`](monographie/README.md) : index de lecture ordonné, à commencer par l'[avant-propos](monographie/00-avant-propos.md). Le [chapitre 13](monographie/03-partie-III/ch-13-pont-frames.md) en est le pivot.
 - **PDF assemblé** → [`Monographie.pdf`](Monographie.pdf) (les 29 pièces reliées en un volume).
-- **Contribuer / reprendre** → [`CLAUDE.md`](CLAUDE.md) : conventions, garde-fous et procédure de reprise.
 
 ## Structure du dossier
 
@@ -48,8 +47,7 @@ pas un point de restauration*. Poser le tag ou corriger ces mentions est une dé
 dossier de gouvernance — racine → `doc/` le 17 juillet, `doc/` → `prd/` le 22 — ont laissé des
 renvois relatifs cassés dans le volume : **48 dans `monographie/`** (bandeaux de thèse vers
 `TOC.md`), un dans `build/assemble.py`, un dans `prd/PRDPlan.md`, quinze dans `prd/audit.md` et
-trois dans `verification/relecture-CA.md`. Inventaire, décomptes datés et commandes de contrôle
-dans [`CLAUDE.md`](CLAUDE.md). *(L'index de lecture [`monographie/README.md`](monographie/README.md)
+trois dans `verification/relecture-CA.md`. *(L'index de lecture [`monographie/README.md`](monographie/README.md)
 a été repointé le 25 juillet 2026.)*
 
 ⚠ **Ni `index.html`, ni article de synthèse, ni publication GitHub Pages.** La page de présentation
@@ -77,11 +75,11 @@ python build/assemble.py            # concatène monographie/ → Monographie.md
 bash   build/build-pdf.sh Monographie.md   # → Monographie.pdf (US-letter, gabarit build/fesp.template)
 ```
 
-⚠ `build/assemble.py` cherche encore `TOC.md` à la racine du volume alors qu'il vit dans `prd/` : **l'assemblage échoue en l'état**. Ce reliquat et les autres liens cassés par les deux déplacements du dossier de gouvernance (racine → `doc/` le 17 juillet 2026, puis `doc/` → `prd/` le 22) sont inventoriés dans [`CLAUDE.md`](CLAUDE.md).
+⚠ `build/assemble.py` cherche encore `TOC.md` à la racine du volume alors qu'il vit dans `prd/` : **l'assemblage échoue en l'état**. Ce reliquat s'ajoute aux autres liens cassés par les deux déplacements du dossier de gouvernance (racine → `doc/` le 17 juillet 2026, puis `doc/` → `prd/` le 22).
 
 ## Avertissements
 
 - **Aucun avis juridique ni conseil d'investissement** : l'ouvrage rapporte des textes et en propose des lectures d'architecture qui engagent l'auteur seul.
 - **Aucune recommandation de fournisseur** : la Partie VII instancie le blueprint sur le portefeuille d'IBM à titre de cas documenté, pas de verdict comparatif.
-- **L'ouvrage se périme par morceaux** : chaque pièce porte sa date de gel ; les échéances de revalidation sont suivies dans [`CLAUDE.md`](CLAUDE.md) et au [chapitre 24](monographie/07-partie-VII/ch-24-lacunes-revalidation.md).
+- **L'ouvrage se périme par morceaux** : chaque pièce porte sa date de gel ; les échéances de revalidation sont suivies au [chapitre 24](monographie/07-partie-VII/ch-24-lacunes-revalidation.md).
 - **Onze lacunes ouvertes** sont exposées plutôt que comblées ([chapitre 21](monographie/06-partie-VI/ch-21-frontiere.md)).

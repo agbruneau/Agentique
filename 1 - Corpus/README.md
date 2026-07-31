@@ -338,7 +338,6 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 ```
 1 - Corpus/
 ├── README.md                                ← ce fichier (synthèse consolidée)
-├── CLAUDE.md                                ← guide pour Claude Code dans ce dossier
 ├── 1 - InteroperabiliteAgentique/           Vol. I (569 p., ≈ 263 600 mots)
 │   ├── Chapitres/                             7 chapitres + 7 bibliographies + Annexe B (ADS)
 │   ├── Monographie.md / .pdf                  assemblage
@@ -351,7 +350,6 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 │   └── Monographie.md / .pdf                  assemblage
 └── 3 - EntrepriseAgentique/                 Vol. III (427 p., ≈ 160 900 mots)
     ├── README.md                              présentation du volume (déposée le 29 juill. 2026)
-    ├── CLAUDE.md                              conventions du volume
     ├── monographie/                           34 pièces rédigées + registre des gels
     ├── prd/                                   PRD v1.3, TOC v0.8, PRDPlan v0.5 — gouvernance
     ├── verification/                          30 rapports de vérification

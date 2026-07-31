@@ -76,8 +76,8 @@ PRD §6** est respecté : *il place les **Livres I et III en première position*
 rédigé.* ⚠ **Douze des quinze chapitres ne sont conditionnés ni par G-4 ni par D-9** — *leurs lignes
 Fusion ne citent que les Vol. I et II.*
 
-⚠ **Le Vol. IV n'est pas requalifié pour autant.** Il demeure un cadrage au regard du dépôt : ni son
-`CLAUDE.md` racine, ni la veille technologique ne le décrivent autrement, et **la veille ne se corrige
+⚠ **Le Vol. IV n'est pas requalifié pour autant.** Il demeure un cadrage au regard du dépôt : la veille
+technologique ne le décrit pas autrement, et **la veille ne se corrige
 jamais** — sa réf. [220] décrit un cadrage sans chapitre, et **cela reste vrai à sa date**.
 
 ⚠ **Et les deux obligations d'acceptation que le Livre II a déclarées insatisfaisables le restent
@@ -245,7 +245,7 @@ passes du 27 juillet 2026, `check-sieges.py` rend **« les 12 sièges tiennent s
 *les quinze pièces de ce Livre y sont lues et n'y produisent aucun écart*. ⚠ ***Une sortie 0 n'atteste
 que les sièges inscrits à la table : elle ne dit rien des huit qui n'y sont pas, ni du neuvième candidat
 du § 34.2.2.*** *Un contrôle vert sur un domaine amputé est plus dangereux qu'un contrôle rouge* — d'où
-l'inscription de la dette ici, au PRD et au `CLAUDE.md` du dossier plutôt que dans le seul journal d'une
+l'inscription de la dette ici et au PRD plutôt que dans le seul journal d'une
 passe.
 
 ## Les vingt-quatre remontées — soldées le 27 juillet 2026
@@ -382,7 +382,7 @@ maillon masquerait son échec. *La faute a déjà été commise sur le ch. 6 du 
 procédure complète.** Ce qui suit en est le rappel minimal, avec **les trois points que cette passe a
 payés**.
 
-1. Lire le [`CLAUDE.md`](../CLAUDE.md) du compendium, puis l'entrée du chapitre au
+1. Lire l'entrée du chapitre au
    [`TOC.md`](../PRD/TOC.md) : thèse, sections, ligne Fusion, table détaillée, table de couverture.
 2. **Lire l'intégralité du périmètre de fusion.** ⚠ *Le ch. 30 en a fourni la démonstration la plus
    nette : le §4.8 et le §5.3 du Vol. I y arrivent tous deux et **portent le même fait à deux états

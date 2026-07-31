@@ -78,8 +78,8 @@ pas une réfutation, et se relire soi-même n'est pas être relu.* ☑ **Elle es
 valant empêchement de publier et non réserve à porter** (PRD v0.9). ⚠ **Mais le relecteur n'est pas
 désignable en l'état**, et c'est la limite que l'arbitrage a rencontrée plutôt que contournée.
 
-⚠ **Le Vol. IV n'est pas requalifié pour autant.** Il demeure un cadrage au regard du dépôt : ni son
-`CLAUDE.md` racine, ni la veille technologique ne le décrivent autrement, et **la veille ne se corrige
+⚠ **Le Vol. IV n'est pas requalifié pour autant.** Il demeure un cadrage au regard du dépôt : la veille
+technologique ne le décrit pas autrement, et **la veille ne se corrige
 jamais** — sa réf. [220] décrit un cadrage sans chapitre, et **cela reste vrai à sa date**.
 
 ## Volumétrie réelle — et la leçon du Livre I appliquée sans effet
@@ -397,7 +397,7 @@ maillon masquerait son échec. *La faute a déjà été commise sur le ch. 6 du 
 la procédure complète.** Ce qui suit en est le rappel minimal, avec **les deux points que cette passe
 a payés**.
 
-1. Lire le [`CLAUDE.md`](../CLAUDE.md) du compendium, puis l'entrée du chapitre au
+1. Lire l'entrée du chapitre au
    [`TOC.md`](../PRD/TOC.md) : thèse, sections, ligne Fusion, table détaillée, table de couverture.
 2. **Lire l'intégralité du périmètre de fusion** — leçon de R-IV-12 et R-IV-13, et **confirmée trois
    fois de plus par ce Livre**.

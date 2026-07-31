@@ -411,7 +411,7 @@ maillon masquerait son échec. *La faute a déjà été commise sur le ch. 6 du 
 la procédure complète.** Ce qui suit en est le rappel minimal, avec **les quatre points que cette passe
 a payés**.
 
-1. Lire le [`CLAUDE.md`](../CLAUDE.md) du compendium, puis l'entrée du chapitre au
+1. Lire l'entrée du chapitre au
    [`TOC.md`](../PRD/TOC.md) : thèse, sections, ligne Fusion, table détaillée, table de couverture.
 2. **Lire l'intégralité du périmètre de fusion** — leçon reconduite, et **ce Livre l'a payée au
    ch. 44**, dont la source unique est un chapitre entier d'un volume qui entre en [C].

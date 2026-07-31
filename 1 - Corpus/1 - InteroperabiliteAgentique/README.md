@@ -75,7 +75,6 @@ Chapitres/
   TOC.md                                   table des matières commentée (v1.0, rétro-documentation)
 Monographie.md / .pdf                      assemblage : 7 chapitres + liminaires + Annexes A et B (569 p.)
 build/                                     pipeline de rendu PDF (Mermaid → Pandoc → Typst)
-CLAUDE.md                                  conventions du volume (seul CLAUDE.md du dossier)
 LICENSE
 ```
 
@@ -107,10 +106,8 @@ La chaîne de la veille (racine) et celle du volume II sont **distinctes** de ce
 - **2026-07** — cycle de révision (audit et correctifs, PDF régénérés) ; rédaction de la **veille technologique**, depuis détachée de ce dossier et portée à la racine du dépôt.
 - **2026-07-14** — audit intégral de l'**article de synthèse** (bibliographie portée à 211 entrées, terminologie harmonisée ; article depuis retiré du dossier) puis de la **monographie** : 3 054 renvois vérifiés (aucun brisé), bilans des sept bibliographies recomptés, fidélité source ↔ PDF contrôlée. Correctifs : terminologie et typographie du corps, **143 identifiants stables ajoutés** aux bibliographies des ch. 1, 3 et 4 (URL de source primaire vérifiées sur le web), entrée ISO/IEC 27001:2022 créée. PDF régénérés (**569 p.**).
 - **2026-07-18** — `Chapitres/TOC.md` v1.0 : rétro-documentation du volume achevé (thèses, sections et décomptes relevés sur le texte livré, non projetés).
-- **2026-07-22** — retrait de l'article de synthèse et de la page `index.html` ; `README.md` et `CLAUDE.md` resynchronisés sur l'arborescence réelle (569 p. et 28 diagrammes re-mesurés, 12 ADR).
-- **2026-07-25** — **retrait du démonstrateur `Borealis-Go/`** et renommage du dossier parent (`1 - Corpus Agentique/` → `1 - Corpus/`), commit `60f57f6` ; `README.md` et `CLAUDE.md` resynchronisés. Décomptes re-mesurés sur pièce et **inchangés** : `Monographie.pdf` **569 p.**, **28 diagrammes** (motif ancré `grep -c '^```mermaid'`).
-- **2026-07-29** — **passe de dépôt final du dépôt** : `README.md` et `CLAUDE.md` relus, décomptes re-mesurés sur pièce et **inchangés** — `Monographie.pdf` **569 p.** (`pypdf`), **28 diagrammes** (motif ancré). Deux mises à jour de renvoi seulement : le Vol. IV cesse d'être décrit comme un « cadrage » — il porte **cinquante chapitres rédigés hors portes** et il est **arrêté en révision finale, non publiable** depuis le 29 juillet 2026 —, et le Vol. III porte désormais son propre `README.md`. ⚠ **Rien de ce volume n'est touché** : ni chapitre, ni bibliographie, ni PDF.
+- **2026-07-22** — retrait de l'article de synthèse et de la page `index.html` ; `README.md` resynchronisé sur l'arborescence réelle (569 p. et 28 diagrammes re-mesurés, 12 ADR).
+- **2026-07-25** — **retrait du démonstrateur `Borealis-Go/`** et renommage du dossier parent (`1 - Corpus Agentique/` → `1 - Corpus/`), commit `60f57f6` ; `README.md` resynchronisé. Décomptes re-mesurés sur pièce et **inchangés** : `Monographie.pdf` **569 p.**, **28 diagrammes** (motif ancré `grep -c '^```mermaid'`).
+- **2026-07-29** — **passe de dépôt final du dépôt** : `README.md` relu, décomptes re-mesurés sur pièce et **inchangés** — `Monographie.pdf` **569 p.** (`pypdf`), **28 diagrammes** (motif ancré). Deux mises à jour de renvoi seulement : le Vol. IV cesse d'être décrit comme un « cadrage » — il porte **cinquante chapitres rédigés hors portes** et il est **arrêté en révision finale, non publiable** depuis le 29 juillet 2026 —, et le Vol. III porte désormais son propre `README.md`. ⚠ **Rien de ce volume n'est touché** : ni chapitre, ni bibliographie, ni PDF.
 
 Les ressources marquées ⚠ (*preview*, specs versionnées, acquisitions annoncées) restent à re-confirmer à la date exacte de citation avant toute diffusion formelle.
-
-Conventions de rédaction et règles de travail détaillées : voir [`CLAUDE.md`](CLAUDE.md).

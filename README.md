@@ -10,7 +10,8 @@ et **un compendium** qui les refond en un seul ouvrage — arrêté en révision
 > l'état de l'art le plus récent (édition d'août 2026, faits gelés au 29 juillet), et le seul document publié qui cite les volumes
 > du dépôt. Le lecteur méthodique suit l'ordre des volumes, du général au spécifique. Le compendium
 > se feuillette depuis le 29 juillet 2026 — [`compendium.pdf`](2%20-%20Compendium/compendium.pdf),
-> **921 pages** —, et il est **arrêté en révision finale pour la bibliothèque personnelle de
+> **1 096 pages** depuis la refonte typographique du 31 juillet 2026, qui l'a porté au format Letter
+> (921 pages au format 155 × 235 mm auparavant) —, et il est **arrêté en révision finale pour la bibliothèque personnelle de
 > l'auteur** le même jour. Ses cinquante chapitres restent un **brouillon écrit hors portes** : il se
 > lit, il ne fait pas foi, et il ne se diffuse pas. *Arrêter n'est ni terminer ni publier.*
 
@@ -18,7 +19,7 @@ et **un compendium** qui les refond en un seul ouvrage — arrêté en révision
 
 Le dépôt est arrêté dans cet état. Les chiffres ci-dessous ont été **re-mesurés sur pièce à cette
 date**, jamais recopiés d'un autre document ; les commandes qui les produisent sont données plus bas
-(« Construire les PDF », « Ce qui reste vivant ») et au [`CLAUDE.md`](CLAUDE.md).
+(« Construire les PDF », « Ce qui reste vivant »).
 
 | Livrable | Rendu mesuré (`pypdf`) | Pièces | Appareil de contrôle |
 |---|---|---|---|
@@ -26,7 +27,7 @@ date**, jamais recopiés d'un autre document ; les commandes qui les produisent 
 | Vol. I — *Interopérabilité* | **569 p.** | 7 chapitres + 7 bibliographies + Annexe B, **28 diagrammes** | — (vérification adverse des citations) |
 | Vol. II — *L'autonomie encadrée* | **387 p.** | **29 pièces** + registre de gel, socle de 46 entrées | grille CA-1…CA-8 |
 | Vol. III — *L'entreprise agentique* | **427 p.** | **34 pièces** + registre de gel, **30 rapports** de vérification | CA-01…CA-14, 15 remontées ouvertes |
-| Vol. IV — *La somme agentique* | **921 p.** | **50 chapitres** en 5 Livres + **2 annexes** (hors plan : 159 entrées ; **Annexe I** : 1 154 entrées), socle de **159 entrées** | `check-toc.py` (C1-C15), `check-sieges.py` (**26 sièges / 50 pièces**), `check-compendium.py` (**P1-P8**), `decompte.sh` → **sortie 0** pour les quatre |
+| Vol. IV — *La somme agentique* | **1 096 p.** *(re-mesuré le 31 juillet 2026, après refonte du gabarit ; 921 p. auparavant)* | **50 chapitres** en 5 Livres + **2 annexes** (hors plan : 159 entrées ; **Annexe I** : 1 154 entrées), socle de **159 entrées** | `check-toc.py` (C1-C15), `check-sieges.py` (**26 sièges / 50 pièces**), `check-compendium.py` (**P1-P8**), `decompte.sh` → **sortie 0** pour les quatre |
 
 Gouvernance du Vol. IV à sa date d'arrêt : **TOC v0.31**, **PRD v0.15**, décision d'auteur **D-10**.
 
@@ -172,9 +173,8 @@ ouvertes** (R-G-43 à R-G-57), dont plusieurs relèvent de l'auteur. **Le PDF es
 Le dossier porte trois répertoires — la gouvernance dans `prd/`, la rédaction dans `monographie/`,
 les rapports de vérification dans `verification/` —, plus un
 [`README.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/README.md) au lecteur *(déposé le
-29 juillet 2026 : le volume était le seul des trois à n'en porter aucun)* et un
-[`CLAUDE.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/CLAUDE.md) à l'agent qui
-édite. Documents de gouvernance, par ordre d'autorité :
+29 juillet 2026 : le volume était le seul des trois à n'en porter aucun)*.
+Documents de gouvernance, par ordre d'autorité :
 
 1. [`prd/PRD.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/prd/PRD.md) **v1.3** —
    contenu, héritage du socle, quatorze garde-fous, critères d'acceptation ; **prime en cas de
@@ -201,8 +201,7 @@ fichier expose la hiérarchie livre → chapitre → section), son
 **socle consolidé** ([`socle-consolide.md`](2%20-%20Compendium/PRD/socle-consolide.md), **159 entrées**
 `S-001`…`S-159`), sa vue synoptique dérivée ([`README.md`](2%20-%20Compendium/README.md)), ses
 exécutables de contrôle ([`check-toc.py`](2%20-%20Compendium/PRD/check-toc.py) et trois autres,
-chacun avec son harnais de validation par mutation), un
-[`CLAUDE.md`](2%20-%20Compendium/CLAUDE.md) de conventions, ses **cinq Livres rédigés** et — depuis
+chacun avec son harnais de validation par mutation), ses **cinq Livres rédigés** et — depuis
 le 29 juillet 2026 — leur rendu paginé,
 [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) —
 **c'est une refonte des trois volumes, pas une nouvelle thèse.**
@@ -222,8 +221,7 @@ l'ouvrage** : *une porte franchie n'est pas un ouvrage recevable, c'est une cond
 manquer* — **G-4, G-5 et G-6 restent ouvertes**, et **CA-IV-11 comme CA-IV-13 demeurent
 insatisfaisables** faute d'un relecteur distinct du rédacteur. *Un brouillon écrit hors portes ne
 franchit aucune porte* — et *zéro remontée ouverte ne veut pas dire pièce recevable.* Le détail par
-Livre vit aux `README.md` des cinq dossiers et au
-[`CLAUDE.md`](2%20-%20Compendium/CLAUDE.md) du volume.
+Livre vit aux `README.md` des cinq dossiers.
 
 ⚠ **Le volume est arrêté depuis le 29 juillet 2026 — et « arrêté » n'est ni « terminé » ni
 « publiable ».** La décision d'auteur **D-10** (PRD [v0.15 §14](2%20-%20Compendium/PRD/PRD.md), TOC
@@ -242,10 +240,10 @@ CA-IV-01, **aucun vote adversarial n'a été conduit**, et **les trois volumes s
 foi**.
 
 ⚠ **Un rendu paginé existe depuis le 29 juillet 2026, et il ne requalifie rien non plus.**
-[`compendium.pdf`](2%20-%20Compendium/compendium.pdf) — **921 pages**, les cinquante chapitres des
+[`compendium.pdf`](2%20-%20Compendium/compendium.pdf) — **1 096 pages**, les cinquante chapitres des
 cinq Livres **et une annexe hors plan** (la liste des 159 références du socle, ajoutée le
-29 juillet 2026), format 155 × 235 mm, gabarit relevé sur deux monographies Springer, **sans aucune page
-blanche** —
+29 juillet 2026), **format Letter (215,9 × 279,4 mm) depuis la refonte typographique du 31 juillet
+2026**, **sans aucune page blanche** —
 est composé par [`build/build-pdf.sh`](2%20-%20Compendium/build/build-pdf.sh), **quatrième pipeline
 du dépôt et le seul qui ne dérive pas du FESP**. Le rendu retire du corps les trois appareils que le
 volume tient hors corps (en-tête à cinq champs, thèse citée depuis le TOC, note de statut) et
@@ -335,7 +333,6 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
 ```
 .
 ├── README.md                              ← ce fichier (avant-propos croisé)
-├── CLAUDE.md                              ← conventions du dépôt + conventions de la veille
 ├── Veille Technologique.md / .pdf         ← veille autonome, édition d'août 2026, faits gelés au 29 juillet (161 p., 269 réf.)
 ├── 1 - Corpus/                            ← le triptyque
 │   ├── 1 - InteroperabiliteAgentique/       Vol. I
@@ -350,22 +347,21 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
 │   │   └── Monographie.md / .pdf              assemblage (387 p.)
 │   └── 3 - EntrepriseAgentique/             Vol. III
 │       ├── README.md                          présentation du volume (déposée le 29 juill. 2026)
-│       ├── CLAUDE.md                          conventions du volume
 │       ├── prd/                               PRD v1.3, TOC v0.8, PRDPlan v0.5 — gouvernance
 │       ├── monographie/                       34 pièces rédigées + registre des gels
 │       ├── verification/                      30 rapports (lots, relectures, revalidations)
 │       ├── build/                             pipeline FESP (copie du Vol. II) + assemble.py
 │       └── Monographie.md / .pdf              assemblage (427 p., gabarit FESP) — non publiable
 └── 2 - Compendium/                        ← Vol. IV
-    ├── CLAUDE.md                            conventions du volume
     ├── README.md                            vue synoptique dérivée du TOC (le « conspectus » du volume)
     ├── audit.md                             rapport d'audit des cinq Livres (28 juill. 2026) — sans autorité
     ├── annexe-references.md                 liste des 159 références du socle — annexe hors plan du rendu
     ├── audit-references.md                  inventaire et validation des 159 références (29 juill. 2026) — sans autorité, hors rendu
-    ├── compendium.pdf                       rendu paginé des 50 chapitres + 2 annexes (921 p.) — brouillon non publiable
+    ├── compendium.pdf                       rendu paginé des 50 chapitres + 2 annexes (1 096 p.) — brouillon non publiable
     ├── build/                               pipeline propre au volume (PAS une copie du FESP)
-    │   ├── assemble.py                        50 pièces + annexe → compendium.md, 23 renvois marqués d'une dague
-    │   ├── springer.template                  gabarit Typst relevé sur deux monographies Springer — 155 × 235 mm, Times 10/12
+    │   ├── assemble.py                        50 pièces + annexe → compendium.md, 23 renvois portés en note de marge
+    │   ├── compendium.template                gabarit COURANT — identité propre, Letter, marges relevées sur les monographies, Constantia/Corbel
+    │   ├── springer.template                  gabarit précédent (29 juill. 2026), conservé — 155 × 235 mm, Times 10/12
     │   └── build-pdf.sh                       bash build/build-pdf.sh → compendium.pdf
     ├── Livre I/ … Livre V/                  ⚠ rédaction hors portes — 50 pièces sur 50, brouillons
     │   ├── README.md                          état du livre, issues des remontées, sièges, volumétrie
@@ -381,15 +377,6 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
         ├── decompte.sh                      commande de décompte de référence (porte G-2)
         └── *-mutations.py                   validation par mutation des trois contrôles
 ```
-
-**Où sont les `CLAUDE.md`.** **Six**, un par périmètre, sans recouvrement — cardinal re-compté sur
-l'arbre le 29 juillet 2026 : la racine porte les conventions communes et celles de la veille ;
-[`1 - Corpus/`](1%20-%20Corpus/CLAUDE.md) porte celles du **conteneur** du triptyque et de sa synthèse
-consolidée ; les Vol. I, II, III et IV portent chacun les siennes. Le `CLAUDE.md` du Vol. IV renvoie à
-son `TOC.md` comme spécification de contenu. ⚠ *Ce paragraphe annonçait **cinq** jusqu'au
-29 juillet 2026 : il oubliait celui du conteneur `1 - Corpus/`, qui existe et fait autorité dans son
-périmètre.* *(Un septième — celui du démonstrateur Go, qui primait dans son répertoire — est parti avec
-lui le 25 juillet 2026 : **aucun `CLAUDE.md` de code ne subsiste au dépôt**.)*
 
 **Où sont les `README.md`.** **Douze**, même date de comptage : la racine, le conteneur
 [`1 - Corpus/`](1%20-%20Corpus/README.md) (la synthèse consolidée), les **trois** volumes du triptyque
@@ -444,7 +431,7 @@ et à la dette de vote sur F-92 et F-96.
 le 29 juillet 2026, gabarit Typst relevé sur deux monographies Springer) ; depuis `2 - Compendium/` :
 
 ```bash
-bash build/build-pdf.sh                     # Livre I/ … Livre V/ + 2 annexes → compendium.pdf (921 p.)
+bash build/build-pdf.sh                     # Livre I/ … Livre V/ + 2 annexes → compendium.pdf (1 096 p.)
 ```
 
 ⚠ Ce quatrième pipeline **ne dérive d'aucune des trois copies du FESP, et aucune ne dérive de lui** :
@@ -491,9 +478,9 @@ avant toute réutilisation ou publication :
 
 ## Notes de maintenance
 
-Les `README.md` et `CLAUDE.md` de la racine ont été resynchronisés le 18 juillet 2026 sur
-l'arborescence réelle, sur l'accession du Vol. III à une gouvernance complète (`CLAUDE.md` +
-`doc/`) et sur les décomptes **re-mesurés** — veille 142 p. / 244 réf. / 14 sections, Vol. I
+Le `README.md` de la racine a été resynchronisé le 18 juillet 2026 sur
+l'arborescence réelle, sur l'accession du Vol. III à une gouvernance complète (`doc/`) et sur les
+décomptes **re-mesurés** — veille 142 p. / 244 réf. / 14 sections, Vol. I
 569 p. / 69 p. / 28 diagrammes / 12 ADR, Vol. II 387 p. / 66 p. / 29 pièces / 46 entrées de socle,
 tous inchangés. Le 23 juillet 2026, la passe complémentaire de la veille (sous-section 12.4,
 l'après-agentique en préimpression) porte ses décomptes à **144 p. / 256 réf.**, re-mesurés sur le
@@ -504,19 +491,19 @@ même 23 juillet — révision interne à six dimensions (retrait du saut de pag
 34 correctifs vérifiés) puis correction du sourcing du cas d'adoption de Block (§6.4, référence [257]
 ajoutée) — porte les décomptes à **146 p. / 257 réf.**, re-mesurés sur le PDF régénéré.
 
-Le même 23 juillet 2026, une passe de cohérence a réaligné les `README.md` et `CLAUDE.md` sur l'état
+Le même 23 juillet 2026, une passe de cohérence a réaligné les `README.md` sur l'état
 réel du dépôt : Vol. IV porté à **TOC v0.11** (57 chapitres, 10 livres, ≈ 369 000–394 000 mots
-projetés) avec son `README.md` et son `CLAUDE.md` ; renommage `doc/` → `prd/` (Vol. II) et
+projetés) avec son `README.md` ; renommage `doc/` → `prd/` (Vol. II) et
 suppressions des articles de synthèse et des `index.html` (Vol. I et II) constatés **committés**
 (commit `fd8f1be`, arbre de travail propre) ; création du pipeline FESP du Vol. III (troisième copie
 indépendante) enregistrée ; nom du dépôt corrigé de « Monographies » en `Agentique` dans les
 fichiers du démonstrateur `Borealis-Go`.
 
-**Le 25 juillet 2026**, les cinq `README.md` et les cinq `CLAUDE.md` du dépôt ont été resynchronisés
+**Le 25 juillet 2026**, les cinq `README.md` du dépôt ont été resynchronisés
 sur la restructuration du commit `60f57f6` : renommages `1 - Corpus Agentique/` → **`1 - Corpus/`**
 et `2 - Compendium Agentique/` → **`2 - Compendium/`** répercutés dans tous les chemins et tous les
 liens ; **suppression du démonstrateur `Borealis-Go/`** consignée là où il était annoncé comme
-livrable vivant (README et `CLAUDE.md` de la racine et du Vol. I), avec ses conséquences sur la
+livrable vivant (README de la racine et du Vol. I), avec ses conséquences sur la
 référence [217] de la veille — signalées, **non corrigées dans la veille**. Décomptes **re-mesurés
 sur pièce** à cette date, tous inchangés : veille **146 p. / 257 réf.** (`python check-veille.py`,
 sortie 0), Vol. I **569 p. / 28 diagrammes**, Vol. II **387 p. / 29 pièces**, Vol. III **427 p. /
@@ -524,8 +511,7 @@ sortie 0), Vol. I **569 p. / 28 diagrammes**, Vol. II **387 p. / 29 pièces**, V
 passe — les quatre lignes `../doc/…` de `…/2 - OrchestrationAgentique/monographie/README.md`,
 repointées vers `../prd/…`.
 
-**Le 29 juillet 2026**, ce `README.md` et le [`CLAUDE.md`](CLAUDE.md) de la racine ont été
-resynchronisés sur **l'ajout de [`compendium.pdf`](2%20-%20Compendium/compendium.pdf)** et sur le
+**Le 29 juillet 2026**, ce `README.md` a été resynchronisé sur **l'ajout de [`compendium.pdf`](2%20-%20Compendium/compendium.pdf)** et sur le
 quatrième pipeline qui le compose : chaînes de rendu portées de quatre à **cinq**, arborescence du
 Vol. IV réalignée sur ses cinq Livres et son `build/`, règle du « PDF versionné avec sa source »
 étendue au compendium. Décomptes **re-mesurés sur pièce** à cette date : **847 pages**
@@ -533,13 +519,13 @@ Vol. IV réalignée sur ses cinq Livres et son `build/`, règle du « PDF versio
 (sortie de `build/assemble.py`), **159 entrées** au socle consolidé, TOC **v0.30** et PRD **v0.14**.
 ⚠ **Aucun de ces chiffres ne requalifie le volume** : les cinquante chapitres demeurent un brouillon
 non publiable, et *composer n'est pas publier*. Le reste de l'état du Vol. IV — issues des remontées,
-volumétrie par Livre, décisions d'auteur — vit au [`CLAUDE.md` du
-dossier](2%20-%20Compendium/CLAUDE.md) et n'est pas repris ici.
+volumétrie par Livre, décisions d'auteur — vit aux documents de gouvernance du volume et n'est pas
+repris ici.
 
 **Le 29 juillet 2026, seconde passe du même jour** : le Vol. IV est **arrêté en révision finale pour
 une diffusion en bibliothèque personnelle** (décision d'auteur **D-10**, PRD **v0.15** §14, TOC
-**v0.31**), et les quatre porteurs de statut ont été réalignés — ce `README.md`, le
-[`CLAUDE.md`](CLAUDE.md) de la racine, et les deux fichiers du volume. Le **colophon** du rendu a été
+**v0.31**), et les porteurs de statut ont été réalignés — ce `README.md`
+et les deux fichiers du volume. Le **colophon** du rendu a été
 récrit et [`compendium.pdf`](2%20-%20Compendium/compendium.pdf) **recomposé** : **847 pages**,
 re-mesurées (`pypdf`). ⚠ **Un défaut de composition a été trouvé et corrigé dans la passe** : le
 colophon allongé débordait sur une seconde page — *la page de titre doit rester unique*, et seul le
@@ -571,8 +557,9 @@ identifiant, objet, niveau, provenance et datation de la source, groupées par v
 place du rapport d'analyse. **Le rapport n'est pas retiré du dépôt** : il reste à
 [`audit-references.md`](2%20-%20Compendium/audit-references.md), **hors rendu**, avec son régime
 inchangé — sans autorité, jamais citable à l'appui d'un énoncé. *Les deux se distinguent par leur nom :
-l'`annexe-` est reliée, l'`audit-` ne l'est pas.* Décomptes **re-mesurés sur pièce** : **921 pages**
-(`pypdf`) depuis la refonte du gabarit ; l'annexe pesait dix pages au gabarit d'alors, contre vingt-sept
+l'`annexe-` est reliée, l'`audit-` ne l'est pas.* Décomptes **re-mesurés sur pièce** : **1 096 pages**
+(`pypdf`) depuis la refonte typographique du 31 juillet 2026 ; l'annexe pesait dix pages au gabarit de la refonte
+Springer, contre vingt-sept
 pour le rapport — ⚠ *ce coût-là n'a pas été re-mesuré au gabarit neuf.* La ligne de `sed` qui élargissait
 les tables à sept colonnes est **retirée du script**, sa grille n'étant plus composée. ⚠ **Ce que la
 passe ne change pas** : l'annexe **n'est toujours aucune des neuf annexes A à I**, elle **n'est pas une
@@ -625,8 +612,7 @@ sommaire. **Aucun énoncé n'est retiré**, et l'occasion a servi à corriger un
 avait périmée : le résumé disait « deux cadrages », il dit désormais **quatre volumes tous rédigés
 dont deux ne fournissent aucun fait**. **État vérifié sur le rendu** : résumé à **y = 104,8 pt**
 (31 pt de dégagement), sommaire **pages 5-7**, « 1 Introduction » en page **8**. Décomptes re-mesurés :
-**158 p. / 266 réf.**, `check-veille.py` en sortie 0. ⚠ **Le budget est écrit au
-[`CLAUDE.md`](CLAUDE.md) avec sa commande de mesure, parce qu'aucun contrôle ne le voit** — ni
+**158 p. / 266 réf.**, `check-veille.py` en sortie 0. ⚠ **Aucun contrôle ne voit ce budget** — ni
 `check-veille.py`, ni le rendu : *un débordement qui se fait rogner ne lève aucune erreur.*
 
 **Le 29 juillet 2026, septième passe du même jour** : la veille reçoit le titre que l'auteur énonce —
@@ -660,25 +646,25 @@ primaire atteinte. Décomptes re-mesurés : **161 p. / 269 réf.**, `check-veill
 **les deux budgets de mise en page tiennent** (résumé à y = 104,8 pt ; sommaire en pages 5-7).
 
 **Le 29 juillet 2026, huitième passe du même jour — la passe de dépôt final** : les **onze `README.md`**
-et les **six `CLAUDE.md`** que portait le dépôt ont été relus et resynchronisés, sur instruction
-d'auteur, et **un douzième `README.md` a été déposé** — celui du Vol. III. *(Cardinaux re-comptés sur
-l'arbre à cette date : **12 `README.md`, 6 `CLAUDE.md`** après la passe.)* **Ce que la passe a trouvé, et corrigé.** *(1)* **Six estampilles de version périmées**, toutes
+que portait le dépôt ont été relus et resynchronisés, sur instruction d'auteur, et **un douzième
+`README.md` a été déposé** — celui du Vol. III. *(Cardinal re-compté sur l'arbre à cette date :
+**12 `README.md`** après la passe.)* **Ce que la passe a trouvé, et corrigé.** *(1)* **Six estampilles de version périmées**, toutes
 décrivant un état *courant* et non un fait daté : ce `README.md` annonçait **TOC v0.30 / PRD v0.14** en
-deux endroits (section du Vol. IV et arborescence) alors que le dépôt porte **v0.31 / v0.15** ; le
-[`CLAUDE.md` du Vol. IV](2%20-%20Compendium/CLAUDE.md) annonçait **PRD v0.11 et TOC v0.26** dans sa
+deux endroits (section du Vol. IV et arborescence) alors que le dépôt porte **v0.31 / v0.15** ; la
+gouvernance du Vol. IV annonçait **PRD v0.11 et TOC v0.26** dans sa
 section d'autorité, soit quatre et cinq versions de retard, et créditait `check-compendium.py` de
 **P1-P7 / 15 mutations** quand le script en porte **P1-P8 / 17**. ⚠ *Une estampille de version en retard
 ne se distingue d'un constat daté que par sa fonction : celle qui dit « voici l'autorité courante » est
 fausse, celle qui dit « voici ce que la passe a lu » est exacte.* *(2)* **Le Vol. III a reçu son premier
 [`README.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/README.md)** : il était **le seul des trois
-volumes à n'en porter aucun**, et le lecteur n'avait d'autre entrée que le `CLAUDE.md`, qui s'adresse à
-l'agent. Document **dérivé**, sans fait neuf. *(3)* **Deux `.pyc` versionnés de plus** ont été relevés
+volumes à n'en porter aucun**, et le lecteur n'avait aucune entrée qui lui fût destinée.
+Document **dérivé**, sans fait neuf. *(3)* **Deux `.pyc` versionnés de plus** ont été relevés
 sous `2 - Compendium/PRD/__pycache__/` — le total suivi est de **trois**, non d'un —, et l'**absence de
 licence à la racine** est portée au tableau des reliquats. ⚠ **Ni l'un ni l'autre n'est corrigé ici** :
 retirer un fichier versionné et déposer une licence sont des gestes qui se demandent. **Décomptes
 re-mesurés sur pièce à cette date, tous inchangés** : veille **161 p. / 269 réf.**
 (`check-veille.py`, sortie 0), Vol. I **569 p. / 28 diagrammes** (motif ancré), Vol. II **387 p. /
-29 pièces**, Vol. III **427 p. / 34 pièces / 30 rapports**, Vol. IV **921 p. / 50 chapitres /
+29 pièces**, Vol. III **427 p. / 34 pièces / 30 rapports**, Vol. IV **1 096 p. / 50 chapitres /
 159 entrées de socle**, et les **quatre contrôles du Vol. IV en sortie 0** — `check-toc.py`,
 `check-sieges.py` (**26 sièges sur 50 pièces**), `check-compendium.py` (**P1-P8**, trois rapports
 déclaratifs), `decompte.sh`. ⚠ **Ce que la passe ne fait pas** : elle **ne requalifie aucun statut** —
@@ -696,7 +682,6 @@ périmètre de cette passe documentaire :
 | Fichier | Reliquat |
 |---|---|
 | `1 - Corpus/2 - OrchestrationAgentique/build/assemble.py` | lit `TOC.md` à la racine du volume ; il vit dans `prd/` — **assemblage hors service** |
-| `…/2 - OrchestrationAgentique/prd/PRDPlan.md` | renvoi `](CLAUDE.md)` → `../CLAUDE.md` |
 | `…/2 - OrchestrationAgentique/prd/audit.md` | renvois `](monographie/…)` → `../monographie/…` |
 | `…/2 - OrchestrationAgentique/verification/relecture-CA.md` | renvois `](../PRD.md)`, `](../PRDPlan.md)`, `](../audit.md)` → `../prd/…` |
 | `…/2 - OrchestrationAgentique/build/__pycache__/` | bytecode Python (`.pyc`) versionné par mégarde — à retirer du suivi et à ignorer |
@@ -706,8 +691,7 @@ périmètre de cette passe documentaire :
 | Vol. III — `monographie/`, `prd/`, `verification/` | citent le démonstrateur `Borealis-Go`, retiré du dépôt le 25 juillet 2026 (ch. 28, PRD, TOC, confrontation des thèses) : même régime que `Synthese Monographie.md` — **citations exactes, plus opposables**, à consigner et non à réécrire |
 
 Le `monographie/` du Vol. II concentre à lui seul **48 de ces renvois cassés**, sur 28 de ses
-29 pièces (re-mesuré le 25 juillet 2026) : voir le tableau et la commande de contrôle du
-[`CLAUDE.md`](1%20-%20Corpus/2%20-%20OrchestrationAgentique/CLAUDE.md) du volume.
+29 pièces (re-mesuré le 25 juillet 2026).
 
 ⚠ **Plus de pages de présentation ni de publication GitHub Pages pour les volumes.** Les deux
 `index.html` (Vol. I et Vol. II) ont été supprimés le 22 juillet 2026 (commit `fd8f1be`). Ils
@@ -716,6 +700,3 @@ annonçaient « Lire en ligne » sous `https://agbruneau.github.io/Monographies/
 toute façon, le dépôt s'appelant `Agentique` (`github.com/agbruneau/Agentique`), et cause des 404
 relevés. Rétablir une publication en ligne supposerait de repartir de la bonne base
 (`https://agbruneau.github.io/Agentique/`) et de vérifier que Pages est bien activé pour ce dépôt.
-
-Conventions de rédaction et règles de travail : voir le [`CLAUDE.md`](CLAUDE.md) du dépôt, puis
-celui de chaque volume.

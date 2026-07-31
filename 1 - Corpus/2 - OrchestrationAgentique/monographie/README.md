@@ -4,7 +4,7 @@
 
 | Champ | Valeur |
 |---|---|
-| Version | millésime **`mono-v1.0`** — ⚠ millésime éditorial, l'**étiquette git n'a pas été posée** ([`CLAUDE.md`](../CLAUDE.md)) |
+| Version | millésime **`mono-v1.0`** — ⚠ millésime éditorial, l'**étiquette git n'a pas été posée** |
 | Date de publication | 17 juillet 2026 |
 | Dates de gel | 16 juillet 2026 (22 pièces) ; 17 juillet 2026 (7 pièces) — registre : [`99-registre-gel.md`](99-registre-gel.md) |
 | Volumétrie | **92 059 mots** sur 29 pièces — mesure du 17 juillet 2026, après la passe corrective de l'[audit global](../prd/audit.md) (méthode et commande de référence : [PRDPlan §4.2](../prd/PRDPlan.md), dont le défaut connu y est documenté) |
@@ -79,6 +79,6 @@ Un résultat de cette vérification mérite d'être donné au lecteur, parce qu'
 
 ## Gouvernance
 
-[`prd/PRD.md`](../prd/PRD.md) (autorité de contenu — socle, garde-fous, critères) · [`prd/PRDPlan.md`](../prd/PRDPlan.md) (exécution) · [`prd/TOC.md`](../prd/TOC.md) (découpage, thèses, volumétrie) · [`CLAUDE.md`](../CLAUDE.md) (conventions). En cas de conflit, **le PRD prime**.
+[`prd/PRD.md`](../prd/PRD.md) (autorité de contenu — socle, garde-fous, critères) · [`prd/PRDPlan.md`](../prd/PRDPlan.md) (exécution) · [`prd/TOC.md`](../prd/TOC.md) (découpage, thèses, volumétrie). En cas de conflit, **le PRD prime**.
 
-Ce fichier est l'**index de lecture** des 29 pièces, et rien d'autre : la gouvernance, le pipeline de rendu et la procédure de reprise sont au [`README.md`](../README.md) et au [`CLAUDE.md`](../CLAUDE.md) du volume ; la place du volume dans le corpus est au [README du dépôt](../../../README.md).
+Ce fichier est l'**index de lecture** des 29 pièces, et rien d'autre : la gouvernance, le pipeline de rendu et la procédure de reprise sont au [`README.md`](../README.md) du volume ; la place du volume dans le corpus est au [README du dépôt](../../../README.md).
