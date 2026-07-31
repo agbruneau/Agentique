@@ -238,6 +238,13 @@
 
 #let horizontalrule = align(center, line(length: 30%, stroke: 0.4pt + FILET))
 
+// Repli : depuis le 31 juillet 2026, `assemble.py` marque les renvois a la note
+// de statut retiree par un appel `#note[...]`, que le gabarit « identite
+// propre » compose dans sa colonne de marge. Ce gabarit-ci n'a pas de marge de
+// note : il rend la dague d'origine, et la substance du renvoi est perdue —
+// c'est le comportement voulu, non un defaut a corriger ici.
+#let note(body) = [ †]
+
 // ---- ouverture de livre (page de partie) ----
 #let ouverture-livre(romain, verbe, sous) = {
   pagebreak(weak: true)

@@ -15,12 +15,16 @@ typst fonts 2>/dev/null | grep -qi "times new roman" || \
   echo "[build] Avertissement : « Times New Roman » introuvable ; repli Liberation / Libertinus Serif." >&2
 
 DIR="$(cd "$(dirname "$0")/.." && pwd)"
-OUT="$DIR/compendium.pdf"
+# Gabarit et sortie parametrables : la refonte du 31 juillet 2026 se compose a
+# cote du rendu courant tant qu'elle n'est pas validee sur mesures.
+#   GABARIT=springer OUT_PDF=/tmp/essai.pdf bash build/build-pdf.sh
+GABARIT="${GABARIT:-compendium}"
+OUT="${OUT_PDF:-$DIR/compendium.pdf}"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
 python3 "$DIR/build/assemble.py" "$TMP/compendium.md"
-pandoc "$TMP/compendium.md" -f markdown-raw_html --template="$DIR/build/springer.template" \
+pandoc "$TMP/compendium.md" -f markdown-raw_html --template="$DIR/build/$GABARIT.template" \
        -t typst -o "$TMP/doc.typ"
 sed -i 's/align(center)\[#table/align(left)[#table/g' "$TMP/doc.typ"
 # Pandoc pose un `table.hline()` explicite sous la rangee de tete. Le gabarit

@@ -155,11 +155,18 @@ def piece(chemin, numero):
         sys.exit(f"[assemble] {chemin} : note de statut absente (borne de coupe)")
 
     # Le corps renvoie parfois a la note de statut qu'on vient de retirer : le
-    # renvoi n'est pas efface, il est marque d'une dague, dont l'avertissement
-    # liminaire donne la lecture. Un renvoi pendant serait pire que la coupe.
+    # renvoi n'est pas efface, il est marque, et la marque DIT ce qu'elle marque.
+    # Un renvoi pendant serait pire que la coupe.
+    #   Depuis le 31 juillet 2026, la marque est un appel `#note[...]` : le
+    # gabarit « identite propre » le compose dans sa colonne de marge, en clair.
+    # `springer.template`, qui n'a pas de marge, le replie sur la dague d'origine
+    # — c'est pourquoi l'appel passe par une fonction du gabarit et non par un
+    # caractere en dur.
     texte = "".join(corps)
+    renvoi = ("`#note[Renvoi a la note de statut de la piece, "
+              "hors du rendu.]`{=typst}")
     texte, marques = re.subn(r"§\s*" + re.escape(note) + r"(?!\d)",
-                            f"§ {note} †", texte)
+                            f"§ {note}{renvoi}", texte)
     sortie.append(texte)
     return "".join(sortie), marques
 
