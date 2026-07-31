@@ -360,7 +360,7 @@ une élision**, elle n'est pas revendiquée comme verbatim continu.
 **Ce que le Vol. I ajoute, en régime [C], et qui déplace la question.** Le Vol. I *Monographie*
 §3.6.1 pose que l'identité non humaine et le jeton OAuth reposent sur une hypothèse que l'agent
 autonome rend caduque : **un sujet stable agissant dans un mode unique et connu**. Un agent piloté
-par un modèle de langue alterne en réalité entre agir **pour son propre compte** — déclencher une
+par un modèle de langage alterne en réalité entre agir **pour son propre compte** — déclencher une
 tâche planifiée, interroger un registre — et agir **au nom d'un humain mandant**, sans qu'aucune
 trace du mode actif ne soit portée par le jeton classique. Le Vol. I rapporte la formalisation qu'en
 donne le livre blanc du groupe AIIM de l'*OpenID Foundation* (South et coll., 2025) — **au moins

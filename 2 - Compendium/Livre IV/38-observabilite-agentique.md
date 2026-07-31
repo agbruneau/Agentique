@@ -159,7 +159,7 @@ l'interrogation des ressources d'énumération du dépôt et sur la lecture int�
 présentation, **non sur un balayage exhaustif du projet**).
 
 ⚠ **Cette absence ne s'étend pas au-delà de sa borne** : elle n'établit pas que le projet n'ait aucun
-mécanisme de versionnage ailleurs — une numérotation par instantané, une URL de schéma générée à la
+mécanisme de versionnement ailleurs — une numérotation par instantané, une URL de schéma générée à la
 construction ou les millésimes du dépôt principal dont il dépend demeurent possibles et **n'ont pas
 été balayés**.
 
@@ -216,7 +216,7 @@ ouverts.**
 | Ce que le socle établit du corpus, au 21 juillet 2026 | Entrée (Vol. III) | Borne portée par l'entrée |
 |---|---|---|
 | Déplacement vers un dépôt dédié, **rupture déclarée en v1.42.0 du 12 juin 2026** | **F-74**, [B] | — |
-| **Aucune publication, aucune étiquette**, « Schema URL » à « TODO » | **F-75**, [B, degré 2] | deux ressources et cette date ; **n'établit pas** l'absence de tout versionnage ailleurs |
+| **Aucune publication, aucune étiquette**, « Schema URL » à « TODO » | **F-75**, [B, degré 2] | deux ressources et cette date ; **n'établit pas** l'absence de tout versionnement ailleurs |
 | Échelle **des groupes de conventions** : **cinq échelons**, `development` présumé par défaut | **F-76**, [B] | une **seconde échelle, distincte**, régit les signaux des bibliothèques clientes |
 | Deux fichiers agentiques au statut de document *Development* ; attributs d'agent, de conversation, d'outil et d'évaluation en `stability: development` | **F-77**, [B] | **ces deux fichiers seuls** ; statut de document ≠ stabilité d'attribut |
 | Un troisième document au même statut, **douze métriques** relevées | **F-90**, [B] | ce fichier seul |

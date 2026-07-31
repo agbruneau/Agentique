@@ -19,7 +19,7 @@ et donc **deux thèses**, conservées intégralement et **jamais fondues en une 
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 37, premier mouvement — **thèse réalignée en v0.28**, décisions 8 et 14, remontée R-IV-38)* — **le présent ouvrage définit** le maillage d'agents par filiation avec le patron *service mesh* — un plan de données qui médiatise chaque arête, un plan de contrôle qui centralise la politique ; **cette définition est celle de l'ouvrage, et le terme n'en a pas d'autre qui fasse autorité**. La filiation retenue fournit un **instrument de tri par statut** des offres que le Vol. III a ouvertes. ⚠ **Coût déclaré, repris de la source** : elle **n'affirme rien de l'écart entre le discours des fournisseurs et leurs réalisations** — *la forme antérieure, « trie ce que le terme recouvre réellement de ce qu'il recouvre en marketing », affirmait exactement l'énoncé que la source déclare ne pas faire.*
 
-> **Thèse du second mouvement**, citée depuis le TOC **v0.28**, entrée du chapitre 37 *(thèse réalignée en v0.28, décisions 8 et 14 — remontée R-IV-39)* — **Lecture de l'auteur** — le maillage est **un** lieu où le passeport du ch. 16 **pourrait** devenir opposable, **et le seul que la somme instruise** — PEP adossé à un PDP, transposition du *zero trust* au graphe d'agents. ⚠ **Vérifier chaque arête, sans confiance héritée de la topologie, est un principe d'architecture posé par l'ouvrage, non une propriété relevée d'un maillage déployé** — *report d'un bornage que le Vol. III avait fait le 21 juill. 2026 et que le plan n'avait pas suivi.*
+> **Thèse du second mouvement**, citée depuis le TOC **v0.28**, entrée du chapitre 37 *(thèse réalignée en v0.28, décisions 8 et 14 — remontée R-IV-39)* — Lecture de l'auteur — le maillage est **un** lieu où le passeport du ch. 16 **pourrait** devenir opposable, **et le seul que la somme instruise** — PEP adossé à un PDP, transposition du *zero trust* au graphe d'agents. ⚠ **Vérifier chaque arête, sans confiance héritée de la topologie, est un principe d'architecture posé par l'ouvrage, non une propriété relevée d'un maillage déployé** — *report d'un bornage que le Vol. III avait fait le 21 juill. 2026 et que le plan n'avait pas suivi.*
 
 ⚠ **Les deux thèses citées ci-dessus portaient, à la rédaction, une forme que leur source avait
 elle-même bornée — le réalignement est FAIT, et l'histoire de l'écart se conserve** (décision 17 du
@@ -217,7 +217,7 @@ services a légué, et le seul dont la somme dispose au socle.*
 
 ### 37.1.4 Ce que la filiation permet de trier — et la formule qui n'est pas écrite
 
-**Lecture de l'auteur** — la filiation fournit un **critère de tri**, et un seul : est un maillage
+Lecture de l'auteur — la filiation fournit un **critère de tri**, et un seul : est un maillage
 d'agents au sens de cette somme ce qui présente les deux plans, médiatise les arêtes et centralise la
 politique. **Ce que le socle établit** : l'homonymie du terme chez deux éditeurs nommés (F-72,
 **[B, degré 1]**) ; l'existence d'une syntaxe d'autorisation par arête dans un mécanisme ouvert

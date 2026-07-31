@@ -98,7 +98,7 @@ des quatre emplois, **que ce chapitre ne reconstruit pas**.
 ### 43.1.2 Quatre réserves qui commandent la lecture du tableau
 
 *Un — la couche protocolaire.* ⚠ **« Cadre d'autorisation », jamais « sécurisé »** : *la sécurité
-dépend de l'implémentation*, et le **ch. 8** en est le siège. **Lecture de l'auteur** — *de ces six
+dépend de l'implémentation*, et le **ch. 8** en est le siège. Lecture de l'auteur — *de ces six
 couches, la protocolaire est la mieux documentée et la moins porteuse pour un processus réglementé :
 une spécification décrit un appel, et un appel n'est pas une décision.* ⚠ **Le choix d'un protocole ne
 referme donc aucune des cinq zones de compensation du ch. 42.**
@@ -117,7 +117,7 @@ somme au ch. 3 § 3.2 et § 3.3***. **Ce chapitre les transpose aux agents et n'
 *c'est l'économie qui justifie la refonte des trois volumes en un ouvrage, et un chapitre
 d'architecture qui la reconstruirait l'annulerait au premier paragraphe.*
 
-**Lecture de l'auteur** — les deux champs obligatoires du **schéma de profil d'agent** — l'énumération
+Lecture de l'auteur — les deux champs obligatoires du **schéma de profil d'agent** — l'énumération
 des outils invocables et les bornes de privilège (Vol. III **F-40**) — sont, dans le vocabulaire du
 manifeste, un **cadre opérationnel** — *ce que l'agent peut faire, avec quels outils* — **écrit hors
 de l'agent, dans un objet lisible avant l'exécution**. ⚠ **Le socle porte les deux termes ; il ne pose
@@ -142,7 +142,7 @@ autonomous re-parametrization ». ⚠ **La modalité commande la rédaction de t
 « exigé ».* ⚠ **Et « documentation de modèle » ou « inventaire », jamais « fiche de modèle »** — *zéro
 occurrence dans le texte.*
 
-**Lecture de l'auteur** — ⚠ **cette couche est spécifiable contre un texte et pas contre l'autre,
+Lecture de l'auteur — ⚠ **cette couche est spécifiable contre un texte et pas contre l'autre,
 alors que les deux entreront en vigueur le même jour.** *L'asymétrie n'est pas dans le droit ; elle
 est dans le socle*, et le **ch. 49** la reprend.
 
@@ -154,7 +154,7 @@ Le **ch. 29** a énoncé le principe directeur : ⚠ **sous exigence réglementa
 est imposé de façon déterministe par le cadre, qui invoque les agents ; les agents n'orchestrent pas
 le processus** — soit les positions **OO3 et OO4**.
 
-**Lecture de l'auteur** — ⚠ **ce principe est construit par transposition de trois sources dont le
+Lecture de l'auteur — ⚠ **ce principe est construit par transposition de trois sources dont le
 socle n'établit l'application ni au Canada ni à la finance canadienne.** *Il dit où placer la main qui
 commande, non comment qualifier un processus.*
 
@@ -179,14 +179,14 @@ attribuée à chaque occurrence et non vérifiée indépendamment** : **TD** dé
 d'IA agentique, développé par **Layer 6**, effectue la pré-adjudication d'un prêt garanti par
 l'immobilier et génère des mémos de synthèse pour les souscripteurs, **ramenant un traitement d'environ
 quinze heures à moins de trois minutes** — ⚠ **résultats que la source qualifie elle-même de
-préliminaires** (Vol. II **F-17**). **Lecture de l'auteur**, *sur la classe seulement* — **cinq des sept
+préliminaires** (Vol. II **F-17**). Lecture de l'auteur, *sur la classe seulement* — **cinq des sept
 critères y sont saturés**, et le principe du **ch. 29** y conclut à **OO3 ou OO4**. ⚠ **Le socle ne dit
 pas où se positionne ce système, et la somme ne le déduit pas d'un gain de temps déclaré.**
 
 **Classe 2 — l'acheminement autonome de courriels commerciaux.** ⚠ **Métrique auto-déclarée, attribuée
 à chaque occurrence** : **Scotiabank** déclare que des capacités agentiques traitent de façon autonome
 **environ 90 % d'environ 1 500 courriels par jour** en services bancaires aux entreprises, les cas
-complexes étant escaladés (Vol. II **F-21**). **Lecture de l'auteur** — ⚠ **la classe est instructive
+complexes étant escaladés (Vol. II **F-21**). Lecture de l'auteur — ⚠ **la classe est instructive
 par ce qu'elle rend indécidable** : *un acheminement
 est-il une « décision fondée exclusivement sur un traitement automatisé » au sens de l'article 12.1 ?*
 **Le socle ne le dit pas, et la somme n'émet pas d'avis juridique.** Le critère « contraintes » ne se
@@ -195,13 +195,13 @@ assumer** — ⚠ **et dont le positionnement dépend entièrement.** *La qualif
 l'architecture.*
 
 **Classe 3 — le paiement de grande valeur sur un rail à sémantique commune.** Le rail a **achevé sa
-bascule** vers la norme de messagerie financière (Vol. II **F-28**). **Lecture de l'auteur** — *la
+bascule** vers la norme de messagerie financière (Vol. II **F-28**). Lecture de l'auteur — *la
 contrainte dominante y est d'une autre nature — non d'expliquer mais d'exécuter*, le rail imposant
 **une forme de message et un budget de temps**. ⚠ *Un délai à tenir ne se confie pas à un composant
 dont la durée d'exécution n'est pas bornée.* La conclusion — **l'agent observe, le rail exécute** —
 est celle qu'instancie le **ch. 45 § 45.12**.
 
-**Lecture de l'auteur** — ⚠ **les trois classes se distinguent non par leur degré d'automatisation,
+Lecture de l'auteur — ⚠ **les trois classes se distinguent non par leur degré d'automatisation,
 mais par la nature de ce qui les contraint : *expliquer, qualifier, exécuter*.** Le socle établit les
 sept critères et les faits de chaque classe ; **il n'établit ni cette tripartition, ni son
 exhaustivité.**
@@ -225,7 +225,7 @@ pas évitable au niveau du modèle*, et la réponse est **une défense en profon
 « solution »**. ⚠ **Le siège de la triade est au ch. 19 § 19.2**, celui de la défense au **ch. 6
 § 6.5** ; *ce chapitre n'en reconstruit aucun.*
 
-**Lecture de l'auteur** — ⚠ **la grille et la taxonomie OO ne répondent pas à la même question, et les
+Lecture de l'auteur — ⚠ **la grille et la taxonomie OO ne répondent pas à la même question, et les
 composer est un geste du compendium** : *la première demande **s'il faut** un agent, la seconde
 **qui commande** quand il y en a un.* **Ce que le socle établit** : les deux instruments, chacun dans
 son volume, à leur niveau. **Ce qu'il n'établit pas** : leur articulation — ⚠ *aucune entrée ne les met
@@ -273,7 +273,7 @@ s'ajoute, issu non d'une zone mais de la table de traduction du ch. 29. Total : 
 
 : Tableau 43.2 — Les cinq points de contrôle obligatoires, avec ce que le socle porte et ce qui est de l'auteur. ⚠ **SIÈGE UNIQUE** ; les chapitres aval y renvoient sans le reconstruire.
 
-**Lecture de l'auteur** — ⚠ **ces cinq points partagent une propriété que le Livre III nomme.**
+Lecture de l'auteur — ⚠ **ces cinq points partagent une propriété que le Livre III nomme.**
 **Quatre des cinq propriétés d'évaluation** du cadre mobilisé — spécificité de tâche, **assurance de
 correction**, réactivité, **traçabilité** — sont **celles que l'exploitant démontre à un tiers**, et ce
 sont exactement celles que le cadre instrumente ; ⚠ **la cinquième, l'autonomie, n'a au socle aucune
@@ -308,7 +308,7 @@ produit nommé.* ⚠ **La somme reprend le principe, jamais l'instanciation sur 
 l'intelligence de l'autorité, la capacité de la permission, l'explication de la preuve — ne jamais
 laisser le modèle qui décide être aussi celui qui s'auto-autorise ou s'auto-atteste.***
 
-**Lecture de l'auteur** — **ce que le socle établit** : que ce principe est **énoncé** par un volume
+Lecture de l'auteur — **ce que le socle établit** : que ce principe est **énoncé** par un volume
 antérieur, en [C], et qu'il converge avec **les cinq points de contrôle obligatoires du § 43.3**, dont
 il est la formulation abstraite. **Ce qu'il n'établit pas** : *que cette convergence soit un fait du
 domaine plutôt qu'un effet du corpus consulté* — ⚠ **le Vol. I ne balaie pas les propositions
@@ -331,7 +331,7 @@ attribution** : il y fait converger **quatre fonctions** — *identification de 
 calibrée sur la matérialité et la réversibilité, ségrégation des tâches et double regard, et
 journalisation infalsifiable opposable en audit* —, ⚠ **et il pose un couplage obligatoire au registre
 de modèles** : *un agent matériel qui décide est un modèle au sens des cadres de risque de modèle.*
-**Lecture de l'auteur** — ⚠ **c'est exactement le rapprochement que le § 43.1.2 a écarté** : *un
+Lecture de l'auteur — ⚠ **c'est exactement le rapprochement que le § 43.1.2 a écarté** : *un
 registre d'agents et un inventaire de modèles ne portent pas sur le même objet.* **Les deux énoncés ne
 sont pas contradictoires** — *le Vol. I dit qu'un agent décisionnel **relève** d'un inventaire de
 modèles, non que le registre d'agents **soit** cet inventaire* —, **mais la distance entre les deux est
@@ -407,7 +407,7 @@ même selon la couche**.*
 
 : Tableau 43.4 — Le croisement des quatre paliers avec trois couches. ⚠ **Construction d'auteur en totalité** ; *aucun palier n'est porté par une entrée de socle.*
 
-**Lecture de l'auteur** — ⚠ **le croisement ne rend aucun mécanisme suffisant à un palier bas.** *Un
+Lecture de l'auteur — ⚠ **le croisement ne rend aucun mécanisme suffisant à un palier bas.** *Un
 fait borné ne varie pas avec le palier* : la section d'une spécification qui ne comporte aucun moyen
 d'établir le statut d'une clé n'en comporte pas plus pour un agent d'assistance que pour un agent en
 autonomie bornée. ⚠ **Le palier change le coût du défaut, non le défaut** — et *une entreprise qui
@@ -424,7 +424,7 @@ Le Vol. I modélise la trajectoire comme **une suite ordonnée de paliers** — 
 il pose la règle qui compte** : *un palier ne se franchit qu'en débloquant un jeu de **contrôles
 vérifiables**, non en empilant des fonctionnalités.* ⚠ **L'instrument est nommé et daté** : *c'est une
 transposition du **modèle LCIM** — Wang, Tolk et Wang, 2009 — aux agents, et la somme n'en est ni
-l'auteur ni le dépositaire.* **Lecture de l'auteur** — ⚠ *c'est le même énoncé que le § 43.3 sous une
+l'auteur ni le dépositaire.* Lecture de l'auteur — ⚠ *c'est le même énoncé que le § 43.3 sous une
 autre forme : **chaque palier est un endroit où l'exploitant doit pouvoir produire quelque chose**.*
 
 **Sa transposition financière déplace l'axe de lecture** : ⚠ *chaque palier ne débloque pas seulement
@@ -469,7 +469,7 @@ comme recommandations.*
 
 ⚠ **Une seule de ces réserves engage ce chapitre.** Le socle documente **des limites connues du
 magasin de points de contrôle d'un cadriciel nommé en déploiement distribué** (Vol. II **F-15**).
-**Lecture de l'auteur** — ⚠ *la persistance de l'état est le mécanisme dont dépend **PC3**, le point
+Lecture de l'auteur — ⚠ *la persistance de l'état est le mécanisme dont dépend **PC3**, le point
 d'arrêt humain* ; **le socle ne relie ce magasin à aucun des autres points**. *Une limite connue de ce
 mécanisme est un **risque d'architecture**, non un détail d'exploitation.*
 
@@ -481,7 +481,7 @@ imposée). **La discipline qui en découle est celle du ch. 32** : *traiter le s
 variable derrière une frontière d'abstraction.* ⚠ **Ce n'est pas un choix de protocole agentique** —
 *aucun n'est nommé dans les textes.*
 
-**Lecture de l'auteur** — ⚠ **une frontière d'abstraction n'est pas un point de contrôle, et les
+Lecture de l'auteur — ⚠ **une frontière d'abstraction n'est pas un point de contrôle, et les
 confondre coûterait deux fois.** *Un point de contrôle est un endroit où l'architecture **doit
 produire** quelque chose ; une frontière d'abstraction est un endroit où elle **doit pouvoir changer
 d'avis** sans se refaire.* **Ce que le socle établit** : l'absence de désignation, **par balayage

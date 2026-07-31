@@ -137,14 +137,14 @@ survit.**
 
 *Le premier oppose le typage à l'obligation d'expliquer.* Le **ch. 8** a établi qu'un échange typé est
 **déclaré à l'avance**, donc vérifiable à la frontière et opposable après coup — *sans que le socle
-établisse qu'il suffise à une piste d'audit réglementaire.* **Lecture de l'auteur** — l'article 12.1
+établisse qu'il suffise à une piste d'audit réglementaire.* Lecture de l'auteur — l'article 12.1
 exige, sur demande, « les raisons, ainsi que les principaux facteurs et paramètres, ayant mené à la
 décision ». *Un journal typé atteste de **la forme** de ce qui a transité par un appel d'outil ; il
 n'atteste ni des raisons, ni des facteurs, ni des paramètres.* **Ce que le socle établit** : les deux
 termes. **Ce qu'il n'établit pas** : leur écart, qui est de l'auteur.
 
-*Le second croisement est le seul lexique commun de toute la matrice : OAuth.* **Lecture de
-l'auteur** — que le fondement du cadre d'autorisation de MCP et l'anticipation d'industrie relative au
+*Le second croisement est le seul lexique commun de toute la matrice : OAuth.* Lecture de
+l'auteur — que le fondement du cadre d'autorisation de MCP et l'anticipation d'industrie relative au
 cadre bancaire **emploient le même mot** est un rapprochement de l'auteur, **que le socle ne pose
 pas**. ⚠ **Il vaut d'être posé pour être aussitôt désamorcé** : **aucun organisme de normalisation
 technique n'a été désigné par arrêté ministériel et aucun standard n'est nommé dans les textes
@@ -164,7 +164,7 @@ une contrainte**.
 **D'abord** parce que le **ch. 11** l'a établi : le cadre d'autorisation de MCP et la carte signée
 d'A2A établissent tous deux **qui parle**, ⚠ **non ce qui est dit ni si ce qui est dit est fondé**
 (R-02 du Vol. III — *qualifier un mécanisme par ce que sa spécification démontre*). **Ensuite** parce
-que **le porteur de l'obligation canadienne n'est pas l'agent** : **Lecture de l'auteur** — sous
+que **le porteur de l'obligation canadienne n'est pas l'agent** : Lecture de l'auteur — sous
 l'article 12.1, l'obligation **pèse sur l'entreprise qui rend la décision**, et *aucune identité
 d'agent ne déplace ce porteur.* Le **ch. 29** en fait le pivot de son argument.
 
@@ -178,7 +178,7 @@ documentation, non un retrait constaté* ; **la métrique reste attribuée, elle
 Vol. II ne porte ni son anatomie technique, ni aucun transfert de gouvernance documenté, et ne le relie
 à aucun rail canadien** — *la prospective de ce dernier point est au **ch. 36***.
 
-**Lecture de l'auteur** — **une relation inverse apparaît**. *Des trois protocoles, celui qui touche le
+Lecture de l'auteur — **une relation inverse apparaît**. *Des trois protocoles, celui qui touche le
 plus directement l'acte réglementé — le paiement — est celui dont le socle documente le moins : ni
 anatomie, ni gouvernance, ni articulation canadienne.* **Ce que le socle établit** : les trois
 absences, chacune bornée à son libellé. **Ce qu'il n'établit pas** : leur convergence, qui est une
@@ -222,7 +222,7 @@ demande, et ce sont les protocoles qui ne portent rien.**
   méthodes d'IA et d'apprentissage automatique, et le texte vise expressément la **prise de décision
   autonome** et la **re-paramétrisation autonome** ; ⚠ **d'où une couverture *implicite*, que des
   analystes juridiques canadiens tiennent pour acquise — inférence d'analystes, jamais « le BSIF exige
-  pour l'IA agentique »** (siège de l'énoncé : **ch. 25 § 25.3**). **Lecture de l'auteur** — *les
+  pour l'IA agentique »** (siège de l'énoncé : **ch. 25 § 25.3**). Lecture de l'auteur — *les
   champs d'un inventaire de modèles gouvernés et le typage d'un appel d'outil portent sur des objets
   différents* ; le socle porte les deux termes, leur
   non-recouvrement est de l'auteur.
@@ -236,7 +236,7 @@ demande, et ce sont les protocoles qui ne portent rien.**
 
 ### 42.3.2 Le renversement, et c'est le résultat le plus utile du chapitre
 
-**Lecture de l'auteur** — *on attendrait que les lignes vides soient celles des textes les moins
+Lecture de l'auteur — *on attendrait que les lignes vides soient celles des textes les moins
 lisibles. **C'est l'inverse.*** Les deux textes dont le socle porte le contenu le plus précis — E-23,
 par extraction intégrale, et l'article 12.1, par son libellé officiel — sont **ceux dont les six
 croisements ne portent aucun lien documenté**, ⚠ **et ce sont eux qui obligent le plus tôt** :
@@ -258,7 +258,7 @@ Vol. II n'emploie pas la grille — *c'est un instrument du Vol. III, dont la so
 ses mécanismes avec les textes canadiens. **La somme met les deux matrices en regard, et c'est un geste
 d'éditeur.**
 
-**Lecture de l'auteur** — **ce que le socle établit** : d'un côté, **quinze croisements sans lien
+Lecture de l'auteur — **ce que le socle établit** : d'un côté, **quinze croisements sans lien
 documenté** (Vol. II) ; de l'autre, des **verdicts par mécanisme** sur les cinq questions, dont **aucun
 « répond » plein**, plusieurs « répond partiellement » et de nombreuses **cases vides au degré 3**
 (Vol. III, Annexe B). **Ce qu'il n'établit pas** : que les deux matrices mesurent le même objet — *et
@@ -296,7 +296,7 @@ jamais la conclusion.**
 
 : Tableau 42.2 — Les cinq zones de compensation architecturale. ⚠ **Construction d'auteur** : le socle porte les termes de chaque ligne, **jamais la conclusion qu'elle en tire**.
 
-**Lecture de l'auteur** — **les cinq zones partagent une propriété qu'aucune ne montre seule : *aucune
+Lecture de l'auteur — **les cinq zones partagent une propriété qu'aucune ne montre seule : *aucune
 ne se referme en choisissant un meilleur protocole*.** ⚠ **Là où les standards ne suffisent pas, ce
 n'est pas parce qu'ils seraient immatures : c'est parce qu'ils ne répondent pas à la question posée.**
 *La compensation n'est donc pas un palliatif transitoire ; elle est **structurelle**, et l'architecture

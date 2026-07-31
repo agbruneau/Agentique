@@ -515,7 +515,7 @@ tire une règle : *états **actuel** et **cible** distingués, versionnement, et
 périodique du référentiel avec le parc réel**.* **L'anti-patron correspondant est nommé au § 44.8 :
 l'inventaire fantôme — un modèle d'intention déconnecté du parc.**
 
-⚠ **Et c'est ici que le ch. 41 § 41.3 rejoint ce chapitre par l'autre bout.** **Lecture de l'auteur** —
+⚠ **Et c'est ici que le ch. 41 § 41.3 rejoint ce chapitre par l'autre bout.** Lecture de l'auteur —
 *le **catalogue interne** y est proposé comme le lieu où l'organisation sait ce qu'elle produit et
 exploite, et **la réconciliation dont il est question ici en serait le pendant côté modèle**.* **Ce
 que le socle établit** : rien — *le catalogue est une construction d'auteur de matière neuve, la

@@ -350,7 +350,7 @@ reste absente, degré 3**, et l'écrire autrement serait la transposition abusiv
 proscrit. *(3)* ⚠ **Le patron, en revanche, est instructif et il est transférable** : *une clé de
 jointure ne s'obtient pas en corrélant des traces après coup — elle s'obtient en la rendant
 **obligatoire dans le contrat**, portée par la charge utile, immuable, et vérifiable par chaque
-maillon.* **Lecture de l'auteur** : c'est la seule voie que ce chapitre puisse nommer, et **le socle
+maillon.* Lecture de l'auteur — c'est la seule voie que ce chapitre puisse nommer, et **le socle
 ne l'établit pour aucun protocole agentique** — ni MCP, ni A2A, ni AP2 n'imposent un identifiant de
 bout en bout de cette nature. *(4)* **Aucun des deux ne monte au socle** : repérages datés, ni l'un ni
 l'autre extrait.

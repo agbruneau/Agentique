@@ -444,7 +444,7 @@ découverte, le moindre privilège et le cycle de vie.
 
 ⚠ **Le patron directeur est la délégation traçable sans réutilisation de jeton**, et sa règle d'or est
 explicite : **ne jamais réacheminer le jeton de l'utilisateur tel quel à un service en aval**, sous
-peine de dissoudre toute traçabilité et d'ouvrir la voie au député confus (*confused deputy*).
+peine de dissoudre toute traçabilité et d'ouvrir la voie au mandataire confus (*confused deputy*).
 
 Le mécanisme normatif est l'**échange de jetons**, dont deux revendications nommées matérialisent une
 chaîne de délégation vérifiable. ⚠ **Le siège de cette mécanique est le ch. 17**, qui l'a instruite à
@@ -576,7 +576,7 @@ granularité supérieure et résiste mieux aux matrices d'habilitation complexes
 appliquées **à l'intérieur** de la recherche du plus proche voisin approximatif, **et non en
 post-traitement** sur les résultats — *car un filtrage a posteriori fuit* : la seule présence d'un
 document dans l'index, ou les statistiques de pertinence renvoyées, peut **révéler l'existence
-d'informations interdites**, réalisant un cas de député confus où l'agent privilégié sert
+d'informations interdites**, réalisant un cas de mandataire confus où l'agent privilégié sert
 d'intermédiaire à un appelant qui ne l'est pas.
 
 À ce canal s'ajoute, propre à l'entreprise, la **gouvernance de la mémoire de flotte** : la mémoire

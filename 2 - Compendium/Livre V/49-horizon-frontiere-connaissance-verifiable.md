@@ -841,7 +841,7 @@ qu'optimisées pour un seul.*
 ### 49.11.3 Discontinuités à faible probabilité et fort impact
 
 Trois discontinuités dont la matérialisation invaliderait l'hypothèse même sur laquelle reposent les
-autres trajectoires. *(1)* **La rupture cryptographique** : l'apparition d'un ordinateur quantique
+autres trajectoires. *(1)* **La rupture cryptographique** : l'apparition d'un calculateur quantique
 cryptographiquement pertinent dans une fenêtre parfois avancée — ⚠ **SPÉCULATIF** — casserait les
 algorithmes à clé publique classiques sur lesquels repose **toute l'identité agentique du Livre II**.
 *(2)* **L'incident systémique d'un réseau d'agents** : une cascade corrélée par monoculture parmi des

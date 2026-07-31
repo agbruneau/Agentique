@@ -74,7 +74,7 @@ est le siège ; il ne s'en conclut rien.*
 
 ⚠ **Le plan en retient trois — correction, réactivité, traçabilité — et le partage n'est pas celui de
 la source.** *La quatrième propriété instrumentée, la spécificité de tâche, **n'y figure pas**.*
-**Lecture de l'auteur** — *la ligne de partage paraît être celle de **l'objet mesuré** : les mesures de
+Lecture de l'auteur — *la ligne de partage paraît être celle de **l'objet mesuré** : les mesures de
 complexité portent sur **un artefact de conception**, les trois autres sur **un comportement en
 exploitation**, seul objet d'une surveillance continue.* ⚠ **Le socle n'opère pas ce partage et n'en
 fournit pas le motif** ; *l'écart entre les quatre propriétés instrumentées et les trois retenues est
@@ -104,7 +104,7 @@ and the elevated potential for model drift »***.
 
 ### 46.1.3 Une raison de fond appuie la candidature — et elle n'appuie pas le partage
 
-**Lecture de l'auteur**, posée au **ch. 22 § 22.2** — qui en est le siège, le **ch. 43 § 43.3** l'y
+Lecture de l'auteur, posée au **ch. 22 § 22.2** — qui en est le siège, le **ch. 43 § 43.3** l'y
 renvoyant — et non au socle : *les **quatre** propriétés instrumentées — **spécificité de tâche
 comprise** — sont celles qu'un exploitant peut **démontrer à un tiers**, et **c'est l'instrumentation
 qui rend une propriété démontrable***. **Et un programme de risque de modèle est précisément un
@@ -212,7 +212,7 @@ exigence réglementaire orpheline.* **Ce chapitre y renvoie et n'en refait aucun
 tire seulement la conséquence de calendrier : *une exigence qu'aucun élément exécutable ne réalise au
 1ᵉʳ mai 2027 est une exigence non encadrée, quelle que soit la qualité du schéma qui la porte.*
 
-**Lecture de l'auteur** — ⚠ *la cotation attendue par E-23 et la grille de sélection de la
+Lecture de l'auteur — ⚠ *la cotation attendue par E-23 et la grille de sélection de la
 préimpression **portent sur le même geste** — décider combien d'encadrement mérite un processus — **mais
 aucune source ne les relie***, et ⚠ **les sept critères de sélection sont qualitatifs : ils orientent
 un jugement, ils ne calculent pas une réponse.** ***Une institution qui voudrait industrialiser ce
@@ -225,7 +225,7 @@ hérite de ses réserves.**
 
 **Un enseignement du socle y commande pourtant une décision d'architecture immédiate, et il ne dépend
 d'aucun chiffre** : *la journalisation confiée aux agents « **n'est généralement pas recommandée** »*
-⚠ **(préimpression, source unique)**. **Lecture de l'auteur** — *si la trace n'est pas produite par
+⚠ **(préimpression, source unique)**. Lecture de l'auteur — *si la trace n'est pas produite par
 l'agent, et si E-23 **attend** un état de surveillance par modèle inventorié, alors **le lieu de
 production de la trace est une décision à prendre avant le 1ᵉʳ mai 2027, non après**.* ⚠ **Le socle
 déconseille un producteur ; il n'en désigne aucun autre** — *et le **ch. 43 § 43.3** en a fait le point
@@ -235,7 +235,7 @@ l'auteur**.*
 ⚠ **Un mot, enfin, sur ce que cette feuille de route ne peut pas faire.** *Elle est séquencée sur deux
 textes **dont un seul est au socle par son contenu**.* ⚠ **Le socle ne porte de la ligne directrice de
 l'AMF que son calendrier** ; *son contenu article par article relève d'une **lacune déclarée**.*
-**Lecture de l'auteur** — ⚠ *la convergence des dates rend rationnel **un programme unique plutôt que
+Lecture de l'auteur — ⚠ *la convergence des dates rend rationnel **un programme unique plutôt que
 deux** ; **elle ne dit rien de ce que le second texte attend**, et la somme ne le fabriquera pas.*
 
 ![**Figure 46.2** — Le compte à rebours vers le 1ᵉʳ mai 2027 : trois mouvements sur l'axe qui reste.](../figures/f-46-02-compte-a-rebours.svg)

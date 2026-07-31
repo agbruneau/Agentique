@@ -18,7 +18,7 @@ ch. 50) — et donc **deux thèses**, conservées intégralement et **jamais fon
 | **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** Vol. II — **R-8 (sigle jamais nu, quatre branches) : trois occurrences**, § 45.2, § 45.6 et § 45.14, **renvoyées au siège du ch. 7 § 7.5** ; **R-5 (aucun standard technique désigné) : deux occurrences**, § 45.4 et § 45.13 ; **réserve F-37 (préimpression non révisée) : deux occurrences**, § 45.1 ; **R-6 (position à un classement d'analystes non vérifiée) : une occurrence**, § 45.3 ; **R-7 (instrumentation d'une attente réglementaire par un produit = inférence d'auteur) : une occurrence**, § 45.4, ⚠ **nommé par volume, à ne pas confondre avec R-07 du Vol. III** ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : une occurrence**, § 45.2 ; **réserve F-29 (le rail temps réel porte quatre cibles successives) : deux occurrences**, § 45.4, ⚠ **à ne pas confondre avec F-29 du Vol. III**, *qui porte un tout autre objet au § 45.9* ; **métriques auto-déclarées (marqueur « auto-déclaré ») : quatre occurrences**, § 45.2, § 45.9 (deux) et § 45.11, **chacune attribuée à son éditeur ou à son institution nommée** ; **§8.4 (neutralité fournisseur : nommer, jamais recommander) et réserve F-09 : zéro occurrence de l'identifiant** — ⚠ *les deux sont tenus de bout en bout, la neutralité aux § 45.1 à § 45.3 et § 45.11, la formule « attendu par E-23 » au § 45.11 — le § 45.4 écrivant « **attentes** de risque de modèle » et **ne portant nulle part le mot proscrit « exigé »**, dont l'unique occurrence du corps est l'énoncé de la règle au § 45.11 : **domaine déclaré, sans cardinal** (décision 16, alinéa c)* ; **R-1 à R-4 : zéro occurrence**. Vol. III — **R-09 : trois occurrences**, § 45.5, § 45.8 et § 45.9 ; **R-01 : deux occurrences**, § 45.1 et § 45.8 ; **R-02 : une occurrence**, § 45.9 ; **R-07 (aucune conformité revendiquée : fait négatif ÉTABLI, non vérifié) : une occurrence**, § 45.4 ; **R-13 : une occurrence**, § 45.14, **renvoyée au siège du ch. 43 § 43.5** ; **R-14 : zéro occurrence de l'identifiant** — ⚠ *les trois degrés sont portés en toutes lettres aux § 45.1, § 45.2, § 45.4 à § 45.6, § 45.10, § 45.13, § 45.15 et à la synthèse : **domaine déclaré, sans cardinal***. **R-03 à R-06, R-08, R-10 à R-12 : zéro occurrence** |
 | **Volumétrie cible** | ≈ **12 000 mots** de corps (§ 45.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des **quinze sections en deux mouvements** — **la plus haute du Livre**, devant les ≈ 11 000 mots du ch. 37 ; *les dix cibles dérivées somment exactement l'enveloppe.* ☑ **Décompte publiable depuis G-2** ; **réel reporté au [`README.md`](README.md)**. ⚠ **D-4 s'applique**, et son interdiction d'amputation porte ici plus qu'ailleurs : *un chapitre d'instanciation est long parce que chaque composant porte son statut, sa date et son éditeur* |
 
-> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 45, premier mouvement — **thèse réalignée en v0.28**, décisions 8 et 14, remontée R-IV-105)* — le blueprint applique les six principes directeurs à un portefeuille réel documenté ; chaque couche porte **son statut de preuve daté** et, ⚠ **lorsqu'il y en a un, un positionnement d'options d'orchestration qui est SANS EXCEPTION une** **Lecture de l'auteur** — *aucune source du corpus ne positionne un produit sur cette échelle, et plusieurs couches n'en portent aucun*. ⚠ **Les points d'intégration avec l'existant portent sur TROIS existants nommés, non sur chaque couche**, et *deux des trois ne sont pas documentés à ce grain* — **étendre, jamais dupliquer**.
+> **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 45, premier mouvement — **thèse réalignée en v0.28**, décisions 8 et 14, remontée R-IV-105)* — le blueprint applique les six principes directeurs à un portefeuille réel documenté ; chaque couche porte **son statut de preuve daté** et, ⚠ **lorsqu'il y en a un, un positionnement d'options d'orchestration qui est SANS EXCEPTION une** Lecture de l'auteur — *aucune source du corpus ne positionne un produit sur cette échelle, et plusieurs couches n'en portent aucun*. ⚠ **Les points d'intégration avec l'existant portent sur TROIS existants nommés, non sur chaque couche**, et *deux des trois ne sont pas documentés à ce grain* — **étendre, jamais dupliquer**.
 
 > **Thèse du second mouvement**, citée depuis le TOC **v0.28**, entrée du chapitre 45 *(thèse réalignée en v0.28, décisions 8 et 14 — remontée R-IV-103)* — le blueprint **s'éprouve** par le parcours — de l'enregistrement à la révocation, chaque transition est jouée contre l'architecture **au grain générique des mécanismes**, ⚠ **le cas financier canadien (continuité Boréalis) étant joué EN UNE PASSE UNIQUE en clôture** — *inversion que le Vol. III déclare en tête de son chapitre comme un choix de composition, non une prescription du cadrage*. ⚠ **Et l'épreuve ne « prouve » rien** : *sa confrontation ne vaut pas réfutation externe — c'est une **épreuve de cohérence interne**, le cas venant du même auteur et du même corpus.*
 
@@ -110,7 +110,7 @@ pour être contestés.*
 d'architecture agentique publié par cet éditeur **recommande explicitement les enchaînements
 statiques — de type notation de processus normalisée — pour les processus sous surveillance
 réglementaire**, au nom de **l'auditabilité, de la conformité et de la définition des transferts**
-(Vol. II **F-46**). **Lecture de l'auteur** — ⚠ *la recommandation est remarquable par sa provenance :
+(Vol. II **F-46**). Lecture de l'auteur — ⚠ *la recommandation est remarquable par sa provenance :
 elle émane de l'éditeur dont ce chapitre instancie le portefeuille agentique, et **elle borne l'emploi
 de ce qu'il vend**.* **Le socle en établit le contenu et la date** ; ⚠ *il n'établit ni son influence
 sur les décisions d'architecture des institutions, ni son maintien après la date de gel.* ⚠ **La même
@@ -188,7 +188,7 @@ position à un classement d'analystes citée par le socle **n'a pas été vérif
 aucun énoncé de ce chapitre.* ⚠ **Les études d'analystes commandées portent leur statut** : *une étude
 commandée par l'éditeur qu'elle évalue est une donnée d'éditeur, attribuée comme telle.*
 
-**Lecture de l'auteur** — ⚠ **la neutralité se mesure à un test simple, et le chapitre s'y soumet** :
+Lecture de l'auteur — ⚠ **la neutralité se mesure à un test simple, et le chapitre s'y soumet** :
 *si l'on remplace le nom de l'éditeur par celui d'un autre et que le raisonnement tient encore, la
 neutralité est tenue ; s'il cesse de tenir, le chapitre recommandait.* **Ce que le socle établit** :
 l'existence et le statut daté de chaque composant nommé. **Ce qu'il n'établit pas** : *qu'un autre
@@ -233,7 +233,7 @@ et B-13, le socle a **cherché et consigné** l'absence de revendication : **fai
 degré 3**.* ⚠ **Les deux formules ne s'échangent pas**, et *le ch. 38 § 38.4 en a fait le siège pour
 la somme.*
 
-**Lecture de l'auteur** — ⚠ *l'éditeur **revendique là où il revendique**, et son silence sur le Canada
+Lecture de l'auteur — ⚠ *l'éditeur **revendique là où il revendique**, et son silence sur le Canada
 est une donnée, non un oubli à combler.* Le socle atteste au contraire des revendications ailleurs :
 *pour un module de conformité issu d'un accord de revente daté, l'éditeur **revendique** des contenus
 prêts pour trois cadres nommés — **le lien est documenté comme revendication d'éditeur, et le socle
@@ -257,7 +257,7 @@ page des documents de ce groupe recense **sept** brouillons **dont aucune date d
 n'est annoncée***, et **l'un d'eux expire pendant la période de rédaction** (Vol. III **F-85**,
 **[B]**) — *un relevé horodaté et périssable, à rejouer avant citation.*
 
-**Lecture de l'auteur** — **ce que le socle établit** : qu'un groupe de travail **considère** les
+Lecture de l'auteur — **ce que le socle établit** : qu'un groupe de travail **considère** les
 intermédiaires d'IA comme un cas particulier d'un objet qu'il spécifie déjà. **Ce qu'il n'établit
 pas** : *que l'extension soit techniquement possible sur un déploiement donné*, ni **qu'elle préserve
 les propriétés de l'existant**. ⚠ **La lecture proposée est étroite** : *« étendre plutôt que
@@ -278,7 +278,7 @@ nommés, non chaque couche* — **le corps et la thèse concordent** (R-IV-105, 
 > TOC). *C'est le motif pour lequel la table détaillée du ch. 41 ne porte aucun marqueur de
 > provenance.*
 
-**Lecture de l'auteur** — **marquage porté à l'ouverture de la section.** **Ce que le socle établit** :
+Lecture de l'auteur — **marquage porté à l'ouverture de la section.** **Ce que le socle établit** :
 *quatre propositions d'un volume antérieur sur la place d'un **plan de contrôle obligatoire*** (Vol. III
 **H-30**, **[C]**) ; **un rôle nommé par une source primaire** — *celui du membre du personnel en
 mesure de réviser une décision* (Vol. III **F-89**, **[B]**), ⚠ **seul de son espèce parmi les entrées
@@ -306,7 +306,7 @@ contrôle **au sens infrastructure** » du maillage* — **les quatre branches s
 ⚠ **Deux absences de titulaire sont documentées, et ce sont les seuls faits de la section.** *Le
 fichier de sécurité du dépôt qui spécifie la signature **ne porte aucune disposition de gouvernance
 des clés**, et le document de gouvernance **n'attribue à aucun organe une responsabilité de gestion
-des clés**.* ⚠ **Lecture de l'auteur** — *une architecture dont le mécanisme de confiance n'a **aucun
+des clés**.* ⚠ Lecture de l'auteur — *une architecture dont le mécanisme de confiance n'a **aucun
 titulaire nommé** ne se répartit pas en rôles : elle en manque un.* **Ce que le socle établit** : les
 deux absences, bornées à ces deux documents. **Ce qu'il n'établit pas** : *qu'aucun titulaire n'existe
 ailleurs* — degré 3.
@@ -333,7 +333,7 @@ plus que dans l'historique, et aucun renvoi de ce chapitre n'y résout.*
 
 ⚠ **Décision de fusion, reprise du plan et déclarée** : *les deux instanciations — le cas fictif du
 Vol. I et le portefeuille réel du Vol. II — sont présentées comme **deux réalisations de la même
-architecture de référence**, non comme deux blueprints concurrents.* **Lecture de l'auteur** — *ce qui
+architecture de référence**, non comme deux blueprints concurrents.* Lecture de l'auteur — *ce qui
 les rend comparables est le **jeu de contraintes**, non les composants : le premier fixe les
 contraintes, le second fournit des composants datés, et **aucun des deux n'établit que les seconds
 satisfont les premières**.*
@@ -372,7 +372,7 @@ qui compte** : *le mécanisme documenté **ne répond pas** à « qui es-tu » ;
 il n'émet, ne vérifie ni ne révoque un identifiant.* ⚠ **La barrière qui déciderait de ce qui *peut*
 se présenter est au ch. 41 § 41.4** — *matière neuve, sans socle.*
 
-**Lecture de l'auteur** — ⚠ ***la naissance décrite ici est une séquence de trois actes dont aucun ne
+Lecture de l'auteur — ⚠ ***la naissance décrite ici est une séquence de trois actes dont aucun ne
 consomme la sortie du précédent*** : le registre déclare des bornes que **rien n'établit lisibles par
 un point d'application** ; l'émission produit des pièces **dont aucune n'ancre les autres** ;
 l'admission évalue une politique **qui ne porte ni identité ni mandat**. **Ce que le socle établit** :
@@ -419,7 +419,7 @@ par son éditeur nommé, non vérifiée**. ⚠ **Un mécanisme se qualifie par c
 démontre, jamais par ce qu'un éditeur annonce** (R-02 du Vol. III) : *ce que le socle établit est
 l'annonce, non la propriété.*
 
-**Lecture de l'auteur** — ⚠ ***des six gestes de la vie d'un agent, quatre ont un siège ailleurs dans
+Lecture de l'auteur — ⚠ ***des six gestes de la vie d'un agent, quatre ont un siège ailleurs dans
 la somme, un est outillé à moitié, et un ne l'est que par une annonce d'éditeur.*** *C'est ce que
 l'instanciation apporte : **non des faits nouveaux, mais la mesure de la dispersion**.* **Ce qu'elle
 n'apporte pas** : *aucun chaînage entre les six* — ⚠ **et le § 45.10 montre où l'absence de chaînage
@@ -458,7 +458,7 @@ dont aucun mécanisme ne lui fournit le moyen.**
 ⚠ **Et l'archivage probatoire hérite du § 45.8** : *si l'émission n'a produit aucune pièce qui ancre
 les autres, l'archive conserve une séquence dont l'imputation n'a jamais été établie.*
 
-**Lecture de l'auteur** — ⚠ ***la mort d'un agent est la transition où l'absence de chaînage constatée
+Lecture de l'auteur — ⚠ ***la mort d'un agent est la transition où l'absence de chaînage constatée
 au § 45.8 devient un coût mesurable***. *Naître sans chaînage produit un agent dont les pièces ne
 s'ancrent pas ; mourir sans chaînage produit **un retrait dont on ne peut pas établir la
 propagation**.* ⚠ **Le geste intermédiaire — retirer un mandat précis et constater sa propagation —
@@ -483,7 +483,7 @@ agents, et c'est lui qui décide de l'enchaînement.*** *Le flux d'intégration 
 d'orchestration appelle des agents de synthèse documentaire ; **il ne leur délègue ni la séquence, ni
 la décision de s'arrêter, ni la production du journal**.*
 
-**Lecture de l'auteur** — ⚠ **la spécification retient OO4 pour ce flux ; le socle n'établit pas que
+Lecture de l'auteur — ⚠ **la spécification retient OO4 pour ce flux ; le socle n'établit pas que
 les agents invoqués y soient conscients du processus**, *or c'est cette conscience qui sépare OO4
 d'OO3.* ⚠ **Sur les seuls faits documentés, rien ne distingue les deux options** — *le positionnement
 est une inférence, à vérifier sur chaque configuration.* **Ce qui est établi est ce qui compte pour la
@@ -511,7 +511,7 @@ inter-régions et la cryptographie post-quantique pour le transport sont **décl
 nommé**, non vérifiées* ; **un moteur d'intégration** assure l'intégration applicative, et l'éditeur
 documente **une solution dédiée à cette messagerie**.
 
-**Lecture de l'auteur** — ⚠ *la contrainte dominante y est d'une autre nature : **non d'expliquer mais
+Lecture de l'auteur — ⚠ *la contrainte dominante y est d'une autre nature : **non d'expliquer mais
 d'exécuter**, le rail imposant **une forme de message et un budget de temps**.* ⚠ **Un délai à tenir ne
 se confie pas à un composant dont la durée d'exécution n'est pas bornée** — *et le ch. 40 § 40.5 a
 établi, en [C], que **la latence des boucles longues a un coût d'exploitation propre**.* **La
@@ -586,7 +586,7 @@ renégocié** — *il est au ch. 44 § 44.1.3.*
 Plateau renvoie au ch. 43 § 43.5.3**, où *un palier ne se franchit qu'en débloquant des contrôles
 vérifiables, non en empilant des fonctionnalités.*
 
-**Lecture de l'auteur** — ⚠ *l'exemple est en **[C]** de bout en bout, et son apport n'est pas
+Lecture de l'auteur — ⚠ *l'exemple est en **[C]** de bout en bout, et son apport n'est pas
 factuel* : **il montre que les cinq points de contrôle obligatoires du ch. 43 § 43.3 ont chacun un
 lieu dans un modèle**, *ce qui est une propriété du formalisme et non une propriété du système
 modélisé.* ⚠ **La variante en sinistres ne change ni les patrons ni les points de contrôle** — *et
@@ -615,7 +615,7 @@ soldée).
 **Ce que l'épreuve établit malgré tout.** *Les contraintes-pivots du cas — l'article 12.1, la résidence
 canadienne, les lignes directrices de risque de modèle et de risque technologique, la ligne directrice
 IA provinciale — **se retrouvent une à une dans la correspondance du § 45.4**, et **aucune n'y reçoit
-un lien documenté**.* ⚠ **Lecture de l'auteur** — *la cohérence est donc établie **par le bas** : les
+un lien documenté**.* ⚠ Lecture de l'auteur — *la cohérence est donc établie **par le bas** : les
 mêmes contraintes produisent les mêmes vides.* **Ce que cela ne montre pas** : *que ces vides soient
 ceux qu'un observateur indépendant relèverait* — ⚠ **le socle ne documente aucune confrontation
 externe** : absence de documentation, non fait négatif vérifié (degré 3).

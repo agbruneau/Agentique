@@ -132,7 +132,7 @@ l'auto-déclaration** et doit être attribué nominativement.*
 ### 34.1.4 Crédit et octroi : périmètre de haut risque et origination hypothécaire
 
 **Le crédit aux personnes physiques est l'un des rares domaines bancaires explicitement visés par le
-régime européen de haut risque** — scoring de crédit et de solvabilité des personnes physiques,
+régime européen de haut risque** — notation de crédit et de solvabilité des personnes physiques,
 ⚠ **à l'exception de la détection de fraude** (**ch. 30 § 30.2.3**).
 
 ⚠ **Le patron réglementaire central consiste à séparer nettement la *décision réglementée* de
@@ -450,7 +450,7 @@ où la tarification de dommage n'est précisément **pas** explicitement de haut
 **Le premier marqueur est le régime européen** : *le point de l'annexe qui vise l'assurance range au
 haut risque **l'évaluation du risque et la tarification en assurance vie et santé pour les personnes
 physiques*** — ⚠ ***libellé exact, à ne pas étendre à l'assurance de dommage ni à confondre avec le point
-qui vise le scoring de crédit.*** *L'échéance **était** fixée au 2 août 2026 ; ⚠ **le report de seize mois
+qui vise le notation de crédit.*** *L'échéance **était** fixée au 2 août 2026 ; ⚠ **le report de seize mois
 au 2 décembre 2027 a été adopté dans la fenêtre du socle, sous la seule réserve de la publication à
 suivre*** (**ch. 30 § 30.2.3**).
 

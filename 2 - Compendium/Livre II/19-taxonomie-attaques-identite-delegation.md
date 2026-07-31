@@ -142,7 +142,7 @@ exécutable**, un critère de clôture qui ne nomme pas sa source n'en étant pa
 **La littérature.** Des trois entrées versées, **une seule est une publication revue par les pairs en
 actes de piste principale** — **AgentPoison**, **NeurIPS 2024** —, et elle démontre
 l'**empoisonnement de la mémoire à long terme ou de la base de connaissances interrogée par
-récupération** (*retrieval-augmented generation*, RAG) d'agents fondés sur des modèles de langue
+récupération** (*retrieval-augmented generation*, RAG) d'agents fondés sur des modèles de langage
 (F-23, **[A]**). Les deux autres sont des **préimpressions non revues par les pairs** : l'une range la
 **confusion de délégué** parmi cinq vecteurs d'élévation de privilège et l'identifie à l'instruction
 directe transmise par message inter-agents (F-24, **[A]**) ; l'autre rapporte que le **détournement du
@@ -211,18 +211,18 @@ supposerait la lecture des sources primaires que le Vol. I cite.
 eux-mêmes, qui qualifient l'injection d'invite de **problème de sécurité de frontière non résolu** et
 estiment improbable qu'il soit un jour pleinement résolu.*
 
-**La racine est architecturale.** Dans un agent fondé sur un modèle de langue, **les instructions du
+**La racine est architecturale.** Dans un agent fondé sur un modèle de langage, **les instructions du
 concepteur et les données ingérées partagent le même flux de jetons**, sans séparation de privilège
 analogue à celle d'un canal de commande distinct d'un canal de données. ⚠ *Aucune barrière interne au
 modèle ne distingue de façon fiable « ce qu'on me dit de faire » de « ce que je lis ».* **Greshake et
-al. (2023)** ont les premiers démontré expérimentalement cette compromission par **injection
-indirecte** sur des applications réelles intégrant un modèle de langue.
+coll. (2023)** ont les premiers démontré expérimentalement cette compromission par **injection
+indirecte** sur des applications réelles intégrant un modèle de langage.
 
 > **Perspective recherche.** ⚠ **L'impossibilité dont il est question ici n'est pas un théorème** :
 > c'est un **constat d'ingénierie de sécurité**. *Tant qu'instructions et données coexistent dans un
 > espace de jetons indifférencié, un classifieur parfait de l'intention hostile équivaudrait à résoudre
 > le problème de l'alignement sémantique en boucle ouverte.* Les travaux de défense par conception
-> (**Debenedetti et al., 2025**) contournent la difficulté en imposant une séparation de privilège
+> (**Debenedetti et coll., 2025**) contournent la difficulté en imposant une séparation de privilège
 > **à l'extérieur** du modèle plutôt
 > qu'en cherchant à durcir le modèle lui-même — *un déplacement du problème de la couche cognitive vers
 > la couche système*. ⚠ **Leur instruction est au ch. 6**, qui en est le siège ; elle n'est pas reprise
@@ -252,9 +252,9 @@ n'est reproduite**.
 10 for LLM Applications 2025*, sous le code **LLM01**, *signe de sa centralité*. La forme **directe**
 consiste pour un utilisateur à formuler une entrée qui subvertit les consignes système ; la forme
 **indirecte**, propre aux agents, **place l'instruction hostile dans un contenu que l'agent récupérera
-de lui-même** — un courriel, une page, un passage extrait, la sortie d'un outil. ⚠ *Greshake et al.
+de lui-même** — un courriel, une page, un passage extrait, la sortie d'un outil. ⚠ *Greshake et coll.
 (2023) caractérisent cette dernière comme la menace dominante des applications intégrant un modèle de
-langue, précisément parce que **la victime n'a aucune interaction directe avec l'attaquant**.* Les
+langage, précisément parce que **la victime n'a aucune interaction directe avec l'attaquant**.* Les
 **navigateurs agentiques** en constituent la surface la plus exposée : *tout site visité devient un canal
 d'injection potentiel.* ⚠ **Les mécanismes de confinement proposés relèvent de la limitation du
 dommage, non de la prévention de l'injection**, qui demeure non résoluble au niveau du modèle
@@ -470,7 +470,7 @@ La page *Security Best Practices* du protocole agent-outil (MCP) fait de même, 
 statut près qui se dit à chaque occurrence** : elle **ne siège pas dans l'arbre normatif** et se
 présente elle-même comme un **complément** de la spécification d'autorisation. Elle reconnaît **huit
 familles d'attaque**, dont la confusion de délégué et le détournement de session, **sans employer** les
-termes de délégation, de multi-saut, d'identité d'agent ni de non-humain — *balayage borné à cette page
+termes de délégation, de multi-saut, d'identité d'agent ni de non humain — *balayage borné à cette page
 et à l'index normatif de la **révision 2025-11-25***. ⚠ **Les menaces sont donc traitées par un
 document d'accompagnement ; le texte d'autorisation de cette révision, lui, n'a pas été ouvert par le
 lot**, et le décompte ne vaut pas pour lui.

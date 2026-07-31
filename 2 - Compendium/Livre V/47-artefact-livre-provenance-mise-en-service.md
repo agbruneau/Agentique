@@ -196,8 +196,8 @@ socle*, et le retrait reste l'issue si les lots échouent.
 ⚠ **Un fait secondaire mérite d'être relevé parce qu'il touche le Livre III.** Le profil **AI** de
 SPDX porte **`standardCompliance`**, **`safetyRiskAssessment`** et **`useSensitivePersonalInformation`**,
 et le profil **Dataset** porte **`hasSensitivePersonalInformation`** et **`anonymizationMethodUsed`** :
-*une nomenclature logicielle a commencé à porter des champs de conformité réglementaire.* **Lecture de
-l'auteur** — c'est un déplacement de la frontière entre inventaire technique et dossier de conformité,
+*une nomenclature logicielle a commencé à porter des champs de conformité réglementaire.* Lecture de
+l'auteur — c'est un déplacement de la frontière entre inventaire technique et dossier de conformité,
 et **le socle ne l'établit pas** : ni l'usage effectif de ces champs, ni leur reconnaissance par un
 régulateur ne sont documentés. *Le champ existe ; que quiconque le remplisse ou l'exige demeure au
 degré 3.*

@@ -353,7 +353,7 @@ deux grandeurs soit mesurée, mesurable, attendue sous ce nom, ni qu'elle mesure
 qualité de la révision.
 
 ⚠ **Et c'est ici qu'il faut être le plus net, parce que la section touche un vide déclaré ailleurs
-dans la somme.** Ces deux grandeurs sont des **proxies imparfaits du tamponnage** — la supervision qui
+dans la somme.** Ces deux grandeurs sont des **approximations imparfaites du tamponnage** — la supervision qui
 s'exerce sans exercer de discernement. Or **le ch. 17 § 17.5 est le siège de cette matière, et il
 n'écrit rien** : le plan l'a déclaré **front neuf, sources primaires à établir avant rédaction**, la
 section **expose le vide et refuse de le combler**, et la décision d'auteur **D-9** a **ouvert un lot
@@ -369,7 +369,7 @@ défavorable ne mesurent pas ; ils rassurent.*
 
 ⚠ **Ce que la somme peut donc écrire ici est borné à trois choses**, et elles sont dites plutôt
 qu'étendues : *(a)* les deux grandeurs sont **calculables** — un point d'arrêt humain outillé produit
-des horodatages et des décisions ; *(b)* elles sont **des proxies dont l'écart au phénomène n'est pas
+des horodatages et des décisions ; *(b)* elles sont **des approximations dont l'écart au phénomène n'est pas
 estimé**, et l'estimer suppose la littérature que le lot de **D-9** doit ouvrir ; *(c)* **aucun seuil
 n'est proposé**, et *proposer un seuil ici serait produire une construction d'auteur à l'endroit exact
 où le socle est muet — la faute que le ch. 17 § 17.5 s'est interdite.*
