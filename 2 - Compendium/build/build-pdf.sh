@@ -23,6 +23,11 @@ OUT="${OUT_PDF:-$DIR/compendium.pdf}"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
+# Les figures sont copiees DANS la racine Typst : `typst compile --root "$TMP"`
+# refuse tout chemin qui en sort, et les pieces les referencent en `../figures/`
+# depuis leur dossier de Livre — c'est `assemble.py` qui rabat le chemin.
+[ -d "$DIR/figures" ] && cp -r "$DIR/figures" "$TMP/"
+
 python3 "$DIR/build/assemble.py" "$TMP/compendium.md"
 pandoc "$TMP/compendium.md" -f markdown-raw_html --template="$DIR/build/$GABARIT.template" \
        -t typst -o "$TMP/doc.typ"

@@ -51,6 +51,12 @@ LIVRES = [
      "L'agent comme livrable logiciel, horizon et frontière"),
 ]
 
+# Les pieces vivent dans `Livre N/` et pointent leurs figures en `../figures/`,
+# forme qui resout aussi bien pour leur rendu `.html` que dans l'editeur. Le
+# markdown assemble, lui, est ecrit a la racine Typst ou `build-pdf.sh` a copie
+# le dossier : le chemin s'y rabat d'un cran.
+RE_FIGURE = re.compile(r"\]\(\.\./figures/")
+
 RE_TITRE = re.compile(r"^# Chapitre (\d+) — (.+)$")
 RE_SECTION = re.compile(r"^## § (\d+\.\d+) — (.+)$")
 RE_MOUVEMENT = re.compile(r"^# ((?:Premier|Second|Troisième) mouvement — .+)$")
@@ -150,7 +156,7 @@ def piece(chemin, numero):
         if m:
             corps.append(f"## {m.group(1)}\n")
             continue
-        corps.append(RE_LEGENDE.sub(r"\1**\2**", ligne) + "\n")
+        corps.append(RE_FIGURE.sub("](figures/", RE_LEGENDE.sub(r"\1**\2**", ligne)) + "\n")
     if note is None:
         sys.exit(f"[assemble] {chemin} : note de statut absente (borne de coupe)")
 

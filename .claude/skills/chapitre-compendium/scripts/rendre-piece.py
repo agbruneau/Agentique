@@ -235,6 +235,26 @@ def rendre_corps(lignes, num):
                 i = j + 1
             continue
 
+        # --- figure -----------------------------------------------------------
+        # `![légende](../figures/x.svg)` seule sur sa ligne. Le chemin n'est PAS
+        # réécrit : il résout depuis `Livre N/` pour le `.html` comme pour le
+        # `.md` — c'est `build/assemble.py` qui le rabat, et lui seul, parce que
+        # le markdown du PDF est assemblé hors de l'arbre.
+        # ⚠ L'`alt` porte la légende dépouillée plutôt qu'une chaîne vide : un
+        # `alt=""` masquerait la figure entière au lecteur d'écran, y compris
+        # l'`aria-label` que le SVG porte.
+        m = re.match(r"^!\[(.*)\]\((\S+)\)\s*$", l)
+        if m:
+            vider(tampon)
+            legende = _inline(m.group(1))
+            sortie.append('<figure class="figure">\n  <img src="%s" alt="%s">\n'
+                          '  <figcaption>%s</figcaption>\n</figure>'
+                          % (m.group(2),
+                             re.sub(r"<[^>]+>", "", legende).replace('"', "&quot;"),
+                             legende))
+            i += 1
+            continue
+
         # --- listes -----------------------------------------------------------
         if re.match(r"^\s*[-*]\s+\S", l) or re.match(r"^\s*\d+\.\s+\S", l):
             vider(tampon)
