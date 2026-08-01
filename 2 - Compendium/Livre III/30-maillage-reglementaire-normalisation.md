@@ -326,7 +326,7 @@ systémique.*
 ⚠ **L'AI Act ne qualifie pas l'usage financier en bloc : la classification en « haut risque » est
 strictement libellée à son annexe III, et toute extrapolation crée un risque de sur-conformité.**
 
-*Un point de l'annexe III vise le **notation de crédit et l'évaluation de la solvabilité des personnes
+*Un point de l'annexe III vise la **notation de crédit et l'évaluation de la solvabilité des personnes
 physiques** — ⚠ **avec une exclusion explicite pour la détection de fraude, qui n'est donc pas à haut
 risque**. Un autre vise **la tarification et l'évaluation du risque en assurance vie et santé
 uniquement**.*

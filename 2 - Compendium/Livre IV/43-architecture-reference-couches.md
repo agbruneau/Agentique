@@ -367,7 +367,7 @@ marqueurs conditionnels de réouverture, jamais des sources.**
 copilote → orchestration sous revue → autonomie bornée* — **indexe l'autonomie consentie sur le
 produit matérialité × réversibilité**, non sur la capacité brute du modèle ; l'entrée qui la porte en
 rapporte le principe : ⚠ ***un agent ne doit jamais exécuter une action irréversible sans garde-fou
-structurel ; la règle est la préparation par l'agent et la libération humaine sur l'action
+structurel ; la règle est la préparation par l'agent et la release humaine sur l'action
 irréversible*** (Vol. III **H-31**, **[C]**).
 
 ⚠ **TROIS ÉCHELLES COEXISTENT AU VOL. I ET PARTAGENT LEURS LIBELLÉS — les nommer nues est proscrit**
