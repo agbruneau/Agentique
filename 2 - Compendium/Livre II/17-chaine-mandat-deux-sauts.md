@@ -548,7 +548,7 @@ au problème » ; elle est « ce qui l'a pensé n'a pas été repris par la couc
 un constat plus dur et plus utile.* *(2)* ⚠ **Aucun des trois n'entre au socle, à aucun niveau.** La
 passe a lu **une notice bibliographique et deux fiches de document** — titre, auteurs, date, statut —,
 **non les textes** : *ce sont des repérages datés*, et le § 17.5 de ce même chapitre est le cas de
-référence qui interdit d'écrire davantage. *(3)* ⚠ **Aucune des trois n'est documentée comme
+référence qui interdit d'écrire davantage. *(3)* ⚠ **Aucun des trois n'est documenté comme
 résolvant le problème des deux sauts pour un agent** : Macaroons et Biscuit atténuent une **portée**,
 ils ne portent pas l'**identité de chaque maillon** que le § 17.6.1 déclare perdue ; GNAP refond la
 négociation d'octroi, **le socle ne documentant ni son adoption ni son emploi agentique** — *absence
@@ -858,7 +858,7 @@ D-6 ne fournit toujours pas de tiers.
 **Trois manques de la première passe sont corrigés.**
 
 - **Le § 17.5 était dit sans socle, sans que la phrase distingue l'objet de la citation.** La section
-  cite **F-89, F-65 et H-04** — que la première passe a précisément versés à la liste des entrées
+  cite **F-89, F-65 et H-04** — que la première passe a précisément versées à la liste des entrées
   mobilisées —, et sa lacune porte sur son **objet**, non sur son appareil. *Une section dont on dit
   qu'elle ne mobilise « aucune entrée, à aucun niveau » alors qu'elle en cite trois affaiblit la
   seule chose qu'elle établit : que la parade prescrite par deux chapitres du Livre III n'a pas de

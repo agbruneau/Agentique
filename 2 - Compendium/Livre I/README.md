@@ -248,7 +248,7 @@ relevé, pas une couverture.*
 
 | Pièce | Correction |
 |---|---|
-| **Ch. 2** | R-02 sortie de la plage « zéro occurrence » : **le marqueur figure une fois** (§ 2.4.1), sans déclencher le garde-fou |
+| **Ch. 2** | R-02 sorti de la plage « zéro occurrence » : **le marqueur figure une fois** (§ 2.4.1), sans déclencher le garde-fou |
 | **Ch. 3** | R-02 **cinq → quatre** ; R-13 sorti de la plage « zéro » (**un marqueur**, § 3.3.1) ; *le § 3.2.2 porte un marqueur pour deux mécanismes — le cardinal compte les marqueurs* |
 | **Ch. 4** | R-8 **une → zéro** (constat I.8) ; métriques auto-déclarées : cardinal remplacé par le domaine (§ 4.0.1) |
 | **Ch. 6** | R-8 **deux → une** ; R-13 **deux → une** ; métriques : domaine § 6.1.1, § 6.2, § 6.5.2, sans cardinal |
@@ -275,7 +275,7 @@ rapproche un en-tête du corps qu'il décrit** ; c'est une dette d'appareil, et 
 ⚠ **Ce qui n'a pas été re-nommé l'est délibérément.** La parade de péremption demeure pour les
 dénominations commerciales, les produits et les versions ; seules les **trois catégories** de
 l'arbitrage 3 en sortent. *Anonymiser un produit protège d'une péremption ; anonymiser un attributeur
-supprime la vérifiabilité qui fonde le régime de preuve — ce ne sont pas le même geste.*
+supprime la vérifiabilité qui fonde le régime de preuve — ce n'est pas le même geste.*
 
 ### Ce qui est remonté, et non corrigé
 

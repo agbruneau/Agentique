@@ -211,7 +211,7 @@ type reste daté, et c'est **lui** qui fixe le contrat : une fonction générale
 pas une fonction dont l'interface a cessé de se versionner.
 
 Au-dessus de cette mécanique, une convention s'est imposée pour la mémoire procédurale **durable** :
-les **fichiers de configuration d'agent** relus au démarrage. Le format `AGENTS.md`, contribué à
+les **fichiers de configuration d'agent** relus au démarrage. Le format `AGENTS.md`, confié à
 l'Agentic AI Foundation de la Linux Foundation le **9 décembre 2025**, et son équivalent `CLAUDE.md`
 codifient, dans un fichier **versionné avec le projet**, les consignes, conventions et routines que
 l'agent doit appliquer à chaque exécution.
@@ -295,7 +295,7 @@ besoin, **oubliée**. Ces trois opérations sont distinctes :
 mémoire mal gérée devient **une source d'hallucinations** : un agent qui rappelle un fait erroné avec
 aplomb propage l'erreur sur toute la trajectoire.
 
-Lecture de l'auteur — la différence avec une hallucination ordinaire tiendrait à ce que celle-ci est
+Lecture de l'auteur — la différence avec une hallucination ordinaire tiendrait à ce que l'hallucination mémorielle est
 *persistante* et *auto-confirmante*, l'agent relisant le souvenir erroné à la session suivante. Le
 socle **établit la propagation de l'erreur sur la trajectoire** ; il **ne caractérise pas** cette
 persistance entre sessions, et ne la mesure pas.
@@ -415,7 +415,7 @@ neurobiologique pour la récupération multi-sauts.
 > au ch. 2 § 2.4.2, où GraphRAG a son traitement ; la récupération structurée le matérialise du côté
 > agentique. En pratique, la chaîne *dense + BM25 → RRF → réordonnancement* forme un **contrat de
 > récupération stable**
-> dont chaque maillon se substitue indépendamment sans réécrire l'appelant — application directe du
+> dont chaque maillon se remplace indépendamment sans réécrire l'appelant — application directe du
 > découplage à des corpus qui évoluent en continu. Le réordonnancement, par son coût marginal, se
 > réserve aux quelques dizaines de candidats de tête.
 
@@ -547,7 +547,7 @@ instruction d'auteur du 27 juillet 2026. Conséquences :
 **Remontée ouverte par ce chapitre**, à l'instance d'arbitrage — **D-6, non désignée à la rédaction ;
 prise le 27 juillet 2026 : l'auteur, sans délégation** :
 
-- **R-IV-07 — non bloquante, à échéance G-1.** Deux fonctions produit citées au § 5.1.3 et § 5.1.4
+- **R-IV-07 — non bloquante, à échéance G-1.** Deux fonctions produit citées aux § 5.1.3 et § 5.1.4
   sont **en bêta** à la date d'arrêt des sources, avec une version d'interface datée. Le chapitre les
   nomme comme telles et ne les présente jamais comme disponibles en général — mais leur statut est
   précisément ce qui peut changer entre le gel de la source et le gel de la somme, dans les deux
@@ -687,7 +687,7 @@ attestation comme une autre — elle se constate sur pièce.* Ce qu'elle a const
 
 **Ce que la re-mesure confirme.** Les attributions rétablies au titre de la décision 15 résolvent
 **une à une** contre les §2.6-2.7 du Vol. I *Monographie* — auteurs, millésimes, noms d'instruments et
-date du 9 décembre 2025 comprises : **aucune source n'a été inventée**. ⚠ **Domaine déclaré sans
+date du 9 décembre 2025 compris : **aucune source n'a été inventée**. ⚠ **Domaine déclaré sans
 cardinal** (décision 16c) : *le balayage a porté sur **toutes** les mentions d'auteur, de millésime et
 de nom d'instrument des § 5.1.1 à § 5.4.2, confrontées au texte des §2.6.1 à §2.7.4 de la source ; le
 nombre d'« attributions » n'est pas publiable, faute d'une règle qui dise si l'unité est l'instrument

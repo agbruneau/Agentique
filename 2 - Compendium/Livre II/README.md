@@ -40,7 +40,7 @@ rédigés** ; ils l'ont été **hors portes**, et ils restent en **brouillon non
 
 ⚠ **Ce qui a changé le 27 juillet 2026, et ce qui n'a pas changé.** La passe d'arbitrage du même jour
 (TOC v0.25, PRD v0.9) a **soldé les vingt-quatre remontées** que la rédaction avait ouvertes,
-**réaligné cinq thèses**, pris **deux décisions d'auteur** — dont une neuve — et **franchi aucune
+**réaligné cinq thèses**, pris **deux décisions d'auteur** — dont une neuve — et **n'a franchi aucune
 porte**. Le tableau ci-dessous se lit dans les deux sens.
 
 ⚠ **L'écart de portes reste plus large que celui du Livre I, et il faut le lire exactement.** Le

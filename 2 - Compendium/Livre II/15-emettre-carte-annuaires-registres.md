@@ -430,7 +430,7 @@ et **administrable dès aujourd'hui** par toute organisation qui exploite l'annu
 
 De l'autre, **l'état des propositions ouvertes**, chacune avec sa borne. La spécification de registre
 d'agents porte en tête « White Paper | 2026-03-27 | Status: draft » et relève d'un espace de travaux
-qui **ne sont pas encore** un projet officiel de son organisme (F-38, **[A]**). L'extension SCIM sur
+qui **ne sont pas encore** un projet officiel de son organisme (F-38, **[A]**). L'extension SCIM à
 laquelle elle s'adosse n'existe qu'en une révision **-00** du 16 octobre 2025, **expirée et
 archivée**, sans flux ni adoption (F-41, **[B, degré 2]**). La consolidation présentée à l'IETF 125 le
 19 mars 2026 s'est conclue sur la demande d'apporter **d'abord des cas d'usage**, et le troisième
@@ -489,7 +489,7 @@ confiance qu'on accorde à ce qu'il nomme.*
 ## § 15.3 — Les registres gouvernés : de la spécification CSA aux registres A2A
 
 Une organisation qui met des agents en production doit d'abord répondre à une **question de tenue de
-livres** : lesquels possède-t-elle. Le résultat de l'instruction n'est pas un vide — **c'est un
+livres** : lesquels possède-t-elle ? Le résultat de l'instruction n'est pas un vide — **c'est un
 encombrement**. Quatre dispositifs prescrivent quelque chose du registre, et **ils ne se qualifient
 pas les uns comme les autres**.
 
@@ -823,8 +823,8 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
   l'arbitrage est **unique par construction** — *deux verdicts divergents sur le même mécanisme dans
   le même Livre seraient un défaut que ni la relecture ni le contrôle outillé n'attraperaient, chacun
   étant cohérent isolément.* *(b)* ⚠ **En instruisant la remontée, la passe a trouvé ce que personne
-  n'avait remonté** : l'intitulé du § 15.1.4 portait « ce que la carte **prouve** », verbe que **R-02
-  proscrit** et que le plan assigne pourtant en garde-fou à ce chapitre. **Corrigé** ici et au TOC ;
+  n'avait remonté** : l'intitulé du § 15.1.4 portait « ce que la carte **prouve** », verbe **proscrit par R-02**,
+  que le plan assigne pourtant en garde-fou à ce chapitre. **Corrigé** ici et au TOC ;
   ⚠ **le défaut est hérité et reste ouvert chez la source**, dont la remontée est réservée à son
   auteur — *un volume source ne se corrige pas depuis la somme.*
 - **R-IV-23 — close par réalignement du plan (TOC v0.25, décisions 8 et 14).** « le registre gouverné

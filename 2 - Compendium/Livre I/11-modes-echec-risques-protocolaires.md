@@ -561,7 +561,7 @@ l'affirmera pas.**
 
 **Ce que l'on peut retenir est plus modeste et plus solide** : *le même dispositif que le Livre III
 présentera comme instrument de **gouvernance de l'autonomie** est, chez ses propres auteurs, un
-instrument de **confinement du compromis**.*
+instrument de **confinement de la compromission**.*
 
 ⚠ **Ce déplacement a un prix conceptuel qu'il faut assumer.** Une frontière de confinement suppose
 qu'on ait **décidé, en amont**, quel contexte et quelles capacités chaque agent reçoit — c'est-à-dire

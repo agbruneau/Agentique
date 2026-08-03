@@ -612,7 +612,7 @@ d'exploitation n'est reproduite, et aucune mécanique n'est décrite au grain de
 n'y porte aucun marqueur littéral** : *l'application est réelle, le renvoi à l'identifiant absent, et
 la couverture se déclare plutôt qu'elle ne se dénombre.* Les absences **portent leur degré** — **quatre
 marqueurs littéraux**, « degré 1 » aux § 19.4 et § 19.6, « degré 3 » aux § 19.5 et § 19.6, les autres
-qualifiées sans marqueur —, et le § 19.6 en produit **un de chaque des trois régimes protocolaires**.
+qualifiées sans marqueur —, et le § 19.6 en produit **un de chacun des trois régimes protocolaires**.
 Les **métriques auto-déclarées** sont attribuées à leur source, **y compris les taux expérimentaux du
 § 19.5**, rapportés à AgentPoison et aux trois configurations qui les portent. Le mot **« sécurisé »
 n'est appliqué à aucun protocole, à aucune occurrence**. Et les **six marqueurs de « Lecture de

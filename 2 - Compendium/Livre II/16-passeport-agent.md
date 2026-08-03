@@ -323,7 +323,7 @@ Trois voies sont concevables pour qu'un objet de ce type cesse d'être une const
 
 **L'état daté des matériaux se pose d'abord, parce qu'il borne les trois scénarios.** Au W3C, le
 modèle de données des accréditations vérifiables porte le stade de **Recommandation depuis le 15 mai
-2025**, sans entrée postérieure à son historique (F-79, **[B]**) ; sa version 2.1 est un **brouillon
+2025**, sans entrée postérieure dans son historique (F-79, **[B]**) ; sa version 2.1 est un **brouillon
 de travail** du 11 mai 2026, et **toute affirmation sur son aboutissement est SPÉCULATIVE** (F-80,
 **[B]**) ; la version 1.1 des identifiants décentralisés en reste à l'**instantané de recommandation
 candidate du 5 mars 2026**, la date que le document s'était lui-même donnée étant **dépassée sans
@@ -496,7 +496,7 @@ rattrapé** : **G-3 est franchie** et le **volet de faits du résidu de G-1 est 
   réalignement au titre de la **décision 8**, la thèse du compendium citant une échéance que son
   propre socle ne porte pas. ⚠ **Troisième occurrence de la même classe** — après R-IV-20 (ch. 14) et
   R-IV-23 (ch. 15) : *le TOC porte trois thèses que leur source a bornées après coup, et les trois
-  reports n'ont pas été faits.* **La demande n'est plus qu'un cas d'espèce : elle appelle une passe de
+  reports n'ont pas été faits.* **La demande n'est plus un cas d'espèce : elle appelle une passe de
   réalignement systématique des thèses du Livre II contre le texte rédigé du Vol. III**, qui est
   précisément l'objet du **volet de fond de G-4**.
 - **R-IV-26 — non bloquante, de couverture, et elle porte sur une pièce qui n'existe pas.** La

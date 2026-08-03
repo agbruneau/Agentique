@@ -307,7 +307,7 @@ technique** que le Vol. I nommait à son gel* (H-19, **[C]**, thèse attribuée)
 
 ⚠ **Trois pièces qui commandent cette question n'ont pas été instruites, et la lacune est déclarée** :
 la **révision** du règlement européen et le portefeuille d'identité numérique qu'elle porte, **non
-ouverts**, alors qu'ils postdatent le texte cité ; l'**organisme international de normalisation**, sur
+ouverts**, alors qu'ils sont postérieurs au texte cité ; l'**organisme international de normalisation**, sur
 lequel **aucune recherche n'a été menée**, alors que le Vol. I le nomme parmi les forums n'ayant pas
 tranché ; et les composantes d'identité de l'un des écosystèmes, **non instruites par ce lot**. *La
 question reste ouverte ; aucune inférence n'est proposée.*

@@ -69,7 +69,7 @@ propriété de plus mais une condition de conformité distincte.
 Recommandation en admet **deux familles, non une** : la **preuve incorporée**, portée par la
 propriété **`proof`** — dont les exemples portent `type`, `created`, `verificationMethod`,
 `cryptosuite` et `proofValue` —, et la **preuve enveloppante**, où l'accréditation est encapsulée
-dans un format JOSE ou COSE. ⚠ **Deux familles de preuve pour un même modèle de données signifie que
+dans un format JOSE ou COSE. ⚠ **Deux familles de preuve pour un même modèle de données signifient que
 deux implémentations conformes peuvent être mutuellement illisibles** : *c'est, transposé au niveau
 du justificatif, exactement le constat de conformité ≠ interopérabilité du ch. 3 § 3.4.4*, et le
 § 13.2 le retrouvera du côté des profils.
@@ -103,8 +103,8 @@ interrogeable.* **C'est exactement ce que le ch. 17 § 17.6.2 en disait sans l'a
 le confirme, et ce n'est pas rien : une prudence validée par extraction cesse d'être une prudence.**
 
 ⚠ **Ce que ce chapitre ne traite pas.** Le socle *zero-trust* pré-agentique et l'identité de charge
-de travail au sens de l'infrastructure d'entreprise sont **posés au ch. 3** et n'y sont pas
-reconstruits. La **valeur probante** d'une assertion signée est au **ch. 15 § 15.1**. Le versant
+de travail au sens de l'infrastructure d'entreprise sont **posés au ch. 3** et ne sont pas
+reconstruits ici. La **valeur probante** d'une assertion signée est au **ch. 15 § 15.1**. Le versant
 *trust fabric* du §7.4.3 du Vol. I — l'admission d'un agent tiers entre organisations — est
 **partagé déclaré avec le ch. 18**, qui en prend la moitié institutionnelle ; le § 13.5 n'en prend
 que la moitié « adoption ».
@@ -204,7 +204,7 @@ ratifiée ni adoptée** : la spécification remise à la DIF ne l'était pas au 
 par un groupe de travail (Vol. III F-50, **[B, degré 2]**).
 
 ⚠ **Ces deux entrées ne sont pas instruites ici** : le **ch. 18 § 18.1 est le siège unique du KYA**
-pour toute la somme, et le présent § s'y borne à les nommer pour dire ce que la DIF porte **et ne
+pour toute la somme, et le présent § se borne à les nommer pour dire ce que la DIF porte **et ne
 porte pas** dans ce corpus. *Le sigle n'est ni défini ni employé ailleurs dans ce chapitre.*
 
 **Un élément a été relevé et délibérément non converti en affirmation, et le motif est celui qui

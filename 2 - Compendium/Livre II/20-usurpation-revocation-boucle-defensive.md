@@ -267,7 +267,7 @@ décision 15b-iii.)* ⚠ **Trois réserves s'attachent à cette citation et aucu
 *(1)* **Le texte intégral n'a pas été ouvert** : rien de ce que sa construction démontrerait, de son
 modèle de menace ou de ses hypothèses n'est établi — **degré 3**. *(2)* **Ce qui est rapporté est ce
 que ses auteurs annoncent, non ce que leur construction établit** (R-02). *(3)* Il s'agit d'une
-**proposition d'auteurs en préimpression**, ni une extension adoptée, ni la position du projet de
+**proposition d'auteurs en préimpression**, ni d'une extension adoptée, ni de la position du projet de
 gouvernance : *tout énoncé sur son aboutissement relève du **SPÉCULATIF***.
 
 ⚠ **Écart avec l'entrée héritée, et il est de fond.** Le Vol. I écrit que cette mitigation *« répond à
@@ -380,7 +380,7 @@ spécifié atteint.**
 
 **Le premier enseignement est la latence structurelle, reconnue par la norme elle-même.** La RFC
 5280, à sa section 3.3, borne la granularité temporelle de la révocation par liste **à la période
-d'émission de cette liste**, qu'il donne pour pouvant aller **jusqu'à une heure, un jour ou une
+d'émission de cette liste**, qu'elle donne pour pouvant aller **jusqu'à une heure, un jour ou une
 semaine** (F-53, **[B]**). *Le texte normatif ne prétend donc pas à l'immédiateté : il déclare son
 propre plafond.* ⚠ **Une liste de révocation démontre l'état de révocation au moment de son émission
 ; elle ne le démontre pas à l'instant de la vérification** (R-02).
@@ -910,7 +910,7 @@ s'ouvre : elle se solde là où elle fait foi* — au [PRD](../PRD/PRD.md) pour 
 - **R-IV-34 — close par inscription au registre des corrections dues de G-3 (PRD v0.9).** La
   correction de l'**intitulé de l'entrée de socle** — qui énonce que « le marché est en préversion plus
   qu'en production » quand **le rapport de lot qui la fonde pose expressément qu'aucun énoncé de la
-  forme "le marché" n'est soutenu** — se fera **à la refonte du socle**, avec celle du **niveau
+  forme « le marché » n'est soutenu** — se fera **à la refonte du socle**, avec celle du **niveau
   contesté** de l'entrée voisine par la règle de composition. ⚠ **Elle ne se fait pas ici, et c'est le
   point** : *un rédacteur ne corrige pas une entrée de socle depuis un chapitre.* La pièce écrit la
   forme bornée et **ne reprend pas l'intitulé** — ce qui était déjà le cas avant l'arbitrage.

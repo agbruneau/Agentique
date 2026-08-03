@@ -592,7 +592,7 @@ l'inventaire ; ce paragraphe propose ce qu'il faut relever sur chacun.**
    *cette quatrième origine est **hors socle**, et son versement est demandé par le Vol. III, non opéré
    ici.* **Le relevé consiste à nommer laquelle des quatre s'applique, à quel titre et sur quel
    périmètre.** ⚠ *La confrontation ne se saute pas au motif que l'exploitant est canadien* : le décret
-   charge par ailleurs de publier une **règle proposée** d'acquisition visant les contractants couverts
+   prévoit par ailleurs la publication d'une **règle proposée** d'acquisition visant les contractants couverts
    — *une règle proposée n'est ni une règle en vigueur ni une obligation constatée, et son périmètre se
    lit avant de conclure.*
 5. **L'agilité du contrat qui porte l'artefact.** *Le mécanisme de signature est-il un paramètre
