@@ -149,8 +149,8 @@ extraite avec citations verbatim. Le billet nomme des entreprises construisant d
 **bibliothèque**, et **une** entreprise cliente pour la gestion centralisée, c'est-à-dire pour la
 **plateforme**.
 
-⚠ **Ces deux énoncés ne se fusionnent pas, et la source impose elle-même la distinction.** Les premiers
-sont cités comme construisant des agents **avec la bibliothèque** ; la seconde est nommée comme cliente
+⚠ **Ces deux énoncés ne se fusionnent pas, et la source impose elle-même la distinction.** Les premières
+sont citées comme construisant des agents **avec la bibliothèque** ; la seconde est nommée comme cliente
 d'entreprise **pour la plateforme**. Le socle ne permet ni de les confondre, ni d'inférer que ces
 entreprises figurent parmi les déploiements dénombrés ci-dessous. *Une référence client nommée est un
 fait plus solide qu'un décompte agrégé, à condition de ne lui faire dire que ce qu'elle dit.*

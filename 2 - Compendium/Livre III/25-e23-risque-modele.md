@@ -441,10 +441,10 @@ elle est portée par le **document d'information du Bureau du 11 septembre 2025*
 **[B, degré 1]**). ⚠ **Le point est tranché : il s'agit d'un délai d'entrée en vigueur commenté par
 l'éditeur, non d'une disposition transitoire du texte.** *Une institution qui inscrirait à son dossier
 « E-23 prévoit une période de transition de dix-huit mois » citerait un communiqué en croyant citer une
-norme.* ⚠ **La borne du relevé demeure** : il porte sur le rendu HTML anglais de cette page, ni sur le
+norme.* ⚠ **La borne du relevé demeure** : il porte sur le rendu HTML anglais de cette page, non sur le
 document en format d'impression, ni sur la version française.
 
-**Troisième degré — ce dont ce corpus est muet.** ⚠ **Le socle ne documente pas qu'E-23 prescrive un
+**Troisième degré — ce sur quoi ce corpus est muet.** ⚠ **Le socle ne documente pas qu'E-23 prescrive un
 registre, un annuaire ou une identité technique : c'est une absence de documentation dans le corpus,
 non un fait négatif vérifié.** ⚠ **Il ne documente pas davantage que la ligne directrice de l'AMF nomme
 les agents ou l'agentique** — même degré, même régime, et **le ch. 27 en est le siège**.

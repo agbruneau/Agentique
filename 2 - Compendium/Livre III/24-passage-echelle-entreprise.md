@@ -499,7 +499,7 @@ d'Internet expire, et le ch. 18 a montré ce que cette péremption coûte à un 
 ⚠ **Cette sous-section est le domicile unique de cette grille dans la somme** : le § 24.6 ne fait qu'y
 renvoyer.
 
-⚠ **La grille est nommée et attribuée, et elle doit l'être** : il s'agit du **OWASP Non-Human
+⚠ **La grille est nommée et attribuée, et elle doit l'être** : il s'agit de l'**OWASP Non-Human
 Identities Top 10 (2025)**. *La parade de péremption qui autorise ailleurs à taire une dénomination
 commerciale **ne couvre pas l'auteur et la date d'un instrument repris** — une grille dont on ne peut
 remonter la provenance n'est plus vérifiable, et **c'est ici le domicile même de cette matière**.*
@@ -787,7 +787,7 @@ connaissances vivante des tactiques adverses ; le cadre **MAESTRO** de la **Clou
 (Huang et coll., 2025)**, qui décompose la menace en sept couches ; et les **Control Overlays for
 Securing AI Systems** du **CAISI (NIST/CAISI, 2025)**, surcouche aux contrôles de sécurité fédéraux
 américains dont un **brouillon de discussion** est daté du 8 janvier 2026. ⚠ **Leur pluralité signale un
-domaine encore en consolidation** : aucune ne fait autorité unique, et leur recouvrement partiel oblige
+domaine encore en consolidation** : aucun ne fait autorité unique, et leur recouvrement partiel oblige
 l'architecte à un travail de correspondance.
 
 ⚠ **La triade létale — le modèle de menace qui fournit le critère de déclenchement — est posée au
@@ -1038,7 +1038,7 @@ la contention** entre agents concurrents sur une capacité d'inférence partagé
 comment un budget de latence de bout en bout se répartit-il sur une chaîne dont un maillon est un appel
 de modèle à durée non bornée ?* **Critère de clôture** : une source primaire, extraite et datée,
 établissant *(a)* une caractérisation de la variabilité de latence sous charge partagée, et *(b)* une
-méthode de dimensionnement transposée à un parc d'agents, où la ressource contendue est le jeton
+méthode de dimensionnement transposée à un parc d'agents, où la ressource en contention est le jeton
 plutôt que le cœur de calcul.
 
 ⚠ **Une relève du plan désigne une source primaire canonique pour la première moitié de cette question,

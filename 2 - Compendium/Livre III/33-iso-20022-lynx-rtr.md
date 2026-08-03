@@ -386,11 +386,11 @@ change les conséquences, non l'infraction.*
 
 - **Remontée neuve, non bloquante — dette d'appareil : le vérificateur ne voit pas l'italique
   déséquilibrée.** *Le contrôle [8] de `verifier-piece.py` cherche le marqueur de gras, celui de lien
-  et celui de titre ; **il ne cherche pas l'astérisque seule**. Une emphase ouverte et non refermée
-  laisse donc une astérisque littérale dans la prose rendue, **les huit contrôles au vert**.* ⚠ **Le
+  et celui de titre ; **il ne cherche pas l'astérisque seul**. Une emphase ouverte et non refermée
+  laisse donc un astérisque littéral dans la prose rendue, **les huit contrôles au vert**.* ⚠ **Le
   défaut n'est pas théorique** : *la version de cette pièce publiée le 27 juillet 2026 en portait
-  **deux** — au § 33.0 et au § 33.4 —, et elles n'ont été trouvées qu'en comptant les astérisques du
-  rendu hors feuille de style et hors script.* **Demande remontée** : *que l'astérisque isolée entre au
+  **deux** — au § 33.0 et au § 33.4 —, et ils n'ont été trouvés qu'en comptant les astérisques du
+  rendu hors feuille de style et hors script.* **Demande remontée** : *que l'astérisque isolé entre au
   contrôle [8], avec sa mutation au harnais.* ⚠ **Le numéro n'est pas alloué ici**, pour le motif
   ci-dessus.
 

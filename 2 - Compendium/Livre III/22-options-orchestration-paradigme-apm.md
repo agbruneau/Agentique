@@ -628,7 +628,7 @@ devenir un point de contrôle*, et le **ch. 29** ne l'inscrit à aucune ligne de
 
 La quatrième est l'**auto-modification**, et le manifeste la scinde en **deux régimes qu'il importe de
 ne jamais confondre**. L'**adaptation** est **éphémère** : elle porte sur une instance d'exécution, et
-ne survit pas à elle. L'**évolution** est **persistante** : elle modifie le modèle de processus
+ne lui survit pas. L'**évolution** est **persistante** : elle modifie le modèle de processus
 lui-même, et vaut donc pour toutes les instances à venir. La formulation est symétrique ; les enjeux ne
 le sont pas. *Une adaptation dévie d'un cas ; une évolution déplace la règle.*
 

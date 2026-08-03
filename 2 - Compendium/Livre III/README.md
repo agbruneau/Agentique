@@ -91,7 +91,7 @@ mécaniques, conduits par la même main que la rédaction.**
 du §6, plus les transversaux T-1 à T-4), les **quinze `.md` et leurs quinze `.html`** ont été repris.
 ⚠ **Cette passe corrige ; elle ne réédite pas** : *aucune section n'a été ajoutée ni retirée, aucune
 thèse n'a été réécrite — seulement re-citée depuis le plan —, et **le propos des chapitres est
-inchangé**. ⚠ **Elle ne franchit aucune porte et ne requalifie rien** : les pièces restent des
+inchangé**.* ⚠ **Elle ne franchit aucune porte et ne requalifie rien** : les pièces restent des
 **brouillons non publiables**, le socle consolidé compte toujours **zéro entrée**, et **CA-IV-13 n'est
 pas davantage satisfaite** — *cette passe est de la même main que la rédaction.*
 
@@ -130,7 +130,7 @@ conspectus : il remonte* (PRD, Annexe A) :
   *L'énoncé reste vrai comme borne inférieure ; sa dérivation dépend d'un objet que l'arbitrage déclare
   inexistant. **À trancher en G-1**, non ici.*
 - **III.A.7** — décompte croisé entre le **ch. 27 § 27.5** (« deux des cinq questions ») et le
-  **tableau 25.1** (trois appuis). *Les deux pièces lisent la même grille à deux grains ; **le
+  **tableau 25.1** (trois appuis). *Les deux pièces lisent la même grille à deux grains ; **les
   départager est un arbitrage de fond**, non une correction.*
 - **III.D.8** — au **ch. 34 § 34.1**, trois thèmes du dépliage traités en renvoi plutôt qu'en condensé ;
   au **ch. 35**, le § 35.8 subdivisé hors dépliage. *Écarts au plan, à arbitrer.*

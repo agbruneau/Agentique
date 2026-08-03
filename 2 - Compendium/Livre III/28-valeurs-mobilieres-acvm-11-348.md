@@ -141,7 +141,7 @@ acquise** — ⚠ *couverture par inférence d'analystes, jamais une terminologi
 §4.4). *D'autre part*, la définition de l'avis **nomme dans son texte** les niveaux variables
 d'autonomie et d'adaptativité après déploiement. **Ce qu'il n'établit pas** : le rapprochement des deux.
 
-*De ces deux textes, l'avis paraît celui dont l'application à un système agentique se démontre le plus
+*De ces deux textes, l'avis paraît celui dont l'application à un système agentique se démontre par le plus
 court chemin : **il suffit de lire sa définition**.* ⚠ **La lecture s'arrête là.** *Le socle ne porte pas
 le mode d'accroche des autres textes du corpus — **le contenu article par article de la ligne directrice
 de l'AMF n'y figure pas** (ch. 27 § 27.1, lacune PRD Vol. II §10.4) : **aucun classement d'ensemble

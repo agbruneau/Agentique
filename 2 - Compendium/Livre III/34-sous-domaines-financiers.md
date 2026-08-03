@@ -262,7 +262,7 @@ triage → **soumission prête à décider***. ⚠ *L'agent collecte la demande,
 externes, la trie par appétit de risque et **la présente au souscripteur sous une forme prête à
 décider*** — *application du patron du ch. 31 § 31.1.1.*
 
-⚠ **La télématique et l'assurance basée sur l'usage fournissent le substrat de données, et les chiffres
+⚠ **La télématique et l'assurance fondée sur l'usage fournissent le substrat de données, et les chiffres
 portent leur attributeur** : *l'exploitant **Cambridge Mobile Telematics** revendique une levée de
 **350 M$ en mars 2026**, **plus de 21 millions d'assurés aux États-Unis** et une croissance annuelle de
 l'ordre de **+28 %** — **chiffres de l'exploitant et de la presse, à re-vérifier**.*
@@ -302,7 +302,7 @@ restent des conditions structurelles.**
 
 ⚠ **Le régime applicable à l'assurance de dommage se distingue par ce qui *n'y mord pas*.**
 
-**Le point critique est que la tarification et la souscription y *ne sont pas* explicitement classées
+**Le point critique est que la tarification et la souscription *n'y sont pas* explicitement classées
 « haut risque »** : *le point de l'annexe européenne qui vise l'assurance **ne concerne que la vie et la
 santé*** (**ch. 30 § 30.2.3**). ⚠ ***L'assurance de dommage se trouve dans une zone grise, et il serait
 erroné d'y étendre le régime de haut risque.***
@@ -1039,7 +1039,7 @@ paiements agentiques** : *c'est l'objet du **ch. 36**.*
 gouvernance sous lequel la pièce a été rédigée (PRD, Annexe A) : *un rédacteur ne corrige jamais le
 TOC, ce PRD ni le Conspectus — il **remonte**.*
 
-**Ce qui est enfreint.** La porte **G-3** et le **volet résiduel de G-1**, l'une et l'autre ouvertes au
+**Ce qui est enfreint.** La porte **G-3** et le **volet résiduel de G-1**, l'un et l'autre ouverts au
 27 juillet 2026, date de l'instruction d'auteur. ⚠ **G-3 a été franchie le 28 juillet 2026** — PRD
 v0.14, socle consolidé de **159 entrées** — et le **volet de FAITS de G-1 levé le même jour** ;
 ⚠ ***une porte franchie après coup solde l'écart, elle ne le rattrape pas*** : *la pièce n'a pas été
@@ -1112,7 +1112,7 @@ du § 34.2.3 et les deux du § 34.2.4.* ⚠ **Et elles portent désormais leur a
 (décision 15 du TOC) : *l'anonymisation a été levée partout où une métrique ou une affirmation attribuée
 était portée — **§ 34.1.1, § 34.1.2, § 34.1.3, § 34.2.1, § 34.2.2, § 34.2.3, § 34.2.4, § 34.2.6,
 § 34.3.1, § 34.3.5, § 34.4.1, § 34.4.2, § 34.4.4, § 34.4.5, § 34.5.3 et § 34.6.2** —, et **maintenue
-partout où seule une dénomination commerciale est en jeu**, ce que la décision 15a autorise. ⚠ *Les
+partout où seule une dénomination commerciale est en jeu**, ce que la décision 15a autorise.* ⚠ *Les
 § 34.2.1 et § 34.2.2 y sont entrés à la relecture du 28 juillet 2026* : **une annonce dont le corps
 reprend la qualification entre guillemets porte une affirmation, non une simple dénomination**, et son
 attributeur — **ACORD Solutions Group**, **Guidewire** — se nomme. ⚠ *Le même critère a ensuite nommé

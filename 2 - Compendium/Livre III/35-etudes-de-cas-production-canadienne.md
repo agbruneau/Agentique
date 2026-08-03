@@ -225,7 +225,7 @@ vers la bonne équipe, création des dossiers correspondants.*
 (**juillet 2025**), le système traite **environ 90 % d'environ 1 500 courriels par jour**, et
 l'acheminement passe **d'une à deux heures à quelques minutes** ; **les cas complexes sont escaladés
 vers un traitement humain**.* **Ces données sont auto-déclarées et n'ont pas fait l'objet d'une
-vérification indépendante.** *La même source associe **un second ordre de grandeur : 60 000 à 70 000
+vérification indépendante.** *La même source y associe **un second ordre de grandeur : 60 000 à 70 000
 demandes par mois**.*
 
 ⚠ **Il faut ici poser l'arithmétique, parce qu'elle est instructive.** *Environ 1 500 courriels par jour
@@ -500,7 +500,7 @@ ni le périmètre d'utilisateurs, ni la méthode de mesure d'une « heure écono
 intégralement, et l'absence a été re-cherchée plutôt que reconduite.** *Le communiqué primaire est
 re-constaté à sa source : l'économie déclarée, la fenêtre du pilote et la formation obligatoire y sont
 verbatim.* ⚠ **Et le fait négatif a été re-cherché sur cinq chaînes** — *le terme lui-même, deux formes
-d'« agents autonomes » et les sigles des deux protocoles* — ⚠ ***avec aucune occurrence, quatorze mois
+d'« agents autonomes » et les sigles des deux protocoles* — ⚠ ***sans aucune occurrence, quatorze mois
 après la publication***. ⚠ ***Ce qui est re-vérifié demeure une propriété du communiqué*** : *le fait
 négatif ne s'étend ni à la feuille de route de l'institution, ni à ses publications ultérieures.*
 
@@ -850,7 +850,7 @@ conditionne pas ce chapitre** ; ⚠ **D-9 ne le bloque pas.**
    *Ce chapitre repose sur **des déclarations d'entreprises** ; les douze entrées ont été portées à leur
    source primaire le 28 juillet 2026, et **quatre ne sont pas établies** — soit **un tiers des entrées
    du chapitre**.* ⚠ **Et sa source déclare elle-même sa péremption** : *« à ce rythme
-   d'annonces, un trimestre suffit à le rendre incomplet »* — ⚠ *un trimestre s'est écoulé depuis son
+   d'annonces, un trimestre suffit à le rendre incomplet »* — ⚠ *un trimestre se sera écoulé depuis son
    gel au moment où ce Livre sera relu.* **Le ch. 50 l'enregistrera.**
 3. **Les décomptes sont publiables** (G-2), et **le corps est re-mesuré** : ☑ **9 091 mots** contre une
    cible dérivée de 6 000, soit **+51,5 %** — ⚠ *mesure prise **après** les corrections de la

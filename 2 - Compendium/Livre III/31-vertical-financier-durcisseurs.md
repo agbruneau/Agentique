@@ -607,7 +607,7 @@ déclare la délégation à plus de deux sauts non standardisée.*
 **Cette section pose la dernière contrainte transverse.** ⚠ **Conformément au contrat de lecture,
 l'appareillage générique n'y est pas ré-exposé** : *sécurité du parc (**ch. 24 § 24.6**), identités non
 humaines (**ch. 24 § 24.3**) et transposition de la vérification client à l'acteur-machine (**ch. 18**)
-sont supposés acquis.*
+sont supposées acquises.*
 
 ⚠ **La somme n'ajoute ici que le surcroît d'exigence dû à la matérialité financière** : *un agent qui
 touche à l'argent ne se sécurise pas comme un agent qui résume des documents, **parce que le levier de
@@ -841,7 +841,7 @@ datée retenue** au socle.* ⚠ **Neutralité fournisseur** : *trois offres nomm
 
 *Les fournisseurs qui offrent ces régions sont **les trois mêmes grands opérateurs déjà désignés
 fournisseurs critiques** (**ch. 30 § 30.2.2**) ; **relocaliser la donnée dans une région ne réduit donc
-pas la dépendance systémique — elle la confirme**.* ⚠ **Le risque de concentration documenté au ch. 30
+pas la dépendance systémique — cela la confirme**.* ⚠ **Le risque de concentration documenté au ch. 30
 § 30.2.2 — une part supérieure à 65 % des entités financières européennes s'appuyant sur au moins deux
 des trois grands fournisseurs pour des fonctions critiques — vaut intégralement pour les déclinaisons
 souveraines** : *une panne simultanée chez un fournisseur critique **frappe ses régions souveraines
@@ -961,7 +961,7 @@ résolue.*
   [`PRD/check-sieges.py`](../PRD/check-sieges.py)**, qui en portait alors sept, tous
   posés aux Livres I et II. **Demande remontée** : que les six soient versés à la table avec leur
   signature de forme et leur motif de déclenchement, et que le harnais de mutation soit rejoué. ⚠ **La
-  remontée est la même classe que R-IV-82, ouverte au ch. 24 pour deux domiciles** — *et le cardinal
+  remontée est de la même classe que R-IV-82, ouverte au ch. 24 pour deux domiciles** — *et le cardinal
   monte à **huit sièges déclarés au plan et non contrôlés** pour le seul Livre III.* **La pièce a écrit
   ses six marqueurs** — le geste du rédacteur — *mais un siège qu'aucun script ne regarde finit par
   diverger*, et **les deux autres gestes ne sont pas de son ressort**.
@@ -972,7 +972,7 @@ leurs **dix-neuf sous-sections**, dans l'ordre exact —, le § 31.0 étant une 
 *les **intitulés** des sous-sections s'écartent de ceux du plan, dénominations de normes et
 anglicismes retirés au titre de la parade de péremption ; **présence, ordre et matière sont
 conformes**, et la v0.29 du TOC a elle-même retenu la forme française de la pièce pour les deux
-sièges des § 31.2.6 et § 31.3.4 — *forme que la v0.30, version courante, reconduit.* La **table de
+sièges des § 31.2.6 et § 31.3.4 — forme que la v0.30, version courante, reconduit.* La **table de
 couverture est respectée pour ses huit lignes**,
 ⚠ **y compris les trois qui sortent du chapitre — un acheminement et deux hors-périmètre** : *le §5.0
 est **acheminé à l'avant-propos**, le §5.3 va au **ch. 30**, et le §5.5.4 — **siège unique du KYA** —

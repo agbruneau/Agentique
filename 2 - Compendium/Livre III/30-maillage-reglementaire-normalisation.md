@@ -263,7 +263,7 @@ Section **reçue du Vol. I *Monographie* §5.3**. ⚠ **Toute sa matière entre 
 la double-qualification est au ch. 31 § 31.1.4** : *le §5.3 déclare lui-même ne faire que l'instancier.*
 
 Le § 30.1 a posé le générique transversal. **Cette section pose la question préalable à toute conception
-de contrôle : *sous quel droit* l'agent tombe-t-il, et *avec quelle force juridique*.** ⚠ **Le principe
+de contrôle : *sous quel droit* l'agent tombe-t-il, et *avec quelle force juridique* ?** ⚠ **Le principe
 directeur est que chaque exigence est menée par une obligation nominative, datée et qualifiée — en
 vigueur, en phase d'application, en projet ou en accord provisoire — plutôt que par une généralité
 réglementaire.**
@@ -653,7 +653,7 @@ dans ses cellules.**
 | **W3C — identifiants décentralisés** | v1.0 ; v1.1 | v1.0 : **Recommandation** du 19 juillet 2022, ⚠ *page signalant des errata dont le contenu n'a pas été ouvert — degré 3* (F-81) ; v1.1 : **instantané de recommandation candidate** du 5 mars 2026 (F-82, **[A]**) | pour la v1.1, ⚠ **relevé de liste et non balayage de texte** : *aucun degré d'absence n'est porté* |
 | **Groupe communautaire « protocole d'agent d'IA » (W3C)** | charte déclarant, **parmi d'autres objets**, un modèle d'identité pour les agents | hébergé depuis le 8 mai 2025 ; ⚠ **groupe communautaire** — *statut qui ne place ses travaux ni sur la voie des normes ni au rang de norme* (F-83, **[B]** ; R-09) | ⚠ **aucun document produit par ce groupe n'a été ouvert** |
 | **OpenID Foundation** | charte d'un groupe communautaire sur l'identité et l'IA | ⚠ place **hors de son périmètre** le développement de tout protocole de normalisation mondiale sur les agents et l'identité, et **renvoie ce travail à un groupe de travail** (F-48, **[A]**, *fait négatif ÉTABLI, degré 2*) | ⚠ **le socle ne documente pas** le régime de publication d'un groupe communautaire de cette fondation — *degré 3* |
-| **NIST (États-Unis)** | une publication spéciale de 2020 ; un document du **NCCoE** sur l'identité et l'autorisation des agents ; une initiative de standards | la publication de **août 2020** pose l'authentification et l'autorisation comme fonctions discrètes préalables à l'établissement d'une session ; le document du 5 février 2026 est ⚠ **un document de concept à l'état de projet public initial** ; l'initiative annoncée le 17 février 2026 prend en 2026 la forme d'⚠ **un projet de document de concept, non d'une publication finale** (F-73, **[B]** ; F-56, ⚠ **[C]** depuis sa rétrogradation du 28 juillet 2026 — *jamais un fait central*) | ⚠ **aucun de ces trois documents n'est une publication finale sur l'identité d'agent** |
+| **NIST (États-Unis)** | une publication spéciale de 2020 ; un document du **NCCoE** sur l'identité et l'autorisation des agents ; une initiative de standards | la publication d'**août 2020** pose l'authentification et l'autorisation comme fonctions discrètes préalables à l'établissement d'une session ; le document du 5 février 2026 est ⚠ **un document de concept à l'état de projet public initial** ; l'initiative annoncée le 17 février 2026 prend en 2026 la forme d'⚠ **un projet de document de concept, non d'une publication finale** (F-73, **[B]** ; F-56, ⚠ **[C]** depuis sa rétrogradation du 28 juillet 2026 — *jamais un fait central*) | ⚠ **aucun de ces trois documents n'est une publication finale sur l'identité d'agent** |
 | **Sous-comité international d'IA ; organisme européen de normalisation** | — | ⚠ **le socle ne documente pas leurs travaux** : *absence de documentation dans le corpus, non un fait négatif vérifié* | — |
 
 : Tableau 30.3 — Les instances de normalisation et l'état de leurs travaux applicables à l'identité d'agent, au 21 juillet 2026. ⚠ **Chaque statut est dit à sa mention** (R-09 du Vol. III) ; **aucune ligne n'a été reprise à la source primaire pour la somme.** ⚠ **Les qualifications prospectives de la dernière colonne relèvent du tri du ch. 49 § 49.0**, siège de la discipline pour toute la somme — *appliqué ici, jamais re-dérivé*.
@@ -672,7 +672,7 @@ l'un des sept brouillons relevés expirant six semaines après la consultation.*
 pas *fixés* : ils sont *visés*, et leurs statuts se disent** (R-11 du Vol. III).
 
 ⚠ **Le second tient à ce que les instances déclarent elles-mêmes, et il est plus instructif qu'un
-inventaire.** *La charte du groupe d'identité pour l'IA de la **OpenID Foundation** place **hors de son
+inventaire.** *La charte du groupe d'identité pour l'IA de l'**OpenID Foundation** place **hors de son
 périmètre** le développement de tout protocole de normalisation mondiale sur les agents et l'identité,
 et **renvoie ce travail à un groupe de travail** — énoncé de **degré 2**, réserve explicite portée par
 la source.*
@@ -815,12 +815,12 @@ pièces**. *Prendre un numéro sous cette contrainte reproduirait la collision d
   remontée** : que la table de couverture du ch. 30 porte cette réserve, comme celle du ch. 34.
 - **Non bloquante, de ré-ancrage dû sur le socle consolidé.** La pièce a été rédigée **avant G-3** et
   cite ses entrées par les identifiants de leurs volumes d'origine ; l'en-tête porte désormais leur
-  correspondance vers `S-nnn`, ⚠ **mais le corps ne l'a pas été, et une rétrogradation de niveau a déjà
+  correspondance vers `S-nnn`, ⚠ **mais le corps ne la porte pas, et une rétrogradation de niveau a déjà
   eu lieu** (F-56 → `S-102`, [B] → [C]). *Une pièce qui cite un identifiant source pendant que le socle
   alloue les siens vieillit à chaque révision du socle.* **Demande remontée** : une passe unique de
   ré-ancrage des cinquante pièces sur la série `S-nnn`, jamais pièce à pièce.
 - **Non bloquante, de divergence de nommage entre une pièce et le siège auquel elle renvoie** *(ouverte
-  par la contre-relecture)*. Le § 30.3.3 nomme désormais la **OpenID Foundation**, comme la décision 15b
+  par la contre-relecture)*. Le § 30.3.3 nomme désormais l'**OpenID Foundation**, comme la décision 15b
   l'exige d'un attributeur ; ⚠ **le siège du KYA — ch. 18 § 18.1 —, auquel cette même sous-section
   renvoie, la désigne « Fondation d'identité ouverte »**, et cette forme est la **signature versée à
   [`check-sieges.py`](../PRD/check-sieges.py)**. *La décision 15b(ii) vise nommément le cas — « a fortiori
@@ -861,7 +861,7 @@ dont les opérateurs d'infrastructure infonuagique du § 30.2.2 et l'offre d'ide
 § 30.3.2.* ⚠ **La passe de contre-relecture du 28 juillet 2026 a trouvé la même anonymisation dans
 le § 30.3, que la première passe n'avait pas balayé, et l'a levée là où la décision 15b la
 proscrit** : *sont nommés le **W3C** — auteur des deux Recommandations du tableau 30.3, hôte du
-groupe communautaire et **attributeur du décompte de participants** —, la **OpenID Foundation**
+groupe communautaire et **attributeur du décompte de participants** —, l'**OpenID Foundation**
 — attributrice de la charte qui décline la normalisation —, le **NIST** et le **NCCoE**, la
 **DIF**, **eIDAS** et la **FIDO Alliance**.* ⚠ **Domaine restant, déclaré plutôt que tu** : *le
 sigle de l'organisme candidat du § 30.3.1 demeure non écrit — **R-5 du Vol. II en fait le point

@@ -542,7 +542,7 @@ les obligations de pièce du Livre III — dont **les quatre préimpressions du 
 dans l'ordre exact, **sous-sections 36.2.1 à 36.2.7 comprises** —, le § 36.0 étant une **ouverture de
 chapitre** et la synthèse finale une **construction d'éditeur** que la table ne porte pas. ⚠ **Une
 déviation d'intitulé est fondée et se déclare** (décisions 8 et 15c du TOC), *et son domaine est
-**huit intitulés sur les douze** que la table détaillée porte*. *Les **six des sept sous-sections** du
+**huit intitulés sur les douze** que la table détaillée porte*. ***Six des sept sous-sections** du
 § 36.2 sont **abrégées** par rapport au plan — celui-ci y nomme des protocoles, des rails, des
 instruments et un terme anglais que la **parade de péremption** écarte (décision 15a) ; le § 36.2.2,
 qui n'en nomme aucun, est repris **mot pour mot**.* *S'y ajoutent **deux intitulés de section** : le
@@ -720,7 +720,7 @@ reprenne** —, la tension d'authentification forte au **§5.13.1**, la distinct
 de la lacune du ch. 32 § 32.4 en clôture du **§16.3** du Vol. II, la ***Gazette du Canada*** et
 l'entrée en vigueur du **24 août 2026** à sa question Q4, le **règlement administratif** au **ch. 33
 § 33.3**, le **ch. 42** — *« La matrice protocoles × exigences réglementaires »*, ⚠ **chapitre porteur
-du croisement, non un siège au sens de l'appareil** — , le **ch. 49 § 49.12.1**
+du croisement, non un siège au sens de l'appareil** —, le **ch. 49 § 49.12.1**
 comme registre de la lacune, les **six questions** de la série d'agenda au **§21.2**, et les
 **sous-domaines financiers — banque, assurance, patrimoine —** au titre du **ch. 34**.* ⚠ ***Aucune
 correction de la passe précédente n'a été trouvée fausse.***
