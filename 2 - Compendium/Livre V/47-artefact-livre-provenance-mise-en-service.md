@@ -20,7 +20,7 @@ d'appuis, conservées intégralement (décision 13 du TOC).*
 
 ⚠ **Les deux mouvements portent leur ancien titre, comme la décision 13a du TOC l'exige de toute
 fusion** — *une fusion supprime un en-tête de chapitre, jamais un intitulé de mouvement, et un
-lecteur qui entre par le milieu doit pouvoir savoir de quel objet il lit.*
+lecteur qui entre par le milieu doit pouvoir savoir quel objet il lit.*
 
 **Premier mouvement — La provenance des composants : de quoi un agent est fait** *(ch. 47 de la
 v0.22)* — thèse citée en tête ; sections **§ 47.1 à § 47.7**.
@@ -524,7 +524,7 @@ mais elle traite **la dérive de modèle, d'outil et d'autonomie**, et son § 39
 que ce paragraphe invoque est donc lui-même un front ouvert*, et c'est ce que la suite constate. Le Vol. I
 range par ailleurs la mémoire persistante et l'apprentissage continu parmi ses **frontières non
 résolues** (Vol. I *Monographie* §2.13.2, en **[C]**), et le ch. 49 § 49.13 reprend
-cette question transmise. *Ce chapitre n'en ajoute rien* : il constate que l'objet dont le retour
+cette question transmise. *Ce chapitre n'y ajoute rien* : il constate que l'objet dont le retour
 arrière devrait rendre compte est, chez sa source, un front ouvert.
 
 **Les délégations en cours.** Le **ch. 17** est le siège de la chaîne de mandat, et son **§ 17.6**

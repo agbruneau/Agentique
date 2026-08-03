@@ -265,7 +265,7 @@ d'état, le découplage promis par la couche protocolaire reste partiel.*
 
 ⚠ **L'enjeu dépasse la commodité technique, et le Vol. I** `Monographie` **§3.13.2 le dit en toutes
 lettres** : la portabilité inter-modèles et inter-cadriciels **cesse d'être une commodité
-d'ingénierie pour devenir un levier de souveraineté** — pouvoir substituer un modèle ou un cadriciel
+d'ingénierie pour devenir un levier de souveraineté** — pouvoir remplacer un modèle ou un cadriciel
 sans réécrire la couche d'interopérabilité, c'est éviter la dépendance à un fournisseur
 extra-juridictionnel. *Le découplage y prend une valeur politique*, et le § 49.7 y revient sous
 l'angle de la fragmentation juridictionnelle.
@@ -643,7 +643,7 @@ méthodologiquement contesté.* **Le signal est un fait mesuré sur une cohorte 
 sa généralisation est une projection.**
 
 ⚠ **Le fil économique de la somme se referme ici, et sur un aveu de statut.** Si les protocoles et
-les architectures multi-agents atteignent la maturité, la mutualisation des connecteurs ferait
+les architectures multi-agents atteignaient la maturité, la mutualisation des connecteurs ferait
 basculer le coût d'intégration de l'ordre quadratique à l'ordre linéaire. **Mais aucune étude chiffrée
 publique ne quantifie, à juin 2026, la baisse de coût d'intégration imputable spécifiquement aux
 standards ouverts agentiques.** *L'énoncé demeure donc SPÉCULATIF — un pari conceptuel cohérent, non
@@ -1110,7 +1110,7 @@ ainsi : par quel mécanisme documenté une révocation se propage-t-elle le long
 délégation (ch. 20 § 20.6) ; **par quelle clé de jointure une trace se rattache-t-elle au mandat qui
 autorisait l'action tracée** (ch. 38 § 38.5 ; ch. 48 § 48.5) ; et quelle grandeur mesurerait la
 portée d'une tâche déléguée à travers plusieurs agents plutôt que l'horizon d'un agent isolé (ch. 40
-§ 40.1).
+§ 40.1) ?
 
 **La plus développée des trois est celle des deux sauts, et sa source la décompose en cinq.** ⚠ **La
 mécanique reste au ch. 17 § 17.6 ; ici, l'énoncé de recherche qui en sort** — le partage est déclaré
@@ -1291,7 +1291,7 @@ rédaction du PRD §6**, qui place la clôture **en dernier**. Instruction d'aut
    pièces**. ⚠ **Le relevé antérieur annonçait « dix-neuf pièces » et son énumération en portait
    quinze** ; il est corrigé. ⚠ **Et l'énumération ne couvre pas tous les chapitres que la pièce
    cite** : les **ch. 2, 3, 7, 9, 10, 23, 28, 29, 37 et 39** ne figurent à aucun des trois groupes —
-   *leur classement appartient à la passe qui les a lues, et il est remonté, non tranché ici.*
+   *leur classement appartient à la passe qui les a lus, et il est remonté, non tranché ici.*
 
 **Remontées ouvertes par ce chapitre :**
 

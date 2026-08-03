@@ -305,7 +305,7 @@ qu'il ne se cite*.
 des quatre divergences résiste-t-elle à l'ouverture de son texte, et l'une des quatre porte-t-elle
 une clé rattachant un effet enregistré à l'appel qui l'a produit ? *Corpus à ouvrir* : ⚠ **la relève
 v0.10 du plan ne porte ni identifiant arXiv, ni titre, ni auteurs pour cette préimpression de mai
-2026 — seule sa date et ses quatre divergences nommées la désignent.** *Établir cet identifiant est
+2026 — seules sa date et ses quatre divergences nommées la désignent.** *Établir cet identifiant est
 le premier acte du lot, non son résultat* : sans lui, aucun tiers ne peut ouvrir la même source, et
 *un critère de clôture qui ne nomme pas la source qu'il attend n'est pas opposable.* S'y ajoutent les
 entrées nommées ci-dessus : **`S-140`** pour la **lacune 21**, et **`F-96` du Vol. III** pour le

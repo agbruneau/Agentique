@@ -489,7 +489,7 @@ arbitré.*
 **Le critère est la promotion contrôlée entre environnements** : *un agent franchit des portes de
 qualité successives avant d'atteindre la production, plutôt que d'y être exposé d'emblée.* Le patron
 de **déploiement fantôme** — exécuter l'agent candidat **en parallèle du processus de référence, sur
-le trafic réel, sans que ses décisions ne s'appliquent** — permet de **mesurer son comportement en
+le trafic réel, sans que ses décisions s'appliquent** — permet de **mesurer son comportement en
 conditions authentiques tout en neutralisant le risque**.
 
 ⚠ **Un arbitrage propre à l'entreprise s'y tranche, et il est réglementaire avant d'être technique** :

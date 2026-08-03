@@ -115,7 +115,7 @@ Vol. II).
 autorisation déléguée et identité de charge de travail sont **posées une seule fois pour toute la
 somme au ch. 3 § 3.2 et § 3.3***. **Ce chapitre les transpose aux agents et n'en redémontre aucune** —
 *c'est l'économie qui justifie la refonte des trois volumes en un ouvrage, et un chapitre
-d'architecture qui la reconstruirait l'annulerait au premier paragraphe.*
+d'architecture qui les reconstruirait l'annulerait au premier paragraphe.*
 
 Lecture de l'auteur — les deux champs obligatoires du **schéma de profil d'agent** — l'énumération
 des outils invocables et les bornes de privilège (Vol. III **F-40**) — sont, dans le vocabulaire du

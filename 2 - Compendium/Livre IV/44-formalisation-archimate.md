@@ -277,7 +277,7 @@ n'existe pas** — *le formalisme n'ajoute aucune existence à ce qu'il représe
 ### 44.1.7 Patron « humain-agent » : point d'arrêt, double regard, autonomie graduée
 
 **Siège de la modélisation du contrôle de finalité.** La coopération humain-agent est une **Business
-Collaboration** réalisant, **en version 3.2 une Business Interaction** et, **en version de référence,
+Collaboration** réalisant, **en version 3.2, une Business Interaction** et, **en version de référence,
 un comportement générique unifié** — *l'élément Interaction étant retiré*.
 
 **Le point d'intervention humain se modélise par l'Assignment d'un Role humain à l'étape irréversible
@@ -707,8 +707,8 @@ avant elle*, et **G-4, G-5 et le préalable propre au chapitre demeurent entiers
   **inscription de cette re-vérification au volet résiduel de G-1**, avec **domaine déclaré** — la
   liste des éléments retirés ou renommés, le mécanisme d'extension, et l'état du support d'outillage.
   ⚠ *Le PRD la nomme déjà à J-IV-5 ; ce qui manque n'est pas la mention, c'est l'exécution.*
-  ☑ **Issue, 27 juillet 2026** — **PRD, volet résiduel de G-1, DOMAINE DÉCLARÉ** — la **re-
-  vérification du mécanisme d'extension sur le document normatif** est inscrite avec son domaine
+  ☑ **Issue, 27 juillet 2026** — **PRD, volet résiduel de G-1, DOMAINE DÉCLARÉ** — la
+  **re-vérification du mécanisme d'extension sur le document normatif** est inscrite avec son domaine
   : *liste des éléments retirés ou renommés, mécanisme d'extension, état du support
   d'outillage*. ⚠ **Le blocage tient pour la publication du § 44.1.9 et, par dépendance, du ch.
   45** : *le registre reste publié sous réserve.*
@@ -758,7 +758,7 @@ son degré en toutes lettres à ces quatre endroits*. ⚠ **L'identifiant R-14, 
 fois, au bloc de collation de la thèse** : *la déclaration antérieure — « une occurrence, § 44.6 » —
 plaçait cette occurrence dans une section qui n'en porte aucune ; et le corps, au sens de la
 décision 16 comme au sens de l'appareil qui la mesure, **commence à la thèse citée et non à la
-première section** — l'y exclure aurait produit un second cardinal faux.* La **capacité auto-déclarée du
+première section** — l'en exclure aurait produit un second cardinal faux.* La **capacité auto-déclarée du
 § 44.9 — une occurrence du marqueur « auto-déclaré »** — est attribuée à **ses deux éditeurs nommés**,
 avec leurs statuts et leurs dates (décision 15, alinéa a). ⚠ **Un siège EST posé et marqué par cette
 pièce, et la formulation antérieure — « aucun siège neuf n'est posé » — était fausse** : **le siège de

@@ -189,7 +189,7 @@ assigné**. *Ne pas le lire au même régime de preuve que ses voisins.*
 
 | Siège | Pièce | État à l'appareil | Ce qu'il interdit de refaire ailleurs |
 |---|---|---|---|
-| **Les cinq points de contrôle obligatoires** | **ch. 43 § 43.3** | ☑ versé le 27 juill. 2026 | la liste et son dérivation des cinq zones de compensation ; les **ch. 37, 38, 39, 41 et 45** y renvoient |
+| **Les cinq points de contrôle obligatoires** | **ch. 43 § 43.3** | ☑ versé le 27 juill. 2026 | la liste et sa dérivation des cinq zones de compensation ; les **ch. 37, 38, 39, 41 et 45** y renvoient |
 | **Le modèle de maturité et les trois échelles d'autonomie** | **ch. 43 § 43.5** | ☑ versé le 27 juill. 2026 | le croisement par palier et la **désambiguïsation des trois échelles homonymes du Vol. I** — ⚠ *le ch. 39 § 39.6 s'abstient explicitement d'en produire un autre* |
 | **L'organisation de la fabrique** | **ch. 45 § 45.6** | ☑ versé le 27 juill. 2026 | la répartition des rôles ; le **ch. 41 § 41.7** y renvoie **sans la reprendre**, *et c'est pourquoi sa table détaillée ne porte aucun marqueur de provenance* |
 | ⚠ **La collision « fabrique »** (décision 12c du TOC) | **ch. 43 § 43.1** | ☐ **dû** — *versé au même commit par la passe de gouvernance du 28 juill. 2026* | la désambiguïsation des quatre emplois du mot ; le **ch. 41 § 41.1** y renvoie |

@@ -180,7 +180,7 @@ chaque mention**, **ne jamais présenter un cas d'instanciation comme un verdict
 preuve **trois réalisations d'orchestration** — un cadriciel d'éditeur en disponibilité générale, une
 plateforme dont **le support d'un protocole n'est confirmé de première main que pour son offre
 commerciale**, une orchestration événementielle **en préversion ouverte sans client ni chiffre
-d'adoption à la source** — et **deux cadriciels supplémentaires en [C]** (Vol. II **F-32**, **F-33**,
+d'adoption à la source** — et **deux cadriciels supplémentaires en [C]*** (Vol. II **F-32**, **F-33**,
 **F-15**). ⚠ **Le ch. 43 § 43.6 en est le siège** ; *ce chapitre y renvoie et ne les rejuge pas.*
 
 ⚠ **Une réserve porte sur un classement d'analystes, et elle est nommée** (R-6 du Vol. II) : *une
@@ -680,8 +680,8 @@ Instruction d'auteur du **27 juillet 2026**.
    des renvois de plan** — *aucune annexe du compendium n'est rédigée*, l'annexe H comprise. ⚠
    **Ce qui reste vrai de la forme antérieure, et qui est daté** : à l'heure où ce chapitre a été
    écrit, n'étaient rédigés ni les ch. 25, 27, 32 et 33 du Livre III, ni les ch. 49 et 50 du Livre
-   V — *les renvois qui les visent ont été posés comme renvois de plan et n'ont pas été re-
-   vérifiés contre le texte paru après eux.* ⚠ **Et « résoudre contre du texte » ne vaut pas
+   V — *les renvois qui les visent ont été posés comme renvois de plan et n'ont pas été
+   re-vérifiés contre le texte paru après eux.* ⚠ **Et « résoudre contre du texte » ne vaut pas
    recevabilité** : *le texte visé est lui-même un brouillon hors portes.*
 4. **Le socle du second mouvement est une plage relevée sur l'en-tête de sa source**, ⚠ **et deux
    entrées que les versions anciennes du plan y annonçaient n'y figurent pas** : *la plage est

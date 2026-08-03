@@ -656,7 +656,7 @@ porte à chaque mention.
 ⚠ **Le tri prospectif ne porte pas sur l'existence du document**, qui est un **fait constaté et
 daté**, mais sur ce que ce document annonce (Vol. III **H-33**, **[C]**, instrument de méthode et non
 fait). ⚠ **Les trois statuts du tri — PROGRAMMÉ, PROJETÉ, SPÉCULATIF — ne sont pas définis ici : leur
-siège pour toute la somme est au ch. 49 § 49.0**, et ce chapitre s'y **renvoie sans le reconstruire**.
+siège pour toute la somme est au ch. 49 § 49.0**, et ce chapitre y **renvoie sans le reconstruire**.
 Le tri du rapport de lot classe la prospective en **PROJETÉ** — le document annonce l'intention
 de lancer un projet de démonstration, **sans engagement daté de livraison constaté**. L'aboutissement
 en spécification demeure **SPÉCULATIF**, aucune source ouverte ne portant de jalon en ce sens. ⚠ **La

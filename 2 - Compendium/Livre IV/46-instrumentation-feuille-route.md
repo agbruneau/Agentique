@@ -268,7 +268,7 @@ PROGRAMMÉ, PROJETÉ, SPÉCULATIF —, dont ce tableau n'emploie que **le premie
 date opposable**, et **c'est celui qui commande la feuille de route**. Les cinq autres sont des états
 d'attente — **et un programme séquencé sur des états d'attente n'a qu'un seul point d'ancrage**.*
 ⚠ **Le socle ne documente aucun mécanisme de surveillance de ces jalons** : absence de documentation,
-non fait négatif vérifié (degré 3). ***Ce que la somme peut faire est les nommer et les dater ; les
+non fait négatif vérifié (degré 3). ***Ce que la somme peut faire est de les nommer et les dater ; les
 surveiller est le travail du ch. 50.***
 
 ## Synthèse : ce que le chapitre lègue à la somme
