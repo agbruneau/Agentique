@@ -13,7 +13,10 @@ et **un compendium** qui les refond en un seul ouvrage — arrêté en révision
 > **1 096 pages** depuis la refonte typographique du 31 juillet 2026, qui l'a porté au format Letter
 > (921 pages au format 155 × 235 mm auparavant) —, et il est **arrêté en révision finale pour la bibliothèque personnelle de
 > l'auteur** le même jour. Ses cinquante chapitres restent un **brouillon écrit hors portes** : il se
-> lit, il ne fait pas foi, et il ne se diffuse pas. *Arrêter n'est ni terminer ni publier.*
+> lit, il ne fait pas foi, et il ne se diffuse pas. *Arrêter n'est ni terminer ni publier.* Il se
+> **feuillette aussi à l'écran** depuis le 4 août 2026 —
+> [`Compendium.html`](2%20-%20Compendium/Compendium.html), appareil de lecture d'**un seul fichier
+> sans dépendance externe**, dérivé des cinquante `.md` et **sans plus d'autorité que le PDF**.
 
 ## État au dépôt — 29 juillet 2026
 
@@ -248,7 +251,25 @@ est composé par [`build/build-pdf.sh`](2%20-%20Compendium/build/build-pdf.sh), 
 du dépôt et le seul qui ne dérive pas du FESP**. Le rendu retire du corps les trois appareils que le
 volume tient hors corps (en-tête à cinq champs, thèse citée depuis le TOC, note de statut) et
 **marque d'une dague les vingt-trois renvois** que cette coupe laisserait pendre, plutôt que de les
-supprimer. ⚠ **Le rendu ne porte AUCUN avertissement de statut, et c'est une instruction d'auteur du
+supprimer. ⚠ **Un second rendu existe depuis le 4 août 2026, et il ne requalifie rien davantage** :
+[`Compendium.html`](2%20-%20Compendium/Compendium.html), **appareil de lecture à l'écran** du volume
+— déposé ce jour-là sous le nom `presentation.html`, renommé le même jour (commit `d473913`).
+**Un seul fichier de 1,79 Mio, sans dépendance externe** et un seul lien sortant, vers le PDF : les
+**118 figures** du volume y sont embarquées en SVG `data:` et retournées pour fond sombre, la
+typographie reprend les deux fontes du rendu imprimé (Constantia, Corbel) et la justification est
+réglée sur la mesure du livre, **79 signes**. Douze entrées — thèse, horloge, instruments, les cinq
+Livres, socle, parcours, index des 56 notions, probité, colophon. ⚠ **Trois choses qu'il n'est
+pas.** *(a)* Il **ne fait pas autorité** : son propre colophon le déclare dérivé, et *le `.md` reste
+la seule source*. *(b)* Il **n'est publié nulle part** — aucune page GitHub Pages, aucune diffusion :
+c'est un fichier du dépôt, servi en local par
+[`.claude/launch.json`](2%20-%20Compendium/.claude/launch.json) (`python -m http.server 8731`), et le
+régime de **D-10** le gouverne comme il gouverne le PDF. *(c)* ⚠ **Il ne se régénère pas.** **Aucun
+script du dépôt ne le reconstruit** depuis les cinquante `.md` : il est écrit à la main, ses
+décomptes sont relevés à la main, et *un rendu sans chaîne se périme en silence* — c'est la
+différence exacte d'avec `compendium.pdf`, qui se recompose dans le commit de la pièce qu'il rend.
+⚠ **Son horloge, elle, est calculée à l'ouverture** : la position d'« aujourd'hui » et l'âge du gel
+se recalculent à chaque affichage — *cette page vieillit avec l'ouvrage qu'elle présente, sans
+vieillir avec le texte qu'elle en tire.* ⚠ **Le rendu ne porte AUCUN avertissement de statut, et c'est une instruction d'auteur du
 30 juillet 2026** : un bloc de colophon portant le **statut de révision finale, son régime de
 diffusion et ses réserves** — portes dérogées, vote adversarial non conduit, CA-IV-11 et CA-IV-13 non
 satisfaits, aucun énoncé central — a été écrit ce jour-là, **après qu'une mesure du PDF eut montré
@@ -358,6 +379,9 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
     ├── annexe-references.md                 liste des 159 références du socle — annexe hors plan du rendu
     ├── audit-references.md                  inventaire et validation des 159 références (29 juill. 2026) — sans autorité, hors rendu
     ├── compendium.pdf                       rendu paginé des 50 chapitres + 2 annexes (1 096 p.) — brouillon non publiable
+    ├── Compendium.html                      appareil de lecture à l'écran du volume (4 août 2026, ex-`presentation.html`)
+    │                                          un fichier, sans dépendance externe, 118 figures embarquées — ⚠ écrit à la main, aucune chaîne ne le régénère
+    ├── .claude/launch.json                  sert le dossier en local (python -m http.server 8731) pour lire Compendium.html
     ├── build/                               pipeline propre au volume (PAS une copie du FESP)
     │   ├── assemble.py                        50 pièces + annexe → compendium.md, 23 renvois portés en note de marge
     │   ├── compendium.template                gabarit COURANT — identité propre, Letter, marges relevées sur les monographies, Constantia/Corbel
@@ -438,6 +462,18 @@ bash build/build-pdf.sh                     # Livre I/ … Livre V/ + 2 annexes 
 la règle d'indépendance vaut donc pour **quatre**. Le script publie à chaque exécution ce qu'il a
 assemblé et marqué (50 chapitres, 5 livres, 23 renvois marqués d'une dague), et il **échoue** si une
 pièce ne porte pas les trois appareils qu'il retire — une pièce déformée passerait sinon sans bruit.
+
+⚠ **Les cinq chaînes ne produisent que des PDF.** Les `.html` du Vol. IV — les **cinquante pages de
+chapitre** et [`Compendium.html`](2%20-%20Compendium/Compendium.html), l'appareil de lecture du
+volume — **ne sortent d'aucune d'entre elles** : `build/` ne contient aucun générateur HTML, et ces
+fichiers sont écrits à la main. *Il n'y a donc pas de commande à donner ici, et c'est précisément le
+problème* : la règle du « rendu versionné avec sa source » ne peut pas s'y appliquer, et rien ne
+signale qu'une page est en retard sur le `.md` dont elle est tirée. Pour lire
+`Compendium.html`, depuis `2 - Compendium/` :
+
+```bash
+python -m http.server 8731
+```
 
 **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, `python3` + `pypdf` ; polices Liberation Sans et
 DejaVu Sans (pipeline FESP), New Computer Modern (veille), Times New Roman (compendium — repli
@@ -672,6 +708,42 @@ le Vol. III reste non publiable, le Vol. IV **arrêté et non publiable** —, *
 rédigée**, **ne corrige pas la veille** et **ne referme aucune remontée**. *Resynchroniser des
 porteurs de décomptes n'avance aucune porte.*
 
+**Le 4 août 2026** — passe documentaire — ce `README.md` et le
+[conspectus du Vol. IV](2%20-%20Compendium/README.md) ont été resynchronisés sur le dépôt de
+[`Compendium.html`](2%20-%20Compendium/Compendium.html), **appareil de lecture à l'écran** du
+compendium : déposé le même jour sous le nom `presentation.html` (commit `76d001c`), révisé deux
+fois, puis renommé (commit `d473913`). **Ce que la passe enregistre** : un fichier de **1,79 Mio**,
+**sans dépendance externe** et à **un seul lien sortant** — vers le PDF —, **118 figures SVG
+embarquées** en `data:` (relevé sur pièce : 118 occurrences, autant que le rendu imprimé en porte),
+douze entrées de sommaire, et une **horloge calculée à l'ouverture**. **Ce que la passe refuse de
+laisser croire, et c'est le fond de l'entrée** : ⚠ **cette page ne se régénère pas.** Le balayage de
+[`2 - Compendium/build/`](2%20-%20Compendium/build/) ne trouve **aucun générateur HTML** — les cinq
+chaînes du dépôt ne produisent que des PDF —, si bien que `Compendium.html`, comme les **cinquante
+pages de chapitre** déposées avant elle, est **écrite à la main et relevée à la main**. *La règle du
+« rendu versionné avec sa source » ne s'y applique donc pas, et rien ne signale qu'elle a pris du
+retard.* ⚠ **Elle ne requalifie rien** : dérivée, sans autorité — son colophon le déclare —, **non
+publiée**, et tenue par le régime de **D-10** comme l'est le PDF.
+
+**Trois défauts trouvés dans la passe, tous par ouverture de la pièce, aucun corrigé ici.** *(1)* ⚠
+**Le décompte de pages du compendium est faux à ce `README.md`** : `pypdf` mesure **1 114 pages**
+sur le PDF versionné, quand ce fichier en annonce **1 096** — le conspectus du volume et le colophon
+de `Compendium.html`, eux, portent le bon chiffre. Le motif compte **sept occurrences**, mais elles
+ne sont pas du même régime : **cinq annoncent un état courant** (encadré d'entrée, tableau d'état,
+section du Vol. IV, arborescence, commentaire de la commande de rendu) et sont **fausses** ; **deux
+sont des constats datés** des passes du 29 juillet, et *un constat daté ne retarde pas, il
+enregistre.* La correction porte donc sur **cinq lignes**, et elle se demande. *(2)* ⚠ **Trois liens de ces `README.md` ne pointent sur
+rien** — `audit.md`, `audit-references.md` et `eval.html` sont cités par la racine, le conspectus,
+le `PRD.md`, le `TOC.md` et le ch. 4, et **ils ne sont ni sur le disque ni au suivi git**. *Un renvoi
+vers un fichier absent, aucun des quatre contrôles du volume ne le voit.* *(3)* Le PDF s'appelle
+`Compendium.pdf` sur le disque et `compendium.pdf` à l'index git, que `core.ignorecase` rend aveugle
+à l'écart : les liens résolvent — ils visent le nom indexé —, mais **le premier dépôt fait sur un
+système sensible à la casse produira un renommage fantôme**. **Décomptes re-mesurés sur pièce à
+cette date** : `Compendium.html` **1 829 940 octets / 118 figures embarquées** ; `compendium.pdf`
+**1 114 p.** (`pypdf`) ; **12 `README.md`** au suivi git, cardinal inchangé depuis le 29 juillet —
+**deux d'entre eux sont touchés par la passe**, la racine et le conspectus du Vol. IV. ⚠ **Ce que la
+passe ne fait pas** : elle **ne touche à aucune pièce
+rédigée**, **ne franchit aucune porte**, **ne corrige aucun des trois défauts** et **ne publie rien**.
+
 ⚠ Le décompte des diagrammes du Vol. I se mesure avec un motif **ancré** :
 `grep -c '^```mermaid'` donne 28. Le motif non ancré en retourne 29 — il attrape une ligne de prose
 de la note de production qui cite la balise.
@@ -682,6 +754,10 @@ périmètre de cette passe documentaire :
 | Fichier | Reliquat |
 |---|---|
 | `1 - Corpus/2 - OrchestrationAgentique/build/assemble.py` | lit `TOC.md` à la racine du volume ; il vit dans `prd/` — **assemblage hors service** |
+| ce `README.md` — cinq annonces d'état courant | donne **1 096 p.** pour `compendium.pdf` ; `pypdf` en mesure **1 114** sur le fichier versionné (4 août 2026). Le conspectus du Vol. IV et le colophon de `Compendium.html` portent le bon chiffre. Sept occurrences du motif, dont **deux constats datés à laisser tels quels** — **corriger les cinq autres** |
+| `2 - Compendium/` — `audit.md`, `audit-references.md`, `eval.html` | **cités et absents** : la racine, le conspectus, `PRD/PRD.md`, `PRD/TOC.md` et le ch. 4 y renvoient ; ni sur le disque, ni au suivi git (4 août 2026). Déposer les fichiers, ou retirer les renvois — **aucun contrôle du volume ne voit un lien mort** |
+| `2 - Compendium/Compendium.html` + les 50 `.html` de chapitre | **aucune chaîne ne les régénère** : `build/` ne porte pas de générateur HTML, ces pages sont écrites et relevées à la main. La règle du « rendu versionné avec sa source » ne s'y applique pas — *le retard sur le `.md` ne se signale nulle part* |
+| `2 - Compendium/Compendium.pdf` (disque) / `compendium.pdf` (index git) | écart de casse que `core.ignorecase=true` masque : les liens résolvent sur le nom indexé, mais un dépôt fait depuis un système sensible à la casse produira un **renommage fantôme** |
 | `…/2 - OrchestrationAgentique/prd/audit.md` | renvois `](monographie/…)` → `../monographie/…` |
 | `…/2 - OrchestrationAgentique/verification/relecture-CA.md` | renvois `](../PRD.md)`, `](../PRDPlan.md)`, `](../audit.md)` → `../prd/…` |
 | `…/2 - OrchestrationAgentique/build/__pycache__/` | bytecode Python (`.pyc`) versionné par mégarde — à retirer du suivi et à ignorer |
@@ -693,7 +769,11 @@ périmètre de cette passe documentaire :
 Le `monographie/` du Vol. II concentre à lui seul **48 de ces renvois cassés**, sur 28 de ses
 29 pièces (re-mesuré le 25 juillet 2026).
 
-⚠ **Plus de pages de présentation ni de publication GitHub Pages pour les volumes.** Les deux
+⚠ **Aucune publication GitHub Pages, pour aucun volume.** ⚠ **La formule antérieure — « plus de
+pages de présentation » — a cessé d'être exacte le 4 août 2026** et elle est corrigée ici : le
+Vol. IV en porte désormais, [`Compendium.html`](2%20-%20Compendium/Compendium.html) et les cinquante
+pages de chapitre. *Ce qui a disparu n'est pas la page de présentation, c'est sa publication en
+ligne* — les nouvelles ne sont **pas publiées** et se lisent depuis le dépôt, en local. Les deux
 `index.html` (Vol. I et Vol. II) ont été supprimés le 22 juillet 2026 (commit `fd8f1be`). Ils
 annonçaient « Lire en ligne » sous `https://agbruneau.github.io/Monographies/…`, et leurs balises
 `canonical`, `og:url` et liens « Dépôt GitHub » nommaient tous `Monographies` — adresses fausses de
