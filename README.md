@@ -48,8 +48,9 @@ quatre portes closes par dérogation nommée pour le seul régime de bibliothèq
 **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers). *Arrêter n'est ni terminer ni
 publier, et rouvrir un arrêt ne rapproche d'aucun des deux.* *(b)* **Deux décisions restent à l'auteur,
 et aucune n'est du ressort d'une passe documentaire** : poser (ou retirer des documents de gouvernance)
-l'étiquette git `mono-v1.0` du Vol. II — `git tag -l` est vide, et **quatre documents de gouvernance et
-dix-sept pièces** l'annoncent comme posée ; et déposer une licence à la racine du dépôt, qui n'en porte
+l'étiquette git `mono-v1.0` du Vol. II — `git tag -l` est vide, et **trois documents de gouvernance
+(`PRD.md`, `PRDPlan.md`, `audit.md` du volume) et dix-sept pièces** l'annoncent comme posée, les deux
+`README.md` du volume portant, eux, le correctif ; et déposer une licence à la racine du dépôt, qui n'en porte
 aucune — seul le Vol. I en a une. ⚠ *La troisième décision que ce fichier réservait à l'auteur — retirer
 du suivi git trois fichiers de bytecode Python — **n'a plus d'objet** : `git ls-files | grep pycache`
 n'en rend **aucun**, `.gitignore` les couvre, et le reliquat était périmé.* *(c)* **Les reliquats
@@ -291,7 +292,8 @@ dépendance externe** et un seul lien sortant, vers le PDF : les
 **118 figures** du volume y sont embarquées en SVG `data:` et retournées pour fond sombre, la
 typographie reprend les deux fontes du rendu imprimé (Constantia, Corbel) et la justification est
 réglée sur la mesure du livre, **79 signes**. Douze entrées — thèse, horloge, instruments, les cinq
-Livres, socle, parcours, index des 56 notions, probité, colophon. ⚠ **Trois choses qu'il n'est
+Livres, socle, parcours, index des 56 notions, probité ; *le colophon existe en section mais n'a pas
+d'entrée de navigation, et l'énumération antérieure le comptait à tort pour une treizième*. ⚠ **Trois choses qu'il n'est
 pas.** *(a)* Il **ne fait pas autorité** : son propre colophon le déclare dérivé, et *le `.md` reste
 la seule source*. *(b)* Il **n'est publié nulle part** — aucune page GitHub Pages, aucune diffusion :
 c'est un fichier du dépôt, servi en local par
@@ -409,12 +411,14 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
 └── 2 - Compendium/                        ← Vol. IV
     ├── README.md                            vue synoptique dérivée du TOC (le « conspectus » du volume)
     ├── annexe-references.md                 liste des 159 références du socle — annexe hors plan du rendu
+    ├── annexe-bibliographie.md              Annexe I — bibliographie générale consolidée (1 154 entrées), reliée au rendu
+    ├── figures/                             les 118 SVG des chapitres + programme des figures et scripts de génération
     ├── Compendium.pdf                       rendu paginé des 50 chapitres + 2 annexes (1 114 p.) — brouillon non publiable
     ├── Compendium.html                      appareil de lecture à l'écran du volume (4 août 2026, ex-`presentation.html`)
     │                                          un fichier, sans dépendance externe, 118 figures embarquées — ⚠ écrit à la main, aucune chaîne ne le régénère
     ├── .claude/launch.json                  sert le dossier en local (python -m http.server 8731) pour lire Compendium.html
     ├── build/                               pipeline propre au volume (PAS une copie du FESP)
-    │   ├── assemble.py                        50 pièces + annexe → compendium.md, 23 renvois portés en note de marge
+    │   ├── assemble.py                        50 pièces + 2 annexes → compendium.md, 23 renvois portés en note de marge
     │   ├── compendium.template                gabarit COURANT — identité propre, Letter, marges relevées sur les monographies, Constantia/Corbel
     │   ├── springer.template                  gabarit précédent (29 juill. 2026), conservé — 155 × 235 mm, Times 10/12
     │   └── build-pdf.sh                       bash build/build-pdf.sh → Compendium.pdf
@@ -842,8 +846,11 @@ par un critique en contexte neuf qui ne connaissait pas son travail.
   fichier. *Un décompte faux à côté du contrôle qui le dément est le défaut le moins excusable du lot.*
 - ⚠ **Le Vol. I annonçait ≈ 263 600 mots, qu'aucune commande du dépôt ne produit** : **233 257**
   (`wc -w`, point d'ancrage de `decompte.sh --verifier`) ou 225 258 (commande de référence). ⚠ **La
-  correction a une conséquence que le corpus ne s'attendait pas à payer** : son agrégat passe de
-  ≈ 516 500 à **486 206 mots**, et *il perd le seuil des 500 000 qu'il s'attribuait*.
+  correction a une conséquence que le corpus ne s'attendait pas à payer** : son agrégat tombe sous les
+  ≈ 516 500 annoncés — **486 206 mots** en sommant les trois chiffres publiés, *chacun pris par la
+  méthode propre de son volume* (233 257 + 92 059 + 160 890 : trois commandes différentes, et la somme
+  le déclare), ou **479 390** par la **commande unique** de `decompte.sh --verifier`. *Les deux mesures
+  sont sous le seuil des 500 000 que le corpus s'attribuait, et il le perd dans les deux cas.*
 - **Deux erreurs d'unité, mêmes octets mal convertis** : la passe du 4 août avait écrit **1,79 Mio**
   pour `Compendium.html` là où ses propres 1 829 940 octets en font **1,75** ; et le colophon du volume
   donnait « 12,7 Mo » pour le PDF là où 13 304 911 octets font **12,7 Mio** — 13,3 Mo. ⚠ **Le premier
@@ -870,6 +877,17 @@ aussi les constats datés qui divergent de la mesure d'aujourd'hui** : le PRD du
 670 et `P5` de 9 là où le contrôle en mesure 674 et 12, mais ses deux tables se déclarent « constats
 d'exécution du 29 juillet 2026 ». *Corriger un constat daté, c'est effacer la seule chose qu'il
 apporte.*
+
+☑ **Le rendu a été recomposé avec sa source, et c'est un critique qui l'a exigé.** La passe avait
+corrigé la prose des deux annexes **reliées** dans `Compendium.pdf` sans recomposer le livre — si bien
+que le PDF versionné, identique à l'octet près à son état d'avant la passe, imprimait encore page 977
+« l'Annexe I […] reste à écrire », **114 pages avant cette même Annexe I reliée dans le même fichier**.
+C'est la violation littérale de la règle permanente énoncée plus haut — *régénérer et versionner le PDF
+avec sa source, jamais la source seule* — et c'est **la classe d'écart qu'aucun des cinq contrôles ne
+voit** : ils lisent les `.md`, rien ne compare le rendu à sa source. **Recomposé le 8 août 2026** par
+`bash build/build-pdf.sh` : **1 114 pages, décompte inchangé**, 50 chapitres + 2 annexes + 23 renvois
+marqués, et `pdftotext` confirme — « reste à écrire » : zéro occurrence ; « 1 154 entrées uniques » :
+une.
 
 ⚠ **Une entorse à sa propre règle, déclarée plutôt que défaite.** La passe s'était interdit de toucher
 à la **prose** d'une pièce rédigée, et un critique en contexte neuf a relevé qu'elle l'avait fait à
@@ -906,7 +924,7 @@ que le dépôt ne porte pas :
 | Fichier | Reliquat |
 |---|---|
 | racine du dépôt | **aucune licence** : seul le Vol. I porte un `LICENSE`. Un dépôt final sans licence de tête laisse les quatre autres livrables sans régime déclaré — **décision d'auteur, expressément laissée ouverte** |
-| `1 - Corpus/2 - OrchestrationAgentique/` | l'étiquette git `mono-v1.0` **n'est pas posée** — `git tag -l` est **vide** — alors que **quatre documents de gouvernance et dix-sept pièces** l'annoncent comme telle, dont l'une écrit « `mono-v1.0` existe ». Poser le tag, ou corriger ces mentions : **décision d'auteur**, la prose n'a pas été réécrite |
+| `1 - Corpus/2 - OrchestrationAgentique/` | l'étiquette git `mono-v1.0` **n'est pas posée** — `git tag -l` est **vide** — alors que **trois documents de gouvernance** (`PRD.md`, `PRDPlan.md`, `audit.md`) **et dix-sept pièces** l'annoncent comme telle, dont l'une écrit « `mono-v1.0` existe » ; les deux `README.md` du volume portent, eux, le correctif. Poser le tag, ou corriger ces mentions : **décision d'auteur**, la prose n'a pas été réécrite |
 | `1 - Corpus/1 - InteroperabiliteAgentique/Chapitres/TOC.md` | l'Annexe B y est déclarée **≈ 17 500 mots** quand `wc -w` en mesure **20 655** (+18 %). La colonne « Méthode » dit honnêtement « décompte **déclaré** en tête d'ADS », mais l'en-tête du même fichier revendique que tout décompte est **relevé, non projeté** — **contradiction interne à arbitrer** |
 | `1 - Corpus/2 - OrchestrationAgentique/` | **trois volumétries concurrentes, toutes justes sous leur méthode** : 92 059 (PRDPlan §4.2, locale par défaut — chiffre publié), 93 242 (`decompte.sh`, locale UTF-8, où l'espace insécable sépare), 90 362 (clôture de P4, datée). Le §4.2 documente lui-même son sous-comptage de 1,3 % et **refuse** de le corriger : aucune n'est fausse, et le choix est éditorial |
 | `2 - Compendium/` — volumétries des cinq `Livre */README.md` et colonne `Réel` du registre de gel | périmées de quatre passes de révision du français (31 juillet → 3 août 2026). ⚠ **Non corrigées pour une raison de contrôle, non de paresse** : la colonne est **opposée par `check-compendium.py` P6 aux en-têtes des cinquante pièces**, qui sont de la prose gelée — la corriger d'un seul côté ferait échouer P6 sur 26 lignes. La mesure courante (**331 791 mots**) est écrite au registre avec ce motif |
@@ -916,7 +934,8 @@ que le dépôt ne porte pas :
 | `1 - Corpus/3 - EntrepriseAgentique/verification/lot-L-04-…md` | **cinq renvois morts conservés à dessein** : ce sont les liens relatifs internes de pages tierces, reproduits **verbatim** dans des blockquotes de preuve. Les réécrire altérerait la citation, qui est l'objet même d'un rapport de lot |
 | `1 - Corpus/3 - EntrepriseAgentique/prd/PRDPlan.md` | un sixième renvoi « mort » est un **faux positif** : le chemin vit dans un bloc `sh` clôturé, c'est le **gabarit d'en-tête de pièce**, correct à la profondeur de sa destination. Y toucher casserait le gabarit |
 | Vol. I et Vol. III — `Chapitres/TOC.md`, `monographie/`, `prd/`, `verification/` | citent `Borealis-Go` et `Synthese Monographie.md`, retirés du dépôt les 25 et 22 juillet 2026 : **citations exactes, plus opposables**, à consigner et non à réécrire. Le tableau des livrables du Vol. I porte désormais ce régime en clair |
-| `2 - Compendium/README.md` | l'énumération des entrées de `Compendium.html` en **nomme treize** pour un cardinal de **douze**, exact par ailleurs : elle omet la zone VIII, « L'appareil ». Écart de rédaction, non de mesure |
+| `2 - Compendium/Compendium.html`, section « index » | trois entrées d'index publient des **totaux d'occurrences qui ne se reproduisent pas** (« niveau de preuve » 921, « péremption » 399, « registre de gel » 70) : les **cardinaux de chapitres se reproduisent**, les totaux non — aucun motif unique ne rend les deux à la fois, et la règle de comptage n'est écrite nulle part. Les **56 notions**, elles, sont exactes. Page écrite à la main : requalifier ces totaux exigerait la règle d'origine, que le dépôt ne porte pas |
+| l'appareil de contrôle entier | **aucun des cinq contrôles ne résout un seul lien markdown** : leurs douze appels à `exists()` gardent des entrées de script, jamais une cible de renvoi. L'état « zéro lien mort » ne tient que par une mesure externe que rien ne rejoue — et pour l'appareil, **retirer un renvoi est indistinguable de réparer sa cible** |
 | `2 - Compendium/` | le compendium **n'a toujours aucune URL** : son Annexe I réunit les bibliographies des sources sans en vérifier une seule, et *une entrée présente n'y atteste de rien* |
 
 ⚠ **Aucune publication GitHub Pages, pour aucun volume.** ⚠ **La formule antérieure — « plus de

@@ -242,3 +242,49 @@ c'est le **critique** qui a vu juste contre lui : la commande de comptage de pag
 réexécutée, et la conversion d'octets juste sur un décompte périmé. *Les deux sont exactement la classe
 de faute que ce dépôt prend pour objet, et aucune des deux n'aurait été trouvée par le bâtisseur qui
 notait son propre travail.*
+
+---
+
+## Tour 2 — dernière révision pour dépôt final (8 août 2026)
+
+**Déclencheur** : demande d'auteur, et un reliquat de la boucle elle-même — deux des trois rapports de
+critique du harnais n'avaient **jamais été dépouillés**, la notification ayant été tronquée. Extraits du
+journal et instruits en totalité.
+
+**Ce que les deux rapports non lus portaient, et qui a été refermé** :
+
+1. ⚠ **Le plus grave — le PDF versionné n'avait pas été recomposé.** `md5sum` identique à l'état
+   d'avant la passe, alors que la passe avait corrigé la prose des deux annexes **reliées** dans ce
+   PDF : le livre imprimait encore, page 977, « l'Annexe I […] reste à écrire » — 114 pages avant cette
+   même Annexe I, reliée avec ses 1 154 entrées. Violation littérale de la règle permanente du dépôt
+   (« régénérer le PDF avec sa source, jamais la source seule »), que le critique a établie par
+   `pdftotext` sur le livre composé. **Recomposé** : 1 114 pages, décompte inchangé, « reste à écrire »
+   0 occurrence, « 1 154 entrées uniques » 1.
+2. **L'agrégat 486 206 additionnait trois méthodes sans le dire** — dans la puce même qui reprochait au
+   Vol. I un chiffre irreproductible. Le mélange est déclaré, et le chiffre de la commande unique
+   (**479 390**) donné à côté ; la conclusion (sous 500 000) tient dans les deux cas.
+3. **L'énumération « douze entrées » en nommait treize**, dans le `README.md` racine comme au
+   conspectus — et le registre du racine imputait le défaut au seul conspectus, avec un **diagnostic
+   faux** (« zone VIII » ; le surplus réel est le colophon, section sans entrée de nav — vérifié sur les
+   12 ancres du `<nav>`). Corrigé aux deux endroits, ligne de registre remplacée.
+4. **« Quatre documents de gouvernance » annoncent `mono-v1.0` : ils sont trois** (`PRD.md`,
+   `PRDPlan.md`, `audit.md`), les deux `README.md` du volume portant déjà le correctif. Corrigé aux deux
+   occurrences.
+5. **Livre III, l. 323** : « huit sièges attendent leur versement » au présent, alors que la table
+   `SIEGES` porte neuf entrées pour ce Livre — le dernier résidu non converti en constat daté. Daté et
+   soldé.
+6. **L'arborescence omettait `annexe-bibliographie.md`** — l'Annexe I dont le fichier établit
+   l'existence deux sections plus haut — **et `figures/`** (130 entrées), et disait « + annexe » au
+   singulier contre « 2 annexes » deux fois ailleurs. Les trois réparés.
+7. **Deux reliquats nouveaux consignés, non corrigés** : trois totaux d'occurrences de l'index de
+   `Compendium.html` ne se reproduisent sous aucun motif unique (les cardinaux de chapitres, eux, se
+   reproduisent ; la règle de comptage d'origine n'est écrite nulle part) ; et **aucun des cinq
+   contrôles ne résout un lien markdown** — l'état « zéro lien mort » ne tient que par une mesure
+   externe que rien ne rejoue.
+
+**Contrôles finaux** : les cinq en sortie 0 après recomposition ; liens `.md` 6 morts connus ; liens
+`.html` 0.
+
+**Sortie de boucle confirmée** — le dépôt part en bibliothèque avec ses réserves écrites : licence et
+tag `mono-v1.0` à l'auteur, D-11 ouverte, index de l'appareil de lecture non reproductible sur trois
+totaux.

@@ -320,11 +320,13 @@ de la pièce** qui l'avait ouverte.
    preuve ne prévoit pas**. **Sept occurrences font d'une classe une propriété du corpus ; deux
    variantes en font une famille.***
 4. ⚠ **Le décompte des remontées d'appareil n'a pas pu être payé, et le motif est une passe
-   concurrente.** *Huit sièges déclarés au plan attendent leur versement à `check-sieges.py`, **parce que
-   le fichier est modifié en parallèle par la rédaction des Livres IV et V**.* ⚠ ***Payer une dette
-   d'outillage pendant qu'un autre l'écrit produirait une table incohérente que le harnais de mutation
-   ne détecterait pas*** — *c'est la leçon « `git add -A` pendant que des agents parallèles écrivent »,
-   transposée à un fichier de contrôle.*
+   concurrente.** *Huit sièges déclarés au plan attendaient, **à la clôture du 27 juillet 2026**, leur
+   versement à `check-sieges.py`, **parce que le fichier était modifié en parallèle par la rédaction des
+   Livres IV et V**.* ⚠ ***Payer une dette d'outillage pendant qu'un autre l'écrit produirait une table
+   incohérente que le harnais de mutation ne détecterait pas*** — *c'est la leçon « `git add -A` pendant
+   que des agents parallèles écrivent », transposée à un fichier de contrôle.* ☑ **Dette soldée
+   depuis** : la table `SIEGES` porte **neuf entrées pour ce Livre** (relevé du 8 août 2026, §« Sièges »
+   ci-dessus) et `check-sieges.py` sort 0 — *plus aucun siège du Livre III n'attend.*
 
 ## Ce que le Livre couvre — et ce qu'il ne couvre pas
 
