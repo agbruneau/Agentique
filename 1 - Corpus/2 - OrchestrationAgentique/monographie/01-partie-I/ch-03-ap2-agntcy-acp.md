@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | **R-1** (risque maximal de l'ouvrage — l'ACP protocolaire n'est pas un standard vivant) ; **R-8** (§3.4 — rappel de l'encadré des quatre branches posé au ch. 1 §1.2, développé sur le versant protocolaire ; lacune §10.7) ; §8.2.1 (métriques d'adoption auto-déclarées) ; réserve F-06 (préprint) |
 | Volumétrie cible | ~2600 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : La transaction pilotée par agents (AP2) est l'aboutissement financier de la pile protocolaire ; AGNTCY en est la couche d'infrastructure, non un concurrent.
+> **Thèse ([TOC.md](../../prd/TOC.md))** : La transaction pilotée par agents (AP2) est l'aboutissement financier de la pile protocolaire ; AGNTCY en est la couche d'infrastructure, non un concurrent.
 
 ---
 

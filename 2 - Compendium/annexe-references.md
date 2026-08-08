@@ -15,8 +15,10 @@ identifiée et contenu non extrait. Un **degré** qualifie l'absence, jamais la 
 fait négatif vérifié, *degré 2* fait négatif établi, *degré 3* absence de documentation.
 
 ⚠ **Cette liste n'est pas une bibliographie et n'en tient pas lieu.** Elle inventorie les **faits**
-sur lesquels la somme adosse ses énoncés, non les **documents** dont ces faits proviennent :
-l'**Annexe I — Bibliographie générale consolidée**, que le plan prévoit, **reste à écrire**.
+sur lesquels la somme adosse ses énoncés, non les **documents** dont ces faits proviennent : ceux-là
+vivent à l'**Annexe I — Bibliographie générale consolidée**
+([`annexe-bibliographie.md`](annexe-bibliographie.md), déposée le 30 juillet 2026 — **1 154 entrées
+uniques**), ⚠ *qui est une **réunion** verbatim des bibliographies sources et non une vérification.*
 
 ⚠ **Une ligne ne remplace pas son entrée.** L'énoncé intégral, la formulation imposée, le degré
 d'absence, la re-datation motivée et les réserves vivent au socle consolidé

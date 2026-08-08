@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | **§8.2.4** (couverture agentique d'E-23 : formulation imposée) ; **réserve F-09** (« attendu par E-23 », jamais « exigé » ; « documentation de modèle » / « inventaire », jamais « fiche de modèle » *à propos d'E-23*) ; **R-7** (le rapprochement entre les métriques de F-37 ou watsonx.governance et l'instrumentation d'E-23 est une **inférence d'auteur** — cas du fait négatif établi, PRDPlan §4.4) ; **réserves F-37** (préprint v1) ; **réserve F-25** (jamais « en attente » ni « en projet ») ; **R-4** et **réserve F-29** (§20.3, en renvoi) ; **R-5** (§20.3, formulation imposée) ; **§8.4** appliqué par prudence (le garde-fou est borné à la Partie VII ; ce chapitre mobilise pourtant F-44) ; motifs **R-1**, **R-2**, **R-3**, **R-6**, **R-8** : zéro occurrence |
 | Volumétrie cible | ~2600 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : les métriques d'évaluation des orchestrations (correction, réactivité, traçabilité) sont l'instrumentation candidate des programmes E-23/AMF ; la feuille de route se séquence sur l'entrée en vigueur commune.
+> **Thèse ([TOC.md](../../prd/TOC.md))** : les métriques d'évaluation des orchestrations (correction, réactivité, traçabilité) sont l'instrumentation candidate des programmes E-23/AMF ; la feuille de route se séquence sur l'entrée en vigueur commune.
 
 ---
 

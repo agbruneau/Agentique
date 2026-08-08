@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | Règle transversale **§7.5** (attribution à chaque occurrence) ; **§8.2.2** (métriques institutionnelles auto-déclarées) ; **R-8** (§17.8 — l'*Agentic Control Plane* du consortium n'a aucun lien avec l'ACP protocolaire d'IBM Research, ch. 1 §1.2 et ch. 3) ; lacune **§10.2** (réduite en P0 ; résidus [C] traités en encadrés) |
 | Volumétrie cible | ~8000 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : L'agentique canadienne est en production, documentée par sources primaires, gouvernée au niveau C-suite — et inégalement documentable selon les institutions.
+> **Thèse ([TOC.md](../../prd/TOC.md))** : L'agentique canadienne est en production, documentée par sources primaires, gouvernée au niveau C-suite — et inégalement documentable selon les institutions.
 
 ---
 

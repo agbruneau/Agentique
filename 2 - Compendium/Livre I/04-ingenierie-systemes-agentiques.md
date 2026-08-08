@@ -920,7 +920,7 @@ d'arbitrage : *ces instruments sont-ils « repris » au sens de la décision 15b
 décrits ?*
 
 **La réponse.** Sur **instruction d'auteur du 30 juillet 2026**, en réponse au grief **RA-F4** du
-rapport d'arbitrage externe ([`eval.html`](../eval.html), § 4, et à sa recommandation **RA-R4**), la
+rapport d'arbitrage externe (`eval.html`, § 4, et à sa recommandation **RA-R4**), la
 **décision 15a est renversée** : *la citation nominative l'emporte, et la péremption se gère par
 datation, non par anonymat.* Le motif tient en une phrase du rapport, que la présente note reprend
 parce qu'elle est juste : **un ouvrage qui décrit des travaux identifiables sans les citer est

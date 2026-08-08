@@ -674,8 +674,8 @@ repris du relevé qui l'annonçait.*
   **cinq** horloges, le harnais y entrant comme cinquième porteur ; **l'intitulé du § 47.8 a suivi en
   v0.29**, et la présente pièce s'y est alignée. ⚠ **Les deux quintets ne se recouvrent toujours
   pas** — le § 47.8 le déclare plutôt que de les fondre.
-- **R-IV-63 — non bloquante, d'appareil.** Le [`gabarit de pièce`](../../.claude/skills/chapitre-compendium/references/gabarit-piece.md)
-  et les [`conventions`](../../.claude/skills/chapitre-compendium/references/conventions.md) du skill
+- **R-IV-63 — non bloquante, d'appareil.** Le `gabarit de pièce`
+  et les `conventions` du skill
   faisaient écrire « tant que G-2 est ouverte, aucun décompte n'est publiable », alors que **G-2 est
   franchie depuis le 27 juillet 2026** et que le `SKILL.md` portait la règle à jour. *Deux pièces
   d'appareil se contredisaient, et c'est celle que le rédacteur copie qui était périmée.* **Demande

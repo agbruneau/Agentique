@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | **réserve F-01** — « cadre d'autorisation », jamais « sécurisé » : chapitre où le motif est le plus probable ; §8.2 (principe général d'attribution — qualification « production-ready » attribuée à l'annonce du projet A2A) ; R-8 (aucune occurrence du sigle nu ni de *control plane* ; seule mention en note [^3], qualifiée selon la forme imposée, Annexe D §D.1 branche (a)) |
 | Volumétrie cible | ~2600 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : La sécurité des protocoles dépend de l'implémentation ; empoisonnement d'outils et injection d'invites sont **nommés par les protocoles eux-mêmes comme risques attachés**, sans que le socle en date la documentation ni en établisse la mécanique.
+> **Thèse ([TOC.md](../../prd/TOC.md))** : La sécurité des protocoles dépend de l'implémentation ; empoisonnement d'outils et injection d'invites sont **nommés par les protocoles eux-mêmes comme risques attachés**, sans que le socle en date la documentation ni en établisse la mécanique.
 
 ---
 

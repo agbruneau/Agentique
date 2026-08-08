@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | **R-5**, **R-6** ; **R-4** et réserve F-29 (renvois — événements de péremption) ; R-7 et §8.4 (neutralité fournisseur) ; §8.2.7 (études commandées) |
 | Volumétrie cible | ~3000 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : Le blueprint est daté (juillet 2026) et le dit — lacunes propres, événements de péremption, protocole de revalidation.
+> **Thèse ([TOC.md](../../prd/TOC.md))** : Le blueprint est daté (juillet 2026) et le dit — lacunes propres, événements de péremption, protocole de revalidation.
 
 ---
 

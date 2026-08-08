@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | **réserve F-25** (jamais « en attente » ni « en projet ») ; **réserve d'interprétation de F-27** (nuance Fasken au niveau [C]) ; §8.2.4 et R-7 (motifs « E-23 » — contexte réglementaire pur, filtrés) ; lacune §10.4 (encadré §11.3) |
 | Volumétrie cible | ~3000 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : Le Québec dispose du cadre le plus explicite — et l'art. 12.1 (révision humaine sur demande) entre en friction directe avec la décision agentique autonome.
+> **Thèse ([TOC.md](../../prd/TOC.md))** : Le Québec dispose du cadre le plus explicite — et l'art. 12.1 (révision humaine sur demande) entre en friction directe avec la décision agentique autonome.
 
 ---
 

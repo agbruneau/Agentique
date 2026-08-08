@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | §8.2.1 (métriques d'adoption auto-déclarées) ; **R-1 et R-8** — ce chapitre porte la **première occurrence du sigle ACP dans l'ouvrage** (§1.2), y compris une quatrième branche non couverte par R-8 (composante ACP d'AGNTCY) |
 | Volumétrie cible | ~2800 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : En dix-sept mois, la couche protocolaire agentique s'est consolidée sous gouvernance neutre (Linux Foundation), condition de sa crédibilité en entreprise réglementée.
+> **Thèse ([TOC.md](../../prd/TOC.md))** : En dix-sept mois, la couche protocolaire agentique s'est consolidée sous gouvernance neutre (Linux Foundation), condition de sa crédibilité en entreprise réglementée.
 
 ---
 

@@ -6,7 +6,7 @@
 | Date | 18 juillet 2026 |
 | Statut | **Rédaction terminée, PDF publiés.** Socle documentaire arrêté à **juin 2026** ; double passe de vérification adverse close le **24 juin 2026** ; passe de finalisation en **juillet 2026**. Le travail courant est la maintenance : corrections, vérification adverse des citations, régénération des PDF. |
 | Filiation | Premier panneau du triptyque : Vol. I (**théorie mondiale**, gel juin 2026) → Vol. II *L'autonomie encadrée* (cas canadien réglementé) → Vol. III *L'entreprise agentique*. Les volumes aval citent le Vol. I sous **deux numérotations distinctes** : les renvois §7.x résolvent contre `Monographie.md` (numérotation par chapitre), les renvois §10, §11.5 et tableau 15 contre `Synthese Monographie.md` (numérotation §3-§12) — nommer le fichier à chaque renvoi. |
-| Autorité | Ce fichier **décrit** ; il ne prescrit pas. Les conventions de rédaction qui font autorité sur ce volume sont au [`CLAUDE.md`](../CLAUDE.md) du dossier ; en cas d'écart entre les deux, c'est le `CLAUDE.md` qui tranche et ce fichier qui est à corriger. |
+| Autorité | Ce fichier **décrit** ; il ne prescrit pas. Les conventions de rédaction qui faisaient autorité sur ce volume étaient au `CLAUDE.md` du dossier, et c'est lui qui tranchait en cas d'écart. ⚠ **Ce fichier a été retiré du dépôt le 31 juillet 2026** (commit `41666d0`) : *le volume n'a plus de document de conventions opposable, et ce tableau ne délègue donc plus à rien.* |
 
 ---
 
@@ -179,11 +179,15 @@ Sections : §0 Résumé exécutif ; §0.1 Blueprint consolidé — vue d'ouvertu
 
 ---
 
-## Livrables associés (hors `Monographie.md`)
+## Livrables associés (hors `Monographie.md`) — **les deux ont été retirés du dépôt**
 
-| Livrable | Ce qu'il est | Numérotation |
+⚠ **Ce tableau n'a plus d'objet au dépôt, et il est conservé pour ce qu'il documente.** Les deux
+livrables qu'il décrivait ont été retirés, et leurs citations dans les autres volumes restent exactes
+sans être vérifiables ailleurs qu'à l'historique git.
+
+| Livrable | Ce qu'il était | Retrait |
 |---|---|---|
-| [`Synthese Monographie.md`](../Synthese%20Monographie.md) → **69 p.** | Article de synthèse **autonome** — revue condensée au format académique, 12 sections + bibliographie propre, même pipeline FESP, sans diagramme | **§3-§12 — distincte de celle de la monographie.** C'est cette numérotation que citent les Vol. II et III (tableau 15 §11.6, §11.5, §10) |
-| [`Borealis-Go/`](../Borealis-Go/) | Démonstrateur **MCP + A2A** (pré-qualification de crédit) matérialisant le PRD : 9 binaires, 12 ADR. Audit 27/27, gate vert à 96,2 % | Régi par son propre [`CLAUDE.md`](../Borealis-Go/CLAUDE.md), qui **prime dans son répertoire** |
+| `Synthese Monographie.md` → **69 p.** | Article de synthèse **autonome** — revue condensée au format académique, 12 sections + bibliographie propre, même pipeline FESP, sans diagramme. Numérotation **§3-§12, distincte de celle de la monographie** : c'est celle que citent les Vol. II et III (tableau 15 §11.6, §11.5, §10) | **22 juillet 2026**, commit `fd8f1be` — retiré au Vol. I comme au Vol. II |
+| `Borealis-Go/` | Démonstrateur **MCP + A2A** (pré-qualification de crédit) matérialisant le PRD : 9 binaires, 12 ADR. Audit 27/27, gate vert à 96,2 %. Régi par son propre `CLAUDE.md`, qui primait dans son répertoire | **25 juillet 2026**, commit `60f57f6` — la réf. [217] de la veille ne se vérifie plus qu'à l'historique git |
 
-⚠ **La veille technologique n'est pas un livrable de ce volume.** Déplacée à la racine du dépôt (`Veille Technologique.md`, éd. du 18 juillet 2026), elle couvre les trois volumes et cite le Vol. I en §4.12 (démonstrateur `Borealis-Go`, réf. [217]). Ses conventions et sa chaîne de rendu relèvent du [`CLAUDE.md` du dépôt](../../../CLAUDE.md).
+⚠ **La veille technologique n'est pas un livrable de ce volume.** Déplacée à la racine du dépôt (`Veille Technologique.md`, éd. du 18 juillet 2026), elle couvre les trois volumes et cite le Vol. I en §4.12 (démonstrateur `Borealis-Go`, réf. [217]). ⚠ *Ses conventions et sa chaîne de rendu relevaient d'un `CLAUDE.md` de dépôt qui a été retiré le 31 juillet 2026 (commit `41666d0`) : ce volume n'a plus de document de conventions au dépôt.*

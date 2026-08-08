@@ -10,7 +10,9 @@ fondée, qui se déclare (décision 8 du TOC) et **se remonte, jamais se corrige
 contre le **TOC v0.25** et le **PRD v0.9** ; leurs **treize thèses sont citées depuis le TOC v0.28**,
 version courante à la date de la **passe de correction du 28 juillet 2026**, qui les a **toutes
 re-collationnées mot à mot** — *aucune des passes v0.26 à v0.28 n'a touché une entrée du Livre II, et
-les dates de rédaction restent écrites telles quelles dans les pièces.* Le PRD est à **v0.12**.
+les dates de rédaction restent écrites telles quelles dans les pièces.* Le PRD était à **v0.12** à
+cette date ; ⚠ **au 8 août 2026, les versions courantes relevées en tête des deux fichiers sont
+TOC v0.32 et PRD v0.16**.
 *Une pièce qui cite une version de plan déclare quelle version elle a réellement lue ; elle ne se
 redate pas pour suivre le numéro courant.*
 
@@ -29,7 +31,7 @@ RÉGIME par dérogation nommée**, leur résidu entier — *la dérogation tombe
 rouvre tout ce qu'elle couvrait*. *(3)* ⚠ **CA-IV-11 et CA-IV-13 sont dérogés, non satisfaits** : il n'y
 a toujours pas de relecteur distinct du rédacteur, et **aucun énoncé n'est central** au sens de CA-IV-01.
 *Ne jamais écrire « conforme », « publiable » ni « terminé » — écrire « arrêté », et renvoyer au PRD §14.*
-Les pièces sont composées dans [`compendium.pdf`](../compendium.pdf) (**810 p.**) : *composer n'est pas
+Les pièces sont composées dans [`Compendium.pdf`](../Compendium.pdf) (**1 114 p.**) : *composer n'est pas
 publier.*
 
 ## ⚠ État : le Livre est rédigé, arbitré, et toujours non publiable
@@ -60,6 +62,15 @@ position. *L'arbitrage n'efface aucune des trois infractions ; il en solde les c
 | **Socle consolidé** | ⚠ **zéro entrée** — **G-3 n'est pas entamée** |
 | **Énoncés centraux au sens de CA-IV-01** | ⚠ **aucun**, dans aucune des dix pièces |
 | **Statut des pièces** | **brouillon non publiable** — inchangé |
+
+⚠ **Ce tableau est un constat daté et deux de ses lignes ont été DÉPASSÉES depuis — le rappel est du
+8 août 2026, il ne réécrit rien.** ☑ **La porte G-3 est franchie le 28 juillet 2026** et le socle
+consolidé ne compte plus zéro entrée mais **159**, `S-001`…`S-159`
+([`PRD/socle-consolide.md`](../PRD/socle-consolide.md) ; `python PRD/check-compendium.py` → *P1-P8,
+sortie 0*). ☑ **La table `SIEGES` porte 26 sièges sur 50 pièces** (`python PRD/check-sieges.py`).
+⚠ **Rien d'autre n'a bougé** : *aucun énoncé n'est central au sens de CA-IV-01, CA-IV-11 et CA-IV-13
+demeurent non satisfaisables, et les pièces restent un brouillon arrêté, non publiable* — **une porte
+franchie n'est pas un ouvrage recevable.**
 
 *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune question n'attend
 plus de réponse qui ne soit déjà tranchée.* ⚠ **Et une condition de publication n'est satisfaisable
@@ -154,9 +165,9 @@ re-mesurables ni dans un sens ni dans l'autre.*
 **fusions v0.20** (décision 11 du TOC). *Les deux entrées y sont conservées intégralement, avec leurs
 deux thèses ; la rédaction ne les fond pas en une troisième.*
 
-## Six sièges marqués ici pour toute la somme — quatre versés, deux en attente
+## Six sièges marqués ici pour toute la somme — les six versés
 
-| Siège | Pièce | Versé à l'appareil | Ce qu'il interdit de refaire ailleurs |
+| Siège | Pièce | Versé à l'appareil, **au lancement du 28 juillet 2026** | Ce qu'il interdit de refaire ailleurs |
 |---|---|---|---|
 | **Le KYA** (connaissance de l'agent) | **ch. 18 § 18.1** | ☑ | son statut de terme, ses neuf chantiers, son fait négatif établi de degré 2 |
 | **La triade létale** (modèle de menace) | **ch. 19 § 19.2** | ☑ | l'énoncé des trois sommets ; le ch. 11 § 11.1.2 n'en traite que l'**amplification** |
@@ -165,7 +176,7 @@ deux thèses ; la rédaction ne les fond pas en une troisième.*
 | **Le statut PROJETÉ de la normalisation du passeport** | **ch. 16 § 16.4** | ☐ | l'agenda de normalisation, repris **une seule fois** et **à son régime [C]** |
 | **La restriction du garde-fou R-08** | **ch. 19 § 19.6** | ☐ | la formulation de l'absence — *l'usurpation du justificatif propre d'un agent, et cela seul* |
 
-: Les six sièges marqués au Livre II, au 28 juillet 2026. ⚠ **Le cardinal était écrit « quatre » ici jusqu'à cette date** : le Livre porte **six marqueurs formels** « SIÈGE … POUR TOUTE LA SOMME », re-dénombrés par balayage exhaustif des dix pièces, et [`PRD/check-sieges.py`](../PRD/check-sieges.py) n'en contrôle que quatre.
+: Les six sièges marqués au Livre II, au 28 juillet 2026. ⚠ **Le cardinal était écrit « quatre » ici jusqu'à cette date** : le Livre porte **six marqueurs formels** « SIÈGE … POUR TOUTE LA SOMME », re-dénombrés par balayage exhaustif des dix pièces, et [`PRD/check-sieges.py`](../PRD/check-sieges.py) n'en contrôlait alors que quatre. ☑ **État courant relevé sur le script le 8 août 2026 : la table `SIEGES` porte les SIX, ch. 16 § 16.4 et ch. 19 § 19.6 compris**, sur un total de **26 sièges** — la colonne ci-dessus reste celle du lancement, *un constat daté s'enregistre et ne se réécrit pas.*
 
 ⚠ **Les deux derniers n'étaient pas versés au lancement de cette passe, et cette passe ne les verse
 pas.** *Un siège se pose en trois gestes — l'entrée à la table `SIEGES`, le marqueur à la pièce, le
@@ -268,7 +279,7 @@ la pièce** qui l'avait ouverte.
 
 ## ⚠ La passe de correction du 28 juillet 2026 — ce qui a été corrigé, ce qui a été remonté
 
-Sur instruction d'auteur, en réponse à l'[audit du 28 juillet 2026](../audit.md). ⚠ **Cette passe
+Sur instruction d'auteur, en réponse à l'audit du 28 juillet 2026. ⚠ **Cette passe
 corrige ; elle ne réédite pas, et elle ne franchit aucune porte** : le socle consolidé compte toujours
 **zéro entrée**, **G-3 n'est pas entamée**, **CA-IV-11 et CA-IV-13 restent insatisfaites**, et les dix
 pièces demeurent un **brouillon non publiable**. *Corriger une citation n'est pas la vérifier ; aligner
@@ -393,9 +404,10 @@ maillon masquerait son échec. *La faute a déjà été commise sur le ch. 6 du 
 
 ## Avant d'ajouter ou de reprendre une pièce ici
 
-**Le [skill de projet `chapitre-compendium`](../../.claude/skills/chapitre-compendium/SKILL.md) porte
-la procédure complète.** Ce qui suit en est le rappel minimal, avec **les deux points que cette passe
-a payés**.
+**Le skill de projet `chapitre-compendium` portait
+la procédure complète.** ⚠ **Il n'est plus au dépôt depuis le 31 juillet 2026** (commit `41666d0`), non
+plus que ses scripts : les deux invocations ci-dessus ne résolvent donc plus. Ce qui suit est le seul
+rappel qui subsiste, avec **les deux points que cette passe a payés**.
 
 1. Lire l'entrée du chapitre au
    [`TOC.md`](../PRD/TOC.md) : thèse, sections, ligne Fusion, table détaillée, table de couverture.

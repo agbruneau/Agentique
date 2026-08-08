@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | **CA-6** (honnêteté des lacunes) — critère central du chapitre ; **R-8 branche (d)** : la composante ACP d'AGNTCY, quatrième branche, portée ici en encadré (lacune §10.7) ; R-4 et réserve F-29, R-5, R-6 par renvoi ; §8.2 (attribution à chaque occurrence) ; **périmètre** : la lacune §10.5 appartient au ch. 16 — reprise ici par renvoi, sans duplication |
 | Volumétrie cible | ~2300 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : Ce que l'on ne sait pas encore, dit honnêtement — lacunes du socle, questions ouvertes, agenda de recherche.
+> **Thèse ([TOC.md](../../prd/TOC.md))** : Ce que l'on ne sait pas encore, dit honnêtement — lacunes du socle, questions ouvertes, agenda de recherche.
 
 ---
 
@@ -113,7 +113,7 @@ C'est le seul engagement qu'une monographie datée puisse honnêtement tenir. El
 
 [^9]: PRD §10.6 et Annexe B.5. Garde-fou **R-6** (PRD §8.1 — position au Gartner MQ iPaaS non vérifiée ; ne pas confondre avec le Forrester Wave iPaaS Q3 2025 et le Gartner MQ **API Management** 2025, où IBM est Leader selon **F-38**). Échec d'élévation documenté de la solution FTM/ISO 20022 (passe du 16 juillet 2026, `verification/revalidation-2026-07-16.md`, P0.2 ligne 4 : lien confirmé par un Redbook de 2016, aucune source non-Redbook actuelle extractible, ibm.com/docs en 403). La clôture de l'acquisition Confluent, lacune jusqu'en P0, est **résolue** — 17 mars 2026, **F-41**.
 
-[^10]: PRD §10.5 — lacune portée par le ch. 16, chapitre explicitement prospectif, où l'encadré « état de la connaissance vérifiable » est posé et la passe de recherche documentée. Reprise ici « par simple renvoi, sans duplication », conformément à PRD §10.5 et à [TOC.md](../../TOC.md) (contrôle de couverture).
+[^10]: PRD §10.5 — lacune portée par le ch. 16, chapitre explicitement prospectif, où l'encadré « état de la connaissance vérifiable » est posé et la passe de recherche documentée. Reprise ici « par simple renvoi, sans duplication », conformément à PRD §10.5 et à [TOC.md](../../prd/TOC.md) (contrôle de couverture).
 
 [^11]: PRD §10.7 (lacune ouverte le 16 juillet 2026, à la rédaction du ch. 1) ; gabarit d'encadré du **cas 2** de PRDPlan §4.4 (« lacune non instruite ») — aucune passe de recherche n'a été conduite sur ce point, et le prétendre serait fabriquer une passe qui n'a pas eu lieu. Périmètre des trois passes : PRD Annexe A ; périmètre de la revalidation du 16 juillet 2026 : `verification/revalidation-2026-07-16.md`, P0.1 (faits chauds §8.3).
 

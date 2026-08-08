@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | §8.2.3 (métriques d'éditeurs de plateformes — attribution à chaque occurrence) ; réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») ; §8.4 (neutralité fournisseur — Confluent/IBM par renvoi au ch. 22) ; lacune §10.3 (réduite en P0 par les élévations de CrewAI et de LangGraph Platform ; ne subsiste que Temporal, hors périmètre de la passe — non retenté) |
 | Volumétrie cible | ~3200 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : L'offre s'est industrialisée en 2025-2026 — successions assumées (Agent Framework), plateformes GA (LangGraph), orchestration événementielle (Confluent/Kafka) — avec un support MCP **répandu et inégalement établi** et un support A2A désormais attesté de première main, mais de périmètre inégal.
+> **Thèse ([TOC.md](../../prd/TOC.md))** : L'offre s'est industrialisée en 2025-2026 — successions assumées (Agent Framework), plateformes GA (LangGraph), orchestration événementielle (Confluent/Kafka) — avec un support MCP **répandu et inégalement établi** et un support A2A désormais attesté de première main, mais de périmètre inégal.
 
 ---
 

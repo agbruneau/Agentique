@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | **R-5** (chapitre porteur principal — aucun standard technique désigné, FDX = anticipation d'industrie) ; §8.3 (sensibilité temporelle : texte réglementaire **prépublié**, susceptible de changer ; arrêté de désignation à venir) ; lacune **§10.1** (encadré, §14.4) |
 | Volumétrie cible | ~3000 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : Le cadre est légiféré (C-15), supervisé par la Banque du Canada, réglementairement en cours — et son standard technique n'est **pas** désigné (fait négatif vérifié).
+> **Thèse ([TOC.md](../../prd/TOC.md))** : Le cadre est légiféré (C-15), supervisé par la Banque du Canada, réglementairement en cours — et son standard technique n'est **pas** désigné (fait négatif vérifié).
 
 ---
 
@@ -110,7 +110,7 @@ Le cadre bancaire canadien offre à l'architecte un objet rare : une obligation 
 
 [^8]: PRD §8.1, garde-fou **R-5** : « FDX est le standard technique retenu pour le cadre bancaire canadien » est une affirmation **interdite** dans l'ouvrage (CA-2) — aucun standard n'est nommé dans les textes officiels (F-35) ; FDX est une anticipation d'industrie ; la désignation par arrêté ministériel est à venir. La formulation du fait négatif est **imposée par PRDPlan §4.4** (« fait négatif vérifié — standard technique ») et reprise mot pour mot en §14.4. Substitut terminologique imposé : glossaire §D.7 (`monographie/90-annexes/annexe-d-glossaire.md`), « organisme de normalisation à désigner par arrêté ministériel ».
 
-[^9]: Encadré au format imposé par PRDPlan §4.4 (« encadré de lacune »), clause de clôture reprise mot pour mot. Lacune **PRD §10.1** — « Désignation de l'organisme de normalisation technique du cadre bancaire » : arrêté ministériel à venir ; texte final du règlement attendu après le 26 août 2026 ; surveiller gazette.gc.ca et bankofcanada.ca. Recherche documentée : `verification/revalidation-2026-07-16.md`. Assignation de la lacune au présent chapitre : [TOC.md](../../TOC.md), « Contrôle de couverture », ligne 10.1 — « ch. 14 (R-5) », sans autre chapitre porteur inscrit.
+[^9]: Encadré au format imposé par PRDPlan §4.4 (« encadré de lacune »), clause de clôture reprise mot pour mot. Lacune **PRD §10.1** — « Désignation de l'organisme de normalisation technique du cadre bancaire » : arrêté ministériel à venir ; texte final du règlement attendu après le 26 août 2026 ; surveiller gazette.gc.ca et bankofcanada.ca. Recherche documentée : `verification/revalidation-2026-07-16.md`. Assignation de la lacune au présent chapitre : [TOC.md](../../prd/TOC.md), « Contrôle de couverture », ligne 10.1 — « ch. 14 (R-5) », sans autre chapitre porteur inscrit.
 
 <!-- Boucle qualité PRDPlan §4.2 — état :
      1. Rédaction ................ fait (gel : 16 juillet 2026 ; corps = 3 290 mots après relecture adversariale, cible 3 000,

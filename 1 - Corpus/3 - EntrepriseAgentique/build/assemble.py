@@ -17,6 +17,7 @@ Ce qu'il conserve : la thèse d'exergue, tout le corps doctrinal, les encadrés
 Le volume III ne porte aucune note de bas de page [^n] (constaté sur les 34 pièces le
 23 juillet 2026) : aucun préfixage n'est nécessaire, à la différence du volume II.
 """
+import posixpath
 import re
 import pathlib
 
@@ -101,7 +102,19 @@ def read_resume():
     return m.group(1).strip()
 
 
-def clean_piece(text):
+def rebase_links(text, base):
+    """Réécrit les cibles de liens relatives : elles sont résolues depuis le répertoire
+    de la pièce (`base`), la sortie assemblée vit à la racine du volume. Sans cela un
+    renvoi valide dans `monographie/08-partie-VIII/` pointe sur rien dans `Monographie.md`."""
+    def sub(m):
+        target = m.group(2)
+        if re.match(r"^(?:[a-z][a-z0-9+.-]*:|[#/])", target):
+            return m.group(0)
+        return m.group(1) + posixpath.normpath(posixpath.join(base, target)) + m.group(3)
+    return re.sub(r"(\]\()([^)\s]+)(\))", sub, text)
+
+
+def clean_piece(text, rel):
     lines = text.split("\n")
     h1 = lines[0].rstrip()
 
@@ -125,7 +138,7 @@ def clean_piece(text):
     if these:
         out += "\n" + these + "\n"
     out += "\n" + body.strip("\n") + "\n"
-    return out.strip("\n")
+    return rebase_links(out.strip("\n"), posixpath.dirname("monographie/" + rel))
 
 
 def preamble():
@@ -180,7 +193,7 @@ def main():
     for rel in PIECES:
         if rel in PART_TITLES:
             parts.append(f"# {PART_TITLES[rel]}\n")
-        parts.append(clean_piece((MONO / rel).read_text(encoding="utf-8")))
+        parts.append(clean_piece((MONO / rel).read_text(encoding="utf-8"), rel))
     OUT.write_text("\n\n".join(parts) + "\n", encoding="utf-8")
     print(f"écrit -> {OUT}  ({len(PIECES)} pièces, {OUT.stat().st_size // 1024} Ko)")
 

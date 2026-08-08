@@ -13,11 +13,13 @@ les encadrés « > État de la connaissance vérifiable », les tableaux, les no
 Les labels de notes sont préfixés par pièce (`[^c1-1]`, `[^ap-1]`, …) pour éviter les
 collisions à la concaténation.
 """
+import posixpath
 import re
 import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MONO = ROOT / "monographie"
+TOC = ROOT / "prd" / "TOC.md"
 OUT = ROOT / "Monographie.md"
 
 # (chemin relatif à monographie/, préfixe de notes unique) — ordre de lecture.
@@ -75,12 +77,24 @@ DATE = "Juillet 2026"
 
 def read_abstract():
     """L'abstract est le §Abstract de TOC.md (entre '## Abstract' et la ligne '(≈ … mots)')."""
-    toc = (ROOT / "TOC.md").read_text(encoding="utf-8")
+    toc = TOC.read_text(encoding="utf-8")
     m = re.search(r"## Abstract\n(.*?)\n\*\(≈", toc, re.S)
     return m.group(1).strip()
 
 
-def clean_piece(text, prefix):
+def rebase_links(text, base):
+    """Réécrit les cibles de liens relatives : elles sont résolues depuis le répertoire
+    de la pièce (`base`), la sortie assemblée vit à la racine du volume. Sans cela un
+    renvoi valide dans `monographie/03-partie-III/` pointe sur rien dans `Monographie.md`."""
+    def sub(m):
+        target = m.group(2)
+        if re.match(r"^(?:[a-z][a-z0-9+.-]*:|[#/])", target):
+            return m.group(0)
+        return m.group(1) + posixpath.normpath(posixpath.join(base, target)) + m.group(3)
+    return re.sub(r"(\]\()([^)\s]+)(\))", sub, text)
+
+
+def clean_piece(text, prefix, rel):
     lines = text.split("\n")
     h1 = lines[0].rstrip()
 
@@ -119,7 +133,7 @@ def clean_piece(text, prefix):
 
     # --- préfixer les labels de notes pour éviter les collisions inter-pièces ---
     out = re.sub(r"\[\^([0-9]+)\]", lambda m: f"[^{prefix}-{m.group(1)}]", out)
-    return out.strip("\n")
+    return rebase_links(out.strip("\n"), posixpath.dirname("monographie/" + rel))
 
 
 def preamble():
@@ -177,7 +191,7 @@ def main():
         if prefix in PART_TITLES:
             parts.append(f"# {PART_TITLES[prefix]}\n")
         text = (MONO / rel).read_text(encoding="utf-8")
-        parts.append(clean_piece(text, prefix))
+        parts.append(clean_piece(text, prefix, rel))
     OUT.write_text("\n\n".join(parts) + "\n", encoding="utf-8")
     print(f"écrit -> {OUT}  ({len(parts)} blocs, {OUT.stat().st_size // 1024} Ko)")
 

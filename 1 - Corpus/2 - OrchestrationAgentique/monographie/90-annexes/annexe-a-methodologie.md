@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | §8.2 (attribution) ; **réserve F-09** (« attendu », jamais « exigé » ; jamais « fiche de modèle ») ; **§8.4** (neutralité fournisseur — IBM cité ici comme cas d'instanciation documenté) ; PRDPlan §4.4 (« Absence de documentation ≠ fait négatif vérifié » ; marqueur « Lecture de l'auteur ») |
 | Volumétrie cible | ~1500 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : reprise lisible de la méthode de constitution du socle — passes de recherche, votes adversariaux, niveaux de preuve, incident et reprise —, pour que le lecteur puisse juger de ce que chaque affirmation de l'ouvrage porte, et de ce qu'elle ne porte pas.
+> **Thèse ([TOC.md](../../prd/TOC.md))** : reprise lisible de la méthode de constitution du socle — passes de recherche, votes adversariaux, niveaux de preuve, incident et reprise —, pour que le lecteur puisse juger de ce que chaque affirmation de l'ouvrage porte, et de ce qu'elle ne porte pas.
 
 ---
 

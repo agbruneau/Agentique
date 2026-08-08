@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | **R-5** (aucun standard technique désigné), **R-7** (aucune conformité E-23/B-13 revendiquée par IBM), R-6 et R-8 (par renvoi au ch. 22) ; §8.2.7 (études commandées) ; §8.4 (neutralité fournisseur) ; **CA-8** |
 | Volumétrie cible | ~3400 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : Chaque lien blueprint ↔ réglementation est documenté ou inférence — jamais confondu ; trois flux de bout en bout le démontrent.
+> **Thèse ([TOC.md](../../prd/TOC.md))** : Chaque lien blueprint ↔ réglementation est documenté ou inférence — jamais confondu ; trois flux de bout en bout le démontrent.
 
 ---
 

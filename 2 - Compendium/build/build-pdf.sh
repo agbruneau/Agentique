@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Compose « compendium.pdf » — les 50 pieces des cinq Livres, au gabarit Springer.
+# Compose « Compendium.pdf » — les 50 pieces des cinq Livres, au gabarit Springer.
 #   Usage : bash build/build-pdf.sh
 # Prerequis : Pandoc >= 3.1.7, Typst >= 0.12, python3, police Times New Roman.
 #
@@ -19,7 +19,10 @@ DIR="$(cd "$(dirname "$0")/.." && pwd)"
 # cote du rendu courant tant qu'elle n'est pas validee sur mesures.
 #   GABARIT=springer OUT_PDF=/tmp/essai.pdf bash build/build-pdf.sh
 GABARIT="${GABARIT:-compendium}"
-OUT="${OUT_PDF:-$DIR/compendium.pdf}"
+# Le nom canonique porte une majuscule, comme `Compendium.html` : l'index git a ete
+# normalise sur le disque le 8 aout 2026. Une minuscule ici produirait un SECOND
+# fichier sur un systeme sensible a la casse, au lieu de remplacer le rendu versionne.
+OUT="${OUT_PDF:-$DIR/Compendium.pdf}"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 

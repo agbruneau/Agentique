@@ -27,10 +27,10 @@ distincts** : juin 2026 (Vol. I) et 16-17 juillet 2026 (Vol. II) ; ses 34 pièce
 | Socle hérité | **33 entrées** — H-01 à H-16 (Vol. II, **niveau conservé**), H-17 à H-33 (Vol. I, **abaissées en [C]**) |
 | Lots d'instruction | **15 clos sur 15** — quatorze par instruction aboutie, **L-15 par échec documenté** (filiation livresque retirée, réversible) |
 | Garde-fous | **R-01 à R-14** *(deux chiffres — ceux du Vol. II sont R-1 à R-8, un chiffre : ce ne sont pas les mêmes objets)* |
-| Conformité | **CA-01 à CA-14** ⚠ **CA-12 (dualité d'usage) n'est tenue sur aucune pièce de la phase P4**, et 16 pièces sur 34 ne nomment aucun compte rendu CA-12 |
+| Conformité | **CA-01 à CA-14** ⚠ **CA-12 (dualité d'usage) n'est tenue sur aucune pièce de la phase P4** ; **16 pièces sur 34 n'en nommaient aucun compte rendu au relevé du 22 juillet 2026**, et **deux l'ont reçu depuis** par les correctifs de la relecture du 24 juillet ([`relecture-revision-2026-07-24.md`](verification/relecture-revision-2026-07-24.md) §1) — le terme procédural reste non clos |
 | Dates de gel | **21 juillet 2026** pour les 34 pièces — registre [`monographie/99-registre-gel.md`](monographie/99-registre-gel.md) |
 | Revalidation | **22 juillet 2026** ([`verification/revalidation-2026-07-22.md`](verification/revalidation-2026-07-22.md)) : six lignes INCHANGÉ, une INACCESSIBLE (AMF, HTTP 403). Couvre une publication **jusqu'au 21 août 2026** (CA-04) ; au-delà, elle se rejoue |
-| Lacunes | **22 documentées** dont **4 closes** — exposées plutôt que comblées |
+| Lacunes | **22 documentées** dont **3 closes** — le PRD §10 ne porte « INSTRUITE ET CLOSE » qu'aux entrées 1, 2 et 11 ; la 10 est « instruite, non arbitrée » et la 15 « instruite, **non close** ». Exposées plutôt que comblées |
 | Gouvernance | **PRD v1.3** · **TOC v0.8** · **PRDPlan v0.5**, sous [`prd/`](prd/) |
 
 ## La thèse
@@ -163,6 +163,13 @@ bash   build/build-pdf.sh Monographie.md    # → Monographie.pdf (427 p.)
 ⚠ **Le pipeline est la troisième copie indépendante du FESP** (Vol. I → Vol. II → ici) : **un correctif
 apporté à l'un ne se propage pas aux autres.** **Règle permanente :** régénérer et versionner le `.pdf`
 avec le `.md` — jamais la source seule.
+
+☑ **`assemble.py` rebase les liens relatifs des pièces depuis le 8 août 2026.** Une pièce de
+`monographie/08-partie-VIII/` renvoie à `../../verification/lot-L-14-observabilite.md` ; concaténée dans
+`Monographie.md`, à la racine du volume, cette cible ne résolvait plus. Le script réécrit chaque cible
+relative depuis le répertoire de la pièce — **19 renvois morts de moins dans `Monographie.md`**, aucune
+ligne de prose touchée. ⚠ **Le `.pdf` versionné précède ce correctif** : il porte encore les anciennes
+cibles, et se régénérera à la prochaine passe de rendu.
 
 **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, `python3` + `pypdf`, polices Liberation Sans et DejaVu
 Sans. Le script exporte lui-même `PYTHONUTF8=1` (nécessaire sous Windows).

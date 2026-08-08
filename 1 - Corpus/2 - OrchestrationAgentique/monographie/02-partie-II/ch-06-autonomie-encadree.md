@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | **R-1** — le manifeste cite l'ACP protocolaire (*Agent Communication Protocol*, IBM Research/BeeAI) parmi les protocoles d'interopérabilité ; **R-8** — sigle « ACP » jamais employé seul (désambiguïsation posée au ch. 1 §1.2, rappelée ici sans duplication) ; confiance F-36 « haute **pour l'attribution** » : le manifeste est cité comme position argumentée de ses auteurs, non comme fait établi |
 | Volumétrie cible | ~3200 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : L'autonomie n'est pas l'automatisation ; elle se gouverne par des frames normatifs et opérationnels et quatre capacités (encadrement, explicabilité, actionnabilité conversationnelle, auto-modification).
+> **Thèse ([TOC.md](../../prd/TOC.md))** : L'autonomie n'est pas l'automatisation ; elle se gouverne par des frames normatifs et opérationnels et quatre capacités (encadrement, explicabilité, actionnabilité conversationnelle, auto-modification).
 
 ---
 

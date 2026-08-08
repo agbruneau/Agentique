@@ -4,11 +4,11 @@
 |---|---|
 | Statut | Rédigé (premier jet fusionné, après relecture adversariale) |
 | Date de gel de l'information | 16 juillet 2026 |
-| Socle mobilisé (PRD §7) | **F-37** (entrée unique assignée par [TOC.md](../../TOC.md)) ; F-36, F-46, F-01 et F-02 en **renvoi seulement** — aucun contenu repris ici (ch. 2, ch. 6, ch. 13). Un terme du glossaire §D.2 tracé à **F-15** (« humain-dans-la-boucle ») est employé en §5.3 ; aucun contenu de F-15 n'est repris. Aucun énoncé de droit canadien : les renvois aux ch. 11 et 13 sont secs |
+| Socle mobilisé (PRD §7) | **F-37** (entrée unique assignée par [TOC.md](../../prd/TOC.md)) ; F-36, F-46, F-01 et F-02 en **renvoi seulement** — aucun contenu repris ici (ch. 2, ch. 6, ch. 13). Un terme du glossaire §D.2 tracé à **F-15** (« humain-dans-la-boucle ») est employé en §5.3 ; aucun contenu de F-15 n'est repris. Aucun énoncé de droit canadien : les renvois aux ch. 11 et 13 sont secs |
 | Garde-fous à surveiller (PRD §8) | **Réserves F-37** : préprint v1 non révisé par les pairs, menaces à la validité déclarées par ses propres auteurs — le cadre conceptuel est repris comme référence, les chiffres à titre d'illustration seulement (formulation imposée, PRDPlan §4.4). Réserve F-01 (motif « sécuris » à proximité de MCP) ; R-8 (motif « plan de contrôle » — non employé dans ce chapitre) |
 | Volumétrie cible | ~3200 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : Le choix d'architecture agentique est un choix de position sur un continuum d'encadrement, objectivable par cinq propriétés et sept critères.
+> **Thèse ([TOC.md](../../prd/TOC.md))** : Le choix d'architecture agentique est un choix de position sur un continuum d'encadrement, objectivable par cinq propriétés et sept critères.
 
 ---
 

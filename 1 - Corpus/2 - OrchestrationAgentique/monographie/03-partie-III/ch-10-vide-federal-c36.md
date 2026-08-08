@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | Glossaire §D.7 (« C-36, la loi canadienne sur l'IA » — terme proscrit) ; §8.2.4 (couverture agentique d'E-23, en renvoi) ; réserve F-25 (jamais « en attente ») ; R-7 : le motif « E-23 » ressort ici en contexte réglementaire pur, sans objet (PRDPlan §4.3) |
 | Volumétrie cible | ~2400 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : La mort de la LIAD laisse le Canada sans régulation fédérale spécifique de l'IA ; C-36 ne comble pas ce vide — c'est une loi de protection des renseignements personnels — et la couverture effective passe donc par les régulateurs sectoriels.
+> **Thèse ([TOC.md](../../prd/TOC.md))** : La mort de la LIAD laisse le Canada sans régulation fédérale spécifique de l'IA ; C-36 ne comble pas ce vide — c'est une loi de protection des renseignements personnels — et la couverture effective passe donc par les régulateurs sectoriels.
 
 ---
 

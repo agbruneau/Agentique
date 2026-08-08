@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | §8.2.4 (couverture agentique d'E-23 = inférence d'analystes, formulation verrouillée) ; §8.2.6 (la projection de ~70 % présentée comme projection de ses auteurs) ; motif R-7 filtré (contexte réglementaire pur — PRDPlan §4.3) |
 | Volumétrie cible | ~3000 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : E-23 couvre l'IA agentique implicitement, par sa définition de « modèle » — couverture par inférence d'analystes, à traiter comme acquise d'ici le 1er mai 2027.
+> **Thèse ([TOC.md](../../prd/TOC.md))** : E-23 couvre l'IA agentique implicitement, par sa définition de « modèle » — couverture par inférence d'analystes, à traiter comme acquise d'ici le 1er mai 2027.
 
 ---
 
@@ -30,7 +30,7 @@ Sur la genèse proprement dite, en revanche, il faut être franc sur ce que le s
 >
 > L'extraction du texte intégral et de sa lettre d'accompagnement, versée au socle le 16 juillet 2026, établit trois éléments d'antériorité, et trois seulement : un **projet de 2023** a existé ; il incluait les régimes de retraite fédéraux, **retirés du périmètre final** ; et le texte final répond à des **commentaires** qui demandaient de restreindre la définition de « modèle » (§9.2)[^1]. Un indice s'y ajoute : le rapport conjoint BSIF-ACFC du 24 septembre 2024 — examiné en §9.4 — renvoie **explicitement au cadre E-23**[^3]. Le socle ne porte rien de plus : ni le calendrier de la consultation, ni le contenu du projet de 2023, ni la nature des travaux dont il procède.
 >
-> Recherche menée le 16 juillet 2026 : l'extraction a porté sur le texte final et sa lettre, non sur les versions qui l'ont précédé — hors périmètre. En l'absence de source primaire sur celles-ci, la question reste ouverte ; aucune inférence n'est proposée ici. Le présent chapitre traite donc du **calendrier** d'E-23 bien plus que de sa genèse — un écart avec le titre que [TOC.md](../../TOC.md) donne à cette section, signalé à la gouvernance plutôt que comblé par du non-vérifié.
+> Recherche menée le 16 juillet 2026 : l'extraction a porté sur le texte final et sa lettre, non sur les versions qui l'ont précédé — hors périmètre. En l'absence de source primaire sur celles-ci, la question reste ouverte ; aucune inférence n'est proposée ici. Le présent chapitre traite donc du **calendrier** d'E-23 bien plus que de sa genèse — un écart avec le titre que [TOC.md](../../prd/TOC.md) donne à cette section, signalé à la gouvernance plutôt que comblé par du non-vérifié.
 
 Un mot, enfin, sur le périmètre d'assujettissement. **Lecture de l'auteur** : que le texte s'applique aux institutions financières *fédérales* signifie, par simple lecture de sa portée, qu'il ne s'applique pas aux institutions relevant d'une supervision provinciale — lesquelles ne sont pas pour autant sans obligations en matière d'IA, comme le chapitre 11 l'établit pour le Québec. Le socle documente une portée ; il ne documente pas les modalités selon lesquelles le BSIF entend l'appliquer, et la réserve de compatibilité qui accompagne les succursales étrangères[^1] n'est pas explicitée par les sources retenues ici. Une institution qui bâtirait un argumentaire sur cette réserve devrait remonter au texte lui-même.
 

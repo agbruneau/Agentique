@@ -22,7 +22,7 @@ tombe à la première diffusion et rouvre tout ce qu'elle couvrait*. *(3)* ⚠ *
 dérogés, non satisfaits** : il n'y a toujours pas de relecteur distinct du rédacteur, et **aucun énoncé
 n'est central** au sens de CA-IV-01. *Ne jamais écrire « conforme », « publiable » ni « terminé » —
 écrire « arrêté », et renvoyer au PRD §14.* Les pièces sont composées dans
-[`compendium.pdf`](../compendium.pdf) (**810 p.**) : *composer n'est pas publier.*
+[`Compendium.pdf`](../Compendium.pdf) (**1 114 p.**) : *composer n'est pas publier.*
 
 ## ⚠ État : le Livre est rédigé, arbitré, et toujours non publiable
 
@@ -48,6 +48,15 @@ du PRD §6**, qui plaçait son second mouvement après les Livres I et III.
 | **Énoncés centraux au sens de CA-IV-01** | ⚠ **aucun**, dans aucune des dix pièces |
 | **Sièges posés** | ⚠ **CINQ, et non trois** — *le décompte publié en était faux* : trois versés à l'appareil le 27 juillet 2026, **deux découverts par l'audit du 28** (voir plus bas) |
 | **Statut des pièces** | **brouillon non publiable** — inchangé |
+
+⚠ **Ce tableau est un constat daté et deux de ses lignes ont été DÉPASSÉES depuis — le rappel est du
+8 août 2026, il ne réécrit rien.** ☑ **La porte G-3 est franchie le 28 juillet 2026** et le socle
+consolidé ne compte plus zéro entrée mais **159**, `S-001`…`S-159`
+([`PRD/socle-consolide.md`](../PRD/socle-consolide.md) ; `python PRD/check-compendium.py` → *P1-P8,
+sortie 0*). ☑ **La table `SIEGES` porte 26 sièges sur 50 pièces** (`python PRD/check-sieges.py`).
+⚠ **Rien d'autre n'a bougé** : *aucun énoncé n'est central au sens de CA-IV-01, CA-IV-11 et CA-IV-13
+demeurent non satisfaisables, et les pièces restent un brouillon arrêté, non publiable* — **une porte
+franchie n'est pas un ouvrage recevable.**
 | **Passe de correction du 28 juillet 2026** | ⚠ **douze constats d'audit soldés dans les dix pièces**, dont **dix thèses re-citées par copie** et **les dix champs « Garde-fous balayés » re-mesurés** sous la décision 16 — *aucune porte franchie, aucun statut changé* |
 
 *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune question n'attend
@@ -192,8 +201,8 @@ assigné**. *Ne pas le lire au même régime de preuve que ses voisins.*
 | **Les cinq points de contrôle obligatoires** | **ch. 43 § 43.3** | ☑ versé le 27 juill. 2026 | la liste et sa dérivation des cinq zones de compensation ; les **ch. 37, 38, 39, 41 et 45** y renvoient |
 | **Le modèle de maturité et les trois échelles d'autonomie** | **ch. 43 § 43.5** | ☑ versé le 27 juill. 2026 | le croisement par palier et la **désambiguïsation des trois échelles homonymes du Vol. I** — ⚠ *le ch. 39 § 39.6 s'abstient explicitement d'en produire un autre* |
 | **L'organisation de la fabrique** | **ch. 45 § 45.6** | ☑ versé le 27 juill. 2026 | la répartition des rôles ; le **ch. 41 § 41.7** y renvoie **sans la reprendre**, *et c'est pourquoi sa table détaillée ne porte aucun marqueur de provenance* |
-| ⚠ **La collision « fabrique »** (décision 12c du TOC) | **ch. 43 § 43.1** | ☐ **dû** — *versé au même commit par la passe de gouvernance du 28 juill. 2026* | la désambiguïsation des quatre emplois du mot ; le **ch. 41 § 41.1** y renvoie |
-| ⚠ **La conformité traçable** | **ch. 44 § 44.6** | ☐ **dû** — *versé au même commit par la passe de gouvernance du 28 juill. 2026* | la chaîne *pilote → évaluation → exigence → réalisation → élément exécutable* et son critère d'auditabilité ; les **ch. 45 § 45.14** et **ch. 46 § 46.2.3** y renvoient |
+| ⚠ **La collision « fabrique »** (décision 12c du TOC) | **ch. 43 § 43.1** | ☑ **versé** — *par la passe de gouvernance du 28 juill. 2026 ; présence relevée sur le script le 8 août 2026* | la désambiguïsation des quatre emplois du mot ; le **ch. 41 § 41.1** y renvoie |
+| ⚠ **La conformité traçable** | **ch. 44 § 44.6** | ☑ **versé** — *par la passe de gouvernance du 28 juill. 2026 ; présence relevée sur le script le 8 août 2026* | la chaîne *pilote → évaluation → exigence → réalisation → élément exécutable* et son critère d'auditabilité ; les **ch. 45 § 45.14** et **ch. 46 § 46.2.3** y renvoient |
 
 : Les cinq sièges du Livre IV. ⚠ **Le décompte publié le 27 juillet 2026 — « trois » — était faux, et c'est l'audit du 28 qui l'a établi** (constat IV.1).
 
@@ -206,8 +215,9 @@ ou de la chaîne de conformité traçable ailleurs dans la somme passait tous le
 elle a **conservé les deux marqueurs mot pour mot**, dont la signature est prise telle qu'elle est
 écrite, **vérifié les renvois entrants annoncés** et **écrit celui qui manquait** (ch. 46 § 46.2.3).
 
-☑ **Les trois premiers sont contrôlés depuis la passe du 27 juillet 2026** ; ☐ **les deux autres le
-seront au commit du 28**. ⚠ **Et le contrôle a trouvé deux défauts réels au
+☑ **Les trois premiers sont contrôlés depuis la passe du 27 juillet 2026, les deux autres depuis le
+commit du 28** — *relevé sur [`PRD/check-sieges.py`](../PRD/check-sieges.py) le 8 août 2026 : les CINQ
+sièges de ce Livre sont à la table `SIEGES`, sur un total de 26.* ⚠ **Et le contrôle a trouvé deux défauts réels au
 premier passage sur ce Livre**, *avant même le versement des trois sièges alors comptés* : **(1)** le
 **ch. 41 portait la signature de forme de l'encadré à quatre branches du ch. 7 § 7.5** — *une table
 dont les rangées commençaient par « (a) » à « (d) », sur un tout autre objet* : **renumérotée F1-F4**,
@@ -303,7 +313,7 @@ les **ouvertures**, jamais les issues, et le seul lieu où elles vivaient était
 
 ## ⚠ La passe de correction du 28 juillet 2026 — douze constats d'audit soldés dans les pièces
 
-**Sur instruction d'auteur, en réponse à l'[audit du 28 juillet 2026](../audit.md), §7 et §3.** La
+**Sur instruction d'auteur, en réponse à l'audit du 28 juillet 2026, §7 et §3.** La
 passe **corrige, elle ne réédite pas** : aucune section n'est ajoutée, aucun fait n'est versé, aucune
 thèse n'est réécrite. ⚠ **Elle ne franchit aucune porte et ne change aucun statut** — *le socle
 consolidé compte toujours zéro entrée, G-3 n'est pas entamée, CA-IV-13 reste insatisfaite, et les dix
@@ -407,9 +417,10 @@ maillon masquerait son échec. *La faute a déjà été commise sur le ch. 6 du 
 
 ## Avant d'ajouter ou de reprendre une pièce ici
 
-**Le [skill de projet `chapitre-compendium`](../../.claude/skills/chapitre-compendium/SKILL.md) porte
-la procédure complète.** Ce qui suit en est le rappel minimal, avec **les quatre points que cette passe
-a payés**.
+**Le skill de projet `chapitre-compendium` portait
+la procédure complète.** ⚠ **Il n'est plus au dépôt depuis le 31 juillet 2026** (commit `41666d0`), non
+plus que ses scripts : les invocations ci-dessus ne résolvent donc plus. Ce qui suit est le seul rappel
+qui subsiste, avec **les quatre points que cette passe a payés**.
 
 1. Lire l'entrée du chapitre au
    [`TOC.md`](../PRD/TOC.md) : thèse, sections, ligne Fusion, table détaillée, table de couverture.

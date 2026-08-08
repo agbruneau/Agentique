@@ -2,8 +2,11 @@
 
 Répertoire de rédaction du **Livre I** du compendium *La somme agentique* (Vol. IV). Il ne porte
 aucune décision, aucun socle et aucun garde-fou propre : la spécification de contenu est le
-[`PRD/TOC.md`](../PRD/TOC.md) v0.25, la gouvernance de la rédaction le [`PRD/PRD.md`](../PRD/PRD.md)
-v0.9. ⚠ *Les renvois « TOC v0.24 » de ce fichier et de ses pièces sont des **constats datés** — ce que
+[`PRD/TOC.md`](../PRD/TOC.md), la gouvernance de la rédaction le [`PRD/PRD.md`](../PRD/PRD.md).
+⚠ **Versions courantes relevées en tête des deux fichiers le 8 août 2026 : TOC v0.32, PRD v0.16** ;
+*les onze pièces de ce dossier ont été rédigées et arbitrées contre le **TOC v0.25** et le **PRD
+v0.9**, et une étiquette de version ne se redate pas pour suivre le numéro courant.*
+⚠ *Les renvois « TOC v0.24 » de ce fichier et de ses pièces sont des **constats datés** — ce que
 la passe du Livre I a fait, à la version où elle l'a fait — et ne se corrigent pas.* ⚠ **Une exception,
 et une seule, depuis la passe de correction du 28 juillet 2026** : les **blocs de thèse des ch. 7, 10
 et 11** portent « citée depuis le TOC v0.28 », parce qu'ils **ont été re-cités à cette version** ; les
@@ -25,7 +28,7 @@ par dérogation nommée**, leur résidu entier — *la dérogation tombe à la p
 ce qu'elle couvrait*. *(3)* ⚠ **CA-IV-11 et CA-IV-13 sont dérogés, non satisfaits** : il n'y a toujours
 pas de relecteur distinct du rédacteur, et **aucun énoncé n'est central** au sens de CA-IV-01. *Ne jamais
 écrire « conforme », « publiable » ni « terminé » — écrire « arrêté », et renvoyer au PRD §14.* Les pièces
-sont composées dans [`compendium.pdf`](../compendium.pdf) (**810 p.**) : *composer n'est pas publier.*
+sont composées dans [`Compendium.pdf`](../Compendium.pdf) (**1 114 p.**) : *composer n'est pas publier.*
 
 ## ⚠ État : le Livre est rédigé, arbitré, et toujours non publiable
 
@@ -37,7 +40,7 @@ Le Livre I compte **onze chapitres** au plan (ch. 1-11), en deux mouvements — 
 (PRD v0.8, TOC v0.24) a **soldé les treize remontées** que la rédaction avait ouvertes et **franchi
 deux des sept portes**. Le tableau ci-dessous est l'état exact, et il se lit dans les deux sens :
 
-| | État |
+| | État au terme de la passe d'arbitrage du 27 juillet 2026 |
 |---|---|
 | **Remontées ouvertes** | **zéro** — R-IV-01 à R-IV-13 closes, chacune là où elle fait foi |
 | **Décisions d'auteur prises** | **trois sur huit** — D-1 (gel unique), D-6 (instance d'arbitrage), **D-7** (périmètre assumé) |
@@ -49,6 +52,15 @@ deux des sept portes**. Le tableau ci-dessous est l'état exact, et il se lit da
 *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune question n'attend
 plus de réponse qui ne soit déjà tranchée.* **Deux portes franchies sur sept ne font pas un volume
 recevable** — et la porte qui manque, G-3, est celle dont tout le reste dépend.
+
+⚠ **Ce tableau est un constat daté et deux de ses lignes ont été DÉPASSÉES depuis — le rappel est du
+8 août 2026, il ne réécrit rien.** ☑ **La porte G-3 est franchie le 28 juillet 2026** et le socle
+consolidé ne compte plus zéro entrée mais **159**, `S-001`…`S-159`
+([`PRD/socle-consolide.md`](../PRD/socle-consolide.md) ; `python PRD/check-compendium.py` → *P1-P8,
+sortie 0*). ☑ **La table `SIEGES` porte 26 sièges sur 50 pièces** (`python PRD/check-sieges.py`).
+⚠ **Rien d'autre n'a bougé** : *aucun énoncé n'est central au sens de CA-IV-01, CA-IV-11 et CA-IV-13
+demeurent non satisfaisables, et les pièces restent un brouillon arrêté, non publiable* — **une porte
+franchie n'est pas un ouvrage recevable.**
 
 ⚠ **Une obligation reste due, et elle n'est pas une porte : CA-IV-13, la relecture adversariale.** Le
 PRD exige que chaque pièce soit relue **par un relecteur distinct du rédacteur, chargé de réfuter**.
@@ -172,7 +184,7 @@ lacune requalifiée reste une lacune ; elle change de motif, pas d'état.*
 ⚠ **Une correction a été apportée à une pièce déjà poussée** : le ch. 7 (§ 7.4.2, § 7.6, en-tête,
 R-IV-08) écrivait « transfert de gouvernance annoncé, non vérifié au socle » alors que le Vol. I
 *Monographie* §3.13.1 — **l'une de ses propres sources de fusion** — portait le fait daté du 28 avril
-2026. La leçon est portée au [skill de rédaction](../../.claude/skills/chapitre-compendium/SKILL.md) :
+2026. La leçon est portée au skill de rédaction :
 *une pièce ne se rédige pas sur la seule source que le plan met en avant, mais sur l'intégralité de
 son périmètre de fusion.*
 
@@ -386,9 +398,11 @@ sa **portée de risque** étant au **ch. 10 § 10.5**.
 
 ## Avant d'ajouter une pièce ici
 
-**Le [skill de projet `chapitre-compendium`](../../.claude/skills/chapitre-compendium/SKILL.md) porte
+**Le skill de projet `chapitre-compendium` portait
 la procédure complète** — portes, lectures préalables, squelette, conventions de renvoi, gabarit HTML
-et vérificateur validé par mutation. Ce qui suit en est le rappel minimal.
+et vérificateur validé par mutation. ⚠ **Il n'est plus au dépôt depuis le 31 juillet 2026** (commit
+`41666d0`), non plus que ses scripts : les deux invocations ci-dessus ne résolvent donc plus, et ce qui
+suit est le seul rappel qui subsiste.
 
 1. Tenir le **plafond dur de cinquante chapitres**, le protocole d'insertion et les pièges propres
    au `TOC.md`.

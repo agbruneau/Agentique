@@ -27,7 +27,7 @@ sont complémentaires et forment un triptyque cohérent :
 | **Dossier** | [`1 - InteroperabiliteAgentique/`](1%20-%20InteroperabiliteAgentique/) | [`2 - OrchestrationAgentique/`](2%20-%20OrchestrationAgentique/) | [`3 - EntrepriseAgentique/`](3%20-%20EntrepriseAgentique/) |
 | **Thèse** | *Autonomie graduée sous contrôle de finalité* | *Autonomie encadrée (framed autonomy)* | *La confiance ne se décrète pas, elle se fabrique* |
 | **Portée** | Mondiale (UE, É.-U., R.-U., Asie) | Canada-Québec (cadre réglementaire) | Organisation et cycle de vie (NHI, AgentOps) |
-| **Volumétrie** | **569 p.** (7 chapitres + Annexe B, ≈ 263 600 mots) | **387 p.** (29 pièces, 92 059 mots) | **427 p.** (34 pièces, ≈ 160 900 mots) |
+| **Volumétrie** | **569 p.** (7 chapitres + Annexe B, **233 257 mots**) | **387 p.** (29 pièces, 92 059 mots) | **427 p.** (34 pièces, **160 890 mots**) |
 | **Méthode** | Formalisme d'ingénierie (ArchiMate 4, ADS) | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié + socle propre (98 entrées) |
 | **Gel** | Juin 2026 | 16–17 juillet 2026 | Hérite des deux gels + pièces propres |
 
@@ -113,13 +113,13 @@ puisse démontrer la teneur devant un tiers.
 
 | Partie | Titre & Contenu | Chapitres |
 |--------|-----------------|-----------|
-| **I** | **Les protocoles d'interopérabilité agentique** — Consolidation en 17 mois (MCP, A2A, AP2, AGNTCY) ; complémentarité et identité d'agent. | Ch. 1-4, 8 |
-| **II** | **La sécurité et la maîtrise des risques** — Taxonomie des risques, empoisonnement d'outils, injections d'invites. | Ch. 4-7 |
+| **I** | **Fondements : les protocoles d'interopérabilité agentique** — Consolidation en 17 mois (MCP, A2A, AP2, AGNTCY) ; complémentarité, identité d'agent, taxonomie des risques protocolaires. | Ch. 1-4 |
+| **II** | **L'orchestration multi-agents en entreprise** — Options d'orchestration OO1–OO4, autonomie encadrée (paradigme APM), frameworks, identité et registres d'agents. | Ch. 5-8 |
 | **III** | **Le cadre réglementaire canadien** — E-23 (BSIF), AMF, Loi 25, ACVM ; applicabilité implicite à l'IA agentique. | Ch. 9-13 |
 | **IV** | **L'interopérabilité financière canadienne** — Migration Lynx vers ISO 20022, RTR, interaction prospective avec AP2. | Ch. 14-16 |
-| **V** | **L'adoption par les institutions financières** — Études de cas : TD (hypothécaire en <3 min), Scotiabank (AIDox), CIBC, Manuvie. | Ch. 17-20 |
-| **VI** | **La frontière des connaissances** — Onze lacunes assumées et exposées. | Ch. 21 |
-| **VII** | **Le blueprint d'intégration d'entreprise** — 6 principes directeurs, instanciation sur la pile IBM (watsonx, App Connect, API Connect, Confluent). | Ch. 22-24 |
+| **V** | **L'adoption par les institutions financières canadiennes** — Études de cas sur dix institutions : TD (hypothécaire en <3 min), Scotiabank (AIDox), CIBC, Manuvie. | Ch. 17 |
+| **VI** | **Synthèse : l'architecture de référence** — Matrice protocoles × réglementation, architecture par couches, instrumentation, puis la frontière de la connaissance vérifiable (onze lacunes assumées et exposées). | Ch. 18-21 |
+| **VII** | **Le blueprint d'intégration d'entreprise** — 6 principes directeurs, vue en couches C1–C8, instanciation sur la pile IBM (watsonx, App Connect, API Connect, Confluent). | Ch. 22-24 |
 
 > [!IMPORTANT]
 > **Contribution la plus citable — un résultat négatif**
@@ -316,10 +316,19 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 | | Vol. I | Vol. II | Vol. III | **Total du corpus** |
 |---|---|---|---|---|
 | **Pages** | 569 | 387 | 427 | **1 383 p.** |
-| **Mots** | ≈ 263 600 | 92 059 | ≈ 160 900 | **≈ 516 500 (> 500 000)** |
-| **Pièces** | 7 chap. + Annexe B | 29 (24 chap. + annexes) | 34 (28 chap. + annexes) | **70 pièces rédigées** |
+| **Mots** | 233 257 | 92 059 | 160 890 | **486 206** |
+| **Pièces** | 8 (7 chap. + Annexe B) | 29 (24 chap. + annexes) | 34 (28 chap. + annexes) | **71 pièces rédigées** |
 | **Socle factuel** | Vérification adverse | 46 entrées (F-01–F-48) | 98 entrées (F-01–F-98) + 33 héritées | **144 entrées codifiées (46 + 98)** |
-| **Diagrammes** | 28 Mermaid | — | — | **28+ diagrammes** |
+| **Diagrammes** | 28 Mermaid | 0 | 0 | **28 diagrammes** |
+
+⚠ **La ligne « Mots » additionne trois commandes différentes, et il faut le savoir avant de citer son
+total.** Vol. I : `wc -w` sur `Monographie.md` — le volume n'a pas fixé de commande de référence, et
+c'est ce chiffre qui sert de point d'ancrage au dépôt. Vol. II : commande de référence de
+[PRDPlan §4.2](2%20-%20OrchestrationAgentique/prd/PRDPlan.md) (corps borné, jetons alphanumériques,
+locale C). Vol. III : commande de référence de
+[PRDPlan §1.5](3%20-%20EntrepriseAgentique/prd/PRDPlan.md). *Mesuré par une commande **unique** sur les
+trois corpus — `bash "../2 - Compendium/PRD/decompte.sh" --verifier` —, l'agrégat vaut **479 390** mots :
+il n'est pas comparable au total ci-dessus, et aucun des deux n'est faux.*
 
 ---
 
@@ -338,7 +347,7 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 ```
 1 - Corpus/
 ├── README.md                                ← ce fichier (synthèse consolidée)
-├── 1 - InteroperabiliteAgentique/           Vol. I (569 p., ≈ 263 600 mots)
+├── 1 - InteroperabiliteAgentique/           Vol. I (569 p., 233 257 mots)
 │   ├── Chapitres/                             7 chapitres + 7 bibliographies + Annexe B (ADS)
 │   ├── Monographie.md / .pdf                  assemblage
 │   └── build/                                 pipeline FESP (Mermaid → Pandoc → Typst)
@@ -348,7 +357,7 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 │   ├── verification/                          revalidations et grille de conformité
 │   ├── build/                                 assemblage + pipeline Pandoc → Typst
 │   └── Monographie.md / .pdf                  assemblage
-└── 3 - EntrepriseAgentique/                 Vol. III (427 p., ≈ 160 900 mots)
+└── 3 - EntrepriseAgentique/                 Vol. III (427 p., 160 890 mots)
     ├── README.md                              présentation du volume (déposée le 29 juill. 2026)
     ├── monographie/                           34 pièces rédigées + registre des gels
     ├── prd/                                   PRD v1.3, TOC v0.8, PRDPlan v0.5 — gouvernance
@@ -361,17 +370,36 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 
 ## Décomptes du dépôt final
 
-☑ **Toute la volumétrie de ce document a été re-mesurée sur pièce le 29 juillet 2026**, à la passe de
-dépôt final, et elle est **inchangée** : les trois paginations (`pypdf`), les 29 et 34 pièces des
-Vol. II et III, les 28 diagrammes du Vol. I (motif ancré) et le total du corpus — **1 383 p. /
-≈ 516 500 mots / 70 pièces / 144 entrées de socle codifiées**. ⚠ **Une re-mesure qui confirme ne change
-aucun état** : le Vol. III demeure **rédigé et non publiable**.
+☑ **Toute la volumétrie de ce document a été re-mesurée sur pièce le 8 août 2026**, et **trois chiffres
+qu'elle publiait étaient faux** — la passe du 29 juillet 2026 les avait déclarés « inchangés » sans les
+reprendre à la source. Ce qui tient : **1 383 p.** (569 + 387 + 427, `/Count` de l'objet `/Type /Pages`
+de chaque PDF), les **29 et 34 pièces** des Vol. II et III (`find monographie -name '*.md'`, index de
+lecture et registre de gel exclus — *31 − 2 au Vol. II, 35 − 1 au Vol. III, dont le `monographie/` ne
+porte pas d'index de lecture*), les **28 diagrammes** du Vol. I (motif ancré `grep -c '^```mermaid'`), les
+**144 entrées de socle codifiées** (46 + 98, lignes d'entrée du PRD de chaque volume). Ce qui a été
+corrigé : la volumétrie du Vol. I — **233 257 mots**, non « ≈ 263 600 », chiffre qu'aucune commande du
+dépôt ne produit ; le **total en mots** qui en dérivait, ramené de « ≈ 516 500 » à **486 206**, ce qui
+retire au corpus le seuil des 500 000 mots qu'il s'attribuait ; et le **cardinal des pièces**, porté de
+70 à **71**, la ligne comptant l'Annexe B du Vol. I sans l'additionner. ⚠ **Une re-mesure, qu'elle
+confirme ou qu'elle corrige, ne change aucun état** : le Vol. III demeure **rédigé et non publiable**.
+
+⚠ **La pagination n'a pas été relevée avec `pypdf`**, que les passes antérieures citaient : il n'est pas
+installé sur le poste de cette passe. Elle a été lue dans le `/Count` de l'unique objet `/Type /Pages`
+de chaque PDF, qui est l'autorité de la pagination au format. ⚠ *La première rédaction de cette note
+mettait en garde contre le motif `grep -c '/Type /Page'` en lui prêtant un décompte doublé (1 138, 774,
+854) : la mise en garde était fausse en trois points, et un critique l'a reprise en réexécutant la
+commande.* Avec l'espace, le motif rend **0** — Typst écrit `/Type/Page` sans espace. Le doublement
+observé venait d'une **classe d'exclusion trop étroite**, qui écartait `/Type/Pages` mais laissait
+passer `/Type/PageLabel`, dont il existe **un objet par page**. Et un motif correctement ancré rend la
+pagination juste du premier coup : `grep -aoP '/Type/Page(?![sL])' | wc -l` donne **569, 387 et 427**.
 
 ⚠ **Ce document ne couvre pas le Vol. IV**, et c'est délibéré : la synthèse porte sur le **triptyque**.
-Le compendium — *La somme agentique*, **arrêté en révision finale le 29 juillet 2026, 810 p., non
-publiable** — se situe au [README du dépôt](../README.md) et vit sous
+Le compendium — *La somme agentique*, **arrêté en révision finale le 29 juillet 2026, non publiable** —
+se situe au [README du dépôt](../README.md) et vit sous
 [`2 - Compendium/`](../2%20-%20Compendium/). **Il ne se substitue pas à ces trois volumes tant qu'il
-n'est pas recevable, et il ne l'est pas** : les trois volumes sources font foi.
+n'est pas recevable, et il ne l'est pas** : les trois volumes sources font foi. ⚠ **Sa pagination
+n'est plus celle qu'annonçait le 29 juillet** : `Compendium.pdf` mesure **1 114 p.** au dépôt courant,
+non 810 — chiffre relevé ici pour mémoire, le volume relevant de sa propre charge éditoriale.
 
 ---
 

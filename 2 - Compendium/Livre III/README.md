@@ -36,7 +36,7 @@ leur résidu entier — *la dérogation tombe à la première diffusion et rouvr
 *(3)* ⚠ **CA-IV-11 et CA-IV-13 sont dérogés, non satisfaits** : il n'y a toujours pas de relecteur
 distinct du rédacteur, et **aucun énoncé n'est central** au sens de CA-IV-01. *Ne jamais écrire
 « conforme », « publiable » ni « terminé » — écrire « arrêté », et renvoyer au PRD §14.* Les pièces sont
-composées dans [`compendium.pdf`](../compendium.pdf) (**810 p.**) : *composer n'est pas publier.*
+composées dans [`Compendium.pdf`](../Compendium.pdf) (**1 114 p.**) : *composer n'est pas publier.*
 
 ## ⚠ État : le Livre est rédigé, arbitré, et toujours non publiable
 
@@ -56,6 +56,15 @@ publiable**.
 | **Socle consolidé** | ⚠ **zéro entrée** — **G-3 n'est pas entamée** |
 | **Énoncés centraux au sens de CA-IV-01** | ⚠ **aucun**, dans aucune des quinze pièces |
 | **Statut des pièces** | **brouillon non publiable** — inchangé |
+
+⚠ **Ce tableau est un constat daté et deux de ses lignes ont été DÉPASSÉES depuis — le rappel est du
+8 août 2026, il ne réécrit rien.** ☑ **La porte G-3 est franchie le 28 juillet 2026** et le socle
+consolidé ne compte plus zéro entrée mais **159**, `S-001`…`S-159`
+([`PRD/socle-consolide.md`](../PRD/socle-consolide.md) ; `python PRD/check-compendium.py` → *P1-P8,
+sortie 0*). ☑ **La table `SIEGES` porte 26 sièges sur 50 pièces** (`python PRD/check-sieges.py`).
+⚠ **Rien d'autre n'a bougé** : *aucun énoncé n'est central au sens de CA-IV-01, CA-IV-11 et CA-IV-13
+demeurent non satisfaisables, et les pièces restent un brouillon arrêté, non publiable* — **une porte
+franchie n'est pas un ouvrage recevable.**
 
 ⚠ **Deux infractions de ce Livre sont d'un autre ordre que celles du Livre I et du Livre II, et il faut
 les lire exactement.**
@@ -87,7 +96,7 @@ mécaniques, conduits par la même main que la rédaction.**
 
 ## ⚠ Passe de correction du 28 juillet 2026 — ce qui a été corrigé, et ce qui a été remonté
 
-**Sur instruction d'auteur, en réponse à l'[`audit.md`](../audit.md) du 28 juillet 2026** (volets A à E
+**Sur instruction d'auteur, en réponse à l'`audit.md` du 28 juillet 2026** (volets A à E
 du §6, plus les transversaux T-1 à T-4), les **quinze `.md` et leurs quinze `.html`** ont été repris.
 ⚠ **Cette passe corrige ; elle ne réédite pas** : *aucune section n'a été ajoutée ni retirée, aucune
 thèse n'a été réécrite — seulement re-citée depuis le plan —, et **le propos des chapitres est
@@ -229,16 +238,19 @@ ne les fond pas en une troisième**.* ⚠ **Deux autres sont « conservés intac
 ⚠ **Un neuvième candidat existe et il est nommé ici pour la première fois** : le **§ 34.2.2** — la grille
 d'architecture des plateformes d'assurance de dommage — porte un marqueur de siège que le TOC désigne
 lui aussi. *Il annonçait deux renvois entrants, aux § 34.5.2 et § 34.5.6, **dont aucun n'existait** ;
-les deux ont été écrits le 28 juillet 2026.* ⚠ **Son versement à `check-sieges.py` relève de la passe de
+les deux ont été écrits le 28 juillet 2026.* ⚠ **Son versement à `check-sieges.py` relevait de la passe de
 gouvernance, non de ce dossier** — *le marqueur du § 34.2.2 est conservé mot pour mot pour que la
-signature versée résolve.*
+signature versée résolve.* ☑ **Il est versé** : la table `SIEGES` le porte au 8 août 2026.
 
-⚠ **Aucun des huit n'est encore contrôlé par [`PRD/check-sieges.py`](../PRD/check-sieges.py), et le
-motif du report est explicite** : *le fichier est **en cours de modification par la passe concurrente
-des Livres IV et V**, et **un versement en parallèle produirait une table incohérente**.* ☑ **La dette
-est portée au PRD v0.10** et **se paie en une passe unique, après la clôture des deux Livres** ; ⚠ *les
-huit marqueurs sont écrits dans les pièces — le geste du rédacteur —, et **les deux autres gestes** —
-table et harnais de mutation — **restent dus**.*
+⚠ **Aucun des huit n'était contrôlé par [`PRD/check-sieges.py`](../PRD/check-sieges.py) au
+28 juillet 2026, et le motif du report était explicite** : *le fichier était **en cours de modification
+par la passe concurrente des Livres IV et V**, et **un versement en parallèle produirait une table
+incohérente**.* ☑ **La dette était portée au PRD v0.10** et devait **se payer en une passe unique, après
+la clôture des deux Livres**. ☑ **ELLE EST PAYÉE** : relevé sur le script le 8 août 2026
+(`python PRD/check-sieges.py` → *« OK — les 26 sièges tiennent sur 50 pièces (S1-S5) »*), la table
+`SIEGES` porte **neuf entrées pour ce Livre** — les six sièges du ch. 31, les deux domiciles du ch. 24
+et le neuvième candidat du § 34.2.2. ⚠ *Le troisième geste, le rejeu du harnais de mutation, n'est pas
+attesté par ce fichier-ci : il se lit au journal de la passe qui a versé.*
 
 ⚠ **Et le contrôle passe malgré tout, ce qui est précisément le piège à nommer.** Au terme des trois
 passes du 27 juillet 2026, `check-sieges.py` rend **« les 12 sièges tiennent sur 50 pièces (S1-S5) »** —
@@ -378,9 +390,10 @@ maillon masquerait son échec. *La faute a déjà été commise sur le ch. 6 du 
 
 ## Avant d'ajouter ou de reprendre une pièce ici
 
-**Le [skill de projet `chapitre-compendium`](../../.claude/skills/chapitre-compendium/SKILL.md) porte la
-procédure complète.** Ce qui suit en est le rappel minimal, avec **les trois points que cette passe a
-payés**.
+**Le skill de projet `chapitre-compendium` portait la
+procédure complète.** ⚠ **Il n'est plus au dépôt depuis le 31 juillet 2026** (commit `41666d0`), non
+plus que ses scripts : les deux invocations ci-dessus ne résolvent donc plus. Ce qui suit est le seul
+rappel qui subsiste, avec **les trois points que cette passe a payés**.
 
 1. Lire l'entrée du chapitre au
    [`TOC.md`](../PRD/TOC.md) : thèse, sections, ligne Fusion, table détaillée, table de couverture.

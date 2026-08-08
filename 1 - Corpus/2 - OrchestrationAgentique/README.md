@@ -44,11 +44,24 @@ pas un point de restauration*. Poser le tag ou corriger ces mentions est une dé
 | `Monographie.md` / `Monographie.pdf` | Assemblage versionné des 29 pièces et son rendu (387 p.) |
 
 ⚠ **`doc/` s'appelle désormais `prd/`** (renommage du 22 juillet 2026). Les deux déplacements du
-dossier de gouvernance — racine → `doc/` le 17 juillet, `doc/` → `prd/` le 22 — ont laissé des
-renvois relatifs cassés dans le volume : **48 dans `monographie/`** (bandeaux de thèse vers
-`TOC.md`), un dans `build/assemble.py`, un dans `prd/PRDPlan.md`, quinze dans `prd/audit.md` et
-trois dans `verification/relecture-CA.md`. *(L'index de lecture [`monographie/README.md`](monographie/README.md)
-a été repointé le 25 juillet 2026.)*
+dossier de gouvernance — racine → `doc/` le 17 juillet, `doc/` → `prd/` le 22 — avaient laissé des
+renvois relatifs cassés dans tout le volume. ☑ **Repointés le 8 août 2026**, et re-vérifiés en
+résolvant chaque cible sur disque : **48 dans `monographie/`** (bandeaux de thèse et renvois de corps
+vers `TOC.md`, portés à `../../prd/TOC.md`), **dix-sept dans
+`prd/audit.md`** (locateurs `fichier.md:ligne` préfixés `../` et convertis en ancres `#Lnnn`) et
+**quatre dans `verification/relecture-CA.md`** (`../PRD.md`, `../PRDPlan.md`, `../audit.md` → `../prd/…`),
+soit **69 renvois markdown**. ⚠ *Le chemin corrigé dans `build/assemble.py` — `ROOT / "TOC.md"` porté à
+`ROOT / "prd" / "TOC.md"` — **n'est pas un renvoi** mais un chemin de système de fichiers : il est compté
+à part, et ce fichier ne porte aucune cible de lien markdown.* ⚠ **Deux limites des ancres
+`#Lnnn`** : elles portent le lecteur sur le bon fichier, mais GitHub n'honore le numéro de ligne que sur
+la vue source (`?plain=1#Lnnn`), pas sur un `.md` rendu — *le renvoi cesse d'être mort sans redevenir
+exact à la ligne.*
+*(L'index de lecture [`monographie/README.md`](monographie/README.md) avait déjà été repointé le
+25 juillet 2026.)*
+
+⚠ **Un renvoi mort subsiste et il est hors de portée d'un correctif de lien** : `prd/PRDPlan.md`
+renvoie à un `CLAUDE.md` (« conventions du dépôt ») **qui n'existe nulle part dans le dépôt**. Le
+corriger demanderait de choisir une cible, ce qui n'est pas une opération de lien — décision d'auteur.
 
 ⚠ **Ni `index.html`, ni article de synthèse, ni publication GitHub Pages.** La page de présentation
 et `Synthese Monographie.md` / `.pdf` (12 sections, 19 tableaux, ~26 500 mots ; 66 p.) ont été
@@ -75,7 +88,16 @@ python build/assemble.py            # concatène monographie/ → Monographie.md
 bash   build/build-pdf.sh Monographie.md   # → Monographie.pdf (US-letter, gabarit build/fesp.template)
 ```
 
-⚠ `build/assemble.py` cherche encore `TOC.md` à la racine du volume alors qu'il vit dans `prd/` : **l'assemblage échoue en l'état**. Ce reliquat s'ajoute aux autres liens cassés par les deux déplacements du dossier de gouvernance (racine → `doc/` le 17 juillet 2026, puis `doc/` → `prd/` le 22).
+☑ **L'assemblage remarche** (8 août 2026). `build/assemble.py` cherchait `TOC.md` à la racine du volume
+alors qu'il vit dans `prd/` depuis le 22 juillet 2026 : il levait un `FileNotFoundError` avant d'écrire
+une ligne. Il lit désormais `prd/TOC.md`, comme l'assembleur du Vol. III. **Réexécuté : `38 blocs, 853 Ko`,
+et la sortie reproduit `Monographie.md` à l'octet près** — la panne était dans le chemin seul, pas dans le
+contenu produit.
+
+⚠ **L'assembleur rebase désormais les liens relatifs des pièces.** Une pièce de
+`monographie/03-partie-III/` renvoie à `../../prd/TOC.md` ; concaténée dans `Monographie.md`, à la racine
+du volume, cette cible ne résolvait plus. Le script réécrit chaque cible relative depuis le répertoire de
+la pièce — **12 renvois morts de moins dans `Monographie.md`**, et aucune ligne de prose touchée.
 
 ## Avertissements
 

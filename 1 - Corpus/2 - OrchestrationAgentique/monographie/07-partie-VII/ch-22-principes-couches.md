@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | **§8.4** (neutralité fournisseur — cas d'instanciation documenté, jamais recommandation) ; **R-6** (position au Gartner MQ iPaaS non vérifiée — encadré §22.3) ; **R-8 branche (c)** (le positionnement d'IBM comme *agentic control plane*, §22.2 C5 — attribué à IBM, encadré posé au ch. 1 §1.2 et non dupliqué ici) ; R-7 (renvoi ch. 23) ; §8.2.7 (études d'analystes commandées) ; glossaire §D.1, §D.6, §D.7 |
 | Volumétrie cible | ~3600 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : Le blueprint applique les six principes à un portefeuille réel documenté ; chaque couche porte son positionnement OO et son statut de preuve.
+> **Thèse ([TOC.md](../../prd/TOC.md))** : Le blueprint applique les six principes à un portefeuille réel documenté ; chaque couche porte son positionnement OO et son statut de preuve.
 
 ---
 

@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | **R-4** et réserve F-29 (RTR : cible annoncée, jamais « lancé ») ; **R-5** (aucun standard technique désigné) ; **R-8** (emplois d'« ACP ») ; réserves **F-09** (« attendu », jamais « exigé ») et **F-25** (jamais « en attente ») ; §8.2.1 |
 | Volumétrie cible | ~1500 mots |
 
-> **Thèse ([TOC.md](../../TOC.md), section « Annexes »)** : frise datée de la Loi 25 aux entrées en vigueur du 1er mai 2027, chaque événement tracé à sa source.
+> **Thèse ([TOC.md](../../prd/TOC.md), section « Annexes »)** : frise datée de la Loi 25 aux entrées en vigueur du 1er mai 2027, chaque événement tracé à sa source.
 
 ---
 

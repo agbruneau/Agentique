@@ -60,6 +60,21 @@
 
 **Re-mesure du 24 juillet 2026 — relecture de révision.** Une passe de relecture adversariale complémentaire ([`relecture-revision-2026-07-24.md`](../verification/relecture-revision-2026-07-24.md)), conduite sous des lentilles que les passes du 22 juillet n'avaient pas couvertes — relecture substantielle CA-12 des 34 pièces, bornes perdues, marquage CA-07, cohérence inter-pièces —, a appliqué des correctifs chirurgicaux à 29 pièces. Les trente-quatre mesures ont été reprises par la seule commande de PRDPlan §1.5, en une passe unique le 24 juillet 2026 : **160 890 mots** (+57,0 %). ⚠ **Le total de 160 427 du 22 juillet est conservé ci-dessus et périmé.** L'ajout net de **463 mots** vient des marquages et déclarations posés par les correctifs — « Lecture de l'auteur », conditions d'attribution, déclaration d'écart de grain au ch. 28 —, non d'un ajout de matière : *documenter une borne coûte des mots, comme chaque passe l'a mesuré.*
 
+⚠ **Ce que cette re-mesure a laissé derrière elle, et qu'elle ne disait pas — relevé le 8 août 2026.**
+Le bloc du 22 juillet ci-dessus déclare que « **les trente-quatre en-têtes concordent désormais avec
+cette mesure, champ par champ** ». C'était vrai le 22 juillet, contre le total de 160 427. **La passe
+du 24 juillet a repris les trente-quatre mesures au registre sans reporter les nouvelles valeurs dans
+les en-têtes des pièces**, si bien que la concordance a cessé de tenir le jour même, en silence. Somme
+des trente-quatre champs « réel » des en-têtes, re-comptée champ par champ : **160 423**, contre
+**160 890** au registre — **écart de 467 mots**, réparti sur **vingt-quatre des trente-quatre pièces**
+(les plus fortes : ch. 28 −72, annexe D −56, ch. 16 −50, ch. 25 −41, ch. 11 −30). ⚠ **Les en-têtes ne
+sont pas corrigés ici, et le motif est le même qu'au ch. 27** : ce sont des **constats datés du
+22 juillet**, chacun nommant sa date et sa commande, et *un constat daté enregistre ce qu'une passe a
+lu — le récrire effacerait la seule chose qu'il apporte.* Ce qui était fautif n'était pas les en-têtes
+mais **l'affirmation de concordance restée au présent après que la mesure avait bougé** : c'est elle
+que cette note borne. *CA-14 nomme exactement cette faute, et le registre l'a commise une seconde
+fois, deux paragraphes après l'avoir reconnue.*
+
 | Bloc | Cible | Réel | Écart |
 |---|---|---|---|
 | Avant-propos | 2 500 | 3 947 | +57,9 % |

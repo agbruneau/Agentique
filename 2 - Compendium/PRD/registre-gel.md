@@ -42,20 +42,34 @@ périme le cardinal qui le décrivait*, et les cinq README sont désormais en re
 divergence est signalée ici, non corrigée** : re-mesurer chez le voisin sans mandat produit deux
 chiffres au lieu d'un. Elle se solde à la passe qui rouvrira ces fichiers.
 
+⚠ **(c bis) LA COLONNE `Réel` EST ELLE-MÊME DATÉE DU 28 JUILLET 2026, ET ELLE NE PEUT PAS BOUGER
+D'ICI — le constat est du 8 août 2026.** *Quatre passes de révision du français ont touché les
+cinquante pièces depuis* (commits `982ef3a` et `1535aa5` du 31 juillet, `c5a51b3` du 1ᵉʳ août,
+`c2a1258`, `e0f799a` et `4355a41` du 3 août). **Re-mesure du 8 août 2026, par une invocation unique de
+`bash PRD/decompte.sh` sur les cinquante pièces : 331 791 mots de corps** — **72 483 / 68 752 / 99 875 /
+59 962 / 30 719** par Livre, chiffres que le colophon de [`Compendium.html`](../Compendium.html) publie
+déjà à l'identique. ⚠ **La colonne ci-dessous n'est pas réécrite, et le motif est opposable** : le
+contrôle **P6** de [`check-compendium.py`](check-compendium.py) oppose chaque `Réel` du registre au
+`Réel` déclaré dans l'**en-tête de la pièce**, pour les vingt-six pièces qui le publient — *y porter la
+mesure du 8 août ferait échouer P6 sur vingt-six lignes, les en-têtes étant gelés avec le volume
+arrêté.* **Ce qui est dû n'est donc pas une correction de registre, c'est une passe qui re-mesure les
+cinquante en-têtes ET ce registre au même commit** — *un chiffre couplé par contrôle à un texte gelé
+se lit, il ne se rafraîchit pas d'un seul côté.*
+
 **Ce que la confrontation d'origine avait établi, et qui reste vrai de sa date.** Les cinq totaux de Livre concordent **à l'unité près** avec les `README.md` des cinq
 dossiers, re-mesurés par la passe de correction du 28 juillet 2026 : 64 750, 62 054, 91 477, 56 025
 et 26 474. *Concorder n'est pas recopier* — les cinquante mesures ont été prises par
 [`decompte.sh`](decompte.sh) pour ce registre, et la coïncidence est le résultat du contrôle, non
 sa méthode.
 
-⚠ **Une divergence subsiste néanmoins, et elle est d'un niveau supérieur** : le
-[`CLAUDE.md` de la racine](../../CLAUDE.md) et celui du dossier portent encore les cardinaux
-d'**avant** la passe de correction — 61 677 mots au Livre II (**+377** ici), 55 249 au Livre IV
-(**+776**), 25 017 au Livre V (**+1 457**), et « +0,3 % » au Livre III pour **+1,6 %**. *Un corps
-corrigé périme le cardinal qui le décrivait*, et ces quatre-là n'ont pas suivi. ⚠ **Ils ne sont pas
-corrigés ici** — le périmètre de ce fichier est le registre, et *re-mesurer chez le voisin sans
-mandat produit deux chiffres au lieu d'un.* La divergence est **signalée, non arbitrée** ; elle se
-solde à la passe qui rouvrira ces deux fichiers.
+⚠ **Une divergence a subsisté, d'un niveau supérieur, et elle est CLOSE par disparition de son
+objet** : le `CLAUDE.md` de la racine et celui du dossier portaient encore les cardinaux d'**avant**
+la passe de correction — 61 677 mots au Livre II (**+377** ici), 55 249 au Livre IV (**+776**),
+25 017 au Livre V (**+1 457**), et « +0,3 % » au Livre III pour **+1,6 %**. *Un corps corrigé périme
+le cardinal qui le décrivait*, et ces quatre-là n'avaient pas suivi. ☑ **Les six `CLAUDE.md` du dépôt
+ont été retirés le 31 juillet 2026** (commit `41666d0`, constaté par `git log --diff-filter=D`) :
+*un cardinal faux disparaît avec le fichier qui le portait ; il n'a pas été corrigé, il a cessé
+d'exister.* ⚠ **Ce n'est donc pas un arbitrage** — la divergence n'a jamais été tranchée.
 
 ---
 
@@ -128,23 +142,35 @@ TOC assigne au Livre ; la **somme des cibles dérivées** est celle qu'obtiennen
 partageant l'enveloppe au prorata de leurs sections. *Les deux coïncident pour quatre Livres sur
 cinq* — et **divergent de 28 000 mots au Livre I**, dont les onze pièces ont chacune dérivé sa cible
 sans que personne n'additionne les dérivations. **C'est la cible dérivée qui est fausse, non les
-pièces qui sont courtes** ; le Livre I est à **−0,4 %** de son enveloppe réelle.
+pièces qui sont courtes** ; le Livre I est à **+10,7 %** de son enveloppe et à **−22,6 %** de la somme
+de ses cibles dérivées, laquelle dépassait déjà l'enveloppe de **+43,1 %**.
+
+⚠ **Cette table a été RE-ADDITIONNÉE le 8 août 2026 depuis les cinquante rangées ci-dessus, et deux
+cellules ne s'en dérivaient pas.** *Le Livre I portait **68 077** pour une somme de rangées de
+**71 980**, et le total **320 914** pour **324 817** — le même écart de **3 903** mots, compté une fois
+au Livre et une fois au total.* Les écarts par enveloppe sont recalculés en conséquence.
+⚠ **Aucune rangée de pièce n'est touchée** : le contrôle **P6** les oppose aux en-têtes des cinquante
+pièces, gelées — *une colonne couplée à des pièces gelées se lit, elle ne se re-mesure pas depuis ici.*
 
 | Livre | Pièces | Enveloppe (TOC) | Σ cibles dérivées | Réel | Écart / enveloppe |
 |---|---|---|---|---|---|
-| **Livre I** — Coopérer | 11 | 65 000 | 93 000 | 68 077 | +4,7 % |
+| **Livre I** — Coopérer | 11 | 65 000 | 93 000 | 71 980 | +10,7 % |
 | **Livre II** — Faire confiance | 10 | 50 000 | 50 000 | 65 700 | +31,4 % |
 | **Livre III** — Encadrer | 15 | 90 000 | 90 000 | 98 541 | +9,5 % |
 | **Livre IV** — Appliquer, exploiter, produire, composer | 10 | 69 000 | 69 000 | 59 536 | −13,7 % |
 | **Livre V** — Livrer et clore | 4 | 34 000 | 34 000 | 29 060 | −14,5 % |
-| **Total** | **50** | **308 000** | **336 000** | **320 914** | **+4,2 %** |
+| **Total** | **50** | **308 000** | **336 000** | **324 817** | **+5,5 %** |
 
-⚠ **Un agrégat à −2,3 % ne prouve rien sur ses pièces, et c'est le résultat le plus transférable de
-ce registre.** Les écarts individuels vont de **−55,5 %** (ch. 6) à **+48,1 %** (ch. 21) : cent trois
-points d'amplitude, que la conformité de l'agrégat masque intégralement. *Deux forces jouent dans
-tous les Livres, et ce qui change est laquelle domine* — **le bornage allonge** (Livre II, +24,1 %),
-**le siège raccourcit** (Livres IV et V, dont les pièces renvoient là où une monographie
-développerait). **L'enveloppe héritée n'avait budgété ni l'une ni l'autre.**
+⚠ **Un agrégat à +5,5 % ne prouve rien sur ses pièces, et c'est le résultat le plus transférable de
+ce registre.** Les écarts individuels de cette table vont de **−46,1 %** (ch. 6) à **+55,8 %** (ch. 21) :
+**101,9 points d'amplitude**, que la modération de l'agrégat masque intégralement. *Deux forces
+jouent dans tous les Livres, et ce qui change est laquelle domine* — **le bornage allonge** (Livre II,
+**+31,4 %** ici), **le siège raccourcit** (Livres IV et V, dont les pièces renvoient là où une
+monographie développerait). **L'enveloppe héritée n'avait budgété ni l'une ni l'autre.**
+⚠ **Les pourcentages que les cinq `README.md` publient ne sont pas ceux-ci et ne les contredisent pas** :
+*ils rapportent le réel de leur passe à la **somme des cibles dérivées** de leurs pièces, cette table à
+l'**enveloppe du TOC** — deux dénominateurs, deux chiffres, et le §(c) ci-dessus dit lequel est de
+quel jour.*
 
 **C'est la mesure que la décision d'auteur D-4 attendait**, et elle ne la tranche pas : le
 re-calibrage des enveloppes reste **remis à une passe unique de clôture**, et **l'amputation

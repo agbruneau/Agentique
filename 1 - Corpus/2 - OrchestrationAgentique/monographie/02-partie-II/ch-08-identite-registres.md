@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | **R-2** (aucun registre centralisé Entra vérifié), **R-3** (la spécification CSA s'appuie sur SPIFFE/SPIRE comme fondation ; l'exigence stricte n'est pas établie), **§8.2.5** (statuts pré-normatifs : brouillon de labs, brouillon IETF expiré) |
 | Volumétrie cible | ~2400 mots |
 
-> **Thèse ([TOC.md](../../TOC.md))** : l'identité des agents s'ancre dans les standards existants (OAuth/OIDC, SCIM) ; le registre d'agents gouverné devient la pièce maîtresse de la conformité à venir.
+> **Thèse ([TOC.md](../../prd/TOC.md))** : l'identité des agents s'ancre dans les standards existants (OAuth/OIDC, SCIM) ; le registre d'agents gouverné devient la pièce maîtresse de la conformité à venir.
 
 ---
 

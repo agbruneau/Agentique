@@ -8,7 +8,7 @@
 | Garde-fous à surveiller (PRD §8) | PRD §3 (non-objectifs), §8.4 (neutralité fournisseur), §7 (taxonomie des niveaux de preuve) |
 | Volumétrie cible | ~2500 mots |
 
-> **Thèse ([TOC.md](../TOC.md))** : Origine du projet, méthode, niveaux de preuve [A]/[B]/[C], convention de datation, avertissements.
+> **Thèse ([TOC.md](../prd/TOC.md))** : Origine du projet, méthode, niveaux de preuve [A]/[B]/[C], convention de datation, avertissements.
 
 ---
 

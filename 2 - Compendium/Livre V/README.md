@@ -6,7 +6,8 @@ contenu est le [`PRD/TOC.md`](../PRD/TOC.md) — ⚠ **les quatre pièces citent
 v0.26**, celle de l'arbitrage de ce Livre ; **le fichier est passé en v0.27 le même jour**, par
 l'arbitrage du Livre III mené en parallèle, *et cette version ne retouche aucune des trois thèses
 réalignées ici* (constat sur pièce, 27 juillet 2026) — et la gouvernance de la rédaction le
-[`PRD/PRD.md`](../PRD/PRD.md) v0.11. En cas d'écart entre une pièce de ce dossier et le TOC, **le TOC
+[`PRD/PRD.md`](../PRD/PRD.md), alors en **v0.11**. ⚠ **Au 8 août 2026, les versions courantes relevées
+en tête des deux fichiers sont TOC v0.32 et PRD v0.16.** En cas d'écart entre une pièce de ce dossier et le TOC, **le TOC
 prime** — sauf déviation fondée, qui se déclare (décision 8 du TOC) et **se remonte, jamais se corrige
 au plan depuis ici**.
 
@@ -26,7 +27,7 @@ distinct du rédacteur, et **aucun énoncé n'est central** au sens de CA-IV-01.
 levée par D-10, et c'est le point propre à ce Livre** : la **publication du premier mouvement (ch. 47-48)
 demeure bloquée** jusqu'à la clôture de ses trois lots d'instruction, **une instruction infructueuse
 valant retrait**. *Arrêter un ouvrage ne débloque pas ce qu'une autre décision bloque.* Les pièces sont
-composées dans [`compendium.pdf`](../compendium.pdf) (**810 p.**) : *composer n'est pas publier.*
+composées dans [`Compendium.pdf`](../Compendium.pdf) (**1 114 p.**) : *composer n'est pas publier.*
 
 ## ⚠ État : le Livre est rédigé, arbitré, et le seul dont la publication soit bloquée par une décision d'auteur
 
@@ -53,6 +54,15 @@ du TOC).
 | **Socle consolidé** | ⚠ **zéro entrée** — **G-3 n'est pas entamée** ; et les ch. 47-48 ne résolvent contre **aucun socle source** |
 | **Énoncés centraux au sens de CA-IV-01** | ⚠ **aucun**, dans aucune des quatre pièces |
 | **Statut des pièces** | **brouillon non publiable** — inchangé |
+
+⚠ **Ce tableau est un constat daté et deux de ses lignes ont été DÉPASSÉES depuis — le rappel est du
+8 août 2026, il ne réécrit rien.** ☑ **La porte G-3 est franchie le 28 juillet 2026** et le socle
+consolidé ne compte plus zéro entrée mais **159**, `S-001`…`S-159`
+([`PRD/socle-consolide.md`](../PRD/socle-consolide.md) ; `python PRD/check-compendium.py` → *P1-P8,
+sortie 0*). ☑ **La table `SIEGES` porte 26 sièges sur 50 pièces** (`python PRD/check-sieges.py`).
+⚠ **Rien d'autre n'a bougé** : *aucun énoncé n'est central au sens de CA-IV-01, CA-IV-11 et CA-IV-13
+demeurent non satisfaisables, et les pièces restent un brouillon arrêté, non publiable* — **une porte
+franchie n'est pas un ouvrage recevable.**
 
 *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune question n'attend
 plus de réponse qui ne soit déjà tranchée.* ⚠ **Et deux conditions de publication ne sont
@@ -218,7 +228,7 @@ personne s'en aperçoive.*
 
 ## ⚠ Passe de correction du 28 juillet 2026 — onze constats corrigés, trois notes sans action
 
-Sur instruction d'auteur, en réponse à l'[`audit.md`](../audit.md) du 28 juillet 2026 (§ 8, Livre V ;
+Sur instruction d'auteur, en réponse à l'`audit.md` du 28 juillet 2026 (§ 8, Livre V ;
 § 3, transversaux). **Domaine déclaré : les quatorze constats V.1 à V.14 de son § 8** — **onze sont
 corrigés ici** (V.1 à V.11), **trois sont des notes qui n'appellent aucune action** : V.12 (relevés
 horodatés dépassés par les passes concurrentes, *exacts à leur date* — sauf le cardinal des sièges du
@@ -308,8 +318,9 @@ appartiennent aux Vol. I, II et III.
 
 ## Avant d'ajouter ou de reprendre une pièce ici
 
-1. **Lire le [`SKILL.md`](../../.claude/skills/chapitre-compendium/SKILL.md)**, puis l'entrée du
-   chapitre au TOC v0.26 — thèse, sections, ligne Fusion, table détaillée.
+1. **Lire l'entrée du chapitre au TOC v0.26** — thèse, sections, ligne Fusion, table détaillée.
+   ⚠ *Le `SKILL.md` du projet, qui portait la procédure, n'est plus au dépôt depuis le 31 juillet 2026
+   (commit `41666d0`).*
 2. ⚠ **Vérifier D-3 avant de toucher aux ch. 47-48** : leur publication est bloquée, et **une
    instruction infructueuse de ses trois lots vaut retrait des deux chapitres**.
 3. ⚠ **Ne pas ouvrir de section sur l'accord entre agents sous défaillance** au ch. 48 : *y écrire

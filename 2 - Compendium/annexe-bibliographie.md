@@ -20,7 +20,7 @@ distinguent par leur objet.**
 |---|---|---|
 | [`annexe-references.md`](annexe-references.md) | les **faits** sur lesquels la somme s'adosse — 159 entrées `S-nnn` | abrégé du socle ; le socle fait foi |
 | **La présente annexe** | les **documents** d'où ces faits et leur contexte proviennent | réunion des sources ; **aucune autorité propre** |
-| [`audit-references.md`](audit-references.md) | la **validation** des 159 références sur cinq critères | rapport de mesure, **jamais citable à l'appui d'un énoncé** |
+| `audit-references.md` — ⚠ **non versé au dépôt** | la **validation** des 159 références sur cinq critères | rapport de mesure, **jamais citable à l'appui d'un énoncé** |
 
 ⚠ **Trois bornes.** *(a)* **Le Vol. I fournit la quasi-totalité des entrées**, parce qu'il est
 le seul des trois à tenir une bibliographie séparée ; les **Vol. II et III** portent leurs
