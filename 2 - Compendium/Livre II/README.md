@@ -1,6 +1,6 @@
 # Livre II — Faire confiance : identité, délégation et fabrique de confiance
 
-Répertoire de rédaction du **Livre II** du compendium *La somme agentique* (Vol. IV). Il ne porte
+Répertoire de rédaction du **Livre II** du compendium *Interopérabilité et Orchestration Agentiques en Entreprise* (Vol. IV). Il ne porte
 aucune décision, aucun socle et aucun garde-fou propre : la spécification de contenu est le
 [`PRD/TOC.md`](../PRD/TOC.md), la gouvernance de la rédaction le [`PRD/PRD.md`](../PRD/PRD.md).
 En cas d'écart entre une pièce de ce dossier et le TOC, **le TOC prime** — sauf déviation
@@ -12,9 +12,22 @@ version courante à la date de la **passe de correction du 28 juillet 2026**, qu
 re-collationnées mot à mot** — *aucune des passes v0.26 à v0.28 n'a touché une entrée du Livre II, et
 les dates de rédaction restent écrites telles quelles dans les pièces.* Le PRD était à **v0.12** à
 cette date ; ⚠ **au 8 août 2026, les versions courantes relevées en tête des deux fichiers sont
-TOC v0.32 et PRD v0.16**.
+TOC v0.33 et PRD v0.17**.
 *Une pièce qui cite une version de plan déclare quelle version elle a réellement lue ; elle ne se
 redate pas pour suivre le numéro courant.*
+
+## ⚠ Le dépôt est CLOS depuis le 8 août 2026 — et « clos » n'est ni « terminé » ni « publiable »
+
+La décision d'auteur **D-13** ([PRD **v0.17** §16](../PRD/PRD.md), [TOC **v0.33**](../PRD/TOC.md))
+**clôt la passe de révision ouverte par D-11** le 30 juillet 2026 — *close, non achevée* — et
+**clôt le dépôt entier**. **Trois conséquences pour ce Livre.** *(1)* **Aucune passe n'est plus
+prévue**, ni de rédaction, ni de révision, ni d'appareil : ce qui suit décrit un état **définitif**.
+*(2)* ⚠ **Rien n'est levé, et rien n'est soldé** : le régime de D-10 ci-dessous est inchangé et
+devient définitif, les quatre portes dérogées le restent, **CA-IV-11 et CA-IV-13 demeurent non
+satisfaits**. *(3)* ⚠ **Ce qui était dû devient un manque définitif, non une conformité** — *une
+dette qu'on cesse de suivre reste une dette ; elle change seulement de nom.* Le domaine non exécuté
+est nommé ligne à ligne au [PRD §16.2](../PRD/PRD.md). ⚠ **Le volume a été renommé le même jour**
+(décision 20 du TOC) : il s'est appelé *« La somme agentique »* du 23 juillet au 8 août 2026.
 
 ## ⚠ Le volume est ARRÊTÉ depuis le 29 juillet 2026 — et « arrêté » n'est ni « terminé » ni « publiable »
 

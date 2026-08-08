@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""check-toc.py — contrôles de publication du TOC du Vol. IV (La somme agentique).
+"""check-toc.py — contrôles de publication du TOC du Vol. IV (Interopérabilité et Orchestration Agentiques en Entreprise).
 
 Reconstruction du 23 juillet 2026 (le script historique des passes v0.3-v0.6 est
 introuvable au dépôt — constat v0.7, reconduit v0.8-v0.11). Domaine : chapitres

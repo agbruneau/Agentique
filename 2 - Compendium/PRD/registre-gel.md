@@ -1,4 +1,4 @@
-# Registre de gel par pièce — Vol. IV, *La somme agentique*
+# Registre de gel par pièce — Vol. IV, *Interopérabilité et Orchestration Agentiques en Entreprise*
 
 | Champ | Valeur |
 |---|---|

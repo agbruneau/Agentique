@@ -3,6 +3,12 @@
 📖 **Lire :** [`Monographie.pdf`](Monographie.pdf) (569 p.) dans ce dossier. *(Le volume n'a plus de
 page de présentation ni de publication GitHub Pages — voir « Structure du dossier ».)*
 
+> ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13**
+> ([`2 - Compendium/PRD/PRD.md`](../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe
+> n'est plus prévue, sur ce volume ni sur aucun autre du dépôt : ce qui suit décrit un état
+> **définitif**. ⚠ *Clore n'est ni terminer ni publier* — rien n'est levé, rien n'est soldé, et
+> ce qui restait dû devient un **manque définitif, daté et écrit**.
+
 > **Où vous êtes.** Ce dossier est le **premier des trois volumes** du corpus, dans le dépôt
 > [*Agentique*](../../README.md) — le cadre général et mondial, dont le volume II tire le cas
 > canadien réglementé et le volume III le verrou identitaire ; un quatrième livrable, le compendium
@@ -49,7 +55,7 @@ dans le dépôt ; les renvois §7.x, eux, résolvent contre `Monographie.md` et 
 
 La veille n'est **plus un livrable de ce dossier**. Elle vit désormais à la racine du dépôt
 ([`Veille Technologique.md`](../../Veille%20Technologique.md)), recoupe les quatre volumes et porte sa
-propre édition — **édition d'août 2026 (faits gelés au 29 juillet 2026), 161 p., 269 références**, dont deux (§4.12 et §8.4)
+propre édition — **édition d'août 2026 (faits gelés au 29 juillet 2026), 162 p., 269 références**, dont deux (§4.12 et §8.4)
 citent explicitement ce volume et le volume II, et dont la section 13 rend compte des quatre volumes. Les mentions « 7 juillet 2026, 48 p., 116 références »
 qui figuraient ici décrivaient une édition antérieure.
 

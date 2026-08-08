@@ -1,10 +1,14 @@
 # L'autonomie encadrée
 
+> ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13**
+> ([`2 - Compendium/PRD/PRD.md`](../../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe
+> n'est plus prévue : ce qui suit décrit un état **définitif**.
+
 **Interopérabilité et orchestration agentique dans les services financiers canadiens — protocoles ouverts, cadre réglementaire et blueprint d'intégration d'entreprise (état des lieux 2024-2026)**
 
 | Champ | Valeur |
 |---|---|
-| Version | millésime **`mono-v1.0`** — ⚠ millésime éditorial, l'**étiquette git n'a pas été posée** |
+| Version | millésime **`mono-v1.0`** — millésime éditorial du 17 juillet 2026 ; ☑ **l'étiquette git du même nom est posée le 8 août 2026**, au commit de clôture du dépôt. ⚠ *Elle marque donc l'arbre clos, non celui du 17 juillet* |
 | Date de publication | 17 juillet 2026 |
 | Dates de gel | 16 juillet 2026 (22 pièces) ; 17 juillet 2026 (7 pièces) — registre : [`99-registre-gel.md`](99-registre-gel.md) |
 | Volumétrie | **92 059 mots** sur 29 pièces — mesure du 17 juillet 2026, après la passe corrective de l'[audit global](../prd/audit.md) (méthode et commande de référence : [PRDPlan §4.2](../prd/PRDPlan.md), dont le défaut connu y est documenté) |

@@ -2,6 +2,8 @@
 
 > **Auteur :** André-Guy Bruneau, M.Sc. IT — Juin–Juillet 2026
 >
+> ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13** ([`2 - Compendium/PRD/PRD.md`](../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe n'est plus prévue, sur aucun des cinq livrables ; ce document décrit un état **définitif**. *Clore n'est ni terminer ni publier.*
+>
 > Ce document est la **synthèse consolidée** des trois monographies du corpus. Il en articule les
 > thèses, les concepts et les apports en un seul document de synthèse. Pour le détail, se reporter
 > à chaque volume ; pour l'état de l'art le plus récent et la veille technologique, voir le
@@ -303,7 +305,7 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 
 | Profil du lecteur | Point d'entrée recommandé |
 |---|---|
-| **Pressé** | La [veille technologique](../Veille%20Technologique.md) (161 p., état de l'art le plus récent) |
+| **Pressé** | La [veille technologique](../Veille%20Technologique.md) (162 p., état de l'art le plus récent) |
 | **Architecte / chercheur** | Vol. I, chapitre 1 — lecture séquentielle en spirale |
 | **Praticien canadien** | Vol. II, chapitre 13 — « le pont : des contraintes réglementaires aux *frames* déterministes » |
 | **RSSI / responsable identité** | Vol. III, Partie II — le passeport d'agent et la chaîne de mandat |
@@ -394,10 +396,11 @@ passer `/Type/PageLabel`, dont il existe **un objet par page**. Et un motif corr
 pagination juste du premier coup : `grep -aoP '/Type/Page(?![sL])' | wc -l` donne **569, 387 et 427**.
 
 ⚠ **Ce document ne couvre pas le Vol. IV**, et c'est délibéré : la synthèse porte sur le **triptyque**.
-Le compendium — *La somme agentique*, **arrêté en révision finale le 29 juillet 2026, non publiable** —
+Le compendium — *Interopérabilité et Orchestration Agentiques en Entreprise* (titre du 8 août 2026 ; *« La somme agentique »* jusque-là), **arrêté en révision finale le 29 juillet 2026, arrêt rouvert le 30, puis clos le 8 août 2026 sans que la passe de révision ait été exécutée — non publiable** —
 se situe au [README du dépôt](../README.md) et vit sous
 [`2 - Compendium/`](../2%20-%20Compendium/). **Il ne se substitue pas à ces trois volumes tant qu'il
-n'est pas recevable, et il ne l'est pas** : les trois volumes sources font foi. ⚠ **Sa pagination
+n'est pas recevable, et il ne l'est pas — ni ne le deviendra, le dépôt étant clos** : les trois
+volumes sources font foi. ⚠ **Sa pagination
 n'est plus celle qu'annonçait le 29 juillet** : `Compendium.pdf` mesure **1 114 p.** au dépôt courant,
 non 810 — chiffre relevé ici pour mémoire, le volume relevant de sa propre charge éditoriale.
 

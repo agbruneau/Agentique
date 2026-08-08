@@ -1,4 +1,4 @@
-# Annexe B — Socle consolidé du Vol. IV, *La somme agentique*
+# Annexe B — Socle consolidé du Vol. IV, *Interopérabilité et Orchestration Agentiques en Entreprise*
 
 | Champ | Valeur |
 |---|---|

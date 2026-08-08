@@ -44,7 +44,7 @@
 //       `svgraybox` de la classe svmono — fond gris, aucun filet.
 
 #set document(
-  title: "La somme agentique",
+  title: "Interopérabilité et Orchestration Agentiques en Entreprise",
   author: "André-Guy Bruneau, M.Sc. IT",
   keywords: ("interopérabilité agentique", "identité", "orchestration",
              "services financiers", "Canada"),
@@ -316,10 +316,10 @@
   v(0.6em)
   line(length: 100%, stroke: 0.8pt + black)
   v(1.1em)
-  text(font: SERIF, size: 26pt, weight: "bold")[La somme agentique]
+  text(font: SERIF, size: 26pt, weight: "bold")[Interopérabilité et Orchestration Agentiques en Entreprise]
   v(1.0em)
   text(font: SERIF, size: 13pt, style: "italic")[
-    Interopérabilité, autonomie encadrée et fabrique de confiance :
+    Autonomie encadrée et fabrique de confiance :
     déployer des agents en services financiers réglementés (2024-2032)
   ]
   v(1.7cm)

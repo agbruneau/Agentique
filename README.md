@@ -4,7 +4,36 @@ Travaux d'André-Guy Bruneau sur les agents d'IA en écosystème d'entreprise, e
 particulièrement en services financiers. Le dépôt réunit **trois monographies** conçues en
 progression — les protocoles, puis les cadres réglementaires, puis l'organisation qui doit les
 faire tenir ensemble —, **une veille technologique autonome** qui les traverse et les tient à jour,
-et **un compendium** qui les refond en un seul ouvrage — arrêté en révision finale, non publiable.
+et **un compendium** qui les refond en un seul ouvrage — arrêté en révision finale, puis clos, non
+publiable.
+
+> # ⚠ DÉPÔT CLOS ET FINAL — 8 août 2026
+>
+> **Décision d'auteur D-13** ([`2 - Compendium/PRD/PRD.md`](2%20-%20Compendium/PRD/PRD.md) **v0.17**
+> §16, [`TOC.md`](2%20-%20Compendium/PRD/TOC.md) **v0.33**). **Aucune passe n'est plus prévue** — ni
+> de rédaction, ni de révision, ni d'appareil —, **sur aucun des cinq livrables**. La passe de
+> révision ouverte par **D-11** le 30 juillet 2026 est **close sans exécution de son domaine
+> résiduel**. Tout ce que ce fichier décrit est un état **définitif**.
+>
+> ⚠ **Ce que la clôture ne fait pas, et il faut le lire avant tout le reste.** Elle **ne franchit
+> aucune porte**, **ne lève aucune dérogation**, **ne satisfait aucun critère**, **ne referme aucune
+> remontée** et **ne publie rien**. *Une dette qu'on cesse de suivre reste une dette ; elle change
+> seulement de nom, et le nom qu'elle prend ici est **manque définitif**.* Le Vol. III garde ses
+> quinze remontées ouvertes et sa dette de vote ; le Vol. IV garde ses quatre portes dérogées et ses
+> deux critères non satisfaits. *Arrêter n'est ni terminer ni publier ; clore ne rapproche d'aucun
+> des deux.*
+>
+> ⚠ **Le Vol. IV a été renommé le même jour** (décision 20 du TOC) : *« La somme agentique »* du
+> 23 juillet au 8 août 2026, **« Interopérabilité et Orchestration Agentiques en Entreprise »**
+> depuis. ⚠ *Le titre est à un mot près celui de la veille technologique, et c'est un défaut de
+> dénomination assumé* — les deux se distinguent par leur numéro de volume et leur genre, jamais par
+> leur intitulé.
+>
+> ⚠ **Le dépôt ne porte aucune licence, et c'est une décision, non un oubli** : **droit d'auteur par
+> défaut, tous droits réservés**. Seul le Vol. I porte un `LICENSE` propre.
+>
+> ⚠ **Une clôture ne s'auto-verrouille pas** : rien n'empêche un commit ultérieur, mais *un commit
+> qui reprend le travail rouvre la clôture, et doit le déclarer*.
 
 > **Où entrer.** Le lecteur pressé lit la [veille technologique](Veille%20Technologique.md) : c'est
 > l'état de l'art le plus récent (édition d'août 2026, faits gelés au 29 juillet), et le seul document publié qui cite les volumes
@@ -12,52 +41,56 @@ et **un compendium** qui les refond en un seul ouvrage — arrêté en révision
 > se feuillette depuis le 29 juillet 2026 — [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf),
 > **1 114 pages** re-mesurées le 8 août 2026, au format Letter depuis la refonte typographique du
 > 31 juillet 2026 (921 pages au format 155 × 235 mm auparavant) —, et il est **arrêté en révision finale pour la bibliothèque personnelle de
-> l'auteur** le même jour. Ses cinquante chapitres restent un **brouillon écrit hors portes** : il se
+> l'auteur** le même jour, puis **clos le 8 août 2026**. Ses cinquante chapitres restent un **brouillon écrit hors portes** : il se
 > lit, il ne fait pas foi, et il ne se diffuse pas. *Arrêter n'est ni terminer ni publier.* Il se
 > **feuillette aussi à l'écran** depuis le 4 août 2026 —
 > [`Compendium.html`](2%20-%20Compendium/Compendium.html), appareil de lecture d'**un seul fichier
 > sans dépendance externe**, dérivé des cinquante `.md` et **sans plus d'autorité que le PDF**.
 
-## État au dépôt — arrêté le 29 juillet 2026, re-mesuré le 8 août 2026
+## État au dépôt — CLOS ET FINAL le 8 août 2026
 
-Le dépôt est arrêté dans cet état. Les chiffres ci-dessous ont été **re-mesurés sur pièce le 8 août
+Le dépôt est **clos** dans cet état. Les chiffres ci-dessous ont été **re-mesurés sur pièce le 8 août
 2026**, jamais recopiés d'un autre document ; les commandes qui les produisent sont données plus bas
 (« Construire les PDF », « Ce qui reste vivant »). ⚠ *La pagination est prise par lecture du `/Count`
 de l'objet `/Type /Pages` : `pypdf`, que ce fichier citait comme instrument, n'est pas installé.*
 
 | Livrable | Rendu mesuré (`/Count`) | Pièces | Appareil de contrôle |
 |---|---|---|---|
-| Veille technologique | **161 p.**, 269 références | 14 sections, 15 tableaux, 25 questions ouvertes | `python check-veille.py` → **sortie 0** |
+| Veille technologique | **162 p.**, 269 références | 14 sections, 15 tableaux, 25 questions ouvertes | `python check-veille.py` → **sortie 0** |
 | Vol. I — *Interopérabilité* | **569 p.** | 7 chapitres + 7 bibliographies + Annexe B, **28 diagrammes** | — (vérification adverse des citations) |
 | Vol. II — *L'autonomie encadrée* | **387 p.** | **29 pièces** + registre de gel, socle de 46 entrées | grille CA-1…CA-8 |
 | Vol. III — *L'entreprise agentique* | **427 p.** | **34 pièces** + registre de gel, **30 rapports** de vérification | CA-01…CA-14, 15 remontées ouvertes |
-| Vol. IV — *La somme agentique* | **1 114 p.** *(re-mesuré le 8 août 2026 ; format Letter depuis la refonte du gabarit du 31 juillet 2026, 921 p. auparavant)* | **50 chapitres** en 5 Livres + **2 annexes** (hors plan : 159 entrées ; **Annexe I** : 1 154 entrées), socle de **159 entrées** | `check-toc.py` (C1-C15), `check-sieges.py` (**26 sièges / 50 pièces**), `check-compendium.py` (**P1-P8**), `decompte.sh --verifier` → **sortie 0** pour les quatre |
+| Vol. IV — *Interopérabilité et Orchestration Agentiques en Entreprise* | **1 114 p.** *(re-mesuré le 8 août 2026 ; format Letter depuis la refonte du gabarit du 31 juillet 2026, 921 p. auparavant)* | **50 chapitres** en 5 Livres + **2 annexes** (hors plan : 159 entrées ; **Annexe I** : 1 154 entrées), socle de **159 entrées** | `check-toc.py` (C1-C15), `check-sieges.py` (**26 sièges / 50 pièces**), `check-compendium.py` (**P1-P8**), `decompte.sh --verifier` → **sortie 0** pour les quatre |
 
-Gouvernance du Vol. IV à sa date d'arrêt : **TOC v0.31**, **PRD v0.15**, décision d'auteur **D-10**.
-⚠ **L'arrêt a été rouvert depuis, et ce tableau ne le portait pas** : le 30 juillet 2026, la décision
-d'auteur **D-11** (PRD **v0.16** §15, TOC **v0.32**) **rouvre D-10** pour une **passe de révision**,
-sur un **rapport d'arbitrage externe** qui conclut à une *révision majeure — accepté sur le fond, non
-diffusable en l'état*. Le statut **RÉVISION FINALE — bibliothèque personnelle est maintenu pendant
-toute la durée de la passe**, et la passe **est ouverte**. Gouvernance courante, relevée sur pièce le
-8 août 2026 : **TOC v0.32**, **PRD v0.16**, **D-11**.
+Gouvernance du Vol. IV à sa date de clôture, relevée sur pièce le 8 août 2026 : **TOC v0.33**,
+**PRD v0.17**, décision d'auteur **D-13**. *Trois états se sont succédé en dix jours, et aucun ne
+s'efface* : **D-10** arrête l'ouvrage le 29 juillet (TOC v0.31, PRD v0.15) ; **D-11** rouvre cet
+arrêt le 30 juillet (TOC v0.32, PRD v0.16) pour une passe de révision, sur un **rapport d'arbitrage
+externe** qui conclut à une *révision majeure — accepté sur le fond, non diffusable en l'état* ;
+**D-13 clôt cette passe le 8 août, sans exécuter son domaine résiduel**, et clôt le dépôt. Le statut
+**RÉVISION FINALE — bibliothèque personnelle** est inchangé d'un bout à l'autre, et devient
+définitif.
 
-⚠ **Ce que ce dépôt n'arrête pas, et qu'il faut lire avant d'en tirer quoi que ce soit.** *(a)* **Deux
+⚠ **Ce que ce dépôt ne clôt pas, et qu'il faut lire avant d'en tirer quoi que ce soit.** *(a)* **Deux
 volumes ne sont pas publiables et le déclarent** : le Vol. III (quinze remontées ouvertes R-G-43 à
-R-G-57, dette de vote sur F-92 et F-96) et le Vol. IV (**arrêt rouvert par D-11**, non terminé —
-quatre portes closes par dérogation nommée pour le seul régime de bibliothèque personnelle,
-**CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers). *Arrêter n'est ni terminer ni
-publier, et rouvrir un arrêt ne rapproche d'aucun des deux.* *(b)* **Deux décisions restent à l'auteur,
-et aucune n'est du ressort d'une passe documentaire** : poser (ou retirer des documents de gouvernance)
-l'étiquette git `mono-v1.0` du Vol. II — `git tag -l` est vide, et **trois documents de gouvernance
-(`PRD.md`, `PRDPlan.md`, `audit.md` du volume) et dix-sept pièces** l'annoncent comme posée, les deux
-`README.md` du volume portant, eux, le correctif ; et déposer une licence à la racine du dépôt, qui n'en porte
-aucune — seul le Vol. I en a une. ⚠ *La troisième décision que ce fichier réservait à l'auteur — retirer
-du suivi git trois fichiers de bytecode Python — **n'a plus d'objet** : `git ls-files | grep pycache`
-n'en rend **aucun**, `.gitignore` les couvre, et le reliquat était périmé.* *(c)* **Les reliquats
-listés en fin de fichier sont désormais ceux qui restent après correction**, et ils sont d'un autre
-genre : décisions d'auteur, contradictions à arbitrer, renvois dont la réparation exigerait une
-information absente du dépôt. *(d)* **La veille n'est pas rattrapée** : ses références [217], [219] et
-[220] décrivent l'état de leurs sources au gel de leur édition, et cela ne se corrige pas après coup.
+R-G-57, dette de vote sur F-92 et F-96, phase P5 close sans être achevée) et le Vol. IV (quatre
+portes closes par dérogation nommée pour le seul régime de bibliothèque personnelle, **CA-IV-11 et
+CA-IV-13 non satisfaits** faute de relecteur tiers). *Arrêter n'est ni terminer ni publier ; rouvrir
+un arrêt ne rapproche d'aucun des deux, et le clore non plus.* *(b)* **Les deux décisions d'auteur que
+ce fichier réservait sont tranchées, et il faut lire comment** : l'étiquette git **`mono-v1.0` est
+posée** le 8 août 2026, au commit de clôture — ⚠ *elle marque donc l'arbre clos et non celui du
+17 juillet qu'elle nomme, de sorte que les vingt mentions du volume cessent d'être fausses sans
+devenir exactes* ; et **aucune licence n'est déposée**, ce qui est le régime **droit d'auteur par
+défaut, tous droits réservés** — cohérent avec un corpus dont le volume terminal exclut toute
+diffusion. ⚠ *La troisième décision que ce fichier réservait — retirer du suivi git trois fichiers de
+bytecode Python — **n'avait plus d'objet** dès le 8 août : `git ls-files | grep pycache` n'en rend
+**aucun**, `.gitignore` les couvre.* *(c)* **Les reliquats listés en fin de fichier sont désormais
+définitifs** : ce ne sont plus des dettes suivies mais des **manques datés et écrits**. *(d)* **La
+veille est rattrapée sur un seul point, et par exception nommée** : ses références **[220]** et
+**[266]** portent le **titre neuf** du Vol. IV, chacune assortie de la mention du titre d'alors — *un
+titre est un identifiant, non un fait daté*. Ses références **[217]**, **[219]** et le reste de son
+contenu factuel **décrivent l'état de leurs sources au gel de leur édition**, et cela ne se corrige
+pas après coup.
 
 ## Les cinq livrables
 
@@ -69,17 +102,17 @@ Les trois volumes vivent sous [`1 - Corpus/`](1%20-%20Corpus/) ; la veille est
 | | **Veille technologique** | **Vol. I — Interopérabilité** | **Vol. II — Orchestration** | **Vol. III — Entreprise** | **Vol. IV — Compendium** |
 |---|---|---|---|---|---|
 | **Dossier** | racine du dépôt | [`1 - Corpus/1 - InteroperabiliteAgentique/`](1%20-%20Corpus/1%20-%20InteroperabiliteAgentique/) | [`1 - Corpus/2 - OrchestrationAgentique/`](1%20-%20Corpus/2%20-%20OrchestrationAgentique/) | [`1 - Corpus/3 - EntrepriseAgentique/`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/) | [`2 - Compendium/`](2%20-%20Compendium/) |
-| **Titre** | Interopérabilité et orchestration agentique en entreprise | Interopérabilité agentique en entreprise dans le domaine des services financiers | L'autonomie encadrée | L'entreprise agentique — la fabrique de confiance | La somme agentique |
+| **Titre** | Interopérabilité et orchestration agentique en entreprise | Interopérabilité agentique en entreprise dans le domaine des services financiers | L'autonomie encadrée | L'entreprise agentique — la fabrique de confiance | Interopérabilité et Orchestration Agentiques en Entreprise |
 | **Rôle** | État de l'art vérifié, mis à jour par éditions | Cadre général, mondial et théorique | Cas canadien réglementé, instruit au grain du droit | Le verrou commun : identité, maillage, exploitation | Omnibus terminal : absorbe et remplace les trois volumes |
 | **Portée** | Mondiale | Mondiale (UE / É.-U. / R.-U. / Asie) | Canada-Québec (E-23, AMF, Loi 25, ACVM, Lynx/RTR) | Organisation et cycle de vie (NHI, *agent mesh*, AgentOps) | Les trois portées réunies (2024-2032) |
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 29 juillet 2026 (édition d'août 2026 ; les sections antérieures gardent leur date d'état) | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | 27 juillet 2026 (décision d'auteur D-1) ; volet des faits levé le 28 juillet 2026 |
-| **État** | Publiée (161 p., 269 références) | Rédaction terminée (569 p., **233 257 mots** — `wc -w` sur `Monographie.md`, point d'ancrage de `decompte.sh --verifier` ; 225 258 par la commande de référence du dépôt. ⚠ *Le chiffre de ≈ 263 600 mots que ce fichier portait n'est reproductible par aucune des deux commandes* ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Arrêt rouvert — passe de révision en cours**, statut de révision finale en bibliothèque personnelle maintenu (D-11, 30 juillet 2026 ; TOC v0.32 / PRD v0.16 — arrêt initial D-10, 29 juillet 2026, TOC v0.31 / PRD v0.15) : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf) (**1 114 p.**, re-mesurées le 8 août 2026, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026 ; gabarit relevé sur deux monographies Springer le même jour, puis porté au format Letter le 31 juillet 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** |
+| **État** | Publiée (162 p., 269 références) | Rédaction terminée (569 p., **233 257 mots** — `wc -w` sur `Monographie.md`, point d'ancrage de `decompte.sh --verifier` ; 225 258 par la commande de référence du dépôt. ⚠ *Le chiffre de ≈ 263 600 mots que ce fichier portait n'est reproductible par aucune des deux commandes* ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié, et clos en l'état** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; **finalisation P5 close sans être achevée** le 8 août 2026 (dernière passe de fond : relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état — *et il ne le deviendra pas : quinze remontées R-G-43 à R-G-57 et la dette de vote sur F-92 et F-96 restent ouvertes à titre définitif* | **CLOS ET FINAL** (D-13, 8 août 2026 ; TOC v0.33 / PRD v0.17), statut de révision finale en bibliothèque personnelle maintenu et devenu définitif — *la passe de révision ouverte par D-11 le 30 juillet 2026 (TOC v0.32 / PRD v0.16) est **close sans exécution de son domaine résiduel**, sur l'arrêt initial D-10 du 29 juillet 2026 (TOC v0.31 / PRD v0.15)* : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf) (**1 114 p.**, re-mesurées le 8 août 2026, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026 ; gabarit relevé sur deux monographies Springer le même jour, puis porté au format Letter le 31 juillet 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** |
 
 ## Veille technologique — le document transversal
 
-[`Veille Technologique.md`](Veille%20Technologique.md) → `Veille Technologique.pdf` (**161 p.**,
+[`Veille Technologique.md`](Veille%20Technologique.md) → `Veille Technologique.pdf` (**162 p.**,
 14 sections numérotées, **269 références**, 15 tableaux — **édition d'août 2026**, faits gelés au
 29 juillet 2026 ; résumé sur la page de titre, sommaire exécutif sur trois pages). Revue vérifiée où chaque énoncé factuel
 est adossé à une source primaire consultée et soumis à contradiction — vérificateurs indépendants
@@ -155,9 +188,13 @@ publiée sous le millésime `mono-v1.0`. **92 059 mots** en 29 pièces (24 chapi
 annexes A-D) selon son README ; `Monographie.pdf` **387 p.** (article de synthèse, 66 p., retiré du
 dossier le 22 juillet 2026).
 
-⚠ `mono-v1.0` est un **millésime éditorial, pas une étiquette git** : aucune référence de ce nom
-n'existe dans le dépôt, ni en local ni sur le distant (vérifié le 18 juillet 2026). Plusieurs
-documents de gouvernance du Vol. II l'annoncent pourtant comme posée.
+⚠ `mono-v1.0` a été un **millésime éditorial sans étiquette git** du 17 juillet au 8 août 2026 :
+aucune référence de ce nom n'existait dans le dépôt, ni en local ni sur le distant (vérifié le
+18 juillet, re-vérifié le 8 août 2026 — `git tag -l` vide), alors que trois documents de gouvernance
+du volume et dix-sept pièces l'annonçaient comme posée. ☑ **L'étiquette est posée le 8 août 2026, au
+commit de clôture du dépôt**, sur décision d'auteur. ⚠ **Elle ne rétablit pas la vérité de ces vingt
+mentions, et il faut le dire** : *elle marque l'arbre clos, pas l'arbre du 17 juillet* — les mentions
+cessent d'être fausses sans devenir exactes, et `git show mono-v1.0` le montre.
 
 Sa contribution la plus citable est un **résultat négatif** : en croisant trois protocoles
 (MCP, A2A, AP2) et cinq corpus de textes canadiens, **aucun lien documenté par source primaire** —
@@ -179,11 +216,13 @@ héritées** (H-01 à H-33) ; les **15 lots d'instruction sont clos**. Le volume
 trois capacités — *émettre* une identité opposable (le passeport d'agent), l'*appliquer* au
 maillage d'agents, l'*exploiter* dans la durée (AgentOps) — sous l'horloge post-quantique.
 
-⚠ **Rédigé ne vaut pas publiable.** La phase de finalisation (**P5**) est en cours : revalidation
-temporelle finale, rejeu des motifs de balayage sur les 34 pièces ; le pipeline de rendu a été
-créé le 23 juillet 2026 (copie du FESP du Vol. II) et **quinze remontées de gouvernance demeurent
-ouvertes** (R-G-43 à R-G-57), dont plusieurs relèvent de l'auteur. **Le PDF est assemblé
-(427 p., gabarit FESP) ; rédigé ne vaut pas publiable.**
+⚠ **Rédigé ne vaut pas publiable.** La phase de finalisation (**P5**) a couru jusqu'au 24 juillet
+2026 — revalidation temporelle finale, rejeu des motifs de balayage sur les 34 pièces, pipeline de
+rendu créé le 23 juillet (copie du FESP du Vol. II) — et elle est **close sans être achevée** depuis
+la clôture du dépôt, le 8 août 2026. **Quinze remontées de gouvernance demeurent ouvertes**
+(R-G-43 à R-G-57), dont plusieurs relèvent de l'auteur, et **elles le demeureront**. **Le PDF est
+assemblé (427 p., gabarit FESP) ; rédigé ne vaut pas publiable, et clore une phase n'est pas la
+terminer.**
 
 Le dossier porte trois répertoires — la gouvernance dans `prd/`, la rédaction dans `monographie/`,
 les rapports de vérification dans `verification/` —, plus un
@@ -203,17 +242,17 @@ Le volume naît des lacunes des deux précédents : identité non humaine et dé
 (verrou identifié au Vol. I), mécanique des attaques et valeur cryptographique des Agent Cards
 (questions ouvertes du Vol. II).
 
-## Vol. IV — La somme agentique (compendium)
+## Vol. IV — Interopérabilité et Orchestration Agentiques en Entreprise (compendium)
 
-**Arrêté en révision finale pour une bibliothèque personnelle — et l'arrêt est rouvert depuis le
-30 juillet 2026.** Le dossier
+**Clos et final depuis le 8 août 2026, arrêté en révision finale pour une bibliothèque personnelle
+depuis le 29 juillet.** Le dossier
 [`2 - Compendium/`](2%20-%20Compendium/) porte une table des matières
-commentée ([`TOC.md`](2%20-%20Compendium/PRD/TOC.md), **v0.32 du 30 juillet 2026** — chaque
+commentée ([`TOC.md`](2%20-%20Compendium/PRD/TOC.md), **v0.33 du 8 août 2026** — chaque
 entrée de chapitre y est suivie de sa **table des matières détaillée**, provenance par
 sous-section et table de couverture, **portée en titres markdown depuis la v0.18** : le plan du
 fichier expose la hiérarchie livre → chapitre → section), son
-**PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium/PRD/PRD.md), **v0.16 du
-30 juillet 2026** — portes de lancement, régimes de preuve, critères d'acceptation, jalons), son
+**PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium/PRD/PRD.md), **v0.17 du
+8 août 2026** — portes de lancement, régimes de preuve, critères d'acceptation, jalons), son
 **socle consolidé** ([`socle-consolide.md`](2%20-%20Compendium/PRD/socle-consolide.md), **159 entrées**
 `S-001`…`S-159`), sa vue synoptique dérivée ([`README.md`](2%20-%20Compendium/README.md)), ses
 exécutables de contrôle ([`check-toc.py`](2%20-%20Compendium/PRD/check-toc.py) et trois autres,
@@ -271,8 +310,20 @@ décision 15a** — *la citation nominative l'emporte, la péremption se gérant
 anonymat*. **Ce que D-11 ne change pas** : le statut **RÉVISION FINALE — bibliothèque personnelle est
 maintenu pendant toute la durée de la passe** ; **CA-IV-11 et CA-IV-13 demeurent dérogés, non
 satisfaits** ; **G-1 résiduel, G-4, G-5 et G-6 restent clos pour ce seul régime** ; la relecture tierce
-que le rapport réclame **n'est pas fournie par le rapport lui-même**, et il l'écrit. ⚠ **La passe de
-révision est ouverte, non refermée** : le volume n'est donc ni arrêté au sens de D-10, ni publiable.
+que le rapport réclame **n'est pas fournie par le rapport lui-même**, et il l'écrit.
+
+⚠ **La passe de révision est CLOSE depuis le 8 août 2026 — close, non achevée.** La décision d'auteur
+**D-13** (PRD [v0.17 §16](2%20-%20Compendium/PRD/PRD.md), TOC **v0.33**) la referme **sans exécuter
+son domaine résiduel**, et clôt le dépôt entier. **Ce qui ne sera pas fait est nommé ligne à ligne au
+§16.2 du PRD** : la relecture tierce (RA-R1), l'élévation hors **[C]** des sept sources nommées
+(RA-R2), le balayage des **261 tournures indéfinies** dans 44 pièces (résidu de RA-R4), la date de la
+ligne directrice AMF (RA-R6, **quatre refus d'accès de l'hôte** — *une propriété de la source, non un
+incident*), le ch. 46 (RA-R8), et le versement des `S-nnn` au corps (RA-R10, **674 emplois nus**
+mesurés). ⚠ **Aucun de ces manques ne devient une conformité en cessant d'être suivi** : *une dette
+qu'on cesse de suivre reste une dette ; elle change seulement de nom.* Le volume n'est donc ni
+publiable, ni recevable, ni appelé à le devenir — **et le même jour, il change de titre** :
+*« La somme agentique »* jusqu'au 8 août 2026, **« Interopérabilité et Orchestration Agentiques en
+Entreprise »** depuis (décision 20 du TOC).
 
 ⚠ **Un rendu paginé existe depuis le 29 juillet 2026, et il ne requalifie rien non plus.**
 [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf) — **1 114 pages** (re-mesurées le 8 août 2026), les cinquante chapitres des
@@ -286,7 +337,7 @@ volume tient hors corps (en-tête à cinq champs, thèse citée depuis le TOC, n
 supprimer. ⚠ **Un second rendu existe depuis le 4 août 2026, et il ne requalifie rien davantage** :
 [`Compendium.html`](2%20-%20Compendium/Compendium.html), **appareil de lecture à l'écran** du volume
 — déposé ce jour-là sous le nom `presentation.html`, renommé le même jour (commit `d473913`).
-**Un seul fichier de 1,74 Mio** (**1 826 464 octets**, mesurés le 8 août 2026 en fin de passe ; le
+**Un seul fichier de 1,74 Mio** (**1 828 014 octets**, re-mesurés le 8 août 2026 après la passe de clôture, qui a versé son statut au colophon ; le
 fichier est en fins de ligne `LF` pures, et le décompte est celui des octets sur disque)**, sans
 dépendance externe** et un seul lien sortant, vers le PDF : les
 **118 figures** du volume y sont embarquées en SVG `data:` et retournées pour fond sombre, la
@@ -334,9 +385,10 @@ re-mesurer les trois corpus par une commande de référence unique.
 
 ## Ordre de lecture et renvois
 
-**Vol. I → Vol. II → Vol. III**, la veille servant d'entrée rapide ou de mise à jour ; le Vol. IV
-les remplacera tous les trois **une fois recevable** — il est écrit, composé et arrêté, il n'est
-pas publiable, et [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf) se feuillette sans faire foi.
+**Vol. I → Vol. II → Vol. III**, la veille servant d'entrée rapide ou de mise à jour. ⚠ **Le Vol. IV
+devait les remplacer tous les trois une fois recevable ; il ne le sera pas** — il est écrit, composé,
+arrêté et clos, il n'est pas publiable, et [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf) se
+feuillette sans faire foi. *La règle de substitution n'est pas levée : elle est devenue sans objet.*
 
 - **Vol. II présuppose Vol. I** pour la théorie du découplage, l'ingénierie des agents LLM,
   l'anatomie des protocoles, la sécurité de la couche agentique et la cryptographie post-quantique.
@@ -389,7 +441,7 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
 ```
 .
 ├── README.md                              ← ce fichier (avant-propos croisé)
-├── Veille Technologique.md / .pdf         ← veille autonome, édition d'août 2026, faits gelés au 29 juillet (161 p., 269 réf.)
+├── Veille Technologique.md / .pdf         ← veille autonome, édition d'août 2026, faits gelés au 29 juillet (162 p., 269 réf.)
 ├── 1 - Corpus/                            ← le triptyque
 │   ├── 1 - InteroperabiliteAgentique/       Vol. I
 │   │   ├── Chapitres/                         7 chapitres + 7 bibliographies + Annexe B (ADS)
@@ -413,7 +465,7 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
     ├── annexe-references.md                 liste des 159 références du socle — annexe hors plan du rendu
     ├── annexe-bibliographie.md              Annexe I — bibliographie générale consolidée (1 154 entrées), reliée au rendu
     ├── figures/                             les 118 SVG des chapitres + programme des figures et scripts de génération
-    ├── Compendium.pdf                       rendu paginé des 50 chapitres + 2 annexes (1 114 p.) — brouillon non publiable
+    ├── Compendium.pdf                       rendu paginé des 50 chapitres + 2 annexes (1 114 p.) — brouillon non publiable, recomposé au renommage du 8 août 2026
     ├── Compendium.html                      appareil de lecture à l'écran du volume (4 août 2026, ex-`presentation.html`)
     │                                          un fichier, sans dépendance externe, 118 figures embarquées — ⚠ écrit à la main, aucune chaîne ne le régénère
     ├── .claude/launch.json                  sert le dossier en local (python -m http.server 8731) pour lire Compendium.html
@@ -426,8 +478,8 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
     │   ├── README.md                          état du livre, issues des remontées, sièges, volumétrie
     │   └── NN-….md / .html                    un chapitre par pièce — source + page à thème sombre
     └── PRD/                                 gouvernance de la rédaction (sous-dossier)
-        ├── PRD.md                           v0.16 — portes, régimes de preuve, jalons ; §15 = D-11
-        ├── TOC.md                           table des matières commentée (v0.32) — spécification
+        ├── PRD.md                           v0.17 — portes, régimes de preuve, jalons ; §15 = D-11, §16 = D-13 (clôture)
+        ├── TOC.md                           table des matières commentée (v0.33) — spécification
         ├── socle-consolide.md               socle consolidé S-001…S-159 (porte G-3, 28 juill. 2026)
         ├── registre-gel.md                  registre de gel, une ligne par chapitre
         ├── check-toc.py                     contrôles C1-C15 (python PRD/check-toc.py)
@@ -526,7 +578,12 @@ Libertinus Serif, signalé à l'exécution) ; pour les diagrammes, Node ≥ 18 +
 ## Ce qui reste vivant
 
 Le domaine se périme par trimestres, et ces corpus par morceaux. Échéances datées à revalider
-avant toute réutilisation ou publication :
+avant toute réutilisation ou publication.
+
+⚠ **Le dépôt étant clos, personne ne les revalidera : la charge passe entièrement au lecteur.** Ce
+tableau ne décrit plus un plan de maintenance mais **la carte de ce qui périmera ces documents**, et
+chaque ligne échue après le 8 août 2026 rend son objet faux sans que rien dans le dépôt ne l'indique.
+*Un corpus clos ne cesse pas de vieillir ; il cesse seulement d'être rattrapé.*
 
 | Échéance | Objet | Documents touchés |
 |---|---|---|
@@ -638,7 +695,7 @@ place du rapport d'analyse. Le rapport reste alors au dépôt sous le nom `audit
 rendu**, avec son régime inchangé — sans autorité, jamais citable à l'appui d'un énoncé. *Les deux se
 distinguent par leur nom : l'`annexe-` est reliée, l'`audit-` ne l'est pas.* ⚠ **Ce constat a été
 dépassé depuis** : `audit-references.md` a été retiré de l'arbre, comme `audit.md` et `eval.html` — les
-trois ne se lisent plus qu'à l'historique git (voir « Restent ouverts »). Décomptes **re-mesurés sur
+trois ne se lisent plus qu'à l'historique git (voir « Reliquats définitifs à la clôture »). Décomptes **re-mesurés sur
 pièce** : **1 114 pages** au 8 août 2026, après la refonte typographique du 31 juillet 2026 ; l'annexe pesait dix pages au gabarit de la refonte
 Springer, contre vingt-sept
 pour le rapport — ⚠ *ce coût-là n'a pas été re-mesuré au gabarit neuf.* La ligne de `sed` qui élargissait
@@ -917,19 +974,72 @@ dépôt prend pour objet.
 `grep -c '^```mermaid'` donne 28. Le motif non ancré en retourne 29 — il attrape une ligne de prose
 de la note de production qui cite la balise.
 
-**Restent ouverts, signalés et non corrigés** — re-mesurés le 8 août 2026. Ce sont des décisions
-d'auteur, des contradictions à arbitrer, ou des renvois dont la correction exigerait une information
-que le dépôt ne porte pas :
+**Le 8 août 2026, seconde passe du même jour — LA PASSE DE CLÔTURE.** Sur instruction d'auteur, le
+dépôt est **clos et final**. *C'est la dernière entrée de ce journal, et elle décrit un état qui ne
+bougera plus.*
+
+**Trois gestes de gouvernance, et rien d'autre.** *(1)* **La décision d'auteur `D-13` est prise**
+(PRD **v0.17** §16, TOC **v0.33**) : la passe de révision ouverte par `D-11` le 30 juillet 2026 est
+**close sans exécution de son domaine résiduel**, et le dépôt entier est clos. Le §16.2 du PRD nomme
+**ligne à ligne** ce qui ne sera pas fait — relecture tierce, élévation hors **[C]**, les **261
+tournures indéfinies** de 44 pièces, la date AMF, le ch. 46, les **674 emplois de socle nus**.
+*(2)* **La `décision 20` du TOC renomme le Vol. IV** : *« La somme agentique »* devient
+**« Interopérabilité et Orchestration Agentiques en Entreprise »**, et le sous-titre perd son premier
+terme, que le titre porte désormais. *(3)* **La `décision 19` pose la seule règle de lecture qui suive
+d'une clôture** : *un manque définitif ne devient jamais une conformité.*
+
+**Ce que la passe a touché, et pourquoi.** Le renommage est un **identifiant, non un fait daté** —
+c'est le motif pour lequel il se propage là où un fait daté ne se propagerait pas. **55 fichiers** le
+portent : les **50 pages de chapitre** et [`Compendium.html`](2%20-%20Compendium/Compendium.html), les
+**trois gabarits Typst**, `check-toc.py`, et les documents de gouvernance. ⚠ **Deux conséquences
+mesurées, et aucune n'était prévisible depuis la source.** *(a)* **Le titre a dû passer de 52 pt à
+34 pt** sur la page de titre : à 52 pt, « Interopérabilité » **seul** déborde des 148 mm de la page, et
+*Typst ne le signale pas*. Vérifié sur le rendu : page de titre **unique**, **1 114 pages inchangées**,
+zéro occurrence de l'ancien titre (`pdftotext`). *(b)* ⚠ **La veille technologique passe de 161 à
+162 pages** : la mention du titre d'alors, portée à ses références **[220]** et **[266]**, a poussé la
+bibliographie d'une page. *Le rattrapage de la veille est une **exception nommée** à la règle du dépôt
+— elle vaut pour un identifiant, jamais pour un fait daté, et aucun énoncé factuel de la veille n'est
+touché.*
+
+**Ce que la passe a purgé.** `2 - Compendium/build/compendium-assemble.md` — **2,7 Mio** de produit
+d'assemblage périmé, que `build-pdf.sh` n'utilise pas (il écrit dans un répertoire temporaire) et qui
+portait à lui seul **123 des renvois morts** du dépôt ; les **cinq répertoires `__pycache__`** du
+disque, non suivis. **Trois documents de travail ont été retirés par l'auteur dans la même passe** :
+`gauntlet-log.md` (journal de la boucle d'audit du 8 août) et les deux rapports d'**évaluation
+académique** du même jour — ⚠ *aucun n'était cité par un document du dépôt, et le seul suivi par git
+se lit à l'historique.*
+
+**Deux décisions d'auteur en attente depuis le 18 juillet sont tranchées** : l'étiquette git
+**`mono-v1.0` est posée** au commit de clôture (⚠ *elle marque l'arbre clos, non celui du 17 juillet
+qu'elle nomme*), et **aucune licence n'est déposée** — droit d'auteur par défaut, **tous droits
+réservés**. Détail au tableau ci-dessous.
+
+**Contrôles rejoués à la clôture, tous en sortie 0** : `check-veille.py`, `check-toc.py` (C1-C15),
+`check-sieges.py` (S1-S5), `check-compendium.py` (P1-P8), `bash decompte.sh --verifier`. **Renvois
+internes re-balayés** : **1 667 liens relatifs, 6 morts** — les six connus et documentés au tableau
+ci-dessous (cinq citations verbatim d'un rapport de lot, un faux positif dans un bloc clôturé), et
+*la purge du produit d'assemblage a retiré les 123 autres.* ⚠ **Cette mesure reste externe à
+l'appareil** : *aucun des cinq contrôles ne résout un seul lien markdown*, et rien ne la rejouera.
+⚠ **Ce que la passe ne fait pas** : elle **ne franchit aucune porte**, **ne lève aucune dérogation**,
+**ne referme aucune remontée**, **ne touche à la prose d'aucune des cinquante pièces rédigées** — leur
+en-tête déclare « brouillon non publiable », *énoncé que la clôture confirme plutôt qu'elle ne le
+périme* — et **ne publie rien**.
+
+**Reliquats DÉFINITIFS à la clôture** — re-mesurés le 8 août 2026. ⚠ **Ce tableau ne liste plus des
+dettes suivies : il liste ce qui restera en l'état.** Deux lignes ont été tranchées par la clôture et
+portent leur issue ; les autres sont des contradictions non arbitrées, ou des renvois dont la
+correction exigerait une information que le dépôt ne porte pas — *et personne ne l'apportera.*
 
 | Fichier | Reliquat |
 |---|---|
-| racine du dépôt | **aucune licence** : seul le Vol. I porte un `LICENSE`. Un dépôt final sans licence de tête laisse les quatre autres livrables sans régime déclaré — **décision d'auteur, expressément laissée ouverte** |
-| `1 - Corpus/2 - OrchestrationAgentique/` | l'étiquette git `mono-v1.0` **n'est pas posée** — `git tag -l` est **vide** — alors que **trois documents de gouvernance** (`PRD.md`, `PRDPlan.md`, `audit.md`) **et dix-sept pièces** l'annoncent comme telle, dont l'une écrit « `mono-v1.0` existe » ; les deux `README.md` du volume portent, eux, le correctif. Poser le tag, ou corriger ces mentions : **décision d'auteur**, la prose n'a pas été réécrite |
+| racine du dépôt | ☑ **TRANCHÉ le 8 août 2026 — aucune licence, et c'est le régime choisi** : **droit d'auteur par défaut, tous droits réservés**. Seul le Vol. I porte un `LICENSE` propre, qui ne vaut que pour lui. ⚠ *Le motif est de cohérence, non d'omission* : le volume terminal du dépôt exclut toute mise à disposition d'un tiers, et une licence ouverte à la racine contredirait le régime que quatre documents de gouvernance déclarent |
+| `1 - Corpus/2 - OrchestrationAgentique/` | ☑ **TRANCHÉ le 8 août 2026 — l'étiquette git `mono-v1.0` est posée**, au commit de clôture. ⚠ **Elle ne rend pas vraies les vingt mentions qui l'annonçaient** : **trois documents de gouvernance** (`PRD.md`, `PRDPlan.md`, `audit.md`) **et dix-sept pièces** la donnent pour posée depuis le 17 juillet 2026, dont l'une écrit « `mono-v1.0` existe » — *l'étiquette marque l'arbre clos du 8 août, non celui du 17 juillet, et `git show mono-v1.0` le montre.* Les deux `README.md` du volume portent le correctif ; la prose des vingt mentions **n'a pas été réécrite, et ne le sera pas** |
 | `1 - Corpus/1 - InteroperabiliteAgentique/Chapitres/TOC.md` | l'Annexe B y est déclarée **≈ 17 500 mots** quand `wc -w` en mesure **20 655** (+18 %). La colonne « Méthode » dit honnêtement « décompte **déclaré** en tête d'ADS », mais l'en-tête du même fichier revendique que tout décompte est **relevé, non projeté** — **contradiction interne à arbitrer** |
 | `1 - Corpus/2 - OrchestrationAgentique/` | **trois volumétries concurrentes, toutes justes sous leur méthode** : 92 059 (PRDPlan §4.2, locale par défaut — chiffre publié), 93 242 (`decompte.sh`, locale UTF-8, où l'espace insécable sépare), 90 362 (clôture de P4, datée). Le §4.2 documente lui-même son sous-comptage de 1,3 % et **refuse** de le corriger : aucune n'est fausse, et le choix est éditorial |
 | `2 - Compendium/` — volumétries des cinq `Livre */README.md` et colonne `Réel` du registre de gel | périmées de quatre passes de révision du français (31 juillet → 3 août 2026). ⚠ **Non corrigées pour une raison de contrôle, non de paresse** : la colonne est **opposée par `check-compendium.py` P6 aux en-têtes des cinquante pièces**, qui sont de la prose gelée — la corriger d'un seul côté ferait échouer P6 sur 26 lignes. La mesure courante (**331 791 mots**) est écrite au registre avec ce motif |
 | `2 - Compendium/Compendium.html` + les 50 `.html` de chapitre | **aucune chaîne ne les régénère** : `build/` ne porte pas de générateur HTML, ces pages sont écrites et relevées à la main. La règle du « rendu versionné avec sa source » ne s'y applique pas — *le retard sur le `.md` ne se signale nulle part* |
 | `2 - Compendium/Livre */README.md` | leurs blocs de procédure invoquent `rendre-piece.py` et `verifier-piece.py`, **scripts d'un skill supprimé le 31 juillet 2026** (commit `41666d0`). Le retrait est désormais déclaré à chaque fichier, mais les commandes sont laissées telles quelles : **le dépôt ne dit pas par quoi elles ont été remplacées** |
+| racine du dépôt et `2 - Compendium/build/` — `gauntlet-log.md`, les deux rapports d'**évaluation académique** du 8 août 2026, `compendium-assemble.md` | **purgés à la clôture du 8 août 2026.** Les trois premiers sont des documents de travail qu'**aucun fichier du dépôt ne citait** ; `gauntlet-log.md` était suivi par git et se relit à l'historique, les deux rapports ne l'étaient pas et **ne se relisent nulle part**. `compendium-assemble.md` était un **produit d'assemblage périmé de 2,7 Mio** que la chaîne n'utilise pas — il portait **123 des renvois morts** du dépôt à lui seul. ⚠ *Purger un produit dérivé est sans conséquence ; purger un journal non suivi est irréversible, et c'est écrit ici plutôt que constaté plus tard* |
 | `2 - Compendium/` — `audit.md`, `audit-references.md`, `eval.html`, six `CLAUDE.md`, `.claude/skills/` | **supprimés délibérément** (`f6183bf`, `73e7c4e`, `982ef3a`, `41666d0`), et non perdus : ils se lisent à l'historique git. Les renvois qui les visaient sont retirés, le retrait daté. ⚠ *Le rapport d'arbitrage `eval.html` qui a déclenché **D-11** est dans ce lot : la décision est opposable, la pièce qui la motive ne se lit plus qu'au journal* |
 | `1 - Corpus/3 - EntrepriseAgentique/verification/lot-L-04-…md` | **cinq renvois morts conservés à dessein** : ce sont les liens relatifs internes de pages tierces, reproduits **verbatim** dans des blockquotes de preuve. Les réécrire altérerait la citation, qui est l'objet même d'un rapport de lot |
 | `1 - Corpus/3 - EntrepriseAgentique/prd/PRDPlan.md` | un sixième renvoi « mort » est un **faux positif** : le chemin vit dans un bloc `sh` clôturé, c'est le **gabarit d'en-tête de pièce**, correct à la profondeur de sa destination. Y toucher casserait le gabarit |

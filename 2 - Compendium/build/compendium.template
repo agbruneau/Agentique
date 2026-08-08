@@ -35,7 +35,7 @@
 // verticale se compte de ligne de base à ligne de base.
 
 #set document(
-  title: "La somme agentique",
+  title: "Interopérabilité et Orchestration Agentiques en Entreprise",
   author: "André-Guy Bruneau, M.Sc. IT",
   keywords: ("interopérabilité agentique", "identité", "orchestration",
              "services financiers", "Canada"),
@@ -407,7 +407,9 @@
 #page(margin: (x: 34mm, top: 36mm, bottom: 26mm), header: none, footer: none)[
 #block(width: 100%, {
   // ⚠ `hyphenate: false` : le titre ne tient pas sur une ligne de 148 mm et se
-  // replie — mais césuré, il sort « La somme agen-tique ». Il se replie au mot.
+  // replie — mais césuré, il sort « Interopérabi-lité ». Il se replie au mot.
+  // ⚠ La taille est passée de 52 pt à 34 pt au renommage du 8 août 2026 : à 52 pt,
+  // « Interopérabilité » seul déborde des 148 mm et Typst ne le signale pas.
   set text(hyphenate: false)
   set par(justify: false, leading: 0.5em, first-line-indent: 0pt)
   text(font: SANS, size: 10pt, fill: GRIS, tracking: 0.30em)[COMPENDIUM]
@@ -416,7 +418,7 @@
   v(10pt)
   line(length: 100%, stroke: 1.6pt + ENCRE)
   v(24pt)
-  text(font: SANS, size: 52pt, weight: "bold", fill: ENCRE)[La somme agentique]
+  text(font: SANS, size: 34pt, weight: "bold", fill: ENCRE)[Interopérabilité et Orchestration Agentiques en Entreprise]
   v(20pt)
   // ⚠ La justification est posée ICI et non sur le bloc entier : le titre tient
   // sur deux lignes, et justifié, sa première ligne — « La somme » — serait
@@ -425,7 +427,7 @@
   block(width: 88%, {
     set par(justify: true)
     text(font: SERIF, size: 15pt, style: "italic", fill: GRIS)[
-      Interopérabilité, autonomie encadrée et fabrique de confiance :
+      Autonomie encadrée et fabrique de confiance :
       déployer des agents en services financiers réglementés (2024-2032)
     ]
   })

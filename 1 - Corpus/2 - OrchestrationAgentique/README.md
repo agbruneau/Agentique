@@ -3,6 +3,12 @@
 📖 **Lire :** [`Monographie.pdf`](Monographie.pdf) (387 p.) dans ce dossier. *(Le volume n'a plus de
 page de présentation ni de publication GitHub Pages — voir « Structure du dossier ».)*
 
+> ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13**
+> ([`2 - Compendium/PRD/PRD.md`](../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe
+> n'est plus prévue, sur ce volume ni sur aucun autre du dépôt : ce qui suit décrit un état
+> **définitif**. ⚠ *Clore n'est ni terminer ni publier* — rien n'est levé, rien n'est soldé, et
+> ce qui restait dû devient un **manque définitif, daté et écrit**.
+
 > **Où vous êtes.** Ce dossier est le **deuxième des trois volumes** du corpus, dans le dépôt
 > [*Agentique*](../../README.md). Il **présuppose le volume I**
 > ([`1 - InteroperabiliteAgentique/`](../1%20-%20InteroperabiliteAgentique/)) pour la théorie du
@@ -13,7 +19,7 @@ page de présentation ni de publication GitHub Pages — voir « Structure du do
 
 | Champ | Valeur |
 |---|---|
-| Livrable | millésime **`mono-v1.0`** — publiée le 17 juillet 2026 (⚠ millésime éditorial : l'**étiquette git n'a pas été posée**) |
+| Livrable | millésime **`mono-v1.0`** — publiée le 17 juillet 2026 ; ☑ **l'étiquette git `mono-v1.0` est posée le 8 août 2026, au commit de clôture du dépôt** (décision d'auteur, passe D-13). ⚠ *Elle l'a été vingt-deux jours après le millésime éditorial qu'elle nomme, et elle marque donc l'arbre clos, non l'arbre du 17 juillet : `git show mono-v1.0` le montre.* Les documents de gouvernance du volume qui l'annonçaient posée depuis juillet **cessent d'être faux sans devenir exacts pour autant** |
 | Volumétrie | **92 059 mots**, 29 pièces (24 chapitres, avant-propos, annexes A-D) |
 | Rendu | `Monographie.pdf` **387 p.** (article de synthèse retiré du dossier le 22 juillet 2026) |
 | Gel de l'information | 16 juillet 2026 (22 pièces) · 17 juillet 2026 (7 pièces) |

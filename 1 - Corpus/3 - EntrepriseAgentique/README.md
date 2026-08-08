@@ -3,6 +3,12 @@
 📖 **Lire :** [`Monographie.pdf`](Monographie.pdf) (**427 p.**) dans ce dossier.
 ⚠ **Rédigé de bout en bout, non publiable en l'état** — voir « État » plus bas.
 
+> ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13**
+> ([`2 - Compendium/PRD/PRD.md`](../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe
+> n'est plus prévue, sur ce volume ni sur aucun autre du dépôt : ce qui suit décrit un état
+> **définitif**. ⚠ *Clore n'est ni terminer ni publier* — rien n'est levé, rien n'est soldé, et
+> ce qui restait dû devient un **manque définitif, daté et écrit**.
+
 > **Où vous êtes.** Ce dossier est le **troisième des trois volumes** du corpus, dans le dépôt
 > [*Agentique*](../../README.md). Il **prolonge les deux précédents sur leur verrou commun** :
 > l'identité non humaine et son exploitation dans la durée. Le Vol. I l'a identifié comme son verrou
@@ -75,8 +81,11 @@ vers un chapitre amont, soit une inférence à marquer.
 
 ⚠ **Rédigé ne vaut pas publiable, et c'est le seul énoncé d'état qui compte.** Les 34 pièces sont
 rédigées, relues adversarialement et corrigées — **jalon J-5 atteint le 22 juillet 2026** —, et la
-phase de finalisation **P5 est en cours**. *Trente-quatre pièces rédigées, relues et corrigées font un
-ouvrage complet, ce qui est autre chose qu'un ouvrage publiable.*
+phase de finalisation **P5 est CLOSE SANS ÊTRE ACHEVÉE** depuis la clôture du dépôt, le 8 août 2026.
+*Trente-quatre pièces rédigées, relues et corrigées font un ouvrage complet, ce qui est autre chose
+qu'un ouvrage publiable* — et **la clôture ne l'en rapproche pas** : elle déclare seulement que
+personne ne finira P5. ⚠ **Les quinze remontées R-G-43 à R-G-57 et la dette de vote sur F-92 et
+F-96 restent donc ouvertes à titre définitif** ; *une dette qu'on cesse de suivre reste une dette.*
 
 **Ce qui a été fait.** Phases P0 à P4 closes ; revalidation temporelle finale (P5.1) et rejeu
 exhaustif des motifs de balayage (P5.2) conduits le 22 juillet 2026 ; réalignement des porteurs de
@@ -85,7 +94,7 @@ de révision complémentaire le 24 juillet 2026. **30 rapports** sous [`verifica
 — 15 rapports de lot, 11 relectures, 2 revalidations, la confrontation des thèses et le registre des
 remontées. ⚠ **Aucun des trois contrôles de P5 ne vaut certificat.**
 
-**Ce qui reste ouvert** — le détail vit au registre
+**Ce qui reste ouvert, et le restera** — le détail vit au registre
 [`verification/remontees-gouvernance.md`](verification/remontees-gouvernance.md) :
 
 - **Quinze remontées de gouvernance ouvertes** — R-G-43 à R-G-57 — dont plusieurs siègent au PRD ou au
