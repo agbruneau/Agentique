@@ -153,6 +153,13 @@ puisse démontrer la teneur devant un tiers.
 
 📖 **Documents sources :** [`3 - EntrepriseAgentique/Monographie.pdf`](3%20-%20EntrepriseAgentique/Monographie.pdf) (**427 p.**) · [`Monographie.md`](3%20-%20EntrepriseAgentique/Monographie.md)
 
+⚠ **L'appareil de vérification du volume a été supprimé le 8 août 2026** (commit `659241b`, postérieur
+à la clôture) : le répertoire `verification/` et ses **30 rapports** — 15 lots d'instruction,
+11 relectures, 2 revalidations, la confrontation des thèses et `remontees-gouvernance.md` — **ne se
+lisent plus qu'à l'historique git**. ⚠ *Rien de ce qu'ils portaient n'est soldé* : les quinze
+remontées R-G-43 à R-G-57 et la dette de vote sur F-92 et F-96 restent ouvertes à titre définitif, et
+**le registre qui les détaillait n'est plus sur l'arbre.** *La dette survit à son inventaire.*
+
 ### Thèse
 
 L'entreprise agentique — celle qui délègue des tâches engageant sa responsabilité à des agents
@@ -334,8 +341,18 @@ c'est ce chiffre qui sert de point d'ancrage au dépôt. Vol. II : commande de r
 [PRDPlan §4.2](2%20-%20OrchestrationAgentique/prd/PRDPlan.md) (corps borné, jetons alphanumériques,
 locale C). Vol. III : commande de référence de
 [PRDPlan §1.5](3%20-%20EntrepriseAgentique/prd/PRDPlan.md). *Mesuré par une commande **unique** sur les
-trois corpus — `bash "../2 - Compendium/PRD/decompte.sh" --verifier` —, l'agrégat vaut **479 390** mots :
-il n'est pas comparable au total ci-dessus, et aucun des deux n'est faux.*
+trois corpus — `bash "../2 - Compendium/PRD/decompte.sh" --verifier` —, l'agrégat vaut **479 387** mots
+sur l'arbre courant : il n'est pas comparable au total ci-dessus, et aucun des deux n'est faux.*
+
+⚠ **Et cette commande ÉCHOUE désormais — sortie 1, relevée le 8 août 2026, seconde relecture.** Elle
+attend **93 242** mots au Vol. II et en mesure **93 239** ; l'agrégat tombe de **479 390** à
+**479 387**. La cause est le renommage du volume : le commit `659241b` a récrit, dans **trois pièces
+de `2 - OrchestrationAgentique/monographie/`** (§ 6.2, § 13.2, glossaire de l'annexe D), les formules
+qui appelaient l'autonomie encadrée le *titre* de l'ouvrage pour en faire sa *thèse*, et **trois
+jetons sont tombés**. *(Le script mesure les pièces, non le `Monographie.md` assemblé.)* ⚠ *Le script a
+raison ; c'est sa valeur d'ancrage qui est périmée d'un renommage, et personne ne la remettra à jour
+— le dépôt est clos.* Le total en mots de la ligne ci-dessus, lui, ne bouge pas : le chiffre publié
+du Vol. II est **92 059**, pris par une autre commande, que cet écart ne touche pas.
 
 ---
 
@@ -354,6 +371,8 @@ il n'est pas comparable au total ci-dessus, et aucun des deux n'est faux.*
 ```
 1 - Corpus/
 ├── README.md                                ← ce fichier (synthèse consolidée)
+├── 0 - Références/                          ⚠ 3 PDF de littérature source (32,5 Mio), déposés le 8 août 2026
+│                                              — cités par AUCUN document du dépôt, sans README ni régime déclaré
 ├── 1 - InteroperabiliteAgentique/           Vol. I (569 p., 233 257 mots)
 │   ├── Chapitres/                             7 chapitres + 7 bibliographies + Annexe B (ADS)
 │   ├── Monographie.md / .pdf                  assemblage
@@ -368,7 +387,7 @@ il n'est pas comparable au total ci-dessus, et aucun des deux n'est faux.*
     ├── README.md                              présentation du volume (déposée le 29 juill. 2026)
     ├── monographie/                           34 pièces rédigées + registre des gels
     ├── prd/                                   PRD v1.3, TOC v0.8, PRDPlan v0.5 — gouvernance
-    ├── verification/                          30 rapports de vérification
+    │                                          ⚠ verification/ (30 rapports) SUPPRIMÉ le 8 août 2026 — historique git seul
     ├── build/                                 pipeline FESP
     └── Monographie.md / .pdf                  assemblage
 ```

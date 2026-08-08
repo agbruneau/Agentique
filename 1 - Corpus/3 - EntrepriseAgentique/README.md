@@ -9,6 +9,21 @@
 > **définitif**. ⚠ *Clore n'est ni terminer ni publier* — rien n'est levé, rien n'est soldé, et
 > ce qui restait dû devient un **manque définitif, daté et écrit**.
 
+> ⚠ **L'APPAREIL DE VÉRIFICATION DE CE VOLUME A ÉTÉ SUPPRIMÉ le 8 août 2026**, par un commit
+> **postérieur à la clôture** (`659241b`). Le répertoire `verification/` et ses **30 rapports** —
+> 15 lots d'instruction, 11 relectures, 2 revalidations, la confrontation des thèses et le registre
+> `remontees-gouvernance.md` — **ne se lisent plus qu'à l'historique git**. Les renvois de ce fichier
+> qui les visaient sont **retirés en conservant leurs noms et en datant le retrait**, selon la règle
+> du dépôt.
+>
+> ⚠ **Ce que la suppression ne fait pas, et il faut le lire avant le reste de ce fichier.** Elle **ne
+> solde aucune remontée**, **ne referme aucune dette**, **ne lève aucune réserve** : les quinze
+> remontées **R-G-43 à R-G-57** et la **dette de vote sur F-92 et F-96** restent ouvertes à titre
+> définitif — c'est seulement **l'inventaire qui les nommait** qui a quitté l'arbre. *Une dette dont
+> on supprime le registre reste une dette ; elle devient seulement plus difficile à lire.* ⚠ Toutes
+> les affirmations de conformité ci-dessous **s'adossaient à ces rapports** : elles restent exactes
+> comme **constats datés**, et **cessent d'être vérifiables sur l'arbre courant.**
+
 > **Où vous êtes.** Ce dossier est le **troisième des trois volumes** du corpus, dans le dépôt
 > [*Agentique*](../../README.md). Il **prolonge les deux précédents sur leur verrou commun** :
 > l'identité non humaine et son exploitation dans la durée. Le Vol. I l'a identifié comme son verrou
@@ -33,9 +48,9 @@ distincts** : juin 2026 (Vol. I) et 16-17 juillet 2026 (Vol. II) ; ses 34 pièce
 | Socle hérité | **33 entrées** — H-01 à H-16 (Vol. II, **niveau conservé**), H-17 à H-33 (Vol. I, **abaissées en [C]**) |
 | Lots d'instruction | **15 clos sur 15** — quatorze par instruction aboutie, **L-15 par échec documenté** (filiation livresque retirée, réversible) |
 | Garde-fous | **R-01 à R-14** *(deux chiffres — ceux du Vol. II sont R-1 à R-8, un chiffre : ce ne sont pas les mêmes objets)* |
-| Conformité | **CA-01 à CA-14** ⚠ **CA-12 (dualité d'usage) n'est tenue sur aucune pièce de la phase P4** ; **16 pièces sur 34 n'en nommaient aucun compte rendu au relevé du 22 juillet 2026**, et **deux l'ont reçu depuis** par les correctifs de la relecture du 24 juillet ([`relecture-revision-2026-07-24.md`](verification/relecture-revision-2026-07-24.md) §1) — le terme procédural reste non clos |
+| Conformité | **CA-01 à CA-14** ⚠ **CA-12 (dualité d'usage) n'est tenue sur aucune pièce de la phase P4** ; **16 pièces sur 34 n'en nommaient aucun compte rendu au relevé du 22 juillet 2026**, et **deux l'ont reçu depuis** par les correctifs de la relecture du 24 juillet (`relecture-revision-2026-07-24.md` §1 — ⚠ *fichier retiré du dépôt le 8 août 2026, historique git seul*) — le terme procédural reste non clos |
 | Dates de gel | **21 juillet 2026** pour les 34 pièces — registre [`monographie/99-registre-gel.md`](monographie/99-registre-gel.md) |
-| Revalidation | **22 juillet 2026** ([`verification/revalidation-2026-07-22.md`](verification/revalidation-2026-07-22.md)) : six lignes INCHANGÉ, une INACCESSIBLE (AMF, HTTP 403). Couvre une publication **jusqu'au 21 août 2026** (CA-04) ; au-delà, elle se rejoue |
+| Revalidation | **22 juillet 2026** (`verification/revalidation-2026-07-22.md` — ⚠ *fichier retiré du dépôt le 8 août 2026, historique git seul*) : six lignes INCHANGÉ, une INACCESSIBLE (AMF, HTTP 403). Couvre une publication **jusqu'au 21 août 2026** (CA-04) ; au-delà, elle se rejoue — ⚠ *et elle ne se rejouera pas : le dépôt est clos, et le rapport qui l'établissait n'est plus sur l'arbre* |
 | Lacunes | **22 documentées** dont **3 closes** — le PRD §10 ne porte « INSTRUITE ET CLOSE » qu'aux entrées 1, 2 et 11 ; la 10 est « instruite, non arbitrée » et la 15 « instruite, **non close** ». Exposées plutôt que comblées |
 | Gouvernance | **PRD v1.3** · **TOC v0.8** · **PRDPlan v0.5**, sous [`prd/`](prd/) |
 
@@ -90,12 +105,16 @@ F-96 restent donc ouvertes à titre définitif** ; *une dette qu'on cesse de sui
 **Ce qui a été fait.** Phases P0 à P4 closes ; revalidation temporelle finale (P5.1) et rejeu
 exhaustif des motifs de balayage (P5.2) conduits le 22 juillet 2026 ; réalignement des porteurs de
 décomptes (P5.3) ; pipeline de rendu créé le 23 juillet 2026 (P5.4) et PDF réassemblé le 24 ; relecture
-de révision complémentaire le 24 juillet 2026. **30 rapports** sous [`verification/`](verification/)
-— 15 rapports de lot, 11 relectures, 2 revalidations, la confrontation des thèses et le registre des
-remontées. ⚠ **Aucun des trois contrôles de P5 ne vaut certificat.**
+de révision complémentaire le 24 juillet 2026. Ce travail a produit **30 rapports** sous
+`verification/` — 15 rapports de lot, 11 relectures, 2 revalidations, la confrontation des thèses et
+le registre des remontées. ⚠ **Le répertoire entier a été supprimé le 8 août 2026** (commit
+`659241b`) et se relit à l'historique git : *le travail a eu lieu, sa trace a quitté l'arbre.*
+⚠ **Aucun des trois contrôles de P5 ne valait certificat, et un contrôle dont le rapport est
+introuvable en vaut encore moins.**
 
-**Ce qui reste ouvert, et le restera** — le détail vit au registre
-[`verification/remontees-gouvernance.md`](verification/remontees-gouvernance.md) :
+**Ce qui reste ouvert, et le restera** — le détail vivait au registre
+`verification/remontees-gouvernance.md`, ⚠ *retiré du dépôt le 8 août 2026 ; la liste ci-dessous est
+désormais le seul état de cette dette lisible sur l'arbre* :
 
 - **Quinze remontées de gouvernance ouvertes** — R-G-43 à R-G-57 — dont plusieurs siègent au PRD ou au
   TOC plutôt que dans une pièce : leur arbitrage rouvrirait du texte tenu pour fait, **sur les
@@ -155,7 +174,7 @@ prd/                         gouvernance, par ordre d'autorité
   TOC.md                       v0.8 — autorité sur le découpage (28 chapitres, 9 parties, 34 pièces)
   PRDPlan.md                   v0.5 — plan d'exécution (phases P0 à P5)
 monographie/                 34 pièces rédigées + 99-registre-gel.md
-verification/                30 rapports (lots, relectures, revalidations, remontées)
+                             ⚠ verification/ (30 rapports) SUPPRIMÉ le 8 août 2026 — historique git seul
 build/                       pipeline FESP (troisième copie) + assemble.py
 Monographie.md / .pdf        assemblage des 34 pièces et son rendu (427 p.)
 ```
@@ -179,6 +198,13 @@ avec le `.md` — jamais la source seule.
 relative depuis le répertoire de la pièce — **19 renvois morts de moins dans `Monographie.md`**, aucune
 ligne de prose touchée. ⚠ **Le `.pdf` versionné précède ce correctif** : il porte encore les anciennes
 cibles, et se régénérera à la prochaine passe de rendu.
+
+⚠ **Le correctif a été rendu sans objet le jour même, et il faut le dire ici.** Les cibles qu'il
+rebasait vivaient toutes sous `verification/`, **supprimé quelques heures plus tard** par le commit
+`659241b` : les dix-neuf renvois **résolvent désormais depuis le bon répertoire vers un fichier qui
+n'existe plus.** *Réparer le chemin d'un renvoi ne le rend pas vivant si l'on supprime sa cible —
+un rebasage juste vers un fichier absent reste un renvoi mort, et aucun contrôle du volume ne le
+voit.* **Rien n'est corrigé ici** : les pièces rédigées ne sont pas touchées, et le dépôt est clos.
 
 **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, `python3` + `pypdf`, polices Liberation Sans et DejaVu
 Sans. Le script exporte lui-même `PYTHONUTF8=1` (nécessaire sous Windows).

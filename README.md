@@ -38,6 +38,25 @@ publiable.
 > le présent fichier exige de tout commit reprenant le travail **reste à faire, et c'est une décision
 > d'auteur**.
 >
+> ⚠ **ET LE RENOMMAGE N'ÉTAIT PAS SEUL DANS CE COMMIT — c'est le constat le plus lourd de la
+> resynchronisation du 8 août 2026, seconde relecture.** Le commit `659241b` (8 août 2026, 14 h 24,
+> **46 fichiers**), postérieur à D-13, porte **trois gestes de fond que ce fichier n'enregistrait
+> pas** :
+> *(a)* **un corpus de références est entré au dépôt** — [`1 - Corpus/0 - Références/`](1%20-%20Corpus/0%20-%20R%C3%A9f%C3%A9rences/),
+> trois PDF de littérature source (**32,5 Mio** : *Mémoire de maîtrise* 1997, *Enterprise Integration
+> Patterns* 2003, *Distributed Systems* 2007). ⚠ *Aucun document du dépôt ne les cite, aucun socle
+> n'en porte d'entrée, et ils ne sont adossés à aucun volume* — **ce sont des pièces déposées, non des
+> sources instruites** ;
+> *(b)* **`1 - Corpus/3 - EntrepriseAgentique/verification/` a été supprimé en entier** — les
+> **30 rapports** du Vol. III (15 lots, 11 relectures, 2 revalidations, la confrontation des thèses et
+> le registre des remontées, ≈ 8 100 lignes). ⚠ **Le registre `remontees-gouvernance.md` est dans ce
+> lot, et c'est lui qui portait le détail des quinze remontées R-G-43 à R-G-57** : *la dette reste
+> ouverte, l'inventaire qui la nommait ne se lit plus qu'à l'historique git.* Les décomptes de « 30
+> rapports » qui traînaient à quatre `README.md` sont corrigés dans la présente passe ;
+> *(c)* ⚠ **un contrôle est passé au rouge sans que rien ne le signale** — voir la ligne
+> `decompte.sh` du tableau ci-dessous.
+> *Un commit qui dépose un corpus et en supprime un autre ne « renomme » pas : il reprend le travail.*
+>
 > ⚠ **Le dépôt ne porte aucune licence, et c'est une décision, non un oubli** : **droit d'auteur par
 > défaut, tous droits réservés**. Seul le Vol. I porte un `LICENSE` propre.
 >
@@ -68,8 +87,23 @@ de l'objet `/Type /Pages` : `pypdf`, que ce fichier citait comme instrument, n'e
 | Veille technologique | **162 p.**, 269 références | 14 sections, 15 tableaux, 25 questions ouvertes | `python check-veille.py` → **sortie 0** |
 | Vol. I — *Interopérabilité* | **569 p.** | 7 chapitres + 7 bibliographies + Annexe B, **28 diagrammes** | — (vérification adverse des citations) |
 | Vol. II — *Orchestration agentique* | **387 p.** | **29 pièces** + registre de gel, socle de 46 entrées | grille CA-1…CA-8 |
-| Vol. III — *L'entreprise agentique* | **427 p.** | **34 pièces** + registre de gel, **30 rapports** de vérification | CA-01…CA-14, 15 remontées ouvertes |
-| Vol. IV — *Interopérabilité et Orchestration Agentiques en Entreprise* | **1 114 p.** *(re-mesuré le 8 août 2026 ; format Letter depuis la refonte du gabarit du 31 juillet 2026, 921 p. auparavant)* | **50 chapitres** en 5 Livres + **2 annexes** (hors plan : 159 entrées ; **Annexe I** : 1 154 entrées), socle de **159 entrées** | `check-toc.py` (C1-C15), `check-sieges.py` (**26 sièges / 50 pièces**), `check-compendium.py` (**P1-P8**), `decompte.sh --verifier` → **sortie 0** pour les quatre |
+| Vol. III — *L'entreprise agentique* | **427 p.** | **34 pièces** + registre de gel ; ⚠ **plus aucun rapport de vérification** — les **30** que le dossier portait ont été **supprimés le 8 août 2026** (commit `659241b`) et se relisent au seul historique git | CA-01…CA-14, 15 remontées ouvertes — ⚠ *leur registre est dans le lot supprimé* |
+| Vol. IV — *Interopérabilité et Orchestration Agentiques en Entreprise* | **1 114 p.** *(re-mesuré le 8 août 2026 ; format Letter depuis la refonte du gabarit du 31 juillet 2026, 921 p. auparavant)* | **50 chapitres** en 5 Livres + **2 annexes** (hors plan : 159 entrées ; **Annexe I** : 1 154 entrées), socle de **159 entrées** | `check-toc.py` (C1-C15), `check-sieges.py` (**26 sièges / 50 pièces**), `check-compendium.py` (**P1-P8**) → **sortie 0** ; ⚠ **`decompte.sh --verifier` → SORTIE 1**, voir ci-dessous |
+
+⚠ **`decompte.sh --verifier` ÉCHOUE, et le motif est le renommage lui-même.** Rejoué sur l'arbre
+courant depuis [`2 - Compendium/`](2%20-%20Compendium/), il **sort 1** : le Vol. II mesure **93 239**
+mots là où le script en attend **93 242**, et l'agrégat des trois corpus par commande unique tombe de
+**479 390** à **479 387**. La cause tient en trois phrases — le commit `659241b` a récrit, dans
+**trois pièces de `monographie/`** (`ch-06-autonomie-encadree.md` § 6.2, `ch-13-pont-frames.md`
+§ 13.2, `annexe-d-glossaire.md`), les formules qui appelaient l'autonomie encadrée le *titre* de
+l'ouvrage pour en faire sa *thèse*, et **trois jetons sont tombés** — un au ch. 6, deux au
+glossaire, aucun au ch. 13. *(Le script mesure les pièces, non le `Monographie.md` assemblé : le
+changement de titre de la page de garde n'y entre pour rien.)*
+⚠ **Rien de tout cela n'est une erreur de mesure** : le script a raison, sa valeur d'ancrage est
+périmée d'un renommage, et *personne ne la remettra à jour — le dépôt est clos*. Les trois autres
+contrôles du Vol. IV et `check-veille.py` restent en **sortie 0**, rejoués le même jour.
+*Le renommage se donnait pour un identifiant sans conséquence de fait ; il a coûté trois mots à un
+décompte opposable, et c'est exactement la classe d'écart que ce dépôt prend pour objet.*
 
 Gouvernance du Vol. IV à sa date de clôture, relevée sur pièce le 8 août 2026 : **TOC v0.33**,
 **PRD v0.17**, décision d'auteur **D-13**. *Trois états se sont succédé en dix jours, et aucun ne
@@ -233,10 +267,15 @@ la clôture du dépôt, le 8 août 2026. **Quinze remontées de gouvernance deme
 assemblé (427 p., gabarit FESP) ; rédigé ne vaut pas publiable, et clore une phase n'est pas la
 terminer.**
 
-Le dossier porte trois répertoires — la gouvernance dans `prd/`, la rédaction dans `monographie/`,
-les rapports de vérification dans `verification/` —, plus un
-[`README.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/README.md) au lecteur *(déposé le
-29 juillet 2026 : le volume était le seul des trois à n'en porter aucun)*.
+Le dossier porte **deux répertoires** — la gouvernance dans `prd/`, la rédaction dans
+`monographie/` —, plus un [`README.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/README.md) au
+lecteur *(déposé le 29 juillet 2026 : le volume était le seul des trois à n'en porter aucun)*.
+⚠ **Il en portait un troisième, `verification/`, et il a été supprimé le 8 août 2026** (commit
+`659241b`) : ses **30 rapports** — 15 lots d'instruction, 11 relectures, 2 revalidations, la
+confrontation des thèses et le registre des remontées — **ne se lisent plus qu'à l'historique git**.
+⚠ *La suppression ne solde rien de ce qu'ils portaient* : les quinze remontées R-G-43 à R-G-57 et la
+dette de vote sur F-92 et F-96 restent ouvertes à titre définitif, et **le registre qui les
+détaillait n'est plus sur l'arbre** — la dette survit à son inventaire.
 Documents de gouvernance, par ordre d'autorité :
 
 1. [`prd/PRD.md`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/prd/PRD.md) **v1.3** —
@@ -347,7 +386,12 @@ supprimer. ⚠ **Un second rendu existe depuis le 4 août 2026, et il ne requali
 [`Compendium.html`](2%20-%20Compendium/Compendium.html), **appareil de lecture à l'écran** du volume
 — déposé ce jour-là sous le nom `presentation.html`, renommé le même jour (commit `d473913`).
 **Un seul fichier de 1,75 Mio** (**1 831 155 octets**, re-mesurés le 8 août 2026 après la passe de clôture, qui a versé son statut au colophon ; le
-fichier est en fins de ligne `LF` pures, et le décompte est celui des octets sur disque)**, sans
+fichier versionné est en fins de ligne `LF` pures, et le décompte est celui de ses octets au dépôt.
+⚠ *Ce n'est pas le décompte sur disque, et la version antérieure de cette phrase disait le
+contraire* : le dépôt ne portant pas de `.gitattributes`, un poste réglé sur `core.autocrlf=true` —
+celui de cette passe — obtient une copie de travail en `CRLF` de **1 835 118 octets**, soit
+**3 963 de plus**, un par fin de ligne. Les deux arrondissent à 1,75 Mio, et *seul le premier se
+reproduit d'un poste à l'autre*)**, sans
 dépendance externe** et un seul lien sortant, vers le PDF : les
 **118 figures** du volume y sont embarquées en SVG `data:` et retournées pour fond sombre, la
 typographie reprend les deux fontes du rendu imprimé (Constantia, Corbel) et la justification est
@@ -452,6 +496,8 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
 ├── README.md                              ← ce fichier (avant-propos croisé)
 ├── Veille Technologique.md / .pdf         ← veille autonome, édition d'août 2026, faits gelés au 29 juillet (162 p., 269 réf.)
 ├── 1 - Corpus/                            ← le triptyque
+│   ├── 0 - Références/                      ⚠ 3 PDF de littérature source (32,5 Mio), déposés le 8 août 2026
+│   │                                          — cités par AUCUN document du dépôt, aucune entrée de socle
 │   ├── 1 - InteroperabiliteAgentique/       Vol. I
 │   │   ├── Chapitres/                         7 chapitres + 7 bibliographies + Annexe B (ADS)
 │   │   ├── Monographie.md / .pdf              assemblage (569 p.)
@@ -466,7 +512,7 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
 │       ├── README.md                          présentation du volume (déposée le 29 juill. 2026)
 │       ├── prd/                               PRD v1.3, TOC v0.8, PRDPlan v0.5 — gouvernance
 │       ├── monographie/                       34 pièces rédigées + registre des gels
-│       ├── verification/                      30 rapports (lots, relectures, revalidations)
+│       │                                      ⚠ verification/ (30 rapports) SUPPRIMÉ le 8 août 2026 — historique git seul
 │       ├── build/                             pipeline FESP (copie du Vol. II) + assemble.py
 │       └── Monographie.md / .pdf              assemblage (427 p., gabarit FESP) — non publiable
 └── 2 - Compendium/                        ← Vol. IV
@@ -478,30 +524,38 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
     ├── Compendium.html                      appareil de lecture à l'écran du volume (4 août 2026, ex-`presentation.html`)
     │                                          un fichier, sans dépendance externe, 118 figures embarquées — ⚠ écrit à la main, aucune chaîne ne le régénère
     ├── .claude/launch.json                  sert le dossier en local (python -m http.server 8731) pour lire Compendium.html
-    ├── build/                               pipeline propre au volume (PAS une copie du FESP)
+    ├── build/                               pipeline propre au volume (PAS une copie du FESP) — 8 fichiers
     │   ├── assemble.py                        50 pièces + 2 annexes → compendium.md, 23 renvois portés en note de marge
+    │   ├── assemble-bibliographie.py          réunion dédoublonnée des bibliographies sources → annexe-bibliographie.md
+    │   ├── accentuation.lua                   filtre Pandoc — règle d'accentuation du corps (31 juill. 2026)
     │   ├── compendium.template                gabarit COURANT — identité propre, Letter, marges relevées sur les monographies, Constantia/Corbel
     │   ├── springer.template                  gabarit précédent (29 juill. 2026), conservé — 155 × 235 mm, Times 10/12
+    │   ├── echantillon.py / .template         échantillon de design — deux mêmes tranches de texte sous deux gabarits
     │   └── build-pdf.sh                       bash build/build-pdf.sh → Compendium.pdf
     ├── Livre I/ … Livre V/                  ⚠ rédaction hors portes — 50 pièces sur 50, brouillons
     │   ├── README.md                          état du livre, issues des remontées, sièges, volumétrie
     │   └── NN-….md / .html                    un chapitre par pièce — source + page à thème sombre
-    └── PRD/                                 gouvernance de la rédaction (sous-dossier)
+    └── PRD/                                 gouvernance de la rédaction (sous-dossier) — 13 fichiers
         ├── PRD.md                           v0.17 — portes, régimes de preuve, jalons ; §15 = D-11, §16 = D-13 (clôture)
         ├── TOC.md                           table des matières commentée (v0.33) — spécification
         ├── socle-consolide.md               socle consolidé S-001…S-159 (porte G-3, 28 juill. 2026)
         ├── registre-gel.md                  registre de gel, une ligne par chapitre
+        ├── gel-2026-07-27.md                registre du gel unique (D-1) — volet Livre I de G-1, 12 faits repris à la source
+        ├── gel-2026-07-28-volet-residuel.md volet résiduel de G-1 — 123 entrées à sensibilité temporelle sur 123 instruites
         ├── check-toc.py                     contrôles C1-C15 (python PRD/check-toc.py)
         ├── check-sieges.py                  contrôles S1-S5 inter-pièces — 26 sièges sur 50 pièces
         ├── check-compendium.py              contrôles P1-P8 du socle consolidé
-        ├── decompte.sh                      commande de décompte de référence (porte G-2)
-        └── *-mutations.py                   validation par mutation des trois contrôles
+        ├── decompte.sh                      commande de décompte de référence (porte G-2) — ⚠ SORTIE 1 sur l'arbre courant
+        └── *-mutations.py                   validation par mutation des trois contrôles (3 fichiers)
 ```
 
 **Où sont les `README.md`.** **Douze**, même date de comptage : la racine, le conteneur
 [`1 - Corpus/`](1%20-%20Corpus/README.md) (la synthèse consolidée), les **trois** volumes du triptyque
 — celui du Vol. III déposé le 29 juillet 2026 —, l'index de lecture des 29 pièces du Vol. II, le
-conspectus du Vol. IV, et les **cinq** répertoires de Livres du compendium.
+conspectus du Vol. IV, et les **cinq** répertoires de Livres du compendium. *(Cardinal re-compté sur
+l'arbre le 8 août 2026, seconde relecture : **12**, inchangé — `git ls-files | grep README`.)*
+⚠ **`1 - Corpus/0 - Références/` n'en porte aucun**, et c'est le seul répertoire du dépôt dans ce
+cas : *trois PDF déposés sans un mot qui dise ce qu'ils font là.*
 
 ## Construire les PDF
 
@@ -1050,9 +1104,11 @@ correction exigerait une information que le dépôt ne porte pas — *et personn
 | `2 - Compendium/Livre */README.md` | leurs blocs de procédure invoquent `rendre-piece.py` et `verifier-piece.py`, **scripts d'un skill supprimé le 31 juillet 2026** (commit `41666d0`). Le retrait est désormais déclaré à chaque fichier, mais les commandes sont laissées telles quelles : **le dépôt ne dit pas par quoi elles ont été remplacées** |
 | racine du dépôt et `2 - Compendium/build/` — `gauntlet-log.md`, les deux rapports d'**évaluation académique** du 8 août 2026, `compendium-assemble.md` | **purgés à la clôture du 8 août 2026.** Les trois premiers sont des documents de travail qu'**aucun fichier du dépôt ne citait** ; `gauntlet-log.md` était suivi par git et se relit à l'historique, les deux rapports ne l'étaient pas et **ne se relisent nulle part**. `compendium-assemble.md` était un **produit d'assemblage périmé de 2,7 Mio** que la chaîne n'utilise pas — il portait **123 des renvois morts** du dépôt à lui seul. ⚠ *Purger un produit dérivé est sans conséquence ; purger un journal non suivi est irréversible, et c'est écrit ici plutôt que constaté plus tard* |
 | `2 - Compendium/` — `audit.md`, `audit-references.md`, `eval.html`, six `CLAUDE.md`, `.claude/skills/` | **supprimés délibérément** (`f6183bf`, `73e7c4e`, `982ef3a`, `41666d0`), et non perdus : ils se lisent à l'historique git. Les renvois qui les visaient sont retirés, le retrait daté. ⚠ *Le rapport d'arbitrage `eval.html` qui a déclenché **D-11** est dans ce lot : la décision est opposable, la pièce qui la motive ne se lit plus qu'au journal* |
-| `1 - Corpus/3 - EntrepriseAgentique/verification/lot-L-04-…md` | **cinq renvois morts conservés à dessein** : ce sont les liens relatifs internes de pages tierces, reproduits **verbatim** dans des blockquotes de preuve. Les réécrire altérerait la citation, qui est l'objet même d'un rapport de lot |
+| `1 - Corpus/3 - EntrepriseAgentique/verification/` — les **30 rapports** | ☑ **SANS OBJET depuis le 8 août 2026, et pas parce qu'il a été soldé** : le répertoire entier a été **supprimé** (commit `659241b`), les cinq renvois morts de `lot-L-04-…md` avec lui. ⚠ *Ils étaient conservés à dessein — liens internes de pages tierces reproduits verbatim dans des blockquotes de preuve, que les réécrire aurait altérés ; ils disparaissent avec la preuve qu'ils citaient.* Ce que la suppression emporte vraiment : `remontees-gouvernance.md`, **le registre des quinze remontées R-G-43 à R-G-57**, et les 30 rapports que quatre `README.md` donnaient encore pour présents. **La dette reste, l'inventaire part** ; tout se relit à l'historique git |
 | `1 - Corpus/3 - EntrepriseAgentique/prd/PRDPlan.md` | un sixième renvoi « mort » est un **faux positif** : le chemin vit dans un bloc `sh` clôturé, c'est le **gabarit d'en-tête de pièce**, correct à la profondeur de sa destination. Y toucher casserait le gabarit |
-| Vol. I et Vol. III — `Chapitres/TOC.md`, `monographie/`, `prd/`, `verification/` | citent `Borealis-Go` et `Synthese Monographie.md`, retirés du dépôt les 25 et 22 juillet 2026 : **citations exactes, plus opposables**, à consigner et non à réécrire. Le tableau des livrables du Vol. I porte désormais ce régime en clair |
+| Vol. I et Vol. III — `Chapitres/TOC.md`, `monographie/`, `prd/` *(et `verification/`, avant sa suppression)* | citent `Borealis-Go` et `Synthese Monographie.md`, retirés du dépôt les 25 et 22 juillet 2026 : **citations exactes, plus opposables**, à consigner et non à réécrire. Le tableau des livrables du Vol. I porte désormais ce régime en clair |
+| `1 - Corpus/0 - Références/` | **trois PDF déposés le 8 août 2026** (commit `659241b`, **32,5 Mio**) : *Mémoire de maîtrise* 1997, *Enterprise Integration Patterns* 2003, *Distributed Systems* 2007. ⚠ **Aucun document du dépôt ne les cite, aucune entrée de socle ne s'y adosse, le répertoire ne porte pas de `README.md`** — leur statut n'est écrit nulle part. *Une pièce déposée sans régime déclaré n'est pas une source : c'est un fichier.* **Régime à écrire, et personne ne l'écrira** |
+| `2 - Compendium/PRD/decompte.sh` | ⚠ **sa valeur d'ancrage du Vol. II est périmée d'un renommage** : il attend **93 242** mots, l'arbre courant en mesure **93 239** depuis que le commit `659241b` a récrit trois phrases de trois pièces de `monographie/`. **Le contrôle sort donc 1**, et la clôture le donne encore en sortie 0 — *constat daté du matin, faux dès l'après-midi.* Le corriger supposerait de trancher entre remettre la valeur d'ancrage à jour et rendre au Vol. II les trois mots perdus : **arbitrage d'auteur, non de resynchronisation** |
 | `2 - Compendium/Compendium.html`, section « index » | trois entrées d'index publient des **totaux d'occurrences qui ne se reproduisent pas** (« niveau de preuve » 921, « péremption » 399, « registre de gel » 70) : les **cardinaux de chapitres se reproduisent**, les totaux non — aucun motif unique ne rend les deux à la fois, et la règle de comptage n'est écrite nulle part. Les **56 notions**, elles, sont exactes. Page écrite à la main : requalifier ces totaux exigerait la règle d'origine, que le dépôt ne porte pas |
 | l'appareil de contrôle entier | **aucun des cinq contrôles ne résout un seul lien markdown** : leurs douze appels à `exists()` gardent des entrées de script, jamais une cible de renvoi. L'état « zéro lien mort » ne tient que par une mesure externe que rien ne rejoue — et pour l'appareil, **retirer un renvoi est indistinguable de réparer sa cible** |
 | `2 - Compendium/` | le compendium **n'a toujours aucune URL** : son Annexe I réunit les bibliographies des sources sans en vérifier une seule, et *une entrée présente n'y atteste de rien* |
@@ -1068,3 +1124,47 @@ annonçaient « Lire en ligne » sous `https://agbruneau.github.io/Monographies/
 toute façon, le dépôt s'appelant `Agentique` (`github.com/agbruneau/Agentique`), et cause des 404
 relevés. Rétablir une publication en ligne supposerait de repartir de la bonne base
 (`https://agbruneau.github.io/Agentique/`) et de vérifier que Pages est bien activé pour ce dépôt.
+
+**Le 8 août 2026, troisième passe du même jour — resynchronisation des `README.md` sur l'arbre
+d'après la clôture.** ⚠ *L'entrée précédente se déclarait « la dernière de ce journal » ; deux commits
+l'ont suivie, et c'est pour cela que celle-ci existe.* La passe porte sur les **douze `README.md` du
+dépôt** et **sur eux seuls** : aucune pièce rédigée, aucun document de gouvernance, aucun rendu n'est
+touché.
+
+**Ce que la relecture a trouvé, et corrigé.**
+
+- ⚠ **Le commit `659241b` n'était enregistré que pour son renommage, et il portait deux gestes de
+  fond de plus** : le dépôt du corpus [`1 - Corpus/0 - Références/`](1%20-%20Corpus/0%20-%20R%C3%A9f%C3%A9rences/)
+  (trois PDF, **32,5 Mio**, cités par rien) et la **suppression intégrale de
+  `1 - Corpus/3 - EntrepriseAgentique/verification/`** — **30 rapports**, dont le registre des quinze
+  remontées ouvertes. *Un commit qui dépose un corpus et en supprime un autre reprend le travail ; le
+  décrire comme un renommage est une description fausse, pas une description partielle.*
+- ⚠ **`decompte.sh --verifier` sort 1, et la clôture le donne en sortie 0** — Vol. II mesuré à
+  **93 239** mots contre **93 242** attendus, agrégat à **479 387** contre 479 390. *La cause est le
+  renommage : dans trois pièces de `monographie/`, les formules qui appelaient l'autonomie encadrée
+  le titre de l'ouvrage disent désormais sa thèse, et trois jetons sont tombés.* Le renommage se
+  donnait pour un identifiant sans conséquence de fait ; il a coûté trois mots à un décompte
+  opposable.
+- **Quatre renvois morts, tous dans le `README.md` du Vol. III**, vers des rapports du
+  `verification/` supprimé ; **le décompte de « 30 rapports » traînait à quatre fichiers**. Corrigés
+  aux quatre.
+- ⚠ **Le poids de `Compendium.html` était donné « sur disque » et ne l'était pas** : **1 831 155
+  octets** est la mesure du **fichier versionné**, en `LF` ; le dépôt ne portant pas de
+  `.gitattributes`, un poste en `core.autocrlf=true` obtient **1 835 118 octets** en `CRLF`.
+  *Une conversion juste sur le mauvais objet reste un chiffre faux.*
+
+**Ce que la passe a re-mesuré sur pièce, et qui tient — toutes valeurs inchangées.** Pagination par
+`grep -aoP '/Type/Page(?![sL])'` : **162, 569, 387, 427 et 1 114 p.** ; Vol. I **28 diagrammes**
+(motif ancré) et **233 257 mots** (`wc -w`) ; **50 chapitres**, **118 figures SVG** et **118 SVG
+embarqués** au Vol. IV ; socle **159 entrées**, Annexe I **1 154 entrées** ; veille **269 références,
+25 questions ouvertes, 15 tableaux** (`check-veille.py`, sortie 0) ; `check-toc.py`, `check-sieges.py`
+(**26 sièges / 50 pièces**) et `check-compendium.py` (**P1-P8**) en sortie 0 ; **12 `README.md`** au
+suivi git.
+
+⚠ **Ce que la passe ne fait pas.** Elle **ne rouvre pas la clôture** — resynchroniser un porteur de
+décompte n'est pas reprendre le travail —, **ne franchit aucune porte**, **ne referme aucune
+remontée**, **ne restaure aucun fichier supprimé**, **ne corrige ni `decompte.sh` ni le corps du
+Vol. II** (l'écart de trois mots est un arbitrage d'auteur), **ne dote `0 - Références/` d'aucun
+régime** et **ne publie rien**. ⚠ *Elle laisse intacts les constats datés qui divergent de la mesure
+d'aujourd'hui* — « tous les contrôles en sortie 0 », 847 et 863 pages, 479 390 mots : *un constat daté
+enregistre ce qu'une passe a lu ; le corriger effacerait la seule chose qu'il apporte.*
