@@ -337,7 +337,7 @@ volume tient hors corps (en-tête à cinq champs, thèse citée depuis le TOC, n
 supprimer. ⚠ **Un second rendu existe depuis le 4 août 2026, et il ne requalifie rien davantage** :
 [`Compendium.html`](2%20-%20Compendium/Compendium.html), **appareil de lecture à l'écran** du volume
 — déposé ce jour-là sous le nom `presentation.html`, renommé le même jour (commit `d473913`).
-**Un seul fichier de 1,74 Mio** (**1 828 014 octets**, re-mesurés le 8 août 2026 après la passe de clôture, qui a versé son statut au colophon ; le
+**Un seul fichier de 1,75 Mio** (**1 831 155 octets**, re-mesurés le 8 août 2026 après la passe de clôture, qui a versé son statut au colophon ; le
 fichier est en fins de ligne `LF` pures, et le décompte est celui des octets sur disque)**, sans
 dépendance externe** et un seul lien sortant, vers le PDF : les
 **118 figures** du volume y sont embarquées en SVG `data:` et retournées pour fond sombre, la
