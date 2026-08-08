@@ -29,6 +29,15 @@ publiable.
 > dénomination assumé* — les deux se distinguent par leur numéro de volume et leur genre, jamais par
 > leur intitulé.
 >
+> ⚠ **Le Vol. II a été renommé le même jour** : *« L'autonomie encadrée »* du 17 juillet au 8 août
+> 2026, **« Orchestration agentique »** depuis — le nom que son dossier porte depuis l'origine.
+> ⚠ *Le titre change, la thèse ne change pas* : l'**autonomie encadrée** (*framed autonomy*) reste la
+> thèse centrale du volume, exposée à son chapitre 6 et instruite à son chapitre 13 ; elle cesse
+> seulement d'en être l'intitulé. `Monographie.pdf` a été recomposé au renommage — **387 p.,
+> inchangé**. ⚠ **Ce renommage est une passe postérieure à D-13** : la déclaration de réouverture que
+> le présent fichier exige de tout commit reprenant le travail **reste à faire, et c'est une décision
+> d'auteur**.
+>
 > ⚠ **Le dépôt ne porte aucune licence, et c'est une décision, non un oubli** : **droit d'auteur par
 > défaut, tous droits réservés**. Seul le Vol. I porte un `LICENSE` propre.
 >
@@ -58,7 +67,7 @@ de l'objet `/Type /Pages` : `pypdf`, que ce fichier citait comme instrument, n'e
 |---|---|---|---|
 | Veille technologique | **162 p.**, 269 références | 14 sections, 15 tableaux, 25 questions ouvertes | `python check-veille.py` → **sortie 0** |
 | Vol. I — *Interopérabilité* | **569 p.** | 7 chapitres + 7 bibliographies + Annexe B, **28 diagrammes** | — (vérification adverse des citations) |
-| Vol. II — *L'autonomie encadrée* | **387 p.** | **29 pièces** + registre de gel, socle de 46 entrées | grille CA-1…CA-8 |
+| Vol. II — *Orchestration agentique* | **387 p.** | **29 pièces** + registre de gel, socle de 46 entrées | grille CA-1…CA-8 |
 | Vol. III — *L'entreprise agentique* | **427 p.** | **34 pièces** + registre de gel, **30 rapports** de vérification | CA-01…CA-14, 15 remontées ouvertes |
 | Vol. IV — *Interopérabilité et Orchestration Agentiques en Entreprise* | **1 114 p.** *(re-mesuré le 8 août 2026 ; format Letter depuis la refonte du gabarit du 31 juillet 2026, 921 p. auparavant)* | **50 chapitres** en 5 Livres + **2 annexes** (hors plan : 159 entrées ; **Annexe I** : 1 154 entrées), socle de **159 entrées** | `check-toc.py` (C1-C15), `check-sieges.py` (**26 sièges / 50 pièces**), `check-compendium.py` (**P1-P8**), `decompte.sh --verifier` → **sortie 0** pour les quatre |
 
@@ -102,7 +111,7 @@ Les trois volumes vivent sous [`1 - Corpus/`](1%20-%20Corpus/) ; la veille est
 | | **Veille technologique** | **Vol. I — Interopérabilité** | **Vol. II — Orchestration** | **Vol. III — Entreprise** | **Vol. IV — Compendium** |
 |---|---|---|---|---|---|
 | **Dossier** | racine du dépôt | [`1 - Corpus/1 - InteroperabiliteAgentique/`](1%20-%20Corpus/1%20-%20InteroperabiliteAgentique/) | [`1 - Corpus/2 - OrchestrationAgentique/`](1%20-%20Corpus/2%20-%20OrchestrationAgentique/) | [`1 - Corpus/3 - EntrepriseAgentique/`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/) | [`2 - Compendium/`](2%20-%20Compendium/) |
-| **Titre** | Interopérabilité et orchestration agentique en entreprise | Interopérabilité agentique en entreprise dans le domaine des services financiers | L'autonomie encadrée | L'entreprise agentique — la fabrique de confiance | Interopérabilité et Orchestration Agentiques en Entreprise |
+| **Titre** | Interopérabilité et orchestration agentique en entreprise | Interopérabilité agentique en entreprise dans le domaine des services financiers | Orchestration agentique | L'entreprise agentique — la fabrique de confiance | Interopérabilité et Orchestration Agentiques en Entreprise |
 | **Rôle** | État de l'art vérifié, mis à jour par éditions | Cadre général, mondial et théorique | Cas canadien réglementé, instruit au grain du droit | Le verrou commun : identité, maillage, exploitation | Omnibus terminal : absorbe et remplace les trois volumes |
 | **Portée** | Mondiale | Mondiale (UE / É.-U. / R.-U. / Asie) | Canada-Québec (E-23, AMF, Loi 25, ACVM, Lynx/RTR) | Organisation et cycle de vie (NHI, *agent mesh*, AgentOps) | Les trois portées réunies (2024-2032) |
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
@@ -181,7 +190,7 @@ contrat, évolution*.
   C'est lui qui fournissait la §4.12 de la veille (référence [217]) — **cette référence ne se
   vérifie plus que dans l'historique git**, et la veille n'est pas corrigée pour autant.
 
-## Vol. II — L'autonomie encadrée
+## Vol. II — Orchestration agentique
 
 Monographie sur l'interopérabilité et l'orchestration agentique en services financiers canadiens,
 publiée sous le millésime `mono-v1.0`. **92 059 mots** en 29 pièces (24 chapitres, avant-propos,

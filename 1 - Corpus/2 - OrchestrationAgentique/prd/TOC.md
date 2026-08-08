@@ -12,7 +12,7 @@
 
 ## Titre
 
-# L'autonomie encadrée
+# Orchestration agentique
 ## Interopérabilité et orchestration agentique dans les services financiers canadiens — protocoles ouverts, cadre réglementaire et blueprint d'intégration d'entreprise (état des lieux 2024-2026)
 
 ## Abstract

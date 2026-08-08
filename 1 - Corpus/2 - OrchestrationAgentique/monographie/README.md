@@ -1,4 +1,4 @@
-# L'autonomie encadrée
+# Orchestration agentique
 
 > ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13**
 > ([`2 - Compendium/PRD/PRD.md`](../../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe

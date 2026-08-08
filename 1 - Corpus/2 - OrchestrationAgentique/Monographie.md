@@ -3,7 +3,7 @@
 #set par(justify: false, leading: 0.72em)
 #align(center)[
   #v(3.2cm)
-  #text(size: 25pt, weight: "bold")[L'autonomie encadrée]
+  #text(size: 25pt, weight: "bold")[Orchestration agentique]
 
   #v(0.8cm)
   #text(size: 12.5pt, style: "italic")[Interopérabilité et orchestration agentique dans les services financiers canadiens — protocoles ouverts, cadre réglementaire et blueprint d'intégration d'entreprise (état des lieux 2024-2026)]
@@ -615,7 +615,7 @@ Pour une institution financière fédérale, l'effacement de cette ligne a une c
 
 ## 6.2 Frames normatifs, frames opérationnels, trois scénarios
 
-Le mécanisme que le manifeste érige en gouvernance première porte le nom qui donne son titre au présent ouvrage : l'**autonomie encadrée** (*framed autonomy*)[^c6-2]. L'agent y dispose d'une latitude de décision réelle, mais bornée par un cadre (*frame*) explicite. L'apport décisif du manifeste est la distinction qu'il opère entre deux natures de cadres.
+Le mécanisme que le manifeste érige en gouvernance première porte le nom de la thèse du présent ouvrage : l'**autonomie encadrée** (*framed autonomy*)[^c6-2]. L'agent y dispose d'une latitude de décision réelle, mais bornée par un cadre (*frame*) explicite. L'apport décisif du manifeste est la distinction qu'il opère entre deux natures de cadres.
 
 Le **frame normatif** (*normative frame*) est de nature déontique : il énonce des obligations, des permissions et des interdictions[^c6-2]. Il dit ce qui doit être fait, ce qui peut l'être et ce qui ne le doit pas. Le manifeste le donne pour **distinct du frame opérationnel** (*operational frame*) — et c'est tout ce que le socle en rapporte : la distinction des deux natures est établie, la seconde n'est pas caractérisée[^c6-2]. **Lecture de l'auteur** : la distinction n'a de sens que si le frame opérationnel est d'une autre nature que déontique. Le premier relève alors du devoir-être, le second du pouvoir-faire. Cette glose est celle du présent ouvrage ; le manifeste sépare les deux cadres sans que le socle dise ce que le second contient.
 
@@ -1355,7 +1355,7 @@ L'entrée de l'obligation d'explication procède du même mouvement, et engage l
 
 ## 13.2 Le verdict empirique et la convergence à trois sources
 
-L'argument qui suit porte le titre de l'ouvrage ; il faut donc l'exposer avec plus de sévérité qu'aucun autre.
+L'argument qui suit porte la thèse de l'ouvrage ; il faut donc l'exposer avec plus de sévérité qu'aucun autre.
 
 Le premier terme est un verdict. Sur un processus de don de sang régi par la directive européenne 2002/98/CE, le cadre de la TU Munich conclut que l'orchestration non encadrée est « inacceptable » lorsque des exigences strictes d'exécution et de documentation s'appliquent, et que les tâches essentielles doivent être imposées de façon déterministe par le cadre[^c13-8]. Il provient de Rinderle-Ma, Mangler et al., **préprint non révisé par les pairs** dont les auteurs déclarent eux-mêmes des menaces à la validité — le cadre conceptuel est repris ici, les résultats chiffrés à titre d'illustration seulement[^c13-7], et le chapitre 5 a refusé d'en faire un argument. **Lecture de l'auteur** : ce qui se transporte, ce n'est pas un F1, c'est un mécanisme — le socle borne le verdict à un processus européen de don de sang, et sa généralisation est de l'auteur : dès lors qu'une exigence porte sur la *manière* dont une tâche est exécutée et documentée, et non sur son seul résultat, un dispositif incapable de garantir l'exécution et de produire la trace échoue à l'exigence, quel que soit son taux de réussite moyen.
 
@@ -3218,7 +3218,7 @@ Le sigle « ACP » employé seul est **proscrit dans tout l'ouvrage** ; chaque e
 
 | Français | Anglais | Définition (source) |
 |---|---|---|
-| **Autonomie encadrée** | *framed autonomy* | Mécanisme premier de gouvernance des systèmes agentiques : l'agent dispose d'une latitude de décision bornée par un *frame* explicite. **Titre et thèse centrale de l'ouvrage.** (F-36) |
+| **Autonomie encadrée** | *framed autonomy* | Mécanisme premier de gouvernance des systèmes agentiques : l'agent dispose d'une latitude de décision bornée par un *frame* explicite. **Thèse centrale de l'ouvrage.** (F-36) |
 | *Frame* **normatif** | *normative frame* | Cadre déontique : obligations, permissions, interdictions. Distinct du frame opérationnel. (F-36) |
 | *Frame* **opérationnel** | *operational frame* | ⚠ **Caractérisation non portée par le socle — lacune PRD §10.10.** F-36 pose le terme et l'oppose au *frame* normatif ; **seul le frame normatif est caractérisé**. Employer le terme comme F-36 le pose — le pendant opérationnel du frame normatif — **sans en définir le contenu** : aucune source du socle ne dit ce qu'un frame opérationnel comprend. *(La présente entrée portait « Cadre d'exécution : ce que l'agent peut faire, dans quel ordre, avec quels outils », sous trace F-36 — définition plausible que F-36 ne porte pas. Retirée le 17 juill. 2026 sur relecture adversariale. L'articulation des deux frames étant la thèse de l'ouvrage, la lacune est d'autant plus à dire.)* (F-36 ; §10.10) |
 | **Système APM** | *APM system, Agentic Business Process Management* | Système sociotechnique d'agents au moins partiellement conscients du processus. (F-36) |

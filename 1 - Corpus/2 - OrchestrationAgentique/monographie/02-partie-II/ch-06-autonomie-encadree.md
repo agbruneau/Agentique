@@ -28,7 +28,7 @@ Pour une institution financière fédérale, l'effacement de cette ligne a une c
 
 ## 6.2 Frames normatifs, frames opérationnels, trois scénarios
 
-Le mécanisme que le manifeste érige en gouvernance première porte le nom qui donne son titre au présent ouvrage : l'**autonomie encadrée** (*framed autonomy*)[^2]. L'agent y dispose d'une latitude de décision réelle, mais bornée par un cadre (*frame*) explicite. L'apport décisif du manifeste est la distinction qu'il opère entre deux natures de cadres.
+Le mécanisme que le manifeste érige en gouvernance première porte le nom de la thèse du présent ouvrage : l'**autonomie encadrée** (*framed autonomy*)[^2]. L'agent y dispose d'une latitude de décision réelle, mais bornée par un cadre (*frame*) explicite. L'apport décisif du manifeste est la distinction qu'il opère entre deux natures de cadres.
 
 Le **frame normatif** (*normative frame*) est de nature déontique : il énonce des obligations, des permissions et des interdictions[^2]. Il dit ce qui doit être fait, ce qui peut l'être et ce qui ne le doit pas. Le manifeste le donne pour **distinct du frame opérationnel** (*operational frame*) — et c'est tout ce que le socle en rapporte : la distinction des deux natures est établie, la seconde n'est pas caractérisée[^2]. **Lecture de l'auteur** : la distinction n'a de sens que si le frame opérationnel est d'une autre nature que déontique. Le premier relève alors du devoir-être, le second du pouvoir-faire. Cette glose est celle du présent ouvrage ; le manifeste sépare les deux cadres sans que le socle dise ce que le second contient.
 

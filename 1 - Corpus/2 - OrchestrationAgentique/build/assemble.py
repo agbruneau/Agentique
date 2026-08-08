@@ -67,7 +67,7 @@ PART_TITLES = {
     "aa": "Annexes",
 }
 
-TITLE = "L'autonomie encadrée"
+TITLE = "Orchestration agentique"
 SUBTITLE = ("Interopérabilité et orchestration agentique dans les services financiers "
             "canadiens — protocoles ouverts, cadre réglementaire et blueprint "
             "d'intégration d'entreprise (état des lieux 2024-2026)")

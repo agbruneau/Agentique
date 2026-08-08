@@ -41,7 +41,7 @@ Le sigle « ACP » employé seul est **proscrit dans tout l'ouvrage** ; chaque e
 
 | Français | Anglais | Définition (source) |
 |---|---|---|
-| **Autonomie encadrée** | *framed autonomy* | Mécanisme premier de gouvernance des systèmes agentiques : l'agent dispose d'une latitude de décision bornée par un *frame* explicite. **Titre et thèse centrale de l'ouvrage.** (F-36) |
+| **Autonomie encadrée** | *framed autonomy* | Mécanisme premier de gouvernance des systèmes agentiques : l'agent dispose d'une latitude de décision bornée par un *frame* explicite. **Thèse centrale de l'ouvrage.** (F-36) |
 | *Frame* **normatif** | *normative frame* | Cadre déontique : obligations, permissions, interdictions. Distinct du frame opérationnel. (F-36) |
 | *Frame* **opérationnel** | *operational frame* | ⚠ **Caractérisation non portée par le socle — lacune PRD §10.10.** F-36 pose le terme et l'oppose au *frame* normatif ; **seul le frame normatif est caractérisé**. Employer le terme comme F-36 le pose — le pendant opérationnel du frame normatif — **sans en définir le contenu** : aucune source du socle ne dit ce qu'un frame opérationnel comprend. *(La présente entrée portait « Cadre d'exécution : ce que l'agent peut faire, dans quel ordre, avec quels outils », sous trace F-36 — définition plausible que F-36 ne porte pas. Retirée le 17 juill. 2026 sur relecture adversariale. L'articulation des deux frames étant la thèse de l'ouvrage, la lacune est d'autant plus à dire.)* (F-36 ; §10.10) |
 | **Système APM** | *APM system, Agentic Business Process Management* | Système sociotechnique d'agents au moins partiellement conscients du processus. (F-36) |

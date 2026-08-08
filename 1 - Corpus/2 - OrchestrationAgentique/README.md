@@ -1,7 +1,15 @@
-# Volume II — « L'autonomie encadrée »
+# Volume II — « Orchestration agentique »
 
 📖 **Lire :** [`Monographie.pdf`](Monographie.pdf) (387 p.) dans ce dossier. *(Le volume n'a plus de
 page de présentation ni de publication GitHub Pages — voir « Structure du dossier ».)*
+
+> ⚠ **Le volume a été renommé le 8 août 2026** : *« L'autonomie encadrée »* du 17 juillet au 8 août
+> 2026, **« Orchestration agentique »** depuis. ⚠ *Le titre change, la thèse ne change pas* :
+> l'**autonomie encadrée** (*framed autonomy*) reste la thèse centrale de l'ouvrage, exposée au
+> chapitre 6 et instruite au chapitre 13 — elle cesse seulement d'en être l'intitulé. Le nouveau
+> titre est celui du dossier depuis l'origine, et il est **à un mot près celui de la veille
+> technologique** : les deux se distinguent par leur numéro de volume et leur genre, jamais par leur
+> intitulé.
 
 > ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13**
 > ([`2 - Compendium/PRD/PRD.md`](../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe

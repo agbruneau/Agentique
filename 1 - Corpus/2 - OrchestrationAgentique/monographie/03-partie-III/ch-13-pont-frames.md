@@ -66,7 +66,7 @@ L'entrée de l'obligation d'explication procède du même mouvement, et engage l
 
 ## 13.2 Le verdict empirique et la convergence à trois sources
 
-L'argument qui suit porte le titre de l'ouvrage ; il faut donc l'exposer avec plus de sévérité qu'aucun autre.
+L'argument qui suit porte la thèse de l'ouvrage ; il faut donc l'exposer avec plus de sévérité qu'aucun autre.
 
 Le premier terme est un verdict. Sur un processus de don de sang régi par la directive européenne 2002/98/CE, le cadre de la TU Munich conclut que l'orchestration non encadrée est « inacceptable » lorsque des exigences strictes d'exécution et de documentation s'appliquent, et que les tâches essentielles doivent être imposées de façon déterministe par le cadre[^8]. Il provient de Rinderle-Ma, Mangler et al., **préprint non révisé par les pairs** dont les auteurs déclarent eux-mêmes des menaces à la validité — le cadre conceptuel est repris ici, les résultats chiffrés à titre d'illustration seulement[^7], et le chapitre 5 a refusé d'en faire un argument. **Lecture de l'auteur** : ce qui se transporte, ce n'est pas un F1, c'est un mécanisme — le socle borne le verdict à un processus européen de don de sang, et sa généralisation est de l'auteur : dès lors qu'une exigence porte sur la *manière* dont une tâche est exécutée et documentée, et non sur son seul résultat, un dispositif incapable de garantir l'exécution et de produire la trace échoue à l'exigence, quel que soit son taux de réussite moyen.
 

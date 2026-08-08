@@ -25,7 +25,7 @@ sont complémentaires et forment un triptyque cohérent :
 
 | | **Vol. I — Interopérabilité** | **Vol. II — Orchestration** | **Vol. III — Entreprise** |
 |---|---|---|---|
-| **Titre** | Interopérabilité agentique en entreprise dans le domaine des services financiers | L'autonomie encadrée | L'entreprise agentique — la fabrique de confiance |
+| **Titre** | Interopérabilité agentique en entreprise dans le domaine des services financiers | Orchestration agentique | L'entreprise agentique — la fabrique de confiance |
 | **Dossier** | [`1 - InteroperabiliteAgentique/`](1%20-%20InteroperabiliteAgentique/) | [`2 - OrchestrationAgentique/`](2%20-%20OrchestrationAgentique/) | [`3 - EntrepriseAgentique/`](3%20-%20EntrepriseAgentique/) |
 | **Thèse** | *Autonomie graduée sous contrôle de finalité* | *Autonomie encadrée (framed autonomy)* | *La confiance ne se décrète pas, elle se fabrique* |
 | **Portée** | Mondiale (UE, É.-U., R.-U., Asie) | Canada-Québec (cadre réglementaire) | Organisation et cycle de vie (NHI, AgentOps) |
@@ -99,7 +99,12 @@ stratégie de test et plan de déploiement par plateaux.
 
 ---
 
-## Vol. II — L'autonomie encadrée
+## Vol. II — Orchestration agentique
+
+⚠ **Renommé le 8 août 2026** : *« L'autonomie encadrée »* du 17 juillet au 8 août 2026,
+**« Orchestration agentique »** depuis. *Le titre change, la thèse ne change pas* — l'**autonomie
+encadrée** (*framed autonomy*) reste la thèse du volume, et c'est elle que la ligne « Thèse » du
+tableau ci-dessus porte.
 
 📖 **Documents sources :** [`2 - OrchestrationAgentique/Monographie.pdf`](2%20-%20OrchestrationAgentique/Monographie.pdf) (**387 p.**) · [`Monographie.md`](2%20-%20OrchestrationAgentique/Monographie.md)
 
