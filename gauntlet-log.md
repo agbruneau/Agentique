@@ -157,3 +157,30 @@ dans `§13.9`, la sous-section que le juge du morceau K avait désignée comme l
 *l'écart relevé à l'aveugle a donc servi deux fois : à corriger, puis à choisir où couper.*
 
 **État final : 100 pages, 303 références, `check-veille.py` en sortie 0.**
+
+## Reprise de mise en page — le budget que rien ne voyait
+
+L'auteur signale que le résumé de la page 1 doit être lisible sur une seule page. **Il ne l'était
+pas, et rien ne le disait.** Le gabarit Typst compose le résumé dans un bloc **qui ne se scinde
+pas** : ce qui dépasse n'est pas reporté à la page suivante, il est **rogné sous la marge**, et
+`pandoc` sort 0. En rallongeant le résumé pour y porter les résultats de l'édition, cette passe
+avait fait tomber sa dernière ligne à **y = −27,2 pt — 100,8 pt sous la marge basse**, soit une
+dizaine de lignes composées hors page.
+
+| | Avant | Après |
+|---|---|---|
+| Résumé | 3 513 caractères | **2 656** |
+| Dernière ligne de la page 1 | **y = −27,2 pt** | **y = 119,4 pt** |
+| Dégagement sous la marge (73,7 pt) | **−100,8 pt** | **+45,7 pt** |
+
+*Référence : l'édition de 162 pages tenait à 2 762 caractères et 31,1 pt de dégagement.* La nouvelle
+version est donc plus courte **et** mieux dégagée qu'elle.
+
+**Le correctif de fond n'est pas la coupe, c'est le contrôle.** [`check-resume.py`](check-resume.py)
+décompresse le flux de la page de titre et relève l'ordonnée la plus basse où du texte est
+effectivement posé. Deux pièges l'ont fait mentir avant de le faire dire vrai, et sont documentés
+dans le fichier : `/Type/PageLabel` contient `/Page`, et **le gabarit ne met pas la position dans la
+matrice de texte** — `Tm` y vaut `1 0 0 -1 0 0`, la position réelle étant dans le `cm` qui précède
+chaque `BT`. *Mesurer `Tm` rendait zéro partout, ce qui ressemblait à un résultat.* Le contrôle est
+**calibré sur le PDF de l'édition précédente**, où il retrouve les 104,8 pt relevés à la main
+le 29 juillet 2026 — c'est cette concordance qui le rend croyable, non son code.

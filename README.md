@@ -102,7 +102,7 @@ de l'objet `/Type /Pages` : `pypdf`, que ce fichier citait comme instrument, n'e
 
 | Livrable | Rendu mesuré (`/Count`) | Pièces | Appareil de contrôle |
 |---|---|---|---|
-| Veille technologique | **100 p.** *(162 p. jusqu'au 8 août 2026)*, **303 références** | 14 sections, **18 tableaux**, 25 questions ouvertes | `python check-veille.py` → **sortie 0** |
+| Veille technologique | **100 p.** *(162 p. jusqu'au 8 août 2026)*, **303 références** | 14 sections, **18 tableaux**, 25 questions ouvertes | `python check-veille.py` → **sortie 0** ; `python check-resume.py` → **sortie 0** (résumé à **y = 119,4 pt**, 45,7 pt de dégagement) |
 | Vol. I — *Interopérabilité* | **569 p.** | 7 chapitres + 7 bibliographies + Annexe B, **28 diagrammes** | — (vérification adverse des citations) |
 | Vol. II — *Orchestration agentique* | **387 p.** | **29 pièces** + registre de gel, socle de 46 entrées | grille CA-1…CA-8 |
 | Vol. III — *L'entreprise agentique* | **427 p.** | **34 pièces** + registre de gel ; ⚠ **plus aucun rapport de vérification** — les **30** que le dossier portait ont été **supprimés le 8 août 2026** (commit `659241b`) et se relisent au seul historique git | CA-01…CA-14, 15 remontées ouvertes — ⚠ *leur registre est dans le lot supprimé* |
@@ -673,6 +673,26 @@ signale qu'une page est en retard sur le `.md` dont elle est tirée. Pour lire
 ```bash
 python -m http.server 8731
 ```
+
+⚠ **Le budget de mise en page a désormais un contrôle, et il n'en avait pas.** Ce fichier notait que
+« *aucun contrôle ne voit ce budget — ni `check-veille.py`, ni le rendu : un débordement qui se fait
+rogner ne lève aucune erreur* ». C'était exact, et la passe du 8 août 2026 l'a vérifié à ses dépens :
+en rallongeant le résumé, elle a fait tomber sa dernière ligne à **y = −27,2 pt**, soit **100,8 pt
+sous la marge basse** — une dizaine de lignes composées hors page et **rognées en silence**, avec
+`pandoc` en sortie 0. [`check-resume.py`](check-resume.py) mesure désormais la chose elle-même, dans
+le PDF rendu :
+
+```bash
+python check-resume.py
+```
+
+Il décompresse le flux de la page de titre et relève l'ordonnée la plus basse où du texte est
+réellement posé. ⚠ *Deux pièges y sont neutralisés, ne pas les réintroduire* : `/Type/PageLabel`
+contient `/Page` et fait prendre un objet d'étiquetage pour une page ; et le gabarit **ne met pas la
+position dans la matrice de texte** — `Tm` y vaut `1 0 0 -1 0 0`, la position réelle étant portée par
+le `cm` qui précède chaque `BT`. *Mesurer `Tm` rend zéro partout, ce qui ressemble à un résultat.*
+Le contrôle a été **calibré sur le PDF de l'édition précédente**, où il retrouve les **104,8 pt** que
+ce fichier avait relevés à la main le 29 juillet 2026.
 
 **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, `python3` + `pypdf` — ⚠ *`pypdf` n'est pas installé dans
 l'environnement de la passe du 8 août 2026 ; ses décomptes de pages sont pris par lecture du `/Count`
