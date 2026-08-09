@@ -186,12 +186,20 @@ def piece(chemin, numero):
     return "".join(sortie), marques
 
 
-def annexe(chemin):
+def annexe(chemin, compacte=False):
     """Rend l'annexe hors plan placee apres le chapitre 50.
 
     Elle n'a ni en-tete a cinq champs, ni these, ni note de statut : ce n'est
     pas une piece du plan, et l'ouverture ne porte aucun numero — le plafond de
     cinquante chapitres reste tenu.
+
+    `compacte` pose devant le CORPS de l'annexe les deux regles de style que le
+    gabarit tient dans `BIBLIO` — corps et pas propres a la bibliographie. Elles
+    s'ecrivent ici, et non dans le gabarit, parce qu'une regle `set` posee dans
+    une fonction Typst ne porte que sur le bloc de cette fonction : pour valoir
+    sur ce qui SUIT l'ouverture, elle doit etre emise au meme niveau que le
+    corps. Le titre et la ligne de situation restent au corps courant : la coupe
+    tombe apres eux, comme sur le rendu d'essai qui a fixe la cible.
     """
     lignes = chemin.read_text(encoding="utf-8").splitlines()
     i = 0
@@ -218,6 +226,9 @@ def annexe(chemin):
         sortie.append(brut("]"))
     else:
         sys.exit(f"[assemble] {chemin} : ligne de situation introuvable")
+    if compacte:
+        sortie.append(brut("#set text(size: BIBLIO.corps)\n"
+                           "#set par(leading: BIBLIO.inter, spacing: BIBLIO.inter)"))
     sortie.append("\n".join(RE_LEGENDE.sub(r"\1**\2**", l)
                             for l in lignes[i:] if l.strip() != "---") + "\n")
     return "".join(sortie)
@@ -244,9 +255,10 @@ def main():
     # `annexe-bibliographie.md` est l'ANNEXE I DU PLAN (les documents), ecrite
     # le 30 juillet 2026 sous D-11. Ni l'une ni l'autre ne consomme de numero
     # de chapitre : le plafond de cinquante tient.
-    annexes = ["annexe-references.md", "annexe-bibliographie.md"]
-    for nom in annexes:
-        morceaux.append(annexe(RACINE / nom))
+    # Seule la bibliographie se compose serre : voir `BIBLIO` au gabarit.
+    annexes = [("annexe-references.md", False), ("annexe-bibliographie.md", True)]
+    for nom, compacte in annexes:
+        morceaux.append(annexe(RACINE / nom, compacte))
     dest.write_text("\n".join(morceaux), encoding="utf-8")
     print(f"[assemble] {numero} chapitres, 5 livres, {len(annexes)} annexes, "
           f"{dagues} renvois a la note de statut marques -> {dest}")

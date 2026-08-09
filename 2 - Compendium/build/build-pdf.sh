@@ -46,4 +46,26 @@ sed -i 's/^\( *\)table\.hline(),$/\1/' "$TMP/doc.typ"
 typst compile --root "$TMP" "$TMP/doc.typ" "$OUT"
 
 OUT_NATIVE="$(cygpath -w "$OUT" 2>/dev/null || echo "$OUT")"
-echo "Rendu : $OUT ($(python3 -c "import sys;from pypdf import PdfReader;print(len(PdfReader(sys.argv[1]).pages))" "$OUT_NATIVE" 2>/dev/null || echo '?') pages)"
+PAGES="$(python3 -c "import sys;from pypdf import PdfReader;print(len(PdfReader(sys.argv[1]).pages))" "$OUT_NATIVE" 2>/dev/null || echo '?')"
+echo "Rendu : $OUT ($PAGES pages)"
+
+# ---- porte de pagination ----
+# ⚠ MILLE PAGES EXACTEMENT est une instruction d'auteur du 9 aout 2026, et le
+# chiffre se VERIFIE au build au lieu de se constater : la pagination est une
+# fonction en escalier, et un mot ajoute a une piece suffit a la faire changer
+# de marche. Sans cette porte, la cible se perdrait au premier commit suivant,
+# en silence.
+# La porte ne vaut que pour le rendu CANONIQUE : un essai (`OUT_PDF=...`) ou le
+# gabarit `springer` compose une maquette qui n'a pas cette cible.
+CIBLE=1000
+if [ "$GABARIT" = compendium ] && [ "$OUT" = "$DIR/Compendium.pdf" ]; then
+  if [ "$PAGES" = '?' ]; then
+    echo "[build] Avertissement : pypdf introuvable ; la cible de $CIBLE pages n'a PAS ete verifiee." >&2
+  elif [ "$PAGES" -ne "$CIBLE" ]; then
+    echo "[build] ECHEC : $PAGES pages rendues, $CIBLE attendues. Le PDF est ecrit, il n'est pas conforme." >&2
+    echo "[build]   Le calage se prend sur PAS dans build/compendium.template, et sur lui seul :" >&2
+    echo "[build]   17,00 pt donne 1001 pages, 16,95 pt en donne 1000, 16,90 pt en donne 999." >&2
+    echo "[build]   Ne pas compenser sur le corps de 13 pt ni sur le bloc de 157,0 mm : ils sont releves." >&2
+    exit 1
+  fi
+fi

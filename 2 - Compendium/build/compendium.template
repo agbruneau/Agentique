@@ -102,21 +102,56 @@
 #let M_EXT   = 28.9mm
 #let W_CORPS = 215.9mm - M_INT - M_EXT   // = 157,0 mm
 
-// Le pas de 17 pt sur un corps de 13 pt garde l'interligne de 1,31 du premier
+// ⚠ LES MARGES VERTICALES, ELLES, NE SONT DANS AUCUN RELEVÉ — et c'est ce qui
+// les rend disponibles. Le relevé du 31 juillet 2026 porte sur le BLOC
+// HORIZONTAL (30,0 à 187,0 mm) et sur lui seul ; la tête et le pied n'ont
+// jamais été mesurés sur les trois monographies. Ramenées de 24/26 mm à
+// 18/18 mm le 9 août 2026 pour tenir la cible de MILLE PAGES EXACTEMENT
+// (instruction d'auteur), elles rendent 10 mm de verticale, soit environ
+// 4,4 % de lignes en plus par page, SANS toucher au bloc relevé ni au corps.
+// ⚠ Le point d'impression n'est pas validé : `header-ascent` et
+// `footer-descent` valant 12 mm, le titre courant et le folio tombent à 6 mm
+// du bord de feuille, sous la zone non imprimable usuelle de 6,35 mm (0,25 po).
+// Si l'imprimeur la refuse, la compensation se prend sur l'ascent et le
+// descent — 10 mm chacun —, jamais sur ces deux marges : elles portent la cible.
+#let M_HAUT  = 18mm
+#let M_BAS   = 18mm
+
+// Le pas de 17 pt sur un corps de 13 pt gardait l'interligne de 1,31 du premier
 // état — plus généreux que le 1,20 du relevé Springer, et c'est le second
 // levier de lecture après la mesure de ligne.
+// ⚠ Porté à 16,95 pt le 9 août 2026, soit un interligne de 1,304 : c'est le
+// RÉGLAGE DE CALAGE de la cible de mille pages, et il n'est pas décoratif. La
+// pagination est une fonction en escalier, mesurée au voisinage de la cible sur
+// le rendu complet — 17,00 pt donne 1001 pages, 16,95 pt en donne 1000, 16,90 pt
+// en donne 999. Les cinq centièmes de point sont ce qui sépare deux marches ;
+// le corps de 13 pt et la mesure de 79 caractères, eux, ne bougent pas.
 #let CORPS = 13pt
-#let PAS   = 17pt
+#let PAS   = 16.95pt
 // ⚠ `top-edge` est FIGÉ en em plutôt que laissé à la fonte effective : sans
 // cela, une ligne portant un ⚠ ou un ☑ — rendus par la fonte de repli — prend
 // une hauteur différente et décroche de la grille. Onze pour cent des lignes du
 // corpus en portent un. Toute la verticale du gabarit dépend de cette valeur.
 #let HAUT  = 0.72
-#let INTER = PAS - HAUT * CORPS      // = 6,44 pt
+#let INTER = PAS - HAUT * CORPS      // = 7,59 pt
+
+// ---------------- bibliographie ----------------
+// ⚠ L'Annexe I est composée PLUS SERRÉ QUE LE CORPS, et c'est le troisième
+// terme de la cible de mille pages. Elle pesait 112 pages sur 1114 — un
+// dixième du volume pour une pièce qui se déclare elle-même « réunion, sans
+// autorité propre » : ni corps d'auteur, ni matière mesurée par
+// `PRD/decompte.sh`, ni pièce gelée. C'est donc là que le retrait coûte le
+// moins au fond. À 9,8 pt sur 4,4 pt de pas, elle tient en 72 pages.
+// ⚠ Le pas ne se dérive PAS de `INTER` : il vaut ici moins que l'interligne du
+// corps parce que la liste n'a pas de lecture suivie — on y entre par une
+// entrée, pas par un paragraphe. Une reprise se mesure sur le PDF.
+// ⚠ L'autre annexe — la liste des références, hors plan — n'y passe pas :
+// `build/assemble.py` ne pose ces règles que pour la bibliographie.
+#let BIBLIO = (corps: 9.8pt, inter: 4.4pt)
 
 #set page(
   width: 215.9mm, height: 279.4mm,
-  margin: (left: M_INT, right: M_EXT, top: 24mm, bottom: 26mm),
+  margin: (left: M_INT, right: M_EXT, top: M_HAUT, bottom: M_BAS),
   numbering: none, header: none, footer: none,
   header-ascent: 12mm,
   footer-descent: 12mm,
