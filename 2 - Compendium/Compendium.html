@@ -650,7 +650,7 @@ tbody th{width:1%;white-space:nowrap;color:var(--ambre);font-weight:400}
              stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/>
              <path d="m7 11 5 5 5-5"/><path d="M4 21h16"/></svg>
         <span class="tele-txt"><b>Télécharger le compendium</b>
-        <em>Compendium.pdf · 1 114 pages · 12,7 Mio · GitHub</em></span>
+        <em>Compendium.pdf · 1 000 pages · 12,6 Mio · GitHub</em></span>
       </a>
     </p>
 
@@ -666,7 +666,7 @@ tbody th{width:1%;white-space:nowrap;color:var(--ambre);font-weight:400}
       <div><b>74</b><span>encadrés</span></div>
       <div><b>274</b><span>lectures d’auteur</span></div>
       <div><b>159</b><span>entrées de socle</span></div>
-      <div><b>1 114</b><span>pages composées</span></div>
+      <div><b>1 000</b><span>pages composées</span></div>
     </div>
 
     <div class="avert">
@@ -679,6 +679,11 @@ tbody th{width:1%;white-space:nowrap;color:var(--ambre);font-weight:400}
       et CA-IV-13 restent non satisfaits, et <i>ce qui restait dû devient un manque définitif, non une
       conformité</i>. ⚠ Le volume s’est appelé «&nbsp;La somme agentique&nbsp;» du 23 juillet au 8 août
       2026 (décision 20 du <code>TOC.md</code>).
+      ⚠ <b>La clôture a été rouverte une fois, le 9 août 2026, et pour l’appareil de rendu seul</b>&nbsp;:
+      <code>Compendium.pdf</code> est recomposé à <b>mille pages exactement</b> (1 114 auparavant) par
+      trois réglages du seul gabarit, cible désormais vérifiée au build. <i>Aucune des cinquante
+      pièces <code>.md</code> n’est touchée&nbsp;; ni le TOC, ni le PRD, ni une porte, ni une
+      dérogation ne bougent.</i>
     </div>
 
     <p class="mode-emploi">Cette page est l’<b>appareil de lecture</b> du compendium, pas son résumé.
@@ -3701,7 +3706,11 @@ tbody th{width:1%;white-space:nowrap;color:var(--ambre);font-weight:400}
         ⚠ <b class="cle">Clore n’est ni terminer ni publier</b>&nbsp;: quatre portes restent dérogées,
         CA-IV-11 et CA-IV-13 restent non satisfaits, et <i>ce qui était dû devient un manque
         définitif, non une conformité</i>. Le volume s’est appelé «&nbsp;La somme agentique&nbsp;»
-        du 23 juillet au 8 août 2026 (décision 20 du <code>TOC.md</code>).</dd>
+        du 23 juillet au 8 août 2026 (décision 20 du <code>TOC.md</code>).
+        ⚠ <b>Une réouverture, le 9 août 2026, pour l’appareil de rendu seul</b>&nbsp;: le livre est
+        recomposé à mille pages exactement, par réglage du gabarit. <i>Recomposer n’est pas
+        récrire&nbsp;; mais changer le gabarit d’un ouvrage clos, c’est reprendre son appareil, et
+        cela se déclare.</i></dd>
       <dt>Source</dt><dd>Les cinquante fichiers <code>.md</code> des cinq livres. Le <code>.md</code>
         reste la seule source&nbsp;; cette page en est dérivée, elle ne fait pas autorité.</dd>
       <dt>Mesures</dt><dd>331 791 mots de corps, mesurés par <code>PRD/decompte.sh</code> sur les
@@ -3709,9 +3718,16 @@ tbody th{width:1%;white-space:nowrap;color:var(--ambre);font-weight:400}
         74 encadrés, 274 lectures d’auteur, 763 renvois — comptés sur le corpus entier, <b>note de
         statut hors plan exclue</b> puisque le rendu la retire.</dd>
       <dt>Rendu imprimé</dt><dd><a class="lien" href="https://github.com/agbruneau/Agentique/blob/main/2%20-%20Compendium/Compendium.pdf" target="_blank" rel="noopener"><code>Compendium.pdf</code></a>,
-        1 114 pages, format Letter, bloc de 30,0 à 187,0 mm. Corps <b>Constantia 13/17</b>, titraille
-        <b>Corbel</b>, une teinte d’accent, filets <i>booktabs</i>. Aucune page blanche&nbsp;: 0 sur
-        1 072 mesurées <b>le 30 juillet 2026</b> &mdash; ⚠ relevé pris sur le rendu d’alors, que la refonte au format Letter du 31 juillet a porté à 1 114&nbsp;pages&nbsp;: <i>l’attestation ne couvre pas les 42 dernières, et elle n’a pas été refaite.</i></dd>
+        1 000 pages, format Letter, bloc de 30,0 à 187,0 mm. Corps <b>Constantia 13/16,95</b>, titraille
+        <b>Corbel</b>, une teinte d’accent, filets <i>booktabs</i>. ⚠ <b>Cible de mille pages exactement</b>,
+        instruction d’auteur du 9 août 2026 (1 114&nbsp;pages du 31 juillet au 9 août)&nbsp;: marges
+        verticales ramenées à 18/18&nbsp;mm, pas d’interligne à 16,95&nbsp;pt, Annexe I composée à
+        9,8/4,4&nbsp;pt — elle passe de 112 à 62&nbsp;pages. Le bloc horizontal relevé sur les
+        monographies et le corps de 13&nbsp;pt ne bougent pas. <i>La cible est vérifiée au build&nbsp;:
+        <code>build-pdf.sh</code> échoue si le rendu canonique ne la tient pas.</i> Aucune page
+        blanche&nbsp;: <b>0 sur 1 000</b>, attestation refaite sur le rendu courant <b>le 9 août 2026</b>
+        &mdash; ⚠ <i>celle qu’elle remplace, «&nbsp;0 sur 1 072&nbsp;», datait du 30 juillet et ne
+        couvrait plus le rendu qu’elle accompagnait.</i></dd>
       <dt>Accentuation</dt><dd>Règle de rendu depuis le 31 juillet 2026, mesurée avant de l’être&nbsp;:
         le gras occupait 34,7 % des caractères du texte courant. Après&nbsp;: gras 3,9 %, italique
         25,6 %. <i>Un signal posé sur un tiers d’un texte ne hiérarchise rien.</i> La même règle gouverne

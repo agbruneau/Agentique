@@ -35,7 +35,7 @@ tombe à la première diffusion et rouvre tout ce qu'elle couvrait*. *(3)* ⚠ *
 dérogés, non satisfaits** : il n'y a toujours pas de relecteur distinct du rédacteur, et **aucun énoncé
 n'est central** au sens de CA-IV-01. *Ne jamais écrire « conforme », « publiable » ni « terminé » —
 écrire « arrêté », et renvoyer au PRD §14.* Les pièces sont composées dans
-[`Compendium.pdf`](../Compendium.pdf) (**1 114 p.**) : *composer n'est pas publier.*
+[`Compendium.pdf`](../Compendium.pdf) (**1 000 p.**, cible calée le 9 août 2026 ; 1 114 auparavant) : *composer n'est pas publier.*
 
 ## ⚠ État : le Livre est rédigé, arbitré, et toujours non publiable
 

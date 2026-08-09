@@ -110,7 +110,8 @@ def doublons(refs):
     return ok
 
 
-MOTS = {'sept': 7, 'douze': 12, 'vingt-six': 26, 'cent vingt': 120}
+MOTS = {'sept': 7, 'douze': 12, 'treize': 13,
+        'vingt-six': 26, 'vingt-huit': 28, 'trente et une': 31}
 
 
 def regimes(corps, refs):
@@ -132,12 +133,19 @@ def regimes(corps, refs):
         ok = False
     mesure = {'attestees': len(att), 'autodeclarees': len(auto), 'sans revue': len(aucun),
               'arXiv': len(arxiv), 'total': len(entries)}
-    # ce que le texte annonce, en chiffres et en toutes lettres
+    # Ce que le texte annonce, en chiffres et en toutes lettres.
+    #
+    # ⚠ Piege verifie par mutation, ne pas le reintroduire : un motif qui ne connait que
+    # l'ancien cardinal ne tombe pas quand le corpus grossit — il cesse de chercher, et le
+    # controle passe au vert sur un document faux. Les alternatives nommees couvrent donc
+    # l'ancienne ET la nouvelle valeur ; a chaque grossissement, les ajouter ici AVANT de
+    # rejouer le controle.
     for nom, cle, motif in (
             ('entrees du corpus', 'total', r'corpus (\d+) pièces|(\d+) entrées et a deux origines'),
-            ('pieces arXiv', 'arXiv', r'(\d+) pièces déposées sur arXiv|sur 158'),
-            ('attestees', 'attestees', r'\*\*(douze|sept)\*\* portent une attestation|\*\*(Douze|Sept) pièces sur \d+'),
-            ('autodeclarees', 'autodeclarees', r'(Vingt-six|Trente et une) (?:autres )?(?:pièces )?annoncent'),
+            ('pieces arXiv', 'arXiv', r'(\d+) pièces déposées sur arXiv|corpus de (\d+) pièces'),
+            ('attestees', 'attestees', r'\*\*(douze|treize|sept)\*\* portent une attestation|\*\*(Douze|Treize|Sept) pièces sur \d+'),
+            ('autodeclarees', 'autodeclarees', r'(Vingt-six|Vingt-huit|Trente et une) (?:autres )?(?:pièces )?annoncent'),
+            ('sans revue', 'sans revue', r'Les (\d+) restantes'),
     ):
         vus = [g for m in re.finditer(motif, corps) for g in m.groups() if g]
         for v in vus:

@@ -222,3 +222,261 @@ La règle corrigée exige un appel **nommé** pour chaque pièce de la passe neu
 immédiatement révélé une propriété réelle du document : **111 des 111 pièces neuves sont discutées
 une à une, mais 27 des 50 pièces du socle ne le sont jamais**, seulement couvertes par leur plage.
 Cette asymétrie est désormais au texte de la revue.
+
+---
+
+# Journal de la boucle — chorégraphie en essaim, 9 août 2026
+
+## Cadrage
+
+**Objectif.** Intégrer à la revue de littérature le concept de **chorégraphie agentique en essaim
+multiagents** — la coordination sans chef d'orchestre, par protocole d'interaction plutôt que par
+superviseur — et sortir le PDF à **40 pages exactement**.
+
+**La barre** (choix de l'auteur). *La revue actuelle, front par front.* Le PDF du 9 août est figé en
+copie. Un juge à contexte neuf reçoit le même front dans les deux versions, étiquettes retirées, et
+désigne celui qui sert le mieux un architecte d'entreprise pressé. **Le total restant à 40 pages, la
+version révisée doit gagner en ayant coupé ailleurs** : la barre mesure l'arbitrage ajout/coupe, pas
+l'ajout seul.
+
+**Régime de corpus retenu** (choix de l'auteur). Passe de recherche neuve : le corpus grossit.
+
+**Budget** (choix de l'auteur, fixé avant de lancer). Deux vagues, ~15 agents.
+
+## État de départ, mesuré le 9 août 2026
+
+| Mesure | Valeur |
+|---|---|
+| Pagination (`/Count` de `/Type /Pages`) | 40 p. |
+| Mots | 18 078 (corps 11 361, biblio 6 103, tête 493 + résumé) |
+| Corpus | 161 entrées, 158 arXiv |
+| `check-revue.py` | sortie 0 |
+| **Densité du corps, mesurée par sonde** | **474 mots/page** (section transactionnelle retirée : 40 → 38 p.) |
+| **Coût d'une entrée de bibliographie, mesuré par sonde** | **12 entrées/page** (+12 entrées : 40 → 41 p.) |
+
+**Le taux de change qui commande tout le reste.** Un front neuf de ~700 mots coûte 1,5 p. ; douze
+références neuves en coûtent 1. *Ce qui entre oblige donc à reprendre ≈ 2,5 pages ailleurs — et
+c'est cette coupe, pas l'ajout, que le juge à l'aveugle est chargé d'évaluer.*
+
+## Invariants — ce qu'aucun bâtisseur ne peut toucher
+
+Chacun casse un contrôle exécutable de `check-revue.py`, ou un compte énoncé à plusieurs endroits.
+
+1. **Aucun bâtisseur ne numérote une référence.** Il écrit `[[NOUVEAU: arXiv:XXXX.XXXXX]]` ; la
+   numérotation, le dédoublonnage et la renumérotation sont centraux. *C'est le geste qui a produit
+   trois doublons à la boucle précédente.*
+2. **Toute pièce hors socle doit être discutée nommément.** Une plage `[162-173]` ne vaut pas
+   discussion : le contrôle exige un appel nommé pour chaque entrée hors du socle `[1-50]`.
+3. **Chaque tableau garde sa légende.** Une légende perdue décale tous les « tableau N » en aval.
+4. **Les cardinaux du régime de preuve ne se touchent qu'au recollage.** Ils sont énoncés à
+   *quatorze* endroits — résumé, méthode §2.1, physionomie §3.1 et §3.2, deux tableaux, synthèse,
+   limites, annexe. Les recalculer morceau par morceau garantit qu'ils divergent.
+5. **Le régime de preuve d'une pièce se lit à sa notice, jamais à son champ de commentaire.**
+   `journal_ref` ou `doi` attestent ; le champ `comment` est une déclaration d'auteur.
+
+---
+## Passe de recherche — trois agents, sources primaires exclusives
+
+Trois fronts balayés en parallèle : chorégraphie contre orchestration ; passage à l'échelle de
+l'essaim ; ce que la décentralisation casse. **17 pièces rapportées, une en doublon entre deux
+agents, 15 retenues.** Deux écartées à la lecture : l'une subsumée par une pièce du même lot
+concluant pareil par un mécanisme voisin, l'autre à auteur unique dont la validation confirme sa
+propre prédiction et dont la pièce antagoniste n'est pas au corpus — le désaccord n'aurait pas pu
+être mis en scène honnêtement.
+
+**Les 17 notices ont été rouvertes à l'API d'exportation par l'orchestrateur, pas par les agents qui
+les rapportaient.** Titres, dates, versions et champs concordent tous. *Le contrôle ne servait pas à
+attraper les agents, il servait à ce que la revue puisse écrire qu'elle l'a fait.*
+
+**Résultat de fond, et il n'était pas commandé :** aucune des quinze pièces ne porte de `journal_ref`
+ni de `doi`. Deux annoncent une acceptation au seul champ de commentaire, une y annonce une simple
+soumission. *Le dixième front, qui porte les résultats les plus conséquents sur la coordination sans
+chef, ne compte aucune publication arbitrée — le résultat principal de la revue se durcit au lieu de
+se diluer.*
+
+## Réconciliation centrale — ce qu'aucun bâtisseur ne pouvait faire
+
+Numérotation centrale **avant** les bâtisseurs, plutôt que par marqueurs à recoller après : les trois
+pièces à DOI reculent en [174-176], les quinze neuves prennent [159-173]. *C'est le geste qui a
+produit trois doublons à la boucle précédente ; le faire en amont supprime l'étape où ils naissent.*
+
+Les cardinaux ont bougé à quatorze endroits, et un script à assertions les a repris d'un coup :
+**chaque substitution doit trouver exactement une occurrence, sans quoi le script échoue.** Une
+assertion est effectivement tombée — sur une ligne déjà modifiée en amont — et c'est ce qui a
+empêché une substitution silencieusement ratée.
+
+| Cardinal | Avant | Après |
+|---|---|---|
+| Entrées du corpus | 161 | **176** |
+| Pièces arXiv | 158 | **173** |
+| Publication attestée en notice | 12 / 158 — 8 % | **12 / 173 — 7 %** |
+| Acceptation auto-déclarée | 26 — 16 % | **28 — 16 %** |
+| Aucun signe de revue | 120 — 76 % | **133 — 77 %** |
+| Déposées en 2026 | 91 — 58 % | **103 — 60 %** |
+| Encore en v1 | 81 | **90** |
+| Artefact des auteurs | 56 / 105 — 53 % | **67 / 120 — 56 %** |
+
+### Trois erreurs d'arithmétique préexistantes, trouvées en recalculant
+
+Elles ne viennent pas du dixième front ; elles étaient au document et le recalcul les a mises au
+jour. Corrigées, et rapportées ici plutôt que corrigées en silence.
+
+1. **§3.2 comptait « cinq » pièces attestées au socle puis « les sept autres », en rangeant [44] et
+   [158] dans des fronts qu'il déclarait ensuite n'en compter aucune.** Le compte juste est six et
+   six ; les fronts sans attestation sont la sécurité, l'identité, le multi-agents, l'évaluation, le
+   transactionnel — et désormais la chorégraphie.
+2. **L'annexe annonçait « cinq seulement » puis en énumérait six.**
+3. **L'annexe donnait « quatre » pièces du socle antérieures à 2025 ; il y en a deux** — [37] et
+   [46], déposées en 2023. Les quatre autres sont de 2025 ou 2026.
+
+### Le contrôle réparé avant d'être cru
+
+`check-revue.py` codait en dur `sur 158` et `(Vingt-six|Trente et une)`. **Passé à 28
+auto-déclarations, le motif ne serait pas tombé : il aurait cessé de chercher, et le contrôle serait
+passé au vert sur un document faux.** Les alternatives couvrent désormais l'ancienne et la nouvelle
+valeur, un cinquième contrôle a été ajouté sur le compte des pièces sans revue, et quatre mutants de
+cardinal ont été joués : **tous tombent.**
+
+## Tour 1 — trois bâtisseurs, deux verdicts rendus
+
+| Morceau | Notre version en | Verdict | Motif retenu par le juge |
+|---|---|---|---|
+| M1 — front neuf, contre un front existant | ALPHA | **gagne** | fixe le régime de preuve de tout le front dès l'ouverture ; tranche son désaccord au lieu de le constater, et nomme l'expérience qui l'arbitrerait |
+| M2 — multi-agents comprimé | BÊTA | **perd** | « loi d'échelle logistique, donc saturante » réduit à « échelle saturante » : le résultat redevenu étiquette de sujet ; un manque vérifiable supprimé |
+
+**M2 perd, et c'est l'information la plus utile du tour.** La compression avait tenu le quota en
+sacrifiant ce qui fait la valeur du texte. *Une barre qui n'aurait mesuré que la pagination aurait
+déclaré ce morceau réussi.*
+
+### Les deux écarts rendus, et ce qu'on en fait
+
+| Écart | Sort |
+|---|---|
+| **M2** — le 76 % d'attribution de [89] opposé au 53,5 % de [88] sans dénominateur commun, la phrase causale reposant donc sur deux taux dont rien n'établit qu'ils partagent un dispositif | **repris** — et par la source : la notice de [89] est rouverte ; si l'effectif n'y est pas, la comparaison cesse d'être présentée comme un fait |
+| **M1** — « interblocage et blocage vivant, 31,1 % à 14,1 % » sans dénominateur ni référent ; fragments dont le sujet a été évacué (« — le parc hétérogène. ») | **repris** — chute de 31,1 % à 14,1 % sur 3 456 essais, et les fragments redeviennent des propositions |
+
+## Tour 2 — le troisième verdict, et ce qu'il apprend
+
+| Morceau | Notre version en | Verdict | Motif retenu par le juge |
+|---|---|---|---|
+| M3 — clôture comprimée | ALPHA | **perd** | « remplace la mesure par la citation » : *Bancs dominants faussés [107] [108] [109]* au lieu du mécanisme (réponses vides comptées comme succès) ; le dénominateur par front supprimé alors qu'il « constitue à lui seul un verdict » |
+
+**Deux compressions jugées, deux défaites, un seul mode d'échec : échanger de la preuve contre du
+slogan.** Ce n'est plus un accident de bâtisseur, c'est une propriété du document — *il est déjà
+compressé au point que la prochaine coupe prend du fait, pas du remplissage.* La boucle précédente
+l'avait amené de 162 à 100 pages ; celle-ci mesure le plancher.
+
+**L'écart sert deux fois.** Le juge de M3 désigne, dans la version qu'il fait gagner, le paragraphe
+« Quatre lacunes dérivées se formulent aussi » : il « rompt le contrat de mesure » que les deux
+paragraphes précédents tenaient, en demandant *quel niveau d'autonomie survit à l'auto-modification*
+sans dire ce qu'on mesurerait. **C'est donc le juge, et non le budget, qui a désigné où couper.**
+
+### L'erreur de fait que la boucle a trouvée
+
+En creusant l'écart de M2, un bâtisseur a rouvert la notice de [89]. Le résumé dit : *full traces
+improve attribution accuracy **by up to 76 %** over a partial-observation counterpart.* La revue
+écrivait, à deux endroits, que l'observabilité complète **porte l'attribution à 76 %** — un taux
+atteint. C'est un **gain relatif**, la notice ne donne ni effectif ni condition, et il **ne partage
+pas le dénominateur** du 53,5 % de [88] auquel il était opposé. *La phrase causale qui en découlait
+— « ce plafond tient à l'instrumentation » — reposait donc sur deux taux sans dispositif commun.*
+Corrigé aux deux endroits ; l'énoncé redevient une hypothèse.
+
+## Le plancher, mesuré
+
+| Poste | Coût |
+|---|---|
+| Front neuf, 824 mots | 1,74 p. |
+| Quinze références neuves | 1,25 p. |
+| **À reprendre ailleurs** | **≈ 3 p., soit ≈ 1 420 mots** |
+
+Compression de l'appareil — la seule qui ne retire que de la redondance : §2.3 répétait « Limites de
+cette revue » presque terme à terme, le chapeau de l'annexe rejouait l'argument de §3.2, et
+l'énumération mensuelle des révisions disait en trente-cinq mots ce que la phrase suivante dit avec
+sa conséquence. **−131 mots. La pagination n'a pas bougé.**
+
+## Tour 2 — la reprise de M2 passe la barre
+
+| Morceau | Notre version en | Verdict | Motif retenu par le juge |
+|---|---|---|---|
+| M2b — multi-agents repris | ALPHA | **gagne** | marque la rupture de dénominateur que la version actuelle masquait : « un architecte lisant [la version actuelle] en sort avec un ordre d'investir dans l'observabilité, adossé à une comparaison entre deux protocoles distincts » |
+
+*C'est la correction de fait, non la compression, qui a fait gagner le morceau* — 627 mots contre 776,
+et le juge n'en dit rien : il juge ce que le texte établit, pas ce qu'il coûte.
+
+**Écart rendu sur la gagnante** : le manque sur les patrons d'orchestration est devenu une assertion
+absolue, sans nommer ce qui s'en approche — [98], domaine unique et sans comité de lecture, et [91],
+cinq configurations d'un seul modèle. *Un manque que le lecteur ne peut pas vérifier n'est plus un
+manque vérifiable, ce qui est exactement le critère que la revue s'impose.* Repris à la passe de
+lissage.
+
+## Le levier sans perte, trouvé avant de couper dans l'argument
+
+Chaque entrée de bibliographie écrivait son identifiant arXiv **deux fois** : en clair
+(`arXiv:2512.08296v3`) puis dans l'URL en toutes lettres. Replier l'URL derrière l'identifiant rend
+**2 pages sur 173 entrées** — même cible, même identifiant lisible, un seul exemplaire. *Le
+contrôle des doublons continue de passer parce qu'il lisait déjà l'identifiant et l'URL séparément.*
+
+C'est le seul gain de cette boucle qui ne coûte rien à personne, et il a été cherché **avant** de
+faire couper 1 420 mots d'argument, non après.
+
+## Passe de lissage — agent neuf, document entier
+
+Cible : 40 pages, **475 mots à reprendre dans le redit exclusivement**, avec la commande de mesure
+entre les mains plutôt qu'un quota en aveugle. Interdiction explicite de toucher l'en-tête YAML :
+*atteindre la pagination par la typographie serait contourner la contrainte, pas la satisfaire.*
+
+Les trois plus gros doublons fondus : un paragraphe de §6.2 rejouait intégralement le premier énoncé
+de la veille jusqu'à la même phrase de clôture en gras (−95) ; §3.2 et l'annexe tenaient le même
+compte des douze attestées (−75) ; §3.1 énumérait les revues que le tableau de l'annexe redonne
+colonne par colonne (−55). **475 mots repris, aucun chiffre ni mécanisme touché.**
+
+Coutures corrigées, dont une qui était une vraie contradiction : **§7.3 déclarait absente une
+comparaison contrôlée que le front neuf présente vingt pages plus loin** — le manque nomme désormais
+ce qui s'en approche.
+
+### La quatrième erreur d'arithmétique, et pourquoi elle a failli survivre
+
+Le lisseur a refusé de corriger §12.3 (« Proposer n'est pas prouver ») et l'a remontée : le texte
+annonçait « 120 pièces des dix fronts » quand le tableau de §3.2 en compte 123, et donnait des
+dénominateurs par front — sécurité 10/**12** pour un front de 11, gouvernance 2/**12** pour 11,
+protocoles 4/**12** pour 13 — qui contredisaient ce même tableau. Son motif : *rectifier sans
+recompter reviendrait à fabriquer un pourcentage.*
+
+**Le scrupule est bon, l'objection ne tient pas.** Un dénominateur par front **est** la taille du
+front, que le tableau donne ; le corriger n'est pas un recomptage mais de l'arithmétique sur des
+nombres que le document affirme déjà. Corrigé : **67 sur 123, soit 54 %.** *Les numérateurs, eux,
+sont hérités du décompte antérieur et n'ont pas été revérifiés pièce à pièce — sauf celui du front
+neuf, 11 sur 15, établi sur le dossier.* C'est dit ici plutôt que tu.
+
+## État de sortie, mesuré le 9 août 2026
+
+| Mesure | Départ | Arrivée |
+|---|---|---|
+| Pagination (`/Count`) | 40 p. | **40 p.** |
+| Corps | 11 361 mots | **11 998** |
+| Corpus | 161 entrées, 158 arXiv | **176 entrées, 173 arXiv** |
+| Fronts | 9 | **10** |
+| Publication attestée | 12 / 158 — 8 % | **12 / 173 — 7 %** |
+| Aucun signe de revue | 120 — 76 % | **133 — 77 %** |
+| `check-revue.py` | sortie 0 | **sortie 0** |
+| Mutants qui tombent | 4 | **6** |
+| `check-resume.py` | OK | **OK, +148,3 pt** |
+
+## Ce que la boucle a coûté, et ce qu'elle a rendu
+
+**Score à l'aveugle : deux morceaux sur trois gagnent** — le front neuf contre un front existant de
+la revue, et le multi-agents repris contre sa version actuelle. La clôture a perdu au premier tour,
+a été reprise, et n'a **pas été rejugée** : le budget fixé avant de lancer était de deux vagues, et
+il était atteint. *C'est un plafond, et il est déclaré ici plutôt que tu.*
+
+**Ce que la barre a attrapé que la pagination n'aurait pas vu.** Les deux morceaux comprimés au
+premier tour tenaient leur quota et passaient tous les contrôles exécutables. Les deux ont perdu à
+l'aveugle, pour le même motif : *ils avaient échangé de la preuve contre du slogan.* Une boucle qui
+n'aurait mesuré que les 40 pages les aurait déclarés réussis.
+
+**Et une erreur de fait, trouvée en creusant un écart de juge.** La revue écrivait à deux endroits
+que l'observabilité complète *porte l'attribution à 76 %*. La notice de [89] dit *improve attribution
+accuracy by up to 76 % over a partial-observation counterpart* : un gain relatif, sans effectif, sans
+dénominateur commun avec le 53,5 % auquel il était opposé. **La phrase causale qui en découlait n'avait
+pas de mesure sous elle.** Aucun contrôle exécutable ne pouvait l'attraper — il fallait un juge qui
+demande d'où vient le chiffre.

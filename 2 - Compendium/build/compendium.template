@@ -141,7 +141,12 @@
 // dixième du volume pour une pièce qui se déclare elle-même « réunion, sans
 // autorité propre » : ni corps d'auteur, ni matière mesurée par
 // `PRD/decompte.sh`, ni pièce gelée. C'est donc là que le retrait coûte le
-// moins au fond. À 9,8 pt sur 4,4 pt de pas, elle tient en 72 pages.
+// moins au fond. À 9,8 pt sur 4,4 pt de pas, elle tient en 62 pages.
+// ⚠ Ce chiffre a valu 72 pendant une passe, et c'etait un relevé d'ESSAI pris
+// AVANT la réduction des marges verticales : juste à sa date, faux au rendu
+// final. Mesure sur `Compendium.pdf` du 9 août 2026 — l'annexe court de la
+// page 939 a la page 1000, soit 62 pages ; le corps des cinquante chapitres
+// passe de 991 a 928, l'annexe hors plan de 11 a 10.
 // ⚠ Le pas ne se dérive PAS de `INTER` : il vaut ici moins que l'interligne du
 // corps parce que la liste n'a pas de lecture suivie — on y entre par une
 // entrée, pas par un paragraphe. Une reprise se mesure sur le PDF.

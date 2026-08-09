@@ -40,7 +40,7 @@ distinct du rédacteur, et **aucun énoncé n'est central** au sens de CA-IV-01.
 levée par D-10, et c'est le point propre à ce Livre** : la **publication du premier mouvement (ch. 47-48)
 demeure bloquée** jusqu'à la clôture de ses trois lots d'instruction, **une instruction infructueuse
 valant retrait**. *Arrêter un ouvrage ne débloque pas ce qu'une autre décision bloque.* Les pièces sont
-composées dans [`Compendium.pdf`](../Compendium.pdf) (**1 114 p.**) : *composer n'est pas publier.*
+composées dans [`Compendium.pdf`](../Compendium.pdf) (**1 000 p.**, cible calée le 9 août 2026 ; 1 114 auparavant) : *composer n'est pas publier.*
 
 ## ⚠ État : le Livre est rédigé, arbitré, et le seul dont la publication soit bloquée par une décision d'auteur
 

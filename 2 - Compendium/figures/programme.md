@@ -2,7 +2,7 @@
 
 *Relevé du 31 juillet 2026, sur un rendu de 1 072 pages qui ne portait que trois figures. Ce document liste **237 opportunités**, **de deux à huit par chapitre, les cinquante couverts**, et les ordonne.*
 
-> ⚠ **ÉTAT : LE BARÈME A EST EXÉCUTÉ.** Les **115 candidats A** sont dessinés et posés dans leur pièce — voir `contenu*.py`, une entrée par figure. Le volume porte **118 figures** sur **1 114 pages**. Les barèmes **B (94)** et **C (28)** restent ouverts, et ce document reste leur registre. ⚠ Ne pas relire les tableaux ci-dessous comme une liste de travaux à faire : la colonne de barème dit le rang, pas l'état.
+> ⚠ **ÉTAT : LE BARÈME A EST EXÉCUTÉ.** Les **115 candidats A** sont dessinés et posés dans leur pièce — voir `contenu*.py`, une entrée par figure. Le volume porte **118 figures** sur **1 000 pages** — *1 114 du 31 juillet au 9 août 2026, 1 072 au relevé ci-dessus ; le décompte de figures n'a pas bougé, seul le gabarit a été calé.* Les barèmes **B (94)** et **C (28)** restent ouverts, et ce document reste leur registre. ⚠ Ne pas relire les tableaux ci-dessous comme une liste de travaux à faire : la colonne de barème dit le rang, pas l'état.
 
 ---
 

@@ -2,7 +2,7 @@
 
 > **Auteur :** André-Guy Bruneau, M.Sc. IT — Juin–Juillet 2026
 >
-> ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13** ([`2 - Compendium/PRD/PRD.md`](../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe n'est plus prévue, sur aucun des cinq livrables ; ce document décrit un état **définitif**. *Clore n'est ni terminer ni publier.*
+> ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13** ([`2 - Compendium/PRD/PRD.md`](../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe n'est plus prévue, sur aucun des cinq livrables que le dépôt portait alors ; ce document décrit un état **définitif** pour les trois volumes qu'il couvre. *Clore n'est ni terminer ni publier.* ⚠ **La clôture a été rouverte trois fois depuis, hors du triptyque** : la veille (8 août), un **sixième livrable** — la [revue de littérature](../Revue%20de%20litt%C3%A9rature.md), 9 août — et le **calage du compendium à mille pages** (9 août, appareil de rendu du Vol. IV seul). *Aucune ne touche aux Vol. I, II ou III.*
 >
 > Ce document est la **synthèse consolidée** des trois monographies du corpus. Il en articule les
 > thèses, les concepts et les apports en un seul document de synthèse. Pour le détail, se reporter
@@ -322,6 +322,7 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 | **Praticien canadien** | Vol. II, chapitre 13 — « le pont : des contraintes réglementaires aux *frames* déterministes » |
 | **RSSI / responsable identité** | Vol. III, Partie II — le passeport d'agent et la chaîne de mandat |
 | **Décideur** | Ce README, puis la veille technologique |
+| **Académique** | La [revue de littérature](../Revue%20de%20litt%C3%A9rature.md) (**40 p. fermes**, 161 références, arrêtée au **9 août 2026**) — ⚠ *sixième livrable du dépôt, entré après la clôture ; elle ne couvre aucun des trois volumes, elle mesure le champ savant qu'ils citent* |
 
 ---
 
@@ -425,8 +426,10 @@ se situe au [README du dépôt](../README.md) et vit sous
 [`2 - Compendium/`](../2%20-%20Compendium/). **Il ne se substitue pas à ces trois volumes tant qu'il
 n'est pas recevable, et il ne l'est pas — ni ne le deviendra, le dépôt étant clos** : les trois
 volumes sources font foi. ⚠ **Sa pagination
-n'est plus celle qu'annonçait le 29 juillet** : `Compendium.pdf` mesure **1 114 p.** au dépôt courant,
-non 810 — chiffre relevé ici pour mémoire, le volume relevant de sa propre charge éditoriale.
+n'est plus celle qu'annonçait le 29 juillet** : `Compendium.pdf` mesure **1 000 p.** au dépôt courant,
+non 810 — **cible d'auteur du 9 août 2026, calée sur le seul gabarit et vérifiée au build** ; le
+volume en a mesuré 1 114 du 31 juillet au 9 août. Chiffre relevé ici pour mémoire, le volume relevant
+de sa propre charge éditoriale.
 
 ---
 
