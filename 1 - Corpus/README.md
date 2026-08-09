@@ -317,7 +317,7 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 
 | Profil du lecteur | Point d'entrée recommandé |
 |---|---|
-| **Pressé** | La [veille technologique](../Veille%20Technologique.md) (162 p., état de l'art le plus récent) |
+| **Pressé** | La [veille technologique](../Veille%20Technologique.md) (**100 p.**, état de l'art le plus récent — **édition du 8 août 2026**, ramenée de 162 à 100 pages le même jour) |
 | **Architecte / chercheur** | Vol. I, chapitre 1 — lecture séquentielle en spirale |
 | **Praticien canadien** | Vol. II, chapitre 13 — « le pont : des contraintes réglementaires aux *frames* déterministes » |
 | **RSSI / responsable identité** | Vol. III, Partie II — le passeport d'agent et la chaîne de mandat |

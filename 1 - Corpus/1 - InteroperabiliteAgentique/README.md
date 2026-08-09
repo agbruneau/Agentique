@@ -55,7 +55,7 @@ dans le dépôt ; les renvois §7.x, eux, résolvent contre `Monographie.md` et 
 
 La veille n'est **plus un livrable de ce dossier**. Elle vit désormais à la racine du dépôt
 ([`Veille Technologique.md`](../../Veille%20Technologique.md)), recoupe les quatre volumes et porte sa
-propre édition — **édition d'août 2026 (faits gelés au 29 juillet 2026), 162 p., 269 références**, dont deux (§4.12 et §8.4)
+propre édition — **édition du 8 août 2026 (faits gelés à cette date), 100 p., 303 références**, dont deux (§4.12 et §8.4)
 citent explicitement ce volume et le volume II, et dont la section 13 rend compte des quatre volumes. Les mentions « 7 juillet 2026, 48 p., 116 références »
 qui figuraient ici décrivaient une édition antérieure.
 

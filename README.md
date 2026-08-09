@@ -62,9 +62,27 @@ publiable.
 >
 > ⚠ **Une clôture ne s'auto-verrouille pas** : rien n'empêche un commit ultérieur, mais *un commit
 > qui reprend le travail rouvre la clôture, et doit le déclarer*.
+>
+> ⚠⚠ **RÉOUVERTURE DÉCLARÉE — 8 août 2026, passe de veille et de refonte de format.** Conformément
+> à la règle ci-dessus, **cette passe rouvre la clôture pour le seul livrable qu'elle touche** : la
+> **veille technologique**, actualisée au 8 août 2026 puis **ramenée de 162 à 100 pages fermes**.
+> *Elle ne touche au corps d'aucun des quatre volumes* — deux fichiers de gouvernance sont
+> néanmoins repris, et il faut le dire : [`2 - Compendium/PRD/TOC.md`](2%20-%20Compendium/PRD/TOC.md)
+> et le `TOC.md` des chapitres du Vol. I **pointaient vers des numéros de référence et une édition de
+> la veille que cette passe a déplacés**. *Corriger un renvoi qui ne résout plus n'est pas reprendre
+> le travail, mais ce n'est pas rien non plus, et le taire serait pire.* Elle ne franchit aucune
+> porte, ne lève aucune dérogation et ne referme aucune remontée — le Vol. III garde ses quinze remontées et sa dette de vote, le
+> Vol. IV ses quatre portes dérogées. **La clôture D-13 reste en vigueur pour les quatre volumes.**
+>
+> ⚠ **Et cette passe a réfuté six affirmations porteuses de la veille en dix jours** — dont la
+> première accroche textuelle de l'agentique en droit européen (2 août 2026), deux lectures de
+> textes canadiens **renvoyées au corpus compagnon comme corrections de fond**, et le décompte
+> d'attributs d'observabilité qui fondait un fait négatif et qui a changé de valeur entre deux gels.
+> *Un corpus clos ne cesse pas d'avoir tort ; il cesse seulement d'être corrigé — sauf ici, et
+> seulement ici.*
 
 > **Où entrer.** Le lecteur pressé lit la [veille technologique](Veille%20Technologique.md) : c'est
-> l'état de l'art le plus récent (édition d'août 2026, faits gelés au 29 juillet), et le seul document publié qui cite les volumes
+> l'état de l'art le plus récent (**édition du 8 août 2026**, faits gelés à cette date, **100 pages**), et le seul document publié qui cite les volumes
 > du dépôt. Le lecteur méthodique suit l'ordre des volumes, du général au spécifique. Le compendium
 > se feuillette depuis le 29 juillet 2026 — [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf),
 > **1 114 pages** re-mesurées le 8 août 2026, au format Letter depuis la refonte typographique du
@@ -84,7 +102,7 @@ de l'objet `/Type /Pages` : `pypdf`, que ce fichier citait comme instrument, n'e
 
 | Livrable | Rendu mesuré (`/Count`) | Pièces | Appareil de contrôle |
 |---|---|---|---|
-| Veille technologique | **162 p.**, 269 références | 14 sections, 15 tableaux, 25 questions ouvertes | `python check-veille.py` → **sortie 0** |
+| Veille technologique | **100 p.** *(162 p. jusqu'au 8 août 2026)*, **303 références** | 14 sections, **18 tableaux**, 25 questions ouvertes | `python check-veille.py` → **sortie 0** |
 | Vol. I — *Interopérabilité* | **569 p.** | 7 chapitres + 7 bibliographies + Annexe B, **28 diagrammes** | — (vérification adverse des citations) |
 | Vol. II — *Orchestration agentique* | **387 p.** | **29 pièces** + registre de gel, socle de 46 entrées | grille CA-1…CA-8 |
 | Vol. III — *L'entreprise agentique* | **427 p.** | **34 pièces** + registre de gel ; ⚠ **plus aucun rapport de vérification** — les **30** que le dossier portait ont été **supprimés le 8 août 2026** (commit `659241b`) et se relisent au seul historique git | CA-01…CA-14, 15 remontées ouvertes — ⚠ *leur registre est dans le lot supprimé* |
@@ -150,14 +168,18 @@ Les trois volumes vivent sous [`1 - Corpus/`](1%20-%20Corpus/) ; la veille est
 | **Portée** | Mondiale | Mondiale (UE / É.-U. / R.-U. / Asie) | Canada-Québec (E-23, AMF, Loi 25, ACVM, Lynx/RTR) | Organisation et cycle de vie (NHI, *agent mesh*, AgentOps) | Les trois portées réunies (2024-2032) |
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
-| **Gel de l'information** | 29 juillet 2026 (édition d'août 2026 ; les sections antérieures gardent leur date d'état) | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | 27 juillet 2026 (décision d'auteur D-1) ; volet des faits levé le 28 juillet 2026 |
-| **État** | Publiée (162 p., 269 références) | Rédaction terminée (569 p., **233 257 mots** — `wc -w` sur `Monographie.md`, point d'ancrage de `decompte.sh --verifier` ; 225 258 par la commande de référence du dépôt. ⚠ *Le chiffre de ≈ 263 600 mots que ce fichier portait n'est reproductible par aucune des deux commandes* ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié, et clos en l'état** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; **finalisation P5 close sans être achevée** le 8 août 2026 (dernière passe de fond : relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état — *et il ne le deviendra pas : quinze remontées R-G-43 à R-G-57 et la dette de vote sur F-92 et F-96 restent ouvertes à titre définitif* | **CLOS ET FINAL** (D-13, 8 août 2026 ; TOC v0.33 / PRD v0.17), statut de révision finale en bibliothèque personnelle maintenu et devenu définitif — *la passe de révision ouverte par D-11 le 30 juillet 2026 (TOC v0.32 / PRD v0.16) est **close sans exécution de son domaine résiduel**, sur l'arrêt initial D-10 du 29 juillet 2026 (TOC v0.31 / PRD v0.15)* : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf) (**1 114 p.**, re-mesurées le 8 août 2026, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026 ; gabarit relevé sur deux monographies Springer le même jour, puis porté au format Letter le 31 juillet 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** |
+| **Gel de l'information** | 8 août 2026 (édition du 8 août 2026 ; les sections antérieures gardent leur date d'état) | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | 27 juillet 2026 (décision d'auteur D-1) ; volet des faits levé le 28 juillet 2026 |
+| **État** | Publiée (**100 p.**, **303 références**) — format ferme depuis le 8 août 2026 | Rédaction terminée (569 p., **233 257 mots** — `wc -w` sur `Monographie.md`, point d'ancrage de `decompte.sh --verifier` ; 225 258 par la commande de référence du dépôt. ⚠ *Le chiffre de ≈ 263 600 mots que ce fichier portait n'est reproductible par aucune des deux commandes* ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié, et clos en l'état** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; **finalisation P5 close sans être achevée** le 8 août 2026 (dernière passe de fond : relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état — *et il ne le deviendra pas : quinze remontées R-G-43 à R-G-57 et la dette de vote sur F-92 et F-96 restent ouvertes à titre définitif* | **CLOS ET FINAL** (D-13, 8 août 2026 ; TOC v0.33 / PRD v0.17), statut de révision finale en bibliothèque personnelle maintenu et devenu définitif — *la passe de révision ouverte par D-11 le 30 juillet 2026 (TOC v0.32 / PRD v0.16) est **close sans exécution de son domaine résiduel**, sur l'arrêt initial D-10 du 29 juillet 2026 (TOC v0.31 / PRD v0.15)* : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf) (**1 114 p.**, re-mesurées le 8 août 2026, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026 ; gabarit relevé sur deux monographies Springer le même jour, puis porté au format Letter le 31 juillet 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** |
 
 ## Veille technologique — le document transversal
 
-[`Veille Technologique.md`](Veille%20Technologique.md) → `Veille Technologique.pdf` (**162 p.**,
-14 sections numérotées, **269 références**, 15 tableaux — **édition d'août 2026**, faits gelés au
-29 juillet 2026 ; résumé sur la page de titre, sommaire exécutif sur trois pages). Revue vérifiée où chaque énoncé factuel
+[`Veille Technologique.md`](Veille%20Technologique.md) → `Veille Technologique.pdf` (**100 p.**,
+14 sections numérotées, **303 références**, 18 tableaux — **édition du 8 août 2026**, faits gelés à
+cette date ; résumé sur la page de titre). ⚠ **Le format est ferme depuis le 8 août 2026** : la
+revue est passée de 162 à 100 pages **sans changement de gabarit** — 11 pt, marges inchangées —,
+toute la réduction venant de la réécriture. *L'appareil seul — page de titre, résumé et
+303 références — pèse **32 de ces 100 pages** ; le corps a donc dû perdre près de trois cinquièmes
+de ses mots à faits constants.* Revue vérifiée où chaque énoncé factuel
 est adossé à une source primaire consultée et soumis à contradiction — vérificateurs indépendants
 chargés de *réfuter*, contre-vérification directe sinon. Elle couvre les trois protocoles
 structurants (MCP, A2A, ANP), leur gouvernance, l'adoption documentée, la sécurité, et **sept
@@ -192,15 +214,28 @@ autant** : ses pièces se déclarent brouillon non publiable, et *un brouillon n
 fait qu'un cadrage*. Une revue publiée décrit l'état de ses sources à sa date : la rattraper après
 coup effacerait la seule information qu'elle porte.
 
-L'échange est bidirectionnel : la veille rend au corpus deux corrections de datation, referme une
-lacune que le Vol. II déclarait ouverte (les dépôts ACP d'AGNTCY, archivés le 11 avril 2026) — et
-**rétracte la certitude d'une de ses propres datations** (voir « Divergences factuelles » plus bas).
+L'échange est bidirectionnel, et l'édition du 8 août 2026 en change la nature : aux corrections de
+datation que la veille rendait au corpus s'ajoutent désormais **deux corrections de fond**, toutes
+deux portant sur des lectures de texte juridique. *(a)* L'**article 12.1 de la Loi 25** n'exige pas
+d'« intervention humaine déterminante » : il se déclenche lorsque la décision est fondée
+**exclusivement** sur un traitement automatisé, et n'impose alors qu'information et possibilité de
+présenter des observations à un employé en mesure de réviser — il borne l'absence totale d'humain,
+il ne prescrit pas le degré d'autonomie d'un agent. *(b)* L'**avis ACVM 11-348** ne contient ni
+*agent*, ni *agentique*, ni *autonomie* : l'opposition que le corpus construisait — accroche
+textuelle par l'ACVM contre accroche par inférence par E-23 — **tombe, les deux accrochant par
+inférence**. ⚠ *Ce sont les deux corrections les plus lourdes que la veille ait renvoyées au
+corpus, et les volumes ne les reçoivent pas : ils sont clos.* La veille
+**rétracte par ailleurs la certitude d'une de ses propres datations** (voir « Divergences
+factuelles » plus bas).
 L'auto-citation est assumée et divulguée ; ses limites (circularité possible, implémentation
 unique, chiffres institutionnels auto-déclarés, deux volumes non rédigés) sont exposées en
 section 10 de la veille.
 
-*Historique des éditions : 2, 4, 7, 12, 13, 15, 18 juillet 2026, puis l'édition intégrale du
-18 juillet 2026. Chaque édition ajoute une couche ou un corpus et revérifie les faits périssables.*
+*Historique des éditions : 2, 4, 7, 12, 13, 15, 18 juillet 2026, l'édition intégrale du
+18 juillet 2026, l'édition d'août datée du 1er août (faits gelés au 29 juillet), puis l'**édition du
+8 août 2026**. Chaque édition ajoute une couche ou un corpus et revérifie les faits périssables ;
+celle du 8 août est la première à **retrancher** — audit intégral des références, six réfutations
+d'affirmations porteuses, et un format ramené à 100 pages fermes.*
 
 ## Vol. I — Interopérabilité agentique
 
@@ -485,6 +520,16 @@ toute manière, tant que le compendium n'est pas **recevable** — ses cinquante
 brouillon écrit hors portes, que le PDF compose sans le publier —, **cet arbitrage n'a aucune
 autorité** : les volumes sources font foi et la divergence reste ouverte — le plan le dit lui-même.
 
+⚠ **L'édition du 8 août 2026 ajoute deux divergences d'une autre nature, et celles-là ne sont pas
+des dates.** La veille corrige deux **lectures de texte juridique** que le corpus portait : l'article
+12.1 de la Loi 25 (qui borne l'absence totale d'humain et ne prescrit aucun degré d'autonomie, contre
+l'« intervention humaine déterminante » que le corpus lui prêtait) et l'avis ACVM 11-348 (qui ne
+contient ni *agent*, ni *agentique*, ni *autonomie*, ce qui fait tomber l'opposition entre accroche
+textuelle et accroche par inférence sur laquelle le Vol. II bâtissait son §8.4). **Ces deux
+divergences sont tranchées, non ouvertes** : la lecture de la veille est adossée au texte, celle du
+corpus ne l'était pas. ⚠ *Mais les volumes sont clos et ne les recevront pas — le lecteur qui cite
+le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
+
 > ⚠ Le fichier `commun/faits-partages.md`, évoqué par le cadrage du Vol. III comme source unique
 > de vérité pour les faits partagés, **n'existe pas et ne sera pas créé** : son PRD §7.5 a tranché
 > de porter lui-même ces divergences. Chaque volume porte donc ses propres faits datés.
@@ -494,7 +539,7 @@ autorité** : les volumes sources font foi et la divergence reste ouverte — le
 ```
 .
 ├── README.md                              ← ce fichier (avant-propos croisé)
-├── Veille Technologique.md / .pdf         ← veille autonome, édition d'août 2026, faits gelés au 29 juillet (162 p., 269 réf.)
+├── Veille Technologique.md / .pdf         ← veille autonome, édition du 8 août 2026, faits gelés à cette date (100 p., 303 réf.)
 ├── 1 - Corpus/                            ← le triptyque
 │   ├── 0 - Références/                      ⚠ 3 PDF de littérature source (32,5 Mio), déposés le 8 août 2026
 │   │                                          — cités par AUCUN document du dépôt, aucune entrée de socle
@@ -653,9 +698,13 @@ chaque ligne échue après le 8 août 2026 rend son objet faux sans que rien dan
 | ☑ **échue le 28 juillet 2026** | Révision de la spécification MCP (protocole sans état) — **la révision `2026-07-28` est versée à la veille** (§4.1 : noyau sans état, `server/discover`, dépréciation de Roots, Sampling, Logging et de l'enregistrement dynamique de client). ⚠ **Les volumes ne sont PAS rattrapés** : le Vol. I ch. 3 et le Vol. II ch. 1, 2, 7 décrivent l'état antérieur **à leur date de gel**, et le Vol. II l'écrit lui-même en toutes lettres — *un chapitre gelé douze jours avant une révision annoncée décrit en connaissance de cause un état daté* | Veille §4.1 (**à jour**) ; Vol. I ch. 3, Vol. II ch. 1, 2, 7 (**périmés, non corrigés**) |
 | après le 26 août 2026 | Texte final du règlement du cadre bancaire canadien ; arrêté désignant l'organisme de normalisation | Veille §8.4 ; Vol. II ch. 14, 15, 24 |
 | cible T4 2026 | Lancement effectif du RTR — cible précédée de quatre cibles abandonnées depuis 2019 | Veille §8.4 ; Vol. II ch. 15, 24 |
-| 2 décembre 2026 | Marquage des contenus générés (règlement européen sur l'IA) | Veille §8.1, §12 |
+| ☑ **échue le 2 août 2026** | **Obligations de transparence de l'article 50** du règlement européen sur l'IA, **marquage compris** — et activation des pouvoirs de la Commission sur les modèles à usage général (amendes jusqu'à 3 % du chiffre d'affaires mondial). ⚠ **Ce dépôt annonçait le marquage au 2 décembre 2026, et c'était mal cadré** : décembre n'est qu'un **délai de grâce de quatre mois pour le seul article 50(2)**, réservé aux systèmes mis sur le marché avant le 2 août 2026 | Veille §8.1, §12.1 (**corrigées**) ; Vol. I à IV (**périmés, non corrigés**) |
+| ☑ **échue le 2 août 2026** | **Première accroche textuelle de l'agentique en droit européen** : la Commission range explicitement les « AI agents » parmi les systèmes à interaction directe soumis à l'article 50(1) | Veille §8.1 (**à jour**) |
+| 24 août 2026 | Entrée en vigueur du règlement administratif n° 10 relatif au RTR (DORS/2026-133) — cadre juridique, **non mise en service** | Veille §8.4, §12.1 ; Vol. II ch. 15, 24 |
+| 2 décembre 2026 | Fin du délai de grâce de l'article 50(2) ; et nouvelles interdictions des articles 5(1)(ba) et 5(1)(bb) annoncées pour ce mois | Veille §8.1, §12.1 |
 | **1er mai 2027** | Entrée en vigueur simultanée d'E-23 (BSIF) et de la ligne directrice IA de l'AMF | Veille §4.11.5, §8.4 ; Vol. I ch. 5 à 7 ; Vol. II ch. 9, 11, 20 |
-| continue | Trajectoire du projet de loi C-36 | Veille §8.4 ; Vol. II ch. 10 |
+| continue | Trajectoire du projet de loi C-36 — ⚠ **première lecture le 15 juin 2026, aucune activité en deuxième lecture au 8 août 2026** ; et c'est une loi sur la vie privée, non un cadre d'IA, ce que ce dépôt présentait trop largement | Veille §8.4 ; Vol. II ch. 10 |
+| ☑ **survenue le 13 juillet 2026** | Bulletin ***Generative and Agentic AI*** du BSIF — saines pratiques non contraignantes, définition de l'IA agentique, chaînage d'outils et accès surprivilégié. *Le régulateur prudentiel canadien nomme l'agentique avant l'entrée en vigueur de sa ligne directrice* | Veille §8.4 (**à jour**) ; Vol. II ch. 9, 14 (**périmés**) |
 
 ## Avertissements
 
@@ -1153,7 +1202,12 @@ touché.
   `.gitattributes`, un poste en `core.autocrlf=true` obtient **1 835 118 octets** en `CRLF`.
   *Une conversion juste sur le mauvais objet reste un chiffre faux.*
 
-**Ce que la passe a re-mesuré sur pièce, et qui tient — toutes valeurs inchangées.** Pagination par
+**Ce que la passe a re-mesuré sur pièce, et qui tient — toutes valeurs inchangées.** ⚠ *Constat daté
+du 8 août 2026, matin : ses trois valeurs relatives à la veille — 162 p., 269 références et
+15 tableaux — ont été **périmées le même jour** par la passe de refonte (100 p., 303 références,
+18 tableaux). Le constat n'est pas
+corrigé, parce qu'un constat daté vaut à sa date ; c'est le tableau d'état, plus haut, qui porte
+l'autorité courante.* Pagination par
 `grep -aoP '/Type/Page(?![sL])'` : **162, 569, 387, 427 et 1 114 p.** ; Vol. I **28 diagrammes**
 (motif ancré) et **233 257 mots** (`wc -w`) ; **50 chapitres**, **118 figures SVG** et **118 SVG
 embarqués** au Vol. IV ; socle **159 entrées**, Annexe I **1 154 entrées** ; veille **269 références,
@@ -1168,3 +1222,60 @@ Vol. II** (l'écart de trois mots est un arbitrage d'auteur), **ne dote `0 - Ré
 régime** et **ne publie rien**. ⚠ *Elle laisse intacts les constats datés qui divergent de la mesure
 d'aujourd'hui* — « tous les contrôles en sortie 0 », 847 et 863 pages, 479 390 mots : *un constat daté
 enregistre ce qu'une passe a lu ; le corriger effacerait la seule chose qu'il apporte.*
+
+
+**Le 8 août 2026, seconde passe du même jour — actualisation de la veille et refonte de son format.**
+⚠ **Cette passe rouvre la clôture pour le seul livrable qu'elle touche**, et la déclaration est
+portée en tête de fichier. Elle procède de deux gestes distincts, conduits dans cet ordre.
+
+*(a) Actualisation, au régime fort demandé par l'auteur.* Une passe de veille sur la fenêtre du
+**29 juillet au 8 août 2026** (six agents, un par grappe thématique — corpus protocolaire,
+réglementation, identité et sécurité, couche transactionnelle et sémantique, adoption et analystes,
+exploitation et orchestration), à consigne de **source primaire exclusive**, doublée d'un **audit
+d'authenticité de l'intégralité des références** — neuf agents rouvrant une à une les **269 entrées**
+de la bibliographie antérieure sur leur source primaire. **Verdicts : 179 confirmées, 54 corrigées,
+30 non reconfirmables, 6 auto-citations, aucune introuvable.** ⚠ *Seize de ces trente non-reconfirmables
+tiennent à un refus de consultation automatisée — organismes de normalisation, cabinets d'analyse,
+régulateurs, tous en HTTP 403 — et les quatorze autres à des pages sans date, mouvantes ou rendues en
+script : ce n'est pas la source qui manque, c'est l'accès.* L'audit a
+notamment établi qu'une référence pointait vers une page traitant du **secteur public** là où le
+texte citait une disposition du **secteur privé**, et qu'un communiqué d'éditeur s'était vu prêter
+deux faits venus d'un communiqué postérieur d'un an. ⚠ **Aucune ronde de vérification adverse à
+plusieurs votants n'a été conduite** : le régime est celui, plus faible, déjà déclaré pour la
+sous-section 12.4 — et il est déclaré comme tel en §2.2 et en §10 de la veille.
+
+*(b) Réduction à cent pages fermes, par compression éditoriale seule.* **Gabarit inchangé** — 11 pt,
+marges inchangées, aucun gain typographique. Le corps est passé de **70 552 à 29 211 mots**, soit
+**−59 %**, à faits constants ; l'appareil (page de titre, résumé, bibliographie) pèse **32 des
+100 pages**, la bibliographie ayant elle-même grossi de 269 à 303 entrées. La compression a été conduite morceau par morceau, chaque morceau étant ensuite
+**comparé à l'aveugle** à la version de 162 pages par un juge à contexte neuf ne sachant pas lequel
+des deux textes était lequel, l'ordre de présentation alternant d'un morceau à l'autre. **Les quatre
+morceaux soumis au jugement ont été préférés à la version longue**, sur des motifs portant chaque
+fois sur la densité de fait vérifié et la netteté du statut épistémique. Deux écarts relevés par les
+juges ont été corrigés dans la foulée — trois légendes de tableau qui dataient d'une passe et
+portaient des faits d'une autre, et trois entrées de la liste des contributions comprimées jusqu'à
+n'annoncer plus aucun résultat.
+
+**Décomptes re-mesurés sur le PDF régénéré : 100 p. / 303 références**, contre 162 p. / 269 auparavant ;
+14 sections et 25 questions ouvertes inchangées, **18 tableaux** (contre 15 : trois ont été ajoutés
+pour absorber en forme dense de la prose énumérative, et **tous les renvois « tableau N » du document
+ont été recalibrés en conséquence** — la numérotation de Pandoc est positionnelle).
+`python check-veille.py` en **sortie 0** sur les quatre contrôles.
+
+⚠ **Ce que la passe a réfuté, et c'est son principal résultat.** Six affirmations porteuses de la
+veille sont tombées en dix jours : *(1)* « aucun protocole ne dispose de suite de conformité
+publique » — `modelcontextprotocol/conformance` et `a2a-tck` existent, sans qu'aucune conformité soit
+pour autant opposable par un tiers ; *(2)* « au-delà de deux sauts, aucun mécanisme **documenté** » —
+trois brouillons individuels IETF en décrivent désormais, aucun n'étant adopté, ce qui déplace le
+déficit de l'invention vers l'adoption ; *(3)* le marquage européen des contenus générés, annoncé au
+2 décembre 2026, s'applique **depuis le 2 août 2026** ; *(4)* l'article 12.1 de la Loi 25 n'exige pas
+d'intervention humaine déterminante ; *(5)* l'avis ACVM 11-348 ne mentionne pas l'agentique ;
+*(6)* les soixante et un attributs `gen_ai.*` sont **soixante-trois** depuis le 7 août 2026. Deux
+projections d'analystes ont par ailleurs été retirées comme **inattribuables ou mal citées** (les
+1 300 G$ de 2029, qui portent sur la dépense totale en IA, et les 70 % de consolidation d'ici 2030,
+sans aucune publication primaire). ⚠ *Les quatre volumes ne reçoivent aucune de ces corrections :
+ils sont clos, et deux d'entre elles portent sur des énoncés qu'ils contiennent.*
+
+⚠ **Ce que la passe ne fait pas.** Elle **ne touche à aucun des quatre volumes**, **ne franchit
+aucune porte**, **ne lève aucune dérogation**, **ne referme aucune remontée**, **ne corrige pas
+`decompte.sh`** et **ne publie rien**. La clôture **D-13 reste en vigueur pour les quatre volumes**.
