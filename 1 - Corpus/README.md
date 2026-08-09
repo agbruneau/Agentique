@@ -322,7 +322,7 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 | **Praticien canadien** | Vol. II, chapitre 13 — « le pont : des contraintes réglementaires aux *frames* déterministes » |
 | **RSSI / responsable identité** | Vol. III, Partie II — le passeport d'agent et la chaîne de mandat |
 | **Décideur** | Ce README, puis la veille technologique |
-| **Académique** | La [revue de littérature](../Revue%20de%20litt%C3%A9rature.md) (**40 p. fermes**, 161 références, arrêtée au **9 août 2026**) — ⚠ *sixième livrable du dépôt, entré après la clôture ; elle ne couvre aucun des trois volumes, elle mesure le champ savant qu'ils citent* |
+| **Académique** | La [revue de littérature](../Revue%20de%20litt%C3%A9rature.md) (**40 p. fermes**, 176 références, **dix fronts**, arrêtée au **9 août 2026**) — ⚠ *sixième livrable du dépôt, entré après la clôture ; elle ne couvre aucun des trois volumes, elle mesure le champ savant qu'ils citent* |
 
 ---
 

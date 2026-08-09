@@ -136,7 +136,7 @@ compendium interroge au build.
 | Livrable | Rendu mesuré (`pypdf`) | Pièces | Appareil de contrôle |
 |---|---|---|---|
 | Veille technologique | **100 p.** *(162 p. jusqu'au 8 août 2026)*, **303 références** | 14 sections, **18 tableaux**, 25 questions ouvertes | `python check-veille.py` → **sortie 0** ; `python check-resume.py` → **sortie 0** (résumé à **y = 119,4 pt**, 45,7 pt de dégagement) |
-| Revue de littérature | **40 p.** fermes, **161 références** | 18 sections, 8 tableaux, 9 fronts ; **12 pièces sur 158 à publication attestée**, 120 sans revue | `python check-revue.py` → **sortie 0** (4 contrôles, validés par mutation) |
+| Revue de littérature | **40 p.** fermes, **176 références** | 19 sections, 8 tableaux, 10 fronts ; **12 pièces sur 173 à publication attestée**, 133 sans revue | `python check-revue.py` → **sortie 0** (4 contrôles, **six mutants tombent**) |
 | Vol. I — *Interopérabilité* | **569 p.** | 7 chapitres + 7 bibliographies + Annexe B, **28 diagrammes** | — (vérification adverse des citations) |
 | Vol. II — *Orchestration agentique* | **387 p.** | **29 pièces** + registre de gel, socle de 46 entrées | grille CA-1…CA-8 |
 | Vol. III — *L'entreprise agentique* | **427 p.** | **34 pièces** + registre de gel ; ⚠ **plus aucun rapport de vérification** — les **30** que le dossier portait ont été **supprimés le 8 août 2026** (commit `659241b`) et se relisent au seul historique git | CA-01…CA-14, 15 remontées ouvertes — ⚠ *leur registre est dans le lot supprimé* |
@@ -210,11 +210,11 @@ même jour). *Il faut nommer le genre du livrable, jamais son seul titre.*
 | **Dossier** | racine du dépôt | racine du dépôt | [`1 - Corpus/1 - InteroperabiliteAgentique/`](1%20-%20Corpus/1%20-%20InteroperabiliteAgentique/) | [`1 - Corpus/2 - OrchestrationAgentique/`](1%20-%20Corpus/2%20-%20OrchestrationAgentique/) | [`1 - Corpus/3 - EntrepriseAgentique/`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/) | [`2 - Compendium/`](2%20-%20Compendium/) |
 | **Titre** | Interopérabilité et Orchestration Agentiques en Entreprise *(aligné sur le Vol. IV le 9 août 2026 — ⚠ les deux sont désormais homonymes)* | Interopérabilité et Orchestration Agentiques : revue de la littérature académique | Interopérabilité agentique en entreprise dans le domaine des services financiers | Orchestration agentique | L'entreprise agentique — la fabrique de confiance | Interopérabilité et Orchestration Agentiques en Entreprise |
 | **Rôle** | État de l'art vérifié, mis à jour par éditions | Ce que la littérature académique sait, et à quel régime de preuve | Cadre général, mondial et théorique | Cas canadien réglementé, instruit au grain du droit | Le verrou commun : identité, maillage, exploitation | Omnibus terminal : absorbe et remplace les trois volumes |
-| **Portée** | Mondiale | Mondiale, neuf fronts de recherche | Mondiale (UE / É.-U. / R.-U. / Asie) | Canada-Québec (E-23, AMF, Loi 25, ACVM, Lynx/RTR) | Organisation et cycle de vie (NHI, *agent mesh*, AgentOps) | Les trois portées réunies (2024-2032) |
+| **Portée** | Mondiale | Mondiale, dix fronts de recherche | Mondiale (UE / É.-U. / R.-U. / Asie) | Canada-Québec (E-23, AMF, Loi 25, ACVM, Lynx/RTR) | Organisation et cycle de vie (NHI, *agent mesh*, AgentOps) | Les trois portées réunies (2024-2032) |
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Les trois quarts du champ n'ont franchi aucun comité » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Notices ouvertes une à une, métadonnées reprises à l'API arXiv | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 8 août 2026 (édition du 8 août 2026 ; les sections antérieures gardent leur date d'état) | 9 août 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | 27 juillet 2026 (décision d'auteur D-1) ; volet des faits levé le 28 juillet 2026 |
-| **État** | Publiée (**100 p.**, **303 références**) — format ferme depuis le 8 août 2026 | Publiée (**40 p. fermes**, **161 références**) — déposée le 9 août 2026, sixième livrable du dépôt | Rédaction terminée (569 p., **233 257 mots** — `wc -w` sur `Monographie.md`, point d'ancrage de `decompte.sh --verifier` ; 225 258 par la commande de référence du dépôt. ⚠ *Le chiffre de ≈ 263 600 mots que ce fichier portait n'est reproductible par aucune des deux commandes* ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié, et clos en l'état** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; **finalisation P5 close sans être achevée** le 8 août 2026 (dernière passe de fond : relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état — *et il ne le deviendra pas : quinze remontées R-G-43 à R-G-57 et la dette de vote sur F-92 et F-96 restent ouvertes à titre définitif* | **CLOS ET FINAL** (D-13, 8 août 2026 ; TOC v0.33 / PRD v0.17), statut de révision finale en bibliothèque personnelle maintenu et devenu définitif — *la passe de révision ouverte par D-11 le 30 juillet 2026 (TOC v0.32 / PRD v0.16) est **close sans exécution de son domaine résiduel**, sur l'arrêt initial D-10 du 29 juillet 2026 (TOC v0.31 / PRD v0.15)* : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf) (**1 000 p.**, cible d'auteur calée et vérifiée au build le 9 août 2026 — 1 114 p. auparavant —, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026 ; gabarit relevé sur deux monographies Springer le même jour, porté au format Letter le 31 juillet 2026, puis calé à mille pages le 9 août 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** |
+| **État** | Publiée (**100 p.**, **303 références**) — format ferme depuis le 8 août 2026 | Publiée (**40 p. fermes**, **176 références**) — déposée le 9 août 2026 et **révisée le même jour** (dixième front), sixième livrable du dépôt | Rédaction terminée (569 p., **233 257 mots** — `wc -w` sur `Monographie.md`, point d'ancrage de `decompte.sh --verifier` ; 225 258 par la commande de référence du dépôt. ⚠ *Le chiffre de ≈ 263 600 mots que ce fichier portait n'est reproductible par aucune des deux commandes* ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié, et clos en l'état** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; **finalisation P5 close sans être achevée** le 8 août 2026 (dernière passe de fond : relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état — *et il ne le deviendra pas : quinze remontées R-G-43 à R-G-57 et la dette de vote sur F-92 et F-96 restent ouvertes à titre définitif* | **CLOS ET FINAL** (D-13, 8 août 2026 ; TOC v0.33 / PRD v0.17), statut de révision finale en bibliothèque personnelle maintenu et devenu définitif — *la passe de révision ouverte par D-11 le 30 juillet 2026 (TOC v0.32 / PRD v0.16) est **close sans exécution de son domaine résiduel**, sur l'arrêt initial D-10 du 29 juillet 2026 (TOC v0.31 / PRD v0.15)* : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf) (**1 000 p.**, cible d'auteur calée et vérifiée au build le 9 août 2026 — 1 114 p. auparavant —, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026 ; gabarit relevé sur deux monographies Springer le même jour, porté au format Letter le 31 juillet 2026, puis calé à mille pages le 9 août 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** |
 
 ## Veille technologique — le document transversal
 
@@ -285,7 +285,7 @@ d'affirmations porteuses, et un format ramené à 100 pages fermes.*
 ## Revue de littérature — le versant académique
 
 [`Revue de littérature.md`](Revue%20de%20litt%C3%A9rature.md) → `Revue de littérature.pdf`
-(**40 p. fermes**, 18 sections, **161 références**, 8 tableaux — arrêtée au **9 août 2026**),
+(**40 p. fermes**, 19 sections, **176 références**, 8 tableaux — arrêtée au **9 août 2026**),
 sous le titre *« Interopérabilité et Orchestration Agentiques : revue de la littérature
 académique »* — ⚠ *radical aligné le 9 août 2026 sur celui que la veille et le Vol. IV portent déjà :
 **trois livrables sur six** partagent désormais ce début d'intitulé, et seul le genre les distingue.*
@@ -294,22 +294,23 @@ cette revue dit **ce que la littérature académique sait**, et à quel régime 
 coïncident pas, et c'est l'intérêt.
 
 Le corpus a deux origines : les **50 pièces académiques de la veille**, reprises et re-vérifiées, et
-une passe de recherche neuve sur **neuf fronts** — protocoles, sécurité, identité et délégation,
+une passe de recherche neuve sur **dix fronts** — protocoles, sécurité, identité et délégation,
 systèmes multi-agents, évaluation, couche transactionnelle, processus d'affaires, gouvernance, Web
-agentique. Les métadonnées des 158 pièces arXiv ont été **reprises à l'API du dépôt**, ce qui a
+agentique, et **chorégraphie et essaim** depuis le 9 août 2026. Les métadonnées des 173 pièces arXiv
+ont été **reprises à l'API du dépôt**, ce qui a
 corrigé plusieurs statuts que la passe de recherche rapportait comme « à comité de lecture » sur la
 seule foi d'un champ de commentaire libre.
 
-⚠ **Le résultat principal tient à la forme du corpus, non à son contenu.** **Douze pièces sur 158 —
-8 % — portent une attestation de publication en notice** ; vingt-six annoncent une acceptation dans
-un champ que personne ne vérifie ; **cent vingt, soit 76 %, ne présentent aucun signe de revue par
-les pairs**. Cinquante-huit pour cent du corpus a été déposé en 2026 et la moitié n'a jamais été
+⚠ **Le résultat principal tient à la forme du corpus, non à son contenu.** **Douze pièces sur 173 —
+7 % — portent une attestation de publication en notice** ; vingt-huit annoncent une acceptation dans
+un champ que personne ne vérifie ; **cent trente-trois, soit 77 %, ne présentent aucun signe de revue
+par les pairs**. Soixante pour cent du corpus a été déposé en 2026 et la moitié n'a jamais été
 révisée. *Un champ dont les trois quarts des énoncés n'ont franchi aucun comité ne peut pas fonder
 une décision d'architecture au même titre qu'une littérature établie.*
 
-⚠ **Et l'annexe pousse le constat plus loin.** Des **108 pièces versées par la passe neuve, cinq
+⚠ **Et l'annexe pousse le constat plus loin.** Des **123 pièces versées par la passe neuve, six
 seulement** sont attestées — et **aucune n'appartient aux fronts sécurité, identité, multi-agents,
-évaluation ni transactionnel**, c'est-à-dire à ceux qui portent les énoncés les plus conséquents de
+évaluation, transactionnel ni chorégraphie**, c'est-à-dire à ceux qui portent les énoncés les plus conséquents de
 la revue. *Le champ produit ses résultats les plus décisifs là où son appareil de contrôle est le
 plus faible.*
 
@@ -636,7 +637,7 @@ le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
 .
 ├── README.md                              ← ce fichier (avant-propos croisé)
 ├── Veille Technologique.md / .pdf         ← veille autonome, édition du 8 août 2026, faits gelés à cette date (100 p., 303 réf.)
-├── Revue de littérature.md / .pdf         ← revue de la littérature académique, arrêtée au 9 août 2026 (40 p., 161 réf.)
+├── Revue de littérature.md / .pdf         ← revue de la littérature académique, arrêtée au 9 août 2026 (40 p., 176 réf.)
 ├── check-veille.py                        ← contrôles de publication de la veille (renvois, cardinaux, bibliographie)
 ├── check-resume.py                        ← budget de mise en page : le résumé tient-il sur la page de titre du PDF
 ├── check-revue.py                         ← contrôles de publication de la revue (appariement, tableaux, doublons, régimes)
@@ -1425,7 +1426,9 @@ clôture du Vol. IV** — le premier depuis D-13 à toucher un volume, fût-ce p
 **(a) Un sixième livrable entre au dépôt.** [`Revue de littérature.md`](Revue%20de%20litt%C3%A9rature.md)
 et son PDF — **40 pages fermes, 161 références, 18 sections, 8 tableaux**, neuf fronts de recherche —,
 avec son contrôle propre, [`check-revue.py`](check-revue.py) (quatre contrôles, **validés par
-mutation**, sortie 0). Son titre est **aligné le même jour** sur le radical que la veille et le
+mutation**, sortie 0). ⚠ *Ces décomptes sont ceux du dépôt et ils sont laissés tels quels : la
+**seconde passe du même jour**, en fin de fichier, porte la revue à **176 références et dix fronts**.
+Un constat daté enregistre, il ne retarde pas.* Son titre est **aligné le même jour** sur le radical que la veille et le
 Vol. IV portent déjà : *« Interopérabilité et Orchestration Agentiques : revue de la littérature
 académique »*. ⚠ **Trois livrables sur six partagent désormais ce début d'intitulé**, et *un renvoi
 qui cite par le seul titre ne désigne plus rien* — la mise en garde que ce fichier portait pour deux
@@ -1511,3 +1514,78 @@ revue sur leurs faits datés**, **ne dote `0 - Références/` d'aucun régime** 
 de chapitre sont **relevés et corrigés à la main**, comme toujours — *le calage à mille pages a
 changé une valeur que trois lignes de cette page portaient, et rien dans le dépôt ne l'aurait
 signalé.*
+
+**Le 9 août 2026, seconde passe du même jour — la revue de littérature reçoit un dixième front, et
+quatre erreurs d'arithmétique tombent en recalculant.** Sur instruction d'auteur, la revue intègre la
+**chorégraphie agentique en essaim multiagents** — la coordination sans chef d'orchestre, par
+protocole d'interaction plutôt que par superviseur — et **reste à 40 pages fermes**. ⚠ *Le format
+ferme n'était pas une contrainte de forme : c'est lui qui a rendu la passe coûteuse, et c'est lui qui
+a révélé ce qui suit.*
+
+**(a) Un dixième front, et quinze pièces versées.** Trois agents de recherche à consigne de source
+primaire ont rapporté **17 pièces, une en doublon, 15 retenues** ; **les 17 notices ont été rouvertes
+à l'API du dépôt par l'orchestrateur, non par les agents qui les rapportaient** — titres, dates,
+versions et champs concordent tous. Corpus **161 → 176 entrées**, **158 → 173 arXiv**. Le front neuf
+prend **[159-173]**, les trois pièces à DOI reculent en **[174-176]**. ⚠ **Aucune des quinze n'est
+publiée en comité de lecture** — deux annoncent une acceptation au seul champ de commentaire, une y
+annonce une simple *soumission* : *le front qui porte les résultats les plus conséquents sur la
+coordination sans chef ne compte aucune publication arbitrée, et la thèse de la revue se durcit de
+76 % à **77 %** au lieu de se diluer.*
+
+**(b) Ce que la barre a attrapé et qu'aucun contrôle ne voyait.** La révision a été conduite en
+boucle bâtisseur/critique, chaque morceau jugé **à l'aveugle** contre la version actuelle, étiquettes
+retirées. **Score : deux morceaux sur trois gagnent.** ⚠ **Les deux compressions du premier tour
+tenaient leur quota au mot près et passaient tous les contrôles exécutables ; les deux ont perdu, pour
+le même motif — *elles avaient échangé de la preuve contre du slogan*.** Un juge : « *la loi d'échelle
+collaborative établie jusqu'à plus d'un millier d'agents est logistique, donc saturante* réduit à
+*échelle saturante* — le résultat y est redevenu une étiquette de sujet ». *Une boucle qui n'aurait
+mesuré que les 40 pages les aurait déclarées réussies.* ⚠ **La clôture, perdante au premier tour, a
+été reprise mais non rejugée** : le budget fixé avant de lancer était atteint. *C'est un plafond, et
+il est déclaré ici plutôt que tu.*
+
+**(c) Une erreur de fait, trouvée en creusant un écart de juge.** La revue écrivait à **deux
+endroits** que l'observabilité complète des traces *porte l'attribution à 76 %* **[89]**. La notice
+dit : *full traces improve attribution accuracy **by up to 76 %** over a partial-observation
+counterpart.* C'est un **gain relatif**, la notice ne donne ni effectif de banc ni condition, et il
+**ne partage aucun dénominateur** avec le 53,5 % de **[88]** auquel il était opposé. ⚠ *La phrase
+causale qui en découlait — « ce plafond tient à l'instrumentation » — n'avait donc pas de mesure sous
+elle.* Corrigée aux deux endroits, l'énoncé redevient une hypothèse. **Aucun contrôle exécutable ne
+pouvait l'attraper : il fallait un juge qui demande d'où vient le chiffre.**
+
+**(d) Quatre erreurs d'arithmétique préexistantes, mises au jour par le recalcul.** Elles ne viennent
+pas du dixième front. *(i)* §3.2 comptait « cinq » pièces attestées au socle puis « les sept autres »,
+en rangeant **[44]** et **[158]** dans des fronts qu'il déclarait ensuite n'en compter aucune — c'est
+**six et six**. *(ii)* L'annexe annonçait « **cinq seulement** » puis en énumérait six. *(iii)*
+L'annexe donnait **quatre** pièces du socle antérieures à 2025 ; il y en a **deux**. *(iv)* §12.3
+annonçait « 120 pièces des dix fronts » quand le tableau de §3.2 en compte **123**, avec des
+dénominateurs par front — sécurité 10/**12** pour un front de 11, gouvernance 2/**12** pour 11,
+protocoles 4/**12** pour 13 — contredisant ce même tableau ; corrigé en **67 sur 123, soit 54 %**.
+⚠ *Les numérateurs restent hérités du décompte antérieur et n'ont pas été revérifiés pièce à pièce,
+sauf celui du front neuf — 11 sur 15, établi sur dossier. C'est écrit plutôt que tu.*
+
+**(e) Le contrôle réparé avant d'être cru.** [`check-revue.py`](check-revue.py) codait en dur
+`sur 158` et `(Vingt-six|Trente et une)`. ⚠ **Passé à 28 auto-déclarations, le motif ne serait pas
+tombé : il aurait cessé de chercher, et le contrôle serait passé au vert sur un document faux.** Les
+alternatives couvrent désormais l'ancienne et la nouvelle valeur, un cinquième motif surveille le
+compte des pièces sans revue, et le jeu de mutants passe de quatre à **six — tous tombent**.
+
+**(f) Deux pages gagnées sans rien perdre, cherchées avant de couper dans l'argument.** Chaque entrée
+de bibliographie écrivait son identifiant arXiv **deux fois** : en clair, puis dans l'URL en toutes
+lettres. Replier l'URL derrière l'identifiant rend **2 pages sur 173 entrées** — même cible, même
+identifiant lisible, un seul exemplaire, et le contrôle des doublons continue de passer parce qu'il
+lisait déjà les deux séparément. La troisième page s'est prise dans des doublons **entre sections** :
+un paragraphe de §6.2 rejouait intégralement le premier énoncé de la veille jusqu'à la même phrase de
+clôture en gras, §3.2 et l'annexe tenaient le même compte des douze attestées, §3.1 énumérait les
+revues que le tableau de l'annexe redonne colonne par colonne. **475 mots repris, aucun chiffre ni
+mécanisme touché.** ⚠ **L'en-tête YAML n'est pas touché** : *atteindre la pagination par la
+typographie serait contourner la contrainte, pas la satisfaire.*
+
+**Contrôles rejoués après recomposition** — `check-revue.py` (4 contrôles, **six mutants tombent**),
+`check-resume.py` (résumé à **y = 222,0 pt**, 148,3 pt de dégagement) : **deux en sortie 0**, PDF à
+**40 pages** vérifiées au `/Count`.
+
+⚠ **Ce que la passe ne fait pas.** Elle **ne touche à aucun des quatre volumes ni à la veille**,
+**ne franchit aucune porte**, **ne lève aucune dérogation**, **ne referme aucune remontée**,
+**ne revérifie pas pièce à pièce les numérateurs hérités de §12.3**, **ne rejuge pas la clôture** et
+**ne publie rien**. Le journal détaillé de la boucle, tour par tour, est dans
+[`gauntlet-log.md`](gauntlet-log.md).
