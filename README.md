@@ -25,9 +25,12 @@ publiable.
 >
 > ⚠ **Le Vol. IV a été renommé le même jour** (décision 20 du TOC) : *« La somme agentique »* du
 > 23 juillet au 8 août 2026, **« Interopérabilité et Orchestration Agentiques en Entreprise »**
-> depuis. ⚠ *Le titre est à un mot près celui de la veille technologique, et c'est un défaut de
-> dénomination assumé* — les deux se distinguent par leur numéro de volume et leur genre, jamais par
-> leur intitulé.
+> depuis. ⚠ **Depuis le 9 août 2026, ce titre est EXACTEMENT celui de la veille
+> technologique** — sur instruction d'auteur, la veille a été alignée sur le compendium. *Ce n'est
+> plus « à un mot près » : les deux documents du dépôt portent le même intitulé et ne se distinguent
+> que par leur genre et leur numéro de volume.* ⚠ **Un renvoi qui les cite par leur seul titre ne
+> désigne donc plus rien** : il faut nommer le livrable — « la veille technologique » ou « le
+> Vol. IV ».
 >
 > ⚠ **Le Vol. II a été renommé le même jour** : *« L'autonomie encadrée »* du 17 juillet au 8 août
 > 2026, **« Orchestration agentique »** depuis — le nom que son dossier porte depuis l'origine.
@@ -66,6 +69,10 @@ publiable.
 > ⚠⚠ **RÉOUVERTURE DÉCLARÉE — 8 août 2026, passe de veille et de refonte de format.** Conformément
 > à la règle ci-dessus, **cette passe rouvre la clôture pour le seul livrable qu'elle touche** : la
 > **veille technologique**, actualisée au 8 août 2026 puis **ramenée de 162 à 100 pages fermes**.
+> ⚠ **Et elle a été prolongée le 9 août 2026 par deux gestes d'auteur** : la veille a **pris le titre
+> du Vol. IV à l'identique**, et un **sixième livrable** est entré au dépôt — une
+> [revue de la littérature académique](Revue%20de%20litt%C3%A9rature.md) de **40 pages fermes**.
+> *Le dépôt comptait cinq livrables à sa clôture ; il en compte six.*
 > *Elle ne touche au corps d'aucun des quatre volumes* — deux fichiers de gouvernance sont
 > néanmoins repris, et il faut le dire : [`2 - Compendium/PRD/TOC.md`](2%20-%20Compendium/PRD/TOC.md)
 > et le `TOC.md` des chapitres du Vol. I **pointaient vers des numéros de référence et une édition de
@@ -103,6 +110,7 @@ de l'objet `/Type /Pages` : `pypdf`, que ce fichier citait comme instrument, n'e
 | Livrable | Rendu mesuré (`/Count`) | Pièces | Appareil de contrôle |
 |---|---|---|---|
 | Veille technologique | **100 p.** *(162 p. jusqu'au 8 août 2026)*, **303 références** | 14 sections, **18 tableaux**, 25 questions ouvertes | `python check-veille.py` → **sortie 0** ; `python check-resume.py` → **sortie 0** (résumé à **y = 119,4 pt**, 45,7 pt de dégagement) |
+| Revue de littérature | **40 p.** fermes, **161 références** | 18 sections, 8 tableaux, 9 fronts ; **12 pièces sur 158 à publication attestée**, 120 sans revue | `python check-revue.py` → **sortie 0** (4 contrôles, validés par mutation) |
 | Vol. I — *Interopérabilité* | **569 p.** | 7 chapitres + 7 bibliographies + Annexe B, **28 diagrammes** | — (vérification adverse des citations) |
 | Vol. II — *Orchestration agentique* | **387 p.** | **29 pièces** + registre de gel, socle de 46 entrées | grille CA-1…CA-8 |
 | Vol. III — *L'entreprise agentique* | **427 p.** | **34 pièces** + registre de gel ; ⚠ **plus aucun rapport de vérification** — les **30** que le dossier portait ont été **supprimés le 8 août 2026** (commit `659241b`) et se relisent au seul historique git | CA-01…CA-14, 15 remontées ouvertes — ⚠ *leur registre est dans le lot supprimé* |
@@ -163,7 +171,7 @@ Les trois volumes vivent sous [`1 - Corpus/`](1%20-%20Corpus/) ; la veille est
 | | **Veille technologique** | **Vol. I — Interopérabilité** | **Vol. II — Orchestration** | **Vol. III — Entreprise** | **Vol. IV — Compendium** |
 |---|---|---|---|---|---|
 | **Dossier** | racine du dépôt | [`1 - Corpus/1 - InteroperabiliteAgentique/`](1%20-%20Corpus/1%20-%20InteroperabiliteAgentique/) | [`1 - Corpus/2 - OrchestrationAgentique/`](1%20-%20Corpus/2%20-%20OrchestrationAgentique/) | [`1 - Corpus/3 - EntrepriseAgentique/`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/) | [`2 - Compendium/`](2%20-%20Compendium/) |
-| **Titre** | Interopérabilité et orchestration agentique en entreprise | Interopérabilité agentique en entreprise dans le domaine des services financiers | Orchestration agentique | L'entreprise agentique — la fabrique de confiance | Interopérabilité et Orchestration Agentiques en Entreprise |
+| **Titre** | Interopérabilité et Orchestration Agentiques en Entreprise *(aligné sur le Vol. IV le 9 août 2026 — ⚠ les deux sont désormais homonymes)* | Interopérabilité agentique en entreprise dans le domaine des services financiers | Orchestration agentique | L'entreprise agentique — la fabrique de confiance | Interopérabilité et Orchestration Agentiques en Entreprise |
 | **Rôle** | État de l'art vérifié, mis à jour par éditions | Cadre général, mondial et théorique | Cas canadien réglementé, instruit au grain du droit | Le verrou commun : identité, maillage, exploitation | Omnibus terminal : absorbe et remplace les trois volumes |
 | **Portée** | Mondiale | Mondiale (UE / É.-U. / R.-U. / Asie) | Canada-Québec (E-23, AMF, Loi 25, ACVM, Lynx/RTR) | Organisation et cycle de vie (NHI, *agent mesh*, AgentOps) | Les trois portées réunies (2024-2032) |
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
@@ -236,6 +244,44 @@ section 10 de la veille.
 8 août 2026**. Chaque édition ajoute une couche ou un corpus et revérifie les faits périssables ;
 celle du 8 août est la première à **retrancher** — audit intégral des références, six réfutations
 d'affirmations porteuses, et un format ramené à 100 pages fermes.*
+
+## Revue de littérature — le versant académique
+
+[`Revue de littérature.md`](Revue%20de%20litt%C3%A9rature.md) → `Revue de littérature.pdf`
+(**40 p. fermes**, 18 sections, **161 références**, 8 tableaux — arrêtée au **9 août 2026**).
+Où la veille dit ce que le monde déployé fait, sur spécifications, dépôts et textes réglementaires,
+cette revue dit **ce que la littérature académique sait**, et à quel régime de preuve. Les deux ne
+coïncident pas, et c'est l'intérêt.
+
+Le corpus a deux origines : les **50 pièces académiques de la veille**, reprises et re-vérifiées, et
+une passe de recherche neuve sur **neuf fronts** — protocoles, sécurité, identité et délégation,
+systèmes multi-agents, évaluation, couche transactionnelle, processus d'affaires, gouvernance, Web
+agentique. Les métadonnées des 158 pièces arXiv ont été **reprises à l'API du dépôt**, ce qui a
+corrigé plusieurs statuts que la passe de recherche rapportait comme « à comité de lecture » sur la
+seule foi d'un champ de commentaire libre.
+
+⚠ **Le résultat principal tient à la forme du corpus, non à son contenu.** **Douze pièces sur 158 —
+8 % — portent une attestation de publication en notice** ; vingt-six annoncent une acceptation dans
+un champ que personne ne vérifie ; **cent vingt, soit 76 %, ne présentent aucun signe de revue par
+les pairs**. Cinquante-huit pour cent du corpus a été déposé en 2026 et la moitié n'a jamais été
+révisée. *Un champ dont les trois quarts des énoncés n'ont franchi aucun comité ne peut pas fonder
+une décision d'architecture au même titre qu'une littérature établie.*
+
+⚠ **Et l'annexe pousse le constat plus loin.** Des **108 pièces versées par la passe neuve, cinq
+seulement** sont attestées — et **aucune n'appartient aux fronts sécurité, identité, multi-agents,
+évaluation ni transactionnel**, c'est-à-dire à ceux qui portent les énoncés les plus conséquents de
+la revue. *Le champ produit ses résultats les plus décisifs là où son appareil de contrôle est le
+plus faible.*
+
+**Elle rend trois verdicts à la veille**, dont deux la modifient : le déficit de délégation au-delà
+de deux sauts est un déficit **d'adoption et non d'invention** — trois brouillons documentent des
+chaînes à N sauts, aucun n'est adopté ; la dissymétrie entre agents et formalismes de processus est
+**industrielle, non scientifique** — quatre formalismes sont proposés *pour* les agents, aucun n'est
+repris par un protocole ; et l'absence de vocabulaire de trace décrivant une chaîne de mandat est
+**confirmée par une seconde voie, plus sévère** — la seule pièce arbitrée du front étend le modèle de
+provenance du W3C **sans instancier `actedOnBehalfOf`**.
+
+L'auto-citation est assumée et divulguée : la veille mise à l'épreuve est du même auteur.
 
 ## Vol. I — Interopérabilité agentique
 
@@ -612,6 +658,12 @@ cas : *trois PDF déposés sans un mot qui dise ce qu'ils font là.*
 pandoc "Veille Technologique.md" --pdf-engine=typst --toc -o "Veille Technologique.pdf"
 ```
 
+**Revue de littérature** (racine) — même invocation que la veille, même gabarit :
+
+```bash
+pandoc "Revue de littérature.md" --pdf-engine=typst --toc -o "Revue de littérature.pdf"
+```
+
 **Vol. I** — pipeline FESP, avec pré-rendu des 28 diagrammes Mermaid ; depuis
 `1 - Corpus/1 - InteroperabiliteAgentique/` :
 
@@ -662,7 +714,7 @@ la règle d'indépendance vaut donc pour **quatre**. Le script publie à chaque 
 assemblé et marqué (50 chapitres, 5 livres, 23 renvois marqués d'une dague), et il **échoue** si une
 pièce ne porte pas les trois appareils qu'il retire — une pièce déformée passerait sinon sans bruit.
 
-⚠ **Les cinq chaînes ne produisent que des PDF.** Les `.html` du Vol. IV — les **cinquante pages de
+⚠ **Les six chaînes ne produisent que des PDF.** Les `.html` du Vol. IV — les **cinquante pages de
 chapitre** et [`Compendium.html`](2%20-%20Compendium/Compendium.html), l'appareil de lecture du
 volume — **ne sortent d'aucune d'entre elles** : `build/` ne contient aucun générateur HTML, et ces
 fichiers sont écrits à la main. *Il n'y a donc pas de commande à donner ici, et c'est précisément le

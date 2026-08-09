@@ -7,9 +7,9 @@ page de présentation ni de publication GitHub Pages — voir « Structure du do
 > 2026, **« Orchestration agentique »** depuis. ⚠ *Le titre change, la thèse ne change pas* :
 > l'**autonomie encadrée** (*framed autonomy*) reste la thèse centrale de l'ouvrage, exposée au
 > chapitre 6 et instruite au chapitre 13 — elle cesse seulement d'en être l'intitulé. Le nouveau
-> titre est celui du dossier depuis l'origine, et il est **à un mot près celui de la veille
-> technologique** : les deux se distinguent par leur numéro de volume et leur genre, jamais par leur
-> intitulé.
+> titre est celui du dossier depuis l'origine. ⚠ *La proximité de dénomination signalée ici visait le
+> **Vol. IV**, dont le titre est, depuis le 9 août 2026, **exactement** celui de la veille
+> technologique : citer l'un des deux par son seul intitulé ne désigne plus rien.*
 
 > ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13**
 > ([`2 - Compendium/PRD/PRD.md`](../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe

@@ -184,3 +184,41 @@ matrice de texte** — `Tm` y vaut `1 0 0 -1 0 0`, la position réelle étant da
 chaque `BT`. *Mesurer `Tm` rendait zéro partout, ce qui ressemblait à un résultat.* Le contrôle est
 **calibré sur le PDF de l'édition précédente**, où il retrouve les 104,8 pt relevés à la main
 le 29 juillet 2026 — c'est cette concordance qui le rend croyable, non son code.
+
+## Revue de littérature — 9 août 2026
+
+Demande d'auteur : *« fondée sur le contenu de la veille, effectuer la revue littéraire
+correspondante pour août 2026 »*. Corpus retenu : socle de la veille **plus** passe académique
+neuve ; livrable autonome à appareil complet ; **40 pages fermes**.
+
+Neuf agents de recherche, un par front, à consigne de source primaire exclusive et d'ouverture de
+chaque notice. Puis — et c'est le geste qui a fait la revue — **les métadonnées des 158 pièces arXiv
+ont été reprises à l'API du dépôt**, ce qui a corrigé plusieurs statuts que les agents rapportaient
+comme « à comité de lecture » sur la seule foi du champ de commentaire libre.
+
+| Mesure | Valeur |
+|---|---|
+| Corpus | **161 entrées** — 50 du socle, 108 de la passe neuve, 3 à DOI |
+| Publication attestée en notice | **12 / 158 (8 %)** |
+| Acceptation annoncée au seul champ libre | 26 / 158 (16 %) |
+| Aucun signe de revue par les pairs | **120 / 158 (76 %)** |
+| Déposées en 2026 | 91 / 158 (58 %) ; **81 encore en v1** |
+| Pagination | **40 p.** fermes |
+| `check-revue.py` | **sortie 0** — 4 contrôles, 4 mutants tombent |
+
+### Deux erreurs de mesure trouvées et corrigées en cours de route
+
+**La première était mienne.** J'avais posé qu'une publication n'est attestée que par le champ
+`journal_ref`, ce qui donnait 7 pièces sur 158. Le champ DOI en atteste tout autant : le compte juste
+est **12**. L'écart a été trouvé en confrontant les notices aux entrées, et il est **rapporté au
+texte de la revue** plutôt que corrigé en silence. *Trois de mes entrées à DOI étaient par ailleurs
+des doublons de pièces arXiv déjà au corpus — exactement le doublon que le contrôle détecte.*
+
+**La seconde était dans le contrôle.** Sa première version développait les plages citées en prose
+— « [51-63] » — pour l'appariement. Or ces plages couvrent l'intégralité de la bibliographie :
+orpheliner une entrée ne faisait plus tomber le contrôle. *Un contrôle incapable d'échouer sur le
+défaut qu'il prétend couvrir ne vaut rien ; il a fallu le voir passer sur un mutant pour le voir.*
+La règle corrigée exige un appel **nommé** pour chaque pièce de la passe neuve — et elle a
+immédiatement révélé une propriété réelle du document : **111 des 111 pièces neuves sont discutées
+une à une, mais 27 des 50 pièces du socle ne le sont jamais**, seulement couvertes par leur plage.
+Cette asymétrie est désormais au texte de la revue.

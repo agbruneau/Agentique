@@ -1,5 +1,5 @@
 ---
-title: "Interopérabilité et orchestration agentique en entreprise"
+title: "Interopérabilité et Orchestration Agentiques en Entreprise"
 author:
   - "André-Guy Bruneau · agbruneau@gmail.com · 8 août 2026"
 lang: fr
