@@ -1,13 +1,15 @@
-# Interopérabilité, orchestration et entreprise agentiques — un triptyque, sa veille, sa revue et sa somme
+# Interopérabilité, orchestration et entreprise agentiques — un triptyque, sa veille, sa revue, sa somme, et un essai en marge
 
 Travaux d'André-Guy Bruneau sur les agents d'IA en écosystème d'entreprise, et plus
 particulièrement en services financiers. Le dépôt réunit **trois monographies** conçues en
 progression — les protocoles, puis les cadres réglementaires, puis l'organisation qui doit les
 faire tenir ensemble —, **une veille technologique autonome** qui les traverse et les tient à jour,
 **une revue de la littérature académique** qui mesure ce que le champ savant sait de ce même objet,
-et **un compendium** qui refond les trois monographies en un seul ouvrage — arrêté en révision
-finale, puis clos, non publiable. **Six livrables**, dont le sixième — la revue — est entré le
-9 août 2026, après la clôture.
+**un compendium** qui refond les trois monographies en un seul ouvrage — arrêté en révision
+finale, puis clos, non publiable —, et **un essai sur les systèmes multiagents en essaim** qui prend
+l'objet par l'autre bout : ce qu'une population d'agents gagne à ne pas s'accorder, et ce qu'elle le
+paie. **Sept livrables**, dont les deux derniers — la revue et l'essai — sont entrés les 9 et
+10 août 2026, après la clôture.
 
 > # ⚠ DÉPÔT CLOS ET FINAL — 8 août 2026
 >
@@ -16,7 +18,7 @@ finale, puis clos, non publiable. **Six livrables**, dont le sixième — la rev
 > de rédaction, ni de révision, ni d'appareil —, **sur aucun des cinq livrables** que le dépôt
 > portait alors. La passe de révision ouverte par **D-11** le 30 juillet 2026 est **close sans
 > exécution de son domaine résiduel**. Tout ce que ce fichier décrit est un état **définitif** —
-> ⚠ *sous la réserve des trois réouvertures déclarées plus bas, qui n'ont touché aucun des quatre
+> ⚠ *sous la réserve des quatre réouvertures déclarées plus bas, qui n'ont touché aucun des quatre
 > volumes dans son corps.*
 >
 > ⚠ **Ce que la clôture ne fait pas, et il faut le lire avant tout le reste.** Elle **ne franchit
@@ -79,7 +81,17 @@ finale, puis clos, non publiable. **Six livrables**, dont le sixième — la rev
 > du Vol. IV à l'identique**, un **sixième livrable** est entré au dépôt — une
 > [revue de la littérature académique](Revue%20de%20litt%C3%A9rature.md) de **40 pages fermes** —,
 > et le **compendium a été recomposé à mille pages exactement** (1 114 auparavant).
-> *Le dépôt comptait cinq livrables à sa clôture ; il en compte six.*
+> *Le dépôt comptait cinq livrables à sa clôture ; il en comptait six le 9 août.*
+>
+> ⚠⚠ **RÉOUVERTURE DÉCLARÉE — 10 août 2026, dépôt d'un septième livrable.** Un **essai sur les
+> systèmes multiagents en essaim** entre au dépôt — [`Swarm Agentic Systems.md`](Swarm%20Agentic%20Systems.md)
+> → `.pdf`, **99 pages**, **118 références**, sept chapitres —, sous le titre *« Systèmes multiagents
+> en essaim »*. ⚠ **Il ne touche à rien de ce qui existait** : aucun des quatre volumes, ni la
+> veille, ni la revue n'est repris. ⚠ **Et il ne s'articule à aucun d'eux** — *c'est le seul des sept
+> qui ne cite aucun autre livrable du dépôt*, là où la veille et la revue s'auto-citent et le
+> déclarent. Il **ne franchit aucune porte**, **ne lève aucune dérogation**, **ne referme aucune
+> remontée** et **ne publie rien de ce qui est clos**. *Le dépôt compte sept livrables depuis le
+> 10 août 2026.*
 >
 > ⚠⚠ **LE TROISIÈME GESTE ROUVRE LA CLÔTURE DU VOL. IV, ET IL FAUT LE DIRE AVANT SES CHIFFRES.**
 > `Compendium.pdf` est **recomposé le 9 août 2026 à 1 000 pages exactement**, sur instruction
@@ -123,7 +135,7 @@ finale, puis clos, non publiable. **Six livrables**, dont le sixième — la rev
 > [`Compendium.html`](2%20-%20Compendium/Compendium.html), appareil de lecture d'**un seul fichier
 > sans dépendance externe**, dérivé des cinquante `.md` et **sans plus d'autorité que le PDF**.
 
-## État au dépôt — CLOS le 8 août 2026, rouvert trois fois depuis
+## État au dépôt — CLOS le 8 août 2026, rouvert quatre fois depuis
 
 Le dépôt est **clos** dans cet état, pour les quatre volumes. Les chiffres ci-dessous ont été
 **re-mesurés sur pièce le 9 août 2026**, jamais recopiés d'un autre document ; les commandes qui les
@@ -137,6 +149,7 @@ compendium interroge au build.
 |---|---|---|---|
 | Veille technologique | **100 p.** *(162 p. jusqu'au 8 août 2026)*, **303 références** | 14 sections, **18 tableaux**, 25 questions ouvertes | `python check-veille.py` → **sortie 0** ; `python check-resume.py` → **sortie 0** (résumé à **y = 119,4 pt**, 45,7 pt de dégagement) |
 | Revue de littérature | **40 p.** fermes, **176 références** | 19 sections, 8 tableaux, 10 fronts ; **12 pièces sur 173 à publication attestée**, 133 sans revue | `python check-revue.py` → **sortie 0** (4 contrôles, **six mutants tombent**) |
+| Essaim — *Systèmes multiagents en essaim* | **99 p.**, **118 références** *(9 prépublications arXiv, déclarées telles)* | 7 chapitres, 21 sous-sections, **20 tableaux**, 9 algorithmes en pseudocode | ⚠ **aucun contrôle propre** — `check-resume.py` sort 1 sur son PDF **sans qu'une ligne y soit rognée** : sa marge basse est codée à 73,7 pt (les 2,6 cm de la veille) quand l'essai compose à 2,35 cm, et il compte le folio de la page de titre ; le résumé finit à **y = 325,7 pt**, 259 pt de dégagement |
 | Vol. I — *Interopérabilité* | **569 p.** | 7 chapitres + 7 bibliographies + Annexe B, **28 diagrammes** | — (vérification adverse des citations) |
 | Vol. II — *Orchestration agentique* | **387 p.** | **29 pièces** + registre de gel, socle de 46 entrées | grille CA-1…CA-8 |
 | Vol. III — *L'entreprise agentique* | **427 p.** | **34 pièces** + registre de gel ; ⚠ **plus aucun rapport de vérification** — les **30** que le dossier portait ont été **supprimés le 8 août 2026** (commit `659241b`) et se relisent au seul historique git | CA-01…CA-14, 15 remontées ouvertes — ⚠ *leur registre est dans le lot supprimé* |
@@ -192,29 +205,33 @@ références **[217]**, **[219]**, **[259]** — qui donne le compendium à **1 
 de son contenu factuel **décrivent l'état de leurs sources au gel de leur édition**, et cela ne se
 corrige pas après coup : *le compendium en fait mille depuis le 9 août, et la veille ne le dira pas.*
 
-## Les six livrables
+## Les sept livrables
 
-Les trois volumes vivent sous [`1 - Corpus/`](1%20-%20Corpus/) ; la veille **et la revue de
-littérature** sont à la racine ; le compendium a son propre dossier. *(Les deux dossiers ont été
-renommés le 25 juillet 2026 — `1 - Corpus Agentique/` et `2 - Compendium Agentique/` auparavant,
-commit `60f57f6`.)*
+Les trois volumes vivent sous [`1 - Corpus/`](1%20-%20Corpus/) ; la veille, **la revue de
+littérature et l'essai sur les essaims** sont à la racine ; le compendium a son propre dossier.
+*(Les deux dossiers ont été renommés le 25 juillet 2026 — `1 - Corpus Agentique/` et
+`2 - Compendium Agentique/` auparavant, commit `60f57f6`.)*
 
-⚠ **Trois des six portent désormais le même début de titre**, et un renvoi qui les cite par leur
+⚠ **Trois des sept portent le même début de titre**, et un renvoi qui les cite par leur
 seul intitulé ne désigne plus rien : la **veille** et le **Vol. IV** sont **homonymes exacts**
 depuis le 9 août 2026, et la **revue de littérature** en reprend le radical
 (*« Interopérabilité et Orchestration Agentiques : revue de la littérature académique »*, aligné le
-même jour). *Il faut nommer le genre du livrable, jamais son seul titre.*
+même jour). *Il faut nommer le genre du livrable, jamais son seul titre.* ⚠ **Le septième pose le
+problème inverse** : *« Systèmes multiagents en essaim »* ne ressemble à aucun autre titre du dépôt,
+mais son fichier s'appelle [`Swarm Agentic Systems.md`](Swarm%20Agentic%20Systems.md) — **seul
+livrable dont le nom de fichier n'est pas celui de l'ouvrage**, et seul dont le nom de fichier soit
+en anglais.
 
-| | **Veille technologique** | **Revue de littérature** | **Vol. I — Interopérabilité** | **Vol. II — Orchestration** | **Vol. III — Entreprise** | **Vol. IV — Compendium** |
-|---|---|---|---|---|---|---|
-| **Dossier** | racine du dépôt | racine du dépôt | [`1 - Corpus/1 - InteroperabiliteAgentique/`](1%20-%20Corpus/1%20-%20InteroperabiliteAgentique/) | [`1 - Corpus/2 - OrchestrationAgentique/`](1%20-%20Corpus/2%20-%20OrchestrationAgentique/) | [`1 - Corpus/3 - EntrepriseAgentique/`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/) | [`2 - Compendium/`](2%20-%20Compendium/) |
-| **Titre** | Interopérabilité et Orchestration Agentiques en Entreprise *(aligné sur le Vol. IV le 9 août 2026 — ⚠ les deux sont désormais homonymes)* | Interopérabilité et Orchestration Agentiques : revue de la littérature académique | Interopérabilité agentique en entreprise dans le domaine des services financiers | Orchestration agentique | L'entreprise agentique — la fabrique de confiance | Interopérabilité et Orchestration Agentiques en Entreprise |
-| **Rôle** | État de l'art vérifié, mis à jour par éditions | Ce que la littérature académique sait, et à quel régime de preuve | Cadre général, mondial et théorique | Cas canadien réglementé, instruit au grain du droit | Le verrou commun : identité, maillage, exploitation | Omnibus terminal : absorbe et remplace les trois volumes |
-| **Portée** | Mondiale | Mondiale, dix fronts de recherche | Mondiale (UE / É.-U. / R.-U. / Asie) | Canada-Québec (E-23, AMF, Loi 25, ACVM, Lynx/RTR) | Organisation et cycle de vie (NHI, *agent mesh*, AgentOps) | Les trois portées réunies (2024-2032) |
-| **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Les trois quarts du champ n'ont franchi aucun comité » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
-| **Méthode** | Revue structurée, vérification adverse à trois votants | Notices ouvertes une à une, métadonnées reprises à l'API arXiv | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
-| **Gel de l'information** | 8 août 2026 (édition du 8 août 2026 ; les sections antérieures gardent leur date d'état) | 9 août 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | 27 juillet 2026 (décision d'auteur D-1) ; volet des faits levé le 28 juillet 2026 |
-| **État** | Publiée (**100 p.**, **303 références**) — format ferme depuis le 8 août 2026 | Publiée (**40 p. fermes**, **176 références**) — déposée le 9 août 2026 et **révisée le même jour** (dixième front), sixième livrable du dépôt | Rédaction terminée (569 p., **233 257 mots** — `wc -w` sur `Monographie.md`, point d'ancrage de `decompte.sh --verifier` ; 225 258 par la commande de référence du dépôt. ⚠ *Le chiffre de ≈ 263 600 mots que ce fichier portait n'est reproductible par aucune des deux commandes* ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié, et clos en l'état** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; **finalisation P5 close sans être achevée** le 8 août 2026 (dernière passe de fond : relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état — *et il ne le deviendra pas : quinze remontées R-G-43 à R-G-57 et la dette de vote sur F-92 et F-96 restent ouvertes à titre définitif* | **CLOS ET FINAL** (D-13, 8 août 2026 ; TOC v0.33 / PRD v0.17), statut de révision finale en bibliothèque personnelle maintenu et devenu définitif — *la passe de révision ouverte par D-11 le 30 juillet 2026 (TOC v0.32 / PRD v0.16) est **close sans exécution de son domaine résiduel**, sur l'arrêt initial D-10 du 29 juillet 2026 (TOC v0.31 / PRD v0.15)* : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf) (**1 000 p.**, cible d'auteur calée et vérifiée au build le 9 août 2026 — 1 114 p. auparavant —, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026 ; gabarit relevé sur deux monographies Springer le même jour, porté au format Letter le 31 juillet 2026, puis calé à mille pages le 9 août 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** |
+| | **Veille technologique** | **Revue de littérature** | **Vol. I — Interopérabilité** | **Vol. II — Orchestration** | **Vol. III — Entreprise** | **Vol. IV — Compendium** | **Essaim** |
+|---|---|---|---|---|---|---|---|
+| **Dossier** | racine du dépôt | racine du dépôt | [`1 - Corpus/1 - InteroperabiliteAgentique/`](1%20-%20Corpus/1%20-%20InteroperabiliteAgentique/) | [`1 - Corpus/2 - OrchestrationAgentique/`](1%20-%20Corpus/2%20-%20OrchestrationAgentique/) | [`1 - Corpus/3 - EntrepriseAgentique/`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/) | [`2 - Compendium/`](2%20-%20Compendium/) | racine du dépôt |
+| **Titre** | Interopérabilité et Orchestration Agentiques en Entreprise *(aligné sur le Vol. IV le 9 août 2026 — ⚠ les deux sont désormais homonymes)* | Interopérabilité et Orchestration Agentiques : revue de la littérature académique | Interopérabilité agentique en entreprise dans le domaine des services financiers | Orchestration agentique | L'entreprise agentique — la fabrique de confiance | Interopérabilité et Orchestration Agentiques en Entreprise | Systèmes multiagents en essaim *(⚠ fichier `Swarm Agentic Systems.md` — seul écart du dépôt entre nom de fichier et titre)* |
+| **Rôle** | État de l'art vérifié, mis à jour par éditions | Ce que la littérature académique sait, et à quel régime de preuve | Cadre général, mondial et théorique | Cas canadien réglementé, instruit au grain du droit | Le verrou commun : identité, maillage, exploitation | Omnibus terminal : absorbe et remplace les trois volumes | Où passe la frontière entre coordonner par accord et coordonner par le milieu |
+| **Portée** | Mondiale | Mondiale, dix fronts de recherche | Mondiale (UE / É.-U. / R.-U. / Asie) | Canada-Québec (E-23, AMF, Loi 25, ACVM, Lynx/RTR) | Organisation et cycle de vie (NHI, *agent mesh*, AgentOps) | Les trois portées réunies (2024-2032) | Le régime de coordination lui-même, de l'essaim robotique au journal d'événements |
+| **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Les trois quarts du champ n'ont franchi aucun comité » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet | « Déplacer la coordination dans le milieu, et payer ce que le déplacement coûte » |
+| **Méthode** | Revue structurée, vérification adverse à trois votants | Notices ouvertes une à une, métadonnées reprises à l'API arXiv | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) | Chaque mécanisme sous son modèle de panne, son hypothèse de synchronisme et son coût en messages et en tours ; sources primaires consultées directement |
+| **Gel de l'information** | 8 août 2026 (édition du 8 août 2026 ; les sections antérieures gardent leur date d'état) | 9 août 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | 27 juillet 2026 (décision d'auteur D-1) ; volet des faits levé le 28 juillet 2026 | 10 août 2026 |
+| **État** | Publiée (**100 p.**, **303 références**) — format ferme depuis le 8 août 2026 | Publiée (**40 p. fermes**, **176 références**) — déposée le 9 août 2026 et **révisée le même jour** (dixième front), sixième livrable du dépôt | Rédaction terminée (569 p., **233 257 mots** — `wc -w` sur `Monographie.md`, point d'ancrage de `decompte.sh --verifier` ; 225 258 par la commande de référence du dépôt. ⚠ *Le chiffre de ≈ 263 600 mots que ce fichier portait n'est reproductible par aucune des deux commandes* ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié, et clos en l'état** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; **finalisation P5 close sans être achevée** le 8 août 2026 (dernière passe de fond : relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état — *et il ne le deviendra pas : quinze remontées R-G-43 à R-G-57 et la dette de vote sur F-92 et F-96 restent ouvertes à titre définitif* | **CLOS ET FINAL** (D-13, 8 août 2026 ; TOC v0.33 / PRD v0.17), statut de révision finale en bibliothèque personnelle maintenu et devenu définitif — *la passe de révision ouverte par D-11 le 30 juillet 2026 (TOC v0.32 / PRD v0.16) est **close sans exécution de son domaine résiduel**, sur l'arrêt initial D-10 du 29 juillet 2026 (TOC v0.31 / PRD v0.15)* : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf) (**1 000 p.**, cible d'auteur calée et vérifiée au build le 9 août 2026 — 1 114 p. auparavant —, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026 ; gabarit relevé sur deux monographies Springer le même jour, porté au format Letter le 31 juillet 2026, puis calé à mille pages le 9 août 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** | Publié (**99 p.**, **118 références**) — déposé le 10 août 2026, septième livrable du dépôt ; ⚠ **il ne cite aucun autre livrable** et **aucun contrôle exécutable ne lui est attaché** |
 
 ## Veille technologique — le document transversal
 
@@ -323,6 +340,64 @@ repris par un protocole ; et l'absence de vocabulaire de trace décrivant une ch
 provenance du W3C **sans instancier `actedOnBehalfOf`**.
 
 L'auto-citation est assumée et divulguée : la veille mise à l'épreuve est du même auteur.
+
+## Systèmes multiagents en essaim — le livrable qui ne cite personne
+
+[`Swarm Agentic Systems.md`](Swarm%20Agentic%20Systems.md) → `Swarm Agentic Systems.pdf`
+(**99 p.**, 7 chapitres et 21 sous-sections, **118 références**, 20 tableaux, 9 algorithmes en
+pseudocode — daté du **10 août 2026**), sous le titre *« Systèmes multiagents en essaim — la
+coordination par le milieu : ce qu'un essaim d'agents logiciels gagne à ne pas s'accorder, et ce
+qu'il le paie »*.
+
+⚠ **C'est le seul des sept qui ne cite aucun autre.** Ni la veille, ni la revue, ni aucun des quatre
+volumes ne figure à ses 118 références ; les protocoles qui structurent tout le reste du dépôt n'y
+paraissent qu'une fois, par la spécification MCP (sa réf. [30]), prise en exemple de milieu et non
+en objet. *Il ne prolonge pas le triptyque : il en attaque l'hypothèse de coordination par l'autre
+bout.* Corollaire à porter au crédit du livrable : **l'auto-citation, assumée et divulguée dans la
+veille comme dans la revue, y est nulle** — et l'assistance par modèle de langage y est déclarée en
+page de titre.
+
+Sa thèse : passé quelques dizaines d'agents, et lorsque la défaillance partielle devient l'état
+normal, le coût du consensus explicite — messages, latence de queue, couplage temporel — croît plus
+vite que la valeur qu'il procure ; l'architecture gagnante déplace alors la coordination vers un
+**substrat événementiel partagé, durable et ordonné localement**, où les agents déposent et lisent
+des traces au lieu de négocier des décisions — transposition de la **stigmergie** de la robotique en
+essaim. *Le déplacement n'est pas une suppression* : le point partagé n'est pas détruit, il est
+transporté dans le milieu, qui devient le composant que tout le monde touche, qu'il faut répliquer,
+exploiter et facturer.
+
+⚠ **L'ouvrage écrit la contrepartie au lieu de l'escamoter** : la sûreté globale est troquée contre
+la vivacité, le comportement cesse d'être reproductible à l'échelle de l'exécution, et la charge de
+preuve passe à la traçabilité et au point de reprise. Sa discipline est celle de la borne — chaque
+mécanisme porte son modèle de panne, son hypothèse de synchronisme, son coût en messages et en
+tours, sa condition d'arrêt et son mode de défaillance ; chaque transposition depuis la robotique
+nomme ce qu'elle conserve et ce qu'elle casse. Trois résultats la bordent et ne se contournent pas
+— l'impossibilité du consensus asynchrone dès **une seule** panne par arrêt (réf. [1]),
+l'incompatibilité de l'atomicité et de la disponibilité sous partition (réf. [2]), la loi d'échelle
+qui donne un **maximum** et non un rendement décroissant (réf. [3]) —, et un quatrième trace la
+frontière : les programmes décentralisables sans coordination sont exactement les programmes
+monotones (réf. [6]). *Un agent qui accumule se passe d'accord ; un agent qui compte exactement une
+fois ne le peut pas, et la coordination n'est alors pas évitable, seulement déplaçable.*
+
+⚠ **Sa conclusion est un aveu de métrologie, et il faut la lire avant d'en tirer une architecture.**
+Ce que le livre laisse ouvert n'est pas une théorie manquante mais une **mesure** manquante : le
+protocole qui estimerait la contention et le coût de cohérence d'un essaim réel n'est pas écrit — le
+point de retournement chiffré au ch. 2 reste une **illustration arithmétique**, non un seuil que le
+lecteur puisse recalculer chez lui ; la corrélation des fautes, que toutes les bornes probabilistes
+citées supposent nulle, n'a pas d'estimateur qui ne redemande pas la vue globale qu'on cherchait à
+éviter ; et le verdict le plus utile de l'ouvrage lui est contraire — *à petite et moyenne échelle,
+la solution centralisée par diffusion demeure vraisemblablement le meilleur choix* (réf. [95]).
+**La frontière annoncée au titre est argumentée, non mesurée**, et le texte préfère le dire
+nettement.
+
+⚠ **Aucun contrôle exécutable ne lui est attaché**, contrairement à la veille et à la revue. Le seul
+rejouable sur son PDF, [`check-resume.py`](check-resume.py), **sort 1 sans qu'une ligne y soit
+rognée** : sa marge basse est codée en dur à **73,7 pt** — les 2,6 cm de la veille — alors que
+l'essai compose à **2,35 cm**, et il compte le **folio** de la page de titre, que la veille et la
+revue n'ont pas. La dernière ligne du résumé est à **y = 325,7 pt**, soit **259 pt de dégagement** ;
+ce qui descend à 39,1 pt est le numéro de page, à sa place. *Le contrôle a raison sur ce qu'il
+mesure et tort sur ce qu'il conclut, faute d'avoir été calibré pour un troisième gabarit — et
+personne ne le calibrera : le dépôt est clos.*
 
 ## Vol. I — Interopérabilité agentique
 
@@ -589,6 +664,10 @@ feuillette sans faire foi. *La règle de substitution n'est pas levée : elle es
 - **Vol. IV les absorbe** : ses renvois inter-volumes deviennent des renvois internes.
 - Un lecteur pressé côté canadien peut entrer directement par le **chapitre 13** du Vol. II
   (« le pont : des contraintes réglementaires aux frames déterministes »), son pivot.
+- ⚠ **L'essai sur les essaims est hors de cet ordre, et il n'y entre par aucun bout.** Il ne cite
+  aucun des six autres livrables, aucun ne le cite, et son objet n'est pas la pile protocolaire mais
+  le régime de coordination qui la précède. *Il se lit seul, avant ou après n'importe lequel des
+  autres* — et le lecteur qui cherche un pont entre lui et le triptyque devra l'écrire lui-même.
 
 ## Divergences factuelles entre volumes
 
@@ -645,6 +724,8 @@ le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
 ├── README.md                              ← ce fichier (avant-propos croisé)
 ├── Veille Technologique.md / .pdf         ← veille autonome, édition du 8 août 2026, faits gelés à cette date (100 p., 303 réf.)
 ├── Revue de littérature.md / .pdf         ← revue de la littérature académique, arrêtée au 9 août 2026 (40 p., 176 réf.)
+├── Swarm Agentic Systems.md / .pdf        ← essai « Systèmes multiagents en essaim », 10 août 2026 (99 p., 118 réf.)
+│                                             ⚠ seul livrable dont le nom de fichier n'est pas le titre — et ne cite aucun autre livrable
 ├── check-veille.py                        ← contrôles de publication de la veille (renvois, cardinaux, bibliographie)
 ├── check-resume.py                        ← budget de mise en page : le résumé tient-il sur la page de titre du PDF
 ├── check-revue.py                         ← contrôles de publication de la revue (appariement, tableaux, doublons, régimes)
@@ -726,9 +807,10 @@ contenu est décrit par le `README.md` du dossier qui les porte.)*
 
 ## Construire les PDF
 
-**Six** chaînes distinctes, à lancer depuis le dossier concerné — une par livrable. *(Ce fichier
+**Sept** chaînes distinctes, à lancer depuis le dossier concerné — une par livrable. *(Ce fichier
 en annonçait **cinq** jusqu'au 9 août 2026, alors qu'il en listait déjà six : la revue de littérature
-avait sa commande sans être comptée.)*
+avait sa commande sans être comptée. La septième est entrée avec l'essai sur les essaims, le
+10 août 2026.)*
 
 **Veille technologique** (racine) — invocation Pandoc directe, gabarit Typst par défaut :
 
@@ -740,6 +822,15 @@ pandoc "Veille Technologique.md" --pdf-engine=typst --toc -o "Veille Technologiq
 
 ```bash
 pandoc "Revue de littérature.md" --pdf-engine=typst --toc -o "Revue de littérature.pdf"
+```
+
+**Essaim** (racine) — même invocation, **gabarit réglé autrement dans l'en-tête YAML** : marges
+2,18 × 2,35 cm (2,8 × 2,6 cm pour les deux autres) et **folio dès la page de titre**, que la veille
+et la revue n'ont pas. ⚠ *C'est cet écart de gabarit, et lui seul, qui fait sortir `check-resume.py`
+en 1 sur ce PDF* :
+
+```bash
+pandoc "Swarm Agentic Systems.md" --pdf-engine=typst --toc -o "Swarm Agentic Systems.pdf"
 ```
 
 **Vol. I** — pipeline FESP, avec pré-rendu des 28 diagrammes Mermaid ; depuis
@@ -794,10 +885,10 @@ pièce ne porte pas les trois appareils qu'il retire — une pièce déformée p
 ⚠ **Depuis le 9 août 2026, il échoue aussi hors de la cible de mille pages.** La porte ne vaut que
 pour le **rendu canonique** — un essai (`OUT_PDF=…`) ou le gabarit `springer` composent une maquette
 qui n'a pas cette cible —, et *elle n'avertit que si `pypdf` manque* : sans lui, le PDF est écrit et
-la cible **n'est pas vérifiée**. C'est la seule des six chaînes qui oppose une condition au rendu
+la cible **n'est pas vérifiée**. C'est la seule des sept chaînes qui oppose une condition au rendu
 qu'elle vient d'écrire.
 
-⚠ **Les six chaînes ne produisent que des PDF.** Les `.html` du Vol. IV — les **cinquante pages de
+⚠ **Les sept chaînes ne produisent que des PDF.** Les `.html` du Vol. IV — les **cinquante pages de
 chapitre** et [`Compendium.html`](2%20-%20Compendium/Compendium.html), l'appareil de lecture du
 volume — **ne sortent d'aucune d'entre elles** : `build/` ne contient aucun générateur HTML, et ces
 fichiers sont écrits à la main. *Il n'y a donc pas de commande à donner ici, et c'est précisément le
@@ -828,6 +919,13 @@ position dans la matrice de texte** — `Tm` y vaut `1 0 0 -1 0 0`, la position 
 le `cm` qui précède chaque `BT`. *Mesurer `Tm` rend zéro partout, ce qui ressemble à un résultat.*
 Le contrôle a été **calibré sur le PDF de l'édition précédente**, où il retrouve les **104,8 pt** que
 ce fichier avait relevés à la main le 29 juillet 2026.
+
+⚠ **Et ce calibrage est exactement sa limite, découverte le 10 août 2026.** La marge basse y est une
+**constante**, `MARGE_BASSE = 73.7`, tirée de l'en-tête de la veille ; le contrôle mesure par
+ailleurs *tout* texte posé en page 1, **folio compris**. Rejoué sur `Swarm Agentic Systems.pdf`, qui
+compose à 2,35 cm et numérote dès la page de titre, il **sort 1 sur le numéro de page** — le résumé,
+lui, finit 259 pt au-dessus de la marge. *Un contrôle transporté sur un gabarit pour lequel il n'a
+pas été calibré ne mesure plus ce qu'il annonce ; il n'a pas été corrigé, et le dépôt est clos.*
 
 **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, `python3` + `pypdf` — ☑ *`pypdf` **6.15.0** est installé
 depuis la passe du 9 août 2026, et il cesse d'être facultatif : la **porte de pagination du
@@ -1605,3 +1703,34 @@ typographie serait contourner la contrainte, pas la satisfaire.*
 **ne revérifie pas pièce à pièce les numérateurs hérités de §12.3**, **ne rejuge pas la clôture** et
 **ne publie rien**. Le journal détaillé de la boucle, tour par tour, est dans
 [`gauntlet-log.md`](gauntlet-log.md).
+
+**Le 10 août 2026 — dépôt d'un septième livrable, et resynchronisation de ce fichier sur lui.** Un
+**essai sur les systèmes multiagents en essaim** entre à la racine du dépôt —
+[`Swarm Agentic Systems.md`](Swarm%20Agentic%20Systems.md) et son PDF —, et ce `README.md` est
+réaligné : quatrième réouverture déclarée, section « Les **sept** livrables » et sa septième colonne,
+ligne au tableau de l'état, section propre au livrable, entrée à l'arborescence, septième chaîne de
+rendu, et une réserve à l'ordre de lecture.
+
+Décomptes **pris sur pièce** à cette date : **99 pages** (`pypdf`, sur le PDF versionné),
+**118 références** dont **9 prépublications arXiv déclarées telles**, **7 chapitres** et
+**21 sous-sections**, **20 tableaux**, **9 algorithmes** en pseudocode, gel au **10 août 2026**.
+
+⚠ **Trois constats de la passe, dont deux sont des écarts.** *(a)* **Le fichier ne porte pas le titre
+de l'ouvrage** : `Swarm Agentic Systems.md` contre *« Systèmes multiagents en essaim »* — c'est le
+seul livrable du dépôt dans ce cas, et le seul dont le nom de fichier soit en anglais ; *un renvoi
+pris sur le nom de fichier ne nomme donc pas l'ouvrage.* *(b)* **L'essai ne cite aucun autre
+livrable, et aucun ne le cite** : ses 118 références ne contiennent ni la veille, ni la revue, ni
+aucun des quatre volumes, et les protocoles du dépôt n'y paraissent qu'une fois, par la
+spécification MCP prise en exemple de milieu. *Le dépôt gagne un livrable et non un renvoi* — en
+contrepartie, c'est le seul des sept dont l'auto-citation soit **nulle**. *(c)* ⚠ **Un contrôle du
+dépôt sort 1 sur ce PDF sans qu'il y ait de défaut** : [`check-resume.py`](check-resume.py) code sa
+marge basse en dur à **73,7 pt** (les 2,6 cm de la veille) et compte le folio, quand l'essai compose
+à 2,35 cm et numérote dès la page de titre. Mesures relevées : dernière ligne du **résumé** à
+**y = 325,7 pt**, soit **259 pt de dégagement** ; texte le plus bas de la page à **39,1 pt**, qui est
+le **numéro de page**. *Le contrôle mesure juste et conclut faux ; il n'a pas été corrigé.*
+
+⚠ **Ce que la passe ne fait pas.** Elle **ne touche à aucun des quatre volumes**, **ni à la veille**,
+**ni à la revue**, **ne modifie pas l'essai déposé**, **ne corrige pas `check-resume.py`**, **ne
+franchit aucune porte**, **ne lève aucune dérogation**, **ne referme aucune remontée**, **ne rejuge
+pas la clôture** et **ne publie rien de ce qui est clos**. La clôture **D-13 reste en vigueur pour
+les quatre volumes**.
