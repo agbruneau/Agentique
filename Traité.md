@@ -1,5 +1,5 @@
 ---
-title: "Traité des systèmes multiagents en essaim"
+title: "Traité sur les systèmes multiagents en essaim"
 subtitle: "La coordination par le milieu : ce qu'un essaim d'agents logiciels gagne à ne pas s'accorder, et ce qu'il le paie"
 author:
   - "André-Guy Bruneau · agbruneau@gmail.com"
@@ -8,18 +8,17 @@ lang: fr
 region: CA
 papersize: us-letter
 fontsize: 11pt
+linestretch: 0.9
 mainfont: "New Computer Modern"
 margin:
-  x: 2.8cm
-  y: 3.2cm
+  x: 2.54cm
+  y: 2.54cm
 page-numbering: "1"
 abstract-title: Résumé
 abstract: |
   Dès que le nombre d'agents logiciels autonomes dépasse quelques dizaines et que les défaillances partielles deviennent l'état normal, le coût du consensus explicite — en messages, en latence de queue, en couplage temporel — croît plus vite que la valeur qu'il procure. L'ouvrage soutient que l'architecture gagnante déplace alors la coordination vers un substrat événementiel partagé, durable et ordonné localement, où les agents déposent et lisent des traces plutôt que de négocier des décisions : une transposition de la stigmergie de la robotique en essaim. Il refuse d'en escamoter la contrepartie — la sûreté globale troquée contre la vivacité, le comportement non reproductible à l'échelle de l'exécution, la charge de preuve reportée sur la traçabilité et le point de reprise — et soutient qu'il existe entre les deux régimes une frontière identifiable, qu'il entreprend de tracer. Sept chapitres la parcourent : fondements et transposition du modèle d'essaim, passage à l'échelle et saturation du milieu, modélisation formelle et vérification, comportements collectifs et auto-organisation, décision collective et allocation, mise en œuvre et exploitation, cas d'étude. Chaque mécanisme y porte son modèle de panne, son hypothèse de synchronisme, son coût en messages et en tours, et la condition sous laquelle il cesse de valoir ; chaque transposition depuis la robotique y nomme ce qu'elle conserve et ce qu'elle casse.
 
   **Mots-clés —** systèmes multiagents ; essaim ; stigmergie ; coordination indirecte ; journal d'événements ; consensus ; cohérence à terme ; auto-organisation ; allocation de tâches ; passage à l'échelle ; observabilité des systèmes non déterministes.
-thanks: |
-  Ce document a été rédigé avec l'assistance d'un modèle de langage (Claude, Anthropic) : recherche documentaire, rédaction des chapitres, vérification des références et montage de l'ouvrage. L'auteur en assume la sélection des sources, les arbitrages de contenu et les erreurs résiduelles.
 include-before: |
   ```{=typst}
   #pagebreak()

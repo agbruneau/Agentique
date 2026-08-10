@@ -86,7 +86,7 @@ paie. **Sept livrables**, dont les deux derniers — la revue et le traité — 
 > ⚠⚠ **RÉOUVERTURE DÉCLARÉE — 10 août 2026, dépôt d'un septième livrable.** Un **traité sur les
 > systèmes multiagents en essaim** entre au dépôt —
 > [`Traité.md`](Trait%C3%A9.md)
-> → `.pdf`, **115 pages**, **118 références**, sept chapitres. ⚠ **Il ne touche à rien de ce qui
+> → `.pdf`, **100 pages fermes**, **118 références**, sept chapitres. ⚠ **Il ne touche à rien de ce qui
 > existait** : aucun des quatre volumes, ni la veille, ni la revue n'est repris. ⚠ **Et il ne
 > s'articule à aucun d'eux** — *c'est le seul des sept qui ne cite aucun autre livrable du dépôt*,
 > là où la veille et la revue s'auto-citent et le déclarent. Il **ne franchit aucune porte**, **ne
@@ -101,9 +101,13 @@ paie. **Sept livrables**, dont les deux derniers — la revue et le traité — 
 > genre et non par leur titre** (`Veille Technologique`, `Revue de littérature`, `Monographie`,
 > `Compendium`, `Traité`), et **les mentions de `Swarm Agentic Systems` plus bas dans ce fichier sont
 > des constats datés qui gardent le nom de leur passe**. *(b)* Le rendu est **recomposé au
-> gabarit d'article arXiv** — marges portées de 2,18 × 2,35 cm à **2,8 × 3,2 cm**, bloc de titre à
-> courriel d'auteur, **mots-clés sous le résumé**, avant-propos et conclusion en sections non
-> numérotées : **99 pages deviennent 115**, à contenu inchangé.
+> gabarit d'article arXiv** — bloc de titre à courriel d'auteur, **mots-clés sous le résumé**,
+> avant-propos et conclusion en sections non numérotées, **marges au pouce (2,54 cm)** et interligne
+> de 13,9 pt, celui d'un article LaTeX 11 pt. ⚠ **Et il est calé à 100 pages exactement**, sur
+> instruction d'auteur, *par le seul gabarit* : 99 pages au dépôt du matin, 115 à la recomposition
+> arXiv, **100 après calage** — **aucun mot du corps n'a changé entre les trois**. ⚠ *La cible est
+> constatée et non vérifiée* : rien ici ne joue le rôle de la porte de pagination du compendium, et
+> **un mot ajouté la fera tomber en silence.**
 >
 > ⚠⚠ **LE TROISIÈME GESTE ROUVRE LA CLÔTURE DU VOL. IV, ET IL FAUT LE DIRE AVANT SES CHIFFRES.**
 > `Compendium.pdf` est **recomposé le 9 août 2026 à 1 000 pages exactement**, sur instruction
@@ -161,7 +165,7 @@ compendium interroge au build.
 |---|---|---|---|
 | Veille technologique | **100 p.** *(162 p. jusqu'au 8 août 2026)*, **303 références** | 14 sections, **18 tableaux**, 25 questions ouvertes | `python check-veille.py` → **sortie 0** ; `python check-resume.py` → **sortie 0** (résumé à **y = 119,4 pt**, 45,7 pt de dégagement) |
 | Revue de littérature | **40 p.** fermes, **176 références** | 19 sections, 8 tableaux, 10 fronts ; **12 pièces sur 173 à publication attestée**, 133 sans revue | `python check-revue.py` → **sortie 0** (4 contrôles, **six mutants tombent**) |
-| Traité — *Systèmes multiagents en essaim* | **115 p.** *(99 p. au gabarit du dépôt, avant la recomposition arXiv du 10 août 2026)*, **118 références** *(9 prépublications arXiv, déclarées telles)* | 7 chapitres, 21 sous-sections, **20 tableaux**, 9 algorithmes en pseudocode ; **118 renvois cités, 118 notices déclarées, bijection vérifiée** | ⚠ **aucun contrôle propre** — `check-resume.py` sort 1 sur son PDF **sans qu'une ligne y soit rognée** : sa marge basse est codée à 73,7 pt (les 2,6 cm de la veille) quand le traité compose à 3,2 cm, et il compte le folio de la page de titre ; le bloc résumé et mots-clés finit à **y = 236,9 pt**, 146 pt de dégagement |
+| Traité — *Systèmes multiagents en essaim* | **100 p.** *(cible d'auteur du 10 août 2026, calée par le seul gabarit ; 99 p. au dépôt du matin, 115 p. à la recomposition arXiv)*, **118 références** *(9 prépublications arXiv, déclarées telles)* | 7 chapitres, 21 sous-sections, **20 tableaux**, 9 algorithmes en pseudocode ; **118 renvois cités, 118 notices déclarées, bijection vérifiée** | ⚠ **aucun contrôle propre**, et ⚠ **aucune porte de pagination** — la cible de 100 p. est constatée, non vérifiée au rendu ; `check-resume.py` sort 1 sur son PDF **sans qu'une ligne y soit rognée** : sa marge basse est codée à 73,7 pt (les 2,6 cm de la veille) quand le traité compose à 2,54 cm, et il compte le folio de la page de titre ; le bloc résumé et mots-clés finit à **y = 284,0 pt**, 212 pt de dégagement |
 | Vol. I — *Interopérabilité* | **569 p.** | 7 chapitres + 7 bibliographies + Annexe B, **28 diagrammes** | — (vérification adverse des citations) |
 | Vol. II — *Orchestration agentique* | **387 p.** | **29 pièces** + registre de gel, socle de 46 entrées | grille CA-1…CA-8 |
 | Vol. III — *L'entreprise agentique* | **427 p.** | **34 pièces** + registre de gel ; ⚠ **plus aucun rapport de vérification** — les **30** que le dossier portait ont été **supprimés le 8 août 2026** (commit `659241b`) et se relisent au seul historique git | CA-01…CA-14, 15 remontées ouvertes — ⚠ *leur registre est dans le lot supprimé* |
@@ -245,7 +249,7 @@ avant d'être enfreinte.
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Les trois quarts du champ n'ont franchi aucun comité » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet | « Déplacer la coordination dans le milieu, et payer ce que le déplacement coûte » |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Notices ouvertes une à une, métadonnées reprises à l'API arXiv | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) | Chaque mécanisme sous son modèle de panne, son hypothèse de synchronisme et son coût en messages et en tours ; sources primaires consultées directement |
 | **Gel de l'information** | 8 août 2026 (édition du 8 août 2026 ; les sections antérieures gardent leur date d'état) | 9 août 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | 27 juillet 2026 (décision d'auteur D-1) ; volet des faits levé le 28 juillet 2026 | 10 août 2026 |
-| **État** | Publiée (**100 p.**, **303 références**) — format ferme depuis le 8 août 2026 | Publiée (**40 p. fermes**, **176 références**) — déposée le 9 août 2026 et **révisée le même jour** (dixième front), sixième livrable du dépôt | Rédaction terminée (569 p., **233 257 mots** — `wc -w` sur `Monographie.md`, point d'ancrage de `decompte.sh --verifier` ; 225 258 par la commande de référence du dépôt. ⚠ *Le chiffre de ≈ 263 600 mots que ce fichier portait n'est reproductible par aucune des deux commandes* ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié, et clos en l'état** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; **finalisation P5 close sans être achevée** le 8 août 2026 (dernière passe de fond : relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état — *et il ne le deviendra pas : quinze remontées R-G-43 à R-G-57 et la dette de vote sur F-92 et F-96 restent ouvertes à titre définitif* | **CLOS ET FINAL** (D-13, 8 août 2026 ; TOC v0.33 / PRD v0.17), statut de révision finale en bibliothèque personnelle maintenu et devenu définitif — *la passe de révision ouverte par D-11 le 30 juillet 2026 (TOC v0.32 / PRD v0.16) est **close sans exécution de son domaine résiduel**, sur l'arrêt initial D-10 du 29 juillet 2026 (TOC v0.31 / PRD v0.15)* : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf) (**1 000 p.**, cible d'auteur calée et vérifiée au build le 9 août 2026 — 1 114 p. auparavant —, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026 ; gabarit relevé sur deux monographies Springer le même jour, porté au format Letter le 31 juillet 2026, puis calé à mille pages le 9 août 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** | Publié (**115 p.**, **118 références**) — déposé le 10 août 2026, septième livrable du dépôt, **renommé et recomposé au gabarit d'article arXiv le même jour** ; ⚠ **il ne cite aucun autre livrable** et **aucun contrôle exécutable ne lui est attaché** |
+| **État** | Publiée (**100 p.**, **303 références**) — format ferme depuis le 8 août 2026 | Publiée (**40 p. fermes**, **176 références**) — déposée le 9 août 2026 et **révisée le même jour** (dixième front), sixième livrable du dépôt | Rédaction terminée (569 p., **233 257 mots** — `wc -w` sur `Monographie.md`, point d'ancrage de `decompte.sh --verifier` ; 225 258 par la commande de référence du dépôt. ⚠ *Le chiffre de ≈ 263 600 mots que ce fichier portait n'est reproductible par aucune des deux commandes* ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié, et clos en l'état** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; **finalisation P5 close sans être achevée** le 8 août 2026 (dernière passe de fond : relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état — *et il ne le deviendra pas : quinze remontées R-G-43 à R-G-57 et la dette de vote sur F-92 et F-96 restent ouvertes à titre définitif* | **CLOS ET FINAL** (D-13, 8 août 2026 ; TOC v0.33 / PRD v0.17), statut de révision finale en bibliothèque personnelle maintenu et devenu définitif — *la passe de révision ouverte par D-11 le 30 juillet 2026 (TOC v0.32 / PRD v0.16) est **close sans exécution de son domaine résiduel**, sur l'arrêt initial D-10 du 29 juillet 2026 (TOC v0.31 / PRD v0.15)* : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf) (**1 000 p.**, cible d'auteur calée et vérifiée au build le 9 août 2026 — 1 114 p. auparavant —, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026 ; gabarit relevé sur deux monographies Springer le même jour, porté au format Letter le 31 juillet 2026, puis calé à mille pages le 9 août 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** | Publié (**100 p. fermes**, **118 références**) — déposé le 10 août 2026, septième livrable du dépôt, **renommé, recomposé au gabarit d'article arXiv et calé à cent pages le même jour** ; ⚠ **il ne cite aucun autre livrable**, et **ni contrôle exécutable ni porte de pagination ne lui sont attachés** |
 
 ## Veille technologique — le document transversal
 
@@ -359,7 +363,7 @@ L'auto-citation est assumée et divulguée : la veille mise à l'épreuve est du
 
 [`Traité.md`](Trait%C3%A9.md)
 → `Traité.pdf`
-(**115 p.**, 7 chapitres et 21 sous-sections, **118 références**, 20 tableaux, 9 algorithmes en
+(**100 p. fermes**, 7 chapitres et 21 sous-sections, **118 références**, 20 tableaux, 9 algorithmes en
 pseudocode — daté du **10 août 2026**), sous le titre *« Traité des systèmes multiagents en essaim —
 la coordination par le milieu : ce qu'un essaim d'agents logiciels gagne à ne pas s'accorder, et ce
 qu'il le paie »*.
@@ -380,8 +384,14 @@ volumes ne figure à ses 118 références ; les protocoles qui structurent tout 
 paraissent qu'une fois, par la spécification MCP (sa réf. [30]), prise en exemple de milieu et non
 en objet. *Il ne prolonge pas le triptyque : il en attaque l'hypothèse de coordination par l'autre
 bout.* Corollaire à porter au crédit du livrable : **l'auto-citation, assumée et divulguée dans la
-veille comme dans la revue, y est nulle** — et l'assistance par modèle de langage y est déclarée en
-page de titre.
+veille comme dans la revue, y est nulle**.
+
+⚠ **Il ne porte aucune divulgation d'assistance par modèle de langage, et c'est le seul livrable du
+dépôt dans ce cas.** Sa page de titre en portait une, en note d'astérisque — champ `thanks` de
+l'en-tête — du dépôt du 10 août 2026 au matin **jusqu'au retrait du même jour, sur instruction
+d'auteur**. *La divulgation ne subsiste qu'au niveau du dépôt*, à la rubrique « Assistance par
+agents » des [avertissements](#avertissements), qui couvre l'ensemble des travaux — **le fichier
+diffusé seul ne la porte plus**.
 
 Sa thèse : passé quelques dizaines d'agents, et lorsque la défaillance partielle devient l'état
 normal, le coût du consensus explicite — messages, latence de queue, couplage temporel — croît plus
@@ -421,9 +431,21 @@ la racine dans ce cas. Le bloc de titre porte **titre, sous-titre, auteur et cou
 le **résumé suivi des mots-clés** ; la table des matières vient ensuite, l'avant-propos et la
 conclusion sont des **sections non numérotées** et la numérotation des sept chapitres reste **écrite
 à la main dans les titres** — *le gabarit Typst numéroterait par-dessus, et l'ouvrage renvoie à ses
-propres numéros en une centaine d'endroits.* Les marges passent de 2,18 × 2,35 cm à
-**2,8 × 3,2 cm** : **99 pages deviennent 115, à contenu inchangé**. La divulgation d'assistance par
-modèle de langage est en **note de titre**, où arXiv l'attend.
+propres numéros en une centaine d'endroits.* ⚠ **Le champ `thanks` a été retiré de l'en-tête le
+10 août 2026** : la page de titre ne porte plus ni astérisque ni note de bas de page, et le rendu
+perd du même coup sa divulgation d'assistance par modèle de langage.
+
+⚠ **Et le rendu est calé à 100 pages exactement, sur instruction d'auteur du 10 août 2026.** Le
+calage se prend sur **deux réglages du seul en-tête**, et sur rien d'autre : marges portées **au
+pouce — 2,54 cm sur les quatre côtés**, la géométrie canonique d'un article LaTeX, et
+`linestretch: 0.9`, qui ramène l'interligne du gabarit Typst de 14,65 pt à **13,9 pt** pour un corps
+de 11 pt. ⚠ *Ce second réglage n'est pas une compression* : l'interligne d'un article LaTeX 11 pt
+vaut 13,6 pt, et le défaut de Typst — 1,33 fois le corps — était simplement plus aéré que la norme
+de l'espèce. **Trois paginations se sont succédé en un jour, à contenu strictement inchangé** :
+99 pages au dépôt du matin (marges 2,18 × 2,35 cm), 115 à la recomposition arXiv (2,8 × 3,2 cm),
+**100 après calage**. ⚠ **La cible est constatée, non vérifiée** : le compendium fait échouer son
+build hors de sa cible, *le traité n'a pas d'équivalent* — **la pagination est une fonction en
+escalier, et un mot ajouté fera tomber les cent pages sans que rien ne le dise.**
 
 ☑ **Un défaut de balisage a été trouvé à la recomposition et corrigé.** L'introduction et la
 conclusion écrivaient leurs renvois en **doubles crochets** — `[[5]]`, **16 occurrences sur
@@ -436,9 +458,9 @@ l'autre**.
 ⚠ **Aucun contrôle exécutable ne lui est attaché**, contrairement à la veille et à la revue. Le seul
 rejouable sur son PDF, [`check-resume.py`](check-resume.py), **sort 1 sans qu'une ligne y soit
 rognée** : sa marge basse est codée en dur à **73,7 pt** — les 2,6 cm de la veille — alors que le
-traité compose à **3,2 cm**, et il compte le **folio** de la page de titre, que la veille et la
-revue n'ont pas. Le bloc du résumé et des mots-clés finit à **y = 236,9 pt**, soit **146 pt de
-dégagement** ; ce qui descend à 56,0 pt est le numéro de page, à sa place. *Le contrôle a raison sur
+traité compose à **2,54 cm**, et il compte le **folio** de la page de titre, que la veille et la
+revue n'ont pas. Le bloc du résumé et des mots-clés finit à **y = 284,0 pt**, soit **212 pt de
+dégagement** ; ce qui descend à 42,9 pt est le numéro de page, à sa place. *Le contrôle a raison sur
 ce qu'il mesure et tort sur ce qu'il conclut, faute d'avoir été calibré pour un troisième gabarit —
 et personne ne le calibrera : le dépôt est clos.*
 
@@ -767,7 +789,7 @@ le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
 ├── README.md                              ← ce fichier (avant-propos croisé)
 ├── Veille Technologique.md / .pdf         ← veille autonome, édition du 8 août 2026, faits gelés à cette date (100 p., 303 réf.)
 ├── Revue de littérature.md / .pdf         ← revue de la littérature académique, arrêtée au 9 août 2026 (40 p., 176 réf.)
-├── Traité.md / .pdf                       ← traité « Systèmes multiagents en essaim », 10 août 2026 (115 p., 118 réf.)
+├── Traité.md / .pdf                       ← traité « Systèmes multiagents en essaim », 10 août 2026 (100 p. fermes, 118 réf.)
 │                                             ⚠ ne cite aucun autre livrable, et aucun ne le cite ; seul rendu au gabarit d'article arXiv
 │                                             (`Swarm Agentic Systems.md / .pdf` jusqu'au renommage du 10 août 2026)
 ├── check-veille.py                        ← contrôles de publication de la veille (renvois, cardinaux, bibliographie)
@@ -869,11 +891,15 @@ pandoc "Revue de littérature.md" --pdf-engine=typst --toc -o "Revue de littéra
 ```
 
 **Traité** (racine) — **même invocation que les deux autres**, tout le réglage étant dans l'en-tête
-YAML : **gabarit d'article arXiv** depuis le 10 août 2026 — marges 2,8 × **3,2 cm** (2,6 cm pour la
-veille et la revue), **folio dès la page de titre**, **mots-clés dans le bloc du résumé**,
-**pas de `section-numbering`**. ⚠ *Ce dernier point n'est pas un oubli* : les sept chapitres portent
-leurs numéros **écrits à la main dans les titres**, et le gabarit Typst numéroterait par-dessus —
-« 0.3.2 3.2 Titre ». ⚠ *C'est l'écart de marge, et lui seul, qui fait sortir `check-resume.py` en 1
+YAML : **gabarit d'article arXiv** depuis le 10 août 2026 — marges **au pouce (2,54 cm)** sur les
+quatre côtés (2,8 × 2,6 cm pour la veille et la revue), **`linestretch: 0.9`** qui porte l'interligne
+à 13,9 pt pour un corps de 11 pt, **folio dès la page de titre**, **mots-clés dans le bloc du
+résumé**, **pas de `section-numbering`**. ⚠ *Ce dernier point n'est pas un oubli* : les sept chapitres
+portent leurs numéros **écrits à la main dans les titres**, et le gabarit Typst numéroterait
+par-dessus — « 0.3.2 3.2 Titre ». ⚠ **Les deux premiers réglages tiennent la cible de 100 pages** :
+*les toucher la fait tomber, et rien ici ne le signalerait — cette chaîne n'a pas de porte de
+pagination, à la différence de celle du compendium.* ⚠ *C'est l'écart de marge, et lui seul, qui
+fait sortir `check-resume.py` en 1
 sur ce PDF* :
 
 ```bash
@@ -970,11 +996,11 @@ ce fichier avait relevés à la main le 29 juillet 2026.
 ⚠ **Et ce calibrage est exactement sa limite, découverte le 10 août 2026.** La marge basse y est une
 **constante**, `MARGE_BASSE = 73.7`, tirée de l'en-tête de la veille ; le contrôle mesure par
 ailleurs *tout* texte posé en page 1, **folio compris**. Rejoué sur `Traité.pdf`, qui compose à
-**3,2 cm** et numérote dès la page de titre, il **sort 1 sur le numéro de page** — le bloc du résumé
-et des mots-clés, lui, finit **146 pt au-dessus de la marge**. *Un contrôle transporté sur un gabarit
+**2,54 cm** et numérote dès la page de titre, il **sort 1 sur le numéro de page** — le bloc du résumé
+et des mots-clés, lui, finit **212 pt au-dessus de la marge**. *Un contrôle transporté sur un gabarit
 pour lequel il n'a pas été calibré ne mesure plus ce qu'il annonce ; il n'a pas été corrigé, et le
-dépôt est clos.* ⚠ *Le verdict tient aux deux réglages du traité, avant comme après sa recomposition
-arXiv : à 2,35 cm de marge il sortait déjà 1, pour la même raison.*
+dépôt est clos.* ⚠ *Le verdict a tenu aux trois réglages successifs du traité en une journée — marges
+à 2,35 cm, puis 3,2 cm, puis 2,54 cm : il sortait 1 les trois fois, toujours sur le folio.*
 
 **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, `python3` + `pypdf` — ☑ *`pypdf` **6.15.0** est installé
 depuis la passe du 9 août 2026, et il cesse d'être facultatif : la **porte de pagination du
@@ -1826,3 +1852,66 @@ d'épreuve et non un genre littéraire, et l'**« essai d'interprétation »** d
 renvois —, **ne corrige pas `check-resume.py`**, **ne franchit aucune porte**, **ne lève aucune
 dérogation**, **ne referme aucune remontée**, **ne rejuge pas la clôture** et **ne publie rien de ce
 qui est clos**. La clôture **D-13 reste en vigueur pour les quatre volumes**.
+
+**Le 10 août 2026, troisième passe du même jour — le traité est calé à cent pages exactement.** Sur
+instruction d'auteur, `Traité.pdf` passe de **115 à 100 pages**, et **le calage se prend sur le seul
+en-tête YAML** : marges portées **au pouce — 2,54 cm sur les quatre côtés** — et `linestretch: 0.9`.
+⚠ **Aucun mot du corps ne change**, ni un renvoi, ni une référence : *recomposer n'est pas récrire*,
+et **trois paginations se sont succédé en un jour à contenu strictement identique** — 99 pages au
+dépôt du matin (marges 2,18 × 2,35 cm), 115 à la recomposition arXiv (2,8 × 3,2 cm), **100 après
+calage**.
+
+⚠ **Le second réglage mérite d'être justifié, parce qu'il ressemble à une compression et n'en est
+pas une.** `linestretch: 0.9` ramène l'interligne du gabarit Typst par défaut — `leading:
+linestretch × 0,65em`, soit **14,65 pt mesurés** au corps de 11 pt — à **13,9 pt**. *Un article
+LaTeX 11 pt compose à 13,6 pt* : le réglage rapproche le traité de la norme de l'espèce au lieu de
+l'en écarter, et le défaut de Typst, à 1,33 fois le corps, était simplement plus aéré qu'elle. Les
+marges au pouce sont, elles, la géométrie canonique de l'article. **Le calage améliore donc la
+conformité arXiv au lieu de la payer.**
+
+⚠ **Deux variantes atteignaient la cible, et le choix est écrit ici pour qu'on n'ait pas à le
+refaire.** L'autre était un corps de 10,5 pt à interligne intact, marges autour de 2,7 cm ; elle a
+été écartée parce qu'elle **quitte les corps normalisés** (10, 11, 12 pt) et la géométrie au pouce,
+*pour un gain de lisibilité nul*. Un balayage de huit réglages a servi à trancher ; il n'est pas
+versé au dépôt.
+
+⚠ **La cible n'a pas de porte, et c'est le manque le plus lourd de cette passe.** Le compendium fait
+**échouer son build** hors de ses mille pages ; le traité se rend par une invocation `pandoc` nue,
+qui **écrit son PDF quel qu'en soit le nombre de pages**. *La pagination est une fonction en escalier
+— un mot ajouté suffit à changer de marche —, et une cible qu'on constate au lieu de la vérifier se
+perd au commit suivant, en silence.* Elle est ici **constatée** : `pypdf` sur le PDF versionné,
+**100 pages**. Mesures de page de titre après calage : bloc du résumé et des mots-clés à
+**y = 284,0 pt**, **212 pt de dégagement** ; folio à 42,9 pt. `check-resume.py` **sort 1**, toujours
+sur le folio et toujours par sa constante de marge, comme aux deux gabarits précédents.
+
+⚠ **Ce que la passe ne fait pas.** Elle **ne touche à aucun des quatre volumes**, **ni à la veille**,
+**ni à la revue**, **ne change pas un caractère du corps du traité**, **n'ajoute aucune porte de
+pagination**, **ne corrige pas `check-resume.py`**, **ne franchit aucune porte**, **ne lève aucune
+dérogation**, **ne referme aucune remontée**, **ne rejuge pas la clôture** et **ne publie rien de ce
+qui est clos**. La clôture **D-13 reste en vigueur pour les quatre volumes**.
+
+**Le 10 août 2026, quatrième passe du même jour — la note de titre du traité est retirée.** Sur
+instruction d'auteur, le champ **`thanks` est supprimé de l'en-tête** de [`Traité.md`](Trait%C3%A9.md) :
+la page de titre perd l'**astérisque** qui suivait le mot « essaim » et la **note de bas de page**
+qu'il appelait. ⚠ **Ce que cette note portait, et qui disparaît du fichier avec elle** : la
+divulgation d'assistance par modèle de langage — *« Ce document a été rédigé avec l'assistance d'un
+modèle de langage (Claude, Anthropic) : recherche documentaire, rédaction des chapitres, vérification
+des références et montage de l'ouvrage. L'auteur en assume la sélection des sources, les arbitrages
+de contenu et les erreurs résiduelles. »* — reproduite ici pour qu'elle reste lisible quelque part.
+
+⚠ **Le traité devient ainsi le seul des sept livrables à ne porter aucune divulgation d'assistance
+dans son rendu.** La veille et la revue déclarent la leur dans leur corps ; les quatre volumes la
+tiennent de leur appareil de gouvernance. *Elle ne subsiste, pour le traité, qu'à la rubrique
+« Assistance par agents » des [avertissements](#avertissements) de ce fichier, qui couvre l'ensemble
+des travaux* — **le PDF diffusé seul ne la porte plus**, et c'est une conséquence à connaître si le
+fichier quitte le dépôt.
+
+☑ **La cible de cent pages tient au retrait**, re-mesurée sur pièce après recomposition : `pypdf`
+rend **100 pages**. *La note vivait sur la page de titre, sous le résumé, dans une zone que le calage
+ne disputait pas.*
+
+⚠ **Ce que la passe ne fait pas.** Elle **ne touche à aucun autre livrable**, **ne change pas un
+caractère du corps du traité**, **ne modifie aucun autre champ de l'en-tête**, **n'ajoute aucune
+porte de pagination**, **ne franchit aucune porte**, **ne lève aucune dérogation**, **ne referme
+aucune remontée**, **ne rejuge pas la clôture** et **ne publie rien de ce qui est clos**. La clôture
+**D-13 reste en vigueur pour les quatre volumes**.
