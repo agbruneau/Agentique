@@ -32,6 +32,28 @@
 
 ---
 
+## Contenu du répertoire
+
+*Relevé du répertoire, sous-répertoires compris. Ce que les sections suivantes décrivent est la
+**matière** de l'ouvrage ; ceci en est la **carte des fichiers**.*
+
+| Chemin | Ce qu'on y trouve |
+|---|---|
+| **`Livre I/` … `Livre V/`** | les **cinquante pièces de chapitre** — **11 + 10 + 15 + 10 + 4** —, chacune en `.md` (la source, qui fait foi) **et** en `.html` (rendu autonome, sans ressource externe) ; plus un `README.md` par Livre, seul à décrire l'état de son Livre : [I](Livre%20I/README.md), [II](Livre%20II/README.md), [III](Livre%20III/README.md), [IV](Livre%20IV/README.md), [V](Livre%20V/README.md) |
+| **`PRD/`** | la gouvernance et l'appareil de contrôle : [`TOC.md`](PRD/TOC.md) — le plan, **seul à faire autorité** —, [`PRD.md`](PRD/PRD.md), [`socle-consolide.md`](PRD/socle-consolide.md) (**Annexe B**, 159 entrées), [`registre-gel.md`](PRD/registre-gel.md), [`gel-2026-07-27.md`](PRD/gel-2026-07-27.md) et [`gel-2026-07-28-volet-residuel.md`](PRD/gel-2026-07-28-volet-residuel.md) ; les trois contrôles du volume — [`check-toc.py`](PRD/check-toc.py) (C1-C15), [`check-sieges.py`](PRD/check-sieges.py) (S1-S5, table de **26 sièges**) et [`check-compendium.py`](PRD/check-compendium.py) (P1-P8) —, chacun doublé de son harnais de mutation `*-mutations.py`, plus [`decompte.sh`](PRD/decompte.sh), **seule autorité de décompte** |
+| **`build/`** | la chaîne de composition du PDF : [`build-pdf.sh`](build/build-pdf.sh), [`assemble.py`](build/assemble.py) — qui réunit les cinquante pièces et les **deux** annexes en un `.md` unique —, [`assemble-bibliographie.py`](build/assemble-bibliographie.py), le filtre [`accentuation.lua`](build/accentuation.lua), les gabarits [`compendium.template`](build/compendium.template) (courant) et [`springer.template`](build/springer.template) (le précédent, conservé), et le couple d'échantillonnage [`echantillon.py`](build/echantillon.py) / [`echantillon.template`](build/echantillon.template) |
+| **`figures/`** | les **118 fichiers `.svg`** du volume et la chaîne qui les produit — [`programme.md`](figures/programme.md), registre des 237 opportunités ; [`spec.py`](figures/spec.py), [`dessine.py`](figures/dessine.py), [`genere.py`](figures/genere.py) et les **sept** `contenu*.py`, une entrée par figure |
+| **`.claude/`** | [`launch.json`](.claude/launch.json) seul — le service local qui sert [`Compendium.html`](Compendium.html) |
+| **tête du répertoire** | [`Compendium.pdf`](Compendium.pdf), [`Compendium.html`](Compendium.html), [`annexe-references.md`](annexe-references.md), [`annexe-bibliographie.md`](annexe-bibliographie.md) et le présent `README.md` |
+
+⚠ **Et rien d'autre n'y est.** Quatre objets se citent par leur nom dans ce document ou dans les
+README des Livres et **aucun ne s'y résout** : `audit.md`, `audit-references.md`, `eval.html`, et le
+skill de projet `chapitre-compendium` avec ses scripts `rendre-piece.py` et `verifier-piece.py`,
+retiré le 31 juillet 2026. *Un nom conservé date un constat ; il ne désigne pas un fichier qu'on
+puisse ouvrir ici.*
+
+---
+
 ## L'objet et la thèse
 
 Déployer des agents non humains qui engagent la responsabilité d'une institution financière réglementée est **un seul problème d'ingénierie continu** — non trois. Les trois volumes sources le prouvaient chacun à demi : le Vol. I posait la théorie de l'interopérabilité mais s'arrêtait au seuil du droit applicable ; le Vol. II instruisait le droit canadien mais présupposait la théorie ; le Vol. III isolait le verrou commun — l'identité — mais le traitait comme un ouvrage à part. La somme tient les trois ensemble, sur quatre plans qui sont des coupes du même objet :
@@ -79,7 +101,7 @@ Le plan « encadrer » commence par un choix objectivable : la taxonomie OO1-OO4
 
 **Deuxième mouvement — le cadre réglementaire canadien** *(ch. 25-30)*
 
-E-23 couvre l'IA agentique *par inférence*, via sa définition de « modèle », avec échéance au 1ᵉʳ mai 2027 — et ses attentes s'écrivent « **attendues** », jamais « exigées » (ch. 25). La mort de la LIAD laisse un vide fédéral que C-36 ne comble pas (ch. 26). Le Québec porte le cadre le plus explicite : ligne directrice IA de l'AMF (finale le 30 mars 2026, en vigueur le 1ᵉʳ mai 2027 — seules ses *dates* sont au socle, jamais son *contenu*) et l'article 12.1 de la Loi 25, en friction directe avec la décision agentique autonome (ch. 27). Les ACVM confirment que les lois existantes s'appliquent (ch. 28). Le **pont** — chapitre-pivot — traduit les exigences canadiennes en frames déterministes d'architecture (ch. 29) ; le maillage international (AI Act, ISO 42001, RGPD) et la normalisation institutionnelle ferment le tour (ch. 30).
+E-23 couvre l'IA agentique *par inférence*, via sa définition de « modèle », avec échéance au 1ᵉʳ mai 2027 — et ses attentes s'écrivent « **attendues** », jamais « exigées » (ch. 25). La mort de la LIAD laisse un vide fédéral que C-36 ne comble pas (ch. 26). Le Québec porte le cadre le plus explicite : ligne directrice IA de l'AMF (**avril 2026**, trois états déclarés — ⚠ *ce n'est plus une divergence tranchée mais une **absence de datation** : R-IV-88 établit qu'aucune des deux dates arbitrées ne figure aux pages officielles, et le [`TOC.md`](PRD/TOC.md) proscrit de rétablir « 30 mars 2026 »* ; en vigueur le 1ᵉʳ mai 2027 — seules ses *dates* sont au socle, jamais son *contenu*) et l'article 12.1 de la Loi 25, en friction directe avec la décision agentique autonome (ch. 27). Les ACVM confirment que les lois existantes s'appliquent (ch. 28). Le **pont** — chapitre-pivot — traduit les exigences canadiennes en frames déterministes d'architecture (ch. 29) ; le maillage international (AI Act, ISO 42001, RGPD) et la normalisation institutionnelle ferment le tour (ch. 30).
 
 **Troisième mouvement — le terrain canadien : interopérabilité financière et adoption** *(ch. 31-36)*
 

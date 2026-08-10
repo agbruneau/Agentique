@@ -104,17 +104,32 @@ compte courant se lit à [`PRD/check-sieges.py`](../PRD/check-sieges.py), jamais
 
 ## Volumétrie réelle — et l'écart en défaut qui est un résultat
 
-**26 474 mots** de corps pour les quatre pièces, ⚠ **re-mesurés au commit du 28 juillet 2026** par
+☑ **Mesure du jour : 30 719 mots** de corps pour les quatre pièces, relevés le **10 août 2026** par
 [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — contre une enveloppe
-de Livre de **34 000** au TOC, soit **−22,1 %**. *La mesure du 27 juillet 2026 valait 25 017 mots et
+de Livre de **34 000** au TOC, soit **−9,6 %**.
+
+⚠ **Le chiffre publié ici — 26 474 mots au 28 juillet 2026 — ne se reproduit plus, et les pièces de ce
+dossier le démentaient déjà.** La somme des cardinaux que **leurs quatre en-têtes déclarent** vaut
+**29 060 mots** : le champ *Volumétrie cible* du
+[ch. 47](47-artefact-livre-provenance-mise-en-service.md) porte **« réel : 6 423 mots »** là où le
+tableau ci-dessous lui attribue **5 897**. Le solde jusqu'à la mesure du jour — 29 060 → 30 719 — est
+postérieur au 28 juillet : les **figures du barème A ont été posées dans les pièces le 31 juillet
+2026**, et la légende de chacune entre au corps que la commande mesure ; *les quatre pièces en portent
+au moins une.* **Le cardinal courant d'une pièce se lit à son champ *Volumétrie cible*, jamais ici.** *La mesure du 27 juillet 2026 valait 25 017 mots et
 −26,4 % ; la passe de correction a ajouté de l'appareil — décomptes re-mesurés, identifiants de
 lots, intitulés de mouvement, lot d'instruction du § 48.5 —, **jamais du contenu de section-lot**.*
 
 ⚠ **C'est le premier Livre en défaut, et le sens de l'écart est l'inverse de celui des deux
-précédents.** Le Livre I est à **−0,6 %**, le Livre II à **+23,4 %** — *dépassement venu de la matière,
-et plus précisément du coût du bornage*. Ici, l'écart reste **en défaut de plus d'un cinquième**, et il se
-concentre sur les deux chapitres **sans socle** : le ch. 47 à **−36,6 %**, le ch. 48 à **−29,7 %**,
-contre **−13,0 %** et **−15,9 %** pour les deux chapitres à sources gelées.
+précédents.** ⚠ *Les trois termes de cette comparaison sont ceux du 28 juillet 2026, et les trois ont
+été défaits depuis.* Le Livre I était donné à **−0,6 %** — ⚠ *chiffre que son README a **retiré**, ses
+onze pièces le démentant ; il est à **+11,5 %** au 10 août 2026* — et le Livre II à **+24,1 %** —
+**+37,5 %** au 10 août —, *dépassement venu de la matière, et plus précisément du coût du bornage*.
+Ici, l'écart restait **en défaut de plus d'un cinquième** au 28 juillet — **−9,6 % au 10 août** —, et
+il se concentrait sur les deux chapitres **sans socle** : le ch. 47 à **−36,6 %**, le ch. 48 à
+**−29,7 %**, contre **−13,0 %** et **−15,9 %** pour les deux chapitres à sources gelées.
+⚠ **La concentration, elle, ne tient plus** : au 10 août 2026 le ch. 47 est à **−22,6 %**, le ch. 48 à
+**−5,5 %**, le ch. 49 à **−9,0 %** et le **ch. 50 passe en excès, à +12,1 %**. *L'écart en défaut reste
+un résultat ; il n'est plus le résultat des deux chapitres sans socle.*
 
 ⚠ **La lecture n'est pas que le Livre est trop court : c'est que la volumétrie mesure l'absence de
 sources.** *Sur un front dont la ligne Fusion déclare « sources primaires à constituer avant
@@ -135,14 +150,14 @@ dérivation ni d'un oubli d'addition — il vient de ce que la matière neuve n'
 | [Ch. 50](50-peremption-protocole-revalidation.md) — péremption et revalidation | 4 200 | 3 440 | **3 532** | −15,9 % |
 | **Livre V** | **34 000** | 25 017 | **26 474** | **−22,1 %** |
 
-: Tableau — Volumétrie du Livre V, cible dérivée et mesures réelles au commit de rédaction (27 juillet 2026) et au commit de correction (28 juillet 2026). ⚠ **Les deux dérivations ne suivent pas la même règle, et c'est délibéré** : le premier mouvement dérive **par front** — 14 000 mots pour les *trois* fronts que l'audit v0.3 avait chiffrés, dont deux au ch. 47 —, le second **au prorata des sections**. *Dériver le premier mouvement par section aurait produit un chiffre sans rapport avec l'estimation d'origine.* ⚠ **Le ch. 49 porte le plus faible écart des quatre, le ch. 50 venant au second rang** — *le superlatif que l'en-tête du ch. 50 s'attribuait était faux dès la rédaction, et il est corrigé.*
+: Tableau — Volumétrie du Livre V, cible dérivée et mesures réelles au commit de rédaction (27 juillet 2026) et au commit de correction (28 juillet 2026). ⚠ **Constat daté et dépassé — ce tableau et les paragraphes d'analyse qui l'entourent** — *ces valeurs sont inférieures aux cardinaux que les quatre pièces portent en tête ; voir l'avertissement ci-dessus, et la mesure du 10 août 2026.* ⚠ **Les deux dérivations ne suivent pas la même règle, et c'est délibéré** : le premier mouvement dérive **par front** — 14 000 mots pour les *trois* fronts que l'audit v0.3 avait chiffrés, dont deux au ch. 47 —, le second **au prorata des sections**. *Dériver le premier mouvement par section aurait produit un chiffre sans rapport avec l'estimation d'origine.* ⚠ **Le ch. 49 porte le plus faible écart des quatre, le ch. 50 venant au second rang** — *le superlatif que l'en-tête du ch. 50 s'attribuait était faux dès la rédaction, et il est corrigé.*
 
 ## Les quatre pièces
 
 | Pièce | Ce qu'elle porte | Régime de preuve |
 |---|---|---|
 | **Ch. 47** — L'artefact livré : provenance des composants et mise en service | deux mouvements (fusion v0.23) : les cinq composants d'un agent et leurs horloges ; les cinq spécifications relevées ; les **deux sens du mot « attestation »** ; le retournement relu comme défaut de provenance ; la provenance comme **cinquième pièce candidate** du passeport ; les **cinq horloges** du versionnement ; le **problème de l'oracle** ; ce que le retour arrière ne restaure pas | **matière neuve** — le plus dur des trois (PRD §7.2) ; **zéro socle, zéro vote, zéro extraction** |
-| **Ch. 48** — La sémantique d'effet | ⚠ **SIÈGE** pour toute la somme : la taxonomie **lecture / écriture / engagement** ; l'idempotence comme propriété de **l'outil**, jamais du protocole ; la saga au grain d'une trajectoire composée à l'exécution ; l'écart comptable ; la jointure manquante entre l'effet et l'appel | **matière neuve** ; ⚠ **fermé à l'accord entre agents sous défaillance par D-7** |
+| **Ch. 48** — La sémantique d'effet : idempotence, compensation, réconciliation | ⚠ **SIÈGE** pour toute la somme : la taxonomie **lecture / écriture / engagement** ; l'idempotence comme propriété de **l'outil**, jamais du protocole ; la saga au grain d'une trajectoire composée à l'exécution ; l'écart comptable ; la jointure manquante entre l'effet et l'appel | **matière neuve** ; ⚠ **fermé à l'accord entre agents sous défaillance par D-7** |
 | **Ch. 49** — L'horizon 2027-2032 et la frontière de la connaissance vérifiable | deux mouvements (fusion v0.20) : ⚠ **SIÈGE du tri prospectif** et **SIÈGE du verrou sémantique** ; la grappe d'échéances ; la bifurcation de la gouvernance par couche ; six fronts de recherche ; les forces macro ; l'assurabilité comme régulateur de fait ; **le registre unifié des lacunes des trois volumes** — onze du Vol. II, vingt-deux du Vol. III, trois absences au degré 3 | **sources gelées** ; premier mouvement **intégralement en [C]** (Vol. I) ; second sous **G-4 non franchie** |
 | **Ch. 50** — Péremption et protocole de revalidation | **dernier chapitre de la somme** : les cinq lacunes du blueprint ; **onze événements de péremption** avec leur tri ; le protocole de revalidation et sa limite ; la convention de datation à deux termes — ⚠ *dont le registre de gel qui n'existe pas* | **sources gelées** ; niveaux d'origine conservés |
 
@@ -242,7 +257,8 @@ personne s'en aperçoive.*
 ## ⚠ Passe de correction du 28 juillet 2026 — onze constats corrigés, trois notes sans action
 
 Sur instruction d'auteur, en réponse à l'`audit.md` du 28 juillet 2026 (§ 8, Livre V ;
-§ 3, transversaux). **Domaine déclaré : les quatorze constats V.1 à V.14 de son § 8** — **onze sont
+§ 3, transversaux). ⚠ **`audit.md` n'est pas au dépôt** : il n'y a jamais été versé, et *le nom date
+le constat, il ne désigne aucun fichier qu'on puisse ouvrir ici.* **Domaine déclaré : les quatorze constats V.1 à V.14 de son § 8** — **onze sont
 corrigés ici** (V.1 à V.11), **trois sont des notes qui n'appellent aucune action** : V.12 (relevés
 horodatés dépassés par les passes concurrentes, *exacts à leur date* — sauf le cardinal des sièges du
 README, corrigé au titre de T-5), V.13 (intitulés des tables détaillées du TOC en numérotation gelée,
@@ -324,6 +340,10 @@ correction se fait dans le `.md` puis se **régénère**, au même commit —
 ```bash
 python .claude/skills/chapitre-compendium/scripts/rendre-piece.py "2 - Compendium/Livre V/50-peremption-protocole-revalidation.md"
 ```
+
+⚠ **Le skill de projet `chapitre-compendium` n'est plus au dépôt depuis le 31 juillet 2026**
+(commit `41666d0`), non plus que ses scripts : *cette invocation et celle du point 5 ci-dessous ne
+résolvent donc plus*. Elles sont conservées parce qu'elles disent ce que la passe a exécuté à sa date.
 
 Le `.html` est un rendu autonome (thème sombre, aucune ressource externe, césure `fr-CA`,
 navigation de chapitre). Le compendium n'a **pas** de pipeline de rendu : les trois copies du FESP

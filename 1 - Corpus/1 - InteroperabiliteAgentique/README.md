@@ -74,6 +74,7 @@ après coup** ; le Vol. III, qui le cite lui aussi, relève de sa propre charge 
 ## Structure du dossier
 
 ```
+README.md                                  ← ce fichier (présentation du volume)
 Chapitres/
   Chapitre N - {Sujet}.md                  chapitre rédigé (7)
   Chapitre N - Bibliographie - {Sujet}.md  références vérifiées (7)
@@ -81,7 +82,9 @@ Chapitres/
   TOC.md                                   table des matières commentée (v1.0, rétro-documentation)
 Monographie.md / .pdf                      assemblage : 7 chapitres + liminaires + Annexes A et B (569 p.)
 build/                                     pipeline de rendu PDF (Mermaid → Pandoc → Typst)
-LICENSE
+                                           build-pdf.sh, fesp.template, inject-pagination.py
+LICENSE                                    seul `LICENSE` du dépôt — il ne vaut que pour ce volume
+.gitignore
 ```
 
 ⚠ **Ni `index.html` ni publication GitHub Pages.** La page de présentation a été retirée le
@@ -104,7 +107,7 @@ La chaîne de la veille (racine) et celle du volume II sont **distinctes** de ce
 
 ## État
 
-**Rédaction terminée.** Les sept chapitres sont rédigés et assemblés ; l'ADS, intégrée en Annexe B, est rendue dans `Monographie.pdf` (569 p., vérifié le 22 juillet 2026). Le travail courant est la finalisation — corrections, vérification adverse des citations, régénération du PDF.
+**Rédaction terminée.** Les sept chapitres sont rédigés et assemblés ; l'ADS, intégrée en Annexe B, est rendue dans `Monographie.pdf` (569 p., vérifié le 22 juillet 2026, re-mesuré le 29 juillet et inchangé). ⚠ **Il n'y a plus de travail courant** : la finalisation qu'annonçait ce paragraphe — corrections, vérification adverse des citations, régénération du PDF — **ne sera pas conduite**, le dépôt étant clos depuis le 8 août 2026 (D-13, bandeau en tête). *Ce qui restait à faire devient un manque daté, non une conformité.*
 
 **Vérifié par passes adverses successives :**
 

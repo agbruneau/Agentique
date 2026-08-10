@@ -111,6 +111,8 @@ mécaniques, conduits par la même main que la rédaction.**
 
 **Sur instruction d'auteur, en réponse à l'`audit.md` du 28 juillet 2026** (volets A à E
 du §6, plus les transversaux T-1 à T-4), les **quinze `.md` et leurs quinze `.html`** ont été repris.
+⚠ **`audit.md` n'est pas au dépôt** : il n'y a jamais été versé, et *le nom date le constat, il ne
+désigne aucun fichier qu'on puisse ouvrir ici.*
 ⚠ **Cette passe corrige ; elle ne réédite pas** : *aucune section n'a été ajoutée ni retirée, aucune
 thèse n'a été réécrite — seulement re-citée depuis le plan —, et **le propos des chapitres est
 inchangé**.* ⚠ **Elle ne franchit aucune porte et ne requalifie rien** : les pièces restent des
@@ -157,11 +159,23 @@ conspectus : il remonte* (PRD, Annexe A) :
 - **III.D.8** — au **ch. 34 § 34.1**, trois thèmes du dépliage traités en renvoi plutôt qu'en condensé ;
   au **ch. 35**, le § 35.8 subdivisé hors dépliage. *Écarts au plan, à arbitrer.*
 
-## Volumétrie réelle — l'enveloppe tenue, et pourquoi cela ne prouve rien
+## Volumétrie réelle — l'enveloppe n'est plus tenue, et la compensation qui la tenait s'est défaite
 
-**91 477 mots** de corps pour les quinze pièces, **re-mesurés le 28 juillet 2026** par
+☑ **Mesure du jour : 99 875 mots** de corps pour les quinze pièces, relevés le **10 août 2026** par
 [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — contre une enveloppe de
-Livre de **90 000** au TOC, soit **+1,6 %**.
+Livre de **90 000** au TOC, soit **+11,0 %**.
+
+⚠ **Le chiffre publié ici — 91 477 mots au 28 juillet 2026 — ne se reproduit plus, et les pièces de ce
+dossier le démentaient déjà.** Le champ *Volumétrie cible* du
+[ch. 35](35-etudes-de-cas-production-canadienne.md) écrit **« réel mesuré à la contre-relecture du
+28 juillet 2026, APRÈS ses corrections : 9 091 mots »** et **nomme ce README comme portant une mesure
+antérieure — les 6 800 du tableau ci-dessous** ; celui du
+[ch. 28](28-valeurs-mobilieres-acvm-11-348.md) porte **2 531**, non 2 379. *Un tableau de Livre qui
+somme des valeurs que les pièces ont remplacées ne se corrige pas par un total : il se déclare
+dépassé.* Le solde jusqu'à la mesure du jour est postérieur au 28 juillet : les **figures du barème A
+ont été posées dans les pièces le 31 juillet 2026**, et la légende de chacune entre au corps que la
+commande mesure ; *quatorze des quinze pièces en portent au moins une, le ch. 28 aucune.*
+**Le cardinal courant d'une pièce se lit à son champ *Volumétrie cible*, jamais ici.**
 
 | Pièce | Cible dérivée | Réel (28 juill.) | Écart | Réel (27 juill.) |
 |---|---|---|---|---|
@@ -182,7 +196,7 @@ Livre de **90 000** au TOC, soit **+1,6 %**.
 | [Ch. 36](36-prospective-ap2-rails-canadiens.md) | 5 000 | **4 456** | −10,9 % | 4 383 |
 | **Livre** | **90 000** | **91 477** | **+1,6 %** | 90 251 |
 
-: Volumétrie du Livre III, re-mesurée le 28 juillet 2026 au terme de la passe de correction ; la dernière colonne conserve la mesure du 27 juillet, pour que le delta se lise. *L'écart se documente ; il ne se corrige ni par amputation ni par gonflement* (D-4).
+: Volumétrie du Livre III, re-mesurée le 28 juillet 2026 au terme de la passe de correction ; la dernière colonne conserve la mesure du 27 juillet, pour que le delta se lise. ⚠ **Constat daté et dépassé — ce tableau et les paragraphes d'analyse qui le suivent** — *les pièces ont depuis remplacé plusieurs de ces valeurs à leur propre en-tête, et le ch. 35 nomme ce tableau ; voir l'avertissement ci-dessus, et la mesure du 10 août 2026.* *L'écart se documente ; il ne se corrige ni par amputation ni par gonflement* (D-4).
 
 ⚠ **Le Livre a pris 1 226 mots — soit +1,4 % — et c'est intégralement de l'appareil, non de la matière.**
 *La passe de correction du 28 juillet 2026 n'a **rien** ajouté au propos des chapitres : elle a réécrit
@@ -193,19 +207,27 @@ dont les décomptes divergeaient le plus** : ch. 31 (+433), ch. 32 (+185), ch. 2
 *D-4 interdit d'amputer pour compenser ; l'écart se documente ici et alimente le re-calibrage de
 clôture.*
 
-⚠ **L'enveloppe reste tenue au Livre, et ce résultat ne prouve rien de la méthode — il faut le dire
-avant qu'on en tire une leçon fausse.** *Le Livre II avait **additionné ses dix cibles avant la
-première ligne** et obtenu exactement 50 000, pour finir à **+23,4 %** ; **ici la même addition a été
-faite, et l'écart au Livre est de +1,6 %**.* ⚠ ***La différence n'est donc pas dans la dérivation — elle
-était bonne dans les deux cas — mais dans la dispersion par pièce*** : **les écarts individuels vont de
-−18,3 % à +32,9 %**, soit **une amplitude de cinquante et un points**, et **ils se compensent**.
-*Une enveloppe tenue par compensation n'est pas une enveloppe prédite.*
+⚠ **L'enveloppe N'EST PLUS tenue, et la mesure du jour renverse la conclusion que ce paragraphe
+portait — un avertissement de légende ne suffit pas à désamorcer une prose qui affirme le contraire.**
+*Le Livre II avait **additionné ses dix cibles avant la première ligne** et obtenu exactement 50 000,
+pour finir à **+24,1 %** au 28 juillet 2026 — **+37,5 %** au 10 août ; **ici la même addition a été
+faite, et l'écart au Livre valait +1,6 % au 28 juillet — il vaut +11,0 % au 10 août 2026**.*
+⚠ ***La différence n'est toujours pas dans la dérivation — elle était bonne dans les deux cas — mais
+dans la dispersion par pièce*** : au 28 juillet, les écarts individuels allaient de **−18,3 % à
++32,9 %** — cinquante et un points — et **ils se compensaient** ; **re-calculés le 10 août 2026 sur
+les mêmes cibles dérivées, ils vont de −8,7 % (ch. 25) à +52,0 % (ch. 35)**, soit **une amplitude de
+soixante et un points**, et **ils ne se compensent plus**. *Une enveloppe tenue par compensation n'est
+pas une enveloppe prédite : elle cesse d'être tenue le jour où la compensation se défait, sans que la
+dérivation ait bougé d'un mot.*
 
-⚠ **Les deux extrêmes ont chacun leur cause, et elles sont opposées.** Le **ch. 24** dépasse d'un tiers
-parce qu'il **déplie dix sections dont chacune absorbe quatre à sept sous-sections d'une source
-unique** — *la cible avait été dérivée au prorata des **sections**, non des **sous-sections***.
-Le **ch. 33** est court de dix-huit pour cent parce que **sa matière est faite de dates, de statuts et de
-bornes** — *un chapitre qui doit surtout **ne pas écrire** est plus court qu'un chapitre qui expose.*
+⚠ **Les deux extrêmes du tableau du 28 juillet 2026 avaient chacun leur cause, et elles sont
+opposées** — ⚠ *ce ne sont plus les extrêmes du jour : au 10 août 2026, ce sont le **ch. 35
+(+52,0 %)** et le **ch. 25 (−8,7 %)**, que les deux causes ci-dessous n'expliquent pas.* Le **ch. 24**
+dépassait d'un tiers parce qu'il **déplie dix sections dont chacune absorbe quatre à sept
+sous-sections d'une source unique** — *la cible avait été dérivée au prorata des **sections**, non des
+**sous-sections***. Le **ch. 33** était court de dix-huit pour cent parce que **sa matière est faite
+de dates, de statuts et de bornes** — *un chapitre qui doit surtout **ne pas écrire** est plus court
+qu'un chapitre qui expose.*
 ⚠ **C'est le pendant exact de la cause identifiée au Livre II** : *là-bas, le bornage allongeait ; ici,
 il raccourcit — parce que **ce qui est borné n'est plus la formulation d'un énoncé mais son
 existence**.*
@@ -214,20 +236,20 @@ existence**.*
 
 | Pièce | Chapitre | Mouvement |
 |---|---|---|
-| [`22-options-orchestration-paradigme-apm.md`](22-options-orchestration-paradigme-apm.md) · [`.html`](22-options-orchestration-paradigme-apm.html) | Ch. 22 — Options d'orchestration et paradigme APM | autonomie encadrée |
+| [`22-options-orchestration-paradigme-apm.md`](22-options-orchestration-paradigme-apm.md) · [`.html`](22-options-orchestration-paradigme-apm.html) | Ch. 22 — Options d'orchestration et paradigme APM : la taxonomie OO1-OO4 et l'autonomie encadrée | autonomie encadrée |
 | [`23-frameworks-orchestration-entreprise.md`](23-frameworks-orchestration-entreprise.md) · [`.html`](23-frameworks-orchestration-entreprise.html) | Ch. 23 — Les frameworks d'orchestration d'entreprise | autonomie encadrée |
 | [`24-passage-echelle-entreprise.md`](24-passage-echelle-entreprise.md) · [`.html`](24-passage-echelle-entreprise.html) | Ch. 24 — Le passage à l'échelle de l'entreprise | autonomie encadrée |
 | [`25-e23-risque-modele.md`](25-e23-risque-modele.md) · [`.html`](25-e23-risque-modele.html) | Ch. 25 — E-23 : le risque de modèle à l'ère de l'IA | cadre réglementaire canadien |
 | [`26-vide-federal-c27-c36.md`](26-vide-federal-c27-c36.md) · [`.html`](26-vide-federal-c27-c36.html) | Ch. 26 — Le vide fédéral : de C-27 à C-36 | cadre réglementaire canadien |
-| [`27-quebec-amf-article-12-1.md`](27-quebec-amf-article-12-1.md) · [`.html`](27-quebec-amf-article-12-1.html) | Ch. 27 — Québec : l'AMF et l'article 12.1 de la Loi 25 | cadre réglementaire canadien |
+| [`27-quebec-amf-article-12-1.md`](27-quebec-amf-article-12-1.md) · [`.html`](27-quebec-amf-article-12-1.html) | Ch. 27 — Québec : la ligne directrice IA de l'AMF et l'article 12.1 de la Loi 25 | cadre réglementaire canadien |
 | [`28-valeurs-mobilieres-acvm-11-348.md`](28-valeurs-mobilieres-acvm-11-348.md) · [`.html`](28-valeurs-mobilieres-acvm-11-348.html) | Ch. 28 — Valeurs mobilières : l'avis ACVM 11-348 | cadre réglementaire canadien |
 | [`29-pont-frames-deterministes.md`](29-pont-frames-deterministes.md) · [`.html`](29-pont-frames-deterministes.html) | Ch. 29 — Le pont : des contraintes réglementaires aux frames déterministes | cadre réglementaire canadien |
-| [`30-maillage-reglementaire-normalisation.md`](30-maillage-reglementaire-normalisation.md) · [`.html`](30-maillage-reglementaire-normalisation.html) | Ch. 30 — Le maillage réglementaire international et la normalisation | cadre réglementaire canadien |
+| [`30-maillage-reglementaire-normalisation.md`](30-maillage-reglementaire-normalisation.md) · [`.html`](30-maillage-reglementaire-normalisation.html) | Ch. 30 — Le maillage réglementaire international et la normalisation institutionnelle | cadre réglementaire canadien |
 | [`31-vertical-financier-durcisseurs.md`](31-vertical-financier-durcisseurs.md) · [`.html`](31-vertical-financier-durcisseurs.html) | Ch. 31 — Le vertical financier : pourquoi l'agentique y est durcie | terrain canadien |
 | [`32-cadre-bancaire-consommateur.md`](32-cadre-bancaire-consommateur.md) · [`.html`](32-cadre-bancaire-consommateur.html) | Ch. 32 — Le cadre des services bancaires axés sur le consommateur | terrain canadien |
 | [`33-iso-20022-lynx-rtr.md`](33-iso-20022-lynx-rtr.md) · [`.html`](33-iso-20022-lynx-rtr.html) | Ch. 33 — ISO 20022 : Lynx accompli, RTR visé | terrain canadien |
-| [`34-sous-domaines-financiers.md`](34-sous-domaines-financiers.md) · [`.html`](34-sous-domaines-financiers.html) | Ch. 34 — Les sous-domaines financiers | terrain canadien |
-| [`35-etudes-de-cas-production-canadienne.md`](35-etudes-de-cas-production-canadienne.md) · [`.html`](35-etudes-de-cas-production-canadienne.html) | Ch. 35 — Études de cas : la production agentique canadienne | terrain canadien |
+| [`34-sous-domaines-financiers.md`](34-sous-domaines-financiers.md) · [`.html`](34-sous-domaines-financiers.html) | Ch. 34 — Les sous-domaines financiers : banque, assurance, patrimoine | terrain canadien |
+| [`35-etudes-de-cas-production-canadienne.md`](35-etudes-de-cas-production-canadienne.md) · [`.html`](35-etudes-de-cas-production-canadienne.html) | Ch. 35 — Études de cas : la production agentique canadienne (2025-2026) | terrain canadien |
 | [`36-prospective-ap2-rails-canadiens.md`](36-prospective-ap2-rails-canadiens.md) · [`.html`](36-prospective-ap2-rails-canadiens.html) | Ch. 36 — Prospective : AP2 sur les rails canadiens ? | terrain canadien |
 
 ⚠ **Un de ces chapitres porte deux mouvements** — le **ch. 22**, issu de la **fusion v0.20** (décision 11

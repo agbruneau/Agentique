@@ -108,9 +108,19 @@ jamais** — sa réf. [220] décrit un cadrage sans chapitre, et **cela reste vr
 
 ## Volumétrie réelle — et la leçon du Livre I appliquée sans effet
 
-**62 054 mots** de corps pour les dix pièces, mesurés le **28 juillet 2026** par
+☑ **Mesure du jour : 68 752 mots** de corps pour les dix pièces, relevés le **10 août 2026** par
 [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — contre une enveloppe
-de Livre de **50 000** au TOC, soit **+24,1 %**.
+de Livre de **50 000** au TOC, soit **+37,5 %**.
+
+⚠ **Le chiffre publié ici — 62 054 mots au 28 juillet 2026 — ne se reproduit plus, et les pièces de
+ce dossier le démentaient déjà.** La somme des cardinaux que **leurs dix en-têtes déclarent** vaut
+**65 700 mots**. L'écart se lit à la pièce, et l'une d'elles le nomme : le champ *Volumétrie cible* du
+[ch. 20](20-usurpation-revocation-boucle-defensive.md) porte **« réel : 9 623 mots »** et range le
+**8 868** que le tableau ci-dessous lui attribue parmi ses **« valeurs antérieures conservées et
+périmées »**. Le solde jusqu'à la mesure du jour — 65 700 → 68 752 — est postérieur au 28 juillet :
+les **figures du barème A ont été posées dans les pièces le 31 juillet 2026**, et la légende de
+chacune entre au corps que la commande mesure ; *les dix pièces en portent au moins une.*
+**Le cardinal courant d'une pièce se lit à son champ *Volumétrie cible*, jamais ici.**
 
 ⚠ **Le chiffre a été re-mesuré à chacune des trois passes, et il a bougé à chacune** : **61 165** à la
 rédaction, **61 677** au terme de la passe d'arbitrage, **62 054** au commit de la passe de correction
@@ -147,7 +157,7 @@ qu'un avis** (remontée **R-IV-17**). ☑ **D-4 est tranchée depuis le 27 juill
 | [Ch. 21](21-horloge-post-quantique.md) | 5 800 | **8 587** | **+48,1 %** |
 | **Livre** | **50 000** | **62 054** | **+24,1 %** |
 
-: Volumétrie du Livre II, re-mesurée le 28 juillet 2026 au commit de la passe de correction. *L'écart se documente ; il ne se corrige ni par amputation ni par gonflement.*
+: Volumétrie du Livre II, re-mesurée le 28 juillet 2026 au commit de la passe de correction. ⚠ **Constat daté et dépassé — ce tableau et les paragraphes d'analyse qui le suivent** — *ces valeurs sont inférieures aux cardinaux que les dix pièces portent en tête ; voir l'avertissement ci-dessus, et la mesure du 10 août 2026.* *L'écart se documente ; il ne se corrige ni par amputation ni par gonflement.*
 
 ⚠ **Les trois plus forts écarts ont la même cause, et elle est structurelle** : les ch. 15, 20 et 21
 sont les trois pièces qui **bornent le plus densément** — le ch. 15 porte **sept marqueurs de R-02**,
@@ -163,7 +173,7 @@ re-mesurables ni dans un sens ni dans l'autre.*
 
 | Pièce | Chapitre | Mouvement |
 |---|---|---|
-| [`12-heritage-standards-etires.md`](12-heritage-standards-etires.md) · [`.html`](12-heritage-standards-etires.html) | Ch. 12 — L'héritage et les standards étirés | émettre |
+| [`12-heritage-standards-etires.md`](12-heritage-standards-etires.md) · [`.html`](12-heritage-standards-etires.html) | Ch. 12 — L'héritage et les standards étirés : un demi-siècle d'identités non humaines, puis OAuth, OIDC et SCIM face à l'agent | émettre |
 | [`13-identite-decentralisee-vc-did.md`](13-identite-decentralisee-vc-did.md) · [`.html`](13-identite-decentralisee-vc-did.html) | Ch. 13 — L'identité décentralisée : VC, DID et la promesse du portable | émettre |
 | [`14-grille-cinq-questions.md`](14-grille-cinq-questions.md) · [`.html`](14-grille-cinq-questions.html) | Ch. 14 — La grille des cinq questions | émettre |
 | [`15-emettre-carte-annuaires-registres.md`](15-emettre-carte-annuaires-registres.md) · [`.html`](15-emettre-carte-annuaires-registres.html) | Ch. 15 — Émettre : Agent Card signée, annuaires, registres gouvernés | émettre |
@@ -171,8 +181,8 @@ re-mesurables ni dans un sens ni dans l'autre.*
 | [`17-chaine-mandat-deux-sauts.md`](17-chaine-mandat-deux-sauts.md) · [`.html`](17-chaine-mandat-deux-sauts.html) | Ch. 17 — La chaîne de mandat et le problème des deux sauts | émettre |
 | [`18-know-your-agent.md`](18-know-your-agent.md) · [`.html`](18-know-your-agent.html) | Ch. 18 — Know Your Agent : la vérification d'agent tiers inter-domaines | émettre |
 | [`19-taxonomie-attaques-identite-delegation.md`](19-taxonomie-attaques-identite-delegation.md) · [`.html`](19-taxonomie-attaques-identite-delegation.html) | Ch. 19 — Taxonomie des attaques d'identité et de délégation | confiance hostile |
-| [`20-usurpation-revocation-boucle-defensive.md`](20-usurpation-revocation-boucle-defensive.md) · [`.html`](20-usurpation-revocation-boucle-defensive.html) | Ch. 20 — Usurpation, révocation et boucle défensive | confiance hostile |
-| [`21-horloge-post-quantique.md`](21-horloge-post-quantique.md) · [`.html`](21-horloge-post-quantique.html) | Ch. 21 — L'horloge post-quantique | horloge post-quantique |
+| [`20-usurpation-revocation-boucle-defensive.md`](20-usurpation-revocation-boucle-defensive.md) · [`.html`](20-usurpation-revocation-boucle-defensive.html) | Ch. 20 — Usurpation, révocation et boucle défensive : du *rug-pull* à l'*agentic SOC* | confiance hostile |
+| [`21-horloge-post-quantique.md`](21-horloge-post-quantique.md) · [`.html`](21-horloge-post-quantique.html) | Ch. 21 — L'horloge post-quantique : menace sur la pile identitaire, crypto-agilité et dette de migration | horloge post-quantique |
 
 ⚠ **Trois de ces chapitres portent deux mouvements chacun** — les ch. 12, 20 et 21, issus des
 **fusions v0.20** (décision 11 du TOC). *Les deux entrées y sont conservées intégralement, avec leurs

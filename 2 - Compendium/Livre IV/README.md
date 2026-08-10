@@ -61,6 +61,7 @@ du PRD §6**, qui plaçait son second mouvement après les Livres I et III.
 | **Énoncés centraux au sens de CA-IV-01** | ⚠ **aucun**, dans aucune des dix pièces |
 | **Sièges posés** | ⚠ **CINQ, et non trois** — *le décompte publié en était faux* : trois versés à l'appareil le 27 juillet 2026, **deux découverts par l'audit du 28** (voir plus bas) |
 | **Statut des pièces** | **brouillon non publiable** — inchangé |
+| **Passe de correction du 28 juillet 2026** | ⚠ **douze constats d'audit soldés dans les dix pièces**, dont **dix thèses re-citées par copie** et **les dix champs « Garde-fous balayés » re-mesurés** sous la décision 16 — *aucune porte franchie, aucun statut changé* |
 
 ⚠ **Ce tableau est un constat daté et deux de ses lignes ont été DÉPASSÉES depuis — le rappel est du
 8 août 2026, il ne réécrit rien.** ☑ **La porte G-3 est franchie le 28 juillet 2026** et le socle
@@ -70,7 +71,6 @@ sortie 0*). ☑ **La table `SIEGES` porte 26 sièges sur 50 pièces** (`python P
 ⚠ **Rien d'autre n'a bougé** : *aucun énoncé n'est central au sens de CA-IV-01, CA-IV-11 et CA-IV-13
 demeurent non satisfaisables, et les pièces restent un brouillon arrêté, non publiable* — **une porte
 franchie n'est pas un ouvrage recevable.**
-| **Passe de correction du 28 juillet 2026** | ⚠ **douze constats d'audit soldés dans les dix pièces**, dont **dix thèses re-citées par copie** et **les dix champs « Garde-fous balayés » re-mesurés** sous la décision 16 — *aucune porte franchie, aucun statut changé* |
 
 *Zéro remontée ouverte ne veut pas dire pièce recevable : cela veut dire qu'aucune question n'attend
 plus de réponse qui ne soit déjà tranchée.* ⚠ **Et une condition de publication n'est satisfaisable par
@@ -114,9 +114,17 @@ main.**
 
 ## Volumétrie réelle — et une leçon symétrique de celle du Livre II
 
-**56 025 mots** de corps pour les dix pièces, **re-mesurés le 28 juillet 2026** par
+☑ **Mesure du jour : 59 962 mots** de corps pour les dix pièces, relevés le **10 août 2026** par
 [`PRD/decompte.sh`](../PRD/decompte.sh), **seule autorité de décompte du volume** — contre une
-enveloppe de Livre de **69 000** au TOC, soit **−18,8 %**.
+enveloppe de Livre de **69 000** au TOC, soit **−13,1 %**.
+
+⚠ **Le chiffre publié ici — 56 025 mots au 28 juillet 2026 — ne se reproduit plus, et les pièces de ce
+dossier le démentaient déjà** : le champ *Volumétrie cible* du
+[ch. 40](40-indicateurs-agentops-finops.md) porte **« réel : 6 080 mots »** là où le tableau
+ci-dessous lui attribue **5 564**. Le solde jusqu'à la mesure du jour est postérieur au 28 juillet :
+les **figures du barème A ont été posées dans les pièces le 31 juillet 2026**, et la légende de
+chacune entre au corps que la commande mesure ; *les dix pièces en portent au moins une.*
+**Le cardinal courant d'une pièce se lit à son champ *Volumétrie cible*, jamais ici.**
 
 ⚠ **Ce chiffre remplace les 55 249 publiés le 27 juillet 2026, et l'écart a DEUX causes qu'il faut
 tenir séparées.** *(1)* **Un mot venait d'une mesure prise avant une retouche du même commit** : le
@@ -150,7 +158,7 @@ cas** : *ce qui varie est la matière.*
 | [Ch. 46](46-instrumentation-feuille-route.md) | 3 000 | 2 756 | **2 917** | −2,8 % |
 | **Livre** | **69 000** | 55 249 | **56 025** | **−18,8 %** |
 
-: Volumétrie du Livre IV. *L'écart se documente ; il ne se corrige ni par amputation ni par **gonflement** — et c'est la seconde interdiction qui porte ici.* ⚠ **Trois pièces sont inchangées** — ch. 42, 43 et 44 —, *toutes leurs corrections tombant dans l'en-tête ou dans la note de statut, que la commande de décompte exclut du corps.*
+: Volumétrie du Livre IV, aux commits des 27 et 28 juillet 2026. ⚠ **Constat daté et dépassé — ce tableau et les paragraphes d'analyse qui le suivent** — *voir l'avertissement ci-dessus, et la mesure du 10 août 2026.* *L'écart se documente ; il ne se corrige ni par amputation ni par **gonflement** — et c'est la seconde interdiction qui porte ici.* ⚠ **Trois pièces sont inchangées** — ch. 42, 43 et 44 —, *toutes leurs corrections tombant dans l'en-tête ou dans la note de statut, que la commande de décompte exclut du corps.*
 
 ⚠ **Les trois plus forts écarts ont trois causes distinctes, et aucune n'est une coupe.**
 
@@ -175,10 +183,12 @@ cas** : *ce qui varie est la matière.*
    **renvoie** là où une monographie **développe**.**
 
 ⚠ **C'est la leçon symétrique de celle du Livre II, et les deux se lisent ensemble.** *Le Livre II
-dépassait de **+23,4 %** parce que **le bornage allonge** : un chapitre qui doit dire, à chaque
-énoncé, ce que sa source démontre et ne démontre pas est plus long qu'un chapitre qui affirme.*
-**Celui-ci reste en deçà de **−18,8 %** parce que **le siège raccourcit** : un chapitre qui renvoie où
-un autre a posé est plus court qu'un chapitre qui reconstruit.** ⚠ ***Les deux forces jouent dans tous
+dépassait de **+24,1 %** au 28 juillet 2026 — **+37,5 %** à la mesure du 10 août — parce que **le
+bornage allonge** : un chapitre qui doit dire, à chaque énoncé, ce que sa source démontre et ne
+démontre pas est plus long qu'un chapitre qui affirme.* **Celui-ci reste en deçà — **−18,8 %** au
+28 juillet, **−13,1 %** au 10 août — parce que **le siège raccourcit** : un chapitre qui renvoie où
+un autre a posé est plus court qu'un chapitre qui reconstruit.** ⚠ *Le sens de l'écart n'a pas
+changé de signe en treize jours ; c'est la seule chose que la mesure du jour confirme ici.* ⚠ ***Les deux forces jouent dans tous
 les Livres ; ce qui change est laquelle domine*** — et **l'enveloppe héritée n'avait budgété ni l'une
 ni l'autre.** *La mesure alimente **D-4**, dont le re-calibrage est remis à une passe unique de
 clôture sur les cinq Livres.*
@@ -187,15 +197,15 @@ clôture sur les cinq Livres.*
 
 | Pièce | Chapitre | Mouvement |
 |---|---|---|
-| [`37-maillage-agents-point-application.md`](37-maillage-agents-point-application.md) · [`.html`](37-maillage-agents-point-application.html) | Ch. 37 — Le maillage d'agents : du *service mesh* au point d'application | appliquer |
+| [`37-maillage-agents-point-application.md`](37-maillage-agents-point-application.md) · [`.html`](37-maillage-agents-point-application.html) | Ch. 37 — Le maillage d'agents : du *service mesh* au point d'application (PEP/PDP et *zero trust* agentique) | appliquer |
 | [`38-observabilite-agentique.md`](38-observabilite-agentique.md) · [`.html`](38-observabilite-agentique.html) | Ch. 38 — L'observabilité agentique | exploiter |
-| [`39-cycle-de-vie-operationnel.md`](39-cycle-de-vie-operationnel.md) · [`.html`](39-cycle-de-vie-operationnel.html) | Ch. 39 — Le cycle de vie opérationnel | exploiter |
+| [`39-cycle-de-vie-operationnel.md`](39-cycle-de-vie-operationnel.md) · [`.html`](39-cycle-de-vie-operationnel.html) | Ch. 39 — Le cycle de vie opérationnel : évaluation continue, dérive et incident | exploiter |
 | [`40-indicateurs-agentops-finops.md`](40-indicateurs-agentops-finops.md) · [`.html`](40-indicateurs-agentops-finops.html) | Ch. 40 — Les indicateurs de l'AgentOps et le FinOps des agents | exploiter |
 | [`41-fabrique-agents.md`](41-fabrique-agents.md) · [`.html`](41-fabrique-agents.html) | Ch. 41 — La fabrique d'agents : produire, certifier et réémettre le parc | **produire** |
 | [`42-matrice-protocoles-exigences.md`](42-matrice-protocoles-exigences.md) · [`.html`](42-matrice-protocoles-exigences.html) | Ch. 42 — La matrice protocoles × exigences réglementaires | composer |
 | [`43-architecture-reference-couches.md`](43-architecture-reference-couches.md) · [`.html`](43-architecture-reference-couches.html) | Ch. 43 — L'architecture de référence unifiée par couches | composer |
 | [`44-formalisation-archimate.md`](44-formalisation-archimate.md) · [`.html`](44-formalisation-archimate.html) | Ch. 44 — La formalisation ArchiMate | composer |
-| [`45-blueprint-instancie-cycle-de-vie.md`](45-blueprint-instancie-cycle-de-vie.md) · [`.html`](45-blueprint-instancie-cycle-de-vie.html) | Ch. 45 — Le blueprint instancié et son cycle de vie | composer |
+| [`45-blueprint-instancie-cycle-de-vie.md`](45-blueprint-instancie-cycle-de-vie.md) · [`.html`](45-blueprint-instancie-cycle-de-vie.html) | Ch. 45 — Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d'un agent d'entreprise | composer |
 | [`46-instrumentation-feuille-route.md`](46-instrumentation-feuille-route.md) · [`.html`](46-instrumentation-feuille-route.html) | Ch. 46 — Instrumentation et feuille de route vers le 1ᵉʳ mai 2027 | composer |
 
 ⚠ **Deux de ces chapitres portent deux mouvements chacun** — les **ch. 37 et 45**, issus des **fusions

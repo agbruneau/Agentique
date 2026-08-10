@@ -89,25 +89,40 @@ jamais** — sa réf. [220] décrit un cadrage sans chapitre, et cela reste vrai
 
 ### Volumétrie réelle — publiable depuis G-2
 
-**64 750 mots** de corps pour les onze pièces, **re-mesurés le 28 juillet 2026** par
+☑ **Mesure du jour : 72 483 mots** de corps pour les onze pièces, relevés le **10 août 2026** par
 [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — contre une enveloppe
-de Livre de **65 000** au TOC, soit **−0,4 %**.
+de Livre de **65 000** au TOC, soit **+11,5 %**. *C'est le seul cardinal de cette section qu'on
+reproduise en exécutant la commande sur ce dossier.*
 
-⚠ **Le chiffre a bougé de +139 mots à la passe de correction du 28 juillet 2026, et il se lit ainsi.**
-La mesure de rédaction valait **64 611** (−0,6 %) ; sept pièces ont vu leur corps touché par les
-corrections d'audit — ch. 3 (+13), ch. 6 (+33), ch. 7 (+6), ch. 8 (+4), ch. 9 (+4), ch. 10 (+32),
-ch. 11 (+47) —, l'essentiel venant de la numérotation des tableaux des ch. 10 et 11 et de
-l'attribution nominative de trois métriques. *Un cardinal se re-mesure après tout ajout de contenu ;
-il ne se recopie pas.* ⚠ **Les chiffres publiés hors de ce dossier — audit du 28 juillet 2026 (§2 et
-§4.2), et tout décompte agrégé du compendium — restent à la mesure de rédaction et sont donc périmés
-d'autant** : l'écart est **remonté**, il n'est pas corrigé depuis ici.
+⚠ **Le chiffre longtemps publié ici — 64 750 mots — ne se reproduit plus, et il était déjà démenti
+par les pièces de ce dossier. Trois écarts, qui se déclarent séparément.**
 
-⚠ **Le chiffre agrégé est bon et les chiffres individuels sont mauvais, et c'est le constat qui
-compte.** Chaque pièce a **dérivé** sa cible de l'enveloppe du Livre, personne n'ayant additionné les
+1. ⚠ **Il date du 27 juillet 2026, non du 28.** Le champ *Volumétrie cible* du
+   [ch. 10](10-transaction-infrastructure.md) l'écrit lui-même : *« le réel du Livre est de 64 750
+   mots […] au commit du 27 juillet 2026 »*, puis *« ce total de Livre n'est pas re-mesuré ici »*.
+   **Le Livre n'a jamais été re-mesuré à son propre grain à la passe du 28.**
+2. ⚠ **Les onze pièces le contredisent, et elles suffisent à l'établir sans mesure extérieure** : la
+   somme des cardinaux que **leurs onze en-têtes déclarent** vaut **71 980 mots**. Le ch. 10 y porte
+   **7 036 → 7 548, soit +512**, là où la reconstruction publiée ici imputait **+32**. *Cette
+   reconstruction — « +139 mots sur sept pièces », ch. 3 (+13), ch. 6 (+33), ch. 7 (+6), ch. 8 (+4),
+   ch. 9 (+4), ch. 10 (+32), ch. 11 (+47) — est **retirée** : un total que les pièces démentent n'est
+   pas un constat daté, c'est une erreur datée.*
+3. **Le solde — 71 980 → 72 483, soit 503 mots — est postérieur au 28 juillet.** Les **figures du
+   barème A ont été posées dans les pièces le 31 juillet 2026** et la légende de chacune entre au
+   corps que la commande mesure ; *les onze pièces de ce Livre en portent au moins une.*
+
+⚠ **Les chiffres publiés hors de ce dossier — audit du 28 juillet 2026 (§2 et §4.2), et tout décompte
+agrégé du compendium — sont périmés d'autant** : l'écart est **remonté**, il n'est pas corrigé depuis
+ici.
+
+⚠ **Ce que la volumétrie établit, en revanche, n'a pas bougé : les cibles individuelles étaient
+fausses.** Chaque pièce a **dérivé** sa cible de l'enveloppe du Livre, personne n'ayant additionné les
 dérivations : leur somme atteint **93 000 mots**, soit **+43 %** de l'enveloppe qu'elles prétendaient
-toutes respecter. Les écarts individuels vont de **−55,5 %** (ch. 6) à **+0,5 %** (ch. 10). *C'est la
-cible dérivée qui était fausse, non la pièce qui est courte* — et l'écart se documente, il ne se
-corrige ni par amputation ni par gonflement.
+toutes respecter. ⚠ **Les écarts individuels, re-calculés au 10 août 2026, vont de −45,8 % (ch. 6) à
++8,5 % (ch. 11)** — *le « −55,5 % (ch. 6) à +0,5 % (ch. 10) » publié ici ne se retrouve à aucune
+mesure du dossier, ni au jour, ni aux cardinaux que les pièces déclarent.* *C'est la cible dérivée qui
+était fausse, non la pièce qui est courte* — et l'écart se documente, il ne se corrige ni par
+amputation ni par gonflement.
 
 ### Les onze pièces
 
@@ -225,7 +240,8 @@ Trois constats méritent d'être retenus avant d'ouvrir le Livre suivant.
 
 ⚠ **Sur instruction d'auteur, les onze pièces ont été corrigées le 28 juillet 2026 en réponse à
 l'audit des cinq Livres** (`audit.md`, section 4 pour le Livre I ; constats transversaux T-1, T-2 et
-T-4). ⚠ **Rien de ce qui suit ne requalifie le Livre** : les portes n'ont pas bougé, le socle
+T-4). ⚠ **`audit.md` n'est pas au dépôt** : il n'y a jamais été versé, et *le nom est conservé parce
+qu'il date le constat, non parce qu'il désigne un fichier qu'on puisse ouvrir ici.* ⚠ **Rien de ce qui suit ne requalifie le Livre** : les portes n'ont pas bougé, le socle
 consolidé compte toujours **zéro entrée**, **CA-IV-13 reste insatisfaite** — *une passe de correction
 n'est pas une relecture adversariale, et se corriger soi-même n'est pas être relu.* Les onze pièces
 demeurent des **brouillons non publiables**, et l'audit qui les a relevées **ne fait pas autorité** :
@@ -311,9 +327,11 @@ relèvent d'eux et sont laissés intacts :
    du ch. 1 en éprouve **trois** (découplage, contrat, évolution — l'évolution au § 1.1.4), et le
    § 1.7 le confirme. La pièce a été alignée sur elle-même ; **le plan reste à réaligner** au titre de
    la décision 8.
-2. ⚠ **La volumétrie du Livre est passée de 64 611 à 64 750 mots** (−0,4 % de l'enveloppe). Les
-   chiffres publiés hors de ce dossier — audit §2 et §4.2, agrégat du compendium — sont périmés
-   d'autant, et **ne se corrigent pas depuis ici**.
+2. ⚠ **La volumétrie du Livre est périmée partout où elle a été publiée.** ⚠ *Le couple « 64 611 →
+   64 750 » qui figurait ici est **retiré** : les onze en-têtes somment à **71 980**, et la mesure du
+   10 août 2026 donne **72 483** (volumétrie ci-dessus).* Les chiffres publiés hors de ce dossier —
+   audit §2 et §4.2, agrégat du compendium — sont périmés d'autant, et **ne se corrigent pas depuis
+   ici**.
 3. ⚠ **La date de l'instrument repris au ch. 3 § 3.1.2 n'est pas portée** : le référentiel OWASP est
    désormais nommé, mais **aucune version datée ne figure au corpus de la pièce**, et *ce qui n'a pas
    été vu à la source ne s'écrit pas comme vu*. L'arbitrage 3 demande l'auteur **et** la date ; seul
@@ -333,8 +351,9 @@ des précédents.
 - `verifier-piece.py` sur les **onze** pièces : **sortie 0** pour chacune, les huit contrôles passent ;
 - les onze `.html` **régénérés** par `rendre-piece.py` depuis le `.md` corrigé, au même geste — *le
   rendu se génère, il ne se recopie pas* ;
-- `PRD/decompte.sh` sur les onze pièces : **64 750 mots**, re-mesurés et reportés dans les onze
-  en-têtes ;
+- `PRD/decompte.sh` sur les onze pièces — ⚠ **le total de « 64 750 mots » qui figurait ici est
+  retiré** : *chaque en-tête porte sa propre mesure et les onze somment à **71 980**, jamais à
+  64 750 ; aucun total de Livre n'a été reporté dans les pièces à cette passe* (volumétrie ci-dessus) ;
 - `PRD/check-sieges.py` : **sortie 0** — « les 12 sièges tiennent sur 50 pièces (S1-S5) ». ⚠ **Domaine
   déclaré** : l'arbre de travail au 28 juillet 2026, **où des passes sœurs éditaient simultanément les
   Livres II à V** ; le contrôle porte donc sur un corpus dont ce dossier n'écrit qu'un cinquième, et

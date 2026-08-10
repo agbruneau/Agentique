@@ -29,7 +29,7 @@ sont complémentaires et forment un triptyque cohérent :
 | **Dossier** | [`1 - InteroperabiliteAgentique/`](1%20-%20InteroperabiliteAgentique/) | [`2 - OrchestrationAgentique/`](2%20-%20OrchestrationAgentique/) | [`3 - EntrepriseAgentique/`](3%20-%20EntrepriseAgentique/) |
 | **Thèse** | *Autonomie graduée sous contrôle de finalité* | *Autonomie encadrée (framed autonomy)* | *La confiance ne se décrète pas, elle se fabrique* |
 | **Portée** | Mondiale (UE, É.-U., R.-U., Asie) | Canada-Québec (cadre réglementaire) | Organisation et cycle de vie (NHI, AgentOps) |
-| **Volumétrie** | **569 p.** (7 chapitres + Annexe B, **233 257 mots**) | **387 p.** (29 pièces, 92 059 mots) | **427 p.** (34 pièces, **160 890 mots**) |
+| **Volumétrie** | **569 p.** (7 chapitres + Annexe B, **233 257 mots**) | **387 p.** (29 pièces, 92 056 mots) | **427 p.** (34 pièces, **160 890 mots**) |
 | **Méthode** | Formalisme d'ingénierie (ArchiMate 4, ADS) | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié + socle propre (98 entrées) |
 | **Gel** | Juin 2026 | 16–17 juillet 2026 | Hérite des deux gels + pièces propres |
 
@@ -331,7 +331,7 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 | | Vol. I | Vol. II | Vol. III | **Total du corpus** |
 |---|---|---|---|---|
 | **Pages** | 569 | 387 | 427 | **1 383 p.** |
-| **Mots** | 233 257 | 92 059 | 160 890 | **486 206** |
+| **Mots** | 233 257 | 92 056 | 160 890 | **486 203** |
 | **Pièces** | 8 (7 chap. + Annexe B) | 29 (24 chap. + annexes) | 34 (28 chap. + annexes) | **71 pièces rédigées** |
 | **Socle factuel** | Vérification adverse | 46 entrées (F-01–F-48) | 98 entrées (F-01–F-98) + 33 héritées | **144 entrées codifiées (46 + 98)** |
 | **Diagrammes** | 28 Mermaid | 0 | 0 | **28 diagrammes** |
@@ -352,8 +352,16 @@ de `2 - OrchestrationAgentique/monographie/`** (§ 6.2, § 13.2, glossaire de l'
 qui appelaient l'autonomie encadrée le *titre* de l'ouvrage pour en faire sa *thèse*, et **trois
 jetons sont tombés**. *(Le script mesure les pièces, non le `Monographie.md` assemblé.)* ⚠ *Le script a
 raison ; c'est sa valeur d'ancrage qui est périmée d'un renommage, et personne ne la remettra à jour
-— le dépôt est clos.* Le total en mots de la ligne ci-dessus, lui, ne bouge pas : le chiffre publié
-du Vol. II est **92 059**, pris par une autre commande, que cet écart ne touche pas.
+— le dépôt est clos.*
+
+⚠ **Et la ligne « Mots » ci-dessus bouge du même écart — ce paragraphe affirmait le contraire, et il
+avait tort.** Les trois jetons sont tombés **dans le corps des pièces**, que les **deux** commandes
+mesurent : rejouée sur les 29 pièces le 10 août 2026, la commande de référence de
+[PRDPlan §4.2](2%20-%20OrchestrationAgentique/prd/PRDPlan.md) rend **92 056**, non les **92 059**
+publiés au 17 juillet 2026 ; le total du corpus passe de 486 206 à **486 203**. *Ce qui sépare les
+deux commandes est une définition du jeton, pas un périmètre de texte : un écart pris dans le corps
+les touche donc toutes les deux, et « pris par une autre commande » n'a jamais mis un chiffre à
+l'abri.*
 
 ---
 
@@ -375,15 +383,20 @@ du Vol. II est **92 059**, pris par une autre commande, que cet écart ne touche
 ├── 0 - Références/                          ⚠ 3 PDF de littérature source (32,5 Mio), déposés le 8 août 2026
 │                                              — cités par AUCUN document du dépôt, sans README ni régime déclaré
 ├── 1 - InteroperabiliteAgentique/           Vol. I (569 p., 233 257 mots)
-│   ├── Chapitres/                             7 chapitres + 7 bibliographies + Annexe B (ADS)
+│   ├── README.md                              présentation du volume
+│   ├── Chapitres/                             7 chapitres + 7 bibliographies + Annexe B (ADS) + TOC.md
 │   ├── Monographie.md / .pdf                  assemblage
-│   └── build/                                 pipeline FESP (Mermaid → Pandoc → Typst)
-├── 2 - OrchestrationAgentique/              Vol. II (387 p., 92 059 mots)
+│   ├── build/                                 pipeline FESP (Mermaid → Pandoc → Typst)
+│   └── LICENSE, .gitignore                    seul `LICENSE` du dépôt — il ne vaut que pour ce volume
+├── 2 - OrchestrationAgentique/              Vol. II (387 p., 92 056 mots)
+│   ├── README.md                              présentation du volume
 │   ├── monographie/                           29 pièces (parties I-VII, annexes, registre des gels)
-│   ├── prd/                                   PRD, PRDPlan, TOC, audit — gouvernance
+│   │                                          + README.md, l'index de lecture des 29 pièces
+│   ├── prd/                                   PRD, PRDPlan, TOC, audit + 2 PDF sources — gouvernance
 │   ├── verification/                          revalidations et grille de conformité
 │   ├── build/                                 assemblage + pipeline Pandoc → Typst
-│   └── Monographie.md / .pdf                  assemblage
+│   ├── Monographie.md / .pdf                  assemblage
+│   └── .gitignore
 └── 3 - EntrepriseAgentique/                 Vol. III (427 p., 160 890 mots)
     ├── README.md                              présentation du volume (déposée le 29 juill. 2026)
     ├── monographie/                           34 pièces rédigées + registre des gels
@@ -405,14 +418,18 @@ lecture et registre de gel exclus — *31 − 2 au Vol. II, 35 − 1 au Vol. III
 porte pas d'index de lecture*), les **28 diagrammes** du Vol. I (motif ancré `grep -c '^```mermaid'`), les
 **144 entrées de socle codifiées** (46 + 98, lignes d'entrée du PRD de chaque volume). Ce qui a été
 corrigé : la volumétrie du Vol. I — **233 257 mots**, non « ≈ 263 600 », chiffre qu'aucune commande du
-dépôt ne produit ; le **total en mots** qui en dérivait, ramené de « ≈ 516 500 » à **486 206**, ce qui
+dépôt ne produit ; le **total en mots** qui en dérivait, ramené de « ≈ 516 500 » à **486 206** — et
+à **486 203** depuis la re-mesure du 10 août 2026, note de volumétrie ci-dessus —, ce qui
 retire au corpus le seuil des 500 000 mots qu'il s'attribuait ; et le **cardinal des pièces**, porté de
 70 à **71**, la ligne comptant l'Annexe B du Vol. I sans l'additionner. ⚠ **Une re-mesure, qu'elle
 confirme ou qu'elle corrige, ne change aucun état** : le Vol. III demeure **rédigé et non publiable**.
 
-⚠ **La pagination n'a pas été relevée avec `pypdf`**, que les passes antérieures citaient : il n'est pas
-installé sur le poste de cette passe. Elle a été lue dans le `/Count` de l'unique objet `/Type /Pages`
-de chaque PDF, qui est l'autorité de la pagination au format. ⚠ *La première rédaction de cette note
+⚠ **La pagination n'a pas été relevée avec `pypdf`** à la passe du 8 août 2026, que les passes
+antérieures citaient : il n'était pas installé sur le poste de cette passe-là. Elle a été lue dans le
+`/Count` de l'unique objet `/Type /Pages` de chaque PDF, qui est l'autorité de la pagination au format.
+☑ **`pypdf` est installé depuis la passe du 9 août 2026** (**6.15.0**, [README du dépôt](../README.md))
+et **rend les mêmes valeurs** — 569, 387 et 427 : *le relevé de repli n'était pas un pis-aller, c'était
+la même mesure prise à la main.* ⚠ *La première rédaction de cette note
 mettait en garde contre le motif `grep -c '/Type /Page'` en lui prêtant un décompte doublé (1 138, 774,
 854) : la mise en garde était fausse en trois points, et un critique l'a reprise en réexécutant la
 commande.* Avec l'espace, le motif rend **0** — Typst écrit `/Type/Page` sans espace. Le doublement
@@ -433,4 +450,5 @@ de sa propre charge éditoriale.
 
 ---
 
-*Synthèse consolidée — juillet 2026 · décomptes re-mesurés au dépôt final du 29 juillet 2026*
+*Synthèse consolidée — juillet 2026 · décomptes des trois volumes re-mesurés sur pièce le 8 août 2026 ;
+pagination du compendium et volumétrie de la revue relevées le 9 août 2026*

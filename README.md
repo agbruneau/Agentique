@@ -349,9 +349,10 @@ contrat, évolution*.
 ## Vol. II — Orchestration agentique
 
 Monographie sur l'interopérabilité et l'orchestration agentique en services financiers canadiens,
-publiée sous le millésime `mono-v1.0`. **92 059 mots** en 29 pièces (24 chapitres, avant-propos,
-annexes A-D) selon son README ; `Monographie.pdf` **387 p.** (article de synthèse, 66 p., retiré du
-dossier le 22 juillet 2026).
+publiée sous le millésime `mono-v1.0`. **92 056 mots** en 29 pièces (24 chapitres, avant-propos,
+annexes A-D) selon son README — ⚠ **92 059 au 17 juillet 2026**, les trois jetons perdus au commit
+`659241b` touchant **les deux** commandes de décompte et non la seule `decompte.sh` ;
+`Monographie.pdf` **387 p.** (article de synthèse, 66 p., retiré du dossier le 22 juillet 2026).
 
 ⚠ `mono-v1.0` a été un **millésime éditorial sans étiquette git** du 17 juillet au 8 août 2026 :
 aucune référence de ce nom n'existait dans le dépôt, ni en local ni sur le distant (vérifié le
@@ -609,10 +610,16 @@ et aucune discipline de veille ne corrige cela. ⚠ **L'édition intégrale de l
 conséquence la certitude de sa propre datation** (§13.6) : sa date du 7 avril repose sur des
 sources secondaires, et n'est donc pas mieux étayée que celle du Vol. II.
 
-⚠ **Le cadrage du Vol. IV tranche ces deux divergences en faveur du Vol. II** — ligne directrice
-AMF finale au 30 mars 2026 (ch. 31), aucun transfert de gouvernance d'AP2 documenté (ch. 10) —
+⚠ **Le cadrage du Vol. IV tranchait ces deux divergences en faveur du Vol. II** — ligne directrice
+AMF finale au 30 mars 2026, aucun transfert de gouvernance d'AP2 documenté (ch. 10) —
 donc *contre* les lectures de la veille. L'arbitrage est consigné à son Annexe C. Sur AP2 il est
-**périmé par une source primaire datée** ; sur l'AMF il n'est **ni confirmé ni infirmé**. Et de
+**périmé par une source primaire datée** ; ⚠ **sur l'AMF il a été DÉFAIT par le Vol. IV lui-même** :
+la remontée R-IV-88 (TOC v0.27, réalignée en v0.29) établit, par extraction du 21 juillet 2026,
+qu'**aucune des deux dates arbitrées ne figure aux pages officielles** — la somme écrit désormais
+**« avril 2026 »**, déclare les trois états, et **proscrit de rétablir « 30 mars 2026 »**. *Une
+divergence dont aucun terme n'est à la source n'est plus une divergence tranchée : c'est une absence
+de datation.* Le chapitre porteur est le **ch. 27** (Livre III), non le ch. 31, qui n'écrit pas une
+fois « AMF ». Et de
 toute manière, tant que le compendium n'est pas **recevable** — ses cinquante chapitres sont un
 brouillon écrit hors portes, que le PDF compose sans le publier —, **cet arbitrage n'a aucune
 autorité** : les volumes sources font foi et la divergence reste ouverte — le plan le dit lui-même.
@@ -643,19 +650,26 @@ le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
 ├── check-revue.py                         ← contrôles de publication de la revue (appariement, tableaux, doublons, régimes)
 ├── gauntlet-log.md                        ← journal append-only des boucles bâtisseur/critique (veille d'août, revue)
 │                                             ⚠ purgé à la clôture du 8 août 2026, redéposé le même jour avec la passe de veille
+├── .gitignore                             ← couvre notamment les `__pycache__` (aucun bytecode au suivi git)
 ├── 1 - Corpus/                            ← le triptyque
+│   ├── README.md                            synthèse consolidée des trois monographies
 │   ├── 0 - Références/                      ⚠ 3 PDF de littérature source (32,5 Mio), déposés le 8 août 2026
 │   │                                          — cités par AUCUN document du dépôt, aucune entrée de socle
 │   ├── 1 - InteroperabiliteAgentique/       Vol. I
-│   │   ├── Chapitres/                         7 chapitres + 7 bibliographies + Annexe B (ADS)
+│   │   ├── README.md                          présentation du volume
+│   │   ├── Chapitres/                         7 chapitres + 7 bibliographies + Annexe B (ADS) + TOC.md
 │   │   ├── Monographie.md / .pdf              assemblage (569 p.)
-│   │   └── build/                             pipeline FESP (Mermaid → Pandoc → Typst)
+│   │   ├── build/                             pipeline FESP (Mermaid → Pandoc → Typst)
+│   │   └── LICENSE, .gitignore                seul `LICENSE` du dépôt — il ne vaut que pour ce volume
 │   ├── 2 - OrchestrationAgentique/          Vol. II
+│   │   ├── README.md                          présentation du volume
 │   │   ├── monographie/                       29 pièces (parties I-VII, annexes, registre des gels)
+│   │   │                                      + README.md, l'index de lecture des 29 pièces
 │   │   ├── prd/                               PRD, PRDPlan, TOC, audit + 2 PDF sources — gouvernance
 │   │   ├── verification/                      revalidations et grille de conformité CA-1..CA-8
 │   │   ├── build/                             assemblage + pipeline Pandoc → Typst
-│   │   └── Monographie.md / .pdf              assemblage (387 p.)
+│   │   ├── Monographie.md / .pdf              assemblage (387 p.)
+│   │   └── .gitignore
 │   └── 3 - EntrepriseAgentique/             Vol. III
 │       ├── README.md                          présentation du volume (déposée le 29 juill. 2026)
 │       ├── prd/                               PRD v1.3, TOC v0.8, PRDPlan v0.5 — gouvernance
@@ -703,8 +717,12 @@ le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
 — celui du Vol. III déposé le 29 juillet 2026 —, l'index de lecture des 29 pièces du Vol. II, le
 conspectus du Vol. IV, et les **cinq** répertoires de Livres du compendium. *(Cardinal re-compté sur
 l'arbre le 9 août 2026 : **12**, inchangé — `git ls-files | grep README`.)*
-⚠ **`1 - Corpus/0 - Références/` n'en porte aucun**, et c'est le seul répertoire du dépôt dans ce
-cas : *trois PDF déposés sans un mot qui dise ce qu'ils font là.*
+⚠ **`1 - Corpus/0 - Références/` n'en porte aucun**, et c'est le seul répertoire du dépôt **portant
+des pièces déposées** dans ce cas : *trois PDF déposés sans un mot qui dise ce qu'ils font là.*
+*(Les trente autres répertoires sans `README.md` sont des répertoires d'appareil ou de découpage —
+`build/`, `prd/`, `PRD/`, `figures/`, `Chapitres/`, `verification/`, `.claude/`, le `monographie/`
+du Vol. III, les **seize** sous-répertoires de parties et les **deux** `90-annexes/` — dont le
+contenu est décrit par le `README.md` du dossier qui les porte.)*
 
 ## Construire les PDF
 
@@ -1157,7 +1175,8 @@ par un critique en contexte neuf qui ne connaissait pas son travail.
   correction a une conséquence que le corpus ne s'attendait pas à payer** : son agrégat tombe sous les
   ≈ 516 500 annoncés — **486 206 mots** en sommant les trois chiffres publiés, *chacun pris par la
   méthode propre de son volume* (233 257 + 92 059 + 160 890 : trois commandes différentes, et la somme
-  le déclare), ou **479 390** par la **commande unique** de `decompte.sh --verifier`. *Les deux mesures
+  le déclare) — ⚠ **486 203 depuis la re-mesure du 10 août 2026**, le Vol. II tombant à 92 056 —, ou
+  **479 390** par la **commande unique** de `decompte.sh --verifier`. *Les deux mesures
   sont sous le seuil des 500 000 que le corpus s'attribuait, et il le perd dans les deux cas.*
 - **Deux erreurs d'unité, mêmes octets mal convertis** : la passe du 4 août avait écrit **1,79 Mio**
   pour `Compendium.html` là où ses propres 1 829 940 octets en font **1,75** ; et le colophon du volume
@@ -1219,11 +1238,8 @@ passer `/Type/PageLabel`, dont il existe **un objet par page** ; et un motif cor
 la pagination juste du premier coup — `grep -aoP '/Type/Page(?![sL])' | wc -l` donne **569, 387, 427,
 1 114 et 161**. *Une commande de contrôle publiée sans avoir été réexécutée sur son domaine entier est
 un instrument qui ment avec l'autorité d'une mesure* — et c'est précisément la classe de défaut que ce
-dépôt prend pour objet.
-
-⚠ Le décompte des diagrammes du Vol. I se mesure avec un motif **ancré** :
-`grep -c '^```mermaid'` donne 28. Le motif non ancré en retourne 29 — il attrape une ligne de prose
-de la note de production qui cite la balise.
+dépôt prend pour objet. *(La même réserve vaut pour le décompte des diagrammes du Vol. I ; elle est
+écrite une fois, à l'entrée du 4 août 2026 ci-dessus, et ne se répète pas ici.)*
 
 **Le 8 août 2026, seconde passe du même jour — LA PASSE DE CLÔTURE.** Sur instruction d'auteur, le
 dépôt est **clos et final**. *C'est la dernière entrée de ce journal, et elle décrit un état qui ne
@@ -1286,7 +1302,7 @@ correction exigerait une information que le dépôt ne porte pas — *et personn
 | racine du dépôt | ☑ **TRANCHÉ le 8 août 2026 — aucune licence, et c'est le régime choisi** : **droit d'auteur par défaut, tous droits réservés**. Seul le Vol. I porte un `LICENSE` propre, qui ne vaut que pour lui. ⚠ *Le motif est de cohérence, non d'omission* : le volume terminal du dépôt exclut toute mise à disposition d'un tiers, et une licence ouverte à la racine contredirait le régime que quatre documents de gouvernance déclarent |
 | `1 - Corpus/2 - OrchestrationAgentique/` | ☑ **TRANCHÉ le 8 août 2026 — l'étiquette git `mono-v1.0` est posée**, au commit de clôture. ⚠ **Elle ne rend pas vraies les vingt mentions qui l'annonçaient** : **trois documents de gouvernance** (`PRD.md`, `PRDPlan.md`, `audit.md`) **et dix-sept pièces** la donnent pour posée depuis le 17 juillet 2026, dont l'une écrit « `mono-v1.0` existe » — *l'étiquette marque l'arbre clos du 8 août, non celui du 17 juillet, et `git show mono-v1.0` le montre.* Les deux `README.md` du volume portent le correctif ; la prose des vingt mentions **n'a pas été réécrite, et ne le sera pas** |
 | `1 - Corpus/1 - InteroperabiliteAgentique/Chapitres/TOC.md` | l'Annexe B y est déclarée **≈ 17 500 mots** quand `wc -w` en mesure **20 655** (+18 %). La colonne « Méthode » dit honnêtement « décompte **déclaré** en tête d'ADS », mais l'en-tête du même fichier revendique que tout décompte est **relevé, non projeté** — **contradiction interne à arbitrer** |
-| `1 - Corpus/2 - OrchestrationAgentique/` | **trois volumétries concurrentes, toutes justes sous leur méthode** : 92 059 (PRDPlan §4.2, locale par défaut — chiffre publié), 93 242 (`decompte.sh`, locale UTF-8, où l'espace insécable sépare), 90 362 (clôture de P4, datée). Le §4.2 documente lui-même son sous-comptage de 1,3 % et **refuse** de le corriger : aucune n'est fausse, et le choix est éditorial |
+| `1 - Corpus/2 - OrchestrationAgentique/` | **trois volumétries concurrentes, toutes justes sous leur méthode** : **92 056** (PRDPlan §4.2, locale C — chiffre publié ; 92 059 au 17 juillet 2026), **93 239** (`decompte.sh`, locale UTF-8, où l'espace insécable sépare ; 93 242 à sa valeur d'ancrage), 90 362 (clôture de P4, datée). Le §4.2 documente lui-même son sous-comptage de 1,3 % et **refuse** de le corriger : aucune n'est fausse, et le choix est éditorial. ⚠ **Les deux premières ont perdu les mêmes trois jetons au commit `659241b`** — ils sont dans le **corps** des pièces, que les deux commandes mesurent : *l'écart entre les deux méthodes est d'assiette de jetons, pas d'assiette de texte* |
 | `2 - Compendium/` — volumétries des cinq `Livre */README.md` et colonne `Réel` du registre de gel | périmées de quatre passes de révision du français (31 juillet → 3 août 2026). ⚠ **Non corrigées pour une raison de contrôle, non de paresse** : la colonne est **opposée par `check-compendium.py` P6 aux en-têtes des cinquante pièces**, qui sont de la prose gelée — la corriger d'un seul côté ferait échouer P6 sur 26 lignes. La mesure courante (**331 791 mots**) est écrite au registre avec ce motif |
 | `2 - Compendium/Compendium.html` + les 50 `.html` de chapitre | **aucune chaîne ne les régénère** : `build/` ne porte pas de générateur HTML, ces pages sont écrites et relevées à la main. La règle du « rendu versionné avec sa source » ne s'y applique pas — *le retard sur le `.md` ne se signale nulle part* |
 | `2 - Compendium/Livre */README.md` | leurs blocs de procédure invoquent `rendre-piece.py` et `verifier-piece.py`, **scripts d'un skill supprimé le 31 juillet 2026** (commit `41666d0`). Le retrait est désormais déclaré à chaque fichier, mais les commandes sont laissées telles quelles : **le dépôt ne dit pas par quoi elles ont été remplacées** |
