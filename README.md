@@ -94,7 +94,7 @@ paie. **Sept livrables**, dont les deux derniers — la revue et le traité — 
 > *Le dépôt compte sept livrables depuis le 10 août 2026.*
 >
 > ⚠ **Il a été renommé et recomposé le même jour, sur instruction d'auteur, et les deux gestes se
-> déclarent.** *(a)* Le genre passe d'**essai** à **traité** — titre *« Traité des systèmes
+> déclarent.** *(a)* Le genre passe d'**essai** à **traité** — titre *« Traité sur les systèmes
 > multiagents en essaim »*, fichiers renommés `Traité.md` / `Traité.pdf` : `Swarm Agentic Systems.md`
 > / `.pdf` du 10 août 2026 au matin, `Traité.md` / `.pdf` depuis. ☑ *Le fichier rentre ainsi dans la
 > convention du dépôt, dont il était le seul à sortir* — **les sept livrables se nomment par leur
@@ -247,7 +247,7 @@ avant d'être enfreinte.
 | | **Veille technologique** | **Revue de littérature** | **Vol. I — Interopérabilité** | **Vol. II — Orchestration** | **Vol. III — Entreprise** | **Vol. IV — Compendium** | **Traité — Essaim** |
 |---|---|---|---|---|---|---|---|
 | **Dossier** | racine du dépôt | racine du dépôt | [`1 - Corpus/1 - InteroperabiliteAgentique/`](1%20-%20Corpus/1%20-%20InteroperabiliteAgentique/) | [`1 - Corpus/2 - OrchestrationAgentique/`](1%20-%20Corpus/2%20-%20OrchestrationAgentique/) | [`1 - Corpus/3 - EntrepriseAgentique/`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/) | [`2 - Compendium/`](2%20-%20Compendium/) | racine du dépôt |
-| **Titre** | Interopérabilité et Orchestration Agentiques en Entreprise *(aligné sur le Vol. IV le 9 août 2026 — ⚠ les deux sont désormais homonymes)* | Interopérabilité et Orchestration Agentiques : revue de la littérature académique | Interopérabilité agentique en entreprise dans le domaine des services financiers | Orchestration agentique | L'entreprise agentique — la fabrique de confiance | Interopérabilité et Orchestration Agentiques en Entreprise | Traité des systèmes multiagents en essaim *(☑ fichier `Traité.md` depuis le 10 août 2026, au genre comme les six autres — `Swarm Agentic Systems.md` auparavant)* |
+| **Titre** | Interopérabilité et Orchestration Agentiques en Entreprise *(aligné sur le Vol. IV le 9 août 2026 — ⚠ les deux sont désormais homonymes)* | Interopérabilité et Orchestration Agentiques : revue de la littérature académique | Interopérabilité agentique en entreprise dans le domaine des services financiers | Orchestration agentique | L'entreprise agentique — la fabrique de confiance | Interopérabilité et Orchestration Agentiques en Entreprise | Traité sur les systèmes multiagents en essaim *(☑ fichier `Traité.md` depuis le 10 août 2026, au genre comme les six autres — `Swarm Agentic Systems.md` auparavant)* |
 | **Rôle** | État de l'art vérifié, mis à jour par éditions | Ce que la littérature académique sait, et à quel régime de preuve | Cadre général, mondial et théorique | Cas canadien réglementé, instruit au grain du droit | Le verrou commun : identité, maillage, exploitation | Omnibus terminal : absorbe et remplace les trois volumes | Où passe la frontière entre coordonner par accord et coordonner par le milieu |
 | **Portée** | Mondiale | Mondiale, dix fronts de recherche | Mondiale (UE / É.-U. / R.-U. / Asie) | Canada-Québec (E-23, AMF, Loi 25, ACVM, Lynx/RTR) | Organisation et cycle de vie (NHI, *agent mesh*, AgentOps) | Les trois portées réunies (2024-2032) | Le régime de coordination lui-même, de l'essaim robotique au journal d'événements |
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Les trois quarts du champ n'ont franchi aucun comité » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet | « Déplacer la coordination dans le milieu, et payer ce que le déplacement coûte » |
@@ -363,13 +363,13 @@ provenance du W3C **sans instancier `actedOnBehalfOf`**.
 
 L'auto-citation est assumée et divulguée : la veille mise à l'épreuve est du même auteur.
 
-## Traité des systèmes multiagents en essaim — le livrable qui ne cite personne
+## Traité sur les systèmes multiagents en essaim — le livrable qui ne cite personne
 
 [`Traité.md`](Trait%C3%A9.md)
 → `Traité.pdf`
 (**100 p.**, 7 chapitres et 21 sous-sections, **118 références**, 20 tableaux, 9 algorithmes en
 pseudocode, **16 figures** — daté du **10 août 2026**, figures entrées et rendu recalé le
-**11 août 2026**), sous le titre *« Traité des systèmes multiagents en essaim —
+**11 août 2026**), sous le titre *« Traité sur les systèmes multiagents en essaim —
 la coordination par le milieu : ce qu'un essaim d'agents logiciels gagne à ne pas s'accorder, et ce
 qu'il le paie »*.
 
@@ -1879,7 +1879,7 @@ les quatre volumes**.
 
 **Le 10 août 2026, seconde passe du même jour — le septième livrable change de genre, de nom et de
 gabarit.** Sur instruction d'auteur, le document déposé le matin passe d'**essai** à **traité** :
-titre porté à *« Traité des systèmes multiagents en essaim »*, fichiers renommés
+titre porté à *« Traité sur les systèmes multiagents en essaim »*, fichiers renommés
 `Swarm Agentic Systems.md` / `.pdf` → [`Traité.md`](Trait%C3%A9.md) / `.pdf`, et rendu **recomposé au
 gabarit d'article arXiv**. ☑ **Le renommage referme le seul écart de nomenclature du dépôt** : les
 sept fichiers se nomment par leur **genre** — `Veille Technologique`, `Revue de littérature`,
