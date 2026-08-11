@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 237" width="468" height="237" role="img" aria-label="Grille des trois mecanismes de choix distribue et des proprietes que chacun abandonne.">
+  <!-- § 5.1, chapitre 5.
+       Genere par figures/contenu.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       468 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #1A1A1A; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #8A3324; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #8A3324; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #767676; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4D4D4D; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #1A1A1A; }
+  .renvoi { font-size: 6.2px; fill: #767676; }
+  .chiffre{ font-size: 8px;   font-weight: 700; fill: #1A1A1A; }
+  </style></defs>
+  <rect x="0" y="0" width="468" height="237" fill="#FFFFFF"/>
+  <text class="l titre" x="0" y="8">✓ TENUE · ~ TENUE SOUS CONDITION · ✕ ABANDONNÉE</text>
+  <text class="l annf" x="157" y="28">Accord</text>
+  <text class="l annf" x="236" y="28">Validité</text>
+  <text class="l annf" x="315" y="28">Terminaison</text>
+  <text class="l annf" x="394" y="28">Messages</text>
+  <path d="M 0 41 H 468" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+  <text class="l annf" x="0" y="53">Seuil de quorum (best-of-n)</text>
+  <text class="l annf" x="157" y="53">✕</text>
+  <text class="l ann" x="171" y="53">sous</text>
+  <text class="l ann" x="171" y="64">partition</text>
+  <text class="l annf" x="236" y="53">✓</text>
+  <text class="l annf" x="315" y="53">~</text>
+  <text class="l ann" x="329" y="53">non borné</text>
+  <text class="l ann" x="394" y="53">Θ(n·d̄) par tour</text>
+  <path d="M 0 75 H 468" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
+  <text class="l annf" x="0" y="87">Moyenne et alignement</text>
+  <text class="l annf" x="157" y="87">~</text>
+  <text class="l ann" x="171" y="87">à terme</text>
+  <text class="l annf" x="236" y="87">✕</text>
+  <text class="l annf" x="315" y="87">✕</text>
+  <text class="l ann" x="329" y="87">asymptotique</text>
+  <text class="l ann" x="394" y="87">Θ(n·d̄) par tour</text>
+  <path d="M 0 105 H 468" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
+  <text class="l annf" x="0" y="117">Fusion sans conflit (CRDT)</text>
+  <text class="l annf" x="157" y="117">✓</text>
+  <text class="l annf" x="236" y="117">✕</text>
+  <text class="l ann" x="250" y="117">le refus est</text>
+  <text class="l ann" x="250" y="128">impossible</text>
+  <text class="l annf" x="315" y="117">✕</text>
+  <text class="l ann" x="329" y="117">quiescence</text>
+  <text class="l ann" x="394" y="117">aucun message</text>
+  <text class="l ann" x="394" y="128">dédié</text>
+  <path d="M 0 139 H 468" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
+  <text class="l annf" x="0" y="151">Consensus, synchronisme partiel</text>
+  <text class="l annf" x="157" y="151">✓</text>
+  <text class="l annf" x="236" y="151">✓</text>
+  <text class="l annf" x="315" y="151">✓</text>
+  <text class="l ann" x="329" y="151">conditionnelle</text>
+  <text class="l ann" x="394" y="151">Ω(n) par décision</text>
+  <path d="M 0 169 H 468" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+  <text class="l renvoi" x="0" y="182">§ 5.1 — « non borné » signifie qu'aucune borne finie n'existe sous les hypothèses posées, et non qu'elle est grande.</text>
+  <path d="M 0 188 H 468" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l ann" x="0" y="201">Chaque mécanisme abandonne délibérément au moins une des trois propriétés. Abandonner la terminaison laisse l'essaim indécis ;</text>
+  <text class="l ann" x="0" y="211">abandonner l'accord le laisse divisé sans qu'aucun agent le sache — et c'est le second qui se paie le plus cher, parce qu'il ne se</text>
+  <text class="l ann" x="0" y="221">voit pas. Sous faute arbitraire, aucune solution à moins de 3f + 1 participants ne tolère f déviants [94] : ce modèle tue les trois</text>
+  <text class="l ann" x="0" y="231">premières lignes.</text>
+</svg>

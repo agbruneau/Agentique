@@ -1,5 +1,5 @@
 // ===================== Gabarit FESP — monographie =====================
-#set document(title: "L'entreprise agentique — la fabrique de confiance : identité non humaine, délégation vérifiable, maillage d'agents et AgentOps", author: "André-Guy Bruneau")
+#set document(title: "L'entreprise agentique — la fabrique de confiance : identité non humaine, délégation vérifiable, maillage d'agents et AgentOps", author: "André-Guy Bruneau, M.Sc. IT")
 
 // ---- Page : Lettre US, marges 2,5 cm (haut/bas) et 3 cm (gauche/droite) ----
 #set page(

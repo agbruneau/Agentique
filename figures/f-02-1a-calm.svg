@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 212" width="468" height="212" role="img" aria-label="Arbre de decision fonde sur le theoreme CALM : programme monotone ou non.">
+  <!-- § 2.1, chapitre 2 — d'après [6].
+       Genere par figures/contenu.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       468 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #1A1A1A; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #8A3324; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #8A3324; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #767676; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4D4D4D; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #1A1A1A; }
+  .renvoi { font-size: 6.2px; fill: #767676; }
+  .chiffre{ font-size: 8px;   font-weight: 700; fill: #1A1A1A; }
+  </style></defs>
+  <rect x="0" y="0" width="468" height="212" fill="#FFFFFF"/>
+  <text class="l titre" x="0" y="8">CE QUI SE DÉCENTRALISE, ET CE QUI NE SE DÉCENTRALISE PAS</text>
+  <text class="l bande" x="0" y="24">Le programme s'exprime-t-il en logique monotone — une conclusion atteinte n'étant jamais rétractée par</text>
+  <text class="l bande" x="0" y="36">l'arrivée de faits supplémentaires ?</text>
+  <path d="M 120 48 H 348" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <path d="M 120 48 V 56" fill="none" stroke="#8A3324" stroke-width=".9"/>
+  <path d="M 120 60 l -3 -4 h 6 z" fill="#8A3324"/>
+  <text class="l rang" x="12" y="70">OUI</text>
+  <rect x="12" y="74" width="215" height="93" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l bande" x="21" y="90">Implantation distribuée cohérente et sans</text>
+  <text class="l bande" x="21" y="102">coordination</text>
+  <text class="l ann" x="21" y="115">Accumuler, prendre un maximum, détecter un</text>
+  <text class="l ann" x="21" y="126">franchissement de seuil, construire une union. Le</text>
+  <text class="l ann" x="21" y="137">programme produit la même sortie quels que soient</text>
+  <text class="l ann" x="21" y="148">l'ordre et les délais des messages : l'accord est</text>
+  <text class="l ann" x="21" y="159">évitable.</text>
+  <path d="M 348 48 V 56" fill="none" stroke="#8A3324" stroke-width=".9"/>
+  <path d="M 348 60 l -3 -4 h 6 z" fill="#8A3324"/>
+  <text class="l rang" x="241" y="70">NON</text>
+  <rect x="241" y="74" width="215" height="93" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l bande" x="250" y="90">Coordination inévitable, seulement déplaçable</text>
+  <text class="l ann" x="250" y="115">Compter exactement une fois, décrémenter un stock,</text>
+  <text class="l ann" x="250" y="126">attribuer un propriétaire unique. L'invariant doit tenir</text>
+  <text class="l ann" x="250" y="137">à tout instant, et le substrat événementiel ne suffit</text>
+  <text class="l ann" x="250" y="148">pas : le prix est celui du chapitre 4.</text>
+  <path d="M 0 173 H 468" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l ann" x="0" y="186">Le résultat est constructif dans les deux sens, ce qui en fait une borne et pas un conseil. Aucun choix de base de données, de</text>
+  <text class="l ann" x="0" y="196">courtier ou de bibliothèque ne fait passer un programme non monotone du côté gauche : pour celui-là, la coordination n'est pas</text>
+  <text class="l ann" x="0" y="206">évitable, elle est seulement déplaçable.</text>
+</svg>

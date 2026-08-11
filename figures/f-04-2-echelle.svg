@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 233" width="468" height="233" role="img" aria-label="Pile de trois regimes de coordination : propager, converger, s'accorder, avec leur cout.">
+  <!-- § 4.2, chapitre 4.
+       Genere par figures/contenu.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       468 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #1A1A1A; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #8A3324; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #8A3324; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #767676; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4D4D4D; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #1A1A1A; }
+  .renvoi { font-size: 6.2px; fill: #767676; }
+  .chiffre{ font-size: 8px;   font-weight: 700; fill: #1A1A1A; }
+  </style></defs>
+  <rect x="0" y="0" width="468" height="233" fill="#FFFFFF"/>
+  <text class="l titre" x="0" y="8">PROPAGER, CONVERGER, S'ACCORDER</text>
+  <rect x="0" y="14" width="243" height="41" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l rang" x="10" y="31">3</text>
+  <text class="l bande" x="21" y="31">S'accorder</text>
+  <text class="l ann" x="10" y="44">Décider une valeur unique : accord, validité, terminaison.</text>
+  <rect x="0" y="59" width="243" height="52" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l rang" x="10" y="76">2</text>
+  <text class="l bande" x="21" y="76">Converger</text>
+  <text class="l ann" x="10" y="89">Faire s'accorder des répliques en l'absence de nouvelles</text>
+  <text class="l ann" x="10" y="100">écritures.</text>
+  <rect x="0" y="115" width="243" height="41" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l rang" x="10" y="132">1</text>
+  <text class="l bande" x="21" y="132">Propager</text>
+  <text class="l ann" x="10" y="145">Faire circuler une information dans un réseau non structuré.</text>
+  <text class="l annf" x="259.36" y="26">S'accorder — consensus, synchronisme partiel</text>
+  <text class="l ann" x="259.36" y="38">Ω(n) messages par décision : une majorité doit être jointe,</text>
+  <text class="l ann" x="259.36" y="49">et cette majorité est prouvée nécessaire [65]. Terminaison</text>
+  <text class="l ann" x="259.36" y="60">bornée après stabilisation, non bornée avant.</text>
+  <text class="l annf" x="259.36" y="76">Converger — répliques sans conflit</text>
+  <text class="l ann" x="259.36" y="88">Zéro message dédié : la fusion s'effectue sur le chemin de</text>
+  <text class="l ann" x="259.36" y="99">réplication déjà payé. Aucune condition d'arrêt — la</text>
+  <text class="l ann" x="259.36" y="110">convergence est une quiescence, qu'aucun agent ne peut</text>
+  <text class="l ann" x="259.36" y="121">constater localement.</text>
+  <text class="l annf" x="259.36" y="137">Propager — rumeur épidémique</text>
+  <text class="l ann" x="259.36" y="149">Θ(n log log n) messages en O(log n) tours, optimal pour les</text>
+  <text class="l ann" x="259.36" y="160">algorithmes insensibles à l'adresse [85]. Terminaison locale</text>
+  <text class="l ann" x="259.36" y="171">seulement : la couverture est de probabilité strictement</text>
+  <text class="l ann" x="259.36" y="182">inférieure à 1.</text>
+  <path d="M 0 194 H 468" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l ann" x="0" y="207">Faire circuler une information, faire converger des répliques et se mettre d'accord sur une valeur ne sont pas trois versions de la</text>
+  <text class="l ann" x="0" y="217">même chose. En asynchrone pur, la troisième est impossible : une seule faute d'arrêt suffit à l'empêcher [1]. L'essaim ne résout pas</text>
+  <text class="l ann" x="0" y="227">l'impossibilité, il refuse la question — et paie ce refus en fenêtres pendant lesquelles l'invariant peut être faux.</text>
+</svg>

@@ -1,5 +1,5 @@
 // ===================== Gabarit FESP — monographie =====================
-#set document(title: "Orchestration agentique en écosystème d'entreprise de services financiers au Canada", author: "André-Guy Bruneau")
+#set document(title: "Orchestration agentique en écosystème d'entreprise de services financiers au Canada", author: "André-Guy Bruneau, M.Sc. IT")
 
 // ---- Page : Lettre US, marges 2,5 cm (haut/bas) et 3 cm (gauche/droite) ----
 #set page(

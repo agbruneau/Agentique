@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 158" width="468" height="158" role="img" aria-label="Barres comparant le temps de sejour espere a une sonde et a deux sondes, sous deux charges.">
+  <!-- § 5.2, chapitre 5 — d'après [57].
+       Genere par figures/contenu.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       468 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #1A1A1A; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #8A3324; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #8A3324; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #767676; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4D4D4D; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #1A1A1A; }
+  .renvoi { font-size: 6.2px; fill: #767676; }
+  .chiffre{ font-size: 8px;   font-weight: 700; fill: #1A1A1A; }
+  </style></defs>
+  <rect x="0" y="0" width="468" height="158" fill="#FFFFFF"/>
+  <text class="l titre" x="0" y="8">TEMPS DE SÉJOUR ESPÉRÉ, MODÈLE DU SUPERMARCHÉ</text>
+  <text class="l ann" x="0" y="27">Une seule sonde (d = 1), charge λ = 0,90</text>
+  <rect x="196" y="19.5" width="21.2" height="9" fill="#FFFFFF" stroke="#8A3324" stroke-width=".7"/>
+  <text class="l chiffre" x="222.2" y="27">10,00</text>
+  <text class="l ann" x="0" y="47">Deux sondes (d = 2), charge λ = 0,90</text>
+  <rect x="196" y="39.5" width="5.5" height="9" fill="#8A3324" stroke="#8A3324" stroke-width=".7"/>
+  <text class="l chiffre" x="206.5332" y="47">≈ 2,61</text>
+  <text class="l ann" x="0" y="67">Une seule sonde (d = 1), charge λ = 0,99</text>
+  <rect x="196" y="59.5" width="212.0" height="9" fill="#FFFFFF" stroke="#8A3324" stroke-width=".7"/>
+  <text class="l chiffre" x="413.0" y="67">100,00</text>
+  <text class="l ann" x="0" y="87">Deux sondes (d = 2), charge λ = 0,99</text>
+  <rect x="196" y="79.5" width="11.5" height="9" fill="#8A3324" stroke="#8A3324" stroke-width=".7"/>
+  <text class="l chiffre" x="212.5116" y="87">≈ 5,43</text>
+  <text class="l renvoi" x="0" y="103">en unités de durée moyenne de service. Coût du mécanisme : 2d messages, 1 tour, aucun état partagé, aucune hypothèse de synchronisme.</text>
+  <path d="M 0 109 H 468" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l ann" x="0" y="122">Deux choix apportent une amélioration exponentielle sur un seul, tandis que trois choix ne gagnent qu'un facteur constant sur deux</text>
+  <text class="l ann" x="0" y="132">[57]. Le résultat exige que le client soit libre de choisir son serveur : dans un journal partitionné, la partition est imposée par</text>
+  <text class="l ann" x="0" y="142">la clé, parce que l'ordre par partition est le seul ordre garanti. Router un événement vers la partition la moins chargée détruit</text>
+  <text class="l ann" x="0" y="152">l'ordre par clé, c'est-à-dire la propriété même qui justifiait le partitionnement.</text>
+</svg>
