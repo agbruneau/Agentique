@@ -455,6 +455,28 @@ dans ses deux sections d'encadrement, et nulle part ailleurs. Normalisé sur la 
 puis vérifié : **118 renvois cités, 118 notices déclarées, aucun orphelin dans un sens ni dans
 l'autre**.
 
+☑ **Il a été audité en totalité le 10 août 2026, par boucle bâtisseur/critique — 168 correctifs.**
+Deux axes, et deux seulement : la tenue du français technique, et la fiabilité des sources. Huit
+morceaux jugeables, un bâtisseur et un juge à l'aveugle par morceau, chaque juge comparant un extrait
+du traité à un extrait de la veille technologique **sans savoir lequel des deux était lequel**, ordre
+alterné et extraits tronqués à longueur comparable. **Le traité gagne 7 comparaisons sur 8** — il perd
+les chapitres 2 et 3. Le détail, tour par tour, est au
+[journal de boucle](gauntlet-log.md). État vérifié au rendu final : **100 pages**, **0 page blanche**,
+**20 tableaux numérotés 1 à 20**, bijection des renvois intacte.
+
+⚠ **Les 118 notices ont été confrontées à leur source primaire, et ce que la confrontation a trouvé
+compte plus que le décompte** — 108 confirmées telles quelles, 10 corrigées, **0 non confirmée** :
+*(a)* **un titre inventé**, à la réf. 93, dont les auteurs, la revue et l'année étaient pourtant
+exacts — **un cas sur 118**, et le seul ; *(b)* **quatre statuts éditoriaux faux, tous dans le même
+sens** — des pièces déposées sur arXiv annoncées comme prépublications alors qu'elles sont **parues
+arbitrées** (CAV 2013, CAV 2017, *IEEE Software* 2016, *CACM* 2020). ⚠ *L'erreur sous-évaluait le
+corpus au lieu de le gonfler ; elle n'en était pas moins fausse, et dans un ouvrage dont la
+déclaration de statut est précisément la discipline* ; *(c)* **12 cibles mouvantes ancrées** — des
+notices citant du code sur la branche `trunk`, où rien de ce qui est allégué n'est retrouvable —,
+réancrées sur des SHA et des étiquettes **ouverts et relus**, les valeurs alléguées au ch. 6 ayant été
+retrouvées dans le code à l'étiquette 4.1.0 ; *(d)* **13 paginations ouvertes ou absentes** fermées sur
+Crossref, DataCite ou dblp.
+
 ⚠ **Aucun contrôle exécutable ne lui est attaché**, contrairement à la veille et à la revue. Le seul
 rejouable sur son PDF, [`check-resume.py`](check-resume.py), **sort 1 sans qu'une ligne y soit
 rognée** : sa marge basse est codée en dur à **73,7 pt** — les 2,6 cm de la veille — alors que le
@@ -795,8 +817,9 @@ le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
 ├── check-veille.py                        ← contrôles de publication de la veille (renvois, cardinaux, bibliographie)
 ├── check-resume.py                        ← budget de mise en page : le résumé tient-il sur la page de titre du PDF
 ├── check-revue.py                         ← contrôles de publication de la revue (appariement, tableaux, doublons, régimes)
-├── gauntlet-log.md                        ← journal append-only des boucles bâtisseur/critique (veille d'août, revue)
-│                                             ⚠ purgé à la clôture du 8 août 2026, redéposé le même jour avec la passe de veille
+├── gauntlet-log.md                        ← journal append-only des boucles bâtisseur/critique
+│                                             ⚠ supprimé au commit `79ef5d4` du 10 août 2026 (482 lignes : veille d'août, revue)
+│                                             puis rouvert le même jour pour l'audit du traité — l'antérieur est à l'historique git
 ├── .gitignore                             ← couvre notamment les `__pycache__` (aucun bytecode au suivi git)
 ├── 1 - Corpus/                            ← le triptyque
 │   ├── README.md                            synthèse consolidée des trois monographies
@@ -1915,3 +1938,50 @@ caractère du corps du traité**, **ne modifie aucun autre champ de l'en-tête**
 porte de pagination**, **ne franchit aucune porte**, **ne lève aucune dérogation**, **ne referme
 aucune remontée**, **ne rejuge pas la clôture** et **ne publie rien de ce qui est clos**. La clôture
 **D-13 reste en vigueur pour les quatre volumes**.
+
+**Le 10 août 2026, cinquième passe du même jour — audit intégral du traité par boucle
+bâtisseur/critique.** Sur instruction d'auteur : auditer [`Traité.md`](Trait%C3%A9.md) en totalité,
+corriger tous les écarts, **maintenir 100 pages**. Deux axes fixés par l'auteur — tenue du français
+technique, fiabilité des sources —, gagés sur la pièce du dépôt qui les incarne, la **veille
+technologique**. Huit morceaux jugeables ; un bâtisseur et un juge à l'aveugle par morceau ; ordre
+A/B alterné et extraits tronqués à longueur comparable, pour qu'aucun juge ne devine à la taille.
+**Le traité gagne 7 comparaisons sur 8.** Journal complet : [`gauntlet-log.md`](gauntlet-log.md).
+
+**168 correctifs appliqués, 0 rejeté**, plus 3 déplacements de légende : 97 au premier tour
+(−214 car.), 44 au second (+973), 27 à la passe de lissage (−113). ⚠ *Aucun bâtisseur n'a écrit dans
+le fichier* : huit agents en parallèle sur un même `.md` s'écrasent, chacun a donc rendu des
+correctifs à ancre exacte et unique, appliqués centralement par un script qui **rejette** toute ancre
+non unique et tout delta déclaré non conforme. **État vérifié sur pièce au rendu final** : 100 pages,
+0 page blanche, 20 tableaux numérotés 1 à 20, **118 renvois cités pour 118 notices, aucun orphelin**.
+
+⚠ **Ce que la confrontation des 118 notices à leur source primaire a trouvé.** 108 confirmées,
+10 corrigées, 0 non confirmée — mais le décompte n'est pas le résultat. *(a)* **Un titre inventé**
+(réf. 93), auteurs, revue et année exacts par ailleurs : **un cas sur 118**. *(b)* **Quatre statuts
+éditoriaux faux, tous dans le même sens** : des pièces arXiv annoncées prépublications alors qu'elles
+sont parues arbitrées — CAV 2013, CAV 2017, *IEEE Software* 2016, *CACM* 2020. ⚠ *L'erreur
+sous-évaluait le corpus au lieu de le gonfler ; dans un ouvrage dont la déclaration de statut est la
+discipline, elle n'en est pas moins une faute.* *(c)* **12 cibles mouvantes** — du code cité sur la
+branche `trunk`, où rien de ce qui est allégué ne se retrouve — ancrées sur des SHA et des étiquettes
+**ouverts et relus** : les valeurs de réplication alléguées au ch. 6 ont été retrouvées dans le code à
+l'étiquette 4.1.0. *(d)* **13 paginations ouvertes ou absentes** fermées sur Crossref, DataCite ou dblp.
+
+⚠ **Deux arbitrages de la course méritent d'être connus, parce qu'ils vont contre le réflexe.**
+*(a)* **Un signalement d'agent s'est révélé faux à la vérification** : trois légendes de tableau
+placées avant leur tableau étaient annoncées comme un défaut de rendu. *Pandoc accepte les deux
+formes*, les vingt tableaux sont numérotés au PDF, aucune légende n'est perdue — constat rétrogradé
+d'un bogue à une incohérence de source, puis aligné sur la convention majoritaire. *Un rapport
+d'agent se vérifie avant de se croire.* *(b)* **« une invariante » a été normalisée au masculin, huit
+occurrences avec tous leurs accords.** Le mot est masculin en informatique, mais **le féminin était
+majoritaire dans l'ouvrage, 12 contre 2** — donc une convention d'auteur, et une convention se
+remonte au lieu de se corriger. Elle avait été portée à l'arbitrage et laissée en l'état ; c'est un
+bâtisseur qui, en en corrigeant deux dans son seul morceau, a rendu l'abstention impossible. *Un
+texte à moitié normalisé est pire que l'un ou l'autre état.* ☑ Les deux occurrences féminines qui
+subsistent sont les bonnes : l'adjectif y accorde avec un sujet féminin, le solécisme ne portait que
+sur le nom.
+
+⚠ **Ce que la passe ne fait pas.** Elle **ne touche à aucun autre livrable**, **n'ajoute aucune porte
+de pagination** — la cible de cent pages reste **constatée et non vérifiée au rendu** —, **ne corrige
+pas `check-resume.py`**, **ne lève aucune des réserves de fond du traité** — la frontière qu'il
+annonce reste argumentée et non mesurée, et sa conclusion le dit elle-même —, **ne franchit aucune
+porte**, **ne referme aucune remontée**, **ne rejuge pas la clôture** et **ne publie rien de ce qui
+est clos**. La clôture **D-13 reste en vigueur pour les quatre volumes**.
