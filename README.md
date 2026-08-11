@@ -163,8 +163,8 @@ compendium interroge au build.
 
 | Livrable | Rendu mesuré (`pypdf`) | Pièces | Appareil de contrôle |
 |---|---|---|---|
-| Veille technologique | **100 p.** *(162 p. jusqu'au 8 août 2026)*, **303 références** | 14 sections, **18 tableaux**, 25 questions ouvertes | `python check-veille.py` → **sortie 0** ; `python check-resume.py` → **sortie 0** (résumé à **y = 119,4 pt**, 45,7 pt de dégagement) |
-| Revue de littérature | **40 p.** fermes, **176 références** | 19 sections, 8 tableaux, 10 fronts ; **12 pièces sur 173 à publication attestée**, 133 sans revue | `python check-revue.py` → **sortie 0** (4 contrôles, **six mutants tombent**) |
+| Veille technologique | **100 p.** *(162 p. jusqu'au 8 août 2026)*, **303 références** | 14 sections, **18 tableaux**, 25 questions ouvertes | `python Python/check-veille.py` → **sortie 0** ; `python Python/check-resume.py` → **sortie 0** (résumé à **y = 119,4 pt**, 45,7 pt de dégagement) |
+| Revue de littérature | **40 p.** fermes, **176 références** | 19 sections, 8 tableaux, 10 fronts ; **12 pièces sur 173 à publication attestée**, 133 sans revue | `python Python/check-revue.py` → **sortie 0** (4 contrôles, **six mutants tombent**) |
 | Traité — *Systèmes multiagents en essaim* | **100 p.** *(cible d'auteur du 10 août 2026, calée par le seul gabarit ; 99 p. au dépôt du matin, 115 p. à la recomposition arXiv)*, **118 références** *(9 prépublications arXiv, déclarées telles)* | 7 chapitres, 21 sous-sections, **20 tableaux**, 9 algorithmes en pseudocode ; **118 renvois cités, 118 notices déclarées, bijection vérifiée** | ⚠ **aucun contrôle propre**, et ⚠ **aucune porte de pagination** — la cible de 100 p. est constatée, non vérifiée au rendu ; `check-resume.py` sort 1 sur son PDF **sans qu'une ligne y soit rognée** : sa marge basse est codée à 73,7 pt (les 2,6 cm de la veille) quand le traité compose à 2,54 cm, et il compte le folio de la page de titre ; le bloc résumé et mots-clés finit à **y = 284,0 pt**, 212 pt de dégagement |
 | Vol. I — *Interopérabilité* | **569 p.** | 7 chapitres + 7 bibliographies + Annexe B, **28 diagrammes** | — (vérification adverse des citations) |
 | Vol. II — *Orchestration agentique* | **387 p.** | **29 pièces** + registre de gel, socle de 46 entrées | grille CA-1…CA-8 |
@@ -182,9 +182,12 @@ glossaire, aucun au ch. 13. *(Le script mesure les pièces, non le `Monographie.
 changement de titre de la page de garde n'y entre pour rien.)*
 ⚠ **Rien de tout cela n'est une erreur de mesure** : le script a raison, sa valeur d'ancrage est
 périmée d'un renommage, et *personne ne la remettra à jour — le dépôt est clos*. Les trois autres
-contrôles du Vol. IV restent en **sortie 0**, comme les trois contrôles de la racine
+contrôles du Vol. IV restent en **sortie 0**, comme les trois contrôles de [`Python/`](Python/)
 (`check-veille.py`, `check-resume.py`, `check-revue.py`) — **les six rejoués le 9 août 2026**, après
-la recomposition du compendium.
+la recomposition du compendium, **et les trois de `Python/` rejoués le 10 août 2026** après leur
+déplacement, toujours en sortie 0. ⚠ *Ils vivaient à la racine jusqu'à cette date* : ils lisent leurs
+sources par chemin relatif au répertoire courant et **s'invoquent donc depuis la racine du dépôt**,
+`python Python/check-veille.py`, jamais depuis `Python/`.
 *Le renommage se donnait pour un identifiant sans conséquence de fait ; il a coûté trois mots à un
 décompte opposable, et c'est exactement la classe d'écart que ce dépôt prend pour objet.*
 
@@ -460,8 +463,9 @@ Deux axes, et deux seulement : la tenue du français technique, et la fiabilité
 morceaux jugeables, un bâtisseur et un juge à l'aveugle par morceau, chaque juge comparant un extrait
 du traité à un extrait de la veille technologique **sans savoir lequel des deux était lequel**, ordre
 alterné et extraits tronqués à longueur comparable. **Le traité gagne 7 comparaisons sur 8** — il perd
-les chapitres 2 et 3. Le détail, tour par tour, est au
-[journal de boucle](gauntlet-log.md). État vérifié au rendu final : **100 pages**, **0 page blanche**,
+les chapitres 2 et 3. Le détail, tour par tour, était au journal de boucle `gauntlet-log.md` —
+⚠ **purgé de l'arbre le 10 août 2026, et il ne se relit plus qu'à l'historique git.**
+État vérifié au rendu final : **100 pages**, **0 page blanche**,
 **20 tableaux numérotés 1 à 20**, bijection des renvois intacte.
 
 ⚠ **Les 118 notices ont été confrontées à leur source primaire, et ce que la confrontation a trouvé
@@ -478,7 +482,7 @@ retrouvées dans le code à l'étiquette 4.1.0 ; *(d)* **13 paginations ouvertes
 Crossref, DataCite ou dblp.
 
 ⚠ **Aucun contrôle exécutable ne lui est attaché**, contrairement à la veille et à la revue. Le seul
-rejouable sur son PDF, [`check-resume.py`](check-resume.py), **sort 1 sans qu'une ligne y soit
+rejouable sur son PDF, [`check-resume.py`](Python/check-resume.py), **sort 1 sans qu'une ligne y soit
 rognée** : sa marge basse est codée en dur à **73,7 pt** — les 2,6 cm de la veille — alors que le
 traité compose à **2,54 cm**, et il compte le **folio** de la page de titre, que la veille et la
 revue n'ont pas. Le bloc du résumé et des mots-clés finit à **y = 284,0 pt**, soit **212 pt de
@@ -814,12 +818,14 @@ le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
 ├── Traité.md / .pdf                       ← traité « Systèmes multiagents en essaim », 10 août 2026 (100 p. fermes, 118 réf.)
 │                                             ⚠ ne cite aucun autre livrable, et aucun ne le cite ; seul rendu au gabarit d'article arXiv
 │                                             (`Swarm Agentic Systems.md / .pdf` jusqu'au renommage du 10 août 2026)
-├── check-veille.py                        ← contrôles de publication de la veille (renvois, cardinaux, bibliographie)
-├── check-resume.py                        ← budget de mise en page : le résumé tient-il sur la page de titre du PDF
-├── check-revue.py                         ← contrôles de publication de la revue (appariement, tableaux, doublons, régimes)
-├── gauntlet-log.md                        ← journal append-only des boucles bâtisseur/critique
-│                                             ⚠ supprimé au commit `79ef5d4` du 10 août 2026 (482 lignes : veille d'août, revue)
-│                                             puis rouvert le même jour pour l'audit du traité — l'antérieur est à l'historique git
+├── Python/                                ← les trois contrôles de la racine, regroupés le 10 août 2026
+│   │                                         ⚠ ils lisent leurs sources par chemin relatif au répertoire courant :
+│   │                                         à lancer DEPUIS LA RACINE (`python Python/check-veille.py`), jamais d'ici
+│   ├── check-veille.py                      contrôles de publication de la veille (renvois, cardinaux, bibliographie)
+│   ├── check-resume.py                      budget de mise en page : le résumé tient-il sur la page de titre du PDF
+│   └── check-revue.py                       contrôles de publication de la revue (appariement, tableaux, doublons, régimes)
+│                                          ⚠ `gauntlet-log.md`, journal append-only des boucles bâtisseur/critique,
+│                                            était ici jusqu'au 10 août 2026 — purgé, il ne se relit qu'à l'historique git
 ├── .gitignore                             ← couvre notamment les `__pycache__` (aucun bytecode au suivi git)
 ├── 1 - Corpus/                            ← le triptyque
 │   ├── README.md                            synthèse consolidée des trois monographies
@@ -1001,11 +1007,11 @@ python -m http.server 8731
 rogner ne lève aucune erreur* ». C'était exact, et la passe du 8 août 2026 l'a vérifié à ses dépens :
 en rallongeant le résumé, elle a fait tomber sa dernière ligne à **y = −27,2 pt**, soit **100,8 pt
 sous la marge basse** — une dizaine de lignes composées hors page et **rognées en silence**, avec
-`pandoc` en sortie 0. [`check-resume.py`](check-resume.py) mesure désormais la chose elle-même, dans
-le PDF rendu :
+`pandoc` en sortie 0. [`check-resume.py`](Python/check-resume.py) mesure désormais la chose elle-même,
+dans le PDF rendu — **depuis la racine du dépôt** :
 
 ```bash
-python check-resume.py
+python Python/check-resume.py
 ```
 
 Il décompresse le flux de la page de titre et relève l'ordonnée la plus basse où du texte est
@@ -1502,7 +1508,7 @@ correction exigerait une information que le dépôt ne porte pas — *et personn
 | `2 - Compendium/` — volumétries des cinq `Livre */README.md` et colonne `Réel` du registre de gel | périmées de quatre passes de révision du français (31 juillet → 3 août 2026). ⚠ **Non corrigées pour une raison de contrôle, non de paresse** : la colonne est **opposée par `check-compendium.py` P6 aux en-têtes des cinquante pièces**, qui sont de la prose gelée — la corriger d'un seul côté ferait échouer P6 sur 26 lignes. La mesure courante (**331 791 mots**) est écrite au registre avec ce motif |
 | `2 - Compendium/Compendium.html` + les 50 `.html` de chapitre | **aucune chaîne ne les régénère** : `build/` ne porte pas de générateur HTML, ces pages sont écrites et relevées à la main. La règle du « rendu versionné avec sa source » ne s'y applique pas — *le retard sur le `.md` ne se signale nulle part* |
 | `2 - Compendium/Livre */README.md` | leurs blocs de procédure invoquent `rendre-piece.py` et `verifier-piece.py`, **scripts d'un skill supprimé le 31 juillet 2026** (commit `41666d0`). Le retrait est désormais déclaré à chaque fichier, mais les commandes sont laissées telles quelles : **le dépôt ne dit pas par quoi elles ont été remplacées** |
-| racine du dépôt et `2 - Compendium/build/` — `gauntlet-log.md`, les deux rapports d'**évaluation académique** du 8 août 2026, `compendium-assemble.md` | **purgés à la clôture du 8 août 2026.** Les trois premiers sont des documents de travail qu'**aucun fichier du dépôt ne citait** ; `gauntlet-log.md` était suivi par git et se relit à l'historique, les deux rapports ne l'étaient pas et **ne se relisent nulle part**. `compendium-assemble.md` était un **produit d'assemblage périmé de 2,7 Mio** que la chaîne n'utilise pas — il portait **123 des renvois morts** du dépôt à lui seul. ⚠ *Purger un produit dérivé est sans conséquence ; purger un journal non suivi est irréversible, et c'est écrit ici plutôt que constaté plus tard*. ⚠ **DÉPASSÉ POUR UNE DES TROIS LIGNES** : [`gauntlet-log.md`](gauntlet-log.md) **est revenu à l'arbre le 8 août 2026**, redéposé par la passe de veille, et il a reçu deux blocs de plus depuis (revue de littérature, 9 août). *Le journal ne raconte que les boucles bâtisseur/critique de la veille et de la revue — il ne couvre ni les quatre volumes, ni le calage du compendium à mille pages.* Les deux rapports d'évaluation et `compendium-assemble.md`, eux, restent purgés |
+| racine du dépôt et `2 - Compendium/build/` — `gauntlet-log.md`, les deux rapports d'**évaluation académique** du 8 août 2026, `compendium-assemble.md` | **purgés à la clôture du 8 août 2026.** Les trois premiers sont des documents de travail qu'**aucun fichier du dépôt ne citait** ; `gauntlet-log.md` était suivi par git et se relit à l'historique, les deux rapports ne l'étaient pas et **ne se relisent nulle part**. `compendium-assemble.md` était un **produit d'assemblage périmé de 2,7 Mio** que la chaîne n'utilise pas — il portait **123 des renvois morts** du dépôt à lui seul. ⚠ *Purger un produit dérivé est sans conséquence ; purger un journal non suivi est irréversible, et c'est écrit ici plutôt que constaté plus tard*. ⚠ **DÉPASSÉ DEUX FOIS POUR LA MÊME LIGNE, ET REVENU À SON ÉTAT INITIAL** : `gauntlet-log.md` **est revenu à l'arbre le 8 août 2026**, redéposé par la passe de veille, a reçu deux blocs de plus depuis (revue de littérature, 9 août ; audit du traité, 10 août), puis **a été purgé de nouveau le 10 août 2026** — *la ligne redit donc vrai, par un aller-retour et non par une constance.* Le journal ne racontait que les boucles bâtisseur/critique de la veille, de la revue et du traité — il ne couvre ni les quatre volumes, ni le calage du compendium à mille pages. Les deux rapports d'évaluation et `compendium-assemble.md` n'ont, eux, jamais reparu |
 | `2 - Compendium/` — `audit.md`, `audit-references.md`, `eval.html`, six `CLAUDE.md`, `.claude/skills/` | **supprimés délibérément** (`f6183bf`, `73e7c4e`, `982ef3a`, `41666d0`), et non perdus : ils se lisent à l'historique git. Les renvois qui les visaient sont retirés, le retrait daté. ⚠ *Le rapport d'arbitrage `eval.html` qui a déclenché **D-11** est dans ce lot : la décision est opposable, la pièce qui la motive ne se lit plus qu'au journal* |
 | `1 - Corpus/3 - EntrepriseAgentique/verification/` — les **30 rapports** | ☑ **SANS OBJET depuis le 8 août 2026, et pas parce qu'il a été soldé** : le répertoire entier a été **supprimé** (commit `659241b`), les cinq renvois morts de `lot-L-04-…md` avec lui. ⚠ *Ils étaient conservés à dessein — liens internes de pages tierces reproduits verbatim dans des blockquotes de preuve, que les réécrire aurait altérés ; ils disparaissent avec la preuve qu'ils citaient.* Ce que la suppression emporte vraiment : `remontees-gouvernance.md`, **le registre des quinze remontées R-G-43 à R-G-57**, et les 30 rapports que quatre `README.md` donnaient encore pour présents. **La dette reste, l'inventaire part** ; tout se relit à l'historique git. ⚠⚠ **ET ELLE EMPORTE PLUS QUE CE QUE LA CLÔTURE A COMPTÉ — mesuré le 9 août 2026 sur les 168 `.md` du dépôt** : **152 renvois relatifs meurent avec le répertoire**, visant **20 rapports distincts** depuis **34 fichiers** — 88 aux pièces de `monographie/`, 52 à `prd/`, 11 au `Monographie.md` assemblé, et **un au socle consolidé du Vol. IV**. *La passe de clôture annonçait « 1 667 liens relatifs, 6 morts » et celle du 8 août au soir « quatre renvois morts, tous dans le `README.md` du Vol. III » : les deux mesures ont été prises **avant** le balayage complet d'après suppression, et elles sous-estiment de deux ordres de grandeur.* ⚠ **Rien n'est réécrit, et c'est délibéré** : ces renvois citent des rapports **par leur nom, à l'appui d'une preuve**, dans des pièces gelées d'un volume clos — *les réécrire altérerait la citation, les retirer effacerait la trace de ce qui a été vérifié.* **Constat porté ici, correction non faite, et personne ne la fera** |
 | `1 - Corpus/3 - EntrepriseAgentique/prd/PRDPlan.md` | un sixième renvoi « mort » est un **faux positif** : le chemin vit dans un bloc `sh` clôturé, c'est le **gabarit d'en-tête de pièce**, correct à la profondeur de sa destination. Y toucher casserait le gabarit |
@@ -1637,7 +1643,7 @@ clôture du Vol. IV** — le premier depuis D-13 à toucher un volume, fût-ce p
 
 **(a) Un sixième livrable entre au dépôt.** [`Revue de littérature.md`](Revue%20de%20litt%C3%A9rature.md)
 et son PDF — **40 pages fermes, 161 références, 18 sections, 8 tableaux**, neuf fronts de recherche —,
-avec son contrôle propre, [`check-revue.py`](check-revue.py) (quatre contrôles, **validés par
+avec son contrôle propre, [`check-revue.py`](Python/check-revue.py) (quatre contrôles, **validés par
 mutation**, sortie 0). ⚠ *Ces décomptes sont ceux du dépôt et ils sont laissés tels quels : la
 **seconde passe du même jour**, en fin de fichier, porte la revue à **176 références et dix fronts**.
 Un constat daté enregistre, il ne retarde pas.* Son titre est **aligné le même jour** sur le radical que la veille et le
@@ -1775,7 +1781,7 @@ protocoles 4/**12** pour 13 — contredisant ce même tableau ; corrigé en **67
 ⚠ *Les numérateurs restent hérités du décompte antérieur et n'ont pas été revérifiés pièce à pièce,
 sauf celui du front neuf — 11 sur 15, établi sur dossier. C'est écrit plutôt que tu.*
 
-**(e) Le contrôle réparé avant d'être cru.** [`check-revue.py`](check-revue.py) codait en dur
+**(e) Le contrôle réparé avant d'être cru.** [`check-revue.py`](Python/check-revue.py) codait en dur
 `sur 158` et `(Vingt-six|Trente et une)`. ⚠ **Passé à 28 auto-déclarations, le motif ne serait pas
 tombé : il aurait cessé de chercher, et le contrôle serait passé au vert sur un document faux.** Les
 alternatives couvrent désormais l'ancienne et la nouvelle valeur, un cinquième motif surveille le
@@ -1799,8 +1805,8 @@ typographie serait contourner la contrainte, pas la satisfaire.*
 ⚠ **Ce que la passe ne fait pas.** Elle **ne touche à aucun des quatre volumes ni à la veille**,
 **ne franchit aucune porte**, **ne lève aucune dérogation**, **ne referme aucune remontée**,
 **ne revérifie pas pièce à pièce les numérateurs hérités de §12.3**, **ne rejuge pas la clôture** et
-**ne publie rien**. Le journal détaillé de la boucle, tour par tour, est dans
-[`gauntlet-log.md`](gauntlet-log.md).
+**ne publie rien**. Le journal détaillé de la boucle, tour par tour, était dans `gauntlet-log.md`,
+⚠ **purgé le 10 août 2026 et relisible au seul historique git**.
 
 **Le 10 août 2026 — dépôt d'un septième livrable, et resynchronisation de ce fichier sur lui.** Un
 **essai sur les systèmes multiagents en essaim** entre à la racine du dépôt —
@@ -1822,7 +1828,7 @@ livrable, et aucun ne le cite** : ses 118 références ne contiennent ni la veil
 aucun des quatre volumes, et les protocoles du dépôt n'y paraissent qu'une fois, par la
 spécification MCP prise en exemple de milieu. *Le dépôt gagne un livrable et non un renvoi* — en
 contrepartie, c'est le seul des sept dont l'auto-citation soit **nulle**. *(c)* ⚠ **Un contrôle du
-dépôt sort 1 sur ce PDF sans qu'il y ait de défaut** : [`check-resume.py`](check-resume.py) code sa
+dépôt sort 1 sur ce PDF sans qu'il y ait de défaut** : [`check-resume.py`](Python/check-resume.py) code sa
 marge basse en dur à **73,7 pt** (les 2,6 cm de la veille) et compte le folio, quand l'essai compose
 à 2,35 cm et numérote dès la page de titre. Mesures relevées : dernière ligne du **résumé** à
 **y = 325,7 pt**, soit **259 pt de dégagement** ; texte le plus bas de la page à **39,1 pt**, qui est
@@ -1945,7 +1951,8 @@ corriger tous les écarts, **maintenir 100 pages**. Deux axes fixés par l'auteu
 technique, fiabilité des sources —, gagés sur la pièce du dépôt qui les incarne, la **veille
 technologique**. Huit morceaux jugeables ; un bâtisseur et un juge à l'aveugle par morceau ; ordre
 A/B alterné et extraits tronqués à longueur comparable, pour qu'aucun juge ne devine à la taille.
-**Le traité gagne 7 comparaisons sur 8.** Journal complet : [`gauntlet-log.md`](gauntlet-log.md).
+**Le traité gagne 7 comparaisons sur 8.** Journal complet : `gauntlet-log.md`, ⚠ **purgé de l'arbre à
+la passe suivante du même jour — il ne se relit plus qu'à l'historique git.**
 
 **168 correctifs appliqués, 0 rejeté**, plus 3 déplacements de légende : 97 au premier tour
 (−214 car.), 44 au second (+973), 27 à la passe de lissage (−113). ⚠ *Aucun bâtisseur n'a écrit dans
@@ -1985,3 +1992,42 @@ pas `check-resume.py`**, **ne lève aucune des réserves de fond du traité** �
 annonce reste argumentée et non mesurée, et sa conclusion le dit elle-même —, **ne franchit aucune
 porte**, **ne referme aucune remontée**, **ne rejuge pas la clôture** et **ne publie rien de ce qui
 est clos**. La clôture **D-13 reste en vigueur pour les quatre volumes**.
+
+**Le 10 août 2026, sixième passe du même jour — purge de la racine, et resynchronisation de ce
+fichier sur elle.** Sur instruction d'auteur, deux gestes sur l'outillage, aucun sur un livrable :
+*(a)* **les trois contrôles quittent la racine pour [`Python/`](Python/)** — `check-veille.py`,
+`check-resume.py`, `check-revue.py`, déplacés sans qu'une ligne de leur code change ; *(b)*
+**`gauntlet-log.md` est supprimé**, le journal des boucles bâtisseur/critique de la veille, de la
+revue et de l'audit du traité. *La racine ne porte plus que les sept rendus, ce fichier, `.gitignore`
+et les trois dossiers de travail.*
+
+☑ **Les trois contrôles ont été rejoués après déplacement, et ils sortent 0** : `python
+Python/check-veille.py`, `python Python/check-revue.py`, `python Python/check-resume.py`.
+⚠ **Une condition d'exécution est née du déplacement et il faut la connaître** : les trois scripts
+ouvrent leurs sources par **chemin relatif au répertoire courant** (`SRC = 'Veille Technologique.md'`,
+`SRC = 'Revue de littérature.md'`, `'Veille Technologique.pdf'` par défaut). Ils marchent donc
+**depuis la racine du dépôt, et échouent depuis `Python/`** — *rien dans le code ne le signale, et
+aucun d'eux ne résout son propre chemin d'installation.* Le comportement sur le traité est inchangé :
+`python Python/check-resume.py "Traité.pdf"` **sort 1** sur sa constante de marge et son folio,
+toujours sans qu'une ligne soit rognée.
+
+⚠ **La purge du journal était prévisible et elle est irréversible en lecture directe.** Le tableau
+des reliquats donnait déjà `gauntlet-log.md` pour purgé le 8 août, puis notait son retour ; il repart,
+et la ligne est remise à jour avec **l'aller-retour complet** plutôt qu'avec son seul état final. *Le
+journal était suivi par git : il se relit à l'historique, ce qui n'était pas le cas des deux rapports
+d'évaluation académique purgés le même jour que lui la première fois.*
+
+☑ **Ce que cette passe répare dans ce fichier, et qui aurait été un renvoi mort silencieux.**
+**Cinq liens** visaient les scripts à la racine et **quatre** visaient le journal : **neuf renvois
+seraient morts au déplacement**, tous corrigés ici — les cinq repointés sur `Python/`, les quatre
+convertis en mention avec leur date de purge. ⚠ *C'est exactement la classe d'écart que le tableau
+des reliquats décrit à sa dernière ligne* : **aucun des sept contrôles du dépôt ne résout un lien
+markdown**, un déplacement de fichier ne lève donc aucune erreur, et **rien n'aurait signalé ces neuf
+renvois** si la resynchronisation n'avait pas été faite à la main. *Le contrôle qui manque est
+toujours le même, et il manque toujours.*
+
+⚠ **Ce que la passe ne fait pas.** Elle **ne modifie aucun des sept livrables**, **ne change pas une
+ligne des trois scripts**, **ne corrige pas `check-resume.py`**, **n'ajoute aucune porte de
+pagination ni aucun contrôle de renvois**, **ne franchit aucune porte**, **ne lève aucune
+dérogation**, **ne referme aucune remontée**, **ne rejuge pas la clôture** et **ne publie rien de ce
+qui est clos**. La clôture **D-13 reste en vigueur pour les quatre volumes**.

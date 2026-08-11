@@ -2,7 +2,7 @@
 
 > **Auteur :** André-Guy Bruneau, M.Sc. IT — Juin–Juillet 2026
 >
-> ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13** ([`2 - Compendium/PRD/PRD.md`](../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe n'est plus prévue, sur aucun des cinq livrables que le dépôt portait alors ; ce document décrit un état **définitif** pour les trois volumes qu'il couvre. *Clore n'est ni terminer ni publier.* ⚠ **La clôture a été rouverte trois fois depuis, hors du triptyque** : la veille (8 août), un **sixième livrable** — la [revue de littérature](../Revue%20de%20litt%C3%A9rature.md), 9 août — et le **calage du compendium à mille pages** (9 août, appareil de rendu du Vol. IV seul). *Aucune ne touche aux Vol. I, II ou III.*
+> ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13** ([`2 - Compendium/PRD/PRD.md`](../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe n'est plus prévue, sur aucun des cinq livrables que le dépôt portait alors ; ce document décrit un état **définitif** pour les trois volumes qu'il couvre. *Clore n'est ni terminer ni publier.* ⚠ **La clôture a été rouverte quatre fois depuis, hors du triptyque** : la veille (8 août), un **sixième livrable** — la [revue de littérature](../Revue%20de%20litt%C3%A9rature.md), 9 août —, le **calage du compendium à mille pages** (9 août, appareil de rendu du Vol. IV seul) et un **septième livrable** — le [traité sur les systèmes multiagents en essaim](../Trait%C3%A9.md), 10 août. *Aucune ne touche aux Vol. I, II ou III.*
 >
 > Ce document est la **synthèse consolidée** des trois monographies du corpus. Il en articule les
 > thèses, les concepts et les apports en un seul document de synthèse. Pour le détail, se reporter
@@ -323,6 +323,7 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 | **RSSI / responsable identité** | Vol. III, Partie II — le passeport d'agent et la chaîne de mandat |
 | **Décideur** | Ce README, puis la veille technologique |
 | **Académique** | La [revue de littérature](../Revue%20de%20litt%C3%A9rature.md) (**40 p. fermes**, 176 références, **dix fronts**, arrêtée au **9 août 2026**) — ⚠ *sixième livrable du dépôt, entré après la clôture ; elle ne couvre aucun des trois volumes, elle mesure le champ savant qu'ils citent* |
+| **Le contrepoint** | Le [traité sur les systèmes multiagents en essaim](../Trait%C3%A9.md) (**100 p. fermes**, 118 références, déposé le **10 août 2026**) — ⚠ *septième livrable, et le seul qui ne cite aucun autre : il prend l'objet par l'autre bout, ce qu'une population d'agents gagne à ne pas s'accorder. Aucun des trois volumes ne le cite, et il n'en cite aucun.* |
 
 ---
 
