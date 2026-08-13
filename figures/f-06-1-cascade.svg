@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 203" width="468" height="203" role="img" aria-label="Chaine de quatre etapes decrivant la cascade d'un agent sature tue par sa sonde de vivacite.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 182" width="504" height="182" role="img" aria-label="Chaine de quatre etapes decrivant la cascade d'un agent sature tue par sa sonde de vivacite.">
   <!-- § 6.1, chapitre 6.
        Genere par figures/contenu.py — ne pas retoucher a la main :
        la retouche se perd a la regeneration. Convention : viewBox de
-       468 unites = largeur du corps, une unite = un point. -->
+       504 unites = largeur du corps, une unite = un point. -->
   <defs><style>
   .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
   .bande  { font-size: 8.5px; font-weight: 700; fill: #1A1A1A; }
@@ -14,49 +14,46 @@
   .renvoi { font-size: 6.2px; fill: #767676; }
   .chiffre{ font-size: 8px;   font-weight: 700; fill: #1A1A1A; }
   </style></defs>
-  <rect x="0" y="0" width="468" height="203" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="504" height="182" fill="#FFFFFF"/>
   <text class="l titre" x="0" y="8">AUCUN AGENT N'EST TOMBÉ, ET L'ESSAIM S'EFFONDRE</text>
-  <rect x="0" y="14" width="100" height="100" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <rect x="0" y="14" width="110" height="89" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
   <text class="l bande" x="9" y="31">1. Saturation</text>
-  <text class="l ann" x="9" y="44">La latence de réponse</text>
-  <text class="l ann" x="9" y="55">de l'agent franchit le</text>
-  <text class="l ann" x="9" y="66">délai d'expiration de</text>
-  <text class="l ann" x="9" y="77">la sonde, fixé à 1 s.</text>
-  <text class="l ann" x="9" y="88">L'agent est vivant.</text>
-  <path d="M 103.5 64.0 H 116.5" fill="none" stroke="#8A3324" stroke-width=".9"/>
-  <path d="M 120.5 64.0 l -4 -3 v 6 z" fill="#8A3324"/>
-  <rect x="122" y="14" width="100" height="100" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l bande" x="131" y="31">2. Mort déclarée</text>
-  <text class="l ann" x="131" y="44">Trois échecs</text>
-  <text class="l ann" x="131" y="55">consécutifs à 10 s</text>
-  <text class="l ann" x="131" y="66">d'intervalle : le</text>
-  <text class="l ann" x="131" y="77">conteneur est redémarré</text>
-  <text class="l ann" x="131" y="88">au bout de 30 s.</text>
-  <path d="M 225.5 64.0 H 238.5" fill="none" stroke="#8A3324" stroke-width=".9"/>
-  <path d="M 242.5 64.0 l -4 -3 v 6 z" fill="#8A3324"/>
-  <rect x="245" y="14" width="100" height="100" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l bande" x="254" y="31">3. Rééquilibrage</text>
-  <text class="l ann" x="254" y="44">Sa disparition en</text>
-  <text class="l ann" x="254" y="55">déclenche un : 4 tours</text>
-  <text class="l ann" x="254" y="66">et 8n messages sous le</text>
-  <text class="l ann" x="254" y="77">protocole coopératif.</text>
-  <path d="M 348.5 64.0 H 361.5" fill="none" stroke="#8A3324" stroke-width=".9"/>
-  <path d="M 365.5 64.0 l -4 -3 v 6 z" fill="#8A3324"/>
-  <rect x="368" y="14" width="100" height="100" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l bande" x="377" y="31">4. Report de charge</text>
-  <text class="l ann" x="377" y="44">Ses partitions échoient</text>
-  <text class="l ann" x="377" y="55">à des agents déjà</text>
-  <text class="l ann" x="377" y="66">saturés, qui</text>
-  <text class="l ann" x="377" y="77">reconstruisent son état</text>
-  <text class="l ann" x="377" y="88">et manquent à leur tour</text>
-  <text class="l ann" x="377" y="99">leurs échéances.</text>
-  <path d="M 418 114 V 126 H 50 V 118" fill="none" stroke="#8A3324" stroke-width=".9" stroke-dasharray="3 2"/>
-  <path d="M 50 114 l -3 4 h 6 z" fill="#8A3324"/>
-  <text class="l annf" x="0" y="137">La cascade est complète en trois générations. Le taux de fausses suspicions n'est pas une constante du détecteur : c'est une fonction</text>
-  <text class="l annf" x="0" y="148">croissante de la charge, qui culmine exactement au moment où le système peut le moins se le permettre.</text>
-  <path d="M 0 154 H 468" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l ann" x="0" y="167">Le remède n'est pas un réglage plus généreux. La sonde de disponibilité n'a AUCUN effet sur l'allocation de partitions d'un</text>
-  <text class="l ann" x="0" y="177">consommateur, dont le travail n'arrive pas par un point d'accès mais par sa propre lecture du journal. La sonde de vivacité ne doit</text>
-  <text class="l ann" x="0" y="187">donc tester qu'un blocage constatable sans travailler — un fil qui n'a pas avancé son décalage —, jamais la capacité à répondre dans</text>
-  <text class="l ann" x="0" y="197">le délai, qui mesure la charge.</text>
+  <text class="l ann" x="9" y="44">La latence de réponse de</text>
+  <text class="l ann" x="9" y="55">l'agent franchit le délai</text>
+  <text class="l ann" x="9" y="66">d'expiration de la sonde,</text>
+  <text class="l ann" x="9" y="77">fixé à 1 s. L'agent est</text>
+  <text class="l ann" x="9" y="88">vivant.</text>
+  <path d="M 112.5 58.5 H 125.5" fill="none" stroke="#8A3324" stroke-width=".9"/>
+  <path d="M 129.5 58.5 l -4 -3 v 6 z" fill="#8A3324"/>
+  <rect x="132" y="14" width="110" height="89" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l bande" x="141" y="31">2. Mort déclarée</text>
+  <text class="l ann" x="141" y="44">Trois échecs consécutifs à</text>
+  <text class="l ann" x="141" y="55">10 s d'intervalle : le</text>
+  <text class="l ann" x="141" y="66">conteneur est redémarré au</text>
+  <text class="l ann" x="141" y="77">bout de 30 s.</text>
+  <path d="M 244.5 58.5 H 257.5" fill="none" stroke="#8A3324" stroke-width=".9"/>
+  <path d="M 261.5 58.5 l -4 -3 v 6 z" fill="#8A3324"/>
+  <rect x="263" y="14" width="110" height="89" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l bande" x="272" y="31">3. Rééquilibrage</text>
+  <text class="l ann" x="272" y="44">Sa disparition en</text>
+  <text class="l ann" x="272" y="55">déclenche un : 4 tours et</text>
+  <text class="l ann" x="272" y="66">8n messages sous le</text>
+  <text class="l ann" x="272" y="77">protocole coopératif.</text>
+  <path d="M 375.5 58.5 H 388.5" fill="none" stroke="#8A3324" stroke-width=".9"/>
+  <path d="M 392.5 58.5 l -4 -3 v 6 z" fill="#8A3324"/>
+  <rect x="394" y="14" width="110" height="89" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l bande" x="403" y="31">4. Report de charge</text>
+  <text class="l ann" x="403" y="44">Ses partitions échoient à</text>
+  <text class="l ann" x="403" y="55">des agents déjà saturés,</text>
+  <text class="l ann" x="403" y="66">qui reconstruisent son</text>
+  <text class="l ann" x="403" y="77">état et manquent à leur</text>
+  <text class="l ann" x="403" y="88">tour leurs échéances.</text>
+  <path d="M 449 103 V 115 H 55 V 107" fill="none" stroke="#8A3324" stroke-width=".9" stroke-dasharray="3 2"/>
+  <path d="M 55 103 l -3 4 h 6 z" fill="#8A3324"/>
+  <text class="l annf" x="0" y="126">La cascade est complète en trois générations. Le taux de fausses suspicions n'est pas une constante du détecteur : c'est une fonction croissante</text>
+  <text class="l annf" x="0" y="137">de la charge, qui culmine exactement au moment où le système peut le moins se le permettre.</text>
+  <path d="M 0 143 H 504" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l ann" x="0" y="156">Le remède n'est pas un réglage plus généreux. La sonde de disponibilité n'a AUCUN effet sur l'allocation de partitions d'un consommateur, dont</text>
+  <text class="l ann" x="0" y="166">le travail n'arrive pas par un point d'accès mais par sa propre lecture du journal. La sonde de vivacité ne doit donc tester qu'un blocage</text>
+  <text class="l ann" x="0" y="176">constatable sans travailler — un fil qui n'a pas avancé son décalage —, jamais la capacité à répondre dans le délai, qui mesure la charge.</text>
 </svg>

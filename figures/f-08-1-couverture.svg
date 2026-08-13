@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 147" width="504" height="147" role="img" aria-label="Barres comparant les vulnerabilites trouvees par un essaim coordonne et par des agents independants.">
+  <!-- § 8.1, chapitre 8 — d'après [119].
+       Genere par figures/contenu.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       504 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #1A1A1A; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #8A3324; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #8A3324; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #767676; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4D4D4D; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #1A1A1A; }
+  .renvoi { font-size: 6.2px; fill: #767676; }
+  .chiffre{ font-size: 8px;   font-weight: 700; fill: #1A1A1A; }
+  </style></defs>
+  <rect x="0" y="0" width="504" height="147" fill="#FFFFFF"/>
+  <text class="l titre" x="0" y="8">VULNÉRABILITÉS NOUVELLES ET VALIDES, QUINZE PROJETS LIBRES</text>
+  <text class="l ann" x="0" y="27">Essaim coordonné — 45 agents, forum partagé, relecture</text>
+  <text class="l ann" x="0" y="38">mutuelle</text>
+  <rect x="214" y="19.5" width="230.0" height="9" fill="#8A3324" stroke="#8A3324" stroke-width=".7"/>
+  <text class="l chiffre" x="449.0" y="27">266</text>
+  <text class="l ann" x="0" y="56">Agents indépendants — périmètre de code assigné d'avance</text>
+  <rect x="214" y="48.5" width="18.2" height="9" fill="#FFFFFF" stroke="#8A3324" stroke-width=".7"/>
+  <text class="l chiffre" x="237.1578947368421" y="56">21</text>
+  <text class="l ann" x="0" y="76">Trouvailles communes aux deux méthodes</text>
+  <rect x="214" y="68.5" width="10.4" height="9" fill="#8A3324" stroke="#8A3324" stroke-width=".7"/>
+  <text class="l chiffre" x="229.37593984962405" y="76">12</text>
+  <text class="l renvoi" x="0" y="92">jugées par un agent arbitre distinct. Budgets de jetons : 27 millions pour l'essaim coordonné, 6,5 millions pour les agents indépendants.</text>
+  <path d="M 0 98 H 504" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l ann" x="0" y="111">Le rapport de 266 à 21 ne se lit pas comme un gain d'efficacité : les deux méthodes ne consomment pas le même budget de jetons, et l'essaim</text>
+  <text class="l ann" x="0" y="121">restreint au périmètre assigné aux agents indépendants se compare à eux en jetons par vulnérabilité. Ce que l'essaim achète est une couverture,</text>
+  <text class="l ann" x="0" y="131">non un meilleur rendement, et douze trouvailles communes sur l'ensemble montrent que les deux méthodes ne se remplacent pas. Aucune de ces</text>
+  <text class="l ann" x="0" y="141">valeurs n'est reproductible hors de la version de modèle sur laquelle elle a été prise.</text>
+</svg>

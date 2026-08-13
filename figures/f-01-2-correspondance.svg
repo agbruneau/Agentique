@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 310" width="468" height="310" role="img" aria-label="Tableau de correspondance entre les composantes de la stigmergie biologique et celles d'un journal partitionne.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 310" width="504" height="310" role="img" aria-label="Tableau de correspondance entre les composantes de la stigmergie biologique et celles d'un journal partitionne.">
   <!-- § 1.2, chapitre 1.
        Genere par figures/contenu.py — ne pas retoucher a la main :
        la retouche se perd a la regeneration. Convention : viewBox de
-       468 unites = largeur du corps, une unite = un point. -->
+       504 unites = largeur du corps, une unite = un point. -->
   <defs><style>
   .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
   .bande  { font-size: 8.5px; font-weight: 700; fill: #1A1A1A; }
@@ -14,52 +14,52 @@
   .renvoi { font-size: 6.2px; fill: #767676; }
   .chiffre{ font-size: 8px;   font-weight: 700; fill: #1A1A1A; }
   </style></defs>
-  <rect x="0" y="0" width="468" height="310" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="504" height="310" fill="#FFFFFF"/>
   <text class="l titre" x="0" y="8">CE QUE LA SUBSTITUTION CONSERVE, ET CE QU'ELLE DÉTRUIT</text>
   <text class="l annf" x="109" y="28">Essaim biologique — Grassé, Heylighen [4][9]</text>
-  <text class="l annf" x="291" y="28">Essaim logiciel — journal partitionné</text>
-  <path d="M 0 41 H 468" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+  <text class="l annf" x="309" y="28">Essaim logiciel — journal partitionné</text>
+  <path d="M 0 41 H 504" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
   <text class="l annf" x="0" y="53">Trace</text>
   <text class="l ann" x="109" y="53">Le dépôt qu'une action laisse derrière elle.</text>
-  <text class="l ann" x="291" y="53">Un enregistrement, en ajout seul et durable.</text>
-  <path d="M 0 71 H 468" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
+  <text class="l ann" x="309" y="53">Un enregistrement, en ajout seul et durable.</text>
+  <path d="M 0 71 H 504" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
   <text class="l annf" x="0" y="83">Milieu</text>
   <text class="l ann" x="109" y="83">Le nid : un espace physique, durable et sans</text>
   <text class="l ann" x="109" y="94">propriétaire.</text>
-  <text class="l ann" x="291" y="83">La partition : ordre total à l'intérieur (M1),</text>
-  <text class="l ann" x="291" y="94">aucun entre partitions (M2).</text>
-  <path d="M 0 105 H 468" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
+  <text class="l ann" x="309" y="83">La partition : ordre total à l'intérieur (M1),</text>
+  <text class="l ann" x="309" y="94">aucun entre partitions (M2).</text>
+  <path d="M 0 105 H 504" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
   <text class="l annf" x="0" y="117">Voisinage</text>
-  <text class="l ann" x="109" y="117">Ce que l'insecte perçoit sous lui, borné par</text>
-  <text class="l ann" x="109" y="128">la portée du capteur.</text>
-  <text class="l ann" x="291" y="117">L'intervalle compris entre le décalage validé</text>
-  <text class="l ann" x="291" y="128">de l'agent et la fin courante.</text>
-  <path d="M 0 139 H 468" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
+  <text class="l ann" x="109" y="117">Ce que l'insecte perçoit sous lui, borné par la</text>
+  <text class="l ann" x="109" y="128">portée du capteur.</text>
+  <text class="l ann" x="309" y="117">L'intervalle compris entre le décalage validé de</text>
+  <text class="l ann" x="309" y="128">l'agent et la fin courante.</text>
+  <path d="M 0 139 H 504" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
   <text class="l annf" x="0" y="151">Évaporation</text>
   <text class="l ann" x="109" y="151">Une décroissance chimique, gratuite et</text>
   <text class="l ann" x="109" y="162">exponentielle.</text>
-  <text class="l ann" x="291" y="151">Une politique de rétention du courtier, ou un</text>
-  <text class="l ann" x="291" y="162">facteur γ &lt; 1 appliqué par le lecteur.</text>
-  <path d="M 0 173 H 468" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
+  <text class="l ann" x="309" y="151">Une politique de rétention du courtier, ou un</text>
+  <text class="l ann" x="309" y="162">facteur γ &lt; 1 appliqué par le lecteur.</text>
+  <path d="M 0 173 H 504" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
   <text class="l annf" x="0" y="185">Indirection</text>
   <text class="l annf" x="109" y="185">✓</text>
   <text class="l ann" x="123" y="185">Aucun destinataire ; la trace survit à son</text>
   <text class="l ann" x="123" y="196">auteur.</text>
-  <text class="l annf" x="291" y="185">✓</text>
-  <text class="l ann" x="305" y="185">Conservée : découplage spatial, découplage</text>
-  <text class="l ann" x="305" y="196">temporel, persistance.</text>
-  <path d="M 0 207 H 468" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
+  <text class="l annf" x="309" y="185">✓</text>
+  <text class="l ann" x="323" y="185">Conservée : découplage spatial, découplage</text>
+  <text class="l ann" x="323" y="196">temporel, persistance.</text>
+  <path d="M 0 207 H 504" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
   <text class="l annf" x="0" y="219">Gradient</text>
   <text class="l ann" x="109" y="219">La phéromone diffuse et construit un champ :</text>
   <text class="l ann" x="109" y="230">l'insecte décide par montée locale.</text>
-  <text class="l annf" x="291" y="219">✕</text>
-  <text class="l ann" x="305" y="219">Détruit : lire « la trace près de moi »</text>
-  <text class="l ann" x="305" y="230">revient à lire une clé, et il n'existe</text>
-  <text class="l ann" x="305" y="241">aucune métrique entre deux clés.</text>
-  <path d="M 0 252 H 468" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+  <text class="l annf" x="309" y="219">✕</text>
+  <text class="l ann" x="323" y="219">Détruit : lire « la trace près de moi » revient</text>
+  <text class="l ann" x="323" y="230">à lire une clé, et il n'existe aucune métrique</text>
+  <text class="l ann" x="323" y="241">entre deux clés.</text>
+  <path d="M 0 252 H 504" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
   <text class="l renvoi" x="0" y="265">§ 1.2 — les quatre premières lignes se substituent terme à terme ; la cinquième survit à la substitution ; la sixième n'y survit pas.</text>
-  <path d="M 0 271 H 468" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l ann" x="0" y="284">Un partitionnement par hachage détruit la proximité qu'un partitionnement par intervalle préserverait, au prix d'un point chaud. La</text>
-  <text class="l ann" x="0" y="294">perte du gradient est la première rupture de la transposition, et elle décide de la conception du sujet plus sûrement que n'importe</text>
-  <text class="l ann" x="0" y="304">quel choix de bibliothèque.</text>
+  <path d="M 0 271 H 504" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l ann" x="0" y="284">Un partitionnement par hachage détruit la proximité qu'un partitionnement par intervalle préserverait, au prix d'un point chaud. La perte du</text>
+  <text class="l ann" x="0" y="294">gradient est la première rupture de la transposition, et elle décide de la conception du sujet plus sûrement que n'importe quel choix de</text>
+  <text class="l ann" x="0" y="304">bibliothèque.</text>
 </svg>

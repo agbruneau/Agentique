@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 229" width="468" height="229" role="img" aria-label="Deux panneaux comparant le regime de l'accord et le regime du milieu evenementiel.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 229" width="504" height="229" role="img" aria-label="Deux panneaux comparant le regime de l'accord et le regime du milieu evenementiel.">
   <!-- Introduction.
        Genere par figures/contenu.py — ne pas retoucher a la main :
        la retouche se perd a la regeneration. Convention : viewBox de
-       468 unites = largeur du corps, une unite = un point. -->
+       504 unites = largeur du corps, une unite = un point. -->
   <defs><style>
   .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
   .bande  { font-size: 8.5px; font-weight: 700; fill: #1A1A1A; }
@@ -14,34 +14,33 @@
   .renvoi { font-size: 6.2px; fill: #767676; }
   .chiffre{ font-size: 8px;   font-weight: 700; fill: #1A1A1A; }
   </style></defs>
-  <rect x="0" y="0" width="468" height="229" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="504" height="229" fill="#FFFFFF"/>
   <text class="l titreg" x="0" y="8">RÉGIME DE L'ACCORD</text>
-  <rect x="0" y="14" width="221" height="157" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <rect x="0" y="14" width="239" height="157" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
   <text class="l bande" x="9" y="30">Les agents négocient une décision</text>
   <text class="l ann" x="9" y="46">Porter un changement à toute la population coûte un nombre</text>
   <text class="l ann" x="9" y="57">quadratique de messages.</text>
-  <text class="l ann" x="9" y="76">L'émetteur nomme le destinataire : il entretient une vue</text>
-  <text class="l ann" x="9" y="87">des membres vivants, qui est toujours une approximation et</text>
-  <text class="l ann" x="9" y="98">jamais un fait.</text>
-  <text class="l ann" x="9" y="117">Un tour vaut un aller simple, et n'a de sens que sous</text>
-  <text class="l ann" x="9" y="128">hypothèse synchrone.</text>
+  <text class="l ann" x="9" y="76">L'émetteur nomme le destinataire : il entretient une vue des</text>
+  <text class="l ann" x="9" y="87">membres vivants, qui est toujours une approximation et jamais</text>
+  <text class="l ann" x="9" y="98">un fait.</text>
+  <text class="l ann" x="9" y="117">Un tour vaut un aller simple, et n'a de sens que sous hypothèse</text>
+  <text class="l ann" x="9" y="128">synchrone.</text>
   <text class="l ann" x="9" y="147">Un seul processus fautif par arrêt suffit à retirer la</text>
   <text class="l ann" x="9" y="158">terminaison en asynchrone [1].</text>
   <text class="l annf" x="0" y="184">Ce qu'il tient : un invariant global, à tout instant.</text>
-  <text class="l titre" x="247" y="8">RÉGIME DU MILIEU</text>
-  <rect x="247" y="14" width="221" height="157" fill="#FFFFFF" stroke="#8A3324" stroke-width=".9"/>
-  <text class="l bande" x="256" y="30">Les agents déposent et lisent des traces</text>
-  <text class="l ann" x="256" y="46">Une écriture et une lecture par agent ; le diamètre du</text>
-  <text class="l ann" x="256" y="57">graphe de coordination vaut 2 quel que soit le nombre</text>
-  <text class="l ann" x="256" y="68">d'agents.</text>
-  <text class="l ann" x="256" y="87">Le producteur n'a pas de destinataire à connaître.</text>
-  <text class="l ann" x="256" y="106">Un tour de journal vaut la latence de queue ℓ₉₉ du chemin</text>
-  <text class="l ann" x="256" y="117">écriture-durabilité-lecture.</text>
-  <text class="l ann" x="256" y="136">La sérialisation, que la matière assurait sans protocole,</text>
-  <text class="l ann" x="256" y="147">devient un composant à payer.</text>
-  <text class="l annf" x="247" y="184">Ce qu'il tient : une décision révocable, sous ordre partiel.</text>
-  <path d="M 0 190 H 468" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l ann" x="0" y="203">Le point partagé n'est pas détruit, il est transporté dans le milieu, qui devient le composant que chaque agent touche, qu'il faut</text>
-  <text class="l ann" x="0" y="213">répliquer, exploiter et facturer. La thèse est un déplacement, non une suppression — et le milieu est le candidat le plus sérieux au</text>
-  <text class="l ann" x="0" y="223">titre de point de défaillance unique que la décentralisation prétendait supprimer.</text>
+  <text class="l titre" x="265" y="8">RÉGIME DU MILIEU</text>
+  <rect x="265" y="14" width="239" height="157" fill="#FFFFFF" stroke="#8A3324" stroke-width=".9"/>
+  <text class="l bande" x="274" y="30">Les agents déposent et lisent des traces</text>
+  <text class="l ann" x="274" y="46">Une écriture et une lecture par agent ; le diamètre du graphe</text>
+  <text class="l ann" x="274" y="57">de coordination vaut 2 quel que soit le nombre d'agents.</text>
+  <text class="l ann" x="274" y="76">Le producteur n'a pas de destinataire à connaître.</text>
+  <text class="l ann" x="274" y="95">Un tour de journal vaut la latence de queue ℓ₉₉ du chemin</text>
+  <text class="l ann" x="274" y="106">écriture-durabilité-lecture.</text>
+  <text class="l ann" x="274" y="125">La sérialisation, que la matière assurait sans protocole,</text>
+  <text class="l ann" x="274" y="136">devient un composant à payer.</text>
+  <text class="l annf" x="265" y="184">Ce qu'il tient : une décision révocable, sous ordre partiel.</text>
+  <path d="M 0 190 H 504" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l ann" x="0" y="203">Le point partagé n'est pas détruit, il est transporté dans le milieu, qui devient le composant que chaque agent touche, qu'il faut répliquer,</text>
+  <text class="l ann" x="0" y="213">exploiter et facturer. La thèse est un déplacement, non une suppression — et le milieu est le candidat le plus sérieux au titre de point de</text>
+  <text class="l ann" x="0" y="223">défaillance unique que la décentralisation prétendait supprimer.</text>
 </svg>

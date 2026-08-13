@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 251" width="468" height="251" role="img" aria-label="Deux panneaux opposant une propriete de surete et une propriete de vivacite.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 251" width="504" height="251" role="img" aria-label="Deux panneaux opposant une propriete de surete et une propriete de vivacite.">
   <!-- § 3.2, chapitre 3 — d'après [61].
        Genere par figures/contenu.py — ne pas retoucher a la main :
        la retouche se perd a la regeneration. Convention : viewBox de
-       468 unites = largeur du corps, une unite = un point. -->
+       504 unites = largeur du corps, une unite = un point. -->
   <defs><style>
   .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
   .bande  { font-size: 8.5px; font-weight: 700; fill: #1A1A1A; }
@@ -14,37 +14,35 @@
   .renvoi { font-size: 6.2px; fill: #767676; }
   .chiffre{ font-size: 8px;   font-weight: 700; fill: #1A1A1A; }
   </style></defs>
-  <rect x="0" y="0" width="468" height="251" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="504" height="251" fill="#FFFFFF"/>
   <text class="l titreg" x="0" y="8">S1 — SÛRETÉ</text>
-  <rect x="0" y="14" width="221" height="158" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <rect x="0" y="14" width="239" height="158" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
   <text class="l bande" x="9" y="30">« Deux agents ne détiennent jamais simultanément</text>
   <text class="l bande" x="9" y="42">l'attribution de la même partition. »</text>
-  <text class="l ann" x="9" y="58">Si elle ne tient pas, il existe un instant identifiable où</text>
-  <text class="l ann" x="9" y="69">la mauvaise chose se produit, et cette mauvaise chose est</text>
+  <text class="l ann" x="9" y="58">Si elle ne tient pas, il existe un instant identifiable où la</text>
+  <text class="l ann" x="9" y="69">mauvaise chose se produit, et cette mauvaise chose est</text>
   <text class="l ann" x="9" y="80">irrémédiable : aucun prolongement ne la répare.</text>
   <text class="l ann" x="9" y="99">Se réfute par une exécution de trois secondes.</text>
-  <text class="l ann" x="9" y="118">Un moniteur peut lever l'alerte à l'instant de la</text>
-  <text class="l ann" x="9" y="129">violation.</text>
-  <text class="l ann" x="9" y="148">Se démontre en asynchrone.</text>
+  <text class="l ann" x="9" y="118">Un moniteur peut lever l'alerte à l'instant de la violation.</text>
+  <text class="l ann" x="9" y="137">Se démontre en asynchrone.</text>
   <text class="l annf" x="0" y="185">Décidable sur un horizon borné : justiciable de la vérification</text>
   <text class="l annf" x="0" y="196">bornée.</text>
-  <text class="l titre" x="247" y="8">L1 — VIVACITÉ</text>
-  <rect x="247" y="14" width="221" height="158" fill="#FFFFFF" stroke="#8A3324" stroke-width=".9"/>
-  <text class="l bande" x="256" y="30">« Tout agent qui rejoint le groupe finit par</text>
-  <text class="l bande" x="256" y="42">recevoir une attribution. »</text>
-  <text class="l ann" x="256" y="58">Aucune exécution partielle n'est irrémédiable : quelle que</text>
-  <text class="l ann" x="256" y="69">soit l'exécution finie déjà observée, il existe un</text>
-  <text class="l ann" x="256" y="80">prolongement infini qui la satisfait.</text>
-  <text class="l ann" x="256" y="99">N'est réfutée par aucune exécution finie, donc par aucune</text>
-  <text class="l ann" x="256" y="110">campagne de tests.</text>
-  <text class="l ann" x="256" y="129">Aucun moniteur ne peut signaler qu'elle est violée — au</text>
-  <text class="l ann" x="256" y="140">mieux, qu'elle n'est pas encore satisfaite.</text>
-  <text class="l ann" x="256" y="159">Exige au minimum le partiellement synchrone.</text>
-  <text class="l annf" x="247" y="185">Non décidable sur horizon fini : aucun échantillon ne la</text>
-  <text class="l annf" x="247" y="196">tranche.</text>
-  <path d="M 0 202 H 468" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l ann" x="0" y="215">Toute propriété est l'intersection d'une propriété de sûreté et d'une propriété de vivacité [61]. Un cahier des charges qui mêle S1</text>
-  <text class="l ann" x="0" y="225">et L1 sans les nommer produit des exigences dont la moitié est non testable — et dans un essaim asynchrone, aucune vivacité ne</text>
-  <text class="l ann" x="0" y="235">s'énonce inconditionnellement : elle porte un détecteur de défaillance, ou une hypothèse de synchronisme partiel, et écrire «</text>
-  <text class="l ann" x="0" y="245">l'essaim finit par converger » sans dire laquelle est le défaut de spécification le plus fréquent du domaine.</text>
+  <text class="l titre" x="265" y="8">L1 — VIVACITÉ</text>
+  <rect x="265" y="14" width="239" height="158" fill="#FFFFFF" stroke="#8A3324" stroke-width=".9"/>
+  <text class="l bande" x="274" y="30">« Tout agent qui rejoint le groupe finit par</text>
+  <text class="l bande" x="274" y="42">recevoir une attribution. »</text>
+  <text class="l ann" x="274" y="58">Aucune exécution partielle n'est irrémédiable : quelle que soit</text>
+  <text class="l ann" x="274" y="69">l'exécution finie déjà observée, il existe un prolongement</text>
+  <text class="l ann" x="274" y="80">infini qui la satisfait.</text>
+  <text class="l ann" x="274" y="99">N'est réfutée par aucune exécution finie, donc par aucune</text>
+  <text class="l ann" x="274" y="110">campagne de tests.</text>
+  <text class="l ann" x="274" y="129">Aucun moniteur ne peut signaler qu'elle est violée — au mieux,</text>
+  <text class="l ann" x="274" y="140">qu'elle n'est pas encore satisfaite.</text>
+  <text class="l ann" x="274" y="159">Exige au minimum le partiellement synchrone.</text>
+  <text class="l annf" x="265" y="185">Non décidable sur horizon fini : aucun échantillon ne la tranche.</text>
+  <path d="M 0 202 H 504" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l ann" x="0" y="215">Toute propriété est l'intersection d'une propriété de sûreté et d'une propriété de vivacité [61]. Un cahier des charges qui mêle S1 et L1 sans</text>
+  <text class="l ann" x="0" y="225">les nommer produit des exigences dont la moitié est non testable — et dans un essaim asynchrone, aucune vivacité ne s'énonce</text>
+  <text class="l ann" x="0" y="235">inconditionnellement : elle porte un détecteur de défaillance, ou une hypothèse de synchronisme partiel, et écrire « l'essaim finit par</text>
+  <text class="l ann" x="0" y="245">converger » sans dire laquelle est le défaut de spécification le plus fréquent du domaine.</text>
 </svg>

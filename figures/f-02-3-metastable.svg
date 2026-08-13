@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 225" width="468" height="225" role="img" aria-label="Chaine de quatre etats, de l'etat stable a l'etat metastable, avec la boucle de maintien.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 204" width="504" height="204" role="img" aria-label="Chaine de quatre etats, de l'etat stable a l'etat metastable, avec la boucle de maintien.">
   <!-- § 2.3, chapitre 2 — d'après [50].
        Genere par figures/contenu.py — ne pas retoucher a la main :
        la retouche se perd a la regeneration. Convention : viewBox de
-       468 unites = largeur du corps, une unite = un point. -->
+       504 unites = largeur du corps, une unite = un point. -->
   <defs><style>
   .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
   .bande  { font-size: 8.5px; font-weight: 700; fill: #1A1A1A; }
@@ -14,50 +14,47 @@
   .renvoi { font-size: 6.2px; fill: #767676; }
   .chiffre{ font-size: 8px;   font-weight: 700; fill: #1A1A1A; }
   </style></defs>
-  <rect x="0" y="0" width="468" height="225" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="504" height="204" fill="#FFFFFF"/>
   <text class="l titre" x="0" y="8">LE DÉCLENCHEUR N'EST PAS LA CAUSE</text>
-  <rect x="0" y="14" width="100" height="122" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <rect x="0" y="14" width="110" height="111" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
   <text class="l bande" x="9" y="31">État stable</text>
   <text class="l ann" x="9" y="44">Le système absorbe sa</text>
   <text class="l ann" x="9" y="55">charge. Aucune</text>
   <text class="l ann" x="9" y="66">amplification n'est</text>
   <text class="l ann" x="9" y="77">active.</text>
-  <path d="M 103.5 75.0 H 116.5" fill="none" stroke="#8A3324" stroke-width=".9"/>
-  <path d="M 120.5 75.0 l -4 -3 v 6 z" fill="#8A3324"/>
-  <rect x="122" y="14" width="100" height="122" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l bande" x="131" y="31">État vulnérable</text>
-  <text class="l ann" x="131" y="44">Aucune surcharge. On</text>
-  <text class="l ann" x="131" y="55">peut y tourner des mois</text>
-  <text class="l ann" x="131" y="66">ou des années, et</text>
-  <text class="l ann" x="131" y="77">beaucoup de systèmes de</text>
-  <text class="l ann" x="131" y="88">production choisissent</text>
-  <text class="l ann" x="131" y="99">d'y tourner en</text>
-  <text class="l ann" x="131" y="110">permanence, parce qu'il</text>
-  <text class="l ann" x="131" y="121">est plus efficace.</text>
-  <path d="M 225.5 75.0 H 238.5" fill="none" stroke="#8A3324" stroke-width=".9"/>
-  <path d="M 242.5 75.0 l -4 -3 v 6 z" fill="#8A3324"/>
-  <rect x="245" y="14" width="100" height="122" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l bande" x="254" y="31">Déclencheur</text>
-  <text class="l ann" x="254" y="44">Une coupure de 10 s,</text>
-  <text class="l ann" x="254" y="55">une perte de cache, une</text>
-  <text class="l ann" x="254" y="66">pointe. Il entre, puis</text>
-  <text class="l ann" x="254" y="77">il ressort.</text>
-  <path d="M 348.5 75.0 H 361.5" fill="none" stroke="#8A3324" stroke-width=".9"/>
-  <path d="M 365.5 75.0 l -4 -3 v 6 z" fill="#8A3324"/>
-  <rect x="368" y="14" width="100" height="122" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l bande" x="377" y="31">État métastable</text>
-  <text class="l ann" x="377" y="44">Le débit utile est</text>
-  <text class="l ann" x="377" y="55">inutilisable, et le</text>
-  <text class="l ann" x="377" y="66">retrait du déclencheur</text>
-  <text class="l ann" x="377" y="77">ne suffit plus à en</text>
-  <text class="l ann" x="377" y="88">sortir.</text>
-  <path d="M 418 136 V 148 H 50 V 140" fill="none" stroke="#8A3324" stroke-width=".9" stroke-dasharray="3 2"/>
-  <path d="M 50 136 l -3 4 h 6 z" fill="#8A3324"/>
-  <text class="l annf" x="0" y="159">Effet de maintien — amplification du travail ou baisse d'efficacité globale : le facteur 2 des reprises, le facteur 10 de la perte d'un</text>
-  <text class="l annf" x="0" y="170">cache à 90 % de succès. C'est lui, et non le déclencheur, qui empêche le retour.</text>
-  <path d="M 0 176 H 468" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l ann" x="0" y="189">Une panne métastable est habituellement imputée à son déclencheur, alors que la cause réelle est l'effet de maintien. En sortir exige</text>
-  <text class="l ann" x="0" y="199">une poussée corrective forte : dans l'exemple chiffré du cadre, un système qui tient à 280 requêtes/s y reste bloqué à 560 requêtes/s</text>
-  <text class="l ann" x="0" y="209">par le seul effet des reprises, et la sortie exige de ramener la charge sous 150 requêtes/s [50]. Aucun agent n'a fauté, aucun canal</text>
-  <text class="l ann" x="0" y="219">n'a omis.</text>
+  <path d="M 112.5 69.5 H 125.5" fill="none" stroke="#8A3324" stroke-width=".9"/>
+  <path d="M 129.5 69.5 l -4 -3 v 6 z" fill="#8A3324"/>
+  <rect x="132" y="14" width="110" height="111" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l bande" x="141" y="31">État vulnérable</text>
+  <text class="l ann" x="141" y="44">Aucune surcharge. On peut</text>
+  <text class="l ann" x="141" y="55">y tourner des mois ou des</text>
+  <text class="l ann" x="141" y="66">années, et beaucoup de</text>
+  <text class="l ann" x="141" y="77">systèmes de production</text>
+  <text class="l ann" x="141" y="88">choisissent d'y tourner en</text>
+  <text class="l ann" x="141" y="99">permanence, parce qu'il</text>
+  <text class="l ann" x="141" y="110">est plus efficace.</text>
+  <path d="M 244.5 69.5 H 257.5" fill="none" stroke="#8A3324" stroke-width=".9"/>
+  <path d="M 261.5 69.5 l -4 -3 v 6 z" fill="#8A3324"/>
+  <rect x="263" y="14" width="110" height="111" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l bande" x="272" y="31">Déclencheur</text>
+  <text class="l ann" x="272" y="44">Une coupure de 10 s, une</text>
+  <text class="l ann" x="272" y="55">perte de cache, une</text>
+  <text class="l ann" x="272" y="66">pointe. Il entre, puis il</text>
+  <text class="l ann" x="272" y="77">ressort.</text>
+  <path d="M 375.5 69.5 H 388.5" fill="none" stroke="#8A3324" stroke-width=".9"/>
+  <path d="M 392.5 69.5 l -4 -3 v 6 z" fill="#8A3324"/>
+  <rect x="394" y="14" width="110" height="111" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l bande" x="403" y="31">État métastable</text>
+  <text class="l ann" x="403" y="44">Le débit utile est</text>
+  <text class="l ann" x="403" y="55">inutilisable, et le</text>
+  <text class="l ann" x="403" y="66">retrait du déclencheur ne</text>
+  <text class="l ann" x="403" y="77">suffit plus à en sortir.</text>
+  <path d="M 449 125 V 137 H 55 V 129" fill="none" stroke="#8A3324" stroke-width=".9" stroke-dasharray="3 2"/>
+  <path d="M 55 125 l -3 4 h 6 z" fill="#8A3324"/>
+  <text class="l annf" x="0" y="148">Effet de maintien — amplification du travail ou baisse d'efficacité globale : le facteur 2 des reprises, le facteur 10 de la perte d'un cache à</text>
+  <text class="l annf" x="0" y="159">90 % de succès. C'est lui, et non le déclencheur, qui empêche le retour.</text>
+  <path d="M 0 165 H 504" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l ann" x="0" y="178">Une panne métastable est habituellement imputée à son déclencheur, alors que la cause réelle est l'effet de maintien. En sortir exige une</text>
+  <text class="l ann" x="0" y="188">poussée corrective forte : dans l'exemple chiffré du cadre, un système qui tient à 280 requêtes/s y reste bloqué à 560 requêtes/s par le seul</text>
+  <text class="l ann" x="0" y="198">effet des reprises, et la sortie exige de ramener la charge sous 150 requêtes/s [50]. Aucun agent n'a fauté, aucun canal n'a omis.</text>
 </svg>

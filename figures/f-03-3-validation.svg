@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 285" width="468" height="285" role="img" aria-label="Quatre methodes de validation avant deploiement, avec ce que chacune refute et son cout.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 263" width="504" height="263" role="img" aria-label="Quatre methodes de validation avant deploiement, avec ce que chacune refute et son cout.">
   <!-- § 3.3, chapitre 3.
        Genere par figures/contenu.py — ne pas retoucher a la main :
        la retouche se perd a la regeneration. Convention : viewBox de
-       468 unites = largeur du corps, une unite = un point. -->
+       504 unites = largeur du corps, une unite = un point. -->
   <defs><style>
   .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
   .bande  { font-size: 8.5px; font-weight: 700; fill: #1A1A1A; }
@@ -14,44 +14,40 @@
   .renvoi { font-size: 6.2px; fill: #767676; }
   .chiffre{ font-size: 8px;   font-weight: 700; fill: #1A1A1A; }
   </style></defs>
-  <rect x="0" y="0" width="468" height="285" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="504" height="263" fill="#FFFFFF"/>
   <text class="l titre" x="0" y="8">QUATRE MÉTHODES, QUATRE DOMAINES DE RÉFUTATION</text>
-  <rect x="0" y="14" width="226" height="100" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <rect x="0" y="14" width="244" height="89" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
   <text class="l rang" x="10" y="32">1</text>
   <text class="l bande" x="21" y="32">Vérification exhaustive</text>
-  <text class="l ann" x="10" y="47">Réfute S1 sur le n vérifié, y compris par une trace de 35</text>
-  <text class="l ann" x="10" y="58">étapes qu'aucune campagne aléatoire ne trouverait. Ne</text>
-  <text class="l ann" x="10" y="69">réfute pas S1 pour tout n, ni L1 si la vivacité n'est pas</text>
-  <text class="l ann" x="10" y="80">vérifiée.</text>
-  <text class="l renvoi" x="10" y="94">Cubique en la taille de l'espace d'états joint, lui-même en</text>
-  <text class="l renvoi" x="10" y="104">Θ(|S|ⁿ).</text>
-  <rect x="242" y="14" width="226" height="100" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l rang" x="252" y="32">2</text>
-  <text class="l bande" x="263" y="32">Vérification statistique</text>
-  <text class="l ann" x="252" y="47">Réfute S1 avec confiance 1 − δ à ε près. Un événement de</text>
-  <text class="l ann" x="252" y="58">probabilité inférieure à ε est indiscernable de</text>
-  <text class="l ann" x="252" y="69">l'impossible.</text>
-  <text class="l renvoi" x="252" y="94">N = ln(2/δ)/(2ε²) exécutions : 26 492 à ε = 10⁻², puis 2,65 × 10⁶</text>
-  <text class="l renvoi" x="252" y="104">pour un chiffre de plus.</text>
-  <rect x="0" y="130" width="226" height="100" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l rang" x="10" y="148">3</text>
-  <text class="l bande" x="21" y="148">Simulation déterministe</text>
-  <text class="l ann" x="10" y="163">Réfute S1 et rejoue le contre-exemple à l'identique,</text>
-  <text class="l ann" x="10" y="174">entrelacement compris. Ne réfute ni la performance ni ℓ₉₉,</text>
-  <text class="l ann" x="10" y="185">ni rien de ce qui est hors du monde clos.</text>
-  <text class="l renvoi" x="10" y="210">Θ(E log E) par exécution ; la campagne se mesure en secondes</text>
-  <text class="l renvoi" x="10" y="220">simulées par seconde-cœur.</text>
-  <rect x="242" y="130" width="226" height="100" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l rang" x="252" y="148">4</text>
-  <text class="l bande" x="263" y="148">Expérience en production</text>
-  <text class="l ann" x="252" y="163">Réfute l'écart au régime stable, sur le système et ses</text>
-  <text class="l ann" x="252" y="174">dépendances réelles. Ne réfute rien de reproductible : la</text>
-  <text class="l ann" x="252" y="185">trace n'est pas rejouable.</text>
-  <text class="l renvoi" x="252" y="210">Fraction du trafic de production exposée, soit le rayon</text>
-  <text class="l renvoi" x="252" y="220">d'explosion.</text>
-  <path d="M 0 236 H 468" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l ann" x="0" y="249">Aucune des quatre ne réfute une propriété de vivacité, et aucune ne s'étend à tout n : le problème d'accessibilité est indécidable</text>
-  <text class="l ann" x="0" y="259">même lorsque chaque processus a un espace d'états fini [63]. Vérifier l'essaim à n = 5 ne dit formellement rien de n = 5 000, et ce</text>
-  <text class="l ann" x="0" y="269">n'est pas une borne de complexité qu'un meilleur solveur ferait reculer. Une spécification vérifiée est une preuve sur un objet</text>
-  <text class="l ann" x="0" y="279">mathématique dont on espère qu'il ressemble au programme.</text>
+  <text class="l ann" x="10" y="47">Réfute S1 sur le n vérifié, y compris par une trace de 35 étapes</text>
+  <text class="l ann" x="10" y="58">qu'aucune campagne aléatoire ne trouverait. Ne réfute pas S1</text>
+  <text class="l ann" x="10" y="69">pour tout n, ni L1 si la vivacité n'est pas vérifiée.</text>
+  <text class="l renvoi" x="10" y="83">Cubique en la taille de l'espace d'états joint, lui-même en Θ(|S|ⁿ).</text>
+  <rect x="260" y="14" width="244" height="89" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l rang" x="270" y="32">2</text>
+  <text class="l bande" x="281" y="32">Vérification statistique</text>
+  <text class="l ann" x="270" y="47">Réfute S1 avec confiance 1 − δ à ε près. Un événement de</text>
+  <text class="l ann" x="270" y="58">probabilité inférieure à ε est indiscernable de l'impossible.</text>
+  <text class="l renvoi" x="270" y="83">N = ln(2/δ)/(2ε²) exécutions : 26 492 à ε = 10⁻², puis 2,65 × 10⁶ pour un</text>
+  <text class="l renvoi" x="270" y="93">chiffre de plus.</text>
+  <rect x="0" y="119" width="244" height="89" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l rang" x="10" y="137">3</text>
+  <text class="l bande" x="21" y="137">Simulation déterministe</text>
+  <text class="l ann" x="10" y="152">Réfute S1 et rejoue le contre-exemple à l'identique,</text>
+  <text class="l ann" x="10" y="163">entrelacement compris. Ne réfute ni la performance ni ℓ₉₉, ni</text>
+  <text class="l ann" x="10" y="174">rien de ce qui est hors du monde clos.</text>
+  <text class="l renvoi" x="10" y="188">Θ(E log E) par exécution ; la campagne se mesure en secondes simulées par</text>
+  <text class="l renvoi" x="10" y="198">seconde-cœur.</text>
+  <rect x="260" y="119" width="244" height="89" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l rang" x="270" y="137">4</text>
+  <text class="l bande" x="281" y="137">Expérience en production</text>
+  <text class="l ann" x="270" y="152">Réfute l'écart au régime stable, sur le système et ses</text>
+  <text class="l ann" x="270" y="163">dépendances réelles. Ne réfute rien de reproductible : la trace</text>
+  <text class="l ann" x="270" y="174">n'est pas rejouable.</text>
+  <text class="l renvoi" x="270" y="188">Fraction du trafic de production exposée, soit le rayon d'explosion.</text>
+  <path d="M 0 214 H 504" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l ann" x="0" y="227">Aucune des quatre ne réfute une propriété de vivacité, et aucune ne s'étend à tout n : le problème d'accessibilité est indécidable même lorsque</text>
+  <text class="l ann" x="0" y="237">chaque processus a un espace d'états fini [63]. Vérifier l'essaim à n = 5 ne dit formellement rien de n = 5 000, et ce n'est pas une borne de</text>
+  <text class="l ann" x="0" y="247">complexité qu'un meilleur solveur ferait reculer. Une spécification vérifiée est une preuve sur un objet mathématique dont on espère qu'il</text>
+  <text class="l ann" x="0" y="257">ressemble au programme.</text>
 </svg>

@@ -7,19 +7,21 @@ depot fait evoluer separement les copies de ses chaines de fabrication (cf.
 README, « Les copies du pipeline evoluent separement »), et le traite est hors
 de l'ordre du corpus par construction. Trois divergences, toutes voulues :
 
-  * le viewBox fait 468 unites et non 445 — le traite compose en us-letter a
-    marges de 2,54 cm, soit un corps de 6,5 po = 468 pt ;
+  * le viewBox fait 504 unites et non 445 — le traite compose en us-letter a
+    marges de 1,9 cm, soit un corps de 7 po = 504 pt (468 pt jusqu'au 13 aout
+    2026, quand il composait a 2,54 cm) ;
   * ni `venn` ni `frise` : aucune figure du traite n'en a l'emploi ;
   * deux primitives propres, `courbe` et `barres` — le traite defend des
     enonces quantitatifs (la loi universelle, le taux de base bayesien) dont la
     forme EST l'argument, et qu'un tableau ne rend pas.
 
-⚠ CONVENTION DE DESSIN, non negociable : le viewBox fait 468 unites de large,
+⚠ CONVENTION DE DESSIN, non negociable : le viewBox fait `W` unites de large,
 soit exactement la largeur du corps. Une unite vaut donc UN POINT au rendu, et
 les corps de texte se posent a leur valeur finale — 8,5 pour un libelle, 7 pour
 une annotation. Cela suppose `#set image(width: 100%)`, pose dans l'en-tete YAML
-du traite : sans cette regle, Typst lit les 468 unites comme des pixels, rend la
-figure a 351 pt et l'echelle des corps de texte tombe d'un quart.
+du traite : sans cette regle, Typst lit les unites comme des pixels, rend la
+figure aux trois quarts de sa largeur et l'echelle des corps de texte tombe
+d'un quart.
 
 ⚠ CHAQUE FIGURE PORTE SA RESERVE. C'est la discipline du traite portee a
 l'image : chaque mecanisme y nomme sa condition d'echec, chaque transposition y
@@ -34,7 +36,12 @@ from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent
 
-W = 468                       # largeur du corps, en points
+W = 504                       # largeur du corps, en points
+# ⚠ 468 jusqu'au 13 août 2026, quand le corps composait à 2,54 cm de marge.
+# La deuxième édition compose à 1,9 cm : le corps mesure 504,3 pt, soit 7 po,
+# et la constante suit. Une figure laissée à 468 serait étirée de 7,8 % par la
+# règle `#set image(width: 100%)` de l'en-tête, et ses corps de texte avec
+# elle. CETTE CONSTANTE SUIT LA MARGE — les deux se changent ensemble.
 ENCRE, ACCENT = "#1A1A1A", "#8A3324"
 GRIS, GRIS2, FILET = "#4D4D4D", "#767676", "#C4C4C4"
 CREME, BLANC, FOND = "#F7F4F1", "#FFFFFF", "#FFFFFF"
@@ -138,7 +145,7 @@ def rendu(nom, corps, hauteur, alt, source, reserve):
            f'  <!-- {source}',
            '       Genere par figures/contenu.py — ne pas retoucher a la main :',
            '       la retouche se perd a la regeneration. Convention : viewBox de',
-           '       468 unites = largeur du corps, une unite = un point. -->',
+           f'       {W} unites = largeur du corps, une unite = un point. -->',
            '  <defs><style>' + STYLE + '  </style></defs>',
            f'  <rect x="0" y="0" width="{W}" height="{total}" fill="{FOND}"/>']
     svg += ["  " + e for e in corps + pied]

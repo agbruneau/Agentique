@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 147" width="504" height="147" role="img" aria-label="Barres de la part des episodes ou l'option cachee obtient la majorite, par modele, avec le plafond solo.">
+  <!-- § 8.2, chapitre 8 — d'après [119].
+       Genere par figures/contenu.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       504 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #1A1A1A; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #8A3324; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #8A3324; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #767676; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4D4D4D; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #1A1A1A; }
+  .renvoi { font-size: 6.2px; fill: #767676; }
+  .chiffre{ font-size: 8px;   font-weight: 700; fill: #1A1A1A; }
+  </style></defs>
+  <rect x="0" y="0" width="504" height="147" fill="#FFFFFF"/>
+  <text class="l titre" x="0" y="8">PART DES ÉPISODES OÙ L'OPTION CACHÉE OBTIENT LA MAJORITÉ</text>
+  <text class="l ann" x="0" y="27">Agent unique détenant tous les faits — plafond de</text>
+  <text class="l ann" x="0" y="38">référence</text>
+  <rect x="214" y="19.5" width="230.0" height="9" fill="#FFFFFF" stroke="#8A3324" stroke-width=".7"/>
+  <text class="l chiffre" x="449.0" y="27">≈ 100 %</text>
+  <text class="l ann" x="0" y="56">Groupe de quatre agents, modèle le plus capable éprouvé</text>
+  <rect x="214" y="48.5" width="195.5" height="9" fill="#8A3324" stroke="#8A3324" stroke-width=".7"/>
+  <text class="l chiffre" x="414.5" y="56">85 %</text>
+  <text class="l ann" x="0" y="76">Groupe de quatre agents, autres modèles éprouvés</text>
+  <rect x="214" y="68.5" width="82.8" height="9" fill="#8A3324" stroke="#8A3324" stroke-width=".7"/>
+  <text class="l chiffre" x="301.8" y="76">17 à 36 %</text>
+  <text class="l renvoi" x="0" y="92">groupes de quatre agents, quatre cents épisodes par modèle ; scénarios d'embauche, d'investissement et d'achat immobilier.</text>
+  <path d="M 0 98 H 504" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l ann" x="0" y="111">Le fait à retenir n'est pas l'écart entre modèles mais l'écart au plafond : un groupe fait moins bien qu'un seul de ses membres correctement</text>
+  <text class="l ann" x="0" y="121">informé, donc la délibération détruit de l'information au lieu de l'agréger. La barre des autres modèles est tracée à la borne haute d'un</text>
+  <text class="l ann" x="0" y="131">intervalle, et non à une valeur unique. La performance croît avec la capacité du modèle sans saturer au sommet de la gamme éprouvée : rien</text>
+  <text class="l ann" x="0" y="141">n'autorise à extrapoler qu'elle y parviendra.</text>
+</svg>

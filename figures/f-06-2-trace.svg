@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 261" width="468" height="261" role="img" aria-label="Deux panneaux opposant l'arbre d'une trace de requete et le graphe acyclique d'une decision d'essaim.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 250" width="504" height="250" role="img" aria-label="Deux panneaux opposant l'arbre d'une trace de requete et le graphe acyclique d'une decision d'essaim.">
   <!-- § 6.2, chapitre 6.
        Genere par figures/contenu.py — ne pas retoucher a la main :
        la retouche se perd a la regeneration. Convention : viewBox de
-       468 unites = largeur du corps, une unite = un point. -->
+       504 unites = largeur du corps, une unite = un point. -->
   <defs><style>
   .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
   .bande  { font-size: 8.5px; font-weight: 700; fill: #1A1A1A; }
@@ -14,35 +14,34 @@
   .renvoi { font-size: 6.2px; fill: #767676; }
   .chiffre{ font-size: 8px;   font-weight: 700; fill: #1A1A1A; }
   </style></defs>
-  <rect x="0" y="0" width="468" height="261" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="504" height="250" fill="#FFFFFF"/>
   <text class="l titreg" x="0" y="8">TRACE D'UNE REQUÊTE — UN ARBRE</text>
-  <rect x="0" y="14" width="221" height="168" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
+  <rect x="0" y="14" width="239" height="157" fill="#F7F4F1" stroke="#C4C4C4" stroke-width=".6"/>
   <text class="l bande" x="9" y="30">Ce que les normes savent représenter</text>
   <text class="l ann" x="9" y="46">Chaque intervalle porte un parent unique et un statut pris</text>
   <text class="l ann" x="9" y="57">parmi exactement trois valeurs.</text>
   <text class="l ann" x="9" y="76">L'arbre a une racine, et il se termine avec elle.</text>
-  <text class="l ann" x="9" y="95">L'échantillonnage en tête borne le nombre de traces</text>
-  <text class="l ann" x="9" y="106">retenues ET leur taille.</text>
+  <text class="l ann" x="9" y="95">L'échantillonnage en tête borne le nombre de traces retenues ET</text>
+  <text class="l ann" x="9" y="106">leur taille.</text>
   <text class="l ann" x="9" y="125">Le chemin critique se lit sur l'arbre.</text>
-  <text class="l annf" x="0" y="195">Structure finie et courte, décidée au point d'entrée.</text>
-  <text class="l titre" x="247" y="8">DÉCISION D'UN ESSAIM — UN GRAPHE</text>
-  <rect x="247" y="14" width="221" height="168" fill="#FFFFFF" stroke="#8A3324" stroke-width=".9"/>
-  <text class="l bande" x="256" y="30">Ce que l'essaim produit réellement</text>
-  <text class="l ann" x="256" y="46">Un enregistrement peut être lu par m consommateurs à des</text>
-  <text class="l ann" x="256" y="57">jours d'intervalle.</text>
-  <text class="l ann" x="256" y="76">Une décision peut agréger j enregistrements venus de j</text>
-  <text class="l ann" x="256" y="87">partitions : ni racine, ni fin.</text>
-  <text class="l ann" x="256" y="106">La décision propagée borne le nombre de traces, mais PAS</text>
-  <text class="l ann" x="256" y="117">leur taille — celle-ci croît avec le nombre d'agents qui</text>
-  <text class="l ann" x="256" y="128">liront l'enregistrement, sans borne connue au moment de la</text>
-  <text class="l ann" x="256" y="139">décision.</text>
-  <text class="l ann" x="256" y="158">Le chemin critique devient le plus long chemin d'un graphe</text>
-  <text class="l ann" x="256" y="169">: Θ(V+E), qui exige tous les sommets.</text>
-  <text class="l annf" x="247" y="195">Degrés non bornés a priori ; c'est ce que l'échantillonnage ne</text>
-  <text class="l annf" x="247" y="206">garantit pas.</text>
-  <path d="M 0 212 H 468" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l ann" x="0" y="225">L'échantillonnage en queue ne résout pas le problème, il le déplace : trancher après 30 s suppose que tous les intervalles d'une</text>
-  <text class="l ann" x="0" y="235">trace arrivent en moins de 30 s, et les longues chaînes — exactement celles qu'on voulait retenir — sont les seules systématiquement</text>
-  <text class="l ann" x="0" y="245">tronquées. La reconstruction causale se fait donc hors ligne, sur le journal, pour zéro message vers un agent ; son horizon réel est</text>
-  <text class="l ann" x="0" y="255">la rétention du sujet, et un sujet compacté n'est pas un substrat de traçabilité.</text>
+  <text class="l annf" x="0" y="184">Structure finie et courte, décidée au point d'entrée.</text>
+  <text class="l titre" x="265" y="8">DÉCISION D'UN ESSAIM — UN GRAPHE</text>
+  <rect x="265" y="14" width="239" height="157" fill="#FFFFFF" stroke="#8A3324" stroke-width=".9"/>
+  <text class="l bande" x="274" y="30">Ce que l'essaim produit réellement</text>
+  <text class="l ann" x="274" y="46">Un enregistrement peut être lu par m consommateurs à des jours</text>
+  <text class="l ann" x="274" y="57">d'intervalle.</text>
+  <text class="l ann" x="274" y="76">Une décision peut agréger j enregistrements venus de j</text>
+  <text class="l ann" x="274" y="87">partitions : ni racine, ni fin.</text>
+  <text class="l ann" x="274" y="106">La décision propagée borne le nombre de traces, mais PAS leur</text>
+  <text class="l ann" x="274" y="117">taille — celle-ci croît avec le nombre d'agents qui liront</text>
+  <text class="l ann" x="274" y="128">l'enregistrement, sans borne connue au moment de la décision.</text>
+  <text class="l ann" x="274" y="147">Le chemin critique devient le plus long chemin d'un graphe :</text>
+  <text class="l ann" x="274" y="158">Θ(V+E), qui exige tous les sommets.</text>
+  <text class="l annf" x="265" y="184">Degrés non bornés a priori ; c'est ce que l'échantillonnage ne</text>
+  <text class="l annf" x="265" y="195">garantit pas.</text>
+  <path d="M 0 201 H 504" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l ann" x="0" y="214">L'échantillonnage en queue ne résout pas le problème, il le déplace : trancher après 30 s suppose que tous les intervalles d'une trace arrivent</text>
+  <text class="l ann" x="0" y="224">en moins de 30 s, et les longues chaînes — exactement celles qu'on voulait retenir — sont les seules systématiquement tronquées. La</text>
+  <text class="l ann" x="0" y="234">reconstruction causale se fait donc hors ligne, sur le journal, pour zéro message vers un agent ; son horizon réel est la rétention du sujet, et</text>
+  <text class="l ann" x="0" y="244">un sujet compacté n'est pas un substrat de traçabilité.</text>
 </svg>

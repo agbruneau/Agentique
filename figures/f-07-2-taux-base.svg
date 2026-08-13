@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 197" width="468" height="197" role="img" aria-label="Barres du taux de detection bayesien selon le taux de fausses alarmes et le regime de corroboration.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 187" width="504" height="187" role="img" aria-label="Barres du taux de detection bayesien selon le taux de fausses alarmes et le regime de corroboration.">
   <!-- § 7.2, chapitre 7 — d'après [116].
        Genere par figures/contenu.py — ne pas retoucher a la main :
        la retouche se perd a la regeneration. Convention : viewBox de
-       468 unites = largeur du corps, une unite = un point. -->
+       504 unites = largeur du corps, une unite = un point. -->
   <defs><style>
   .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
   .bande  { font-size: 8.5px; font-weight: 700; fill: #1A1A1A; }
@@ -14,29 +14,28 @@
   .renvoi { font-size: 6.2px; fill: #767676; }
   .chiffre{ font-size: 8px;   font-weight: 700; fill: #1A1A1A; }
   </style></defs>
-  <rect x="0" y="0" width="468" height="197" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="504" height="187" fill="#FFFFFF"/>
   <text class="l titre" x="0" y="8">PART DES ALARMES QUI SONT VRAIES — P(I|A), MODÈLE D'AXELSSON</text>
   <text class="l ann" x="0" y="27">Détection 1,00 — fausses alarmes 1 × 10⁻⁵</text>
-  <rect x="214" y="19.5" width="128.0" height="9" fill="#8A3324" stroke="#8A3324" stroke-width=".7"/>
-  <text class="l chiffre" x="347.03999999999996" y="27">≈ 66 %</text>
+  <rect x="214" y="19.5" width="151.8" height="9" fill="#8A3324" stroke="#8A3324" stroke-width=".7"/>
+  <text class="l chiffre" x="370.8" y="27">≈ 66 %</text>
   <text class="l ann" x="0" y="47">Détection 0,70 — fausses alarmes 1 × 10⁻⁵</text>
-  <rect x="214" y="39.5" width="112.5" height="9" fill="#8A3324" stroke="#8A3324" stroke-width=".7"/>
-  <text class="l chiffre" x="331.52" y="47">≈ 58 %</text>
+  <rect x="214" y="39.5" width="133.4" height="9" fill="#8A3324" stroke="#8A3324" stroke-width=".7"/>
+  <text class="l chiffre" x="352.4" y="47">≈ 58 %</text>
   <text class="l ann" x="0" y="67">Détection 1,00 — fausses alarmes 1 × 10⁻³, soit le plafond</text>
   <text class="l ann" x="0" y="78">de 100 fausses alarmes par jour</text>
-  <rect x="214" y="59.5" width="3.9" height="9" fill="#8A3324" stroke="#8A3324" stroke-width=".7"/>
-  <text class="l chiffre" x="222.88" y="67">≈ 2 %</text>
+  <rect x="214" y="59.5" width="4.6" height="9" fill="#8A3324" stroke="#8A3324" stroke-width=".7"/>
+  <text class="l chiffre" x="223.6" y="67">≈ 2 %</text>
   <text class="l ann" x="0" y="96">Corroboration r = 3, détecteurs indépendants</text>
-  <rect x="214" y="88.5" width="194.0" height="9" fill="#8A3324" stroke="#8A3324" stroke-width=".7"/>
-  <text class="l chiffre" x="412.9806" y="96">≈ 99,99 %</text>
+  <rect x="214" y="88.5" width="230.0" height="9" fill="#8A3324" stroke="#8A3324" stroke-width=".7"/>
+  <text class="l chiffre" x="448.977" y="96">≈ 99,99 %</text>
   <text class="l ann" x="0" y="116">Corroboration r = 3, détecteurs parfaitement corrélés</text>
-  <rect x="214" y="108.5" width="3.9" height="9" fill="#FFFFFF" stroke="#8A3324" stroke-width=".7"/>
-  <text class="l chiffre" x="222.88" y="116">≈ 2 %</text>
+  <rect x="214" y="108.5" width="4.6" height="9" fill="#FFFFFF" stroke="#8A3324" stroke-width=".7"/>
+  <text class="l chiffre" x="223.6" y="116">≈ 2 %</text>
   <text class="l renvoi" x="0" y="132">taux de base P(I) = 2 × 10⁻⁵ : 10⁶ enregistrements d'audit par jour, deux tentatives d'intrusion, dix enregistrements par intrusion.</text>
-  <path d="M 0 138 H 468" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l ann" x="0" y="151">La corroboration n'améliore pas la détection : elle échange de la détection contre de la précision, à un taux d'échange</text>
-  <text class="l ann" x="0" y="161">extraordinairement favorable — mais à r = 3, la détection conjointe tombe à 0,343, et deux intrusions sur trois passent inaperçues.</text>
-  <text class="l ann" x="0" y="171">Sa condition d'échec est structurelle : l'essaim est par définition une population majoritairement homogène, et des détecteurs</text>
-  <text class="l ann" x="0" y="181">identiques appliqués à des entrées corrélées commettent des erreurs corrélées. Rien dans le mécanisme ne mesure où l'on se situe</text>
-  <text class="l ann" x="0" y="191">entre les deux extrêmes.</text>
+  <path d="M 0 138 H 504" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l ann" x="0" y="151">La corroboration n'améliore pas la détection : elle échange de la détection contre de la précision, à un taux d'échange extraordinairement</text>
+  <text class="l ann" x="0" y="161">favorable — mais à r = 3, la détection conjointe tombe à 0,343, et deux intrusions sur trois passent inaperçues. Sa condition d'échec est</text>
+  <text class="l ann" x="0" y="171">structurelle : l'essaim est par définition une population majoritairement homogène, et des détecteurs identiques appliqués à des entrées</text>
+  <text class="l ann" x="0" y="181">corrélées commettent des erreurs corrélées. Rien dans le mécanisme ne mesure où l'on se situe entre les deux extrêmes.</text>
 </svg>

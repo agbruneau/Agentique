@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 279" width="468" height="279" role="img" aria-label="Grille de cinq instants montrant la reduction de l'ensemble synchronise et la destruction d'un enregistrement valide.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 268" width="504" height="268" role="img" aria-label="Grille de cinq instants montrant la reduction de l'ensemble synchronise et la destruction d'un enregistrement valide.">
   <!-- § 2.1, chapitre 2 — d'après [5].
        Genere par figures/contenu.py — ne pas retoucher a la main :
        la retouche se perd a la regeneration. Convention : viewBox de
-       468 unites = largeur du corps, une unite = un point. -->
+       504 unites = largeur du corps, une unite = un point. -->
   <defs><style>
   .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
   .bande  { font-size: 8.5px; font-weight: 700; fill: #1A1A1A; }
@@ -14,63 +14,61 @@
   .renvoi { font-size: 6.2px; fill: #767676; }
   .chiffre{ font-size: 8px;   font-weight: 700; fill: #1A1A1A; }
   </style></defs>
-  <rect x="0" y="0" width="468" height="279" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="504" height="268" fill="#FFFFFF"/>
   <text class="l titre" x="0" y="8">k = 3 RÉPLIQUES, SEUIL D'ACCUSÉ m = 2 : R1 TOMBE À DEUX ARRÊTS</text>
   <text class="l annf" x="121" y="28">t₀</text>
-  <text class="l annf" x="191" y="28">t₁</text>
-  <text class="l annf" x="262" y="28">t₂</text>
-  <text class="l annf" x="332" y="28">t₃</text>
-  <text class="l annf" x="403" y="28">t₄</text>
-  <path d="M 0 41 H 468" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+  <text class="l annf" x="199" y="28">t₁</text>
+  <text class="l annf" x="276" y="28">t₂</text>
+  <text class="l annf" x="354" y="28">t₃</text>
+  <text class="l annf" x="431" y="28">t₄</text>
+  <path d="M 0 41 H 504" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
   <text class="l annf" x="0" y="53">Ensemble synchronisé</text>
   <text class="l ann" x="121" y="53">{A, B, C}</text>
-  <text class="l ann" x="191" y="53">{A, B}</text>
-  <text class="l ann" x="262" y="53">{A, B}</text>
-  <text class="l ann" x="332" y="53">{A}</text>
-  <text class="l ann" x="403" y="53">{ }</text>
-  <path d="M 0 71 H 468" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
+  <text class="l ann" x="199" y="53">{A, B}</text>
+  <text class="l ann" x="276" y="53">{A, B}</text>
+  <text class="l ann" x="354" y="53">{A}</text>
+  <text class="l ann" x="431" y="53">{ }</text>
+  <path d="M 0 71 H 504" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
   <text class="l annf" x="0" y="83">Réplique A, meneur</text>
   <text class="l ann" x="121" y="83">r₁</text>
-  <text class="l ann" x="191" y="83">r₁</text>
-  <text class="l ann" x="262" y="83">r₁ r₂</text>
-  <text class="l ann" x="332" y="83">r₁ r₂</text>
-  <text class="l annf" x="403" y="83">✕</text>
-  <text class="l ann" x="417" y="83">arrêt</text>
-  <path d="M 0 101 H 468" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
+  <text class="l ann" x="199" y="83">r₁</text>
+  <text class="l ann" x="276" y="83">r₁ r₂</text>
+  <text class="l ann" x="354" y="83">r₁ r₂</text>
+  <text class="l annf" x="431" y="83">✕</text>
+  <text class="l ann" x="445" y="83">arrêt</text>
+  <path d="M 0 101 H 504" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
   <text class="l annf" x="0" y="113">Réplique B</text>
   <text class="l ann" x="121" y="113">r₁</text>
-  <text class="l ann" x="191" y="113">r₁</text>
-  <text class="l ann" x="262" y="113">r₁ r₂</text>
-  <text class="l annf" x="332" y="113">✕</text>
-  <text class="l ann" x="346" y="113">arrêt</text>
-  <text class="l ann" x="403" y="113">—</text>
-  <path d="M 0 131 H 468" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
+  <text class="l ann" x="199" y="113">r₁</text>
+  <text class="l ann" x="276" y="113">r₁ r₂</text>
+  <text class="l annf" x="354" y="113">✕</text>
+  <text class="l ann" x="368" y="113">arrêt</text>
+  <text class="l ann" x="431" y="113">—</text>
+  <path d="M 0 131 H 504" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
   <text class="l annf" x="0" y="143">Réplique C</text>
   <text class="l ann" x="121" y="143">r₁</text>
-  <text class="l ann" x="191" y="143">r₁, retirée</text>
-  <text class="l ann" x="262" y="143">r₁</text>
-  <text class="l ann" x="332" y="143">r₁</text>
-  <text class="l ann" x="403" y="143">r₁, seule</text>
-  <text class="l ann" x="403" y="154">vivante</text>
-  <path d="M 0 165 H 468" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
+  <text class="l ann" x="199" y="143">r₁, retirée</text>
+  <text class="l ann" x="276" y="143">r₁</text>
+  <text class="l ann" x="354" y="143">r₁</text>
+  <text class="l ann" x="431" y="143">r₁, seule</text>
+  <text class="l ann" x="431" y="154">vivante</text>
+  <path d="M 0 165 H 504" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
   <text class="l annf" x="0" y="177">Ce qui survient</text>
   <text class="l ann" x="121" y="177">r₁ accusé ;</text>
   <text class="l ann" x="121" y="188">largeur 3</text>
-  <text class="l ann" x="191" y="177">retard &gt;</text>
-  <text class="l ann" x="191" y="188">seuil, sans</text>
-  <text class="l ann" x="191" y="199">panne</text>
-  <text class="l ann" x="262" y="177">r₂ accusé ;</text>
-  <text class="l ann" x="262" y="188">largeur 2</text>
-  <text class="l ann" x="332" y="177">sous m : la</text>
-  <text class="l ann" x="332" y="188">partition</text>
-  <text class="l ann" x="332" y="199">cesse</text>
-  <text class="l ann" x="332" y="210">d'accuser</text>
-  <text class="l ann" x="403" y="177">élire C laisse</text>
-  <text class="l ann" x="403" y="188">r₂ nulle part</text>
-  <path d="M 0 221 H 468" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
-  <text class="l renvoi" x="0" y="234">§ 2.1 — deux arrêts, donc k ≥ f + 1 respecté à l'égalité. Un retrait pour retard n'est pas une panne, et le compteur de pannes est à zéro à t₁.</text>
-  <path d="M 0 240 H 468" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l ann" x="0" y="253">Le nombre de disparitions auquel r₂ survit n'est pas k − 1 = 2, il est m − 1 = 1. La borne s'écrit en fonction du seuil d'accusé m ;</text>
-  <text class="l ann" x="0" y="263">nulle part en fonction du facteur de réplication k. La documentation ne se contredit pas — elle conditionne sa garantie à ce qu'au</text>
-  <text class="l ann" x="0" y="273">moins une réplique reste synchronisée à tout instant, et c'est justement le point.</text>
+  <text class="l ann" x="199" y="177">retard &gt; seuil,</text>
+  <text class="l ann" x="199" y="188">sans panne</text>
+  <text class="l ann" x="276" y="177">r₂ accusé ;</text>
+  <text class="l ann" x="276" y="188">largeur 2</text>
+  <text class="l ann" x="354" y="177">sous m : la</text>
+  <text class="l ann" x="354" y="188">partition cesse</text>
+  <text class="l ann" x="354" y="199">d'accuser</text>
+  <text class="l ann" x="431" y="177">élire C laisse</text>
+  <text class="l ann" x="431" y="188">r₂ nulle part</text>
+  <path d="M 0 210 H 504" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+  <text class="l renvoi" x="0" y="223">§ 2.1 — deux arrêts, donc k ≥ f + 1 respecté à l'égalité. Un retrait pour retard n'est pas une panne, et le compteur de pannes est à zéro à t₁.</text>
+  <path d="M 0 229 H 504" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l ann" x="0" y="242">Le nombre de disparitions auquel r₂ survit n'est pas k − 1 = 2, il est m − 1 = 1. La borne s'écrit en fonction du seuil d'accusé m ; nulle part</text>
+  <text class="l ann" x="0" y="252">en fonction du facteur de réplication k. La documentation ne se contredit pas — elle conditionne sa garantie à ce qu'au moins une réplique reste</text>
+  <text class="l ann" x="0" y="262">synchronisée à tout instant, et c'est justement le point.</text>
 </svg>

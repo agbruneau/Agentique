@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Contenu des seize figures du traité, et leur rendu.
+"""Contenu des dix-neuf figures du traité, et leur rendu.
 
     python figures/contenu.py            # écrit les SVG dans figures/
     python figures/contenu.py --md       # réémet les lignes Markdown à insérer
@@ -430,6 +430,84 @@ f("7.2", "f-07-2-taux-base",
            ("Corroboration r = 3, détecteurs indépendants", 99.99, "≈ 99,99 %", True),
            ("Corroboration r = 3, détecteurs parfaitement corrélés", 2, "≈ 2 %", False),
        ]))
+
+
+# ================================================================= Chapitre 8
+f("8.1", "f-08-1-couverture",
+  "Couverture contre efficacité : ce que l'auto-allocation par le milieu achète, et ce qu'elle n'achète pas.",
+  "Barres comparant les vulnerabilites trouvees par un essaim coordonne et par des agents independants.",
+  "§ 8.1, chapitre 8 — d'après [119].", "barres",
+  "Le rapport de 266 à 21 ne se lit pas comme un gain d'efficacité : les deux méthodes ne "
+  "consomment pas le même budget de jetons, et l'essaim restreint au périmètre assigné aux agents "
+  "indépendants se compare à eux en jetons par vulnérabilité. Ce que l'essaim achète est une "
+  "couverture, non un meilleur rendement, et douze trouvailles communes sur l'ensemble montrent "
+  "que les deux méthodes ne se remplacent pas. Aucune de ces valeurs n'est reproductible hors de "
+  "la version de modèle sur laquelle elle a été prise.",
+  dict(titre="VULNÉRABILITÉS NOUVELLES ET VALIDES, QUINZE PROJETS LIBRES", vmax=266, lx=214,
+       unite="jugées par un agent arbitre distinct. Budgets de jetons : 27 millions pour "
+             "l'essaim coordonné, 6,5 millions pour les agents indépendants.",
+       items=[
+           ("Essaim coordonné — 45 agents, forum partagé, relecture mutuelle", 266, "266", True),
+           ("Agents indépendants — périmètre de code assigné d'avance", 21, "21", False),
+           ("Trouvailles communes aux deux méthodes", 12, "12", True),
+       ]))
+
+f("8.2", "f-08-2-profil-cache",
+  "Le profil caché : ce qu'un groupe de quatre agents retient, et ce qu'un agent unique correctement informé aurait tranché.",
+  "Barres de la part des episodes ou l'option cachee obtient la majorite, par modele, avec le plafond solo.",
+  "§ 8.2, chapitre 8 — d'après [119].", "barres",
+  "Le fait à retenir n'est pas l'écart entre modèles mais l'écart au plafond : un groupe fait "
+  "moins bien qu'un seul de ses membres correctement informé, donc la délibération détruit de "
+  "l'information au lieu de l'agréger. La barre des autres modèles est tracée à la borne haute "
+  "d'un intervalle, et non à une valeur unique. La performance croît avec la capacité du modèle "
+  "sans saturer au sommet de la gamme éprouvée : rien n'autorise à extrapoler qu'elle y "
+  "parviendra.",
+  dict(titre="PART DES ÉPISODES OÙ L'OPTION CACHÉE OBTIENT LA MAJORITÉ", vmax=100, lx=214,
+       unite="groupes de quatre agents, quatre cents épisodes par modèle ; scénarios "
+             "d'embauche, d'investissement et d'achat immobilier.",
+       items=[
+           ("Agent unique détenant tous les faits — plafond de référence", 100, "≈ 100 %", False),
+           ("Groupe de quatre agents, modèle le plus capable éprouvé", 85, "85 %", True),
+           ("Groupe de quatre agents, autres modèles éprouvés", 36, "17 à 36 %", True),
+       ]))
+
+f("8.3", "f-08-3-familles",
+  "Les quatre familles de défaillance mesurées, et ce que chacune casse dans l'appareil de l'ouvrage.",
+  "Grille des quatre familles de defaillance mesurees et de ce que chacune casse dans le traite.",
+  "Chapitre 8 — mesures de [119] ; colonne de droite propre à cet ouvrage.", "matrice",
+  "Les quatre familles ne sont pas de même statut. La première est un fait positif dont la "
+  "réserve est un coût ; les trois autres sont des défaillances. Aucune n'invalide un résultat "
+  "des sept premiers chapitres : elles en déplacent le domaine de validité, ce qui est plus "
+  "difficile à voir et se corrige moins bien, puisque le mécanisme continue de tourner pendant "
+  "que sa borne cesse de tenir.",
+  dict(titre="CE QUE LA CAMPAGNE DE 2026 MESURE, ET CE QU'ELLE RETIRE À L'OUVRAGE", lx=104,
+       colonnes=["Ce qui est mesuré", "Ce que cela retire à l'ouvrage"],
+       rangees=["Coordination", "Conformité", "Épistémique", "Buts incompatibles"],
+       cellules={
+           (0, 0): ("", "266 vulnérabilités pour 27 millions de jetons contre 21 pour 6,5 "
+                        "millions ; douze trouvailles communes ; partage de code et fraction "
+                        "de fusion ne montent jamais ensemble."),
+           (0, 1): ("", "Rien — le gain est de couverture et non d'efficacité, et "
+                        "l'interférence du §2.2 reçoit enfin sa mesure logicielle."),
+           (1, 0): ("", "Dix-huit agents sur trente ouvrent la même branche ; plus de la "
+                        "moitié d'une population libre bâtit l'un de deux projets ; 2,4 "
+                        "millions de demandes pour 117 acceptations."),
+           (1, 1): ("", "Sept énoncés qui supposent l'indépendance des tirages ou des "
+                        "fautes, du plancher d'exploration à la corroboration de sondes."),
+           (2, 0): ("", "Groupes de quatre agents : l'option cachée l'emporte dans 17 à 85 % "
+                        "des épisodes, contre un plafond proche de 100 % pour un agent seul "
+                        "correctement informé."),
+           (2, 1): ("", "La prémisse de la stigmergie — la trace cesse d'être un résidu de "
+                        "l'action pour devenir un témoignage sur elle."),
+           (3, 0): ("", "Trois mandats contradictoires : escalade jusqu'au sabotage sur tous "
+                        "les modèles éprouvés ; issues par force, passivité, trêve ou "
+                        "non-règlement, sur cent vingt épisodes par modèle."),
+           (3, 1): ("", "Le modèle de panne P, et la gouvernance du §5.3, qui s'applique "
+                        "dans le processus même dont on suppose qu'il agit contre le "
+                        "système."),
+       },
+       axes="Ch. 8 — aucune de ces mesures n'est reproductible hors de la version de modèle "
+            "sur laquelle elle a été prise."))
 
 
 # ================================================== figures à dessin propre
