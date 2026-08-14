@@ -1,0 +1,15 @@
+[package]
+name = "sim-milieu"
+version.workspace = true
+edition.workspace = true
+repository.workspace = true
+publish.workspace = true
+description = "Le milieu : journal partitionné M1–M4, réplication ISR, rétention, groupe de consommation, plan de contrôle."
+
+[dependencies]
+sim-core = { path = "../sim-core" }
+libm = "0.2"
+serde = { version = "1", features = ["derive"] }
+
+[lints]
+workspace = true

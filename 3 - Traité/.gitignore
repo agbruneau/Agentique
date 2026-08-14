@@ -1,0 +1,17 @@
+# Artefacts de construction Rust.
+/target/
+
+# Sortie native du banc DT1 : régénérée à chaque exécution, et son contenu
+# dépend de la machine de construction — le versionner ferait croire à une
+# référence stable là où il n'y en a pas (voir bancs/dt1-flottant/VERDICT.md,
+# cas `mul_add`).
+bancs/dt1-flottant/natif.tsv
+bancs/parite-wasm/natif.tsv
+
+# Sorties de campagne.
+/rapports/
+
+# Empaquetage web : produits par `wasm-bindgen`, régénérés par la commande de
+# DEVELOPPEMENT.md. Seul `web/index.html` est du source.
+/web/sim_viz.js
+/web/sim_viz_bg.wasm

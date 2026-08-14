@@ -1,0 +1,41 @@
+[package]
+name = "sim-viz"
+version.workspace = true
+edition.workspace = true
+repository.workspace = true
+publish.workspace = true
+description = "Interface egui/eframe, native et web à partir du même code. Aucune logique de simulation."
+
+# `cdylib` est ce que `wasm-bindgen` consomme pour produire le module web ;
+# `rlib` est ce que le binaire natif lie. Les deux chemins traversent le même
+# `src/lib.rs`, condition d'EX-V12.
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[[bin]]
+name = "stigmergie-lab"
+path = "src/main.rs"
+
+[dependencies]
+sim-core = { path = "../sim-core" }
+sim-milieu = { path = "../sim-milieu" }
+sim-agents = { path = "../sim-agents" }
+eframe = { version = "0.29", default-features = false, features = [
+    "default_fonts",
+    "glow",
+] }
+egui_plot = "0.29"
+# EX-V07 impose d'afficher le temps mural. `std::time::Instant` panique sur
+# wasm32 ; `web_time` rend `performance.now()` sur le web et `std` ailleurs.
+# Déjà dans l'arbre de dépendances par egui : aucune dépendance nouvelle.
+web-time = "1"
+
+# Le web n'ajoute rien à la cible native : ces trois crates viennent déjà
+# d'eframe, et ne sont nommées ici que pour le point d'entrée `lancer_web`.
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+web-sys = { version = "0.3", features = ["Document", "HtmlCanvasElement", "Window"] }
+
+[lints]
+workspace = true

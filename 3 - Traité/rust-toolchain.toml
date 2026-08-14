@@ -1,0 +1,8 @@
+# Cible native : windows-gnu et non windows-msvc. Motif : le linker MSVC exige
+# le toolset C++ de Visual Studio, absent de la machine de développement, alors
+# que rustup fournit tout ce qu'il faut pour windows-gnu. Ce choix ne touche
+# aucune exigence du PRD — NF-02 porte sur la parité natif/WASM, mesurée par le
+# banc DT1 sur la cible native effectivement employée, qui est celle-ci.
+[toolchain]
+channel = "stable-x86_64-pc-windows-gnu"
+targets = ["wasm32-unknown-unknown"]

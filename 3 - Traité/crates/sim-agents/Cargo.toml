@@ -1,0 +1,16 @@
+[package]
+name = "sim-agents"
+version.workspace = true
+edition.workspace = true
+repository.workspace = true
+publish.workspace = true
+description = "Les mécanismes du traité, leurs oracles et les douze scénarios comme données."
+
+[dependencies]
+sim-core = { path = "../sim-core" }
+sim-milieu = { path = "../sim-milieu" }
+libm = "0.2"
+serde = { version = "1", features = ["derive"] }
+
+[lints]
+workspace = true

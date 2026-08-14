@@ -1,0 +1,39 @@
+# NF-02, appliqué par le lint plutôt que par convention.
+#
+# Le banc DT1 (bancs/dt1-flottant/VERDICT.md) mesure que ces sept méthodes
+# donnent des bits différents en natif et en WASM : elles viennent de la
+# bibliothèque mathématique de la plateforme, que IEEE-754 ne normalise pas.
+# Leurs homologues `libm` sont identiques sur les deux cibles, mesure à l'appui.
+#
+# `mul_add` diverge pour une autre raison — arrondi unique matériel contre
+# double arrondi en WASM — et se remplace soit par `a * b + c`, soit par
+# `libm::fma` si l'arrondi unique est voulu.
+disallowed-methods = [
+    { path = "f64::ln", reason = "NF-02 : diverge natif/WASM — utiliser libm::log" },
+    { path = "f64::exp", reason = "NF-02 : diverge natif/WASM — utiliser libm::exp" },
+    { path = "f64::powf", reason = "NF-02 : diverge natif/WASM — utiliser libm::pow" },
+    { path = "f64::sin", reason = "NF-02 : diverge natif/WASM — utiliser libm::sin" },
+    { path = "f64::cos", reason = "NF-02 : diverge natif/WASM — utiliser libm::cos" },
+    { path = "f64::atan2", reason = "NF-02 : diverge natif/WASM — utiliser libm::atan2" },
+    { path = "f64::mul_add", reason = "NF-02 : diverge natif/WASM — utiliser a * b + c, ou libm::fma" },
+]
+
+# PD1 : l'itération sur une table de hachage n'est pas ordonnée, et tout chemin
+# qui influence l'ordonnancement en dépendrait silencieusement.
+disallowed-types = [
+    { path = "std::collections::HashMap", reason = "PD1 : itération non ordonnée — utiliser BTreeMap ou IndexMap" },
+    { path = "std::collections::HashSet", reason = "PD1 : itération non ordonnée — utiliser BTreeSet" },
+]
+
+# Pas de lint contre `std::time::Instant`, essayé puis retiré : sur cible
+# native, `web_time::Instant` **est** `std::time::Instant` par réexport, et
+# clippy résout le chemin canonique. Le lint frappait donc le correctif en même
+# temps que le défaut.
+#
+# **Et rien ne l'attrape aujourd'hui.** La construction pour
+# `wasm32-unknown-unknown` ne le voit pas : `std::time::Instant::now()` compile
+# sans un mot pour cette cible et ne panique qu'à l'exécution, dans un
+# navigateur. Ce qui marcherait est
+# `cargo clippy --target wasm32-unknown-unknown` avec le type interdit — sur
+# cette cible, `web_time::Instant` n'est **pas** `std::time::Instant`, donc le
+# lint frapperait le défaut sans frapper le correctif. Non câblé.

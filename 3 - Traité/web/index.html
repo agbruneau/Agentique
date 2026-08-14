@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <!--
+      `user-scalable=no` retiré : il bloquait le zoom à deux doigts sur les
+      largeurs où l'interface est la plus dense. Le canevas occupe la fenêtre,
+      il n'y a rien à faire défiler par accident.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>stigmergie-lab</title>
+    <meta
+      name="description"
+      content="Simulateur déterministe d'essaims d'agents logiciels coordonnés par le milieu."
+    />
+
+    <!--
+      egui suit `prefers-color-scheme` (ThemePreference::System). La page doit
+      suivre la même préférence, sinon le fond derrière le canevas contredit
+      l'interface pendant tout le chargement, et à jamais sur les bords.
+      Les deux valeurs sont celles d'egui 0.29 : `panel_fill` clair = gris 248,
+      sombre = gris 27.
+    -->
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f8f8f8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1b1b1b" media="(prefers-color-scheme: dark)" />
+
+    <!--
+      DT4 — hébergement en pages statiques. Cette page ne parle à aucun serveur :
+      trois fichiers déposés côte à côte suffisent, et rien ici n'est chargé
+      depuis un tiers. Le monde clos de la simulation le reste jusque dans sa
+      distribution.
+    -->
+    <style>
+      :root {
+        color-scheme: light dark;
+        --fond: #f8f8f8;
+        --encre: #303030;
+        --attenue: #6c6c6c;
+        --citation: #8c5c08;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --fond: #1b1b1b;
+          --encre: #d0d0d0;
+          --attenue: #909090;
+          --citation: #d8b064;
+        }
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        background: var(--fond);
+        color: var(--encre);
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .etat {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 3rem);
+        max-width: 32rem;
+        text-align: center;
+        line-height: 1.55;
+      }
+
+      .etat h1 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        margin: 0 0 0.5rem;
+      }
+
+      .etat p {
+        font-size: 0.9rem;
+        color: var(--attenue);
+        margin: 0.4rem 0;
+      }
+
+      .etat code {
+        color: var(--citation);
+        font-size: 0.8rem;
+        overflow-wrap: anywhere;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="toile"></canvas>
+
+    <!--
+      Le bloc d'état est retiré dès que le module a démarré. Il dit ce qu'on
+      attend et ce que la page fera, plutôt que d'occuper le temps de
+      chargement avec le seul nom du produit.
+    -->
+    <div id="etat" class="etat" role="status" aria-live="polite">
+      <h1>stigmergie-lab</h1>
+      <p>Chargement du module WebAssembly…</p>
+      <p>
+        La simulation s'exécute entièrement dans cette page. Rien n'est envoyé à
+        un serveur, et rien n'est conservé d'un chargement au suivant.
+      </p>
+    </div>
+
+    <noscript>
+      <div class="etat">
+        <h1>stigmergie-lab</h1>
+        <p>
+          Cette page exécute la simulation dans le navigateur, en WebAssembly.
+          JavaScript doit être activé.
+        </p>
+      </div>
+    </noscript>
+
+    <script type="module">
+      import init from "./sim_viz.js";
+
+      const etat = document.getElementById("etat");
+
+      init()
+        .then(() => etat.remove())
+        .catch((erreur) => {
+          // Une page blanche ne dit rien. Le motif habituel est WebGL absent
+          // ou désactivé : `eframe` rend l'interface par WebGL 2 et n'a pas de
+          // repli logiciel.
+          etat.innerHTML =
+            "<h1>stigmergie-lab</h1><p>L'interface n'a pas démarré. " +
+            "Vérifiez que WebGL&nbsp;2 est activé dans ce navigateur.</p>" +
+            "<p><code>" +
+            String(erreur) +
+            "</code></p>";
+          throw erreur;
+        });
+    </script>
+  </body>
+</html>

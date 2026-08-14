@@ -1,0 +1,37 @@
+[workspace]
+resolver = "2"
+members = [
+    "bancs/dt1-flottant",
+    "bancs/parite-wasm",
+    "crates/sim-core",
+    "crates/sim-milieu",
+    "crates/sim-agents",
+    "crates/sim-viz",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+repository = "https://github.com/agbruneau/Stigmergie"
+# Ces crates ne vont pas sur crates.io : ils n'ont de sens qu'ensemble, et la
+# spécification qui les justifie est dans docs/PRD.md.
+publish = false
+
+# Les interdictions structurelles de `clippy.toml` sont des **contrats**, pas du
+# style : NF-02 pour les sept méthodes de `f64`, PD1 pour les tables de hachage.
+# `disallowed_methods` et `disallowed_types` appartiennent au groupe `style`,
+# donc à `warn` par défaut — et `cargo clippy --workspace --all-targets
+# --release`, que docs/DEVELOPPEMENT.md désigne comme le garde-fou d'avant
+# commit, sortait **0 sur du code interdit**. Les passer en `deny` ici les rend
+# opposables sur les six membres à la fois.
+[workspace.lints.clippy]
+disallowed_methods = "deny"
+disallowed_types = "deny"
+
+# NF-02 : aucune option d'arithmétique relâchée. Rust ne contracte pas les
+# expressions flottantes et n'active jamais fast-math ; ces profils ne le
+# réintroduisent pas. `lto` reste désactivé sur le banc DT1 : la mesure porte
+# sur les opérations, pas sur ce que l'optimiseur en fait.
+[profile.release]
+opt-level = 3
+debug = false

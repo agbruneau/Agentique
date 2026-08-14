@@ -1,0 +1,22 @@
+[package]
+name = "sim-core"
+version.workspace = true
+edition.workspace = true
+repository.workspace = true
+publish.workspace = true
+description = "Moteur déterministe à événements discrets : horloge logique, aléa semé, modèle de faute, oracles."
+
+[dependencies]
+# PD1 : source d'aléa unique, semée, reproductible entre natif et WASM.
+rand_chacha = { version = "0.3", default-features = false }
+rand_core = { version = "0.6", default-features = false }
+# DT1 : transcendantes portables. Les méthodes de f64 divergent entre cibles —
+# voir bancs/dt1-flottant/VERDICT.md.
+libm = "0.2"
+# DT2 : JSON pour le hachage de configuration (NF-03) et l'export.
+serde = { version = "1", features = ["derive"] }
+# DT2 : JSON. Sert le hachage de configuration de NF-03 et l'export.
+serde_json = "1"
+
+[lints]
+workspace = true
