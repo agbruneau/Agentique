@@ -2,7 +2,19 @@
 
 Simulateur déterministe d'essaims d'agents logiciels coordonnés par le milieu.
 
-Le dépôt transpose un traité — [`Traité.pdf`](docs/Traité.pdf), **deuxième
+> **Où ce dossier vit.** Depuis le 14 août 2026, `stigmergie-lab` n'est plus un
+> dépôt autonome : c'est le dossier `3 - Traité/` du dépôt
+> [Agentique](../README.md), où il **héberge le traité qu'il transpose**. Deux
+> conséquences, et il vaut mieux les lire avant de chercher un fichier.
+> *(a)* ⚠ **`Traité.md` / `.pdf` sont à la racine de ce dossier, PAS sous
+> `docs/`** — c'est là que la fusion les a posés, et les renvois qui visaient
+> `docs/Traité.pdf` sont corrigés en conséquence ; `CLAUDE.md` porte encore
+> l'ancien chemin. *(b)* ⚠ **Les 19 figures du traité sont restées à
+> `../figures/`**, et le traité les cite en chemin relatif : sa chaîne de rendu
+> Pandoc **ne se lance que depuis la racine du dépôt**, jamais d'ici. *Rien de
+> tout cela ne concerne le code : `cargo` se lance bien d'ici.*
+
+Le dossier transpose un traité — [`Traité.pdf`](Traité.pdf), **deuxième
 édition du 13 août 2026 : 8 chapitres, 24 sections** — en logiciel exécutable,
 sous une contrainte : **tout chiffre affiché doit être retrouvé par la mesure, ou
 l'écart doit être consigné**. Un écart est un défaut du simulateur ou une erreur
@@ -206,7 +218,7 @@ plutôt que supposé. La septième, `mul_add`, y est mesurée *identique* — el
 interdite parce que son verdict **a changé entre deux passages du banc**, ce qui
 la rend dépendante de la machine de construction.
 
-## Carte du dépôt
+## Carte du dossier
 
 ```
 sim-core  ◄──── sim-milieu  ◄──── sim-agents  ◄──── sim-viz

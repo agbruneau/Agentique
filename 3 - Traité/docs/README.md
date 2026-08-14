@@ -1,10 +1,19 @@
 # Documentation de stigmergie-lab
 
 Tout ce qui documente le projet vit ici, à deux exceptions près restées à la
-racine parce qu'un outil les y attend — [`README.md`](../README.md), page
-d'accueil du dépôt, et [`CLAUDE.md`](../CLAUDE.md), chargé par Claude Code — et
+racine du dossier parce qu'un outil les y attend — [`README.md`](../README.md),
+page d'accueil, et [`CLAUDE.md`](../CLAUDE.md), chargé par Claude Code — et
 à une troisième : les `VERDICT.md`, gardés sous [`bancs/`](../bancs/), à côté de
 la mesure qui les produit.
+
+⚠ **Et à une quatrième, qui n'est pas un choix : la source normative elle-même.**
+Depuis l'entrée de ce dossier dans le dépôt [Agentique](../../README.md), le
+14 août 2026, `Traité.md` et `Traité.pdf` sont **à la racine du dossier**, pas
+ici. *Ce document et le `README.md` d'accueil les visaient sous `docs/`, où ils
+vivaient du temps du dépôt autonome ; les deux renvois sont corrigés, celui de
+`CLAUDE.md` ne l'est pas.* La règle « toute la documentation vit dans `docs/` »
+survit à l'exception, mais elle ne couvre plus le document dont tout le reste
+dérive.
 
 ## Qui dérive de qui
 
@@ -60,7 +69,7 @@ faux d'un côté à chaque changement de l'autre, sans qu'on sache lequel.
 
 | Document | Ce qu'il contient | Quand le lire |
 |---|---|---|
-| [`Traité.pdf`](Traité.pdf) | **La source normative** — deuxième édition du 13 août 2026 : 8 chapitres, 24 sections, **dix blocs d'algorithme légendés** — trois aux chapitres 1, 3 et 4, plus l'algorithme 8.1 — auxquels s'ajoutent trois algorithmes numérotés dans le corps du chapitre 2, sans ligne de légende, et 22 tableaux. Les figures se comptent de deux façons — 18 légendes numérotées pour 16 numéros distincts, la figure 2.1 se déclinant en a/b/c —, donc ce document n'en avance aucun compte. Les algorithmes, les hypothèses et les chiffres viennent de là, et de nulle part ailleurs. | Pour comprendre *pourquoi* un mécanisme est écrit ainsi |
+| [`Traité.pdf`](../Traité.pdf) *(⚠ à la racine du dossier, pas ici)* | **La source normative** — deuxième édition du 13 août 2026 : 8 chapitres, 24 sections, **dix blocs d'algorithme légendés** — trois aux chapitres 1, 3 et 4, plus l'algorithme 8.1 — auxquels s'ajoutent trois algorithmes numérotés dans le corps du chapitre 2, sans ligne de légende, et 22 tableaux. Les figures se comptent de deux façons — 18 légendes numérotées pour 16 numéros distincts, la figure 2.1 se déclinant en a/b/c —, donc ce document n'en avance aucun compte. Les algorithmes, les hypothèses et les chiffres viennent de là, et de nulle part ailleurs. | Pour comprendre *pourquoi* un mécanisme est écrit ainsi |
 | [`PRD.md`](PRD.md) | **Ce qui est exigé**, environ 2 200 lignes. Chaque exigence porte un code que le code source cite. Le §0 suit l'avancement, son §0.0 dit ce que la deuxième édition change ; le §12 A donne la correspondance traité → implantation. | Pour retrouver la lettre d'une exigence, ou l'état du projet |
 | [`SPEC.md`](SPEC.md) | **Ce que le code garantit** : contrat de déterminisme, contrat du moteur, catalogue des quinze oracles nommés, contrat du milieu, nomenclature des grandeurs qui ne se mêlent jamais, et ce que le contrat ne couvre pas. Chaque énoncé est vérifiable par une signature ou un test. | Avant d'écrire du code, et avant de supposer qu'une exigence est tenue |
 | [`architecture.md`](architecture.md) | La vue d'ensemble des quatre crates, ce que chaque couche **refuse** de savoir, la carte des modules, et le modèle de domaine. | Pour trouver où va un changement |

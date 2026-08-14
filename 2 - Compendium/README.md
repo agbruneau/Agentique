@@ -44,13 +44,17 @@
 | **`build/`** | la chaîne de composition du PDF : [`build-pdf.sh`](build/build-pdf.sh), [`assemble.py`](build/assemble.py) — qui réunit les cinquante pièces et les **deux** annexes en un `.md` unique —, [`assemble-bibliographie.py`](build/assemble-bibliographie.py), le filtre [`accentuation.lua`](build/accentuation.lua), les gabarits [`compendium.template`](build/compendium.template) (courant) et [`springer.template`](build/springer.template) (le précédent, conservé), et le couple d'échantillonnage [`echantillon.py`](build/echantillon.py) / [`echantillon.template`](build/echantillon.template) |
 | **`figures/`** | les **118 fichiers `.svg`** du volume et la chaîne qui les produit — [`programme.md`](figures/programme.md), registre des 237 opportunités ; [`spec.py`](figures/spec.py), [`dessine.py`](figures/dessine.py), [`genere.py`](figures/genere.py) et les **sept** `contenu*.py`, une entrée par figure |
 | **`.claude/`** | [`launch.json`](.claude/launch.json) seul — le service local qui sert [`Compendium.html`](Compendium.html) |
-| **tête du répertoire** | [`Compendium.pdf`](Compendium.pdf), [`Compendium.html`](Compendium.html), [`annexe-references.md`](annexe-references.md), [`annexe-bibliographie.md`](annexe-bibliographie.md) et le présent `README.md` |
+| **tête du répertoire** | [`Compendium.pdf`](Compendium.pdf), [`Compendium.html`](Compendium.html), [`annexe-references.md`](annexe-references.md), [`annexe-bibliographie.md`](annexe-bibliographie.md), le présent `README.md` — **et** [`SEBoK.pdf`](SEBoK.pdf), voir ci-dessous |
+| ⚠⚠ **`SEBoK.pdf`** | **14,0 Mio, et le volume ne sait pas ce qu'il fait là.** Déposé à la **racine du dépôt** le 13 août 2026 (commit `cd7f76e`), **porté ici le 14** (commit `6ac7170`). ⚠ **Aucun chapitre du volume ne le cite, aucune entrée du socle consolidé ne s'y adosse, aucune notice de l'Annexe I ne le nomme, et aucun document de gouvernance ne l'admet.** *Être rangé dans un volume n'est pas en faire partie* : c'est une **pièce déposée**, du même régime exactement que les trois PDF de `1 - Corpus/0 - Références/` — **non une source instruite, et rien ici ne l'oppose à un énoncé**. ⚠ *Le régime reste à écrire, et le dépôt est clos : il ne s'écrira pas.* Cette ligne existe pour que l'absence de régime soit **déclarée** plutôt que déduite du silence |
 
-⚠ **Et rien d'autre n'y est.** Quatre objets se citent par leur nom dans ce document ou dans les
+⚠ **Et rien d'autre n'y est** — ⚠ *la formule était exacte jusqu'au 14 août 2026, et l'entrée de
+`SEBoK.pdf` l'a démentie ; c'est pourquoi il a sa ligne ci-dessus plutôt qu'une mention en note.*
+Quatre objets se citent par leur nom dans ce document ou dans les
 README des Livres et **aucun ne s'y résout** : `audit.md`, `audit-references.md`, `eval.html`, et le
 skill de projet `chapitre-compendium` avec ses scripts `rendre-piece.py` et `verifier-piece.py`,
 retiré le 31 juillet 2026. *Un nom conservé date un constat ; il ne désigne pas un fichier qu'on
-puisse ouvrir ici.*
+puisse ouvrir ici.* ⚠ **Le cas de `SEBoK.pdf` est le symétrique exact, et le plus gênant des deux** :
+là, un nom sans fichier ; ici, **un fichier sans nom déclaré**.
 
 ---
 
