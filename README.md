@@ -343,10 +343,37 @@ la revue de littérature depuis le 15** — [`4 - Revue et Veille/`](4%20-%20Rev
 ⚠ **La racine ne porte donc plus aucun livrable**, contre trois jusqu'au 13 août 2026 et deux
 jusqu'au 14. *Le classement par dossier numéroté cesse d'être réservé aux volumes, et il est
 désormais universel* : les **sept livrables sont sous quatre dossiers numérotés**, et la racine ne
-garde que ce fichier, `.gitignore` et **un seul dossier d'appareil**, [`figures/`](figures/) — ⚠ *les
+garde que ce fichier, `.gitignore`, **une page de présentation** —
+[`OnePager.html`](OnePager.html), entrée le 15 août 2026 — et **un seul dossier d'appareil**,
+[`figures/`](figures/) — ⚠ *les
 dix-neuf figures du traité, restées là où le traité n'est plus.* ☑ **`Python/` a suivi ses sources**
 le 15 août 2026 et vit sous
 [`4 - Revue et Veille/Python/`](4%20-%20Revue%20et%20Veille/Python/).
+
+⚠ **La page de présentation n'est pas un huitième livrable, et il faut dire ce qu'elle est.**
+[`OnePager.html`](OnePager.html) est un **fichier unique et autonome** — aucune source markdown,
+aucune chaîne de rendu, aucune dépendance externe, aucun contrôle — qui expose sur **une seule page**
+une **échelle de maturité à six niveaux numérotés 1 à 6** : technique, sémantique, organisationnel,
+juridique, politique, agentique. *Elle se lit au navigateur et s'imprime en A4 paysage ;
+⚠ **le tenir-sur-une-page est constaté au rendu, jamais vérifié** — même régime exactement que la
+cible de cent pages du traité, et aucune porte ne l'oppose à rien.*
+⚠ **Sa filiation est réelle mais nulle part écrite dans un livrable** : ses **quatre premiers
+niveaux** sont les quatre couches du *New European Interoperability Framework* telles que le Vol. I
+les expose (`Chapitres/Chapitre 1 - Interoperabilite.md` §1.2.1.1), et son bandeau transversal
+reprend mot pour mot l'**invariant du Vol. I** — *découplage ── contrat ── évolution*. ⚠ **Ses
+niveaux 5 et 6 sont des ajouts** : aucun livrable du dépôt ne porte, sous ces noms, un palier
+« politique » ni un palier « agentique » dans une échelle numérotée. *Elle ne cite aucun livrable et
+aucun livrable ne la cite* — **le second cas de ce dépôt après le traité, et cette fois sans
+appareil du tout.**
+
+⚠⚠ **Et elle introduit une quatrième échelle à six niveaux, ce qui est exactement la classe d'écart
+que le Vol. III prend pour objet.** Sa parade **R-13** impose de nommer toute échelle par son
+**fichier, sa section, son cardinal *et* sa numérotation**, au motif que **trois échelles coexistent
+au Vol. I et partagent leurs libellés** — dont un **continuum à six niveaux numérotés 0 à 5**
+(`Monographie.md` §2.2.4). *Le cardinal de la page est le même, sa numérotation ne l'est pas, et rien
+dans le dépôt ne les distingue au lecteur qui les rencontrerait séparément.* ⚠ **La discipline R-13
+ne s'applique pas ici** : elle est une parade de rédaction du Vol. III, la page n'est pas une pièce
+de volume, et **aucun contrôle ne la rejoue**. *Constat porté, correction non faite.*
 ⚠ *Deux dossiers numérotés ne sont pas des volumes et ne prétendent pas l'être* :
 `3 - Traité/` porte un livrable **et le logiciel qui le prend à l'épreuve**, ce dont aucun autre n'a
 d'équivalent, et `4 - Revue et Veille/` porte **les deux livrables qui mesurent le champ au lieu de
@@ -364,7 +391,11 @@ déclaré.
 seul intitulé ne désigne plus rien : la **veille** et le **Vol. IV** sont **homonymes exacts**
 depuis le 9 août 2026, et la **revue de littérature** en reprend le radical
 (*« Interopérabilité et Orchestration Agentiques : revue de la littérature académique »*, aligné le
-même jour). *Il faut nommer le genre du livrable, jamais son seul titre.* ☑ **Et c'est bien par le
+même jour). ⚠ **Une quatrième pièce a pris le même radical le 15 août 2026, et ce n'est pas un
+livrable** : [`OnePager.html`](OnePager.html), retitrée *« Échelle de maturité de l'interopérabilité
+et orchestration agentiques d'entreprise »* le jour même. *Le radical cesse donc de désigner un
+genre autant qu'un titre* — **quatre pièces sur huit le portent, dont une qui n'a ni source, ni
+appareil, ni référence.** *Il faut nommer le genre du livrable, jamais son seul titre.* ☑ **Et c'est bien par le
 genre que les fichiers se nomment, ce que le septième a mis au jour en y contrevenant.**
 `Veille Technologique`, `Revue de littérature`, `Monographie`, `Compendium` : aucun de ces noms n'est
 un titre, tous sont des genres. Le septième s'appelait `Swarm Agentic Systems.md` — **ni genre, ni
@@ -1089,10 +1120,23 @@ le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
 
 ```
 .
-├── README.md                              ← ce fichier (avant-propos croisé) — ⚠⚠ SEUL FICHIER DE LA RACINE avec `.gitignore`
+├── README.md                              ← ce fichier (avant-propos croisé) — ⚠ TROIS FICHIERS À LA RACINE depuis le
+│                                            15 août 2026 : celui-ci, `.gitignore` et `OnePager.html`
 │                                          ⚠ `Traité.md / .pdf` étaient ici jusqu'au 14 août 2026 — déplacés sous `3 - Traité/`
 │                                          ⚠ `Veille Technologique.md / .pdf` et `Revue de littérature.md / .pdf` jusqu'au
 │                                            15 août 2026 — déplacés sous `4 - Revue et Veille/`, inchangés au bit près
+├── OnePager.html                          ← page de présentation d'une seule page, entrée le 15 août 2026 — ⚠ PAS UN LIVRABLE
+│                                            « Échelle de maturité de l'interopérabilité et orchestration agentiques
+│                                            d'entreprise » : six niveaux numérotés 1 à 6, l'invariant du Vol. I, la clause
+│                                            de renversement. ⚠ FICHIER UNIQUE ET AUTONOME — pas de source `.md`, pas de
+│                                            chaîne de rendu, pas de dépendance externe, AUCUN CONTRÔLE
+│                                            ⚠ niveaux 1 à 4 = les quatre couches du NEIF, Vol. I §1.2.1.1 ; niveaux 5 et 6
+│                                            ajoutés, sous ces noms dans aucun livrable
+│                                            ⚠ QUATRIÈME ÉCHELLE À SIX NIVEAUX du dépôt — même cardinal que le continuum
+│                                            0 à 5 du Vol. I §2.2.4, numérotation différente ; R-13 ne la couvre pas
+│                                            ⚠ thème sombre à accent orange et mise en page reprise le 15 août 2026 ;
+│                                            échelle typographique en `rem` — 18 px à l'écran, 8,2 pt à l'impression —,
+│                                            A4 paysage CONSTATÉ ET NON VÉRIFIÉ, comme les cent pages du traité
 ├── figures/                               ← les 19 figures du traité (16 le 11 août 2026, 3 avec le ch. 8 le 13)
 │   │                                         ⚠⚠ ELLES N'ONT PAS SUIVI LE TRAITÉ dans `3 - Traité/`, et le traité les cite en
 │   │                                         chemin relatif : la chaîne de rendu ne se lance donc plus que DEPUIS LA RACINE
@@ -1908,12 +1952,15 @@ correction exigerait une information que le dépôt ne porte pas — *et personn
 | `4 - Revue et Veille/Python/` — les trois contrôles | ☑ **SOLDÉ le 15 août 2026, le jour où le défaut est devenu une panne.** Les trois nommaient leurs sources en **chemin relatif au répertoire courant** — `SRC = 'Veille Technologique.md'`, `SRC = 'Revue de littérature.md'`, `'Veille Technologique.pdf'` par défaut — et **ont levé `FileNotFoundError`** dès que la veille et la revue ont quitté la racine. *Une trace de pile n'est pas un verdict : un contrôle qui ne trouve pas sa source ne dit pas que le document est faux, il ne dit plus rien.* ☑ **Chacun résout désormais son chemin contre `Path(__file__)`** et sort 0 **depuis la racine, depuis `4 - Revue et Veille/` et depuis `Python/`** — neuf exécutions, valeurs identiques au 10 août 2026. ⚠ *La correction ne touche que la résolution des chemins : aucun contrôle, aucun seuil, aucun verdict ne change.* ⚠ **Ce qui reste ouvert** : `check-resume.py` **n'est calibré que pour le gabarit de la veille** — `MARGE_BASSE = 73.7` est une constante, et il compte le folio —, si bien qu'il **sort 1 sur `3 - Traité/Traité.pdf` sans qu'une ligne y soit rognée** |
 | `3 - Traité/CLAUDE.md` | ⚠ **il vise `docs/Traité.pdf`, qui n'existe pas** : le traité est à `3 - Traité/Traité.pdf`, un cran plus haut. Le dossier a été écrit en dépôt autonome, où le PDF vivait sous `docs/` ; la fusion du 14 août 2026 l'a posé à la racine du dossier **sans reprendre les renvois**. ⚠ *Le renvoi mort vise la **source normative** du projet, celle dont `CLAUDE.md` dit que « les algorithmes, les hypothèses et les chiffres viennent de là, et de nulle part ailleurs » — c'est le pire endroit possible pour un lien mort.* ☑ Les **deux `README.md`** du dossier portent le correctif ; ⚠ **`CLAUDE.md` n'est pas dans le périmètre d'une resynchronisation de `README.md` et n'a pas été touché** — arbitrage d'auteur |
 | `3 - Traité/Traité.md` ↔ `figures/` | ⚠ **le livrable et ses dix-neuf figures sont dans deux dossiers différents**, et le livrable les cite en chemin relatif. *Pandoc résolvant contre le répertoire courant*, la chaîne de rendu **ne marche plus que depuis la racine du dépôt** — la seule des sept dans ce cas, et **rien ne le signale au moment où elle échoue**. Deux corrections sont possibles — déplacer `figures/` sous `3 - Traité/`, ou passer `--resource-path` à Pandoc — et **aucune n'est faite** : elles toucheraient soit un livrable, soit une chaîne de rendu, l'un et l'autre hors du périmètre d'une resynchronisation |
+| `OnePager.html` | ⚠ **une pièce sans régime, sans appareil et sans rattachement — entrée à la racine le 15 août 2026.** *Aucun document du dépôt ne la cite, elle ne cite aucun document, et rien n'écrit ce qu'elle fait là* — **même classe exactement que les quatre PDF de `0 - Références/`**, à ceci près qu'elle n'est pas une pièce déposée mais une pièce **produite ici**, et qu'elle **reformule du contenu de livrable** : les quatre couches du NEIF du Vol. I §1.2.1.1 et son invariant transversal, sans les attribuer. ⚠ **Elle porte en outre une quatrième échelle à six niveaux** — numérotés 1 à 6 —, quand le Vol. I en porte un continuum à six niveaux numérotés 0 à 5 (§2.2.4) que la parade **R-13** du Vol. III oblige à citer par son cardinal *et* sa numérotation. *La parade vaut pour les pièces de volume ; la page n'en est pas une, et rien ne la lui applique.* ⚠ **Aucun contrôle** : le tenir-sur-une-page en A4 paysage est **constaté au rendu et jamais vérifié**, exactement comme les cent pages du traité — *et l'on sait depuis le 11 août 2026 ce que vaut une cible constatée.* **Régime à écrire, filiation à attribuer, et personne ne le fera** |
 | `3 - Traité/` | ⚠ **ni licence, ni intégration continue.** L'absence de licence est le régime du dépôt entier — *droit d'auteur par défaut, tous droits réservés* —, et le dossier le déclare plutôt que de l'inventer : ses manifestes portent `publish = false`. ⚠ **L'absence d'intégration continue, elle, contredit deux de ses propres exigences** : NF-13 et NF-16 nomment un mécanisme d'application que le dépôt ne contient pas. *Les 428 tests, `clippy` et `cargo doc` sont les trois portes réelles du dossier, et rien ne les fait jouer automatiquement* |
 
 ⚠ **Aucune publication GitHub Pages, pour aucun volume.** ⚠ **La formule antérieure — « plus de
 pages de présentation » — a cessé d'être exacte le 4 août 2026** et elle est corrigée ici : le
 Vol. IV en porte désormais, [`Compendium.html`](2%20-%20Compendium/Compendium.html) et les cinquante
-pages de chapitre. *Ce qui a disparu n'est pas la page de présentation, c'est sa publication en
+pages de chapitre. ⚠ **Et la racine en porte une depuis le 15 août 2026** —
+[`OnePager.html`](OnePager.html), *elle non plus n'est pas publiée*. *Ce qui a disparu n'est pas la
+page de présentation, c'est sa publication en
 ligne* — les nouvelles ne sont **pas publiées** et se lisent depuis le dépôt, en local. Les deux
 `index.html` (Vol. I et Vol. II) ont été supprimés le 22 juillet 2026 (commit `fd8f1be`). Ils
 annonçaient « Lire en ligne » sous `https://agbruneau.github.io/Monographies/…`, et leurs balises
@@ -2583,3 +2630,58 @@ pièce déposée**, **n'ajoute aucune porte de pagination ni aucun contrôle de 
 aucune porte**, **ne lève aucune dérogation**, **ne referme aucune remontée**, **ne rejuge pas la
 clôture** et **ne publie rien de ce qui est clos**. La clôture **D-13 reste en vigueur pour les
 quatre volumes**.
+
+**Le 15 août 2026, troisième passe du même jour — une page de présentation entre à la racine, et ce
+fichier ne la portait pas.** ⚠ *L'entrée précédente écrivait, le matin même, que la racine « ne porte
+plus aucun livrable » et que ce fichier en est le seul avec `.gitignore` ; l'après-midi y déposait
+[`OnePager.html`](OnePager.html) (commit `6968168`), et **rien ne l'a signalé** — le fichier a vécu
+un commit entier sans une mention dans aucun `README.md` du dépôt.* Deux gestes, aucun sur un
+livrable : *(a)* **dépôt de la page** ; *(b)* **reprise de la page le jour même** (commit `f6de7e7`)
+— **thème sombre à accent orange**, **retitrage** en *« Échelle de maturité de l'interopérabilité et
+orchestration agentiques d'entreprise »*, et **refonte de la mise en page** : tables de disposition
+remplacées par CSS grid, `<meta viewport>` ajouté — *il manquait* —, échelle typographique unifiée en
+`rem` sur une seule variable racine (**18 px à l'écran, 8,2 pt à l'impression**), et bandeau de
+progression réordonné **1 → 6** pour lire dans le même sens que les six cartes, qu'il prenait à
+rebours.
+
+⚠ **Ce que la page est, et ce qu'elle n'est pas.** *Ce n'est pas un huitième livrable* : **un fichier
+unique et autonome**, aucune source markdown, aucune chaîne de rendu, aucune dépendance externe,
+**aucune référence**, **aucun contrôle**. ⚠ **Sa filiation est réelle et n'est écrite nulle part
+dans un livrable** : ses **quatre premiers niveaux** sont les quatre couches du *New European
+Interoperability Framework* telles que le Vol. I les expose (§1.2.1.1), et son bandeau transversal
+reprend l'**invariant du Vol. I** — *découplage ── contrat ── évolution* —, **sans les attribuer**.
+⚠ **Ses niveaux 5 et 6 sont des ajouts** que ne porte, sous ces noms, aucun livrable du dépôt.
+*Elle ne cite aucun livrable et aucun livrable ne la cite — le second cas après le traité, et cette
+fois sans appareil du tout.*
+
+⚠⚠ **Deux écarts sont portés au tableau des reliquats, et le second est de la classe que ce dépôt
+prend pour objet.** *(a)* **Le tenir-sur-une-page en A4 paysage est constaté au rendu et jamais
+vérifié** — *rien ne joue ici le rôle de la porte de pagination du compendium, et l'on sait depuis le
+11 août 2026 ce que vaut une cible constatée : elle tombe en silence.* *(b)* ⚠⚠ **La page introduit
+une quatrième échelle à six niveaux**, numérotés **1 à 6**, quand le Vol. I porte un **continuum à
+six niveaux numérotés 0 à 5** (`Monographie.md` §2.2.4) et que la parade **R-13** du Vol. III oblige
+toute mention d'échelle à porter **fichier, section, cardinal *et* numérotation**, au motif exact que
+les cardinaux ne discriminent pas. *Le cardinal est le même, la numérotation ne l'est pas, et rien
+dans le dépôt ne les distingue au lecteur qui les rencontrerait séparément.* ⚠ **La parade ne
+s'applique pas** — elle vaut pour les pièces de volume, la page n'en est pas une, **et aucun contrôle
+ne la rejoue**. *Constat porté, correction non faite.*
+
+⚠ **Et le titre neuf porte le radical des trois autres.** *« Interopérabilité et orchestration
+agentiques »* nommait déjà la **veille**, le **Vol. IV** et la **revue de littérature** ; **une
+quatrième pièce le prend**, et ce n'est pas un livrable. *Le radical cesse donc de désigner un genre
+autant qu'un titre*, et la règle du dépôt — **nommer le genre, jamais le seul titre** — perd ici sa
+prise, la page n'ayant pas de genre déclaré.
+
+☑ **Ce que cette passe reprend dans ce fichier** : **cinq passages** — le paragraphe de la racine
+sous « Les sept livrables », celui des titres homonymes, l'arborescence, le paragraphe des pages de
+présentation non publiées, et **une ligne neuve au tableau des reliquats** —, plus la présente
+entrée de journal. ⚠ **Aucun autre `README.md` du dépôt n'est touché** : la page ne relève d'aucun
+dossier numéroté.
+
+⚠ **Ce que la passe ne fait pas.** Elle **ne modifie aucun des sept livrables**, **n'écrit pas le
+régime de la page** — *elle en déclare l'absence, ce qui n'est pas la même chose* —, **n'attribue pas
+au Vol. I les quatre couches et l'invariant qu'elle lui reprend**, **ne lui attache aucun contrôle ni
+aucune porte de rendu**, **ne la rattache à aucun dossier numéroté**, **ne corrige pas `CLAUDE.md`**,
+**ne déplace pas `figures/`**, **ne franchit aucune porte**, **ne lève aucune dérogation**, **ne
+referme aucune remontée**, **ne rejuge pas la clôture** et **ne publie rien de ce qui est clos**. La
+clôture **D-13 reste en vigueur pour les quatre volumes**.
