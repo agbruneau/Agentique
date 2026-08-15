@@ -2,7 +2,7 @@
 
 > **Auteur :** André-Guy Bruneau, M.Sc. IT — Juin–Juillet 2026
 >
-> ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13** ([`2 - Compendium/PRD/PRD.md`](../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe n'est plus prévue, sur aucun des cinq livrables que le dépôt portait alors ; ce document décrit un état **définitif** pour les trois volumes qu'il couvre. *Clore n'est ni terminer ni publier.* ⚠ **La clôture a été rouverte quatre fois depuis, hors du triptyque** : la veille (8 août), un **sixième livrable** — la [revue de littérature](../Revue%20de%20litt%C3%A9rature.md), 9 août —, le **calage du compendium à mille pages** (9 août, appareil de rendu du Vol. IV seul) et un **septième livrable** — le [traité sur les systèmes multiagents en essaim](../3%20-%20Trait%C3%A9/Trait%C3%A9.md), 10 août. ⚠ **Une cinquième réouverture a suivi le 14 août 2026** : le traité passe sous [`3 - Traité/`](../3%20-%20Trait%C3%A9/) et **du code exécutable entre au dépôt** — un simulateur d'essaims en Rust qui transpose ce traité et **contredit trois de ses énoncés par la mesure**. *Aucune des cinq ne touche aux Vol. I, II ou III.*
+> ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13** ([`2 - Compendium/PRD/PRD.md`](../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe n'est plus prévue, sur aucun des cinq livrables que le dépôt portait alors ; ce document décrit un état **définitif** pour les trois volumes qu'il couvre. *Clore n'est ni terminer ni publier.* ⚠ **La clôture a été rouverte quatre fois depuis, hors du triptyque** : la veille (8 août), un **sixième livrable** — la [revue de littérature](../4%20-%20Revue%20et%20Veille/Revue%20de%20litt%C3%A9rature.md), 9 août —, le **calage du compendium à mille pages** (9 août, appareil de rendu du Vol. IV seul) et un **septième livrable** — le [traité sur les systèmes multiagents en essaim](../3%20-%20Trait%C3%A9/Trait%C3%A9.md), 10 août. ⚠ **Une cinquième réouverture a suivi le 14 août 2026** : le traité passe sous [`3 - Traité/`](../3%20-%20Trait%C3%A9/) et **du code exécutable entre au dépôt** — un simulateur d'essaims en Rust qui transpose ce traité et **contredit trois de ses énoncés par la mesure**. ⚠ **Une sixième le 15 août 2026**, de rangement seul : la veille et la revue passent sous [`4 - Revue et Veille/`](../4%20-%20Revue%20et%20Veille/), **quatrième dossier numéroté**, et `SEBoK.pdf` passe du Vol. IV à [`0 - Références/`](0%20-%20R%C3%A9f%C3%A9rences/) sous le nom `2026 - SystemEngineeringBoK.pdf` — *les cinq fichiers inchangés au bit près*. *Aucune des six ne touche aux Vol. I, II ou III.*
 >
 > Ce document est la **synthèse consolidée** des trois monographies du corpus. Il en articule les
 > thèses, les concepts et les apports en un seul document de synthèse. Pour le détail, se reporter
@@ -313,16 +313,16 @@ Les trois volumes convergent sur un ensemble de recommandations pratiques pour l
 
 ## Ordre de lecture
 
-**Vol. I → Vol. II → Vol. III**, la [veille technologique](../Veille%20Technologique.md) servant d'entrée rapide ou de mise à jour.
+**Vol. I → Vol. II → Vol. III**, la [veille technologique](../4%20-%20Revue%20et%20Veille/Veille%20Technologique.md) servant d'entrée rapide ou de mise à jour.
 
 | Profil du lecteur | Point d'entrée recommandé |
 |---|---|
-| **Pressé** | La [veille technologique](../Veille%20Technologique.md) (**100 p.**, état de l'art le plus récent — **édition du 8 août 2026**, ramenée de 162 à 100 pages le même jour) |
+| **Pressé** | La [veille technologique](../4%20-%20Revue%20et%20Veille/Veille%20Technologique.md) (**100 p.**, état de l'art le plus récent — **édition du 8 août 2026**, ramenée de 162 à 100 pages le même jour) — ⚠ *à la racine du dépôt jusqu'au 15 août 2026, sous [`4 - Revue et Veille/`](../4%20-%20Revue%20et%20Veille/) depuis* |
 | **Architecte / chercheur** | Vol. I, chapitre 1 — lecture séquentielle en spirale |
 | **Praticien canadien** | Vol. II, chapitre 13 — « le pont : des contraintes réglementaires aux *frames* déterministes » |
 | **RSSI / responsable identité** | Vol. III, Partie II — le passeport d'agent et la chaîne de mandat |
 | **Décideur** | Ce README, puis la veille technologique |
-| **Académique** | La [revue de littérature](../Revue%20de%20litt%C3%A9rature.md) (**40 p. fermes**, 176 références, **dix fronts**, arrêtée au **9 août 2026**) — ⚠ *sixième livrable du dépôt, entré après la clôture ; elle ne couvre aucun des trois volumes, elle mesure le champ savant qu'ils citent* |
+| **Académique** | La [revue de littérature](../4%20-%20Revue%20et%20Veille/Revue%20de%20litt%C3%A9rature.md) (**40 p. fermes**, 176 références, **dix fronts**, arrêtée au **9 août 2026**) — ⚠ *sixième livrable du dépôt, entré après la clôture ; elle ne couvre aucun des trois volumes, elle mesure le champ savant qu'ils citent.* ⚠ **À la racine du dépôt jusqu'au 15 août 2026**, sous [`4 - Revue et Veille/`](../4%20-%20Revue%20et%20Veille/) depuis, avec la veille |
 | **Le contrepoint** | Le [traité sur les systèmes multiagents en essaim](../3%20-%20Trait%C3%A9/Trait%C3%A9.md) (**100 p. fermes**, **119 références**, déposé le **10 août 2026**, **deuxième édition le 13 août**) — ⚠ *septième livrable, et le seul qui ne cite aucun autre : il prend l'objet par l'autre bout, ce qu'une population d'agents gagne à ne pas s'accorder. Aucun des trois volumes ne le cite, et il n'en cite aucun.* ⚠ **À la racine du dépôt jusqu'au 14 août 2026**, sous [`3 - Traité/`](../3%20-%20Trait%C3%A9/) depuis, où il est accompagné de sa **transposition exécutable** — un simulateur Rust qui rejoue ses mécanismes et **réfute trois de ses énoncés par la mesure** |
 
 ---
@@ -381,7 +381,9 @@ l'abri.*
 ```
 1 - Corpus/
 ├── README.md                                ← ce fichier (synthèse consolidée)
-├── 0 - Références/                          ⚠ 3 PDF de littérature source (32,5 Mio), déposés le 8 août 2026
+├── 0 - Références/                          ⚠ 4 PDF de littérature source (46,5 Mio) — 3 déposés le 8 août 2026,
+│                                              le 4ᵉ venu de `2 - Compendium/SEBoK.pdf` le 15 août, renommé
+│                                              `2026 - SystemEngineeringBoK.pdf`
 │                                              — cités par AUCUN document du dépôt, sans README ni régime déclaré
 ├── 1 - InteroperabiliteAgentique/           Vol. I (569 p., 233 257 mots)
 │   ├── README.md                              présentation du volume

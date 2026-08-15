@@ -51,10 +51,12 @@ Annexe B restent les seuls livrables rédigés du volume.
 §11.5 et tableau 15 — cf. [`Chapitres/TOC.md`](Chapitres/TOC.md), §Filiation) n'ont plus de cible
 dans le dépôt ; les renvois §7.x, eux, résolvent contre `Monographie.md` et restent valides.
 
-## Veille technologique — déplacée à la racine du dépôt
+## Veille technologique — déplacée hors de ce dossier
 
-La veille n'est **plus un livrable de ce dossier**. Elle vit désormais à la racine du dépôt
-([`Veille Technologique.md`](../../Veille%20Technologique.md)), recoupe les quatre volumes et porte sa
+La veille n'est **plus un livrable de ce dossier**. Elle vit désormais sous
+[`4 - Revue et Veille/`](../../4%20-%20Revue%20et%20Veille/)
+([`Veille Technologique.md`](../../4%20-%20Revue%20et%20Veille/Veille%20Technologique.md)) — ⚠ *à la
+racine du dépôt du détachement jusqu'au 15 août 2026* —, recoupe les quatre volumes et porte sa
 propre édition — **édition du 8 août 2026 (faits gelés à cette date), 100 p., 303 références**, dont deux (§4.12 et §8.4)
 citent explicitement ce volume et le volume II, et dont la section 13 rend compte des quatre volumes. Les mentions « 7 juillet 2026, 48 p., 116 références »
 qui figuraient ici décrivaient une édition antérieure.
@@ -103,7 +105,7 @@ Le script prend un `.md` source en argument (défaut `Monographie.md`, désormai
 
 **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, `python3` + `pypdf`, polices Liberation Sans et DejaVu Sans. Pour le rendu des diagrammes : Node ≥ 18 + [`@mermaid-js/mermaid-cli`](https://github.com/mermaid-js/mermaid-cli) (`mmdc`) et un Chromium. Le script exporte lui-même `PYTHONUTF8=1` (nécessaire sous Windows).
 
-La chaîne de la veille (racine) et celle du volume II sont **distinctes** de celle-ci : voir le [README du dépôt](../../README.md).
+La chaîne de la veille (depuis [`4 - Revue et Veille/`](../../4%20-%20Revue%20et%20Veille/) — *la racine du dépôt jusqu'au 15 août 2026*) et celle du volume II sont **distinctes** de celle-ci : voir le [README du dépôt](../../README.md).
 
 ## État
 
@@ -112,7 +114,7 @@ La chaîne de la veille (racine) et celle du volume II sont **distinctes** de ce
 **Vérifié par passes adverses successives :**
 
 - **2026-06-24 → 06-30** — double puis triple passe de vérification adverse du contenu et des sept bibliographies (dates, versions, statuts GA/*preview*) ; ajout du *blueprint* d'ouverture de l'Annexe B (§0.1-0.2) ; corrections propagées dans le corps, `Monographie.md` et l'article de synthèse.
-- **2026-07** — cycle de révision (audit et correctifs, PDF régénérés) ; rédaction de la **veille technologique**, depuis détachée de ce dossier et portée à la racine du dépôt.
+- **2026-07** — cycle de révision (audit et correctifs, PDF régénérés) ; rédaction de la **veille technologique**, depuis détachée de ce dossier et portée à la racine du dépôt *(⚠ puis sous `4 - Revue et Veille/` le 15 août 2026)*.
 - **2026-07-14** — audit intégral de l'**article de synthèse** (bibliographie portée à 211 entrées, terminologie harmonisée ; article depuis retiré du dossier) puis de la **monographie** : 3 054 renvois vérifiés (aucun brisé), bilans des sept bibliographies recomptés, fidélité source ↔ PDF contrôlée. Correctifs : terminologie et typographie du corps, **143 identifiants stables ajoutés** aux bibliographies des ch. 1, 3 et 4 (URL de source primaire vérifiées sur le web), entrée ISO/IEC 27001:2022 créée. PDF régénérés (**569 p.**).
 - **2026-07-18** — `Chapitres/TOC.md` v1.0 : rétro-documentation du volume achevé (thèses, sections et décomptes relevés sur le texte livré, non projetés).
 - **2026-07-22** — retrait de l'article de synthèse et de la page `index.html` ; `README.md` resynchronisé sur l'arborescence réelle (569 p. et 28 diagrammes re-mesurés, 12 ADR).

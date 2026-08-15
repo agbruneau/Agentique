@@ -12,6 +12,13 @@ Usage : python check-resume.py [Veille Technologique.pdf]  -> sortie 0 si le
 resume tient sur sa page, 1 sinon.
 """
 import io, re, sys, zlib
+from pathlib import Path
+
+# Meme regle que les deux autres controles : le PDF par defaut se resout contre
+# l'emplacement du script, jamais contre le repertoire courant. Un chemin donne
+# en argument, lui, reste relatif au repertoire courant — c'est ce que l'appelant
+# a tape.
+DEFAUT = Path(__file__).resolve().parent.parent / 'Veille Technologique.pdf'
 
 MARGE_BASSE = 73.7   # 2,6 cm, valeur de l'en-tete YAML
 DEGAGEMENT = 10.0    # sous ce seuil, le resume frole la marge : on alerte
@@ -76,20 +83,20 @@ def ordonnees(contenu):
 
 
 def main():
-    src = sys.argv[1] if len(sys.argv) > 1 else 'Veille Technologique.pdf'
+    src = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAUT
     d = io.open(src, 'rb').read()
     contenu, num = page_une(d, objets(d))
     if not contenu:
-        print(f'{src} : page de titre illisible — controle inapplicable')
+        print(f'{src.name} : page de titre illisible — controle inapplicable')
         return 1
     ys = ordonnees(contenu)
     if not ys:
-        print(f'{src} : aucun texte localise en page 1 — controle inapplicable')
+        print(f'{src.name} : aucun texte localise en page 1 — controle inapplicable')
         return 1
     bas = min(ys)
     marge = bas - MARGE_BASSE
     etat = 'OK' if marge >= DEGAGEMENT else ('LIMITE' if marge >= 0 else 'ECHEC')
-    print(f'Budget de mise en page — {src}')
+    print(f'Budget de mise en page — {src.name}')
     print(f'  page de titre : {len(ys)} lignes de texte, derniere a y = {bas:.1f} pt')
     print(f'  marge basse   : {MARGE_BASSE} pt -> degagement {marge:+.1f} pt  [{etat}]')
     if marge < 0:

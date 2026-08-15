@@ -14,8 +14,13 @@ motif y sont deja neutralises, ne pas les reintroduire :
   - « quatre-vingt-dix » contient « vingt-dix », qui n'est pas un nombre.
 """
 import re, sys, io, collections
+from pathlib import Path
 
-SRC = 'Veille Technologique.md'
+# La source vit un cran au-dessus de ce script. Le chemin se resout donc contre
+# l'emplacement du fichier et non contre le repertoire courant : le controle
+# s'invoque de n'importe ou. Un chemin relatif au repertoire courant avait deja
+# casse ce script une fois, au deplacement des sources hors de la racine.
+SRC = Path(__file__).resolve().parent.parent / 'Veille Technologique.md'
 fail = []
 
 
@@ -201,7 +206,7 @@ def liens(body, refs):
 
 if __name__ == '__main__':
     body, refs = load()
-    print(f'Controles de publication — {SRC}')
+    print(f'Controles de publication — {SRC.name}')
     results = [piege1(body), piege2(body), piege3(refs), liens(body, refs)]
     if fail:
         print('\nECHEC :')

@@ -14,8 +14,11 @@ Quatre pieges, tous verifies sur le document ENTIER :
 Usage : python check-revue.py            -> sortie 0 si tout passe, 1 sinon.
 """
 import re, sys, io, collections
+from pathlib import Path
 
-SRC = 'Revue de littérature.md'
+# Meme regle que check-veille.py : le chemin se resout contre l'emplacement du
+# script, jamais contre le repertoire courant.
+SRC = Path(__file__).resolve().parent.parent / 'Revue de littérature.md'
 SOCLE = 50   # [1-50] : socle academique herite de la veille, repris en bloc
 fail = []
 
@@ -164,7 +167,7 @@ def regimes(corps, refs):
 
 if __name__ == '__main__':
     corps, refs = load()
-    print(f'Controles de publication — {SRC}')
+    print(f'Controles de publication — {SRC.name}')
     res = [appariement(corps, refs), tableaux(corps), doublons(refs), regimes(corps, refs)]
     if fail:
         print('\nECHEC :')
