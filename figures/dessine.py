@@ -36,7 +36,7 @@ from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent
 
-W = 504                       # largeur du corps, en points
+W = 468                       # largeur du corps, en points
 # ⚠ 468 jusqu'au 13 août 2026, quand le corps composait à 2,54 cm de marge.
 # La deuxième édition compose à 1,9 cm : le corps mesure 504,3 pt, soit 7 po,
 # et la constante suit. Une figure laissée à 468 serait étirée de 7,8 % par la
