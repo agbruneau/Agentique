@@ -2,392 +2,505 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Échelle de maturité de l'interopérabilité d'entreprise</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Échelle de maturité de l'interopérabilité et orchestration agentiques d'entreprise</title>
 <style>
-  *, *::before, *::after {
-    box-sizing: border-box;
+  /* ---------- Jetons de design : thème noir / orange ---------- */
+  :root {
+    --bg:        #08080a;
+    --surface:   #121215;
+    --surface-2: #17171b;
+    --line:      #26262c;
+    --line-soft: #1d1d22;
+
+    --text:      #f4f4f5;
+    --text-2:    #b6b6bf;
+    --text-3:    #7e7e8a;
+
+    --o-300: #fdba74;
+    --o-400: #fb923c;
+    --o-500: #f97316;
+    --o-600: #ea580c;
+    --o-glow: rgba(249, 115, 22, 0.14);
+
+    --radius: 6px;
+    --gap: 0.75rem;
   }
-  
-  @page {
-    size: A4 landscape;
-    margin: 8mm 10mm 8mm 10mm;
-    background-color: #ffffff;
+
+  html {
+    font-size: 18px;   /* échelle maître : tout est en rem, l'impression la réduit */
   }
+
+  *, *::before, *::after { box-sizing: border-box; }
 
   body {
     margin: 0;
-    padding: 0;
+    padding: 1.75rem 1.5rem 2.5rem;
+    background: var(--bg);
+    color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: #0f172a;
-    line-height: 1.22;
-    font-size: 8pt;
-    background-color: #ffffff;
+    font-size: 0.9375rem;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* Header Section */
-  .header {
-    border-bottom: 2px solid #0f172a;
-    padding-bottom: 4px;
-    margin-bottom: 6px;
+  .sheet {
+    max-width: 1500px;
+    margin: 0 auto;
   }
 
-  .header-table {
-    width: 100%;
-    border-collapse: collapse;
+  /* ---------- En-tête ---------- */
+  .masthead {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 1rem;
+    position: relative;
   }
 
-  .header-left {
-    vertical-align: bottom;
+  .masthead::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -1px;
+    width: 6.5rem; height: 2px;
+    background: var(--o-500);
   }
 
-  .header-right {
-    text-align: right;
-    vertical-align: bottom;
-    font-size: 7.2pt;
-    color: #475569;
+  .kicker {
+    font-size: 0.75rem;
     font-weight: 700;
+    letter-spacing: 0.11em;
     text-transform: uppercase;
-    letter-spacing: 0.4px;
-    line-height: 1.3;
+    color: var(--o-400);
+    margin-bottom: 0.4rem;
   }
 
   h1 {
-    font-size: 14pt;
-    font-weight: 800;
-    color: #0f172a;
-    margin: 0 0 2px 0;
-    letter-spacing: -0.3px;
+    font-size: 1.75rem;
+    font-weight: 750;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+    margin: 0 0 0.35rem;
+    color: var(--text);
+    max-width: 30ch;
   }
 
   .subtitle {
-    font-size: 8pt;
-    color: #334155;
-    font-weight: 500;
+    font-size: 0.9375rem;
+    color: var(--text-2);
     margin: 0;
+    max-width: 80ch;
   }
 
-  /* Top progression banner */
-  .diagram-container {
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
-    border-radius: 4px;
-    padding: 4px 6px;
-    margin-bottom: 6px;
-  }
-
-  .diagram-title {
-    font-size: 7.2pt;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #1e293b;
-    text-align: center;
-    margin-bottom: 3px;
-  }
-
-  .stack-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 3px;
-  }
-
-  .stack-cell {
-    text-align: center;
-    padding: 3px 2px;
-    border-radius: 3px;
-    font-size: 7pt;
+  .masthead-meta {
+    text-align: right;
+    font-size: 0.75rem;
     font-weight: 700;
-    color: #ffffff;
-    line-height: 1.15;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    line-height: 1.6;
+    white-space: nowrap;
   }
+
+  .masthead-meta strong {
+    display: block;
+    color: var(--text-2);
+  }
+
+  /* ---------- Bandeau de progression ---------- */
+  .ladder {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 0.75rem 0.875rem 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    text-align: center;
+    margin: 0 0 0.625rem;
+  }
+
+  .stack {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.375rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .stack li {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-top: 2px solid var(--o-500);
+    border-radius: 4px;
+    padding: 0.45rem 0.5rem 0.5rem;
+    text-align: center;
+  }
+
+  /* Intensité croissante du niveau 1 au niveau 6 */
+  .stack li[data-lvl="1"] { border-top-color: rgba(249,115,22,0.32); }
+  .stack li[data-lvl="2"] { border-top-color: rgba(249,115,22,0.46); }
+  .stack li[data-lvl="3"] { border-top-color: rgba(249,115,22,0.62); }
+  .stack li[data-lvl="4"] { border-top-color: rgba(249,115,22,0.78); }
+  .stack li[data-lvl="5"] { border-top-color: rgba(249,115,22,0.92); }
+  .stack li[data-lvl="6"] { border-top-color: var(--o-400); background: linear-gradient(180deg, var(--o-glow), transparent 70%), var(--surface-2); }
+
+  .stack-name {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 750;
+    letter-spacing: 0.02em;
+    color: var(--text);
+  }
+
+  .stack-name span { color: var(--o-400); }
 
   .stack-sub {
-    font-size: 6pt;
-    font-weight: 400;
-    opacity: 0.95;
     display: block;
+    font-size: 0.75rem;
+    color: var(--text-3);
+    margin-top: 0.15rem;
+    line-height: 1.3;
   }
-
-  .lvl-6-bg { background-color: #4338ca; }
-  .lvl-5-bg { background-color: #1d4ed8; }
-  .lvl-4-bg { background-color: #0369a1; }
-  .lvl-3-bg { background-color: #0f766e; }
-  .lvl-2-bg { background-color: #15803d; }
-  .lvl-1-bg { background-color: #475569; }
 
   .invariant-bar {
-    background: #e2e8f0;
-    border-radius: 2px;
-    text-align: center;
-    padding: 2px 4px;
-    margin-top: 3px;
-    font-size: 6.7pt;
-    font-weight: 700;
-    color: #1e293b;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-
-  /* Two Column Main Body */
-  .grid-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 6px;
-  }
-
-  .grid-col {
-    width: 50%;
-    vertical-align: top;
-  }
-
-  .col-left {
-    padding-right: 5px;
-  }
-
-  .col-right {
-    padding-left: 5px;
-  }
-
-  /* Level Card */
-  .level-card {
-    border: 1px solid #e2e8f0;
-    border-radius: 4px;
-    background: #ffffff;
-    margin-bottom: 5px;
-    padding: 4px 6px;
-  }
-
-  .level-card-header {
-    margin-bottom: 2.5px;
-  }
-
-  .badge-inline {
-    display: inline-block;
-    padding: 1.5px 5px;
+    margin-top: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border: 1px dashed var(--line);
     border-radius: 3px;
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 7.2pt;
-    letter-spacing: 0.2px;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-2);
   }
 
-  .card-sub {
-    font-size: 6.8pt;
-    color: #64748b;
-    font-weight: 600;
-    margin-left: 4px;
+  .invariant-bar em {
+    font-style: normal;
+    color: var(--o-400);
+  }
+
+  /* ---------- Grille des six niveaux ---------- */
+  .levels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+    margin-bottom: 1rem;
+  }
+
+  .level-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--o-500);
+    border-radius: var(--radius);
+    padding: 0.625rem 0.875rem 0.75rem;
+  }
+
+  .level-card[data-lvl="1"] { border-left-color: rgba(249,115,22,0.32); }
+  .level-card[data-lvl="2"] { border-left-color: rgba(249,115,22,0.46); }
+  .level-card[data-lvl="3"] { border-left-color: rgba(249,115,22,0.62); }
+  .level-card[data-lvl="4"] { border-left-color: rgba(249,115,22,0.78); }
+  .level-card[data-lvl="5"] { border-left-color: rgba(249,115,22,0.92); }
+  .level-card[data-lvl="6"] { border-left-color: var(--o-400); }
+
+  .card-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.375rem;
+  }
+
+  .lvl-num {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: var(--o-400);
+    border: 1px solid rgba(249,115,22,0.35);
+    border-radius: 3px;
+    padding: 0.05rem 0.3rem;
+    background: var(--o-glow);
+    white-space: nowrap;
+  }
+
+  .lvl-title {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    color: var(--text);
+  }
+
+  .lvl-scope {
+    font-size: 0.8125rem;
+    color: var(--text-3);
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .field-label {
+    display: block;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--o-500);
+    margin-bottom: 0.1rem;
   }
 
   .desc-text {
-    font-size: 7.4pt;
-    color: #0f172a;
-    margin-bottom: 2.5px;
-    line-height: 1.2;
+    font-size: 0.875rem;
+    color: var(--text-2);
+    margin: 0 0 0.5rem;
   }
 
   .example-box {
-    background-color: #f8fafc;
-    border-left: 3px solid #64748b;
-    padding: 2px 5px;
-    font-size: 7pt;
-    color: #334155;
-    border-radius: 0 2px 2px 0;
-    line-height: 1.18;
+    background: var(--surface-2);
+    border-left: 2px solid var(--line);
+    border-radius: 0 3px 3px 0;
+    padding: 0.375rem 0.625rem 0.45rem;
+    font-size: 0.875rem;
+    color: var(--text-2);
   }
 
-  .example-box strong {
-    color: #0f172a;
+  .example-box p { margin: 0; }
+  .example-box strong { color: var(--text); font-weight: 650; }
+  em { color: var(--o-300); font-style: italic; }
+
+  /* ---------- Synthèse ---------- */
+  .synthesis {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
   }
 
-  /* Footer Synthesis */
-  .footer-box {
-    background-color: #0f172a;
-    color: #f8fafc;
-    border-radius: 4px;
-    padding: 5px 8px;
+  .synth-card {
+    background: linear-gradient(180deg, var(--o-glow), transparent 55%), var(--surface);
+    border: 1px solid var(--line);
+    border-top: 2px solid var(--o-500);
+    border-radius: var(--radius);
+    padding: 0.75rem 0.875rem 0.875rem;
   }
 
-  .footer-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .footer-table td {
-    vertical-align: top;
-    padding: 0 6px;
-  }
-
-  .footer-heading {
-    font-size: 7.2pt;
+  .synth-heading {
+    font-size: 0.75rem;
     font-weight: 800;
+    letter-spacing: 0.11em;
     text-transform: uppercase;
-    letter-spacing: 0.4px;
-    color: #38bdf8;
-    margin-bottom: 2px;
+    color: var(--o-400);
+    margin: 0 0 0.375rem;
   }
 
-  .footer-text {
-    font-size: 7pt;
-    line-height: 1.22;
-    color: #e2e8f0;
+  .synth-text {
+    font-size: 0.875rem;
+    color: var(--text-2);
     margin: 0;
   }
 
+  .synth-text strong { color: var(--text); font-weight: 650; }
+
+  .synth-text + .synth-text { margin-top: 0.375rem; }
+
+  /* ---------- Adaptation aux écrans étroits ---------- */
+  @media (max-width: 1080px) {
+    .stack { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 760px) {
+    html { font-size: 16.5px; }
+    body { padding: 1.25rem 1rem 2rem; }
+    .masthead { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    .masthead-meta { text-align: left; }
+    .stack { grid-template-columns: repeat(2, 1fr); }
+    .levels, .synthesis { grid-template-columns: 1fr; }
+    .lvl-scope { margin-left: 0; text-align: left; width: 100%; }
+  }
+
+  /* ---------- Impression : A4 paysage, une seule page ---------- */
+  @page {
+    size: A4 landscape;
+    margin: 8mm 10mm;
+  }
+
+  @media print {
+    html { font-size: 8.2pt; }   /* recompresse toute l'échelle rem */
+    body {
+      padding: 0;
+      background: var(--bg);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .sheet { max-width: none; }
+    .stack { grid-template-columns: repeat(6, 1fr); }
+    .levels, .synthesis { grid-template-columns: 1fr 1fr; }
+    .masthead { flex-direction: row; align-items: flex-end; }
+    .masthead-meta { text-align: right; }
+    .ladder, .levels { margin-bottom: 0.6rem; }
+    .level-card, .synth-card, .ladder { break-inside: avoid; }
+  }
 </style>
 </head>
 <body>
+<div class="sheet">
 
-  <!-- Header -->
-  <div class="header">
-    <table class="header-table">
-      <tr>
-        <td class="header-left">
-          <h1>Échelle de maturité de l'interopérabilité d'entreprise</h1>
-          <p class="subtitle">Cadre de référence unifié : de l'intégration déterministe au maillage agentique (<em>Agentic Mesh</em>)</p>
-        </td>
-        <td class="header-right">
-          Architecture d'Entreprise<br>Services Financiers & EDA
-        </td>
-      </tr>
-    </table>
-  </div>
+  <!-- En-tête -->
+  <header class="masthead">
+    <div>
+      <div class="kicker">Cadre de référence unifié</div>
+      <h1>Échelle de maturité de l'interopérabilité et orchestration agentiques d'entreprise</h1>
+      <p class="subtitle">De l'intégration déterministe au maillage agentique (<em>Agentic Mesh</em>) : six niveaux, un invariant, une clause de renversement.</p>
+    </div>
+    <div class="masthead-meta">
+      <strong>Architecture d'entreprise</strong>
+      Services financiers &amp; EDA
+    </div>
+  </header>
 
-  <!-- Progression Bar -->
-  <div class="diagram-container">
-    <div class="diagram-title">Progression de l'abstraction, de l'imputabilité et de l'autonomie d'exécution</div>
-    <table class="stack-table">
-      <tr>
-        <td class="stack-cell lvl-6-bg" style="width: 16.66%;">
-          6. AGENTIQUE
-          <span class="stack-sub">Intention & Coordination A2A/MCP</span>
-        </td>
-        <td class="stack-cell lvl-5-bg" style="width: 16.66%;">
-          5. POLITIQUE
-          <span class="stack-sub">Data Contracts & Arbitrage (SLA)</span>
-        </td>
-        <td class="stack-cell lvl-4-bg" style="width: 16.66%;">
-          4. JURIDIQUE
-          <span class="stack-sub">Loi 25 & BSIF E-23</span>
-        </td>
-        <td class="stack-cell lvl-3-bg" style="width: 16.66%;">
-          3. ORGANISATIONNEL
-          <span class="stack-sub">Processus & Saga EDA</span>
-        </td>
-        <td class="stack-cell lvl-2-bg" style="width: 16.66%;">
-          2. SÉMANTIQUE
-          <span class="stack-sub">BIAN, ISO 20022, Avro</span>
-        </td>
-        <td class="stack-cell lvl-1-bg" style="width: 16.66%;">
-          1. TECHNIQUE
-          <span class="stack-sub">Kafka, MQ, gRPC, mTLS</span>
-        </td>
-      </tr>
-    </table>
-    <div class="invariant-bar">Invariant d'architecture transversal : Découplage ── Contrat ── Évolution</div>
-  </div>
+  <!-- Bandeau de progression -->
+  <section class="ladder">
+    <h2 class="section-title">Progression de l'abstraction, de l'imputabilité et de l'autonomie d'exécution</h2>
+    <ol class="stack">
+      <li data-lvl="1">
+        <span class="stack-name"><span>1</span> Technique</span>
+        <span class="stack-sub">Kafka, MQ, gRPC, mTLS</span>
+      </li>
+      <li data-lvl="2">
+        <span class="stack-name"><span>2</span> Sémantique</span>
+        <span class="stack-sub">BIAN, ISO 20022, Avro</span>
+      </li>
+      <li data-lvl="3">
+        <span class="stack-name"><span>3</span> Organisationnel</span>
+        <span class="stack-sub">Processus &amp; Saga EDA</span>
+      </li>
+      <li data-lvl="4">
+        <span class="stack-name"><span>4</span> Juridique</span>
+        <span class="stack-sub">Loi 25 &amp; BSIF E-23</span>
+      </li>
+      <li data-lvl="5">
+        <span class="stack-name"><span>5</span> Politique</span>
+        <span class="stack-sub">Data Contracts &amp; arbitrage (SLA)</span>
+      </li>
+      <li data-lvl="6">
+        <span class="stack-name"><span>6</span> Agentique</span>
+        <span class="stack-sub">Intention &amp; coordination A2A/MCP</span>
+      </li>
+    </ol>
+    <div class="invariant-bar">Invariant d'architecture transversal : <em>Découplage ── Contrat ── Évolution</em></div>
+  </section>
 
-  <!-- Two Column Grid for 6 Levels -->
-  <table class="grid-table">
-    <tr>
-      <!-- Left Column: Niveaux 1 à 3 (Fondations structurelles déterministes) -->
-      <td class="grid-col col-left">
-        <!-- Niveau 1 -->
-        <div class="level-card" style="border-left: 3.5px solid #475569;">
-          <div class="level-card-header">
-            <span class="badge-inline lvl-1-bg">Niveau 1 — Technique</span>
-            <span class="card-sub">Transport & Connectivité physique</span>
-          </div>
-          <div class="desc-text"><strong>Descriptif :</strong> Liaison matérielle, logicielle et protocolaire assurant l'acheminement sécurisé et intègre des flux binaires sans interprétation métier du contenu acheminé.</div>
-          <div class="example-box" style="border-left-color: #475569;">
-            <strong>Exemple :</strong> Passerelle de protocoles asynchrone assurant la translation entre files transactionnelles (IBM MQ) et dorsale événementielle distribuée (Apache Kafka / gRPC avec mTLS).
-          </div>
-        </div>
+  <!-- Les six niveaux -->
+  <section class="levels">
 
-        <!-- Niveau 2 -->
-        <div class="level-card" style="border-left: 3.5px solid #15803d;">
-          <div class="level-card-header">
-            <span class="badge-inline lvl-2-bg">Niveau 2 — Sémantique</span>
-            <span class="card-sub">Modèles canoniques & Registres de schémas</span>
-          </div>
-          <div class="desc-text"><strong>Descriptif :</strong> Préservation de l'intégrité conceptuelle et du sens univoque des structures échangées par ontologies de domaine, dictionnaires et schémas partagés.</div>
-          <div class="example-box" style="border-left-color: #15803d;">
-            <strong>Exemple :</strong> Harmonisation des référentiels bancaires et d'assurance via un modèle canonique partagé (BIAN / ACORD / ISO 20022) validé par registre de schémas (Avro / Protobuf).
-          </div>
-        </div>
+    <article class="level-card" data-lvl="1">
+      <div class="card-head">
+        <span class="lvl-num">Niveau 1</span>
+        <span class="lvl-title">Technique</span>
+        <span class="lvl-scope">Transport &amp; connectivité physique</span>
+      </div>
+      <span class="field-label">Descriptif</span>
+      <p class="desc-text">Liaison matérielle, logicielle et protocolaire assurant l'acheminement sécurisé et intègre des flux binaires sans interprétation métier du contenu acheminé.</p>
+      <div class="example-box">
+        <span class="field-label">Exemple</span>
+        <p>Passerelle de protocoles asynchrone assurant la translation entre files transactionnelles (IBM MQ) et dorsale événementielle distribuée (Apache Kafka / gRPC avec mTLS).</p>
+      </div>
+    </article>
 
-        <!-- Niveau 3 -->
-        <div class="level-card" style="border-left: 3.5px solid #0f766e; margin-bottom: 0;">
-          <div class="level-card-header">
-            <span class="badge-inline lvl-3-bg">Niveau 3 — Organisationnel</span>
-            <span class="card-sub">Processus métier & Chorégraphie événementielle</span>
-          </div>
-          <div class="desc-text"><strong>Descriptif :</strong> Alignement et synchronisation des processus d'affaires, frontières de responsabilités métier et ordonnancement des flux de valeur entre unités et partenaires.</div>
-          <div class="example-box" style="border-left-color: #0f766e;">
-            <strong>Exemple :</strong> Chorégraphie réactive (patron Saga / <em>Event-Driven Architecture</em>) orchestrant le règlement d'un sinistre entre indemnisation, comptabilité et experts externes.
-          </div>
-        </div>
-      </td>
+    <article class="level-card" data-lvl="4">
+      <div class="card-head">
+        <span class="lvl-num">Niveau 4</span>
+        <span class="lvl-title">Juridique</span>
+        <span class="lvl-scope">Souveraineté, imputabilité &amp; conformité</span>
+      </div>
+      <span class="field-label">Descriptif</span>
+      <p class="desc-text">Garantie de valeur probante des transactions, non-répudiation, résidence territoriale des données et conformité stricte aux cadres réglementaires applicables.</p>
+      <div class="example-box">
+        <span class="field-label">Exemple</span>
+        <p>Encadrement des transferts de renseignements personnels et journalisation de la preuve de consentement selon la Loi 25 (Québec) et les normes BSIF E-23 / RGPD.</p>
+      </div>
+    </article>
 
-      <!-- Right Column: Niveaux 4 à 6 (Conformité, Cadrage politique & Autonomie agentique) -->
-      <td class="grid-col col-right">
-        <!-- Niveau 4 -->
-        <div class="level-card" style="border-left: 3.5px solid #0369a1;">
-          <div class="level-card-header">
-            <span class="badge-inline lvl-4-bg">Niveau 4 — Juridique</span>
-            <span class="card-sub">Souveraineté, Imputabilité & Conformité</span>
-          </div>
-          <div class="desc-text"><strong>Descriptif :</strong> Garantie de valeur probante des transactions, non-répudiation, résidence territoriale des données et conformité stricte aux cadres réglementaires applicables.</div>
-          <div class="example-box" style="border-left-color: #0369a1;">
-            <strong>Exemple :</strong> Encadrement des transferts de renseignements personnels et journalisation de la preuve de consentement selon la Loi 25 (Québec) et les normes BSIF E-23 / RGPD.
-          </div>
-        </div>
+    <article class="level-card" data-lvl="2">
+      <div class="card-head">
+        <span class="lvl-num">Niveau 2</span>
+        <span class="lvl-title">Sémantique</span>
+        <span class="lvl-scope">Modèles canoniques &amp; registres de schémas</span>
+      </div>
+      <span class="field-label">Descriptif</span>
+      <p class="desc-text">Préservation de l'intégrité conceptuelle et du sens univoque des structures échangées par ontologies de domaine, dictionnaires et schémas partagés.</p>
+      <div class="example-box">
+        <span class="field-label">Exemple</span>
+        <p>Harmonisation des référentiels bancaires et d'assurance via un modèle canonique partagé (BIAN / ACORD / ISO 20022) validé par registre de schémas (Avro / Protobuf).</p>
+      </div>
+    </article>
 
-        <!-- Niveau 5 -->
-        <div class="level-card" style="border-left: 3.5px solid #1d4ed8;">
-          <div class="level-card-header">
-            <span class="badge-inline lvl-5-bg">Niveau 5 — Politique</span>
-            <span class="card-sub">Plan de contrôle, Data Contracts & Arbitrage</span>
-          </div>
-          <div class="desc-text"><strong>Descriptif :</strong> Verticalisation du plan de contrôle institutionnel (<em>Governance Plane</em>), formalisation des contrats de données, arbitrage des SLAs et attribution de l'imputabilité.</div>
-          <div class="example-box" style="border-left-color: #1d4ed8;">
-            <strong>Exemple :</strong> Comitologie inter-domaines régissant le cycle de vie des interfaces, les pénalités d'indisponibilité et les points d'application de politiques (PEP/PDP).
-          </div>
-        </div>
+    <article class="level-card" data-lvl="5">
+      <div class="card-head">
+        <span class="lvl-num">Niveau 5</span>
+        <span class="lvl-title">Politique</span>
+        <span class="lvl-scope">Plan de contrôle, Data Contracts &amp; arbitrage</span>
+      </div>
+      <span class="field-label">Descriptif</span>
+      <p class="desc-text">Verticalisation du plan de contrôle institutionnel (<em>Governance Plane</em>), formalisation des contrats de données, arbitrage des SLA et attribution de l'imputabilité.</p>
+      <div class="example-box">
+        <span class="field-label">Exemple</span>
+        <p>Comitologie inter-domaines régissant le cycle de vie des interfaces, les pénalités d'indisponibilité et les points d'application de politiques (PEP/PDP).</p>
+      </div>
+    </article>
 
-        <!-- Niveau 6 -->
-        <div class="level-card" style="border-left: 3.5px solid #4338ca; margin-bottom: 0;">
-          <div class="level-card-header">
-            <span class="badge-inline lvl-6-bg">Niveau 6 — Agentique</span>
-            <span class="card-sub">Intention déclarative & Coordination A2A / MCP</span>
-          </div>
-          <div class="desc-text"><strong>Descriptif :</strong> Coordination adaptative et probabiliste entre agents autonomes découvrant des outils (<em>Tool Calling</em>) et négociant des protocoles pour exécuter des intentions.</div>
-          <div class="example-box" style="border-left-color: #4338ca;">
-            <strong>Exemple :</strong> Maillage d'agents (<em>Agentic Mesh</em>) où un agent d'arbitrage négocie en temps réel avec des agents de souscription via <em>Agent Cards</em> signées et <em>AI Gateway</em>.
-          </div>
-        </div>
-      </td>
-    </tr>
-  </table>
+    <article class="level-card" data-lvl="3">
+      <div class="card-head">
+        <span class="lvl-num">Niveau 3</span>
+        <span class="lvl-title">Organisationnel</span>
+        <span class="lvl-scope">Processus métier &amp; chorégraphie événementielle</span>
+      </div>
+      <span class="field-label">Descriptif</span>
+      <p class="desc-text">Alignement et synchronisation des processus d'affaires, frontières de responsabilités métier et ordonnancement des flux de valeur entre unités et partenaires.</p>
+      <div class="example-box">
+        <span class="field-label">Exemple</span>
+        <p>Chorégraphie réactive (patron Saga / <em>Event-Driven Architecture</em>) orchestrant le règlement d'un sinistre entre indemnisation, comptabilité et experts externes.</p>
+      </div>
+    </article>
 
-  <!-- Bottom Synthesis Box -->
-  <div class="footer-box">
-    <table class="footer-table">
-      <tr>
-        <td style="width: 50%; padding-right: 8px; border-right: 1px solid #334155;">
-          <div class="footer-heading">Rupture de paradigme (Déterministe vs Intentionnel)</div>
-          <p class="footer-text">
-            Les niveaux 1 à 5 garantissent une intégration <strong>déterministe</strong> régie par des contrats statiques et vérifiables. Le niveau 6 introduit une gouvernance <strong>probabiliste et adaptative</strong>, où la contractualisation devient dynamique via négociation contextuelle d'objectifs (A2A / MCP).
-          </p>
-        </td>
-        <td style="width: 50%; padding-left: 8px;">
-          <div class="footer-heading">Compromis d'architecture & Clause de renversement</div>
-          <p class="footer-text">
-            <strong>Compromis :</strong> Surcoût d'observabilité (<em>AgentOps</em>) et impératif de <em>runtime verification</em> pour confiner le non-déterminisme. <strong>Renversement :</strong> Tout système sous contrainte de compensation financière temps réel (rails Lynx / RTR) doit interdire l'autonomie agentique directe et maintenir une contractualisation déterministe de niveau 5.
-          </p>
-        </td>
-      </tr>
-    </table>
-  </div>
+    <article class="level-card" data-lvl="6">
+      <div class="card-head">
+        <span class="lvl-num">Niveau 6</span>
+        <span class="lvl-title">Agentique</span>
+        <span class="lvl-scope">Intention déclarative &amp; coordination A2A / MCP</span>
+      </div>
+      <span class="field-label">Descriptif</span>
+      <p class="desc-text">Coordination adaptative et probabiliste entre agents autonomes découvrant des outils (<em>Tool Calling</em>) et négociant des protocoles pour exécuter des intentions.</p>
+      <div class="example-box">
+        <span class="field-label">Exemple</span>
+        <p>Maillage d'agents (<em>Agentic Mesh</em>) où un agent d'arbitrage négocie en temps réel avec des agents de souscription via <em>Agent Cards</em> signées et <em>AI Gateway</em>.</p>
+      </div>
+    </article>
 
+  </section>
+
+  <!-- Synthèse -->
+  <section class="synthesis">
+    <div class="synth-card">
+      <h2 class="synth-heading">Rupture de paradigme — déterministe vs intentionnel</h2>
+      <p class="synth-text">Les niveaux 1 à 5 garantissent une intégration <strong>déterministe</strong> régie par des contrats statiques et vérifiables. Le niveau 6 introduit une gouvernance <strong>probabiliste et adaptative</strong>, où la contractualisation devient dynamique via négociation contextuelle d'objectifs (A2A / MCP).</p>
+    </div>
+    <div class="synth-card">
+      <h2 class="synth-heading">Compromis d'architecture &amp; clause de renversement</h2>
+      <p class="synth-text"><strong>Compromis :</strong> surcoût d'observabilité (<em>AgentOps</em>) et impératif de <em>runtime verification</em> pour confiner le non-déterminisme.</p>
+      <p class="synth-text"><strong>Renversement :</strong> tout système sous contrainte de compensation financière temps réel (rails Lynx / RTR) doit interdire l'autonomie agentique directe et maintenir une contractualisation déterministe de niveau 5.</p>
+    </div>
+  </section>
+
+</div>
 </body>
 </html>
