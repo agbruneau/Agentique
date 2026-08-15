@@ -114,7 +114,7 @@ def doublons(refs):
 
 
 MOTS = {'sept': 7, 'douze': 12, 'treize': 13,
-        'vingt-six': 26, 'vingt-huit': 28, 'trente et une': 31}
+        'vingt-six': 26, 'vingt-huit': 28, 'trente et une': 31, 'trente-deux': 32}
 
 
 def regimes(corps, refs):
@@ -144,10 +144,10 @@ def regimes(corps, refs):
     # l'ancienne ET la nouvelle valeur ; a chaque grossissement, les ajouter ici AVANT de
     # rejouer le controle.
     for nom, cle, motif in (
-            ('entrees du corpus', 'total', r'corpus (\d+) pièces|(\d+) entrées et a deux origines'),
+            ('entrees du corpus', 'total', r'corpus (\d+) pièces|(\d+) entrées et a (?:deux|trois) origines'),
             ('pieces arXiv', 'arXiv', r'(\d+) pièces déposées sur arXiv|corpus de (\d+) pièces'),
             ('attestees', 'attestees', r'\*\*(douze|treize|sept)\*\* portent une attestation|\*\*(Douze|Treize|Sept) pièces sur \d+'),
-            ('autodeclarees', 'autodeclarees', r'(Vingt-six|Vingt-huit|Trente et une) (?:autres )?(?:pièces )?annoncent'),
+            ('autodeclarees', 'autodeclarees', r'(Vingt-six|Vingt-huit|Trente et une|Trente-deux) (?:autres )?(?:pièces )?annoncent'),
             ('sans revue', 'sans revue', r'Les (\d+) restantes'),
     ):
         vus = [g for m in re.finditer(motif, corps) for g in m.groups() if g]

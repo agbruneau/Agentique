@@ -17,6 +17,13 @@ pas, et c'est l'intérêt.*
 > ([`2 - Compendium/PRD/PRD.md`](../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). *Ces deux livrables
 > sont postérieurs à la clôture, et chacun l'a rouverte pour lui seul.* La clôture reste en vigueur
 > pour les quatre volumes ; **rien de ce dossier ne la lève**.
+>
+> ⚠ **Édition du 15 août 2026 — les deux livrables ont été rouverts et re-vérifiés intégralement.**
+> Les 303 références de la veille et les 176 de la revue ont été reprises à leur source primaire, et
+> **la re-vérification a produit plus de corrections que d'ajouts**. ☑ *Ce que le gel disait de faux
+> est consigné, pièce en main, dans une [annexe de traçabilité](Veille%20Technologique.md) neuve —
+> énoncés réfutés, désaccords entre vérificateurs, et ce qui n'a pas pu être vérifié.* Le déroulé
+> de la boucle, ses verdicts et ses coûts sont au [journal](gauntlet-log.md).
 
 ---
 
@@ -26,11 +33,11 @@ pas, et c'est l'intérêt.*
 |---|---|---|
 | **Fichiers** | [`Veille Technologique.md`](Veille%20Technologique.md) → [`.pdf`](Veille%20Technologique.pdf) | [`Revue de littérature.md`](Revue%20de%20litt%C3%A9rature.md) → [`.pdf`](Revue%20de%20litt%C3%A9rature.pdf) |
 | **Titre** | *Interopérabilité et Orchestration Agentiques en Entreprise* — ⚠ **homonyme exact du Vol. IV** depuis le 9 août 2026 | *Interopérabilité et Orchestration Agentiques : revue de la littérature académique* — ⚠ **même radical**, aligné le même jour |
-| **Rendu** | **100 p.**, 14 sections numérotées, **303 références**, 18 tableaux, 25 questions ouvertes *(40 707 mots au `.md`)* | **40 p. fermes**, 19 sections, **176 références**, 8 tableaux, dix fronts *(17 829 mots au `.md`)* |
-| **Gel de l'information** | **8 août 2026** — les sections antérieures gardent leur date d'état | **9 août 2026** |
+| **Rendu** | **141 p.**, 14 sections numérotées, **342 références**, 24 tableaux, 25 questions ouvertes *(42 652 mots au corps)* | **53 p.**, 19 sections, **192 références**, 8 tableaux, dix fronts *(18 977 mots au corps)* |
+| **Gel de l'information** | **15 août 2026** — les sections antérieures gardent leur date d'état | **15 août 2026** |
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Les trois quarts du champ n'ont franchi aucun comité » |
 | **Méthode** | Revue structurée, **vérification adverse à trois votants** chargés de *réfuter* ; source primaire consultée pour chaque énoncé factuel | Notices ouvertes une à une, **métadonnées reprises à l'API arXiv** — ce qui a corrigé plusieurs statuts que la passe de recherche donnait pour arbitrés |
-| **État** | Publiée ; **format ferme depuis le 8 août 2026**, ramenée de 162 à 100 pages **sans changement de gabarit** — toute la réduction vient de la réécriture | Publiée ; déposée le 9 août 2026 et **révisée le même jour** (dixième front) |
+| **État** | Publiée ; **le format ferme de 100 pages est levé le 15 août 2026** — la re-vérification intégrale porte l'édition à 141 p. | Publiée ; **la cible de 40 pages fermes est levée le 15 août 2026** — l'édition en fait 53 |
 
 ⚠ **Trois livrables du dépôt sur sept partagent ce début d'intitulé** — ces deux-ci et le Vol. IV.
 **Un renvoi qui les cite par leur seul titre ne désigne rien** : il faut nommer le genre — « la veille
@@ -102,9 +109,19 @@ Trois contrôles, **sans dépendance externe** : la bibliothèque standard seule
 
 | Script | Ce qu'il oppose au document | Dernière exécution |
 |---|---|---|
-| [`check-veille.py`](Python/check-veille.py) | **quatre contrôles** — renvois en clair contre numérotation Pandoc, cardinaux écrits en toutes lettres, doublons bibliographiques, appariement cité ↔ défini | **sortie 0** — 94 sections, 18 tableaux, 25 questions ouvertes ; **303 définies, 303 citées** |
-| [`check-revue.py`](Python/check-revue.py) | **quatre contrôles** — appariement et contiguïté, légendes de tableau, doublons, **cardinaux du régime de preuve** | **sortie 0** — 176 entrées ; **12 attestées, 28 autodéclarées, 133 sans revue** sur 173 arXiv |
+| [`check-veille.py`](Python/check-veille.py) | **quatre contrôles** — renvois en clair contre numérotation Pandoc, cardinaux écrits en toutes lettres, doublons bibliographiques, appariement cité ↔ défini | **sortie 0** — 94 sections, 24 tableaux, 25 questions ouvertes ; **342 définies, 342 citées** |
+| [`check-revue.py`](Python/check-revue.py) | **quatre contrôles** — appariement et contiguïté, légendes de tableau, doublons, **cardinaux du régime de preuve** | **sortie 0** — 192 entrées ; **12 attestées, 32 autodéclarées, 145 sans revue** sur 189 arXiv |
 | [`check-resume.py`](Python/check-resume.py) | **le budget de mise en page** : le résumé tient-il sur la page de titre du PDF rendu | **sortie 0** — dernière ligne à **y = 119,4 pt**, dégagement **+45,7 pt** |
+
+⚠ **Ces trois contrôles ont attrapé, le 15 août 2026, ce qu'aucun relecteur n'avait vu** : huit URL
+partagées entre une entrée héritée et une entrée neuve — les rédacteurs travaillaient sur des
+périmètres disjoints et ne se voyaient pas —, et le fait qu'**aucun cardinal annoncé ne
+correspondait à la bibliographie effectivement produite**, chacun ayant été calculé sur un lot
+partiel. ☑ *C'est l'argument le plus net en faveur de cet appareil : il mesure le document, jamais
+ce qu'on dit du document.* ⚠ **Et voici ce qu'ils n'ont pas vu** : sept citations renvoyaient à une
+entrée pour une pièce qui en portait une autre. Bibliographie valide, appariement clos, aucun
+doublon — *les quatre contrôles passaient. Un numéro juste au mauvais endroit ne se voit qu'en
+lisant.*
 
 ```bash
 python Python/check-veille.py
@@ -142,8 +159,9 @@ pour lequel il n'a pas été calibré ne mesure plus ce qu'il annonce.*
 ```
 4 - Revue et Veille/
 ├── README.md                        ← ce fichier
-├── Veille Technologique.md / .pdf     100 p., 303 réf. — édition du 8 août 2026, faits gelés à cette date
-├── Revue de littérature.md / .pdf     40 p. fermes, 176 réf. — arrêtée au 9 août 2026
+├── Veille Technologique.md / .pdf     141 p., 342 réf. — édition du 15 août 2026, faits gelés à cette date
+├── Revue de littérature.md / .pdf     53 p., 192 réf. — arrêtée au 15 août 2026
+├── gauntlet-log.md                  ← journal de la boucle du 15 août : verdicts, écarts retenus, coûts
 └── Python/                          ← les trois contrôles ; stdlib seule, aucune dépendance
     ├── check-veille.py                renvois, cardinaux, bibliographie, appariement
     ├── check-revue.py                 appariement, tableaux, doublons, régimes de preuve
@@ -158,7 +176,16 @@ auparavant.)*
 
 ## Réserves
 
-- ⚠ **Aucune pagination n'est vérifiée** — voir plus haut. Les deux cibles sont constatées.
+- ⚠ **Aucune pagination n'est vérifiée** — voir plus haut. Les deux nombres de pages sont
+  **constatés au rendu du 15 août 2026**, jamais opposés à une cible : *les deux cibles ont été
+  levées ce jour-là, précisément parce que rien ne les tenait.*
+- ⚠⚠ **La règle de régime de preuve de la revue sous-déclare l'arbitrage, et la revue le dit
+  désormais elle-même.** Une passe de contre-épreuve du 15 août 2026 sur DBLP, Crossref et OpenAlex
+  a repris sept entrées classées « sans revue » : **quatre sont publiées en actes** — ACL 2024,
+  NeurIPS 2025 (deux), ACM Web Conference 2026 — sans que leur notice arXiv porte ni `journal_ref`
+  ni DOI. **Les 145 sont donc un plafond du non-arbitré, les 12 un plancher de l'arbitré**, et le
+  plancher est bas : ni PMLR ni OpenReview ne sont indexés là où la contre-épreuve a cherché.
+  *Le chiffre reste exact de ce qu'il mesure — la notice — et faux de ce qu'on lui faisait dire.*
 - ⚠ **Aucun contrôle ne résout un lien** — défaut commun à tout l'appareil du dépôt.
 - ⚠ **`check-resume.py` n'est calibré que pour le gabarit de la veille.**
 - ⚠ **Les deux documents décrivent l'état de leurs sources à leur date de gel**, et cela ne se
