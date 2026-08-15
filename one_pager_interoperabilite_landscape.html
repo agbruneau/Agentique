@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Échelle de maturité de l'interopérabilité d'entreprise</title>
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  @page {
+    size: A4 landscape;
+    margin: 8mm 10mm 8mm 10mm;
+    background-color: #ffffff;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0f172a;
+    line-height: 1.22;
+    font-size: 8pt;
+    background-color: #ffffff;
+  }
+
+  /* Header Section */
+  .header {
+    border-bottom: 2px solid #0f172a;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+  }
+
+  .header-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .header-left {
+    vertical-align: bottom;
+  }
+
+  .header-right {
+    text-align: right;
+    vertical-align: bottom;
+    font-size: 7.2pt;
+    color: #475569;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    line-height: 1.3;
+  }
+
+  h1 {
+    font-size: 14pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 2px 0;
+    letter-spacing: -0.3px;
+  }
+
+  .subtitle {
+    font-size: 8pt;
+    color: #334155;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  /* Top progression banner */
+  .diagram-container {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 4px 6px;
+    margin-bottom: 6px;
+  }
+
+  .diagram-title {
+    font-size: 7.2pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 3px;
+  }
+
+  .stack-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 3px;
+  }
+
+  .stack-cell {
+    text-align: center;
+    padding: 3px 2px;
+    border-radius: 3px;
+    font-size: 7pt;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.15;
+  }
+
+  .stack-sub {
+    font-size: 6pt;
+    font-weight: 400;
+    opacity: 0.95;
+    display: block;
+  }
+
+  .lvl-6-bg { background-color: #4338ca; }
+  .lvl-5-bg { background-color: #1d4ed8; }
+  .lvl-4-bg { background-color: #0369a1; }
+  .lvl-3-bg { background-color: #0f766e; }
+  .lvl-2-bg { background-color: #15803d; }
+  .lvl-1-bg { background-color: #475569; }
+
+  .invariant-bar {
+    background: #e2e8f0;
+    border-radius: 2px;
+    text-align: center;
+    padding: 2px 4px;
+    margin-top: 3px;
+    font-size: 6.7pt;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* Two Column Main Body */
+  .grid-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 6px;
+  }
+
+  .grid-col {
+    width: 50%;
+    vertical-align: top;
+  }
+
+  .col-left {
+    padding-right: 5px;
+  }
+
+  .col-right {
+    padding-left: 5px;
+  }
+
+  /* Level Card */
+  .level-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    background: #ffffff;
+    margin-bottom: 5px;
+    padding: 4px 6px;
+  }
+
+  .level-card-header {
+    margin-bottom: 2.5px;
+  }
+
+  .badge-inline {
+    display: inline-block;
+    padding: 1.5px 5px;
+    border-radius: 3px;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 7.2pt;
+    letter-spacing: 0.2px;
+  }
+
+  .card-sub {
+    font-size: 6.8pt;
+    color: #64748b;
+    font-weight: 600;
+    margin-left: 4px;
+  }
+
+  .desc-text {
+    font-size: 7.4pt;
+    color: #0f172a;
+    margin-bottom: 2.5px;
+    line-height: 1.2;
+  }
+
+  .example-box {
+    background-color: #f8fafc;
+    border-left: 3px solid #64748b;
+    padding: 2px 5px;
+    font-size: 7pt;
+    color: #334155;
+    border-radius: 0 2px 2px 0;
+    line-height: 1.18;
+  }
+
+  .example-box strong {
+    color: #0f172a;
+  }
+
+  /* Footer Synthesis */
+  .footer-box {
+    background-color: #0f172a;
+    color: #f8fafc;
+    border-radius: 4px;
+    padding: 5px 8px;
+  }
+
+  .footer-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .footer-table td {
+    vertical-align: top;
+    padding: 0 6px;
+  }
+
+  .footer-heading {
+    font-size: 7.2pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #38bdf8;
+    margin-bottom: 2px;
+  }
+
+  .footer-text {
+    font-size: 7pt;
+    line-height: 1.22;
+    color: #e2e8f0;
+    margin: 0;
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <table class="header-table">
+      <tr>
+        <td class="header-left">
+          <h1>Échelle de maturité de l'interopérabilité d'entreprise</h1>
+          <p class="subtitle">Cadre de référence unifié : de l'intégration déterministe au maillage agentique (<em>Agentic Mesh</em>)</p>
+        </td>
+        <td class="header-right">
+          Architecture d'Entreprise<br>Services Financiers & EDA
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Progression Bar -->
+  <div class="diagram-container">
+    <div class="diagram-title">Progression de l'abstraction, de l'imputabilité et de l'autonomie d'exécution</div>
+    <table class="stack-table">
+      <tr>
+        <td class="stack-cell lvl-6-bg" style="width: 16.66%;">
+          6. AGENTIQUE
+          <span class="stack-sub">Intention & Coordination A2A/MCP</span>
+        </td>
+        <td class="stack-cell lvl-5-bg" style="width: 16.66%;">
+          5. POLITIQUE
+          <span class="stack-sub">Data Contracts & Arbitrage (SLA)</span>
+        </td>
+        <td class="stack-cell lvl-4-bg" style="width: 16.66%;">
+          4. JURIDIQUE
+          <span class="stack-sub">Loi 25 & BSIF E-23</span>
+        </td>
+        <td class="stack-cell lvl-3-bg" style="width: 16.66%;">
+          3. ORGANISATIONNEL
+          <span class="stack-sub">Processus & Saga EDA</span>
+        </td>
+        <td class="stack-cell lvl-2-bg" style="width: 16.66%;">
+          2. SÉMANTIQUE
+          <span class="stack-sub">BIAN, ISO 20022, Avro</span>
+        </td>
+        <td class="stack-cell lvl-1-bg" style="width: 16.66%;">
+          1. TECHNIQUE
+          <span class="stack-sub">Kafka, MQ, gRPC, mTLS</span>
+        </td>
+      </tr>
+    </table>
+    <div class="invariant-bar">Invariant d'architecture transversal : Découplage ── Contrat ── Évolution</div>
+  </div>
+
+  <!-- Two Column Grid for 6 Levels -->
+  <table class="grid-table">
+    <tr>
+      <!-- Left Column: Niveaux 1 à 3 (Fondations structurelles déterministes) -->
+      <td class="grid-col col-left">
+        <!-- Niveau 1 -->
+        <div class="level-card" style="border-left: 3.5px solid #475569;">
+          <div class="level-card-header">
+            <span class="badge-inline lvl-1-bg">Niveau 1 — Technique</span>
+            <span class="card-sub">Transport & Connectivité physique</span>
+          </div>
+          <div class="desc-text"><strong>Descriptif :</strong> Liaison matérielle, logicielle et protocolaire assurant l'acheminement sécurisé et intègre des flux binaires sans interprétation métier du contenu acheminé.</div>
+          <div class="example-box" style="border-left-color: #475569;">
+            <strong>Exemple :</strong> Passerelle de protocoles asynchrone assurant la translation entre files transactionnelles (IBM MQ) et dorsale événementielle distribuée (Apache Kafka / gRPC avec mTLS).
+          </div>
+        </div>
+
+        <!-- Niveau 2 -->
+        <div class="level-card" style="border-left: 3.5px solid #15803d;">
+          <div class="level-card-header">
+            <span class="badge-inline lvl-2-bg">Niveau 2 — Sémantique</span>
+            <span class="card-sub">Modèles canoniques & Registres de schémas</span>
+          </div>
+          <div class="desc-text"><strong>Descriptif :</strong> Préservation de l'intégrité conceptuelle et du sens univoque des structures échangées par ontologies de domaine, dictionnaires et schémas partagés.</div>
+          <div class="example-box" style="border-left-color: #15803d;">
+            <strong>Exemple :</strong> Harmonisation des référentiels bancaires et d'assurance via un modèle canonique partagé (BIAN / ACORD / ISO 20022) validé par registre de schémas (Avro / Protobuf).
+          </div>
+        </div>
+
+        <!-- Niveau 3 -->
+        <div class="level-card" style="border-left: 3.5px solid #0f766e; margin-bottom: 0;">
+          <div class="level-card-header">
+            <span class="badge-inline lvl-3-bg">Niveau 3 — Organisationnel</span>
+            <span class="card-sub">Processus métier & Chorégraphie événementielle</span>
+          </div>
+          <div class="desc-text"><strong>Descriptif :</strong> Alignement et synchronisation des processus d'affaires, frontières de responsabilités métier et ordonnancement des flux de valeur entre unités et partenaires.</div>
+          <div class="example-box" style="border-left-color: #0f766e;">
+            <strong>Exemple :</strong> Chorégraphie réactive (patron Saga / <em>Event-Driven Architecture</em>) orchestrant le règlement d'un sinistre entre indemnisation, comptabilité et experts externes.
+          </div>
+        </div>
+      </td>
+
+      <!-- Right Column: Niveaux 4 à 6 (Conformité, Cadrage politique & Autonomie agentique) -->
+      <td class="grid-col col-right">
+        <!-- Niveau 4 -->
+        <div class="level-card" style="border-left: 3.5px solid #0369a1;">
+          <div class="level-card-header">
+            <span class="badge-inline lvl-4-bg">Niveau 4 — Juridique</span>
+            <span class="card-sub">Souveraineté, Imputabilité & Conformité</span>
+          </div>
+          <div class="desc-text"><strong>Descriptif :</strong> Garantie de valeur probante des transactions, non-répudiation, résidence territoriale des données et conformité stricte aux cadres réglementaires applicables.</div>
+          <div class="example-box" style="border-left-color: #0369a1;">
+            <strong>Exemple :</strong> Encadrement des transferts de renseignements personnels et journalisation de la preuve de consentement selon la Loi 25 (Québec) et les normes BSIF E-23 / RGPD.
+          </div>
+        </div>
+
+        <!-- Niveau 5 -->
+        <div class="level-card" style="border-left: 3.5px solid #1d4ed8;">
+          <div class="level-card-header">
+            <span class="badge-inline lvl-5-bg">Niveau 5 — Politique</span>
+            <span class="card-sub">Plan de contrôle, Data Contracts & Arbitrage</span>
+          </div>
+          <div class="desc-text"><strong>Descriptif :</strong> Verticalisation du plan de contrôle institutionnel (<em>Governance Plane</em>), formalisation des contrats de données, arbitrage des SLAs et attribution de l'imputabilité.</div>
+          <div class="example-box" style="border-left-color: #1d4ed8;">
+            <strong>Exemple :</strong> Comitologie inter-domaines régissant le cycle de vie des interfaces, les pénalités d'indisponibilité et les points d'application de politiques (PEP/PDP).
+          </div>
+        </div>
+
+        <!-- Niveau 6 -->
+        <div class="level-card" style="border-left: 3.5px solid #4338ca; margin-bottom: 0;">
+          <div class="level-card-header">
+            <span class="badge-inline lvl-6-bg">Niveau 6 — Agentique</span>
+            <span class="card-sub">Intention déclarative & Coordination A2A / MCP</span>
+          </div>
+          <div class="desc-text"><strong>Descriptif :</strong> Coordination adaptative et probabiliste entre agents autonomes découvrant des outils (<em>Tool Calling</em>) et négociant des protocoles pour exécuter des intentions.</div>
+          <div class="example-box" style="border-left-color: #4338ca;">
+            <strong>Exemple :</strong> Maillage d'agents (<em>Agentic Mesh</em>) où un agent d'arbitrage négocie en temps réel avec des agents de souscription via <em>Agent Cards</em> signées et <em>AI Gateway</em>.
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Bottom Synthesis Box -->
+  <div class="footer-box">
+    <table class="footer-table">
+      <tr>
+        <td style="width: 50%; padding-right: 8px; border-right: 1px solid #334155;">
+          <div class="footer-heading">Rupture de paradigme (Déterministe vs Intentionnel)</div>
+          <p class="footer-text">
+            Les niveaux 1 à 5 garantissent une intégration <strong>déterministe</strong> régie par des contrats statiques et vérifiables. Le niveau 6 introduit une gouvernance <strong>probabiliste et adaptative</strong>, où la contractualisation devient dynamique via négociation contextuelle d'objectifs (A2A / MCP).
+          </p>
+        </td>
+        <td style="width: 50%; padding-left: 8px;">
+          <div class="footer-heading">Compromis d'architecture & Clause de renversement</div>
+          <p class="footer-text">
+            <strong>Compromis :</strong> Surcoût d'observabilité (<em>AgentOps</em>) et impératif de <em>runtime verification</em> pour confiner le non-déterminisme. <strong>Renversement :</strong> Tout système sous contrainte de compensation financière temps réel (rails Lynx / RTR) doit interdire l'autonomie agentique directe et maintenir une contractualisation déterministe de niveau 5.
+          </p>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>
