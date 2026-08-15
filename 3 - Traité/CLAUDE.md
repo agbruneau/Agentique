@@ -5,8 +5,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Ce qu'est ce dépôt
 
 **stigmergie-lab** — simulateur déterministe d'essaims d'agents logiciels. Le
-dépôt transpose un traité (`docs/Traité.pdf`, **deuxième édition du 13 août
-2026 — 8 chapitres, 24 sections**) en logiciel exécutable. **Toute la
+dépôt transpose un traité (`docs/Traité.pdf`, **troisième édition du 15 août
+2026 — 8 chapitres, 24 sections, 123 notices**) en logiciel exécutable. **Toute la
 documentation vit dans [`docs/`](docs/)**, dont
 [`docs/README.md`](docs/README.md) est l'index ; seuls ce fichier et le
 `README.md` restent à la racine, par convention d'outil.
@@ -15,9 +15,10 @@ Deux documents font autorité, dans cet ordre :
 
 1. **`docs/Traité.pdf`** — source normative. Les algorithmes, les hypothèses et
    les chiffres viennent de là, et de nulle part ailleurs. **La pagination est
-   celle de la deuxième édition** : elle ne coïncide avec aucun renvoi antérieur
-   à la révision 3.0 du PRD, et une page citée sans son édition est une
-   provenance fausse, pas imprécise (F2).
+   celle de la troisième édition — 116 pages** : le format ferme de cent pages a
+   été levé le 15 août 2026, de sorte qu'elle ne coïncide ni avec la deuxième
+   édition ni avec aucun renvoi antérieur à la révision 3.0 du PRD, et qu'une
+   page citée sans son édition est une provenance fausse, pas imprécise (F2).
 2. **`docs/PRD.md`** — la spécification, environ 2 200 lignes. Toute exigence porte un
    code (`EX-C01`, `EX-M09`, `EX-A31`, `EX-V12`, `NF-02`, `PD1`, `DT1`, `RQ3`…)
    que le code cite en commentaire. Chercher le code dans `docs/PRD.md` donne la

@@ -37,11 +37,19 @@ from pathlib import Path
 RACINE = Path(__file__).resolve().parent
 
 W = 468                       # largeur du corps, en points
-# ⚠ 468 jusqu'au 13 août 2026, quand le corps composait à 2,54 cm de marge.
-# La deuxième édition compose à 1,9 cm : le corps mesure 504,3 pt, soit 7 po,
-# et la constante suit. Une figure laissée à 468 serait étirée de 7,8 % par la
-# règle `#set image(width: 100%)` de l'en-tête, et ses corps de texte avec
-# elle. CETTE CONSTANTE SUIT LA MARGE — les deux se changent ensemble.
+# ⚠ 468 pt = 6,5 po = le corps composé aux marges de 2,54 cm, celles de la
+# troisième édition (15 août 2026). La deuxième composait à 1,9 cm, soit un
+# corps de 504,3 pt. CETTE CONSTANTE SUIT LA MARGE — les deux se changent
+# ensemble, faute de quoi `#set image(width: 100%)` met la figure à l'échelle
+# du corps et ses textes avec elle : 504 dans un corps de 468 les comprime de
+# 7,2 %.
+# ⚠⚠ ET ELLE NE SUFFIT PAS : les SVG sont des ARTEFACTS, pas des vues. Le
+# dépôt a porté du 13 au 15 août 2026 une constante à 468 et dix-neuf figures
+# gravées à 504 — le générateur et ses produits divergeaient sans que rien ne
+# le dise. Changer W SANS régénérer ne change rien au rendu ; c'est le piège,
+# et il est silencieux. Régénérer, c'est `python figures/contenu.py` —
+# PAS `dessine.py`, qui est une bibliothèque sans point d'entrée et dont
+# l'exécution ne fait rien, en rendant 0.
 ENCRE, ACCENT = "#1A1A1A", "#8A3324"
 GRIS, GRIS2, FILET = "#4D4D4D", "#767676", "#C4C4C4"
 CREME, BLANC, FOND = "#F7F4F1", "#FFFFFF", "#FFFFFF"

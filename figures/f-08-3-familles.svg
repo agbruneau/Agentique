@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 323" width="504" height="323" role="img" aria-label="Grille des quatre familles de defaillance mesurees et de ce que chacune casse dans le traite.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 334" width="468" height="334" role="img" aria-label="Grille des quatre familles de defaillance mesurees et de ce que chacune casse dans le traite.">
   <!-- Chapitre 8 — mesures de [119] ; colonne de droite propre à cet ouvrage.
        Genere par figures/contenu.py — ne pas retoucher a la main :
        la retouche se perd a la regeneration. Convention : viewBox de
-       504 unites = largeur du corps, une unite = un point. -->
+       468 unites = largeur du corps, une unite = un point. -->
   <defs><style>
   .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
   .bande  { font-size: 8.5px; font-weight: 700; fill: #1A1A1A; }
@@ -14,50 +14,51 @@
   .renvoi { font-size: 6.2px; fill: #767676; }
   .chiffre{ font-size: 8px;   font-weight: 700; fill: #1A1A1A; }
   </style></defs>
-  <rect x="0" y="0" width="504" height="323" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="468" height="334" fill="#FFFFFF"/>
   <text class="l titre" x="0" y="8">CE QUE LA CAMPAGNE DE 2026 MESURE, ET CE QU'ELLE RETIRE À L'OUVRAGE</text>
   <text class="l annf" x="109" y="28">Ce qui est mesuré</text>
-  <text class="l annf" x="309" y="28">Ce que cela retire à l'ouvrage</text>
-  <path d="M 0 41 H 504" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+  <text class="l annf" x="291" y="28">Ce que cela retire à l'ouvrage</text>
+  <path d="M 0 41 H 468" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
   <text class="l annf" x="0" y="53">Coordination</text>
   <text class="l ann" x="109" y="53">266 vulnérabilités pour 27 millions de jetons</text>
-  <text class="l ann" x="109" y="64">contre 21 pour 6,5 millions ; douze trouvailles</text>
-  <text class="l ann" x="109" y="75">communes ; partage de code et fraction de fusion ne</text>
-  <text class="l ann" x="109" y="86">montent jamais ensemble.</text>
-  <text class="l ann" x="309" y="53">Rien — le gain est de couverture et non</text>
-  <text class="l ann" x="309" y="64">d'efficacité, et l'interférence du §2.2 reçoit</text>
-  <text class="l ann" x="309" y="75">enfin sa mesure logicielle.</text>
-  <path d="M 0 97 H 504" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
+  <text class="l ann" x="109" y="64">contre 21 pour 6,5 millions ; douze</text>
+  <text class="l ann" x="109" y="75">trouvailles communes ; partage de code et</text>
+  <text class="l ann" x="109" y="86">fraction de fusion ne montent jamais ensemble.</text>
+  <text class="l ann" x="291" y="53">Rien — le gain est de couverture et non</text>
+  <text class="l ann" x="291" y="64">d'efficacité, et l'interférence du §2.2 reçoit</text>
+  <text class="l ann" x="291" y="75">enfin sa mesure logicielle.</text>
+  <path d="M 0 97 H 468" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
   <text class="l annf" x="0" y="109">Conformité</text>
-  <text class="l ann" x="109" y="109">Dix-huit agents sur trente ouvrent la même branche</text>
-  <text class="l ann" x="109" y="120">; plus de la moitié d'une population libre bâtit</text>
-  <text class="l ann" x="109" y="131">l'un de deux projets ; 2,4 millions de demandes</text>
-  <text class="l ann" x="109" y="142">pour 117 acceptations.</text>
-  <text class="l ann" x="309" y="109">Sept énoncés qui supposent l'indépendance des</text>
-  <text class="l ann" x="309" y="120">tirages ou des fautes, du plancher d'exploration à</text>
-  <text class="l ann" x="309" y="131">la corroboration de sondes.</text>
-  <path d="M 0 153 H 504" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
+  <text class="l ann" x="109" y="109">Dix-huit agents sur trente ouvrent la même</text>
+  <text class="l ann" x="109" y="120">branche ; plus de la moitié d'une population</text>
+  <text class="l ann" x="109" y="131">libre bâtit l'un de deux projets ; 2,4</text>
+  <text class="l ann" x="109" y="142">millions de demandes pour 117 acceptations.</text>
+  <text class="l ann" x="291" y="109">Sept énoncés qui supposent l'indépendance des</text>
+  <text class="l ann" x="291" y="120">tirages ou des fautes, du plancher</text>
+  <text class="l ann" x="291" y="131">d'exploration à la corroboration de sondes.</text>
+  <path d="M 0 153 H 468" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
   <text class="l annf" x="0" y="165">Épistémique</text>
   <text class="l ann" x="109" y="165">Groupes de quatre agents : l'option cachée</text>
-  <text class="l ann" x="109" y="176">l'emporte dans 17 à 85 % des épisodes, contre un</text>
-  <text class="l ann" x="109" y="187">plafond proche de 100 % pour un agent seul</text>
+  <text class="l ann" x="109" y="176">l'emporte dans 17 à 85 % des épisodes, contre</text>
+  <text class="l ann" x="109" y="187">un plafond proche de 100 % pour un agent seul</text>
   <text class="l ann" x="109" y="198">correctement informé.</text>
-  <text class="l ann" x="309" y="165">La prémisse de la stigmergie — la trace cesse</text>
-  <text class="l ann" x="309" y="176">d'être un résidu de l'action pour devenir un</text>
-  <text class="l ann" x="309" y="187">témoignage sur elle.</text>
-  <path d="M 0 209 H 504" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
+  <text class="l ann" x="291" y="165">La prémisse de la stigmergie — la trace cesse</text>
+  <text class="l ann" x="291" y="176">d'être un résidu de l'action pour devenir un</text>
+  <text class="l ann" x="291" y="187">témoignage sur elle.</text>
+  <path d="M 0 209 H 468" fill="none" stroke="#C4C4C4" stroke-width=".5"/>
   <text class="l annf" x="0" y="221">Buts incompatibles</text>
-  <text class="l ann" x="109" y="221">Trois mandats contradictoires : escalade jusqu'au</text>
-  <text class="l ann" x="109" y="232">sabotage sur tous les modèles éprouvés ; issues par</text>
-  <text class="l ann" x="109" y="243">force, passivité, trêve ou non-règlement, sur cent</text>
-  <text class="l ann" x="109" y="254">vingt épisodes par modèle.</text>
-  <text class="l ann" x="309" y="221">Le modèle de panne P, et la gouvernance du §5.3,</text>
-  <text class="l ann" x="309" y="232">qui s'applique dans le processus même dont on</text>
-  <text class="l ann" x="309" y="243">suppose qu'il agit contre le système.</text>
-  <path d="M 0 265 H 504" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
-  <text class="l renvoi" x="0" y="278">Ch. 8 — aucune de ces mesures n'est reproductible hors de la version de modèle sur laquelle elle a été prise.</text>
-  <path d="M 0 284 H 504" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
-  <text class="l ann" x="0" y="297">Les quatre familles ne sont pas de même statut. La première est un fait positif dont la réserve est un coût ; les trois autres sont des</text>
-  <text class="l ann" x="0" y="307">défaillances. Aucune n'invalide un résultat des sept premiers chapitres : elles en déplacent le domaine de validité, ce qui est plus difficile à</text>
-  <text class="l ann" x="0" y="317">voir et se corrige moins bien, puisque le mécanisme continue de tourner pendant que sa borne cesse de tenir.</text>
+  <text class="l ann" x="109" y="221">Trois mandats contradictoires : escalade</text>
+  <text class="l ann" x="109" y="232">jusqu'au sabotage sur tous les modèles</text>
+  <text class="l ann" x="109" y="243">éprouvés ; issues par force, passivité, trêve</text>
+  <text class="l ann" x="109" y="254">ou non-règlement, sur cent vingt épisodes par</text>
+  <text class="l ann" x="109" y="265">modèle.</text>
+  <text class="l ann" x="291" y="221">Le modèle de panne P, et la gouvernance du</text>
+  <text class="l ann" x="291" y="232">§5.3, qui s'applique dans le processus même</text>
+  <text class="l ann" x="291" y="243">dont on suppose qu'il agit contre le système.</text>
+  <path d="M 0 276 H 468" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+  <text class="l renvoi" x="0" y="289">Ch. 8 — aucune de ces mesures n'est reproductible hors de la version de modèle sur laquelle elle a été prise.</text>
+  <path d="M 0 295 H 468" fill="none" stroke="#C4C4C4" stroke-width=".6"/>
+  <text class="l ann" x="0" y="308">Les quatre familles ne sont pas de même statut. La première est un fait positif dont la réserve est un coût ; les trois autres sont</text>
+  <text class="l ann" x="0" y="318">des défaillances. Aucune n'invalide un résultat des sept premiers chapitres : elles en déplacent le domaine de validité, ce qui est</text>
+  <text class="l ann" x="0" y="328">plus difficile à voir et se corrige moins bien, puisque le mécanisme continue de tourner pendant que sa borne cesse de tenir.</text>
 </svg>

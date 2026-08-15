@@ -983,4 +983,329 @@ et le document n'a jamais eu que 30 mots de marge.* La cible de 100 pages a déj
 consommé toutes ses réserves avant cette édition — marges cédées de 2,54 cm à
 1,9 cm, appareil descendu à 8,2 pt, plancher que le front-matter déclare lui-même.
 
-*Tour 2 : 3 fusions sur 4 rendues. Coût : 20 agents.*
+### F2 — introduction et conclusion *(rendu)* — **−1 mot**
+
+Les neuf arbitrages appliqués, un « sans objet » (l'incident écarté).
+
+☑ **La phrase des deux robots est sauvée sans être payée deux fois.** Je l'avais
+demandée restaurée si rien d'autre ne la portait ; le fusionneur a vérifié — le
+§4.2 la donne en entier — et l'a remplacée par un renvoi, ce qui **finance
+32 mots**. *Vérifier avant de restaurer, c'est la même discipline que vérifier
+avant de couper.*
+
+☑ **Le registre corrigé au mot près** : « quelqu'un a mesuré » devient
+« **l'auteur** a mesuré », trois fois — « il a proposé, l'auteur a mesuré, et la
+mesure lui est revenue contre ». Et ce qui marchait est gardé : « cinq écarts,
+**dont trois contre l'ouvrage** ».
+
+☑ **La dernière phrase du livre retrouve ses deux engagements**, dont celui que
+la première révision avait troqué : *les valeurs tirées de documentation produit
+sont périssables et doivent être revalidées à la version ciblée.* **L'avertissement
+qui protège le lecteur redevient la dernière chose que le livre dit.**
+
+⚠ Une faute laissée en place, signalée avec sa correction toute prête : la
+conclusion écrit « est indécidable » là où l'article prouve une Π⁰₂-complétude —
+donc *pas même la semi-décidabilité*. Renvoyée au lissage.
+
+---
+
+## L'assemblage, et la décision de format
+
+Les quatre fusions assemblées par script : **16 sections, 123 notices**, contiguës.
+Puis le rendu, parce qu'une projection n'est pas une mesure — et la projection
+était juste : **101 pages**.
+
+Une notice s'est révélée **orpheline** au contrôle : personne ne la citait, et le
+jury avait dit d'elle qu'« elle prouve moins qu'elle n'affirme ». Retirée. Toujours
+101 pages.
+
+**Trois mesures pour éclairer la décision, pas une opinion :**
+
+| Réglage | Pages rendues |
+|---|---|
+| appareil 8,2 pt, marges 1,9 cm *(état du 13 août)* | **101** |
+| appareil **8,0 pt** | **100** — cible tenue |
+| appareil **9 pt**, marges **2,54 cm**, figures redessinées | **116** |
+
+☑ **Décision de l'auteur : le format ferme est levé, sans remplacement.** « Afin de
+rendre le contenu aisément lisible, peu importe le nombre total de pages. »
+
+**Conséquence appliquée, et elle va plus loin que la levée** : les deux
+concessions que la cible avait coûtées sont **rendues**. Les marges reviennent au
+pouce — le calage du 12 août les décrivait lui-même comme « **le seul poste de
+cette édition qui abandonne un réglage revendiqué** », et l'aveu valait engagement.
+L'appareil remonte à 9 pt. Les 19 figures sont régénérées à la largeur du nouveau
+corps (`W = 468`), le générateur étant déterministe — vérifié : régénéré à
+l'identique avant modification, aucun octet ne bouge.
+
+⚠ **Le contrôle a été adapté, et c'est un geste qu'il faut justifier.** Sa porte
+de pagination **rapporte** désormais le compte au lieu de le juger, et sa porte de
+budget mesure la croissance au lieu de sanctionner un dépassement. *Un contrôle
+qui juge une cible abandonnée ne mesure plus rien — il périme, et on finit par le
+désactiver pour de mauvaises raisons.* Ce qui reste bloquant : l'appariement des
+références, l'arbre de pages incohérent, et le **PDF périmé**.
+
+**État rendu et vérifié : 116 pages, 123 notices, les trois contrôles passent.**
+
+*Tour 2 clos : 4 fusions. Coût : 20 agents.*
+
+---
+
+## Passe de lissage
+
+Seize sections avaient été réécrites séparément. Ce que la passe a trouvé aux
+coutures — et deux de ses trouvailles sont des arbitrages, pas des raccords.
+
+☑ **Le comptage des tours tranché *contre* ce que je supposais.** Je pensais que
+le §5.2 était l'intrus. Le lisseur a lu la convention du livre — « un tour vaut
+un **aller simple** » au §1.1, « une requête et sa réponse comptent pour deux » au
+§6.1 — et conclu que **c'étaient le §6.1 et le §2.2 qui étaient faux**. Sept
+lignes corrigées ailleurs, dont quatre rangées d'un tableau. *Un lisseur qui suit
+la convention plutôt que l'assembleur, c'est le comportement voulu.*
+
+☑ **Deux endroits de plus où une notice était encore appelée « préprint ».** La
+notice [92] a été corrigée — l'article est paru aux actes de NeurIPS 38 — et la
+conclusion aussi ; mais le §6.3 et le §8.1 le répétaient encore. *Une correction
+de notice n'est pas finie tant que le corps ne l'a pas suivie partout.*
+
+☑ **Il a corrigé une faute que j'avais introduite moi-même.** Mon amendement de
+la notice [116] plaçait des espaces insécables **dans les guillemets** — seul cas
+sur les 169 paires du livre. Ramené à la convention.
+
+☑ **Chaque occurrence de « deuxième édition » tranchée une par une**, jamais par
+rechercher-remplacer : certaines deviennent « troisième », d'autres **restent au
+passé**, parce que le chapitre 8 *est* l'apport de la deuxième et que le dire au
+présent de la troisième serait faux. Et un ajout au colophon, seul endroit où la
+troisième édition ne se nommait nulle part : *« elle n'ajoute ni chapitre ni
+thèse : elle revoit l'ouvrage sur sa propre mesure, et porte chaque correction à
+l'endroit où se trouvait l'énoncé corrigé. »*
+
+☑ **La faute [63] corrigée en conclusion**, accordée au §3.2 et à la notice.
+
+☑ **Vingt-deux renvois vérifiés, tous ouvrent. Espaces insécables : zéro
+détruite**, vérifié contre la sauvegarde d'avant fusion par la méthode du
+contexte reformé.
+
+☑ **Les deux fiches du dossier mises à jour** — `README.md` et `CLAUDE.md`
+annonçaient « deuxième édition du 13 août, 8 chapitres, 24 sections » et une
+pagination de cent pages.
+
+⚠ **Une chose laissée ouverte et déclarée, à raison** : la conclusion écrit que
+l'ouvrage nomme un mode de rupture « à cinq endroits » sans les énumérer. Le jury
+avait établi que c'est cinq en lecture large et **trois** au sens strict, sans
+qu'aucun arbitrage tranche entre les deux lectures. *Choisir à la place du jury
+aurait été rouvrir, ce que la passe de lissage n'a pas le droit de faire.*
+
+**État après lissage : 116 pages, 123 notices, les trois contrôles à zéro.**
+
+*Coût : 22 agents. Comparaison à l'aveugle lancée.*
+
+---
+
+## Comparaison à l'aveugle — et pourquoi elle est meilleure qu'au tour précédent
+
+Deux juges, **contextes neufs**, ordre des étiquettes **permuté** entre eux :
+le premier reçoit A = gelé, B = édition ; le second reçoit X = édition, Y = gelé.
+
+☑ **L'aveugle est réellement tenu cette fois, et ce n'était pas le cas à la boucle
+précédente.** Là-bas, 141 pages en français contre 34 en anglais rendaient
+l'anonymat impossible et je l'avais consigné comme un défaut. Ici, les deux
+artefacts sont **le même ouvrage à deux jours d'écart** : le front-matter — qui
+porte la date, le numéro d'édition et tout le calage typographique — est retiré,
+et il reste **68 836 mots contre 68 884**, soit un écart de **0,07 %**. Rien dans
+la forme ne dit lequel est lequel ; il faut lire le fond.
+
+*Consigne donnée aux deux : ignorer la composition, travailler par diff, et
+**vérifier aux sources** les faits qui divergent au lieu de les croire. Le second
+juge reçoit en plus l'ordre exprès de chercher **une régression** chez le
+gagnant — une « correction » qui aurait remplacé un énoncé vrai par un faux.*
+
+### Juge 1 — **l'édition du 15 août l'emporte**
+
+Quinze blocs de divergence seulement, dont un typographique. Ce qui décide :
+
+- **Le statut éditorial d'une source, deux fois.** Le traité gelé appose « non
+  revue par les pairs » à une référence que **sa propre bibliographie** donne
+  comme parue en actes — le juge l'a vérifié à OpenReview et au programme de la
+  conférence. *Un statut faux, contre sa propre notice, sur la règle même que la
+  charte pose.*
+- **Le compte de tours, cinq sites.** Le juge a tranché **à l'intérieur du
+  corpus commun**, sans sortir du livre : le §1.1 définit le tour comme un aller
+  simple, et le §5.2 — *verbatim identique dans les deux versions* — facture déjà
+  4n messages/4 tours et 8n/8. Le traité gelé disait donc 2/4 dans deux chapitres
+  et 4/8 dans un troisième, **pour le même mécanisme et la même référence**.
+- **La borne d'indécidabilité.** L'édition énonce la Π⁰₂-complétude que sa notice
+  portait déjà ; le gelé restait en deçà — dans le paragraphe même dont la thèse
+  est que le lecteur reçoit « un verdict qu'il peut réciter et non étendre ».
+
+⚠ **Et le juge trouve ce que la passe de lissage a cassé en corrigeant.** Le
+livre entretient **deux acceptions incompatibles de son unité de coût** : le §1.1
+*définit* le tour comme un aller simple, mais trois passages — §5.2, §7.1, §7.3,
+**identiques dans les deux versions** — assimilent un aller-retour à un tour. La
+correction a suivi la définition ; l'usage majoritaire dit l'inverse.
+
+**Écart retenu** : le §6.3 chiffre encore τ à « quatre tours sous le protocole
+coopératif » quand le §5.2 et le §6.1 en facturent huit — alors que le §1.1
+avertit qu'« un tableau de coûts qui ne dit pas lequel des deux tours il compte ne
+dit rien ». *Une occurrence a échappé à la correction, et l'ambiguïté qui l'a
+permise n'est toujours pas tranchée.*
+
+### Juge 2 — **l'édition du 15 août l'emporte** *(étiquettes permutées)*
+
+Même verdict, contexte neuf, ordre inverse. Il confirme les trois dossiers du
+premier juge en remontant plus haut : il a ouvert **l'article primaire** de la
+borne d'indécidabilité — que le premier juge n'avait pu atteindre — et cite
+« *We now show that Q_R is not semi-decidable. In fact… Any relation Q_R is
+Π⁰₂-complete* ». L'édition reprend la source mot pour mot ; le gelé abandonnait
+**ce que sa propre notice continuait d'affirmer**.
+
+☑ **Et il trouve la régression qu'il avait mandat de chercher — elle est réelle,
+et elle est de moi.**
+
+> Le §7.1, **identique dans les deux versions**, définit : « un tour est un
+> **aller-retour bloquant** ». Sous cette définition, les quatre messages du
+> rééquilibrage font **deux** points de blocage — donc 2 tours, pas 4.
+
+La passe de lissage a appliqué la définition du §1.1 (« un tour vaut un aller
+simple ») ; le §7.1 en donne une autre. **Le livre porte deux unités sous un même
+mot, ne le signale nulle part, et n'a de convention explicite que dans le chapitre
+qui en avait le moins besoin.** Les deux juges se sont appuyés sur des définitions
+opposées et sont arrivés au même verdict — ce qui établit le défaut mieux qu'un
+accord ne l'aurait fait.
+
+☑ **Son motif de préférence est le plus fin des deux journaux** :
+
+> « Le gagnant est faux et **uniforme** ; le perdant est juste cinq fois, faux une
+> fois, et **se contredit**. Un lecteur peut corriger l'un d'un facteur 2 partout ;
+> il ne peut pas savoir laquelle des valeurs de l'autre utiliser. »
+
+**Écart retenu** : le livre exige de chaque mécanisme qu'il porte son coût en
+tours, et emploie **deux unités sous ce mot** sans le dire — la seule convention
+explicite est posée au §7.1, déclarée valoir « pour le chapitre ».
+
+---
+
+## Sortie de boucle
+
+☑ **Victoire à l'aveugle, deux juges sur deux, étiquettes permutées.** C'est le
+critère de sortie que la méthode nomme en premier. Coût : **26 agents** sur ~40.
+
+**Un tour 3 ciblé se justifie néanmoins**, et pour une raison précise : l'écart
+retenu par les deux juges n'est pas un défaut du traité gelé que l'édition aurait
+manqué — **c'est une régression que ma passe de lissage a introduite** en tranchant
+une ambiguïté par un seul de ses deux côtés. Réparer ce qu'on a cassé n'élargit
+pas la portée.
+
+---
+
+## Tour 3 — l'unité de coût
+
+**Relevé refait de bout en bout : 40 sites supposent l'aller-retour bloquant,
+15 l'aller simple** — et les quinze sont concentrés dans les quatre énoncés de
+convention et dans un seul mécanisme.
+
+**Acception retenue : le tour est un aller-retour bloquant.** Quatre motifs, dont
+deux valent d'être retenus au-delà de ce livre :
+
+- ⚠ **Sous l'autre acception, la thèse de l'ouvrage devient fausse.** Toute la
+  famille des « 0 tour » — une quinzaine de sites — porte l'argument central : un
+  envoi que personne n'attend ne coûte rien. Sous l'aller simple, il coûterait
+  1 tour, et le tableau du §7.1 — *0 tour pour l'essaim stigmergique contre 1
+  pour le coordonnateur* — deviendrait faux.
+- ☑ **Le seul site qu'aucune passe n'avait touché donnait la réponse.** Le §6.3
+  chiffrait τ à « quatre tours », valeur de l'acception retenue. **L'écart que le
+  premier juge avait relevé n'était pas une faute du §6.3 : c'était la trace que
+  tout le reste avait bougé.** *Le témoin non modifié était l'indice, et je l'avais
+  lu comme le défaut.*
+
+La convention est désormais posée **une fois, au §1.1**, et se referme sur la
+phrase que le livre portait déjà : « Un tableau de coûts qui ne dit pas lequel des
+deux tours il compte ne dit rien. » **26 remplacements** — dont les sept
+*reverts* de ma passe de lissage, et des corrections neuves à des sites que
+personne n'avait touchés. Aucun compte de messages n'a bougé.
+
+---
+
+## Une erreur de l'assembleur, trouvée à la vérification finale
+
+⚠ **J'ai annoncé les 19 figures régénérées à la nouvelle largeur ; elles ne
+l'étaient pas.** `dessine.py` est une **bibliothèque sans point d'entrée** — le
+lancer ne fait rien. Le point d'entrée est `contenu.py`.
+
+**Et mon contrôle de sûreté a validé le vide.** J'avais lancé le générateur *avant*
+de le modifier pour vérifier qu'il était déterministe, constaté qu'aucun octet ne
+bougeait, et conclu que je pouvais changer la largeur en sécurité. **Rien ne
+bougeait parce que rien ne s'exécutait.** Un test qui passe sur un no-op passe
+toujours.
+
+Conséquence réelle : les figures ont été rendues à un `viewBox` de 504 unités dans
+un corps de 468, donc **compressées de 7,2 %, corps de texte compris** — le défaut
+exact contre lequel le front-matter met en garde en toutes lettres. Corrigé :
+`python figures/contenu.py`, les 19 SVG passent à 468, et **le rendu passe de 116
+à 117 pages**, ce qui mesure la place que les figures occupaient en moins.
+
+*La leçon est celle du tour 1, retournée contre moi : un contrôle qui ne peut pas
+échouer ne vérifie rien. J'ai reproché aux bâtisseurs d'autodéclarer leurs soldes,
+et j'ai autodéclaré une régénération.*
+
+☑ **Et en creusant, le défaut se révèle plus ancien que moi.** J'avais cru changer
+la constante de largeur de 504 à 468 ; **elle valait déjà 468 dans le dépôt
+commité**, et mon remplacement n'a rien fait — silencieusement, le motif
+n'existant pas. Or **les dix-neuf SVG commités portaient `viewBox 504`.**
+
+> **Le générateur et ses produits divergeaient dans l'historique, depuis le
+> 13 août, sans que rien ne le dise.** Le commentaire de `dessine.py` annonçait
+> même la règle qu'il violait : « CETTE CONSTANTE SUIT LA MARGE — les deux se
+> changent ensemble. »
+
+C'est la même espèce de défaut que la boucle a trouvée treize fois dans le
+traité — *une règle posée par un document et non tenue par ce même document* —,
+cette fois dans son outillage. Le commentaire porte désormais le piège en toutes
+lettres : **un SVG est un artefact, pas une vue ; changer W sans régénérer ne
+change rien au rendu**, et le point d'entrée est `contenu.py`, jamais `dessine.py`.
+
+**Les 19 figures et le générateur sont cohérents pour la première fois depuis le
+13 août.**
+
+---
+
+## Sortie de boucle
+
+**Critère atteint : victoire à l'aveugle, deux juges sur deux, étiquettes
+permutées.** La boucle sort par où la méthode le prévoit, non par épuisement du
+budget.
+
+| | Gelé du 13 août | Édition du 15 août |
+|---|---|---|
+| Pages | 100 | **117** |
+| Références | 119 | **123** |
+| Mots | 69 872 | 70 414 |
+| Marges | 1,9 cm | **2,54 cm** |
+| Appareil | 8,2 pt | **9 pt** |
+| Format ferme | 100 pages | **levé** |
+
+**Coût : 27 agents** sur les ~40 annoncés — 8 bâtisseurs, 8 critiques, 4 fusions,
+1 lissage, 2 juges, 1 tour 3, plus 3 passes correctives de l'assembleur.
+
+### Ce que la boucle a établi, et qui vaut au-delà de ce traité
+
+1. **Le traité ne péchait pas par obsolescence mais contre sa propre charte.**
+   40 des 46 chiffres vérifiés étaient intacts. Les défauts trouvés portaient tous
+   sur une règle que le livre pose lui-même — et toujours à l'endroit le plus
+   exposé : un pilier de l'introduction non qualifié, la phrase qui annonce « les
+   hypothèses exactes comptent » faisant dire à sa source un théorème qu'elle ne
+   prouve pas, le chapitre qui reproche à sa source de publier sans tableau
+   numérique citant ses deux mesures-titres sans un chiffre.
+2. **Aucun auteur ne peut compter ce qu'il vient d'écrire.** Six bâtisseurs sur
+   six ont déclaré un solde faux, tous dans le sens qui les arrangeait. Le seul
+   exact était celui qui avait *exécuté* au lieu de lire un registre.
+3. **Le registre secondaire d'un dépôt vieillit plus vite que son code.**
+   `decisions.md` portait « six sur sept » là où le code dit `(4, 3)`. Deux
+   agents s'y sont fiés ; un troisième a lu le code et a eu raison contre le
+   registre — et contre moi, qui le lui avais cité.
+4. **Une divergence de définition se révèle par ses témoins non modifiés.** Le
+   §6.3, que personne n'avait touché, portait la bonne valeur ; il paraissait être
+   le défaut alors qu'il était la preuve.
+5. **Un contrôle doit pouvoir échouer, sinon il ne vérifie rien.** Vrai du
+   `REFS = 119` figé qui interdisait au document d'évoluer, vrai du PDF tronqué à
+   48 % passé au vert, vrai de mon générateur de figures qui ne s'exécutait pas.

@@ -14,8 +14,8 @@ Simulateur déterministe d'essaims d'agents logiciels coordonnés par le milieu.
 > Pandoc **ne se lance que depuis la racine du dépôt**, jamais d'ici. *Rien de
 > tout cela ne concerne le code : `cargo` se lance bien d'ici.*
 
-Le dossier transpose un traité — [`Traité.pdf`](Traité.pdf), **deuxième
-édition du 13 août 2026 : 8 chapitres, 24 sections** — en logiciel exécutable,
+Le dossier transpose un traité — [`Traité.pdf`](Traité.pdf), **troisième
+édition du 15 août 2026 : 8 chapitres, 24 sections, 123 notices** — en logiciel exécutable,
 sous une contrainte : **tout chiffre affiché doit être retrouvé par la mesure, ou
 l'écart doit être consigné**. Un écart est un défaut du simulateur ou une erreur
 du traité, et les deux méritent d'être trouvés (NF-15). **Cinq** écarts ont été
