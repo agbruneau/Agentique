@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 """La porte de pagination que la chaine du traite n'avait pas.
 
-L'en-tete YAML de `Traité.md` le dit lui-meme : le rendu est CALE sur cent pages
-— appareil a 8,2 pt, marges a 1,9 cm, paragraphes a 0,558 em —, et « retirer
-l'une de ces lignes fait sortir le rendu de sa cible, et rien ne le signalera ».
-Ce controle est ce qui le signale.
+⚠ LE FORMAT FERME DE CENT PAGES EST LEVE. Ce controle ne juge donc plus un
+nombre de pages : il le rapporte. Ce qu'il attrape encore, et que rien d'autre
+n'attrape, c'est un PDF perime, un arbre de pages incoherent et une
+bibliographie mal appariee. Depuis le 15 aout 2026 le traite partage sa mise en
+page avec la veille et la revue — marges de 117 x 72 pt, corps de 11 pt sur
+14,3 pt, appareil a 9 pt debordant a 468 pt —, et l'etalonnage mots -> pages a
+ete refait sur cette geometrie.
 
 Trois pieges, dans cet ordre :
-  1. la PAGINATION du rendu — le PDF depasse-t-il la cible ? Et le PDF
-     decrit-il encore la source, ou a-t-il ete depasse par une reprise du `.md` ?
+  1. la PAGINATION du rendu — le PDF decrit-il encore la source, ou a-t-il ete
+     depasse par une reprise du `.md` ? Et l'arbre de pages est-il coherent ?
   2. le BUDGET de la source — combien de mots-equivalents restent avant que le
      prochain rendu ne franchisse la cible ? C'est la seule mesure qui serve
      AVANT de rendre, et c'est celle que le budget nul reclame ;
@@ -29,28 +32,49 @@ RACINE = Path(__file__).resolve().parent.parent
 PDF = RACINE / 'Traité.pdf'
 SRC = RACINE / 'Traité.md'
 
-CIBLE = 100          # cible declaree par l'en-tete YAML, calee le 13 aout 2026
 REFS = 119           # notices de la section « Références », declarees par l'en-tete
 
-# ⚠ ETALONNAGE DU 15 AOUT 2026, mesure par RENDU et non estime : variantes de
-# `Traité.md` rendues par la chaine canonique, page comptee dans le PDF.
-#   mots  : +0 -> 100 p. | +30 -> 100 | +40 -> 101 | +500 -> 101 | +1000 -> 102
-#           +2000 -> 103 | +4000 -> 105 | +8000 -> 110 | +12000 -> 115
-#           => pente de 800 mots par page dans le regime lineaire, et une MARGE
-#              RESIDUELLE de 30 mots seulement : la cible est atteinte au ras.
-#   figures : +2 -> 101 p. | +5 -> 103 | +10 -> 105 | +20 -> 110
-#           => une demi-page par figure, soit 400 mots-equivalents pour une
-#              legende de 14 mots. C'est le poste cher, et de loin.
-#   tableaux : +2 -> 101 p. | +5 -> 103 | +10 -> 105 | +20 -> 110, pour un
-#           tableau de 431 mots => 0,5 page, exactement ce que ses 431 mots
-#           couteraient en prose. Le 8,2 pt compense la structure en rangees :
-#           un tableau ne coute donc RIEN de plus que son texte, et ce texte est
-#           deja dans le compte de mots. Il n'a pas de poste a lui ici.
-MOTS_REF = 69872     # mots du `.md` entier — front-matter compris — qui rend 100 p.
+# ⚠ ETALONNAGE REFAIT LE 15 AOUT 2026, APRES RECOMPOSITION, mesure par RENDU et
+# non estime : variantes de `Traité.md` rendues par la chaine canonique depuis la
+# racine, page comptee dans le PDF. IL A FALLU LE REFAIRE — les trois documents
+# du depot ont ete portes sur une geometrie commune (corps de 378 pt au lieu de
+# 468, interligne de 14,3 pt au lieu de 13,6), et une page ne tient plus le meme
+# nombre de mots. L'ancien etalonnage, cale sur le rendu a 100 pages du 13 aout,
+# donnait une page pour 800 mots ; il en donnerait 25 % de trop aujourd'hui.
+#   mots  : +0 -> 142 p. | +1000 -> 143 | +3000 -> 147 | +6000 -> 151
+#           +12000 -> 161
+#           => pente de 1,58 page par millier de mots dans le regime lineaire,
+#              soit UNE PAGE POUR 630 MOTS.
+#   figures : +5 -> 144 p. | +10 -> 147
+#           => 0,45 page par figure, soit 285 mots-equivalents pour une legende
+#              de quatorze mots. Le poste reste le plus cher, mais il l'est
+#              moins qu'avant : la figure garde ses 468 pt de large quand le
+#              corps est passe a 378, donc sa hauteur n'a pas bouge tandis que
+#              celle d'une page de prose, elle, porte moins de texte.
+#   tableaux : pas de poste a eux. Un tableau coute ce que couterait son texte
+#           en prose, et ce texte est deja dans le compte de mots — constat de
+#           l'etalonnage du 13 aout, que le passage a 9 pt de l'appareil des
+#           trois documents ne change pas de sens.
+# ⚠ IL N'Y A PLUS DE CIBLE NI DE MARGE RESIDUELLE : le format ferme de cent
+# pages est leve depuis le 15 aout 2026, et les deux constantes qui les
+# portaient ont ete retirees plutot que laissees a mentir. Ce qui suit sert a
+# projeter une croissance, pas a juger un depassement.
+# ⚠ MOTS_REF COMPTE LE FRONT-MATTER, donc une ligne de COMMENTAIRE ajoutee au
+# gabarit pese ici autant qu'une ligne d'argument. C'est ce qui l'a fait bouger
+# de 70652 a 71100 : la regle d'emphase posee dans `header-includes` le 15 aout
+# 2026 apporte 448 mots de commentaire Typst, et le rendu fait toujours
+# 142 pages. La reference se recale donc SANS que la cible bouge — sans quoi la
+# projection annoncerait a jamais +0,7 page qu'aucun rendu ne produira. Qui
+# reprend ce chiffre le mesure sur un `.md` dont le PDF vient d'etre rendu.
+# ⚠ MEME GESTE LE 16 AOUT 2026, de 71100 a 71744 : la regle de bibliographie
+# posee dans `header-includes` apporte 644 mots de commentaire Typst, qui ne
+# produisent aucune page. La page gagnee — 142 -> 143 — vient d'ailleurs, du
+# blanc de 1,15 em rendu aux 123 notices, que le compte de mots ne voit pas.
+# Recaler MOTS_REF sans recaler le « 142 p. » ci-dessous ferait mentir les deux.
+MOTS_REF = 71744     # mots du `.md` entier — front-matter compris — qui rend 143 p.
 FIGS_REF = 19
-MOTS_PAR_PAGE = 800
-MOTS_PAR_FIGURE = 400
-MARGE = 30           # mots-equivalents disponibles avant la 101e page
+MOTS_PAR_PAGE = 630
+MOTS_PAR_FIGURE = 285
 
 fail = []
 
@@ -124,17 +148,17 @@ def budget(s: str):
     figs = len(re.findall(r'\]\(figures/', s))
     surplus = (mots - MOTS_REF) + (figs - FIGS_REF) * MOTS_PAR_FIGURE
     ok = True
-    # ⚠ Ne juge plus, RAPPORTE. La reference reste celle du rendu du 13 aout 2026
-    # a 100 pages : elle dit de combien le document a grossi depuis, ce qui est
-    # utile a un auteur et n'est pas un verdict. L'etalonnage mots -> pages n'est
-    # de toute facon fiable qu'a la page pres — un critique l'a montre le 15 aout
-    # 2026 : deux sources aux MEMES mots et MEMES figures rendent 100 et 101
-    # pages. Il ne pouvait donc pas porter un jugement au mot pres, et il ne le
-    # porte plus.
+    # ⚠ Ne juge plus, RAPPORTE. La reference est desormais le rendu du 15 aout
+    # 2026 a 142 pages, celui de la geometrie commune aux trois documents du
+    # depot : elle dit de combien le document a grossi depuis, ce qui est utile a
+    # un auteur et n'est pas un verdict. L'etalonnage mots -> pages n'est de
+    # toute facon fiable qu'a la page pres — deux sources aux MEMES mots et
+    # MEMES figures rendent 100 et 101 pages, mesure du 15 aout 2026. Il ne
+    # pouvait donc pas porter un jugement au mot pres, et il ne le porte plus.
     print(f'  [2] croissance  : {mots} mots, {figs} figures -> {surplus:+d} mots-equivalents '
-          f'depuis la reference du 13 aout 2026 (~{surplus / MOTS_PAR_PAGE:+.1f} page)')
+          f'depuis la reference du 15 aout 2026 (~{surplus / MOTS_PAR_PAGE:+.1f} page)')
     print(f'      ordre de grandeur : 1 page ~ {MOTS_PAR_PAGE} mots '
-          f'~ {MOTS_PAR_PAGE // MOTS_PAR_FIGURE} figures, mesure au calage du 13 aout')
+          f'~ {MOTS_PAR_PAGE // MOTS_PAR_FIGURE} figures, mesure a la recomposition du 15 aout')
     return ok
 
 

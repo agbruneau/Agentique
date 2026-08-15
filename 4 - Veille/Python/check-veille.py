@@ -25,9 +25,19 @@ fail = []
 
 
 def load():
+    """Corps et bibliographie, coupes dans cet ordre : le titre D'ABORD, le div ensuite.
+
+    ⚠ NE PAS CHERCHER « ::: {#refs} » DANS LE FICHIER ENTIER. Le front-matter
+    porte un bloc de reglage Typst commente, et ce commentaire NOMME le div
+    qu'il regle : cherche depuis le debut, le controle tombait dessus et lisait
+    comme bibliographie les 44 items de liste numerotee du corps — 44 entrees au
+    lieu de 342, et 317 references « citees mais absentes ». Couper au titre
+    d'abord met le commentaire hors de portee. `check-revue.py` coupait deja
+    dans cet ordre ; c'est ici que la garde manquait.
+    """
     s = io.open(SRC, encoding='utf-8').read()
-    body = s.split('# Références {-}')[0]
-    refs = s.split('::: {#refs}')[1].split('\n:::')[0]
+    body, apres = s.split('# Références {-}')
+    refs = apres.split('::: {#refs}')[1].split('\n:::')[0]
     return body, refs
 
 

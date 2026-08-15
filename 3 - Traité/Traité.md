@@ -7,102 +7,264 @@ date: "15 août 2026 — troisième édition, revue sur sa propre mesure"
 lang: fr
 region: CA
 papersize: us-letter
-fontsize: 11pt
-linestretch: 0.858
+fontsize: 10pt
+linestretch: 0.95
 mainfont: "New Computer Modern"
 margin:
-  x: 2.54cm
-  y: 2.54cm
-page-numbering: "1"
+  x: 117pt
+  y: 72pt
 abstract-title: Résumé
 abstract: |
   Dès que le nombre d'agents logiciels autonomes dépasse quelques dizaines et que les défaillances partielles deviennent l'état normal, le coût du consensus explicite — en messages, en latence de queue, en couplage temporel — croît plus vite que la valeur qu'il procure. L'ouvrage soutient que l'architecture gagnante déplace alors la coordination vers un substrat événementiel partagé, durable et ordonné localement, où les agents déposent et lisent des traces plutôt que de négocier des décisions : une transposition de la stigmergie de la robotique en essaim. Il refuse d'en escamoter la contrepartie — la sûreté globale troquée contre la vivacité, le comportement non reproductible à l'échelle de l'exécution, la charge de preuve reportée sur la traçabilité et le point de reprise — et soutient qu'il existe entre les deux régimes une frontière identifiable, qu'il entreprend de tracer. Huit chapitres la parcourent : fondements et transposition du modèle d'essaim, passage à l'échelle et saturation du milieu, modélisation formelle et vérification, comportements collectifs et auto-organisation, décision collective et allocation, mise en œuvre et exploitation, cas d'étude, et — c'est l'apport de la deuxième édition — le régime propre aux essaims dont les agents reposent sur des modèles de langage. Chaque mécanisme y porte son modèle de panne, son hypothèse de synchronisme, son coût en messages et en tours, et la condition sous laquelle il cesse de valoir ; chaque transposition depuis la robotique y nomme ce qu'elle conserve et ce qu'elle casse. La campagne de mesures publiée le 13 août 2026 par l'équipe Frontier Red Team d'Anthropic oblige à ajouter un second axe à la frontière : le premier oppose la décision révocable à l'invariant qui doit tenir à tout instant, le second oppose la population décorrélée à la population conforme — et un milieu qui rend la coordination bon marché rend du même geste la conformité, la collusion et la tromperie bon marché.
 
   **Mots-clés —** systèmes multiagents ; essaim ; stigmergie ; coordination indirecte ; journal d'événements ; consensus ; cohérence à terme ; auto-organisation ; allocation de tâches ; passage à l'échelle ; observabilité des systèmes non déterministes ; agents de langage ; conformité ; corrélation comportementale ; vigilance épistémique.
-include-before: |
+header-includes: |
   ```{=typst}
-  #pagebreak()
-  // Les dix-neuf figures sont dessinées à la largeur du corps — viewBox de 468
-  // unités = 6,5 po = la largeur composée aux marges de 2,54 cm. Sans cette
-  // règle, Typst lit les unités du viewBox comme des pixels et l'échelle des
-  // corps de texte des figures tombe d'un quart. ⚠ La constante vit dans
-  // figures/dessine.py et SUIT LA MARGE : elle a valu 504 du 13 au 15 août
-  // 2026, quand le corps composait à 1,9 cm. Changer la marge sans la changer
-  // étire les figures et leurs corps de texte avec elles — régénérer par
-  // `python figures/dessine.py`, qui est déterministe.
-  #set image(width: 100%)
-  // Les figures portent leur numéro DANS leur légende, comme les huit chapitres
-  // portent le leur dans leur titre : sans cette règle, Typst numérote par-dessus
-  // et produit « Fig. 3. – Figure 2.1c — … ».
-  #show figure.where(kind: image): set figure(numbering: none)
-  #show figure.caption: set text(size: 9pt)
-  #show figure.caption: it => align(left, it)
-  // ⚠ ASYMÉTRIQUE, et seul `above` est serré : la légende vit DANS le bloc de
-  // la figure, donc `below` est le blanc qui la sépare du paragraphe suivant.
-  // ⚠ Depuis le 13 août 2026, 1,2 em n'est plus l'espacement de paragraphe du
-  // document mais le double : les paragraphes courent à 0,558 em, et c'est
-  // précisément ce qui oblige à garder le blanc de la figure au-dessus d'eux.
-  // Le porter à l'espacement du corps collerait la légende au texte, et la
-  // figure paraîtrait appartenir au paragraphe d'après.
-  #show figure: set block(above: 0.6em, below: 1.2em)
-  // ⚠ LE FORMAT FERME DE CENT PAGES EST LEVÉ LE 15 AOÛT 2026, et les deux
-  // concessions qu'il avait coûtées sont RENDUES. Ce qui l'a levé n'est pas un
-  // renoncement : c'est une mesure. La troisième édition ajoute quatre notices et
-  // une trentaine de corrections dont trois portent contre des énoncés de
-  // l'ouvrage ; le rendu passait à 101 pages, et les tenir à cent aurait exigé
-  // soit de retrancher 288 mots d'argument, soit de descendre l'appareil à
-  // 8 pt. Les deux revenaient à payer un nombre rond avec de la lisibilité.
-  // Ce qui est RENDU, poste par poste :
-  //   — les MARGES, de 1,9 cm à 2,54 cm au pouce. Le calage du 12 août les
-  //     décrivait lui-même comme « le seul poste de cette édition qui abandonne
-  //     un réglage revendiqué » ; l'aveu valait engagement, et il est tenu. La
-  //     longueur de ligne repasse de 7 po à 6,5 po, ce qu'un corps de 11 pt
-  //     demande.
-  //   — l'APPAREIL, de 8,2 pt à 9 pt — tableaux, pseudocode, bibliographie et
-  //     liste numérotée. Neuf points est la pratique ordinaire d'un gabarit
-  //     d'article : un tableau et une bibliographie ne se composent pas au
-  //     corps du texte courant, mais ils ne se composent pas non plus au
-  //     plancher de ce que la mécanique permet.
-  // L'interligne reste à 13,6 pt, valeur EXACTE d'un article LaTeX 11 pt, et le
-  // corps reste à 11 pt : ces deux-là n'ont jamais cédé, à aucune édition.
-  // ⚠ Le nombre de pages n'est PLUS une cible, et aucune règle de ce bloc n'est
-  // là pour en tenir une. Retirer l'une d'elles change la composition, non la
-  // conformité — la porte de pagination de Python/check-traite.py RAPPORTE
-  // désormais le compte au lieu de le juger, et ne fait plus échouer que
-  // l'appariement des références.
+  // ═══════════════════════════════════════════════════════════════════════
+  //  RÉGLAGE COMMUN — traité, veille technologique, revue de littérature.
+  //  Ce bloc est IDENTIQUE dans les trois en-têtes, au rang des titres près
+  //  et aux deux règles propres au traité qui closent le sien — chacune dit
+  //  pourquoi. Les trois documents doivent se lire comme un seul ouvrage, et
+  //  toute reprise se fait sur les trois.
+  //
+  //  Géométrie, posée dans le YAML ci-dessus et rappelée ici parce qu'elle
+  //  commande tout le reste :
+  //    corps de texte    378 pt (5,25 po) — 612 moins deux marges de 117 pt,
+  //                      soit 75 à 79 signes par ligne à 11 pt.
+  //    interligne        14,3 pt — 0,95 × 0,65 em de blanc sur 11 pt de
+  //                      corps, soit 1,30 fois le corps.
+  //    hauteur composée  648 pt (9 po), 45 lignes.
+  //    Le bloc composé fait donc 378 × 648 pt : mêmes proportions, à 1 % près,
+  //    que l'article de référence (343 × 581 pt), qui compose 85 signes par
+  //    ligne sur un interligne de 1,20 là où celui-ci en compose 77 sur 1,30.
+  //
+  //  ⚠ `fontsize` VAUT 10 pt ET LE CORPS VAUT 11 pt. Ce n'est pas une
+  //  contradiction : le gabarit compose le bloc de titre et le résumé AVANT
+  //  d'entrer dans le document, donc à `fontsize`, et `include-before` remet
+  //  le corps à 11 pt dès la première ligne du texte. Le résumé se compose
+  //  ainsi un corps sous le texte, comme l'usage le veut — et surtout il
+  //  tient sur sa page : le gabarit pose le bloc de titre en FLOTTANT NON
+  //  SÉCABLE, et un résumé qui déborde est rogné sans que Pandoc ni Typst ne
+  //  le signalent. `4 - Veille/Python/check-resume.py` est la porte qui le
+  //  mesure, et elle est la seule.
+  //
+  //  ⚠ L'APPAREIL GARDE LA MESURE D'UN POUCE. Les dix-neuf figures du traité
+  //  sont gravées à 468 unités (figures/dessine.py, W = 468) et son
+  //  pseudocode aligne des lignes de 86 signes, soit 466 pt à 9 pt : l'un et
+  //  l'autre débordent d'un corps de 378 pt. `pad(x: -45pt)` rend aux
+  //  figures, aux tableaux et aux blocs de code les 468 pt (6,5 po) auxquels
+  //  ils ont été composés, centrés sur le corps, et laisse un pouce franc de
+  //  chaque côté. Retirer ce débord SANS régénérer les figures à la largeur
+  //  du corps les met à l'échelle de celui-ci et fait tomber leurs textes de
+  //  8,5 pt à 6,9 pt — la panne est silencieuse, elle ne se voit qu'au rendu.
+
+  // ── Folio : centré en pied, jamais sur la page de titre.
+  #set page(footer: context {
+    let n = counter(page).get().first()
+    if n > 1 { align(center)[#text(size: 10pt)[#n]] }
+  })
+
+  // ── Paragraphes : alinéa, pas de blanc intercalaire. Typst n'indente pas
+  //    le premier paragraphe d'un bloc ni celui qui suit un titre : c'est
+  //    exactement la convention d'un `article`, ne pas passer `all: true`.
+  #set par(spacing: 0.6em, first-line-indent: 1.5em)
+
+  // ── Emphase : le gras dénote un TERME, pas une proposition. ⚠ SEUL POSTE
+  //    OÙ LE GABARIT CORRIGE LA SOURCE, et il ne lui retire rien : le texte
+  //    reste entier, seule la graisse tombe.
+  //    Relevé sur les rendus du 15 août, même réglage pour les trois :
+  //    1,9 % des signes du traité composés en gras, 10,7 % de la veille,
+  //    10,5 % de la revue — et jusqu’à 33,9 % sur une page. À ces densités le
+  //    gras ne signale plus, il tache : deux lecteurs indépendants, en
+  //    comparaison à l’aveugle, ont décrit la même page en « plaques noires
+  //    réparties au hasard de la colonne », lue de tache en tache au lieu
+  //    d’être parcourue — le traité, à 0,5 % dans son texte courant, a gagné
+  //    le même tour sans qu’aucun lecteur ne mentionne sa graisse.
+  //    Le critère est la LARGEUR, parce que c’est elle que l’œil voit — un
+  //    compte de mots ne distingue pas un terme d’une incise. En deçà de
+  //    14 em (154 pt à 11 pt, deux cinquièmes de la mesure, ≈ 29 signes), le
+  //    gras est un repère ponctuel et se conserve ; au-delà il fait plaque et
+  //    se rend au romain. Mesuré en gras à 11 pt : « Le moteur comme
+  //    client. » 138 pt et « Ce que la revue renvoie. » 135 pt passent — les
+  //    titres courants d’entrée de paragraphe tiennent, et ce sont eux qui
+  //    donnent le rythme de la page ; « prépublication non révisée par les
+  //    pairs » 219 pt, « Un socle achevé, à une révision près. » 204 pt et
+  //    toute ouverture de section de deux lignes et demie tombent. L’échantillon
+  //    ne montre rien entre 138 et 169 pt : le seuil est posé dans ce creux.
+  //    ⚠ EN EM, PAS EN POINTS : le seuil vaut 126 pt dans les tableaux, qui
+  //    composent à 9 pt, soit le même nombre de signes qu’à 11 pt.
+  //    ⚠ `measure` mesure le corps HORS du gras qui l’enveloppe, donc à 3 %
+  //    près en dessous de sa largeur composée. C’est un seuil, pas une cote.
+  //    ⚠ Précédent maison : `2 - Compendium/build/accentuation.lua` tranche la
+  //    même chose au filtre Pandoc, au compte de mots. La règle vit ici et non
+  //    dans un filtre parce que les trois chaînes d’appel de Pandoc ne portent
+  //    pas de `--lua-filter` et ne doivent pas en porter.
+  #show strong: it => context {
+    if measure(it.body).width < 14em.to-absolute() { it }
+    else { text(weight: "regular", it.body) }
+  }
+
+  // ── Titres : c'est le blanc AU-DESSUS qui fait la hiérarchie, pas le corps.
+  #show heading: set text(hyphenate: false)
+  #show heading: set par(justify: false, first-line-indent: 0pt)
+  #show heading: set block(sticky: true)
+
+  // ── Appareil : tableaux, blocs de code et légendes à 9 pt, légendes ferrées
+  //    à gauche et collées à ce qu'elles légendent.
   #show figure.where(kind: table): set text(size: 9pt)
   #show raw.where(block: true): set text(size: 9pt)
-  // Les 123 notices de références sont la SEULE liste numérotée du document —
-  // vérifié : 123 lignes en « n. » pour 123 notices. Le corps n'en porte aucune.
-  #show enum: set text(size: 9pt)
-  // ⚠ RÈGLE DE PARAGRAPHE, POSÉE LE 13 AOÛT 2026 ET CONSERVÉE — elle a d'abord
-  // servi à tenir cent pages, mais elle ne se justifie pas par là et survit
-  // donc à la levée du format ferme : elle ALIGNE le document sur le gabarit
-  // qu'il revendique. Les 338 paragraphes du corps étaient
-  // séparés par un blanc de 1,2 em — 4 462 pt cumulés, soit près de sept
-  // pages de blanc — alors que le gabarit revendiqué dans l'en-tête, l'article
-  // LaTeX, ne sépare pas ses paragraphes : il les marque d'un alinéa et les
-  // laisse courir. La règle ci-dessous ramène l'espacement à l'interligne et
-  // pose l'alinéa. Typst n'indente pas le premier paragraphe après un titre,
-  // ce qui est exactement la convention LaTeX — ne pas passer `all: true`.
-  #set par(spacing: 0.558em, first-line-indent: 1.5em)
-  // ⚠ Les blocs d'appareil GARDENT leur respiration : un tableau ou un bloc de
-  // pseudocode collé au texte à 0,56 em se lit comme une continuation du
-  // paragraphe. Ces deux règles reprennent environ une page sur les 94 blocs.
-  #show raw.where(block: true): set block(above: 1.2em, below: 1.2em)
-  #show figure.where(kind: table): set block(above: 1.2em, below: 1.2em)
-  // La table des matières tient sur UNE page : 8 chapitres et 24 sous-sections
-  // aux intitulés longs débordaient d'une ligne sur la page suivante au corps
-  // du texte. ⚠ 10,5 pt EST LE PLAFOND de ce réglage, et il est serré : la
-  // table occupe alors 49 lignes et finit à 46,8 pt au-dessus de la marge
-  // basse. À 11 pt — le corps du document — les intitulés se replient une
-  // ligne de plus chacun et la table repasse à deux pages. Elle a été composée
-  // à 9 pt le 13 août 2026, puis relevée le même jour : à 9 pt elle tenait
-  // avec 171 pt de dégagement, et se lisait plus petit que l'appareil.
-  #show outline: set text(size: 10.5pt)
-  // ⚠ Et elle garde sa page : sans cette règle, la table compactée à 9 pt
-  // libère assez de place pour que l'introduction commence sous elle.
-  #show outline: it => { it; pagebreak() }
+  #show figure.caption: set text(size: 9pt)
+  #show figure.caption: set par(justify: false, first-line-indent: 0pt)
+  #show figure.caption: set block(sticky: true)
+  //    ⚠ La légende revient sur la MESURE DU TEXTE. Le débord de 45 pt vaut
+  //    pour ce qui est gravé large — figures, tableaux, pseudocode —, pas pour
+  //    la phrase qui les nomme : un lecteur l'a vue « ferrée sur le tableau et
+  //    non sur le texte », et elle l'était, son fer tombant 45 pt à gauche de
+  //    la colonne. `pad(x: 45pt)` annule ici, pour la seule légende, le
+  //    `pad(x: -45pt)` posé plus bas sur la figure entière : elle se compose
+  //    donc sur 378 pt, au fer du texte courant, sous un appareil qui garde
+  //    ses 468 pt. ⚠ Le compte est exact quand la figure OCCUPE ses 468 pt,
+  //    c'est-à-dire toujours sauf pour un tableau que Pandoc laisse en
+  //    colonnes automatiques : celui-là se rétrécit à son contenu, Typst le
+  //    centre, et sa légende suit le bloc rétréci — 1 légende sur 54, décalée
+  //    de 11,4 pt, mesurée sur la légende des sigles de la veille. ⚠ NE PAS
+  //    écrire ici « tableau » suivi d'un nombre : `check-revue.py` lit tout le
+  //    fichier, en-tête compris, et prend le mot pour un renvoi hors plage.
+  #show figure.caption: set align(left)
+  #show figure.caption: it => pad(x: 45pt, it)
+
+  // ── Tableaux : en drapeau, ferrés en haut. ⚠ La justification dans une
+  //    colonne de seize signes ouvre des lézardes et force la césure à chaque
+  //    ligne : c'est ce qui rendait la page 12 de la veille illisible. Le
+  //    centrage vertical, lui, faisait flotter chaque cellule au milieu de la
+  //    rangée, sans ligne de base commune d'une colonne à l'autre.
+  #set table(inset: (x: 5pt, y: 4pt))
+  #show table.cell: set par(justify: false, first-line-indent: 0pt, leading: 0.5em)
+  //    ⚠ Le FER HORIZONTAL, lui, échappe à cette règle : l'argument `align:`
+  //    que Pandoc pose sur chaque tableau l'emporte, et un `left` écrit ici
+  //    serait sans effet. Il n'est pour autant PAS TOUJOURS CELUI QUE LA
+  //    SOURCE DÉCLARE, contrairement à ce que ce commentaire a dit jusqu'au
+  //    16 août 2026 — relevé sur le typst intermédiaire des trois : les 24
+  //    tableaux de la veille déclarent le leur colonne par colonne (11 ferrés
+  //    à gauche, 13 centrés) et l'obtiennent ; les 22 du traité et les 8 de la
+  //    revue ne déclarent rien, Pandoc y pose `auto`, et `auto` hérite du
+  //    `align(center)` dont Pandoc enveloppe tout tableau. Ces trente-là sont
+  //    donc centrés par défaut d'appel et non par choix, cellules de trois
+  //    lignes comprises. Les reprendre au fer à gauche tient en un mot ici
+  //    (`top + left`), mais fait refluer trente tableaux et deux paginations :
+  //    c'est un arbitrage ouvert, pas un résidu de tour, et il se tranche sur
+  //    les sources, où le fer se déclare.
+  #show table.cell: set align(top)
+
+  // ── Blocs : figures, tableaux, code et listes respirent, et se scindent.
+  #show figure: set block(breakable: true, above: 1.4em, below: 1.4em)
+  #show raw.where(block: true): set block(above: 1.4em, below: 1.4em)
+  #show enum: set block(above: 1.0em, below: 1.0em)
+  #show list: set block(above: 1.0em, below: 1.0em)
+  #set image(width: 100%)
+
+  // ── Débord de l'appareil — cf. l'avertissement en tête de bloc.
+  #show figure: it => pad(x: -45pt, it)
+  #show raw.where(block: true): it => pad(x: -45pt, it)
+
+  // ── Bibliographies : le bloc `::: {#refs}` que Pandoc pose autour de la liste
+  //    de notices. ⚠ C'EST LE SEUL ENDROIT OÙ UNE RÈGLE SUR `enum` PUISSE ÊTRE
+  //    COMMUNE AUX TROIS : hors de lui, la veille porte 44 items de liste
+  //    numérotée dans son corps, qu'une règle générale atteindrait du même
+  //    geste. Le traité a reçu le `:::` le 16 août 2026 — sa liste de
+  //    références était nue, elle sort désormais du même mécanisme que les
+  //    deux autres, sans qu'une notice ni une référence bouge.
+  //    Deux défauts mesurés sur les rendus du 15 août, tous deux propres aux
+  //    bibliographies, et un lecteur en aveugle les a nommés ensemble : « une
+  //    nappe continue », « une seule colonne grise » où rien ne marque le début
+  //    d'une notice sauf le chiffre, et des trous verticaux dans les lignes.
+  //
+  //    ① LES NOTICES SE TOUCHAIENT. `par.spacing` vaut 0,6 em, soit 6,6 pt ;
+  //      l'interligne vaut 0,95 × 0,65 em, soit 6,79 pt. Le blanc entre deux
+  //      notices était donc PLUS PETIT que celui entre deux lignes d'une même
+  //      notice — mesuré page 98 de la veille : 14,11 pt de ligne de base à
+  //      ligne de base d'une notice à la suivante, contre 14,31 pt à
+  //      l'intérieur d'une notice. Treize notices y tenaient 46 lignes sans un
+  //      blanc. 1,15 em (12,65 pt) porte ce blanc à 1,9 fois l'interligne.
+  //      Le renfoncement pendant, lui, ne bouge pas : Typst ferre déjà les
+  //      numéros à droite d'une colonne commune de 25 pt (2,3 em) — ce qui lui
+  //      manquait pour se voir était le blanc au-dessus, pas de la largeur.
+  //
+  //    ② LES NOTICES SE FERRENT EN DRAPEAU, comme les tableaux et pour la même
+  //      raison. ⚠ CE N'EST PAS LA JUSTIFICATION DU CORPS QUI EST EN CAUSE, et
+  //      elle n'est pas touchée : c'est la rencontre de la justification et
+  //      d'une URL. Le lecteur a mis les trous sur le compte d'« URL
+  //      insécables » ; c'est FAUX, et la mesure le dit — Typst coupe déjà aux
+  //      barres obliques, et une règle qui en ouvrait d'autres explicitement
+  //      (`h(0pt)` après chaque barre) rendait le MÊME PDF, aux mêmes coupures,
+  //      sur les 1 637 lignes de la bibliographie de la veille. Le vrai
+  //      mécanisme est ailleurs : une ligne dont l'essentiel est une URL ne
+  //      porte qu'un ou deux blancs, la justification y verse tout son mou, et
+  //      la coupure optimisée de Typst en reporte une part sur les lignes
+  //      VOISINES pour égaliser — d'où des trous à trois lignes de l'URL qui
+  //      les cause. Mesuré sur la bibliographie de la veille, blanc naturel de
+  //      3,06 pt : justifiée, 51,6 % des lignes passent 1,5 fois ce blanc,
+  //      3,4 % le passent trois fois, la pire ligne l'ouvre à 19,2 pt, six
+  //      fois sa valeur. `linebreaks: "simple"` aggrave (64,3 % à 1,5 fois) :
+  //      il concentre le mou au lieu de l'étaler, il ne le supprime pas. En
+  //      drapeau il n'y a plus de mou du tout, et le bord droit d'une notice
+  //      reste peu dentelé parce que les lignes sont naturellement pleines.
+  //      C'est la règle déjà écrite plus haut pour les tableaux, appliquée où
+  //      elle vaut aussi. ⚠ LE CORPS DES TROIS DOCUMENTS RESTE JUSTIFIÉ.
+  #show <refs>: it => {
+    set enum(spacing: 1.15em)
+    set par(justify: false)
+    it
+  }
+
+  // ── Table des matières : sa propre page, à 9 pt — le corps de l'appareil.
+  #show outline: set text(size: 9pt)
+  #show outline: it => [#pagebreak(weak: true) #it #pagebreak(weak: true)]
+
+  // ── Rang typographique des titres. ⚠ SEUL POSTE OÙ LE BLOC DIFFÈRE D'UN
+  //    DOCUMENT À L'AUTRE, et il n'a pas le choix : le traité ouvre ses huit
+  //    chapitres en `##` (niveau 2) et ses sections en `###`, là où la veille
+  //    et la revue ouvrent les leurs en `#`. C'est le RANG qui doit se
+  //    composer pareil, pas le niveau ; l'échelle ci-dessous est celle des
+  //    deux autres documents, décalée d'un cran. Le traité ne porte aucun
+  //    titre de niveau 1 — vérifié : 11 titres de niveau 2, 24 de niveau 3.
+  //    ⚠ EN POINTS, PAS EN EM : Typst a déjà mis le titre à l'échelle de son
+  //    niveau quand cette règle s'applique, et un « 1.30em » s'y multiplie au
+  //    lieu de s'y substituer — le rang 1 sortait à 20 pt au lieu de 14.
+  #show heading.where(level: 2): set text(size: 14pt)
+  #show heading.where(level: 2): set block(above: 1.7em, below: 0.6em)
+  #show heading.where(level: 3): set text(size: 12.5pt)
+  #show heading.where(level: 3): set block(above: 1.6em, below: 0.55em)
+
+  // ── Propre au traité : ses dix-neuf figures portent leur numéro DANS leur
+  //    légende, comme ses huit chapitres portent le leur dans leur titre.
+  //    Sans cette règle, Typst numérote par-dessus et rend « Fig. 3. –
+  //    Figure 2.1c — … ».
+  #show figure.where(kind: image): set figure(numbering: none)
+
+  // ── Les 123 notices de références du traité sont la SEULE liste numérotée
+  //    du document — vérifié : 123 lignes en « n. » pour 123 notices, et le
+  //    corps n'en porte aucune. ⚠ `Python/check-traite.py` LIT ce compte
+  //    ICI, dans cette phrase : qui ajoute une notice met à jour cette ligne,
+  //    sinon la porte d'appariement échoue. La phrase servait aussi à
+  //    justifier `#show enum: set text(size: 9pt)`, RETIRÉ le 15 août 2026 :
+  //    l'appareil réduit des trois documents s'arrête aux tableaux, aux blocs
+  //    de code et aux légendes. Une règle GÉNÉRALE sur `enum` ne peut pas être
+  //    commune, parce que la veille porte 44 items de liste numérotée dans son
+  //    corps — la sienne les rapetisserait avec sa bibliographie. Entre un
+  //    traité à l'appareil plus serré que les deux autres et trois
+  //    bibliographies au corps du texte, c'est la seconde qui se lit comme un
+  //    seul ouvrage. ⚠ CE N'EST PLUS LE DERNIER MOT depuis le 16 août 2026 :
+  //    une règle sur `enum` PORTÉE AU BLOC `<refs>` est, elle, commune aux
+  //    trois, et c'est par là que passe l'espacement des notices — voir la
+  //    section « Bibliographies » du réglage commun ci-dessus.
+  ```
+include-before: |
+  ```{=typst}
+  // ⚠ LE CORPS DU DOCUMENT COMPOSE À 11 pt. `fontsize: 10pt` dans le YAML ne
+  // vaut que pour le bloc de titre et le résumé, que le gabarit compose avant
+  // d'entrer ici. Voir l'avertissement en tête de `header-includes`.
+  #set text(size: 11pt)
   ```
 ---
 
@@ -1586,6 +1748,7 @@ Les sept premiers chapitres ont été rédigés indépendamment les uns des autr
 
 ## Références {-}
 
+::: {#refs}
 1. Fischer, M. J., Lynch, N. A., Paterson, M. S. « Impossibility of Distributed Consensus with One Faulty Process ». *Journal of the ACM*, vol. 32, n° 2, p. 374-382, avril 1985. URL consultée : https://groups.csail.mit.edu/tds/papers/Lynch/jacm85.pdf
 2. Gilbert, S., Lynch, N. « Brewer's Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web Services ». *ACM SIGACT News*, vol. 33, n° 2, p. 51-59, 2002. Bulletin trimestriel, articles techniques non arbitrés. https://www.comp.nus.edu.sg/~gilbert/pubs/BrewersConjecture-SigAct.pdf
 3. Gunther, N. J. « A General Theory of Computational Scalability Based on Rational Functions ». Prépublication arXiv:0808.1431v2, cs.PF, 25 août 2008. https://arxiv.org/abs/0808.1431
@@ -1709,3 +1872,4 @@ Les sept premiers chapitres ont été rédigés indépendamment les uns des autr
 121. Bhardwaj, V. P., Singh, G., Bhardwaj, A. P. *Agent Behavioral Contracts II: Certifying Compositional Reliability Without Assuming Independence*. Prépublication arXiv:2608.12895v1, cs.AI, 13 août 2026 ; non revue par les pairs, banc des auteurs, non répliquée. Co-échec sur 90,0 % des missions où l'une échoue, phi 0,916, sur 18 000 missions notées par code déterministe sans juge automatique ; six contrastes sur six ; nul préenregistré au changement de fournisseur. https://arxiv.org/abs/2608.12895
 122. Parlement européen et Conseil de l'Union européenne. « Règlement (UE) 2024/1689 du 13 juin 2024 établissant des règles harmonisées concernant l'intelligence artificielle ». *Journal officiel de l'Union européenne*, 12 juillet 2024. Article 50, paragraphe 1 ; texte contraignant, applicable depuis le 2 août 2026. URL consultée : https://eur-lex.europa.eu/eli/reg/2024/1689/oj
 123. Commission européenne. « Guidelines on the implementation of the transparency obligations for certain AI systems under Article 50 of the AI Act ». Lignes directrices adoptées le 20 juillet 2026, mention *Commission Use*. URL consultée : https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems — *instrument interprétatif non contraignant ; seule la Cour de justice de l'Union européenne donne une interprétation faisant autorité.*
+:::

@@ -36,13 +36,20 @@ from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent
 
-W = 468                       # largeur du corps, en points
-# ⚠ 468 pt = 6,5 po = le corps composé aux marges de 2,54 cm, celles de la
-# troisième édition (15 août 2026). La deuxième composait à 1,9 cm, soit un
-# corps de 504,3 pt. CETTE CONSTANTE SUIT LA MARGE — les deux se changent
-# ensemble, faute de quoi `#set image(width: 100%)` met la figure à l'échelle
-# du corps et ses textes avec elle : 504 dans un corps de 468 les comprime de
-# 7,2 %.
+W = 468                       # largeur de l'appareil, en points
+# ⚠ 468 pt = 6,5 po. ELLE NE SUIT PLUS LA MARGE, ET C'EST NOUVEAU. Jusqu'au
+# 15 août 2026 elle valait la largeur du CORPS DE TEXTE — 504 pt aux marges de
+# 1,9 cm, puis 468 pt à celles de 2,54 cm. Depuis la recomposition des trois
+# documents du dépôt sur une géométrie commune, le corps ne fait plus que
+# 378 pt (marges de 117 pt) et la figure n'y tient pas : l'en-tête du traité
+# rend aux figures, aux tableaux et aux blocs de code leurs 468 pt par un
+# `pad(x: -45pt)` qui les fait déborder d'un pouce et demi de part et d'autre,
+# et c'est CETTE largeur-là que la constante suit désormais. Les deux se
+# changent donc toujours ensemble, mais le vis-à-vis a changé : c'est le
+# `-45pt` de l'en-tête, non la marge, qui commande. Faute de quoi
+# `#set image(width: 100%)` met la figure à l'échelle du bloc qui la contient
+# et ses textes avec elle — 468 dans un corps de 378 les comprimerait de 19 %,
+# et leurs 8,5 pt tomberaient à 6,9.
 # ⚠⚠ ET ELLE NE SUFFIT PAS : les SVG sont des ARTEFACTS, pas des vues. Le
 # dépôt a porté du 13 au 15 août 2026 une constante à 468 et dix-neuf figures
 # gravées à 504 — le générateur et ses produits divergeaient sans que rien ne

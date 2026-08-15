@@ -20,7 +20,13 @@ from pathlib import Path
 # a tape.
 DEFAUT = Path(__file__).resolve().parent.parent / 'Veille Technologique.pdf'
 
-MARGE_BASSE = 73.7   # 2,6 cm, valeur de l'en-tete YAML
+# ⚠ MISE A JOUR DU 15 AOUT 2026 : 73,7 pt (2,6 cm) -> 72 pt (1 po). Les trois
+# documents du depot ont ete recomposes sur une meme geometrie — marges de
+# 117 pt en x et 72 pt en y —, et c'est la marge basse qui a bouge, pas la
+# regle. Cette valeur SUIT LE YAML : elle se relit dans `margin.y` des trois
+# en-tetes, et un controle qui garderait l'ancienne mesurerait un degagement
+# faux de 1,7 pt dans le sens complaisant.
+MARGE_BASSE = 72.0   # 1 po, valeur de l'en-tete YAML (`margin: y: 72pt`)
 DEGAGEMENT = 10.0    # sous ce seuil, le resume frole la marge : on alerte
 
 

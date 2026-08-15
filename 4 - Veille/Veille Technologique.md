@@ -7,11 +7,12 @@ author:
 lang: fr
 region: CA
 papersize: us-letter
-fontsize: 11pt
+fontsize: 10pt
+linestretch: 0.95
 mainfont: "New Computer Modern"
 margin:
-  x: 2.8cm
-  y: 2.6cm
+  x: 117pt
+  y: 72pt
 section-numbering: "1.1.1"
 abstract-title: "Résumé"
 abstract: |
@@ -25,15 +26,228 @@ abstract: |
 
 header-includes: |
   ```{=typst}
-  #show outline: it => [#pagebreak(weak: true) #it]
+  // ═══════════════════════════════════════════════════════════════════════
+  //  RÉGLAGE COMMUN — traité, veille technologique, revue de littérature.
+  //  Ce bloc est IDENTIQUE dans les trois en-têtes, au rang des titres près
+  //  et aux deux règles propres au traité qui closent le sien — chacune dit
+  //  pourquoi. Les trois documents doivent se lire comme un seul ouvrage, et
+  //  toute reprise se fait sur les trois.
+  //
+  //  Géométrie, posée dans le YAML ci-dessus et rappelée ici parce qu'elle
+  //  commande tout le reste :
+  //    corps de texte    378 pt (5,25 po) — 612 moins deux marges de 117 pt,
+  //                      soit 75 à 79 signes par ligne à 11 pt.
+  //    interligne        14,3 pt — 0,95 × 0,65 em de blanc sur 11 pt de
+  //                      corps, soit 1,30 fois le corps.
+  //    hauteur composée  648 pt (9 po), 45 lignes.
+  //    Le bloc composé fait donc 378 × 648 pt : mêmes proportions, à 1 % près,
+  //    que l'article de référence (343 × 581 pt), qui compose 85 signes par
+  //    ligne sur un interligne de 1,20 là où celui-ci en compose 77 sur 1,30.
+  //
+  //  ⚠ `fontsize` VAUT 10 pt ET LE CORPS VAUT 11 pt. Ce n'est pas une
+  //  contradiction : le gabarit compose le bloc de titre et le résumé AVANT
+  //  d'entrer dans le document, donc à `fontsize`, et `include-before` remet
+  //  le corps à 11 pt dès la première ligne du texte. Le résumé se compose
+  //  ainsi un corps sous le texte, comme l'usage le veut — et surtout il
+  //  tient sur sa page : le gabarit pose le bloc de titre en FLOTTANT NON
+  //  SÉCABLE, et un résumé qui déborde est rogné sans que Pandoc ni Typst ne
+  //  le signalent. `4 - Veille/Python/check-resume.py` est la porte qui le
+  //  mesure, et elle est la seule.
+  //
+  //  ⚠ L'APPAREIL GARDE LA MESURE D'UN POUCE. Les dix-neuf figures du traité
+  //  sont gravées à 468 unités (figures/dessine.py, W = 468) et son
+  //  pseudocode aligne des lignes de 86 signes, soit 466 pt à 9 pt : l'un et
+  //  l'autre débordent d'un corps de 378 pt. `pad(x: -45pt)` rend aux
+  //  figures, aux tableaux et aux blocs de code les 468 pt (6,5 po) auxquels
+  //  ils ont été composés, centrés sur le corps, et laisse un pouce franc de
+  //  chaque côté. Retirer ce débord SANS régénérer les figures à la largeur
+  //  du corps les met à l'échelle de celui-ci et fait tomber leurs textes de
+  //  8,5 pt à 6,9 pt — la panne est silencieuse, elle ne se voit qu'au rendu.
+
+  // ── Folio : centré en pied, jamais sur la page de titre.
   #set page(footer: context {
     let n = counter(page).get().first()
-    if n > 1 { align(center)[#n] }
+    if n > 1 { align(center)[#text(size: 10pt)[#n]] }
   })
-  #show figure: set block(breakable: true)
-  #show figure.where(kind: table): set block(above: 1.2em, below: 1.2em)
+
+  // ── Paragraphes : alinéa, pas de blanc intercalaire. Typst n'indente pas
+  //    le premier paragraphe d'un bloc ni celui qui suit un titre : c'est
+  //    exactement la convention d'un `article`, ne pas passer `all: true`.
+  #set par(spacing: 0.6em, first-line-indent: 1.5em)
+
+  // ── Emphase : le gras dénote un TERME, pas une proposition. ⚠ SEUL POSTE
+  //    OÙ LE GABARIT CORRIGE LA SOURCE, et il ne lui retire rien : le texte
+  //    reste entier, seule la graisse tombe.
+  //    Relevé sur les rendus du 15 août, même réglage pour les trois :
+  //    1,9 % des signes du traité composés en gras, 10,7 % de la veille,
+  //    10,5 % de la revue — et jusqu’à 33,9 % sur une page. À ces densités le
+  //    gras ne signale plus, il tache : deux lecteurs indépendants, en
+  //    comparaison à l’aveugle, ont décrit la même page en « plaques noires
+  //    réparties au hasard de la colonne », lue de tache en tache au lieu
+  //    d’être parcourue — le traité, à 0,5 % dans son texte courant, a gagné
+  //    le même tour sans qu’aucun lecteur ne mentionne sa graisse.
+  //    Le critère est la LARGEUR, parce que c’est elle que l’œil voit — un
+  //    compte de mots ne distingue pas un terme d’une incise. En deçà de
+  //    14 em (154 pt à 11 pt, deux cinquièmes de la mesure, ≈ 29 signes), le
+  //    gras est un repère ponctuel et se conserve ; au-delà il fait plaque et
+  //    se rend au romain. Mesuré en gras à 11 pt : « Le moteur comme
+  //    client. » 138 pt et « Ce que la revue renvoie. » 135 pt passent — les
+  //    titres courants d’entrée de paragraphe tiennent, et ce sont eux qui
+  //    donnent le rythme de la page ; « prépublication non révisée par les
+  //    pairs » 219 pt, « Un socle achevé, à une révision près. » 204 pt et
+  //    toute ouverture de section de deux lignes et demie tombent. L’échantillon
+  //    ne montre rien entre 138 et 169 pt : le seuil est posé dans ce creux.
+  //    ⚠ EN EM, PAS EN POINTS : le seuil vaut 126 pt dans les tableaux, qui
+  //    composent à 9 pt, soit le même nombre de signes qu’à 11 pt.
+  //    ⚠ `measure` mesure le corps HORS du gras qui l’enveloppe, donc à 3 %
+  //    près en dessous de sa largeur composée. C’est un seuil, pas une cote.
+  //    ⚠ Précédent maison : `2 - Compendium/build/accentuation.lua` tranche la
+  //    même chose au filtre Pandoc, au compte de mots. La règle vit ici et non
+  //    dans un filtre parce que les trois chaînes d’appel de Pandoc ne portent
+  //    pas de `--lua-filter` et ne doivent pas en porter.
+  #show strong: it => context {
+    if measure(it.body).width < 14em.to-absolute() { it }
+    else { text(weight: "regular", it.body) }
+  }
+
+  // ── Titres : c'est le blanc AU-DESSUS qui fait la hiérarchie, pas le corps.
+  #show heading: set text(hyphenate: false)
+  #show heading: set par(justify: false, first-line-indent: 0pt)
+  #show heading: set block(sticky: true)
+
+  // ── Appareil : tableaux, blocs de code et légendes à 9 pt, légendes ferrées
+  //    à gauche et collées à ce qu'elles légendent.
+  #show figure.where(kind: table): set text(size: 9pt)
+  #show raw.where(block: true): set text(size: 9pt)
+  #show figure.caption: set text(size: 9pt)
+  #show figure.caption: set par(justify: false, first-line-indent: 0pt)
   #show figure.caption: set block(sticky: true)
-  #show table.cell: set align(center + horizon)
+  //    ⚠ La légende revient sur la MESURE DU TEXTE. Le débord de 45 pt vaut
+  //    pour ce qui est gravé large — figures, tableaux, pseudocode —, pas pour
+  //    la phrase qui les nomme : un lecteur l'a vue « ferrée sur le tableau et
+  //    non sur le texte », et elle l'était, son fer tombant 45 pt à gauche de
+  //    la colonne. `pad(x: 45pt)` annule ici, pour la seule légende, le
+  //    `pad(x: -45pt)` posé plus bas sur la figure entière : elle se compose
+  //    donc sur 378 pt, au fer du texte courant, sous un appareil qui garde
+  //    ses 468 pt. ⚠ Le compte est exact quand la figure OCCUPE ses 468 pt,
+  //    c'est-à-dire toujours sauf pour un tableau que Pandoc laisse en
+  //    colonnes automatiques : celui-là se rétrécit à son contenu, Typst le
+  //    centre, et sa légende suit le bloc rétréci — 1 légende sur 54, décalée
+  //    de 11,4 pt, mesurée sur la légende des sigles de la veille. ⚠ NE PAS
+  //    écrire ici « tableau » suivi d'un nombre : `check-revue.py` lit tout le
+  //    fichier, en-tête compris, et prend le mot pour un renvoi hors plage.
+  #show figure.caption: set align(left)
+  #show figure.caption: it => pad(x: 45pt, it)
+
+  // ── Tableaux : en drapeau, ferrés en haut. ⚠ La justification dans une
+  //    colonne de seize signes ouvre des lézardes et force la césure à chaque
+  //    ligne : c'est ce qui rendait la page 12 de la veille illisible. Le
+  //    centrage vertical, lui, faisait flotter chaque cellule au milieu de la
+  //    rangée, sans ligne de base commune d'une colonne à l'autre.
+  #set table(inset: (x: 5pt, y: 4pt))
+  #show table.cell: set par(justify: false, first-line-indent: 0pt, leading: 0.5em)
+  //    ⚠ Le FER HORIZONTAL, lui, échappe à cette règle : l'argument `align:`
+  //    que Pandoc pose sur chaque tableau l'emporte, et un `left` écrit ici
+  //    serait sans effet. Il n'est pour autant PAS TOUJOURS CELUI QUE LA
+  //    SOURCE DÉCLARE, contrairement à ce que ce commentaire a dit jusqu'au
+  //    16 août 2026 — relevé sur le typst intermédiaire des trois : les 24
+  //    tableaux de la veille déclarent le leur colonne par colonne (11 ferrés
+  //    à gauche, 13 centrés) et l'obtiennent ; les 22 du traité et les 8 de la
+  //    revue ne déclarent rien, Pandoc y pose `auto`, et `auto` hérite du
+  //    `align(center)` dont Pandoc enveloppe tout tableau. Ces trente-là sont
+  //    donc centrés par défaut d'appel et non par choix, cellules de trois
+  //    lignes comprises. Les reprendre au fer à gauche tient en un mot ici
+  //    (`top + left`), mais fait refluer trente tableaux et deux paginations :
+  //    c'est un arbitrage ouvert, pas un résidu de tour, et il se tranche sur
+  //    les sources, où le fer se déclare.
+  #show table.cell: set align(top)
+
+  // ── Blocs : figures, tableaux, code et listes respirent, et se scindent.
+  #show figure: set block(breakable: true, above: 1.4em, below: 1.4em)
+  #show raw.where(block: true): set block(above: 1.4em, below: 1.4em)
+  #show enum: set block(above: 1.0em, below: 1.0em)
+  #show list: set block(above: 1.0em, below: 1.0em)
+  #set image(width: 100%)
+
+  // ── Débord de l'appareil — cf. l'avertissement en tête de bloc.
+  #show figure: it => pad(x: -45pt, it)
+  #show raw.where(block: true): it => pad(x: -45pt, it)
+
+  // ── Bibliographies : le bloc `::: {#refs}` que Pandoc pose autour de la liste
+  //    de notices. ⚠ C'EST LE SEUL ENDROIT OÙ UNE RÈGLE SUR `enum` PUISSE ÊTRE
+  //    COMMUNE AUX TROIS : hors de lui, la veille porte 44 items de liste
+  //    numérotée dans son corps, qu'une règle générale atteindrait du même
+  //    geste. Le traité a reçu le `:::` le 16 août 2026 — sa liste de
+  //    références était nue, elle sort désormais du même mécanisme que les
+  //    deux autres, sans qu'une notice ni une référence bouge.
+  //    Deux défauts mesurés sur les rendus du 15 août, tous deux propres aux
+  //    bibliographies, et un lecteur en aveugle les a nommés ensemble : « une
+  //    nappe continue », « une seule colonne grise » où rien ne marque le début
+  //    d'une notice sauf le chiffre, et des trous verticaux dans les lignes.
+  //
+  //    ① LES NOTICES SE TOUCHAIENT. `par.spacing` vaut 0,6 em, soit 6,6 pt ;
+  //      l'interligne vaut 0,95 × 0,65 em, soit 6,79 pt. Le blanc entre deux
+  //      notices était donc PLUS PETIT que celui entre deux lignes d'une même
+  //      notice — mesuré page 98 de la veille : 14,11 pt de ligne de base à
+  //      ligne de base d'une notice à la suivante, contre 14,31 pt à
+  //      l'intérieur d'une notice. Treize notices y tenaient 46 lignes sans un
+  //      blanc. 1,15 em (12,65 pt) porte ce blanc à 1,9 fois l'interligne.
+  //      Le renfoncement pendant, lui, ne bouge pas : Typst ferre déjà les
+  //      numéros à droite d'une colonne commune de 25 pt (2,3 em) — ce qui lui
+  //      manquait pour se voir était le blanc au-dessus, pas de la largeur.
+  //
+  //    ② LES NOTICES SE FERRENT EN DRAPEAU, comme les tableaux et pour la même
+  //      raison. ⚠ CE N'EST PAS LA JUSTIFICATION DU CORPS QUI EST EN CAUSE, et
+  //      elle n'est pas touchée : c'est la rencontre de la justification et
+  //      d'une URL. Le lecteur a mis les trous sur le compte d'« URL
+  //      insécables » ; c'est FAUX, et la mesure le dit — Typst coupe déjà aux
+  //      barres obliques, et une règle qui en ouvrait d'autres explicitement
+  //      (`h(0pt)` après chaque barre) rendait le MÊME PDF, aux mêmes coupures,
+  //      sur les 1 637 lignes de la bibliographie de la veille. Le vrai
+  //      mécanisme est ailleurs : une ligne dont l'essentiel est une URL ne
+  //      porte qu'un ou deux blancs, la justification y verse tout son mou, et
+  //      la coupure optimisée de Typst en reporte une part sur les lignes
+  //      VOISINES pour égaliser — d'où des trous à trois lignes de l'URL qui
+  //      les cause. Mesuré sur la bibliographie de la veille, blanc naturel de
+  //      3,06 pt : justifiée, 51,6 % des lignes passent 1,5 fois ce blanc,
+  //      3,4 % le passent trois fois, la pire ligne l'ouvre à 19,2 pt, six
+  //      fois sa valeur. `linebreaks: "simple"` aggrave (64,3 % à 1,5 fois) :
+  //      il concentre le mou au lieu de l'étaler, il ne le supprime pas. En
+  //      drapeau il n'y a plus de mou du tout, et le bord droit d'une notice
+  //      reste peu dentelé parce que les lignes sont naturellement pleines.
+  //      C'est la règle déjà écrite plus haut pour les tableaux, appliquée où
+  //      elle vaut aussi. ⚠ LE CORPS DES TROIS DOCUMENTS RESTE JUSTIFIÉ.
+  #show <refs>: it => {
+    set enum(spacing: 1.15em)
+    set par(justify: false)
+    it
+  }
+
+  // ── Table des matières : sa propre page, à 9 pt — le corps de l'appareil.
+  #show outline: set text(size: 9pt)
+  #show outline: it => [#pagebreak(weak: true) #it #pagebreak(weak: true)]
+
+  // ── Rang typographique des titres. ⚠ SEUL POSTE OÙ LE BLOC DIFFÈRE D'UN
+  //    DOCUMENT À L'AUTRE, et il n'a pas le choix : la veille et la revue
+  //    ouvrent leurs chapitres en `#` (niveau 1), le traité les siens en `##`
+  //    (niveau 2). C'est le RANG qui doit se composer pareil, pas le niveau ;
+  //    les trois échelles ci-dessous sont donc la même, décalée.
+  //    ⚠ EN POINTS, PAS EN EM : Typst a déjà mis le titre à l'échelle de son
+  //    niveau quand cette règle s'applique, et un « 1.30em » s'y multiplie au
+  //    lieu de s'y substituer — le rang 1 sortait à 20 pt au lieu de 14.
+  #show heading.where(level: 1): set text(size: 14pt)
+  #show heading.where(level: 1): set block(above: 1.7em, below: 0.6em)
+  #show heading.where(level: 2): set text(size: 12.5pt)
+  #show heading.where(level: 2): set block(above: 1.6em, below: 0.55em)
+  #show heading.where(level: 3): set text(size: 11pt)
+  #show heading.where(level: 3): set block(above: 1.5em, below: 0.5em)
+  ```
+include-before: |
+  ```{=typst}
+  // ⚠ LE CORPS DU DOCUMENT COMPOSE À 11 pt. `fontsize: 10pt` dans le YAML ne
+  // vaut que pour le bloc de titre et le résumé, que le gabarit compose avant
+  // d'entrer ici. Voir l'avertissement en tête de `header-includes`.
+  #set text(size: 11pt)
   ```
 ---
 
