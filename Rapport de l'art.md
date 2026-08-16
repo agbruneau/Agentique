@@ -1878,5 +1878,26 @@ arbitrer une décision d'architecture.*
 
 ---
 
+## Rendus
+
+Ce fichier est **la seule source qui fait foi**. Deux rendus en sont composés, et ils se
+régénèrent d'une commande :
+
+```
+python3 build/rendre-rapport.py
+```
+
+- [`Rapport de l'art.html`](Rapport%20de%20l%27art.html) — fichier unique, **aucune ressource
+  externe** : ni police, ni script, ni image distante.
+- [`Rapport de l'art.pdf`](Rapport%20de%20l%27art.pdf) — Letter ; **41 pages au 16 août 2026**,
+  *constat de rendu et non cible* : la chaîne n'a aucune porte de pagination.
+
+**Le rendu n'ajoute, ne retire ni ne reformule aucun énoncé.** *Tout écart entre un rendu et ce
+fichier est un défaut de la chaîne, jamais une variante du texte.* La chaîne **refuse de composer**
+si un renvoi interne ne se résout pas ; elle déclare ses prérequis — `markdown-it-py`, Chromium — et
+échoue plutôt que de composer à moitié.
+
+---
+
 *Rapport dérivé, arrêté au 16 août 2026. Il ne rouvre aucun livrable, ne solde aucune dette et ne
 publie rien de ce qui est clos.*

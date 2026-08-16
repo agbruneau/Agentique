@@ -344,11 +344,13 @@ la revue de littérature depuis le 15** — [`4 - Revue et Veille/`](4%20-%20Rev
 jusqu'au 14. *Le classement par dossier numéroté cesse d'être réservé aux volumes, et il est
 désormais universel* : les **sept livrables sont sous quatre dossiers numérotés**, et la racine ne
 garde que ce fichier, `.gitignore`, **une page de présentation** —
-[`OnePager.html`](OnePager.html), entrée le 15 août 2026 —, **un rapport dérivé** —
-[`Rapport de l'art.md`](Rapport%20de%20l%27art.md), entré le 16 août 2026, qui n'est **pas** un
-huitième livrable et le déclare en tête — et **un seul dossier d'appareil**,
-[`figures/`](figures/) — ⚠ *les
-dix-neuf figures du traité, restées là où le traité n'est plus.* ☑ **`Python/` a suivi ses sources**
+[`OnePager.html`](OnePager.html), entrée le 15 août 2026 —, **un rapport dérivé en trois
+fichiers** — [`Rapport de l'art.md`](Rapport%20de%20l%27art.md), sa source, plus
+[`.html`](Rapport%20de%20l%27art.html) et [`.pdf`](Rapport%20de%20l%27art.pdf), entrés le
+16 août 2026 ; il n'est **pas** un huitième livrable et le déclare en tête — et **deux dossiers
+d'appareil**, [`figures/`](figures/) — ⚠ *les
+dix-neuf figures du traité, restées là où le traité n'est plus* — et [`build/`](build/), entré le
+16 août 2026, **la chaîne de rendu du rapport et rien d'autre**. ☑ **`Python/` a suivi ses sources**
 le 15 août 2026 et vit sous
 [`4 - Revue et Veille/Python/`](4%20-%20Revue%20et%20Veille/Python/).
 
@@ -390,6 +392,25 @@ hérités et hétérogènes** — de juin 2026 pour le Vol. I au 15 août 2026 p
 troisième édition du traité —, de sorte qu'**aucun de ses énoncés ne vaut au-delà du gel de sa
 source**. ☑ *Le seul contrepoids externe qu'il porte est celui que le dépôt porte déjà :* la
 transposition exécutable du traité, **qui le contredit sur trois points par la mesure**.
+
+☑ **Ses deux rendus se régénèrent, et c'est le point où il se sépare de la page de présentation.**
+[`Rapport de l'art.html`](Rapport%20de%20l%27art.html) et
+[`Rapport de l'art.pdf`](Rapport%20de%20l%27art.pdf) sont composés depuis le `.md` — **seule source
+qui fait foi** — par [`build/rendre-rapport.py`](build/rendre-rapport.py), d'une commande :
+`python3 build/rendre-rapport.py`. ⚠ *C'est exactement ce que* [`Compendium.html`](2%20-%20Compendium/Compendium.html)
+*n'a pas* — écrite à la main, sans chaîne, ses décomptes à re-relever à la main, et **un rendu qui ne
+se régénère pas se périme en silence**. La chaîne **refuse de composer** si un renvoi interne du
+rapport ne se résout pas : *une table des matières cassée est la classe de défaut la plus discrète
+d'un rendu, et c'est la seule que cette chaîne traite comme bloquante.* ⚠ **Elle n'a AUCUNE porte de
+pagination** : le rendu Letter fait **41 pages au 16 août 2026**, et ce nombre est un **constat**,
+non une cible — *rien à voir avec les mille pages du compendium, qui sont une instruction d'auteur
+vérifiée au build.* ⚠ **Le rendu HTML ne porte aucune ressource externe** — ni police, ni script, ni
+image distante ; ⚠ **le bloc horizontal d'impression est celui que le compendium a relevé** sur les
+filets vectoriels des monographies (30,0 mm à gauche, 28,9 mm à droite, corps de 157,0 mm), **le
+vertical seul étant propre au rapport** — 20 mm, *au-dessus de la zone non imprimable usuelle de
+6,35 mm sous laquelle le compendium signale que sa titraille courante tombe*. ⚠ **La chaîne déclare
+ses prérequis et échoue plutôt que de composer à moitié** : `markdown-it-py` et Chromium, aucun
+téléchargement, aucun accès réseau.
 
 ⚠ *Deux dossiers numérotés ne sont pas des volumes et ne prétendent pas l'être* :
 `3 - Traité/` porte un livrable **et le logiciel qui le prend à l'épreuve**, ce dont aucun autre n'a
