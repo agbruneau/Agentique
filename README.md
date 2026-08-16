@@ -344,7 +344,9 @@ la revue de littérature depuis le 15** — [`4 - Revue et Veille/`](4%20-%20Rev
 jusqu'au 14. *Le classement par dossier numéroté cesse d'être réservé aux volumes, et il est
 désormais universel* : les **sept livrables sont sous quatre dossiers numérotés**, et la racine ne
 garde que ce fichier, `.gitignore`, **une page de présentation** —
-[`OnePager.html`](OnePager.html), entrée le 15 août 2026 — et **un seul dossier d'appareil**,
+[`OnePager.html`](OnePager.html), entrée le 15 août 2026 —, **un rapport dérivé** —
+[`Rapport de l'art.md`](Rapport%20de%20l%27art.md), entré le 16 août 2026, qui n'est **pas** un
+huitième livrable et le déclare en tête — et **un seul dossier d'appareil**,
 [`figures/`](figures/) — ⚠ *les
 dix-neuf figures du traité, restées là où le traité n'est plus.* ☑ **`Python/` a suivi ses sources**
 le 15 août 2026 et vit sous
@@ -374,6 +376,21 @@ au Vol. I et partagent leurs libellés** — dont un **continuum à six niveaux 
 dans le dépôt ne les distingue au lecteur qui les rencontrerait séparément.* ⚠ **La discipline R-13
 ne s'applique pas ici** : elle est une parade de rédaction du Vol. III, la page n'est pas une pièce
 de volume, et **aucun contrôle ne la rejoue**. *Constat porté, correction non faite.*
+
+⚠ **Le rapport de l'art n'est pas un huitième livrable non plus, et son régime se déclare.**
+[`Rapport de l'art.md`](Rapport%20de%20l%27art.md), entré le **16 août 2026**, est un **rapport
+dérivé** : sa seule matière est ce que les sept livrables portent déjà. ☑ **Il n'ouvre aucune source
+primaire, ne verse aucun fait neuf, n'écrit dans aucun livrable, ne solde aucune dette et ne franchit
+aucune porte** ; chaque énoncé y **hérite du régime de preuve du livrable qui le porte, jamais d'un
+meilleur**, et le document le dit en tête plutôt qu'en note. ⚠ **Il ne rouvre donc pas la clôture** :
+*synthétiser n'est ni réviser ni publier.* ⚠ **Il est le premier document de la racine à citer les
+sept livrables**, là où la page de présentation n'en cite aucun — mais, comme elle, **il n'a ni
+chaîne de rendu, ni contrôle, ni PDF**, et **aucun livrable ne le cite en retour**. ⚠ **Ses gels sont
+hérités et hétérogènes** — de juin 2026 pour le Vol. I au 15 août 2026 pour la veille, la revue et la
+troisième édition du traité —, de sorte qu'**aucun de ses énoncés ne vaut au-delà du gel de sa
+source**. ☑ *Le seul contrepoids externe qu'il porte est celui que le dépôt porte déjà :* la
+transposition exécutable du traité, **qui le contredit sur trois points par la mesure**.
+
 ⚠ *Deux dossiers numérotés ne sont pas des volumes et ne prétendent pas l'être* :
 `3 - Traité/` porte un livrable **et le logiciel qui le prend à l'épreuve**, ce dont aucun autre n'a
 d'équivalent, et `4 - Revue et Veille/` porte **les deux livrables qui mesurent le champ au lieu de
