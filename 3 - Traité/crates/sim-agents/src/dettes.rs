@@ -171,6 +171,18 @@ impl Verdict {
 /// prouvé.
 ///
 /// Φ_c reste affiché comme une **mesure**, à côté et jamais à la place.
+///
+/// **Ce que ce critère efface de trop, et il faut le dire.** La structure des
+/// familles viole l'indépendance des **tirages**. Or trois des sept dettes
+/// supposent l'indépendance d'autre chose : la deuxième celle des *défaillances*
+/// de répliques, la cinquième celle des *épisodes* échantillonnés, la troisième
+/// celle des *délais* de gigue. Un curseur de familles ne touche à aucune des
+/// trois, et leurs bornes sont pourtant effacées avec les quatre autres. Le
+/// verdict est donc conservateur, et il l'est dans le sens que NF-14 ne demande
+/// pas : effacer une borne dont l'hypothèse tient est l'erreur symétrique de
+/// garder une borne dont l'hypothèse est tombée. Le corriger déplacerait le
+/// critère de sortie de la phase 6, qui compte sept effacements ; c'est une
+/// décision de produit, pas de module.
 pub fn verdicts(familles: &Familles) -> Vec<Verdict> {
     let efface = familles.diversite_effective() < familles.n();
     DETTES

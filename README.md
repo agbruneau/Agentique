@@ -14,8 +14,16 @@ paie. **Sept livrables**, dont les deux derniers — la revue et le traité — 
 de sa **transposition exécutable** — *stigmergie-lab*, un simulateur déterministe d'essaims en
 Rust qui reprend ses mécanismes un à un et **oppose la mesure à ses chiffres**. ⚠ **La veille et la
 revue ont quitté la racine le 15 août 2026** pour
-[`4 - Revue et Veille/`](4%20-%20Revue%20et%20Veille/), **quatrième dossier numéroté** : *la racine
-ne porte plus aucun livrable*, et **les sept sont désormais rangés sous quatre dossiers numérotés**.
+[`4 - Veille/`](4%20-%20Veille/), **quatrième dossier numéroté** : *la racine
+ne porte plus aucun livrable*, et **les sept sont rangés sous des dossiers numérotés**.
+⚠ **Le quatrième dossier a été créé sous le nom `4 - Revue et Veille/` et renommé `4 - Veille/`
+le jour même** (commit `71d5388`, 15 août 2026, 10 h 03) — *renommage qu'aucun `README.md` du dépôt
+n'a enregistré pendant deux jours, et qui a cassé en silence les **trente-deux renvois** que ce
+fichier, la synthèse du corpus et le README du Vol. I lui adressaient.* ⚠ **Un cinquième dossier
+numéroté est né le 16 août 2026** — [`5 - Recension/`](5%20-%20Recension/), qui porte le *Rapport de
+l'art* et la chaîne qui le compose. ☑ *Il ne change pas le compte des livrables : le rapport est
+**dérivé** et n'en est pas un huitième.* **Sept livrables sous cinq dossiers numérotés, et la racine
+n'en porte aucun.**
 
 > # ⚠ DÉPÔT CLOS ET FINAL — 8 août 2026
 >
@@ -24,7 +32,7 @@ ne porte plus aucun livrable*, et **les sept sont désormais rangés sous quatre
 > de rédaction, ni de révision, ni d'appareil —, **sur aucun des cinq livrables** que le dépôt
 > portait alors. La passe de révision ouverte par **D-11** le 30 juillet 2026 est **close sans
 > exécution de son domaine résiduel**. Tout ce que ce fichier décrit est un état **définitif** —
-> ⚠ *sous la réserve des quatre réouvertures déclarées plus bas, qui n'ont touché aucun des quatre
+> ⚠ *sous la réserve des huit réouvertures déclarées plus bas, qui n'ont touché aucun des quatre
 > volumes dans son corps.*
 >
 > ⚠ **Ce que la clôture ne fait pas, et il faut le lire avant tout le reste.** Elle **ne franchit
@@ -85,7 +93,7 @@ ne porte plus aucun livrable*, et **les sept sont désormais rangés sous quatre
 > **veille technologique**, actualisée au 8 août 2026 puis **ramenée de 162 à 100 pages fermes**.
 > ⚠ **Et elle a été prolongée le 9 août 2026 par trois gestes d'auteur** : la veille a **pris le titre
 > du Vol. IV à l'identique**, un **sixième livrable** est entré au dépôt — une
-> [revue de la littérature académique](4%20-%20Revue%20et%20Veille/Revue%20de%20litt%C3%A9rature.md)
+> [revue de la littérature académique](4%20-%20Veille/Revue%20de%20litt%C3%A9rature.md)
 > de **40 pages fermes** —,
 > et le **compendium a été recomposé à mille pages exactement** (1 114 auparavant).
 > *Le dépôt comptait cinq livrables à sa clôture ; il en comptait six le 9 août.*
@@ -189,7 +197,7 @@ ne porte plus aucun livrable*, et **les sept sont désormais rangés sous quatre
 > livrable, et un contrôle cassé le même jour est réparé.** Quatre gestes, aucun sur le corps d'un
 > document :
 > *(a)* **la veille et la revue quittent la racine** pour
-> [`4 - Revue et Veille/`](4%20-%20Revue%20et%20Veille/), **quatrième dossier numéroté du dépôt** —
+> [`4 - Veille/`](4%20-%20Veille/), **quatrième dossier numéroté du dépôt** —
 > `Veille Technologique.md` / `.pdf` et `Revue de littérature.md` / `.pdf`, **inchangés au bit près**,
 > `git` enregistrant quatre renommages purs *(vérifié par `git hash-object` : les quatre empreintes
 > sont identiques à celles de `HEAD`)* ;
@@ -198,10 +206,10 @@ ne porte plus aucun livrable*, et **les sept sont désormais rangés sous quatre
 > [`1 - Corpus/0 - Références/`](1%20-%20Corpus/0%20-%20R%C3%A9f%C3%A9rences/), **renommé
 > `2026 - SystemEngineeringBoK.pdf`**, lui aussi inchangé au bit près
 > *(`3de0b7a`, empreinte identique avant et après)* ;
-> *(c)* **[`Python/`](4%20-%20Revue%20et%20Veille/Python/) suit ses sources** — les trois contrôles
-> passent de la racine à `4 - Revue et Veille/Python/`, **et leur code est corrigé** ;
+> *(c)* **[`Python/`](4%20-%20Veille/Python/) suit ses sources** — les trois contrôles
+> passent de la racine à `4 - Veille/Python/`, **et leur code est corrigé** ;
 > *(d)* ☑ **le dossier neuf reçoit son `README.md`** —
-> [`4 - Revue et Veille/README.md`](4%20-%20Revue%20et%20Veille/README.md), **quinzième du dépôt**.
+> [`4 - Veille/README.md`](4%20-%20Veille/README.md), **quinzième du dépôt**.
 >
 > ☑ **Le second geste solde un constat que ce fichier portait depuis deux jours.** Le tableau des
 > reliquats donnait `SEBoK.pdf` pour de **même classe exactement** que les trois PDF de
@@ -221,7 +229,7 @@ ne porte plus aucun livrable*, et **les sept sont désormais rangés sous quatre
 > verdict : un contrôle qui ne trouve pas sa source ne dit pas que le document est faux, il ne dit
 > plus rien.* ☑ **Chacun résout désormais son chemin contre l'emplacement du script**
 > (`Path(__file__)`) et non contre le répertoire courant : **la dépendance à `cd` est supprimée, pas
-> déplacée**, et les trois **sortent 0 depuis la racine, depuis `4 - Revue et Veille/` et depuis
+> déplacée**, et les trois **sortent 0 depuis la racine, depuis `4 - Veille/` et depuis
 > `Python/`** — *les neuf exécutions ont été faites*. ⚠ **La correction est le seul geste de ce dépôt
 > qui touche du code hors de `3 - Traité/` depuis la clôture**, et elle ne change **aucun contrôle,
 > aucun seuil, aucun verdict** : les trois rendent exactement les valeurs du 10 août 2026.
@@ -235,9 +243,49 @@ ne porte plus aucun livrable*, et **les sept sont désormais rangés sous quatre
 > aucune porte**, **ne lève aucune dérogation**, **ne referme aucune remontée** et **ne publie rien**.
 > La clôture **D-13 reste en vigueur pour les quatre volumes**.
 
+>
+> ⚠⚠ **RÉOUVERTURE DÉCLARÉE — 15-16 août 2026, septième depuis la clôture : les trois livrables
+> postérieurs à celle-ci sont repris, et un cinquième dossier numéroté naît.** Quatre gestes, aucun
+> sur le corps d'un volume :
+> *(a)* **le traité reçoit sa troisième édition** (15 août) — ⚠ *elle **lève le format ferme de cent
+> pages** : le rendu fait **143 p.** et porte **123 notices**, de sorte qu'**une page du traité citée
+> sans son édition est une provenance fausse, pas imprécise*** ;
+> *(b)* **la veille et la revue sont rouvertes et re-vérifiées intégralement** — références reprises à
+> leur source primaire, **342** et **192** entrées, **les deux formats fermes levés** : *la
+> re-vérification a produit plus de corrections que d'ajouts* ;
+> *(c)* ⚠ **le rangement du 15 août n'était pas fini** — le dossier créé sous le nom
+> `4 - Revue et Veille/` est **renommé [`4 - Veille/`](4%20-%20Veille/) le jour même** (`71d5388`),
+> *et aucun `README.md` ne l'a enregistré : trente-deux renvois sont morts en silence pendant deux
+> jours* ;
+> *(d)* **un cinquième dossier numéroté naît le 16 août** — [`5 - Recension/`](5%20-%20Recension/),
+> qui porte le **rapport de l'art**, sa chaîne de rendu, ses figures et
+> [`OnePager.html`](5%20-%20Recension/OnePager.html), les trois venus de la racine. ☑ *La racine cesse
+> de porter quoi que ce soit d'autre que ce fichier, `.gitignore` et [`figures/`](figures/).*
+> ⚠ **Le rapport n'est pas un huitième livrable** : il est **dérivé**, sa seule matière est ce que les
+> sept portent déjà, et **chaque énoncé y hérite du régime de preuve de sa source, jamais d'un
+> meilleur**. *Le dépôt compte toujours sept livrables.*
+>
+> ⚠⚠ **RÉOUVERTURE DÉCLARÉE — 17 août 2026, huitième depuis la clôture : passe de cohérence sur les
+> `README.md`, et sur eux seuls.** Sur instruction d'auteur : **réviser la totalité des `README.md`
+> pour en assurer la cohérence**. ⚠ **Ce que la passe a trouvé** — *(a)* le renommage de
+> `4 - Revue et Veille/` en `4 - Veille/`, **jamais enregistré**, et ses **trente-deux renvois morts**
+> dans ce fichier, la synthèse du corpus et le `README.md` du Vol. I ; *(b)* **ce fichier décrivait la
+> racine du 16 août** — `OnePager.html`, le rapport et sa chaîne y étaient donnés pour posés, et il
+> annonçait un `Rapport de l'art.html`, un `build/rendre-rapport.py` et **41 pages** que l'arbre ne
+> porte pas *(le rendu en fait **127**)* ; *(c)* **les décomptes des trois livrables postérieurs à la
+> clôture étaient tous périmés** — veille, revue et traité. ☑ **Ce que la passe répare** : les renvois,
+> les décomptes, l'arborescence, le cardinal des `README.md` (**16**) et des chaînes de rendu
+> (**huit**), et **trois reliquats qui étaient soldés sans que ce fichier le sache** — le renvoi mort
+> de `3 - Traité/CLAUDE.md`, la sortie 1 de `check-resume.py` sur le traité, et l'absence de
+> `README.md` au cinquième dossier. ⚠ **Ce que la passe ne fait pas.** Elle **ne modifie aucun des
+> sept livrables**, **ne touche à aucun document de gouvernance**, **ne rejoue aucune décision
+> d'auteur**, **n'écrit le régime d'aucune pièce déposée**, **n'ajoute aucune porte ni aucun
+> contrôle**, **ne franchit aucune porte**, **ne lève aucune dérogation**, **ne referme aucune
+> remontée** et **ne publie rien**. La clôture **D-13 reste en vigueur pour les quatre volumes**.
+
 > **Où entrer.** Le lecteur pressé lit la
-> [veille technologique](4%20-%20Revue%20et%20Veille/Veille%20Technologique.md) : c'est
-> l'état de l'art le plus récent (**édition du 8 août 2026**, faits gelés à cette date, **100 pages**), et le seul document publié qui cite les volumes
+> [veille technologique](4%20-%20Veille/Veille%20Technologique.md) : c'est
+> l'état de l'art le plus récent (**édition du 15 août 2026**, faits gelés à cette date, **144 pages**), et le seul document publié qui cite les volumes
 > du dépôt. Le lecteur méthodique suit l'ordre des volumes, du général au spécifique. Le compendium
 > se feuillette depuis le 29 juillet 2026 — [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf),
 > **1 000 pages** re-mesurées le 9 août 2026, au format Letter depuis la refonte typographique du
@@ -249,7 +297,7 @@ ne porte plus aucun livrable*, et **les sept sont désormais rangés sous quatre
 > [`Compendium.html`](2%20-%20Compendium/Compendium.html), appareil de lecture d'**un seul fichier
 > sans dépendance externe**, dérivé des cinquante `.md` et **sans plus d'autorité que le PDF**.
 
-## État au dépôt — CLOS le 8 août 2026, rouvert six fois depuis
+## État au dépôt — CLOS le 8 août 2026, rouvert huit fois depuis
 
 Le dépôt est **clos** dans cet état, pour les quatre volumes. Les chiffres ci-dessous ont été
 **re-mesurés sur pièce le 9 août 2026**, jamais recopiés d'un autre document ; les commandes qui les
@@ -261,10 +309,10 @@ compendium interroge au build.
 
 | Livrable | Rendu mesuré (`pypdf`) | Pièces | Appareil de contrôle |
 |---|---|---|---|
-| Veille technologique *(sous [`4 - Revue et Veille/`](4%20-%20Revue%20et%20Veille/) depuis le 15 août 2026)* | **100 p.** *(162 p. jusqu'au 8 août 2026)*, **303 références** | 14 sections, **18 tableaux**, 25 questions ouvertes | `python "4 - Revue et Veille/Python/check-veille.py"` → **sortie 0** (94 sections, 18 tableaux, 25 questions ouvertes ; **303 définies, 303 citées**) ; `check-resume.py` → **sortie 0** (résumé à **y = 119,4 pt**, 45,7 pt de dégagement). ☑ *Rejoués le 15 août 2026 après le déplacement et la correction des chemins ; **valeurs identiques au 10 août**, et les deux se lancent désormais de n'importe quel répertoire* |
-| Revue de littérature *(sous [`4 - Revue et Veille/`](4%20-%20Revue%20et%20Veille/) depuis le 15 août 2026)* | **40 p.** fermes, **176 références** | 19 sections, 8 tableaux, 10 fronts ; **12 pièces sur 173 à publication attestée**, 133 sans revue | `python "4 - Revue et Veille/Python/check-revue.py"` → **sortie 0** (4 contrôles, **six mutants tombent**) — 176 entrées, **12 attestées, 28 autodéclarées, 133 sans revue** sur 173 arXiv. ☑ *Rejoué le 15 août 2026, même valeur qu'au 10* |
-| Traité — *Systèmes multiagents en essaim* *(sous [`3 - Traité/`](3%20-%20Trait%C3%A9/) depuis le 14 août 2026)* | **100 p.** *(cible d'auteur tenue à travers deux éditions ; 117 p. à l'entrée du huitième chapitre le 13 août 2026, reprises le même jour sur le style de paragraphe, l'appareil à 8,2 pt, la table des matières à 9 pt et les marges portées de 2,54 à 1,9 cm. Historique : 109 p. à l'entrée des seize figures le 11 août 2026, ramenées à 100 le même jour ; 99 p. au dépôt du matin, 115 p. à la recomposition arXiv)*, **119 références** *(9 prépublications arXiv, déclarées telles ; la 119ᵉ est un rapport de laboratoire non revu par les pairs, déclaré tel)* | 8 chapitres, 24 sous-sections, **22 tableaux**, 10 algorithmes en pseudocode, **19 figures** *(SVG générés, `figures/contenu.py`, **restés à la racine**)* ; **119 renvois cités, 119 notices déclarées, bijection vérifiée** | ⚠ **aucun contrôle de rendu**, et ⚠ **aucune porte de pagination** — les 100 p. sont **constatées à chaque build, jamais vérifiées** : c'est cette absence qui a laissé la cible tomber en silence le 11 août, comme ce fichier l'annonçait ; `check-resume.py` sort 1 sur son PDF **sans qu'une ligne y soit rognée** : sa marge basse est codée à 73,7 pt (les 2,6 cm de la veille) quand le traité compose à **1,9 cm** depuis la deuxième édition, et il compte le folio de la page de titre ; le bloc résumé et mots-clés finit à **y = 226,0 pt**, 172 pt de dégagement. ☑ ⚠ **En revanche il a, depuis le 14 août 2026, un appareil qui contrôle son *contenu* — et il n'est pas de son côté** : les **428 tests** de *stigmergie-lab* rejouent ses mécanismes sous NF-15, et **trois de ses énoncés sont réfutés** (ligne suivante) |
-| Transposition exécutable — *stigmergie-lab* *(entrée le 14 août 2026)* | — *(pas un document ; **27 224 lignes** de Rust sur **76 modules**)* | **4 crates** en chaîne sans cycle (`sim-core` ◄ `sim-milieu` ◄ `sim-agents` ◄ `sim-viz`), **13 scénarios** exécutables par leurs tests, **3 bancs** de mesure à `VERDICT.md`, interface native et WASM, **6 documents** de gouvernance sous `docs/` | `cargo test --workspace --release` → **428 fonctions de test** *(cardinal re-compté sur l'arbre le 14 août 2026 : `grep -r "#\[test\]" --include=*.rs` en rend **428**, la valeur que ses propres documents annoncent ; ⚠ **la suite n'a pas été rejouée dans cette passe** — `cargo` n'est pas au `PATH` de l'environnement de resynchronisation)* ; `cargo clippy --workspace --all-targets` et `cargo doc --workspace --no-deps`, les deux autres contrôles d'avant commit ; ⚠ **aucune intégration continue** — NF-13 et NF-16 nomment un mécanisme d'application que le dépôt ne contient pas |
+| Veille technologique *(sous [`4 - Veille/`](4%20-%20Veille/) depuis le 15 août 2026)* | **144 p.** *(162 p. jusqu'au 8 août 2026, 100 p. fermes du 8 au 15 ; ⚠ **format ferme LEVÉ le 15 août** — 142 p. à la re-vérification, 143 après le décollement de sept titres le 17, 144 après la reprise de six notices)*, **342 références** | 14 sections, **24 tableaux**, 25 questions ouvertes | `python "4 - Veille/Python/check-veille.py"` → **sortie 0** (94 sections, 24 tableaux, 25 questions ouvertes ; **342 définies, 342 citées**, 306 titres, 3 homonymies arbitrées) ; `check-resume.py` → **sortie 0** (résumé à **y = 171,2 pt**, 99,2 pt de dégagement). ☑ *Rejoués le 17 août 2026 sur l'arbre courant* ; ⚠ **le premier a été corrigé le même jour** — il calculait la numérotation de Pandoc sans la règle de la ligne vide, et **comptait 14 sections de rang 1 là où le PDF en composait 10** |
+| Revue de littérature *(sous [`4 - Veille/`](4%20-%20Veille/) depuis le 15 août 2026)* | **59 p.**, **192 références** *(40 p. fermes et 176 références jusqu'au 15 août 2026 ; ⚠ **cible LEVÉE** à la re-vérification intégrale)* | 18 sections numérotées, 8 tableaux, 10 fronts ; **12 pièces sur 189 à publication attestée**, 145 sans revue | `python "4 - Veille/Python/check-revue.py"` → **sortie 0** (4 contrôles) — 192 entrées, **12 attestées, 32 autodéclarées, 145 sans revue** sur 189 arXiv. ☑ *Rejoué le 17 août 2026* ; ⚠ **la revue borne elle-même ce que ce cardinal vaut** : une contre-épreuve DBLP/Crossref/OpenAlex a retrouvé quatre pièces publiées en actes parmi les « sans revue » — *145 est un plafond, 12 un plancher* |
+| Traité — *Systèmes multiagents en essaim* *(sous [`3 - Traité/`](3%20-%20Trait%C3%A9/) depuis le 14 août 2026)* | **143 p.** *(⚠ **le format ferme de cent pages est LEVÉ à la troisième édition, 15 août 2026** ; il avait tenu à travers deux éditions — 117 p. à l'entrée du huitième chapitre le 13 août, reprises le même jour sur le style de paragraphe, l'appareil à 8,2 pt, la table des matières à 9 pt et les marges portées de 2,54 à 1,9 cm ; 109 p. à l'entrée des seize figures le 11 août, ramenées à 100 le même jour ; 99 p. au dépôt du matin, 115 p. à la recomposition arXiv)*, **123 notices** | 8 chapitres, 24 sections, **22 tableaux**, 10 algorithmes en pseudocode, **19 figures** *(SVG générés, `figures/contenu.py`, **restés à la racine**)* | ⚠ **aucun contrôle de rendu**, et ⚠ **aucune porte de pagination** — la pagination est **constatée à chaque build, jamais vérifiée** : c'est cette absence qui a laissé la cible tomber en silence le 11 août, puis être levée le 15. ☑ **`check-resume.py` SORT 0 sur son PDF depuis le 17 août 2026** — dernière ligne à **y = 194,3 pt**, dégagement **+122,3 pt** ; ⚠ *il sortait 1 depuis le 10 août sans qu'une ligne fût rognée, sur une marge basse codée à 73,7 pt et le folio de la page de titre* — **le contrôle n'a pas été recalibré : c'est le traité qui est venu à sa géométrie**, `MARGE_BASSE = 72,0` et page de titre sans folio. ☑ ⚠ **Il a en outre, depuis le 14 août 2026, un appareil qui contrôle son *contenu* — et il n'est pas de son côté** : les tests de *stigmergie-lab* rejouent ses mécanismes sous NF-15, et **trois de ses énoncés sont réfutés** (ligne suivante) |
+| Transposition exécutable — *stigmergie-lab* *(entrée le 14 août 2026)* | — *(pas un document ; **29 093 lignes** de Rust sur **71 modules**, re-comptées le 17 août 2026 — 27 224 sur 76 au 14 août)* | **4 crates** en chaîne sans cycle (`sim-core` ◄ `sim-milieu` ◄ `sim-agents` ◄ `sim-viz`), **13 scénarios** exécutables par leurs tests, **3 bancs** de mesure à `VERDICT.md`, interface native et WASM, **6 documents** de gouvernance sous `docs/` | `cargo test --workspace --release` → **465 tests, 0 échec**, suite rejouée le **17 août 2026 à 09 h 49** — 422 unitaires (253 `sim-agents`, 96 `sim-core`, 68 `sim-milieu`, 5 `sim-viz`) et 43 d'intégration, qui sont les critères de sortie de phase. ⚠ **Le compte a bougé trois fois le même jour** — 428 à 08 h 10, 447 à 08 h 32, **465 à 09 h 49** —, cinq agents d'audit écrivant en parallèle : *ce qui se cite est la ligne de commande, jamais le nombre.* `cargo clippy --workspace --all-targets` et `cargo doc --workspace --no-deps` sont les deux autres contrôles d'avant commit ; ⚠ **aucune intégration continue** — NF-13 et NF-16 nomment un mécanisme d'application que le dépôt ne contient pas |
 | Vol. I — *Interopérabilité* | **569 p.** | 7 chapitres + 7 bibliographies + Annexe B, **28 diagrammes** | — (vérification adverse des citations) |
 | Vol. II — *Orchestration agentique* | **387 p.** | **29 pièces** + registre de gel, socle de 46 entrées | grille CA-1…CA-8 |
 | Vol. III — *L'entreprise agentique* | **427 p.** | **34 pièces** + registre de gel ; ⚠ **plus aucun rapport de vérification** — les **30** que le dossier portait ont été **supprimés le 8 août 2026** (commit `659241b`) et se relisent au seul historique git | CA-01…CA-14, 15 remontées ouvertes — ⚠ *leur registre est dans le lot supprimé* |
@@ -282,7 +330,7 @@ changement de titre de la page de garde n'y entre pour rien.)*
 ⚠ **Rien de tout cela n'est une erreur de mesure** : le script a raison, sa valeur d'ancrage est
 périmée d'un renommage, et *personne ne la remettra à jour — le dépôt est clos*. Les trois autres
 contrôles du Vol. IV restent en **sortie 0**.
-☑ **Les trois contrôles de [`4 - Revue et Veille/Python/`](4%20-%20Revue%20et%20Veille/Python/)
+☑ **Les trois contrôles de [`4 - Veille/Python/`](4%20-%20Veille/Python/)
 restent en sortie 0, et ils se lancent désormais de n'importe quel répertoire.** ⚠ *Ce n'était pas
 acquis, et la panne mérite d'être lue* : `check-veille.py`, `check-revue.py` et `check-resume.py`
 nommaient leurs sources en **chemin relatif au répertoire courant**, si bien que le déplacement des
@@ -290,7 +338,7 @@ deux livrables hors de la racine, le 15 août 2026, les a fait **lever `FileNotF
 d'avoir lu une ligne**. ☑ **Chacun résout son chemin contre l'emplacement du script depuis le même
 jour** — `Path(__file__)`, et non plus contre le répertoire courant : *la dépendance à `cd` est
 supprimée, pas déplacée.* Les trois ont été **rejoués depuis trois répertoires — la racine,
-`4 - Revue et Veille/` et `Python/` — et sortent 0 aux neuf exécutions**, aux **valeurs exactes du
+`4 - Veille/` et `Python/` — et sortent 0 aux neuf exécutions**, aux **valeurs exactes du
 10 août 2026**. ⚠ **La correction ne touche que la résolution des chemins** : aucun contrôle, aucun
 seuil, aucun verdict ne change. *(Historique : les six contrôles d'alors ont été rejoués le 9 août
 2026 après la recomposition du compendium, et les trois de `Python/` le 10 août après leur premier
@@ -335,27 +383,32 @@ corrige pas après coup : *le compendium en fait mille depuis le 9 août, et la 
 
 Les trois volumes vivent sous [`1 - Corpus/`](1%20-%20Corpus/) ; le compendium a son propre dossier ;
 **le traité aussi depuis le 14 août 2026** — [`3 - Traité/`](3%20-%20Trait%C3%A9/) — **et la veille et
-la revue de littérature depuis le 15** — [`4 - Revue et Veille/`](4%20-%20Revue%20et%20Veille/).
+la revue de littérature depuis le 15** — [`4 - Veille/`](4%20-%20Veille/).
 *(Les deux premiers dossiers ont été renommés le 25 juillet 2026 — `1 - Corpus Agentique/` et
 `2 - Compendium Agentique/` auparavant, commit `60f57f6` ; le troisième est né avec le commit
-`6ac7170`, le quatrième le 15 août 2026.)*
+`6ac7170`, le quatrième le 15 août 2026 — ⚠ **sous le nom `4 - Revue et Veille/`, renommé
+`4 - Veille/` le jour même**, commit `71d5388` —, le cinquième le 16 août 2026.)*
 
 ⚠ **La racine ne porte donc plus aucun livrable**, contre trois jusqu'au 13 août 2026 et deux
 jusqu'au 14. *Le classement par dossier numéroté cesse d'être réservé aux volumes, et il est
-désormais universel* : les **sept livrables sont sous quatre dossiers numérotés**, et la racine ne
-garde que ce fichier, `.gitignore`, **une page de présentation** —
-[`OnePager.html`](OnePager.html), entrée le 15 août 2026 —, **un rapport dérivé en trois
-fichiers** — [`Rapport de l'art.md`](Rapport%20de%20l%27art.md), sa source, plus
-[`.html`](Rapport%20de%20l%27art.html) et [`.pdf`](Rapport%20de%20l%27art.pdf), entrés le
-16 août 2026 ; il n'est **pas** un huitième livrable et le déclare en tête — et **deux dossiers
-d'appareil**, [`figures/`](figures/) — ⚠ *les
-dix-neuf figures du traité, restées là où le traité n'est plus* — et [`build/`](build/), entré le
-16 août 2026, **la chaîne de rendu du rapport et rien d'autre**. ☑ **`Python/` a suivi ses sources**
+désormais universel* : les **sept livrables sont sous cinq dossiers numérotés**, et la racine ne
+garde que ce fichier, `.gitignore` et **un dossier d'appareil**, [`figures/`](figures/) — ⚠ *les
+dix-neuf figures du traité, restées là où le traité n'est plus.* ☑ **`Python/` a suivi ses sources**
 le 15 août 2026 et vit sous
-[`4 - Revue et Veille/Python/`](4%20-%20Revue%20et%20Veille/Python/).
+[`4 - Veille/Python/`](4%20-%20Veille/Python/).
+
+☑ **Trois pièces que ce paragraphe donnait pour posées à la racine l'ont quittée le 16 août 2026,
+et le paragraphe ne le disait pas** : [`OnePager.html`](5%20-%20Recension/OnePager.html), le
+**rapport de l'art** et sa **chaîne de rendu** vivent tous trois sous
+[`5 - Recension/`](5%20-%20Recension/), **cinquième dossier numéroté**. *Le rapport a ainsi rejoint
+la règle qu'il enfreignait — celle-là même que ce fichier énonce deux lignes plus haut : aucun
+document du dépôt ne vit à la racine.* ⚠ **Ce fichier a décrit l'état contraire pendant une
+journée**, `Rapport de l'art.html` et `build/rendre-rapport.py` compris — *deux noms qui ne
+désignent aucun fichier de l'arbre courant*, voir plus bas.
 
 ⚠ **La page de présentation n'est pas un huitième livrable, et il faut dire ce qu'elle est.**
-[`OnePager.html`](OnePager.html) est un **fichier unique et autonome** — aucune source markdown,
+[`OnePager.html`](5%20-%20Recension/OnePager.html) — ⚠ *à la racine du dépôt du 15 au 16 août 2026,
+sous [`5 - Recension/`](5%20-%20Recension/) depuis* — est un **fichier unique et autonome** — aucune source markdown,
 aucune chaîne de rendu, aucune dépendance externe, aucun contrôle — qui expose sur **une seule page**
 une **échelle de maturité à six niveaux numérotés 1 à 6** : technique, sémantique, organisationnel,
 juridique, politique, agentique. *Elle se lit au navigateur et s'imprime en A4 paysage ;
@@ -368,7 +421,10 @@ reprend mot pour mot l'**invariant du Vol. I** — *découplage ── contrat �
 niveaux 5 et 6 sont des ajouts** : aucun livrable du dépôt ne porte, sous ces noms, un palier
 « politique » ni un palier « agentique » dans une échelle numérotée. *Elle ne cite aucun livrable et
 aucun livrable ne la cite* — **le second cas de ce dépôt après le traité, et cette fois sans
-appareil du tout.**
+appareil du tout.** ⚠ **Et le rapport de l'art, qui la citait à son entrée, ne la cite plus** : la
+passe du 17 août 2026 a versé l'échelle à six paliers **dans le corps du rapport**, qui l'assume
+désormais comme son propre appareil de lecture. *La page est donc rangée avec un document qui a
+repris sa matière et cessé de la nommer.*
 
 ⚠⚠ **Et elle introduit une quatrième échelle à six niveaux, ce qui est exactement la classe d'écart
 que le Vol. III prend pour objet.** Sa parade **R-13** impose de nommer toute échelle par son
@@ -380,47 +436,58 @@ ne s'applique pas ici** : elle est une parade de rédaction du Vol. III, la page
 de volume, et **aucun contrôle ne la rejoue**. *Constat porté, correction non faite.*
 
 ⚠ **Le rapport de l'art n'est pas un huitième livrable non plus, et son régime se déclare.**
-[`Rapport de l'art.md`](Rapport%20de%20l%27art.md), entré le **16 août 2026**, est un **rapport
+[`5 - Recension/Rapport de l'art.md`](5%20-%20Recension/Rapport%20de%20l%27art.md), entré le
+**16 août 2026** *(⚠ à la racine du dépôt le jour même, sous
+[`5 - Recension/`](5%20-%20Recension/) depuis)*, est un **rapport
 dérivé** : sa seule matière est ce que les sept livrables portent déjà. ☑ **Il n'ouvre aucune source
 primaire, ne verse aucun fait neuf, n'écrit dans aucun livrable, ne solde aucune dette et ne franchit
 aucune porte** ; chaque énoncé y **hérite du régime de preuve du livrable qui le porte, jamais d'un
 meilleur**, et le document le dit en tête plutôt qu'en note. ⚠ **Il ne rouvre donc pas la clôture** :
-*synthétiser n'est ni réviser ni publier.* ⚠ **Il est le premier document de la racine à citer les
-sept livrables**, là où la page de présentation n'en cite aucun — mais, comme elle, **il n'a ni
-chaîne de rendu, ni contrôle, ni PDF**, et **aucun livrable ne le cite en retour**. ⚠ **Ses gels sont
+*synthétiser n'est ni réviser ni publier.* ⚠ **Il est le premier document du dépôt à citer les
+sept livrables**, là où la page de présentation n'en cite aucun — et **aucun livrable ne le cite en
+retour**. ⚠ **Ses gels sont
 hérités et hétérogènes** — de juin 2026 pour le Vol. I au 15 août 2026 pour la veille, la revue et la
 troisième édition du traité —, de sorte qu'**aucun de ses énoncés ne vaut au-delà du gel de sa
 source**. ☑ *Le seul contrepoids externe qu'il porte est celui que le dépôt porte déjà :* la
 transposition exécutable du traité, **qui le contredit sur trois points par la mesure**.
+⚠ **Aucun contrôle ne rejoue ses énoncés** : `5 - Recension/` n'a pas de `check-*.py`, contrairement
+à [`4 - Veille/Python/`](4%20-%20Veille/Python/).
 
-☑ **Ses deux rendus se régénèrent, et c'est le point où il se sépare de la page de présentation.**
-[`Rapport de l'art.html`](Rapport%20de%20l%27art.html) et
-[`Rapport de l'art.pdf`](Rapport%20de%20l%27art.pdf) sont composés depuis le `.md` — **seule source
-qui fait foi** — par [`build/rendre-rapport.py`](build/rendre-rapport.py), d'une commande :
-`python3 build/rendre-rapport.py`. ⚠ *C'est exactement ce que* [`Compendium.html`](2%20-%20Compendium/Compendium.html)
+**Sa mesure, relevée sur pièce le 17 août 2026** : **10 pièces** — une ouverture, **huit chapitres**,
+un sommaire exécutif —, **90 sections**, 3 tableaux, **2 figures**, et **127 pages** composées
+(`pypdf`). ⚠ **Une passe de refonte du 17 août 2026** a changé le titre, refondu l'ouverture, versé
+le **ch. 8** et remplacé l'épilogue par un sommaire exécutif — *aucun fait neuf n'y est entré.*
+⚠ **Son titre est l'homonyme exact de celui du Vol. IV**, par instruction d'auteur : seul le cachet
+de la page de titre les distingue — **RECENSIO · RAPPORT DE L'ART** ici, **COMPENDIUM · VOLUME IV**
+là. *Partager un titre n'est pas partager un régime de preuve.*
+
+☑ **Son rendu se régénère, et c'est le point où il se sépare de la page de présentation.**
+[`Rapport de l'art.pdf`](5%20-%20Recension/Rapport%20de%20l%27art.pdf) est composé depuis le `.md` —
+**seule source qui fait foi** — par
+[`5 - Recension/build/rendre-recension.py`](5%20-%20Recension/build/rendre-recension.py), d'une
+commande, **et elle se lance de n'importe quel répertoire** : la racine du dossier est déduite du
+fichier de script. ⚠ *C'est exactement ce que* [`Compendium.html`](2%20-%20Compendium/Compendium.html)
 *n'a pas* — écrite à la main, sans chaîne, ses décomptes à re-relever à la main, et **un rendu qui ne
-se régénère pas se périme en silence**. La chaîne **refuse de composer** si un renvoi interne du
-rapport ne se résout pas : *une table des matières cassée est la classe de défaut la plus discrète
-d'un rendu, et c'est la seule que cette chaîne traite comme bloquante.* ⚠ **Elle n'a AUCUNE porte de
-pagination** : le rendu Letter fait **41 pages au 16 août 2026**, et ce nombre est un **constat**,
+se régénère pas se périme en silence**. La chaîne **vérifie ses prérequis et échoue plutôt que de
+composer à moitié** — Pandoc ≥ 3.1.7, Typst ≥ 0.12, fontes Constantia et Corbel avec leurs replis —,
+et elle **refuse de composer** si la numérotation des chapitres n'est pas contiguë. ⚠ **Elle n'a
+AUCUNE porte de pagination** : les **127 pages** sont un **constat**,
 non une cible — *rien à voir avec les mille pages du compendium, qui sont une instruction d'auteur
-vérifiée au build.* ⚠ **Le rendu HTML ne porte aucune ressource externe** — ni police, ni script, ni
-image distante ; ⚠ **le bloc horizontal d'impression est celui que le compendium a relevé** sur les
-filets vectoriels des monographies (30,0 mm à gauche, 28,9 mm à droite, corps de 157,0 mm), **le
-vertical seul étant propre au rapport** — 20 mm, *au-dessus de la zone non imprimable usuelle de
-6,35 mm sous laquelle le compendium signale que sa titraille courante tombe*. ⚠ **La chaîne déclare
-ses prérequis et échoue plutôt que de composer à moitié** : `markdown-it-py` et Chromium, aucun
-téléchargement, aucun accès réseau.
+vérifiée au build.* ⚠ **Il n'y a pas de rendu HTML** : *ce fichier en a annoncé un, ainsi qu'un
+`build/rendre-rapport.py` et un rendu de 41 pages, du 16 au 17 août 2026 — les trois désignaient un
+état d'une journée, à la racine, et aucun ne se résout sur l'arbre courant.*
 
-⚠ *Deux dossiers numérotés ne sont pas des volumes et ne prétendent pas l'être* :
+⚠ *Trois dossiers numérotés ne sont pas des volumes et ne prétendent pas l'être* :
 `3 - Traité/` porte un livrable **et le logiciel qui le prend à l'épreuve**, ce dont aucun autre n'a
-d'équivalent, et `4 - Revue et Veille/` porte **les deux livrables qui mesurent le champ au lieu de
-l'exposer** — la veille sur le déployé, la revue sur le savant. ☑ *Le numéro dit le rangement, non le
+d'équivalent, `4 - Veille/` porte **les deux livrables qui mesurent le champ au lieu de
+l'exposer** — la veille sur le déployé, la revue sur le savant —, et `5 - Recension/` **ne porte
+aucun livrable du tout**, seulement un rapport qui les lit. ☑ *Le numéro dit le rangement, non le
 rang.*
 
-☑ **Les quatre dossiers numérotés portent tous un `README.md`** —
-[`4 - Revue et Veille/README.md`](4%20-%20Revue%20et%20Veille/README.md) est déposé le 15 août 2026,
-**quinzième du dépôt**, et il porte l'appareil de contrôle des deux livrables autant que leur
+☑ **Les cinq dossiers numérotés portent tous un `README.md`** —
+[`4 - Veille/README.md`](4%20-%20Veille/README.md) est déposé le 15 août 2026,
+**quinzième du dépôt**, et [`5 - Recension/README.md`](5%20-%20Recension/README.md) le 17 août,
+**seizième** ; chacun porte l'appareil de son dossier autant que sa
 présentation. ⚠ **[`1 - Corpus/0 - Références/`](1%20-%20Corpus/0%20-%20R%C3%A9f%C3%A9rences/) reste
 le seul répertoire de pièces sans un mot qui dise ce qu'elles font là** — quatre PDF, aucun régime
 déclaré.
@@ -430,9 +497,13 @@ seul intitulé ne désigne plus rien : la **veille** et le **Vol. IV** sont **ho
 depuis le 9 août 2026, et la **revue de littérature** en reprend le radical
 (*« Interopérabilité et Orchestration Agentiques : revue de la littérature académique »*, aligné le
 même jour). ⚠ **Une quatrième pièce a pris le même radical le 15 août 2026, et ce n'est pas un
-livrable** : [`OnePager.html`](OnePager.html), retitrée *« Échelle de maturité de l'interopérabilité
-et orchestration agentiques d'entreprise »* le jour même. *Le radical cesse donc de désigner un
-genre autant qu'un titre* — **quatre pièces sur huit le portent, dont une qui n'a ni source, ni
+livrable** : [`OnePager.html`](5%20-%20Recension/OnePager.html), retitrée *« Échelle de maturité de l'interopérabilité
+et orchestration agentiques d'entreprise »* le jour même. ⚠⚠ **Une cinquième l'a pris à la lettre le
+16 août 2026, et c'est le cas le plus dur** : le **rapport de l'art** de
+[`5 - Recension/`](5%20-%20Recension/) porte, **par instruction d'auteur**, le titre du Vol. IV
+*à l'identique* — **trois pièces du dépôt sont donc homonymes exactes**, la veille, le Vol. IV et le
+rapport, et seuls leur genre et le cachet de leur page de titre les séparent. *Le radical cesse donc de désigner un
+genre autant qu'un titre* — **cinq pièces sur neuf le portent, dont une qui n'a ni source, ni
 appareil, ni référence.** *Il faut nommer le genre du livrable, jamais son seul titre.* ☑ **Et c'est bien par le
 genre que les fichiers se nomment, ce que le septième a mis au jour en y contrevenant.**
 `Veille Technologique`, `Revue de littérature`, `Monographie`, `Compendium` : aucun de ces noms n'est
@@ -445,26 +516,33 @@ dossier qui le porte change.
 
 | | **Veille technologique** | **Revue de littérature** | **Vol. I — Interopérabilité** | **Vol. II — Orchestration** | **Vol. III — Entreprise** | **Vol. IV — Compendium** | **Traité — Essaim** |
 |---|---|---|---|---|---|---|---|
-| **Dossier** | [`4 - Revue et Veille/`](4%20-%20Revue%20et%20Veille/) *(racine du dépôt jusqu'au 15 août 2026)* | [`4 - Revue et Veille/`](4%20-%20Revue%20et%20Veille/) *(racine du dépôt jusqu'au 15 août 2026)* | [`1 - Corpus/1 - InteroperabiliteAgentique/`](1%20-%20Corpus/1%20-%20InteroperabiliteAgentique/) | [`1 - Corpus/2 - OrchestrationAgentique/`](1%20-%20Corpus/2%20-%20OrchestrationAgentique/) | [`1 - Corpus/3 - EntrepriseAgentique/`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/) | [`2 - Compendium/`](2%20-%20Compendium/) | [`3 - Traité/`](3%20-%20Trait%C3%A9/) *(racine du dépôt jusqu'au 14 août 2026)* |
+| **Dossier** | [`4 - Veille/`](4%20-%20Veille/) *(racine du dépôt jusqu'au 15 août 2026)* | [`4 - Veille/`](4%20-%20Veille/) *(racine du dépôt jusqu'au 15 août 2026)* | [`1 - Corpus/1 - InteroperabiliteAgentique/`](1%20-%20Corpus/1%20-%20InteroperabiliteAgentique/) | [`1 - Corpus/2 - OrchestrationAgentique/`](1%20-%20Corpus/2%20-%20OrchestrationAgentique/) | [`1 - Corpus/3 - EntrepriseAgentique/`](1%20-%20Corpus/3%20-%20EntrepriseAgentique/) | [`2 - Compendium/`](2%20-%20Compendium/) | [`3 - Traité/`](3%20-%20Trait%C3%A9/) *(racine du dépôt jusqu'au 14 août 2026)* |
 | **Titre** | Interopérabilité et Orchestration Agentiques en Entreprise *(aligné sur le Vol. IV le 9 août 2026 — ⚠ les deux sont désormais homonymes)* | Interopérabilité et Orchestration Agentiques : revue de la littérature académique | Interopérabilité agentique en entreprise dans le domaine des services financiers | Orchestration agentique | L'entreprise agentique — la fabrique de confiance | Interopérabilité et Orchestration Agentiques en Entreprise | Traité sur les systèmes multiagents en essaim *(☑ fichier `Traité.md` depuis le 10 août 2026, au genre comme les six autres — `Swarm Agentic Systems.md` auparavant)* |
 | **Rôle** | État de l'art vérifié, mis à jour par éditions | Ce que la littérature académique sait, et à quel régime de preuve | Cadre général, mondial et théorique | Cas canadien réglementé, instruit au grain du droit | Le verrou commun : identité, maillage, exploitation | Omnibus terminal : absorbe et remplace les trois volumes | Où passe la frontière entre coordonner par accord et coordonner par le milieu |
 | **Portée** | Mondiale | Mondiale, dix fronts de recherche | Mondiale (UE / É.-U. / R.-U. / Asie) | Canada-Québec (E-23, AMF, Loi 25, ACVM, Lynx/RTR) | Organisation et cycle de vie (NHI, *agent mesh*, AgentOps) | Les trois portées réunies (2024-2032) | Le régime de coordination lui-même, de l'essaim robotique au journal d'événements |
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Les trois quarts du champ n'ont franchi aucun comité » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet | « Déplacer la coordination dans le milieu, et payer ce que le déplacement coûte » |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Notices ouvertes une à une, métadonnées reprises à l'API arXiv | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) | Chaque mécanisme sous son modèle de panne, son hypothèse de synchronisme et son coût en messages et en tours ; sources primaires consultées directement |
-| **Gel de l'information** | 8 août 2026 (édition du 8 août 2026 ; les sections antérieures gardent leur date d'état) | 9 août 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | 27 juillet 2026 (décision d'auteur D-1) ; volet des faits levé le 28 juillet 2026 | 10 août 2026 |
-| **État** | Publiée (**100 p.**, **303 références**) — format ferme depuis le 8 août 2026 | Publiée (**40 p. fermes**, **176 références**) — déposée le 9 août 2026 et **révisée le même jour** (dixième front), sixième livrable du dépôt | Rédaction terminée (569 p., **233 257 mots** — `wc -w` sur `Monographie.md`, point d'ancrage de `decompte.sh --verifier` ; 225 258 par la commande de référence du dépôt. ⚠ *Le chiffre de ≈ 263 600 mots que ce fichier portait n'est reproductible par aucune des deux commandes* ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié, et clos en l'état** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; **finalisation P5 close sans être achevée** le 8 août 2026 (dernière passe de fond : relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état — *et il ne le deviendra pas : quinze remontées R-G-43 à R-G-57 et la dette de vote sur F-92 et F-96 restent ouvertes à titre définitif* | **CLOS ET FINAL** (D-13, 8 août 2026 ; TOC v0.33 / PRD v0.17), statut de révision finale en bibliothèque personnelle maintenu et devenu définitif — *la passe de révision ouverte par D-11 le 30 juillet 2026 (TOC v0.32 / PRD v0.16) est **close sans exécution de son domaine résiduel**, sur l'arrêt initial D-10 du 29 juillet 2026 (TOC v0.31 / PRD v0.15)* : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf) (**1 000 p.**, cible d'auteur calée et vérifiée au build le 9 août 2026 — 1 114 p. auparavant —, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026 ; gabarit relevé sur deux monographies Springer le même jour, porté au format Letter le 31 juillet 2026, puis calé à mille pages le 9 août 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** | Publié (**100 p. fermes**, **119 références**) — déposé le 10 août 2026, septième livrable du dépôt, **renommé, recomposé au gabarit d'article arXiv et calé à cent pages le même jour** ; **deuxième édition, revue et augmentée, le 13 août 2026** — huitième chapitre sur les essaims d'agents de langage et révision des sept autres, sur une source unique et postérieure [119], **recalée à cent pages le même jour, table des matières sur une seule page** ; ⚠ **les marges tombent de 2,54 cm à 1,9 cm pour y parvenir**, ⚠ **il ne cite aucun autre livrable**, et **aucune porte de pagination ne lui est attachée**. ☑ **Déplacé sous [`3 - Traité/`](3%20-%20Trait%C3%A9/) le 14 août 2026**, avec sa **transposition exécutable** — *le seul livrable du dépôt dont les énoncés soient rejoués par du code, et **le seul qu'une mesure du dépôt réfute sur trois points*** |
+| **Gel de l'information** | **15 août 2026** (édition du 15 août 2026 ; les sections antérieures gardent leur date d'état — *8 août jusque-là*) | **15 août 2026** *(9 août jusque-là)* | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | 27 juillet 2026 (décision d'auteur D-1) ; volet des faits levé le 28 juillet 2026 | **15 août 2026** (troisième édition ; 10 août à la première) |
+| **État** | Publiée (**144 p.**, **342 références**) — ⚠ **le format ferme de 100 pages est LEVÉ le 15 août 2026**, à la re-vérification intégrale des références ; les sept titres collés au paragraphe précédent, décollés le 17 août, portent l'édition de 142 à 143 p., puis six notices reprises à 144 | Publiée (**59 p.**, **192 références**) — déposée le 9 août 2026 et **révisée le même jour** (dixième front), sixième livrable du dépôt ; ⚠ **la cible de 40 pages fermes est LEVÉE le 15 août 2026**, à la re-vérification intégrale | Rédaction terminée (569 p., **233 257 mots** — `wc -w` sur `Monographie.md`, point d'ancrage de `decompte.sh --verifier` ; 225 258 par la commande de référence du dépôt. ⚠ *Le chiffre de ≈ 263 600 mots que ce fichier portait n'est reproductible par aucune des deux commandes* ; synthèse retirée le 22 juillet 2026, démonstrateur `Borealis-Go` retiré le 25 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié, et clos en l'état** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; **finalisation P5 close sans être achevée** le 8 août 2026 (dernière passe de fond : relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état — *et il ne le deviendra pas : quinze remontées R-G-43 à R-G-57 et la dette de vote sur F-92 et F-96 restent ouvertes à titre définitif* | **CLOS ET FINAL** (D-13, 8 août 2026 ; TOC v0.33 / PRD v0.17), statut de révision finale en bibliothèque personnelle maintenu et devenu définitif — *la passe de révision ouverte par D-11 le 30 juillet 2026 (TOC v0.32 / PRD v0.16) est **close sans exécution de son domaine résiduel**, sur l'arrêt initial D-10 du 29 juillet 2026 (TOC v0.31 / PRD v0.15)* : les **cinquante chapitres** des cinq Livres, rédigés **hors portes** le 27 juillet, relus, arbitrés et audités, sont arrêtés et composés en [`Compendium.pdf`](2%20-%20Compendium/Compendium.pdf) (**1 000 p.**, cible d'auteur calée et vérifiée au build le 9 août 2026 — 1 114 p. auparavant —, dont une **annexe hors plan** — la liste des 159 références, ajoutée au rendu le 29 juillet 2026 ; gabarit relevé sur deux monographies Springer le même jour, porté au format Letter le 31 juillet 2026, puis calé à mille pages le 9 août 2026). ⚠ **Arrêté n'est ni terminé ni publiable** : trois portes satisfaites sur pièce (G-2, G-3, G-7), **quatre closes pour ce seul régime par dérogation**, **CA-IV-11 et CA-IV-13 non satisfaits** faute de relecteur tiers ; **aucune diffusion à un tiers, aucune opposabilité** | Publié (**143 p.**, **123 notices**) — déposé le 10 août 2026, septième livrable du dépôt, **renommé, recomposé au gabarit d'article arXiv et calé à cent pages le même jour** ; **deuxième édition, revue et augmentée, le 13 août 2026** — huitième chapitre sur les essaims d'agents de langage et révision des sept autres, sur une source unique et postérieure [119], **recalée à cent pages le même jour, table des matières sur une seule page** ; ⚠⚠ **TROISIÈME ÉDITION LE 15 AOÛT 2026, et elle LÈVE le format ferme de cent pages** — 143 p. mesurées (`pypdf`), 8 chapitres, 24 sections, **123 notices** ; *une page du traité citée sans son édition est désormais une provenance fausse, pas imprécise*. ⚠ **Il ne cite aucun autre livrable**, et **aucune porte de pagination ne lui est attachée**. ☑ **Déplacé sous [`3 - Traité/`](3%20-%20Trait%C3%A9/) le 14 août 2026**, avec sa **transposition exécutable** — *le seul livrable du dépôt dont les énoncés soient rejoués par du code, et **le seul qu'une mesure du dépôt réfute sur trois points*** |
 
 ## Veille technologique — le document transversal
 
-[`4 - Revue et Veille/Veille Technologique.md`](4%20-%20Revue%20et%20Veille/Veille%20Technologique.md)
-→ [`Veille Technologique.pdf`](4%20-%20Revue%20et%20Veille/Veille%20Technologique.pdf) (**100 p.**,
-14 sections numérotées, **303 références**, 18 tableaux — **édition du 8 août 2026**, faits gelés à
+[`4 - Veille/Veille Technologique.md`](4%20-%20Veille/Veille%20Technologique.md)
+→ [`Veille Technologique.pdf`](4%20-%20Veille/Veille%20Technologique.pdf) (**144 p.**,
+14 sections numérotées, **342 références**, 24 tableaux — **édition du 15 août 2026**, faits gelés à
 cette date ; résumé sur la page de titre). ⚠ *À la racine du dépôt jusqu'au 15 août 2026, déplacée
-inchangée au bit près.* ⚠ **Le format est ferme depuis le 8 août 2026** : la
-revue est passée de 162 à 100 pages **sans changement de gabarit** — 11 pt, marges inchangées —,
-toute la réduction venant de la réécriture. *L'appareil seul — page de titre, résumé et
-303 références — pèse **32 de ces 100 pages** ; le corps a donc dû perdre près de trois cinquièmes
-de ses mots à faits constants.* Revue vérifiée où chaque énoncé factuel
+inchangée au bit près.* ⚠ **Le format ferme de cent pages, acquis le 8 août 2026, a été LEVÉ le
+15 août** : la revue avait été ramenée de 162 à 100 pages **sans changement de gabarit** — 11 pt,
+marges inchangées —, toute la réduction venant de la réécriture ; la **re-vérification intégrale des
+références** du 15 août l'a rouverte, et *la cible est tombée parce que rien ne la tenait — aucune
+porte de pagination ne s'y oppose, c'est le constat que ce fichier porte sur le traité depuis le
+11 août.* ⚠⚠ **Une panne de rendu que trois éditions n'avaient pas vue a été trouvée le
+17 août 2026** : **sept titres étaient collés au paragraphe qui les précédait**, Pandoc exigeant une
+ligne vide avant un titre — *le PDF ne numérotait que 10 sections sur 14, sa bibliographie n'avait
+aucun titre, et tous les renvois en clair du texte pointaient à côté.* ☑ Les sept sont décollés,
+l'édition passe de 142 à **143 p.**, puis à **144** après reprise de six notices, et
+`check-veille.py` numérote désormais comme Pandoc — ⚠ *il validait ces renvois depuis le début
+contre une numérotation qui n'existait que dans sa propre lecture de la source.* Revue vérifiée où chaque énoncé factuel
 est adossé à une source primaire consultée et soumis à contradiction — vérificateurs indépendants
 chargés de *réfuter*, contre-vérification directe sinon. Elle couvre les trois protocoles
 structurants (MCP, A2A, ANP), leur gouvernance, l'adoption documentée, la sécurité, et **sept
@@ -520,17 +598,23 @@ section 10 de la veille.
 18 juillet 2026, l'édition d'août datée du 1er août (faits gelés au 29 juillet), puis l'**édition du
 8 août 2026**. Chaque édition ajoute une couche ou un corpus et revérifie les faits périssables ;
 celle du 8 août est la première à **retrancher** — audit intégral des références, six réfutations
-d'affirmations porteuses, et un format ramené à 100 pages fermes.*
+d'affirmations porteuses, et un format ramené à 100 pages fermes. ⚠ **L'édition du 15 août 2026
+rouvre tout** : re-vérification intégrale des références à leur source primaire, **format ferme
+levé**, bibliographie portée de 303 à **342 entrées** ; la passe du 17 août reprend les deux pages de
+titre, décolle sept titres que Pandoc rendait en texte courant et arbitre trois homonymies de
+notices. **144 p. au rendu du 17 août 2026.***
 
 ## Revue de littérature — le versant académique
 
-[`4 - Revue et Veille/Revue de littérature.md`](4%20-%20Revue%20et%20Veille/Revue%20de%20litt%C3%A9rature.md)
-→ [`Revue de littérature.pdf`](4%20-%20Revue%20et%20Veille/Revue%20de%20litt%C3%A9rature.pdf)
-(**40 p. fermes**, 19 sections, **176 références**, 8 tableaux — arrêtée au **9 août 2026** ;
-⚠ *à la racine du dépôt jusqu'au 15 août 2026*),
+[`4 - Veille/Revue de littérature.md`](4%20-%20Veille/Revue%20de%20litt%C3%A9rature.md)
+→ [`Revue de littérature.pdf`](4%20-%20Veille/Revue%20de%20litt%C3%A9rature.pdf)
+(**59 p.**, 18 sections numérotées, **192 références**, 8 tableaux — gel du **15 août 2026** ;
+⚠ *arrêtée au 9 août jusque-là, et **la cible de 40 pages fermes est levée** à la re-vérification
+intégrale ; à la racine du dépôt jusqu'au 15 août 2026*),
 sous le titre *« Interopérabilité et Orchestration Agentiques : revue de la littérature
 académique »* — ⚠ *radical aligné le 9 août 2026 sur celui que la veille et le Vol. IV portent déjà :
-**trois livrables sur six** partagent désormais ce début d'intitulé, et seul le genre les distingue.*
+**quatre pièces du dépôt** partagent désormais ce début d'intitulé — ces trois-là et le rapport de
+l'art de `5 - Recension/`, qui reprend celui du Vol. IV à la lettre.*
 Où la veille dit ce que le monde déployé fait, sur spécifications, dépôts et textes réglementaires,
 cette revue dit **ce que la littérature académique sait**, et à quel régime de preuve. Les deux ne
 coïncident pas, et c'est l'intérêt.
@@ -543,10 +627,14 @@ ont été **reprises à l'API du dépôt**, ce qui a
 corrigé plusieurs statuts que la passe de recherche rapportait comme « à comité de lecture » sur la
 seule foi d'un champ de commentaire libre.
 
-⚠ **Le résultat principal tient à la forme du corpus, non à son contenu.** **Douze pièces sur 173 —
-7 % — portent une attestation de publication en notice** ; vingt-huit annoncent une acceptation dans
-un champ que personne ne vérifie ; **cent trente-trois, soit 77 %, ne présentent aucun signe de revue
-par les pairs**. Soixante pour cent du corpus a été déposé en 2026 et la moitié n'a jamais été
+⚠ **Le résultat principal tient à la forme du corpus, non à son contenu.** **Douze pièces sur 189
+portent une attestation de publication en notice** ; **trente-deux** annoncent une acceptation dans
+un champ que personne ne vérifie ; **cent quarante-cinq ne présentent aucun signe de revue
+par les pairs** *(12 / 28 / 133 sur 173 avant la re-vérification du 15 août 2026 ; les trois cardinaux
+ont été recalculés indépendamment sur les métadonnées canoniques le 17 août, et ils tombent juste)*.
+⚠ **Et la revue borne désormais elle-même ce que ces chiffres valent** : une contre-épreuve sur DBLP,
+Crossref et OpenAlex a retrouvé **quatre pièces publiées en actes** parmi les « sans revue » —
+*les 145 sont un plafond du non-arbitré, les 12 un plancher de l'arbitré, et le plancher est bas.* Soixante pour cent du corpus a été déposé en 2026 et la moitié n'a jamais été
 révisée. *Un champ dont les trois quarts des énoncés n'ont franchi aucun comité ne peut pas fonder
 une décision d'architecture au même titre qu'une littérature établie.*
 
@@ -570,12 +658,30 @@ L'auto-citation est assumée et divulguée : la veille mise à l'épreuve est du
 
 [`3 - Traité/Traité.md`](3%20-%20Trait%C3%A9/Trait%C3%A9.md)
 → [`Traité.pdf`](3%20-%20Trait%C3%A9/Trait%C3%A9.pdf) *(⚠ à la racine du dépôt jusqu'au 14 août 2026)*
-(**100 p.**, 8 chapitres et 24 sous-sections, **119 références**, 22 tableaux, 10 algorithmes en
+(**143 p.**, 8 chapitres et 24 sections, **123 notices**, 22 tableaux, 10 algorithmes en
 pseudocode, **19 figures** — daté du **10 août 2026**, figures entrées et rendu recalé le
 **11 août 2026**, deuxième édition revue et augmentée le **13 août 2026**, recalée à cent pages le
-même jour), sous le titre *« Traité sur les systèmes multiagents en essaim —
+même jour, **troisième édition le 15 août 2026**), sous le titre *« Traité sur les systèmes multiagents en essaim —
 la coordination par le milieu : ce qu'un essaim d'agents logiciels gagne à ne pas s'accorder, et ce
 qu'il le paie »*.
+
+⚠⚠ **LA TROISIÈME ÉDITION, 15 AOÛT 2026, LÈVE LE FORMAT FERME DE CENT PAGES.** Le rendu mesure
+**143 pages** (`pypdf`, sur le PDF versionné) et porte **123 notices**. ⚠ **La conséquence est un
+piège de provenance, et elle est écrite au `CLAUDE.md` du dossier** : *la pagination ne coïncide ni
+avec la deuxième édition, ni avec aucun renvoi antérieur à la révision 3.0 du PRD du simulateur* —
+**une page citée sans son édition est une provenance fausse, pas imprécise.** La migration des
+renvois `§X.Y, p. N` du code n'est pas finie et **elle se mesure** :
+
+```bash
+grep -rhoE '§[0-9]+(\.[0-9]+)?, p\. [0-9]+' "3 - Traité/crates/" | sort | uniq -c | sort -rn
+```
+
+⚠ *Au 17 août 2026, cette ligne rendait quatre pages différentes pour le seul §1.2.* Le
+[`docs/README.md`](3%20-%20Trait%C3%A9/docs/README.md) du dossier ajoute que **le PRD, figé à la
+deuxième édition, cite encore une autre pagination** — et que les figures du traité **se comptent de
+deux façons**, 18 légendes numérotées pour 16 numéros distincts, de sorte qu'il **refuse d'en
+avancer un compte**. *Les 19 figures que ce fichier annonce sont les **fichiers SVG** de
+[`figures/`](figures/), qui est un troisième décompte encore.*
 
 ⚠ **Il a changé de dossier le 14 août 2026, et ce n'est pas un rangement.** `Traité.md` et
 `Traité.pdf` quittent la racine pour [`3 - Traité/`](3%20-%20Trait%C3%A9/), **inchangés au bit près**
@@ -752,16 +858,17 @@ réancrées sur des SHA et des étiquettes **ouverts et relus**, les valeurs all
 retrouvées dans le code à l'étiquette 4.1.0 ; *(d)* **13 paginations ouvertes ou absentes** fermées sur
 Crossref, DataCite ou dblp.
 
-⚠ **Aucun contrôle exécutable ne lui est attaché**, contrairement à la veille et à la revue. Le seul
-rejouable sur son PDF, [`check-resume.py`](4%20-%20Revue%20et%20Veille/Python/check-resume.py), **sort 1 sans qu'une ligne y soit
-rognée** : sa marge basse est codée en dur à **73,7 pt** — les 2,6 cm de la veille — alors que le
-traité composait à **2,54 cm** et compose à **1,9 cm** depuis la deuxième édition, et il compte le
-**folio** de la page de titre, que la veille et la
-revue n'ont pas. Le bloc du résumé et des mots-clés finit à **y = 226,0 pt**, soit **172 pt de
-dégagement** au-dessus d'une marge basse qui vaut 53,9 pt *(y = 284,0 pt et 212 pt en première
-édition)* ; ce qui descend à 30,2 pt est le numéro de page, à sa place. *Le contrôle a raison sur
-ce qu'il mesure et tort sur ce qu'il conclut, faute d'avoir été calibré pour un troisième gabarit —
-et personne ne le calibrera : le dépôt est clos.*
+⚠ **Aucun contrôle ne lui est propre**, contrairement à la veille et à la revue : rien ne compte ses
+sections, ses notices ni ses pages. ☑ **Mais le seul contrôle rejouable sur son PDF sort désormais 0**
+— [`check-resume.py`](4%20-%20Veille/Python/check-resume.py), rejoué le 17 août 2026 : dernière ligne
+de la page de titre à **y = 194,3 pt**, dégagement **+122,3 pt**. ⚠ **Il a sorti 1 du 10 au 15 août
+2026 sans qu'une ligne fût rognée** : sa marge basse était codée en dur à **73,7 pt** — les 2,6 cm de
+la veille — alors que le traité composait à 2,54 cm puis à 1,9 cm, et il comptait le **folio** de la
+page de titre, que la veille et la revue n'ont pas. ☑ **Ce n'est pas le contrôle qui a été recalibré,
+c'est le traité qui est venu à sa géométrie** : depuis le 15 août 2026, les trois documents composent
+sur les mêmes marges — **117 pt en x, 72 pt en y** — et le bloc de réglage commun n'imprime plus de
+folio en page de titre. ⚠ *Le contrôle vaut donc pour les trois tant qu'ils composent ainsi ; il ne
+le vérifie pas, il le suppose* — `MARGE_BASSE = 72.0` reste une constante que rien n'oppose au YAML.
 
 ## stigmergie-lab — la transposition exécutable, et ce qu'elle réfute
 
@@ -770,9 +877,14 @@ traité qu'il transpose. **Quatre crates en chaîne linéaire sans cycle** — `
 événements discrets, horloge logique, générateur semé, modèle de faute, détecteur, oracles) ◄
 `sim-milieu` (journal partitionné M1-M4, réplication ISR, rétention, plan de contrôle facturé à part)
 ◄ `sim-agents` (les mécanismes du traité, les paramètres d'ordre, et **les scénarios comme données**)
-◄ `sim-viz` (interface egui, native et WASM). **76 modules, 27 224 lignes, 428 fonctions de test,
-treize scénarios** exécutables par leurs tests, **trois bancs** de mesure et **six documents** de
-gouvernance sous [`3 - Traité/docs/`](3%20-%20Trait%C3%A9/docs/).
+◄ `sim-viz` (interface egui, native et WASM). **71 modules, 29 120 lignes, 465 tests, treize
+scénarios** exécutables par leurs tests, **trois bancs** de mesure et **six documents** de
+gouvernance sous [`3 - Traité/docs/`](3%20-%20Trait%C3%A9/docs/) — *décomptes re-mesurés sur l'arbre
+le 17 août 2026 ; **76 modules, 27 224 lignes et 428 tests** à l'entrée du dossier le 14 août, un
+audit complet du code ayant couru entre les deux.* ⚠ **Le cardinal des tests ne se cite pas** : il a
+bougé **trois fois le même jour** — 428 à 08 h 10, 447 à 08 h 32, **465 à 09 h 49, 0 échec** —, cinq
+agents d'audit écrivant en parallèle. *Le nombre qui vaut est celui que rend
+`cargo test --workspace --release` le jour où on la lance.*
 
 ⚠ **C'est le premier code exécutable du dépôt depuis le retrait de `Borealis-Go` le 25 juillet 2026,
 et il n'a rien de commun avec lui.** `Borealis-Go` démontrait qu'une spécification du Vol. I se
@@ -821,13 +933,16 @@ cinq du milieu — les listes se recoupent et ce fichier n'en avance pas de tota
 d'élasticité non convergent**, **aucune intégration continue** — sont au §0 de son PRD, qui en compte
 **dix-huit**.
 
-⚠ **Trois choses manquent à ce dossier, et deux tiennent au dépôt qui l'accueille.** *(a)* **Ses
-renvois à sa propre source normative sont morts** : `README.md`, `docs/README.md` et `CLAUDE.md`
+⚠ **Trois choses manquaient à ce dossier, et la première est soldée.** *(a)* ☑ **Ses renvois à sa
+propre source normative sont réparés, les trois** : `README.md`, `docs/README.md` et `CLAUDE.md`
 visaient `docs/Traité.pdf`, alors que le PDF est **à la racine du dossier** —
 [`3 - Traité/Traité.pdf`](3%20-%20Trait%C3%A9/Trait%C3%A9.pdf). *Le dossier a été écrit en dépôt
 autonome, où le traité vivait sous `docs/` ; la fusion l'a posé un cran plus haut, et rien ne l'a
-signalé.* ☑ **Les deux `README.md` sont corrigés dans la présente passe** ; ⚠ **`CLAUDE.md` ne l'est
-pas** — il sort du périmètre d'une resynchronisation de `README.md`, et c'est une décision d'auteur.
+signalé.* ☑ **Les deux `README.md` ont été corrigés le 14 août 2026** ; ☑ **`CLAUDE.md` l'a été à
+l'audit du 17 août 2026** — *il sortait du périmètre d'une resynchronisation de `README.md`, et c'est
+une passe du dossier lui-même qui l'a repris.* ⚠ *Le renvoi mort visait la **source normative** du
+projet, celle dont `CLAUDE.md` dit que les chiffres viennent de là et de nulle part ailleurs : c'était
+le pire endroit possible pour un lien mort, et il aura tenu trois jours.*
 *(b)* **Il n'a pas de licence**, comme le reste du dépôt ; ses manifestes portent `publish = false` en
 attendant, et son `docs/README.md` déclare l'absence plutôt que d'inventer un régime. *(c)* ⚠ **Il
 emploie le vocabulaire de gouvernance des volumes — PRD, portes, phases, critères de sortie — sans
@@ -1158,23 +1273,13 @@ le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
 
 ```
 .
-├── README.md                              ← ce fichier (avant-propos croisé) — ⚠ TROIS FICHIERS À LA RACINE depuis le
-│                                            15 août 2026 : celui-ci, `.gitignore` et `OnePager.html`
+├── README.md                              ← ce fichier (avant-propos croisé) — ⚠ DEUX FICHIERS ET UN DOSSIER À LA RACINE
+│                                            depuis le 16 août 2026 : celui-ci, `.gitignore` et `figures/`
 │                                          ⚠ `Traité.md / .pdf` étaient ici jusqu'au 14 août 2026 — déplacés sous `3 - Traité/`
 │                                          ⚠ `Veille Technologique.md / .pdf` et `Revue de littérature.md / .pdf` jusqu'au
-│                                            15 août 2026 — déplacés sous `4 - Revue et Veille/`, inchangés au bit près
-├── OnePager.html                          ← page de présentation d'une seule page, entrée le 15 août 2026 — ⚠ PAS UN LIVRABLE
-│                                            « Échelle de maturité de l'interopérabilité et orchestration agentiques
-│                                            d'entreprise » : six niveaux numérotés 1 à 6, l'invariant du Vol. I, la clause
-│                                            de renversement. ⚠ FICHIER UNIQUE ET AUTONOME — pas de source `.md`, pas de
-│                                            chaîne de rendu, pas de dépendance externe, AUCUN CONTRÔLE
-│                                            ⚠ niveaux 1 à 4 = les quatre couches du NEIF, Vol. I §1.2.1.1 ; niveaux 5 et 6
-│                                            ajoutés, sous ces noms dans aucun livrable
-│                                            ⚠ QUATRIÈME ÉCHELLE À SIX NIVEAUX du dépôt — même cardinal que le continuum
-│                                            0 à 5 du Vol. I §2.2.4, numérotation différente ; R-13 ne la couvre pas
-│                                            ⚠ thème sombre à accent orange et mise en page reprise le 15 août 2026 ;
-│                                            échelle typographique en `rem` — 18 px à l'écran, 8,2 pt à l'impression —,
-│                                            A4 paysage CONSTATÉ ET NON VÉRIFIÉ, comme les cent pages du traité
+│                                            15 août 2026 — déplacés sous `4 - Veille/`, inchangés au bit près
+│                                          ⚠ `OnePager.html` du 15 au 16 août 2026, `Rapport de l'art.md / .pdf` et `build/`
+│                                            le 16 — les trois sont sous `5 - Recension/`
 ├── figures/                               ← les 19 figures du traité (16 le 11 août 2026, 3 avec le ch. 8 le 13)
 │   │                                         ⚠⚠ ELLES N'ONT PAS SUIVI LE TRAITÉ dans `3 - Traité/`, et le traité les cite en
 │   │                                         chemin relatif : la chaîne de rendu ne se lance donc plus que DEPUIS LA RACINE
@@ -1184,7 +1289,7 @@ le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
 │   ├── dessine.py                           primitives ; ⚠ `rendu()` refuse une figure sans réserve ; ⚠ `W` SUIT LA MARGE du traité
 │   └── contenu.py                           les 19 entrées et leur rendu — `python figures/contenu.py`
 │                                          ⚠ `Python/` était ici du 10 au 15 août 2026 — parti avec ses sources sous
-│                                            `4 - Revue et Veille/Python/` ; les trois scripts vivaient à la racine avant le 10
+│                                            `4 - Veille/Python/` ; les trois scripts vivaient à la racine avant le 10
 │                                          ⚠ `gauntlet-log.md`, journal append-only des boucles bâtisseur/critique,
 │                                            était ici jusqu'au 10 août 2026 — purgé, il ne se relit qu'à l'historique git
 ├── .gitignore                             ← couvre notamment les `__pycache__` (aucun bytecode au suivi git)
@@ -1255,23 +1360,29 @@ le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
 ├── 3 - Traité/                            ← le septième livrable ET sa transposition exécutable (14 août 2026)
 │   ├── README.md                            page d'accueil de `stigmergie-lab` — les quatre voies d'exécution, la carte du dossier
 │   ├── CLAUDE.md                            contraintes et conventions pour un agent qui reprend le code
-│   │                                          ⚠ vise encore `docs/Traité.pdf`, qui n'existe pas — non corrigé (voir reliquats)
-│   ├── Traité.md / .pdf                     traité « Systèmes multiagents en essaim », 2ᵉ éd. 13 août 2026 (100 p., 119 réf., 19 figures)
+│   │                                          ☑ son renvoi à `docs/Traité.pdf` est corrigé depuis l'audit du 17 août 2026
+│   ├── gauntlet-log.md                      ⚠ PAS UN DOCUMENT DE GOUVERNANCE — journal de la boucle bâtisseur/critique
+│   │                                          de l'audit du code, 17 août 2026 ; rapports par morceau sous `bancs/audit-2026-08/`
+│   ├── Traité.md / .pdf                     traité « Systèmes multiagents en essaim », 3ᵉ éd. 15 août 2026 (143 p., 123 notices, 19 figures)
 │   │                                          ⚠ ne cite aucun autre livrable, et aucun ne le cite ; seul rendu au gabarit d'article arXiv
 │   │                                          (`Swarm Agentic Systems.md / .pdf` jusqu'au renommage du 10 août 2026 ; à la RACINE
 │   │                                          du dépôt jusqu'au 14 août 2026)
+│   │                                          ⚠ FORMAT FERME DE CENT PAGES LEVÉ À LA 3ᵉ ÉD. — une page citée sans son édition
+│   │                                          est une provenance FAUSSE, pas imprécise
 │   │                                          ⚠⚠ SES 19 FIGURES SONT RESTÉES À `figures/`, À LA RACINE — rendu depuis la racine seule
 │   ├── Cargo.toml / .lock                    atelier Rust — 4 crates, `publish = false`, lints clippy en `deny`
 │   ├── rust-toolchain.toml                   stable, cible `x86_64-pc-windows-gnu` (pas de linker MSVC)
 │   ├── clippy.toml                           ⚠ interdictions STRUCTURELLES, pas du style : `HashMap`/`HashSet` (PD1),
 │   │                                          7 méthodes de `f64` (NF-02) — les violer casse un critère de sortie atteint
-│   ├── crates/                               76 modules, 27 224 lignes, 428 fonctions de test
+│   ├── crates/                               71 modules, 29 120 lignes ; 465 tests, 0 échec, rejoués le 17 août 2026 à 09 h 49
+│   │                                          ⚠ 428 → 447 → 465 dans la même journée — le compte se refait, il ne se cite pas
 │   │   ├── sim-core/                           moteur DES, horloge logique, RNG semé, modèle de faute, détecteur, oracles
 │   │   ├── sim-milieu/                         journal partitionné M1-M4, réplication ISR, rétention, plan de contrôle
 │   │   ├── sim-agents/                         les mécanismes du traité + les scénarios COMME DONNÉES + binaire `campagne`
 │   │   └── sim-viz/                            interface egui, native et WASM — ⚠ arrêtée aux scénarios A et B
 │   ├── bancs/                                3 bancs de mesure, chacun à son `VERDICT.md`
 │   │                                          dt1-flottant (arithmétique), nf05-debit (⚠ CIBLE NON ATTEINTE), parite-wasm
+│   │                                          ⚠ `audit-2026-08/` s'y ajoute sans `VERDICT.md` — rapports d'audit, non mesures
 │   ├── docs/                                 ⚠ gouvernance PROPRE, sans lien avec celle des volumes — 6 fichiers
 │   │   ├── README.md                           l'index, et le graphe « qui dérive de qui »
 │   │   ├── PRD.md                              ce qui est EXIGÉ (~2 200 lignes) ; §0 = suivi, verdicts, ÉCARTS AU TRAITÉ
@@ -1282,31 +1393,56 @@ le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
 │   ├── web/index.html                        seul source de l'empaquetage WASM (le `.js` et le `.wasm` sont gitignorés)
 │   ├── .claude/launch.json                   sert `web/` en local
 │   └── .gitignore                            /target/, sorties de banc et de campagne, produits `wasm-bindgen`
-└── 4 - Revue et Veille/                   ← les deux livrables transversaux, et leur appareil (15 août 2026)
-    ├── README.md                            présentation des deux livrables, chaînes de rendu, appareil de contrôle
-    ├── Veille Technologique.md / .pdf       veille autonome, édition du 8 août 2026, faits gelés à cette date (100 p., 303 réf.)
-    ├── Revue de littérature.md / .pdf       revue de la littérature académique, arrêtée au 9 août 2026 (40 p., 176 réf.)
-    │                                        ⚠ les quatre fichiers venaient de la RACINE, inchangés au bit près
-    └── Python/                              les trois contrôles, venus de la racine avec leurs sources
-        │                                    ☑ chemins résolus contre `Path(__file__)` depuis le 15 août 2026 :
-        │                                      ils se lancent DE N'IMPORTE OÙ — la dépendance à `cd` est supprimée
-        ├── check-veille.py                  contrôles de publication de la veille (renvois, cardinaux, bibliographie)
-        ├── check-revue.py                   contrôles de publication de la revue (appariement, tableaux, doublons, régimes)
-        └── check-resume.py                  budget de mise en page : le résumé tient-il sur la page de titre du PDF
+├── 4 - Veille/                            ← les deux livrables transversaux, et leur appareil (15 août 2026)
+│   │                                        ⚠ CRÉÉ SOUS LE NOM `4 - Revue et Veille/` ET RENOMMÉ LE JOUR MÊME (`71d5388`)
+│   │                                          — renommage qu'aucun README n'a enregistré avant le 17 août 2026
+│   ├── README.md                            présentation des deux livrables, chaînes de rendu, appareil de contrôle
+│   │                                        ⚠ son titre porte encore « Revue et Veille », nom du dossier avant renommage
+│   ├── Veille Technologique.md / .pdf       veille autonome, édition du 15 août 2026, faits gelés à cette date (144 p., 342 réf.)
+│   │                                        ⚠ format ferme de 100 p. LEVÉ le 15 août 2026
+│   ├── Revue de littérature.md / .pdf       revue de la littérature académique, gel du 15 août 2026 (59 p., 192 réf.)
+│   │                                        ⚠ cible de 40 p. fermes LEVÉE le 15 août 2026
+│   │                                        ⚠ les quatre fichiers venaient de la RACINE, inchangés au bit près
+│   └── Python/                              les trois contrôles, venus de la racine avec leurs sources
+│       │                                    ☑ chemins résolus contre `Path(__file__)` depuis le 15 août 2026 :
+│       │                                      ils se lancent DE N'IMPORTE OÙ — la dépendance à `cd` est supprimée
+│       ├── check-veille.py                  contrôles de publication de la veille (renvois, cardinaux, bibliographie)
+│       │                                    ⚠ corrigé le 17 août 2026 : il numérotait autrement que Pandoc
+│       ├── check-revue.py                   contrôles de publication de la revue (appariement, tableaux, doublons, régimes)
+│       └── check-resume.py                  budget de mise en page : le résumé tient-il sur la page de titre du PDF
+│                                            ☑ SORT 0 sur les trois PDF depuis le 17 août 2026, traité compris
+└── 5 - Recension/                          ← le rapport de l'art et sa chaîne (16 août 2026) — ⚠ AUCUN LIVRABLE ICI
+    │                                        ⚠ le rapport est DÉRIVÉ : sa seule matière est ce que les sept livrables portent
+    ├── README.md                            déposé le 17 août 2026, SEIZIÈME du dépôt
+    ├── Rapport de l'art.md / .pdf           10 pièces (ouverture + 8 chapitres + sommaire exécutif), 90 sections, 127 p.
+    │                                        ⚠ TITRE HOMONYME EXACT DU VOL. IV, par instruction d'auteur — seul le cachet
+    │                                          de la page de titre les distingue ; ⚠ AUCUN CONTRÔLE ne rejoue ses énoncés
+    ├── OnePager.html                        page autonome — à la racine du dépôt du 15 au 16 août 2026
+    │                                        ⚠ le rapport ne la cite plus depuis le 17 août : il a versé son échelle au corps
+    ├── build/                               rendre-recension.py, recension.template, accentuation.lua (reprise du compendium)
+    │                                        ☑ la chaîne se lance DE N'IMPORTE OÙ ; ⚠ aucune porte de pagination
+    ├── figures/                             2 SVG et leur chaîne — `dessine.py` est une COPIE de celle du compendium,
+    │                                        une divergence déclarée en tête de fichier
+    └── chapitres/                           ⚠ BROUILLON de la boucle qui a produit le rapport — plus lu à l'assemblage,
+                                             et il a divergé de la source depuis
 ```
 
-**Où sont les `README.md`.** **Quinze** depuis le 15 août 2026 — quatorze depuis le 14, douze
-jusque-là : la racine, le
+**Où sont les `README.md`.** **Seize** depuis le 17 août 2026 — quinze depuis le 15, quatorze depuis
+le 14, douze jusque-là : la racine, le
 conteneur [`1 - Corpus/`](1%20-%20Corpus/README.md) (la synthèse consolidée), les **trois** volumes du
 triptyque — celui du Vol. III déposé le 29 juillet 2026 —, l'index de lecture des 29 pièces du
-Vol. II, le conspectus du Vol. IV, les **cinq** répertoires de Livres du compendium, **et les deux du
-nouveau dossier** — [`3 - Traité/README.md`](3%20-%20Trait%C3%A9/README.md), page d'accueil du
+Vol. II, le conspectus du Vol. IV, les **cinq** répertoires de Livres du compendium, **les deux du
+dossier du traité** — [`3 - Traité/README.md`](3%20-%20Trait%C3%A9/README.md), page d'accueil du
 simulateur, et [`3 - Traité/docs/README.md`](3%20-%20Trait%C3%A9/docs/README.md), index de sa
-documentation propre — **et celui du quatrième dossier numéroté** depuis le 15 août 2026,
-[`4 - Revue et Veille/README.md`](4%20-%20Revue%20et%20Veille/README.md), qui présente les deux
-livrables transversaux, leurs deux chaînes de rendu et leur appareil de contrôle.
-*(Cardinal re-compté sur l'arbre le 15 août 2026 : **15**.)*
-☑ **Les quatre dossiers numérotés en portent donc tous un.**
+documentation propre —, **celui du quatrième dossier numéroté** depuis le 15 août 2026,
+[`4 - Veille/README.md`](4%20-%20Veille/README.md), qui présente les deux
+livrables transversaux, leurs deux chaînes de rendu et leur appareil de contrôle, **et celui du
+cinquième** depuis le 17 août 2026, [`5 - Recension/README.md`](5%20-%20Recension/README.md), qui
+présente le rapport de l'art, sa chaîne, ses figures et ses réserves.
+*(Cardinal re-compté sur l'arbre le 17 août 2026 : **16**.)*
+☑ **Les cinq dossiers numérotés en portent donc tous un.** ⚠ *Le cinquième a vécu une journée sans
+le sien — du 16 au 17 août 2026 —, exactement comme `4 - Veille/` en avait vécu une demie ; et c'est
+le README du dossier neuf qui a relevé l'écart, non ce fichier.*
 ⚠ **`1 - Corpus/0 - Références/` reste le seul répertoire de pièces sans un mot qui dise ce qu'elles
 font là** : *désormais **quatre** PDF déposés sans régime* — le quatrième,
 `2026 - SystemEngineeringBoK.pdf`, y est entré le 15 août 2026. ☑ **Le défaut symétrique est soldé** :
@@ -1315,21 +1451,23 @@ font là** : *désormais **quatre** PDF déposés sans régime* — le quatrièm
 partie du volume ; *il est parti rejoindre sa classe à `0 - Références/`, et le conspectus du Vol. IV
 enregistre le départ.* ⚠ *Rien de tout cela ne lui donne un régime : il passe d'une absence trompeuse
 à une absence franche.*
-*(Les **cinquante-trois** autres répertoires sans `README.md` sont des répertoires d'appareil, de
-découpage ou de dépôt — **vingt sous [`3 - Traité/`](3%20-%20Trait%C3%A9/)** seul, `crates/`,
+*(Les **cinquante-huit** autres répertoires sans `README.md` sont des répertoires d'appareil, de
+découpage ou de dépôt — **vingt-deux sous [`3 - Traité/`](3%20-%20Trait%C3%A9/)** seul, `crates/`,
 `bancs/`, `web/` et leurs `src/`, dont le contenu est décrit par le `README.md` du dossier et par les
-rustdoc ; les **trente-trois** autres sont `0 - Références/`, `build/`, `prd/`, `PRD/`, `figures/`,
-`Chapitres/`, `verification/`, `.claude/`, le `Python/` de `4 - Revue et Veille/`, le `monographie/`
-du Vol. III, les **seize** sous-répertoires de parties et les **deux** `90-annexes/`. ⚠ *Ce fichier
-en annonçait « trente » jusqu'au 14 août 2026 : le décompte était périmé de la création de `Python/`
-le 10 août et sous-comptait déjà les `build/`.*)*
+rustdoc ; **vingt-sept sous [`1 - Corpus/`](1%20-%20Corpus/)**, **quatre sous
+[`2 - Compendium/`](2%20-%20Compendium/)**, **trois sous
+[`5 - Recension/`](5%20-%20Recension/)** — `build/`, `figures/`, `chapitres/` —, le `Python/` de
+`4 - Veille/` et le [`figures/`](figures/) de la racine. ⚠ *Cardinal re-compté sur l'arbre le
+17 août 2026 : **73 répertoires, 58 sans `README.md`**. Ce fichier en annonçait « trente » jusqu'au
+14 août 2026, puis « cinquante-trois » ; les deux étaient périmés d'une création de dossier.*)*
 
 ## Construire les PDF
 
-**Sept** chaînes distinctes, à lancer depuis le dossier concerné — une par livrable. *(Ce fichier
+**Huit** chaînes distinctes, à lancer depuis le dossier concerné — **une par livrable, plus celle du
+rapport de l'art, qui n'en est pas un**. *(Ce fichier
 en annonçait **cinq** jusqu'au 9 août 2026, alors qu'il en listait déjà six : la revue de littérature
 avait sa commande sans être comptée. La septième est entrée avec le traité sur les essaims, le
-10 août 2026.)*
+10 août 2026 ; la huitième avec le rapport de l'art, le 16.)*
 
 ⚠⚠ **La règle « depuis le dossier concerné » a une exception depuis le 14 août 2026, et c'est le
 traité.** Son `.md` est parti sous [`3 - Traité/`](3%20-%20Trait%C3%A9/) ; ses **19 figures sont
@@ -1339,7 +1477,7 @@ sur pièce le 14 août 2026, Pandoc 3.10.1. **Sa chaîne se lance donc depuis la
 elle seule** ; lancée depuis `3 - Traité/`, les dix-neuf figures ne résolvent plus. ⚠ *Aucun contrôle
 ne le dit : la seule porte du dépôt est celle du compendium, et elle ne compte que des pages.*
 
-**Veille technologique** (depuis [`4 - Revue et Veille/`](4%20-%20Revue%20et%20Veille/) — *la racine
+**Veille technologique** (depuis [`4 - Veille/`](4%20-%20Veille/) — *la racine
 jusqu'au 15 août 2026*) — invocation Pandoc directe, gabarit Typst par défaut :
 
 ```bash
@@ -1352,34 +1490,54 @@ pandoc "Veille Technologique.md" --pdf-engine=typst --toc -o "Veille Technologiq
 pandoc "Revue de littérature.md" --pdf-engine=typst --toc -o "Revue de littérature.pdf"
 ```
 
+⚠ **Le gabarit n'est plus pris tel quel depuis le 17 août 2026** : le bloc `header-includes`, commun
+aux deux sources, **redéfinit la fonction `conf`** pour composer lui-même le bloc de titre — le
+gabarit y laissait deux lignes vides sous l'auteur et n'en laissait aucune au-dessus. *Aucun fichier
+de gabarit n'est pour autant versionné : la redéfinition vit dans l'en-tête, avec tout le reste.*
+
+**Rapport de l'art** — ☑ **la seule des huit chaînes qui se lance de n'importe quel répertoire** : la
+racine du dossier est déduite du fichier de script, non du répertoire courant.
+
+```bash
+python "5 - Recension/build/rendre-recension.py"
+```
+
+⚠ *Elle **vérifie ses prérequis et sort en erreur** plutôt que de composer à moitié — Pandoc ≥ 3.1.7,
+Typst ≥ 0.12, Constantia et Corbel avec leurs replis —, et elle refuse de composer si la
+numérotation des chapitres n'est pas contiguë.* ⚠ **Aucune porte de pagination** : les **127 pages**
+sont un constat. *Elle ne produit qu'un PDF : le `Rapport de l'art.html` que ce fichier a annoncé du
+16 au 17 août 2026 n'existe pas, non plus que le `build/rendre-rapport.py` qu'il nommait.*
+
 ☑ **Ces deux commandes sont inchangées, et c'est un fait et non une chance** : *ni la veille ni la
 revue ne porte une seule image*, donc aucun chemin relatif à résoudre — le déplacement du 15 août
 2026 emporte le dossier de lancement et rien d'autre. ⚠ **Le contraste avec le traité est exact et il
 instruit** : lui cite dix-neuf figures en chemin relatif, et son déplacement du 14 août a cloué sa
 chaîne à la racine. *Un livrable sans dépendance de fichier se déplace sans conséquence ; un livrable
 qui en a une ne se déplace jamais seul.* ⚠ **Mais le déplacement a coûté ailleurs** — les trois
-contrôles de [`Python/`](4%20-%20Revue%20et%20Veille/Python/) ont cessé de trouver ces deux sources,
+contrôles de [`Python/`](4%20-%20Veille/Python/) ont cessé de trouver ces deux sources,
 et **leur code a dû être repris le même jour** ; voir plus haut.
 
 **Traité** (⚠ **depuis la racine du dépôt, jamais depuis `3 - Traité/`** — voir ci-dessus) — **même
 invocation que les deux autres**, tout le réglage étant dans l'en-tête
-YAML : **gabarit d'article arXiv** depuis le 10 août 2026 — marges de **1,9 cm** sur les
-quatre côtés *(**2,54 cm, au pouce**, du 10 au 12 août 2026 ; 2,8 × 2,6 cm pour la veille et la
-revue)*, **`linestretch: 0.858`** qui porte l'interligne
+YAML : **gabarit d'article arXiv** depuis le 10 août 2026. ⚠ **Sa géométrie a bougé quatre fois et
+elle a fini par rejoindre celle de la veille et de la revue** : 2,18 × 2,35 cm au dépôt du matin,
+**2,54 cm au pouce** du 10 au 12 août 2026, **1,9 cm** à la deuxième édition, et **117 pt en x /
+72 pt en y depuis le 15 août 2026** — *la géométrie exacte des deux autres sources du dossier
+`4 - Veille/`.* **`linestretch`** porte l'interligne
 à 13,6 pt pour un corps de 11 pt — *la valeur exacte d'un article LaTeX 11 pt ; c'était `0.9` et
 13,9 pt jusqu'au recalage du 11 août 2026* —, **paragraphes à l'alinéa et sans blanc intercalaire**
-depuis la deuxième édition, **appareil à 8,2 pt**, **table des matières à 9 pt et sur sa propre
-page**, **folio dès la page de titre**, **mots-clés dans le bloc du
+depuis la deuxième édition, **appareil à 8,2 pt**, **mots-clés dans le bloc du
 résumé**, **pas de `section-numbering`**. ⚠ *Ce dernier point n'est pas un oubli* : les huit chapitres
 portent leurs numéros **écrits à la main dans les titres**, et le gabarit Typst numéroterait
 par-dessus — « 0.3.2 3.2 Titre ». ⚠ **La cible de 100 pages est tombée le 11 août 2026**, à 109, avec
 l'entrée des seize figures, et elle est tombée exactement comme ce fichier l'annonçait : *sans porte
 de pagination, rien ne le signale.* ☑ **Elle a été reprise le même jour**, en composant l'appareil —
 tableaux, pseudocode, bibliographie — à 9 pt et en portant `linestretch` à **0.858**, soit 13,6 pt
-d'interligne, la valeur exacte d'un article LaTeX 11 pt ; **les marges au pouce et le corps de 11 pt
-sont inchangés**. ⚠ *C'est l'écart de marge, et lui seul, qui
-fait sortir `check-resume.py` en 1
-sur ce PDF* :
+d'interligne, la valeur exacte d'un article LaTeX 11 pt. ⚠⚠ **Puis elle a été LEVÉE à la troisième
+édition, le 15 août 2026** : le rendu fait **143 pages**, et *le traité cesse d'avoir une cible de
+pagination — ce qui, faute de porte, ne change rien à ce que le dépôt sait vérifier.*
+☑ **`check-resume.py` sort 0 sur ce PDF depuis le 17 août 2026**, l'écart de marge qui l'en
+empêchait ayant disparu avec l'alignement de géométrie :
 
 ```bash
 python figures/contenu.py                                    # → les 19 SVG, à la racine
@@ -1446,10 +1604,10 @@ pièce ne porte pas les trois appareils qu'il retire — une pièce déformée p
 ⚠ **Depuis le 9 août 2026, il échoue aussi hors de la cible de mille pages.** La porte ne vaut que
 pour le **rendu canonique** — un essai (`OUT_PDF=…`) ou le gabarit `springer` composent une maquette
 qui n'a pas cette cible —, et *elle n'avertit que si `pypdf` manque* : sans lui, le PDF est écrit et
-la cible **n'est pas vérifiée**. C'est la seule des sept chaînes qui oppose une condition au rendu
+la cible **n'est pas vérifiée**. C'est la seule des huit chaînes qui oppose une condition au rendu
 qu'elle vient d'écrire.
 
-⚠ **Les sept chaînes ne produisent que des PDF.** Les `.html` du Vol. IV — les **cinquante pages de
+⚠ **Les huit chaînes ne produisent que des PDF.** Les `.html` du Vol. IV — les **cinquante pages de
 chapitre** et [`Compendium.html`](2%20-%20Compendium/Compendium.html), l'appareil de lecture du
 volume — **ne sortent d'aucune d'entre elles** : `build/` ne contient aucun générateur HTML, et ces
 fichiers sont écrits à la main. *Il n'y a donc pas de commande à donner ici, et c'est précisément le
@@ -1466,21 +1624,21 @@ python -m http.server 8731
 rogner ne lève aucune erreur* ». C'était exact, et la passe du 8 août 2026 l'a vérifié à ses dépens :
 en rallongeant le résumé, elle a fait tomber sa dernière ligne à **y = −27,2 pt**, soit **100,8 pt
 sous la marge basse** — une dizaine de lignes composées hors page et **rognées en silence**, avec
-`pandoc` en sortie 0. [`check-resume.py`](4%20-%20Revue%20et%20Veille/Python/check-resume.py) mesure désormais la chose elle-même,
+`pandoc` en sortie 0. [`check-resume.py`](4%20-%20Veille/Python/check-resume.py) mesure désormais la chose elle-même,
 dans le PDF rendu — ☑ **depuis n'importe quel répertoire depuis le 15 août 2026** :
 
 ```bash
-python "4 - Revue et Veille/Python/check-resume.py"
+python "4 - Veille/Python/check-resume.py"
 ```
 
 ⚠ **Il a fallu une panne pour en arriver là, et elle mérite d'être lue.** Le PDF par défaut était
 codé `'Veille Technologique.pdf'`, **relatif au répertoire courant** ; la veille est partie sous
-[`4 - Revue et Veille/`](4%20-%20Revue%20et%20Veille/) le 15 août 2026, la constante est restée, et
+[`4 - Veille/`](4%20-%20Veille/) le 15 août 2026, la constante est restée, et
 le contrôle a levé `FileNotFoundError` avant de décompresser quoi que ce soit — *comme ses deux
 voisins, pour la même cause*. ☑ **Les trois résolvent désormais leur chemin contre l'emplacement du
 script**, `Path(__file__)` : la dépendance à `cd` est **supprimée, pas déplacée**. *Un chemin donné
 en argument reste, lui, relatif au répertoire courant — c'est ce que l'appelant a tapé* :
-`python "4 - Revue et Veille/Python/check-resume.py" "3 - Traité/Traité.pdf"`.
+`python "4 - Veille/Python/check-resume.py" "3 - Traité/Traité.pdf"`.
 
 Il décompresse le flux de la page de titre et relève l'ordonnée la plus basse où du texte est
 réellement posé. ⚠ *Deux pièges y sont neutralisés, ne pas les réintroduire* : `/Type/PageLabel`
@@ -1490,17 +1648,24 @@ le `cm` qui précède chaque `BT`. *Mesurer `Tm` rend zéro partout, ce qui ress
 Le contrôle a été **calibré sur le PDF de l'édition précédente**, où il retrouve les **104,8 pt** que
 ce fichier avait relevés à la main le 29 juillet 2026.
 
-⚠ **Et ce calibrage est exactement sa limite, découverte le 10 août 2026.** La marge basse y est une
-**constante**, `MARGE_BASSE = 73.7`, tirée de l'en-tête de la veille ; le contrôle mesure par
-ailleurs *tout* texte posé en page 1, **folio compris**. Rejoué sur `Traité.pdf`, qui compose à
-**2,54 cm** et numérote dès la page de titre, il **sort 1 sur le numéro de page** — le bloc du résumé
-et des mots-clés, lui, finit **212 pt au-dessus de la marge**. *Un contrôle transporté sur un gabarit
-pour lequel il n'a pas été calibré ne mesure plus ce qu'il annonce ; il n'a pas été corrigé, et le
-dépôt est clos.* ⚠ *Le verdict a tenu aux trois réglages successifs du traité en une journée — marges
-à 2,35 cm, puis 3,2 cm, puis 2,54 cm : il sortait 1 les trois fois, toujours sur le folio.*
+⚠ **Et ce calibrage a été sa limite du 10 au 15 août 2026.** La marge basse y est une
+**constante** ; le contrôle mesure par
+ailleurs *tout* texte posé en page 1, **folio compris**. Rejoué sur `Traité.pdf`, qui composait à
+**2,54 cm** puis à 1,9 cm et numérotait dès la page de titre, il **sortait 1 sur le numéro de page**
+— le bloc du résumé et des mots-clés, lui, finissait 212 pt au-dessus de la marge. *Un contrôle
+transporté sur un gabarit pour lequel il n'a pas été calibré ne mesure plus ce qu'il annonce.*
+⚠ *Le verdict a tenu aux réglages successifs du traité — marges
+à 2,35 cm, puis 3,2 cm, puis 2,54 cm, puis 1,9 : il sortait 1 chaque fois, toujours sur le folio.*
+☑ **Le grief est soldé depuis le 17 août 2026, et pas par où on l'attendait** : ce n'est pas le
+contrôle qui a été recalibré, c'est **le traité qui est venu à sa géométrie** — 117 pt en x, 72 pt en
+y depuis le 15 août, page de titre sans folio —, et `MARGE_BASSE` vaut **72,0** depuis que les trois
+en-têtes portent cette valeur. **Les trois PDF sortent 0** : veille y = 171,2 pt (+99,2), revue
+y = 223,2 pt (+151,2), traité y = 194,3 pt (+122,3). ⚠ *Le contrôle vaut donc pour les trois tant
+qu'ils composent ainsi et ne numérotent pas leur page de titre — **il ne le vérifie pas, il le
+suppose**.*
 
-**Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, `python3` + `pypdf` — ☑ *`pypdf` **6.15.0** est installé
-depuis la passe du 9 août 2026, et il cesse d'être facultatif : la **porte de pagination du
+**Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, `python3` + `pypdf` — ☑ *`pypdf` est installé
+depuis la passe du 9 août 2026 (**6.15.0** alors, **6.16.1** au relevé du 17 août 2026), et il cesse d'être facultatif : la **porte de pagination du
 compendium l'interroge au build** et se contente d'un avertissement s'il manque. Les décomptes du
 8 août, pris par lecture directe du `/Count` de l'objet `/Type /Pages` faute de la bibliothèque, ont
 été **confrontés à `pypdf` le 9 août : mêmes valeurs sur les six PDF*** ; polices Liberation Sans et
@@ -1984,20 +2149,22 @@ correction exigerait une information que le dépôt ne porte pas — *et personn
 | `1 - Corpus/0 - Références/` | **quatre PDF, 46,5 Mio** — *trois* déposés le 8 août 2026 (commit `659241b`, 32,5 Mio) : *Mémoire de maîtrise* 1997, *Enterprise Integration Patterns* 2003, *Distributed Systems* 2007 ; **le quatrième entré le 15 août 2026**, `2026 - SystemEngineeringBoK.pdf` (14,0 Mio), venu de `2 - Compendium/`. ⚠ **Aucun document du dépôt ne les cite, aucune entrée de socle ne s'y adosse, le répertoire ne porte pas de `README.md`** — leur statut n'est écrit nulle part. *Une pièce déposée sans régime déclaré n'est pas une source : c'est un fichier.* **Régime à écrire, et personne ne l'écrira.** ⚠ *Le rangement du 15 août a rassemblé la classe sans lui donner de nom : le dossier compte une pièce muette de plus, non une source de plus* |
 | `2 - Compendium/PRD/decompte.sh` | ⚠ **sa valeur d'ancrage du Vol. II est périmée d'un renommage** : il attend **93 242** mots, l'arbre courant en mesure **93 239** depuis que le commit `659241b` a récrit trois phrases de trois pièces de `monographie/`. **Le contrôle sort donc 1**, et la clôture le donne encore en sortie 0 — *constat daté du matin, faux dès l'après-midi.* Le corriger supposerait de trancher entre remettre la valeur d'ancrage à jour et rendre au Vol. II les trois mots perdus : **arbitrage d'auteur, non de resynchronisation** |
 | `2 - Compendium/Compendium.html`, section « index » | trois entrées d'index publient des **totaux d'occurrences qui ne se reproduisent pas** (« niveau de preuve » 921, « péremption » 399, « registre de gel » 70) : les **cardinaux de chapitres se reproduisent**, les totaux non — aucun motif unique ne rend les deux à la fois, et la règle de comptage n'est écrite nulle part. Les **56 notions**, elles, sont exactes. Page écrite à la main : requalifier ces totaux exigerait la règle d'origine, que le dépôt ne porte pas |
-| l'appareil de contrôle entier | **aucun des sept contrôles ne résout un seul lien markdown** *(cinq jusqu'au 9 août 2026 ; `check-resume.py` et `check-revue.py` s'y ajoutent sans rien y changer)* : leurs appels à `exists()` gardent des entrées de script, jamais une cible de renvoi. ⚠ **Le 14 août 2026 nuance la ligne sans la lever, et l'écart mérite d'être lu** : `3 - Traité/` apporte le **premier contrôle mécanique de renvois du dépôt** — les quatre crates déclarent `#![deny(rustdoc::broken_intra_doc_links)]`, et *un renvoi cassé par un renommage ne compile pas*. **Mais il ne voit que le rustdoc** : les trois liens `docs/Traité.pdf` morts du même dossier sont dans du markdown, et **ils compilent parfaitement**. *Le dossier qui apporte la solution en donne le contre-exemple le jour même.* L'état « zéro lien mort » ne tient que par une mesure externe que rien ne rejoue — et pour l'appareil, **retirer un renvoi est indistinguable de réparer sa cible**. ⚠ **La démonstration a eu lieu, et elle est datée** : la suppression de `verification/` le 8 août 2026 a laissé **152 renvois morts** que personne n'a vus pendant vingt-quatre heures, deux passes de resynchronisation ayant publié « 6 morts » puis « quatre » entre-temps. *Un état déclaré par une mesure qu'aucun contrôle ne rejoue est une hypothèse, pas un fait* |
+| l'appareil de contrôle entier | **aucun des sept contrôles ne résout un seul lien markdown** *(cinq jusqu'au 9 août 2026 ; `check-resume.py` et `check-revue.py` s'y ajoutent sans rien y changer)* : leurs appels à `exists()` gardent des entrées de script, jamais une cible de renvoi. ⚠ **Le 14 août 2026 nuance la ligne sans la lever, et l'écart mérite d'être lu** : `3 - Traité/` apporte le **premier contrôle mécanique de renvois du dépôt** — les quatre crates déclarent `#![deny(rustdoc::broken_intra_doc_links)]`, et *un renvoi cassé par un renommage ne compile pas*. **Mais il ne voit que le rustdoc** : les trois liens `docs/Traité.pdf` morts du même dossier étaient dans du markdown, et **ils compilaient parfaitement**. *Le dossier qui apporte la solution en a donné le contre-exemple le jour même* — ☑ les trois sont réparés, le dernier le 17 août 2026, **par une relecture humaine et non par un contrôle**. ⚠⚠ **Et le 15 août 2026 a produit la démonstration la plus nette de la ligne** : le renommage de `4 - Revue et Veille/` en `4 - Veille/` a tué **trente-deux renvois** dans trois `README.md` — *personne ne l'a vu pendant deux jours, et aucun contrôle du dépôt n'aurait pu le voir.* L'état « zéro lien mort » ne tient que par une mesure externe que rien ne rejoue — et pour l'appareil, **retirer un renvoi est indistinguable de réparer sa cible**. ⚠ **La démonstration a eu lieu, et elle est datée** : la suppression de `verification/` le 8 août 2026 a laissé **152 renvois morts** que personne n'a vus pendant vingt-quatre heures, deux passes de resynchronisation ayant publié « 6 morts » puis « quatre » entre-temps. *Un état déclaré par une mesure qu'aucun contrôle ne rejoue est une hypothèse, pas un fait* |
 | `2 - Compendium/` | le compendium **n'a toujours aucune URL** : son Annexe I réunit les bibliographies des sources sans en vérifier une seule, et *une entrée présente n'y atteste de rien* |
 | `SEBoK.pdf` — trois dossiers en trois jours | **14,0 Mio déposés le 13 août 2026 à la racine** (commit `cd7f76e`), **portés sous `2 - Compendium/` le 14** (commit `6ac7170`), **sous `1 - Corpus/0 - Références/` le 15**, renommés `2026 - SystemEngineeringBoK.pdf` — *inchangés au bit près aux trois étapes* (`3de0b7a`). ☑ **Le grief de rangement est soldé** : ce fichier lui reprochait d'être **rangé dans un volume clos**, ce qui donnait à croire qu'il en faisait partie ; il est maintenant **avec sa classe**, et il en prend la convention de nommage `AAAA - Titre`. ⚠ **Le grief de fond ne l'est pas** : *aucun document du dépôt ne le cite, aucune entrée de socle ne s'y adosse, son régime n'est écrit nulle part.* **Il reste à écrire, et personne ne l'écrira** |
-| `4 - Revue et Veille/Python/` — les trois contrôles | ☑ **SOLDÉ le 15 août 2026, le jour où le défaut est devenu une panne.** Les trois nommaient leurs sources en **chemin relatif au répertoire courant** — `SRC = 'Veille Technologique.md'`, `SRC = 'Revue de littérature.md'`, `'Veille Technologique.pdf'` par défaut — et **ont levé `FileNotFoundError`** dès que la veille et la revue ont quitté la racine. *Une trace de pile n'est pas un verdict : un contrôle qui ne trouve pas sa source ne dit pas que le document est faux, il ne dit plus rien.* ☑ **Chacun résout désormais son chemin contre `Path(__file__)`** et sort 0 **depuis la racine, depuis `4 - Revue et Veille/` et depuis `Python/`** — neuf exécutions, valeurs identiques au 10 août 2026. ⚠ *La correction ne touche que la résolution des chemins : aucun contrôle, aucun seuil, aucun verdict ne change.* ⚠ **Ce qui reste ouvert** : `check-resume.py` **n'est calibré que pour le gabarit de la veille** — `MARGE_BASSE = 73.7` est une constante, et il compte le folio —, si bien qu'il **sort 1 sur `3 - Traité/Traité.pdf` sans qu'une ligne y soit rognée** |
-| `3 - Traité/CLAUDE.md` | ⚠ **il vise `docs/Traité.pdf`, qui n'existe pas** : le traité est à `3 - Traité/Traité.pdf`, un cran plus haut. Le dossier a été écrit en dépôt autonome, où le PDF vivait sous `docs/` ; la fusion du 14 août 2026 l'a posé à la racine du dossier **sans reprendre les renvois**. ⚠ *Le renvoi mort vise la **source normative** du projet, celle dont `CLAUDE.md` dit que « les algorithmes, les hypothèses et les chiffres viennent de là, et de nulle part ailleurs » — c'est le pire endroit possible pour un lien mort.* ☑ Les **deux `README.md`** du dossier portent le correctif ; ⚠ **`CLAUDE.md` n'est pas dans le périmètre d'une resynchronisation de `README.md` et n'a pas été touché** — arbitrage d'auteur |
+| `4 - Veille/Python/` — les trois contrôles | ☑ **SOLDÉ le 15 août 2026, le jour où le défaut est devenu une panne.** Les trois nommaient leurs sources en **chemin relatif au répertoire courant** — `SRC = 'Veille Technologique.md'`, `SRC = 'Revue de littérature.md'`, `'Veille Technologique.pdf'` par défaut — et **ont levé `FileNotFoundError`** dès que la veille et la revue ont quitté la racine. *Une trace de pile n'est pas un verdict : un contrôle qui ne trouve pas sa source ne dit pas que le document est faux, il ne dit plus rien.* ☑ **Chacun résout désormais son chemin contre `Path(__file__)`** et sort 0 **depuis la racine, depuis `4 - Veille/` et depuis `Python/`**. ☑ **Le second volet est soldé le 17 août 2026** : `check-resume.py` **sort 0 sur les trois PDF du dépôt, traité compris** — ⚠ *non parce qu'il a été recalibré, mais parce que le traité est venu à la géométrie de la veille* (117 pt en x, 72 pt en y, page de titre sans folio), et `MARGE_BASSE` vaut 72,0. ⚠ **Ce qui reste ouvert** : la constante suit le YAML **à la main**, et le contrôle **ne lit que la page 1** — *c'est ce qui a laissé sept titres de la veille se rendre en texte courant d'un bout à l'autre du document sans qu'il bronche* |
+| `3 - Traité/CLAUDE.md` | ☑ **SOLDÉ le 17 août 2026.** Il visait `docs/Traité.pdf`, qui n'existe pas : le traité est à `3 - Traité/Traité.pdf`, un cran plus haut. Le dossier a été écrit en dépôt autonome, où le PDF vivait sous `docs/` ; la fusion du 14 août 2026 l'a posé à la racine du dossier **sans reprendre les renvois**. ⚠ *Le renvoi mort visait la **source normative** du projet, celle dont `CLAUDE.md` dit que « les algorithmes, les hypothèses et les chiffres viennent de là, et de nulle part ailleurs » — c'était le pire endroit possible pour un lien mort, et il aura tenu trois jours.* ☑ Les **deux `README.md`** du dossier ont porté le correctif le 14 août ; ☑ **`CLAUDE.md` l'a reçu à l'audit du dossier le 17** — *hors du périmètre d'une resynchronisation de `README.md`, il a fallu une passe du dossier lui-même* |
 | `3 - Traité/Traité.md` ↔ `figures/` | ⚠ **le livrable et ses dix-neuf figures sont dans deux dossiers différents**, et le livrable les cite en chemin relatif. *Pandoc résolvant contre le répertoire courant*, la chaîne de rendu **ne marche plus que depuis la racine du dépôt** — la seule des sept dans ce cas, et **rien ne le signale au moment où elle échoue**. Deux corrections sont possibles — déplacer `figures/` sous `3 - Traité/`, ou passer `--resource-path` à Pandoc — et **aucune n'est faite** : elles toucheraient soit un livrable, soit une chaîne de rendu, l'un et l'autre hors du périmètre d'une resynchronisation |
-| `OnePager.html` | ⚠ **une pièce sans régime, sans appareil et sans rattachement — entrée à la racine le 15 août 2026.** *Aucun document du dépôt ne la cite, elle ne cite aucun document, et rien n'écrit ce qu'elle fait là* — **même classe exactement que les quatre PDF de `0 - Références/`**, à ceci près qu'elle n'est pas une pièce déposée mais une pièce **produite ici**, et qu'elle **reformule du contenu de livrable** : les quatre couches du NEIF du Vol. I §1.2.1.1 et son invariant transversal, sans les attribuer. ⚠ **Elle porte en outre une quatrième échelle à six niveaux** — numérotés 1 à 6 —, quand le Vol. I en porte un continuum à six niveaux numérotés 0 à 5 (§2.2.4) que la parade **R-13** du Vol. III oblige à citer par son cardinal *et* sa numérotation. *La parade vaut pour les pièces de volume ; la page n'en est pas une, et rien ne la lui applique.* ⚠ **Aucun contrôle** : le tenir-sur-une-page en A4 paysage est **constaté au rendu et jamais vérifié**, exactement comme les cent pages du traité — *et l'on sait depuis le 11 août 2026 ce que vaut une cible constatée.* **Régime à écrire, filiation à attribuer, et personne ne le fera** |
-| `3 - Traité/` | ⚠ **ni licence, ni intégration continue.** L'absence de licence est le régime du dépôt entier — *droit d'auteur par défaut, tous droits réservés* —, et le dossier le déclare plutôt que de l'inventer : ses manifestes portent `publish = false`. ⚠ **L'absence d'intégration continue, elle, contredit deux de ses propres exigences** : NF-13 et NF-16 nomment un mécanisme d'application que le dépôt ne contient pas. *Les 428 tests, `clippy` et `cargo doc` sont les trois portes réelles du dossier, et rien ne les fait jouer automatiquement* |
+| `5 - Recension/OnePager.html` | ⚠ **une pièce sans régime, sans appareil et sans rattachement — entrée à la racine le 15 août 2026, rangée sous `5 - Recension/` le 16.** *Elle ne cite aucun document* — et **le seul qui la citait a cessé de le faire** : depuis la passe du 17 août 2026, le rapport de l'art expose l'échelle à six paliers **dans son propre corps** et ne la nomme plus. ⚠ **Elle reformule du contenu de livrable sans l'attribuer** : les quatre couches du NEIF du Vol. I §1.2.1.1 et son invariant transversal. ⚠ **Elle porte en outre une quatrième échelle à six niveaux** — numérotés 1 à 6 —, quand le Vol. I en porte un continuum à six niveaux numérotés 0 à 5 (§2.2.4) que la parade **R-13** du Vol. III oblige à citer par son cardinal *et* sa numérotation. *La parade vaut pour les pièces de volume ; la page n'en est pas une.* ⚠ **Aucun contrôle** : le tenir-sur-une-page en A4 paysage est **constaté au rendu et jamais vérifié**. ☑ *Le rangement lui donne un dossier ; il ne lui donne pas de régime.* **Régime à écrire, filiation à attribuer, et personne ne le fera** |
+| `3 - Traité/` | ⚠ **ni licence, ni intégration continue.** L'absence de licence est le régime du dépôt entier — *droit d'auteur par défaut, tous droits réservés* —, et le dossier le déclare plutôt que de l'inventer : ses manifestes portent `publish = false`. ⚠ **L'absence d'intégration continue, elle, contredit deux de ses propres exigences** : NF-13 et NF-16 nomment un mécanisme d'application que le dépôt ne contient pas. *La suite de tests, `clippy` et `cargo doc` sont les trois portes réelles du dossier, et rien ne les fait jouer automatiquement* — ⚠ **et le cardinal de la première ne se cite pas** : 428 tests à 08 h 10 le 17 août 2026, 447 à 08 h 32, **465 à 09 h 49**, cinq agents d'audit écrivant en parallèle |
+| `5 - Recension/` | ⚠ **le seul dossier numéroté sans aucun contrôle.** Rien n'y rejoue les énoncés du rapport — pas de `check-*.py`, pas de porte de pagination —, et *ses sept sources lui font hériter de leurs propres réserves.* ⚠ **Trois écarts internes sont déclarés par son `README.md` et non corrigés** : **neuf renvois `ch. 0 § 4`** visent une section retirée à la passe du 17 août 2026 ; la numérotation des tableaux porte un **`Tableau 0.2` sans `Tableau 0.1`**, *renuméroter aurait cassé les renvois qui visent le 0.2* ; et `chapitres/` — le brouillon de la boucle qui a produit le rapport — **a divergé de la source**, *ce qui est inoffensif tant qu'il n'est plus lu, et n'en est pas moins faux.* ⚠ **Son `dessine.py` est une copie de celui du compendium, avec une divergence déclarée** : le défaut d'origine n'est pas corrigé là-bas |
 
 ⚠ **Aucune publication GitHub Pages, pour aucun volume.** ⚠ **La formule antérieure — « plus de
 pages de présentation » — a cessé d'être exacte le 4 août 2026** et elle est corrigée ici : le
 Vol. IV en porte désormais, [`Compendium.html`](2%20-%20Compendium/Compendium.html) et les cinquante
-pages de chapitre. ⚠ **Et la racine en porte une depuis le 15 août 2026** —
-[`OnePager.html`](OnePager.html), *elle non plus n'est pas publiée*. *Ce qui a disparu n'est pas la
+pages de chapitre. ⚠ **Et `5 - Recension/` en porte une depuis le 16 août 2026** —
+[`OnePager.html`](5%20-%20Recension/OnePager.html), entrée à la racine le 15 et rangée là le 16,
+*elle non plus n'est pas publiée*. *Ce qui a disparu n'est pas la
 page de présentation, c'est sa publication en
 ligne* — les nouvelles ne sont **pas publiées** et se lisent depuis le dépôt, en local. Les deux
 `index.html` (Vol. I et Vol. II) ont été supprimés le 22 juillet 2026 (commit `fd8f1be`). Ils
@@ -2117,9 +2284,9 @@ aucune porte**, **ne lève aucune dérogation**, **ne referme aucune remontée**
 resynchronisation des porteurs de décomptes.** ⚠ *Trois gestes d'auteur, dont **le second rouvre la
 clôture du Vol. IV** — le premier depuis D-13 à toucher un volume, fût-ce par son seul appareil.*
 
-**(a) Un sixième livrable entre au dépôt.** [`Revue de littérature.md`](4%20-%20Revue%20et%20Veille/Revue%20de%20litt%C3%A9rature.md)
+**(a) Un sixième livrable entre au dépôt.** [`Revue de littérature.md`](4%20-%20Veille/Revue%20de%20litt%C3%A9rature.md)
 et son PDF — **40 pages fermes, 161 références, 18 sections, 8 tableaux**, neuf fronts de recherche —,
-avec son contrôle propre, [`check-revue.py`](4%20-%20Revue%20et%20Veille/Python/check-revue.py) (quatre contrôles, **validés par
+avec son contrôle propre, [`check-revue.py`](4%20-%20Veille/Python/check-revue.py) (quatre contrôles, **validés par
 mutation**, sortie 0). ⚠ *Ces décomptes sont ceux du dépôt et ils sont laissés tels quels : la
 **seconde passe du même jour**, en fin de fichier, porte la revue à **176 références et dix fronts**.
 Un constat daté enregistre, il ne retarde pas.* Son titre est **aligné le même jour** sur le radical que la veille et le
@@ -2257,7 +2424,7 @@ protocoles 4/**12** pour 13 — contredisant ce même tableau ; corrigé en **67
 ⚠ *Les numérateurs restent hérités du décompte antérieur et n'ont pas été revérifiés pièce à pièce,
 sauf celui du front neuf — 11 sur 15, établi sur dossier. C'est écrit plutôt que tu.*
 
-**(e) Le contrôle réparé avant d'être cru.** [`check-revue.py`](4%20-%20Revue%20et%20Veille/Python/check-revue.py) codait en dur
+**(e) Le contrôle réparé avant d'être cru.** [`check-revue.py`](4%20-%20Veille/Python/check-revue.py) codait en dur
 `sur 158` et `(Vingt-six|Trente et une)`. ⚠ **Passé à 28 auto-déclarations, le motif ne serait pas
 tombé : il aurait cessé de chercher, et le contrôle serait passé au vert sur un document faux.** Les
 alternatives couvrent désormais l'ancienne et la nouvelle valeur, un cinquième motif surveille le
@@ -2304,7 +2471,7 @@ livrable, et aucun ne le cite** : ses 118 références ne contiennent ni la veil
 aucun des quatre volumes, et les protocoles du dépôt n'y paraissent qu'une fois, par la
 spécification MCP prise en exemple de milieu. *Le dépôt gagne un livrable et non un renvoi* — en
 contrepartie, c'est le seul des sept dont l'auto-citation soit **nulle**. *(c)* ⚠ **Un contrôle du
-dépôt sort 1 sur ce PDF sans qu'il y ait de défaut** : [`check-resume.py`](4%20-%20Revue%20et%20Veille/Python/check-resume.py) code sa
+dépôt sort 1 sur ce PDF sans qu'il y ait de défaut** : [`check-resume.py`](4%20-%20Veille/Python/check-resume.py) code sa
 marge basse en dur à **73,7 pt** (les 2,6 cm de la veille) et compte le folio, quand l'essai compose
 à 2,35 cm et numérote dès la page de titre. Mesures relevées : dernière ligne du **résumé** à
 **y = 325,7 pt**, soit **259 pt de dégagement** ; texte le plus bas de la page à **39,1 pt**, qui est
@@ -2471,7 +2638,7 @@ est clos**. La clôture **D-13 reste en vigueur pour les quatre volumes**.
 
 **Le 10 août 2026, sixième passe du même jour — purge de la racine, et resynchronisation de ce
 fichier sur elle.** Sur instruction d'auteur, deux gestes sur l'outillage, aucun sur un livrable :
-*(a)* **les trois contrôles quittent la racine pour [`Python/`](4%20-%20Revue%20et%20Veille/Python/)** — `check-veille.py`,
+*(a)* **les trois contrôles quittent la racine pour [`Python/`](4%20-%20Veille/Python/)** — `check-veille.py`,
 `check-resume.py`, `check-revue.py`, déplacés sans qu'une ligne de leur code change ; *(b)*
 **`gauntlet-log.md` est supprimé**, le journal des boucles bâtisseur/critique de la veille, de la
 revue et de l'audit du traité. *La racine ne porte plus que les sept rendus, ce fichier, `.gitignore`
@@ -2488,7 +2655,7 @@ une panne le 15 août 2026, puis a été levée le même jour** : les sources on
 constantes n'ont pas suivi, et *une dépendance de chemin qu'on se contente de documenter finit par se
 rompre.* ☑ **Les trois résolvent depuis contre `Path(__file__)`** et se lancent de n'importe quel
 répertoire — voir l'entrée du 15 août plus bas. Le comportement sur le traité, lui, est inchangé :
-`python "4 - Revue et Veille/Python/check-resume.py" "3 - Traité/Traité.pdf"` **sort 1** sur sa
+`python "4 - Veille/Python/check-resume.py" "3 - Traité/Traité.pdf"` **sort 1** sur sa
 constante de marge et son folio, toujours sans qu'une ligne soit rognée.
 
 ⚠ **La purge du journal était prévisible et elle est irréversible en lecture directe.** Le tableau
@@ -2588,7 +2755,7 @@ sources.** ⚠ *L'entrée précédente écrivait que la passe du 14 août « ne 
 **Première passe** — deux gestes, aucun sur le corps d'un document, **cinq fichiers déplacés et
 inchangés au bit près** :
 *(a)* `Veille Technologique.md` / `.pdf` et `Revue de littérature.md` / `.pdf` quittent la racine pour
-**[`4 - Revue et Veille/`](4%20-%20Revue%20et%20Veille/)**, quatrième dossier numéroté ;
+**[`4 - Veille/`](4%20-%20Veille/)**, quatrième dossier numéroté ;
 *(b)* `SEBoK.pdf` quitte `2 - Compendium/` pour
 **[`1 - Corpus/0 - Références/`](1%20-%20Corpus/0%20-%20R%C3%A9f%C3%A9rences/)**, renommé
 `2026 - SystemEngineeringBoK.pdf`. **Identité vérifiée sur pièce**, `git hash-object` contre
@@ -2601,7 +2768,7 @@ de [`1 - Corpus/`](1%20-%20Corpus/README.md), celui du
 [Vol. I](1%20-%20Corpus/1%20-%20InteroperabiliteAgentique/README.md) — la seule autre page qui
 renvoyait à la veille —, le conspectus du
 [`2 - Compendium/`](2%20-%20Compendium/README.md) pour la seule entrée de `SEBoK.pdf`, et
-**[`4 - Revue et Veille/README.md`](4%20-%20Revue%20et%20Veille/README.md), neuf**. **Décomptes
+**[`4 - Veille/README.md`](4%20-%20Veille/README.md), neuf**. **Décomptes
 re-mesurés sur l'arbre à cette date, jamais recopiés** : **15** `README.md`, **4** PDF pour
 **46,5 Mio** à `0 - Références/` (48 786 201 octets, `du -sb`), **14 720 272 octets** pour le PDF
 renommé, **53** répertoires suivis sans `README.md` — *trente-trois jusqu'au 14 ; le dossier neuf en
@@ -2625,13 +2792,13 @@ son propre chemin d'installation* ». **Une dépendance de chemin qu'on se conte
 par se rompre**, et celle-ci a tenu cinq jours.
 
 ☑ **Le second geste de la journée corrige la cause et non le symptôme.** Le dossier
-[`Python/`](4%20-%20Revue%20et%20Veille/Python/) **suit ses sources** sous `4 - Revue et Veille/`, et
+[`Python/`](4%20-%20Veille/Python/) **suit ses sources** sous `4 - Veille/`, et
 les trois scripts **résolvent leur chemin contre `Path(__file__)`** au lieu du répertoire courant :
 *la dépendance à `cd` est supprimée, pas déplacée.* ⚠ **C'est le premier geste de ce dépôt qui touche
 du code hors de `3 - Traité/` depuis la clôture, et sa portée est écrite** : **aucun contrôle, aucun
 seuil, aucun verdict ne change** — seule la résolution des chemins est reprise, plus l'affichage du
 nom de fichier, qui cesse d'être un chemin. ☑ **Vérification : les trois sortent 0 depuis trois
-répertoires — la racine, `4 - Revue et Veille/` et `Python/` —, soit neuf exécutions**, aux valeurs
+répertoires — la racine, `4 - Veille/` et `Python/` —, soit neuf exécutions**, aux valeurs
 exactes du 10 août 2026 : 303 définies et 303 citées pour la veille, 176 entrées et
 **12 / 28 / 133** pour la revue, **y = 119,4 pt** et 45,7 pt de dégagement pour le budget de page.
 *Le dépôt revient à sept contrôles exécutables sur sept.* ⚠ **Ce qui n'est pas corrigé** :
@@ -2672,8 +2839,10 @@ quatre volumes**.
 **Le 15 août 2026, troisième passe du même jour — une page de présentation entre à la racine, et ce
 fichier ne la portait pas.** ⚠ *L'entrée précédente écrivait, le matin même, que la racine « ne porte
 plus aucun livrable » et que ce fichier en est le seul avec `.gitignore` ; l'après-midi y déposait
-[`OnePager.html`](OnePager.html) (commit `6968168`), et **rien ne l'a signalé** — le fichier a vécu
-un commit entier sans une mention dans aucun `README.md` du dépôt.* Deux gestes, aucun sur un
+[`OnePager.html`](5%20-%20Recension/OnePager.html) (commit `6968168`), et **rien ne l'a signalé** — le fichier a vécu
+un commit entier sans une mention dans aucun `README.md` du dépôt.* ⚠ *Il n'y est resté qu'une
+journée : il est sous [`5 - Recension/`](5%20-%20Recension/) depuis le 16 août 2026, et le renvoi
+ci-dessus l'y suit — le constat, lui, garde sa date.* Deux gestes, aucun sur un
 livrable : *(a)* **dépôt de la page** ; *(b)* **reprise de la page le jour même** (commit `f6de7e7`)
 — **thème sombre à accent orange**, **retitrage** en *« Échelle de maturité de l'interopérabilité et
 orchestration agentiques d'entreprise »*, et **refonte de la mise en page** : tables de disposition
@@ -2723,3 +2892,82 @@ aucune porte de rendu**, **ne la rattache à aucun dossier numéroté**, **ne co
 **ne déplace pas `figures/`**, **ne franchit aucune porte**, **ne lève aucune dérogation**, **ne
 referme aucune remontée**, **ne rejuge pas la clôture** et **ne publie rien de ce qui est clos**. La
 clôture **D-13 reste en vigueur pour les quatre volumes**.
+**Le 17 août 2026 — passe de cohérence sur la totalité des `README.md`, et sur eux seuls.** Sur
+instruction d'auteur : *réviser la totalité des `README.md` pour assurer la cohérence de leur contenu
+respectif*. **Seize fichiers relus, six repris** — celui de la racine, celui de
+[`1 - Corpus/`](1%20-%20Corpus/README.md), celui du
+[Vol. I](1%20-%20Corpus/1%20-%20InteroperabiliteAgentique/README.md), et les deux du dossier du
+traité, plus le dépôt du seizième. **Aucun livrable, aucun document de gouvernance, aucun rendu n'est
+touché.**
+
+**Ce que la relecture a trouvé, et corrigé.**
+
+- ⚠⚠ **Un renommage de dossier n'avait été enregistré nulle part, et il avait tué trente-deux
+  renvois.** [`4 - Veille/`](4%20-%20Veille/) a été **créé sous le nom `4 - Revue et Veille/` le
+  15 août 2026 et renommé le jour même** (commit `71d5388`, 10 h 03) — *après que les entrées de
+  journal du 15 août eurent été écrites, et sans qu'aucune passe ne les reprenne.* **Trente-deux
+  renvois** pointaient dans le vide : vingt-huit dans ce fichier, deux dans la synthèse du corpus,
+  deux dans le `README.md` du Vol. I. ☑ Tous repointés, **et le nom d'origine conservé en clair**, à
+  chaque endroit où il date un constat. ⚠ *Le titre du `README.md` de `4 - Veille/` porte encore
+  « Revue et Veille » : c'est le nom du dossier avant renommage, et il n'a pas été touché — arbitrage
+  d'auteur.*
+- ⚠⚠ **Ce fichier décrivait une racine du dépôt qui n'existait plus depuis une journée.**
+  `OnePager.html`, `Rapport de l'art.md`, sa chaîne et son dossier `build/` y étaient donnés pour
+  posés à la racine ; **les trois sont sous [`5 - Recension/`](5%20-%20Recension/) depuis le
+  16 août 2026**, cinquième dossier numéroté. ⚠ **Trois noms qu'il annonçait ne désignent aucun
+  fichier de l'arbre** : `Rapport de l'art.html`, `build/rendre-rapport.py`, et un rendu de
+  **41 pages** — *le PDF en fait **127**, la chaîne s'appelle
+  [`rendre-recension.py`](5%20-%20Recension/build/rendre-recension.py) et il n'y a pas de rendu HTML.*
+  ☑ Le décompte des chaînes passe de sept à **huit**, celui des dossiers numérotés de quatre à
+  **cinq**, celui des `README.md` de quinze à **seize**, et celui des répertoires sans `README.md` de
+  cinquante-trois à **cinquante-huit** — *tous re-comptés sur l'arbre, aucun recopié.*
+- ⚠⚠ **Les décomptes des trois livrables postérieurs à la clôture étaient tous périmés.** ☑
+  **Re-mesurés à `pypdf` 6.16.1 le 17 août 2026** : veille **144 p. / 342 références** *(100 / 303
+  annoncées, format ferme levé le 15 août)*, revue **59 p. / 192 références** *(40 / 176 annoncées,
+  cible levée le même jour)*, traité **143 p. / 123 notices** *(100 / 119 annoncées, **troisième
+  édition du 15 août**, format ferme levé)*. ⚠ **La conséquence du dernier est un piège de
+  provenance** : *la pagination de la troisième édition ne coïncide avec aucun renvoi antérieur, et
+  une page du traité citée sans son édition est fausse, pas imprécise.* Les quatre volumes, eux, sont
+  **inchangés au chiffre près** — 569, 387, 427, 1 000 p.
+- ☑ **Trois reliquats étaient soldés sans que ce fichier le sache, et le tableau le portait encore.**
+  *(a)* Le renvoi mort de [`3 - Traité/CLAUDE.md`](3%20-%20Trait%C3%A9/CLAUDE.md) vers un
+  `docs/Traité.pdf` inexistant **est corrigé depuis l'audit du 17 août 2026** — *le dernier des trois,
+  et le pire : il visait la source normative du projet.* *(b)*
+  [`check-resume.py`](4%20-%20Veille/Python/check-resume.py) **sort 0 sur `3 - Traité/Traité.pdf`**,
+  qu'il refusait depuis le 10 août — ⚠ *non parce qu'il a été recalibré, mais parce que le traité est
+  venu à la géométrie de la veille le 15 août : 117 pt en x, 72 pt en y, page de titre sans folio.*
+  *Un grief levé par le mouvement de l'objet mesuré, non par la correction de l'instrument, mérite
+  d'être lu comme tel.* *(c)* Le cinquième dossier numéroté **a reçu son `README.md`**.
+- ☑ **Les sept contrôles exécutables ont été rejoués sur l'arbre courant**, et ils rendent ce que ce
+  fichier annonce : `check-veille.py`, `check-revue.py`, `check-resume.py`, `check-toc.py`,
+  `check-sieges.py` et `check-compendium.py` en **sortie 0** ; ⚠ `decompte.sh --verifier` en
+  **sortie 1**, sur le même écart de trois jetons au Vol. II qu'au 8 août 2026 — *sa valeur d'ancrage
+  reste périmée d'un renommage, et personne ne la remettra à jour.*
+- ⚠ **Un décompte a bougé trois fois dans la journée, et ce fichier en portait le premier état.**
+  Le simulateur comptait **428 tests** à l'entrée du dossier le 14 août 2026 ; l'audit du 17 août en
+  a porté le compte à **447 à 08 h 32**, puis à **465 à 09 h 49, 0 échec**, cinq agents écrivant en
+  parallèle. ☑ **La suite a été rejouée et le chiffre est un verdict, non un décompte d'attributs** —
+  *`grep` en compte 465 lui aussi, mais un attribut compté n'est pas un test exécuté, et rien ne
+  garantit que les deux coïncident demain.* Décomptes structurels repris de même : **71 modules,
+  29 120 lignes** *(76 et 27 224 au 14 août)*.
+- ⚠ **Deux écarts sont portés sans être corrigés.** *(a)* Le `README.md` de
+  [`3 - Traité/docs/`](3%20-%20Trait%C3%A9/docs/README.md) donnait `gauntlet-log.md` pour retiré du
+  dépôt, alors qu'**un fichier de ce nom est revenu à la racine du dossier le 17 août 2026** — *ce
+  n'est pas le même journal, et les deux README du dossier le disent désormais.* *(b)*
+  `bancs/audit-2026-08/` s'ajoute sous un répertoire que le dossier décrit comme celui des décisions
+  tranchées par la mesure, **sans porter de `VERDICT.md`** : *ce sont des rapports d'audit, pas des
+  mesures, et la classe n'est pas la même.*
+
+⚠⚠ **Ce que cette passe démontre, et que le tableau des reliquats annonce depuis le 9 août 2026.**
+**Aucun des sept contrôles du dépôt ne résout un lien markdown.** Un renommage de dossier a donc pu
+tuer **trente-deux renvois** et vivre deux jours ; le déplacement de trois pièces à la racine a pu
+faire mentir ce fichier une journée entière ; et **rien, nulle part, n'a levé la moindre erreur.**
+*Les deux fois, il a fallu qu'un lecteur ouvre les fichiers.* ⚠ *Le contrôle qui manque est toujours
+le même, et il manque toujours.*
+
+⚠ **Ce que la passe ne fait pas.** Elle **ne modifie aucun des sept livrables**, **ne touche à aucun
+document de gouvernance**, **ne rejoue aucune décision d'auteur**, **ne corrige aucun contrôle**,
+**n'écrit le régime d'aucune pièce déposée**, **n'ajoute aucune porte de pagination ni aucun contrôle
+de renvois**, **ne franchit aucune porte**, **ne lève aucune dérogation**, **ne referme aucune
+remontée**, **ne rejuge pas la clôture** et **ne publie rien de ce qui est clos**. La clôture
+**D-13 reste en vigueur pour les quatre volumes**.

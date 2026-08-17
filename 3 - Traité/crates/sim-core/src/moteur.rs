@@ -278,6 +278,21 @@ impl<C> Moteur<C> {
         if self.arret.is_some() {
             return None;
         }
+        // EX-C09 — première moitié : une sûreté violée par le gestionnaire du
+        // tour précédent arrête ici, **avant** d'extraire quoi que ce soit.
+        //
+        // Et avant **les trois** motifs d'arrêt, non pas le seul budget
+        // d'événements : une violation déjà enregistrée a eu lieu au tour
+        // précédent, donc avant l'épuisement du budget de temps comme avant la
+        // demande d'arrêt, qui sont tous deux rapportés de l'extérieur et donc
+        // postérieurs. Les motifs sont vrais ensemble ; un seul est un défaut,
+        // et c'est celui-là qu'il faut rapporter. Placé après l'un d'eux, le
+        // contrôle enterrait une violation au registre sous une raison
+        // administrative — mesuré : `Some(BudgetTemps)` et `Some(Demande)` avec
+        // une violation enregistrée.
+        if self.arreter_sur_violation() {
+            return None;
+        }
         if self.budget.arret_demande {
             self.arret = Some(Arret::Demande);
             return None;
@@ -287,15 +302,6 @@ impl<C> Moteur<C> {
                 self.arret = Some(Arret::BudgetTemps);
                 return None;
             }
-        }
-        // EX-C09 — première moitié : une sûreté violée par le gestionnaire du
-        // tour précédent arrête ici, **avant** d'extraire quoi que ce soit.
-        //
-        // Et avant le budget : une exécution qui viole au dernier événement de
-        // son budget doit rapporter la violation, pas l'épuisement. Les deux
-        // motifs sont vrais, mais un seul est un défaut.
-        if self.arreter_sur_violation() {
-            return None;
         }
 
         if self.evenements_consommes >= self.budget.evenements_max {
@@ -506,6 +512,51 @@ mod tests {
         m.oracles.violer("m1", m.maintenant(), "ordre rompu");
         assert!(m.suivant().is_none());
         assert_eq!(m.arret(), Some(&Arret::Violation("m1")));
+    }
+
+    /// EX-C09 — une violation **déjà enregistrée** l'emporte sur les trois
+    /// autres motifs d'arrêt, et non sur le seul budget d'événements. L'arrêt
+    /// demandé et le budget de temps sont rapportés de l'extérieur, donc
+    /// postérieurs à la violation : les rapporter à sa place enterre le seul
+    /// motif qui soit un défaut sous une raison administrative.
+    #[test]
+    fn une_violation_enregistree_lemporte_sur_les_autres_arrets() {
+        use crate::oracle::Oracle;
+
+        // (a) budget de temps épuisé au même tour.
+        let mut m: Moteur<u32> = Moteur::nouveau(
+            1,
+            Granularite::Milli,
+            Budget::evenements(1_000).avec_secondes_coeur(1.0),
+        );
+        m.oracles.armer(Oracle::surete("m1", "§1.2"));
+        m.pousser_a(Instant(1), ActeurId(0), 0);
+        m.pousser_a(Instant(2), ActeurId(0), 1);
+        m.suivant().unwrap();
+        m.oracles.violer("m1", m.maintenant(), "ordre rompu");
+        m.budget.consommer_temps(1.5);
+        assert!(m.suivant().is_none());
+        assert_eq!(m.arret(), Some(&Arret::Violation("m1")));
+
+        // (b) arrêt demandé au même tour.
+        let mut m: Moteur<u32> = Moteur::nouveau(1, Granularite::Milli, Budget::evenements(1_000));
+        m.oracles.armer(Oracle::surete("m2", "§1.2"));
+        m.pousser_a(Instant(1), ActeurId(0), 0);
+        m.suivant().unwrap();
+        m.oracles.violer("m2", m.maintenant(), "ordre rompu");
+        m.budget.demander_arret();
+        assert!(m.suivant().is_none());
+        assert_eq!(m.arret(), Some(&Arret::Violation("m2")));
+
+        // (c) budget d'événements épuisé au même tour — déjà tenu avant.
+        let mut m: Moteur<u32> = Moteur::nouveau(1, Granularite::Milli, Budget::evenements(1));
+        m.oracles.armer(Oracle::surete("m3", "§1.2"));
+        m.pousser_a(Instant(1), ActeurId(0), 0);
+        m.pousser_a(Instant(2), ActeurId(0), 1);
+        m.suivant().unwrap();
+        m.oracles.violer("m3", m.maintenant(), "ordre rompu");
+        assert!(m.suivant().is_none());
+        assert_eq!(m.arret(), Some(&Arret::Violation("m3")));
     }
 
     /// La file vide n'est pas une terminaison : c'est l'épuisement des

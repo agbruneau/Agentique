@@ -82,6 +82,16 @@ pub struct Config {
 impl Config {
     /// Hachage de la configuration (NF-03). Calculé sur la sérialisation JSON,
     /// dont l'ordre des champs suit la déclaration et non une table de hachage.
+    ///
+    /// # Panics
+    ///
+    /// Si la configuration porte un flottant non fini. JSON n'a ni `NaN` ni
+    /// infini, et `serde_json` refuse de les écrire : une `Config` construite en
+    /// mémoire avec `secondes_coeur_max: Some(f64::INFINITY)` ou un taux de
+    /// faute `NaN` fait donc paniquer ici, et par contrecoup dans
+    /// [`Config::entete`] et [`Config::verifier_rejeu`]. Une configuration lue
+    /// d'un fichier ne peut pas être dans cet état, la même règle JSON valant à
+    /// la lecture.
     pub fn hachage(&self) -> u64 {
         // FNV-1a 64 bits, base et premier — mêmes constantes que
         // `bancs/dt1-flottant/src/noyau.rs`, qui les nomme aussi. Elles ne
@@ -125,8 +135,11 @@ impl Config {
         }
         if hachage_export != self.hachage() {
             return Err(format!(
-                "rejeu refusé : hachage de configuration {:016x} attendu, {hachage_export} fourni. \
-                 La graine seule ne suffit pas : le §3.3 journalise la graine **et** la \
+                // Les deux hachages dans la même base : l'attendu s'écrivait en
+                // hexadécimal et le fourni en décimal, de sorte que le message
+                // donnait deux nombres qu'aucun lecteur ne pouvait comparer.
+                "rejeu refusé : hachage de configuration {:016x} attendu, {hachage_export:016x} \
+                 fourni. La graine seule ne suffit pas : le §3.3 journalise la graine **et** la \
                  configuration complète.",
                 self.hachage()
             ));
@@ -188,7 +201,10 @@ mod tests {
     #[test]
     fn le_rejeu_dune_autre_configuration_est_refuse() {
         let c = config();
-        assert!(c.verifier_rejeu(VERSION, 0).is_err());
+        let e = c.verifier_rejeu(VERSION, 0).unwrap_err();
+        // Les deux hachages du message se comparent : même base, même largeur.
+        assert!(e.contains(&format!("{:016x} attendu", c.hachage())), "{e}");
+        assert!(e.contains("0000000000000000 fourni"), "{e}");
     }
 
     #[test]

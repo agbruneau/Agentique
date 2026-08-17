@@ -23,11 +23,15 @@ Là où le code ne tient pas ce que le PRD exige, ce document dit **ce que le co
 fait**, avec un renvoi vers la réserve correspondante du §0 du PRD — jamais
 l'exigence à la place de la réalité.
 
-**État mesuré au 13 août 2026** : **428 tests**, `cargo test --workspace --release`,
-exit 0, clippy propre, `cargo doc --workspace --no-deps` sans avertissement. Le §0
+**État mesuré au 17 août 2026, 09 h 49** : **465 tests**, `cargo test --workspace --release`,
+exit 0 ; clippy et rustdoc à 0, `cargo clippy --workspace --all-targets --release`
+et `cargo doc --workspace --no-deps` à 09 h 50. Le §0
 du PRD enregistre 348 à la clôture de la phase 5 ; la phase 6 a porté le compte à
-419, et l'audit du dépôt à 428 — neuf tests ajoutés pour fermer des trous que
-cette révision a ouverts, aucun affaibli.
+419, l'audit du 13 août à 428, et celui du 17 août à 447 puis 465 — des tests
+ajoutés pour fermer des trous que ces révisions ont ouverts, aucun affaibli.
+**Ce compte est une mesure, pas une constante** : il ne se cite pas, il se refait
+par la ligne ci-dessus — 428 à 08 h 10, 447 à 08 h 32 et 465 à 09 h 49 le même
+jour, cinq agents écrivant en parallèle.
 
 **Règle de lecture des blocs de code.** Les blocs `rust` de ce document sont des
 **esquisses de signature** : ils donnent les items dont un énoncé dépend, jamais
@@ -633,8 +637,26 @@ d'une citation serait la confusion de provenance qu'EX-V11 refuse.
 **Les scénarios C, H et I n'ont pas de bloc**, et `sim_agents::hors_perimetre()`
 le déclare.
 
-Les dix portent une `source` avec **section et page** de la deuxième édition, ce
-que fixe `les_dix_blocs_portent_leur_section_et_leur_page`. **Huit d'entre eux — D, E,
+Les dix portent une `source` avec **section et page**, ce
+que fixe `les_dix_blocs_portent_leur_section_et_leur_page`. **De quelle édition,
+le code ne le dit qu'en partie, et il n'en dit pas la même chose partout.**
+Mesuré le 17 août 2026 à 08 h 32 par
+
+```bash
+grep -rhoE '§[0-9]+(\.[0-9]+)?, p\. [0-9]+' crates/ | sort | uniq -c | sort -rn
+```
+
+les 43 renvois `§X.Y, p. N` des quatre crates donnent **quatre** pages
+différentes pour le seul §1.2 — `p. 16` dix fois, `p. 13` quatre fois, `p. 14`
+deux fois, `p. 12` une fois. **L'édition de référence est tranchée depuis le
+17 août 2026** — c'est la **troisième**, 143 pages, la seule que le dépôt
+contienne, et F2 comme DT5 portent la clause. Ce que le constat ci-dessus établit
+n'est donc plus une ambiguïté d'édition mais une **migration inachevée** : le
+`Traité.pdf` du dépôt ouvre le §1.2 à la page 12 avec l'énoncé des bornes à la
+page 16, `p. 13` ne correspond à ni l'un ni l'autre, et le compte ci-dessus a
+bougé d'une heure à l'autre pendant la campagne. Le code n'en tient pas une seule,
+ce que F2 qualifie de provenance fausse et non d'imprécision, et seuls les renvois
+portant `(3ᵉ éd.)` se relisent sans refaire la vérification. **Huit d'entre eux — D, E,
 F, G, J, K, L, M — n'ont aucun point d'affichage** : `sim-viz` ne lit que `BLOC_A`
 et `BLOC_B`, et le réexport de `BLOC_D` et `BLOC_M` par `lib.rs` n'en est pas un.
 La liste d'absences le dit, et l'onglet « Limites » affiche le même compte.
@@ -661,9 +683,9 @@ négatif :
 
 | Elle contient | Elle ne contient pas |
 |---|---|
-| `Application`, les deux points d'entrée `lancer_natif` et `lancer_web`, l'échelle typographique `poser_le_style` posée à l'identique sur les deux cibles | **Zéro** logique de simulation |
-| `scenario_a.rs`, `scenario_b.rs` — les deux vues livrées | **Zéro** définition de scénario : les paramètres et les critères d'acceptation viennent de `sim-agents`. **Les plages de curseur, elles, sont écrites ici** — quinze littéraux dans les deux vues, dont quatre qu'aucun tableau du §7 du PRD ne fixe |
-| Les onglets « Limites » et « Repères » | **Zéro** texte du traité : le glossaire vient de `sim_agents::glossaire`, les reformulations de `Bloc::en_clair`, les listes d'absences des trois `hors_perimetre()` |
+| `Application`, les deux points d'entrée `lancer_natif` et `lancer_web`, l'échelle typographique `poser_le_style` posée à l'identique sur les deux cibles | **Zéro** logique de simulation, à **une** exception nommée : `scenario_b.rs::situe_la_tranche` réimplante l'hypothèse que le budget d'événements est découpé en tranches de largeur égale — c'est ce que fait `Fourragement::traiter`, mais `sim-agents` ne rend pas la tranche de bascule, et le jour où le découpage cesserait d'être uniforme l'étiquette « avant / après la bascule » mentirait sans erreur de compilation. Déclarée dans son rustdoc **et** dans l'onglet « Limites » depuis l'audit du 17 août 2026 |
+| `scenario_a.rs`, `scenario_b.rs` — les deux vues livrées | **Zéro** définition de scénario, à **deux** exceptions nommées : les critères d'acceptation viennent tous de `sim-agents`, mais **les valeurs d'ouverture des deux vues sont écrites ici** — six dans `VueA::default` (n, p, ℓ₉₉, aller simple, degré de dépôt, taux d'omission) et trois dans `VueB::default` (n, budget, graine). Ce sont les défauts des tableaux du §7 du PRD, transcrits faute d'accesseur : `sim_agents::scenario_a` est une fonction à sept paramètres sans constructeur de défaut, et `Params::scenario_b()` pose n = 64 là où la vue ouvre à 16 (Θ(n²)). Rien ne tient ces transcriptions en accord avec le PRD. **Les plages de curseur, elles aussi, sont écrites ici** — quinze littéraux dans les deux vues, dont quatre qu'aucun tableau du §7 du PRD ne fixe. Les neuf valeurs d'ouverture sont déclarées dans l'onglet « Limites » depuis l'audit du 17 août 2026 |
+| Les onglets « Limites » et « Repères » | **Zéro** texte du traité, à **une** exception nommée : le glossaire vient de `sim_agents::glossaire`, les reformulations de `Bloc::en_clair`, trois des **six** listes de l'onglet venant des `hors_perimetre()` — mais la provenance des deux bornes est recopiée dans `scenario_b.rs::SOURCE_BORNES`, faute d'accesseur dans `sim-agents`. La copie a déjà divergé de `Bornes::LEGENDE`, affichée quatre lignes plus bas dans le même cadre ; depuis l'audit du 17 août 2026 le test `la_provenance_des_bornes_suit_encore_sim_agents` échoue à la place de l'écran |
 | Trois rangs de cadre — `cadre` découpe une section numérotée, `encart` accompagne sans découper, `bloc_pd8` pose le sien | Ni export CSV, ni parcours « le fil » : **O6 n'est pas livré** |
 
 `main.rs` fait seize lignes, dont **six de code** : deux `fn main` gardés par
@@ -700,9 +722,9 @@ Trois fonctions du code sont la liste vivante des absences, et elles sont un
 
 | Fonction | Ce qu'elle énumère |
 |---|---|
-| `sim_agents::hors_perimetre()` | **19 entrées** — dont le tableau 15 rendu par citation, le débit « émergent » du scénario C qui inverse la formule qui a produit ses points, trois des **sept** colonnes du tableau 14, six mécanismes des phases 1 à 5 sans appelant, quatre oracles du catalogue jamais armés, et les deux mécanismes du ch. 8 qu'aucun scénario n'exécute |
-| `sim_milieu::hors_perimetre()` | **9 entrées** — dont l'absence d'arbitrage d'époque, la monotonie de \|ISR\| **hors élection hors ISR**, l'historique et le quota que nul scénario n'instancie, les prédicats d'oracle jamais évalués, et le fait que rétention, compactage, groupe et plan de contrôle sont **implantés, testés, et appelés par aucun scénario** |
-| `ModeleFaute::hors_modele()` | **5 entrées** — dont la première, aucun scénario ne règle `Config.fautes`, et la cinquième, l'adversité endogène du §8.3 du traité (EX-C20) |
+| `sim_agents::hors_perimetre()` | **20 entrées** — dont le tableau 15 rendu par citation, le débit « émergent » du scénario C qui inverse la formule qui a produit ses points, trois des **sept** colonnes du tableau 14, six mécanismes des phases 1 à 5 sans appelant, **six** oracles du catalogue jamais armés, et les deux mécanismes du ch. 8 qu'aucun scénario n'exécute — `awk '/pub fn hors_perimetre/,/^}/' crates/sim-agents/src/lib.rs \| grep -cE '^\s*"'`, 17 août 2026 |
+| `sim_milieu::hors_perimetre()` | **13 entrées** — dont l'absence d'arbitrage d'époque, la monotonie de \|ISR\| **hors élection hors ISR**, l'historique par identité (EX-M25) et le quota par ressource (EX-M26) que nul scénario n'instancie, les prédicats d'oracle jamais évalués, la fonction de clé du milieu sans appelant, et le fait que rétention, compactage, groupe et plan de contrôle sont **implantés, testés, et appelés par aucun scénario** — même ligne sur `crates/sim-milieu/src/lib.rs`, 17 août 2026 |
+| `ModeleFaute::hors_modele()` | **5 entrées** — dont la première, aucun scénario ne règle `Config.fautes`, et la cinquième, l'adversité endogène du §8.3 du traité (EX-C20). La première **énumère à elle seule neuf mécanismes sans appelant**, dont six sans rapport avec le modèle de faute pris comme modèle : c'est la conséquence de l'absence de `sim_core::hors_perimetre()`, décision ouverte au [registre](decisions.md) |
 
 **La distinction qui gouverne ces listes n'est pas « écrit / pas écrit » mais
 « branché / pas branché ».** Un module que personne n'appelle a exactement le
@@ -719,7 +741,7 @@ critères de sortie ; ce document ne les recopie pas.
 
 | Ce qu'on vérifie | Commande |
 |---|---|
-| Le contrat entier — 428 tests | `cargo test --workspace --release` |
+| Le contrat entier — **465 tests** au 17 août 2026, 09 h 49 ; le compte se remesure, il ne se cite pas | `cargo test --workspace --release` |
 | Le critère de sortie de la phase 6 | `cargo test -p sim-agents --release --test sortie_phase_6` |
 | Le constat de mesure sur Φ_c | `cargo run -p sim-agents --example diagnostic_conformite --release` |
 | Les interdictions structurelles — **sortie 101 si l'une tombe** | `cargo clippy --workspace --all-targets --release` |
@@ -742,9 +764,11 @@ qui tiennent le contrat au niveau du système :
 
 Il n'y a pas de `sortie_phase_1.rs` : les critères de la phase 1 sont dans
 `determinisme.rs` et `scenario_b.rs`. **Ne pas affaiblir ces tests** — ce sont les
-preuves du tableau du §0. Les 43 tests d'intégration se complètent de 385 tests
-unitaires (239 `sim-agents`, 86 `sim-core`, 56 `sim-milieu`, 4 `sim-viz`), soit
-428.
+preuves du tableau du §0. Les 43 tests d'intégration se complètent de **422** tests
+unitaires (253 `sim-agents`, 96 `sim-core`, 68 `sim-milieu`, 5 `sim-viz`), soit
+**465** au 17 août 2026 à 09 h 49. **C'est la répartition, non le total, qui dit
+où le filet est lâche** : 43 tests d'intégration pour 422 unitaires, et cinq
+seulement sur toute l'interface.
 
 **Les trois commandes à passer avant de committer**, et non deux : `cargo test`,
 `cargo clippy` et `cargo doc`. La troisième manquait à la procédure, et c'est
@@ -772,6 +796,7 @@ sixième par l'audit du dépôt.
 | Trois hypothèses nommées conditionnaient les bornes | Six. `Params::bornes_applicables` rend une `Err` portant son motif sur γ, sur le couple φ, sur le couple η, sur `m = 0`, sur un exposant négatif, et dès que la part de conformité est non nulle : la borne est **absente**, pas grisée. L'audit a trouvé que seul le couple φ était gardé, de sorte que le portail rendait `Ok` sur des planchers de probabilité valant `NaN`, `inf` ou `−0,00125` |
 | *(clause nouvelle)* | **L'effacement d'une borne suit le réglage, jamais la mesure.** `dettes::verdicts` prend une `&Familles`, non une `&Conformite` |
 | *(clause nouvelle, relevée par l'audit)* | **Effacer une borne n'efface pas une mesure.** `Fourragement::verifier_bornes` relève `plancher_observe` et `hors_dominante_observee` **avant** de consulter le portail, et non à l'intérieur de la branche qui s'arrête quand la borne est effacée. L'ordre inverse faisait disparaître la mesure au moment précis où elle devenait la seule chose à regarder |
+| *(clause nouvelle, relevée par l'audit du 17 août 2026)* | **`Politique::PrixCroissant` facture le k-ième preneur distinct `1 + pente × (k − 1)`, le soumissionnaire compris.** Le **deuxième** preneur distinct paie donc déjà la pente. Le code facturait sur l'état *d'avant* la soumission, de sorte que le deuxième payait encore le prix nominal et que le prix ne croissait pas « avec le nombre de preneurs » (§8.1) : la documentation du champ avait raison contre le code, et c'est le code qui a été corrigé. Le PRD ne chiffre pas cette grandeur — il exige « prix croissant avec le nombre de preneurs » (EX-M26) —, donc la formule est ici et nulle part ailleurs, tenue par `le_prix_monte_des_le_deuxieme_preneur` : à pente 1 et quatre preneurs distincts, le prix cumulé vaut **10**, non 7 |
 
 **Pourquoi la clause nouvelle, et c'est le résultat le plus important de la
 phase.** Le premier point du critère de sortie annonçait un Φ_c passant de ≈ 0 à

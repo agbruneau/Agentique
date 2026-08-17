@@ -31,9 +31,17 @@ pub struct Lien {
 }
 
 fn f(x: f64) -> String {
-    // Neuf décimales : au-delà, un f64 issu d'un curseur n'a plus de sens, et en
-    // deçà deux réglages voisins deviendraient un seul lien.
-    format!("{x:.9}")
+    // **Aucun arrondi.** L'affichage par défaut d'un `f64` rend la plus courte
+    // écriture décimale qui se relit à l'identique ; `{:.9}` rendait une écriture
+    // plus courte encore, mais qui ne se relit pas.
+    //
+    // La différence n'est pas théorique. Tous les champs ne viennent pas d'un
+    // curseur : `Params::verrouillage()` **calcule** son dépôt unitaire, et
+    // 8,231290285767679·10⁻⁵ arrivait chez le destinataire en 8,2313·10⁻⁵. Le
+    // lien encodait bien le champ, le décodait sans erreur, et faisait exécuter
+    // un autre dépôt — la panne qu'EX-V09 doit rendre impossible, et que NF-03
+    // ne rattrape pas puisque la version, elle, est la bonne.
+    format!("{x}")
 }
 
 impl Lien {
@@ -245,6 +253,61 @@ mod tests {
         let mut c = lien();
         c.graine = 43;
         assert_ne!(a.encoder(), c.encoder());
+    }
+
+    /// EX-V09 — un préréglage qui **pose** son dépôt unitaire voyage aussi
+    /// exactement que celui qui le laisse calculer.
+    ///
+    /// `Params::verrouillage()` pose `depot_unitaire = Some(φ_max·(−ln γ)/(n·τ/T))`,
+    /// une valeur calculée et non un cran de curseur : elle a les cinquante-trois
+    /// bits d'un `f64`. L'encodage à neuf décimales en gardait cinq chiffres
+    /// significatifs — 8,231290285767679·10⁻⁵ partait en `0.000082313` —, et le
+    /// destinataire exécutait un autre dépôt sans qu'aucun refus ne le signale.
+    /// C'est la panne exacte que le commentaire du champ `q` décrit, revenue par
+    /// la précision au lieu de l'omission.
+    #[test]
+    fn le_depot_unitaire_pose_traverse_le_lien_sans_perte() {
+        let emetteur = Lien {
+            params: Params {
+                n: 16,
+                ..Params::verrouillage()
+            },
+            ..lien()
+        };
+        let recu = Lien::decoder(&emetteur.encoder(), sim_core::VERSION).unwrap();
+        assert_eq!(
+            recu.params.depot_unitaire, emetteur.params.depot_unitaire,
+            "le dépôt unitaire a changé de valeur en traversant le lien"
+        );
+        assert_eq!(
+            scenario_b(emetteur.params.clone(), emetteur.graine, 20_000)
+                .unwrap()
+                .trace,
+            scenario_b(recu.params.clone(), recu.graine, 20_000)
+                .unwrap()
+                .trace,
+            "le destinataire ne voit pas la même figure"
+        );
+    }
+
+    /// Aucun champ flottant du lien n'est arrondi : ce que l'émetteur exécute
+    /// est ce que le destinataire exécute, bit pour bit.
+    #[test]
+    fn aucun_champ_flottant_nest_arrondi_par_lencodage() {
+        // Une valeur qui ne s'écrit pas en neuf décimales, sur chacun des
+        // flottants que le lien transporte.
+        let irrationnel = 1.0f64 / 3.0;
+        let p = Params {
+            gamma: 1.0 - irrationnel / 7.0,
+            phi_min: irrationnel / 1_000.0,
+            eta_min: irrationnel,
+            periode_cycle_ms: 50.0 + irrationnel,
+            depot_unitaire: Some(Params::scenario_b().depot()),
+            ..Params::scenario_b()
+        };
+        let a = Lien { params: p, ..lien() };
+        let b = Lien::decoder(&a.encoder(), sim_core::VERSION).unwrap();
+        assert_eq!(a, b);
     }
 
     /// NF-03 — un lien d'une autre version est refusé, avec la raison.

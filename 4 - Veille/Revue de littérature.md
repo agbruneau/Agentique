@@ -222,11 +222,97 @@ header-includes: |
   }
 
   // ── Table des matières : sa propre page, à 9 pt — le corps de l'appareil.
+  //    ⚠ SECOND POSTE OÙ LE BLOC DIFFÈRE D'UN DOCUMENT À L'AUTRE, avec le rang
+  //    des titres qui le suit. Le bloc commun n'y pose PLUS le saut de page qui
+  //    ferme la table : les mots-clés, premier paragraphe du corps, montent à sa
+  //    suite. La raison est une mesure et non un goût — la table de la revue
+  //    s'arrête à y = 208,6 pt sur sa dernière page, soit 36 lignes libres pour
+  //    les 8 que font ses mots-clés, et le saut leur donnait une page entière
+  //    où ils tenaient seuls sur un huitième de la hauteur composée.
+  //    ⚠ NE PAS REPORTER TEL QUEL SUR LA VEILLE NI SUR LE TRAITÉ. La table de
+  //    la veille s'arrête à y = 677 pt, trois lignes libres, et ses mots-clés
+  //    en font quinze : sans le saut ils se couperaient en deux pages. Un
+  //    document dont la table remplit sa dernière page garde le saut ; celui
+  //    dont elle s'arrête haut ramène ses mots-clés dessous. La règle ne peut
+  //    pas trancher pour les deux, et c'est pourquoi elle ne tranche plus ici.
+  //    Le saut qui ouvre la première section, lui, reste écrit dans la source
+  //    des trois — il n'a jamais dépendu de cette règle.
   #show outline: set text(size: 9pt)
-  #show outline: it => [#pagebreak(weak: true) #it #pagebreak(weak: true)]
+  #show outline: it => [#pagebreak(weak: true) #it #v(1.4em)]
 
-  // ── Rang typographique des titres. ⚠ SEUL POSTE OÙ LE BLOC DIFFÈRE D'UN
-  //    DOCUMENT À L'AUTRE, et il n'a pas le choix : la veille et la revue
+  // ── Bloc de titre : titre, description du livrable, auteur, résumé.
+  //    ⚠ LE GABARIT PANDOC EST REPRIS ICI, PAS COMPLÉTÉ. C'est le seul poste
+  //    du bloc commun qui redéfinisse une fonction du gabarit, et il le fait
+  //    faute d'autre voie : aucune règle `show` n'atteint un bloc de titre que
+  //    le gabarit compose en dur, et le YAML n'en règle ni les graisses ni les
+  //    blancs. Deux défauts mesurés sur les rendus du 15 août, les mêmes aux
+  //    trois documents, et qui se répondent :
+  //    ① L'AUTEUR COLLE AU TITRE — 2,4 pt sous le sous-titre de la revue,
+  //      1,9 pt sous la seconde ligne du titre de la veille, soit rien. Le
+  //      `par(spacing: 0.6em)` posé plus haut vaut aussi pour l'écart entre le
+  //      bloc de titre et la grille des auteurs, que le gabarit laissait au
+  //      défaut de Typst : la règle qui resserre les paragraphes du corps
+  //      resserrait du même geste ce qui sépare l'ouvrage de qui le signe.
+  //    ② DEUX LIGNES VIDES TOMBENT SOUS L'AUTEUR. Le gabarit compose
+  //      `nom \ affiliation \ courriel`, et un auteur donné en simple chaîne
+  //      — c'est le cas des trois — n'a ni l'une ni l'autre : 35,9 pt de blanc
+  //      entre l'auteur et le résumé de la revue, 35,9 pt à la veille.
+  //    Le blanc était donc tout entier du mauvais côté, quinze fois plus bas
+  //    que haut, et le bloc se lisait comme un titre suivi d'un orphelin. Il
+  //    va maintenant CROISSANT — 6,1 pt sous le titre, 9,9 pt sous le
+  //    sous-titre, 21,9 pt sous l'auteur —, chaque rang séparé du suivant par
+  //    un peu plus de blanc que du précédent.
+  //    Le wrapper appelle le gabarit SANS TITRE : privé de titre il ne compose
+  //    ni titre, ni sous-titre, ni auteur, ni date, ni résumé, et garde tout le
+  //    reste — réglage de page, langue, numérotation, métadonnées d'auteur. Les
+  //    cinq sont posés ici, dans le même flottant, à la même géométrie.
+  //    ⚠ LE FLOTTANT NE SE SCINDE PAS : un résumé trop long n'est pas reporté,
+  //    il est rogné, et ni Pandoc ni Typst ne sortent autre chose que 0.
+  //    `Python/check-resume.py` reste la seule porte qui le mesure.
+  //    ⚠ `set document` DOIT ÊTRE POSÉ DANS LE CONTENU, pas avant l'appel : le
+  //    gabarit pose le sien après, et un titre écrit trop tôt est écrasé par le
+  //    `title: none` qu'on lui passe — le PDF sortait alors sans titre.
+  //    ⚠ LE SOUS-TITRE PASSE DU GRAS 12,5 pt AU ROMAIN 12 pt. Il nomme le
+  //    livrable — « veille technologique en entreprise », « revue de la
+  //    littérature académique » —, il ne prolonge pas le titre : deux graisses
+  //    identiques à deux points et demi d'écart ne font pas deux rangs, elles
+  //    font un titre de deux lignes. Le titre garde ses 15 pt gras.
+  #let conf-pandoc = conf
+  #let conf(title: none, subtitle: none, authors: (), date: none,
+            abstract: none, abstract-title: none, ..reste, doc) = {
+    conf-pandoc(..reste, authors: authors, {
+      set document(title: if title != none { content-to-string(title) })
+      place(top, float: true, scope: "parent", clearance: 4mm,
+            block(below: 1em, width: 100%)[
+        #align(center)[
+          #block(below: 1.05em)[
+            #text(size: 15pt, weight: "bold", hyphenate: false)[#title]
+          ]
+          #if subtitle != none {
+            block(below: 1.35em)[
+              #text(size: 12pt, weight: "regular", hyphenate: false)[#subtitle]
+            ]
+          }
+          #if authors != none and authors != () {
+            block(below: 0pt)[#authors.map(a => a.name).join(h(1.5em))]
+          }
+          #if date != none {
+            block(above: 0.45em, below: 0pt)[#date]
+          }
+        ]
+        #if abstract != none {
+          block(inset: (x: 2em), above: 2.5em)[
+            #text(weight: "semibold")[#abstract-title] #h(1em) #abstract
+          ]
+        }
+      ])
+      doc
+    })
+  }
+
+  // ── Rang typographique des titres. ⚠ SECOND POSTE OÙ LE BLOC DIFFÈRE D'UN
+  //    DOCUMENT À L'AUTRE — l'autre est le saut de page qui fermait la table
+  //    des matières —, et il n'a pas le choix : la veille et la revue
   //    ouvrent leurs chapitres en `#` (niveau 1), le traité les siens en `##`
   //    (niveau 2). C'est le RANG qui doit se composer pareil, pas le niveau ;
   //    les trois échelles ci-dessous sont donc la même, décalée.

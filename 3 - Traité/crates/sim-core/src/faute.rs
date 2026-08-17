@@ -1,7 +1,7 @@
 //! Le modèle de faute, objet de première classe (PD6).
 //!
 //! > Les fautes qu'il sait produire sont exactement les fautes que la campagne
-//! > pourra trouver. (§3.3, p. 41)
+//! > pourra trouver. (§3.3, p. 50, 3ᵉ éd.)
 //!
 //! Conséquence tenue ici : le modèle s'affiche (EX-C06), se versionne, et
 //! nomme ce qu'il ne sait pas produire. Un mécanisme absent du modèle a, dans
@@ -289,35 +289,49 @@ impl ModeleFaute {
             }
             self.prochaine_evaluation_crash = suivante;
 
-            // Les échelles se cumulent : une baie qui tombe emporte ses
-            // machines, indépendamment de leur propre tirage. C'est la
-            // corrélation que le §8.3 déclare non mesurable et seulement
-            // injectable.
-            let centre_tombe = |c: u32, alea: &mut Alea| {
-                let _ = c;
-                alea.bernoulli(self.crash_centre)
-            };
-            let mut centres_tombes: Vec<u32> = Vec::new();
-            let mut baies_tombees: Vec<(u32, u32)> = Vec::new();
+            // **Un tirage par niveau, avant la boucle des acteurs.** Le niveau
+            // est l'unité de la panne : `crash_baie` est la probabilité qu'une
+            // baie tombe à ce pas, pas celle qu'une de ses machines la fasse
+            // tomber. Tirer par membre, comme ce code le faisait, donnait deux
+            // résultats faux à la fois — une baie de m machines tombait avec la
+            // probabilité 1 − (1 − p)^m, donc l'injection dépendait de la taille
+            // de la population ; et la baie n'emportait que les membres
+            // **postérieurs** au tirage réussi, alors que « emporte toutes les
+            // machines de la baie » est la définition du niveau.
+            //
+            // Les listes sont triées et dédupliquées : l'ordre des tirages ne
+            // dépend que de la structure, jamais de son parcours (PD1). Le
+            // tirage d'une baie a lieu même si son centre est déjà tombé, pour
+            // que le nombre de tirages consommés reste fonction de la seule
+            // structure ; le centre l'emporte ensuite au classement.
+            let mut cles_centres: Vec<u32> = domaines.iter().map(|d| d.centre).collect();
+            cles_centres.sort_unstable();
+            cles_centres.dedup();
+            let centres_tombes: Vec<u32> = cles_centres
+                .into_iter()
+                .filter(|_| alea.bernoulli(self.crash_centre))
+                .collect();
 
+            let mut cles_baies: Vec<(u32, u32)> =
+                domaines.iter().map(|d| (d.centre, d.baie)).collect();
+            cles_baies.sort_unstable();
+            cles_baies.dedup();
+            let baies_tombees: Vec<(u32, u32)> = cles_baies
+                .into_iter()
+                .filter(|_| alea.bernoulli(self.crash_baie))
+                .collect();
+
+            // Les échelles se cumulent : un centre qui tombe emporte ses baies,
+            // une baie ses machines, indépendamment de leur propre tirage. C'est
+            // la corrélation que le §8.3 déclare non mesurable et seulement
+            // injectable.
             for (i, d) in domaines.iter().enumerate() {
                 let acteur = ActeurId(i as u32);
-                if !centres_tombes.contains(&d.centre) && centre_tombe(d.centre, alea) {
-                    centres_tombes.push(d.centre);
-                }
                 if centres_tombes.contains(&d.centre) {
                     pannes.push(self.panne(acteur, Niveau::Centre, alea));
-                    continue;
-                }
-                let cle_baie = (d.centre, d.baie);
-                if !baies_tombees.contains(&cle_baie) && alea.bernoulli(self.crash_baie) {
-                    baies_tombees.push(cle_baie);
-                }
-                if baies_tombees.contains(&cle_baie) {
+                } else if baies_tombees.contains(&(d.centre, d.baie)) {
                     pannes.push(self.panne(acteur, Niveau::Baie, alea));
-                    continue;
-                }
-                if alea.bernoulli(self.crash_machine) {
+                } else if alea.bernoulli(self.crash_machine) {
                     pannes.push(self.panne(acteur, Niveau::Machine, alea));
                 }
             }
@@ -435,12 +449,36 @@ impl ModeleFaute {
                     .to_string(),
             );
         }
+        // Ce que ce seuil mesure, et qu'A1 n'a pas déplacé : la probabilité
+        // qu'un acteur **donné** tombe à un pas. Chaque acteur appartient à
+        // exactement une machine, une baie et un centre, donc la somme des trois
+        // taux majore cette probabilité par union — avant A1 comme après.
+        // Mesuré à 10 000 pas sur vingt acteurs : 0,0928 par acteur et par pas
+        // pour `crash_centre = 0,09`, 0,0905 pour `crash_machine = 0,09`. Le
+        // seuil reste donc calibré sur la bonne grandeur.
         if self.crash_machine + self.crash_baie + self.crash_centre > 0.1 {
             a.push(
-                "taux de crash cumulé supérieur à 0,1 par pas : la population se vide avant \
-                 d'avoir exploré son espace d'états (§3.3)"
+                "taux de crash cumulé supérieur à 0,1 par pas et par acteur : la population se \
+                 vide avant d'avoir exploré son espace d'états (§3.3)"
                     .to_string(),
             );
+        }
+        // Ce qu'A1 a réellement changé, et qu'aucun taux n'exprime : la
+        // corrélation. Depuis le tirage par niveau, une baie ou un centre tombe
+        // **en entier** avec la probabilité déclarée, alors qu'un tirage par
+        // membre laissait sortir une partie du domaine. À taux par acteur
+        // identique, la même mesure donne 928 vidages complets sur 10 000 pas à
+        // `crash_centre = 0,09` contre **zéro** à `crash_machine = 0,09` :
+        // l'espace d'états visité est celui d'une population vidée d'un coup.
+        // C'est un régime, comme la partition sans probabilité de sortie, donc
+        // il se signale sans seuil.
+        if self.crash_baie > 0.0 || self.crash_centre > 0.0 {
+            a.push(format!(
+                "crash corrélé : une baie tombe en entier avec la probabilité {:.6} par pas, un \
+                 centre avec {:.6} — la population se vide d'un coup au lieu de perdre quelques \
+                 membres, et aucun taux par acteur ne distingue les deux régimes (§3.3, §8.3)",
+                self.crash_baie, self.crash_centre
+            ));
         }
         a
     }
@@ -448,13 +486,32 @@ impl ModeleFaute {
     /// PD6 — ce que le modèle **ne sait pas** produire, à afficher au même rang
     /// que ce qu'il sait produire. Un mécanisme absent a une probabilité de
     /// faute nulle dans tout résultat, et c'est un mensonge silencieux.
+    ///
+    /// **Sans balisage Markdown dans les entrées** : `sim-viz` les affiche
+    /// telles quelles par un `egui::RichText`, qui n'a pas d'analyseur — des
+    /// astérisques d'emphase s'y liraient littéralement et un retour à la ligne
+    /// couperait la puce. La règle vaut pour les trois listes d'absences que
+    /// l'onglet « Limites » réunit, et `sim-viz` la tient par un test.
     pub fn hors_modele() -> &'static [&'static str] {
         &[
-            "**ce modèle-ci**, dans les scénarios livrés : aucun d'eux ne règle \
-             `Config.fautes`, donc ni la partition à deux états, ni les crashs par niveau, \
-             ni les points d'injection ne sont jamais tirés. Les omissions que produit le \
-             scénario A viennent d'un taux propre à `sim-agents::pair_a_pair`, pas d'ici — \
-             deux mécanismes pour la même faute, dont un seul est réglable depuis la \
+            "ce modèle-ci, dans les scénarios livrés : le moteur n'en reçoit jamais \
+             d'exemplaire. `Moteur::installer_fautes` n'a aucun appelant, donc toute \
+             exécution tourne sur `ModeleFaute::default()`, c'est-à-dire sans faute, quelle \
+             que soit la `Config` chargée. Le scénario B, lui, règle bien `Config.fautes` — \
+             deux points d'injection déclarés — mais cette déclaration ne sert qu'à \
+             l'affichage, au hachage et au versionnement : elle ne pilote aucun tirage. \
+             Sans appelant non plus, neuf : `tirer_pannes` (crashs par niveau), \
+             `Moteur::avancer_partition` (partition à deux états), `message_perdu` \
+             (l'omission d'EX-C05, et la coupure de partition avec elle), \
+             `injection_echec`, `injection_retard`, `injection_valeur`, `retard_message`, \
+             `ecriture_corrompue`, et `avertissements` — la moitié [U] d'EX-C06 : les \
+             avertissements affichés par `sim-agents` et `sim-viz` viennent de \
+             `sim_agents::stigmergie::Params::avertissements`, homonyme et sans rapport, \
+             jamais de ceux-ci. `gigue` est le seul mécanisme d'ici que la boucle \
+             appelle, et son amplitude vaut zéro au défaut. Les fautes que les scénarios \
+             produisent réellement — omission du scénario A, échec d'action et crash avant \
+             validation du scénario B — sont tirées par les mécanismes de `sim-agents`, pas \
+             ici : deux mécanismes pour la même faute, dont un seul est réglable depuis la \
              configuration et versionné avec elle",
             "le plancher mémoire de la population (EX-C17) : `sim_core::service::CoutAgent` \
              le calcule et retrouve les chiffres du traité, mais aucun affichage ne le lit",
@@ -467,7 +524,8 @@ impl ModeleFaute {
             // **injectée** par un point d'injection désactivé par défaut (DT8) ;
             // ici, elle est **produite** par une population dont chaque membre
             // suit fidèlement sa consigne.
-            "adversité endogène (§8.3) — des agents qui ne s'arrêtent pas, ne se taisent pas, \
+            "adversité endogène (§8.3 du traité — celui du PRD porte sur ce que le produit ne \
+             mesure pas) — des agents qui ne s'arrêtent pas, ne se taisent pas, \
              n'émettent aucune valeur arbitraire, et dont l'effet est pourtant byzantin, sans \
              qu'aucun ait été programmé pour nuire. Le seuil f < n/3 n'y a pas de sens : le \
              nombre d'agents adverses n'est pas borné par l'hypothèse, il vaut n. Le modèle P \
@@ -557,6 +615,79 @@ mod tests {
         assert!(pannes.iter().all(|p| p.niveau == Niveau::Baie));
     }
 
+    /// EX-C05 — « idem par baie : emporte toutes les machines de la baie », et
+    /// `crash_baie` est une probabilité **par baie et par pas**.
+    ///
+    /// À probabilité intermédiaire, le tirage par membre manquait les deux :
+    /// il laissait sortir indemnes les machines rencontrées avant le tirage
+    /// réussi, et donnait à une baie de vingt machines une chance de tomber de
+    /// 1 − 0,5²⁰ ≈ 1, c'est-à-dire une injection qui croît avec la population.
+    #[test]
+    fn une_baie_tombe_en_entier_et_a_sa_propre_probabilite() {
+        const PAS: u64 = 200;
+        const PAR_BAIE: u32 = 20;
+        let mut m = ModeleFaute {
+            crash_baie: 0.5,
+            pas_crash: Duree(1),
+            ..Default::default()
+        };
+        let domaines: Vec<Domaine> = (0..2 * PAR_BAIE)
+            .map(|i| Domaine {
+                machine: i,
+                baie: i / PAR_BAIE,
+                centre: 0,
+            })
+            .collect();
+        let mut alea = Alea::nouveau(11);
+        let mut chutes = 0u64;
+        for t in 0..PAS {
+            let pannes = m.tirer_pannes(Instant(t), &domaines, &mut alea);
+            for baie in 0..2u32 {
+                let frappees = pannes
+                    .iter()
+                    .filter(|p| p.acteur.0 / PAR_BAIE == baie && p.niveau == Niveau::Baie)
+                    .count() as u32;
+                assert!(
+                    frappees == 0 || frappees == PAR_BAIE,
+                    "baie {baie} au pas {t} : {frappees} machines sur {PAR_BAIE}"
+                );
+                if frappees == PAR_BAIE {
+                    chutes += 1;
+                }
+            }
+        }
+        // 400 tirages de baie à p = 0,5 : ≈ 200 chutes, et non ≈ 400 comme le
+        // donnerait un tirage par machine.
+        assert!(
+            (160..240).contains(&chutes),
+            "{chutes} chutes de baie sur {} tirages à p = 0,5",
+            2 * PAS
+        );
+    }
+
+    /// EX-C05 — même règle un cran plus haut : un centre emporte **toutes** ses
+    /// baies, et le niveau rapporté est celui du centre, pas celui de la baie.
+    #[test]
+    fn un_centre_emporte_toutes_ses_baies() {
+        let mut m = ModeleFaute {
+            crash_centre: 1.0,
+            crash_baie: 0.5,
+            crash_machine: 0.5,
+            pas_crash: Duree(1),
+            ..Default::default()
+        };
+        let domaines: Vec<Domaine> = (0..12)
+            .map(|i| Domaine {
+                machine: i,
+                baie: i / 4,
+                centre: 0,
+            })
+            .collect();
+        let pannes = m.tirer_pannes(Instant(0), &domaines, &mut Alea::nouveau(12));
+        assert_eq!(pannes.len(), 12);
+        assert!(pannes.iter().all(|p| p.niveau == Niveau::Centre));
+    }
+
     #[test]
     fn le_modele_par_defaut_ne_produit_aucune_faute() {
         let mut m = ModeleFaute::default();
@@ -605,5 +736,34 @@ mod tests {
             ..Default::default()
         };
         assert!(!m.avertissements().is_empty());
+    }
+
+    /// EX-C06, moitié [U] — depuis le tirage par niveau, un crash de baie ou de
+    /// centre est **corrélé** : le domaine tombe en entier. Le seuil cumulé de
+    /// 0,1 mesure la probabilité par acteur, que la corrélation ne déplace pas
+    /// (0,0928 mesuré pour `crash_centre = 0,09`, 0,0905 pour
+    /// `crash_machine = 0,09`) ; il ne peut donc pas voir le régime, et un
+    /// centre unique à 0,09 vidait toute la population 9 % des pas sans qu'un
+    /// mot soit dit.
+    #[test]
+    fn un_crash_correle_est_signale_meme_sous_le_seuil_cumule() {
+        let correle = ModeleFaute {
+            crash_centre: 0.09,
+            ..Default::default()
+        };
+        assert!(
+            correle.crash_machine + correle.crash_baie + correle.crash_centre <= 0.1,
+            "le cas est bien sous le seuil cumulé"
+        );
+        let a = correle.avertissements();
+        assert_eq!(a.len(), 1, "{a:?}");
+        assert!(a[0].contains("crash corrélé"), "{}", a[0]);
+
+        // Même taux par acteur, sans corrélation : rien à signaler.
+        let decorrele = ModeleFaute {
+            crash_machine: 0.09,
+            ..Default::default()
+        };
+        assert!(decorrele.avertissements().is_empty(), "aucun niveau n'est réglé");
     }
 }

@@ -1,7 +1,6 @@
 ---
-title: |
-  Interopérabilité et Orchestration\
-  Agentiques en Entreprise
+title: "Interopérabilité et Orchestration Agentiques"
+subtitle: "veille technologique en entreprise"
 author:
   - "André-Guy Bruneau, M.Sc. IT · agbruneau@gmail.com · 15 août 2026"
 lang: fr
@@ -227,8 +226,82 @@ header-includes: |
   #show outline: set text(size: 9pt)
   #show outline: it => [#pagebreak(weak: true) #it #pagebreak(weak: true)]
 
-  // ── Rang typographique des titres. ⚠ SEUL POSTE OÙ LE BLOC DIFFÈRE D'UN
-  //    DOCUMENT À L'AUTRE, et il n'a pas le choix : la veille et la revue
+  // ── Bloc de titre : titre, description du livrable, auteur, résumé.
+  //    ⚠ LE GABARIT PANDOC EST REPRIS ICI, PAS COMPLÉTÉ. C'est le seul poste
+  //    du bloc commun qui redéfinisse une fonction du gabarit, et il le fait
+  //    faute d'autre voie : aucune règle `show` n'atteint un bloc de titre que
+  //    le gabarit compose en dur, et le YAML n'en règle ni les graisses ni les
+  //    blancs. Deux défauts mesurés sur les rendus du 15 août, les mêmes aux
+  //    trois documents, et qui se répondent :
+  //    ① L'AUTEUR COLLE AU TITRE — 2,4 pt sous le sous-titre de la revue,
+  //      1,9 pt sous la seconde ligne du titre de la veille, soit rien. Le
+  //      `par(spacing: 0.6em)` posé plus haut vaut aussi pour l'écart entre le
+  //      bloc de titre et la grille des auteurs, que le gabarit laissait au
+  //      défaut de Typst : la règle qui resserre les paragraphes du corps
+  //      resserrait du même geste ce qui sépare l'ouvrage de qui le signe.
+  //    ② DEUX LIGNES VIDES TOMBENT SOUS L'AUTEUR. Le gabarit compose
+  //      `nom \ affiliation \ courriel`, et un auteur donné en simple chaîne
+  //      — c'est le cas des trois — n'a ni l'une ni l'autre : 35,9 pt de blanc
+  //      entre l'auteur et le résumé de la revue, 35,9 pt à la veille.
+  //    Le blanc était donc tout entier du mauvais côté, quinze fois plus bas
+  //    que haut, et le bloc se lisait comme un titre suivi d'un orphelin. Il
+  //    va maintenant CROISSANT — 6,1 pt sous le titre, 9,9 pt sous le
+  //    sous-titre, 21,9 pt sous l'auteur —, chaque rang séparé du suivant par
+  //    un peu plus de blanc que du précédent.
+  //    Le wrapper appelle le gabarit SANS TITRE : privé de titre il ne compose
+  //    ni titre, ni sous-titre, ni auteur, ni date, ni résumé, et garde tout le
+  //    reste — réglage de page, langue, numérotation, métadonnées d'auteur. Les
+  //    cinq sont posés ici, dans le même flottant, à la même géométrie.
+  //    ⚠ LE FLOTTANT NE SE SCINDE PAS : un résumé trop long n'est pas reporté,
+  //    il est rogné, et ni Pandoc ni Typst ne sortent autre chose que 0.
+  //    `Python/check-resume.py` reste la seule porte qui le mesure.
+  //    ⚠ `set document` DOIT ÊTRE POSÉ DANS LE CONTENU, pas avant l'appel : le
+  //    gabarit pose le sien après, et un titre écrit trop tôt est écrasé par le
+  //    `title: none` qu'on lui passe — le PDF sortait alors sans titre.
+  //    ⚠ LE SOUS-TITRE PASSE DU GRAS 12,5 pt AU ROMAIN 12 pt. Il nomme le
+  //    livrable — « veille technologique en entreprise », « revue de la
+  //    littérature académique » —, il ne prolonge pas le titre : deux graisses
+  //    identiques à deux points et demi d'écart ne font pas deux rangs, elles
+  //    font un titre de deux lignes. Le titre garde ses 15 pt gras.
+  #let conf-pandoc = conf
+  #let conf(title: none, subtitle: none, authors: (), date: none,
+            abstract: none, abstract-title: none, ..reste, doc) = {
+    conf-pandoc(..reste, authors: authors, {
+      set document(title: if title != none { content-to-string(title) })
+      place(top, float: true, scope: "parent", clearance: 4mm,
+            block(below: 1em, width: 100%)[
+        #align(center)[
+          #block(below: 1.05em)[
+            #text(size: 15pt, weight: "bold", hyphenate: false)[#title]
+          ]
+          #if subtitle != none {
+            block(below: 1.35em)[
+              #text(size: 12pt, weight: "regular", hyphenate: false)[#subtitle]
+            ]
+          }
+          #if authors != none and authors != () {
+            block(below: 0pt)[#authors.map(a => a.name).join(h(1.5em))]
+          }
+          #if date != none {
+            block(above: 0.45em, below: 0pt)[#date]
+          }
+        ]
+        #if abstract != none {
+          block(inset: (x: 2em), above: 2.5em)[
+            #text(weight: "semibold")[#abstract-title] #h(1em) #abstract
+          ]
+        }
+      ])
+      doc
+    })
+  }
+
+  // ── Rang typographique des titres. ⚠ SECOND POSTE OÙ LE BLOC DIFFÈRE D'UN
+  //    DOCUMENT À L'AUTRE — l'autre est le saut de page qui ferme la table des
+  //    matières, que la revue a retiré du sien le 17 août 2026 pour ramener ses
+  //    mots-clés sous sa table ; il est gardé ici, la table de la veille
+  //    s'arrêtant à trois lignes du bas de sa dernière page —, et il n'a pas le
+  //    choix : la veille et la revue
   //    ouvrent leurs chapitres en `#` (niveau 1), le traité les siens en `##`
   //    (niveau 2). C'est le RANG qui doit se composer pareil, pas le niveau ;
   //    les trois échelles ci-dessous sont donc la même, décalée.
@@ -327,6 +400,7 @@ Cet article apporte quatorze contributions :
 ## Organisation de l'article
 
 Méthodologie (2), définitions et taxonomies (3), corpus protocolaire et couches implicites (4.6 à 4.10), orchestration installée (4.11 à 4.11.6), implémentation de référence (4.12), exploitation (4.13), gouvernance (5), adoption (6), identité et sécurité (7), cadres réglementaires et droit canadien (8, dont 8.4), tensions (9), limites (10), questions ouvertes (11), horizon 2027-2030 (12), corpus compagnon (13), conclusion (14).
+
 # Méthodologie
 
 ## Protocole de revue
@@ -499,6 +573,7 @@ La couche asynchrone s'opérationnalise donc dans une organisation, jamais entre
 L'*agent mesh* (ou *agentic mesh*), notion émergée en 2025-2026, est le *plan de contrôle* du plan de données décrit en section 4.6. Il *nomme et localise* la couche de confiance désignée ailleurs en creux — sécurité (§7.1), identité (§7.2), registres (§7.3), gouvernance (§8.3), état frontal en §4.10 —, déplaçant ces exigences du *protocole*, où elles sont insolubles, vers l'*infrastructure*. Le prix : il réintroduit un *point de contrôle* et répond au déficit de gouvernance en **bornant** l'interopérabilité, là où ANP la voulait ouverte et sans permission (§4.3, §9.2).
 
 Calqué sur le *service mesh* (Istio, Linkerd), il extrait des agents la découverte — devenue sémantique, adossée à un registre de capacités —, le routage, l'identité, les politiques et l'observabilité, au bord, sans modifier agents ni serveurs d'outils [96]. Motif non normalisé, que concrétisent trois instances sous gouvernance ouverte. La pile de Solo.io, dont la revérification du 15 août 2026 précise les tutelles, distinctes et non interchangeables : **agentgateway**, passerelle appliquant centralement ces fonctions au trafic MCP et A2A, versée à l'**AAIF** (*Agentic AI Foundation*) sous la Linux Foundation, qui héberge déjà MCP (§5), et livrée en v1.4.1 avec une branche principale active jusqu'au 14 août [95] ; **kagent**, exécutif d'agents natif de Kubernetes (Apache 2.0), toujours en **bac à sable de la CNCF** ; le registre **agentregistry**, contribué à la **CNCF** le 25 mars 2026 [312]. Puis **AGNTCY** [55], dont l'annuaire, la messagerie, l'identité et l'observabilité *sont* ces fonctions ; et **Solace Agent Mesh** [94], sa variante événementielle, publiée en v1.28.7 le 11 août 2026. Il peut donc mûrir vite sous la Linux Foundation et la CNCF sans que la frontière ouverte multi-latérale (§6, §9) cesse d'être vide.
+
 ## La couche transactionnelle : autorisation, *checkout* et règlement des paiements agentiques
 
 Une pile qui invoque des outils (MCP), délègue des tâches (A2A) et se découvre en principe (ANP) bute dès qu'un agent doit *acheter* pour un humain : aucun des trois protocoles structurants ne couvre le paiement. Depuis septembre 2025, des protocoles de *paiement et de commerce agentiques* le comblent en trois sous-couches — *autorisation*, *checkout*, *règlement*. Quatre se déclarent extensions de MCP et d'A2A ; le cinquième, MPP, s'y raccorde par une trousse MCP sans s'en réclamer. Le tableau 4 en fixe l'état comparé ; la prose ne retient que ce qu'il ne porte pas.
@@ -559,6 +634,7 @@ Trois observations la bornent, et confirment le fait négatif de la couche : **a
 : Fondements sémantiques de la description des capacités, par système (état vérifié au 15 août 2026 sur les spécifications et dépôts officiels).
 
 **Synthèse.** *Aucun vocabulaire de capacités commun ne relie MCP, A2A, ANP, les registres commerciaux et OASF* — chacun décrit les capacités dans un formalisme que les autres ne lisent pas. OASF est l'unique taxonomie normalisée publiée ; son adoption ne dépasse pas AGNTCY, son dépôt est immobile depuis le 21 juillet, et l'annuaire qui l'emploie a livré quatre versions depuis le 17 juin : *l'outil court, le vocabulaire s'arrête*. La convergence ARD est trop récente pour être qualifiée. La découverte sémantique que la section 4.7 prête à l'agent mesh repose donc sur une ontologie qui, au 15 août 2026, *n'existe dans aucun protocole*. Grille de la section 12 : OASF et les propositions académiques, *confirmé* comme artefacts ; une couche sémantique interopérable *entre* protocoles, *spéculatif* — l'histoire de la FIPA interdit de le tenir pour acquis.
+
 ## La couche de confiance : identité, délégation et autorisation des agents
 
 Les quatre couches qui précèdent réimplémentent chacune un fragment de la même fonction manquante : politique au bord du maillage (4.7), mandat signé pour la dépense (4.8), registres curés pour la découverte (4.9), traçabilité par l'enveloppe événementielle (4.6). L'étage qu'elles présupposent tient en trois sous-couches : l'*identité* (qui est l'agent), la *délégation* (pour qui il agit), l'*autorisation* (ce qu'il a le droit de faire). On en donne l'état architectural (tableau 6) ; menaces et mécanismes appartiennent à la section 7.
@@ -1026,6 +1102,7 @@ Le fait négatif n'en est que plus net : ☑ *revérifié sur le texte le 15 ao�
 La fenêtre du 29 juillet au 8 août 2026 **datait** le déficit de délégation — d'invention, il devenait d'adoption (section 7.7) ; **mesurait** l'écart de sécurité sur parc réel (section 7.1) ; **corrigeait** l'outillage — conformité outillée, sécurité non (section 7.5), registre de référence corrigé (section 7.3).
 
 La semaine du 8 au 15 août 2026 **n'ajoute aucun mécanisme**, et c'est son enseignement. Elle corrige deux lectures et en confirme une. Ce qu'elle corrige : le versant invention de la délégation n'est pas de trois brouillons mais de douze, déposés à cadence régulière du 25 mars au 7 août — **il n'y a pas d'accélération, l'agglutinat d'août était un artefact de datation** (section 7.7) ; et la révocation en cascade n'est plus un trou mais un **désaccord**, trois brouillons la traitant par des modèles incompatibles dont un qui l'exclut par principe (section 7.8) [316, 318, 319]. Ce qu'elle confirme : le versant adoption reste à zéro. L'IETF s'est pourtant structuré — deux groupes agentiques chartés en juin, vingt-sept brouillons entre eux — **sans adopter un seul document** [159]. Le reste tient : le verdict de la grille ne bouge pas (section 7.6), l'horloge post-quantique du NIST n'a pas avancé depuis novembre 2024 (section 7.4), et le NCCoE n'a rien publié depuis février (section 7.9) [102]. **Le champ s'organise vite, produit à cadence constante, et ne décide pas ; c'est le fait de la fenêtre.**
+
 # Cadres réglementaires et gouvernance des risques
 
 ## Le règlement européen sur l'IA : un calendrier redessiné en juin 2026
@@ -1125,6 +1202,7 @@ La fenêtre 2027-2030 superpose exigences sectorielles [209, 210], grappe « hau
 L'« identité des agents » agrège trois temps (Vol. III [219]). **Émettre** est le mieux servi : les deux premières questions de la grille (7.6) ont des réponses en production — limite de périmètre, non de mécanisme. **Appliquer** — passerelles [95, 221], points de décision externes [149], interception des actions autonomes [151] — transpose le maillage de services à chaque arête du graphe, au prix du périmètre, **aucun de ces projets ne revendiquant le statut de norme** [222]. **Exploiter** — vérifier que le comportement d'aujourd'hui tient encore le mandat d'hier — est le moins servi : aucun élément d'observabilité agentique n'est stable, aucun attribut ne décrit une chaîne de mandat (4.13), la révocation, le maillon le moins spécifié (7.8).
 
 Faible à l'émission, moyen à l'application, fort à l'exploitation : le déficit suit **l'ordre inverse de celui dans lequel le marché investit**, les annonces portant massivement sur l'émission. Symétriquement, l'enveloppe **fournit par substitution ce que la couche d'identité ne fournit pas** : identité stable là où l'agent n'en a pas, trace que l'agent ne doit pas produire lui-même, mandat qu'aucun mécanisme normalisé ne maintient au-delà de deux sauts — trois brouillons IETF décrivent des chaînes à N sauts, aucun n'est adopté [162]. Déficit d'adoption, non d'invention ; l'enveloppe compense, au-delà de l'exigence probatoire (8.4), une fabrique de confiance inachevée. D'où la question : laquelle des pièces de l'enveloppe fournissez-vous, laquelle reste à ma charge ?
+
 # Limites de cette revue
 
 **Nature des sources.** Littérature primaire faite de prépublications arXiv non révisées ; métriques d'adoption toutes auto-déclarées, la seule mesure indépendante portant sur un seul protocole [7, 8] ; prévisions de cabinets valant comme jugements d'expert datés, dont la section 12.2 montre le sort quand ils circulent sans leur texte. Le champ évolue par trimestre, et la révision majeure de MCP a paru dix-huit jours avant cette édition [97].
@@ -1242,6 +1320,7 @@ Six chantiers ouverts décideront de la physionomie du domaine en 2030.
 ## Lecture d'ensemble
 
 Les bornes datées — grappe réglementaire du 2 août 2026 à 2028, échéance canadienne du 1er mai 2027, échéance cryptographique 2030-2035 (7.10) — pointent toutes vers le même impératif : une couche d'identité, de traçabilité et d'autorisation des agents normalisée. Le programmé rend ce chantier obligatoire ; le spéculatif se réduit à savoir *qui* en fournira la forme canonique. Le projeté dit moins qu'on ne le croyait : des trois trajectoires portées par cette revue, une seule survit à sa source primaire (12.2), et qui attendait du marché qu'il sanctionne les retardataires devra fonder cette attente ailleurs. Demeure la décroissance programmée du parc GPA classique (2030-2032 [171]) : chaque re-plateformage tranchera entre enveloppe propriétaire et protocoles ouverts.
+
 # Le corpus compagnon : quatre volumes, un compendium, un même objet
 
 ## Quatre volumes, deux états de rédaction
@@ -1500,6 +1579,7 @@ Cette revue a été produite avec un pipeline multi-agents à base d'agents LLM 
 **Auto-citation.** Les quatre volumes du corpus compagnon [217, 218, 219, 220] sont du même auteur que la revue. L'auto-citation est assumée et divulguée ; ses limites — circularité possible, aggravée par la rédaction du compendium ; implémentation unique ; chiffres institutionnels auto-déclarés ; asymétrie déclarée des régimes de vérification ; démonstrateur retiré du dépôt le 25 juillet 2026 — sont exposées en section 10. Les deux cadrages [219, 220] n'ont servi que d'instruments d'analyse, jamais de sources de fait (13.1) ; leur rédaction, puis l'arrêt du quatrième sous un régime sans opposabilité, laissent ce refus inchangé pour d'autres motifs (13.8). Les divergences entre corpus sont **signalées et non arbitrées** (8.4, 13.6).
 
 L'auteur a défini la question, la structure et les critères de vérification, et assume la responsabilité éditoriale. Aucun financement externe ; aucun conflit d'intérêts déclaré. Manuscrit préparé pour dépôt en révision par les pairs.
+
 # Références {-}
 
 *Les références précédées de ⚠ renvoient à des pages vivantes — dépôts, notes de version, documentation en ligne — sans version datée stable : leur contenu peut avoir évolué depuis la date de consultation indiquée.*
@@ -1561,7 +1641,7 @@ L'auteur a défini la question, la structure et les critères de vérification, 
 54. ServiceNow. « ServiceNow opens its full system of action to every AI agent in the enterprise ». Communiqué, mai 2026. https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-opens-its-full-system-of-action-to-every-AI-Agent-in-the-enterprise/default.aspx
 55. Linux Foundation. « Linux Foundation Welcomes the AGNTCY Project to Standardize Open Multi-Agent System Infrastructure and Break Down AI Agent Silos ». Communiqué, 29 juillet 2025. https://www.linuxfoundation.org/press/linux-foundation-welcomes-the-agntcy-project-to-standardize-open-multi-agent-system-infrastructure-and-break-down-ai-agent-silos
 56. ⚠ Cloud Native Computing Foundation. « SPIRE » (projet gradué depuis le 22 août 2022). https://www.cncf.io/projects/spire/ (consulté le 2 juillet 2026).
-57. ⚠ IETF. « Workload Identity in Multi System Environments (WIMSE) » — charte et documents du groupe de travail. https://datatracker.ietf.org/wg/wimse/about/ (consulté le 13 juillet 2026).
+57. ⚠ IETF. « Workload Identity in Multi System Environments (WIMSE) » — **charte** du groupe de travail. *⚠ Ne pas confondre avec la notice 144, qui porte le même titre et relève ses documents datés.* https://datatracker.ietf.org/wg/wimse/about/ (consulté le 13 juillet 2026).
 58. Microsoft. « Announcing Microsoft Entra Agent ID: Secure and manage your AI agents ». Blogue Microsoft Entra, 19 mai 2025. https://techcommunity.microsoft.com/blog/microsoft-entra-blog/announcing-microsoft-entra-agent-id-secure-and-manage-your-ai-agents/3827392
 59. Workday. « Workday and Microsoft to Deliver Unified AI Agent Experience for the Enterprise ». Communiqué, 16 septembre 2025. https://newsroom.workday.com/2025-09-16-Workday-and-Microsoft-to-Deliver-Unified-AI-Agent-Experience-for-the-Enterprise
 60. OASIS. « Coalition for Secure AI Unveils New Agentic Identity and Security Research Following High-Profile Sessions at RSAC 2026 ». 6 mai 2026 ; voir aussi le communiqué du 18 novembre 2025 (cadres de signature de modèles et de réponse à incident). https://www.oasis-open.org/2026/05/06/coalition-for-secure-ai-unveils-new-agentic-identity-and-security-research-following-high-profile-sessions-at-rsac-2026/
@@ -1569,7 +1649,7 @@ L'auteur a défini la question, la structure et les critères de vérification, 
 62. Block Engineering. « Block's Playbook for Designing MCP Servers ». Blogue d'ingénierie de Block, 2025. https://engineering.block.xyz/blog/blocks-playbook-for-designing-mcp-servers
 63. Box (Sally Li). « Powering the agentic future: The Box MCP server ecosystem for intelligent work ». Blogue Box, 27 février 2026. https://blog.box.com/powering-agentic-future-box-mcp-server-ecosystem-intelligent-work
 64. D. Hassabis. Annonce du soutien de MCP pour les modèles et le SDK Gemini. Publication X, 9 avril 2025. https://x.com/demishassabis/status/1910107859041271977
-65. J. A. Wibowo et G. C. Polyzos. « Toward a Safe Internet of Agents ». arXiv:2512.00520v1, novembre 2025. https://arxiv.org/abs/2512.00520
+65. J. A. Wibowo et G. C. Polyzos. « Toward a Safe Internet of Agents ». arXiv:2512.00520v1, 29 novembre 2025 — ⚠ *version consultée ; une **v2 est parue le 27 avril 2026**, antérieure au gel de cette édition et non reprise ici. La revue de littérature compagnonne, elle, cite la v2 (sa notice 22).* https://arxiv.org/abs/2512.00520
 66. IETF. « AI Agent Authentication and Authorization » (modèle AIMS). Internet-Draft draft-klrc-aiagent-auth-03 (soumission individuelle), 6 juillet 2026. https://datatracker.ietf.org/doc/draft-klrc-aiagent-auth/
 67. AWS. « Amazon Q Developer CLI now supports Model Context Protocol (MCP) ». AWS What's New, 29 avril 2025. https://aws.amazon.com/about-aws/whats-new/2025/04/amazon-q-developer-cli-model-context-protocol/
 68. AWS. « Introducing AI agents and tools in AWS Marketplace ». AWS What's New, 16 juillet 2025. https://aws.amazon.com/about-aws/whats-new/2025/07/ai-agents-tools-aws-marketplace/
@@ -1633,7 +1713,7 @@ L'auteur a défini la question, la structure et les critères de vérification, 
 126. ⚠ Coinbase. « X402 Protocol Specification » (v2) — dépôt coinbase/x402 (interface *facilitator* `POST /verify` et `POST /settle` ; « Protocol Version: 2 » ; sans étiquette de statut). https://github.com/coinbase/x402 ; https://raw.githubusercontent.com/coinbase/x402/main/specs/x402-specification-v2.md (consulté le 12 juillet 2026).
 127. Linux Foundation. « Linux Foundation Is Launching the x402 Foundation and Welcoming the Contribution of the x402 Protocol ». Communiqué, 2 avril 2026 (gouvernance Linux Foundation ; développeurs initiaux Coinbase, Cloudflare et Stripe ; membres de soutien). https://www.linuxfoundation.org/press/linux-foundation-is-launching-the-x402-foundation-and-welcoming-the-contribution-of-the-x402-protocol
 128. Cloudflare. « x402 Foundation » (communiqué du 23 septembre 2025 : intention de créer la x402 Foundation avec Coinbase) et « Launching the x402 Foundation with Coinbase, and support for x402 transactions » (blogue : intégration au SDK d'agents, prise en charge de MCP, schéma de paiement différé, « pay per crawl »). https://www.cloudflare.com/press/press-releases/2025/cloudflare-and-coinbase-will-launch-x402-foundation/ ; https://blog.cloudflare.com/x402/
-129. ⚠ Stripe. « x402 » — documentation développeur (prise en charge de x402 en préversion, version d'API 2026-03-04.preview ; USDC sur Tempo, Base et Solana). https://docs.stripe.com/payments/machine/x402 (consulté le 12 juillet 2026).
+129. ⚠ Stripe. « x402 » — **documentation développeur d'un tiers intégrateur**, à ne pas confondre avec la spécification elle-même, notice 125 (prise en charge de x402 en préversion, version d'API 2026-03-04.preview ; USDC sur Tempo, Base et Solana). https://docs.stripe.com/payments/machine/x402 (consulté le 12 juillet 2026).
 130. ⚠ Agentic Commerce Protocol (OpenAI, Stripe). « agentic-commerce-protocol/agentic-commerce-protocol » — dépôt, README et CONTRIBUTING (norme ouverte Apache 2.0 en statut *beta* ; versionnage daté ; instantané stable 2026-04-17 ; « governed by Stripe and OpenAI as Founding Maintainers »). https://github.com/agentic-commerce-protocol/agentic-commerce-protocol ; https://www.agenticcommerce.dev (consulté le 13 juillet 2026).
 131. Stripe. « Stripe powers Instant Checkout in ChatGPT and releases Agentic Commerce Protocol codeveloped with OpenAI ». Salle de presse Stripe, 29 septembre 2025 (Instant Checkout dans ChatGPT ; Shared Payment Token ; vendeurs Etsy aux États-Unis, marchands Shopify — Glossier, Vuori, Spanx, SKIMS — à suivre) ; voir aussi « Developing an open standard for agentic commerce » (blogue Stripe). https://stripe.com/newsroom/news/stripe-openai-instant-checkout
 132. ⚠ Universal Commerce Protocol (Google, Shopify). « Universal-Commerce-Protocol/ucp » — dépôt et spécification (release v2026-04-08 ; capacité `dev.ucp.shopping.ap2_mandate` et prise en charge des mandats AP2 ; liaisons REST, MCP, A2A, embarqué) ; annonce Google : A. Handa et A. Gupta, « Under the Hood: Universal Commerce Protocol (UCP) », Google Developers Blog, 11 janvier 2026. https://github.com/Universal-Commerce-Protocol/ucp ; https://developers.googleblog.com/under-the-hood-universal-commerce-protocol-ucp/
@@ -1641,14 +1721,14 @@ L'auteur a défini la question, la structure et les critères de vérification, 
 134. ⚠ OASF (AGNTCY / Linux Foundation). « agntcy/oasf » — Open Agentic Schema Framework (objet *record* ; taxonomies de *skills* et *domains* à identifiants numériques ; *modules* composables ; version v1.1.0 publiée le 10 juillet 2026) ; explorateur de schéma : https://schema.oasf.outshift.com/. https://github.com/agntcy/oasf (consulté le 12 juillet 2026).
 135. ⚠ AGNTCY. « agntcy/dir » — annuaire distribué d'agents (découverte par compétences et attributs structurés au moyen des taxonomies OASF ; release v1.5.0, 17 juin 2026, mettant en œuvre l'AI Catalog et le protocole Agentic Resource Discovery). https://github.com/agntcy/dir ; https://dir.agntcy.org/ (consulté le 12 juillet 2026).
 136. Google. « Announcing the Agentic Resource Discovery specification ». Google Developers Blog, 17 juin 2026 (ARD : spécification ouverte de publication, découverte et vérification de capacités d'IA ; primitives *catalogs* et *registries* ; prise en charge par l'Agent Registry de la Gemini Enterprise Agent Platform). https://developers.googleblog.com/announcing-the-agentic-resource-discovery-specification/
-137. ⚠ Model Context Protocol project. « modelcontextprotocol/registry » — schéma `server.json` (propriétés nominatives : `name` en DNS inversé, `description` en texte libre ; sans champ de classification contrôlé). https://github.com/modelcontextprotocol/registry (consulté le 12 juillet 2026).
+137. ⚠ Model Context Protocol project. « modelcontextprotocol/registry » — **le dépôt et son schéma** `server.json`, à ne pas confondre avec sa version v1.8.1, notice 265 (propriétés nominatives : `name` en DNS inversé, `description` en texte libre ; sans champ de classification contrôlé). https://github.com/modelcontextprotocol/registry (consulté le 12 juillet 2026).
 138. ⚠ W3C AI Agent Protocol Community Group. « AI Agent Protocol » — document de protocole (août 2025 ; JSON-LD pour les documents de découverte ; « formats de métadonnées standardisés » pour capacités, interfaces, buts et états). https://w3c-cg.github.io/ai-agent-protocol/protocol.html (consulté le 12 juillet 2026).
 139. E. Pautsch, T. Singla, P. Kumar *et al.* « AgentHub: A Registry for Discoverable, Verifiable, and Reproducible AI Agents ». arXiv:2510.03495v2, octobre 2025 (rév. février 2026). https://arxiv.org/abs/2510.03495
 140. G. Ioannides, C. Constantinou, V. Jain *et al.* « MOD-X: A Modular Open Decentralized eXchange Framework proposal for Heterogeneous Interoperable Artificial Intelligence Agents ». arXiv:2507.04376v2, juillet 2025. https://arxiv.org/abs/2507.04376
-141. R. R. Rodriguez Jr. « Agent Identity URI Scheme: Topology-Independent Naming and Capability-Based Discovery for Multi-Agent Systems ». arXiv:2601.14567v1, janvier 2026. https://arxiv.org/abs/2601.14567
+141. R. R. Rodriguez Jr. « Agent Identity URI Scheme: Topology-Independent Naming and Capability-Based Discovery for Multi-Agent Systems ». arXiv:2601.14567v1, 21 janvier 2026 — ⚠ *version consultée ; une **v2 est parue le 13 juillet 2026**, antérieure au gel de cette édition et non reprise ici. La revue de littérature compagnonne, elle, cite la v2 (sa notice 27).* https://arxiv.org/abs/2601.14567
 142. T. Petrova, B. Bliznioukov, A. Puzikov *et al.* « From Multi-Agent Systems and the Semantic Web to Agentic AI: A Unified Narrative of the Web of Agents ». arXiv:2507.10644v4, juillet 2025 (rév. mai 2026). https://arxiv.org/abs/2507.10644
 143. ⚠ Google Cloud. « Skill Registry — Gemini Enterprise Agent Platform » (préversion ; compétences en paquets autonomes — instructions, code, documentation — décrites par un `SKILL.md` à trois champs validés : nom, description, licence ; découverte selon l'intention de l'utilisateur). https://docs.cloud.google.com/gemini-enterprise-agent-platform/build/skill-registry (consulté le 12 juillet 2026).
-144. ⚠ IETF. « Workload Identity in Multi System Environments (WIMSE) » — documents du groupe de travail : draft-ietf-wimse-arch-08 (6 juillet 2026) ; draft-ietf-wimse-workload-identity-practices-05 (30 juin 2026, en évaluation de direction de zone à l'IESG pour publication comme RFC informationnel) ; draft-ietf-wimse-s2s-protocol (document de groupe abandonné, scindé en quatre documents successeurs) ; brouillons individuels « agents » connexes, non adoptés. https://datatracker.ietf.org/wg/wimse/documents/ (consulté le 13 juillet 2026).
+144. ⚠ IETF. « Workload Identity in Multi System Environments (WIMSE) » — **documents datés** du groupe de travail, sa charte étant à la notice 57 : draft-ietf-wimse-arch-08 (6 juillet 2026) ; draft-ietf-wimse-workload-identity-practices-05 (30 juin 2026, en évaluation de direction de zone à l'IESG pour publication comme RFC informationnel) ; draft-ietf-wimse-s2s-protocol (document de groupe abandonné, scindé en quatre documents successeurs) ; brouillons individuels « agents » connexes, non adoptés. https://datatracker.ietf.org/wg/wimse/documents/ (consulté le 13 juillet 2026).
 145. A. Schwenkschuster, P. Kasselman, K. Burgin *et al.* « OAuth Identity and Authorization Chaining Across Domains ». Internet-Draft draft-ietf-oauth-identity-chaining-**17** (document du groupe de travail OAuth ; en file d'attente du RFC Editor pour publication comme norme proposée), IETF, **19 juillet 2026**. https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-chaining/
 146. A. Parecki, K. McGuinness et B. Campbell. « Identity Assertion JWT Authorization Grant ». Internet-Draft draft-ietf-oauth-identity-assertion-authz-grant-04 (document du groupe de travail OAuth ; annexe A.4 : agent IA consommant des outils externes au nom d'un utilisateur), IETF, 21 mai 2026. https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-assertion-authz-grant/
 147. A. Tulshibagwale, G. Fletcher et P. Kasselman. « Transaction Tokens ». Internet-Draft draft-ietf-oauth-transaction-tokens-**11** (document du groupe de travail OAuth, en dernier appel de commentaires), IETF, **30 juillet 2026**. https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/
@@ -1769,7 +1849,7 @@ L'auteur a défini la question, la structure et les critères de vérification, 
 262. ⚠ LangChain. « langgraph-supervisor » — bibliothèque préconstruite du patron de délégation hiérarchique, publiée sous l'organisation qui maintient LangGraph (dépôt `langchain-ai/langgraph-supervisor-py`, référence Python `langgraph-supervisor`). README consulté le 15 août 2026 : « We now recommend using the supervisor pattern directly via tools rather than this library for most use cases » ; bibliothèque maintenue pour permettre la mise à niveau du code existant vers LangChain 1.0, le patron par appel d'outils étant présenté comme recommandé dans le guide multi-agents de l'éditeur. Dépôt non archivé. **Réserve —** la date d'ajout de cet avertissement n'a pas pu être établie sur l'historique du fichier, le dernier commit visible sur le README remontant au 2 mars 2026. https://github.com/langchain-ai/langgraph-supervisor-py
 263. ⚠ Model Context Protocol. « modelcontextprotocol/conformance » — suite de conformité publique du protocole, dépôt créé le 10 juillet 2025, exécutable par `npx`, couvrant plusieurs révisions datées ; `tier-check` produit un taux de réussite par SDK et fonde le système de tiers. Gel des exigences par révision de spécification (correctif du 7 août 2026) ; scénarios de cycle de vie de session et JSON Schema 2020-12 ajoutés le 31 juillet 2026. **Rien n'a été fusionné du 8 au 15 août 2026, six demandes de tirage restant ouvertes ou actives.** Consulté le 15 août 2026. https://github.com/modelcontextprotocol/conformance
 264. ⚠ A2A Project. « a2aproject/a2a-tck » — *technology compatibility kit* du protocole A2A, sous licence Apache-2.0, publié en mai 2025 ; accompagné de `a2a-inspector` et `a2a-itk`. **Aucune modification du tronc depuis le 29 juin 2026** — l'immobilité vaut pour le tronc et **non pour le dépôt, où six demandes de tirage sont ouvertes, la dernière du 13 août 2026**. Consulté le 15 août 2026. https://github.com/a2aproject/a2a-tck
-265. ⚠ Model Context Protocol. « modelcontextprotocol/registry » — version v1.8.1 mise en production le 6 août 2026, corrigeant une prise de contrôle d'espace de nommage d'organisation par `github.io`. Consulté le 15 août 2026. https://github.com/modelcontextprotocol/registry/releases/tag/v1.8.1
+265. ⚠ Model Context Protocol. « modelcontextprotocol/registry » — **version v1.8.1 du dépôt de la notice 137**, mise en production le 6 août 2026, corrigeant une prise de contrôle d'espace de nommage d'organisation par `github.io`. Consulté le 15 août 2026. https://github.com/modelcontextprotocol/registry/releases/tag/v1.8.1
 266. ⚠ Model Context Protocol. « Agents Working Group charter » — demande de tirage n° 3200, publiée le 5 août 2026 : le livrable principal est de stabiliser l'extension *Tasks* et de la promouvoir dans le protocole de base. Consulté le 15 août 2026. https://github.com/modelcontextprotocol/modelcontextprotocol/pull/3200
 267. ⚠ A2A Project. Réception des signalements de vulnérabilité transférée aux *GitHub Security Advisories*, 31 juillet 2026. Consulté le 15 août 2026. https://github.com/a2aproject/A2A/security
 268. ⚠ IBM / i-am-bee. Dépôt `i-am-bee/acp` (*Agent Communication Protocol*) — **archivé et marqué déprécié depuis le 25 août 2025** ; horodatage de poussée au 25 août 2025 à 18 h 42 UTC ; dernier commit « docs: A2A announcement (#230) », du même jour, jour de l'archivage. Consulté le 15 août 2026. https://github.com/i-am-bee/acp
@@ -1788,8 +1868,8 @@ L'auteur a défini la question, la structure et les critères de vérification, 
 281. Gouvernement du Canada. DORS/2026-133 — règlement administratif n° 10 relatif au *Real-Time Rail*, *Gazette du Canada* partie II, 1er juillet 2026, **en vigueur le 24 août 2026**. Cadre juridique, et non mise en service. https://gazette.gc.ca/rp-pr/p2/2026/2026-07-01/html/sor-dors133-fra.html
 282. x402 Foundation. Lancement opérationnel sous l'égide de la Linux Foundation, 14 juillet 2026 — 40 membres déclarés. https://x402.foundation/
 283. ⚠ x402 Foundation. Dépôt canonique `x402-foundation/x402` — trois flux de paiement documentés le 8 août 2026 (`authorization`, `upfront`, `escrow`), scheme `exact-canton` versé le 7 août, quatre correctifs de sécurité dans la fenêtre. `coinbase/x402` n'est plus qu'un miroir de développement. https://github.com/x402-foundation/x402
-284. ⚠ Cloudflare. « Cloudflare Wallets » et `cloudflare.pay`, 4 août 2026 — **seule la réservation d'identifiant est ouverte**, le reste annoncé « in the coming months ». https://blog.cloudflare.com/cloudflare-wallets
-285. ⚠ Cloudflare. Normes nommées de l'« Internet agentique », 6 août 2026 — x402, MCP, *Web Bot Auth* et PACT ; **ni AP2, ni UCP, ni ACP**. https://blog.cloudflare.com/agentic-internet-standards
+284. ⚠ Cloudflare. « Announcing Cloudflare Wallets: The programmable wallet for the agentic Internet » et `cloudflare.pay`, 4 août 2026 — **seule la réservation d'identifiant est ouverte**, le reste annoncé « in the coming months ». https://blog.cloudflare.com/wallets/ (⚠ *adresse relevée le 17 août 2026 ; `blog.cloudflare.com/cloudflare-wallets`, citée au gel, retourne 404*).
+285. ⚠ Cloudflare. « Building an open Agentic Internet: readable, discoverable, callable, and payable » — normes nommées de l'« Internet agentique », 6 août 2026 : x402, MCP, *Web Bot Auth* et PACT ; **ni AP2, ni UCP, ni ACP**. https://blog.cloudflare.com/the-agentic-internet/ (⚠ *adresse relevée le 17 août 2026 ; `blog.cloudflare.com/agentic-internet-standards`, citée au gel, retourne 404*).
 286. OpenTelemetry. Registre des attributs `gen_ai.*`, dépôt `semantic-conventions-genai`, fichier `docs/registry/attributes/gen-ai.md` au commit `8c1b98a` du 7 août 2026 — **63 attributs, tous en statut *development*, aucun *stable*, aucune section *deprecated*, aucun décrivant une chaîne de mandat ou de délégation.** Relevé exhaustif. https://github.com/open-telemetry/semantic-conventions-genai/blob/8c1b98a/docs/registry/attributes/gen-ai.md
 287. OpenTelemetry. Même fichier au commit `3cfb9e6` du 28 juillet 2026 — **61 attributs**. L'écart avec le relevé du 7 août date exactement la péremption du chiffre. https://github.com/open-telemetry/semantic-conventions-genai/blob/3cfb9e6/docs/registry/attributes/gen-ai.md
 288. OpenTelemetry. `semantic-conventions` v1.44.0, 4 août 2026 — **aucun contenu `gen_ai`** ; le dépôt GenAI dédié n'a toujours publié aucune version. https://github.com/open-telemetry/semantic-conventions/releases/tag/v1.44.0
@@ -1798,7 +1878,7 @@ L'auteur a défini la question, la structure et les critères de vérification, 
 291. ⚠ Camunda. Notes de version — 8.10.0-alpha4 (6 août 2026), correctifs 8.9.14 et 8.8.34 ; puis correctifs 8.9.15 (11 août 2026), 8.9.16, 8.8.35 et 8.7.37 (14 août 2026), **aucune version 8.10.0 stable**, la ligne 8.10 restant à `alpha4` ; connecteur *MCP Client* en disponibilité générale en 8.9 — ⚠ *statut non énoncé par les notes de version, attesté seulement par la sortie du connecteur de l'arbre `/early-access/alpha/`*, connecteurs *A2A Client* en accès anticipé (*alpha*). https://github.com/camunda/camunda/releases (consulté le 15 août 2026).
 292. Pegasystems. Communiqué du 14 juillet 2026 — Infinity 26 **disponible**, conception et exécution MCP comprises. https://www.pega.com/about/news/press-releases
 293. ⚠ Appian. Documentation du serveur MCP, versions 26.6 et 26.7 — **aucune mention de bêta ni de préversion**. Consultée le 8 août 2026. https://docs.appian.com/suite/help/26.7/mcp-server.html
-294. ⚠ UiPath. Notes de version — *Automation Ops* en disponibilité générale le 30 juillet 2026 ; déclenchement de processus BPMN *Maestro* par files d'attente en disponibilité générale le 31 juillet 2026. https://docs.uipath.com/automation-cloud/automation-cloud/latest/release-notes
+294. ⚠ UiPath. Notes de version de juillet 2026 — *Automation Ops* en disponibilité générale le 30 juillet 2026 ; déclenchement de processus BPMN *Maestro* par files d'attente en disponibilité générale le 31 juillet 2026. https://docs.uipath.com/automation-cloud/automation-cloud/latest/release-notes/july-2026 (⚠ *adresse relevée le 17 août 2026 ; l'index `…/release-notes` cité au gel ne mène plus au mois visé, UiPath y substituant une page de repli*).
 295. ⚠ Temporal Technologies. Notes de version de Temporal Cloud — *Serverless Workers* sur AWS Lambda en préversion publique (3 août 2026), sur GCP Cloud Run en pré-version (6 août 2026), *Projects* en pré-version (7 août 2026). https://docs.temporal.io/cloud/release-notes
 296. ⚠ Restate. Version v1.7.3, 7 août 2026. https://github.com/restatedev/restate/releases/tag/v1.7.3
 297. W3C. Note *Verifiable Credentials Overview* v1.0 (30 juillet 2026) ; *Recognized Entities* v1.0 (2 août 2026) ; *VC Barcodes* v1.0 et *DID Resolution* v1 au stade *Candidate Standard* (6 août 2026). https://www.w3.org/TR/did-resolution/

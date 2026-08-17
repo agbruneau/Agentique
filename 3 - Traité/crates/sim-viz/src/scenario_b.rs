@@ -17,7 +17,7 @@
 //!   figure bouge à l'image, sans exécution. Ce que l'écran ne peut pas
 //!   montrer bouger, il le dit — φ n'est rendu qu'en fin d'exécution, et
 //!   reconstituer son état intermédiaire ici serait de la simulation dans la
-//!   vue (§5.1).
+//!   vue (§5.1 du PRD).
 //! - **Les deux bornes se recalculent sans exécution**, parce qu'elles ne
 //!   dépendent que des réglages : elles bougent sous le doigt, et γ = 1 les
 //!   efface en direct (NF-14). Un **seul** endroit de l'écran les lit ; la
@@ -28,8 +28,23 @@
 //!
 //! Rien ici ne calcule un résultat : les bornes viennent de
 //! [`Params::bornes_applicables`], les mesures de [`ResultatB`], les six
-//! préréglages des constructeurs de [`Params`] (§5.1). Ce fichier choisit
-//! **où** poser ces valeurs, jamais ce qu'elles valent.
+//! préréglages des constructeurs de [`Params`] (§5.1 du PRD). Ce fichier
+//! choisit **où** poser ces valeurs.
+//!
+//! **Trois exceptions, toutes dans [`VueB::default`] : `n`, le budget et la
+//! graine.** `n = 16` et le budget de 150 000 événements sont les défauts du
+//! tableau du §7 du PRD, transcrits ici faute d'accesseur : `Params::scenario_b()`
+//! pose `n = 64`, et chaque agent lisant ce que toute la population écrit,
+//! l'exécution est en Θ(n²) — 64 fait payer seize fois le premier tracé à un
+//! lecteur qui n'a encore rien réglé. La graine, elle, ne vient d'aucun tableau.
+//! La conséquence se lit à l'écran plutôt que de se taire : aucun des six
+//! préréglages n'est marqué « chargé » à l'ouverture, l'écran ne s'ouvrant sur
+//! aucun d'eux, et le bouton « nominal » ramène le `n` du scénario. Les trois
+//! sont déclarées dans l'onglet « Limites » (PD6), pas seulement ici.
+//!
+//! **Et une quatrième, qui n'est pas une valeur mais une hypothèse** :
+//! `situe_la_tranche` réimplante le découpage du budget en tranches de largeur
+//! égale. Son rustdoc dit ce que cela coûte ; l'onglet « Limites » le dit aussi.
 
 use crate::{
     a_faire, bloc_pd8, cadre, colonne_de_lecture, de_la_vue, du_traite, en_clair,
@@ -42,6 +57,21 @@ use sim_agents::{scenario_b, ResultatB, BLOC_B};
 
 /// Largeur en deçà de laquelle les paires de panneaux passent sur une colonne.
 const ETROIT: f32 = 640.0;
+
+/// La provenance des deux bornes du traité, telle que `sim-agents` la porte.
+///
+/// **Couplage par chaîne assumé et nommé**, comme `VAINQUEUR_MAILLE` au
+/// scénario A. Cette crate ne contient aucun texte du traité, et une référence
+/// de section et de page en est un : la seule copie qui fasse autorité est celle
+/// de [`Bornes::LEGENDE`], affichée deux lignes plus bas dans le même cadre. La
+/// recopier ici sans garde-fou a déjà produit le défaut exact que F2 vise — le
+/// panneau annonçait « p. 13 » sous une légende qui disait « p. 16 », soit deux
+/// pages pour une seule source, dans un seul cadre.
+///
+/// Le test `la_provenance_des_bornes_suit_encore_sim_agents` échoue dès que les
+/// deux divergent de nouveau. Le correctif de fond est un accesseur de
+/// provenance dans `sim-agents`, hors de la portée de la vue.
+const SOURCE_BORNES: &str = "§1.2, p. 16, 3ᵉ éd.";
 
 /// Réglage complet d'une exécution : paramètres, graine, budget.
 ///
@@ -120,6 +150,14 @@ pub struct VueB {
 impl Default for VueB {
     fn default() -> Self {
         VueB {
+            // Les trois champs que cette vue pose au lieu de les lire — n, le
+            // budget et la graine : voir le `//!` de tête et l'onglet
+            // « Limites ». n et le budget sont les défauts du tableau du §7 du
+            // PRD ; `Params::scenario_b()` pose n = 64, l'exécution est en
+            // Θ(n²), et le premier tracé se paierait seize fois plus cher avant
+            // le premier geste du lecteur. Le bouton « nominal » du §5 ramène le
+            // n du scénario, et aucun préréglage n'est marqué « chargé » tant
+            // qu'il n'a pas été cliqué.
             params: Params {
                 n: 16,
                 ..Params::scenario_b()
@@ -546,13 +584,13 @@ impl VueB {
                                     ui,
                                     "plancher d'exploration",
                                     format!("{plancher_tirage:.6}"),
-                                    "§1.2, p. 13",
+                                    SOURCE_BORNES,
                                 );
                                 du_traite(
                                     ui,
                                     "fraction d'effort hors dominante",
                                     format!("{fraction_hors_dominante:.6}"),
-                                    "§1.2, p. 13",
+                                    SOURCE_BORNES,
                                 );
                             }
                             // NF-14 : la borne est **effacée**, pas grisée ni
@@ -703,7 +741,7 @@ impl VueB {
                 "ℓ₉₉ du milieu — le délai avant qu'une trace soit lisible",
                 "une entrée du modèle, jamais une sortie : c'est la latence qu'on impose au \
                  journal, pas celle qu'on mesure sur un agent. Le ℓ₉₉ de réponse d'un agent est \
-                 une autre grandeur, et l'écran ne l'affiche pas (§8.3).",
+                 une autre grandeur, et l'écran ne l'affiche pas (§8.3 du PRD).",
                 |ui| {
                     ui.add(
                         egui::Slider::new(&mut self.params.l99_milieu_ms, 1.0..=500.0)
@@ -1291,9 +1329,9 @@ fn effort_a_la_tranche(ui: &mut egui::Ui, r: &ResultatB, tranche: &mut usize, ba
         "Ce que cette figure ne montre pas : φ lui-même, ni le plancher du traité. La trace n'est \
          rendue qu'en fin d'exécution, donc son évaporation entre deux tranches n'est visible \
          nulle part ici — la recalculer dans l'interface en ferait un chiffre inventé (PD6, \
-         §5.1). Le plancher, lui, vaut quelques dix-millièmes contre des parts en dixièmes : sur \
-         cet axe il se confondrait avec le zéro, et sa comparaison à échelle égale est celle des \
-         deux panneaux au-dessus.",
+         §5.1 du PRD). Le plancher, lui, vaut quelques dix-millièmes contre des parts en \
+         dixièmes : sur cet axe il se confondrait avec le zéro, et sa comparaison à échelle \
+         égale est celle des deux panneaux au-dessus.",
     );
 }
 
@@ -1346,6 +1384,22 @@ mod tests {
         let d = differences(&nominal, &Params::essaim_aveugle());
         assert_eq!(d.len(), 2, "{d:?}");
         assert_eq!(d[0], "T : 50 ms puis 5 ms", "{d:?}");
+    }
+
+    /// La page citée sous les deux bornes est celle que `sim-agents` porte.
+    ///
+    /// Ce test est le garde-fou de `SOURCE_BORNES` : le panneau du §3 et la
+    /// légende d'EX-A11c sont affichés dans le même cadre, à quatre lignes l'un
+    /// de l'autre, et ils ont déjà annoncé deux pages différentes pour une seule
+    /// source. Une repagination du traité fait maintenant échouer ce test au
+    /// lieu de laisser l'écran citer une page qui n'existe plus (F2).
+    #[test]
+    fn la_provenance_des_bornes_suit_encore_sim_agents() {
+        assert!(
+            Bornes::LEGENDE.contains(SOURCE_BORNES),
+            "SOURCE_BORNES = {SOURCE_BORNES}, Bornes::LEGENDE = {}",
+            Bornes::LEGENDE
+        );
     }
 
     /// Chaque préréglage de la table désigne un endroit de l'écran, jamais rien.

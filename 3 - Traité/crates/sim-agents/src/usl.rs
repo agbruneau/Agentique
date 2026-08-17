@@ -1,6 +1,6 @@
 //! Loi d'échelle universelle : mesure de σ et κ (scénario C).
 //!
-//! > L'ouvrage n'a pas dit comment. (conclusion, p. 93)
+//! > L'ouvrage n'a pas dit comment. (conclusion, p. 130)
 //!
 //! C'est la contribution du projet au traité : le §2.1 pose
 //! `C(n) = n / (1 + σ(n − 1) + κn(n − 1))` et `u* = √((1 − σ)/κ)`, mais ne
@@ -193,7 +193,11 @@ pub fn ajuster_avec_ic(points: &[Point], tirages: usize, alea: &mut Alea) -> Opt
 
 /// Intervalle à 95 % par percentiles empiriques.
 fn percentiles(v: &mut [f64]) -> Intervalle {
-    v.sort_by(|a, b| a.partial_cmp(b).unwrap_or(std::cmp::Ordering::Equal));
+    // `total_cmp` et non `partial_cmp(…).unwrap_or(Equal)` : ce dernier rend un
+    // ordre **non transitif** dès qu'un `NaN` entre dans l'échantillon — un
+    // rééchantillonnage dégénéré suffit —, et le résultat du tri dépend alors du
+    // parcours de l'algorithme, ce que PD1 interdit.
+    v.sort_by(|a, b| a.total_cmp(b));
     let bas = v[((0.025 * v.len() as f64) as usize).min(v.len() - 1)];
     let haut = v[((0.975 * v.len() as f64) as usize).min(v.len() - 1)];
     Intervalle { bas, haut }

@@ -163,8 +163,24 @@ pub struct Retrait {
 }
 
 /// Simule le retrait d'un agent selon l'ordre de chute.
-pub fn retirer(ordre: OrdreDeChute, r: ReglagesSonde) -> Retrait {
-    match ordre {
+///
+/// `seuil_echec = 0` est **refusé**, et non écrêté : les champs de
+/// [`ReglagesSonde`] sont publics, `seuil_echec − 1` sur un entier non signé
+/// abandonnait, et l'écrêter rendait une durée de mise à mort d'allure
+/// plausible sous un réglage qui ne décrit aucune politique de sonde — zéro
+/// échec toléré n'est pas un seuil serré, c'est l'absence de seuil. « Une
+/// configuration invalide est un refus rendu à l'appelant, jamais un abandon »
+/// (SPEC §7, clause 4).
+pub fn retirer(ordre: OrdreDeChute, r: ReglagesSonde) -> Result<Retrait, String> {
+    if r.seuil_echec == 0 {
+        return Err(
+            "seuil d'échec nul refusé : la mise à mort suit `seuil_echec` échecs consécutifs, et \
+             à zéro échec il n'y a pas de politique de sonde à simuler — la durée rendue serait \
+             une valeur d'allure plausible sans réglage derrière (§6.1)."
+                .to_string(),
+        );
+    }
+    Ok(match ordre {
         OrdreDeChute::DisponibiliteDabord => Retrait {
             validation_de_decalage_achevee: true,
             ..Default::default()
@@ -173,13 +189,13 @@ pub fn retirer(ordre: OrdreDeChute, r: ReglagesSonde) -> Retrait {
             // Trois échecs consécutifs à `periode_s` d'intervalle, plus
             // l'expiration du dernier : une trentaine de secondes.
             duree_avant_mise_a_mort: Duree(
-                r.periode_s * (r.seuil_echec as u64 - 1) + r.expiration_s + r.periode_s,
+                r.periode_s * u64::from(r.seuil_echec - 1) + r.expiration_s + r.periode_s,
             ),
             redemarrages: 1,
             reequilibrages_rouverts: 1,
             validation_de_decalage_achevee: false,
         },
-    }
+    })
 }
 
 /// Budget de perturbation (EX-A27).
@@ -319,16 +335,39 @@ mod tests {
     #[test]
     fn lordre_inverse_tue_lagent_en_pleine_vidange() {
         let r = ReglagesSonde::default();
-        let nominal = retirer(OrdreDeChute::DisponibiliteDabord, r);
+        let nominal = retirer(OrdreDeChute::DisponibiliteDabord, r).expect("réglages documentés");
         assert!(nominal.validation_de_decalage_achevee);
         assert_eq!(nominal.redemarrages, 0);
 
-        let inverse = retirer(OrdreDeChute::VivaciteDabord, r);
+        let inverse = retirer(OrdreDeChute::VivaciteDabord, r).expect("réglages documentés");
         assert!(!inverse.validation_de_decalage_achevee);
         assert_eq!(inverse.redemarrages, 1);
         assert_eq!(inverse.reequilibrages_rouverts, 1);
         // « une trentaine de secondes » : 10 × 2 + 1 + 10 = 31 s.
         assert_eq!(inverse.duree_avant_mise_a_mort, Duree(31));
+    }
+
+    /// SPEC §7, clause 4 — `seuil_echec = 0` faisait déborder `seuil_echec − 1`
+    /// sur un entier non signé. Les champs de `ReglagesSonde` sont publics. Il
+    /// est désormais **refusé**, et non écrêté : l'écrêtage rendait une mise à
+    /// mort en 11 s sous un réglage qui ne décrit aucune politique de sonde.
+    #[test]
+    fn un_seuil_dechec_nul_est_refuse_au_lieu_detre_ecrete() {
+        let r = ReglagesSonde {
+            seuil_echec: 0,
+            ..ReglagesSonde::default()
+        };
+        for ordre in [OrdreDeChute::VivaciteDabord, OrdreDeChute::DisponibiliteDabord] {
+            let motif = retirer(ordre, r).expect_err("seuil nul : refus attendu, pas une durée");
+            assert!(motif.contains("zéro échec"), "{motif}");
+        }
+        // Le réglage voisin passe : la garde ne mange pas le domaine utile.
+        let un = ReglagesSonde {
+            seuil_echec: 1,
+            ..ReglagesSonde::default()
+        };
+        let inverse = retirer(OrdreDeChute::VivaciteDabord, un).expect("un échec suffit");
+        assert_eq!(inverse.duree_avant_mise_a_mort, Duree(11));
     }
 
     /// EX-A27 — le budget refuse les volontaires et **subit** les

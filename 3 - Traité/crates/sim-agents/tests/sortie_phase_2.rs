@@ -118,17 +118,50 @@ fn critere_4_un_lien_partage_reproduit_la_figure() {
 /// **(5)** Le préréglage « oscillation » diverge avec un **compteur de pannes
 /// strictement nul**. Rien n'est tombé, et le système est inutilisable : c'est
 /// ce qui le rend pédagogique.
+///
+/// **Ce que `pannes == 0` établit, et ce qu'il n'établit pas.** Aucun chemin de
+/// `elasticite::Controleur` n'incrémente ce compteur : il est posé à zéro à la
+/// construction et jamais touché. L'assertion ne peut donc pas échouer, et elle
+/// est ici pour la lettre du critère, pas pour sa preuve. Ce qui se mesure est le
+/// **contraste d'amplitude** avec le réglage nominal, sur la même charge et le
+/// même nombre de périodes. Sans ce second volet, un contrôleur qui oscillerait
+/// autant dans les deux réglages passerait le critère.
 #[test]
 fn critere_5_loscillation_diverge_sans_aucune_panne() {
-    let mut c = Controleur::nouveau(ParamsElasticite::oscillation());
-    for _ in 0..200 {
-        c.periode(80.0, 10.0);
-    }
-    assert_eq!(c.pannes, 0, "compteur de pannes strictement nul");
-    assert!(c.amplitude_totale() >= 8, "amplitude {}", c.amplitude_totale());
-    assert!(c.inversions >= 4, "{} inversions", c.inversions);
+    let deroule = |p| {
+        let mut c = Controleur::nouveau(p);
+        for _ in 0..200 {
+            c.periode(80.0, 10.0);
+        }
+        c
+    };
+
+    let oscillant = deroule(ParamsElasticite::oscillation());
+    assert_eq!(oscillant.pannes, 0, "compteur de pannes strictement nul");
     assert!(
-        !c.affichage_point_fixe().contains("stabilis"),
+        oscillant.amplitude_totale() >= 8,
+        "amplitude {}",
+        oscillant.amplitude_totale()
+    );
+    assert!(oscillant.inversions >= 4, "{} inversions", oscillant.inversions);
+    assert!(
+        !oscillant.affichage_point_fixe().contains("stabilis"),
         "l'interface n'affiche jamais « stabilisé »"
+    );
+
+    // Le volet réfutable : sur la même charge et le même nombre de périodes, le
+    // réglage nominal reste dans une bande au moins trois fois plus étroite.
+    // C'est l'amplitude qui sépare les deux réglages, et elle seule : les deux
+    // **inversent** autant — quatorze fois l'un comme l'autre —, ce qui est la
+    // réserve du §0 sur le contrôleur d'élasticité et non un défaut de ce test.
+    // Mesuré à 200 périodes, charge 80, service 10 : amplitude 9 en nominal
+    // contre 31 en oscillation, population finale 11 contre 32.
+    let nominal = deroule(ParamsElasticite::default());
+    assert_eq!(nominal.pannes, 0);
+    assert!(
+        oscillant.amplitude_totale() >= 3 * nominal.amplitude_totale(),
+        "amplitude nominale {} contre oscillante {} : le réglage ne sépare plus rien",
+        nominal.amplitude_totale(),
+        oscillant.amplitude_totale()
     );
 }

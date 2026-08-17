@@ -12,6 +12,11 @@
 //! informé.
 //!
 //! La sortie est `p̂ ± ε` avec `Pr(|p̂ − p| > ε) < δ`, **jamais une valeur nue**.
+//!
+//! La formule a un domaine — `0 < ε ≤ 1`, `0 < δ < 1` —, les deux champs qui la
+//! règlent sont publics et désérialisés, et le cast qui produit `N` est
+//! saturant. [`Parametres::refus`] tient ce domaine ; sans elle, un δ hors
+//! borne rendait `N = 0`, c'est-à-dire un verdict d'EX-C18 sur rien.
 
 use serde::{Deserialize, Serialize};
 
@@ -35,12 +40,49 @@ impl Default for Parametres {
 
 impl Parametres {
     /// `N = ⌈ ln(2/δ) / (2ε²) ⌉`.
+    ///
+    /// Le cast `as u64` de Rust est **saturant** : hors du domaine de la
+    /// formule, il rend `0` ou `u64::MAX` sans rien dire. Ne pas lire ce nombre
+    /// sans [`Parametres::refus`], qui est la garde.
     pub fn executions_necessaires(&self) -> u64 {
         (libm::log(2.0 / self.delta) / (2.0 * self.epsilon * self.epsilon)).ceil() as u64
     }
 
+    /// Pourquoi ces paramètres ne fixent **aucun** budget, s'il y a lieu.
+    ///
+    /// La borne du §3.2 suppose `0 < ε ≤ 1` et `0 < δ < 1` : ε est la
+    /// demi-largeur d'un intervalle de probabilité, δ un risque, et à `δ ≥ 1` la
+    /// borne est vide. Hors de ce domaine, `ln(2/δ)` est nul, négatif ou `NaN`,
+    /// le cast sature à zéro, et une campagne de **zéro** exécution traversait
+    /// les deux gardes de [`Campagne::conclure`] pour rendre « aucune violation
+    /// observée en 0 exécutions » — la formulation arrêtée d'EX-C18, avec son
+    /// autorité, sur un budget nul.
+    ///
+    /// Les deux champs sont publics et `Deserialize` : le domaine n'est tenu par
+    /// aucun constructeur. Les comparaisons rejettent aussi `NaN`, qui n'est
+    /// vrai pour aucune d'elles.
+    pub fn refus(&self) -> Option<String> {
+        let epsilon_valide = self.epsilon > 0.0 && self.epsilon <= 1.0;
+        let delta_valide = self.delta > 0.0 && self.delta < 1.0;
+        if epsilon_valide && delta_valide {
+            None
+        } else {
+            Some(format!(
+                "ε = {} et δ = {} sont hors du domaine de la borne du §3.2, qui suppose \
+                 0 < ε ≤ 1 et 0 < δ < 1 : aucun N ne s'en déduit",
+                self.epsilon, self.delta
+            ))
+        }
+    }
+
     /// **Affiché avant de lancer**, avec les repères du §8.4.
     pub fn affichage_avant_lancement(&self) -> String {
+        if let Some(refus) = self.refus() {
+            return format!(
+                "**aucune campagne à lancer** : {refus}. Le N affiché serait zéro, et une \
+                 campagne de zéro exécution ne mesure rien (§8.4)."
+            );
+        }
         let n = self.executions_necessaires();
         let dix_fois_plus_fin = Parametres {
             epsilon: self.epsilon / 10.0,
@@ -157,7 +199,14 @@ impl Campagne {
     }
 
     /// Conclut la campagne.
+    ///
+    /// Premier contrôle : les paramètres fixent-ils un budget ? Sans cette
+    /// garde, `δ ≥ 2` — ou `NaN`, ou `ε` hors de `]0, 1]` — donnait `N = 0`, et
+    /// la suite rendait un verdict EX-C18 complet sur zéro exécution.
     pub fn conclure(&self) -> Issue {
+        if let Some(raison) = self.params.refus() {
+            return Issue::AbsenceDeVerdict { raison };
+        }
         let n = self.params.executions_necessaires();
         if self.executions < n.min(self.budget) {
             return Issue::AbsenceDeVerdict {
@@ -186,8 +235,14 @@ impl Campagne {
         }
     }
 
-    /// **Ce que la vérification ne dit pas** (§8.3, §8.4). Affiché en
-    /// permanence.
+    /// **Ce que la vérification ne dit pas** (§8.3, §8.4).
+    ///
+    /// La doc annonçait « affiché en permanence ». Elle affirmait ce que le code
+    /// ne tient pas : cette constante n'a **aucun appelant** hors de son propre
+    /// test, `sim-viz` ne la lit pas, et rien ne l'écrit dans un export. Ce
+    /// qu'elle est aujourd'hui : la formulation arrêtée des trois refus, prête
+    /// pour l'affichage et non affichée. Les trois phrases sont, elles, tenues
+    /// par [`Issue::libelle`], qui est appelé.
     pub const REFUS: &'static [&'static str] = &[
         "un comportement dont la probabilité est inférieure au seuil d'échantillonnage n'est pas \
          déclaré absent — il n'est pas vu",
@@ -276,6 +331,40 @@ mod tests {
         let l = issue.libelle();
         assert!(l.contains("absence de verdict"), "{l}");
         assert!(l.contains("absence de problème"), "{l}");
+    }
+
+    /// **EX-C18** — un ε ou un δ hors du domaine de la borne du §3.2 ne rend
+    /// **jamais** un verdict. Avant la garde, `δ = 2` donnait `N = 0` et une
+    /// campagne de zéro exécution concluait « aucune violation observée en 0
+    /// exécutions » : la formulation arrêtée d'EX-C18, avec son autorité, sur un
+    /// budget nul.
+    #[test]
+    fn des_parametres_hors_domaine_ne_rendent_aucun_verdict() {
+        for (nom, p) in [
+            ("δ ≥ 2", Parametres { epsilon: 1e-2, delta: 2.0 }),
+            ("δ = NaN", Parametres { epsilon: 1e-2, delta: f64::NAN }),
+            ("ε = NaN", Parametres { epsilon: f64::NAN, delta: 1e-2 }),
+            ("δ < 0", Parametres { epsilon: 1e-2, delta: -1.0 }),
+            ("δ = 0", Parametres { epsilon: 1e-2, delta: 0.0 }),
+            ("ε = 0", Parametres { epsilon: 0.0, delta: 1e-2 }),
+            ("ε > 1", Parametres { epsilon: 1e9, delta: 1e-2 }),
+        ] {
+            assert!(p.refus().is_some(), "{nom} devrait être refusé");
+            let issue = Campagne::nouvelle(p, 0).conclure();
+            assert!(!issue.conclut(), "{nom}");
+            let l = issue.libelle();
+            assert!(l.contains("absence de verdict"), "{nom} : {l}");
+            assert!(
+                !l.contains("aucune violation observée"),
+                "{nom} : un verdict rendu sur zéro exécution — {l}"
+            );
+            // Et l'affichage d'avant lancement ne promet pas un budget nul.
+            let a = p.affichage_avant_lancement();
+            assert!(a.contains("aucune campagne à lancer"), "{nom} : {a}");
+        }
+        // Le domaine reste ouvert pour les réglages du §8.4.
+        assert!(Parametres::default().refus().is_none());
+        assert!(Parametres { epsilon: 1.0, delta: 0.999 }.refus().is_none());
     }
 
     /// Les trois refus d'affichage sont énoncés.

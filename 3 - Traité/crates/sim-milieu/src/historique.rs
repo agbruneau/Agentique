@@ -14,8 +14,14 @@
 //! l'issue n'est pas vérifiable — la plupart des jugements de conception —,
 //! l'historique n'enregistre que la concordance avec la majorité, c'est-à-dire
 //! qu'il récompense la conformité du §8.1 et **aggrave le mal qu'il devait
-//! corriger**. [`Historique::poids`] refuse donc de rendre un poids dans ce
-//! régime, au lieu de le rendre dégradé.
+//! corriger**. Aucun nombre n'est donc rendu dans ce régime, au lieu d'en rendre
+//! un dégradé.
+//!
+//! Le refus est porté par [`Compte::fiabilite`] et non par [`Historique::poids`]
+//! seul : `poids` n'est pas la seule voie publique vers le nombre — [`Historique::compte`]
+//! rend un [`Compte`] par valeur et [`Historique::identites`] en rend un par
+//! identité. Un refus posé sur le seul `poids` se contournait par ces deux-là. Le
+//! régime est donc une propriété du **compte**, et toutes les voies y passent.
 
 use crate::journal::Identite;
 use std::collections::BTreeMap;
@@ -65,15 +71,42 @@ pub struct Compte {
 }
 
 impl Compte {
+    /// Régime de ce compte : peut-on en tirer un nombre ? La règle est écrite
+    /// **ici et nulle part ailleurs** — [`Historique::regime`] et
+    /// [`Compte::fiabilite`] y renvoient tous deux.
+    pub fn regime(&self) -> Regime {
+        if self.non_verifiables > 0 {
+            Regime::NonVerifiable
+        } else {
+            Regime::Verifiable
+        }
+    }
+
     /// Fiabilité constatée : part des issues **vérifiées** qui ont été
-    /// confirmées. `None` tant qu'aucune issue vérifiée n'existe — une fiabilité
-    /// sans vérification serait un nombre sans provenance (F1).
-    pub fn fiabilite(&self) -> Option<f64> {
+    /// confirmées.
+    ///
+    /// Les deux réponses négatives sont **distinctes et ne se confondent pas** :
+    ///
+    /// - `Err(REFUS_NON_VERIFIABLE)` — le régime interdit tout nombre sur ce
+    ///   compte. C'est le refus d'EX-M25, et il est porté par le compte plutôt
+    ///   que par [`Historique::poids`] parce que ce dernier n'est pas la seule
+    ///   voie publique vers cette valeur.
+    /// - `Ok(None)` — aucune issue vérifiée n'existe encore. Une fiabilité sans
+    ///   vérification serait un nombre sans provenance (F1), et rendre 1,0 ferait
+    ///   passer une absence de mesure pour une fiabilité parfaite.
+    ///
+    /// Ce n'est **jamais** une mesure de véracité, et aucun affichage ne doit la
+    /// présenter comme telle : elle mesure une concordance constatée entre une
+    /// assertion et une issue, ce qui est la distinction de PD14 (EX-M25).
+    pub fn fiabilite(&self) -> Result<Option<f64>, &'static str> {
+        if self.regime() == Regime::NonVerifiable {
+            return Err(REFUS_NON_VERIFIABLE);
+        }
         let verifiees = self.confirmees + self.dementies;
         if verifiees == 0 {
-            return None;
+            return Ok(None);
         }
-        Some(self.confirmees as f64 / verifiees as f64)
+        Ok(Some(self.confirmees as f64 / verifiees as f64))
     }
 }
 
@@ -102,6 +135,12 @@ impl Historique {
     ///
     /// Coût : 1 écriture. Le tiers n'est pas modélisé ici — c'est l'agent arbitre
     /// du §7.2, et le milieu ne fait que consigner ce qu'il rend.
+    ///
+    /// **Les deux suites ne sont pas appariées** : rien n'exige un
+    /// [`Historique::asserter`] préalable, et rien ne dit *quelle* assertion
+    /// l'issue tranche. EX-M25 écrit « la suite de ses assertions et, quand elle
+    /// existe, l'issue vérifiée de chacune » ; ce qui est livré est deux
+    /// compteurs par identité, dont le second peut dépasser le premier.
     pub fn verifier(&mut self, qui: Identite, issue: Issue) {
         let c = self.comptes.entry(qui).or_default();
         match issue {
@@ -112,38 +151,35 @@ impl Historique {
         self.ecritures += 1;
     }
 
-    /// Le compte d'une identité, sans consommer de consultation.
+    /// Le compte brut d'une identité — les quatre compteurs, sans interprétation.
+    ///
+    /// **Ce n'est pas la consultation facturée** : le coût annoncé par EX-M25 —
+    /// « 1 lecture compactée par consultation » — ne s'applique qu'à
+    /// [`Historique::poids`], et cet accesseur ne l'incrémente pas. Il ne
+    /// contourne rien pour autant : le refus du régime non vérifiable est porté
+    /// par [`Compte::fiabilite`], donc par le compte lui-même.
     pub fn compte(&self, qui: Identite) -> Compte {
         self.comptes.get(&qui).copied().unwrap_or_default()
     }
 
-    /// Régime de cette identité : peut-on pondérer sur elle ?
+    /// Régime de cette identité : peut-on pondérer sur elle ? Renvoie à
+    /// [`Compte::regime`], qui porte la règle.
     pub fn regime(&self, qui: Identite) -> Regime {
-        if self.compte(qui).non_verifiables > 0 {
-            Regime::NonVerifiable
-        } else {
-            Regime::Verifiable
-        }
+        self.compte(qui).regime()
     }
 
     /// **Poids par source**, pour pondérer φ par la fiabilité constatée plutôt
     /// que par la seule quantité déposée.
     ///
-    /// Coût : 1 lecture compactée par consultation.
+    /// Coût : 1 lecture compactée par consultation, **comptée même quand la
+    /// réponse est un refus** : son prix est payé par le consultant, que la
+    /// réponse lui serve ou non.
     ///
-    /// Deux refus, et ils ne sont pas négociables (EX-M25) :
-    ///
-    /// - `Err(REFUS_NON_VERIFIABLE)` dès qu'une issue non vérifiable figure au
-    ///   compte de cette identité. Le mécanisme n'est pas dégradé, il est refusé.
-    /// - `Ok(None)` quand aucune issue vérifiée n'existe encore : il n'y a rien à
-    ///   pondérer, et rendre 1,0 par défaut ferait passer une absence de mesure
-    ///   pour une fiabilité parfaite.
+    /// Les deux réponses négatives sont celles de [`Compte::fiabilite`], qui
+    /// porte le refus : cette méthode n'y ajoute que la consultation.
     pub fn poids(&mut self, qui: Identite) -> Result<Option<f64>, &'static str> {
         self.consultations += 1;
-        if self.regime(qui) == Regime::NonVerifiable {
-            return Err(REFUS_NON_VERIFIABLE);
-        }
-        Ok(self.compte(qui).fiabilite())
+        self.compte(qui).fiabilite()
     }
 
     /// Écritures de vérification effectuées — le coût du mécanisme, à afficher.
@@ -176,6 +212,23 @@ mod tests {
 
     fn qui(n: u32) -> Identite {
         Identite::propre(ActeurId(n))
+    }
+
+    /// EX-M25 — le refus du régime non vérifiable ne se contourne par **aucune**
+    /// voie publique. `poids` n'était pas la seule : `compte` rend un `Compte`
+    /// par valeur et `identites` en rend un par identité, et les deux livraient
+    /// le nombre que `poids` refusait.
+    #[test]
+    fn le_refus_ne_se_contourne_par_aucune_voie_publique() {
+        let mut h = Historique::nouveau();
+        h.verifier(qui(6), Issue::Confirmee);
+        h.verifier(qui(6), Issue::NonVerifiable);
+        assert!(h.poids(qui(6)).is_err(), "la voie facturée refuse");
+        assert!(h.compte(qui(6)).fiabilite().is_err(), "la voie directe aussi");
+        assert!(
+            h.identites().all(|(_, c)| c.fiabilite().is_err()),
+            "et la voie par la population"
+        );
     }
 
     /// EX-M25 — une assertion sans issue vérifiée ne donne **aucun** poids. Un

@@ -60,7 +60,7 @@ C'est la partie qui compte : les responsabilités se lisent dans les noms, les
 | `sim-core` | Boucle à événements discrets, horloge logique, aléa semé, fautes, détecteur, oracles, hypothèses fortes, vérification statistique | Ni le journal partitionné, ni les agents. Il ne peut donc pas évaluer un oracle : il en tient la déclaration, la classe et l'instant de violation, l'appelant fait le reste |
 | `sim-milieu` | Journal M1–M4, réplication ISR(k, m), rétention, compactage, latences, groupe de consommation, plan de contrôle | Aucun algorithme d'agent, aucun protocole d'accord. Il ne pousse **aucun** événement lui-même — il rend un délai, l'appelant le planifie |
 | `sim-agents` | Les mécanismes, leurs oracles, les paramètres d'ordre, **et les scénarios comme données** | Il ne dessine rien |
-| `sim-viz` | egui/eframe, tracés, onglets « Limites » et « Repères », schémas figés | **Zéro** logique de simulation, **zéro** définition de scénario, **zéro** texte du traité. Ni export, ni parcours « le fil » : O6 n'est pas livré |
+| `sim-viz` | egui/eframe, tracés, onglets « Limites » et « Repères », schémas figés | **Zéro** logique de simulation, **zéro** définition de scénario, **zéro** texte du traité — **à trois exceptions nommées, toutes déclarées dans l'onglet « Limites »** : le découpage du budget en tranches réimplanté par `situe_la_tranche`, les neuf valeurs d'ouverture des deux vues, et la provenance des bornes recopiée dans `SOURCE_BORNES`. Ni export, ni parcours « le fil » : O6 n'est pas livré |
 
 Deux conséquences pratiques, faciles à violer sans le voir :
 
@@ -234,10 +234,19 @@ section numérotée, `encart` accompagne sans découper — un lecteur qui saute
 les encarts perd le confort et garde l'argument entier —, et le cadre du bloc de
 trois est posé par `bloc_pd8` lui-même. L'onglet « Repères » est **entièrement** dérivé de
 `sim_agents::glossaire`, et les reformulations en langue courante viennent de
-`Bloc::en_clair`. L'onglet « Limites », lui, tire trois de ses cinq listes des
-`hors_perimetre` — et **écrit les deux autres ici**, dix-huit énoncés en dur que
-rien ne tient à jour. C'est ce qui a laissé passer un compte faux à l'écran
-pendant toute la phase 6.
+`Bloc::en_clair`. L'onglet « Limites », lui, tire trois de ses **six** listes des
+`hors_perimetre` — et **écrit les trois autres ici**, vingt-deux énoncés en dur
+que rien ne tient à jour. C'est ce qui a laissé passer un compte faux à l'écran
+pendant toute la phase 6, et de nouveau EX-V23 pendant tout l'après-phase 6 :
+le §0 du PRD écrivait que l'onglet déclarait la file d'arbitrage, il ne la
+déclarait pas, et la liste ne comptait que quinze des seize `EX-V*` sans point
+d'appel. L'audit du 17 août 2026 a ajouté la ligne manquante, puis la sixième
+liste — « ce que cette interface décide à la place de `sim-agents` », trois
+énoncés —, parce que PD6 vaut aussi dans l'autre sens : ce que la vue tient et
+qu'elle affirme ailleurs ne pas tenir s'affiche au même rang que ce qu'elle n'a
+pas. Le compte de vingt-deux est celui du 17 août 2026 et il n'est tenu par
+rien : le seul compte qui ne puisse pas mentir est celui de l'écran, que
+`section()` calcule par `lignes.len()`.
 
 Les deux cibles traversent le **même** code : c'est la condition d'EX-V12, dont
 la parité de sortie est mesurée par `bancs/parite-wasm`.
@@ -309,7 +318,11 @@ exactement** est dans [`SPEC.md`](SPEC.md).
 - **PD6 — ce qui est absent s'affiche au même rang que ce qui est présent.**
   D'où les fonctions `hors_perimetre()`, tenues à jour à chaque fin de phase :
   déclarer absent un mécanisme livré est le mensonge symétrique de celui que
-  PD6 vise.
+  PD6 vise. **Il n'y en a que deux** — `sim-milieu` (13 entrées au 17 août 2026)
+  et `sim-agents` (20) : `sim-core` n'en a pas, et les absences du cœur logent
+  dans `ModeleFaute::hors_modele()`, dont ce n'est pas l'objet. Décision de
+  conception ouverte, au [registre](decisions.md) — **ne pas créer la troisième
+  fonction sans elle**.
 - **PD12 — un détecteur soupçonne.** `Etat` n'a pas de variante `Mort`, et
   l'exactitude est un `Option<f64>` **calculé**, jamais un paramètre.
 - **NF-14 — une hypothèse violée efface la borne.** Ni grisée, ni pointillée.

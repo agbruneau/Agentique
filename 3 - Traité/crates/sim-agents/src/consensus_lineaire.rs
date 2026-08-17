@@ -85,9 +85,12 @@ impl Mode {
             ),
             Mode::Moyeu => Some(
                 "topologie de sujet lu par tous : Δ(G) = n − 1, et le budget de retard \
-                 τ < π/(4(n−1)) décroît en 1/n — moins de 7,9 × 10⁻³ unité de temps du protocole \
-                 à n = 100. Le milieu offre gratuitement l'échange non local qui accélère la \
-                 convergence, et du même geste la topologie que la source déconseille.",
+                 τ < π/(4(n−1)) décroît en 1/n — 7,933 × 10⁻³ unité de temps du protocole à \
+                 n = 100. L'arrondi de π/(4n) donnerait 7,9 × 10⁻³, que la borne réellement \
+                 écrite dépasse de 0,42 % : un arrondi présenté comme une borne stricte est un \
+                 énoncé faux, non une imprécision (§3.1, p. 42). Le milieu offre gratuitement \
+                 l'échange non local qui accélère la convergence, et du même geste la topologie \
+                 que la source déconseille.",
             ),
             _ => None,
         }
@@ -372,19 +375,15 @@ mod tests {
     }
 
     /// EX-A43 (c) — le budget de retard décroît avec Δ(G), et le mode « moyeu »
-    /// le rend minuscule : moins de 7,9 × 10⁻³ à n = 100.
-    /// NF-15 — et un écart relevé au passage.
+    /// le rend minuscule : **7,933 × 10⁻³** à n = 100.
     ///
-    /// Le PRD écrit « moins de 7,9 × 10⁻³ unité de temps du protocole à
-    /// n = 100 », avec Δ(G) = n − 1. Or π/(4 × 99) = 7,933 × 10⁻³, qui n'est
-    /// **pas** inférieur à 7,9 × 10⁻³. L'ordre de grandeur est juste, l'inégalité
-    /// stricte ne l'est pas — soit le chiffre vient de π/(4n) et non de
-    /// π/(4(n−1)), soit c'est un arrondi présenté comme une borne.
-    ///
-    /// Le test vérifie donc la **valeur exacte** que le modèle produit, et
-    /// consigne l'écart plutôt que de l'ajuster : « un écart est un défaut du
-    /// simulateur **ou** une erreur du traité, et les deux méritent d'être
-    /// trouvés » (NF-15).
+    /// NF-15 — c'est la valeur que le §3.1 (p. 42) écrit désormais, après avoir
+    /// tranché l'écart que ce test avait relevé : « l'arrondi de π/(4n) donnerait
+    /// 7,9 × 10⁻³, que la borne réellement écrite dépasse de 0,42 % : un arrondi
+    /// présenté comme une borne stricte est un énoncé faux, non une
+    /// imprécision ». Le test continue de vérifier la **valeur exacte** que le
+    /// modèle produit, et que l'arrondi la dépasse — l'énoncé corrigé du traité
+    /// est ainsi retrouvé, pas cité.
     #[test]
     fn le_budget_de_retard_decroit_avec_le_degre() {
         assert!(budget_de_retard(1) > budget_de_retard(10));
@@ -395,11 +394,20 @@ mod tests {
         );
         assert!(
             moyeu_a_100 > 7.9e-3,
-            "le PRD annonce « moins de 7,9 × 10⁻³ » ; la valeur exacte le dépasse"
+            "l'arrondi « moins de 7,9 × 10⁻³ » est dépassé par la borne réellement écrite"
         );
-        // Avec Δ = n plutôt que n − 1, l'énoncé du PRD tient exactement.
+        // … et de 0,42 %, comme le §3.1 le chiffre.
+        assert!(
+            ((moyeu_a_100 / 7.9e-3 - 1.0) * 100.0 - 0.42).abs() < 0.01,
+            "dépassement de {:.3} %",
+            (moyeu_a_100 / 7.9e-3 - 1.0) * 100.0
+        );
+        // Avec Δ = n plutôt que n − 1, l'arrondi tiendrait — c'est de là qu'il
+        // venait, et c'est ce qui le rend faux comme borne sur Δ(G) = n − 1.
         assert!(budget_de_retard(100) < 7.9e-3);
-        assert!(Mode::Moyeu.avertissement().unwrap().contains("7,9"));
+        // L'avertissement affiche la valeur exacte, jamais l'arrondi seul.
+        let a = Mode::Moyeu.avertissement().unwrap();
+        assert!(a.contains("7,933"), "{a}");
     }
 
     /// EX-A43 — hors de l'exception nommée, **aucune** barre de progression.

@@ -91,31 +91,45 @@ impl Familles {
             (brut.ceil() as u32).clamp(2.min(n), n)
         };
         Familles {
-            // Répartition par tranches contiguës : déterministe, sans tirage.
-            appartenance: (0..n).map(|i| i * nb / n).collect(),
+            // Répartition par tranches contiguës : déterministe, sans tirage. Le
+            // produit passe par `u64` : `i * nb` déborde `u32` dès n ≈ 65 536, et
+            // le profil release du dépôt ne pose pas `overflow-checks`, donc
+            // l'enroulement replierait des agents éloignés dans une même famille
+            // sans un mot.
+            appartenance: (0..n)
+                .map(|i| (u64::from(i) * u64::from(nb) / u64::from(n)) as u32)
+                .collect(),
             nb,
         }
     }
+
+    /// Valeur rendue par [`Familles::famille`] pour un agent hors bornes.
+    ///
+    /// Elle marque l'**absence** de famille, et aucun mécanisme ne la traite
+    /// comme un numéro : EX-C19 pose qu'un agent appartient à exactement une
+    /// famille, et un agent qui n'existe pas n'en a aucune.
+    pub const SANS_FAMILLE: u32 = u32::MAX;
 
     /// Nombre d'agents.
     pub fn n(&self) -> u32 {
         self.appartenance.len() as u32
     }
 
-    /// Famille de cet agent. Hors bornes, l'agent est réputé seul dans sa
-    /// famille — un appelant qui interroge un agent inexistant ne doit pas
-    /// recevoir une corrélation.
+    /// Famille de cet agent, ou [`Familles::SANS_FAMILLE`] hors bornes — un
+    /// appelant qui interroge un agent inexistant ne doit pas recevoir une
+    /// corrélation. La sentinelle n'est **pas** un numéro de famille : elle ne
+    /// partage rien, ni ici ni au [`TirageDeDecision`].
     pub fn famille(&self, agent: ActeurId) -> u32 {
         self.appartenance
             .get(agent.0 as usize)
             .copied()
-            .unwrap_or(u32::MAX)
+            .unwrap_or(Familles::SANS_FAMILLE)
     }
 
     /// Ces deux agents partagent-ils leur tirage de décision ?
     pub fn partagent(&self, a: ActeurId, b: ActeurId) -> bool {
         let (fa, fb) = (self.famille(a), self.famille(b));
-        fa != u32::MAX && fa == fb
+        fa != Familles::SANS_FAMILLE && fa == fb
     }
 
     /// **Diversité effective** : le paramètre de contrôle de Φ_c (§8.1).
@@ -232,7 +246,18 @@ impl TirageDeDecision {
             let plancher = self.tour_max.saturating_sub(TOURS_CONSERVES);
             self.memo.retain(|(_, _, t), _| *t >= plancher);
         }
-        let cle = (self.familles.famille(agent), decision, tour);
+        let famille = self.familles.famille(agent);
+        // Un agent hors bornes n'a pas de famille, il en a l'**absence**. La
+        // mémoïser reviendrait à réunir tous les agents inexistants dans une
+        // famille commune : deux d'entre eux recevraient le même tirage, alors
+        // que `Familles::partagent` répond déjà que non. Une corrélation que le
+        // curseur de familles ne pilote pas est exactement ce qu'EX-C19 interdit
+        // de fabriquer.
+        if famille == Familles::SANS_FAMILLE {
+            self.tires += 1;
+            return alea.uniforme();
+        }
+        let cle = (famille, decision, tour);
         if let Some(u) = self.memo.get(&cle) {
             self.partages += 1;
             return *u;
@@ -351,6 +376,40 @@ mod tests {
         }
         assert!(t.memo.len() <= 3, "mémo élagué : {} entrées", t.memo.len());
         assert_eq!(t.tires(), 500, "un tirage par tour, pour quatre agents");
+    }
+
+    /// EX-C19 — un agent hors bornes n'appartient à aucune famille, donc il ne
+    /// partage avec personne. Le mémo était clé sur la sentinelle : deux agents
+    /// inexistants recevaient le même tirage, ce que `partagent` niait déjà.
+    #[test]
+    fn deux_agents_hors_bornes_ne_partagent_pas_leur_tirage() {
+        let f = Familles::une_par_agent(2);
+        assert_eq!(f.famille(ActeurId(7)), Familles::SANS_FAMILLE);
+        assert!(!f.partagent(ActeurId(7), ActeurId(8)));
+
+        let mut alea = Alea::nouveau(21);
+        let mut t = TirageDeDecision::nouveau(f);
+        let a = t.uniforme(ActeurId(7), "choix", 3, &mut alea);
+        let b = t.uniforme(ActeurId(8), "choix", 3, &mut alea);
+        assert_ne!(a, b, "aucune famille, donc aucun partage");
+        assert_eq!(t.partages(), 0);
+        assert_eq!(t.tires(), 2);
+    }
+
+    /// La répartition par tranches reste exacte au-delà de 2¹⁶ agents : le
+    /// produit `i × nb` déborde `u32`, et le profil release ne le signalerait
+    /// pas.
+    #[test]
+    fn la_repartition_ne_deborde_pas_sur_une_grande_population() {
+        let n = 100_000u32;
+        let f = Familles::interpole(n, 0.5);
+        let nb = f.diversite_effective();
+        assert_eq!(nb, 50_000);
+        assert_eq!(f.famille(ActeurId(0)), 0);
+        assert_eq!(f.famille(ActeurId(n - 1)), nb - 1);
+        // Croissance monotone : un enroulement replierait un agent tardif sur
+        // une famille de tête.
+        assert!((1..n).all(|i| f.famille(ActeurId(i)) >= f.famille(ActeurId(i - 1))));
     }
 
     #[test]

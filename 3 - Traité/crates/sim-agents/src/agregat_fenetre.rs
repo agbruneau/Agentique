@@ -24,7 +24,7 @@ pub const BLOC_G: Bloc = Bloc {
          contributeurs attendus ne rend pas la réponse juste — cela rend seulement son erreur \
          visible.",
     these: "Une réponse fausse d'une quantité inconnue, que rien dans le résultat ne trahit.",
-    source: "§7.1, p. 75 — esquisses fusionnables, filigrane, volets, manifeste",
+    source: "§7.1, p. 104 (3ᵉ éd.) — esquisses fusionnables, filigrane, volets, manifeste",
     mecanisme_visible:
         "désactiver le manifeste ; une partition muette cesse de contribuer, le volet publié \
          reste étiqueté « complet », et l'erreur d'estimation affichée ne bouge pas — parce \

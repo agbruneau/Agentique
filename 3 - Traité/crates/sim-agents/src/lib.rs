@@ -76,6 +76,10 @@ pub fn hors_perimetre() -> &'static [&'static str] {
         "tableau 15 — les six mécanismes d'allocation rendent les valeurs citées du \
          traité, pas une mesure : aucune tâche n'est allouée, la graine est ignorée \
          (scénario F)",
+        "nombre de partitions du scénario A — `scenario_a` reçoit `p` et le jette : aucun \
+         des comptes du tableau 3 n'en dépend. Le curseur « p — partitions » de l'écran, \
+         gradué de 1 à 64, ne déplace donc aucun chiffre affiché, et rien à côté de lui ne \
+         le dit",
         "prix de l'anarchie — `rapport_mesure` est renseigné par l'appelant ; aucun \
          équilibre ni optimum n'est calculé (EX-A54, scénario K)",
         "corroboration r parmi n — les formules de Bayes sont là, la fenêtre W, les \
@@ -91,7 +95,7 @@ pub fn hors_perimetre() -> &'static [&'static str] {
          ni commutateur (DT11)",
         "tableaux 7, 11 et 12 et figure 4.2 du traité — seuls le tableau 14 et la \
          figure 5.1 sont remplis",
-        "oracles du §5.1 au registre — les trois mécanismes d'accord portent des \
+        "oracles du §5.1 du traité au registre — les trois mécanismes d'accord portent des \
          prédicats ad hoc, hors du registre de `sim-core` et de ses garanties PD2 \
          (EX-A51)",
         "blocs de trois des scénarios C, H et I (PD8) ; et huit des dix blocs livrés — \
@@ -103,14 +107,24 @@ pub fn hors_perimetre() -> &'static [&'static str] {
          qui a produit les points",
         "trois des sept colonnes du tableau 14 — `tours_jusqua_larret`, `messages_par_tour` \
          et `condition_darret` sont des citations formatées, pas des mesures (EX-V18)",
-        "six mécanismes des phases 1 à 5 n'ont aucun appelant hors de leurs propres tests — \
+        "sept mécanismes des phases 1 à 5 n'ont aucun appelant hors de leurs propres tests — \
          adhésion (EX-A03), alignement (EX-A02), causalité (EX-A08), consensus linéaire \
-         (EX-A13, EX-A43), directive avec époque (EX-A07) et reconfiguration (EX-A44, \
-         EX-A45) : écrits et testés, exécutés par aucun scénario",
-        "six des quinze oracles du catalogue ne sont armés par aucune exécution — \n         `CONSERVATION`, `ACCORD_LOCAL`, `D1`, `D2`, `UN_SEUL_PROPRIETAIRE` et \n         `TOUTE_PARTITION_A_UN_PROPRIETAIRE` : leurs `armer_oracles` n'ont d'appelant \n         que dans leurs propres tests. Neuf tournent : `PLANCHER` et `HORS_DOMINANTE` \n         par le scénario B, M1 à M4 et M10 par le journal, R1 et R2 par le scénario D",
+         (EX-A13, EX-A43), directive avec époque (EX-A07), reconfiguration (EX-A44, \
+         EX-A45) et cycle de vie (EX-A26, EX-A48, EX-A27 — sondes, ordre de chute et budget \
+         de perturbation, dont la seule référence hors du module est le `mod tests` de \
+         `gouvernance`) : écrits et testés, exécutés par aucun scénario",
+        "six des quinze oracles du catalogue ne sont armés par aucune exécution — \
+         `CONSERVATION`, `ACCORD_LOCAL`, `D1`, `D2`, `UN_SEUL_PROPRIETAIRE` et \
+         `TOUTE_PARTITION_A_UN_PROPRIETAIRE`. Deux ne sont armés nulle part, pas même par \
+         un test : `PushPull::armer_oracle` et `Alignement::armer_oracles` n'ont aucun \
+         appelant, si bien que `CONSERVATION` et `ACCORD_LOCAL` ne sont jamais inscrits \
+         à un registre. Les quatre autres n'ont d'appelant que dans les tests de leur \
+         propre module. Neuf tournent : `PLANCHER` et `HORS_DOMINANTE` par le scénario B, \
+         M1 à M4 et M10 par le journal, R1 et R2 par le scénario D",
         "contre-exemple des prédicats locaux (PD10, EX-A39) — `ACCORD_LOCAL` porte son \
          contre-exemple et le réglage qui le met en défaut, et `Registre::criteres_locaux` \
-         les rend ; aucun affichage ne les lit",
+         les rend ; aucun registre ne le porte à l'exécution — voir l'entrée sur les \
+         oracles — et aucun affichage ne les lit",
         "agrégat de couverture entre exécutions (EX-C08) — `Agregat::absorber` et `faibles` \
          n'ont aucun appelant, et le binaire `campagne`, seul chemin multi-exécutions du \
          produit, n'agrège aucune couverture : les conditions à compte nul ne sont donc \

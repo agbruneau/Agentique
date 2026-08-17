@@ -38,20 +38,42 @@ def load():
     s = io.open(SRC, encoding='utf-8').read()
     body, apres = s.split('# Références {-}')
     refs = apres.split('::: {#refs}')[1].split('\n:::')[0]
-    return body, refs
+    return s, body, refs
 
 
-def sections(body):
-    """Numeros que Pandoc attribuera, dans l'ordre. Les titres {-} n'en recoivent pas."""
-    sec, out, fence = [0, 0, 0], set(), False
-    for ln in body.split('\n'):
+def sections(texte):
+    """Numeros que Pandoc attribuera, dans l'ordre, et les titres qu'il refusera.
+
+    ⚠ UN TITRE COLLE AU PARAGRAPHE PRECEDENT N'EN EST PAS UN. Pandoc exige une
+    ligne vide avant un titre ATX — extension `blank_before_header`, active par
+    defaut dans son markdown — et, faute d'elle, le « # » reste du texte courant,
+    croisillon compris : la section ne recoit aucun numero et n'entre pas a la
+    table des matieres. Ce controle l'ignorait, et c'est la panne qu'il a laissee
+    passer le plus longtemps : sept titres etaient dans ce cas au 17 aout 2026 —
+    Methodologie, deux couches de la section 4, cadres reglementaires, limites,
+    corpus compagnon, et le titre meme de la bibliographie. Le PDF numerotait 10
+    sections sur 14, sa liste de references n'avait plus de titre, et TOUS les
+    renvois en clair du texte — « limites (10) », « corpus compagnon (13) » —
+    pointaient a cote, pendant que ce controle les declarait resolus contre une
+    numerotation qui n'existait que dans sa lecture. Ils sont desormais ecartes
+    du compte, comme Pandoc les ecarte, ET rapportes comme echec : un titre
+    collé est une faute de source, jamais une intention.
+    """
+    sec, out, colles, fence = [0, 0, 0], set(), [], False
+    lignes = texte.split('\n')
+    for i, ln in enumerate(lignes):
         if ln.startswith('```'):
             fence = not fence
             continue
         if fence:
             continue
         m = re.match(r'^(#{1,3}) (.+)$', ln)
-        if not m or '{-}' in m.group(2):
+        if not m:
+            continue
+        if i and lignes[i - 1].strip():
+            colles.append((i + 1, m.group(2)))
+            continue
+        if '{-}' in m.group(2):
             continue
         lvl = len(m.group(1))
         if lvl == 1:
@@ -61,13 +83,25 @@ def sections(body):
         else:
             sec = [sec[0], sec[1], sec[2] + 1]
         out.add('.'.join(str(x) for x in sec[:lvl]))
-    return out
+    return out, colles
 
 
-def piege1(body):
-    """Renvois en clair vers sections, tableaux et questions ouvertes."""
+def piege1(source, body):
+    """Renvois en clair vers sections, tableaux et questions ouvertes.
+
+    ⚠ La numerotation se calcule sur le CORPS, coupe avant la bibliographie, mais
+    les titres colles se cherchent sur la SOURCE ENTIERE : le titre de la
+    bibliographie tombe hors du corps, et c'est precisement celui qui manquait.
+    """
     ok = True
-    ex = sections(body)
+    ex, _ = sections(body)
+    _, colles = sections(source)
+
+    if colles:
+        fail.append('titre(s) sans ligne vide avant — Pandoc les rend en texte courant, '
+                    'croisillon compris, et ne leur donne aucun numero : '
+                    + ' ; '.join(f'l. {n} « {t[:44]} »' for n, t in colles))
+        ok = False
 
     unresolved = set()
     for pat in (r'sections? (\d+(?:\.\d+)*)', r'§\s?(\d+(?:\.\d+)*)',
@@ -170,6 +204,19 @@ def piege2(body):
     return ok
 
 
+# Titres portes par PLUSIEURS notices a bon droit — chacune designe un objet
+# distinct de la meme source, et la notice le dit. La liste est un ARBITRAGE, pas
+# une exemption : toute paire qui n'y figure pas fait echouer le controle.
+# ⚠ Relevees le 17 aout 2026, quand la verification des 342 references a montre
+# que les trois controles de doublon comparaient URL, DOI et arXiv — jamais les
+# titres —, et laissaient donc passer deux notices indistinguables a la lecture.
+HOMONYMES_ADMIS = {
+    'workload identity in multi system environments (wimse)',   # 57 charte / 144 documents datés
+    'x402',                                                     # 125 spécification / 129 doc Stripe
+    'modelcontextprotocol/registry',                            # 137 dépôt et schéma / 265 version v1.8.1
+}
+
+
 def piege3(refs):
     """Deux entrees ne doivent pas designer le meme document."""
     def norm(u):
@@ -195,7 +242,27 @@ def piege3(refs):
             if len(ns) > 1:
                 fail.append(f'{label} partage par les entrees {sorted(ns)} : {v[:80]}')
                 ok = False
-    print(f'  [3] biblio      : {len(entries)} entrees -> {"OK" if ok else "ECHEC"}')
+
+    # ⚠ ET LE TITRE, que les trois cles ci-dessus ne voient pas. Deux notices
+    # peuvent porter des URL differentes et le MEME titre : le lecteur qui suit
+    # un renvoi ne les distingue alors que par ce qui suit le titre, quand il y a
+    # quelque chose. Le controle ne porte que sur les titres entre guillemets —
+    # un tiers des notices de la veille nomme sa source autrement, page de projet
+    # ou annonce datee, et n'a pas de titre a confronter.
+    titres = collections.defaultdict(set)
+    for n, t in entries:
+        m = re.search(r'«\s*(.+?)\s*»', t)
+        if m:
+            titres[m.group(1).lower().rstrip('.')].add(n)
+    for v, ns in titres.items():
+        if len(ns) > 1 and v not in HOMONYMES_ADMIS:
+            fail.append(f'titre porte par les entrees {sorted(ns)} sans arbitrage declare : '
+                        f'« {v[:70]} » — si elles designent deux objets distincts, ajouter le '
+                        f'titre a HOMONYMES_ADMIS ; sinon, fusionner les notices')
+            ok = False
+
+    print(f'  [3] biblio      : {len(entries)} entrees, {len(titres)} titres '
+          f'({len(HOMONYMES_ADMIS)} homonymies arbitrees) -> {"OK" if ok else "ECHEC"}')
     return ok
 
 
@@ -215,9 +282,9 @@ def liens(body, refs):
 
 
 if __name__ == '__main__':
-    body, refs = load()
+    source, body, refs = load()
     print(f'Controles de publication — {SRC.name}')
-    results = [piege1(body), piege2(body), piege3(refs), liens(body, refs)]
+    results = [piege1(source, body), piege2(body), piege3(refs), liens(body, refs)]
     if fail:
         print('\nECHEC :')
         for f in fail:

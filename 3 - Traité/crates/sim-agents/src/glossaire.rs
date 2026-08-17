@@ -69,7 +69,7 @@ pub fn glossaire() -> &'static [Terme] {
                 "le premier régime : chaque agent nomme ses destinataires et leur envoie un \
                  message. Pour nommer quelqu'un, il faut savoir qu'il est là — d'où le coût \
                  d'entretien de vue, qui est le terme qui explose.",
-            provenance: "§1.3, p. 21 — tableau 3",
+            provenance: "§1.3, tableau 3, p. 18 (3ᵉ éd.)",
         },
         Terme {
             groupe: DEUX_REGIMES,
@@ -77,7 +77,7 @@ pub fn glossaire() -> &'static [Terme] {
             definition:
                 "le second régime : chaque agent écrit dans un cahier commun en ajout seul, et \
                  chacun le relit à son rythme. Personne n'a de destinataire à connaître.",
-            provenance: "§1.3, p. 21 — figure 0",
+            provenance: "§1.3 ; figure 0, p. 4 (3ᵉ éd.)",
         },
         Terme {
             groupe: DEUX_REGIMES,
@@ -121,7 +121,7 @@ pub fn glossaire() -> &'static [Terme] {
                 "le nombre de sauts au pire entre deux agents. Le traité en donne un au journal — \
                  2, en permanence — et n'en donne aucun à la maille. L'interface affiche cette \
                  absence au lieu de la combler.",
-            provenance: "§1.3, p. 21",
+            provenance: "§1.3, p. 18 (3ᵉ éd.)",
         },
         // -- Le mécanisme stigmergique ----------------------------------------
         Terme {
@@ -147,7 +147,7 @@ pub fn glossaire() -> &'static [Terme] {
                 "l'intensité de la trace sur une ressource : combien l'essaim l'a servie \
                  récemment. Elle monte à chaque dépôt et redescend toute seule entre deux \
                  fenêtres.",
-            provenance: "§1.2, p. 13 — algorithme 2",
+            provenance: "§1.2, algorithme 2, p. 14 (3ᵉ éd.)",
         },
         Terme {
             groupe: STIGMERGIE,
@@ -156,7 +156,7 @@ pub fn glossaire() -> &'static [Terme] {
                 "ce qui reste d'une trace après une fenêtre : à 0,90, un dixième s'oublie à \
                  chaque tour. C'est l'oubli qui permet de désapprendre ; porté à 1, plus rien ne \
                  s'oublie et les bornes du traité cessent de s'appliquer.",
-            provenance: "§1.2, p. 13",
+            provenance: "§1.2, p. 14 (3ᵉ éd.)",
         },
         Terme {
             groupe: STIGMERGIE,
@@ -164,7 +164,7 @@ pub fn glossaire() -> &'static [Terme] {
             definition:
                 "la durée sur laquelle l'évaporation γ s'applique une fois. Longue, la trace \
                  persiste ; courte, elle s'évapore entre deux décisions.",
-            provenance: "§1.2, p. 13",
+            provenance: "§1.2, p. 14 (3ᵉ éd.)",
         },
         Terme {
             groupe: STIGMERGIE,
@@ -172,7 +172,7 @@ pub fn glossaire() -> &'static [Terme] {
             definition:
                 "combien l'agent écoute ce que l'essaim vient de faire. Élevé, il suit le groupe \
                  et l'essaim se concentre.",
-            provenance: "§1.2, p. 13 — algorithme 2",
+            provenance: "§1.2, algorithme 2, p. 14 (3ᵉ éd.)",
         },
         Terme {
             groupe: STIGMERGIE,
@@ -181,7 +181,7 @@ pub fn glossaire() -> &'static [Terme] {
                 "η est ce que l'agent croyait savoir avant de commencer, et β le crédit qu'il lui \
                  accorde. η ne bouge jamais : après une bascule d'utilité, cette croyance est \
                  périmée, et β élevé retient l'essaim dans le passé.",
-            provenance: "§1.2, p. 13 — algorithme 2",
+            provenance: "§1.2, algorithme 2, p. 14 (3ᵉ éd.)",
         },
         Terme {
             groupe: STIGMERGIE,
@@ -218,7 +218,12 @@ pub fn glossaire() -> &'static [Terme] {
                  Deux grandeurs distinctes portent ce nom et ne se mêlent jamais — celle du \
                  milieu est une entrée du modèle, celle de réponse d'un agent en est une sortie. \
                  Cette interface n'affiche que la première.",
-            provenance: "§8.3",
+            // Le renvoi nu « §8.3 » était ambigu et se lisait du mauvais côté :
+            // le §8.3 du **traité** porte sur les buts incompatibles (p. 124), pas
+            // sur les latences. La séparation des deux ℓ₉₉ est une règle du
+            // produit, écrite au §8.3 du **PRD**. La grandeur elle-même, elle,
+            // vient du §6.1 du traité.
+            provenance: "nomenclature du produit — §8.3 du PRD ; la grandeur, elle, est du §6.1",
         },
         Terme {
             groupe: REGLAGES,
@@ -289,7 +294,7 @@ pub fn glossaire() -> &'static [Terme] {
                 "ce que le traité démontre d'avance, sans exécution. Elle repose sur des \
                  hypothèses ; quand un réglage les viole, elle est **effacée** et non grisée — y \
                  compris quand la mesure est meilleure qu'elle.",
-            provenance: "§1.2, p. 13",
+            provenance: "§1.2, p. 16 (3ᵉ éd.)",
         },
         Terme {
             groupe: JUGEMENT,
@@ -298,7 +303,7 @@ pub fn glossaire() -> &'static [Terme] {
                 "la probabilité minimale qu'une ressource délaissée soit quand même tirée. C'est \
                  ce plancher qui empêche l'essaim d'abandonner définitivement une piste, et c'est \
                  lui qui rend la distance à l'optimum calculable.",
-            provenance: "§1.2, p. 13",
+            provenance: "§1.2, p. 16 (3ᵉ éd.)",
         },
         Terme {
             groupe: JUGEMENT,
@@ -306,7 +311,7 @@ pub fn glossaire() -> &'static [Terme] {
             definition:
                 "la part du travail qui ne va pas à la ressource la plus servie. Trop basse, \
                  l'essaim ne cherche plus ; c'est la seconde borne du traité.",
-            provenance: "§1.2, p. 13",
+            provenance: "§1.2, p. 16 (3ᵉ éd.)",
         },
         Terme {
             groupe: JUGEMENT,
@@ -315,7 +320,7 @@ pub fn glossaire() -> &'static [Terme] {
                 "propriété d'une action qu'on peut refaire sans dommage. C'est le seul recours \
                  contre l'effet dupliqué : la contrainte est reportée sur le système appelé, \
                  jamais levée.",
-            provenance: "§5.1, et conclusion p. 94",
+            provenance: "§5.1, et conclusion p. 129 (3ᵉ éd.)",
         },
         Terme {
             groupe: JUGEMENT,

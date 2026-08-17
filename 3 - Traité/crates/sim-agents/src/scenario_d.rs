@@ -22,7 +22,7 @@ pub const BLOC_D: Bloc = Bloc {
          le nombre de copies demandées, mais le nombre de copies effectivement à jour au moment \
          où l'écriture a été acceptée. Et rien, nulle part, ne signale l'écart.",
     these: "Le nombre de disparitions auquel r₂ survit n'est pas k − 1 = 2, il est m − 1 = 1.",
-    source: "§2.1, p. 22 — figure 2.1c ; §6.1 pour l'ISR, R2 et le temporisateur",
+    source: "§2.1, p. 26 (3ᵉ éd.) — figure 2.1c, p. 28 ; §6.1 pour l'ISR, R2 et le temporisateur",
     mecanisme_visible:
         "porter m à 1 active le préréglage « ISR muet ». L'ISR se réduit au seul meneur sous \
          charge, les producteurs continuent de recevoir leurs accusés, la largeur d'accusé \
@@ -387,6 +387,9 @@ mod tests {
     fn le_scenario_porte_son_bloc_de_trois() {
         assert!(!BLOC_D.these.is_empty());
         assert!(!BLOC_D.ne_demontre_pas.is_empty());
-        assert!(BLOC_D.source.contains("p. 22"));
+        // La thèse se lit p. 26 du traité livré. « p. 22 » tombait hors du §2.1,
+        // qui commence p. 23 : la page ne désignait pas la section citée.
+        assert!(BLOC_D.source.contains("p. 26"), "{}", BLOC_D.source);
+        assert!(BLOC_D.source.contains("3ᵉ éd."), "{}", BLOC_D.source);
     }
 }

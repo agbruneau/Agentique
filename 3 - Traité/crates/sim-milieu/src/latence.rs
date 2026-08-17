@@ -1,5 +1,11 @@
 //! Latence du chemin écriture → accusé de durabilité → lecture (EX-M09).
 //!
+//! **Un seul segment de ce chemin est tiré** : écriture → accusé. C'est lui qui
+//! décide de l'instant où l'enregistrement devient lisible, et le reste du
+//! chemin ne coûte aucun tic — [`crate::journal::Milieu::lire`] rend
+//! immédiatement, à la date logique de l'appelant. Le ℓ₉₉ affiché est donc celui
+//! de la durabilité, pas celui d'un aller-retour de lecture.
+//!
 //! Deux règles du PRD tiennent ici, et elles se distinguent :
 //!
 //! - **EX-M09** — la latence est tirée d'une distribution paramétrable, et
@@ -57,6 +63,15 @@ impl Latence {
     }
 
     /// Tire une latence, en tics de la granularité courante.
+    ///
+    /// # Panics
+    ///
+    /// Si le tirage ne donne pas un nombre de millisecondes fini et positif —
+    /// `Granularite::tics_depuis_ms` l'exige et le dit. Le cas se produit sur un
+    /// réglage négatif ou non fini, que la désérialisation d'un scénario peut
+    /// livrer sans passer par [`Latence::depuis_l99`] ni [`Latence::fixe`]. Le
+    /// silence serait pire : un NaN converti donnerait `Duree(0)`, donc un
+    /// accusé de durabilité **immédiat**, et M3 cesserait d'avoir un prix.
     pub fn tirer(&self, alea: &mut Alea, g: Granularite) -> Duree {
         let m = self.moyenne_ms();
         let ms = if m <= 0.0 {

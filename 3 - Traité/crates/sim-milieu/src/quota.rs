@@ -1,13 +1,15 @@
 //! Quota et prix croissant par ressource — le seul levier structurel contre la
 //! conformité (EX-M26, §8.1).
 //!
-//! Le §8.1 recense trois leviers de diversification qui se paient et n'agissent
-//! pas sur le mode de la distribution, puis conclut :
+//! Le §8.1 recense trois leviers de diversification qui se paient — diversifier
+//! les modèles, les invites et les contextes, ou le tirage —, dont le troisième
+//! seul est presque gratuit et « n'agit que sur la marge de la distribution, non
+//! sur son mode ; c'est précisément le mode qui est en cause ». Puis :
 //!
-//! > Le seul levier structurel, et il appartient au milieu, consiste à rendre
-//! > coûteuse la décision majoritaire plutôt qu'à espérer sa dispersion : quota
-//! > par ressource, prix croissant avec le nombre de preneurs, refus d'écriture
-//! > au-delà d'un seuil de concentration.
+//! > Le seul levier structurel appartient au milieu : rendre coûteuse la
+//! > décision majoritaire plutôt qu'espérer sa dispersion — quota par ressource,
+//! > prix croissant avec le nombre de preneurs, refus d'écriture au-delà d'un
+//! > seuil de concentration. (§8.1)
 //!
 //! **Ce qui distingue ce levier de ceux du §5.3, et c'est tout son intérêt** :
 //! les leviers de gouvernance bornent un agent **qui accepte de l'être** et
@@ -36,11 +38,20 @@ pub enum Politique {
     /// son coût déclaré est multiplié. Ne refuse rien — c'est une taxe, pas une
     /// barrière, et l'affichage doit le dire.
     PrixCroissant {
-        /// Facteur ajouté au prix par preneur au-delà du premier.
+        /// Facteur ajouté au prix par preneur au-delà du premier. Le k-ième
+        /// preneur distinct d'une clé paie `1 + pente × (k − 1)` : le premier
+        /// paie le prix nominal, le **deuxième paie déjà la pente**. Compté sur
+        /// l'état d'avant, le deuxième aurait encore payé le nominal, et le prix
+        /// n'aurait pas crû « avec le nombre de preneurs » (§8.1).
         pente: f64,
     },
     /// Refus au-delà d'un seuil de **concentration** : la part d'une clé dans le
     /// total des écritures ne peut pas dépasser `part_max`.
+    ///
+    /// **Une exception, et elle est structurelle** : la toute première écriture
+    /// est acceptée quel que soit `part_max`, sa part valant nécessairement 1.
+    /// La borne ne tient donc qu'à partir de la deuxième — sans quoi aucune clé
+    /// ne pourrait jamais commencer, et la politique refuserait tout.
     SeuilDeConcentration {
         /// Part maximale d'une clé dans le total, dans (0, 1].
         part_max: f64,
@@ -68,9 +79,11 @@ pub struct Quotas {
     politique: Politique,
     /// `clé -> nombre d'écritures`. `BTreeMap` : itération ordonnée (PD1).
     ecritures: BTreeMap<Cle, u64>,
-    /// `clé -> preneurs distincts`. Un preneur est un agent ; le milieu le
-    /// connaît parce qu'il appose l'identité (EX-M24), et non parce qu'un agent
-    /// le déclare.
+    /// `clé -> preneurs distincts`. Un preneur est un agent, et il **devrait**
+    /// venir de l'identité apposée par le milieu (EX-M24) plutôt que d'une
+    /// déclaration de l'écrivain. Ici il est celui que l'appelant présente :
+    /// aucun chemin ne relie ce compteur à [`crate::journal::Enregistrement`],
+    /// et aucun scénario ne l'instancie (`crate::hors_perimetre()`).
     preneurs: BTreeMap<Cle, std::collections::BTreeSet<u32>>,
     total: u64,
     refus: u64,
@@ -92,10 +105,15 @@ impl Quotas {
 
     /// Soumet une écriture. **0 message** : le verdict est local au milieu.
     ///
-    /// L'ordre des contrôles est un contrat : le verdict est rendu sur l'état
-    /// **avant** cette écriture, puis les compteurs avancent seulement si elle
-    /// est acceptée. Sans quoi le premier preneur d'une clé serait déjà compté
-    /// contre son propre plafond.
+    /// L'ordre des contrôles est un contrat : les **refus** sont prononcés sur
+    /// l'état **avant** cette écriture, puis les compteurs avancent seulement si
+    /// elle est acceptée. Sans quoi le premier preneur d'une clé serait déjà
+    /// compté contre son propre plafond.
+    ///
+    /// Le **prix**, lui, inclut le soumissionnaire : une taxe ne refuse rien, et
+    /// facturer sur l'état d'avant faisait payer le prix nominal au deuxième
+    /// preneur distinct. Refus et prix ne se règlent donc pas sur le même état,
+    /// et c'est délibéré.
     pub fn soumettre(&mut self, cle: Cle, preneur: u32) -> Verdict {
         let verdict = self.verdict(cle, preneur);
         match verdict {
@@ -128,8 +146,14 @@ impl Quotas {
                     Verdict::Acceptee { prix: 1.0 }
                 }
             }
+            // Le soumissionnaire compte : `preneurs` est l'état d'avant, et le
+            // k-ième preneur distinct doit payer `1 + pente × (k − 1)`.
             Politique::PrixCroissant { pente } => Verdict::Acceptee {
-                prix: 1.0 + pente * f64::from(preneurs.saturating_sub(1)),
+                prix: 1.0
+                    + pente
+                        * f64::from(
+                            (preneurs + u32::from(!deja_preneur)).saturating_sub(1),
+                        ),
             },
             Politique::SeuilDeConcentration { part_max } => {
                 if self.total == 0 {
@@ -232,9 +256,29 @@ mod tests {
             assert!(matches!(q.soumettre(2, a), Verdict::Acceptee { .. }));
         }
         assert_eq!(q.refus(), 0, "une taxe ne refuse rien, et l'affichage le dit");
-        // Prix 1, 1, 2, 3 : le premier preneur paie le nominal, chaque suivant
-        // paie le nombre de preneurs déjà présents.
-        assert_eq!(q.prix_cumule(), 7.0);
+        // Prix 1, 2, 3, 4 : le k-ième preneur distinct paie 1 + pente × (k − 1),
+        // le soumissionnaire compris. Facturé sur l'état d'avant, le deuxième
+        // preneur payait encore le nominal et le cumul valait 7.
+        assert_eq!(q.prix_cumule(), 10.0);
+    }
+
+    /// EX-M26 — « prix croissant **avec le nombre de preneurs** » (§8.1) : le
+    /// deuxième preneur distinct paie déjà la pente. Un preneur déjà compté ne
+    /// fait pas monter le prix, puisqu'il ne fait pas monter leur nombre.
+    #[test]
+    fn le_prix_monte_des_le_deuxieme_preneur() {
+        let mut q = Quotas::nouveau(Politique::PrixCroissant { pente: 1.0 });
+        assert_eq!(q.soumettre(2, 0), Verdict::Acceptee { prix: 1.0 });
+        assert_eq!(
+            q.soumettre(2, 1),
+            Verdict::Acceptee { prix: 2.0 },
+            "un facteur ajouté par preneur au-delà du premier"
+        );
+        assert_eq!(
+            q.soumettre(2, 0),
+            Verdict::Acceptee { prix: 2.0 },
+            "un preneur déjà compté ne fait pas monter leur nombre"
+        );
     }
 
     /// EX-M26 — le seuil de concentration borne la part qu'une seule clé peut
@@ -247,6 +291,21 @@ mod tests {
         // La clé 1 passerait à 2/3 > 0,5.
         assert!(matches!(q.soumettre(1, 0), Verdict::Refusee { .. }));
         assert!(q.concentration_max() <= 0.5 + 1e-9);
+    }
+
+    /// EX-M26 — la première écriture échappe au seuil de concentration, et c'est
+    /// structurel : sa part vaut 1 quelle que soit la politique. La borne
+    /// s'applique à partir de la deuxième, et l'affichage ne doit pas promettre
+    /// autre chose.
+    #[test]
+    fn la_premiere_ecriture_echappe_au_seuil_de_concentration() {
+        let mut q = Quotas::nouveau(Politique::SeuilDeConcentration { part_max: 0.1 });
+        assert!(
+            matches!(q.soumettre(1, 0), Verdict::Acceptee { .. }),
+            "sinon aucune clé ne pourrait commencer"
+        );
+        assert_eq!(q.concentration_max(), 1.0, "au-dessus du seuil, et mesurée telle quelle");
+        assert!(matches!(q.soumettre(1, 0), Verdict::Refusee { .. }), "la borne tient ensuite");
     }
 
     /// EX-M26 — le verdict porte sur l'état **d'avant** l'écriture : un quota qui se

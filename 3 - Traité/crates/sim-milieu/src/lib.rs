@@ -7,9 +7,10 @@
 //! **Périmètre à la clôture de la phase 5** : M1 à M4 (EX-M01 à EX-M04), la
 //! latence du chemin de durabilité avec son ℓ₉₉ (EX-M09), les coûts propres du
 //! milieu (EX-M13), la réplication ISR (EX-M05 à EX-M08, EX-M14, EX-M15), la
-//! rétention et le compactage (EX-M10, EX-M20), le surcoût de format et
-//! l'idempotence du producteur (EX-M11, EX-M12), le groupe de consommation
-//! (EX-M16 à EX-M19, EX-M22, EX-M23) et le plan de contrôle (EX-M21).
+//! rétention et le compactage (EX-M10, EX-M20), le surcoût de format,
+//! l'idempotence du producteur et le coût d'écriture d'un lot (EX-M11, EX-M12,
+//! EX-M16), le groupe de consommation (EX-M17 à EX-M19, EX-M22, EX-M23) et le
+//! plan de contrôle (EX-M21).
 //!
 //! **Ajouté en phase 6** : l'identité apposée à l'écriture (EX-M24, dans
 //! [`journal`]), l'historique vérifié par identité ([`historique`], EX-M25) et
@@ -57,6 +58,22 @@ pub fn hors_perimetre() -> &'static [&'static str] {
          époque ; l'arbitrage vit côté agent (DT9)",
         "surcoût de format dans les octets comptés — `Format` retrouve les chiffres du \
          traité, mais `ecrire` facture une taille fixe et ne le consulte pas (EX-M11)",
+        "tout le module `format` en exécution — le surcoût de lot (EX-M11), l'idempotence du \
+         producteur (EX-M12) et le coût d'écriture d'un lot (EX-M16) sont des calculatrices \
+         vérifiées par leurs tests ; `Producteur` et `CoutLot` n'ont aucun appelant, donc aucun \
+         doublon n'est rejeté et aucun coût par enregistrement n'est facturé dans un résultat",
+        "fonction de clé du milieu — `Milieu::partition_de` n'a d'appelant que son test : \
+         `ecrire` range l'enregistrement dans la partition que l'écrivain nomme, et la \
+         concentration d'un résultat vient du réglage du scénario, pas d'un hachage de clé",
+        "refus d'un oracle au-delà de R (EX-M20) — `Milieu::verifier_horizon` et `Retention` \
+         n'ont aucun appelant : aucun chargement ne refuse quoi que ce soit, et R n'existe dans \
+         aucune exécution comme grandeur unique. `appliquer_retention` reçoit sa fenêtre en \
+         paramètre",
+        "temporisateur d'appartenance à l'ISR en exécution (EX-M14) — `Isr::avancer` n'a \
+         d'appelant que ses tests ; le scénario D retire la réplique à la main. L'hypothèse \
+         `replica.lag.time.max.ms` est donc déclarée au registre EX-C12 sans jamais y être \
+         éprouvée, quelle que soit la trajectoire : le démenti annoncé — sous charge, \
+         l'exclusion frappe un suiveur vivant — n'est produit que par un test unitaire",
         // Sans astérisques d'emphase, et sans retour à la ligne : egui n'a pas
         // d'analyseur Markdown et rendrait les deux littéralement.
         "réintégration dans l'ensemble synchronisé — le temporisateur ne décide que du \
@@ -74,8 +91,24 @@ pub fn hors_perimetre() -> &'static [&'static str] {
          donc « aucune partition n'est servie » n'est observable par personne (EX-M17)",
         "révocation différenciée entre protocoles — les trois produisent la même \
          réattribution ; seuls les compteurs diffèrent (EX-M17)",
-        "rétention, compactage, groupe de consommation et plan de contrôle **en \
-         exécution** — implantés et testés, mais aucun scénario ne les appelle : ils \
+        "rétention, compactage, groupe de consommation et plan de contrôle en \
+         exécution — implantés et testés, mais aucun scénario ne les appelle : ils \
          n'influencent aucun résultat affiché",
     ]
+}
+
+#[cfg(test)]
+mod tests {
+    /// PD6 — la liste est affichée telle quelle par l'onglet « Limites » de
+    /// `sim-viz`, qui pose un `egui::RichText` sans analyseur Markdown. Des
+    /// astérisques d'emphase s'y afficheraient littéralement, et un retour à la
+    /// ligne y couperait la puce. Le commentaire au-dessus de la liste l'écrit
+    /// depuis l'origine ; deux entrées l'ont violé quand même, d'où ce test.
+    #[test]
+    fn aucune_entree_ne_porte_de_balisage_markdown() {
+        for e in super::hors_perimetre() {
+            assert!(!e.contains('*'), "astérisque d'emphase : {e}");
+            assert!(!e.contains('\n'), "retour à la ligne : {e}");
+        }
+    }
 }

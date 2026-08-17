@@ -5,21 +5,38 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Ce qu'est ce dépôt
 
 **stigmergie-lab** — simulateur déterministe d'essaims d'agents logiciels. Le
-dépôt transpose un traité (`docs/Traité.pdf`, **troisième édition du 15 août
+dépôt transpose un traité (`Traité.pdf`, **troisième édition du 15 août
 2026 — 8 chapitres, 24 sections, 123 notices**) en logiciel exécutable. **Toute la
 documentation vit dans [`docs/`](docs/)**, dont
-[`docs/README.md`](docs/README.md) est l'index ; seuls ce fichier et le
-`README.md` restent à la racine, par convention d'outil.
+[`docs/README.md`](docs/README.md) est l'index ; ce fichier et le `README.md`
+restent à la racine par convention d'outil, et **`Traité.md` / `Traité.pdf` y
+sont aussi** depuis l'entrée du dossier dans le dépôt Agentique, le 14 août 2026
+— ce n'est pas un choix, c'est là que la fusion les a posés.
 
 Deux documents font autorité, dans cet ordre :
 
-1. **`docs/Traité.pdf`** — source normative. Les algorithmes, les hypothèses et
+1. **`Traité.pdf`** — source normative, à la racine du dossier et non sous
+   `docs/`. Les algorithmes, les hypothèses et
    les chiffres viennent de là, et de nulle part ailleurs. **La pagination est
-   celle de la troisième édition — 116 pages** : le format ferme de cent pages a
+   celle de la troisième édition — 143 pages**, mesurées sur le PDF du dépôt le
+   17 août 2026 : le format ferme de cent pages a
    été levé le 15 août 2026, de sorte qu'elle ne coïncide ni avec la deuxième
    édition ni avec aucun renvoi antérieur à la révision 3.0 du PRD, et qu'une
    page citée sans son édition est une provenance fausse, pas imprécise (F2).
-2. **`docs/PRD.md`** — la spécification, environ 2 200 lignes. Toute exigence porte un
+   **La migration des renvois n'est pas finie, et elle se mesure** :
+
+   ```bash
+   grep -rhoE '§[0-9]+(\.[0-9]+)?, p\. [0-9]+' crates/ | sort | uniq -c | sort -rn
+   ```
+
+   Au 17 août 2026 à 08 h 32, cette ligne rend quatre pages différentes pour le
+   seul §1.2 — `p. 16` dix fois, `p. 13` quatre fois, `p. 14` deux fois, `p. 12`
+   une fois —, et le compte bouge d'une heure à l'autre pendant la migration.
+   Dans la troisième édition, le §1.2 ouvre à la page 12 et l'énoncé des bornes
+   est à la page 16. Chaque `p. N` est donc à revérifier contre le PDF avant
+   d'être cru, et un renvoi qui porte son édition (`(3ᵉ éd.)`) est le seul qui
+   se relise sans le refaire.
+2. **`docs/PRD.md`** — la spécification, environ 2 340 lignes. Toute exigence porte un
    code (`EX-C01`, `EX-M09`, `EX-A31`, `EX-V12`, `NF-02`, `PD1`, `DT1`, `RQ3`…)
    que le code cite en commentaire. Chercher le code dans `docs/PRD.md` donne la
    lettre de l'exigence ; le §12 A donne la correspondance traité → implantation.
@@ -30,8 +47,12 @@ critère de sortie atteint sur trois points et **refait sur la mesure** pour le
 quatrième (§0.1). Il enregistre aussi
 les **verdicts de banc**, les **réserves** et les **écarts au traité relevés par
 la mesure**. Il se met à jour à la fin de chaque banc, pas en cours de route. Son
-**§0.0** dit ce que la deuxième édition du traité change, et c'est ce qu'il faut
-lire avant de toucher à un mécanisme existant.
+**§0.0** dit ce que la deuxième édition du traité a changé, et c'est ce qu'il faut
+lire avant de toucher à un mécanisme existant — **mais c'est de l'histoire, et sa
+pagination est celle de la deuxième**. Son **§0.2** enregistre le banc d'audit du
+17 août 2026 : l'état mesuré du dépôt avec la ligne qui refait chaque compte, ce
+que la troisième édition change (deux écarts qu'elle absorbe, un qu'elle
+retourne, trois citations qu'elle retire), et ce que la campagne laisse ouvert.
 
 **Attention aux renvois `§X.Y` ambigus.** Le PRD et le traité ont tous deux un
 §8.3, et ils ne parlent pas de la même chose : celui du **PRD** est « ce que le
@@ -49,9 +70,15 @@ $env:PATH = "$env:USERPROFILE\.cargo\bin;$env:LOCALAPPDATA\Microsoft\WinGet\Pack
 Le second chemin est mingw-w64 : `dlltool.exe` en vient, et `sim-viz` ne compile
 pas sans lui (les trois autres crates n'en ont pas besoin).
 
-Suite complète — **428 tests**, mesurés le 13 août 2026 après l'audit du dépôt
-(le §0 du PRD enregistre 348 à la clôture de la phase 5 ; la phase 6 a porté le
-compte à 419, et l'audit à 428) :
+Suite complète — **465 tests, 0 échec**, mesurés le 17 août 2026 à 09 h 49, exit 0
+— 422 unitaires (253 `sim-agents`, 96 `sim-core`, 68 `sim-milieu`, 5 `sim-viz`) et
+43 d'intégration. Le §0 du PRD enregistre 348 à la clôture de la phase 5 ; la
+phase 6 a porté le compte à 419, l'audit du 13 août à 428, celui du 17 août à 447
+puis 465. **Ce compte est une mesure, pas une constante** : il ne se cite pas, il
+se refait par la ligne ci-dessous. Il a bougé trois fois en une heure et demie le
+17 août, cinq agents écrivant en parallèle. **Le `target/` du dépôt ne convient
+pas à la mesure** — l'édition de liens y échoue parce que le chemin contient un
+« é » ; dérouter par `$env:CARGO_TARGET_DIR` sur un chemin ASCII.
 
 ```bash
 cargo test --workspace --release
@@ -94,7 +121,7 @@ sim-core  ◄──── sim-milieu  ◄──── sim-agents  ◄───�
 | `sim-core` | Boucle à événements discrets, horloge logique, RNG semé, modèle de faute, détecteur, registre des hypothèses fortes, oracles, vérification statistique, **familles de décision** (EX-C19) | Ne connaît **ni** le journal partitionné, **ni** les agents |
 | `sim-milieu` | Journal partitionné M1–M4, réplication ISR(k, m), rétention, latences, groupe de consommation, plan de contrôle facturé à part, **identité apposée, historique par identité, quota par ressource** (EX-M24 à M26) | N'implante **aucun** algorithme d'agent, **aucun** protocole d'accord ; n'**évalue jamais** le contenu d'un enregistrement (PD14) |
 | `sim-agents` | Les mécanismes du traité, les oracles de propriétés, les paramètres d'ordre, **et les scénarios comme données** (paramètres, plages, critères d'acceptation) | Ne dessine **rien** |
-| `sim-viz` | egui/eframe, tracés, onglets « Limites » et « Repères », échelle typographique, schémas figés | Contient **zéro** logique de simulation, **zéro** définition de scénario et **zéro** texte du traité — le glossaire vient de `sim_agents::glossaire`, les reformulations de `Bloc::en_clair`. **Ni export, ni parcours « le fil »** : O6 n'est pas livré |
+| `sim-viz` | egui/eframe, tracés, onglets « Limites » et « Repères », échelle typographique, schémas figés | Contient **zéro** logique de simulation, **zéro** définition de scénario et **zéro** texte du traité — le glossaire vient de `sim_agents::glossaire`, les reformulations de `Bloc::en_clair` —, **à trois exceptions nommées, toutes déclarées à l'écran dans l'onglet « Limites »** (PD6) : le découpage du budget en tranches réimplanté par `situe_la_tranche`, les neuf valeurs d'ouverture de `VueA::default` et `VueB::default` (défauts du §7 du PRD, transcrits faute d'accesseur), et `SOURCE_BORNES`. **Ni export, ni parcours « le fil »** : O6 n'est pas livré |
 
 La ligne de coupe est **le niveau de la boucle, pas le thème**. Un découpage
 thématique (`sim-consensus`, `sim-gouvernance`) est explicitement interdit par
@@ -123,7 +150,9 @@ violer casse un critère de sortie déjà atteint.
   mesurées **divergentes** entre cibles au banc DT1 ; la septième, `mul_add`,
   y est mesurée *identique* et reste interdite parce que son verdict **a changé
   entre deux passages du banc**, après installation de mingw — dépendre de la
-  machine de construction est pire que diverger. Passer par `libm::log`, `libm::exp`,
+  machine de construction est pire que diverger. Le fichier portait l'inverse en
+  commentaire jusqu'au 17 août 2026 ; il porte désormais les deux motifs
+  séparément, et le `reason` de `mul_add` avec. Passer par `libm::log`, `libm::exp`,
   `libm::pow`… Le verdict est
   [`bancs/dt1-flottant/VERDICT.md`](bancs/dt1-flottant/VERDICT.md) : **flottant
   partout, aucun point fixe**, contrairement à ce que le PRD recommandait avant
@@ -149,11 +178,23 @@ violer casse un critère de sortie déjà atteint.
 - **NF-15 — les chiffres du traité doivent être *retrouvés* par la mesure.** Un
   écart est un défaut du simulateur **ou** une erreur du traité, et les deux se
   consignent. **Cinq** sont consignés, tous au registre
-  [`docs/decisions.md`](docs/decisions.md) : **trois contredisent un énoncé du
-  traité** — le budget de retard du mode « moyeu » et la dérive de la somme sans
-  relance, repris au §0 du PRD, plus Φ_c, relevé par la phase 6 —, et **deux sont
-  des constats de mesure** qui ne contredisent rien : le contrôleur d'élasticité
-  et `mul_add`.
+  [`docs/decisions.md`](docs/decisions.md), et la conclusion de la troisième
+  édition confirme le compte en citant ce dépôt (notice 120). **Leur classement a
+  été refait le 17 août 2026 contre l'édition livrée** ; ne pas reprendre
+  l'ancien :
+  - **Deux sont absorbés par la source.** Le §3.1 de la 3ᵉ édition écrit
+    7,933 × 10⁻³ et qualifie l'arrondi 7,9 × 10⁻³ d'énoncé faux ; le §4.1 écrit
+    « elle se fige » et « la relance ne plafonne donc pas l'erreur ». Les deux
+    mesures des phases 3 et 4 y sont désormais écrites. Ils restent des écarts
+    contre la 2ᵉ édition et contre le texte du PRD.
+  - **Deux portent contre le traité livré.** Φ_c, qui ne sépare pas la
+    conformité de la coordination (§8.1) ; et le contrôleur d'élasticité, qui
+    **contredit le §7.3 de la 3ᵉ édition** — celle-ci conclut à « un dépassement
+    en escalier suivi d'une descente filtrée » et non à une oscillation. Ce
+    second-là **n'est pas tranché** : le produit ne transpose ni la fenêtre nulle
+    à la hausse ni les deux politiques de montée que la même page publie.
+  - **Un ne porte pas sur le traité** : `mul_add`, qui porte sur la machine de
+    construction.
 - **PRD §8.3 — ce que le produit ne mesure pas.** Deux paires de grandeurs y
   sont tenues séparées, et mêler l'une ou l'autre est un défaut bloquant. Les
   deux **ℓ₉₉** : celle du milieu est une **entrée**, celle de réponse d'un agent
@@ -191,9 +232,15 @@ violer casse un critère de sortie déjà atteint.
 
 ## Réserves ouvertes
 
-**Les principales.** La liste complète — dix-huit entrées — est au §0 du PRD, et
-la liste vivante est dans le code : `sim_agents::hors_perimetre()`,
-`sim_milieu::hors_perimetre()`, `ModeleFaute::hors_modele()`.
+**Les principales.** La liste complète — **vingt-deux entrées** au 17 août 2026,
+quatre ajoutées par l'audit — est au §0 du PRD, et
+la liste vivante est dans le code : `sim_agents::hors_perimetre()` (**20**
+entrées), `sim_milieu::hors_perimetre()` (**13**), `ModeleFaute::hors_modele()`
+(**5**, dont la première en énumère neuf). Ces trois comptes se remesurent :
+
+```bash
+awk '/pub fn hors_perimetre/,/^}/' crates/sim-agents/src/lib.rs | grep -cE '^\s*"'
+```
 
 - **Φ_c ne sépare pas la conformité de la coordination** — c'est le résultat de
   la phase 6, et il porte contre le traité autant que contre le PRD. La grandeur
@@ -212,10 +259,21 @@ la liste vivante est dans le code : `sim_agents::hors_perimetre()`,
   d'un mécanisme absent (PD6). La file d'arbitrage n'a même pas d'émetteur, faute
   de régime du §8.3 **du traité** dans le monde clos (T3).
 - **Six mécanismes des phases 1 à 5 n'ont aucun appelant non plus** — adhésion,
-  alignement, causalité, consensus linéaire, directive et reconfiguration. Quatre
-  des quinze oracles du catalogue ne sont donc armés par aucune exécution, et les
-  prédicats de M1, M4 et M10 ne sont évalués par personne. Les deux
-  `hors_perimetre()` le déclarent depuis l'audit.
+  alignement, causalité, consensus linéaire, directive et reconfiguration.
+  **Six** des quinze oracles du catalogue ne sont donc armés par aucune exécution
+  — `CONSERVATION`, `ACCORD_LOCAL`, `D1`, `D2`, `UN_SEUL_PROPRIETAIRE` et
+  `TOUTE_PARTITION_A_UN_PROPRIETAIRE` —, dont deux ne le sont nulle part, pas même
+  par un test ; neuf tournent. Et les prédicats de M1, M4 et M10 ne sont évalués
+  par personne. Les deux `hors_perimetre()` et le §3.3 de `docs/SPEC.md` le
+  déclarent ; *ce fichier annonçait quatre jusqu'au 17 août 2026, et c'est le compte
+  du code qui avait raison.*
+- **`sim-core` n'a pas de `hors_perimetre()`, et c'est une décision ouverte.**
+  `grep -rn 'fn hors_perimetre' crates/` n'en rend que deux. Les absences du cœur
+  logent dans `ModeleFaute::hors_modele()`, dont ce n'est pas l'objet : sa première
+  entrée énumère à elle seule **neuf** mécanismes sans appelant, dont
+  `ModeleFaute::avertissements` — la moitié `[U]` d'EX-C06, tenue par personne.
+  Trancher touche quatre documents et l'onglet « Limites » ; **ne pas créer la
+  fonction sans la décision**, qui est au registre.
 - **NF-05 n'est pas atteinte** — de l'ordre de 10 à 15 secondes simulées par
   seconde-cœur à n = 1 000, contre une cible de 10³. L'écart est structurel : chaque agent lit ce que toute la
   population écrit, donc Θ(n²). Voir
@@ -223,8 +281,12 @@ la liste vivante est dans le code : `sim_agents::hors_perimetre()`,
   refaire sur la mesure, comme DT1 l'a été.
 - **NF-07 n'est pas mesurée** — 30 images/s à n ≤ 2 000 en WASM demande un
   navigateur en avant-plan avec une horloge d'images. L'empaquetage web, lui,
-  est fait et NF-08 est tenue : **1 445 293 octets compressés** — 1,378 Mio, ou
-  1,45 Mo en unités SI — contre une cible de 8 Mo, remesuré par l'audit.
+  est fait et NF-08 est tenue : **1 447 267 octets compressés** — 1,380 Mio, ou
+  1,45 Mo en unités SI — sur 3 668 599 octets bruts, contre une cible de 8 Mo.
+  **Ce couple est une mesure d'une construction précise, pas une constante** :
+  celle du 17 août 2026 à 09 h 09, et il se périme à la première édition de
+  `crates/sim-viz/`. Il se refait par les deux lignes du `README.md` (§ « 2.
+  L'interface web »), qui sont ce qui se cite ici, jamais le nombre.
 - **EX-V09 n'est pas câblée dans l'interface** — `sim_agents::partage` encode et
   décode le lien avec ses tests, mais `sim-viz` ne lit pas le fragment d'URL.
 - **Le contrôleur d'élasticité ne converge pas** aux valeurs documentées, pour

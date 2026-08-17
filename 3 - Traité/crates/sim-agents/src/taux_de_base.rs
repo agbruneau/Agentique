@@ -17,7 +17,7 @@ pub const BLOC_L: Bloc = Bloc {
          ses alarmes seront fausses. Ce n'est pas un défaut du détecteur : c'est l'effet de la \
          rareté de ce qu'il cherche, et aucune amélioration de sa précision ne l'annule.",
     these: "Une sonde presque parfaite produit des alarmes presque toutes fausses.",
-    source: "§7.2, figure 7.2 p. 79, tableau 19 p. 82",
+    source: "§7.2, figure 7.2 p. 107, tableau 19 p. 110 (3ᵉ éd.)",
     mecanisme_visible:
         "glisser le curseur de structure des domaines de « disjoints » vers « domaine unique » \
          fait passer les détecteurs d'entrées indépendantes à des entrées corrélées ; le taux de \
@@ -198,7 +198,7 @@ impl AgentMenteur {
         Some(format!(
             "agent menteur actif ({} menteur(s)) : la borne est **3f + 1**, donc **aucune \
              solution à moins de {} participants ne tolère {} déviants**, et ce modèle tue les \
-             trois premières lignes de la figure 5.1 (p. 60). Participants présents : {}. Tout \
+             trois premières lignes de la figure 5.1 (p. 73). Participants présents : {}. Tout \
              verdict rendu sur ces mécanismes est **conditionnel au modèle P**. La cryptographie \
              ne relâche pas la borne, elle la change.",
             self.f,
@@ -223,7 +223,9 @@ pub enum Predicat {
     Instable,
 }
 
-/// Classe un prédicat, et le vérifie.
+/// Classe un prédicat d'après sa formulation. **Elle ne le vérifie pas** : le
+/// classement est lexical — la présence de « présentement » ou « en cours » —,
+/// et rien ici n'évalue le prédicat sur un état du monde.
 pub fn classer(enonce: &str) -> Predicat {
     // « Le système est présentement attaqué » n'est PAS stable : la session se
     // termine et l'attaquant efface. « Un événement correspondant à la

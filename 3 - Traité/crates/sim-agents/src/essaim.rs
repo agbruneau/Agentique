@@ -85,7 +85,14 @@ impl Membre {
         }
     }
 
-    /// Nombre d'enregistrements que ce membre a le droit de lire par cycle.
+    /// La **borne** de la perception, dans l'unité de la perception : des
+    /// enregistrements par cycle pour [`Perception::IntervalleMilieu`], des
+    /// voisins pour [`Perception::Voisinage`].
+    ///
+    /// Les deux ne se comparent pas et ne s'additionnent pas — un voisin n'est
+    /// pas un enregistrement. Seul le premier cas a un appelant en production
+    /// (le fourragement) ; le second rend son cardinal pour que la garde d'EX-A12
+    /// reste lisible sur les deux formes.
     pub fn intervalle_max(&self) -> usize {
         match self.perception {
             Perception::IntervalleMilieu {
@@ -100,9 +107,15 @@ impl Membre {
 mod tests {
     use super::*;
 
+    /// La borne d'un voisinage se rend **en voisins**, et c'est la branche que
+    /// rien n'exerçait : le seul appelant en production (`stigmergie.rs`) passe
+    /// par [`Perception::IntervalleMilieu`], et le seul test qui lisait
+    /// [`Membre::intervalle_max`] faisait de même. La doc promettait une unité
+    /// par branche en n'en exerçant qu'une.
     #[test]
-    fn un_voisinage_borne_est_un_membre() {
-        assert!(Membre::nouveau(Perception::Voisinage { cardinal_max: 8 }, 64, None).is_ok());
+    fn un_voisinage_borne_est_un_membre_et_sa_borne_se_compte_en_voisins() {
+        let m = Membre::nouveau(Perception::Voisinage { cardinal_max: 8 }, 64, None).unwrap();
+        assert_eq!(m.intervalle_max(), 8);
     }
 
     /// EX-A12 — la vue globale est refusée, avec le message du traité.

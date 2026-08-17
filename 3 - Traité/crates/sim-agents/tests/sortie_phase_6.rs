@@ -103,8 +103,14 @@ fn les_sept_bornes_seffacent_sur_le_reglage_et_la_borne_effacee_nest_pas_grisee(
     assert_eq!(conforme.bornes_effacees(), 7);
     assert!(conforme.hors_dominante.1.is_none());
     // Et la mesure, elle, reste : effacer la borne n'efface pas ce qui a été
-    // mesuré.
-    assert!(conforme.hors_dominante.0.is_finite());
+    // mesuré. `is_finite()` ne l'établissait pas — une constante l'est aussi ;
+    // ce qui l'établit est que la grandeur soit une **fraction d'effort**, dans
+    // l'intervalle qu'un minimum de 1 − p_max peut atteindre sur m ressources.
+    let mesure = conforme.hors_dominante.0;
+    assert!(
+        mesure > 0.0 && mesure <= 1.0 - 1.0 / f64::from(params().m),
+        "fraction hors dominante {mesure} : ce n'est pas une fraction d'effort mesurée"
+    );
 }
 
 /// **Point 2 du critère, seconde moitié, et c'est elle qui porte la thèse.**
@@ -121,22 +127,45 @@ fn les_sept_bornes_seffacent_sur_le_reglage_et_la_borne_effacee_nest_pas_grisee(
 /// vérifie à la place ce qui reste réfutable sous effacement : que l'exécution va
 /// à son terme, que les sept bornes sont bien retirées, et que la **mesure**, elle,
 /// survit à l'effacement de la borne. Le §0.1 du PRD le consigne.
+///
+/// **Ce que « la mesure survit » veut dire ici, et comment il se réfute.**
+/// `is_finite()` ne l'établissait pas : remplacer `hors_dominante_observee` par
+/// la constante `0.0` laissait ce test passer. Deux clauses le tiennent
+/// maintenant, et la seconde est celle qui mord.
+///
+/// 1. La grandeur est une **fraction d'effort** : strictement positive, et au
+///    plus 1 − 1/m, puisqu'elle est un minimum de 1 − p_max sur m ressources.
+/// 2. Elle **dépend de l'exécution** : à part fixée, trois graines rendent trois
+///    valeurs distinctes. Mesuré, à m = 6 — part 0 : 0,3325 / 0,3452 / 0,2882 ;
+///    part 0,5 : 0,4401 / 0,2985 / 0,2952 ; part 1 : 0,3149 / 0,1074 / 0,2649.
+///    **Toute** substitution par une constante tombe sur cette clause, quelle
+///    que soit la constante choisie.
+///
+/// La clause 2 ne dit rien du *sens* de la variation, et c'est délibéré : la
+/// mesure n'est pas monotone en la part — à graine 3, elle **monte** de 0,3325 à
+/// 0,4401 entre part 0 et part 0,5. Une assertion de monotonie serait fausse.
 #[test]
 fn aucun_oracle_de_surete_ne_tombe_pendant_leffacement() {
+    let plafond = 1.0 - 1.0 / f64::from(params().m);
     for part in [0.0, 0.5, 1.0] {
-        for graine in [3u64, 11, 47] {
+        let graines = [3u64, 11, 47];
+        let mut mesures = Vec::new();
+        for graine in graines {
             let r = scenario_m(params(), part, graine, 20_000).expect("scénario M");
             assert_eq!(
                 r.violations_de_surete, 0,
                 "part = {part}, graine = {graine} : un oracle est tombé, \
                  le scénario prouverait autre chose que ce qu'il annonce"
             );
-            // Effacer une borne n'efface pas une mesure : c'est la seule chose
-            // que ce point garde de réfutable au-delà de part = 0.
+            // Effacer une borne n'efface pas une mesure — clause 1.
+            let mesure = r.hors_dominante.0;
             assert!(
-                r.hors_dominante.0.is_finite(),
-                "part = {part}, graine = {graine} : la mesure a disparu avec la borne"
+                mesure > 0.0 && mesure <= plafond,
+                "part = {part}, graine = {graine} : fraction hors dominante {mesure}, \
+                 hors de ]0 ; {plafond}] — ce n'est pas une fraction d'effort mesurée"
             );
+            mesures.push(mesure);
+
             let effacees = r.bornes_effacees();
             if part == 0.0 {
                 assert_eq!(effacees, 0, "à curseur au repos, aucune borne ne s'efface");
@@ -147,6 +176,21 @@ fn aucun_oracle_de_surete_ne_tombe_pendant_leffacement() {
             } else {
                 assert_eq!(effacees, 7, "part = {part} : les sept bornes du tableau 21");
                 assert!(r.hors_dominante.1.is_none(), "absente, pas grisée");
+            }
+        }
+
+        // Clause 2 — la mesure dépend de l'exécution, donc trois graines ne
+        // rendent pas la même valeur. C'est ce qui distingue une mesure d'une
+        // constante, et l'effacement de la borne n'y change rien.
+        for (i, a) in mesures.iter().enumerate() {
+            for (j, b) in mesures.iter().enumerate().skip(i + 1) {
+                assert!(
+                    a != b,
+                    "part = {part} : les graines {} et {} rendent la même fraction \
+                     hors dominante {a} — la mesure ne dépend plus de l'exécution",
+                    graines[i],
+                    graines[j]
+                );
             }
         }
     }

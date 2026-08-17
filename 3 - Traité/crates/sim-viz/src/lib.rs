@@ -1,7 +1,13 @@
 //! `stigmergie-lab` — interface, native et web à partir du même code.
 //!
 //! Ce crate **ne contient aucune logique de simulation, ni aucune définition de
-//! scénario** (§5.1). Il affiche ce que `sim-agents` produit, et rien de plus.
+//! scénario** (§5.1 du PRD — celui du traité porte sur les mécanismes de
+//! consensus), **à deux exceptions près, nommées là où elles sont** : les
+//! valeurs d'ouverture des deux vues (`scenario_a::VueA::default`,
+//! `scenario_b::VueB::default`) et l'hypothèse de découpage du budget que
+//! `scenario_b::situe_la_tranche` réimplante. Les deux sont déclarées dans
+//! l'onglet « Limites » (PD6). Pour le reste, il affiche ce que `sim-agents`
+//! produit.
 //!
 //! Règles d'affichage tenues ici :
 //!
@@ -719,7 +725,8 @@ pub fn de_la_vue(ui: &mut egui::Ui, nom: &str, valeur: String, note: &str) {
 /// est explicable en deux phrases ; aucune n'était écrite.
 ///
 /// La vue ne tient **aucun** texte : tout vient de [`sim_agents::glossaire`], au
-/// même titre que les scénarios (§5.1). Le filtre porte sur le terme **et** sur
+/// même titre que les scénarios (§5.1 du PRD). Le filtre porte sur le terme
+/// **et** sur
 /// la définition — on cherche un mot qu'on a lu, mais aussi une notion dont on ne
 /// connaît pas le nom, ce qui est le cas exact d'un lecteur qui découvre.
 fn reperes(ui: &mut egui::Ui, recherche: &mut String) {
@@ -824,7 +831,11 @@ fn reperes(ui: &mut egui::Ui, recherche: &mut String) {
 // L'onglet « Limites »
 // ---------------------------------------------------------------------------
 
-/// §8.3 — ce que le produit ne mesure pas, affiché en permanence.
+/// §8.3 **du PRD** — ce que le produit ne mesure pas, affiché en permanence.
+///
+/// Le §8.3 **du traité** est « Buts incompatibles » (ch. 8) : le renvoi se lit
+/// des deux côtés et se qualifie donc partout, y compris dans ce commentaire,
+/// que `cargo doc --workspace --no-deps` publie.
 ///
 /// En une seule liste, les énoncés formaient un mur que personne ne lit jusqu'au
 /// bout, ce qui revient à ne pas les afficher — le mensonge que PD6 cherche
@@ -840,7 +851,8 @@ fn limites(ui: &mut egui::Ui) {
                 ui.heading("Ce que ce simulateur ne mesure pas");
                 ui.label(
                     "Une méthode de validation se définit autant par ce qu'elle ne réfute pas \
-                     (§8.3). Cet onglet n'est pas une annexe : il porte le même rang que les deux \
+                     (§8.3 du PRD — celui du traité porte sur les buts incompatibles). Cet \
+                     onglet n'est pas une annexe : il porte le même rang que les deux \
                      écrans de mesure, parce qu'un mécanisme absent du modèle a, dans tout \
                      résultat, une probabilité de faute nulle — et c'est un mensonge silencieux \
                      (PD6).",
@@ -912,14 +924,57 @@ fn limites(ui: &mut egui::Ui) {
                         "EX-V05 — la dérivée du retard de consommation",
                         "EX-V06 — la distribution du chemin de durabilité",
                         "EX-V09 — le partage par fragment d'URL (encodé et décodé par \
-                         `sim-agents::partage`, jamais lu ici)",
+                         « sim-agents::partage », jamais lu ici)",
                         "EX-V13 à EX-V18 — détecteur, taux de base, ISR, cascade, plan de \
                          contrôle, grille du tableau 14",
                         "EX-V20, EX-V21 — leviers de gouvernance et leur fenêtre de violation",
+                        "EX-V23 — la file de demandes d'arbitrage. Le panneau est spécifié et \
+                         « FileDarbitrage::affichage » rend son libellé complet ; ce qui manque \
+                         est l'émetteur. Faute de régime du §8.3 du traité dans le monde clos, \
+                         la file est vide en permanence, et un panneau perpétuellement vide se \
+                         lirait « rien à arbitrer » là où il faut lire « rien ne peut y entrer »",
                         "le parcours « le fil » (O6) et l'export : ni l'un ni l'autre n'existe",
                         "les huit autres blocs de trois. Dix scénarios sont écrits dans \
                          « sim-agents » avec leur thèse, leur mécanisme et leur reformulation en \
                          langue courante ; deux seulement ont un écran",
+                    ],
+                );
+
+                // PD6 tranche dans les deux sens : ce que la vue tient et
+                // qu'elle affirme ailleurs ne pas tenir s'affiche au même rang
+                // que ce qu'elle n'a pas. Ces trois énoncés étaient déclarés
+                // dans le code — le `//!` de `scenario_b.rs` et le rustdoc de
+                // `situe_la_tranche` — et nulle part à l'écran.
+                section(
+                    ui,
+                    "Ce que cette interface décide à la place de « sim-agents »",
+                    "Le contrat de cette crate est « zéro logique de simulation, zéro définition \
+                     de scénario ». Voici les trois endroits où il ne tient pas, et ce que \
+                     chacun coûte à la lecture.",
+                    &[
+                        "Le découpage du budget en tranches de largeur égale. La figure du \
+                         scénario B situe la tranche affichée par rapport à la bascule d'utilité \
+                         en supposant que « Fourragement::traiter » indexe par « événements \
+                         consommés × nombre de tranches / budget ». C'est ce qu'il fait \
+                         aujourd'hui ; « sim-agents » ne rend pas la tranche de bascule, donc le \
+                         jour où le découpage cesserait d'être uniforme, l'étiquette « avant » ou \
+                         « après la bascule » mentirait sans qu'aucune erreur de compilation ne \
+                         le signale.",
+                        "Les trois valeurs d'ouverture du scénario B : n = 16, budget de \
+                         150 000 événements, graine 1. Les deux premières sont les défauts du \
+                         tableau du §7 du PRD, transcrits ici et non lus dans « sim-agents » — \
+                         « Params::scenario_b() » pose n = 64, et l'exécution étant en Θ(n²), 64 \
+                         ferait payer seize fois le premier tracé. La conséquence est qu'aucun \
+                         des six préréglages n'est marqué « chargé » à l'ouverture ; le bouton \
+                         « nominal » ramène le n du scénario. La graine, elle, ne vient d'aucun \
+                         tableau.",
+                        "Les six valeurs d'ouverture du scénario A — n = 64, p = 8, ℓ₉₉ = 20 ms, \
+                         aller simple = 2 ms, degré de dépôt = 3, taux d'omission = 0,01 — sont \
+                         les défauts du même tableau du §7 du PRD, transcrits ici pour la même \
+                         raison : « sim_agents::scenario_a » est une fonction à sept paramètres, \
+                         sans constructeur de défaut. Rien ne tient ces transcriptions en accord \
+                         avec le PRD ; seules les plages des curseurs portent leur source à \
+                         l'écran.",
                     ],
                 );
 
@@ -975,4 +1030,36 @@ fn puce(ui: &mut egui::Ui, texte: &str) {
         ui.add(egui::Label::new(texte).wrap());
     });
     ui.add_space(6.0);
+}
+
+#[cfg(test)]
+mod tests {
+    /// Aucune des trois listes d'absences ne porte de balisage Markdown.
+    ///
+    /// [`puce`] pose un `egui::RichText`, qui n'a pas d'analyseur : une
+    /// astérisque d'emphase s'affiche telle quelle et un retour à la ligne coupe
+    /// la puce. La contrainte appartient donc au rendu, c'est-à-dire à cette
+    /// crate — et il y a **trois** listes, écrites dans trois crates par trois
+    /// morceaux d'audit séparés. Les trois se vérifient ici plutôt qu'à trois
+    /// exemplaires : `sim-milieu` en garde un local, hérité de l'audit, et
+    /// `sim-agents` comme `sim-core` n'en avaient aucun — c'est côté `sim-core`
+    /// que les astérisques étaient revenues.
+    ///
+    /// Les accents graves, eux, ne sont **pas** refusés : les trois listes en
+    /// portent des dizaines et l'arbitrage — les remplacer partout, ou les
+    /// laisser — n'est pas tranché. La règle codifiée est celle-ci, et pas plus.
+    #[test]
+    fn aucune_liste_dabsences_ne_porte_de_balisage_markdown() {
+        let listes: [(&str, &[&str]); 3] = [
+            ("sim-agents", sim_agents::hors_perimetre()),
+            ("sim-milieu", sim_milieu::hors_perimetre()),
+            ("sim-core", sim_core::faute::ModeleFaute::hors_modele()),
+        ];
+        for (crate_, lignes) in listes {
+            for e in lignes {
+                assert!(!e.contains('*'), "{crate_} — astérisque d'emphase : {e}");
+                assert!(!e.contains('\n'), "{crate_} — retour à la ligne : {e}");
+            }
+        }
+    }
 }

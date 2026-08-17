@@ -47,6 +47,12 @@ fn critere_1_le_tableau_15_se_remplit_par_la_mesure() {
 
 /// **(2)** La cascade est complète en **trois générations** sans qu'aucun agent
 /// ne soit tombé.
+///
+/// **`pannes_reelles == 0` ne peut pas échouer**, et `cascade::Cascade` le dit
+/// dans sa propre documentation : aucun code n'incrémente ce compteur, la cascade
+/// n'injectant aucune faute. Ce qui se mesure ici est le contraste — des
+/// redémarrages et des générations avec ce compteur à zéro —, et le critère (3)
+/// le complète en montrant qu'un seul réglage les supprime à charge inchangée.
 #[test]
 fn critere_2_la_cascade_en_trois_generations_sans_aucune_panne() {
     let c = derouler(Params::default(), 60);

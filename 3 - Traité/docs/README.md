@@ -10,8 +10,9 @@ la mesure qui les produit.
 Depuis l'entrée de ce dossier dans le dépôt [Agentique](../../README.md), le
 14 août 2026, `Traité.md` et `Traité.pdf` sont **à la racine du dossier**, pas
 ici. *Ce document et le `README.md` d'accueil les visaient sous `docs/`, où ils
-vivaient du temps du dépôt autonome ; les deux renvois sont corrigés, celui de
-`CLAUDE.md` ne l'est pas.* La règle « toute la documentation vit dans `docs/` »
+vivaient du temps du dépôt autonome ; les trois renvois sont corrigés, celui de
+`CLAUDE.md` depuis l'audit du 17 août 2026.* La règle « toute la documentation
+vit dans `docs/` »
 survit à l'exception, mais elle ne couvre plus le document dont tout le reste
 dérive.
 
@@ -24,8 +25,8 @@ une flèche qui remonte vers elle.
 
 ```mermaid
 flowchart TD
-    T["Traité.pdf<br/>SOURCE NORMATIVE — 2ᵉ édition<br/>24 sections · 10 algorithmes légendés · 22 tableaux"]
-    PRD["PRD.md<br/>ce qui est EXIGÉ, ~2 200 lignes<br/>EX-* · NF-* · PD* · DT* · §0 = suivi"]
+    T["Traité.pdf<br/>SOURCE NORMATIVE — 3ᵉ édition<br/>24 sections · 10 algorithmes légendés · 22 tableaux"]
+    PRD["PRD.md<br/>ce qui est EXIGÉ, ~2 340 lignes<br/>EX-* · NF-* · PD* · DT* · §0 = suivi"]
     SPEC["SPEC.md<br/>ce que le code GARANTIT<br/>contrats, signatures, catalogue d'oracles"]
     ARCH["architecture.md<br/>où est quoi, et ce que<br/>chaque couche refuse de savoir"]
     DEC["decisions.md<br/>ce qui est déjà tranché"]
@@ -69,11 +70,11 @@ faux d'un côté à chaque changement de l'autre, sans qu'on sache lequel.
 
 | Document | Ce qu'il contient | Quand le lire |
 |---|---|---|
-| [`Traité.pdf`](../Traité.pdf) *(⚠ à la racine du dossier, pas ici)* | **La source normative** — deuxième édition du 13 août 2026 : 8 chapitres, 24 sections, **dix blocs d'algorithme légendés** — trois aux chapitres 1, 3 et 4, plus l'algorithme 8.1 — auxquels s'ajoutent trois algorithmes numérotés dans le corps du chapitre 2, sans ligne de légende, et 22 tableaux. Les figures se comptent de deux façons — 18 légendes numérotées pour 16 numéros distincts, la figure 2.1 se déclinant en a/b/c —, donc ce document n'en avance aucun compte. Les algorithmes, les hypothèses et les chiffres viennent de là, et de nulle part ailleurs. | Pour comprendre *pourquoi* un mécanisme est écrit ainsi |
-| [`PRD.md`](PRD.md) | **Ce qui est exigé**, environ 2 200 lignes. Chaque exigence porte un code que le code source cite. Le §0 suit l'avancement, son §0.0 dit ce que la deuxième édition change ; le §12 A donne la correspondance traité → implantation. | Pour retrouver la lettre d'une exigence, ou l'état du projet |
+| [`Traité.pdf`](../Traité.pdf) *(⚠ à la racine du dossier, pas ici)* | **La source normative** — **troisième** édition du **15 août 2026**, 143 pages : 8 chapitres, 24 sections, 123 notices, **dix blocs d'algorithme légendés** — trois aux chapitres 1, 3 et 4, plus l'algorithme 8.1 — auxquels s'ajoutent trois algorithmes numérotés dans le corps du chapitre 2, sans ligne de légende, et 22 tableaux. Les figures se comptent de deux façons — 18 légendes numérotées pour 16 numéros distincts, la figure 2.1 se déclinant en a/b/c —, donc ce document n'en avance aucun compte. ⚠ **La pagination est celle de la troisième édition**, et c'est celle que F2 et DT5 fixent depuis le 17 août 2026. ⚠ **Mais la migration des renvois n'est pas faite** : les 56 `p. N` du PRD et une partie de ceux du code sont ceux de la deuxième édition et ne résolvent pas dans ce PDF. Une page lue sans son édition est une provenance fausse, non imprécise (F2, DT5, et `CLAUDE.md`) ; tant que la migration dure, une page se revérifie contre le PDF avant d'être crue, et le §0.2 du PRD donne le protocole. Les algorithmes, les hypothèses et les chiffres viennent de là, et de nulle part ailleurs. | Pour comprendre *pourquoi* un mécanisme est écrit ainsi |
+| [`PRD.md`](PRD.md) | **Ce qui est exigé**, environ 2 300 lignes. Chaque exigence porte un code que le code source cite. Le §0 suit l'avancement, son §0.0 dit ce que la **deuxième** édition a changé — c'est de l'histoire, avec la pagination de la deuxième —, son §0.1 l'écart de la phase 6, et son §0.2 le banc d'audit du 17 août 2026 ; le §12 A donne la correspondance traité → implantation. | Pour retrouver la lettre d'une exigence, ou l'état du projet |
 | [`SPEC.md`](SPEC.md) | **Ce que le code garantit** : contrat de déterminisme, contrat du moteur, catalogue des quinze oracles nommés, contrat du milieu, nomenclature des grandeurs qui ne se mêlent jamais, et ce que le contrat ne couvre pas. Chaque énoncé est vérifiable par une signature ou un test. | Avant d'écrire du code, et avant de supposer qu'une exigence est tenue |
 | [`architecture.md`](architecture.md) | La vue d'ensemble des quatre crates, ce que chaque couche **refuse** de savoir, la carte des modules, et le modèle de domaine. | Pour trouver où va un changement |
-| [`decisions.md`](decisions.md) | Le registre : les quatorze DT du PRD avec leur état, les verdicts tranchés par la mesure, les décisions de réalisation, et ce que la deuxième édition rouvre — ou ne rouvre pas. | Avant de refaire un choix déjà tranché |
+| [`decisions.md`](decisions.md) | Le registre : les quatorze DT du PRD avec leur état, les verdicts tranchés par la mesure, les décisions de réalisation, les décisions **ouvertes** par l'audit du 17 août 2026, et ce que les deuxième et troisième éditions rouvrent — ou ne rouvrent pas. | Avant de refaire un choix déjà tranché |
 | [`DEVELOPPEMENT.md`](DEVELOPPEMENT.md) | Chaîne d'outils, versions employées, ligne de commande exacte de chaque banc, et les trois commandes à lancer avant de committer. | Pour construire ou rejouer |
 
 Les verdicts de banc restent avec leur mesure :
@@ -87,7 +88,8 @@ Les verdicts de banc restent avec leur mesure :
 |---|---|
 | Ce que le projet est, en dix lignes | [`README.md`](../README.md) à la racine |
 | L'état d'avancement, les réserves ouvertes | §0 du [PRD](PRD.md) |
-| Ce que la deuxième édition du traité change | §0.0 du [PRD](PRD.md) |
+| Ce que la deuxième édition du traité a changé | §0.0 du [PRD](PRD.md) |
+| Ce que la troisième édition change, et l'état mesuré du dépôt | §0.2 du [PRD](PRD.md) |
 | Pourquoi une exigence existe | Son code dans le [PRD](PRD.md), puis §12 A pour la section du traité |
 | Ce qui est réellement garanti par le code | [`SPEC.md`](SPEC.md) |
 | Où poser un mécanisme nouveau | [`architecture.md`](architecture.md), dernière section |
@@ -141,7 +143,26 @@ au §9 du PRD, où chaque mécanisme est rangé est à la dernière section
 d'[`architecture.md`](architecture.md), et ce que son arrivée a changé au contrat
 est au §13 de [`SPEC.md`](SPEC.md).
 
-**Ce qui a existé et n'existe plus** : `gauntlet-log.md`, journal de la revue
+**Ce qui a existé et n'existe plus** : le `gauntlet-log.md` de la revue
 adversariale qui avait produit la version 2.0 du PRD, retiré du dépôt. Ce qu'il
 portait de durable est dans le PRD lui-même — les réserves du §0, les tensions du
 §2.5 et les risques du §10 sont ce que cette revue a produit.
+
+⚠ **Un fichier de ce nom est revenu à la racine du dossier le 17 août 2026, et ce
+n'est pas celui-là** : [`../gauntlet-log.md`](../gauntlet-log.md) est le journal de
+la boucle bâtisseur/critique de l'**audit complet du code** — cinq morceaux disjoints
+par crate, barre tenue sur
+[`bancs/dt1-flottant/VERDICT.md`](../bancs/dt1-flottant/VERDICT.md), rapports par
+morceau sous `bancs/audit-2026-08/`. *Il ne couvre ni la revue du PRD, ni les boucles
+de la veille, de la revue de littérature ou du rapport de l'art, dont les journaux
+homonymes ont vécu ailleurs dans le dépôt et n'y sont plus.* ⚠ **Il n'est pas un
+document de gouvernance** : rien n'y est exigé ni garanti, et aucun énoncé de ce
+dossier ne s'y adosse. Il n'est pas non plus suivi en version —
+`git ls-files gauntlet-log.md` ne rend rien —, ce qui est la différence de
+statut avec son homonyme retiré : le premier a été **supprimé** du dépôt, le
+second n'y a **jamais été ajouté**. Ce que la campagne a produit de durable est
+dans [`bancs/audit-2026-08/`](../bancs/audit-2026-08/) — **dix rapports**, cinq de
+morceau et cinq de critique —, au §0.2 du [PRD](PRD.md) et au
+[registre](decisions.md). ⚠ *Un `CONSOLIDATION.md` a été annoncé ici le
+17 août 2026 et n'a pas été écrit : le renvoi est retiré plutôt que laissé pendre,
+et l'absence datée. Ce que la consolidation aurait porté est au §0.2 du PRD.*

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 220" width="445" height="220" role="img" aria-label="Deux panneaux comparant l'integration deterministe des paliers 1 a 5 et la gouvernance probabiliste du palier 6.">
+  <!-- Ouverture § 2 du présent rapport.
+       Genere par figures/dessine.py — ne pas retoucher a la main :
+       la retouche se perd a la regeneration. Convention : viewBox de
+       445 unites = largeur du corps, une unite = un point. -->
+  <defs><style>
+  .l      { font-family: Corbel, Candara, "Segoe UI", sans-serif; }
+  .bande  { font-size: 8.5px; font-weight: 700; fill: #212121; }
+  .rang   { font-size: 7px;   font-weight: 700; fill: #9A3B12; }
+  .titre  { font-size: 6.5px; font-weight: 700; fill: #9A3B12; letter-spacing: .1em; }
+  .titreg { font-size: 6.5px; font-weight: 700; fill: #737373; letter-spacing: .1em; }
+  .ann    { font-size: 7px;   fill: #4d4d4d; }
+  .annf   { font-size: 7px;   font-weight: 700; fill: #212121; }
+  .renvoi { font-size: 6.2px; fill: #737373; }
+  .gris   { font-size: 8.5px; font-weight: 700; fill: #737373; }
+  .date   { font-size: 6.5px; font-weight: 700; fill: #9A3B12; }
+  </style></defs>
+  <rect x="0" y="0" width="445" height="220" fill="#FDFBF9"/>
+  <text class="l titreg" x="0" y="8">NIVEAUX 1 À 5 — INTÉGRATION DÉTERMINISTE</text>
+  <rect x="0" y="14" width="210" height="127" fill="#FAF5F0" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l bande" x="9" y="30">Des contrats statiques et vérifiables</text>
+  <text class="l ann" x="9" y="46">La contractualisation est écrite avant l'exécution :</text>
+  <text class="l ann" x="9" y="57">schéma au registre, contrat de données, SLA arbitré en</text>
+  <text class="l ann" x="9" y="68">comitologie.</text>
+  <text class="l ann" x="9" y="87">Le contrat se vérifie AVANT l'exécution — c'est</text>
+  <text class="l ann" x="9" y="98">exactement ce qu'une vérification statique atteint.</text>
+  <text class="l ann" x="9" y="117">L'imputabilité est attribuée par le plan de contrôle</text>
+  <text class="l ann" x="9" y="128">institutionnel, aux points d'application de politiques.</text>
+  <text class="l annf" x="0" y="154">Ce qu'il tient : un engagement opposable, vérifiable avant</text>
+  <text class="l annf" x="0" y="165">que rien ne s'exécute.</text>
+  <text class="l titre" x="235" y="8">NIVEAU 6 — GOUVERNANCE PROBABILISTE ET ADAPTATIVE</text>
+  <rect x="235" y="14" width="210" height="127" fill="#FFFFFF" stroke="#9A3B12" stroke-width=".9"/>
+  <text class="l bande" x="244" y="30">Une contractualisation négociée</text>
+  <text class="l ann" x="244" y="46">La contractualisation devient dynamique, par</text>
+  <text class="l ann" x="244" y="57">négociation contextuelle d'objectifs entre agents (A2A,</text>
+  <text class="l ann" x="244" y="68">MCP).</text>
+  <text class="l ann" x="244" y="87">L'intention ne s'observe que PENDANT l'exécution — d'où</text>
+  <text class="l ann" x="244" y="98">l'impératif de vérification à l'exécution.</text>
+  <text class="l ann" x="244" y="117">Le prix en est déclaré : surcoût d'observabilité</text>
+  <text class="l ann" x="244" y="128">(AgentOps) pour confiner le non-déterminisme.</text>
+  <text class="l annf" x="235" y="154">Ce qu'il tient : une intention exécutée, dont la conformité</text>
+  <text class="l annf" x="235" y="165">ne se constate qu'après.</text>
+  <path d="M 0 171 H 445" fill="none" stroke="#C2C2C2" stroke-width=".6"/>
+  <text class="l ann" x="0" y="184">Le déplacement est de nature et non de degré, mais l'échelle porte sa propre exception : la clause de renversement interdit</text>
+  <text class="l ann" x="0" y="194">l'autonomie agentique directe partout où une compensation financière temps réel s'impose, et le sixième palier n'est donc pas</text>
+  <text class="l ann" x="0" y="204">la destination de l'échelle. La clause appartient au cadre de ce rapport et n'est portée par aucun livrable du dépôt. Et le</text>
+  <text class="l ann" x="0" y="214">régime que le traité décrit — coordonner par le milieu, non par accord — n'a de case dans ni l'un ni l'autre panneau.</text>
+</svg>

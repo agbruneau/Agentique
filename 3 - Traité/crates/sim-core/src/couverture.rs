@@ -167,11 +167,15 @@ mod tests {
         assert!(f[0].contains("NF-13"), "{}", f[0]);
     }
 
+    /// EX-C10b — la mention refuse le critère de complétude, en toutes lettres.
+    ///
+    /// Le nom de ce test annonçait « aucune fonction ne rend un pourcentage de
+    /// couverture », propriété qu'aucune assertion ne vérifie et qu'aucune
+    /// assertion **ne peut** vérifier de l'intérieur : elle est tenue par le
+    /// type, qui n'expose pas de ratio. Ce que le test vérifie réellement est la
+    /// mention, et il est nommé pour cela.
     #[test]
-    fn aucune_fonction_ne_rend_un_pourcentage_de_couverture() {
-        // EX-C10b tenu par construction : le type n'expose aucun ratio. Le test
-        // fixe l'intention pour que l'ajout d'un tel accesseur soit un choix
-        // conscient et non un glissement.
+    fn la_mention_obligatoire_refuse_le_critere_de_completude() {
         assert!(Agregat::mention_obligatoire().contains("Aucun critère de complétude"));
     }
 }

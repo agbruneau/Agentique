@@ -1,7 +1,7 @@
 //! Plan de contrôle — **modèle de coût**, jamais protocole (EX-M21, DT7).
 //!
 //! > Le plan de données évite l'accord ; le plan de contrôle le paie pour tout
-//! > le monde. (§4.2, p. 49)
+//! > le monde. (§4.2, p. 65, 3ᵉ éd.)
 //!
 //! DT7 tranche : implanter Raft ferait du produit un simulateur de protocole
 //! d'accord, ce que le traité refuse d'être. Ce qui est simulé, c'est le
@@ -13,7 +13,7 @@
 //! jamais « consensus ».
 
 use sim_core::alea::Alea;
-use sim_core::temps::Duree;
+use sim_core::temps::{Duree, Granularite};
 
 /// Libellé imposé à tout affichage de ce plan (DT7).
 pub const LIBELLE: &str = "modèle de coût du plan de contrôle — pas un protocole d'accord (DT7)";
@@ -53,8 +53,13 @@ pub struct PlanDeControle {
     pub elections: u64,
     /// Indisponibilité cumulée après arrêt du meneur.
     pub indisponibilite: Duree,
-    /// Élections déclenchées alors qu'une élection était en cours : c'est le
-    /// mode de défaillance nommé.
+    /// Élections dont la **diffusion n'a pas tenu dans le délai** tiré : elles
+    /// n'aboutissent pas, et c'est le mode de défaillance nommé — élections
+    /// perpétuelles, panne née de la charge, manifestée comme panne d'accord.
+    ///
+    /// Compté, jamais relancé : c'est l'appelant qui rouvre une élection en
+    /// rappelant [`PlanDeControle::arret_du_meneur`], et aucun scénario ne le
+    /// fait (`crate::hors_perimetre()`).
     pub elections_perpetuelles: u64,
 }
 
@@ -101,9 +106,12 @@ impl PlanDeControle {
     }
 
     /// Une décision du plan de contrôle : **Ω(n) messages**, où n est la taille
-    /// du quorum. Rend `None` si le quorum n'est pas accessible — auquel cas
-    /// rien n'est décidé, et c'est la bonne réponse plutôt qu'une décision
-    /// unilatérale.
+    /// de l'**essaim** — c'est le chiffre de DT7 et du §4.2, et c'est ce qui
+    /// fait que le plan de contrôle « paie pour tout le monde ». Le coût rendu
+    /// est `k + n` : le quorum et la population.
+    ///
+    /// Rend `None` si le quorum n'est pas accessible — auquel cas rien n'est
+    /// décidé, et c'est la bonne réponse plutôt qu'une décision unilatérale.
     pub fn decider(&mut self, n_essaim: u32) -> Option<u64> {
         if !self.quorum_accessible() {
             return None;
@@ -147,9 +155,18 @@ impl PlanDeControle {
     /// Arrêt du meneur : une élection s'ouvre, et la partition est indisponible
     /// pendant sa durée.
     ///
-    /// Si la condition de gauche est violée, l'élection n'aboutit pas et une
-    /// autre s'ouvre : ce sont les **élections perpétuelles**.
-    pub fn arret_du_meneur(&mut self, alea: &mut Alea, granularite_par_ms: u64) -> Duree {
+    /// Si la condition de gauche est violée, l'élection n'aboutit pas : elle est
+    /// comptée en **élection perpétuelle**, et c'est à l'appelant de rouvrir la
+    /// suivante — rien ne boucle ici.
+    ///
+    /// # Panics
+    ///
+    /// Si le délai tiré n'est pas un nombre de millisecondes fini et positif,
+    /// `Granularite::tics_depuis_ms` le dit et arrête. La conversion passait par
+    /// un `as u64` direct, qui **tronque** au lieu d'arrondir au tic supérieur
+    /// et sature en silence sur un réglage non fini : une élection de 150,9 ms
+    /// devenait 150 tics, et un réglage NaN une indisponibilité nulle.
+    pub fn arret_du_meneur(&mut self, alea: &mut Alea, granularite: Granularite) -> Duree {
         self.elections += 1;
         let duree_ms =
             self.election_min_ms + alea.uniforme() * (self.election_max_ms - self.election_min_ms);
@@ -160,7 +177,7 @@ impl PlanDeControle {
         if diffusion_ms >= duree_ms {
             self.elections_perpetuelles += 1;
         }
-        let d = Duree((duree_ms * granularite_par_ms as f64) as u64);
+        let d = granularite.tics_depuis_ms(duree_ms);
         self.indisponibilite = self.indisponibilite + d;
         d
     }
@@ -250,7 +267,7 @@ mod tests {
 
         let mut alea = Alea::nouveau(1);
         for _ in 0..50 {
-            p.arret_du_meneur(&mut alea, 1_000);
+            p.arret_du_meneur(&mut alea, Granularite::Micro);
         }
         assert!(
             p.elections_perpetuelles > 0,
@@ -266,7 +283,10 @@ mod tests {
         p.diffusion_max_ms = 5.0;
         let mut alea = Alea::nouveau(2);
         for _ in 0..50 {
-            p.arret_du_meneur(&mut alea, 1_000);
+            let d = p.arret_du_meneur(&mut alea, Granularite::Micro);
+            // 150–300 ms en microsecondes, arrondi au tic supérieur : la
+            // fenêtre d'indisponibilité du §4.2 est reproduite, pas tronquée.
+            assert!(d >= Duree(150_000) && d <= Duree(300_000), "{d:?}");
         }
         assert_eq!(p.elections_perpetuelles, 0);
     }

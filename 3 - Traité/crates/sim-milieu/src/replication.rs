@@ -1,8 +1,10 @@
 //! Réplication ISR(k, m), et les deux invariants qu'elle porte (EX-M05 à
-//! EX-M08, EX-M14, EX-M15, EX-M23).
+//! EX-M08, EX-M14, EX-M15). EX-M23 n'est **pas** ici : ses deux oracles portent
+//! sur la propriété d'une partition dans un groupe de consommation, et vivent
+//! dans [`crate::groupe`].
 //!
 //! > Le nombre de disparitions auquel r₂ survit n'est pas k − 1 = 2, il est
-//! > m − 1 = 1. (§2.1, p. 22)
+//! > m − 1 = 1. (§2.1, p. 26, 3ᵉ éd.)
 //!
 //! Deux invariants **distincts**, et le produit ne les confond jamais :
 //!
@@ -117,6 +119,13 @@ pub struct Isr {
 impl Isr {
     /// Construit une partition répliquée. Les k répliques démarrent
     /// synchronisées et l'ISR les contient toutes.
+    ///
+    /// # Panics
+    ///
+    /// Si `k < 1` ou si `m` sort de `[1, k]`. Un ISR(k, m) hors de ces bornes
+    /// n'a pas de sens : `m = 0` accuserait sans réplique, `m > k` refuserait
+    /// toute écriture dès la construction, et les deux se liraient comme une
+    /// propriété du modèle plutôt que comme une erreur de réglage.
     pub fn nouvelle(k: u32, m: u32, temporisateur: Duree) -> Isr {
         assert!(k >= 1, "k ≥ 1");
         assert!(m >= 1 && m <= k, "1 ≤ m ≤ k");
@@ -169,7 +178,7 @@ impl Isr {
     /// la même situation que M2 et M3 côté journal — l'oracle reste armé pour
     /// que sa ligne figure au catalogue, non pour qu'il se déclenche.
     pub fn armer_oracles(&self, registre: &mut Registre) {
-        registre.armer(Oracle::surete(R1, "§2.1, p. 21 ; §6.1"));
+        registre.armer(Oracle::surete(R1, "§2.1, p. 26, 3ᵉ éd. ; §6.1"));
         registre.armer(Oracle::surete(R2, "§6.1"));
     }
 

@@ -21,7 +21,7 @@ pub const BLOC_E: Bloc = Bloc {
          traiter la même charge deux fois. On voudrait borner cette fenêtre ; on ne le peut pas, \
          parce que ce serait résoudre le problème que le chapitre 4 fait payer très cher.",
     these: "Borner cette fenêtre reviendrait à faire terminer un accord en asynchrone.",
-    source: "§1.3, algorithme 3 du ch. 1, p. 17",
+    source: "§1.3, algorithme 3 du ch. 1, p. 21-22 (3ᵉ éd.)",
     mecanisme_visible:
         "basculer en mode asynchrone retire Δ du modèle ; la borne théorique disparaît de \
          l'affichage (NF-14) et le compteur de charges doublement traitées cesse d'avoir un \
@@ -32,7 +32,7 @@ pub const BLOC_E: Bloc = Bloc {
          asynchrone, et le simulateur ne l'offre à aucun réglage. L'idempotence rend les doubles \
          traitements inoffensifs ; elle ne les supprime pas, et le cinquième reste de la \
          conclusion — l'effet exactement-une-fois est impossible, « le seul recours reste \
-         l'idempotence de l'effet » (p. 94) — reste exhibé, non résolu.",
+         l'idempotence de l'effet » (p. 129) — reste exhibé, non résolu.",
 };
 
 /// Hypothèse de synchronisme.

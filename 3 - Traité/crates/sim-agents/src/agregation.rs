@@ -1,6 +1,6 @@
 //! Les trois mécanismes d'agrégation du scénario H, et l'oracle qui les juge.
 //!
-//! > Le résultat n'est pas en retard, il est faux. (§4.1, p. 47)
+//! > Le résultat n'est pas en retard, il est faux. (§4.1, p. 58)
 //!
 //! - **EX-A14** — algorithme 1 du ch. 4, échange par paires push-pull, avec
 //!   époque et relance. **Aucune condition d'arrêt.**
@@ -30,7 +30,9 @@ pub enum Ligne {
     Ligne4PullPerdu,
     /// Crash-arrêt entre deux cycles : la masse détenue disparaît.
     CrashEnCoursDeProtocole,
-    /// Ligne 11 — la relance plafonne l'erreur, elle ne la corrige pas.
+    /// Ligne 11 — la relance **ne plafonne pas** l'erreur : elle réinjecte de la
+    /// dispersion à chaque période, et le maximum de la dérive croît avec la
+    /// durée d'observation (§4.1, p. 58).
     Ligne11Relance,
     /// Lignes 5 et 6 — deux traitements opposés du même désaccord d'époque.
     Epoque,
@@ -49,8 +51,11 @@ impl Ligne {
                  converge encore, vers une autre valeur"
             }
             Ligne::Ligne11Relance => {
-                "ligne 11 — la relance **plafonne** l'erreur accumulée, elle ne la corrige \
-                 jamais ; le tracé remonte à chaque relance et redérive aussitôt"
+                "ligne 11 — la relance ne **plafonne** pas l'erreur : elle réinjecte de la \
+                 dispersion à chaque période, de sorte que son maximum croît avec la durée \
+                 d'observation, là où l'erreur sans relance est acquise une fois pour toutes. Ce \
+                 qu'elle achète n'est pas un plafond mais la conversion d'un mensonge stable en \
+                 une oscillation qu'un opérateur voit passer (§4.1, p. 58)"
             }
             Ligne::Epoque => {
                 "lignes 5 contre 6 — l'agent en retard se réinitialise, l'agent en avance \
@@ -228,7 +233,8 @@ impl PushPull {
             }
         }
 
-        // Relance : elle **plafonne** l'erreur, elle ne la corrige pas.
+        // Relance : elle ne plafonne pas l'erreur, elle réinjecte de la
+        // dispersion — donc de la masse à perdre — à chaque période (§4.1).
         if let Some(c) = self.params.relance {
             if c > 0 && self.cycles.is_multiple_of(c) {
                 let avant = self.somme();
@@ -629,10 +635,16 @@ mod tests {
         assert!(p.rapporter().unwrap().contains("ligne 4"));
     }
 
-    /// **Critère (3)** — avec relance, l'erreur reste plafonnée ; avec C = ∞,
-    /// elle dérive sans borne. **Le contraste est le livrable.**
+    /// **Critère (3)** — le contraste que le §4.1 (p. 58) énonce, retrouvé par
+    /// la mesure (NF-15) : **sans relance, l'erreur se fige** — une fois
+    /// l'unanimité installée, il ne reste plus de masse à perdre — tandis
+    /// qu'**avec relance, son maximum croît avec la durée d'observation**,
+    /// parce que chaque période réinjecte de la dispersion.
+    ///
+    /// C'est l'inverse de ce que « la relance plafonne l'erreur » laisserait
+    /// croire, et c'est le livrable.
     #[test]
-    fn critere_3_la_relance_plafonne_lerreur_sans_la_corriger() {
+    fn critere_3_la_relance_ne_plafonne_pas_lerreur_elle_la_fait_croitre() {
         let executer = |relance: Option<u32>, cycles: u64| {
             let params = Params {
                 omission: 0.10,
@@ -665,16 +677,28 @@ mod tests {
         assert_eq!(sans.retours_a_zero, 0);
         assert!((sans.somme() - sans.somme_initiale).abs() > 1.0);
 
-        // Ce que la mesure ajoute au PRD : sans relance, la dérive **se fige**
-        // au lieu de croître sans borne. Une fois l'unanimité installée, il n'y
-        // a plus de désaccord à perdre — (x_i − x_j)/2 tend vers zéro — et la
-        // valeur fausse est définitivement acquise. C'est plus étroit que
-        // « dérive sans borne », et pire : l'erreur devient stable.
+        // Sans relance, la dérive **se fige** au lieu de croître sans borne :
+        // une fois l'unanimité installée, il n'y a plus de désaccord à perdre —
+        // (x_i − x_j)/2 tend vers zéro — et la valeur fausse est définitivement
+        // acquise. Une dérive sans borne se détecterait par n'importe quel
+        // contrôle de vraisemblance ; une erreur figée ne se détecte par rien.
         let sans_court = executer(None, 300).derive_max;
         assert!(
             (sans.derive_max - sans_court).abs() < 1e-9,
             "la dérive se fige : {sans_court:.3} puis {:.3}",
             sans.derive_max
+        );
+
+        // Avec relance, au contraire, le maximum **croît avec la durée
+        // d'observation** : chaque période réinjecte la dispersion que la
+        // dérive consomme. C'est l'énoncé exact du §4.1 (p. 58), et il est ici
+        // retrouvé et non cité (NF-15).
+        let avec_court = executer(Some(50), 300).derive_max;
+        assert!(
+            avec.derive_max > avec_court,
+            "le maximum doit croître avec la durée : {avec_court:.3} sur 300 cycles, {:.3} sur \
+             1 200 — la relance ne plafonne rien",
+            avec.derive_max
         );
     }
 

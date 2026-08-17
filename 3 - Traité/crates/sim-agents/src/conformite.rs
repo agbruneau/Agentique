@@ -94,7 +94,14 @@ pub const CONSTAT_DE_MESURE: &str =
 /// Estimation de Φ_c sur un jeu de décisions déposées.
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct Conformite {
-    /// Valeur estimée, dans [−1, 1] par construction et dans [0, 1] en pratique.
+    /// Valeur estimée, dans [−1, 1] par construction.
+    ///
+    /// **Le signe est rendu tel quel.** Une valeur négative n'est pas une erreur
+    /// d'estimation : c'est une population qui s'accorde **moins** que le hasard,
+    /// donc anti-conforme, et l'écraser à zéro la rendrait indiscernable d'une
+    /// population indépendante. C'est ce que faisait un `clamp(0, 1)` posé ici, et
+    /// il rendait vrai par construction le test censé montrer qu'une population
+    /// décorrélée vaut zéro — dont le jeu de données valait en réalité −0,2.
     pub phi_c: f64,
     /// Probabilité observée que deux agents distincts s'accordent.
     pub accord_observe: f64,
@@ -251,7 +258,7 @@ pub fn estimer(decisions: &[Enregistrement]) -> Result<Conformite, &'static str>
     let sous_independance = somme_independance / nb_paires_agents as f64;
 
     Ok(Conformite {
-        phi_c: (accord_observe - sous_independance).clamp(0.0, 1.0),
+        phi_c: accord_observe - sous_independance,
         accord_observe,
         accord_sous_independance: sous_independance,
         paires,
@@ -312,17 +319,48 @@ mod tests {
         assert!(c.depasse_sa_precision());
     }
 
+    /// Une population qui ne s'accorde **jamais** n'est pas décorrélée, elle est
+    /// anti-conforme, et Φ_c doit le dire par son signe.
+    ///
+    /// Chaque agent parcourt les cinq valeurs dans un ordre décalé du sien :
+    /// mêmes lois marginales, et un accord de rang systématiquement nul, ce que
+    /// cinq tirages indépendants ne produiraient qu'avec une probabilité de
+    /// 5⁻¹⁰⁰. Sous indépendance l'accord vaudrait 1/5 ; il vaut 0, donc
+    /// Φ_c = −0,2. C'est cette valeur-là que le `clamp(0, 1)` retiré rendait
+    /// indiscernable de zéro.
     #[test]
-    fn une_population_decorrelee_vaut_environ_zero() {
-        // Chaque agent parcourt les cinq valeurs dans un ordre qui lui est
-        // propre : mêmes lois marginales, aucun accord de rang.
+    fn une_population_qui_ne_saccorde_jamais_rend_un_phi_c_negatif() {
         let n = 5;
         let v: Vec<Vec<f64>> = (0..n)
             .map(|a| (0..20).map(|r| ((r + a) % 5) as f64).collect())
             .collect();
         let c = estimer(&journal(&v)).unwrap();
         assert_eq!(c.accord_observe, 0.0);
-        assert_eq!(c.phi_c, 0.0, "aucun accord de rang : Φ_c nul");
+        assert!((c.accord_sous_independance - 0.2).abs() < 1e-9);
+        assert!((c.phi_c + 0.2).abs() < 1e-9, "Φ_c = {}", c.phi_c);
+        assert!(!c.depasse_sa_precision());
+    }
+
+    /// Une population réellement **décorrélée** — chaque agent tire dans la même
+    /// loi, indépendamment des autres — rend un Φ_c indiscernable de zéro, à la
+    /// précision de l'estimation près.
+    ///
+    /// C'est le cas que le test précédent ne couvrait pas, et le seul qui fixe le
+    /// zéro de l'échelle : sans lui, rien n'établit que Φ_c mesure autre chose
+    /// que « les suites diffèrent ».
+    #[test]
+    fn une_population_reellement_decorrelee_reste_dans_sa_precision() {
+        let mut alea = sim_core::alea::Alea::nouveau(4);
+        let v: Vec<Vec<f64>> = (0..12)
+            .map(|_| (0..400).map(|_| (alea.uniforme() * 5.0).floor()).collect())
+            .collect();
+        let c = estimer(&journal(&v)).unwrap();
+        assert!(
+            c.phi_c.abs() <= c.precision().unwrap(),
+            "Φ_c = {} pour une précision de {}",
+            c.phi_c,
+            c.precision().unwrap()
+        );
         assert!(!c.depasse_sa_precision());
     }
 

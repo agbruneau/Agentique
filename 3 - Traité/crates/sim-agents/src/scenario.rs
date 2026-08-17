@@ -50,7 +50,12 @@ pub const BLOC_A: Bloc = Bloc {
          point de passage obligé : elle le déménage du réseau vers ce cahier. Cet écran compare \
          leurs deux factures, en messages et en temps.",
     these: "Elle ne détruit pas le point partagé, elle le déplace dans le milieu.",
-    source: "§1.3, p. 21 — figure 0, tableau 3",
+    // La thèse citée est au §2.1, p. 25 du traité livré — pas au §1.3, qui
+    // fournit les comptes comparés : tableau 3, p. 18, et figure 0, p. 4. Le
+    // renvoi précédent, « §1.3, p. 21 », pointait sur une page de la bonne
+    // section qui ne contient pas la phrase citée. F2 traite ce cas comme une
+    // provenance fausse et non imprécise, d'où l'édition dans le champ.
+    source: "§2.1, p. 25 (3ᵉ éd.) — comptes comparés : tableau 3, p. 18, et figure 0, p. 4",
     mecanisme_visible:
         "augmenter n fait croître en n² le compteur d'entretien de vue à gauche, sans toucher au \
          compte de lectures à droite ; augmenter ℓ₉₉ allonge les deux tours de journal à droite, \
@@ -138,7 +143,7 @@ impl Comparaison {
     /// maille ; l'interface affiche l'absence au lieu de combler (F1).
     pub fn diametres() -> (&'static str, &'static str) {
         (
-            "journal : 2 en permanence (§1.3, p. 21)",
+            "journal : 2 en permanence (§1.3, p. 18, 3ᵉ éd.)",
             Maille::DIAMETRE,
         )
     }
@@ -151,6 +156,13 @@ impl Comparaison {
 /// (tableau 3). Ce qui est simulé, c'est le comportement des mécanismes eux-
 /// mêmes — la maille tient un vrai détecteur, et le journal un vrai chemin de
 /// durabilité.
+///
+/// **`p` n'a aucun effet, et l'interface le règle quand même.** Le tableau 3 ne
+/// fait pas dépendre du nombre de partitions les comptes comparés ici — une
+/// écriture, n lectures, deux tours —, donc rien n'en dépend dans le calcul.
+/// L'écran du scénario A porte pourtant un curseur « p — partitions » de 1 à 64
+/// dont le déplacement ne change aucun chiffre affiché : un réglage qui ne règle
+/// rien, déclaré par [`crate::hors_perimetre`] au même rang que le reste (PD6).
 pub fn scenario_a(
     n: u32,
     p: u32,
@@ -203,7 +215,7 @@ pub const BLOC_B: Bloc = Bloc {
          soutient qu'il ne trouvera jamais exactement le mieux, mais qu'il en restera à une \
          distance qu'on sait calculer d'avance.",
     these: "Un essaim stigmergique n'atteint pas l'optimum, il campe à distance bornée de lui.",
-    source: "§1.2, p. 13 — algorithme 2 ; définition d'essaim, §1.1",
+    source: "§1.2, p. 16 (3ᵉ éd.) — algorithme 2, p. 14 ; définition d'essaim, §1.1",
     mecanisme_visible:
         "porter γ à 1 supprime le terme de décroissance dans le calcul de φ ; la trace devient une \
          somme cumulée, le rapport φ_max/φ_min croît sans borne, la probabilité de tirage de la \
@@ -450,13 +462,126 @@ pub fn scenario_b(params: Params, graine: u64, budget_evenements: u64) -> Result
 mod tests {
     use super::*;
 
-    /// F2 — le champ `source` d'un bloc PD8 porte **la section et la page**, et
-    /// la pagination est celle de la deuxième édition. Une page manquante n'est
-    /// pas une imprécision : c'est une provenance absente, et cinq blocs sur dix
-    /// en étaient là.
-    #[test]
-    fn les_dix_blocs_portent_leur_section_et_leur_page() {
-        let blocs: [(&str, &Bloc); 10] = [
+    /// Le traité livré, **texte cherchable**. C'est la source Pandoc/Typst dont
+    /// `Traité.pdf` est le rendu : la provenance qu'un bloc cite s'y vérifie
+    /// contre l'original, jamais contre une copie dérivée.
+    const TRAITE: &str = include_str!("../../../Traité.md");
+
+    /// Intervalles de pages des sections citées, **mesurés** dans `Traité.pdf` —
+    /// troisième édition, 143 pages — par
+    /// `pymupdf.open("Traité.pdf").get_toc()`.
+    ///
+    /// L'intervalle est fermé aux **deux** bouts, parce qu'une page porte la fin
+    /// d'une section et le début de la suivante : la p. 5 achève l'introduction
+    /// et ouvre le §1.1, et la thèse du scénario M y est.
+    const PAGES_DES_SECTIONS: [(&str, u32, u32); 5] = [
+        ("introduction", 3, 5),
+        ("1.2", 12, 17),
+        ("2.1", 23, 30),
+        ("5.3", 82, 87),
+        ("8.3", 124, 128),
+    ];
+
+    /// Les blocs dont la page a été **retrouvée dans le traité livré** — la
+    /// troisième édition, 143 pages —, avec leur nom. Ce qu'ils citent est
+    /// vérifié contre le traité par
+    /// [`la_these_de_chaque_bloc_verifie_est_a_la_page_citee`].
+    ///
+    /// Il n'y a **pas** de liste de noms à côté : une liste qu'on compare à
+    /// elle-même n'établit rien, et c'était le défaut de la version précédente.
+    fn blocs_verifies() -> [(&'static str, &'static Bloc); 5] {
+        [
+            ("A", &BLOC_A),
+            ("B", &BLOC_B),
+            ("D", &crate::scenario_d::BLOC_D),
+            ("K", &crate::gouvernance::BLOC_K),
+            ("M", &crate::scenario_m::BLOC_M),
+        ]
+    }
+
+    /// Découpe le traité en sections, par leurs titres : l'octet où chacune
+    /// commence, et son étiquette — « 2.1 », « 8.3 », « introduction »,
+    /// « conclusion ». Calculée sur le texte **déjà minusculé**, pour que les
+    /// décalages coïncident avec ceux de la recherche.
+    fn sections(traite: &str) -> Vec<(usize, String)> {
+        let mut v = Vec::new();
+        let mut octet = 0usize;
+        for ligne in traite.split_inclusive('\n') {
+            if let Some(titre) = ligne
+                .strip_prefix("### ")
+                .or_else(|| ligne.strip_prefix("## "))
+            {
+                let mot = titre.split_whitespace().next().unwrap_or("");
+                v.push((octet, mot.trim_end_matches('.').to_string()));
+            }
+            octet += ligne.len();
+        }
+        v
+    }
+
+    /// Le plus long préfixe d'`aiguille` présent tel quel dans `traite` : sa
+    /// longueur en octets, et l'octet où il commence dans le traité.
+    fn plus_long_prefixe(traite: &str, aiguille: &str) -> Option<(usize, usize)> {
+        let mut fin = aiguille.len();
+        while fin > 0 {
+            if aiguille.is_char_boundary(fin) {
+                if let Some(pos) = traite.find(&aiguille[..fin]) {
+                    return Some((fin, pos));
+                }
+            }
+            fin -= 1;
+        }
+        None
+    }
+
+    /// Les provenances qu'un champ `source` déclare : pour chaque marqueur de
+    /// section — `§X.Y`, « introduction », « conclusion » —, la **première** page
+    /// citée après lui et avant le marqueur suivant.
+    ///
+    /// Les pages qui ne suivent aucun marqueur ne sont pas rattachables et ne
+    /// sont donc pas vérifiées : « tableau 3, p. 18 » du bloc A est dans ce cas.
+    fn provenances(source: &str) -> Vec<(String, u32)> {
+        let bas = source.to_lowercase();
+        let mut marqueurs: Vec<(usize, String)> = Vec::new();
+        for (i, _) in bas.match_indices('§') {
+            let etiquette: String = bas[i + '§'.len_utf8()..]
+                .chars()
+                .take_while(|c| c.is_ascii_digit() || *c == '.')
+                .collect();
+            let etiquette = etiquette.trim_end_matches('.').to_string();
+            if !etiquette.is_empty() {
+                marqueurs.push((i, etiquette));
+            }
+        }
+        for mot in ["introduction", "conclusion"] {
+            for (i, _) in bas.match_indices(mot) {
+                marqueurs.push((i, mot.to_string()));
+            }
+        }
+        marqueurs.sort();
+
+        let mut v = Vec::new();
+        for (k, (debut, etiquette)) in marqueurs.iter().enumerate() {
+            let fin = marqueurs.get(k + 1).map_or(bas.len(), |(j, _)| *j);
+            let portion = &bas[*debut..fin];
+            if let Some(p) = portion.find("p. ") {
+                let chiffres: String = portion[p + "p. ".len()..]
+                    .chars()
+                    .take_while(|c| c.is_ascii_digit())
+                    .collect();
+                if let Ok(page) = chiffres.parse::<u32>() {
+                    v.push((etiquette.clone(), page));
+                }
+            }
+        }
+        v
+    }
+
+    /// Les dix blocs livrés, avec leur nom. Une seule liste : elle sert à la
+    /// clause de provenance et à la clause d'édition, qui portent toutes deux
+    /// sur les dix et qui divergeaient quand chacune tenait la sienne.
+    fn tous_les_blocs() -> [(&'static str, &'static Bloc); 10] {
+        [
             ("A", &BLOC_A),
             ("B", &BLOC_B),
             ("D", &crate::scenario_d::BLOC_D),
@@ -467,8 +592,15 @@ mod tests {
             ("K", &crate::gouvernance::BLOC_K),
             ("L", &crate::taux_de_base::BLOC_L),
             ("M", &crate::scenario_m::BLOC_M),
-        ];
-        for (nom, b) in blocs {
+        ]
+    }
+
+    /// F2 — le champ `source` d'un bloc PD8 porte **la section et la page**. Une
+    /// page manquante n'est pas une imprécision : c'est une provenance absente,
+    /// et cinq blocs sur dix en étaient là.
+    #[test]
+    fn les_dix_blocs_portent_leur_section_et_leur_page() {
+        for (nom, b) in tous_les_blocs() {
             assert!(b.source.contains('§'), "bloc {nom} : aucune section");
             assert!(b.source.contains("p. "), "bloc {nom} : aucune page — provenance absente (F2)");
             for (champ, valeur) in [
@@ -478,6 +610,159 @@ mod tests {
                 ("ne_demontre_pas", b.ne_demontre_pas),
             ] {
                 assert!(!valeur.trim().is_empty(), "bloc {nom} : champ {champ} vide");
+            }
+        }
+    }
+
+    /// F2, clause d'édition — **la page seule n'est pas une provenance.**
+    ///
+    /// Le traité livré dans ce dépôt est la **troisième** édition, du 15 août
+    /// 2026, 143 pages, et ces cinq blocs citaient des pages qui n'y résolvent
+    /// pas — trois d'entre elles tombant hors de la section citée. Mesuré dans le
+    /// PDF du dépôt :
+    ///
+    /// | bloc | page citée | ce qu'on y trouve | page réelle |
+    /// |---|---|---|---|
+    /// | A | §1.3, p. 21 | §1.3, mais pas la thèse | §2.1, p. 25 |
+    /// | B | §1.2, p. 13 | §1.2, ni la thèse ni l'algorithme 2 | p. 16 ; algo 2 p. 14 |
+    /// | D | §2.1, p. 22 | §1.3 — hors de la section citée | p. 26 ; fig. 2.1c p. 28 |
+    /// | K | §5.3, p. 63 | §4.2 — hors de la section citée | tableau 16, p. 84 |
+    /// | M | §8.3, p. 94 | §6.2 — hors de la section citée | p. 127 |
+    ///
+    /// La clause porte sur **les dix**, et non sur les cinq ci-dessus. Les blocs
+    /// E, F, G, J et L citaient déjà des pages qui résolvent dans la troisième
+    /// édition — algorithme 3 p. 21, figure 5.2 p. 80, tableau 15 p. 81, §7.1
+    /// p. 104, figure 6.1 p. 91, tableau 13 p. 72, figure 7.2 p. 107, tableau 19
+    /// p. 110, toutes retrouvées —, mais ils ne la nommaient pas : leurs pages
+    /// se relisaient donc comme celles d'une édition inconnue, ce qui est
+    /// précisément ce que F2 refuse. Ils vivent dans cinq modules de mécanismes,
+    /// hors du morceau où cette clause a été écrite, et c'est la seule raison
+    /// pour laquelle elle ne les couvrait pas.
+    ///
+    /// Ils restent hors de [`blocs_verifies`], pour un autre motif : deux de
+    /// leurs thèses sont des reformulations du produit et non des citations, de
+    /// sorte que la vérification mot pour mot du test suivant ne s'y applique
+    /// pas.
+    ///
+    /// **Ce test ne vaut que par le suivant.** Nommer une édition est une clause
+    /// de forme : une page fausse qui la nomme la satisfait. C'est
+    /// [`la_these_de_chaque_bloc_verifie_est_a_la_page_citee`] qui interroge le
+    /// traité.
+    #[test]
+    fn les_dix_blocs_nomment_leur_edition() {
+        for (nom, b) in tous_les_blocs() {
+            assert!(
+                b.source.contains("3ᵉ éd."),
+                "bloc {nom} : page citée sans son édition — {}",
+                b.source
+            );
+        }
+    }
+
+    /// F2 — **la thèse citée par un bloc se retrouve dans le traité livré, sous
+    /// la section que le bloc nomme, à une page que cette section contient.**
+    ///
+    /// C'est ce que le test précédent ne peut pas faire, et c'est ce pour quoi
+    /// les deux existent. La vérification tient en trois temps, tous menés
+    /// contre `Traité.md` — la source Pandoc dont le PDF est le rendu :
+    ///
+    /// 1. la thèse est **retrouvée mot pour mot**, en un ou plusieurs morceaux
+    ///    contigus (la casse et la ponctuation finale exceptées) ;
+    /// 2. **chaque** morceau tombe sous une section que `source` nomme — c'est
+    ///    ce qui a manqué aux blocs A, D, K et M, dont la page citée tombait hors
+    ///    de la section citée ;
+    /// 3. chaque page citée à côté d'un marqueur de section tombe dans
+    ///    l'intervalle mesuré de cette section ([`PAGES_DES_SECTIONS`]).
+    ///
+    /// Le point 2 vaut épreuve de l'**épissure** du bloc M : sa thèse est reprise
+    /// de deux endroits, l'introduction p. 5 pour la proposition principale et le
+    /// §8.3 p. 127 pour l'énumération des trois, et `source` doit nommer les deux.
+    /// Le §8.3 écrit la proposition autrement — « la mesure ajoute qu'il rend
+    /// tout aussi bon marché » —, de sorte qu'un aveu qui ne citerait que lui
+    /// serait faux.
+    ///
+    /// **Ce qui reste hors de portée, et il faut le dire.** `Traité.md` ne porte
+    /// aucune pagination : elle naît du rendu Typst. Une page fausse **à
+    /// l'intérieur** de la bonne section passe donc encore — c'était le cas du
+    /// bloc B, qui citait la p. 13 pour une thèse qui est p. 16, l'une et l'autre
+    /// dans le §1.2. Vérifier la page exacte demanderait de lire le PDF, donc une
+    /// dépendance d'extraction, ou de committer un dépouillement page à page,
+    /// c'est-à-dire une seconde copie du traité qui peut diverger de la première
+    /// sans que rien ne le dise. L'intervalle de section ramène la latitude de
+    /// 143 pages à cinq ou six ; le reste est tenu par la relecture.
+    #[test]
+    fn la_these_de_chaque_bloc_verifie_est_a_la_page_citee() {
+        let traite = TRAITE.to_lowercase();
+        let sections = sections(&traite);
+        let section_a = |octet: usize| -> String {
+            sections
+                .iter()
+                .rev()
+                .find(|(debut, _)| *debut <= octet)
+                .map_or_else(|| "hors section".to_string(), |(_, e)| e.clone())
+        };
+
+        for (nom, b) in blocs_verifies() {
+            // 1 et 2 — la thèse, morceau par morceau, et la section de chacun.
+            let these = b.these.to_lowercase();
+            let mut reste = these.trim_end_matches(['.', ' ']);
+            let mut morceaux = 0;
+            while reste.chars().any(char::is_alphanumeric) {
+                let (long, octet) = plus_long_prefixe(&traite, reste).unwrap_or_else(|| {
+                    panic!("bloc {nom} : « {reste} » ne se trouve nulle part dans le traité livré")
+                });
+                assert!(
+                    long >= 30,
+                    "bloc {nom} : la thèse se disloque en morceaux de moins de 30 signes \
+                     — « {} » ; ce n'est plus une citation",
+                    &reste[..long]
+                );
+                let section = section_a(octet);
+                let (libelle, nommee) = match section.as_str() {
+                    "introduction" | "conclusion" => (
+                        format!("l'{section}"),
+                        b.source.to_lowercase().contains(&section),
+                    ),
+                    _ => (
+                        format!("§{section}"),
+                        b.source.contains(&format!("§{section}")),
+                    ),
+                };
+                assert!(
+                    nommee,
+                    "bloc {nom} : « {} » est dans {libelle} du traité, que `source` ne nomme \
+                     pas — {}",
+                    &reste[..long.min(60)],
+                    b.source
+                );
+                reste = reste[long..].trim_start_matches(|c: char| !c.is_alphanumeric());
+                morceaux += 1;
+            }
+            assert!(morceaux >= 1, "bloc {nom} : thèse vide");
+
+            // 3 — chaque page citée est dans l'intervalle de la section citée.
+            let declarees = provenances(b.source);
+            assert!(
+                !declarees.is_empty(),
+                "bloc {nom} : aucune page rattachée à une section — {}",
+                b.source
+            );
+            for (section, page) in declarees {
+                let (_, debut, fin) = PAGES_DES_SECTIONS
+                    .iter()
+                    .find(|(s, _, _)| *s == section)
+                    .unwrap_or_else(|| {
+                        panic!(
+                            "bloc {nom} : intervalle de pages non mesuré pour {section} \
+                             — le relever dans `Traité.pdf` avant de citer"
+                        )
+                    });
+                assert!(
+                    (*debut..=*fin).contains(&page),
+                    "bloc {nom} : {section} occupe les pages {debut} à {fin} du traité livré, \
+                     et le bloc cite la p. {page} — {}",
+                    b.source
+                );
             }
         }
     }

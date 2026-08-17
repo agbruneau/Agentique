@@ -9,7 +9,7 @@
 //! Ce qu'il ne fournit pas, et qu'aucun affichage ne doit suggérer (PD5) : ni
 //! paramètre d'ordre, ni transition de phase. Le traité écrit que le bruit nul
 //! retire précisément la transition de phase ; Φ, η_c et β ≈ 0,45 appartiennent
-//! au modèle de Vicsek **avec bruit** (§1.2, p. 10), qu'aucun mécanisme du
+//! au modèle de Vicsek **avec bruit** (§1.2, p. 12), qu'aucun mécanisme du
 //! périmètre actuel ne fournit.
 
 use sim_core::alea::Alea;
@@ -274,10 +274,28 @@ mod tests {
         );
     }
 
-    /// PD5 — le mécanisme ne fournit pas de paramètre d'ordre. Le test fixe
-    /// l'intention : aucune méthode ne s'appelle `phi` ni ne rend de seuil.
+    /// PD5 — le mécanisme ne fournit pas de paramètre d'ordre, et la signature
+    /// le rattache à sa cause : c'est le **bruit nul** qui retire la transition
+    /// de phase, non un manque d'implantation.
+    ///
+    /// Ce que ce test ne vérifie pas, et qu'il ne prétend plus vérifier : qu'il
+    /// n'existe nulle part de méthode nommée `phi` ni de seuil rendu. Un test
+    /// unitaire ne peut pas contrôler une absence de nom dans le module ; la
+    /// discipline tient par la revue et par le `//!` du module.
     #[test]
     fn aucun_parametre_dordre_nest_revendique() {
-        assert!(SIGNATURE.iter().any(|(k, v)| *k == "bruit" && v.contains("nul")));
+        let bruit = SIGNATURE.iter().find(|(k, _)| *k == "bruit").expect("signature du bruit");
+        assert!(bruit.1.contains("nul"));
+        assert!(
+            bruit.1.contains("transition de phase"),
+            "la signature doit nommer ce que le bruit nul retire : {}",
+            bruit.1
+        );
+        // Et la dispersion n'est jamais présentée comme un paramètre d'ordre :
+        // aucun seuil, aucun paramètre de contrôle ne l'accompagne.
+        assert!(
+            !SIGNATURE.iter().any(|(k, _)| k.contains("paramètre d'ordre") || k.contains("seuil")),
+            "aucune ligne de signature ne revendique un paramètre d'ordre"
+        );
     }
 }

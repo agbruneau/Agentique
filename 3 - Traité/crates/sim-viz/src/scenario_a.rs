@@ -13,7 +13,8 @@
 //!
 //! Chaque point de la courbe est un appel de plus à `sim_agents::scenario_a` —
 //! la vue lit la simulation autant de fois qu'il le faut, elle ne calcule
-//! aucun temps et ne tranche aucun verdict (§5.1). L'abscisse du croisement
+//! aucun temps et ne tranche aucun verdict (§5.1 du PRD). L'abscisse du
+//! croisement
 //! elle-même est lue : c'est le point où le `verdict_temps` **de `sim-agents`**
 //! change de camp le long du balayage.
 //!
@@ -100,6 +101,12 @@ pub struct VueA {
 }
 
 impl Default for VueA {
+    /// Les six valeurs d'ouverture sont les défauts du tableau du §7 du PRD,
+    /// **transcrits ici** : `sim_agents::scenario_a` est une fonction à sept
+    /// paramètres, sans constructeur de défaut, donc rien ne les tient en accord
+    /// avec le PRD. C'est la seule chose que cette vue pose au lieu de la lire,
+    /// et l'onglet « Limites » la déclare (PD6). Les plages, elles, portent leur
+    /// source au point de déclaration.
     fn default() -> Self {
         VueA {
             n: 64,

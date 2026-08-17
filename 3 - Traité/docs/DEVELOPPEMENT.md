@@ -24,18 +24,33 @@ Les autres crates — `sim-core`, `sim-milieu`, `sim-agents` — n'en ont pas be
 
 ## Commandes
 
-Suite de tests complète — **428 tests** au 13 août 2026, exit 0 :
+Suite de tests complète — **465 tests** au 17 août 2026, 09 h 49, exit 0 :
 
 ```bash
 cargo test --workspace --release
 ```
 
-Le compte se répartit en 385 tests unitaires dans les modules — 239 dans
-`sim-agents`, 86 dans `sim-core`, 56 dans `sim-milieu`, 4 dans `sim-viz` — et 43
+Le compte se répartit en 422 tests unitaires dans les modules — 253 dans
+`sim-agents`, 96 dans `sim-core`, 68 dans `sim-milieu`, 5 dans `sim-viz` — et 43
 tests d'intégration, qui sont les critères de sortie de phase. Le §0 du PRD
 enregistre 348 à la clôture de la phase 5 ; la phase 6 a porté le compte à 419,
-et l'audit du dépôt à 428 — neuf tests ajoutés pour fermer des trous que la
-révision a ouverts, aucun affaibli.
+l'audit du 13 août à 428, et celui du 17 août à 447 puis 465 — des tests ajoutés
+pour fermer des trous que la révision a ouverts, aucun affaibli. **Le compte est
+une mesure et se refait ; c'est la répartition, elle, qui dit où le filet est
+lâche** — 43 tests d'intégration pour 422 unitaires, et cinq seulement sur toute
+l'interface. Le total a bougé trois fois en une heure et demie le 17 août — 428 à
+08 h 10, 447 à 08 h 32, 465 à 09 h 49 —, cinq agents écrivant en parallèle : un
+compte gravé dans un document se périme sans que rien ne le signale, la ligne de
+commande ne se périme pas.
+
+⚠ **`cargo` n'est pas dans le `PATH`, et l'édition de liens échoue dans le
+`target/` du dépôt** parce que le chemin contient un « é ». Les mesures
+ci-dessus ont été prises ainsi :
+
+```powershell
+$env:PATH = "$env:USERPROFILE\.cargo\bin;$env:LOCALAPPDATA\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin;$env:PATH"
+$env:CARGO_TARGET_DIR = "C:\Users\agbru\AppData\Local\Temp\cargo-conso"
+```
 
 Un seul test, ou un module :
 
@@ -153,11 +168,13 @@ ces tests** — ce sont les preuves du tableau du §0 du PRD.
 
 ## Règles que le dépôt fait respecter mécaniquement
 
-- `clippy.toml` interdit sept méthodes de `f64` : six mesurées divergentes, et
-  `mul_add`, mesurée identique mais dont le verdict a changé entre deux passages
-  du banc. Elles divergeraient entre natif et
-  WASM (NF-02, verdict DT1), ainsi que `HashMap` et `HashSet`, dont l'itération
-  n'est pas ordonnée (PD1). **Ces neuf interdictions sont `deny`**, par le
+- `clippy.toml` interdit sept méthodes de `f64` : **six** mesurées divergentes
+  entre natif et WASM (NF-02, verdict DT1), et `mul_add`, mesurée *identique* au
+  second passage du banc mais dont le verdict **a changé** après l'installation
+  de mingw-w64 sans qu'une ligne de code bouge — elle dépend de la machine de
+  construction, ce qui est pire que diverger. Le fichier porte les deux motifs
+  séparément depuis le 17 août 2026. Sont interdits aussi `HashMap` et `HashSet`,
+  dont l'itération n'est pas ordonnée (PD1). **Ces neuf interdictions sont `deny`**, par le
   `[workspace.lints.clippy]` du `Cargo.toml` racine que les six membres héritent
   — sans quoi elles restent au niveau `warn` de leur groupe `style` et `cargo
   clippy` sort **0 sur du code interdit**, ce qui était le cas jusqu'à l'audit.

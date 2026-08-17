@@ -11,7 +11,15 @@ pas, et c'est l'intérêt.*
 > [Agentique](../README.md). ⚠ **Les quatre fichiers de livrable venaient de la racine**, où ils
 > vivaient depuis leurs dépôts respectifs — *inchangés au bit près, `git` enregistrant quatre
 > renommages purs*. Le dossier [`Python/`](Python/) les a suivis. ☑ **Depuis, la racine du dépôt ne
-> porte plus aucun livrable** : les sept sont rangés sous quatre dossiers numérotés.
+> porte plus aucun livrable.**
+> ⚠⚠ **Et ce dossier a été renommé le jour même de sa création, ce que rien n'avait enregistré** :
+> `4 - Revue et Veille/` à 10 h 03, **`4 - Veille/` depuis** (commit `71d5388`). *Trente-deux renvois
+> sont morts en silence pendant deux jours — aucun contrôle du dépôt ne résout un lien markdown —, et
+> ils ont été repointés le 17 août 2026.* ⚠ **Le titre de ce fichier porte encore l'ancien nom**, et
+> c'est délibéré : il nomme les deux livrables, non le dossier.
+> ☑ **Le décompte du dépôt est à jour depuis le 17 août 2026** : *sept livrables sous **cinq**
+> dossiers numérotés*, `5 - Recension/` étant entré le 16 août avec `Rapport de l'art.pdf` —
+> ⚠ **un rapport dérivé, non un huitième livrable** —, et **seize `README.md`**.
 >
 > ⚠ **Le dépôt est clos depuis le 8 août 2026** — décision d'auteur **D-13**
 > ([`2 - Compendium/PRD/PRD.md`](../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). *Ces deux livrables
@@ -19,11 +27,40 @@ pas, et c'est l'intérêt.*
 > pour les quatre volumes ; **rien de ce dossier ne la lève**.
 >
 > ⚠ **Édition du 15 août 2026 — les deux livrables ont été rouverts et re-vérifiés intégralement.**
-> Les 303 références de la veille et les 176 de la revue ont été reprises à leur source primaire, et
-> **la re-vérification a produit plus de corrections que d'ajouts**. ☑ *Ce que le gel disait de faux
-> est consigné, pièce en main, dans une [annexe de traçabilité](Veille%20Technologique.md) neuve —
-> énoncés réfutés, désaccords entre vérificateurs, et ce qui n'a pas pu être vérifié.* Le déroulé
-> de la boucle, ses verdicts et ses coûts sont au [journal](gauntlet-log.md).
+> Les références des deux ont été reprises à leur source primaire — **303 à la veille et 176 à la
+> revue**, comptes de l'édition d'alors ; elles sont **342 et 192** depuis —, et **la
+> re-vérification a produit plus de corrections que d'ajouts**. ☑ *Ce que le gel disait de faux est
+> consigné, pièce en main, dans l'[annexe de traçabilité](Veille%20Technologique.md) de la veille —
+> énoncés réfutés, désaccords entre vérificateurs, et ce qui n'a pas pu être vérifié.*
+> ⚠ **Le journal de la boucle du 15 août n'est plus dans ce dossier** : `gauntlet-log.md` n'y
+> existe pas, et ce README y renvoyait par un lien mort jusqu'au 17 août 2026. *Le seul journal du
+> dépôt qui porte ce nom est celui du traité, et il ne couvre pas cette boucle-ci.*
+>
+> ⚠ **Passe du 17 août 2026 — mise en page, et une panne de rendu que trois éditions n'avaient pas
+> vue.** Les deux pages de titre ont été reprises et uniformisées : titre commun, description du
+> livrable en sous-titre, bloc d'auteur au blanc croissant. ⚠⚠ **Et sept titres de la veille étaient
+> collés au paragraphe qui les précédait** — Pandoc exige une ligne vide avant un titre et rendait
+> les sept en texte courant, croisillon compris : **le PDF ne numérotait que 10 sections sur 14, sa
+> bibliographie n'avait aucun titre, et tous les renvois en clair du texte — « limites (10) »,
+> « corpus compagnon (13) » — pointaient à côté.** ☑ Les sept sont décollés, l'édition passe de 142
+> à **143 p.**, et [`check-veille.py`](Python/check-veille.py) numérote désormais comme Pandoc et
+> lève le cas. *Ce contrôle validait ces renvois depuis le début, contre une numérotation qui
+> n'existait que dans sa propre lecture de la source.*
+>
+> ☑ **Les 534 références ont été confrontées à leur dépôt le 17 août 2026** — 189 identifiants
+> arXiv, 16 DOI et 508 URL distinctes, interrogés à l'API arXiv, à Crossref et par résolution HTTP.
+> **189/189 arXiv et 16/16 DOI résolvent ; aucun écart de titre ni de date de dépôt sur les 239
+> notices arXiv des deux documents.** ☑ *Le résultat central de la revue — 12 attestées, 32
+> autodéclarées, 145 sans signe de revue — a été recalculé indépendamment sur les métadonnées
+> canoniques : les trois cardinaux tombent juste, et la revue est plus stricte que le contrôle qui
+> l'éprouvait, écartant des 32 une pièce dont le commentaire n'annonce qu'une soumission.*
+> ⚠ **Six notices de la veille ont été reprises** : trois adresses mortes ou détournées vers une page
+> de repli (Cloudflare ×2, UiPath), et deux pièces citées en v1 alors que leur v2 était parue avant
+> le gel — que la revue, elle, citait déjà en v2. Les trois paires de notices homonymes sont
+> désambiguïsées, et [`check-veille.py`](Python/check-veille.py) les arbitre désormais nommément.
+> L'édition passe à **144 p.** *Ce que cette passe ne fait pas : vérifier qu'une source dit ce que le
+> texte lui fait dire. Elle établit qu'elle existe, qu'elle est celle qu'on annonce, et qu'on la cite
+> juste.*
 
 ---
 
@@ -32,17 +69,19 @@ pas, et c'est l'intérêt.*
 | | **Veille technologique** | **Revue de littérature** |
 |---|---|---|
 | **Fichiers** | [`Veille Technologique.md`](Veille%20Technologique.md) → [`.pdf`](Veille%20Technologique.pdf) | [`Revue de littérature.md`](Revue%20de%20litt%C3%A9rature.md) → [`.pdf`](Revue%20de%20litt%C3%A9rature.pdf) |
-| **Titre** | *Interopérabilité et Orchestration Agentiques en Entreprise* — ⚠ **homonyme exact du Vol. IV** depuis le 9 août 2026 | *Interopérabilité et Orchestration Agentiques : revue de la littérature académique* — ⚠ **même radical**, aligné le même jour |
-| **Rendu** | **141 p.**, 14 sections numérotées, **342 références**, 24 tableaux, 25 questions ouvertes *(42 652 mots au corps)* | **53 p.**, 19 sections, **192 références**, 8 tableaux, dix fronts *(18 977 mots au corps)* |
+| **Titre** | *Interopérabilité et Orchestration Agentiques : veille technologique en entreprise* — ⚠ **même radical que le Vol. IV** ; l'homonymie exacte, ouverte le 9 août 2026, est levée le 17 par le sous-titre | *Interopérabilité et Orchestration Agentiques : revue de la littérature académique* — ⚠ **même radical**, aligné le 9 août 2026 |
+| **Rendu** | **144 p.**, 14 sections numérotées, **342 références**, 24 tableaux, 25 questions ouvertes *(42 142 mots hors bibliographie)* | **59 p.**, 18 sections numérotées, **192 références**, 8 tableaux, dix fronts *(18 491 mots hors bibliographie)* |
 | **Gel de l'information** | **15 août 2026** — les sections antérieures gardent leur date d'état | **15 août 2026** |
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Les trois quarts du champ n'ont franchi aucun comité » |
 | **Méthode** | Revue structurée, **vérification adverse à trois votants** chargés de *réfuter* ; source primaire consultée pour chaque énoncé factuel | Notices ouvertes une à une, **métadonnées reprises à l'API arXiv** — ce qui a corrigé plusieurs statuts que la passe de recherche donnait pour arbitrés |
-| **État** | Publiée ; **le format ferme de 100 pages est levé le 15 août 2026** — la re-vérification intégrale porte l'édition à 141 p. | Publiée ; **la cible de 40 pages fermes est levée le 15 août 2026** — l'édition en fait 53 |
+| **État** | Publiée ; **le format ferme de 100 pages est levé le 15 août 2026** — la re-vérification intégrale, puis les sept titres décollés et les six notices reprises le 17 août, portent l'édition à 144 p. | Publiée ; **la cible de 40 pages fermes est levée le 15 août 2026** — l'édition en fait 59 |
 
-⚠ **Trois livrables du dépôt sur sept partagent ce début d'intitulé** — ces deux-ci et le Vol. IV.
-**Un renvoi qui les cite par leur seul titre ne désigne rien** : il faut nommer le genre — « la veille
-technologique », « la revue de littérature », « le Vol. IV ». ☑ *C'est aussi par le genre que les
-fichiers se nomment, et non par le titre* : la convention du dépôt tient ici sans exception.
+⚠ **Quatre livrables du dépôt partagent ce début d'intitulé** — ces deux-ci, le Vol. IV, et le
+*Rapport de l'art* de `5 - Recension/`, entré le 16 août 2026, dont le titre est l'**homonyme
+exact** du Vol. IV. **Un renvoi qui les cite par leur seul titre ne désigne rien** : il faut nommer
+le genre — « la veille technologique », « la revue de littérature », « le Vol. IV », « le rapport de
+l'art ». ☑ *C'est aussi par le genre que les fichiers se nomment, et non par le titre* : la
+convention du dépôt tient ici sans exception.
 
 ---
 
@@ -72,16 +111,20 @@ et formalismes de processus est **industrielle, non scientifique** ; et l'absenc
 trace décrivant une chaîne de mandat est **confirmée par une seconde voie, plus sévère**.
 
 ⚠ **L'auto-citation est assumée et divulguée des deux côtés** : la veille cite les volumes du même
-auteur, la revue met à l'épreuve une veille du même auteur. Les limites de l'exercice — circularité
-possible, implémentation unique, chiffres institutionnels auto-déclarés — sont exposées en section 10
-de la veille.
+auteur, la revue met à l'épreuve une veille du même auteur. Les limites de l'exercice — *circularité
+aggravée*, quatre volumes qui **comptent pour un seul témoignage**, métriques d'adoption toutes
+auto-déclarées — sont exposées en **section 10** de la veille, sous ces termes.
 
 ---
 
 ## Construire les PDF
 
-Deux chaînes, **invocation Pandoc directe et gabarit Typst par défaut**, tout le réglage vivant dans
-l'en-tête YAML de chaque source. **Depuis ce dossier :**
+Deux chaînes, **invocation Pandoc directe et gabarit Typst livré avec Pandoc**, tout le réglage
+vivant dans l'en-tête YAML de chaque source. ⚠ **Le gabarit n'est plus pris tel quel depuis le
+17 août 2026** : le bloc `header-includes`, commun aux deux sources, **redéfinit sa fonction `conf`**
+pour composer lui-même le bloc de titre — le gabarit y laissait deux lignes vides sous l'auteur et
+n'en laissait aucune au-dessus. *Aucun fichier de gabarit n'est pour autant versionné : la
+redéfinition vit dans l'en-tête, avec tout le reste.* **Depuis ce dossier :**
 
 ```bash
 pandoc "Veille Technologique.md" --pdf-engine=typst --toc -o "Veille Technologique.pdf"
@@ -98,8 +141,10 @@ et son déplacement du 14 août a cloué sa chaîne de rendu à la racine du dé
 dépendance de fichier se déplace sans conséquence ; un livrable qui en a une ne se déplace jamais
 seul.*
 
-**Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, police New Computer Modern. Marges 2,8 × 2,6 cm, corps
-de 11 pt, résumé sur la page de titre.
+**Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, police New Computer Modern. Marges **117 pt en x,
+72 pt en y** — 4,13 × 2,54 cm, soit un corps de 378 pt sur 648 —, corps de 11 pt, résumé sur la page
+de titre. ⚠ *Les deux marges se lisent au YAML des deux sources, où elles sont identiques ; le
+traité compose sur la même géométrie depuis le 15 août 2026.*
 
 ---
 
@@ -109,9 +154,9 @@ Trois contrôles, **sans dépendance externe** : la bibliothèque standard seule
 
 | Script | Ce qu'il oppose au document | Dernière exécution |
 |---|---|---|
-| [`check-veille.py`](Python/check-veille.py) | **quatre contrôles** — renvois en clair contre numérotation Pandoc, cardinaux écrits en toutes lettres, doublons bibliographiques, appariement cité ↔ défini | **sortie 0** — 94 sections, 24 tableaux, 25 questions ouvertes ; **342 définies, 342 citées** |
+| [`check-veille.py`](Python/check-veille.py) | **quatre contrôles** — renvois en clair contre numérotation Pandoc *(et, depuis le 17 août 2026, titres collés au paragraphe précédent)*, cardinaux écrits en toutes lettres, doublons bibliographiques *par URL, DOI, arXiv **et titre**, les homonymies légitimes étant arbitrées nommément*, appariement cité ↔ défini | **sortie 0** — 94 sections, 24 tableaux, 25 questions ouvertes ; 342 entrées, **306 titres**, 3 homonymies arbitrées ; **342 définies, 342 citées** |
 | [`check-revue.py`](Python/check-revue.py) | **quatre contrôles** — appariement et contiguïté, légendes de tableau, doublons, **cardinaux du régime de preuve** | **sortie 0** — 192 entrées ; **12 attestées, 32 autodéclarées, 145 sans revue** sur 189 arXiv |
-| [`check-resume.py`](Python/check-resume.py) | **le budget de mise en page** : le résumé tient-il sur la page de titre du PDF rendu | **sortie 0** — dernière ligne à **y = 119,4 pt**, dégagement **+45,7 pt** |
+| [`check-resume.py`](Python/check-resume.py) | **le budget de mise en page** : le résumé tient-il sur la page de titre du PDF rendu | **sortie 0** — veille, dernière ligne à **y = 171,2 pt**, dégagement **+99,2 pt** ; revue, **y = 223,2 pt**, **+151,2 pt** |
 
 ⚠ **Ces trois contrôles ont attrapé, le 15 août 2026, ce qu'aucun relecteur n'avait vu** : huit URL
 partagées entre une entrée héritée et une entrée neuve — les rédacteurs travaillaient sur des
@@ -122,6 +167,15 @@ ce qu'on dit du document.* ⚠ **Et voici ce qu'ils n'ont pas vu** : sept citati
 entrée pour une pièce qui en portait une autre. Bibliographie valide, appariement clos, aucun
 doublon — *les quatre contrôles passaient. Un numéro juste au mauvais endroit ne se voit qu'en
 lisant.*
+
+⚠⚠ **Et voici ce que le premier d'entre eux avait faux depuis le début, corrigé le 17 août 2026.**
+`check-veille.py` calculait « les numéros que Pandoc attribuera » sur une simple expression
+régulière `^#{1,3} `, **sans la règle qui décide de tout** : Pandoc exige une ligne vide avant un
+titre, faute de quoi le croisillon reste du texte courant. Sept titres de la veille étaient dans ce
+cas. Le contrôle comptait donc **14 sections de rang 1 là où le PDF en composait 10**, et
+**déclarait résolus des renvois qui ne l'étaient pas** — il mesurait bien le document, mais il le
+lisait autrement que la chaîne qui le rend. ☑ *La leçon n'est pas qu'un contrôle mente : c'est qu'un contrôle qui
+réimplémente le comportement d'un outil hérite de chacune des règles qu'il n'a pas recopiées.*
 
 ```bash
 python Python/check-veille.py
@@ -141,44 +195,59 @@ tapé.*
 
 ⚠ **Ce que ces contrôles ne voient pas.** **Aucun ne résout un lien markdown** — c'est le défaut que
 le [README du dépôt](../README.md) porte à son tableau des reliquats, et *un déplacement de fichier
-ne lève donc aucune erreur*. Aucun ne vérifie non plus la **pagination** : les 100 pages de la veille
-et les 40 de la revue sont **constatées à chaque build, jamais vérifiées** — seule la chaîne du
-compendium oppose une porte de pagination à son rendu. ⚠ *Un mot ajouté fera tomber une cible en
-silence.*
+ne lève donc aucune erreur ; ce README-ci en portait un vers un `gauntlet-log.md` absent, et il a
+fallu le chercher à la main*. **Aucun ne vérifie la pagination** : les **144 pages** de la veille et
+les **59** de la revue sont **constatées à chaque build, jamais opposées à une cible** — les deux
+cibles ont été levées le 15 août 2026, et seule la chaîne du compendium oppose encore une porte de
+pagination à son rendu. ⚠ *Un mot ajouté déplacera une page en silence.* **Aucun ne lit le PDF
+autrement que par sa page 1** : `check-resume.py` mesure le budget de la page de titre, et rien
+au-delà — c'est ce qui a laissé sept titres se rendre en texte courant, d'un bout à l'autre de la
+veille, sans qu'aucun contrôle ne bronche. ⚠ *Le seul contrôle qui ouvre le rendu ne regarde qu'une
+page ; les trois autres ne lisent que la source, et l'un d'eux la lisait mal.*
 
-⚠ **`check-resume.py` est calibré sur le gabarit de la veille, et sur lui seul** : sa marge basse est
-la **constante** `MARGE_BASSE = 73.7` (les 2,6 cm de l'en-tête), et il mesure *tout* texte posé en
-page 1, folio compris. Rejoué sur `../3 - Traité/Traité.pdf`, qui compose à 1,9 cm et numérote dès la
-page de titre, il **sort 1 sans qu'une ligne y soit rognée**. *Un contrôle transporté sur un gabarit
-pour lequel il n'a pas été calibré ne mesure plus ce qu'il annonce.*
+⚠ **`check-resume.py` mesure la marge basse contre une constante, et cette constante suit le YAML** :
+`MARGE_BASSE = 72.0` — 1 po, valeur de `margin: y` des trois en-têtes depuis le 15 août 2026, où
+elle valait 73,7 auparavant. Il mesure *tout* texte posé en page 1, **folio compris**. ☑ **Rejoué sur
+`../3 - Traité/Traité.pdf`, il sort 0** — dernière ligne à y = 194,3 pt, dégagement +122,3 pt : le
+traité compose sur la même géométrie et, le bloc de réglage commun n'imprimant aucun folio en page de
+titre, rien ne fausse plus la mesure. ⚠ *Il l'a longtemps faussée, et ce README a porté le contraire
+jusqu'au 17 août 2026 : le contrôle n'est plus calibré sur la seule veille, mais rien ne garantit
+qu'il vaille pour un gabarit qui numéroterait sa page de titre ou composerait à d'autres marges.*
 
 ---
 
 ## Structure du dossier
 
 ```
-4 - Revue et Veille/
+4 - Veille/
 ├── README.md                        ← ce fichier
-├── Veille Technologique.md / .pdf     141 p., 342 réf. — édition du 15 août 2026, faits gelés à cette date
-├── Revue de littérature.md / .pdf     53 p., 192 réf. — arrêtée au 15 août 2026
-├── gauntlet-log.md                  ← journal de la boucle du 15 août : verdicts, écarts retenus, coûts
+├── Veille Technologique.md / .pdf    144 p., 342 réf. — édition du 15 août 2026, faits gelés à cette date
+├── Revue de littérature.md / .pdf     59 p., 192 réf. — arrêtée au 15 août 2026
 └── Python/                          ← les trois contrôles ; stdlib seule, aucune dépendance
-    ├── check-veille.py                renvois, cardinaux, bibliographie, appariement
+    ├── check-veille.py                renvois, titres collés, cardinaux, bibliographie, appariement
     ├── check-revue.py                 appariement, tableaux, doublons, régimes de preuve
     └── check-resume.py                budget de mise en page de la page de titre
 ```
 
 *(Les quatre fichiers de livrable et le dossier `Python/` venaient de la racine du dépôt, le 15 août
 2026 — `Python/` y avait lui-même été créé le 10 août, les trois scripts vivant à la racine
-auparavant.)*
+auparavant.)* ⚠ **Le dossier ne porte rien d'autre**, et il en portait moins que ce README ne
+disait : l'arborescence y a listé un `gauntlet-log.md` **qui n'a jamais existé ici** jusqu'au
+17 août 2026. *Le seul fichier de ce nom au dépôt est celui du traité.*
 
 ---
 
 ## Réserves
 
 - ⚠ **Aucune pagination n'est vérifiée** — voir plus haut. Les deux nombres de pages sont
-  **constatés au rendu du 15 août 2026**, jamais opposés à une cible : *les deux cibles ont été
-  levées ce jour-là, précisément parce que rien ne les tenait.*
+  **constatés au rendu du 17 août 2026** — 144 et 59 —, jamais opposés à une cible : *les deux
+  cibles ont été levées le 15 août, précisément parce que rien ne les tenait.*
+- ⚠⚠ **Un contrôle a validé pendant trois éditions ce qu'il ne mesurait pas.** Sept titres de la
+  veille se rendaient en texte courant, croisillon compris, et `check-veille.py` les comptait
+  pourtant comme des sections numérotées. **Le défaut est corrigé des deux côtés le 17 août 2026** —
+  les titres décollés, le contrôle aligné sur la règle de Pandoc et rendu capable de lever le cas.
+  ⚠ *Ce que la correction ne dit pas : combien d'autres règles de Pandoc ce contrôle n'a pas
+  recopiées. Il en réimplémente le comportement, il ne l'interroge pas.*
 - ⚠⚠ **La règle de régime de preuve de la revue sous-déclare l'arbitrage, et la revue le dit
   désormais elle-même.** Une passe de contre-épreuve du 15 août 2026 sur DBLP, Crossref et OpenAlex
   a repris sept entrées classées « sans revue » : **quatre sont publiées en actes** — ACL 2024,
@@ -186,8 +255,12 @@ auparavant.)*
   ni DOI. **Les 145 sont donc un plafond du non-arbitré, les 12 un plancher de l'arbitré**, et le
   plancher est bas : ni PMLR ni OpenReview ne sont indexés là où la contre-épreuve a cherché.
   *Le chiffre reste exact de ce qu'il mesure — la notice — et faux de ce qu'on lui faisait dire.*
-- ⚠ **Aucun contrôle ne résout un lien** — défaut commun à tout l'appareil du dépôt.
-- ⚠ **`check-resume.py` n'est calibré que pour le gabarit de la veille.**
+- ⚠ **Aucun contrôle ne résout un lien** — défaut commun à tout l'appareil du dépôt, et *ce README
+  en a porté un mort vers `gauntlet-log.md` jusqu'au 17 août 2026*.
+- ⚠ **`check-resume.py` ne mesure que la page 1**, et sa marge basse est une constante qui suit le
+  YAML à la main : elle vaut 72 pt et se relit à chaque changement de géométrie. *Le contrôle vaut
+  pour les trois documents du dépôt tant qu'ils composent à ces marges et ne numérotent pas leur
+  page de titre — il ne le vérifie pas, il le suppose.*
 - ⚠ **Les deux documents décrivent l'état de leurs sources à leur date de gel**, et cela ne se
   corrige pas après coup. Trois écarts connus entre la veille et l'arbre courant sont consignés au
   [README du dépôt](../README.md) — *signalés là-bas, non corrigés ici*.

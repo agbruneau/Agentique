@@ -180,7 +180,10 @@ pub struct TriDeVue {
     /// Taille de la vue conservée par agent.
     pub c: usize,
     /// Attribut de chaque agent — c'est sur lui que porte la distance.
-    pub attribut: Vec<f64>,
+    ///
+    /// Lecture seule par [`TriDeVue::attribut`] : il **dimensionne** la table
+    /// des vues, et le redimensionner de l'extérieur la laissait derrière lui.
+    attribut: Vec<f64>,
     /// Vue de chaque agent.
     vues: Vec<Vec<u32>>,
 }
@@ -196,9 +199,17 @@ impl TriDeVue {
         }
     }
 
+    /// L'attribut de chaque agent, en lecture seule.
+    pub fn attribut(&self) -> &[f64] {
+        &self.attribut
+    }
+
     /// La vue de l'agent `i` — ce qu'il croit être son voisinage.
-    pub fn vue(&self, i: u32) -> &[u32] {
-        &self.vues[i as usize]
+    ///
+    /// Rend `None` hors population : un agent qui n'existe pas n'a pas de vue
+    /// (SPEC §7, clause 4).
+    pub fn vue(&self, i: u32) -> Option<&[u32]> {
+        self.vues.get(i as usize).map(|v| v.as_slice())
     }
 
     fn distance(&self, i: u32, j: u32) -> f64 {
@@ -207,10 +218,16 @@ impl TriDeVue {
 
     /// Un cycle : chaque agent échange sa vue avec un pair, puis conserve les
     /// `c` descripteurs les plus proches au sens de l'attribut.
+    ///
+    /// Le service de pairs a **sa propre** population : un identifiant qu'il
+    /// rend au-delà de celle-ci désigne un agent sans attribut ni vue, et il est
+    /// écarté comme un tirage sans réponse (SPEC §7, clause 4). C'est ce qui
+    /// garantit que toute entrée de `vues` reste un agent de la population, donc
+    /// que [`TriDeVue::scission_silencieuse`] peut l'indexer sans garde.
     pub fn cycle(&mut self, service: &mut ServiceDePairs, alea: &mut Alea) {
         let n = self.attribut.len() as u32;
         for i in 0..n {
-            let pair = match service.tirer(i, alea) {
+            let pair = match service.tirer(i, alea).filter(|p| *p < n) {
                 Some(p) => p,
                 None => continue,
             };
@@ -221,9 +238,12 @@ impl TriDeVue {
             candidats.sort_unstable();
             candidats.dedup();
             candidats.sort_by(|a, b| {
+                // `total_cmp` et non `partial_cmp(…).unwrap_or(Equal)` : sur un
+                // `NaN`, ce dernier rend un ordre **non transitif**, donc un
+                // résultat de tri qui dépend du parcours de l'algorithme — la
+                // définition même de ce que PD1 interdit.
                 self.distance(i, *a)
-                    .partial_cmp(&self.distance(i, *b))
-                    .unwrap_or(std::cmp::Ordering::Equal)
+                    .total_cmp(&self.distance(i, *b))
                     // Départage stable par identifiant : sans lui, l'ordre
                     // dépendrait de l'algorithme de tri (PD1).
                     .then(a.cmp(b))
@@ -240,11 +260,17 @@ impl TriDeVue {
     /// et l'interface doit le dire (PD10, §8.3).
     pub fn scission_silencieuse(&self) -> Option<String> {
         let n = self.attribut.len();
+        // Sans population, il n'y a pas de médiane à prendre : `tri[n/2]`
+        // sortait des bornes. Aucune scission n'est constatable non plus.
+        if n == 0 {
+            return None;
+        }
         // Deux moitiés par l'attribut : la scission se lit si aucune vue ne
         // traverse la frontière.
         let mediane = {
             let mut tri = self.attribut.clone();
-            tri.sort_by(|a, b| a.partial_cmp(b).unwrap_or(std::cmp::Ordering::Equal));
+            // Ordre **total** : voir [`TriDeVue::cycle`] (PD1).
+            tri.sort_by(|a, b| a.total_cmp(b));
             tri[n / 2]
         };
         let cote = |i: usize| self.attribut[i] >= mediane;
@@ -365,11 +391,41 @@ mod tests {
             t.cycle(&mut s, &mut alea);
         }
         // La vue de l'agent 16 doit être peuplée de ses voisins d'attribut.
-        let vue = t.vue(16);
+        let vue = t.vue(16).expect("l'agent 16 est dans la population");
         assert!(!vue.is_empty());
         assert!(vue.len() <= 4);
         let ecart_max = vue.iter().map(|j| (*j as i64 - 16).abs()).max().unwrap();
         assert!(ecart_max <= 6, "vue {vue:?} trop éloignée");
+        assert_eq!(t.vue(32), None, "hors population, aucune vue");
+    }
+
+    /// SPEC §7, clause 4 — une population vide faisait sortir
+    /// `scission_silencieuse` des bornes de sa médiane, et un **service de pairs
+    /// plus grand** que la population fait entrer dans les vues des agents qui
+    /// n'existent pas ici. `attribut` n'est plus public : le désaligner de la
+    /// table des vues n'est plus exprimable.
+    #[test]
+    fn une_population_vide_ou_plus_petite_que_le_service_ne_panique_pas() {
+        let vide = TriDeVue::nouveau(Vec::new(), 3);
+        assert_eq!(vide.scission_silencieuse(), None);
+        assert_eq!(vide.vue(0), None);
+
+        let mut t = TriDeVue::nouveau(vec![0.0, 1.0, 2.0], 3);
+        let mut s = ServiceDePairs::nouveau(64, Biais::Uniforme);
+        let mut alea = Alea::nouveau(6);
+        for _ in 0..20 {
+            t.cycle(&mut s, &mut alea);
+        }
+        assert_eq!(t.attribut().len(), 3, "la population reste celle du mécanisme");
+        assert_eq!(t.vue(3), None, "hors population, aucune vue");
+        // Aucune vue ne porte un agent que la population n'a pas : c'est
+        // l'invariant qui rend `scission_silencieuse` indexable sans garde.
+        for i in 0..3u32 {
+            for j in t.vue(i).unwrap() {
+                assert!((*j as usize) < t.attribut().len(), "vue hors population : {j}");
+            }
+        }
+        let _ = t.scission_silencieuse();
     }
 
     /// EX-A18, PD10 — la **scission silencieuse** est provocable, et seul

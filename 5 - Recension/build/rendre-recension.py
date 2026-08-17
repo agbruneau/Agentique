@@ -23,7 +23,13 @@ CE QU'IL FAIT DU MARKDOWN, et c'est tout ce qu'il en fait :
 
 ⚠ CE QUI PRÉCÈDE LE PREMIER `##` NE PASSE PAS AU PDF — titre du document et
 ligne d'auteur y sont portés par la page de titre du gabarit. Tout contenu doit
-donc vivre sous un `##`, y compris l'avertissement de régime.
+donc vivre sous un `##`, l'ouverture comprise.
+
+⚠ `figures/` EST COPIÉ DANS LE DOSSIER TEMPORAIRE, et il faut le faire : Typst
+résout les chemins d'image depuis le `.typ`, qui vit hors de l'arborescence du
+rapport. Les figures se pointent donc en `figures/…svg` dans le markdown — même
+chemin de part et d'autre —, et un SVG absent ferait échouer la composition, non
+un rendu à trou.
 
 ⚠ AUCUNE PORTE DE PAGINATION, contrairement à la chaîne du compendium : les
 mille pages exactes sont une instruction propre à ce volume-là. Ici le nombre de
@@ -41,12 +47,15 @@ RACINE = Path(__file__).resolve().parent.parent
 SOURCE = RACINE / "Rapport de l'art.md"
 SORTIE = RACINE / "Rapport de l'art.pdf"
 GABARIT = RACINE / "build" / "recension.template"
+FIGURES = RACINE / "figures"
 FILTRE = RACINE / "build" / "accentuation.lua"
 
 RE_CHAPITRE = re.compile(r"^## Chapitre (\d+)\s+[—-]\s+(.+)$")
 RE_PIECE = re.compile(r"^## (.+?)\s+[—-]\s+(.+)$")
 RE_RANG_ECRIT = re.compile(r"^\d+(\.\d+)*\b")
-RE_LEGENDE = re.compile(r"^(:\s*)(Tableaux? \d+\.\d+)")
+# Le rang d'un tableau suit celui de sa pièce, et une pièce sans rang porte une
+# lettre : « Tableau E.1 » au sommaire exécutif, faute de numéro de chapitre.
+RE_LEGENDE = re.compile(r"^(:\s*)(Tableaux? [\dA-Z]+\.\d+)")
 # Un bloc de code ne se transforme pas : un `## ` en son sein est du contenu.
 RE_CLOTURE = re.compile(r"^\s*(```|~~~)")
 
@@ -138,7 +147,7 @@ def main():
     for outil in ("pandoc", "typst"):
         if shutil.which(outil) is None:
             sys.exit(f"[rendre] Dépendance manquante : {outil}")
-    for chemin in (SOURCE, GABARIT, FILTRE):
+    for chemin in (SOURCE, GABARIT, FILTRE, FIGURES):
         if not chemin.exists():
             sys.exit(f"[rendre] Introuvable : {chemin}")
 
@@ -149,6 +158,8 @@ def main():
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
         (tmp / "recension.md").write_text(texte, encoding="utf-8")
+        shutil.copytree(FIGURES, tmp / "figures",
+                        ignore=shutil.ignore_patterns("*.py", "__pycache__"))
         subprocess.run(
             ["pandoc", str(tmp / "recension.md"), "-f", "markdown-raw_html",
              f"--template={GABARIT}", f"--lua-filter={FILTRE}",

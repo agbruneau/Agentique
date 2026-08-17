@@ -27,11 +27,12 @@ pub enum Etat {
 /// la rumeur — et l'agent se retire à `cpt ≥ K`. C'est la **ligne 6**, et c'est
 /// elle seule qui sépare Θ(n log log n) de Θ(n log n).
 pub struct Rumeur {
-    /// Taille de la population.
-    pub n: u32,
     /// Compteur de retrait K. `None` désactive le retrait : c'est le schéma
     /// naïf.
     pub k: Option<u32>,
+    /// État de chaque agent. **C'est elle qui porte la population** : il n'y a
+    /// pas de champ `n` en regard qu'un appelant pourrait déplacer sans déplacer
+    /// les tables. Voir [`Rumeur::n`].
     etat: Vec<Etat>,
     compteur: Vec<u32>,
     /// Messages de rumeur échangés.
@@ -62,7 +63,6 @@ impl Rumeur {
         let mut etat = vec![Etat::Susceptible; n as usize];
         etat[0] = Etat::Infectieux;
         Rumeur {
-            n,
             k,
             etat,
             compteur: vec![0; n as usize],
@@ -75,7 +75,24 @@ impl Rumeur {
         }
     }
 
-    /// L'état de l'agent `i`.
+    /// Taille de la population — **dérivée** de la table d'états, jamais rangée
+    /// en double à côté d'elle. Vaut au moins 1.
+    pub fn n(&self) -> u32 {
+        self.etat.len() as u32
+    }
+
+    /// L'état de l'agent `i`, où `i` est un indice de la population et non un
+    /// identifiant tiré du service de pairs — les deux se ressemblent et ne se
+    /// confondent pas ici.
+    ///
+    /// # Panics
+    ///
+    /// Si `i >= n()`. C'est le seul accès public du module qui indexe sans
+    /// borner : les identifiants venus du service de pairs sont écartés à
+    /// l'entrée par `Rumeur::tirer`, privé, qui les traite comme un tirage sans
+    /// réponse. Le rendre faillible comme
+    /// [`crate::echantillonnage::TriDeVue::vue`] est un changement de
+    /// signature ; la méthode n'a aucun appelant dans le dépôt.
     pub fn etat(&self, i: u32) -> Etat {
         self.etat[i as usize]
     }
@@ -87,7 +104,7 @@ impl Rumeur {
             .iter()
             .filter(|e| **e != Etat::Susceptible)
             .count();
-        informes as f64 / self.n as f64
+        informes as f64 / self.n() as f64
     }
 
     /// **Fraction résiduelle de susceptibles.** C'est la grandeur qu'EX-A40
@@ -99,8 +116,9 @@ impl Rumeur {
     /// Un tour.
     pub fn tour(&mut self, service: &mut ServiceDePairs, alea: &mut Alea) {
         self.tours += 1;
+        let n = self.n();
         let etats = self.etat.clone();
-        for i in 0..self.n {
+        for i in 0..n {
             if etats[i as usize] != Etat::Infectieux {
                 continue;
             }
@@ -130,7 +148,7 @@ impl Rumeur {
         // EX-A20 — l'anti-entropie tourne **en parallèle**, comme filet. Elle
         // n'a pas d'état retiré : elle réconcilie tant qu'il reste un écart.
         if self.anti_entropie && self.tours.is_multiple_of(self.periode_anti_entropie) {
-            for i in 0..self.n {
+            for i in 0..n {
                 let j = match self.tirer(i, service, alea) {
                     Some(j) => j,
                     None => continue,
@@ -146,15 +164,21 @@ impl Rumeur {
         }
     }
 
+    /// Le seul point par où un identifiant de pair entre dans ce mécanisme —
+    /// donc le seul endroit où il faut le borner. Le service de pairs a **sa
+    /// propre** population : au-delà de `n`, il désigne un agent que la rumeur
+    /// n'a pas, et le tirage vaut alors un tirage sans réponse (SPEC §7,
+    /// clause 4).
     fn tirer(&self, i: u32, service: &mut ServiceDePairs, alea: &mut Alea) -> Option<u32> {
+        let n = self.n();
         if self.sensible_a_ladresse {
             // L'agent choisit son pair d'après ce qu'il sait de lui : il sort du
             // modèle, et la borne cesse de s'appliquer dans un sens comme dans
             // l'autre (§4.2, EX-A42).
-            let candidat = (i + 1) % self.n;
+            let candidat = (i + 1) % n;
             return Some(candidat);
         }
-        service.tirer(i, alea)
+        service.tirer(i, alea).filter(|j| *j < n)
     }
 
     /// **EX-A40** — la couverture est une **vivacité probabiliste** et ne
@@ -356,14 +380,29 @@ mod tests {
     use super::*;
 
     /// SPEC §7, clause 4 — `n = 0` indexait un vecteur vide. La population est
-    /// ramenée à un agent, et le tour ne panique pas.
+    /// ramenée à un agent, et le tour ne panique pas. La population n'est plus
+    /// un champ public : ce qui reste atteignable est un **service de pairs plus
+    /// grand** que la rumeur, et il ne panique pas non plus.
     #[test]
-    fn une_population_vide_ne_panique_pas() {
+    fn une_population_vide_ou_plus_petite_que_le_service_ne_panique_pas() {
         let mut r = Rumeur::nouvelle(0, Some(3));
-        assert_eq!(r.n, 1);
+        assert_eq!(r.n(), 1);
         let mut s = crate::echantillonnage::ServiceDePairs::nouveau(1, crate::echantillonnage::Biais::Uniforme);
         let mut alea = Alea::nouveau(1);
         r.tour(&mut s, &mut alea);
+
+        let mut petite = Rumeur::nouvelle(4, Some(3));
+        petite.anti_entropie = true;
+        petite.periode_anti_entropie = 1;
+        let mut grand = crate::echantillonnage::ServiceDePairs::nouveau(
+            64,
+            crate::echantillonnage::Biais::Uniforme,
+        );
+        for _ in 0..20 {
+            petite.tour(&mut grand, &mut alea);
+        }
+        assert_eq!(petite.n(), 4, "la population reste celle du mécanisme");
+        assert!(petite.fraction_informee() <= 1.0);
     }
 
     /// **Critère (1) du scénario I** — la fraction résiduelle de susceptibles

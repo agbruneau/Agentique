@@ -20,7 +20,7 @@ pub const BLOC_K: Bloc = Bloc {
          réparti a une durée pendant laquelle la règle qu'il protège est fausse — l'honnêteté \
          consiste à borner cette durée, pas à prétendre qu'elle n'existe pas.",
     these: "Le budget est un plafond, pas une garantie.",
-    source: "§5.3, tableau 16, p. 63",
+    source: "§5.3, tableau 16, p. 84 (3ᵉ éd.)",
     mecanisme_visible:
         "activer le budget de reprise borne l'amplification par client à 1,1 fois la charge \
          nominale ; la dépendance saturée reçoit alors 1,1 × la charge nominale de chacun des \
@@ -341,10 +341,21 @@ mod tests {
         // Cent clients tous conformes : la dépendance reçoit 110 fois la charge
         // nominale d'un client, et aucune règle locale ne voit cet agrégat.
         assert!((b.amplification_agregee(100, true) - 110.0).abs() < 1e-9);
-        assert!(
-            b.amplification_agregee(100, true) > b.amplification_par_client(true) * 50.0,
-            "l'agrégat n'est borné par rien"
-        );
+        // « L'agrégat n'est borné par rien » : il croît proportionnellement au
+        // nombre de clients, sans plafond. Comparer l'agrégat de cent clients à
+        // cinquante fois l'amplification d'un seul serait une conséquence
+        // arithmétique des deux lignes ci-dessus, donc une assertion qui ne peut
+        // pas échouer ; ce qui se réfute est la **croissance sans plafond**.
+        let mut precedent = 0.0;
+        for clients in [1u32, 10, 1_000, 100_000, 10_000_000] {
+            let a = b.amplification_agregee(clients, true);
+            assert!(
+                (a - 1.1 * f64::from(clients)).abs() < 1e-6 * a.max(1.0),
+                "{clients} clients : agrégat {a}, attendu 1,1 × {clients}"
+            );
+            assert!(a > precedent, "l'agrégat a cessé de croître à {clients} clients");
+            precedent = a;
+        }
         assert_eq!(
             Levier::BudgetDeReprise.ne_borne_pas(),
             "l'agrégat de tous les clients"
@@ -478,8 +489,15 @@ mod tests {
         ] {
             assert!(!l.ne_borne_pas().is_empty(), "{}", l.nom());
         }
-        assert_eq!(Criticite::TOUTES.len(), 4);
-        assert_eq!(Criticite::CriticalPlus.nom(), "CRITICAL_PLUS");
+        // `TOUTES.len() == 4` était une vérité de compilation — le type est
+        // `[Criticite; 4]` —, donc une assertion qui ne peut pas échouer. Ce que
+        // la taxonomie promet et qui se réfute : les quatre entrées sont les
+        // quatre classes de la source, chacune une fois, de la plus haute à la
+        // plus délestable. Un doublon, un oubli ou une inversion tombe ici.
+        assert_eq!(
+            Criticite::TOUTES.map(Criticite::nom),
+            ["CRITICAL_PLUS", "CRITICAL", "SHEDDABLE_PLUS", "SHEDDABLE"]
+        );
     }
 
     /// **EX-V20** — toute borne de distribution s'affiche avec le compteur

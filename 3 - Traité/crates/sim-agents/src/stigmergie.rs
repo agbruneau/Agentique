@@ -4,7 +4,7 @@
 //!
 //! > Un essaim stigmergique n'atteint pas l'optimum, il campe à distance bornée
 //! > de lui, et cette distance est un réglage et non un défaut à corriger.
-//! > (§1.2, p. 13)
+//! > (§1.2, p. 16)
 //!
 //! Ce que ce mécanisme **ne** démontre **pas**, et que l'interface ne doit
 //! jamais laisser croire (F3) : la convergence. Le traité écrit que l'énoncé du
@@ -198,8 +198,39 @@ impl Params {
                     .to_string(),
             );
         }
+        // La moitié **basse** du domaine exclu ne produisait ni écrêtage, ni
+        // avertissement, ni refus : `depot()` rendait +∞ à γ = 0 et `NaN` à
+        // γ < 0. Le domaine (0, 1) a deux bords, et les deux se signalent.
+        if self.gamma <= 0.0 || self.gamma.is_nan() {
+            a.push(format!(
+                "γ = {:.3} ≤ 0 : hors du domaine (0, 1) posé au §1.2, et la décroissance par \
+                 fenêtre n'y est pas définie. La calibration du dépôt écrête γ à {:.0e} pour rendre \
+                 une valeur finie, les bornes d'EX-A11c sont effacées (NF-14), et ce qui s'affiche \
+                 n'est plus le régime qu'on croit régler.",
+                self.gamma,
+                Params::GAMMA_MIN
+            ));
+        }
         a
     }
+
+    /// Bord **bas** de l'écrêtage de γ dans les trois calculs qui l'évaluent.
+    ///
+    /// **Décision d'implantation, sans provenance dans le traité (F1)** : le
+    /// §1.2 pose γ ∈ (0, 1) sans borner l'intervalle par des valeurs
+    /// représentables. Hors domaine, `−ln γ` vaut +∞ à γ = 0 et `NaN` à γ < 0,
+    /// et l'un comme l'autre contaminent tout ce qui en descend. L'écrêtage est
+    /// une **coercition déclarée** : [`Params::avertissements`] la signale et
+    /// [`Params::bornes_applicables`] efface la borne.
+    pub const GAMMA_MIN: f64 = 1e-6;
+
+    /// Bord **haut** du même écrêtage, pour la seule calibration du dépôt.
+    ///
+    /// γ = 1 est un préréglage exposé exprès (EX-A11a, [`Params::verrouillage`]),
+    /// et la calibration y diviserait par zéro. Les chemins du moteur, eux, ne
+    /// passent pas par ce bord : ils court-circuitent γ ≥ 1 sur `ln γ = 0`, ce
+    /// qui est la valeur exacte et non une approche.
+    pub const GAMMA_MAX: f64 = 0.999_999;
 
     /// Intensité d'un dépôt.
     ///
@@ -209,6 +240,13 @@ impl Params {
     /// atteigne φ_max quand **toute** la population sert la même ressource ;
     /// sans cette calibration, φ sature à l'écrêtage dès les premiers cycles,
     /// toutes les ressources se valent, et la trace cesse de piloter le tirage.
+    ///
+    /// γ est écrêté aux **deux** bords du domaine (0, 1) — voir
+    /// [`Params::GAMMA_MIN`] et [`Params::GAMMA_MAX`]. Sans le bord bas, γ = 0
+    /// rendait +∞ et γ < 0 rendait `NaN`, et ce `NaN` descendait dans φ, puis
+    /// dans les poids de tirage, puis dans les comparaisons qui les classent.
+    /// La coercition est déclarée : [`Params::avertissements`] la signale et
+    /// [`Params::bornes_applicables`] efface la borne.
     ///
     // ponytail: calibration analytique sur le régime stationnaire d'une
     // exponentielle. Elle suppose un flux régulier ; sous rafales, la valeur
@@ -220,7 +258,15 @@ impl Params {
         }
         let cycles_par_fenetre = self.fenetre_tau_ms / self.periode_cycle_ms;
         let taux = self.n as f64 * cycles_par_fenetre;
-        let decroissance = -libm::log(self.gamma.min(0.999_999));
+        // `NaN` est traité à part : `f64::clamp` le **propage**, et γ = NaN — que
+        // le décodage d'un lien partagé peut produire — sortirait sinon un dépôt
+        // `NaN`, ce que cet écrêtage existe précisément pour empêcher.
+        let gamma = if self.gamma.is_nan() {
+            Params::GAMMA_MIN
+        } else {
+            self.gamma.clamp(Params::GAMMA_MIN, Params::GAMMA_MAX)
+        };
+        let decroissance = -libm::log(gamma);
         self.phi_max * decroissance / taux
     }
 
@@ -311,11 +357,14 @@ impl Params {
     /// de la deuxième édition). L'effacement suit le **réglage** et jamais Φ_c
     /// mesuré — voir le §0.1 du PRD.
     pub fn bornes_applicables(&self) -> Result<Bornes, String> {
-        if self.gamma >= 1.0 {
+        // Le domaine a **deux** bords : γ ≥ 1 supprime l'oubli, γ ≤ 0 le rend
+        // indéfini, et la forme négative attrape `NaN` par la même occasion.
+        if !(self.gamma > 0.0 && self.gamma < 1.0) {
             return Err(format!(
                 "borne effacée : γ = {:.3} est hors du domaine (0, 1) que le traité pose au §1.2. \
-                 Sans oubli, φ_max/φ_min n'est plus borné et le plancher calculé ne s'applique \
-                 plus — il n'est ni grisé ni pointillé, il est retiré (NF-14).",
+                 Au-delà de 1, sans oubli, φ_max/φ_min n'est plus borné ; à 0 ou en deçà, la \
+                 décroissance par fenêtre n'est pas définie. Dans les deux cas le plancher calculé \
+                 ne s'applique plus — il n'est ni grisé ni pointillé, il est retiré (NF-14).",
                 self.gamma
             ));
         }
@@ -372,9 +421,14 @@ pub struct Bornes {
 
 impl Bornes {
     /// Légende obligatoire (EX-A11c), citée du traité.
+    ///
+    /// La provenance **nomme son édition** : `BLOC_B` cite la même page à
+    /// l'autre bout du même écran avec sa mention, et une page citée sans elle
+    /// est une provenance fausse, pas imprécise (F2). `sim-viz` recopie cette
+    /// chaîne dans `SOURCE_BORNES` et tient la copie accordée par un test.
     pub const LEGENDE: &'static str =
         "un essaim stigmergique n'atteint pas l'optimum, il campe à distance bornée de lui, et \
-         cette distance est un réglage et non un défaut à corriger (§1.2, p. 13)";
+         cette distance est un réglage et non un défaut à corriger (§1.2, p. 16, 3ᵉ éd.)";
 }
 
 /// Une ressource à exploiter.
@@ -636,8 +690,8 @@ impl Fourragement {
 
     /// Arme les oracles du mécanisme (EX-A11b, NF-11).
     pub fn armer_oracles(&self, registre: &mut Registre) {
-        registre.armer(Oracle::surete(PLANCHER, "§1.2, p. 13"));
-        registre.armer(Oracle::surete(HORS_DOMINANTE, "§1.2, p. 13"));
+        registre.armer(Oracle::surete(PLANCHER, "§1.2, p. 16"));
+        registre.armer(Oracle::surete(HORS_DOMINANTE, "§1.2, p. 16"));
         self.milieu.armer_oracles(registre);
     }
 
@@ -799,7 +853,10 @@ impl Fourragement {
         let ln_gamma = if self.params.gamma >= 1.0 {
             0.0
         } else {
-            libm::log(self.params.gamma)
+            // Bord bas écrêté : à γ ≤ 0, `ln γ` vaut −∞ ou `NaN`, et le facteur
+            // de décroissance contaminerait tous les φ, puis les poids de
+            // tirage, puis les comparaisons qui les classent (PD1).
+            libm::log(self.params.gamma.max(Params::GAMMA_MIN))
         };
         let decroissance = |duree: f64| {
             if ln_gamma == 0.0 {
@@ -896,7 +953,7 @@ impl Fourragement {
                 moteur.maintenant(),
                 format!(
                     "probabilité de tirage minimale {p_min:.9} sous le plancher \
-                     {:.9} — défaut d'implantation ou erreur du traité (§1.2, p. 13)",
+                     {:.9} — défaut d'implantation ou erreur du traité (§1.2, p. 16)",
                     bornes.plancher_tirage
                 ),
             );
@@ -922,7 +979,10 @@ impl Fourragement {
             return;
         }
         let mut classes: Vec<usize> = (0..poids.len()).collect();
-        classes.sort_by(|a, b| poids[*b].partial_cmp(&poids[*a]).unwrap_or(std::cmp::Ordering::Equal));
+        // Ordre **total** sur les poids : `partial_cmp(…).unwrap_or(Equal)`
+        // cesse d'être transitif dès qu'un poids vaut `NaN`, et le classement
+        // dépend alors du parcours de l'algorithme de tri (PD1).
+        classes.sort_by(|a, b| poids[*b].total_cmp(&poids[*a]));
         if classes.len() < 2 {
             return;
         }
@@ -932,7 +992,11 @@ impl Fourragement {
         }
         let tau = self.granularite.tics_depuis_ms(self.params.fenetre_tau_ms).0.max(1) as f64;
         let fenetre = self.granularite.tics_depuis_ms(self.params.l99_milieu_ms).0 as f64;
-        let seuil = self.params.phi_max * (1.0 - libm::pow(self.params.gamma, fenetre / tau));
+        // Même écrêtage du bord bas que dans `actualiser_phi` : `pow` d'une base
+        // négative à exposant fractionnaire rend `NaN`, et un seuil `NaN` rend
+        // la comparaison fausse sans que rien ne le signale.
+        let seuil = self.params.phi_max
+            * (1.0 - libm::pow(self.params.gamma.max(Params::GAMMA_MIN), fenetre / tau));
         if (self.agents[i].phi[a] - self.agents[i].phi[b]).abs() < seuil {
             self.mesures.decisions_non_fiables += 1;
             moteur
@@ -1080,7 +1144,9 @@ impl Fourragement {
         self.ressources
             .iter()
             .enumerate()
-            .max_by(|a, b| a.1.utilite.partial_cmp(&b.1.utilite).unwrap_or(std::cmp::Ordering::Equal))
+            // Ordre **total** sur l'utilité — voir `compter_incomparabilite`
+            // (PD1).
+            .max_by(|a, b| a.1.utilite.total_cmp(&b.1.utilite))
             .map(|(j, _)| j)
             .unwrap_or(0)
     }
@@ -1109,6 +1175,11 @@ mod tests {
     fn aucun_reglage_de_bord_ne_rend_une_probabilite_hors_domaine() {
         let bords: Vec<(&str, Params)> = vec![
             ("γ = 1", Params { gamma: 1.0, ..Params::scenario_b() }),
+            // Le domaine (0, 1) a **deux** bords, et la moitié basse ne
+            // produisait ni écrêtage, ni avertissement, ni refus.
+            ("γ = 0", Params { gamma: 0.0, ..Params::scenario_b() }),
+            ("γ < 0", Params { gamma: -0.5, ..Params::scenario_b() }),
+            ("γ = NaN", Params { gamma: f64::NAN, ..Params::scenario_b() }),
             ("φ_min = 0", Params { phi_min: 0.0, ..Params::scenario_b() }),
             ("φ vide", Params { phi_min: 2.0, phi_max: 1.0, ..Params::scenario_b() }),
             ("η_max = 0", Params { eta_max: 0.0, ..Params::scenario_b() }),
@@ -1130,6 +1201,52 @@ mod tests {
                 ),
             }
         }
+    }
+
+    /// N5, les deux bords — hors du domaine (0, 1), la calibration du dépôt
+    /// rendait `+∞` à γ = 0 et `NaN` à γ < 0, sans écrêtage, sans avertissement
+    /// et sans refus. Le `NaN` descendait dans φ, puis dans les poids, puis dans
+    /// les comparaisons qui les classent, **où il détruisait l'ordre
+    /// déterministe** (PD1).
+    #[test]
+    fn les_deux_bords_du_domaine_de_gamma_sont_ecretes_et_signales() {
+        for gamma in [0.0, -0.5, f64::NAN] {
+            let p = Params { gamma, ..Params::scenario_b() };
+            let d = p.depot();
+            assert!(d.is_finite() && d > 0.0, "γ = {gamma} : dépôt {d}");
+            assert!(
+                p.avertissements().iter().any(|a| a.contains("hors du domaine (0, 1)")),
+                "γ = {gamma} : le bord bas doit être signalé"
+            );
+        }
+        // Le bord haut, lui, reste écrêté comme avant : γ = 1 est un préréglage.
+        assert!(Params { gamma: 1.0, ..Params::scenario_b() }.depot().is_finite());
+        // Et le domaine utile n'est pas mangé par les gardes.
+        assert!(Params::scenario_b().avertissements().is_empty());
+    }
+
+    /// PD1 — l'ordre des poids est **total**. Avec
+    /// `partial_cmp(…).unwrap_or(Equal)`, un seul `NaN` rendait la comparaison
+    /// non transitive, et le résultat du tri dépendait de la position du `NaN`
+    /// dans l'entrée, donc du parcours de l'algorithme.
+    #[test]
+    fn lordre_des_poids_ne_depend_pas_de_la_position_dun_nan() {
+        let trier = |mut v: Vec<f64>| {
+            let mut idx: Vec<usize> = (0..v.len()).collect();
+            idx.sort_by(|a, b| v[*b].total_cmp(&v[*a]));
+            v = idx.iter().map(|i| v[*i]).collect();
+            v
+        };
+        let a = trier(vec![3.0, f64::NAN, 1.0, 2.0]);
+        let b = trier(vec![1.0, f64::NAN, 3.0, 2.0]);
+        // Mêmes valeurs, ordres d'entrée différents, même sortie — ce que
+        // `partial_cmp(…).unwrap_or(Equal)` ne donnait pas.
+        assert_eq!(
+            a.iter().map(|x| format!("{x}")).collect::<Vec<_>>(),
+            b.iter().map(|x| format!("{x}")).collect::<Vec<_>>()
+        );
+        assert!(a[0].is_nan(), "l'ordre total place `NaN` à un rang fixe, {a:?}");
+        assert_eq!(&a[1..], &[3.0, 2.0, 1.0]);
     }
 
     /// EX-A58 — la conformité de la population efface la borne, parce que le

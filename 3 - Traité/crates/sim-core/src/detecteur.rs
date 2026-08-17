@@ -56,9 +56,26 @@ impl Etat {
 /// restants, plus le délai d'expiration. À période 10 s, seuil 3 et expiration
 /// 1 s, cela donne 21 s à 31 s, et NF-15 exige qu'un test retrouve ce chiffre.
 ///
-/// `#[non_exhaustive]` **tient PD12 par le type** : hors de cette crate, la
-/// structure ne se construit pas par littéral, donc personne ne peut fabriquer
-/// une exactitude que nul sondage ne porte. Les champs restent lisibles.
+/// `#[non_exhaustive]` **ne tient pas PD12 par le type**, contrairement à ce que
+/// ce commentaire affirmait. Il interdit hors de cette crate le littéral, la
+/// mise à jour fonctionnelle et le filtrage exhaustif — c'est-à-dire qu'il rend
+/// l'ajout d'un champ non cassant. Il n'interdit **pas** l'affectation de
+/// champ : les quatre champs sont `pub`, la structure est `Copy`, et
+/// [`Detecteur::proprietes`] en rend un exemplaire par valeur. Mesuré depuis une
+/// crate externe, sur un détecteur ayant porté **une** suspicion, fausse :
+///
+/// ```text
+/// (a) mesuré   : suspicions=1       fausses=1 exactitude=Some(1.0)
+/// (a) fabriqué : suspicions=1000000 fausses=0 exactitude=Some(0.0)
+/// ```
+///
+/// Ce que PD12 tient réellement, et qui est plus étroit : le détecteur ne prend
+/// jamais ces nombres d'ailleurs que de [`Detecteur::sonder`], et une copie
+/// falsifiée ne remonte pas dans l'objet — elle ne trompe qu'un affichage.
+/// Le tenir *par le type* demanderait des champs privés et quatre accesseurs,
+/// ce qui casse un appelant hors crate (`crates/sim-agents/src/pair_a_pair.rs`,
+/// qui lit `p.suspicions` et `p.fausses_suspicions`) : changement d'interface,
+/// hors du périmètre de l'audit de `sim-core`.
 #[derive(Clone, Copy, Debug)]
 #[non_exhaustive]
 pub struct Proprietes {
@@ -129,6 +146,15 @@ impl Detecteur {
     /// Construit un détecteur. Les trois paramètres actifs sont obligatoires :
     /// il n'existe pas de constructeur par défaut, parce qu'un détecteur sans
     /// seuil ni expiration n'a ni complétude ni exactitude (PD12).
+    ///
+    /// # Panics
+    ///
+    /// Si `seuil` vaut zéro — un détecteur qui suspecte sans indice n'a pas
+    /// d'exactitude à mesurer —, ou si `expiration` n'est pas strictement plus
+    /// courte que `periode` : deux sondes se chevaucheraient et le compte
+    /// d'échecs consécutifs cesserait de vouloir dire quoi que ce soit (§4.3).
+    /// `assert!` et non `debug_assert!`, comme partout ici : la suite de tests
+    /// du dépôt tourne en `--release`.
     pub fn nouveau(periode: Duree, expiration: Duree, seuil: u8) -> Detecteur {
         assert!(seuil >= 1, "un détecteur à seuil nul suspecte sans indice");
         assert!(
@@ -171,8 +197,17 @@ impl Detecteur {
     /// `seuil − 1` échecs suivants, plus l'expiration du dernier.
     /// Borne haute : l'arrêt survient juste après une sonde réussie, il faut
     /// attendre une période entière de plus.
+    ///
+    /// Le produit sature : `periode` et `seuil` sont publics et le profil
+    /// release du dépôt ne pose pas `overflow-checks`. Sans cela, `periode`
+    /// = 2⁶³ et `seuil` = 3 rendaient une borne basse de **1 tic** au lieu de
+    /// 2⁶⁴ — un détecteur annoncé instantané là où il est le plus lent.
     pub fn completude(&self) -> (Duree, Duree) {
-        let echecs_restants = Duree(self.periode.0 * (self.seuil.saturating_sub(1) as u64));
+        let echecs_restants = Duree(
+            self.periode
+                .0
+                .saturating_mul(u64::from(self.seuil.saturating_sub(1))),
+        );
         let min = echecs_restants + self.expiration;
         let max = min + self.periode;
         (min, max)
@@ -313,6 +348,17 @@ mod tests {
         let (min, max) = d.completude();
         assert_eq!(min, Duree(21_000), "borne basse en ms");
         assert_eq!(max, Duree(31_000), "borne haute en ms");
+    }
+
+    /// Le produit `période × (seuil − 1)` sature. Deux champs publics et un
+    /// profil release sans `overflow-checks` : l'enroulement annonçait une
+    /// détection en **1 tic** sur le détecteur le plus lent représentable.
+    #[test]
+    fn la_completude_sature_au_lieu_de_senrouler() {
+        let d = Detecteur::nouveau(Duree(1u64 << 63), Duree(1), 3);
+        let (min, max) = d.completude();
+        assert_eq!(min, Duree(u64::MAX), "2⁶³ × 2 sature au lieu de valoir 0");
+        assert_eq!(max, Duree(u64::MAX));
     }
 
     /// PD12 — un agent vivant mais lent est suspecté. C'est l'énoncé du §7.3 :

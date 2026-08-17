@@ -3,7 +3,16 @@
 //! > M1 : l'ordre est total à l'intérieur d'une partition.
 //! > M2 : aucun ordre n'est garanti entre partitions.
 //! > M3 : un enregistrement validé est durable.
-//! > M4 : le compactage ne réordonne jamais, il ne fait que supprimer. (§1.2)
+//! > M4 : l'ordre est maintenu en toute circonstance et le compactage ne
+//! > réordonne jamais, il ne fait que supprimer. (§1.2)
+//!
+//! M4 est cité **en entier** : le PRD l'abrège à sa seconde moitié (EX-M04), et
+//! la première — « l'ordre est maintenu en toute circonstance » — est ce que
+//! [`Milieu::appliquer_retention`] doit tenir autant que [`Milieu::compacter`].
+//!
+//! Vivent **aussi** ici, parce qu'ils portent sur le journal lui-même : la
+//! rétention et le compactage (EX-M10, EX-M20), les coûts propres du milieu
+//! (EX-M13) et l'identité apposée à l'écriture (EX-M24).
 //!
 //! Ce que **ce module** ne fait pas, et qui vit ailleurs dans la même crate : la
 //! réplication ISR (`replication`), le groupe de consommation (`groupe`), le
@@ -38,18 +47,24 @@ pub struct Enregistrement {
     pub partition: u32,
     /// Position dans la partition. Strictement croissante : c'est M1.
     pub decalage: u64,
-    /// Clé de l'enregistrement. Elle décide de la partition, et deux clés
-    /// distinctes n'ont **aucune** métrique entre elles : il n'y a pas de
-    /// gradient dans le milieu (§1.2).
+    /// Clé de l'enregistrement. Deux clés distinctes n'ont **aucune** métrique
+    /// entre elles : il n'y a pas de gradient dans le milieu (§1.2).
+    ///
+    /// Elle ne décide **pas** de la partition dans ce qui est livré :
+    /// [`Milieu::ecrire`] range l'enregistrement dans la partition que
+    /// l'écrivain nomme, et [`Milieu::partition_de`] — la fonction de clé h du
+    /// §1.2, celle d'un courtier — n'a d'appelant que son propre test. La
+    /// cohérence des deux est à la charge de l'appelant, et
+    /// `crate::hors_perimetre()` le déclare.
     pub cle: Cle,
     /// Charge utile.
     pub valeur: f64,
-    /// Taille déclarée de l'enregistrement, en octets.
+    /// Taille facturée de l'enregistrement, en octets.
     ///
-    /// Le surcoût de format réel — 60 octets pour un message seul, 753 pour un
-    /// lot de 100 — est EX-M11, et il est calculé par `crate::format`. Ce qui est
-    /// compté **ici** est la taille annoncée par l'écrivain : `ecrire` ne
-    /// consulte pas `Format`, ce que `crate::hors_perimetre()` déclare.
+    /// **Toujours [`OCTETS_DEFAUT`]** : aucun chemin ne permet à l'écrivain d'en
+    /// annoncer une autre. Le surcoût de format réel — 60 octets pour un message
+    /// seul, 753 pour un lot de 100 — est EX-M11, et `crate::format` le calcule
+    /// sans que `ecrire` le consulte, ce que `crate::hors_perimetre()` déclare.
     pub octets: u32,
     /// Date de l'événement représenté, distincte de la date d'écriture — la
     /// distinction porte le filigrane et les volets d'EX-A06 (phase 5).
@@ -64,7 +79,8 @@ pub struct Enregistrement {
     /// milieu n'évalue toujours pas le **contenu** : il garantit seulement qui a
     /// déposé. Une trace dont l'auteur serait déclaré par l'écrivain ne serait
     /// pas incomplète, elle serait fausse, et ni EX-A08 ni l'échantillonnage ne
-    /// la corrigent (§6.2, p. 71).
+    /// la corrigent (§6.2, p. 96, 3ᵉ éd. — la page porte la fin du §6.2 et le
+    /// titre du §6.3).
     pub auteur: Identite,
 }
 
@@ -216,7 +232,6 @@ impl Partition {
         partition: u32,
         cle: Cle,
         valeur: f64,
-        octets: u32,
         date_evenement: Instant,
         auteur: Identite,
     ) -> u64 {
@@ -227,7 +242,10 @@ impl Partition {
             decalage,
             cle,
             valeur,
-            octets,
+            // Taille fixe, et pas un paramètre : le seul appelant passait
+            // `OCTETS_DEFAUT`, et une taille réglable ferait croire que le
+            // surcoût de format d'EX-M11 est facturé ici. Il ne l'est pas.
+            octets: OCTETS_DEFAUT,
             date_evenement,
             durable: false,
             auteur,
@@ -239,13 +257,19 @@ impl Partition {
     /// balayage linéaire rendrait le coût d'une exécution quadratique en le
     /// nombre d'écritures, ce que NF-06 interdit — et c'était le cas ici, mesuré
     /// à 64 ms, 316 ms puis 1 405 ms pour n = 20 k, 40 k, 80 k validations.
+    ///
+    /// Rend `false` si l'enregistrement est **déjà durable** : un accusé de
+    /// durabilité est un événement unique, et le rejouer n'accuse rien. Sans
+    /// cela, un appelant qui validait deux fois la même `Ecriture` facturait deux
+    /// tours de journal et poussait deux fois le même délai dans les mesures
+    /// d'EX-M09, ce qui biaisait le ℓ₉₉.
     fn valider(&mut self, decalage: u64) -> bool {
         match self.journal.binary_search_by_key(&decalage, |e| e.decalage) {
-            Ok(i) => {
+            Ok(i) if !self.journal[i].durable => {
                 self.journal[i].durable = true;
                 true
             }
-            Err(_) => false,
+            _ => false,
         }
     }
 
@@ -350,9 +374,13 @@ impl Milieu {
         self.couts
     }
 
-    /// Partition d'une clé — par hachage, comme le fait un courtier. C'est ce
-    /// qui rend les clés chaudes possibles, et les clés chaudes sont la raison
-    /// du rééquilibrage (EX-M19).
+    /// Partition d'une clé — par hachage, comme le fait un courtier : c'est la
+    /// fonction de clé h du §1.2, celle qui rendrait les clés chaudes possibles.
+    ///
+    /// **Aucun appelant hors test.** [`Milieu::ecrire`] range l'enregistrement
+    /// où l'appelant le demande, et les scénarios attribuent leurs partitions
+    /// eux-mêmes : la concentration observée dans un résultat vient de leur
+    /// réglage, jamais de ce hachage. `crate::hors_perimetre()` le déclare.
     pub fn partition_de(&self, cle: Cle) -> u32 {
         // Mélange multiplicatif de Fibonacci : déterministe, sans dépendance,
         // et sans table de hachage (PD1).
@@ -367,6 +395,17 @@ impl Milieu {
     /// Écrit un enregistrement. Il n'est **pas** lisible tant que son accusé de
     /// durabilité n'est pas revenu (M3) : l'appelant doit planifier
     /// [`Milieu::valider`] à `maintenant + delai_durabilite`.
+    ///
+    /// L'enregistrement va dans la partition **nommée par l'appelant**, et non
+    /// dans `partition_de(cle)` : le milieu ne repartitionne pas ce qu'on lui
+    /// soumet.
+    ///
+    /// # Panics
+    ///
+    /// Si `partition >= nb_partitions()`. Un courtier répondrait
+    /// `UnknownTopicOrPartition` ; ici la faute est celle de l'appelant, elle
+    /// n'est pas un régime du modèle, et la masquer par un refus silencieux
+    /// perdrait une écriture sans qu'aucun compteur ne le dise.
     pub fn ecrire(
         &mut self,
         partition: u32,
@@ -381,14 +420,8 @@ impl Milieu {
         // structurellement aucune place pour un auteur déclaré, et c'est
         // volontaire — la charge utile n'a pas à être inspectée pour que
         // l'attribution soit vraie. Coût : 0 message, 0 tour, quelques octets.
-        let decalage = self.partitions[partition as usize].ajouter(
-            partition,
-            cle,
-            valeur,
-            OCTETS_DEFAUT,
-            date_evenement,
-            identite,
-        );
+        let decalage = self.partitions[partition as usize]
+            .ajouter(partition, cle, valeur, date_evenement, identite);
         self.couts.ecritures += 1;
         self.couts.octets_ecrits += OCTETS_DEFAUT as u64;
         self.couts.octets_identite += OCTETS_IDENTITE as u64;
@@ -423,7 +456,19 @@ impl Milieu {
             .collect()
     }
 
-    /// Accuse la durabilité. Compte un tour de journal (EX-M13).
+    /// Accuse la durabilité. Compte un tour de journal (EX-M13) et verse le
+    /// délai aux mesures d'EX-M09.
+    ///
+    /// Rend `false` — et ne facture **rien** — dans les deux cas où il n'y a rien
+    /// à accuser : décalage inconnu de cette partition (une `Ecriture` d'un autre
+    /// milieu, ou un enregistrement déjà retiré par rétention ou compactage) et
+    /// enregistrement **déjà durable**. Le second cas est un accusé rejoué :
+    /// facturé, il aurait compté deux tours de journal et versé deux fois le même
+    /// délai dans `latences_durabilite`, donc biaisé le ℓ₉₉ d'EX-M09.
+    ///
+    /// # Panics
+    ///
+    /// Si `e.partition >= nb_partitions()` — une `Ecriture` d'un autre milieu.
     pub fn valider(&mut self, e: Ecriture) -> bool {
         let ok = self.partitions[e.partition as usize].valider(e.decalage);
         if ok {
@@ -446,6 +491,13 @@ impl Milieu {
     /// rendrait chaque lecture proportionnelle à la taille du journal, et le
     /// coût d'une exécution quadratique en le nombre d'événements, ce que NF-06
     /// interdit.
+    ///
+    /// La lecture est **instantanée** : elle coûte un tour de journal et zéro
+    /// tic. Seul le chemin écriture → durabilité porte une latence (EX-M09).
+    ///
+    /// # Panics
+    ///
+    /// Si `partition >= nb_partitions()`.
     pub fn lire(&mut self, partition: u32, depuis: u64, max: usize) -> Vec<Enregistrement> {
         let journal = &self.partitions[partition as usize].journal;
         let debut = journal.partition_point(|e| e.decalage < depuis);
@@ -481,6 +533,10 @@ impl Milieu {
     /// L'ordre des partitions étant tiré au sort à chaque appel, celle qui
     /// consomme le budget varie — un agent ne peut donc pas se reposer sur un
     /// ordre de service stable, ce qui est encore M2.
+    ///
+    /// # Panics
+    ///
+    /// Si un curseur porte une partition `>= nb_partitions()`.
     pub fn lire_multi(
         &mut self,
         curseurs: &[(u32, u64)],
@@ -529,6 +585,10 @@ impl Milieu {
     /// Compacter au-delà de la frontière n'aurait de toute façon pas de sens :
     /// un enregistrement non encore accusé n'est pas un état, c'est une écriture
     /// en cours.
+    ///
+    /// # Panics
+    ///
+    /// Si `partition >= nb_partitions()`.
     pub fn compacter(&mut self, partition: u32) -> Vec<Enregistrement> {
         let p = &mut self.partitions[partition as usize];
         let avant = p.journal.clone();
@@ -589,6 +649,14 @@ impl Milieu {
     /// binaire sur une suite non partitionnée : le résultat dépendrait de
     /// l'endroit où la binaire atterrit, pas de la politique. C'est un balayage,
     /// linéaire en ce qu'il supprime.
+    ///
+    /// Un enregistrement **non durable** arrête l'évaporation même s'il est
+    /// vieux : ce n'est pas encore un état, et le retirer perdrait une écriture
+    /// dont l'accusé est en vol.
+    ///
+    /// # Panics
+    ///
+    /// Si `partition >= nb_partitions()`.
     pub fn appliquer_retention(&mut self, partition: u32, maintenant: Instant, r: Duree) -> u64 {
         let limite = Instant(maintenant.0.saturating_sub(r.0));
         let p = &mut self.partitions[partition as usize];
@@ -622,18 +690,24 @@ impl Milieu {
     ///
     /// M2 n'est pas un oracle de la même nature que les autres : il n'énonce
     /// pas ce qui doit tenir, mais ce qui n'est **pas** garanti. Il est armé
-    /// quand même, et ce qu'il vérifie est que le simulateur randomise
-    /// effectivement — un entrelacement devenu stable serait une régression.
+    /// pour que sa ligne figure au catalogue, **et pour rien d'autre** : aucun
+    /// prédicat ne l'évalue, et ce qui garde la randomisation de l'entrelacement
+    /// est un test unitaire, pas cet armement. Voir [`Milieu::verifier`].
     pub fn armer_oracles(&self, registre: &mut Registre) {
-        registre.armer(Oracle::surete(M1, "§1.2, p. 13"));
-        registre.armer(Oracle::surete(M2, "§1.2, p. 13"));
-        registre.armer(Oracle::surete(M3, "§1.2, p. 13"));
-        registre.armer(Oracle::surete(M4, "§1.2, p. 13"));
+        // Les quatre invariants sont énoncés p. 14 du traité livré — troisième
+        // édition, 143 pages —, et non p. 13 : mesuré par recherche verbatim de
+        // chacun des quatre énoncés dans le PDF du dépôt.
+        registre.armer(Oracle::surete(M1, "§1.2, p. 14, 3ᵉ éd."));
+        registre.armer(Oracle::surete(M2, "§1.2, p. 14, 3ᵉ éd."));
+        registre.armer(Oracle::surete(M3, "§1.2, p. 14, 3ᵉ éd."));
+        registre.armer(Oracle::surete(M4, "§1.2, p. 14, 3ᵉ éd."));
         registre.armer(Oracle::surete(M10, "§6.1, tableau 17"));
     }
 
-    /// Vérifie **M1** sur l'état courant. Une violation arrête l'exécution
-    /// (EX-C09).
+    /// Vérifie **M1** sur l'état courant. Une violation *devrait* arrêter
+    /// l'exécution (EX-C09) ; comme aucun appelant n'évalue ce prédicat, aucune
+    /// exécution ne peut en produire une — voir plus bas, et
+    /// `crate::hors_perimetre()`.
     ///
     /// **M1 seul**, et le nom de la méthode ne prétend plus autre chose. M3 et
     /// M2 n'ont pas de prédicat d'état falsifiable :
@@ -671,6 +745,10 @@ impl Milieu {
     /// décalages, celui-ci regarde ce que le consommateur voit. Un compactage
     /// qui remplace un état durable par un successeur situé derrière un trou non
     /// durable satisfait M4 — la sous-suite est intacte — et casse EX-M10.
+    ///
+    /// Les charges utiles se comparent **sur leurs bits** : la question est
+    /// « est-ce le même enregistrement ? », et `Milieu::ecrire` accepte
+    /// n'importe quel `f64`, `NaN` compris.
     pub fn verifier_m10(
         &self,
         partition: u32,
@@ -693,7 +771,17 @@ impl Milieu {
 
         for (cle, valeur) in etats_avant {
             match etats_apres.iter().find(|(c, _)| *c == cle) {
-                Some((_, v)) if *v == valeur => {}
+                // Comparaison **sur les bits**, et non sur `==`. L'oracle demande
+                // si le compactage a conservé le même enregistrement, pas si deux
+                // nombres sont numériquement égaux : `Milieu::ecrire` accepte
+                // n'importe quel `f64`, et `NaN != NaN` fabriquait une violation
+                // sur un journal identique à lui-même. Le compactage recopie
+                // l'enregistrement tel quel (`Copy`), donc les bits sont
+                // préservés exactement quand l'état l'est. La comparaison est
+                // aussi plus stricte — elle sépare +0,0 de −0,0 —, ce qui est le
+                // bon sens pour une préservation. Rien n'est *évalué* ici : PD14
+                // tient, l'oracle compare deux états, il ne juge pas un contenu.
+                Some((_, v)) if v.to_bits() == valeur.to_bits() => {}
                 Some((_, v)) => registre.violer(
                     M10,
                     maintenant,
@@ -757,6 +845,38 @@ mod tests {
     fn ecrire_et_valider(m: &mut Milieu, p: u32, cle: Cle, v: u8, alea: &mut Alea) {
         let e = m.ecrire(p, cle, v as f64, Instant(0), Identite::propre(ActeurId(0)), alea);
         m.valider(e);
+    }
+
+    /// EX-M10 — l'oracle ne doit pas **fabriquer** une violation. `Milieu::ecrire`
+    /// n'a aucune garde sur `valeur`, et `NaN != NaN` : comparé par `==`, le
+    /// prédicat accusait le compactage sur un journal identique à lui-même. Un
+    /// oracle qui crie sans compactage n'est pas une borne, c'est du bruit.
+    #[test]
+    fn m10_ne_fabrique_pas_de_violation_sur_une_charge_utile_nan() {
+        let mut m = milieu(1);
+        let mut alea = Alea::nouveau(9);
+        let e = m.ecrire(0, 1, f64::NAN, Instant(0), Identite::propre(ActeurId(0)), &mut alea);
+        m.valider(e);
+        let avant: Vec<Enregistrement> = m.partition(0).enregistrements().to_vec();
+        let mut r = Registre::nouveau();
+        m.armer_oracles(&mut r);
+        m.verifier_m10(0, &avant, &mut r, Instant(1));
+        assert!(r.violations().is_empty(), "{:?}", r.violations());
+    }
+
+    /// EX-M09, EX-M13 — un accusé de durabilité est un événement unique. Rejoué,
+    /// il ne facture rien : sans cette garde, `valider` rendait `true` deux fois,
+    /// comptait deux tours de journal et versait deux fois le même délai dans les
+    /// mesures, ce qui biaisait le ℓ₉₉.
+    #[test]
+    fn un_accuse_de_durabilite_ne_se_rejoue_pas() {
+        let mut m = milieu(1);
+        let mut alea = Alea::nouveau(11);
+        let e = m.ecrire(0, 1, 1.0, Instant(0), Identite::propre(ActeurId(0)), &mut alea);
+        assert!(m.valider(e));
+        assert!(!m.valider(e), "le second accusé n'accuse rien");
+        assert_eq!(m.couts().tours_journal, 1);
+        assert_eq!(m.latences_durabilite.compte(), 1);
     }
 
     /// EX-M01 — l'ordre est total dans une partition, quelle que soit l'ordre
@@ -895,6 +1015,79 @@ mod tests {
         inverse.verifier_m4(0, &avant, &mut r, Instant(7));
         assert_eq!(r.violations().len(), 1);
         assert_eq!(r.violations()[0].oracle, M4);
+    }
+
+    /// EX-M10 — le compactage s'arrête à la frontière de durabilité, et chaque
+    /// clé qui avait un état final lisible en a toujours un après.
+    ///
+    /// C'est le défaut mesuré sur 36,5 % des compactages tirés au sort, et
+    /// l'oracle qui le couvre n'avait aucun test : un compactage non borné
+    /// remplace ici l'état lisible de **deux** clés par des successeurs situés
+    /// derrière un trou non durable, que `lire` n'atteint pas.
+    #[test]
+    fn m10_le_compactage_preserve_letat_final_lisible() {
+        let mut m = milieu(1);
+        let mut alea = Alea::nouveau(12);
+        let auteur = Identite::propre(ActeurId(0));
+        for (cle, v) in [(1u64, 10u8), (2, 20), (1, 11)] {
+            ecrire_et_valider(&mut m, 0, cle, v, &mut alea);
+        }
+        // Le trou : écrit, jamais accusé. La lecture s'y arrête.
+        m.ecrire(0, 2, 21.0, Instant(0), auteur, &mut alea);
+        // Derrière le trou : durable, donc un successeur qui n'est pas lisible.
+        let derriere = m.ecrire(0, 1, 12.0, Instant(0), auteur, &mut alea);
+        assert!(m.valider(derriere));
+
+        let lisible_avant = m.lire(0, 0, 100);
+        assert_eq!(lisible_avant.len(), 3, "la lecture s'arrête au trou");
+
+        let avant = m.compacter(0);
+        let mut r = Registre::nouveau();
+        m.armer_oracles(&mut r);
+        m.verifier_m4(0, &avant, &mut r, Instant(1));
+        m.verifier_m10(0, &avant, &mut r, Instant(1));
+        assert!(r.violations().is_empty(), "{:?}", r.violations());
+
+        let lisible_apres: Vec<(Cle, f64)> =
+            m.lire(0, 0, 100).iter().map(|e| (e.cle, e.valeur)).collect();
+        assert_eq!(
+            lisible_apres,
+            vec![(2, 20.0), (1, 11.0)],
+            "un état par clé, dans l'ordre d'écriture ; la clé 1 lit 11 et non le 12 caché"
+        );
+    }
+
+    /// L'oracle EX-M10 doit **détecter** la perte, sans quoi il ne protège rien
+    /// (NF-10) : on fabrique le journal qu'un compactage non borné à la
+    /// frontière produirait, et les deux clés perdent leur état lisible.
+    #[test]
+    fn m10_detecte_la_perte_dun_etat_final_lisible() {
+        let mut m = milieu(1);
+        let mut alea = Alea::nouveau(13);
+        let auteur = Identite::propre(ActeurId(0));
+        for (cle, v) in [(1u64, 10u8), (2, 20), (1, 11)] {
+            ecrire_et_valider(&mut m, 0, cle, v, &mut alea);
+        }
+        m.ecrire(0, 2, 21.0, Instant(0), auteur, &mut alea);
+        let derriere = m.ecrire(0, 1, 12.0, Instant(0), auteur, &mut alea);
+        assert!(m.valider(derriere));
+        let avant = m.partition(0).enregistrements().to_vec();
+
+        // Le compactage fautif : dernier par clé sur **tout** le journal, sans
+        // égard à la frontière de durabilité. M4 y survit — la sous-suite est
+        // intacte —, et c'est exactement pourquoi il fallait un second oracle.
+        let mut fautif = m;
+        fautif.partitions[0].journal.retain(|e| e.decalage >= 3);
+
+        let mut r = Registre::nouveau();
+        fautif.armer_oracles(&mut r);
+        fautif.verifier_m4(0, &avant, &mut r, Instant(2));
+        assert!(r.violations().is_empty(), "M4 ne voit rien : {:?}", r.violations());
+
+        fautif.verifier_m10(0, &avant, &mut r, Instant(2));
+        assert_eq!(r.violations().len(), 2, "une par clé : {:?}", r.violations());
+        assert!(r.violations().iter().all(|v| v.oracle == M10));
+        assert!(r.violations()[0].details.contains("n'a plus aucun état lisible"));
     }
 
     /// EX-M13 — le milieu expose son coût, et les tours de journal se comptent.

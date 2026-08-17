@@ -9,18 +9,37 @@
 //! deviendrait un paramètre au lieu d'un résultat.
 //!
 //! §8.3 impose de ne jamais mêler les deux ℓ₉₉ : celui du milieu est une
-//! **entrée**, celui-ci est une **sortie**. Ils portent des libellés distincts
-//! dans toute l'interface, et un affichage qui les confondrait est un défaut
-//! bloquant.
+//! **entrée**, celui-ci est une **sortie**. Un affichage qui les confondrait est
+//! un défaut bloquant.
+//!
+//! Ce module ne prouve pas qu'aucun ne les confond. Il fixe le libellé
+//! ([`Service::LIBELLE_L99`]) et nomme la sortie ([`Service::l99_de_reponse`]) ;
+//! le libellé n'a **aucun appelant** — `sim-viz` ne le lit pas —, de sorte que
+//! la séparation est tenue par le nom des deux fonctions, pas par un affichage.
+//! La doc de ce module annonçait « des libellés distincts dans toute
+//! l'interface » : c'était affirmer un affichage qui n'existe pas.
 
 use crate::temps::{Duree, Instant};
 use serde::{Deserialize, Serialize};
 
 /// Coût mémoire unitaire d'un agent (EX-C17).
 ///
-/// Défaut : 327 mots, soit 2 616 octets en 64 bits, dont 233 mots de tas, pile
-/// comprise. Valeur de documentation, donc périssable (annexe B) ; ce qui
-/// compte est que le plancher mémoire d'une population soit **affiché**.
+/// Ce que le §2.2 donne, et rien de plus : « de l'ordre de trois cents mots,
+/// soit **quelques milliers d'octets** sur une architecture 64 bits, dont **233
+/// mots** de zone de tas, pile comprise », puis deux chiffres qu'il refuse
+/// d'arbitrer — la documentation d'OTP 29.0.5 « annonce **327** mots à son guide
+/// d'efficacité […] et **338** à sa page de mémoire ; l'écart est explicable, et
+/// **il reste la meilleure raison de ne rien gager sur le chiffre exact** ». Le
+/// seul chiffre *dérivé* que la source publie est un ordre de grandeur : « le
+/// plancher mémoire d'un million d'agents de ce type est donc de l'ordre de
+/// **2,6 Go** avant tout état applicatif ».
+///
+/// Le défaut retient 327 parce qu'il faut un nombre pour calculer. C'est un
+/// réglage, **pas** l'arbitrage que la source refuse de rendre : « 2 616
+/// octets » n'apparaît nulle part dans le traité et ne s'y mettra pas. Ce que
+/// NF-15 demande de retrouver ici est l'ordre de grandeur, et c'est ce que le
+/// test épingle. Valeur périssable (annexe B) ; ce qui compte est que le
+/// plancher mémoire d'une population soit **affiché**.
 #[derive(Clone, Copy, Debug, Serialize, Deserialize)]
 pub struct CoutAgent {
     /// Empreinte totale, en mots.
@@ -43,17 +62,30 @@ impl Default for CoutAgent {
 
 impl CoutAgent {
     /// Empreinte d'un agent, en octets.
+    ///
+    /// Les deux facteurs sont des champs publics désérialisés et le profil
+    /// release du dépôt ne pose pas `overflow-checks` : le produit sature, sans
+    /// quoi 2⁶¹ mots de 8 octets pèseraient **zéro**.
     pub fn octets(&self) -> u64 {
-        self.mots * self.octets_par_mot
+        self.mots.saturating_mul(self.octets_par_mot)
     }
 
     /// Plancher mémoire d'une population de n agents, affiché avec son unité.
+    /// Sature pour le même motif que [`CoutAgent::octets`].
     pub fn plancher(&self, n: u32) -> u64 {
-        self.octets() * n as u64
+        self.octets().saturating_mul(u64::from(n))
     }
 
     /// Provenance de la valeur par défaut, à afficher avec elle (F1, F2).
-    pub const SOURCE: &'static str = "§2.2 — valeur de documentation, périssable (annexe B)";
+    ///
+    /// Elle porte les **deux** chiffres de la source et son refus de trancher :
+    /// afficher « 327 mots » seul ferait passer un réglage pour une mesure.
+    pub const SOURCE: &'static str =
+        "§2.2 — « de l'ordre de trois cents mots, soit quelques milliers d'octets […] dont 233 \
+         mots de zone de tas, pile comprise » ; OTP 29.0.5 annonce 327 mots à son guide \
+         d'efficacité et 338 à sa page de mémoire, « et il reste la meilleure raison de ne rien \
+         gager sur le chiffre exact ». Le défaut retient 327 : réglage, non arbitrage. Valeur \
+         périssable (annexe B)";
 }
 
 /// La file et le service d'un agent.
@@ -149,7 +181,8 @@ impl Service {
         self.latences.last().map(|l| Duree(*l))
     }
 
-    /// Libellé imposé (§8.3) : les deux ℓ₉₉ ne portent jamais le même.
+    /// Libellé imposé (§8.3) : les deux ℓ₉₉ ne portent jamais le même. Aucun
+    /// appelant à ce jour ; voir la note du module.
     pub const LIBELLE_L99: &'static str =
         "ℓ₉₉ de réponse de l'agent — SORTIE du modèle, produite par la file et le temps de \
          service (EX-C15). À ne jamais confondre avec le ℓ₉₉ du milieu, qui est une entrée.";
@@ -159,13 +192,66 @@ impl Service {
 mod tests {
     use super::*;
 
-    /// EX-C17 — le plancher mémoire d'une population est calculé et affiché.
+    /// EX-C17, NF-15 — ce que le §2.2 permet de **retrouver** est un ordre de
+    /// grandeur, pas un chiffre exact : la source donne 327 *et* 338 mots et
+    /// dit que l'écart « reste la meilleure raison de ne rien gager sur le
+    /// chiffre exact ». Sont épinglés d'abord les trois énoncés qui sont dans le
+    /// traité — 233 mots de tas, « quelques milliers d'octets », « de l'ordre de
+    /// 2,6 Go » pour un million —, ensuite, et séparément, l'arithmétique du
+    /// défaut retenu, qui n'est pas un chiffre du traité.
     #[test]
-    fn le_cout_dun_agent_retrouve_les_chiffres_du_traite() {
+    fn le_cout_dun_agent_retrouve_lordre_de_grandeur_du_traite() {
         let c = CoutAgent::default();
-        assert_eq!(c.octets(), 2_616, "327 mots en 64 bits");
-        assert_eq!(c.mots_de_tas, 233);
+
+        // Du traité, textuellement.
+        assert_eq!(c.mots_de_tas, 233, "« dont 233 mots de zone de tas »");
+        assert!(
+            (327..=338).contains(&c.mots),
+            "le défaut se tient entre les deux chiffres que la source donne : {} mots",
+            c.mots
+        );
+        assert!(
+            (1_000..10_000).contains(&c.octets()),
+            "« quelques milliers d'octets » : {} octets",
+            c.octets()
+        );
+        let go = c.plancher(1_000_000) as f64 / 1e9;
+        assert!(
+            (go - 2.6).abs() < 0.26,
+            "« de l'ordre de 2,6 Go » pour un million d'agents : {go:.3} Go"
+        );
+        // La provenance porte les deux chiffres et le refus de trancher.
+        assert!(CoutAgent::SOURCE.contains("327"), "{}", CoutAgent::SOURCE);
+        assert!(CoutAgent::SOURCE.contains("338"), "{}", CoutAgent::SOURCE);
+        assert!(
+            CoutAgent::SOURCE.contains("ne rien gager sur le chiffre exact"),
+            "{}",
+            CoutAgent::SOURCE
+        );
+
+        // Et l'arithmétique du réglage — 327 × 8 —, qui n'est **pas** un chiffre
+        // du traité : garde de non-régression sur le défaut, rien de plus.
+        assert_eq!(c.octets(), 2_616);
         assert_eq!(c.plancher(1_000), 2_616_000);
+    }
+
+    /// Les deux produits saturent : `mots` et `octets_par_mot` sont publics et
+    /// désérialisés, et le profil release ne pose pas `overflow-checks`.
+    #[test]
+    fn le_cout_sature_au_lieu_de_senrouler() {
+        let enorme = CoutAgent {
+            mots: 1u64 << 61,
+            mots_de_tas: 0,
+            octets_par_mot: 8,
+        };
+        assert_eq!(enorme.octets(), u64::MAX, "2⁶¹ × 8 valait zéro octet");
+
+        let gros = CoutAgent {
+            mots: 1u64 << 40,
+            mots_de_tas: 0,
+            octets_par_mot: 8,
+        };
+        assert_eq!(gros.plancher(u32::MAX), u64::MAX);
     }
 
     /// EX-C15 — la latence est une **sortie** : elle croît avec l'arriéré, sans

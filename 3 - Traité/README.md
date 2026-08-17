@@ -8,8 +8,8 @@ Simulateur déterministe d'essaims d'agents logiciels coordonnés par le milieu.
 > conséquences, et il vaut mieux les lire avant de chercher un fichier.
 > *(a)* ⚠ **`Traité.md` / `.pdf` sont à la racine de ce dossier, PAS sous
 > `docs/`** — c'est là que la fusion les a posés, et les renvois qui visaient
-> `docs/Traité.pdf` sont corrigés en conséquence ; `CLAUDE.md` porte encore
-> l'ancien chemin. *(b)* ⚠ **Les 19 figures du traité sont restées à
+> `docs/Traité.pdf` sont corrigés en conséquence, `CLAUDE.md` compris depuis
+> l'audit du 17 août 2026. *(b)* ⚠ **Les 19 figures du traité sont restées à
 > `../figures/`**, et le traité les cite en chemin relatif : sa chaîne de rendu
 > Pandoc **ne se lance que depuis la racine du dépôt**, jamais d'ici. *Rien de
 > tout cela ne concerne le code : `cargo` se lance bien d'ici.*
@@ -19,10 +19,15 @@ Le dossier transpose un traité — [`Traité.pdf`](Traité.pdf), **troisième
 sous une contrainte : **tout chiffre affiché doit être retrouvé par la mesure, ou
 l'écart doit être consigné**. Un écart est un défaut du simulateur ou une erreur
 du traité, et les deux méritent d'être trouvés (NF-15). **Cinq** écarts ont été
-trouvés à ce jour, tous au [registre des décisions](docs/decisions.md) : trois
-contredisent un énoncé du traité — dont deux repris au §0 du
-[PRD](docs/PRD.md#0-suivi-de-réalisation) — et deux sont des constats de mesure
-qui ne contredisent rien.
+trouvés à ce jour, tous au [registre des décisions](docs/decisions.md), et la
+troisième édition du traité confirme le compte en citant ce dépôt. Leur
+classement a été refait le 17 août 2026 contre l'édition livrée : **deux sont
+absorbés par la source** — la troisième édition écrit désormais ce que la mesure
+avait rendu, sur le budget de retard du mode « moyeu » et sur la dérive de la
+somme sans relance —, **deux portent contre le traité** — Φ_c, qui ne sépare pas
+la conformité de la coordination, et le contrôleur d'élasticité, qui contredit
+le §7.3 de la troisième édition sans être tranché —, et **un** est un constat de
+mesure qui ne porte pas sur le traité, `mul_add`.
 
 Ce que le simulateur **ne** mesure **pas** est affiché en permanence dans
 l'interface, sous l'onglet « Limites » : la performance réelle, la vivacité,
@@ -106,9 +111,31 @@ WebGL 2 est requis — `eframe` n'a pas de repli logiciel.
 
 Le déploiement est un dépôt de fichiers statiques : `index.html`, `sim_viz.js`,
 `sim_viz_bg.wasm` côte à côte, aucune dépendance serveur (DT4). Module compressé :
-**1 445 293 octets** — 1,378 Mio, ou 1,45 Mo en unités SI — pour une cible de
-8 Mo (NF-08), sur 3 663 058 octets bruts. Remesuré à chaque révision de
-l'interface ; la cible reste tenue d'un facteur cinq et demi.
+**1 447 267 octets** — 1,380 Mio, ou 1,45 Mo en unités SI — pour une cible de
+8 Mo (NF-08), sur **3 668 599 octets bruts**. La cible reste tenue d'un facteur
+cinq et demi.
+
+Ces deux chiffres sortent d'**une** construction, celle du **17 août 2026 à
+09 h 09** (`wasm-bindgen` a écrit `web/sim_viz_bg.wasm` à 09 h 09 min 21 s), et
+se refont par ces deux lignes et ces deux-là seulement :
+
+```bash
+cargo build -p sim-viz --release --lib --target wasm32-unknown-unknown \
+  && wasm-bindgen --target web --no-typescript --out-dir web \
+     target/wasm32-unknown-unknown/release/sim_viz.wasm
+printf "brut=%s gz9=%s\n" "$(stat -c%s web/sim_viz_bg.wasm)" \
+                          "$(gzip -9 -c web/sim_viz_bg.wasm | wc -c)"
+```
+
+⚠ **Ce chiffre suit la construction, pas la révision, et il n'est donc valide
+que jusqu'à la prochaine édition de `crates/sim-viz/`.** `web/sim_viz.js` et
+`web/sim_viz_bg.wasm` sont produits par `wasm-bindgen` et exclus du suivi de
+version (`.gitignore`) : ils ne se remesurent que si l'on relance les deux
+lignes ci-dessus. L'audit du 17 août a trouvé l'empaquetage vieux de deux
+révisions de l'interface — 3 613 854 octets bruts, un module qui ne contenait
+aucun des changements du 14 août —, puis son propre correctif périmé d'une
+révision en douze minutes, la crate ayant été éditée après la construction.
+**Ce qui se cite d'ici est la ligne de commande, jamais le nombre.**
 
 Que les deux cibles donnent les **mêmes** chiffres n'est pas une intention, c'est
 une mesure : le banc `bancs/parite-wasm` compare les empreintes de six cas du
@@ -176,11 +203,17 @@ sans les exécuter :
 cargo test -p sim-agents --release -- --list
 ```
 
-La suite complète — 428 tests :
+La suite complète — **465 tests, 0 échec**, exécutés le 17 août 2026 à 09 h 49.
+Le compte est une mesure : il se refait par la ligne ci-dessous, il ne se cite pas.
 
 ```bash
 cargo test --workspace --release
 ```
+
+⚠ **Il a bougé deux fois dans la journée** — **447 à 08 h 32, 465 à 09 h 49** —, les crates
+ayant été éditées entre les deux par l'audit. `grep -r '#\[test\]' --include=*.rs crates/`
+rend **465** lui aussi, mais *un attribut compté n'est pas un test exécuté* : les deux
+valeurs coïncident ici, et rien ne garantit qu'elles coïncideront demain.
 
 ### Bancs de mesure
 
@@ -241,6 +274,7 @@ détecteur                              └── binaire campagne (sans dépend
 | [`docs/DEVELOPPEMENT.md`](docs/DEVELOPPEMENT.md) | Chaîne d'outils et commandes de banc. |
 | [`CLAUDE.md`](CLAUDE.md) | Contraintes et conventions, pour un agent qui reprend le code. |
 | `bancs/*/VERDICT.md` | Les décisions tranchées par la mesure plutôt que par le raisonnement. |
+| [`gauntlet-log.md`](gauntlet-log.md) | ⚠ **Pas un document de gouvernance** — le journal de la boucle bâtisseur/critique de l'audit du code, 17 août 2026, avec ses rapports par morceau sous `bancs/audit-2026-08/`. Rien n'y est exigé ni garanti, et aucun énoncé des six documents ci-dessus ne s'y adosse. *Trois autres journaux du dépôt ont porté ce nom et n'existent plus ; celui-ci ne couvre aucune de leurs boucles.* |
 
 La documentation d'interface est **dans le code**, en rustdoc — les quatre
 crates déclarent `#![deny(missing_docs)]` :
@@ -251,9 +285,14 @@ cargo doc --workspace --no-deps --open
 
 ## État
 
-Les **six** phases du PRD sont livrées : 428 tests, clippy propre, **treize**
-scénarios **exécutables par leurs tests**, vingt-neuf bancs pour les cinq
-premières phases.
+Les **six** phases du PRD sont livrées : **465 tests, 0 échec**, suite rejouée le
+17 août 2026 à 09 h 49 ; clippy et rustdoc à 0 à 09 h 50 ; **treize** scénarios
+**exécutables par leurs tests**, vingt-neuf bancs pour les cinq premières phases.
+La répartition est 422 unitaires — 253 `sim-agents`, 96 `sim-core`,
+68 `sim-milieu`, 5 `sim-viz` — et 43 d'intégration, qui sont les critères de
+sortie de phase. **Le compte a bougé trois fois le même jour** — 428 à 08 h 10,
+447 à 08 h 32, 465 à 09 h 49 —, cinq agents d'audit écrivant en parallèle : ce
+qui se cite est la ligne de commande, jamais le nombre.
 
 Les réserves ouvertes sont au §0 du PRD et au [registre des
 décisions](docs/decisions.md). Les principales :
@@ -264,9 +303,11 @@ décisions](docs/decisions.md). Les principales :
 - **NF-07 n'est pas mesurée** — 30 images/s en WASM demande un navigateur en
   avant-plan avec une horloge d'images.
 - **L'interface s'arrête aux scénarios A et B.** Seize exigences `EX-V*` sur
-  vingt-trois ont leur producteur implanté et testé, et aucun point d'appel
-  dans la vue — dont EX-V02 (mode « enquête ») et EX-V09 (partage par URL). Le parcours « le fil »
-  (O6) et l'export n'existent pas.
+  vingt-trois ont leur producteur implanté et testé, et **aucun point d'appel** —
+  dont EX-V02 (mode « enquête »), EX-V09 (partage par URL) et EX-V23 (file
+  d'arbitrage). Les sept autres en ont un, mais celui d'EX-V10 est le binaire
+  `campagne` et non la vue. L'onglet « Limites » nomme les seize. Le parcours
+  « le fil » (O6) et l'export n'existent pas.
 - **Cinq mécanismes du milieu ne sont exécutés par aucun scénario** —
   rétention, compactage, groupe de consommation, plan de contrôle, et le
   surcoût de format, que `ecrire` ne consulte pas. Ils sont

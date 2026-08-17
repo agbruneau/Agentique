@@ -1,6 +1,6 @@
 //! Scénario J — la cascade de l'agent saturé, et AUTO-GUÉRIR (EX-A36, EX-V16).
 //!
-//! > Aucun agent n'est tombé, et l'essaim s'effondre. (§6.1, p. 73)
+//! > Aucun agent n'est tombé, et l'essaim s'effondre. (§6.1, figure 6.1, p. 91)
 //!
 //! **Aucune faute n'est injectée : c'est la condition de démonstration.** La
 //! charge franchit la capacité de service, la file de chaque agent croît, sa
@@ -22,7 +22,7 @@ pub const BLOC_J: Bloc = Bloc {
          n'est tombé en panne, et la population s'écroule quand même, par l'action du dispositif \
          censé la protéger.",
     these: "Aucun agent n'est tombé, et l'essaim s'effondre.",
-    source: "§6.1, p. 73 — figure 6.1 ; §4.3 tableau 13 ; §7.3 ; §2.3",
+    source: "§6.1, p. 90 (3ᵉ éd.) — figure 6.1, p. 91 ; §4.3 tableau 13 ; §7.3 ; §2.3",
     mecanisme_visible:
         "la charge offerte franchit la capacité de service ; la file de chaque agent croît, sa \
          latence de réponse dépasse timeoutSeconds, trois sondes consécutives échouent, l'agent \
@@ -463,11 +463,19 @@ mod tests {
     }
 
     /// **Critère (2)** — … et un `timeoutSeconds` plus généreux **ne la
-    /// supprime pas**. Il retarde la première mort déclarée et allonge la
-    /// détection vraie. C'est le critère qui compte : le remède n'est pas un
+    /// supprime pas**. C'est le critère qui compte : le remède n'est pas un
     /// réglage plus généreux.
+    ///
+    /// Il ne la retarde même pas, et il faut le dire : sous saturation, la
+    /// latence de la file M/M/1 **diverge**, de sorte qu'aucune valeur finie de
+    /// `timeoutSeconds` n'est franchie plus tard qu'une autre. La cascade est
+    /// bit pour bit la même. Ce que l'expiration allonge est ailleurs — dans la
+    /// détection **vraie** d'un agent réellement arrêté, dont la complétude
+    /// croît avec elle (§7.3, p. 112) —, et c'est exactement le mauvais échange :
+    /// on paie en détection sans rien acheter en fausses suspicions.
     #[test]
     fn critere_2b_un_timeout_plus_genereux_ne_supprime_pas_la_cascade() {
+        let serre = derouler(Params::default(), 60);
         let genereux = derouler(
             Params {
                 timeout_s: 30.0,
@@ -479,10 +487,17 @@ mod tests {
             genereux.redemarrages > 0,
             "un timeout plus généreux ne supprime pas la cascade"
         );
+        assert_eq!(
+            (genereux.redemarrages, genereux.generations),
+            (serre.redemarrages, serre.generations),
+            "sous saturation la latence diverge : le réglage ne retarde rien du tout"
+        );
         // Et il allonge la détection vraie : la complétude du détecteur croît
         // avec l'expiration.
-        let (min_serre, _) = crate::soupcon::DetecteurInfectieux::completude(10, 1, 3);
-        let (min_genereux, _) = crate::soupcon::DetecteurInfectieux::completude(10, 30, 3);
+        let (min_serre, _) =
+            crate::soupcon::DetecteurInfectieux::completude(10, 1, 3).expect("réglage documenté");
+        let (min_genereux, _) =
+            crate::soupcon::DetecteurInfectieux::completude(10, 30, 3).expect("réglage documenté");
         assert!(min_genereux > min_serre, "la détection vraie s'allonge");
     }
 

@@ -72,13 +72,19 @@ impl Default for Params {
             periode_s: 15.0,
             disponibilite_initiale_s: 30.0,
             init_metrique_processeur_s: 300.0,
-            // Les quatre valeurs qui suivent sont des **décisions du produit
-            // sans provenance dans le traité** (F1), au même titre que
-            // `FENETRE_STABILISATION` : le §2.2 décrit le contrôleur et ses
-            // grandeurs, il n'en chiffre aucune. Elles sont choisies pour que le
-            // régime nominal et le préréglage « oscillation » d'EX-A47 se
-            // distinguent à l'œil, et pour aucune autre raison.
+            // **Valeur documentée**, et non un choix du produit : le §7.3
+            // (p. 114) publie les défauts de la fenêtre de stabilisation —
+            // 300 s à la baisse, 0 s à la hausse. Voir
+            // [`Params::FENETRE_STABILISATION`]. L'asymétrie est le résultat : à
+            // la baisse la fenêtre couvre exactement les vingt périodes de
+            // l'aveuglement, à la hausse elle est nulle.
             fenetre_descente_s: 300.0,
+            // Les trois valeurs qui suivent, elles, sont des **décisions du
+            // produit sans provenance dans le traité** (F1) : le §2.2 décrit le
+            // contrôleur et ses grandeurs, il n'en chiffre aucune. Elles sont
+            // choisies pour que le régime nominal et le préréglage
+            // « oscillation » d'EX-A47 se distinguent à l'œil, et pour aucune
+            // autre raison.
             beta: 0.5,
             p: 32,
             metrique: Metrique::Decalage,
@@ -119,10 +125,19 @@ impl Params {
         self.init_metrique_processeur_s / self.periode_s
     }
 
-    /// F1 — la fenêtre de stabilisation est exposée **sans valeur par défaut
-    /// documentée**. L'interface affiche l'absence au lieu de combler.
+    /// Provenance de la fenêtre de stabilisation, affichée avec le réglage (F2).
+    ///
+    /// Les défauts **sont** publiés, et le §7.3 (p. 114) les reprend : 300 s à
+    /// la baisse, 0 s à la hausse. Le produit ne modélise que la baisse —
+    /// [`Params::fenetre_descente_s`] — parce que la fenêtre nulle à la hausse
+    /// n'a rien à retenir ; les deux politiques de montée qui bornent alors le
+    /// pas (100 % ou 4 répliques par tranche de 15 s, la plus permissive
+    /// l'emportant) ne sont **pas** transposées, le budget de churn ⌊β·T⌋ du
+    /// §2.2 tenant ce rôle.
     pub const FENETRE_STABILISATION: &'static str =
-        "provenance absente — la page qui documente le mécanisme ne publie pas ce défaut (F1)";
+        "300 s à la baisse, 0 s à la hausse (§7.3, p. 114) — seule la baisse est transposée ; les \
+         deux politiques de montée du même paragraphe ne le sont pas, le budget de churn ⌊β·T⌋ du \
+         §2.2 en tenant lieu";
 }
 
 /// L'état de la boucle.
@@ -162,8 +177,14 @@ pub struct Controleur {
     /// zéro même quand la population diverge, et c'est tout le point d'EX-A47.
     pub pannes: u32,
     /// τ mesuré — délai entre une correction et son effet mesurable. **Mesuré,
-    /// jamais saisi.**
+    /// jamais saisi** : chaque entrée est l'écart entre l'instant où une visée a
+    /// été posée et la première période où elle entre dans la mesure, et non le
+    /// T_a saisi. Les deux coïncident seulement quand T_a tombe sur un multiple
+    /// de la période.
     delais_mesures: Vec<f64>,
+    /// Instant de pose de la visée actuellement visible, pour ne compter chaque
+    /// correction qu'une fois.
+    derniere_visible_s: Option<f64>,
 }
 
 impl Controleur {
@@ -185,18 +206,22 @@ impl Controleur {
             tours: 0,
             pannes: 0,
             delais_mesures: Vec::new(),
+            derniere_visible_s: None,
         }
+    }
+
+    /// La visée datée dont l'effet est déjà mesurable, avec **l'instant où elle
+    /// a été posée**. `None` tant qu'aucune ne l'est.
+    fn visee_visible(&self) -> Option<(f64, u32)> {
+        let cible = self.horloge_s - self.params.disponibilite_initiale_s;
+        self.datee.iter().rev().find(|(t, _)| *t <= cible).copied()
     }
 
     /// Population dont l'effet est déjà mesurable : la visée telle qu'elle
     /// était il y a T_a.
     pub fn population_effective(&self) -> u32 {
-        let cible = self.horloge_s - self.params.disponibilite_initiale_s;
-        self.datee
-            .iter()
-            .rev()
-            .find(|(t, _)| *t <= cible)
-            .map(|(_, n)| *n)
+        self.visee_visible()
+            .map(|(_, n)| n)
             .unwrap_or(self.params.n0)
     }
 
@@ -222,6 +247,20 @@ impl Controleur {
         // sur la collecte avant de décider.
         self.lectures_de_metriques += self.population.max(1) as u64;
         self.tours += 1;
+
+        // τ est **mesuré, jamais saisi** (EX-A25) : c'est l'écart entre
+        // l'instant où une correction a été posée et la première période où son
+        // effet entre dans la mesure. Recopier `disponibilite_initiale_s` ferait
+        // passer une entrée pour une sortie ; la quantification par la période
+        // suffit d'ailleurs à les séparer dès que T_a n'est pas un multiple de
+        // T. L'entrée initiale `(0, n₀)` est exclue : ce n'est pas une
+        // correction.
+        if let Some((pose_a, _)) = self.visee_visible() {
+            if pose_a > 0.0 && self.derniere_visible_s != Some(pose_a) {
+                self.derniere_visible_s = Some(pose_a);
+                self.delais_mesures.push(self.horloge_s - pose_a);
+            }
+        }
 
         let m = self.metrique(charge);
         let r = if visee > 0.0 { m / visee } else { 1.0 };
@@ -270,10 +309,6 @@ impl Controleur {
         if delta != 0 {
             self.population = (self.population as i64 + delta).max(1) as u32;
             self.datee.push((self.horloge_s, self.population));
-            // τ est **mesuré** : c'est l'écart entre l'instant de la correction
-            // et celui où elle contribue à la mesure.
-            self.delais_mesures
-                .push(self.params.disponibilite_initiale_s);
         }
         self.historique.push(self.population);
     }
@@ -398,11 +433,21 @@ mod tests {
         assert_eq!(p.reevaluations_par_correction(), 20.0);
     }
 
-    /// F1 — la fenêtre de stabilisation n'a pas de défaut documenté, et
-    /// l'interface l'affiche.
+    /// F2 — la fenêtre de stabilisation porte sa provenance, et le défaut du
+    /// produit est **celui du traité** : 300 s à la baisse (§7.3, p. 114).
+    ///
+    /// Ce que le libellé doit dire en plus de la valeur : ce qui n'est **pas**
+    /// transposé. La fenêtre à la hausse vaut 0 s et les deux politiques de
+    /// montée qui bornent alors le pas ne sont pas implantées (PD6).
     #[test]
-    fn la_fenetre_de_stabilisation_declare_son_absence_de_provenance() {
-        assert!(Params::FENETRE_STABILISATION.contains("provenance absente"));
+    fn la_fenetre_de_stabilisation_porte_sa_provenance_et_ce_quelle_omet() {
+        assert_eq!(Params::default().fenetre_descente_s, 300.0);
+        assert!(Params::FENETRE_STABILISATION.contains("300 s à la baisse"));
+        assert!(Params::FENETRE_STABILISATION.contains("§7.3"));
+        assert!(
+            Params::FENETRE_STABILISATION.contains("ne le sont pas"),
+            "le libellé doit nommer ce qui n'est pas transposé (PD6)"
+        );
     }
 
     /// En régime sain, le contrôleur **finit** au point fixe et y reste.
@@ -555,6 +600,13 @@ mod tests {
     }
 
     /// EX-A25 — τ est **mesuré**, jamais saisi.
+    ///
+    /// Aux défauts documentés, T_a = 30 s est un multiple de la période de 15 s,
+    /// donc la mesure retombe sur la valeur saisie ; c'est ce qui rendait
+    /// invisible une implantation qui se contentait de recopier T_a. Le second
+    /// cas sépare les deux : à T_a = 20 s pour une période de 15 s, la
+    /// quantification de la boucle porte le délai **réel** à 30 s, et c'est lui
+    /// que le simulateur doit rendre.
     #[test]
     fn tau_est_mesure_et_pas_saisi() {
         let mut c = Controleur::nouveau(Params::default());
@@ -563,6 +615,19 @@ mod tests {
             c.periode(500.0, 10.0);
         }
         assert_eq!(c.tau_mesure_s(), Some(30.0), "le temps mort mesuré");
+
+        let mut decale = Controleur::nouveau(Params {
+            disponibilite_initiale_s: 20.0,
+            ..Params::default()
+        });
+        for _ in 0..20 {
+            decale.periode(500.0, 10.0);
+        }
+        assert_eq!(
+            decale.tau_mesure_s(),
+            Some(30.0),
+            "τ mesuré doit être le délai réel (30 s), non le T_a saisi (20 s)"
+        );
     }
 
     /// EX-A46 — arrêter le contrôleur en plein cycle gèle la population et ne

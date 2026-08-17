@@ -38,6 +38,24 @@ pub enum Mecanisme {
     Consensus,
 }
 
+/// Taille de l'échantillon local que chaque agent tire pour évaluer la
+/// détection de quorum, en plus des `k` opinions de la k-unanimité.
+///
+/// **Décision d'implantation, sans provenance dans le traité (F1)** : le §5.1
+/// pose la détection sur « une fraction locale ≥ 1 − δ » sans chiffrer la
+/// taille de l'échantillon sur laquelle cette fraction se calcule. Elle est
+/// nommée ici parce que [`grille`] la facture — `k + 8` messages par tour et par
+/// agent —, et qu'un nombre écrit deux fois dérive.
+pub const TAILLE_ECHANTILLON_QUORUM: u32 = 8;
+
+/// Seuil ε de l'arrêt local de [`MoyenneLocale`], sur |Δx_i|.
+///
+/// **Décision d'implantation, sans provenance dans le traité (F1)** : le §5.1
+/// écrit la condition d'arrêt « |Δx_i| ≤ ε pendant T tours » et ne chiffre ni ε
+/// ni T. T est un argument d'[`MoyenneLocale::arret_local`] ; ε est fixé ici,
+/// et le nommer vaut mieux que de le laisser en littéral dans la boucle.
+pub const EPSILON_ARRET: f64 = 1e-3;
+
 /// Verdict d'une case de la grille (EX-V18).
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
 pub enum Case {
@@ -152,12 +170,17 @@ impl Mecanisme {
 /// une fraction locale ≥ 1 − δ.
 #[derive(Debug)]
 pub struct SeuilDeQuorum {
-    /// Taille de la population.
-    pub n: u32,
     /// Opinion de chaque agent : index de l'option.
+    ///
+    /// **C'est elle qui porte la population**, et il n'existe pas de champ `n`
+    /// en regard : une taille rangée à côté des tables qu'elle dimensionne se
+    /// déplace sans elles. Voir [`SeuilDeQuorum::n`].
     opinion: Vec<usize>,
     /// Qualité perçue de chaque option — c'est elle qui module la diffusion.
-    pub qualites: Vec<f64>,
+    ///
+    /// Lecture seule par [`SeuilDeQuorum::qualites`] : `opinion` **indexe** cette
+    /// table, et la vider de l'extérieur laissait l'indexation sans cible.
+    qualites: Vec<f64>,
     /// δ : la fraction locale doit atteindre 1 − δ.
     pub delta: f64,
     /// k de la règle de k-unanimité : l'unique entier qui règle le compromis
@@ -218,10 +241,19 @@ impl SeuilDeQuorum {
                     .to_string(),
             );
         }
+        // `n = 0` rendait [`SeuilDeQuorum::fraction_engagee`] égale à 0/0, donc
+        // `NaN`, et un `NaN` comparé à un seuil est faux dans les deux sens.
+        // Un refus rendu à l'appelant, jamais un abandon (SPEC §7, clause 4).
+        if n == 0 {
+            return Err(
+                "population vide refusée : la détection de quorum est une fraction d'agents, et \
+                 sur zéro agent elle n'est pas nulle — elle n'existe pas (§5.1)."
+                    .to_string(),
+            );
+        }
         let m = qualites.len();
         Ok(SeuilDeQuorum {
             opinion: (0..n as usize).map(|_| alea.entier(m as u64) as usize).collect(),
-            n,
             qualites,
             delta,
             k,
@@ -233,19 +265,36 @@ impl SeuilDeQuorum {
         })
     }
 
+    /// Taille de la population — **dérivée** de la table des opinions, jamais
+    /// rangée en double à côté d'elle.
+    pub fn n(&self) -> u32 {
+        self.opinion.len() as u32
+    }
+
+    /// Qualité perçue de chaque option, en lecture seule.
+    pub fn qualites(&self) -> &[f64] {
+        &self.qualites
+    }
+
     fn coupe(&self, i: u32, j: u32) -> bool {
-        self.partition && ((i < self.n / 2) != (j < self.n / 2))
+        self.partition && ((i < self.n() / 2) != (j < self.n() / 2))
     }
 
     /// Un tour : chaque agent échantillonne k pairs ; si tous portent la même
     /// opinion, il l'adopte. La diffusion est modulée par la qualité.
+    ///
+    /// Le service de pairs a **sa propre** population, indépendante de celle-ci :
+    /// un identifiant qu'il rend au-delà de `n` désigne un agent que ce
+    /// mécanisme n'a pas, et il est écarté comme un tirage sans réponse plutôt
+    /// que d'indexer hors bornes (SPEC §7, clause 4).
     pub fn tour(&mut self, service: &mut ServiceDePairs, alea: &mut Alea) {
         self.tours += 1;
+        let n = self.n();
         let anciennes = self.opinion.clone();
-        for i in 0..self.n {
+        for i in 0..n {
             let mut vues = Vec::with_capacity(self.k as usize);
             for _ in 0..self.k {
-                if let Some(j) = service.tirer(i, alea) {
+                if let Some(j) = service.tirer(i, alea).filter(|j| *j < n) {
                     if self.coupe(i, j) {
                         continue;
                     }
@@ -266,9 +315,9 @@ impl SeuilDeQuorum {
             }
 
             // Détection de quorum : fraction locale ≥ 1 − δ.
-            let echantillon: Vec<usize> = (0..8)
+            let echantillon: Vec<usize> = (0..TAILLE_ECHANTILLON_QUORUM)
                 .filter_map(|_| service.tirer(i, alea))
-                .filter(|j| !self.coupe(i, *j))
+                .filter(|j| *j < n && !self.coupe(i, *j))
                 .map(|j| anciennes[j as usize])
                 .collect();
             if !echantillon.is_empty() {
@@ -294,8 +343,11 @@ impl SeuilDeQuorum {
     }
 
     /// Fraction d'agents ayant engagé une option.
+    ///
+    /// Le dénominateur ne peut pas être nul : [`SeuilDeQuorum::nouveau`] refuse
+    /// la population vide, donc cette fraction est toujours définie.
     pub fn fraction_engagee(&self) -> f64 {
-        self.engage.iter().filter(|e| e.is_some()).count() as f64 / self.n as f64
+        self.engage.iter().filter(|e| e.is_some()).count() as f64 / self.n() as f64
     }
 
     /// **La case « accord » de la grille**, remplie par la mesure.
@@ -323,7 +375,11 @@ impl SeuilDeQuorum {
 /// un paramètre d'ordre — donc les oracles armés.
 pub struct MoyenneLocale {
     /// État courant de chaque agent.
-    pub x: Vec<f64>,
+    ///
+    /// Lecture seule par [`MoyenneLocale::x`] : elle **dimensionne** `x0`,
+    /// `sous_epsilon` et `fige`, et la redimensionner de l'extérieur laissait
+    /// les trois derrière elle.
+    x: Vec<f64>,
     x0: Vec<f64>,
     /// Tours écoulés.
     pub tours: u64,
@@ -345,29 +401,44 @@ impl MoyenneLocale {
         }
     }
 
+    /// L'état courant de chaque agent, en lecture seule.
+    pub fn x(&self) -> &[f64] {
+        &self.x
+    }
+
     /// Mode « capture » : un seul agent figé fixe la limite pour tout l'essaim.
+    ///
+    /// Sans effet hors population : un agent qui n'existe pas ne se fige pas
+    /// (SPEC §7, clause 4).
     pub fn figer(&mut self, i: usize) {
-        self.fige[i] = true;
+        if let Some(f) = self.fige.get_mut(i) {
+            *f = true;
+        }
     }
 
     /// Un tour : chaque agent prend la moyenne de son voisinage, lui compris.
+    ///
+    /// Le service de pairs a **sa propre** population : un identifiant qu'il
+    /// rend au-delà de celle de ce mécanisme désigne un agent sans état, et il
+    /// est écarté comme un tirage sans réponse (SPEC §7, clause 4).
     pub fn tour(&mut self, service: &mut ServiceDePairs, alea: &mut Alea, degre: u32) {
         self.tours += 1;
+        let n = self.x.len();
         let anciens = self.x.clone();
-        for i in 0..self.x.len() {
+        for i in 0..n {
             if self.fige[i] {
                 continue;
             }
             let mut somme = anciens[i];
             let mut compte = 1.0;
             for _ in 0..degre {
-                if let Some(j) = service.tirer(i as u32, alea) {
+                if let Some(j) = service.tirer(i as u32, alea).filter(|j| (*j as usize) < n) {
                     somme += anciens[j as usize];
                     compte += 1.0;
                 }
             }
             let nouveau = somme / compte;
-            if (nouveau - anciens[i]).abs() <= 1e-3 {
+            if (nouveau - anciens[i]).abs() <= EPSILON_ARRET {
                 self.sous_epsilon[i] += 1;
             } else {
                 self.sous_epsilon[i] = 0;
@@ -379,15 +450,25 @@ impl MoyenneLocale {
     /// **EX-A51, oracle armé** — écart entre la limite atteinte et la moyenne
     /// des états initiaux. C'est la **validité**, et c'est ce que le mécanisme
     /// abandonne.
-    pub fn ecart_a_la_validite(&self) -> f64 {
+    ///
+    /// Rend `None` sur population vide : `0/0` donnait `NaN`, et un `NaN`
+    /// comparé à un seuil est faux **dans les deux sens** — un oracle armé qui
+    /// rend une telle valeur se lit comme un oracle satisfait. L'absence de
+    /// mesure se déclare ; elle ne se maquille pas en mesure (PD6).
+    pub fn ecart_a_la_validite(&self) -> Option<f64> {
+        if self.x0.is_empty() || self.x.is_empty() {
+            return None;
+        }
         let moyenne_initiale = self.x0.iter().sum::<f64>() / self.x0.len() as f64;
         let limite = self.x.iter().sum::<f64>() / self.x.len() as f64;
-        (limite - moyenne_initiale).abs()
+        Some((limite - moyenne_initiale).abs())
     }
 
     /// Arrêt local, **non concerté**. PD10 : il ne dit rien de l'essaim.
+    ///
+    /// Faux hors population — un agent qui n'existe pas ne s'est pas arrêté.
     pub fn arret_local(&self, i: usize, t: u32) -> bool {
-        self.sous_epsilon[i] >= t
+        self.sous_epsilon.get(i).is_some_and(|c| *c >= t)
     }
 
     /// Mode « arrêt prématuré » : deux sous-populations franchissent ε sur deux
@@ -496,7 +577,10 @@ pub fn grille(quorum: &SeuilDeQuorum, moyenne: &MoyenneLocale, crdt: FamilleCrdt
     vec![
         Ligne::nouvelle(
             Mecanisme::SeuilDeQuorum,
-            format!("{} par tour et par agent", quorum.k + 8),
+            format!(
+                "{} par tour et par agent",
+                quorum.k + TAILLE_ECHANTILLON_QUORUM
+            ),
             "non borné".to_string(),
             format!("fraction locale ≥ 1 − δ = {:.2}", 1.0 - quorum.delta),
             quorum.case_accord(),
@@ -508,12 +592,17 @@ pub fn grille(quorum: &SeuilDeQuorum, moyenne: &MoyenneLocale, crdt: FamilleCrdt
             Mecanisme::MoyenneAlignement,
             "Θ(d̄) par tour et par agent".to_string(),
             "non borné".to_string(),
-            "|Δx_i| ≤ ε pendant T tours — local et non concerté".to_string(),
+            format!(
+                "|Δx_i| ≤ ε = {EPSILON_ARRET} pendant T tours — local et non concerté ; ε est une \
+                 décision d'implantation, le §5.1 ne le chiffre pas (F1)"
+            ),
             Case::Tenue,
-            if moyenne.ecart_a_la_validite() > 1e-6 {
-                Case::Abandonnee
-            } else {
-                Case::Tenue
+            // Sans population, il n'y a pas d'écart à la validité : la case
+            // reste **non livrée** plutôt que d'annoncer « tenue » (PD6).
+            match moyenne.ecart_a_la_validite() {
+                Some(e) if e > 1e-6 => Case::Abandonnee,
+                Some(_) => Case::Tenue,
+                None => Case::NonLivree,
             },
             Case::Abandonnee,
             "moyenne locale : validité et terminaison en temps fini abandonnées",
@@ -660,11 +749,66 @@ mod tests {
         for _ in 0..2_000 {
             m.tour(&mut s, &mut alea, 4);
         }
+        let ecart = m.ecart_a_la_validite().expect("population non vide");
         assert!(
-            m.ecart_a_la_validite() > 1.0,
-            "la capture doit éloigner la limite de la moyenne initiale, écart {}",
-            m.ecart_a_la_validite()
+            ecart > 1.0,
+            "la capture doit éloigner la limite de la moyenne initiale, écart {ecart}"
         );
+    }
+
+    /// SPEC §7, clause 4 — la population n'est plus un champ public que
+    /// l'appelant puisse déplacer sans déplacer les tables qu'elle dimensionne.
+    /// Ce qui reste atteignable, c'est un **service de pairs plus grand** que le
+    /// mécanisme : il rend des identifiants d'agents qui n'existent pas ici.
+    #[test]
+    fn un_service_plus_grand_que_la_population_ne_panique_pas() {
+        let mut alea = Alea::nouveau(11);
+        let mut q = SeuilDeQuorum::nouveau(4, vec![0.9, 0.5], 0.1, 3, true, &mut alea).unwrap();
+        let mut s = ServiceDePairs::nouveau(64, Biais::Uniforme);
+        for _ in 0..20 {
+            q.tour(&mut s, &mut alea);
+        }
+        assert_eq!(q.n(), 4, "la population reste celle du mécanisme");
+        assert!(q.fraction_engagee().is_finite());
+
+        let mut m = MoyenneLocale::nouvelle(vec![1.0, 2.0]);
+        for _ in 0..20 {
+            m.tour(&mut s, &mut alea, 4);
+        }
+        assert_eq!(m.x().len(), 2);
+        assert!(m.ecart_a_la_validite().expect("population non vide").is_finite());
+    }
+
+    /// SPEC §7, clause 4 — la population vide est **refusée** au quorum, dont
+    /// [`SeuilDeQuorum::fraction_engagee`] serait `0/0` ; et l'oracle armé de la
+    /// moyenne locale, qui n'a pas de constructeur faillible, **déclare**
+    /// l'absence de mesure au lieu de rendre `NaN` (G4).
+    #[test]
+    fn une_population_vide_est_refusee_ou_declaree_sans_mesure() {
+        let mut alea = Alea::nouveau(12);
+        let refus = SeuilDeQuorum::nouveau(0, vec![0.9], 0.1, 3, true, &mut alea);
+        assert!(refus.is_err(), "population vide au quorum : refus attendu");
+
+        let vide = MoyenneLocale::nouvelle(Vec::new());
+        assert_eq!(vide.ecart_a_la_validite(), None, "aucune mesure, et non NaN");
+        assert!(!vide.arret_local(0, 1), "hors population, aucun arrêt");
+        // La grille le porte : la case reste **non livrée**, jamais « tenue ».
+        let q = quorum(true).unwrap();
+        let g = grille(&q, &vide, FamilleCrdt::Etat);
+        assert_eq!(g[1].validite, Case::NonLivree);
+        assert!(!g[1].mesuree());
+    }
+
+    /// SPEC §7, clause 4 — `figer` hors population n'a pas d'effet, et ne
+    /// dimensionne plus rien au passage.
+    #[test]
+    fn figer_hors_population_na_aucun_effet() {
+        let mut m = MoyenneLocale::nouvelle(vec![1.0, 2.0]);
+        m.figer(99);
+        let mut s = ServiceDePairs::nouveau(2, Biais::Uniforme);
+        let mut alea = Alea::nouveau(13);
+        m.tour(&mut s, &mut alea, 1);
+        assert_eq!(m.x().len(), 2);
     }
 
     /// **EX-V18** — les colonnes « modèle de panne » et « synchronisme » ne sont

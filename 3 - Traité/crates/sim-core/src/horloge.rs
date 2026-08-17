@@ -102,10 +102,22 @@ impl Horloges {
 
     /// Libellé permanent (EX-C13, §7.3), **destiné** à l'affichage en gris avec
     /// sa source. Aucun appelant à ce jour : `sim-viz` ne le lit pas.
+    ///
+    /// Le libellé portait « incertitude généralement sous 10 ms », chiffre qui
+    /// n'est nulle part dans la source : le §7.3 mesure une dent de scie de 1 à
+    /// 7 ms **avec des excursions au-delà**, et enchaîne sur « un ε annoncé sans
+    /// percentile est inutilisable ici : ce qui viole l'invariant n'est pas la
+    /// valeur courante, c'est la queue ». Un majorant lissé sans percentile est
+    /// donc exactement la faute que le passage cité nomme, en plus d'être une
+    /// provenance fausse (F2).
     pub const PROVENANCE_EPSILON: &'static str =
-        "une infrastructure de temps à références GPS et horloges atomiques maintient \
-         l'incertitude généralement sous 10 ms — repère externe (annexe B). Un déploiement \
-         hybride sans cette infrastructure ne mesure pas sa dérive ; **il la suppose**.";
+        "l'infrastructure de temps de TrueTime — références GPS et horloges atomiques — tient \
+         une dent de scie de 1 à 7 ms entre deux interrogations des maîtres de temps, avec des \
+         excursions au-delà quand un maître devient indisponible ou qu'une machine est \
+         surchargée ; mesure de 2012, repère externe et périssable (§7.3, annexe B). Ce qui \
+         viole l'invariant n'est pas la valeur courante mais **la queue** : un ε annoncé sans \
+         percentile est inutilisable. Un déploiement hybride sans cette infrastructure ne \
+         mesure pas sa dérive ; **il la suppose**.";
 }
 
 /// Un domaine de panne nommé (EX-C14).
@@ -295,6 +307,18 @@ mod tests {
         assert!(h.depasse(1e-2), "la dérive réelle dépasse celle supposée");
         assert!(!h.depasse(1.0), "et pas une hypothèse plus large");
         assert!(Horloges::PROVENANCE_EPSILON.contains("il la suppose"));
+    }
+
+    /// F2 — le repère porte **le chiffre mesuré par la source**, 1 à 7 ms avec
+    /// excursions, et la raison pour laquelle un majorant lissé ne vaut rien :
+    /// « ce qui viole l'invariant […] c'est la queue » (§7.3).
+    #[test]
+    fn le_repere_depsilon_porte_le_chiffre_de_la_source_et_sa_queue() {
+        let p = Horloges::PROVENANCE_EPSILON;
+        assert!(p.contains("1 à 7 ms"), "{p}");
+        assert!(p.contains("excursions au-delà"), "{p}");
+        assert!(p.contains("la queue"), "{p}");
+        assert!(p.contains("sans percentile"), "{p}");
     }
 
     #[test]

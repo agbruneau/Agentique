@@ -20,7 +20,7 @@ Trois provenances, et elles ne se valent pas :
 | DT2 | Format de configuration | **[C] JSON** — `serde_json` est déjà requis pour l'export. L'URL de partage, elle, n'encode **pas** de JSON : `sim-agents::partage` emploie un format textuel `clé:valeur` sans dépendance, précisément pour ne pas tirer un encodeur base64 (RQ3) |
 | DT3 | File d'événements | **[C] `BinaryHeap`** — la file calendaire ne se justifie que si NF-05 échoue. NF-05 **a** échoué, mais pour une raison structurelle en Θ(n²) qu'une meilleure file ne corrige pas |
 | DT4 | Hébergement web | **[C] Pages statiques.** Tenu : trois fichiers côte à côte, aucune dépendance serveur |
-| DT5 | Le traité comme donnée | **[C] Renvois de section et de page + citations courtes** ; le texte intégral reste dans le PDF. **Amendé en 3.0** : la page s'entend de la **deuxième édition**, et l'édition fait partie de la provenance — les deux éditions ne partagent pas leur pagination, donc une page sans édition est une provenance fausse, non imprécise |
+| DT5 | Le traité comme donnée | **[C] Renvois de section et de page + citations courtes** ; le texte intégral reste dans le PDF. **Amendé en 3.0** : la page fait partie de la provenance, avec l'édition — deux éditions ne partagent pas leur pagination, donc une page sans édition est une provenance fausse, non imprécise. **Amendé de nouveau le 17 août 2026, en appliquant la clause à elle-même** : la version 3.0 écrivait « la page s'entend de la **deuxième** édition », et le seul traité que le dépôt contient est la **troisième**, du 15 août 2026, **143 pages** (`python -c "import pymupdf; print(pymupdf.open('Traité.pdf').page_count)"`). La page s'entend donc de la troisième, et un renvoi qui ne nomme pas son édition n'est pas une provenance. **Ce que l'amendement ne fait pas** : migrer les renvois. Les **56** `p. N` du PRD (`grep -ohE 'p\. [0-9]+' docs/PRD.md \| wc -l`) sont ceux de la deuxième, et cinq mesures suffisent à le montrer — la conclusion est p. 128-129 et non p. 96, les Références ouvrent p. 130 et non p. 96, le tableau 14 est p. 77 et non p. 58, la thèse du scénario M est p. 5 et p. 127 et non p. 94, le §3.3 est p. 50-55 et non p. 42-43. La migration est un chantier ouvert, consigné au §0.2 du PRD |
 | DT6 | Le détecteur de défaillance | **[C] posée, non tenue.** Un objet paramétré dans `sim-core` — mais il n'a **qu'un** consommateur (`sim-agents::pair_a_pair`), `sim-milieu` n'en instancie aucun, et le sondage indirect est un second objet, `sim-agents::soupcon::DetecteurInfectieux`. Les cinq exemplaires comptés dans le traité n'ont pas produit une factorisation ; PD7 reste à trancher |
 | DT7 | Le plan de contrôle | **[C] Modèle de coût**, jamais un protocole implanté. L'affichage dit « modèle de coût du plan de contrôle », jamais « consensus ». Implanter Raft ferait du produit un simulateur de protocole d'accord, ce que le traité refuse d'être |
 | DT8 | L'agent menteur | **[C] Point d'injection unique**, désactivé par défaut, activable dans les scénarios I et L seulement. **Révisée en 3.0** : la première édition présentait la faute arbitraire comme **importée avec un adversaire** ; le §8.3 de la seconde la mesure comme **endogène** — une population dont chaque membre suit fidèlement sa consigne produit l'escalade. La décision ne change pas, ce qu'elle établit change : le libellé affiché dit désormais *l'effet est byzantin, l'origine ne l'est pas*, la borne 3f + 1 est affichée avec sa propre inapplicabilité à ce régime (le nombre d'agents adverses n'y est pas borné : il vaut n), et le régime lui-même est déclaré hors modèle (EX-C20) |
@@ -38,6 +38,7 @@ Trois provenances, et elles ne se valent pas :
 | [EX-V12 — parité natif/WASM](../bancs/parite-wasm/VERDICT.md) | **[M]** Tenue sur les six cas du scénario B, bits des flottants compris | La bibliothèque partagée entre les deux cibles est ce qui rend la parité mesurable |
 | [DT1 — arithmétique](../bancs/dt1-flottant/VERDICT.md) | **[M]** Flottant conservé, transcendantes par `libm` | Sept méthodes de `f64` interdites par lint. Le verdict de `mul_add` **dépend de la machine de construction**, ce qui renforce l'interdiction au lieu de l'affaiblir |
 | [NF-05 — débit](../bancs/nf05-debit/VERDICT.md) | **[M] Cible non atteinte** : de l'ordre de 10 à 15 s simulées/s-cœur à n = 1 000 contre 10³ (remesuré à la clôture de la phase 5 ; la mesure de phase 1, 0,2–2,0, était périmée d'un facteur cinquante depuis que la rétention existe) | L'écart est structurel — chaque agent lit ce que toute la population écrit, donc Θ(n²). **La cible est à refaire sur la mesure**, comme DT1 l'a été. Rien de la phase 1 n'en dépend |
+| [Audit du dépôt — 17 août 2026](../bancs/audit-2026-08/CONSOLIDATION.md) | **[M]** Dix agents, cinq morceaux, deux tours chacun (bâtisseur + critique en contexte neuf). Suite verte à **465 tests** ; clippy et rustdoc à 0. Le banc n'a pas de `VERDICT.md` : ses pièces sont les cinq `M*-*.md` et les cinq `M*-critique.md` de [`bancs/audit-2026-08/`](../bancs/audit-2026-08/), et sa consolidation en est le verdict | Le défaut le plus fréquent trouvé n'est pas un défaut de code : c'est **un chiffre écrit sans la commande qui le produit**. D'où la règle appliquée depuis à tous les documents — un compte se donne avec sa ligne de mesure et sa date, jamais gravé. Trois conséquences normatives : DT5 amendé sur l'édition, quatre décisions de conception ouvertes ci-dessous, et le reclassement de deux écarts au traité |
 
 ## Les réévaluations obligatoires
 
@@ -96,6 +97,22 @@ trois tiennent aujourd'hui ; les trois se rouvrent par un changement de
 | **La sentinelle `+∞` est traduite dans la vue, pas dans le type** | **[C]**, *portée réduite par l'audit* | `Mesures::plancher_observe` vaut `f64::INFINITY` tant qu'aucun cycle ne l'a mis à jour, et `sim-viz` rend « jamais observé » au lieu de `inf`. **Le cas de γ = 1 ne le produit plus** : `verifier_bornes` relève les deux minimums *avant* de consulter le portail NF-14, donc une borne effacée n'efface plus la mesure. La sentinelle ne subsiste que pour une exécution qui n'aurait exécuté aucun cycle. Le bon correctif reste `Option<f64>`, comme `ecart_a_loptimum` juste à côté ; il change une signature publique de `sim-agents`. Pour rouvrir : le changement de type, et la traduction de la vue disparaît avec |
 | **Le vainqueur en temps est lu dans une chaîne française** | **[R]** | `Comparaison::verdict_temps` ne rend le vainqueur que dans une phrase formatée ; la figure du croisement le lit par `contains("la maille gagne")`. Une reformulation le casserait **sans erreur de compilation** — d'où un test de `sim-viz` (`le_vainqueur_se_lit_encore_dans_la_phrase_de_verdict`) qui échoue à la place. Pour rouvrir : `qui_gagne_en_temps() -> Vainqueur` dans `sim-agents`, dont `verdict_temps` se sert pour composer sa phrase |
 
+## Les décisions ouvertes par l'audit du 17 août 2026
+
+Quatre décisions que les bâtisseurs de l'audit ont **laissées ouvertes plutôt que
+prises**, chacune parce qu'elle sort du morceau où le défaut a été mesuré. Elles
+entrent ici comme décisions ouvertes, non comme faits : le motif de chacune est
+dans le rapport nommé, et **aucune n'est tranchée**. Les quatre touchent une
+interface publique ou une liste normative, ce qui est exactement la classe qu'un
+audit de crate ne doit pas trancher seul.
+
+| Décision ouverte | Ce que la mesure établit | Ce qu'il faudrait pour la trancher |
+|---|---|---|
+| **Fermer `Proprietes` par le type, ou renoncer à tenir PD12 par le type** ([M1](../bancs/audit-2026-08/M1-sim-core.md), C1) | `#[non_exhaustive]` interdit le littéral, **pas l'affectation de champ**. `sim_core::detecteur::Proprietes` est `Copy` avec quatre champs `pub`, et `Detecteur::proprietes()` en rend un exemplaire par valeur : depuis une crate externe, un exemplaire à `suspicions = 1 000 000, fausses = 0, exactitude = Some(0.0)` se fabrique. Ce que PD12 tient quand même est plus étroit qu'annoncé — le détecteur ne prend ces nombres que de `sonder`, donc une copie falsifiée ne trompe qu'un affichage. La doc de `detecteur.rs` porte désormais la mesure au lieu de l'affirmation contraire | Champs privés derrière quatre accesseurs. **Casse `crates/sim-agents/src/pair_a_pair.rs`**, qui lit `p.suspicions` et `p.fausses_suspicions` : c'est un changement d'interface entre deux crates, donc une décision de conception, pas un correctif d'audit |
+| **Remonter dans `sim-agents` les neuf valeurs de paramètre transcrites dans `sim-viz`** ([M5](../bancs/audit-2026-08/M5-viz-et-docs.md), E6) | `VueA::default` pose six valeurs — `n: 64, p: 8, l99_ms: 20.0, aller_simple_ms: 2.0, degre_depot: 3, taux_omission: 0.01` — et `VueB::default` trois — `n: 16, budget: 150_000, graine: 1`. Aucune ne vient de `sim-agents` (`grep -rn '150_000' crates/sim-agents/src/` ne rend rien). Elles ne sont pas sans provenance pour autant : ce sont **les défauts des tableaux du §7 du PRD**, transcrits faute d'accesseur — sauf la graine, qui ne figure dans aucun tableau. Rien ne tient la transcription en accord, et un test qui comparerait la vue à elle-même serait tautologique | Un défaut nommé pour `VueB` et un constructeur de défaut pour `scenario_a`, dont l'API est aujourd'hui une fonction nue à sept paramètres. Tant que ce n'est pas fait, le contrat de `sim-viz` porte « zéro définition de scénario **à deux exceptions nommées** » au lieu d'un absolu : c'est vrai, et plus faible |
+| **`ModeleFaute::avertissements` n'a aucun appelant — donc la moitié `[U]` d'EX-C06 n'est tenue par personne** ([M1](../bancs/audit-2026-08/M1-sim-core.md), C4 et D2) | Vérifié : aucun appelant dans `crates/`, `bancs/` compris. Les avertissements que `sim-agents` et `sim-viz` affichent viennent de `sim_agents::stigmergie::Params::avertissements`, homonyme et sans rapport. L'audit a **ajouté** à cette fonction l'avertissement de crash corrélé que le passage des taux par niveau rendait nécessaire — mesuré : un centre unique à 0,09 vide toute la population 9,3 % des pas, contre 0 vidage complet pour un `crash_machine` de même espérance par acteur —, et cet avertissement neuf hérite de la même réserve : calculé, affiché par personne | Un point d'appel dans la vue, ou le retrait d'EX-C06 de sa moitié `[U]`. En attendant, la réserve est déclarée par `ModeleFaute::hors_modele()` et par le §0 du PRD |
+| **Ouvrir `sim_core::hors_perimetre()`, ou assumer que le cœur n'en a pas** ([M1](../bancs/audit-2026-08/M1-sim-core.md), R2) | `grep -rn 'fn hors_perimetre' crates/` rend deux fonctions, `sim-milieu` et `sim-agents` ; **`sim-core` n'en a aucune**. Les absences du cœur logent donc dans `ModeleFaute::hors_modele()`, dont ce n'est pas l'objet : sa première entrée y énumère **neuf** mécanismes sans appelant — `tirer_pannes`, `Moteur::avancer_partition`, `message_perdu`, `injection_echec`, `injection_retard`, `injection_valeur`, `retard_message`, `ecriture_corrompue`, `avertissements` —, dont six n'ont aucun rapport avec le modèle de faute pris comme modèle. Le plancher mémoire d'EX-C17, EX-C08 et EX-C16 y sont aussi, ou nulle part | Trancher : soit une quatrième liste vivante, ce qui touche `docs/PRD.md`, `docs/SPEC.md`, `CLAUDE.md` et l'onglet « Limites » (une septième section) ; soit écrire que `hors_modele()` est **par convention** la liste d'absences du cœur, ce qui coûte une phrase et laisse le nom mentir. **Le code n'est le périmètre d'aucun des deux audits** ; la décision est ici, la fonction n'est pas créée |
+
 ## Les modélisations que la mesure a corrigées
 
 Elles ne sont pas des décisions de conception mais des **erreurs trouvées par le
@@ -128,11 +145,59 @@ constats de mesure qui ne contredisent aucun énoncé : le contrôleur
 d'élasticité, dont le §2.2 du traité décrit déjà le comportement, et `mul_add`,
 qui porte sur la machine de construction et non sur le traité.
 
+**Reclassement du 17 août 2026, contre la troisième édition livrée.** Le compte
+reste à cinq et la troisième édition le confirme : sa conclusion écrit *« Cinq
+écarts entre le livre et sa transposition y sont consignés, dont trois contre
+l'ouvrage »* et cite ce dépôt en notice 120 (`Traité.md:1743`, `Traité.pdf`
+p. 129). Ce qui change est le statut de trois lignes du tableau, et il faut le
+dire parce qu'un écart absorbé par la source cesse d'être une contradiction sans
+cesser d'être un fait.
+
+- **Les deux premiers sont absorbés dans le texte de la troisième édition.** Le
+  §3.1 (`Traité.md:736`, p. 42) écrit désormais **7,933 × 10⁻³** et qualifie
+  lui-même 7,9 × 10⁻³ d'« énoncé faux, non une imprécision » ; le §4.1
+  (`Traité.md:981`, p. 58) écrit « Sans relance, l'erreur ne croît pas sans
+  borne : **elle se fige** », puis « La relance de la ligne 11 **ne plafonne donc
+  pas** l'erreur ». Les deux mesures sont retrouvées par la source, mot pour mot.
+  Ils restent des écarts contre la **deuxième** édition et contre le PRD, qui écrit
+  encore « moins de 7,9 × 10⁻³ » au §0 et « elle dérive sans borne ».
+- **Le contrôleur d'élasticité change de camp, et n'est pas tranché.** Le registre
+  le classait « ne contredit pas le traité » sur la foi du §2.2. Le §7.3 de la
+  troisième édition (`Traité.md:1576`, p. 114) conclut le contraire du constat que
+  le module affiche : *« Le comportement par défaut n'est donc pas une
+  oscillation, c'est un dépassement en escalier suivi d'une descente filtrée — et
+  qui cherche une oscillation ne trouve rien à corriger. »* La contradiction est
+  frontale, et elle n'est **pas** arbitrable en l'état : le produit ne transpose
+  ni la fenêtre nulle à la hausse, ni les deux politiques de montée (100 % ou
+  4 répliques par tranche de 15 s) que la même page publie, et ce sont elles que
+  le traité invoque pour conclure à l'escalier. L'écart peut donc venir d'une
+  transposition incomplète autant que du traité. Ce qu'il faut pour trancher :
+  transposer les deux politiques, rejouer
+  `cargo run -p sim-agents --example diagnostic_elasticite --release`, et
+  reclasser ici. **Ouvert.**
+- **`mul_add` et Φ_c sont inchangés.** Le premier ne porte pas sur le traité ; le
+  second est cité par la conclusion de la troisième édition avec les valeurs
+  mesurées ici, 0,173 et 0,228.
+
+**Trois citations du PRD que la troisième édition retire ou inverse**, mesurées
+au même passage. Elles ne sont pas des écarts au sens de NF-15 — aucune mesure
+n'est en cause — mais des provenances devenues fausses, ce que F2 traite comme un
+défaut bloquant. (a) Le PRD cite *« Le livre a donc échangé une ignorance contre
+une dette »* (§1, p. 96) ; la troisième édition écrit « Le livre n'a donc **pas**
+échangé une ignorance contre une dette : il a proposé, l'auteur a mesuré, et la
+mesure lui est revenue contre » (`Traité.md:1743`, p. 129). (b) Le PRD donne le
+troisième reste pour *« inchangé »*, sur l'absence d'estimateur de corrélation ne
+demandant pas la vue globale ; la troisième édition écrit « **la phrase ne tient
+plus** » et lui oppose φ = 0,916 sur 18 000 missions (`Traité.md:1737`).
+(c) Le PRD décrit l'ouvrage comme faisant « 100 pages, dont 95 d'argument, les
+Références commençant p. 96 » ; mesuré, 143 pages et Références p. 130. Les trois
+sont corrigées au PRD, et consignées au §0.2.
+
 | Écart | Ce que le traité écrit | Ce que la mesure donne |
 |---|---|---|
-| Budget de retard du mode « moyeu » | « moins de 7,9 × 10⁻³ à n = 100 » | π/(4 × 99) = **7,933 × 10⁻³**, qui dépasse la borne annoncée. L'ordre de grandeur est juste, l'inégalité stricte ne l'est pas |
-| Dérive de la somme sans relance | « avec C = ∞, elle dérive sans borne » | Elle **se fige**. L'unanimité installée, il n'y a plus de masse à perdre. La conséquence est pire : l'erreur devient stable, donc indétectable par l'attente |
-| Contrôleur d'élasticité | Convergence attendue aux valeurs documentées | Il tourne autour de sa cible. `visées = courantes × r` est un correcteur proportionnel à gain unitaire et le temps mort vaut deux périodes. Ne contredit pas le traité, qui décrit ce mécanisme comme mesurant « l'effet d'une décision qu'il n'a pas fini d'appliquer » |
+| Budget de retard du mode « moyeu » *(absorbé par la 3ᵉ édition)* | 2ᵉ éd. : « moins de 7,9 × 10⁻³ à n = 100 » | π/(4 × 99) = **7,933 × 10⁻³**, qui dépasse la borne annoncée. L'ordre de grandeur est juste, l'inégalité stricte ne l'est pas. **La 3ᵉ édition écrit désormais 7,933 × 10⁻³** et qualifie l'arrondi d'énoncé faux (§3.1, p. 42) : la mesure est retrouvée par la source. Reste un écart contre le PRD, dont le §0 cite encore l'ancien chiffre en colonne « ce que le PRD écrit » |
+| Dérive de la somme sans relance *(absorbé par la 3ᵉ édition)* | 2ᵉ éd. : « avec C = ∞, elle dérive sans borne » | Elle **se fige**. L'unanimité installée, il n'y a plus de masse à perdre. La conséquence est pire : l'erreur devient stable, donc indétectable par l'attente. **La 3ᵉ édition écrit « elle se fige »** et « la relance ne plafonne donc pas l'erreur » (§4.1, p. 58) |
+| Contrôleur d'élasticité *(reclassé le 17 août 2026 — **ouvert**)* | Le §2.2 décrit le mécanisme comme mesurant « l'effet d'une décision qu'il n'a pas fini d'appliquer ». Mais le §7.3 de la 3ᵉ édition conclut que « le comportement par défaut n'est donc pas une oscillation, c'est un dépassement en escalier suivi d'une descente filtrée » | Il tourne autour de sa cible. `visées = courantes × r` est un correcteur proportionnel à gain unitaire et le temps mort vaut deux périodes ; l'hystérésis de descente divise les inversions par cinq sans les supprimer. **Ne contredisait pas la 2ᵉ édition ; contredit le §7.3 de la 3ᵉ.** Non tranché : le produit ne transpose ni la fenêtre nulle à la hausse ni les deux politiques de montée que cette page publie, et ce sont elles que le traité invoque pour conclure à l'escalier |
 | `mul_add` | Attendu identique entre cibles | Verdict **dépendant de la machine de construction** : il a changé entre deux passages, après installation de mingw |
 | **Φ_c, paramètre d'ordre de la conformité** *(relevé par la phase 6)* | Le §8.1 du traité le propose comme la grandeur qui mesure la conformité d'une population, et le §9 du PRD en attendait un passage de ≈ 0 à ≈ 1 sous le curseur de familles | Il vaut **déjà ≈ 0,17** avec un tirage par agent, et le curseur ne le déplace que de ≈ 0,055 — de 0,173 à 0,228 —, non monotonement. La cause n'est pas l'estimateur : les agents lisent tous la même trace, donc leurs décisions sont corrélées. **Φ_c mesure la somme de la corrélation due à la fonction de décision et de celle due au milieu partagé, sans les séparer** — et sur un essaim stigmergique la seconde domine. L'écart porte contre le traité autant que contre le PRD. Voir `conformite::CONSTAT_DE_MESURE` et le §0.1 du PRD |
 
@@ -159,3 +224,27 @@ deuxième édition établit que **six des sept énoncés du tableau 21 sont livr
 mesurés dans ce dépôt sous une hypothèse d'indépendance qu'aucun réglage ne met
 en défaut.** Ce n'est pas une décision à trancher, c'est une réserve — elle est au
 §0.0 du PRD, exigence par exigence, et EX-A58 est ce qui la lèvera.
+
+## Ce que la troisième édition rouvre, et ce qu'elle ne rouvre pas
+
+La troisième édition, du **15 août 2026**, est la seule que le dépôt contienne :
+`Traité.pdf` à la racine, **143 pages**, en-tête « 15 août 2026 — troisième
+édition, revue sur sa propre mesure » (`head -6 Traité.md`). Elle est **revue sur
+la mesure de ce dépôt** : sa conclusion cite `stigmergie-lab` en notice 120, avec
+les valeurs de Φ_c mesurées ici et le compte de cinq écarts. La source et sa
+transposition se lisent donc l'une dans l'autre, ce qui a une conséquence de
+méthode : un écart trouvé ici peut reparaître dans la source à l'édition
+suivante, et le registre doit dire lequel des deux a bougé.
+
+**Une seule décision est amendée : DT5**, sur l'édition dont la page s'entend.
+Aucune n'est défaite, aucune n'est ajoutée. Ce qui change est du fait, non de la
+décision, et se lit trois sections plus haut : deux écarts absorbés, un reclassé
+et ouvert, trois citations du PRD devenues fausses.
+
+**Ce qui n'est pas rouvert.** DT1 — la troisième édition n'ajoute aucune
+transcendante, et le verdict `mul_add` porte sur la machine de construction, pas
+sur le traité. DT13 et DT14 — le §8.1 est inchangé sur Φ_c, sa définition et sa
+condition d'échec par partition. Le plafond de treize scénarios — le traité reste
+à 24 sections (`grep -c '^### ' Traité.md` → 24), donc la clause de révision
+unique n'est pas sollicitée une seconde fois. La règle de la cinquième crate — le
+graphe de dépendances est celui de la clôture de la phase 6.

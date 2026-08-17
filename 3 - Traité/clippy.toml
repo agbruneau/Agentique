@@ -1,13 +1,21 @@
 # NF-02, appliqué par le lint plutôt que par convention.
 #
-# Le banc DT1 (bancs/dt1-flottant/VERDICT.md) mesure que ces sept méthodes
-# donnent des bits différents en natif et en WASM : elles viennent de la
+# Le banc DT1 (bancs/dt1-flottant/VERDICT.md) mesure que **six** de ces sept
+# méthodes donnent des bits différents en natif et en WASM : elles viennent de la
 # bibliothèque mathématique de la plateforme, que IEEE-754 ne normalise pas.
 # Leurs homologues `libm` sont identiques sur les deux cibles, mesure à l'appui.
 #
-# `mul_add` diverge pour une autre raison — arrondi unique matériel contre
-# double arrondi en WASM — et se remplace soit par `a * b + c`, soit par
-# `libm::fma` si l'arrondi unique est voulu.
+# `mul_add` est la septième, et son motif n'est pas la divergence — le verdict
+# dit le contraire. Au premier passage du banc elle divergeait ; au second, après
+# installation de mingw-w64 sur la machine de construction, elle **coïncide**,
+# sans qu'une ligne de code ait changé. `f64::mul_add` délègue à la bibliothèque
+# mathématique que l'éditeur de liens trouve, et ce qu'il trouve dépend de ce qui
+# est installé : le résultat dépend donc de la **machine de construction**, ce
+# qui est pire que diverger, puisqu'une exécution rejouée sur un poste
+# différemment équipé donnerait d'autres bits sans qu'aucun changement de code ne
+# le signale. `libm::fma`, lui, est resté identique aux deux passages et sur les
+# deux cibles. Remplacer par `a * b + c`, ou par `libm::fma` si l'arrondi unique
+# est voulu.
 disallowed-methods = [
     { path = "f64::ln", reason = "NF-02 : diverge natif/WASM — utiliser libm::log" },
     { path = "f64::exp", reason = "NF-02 : diverge natif/WASM — utiliser libm::exp" },
@@ -15,7 +23,7 @@ disallowed-methods = [
     { path = "f64::sin", reason = "NF-02 : diverge natif/WASM — utiliser libm::sin" },
     { path = "f64::cos", reason = "NF-02 : diverge natif/WASM — utiliser libm::cos" },
     { path = "f64::atan2", reason = "NF-02 : diverge natif/WASM — utiliser libm::atan2" },
-    { path = "f64::mul_add", reason = "NF-02 : diverge natif/WASM — utiliser a * b + c, ou libm::fma" },
+    { path = "f64::mul_add", reason = "NF-02 : verdict dépendant de la machine de construction (mesurée identique au second passage du banc DT1, divergente au premier) — utiliser a * b + c, ou libm::fma" },
 ]
 
 # PD1 : l'itération sur une table de hachage n'est pas ordonnée, et tout chemin

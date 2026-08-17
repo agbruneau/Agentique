@@ -181,14 +181,40 @@ impl DetecteurInfectieux {
         }
     }
 
-    /// Complétude dérivée (§4.3) : détection entre `(seuil−1)·période +
+    /// Complétude dérivée (§7.3, p. 112) : détection entre `(seuil−1)·période +
     /// expiration` et une période de plus.
+    ///
+    /// C'est **le §7.3 qui dérive cet encadrement**, et non le §4.3 (p. 70), qui
+    /// ne donne que le majorant de 30 s : « un arrêt survenu juste après une sonde
+    /// réussie n'est observé qu'au sondage suivant, entre 0 et 10 s plus tard,
+    /// puis exige deux échecs supplémentaires à 10 s d'intervalle, plus 1 s de
+    /// délai d'expiration, d'où une détection comprise entre 21 s et 31 s ».
     ///
     /// Aux défauts documentés — 10 s de période, 1 s d'expiration, 3 échecs —
     /// cela donne **21 à 31 s**, et NF-15 exige qu'un test le retrouve.
-    pub fn completude(periode_s: u64, expiration_s: u64, seuil: u32) -> (Duree, Duree) {
-        let min = Duree(periode_s * (seuil as u64 - 1) + expiration_s);
-        (min, Duree(min.0 + periode_s))
+    ///
+    /// `seuil = 0` est **refusé**, et non ramené à 1 : la dérivation du §7.3
+    /// compte `seuil − 1` intervalles entre échecs, et à zéro échec il n'y a
+    /// pas de détection dont on encadre le délai. Un écrêtage silencieux
+    /// rendrait `(1 s, 11 s)` — un encadrement d'allure plausible que rien ne
+    /// distingue d'une mesure, ce qui est pire qu'un débordement (SPEC §7,
+    /// clause 4 : « une configuration invalide est un refus rendu à l'appelant,
+    /// jamais un abandon »).
+    pub fn completude(
+        periode_s: u64,
+        expiration_s: u64,
+        seuil: u32,
+    ) -> Result<(Duree, Duree), String> {
+        if seuil == 0 {
+            return Err(
+                "seuil d'échec nul refusé : l'encadrement du §7.3 compte les intervalles entre \
+                 `seuil` échecs consécutifs, et à zéro échec il n'y a pas de détection à encadrer. \
+                 Le délai rendu serait une valeur d'allure plausible sans mesure derrière."
+                    .to_string(),
+            );
+        }
+        let min = Duree(periode_s * u64::from(seuil - 1) + expiration_s);
+        Ok((min, Duree(min.0 + periode_s)))
     }
 }
 
@@ -581,11 +607,26 @@ impl Reconfiguration {
 mod tests {
     use super::*;
 
-    /// NF-15 — la complétude retrouve **21 à 31 s** aux défauts documentés.
+    /// NF-15 — la complétude retrouve **21 à 31 s** aux défauts documentés
+    /// (§7.3, p. 112).
     #[test]
     fn la_completude_retrouve_les_21_a_31_secondes() {
-        let (min, max) = DetecteurInfectieux::completude(10, 1, 3);
+        let (min, max) = DetecteurInfectieux::completude(10, 1, 3).expect("réglage documenté");
         assert_eq!((min.0, max.0), (21, 31));
+    }
+
+    /// SPEC §7, clause 4 — `seuil = 0` faisait déborder `seuil − 1` sur un
+    /// entier non signé : panique en debug, encadrement absurde en release. Il
+    /// est désormais **refusé**, et non écrêté : l'écrêtage rendait `(1, 11)`,
+    /// un encadrement d'allure plausible que rien ne distingue d'une mesure.
+    #[test]
+    fn un_seuil_dechec_nul_est_refuse_au_lieu_detre_ecrete() {
+        let motif = DetecteurInfectieux::completude(10, 1, 0)
+            .expect_err("seuil nul : refus attendu, pas une valeur");
+        assert!(motif.contains("zéro échec"), "{motif}");
+        // Et le réglage voisin passe : la garde ne mange pas le domaine utile.
+        let (min, max) = DetecteurInfectieux::completude(10, 1, 1).expect("un échec suffit");
+        assert_eq!((min.0, max.0), (1, 11));
     }
 
     /// EX-A23 — les coûts : 2 messages et 1 tour en nominal, au plus 2 + 4s

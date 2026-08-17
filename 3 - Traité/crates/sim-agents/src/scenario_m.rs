@@ -4,7 +4,15 @@
 //! > ce que le concepteur ne veut pas — la conformité, puisque tous lisent la
 //! > même trace ; la collusion, puisqu'un tableau public suffit à s'aligner au
 //! > sou près ; la tromperie, puisque déposer coûte le même prix qu'on dise vrai
-//! > ou faux. (§8.3, p. 94)
+//! > ou faux.
+//!
+//! **Cette phrase est une épissure, et elle ne se lit à aucune page.** Sa
+//! proposition principale — jusqu'à « ce que le concepteur ne veut pas » — est
+//! reprise mot pour mot de l'**introduction, p. 5** ; l'énumération des trois est
+//! celle du **§8.3, p. 127**, où la proposition, elle, s'écrit « la mesure ajoute
+//! qu'il rend tout aussi bon marché ». Troisième édition dans les deux cas. Le
+//! §9 du PRD porte la même épissure sous la seule mention « §8.3, p. 94 » : deux
+//! provenances pour une, et la page d'une édition antérieure.
 //!
 //! **Ce scénario ne montre rien de neuf, et c'est sa forme.** Il rejoue le
 //! scénario B en poussant un curseur qu'aucun scénario livré n'avait, et il
@@ -38,7 +46,10 @@ pub const BLOC_M: Bloc = Bloc {
             le concepteur ne veut pas — la conformité, puisque tous lisent la même trace ; la \
             collusion, puisqu'un tableau public suffit à s'aligner au sou près ; la tromperie, \
             puisque déposer coûte le même prix qu'on dise vrai ou faux.",
-    source: "§8.3, p. 94 ; l'incise « du même geste » est reprise de la p. 5",
+    source: "épissure de deux endroits, et c'est la thèse (3ᵉ éd.) : la proposition principale — \
+             jusqu'à « ce que le concepteur ne veut pas » — est celle de l'introduction, p. 5, mot \
+             pour mot ; l'énumération des trois est celle du §8.3, p. 127, où la proposition, \
+             elle, s'écrit « la mesure ajoute qu'il rend tout aussi bon marché »",
     mecanisme_visible: "porter la part de conformité de 0 à 1 fait consommer aux n agents le \
                         même tirage pour la même décision (EX-C19) ; Φ_c mesuré sur les \
                         décisions déposées passe de ≈ 0 à > 0 (EX-A56), et les sept bornes du \
@@ -178,6 +189,29 @@ mod tests {
         p.ressources_sur_une_partition = true;
         p.intervalle_lecture = 128;
         p
+    }
+
+    /// Le curseur au repos ne change **rien** : à `part_conforme = 0`, le
+    /// scénario M rejoue le scénario B, mêmes réglages et même graine.
+    ///
+    /// C'est ce que la documentation de [`scenario_m`] affirme, et c'est ce qui
+    /// rend le scénario honnête — un curseur dont la position de repos déplacerait
+    /// déjà la mesure ferait passer un écart de câblage pour un effet de la
+    /// conformité. Rien ne le vérifiait.
+    #[test]
+    fn a_curseur_au_repos_le_scenario_m_rejoue_le_scenario_b() {
+        let b = crate::scenario_b(params(), 7, 20_000).unwrap();
+        let m = scenario_m(params(), 0.0, 7, 20_000).unwrap();
+        assert_eq!(
+            m.conformite,
+            b.conformite.unwrap(),
+            "Φ_c diffère : les deux chemins n'exécutent pas la même chose"
+        );
+        assert_eq!(
+            m.hors_dominante.0, b.mesures.hors_dominante_observee,
+            "la fraction hors dominante diffère"
+        );
+        assert_eq!(m.tirages_partages, 0);
     }
 
     #[test]

@@ -222,7 +222,9 @@ impl Registre {
     }
 
     /// Arme l'attente d'une vivacité bornée : la condition doit devenir vraie
-    /// avant `maintenant + horizon`.
+    /// **au plus tard à** `maintenant + horizon`. L'échéance elle-même n'est pas
+    /// une violation — [`Registre::echoir`] compare avec `<`, donc la violation
+    /// tombe au premier instant strictement postérieur.
     ///
     /// # Panics
     ///

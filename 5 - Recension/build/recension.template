@@ -58,7 +58,11 @@
 // verticale se compte de ligne de base à ligne de base.
 
 #set document(
-  title: "Rapport de l'art — interopérabilité, orchestration et coordination agentiques",
+  // ⚠ MÊME TITRE QUE LE COMPENDIUM, à la lettre — instruction d'auteur. Ce qui
+  // distingue les deux documents n'est plus le titre mais le cachet de la page
+  // de titre : « RECENSIO · RAPPORT DE L'ART » ici, « COMPENDIUM · VOLUME IV »
+  // là. Toute reprise de l'un se reporte donc à l'autre, ou les deux divergent.
+  title: "Interopérabilité et Orchestration Agentiques en Entreprise",
   author: "André-Guy Bruneau, M.Sc. IT",
   keywords: ("rapport de l'art", "recension", "interopérabilité agentique",
              "orchestration", "coordination", "services financiers", "Canada"),
@@ -453,7 +457,7 @@
   v(10pt)
   line(length: 100%, stroke: 1.6pt + ENCRE)
   v(24pt)
-  text(font: SANS, size: 34pt, weight: "bold", fill: ENCRE)[Interopérabilité, orchestration et coordination agentiques]
+  text(font: SANS, size: 34pt, weight: "bold", fill: ENCRE)[Interopérabilité et Orchestration Agentiques en Entreprise]
   v(20pt)
   // ⚠ La justification est posée ICI et non sur le bloc entier : le titre tient
   // sur deux lignes, et justifié, sa première ligne — « La somme » — serait
@@ -486,6 +490,7 @@
        ([5], [Exploiter, produire, livrer], [Maillage, observabilité, AgentOps, fabrique d'agents, architecture de référence, l'agent comme artefact livré.]),
        ([6], [Coordination sans coordinateur], [Essaims et stigmergie, et le seul livrable du dépôt dont les énoncés sont opposés à une mesure — cinq écarts consignés.]),
        ([7], [La couche installée], [Ce que le champ avait normalisé avant les agents et qui reste en service : formalismes de processus, fouille de processus, événementiel asynchrone.]),
+       ([8], [L'horizon et la frontière de la connaissance véritable], [Jusqu'où va ce qu'on sait : deux impossibilités hors du temps, un savoir daté qui se périme en jours, trois frontières d'ignorance, et l'angle mort de l'instrument.]),
       ).map(e => block(width: 100%, {
         text(fill: ACCENT, weight: "bold")[#e.at(0) — #e.at(1)]
         linebreak()
