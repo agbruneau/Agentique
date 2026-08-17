@@ -18,7 +18,7 @@ pas, et c'est l'intérêt.*
 > ils ont été repointés le 17 août 2026.* ⚠ **Le titre de ce fichier porte encore l'ancien nom**, et
 > c'est délibéré : il nomme les deux livrables, non le dossier.
 > ☑ **Le décompte du dépôt est à jour depuis le 17 août 2026** : *sept livrables sous **cinq**
-> dossiers numérotés*, `5 - Recension/` étant entré le 16 août avec `État de Art.pdf` —
+> dossiers numérotés*, `5 - Recension/` étant entré le 16 août avec `État de l'art.pdf` —
 > ⚠ **un rapport dérivé, non un huitième livrable** —, et **seize `README.md`**.
 >
 > ⚠ **Le dépôt est clos depuis le 8 août 2026** — décision d'auteur **D-13**

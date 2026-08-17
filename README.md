@@ -25,8 +25,9 @@ l'art* et la chaîne qui le compose. ☑ *Il ne change pas le compte des livrabl
 **dérivé** et n'en est pas un huitième.* **Sept livrables sous cinq dossiers numérotés, et la racine
 n'en porte aucun.**
 ⚠ **Les trois fichiers de ce cinquième dossier ont été renommés le 17 août 2026** (commit `292a0f9`) :
-`Rapport de l'art.md / .pdf` en `État de Art.md / .pdf`, `OnePager.html` en `NiveauMaturité.html` —
-*inchangés au bit près*. ☑ **Le cachet de la page de titre a suivi** — **RECENSIO · ÉTAT DE L'ART** —
+`Rapport de l'art.md / .pdf` en `État de l'art.md / .pdf`, `OnePager.html` en `NiveauMaturité.html` —
+*inchangés au bit près* ⚠ (*`État de Art.md / .pdf` au commit `292a0f9`, l'élision rétablie le jour
+même*). ☑ **Le cachet de la page de titre a suivi** — **RECENSIO · ÉTAT DE L'ART** —
 et le PDF est recomposé, **127 pages** inchangées.
 
 > # ⚠ DÉPÔT CLOS ET FINAL — 8 août 2026
@@ -441,7 +442,7 @@ ne s'applique pas ici** : elle est une parade de rédaction du Vol. III, la page
 de volume, et **aucun contrôle ne la rejoue**. *Constat porté, correction non faite.*
 
 ⚠ **L'état de l'art n'est pas un huitième livrable non plus, et son régime se déclare.**
-[`5 - Recension/État de Art.md`](5%20-%20Recension/%C3%89tat%20de%20Art.md), entré le
+[`5 - Recension/État de l'art.md`](5%20-%20Recension/%C3%89tat%20de%20l%27art.md), entré le
 **16 août 2026** *(⚠ à la racine du dépôt le jour même, sous
 [`5 - Recension/`](5%20-%20Recension/) depuis)*, est un **rapport
 dérivé** : sa seule matière est ce que les sept livrables portent déjà. ☑ **Il n'ouvre aucune source
@@ -467,7 +468,7 @@ de la page de titre les distingue — **RECENSIO · ÉTAT DE L'ART** ici, **COMP
 là. *Partager un titre n'est pas partager un régime de preuve.*
 
 ☑ **Son rendu se régénère, et c'est le point où il se sépare de la page de présentation.**
-[`État de Art.pdf`](5%20-%20Recension/%C3%89tat%20de%20Art.pdf) est composé depuis le `.md` —
+[`État de l'art.pdf`](5%20-%20Recension/%C3%89tat%20de%20l%27art.pdf) est composé depuis le `.md` —
 **seule source qui fait foi** — par
 [`5 - Recension/build/rendre-recension.py`](5%20-%20Recension/build/rendre-recension.py), d'une
 commande, **et elle se lance de n'importe quel répertoire** : la racine du dossier est déduite du
@@ -1419,7 +1420,7 @@ le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
 └── 5 - Recension/                          ← l'état de l'art et sa chaîne (16 août 2026) — ⚠ AUCUN LIVRABLE ICI
     │                                        ⚠ le rapport est DÉRIVÉ : sa seule matière est ce que les sept livrables portent
     ├── README.md                            déposé le 17 août 2026, SEIZIÈME du dépôt
-    ├── État de Art.md / .pdf                10 pièces (ouverture + 8 chapitres + sommaire exécutif), 90 sections, 127 p.
+    ├── État de l'art.md / .pdf              10 pièces (ouverture + 8 chapitres + sommaire exécutif), 90 sections, 127 p.
     │                                        ⚠ TITRE HOMONYME EXACT DU VOL. IV, par instruction d'auteur — seul le cachet
     │                                          de la page de titre les distingue ; ⚠ AUCUN CONTRÔLE ne rejoue ses énoncés
     ├── NiveauMaturité.html                  page autonome — à la racine du dépôt du 15 au 16 août 2026
@@ -2964,8 +2965,9 @@ touché.**
   tranchées par la mesure, **sans porter de `VERDICT.md`** : *ce sont des rapports d'audit, pas des
   mesures, et la classe n'est pas la même.*
 - ☑ **Le cinquième dossier a été renommé le même jour, et le renommage est enregistré ici.**
-  (commit `292a0f9`) `Rapport de l'art.md / .pdf` devient `État de Art.md / .pdf`, `OnePager.html`
-  devient `NiveauMaturité.html` — *inchangés au bit près*. ☑ **La chaîne et le gabarit ont suivi** :
+  (commit `292a0f9`) `Rapport de l'art.md / .pdf` devient `État de l'art.md / .pdf`, `OnePager.html`
+  devient `NiveauMaturité.html` — *inchangés au bit près*. ⚠ **Le commit posait `État de Art`, sans
+  l'élision** ; *le nom est repris le jour même, et le cachet de la page de titre le portait déjà.* ☑ **La chaîne et le gabarit ont suivi** :
   [`rendre-recension.py`](5%20-%20Recension/build/rendre-recension.py) nomme les nouvelles cibles et
   le cachet de la page de titre passe de **RECENSIO · RAPPORT DE L'ART** à
   **RECENSIO · ÉTAT DE L'ART** — *le PDF est recomposé, **127 pages** inchangées.* ⚠ **Les renvois

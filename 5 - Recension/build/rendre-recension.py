@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Compose « État de Art.pdf » depuis « État de Art.md », au gabarit du compendium.
+"""Compose « État de l'art.pdf » depuis « État de l'art.md », au gabarit du compendium.
 
     python "5 - Recension/build/rendre-recension.py"
 
@@ -44,8 +44,8 @@ import tempfile
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
-SOURCE = RACINE / "État de Art.md"
-SORTIE = RACINE / "État de Art.pdf"
+SOURCE = RACINE / "État de l'art.md"
+SORTIE = RACINE / "État de l'art.pdf"
 GABARIT = RACINE / "build" / "recension.template"
 FIGURES = RACINE / "figures"
 FILTRE = RACINE / "build" / "accentuation.lua"
