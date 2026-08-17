@@ -31,7 +31,7 @@ fn facteur_l99() -> f64 {
 ///
 /// Régler la moyenne serait exposer la grandeur que le traité refuse d'afficher
 /// seule ; régler ℓ₉₉ met le percentile au premier plan, là où le §2.3 et le
-/// §6.2 le placent.
+/// §6.2 du traité le placent.
 #[derive(Clone, Copy, Debug, Serialize, Deserialize)]
 pub struct Latence {
     /// ℓ₉₉ visé, en millisecondes. **Entrée du modèle** (§8.3 du PRD).

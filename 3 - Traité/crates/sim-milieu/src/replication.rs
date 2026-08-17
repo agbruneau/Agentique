@@ -4,7 +4,7 @@
 //! dans [`crate::groupe`].
 //!
 //! > Le nombre de disparitions auquel r₂ survit n'est pas k − 1 = 2, il est
-//! > m − 1 = 1. (§2.1, p. 26, 3ᵉ éd.)
+//! > m − 1 = 1. (§2.1 du traité, p. 26, 3ᵉ éd.)
 //!
 //! Deux invariants **distincts**, et le produit ne les confond jamais :
 //!
@@ -13,7 +13,7 @@
 //! - **R2, visibilité** — un enregistrement n'est lisible qu'après réplication
 //!   à tout l'ensemble synchronisé.
 //!
-//! Ce que le §6.1 ajoute et qui est le sujet du scénario D : **la perte de R1
+//! Ce que le §6.1 du traité ajoute et qui est le sujet du scénario D : **la perte de R1
 //! est muette**. Avec `min.insync.replicas = 1`, l'ISR peut se réduire au seul
 //! meneur pendant que les producteurs continuent de recevoir leurs accusés. La
 //! tolérance passe de f à 0 sans qu'aucune erreur ne soit émise, et le seul
@@ -70,7 +70,7 @@ pub enum Refus {
 
 /// Un enregistrement accusé au producteur, avec la largeur à laquelle il l'a
 /// été. C'est cette largeur qui décide de sa survie : **w − 1 disparitions**
-/// (§2.1), et non k − 1.
+/// (§2.1 du traité), et non k − 1.
 #[derive(Clone, Copy, Debug)]
 pub struct Accuse {
     /// Décalage de l'enregistrement accusé.
@@ -156,7 +156,7 @@ impl Isr {
     /// Déclare le temporisateur au registre des hypothèses fortes (EX-C12).
     ///
     /// C'est une hypothèse **plus forte que le synchronisme partiel** : elle
-    /// affirme une borne connue là où le modèle n'en donne pas, et le §6.1 dit
+    /// affirme une borne connue là où le modèle n'en donne pas, et le §6.1 du traité dit
     /// que c'est elle qui casse en premier sous charge.
     pub fn declarer_hypotheses(&self, registre: &mut RegistreHypotheses) {
         registre.declarer(
@@ -461,13 +461,13 @@ impl Isr {
             (
                 "survit à (largeur − 1)",
                 match tol_largeur {
-                    Some(t) => format!("{t} disparition(s) — §2.1"),
+                    Some(t) => format!("{t} disparition(s) — §2.1 du traité"),
                     None => "—".to_string(),
                 },
             ),
             (
                 "R1 tient tant que (|ISR| − 1)",
-                format!("{tol_isr} disparition(s) — §6.1"),
+                format!("{tol_isr} disparition(s) — §6.1 du traité"),
             ),
             ("pannes réelles", format!("{}", self.pannes)),
             (
@@ -491,7 +491,7 @@ impl Isr {
             return Some(format!(
                 "ISR réduit à {taille} réplique avec m = 1 : la tolérance est tombée à 0 \
                  disparition, et aucune erreur n'est émise au producteur. Seule la largeur \
-                 d'accusé le trahit (§6.1, EX-M15)."
+                 d'accusé le trahit (§6.1 du traité, EX-M15)."
             ));
         }
         // `m == 1` est bien la seule condition, et c'est ce qui fait la thèse du
@@ -533,7 +533,7 @@ mod tests {
     }
 
     /// EX-M15 — les deux tolérances ont deux provenances et ne se confondent
-    /// pas : w − 1 pour l'enregistrement (§2.1), |ISR| − 1 pour R1 (§6.1).
+    /// pas : w − 1 pour l'enregistrement (§2.1 du traité), |ISR| − 1 pour R1 (§6.1 du traité).
     #[test]
     fn les_deux_tolerances_restent_distinctes() {
         let (mut i, _, _) = isr();
@@ -549,7 +549,7 @@ mod tests {
     /// NF-16 — l'hypothèse du temporisateur est **rendue fausse** et le mode de
     /// défaillance annoncé se produit : l'exclusion frappe un suiveur **vivant**.
     ///
-    /// C'est l'énoncé du §6.1 : c'est cette hypothèse qui casse en premier sous
+    /// C'est l'énoncé du §6.1 du traité : c'est cette hypothèse qui casse en premier sous
     /// charge, et le registre en tient le compte.
     #[test]
     fn nf16_sous_charge_lexclusion_frappe_un_suiveur_vivant() {

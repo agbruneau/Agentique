@@ -3,12 +3,12 @@
 //! > Sa latence de réponse est une **sortie** du modèle, pas une entrée ; elle
 //! > croît avec son arriéré. (EX-C15)
 //!
-//! C'est la condition d'existence de la cascade du §6.1 : sans file, la
+//! C'est la condition d'existence de la cascade du §6.1 du traité : sans file, la
 //! saturation serait *scriptée* au lieu d'être produite, et l'énoncé du §7.3 —
 //! le taux de fausses suspicions est une fonction croissante de la charge —
 //! deviendrait un paramètre au lieu d'un résultat.
 //!
-//! §8.3 impose de ne jamais mêler les deux ℓ₉₉ : celui du milieu est une
+//! §8.3 du PRD impose de ne jamais mêler les deux ℓ₉₉ : celui du milieu est une
 //! **entrée**, celui-ci est une **sortie**. Un affichage qui les confondrait est
 //! un défaut bloquant.
 //!
@@ -24,7 +24,7 @@ use serde::{Deserialize, Serialize};
 
 /// Coût mémoire unitaire d'un agent (EX-C17).
 ///
-/// Ce que le §2.2 donne, et rien de plus : « de l'ordre de trois cents mots,
+/// Ce que le §2.2 du traité donne, et rien de plus : « de l'ordre de trois cents mots,
 /// soit **quelques milliers d'octets** sur une architecture 64 bits, dont **233
 /// mots** de zone de tas, pile comprise », puis deux chiffres qu'il refuse
 /// d'arbitrer — la documentation d'OTP 29.0.5 « annonce **327** mots à son guide
@@ -81,11 +81,11 @@ impl CoutAgent {
     /// Elle porte les **deux** chiffres de la source et son refus de trancher :
     /// afficher « 327 mots » seul ferait passer un réglage pour une mesure.
     pub const SOURCE: &'static str =
-        "§2.2 — « de l'ordre de trois cents mots, soit quelques milliers d'octets […] dont 233 \
-         mots de zone de tas, pile comprise » ; OTP 29.0.5 annonce 327 mots à son guide \
-         d'efficacité et 338 à sa page de mémoire, « et il reste la meilleure raison de ne rien \
-         gager sur le chiffre exact ». Le défaut retient 327 : réglage, non arbitrage. Valeur \
-         périssable (annexe B)";
+        "§2.2 du traité — « de l'ordre de trois cents mots, soit quelques milliers d'octets \
+         […] dont 233 mots de zone de tas, pile comprise » ; OTP 29.0.5 annonce 327 mots à son \
+         guide d'efficacité et 338 à sa page de mémoire, « et il reste la meilleure raison de \
+         ne rien gager sur le chiffre exact ». Le défaut retient 327 : réglage, non arbitrage. \
+         Valeur périssable (annexe B)";
 }
 
 /// La file et le service d'un agent.
@@ -163,7 +163,7 @@ impl Service {
         self.fins.retain(|fin| *fin > maintenant);
     }
 
-    /// ℓ₉₉ **de réponse de l'agent** — une sortie du modèle (§8.3). Ne jamais
+    /// ℓ₉₉ **de réponse de l'agent** — une sortie du modèle (§8.3 du PRD). Ne jamais
     /// afficher sous le même libellé que le ℓ₉₉ du milieu.
     pub fn l99_de_reponse(&self) -> Option<Duree> {
         if self.latences.is_empty() {
@@ -181,7 +181,7 @@ impl Service {
         self.latences.last().map(|l| Duree(*l))
     }
 
-    /// Libellé imposé (§8.3) : les deux ℓ₉₉ ne portent jamais le même. Aucun
+    /// Libellé imposé (§8.3 du PRD) : les deux ℓ₉₉ ne portent jamais le même. Aucun
     /// appelant à ce jour ; voir la note du module.
     pub const LIBELLE_L99: &'static str =
         "ℓ₉₉ de réponse de l'agent — SORTIE du modèle, produite par la file et le temps de \
@@ -192,7 +192,7 @@ impl Service {
 mod tests {
     use super::*;
 
-    /// EX-C17, NF-15 — ce que le §2.2 permet de **retrouver** est un ordre de
+    /// EX-C17, NF-15 — ce que le §2.2 du traité permet de **retrouver** est un ordre de
     /// grandeur, pas un chiffre exact : la source donne 327 *et* 338 mots et
     /// dit que l'écart « reste la meilleure raison de ne rien gager sur le
     /// chiffre exact ». Sont épinglés d'abord les trois énoncés qui sont dans le
@@ -288,7 +288,7 @@ mod tests {
         assert_eq!(s.rejetees, 1);
     }
 
-    /// §8.3 — le libellé du ℓ₉₉ de réponse dit qu'il est une sortie.
+    /// §8.3 du PRD — le libellé du ℓ₉₉ de réponse dit qu'il est une sortie.
     #[test]
     fn les_deux_l99_ne_portent_pas_le_meme_libelle() {
         assert!(Service::LIBELLE_L99.contains("SORTIE"));
@@ -305,7 +305,7 @@ mod tests {
         use crate::ActeurId;
 
         let mut s = Service::nouveau(Duree(10), 0);
-        let mut d = Detecteur::nouveau(Duree(100), Duree(50), 3);
+        let mut d = Detecteur::nouveau(Duree(100), Duree(50), 3).expect("réglage valide");
         let cible = ActeurId(0);
 
         // Agent peu chargé : il répond sous l'expiration.

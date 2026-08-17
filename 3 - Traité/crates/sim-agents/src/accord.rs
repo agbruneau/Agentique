@@ -4,7 +4,7 @@
 //! > L'essaim ne résout pas l'impossibilité, il refuse la question — et paie ce
 //! > refus en fenêtres pendant lesquelles l'invariant peut être faux. (§4.2)
 //!
-//! Chaque mécanisme du §5.1 **déclare la propriété qu'il abandonne**, et le
+//! Chaque mécanisme du §5.1 du traité **déclare la propriété qu'il abandonne**, et le
 //! simulateur **calcule en permanence le prédicat de cette propriété** afin que
 //! la perte soit observable au lieu d'être supposée. Ce prédicat est un
 //! privilège de l'observateur : aucun agent n'en dispose, et l'interface le dit.
@@ -160,7 +160,7 @@ impl Mecanisme {
     pub const CONDITIONNEL_AU_MODELE_P: &'static str =
         "verdict conditionnel au modèle P (crash-arrêt et omission) : sous faute arbitraire, \
          aucune solution à moins de 3f + 1 participants ne tolère f déviants, et ce modèle tue \
-         les trois premières lignes de la figure 5.1 (§5.1, §2.3)";
+         les trois premières lignes de la figure 5.1 (§5.1 du traité, §2.3 du PRD)";
 }
 
 /// **EX-A28** — DÉCISION-PAR-SEUIL, dit *best-of-n*.
@@ -217,8 +217,8 @@ impl SeuilDeQuorum {
             return Err(
                 "engagement irrévocable refusé : une décision n'est admissible ici que si un \
                  agent peut l'annuler par une action locale de **coût borné et connu**. Sans \
-                 révocabilité, ce mécanisme demande un accord, et l'accord est le ch. 4 (§5.1, \
-                 EX-A55)."
+                 révocabilité, ce mécanisme demande un accord, et l'accord est le ch. 4 (§5.1 \
+                 du traité, EX-A55)."
                     .to_string(),
             );
         }
@@ -228,16 +228,16 @@ impl SeuilDeQuorum {
         // (SPEC §7, clause 4).
         if k == 0 {
             return Err(
-                "k = 0 refusé : la règle du §5.1 est une k-unanimité sur k opinions observées. \
-                 À k = 0 elle est vraie par vacuité, ce qui n'est pas un accord unanime mais \
-                 une absence d'observation."
+                "k = 0 refusé : la règle du §5.1 du traité est une k-unanimité sur k opinions \
+                 observées. À k = 0 elle est vraie par vacuité, ce qui n'est pas un accord \
+                 unanime mais une absence d'observation."
                     .to_string(),
             );
         }
         if qualites.is_empty() {
             return Err(
                 "aucune option : le seuil de quorum choisit parmi des options de qualité connue, \
-                 et il en faut au moins une (§5.1)."
+                 et il en faut au moins une (§5.1 du traité)."
                     .to_string(),
             );
         }
@@ -247,7 +247,7 @@ impl SeuilDeQuorum {
         if n == 0 {
             return Err(
                 "population vide refusée : la détection de quorum est une fraction d'agents, et \
-                 sur zéro agent elle n'est pas nulle — elle n'existe pas (§5.1)."
+                 sur zéro agent elle n'est pas nulle — elle n'existe pas (§5.1 du traité)."
                     .to_string(),
             );
         }
@@ -529,7 +529,7 @@ pub struct Ligne {
 /// La légende du traité, reprise **telle quelle**.
 pub const LEGENDE_NON_BORNE: &str =
     "« non borné » signifie qu'aucune borne finie n'existe sous les hypothèses posées, **et non \
-     qu'elle est grande** (§5.1, figure 5.1)";
+     qu'elle est grande** (§5.1 du traité, figure 5.1)";
 
 impl Ligne {
     /// Construit la ligne d'un mécanisme. Les colonnes « modèle de panne » et
@@ -594,7 +594,7 @@ pub fn grille(quorum: &SeuilDeQuorum, moyenne: &MoyenneLocale, crdt: FamilleCrdt
             "non borné".to_string(),
             format!(
                 "|Δx_i| ≤ ε = {EPSILON_ARRET} pendant T tours — local et non concerté ; ε est une \
-                 décision d'implantation, le §5.1 ne le chiffre pas (F1)"
+                 décision d'implantation, le §5.1 du traité ne le chiffre pas (F1)"
             ),
             Case::Tenue,
             // Sans population, il n'y a pas d'écart à la validité : la case

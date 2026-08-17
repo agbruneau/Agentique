@@ -5,7 +5,7 @@
 //! concurrence multifil, réseau et temps et aléa abstraits derrière une
 //! interface, graine journalisée, rejeu à l'identique du contre-exemple.
 //!
-//! Ce que ce crate **ne** connaît **pas**, et ne doit pas apprendre (§5.1) : le
+//! Ce que ce crate **ne** connaît **pas**, et ne doit pas apprendre (§5.1 du PRD) : le
 //! journal partitionné, les agents, l'interface.
 //!
 //! ## Règles tenues ici

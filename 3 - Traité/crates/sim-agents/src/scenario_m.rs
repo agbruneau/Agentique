@@ -1,4 +1,4 @@
-//! **Scénario M — Le second axe** (§8.1, §8.2, §8.3).
+//! **Scénario M — Le second axe** (§8.1, §8.2 et §8.3 du traité).
 //!
 //! > Un milieu qui rend la coordination bon marché rend du même geste bon marché
 //! > ce que le concepteur ne veut pas — la conformité, puisque tous lisent la
@@ -9,10 +9,11 @@
 //! **Cette phrase est une épissure, et elle ne se lit à aucune page.** Sa
 //! proposition principale — jusqu'à « ce que le concepteur ne veut pas » — est
 //! reprise mot pour mot de l'**introduction, p. 5** ; l'énumération des trois est
-//! celle du **§8.3, p. 127**, où la proposition, elle, s'écrit « la mesure ajoute
+//! celle du **§8.3 du traité, p. 127**, où la proposition, elle, s'écrit « la mesure ajoute
 //! qu'il rend tout aussi bon marché ». Troisième édition dans les deux cas. Le
-//! §9 du PRD porte la même épissure sous la seule mention « §8.3, p. 94 » : deux
-//! provenances pour une, et la page d'une édition antérieure.
+//! §9 du PRD portait la même épissure sous la seule mention « §8.3, p. 94 » —
+//! deux provenances pour une, et la page d'une édition antérieure ; l'audit du
+//! 17 août 2026 l'y a démontée en même temps qu'ici.
 //!
 //! **Ce scénario ne montre rien de neuf, et c'est sa forme.** Il rejoue le
 //! scénario B en poussant un curseur qu'aucun scénario livré n'avait, et il
@@ -307,7 +308,8 @@ mod tests {
         let r = scenario_m(p, 0.0, 5, 20_000).unwrap();
         assert_eq!(
             r.sessions_partagees, 1,
-            "une session vue avec plusieurs agents : le zombie du §2.1 par la porte de l'identité"
+            "une session vue avec plusieurs agents : le zombie du §2.1 du traité par la porte \
+             de l'identité"
         );
         let r2 = scenario_m(params(), 0.0, 5, 20_000).unwrap();
         assert_eq!(r2.sessions_partagees, 0);

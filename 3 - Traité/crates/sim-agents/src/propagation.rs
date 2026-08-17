@@ -280,7 +280,7 @@ impl FamilleCrdt {
             return Err(
                 "type refusé : une fusion sans conflit **ne peut pas refuser**. Un invariant qui \
                  exige un refus — unicité, budget, exclusion mutuelle, capacité maximale — \
-                 demande un accord, et ce chapitre-là est le ch. 4 (§5.1, EX-A52)."
+                 demande un accord, et ce chapitre-là est le ch. 4 (§5.1 du traité, EX-A52)."
                     .to_string(),
             );
         }
@@ -561,7 +561,7 @@ mod tests {
     }
 
     /// **EX-A52** — un type portant un invariant de refus est rejeté à la
-    /// construction, avec le message du §5.1.
+    /// construction, avec le message du §5.1 du traité.
     #[test]
     fn ex_a52_un_invariant_de_refus_est_rejete() {
         assert!(FamilleCrdt::Etat.verifier_invariant(false).is_ok());

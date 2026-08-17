@@ -4,7 +4,7 @@
 //!
 //! > Un essaim stigmergique n'atteint pas l'optimum, il campe à distance bornée
 //! > de lui, et cette distance est un réglage et non un défaut à corriger.
-//! > (§1.2, p. 16)
+//! > (§1.2, p. 16, 3ᵉ éd.)
 //!
 //! Ce que ce mécanisme **ne** démontre **pas**, et que l'interface ne doit
 //! jamais laisser croire (F3) : la convergence. Le traité écrit que l'énoncé du
@@ -80,7 +80,7 @@ pub struct Params {
     /// Fenêtre de décroissance τ, en millisecondes.
     pub fenetre_tau_ms: f64,
     /// ℓ₉₉ du chemin de durabilité du milieu, en millisecondes. **Entrée** du
-    /// modèle (§8.3) : T < ℓ₉₉ produit l'essaim aveugle.
+    /// modèle (§8.3 du PRD) : T < ℓ₉₉ produit l'essaim aveugle.
     pub l99_milieu_ms: f64,
     /// Instant de bascule d'utilité, en fraction du budget d'événements.
     pub bascule_a: f64,
@@ -129,7 +129,7 @@ pub struct Params {
     /// agents se présentent au milieu sous une seule session.
     ///
     /// Le milieu appose ce qu'on lui présente ; il ne peut pas savoir que deux
-    /// processus partagent une identité. C'est le zombie du §2.1 revenu par la
+    /// processus partagent une identité. C'est le zombie du §2.1 du traité revenu par la
     /// porte de l'identité, et le préréglage existe pour le **provoquer**
     /// (NF-10), pas pour le corriger.
     pub identite_partagee: bool,
@@ -582,7 +582,7 @@ pub struct Fourragement {
     bascule_faite: bool,
     /// Dernière fois qu'un agent, quel qu'il soit, a agi sur chaque ressource.
     /// Sert **uniquement** à mesurer les réattaques : c'est une vue globale,
-    /// donc un privilège de l'observateur, et aucun agent n'y accède (§8.3,
+    /// donc un privilège de l'observateur, et aucun agent n'y accède (§8.3 du PRD,
     /// EX-A12).
     derniere_action_sur: Vec<Instant>,
 }
@@ -690,8 +690,8 @@ impl Fourragement {
 
     /// Arme les oracles du mécanisme (EX-A11b, NF-11).
     pub fn armer_oracles(&self, registre: &mut Registre) {
-        registre.armer(Oracle::surete(PLANCHER, "§1.2, p. 16"));
-        registre.armer(Oracle::surete(HORS_DOMINANTE, "§1.2, p. 16"));
+        registre.armer(Oracle::surete(PLANCHER, "§1.2, p. 16, 3ᵉ éd."));
+        registre.armer(Oracle::surete(HORS_DOMINANTE, "§1.2, p. 16, 3ᵉ éd."));
         self.milieu.armer_oracles(registre);
     }
 
@@ -712,7 +712,7 @@ impl Fourragement {
     }
 
     /// Traite un événement. C'est la boucle de l'appelant qui l'appelle, le
-    /// moteur restant passif (§5.1).
+    /// moteur restant passif (§5.1 du PRD).
     pub fn traiter(&mut self, moteur: &mut Moteur<Evt>, cible: ActeurId, evt: Evt) {
         match evt {
             Evt::Cycle => self.cycle(moteur, cible),
@@ -953,7 +953,7 @@ impl Fourragement {
                 moteur.maintenant(),
                 format!(
                     "probabilité de tirage minimale {p_min:.9} sous le plancher \
-                     {:.9} — défaut d'implantation ou erreur du traité (§1.2, p. 16)",
+                     {:.9} — défaut d'implantation ou erreur du traité (§1.2, p. 16, 3ᵉ éd.)",
                     bornes.plancher_tirage
                 ),
             );
@@ -1015,7 +1015,7 @@ impl Fourragement {
         // trop récemment pour que sa trace ait pu être vue ? La fenêtre est
         // ℓ₉₉, c'est-à-dire le temps que met le milieu à rendre la trace
         // lisible. Cette comparaison est un privilège de l'observateur : aucun
-        // agent ne dispose de cette information (§8.3).
+        // agent ne dispose de cette information (§8.3 du PRD).
         let fenetre = self.granularite.tics_depuis_ms(self.params.l99_milieu_ms);
         if (maintenant - self.derniere_action_sur[j]) < fenetre && self.mesures.cycles > 0 {
             self.mesures.reattaques += 1;
@@ -1139,7 +1139,7 @@ impl Fourragement {
     }
 
     /// Indice de la ressource la plus utile — connaissance de l'observateur,
-    /// jamais d'un agent (§8.3).
+    /// jamais d'un agent (§8.3 du PRD).
     pub fn meilleure_ressource(&self) -> usize {
         self.ressources
             .iter()

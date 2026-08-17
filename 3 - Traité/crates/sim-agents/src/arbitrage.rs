@@ -1,5 +1,5 @@
 //! **File de demandes d'arbitrage** — l'essaim écrit vers l'opérateur
-//! (EX-A59, §8.3).
+//! (EX-A59, §8.3 du traité).
 //!
 //! Symétrique exact de la directive d'EX-A07 : là où PD4 fait écrire la console
 //! vers l'essaim, ce module fait écrire l'essaim vers l'opérateur. Un agent
@@ -8,7 +8,7 @@
 //! époque, auteur **apposé** (EX-M24), décalage — traité exactement comme une
 //! directive.
 //!
-//! **Fondement mesuré.** Dans les épisodes du §8.3 qui se règlent par une trêve,
+//! **Fondement mesuré.** Dans les épisodes du §8.3 du traité qui se règlent par une trêve,
 //! les agents reconnaissent dans la conduite des autres l'exécution de directives
 //! contradictoires plutôt qu'une hostilité, sortent de la boucle d'escalade,
 //! nettoient le code malveillant qu'ils avaient déposé, écrivent des comptes
@@ -31,7 +31,7 @@ pub const NE_BORNE_PAS: &str =
 /// Pourquoi un agent remonte une décision plutôt que de la prendre.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Motif {
-    /// Mandats contradictoires constatés entre agents — le régime du §8.3.
+    /// Mandats contradictoires constatés entre agents — le régime du §8.3 du traité.
     MandatsContradictoires,
     /// Blocage que l'agent ne peut pas dénouer dans son périmètre.
     Blocage,
@@ -45,7 +45,8 @@ impl Motif {
     /// Libellé affiché.
     pub fn libelle(self) -> &'static str {
         match self {
-            Motif::MandatsContradictoires => "mandats contradictoires entre agents (§8.3)",
+            Motif::MandatsContradictoires => "mandats contradictoires entre agents (§8.3 du \
+                                              traité)",
             Motif::Blocage => "blocage hors du périmètre de l'agent",
             Motif::AmbiguiteDeMandat => "ambiguïté de mandat — l'agent n'a pas autorité",
         }

@@ -1,6 +1,6 @@
 //! Scénario J — la cascade de l'agent saturé, et AUTO-GUÉRIR (EX-A36, EX-V16).
 //!
-//! > Aucun agent n'est tombé, et l'essaim s'effondre. (§6.1, figure 6.1, p. 91)
+//! > Aucun agent n'est tombé, et l'essaim s'effondre. (§6.1 du traité, figure 6.1, p. 91, 3ᵉ éd.)
 //!
 //! **Aucune faute n'est injectée : c'est la condition de démonstration.** La
 //! charge franchit la capacité de service, la file de chaque agent croît, sa
@@ -36,7 +36,7 @@ pub const BLOC_J: Bloc = Bloc {
          configuration « détecteur exact ».",
 };
 
-/// Débit utile de l'état absorbant, en requêtes par seconde (§2.3 :
+/// Débit utile de l'état absorbant, en requêtes par seconde (§2.3 du traité :
 /// 280 → 560 → 150). Le système ne remonte jamais au-dessus.
 pub const DEBIT_ABSORBANT: f64 = 150.0;
 
@@ -86,7 +86,7 @@ pub struct Params {
     pub reconstruction_s: f64,
     /// Ce que la sonde de vivacité mesure réellement.
     pub sonde: SondeVivacite,
-    /// Régime métastable du §2.3 : 280 → 560 → 150 req/s.
+    /// Régime métastable du §2.3 du traité : 280 → 560 → 150 req/s.
     pub metastable: bool,
 }
 
@@ -213,7 +213,7 @@ impl Cascade {
         let charge = self.params.charge_par_s;
         let capacite = self.params.capacite(actifs);
 
-        // **Régime métastable (§2.3).** Une fois la bascule franchie, le débit
+        // **Régime métastable (§2.3 du traité).** Une fois la bascule franchie, le débit
         // utile s'effondre sous sa valeur d'avant et **y reste**, même si la
         // charge offerte redescend : la capacité libérée est consommée par le
         // travail réémis. C'est un état **absorbant**, et non un creux dont le
@@ -471,7 +471,7 @@ mod tests {
     /// `timeoutSeconds` n'est franchie plus tard qu'une autre. La cascade est
     /// bit pour bit la même. Ce que l'expiration allonge est ailleurs — dans la
     /// détection **vraie** d'un agent réellement arrêté, dont la complétude
-    /// croît avec elle (§7.3, p. 112) —, et c'est exactement le mauvais échange :
+    /// croît avec elle (§7.3, p. 112, 3ᵉ éd.) —, et c'est exactement le mauvais échange :
     /// on paie en détection sans rien acheter en fausses suspicions.
     #[test]
     fn critere_2b_un_timeout_plus_genereux_ne_supprime_pas_la_cascade() {
@@ -501,7 +501,7 @@ mod tests {
         assert!(min_genereux > min_serre, "la détection vraie s'allonge");
     }
 
-    /// §2.3 — le régime **métastable** : le débit s'effondre sous sa valeur
+    /// §2.3 du traité — le régime **métastable** : le débit s'effondre sous sa valeur
     /// d'avant et **y reste**. C'est l'état absorbant.
     #[test]
     fn le_regime_metastable_a_un_etat_absorbant() {

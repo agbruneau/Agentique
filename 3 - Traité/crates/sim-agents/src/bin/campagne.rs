@@ -2,12 +2,12 @@
 //!
 //! Produit un CSV des points de mesure et un rapport JSON, **sans aucune
 //! dépendance graphique** : le binaire vit dans `sim-agents` et ne connaît pas
-//! `sim-viz`. C'est la correction que le §5.1c apportait à la version 1.0 du
+//! `sim-viz`. C'est la correction que le §5.1c du PRD apportait à la version 1.0 du
 //! PRD, qui logeait les scénarios dans la crate de rendu tout en exigeant
 //! d'elle un mode sans rendu.
 //!
 //! Ni `clap` ni `csv` ne sont tirés : les arguments se comptent sur une main et
-//! les champs du CSV sont numériques, donc sans échappement à traiter. §5.2
+//! les champs du CSV sont numériques, donc sans échappement à traiter. §5.2 du PRD
 //! fait de la liste des dépendances un indicateur de risque, et une dépendance
 //! qu'on n'ouvre pas est la plus lazy des dépendances (PD7).
 //!

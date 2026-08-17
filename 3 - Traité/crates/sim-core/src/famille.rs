@@ -132,7 +132,7 @@ impl Familles {
         fa != Familles::SANS_FAMILLE && fa == fb
     }
 
-    /// **Diversité effective** : le paramètre de contrôle de Φ_c (§8.1).
+    /// **Diversité effective** : le paramètre de contrôle de Φ_c (§8.1 du traité).
     ///
     /// C'est le nombre de familles distinctes, et rien de plus — le traité
     /// énumère aussi le nombre d'invites et l'entropie de la température de

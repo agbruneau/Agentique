@@ -79,7 +79,7 @@ pub struct Enregistrement {
     /// milieu n'évalue toujours pas le **contenu** : il garantit seulement qui a
     /// déposé. Une trace dont l'auteur serait déclaré par l'écrivain ne serait
     /// pas incomplète, elle serait fausse, et ni EX-A08 ni l'échantillonnage ne
-    /// la corrigent (§6.2, p. 96, 3ᵉ éd. — la page porte la fin du §6.2 et le
+    /// la corrigent (§6.2 du traité, p. 96, 3ᵉ éd. — la page porte la fin du §6.2 et le
     /// titre du §6.3).
     pub auteur: Identite,
 }
@@ -90,7 +90,7 @@ pub struct Enregistrement {
 /// La paire est délibérée. `agent` seul suffirait à attribuer ; `session` est ce
 /// qui rend la **condition d'échec** exprimable — une identité partagée entre
 /// plusieurs processus, ou un jeton réémis à un successeur, ramène au zombie du
-/// §2.1 : le point de défaillance résiduel n'est pas le processus, c'est
+/// §2.1 du traité : le point de défaillance résiduel n'est pas le processus, c'est
 /// l'identité.
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Debug, Default)]
 pub struct Identite {
@@ -138,7 +138,7 @@ pub const OCTETS_IDENTITE: u32 = 12;
 /// Le délai est rendu à l'appelant, qui planifie l'événement d'accusé sur le
 /// moteur : M3 exige que l'accusé soit un **événement distinct** de l'écriture,
 /// et `sim-milieu` ne pousse pas d'événement lui-même — il ne connaît pas le
-/// type de charge du moteur (§5.1).
+/// type de charge du moteur (§5.1 du PRD).
 #[derive(Clone, Copy, Debug)]
 pub struct Ecriture {
     /// Partition où l'enregistrement a été rangé.
@@ -180,9 +180,9 @@ pub struct Couts {
 /// Politique de rétention (EX-M10, EX-M20).
 ///
 /// **R est une grandeur unique à trois rôles** : évaporation par politique du
-/// milieu (§1.2, §6.1), horizon de reconstruction causale (§6.2), et **horizon
-/// réel de la détection** (§7.2). Elle est affichée une fois, et tout oracle
-/// dont l'horizon la dépasse est refusé au chargement.
+/// milieu (§1.2 et §6.1 du traité), horizon de reconstruction causale (§6.2),
+/// et **horizon réel de la détection** (§7.2). Elle est affichée une fois, et
+/// tout oracle dont l'horizon la dépasse est refusé au chargement.
 /// Le défaut est **sans rétention et sans compactage** : une politique qu'on
 /// n'a pas demandée ne doit pas effacer d'enregistrements.
 ///
@@ -204,7 +204,7 @@ impl Retention {
         format!(
             "oracle refusé : horizon {} > R = {}. Au-delà de R, la propriété redevient \
              invérifiable ; R, non la sensibilité du détecteur, est l'horizon réel de la \
-             détection (§6.1, §7.2).",
+             détection (§6.1 et §7.2 du traité).",
             horizon.0, r.0
         )
     }
@@ -300,7 +300,7 @@ impl Partition {
             Some(
                 "sujet compacté — impropre à la traçabilité. Garantie : un consommateur partant \
                  du début voit AU MOINS l'état final de chaque clé, dans l'ordre d'écriture. \
-                 « Au moins » interdit d'en revendiquer l'unicité (§6.1, tableau 17).",
+                 « Au moins » interdit d'en revendiquer l'unicité (§6.1 du traité, tableau 17).",
             )
         } else {
             None
@@ -312,7 +312,7 @@ impl Partition {
 pub struct Milieu {
     partitions: Vec<Partition>,
     /// Distribution du chemin écriture → durabilité. C'est une **entrée** du
-    /// modèle, jamais une sortie (§8.3, EX-M09).
+    /// modèle, jamais une sortie (§8.3 du PRD, EX-M09).
     pub latence: Latence,
     /// Unité du temps logique, héritée de la configuration (DT10).
     pub granularite: Granularite,
@@ -438,7 +438,7 @@ impl Milieu {
     /// Le milieu ne peut pas l'empêcher : il appose ce qu'on lui présente. Il
     /// peut en revanche le **constater après coup**, et c'est la seule chose
     /// honnête à afficher. Une session vue avec deux agents distincts est le
-    /// zombie du §2.1 revenu par la porte de l'identité.
+    /// zombie du §2.1 du traité revenu par la porte de l'identité.
     pub fn sessions_partagees(&self) -> Vec<(u64, Vec<ActeurId>)> {
         let mut par_session: BTreeMap<u64, BTreeSet<ActeurId>> = BTreeMap::new();
         for p in &self.partitions {

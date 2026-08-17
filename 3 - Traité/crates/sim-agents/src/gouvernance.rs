@@ -1,7 +1,7 @@
 //! Scénario K — la fenêtre de violation (EX-A09, EX-A30, EX-A54, EX-V20,
 //! EX-V21).
 //!
-//! > Le budget est un plafond, pas une garantie. (§5.3)
+//! > Le budget est un plafond, pas une garantie. (§5.3 du traité)
 //!
 //! **PD11** — la gouvernance ne produit rien, elle interdit. Aucun levier n'est
 //! présenté comme un invariant : chacun affiche **la durée pendant laquelle

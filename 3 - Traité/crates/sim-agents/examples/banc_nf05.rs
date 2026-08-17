@@ -7,7 +7,7 @@
 //! simulation : PD1 interdit l'horloge du système au cœur, et la mesure de
 //! performance est par nature hors du monde clos.
 //!
-//! NF-05 est une cible d'ingénierie, pas une mesure du traité (§8.2, note de
+//! NF-05 est une cible d'ingénierie, pas une mesure du traité (§8.2 du PRD, note de
 //! méthode).
 
 use sim_agents::scenario_b;

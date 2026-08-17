@@ -1,4 +1,4 @@
-//! **§6.3** — injection de directive globale avec époque (EX-A07, PD4,
+//! **§6.3 du traité** — injection de directive globale avec époque (EX-A07, PD4,
 //! EX-V03, EX-V04, EX-V19).
 //!
 //! > La console écrit dans le journal, jamais aux agents. (PD4)

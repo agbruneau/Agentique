@@ -4,7 +4,7 @@
 //! l'horloge, et laisse l'appelant exécuter le gestionnaire puis réinjecter ce
 //! qu'il produit. Ce choix évite un trait « gestionnaire » à une seule
 //! implantation (PD7) et garde `sim-core` ignorant des agents comme du journal
-//! partitionné (§5.1).
+//! partitionné (§5.1 du PRD).
 //!
 //! Il n'y a pas d'attente réelle : l'horloge saute à la date de l'événement
 //! suivant. Aucun appel à l'horloge du système n'existe dans ce fichier — c'est

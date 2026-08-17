@@ -1,7 +1,7 @@
 //! Graphe de communication (EX-C16).
 //!
 //! > Le graphe de communication est un **objet du modèle** : orienté et
-//! > asymétrique par défaut, à voisinage variable d'un tour à l'autre. (§5.1)
+//! > asymétrique par défaut, à voisinage variable d'un tour à l'autre. (§5.1 du traité)
 //!
 //! Trois décisions que ce module tient, et dont chacune contredit une commodité
 //! répandue :

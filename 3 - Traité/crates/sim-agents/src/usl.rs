@@ -1,6 +1,6 @@
 //! Loi d'échelle universelle : mesure de σ et κ (scénario C).
 //!
-//! > L'ouvrage n'a pas dit comment. (conclusion, p. 130)
+//! > L'ouvrage n'a pas dit comment. (conclusion, p. 130, 3ᵉ éd.)
 //!
 //! C'est la contribution du projet au traité : le §2.1 pose
 //! `C(n) = n / (1 + σ(n − 1) + κn(n − 1))` et `u* = √((1 − σ)/κ)`, mais ne
@@ -140,7 +140,7 @@ pub struct Ajustement {
 /// Ajuste avec intervalles de confiance **par rééchantillonnage**.
 ///
 /// Le rééchantillonnage tire les points avec remise ; c'est la seule méthode
-/// qui ne suppose rien de la loi des résidus, et le §2.1 ne fournit aucune loi.
+/// qui ne suppose rien de la loi des résidus, et le §2.1 du traité ne fournit aucune loi.
 pub fn ajuster_avec_ic(points: &[Point], tirages: usize, alea: &mut Alea) -> Option<Ajustement> {
     let estimation = ajuster(points)?;
 
@@ -236,7 +236,7 @@ impl Charge {
     }
 
     /// Rend le débit relatif à n agents, **par application de la formule du
-    /// §2.1**, avec un bruit multiplicatif — ce n'est pas une mesure.
+    /// §2.1 du traité**, avec un bruit multiplicatif — ce n'est pas une mesure.
     ///
     /// Aucun agent ne tire de temps de service ici, aucun achèvement n'est
     /// compté : `t_nominal` est calculé une fois, hors boucle, et la boucle ne
@@ -294,7 +294,7 @@ impl Charge {
 mod tests {
     use super::*;
 
-    /// La formule du §2.1 est reproduite exactement, et C(1) = 1.
+    /// La formule du §2.1 du traité est reproduite exactement, et C(1) = 1.
     #[test]
     fn la_formule_usl_est_celle_du_traite() {
         let p = Parametres {

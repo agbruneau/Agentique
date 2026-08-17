@@ -111,12 +111,12 @@ WebGL 2 est requis — `eframe` n'a pas de repli logiciel.
 
 Le déploiement est un dépôt de fichiers statiques : `index.html`, `sim_viz.js`,
 `sim_viz_bg.wasm` côte à côte, aucune dépendance serveur (DT4). Module compressé :
-**1 447 267 octets** — 1,380 Mio, ou 1,45 Mo en unités SI — pour une cible de
-8 Mo (NF-08), sur **3 668 599 octets bruts**. La cible reste tenue d'un facteur
+**1 447 624 octets** — 1,381 Mio, ou 1,45 Mo en unités SI — pour une cible de
+8 Mo (NF-08), sur **3 669 337 octets bruts**. La cible reste tenue d'un facteur
 cinq et demi.
 
 Ces deux chiffres sortent d'**une** construction, celle du **17 août 2026 à
-09 h 09** (`wasm-bindgen` a écrit `web/sim_viz_bg.wasm` à 09 h 09 min 21 s), et
+11 h 14** (`wasm-bindgen` a écrit `web/sim_viz_bg.wasm` à 11 h 14 min 07 s), et
 se refont par ces deux lignes et ces deux-là seulement :
 
 ```bash
@@ -203,17 +203,18 @@ sans les exécuter :
 cargo test -p sim-agents --release -- --list
 ```
 
-La suite complète — **465 tests, 0 échec**, exécutés le 17 août 2026 à 09 h 49.
+La suite complète — **467 tests, 0 échec**, exécutés le 17 août 2026 à 11 h 14.
 Le compte est une mesure : il se refait par la ligne ci-dessous, il ne se cite pas.
 
 ```bash
 cargo test --workspace --release
 ```
 
-⚠ **Il a bougé deux fois dans la journée** — **447 à 08 h 32, 465 à 09 h 49** —, les crates
-ayant été éditées entre les deux par l'audit. `grep -r '#\[test\]' --include=*.rs crates/`
-rend **465** lui aussi, mais *un attribut compté n'est pas un test exécuté* : les deux
-valeurs coïncident ici, et rien ne garantit qu'elles coïncideront demain.
+⚠ **Il a bougé cinq fois dans la journée** — **428 à 08 h 10, 447 à 08 h 32,
+465 à 09 h 49, 466 à 10 h 26, 467 à 11 h 14** —, les crates ayant été éditées
+entre chaque par l'audit. `grep -r '#\[test\]' --include=*.rs crates/` rend
+**467** lui aussi à 11 h 14, mais *un attribut compté n'est pas un test exécuté* :
+les deux valeurs coïncident ici, et rien ne garantit qu'elles coïncideront demain.
 
 ### Bancs de mesure
 
@@ -285,14 +286,15 @@ cargo doc --workspace --no-deps --open
 
 ## État
 
-Les **six** phases du PRD sont livrées : **465 tests, 0 échec**, suite rejouée le
-17 août 2026 à 09 h 49 ; clippy et rustdoc à 0 à 09 h 50 ; **treize** scénarios
-**exécutables par leurs tests**, vingt-neuf bancs pour les cinq premières phases.
-La répartition est 422 unitaires — 253 `sim-agents`, 96 `sim-core`,
-68 `sim-milieu`, 5 `sim-viz` — et 43 d'intégration, qui sont les critères de
-sortie de phase. **Le compte a bougé trois fois le même jour** — 428 à 08 h 10,
-447 à 08 h 32, 465 à 09 h 49 —, cinq agents d'audit écrivant en parallèle : ce
-qui se cite est la ligne de commande, jamais le nombre.
+Les **six** phases du PRD sont livrées : **467 tests, 0 échec**, suite rejouée le
+17 août 2026 à 11 h 14 ; clippy à 0 et rustdoc à 0 à 11 h 15 ; **treize**
+scénarios **exécutables par leurs tests**, vingt-neuf bancs pour les cinq
+premières phases. La répartition est 424 unitaires — 254 `sim-agents`,
+96 `sim-core`, 68 `sim-milieu`, 6 `sim-viz` — et 43 d'intégration, qui sont les
+critères de sortie de phase. **Le compte a bougé cinq fois le même jour** —
+428 à 08 h 10, 447 à 08 h 32, 465 à 09 h 49, 466 à 10 h 26, 467 à 11 h 14 —,
+plusieurs agents d'audit écrivant en parallèle : ce qui se cite est la ligne de
+commande, jamais le nombre.
 
 Les réserves ouvertes sont au §0 du PRD et au [registre des
 décisions](docs/decisions.md). Les principales :

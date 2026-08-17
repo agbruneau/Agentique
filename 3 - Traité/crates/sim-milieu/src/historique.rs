@@ -1,8 +1,8 @@
 //! Historique vérifié par identité — la réputation comme projection du journal
-//! (EX-M25, §8.2).
+//! (EX-M25, §8.2 du traité).
 //!
 //! > la réputation est une fonction de l'historique, et l'historique est
-//! > exactement ce que le milieu conserve déjà. (§8.2)
+//! > exactement ce que le milieu conserve déjà. (§8.2 du traité)
 //!
 //! Ce module n'est **pas** un composant nouveau : c'est le mécanisme du sujet
 //! compacté (EX-M10) appliqué à un autre objet. Pour chaque identité, la suite
@@ -13,7 +13,7 @@
 //! **La condition d'échec est sérieuse et ce module la fait respecter.** Là où
 //! l'issue n'est pas vérifiable — la plupart des jugements de conception —,
 //! l'historique n'enregistre que la concordance avec la majorité, c'est-à-dire
-//! qu'il récompense la conformité du §8.1 et **aggrave le mal qu'il devait
+//! qu'il récompense la conformité du §8.1 du traité et **aggrave le mal qu'il devait
 //! corriger**. Aucun nombre n'est donc rendu dans ce régime, au lieu d'en rendre
 //! un dégradé.
 //!
@@ -54,8 +54,8 @@ pub enum Regime {
 /// Refus opposé à qui demande un poids sur des issues non vérifiables.
 pub const REFUS_NON_VERIFIABLE: &str =
     "là où l'issue n'est pas vérifiable, l'historique n'enregistre que la concordance avec la \
-     majorité, c'est-à-dire qu'il récompense la conformité du §8.1 et aggrave le mal qu'il \
-     devait corriger — aucun poids n'est rendu (EX-M25)";
+     majorité, c'est-à-dire qu'il récompense la conformité du §8.1 du traité et aggrave le mal \
+     qu'il devait corriger — aucun poids n'est rendu (EX-M25)";
 
 /// Le compte d'une identité.
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
@@ -125,7 +125,7 @@ impl Historique {
     }
 
     /// Enregistre une assertion déposée par cette identité. Aucune issue n'est
-    /// connue à ce stade — c'est le point du §8.2 : ce qu'un agent dépose est ce
+    /// connue à ce stade — c'est le point du §8.2 du traité : ce qu'un agent dépose est ce
     /// qu'il **déclare** avoir fait.
     pub fn asserter(&mut self, qui: Identite) {
         self.comptes.entry(qui).or_default().assertions += 1;
@@ -201,7 +201,8 @@ impl Historique {
     /// achète (EX-V21, tableau 22).
     pub fn ne_traite_pas() -> &'static str {
         "les jugements dont l'issue n'est pas vérifiable — l'historique y récompenserait la \
-         conformité ; et la crédulité d'un lecteur, que l'attribution ne corrige pas (§8.2)"
+         conformité ; et la crédulité d'un lecteur, que l'attribution ne corrige pas (§8.2 du \
+         traité)"
     }
 }
 

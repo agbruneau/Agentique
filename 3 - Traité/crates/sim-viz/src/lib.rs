@@ -1045,9 +1045,11 @@ mod tests {
     /// `sim-agents` comme `sim-core` n'en avaient aucun — c'est côté `sim-core`
     /// que les astérisques étaient revenues.
     ///
-    /// Les accents graves, eux, ne sont **pas** refusés : les trois listes en
-    /// portent des dizaines et l'arbitrage — les remplacer partout, ou les
-    /// laisser — n'est pas tranché. La règle codifiée est celle-ci, et pas plus.
+    /// L'accent grave est refusé au même titre : `egui` ne l'analyse pas plus
+    /// que l'astérisque, et les soixante et onze paires que les trois listes
+    /// portaient s'affichaient telles quelles. Elles sont devenues des
+    /// guillemets — la convention que la liste de cette crate suivait déjà pour
+    /// nommer un module.
     #[test]
     fn aucune_liste_dabsences_ne_porte_de_balisage_markdown() {
         let listes: [(&str, &[&str]); 3] = [
@@ -1058,6 +1060,7 @@ mod tests {
         for (crate_, lignes) in listes {
             for e in lignes {
                 assert!(!e.contains('*'), "{crate_} — astérisque d'emphase : {e}");
+                assert!(!e.contains('`'), "{crate_} — accent grave : {e}");
                 assert!(!e.contains('\n'), "{crate_} — retour à la ligne : {e}");
             }
         }

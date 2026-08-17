@@ -9,7 +9,7 @@
 //! l'arrêt du meneur, et un quorum accessible ou non.
 //!
 //! Les compteurs de ce plan ne sont **jamais** additionnés à ceux du plan de
-//! données (§5.1b). L'affichage dit « modèle de coût du plan de contrôle »,
+//! données (§5.1b du PRD). L'affichage dit « modèle de coût du plan de contrôle »,
 //! jamais « consensus ».
 
 use sim_core::alea::Alea;
@@ -26,14 +26,14 @@ pub struct PlanDeControle {
     /// Membres vivants du quorum.
     vivants: u32,
     /// Temps de diffusion, tiré dans 0,5 – 20 ms selon la technologie de
-    /// stockage (§6.1, tableau 17).
+    /// stockage (§6.1 du traité, tableau 17).
     pub diffusion_min_ms: f64,
     /// Borne haute du temps de diffusion, en millisecondes.
     pub diffusion_max_ms: f64,
     /// Délai d'élection, tiré uniformément dans un intervalle fixe —
-    /// 150 – 300 ms par défaut (§4.2, §4.3, §6.1).
+    /// 150 – 300 ms par défaut (§4.2, §4.3 et §6.1 du traité).
     pub election_min_ms: f64,
-    /// Borne haute du délai d'élection, en millisecondes (§4.2, §4.3, §6.1).
+    /// Borne haute du délai d'élection, en millisecondes (§4.2, §4.3 et §6.1 du traité).
     pub election_max_ms: f64,
     /// Temps moyen entre pannes, en millisecondes.
     ///
@@ -124,7 +124,7 @@ impl PlanDeControle {
     }
 
     /// La condition `broadcastTime ≪ electionTimeout ≪ MTBF`, vérifiée en
-    /// continu (§6.1, tableau 17).
+    /// continu (§6.1 du traité, tableau 17).
     ///
     /// Rend la liste des inégalités violées. La **violation de gauche** est
     /// celle qui compte : quand le temps de diffusion approche le délai
@@ -138,7 +138,7 @@ impl PlanDeControle {
                 "violation de gauche : temps de diffusion jusqu'à {:.1} ms contre un délai \
                  d'élection dès {:.1} ms — l'inégalité broadcastTime ≪ electionTimeout ne tient \
                  plus, et le mode de défaillance est **élections perpétuelles** : une panne née \
-                 de la charge, manifestée comme panne d'accord (§6.1).",
+                 de la charge, manifestée comme panne d'accord (§6.1 du traité).",
                 self.diffusion_max_ms, self.election_min_ms
             ));
         }

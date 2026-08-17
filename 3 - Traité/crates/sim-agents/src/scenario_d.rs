@@ -1,6 +1,6 @@
 //! Scénario D — La chute de R1.
 //!
-//! Rejeu **pas à pas**, contrôlé par l'utilisateur, du déroulé du §2.1 à k = 3
+//! Rejeu **pas à pas**, contrôlé par l'utilisateur, du déroulé du §2.1 du traité à k = 3
 //! et m = 2. Ce n'est pas une animation : chaque instant est un pas explicite,
 //! parce que la thèse tient à l'ordre exact des événements et qu'un déroulé
 //! automatique la rendrait inobservable.
@@ -32,10 +32,10 @@ pub const BLOC_D: Bloc = Bloc {
         "que la documentation du courtier se contredise. Elle conditionne sa garantie à ce qu'au \
          moins une réplique reste synchronisée, et à t₄ aucune ne l'est. Il ne démontre rien non \
          plus sur un courtier déployé : le simulateur transpose la documentation, pas \
-         l'implantation, et un écart entre les deux est invisible d'ici (§2.3).",
+         l'implantation, et un écart entre les deux est invisible d'ici (§2.3 du PRD).",
 };
 
-/// Les instants du déroulé, tels que le tableau du §2.1 les écrit.
+/// Les instants du déroulé, tels que le tableau du §2.1 du traité les écrit.
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
 pub enum Etape {
     /// Avant tout : trois répliques synchronisées.
@@ -306,7 +306,7 @@ mod tests {
         );
     }
 
-    /// §2.1 — r₂ est accusé à largeur 2, donc il survit à **m − 1 = 1**
+    /// §2.1 du traité — r₂ est accusé à largeur 2, donc il survit à **m − 1 = 1**
     /// disparition, et non à k − 1 = 2. Le chiffre se lit dans la mesure.
     #[test]
     fn la_largeur_daccuse_de_r2_vaut_deux_et_non_trois() {
@@ -382,14 +382,20 @@ mod tests {
         assert!(d.isr.perte_muette().is_none(), "avec m = 2, la perte n'est pas muette");
     }
 
-    /// PD8 — le bloc de trois, et son troisième champ n'est pas vide.
+    /// F2 — **la page exacte du bloc D**, seule chose que les tests de
+    /// `scenario` ne tiennent pas sur lui.
+    ///
+    /// Les trois assertions voisines ont été retirées comme doublons, chacune
+    /// contre un test strictement plus fort de `crate::scenario` :
+    /// `les_dix_blocs_portent_leur_section_et_leur_page` refuse les champs vides
+    /// des dix blocs — après `trim`, là où celles-ci ne testaient que la chaîne
+    /// vide — et `les_dix_blocs_nomment_leur_edition` tient la clause d'édition
+    /// pour les dix. Ce qui reste ici ne l'est pas : la vérification par le
+    /// traité ramène la page à l'intervalle du §2.1, mesuré de la p. 23 à la
+    /// p. 30, et n'exige donc pas la p. 26. « p. 22 » tombait hors de cet
+    /// intervalle ; « p. 25 » y tomberait.
     #[test]
-    fn le_scenario_porte_son_bloc_de_trois() {
-        assert!(!BLOC_D.these.is_empty());
-        assert!(!BLOC_D.ne_demontre_pas.is_empty());
-        // La thèse se lit p. 26 du traité livré. « p. 22 » tombait hors du §2.1,
-        // qui commence p. 23 : la page ne désignait pas la section citée.
+    fn le_bloc_d_cite_la_page_ou_la_these_se_lit() {
         assert!(BLOC_D.source.contains("p. 26"), "{}", BLOC_D.source);
-        assert!(BLOC_D.source.contains("3ᵉ éd."), "{}", BLOC_D.source);
     }
 }

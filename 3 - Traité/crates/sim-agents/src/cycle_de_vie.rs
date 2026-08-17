@@ -2,7 +2,7 @@
 //! de perturbation (EX-A27).
 //!
 //! **Trois sondes aux effets disjoints et non substituables** — c'est ce que le
-//! §2.2 impose, et les confondre est le défaut que le scénario J exploitera :
+//! §2.2 du traité impose, et les confondre est le défaut que le scénario J exploitera :
 //! la sonde de démarrage bloque les deux autres, celle de vivacité **redémarre
 //! le conteneur**, celle de disponibilité **retire des points d'accès sans
 //! redémarrer**.
@@ -103,7 +103,7 @@ impl ReglagesSonde {
     pub const LIMITE_DISPONIBILITE: &'static str =
         "la sonde de disponibilité n'a AUCUN effet sur l'allocation de partitions d'un \
          consommateur : son travail n'arrive pas par un point d'accès, mais par sa propre lecture \
-         du journal (§6.1)";
+         du journal (§6.1 du traité)";
 
     /// La contre-mesure du traité est une **bascule**, pas un conseil : la
     /// sonde de vivacité ne teste qu'un blocage constatable sans travailler —
@@ -112,7 +112,7 @@ impl ReglagesSonde {
     pub const BASCULE_VIVACITE: &'static str =
         "vivacité sur « décalage seulement » : teste un blocage constatable sans travailler, et \
          non la capacité à répondre dans le délai. Le scénario J montre que cette bascule supprime \
-         la cascade SANS changer la charge (§6.1)";
+         la cascade SANS changer la charge (§6.1 du traité)";
 }
 
 /// Le groupe de consommation est un **troisième détecteur à seuil fixe**, avec
@@ -170,13 +170,20 @@ pub struct Retrait {
 /// plausible sous un réglage qui ne décrit aucune politique de sonde — zéro
 /// échec toléré n'est pas un seuil serré, c'est l'absence de seuil. « Une
 /// configuration invalide est un refus rendu à l'appelant, jamais un abandon »
-/// (SPEC §7, clause 4).
+/// (SPEC §7, clause 4) — même arbitrage que `sim_core::detecteur::Detecteur` et
+/// que [`crate::soupcon::DetecteurInfectieux::completude`], qui dérivent le même
+/// encadrement de 21 à 31 s.
+///
+/// La durée **sature**, pour la même raison que dans les deux autres : les
+/// champs de [`ReglagesSonde`] sont publics et le profil release du dépôt ne
+/// pose pas `overflow-checks`, de sorte qu'une période proche de 2⁶⁴ rendait une
+/// mise à mort enroulée, donc annoncée immédiate là où elle est la plus lente.
 pub fn retirer(ordre: OrdreDeChute, r: ReglagesSonde) -> Result<Retrait, String> {
     if r.seuil_echec == 0 {
         return Err(
             "seuil d'échec nul refusé : la mise à mort suit `seuil_echec` échecs consécutifs, et \
              à zéro échec il n'y a pas de politique de sonde à simuler — la durée rendue serait \
-             une valeur d'allure plausible sans réglage derrière (§6.1)."
+             une valeur d'allure plausible sans réglage derrière (§6.1 du traité)."
                 .to_string(),
         );
     }
@@ -189,7 +196,10 @@ pub fn retirer(ordre: OrdreDeChute, r: ReglagesSonde) -> Result<Retrait, String>
             // Trois échecs consécutifs à `periode_s` d'intervalle, plus
             // l'expiration du dernier : une trentaine de secondes.
             duree_avant_mise_a_mort: Duree(
-                r.periode_s * u64::from(r.seuil_echec - 1) + r.expiration_s + r.periode_s,
+                r.periode_s
+                    .saturating_mul(u64::from(r.seuil_echec - 1))
+                    .saturating_add(r.expiration_s)
+                    .saturating_add(r.periode_s),
             ),
             redemarrages: 1,
             reequilibrages_rouverts: 1,
@@ -368,6 +378,20 @@ mod tests {
         };
         let inverse = retirer(OrdreDeChute::VivaciteDabord, un).expect("un échec suffit");
         assert_eq!(inverse.duree_avant_mise_a_mort, Duree(11));
+    }
+
+    /// Même arbitrage que `sim_core::detecteur` et que
+    /// [`crate::soupcon::DetecteurInfectieux::completude`] : la durée
+    /// **sature**. Sans cela, une période proche de 2⁶⁴ rendait une mise à mort
+    /// enroulée, donc annoncée quasi immédiate là où elle est la plus lente.
+    #[test]
+    fn la_duree_avant_mise_a_mort_sature_au_lieu_de_senrouler() {
+        let r = ReglagesSonde {
+            periode_s: 1u64 << 63,
+            ..ReglagesSonde::default()
+        };
+        let inverse = retirer(OrdreDeChute::VivaciteDabord, r).expect("seuil valide");
+        assert_eq!(inverse.duree_avant_mise_a_mort, Duree(u64::MAX));
     }
 
     /// EX-A27 — le budget refuse les volontaires et **subit** les

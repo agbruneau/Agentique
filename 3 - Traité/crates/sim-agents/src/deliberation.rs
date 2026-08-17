@@ -1,4 +1,4 @@
-//! **Algorithme 8.1 — dépôt aveugle sur sujet de délibération** (EX-A57, §8.2).
+//! **Algorithme 8.1 — dépôt aveugle sur sujet de délibération** (EX-A57, §8.2 du traité).
 //!
 //! ⚠ **Mécanisme proposé par l'ouvrage. Aucune source ne le mesure** ; ce qui
 //! suit est un raisonnement de conception sur des garanties existantes, et
@@ -30,8 +30,8 @@ use std::collections::BTreeMap;
 
 /// Provenance à afficher avec tout résultat de ce mécanisme (F2).
 pub const PROVENANCE: &str =
-    "mécanisme proposé par l'ouvrage (§8.2, algorithme 8.1) — aucune source ne le mesure ; \
-     raisonnement de conception sur des garanties existantes";
+    "mécanisme proposé par l'ouvrage (§8.2 du traité, algorithme 8.1) — aucune source ne le \
+     mesure ; raisonnement de conception sur des garanties existantes";
 
 /// Ce que le mécanisme ne protège pas (tableau 22, EX-V21).
 pub const NE_PROTEGE_PAS: &str =

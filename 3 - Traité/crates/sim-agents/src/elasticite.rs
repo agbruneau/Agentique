@@ -19,7 +19,7 @@
 //! cible. La raison est structurelle et n'a rien d'un défaut d'implantation :
 //! `visées = courantes × r` est un correcteur proportionnel à gain unitaire, et
 //! le temps mort vaut deux périodes de synchronisation. Un tel correcteur est
-//! marginalement instable, et le §2.2 le décrit d'ailleurs sans le nommer
+//! marginalement instable, et le §2.2 du traité le décrit d'ailleurs sans le nommer
 //! ainsi : « le contrôleur mesure l'effet d'une décision qu'il n'a pas fini
 //! d'appliquer ».
 //!
@@ -73,7 +73,7 @@ impl Default for Params {
             disponibilite_initiale_s: 30.0,
             init_metrique_processeur_s: 300.0,
             // **Valeur documentée**, et non un choix du produit : le §7.3
-            // (p. 114) publie les défauts de la fenêtre de stabilisation —
+            // (p. 114, 3ᵉ éd.) publie les défauts de la fenêtre de stabilisation —
             // 300 s à la baisse, 0 s à la hausse. Voir
             // [`Params::FENETRE_STABILISATION`]. L'asymétrie est le résultat : à
             // la baisse la fenêtre couvre exactement les vingt périodes de
@@ -127,17 +127,17 @@ impl Params {
 
     /// Provenance de la fenêtre de stabilisation, affichée avec le réglage (F2).
     ///
-    /// Les défauts **sont** publiés, et le §7.3 (p. 114) les reprend : 300 s à
+    /// Les défauts **sont** publiés, et le §7.3 (p. 114, 3ᵉ éd.) les reprend : 300 s à
     /// la baisse, 0 s à la hausse. Le produit ne modélise que la baisse —
     /// [`Params::fenetre_descente_s`] — parce que la fenêtre nulle à la hausse
     /// n'a rien à retenir ; les deux politiques de montée qui bornent alors le
     /// pas (100 % ou 4 répliques par tranche de 15 s, la plus permissive
     /// l'emportant) ne sont **pas** transposées, le budget de churn ⌊β·T⌋ du
-    /// §2.2 tenant ce rôle.
+    /// §2.2 du traité tenant ce rôle.
     pub const FENETRE_STABILISATION: &'static str =
-        "300 s à la baisse, 0 s à la hausse (§7.3, p. 114) — seule la baisse est transposée ; les \
-         deux politiques de montée du même paragraphe ne le sont pas, le budget de churn ⌊β·T⌋ du \
-         §2.2 en tenant lieu";
+        "300 s à la baisse, 0 s à la hausse (§7.3, p. 114, 3ᵉ éd.) — seule la baisse est \
+         transposée ; les deux politiques de montée du même paragraphe ne le sont pas, le \
+         budget de churn ⌊β·T⌋ du §2.2 du traité en tenant lieu";
 }
 
 /// L'état de la boucle.
@@ -415,7 +415,7 @@ impl CibleLittle {
             Regime::Stationnaire => None,
             Regime::TransitoireOuSature => Some(
                 "NON VALIDE — mesure prise en régime transitoire ou saturé : un nombre \
-                 arithmétiquement exact et opérationnellement faux (§2.2, §3.1)",
+                 arithmétiquement exact et opérationnellement faux (§2.2 et §3.1 du traité)",
             ),
         };
         (n, etiquette)
@@ -434,7 +434,7 @@ mod tests {
     }
 
     /// F2 — la fenêtre de stabilisation porte sa provenance, et le défaut du
-    /// produit est **celui du traité** : 300 s à la baisse (§7.3, p. 114).
+    /// produit est **celui du traité** : 300 s à la baisse (§7.3, p. 114, 3ᵉ éd.).
     ///
     /// Ce que le libellé doit dire en plus de la valeur : ce qui n'est **pas**
     /// transposé. La fenêtre à la hausse vaut 0 s et les deux politiques de

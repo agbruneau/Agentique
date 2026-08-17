@@ -198,9 +198,9 @@ impl AgentMenteur {
         Some(format!(
             "agent menteur actif ({} menteur(s)) : la borne est **3f + 1**, donc **aucune \
              solution à moins de {} participants ne tolère {} déviants**, et ce modèle tue les \
-             trois premières lignes de la figure 5.1 (p. 73). Participants présents : {}. Tout \
-             verdict rendu sur ces mécanismes est **conditionnel au modèle P**. La cryptographie \
-             ne relâche pas la borne, elle la change.",
+             trois premières lignes de la figure 5.1 (p. 73, 3ᵉ éd.). Participants présents : \
+             {}. Tout verdict rendu sur ces mécanismes est **conditionnel au modèle P**. La \
+             cryptographie ne relâche pas la borne, elle la change.",
             self.f,
             self.participants_minimaux(),
             self.f,

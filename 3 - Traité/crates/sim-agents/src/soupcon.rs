@@ -181,10 +181,10 @@ impl DetecteurInfectieux {
         }
     }
 
-    /// Complétude dérivée (§7.3, p. 112) : détection entre `(seuil−1)·période +
+    /// Complétude dérivée (§7.3, p. 112, 3ᵉ éd.) : détection entre `(seuil−1)·période +
     /// expiration` et une période de plus.
     ///
-    /// C'est **le §7.3 qui dérive cet encadrement**, et non le §4.3 (p. 70), qui
+    /// C'est **le §7.3 qui dérive cet encadrement**, et non le §4.3 (p. 70, 3ᵉ éd.), qui
     /// ne donne que le majorant de 30 s : « un arrêt survenu juste après une sonde
     /// réussie n'est observé qu'au sondage suivant, entre 0 et 10 s plus tard,
     /// puis exige deux échecs supplémentaires à 10 s d'intervalle, plus 1 s de
@@ -199,7 +199,13 @@ impl DetecteurInfectieux {
     /// rendrait `(1 s, 11 s)` — un encadrement d'allure plausible que rien ne
     /// distingue d'une mesure, ce qui est pire qu'un débordement (SPEC §7,
     /// clause 4 : « une configuration invalide est un refus rendu à l'appelant,
-    /// jamais un abandon »).
+    /// jamais un abandon »). C'est l'arbitrage que `sim_core::detecteur` et
+    /// `crate::cycle_de_vie::retirer` tiennent aussi, sur la même dérivation.
+    ///
+    /// Le produit **sature**, pour la raison qui vaut dans les trois : le profil
+    /// release du dépôt ne pose pas `overflow-checks`, et une période proche de
+    /// 2⁶⁴ rendrait sinon un encadrement enroulé, c'est-à-dire une détection
+    /// annoncée instantanée là où elle est la plus lente.
     pub fn completude(
         periode_s: u64,
         expiration_s: u64,
@@ -213,8 +219,12 @@ impl DetecteurInfectieux {
                     .to_string(),
             );
         }
-        let min = Duree(periode_s * u64::from(seuil - 1) + expiration_s);
-        Ok((min, Duree(min.0 + periode_s)))
+        let min = Duree(
+            periode_s
+                .saturating_mul(u64::from(seuil - 1))
+                .saturating_add(expiration_s),
+        );
+        Ok((min, Duree(min.0.saturating_add(periode_s))))
     }
 }
 
@@ -608,7 +618,7 @@ mod tests {
     use super::*;
 
     /// NF-15 — la complétude retrouve **21 à 31 s** aux défauts documentés
-    /// (§7.3, p. 112).
+    /// (§7.3, p. 112, 3ᵉ éd.).
     #[test]
     fn la_completude_retrouve_les_21_a_31_secondes() {
         let (min, max) = DetecteurInfectieux::completude(10, 1, 3).expect("réglage documenté");
@@ -627,6 +637,16 @@ mod tests {
         // Et le réglage voisin passe : la garde ne mange pas le domaine utile.
         let (min, max) = DetecteurInfectieux::completude(10, 1, 1).expect("un échec suffit");
         assert_eq!((min.0, max.0), (1, 11));
+    }
+
+    /// Même arbitrage que `sim_core::detecteur` : le produit `période ×
+    /// (seuil − 1)` **sature**. Le profil release ne pose pas
+    /// `overflow-checks`, et l'enroulement annonçait une détection quasi
+    /// immédiate sur l'encadrement le plus lent représentable.
+    #[test]
+    fn la_completude_sature_au_lieu_de_senrouler() {
+        let (min, max) = DetecteurInfectieux::completude(1u64 << 63, 1, 3).expect("seuil valide");
+        assert_eq!((min.0, max.0), (u64::MAX, u64::MAX));
     }
 
     /// EX-A23 — les coûts : 2 messages et 1 tour en nominal, au plus 2 + 4s

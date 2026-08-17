@@ -1,7 +1,7 @@
 //! Le vocabulaire de l'interface, défini une fois.
 //!
 //! Ce module ne calcule rien : c'est une **donnée**, au même titre que les
-//! scénarios du §5.1c, et il vit ici plutôt que dans `sim-viz` pour la même
+//! scénarios du §5.1c du PRD, et il vit ici plutôt que dans `sim-viz` pour la même
 //! raison que [`crate::hors_perimetre`] et que `Bornes::LEGENDE` — ce qui vient
 //! du traité ne se recopie pas dans la couche qui dessine.
 //!
@@ -219,11 +219,12 @@ pub fn glossaire() -> &'static [Terme] {
                  milieu est une entrée du modèle, celle de réponse d'un agent en est une sortie. \
                  Cette interface n'affiche que la première.",
             // Le renvoi nu « §8.3 » était ambigu et se lisait du mauvais côté :
-            // le §8.3 du **traité** porte sur les buts incompatibles (p. 124), pas
+            // le §8.3 du **traité** porte sur les buts incompatibles (p. 124, 3ᵉ éd.), pas
             // sur les latences. La séparation des deux ℓ₉₉ est une règle du
             // produit, écrite au §8.3 du **PRD**. La grandeur elle-même, elle,
             // vient du §6.1 du traité.
-            provenance: "nomenclature du produit — §8.3 du PRD ; la grandeur, elle, est du §6.1",
+            provenance: "nomenclature du produit — §8.3 du PRD ; la grandeur, elle, est du \
+                         §6.1 du traité",
         },
         Terme {
             groupe: REGLAGES,

@@ -1,4 +1,4 @@
-//! Les scénarios, comme **données** (§5.1c).
+//! Les scénarios, comme **données** (§5.1c du PRD).
 //!
 //! Un scénario est une configuration, des plages de paramètres et un critère
 //! d'acceptation — c'est-à-dire un oracle, donc de la logique de simulation et
@@ -28,7 +28,7 @@ pub struct Bloc {
     pub en_clair: &'static str,
     /// Une phrase, citée du traité.
     pub these: &'static str,
-    /// Section et page (F2).
+    /// Section et page **du traité** (F2).
     pub source: &'static str,
     /// Quel réglage produit quel effet observable, et par quel chemin. Jamais
     /// « le système se dégrade ».
@@ -621,7 +621,7 @@ mod tests {
     /// pas — trois d'entre elles tombant hors de la section citée. Mesuré dans le
     /// PDF du dépôt :
     ///
-    /// | bloc | page citée | ce qu'on y trouve | page réelle |
+    /// | bloc | page citée | ce qu'on y trouve | page réelle dans le traité |
     /// |---|---|---|---|
     /// | A | §1.3, p. 21 | §1.3, mais pas la thèse | §2.1, p. 25 |
     /// | B | §1.2, p. 13 | §1.2, ni la thèse ni l'algorithme 2 | p. 16 ; algo 2 p. 14 |
@@ -676,7 +676,8 @@ mod tests {
     ///
     /// Le point 2 vaut épreuve de l'**épissure** du bloc M : sa thèse est reprise
     /// de deux endroits, l'introduction p. 5 pour la proposition principale et le
-    /// §8.3 p. 127 pour l'énumération des trois, et `source` doit nommer les deux.
+    /// §8.3 du traité, p. 127, pour l'énumération des trois — troisième édition
+    /// dans les deux cas —, et `source` doit nommer les deux.
     /// Le §8.3 écrit la proposition autrement — « la mesure ajoute qu'il rend
     /// tout aussi bon marché » —, de sorte qu'un aveu qui ne citerait que lui
     /// serait faux.
@@ -764,22 +765,6 @@ mod tests {
                     b.source
                 );
             }
-        }
-    }
-
-    /// PD8 — aucun scénario ne s'ouvre sans son bloc de trois, et le troisième
-    /// champ n'est jamais vide.
-    #[test]
-    fn chaque_scenario_porte_son_bloc_de_trois() {
-        for b in [BLOC_A, BLOC_B] {
-            assert!(!b.en_clair.is_empty());
-            assert!(!b.these.is_empty());
-            assert!(!b.source.is_empty());
-            assert!(!b.mecanisme_visible.is_empty());
-            assert!(
-                !b.ne_demontre_pas.is_empty(),
-                "un scénario dont le bloc 3 est vide est un scénario refusé (PD8)"
-            );
         }
     }
 

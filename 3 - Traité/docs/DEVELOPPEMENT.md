@@ -24,24 +24,24 @@ Les autres crates — `sim-core`, `sim-milieu`, `sim-agents` — n'en ont pas be
 
 ## Commandes
 
-Suite de tests complète — **465 tests** au 17 août 2026, 09 h 49, exit 0 :
+Suite de tests complète — **467 tests** au 17 août 2026, 11 h 14, exit 0 :
 
 ```bash
 cargo test --workspace --release
 ```
 
-Le compte se répartit en 422 tests unitaires dans les modules — 253 dans
-`sim-agents`, 96 dans `sim-core`, 68 dans `sim-milieu`, 5 dans `sim-viz` — et 43
+Le compte se répartit en 424 tests unitaires dans les modules — 254 dans
+`sim-agents`, 96 dans `sim-core`, 68 dans `sim-milieu`, 6 dans `sim-viz` — et 43
 tests d'intégration, qui sont les critères de sortie de phase. Le §0 du PRD
 enregistre 348 à la clôture de la phase 5 ; la phase 6 a porté le compte à 419,
-l'audit du 13 août à 428, et celui du 17 août à 447 puis 465 — des tests ajoutés
-pour fermer des trous que la révision a ouverts, aucun affaibli. **Le compte est
-une mesure et se refait ; c'est la répartition, elle, qui dit où le filet est
-lâche** — 43 tests d'intégration pour 422 unitaires, et cinq seulement sur toute
-l'interface. Le total a bougé trois fois en une heure et demie le 17 août — 428 à
-08 h 10, 447 à 08 h 32, 465 à 09 h 49 —, cinq agents écrivant en parallèle : un
-compte gravé dans un document se périme sans que rien ne le signale, la ligne de
-commande ne se périme pas.
+l'audit du 13 août à 428, et celui du 17 août à 447, puis 465, 466, 467 — des
+tests ajoutés pour fermer des trous que la révision a ouverts, aucun affaibli.
+**Le compte est une mesure et se refait ; c'est la répartition, elle, qui dit où
+le filet est lâche** — 43 tests d'intégration pour 424 unitaires, et six seulement
+sur toute l'interface. Le total a bougé **cinq** fois en trois heures le 17 août
+— 428 à 08 h 10, 447 à 08 h 32, 465 à 09 h 49, 466 à 10 h 26, 467 à 11 h 14 —,
+plusieurs agents écrivant en parallèle : un compte gravé dans un document se
+périme sans que rien ne le signale, la ligne de commande ne se périme pas.
 
 ⚠ **`cargo` n'est pas dans le `PATH`, et l'édition de liens échoue dans le
 `target/` du dépôt** parce que le chemin contient un « é ». Les mesures

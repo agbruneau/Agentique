@@ -12,7 +12,7 @@ use std::collections::BTreeMap;
 ///
 /// > 60 octets pour un message seul (contre 34 dans l'ancien format), 753
 /// > octets pour un lot de 100 (contre 3 400), soit ≈ 7 octets marginaux par
-/// > message additionnel en lot. (§1.3, §2.1, §7.1)
+/// > message additionnel en lot. (§1.3, §2.1 et §7.1 du traité)
 ///
 /// Les trois chiffres sont cohérents entre eux et le modèle les reproduit
 /// exactement : 53 + 7 × 1 = 60, et 53 + 7 × 100 = 753.
@@ -57,7 +57,8 @@ impl Format {
 
     /// Provenance à afficher (F1, F2) : ces valeurs viennent de la
     /// documentation d'un produit, pas d'une mesure du simulateur.
-    pub const SOURCE: &'static str = "§1.3, §2.1, §7.1 — valeur de documentation produit, périssable (annexe B)";
+    pub const SOURCE: &'static str =
+        "§1.3, §2.1 et §7.1 du traité — valeur de documentation produit, périssable (annexe B)";
 }
 
 /// Coût d'écriture d'un lot (EX-M16).

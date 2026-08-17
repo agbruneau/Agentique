@@ -20,7 +20,7 @@ Trois provenances, et elles ne se valent pas :
 | DT2 | Format de configuration | **[C] JSON** — `serde_json` est déjà requis pour l'export. L'URL de partage, elle, n'encode **pas** de JSON : `sim-agents::partage` emploie un format textuel `clé:valeur` sans dépendance, précisément pour ne pas tirer un encodeur base64 (RQ3) |
 | DT3 | File d'événements | **[C] `BinaryHeap`** — la file calendaire ne se justifie que si NF-05 échoue. NF-05 **a** échoué, mais pour une raison structurelle en Θ(n²) qu'une meilleure file ne corrige pas |
 | DT4 | Hébergement web | **[C] Pages statiques.** Tenu : trois fichiers côte à côte, aucune dépendance serveur |
-| DT5 | Le traité comme donnée | **[C] Renvois de section et de page + citations courtes** ; le texte intégral reste dans le PDF. **Amendé en 3.0** : la page fait partie de la provenance, avec l'édition — deux éditions ne partagent pas leur pagination, donc une page sans édition est une provenance fausse, non imprécise. **Amendé de nouveau le 17 août 2026, en appliquant la clause à elle-même** : la version 3.0 écrivait « la page s'entend de la **deuxième** édition », et le seul traité que le dépôt contient est la **troisième**, du 15 août 2026, **143 pages** (`python -c "import pymupdf; print(pymupdf.open('Traité.pdf').page_count)"`). La page s'entend donc de la troisième, et un renvoi qui ne nomme pas son édition n'est pas une provenance. **Ce que l'amendement ne fait pas** : migrer les renvois. Les **56** `p. N` du PRD (`grep -ohE 'p\. [0-9]+' docs/PRD.md \| wc -l`) sont ceux de la deuxième, et cinq mesures suffisent à le montrer — la conclusion est p. 128-129 et non p. 96, les Références ouvrent p. 130 et non p. 96, le tableau 14 est p. 77 et non p. 58, la thèse du scénario M est p. 5 et p. 127 et non p. 94, le §3.3 est p. 50-55 et non p. 42-43. La migration est un chantier ouvert, consigné au §0.2 du PRD |
+| DT5 | Le traité comme donnée | **[C] Renvois de section et de page + citations courtes** ; le texte intégral reste dans le PDF. **Amendé en 3.0** : la page fait partie de la provenance, avec l'édition — deux éditions ne partagent pas leur pagination, donc une page sans édition est une provenance fausse, non imprécise. **Amendé de nouveau le 17 août 2026, en appliquant la clause à elle-même** : la version 3.0 écrivait « la page s'entend de la **deuxième** édition », et le seul traité que le dépôt contient est la **troisième**, du 15 août 2026, **143 pages** (`python -c "import pymupdf; print(pymupdf.open('Traité.pdf').page_count)"`). La page s'entend donc de la troisième, et un renvoi qui ne nomme pas son édition n'est pas une provenance. **Ce que l'amendement ne faisait pas, et qui est fait depuis** : migrer les renvois. La passe de finition du 17 août 2026 ([`bancs/audit-2026-08/FINITION-prd.md`](../bancs/audit-2026-08/FINITION-prd.md)) a repris les **75** `p. N` du PRD un par un, **par ancre textuelle** — la phrase, le tableau ou la figure cherchés dans le PDF livré, jamais une arithmétique sur l'ancienne pagination, **puisqu'aucun décalage constant n'existe** : le §3.3 glisse de +8 pages, le tableau 14 de +19, la conclusion de +32. Verdict : **23 justes, 41 corrigées, 10 citant sciemment une édition antérieure et le disant, 1 introuvable** dans la troisième édition (voir les provenances devenues fausses, plus bas). **La clause s'énonce désormais comme une forme vérifiable** : un renvoi du PRD s'écrit `p. N, Xᵉ éd.`, et une seule ligne le vérifie — `grep -oE "p\. [0-9]+(-[0-9]+)?, [0-9](ᵉ\|ʳᵉ) éd\.\|p\. [0-9]+(-[0-9]+)?" docs/PRD.md \| grep -v 'éd\.' \| wc -l` → **0**. **Ce qu'elle ne couvre pas** : les renvois de `crates/` et ceux de `docs/README.md` |
 | DT6 | Le détecteur de défaillance | **[C] posée, non tenue.** Un objet paramétré dans `sim-core` — mais il n'a **qu'un** consommateur (`sim-agents::pair_a_pair`), `sim-milieu` n'en instancie aucun, et le sondage indirect est un second objet, `sim-agents::soupcon::DetecteurInfectieux`. Les cinq exemplaires comptés dans le traité n'ont pas produit une factorisation ; PD7 reste à trancher |
 | DT7 | Le plan de contrôle | **[C] Modèle de coût**, jamais un protocole implanté. L'affichage dit « modèle de coût du plan de contrôle », jamais « consensus ». Implanter Raft ferait du produit un simulateur de protocole d'accord, ce que le traité refuse d'être |
 | DT8 | L'agent menteur | **[C] Point d'injection unique**, désactivé par défaut, activable dans les scénarios I et L seulement. **Révisée en 3.0** : la première édition présentait la faute arbitraire comme **importée avec un adversaire** ; le §8.3 de la seconde la mesure comme **endogène** — une population dont chaque membre suit fidèlement sa consigne produit l'escalade. La décision ne change pas, ce qu'elle établit change : le libellé affiché dit désormais *l'effet est byzantin, l'origine ne l'est pas*, la borne 3f + 1 est affichée avec sa propre inapplicabilité à ce régime (le nombre d'agents adverses n'y est pas borné : il vaut n), et le régime lui-même est déclaré hors modèle (EX-C20) |
@@ -179,8 +179,9 @@ cesser d'être un fait.
   second est cité par la conclusion de la troisième édition avec les valeurs
   mesurées ici, 0,173 et 0,228.
 
-**Trois citations du PRD que la troisième édition retire ou inverse**, mesurées
-au même passage. Elles ne sont pas des écarts au sens de NF-15 — aucune mesure
+**Quatre citations du PRD que la troisième édition retire ou inverse** — trois
+mesurées à la consolidation, la quatrième par la passe de finition des renvois.
+Mesurées Elles ne sont pas des écarts au sens de NF-15 — aucune mesure
 n'est en cause — mais des provenances devenues fausses, ce que F2 traite comme un
 défaut bloquant. (a) Le PRD cite *« Le livre a donc échangé une ignorance contre
 une dette »* (§1, p. 96) ; la troisième édition écrit « Le livre n'a donc **pas**
@@ -190,8 +191,26 @@ troisième reste pour *« inchangé »*, sur l'absence d'estimateur de corrélat
 demandant pas la vue globale ; la troisième édition écrit « **la phrase ne tient
 plus** » et lui oppose φ = 0,916 sur 18 000 missions (`Traité.md:1737`).
 (c) Le PRD décrit l'ouvrage comme faisant « 100 pages, dont 95 d'argument, les
-Références commençant p. 96 » ; mesuré, 143 pages et Références p. 130. Les trois
-sont corrigées au PRD, et consignées au §0.2.
+Références commençant p. 96 » ; mesuré, 143 pages et Références p. 130.
+**(d) *(17 août 2026, passe de finition des renvois)*** Le §1 du PRD donnait le
+quatrième reste de la conclusion sous la citation *« un théorème manquant, et non
+une mesure manquante, est ce qui bloque »* (p. 95, 2ᵉ éd.). **Cette phrase ne se
+retrouve nulle part dans la troisième édition**, et aucune page ne lui a donc été
+attribuée — c'est le seul des soixante-quinze renvois du PRD qui reste sans page
+mesurée. Ce que la troisième édition écrit à la place, au même endroit, la
+contredit sur son point de fond : « ce n'est plus le seul endroit du livre où un
+théorème manque : le deuxième reste en est un autre, et la décomposition de Φ_c
+plus bas un troisième » (p. 129, 3ᵉ éd.), et sa conclusion générale retourne
+l'opposition — « ce que le livre laisse ouvert n'est donc pas une théorie
+manquante mais une métrologie manquante » (p. 130, 3ᵉ éd.). Le PRD porte désormais
+la citation qui existe — « transporter mécaniquement les bornes donne des chiffres
+faux ; la forme correcte du résultat reste à écrire » (p. 129, 3ᵉ éd.) — et le §8.3
+du PRD ne dit plus « le seul endroit ». **Aucune mesure n'est en cause, donc le
+compte de cinq écarts NF-15 est inchangé** ; ce qui l'est, c'est une provenance.
+Une **cinquième**, plus étroite, est corrigée au passage : la citation du
+cinquième reste portait « à la charge du système appelé », membre que la
+troisième édition retire.
+Les quatre sont corrigées au PRD, et consignées au §0.2.
 
 | Écart | Ce que le traité écrit | Ce que la mesure donne |
 |---|---|---|
@@ -239,7 +258,9 @@ suivante, et le registre doit dire lequel des deux a bougé.
 **Une seule décision est amendée : DT5**, sur l'édition dont la page s'entend.
 Aucune n'est défaite, aucune n'est ajoutée. Ce qui change est du fait, non de la
 décision, et se lit trois sections plus haut : deux écarts absorbés, un reclassé
-et ouvert, trois citations du PRD devenues fausses.
+et ouvert, quatre citations du PRD devenues fausses — la quatrième étant la
+seule ancre des soixante-quinze renvois de page qui ne se retrouve pas dans
+l'édition livrée.
 
 **Ce qui n'est pas rouvert.** DT1 — la troisième édition n'ajoute aucune
 transcendante, et le verdict `mul_add` porte sur la machine de construction, pas

@@ -2,7 +2,7 @@
 //!
 //! > Un détecteur ne prouve pas la mort d'un agent : il la soupçonne, à partir
 //! > d'indices temporels, et il est caractérisé par sa complétude et son
-//! > exactitude. (§6.1, §7.3)
+//! > exactitude. (§6.1 et §7.3 du traité)
 //!
 //! Un seul objet paramétré, conformément à DT6, parce que les exemplaires sont
 //! **comptés dans le traité** et non imaginés (PD7, règle du comptage) :
@@ -129,7 +129,7 @@ pub struct Detecteur {
     /// suspicion — est celui d'EX-A23. **Ce détecteur ne l'applique pas
     /// lui-même** : la mécanique infectieuse vit dans
     /// `sim_agents::soupcon::DetecteurInfectieux`, qui tient ses propres
-    /// compteurs. Ce champ règle la forme de l'objet fixée au §5.1, pas un
+    /// compteurs. Ce champ règle la forme de l'objet fixée au §5.1 du PRD, pas un
     /// comportement de `sim-core`.
     pub sondage_indirect: u8,
     /// Extension par suspicion propagée. Même réserve : réglable ici,
@@ -147,22 +147,36 @@ impl Detecteur {
     /// il n'existe pas de constructeur par défaut, parce qu'un détecteur sans
     /// seuil ni expiration n'a ni complétude ni exactitude (PD12).
     ///
-    /// # Panics
+    /// # Erreurs
     ///
-    /// Si `seuil` vaut zéro — un détecteur qui suspecte sans indice n'a pas
-    /// d'exactitude à mesurer —, ou si `expiration` n'est pas strictement plus
-    /// courte que `periode` : deux sondes se chevaucheraient et le compte
-    /// d'échecs consécutifs cesserait de vouloir dire quoi que ce soit (§4.3).
-    /// `assert!` et non `debug_assert!`, comme partout ici : la suite de tests
-    /// du dépôt tourne en `--release`.
-    pub fn nouveau(periode: Duree, expiration: Duree, seuil: u8) -> Detecteur {
-        assert!(seuil >= 1, "un détecteur à seuil nul suspecte sans indice");
-        assert!(
-            expiration < periode,
-            "§4.3 : l'expiration doit être plus courte que la période, sans quoi deux sondes se \
-             chevauchent et le compte d'échecs consécutifs ne veut plus rien dire"
-        );
-        Detecteur {
+    /// Deux réglages sont **refusés à l'appelant**, et non écrêtés : `seuil`
+    /// nul — un détecteur qui suspecte sans indice n'a pas d'exactitude à
+    /// mesurer, et la complétude dérivée du §7.3 du traité compte `seuil − 1`
+    /// intervalles —, et une `expiration` qui n'est pas strictement plus courte
+    /// que `periode`, auquel cas deux sondes se chevauchent et le compte
+    /// d'échecs consécutifs cesse de vouloir dire quoi que ce soit (§4.3 du
+    /// traité). C'était un `assert!` jusqu'à l'audit ; la clause 4 du §7 de
+    /// `docs/SPEC.md` — « une configuration invalide est un refus rendu à
+    /// l'appelant, jamais un abandon » — est la même que celle sous laquelle
+    /// `sim_agents::soupcon::DetecteurInfectieux::completude` et
+    /// `sim_agents::cycle_de_vie::retirer` refusent le seuil nul, et les trois
+    /// dérivent le même encadrement de 21 à 31 s.
+    pub fn nouveau(periode: Duree, expiration: Duree, seuil: u8) -> Result<Detecteur, String> {
+        if seuil == 0 {
+            return Err("seuil d'échec nul refusé : un détecteur qui suspecte sans indice n'a \
+                        aucune exactitude à mesurer, et l'encadrement de complétude compte les \
+                        intervalles entre `seuil` échecs consécutifs (PD12)."
+                .to_string());
+        }
+        if expiration >= periode {
+            return Err(format!(
+                "expiration {} ≥ période {} refusée : le §4.3 du traité veut l'expiration \
+                 strictement plus courte que la période, sans quoi deux sondes se chevauchent et \
+                 le compte d'échecs consécutifs ne veut plus rien dire.",
+                expiration.0, periode.0
+            ));
+        }
+        Ok(Detecteur {
             periode,
             expiration,
             seuil,
@@ -176,13 +190,18 @@ impl Detecteur {
                 suspicions: 0,
             },
             messages: 0,
-        }
+        })
     }
 
-    /// Les défauts documentés du §4.3 / §6.1 : `periodSeconds 10`,
+    /// Les défauts documentés du §4.3 / §6.1 du traité : `periodSeconds 10`,
     /// `timeoutSeconds 1`, `failureThreshold 3`. Les valeurs sont périssables
     /// (annexe B) ; leur **effet** est le mécanisme.
-    pub fn defauts_documentes(tics_par_seconde: u64) -> Detecteur {
+    ///
+    /// # Erreurs
+    ///
+    /// Celles de [`Detecteur::nouveau`] : à `tics_par_seconde` nul, période et
+    /// expiration valent toutes deux zéro et le réglage est refusé.
+    pub fn defauts_documentes(tics_par_seconde: u64) -> Result<Detecteur, String> {
         Detecteur::nouveau(
             Duree(10 * tics_par_seconde),
             Duree(tics_par_seconde),
@@ -240,7 +259,7 @@ impl Detecteur {
     /// détecteur, lui, ne voit qu'un délai. C'est précisément l'écart entre les
     /// deux qui produit une fausse suspicion, et le simulateur est le seul à
     /// pouvoir la compter — l'interface doit dire qu'aucun agent ne dispose de
-    /// cette information (§8.3).
+    /// cette information (§8.3 du PRD).
     ///
     /// Rend l'état après la sonde.
     pub fn sonder(
@@ -344,7 +363,7 @@ mod tests {
     #[test]
     fn la_completude_retrouve_les_21_a_31_secondes() {
         // Granularité milliseconde : 1 000 tics par seconde.
-        let d = Detecteur::defauts_documentes(1_000);
+        let d = Detecteur::defauts_documentes(1_000).expect("réglage documenté");
         let (min, max) = d.completude();
         assert_eq!(min, Duree(21_000), "borne basse en ms");
         assert_eq!(max, Duree(31_000), "borne haute en ms");
@@ -355,7 +374,7 @@ mod tests {
     /// détection en **1 tic** sur le détecteur le plus lent représentable.
     #[test]
     fn la_completude_sature_au_lieu_de_senrouler() {
-        let d = Detecteur::nouveau(Duree(1u64 << 63), Duree(1), 3);
+        let d = Detecteur::nouveau(Duree(1u64 << 63), Duree(1), 3).expect("réglage valide");
         let (min, max) = d.completude();
         assert_eq!(min, Duree(u64::MAX), "2⁶³ × 2 sature au lieu de valoir 0");
         assert_eq!(max, Duree(u64::MAX));
@@ -366,7 +385,7 @@ mod tests {
     /// et il est ici **produit**, jamais paramétré.
     #[test]
     fn un_agent_vivant_mais_lent_devient_suspect() {
-        let mut d = Detecteur::nouveau(Duree(10), Duree(1), 3);
+        let mut d = Detecteur::nouveau(Duree(10), Duree(1), 3).expect("réglage valide");
         let cible = ActeurId(0);
         for i in 0..3 {
             d.sonder(cible, true, Duree(5), Instant(i * 10));
@@ -380,7 +399,7 @@ mod tests {
 
     #[test]
     fn un_agent_rapide_reste_sain() {
-        let mut d = Detecteur::nouveau(Duree(10), Duree(5), 3);
+        let mut d = Detecteur::nouveau(Duree(10), Duree(5), 3).expect("réglage valide");
         let cible = ActeurId(1);
         for i in 0..20 {
             d.sonder(cible, true, Duree(1), Instant(i * 10));
@@ -394,7 +413,7 @@ mod tests {
     /// Sans cela, le détecteur rendrait un verdict et non un soupçon.
     #[test]
     fn le_detecteur_se_dedit() {
-        let mut d = Detecteur::nouveau(Duree(10), Duree(1), 2);
+        let mut d = Detecteur::nouveau(Duree(10), Duree(1), 2).expect("réglage valide");
         let cible = ActeurId(2);
         d.sonder(cible, false, Duree(0), Instant(0));
         d.sonder(cible, false, Duree(0), Instant(10));
@@ -407,7 +426,7 @@ mod tests {
     /// nomme son autorisation.
     #[test]
     fn le_retrait_nomme_son_autorisation() {
-        let mut d = Detecteur::nouveau(Duree(10), Duree(1), 2);
+        let mut d = Detecteur::nouveau(Duree(10), Duree(1), 2).expect("réglage valide");
         let cible = ActeurId(3);
         d.sonder(cible, false, Duree(0), Instant(0));
         d.sonder(cible, false, Duree(0), Instant(10));
@@ -422,7 +441,7 @@ mod tests {
 
     #[test]
     fn le_detecteur_refuse_une_expiration_plus_longue_que_sa_periode() {
-        let r = std::panic::catch_unwind(|| Detecteur::nouveau(Duree(1), Duree(10), 3));
+        let r = std::panic::catch_unwind(|| Detecteur::nouveau(Duree(1), Duree(10), 3).expect("réglage valide"));
         assert!(r.is_err());
     }
 
@@ -440,12 +459,12 @@ mod tests {
                 .unwrap()
         };
 
-        let inactif = Detecteur::defauts_documentes(1_000);
+        let inactif = Detecteur::defauts_documentes(1_000).expect("réglage documenté");
         assert_eq!(inactif.sondage_indirect, 0);
         assert!(ligne(&inactif, "sondage indirect").contains("inactif"));
         assert!(ligne(&inactif, "extension par suspicion").contains("inactive"));
 
-        let mut regle = Detecteur::defauts_documentes(1_000);
+        let mut regle = Detecteur::defauts_documentes(1_000).expect("réglage documenté");
         regle.sondage_indirect = 3;
         regle.suspicion = true;
         let s = ligne(&regle, "sondage indirect");

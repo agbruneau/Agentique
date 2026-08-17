@@ -1,7 +1,7 @@
 //! Quota et prix croissant par ressource — le seul levier structurel contre la
-//! conformité (EX-M26, §8.1).
+//! conformité (EX-M26, §8.1 du traité).
 //!
-//! Le §8.1 recense trois leviers de diversification qui se paient — diversifier
+//! Le §8.1 du traité recense trois leviers de diversification qui se paient — diversifier
 //! les modèles, les invites et les contextes, ou le tirage —, dont le troisième
 //! seul est presque gratuit et « n'agit que sur la marge de la distribution, non
 //! sur son mode ; c'est précisément le mode qui est en cause ». Puis :
@@ -9,11 +9,11 @@
 //! > Le seul levier structurel appartient au milieu : rendre coûteuse la
 //! > décision majoritaire plutôt qu'espérer sa dispersion — quota par ressource,
 //! > prix croissant avec le nombre de preneurs, refus d'écriture au-delà d'un
-//! > seuil de concentration. (§8.1)
+//! > seuil de concentration. (§8.1 du traité)
 //!
-//! **Ce qui distingue ce levier de ceux du §5.3, et c'est tout son intérêt** :
+//! **Ce qui distingue ce levier de ceux du §5.3 du traité, et c'est tout son intérêt** :
 //! les leviers de gouvernance bornent un agent **qui accepte de l'être** et
-//! s'appliquent dans le processus même dont le §8.3 suppose qu'il agit contre le
+//! s'appliquent dans le processus même dont le §8.3 du traité suppose qu'il agit contre le
 //! système. Celui-ci borne une **ressource**, ce qui ne demande le consentement
 //! de personne.
 //!
@@ -42,7 +42,7 @@ pub enum Politique {
         /// preneur distinct d'une clé paie `1 + pente × (k − 1)` : le premier
         /// paie le prix nominal, le **deuxième paie déjà la pente**. Compté sur
         /// l'état d'avant, le deuxième aurait encore payé le nominal, et le prix
-        /// n'aurait pas crû « avec le nombre de preneurs » (§8.1).
+        /// n'aurait pas crû « avec le nombre de preneurs » (§8.1 du traité).
         pente: f64,
     },
     /// Refus au-delà d'un seuil de **concentration** : la part d'une clé dans le
@@ -208,7 +208,7 @@ impl Quotas {
     /// Ce que le mécanisme ne traite pas (tableau 22, EX-V21).
     pub fn ne_traite_pas() -> &'static str {
         "une population qui converge sur une ressource non médiée par le milieu — le compteur \
-         ne voit que ce qui passe par une clé (§8.1)"
+         ne voit que ce qui passe par une clé (§8.1 du traité)"
     }
 }
 
@@ -262,7 +262,7 @@ mod tests {
         assert_eq!(q.prix_cumule(), 10.0);
     }
 
-    /// EX-M26 — « prix croissant **avec le nombre de preneurs** » (§8.1) : le
+    /// EX-M26 — « prix croissant **avec le nombre de preneurs** » (§8.1 du traité) : le
     /// deuxième preneur distinct paie déjà la pente. Un preneur déjà compté ne
     /// fait pas monter le prix, puisqu'il ne fait pas monter leur nombre.
     #[test]

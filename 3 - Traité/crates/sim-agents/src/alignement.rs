@@ -9,7 +9,7 @@
 //! Ce qu'il ne fournit pas, et qu'aucun affichage ne doit suggérer (PD5) : ni
 //! paramètre d'ordre, ni transition de phase. Le traité écrit que le bruit nul
 //! retire précisément la transition de phase ; Φ, η_c et β ≈ 0,45 appartiennent
-//! au modèle de Vicsek **avec bruit** (§1.2, p. 12), qu'aucun mécanisme du
+//! au modèle de Vicsek **avec bruit** (§1.2, p. 12, 3ᵉ éd.), qu'aucun mécanisme du
 //! périmètre actuel ne fournit.
 
 use sim_core::alea::Alea;
@@ -168,7 +168,7 @@ impl Alignement {
     }
 
     /// L'observateur, lui, voit les deux limites. Aucun agent n'y a accès
-    /// (§8.3), et l'interface doit le dire.
+    /// (§8.3 du PRD), et l'interface doit le dire.
     pub fn ecart_entre_moities(&self) -> f64 {
         ecart_circulaire(self.cap_moyen_moitie(false), self.cap_moyen_moitie(true)).abs()
     }

@@ -54,10 +54,15 @@ pagination est celle de la deuxième**. Son **§0.2** enregistre le banc d'audit
 que la troisième édition change (deux écarts qu'elle absorbe, un qu'elle
 retourne, trois citations qu'elle retire), et ce que la campagne laisse ouvert.
 
-**Attention aux renvois `§X.Y` ambigus.** Le PRD et le traité ont tous deux un
-§8.3, et ils ne parlent pas de la même chose : celui du **PRD** est « ce que le
-produit ne mesure pas », celui du **traité** est « buts incompatibles » (ch. 8).
-Un renvoi qui peut se lire des deux côtés se qualifie.
+**Attention aux renvois `§X.Y` ambigus.** Ils ne sont **pas** deux, comme ce
+fichier l'a longtemps écrit : **quatorze** numéros de sous-section existent des
+deux côtés — §2.1, §2.2, §2.3, §3.1, §3.2, §5.1, §5.2, §5.3, §6.1, §6.2, §6.3,
+§8.1, §8.2, §8.3 — et aucun ne désigne la même chose dans les deux documents.
+Les deux qui trompent le plus : le §8.3 du **PRD** est « ce que le produit ne
+mesure pas », celui du **traité** « buts incompatibles » (ch. 8) ; le §5.1 du
+**PRD** est le découpage en crates, celui du **traité** « mécanismes de
+consensus ». Un renvoi qui peut se lire des deux côtés se qualifie — l'audit du
+17 août a qualifié les 219 sites nus du code, dont 33 visaient le PRD.
 
 ## Commandes
 
@@ -70,13 +75,13 @@ $env:PATH = "$env:USERPROFILE\.cargo\bin;$env:LOCALAPPDATA\Microsoft\WinGet\Pack
 Le second chemin est mingw-w64 : `dlltool.exe` en vient, et `sim-viz` ne compile
 pas sans lui (les trois autres crates n'en ont pas besoin).
 
-Suite complète — **465 tests, 0 échec**, mesurés le 17 août 2026 à 09 h 49, exit 0
-— 422 unitaires (253 `sim-agents`, 96 `sim-core`, 68 `sim-milieu`, 5 `sim-viz`) et
+Suite complète — **467 tests, 0 échec**, mesurés le 17 août 2026 à 11 h 14, exit 0
+— 424 unitaires (254 `sim-agents`, 96 `sim-core`, 68 `sim-milieu`, 6 `sim-viz`) et
 43 d'intégration. Le §0 du PRD enregistre 348 à la clôture de la phase 5 ; la
-phase 6 a porté le compte à 419, l'audit du 13 août à 428, celui du 17 août à 447
-puis 465. **Ce compte est une mesure, pas une constante** : il ne se cite pas, il
-se refait par la ligne ci-dessous. Il a bougé trois fois en une heure et demie le
-17 août, cinq agents écrivant en parallèle. **Le `target/` du dépôt ne convient
+phase 6 a porté le compte à 419, l'audit du 13 août à 428, celui du 17 août à 447,
+puis 465, 466, 467. **Ce compte est une mesure, pas une constante** : il ne se cite
+pas, il se refait par la ligne ci-dessous. Il a bougé **cinq** fois en trois
+heures le 17 août, plusieurs agents écrivant en parallèle. **Le `target/` du dépôt ne convient
 pas à la mesure** — l'édition de liens y échoue parce que le chemin contient un
 « é » ; dérouter par `$env:CARGO_TARGET_DIR` sur un chemin ASCII.
 
@@ -281,10 +286,10 @@ awk '/pub fn hors_perimetre/,/^}/' crates/sim-agents/src/lib.rs | grep -cE '^\s*
   refaire sur la mesure, comme DT1 l'a été.
 - **NF-07 n'est pas mesurée** — 30 images/s à n ≤ 2 000 en WASM demande un
   navigateur en avant-plan avec une horloge d'images. L'empaquetage web, lui,
-  est fait et NF-08 est tenue : **1 447 267 octets compressés** — 1,380 Mio, ou
-  1,45 Mo en unités SI — sur 3 668 599 octets bruts, contre une cible de 8 Mo.
+  est fait et NF-08 est tenue : **1 447 624 octets compressés** — 1,381 Mio, ou
+  1,45 Mo en unités SI — sur 3 669 337 octets bruts, contre une cible de 8 Mo.
   **Ce couple est une mesure d'une construction précise, pas une constante** :
-  celle du 17 août 2026 à 09 h 09, et il se périme à la première édition de
+  celle du 17 août 2026 à 11 h 14, et il se périme à la première édition de
   `crates/sim-viz/`. Il se refait par les deux lignes du `README.md` (§ « 2.
   L'interface web »), qui sont ce qui se cite ici, jamais le nombre.
 - **EX-V09 n'est pas câblée dans l'interface** — `sim_agents::partage` encode et

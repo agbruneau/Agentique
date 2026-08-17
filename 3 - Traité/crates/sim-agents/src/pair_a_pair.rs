@@ -61,12 +61,16 @@ impl Maille {
     /// Maille neuve, avec son détecteur d'appartenance déjà armé.
     ///
     /// Une période de sondage nulle est **refusée ici**, et non laissée filer
-    /// jusqu'à `sim-core` : `Detecteur::nouveau` la refuse à raison par une
-    /// assertion du §4.3 — deux sondes se chevaucheraient et le compte d'échecs
-    /// consécutifs ne voudrait plus rien dire —, mais une assertion à deux
-    /// couches de distance est un abandon, pas un refus. Le plancher est de **deux**
-    /// tics : l'expiration doit rester strictement plus courte que la période, et
-    /// à un seul tic il ne resterait aucune valeur admissible.
+    /// jusqu'à `sim-core` : `Detecteur::nouveau` la refuse à raison au titre du
+    /// §4.3 du traité — deux sondes se chevaucheraient et le compte d'échecs
+    /// consécutifs ne voudrait plus rien dire —, mais un refus rendu à deux
+    /// couches de distance ne dit plus quel réglage le déclenche. Le plancher est
+    /// de **deux** tics : l'expiration doit rester strictement plus courte que la
+    /// période, et à un seul tic il ne resterait aucune valeur admissible.
+    ///
+    /// L'écrêtage local rend donc le refus de `sim-core` inatteignable, et le
+    /// `expect` ci-dessous documente cet invariant au lieu de propager un
+    /// `Result` que rien ne pourrait produire.
     pub fn nouvelle(
         n: u32,
         degre_depot: u32,
@@ -82,7 +86,8 @@ impl Maille {
             degre_depot,
             aller_simple_ms,
             taux_omission,
-            detecteur: Detecteur::nouveau(periode, expiration.min(Duree(periode.0 - 1)), 3),
+            detecteur: Detecteur::nouveau(periode, expiration.min(Duree(periode.0 - 1)), 3)
+                .expect("période plancher à 2 tics et expiration écrêtée sous la période"),
             comptes: Comptes::default(),
             granularite,
         }

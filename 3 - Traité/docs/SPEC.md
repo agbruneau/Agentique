@@ -23,15 +23,15 @@ Là où le code ne tient pas ce que le PRD exige, ce document dit **ce que le co
 fait**, avec un renvoi vers la réserve correspondante du §0 du PRD — jamais
 l'exigence à la place de la réalité.
 
-**État mesuré au 17 août 2026, 09 h 49** : **465 tests**, `cargo test --workspace --release`,
-exit 0 ; clippy et rustdoc à 0, `cargo clippy --workspace --all-targets --release`
-et `cargo doc --workspace --no-deps` à 09 h 50. Le §0
+**État mesuré au 17 août 2026, 11 h 14** : **467 tests**, `cargo test --workspace --release`,
+exit 0 ; clippy à 0 et rustdoc à 0 à 11 h 15 (`cargo clippy --workspace
+--all-targets --release`, `cargo doc --workspace --no-deps`). Le §0
 du PRD enregistre 348 à la clôture de la phase 5 ; la phase 6 a porté le compte à
-419, l'audit du 13 août à 428, et celui du 17 août à 447 puis 465 — des tests
-ajoutés pour fermer des trous que ces révisions ont ouverts, aucun affaibli.
+419, l'audit du 13 août à 428, et celui du 17 août à 447, puis 465, 466, 467 — des
+tests ajoutés pour fermer des trous que ces révisions ont ouverts, aucun affaibli.
 **Ce compte est une mesure, pas une constante** : il ne se cite pas, il se refait
-par la ligne ci-dessus — 428 à 08 h 10, 447 à 08 h 32 et 465 à 09 h 49 le même
-jour, cinq agents écrivant en parallèle.
+par la ligne ci-dessus — cinq valeurs en trois heures le même jour, plusieurs
+agents écrivant en parallèle.
 
 **Règle de lecture des blocs de code.** Les blocs `rust` de ce document sont des
 **esquisses de signature** : ils donnent les items dont un énoncé dépend, jamais
@@ -674,6 +674,21 @@ pub fn scenario_l(/* … */);
 `Result` plutôt que `panic!` : une configuration invalide est un refus rendu à
 l'appelant, jamais un abandon (EX-C11, EX-A52, EX-A53).
 
+**La clause s'applique aussi aux constructeurs, et ne le faisait pas.** L'audit
+du 17 août 2026 a trouvé la dérivation 21–31 s du §7.3 implantée **trois fois**
+avec **trois** arbitrages différents du seuil nul — un `assert!` dans
+`sim-core::detecteur`, un `Result` dans `sim-agents::soupcon`, un `Result` sans
+saturation dans `sim-agents::cycle_de_vie`. Les trois sont alignés sur la clause
+depuis : `Detecteur::nouveau` et `Detecteur::defauts_documentes` rendent
+`Result<_, String>` et portent une section `# Erreurs` au lieu de `# Panics`, et
+les trois `completude` saturent. Onze appelants, un seul hors test —
+`sim-agents::pair_a_pair`, où l'écrêtage local rend le refus inatteignable et où
+un `expect` documente l'invariant, parce que propager remonterait jusqu'à
+`scenario_a`, dont la signature ci-dessus n'a pas de `Result`.
+**Les trois copies n'ont pas été factorisées** : PD7 est une décision ouverte du
+§11 du PRD, et NF-15 veut que le chiffre reste *retrouvé* par une mesure, pas
+recopié d'un appel.
+
 ---
 
 ## 9. Le contrat de l'interface
@@ -687,6 +702,15 @@ négatif :
 | `scenario_a.rs`, `scenario_b.rs` — les deux vues livrées | **Zéro** définition de scénario, à **deux** exceptions nommées : les critères d'acceptation viennent tous de `sim-agents`, mais **les valeurs d'ouverture des deux vues sont écrites ici** — six dans `VueA::default` (n, p, ℓ₉₉, aller simple, degré de dépôt, taux d'omission) et trois dans `VueB::default` (n, budget, graine). Ce sont les défauts des tableaux du §7 du PRD, transcrits faute d'accesseur : `sim_agents::scenario_a` est une fonction à sept paramètres sans constructeur de défaut, et `Params::scenario_b()` pose n = 64 là où la vue ouvre à 16 (Θ(n²)). Rien ne tient ces transcriptions en accord avec le PRD. **Les plages de curseur, elles aussi, sont écrites ici** — quinze littéraux dans les deux vues, dont quatre qu'aucun tableau du §7 du PRD ne fixe. Les neuf valeurs d'ouverture sont déclarées dans l'onglet « Limites » depuis l'audit du 17 août 2026 |
 | Les onglets « Limites » et « Repères » | **Zéro** texte du traité, à **une** exception nommée : le glossaire vient de `sim_agents::glossaire`, les reformulations de `Bloc::en_clair`, trois des **six** listes de l'onglet venant des `hors_perimetre()` — mais la provenance des deux bornes est recopiée dans `scenario_b.rs::SOURCE_BORNES`, faute d'accesseur dans `sim-agents`. La copie a déjà divergé de `Bornes::LEGENDE`, affichée quatre lignes plus bas dans le même cadre ; depuis l'audit du 17 août 2026 le test `la_provenance_des_bornes_suit_encore_sim_agents` échoue à la place de l'écran |
 | Trois rangs de cadre — `cadre` découpe une section numérotée, `encart` accompagne sans découper, `bloc_pd8` pose le sien | Ni export CSV, ni parcours « le fil » : **O6 n'est pas livré** |
+
+**Les listes d'absences ne portent aucun balisage Markdown.** `sim-viz` les rend
+par un `egui::RichText`, et egui n'a **pas** d'analyseur Markdown : un accent
+grave ou une paire d'astérisques sort littéralement à l'écran. La convention est
+les guillemets, celle qu'EX-V09 avait déjà posée. La règle n'est pas tenue par un
+commentaire — l'audit du 17 août l'a vue être écrite dans une crate et violée
+dans une autre le même jour — mais par deux tests, l'un dans `sim-viz` sur les
+trois listes, l'autre local à `sim-milieu` ; 71 paires d'accents graves ont été
+retirées à cette occasion.
 
 `main.rs` fait seize lignes, dont **six de code** : deux `fn main` gardés par
 `#[cfg]`, l'un pour la cible native, l'autre vide pour `wasm32`. Aucune logique.
@@ -741,7 +765,7 @@ critères de sortie ; ce document ne les recopie pas.
 
 | Ce qu'on vérifie | Commande |
 |---|---|
-| Le contrat entier — **465 tests** au 17 août 2026, 09 h 49 ; le compte se remesure, il ne se cite pas | `cargo test --workspace --release` |
+| Le contrat entier — **467 tests** au 17 août 2026, 11 h 14 ; le compte se remesure, il ne se cite pas | `cargo test --workspace --release` |
 | Le critère de sortie de la phase 6 | `cargo test -p sim-agents --release --test sortie_phase_6` |
 | Le constat de mesure sur Φ_c | `cargo run -p sim-agents --example diagnostic_conformite --release` |
 | Les interdictions structurelles — **sortie 101 si l'une tombe** | `cargo clippy --workspace --all-targets --release` |
@@ -764,10 +788,10 @@ qui tiennent le contrat au niveau du système :
 
 Il n'y a pas de `sortie_phase_1.rs` : les critères de la phase 1 sont dans
 `determinisme.rs` et `scenario_b.rs`. **Ne pas affaiblir ces tests** — ce sont les
-preuves du tableau du §0. Les 43 tests d'intégration se complètent de **422** tests
-unitaires (253 `sim-agents`, 96 `sim-core`, 68 `sim-milieu`, 5 `sim-viz`), soit
-**465** au 17 août 2026 à 09 h 49. **C'est la répartition, non le total, qui dit
-où le filet est lâche** : 43 tests d'intégration pour 422 unitaires, et cinq
+preuves du tableau du §0. Les 43 tests d'intégration se complètent de **424** tests
+unitaires (254 `sim-agents`, 96 `sim-core`, 68 `sim-milieu`, 6 `sim-viz`), soit
+**467** au 17 août 2026 à 11 h 14. **C'est la répartition, non le total, qui dit
+où le filet est lâche** : 43 tests d'intégration pour 424 unitaires, et **six**
 seulement sur toute l'interface.
 
 **Les trois commandes à passer avant de committer**, et non deux : `cargo test`,

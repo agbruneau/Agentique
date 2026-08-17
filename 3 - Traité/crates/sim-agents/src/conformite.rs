@@ -1,9 +1,9 @@
-//! **Φ_c**, la conformité empirique d'une population (EX-A56, §8.1).
+//! **Φ_c**, la conformité empirique d'une population (EX-A56, §8.1 du traité).
 //!
 //! > la conformité empirique Φ_c d'une population sur une décision d : la
 //! > probabilité que deux agents tirés au hasard produisent la même valeur,
 //! > moins la valeur qu'aurait cette probabilité si les décisions étaient
-//! > indépendantes de même loi marginale. (§8.1)
+//! > indépendantes de même loi marginale. (§8.1 du traité)
 //!
 //! Φ_c vaut 0 pour des tirages indépendants et 1 pour une population qui décide
 //! comme un seul agent.
@@ -13,7 +13,7 @@
 //! chiffres du traité à retrouver (NF-15), et son affichage porte l'étiquette des
 //! grandeurs dérivées (F2).
 //!
-//! **Il n'y a pas de seuil.** Le §8.1 dit n'en avoir aucune mesure et juger
+//! **Il n'y a pas de seuil.** Le §8.1 du traité dit n'en avoir aucune mesure et juger
 //! probable qu'il n'y en ait pas un seul. Rien ici ne rend un booléen
 //! « conforme », aucune zone n'est colorée, et [`SEUIL`] est une constante de
 //! module qui rend le libellé plutôt qu'un nombre (PD5).
@@ -73,7 +73,7 @@ pub const SEUIL: &str =
 /// Conséquence pour l'ouvrage, et elle porte : Φ_c mesure la corrélation des
 /// décisions, sans distinguer celle qui vient de la **fonction de décision** de
 /// celle qui vient du **milieu partagé**. Sur un essaim stigmergique, les deux
-/// coexistent et la seconde domine. Le §8.1 propose Φ_c comme paramètre d'ordre
+/// coexistent et la seconde domine. Le §8.1 du traité propose Φ_c comme paramètre d'ordre
 /// de la conformité d'une population ; ce qu'il mesure ici est la somme des deux,
 /// et rien dans la grandeur ne les sépare.
 ///

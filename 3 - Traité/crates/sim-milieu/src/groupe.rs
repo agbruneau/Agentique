@@ -254,7 +254,7 @@ impl Groupe {
         self.n().min(self.p())
     }
 
-    /// Membres inactifs : ils coûtent sans produire. C'est le terme σ du §2.1
+    /// Membres inactifs : ils coûtent sans produire. C'est le terme σ du §2.1 du traité
     /// qui grossit pendant que le numérateur reste plat.
     pub fn membres_inactifs(&self) -> u32 {
         self.n().saturating_sub(self.p())

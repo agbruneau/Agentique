@@ -1,4 +1,4 @@
-//! **§6.2** — reconstruction causale hors ligne (EX-A08, EX-M20).
+//! **§6.2 du traité** — reconstruction causale hors ligne (EX-A08, EX-M20).
 //!
 //! `ANCÊTRES(e, H)` remonte la chaîne des causes d'un événement dans un horizon
 //! `H`. Ce que le mécanisme doit dire, et que la plupart des implantations
@@ -93,7 +93,7 @@ pub fn ancetres(
                 cause = Some(
                     "l'événement a quitté le journal : au-delà de R, la propriété redevient \
                      invérifiable ; R, non la sensibilité du détecteur, est l'horizon réel \
-                     (§6.1, §7.2, EX-M20)",
+                     (§6.1 et §7.2 du traité, EX-M20)",
                 );
                 continue;
             }

@@ -1,7 +1,7 @@
 //! Oracles — et la séparation que PD2 refuse de laisser s'effacer.
 //!
 //! > Un cahier des charges qui mêle S1 et L1 sans les nommer produit des
-//! > exigences dont la moitié est non testable. (§3.2)
+//! > exigences dont la moitié est non testable. (§3.2 du traité)
 //!
 //! Un oracle est donc **soit** une sûreté, réfutable par une trace finie,
 //! **soit** une vivacité **bornée**, qui ne s'énonce jamais sans sa condition.
@@ -31,7 +31,7 @@ pub enum Classe {
 pub enum Portee {
     /// Évalué **hors du monde perçu par les agents**. C'est un privilège de
     /// l'observateur, et l'interface doit dire qu'aucun agent ne dispose de
-    /// cette information (§8.3, EX-A51).
+    /// cette information (§8.3 du PRD, EX-A51).
     Globale,
     /// Évalué sur la perception d'un seul agent. PD10 : un tel prédicat n'est
     /// **jamais** présenté comme un état de l'essaim, et il porte son
@@ -90,7 +90,8 @@ impl Oracle {
     }
 
     /// Construction depuis une déclaration chargée — l'autre moitié d'EX-C11,
-    /// celle qui refuse « au chargement, avec un message citant §3.2 ».
+    /// celle qui refuse « au chargement, avec un message citant §3.2 ». Le
+    /// §3.2 est celui du traité, et le message le nomme ainsi.
     pub fn depuis_declaration(
         nom: &'static str,
         classe: &str,
@@ -104,19 +105,20 @@ impl Oracle {
             // pire : `attendre()` sur cet oracle deviendrait un non-événement.
             ("surete", Some(h)) => Err(format!(
                 "oracle « {nom} » refusé : une sûreté ne porte pas d'horizon, et celui-ci en \
-                 déclare un ({} tics). §3.2 — un énoncé qui mêle S1 et L1 est à moitié non \
-                 testable. Déclarez « vivacite » avec cet horizon, ou retirez-le.",
+                 déclare un ({} tics). §3.2 du traité — un énoncé qui mêle S1 et L1 est à \
+                 moitié non testable. Déclarez « vivacite » avec cet horizon, ou retirez-le.",
                 h.0
             )),
             ("vivacite", Some(h)) => Ok(Oracle::vivacite_bornee(nom, h, source)),
             ("vivacite", None) => Err(format!(
-                "oracle « {nom} » refusé : une vivacité sans horizon n'est réfutable par aucune \
-                 exécution finie. §3.2 — une vivacité ne s'énonce jamais sans sa condition, \
-                 détecteur de défaillance ou borne Δ. Déclarez un horizon, ou déclarez une sûreté."
+                "oracle « {nom} » refusé : une vivacité sans horizon n'est réfutable par \
+                 aucune exécution finie. §3.2 du traité — une vivacité ne s'énonce jamais sans \
+                 sa condition, détecteur de défaillance ou borne Δ. Déclarez un horizon, ou \
+                 déclarez une sûreté."
             )),
             (autre, _) => Err(format!(
-                "oracle « {nom} » refusé : classe « {autre} » inconnue. §3.2 impose de nommer S1 \
-                 ou L1 ; une exigence qui les mêle est à moitié non testable."
+                "oracle « {nom} » refusé : classe « {autre} » inconnue. §3.2 du traité impose \
+                 de nommer S1 ou L1 ; une exigence qui les mêle est à moitié non testable."
             )),
         }
     }
@@ -153,7 +155,7 @@ struct Attente {
 /// Le registre des oracles armés d'une exécution.
 ///
 /// Les oracles sont **évalués par l'appelant** et rapportés ici : `sim-core`
-/// ne connaît ni les agents ni le milieu (§5.1), il ne peut donc pas évaluer
+/// ne connaît ni les agents ni le milieu (§5.1 du PRD), il ne peut donc pas évaluer
 /// un prédicat sur eux. Ce qu'il tient, c'est la déclaration, la classe, le
 /// délai d'une vivacité et l'instant exact d'une violation.
 #[derive(Default)]
@@ -291,7 +293,7 @@ impl Registre {
 
     /// Nombre d'attentes encore ouvertes. À la fin d'une exécution, une attente
     /// ouverte n'est **pas** une violation : elle n'a simplement pas conclu, et
-    /// c'est exactement ce qu'une trace finie sait dire d'une vivacité (§8.3).
+    /// c'est exactement ce qu'une trace finie sait dire d'une vivacité (§8.3 du PRD).
     pub fn attentes_ouvertes(&self) -> usize {
         self.attentes.len()
     }
@@ -320,7 +322,7 @@ mod tests {
     fn une_vivacite_sans_horizon_est_refusee() {
         let e = Oracle::depuis_declaration("couverture", "vivacite", None, "§4.2")
             .expect_err("une vivacité sans horizon doit être refusée");
-        assert!(e.contains("§3.2"), "le message doit citer §3.2 : {e}");
+        assert!(e.contains("§3.2 du traité"), "le message doit citer §3.2 du traité : {e}");
         assert!(Oracle::depuis_declaration("couverture", "vivacite", Some(Duree(10)), "§4.2").is_ok());
         assert!(Oracle::depuis_declaration("r1", "surete", None, "§2.1").is_ok());
     }

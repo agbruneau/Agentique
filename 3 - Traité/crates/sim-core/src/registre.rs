@@ -1,9 +1,9 @@
 //! Registre des hypothèses fortes (EX-C12, PD12).
 //!
 //! > Toute hypothèse plus forte que « Δ finie mais inconnue » est nommée à
-//! > l'endroit où elle est prise. (§6.1)
+//! > l'endroit où elle est prise. (§6.1 du traité)
 //!
-//! Le §6.1 en fait sa règle d'ouverture : c'est cette hypothèse **qui casse en
+//! Le §6.1 du traité en fait sa règle d'ouverture : c'est cette hypothèse **qui casse en
 //! premier sous charge**. Un temporisateur à borne connue n'est pas un réglage,
 //! c'est une **affirmation** — « un suiveur sain rattrape le meneur en moins de
 //! 30 s », « un agent sain répond en moins d'une seconde » — et le registre
@@ -23,7 +23,7 @@ pub struct Hypothese {
     pub reglage: &'static str,
     /// Valeur du temporisateur.
     pub valeur: Duree,
-    /// Source documentaire (F1, F2 : jamais un nombre sans provenance).
+    /// Section du traité (F1, F2 : jamais un nombre sans provenance).
     pub source: &'static str,
     /// Ce que le réglage **affirme**, en toutes lettres.
     pub affirmation: &'static str,

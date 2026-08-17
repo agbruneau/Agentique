@@ -1,6 +1,6 @@
 //! Vérification statistique bornée (§8.4, EX-C18).
 //!
-//! Le mode vérification implante l'algorithme 2 du §3.2 :
+//! Le mode vérification implante l'algorithme 2 du §3.2 du traité :
 //!
 //! ```text
 //! N = ⌈ ln(2/δ) / (2ε²) ⌉
@@ -50,7 +50,7 @@ impl Parametres {
 
     /// Pourquoi ces paramètres ne fixent **aucun** budget, s'il y a lieu.
     ///
-    /// La borne du §3.2 suppose `0 < ε ≤ 1` et `0 < δ < 1` : ε est la
+    /// La borne du §3.2 du traité suppose `0 < ε ≤ 1` et `0 < δ < 1` : ε est la
     /// demi-largeur d'un intervalle de probabilité, δ un risque, et à `δ ≥ 1` la
     /// borne est vide. Hors de ce domaine, `ln(2/δ)` est nul, négatif ou `NaN`,
     /// le cast sature à zéro, et une campagne de **zéro** exécution traversait
@@ -68,7 +68,7 @@ impl Parametres {
             None
         } else {
             Some(format!(
-                "ε = {} et δ = {} sont hors du domaine de la borne du §3.2, qui suppose \
+                "ε = {} et δ = {} sont hors du domaine de la borne du §3.2 du traité, qui suppose \
                  0 < ε ≤ 1 et 0 < δ < 1 : aucun N ne s'en déduit",
                 self.epsilon, self.delta
             ))
@@ -124,7 +124,7 @@ pub enum Issue {
     /// La vérification **n'a pas terminé** dans son budget.
     ///
     /// C'est une **absence de verdict**, jamais une absence de problème — le
-    /// piège que le §5.3 nomme à propos du model checking exhaustif.
+    /// piège que le §5.3 du traité nomme à propos du model checking exhaustif.
     AbsenceDeVerdict {
         /// Pourquoi la campagne n'a pas pu conclure.
         raison: String,
@@ -150,7 +150,7 @@ impl Issue {
             Issue::AbsenceDeVerdict { raison } => format!(
                 "**absence de verdict** : {raison}. Passé une taille d'essaim, le vérificateur ne \
                  termine pas, et l'ingénieur reçoit un silence qu'il est tenté de lire comme une \
-                 absence de problème (§5.3, EX-C18)."
+                 absence de problème (§5.3 du traité, EX-C18)."
             ),
         }
     }
@@ -235,7 +235,7 @@ impl Campagne {
         }
     }
 
-    /// **Ce que la vérification ne dit pas** (§8.3, §8.4).
+    /// **Ce que la vérification ne dit pas** (§8.3 et §8.4 du PRD).
     ///
     /// La doc annonçait « affiché en permanence ». Elle affirmait ce que le code
     /// ne tient pas : cette constante n'a **aucun appelant** hors de son propre
@@ -333,7 +333,7 @@ mod tests {
         assert!(l.contains("absence de problème"), "{l}");
     }
 
-    /// **EX-C18** — un ε ou un δ hors du domaine de la borne du §3.2 ne rend
+    /// **EX-C18** — un ε ou un δ hors du domaine de la borne du §3.2 du traité ne rend
     /// **jamais** un verdict. Avant la garde, `δ = 2` donnait `N = 0` et une
     /// campagne de zéro exécution concluait « aucune violation observée en 0
     /// exécutions » : la formulation arrêtée d'EX-C18, avec son autorité, sur un

@@ -2,7 +2,7 @@
 //!
 //! Le milieu est ce dans quoi les agents déposent et lisent des traces. Il ne
 //! connaît aucun algorithme d'agent et n'implante aucun protocole d'accord
-//! (§5.1, DT7).
+//! (§5.1 du PRD, DT7).
 //!
 //! **Périmètre à la clôture de la phase 5** : M1 à M4 (EX-M01 à EX-M04), la
 //! latence du chemin de durabilité avec son ℓ₉₉ (EX-M09), les coûts propres du
@@ -47,7 +47,7 @@ pub use replication::{Isr, Refus, Replique, R1, R2};
 
 /// Ce que le milieu ne sait pas produire, à afficher au même rang que ce qu'il
 /// sait produire (PD6). Un mécanisme absent a, dans tout résultat, une
-/// probabilité de faute nulle — c'est le mode (b) du §3.2.
+/// probabilité de faute nulle — c'est le mode (b) du §3.2 du traité.
 ///
 /// La distinction qui compte ici n'est pas « écrit / pas écrit » mais
 /// « branché / pas branché » : un module que personne n'appelle a exactement le
@@ -56,36 +56,38 @@ pub fn hors_perimetre() -> &'static [&'static str] {
     &[
         "époques et arbitrage des écritures périmées — le milieu ne compare aucune \
          époque ; l'arbitrage vit côté agent (DT9)",
-        "surcoût de format dans les octets comptés — `Format` retrouve les chiffres du \
-         traité, mais `ecrire` facture une taille fixe et ne le consulte pas (EX-M11)",
-        "tout le module `format` en exécution — le surcoût de lot (EX-M11), l'idempotence du \
+        "surcoût de format dans les octets comptés — « Format » retrouve les chiffres du \
+         traité, mais « ecrire » facture une taille fixe et ne le consulte pas (EX-M11)",
+        "tout le module « format » en exécution — le surcoût de lot (EX-M11), l'idempotence du \
          producteur (EX-M12) et le coût d'écriture d'un lot (EX-M16) sont des calculatrices \
-         vérifiées par leurs tests ; `Producteur` et `CoutLot` n'ont aucun appelant, donc aucun \
-         doublon n'est rejeté et aucun coût par enregistrement n'est facturé dans un résultat",
-        "fonction de clé du milieu — `Milieu::partition_de` n'a d'appelant que son test : \
-         `ecrire` range l'enregistrement dans la partition que l'écrivain nomme, et la \
+         vérifiées par leurs tests ; « Producteur » et « CoutLot » n'ont aucun appelant, donc \
+         aucun doublon n'est rejeté et aucun coût par enregistrement n'est facturé dans un \
+         résultat",
+        "fonction de clé du milieu — « Milieu::partition_de » n'a d'appelant que son test : \
+         « ecrire » range l'enregistrement dans la partition que l'écrivain nomme, et la \
          concentration d'un résultat vient du réglage du scénario, pas d'un hachage de clé",
-        "refus d'un oracle au-delà de R (EX-M20) — `Milieu::verifier_horizon` et `Retention` \
+        "refus d'un oracle au-delà de R (EX-M20) — « Milieu::verifier_horizon » et « Retention » \
          n'ont aucun appelant : aucun chargement ne refuse quoi que ce soit, et R n'existe dans \
-         aucune exécution comme grandeur unique. `appliquer_retention` reçoit sa fenêtre en \
+         aucune exécution comme grandeur unique. « appliquer_retention » reçoit sa fenêtre en \
          paramètre",
-        "temporisateur d'appartenance à l'ISR en exécution (EX-M14) — `Isr::avancer` n'a \
+        "temporisateur d'appartenance à l'ISR en exécution (EX-M14) — « Isr::avancer » n'a \
          d'appelant que ses tests ; le scénario D retire la réplique à la main. L'hypothèse \
-         `replica.lag.time.max.ms` est donc déclarée au registre EX-C12 sans jamais y être \
+         « replica.lag.time.max.ms » est donc déclarée au registre EX-C12 sans jamais y être \
          éprouvée, quelle que soit la trajectoire : le démenti annoncé — sous charge, \
          l'exclusion frappe un suiveur vivant — n'est produit que par un test unitaire",
-        // Sans astérisques d'emphase, et sans retour à la ligne : egui n'a pas
-        // d'analyseur Markdown et rendrait les deux littéralement.
+        // Sans astérisques d'emphase, sans accents graves et sans retour à la
+        // ligne : egui n'a pas d'analyseur Markdown et rendrait les trois
+        // littéralement. Un nom d'item se marque par des guillemets.
         "réintégration dans l'ensemble synchronisé — le temporisateur ne décide que du \
          retrait, et aucune réplique retirée pour retard ne revient (EX-M14). |ISR| est donc \
          monotone décroissante hors élection hors ISR : EX-M08 réinitialise l'ISR au \
          nouveau meneur, ce qui la fait remonter de 0 à 1 sur la trajectoire du scénario D",
         "historique par identité (EX-M25) et quota par ressource (EX-M26) — implantés et \
-         testés, aucun scénario ne les instancie : ni `scenario_m`, ni aucun autre",
+         testés, aucun scénario ne les instancie : ni « scenario_m », ni aucun autre",
         "prédicats des oracles du journal — M1 à M4 et M10 sont armés à chaque exécution, et \
-         `Milieu::verifier`, `verifier_m4` et `verifier_m10` n'ont aucun appelant hors test ; \
-         une violation ne pourrait donc pas arrêter l'exécution comme EX-C09 le décrit",
-        "drapeau `Retention::compacte` — `Milieu::compacter` ne prend pas de politique et ne \
+         « Milieu::verifier », « verifier_m4 » et « verifier_m10 » n'ont aucun appelant hors \
+         test ; une violation ne pourrait donc pas arrêter l'exécution comme EX-C09 le décrit",
+        "drapeau « Retention::compacte » — « Milieu::compacter » ne prend pas de politique et ne \
          le lit jamais : appelé, il compacte (EX-M10)",
         "durée du rééquilibrage — la barrière est posée et levée dans le même appel, \
          donc « aucune partition n'est servie » n'est observable par personne (EX-M17)",
@@ -101,13 +103,15 @@ pub fn hors_perimetre() -> &'static [&'static str] {
 mod tests {
     /// PD6 — la liste est affichée telle quelle par l'onglet « Limites » de
     /// `sim-viz`, qui pose un `egui::RichText` sans analyseur Markdown. Des
-    /// astérisques d'emphase s'y afficheraient littéralement, et un retour à la
-    /// ligne y couperait la puce. Le commentaire au-dessus de la liste l'écrit
-    /// depuis l'origine ; deux entrées l'ont violé quand même, d'où ce test.
+    /// astérisques d'emphase ou des accents graves s'y afficheraient
+    /// littéralement, et un retour à la ligne y couperait la puce. Le
+    /// commentaire au-dessus de la liste l'écrit depuis l'origine ; deux
+    /// entrées l'ont violé quand même, d'où ce test.
     #[test]
     fn aucune_entree_ne_porte_de_balisage_markdown() {
         for e in super::hors_perimetre() {
             assert!(!e.contains('*'), "astérisque d'emphase : {e}");
+            assert!(!e.contains('`'), "accent grave : {e}");
             assert!(!e.contains('\n'), "retour à la ligne : {e}");
         }
     }

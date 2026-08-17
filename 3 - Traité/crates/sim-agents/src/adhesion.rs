@@ -32,7 +32,7 @@ pub const BLOC_E: Bloc = Bloc {
          asynchrone, et le simulateur ne l'offre à aucun réglage. L'idempotence rend les doubles \
          traitements inoffensifs ; elle ne les supprime pas, et le cinquième reste de la \
          conclusion — l'effet exactement-une-fois est impossible, « le seul recours reste \
-         l'idempotence de l'effet » (p. 129) — reste exhibé, non résolu.",
+         l'idempotence de l'effet » (p. 129, 3ᵉ éd.) — reste exhibé, non résolu.",
 };
 
 /// Hypothèse de synchronisme.
@@ -67,7 +67,7 @@ impl Synchronisme {
             }
             Synchronisme::Asynchrone => {
                 "0, …, ∞ — aucune borne finie n'existe sans Δ. « Non bornée » ne veut pas dire \
-                 « grande » (§1.3, §5.1)."
+                 « grande » (§1.3 et §5.1 du traité)."
                     .to_string()
             }
         }

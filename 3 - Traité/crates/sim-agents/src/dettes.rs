@@ -1,9 +1,9 @@
-//! **Les sept dettes d'indépendance** du tableau 21 (EX-A58, §8.1).
+//! **Les sept dettes d'indépendance** du tableau 21 (EX-A58, §8.1 du traité).
 //!
 //! > Sept énoncés de cet ouvrage supposent l'indépendance des tirages ou des
 //! > fautes ; aucun ne le dit dans son énoncé ; tous cessent de tenir à
 //! > Φ_c = 1. […] Aucun n'est faux ; tous changent de domaine de validité.
-//! > (§8.1)
+//! > (§8.1 du traité)
 //!
 //! Ce module n'ajoute **aucun mécanisme**. Il arme sur du code existant une
 //! hypothèse que ce code portait sans la dire, et il applique NF-14 : dès que Φ_c

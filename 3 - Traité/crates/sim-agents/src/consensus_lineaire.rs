@@ -1,4 +1,4 @@
-//! **§3.1, algorithme 1 du ch. 3** — itération de consensus linéaire sur digraphe
+//! **§3.1 du traité, algorithme 1 du ch. 3** — itération de consensus linéaire sur digraphe
 //! (EX-A13), et ses quatre modes de défaillance (EX-A43).
 //!
 //! `x_i(k+1) = x_i(k) + α Σ_j a_ij (x_j(k) − x_i(k))`, avec `0 < α < 1/Δ(G)`.
@@ -37,7 +37,7 @@ pub const SIGNATURE: &[(&str, &str)] = &[
     ),
 ];
 
-/// Les quatre modes du §3.1, plus la discussion de transposition.
+/// Les quatre modes du §3.1 du traité, plus la discussion de transposition.
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
 pub enum Mode {
     /// Nominal : α < 1/Δ(G), digraphe équilibré, aucun retard, aucun crash.
@@ -79,18 +79,19 @@ impl Mode {
     pub fn avertissement(self) -> Option<&'static str> {
         match self {
             Mode::MortOuConverge => Some(
-                "le crash-arrêt est HORS du modèle de panne de cet algorithme, dont le modèle est \
-                 vide. Ce que le préréglage montre n'est pas une faiblesse de l'algorithme mais \
-                 ce qui arrive quand on l'emploie hors de ses hypothèses (§3.1, mode (d)).",
+                "le crash-arrêt est HORS du modèle de panne de cet algorithme, dont le modèle \
+                 est vide. Ce que le préréglage montre n'est pas une faiblesse de l'algorithme \
+                 mais ce qui arrive quand on l'emploie hors de ses hypothèses (§3.1 du traité, \
+                 mode (d)).",
             ),
             Mode::Moyeu => Some(
-                "topologie de sujet lu par tous : Δ(G) = n − 1, et le budget de retard \
-                 τ < π/(4(n−1)) décroît en 1/n — 7,933 × 10⁻³ unité de temps du protocole à \
-                 n = 100. L'arrondi de π/(4n) donnerait 7,9 × 10⁻³, que la borne réellement \
-                 écrite dépasse de 0,42 % : un arrondi présenté comme une borne stricte est un \
-                 énoncé faux, non une imprécision (§3.1, p. 42). Le milieu offre gratuitement \
-                 l'échange non local qui accélère la convergence, et du même geste la topologie \
-                 que la source déconseille.",
+                "topologie de sujet lu par tous : Δ(G) = n − 1, et le budget de retard τ < \
+                 π/(4(n−1)) décroît en 1/n — 7,933 × 10⁻³ unité de temps du protocole à n = \
+                 100. L'arrondi de π/(4n) donnerait 7,9 × 10⁻³, que la borne réellement écrite \
+                 dépasse de 0,42 % : un arrondi présenté comme une borne stricte est un énoncé \
+                 faux, non une imprécision (§3.1 du traité, p. 42, 3ᵉ éd.). Le milieu offre \
+                 gratuitement l'échange non local qui accélère la convergence, et du même \
+                 geste la topologie que la source déconseille.",
             ),
             _ => None,
         }
@@ -237,7 +238,7 @@ impl Iteration {
     pub const REFUS_PROGRESSION: &'static str =
         "aucune barre de progression : le traité établit par programmation semi-définie qu'il \
          n'existe pas de fonction de Lyapunov quadratique commune pour cette classe. Rien ne \
-         mesure la distance restant à parcourir (§3.1).";
+         mesure la distance restant à parcourir (§3.1 du traité).";
 
     /// Ce que l'interface affiche pour ce mécanisme — les trois grandeurs
     /// ensemble quand la limite n'est pas la moyenne initiale (EX-A43, mode b).
@@ -377,7 +378,7 @@ mod tests {
     /// EX-A43 (c) — le budget de retard décroît avec Δ(G), et le mode « moyeu »
     /// le rend minuscule : **7,933 × 10⁻³** à n = 100.
     ///
-    /// NF-15 — c'est la valeur que le §3.1 (p. 42) écrit désormais, après avoir
+    /// NF-15 — c'est la valeur que le §3.1 du traité (p. 42, 3ᵉ éd.) écrit désormais, après avoir
     /// tranché l'écart que ce test avait relevé : « l'arrondi de π/(4n) donnerait
     /// 7,9 × 10⁻³, que la borne réellement écrite dépasse de 0,42 % : un arrondi
     /// présenté comme une borne stricte est un énoncé faux, non une
@@ -396,7 +397,7 @@ mod tests {
             moyeu_a_100 > 7.9e-3,
             "l'arrondi « moins de 7,9 × 10⁻³ » est dépassé par la borne réellement écrite"
         );
-        // … et de 0,42 %, comme le §3.1 le chiffre.
+        // … et de 0,42 %, comme le §3.1 du traité le chiffre.
         assert!(
             ((moyeu_a_100 / 7.9e-3 - 1.0) * 100.0 - 0.42).abs() < 0.01,
             "dépassement de {:.3} %",

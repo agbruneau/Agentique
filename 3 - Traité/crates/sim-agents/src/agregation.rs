@@ -1,6 +1,6 @@
 //! Les trois mécanismes d'agrégation du scénario H, et l'oracle qui les juge.
 //!
-//! > Le résultat n'est pas en retard, il est faux. (§4.1, p. 58)
+//! > Le résultat n'est pas en retard, il est faux. (§4.1, p. 58, 3ᵉ éd.)
 //!
 //! - **EX-A14** — algorithme 1 du ch. 4, échange par paires push-pull, avec
 //!   époque et relance. **Aucune condition d'arrêt.**
@@ -32,7 +32,7 @@ pub enum Ligne {
     CrashEnCoursDeProtocole,
     /// Ligne 11 — la relance **ne plafonne pas** l'erreur : elle réinjecte de la
     /// dispersion à chaque période, et le maximum de la dérive croît avec la
-    /// durée d'observation (§4.1, p. 58).
+    /// durée d'observation (§4.1, p. 58, 3ᵉ éd.).
     Ligne11Relance,
     /// Lignes 5 et 6 — deux traitements opposés du même désaccord d'époque.
     Epoque,
@@ -55,7 +55,7 @@ impl Ligne {
                  dispersion à chaque période, de sorte que son maximum croît avec la durée \
                  d'observation, là où l'erreur sans relance est acquise une fois pour toutes. Ce \
                  qu'elle achète n'est pas un plafond mais la conversion d'un mensonge stable en \
-                 une oscillation qu'un opérateur voit passer (§4.1, p. 58)"
+                 une oscillation qu'un opérateur voit passer (§4.1, p. 58, 3ᵉ éd.)"
             }
             Ligne::Epoque => {
                 "lignes 5 contre 6 — l'agent en retard se réinitialise, l'agent en avance \
@@ -515,7 +515,7 @@ impl PolitiqueStochastique {
     pub const REFUS_DARRET: &'static str =
         "aucune condition d'arrêt locale, pas même heuristique : la politique tourne indéfiniment \
          pendant que la population se stabilise en distribution, sans qu'aucun agent n'observe \
-         cette stabilisation (§3.1, EX-A38)";
+         cette stabilisation (§3.1 du traité, EX-A38)";
 
     /// Un cycle de la chaîne : chaque agent tire sa transition. Aucun message
     /// n'est échangé, et aucun agent n'apprend quoi que ce soit d'un autre.
@@ -635,7 +635,7 @@ mod tests {
         assert!(p.rapporter().unwrap().contains("ligne 4"));
     }
 
-    /// **Critère (3)** — le contraste que le §4.1 (p. 58) énonce, retrouvé par
+    /// **Critère (3)** — le contraste que le §4.1 (p. 58, 3ᵉ éd.) énonce, retrouvé par
     /// la mesure (NF-15) : **sans relance, l'erreur se fige** — une fois
     /// l'unanimité installée, il ne reste plus de masse à perdre — tandis
     /// qu'**avec relance, son maximum croît avec la durée d'observation**,
@@ -691,7 +691,7 @@ mod tests {
 
         // Avec relance, au contraire, le maximum **croît avec la durée
         // d'observation** : chaque période réinjecte la dispersion que la
-        // dérive consomme. C'est l'énoncé exact du §4.1 (p. 58), et il est ici
+        // dérive consomme. C'est l'énoncé exact du §4.1 (p. 58, 3ᵉ éd.), et il est ici
         // retrouvé et non cité (NF-15).
         let avec_court = executer(Some(50), 300).derive_max;
         assert!(

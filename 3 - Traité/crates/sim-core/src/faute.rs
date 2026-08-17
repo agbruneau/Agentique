@@ -6,7 +6,7 @@
 //! Conséquence tenue ici : le modèle s'affiche (EX-C06), se versionne, et
 //! nomme ce qu'il ne sait pas produire. Un mécanisme absent du modèle a, dans
 //! tout résultat, une probabilité de faute nulle — le mode (b) de l'algorithme
-//! 2 du §3.2, c'est-à-dire un mensonge silencieux.
+//! 2 du §3.2 du traité, c'est-à-dire un mensonge silencieux.
 
 use crate::alea::Alea;
 use crate::temps::{Duree, Instant};
@@ -20,7 +20,7 @@ pub const VERSION_MODELE: u32 = 1;
 /// Les trois échelles de panne matérielle du §3.3. Elles ne sont pas
 /// interchangeables : une baie emporte plusieurs machines, un centre emporte
 /// plusieurs baies, et c'est cette imbrication qui produit la corrélation que
-/// les bornes probabilistes du traité supposent absente (§8.3).
+/// les bornes probabilistes du traité supposent absente (§8.3 du PRD).
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Serialize, Deserialize)]
 pub enum Niveau {
     /// Une machine tombe seule.
@@ -59,7 +59,7 @@ pub struct Panne {
 
 /// La partition réseau, **processus à deux états** et non tirage par message.
 ///
-/// §3.2, algorithme 2 : le PRD (EX-C05) écrit « faute de quoi elle n'est jamais
+/// §3.2 du traité, algorithme 2 : le PRD (EX-C05) écrit « faute de quoi elle n'est jamais
 /// tirée ». Un tirage indépendant par message produit des pertes éparses, pas
 /// une coupure durable : la scission silencieuse et la décision divisée que les
 /// scénarios doivent provoquer ne surviennent jamais sous ce modèle-là.
@@ -323,7 +323,7 @@ impl ModeleFaute {
 
             // Les échelles se cumulent : un centre qui tombe emporte ses baies,
             // une baie ses machines, indépendamment de leur propre tirage. C'est
-            // la corrélation que le §8.3 déclare non mesurable et seulement
+            // la corrélation que le §8.3 du PRD déclare non mesurable et seulement
             // injectable.
             for (i, d) in domaines.iter().enumerate() {
                 let acteur = ActeurId(i as u32);
@@ -474,9 +474,10 @@ impl ModeleFaute {
         // il se signale sans seuil.
         if self.crash_baie > 0.0 || self.crash_centre > 0.0 {
             a.push(format!(
-                "crash corrélé : une baie tombe en entier avec la probabilité {:.6} par pas, un \
-                 centre avec {:.6} — la population se vide d'un coup au lieu de perdre quelques \
-                 membres, et aucun taux par acteur ne distingue les deux régimes (§3.3, §8.3)",
+                "crash corrélé : une baie tombe en entier avec la probabilité {:.6} par pas, \
+                 un centre avec {:.6} — la population se vide d'un coup au lieu de perdre \
+                 quelques membres, et aucun taux par acteur ne distingue les deux régimes \
+                 (§3.3 du traité, §8.3 du PRD)",
                 self.crash_baie, self.crash_centre
             ));
         }
@@ -489,37 +490,39 @@ impl ModeleFaute {
     ///
     /// **Sans balisage Markdown dans les entrées** : `sim-viz` les affiche
     /// telles quelles par un `egui::RichText`, qui n'a pas d'analyseur — des
-    /// astérisques d'emphase s'y liraient littéralement et un retour à la ligne
-    /// couperait la puce. La règle vaut pour les trois listes d'absences que
-    /// l'onglet « Limites » réunit, et `sim-viz` la tient par un test.
+    /// astérisques d'emphase et des accents graves s'y liraient littéralement,
+    /// et un retour à la ligne couperait la puce. Un nom de module ou d'item se
+    /// marque donc par des guillemets. La règle vaut pour les trois listes
+    /// d'absences que l'onglet « Limites » réunit, et `sim-viz` la tient par un
+    /// test.
     pub fn hors_modele() -> &'static [&'static str] {
         &[
             "ce modèle-ci, dans les scénarios livrés : le moteur n'en reçoit jamais \
-             d'exemplaire. `Moteur::installer_fautes` n'a aucun appelant, donc toute \
-             exécution tourne sur `ModeleFaute::default()`, c'est-à-dire sans faute, quelle \
-             que soit la `Config` chargée. Le scénario B, lui, règle bien `Config.fautes` — \
+             d'exemplaire. « Moteur::installer_fautes » n'a aucun appelant, donc toute \
+             exécution tourne sur « ModeleFaute::default() », c'est-à-dire sans faute, quelle \
+             que soit la « Config » chargée. Le scénario B, lui, règle bien « Config.fautes » — \
              deux points d'injection déclarés — mais cette déclaration ne sert qu'à \
              l'affichage, au hachage et au versionnement : elle ne pilote aucun tirage. \
-             Sans appelant non plus, neuf : `tirer_pannes` (crashs par niveau), \
-             `Moteur::avancer_partition` (partition à deux états), `message_perdu` \
+             Sans appelant non plus, neuf : « tirer_pannes » (crashs par niveau), \
+             « Moteur::avancer_partition » (partition à deux états), « message_perdu » \
              (l'omission d'EX-C05, et la coupure de partition avec elle), \
-             `injection_echec`, `injection_retard`, `injection_valeur`, `retard_message`, \
-             `ecriture_corrompue`, et `avertissements` — la moitié [U] d'EX-C06 : les \
-             avertissements affichés par `sim-agents` et `sim-viz` viennent de \
-             `sim_agents::stigmergie::Params::avertissements`, homonyme et sans rapport, \
-             jamais de ceux-ci. `gigue` est le seul mécanisme d'ici que la boucle \
+             « injection_echec », « injection_retard », « injection_valeur », « retard_message », \
+             « ecriture_corrompue », et « avertissements » — la moitié [U] d'EX-C06 : les \
+             avertissements affichés par « sim-agents » et « sim-viz » viennent de \
+             « sim_agents::stigmergie::Params::avertissements », homonyme et sans rapport, \
+             jamais de ceux-ci. « gigue » est le seul mécanisme d'ici que la boucle \
              appelle, et son amplitude vaut zéro au défaut. Les fautes que les scénarios \
              produisent réellement — omission du scénario A, échec d'action et crash avant \
-             validation du scénario B — sont tirées par les mécanismes de `sim-agents`, pas \
+             validation du scénario B — sont tirées par les mécanismes de « sim-agents », pas \
              ici : deux mécanismes pour la même faute, dont un seul est réglable depuis la \
              configuration et versionné avec elle",
-            "le plancher mémoire de la population (EX-C17) : `sim_core::service::CoutAgent` \
+            "le plancher mémoire de la population (EX-C17) : « sim_core::service::CoutAgent » \
              le calcule et retrouve les chiffres du traité, mais aucun affichage ne le lit",
             "faute byzantine — hors modèle P. Le point d'injection existe (DT8, \
-             `sim-agents::taux_de_base`), désactivé par défaut et limité aux scénarios I et L",
+             « sim-agents::taux_de_base »), désactivé par défaut et limité aux scénarios I et L",
             "toute dépendance hors du monde clos : bibliothèque tierce, système \
-             d'exploitation, courtier réel (§3.3, §2.3)",
-            // EX-C20 — §8.3 de la deuxième édition. À ne pas confondre avec
+             d'exploitation, courtier réel (§3.3 du traité, §2.3 du PRD)",
+            // EX-C20 — §8.3 du traité de la deuxième édition. À ne pas confondre avec
             // l'entrée « faute byzantine » ci-dessus : là, l'adversité est
             // **injectée** par un point d'injection désactivé par défaut (DT8) ;
             // ici, elle est **produite** par une population dont chaque membre
@@ -594,7 +597,7 @@ mod tests {
     }
 
     /// Une panne de baie emporte toutes ses machines : c'est la corrélation que
-    /// le §8.3 déclare injectable et non mesurable.
+    /// le §8.3 du PRD déclare injectable et non mesurable.
     #[test]
     fn la_panne_de_baie_emporte_ses_machines() {
         let mut m = ModeleFaute {

@@ -22,7 +22,7 @@ use sim_core::alea::Alea;
 #[derive(Clone, Copy, PartialEq, Debug, Default)]
 pub enum Biais {
     /// Tirage uniforme. **Ce n'est pas le défaut** : c'est l'hypothèse la plus
-    /// favorable, et le §8.3 exige qu'on le dise.
+    /// favorable, et le §8.3 du PRD exige qu'on le dise.
     Uniforme,
     /// Certains pairs sont tirés bien plus souvent que d'autres. C'est le
     /// régime par défaut (RQ10).
@@ -75,7 +75,7 @@ pub struct ServiceDePairs {
     /// Taille de la population échantillonnable.
     pub n: u32,
     /// Biais du tirage — un **paramètre à injecter**, jamais une propriété
-    /// mesurée sur un système réel (§8.3).
+    /// mesurée sur un système réel (§8.3 du PRD).
     pub biais: Biais,
     /// Nombre de fois où chaque pair a été rendu. C'est la seule façon de
     /// **constater** le biais ; le service ne le mesure pas pour lui-même.
@@ -156,7 +156,7 @@ impl ServiceDePairs {
     /// moins tiré. Vaut 1 pour un tirage parfaitement plat.
     ///
     /// C'est une **mesure de l'observateur**, pas une information dont un agent
-    /// dispose (§8.3).
+    /// dispose (§8.3 du PRD).
     pub fn desequilibre_constate(&self) -> Option<f64> {
         if self.appels == 0 {
             return None;
@@ -257,7 +257,7 @@ impl TriDeVue {
     /// groupes disjoints ?
     ///
     /// C'est un privilège de l'observateur : aucun agent ne peut le constater,
-    /// et l'interface doit le dire (PD10, §8.3).
+    /// et l'interface doit le dire (PD10, §8.3 du PRD).
     pub fn scission_silencieuse(&self) -> Option<String> {
         let n = self.attribut.len();
         // Sans population, il n'y a pas de médiane à prendre : `tri[n/2]`
