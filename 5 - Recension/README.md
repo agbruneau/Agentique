@@ -29,6 +29,11 @@ et ne franchit aucune porte — *synthétiser n'est ni réviser ni publier*.
 > repartie le 17. *Le dossier ne porte donc plus que deux fichiers de contenu, la source et son
 > rendu* — ⚠ **et la pièce qui repart est celle que le rapport a cessé de citer le jour même**, ayant
 > versé l'échelle à six paliers dans son propre corps.
+> ⚠ **Elle a cessé d'être une page le même jour** : refondue en **diaporama de dix diapositives 16:9**
+> pour la haute direction. ☑ *Ses §1 et §2 — l'ouverture de ce rapport — y sont versés : la question que
+> chaque palier règle, ce qui cède sans lui, la ligne de la rupture.* ⚠ **Mais la diapositive qui
+> attribuait la filiation NEIF et nommait le palier syntaxique manquant a été retirée le jour même** :
+> *le rapport porte donc seul, désormais, les réserves qui valent pour les deux.*
 
 ## Le livrable
 

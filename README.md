@@ -34,6 +34,10 @@ et le PDF est recomposé, **127 pages** inchangées.
 17 août 2026**. *La racine porte donc de nouveau une pièce qui n'est pas un livrable — troisième
 dossier de cette page en trois jours —, et le cinquième dossier n'en garde que deux, la source et son
 rendu.*
+⚠⚠ **Et elle a cessé d'être une page le même jour** : refondue en **diaporama de dix diapositives
+16:9** pour la haute direction. *Le tenir-sur-une-page, que ce fichier lui attribuait depuis le
+15 août, a été **mesuré à cette occasion et réfuté** — 810 px de contenu pour 733 px de boîte utile.*
+☑ **La mise en page du diaporama, elle, est vérifiée diapositive par diapositive.**
 
 > # ⚠ DÉPÔT CLOS ET FINAL — 8 août 2026
 >
@@ -426,18 +430,34 @@ désignent aucun fichier de l'arbre courant*, voir plus bas.
 [`NiveauMaturité.html`](NiveauMaturit%C3%A9.html) — ⚠ *à la racine du dépôt du
 15 au 16 août 2026, sous [`5 - Recension/`](5%20-%20Recension/) le 16 et le 17, **de retour à la
 racine depuis le 17 août 2026** (commit `148863a`), et nommée
-`OnePager.html` jusqu'à cette même date* — est un **fichier unique et autonome** — aucune source markdown,
-aucune chaîne de rendu, aucune dépendance externe, aucun contrôle — qui expose sur **une seule page**
-une **échelle de maturité à six niveaux numérotés 1 à 6** : technique, sémantique, organisationnel,
-juridique, politique, agentique. *Elle se lit au navigateur et s'imprime en A4 paysage ;
-⚠ **le tenir-sur-une-page est constaté au rendu, jamais vérifié** — même régime exactement que la
-cible de cent pages du traité, et aucune porte ne l'oppose à rien.*
+`OnePager.html` jusqu'à cette même date* — est un **fichier unique et autonome** — aucune source
+markdown, aucune chaîne de rendu, aucune dépendance externe, aucun contrôle — qui expose une
+**échelle de maturité à six niveaux numérotés 1 à 6** : technique, sémantique, organisationnel,
+juridique, politique, agentique.
+⚠⚠ **Elle a cessé d'être une page le 17 août 2026** : refondue en **diaporama de présentation à la
+haute direction** — **dix diapositives au format 16:9**, navigation au clavier, aux chevrons et aux
+pastilles, ancre `#n` dans l'adresse, **une diapositive par page** à l'impression en A4 paysage. *Elle
+porte désormais une quarantaine de lignes de JavaScript, et toujours aucune dépendance externe.*
+⚠ **Le tenir-sur-une-page a été mesuré le jour même, et la mesure l'a réfuté** : la fiche faisait
+**810 px de contenu pour 733 px de boîte utile** à ses 8,2 pt documentés — *elle ne tenait pas sur une
+page, et elle le donnait pour constaté depuis le 15 août 2026.* ☑ **Le diaporama, lui, est mesuré
+diapositive par diapositive** : aucun débordement, **marge minimale de 46 px sur les 900** du cadre,
+vérifié à deux largeurs d'épreuve. *C'est le seul énoncé de mise en page du dépôt qui soit vérifié
+plutôt que constaté — et il a fallu abandonner la propriété pour la vérifier.*
 ⚠ **Sa filiation est réelle mais nulle part écrite dans un livrable** : ses **quatre premiers
 niveaux** sont les quatre couches du *New European Interoperability Framework* telles que le Vol. I
 les expose (`Chapitres/Chapitre 1 - Interoperabilite.md` §1.2.1.1), et son bandeau transversal
 reprend mot pour mot l'**invariant du Vol. I** — *découplage ── contrat ── évolution*. ⚠ **Ses
 niveaux 5 et 6 sont des ajouts** : aucun livrable du dépôt ne porte, sous ces noms, un palier
-« politique » ni un palier « agentique » dans une échelle numérotée. *Elle ne cite aucun livrable et
+« politique » ni un palier « agentique » dans une échelle numérotée.
+⚠⚠ **L'attribution a été écrite puis retirée le même jour, et c'est le fait le plus net de la passe du
+17 août 2026** : une diapositive de réserves l'a portée — numérotation du NEIF **inversée**, paliers 5
+et 6 donnés pour des ajouts, **palier syntaxique manquant** —, et elle a été **retirée sur instruction
+d'auteur** avec deux autres. *La page reformule donc de nouveau du contenu de livrable sans
+l'attribuer, après l'avoir attribué pendant une heure.* ⚠ **Le retrait a aussi emporté la clause de
+renversement** — l'interdiction de l'autonomie agentique directe sous compensation financière temps
+réel : *le diaporama expose la rupture du sixième palier sans dire où elle est proscrite.*
+*Elle ne cite aucun livrable et
 aucun livrable ne la cite* — **le second cas de ce dépôt après le traité, et cette fois sans
 appareil du tout.** ⚠ **Et l'état de l'art, qui la citait à son entrée, ne la cite plus** : la
 passe du 17 août 2026 a versé l'échelle à six paliers **dans le corps du rapport**, qui l'assume
@@ -1313,10 +1333,13 @@ le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
 │                                          ⚠ `gauntlet-log.md`, journal append-only des boucles bâtisseur/critique,
 │                                            était ici jusqu'au 10 août 2026 — purgé, il ne se relit qu'à l'historique git
 ├── .gitignore                             ← couvre notamment les `__pycache__` (aucun bytecode au suivi git)
-├── NiveauMaturité.html                    ← page autonome — REVENUE À LA RACINE le 17 août 2026 (`148863a`), après un
-│                                            passage sous `5 - Recension/` les 16 et 17 ; ⚠ `OnePager.html` du 15 au 17 août
+├── NiveauMaturité.html                    ← DIAPORAMA de 10 diapositives 16:9 depuis le 17 août 2026 — présentation
+│                                            à la haute direction ; page unique jusque-là, ⚠ `OnePager.html` du 15 au 17 août
+│                                          ⚠ REVENUE À LA RACINE le 17 août 2026 (`148863a`), après un passage sous
+│                                            `5 - Recension/` les 16 et 17
 │                                          ⚠⚠ NI LIVRABLE NI APPAREIL : aucune source markdown, aucune chaîne de rendu,
-│                                            aucune référence, aucun contrôle — le tenir-sur-une-page est un CONSTAT
+│                                            aucune référence, aucun contrôle — mais ☑ mise en page MESURÉE, diapositive
+│                                            par diapositive, ce qu'aucune autre pièce du dépôt ne peut dire
 │                                          ⚠ le rapport ne la cite plus depuis le 17 août : il a versé son échelle au corps
 ├── 1 - Corpus/                            ← le triptyque
 │   ├── README.md                            synthèse consolidée des trois monographies
@@ -2180,7 +2203,7 @@ correction exigerait une information que le dépôt ne porte pas — *et personn
 | `4 - Veille/Python/` — les trois contrôles | ☑ **SOLDÉ le 15 août 2026, le jour où le défaut est devenu une panne.** Les trois nommaient leurs sources en **chemin relatif au répertoire courant** — `SRC = 'Veille Technologique.md'`, `SRC = 'Revue de littérature.md'`, `'Veille Technologique.pdf'` par défaut — et **ont levé `FileNotFoundError`** dès que la veille et la revue ont quitté la racine. *Une trace de pile n'est pas un verdict : un contrôle qui ne trouve pas sa source ne dit pas que le document est faux, il ne dit plus rien.* ☑ **Chacun résout désormais son chemin contre `Path(__file__)`** et sort 0 **depuis la racine, depuis `4 - Veille/` et depuis `Python/`**. ☑ **Le second volet est soldé le 17 août 2026** : `check-resume.py` **sort 0 sur les trois PDF du dépôt, traité compris** — ⚠ *non parce qu'il a été recalibré, mais parce que le traité est venu à la géométrie de la veille* (117 pt en x, 72 pt en y, page de titre sans folio), et `MARGE_BASSE` vaut 72,0. ⚠ **Ce qui reste ouvert** : la constante suit le YAML **à la main**, et le contrôle **ne lit que la page 1** — *c'est ce qui a laissé sept titres de la veille se rendre en texte courant d'un bout à l'autre du document sans qu'il bronche* |
 | `3 - Traité/CLAUDE.md` | ☑ **SOLDÉ le 17 août 2026.** Il visait `docs/Traité.pdf`, qui n'existe pas : le traité est à `3 - Traité/Traité.pdf`, un cran plus haut. Le dossier a été écrit en dépôt autonome, où le PDF vivait sous `docs/` ; la fusion du 14 août 2026 l'a posé à la racine du dossier **sans reprendre les renvois**. ⚠ *Le renvoi mort visait la **source normative** du projet, celle dont `CLAUDE.md` dit que « les algorithmes, les hypothèses et les chiffres viennent de là, et de nulle part ailleurs » — c'était le pire endroit possible pour un lien mort, et il aura tenu trois jours.* ☑ Les **deux `README.md`** du dossier ont porté le correctif le 14 août ; ☑ **`CLAUDE.md` l'a reçu à l'audit du dossier le 17** — *hors du périmètre d'une resynchronisation de `README.md`, il a fallu une passe du dossier lui-même* |
 | `3 - Traité/Traité.md` ↔ `figures/` | ⚠ **le livrable et ses dix-neuf figures sont dans deux dossiers différents**, et le livrable les cite en chemin relatif. *Pandoc résolvant contre le répertoire courant*, la chaîne de rendu **ne marche plus que depuis la racine du dépôt** — la seule des sept dans ce cas, et **rien ne le signale au moment où elle échoue**. Deux corrections sont possibles — déplacer `figures/` sous `3 - Traité/`, ou passer `--resource-path` à Pandoc — et **aucune n'est faite** : elles toucheraient soit un livrable, soit une chaîne de rendu, l'un et l'autre hors du périmètre d'une resynchronisation |
-| `NiveauMaturité.html`, à la racine | ⚠ **une pièce sans régime, sans appareil et sans rattachement — entrée à la racine le 15 août 2026, rangée sous `5 - Recension/` le 16, renommée le 17 et revenue à la racine le 17** (`148863a`) — ⚠ *`OnePager.html` jusque-là ; **trois dossiers en trois jours**.* *Elle ne cite aucun document* — et **le seul qui la citait a cessé de le faire** : depuis la passe du 17 août 2026, l'état de l'art expose l'échelle à six paliers **dans son propre corps** et ne la nomme plus. ⚠ **Elle reformule du contenu de livrable sans l'attribuer** : les quatre couches du NEIF du Vol. I §1.2.1.1 et son invariant transversal. ⚠ **Elle porte en outre une quatrième échelle à six niveaux** — numérotés 1 à 6 —, quand le Vol. I en porte un continuum à six niveaux numérotés 0 à 5 (§2.2.4) que la parade **R-13** du Vol. III oblige à citer par son cardinal *et* sa numérotation. *La parade vaut pour les pièces de volume ; la page n'en est pas une.* ⚠ **Aucun contrôle** : le tenir-sur-une-page en A4 paysage est **constaté au rendu et jamais vérifié**. ⚠ *Le rangement du 16 lui donnait un dossier sans lui donner de régime ; le retour du 17 lui retire le dossier et ne lui en donne pas davantage.* **Régime à écrire, filiation à attribuer, et personne ne le fera** |
+| `NiveauMaturité.html`, à la racine | ⚠ **une pièce sans régime, sans appareil et sans rattachement — entrée à la racine le 15 août 2026, rangée sous `5 - Recension/` le 16, renommée le 17 et revenue à la racine le 17** (`148863a`) — ⚠ *`OnePager.html` jusque-là ; **trois dossiers en trois jours**.* *Elle ne cite aucun document* — et **le seul qui la citait a cessé de le faire** : depuis la passe du 17 août 2026, l'état de l'art expose l'échelle à six paliers **dans son propre corps** et ne la nomme plus. ⚠ **Elle reformule du contenu de livrable sans l'attribuer** : les quatre couches du NEIF du Vol. I §1.2.1.1 et son invariant transversal. ⚠ **Elle porte en outre une quatrième échelle à six niveaux** — numérotés 1 à 6 —, quand le Vol. I en porte un continuum à six niveaux numérotés 0 à 5 (§2.2.4) que la parade **R-13** du Vol. III oblige à citer par son cardinal *et* sa numérotation. *La parade vaut pour les pièces de volume ; la page n'en est pas une.* ⚠ **Aucun contrôle** : le tenir-sur-une-page en A4 paysage est **constaté au rendu et jamais vérifié** — ☑ **jusqu'au 17 août 2026, où il a été mesuré et réfuté** : 810 px de contenu pour 733 px de boîte utile, *la fiche ne tenait pas sur une page.* ☑ **La refonte en diaporama de dix diapositives règle le grief de mise en page** — chaque diapositive est mesurée, marge minimale 46 px sur 900 — et **elle est la seule pièce du dépôt dont un énoncé de mise en page soit vérifié**. ⚠ *Le rangement du 16 lui donnait un dossier sans lui donner de régime ; le retour du 17 lui retire le dossier et ne lui en donne pas davantage.* ⚠⚠ **L'attribution de filiation a été écrite le 17 août puis retirée le même jour sur instruction d'auteur**, avec la clause de renversement : *le grief de reformulation non attribuée est donc rouvert par le même geste qui l'avait soldé.* **Régime à écrire, filiation à attribuer, et personne ne le fera** |
 | `3 - Traité/` | ⚠ **ni licence, ni intégration continue.** L'absence de licence est le régime du dépôt entier — *droit d'auteur par défaut, tous droits réservés* —, et le dossier le déclare plutôt que de l'inventer : ses manifestes portent `publish = false`. ⚠ **L'absence d'intégration continue, elle, contredit deux de ses propres exigences** : NF-13 et NF-16 nomment un mécanisme d'application que le dépôt ne contient pas. *La suite de tests, `clippy` et `cargo doc` sont les trois portes réelles du dossier, et rien ne les fait jouer automatiquement* — ⚠ **et le cardinal de la première ne se cite pas** : 428 tests à 08 h 10 le 17 août 2026, 447 à 08 h 32, **465 à 09 h 49**, cinq agents d'audit écrivant en parallèle |
 | `5 - Recension/` | ⚠ **le seul dossier numéroté sans aucun contrôle.** Rien n'y rejoue les énoncés du rapport — pas de `check-*.py`, pas de porte de pagination —, et *ses sept sources lui font hériter de leurs propres réserves.* ⚠ **Trois écarts internes sont déclarés par son `README.md` et non corrigés** : **neuf renvois `ch. 0 § 4`** visent une section retirée à la passe du 17 août 2026 ; la numérotation des tableaux porte un **`Tableau 0.2` sans `Tableau 0.1`**, *renuméroter aurait cassé les renvois qui visent le 0.2* ; et `chapitres/` — le brouillon de la boucle qui a produit le rapport — **a divergé de la source**, *ce qui est inoffensif tant qu'il n'est plus lu, et n'en est pas moins faux.* ⚠ **Son `dessine.py` est une copie de celui du compendium, avec une divergence déclarée** : le défaut d'origine n'est pas corrigé là-bas |
 
@@ -3002,6 +3025,34 @@ touché.**
   dossier, et elle n'a toujours pas de régime.* ☑ **Les renvois des deux `README.md` concernés sont
   repointés** — celui-ci et [`5 - Recension/README.md`](5%20-%20Recension/README.md), qui ne la porte
   plus à sa structure de dossier.
+
+**Le 17 août 2026, quatrième passe du même jour — la page de présentation cesse d'être une page.**
+⚠ *Sur instruction d'auteur, et hors du périmètre de la resynchronisation des `README.md` : elle
+touche une pièce, pas un livrable.* Quatre gestes :
+- ☑ **L'ouverture de l'état de l'art est versée dans la pièce.** Ses §1 et §2 portaient ce que la page
+  taisait : **la question que chaque palier règle**, ce qui cède quand la réponse manque, la règle
+  *un palier tenu n'entraîne jamais le suivant*, la réserve de l'invariant — *trois termes ici, quatre
+  dans la source, le quatrième déclaré non éprouvé* —, et la ligne de la rupture : *un contrat de
+  palier 5 se vérifie avant l'exécution ; une intention de palier 6 ne s'observe que pendant.*
+- ⚠⚠ **Le tenir-sur-une-page est mesuré pour la première fois, et il est faux.** À 277 × 194 mm de
+  boîte utile, la fiche demandait **810 px pour 733 px disponibles** à ses 8,2 pt documentés.
+  *La propriété que ce fichier lui attribuait depuis le 15 août 2026 n'a jamais tenu ; elle était
+  constatée à l'œil, et personne n'avait mesuré.*
+- ☑ **Refonte en diaporama de présentation à la haute direction** : **dix diapositives 16:9**,
+  navigation au clavier, aux chevrons et aux pastilles, ancre `#n`, **une diapositive par page** à
+  l'impression. ☑ **Mise en page vérifiée diapositive par diapositive**, à deux largeurs d'épreuve —
+  aucun débordement, marge minimale **46 px sur 900**. ⚠ *Deux défauts ont été trouvés par la mesure
+  et non à la lecture* : un indice de navigation chevauchait le pied de la couverture, et le chiffre en
+  filigrane débordait sur la page suivante à l'impression. ⚠ *Un titre de palier —
+  « Organisationnel », 10,43 em — sortait de sa colonne de 8,5 em et passait par-dessus le filet de la
+  question ; la colonne est portée à 11,5 em, mesurée sur le plus long des six titres.*
+- ⚠⚠ **Trois diapositives ont été retirées sur instruction d'auteur, et le retrait a un coût
+  d'appareil qu'il faut écrire.** Sont parties : la **diapositive de réserves** — qui attribuait enfin
+  la filiation NEIF, donnait les paliers 5 et 6 pour des ajouts et nommait le **palier syntaxique
+  manquant** —, les **trois choses à retenir**, et la **décision** — compromis d'observabilité et
+  **clause de renversement**. *Le diaporama expose donc la rupture du sixième palier sans dire où elle
+  est proscrite, et reformule de nouveau du contenu de livrable sans l'attribuer.* ☑ **Les deux griefs
+  reviennent au tableau des reliquats**, d'où la mesure et l'attribution les avaient sortis le matin.
 
 ⚠⚠ **Ce que cette passe démontre, et que le tableau des reliquats annonce depuis le 9 août 2026.**
 **Aucun des sept contrôles du dépôt ne résout un lien markdown.** Un renommage de dossier a donc pu

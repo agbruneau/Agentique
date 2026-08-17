@@ -5,578 +5,956 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Échelle de maturité de l'interopérabilité et orchestration agentiques d'entreprise</title>
 <style>
-  /* ---------- Jetons de design : thème noir / orange ---------- */
+  /* ================================================================
+     Thème : noir profond, accent orange. Présentation exécutive 16:9.
+     Toute la typographie des diapositives est en `em` et dérive de
+     `--w` : une diapositive garde donc ses proportions à l'écran, au
+     projecteur et à l'impression, sans une ligne de JavaScript.
+     ================================================================ */
   :root {
     --bg:        #08080a;
+    --bg-2:      #0d0d10;
     --surface:   #121215;
     --surface-2: #17171b;
     --line:      #26262c;
-    --line-soft: #1d1d22;
+    --line-2:    #33333b;
 
-    --text:      #f4f4f5;
-    --text-2:    #b6b6bf;
-    --text-3:    #7e7e8a;
+    --text:      #f5f5f6;
+    --text-2:    #b8b8c2;
+    --text-3:    #82828e;
 
+    --o-200: #fed7aa;
     --o-300: #fdba74;
     --o-400: #fb923c;
     --o-500: #f97316;
     --o-600: #ea580c;
-    --o-glow: rgba(249, 115, 22, 0.14);
-
-    --radius: 6px;
-    --gap: 0.75rem;
-  }
-
-  html {
-    font-size: 18px;   /* échelle maître : tout est en rem, l'impression la réduit */
+    --o-700: #c2410c;
+    --o-glow: rgba(249, 115, 22, 0.13);
+    --o-dim:  rgba(249, 115, 22, 0.30);
   }
 
   *, *::before, *::after { box-sizing: border-box; }
 
+  html, body { height: 100%; }
+
   body {
     margin: 0;
-    padding: 1.75rem 1.5rem 2.5rem;
     background: var(--bg);
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 0.9375rem;
     line-height: 1.45;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
   }
 
-  .sheet {
-    max-width: 1500px;
-    margin: 0 auto;
+  /* ---------------- Scène : une diapositive 16:9 centrée ---------------- */
+  .stage {
+    /* La plus grande boîte 16:9 qui entre dans la fenêtre, barre de contrôle déduite */
+    --w: min(calc(100vw - 2.5rem), calc((100vh - 5.5rem) * 16 / 9));
+    width: var(--w);
+    height: calc(var(--w) * 9 / 16);
+    font-size: calc(var(--w) / 46);     /* échelle maître de la diapositive */
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 0.5rem;
+    background:
+      radial-gradient(120% 90% at 100% 0%, rgba(249,115,22,0.10), transparent 55%),
+      radial-gradient(80% 70% at 0% 100%, rgba(249,115,22,0.05), transparent 60%),
+      var(--bg-2);
   }
 
-  /* ---------- En-tête ---------- */
-  .masthead {
+  /* Filet de progression, arête haute de la scène */
+  .progress {
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 2px;
+    background: var(--line);
+    z-index: 3;
+  }
+  .progress > span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--o-600), var(--o-400));
+    transition: width 0.3s ease;
+  }
+
+  /* Gabarits MESURÉS : à 16:9, tout le contenu de chaque diapositive entre dans
+     la boîte sans débordement — vérifié diapositive par diapositive. */
+  .slide {
+    position: absolute;
+    inset: 0;
+    padding: 1.7em 2.2em 1.5em;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;   /* le filigrane saigne volontairement hors cadre : on le clippe ici,
+                           sinon il déborde sur la page suivante à l'impression */
+  }
+
+  .slide[aria-current="true"] {
+    display: flex;
+    animation: enter 0.3s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  }
+
+  @keyframes enter {
+    from { opacity: 0; transform: translateY(0.5em); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* Chiffre en filigrane, repère visuel de position dans l'échelle */
+  .watermark {
+    position: absolute;
+    right: 1.2em;
+    bottom: -0.28em;
+    font-size: 11em;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: rgba(249, 115, 22, 0.07);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ---------------- Blocs typographiques communs ---------------- */
+  .eyebrow {
+    font-size: 0.6em;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--o-400);
+    margin: 0 0 0.7em;
+  }
+
+  .slide h2 {
+    font-size: 1.6em;
+    font-weight: 780;
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    margin: 0 0 0.35em;
+  }
+
+  .lead {
+    font-size: 0.95em;
+    color: var(--text-2);
+    margin: 0;
+    max-width: 46ch;
+  }
+
+  .rule {
+    height: 2px;
+    width: 4.5em;
+    background: var(--o-500);
+    border: 0;
+    margin: 0 0 0.8em;
+  }
+
+  .label {
+    display: block;
+    font-size: 0.55em;
+    font-weight: 800;
+    letter-spacing: 0.19em;
+    text-transform: uppercase;
+    color: var(--o-500);
+    margin-bottom: 0.35em;
+  }
+
+  em { color: var(--o-300); font-style: italic; }
+  strong { color: var(--text); font-weight: 700; }
+
+  /* ---------------- 1. Couverture ---------------- */
+  .cover { justify-content: center; }
+
+  .cover .kicker {
+    font-size: 0.62em;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--o-400);
+    margin-bottom: 1.1em;
+  }
+
+  .cover h1 {
+    font-size: 2.5em;
+    font-weight: 800;
+    letter-spacing: -0.028em;
+    line-height: 1.04;
+    margin: 0 0 0.5em;
+    max-width: 26ch;
+  }
+
+  .cover .kicker + h1 { margin-top: 0; }
+
+  .cover .cover-sub {
+    font-size: 1em;
+    color: var(--text-2);
+    margin: 0;
+    max-width: 44ch;
+  }
+
+  .cover-foot {
+    margin-top: auto;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--line);
-    margin-bottom: 1rem;
-    position: relative;
-  }
-
-  .masthead::after {
-    content: "";
-    position: absolute;
-    left: 0; bottom: -1px;
-    width: 6.5rem; height: 2px;
-    background: var(--o-500);
-  }
-
-  .kicker {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.11em;
-    text-transform: uppercase;
-    color: var(--o-400);
-    margin-bottom: 0.4rem;
-  }
-
-  h1 {
-    font-size: 1.75rem;
-    font-weight: 750;
-    letter-spacing: -0.015em;
-    line-height: 1.15;
-    margin: 0 0 0.35rem;
-    color: var(--text);
-    max-width: 30ch;
-  }
-
-  .subtitle {
-    font-size: 0.9375rem;
-    color: var(--text-2);
-    margin: 0;
-    max-width: 80ch;
-  }
-
-  .masthead-meta {
-    text-align: right;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.09em;
+    gap: 1.5em;
+    border-top: 1px solid var(--line);
+    padding-top: 0.8em;
+    font-size: 0.58em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--text-3);
-    line-height: 1.6;
-    white-space: nowrap;
   }
 
-  .masthead-meta strong {
-    display: block;
-    color: var(--text-2);
-  }
+  .cover-foot strong { display: block; color: var(--o-300); font-weight: 800; }
 
-  /* ---------- Bandeau de progression ---------- */
-  .ladder {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 0.75rem 0.875rem 0.875rem;
-    margin-bottom: 1rem;
-  }
-
-  .section-title {
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.11em;
-    text-transform: uppercase;
-    color: var(--text-3);
-    text-align: center;
-    margin: 0 0 0.625rem;
-  }
-
-  .stack {
-    list-style: none;
+  /* ---------------- 2. Le problème ---------------- */
+  .fails {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0.375rem;
-    margin: 0;
+    gap: 0.4em;
+    margin: 0.3em 0 0.6em;
     padding: 0;
+    list-style: none;
   }
 
-  .stack li {
-    background: var(--surface-2);
-    border: 1px solid var(--line);
-    border-top: 2px solid var(--o-500);
-    border-radius: 4px;
-    padding: 0.45rem 0.5rem 0.5rem;
-    text-align: center;
-  }
-
-  /* Intensité croissante du niveau 1 au niveau 6 */
-  .stack li[data-lvl="1"] { border-top-color: rgba(249,115,22,0.32); }
-  .stack li[data-lvl="2"] { border-top-color: rgba(249,115,22,0.46); }
-  .stack li[data-lvl="3"] { border-top-color: rgba(249,115,22,0.62); }
-  .stack li[data-lvl="4"] { border-top-color: rgba(249,115,22,0.78); }
-  .stack li[data-lvl="5"] { border-top-color: rgba(249,115,22,0.92); }
-  .stack li[data-lvl="6"] { border-top-color: var(--o-400); background: linear-gradient(180deg, var(--o-glow), transparent 70%), var(--surface-2); }
-
-  .stack-name {
-    display: block;
-    font-size: 0.8125rem;
-    font-weight: 750;
-    letter-spacing: 0.02em;
-    color: var(--text);
-  }
-
-  .stack-name span { color: var(--o-400); }
-
-  .stack-sub {
-    display: block;
-    font-size: 0.75rem;
-    color: var(--text-3);
-    margin-top: 0.15rem;
-    line-height: 1.3;
-  }
-
-  .rule-bar {
-    margin: 0.5rem 0 0;
-    font-size: 0.8125rem;
-    color: var(--text-2);
-    text-align: center;
-  }
-
-  .invariant-bar {
-    margin-top: 0.4rem;
-    padding: 0.3rem 0.5rem;
-    border: 1px dashed var(--line);
-    border-radius: 3px;
-    text-align: center;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--text-2);
-  }
-
-  .invariant-bar em {
-    font-style: normal;
-    color: var(--o-400);
-  }
-
-  .bar-note {
-    font-weight: 400;
-    letter-spacing: normal;
-    text-transform: none;
-    color: var(--text-3);
-  }
-
-  .bar-note em { color: var(--text-2); font-style: italic; }
-
-  /* ---------- Grille des six niveaux ---------- */
-  .levels {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gap);
-    margin-bottom: 1rem;
-  }
-
-  .level-card {
+  .fails li {
     background: var(--surface);
     border: 1px solid var(--line);
-    border-left: 3px solid var(--o-500);
-    border-radius: var(--radius);
-    padding: 0.625rem 0.875rem 0.75rem;
+    border-left: 3px solid var(--o-dim);
+    border-radius: 0.28em;
+    padding: 0.45em 0.8em;
+    font-size: 0.82em;
+    color: var(--text-2);
   }
 
-  .level-card[data-lvl="1"] { border-left-color: rgba(249,115,22,0.32); }
-  .level-card[data-lvl="2"] { border-left-color: rgba(249,115,22,0.46); }
-  .level-card[data-lvl="3"] { border-left-color: rgba(249,115,22,0.62); }
-  .level-card[data-lvl="4"] { border-left-color: rgba(249,115,22,0.78); }
-  .level-card[data-lvl="5"] { border-left-color: rgba(249,115,22,0.92); }
-  .level-card[data-lvl="6"] { border-left-color: var(--o-400); }
+  .fails li:nth-child(2) { border-left-color: rgba(249,115,22,0.55); }
+  .fails li:nth-child(3) { border-left-color: var(--o-500); }
 
-  .card-head {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.375rem;
-  }
-
-  .lvl-num {
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    color: var(--o-400);
-    border: 1px solid rgba(249,115,22,0.35);
-    border-radius: 3px;
-    padding: 0.05rem 0.3rem;
-    background: var(--o-glow);
-    white-space: nowrap;
-  }
-
-  .lvl-title {
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: -0.005em;
+  .verdict {
+    background: linear-gradient(180deg, var(--o-glow), transparent 70%), var(--surface);
+    border: 1px solid var(--line-2);
+    border-top: 2px solid var(--o-500);
+    border-radius: 0.3em;
+    padding: 0.55em 0.9em;
+    font-size: 0.95em;
     color: var(--text);
   }
 
-  .lvl-scope {
-    font-size: 0.8125rem;
-    color: var(--text-3);
-    margin-left: auto;
-    text-align: right;
-  }
+  .verdict p { margin: 0; }
 
-  /* La question que le niveau règle — une seule, et c'est la forme de la carte */
-  .lvl-question {
-    margin: 0 0 0.4rem;
-    padding-left: 0.5rem;
-    border-left: 2px solid var(--o-500);
-    font-size: 0.875rem;
-    font-style: italic;
-    color: var(--o-300);
-  }
-
-  .field-label {
-    display: block;
-    font-size: 0.6875rem;
-    font-weight: 800;
-    letter-spacing: 0.11em;
-    text-transform: uppercase;
-    color: var(--o-500);
-    margin-bottom: 0.1rem;
-  }
-
-  .desc-text {
-    font-size: 0.875rem;
-    color: var(--text-2);
-    margin: 0 0 0.4rem;
-  }
-
-  /* Ce qui cède quand la réponse manque */
-  .fail-line {
-    font-size: 0.875rem;
-    color: var(--text-2);
-    margin: 0 0 0.45rem;
-  }
-
-  .fail-line strong {
-    color: var(--o-400);
-    font-weight: 800;
-    font-size: 0.6875rem;
-    letter-spacing: 0.11em;
-    text-transform: uppercase;
-  }
-
-  .example-box {
-    background: var(--surface-2);
-    border-left: 2px solid var(--line);
-    border-radius: 0 3px 3px 0;
-    padding: 0.375rem 0.625rem 0.45rem;
-    font-size: 0.875rem;
-    color: var(--text-2);
-  }
-
-  .example-box p { margin: 0; }
-  .example-box strong { color: var(--text); font-weight: 650; }
-  em { color: var(--o-300); font-style: italic; }
-
-  /* ---------- Synthèse ---------- */
-  .synthesis {
+  .rules-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--gap);
+    gap: 0.6em;
+    margin-top: auto;
+    padding-top: 0.6em;
   }
 
-  .synth-card {
-    background: linear-gradient(180deg, var(--o-glow), transparent 55%), var(--surface);
-    border: 1px solid var(--line);
-    border-top: 2px solid var(--o-500);
-    border-radius: var(--radius);
-    padding: 0.75rem 0.875rem 0.875rem;
-  }
-
-  /* La carte des réserves ne se donne pas le même relief que les deux constats */
-  .synth-card.reserves {
-    background: var(--surface);
-    border-top-style: dashed;
-    border-top-color: var(--o-600);
-  }
-
-  .synth-heading {
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.11em;
-    text-transform: uppercase;
-    color: var(--o-400);
-    margin: 0 0 0.375rem;
-  }
-
-  .synth-text {
-    font-size: 0.875rem;
+  .rules-row div {
+    border-top: 1px solid var(--line);
+    padding-top: 0.5em;
+    font-size: 0.62em;
     color: var(--text-2);
+  }
+
+  .rules-row b { display: block; color: var(--o-300); font-weight: 800; margin-bottom: 0.15em; }
+
+  /* ---------------- 3. L'échelle d'un coup d'œil ---------------- */
+  .scale {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5em;
+    margin: 0.2em 0 0.9em;
+    padding: 0;
+    list-style: none;
+  }
+
+  .scale li {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--o-500);
+    border-radius: 0.28em;
+    padding: 0.65em 0.6em 0.7em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+  }
+
+  .scale li[data-lvl="1"] { border-top-color: rgba(249,115,22,0.30); }
+  .scale li[data-lvl="2"] { border-top-color: rgba(249,115,22,0.44); }
+  .scale li[data-lvl="3"] { border-top-color: rgba(249,115,22,0.58); }
+  .scale li[data-lvl="4"] { border-top-color: rgba(249,115,22,0.74); }
+  .scale li[data-lvl="5"] { border-top-color: rgba(249,115,22,0.90); }
+  .scale li[data-lvl="6"] {
+    border-top-color: var(--o-300);
+    background: linear-gradient(180deg, var(--o-glow), transparent 65%), var(--surface);
+  }
+
+  .scale .n {
+    font-size: 1.35em;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--o-400);
+    letter-spacing: -0.02em;
+  }
+
+  .scale .nm { font-size: 0.72em; font-weight: 750; letter-spacing: 0.01em; }
+  .scale .q  { font-size: 0.62em; color: var(--text-3); line-height: 1.35; }
+
+  .bands {
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+    gap: 0.5em;
+    font-size: 0.6em;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    color: var(--text-3);
+  }
+
+  .bands span {
+    border-top: 2px solid var(--line-2);
+    padding-top: 0.5em;
+  }
+
+  .bands span:last-child { border-top-color: var(--o-500); color: var(--o-300); }
+
+  .scale-foot {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    border-top: 1px solid var(--line);
+    padding-top: 0.7em;
+    font-size: 0.7em;
+    color: var(--text-2);
+  }
+
+  .invariant {
+    font-size: 0.62em;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--o-300);
+    white-space: nowrap;
+  }
+
+  /* ---------------- 4 à 9. Un niveau par diapositive ---------------- */
+  /* La colonne de gauche est MESURÉE sur le plus long titre de palier —
+     « Organisationnel » fait 10,44 em à 1,45 em. Une colonne trop étroite ne
+     rétrécit pas le mot : elle le laisse chevaucher la question. */
+  .level-grid {
+    display: grid;
+    grid-template-columns: 11.5em 1fr;
+    gap: 1.6em;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .level-side { display: flex; flex-direction: column; min-width: 0; }
+
+  .badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.58em;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--o-300);
+    background: var(--o-glow);
+    border: 1px solid var(--o-dim);
+    border-radius: 0.25em;
+    padding: 0.28em 0.6em;
+    margin-bottom: 0.8em;
+  }
+
+  /* Garde : si une fonte de repli élargit le mot, il se coupe au lieu de sortir de sa colonne */
+  .level-side h2 { font-size: 1.45em; margin-bottom: 0.25em; overflow-wrap: break-word; }
+
+  .level-scope {
+    font-size: 0.66em;
+    color: var(--text-3);
+    margin: 0 0 0.7em;
+    line-height: 1.35;
+  }
+
+  /* Où l'on se trouve dans l'échelle — six segments, celui-ci allumé */
+  .meter { display: flex; gap: 0.22em; margin-top: auto; }
+
+  .meter i {
+    height: 0.42em;
+    flex: 1;
+    background: var(--line);
+    border-radius: 1px;
+  }
+
+  .meter i.done { background: var(--o-700); }
+  .meter i.here { background: var(--o-400); box-shadow: 0 0 0.5em rgba(249,115,22,0.55); }
+
+  .meter-cap {
+    font-size: 0.52em;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin: 0.5em 0 0;
+  }
+
+  .level-main { display: flex; flex-direction: column; min-height: 0; }
+
+  .question {
+    font-size: 1.12em;
+    font-weight: 700;
+    line-height: 1.22;
+    letter-spacing: -0.015em;
+    color: var(--o-200);
+    margin: 0 0 0.6em;
+    padding-left: 0.7em;
+    border-left: 3px solid var(--o-500);
+    max-width: 40ch;
+  }
+
+  .blocks { display: grid; gap: 0.5em; }
+
+  .block {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 0.3em;
+    padding: 0.5em 0.8em 0.55em;
+  }
+
+  .block p { margin: 0; font-size: 0.8em; color: var(--text-2); }
+
+  .block.risk {
+    background: linear-gradient(90deg, var(--o-glow), transparent 60%), var(--surface);
+    border-color: var(--o-dim);
+  }
+
+  .block.risk .label { color: var(--o-400); }
+  .block.risk p { color: var(--text); }
+
+  .block.usecase { background: var(--surface-2); }
+  .block.usecase .label { color: var(--text-3); }
+
+  /* ---------------- 10. La rupture ---------------- */
+  .split {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: stretch;
+    gap: 1em;
+    margin: 0.3em 0 1em;
+  }
+
+  .panel {
+    border: 1px solid var(--line);
+    border-radius: 0.35em;
+    padding: 0.7em 0.9em 0.8em;
+    background: var(--surface);
+  }
+
+  .panel h3 {
+    font-size: 0.62em;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0 0 0.6em;
+    color: var(--text-3);
+  }
+
+  .panel ul { margin: 0; padding-left: 1.1em; }
+  .panel li { font-size: 0.76em; color: var(--text-2); margin-bottom: 0.3em; }
+  .panel li:last-child { margin-bottom: 0; }
+
+  .panel.now { border-top: 2px solid var(--line-2); }
+  .panel.next {
+    border-top: 2px solid var(--o-500);
+    background: linear-gradient(180deg, var(--o-glow), transparent 60%), var(--surface);
+  }
+  .panel.next h3 { color: var(--o-300); }
+  .panel.next li { color: var(--text); }
+
+  .arrow {
+    align-self: center;
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--o-500);
+    letter-spacing: -0.02em;
+  }
+
+  .punch {
+    border-left: 3px solid var(--o-500);
+    padding: 0.15em 0 0.15em 0.9em;
+    font-size: 1em;
+    color: var(--o-200);
     margin: 0;
   }
 
-  .synth-text strong { color: var(--text); font-weight: 650; }
-
-  .synth-text + .synth-text { margin-top: 0.375rem; }
-
-  /* ---------- Adaptation aux écrans étroits ---------- */
-  @media (max-width: 1080px) {
-    .stack { grid-template-columns: repeat(3, 1fr); }
-    .synthesis { grid-template-columns: 1fr 1fr; }
+  .footnote {
+    margin: 0.9em 0 0;
+    font-size: 0.68em;
+    color: var(--text-3);
   }
 
-  @media (max-width: 760px) {
-    html { font-size: 16.5px; }
-    body { padding: 1.25rem 1rem 2rem; }
-    .masthead { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-    .masthead-meta { text-align: left; }
-    .stack { grid-template-columns: repeat(2, 1fr); }
-    .levels, .synthesis { grid-template-columns: 1fr; }
-    .lvl-scope { margin-left: 0; text-align: left; width: 100%; }
+  /* ---------------- Barre de contrôle ---------------- */
+  .hud {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    padding: 0.85rem 1rem 1.1rem;
+    font-size: 0.75rem;
   }
 
-  /* ---------- Impression : A4 paysage, une seule page ---------- */
-  @page {
-    size: A4 landscape;
-    margin: 8mm 10mm;
+  .hud button {
+    font: inherit;
+    color: var(--text-2);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
   }
+
+  .hud button:hover:not(:disabled) { color: var(--o-300); border-color: var(--o-dim); background: var(--surface-2); }
+  .hud button:disabled { opacity: 0.35; cursor: default; }
+  .hud button:focus-visible,
+  .dots button:focus-visible { outline: 2px solid var(--o-400); outline-offset: 2px; }
+
+  .dots { display: flex; align-items: center; gap: 0.35rem; margin: 0; padding: 0; list-style: none; }
+
+  .dots button {
+    width: 0.5rem;
+    height: 0.5rem;
+    padding: 0;
+    border-radius: 999px;
+    border: 1px solid var(--line-2);
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .dots button:hover { border-color: var(--o-400); }
+  .dots button[aria-current="true"] { background: var(--o-500); border-color: var(--o-500); width: 1.15rem; }
+
+  .counter {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.14em;
+    color: var(--text-3);
+    min-width: 4.5rem;
+    text-align: center;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .slide[aria-current="true"] { animation: none; }
+    .progress > span { transition: none; }
+  }
+
+  /* ---------------- Petits écrans : la scène cesse d'être un 16:9 ---------------- */
+  @media (max-width: 720px) {
+    .stage {
+      --w: calc(100vw - 1rem);
+      height: auto;
+      min-height: calc(100vh - 5rem);
+      font-size: calc(var(--w) / 26);
+    }
+    .slide { position: static; padding: 1.6em 1.4em; }
+    .slide[aria-current="true"] { min-height: 100%; }
+    .level-grid { grid-template-columns: 1fr; gap: 1em; }
+    .split, .rules-row, .bands { grid-template-columns: 1fr; }
+    .scale { grid-template-columns: repeat(2, 1fr); }
+    .arrow { transform: rotate(90deg); text-align: center; }
+    .watermark { display: none; }
+    .meter { margin-top: 1em; }
+  }
+
+  /* ---------------- Impression : une diapositive par page ---------------- */
+  @page { size: A4 landscape; margin: 8mm; }
 
   @media print {
-    /* Recompresse toute l'échelle rem. Valeur MESURÉE, non estimée : à 277 × 194 mm de
-       boîte utile, la feuille fait 703 px pour un budget de 733 px — les six cartes
-       passent à trois colonnes pour économiser une rangée entière. */
-    html { font-size: 6.8pt; }
-    body {
-      padding: 0;
+    body { background: #fff; }
+    .hud { display: none !important; }
+    .stage {
+      --w: 281mm;
+      width: 281mm;
+      height: auto;
+      font-size: calc(281mm / 46);
+      margin: 0;
+      border: 0;
+      border-radius: 0;
+      overflow: visible;
       background: var(--bg);
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
-    .sheet { max-width: none; }
-    .stack { grid-template-columns: repeat(6, 1fr); }
-    .levels { grid-template-columns: repeat(3, 1fr); }
-    .synthesis { grid-template-columns: repeat(3, 1fr); }
-    .masthead { flex-direction: row; align-items: flex-end; }
-    .masthead-meta { text-align: right; }
-    .ladder, .levels { margin-bottom: 0.6rem; }
-    .level-card, .synth-card, .ladder { break-inside: avoid; }
+    .progress { display: none; }
+    .slide {
+      display: flex !important;
+      position: static;
+      inset: auto;
+      height: 158mm;
+      animation: none;
+      break-after: page;
+      break-inside: avoid;
+    }
+    .slide:last-child { break-after: auto; }
   }
 </style>
 </head>
 <body>
-<div class="sheet">
 
-  <!-- En-tête -->
-  <header class="masthead">
-    <div>
-      <div class="kicker">Cadre de référence unifié</div>
-      <h1>Échelle de maturité de l'interopérabilité et orchestration agentiques d'entreprise</h1>
-      <p class="subtitle">De l'intégration déterministe au maillage agentique (<em>Agentic Mesh</em>) : six niveaux réglant chacun une question, et une seule — un invariant transversal, une clause de renversement.</p>
-    </div>
-    <div class="masthead-meta">
-      <strong>Architecture d'entreprise</strong>
-      Services financiers &amp; EDA
-    </div>
-  </header>
+<main class="stage" id="stage" aria-roledescription="diaporama" aria-label="Échelle de maturité — présentation exécutive">
+  <div class="progress" aria-hidden="true"><span id="bar"></span></div>
 
-  <!-- Bandeau de progression -->
-  <section class="ladder">
-    <h2 class="section-title">Progression de l'abstraction, de l'imputabilité et de l'autonomie d'exécution</h2>
-    <ol class="stack">
-      <li data-lvl="1">
-        <span class="stack-name"><span>1</span> Technique</span>
-        <span class="stack-sub">Kafka, MQ, gRPC, mTLS</span>
-      </li>
-      <li data-lvl="2">
-        <span class="stack-name"><span>2</span> Sémantique</span>
-        <span class="stack-sub">BIAN, ISO 20022, Avro</span>
-      </li>
-      <li data-lvl="3">
-        <span class="stack-name"><span>3</span> Organisationnel</span>
-        <span class="stack-sub">Processus &amp; Saga EDA</span>
-      </li>
-      <li data-lvl="4">
-        <span class="stack-name"><span>4</span> Juridique</span>
-        <span class="stack-sub">Loi 25 &amp; BSIF E-23</span>
-      </li>
-      <li data-lvl="5">
-        <span class="stack-name"><span>5</span> Politique</span>
-        <span class="stack-sub">Data Contracts &amp; arbitrage (SLA)</span>
-      </li>
-      <li data-lvl="6">
-        <span class="stack-name"><span>6</span> Agentique</span>
-        <span class="stack-sub">Intention &amp; coordination A2A/MCP</span>
-      </li>
+  <!-- 1 ------------------------------------------------------------ -->
+  <section class="slide cover" aria-label="Couverture">
+    <div class="kicker">Cadre de référence unifié · Architecture d'entreprise</div>
+    <h1>Échelle de maturité de l'interopérabilité et orchestration agentiques</h1>
+    <p class="cover-sub">De la tuyauterie qui livre un message à l'agent qui décide de la marche à suivre : à quel palier ça cède, qui en répond, et où l'échelle change de nature.</p>
+    <div class="cover-foot">
+      <div><strong>Comité de direction</strong> Services financiers &amp; assurance</div>
+      <div><strong>10 diapositives</strong> Lecture ≈ 9 minutes</div>
+      <div><strong>Navigation</strong> Flèches ← → ou clic</div>
+    </div>
+  </section>
+
+  <!-- 2 ------------------------------------------------------------ -->
+  <section class="slide" aria-label="Pourquoi une échelle">
+    <p class="eyebrow">Le problème que l'échelle règle</p>
+    <h2>Deux systèmes peuvent échouer de trois façons qui n'ont rien à voir</h2>
+    <hr class="rule">
+    <ul class="fails">
+      <li>Ils peuvent <strong>se parler sans se comprendre</strong> — le message passe, le sens non.</li>
+      <li>Ils peuvent <strong>se comprendre et agir à contretemps</strong> — chacun a raison, le processus déraille.</li>
+      <li>Ils peuvent <strong>être à l'heure et hors la loi</strong> — tout fonctionne, rien n'est opposable.</li>
+    </ul>
+    <div class="verdict">
+      <p>L'échelle ne note pas une performance et ne décerne pas de médaille. Elle sert à répondre à deux questions de gestion : <strong>à quel étage ça cède</strong>, et <strong>qui répond de la suite</strong>.</p>
+    </div>
+    <div class="rules-row">
+      <div><b>Une question par palier</b> Un palier règle une question, et une seule.</div>
+      <div><b>Aucun palier n'en garantit un autre</b> Chacun présuppose ceux du dessous ; un palier tenu n'entraîne jamais le suivant.</div>
+      <div><b>Trois choses montent ensemble</b> L'abstraction de ce qu'on échange, l'imputabilité de ce qu'on décide, l'autonomie de ce qui agit.</div>
+    </div>
+  </section>
+
+  <!-- 3 ------------------------------------------------------------ -->
+  <section class="slide" aria-label="L'échelle d'un coup d'œil">
+    <p class="eyebrow">L'échelle d'un coup d'œil</p>
+    <h2>Six paliers, six questions</h2>
+    <hr class="rule">
+    <ol class="scale">
+      <li data-lvl="1"><span class="n">1</span><span class="nm">Technique</span><span class="q">Le message arrive-t-il intact, et au bon destinataire ?</span></li>
+      <li data-lvl="2"><span class="n">2</span><span class="nm">Sémantique</span><span class="q">Le même mot désigne-t-il la même chose des deux côtés ?</span></li>
+      <li data-lvl="3"><span class="n">3</span><span class="nm">Organisationnel</span><span class="q">Qui fait quoi, dans quel ordre, jusqu'où ?</span></li>
+      <li data-lvl="4"><span class="n">4</span><span class="nm">Juridique</span><span class="q">Qui répond de l'acte, et devant quel texte ?</span></li>
+      <li data-lvl="5"><span class="n">5</span><span class="nm">Politique</span><span class="q">Qui décide de la règle, qui l'arbitre, qui paie ?</span></li>
+      <li data-lvl="6"><span class="n">6</span><span class="nm">Agentique</span><span class="q">Que reste-t-il du contrat quand l'exécutant décide ?</span></li>
     </ol>
-    <p class="rule-bar">Chaque niveau présuppose ceux du dessous et <strong>n'en garantit aucun</strong> : <em>un niveau tenu n'entraîne jamais le suivant</em>. Trois choses croissent ensemble de 1 vers 6 — l'abstraction de ce qui est échangé, l'imputabilité de ce qui est décidé, l'autonomie d'exécution de ce qui agit.</p>
-    <div class="invariant-bar">Invariant d'architecture transversal : <em>Découplage ── Contrat ── Évolution</em>
-      <span class="bar-note">— trois termes ici, <em>quatre dans la source</em> : l'<em>exploitation</em> y est déclarée non éprouvée, faute d'agent à exploiter</span>
+    <div class="bands" aria-hidden="true">
+      <span>1 à 3 · faire circuler et faire fonctionner</span>
+      <span>4 et 5 · répondre et décider</span>
+      <span>6 · laisser décider</span>
+    </div>
+    <div class="scale-foot">
+      <p style="margin:0">On lit l'échelle <strong>vers le bas</strong> quand quelque chose casse : la panne est toujours au palier qu'on croyait acquis.</p>
+      <span class="invariant">Découplage ── Contrat ── Évolution</span>
     </div>
   </section>
 
-  <!-- Les six niveaux -->
-  <section class="levels">
-
-    <article class="level-card" data-lvl="1">
-      <div class="card-head">
-        <span class="lvl-num">Niveau 1</span>
-        <span class="lvl-title">Technique</span>
-        <span class="lvl-scope">Transport &amp; connectivité physique</span>
+  <!-- 4 ------------------------------------------------------------ -->
+  <section class="slide" aria-label="Niveau 1 — Technique">
+    <div class="watermark" aria-hidden="true">1</div>
+    <div class="level-grid">
+      <div class="level-side">
+        <span class="badge">Palier 1</span>
+        <h2>Technique</h2>
+        <p class="level-scope">Transport et connectivité — la tuyauterie</p>
+        <div class="meter" aria-hidden="true"><i class="here"></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="meter-cap">Palier 1 sur 6</p>
       </div>
-      <p class="lvl-question">Le message arrive-t-il intact, à qui doit le recevoir ?</p>
-      <span class="field-label">Descriptif</span>
-      <p class="desc-text">Liaison matérielle, logicielle et protocolaire acheminant des flux binaires de façon sécurisée et intègre, <strong>sans interprétation métier</strong> du contenu. La tuyauterie sait livrer une enveloppe ; elle ne sait pas la lire.</p>
-      <p class="fail-line"><strong>Sans ce niveau</strong> rien ne circule ; avec lui seul, tout circule et rien ne se comprend.</p>
-      <div class="example-box">
-        <span class="field-label">Exemple</span>
-        <p>Passerelle de protocoles asynchrone assurant la translation entre files transactionnelles (IBM MQ) et dorsale événementielle distribuée (Apache Kafka / gRPC avec mTLS).</p>
+      <div class="level-main">
+        <p class="question">Le message arrive-t-il intact, et au bon destinataire ?</p>
+        <div class="blocks">
+          <div class="block">
+            <span class="label">En clair</span>
+            <p>La tuyauterie sait livrer une enveloppe ; elle ne sait pas la lire. Elle garantit l'acheminement, l'intégrité et le chiffrement — <strong>rien sur le contenu</strong>.</p>
+          </div>
+          <div class="block risk">
+            <span class="label">Ce qui casse sans lui</span>
+            <p>Rien ne circule du tout. Et quand ce palier est le <em>seul</em> qui tienne : tout circule, et rien ne se comprend — l'illusion la plus fréquente en intégration.</p>
+          </div>
+          <div class="block usecase">
+            <span class="label">Chez nous, concrètement</span>
+            <p>Passerelle entre les files transactionnelles (IBM MQ) et la dorsale d'événements (Apache Kafka, gRPC sous mTLS).</p>
+          </div>
+        </div>
       </div>
-    </article>
-
-    <article class="level-card" data-lvl="4">
-      <div class="card-head">
-        <span class="lvl-num">Niveau 4</span>
-        <span class="lvl-title">Juridique</span>
-        <span class="lvl-scope">Souveraineté, imputabilité &amp; conformité</span>
-      </div>
-      <p class="lvl-question">Qui répond de l'acte, et devant quel texte ?</p>
-      <span class="field-label">Descriptif</span>
-      <p class="desc-text">Valeur probante des transactions, non-répudiation, résidence territoriale des données, conformité aux cadres applicables. Un échange peut être correct, compris, bien ordonné — et rester interdit, ou inopposable faute de preuve.</p>
-      <p class="fail-line"><strong>Sans ce niveau</strong> la conformité est un pari qu'on ne découvre perdu qu'au contrôle.</p>
-      <div class="example-box">
-        <span class="field-label">Exemple</span>
-        <p>Encadrement des transferts de renseignements personnels et journalisation de la preuve de consentement selon la Loi 25 (Québec) et les normes BSIF E-23 / RGPD.</p>
-      </div>
-    </article>
-
-    <article class="level-card" data-lvl="2">
-      <div class="card-head">
-        <span class="lvl-num">Niveau 2</span>
-        <span class="lvl-title">Sémantique</span>
-        <span class="lvl-scope">Modèles canoniques &amp; registres de schémas</span>
-      </div>
-      <p class="lvl-question">Le même mot désigne-t-il la même chose des deux côtés ?</p>
-      <span class="field-label">Descriptif</span>
-      <p class="desc-text">Préservation du sens univoque des structures échangées, par ontologies de domaine, dictionnaires et schémas partagés. « Client », « solde » et « sinistre » doivent nommer le même objet chez l'émetteur et chez le destinataire — ce qu'aucun protocole de transport ne procure.</p>
-      <p class="fail-line"><strong>Sans ce niveau</strong> l'échange réussit techniquement et se trompe métier, en silence.</p>
-      <div class="example-box">
-        <span class="field-label">Exemple</span>
-        <p>Harmonisation des référentiels bancaires et d'assurance via un modèle canonique partagé (BIAN / ACORD / ISO 20022) validé par registre de schémas (Avro / Protobuf).</p>
-      </div>
-    </article>
-
-    <article class="level-card" data-lvl="5">
-      <div class="card-head">
-        <span class="lvl-num">Niveau 5</span>
-        <span class="lvl-title">Politique</span>
-        <span class="lvl-scope">Plan de contrôle, Data Contracts &amp; arbitrage</span>
-      </div>
-      <p class="lvl-question">Qui décide de la règle, qui l'arbitre, et qui paie quand elle cède ?</p>
-      <span class="field-label">Descriptif</span>
-      <p class="desc-text">Verticalisation du plan de contrôle institutionnel (<em>Governance Plane</em>), formalisation des contrats de données, arbitrage des SLA et <strong>attribution de l'imputabilité</strong>. Le niveau 4 dit ce que la loi exige ; le niveau 5 dit qui, dans la maison, tranche, signe et assume.</p>
-      <p class="fail-line"><strong>Sans ce niveau</strong> chaque équipe renégocie ses interfaces au cas par cas, et l'imputabilité se dilue.</p>
-      <div class="example-box">
-        <span class="field-label">Exemple</span>
-        <p>Comitologie inter-domaines régissant le cycle de vie des interfaces, les pénalités d'indisponibilité et les points d'application de politiques (PEP/PDP).</p>
-      </div>
-    </article>
-
-    <article class="level-card" data-lvl="3">
-      <div class="card-head">
-        <span class="lvl-num">Niveau 3</span>
-        <span class="lvl-title">Organisationnel</span>
-        <span class="lvl-scope">Processus métier &amp; chorégraphie événementielle</span>
-      </div>
-      <p class="lvl-question">Qui fait quoi, dans quel ordre, et jusqu'où va sa responsabilité ?</p>
-      <span class="field-label">Descriptif</span>
-      <p class="desc-text">Alignement des processus d'affaires, des frontières de responsabilité et de l'ordonnancement des flux de valeur entre unités et partenaires. Deux systèmes qui se comprennent peuvent encore agir à contretemps, ou faire deux fois le même geste.</p>
-      <p class="fail-line"><strong>Sans ce niveau</strong> l'intégration marche et le processus ne tient pas.</p>
-      <div class="example-box">
-        <span class="field-label">Exemple</span>
-        <p>Chorégraphie réactive (patron Saga / <em>Event-Driven Architecture</em>) orchestrant le règlement d'un sinistre entre indemnisation, comptabilité et experts externes.</p>
-      </div>
-    </article>
-
-    <article class="level-card" data-lvl="6">
-      <div class="card-head">
-        <span class="lvl-num">Niveau 6</span>
-        <span class="lvl-title">Agentique</span>
-        <span class="lvl-scope">Intention déclarative &amp; coordination A2A / MCP</span>
-      </div>
-      <p class="lvl-question">Que reste-t-il du contrat quand l'exécutant décide lui-même de la marche à suivre ?</p>
-      <span class="field-label">Descriptif</span>
-      <p class="desc-text">Coordination <strong>adaptative et probabiliste</strong> entre agents autonomes qui découvrent des outils (<em>Tool Calling</em>) et <strong>négocient des protocoles</strong> pour exécuter une intention. On ne prescrit plus une séquence, on énonce un objectif : ce qui se passe entre l'énoncé et le résultat n'est plus écrit d'avance, et ne s'observe qu'à l'exécution.</p>
-      <p class="fail-line"><strong>Sans les cinq niveaux du dessous</strong> ce niveau n'a rien sur quoi s'appuyer — <em>il ne les remplace pas, il en dépend</em>.</p>
-      <div class="example-box">
-        <span class="field-label">Exemple</span>
-        <p>Maillage d'agents (<em>Agentic Mesh</em>) où un agent d'arbitrage négocie en temps réel avec des agents de souscription via <em>Agent Cards</em> signées et <em>AI Gateway</em>.</p>
-      </div>
-    </article>
-
-  </section>
-
-  <!-- Synthèse -->
-  <section class="synthesis">
-    <div class="synth-card">
-      <h2 class="synth-heading">Rupture de paradigme — déterministe vs intentionnel</h2>
-      <p class="synth-text">Les niveaux 1 à 5 garantissent une intégration <strong>déterministe</strong> régie par des contrats statiques et vérifiables. Le niveau 6 introduit une gouvernance <strong>probabiliste et adaptative</strong>, où la contractualisation devient dynamique via négociation contextuelle d'objectifs (A2A / MCP).</p>
-      <p class="synth-text">C'est le <strong>seul endroit où l'échelle change de nature</strong> au lieu de changer de degré, et le déplacement tient en une ligne : <em>un contrat de niveau 5 se vérifie avant l'exécution ; une intention de niveau 6 ne s'observe que pendant.</em></p>
-    </div>
-    <div class="synth-card">
-      <h2 class="synth-heading">Compromis d'architecture &amp; clause de renversement</h2>
-      <p class="synth-text"><strong>Compromis :</strong> surcoût d'observabilité (<em>AgentOps</em>) et impératif de <em>runtime verification</em> pour confiner le non-déterminisme.</p>
-      <p class="synth-text"><strong>Renversement :</strong> tout système sous contrainte de compensation financière temps réel (rails Lynx / RTR) doit interdire l'autonomie agentique directe et maintenir une contractualisation déterministe de niveau 5.</p>
-      <p class="synth-text"><em>L'échelle porte donc sa propre exception, et le sixième niveau n'est pas sa destination.</em></p>
-    </div>
-    <div class="synth-card reserves">
-      <h2 class="synth-heading">Provenance de l'échelle, et ce qui lui manque</h2>
-      <p class="synth-text"><strong>Niveaux 1 à 4 :</strong> les quatre couches du <em>New European Interoperability Framework</em> telles que le Vol. I les expose (§1.2.1.1) — mais <strong>numérotées ici en sens contraire</strong> : la numérotation appartient à cette page, non à sa source.</p>
-      <p class="synth-text"><strong>Niveaux 5 et 6 :</strong> des ajouts. Aucun livrable ne porte, sous ces noms, un palier « politique » ni un palier « agentique » dans une échelle numérotée.</p>
-      <p class="synth-text"><strong>Le palier manquant :</strong> le <strong>syntaxique</strong> de la pile canonique — <em>technique, syntaxique, sémantique, organisationnel</em>. C'est le niveau où MCP et A2A opèrent sans fournir d'accord sémantique, qu'ils <em>présupposent</em> : l'échelle fait passer ces protocoles du niveau 1 au niveau 6 sans la case où ce constat se pose. <em>Réserve nommée, non levée.</em></p>
     </div>
   </section>
 
-</div>
+  <!-- 5 ------------------------------------------------------------ -->
+  <section class="slide" aria-label="Niveau 2 — Sémantique">
+    <div class="watermark" aria-hidden="true">2</div>
+    <div class="level-grid">
+      <div class="level-side">
+        <span class="badge">Palier 2</span>
+        <h2>Sémantique</h2>
+        <p class="level-scope">Le sens des mots — modèles canoniques</p>
+        <div class="meter" aria-hidden="true"><i class="done"></i><i class="here"></i><i></i><i></i><i></i><i></i></div>
+        <p class="meter-cap">Palier 2 sur 6</p>
+      </div>
+      <div class="level-main">
+        <p class="question">Le même mot désigne-t-il la même chose des deux côtés ?</p>
+        <div class="blocks">
+          <div class="block">
+            <span class="label">En clair</span>
+            <p>« Client », « solde », « sinistre » doivent nommer le même objet chez l'émetteur et chez le destinataire. <strong>Aucun protocole de transport ne le procure</strong> : il faut un vocabulaire commun, écrit et validé.</p>
+          </div>
+          <div class="block risk">
+            <span class="label">Ce qui casse sans lui</span>
+            <p>L'échange réussit techniquement et <strong>se trompe métier, en silence</strong>. C'est le défaut le plus coûteux du lot : il ne lève aucune alarme et se découvre en aval, dans les chiffres.</p>
+          </div>
+          <div class="block usecase">
+            <span class="label">Chez nous, concrètement</span>
+            <p>Modèle canonique partagé banque-assurance (BIAN, ACORD, ISO 20022), validé par registre de schémas (Avro, Protobuf).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 ------------------------------------------------------------ -->
+  <section class="slide" aria-label="Niveau 3 — Organisationnel">
+    <div class="watermark" aria-hidden="true">3</div>
+    <div class="level-grid">
+      <div class="level-side">
+        <span class="badge">Palier 3</span>
+        <h2>Organisationnel</h2>
+        <p class="level-scope">Processus et frontières de responsabilité</p>
+        <div class="meter" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="here"></i><i></i><i></i><i></i></div>
+        <p class="meter-cap">Palier 3 sur 6</p>
+      </div>
+      <div class="level-main">
+        <p class="question">Qui fait quoi, dans quel ordre, et jusqu'où va sa responsabilité ?</p>
+        <div class="blocks">
+          <div class="block">
+            <span class="label">En clair</span>
+            <p>Deux systèmes qui se comprennent parfaitement peuvent encore <strong>agir à contretemps</strong>, ou faire deux fois le même geste. Il faut ordonner les étapes et dire où s'arrête chaque unité.</p>
+          </div>
+          <div class="block risk">
+            <span class="label">Ce qui casse sans lui</span>
+            <p>L'intégration marche et <strong>le processus ne tient pas</strong> : double paiement, dossier orphelin, étape reprise deux fois. Le symptôme est métier, la cause est d'ordonnancement.</p>
+          </div>
+          <div class="block usecase">
+            <span class="label">Chez nous, concrètement</span>
+            <p>Chorégraphie événementielle (patron Saga) sur le règlement d'un sinistre : indemnisation, comptabilité, experts externes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 ------------------------------------------------------------ -->
+  <section class="slide" aria-label="Niveau 4 — Juridique">
+    <div class="watermark" aria-hidden="true">4</div>
+    <div class="level-grid">
+      <div class="level-side">
+        <span class="badge">Palier 4</span>
+        <h2>Juridique</h2>
+        <p class="level-scope">Preuve, souveraineté et conformité</p>
+        <div class="meter" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i class="here"></i><i></i><i></i></div>
+        <p class="meter-cap">Palier 4 sur 6</p>
+      </div>
+      <div class="level-main">
+        <p class="question">Qui répond de l'acte, et devant quel texte ?</p>
+        <div class="blocks">
+          <div class="block">
+            <span class="label">En clair</span>
+            <p>Un échange peut être correct, compris, bien ordonné — et rester <strong>interdit</strong>, ou <strong>inopposable faute de preuve</strong>. Valeur probante, non-répudiation, résidence des données.</p>
+          </div>
+          <div class="block risk">
+            <span class="label">Ce qui casse sans lui</span>
+            <p>La conformité devient <strong>un pari qu'on ne découvre perdu qu'au contrôle</strong> — c'est-à-dire au pire moment, et avec la charge de la preuve du mauvais côté.</p>
+          </div>
+          <div class="block usecase">
+            <span class="label">Chez nous, concrètement</span>
+            <p>Encadrement des transferts de renseignements personnels et journalisation du consentement : Loi 25 (Québec), ligne directrice BSIF E-23, RGPD.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 ------------------------------------------------------------ -->
+  <section class="slide" aria-label="Niveau 5 — Politique">
+    <div class="watermark" aria-hidden="true">5</div>
+    <div class="level-grid">
+      <div class="level-side">
+        <span class="badge">Palier 5</span>
+        <h2>Politique</h2>
+        <p class="level-scope">Gouvernance, contrats de données, arbitrage</p>
+        <div class="meter" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="here"></i><i></i></div>
+        <p class="meter-cap">Palier 5 sur 6</p>
+      </div>
+      <div class="level-main">
+        <p class="question">Qui décide de la règle, qui l'arbitre, et qui paie quand elle cède ?</p>
+        <div class="blocks">
+          <div class="block">
+            <span class="label">En clair</span>
+            <p>Le palier 4 dit ce que <em>la loi</em> exige. Le palier 5 dit <strong>qui, dans la maison, tranche, signe et assume</strong> — et par quel point d'application la décision s'impose aux systèmes.</p>
+          </div>
+          <div class="block risk">
+            <span class="label">Ce qui casse sans lui</span>
+            <p>Chaque équipe renégocie ses interfaces au cas par cas et <strong>l'imputabilité se dilue</strong> : quand l'incident arrive, personne n'est en défaut et personne n'est responsable.</p>
+          </div>
+          <div class="block usecase">
+            <span class="label">Chez nous, concrètement</span>
+            <p>Comitologie inter-domaines : cycle de vie des interfaces, contrats de données, pénalités d'indisponibilité, points de décision et d'application des politiques (PDP/PEP).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 ------------------------------------------------------------ -->
+  <section class="slide" aria-label="Niveau 6 — Agentique">
+    <div class="watermark" aria-hidden="true">6</div>
+    <div class="level-grid">
+      <div class="level-side">
+        <span class="badge">Palier 6</span>
+        <h2>Agentique</h2>
+        <p class="level-scope">Intention déclarée, coordination entre agents</p>
+        <div class="meter" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="here"></i></div>
+        <p class="meter-cap">Palier 6 sur 6 — changement de nature</p>
+      </div>
+      <div class="level-main">
+        <p class="question">Que reste-t-il du contrat quand l'exécutant décide lui-même de la marche à suivre ?</p>
+        <div class="blocks">
+          <div class="block">
+            <span class="label">En clair</span>
+            <p>On ne prescrit plus une séquence, <strong>on énonce un objectif</strong>. Ce qui se passe entre l'énoncé et le résultat n'est plus écrit d'avance : les agents découvrent les outils disponibles et négocient entre eux.</p>
+          </div>
+          <div class="block risk">
+            <span class="label">Ce qui casse sans les cinq du dessous</span>
+            <p>Ce palier n'a <strong>rien sur quoi s'appuyer</strong>. Il ne remplace pas les cinq autres : il en dépend, et il hérite de chacune de leurs faiblesses en les amplifiant.</p>
+          </div>
+          <div class="block usecase">
+            <span class="label">Chez nous, concrètement</span>
+            <p>Maillage d'agents où un agent d'arbitrage négocie en temps réel avec des agents de souscription — cartes d'agent signées, passerelle d'IA en coupure.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 ----------------------------------------------------------- -->
+  <section class="slide" aria-label="La rupture entre le palier 5 et le palier 6">
+    <p class="eyebrow">Le seul vrai saut de l'échelle</p>
+    <h2>Le palier 6 ne change pas de degré, il change de nature</h2>
+    <hr class="rule">
+    <div class="split">
+      <div class="panel now">
+        <h3>Paliers 1 à 5 — déterministe</h3>
+        <ul>
+          <li>Le contrat est <strong>écrit d'avance</strong> et statique.</li>
+          <li>Il se <strong>vérifie avant</strong> la mise en service.</li>
+          <li>Un écart est un défaut : il se reproduit, donc il se corrige.</li>
+          <li>La preuve est un document.</li>
+        </ul>
+      </div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="panel next">
+        <h3>Palier 6 — probabiliste</h3>
+        <ul>
+          <li>L'objectif est énoncé, <strong>le chemin est négocié</strong>.</li>
+          <li>Il ne s'observe que <strong>pendant</strong> l'exécution.</li>
+          <li>Deux exécutions identiques peuvent différer sans qu'aucune soit fautive.</li>
+          <li>La preuve est une trace.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="punch">Un contrat de palier 5 se vérifie avant l'exécution ; une intention de palier 6 ne s'observe que pendant.</p>
+    <p class="footnote">Conséquence de gestion : les contrôles d'avant-mise-en-service ne suffisent plus, et l'assurance qualité se déplace de la conception vers l'exploitation.</p>
+  </section>
+
+</main>
+
+<nav class="hud" aria-label="Navigation du diaporama">
+  <button id="prev" type="button" aria-label="Diapositive précédente">‹</button>
+  <ol class="dots" id="dots"></ol>
+  <span class="counter" id="counter" aria-live="polite"></span>
+  <button id="next" type="button" aria-label="Diapositive suivante">›</button>
+</nav>
+
+<script>
+(() => {
+  const slides  = [...document.querySelectorAll('.slide')];
+  const dots    = document.getElementById('dots');
+  const counter = document.getElementById('counter');
+  const bar     = document.getElementById('bar');
+  const prev    = document.getElementById('prev');
+  const next    = document.getElementById('next');
+  let i = 0;
+
+  slides.forEach((s, k) => {
+    const li = document.createElement('li');
+    const b  = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Diapositive ' + (k + 1) + ' — ' + (s.getAttribute('aria-label') || ''));
+    b.addEventListener('click', () => go(k));
+    li.appendChild(b);
+    dots.appendChild(li);
+  });
+  const dotBtns = [...dots.querySelectorAll('button')];
+
+  function go(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => {
+      s.setAttribute('aria-current', k === i);
+      s.setAttribute('aria-hidden', k !== i);
+    });
+    dotBtns.forEach((b, k) => b.setAttribute('aria-current', k === i));
+    counter.textContent = (i + 1) + ' / ' + slides.length;
+    bar.style.width = ((i + 1) / slides.length * 100) + '%';
+    prev.disabled = i === 0;
+    next.disabled = i === slides.length - 1;
+    if (location.hash !== '#' + (i + 1)) history.replaceState(null, '', '#' + (i + 1));
+  }
+
+  prev.addEventListener('click', () => go(i - 1));
+  next.addEventListener('click', () => go(i + 1));
+
+  document.addEventListener('keydown', e => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ' || k === 'Enter') { go(i + 1); e.preventDefault(); }
+    else if (k === 'ArrowLeft' || k === 'PageUp')                            { go(i - 1); e.preventDefault(); }
+    else if (k === 'Home')                                                   { go(0); e.preventDefault(); }
+    else if (k === 'End')                                                    { go(slides.length - 1); e.preventDefault(); }
+  });
+
+  // Clic dans la moitié droite / gauche de la scène — pratique au projecteur
+  document.getElementById('stage').addEventListener('click', e => {
+    const r = e.currentTarget.getBoundingClientRect();
+    go(e.clientX - r.left > r.width / 2 ? i + 1 : i - 1);
+  });
+
+  window.addEventListener('hashchange', () => {
+    const n = parseInt(location.hash.slice(1), 10);
+    if (n >= 1 && n <= slides.length) go(n - 1);
+  });
+
+  const start = parseInt(location.hash.slice(1), 10);
+  go(start >= 1 && start <= slides.length ? start - 1 : 0);
+})();
+</script>
 </body>
 </html>
