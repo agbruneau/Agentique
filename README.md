@@ -20,10 +20,14 @@ ne porte plus aucun livrable*, et **les sept sont rangés sous des dossiers num�
 le jour même** (commit `71d5388`, 15 août 2026, 10 h 03) — *renommage qu'aucun `README.md` du dépôt
 n'a enregistré pendant deux jours, et qui a cassé en silence les **trente-deux renvois** que ce
 fichier, la synthèse du corpus et le README du Vol. I lui adressaient.* ⚠ **Un cinquième dossier
-numéroté est né le 16 août 2026** — [`5 - Recension/`](5%20-%20Recension/), qui porte le *Rapport de
+numéroté est né le 16 août 2026** — [`5 - Recension/`](5%20-%20Recension/), qui porte l'*État de
 l'art* et la chaîne qui le compose. ☑ *Il ne change pas le compte des livrables : le rapport est
 **dérivé** et n'en est pas un huitième.* **Sept livrables sous cinq dossiers numérotés, et la racine
 n'en porte aucun.**
+⚠ **Les trois fichiers de ce cinquième dossier ont été renommés le 17 août 2026** (commit `292a0f9`) :
+`Rapport de l'art.md / .pdf` en `État de Art.md / .pdf`, `OnePager.html` en `NiveauMaturité.html` —
+*inchangés au bit près*. ☑ **Le cachet de la page de titre a suivi** — **RECENSIO · ÉTAT DE L'ART** —
+et le PDF est recomposé, **127 pages** inchangées.
 
 > # ⚠ DÉPÔT CLOS ET FINAL — 8 août 2026
 >
@@ -258,8 +262,8 @@ n'en porte aucun.**
 > *et aucun `README.md` ne l'a enregistré : trente-deux renvois sont morts en silence pendant deux
 > jours* ;
 > *(d)* **un cinquième dossier numéroté naît le 16 août** — [`5 - Recension/`](5%20-%20Recension/),
-> qui porte le **rapport de l'art**, sa chaîne de rendu, ses figures et
-> [`OnePager.html`](5%20-%20Recension/OnePager.html), les trois venus de la racine. ☑ *La racine cesse
+> qui porte l'**état de l'art**, sa chaîne de rendu, ses figures et
+> [`NiveauMaturité.html`](5%20-%20Recension/NiveauMaturit%C3%A9.html), les trois venus de la racine. ☑ *La racine cesse
 > de porter quoi que ce soit d'autre que ce fichier, `.gitignore` et [`figures/`](figures/).*
 > ⚠ **Le rapport n'est pas un huitième livrable** : il est **dérivé**, sa seule matière est ce que les
 > sept portent déjà, et **chaque énoncé y hérite du régime de preuve de sa source, jamais d'un
@@ -398,8 +402,8 @@ le 15 août 2026 et vit sous
 [`4 - Veille/Python/`](4%20-%20Veille/Python/).
 
 ☑ **Trois pièces que ce paragraphe donnait pour posées à la racine l'ont quittée le 16 août 2026,
-et le paragraphe ne le disait pas** : [`OnePager.html`](5%20-%20Recension/OnePager.html), le
-**rapport de l'art** et sa **chaîne de rendu** vivent tous trois sous
+et le paragraphe ne le disait pas** : [`NiveauMaturité.html`](5%20-%20Recension/NiveauMaturit%C3%A9.html),
+l'**état de l'art** et sa **chaîne de rendu** vivent tous trois sous
 [`5 - Recension/`](5%20-%20Recension/), **cinquième dossier numéroté**. *Le rapport a ainsi rejoint
 la règle qu'il enfreignait — celle-là même que ce fichier énonce deux lignes plus haut : aucun
 document du dépôt ne vit à la racine.* ⚠ **Ce fichier a décrit l'état contraire pendant une
@@ -407,8 +411,9 @@ journée**, `Rapport de l'art.html` et `build/rendre-rapport.py` compris — *de
 désignent aucun fichier de l'arbre courant*, voir plus bas.
 
 ⚠ **La page de présentation n'est pas un huitième livrable, et il faut dire ce qu'elle est.**
-[`OnePager.html`](5%20-%20Recension/OnePager.html) — ⚠ *à la racine du dépôt du 15 au 16 août 2026,
-sous [`5 - Recension/`](5%20-%20Recension/) depuis* — est un **fichier unique et autonome** — aucune source markdown,
+[`NiveauMaturité.html`](5%20-%20Recension/NiveauMaturit%C3%A9.html) — ⚠ *à la racine du dépôt du
+15 au 16 août 2026, sous [`5 - Recension/`](5%20-%20Recension/) depuis, et nommée
+`OnePager.html` jusqu'au 17 août 2026* — est un **fichier unique et autonome** — aucune source markdown,
 aucune chaîne de rendu, aucune dépendance externe, aucun contrôle — qui expose sur **une seule page**
 une **échelle de maturité à six niveaux numérotés 1 à 6** : technique, sémantique, organisationnel,
 juridique, politique, agentique. *Elle se lit au navigateur et s'imprime en A4 paysage ;
@@ -421,7 +426,7 @@ reprend mot pour mot l'**invariant du Vol. I** — *découplage ── contrat �
 niveaux 5 et 6 sont des ajouts** : aucun livrable du dépôt ne porte, sous ces noms, un palier
 « politique » ni un palier « agentique » dans une échelle numérotée. *Elle ne cite aucun livrable et
 aucun livrable ne la cite* — **le second cas de ce dépôt après le traité, et cette fois sans
-appareil du tout.** ⚠ **Et le rapport de l'art, qui la citait à son entrée, ne la cite plus** : la
+appareil du tout.** ⚠ **Et l'état de l'art, qui la citait à son entrée, ne la cite plus** : la
 passe du 17 août 2026 a versé l'échelle à six paliers **dans le corps du rapport**, qui l'assume
 désormais comme son propre appareil de lecture. *La page est donc rangée avec un document qui a
 repris sa matière et cessé de la nommer.*
@@ -435,8 +440,8 @@ dans le dépôt ne les distingue au lecteur qui les rencontrerait séparément.*
 ne s'applique pas ici** : elle est une parade de rédaction du Vol. III, la page n'est pas une pièce
 de volume, et **aucun contrôle ne la rejoue**. *Constat porté, correction non faite.*
 
-⚠ **Le rapport de l'art n'est pas un huitième livrable non plus, et son régime se déclare.**
-[`5 - Recension/Rapport de l'art.md`](5%20-%20Recension/Rapport%20de%20l%27art.md), entré le
+⚠ **L'état de l'art n'est pas un huitième livrable non plus, et son régime se déclare.**
+[`5 - Recension/État de Art.md`](5%20-%20Recension/%C3%89tat%20de%20Art.md), entré le
 **16 août 2026** *(⚠ à la racine du dépôt le jour même, sous
 [`5 - Recension/`](5%20-%20Recension/) depuis)*, est un **rapport
 dérivé** : sa seule matière est ce que les sept livrables portent déjà. ☑ **Il n'ouvre aucune source
@@ -458,11 +463,11 @@ un sommaire exécutif —, **90 sections**, 3 tableaux, **2 figures**, et **127 
 (`pypdf`). ⚠ **Une passe de refonte du 17 août 2026** a changé le titre, refondu l'ouverture, versé
 le **ch. 8** et remplacé l'épilogue par un sommaire exécutif — *aucun fait neuf n'y est entré.*
 ⚠ **Son titre est l'homonyme exact de celui du Vol. IV**, par instruction d'auteur : seul le cachet
-de la page de titre les distingue — **RECENSIO · RAPPORT DE L'ART** ici, **COMPENDIUM · VOLUME IV**
+de la page de titre les distingue — **RECENSIO · ÉTAT DE L'ART** ici, **COMPENDIUM · VOLUME IV**
 là. *Partager un titre n'est pas partager un régime de preuve.*
 
 ☑ **Son rendu se régénère, et c'est le point où il se sépare de la page de présentation.**
-[`Rapport de l'art.pdf`](5%20-%20Recension/Rapport%20de%20l%27art.pdf) est composé depuis le `.md` —
+[`État de Art.pdf`](5%20-%20Recension/%C3%89tat%20de%20Art.pdf) est composé depuis le `.md` —
 **seule source qui fait foi** — par
 [`5 - Recension/build/rendre-recension.py`](5%20-%20Recension/build/rendre-recension.py), d'une
 commande, **et elle se lance de n'importe quel répertoire** : la racine du dossier est déduite du
@@ -497,9 +502,9 @@ seul intitulé ne désigne plus rien : la **veille** et le **Vol. IV** sont **ho
 depuis le 9 août 2026, et la **revue de littérature** en reprend le radical
 (*« Interopérabilité et Orchestration Agentiques : revue de la littérature académique »*, aligné le
 même jour). ⚠ **Une quatrième pièce a pris le même radical le 15 août 2026, et ce n'est pas un
-livrable** : [`OnePager.html`](5%20-%20Recension/OnePager.html), retitrée *« Échelle de maturité de l'interopérabilité
+livrable** : [`NiveauMaturité.html`](5%20-%20Recension/NiveauMaturit%C3%A9.html), retitrée *« Échelle de maturité de l'interopérabilité
 et orchestration agentiques d'entreprise »* le jour même. ⚠⚠ **Une cinquième l'a pris à la lettre le
-16 août 2026, et c'est le cas le plus dur** : le **rapport de l'art** de
+16 août 2026, et c'est le cas le plus dur** : l'**état de l'art** de
 [`5 - Recension/`](5%20-%20Recension/) porte, **par instruction d'auteur**, le titre du Vol. IV
 *à l'identique* — **trois pièces du dépôt sont donc homonymes exactes**, la veille, le Vol. IV et le
 rapport, et seuls leur genre et le cachet de leur page de titre les séparent. *Le radical cesse donc de désigner un
@@ -613,7 +618,7 @@ notices. **144 p. au rendu du 17 août 2026.***
 intégrale ; à la racine du dépôt jusqu'au 15 août 2026*),
 sous le titre *« Interopérabilité et Orchestration Agentiques : revue de la littérature
 académique »* — ⚠ *radical aligné le 9 août 2026 sur celui que la veille et le Vol. IV portent déjà :
-**quatre pièces du dépôt** partagent désormais ce début d'intitulé — ces trois-là et le rapport de
+**quatre pièces du dépôt** partagent désormais ce début d'intitulé — ces trois-là et l'état de
 l'art de `5 - Recension/`, qui reprend celui du Vol. IV à la lettre.*
 Où la veille dit ce que le monde déployé fait, sur spécifications, dépôts et textes réglementaires,
 cette revue dit **ce que la littérature académique sait**, et à quel régime de preuve. Les deux ne
@@ -1411,13 +1416,14 @@ le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
 │       ├── check-revue.py                   contrôles de publication de la revue (appariement, tableaux, doublons, régimes)
 │       └── check-resume.py                  budget de mise en page : le résumé tient-il sur la page de titre du PDF
 │                                            ☑ SORT 0 sur les trois PDF depuis le 17 août 2026, traité compris
-└── 5 - Recension/                          ← le rapport de l'art et sa chaîne (16 août 2026) — ⚠ AUCUN LIVRABLE ICI
+└── 5 - Recension/                          ← l'état de l'art et sa chaîne (16 août 2026) — ⚠ AUCUN LIVRABLE ICI
     │                                        ⚠ le rapport est DÉRIVÉ : sa seule matière est ce que les sept livrables portent
     ├── README.md                            déposé le 17 août 2026, SEIZIÈME du dépôt
-    ├── Rapport de l'art.md / .pdf           10 pièces (ouverture + 8 chapitres + sommaire exécutif), 90 sections, 127 p.
+    ├── État de Art.md / .pdf                10 pièces (ouverture + 8 chapitres + sommaire exécutif), 90 sections, 127 p.
     │                                        ⚠ TITRE HOMONYME EXACT DU VOL. IV, par instruction d'auteur — seul le cachet
     │                                          de la page de titre les distingue ; ⚠ AUCUN CONTRÔLE ne rejoue ses énoncés
-    ├── OnePager.html                        page autonome — à la racine du dépôt du 15 au 16 août 2026
+    ├── NiveauMaturité.html                  page autonome — à la racine du dépôt du 15 au 16 août 2026
+    │                                        ⚠ `OnePager.html` du 15 au 17 août 2026 (renommage `292a0f9`)
     │                                        ⚠ le rapport ne la cite plus depuis le 17 août : il a versé son échelle au corps
     ├── build/                               rendre-recension.py, recension.template, accentuation.lua (reprise du compendium)
     │                                        ☑ la chaîne se lance DE N'IMPORTE OÙ ; ⚠ aucune porte de pagination
@@ -1438,7 +1444,7 @@ documentation propre —, **celui du quatrième dossier numéroté** depuis le 1
 [`4 - Veille/README.md`](4%20-%20Veille/README.md), qui présente les deux
 livrables transversaux, leurs deux chaînes de rendu et leur appareil de contrôle, **et celui du
 cinquième** depuis le 17 août 2026, [`5 - Recension/README.md`](5%20-%20Recension/README.md), qui
-présente le rapport de l'art, sa chaîne, ses figures et ses réserves.
+présente l'état de l'art, sa chaîne, ses figures et ses réserves.
 *(Cardinal re-compté sur l'arbre le 17 août 2026 : **16**.)*
 ☑ **Les cinq dossiers numérotés en portent donc tous un.** ⚠ *Le cinquième a vécu une journée sans
 le sien — du 16 au 17 août 2026 —, exactement comme `4 - Veille/` en avait vécu une demie ; et c'est
@@ -1463,11 +1469,11 @@ rustdoc ; **vingt-sept sous [`1 - Corpus/`](1%20-%20Corpus/)**, **quatre sous
 
 ## Construire les PDF
 
-**Huit** chaînes distinctes, à lancer depuis le dossier concerné — **une par livrable, plus celle du
-rapport de l'art, qui n'en est pas un**. *(Ce fichier
+**Huit** chaînes distinctes, à lancer depuis le dossier concerné — **une par livrable, plus celle de
+l'état de l'art, qui n'en est pas un**. *(Ce fichier
 en annonçait **cinq** jusqu'au 9 août 2026, alors qu'il en listait déjà six : la revue de littérature
 avait sa commande sans être comptée. La septième est entrée avec le traité sur les essaims, le
-10 août 2026 ; la huitième avec le rapport de l'art, le 16.)*
+10 août 2026 ; la huitième avec l'état de l'art, le 16.)*
 
 ⚠⚠ **La règle « depuis le dossier concerné » a une exception depuis le 14 août 2026, et c'est le
 traité.** Son `.md` est parti sous [`3 - Traité/`](3%20-%20Trait%C3%A9/) ; ses **19 figures sont
@@ -1495,7 +1501,7 @@ aux deux sources, **redéfinit la fonction `conf`** pour composer lui-même le b
 gabarit y laissait deux lignes vides sous l'auteur et n'en laissait aucune au-dessus. *Aucun fichier
 de gabarit n'est pour autant versionné : la redéfinition vit dans l'en-tête, avec tout le reste.*
 
-**Rapport de l'art** — ☑ **la seule des huit chaînes qui se lance de n'importe quel répertoire** : la
+**État de l'art** — ☑ **la seule des huit chaînes qui se lance de n'importe quel répertoire** : la
 racine du dossier est déduite du fichier de script, non du répertoire courant.
 
 ```bash
@@ -2155,7 +2161,7 @@ correction exigerait une information que le dépôt ne porte pas — *et personn
 | `4 - Veille/Python/` — les trois contrôles | ☑ **SOLDÉ le 15 août 2026, le jour où le défaut est devenu une panne.** Les trois nommaient leurs sources en **chemin relatif au répertoire courant** — `SRC = 'Veille Technologique.md'`, `SRC = 'Revue de littérature.md'`, `'Veille Technologique.pdf'` par défaut — et **ont levé `FileNotFoundError`** dès que la veille et la revue ont quitté la racine. *Une trace de pile n'est pas un verdict : un contrôle qui ne trouve pas sa source ne dit pas que le document est faux, il ne dit plus rien.* ☑ **Chacun résout désormais son chemin contre `Path(__file__)`** et sort 0 **depuis la racine, depuis `4 - Veille/` et depuis `Python/`**. ☑ **Le second volet est soldé le 17 août 2026** : `check-resume.py` **sort 0 sur les trois PDF du dépôt, traité compris** — ⚠ *non parce qu'il a été recalibré, mais parce que le traité est venu à la géométrie de la veille* (117 pt en x, 72 pt en y, page de titre sans folio), et `MARGE_BASSE` vaut 72,0. ⚠ **Ce qui reste ouvert** : la constante suit le YAML **à la main**, et le contrôle **ne lit que la page 1** — *c'est ce qui a laissé sept titres de la veille se rendre en texte courant d'un bout à l'autre du document sans qu'il bronche* |
 | `3 - Traité/CLAUDE.md` | ☑ **SOLDÉ le 17 août 2026.** Il visait `docs/Traité.pdf`, qui n'existe pas : le traité est à `3 - Traité/Traité.pdf`, un cran plus haut. Le dossier a été écrit en dépôt autonome, où le PDF vivait sous `docs/` ; la fusion du 14 août 2026 l'a posé à la racine du dossier **sans reprendre les renvois**. ⚠ *Le renvoi mort visait la **source normative** du projet, celle dont `CLAUDE.md` dit que « les algorithmes, les hypothèses et les chiffres viennent de là, et de nulle part ailleurs » — c'était le pire endroit possible pour un lien mort, et il aura tenu trois jours.* ☑ Les **deux `README.md`** du dossier ont porté le correctif le 14 août ; ☑ **`CLAUDE.md` l'a reçu à l'audit du dossier le 17** — *hors du périmètre d'une resynchronisation de `README.md`, il a fallu une passe du dossier lui-même* |
 | `3 - Traité/Traité.md` ↔ `figures/` | ⚠ **le livrable et ses dix-neuf figures sont dans deux dossiers différents**, et le livrable les cite en chemin relatif. *Pandoc résolvant contre le répertoire courant*, la chaîne de rendu **ne marche plus que depuis la racine du dépôt** — la seule des sept dans ce cas, et **rien ne le signale au moment où elle échoue**. Deux corrections sont possibles — déplacer `figures/` sous `3 - Traité/`, ou passer `--resource-path` à Pandoc — et **aucune n'est faite** : elles toucheraient soit un livrable, soit une chaîne de rendu, l'un et l'autre hors du périmètre d'une resynchronisation |
-| `5 - Recension/OnePager.html` | ⚠ **une pièce sans régime, sans appareil et sans rattachement — entrée à la racine le 15 août 2026, rangée sous `5 - Recension/` le 16.** *Elle ne cite aucun document* — et **le seul qui la citait a cessé de le faire** : depuis la passe du 17 août 2026, le rapport de l'art expose l'échelle à six paliers **dans son propre corps** et ne la nomme plus. ⚠ **Elle reformule du contenu de livrable sans l'attribuer** : les quatre couches du NEIF du Vol. I §1.2.1.1 et son invariant transversal. ⚠ **Elle porte en outre une quatrième échelle à six niveaux** — numérotés 1 à 6 —, quand le Vol. I en porte un continuum à six niveaux numérotés 0 à 5 (§2.2.4) que la parade **R-13** du Vol. III oblige à citer par son cardinal *et* sa numérotation. *La parade vaut pour les pièces de volume ; la page n'en est pas une.* ⚠ **Aucun contrôle** : le tenir-sur-une-page en A4 paysage est **constaté au rendu et jamais vérifié**. ☑ *Le rangement lui donne un dossier ; il ne lui donne pas de régime.* **Régime à écrire, filiation à attribuer, et personne ne le fera** |
+| `5 - Recension/NiveauMaturité.html` | ⚠ **une pièce sans régime, sans appareil et sans rattachement — entrée à la racine le 15 août 2026, rangée sous `5 - Recension/` le 16, renommée le 17** — ⚠ *`OnePager.html` jusque-là.* *Elle ne cite aucun document* — et **le seul qui la citait a cessé de le faire** : depuis la passe du 17 août 2026, l'état de l'art expose l'échelle à six paliers **dans son propre corps** et ne la nomme plus. ⚠ **Elle reformule du contenu de livrable sans l'attribuer** : les quatre couches du NEIF du Vol. I §1.2.1.1 et son invariant transversal. ⚠ **Elle porte en outre une quatrième échelle à six niveaux** — numérotés 1 à 6 —, quand le Vol. I en porte un continuum à six niveaux numérotés 0 à 5 (§2.2.4) que la parade **R-13** du Vol. III oblige à citer par son cardinal *et* sa numérotation. *La parade vaut pour les pièces de volume ; la page n'en est pas une.* ⚠ **Aucun contrôle** : le tenir-sur-une-page en A4 paysage est **constaté au rendu et jamais vérifié**. ☑ *Le rangement lui donne un dossier ; il ne lui donne pas de régime.* **Régime à écrire, filiation à attribuer, et personne ne le fera** |
 | `3 - Traité/` | ⚠ **ni licence, ni intégration continue.** L'absence de licence est le régime du dépôt entier — *droit d'auteur par défaut, tous droits réservés* —, et le dossier le déclare plutôt que de l'inventer : ses manifestes portent `publish = false`. ⚠ **L'absence d'intégration continue, elle, contredit deux de ses propres exigences** : NF-13 et NF-16 nomment un mécanisme d'application que le dépôt ne contient pas. *La suite de tests, `clippy` et `cargo doc` sont les trois portes réelles du dossier, et rien ne les fait jouer automatiquement* — ⚠ **et le cardinal de la première ne se cite pas** : 428 tests à 08 h 10 le 17 août 2026, 447 à 08 h 32, **465 à 09 h 49**, cinq agents d'audit écrivant en parallèle |
 | `5 - Recension/` | ⚠ **le seul dossier numéroté sans aucun contrôle.** Rien n'y rejoue les énoncés du rapport — pas de `check-*.py`, pas de porte de pagination —, et *ses sept sources lui font hériter de leurs propres réserves.* ⚠ **Trois écarts internes sont déclarés par son `README.md` et non corrigés** : **neuf renvois `ch. 0 § 4`** visent une section retirée à la passe du 17 août 2026 ; la numérotation des tableaux porte un **`Tableau 0.2` sans `Tableau 0.1`**, *renuméroter aurait cassé les renvois qui visent le 0.2* ; et `chapitres/` — le brouillon de la boucle qui a produit le rapport — **a divergé de la source**, *ce qui est inoffensif tant qu'il n'est plus lu, et n'en est pas moins faux.* ⚠ **Son `dessine.py` est une copie de celui du compendium, avec une divergence déclarée** : le défaut d'origine n'est pas corrigé là-bas |
 
@@ -2163,7 +2169,7 @@ correction exigerait une information que le dépôt ne porte pas — *et personn
 pages de présentation » — a cessé d'être exacte le 4 août 2026** et elle est corrigée ici : le
 Vol. IV en porte désormais, [`Compendium.html`](2%20-%20Compendium/Compendium.html) et les cinquante
 pages de chapitre. ⚠ **Et `5 - Recension/` en porte une depuis le 16 août 2026** —
-[`OnePager.html`](5%20-%20Recension/OnePager.html), entrée à la racine le 15 et rangée là le 16,
+[`NiveauMaturité.html`](5%20-%20Recension/NiveauMaturit%C3%A9.html), entrée à la racine le 15 et rangée là le 16,
 *elle non plus n'est pas publiée*. *Ce qui a disparu n'est pas la
 page de présentation, c'est sa publication en
 ligne* — les nouvelles ne sont **pas publiées** et se lisent depuis le dépôt, en local. Les deux
@@ -2839,7 +2845,7 @@ quatre volumes**.
 **Le 15 août 2026, troisième passe du même jour — une page de présentation entre à la racine, et ce
 fichier ne la portait pas.** ⚠ *L'entrée précédente écrivait, le matin même, que la racine « ne porte
 plus aucun livrable » et que ce fichier en est le seul avec `.gitignore` ; l'après-midi y déposait
-[`OnePager.html`](5%20-%20Recension/OnePager.html) (commit `6968168`), et **rien ne l'a signalé** — le fichier a vécu
+[`OnePager.html`](5%20-%20Recension/NiveauMaturit%C3%A9.html) (commit `6968168`), et **rien ne l'a signalé** — le fichier a vécu
 un commit entier sans une mention dans aucun `README.md` du dépôt.* ⚠ *Il n'y est resté qu'une
 journée : il est sous [`5 - Recension/`](5%20-%20Recension/) depuis le 16 août 2026, et le renvoi
 ci-dessus l'y suit — le constat, lui, garde sa date.* Deux gestes, aucun sur un
@@ -2957,6 +2963,15 @@ touché.**
   `bancs/audit-2026-08/` s'ajoute sous un répertoire que le dossier décrit comme celui des décisions
   tranchées par la mesure, **sans porter de `VERDICT.md`** : *ce sont des rapports d'audit, pas des
   mesures, et la classe n'est pas la même.*
+- ☑ **Le cinquième dossier a été renommé le même jour, et le renommage est enregistré ici.**
+  (commit `292a0f9`) `Rapport de l'art.md / .pdf` devient `État de Art.md / .pdf`, `OnePager.html`
+  devient `NiveauMaturité.html` — *inchangés au bit près*. ☑ **La chaîne et le gabarit ont suivi** :
+  [`rendre-recension.py`](5%20-%20Recension/build/rendre-recension.py) nomme les nouvelles cibles et
+  le cachet de la page de titre passe de **RECENSIO · RAPPORT DE L'ART** à
+  **RECENSIO · ÉTAT DE L'ART** — *le PDF est recomposé, **127 pages** inchangées.* ⚠ **Les renvois
+  des `README.md` sont repointés et le nom d'origine est conservé en clair là où il date un
+  constat** ; `5 - Recension/chapitres/00-liminaires.md`, brouillon déjà divergent et plus lu à
+  l'assemblage, **nomme encore `OnePager.html`** et n'a pas été touché.
 
 ⚠⚠ **Ce que cette passe démontre, et que le tableau des reliquats annonce depuis le 9 août 2026.**
 **Aucun des sept contrôles du dépôt ne résout un lien markdown.** Un renommage de dossier a donc pu

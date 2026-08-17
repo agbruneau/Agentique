@@ -1,4 +1,4 @@
-// ================ Gabarit du recensio — rapport de l'art ================
+// ================ Gabarit du recensio — état de l'art ================
 // ⚠ DÉRIVÉ DE `2 - Compendium/build/compendium.template`, sur instruction
 // d'auteur du 16 août 2026 : « le gabarit du recensio est fondé sur le gabarit
 // du compendium pour la version pdf ». La grille, les fontes, la palette, les
@@ -60,11 +60,11 @@
 #set document(
   // ⚠ MÊME TITRE QUE LE COMPENDIUM, à la lettre — instruction d'auteur. Ce qui
   // distingue les deux documents n'est plus le titre mais le cachet de la page
-  // de titre : « RECENSIO · RAPPORT DE L'ART » ici, « COMPENDIUM · VOLUME IV »
+  // de titre : « RECENSIO · ÉTAT DE L'ART » ici, « COMPENDIUM · VOLUME IV »
   // là. Toute reprise de l'un se reporte donc à l'autre, ou les deux divergent.
   title: "Interopérabilité et Orchestration Agentiques en Entreprise",
   author: "André-Guy Bruneau, M.Sc. IT",
-  keywords: ("rapport de l'art", "recension", "interopérabilité agentique",
+  keywords: ("état de l'art", "recension", "interopérabilité agentique",
              "orchestration", "coordination", "services financiers", "Canada"),
 )
 
@@ -453,7 +453,7 @@
   set par(justify: false, leading: 0.5em, first-line-indent: 0pt)
   text(font: SANS, size: 10pt, fill: GRIS, tracking: 0.30em)[RECENSIO]
   h(0.9em)
-  text(font: SANS, size: 10pt, fill: ACCENT, tracking: 0.30em)[RAPPORT DE L'ART]
+  text(font: SANS, size: 10pt, fill: ACCENT, tracking: 0.30em)[ÉTAT DE L'ART]
   v(10pt)
   line(length: 100%, stroke: 1.6pt + ENCRE)
   v(24pt)

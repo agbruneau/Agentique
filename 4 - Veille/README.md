@@ -18,7 +18,7 @@ pas, et c'est l'intérêt.*
 > ils ont été repointés le 17 août 2026.* ⚠ **Le titre de ce fichier porte encore l'ancien nom**, et
 > c'est délibéré : il nomme les deux livrables, non le dossier.
 > ☑ **Le décompte du dépôt est à jour depuis le 17 août 2026** : *sept livrables sous **cinq**
-> dossiers numérotés*, `5 - Recension/` étant entré le 16 août avec `Rapport de l'art.pdf` —
+> dossiers numérotés*, `5 - Recension/` étant entré le 16 août avec `État de Art.pdf` —
 > ⚠ **un rapport dérivé, non un huitième livrable** —, et **seize `README.md`**.
 >
 > ⚠ **Le dépôt est clos depuis le 8 août 2026** — décision d'auteur **D-13**
@@ -77,9 +77,9 @@ pas, et c'est l'intérêt.*
 | **État** | Publiée ; **le format ferme de 100 pages est levé le 15 août 2026** — la re-vérification intégrale, puis les sept titres décollés et les six notices reprises le 17 août, portent l'édition à 144 p. | Publiée ; **la cible de 40 pages fermes est levée le 15 août 2026** — l'édition en fait 59 |
 
 ⚠ **Quatre livrables du dépôt partagent ce début d'intitulé** — ces deux-ci, le Vol. IV, et le
-*Rapport de l'art* de `5 - Recension/`, entré le 16 août 2026, dont le titre est l'**homonyme
+*État de l'art* de `5 - Recension/`, entré le 16 août 2026, dont le titre est l'**homonyme
 exact** du Vol. IV. **Un renvoi qui les cite par leur seul titre ne désigne rien** : il faut nommer
-le genre — « la veille technologique », « la revue de littérature », « le Vol. IV », « le rapport de
+le genre — « la veille technologique », « la revue de littérature », « le Vol. IV », « l'état de
 l'art ». ☑ *C'est aussi par le genre que les fichiers se nomment, et non par le titre* : la
 convention du dépôt tient ici sans exception.
 

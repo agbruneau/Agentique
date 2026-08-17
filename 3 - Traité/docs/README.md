@@ -154,7 +154,7 @@ la boucle bâtisseur/critique de l'**audit complet du code** — cinq morceaux d
 par crate, barre tenue sur
 [`bancs/dt1-flottant/VERDICT.md`](../bancs/dt1-flottant/VERDICT.md), rapports par
 morceau sous `bancs/audit-2026-08/`. *Il ne couvre ni la revue du PRD, ni les boucles
-de la veille, de la revue de littérature ou du rapport de l'art, dont les journaux
+de la veille, de la revue de littérature ou de l'état de l'art, dont les journaux
 homonymes ont vécu ailleurs dans le dépôt et n'y sont plus.* ⚠ **Il n'est pas un
 document de gouvernance** : rien n'y est exigé ni garanti, et aucun énoncé de ce
 dossier ne s'y adosse. **Les deux fichiers n'ont jamais coexisté**, et c'est ce

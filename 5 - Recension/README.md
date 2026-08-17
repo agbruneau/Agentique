@@ -1,6 +1,6 @@
-# Recensio — le rapport de l'art
+# Recensio — l'état de l'art
 
-Un document et la chaîne qui le compose. [`Rapport de l'art.md`](Rapport%20de%20l%27art.md) est un
+Un document et la chaîne qui le compose. [`État de Art.md`](%C3%89tat%20de%20Art.md) est un
 **rapport dérivé** : sa seule matière est ce que les sept livrables du dépôt portent déjà. Il n'ouvre
 aucune source primaire, ne verse aucun fait neuf, n'écrit dans aucun livrable, ne solde aucune dette
 et ne franchit aucune porte — *synthétiser n'est ni réviser ni publier*.
@@ -17,14 +17,19 @@ et ne franchit aucune porte — *synthétiser n'est ni réviser ni publier*.
 > sans le sien. *Les cinq en portent un désormais*, celui-ci étant le **seizième** du dépôt.
 > ☑ **Le décompte de la racine a été repris le 17 août 2026** — *sept livrables sous **cinq** dossiers
 > numérotés, seize `README.md`, huit chaînes de rendu*, tous re-comptés sur l'arbre.
+> ☑ **Les trois fichiers du dossier ont été renommés le 17 août 2026** (commit `292a0f9`, *inchangés
+> au bit près*) : `Rapport de l'art.md / .pdf` en `État de Art.md / .pdf`, `OnePager.html` en
+> `NiveauMaturité.html`. ☑ **Le cachet de la page de titre a suivi** — **RECENSIO · ÉTAT DE L'ART**
+> —, et la chaîne de rendu avec lui : le PDF est recomposé, **127 pages** inchangées.
+> ⚠ *Le nom d'origine est conservé en clair partout où il date un constat.*
 
 ## Le livrable
 
 | Champ | Valeur |
 |---|---|
 | Nature | **Recensio** — état détaillé du champ, établi sur le seul contenu du dépôt. Rapport **dérivé**, sans provenance propre |
-| Titre | *Interopérabilité et Orchestration Agentiques en Entreprise* — ⚠ **celui du compendium (Vol. IV), à la lettre et par instruction d'auteur**. Ce qui distingue les deux documents est le cachet de la page de titre : **RECENSIO · RAPPORT DE L'ART** ici, **COMPENDIUM · VOLUME IV** là. *Partager un titre n'est pas partager un régime de preuve* |
-| Source qui fait foi | [`Rapport de l'art.md`](Rapport%20de%20l%27art.md) — **seule**. Le PDF s'en compose, jamais l'inverse |
+| Titre | *Interopérabilité et Orchestration Agentiques en Entreprise* — ⚠ **celui du compendium (Vol. IV), à la lettre et par instruction d'auteur**. Ce qui distingue les deux documents est le cachet de la page de titre : **RECENSIO · ÉTAT DE L'ART** ici, **COMPENDIUM · VOLUME IV** là. *Partager un titre n'est pas partager un régime de preuve* |
+| Source qui fait foi | [`État de Art.md`](%C3%89tat%20de%20Art.md) — **seule**. Le PDF s'en compose, jamais l'inverse |
 | Mesure | **10 pièces** — une ouverture, **8 chapitres**, un sommaire exécutif —, **90 sections**, 3 tableaux, 2 figures, **54 215 mots de corps**, **127 pages composées** |
 | Gel | arrêté au **16 août 2026**. ⚠ Une passe de refonte du **17 août 2026** a changé le titre, refondu l'ouverture, versé le **ch. 8** et remplacé l'épilogue par un **sommaire exécutif** — *aucun fait neuf n'y est entré* |
 | Régime de preuve | **hérité, jamais meilleur** : chaque énoncé vaut ce que vaut le livrable qui le porte. Ses sept sources portent **sept gels étalés sur dix semaines** |
@@ -61,7 +66,7 @@ racine du dépôt.)*
 | Fontes | Constantia, Corbel | Replis : Cambria / Candara, puis Libertinus Serif |
 
 ⚠ Le script **vérifie ces prérequis et sort en erreur** : composer à moitié serait pire que ne pas
-composer. Il vérifie aussi que `Rapport de l'art.md`, le gabarit, le filtre et `figures/` existent, et
+composer. Il vérifie aussi que `État de Art.md`, le gabarit, le filtre et `figures/` existent, et
 que **la numérotation des chapitres est contiguë** — un `## Chapitre 9` après un `## Chapitre 7`
 arrête la composition.
 
@@ -141,9 +146,9 @@ compte des mots, il ne sait pas ce qu'est un terme.*
 
 | Chemin | Rôle |
 |---|---|
-| [`Rapport de l'art.md`](Rapport%20de%20l%27art.md) | **La source qui fait foi.** 10 pièces, 90 sections |
-| [`Rapport de l'art.pdf`](Rapport%20de%20l%27art.pdf) | Le rendu. 127 pages, composé du `.md` |
-| [`OnePager.html`](OnePager.html) | Page autonome — sans source markdown, sans chaîne de rendu, sans contrôle. ⚠ **Le rapport ne la cite plus** : depuis la passe du 17 août 2026, l'échelle à six paliers est exposée dans le corps du rapport, qui l'assume comme son appareil de lecture |
+| [`État de Art.md`](%C3%89tat%20de%20Art.md) | **La source qui fait foi.** 10 pièces, 90 sections. ⚠ *`Rapport de l'art.md` jusqu'au 17 août 2026* |
+| [`État de Art.pdf`](%C3%89tat%20de%20Art.pdf) | Le rendu. 127 pages, composé du `.md` |
+| [`NiveauMaturité.html`](NiveauMaturit%C3%A9.html) | Page autonome — ⚠ *`OnePager.html` du 15 au 17 août 2026* — sans source markdown, sans chaîne de rendu, sans contrôle. ⚠ **Le rapport ne la cite plus** : depuis la passe du 17 août 2026, l'échelle à six paliers est exposée dans le corps du rapport, qui l'assume comme son appareil de lecture |
 | `build/rendre-recension.py` | La chaîne. Assemble, compose, vérifie ses prérequis |
 | `build/recension.template` | Le gabarit Typst — grille, page de titre, colophon, table des matières |
 | `build/accentuation.lua` | La règle d'accentuation, reprise du compendium |

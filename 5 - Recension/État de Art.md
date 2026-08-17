@@ -9,7 +9,7 @@ documents se distinguent par leur cachet — **recensio** ici, **compendium** l�
 intitulé : *partager un titre n'est pas partager un régime de preuve, et celui de ce rapport est
 toujours celui du livrable qui porte l'énoncé, jamais un meilleur* (ch. 0 § 3).
 
-*Ce fichier est la seule source qui fait foi.* `Rapport de l'art.pdf` s'en compose par
+*Ce fichier est la seule source qui fait foi.* `État de Art.pdf` s'en compose par
 `build/rendre-recension.py`, au gabarit du compendium ; les pièces de `chapitres/` sont le brouillon
 de la boucle qui l'a produit et cessent d'être lues à l'assemblage. Le déroulé de cette boucle — ses
 verdicts, les écarts retenus et les coûts — est au [journal](gauntlet-log.md).
