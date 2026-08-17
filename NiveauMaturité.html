@@ -174,8 +174,15 @@
     line-height: 1.3;
   }
 
+  .rule-bar {
+    margin: 0.5rem 0 0;
+    font-size: 0.8125rem;
+    color: var(--text-2);
+    text-align: center;
+  }
+
   .invariant-bar {
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
     padding: 0.3rem 0.5rem;
     border: 1px dashed var(--line);
     border-radius: 3px;
@@ -191,6 +198,15 @@
     font-style: normal;
     color: var(--o-400);
   }
+
+  .bar-note {
+    font-weight: 400;
+    letter-spacing: normal;
+    text-transform: none;
+    color: var(--text-3);
+  }
+
+  .bar-note em { color: var(--text-2); font-style: italic; }
 
   /* ---------- Grille des six niveaux ---------- */
   .levels {
@@ -249,6 +265,16 @@
     text-align: right;
   }
 
+  /* La question que le niveau règle — une seule, et c'est la forme de la carte */
+  .lvl-question {
+    margin: 0 0 0.4rem;
+    padding-left: 0.5rem;
+    border-left: 2px solid var(--o-500);
+    font-size: 0.875rem;
+    font-style: italic;
+    color: var(--o-300);
+  }
+
   .field-label {
     display: block;
     font-size: 0.6875rem;
@@ -262,7 +288,22 @@
   .desc-text {
     font-size: 0.875rem;
     color: var(--text-2);
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.4rem;
+  }
+
+  /* Ce qui cède quand la réponse manque */
+  .fail-line {
+    font-size: 0.875rem;
+    color: var(--text-2);
+    margin: 0 0 0.45rem;
+  }
+
+  .fail-line strong {
+    color: var(--o-400);
+    font-weight: 800;
+    font-size: 0.6875rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
   }
 
   .example-box {
@@ -281,7 +322,7 @@
   /* ---------- Synthèse ---------- */
   .synthesis {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--gap);
   }
 
@@ -291,6 +332,13 @@
     border-top: 2px solid var(--o-500);
     border-radius: var(--radius);
     padding: 0.75rem 0.875rem 0.875rem;
+  }
+
+  /* La carte des réserves ne se donne pas le même relief que les deux constats */
+  .synth-card.reserves {
+    background: var(--surface);
+    border-top-style: dashed;
+    border-top-color: var(--o-600);
   }
 
   .synth-heading {
@@ -315,6 +363,7 @@
   /* ---------- Adaptation aux écrans étroits ---------- */
   @media (max-width: 1080px) {
     .stack { grid-template-columns: repeat(3, 1fr); }
+    .synthesis { grid-template-columns: 1fr 1fr; }
   }
 
   @media (max-width: 760px) {
@@ -334,7 +383,10 @@
   }
 
   @media print {
-    html { font-size: 8.2pt; }   /* recompresse toute l'échelle rem */
+    /* Recompresse toute l'échelle rem. Valeur MESURÉE, non estimée : à 277 × 194 mm de
+       boîte utile, la feuille fait 703 px pour un budget de 733 px — les six cartes
+       passent à trois colonnes pour économiser une rangée entière. */
+    html { font-size: 6.8pt; }
     body {
       padding: 0;
       background: var(--bg);
@@ -343,7 +395,8 @@
     }
     .sheet { max-width: none; }
     .stack { grid-template-columns: repeat(6, 1fr); }
-    .levels, .synthesis { grid-template-columns: 1fr 1fr; }
+    .levels { grid-template-columns: repeat(3, 1fr); }
+    .synthesis { grid-template-columns: repeat(3, 1fr); }
     .masthead { flex-direction: row; align-items: flex-end; }
     .masthead-meta { text-align: right; }
     .ladder, .levels { margin-bottom: 0.6rem; }
@@ -359,7 +412,7 @@
     <div>
       <div class="kicker">Cadre de référence unifié</div>
       <h1>Échelle de maturité de l'interopérabilité et orchestration agentiques d'entreprise</h1>
-      <p class="subtitle">De l'intégration déterministe au maillage agentique (<em>Agentic Mesh</em>) : six niveaux, un invariant, une clause de renversement.</p>
+      <p class="subtitle">De l'intégration déterministe au maillage agentique (<em>Agentic Mesh</em>) : six niveaux réglant chacun une question, et une seule — un invariant transversal, une clause de renversement.</p>
     </div>
     <div class="masthead-meta">
       <strong>Architecture d'entreprise</strong>
@@ -396,7 +449,10 @@
         <span class="stack-sub">Intention &amp; coordination A2A/MCP</span>
       </li>
     </ol>
-    <div class="invariant-bar">Invariant d'architecture transversal : <em>Découplage ── Contrat ── Évolution</em></div>
+    <p class="rule-bar">Chaque niveau présuppose ceux du dessous et <strong>n'en garantit aucun</strong> : <em>un niveau tenu n'entraîne jamais le suivant</em>. Trois choses croissent ensemble de 1 vers 6 — l'abstraction de ce qui est échangé, l'imputabilité de ce qui est décidé, l'autonomie d'exécution de ce qui agit.</p>
+    <div class="invariant-bar">Invariant d'architecture transversal : <em>Découplage ── Contrat ── Évolution</em>
+      <span class="bar-note">— trois termes ici, <em>quatre dans la source</em> : l'<em>exploitation</em> y est déclarée non éprouvée, faute d'agent à exploiter</span>
+    </div>
   </section>
 
   <!-- Les six niveaux -->
@@ -408,8 +464,10 @@
         <span class="lvl-title">Technique</span>
         <span class="lvl-scope">Transport &amp; connectivité physique</span>
       </div>
+      <p class="lvl-question">Le message arrive-t-il intact, à qui doit le recevoir ?</p>
       <span class="field-label">Descriptif</span>
-      <p class="desc-text">Liaison matérielle, logicielle et protocolaire assurant l'acheminement sécurisé et intègre des flux binaires sans interprétation métier du contenu acheminé.</p>
+      <p class="desc-text">Liaison matérielle, logicielle et protocolaire acheminant des flux binaires de façon sécurisée et intègre, <strong>sans interprétation métier</strong> du contenu. La tuyauterie sait livrer une enveloppe ; elle ne sait pas la lire.</p>
+      <p class="fail-line"><strong>Sans ce niveau</strong> rien ne circule ; avec lui seul, tout circule et rien ne se comprend.</p>
       <div class="example-box">
         <span class="field-label">Exemple</span>
         <p>Passerelle de protocoles asynchrone assurant la translation entre files transactionnelles (IBM MQ) et dorsale événementielle distribuée (Apache Kafka / gRPC avec mTLS).</p>
@@ -422,8 +480,10 @@
         <span class="lvl-title">Juridique</span>
         <span class="lvl-scope">Souveraineté, imputabilité &amp; conformité</span>
       </div>
+      <p class="lvl-question">Qui répond de l'acte, et devant quel texte ?</p>
       <span class="field-label">Descriptif</span>
-      <p class="desc-text">Garantie de valeur probante des transactions, non-répudiation, résidence territoriale des données et conformité stricte aux cadres réglementaires applicables.</p>
+      <p class="desc-text">Valeur probante des transactions, non-répudiation, résidence territoriale des données, conformité aux cadres applicables. Un échange peut être correct, compris, bien ordonné — et rester interdit, ou inopposable faute de preuve.</p>
+      <p class="fail-line"><strong>Sans ce niveau</strong> la conformité est un pari qu'on ne découvre perdu qu'au contrôle.</p>
       <div class="example-box">
         <span class="field-label">Exemple</span>
         <p>Encadrement des transferts de renseignements personnels et journalisation de la preuve de consentement selon la Loi 25 (Québec) et les normes BSIF E-23 / RGPD.</p>
@@ -436,8 +496,10 @@
         <span class="lvl-title">Sémantique</span>
         <span class="lvl-scope">Modèles canoniques &amp; registres de schémas</span>
       </div>
+      <p class="lvl-question">Le même mot désigne-t-il la même chose des deux côtés ?</p>
       <span class="field-label">Descriptif</span>
-      <p class="desc-text">Préservation de l'intégrité conceptuelle et du sens univoque des structures échangées par ontologies de domaine, dictionnaires et schémas partagés.</p>
+      <p class="desc-text">Préservation du sens univoque des structures échangées, par ontologies de domaine, dictionnaires et schémas partagés. « Client », « solde » et « sinistre » doivent nommer le même objet chez l'émetteur et chez le destinataire — ce qu'aucun protocole de transport ne procure.</p>
+      <p class="fail-line"><strong>Sans ce niveau</strong> l'échange réussit techniquement et se trompe métier, en silence.</p>
       <div class="example-box">
         <span class="field-label">Exemple</span>
         <p>Harmonisation des référentiels bancaires et d'assurance via un modèle canonique partagé (BIAN / ACORD / ISO 20022) validé par registre de schémas (Avro / Protobuf).</p>
@@ -450,8 +512,10 @@
         <span class="lvl-title">Politique</span>
         <span class="lvl-scope">Plan de contrôle, Data Contracts &amp; arbitrage</span>
       </div>
+      <p class="lvl-question">Qui décide de la règle, qui l'arbitre, et qui paie quand elle cède ?</p>
       <span class="field-label">Descriptif</span>
-      <p class="desc-text">Verticalisation du plan de contrôle institutionnel (<em>Governance Plane</em>), formalisation des contrats de données, arbitrage des SLA et attribution de l'imputabilité.</p>
+      <p class="desc-text">Verticalisation du plan de contrôle institutionnel (<em>Governance Plane</em>), formalisation des contrats de données, arbitrage des SLA et <strong>attribution de l'imputabilité</strong>. Le niveau 4 dit ce que la loi exige ; le niveau 5 dit qui, dans la maison, tranche, signe et assume.</p>
+      <p class="fail-line"><strong>Sans ce niveau</strong> chaque équipe renégocie ses interfaces au cas par cas, et l'imputabilité se dilue.</p>
       <div class="example-box">
         <span class="field-label">Exemple</span>
         <p>Comitologie inter-domaines régissant le cycle de vie des interfaces, les pénalités d'indisponibilité et les points d'application de politiques (PEP/PDP).</p>
@@ -464,8 +528,10 @@
         <span class="lvl-title">Organisationnel</span>
         <span class="lvl-scope">Processus métier &amp; chorégraphie événementielle</span>
       </div>
+      <p class="lvl-question">Qui fait quoi, dans quel ordre, et jusqu'où va sa responsabilité ?</p>
       <span class="field-label">Descriptif</span>
-      <p class="desc-text">Alignement et synchronisation des processus d'affaires, frontières de responsabilités métier et ordonnancement des flux de valeur entre unités et partenaires.</p>
+      <p class="desc-text">Alignement des processus d'affaires, des frontières de responsabilité et de l'ordonnancement des flux de valeur entre unités et partenaires. Deux systèmes qui se comprennent peuvent encore agir à contretemps, ou faire deux fois le même geste.</p>
+      <p class="fail-line"><strong>Sans ce niveau</strong> l'intégration marche et le processus ne tient pas.</p>
       <div class="example-box">
         <span class="field-label">Exemple</span>
         <p>Chorégraphie réactive (patron Saga / <em>Event-Driven Architecture</em>) orchestrant le règlement d'un sinistre entre indemnisation, comptabilité et experts externes.</p>
@@ -478,8 +544,10 @@
         <span class="lvl-title">Agentique</span>
         <span class="lvl-scope">Intention déclarative &amp; coordination A2A / MCP</span>
       </div>
+      <p class="lvl-question">Que reste-t-il du contrat quand l'exécutant décide lui-même de la marche à suivre ?</p>
       <span class="field-label">Descriptif</span>
-      <p class="desc-text">Coordination adaptative et probabiliste entre agents autonomes découvrant des outils (<em>Tool Calling</em>) et négociant des protocoles pour exécuter des intentions.</p>
+      <p class="desc-text">Coordination <strong>adaptative et probabiliste</strong> entre agents autonomes qui découvrent des outils (<em>Tool Calling</em>) et <strong>négocient des protocoles</strong> pour exécuter une intention. On ne prescrit plus une séquence, on énonce un objectif : ce qui se passe entre l'énoncé et le résultat n'est plus écrit d'avance, et ne s'observe qu'à l'exécution.</p>
+      <p class="fail-line"><strong>Sans les cinq niveaux du dessous</strong> ce niveau n'a rien sur quoi s'appuyer — <em>il ne les remplace pas, il en dépend</em>.</p>
       <div class="example-box">
         <span class="field-label">Exemple</span>
         <p>Maillage d'agents (<em>Agentic Mesh</em>) où un agent d'arbitrage négocie en temps réel avec des agents de souscription via <em>Agent Cards</em> signées et <em>AI Gateway</em>.</p>
@@ -493,11 +561,19 @@
     <div class="synth-card">
       <h2 class="synth-heading">Rupture de paradigme — déterministe vs intentionnel</h2>
       <p class="synth-text">Les niveaux 1 à 5 garantissent une intégration <strong>déterministe</strong> régie par des contrats statiques et vérifiables. Le niveau 6 introduit une gouvernance <strong>probabiliste et adaptative</strong>, où la contractualisation devient dynamique via négociation contextuelle d'objectifs (A2A / MCP).</p>
+      <p class="synth-text">C'est le <strong>seul endroit où l'échelle change de nature</strong> au lieu de changer de degré, et le déplacement tient en une ligne : <em>un contrat de niveau 5 se vérifie avant l'exécution ; une intention de niveau 6 ne s'observe que pendant.</em></p>
     </div>
     <div class="synth-card">
       <h2 class="synth-heading">Compromis d'architecture &amp; clause de renversement</h2>
       <p class="synth-text"><strong>Compromis :</strong> surcoût d'observabilité (<em>AgentOps</em>) et impératif de <em>runtime verification</em> pour confiner le non-déterminisme.</p>
       <p class="synth-text"><strong>Renversement :</strong> tout système sous contrainte de compensation financière temps réel (rails Lynx / RTR) doit interdire l'autonomie agentique directe et maintenir une contractualisation déterministe de niveau 5.</p>
+      <p class="synth-text"><em>L'échelle porte donc sa propre exception, et le sixième niveau n'est pas sa destination.</em></p>
+    </div>
+    <div class="synth-card reserves">
+      <h2 class="synth-heading">Provenance de l'échelle, et ce qui lui manque</h2>
+      <p class="synth-text"><strong>Niveaux 1 à 4 :</strong> les quatre couches du <em>New European Interoperability Framework</em> telles que le Vol. I les expose (§1.2.1.1) — mais <strong>numérotées ici en sens contraire</strong> : la numérotation appartient à cette page, non à sa source.</p>
+      <p class="synth-text"><strong>Niveaux 5 et 6 :</strong> des ajouts. Aucun livrable ne porte, sous ces noms, un palier « politique » ni un palier « agentique » dans une échelle numérotée.</p>
+      <p class="synth-text"><strong>Le palier manquant :</strong> le <strong>syntaxique</strong> de la pile canonique — <em>technique, syntaxique, sémantique, organisationnel</em>. C'est le niveau où MCP et A2A opèrent sans fournir d'accord sémantique, qu'ils <em>présupposent</em> : l'échelle fait passer ces protocoles du niveau 1 au niveau 6 sans la case où ce constat se pose. <em>Réserve nommée, non levée.</em></p>
     </div>
   </section>
 

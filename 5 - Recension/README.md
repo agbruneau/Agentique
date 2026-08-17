@@ -23,6 +23,12 @@ et ne franchit aucune porte — *synthétiser n'est ni réviser ni publier*.
 > `NiveauMaturité.html`. ☑ **Le cachet de la page de titre a suivi** — **RECENSIO · ÉTAT DE L'ART**
 > —, et la chaîne de rendu avec lui : le PDF est recomposé, **127 pages** inchangées.
 > ⚠ *Le nom d'origine est conservé en clair partout où il date un constat.*
+> ⚠ **La page est repartie à la racine du dépôt le même jour** (commit `148863a`, *inchangée au bit
+> près*) : [`NiveauMaturité.html`](../NiveauMaturit%C3%A9.html) **n'est plus dans ce dossier** — elle y
+> est entrée le 16 août 2026, venue de la racine où elle était déposée depuis le 15, et elle y est
+> repartie le 17. *Le dossier ne porte donc plus que deux fichiers de contenu, la source et son
+> rendu* — ⚠ **et la pièce qui repart est celle que le rapport a cessé de citer le jour même**, ayant
+> versé l'échelle à six paliers dans son propre corps.
 
 ## Le livrable
 
@@ -149,7 +155,6 @@ compte des mots, il ne sait pas ce qu'est un terme.*
 |---|---|
 | [`État de l'art.md`](%C3%89tat%20de%20l%27art.md) | **La source qui fait foi.** 10 pièces, 90 sections. ⚠ *`Rapport de l'art.md` jusqu'au 17 août 2026* |
 | [`État de l'art.pdf`](%C3%89tat%20de%20l%27art.pdf) | Le rendu. 127 pages, composé du `.md` |
-| [`NiveauMaturité.html`](NiveauMaturit%C3%A9.html) | Page autonome — ⚠ *`OnePager.html` du 15 au 17 août 2026* — sans source markdown, sans chaîne de rendu, sans contrôle. ⚠ **Le rapport ne la cite plus** : depuis la passe du 17 août 2026, l'échelle à six paliers est exposée dans le corps du rapport, qui l'assume comme son appareil de lecture |
 | `build/rendre-recension.py` | La chaîne. Assemble, compose, vérifie ses prérequis |
 | `build/recension.template` | Le gabarit Typst — grille, page de titre, colophon, table des matières |
 | `build/accentuation.lua` | La règle d'accentuation, reprise du compendium |
