@@ -1,5 +1,15 @@
 # Interopérabilité, orchestration et entreprise agentiques — un triptyque, sa veille, sa revue, sa somme, et un traité en marge
 
+> **Nature du dépôt — littérature grise technique (*technical grey literature*).** Tout ce qui suit
+> relève de la **littérature grise** : des écrits produits hors des circuits de l'édition commerciale
+> et de la revue par les pairs — rapports techniques, monographies internes, notes de veille, états
+> de l'art —, diffusés directement par leur auteur. *Grise* ne veut pas dire douteuse : la
+> littérature grise est la matière ordinaire de l'ingénierie et de la normalisation (RFC, livres
+> blancs, rapports d'organismes). Elle veut dire **non validée par un comité de lecture** : la
+> charge de la preuve reste au lecteur, l'autorité vient des sources citées et de la traçabilité des
+> décisions, non d'un éditeur. Les documents de ce dépôt sont donc à lire comme des **travaux
+> d'ingénierie documentés**, non comme des publications scientifiques.
+
 Travaux d'André-Guy Bruneau, M.Sc. IT, sur les agents d'IA en écosystème d'entreprise, et plus
 particulièrement en services financiers. Le dépôt réunit **trois monographies** conçues en
 progression — les protocoles, puis les cadres réglementaires, puis l'organisation qui doit les
