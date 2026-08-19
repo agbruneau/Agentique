@@ -17,9 +17,13 @@ pas, et c'est l'intérêt.*
 > sont morts en silence pendant deux jours — aucun contrôle du dépôt ne résout un lien markdown —, et
 > ils ont été repointés le 17 août 2026.* ⚠ **Le titre de ce fichier porte encore l'ancien nom**, et
 > c'est délibéré : il nomme les deux livrables, non le dossier.
-> ☑ **Le décompte du dépôt est à jour depuis le 17 août 2026** : *sept livrables sous **cinq**
-> dossiers numérotés*, `5 - Recension/` étant entré le 16 août avec `État de l'art.pdf` —
-> ⚠ **un rapport dérivé, non un huitième livrable** —, et **seize `README.md`**.
+> ☑ **Le décompte du dépôt est à jour depuis le 19 août 2026** : *sept livrables sous **quatre**
+> dossiers numérotés*, et **quinze `README.md`**. ⚠⚠ **Le cinquième dossier, `5 - Recension/`, est
+> entré le 16 août avec `État de l'art.pdf` — ⚠ *un rapport dérivé, non un huitième livrable* — et il
+> a été DÉTRUIT le 19 août 2026** (commit `7e2409a`, 19 fichiers, 28 806 lignes) : *le rapport, sa
+> chaîne, ses figures et son `README.md` ne se relisent plus qu'à l'historique git.* ☑ *Le compte des
+> livrables ne bouge pas : ce dossier n'en portait aucun.* ⚠ **Ce dossier-ci redevient donc le dernier
+> dossier numéroté du dépôt**, comme du 15 au 16 août 2026.
 >
 > ⚠ **Le dépôt est clos depuis le 8 août 2026** — décision d'auteur **D-13**
 > ([`2 - Compendium/PRD/PRD.md`](../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). *Ces deux livrables
@@ -76,12 +80,13 @@ pas, et c'est l'intérêt.*
 | **Méthode** | Revue structurée, **vérification adverse à trois votants** chargés de *réfuter* ; source primaire consultée pour chaque énoncé factuel | Notices ouvertes une à une, **métadonnées reprises à l'API arXiv** — ce qui a corrigé plusieurs statuts que la passe de recherche donnait pour arbitrés |
 | **État** | Publiée ; **le format ferme de 100 pages est levé le 15 août 2026** — la re-vérification intégrale, puis les sept titres décollés et les six notices reprises le 17 août, portent l'édition à 144 p. | Publiée ; **la cible de 40 pages fermes est levée le 15 août 2026** — l'édition en fait 59 |
 
-⚠ **Quatre livrables du dépôt partagent ce début d'intitulé** — ces deux-ci, le Vol. IV, et le
-*État de l'art* de `5 - Recension/`, entré le 16 août 2026, dont le titre est l'**homonyme
-exact** du Vol. IV. **Un renvoi qui les cite par leur seul titre ne désigne rien** : il faut nommer
-le genre — « la veille technologique », « la revue de littérature », « le Vol. IV », « l'état de
-l'art ». ☑ *C'est aussi par le genre que les fichiers se nomment, et non par le titre* : la
-convention du dépôt tient ici sans exception.
+⚠ **Trois pièces du dépôt partagent ce début d'intitulé** — ces deux-ci et le Vol. IV. **Un renvoi
+qui les cite par leur seul titre ne désigne rien** : il faut nommer le genre — « la veille
+technologique », « la revue de littérature », « le Vol. IV ». ⚠ **Une quatrième l'a porté du 16 au
+19 août 2026, et c'était le cas le plus dur** : l'*État de l'art* de `5 - Recension/` reprenait le
+titre du Vol. IV **à l'identique** ; ☑ *l'homonymie exacte tombe avec le rapport détruit le 19 août,
+et c'est la seule chose que sa destruction règle.* ☑ *C'est aussi par le genre que les fichiers se
+nomment, et non par le titre* : la convention du dépôt tient ici sans exception.
 
 ---
 
