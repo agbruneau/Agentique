@@ -44,6 +44,17 @@ que `assemble.py` pose devant les deux annexes.
 qu'est un terme. Une passe d'auteur tranche au cas par cas, et elle se fait DANS
 LES PIECES — retirer un `**` a la source est la seule facon d'en sortir un
 passage.
+
+⚠ ☑ ET ✎ SURVIVENT AU PDF, ET C'EST VOULU. La regle ne vise que le ⚠, et le
+motif qui la fonde est une DENSITE, non une famille de fontes : quatre marqueurs
+par page sur 1 009 pages, 5 280 propositions signalees, 11,7 % du corps — a ce
+regime, le ⚠ ne signale plus rien. Les deux autres marqueurs de la recension
+sont a un tout autre ordre : six ☑ et trois ✎ pour 127 pages, un par quatorze
+pages. Ils portent chacun un etat que la prose ne redit pas — ☑ « reverifie a la
+source », ✎ « corrige contre une edition anterieure » — et ils sont assez rares
+pour que le lecteur les compte. Les retirer couterait l'information sans rien
+rendre en lisibilite. ⚠ Si leur nombre venait a croitre d'un ordre de grandeur,
+c'est la MESURE qui trancherait, pas cette note.
 ]]
 
 local budget = true      -- une saillance a depenser, rendue a chaque titre

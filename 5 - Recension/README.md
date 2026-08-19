@@ -42,10 +42,15 @@ et ne franchit aucune porte — *synthétiser n'est ni réviser ni publier*.
 | Nature | **Recensio** — état détaillé du champ, établi sur le seul contenu du dépôt. Rapport **dérivé**, sans provenance propre |
 | Titre | *Interopérabilité et Orchestration Agentiques en Entreprise* — ⚠ **celui du compendium (Vol. IV), à la lettre et par instruction d'auteur**. Ce qui distingue les deux documents est le cachet de la page de titre : **RECENSIO · ÉTAT DE L'ART** ici, **COMPENDIUM · VOLUME IV** là. *Partager un titre n'est pas partager un régime de preuve* |
 | Source qui fait foi | [`État de l'art.md`](%C3%89tat%20de%20l%27art.md) — **seule**. Le PDF s'en compose, jamais l'inverse |
-| Mesure | **10 pièces** — une ouverture, **8 chapitres**, un sommaire exécutif —, **90 sections**, 3 tableaux, 2 figures, **54 215 mots de corps**, **127 pages composées** |
-| Gel | arrêté au **16 août 2026**. ⚠ Une passe de refonte du **17 août 2026** a changé le titre, refondu l'ouverture, versé le **ch. 8** et remplacé l'épilogue par un **sommaire exécutif** — *aucun fait neuf n'y est entré* |
+| Mesure | **10 pièces** — une ouverture, **8 chapitres**, un sommaire exécutif —, **91 sections**, **9 tableaux** dont quatre numérotés (0.1, 6.1, 8.1, E.1), 2 figures, **50 627 mots de corps**, **128 pages composées**. ⚠ *Le décompte des mots est celui de [`2 - Compendium/PRD/decompte.sh`](../2%20-%20Compendium/PRD/decompte.sh)* — un mot = un jeton portant au moins une lettre ou un chiffre, accents compris — *appliqué au corps, c'est-à-dire à tout ce qui suit le premier `##` et passe donc au PDF*. `wc -w` sur le même corps rend 52 090 : les deux chiffres mesurent deux choses |
+| Gel | arrêté au **16 août 2026**. ⚠ Une passe de refonte du **17 août 2026** a changé le titre, refondu l'ouverture, versé le **ch. 8** et remplacé l'épilogue par un **sommaire exécutif** — *aucun fait neuf n'y est entré*. ⚠ Une passe d'audit du **19 août 2026** a corrigé ce que [`audit.md`](audit.md) recense — *aucun fait neuf n'y est entré non plus : elle répare des renvois, des cardinaux et un rendu, jamais un énoncé* |
 | Régime de preuve | **hérité, jamais meilleur** : chaque énoncé vaut ce que vaut le livrable qui le porte. Ses sept sources portent **sept gels étalés sur dix semaines** |
-| Contrôle | ⚠ **aucun**. Il n'y a pas de `check-*.py` dans ce dossier — contrairement à [`4 - Veille/Python/`](../4%20-%20Veille/Python/), rien ne rejoue les énoncés du rapport. Le seul contrepoids qu'il porte est externe et couvre **un livrable sur sept** : le rejeu exécutable du traité |
+| Contrôle | ⚠ **aucun contrôle exécutable**. Il n'y a pas de `check-*.py` dans ce dossier — contrairement à [`4 - Veille/Python/`](../4%20-%20Veille/Python/), rien ne rejoue les énoncés du rapport. Ce qu'il porte est un **audit de lecture**, [`audit.md`](audit.md) du 19 août 2026 : il vérifie l'appareil — renvois, cardinaux, arithmétique interne, chemins, rendu —, *jamais la vérité d'un énoncé, qui reste celle de sa source*. Le seul contrepoids sur le fond est externe et couvre **un livrable sur sept** : le rejeu exécutable du traité |
+
+**L'ouverture pose le cadre, puis le régime.** Ses §§ 1 et 2 exposent l'échelle à six paliers et la
+rupture du sixième ; son § 3 situe les sept livrables sur ce cadre (tableau 0.1) ; son **§ 4** pose
+le régime des sources — celui du compendium, les deux régimes de la veille, les trois classes de la
+revue avec leurs bornes, le rejeu du traité. *Les chapitres l'invoquent sans le rejouer.*
 
 **Ce que le rapport lit.** Les six premiers chapitres suivent les Livres du compendium ; le **ch. 7**
 ne descend d'aucun livrable — il recense la couche que les organisations exécutaient avant les
@@ -92,6 +97,12 @@ arrête la composition.
 | `---` seul | retiré — ce n'est qu'un séparateur de lecture |
 | `: Tableau N.M — …` | étiquette en gras. Un rang en **lettre** est admis : `Tableau E.1` au sommaire exécutif, faute de numéro de chapitre |
 | `![légende](figures/x.svg)` | figure à la largeur du corps, légende au-dessous |
+| `^` dans une formule | **caret littéral** — les extensions `superscript` et `subscript` de Pandoc sont **désactivées** |
+
+⚠ **La désactivation du `superscript` n'est pas décorative.** Sans elle, Pandoc apparie deux `^`
+d'une même ligne et compose en exposant tout ce qui les sépare : la borne du ch. 6
+`(φ_min/φ_max)^α·(η_min/η_max)^β` rendait « α·(η_min/η_max) » en exposant et β sur la ligne — *une
+formule fausse au PDF, exacte à la source*. Le corpus n'emploie le caret qu'en notation.
 
 ⚠ **Ce qui précède le premier `##` ne passe pas au PDF** — titre du document et ligne d'auteur y sont
 portés par la page de titre du gabarit. Tout contenu doit donc vivre sous un `##`.
@@ -148,6 +159,14 @@ ni l'un ni l'autre ne signale. La règle :
 | `⚠` + gras, **1ᵉʳ de sa sous-section** | *italique*, et le `⚠` tombe |
 | `⚠` + gras, les suivants | romain |
 | `⚠` isolé | tombe ; la phrase reste entière |
+| `☑` et `✎` | **conservés** — la règle ne vise que le `⚠` |
+
+⚠ **Pourquoi `☑` et `✎` survivent.** Le motif de la règle est une **densité**, non une famille de
+fontes : quatre `⚠` par page sur mille pages ne signalent plus rien. Les deux autres marqueurs sont à
+un tout autre ordre — **six `☑` et trois `✎` pour 128 pages**, un par quatorze pages —, et chacun
+porte un état que la prose ne redit pas : `☑` *revérifié à la source*, `✎` *corrigé contre une
+édition antérieure*. *Si leur nombre croissait d'un ordre de grandeur, c'est la mesure qui
+trancherait, pas cette note.*
 
 ⚠ **Conséquence pratique.** Une tête de paragraphe qui doit rester en gras au PDF **tient en trois
 mots, le numéro compris** — `**1. Déficit d'adoption.**` passe, `**1. Le déficit est d'adoption.**`
@@ -158,8 +177,9 @@ compte des mots, il ne sait pas ce qu'est un terme.*
 
 | Chemin | Rôle |
 |---|---|
-| [`État de l'art.md`](%C3%89tat%20de%20l%27art.md) | **La source qui fait foi.** 10 pièces, 90 sections. ⚠ *`Rapport de l'art.md` jusqu'au 17 août 2026* |
-| [`État de l'art.pdf`](%C3%89tat%20de%20l%27art.pdf) | Le rendu. 127 pages, composé du `.md` |
+| [`État de l'art.md`](%C3%89tat%20de%20l%27art.md) | **La source qui fait foi.** 10 pièces, 91 sections. ⚠ *`Rapport de l'art.md` jusqu'au 17 août 2026* |
+| [`État de l'art.pdf`](%C3%89tat%20de%20l%27art.pdf) | Le rendu. 128 pages, composé du `.md` |
+| [`audit.md`](audit.md) | **L'audit du 19 août 2026** — dix-huit anomalies, chacune avec sa tâche ; ce qu'il a vérifié sans rien trouver, et les limites de sa portée |
 | `build/rendre-recension.py` | La chaîne. Assemble, compose, vérifie ses prérequis |
 | `build/recension.template` | Le gabarit Typst — grille, page de titre, colophon, table des matières |
 | `build/accentuation.lua` | La règle d'accentuation, reprise du compendium |
@@ -168,39 +188,65 @@ compte des mots, il ne sait pas ce qu'est un terme.*
 | `figures/*.svg` | Les deux figures. **Générées** ; ne pas retoucher à la main |
 | `chapitres/` | ⚠ **Brouillon de la boucle qui a produit le rapport.** Ces neuf pièces **cessent d'être lues à l'assemblage** et ont divergé de la source depuis |
 
+## Ce que la passe d'audit a soldé, le 19 août 2026
+
+☑ Ce qui suit était déclaré ici comme *constaté, non corrigé*. [`audit.md`](audit.md) l'a repris —
+*réparer un renvoi n'est pas rouvrir un livrable, et rien de ce qui suit n'a touché un énoncé.*
+
+☑ **La formule du plancher d'exploration était fausse au PDF, exacte à la source.** Pandoc appariait
+les deux `^` du ch. 6 § 6.2 et composait « α·(η_min/η_max) » en exposant. *Une borne rendue fausse
+par la chaîne est le seul défaut de ce dossier qu'un lecteur n'aurait pas pu attribuer à sa source.*
+Les extensions `superscript` et `subscript` sont désormais désactivées.
+
+☑ **La page de titre annonçait « quatre gels ».** Le corps en compte sept partout, et le tableau 0.1
+les énumère. Le gabarit est repris.
+
+☑ **Neuf renvois de chapitre pointaient vers une section retirée.** La passe du 17 août 2026 avait
+supprimé les sections de régime de l'ouverture en laissant **neuf renvois `ch. 0 § 4`** aux
+chapitres 1 à 7. ⚠ *Ce README affirmait que le régime visé se lisait au tableau 0.2 : c'était
+inexact* — les cardinaux de la revue, ses deux bornes et les deux régimes de la veille n'y
+figuraient pas. Un **§ 4 condensé** est réintroduit à l'ouverture, et les neuf renvois aboutissent.
+
+☑ **La numérotation des tableaux avait un trou.** `Tableau 0.2` sans `Tableau 0.1`. Le tableau est
+renuméroté **0.1**, ses trois renvois et la mention portée par la figure 0.1 avec lui — le SVG a été
+régénéré. Le tableau des cinq écarts du ch. 6, seule légende sans étiquette, devient **Tableau 6.1**.
+
+☑ **Quatre énoncés d'appareil étaient faux.** Le sommaire exécutif appelait « registre d'identité »
+le registre d'attributs d'observabilité — *ce qui retourne le fait négatif qu'il rapporte* — et
+renvoyait au § 7.10 pour trois faits établis aux § 7.3 et § 7.11 ; les § 8.10 et § 8.11 comptaient
+différemment les déplacements de frontière ; huit titres de section du ch. 1 portaient un tiret que
+les sept autres chapitres n'ont pas.
+
+☑ **Deux chemins pointaient dans le vide.** Le lien `[journal](gauntlet-log.md)` en tête de la source
+— le fichier a quitté ce dossier le 17 août 2026 et vit dans le seul historique `git` — et
+`bancs/nf05-debit/VERDICT.md`, sorti de [`3 - Traité/`](../3%20-%20Trait%C3%A9/) le même jour avec
+tout son dossier de bancs. Le premier est retiré, le second repointé sur le PRD qui lui survit.
+⚠ *Les quatre chiffres de débit que ce verdict portait — 599, 61, 15,2 et le blocage à n = 12 500 —
+ne se retrouvent plus nulle part dans le dépôt : le rapport le déclare à l'endroit où il les cite.*
+
 ## Réserves
 
 ☑ Ce qui suit est constaté, non corrigé : le dépôt est clos.
 
-⚠ **Le journal de la boucle a quitté ce dossier le 17 août 2026.** `gauntlet-log.md` — 649 lignes —
-n'y existe plus, et le lien `[journal](gauntlet-log.md)` en tête de la source **pointe dans le vide**.
-Le fichier reste dans l'historique `git`. *Le seul journal du dépôt qui porte ce nom vit désormais
-sous [`3 - Traité/`](../3%20-%20Trait%C3%A9/), et il ne couvre pas cette boucle-ci.*
-
-⚠ **Neuf renvois de chapitre pointent vers une section retirée.** La passe du 17 août 2026 a supprimé
-les sections de régime de l'ouverture ; **neuf renvois `ch. 0 § 4`** subsistent aux chapitres 1 à 7.
-*Le régime qu'ils visaient se lit au tableau 0.2 de l'ouverture, colonne « Régime de preuve ».*
-
-⚠ **La numérotation des tableaux a un trou.** Le rapport porte un `Tableau 0.2` sans `Tableau 0.1` :
-le tableau des sept gels a été retiré à la même passe, et *renuméroter aurait cassé les renvois qui
-visent le 0.2*.
-
 ⚠ **`chapitres/` a divergé de la source.** Le brouillon porte encore les sections que la source ne
-porte plus. *Il n'est plus lu, et c'est ce qui rend la divergence inoffensive — pas ce qui la rend
-fausse.*
+porte plus, et la passe d'audit ne l'a pas repris : le **§ 4** réintroduit à l'ouverture est
+condensé des §§ 4 à 6 du brouillon, il ne les recopie pas. *`chapitres/` n'est plus lu, et c'est ce
+qui rend la divergence inoffensive — pas ce qui la rend fausse.*
 
 ☑ **Le `README.md` de la racine décrivait une chaîne qui n'existe plus, et il a été repris le
 17 août 2026.** Il annonçait un `Rapport de l'art.html`, un `build/rendre-rapport.py` et **41 pages
-au 16 août 2026** ; ce dossier n'a ni rendu HTML, ni ce script, et son PDF fait **127 pages**. Il
-écrivait aussi que le rapport n'a « ni chaîne de rendu, ni contrôle, ni PDF » — *vrai une journée,
-faux dès l'entrée de ce dossier*. ⚠ **Ce qui reste exact dans cette formule** : le rapport n'a
-toujours **aucun contrôle**.
+au 16 août 2026** ; ce dossier n'a ni rendu HTML, ni ce script, et son PDF fait **128 pages** depuis
+la passe d'audit du 19 août — *127 du 17 au 19*. Il écrivait aussi que le rapport n'a « ni chaîne de
+rendu, ni contrôle, ni PDF » — *vrai une journée, faux dès l'entrée de ce dossier*. ⚠ **Ce qui reste
+exact dans cette formule** : le rapport n'a toujours **aucun contrôle exécutable**.
 
 ⚠ **Rien ici n'est vérifié par un tiers.** Le rapport n'a pas de relecteur distinct de son rédacteur,
 aucun contrôle ne rejoue ses énoncés, et ses sept sources lui font hériter de leurs propres réserves —
 dont les passes d'août 2026 de la veille et de la revue, **sans ronde adverse à plusieurs votants**.
-La frontière exacte de ce qui est su, et de ce qui ne l'est pas, est établie au **ch. 8** ; le prix de
-chaque réserve, au **sommaire exécutif**.
+⚠ *L'audit du 19 août ne lève pas cette réserve et ne s'en donne pas le pouvoir* : il porte sur
+l'appareil — renvois, cardinaux, arithmétique interne, chemins, rendu —, il n'a **rouvert aucune des
+sept sources**, et il déclare cette limite en propre. La frontière exacte de ce qui est su, et de ce
+qui ne l'est pas, est établie au **ch. 8** ; le prix de chaque réserve, au **sommaire exécutif**.
 
 *Une dette qu'on cesse de suivre reste une dette ; elle change seulement de nom, et le nom qu'elle
 prend ici est **manque définitif*** (PRD §16 du compendium).

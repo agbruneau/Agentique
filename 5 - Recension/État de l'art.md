@@ -12,7 +12,10 @@ toujours celui du livrable qui porte l'énoncé, jamais un meilleur* (ch. 0 § 3
 *Ce fichier est la seule source qui fait foi.* `État de l'art.pdf` s'en compose par
 `build/rendre-recension.py`, au gabarit du compendium ; les pièces de `chapitres/` sont le brouillon
 de la boucle qui l'a produit et cessent d'être lues à l'assemblage. Le déroulé de cette boucle — ses
-verdicts, les écarts retenus et les coûts — est au [journal](gauntlet-log.md).
+verdicts, les écarts retenus et les coûts — était au journal `gauntlet-log.md`, ⚠ *sorti de ce
+dossier le 17 août 2026 et conservé dans le seul historique `git` : le renvoi qui pointait vers lui
+n'avait plus de cible, et il est retiré plutôt que réparé — le dossier ne porte plus que la source
+et son rendu.*
 
 *Ce qui précède la première pièce ne passe pas au PDF : la page de titre du gabarit le porte.*
 
@@ -144,9 +147,9 @@ des sept ne se situe lui-même sur cette échelle, et rien dans le dépôt ne le
 | **Revue de littérature** (53 p., 192 réf., dix fronts) | **6** — ce que la littérature en sait, et ce qu'elle ne traite pas | 12 attestées, 32 autodéclarées, 145 sans revue sur 189 pièces arXiv ; plafond et plancher déclarés par la revue elle-même | 15 août 2026 |
 | **Traité** — *Systèmes multiagents en essaim* (8 chapitres, 24 sections, 123 notices) | **6 par l'autre route** — coordonner par le milieu, non par accord | Chaque mécanisme sous son modèle de panne, son hypothèse de synchronisme et son coût en messages et en tours ; ☑ le seul livrable rejoué par du code — `stigmergie-lab`, 428 tests — et trois de ses énoncés y sont réfutés par la mesure | 15 août 2026, troisième édition |
 
-: Tableau 0.2 — Les sept livrables situés sur le cadre, avec le régime dont chacun fait hériter ce rapport.
+: Tableau 0.1 — Les sept livrables situés sur le cadre, avec le régime dont chacun fait hériter ce rapport.
 
-Trois remarques closent cette ouverture, et chacune commande un chapitre.
+Trois remarques closent ce tableau, et chacune commande un chapitre.
 
 La première porte sur le niveau 4. C'est le seul palier dont un livrable instruise la matière au
 grain du droit — le Vol. II, sur socle daté et à niveaux de preuve nommés — et c'est aussi celui où
@@ -174,6 +177,44 @@ hors du cadre que cette ouverture pose, et le déclare en tête.*
 
 ---
 
+### 4. Le régime des sources, et ce qu'il interdit
+
+Le tableau 0.1 donne en une ligne le régime dont chaque livrable fait hériter ce rapport. Ce qui
+suit en détaille les quatre formes que les chapitres invoquent ensuite sans les rejouer — *ils les
+reconduisent, ils ne les corrigent pas*, et aucune ne s'améliore en descendant jusqu'ici (§ 3).
+
+**Le compendium se déclare non publiable.** Ses cinquante chapitres sont rédigés **hors portes** ;
+aucun de leurs énoncés n'est central au sens de **CA-IV-01** ; **CA-IV-11** et **CA-IV-13** —
+l'obligation d'un relecteur distinct du rédacteur — demeurent dérogées et non satisfaites. La
+matière héritée du Vol. I y entre en **[C]** : *vérification portant sur les références, non sur le
+contenu des affirmations.* C'est le régime que portent tous les énoncés que les chapitres 1 à 5
+tiennent de la somme.
+
+**La veille déclare deux régimes** et dit lequel s'applique où. Le **régime fort** — trois
+vérificateurs indépendants chargés de *réfuter* — couvre ses sections de fond ; le **régime faible**
+— contre-vérification individuelle sur source primaire, **sans ronde adverse** — couvre le reste.
+⚠ **Les passes d'août 2026 n'ont aucune ronde adverse à plusieurs votants**, et l'édition du 15 août
+écrit d'elle-même que son régime le plus fort *reste plus faible* que celui des rondes à trois
+votants de juillet 2026. Une seule région y échappe, et le chapitre qui en vit le déclare : le socle
+de la couche installée vient de la passe du 15 juillet, portée adverse à trois votants (ch. 7
+§ 7.1).
+
+**La revue mesure son corpus** avant d'en rapporter le contenu. Sur **189 pièces déposées sur
+arXiv** — 192 entrées au total —, **douze** portent une attestation de publication en notice,
+**trente-deux** annoncent une acceptation au seul champ de commentaire libre — *rempli par l'auteur
+et vérifié par personne* — et **cent quarante-cinq** ne présentent aucun signe de revue par les
+pairs. ⚠ Ces cardinaux sont des **bornes**, non des mesures : **145** est un plafond du non-arbitré,
+**12** un plancher de l'arbitré — une notice muette n'établit pas l'absence d'arbitrage, une
+attestation absente n'établit pas l'absence de publication. *Les trois classes mesurent ce que les
+notices déclarent, non ce que les comités ont fait.*
+
+**Le traité est le seul livrable** dont les énoncés soient rejoués par du code, et la mesure lui en
+réfute trois : `stigmergie-lab` consigne **cinq écarts**, dont trois contredisent le texte.
+⚠ *C'est le seul contrepoids interne de ce rapport, et il ne couvre qu'un livrable sur sept* — avec
+la réserve que le ch. 8 § 8.8 tient pour la plus lourde de toutes.
+
+---
+
 ## Chapitre 1 — Le socle protocolaire
 
 *Matière : compendium, Livre I, ch. 1, 2, 8, 9, 10 ; `4 - Veille/Veille Technologique.md` ;
@@ -181,7 +222,7 @@ hors du cadre que cette ouverture pose, et le déclare en tête.*
 
 ---
 
-### 1.1 — Ce que ce chapitre tient, de qui, et à quel prix
+### 1.1 Ce que ce chapitre tient, de qui, et à quel prix
 
 Trois livrables portent la matière protocolaire, à trois dates et sous trois régimes. Le tableau
 ci-dessous conditionne tout ce qui suit : aucun énoncé de ce chapitre ne peut valoir mieux que la
@@ -189,7 +230,7 @@ ligne dont il descend.
 
 | Livrable | Gel | Régime hérité | Ce qu'il dit de lui-même |
 |---|---|---|---|
-| Compendium, Livre I (ch. 1, 2, 8, 9, 10) | gel unique du 27 juillet 2026 ; sources gelées juin 2026 (Vol. I) et 16 juillet 2026 (Vol. II) | **[C]** pour ce qui descend du Vol. I — PRD §7.1 du compendium : la vérification y porte sur les *références*, non sur le contenu des affirmations | « **brouillon de rédaction, non publiable** » ; « aucun énoncé n'est central au sens de **CA-IV-01** » |
+| Compendium, Livre I (ch. 1, 2, 8, 9, 10) | gel unique du 27 juillet 2026 ; sources gelées juin 2026 (Vol. I) et 16-17 juillet 2026 (Vol. II) | **[C]** pour ce qui descend du Vol. I — PRD §7.1 du compendium : la vérification y porte sur les *références*, non sur le contenu des affirmations | « **brouillon de rédaction, non publiable** » ; « aucun énoncé n'est central au sens de **CA-IV-01** » |
 | Veille technologique | 15 août 2026 | source primaire rouverte par le rédacteur, **sans ronde adverse à plusieurs votants** pour les éditions d'août (veille, § 2.2, § 10) | métriques d'adoption « toutes auto-déclarées » (veille, § 10) |
 | Revue de littérature | 15 août 2026 | notices arXiv : **12 pièces attestées sur 189 (6 %)**, **32 auto-déclarées (17 %)**, **145 sans signe de revue (77 %)** | « le lire comme une part du champ serait circulaire » |
 
@@ -209,7 +250,7 @@ faisait dire.*
 
 ---
 
-### 1.2 — Le passage du déterministe à l'agentique : ce qui ne change pas
+### 1.2 Le passage du déterministe à l'agentique : ce qui ne change pas
 
 Le chapitre 1 du compendium pose le socle **pré-agentique**, une seule fois, sur une thèse économique
 avant d'être technique : *l'interopérabilité n'est pas un attribut mais une propriété à maintenir dans
@@ -243,7 +284,7 @@ l'écart : « ce n'est pas un défaut de mise en œuvre : c'est le prix de la v�
 
 ---
 
-### 1.3 — MCP : un contrat réel, et étroit
+### 1.3 MCP : un contrat réel, et étroit
 
 L'axe agent-outil est un **triangle hôte / client / serveur** en appels de procédure JSON. L'apport
 propre à une lecture d'interopérabilité n'est pas les primitives mais la **grille de contrôle** : **outils** contrôlés par le modèle, **ressources** par l'application, **gabarits
@@ -294,7 +335,7 @@ marquées au chapitre 8) — et la veille y arrive autrement : les principes du 
 
 ---
 
-### 1.4 — A2A : la carte, la tâche, et l'opacité voulue
+### 1.4 A2A : la carte, la tâche, et l'opacité voulue
 
 L'axe agent-agent fixe ses structures en version 1.0 : l'**Agent Card** publiée à un emplacement bien
 connu, déclarant identité, capacités et modalités d'interaction ; la **tâche** comme unité de travail
@@ -379,7 +420,7 @@ standardisé véritablement inter-fournisseurs ne s'impose à juin 2026, gel de 
 
 ---
 
-### 1.5 — La sémantique : le niveau que la pile présuppose
+### 1.5 La sémantique : le niveau que la pile présuppose
 
 La thèse du chapitre 2 tient en une phrase, que le chapitre 9 reprend **par copie** :
 « l'interopérabilité sémantique — accord sur le sens, pas seulement sur le format — est le niveau que
@@ -462,7 +503,7 @@ de contrainte.
 
 ---
 
-### 1.6 — Découvrir, nommer, résoudre : UDDI rejoué, et la portabilité
+### 1.6 Découvrir, nommer, résoudre : UDDI rejoué, et la portabilité
 
 La proposition organisatrice du chapitre 9 contredit une lecture naturelle : la nouveauté ne tient pas
 à la découverte prise isolément — l'intégration d'entreprise la pratique depuis longtemps — mais au
@@ -543,7 +584,7 @@ l'exécution, elle, reste captive.*
 
 ---
 
-### 1.7 — La transaction et l'infrastructure : où l'interopérabilité devient responsabilité
+### 1.7 La transaction et l'infrastructure : où l'interopérabilité devient responsabilité
 
 Le chapitre 10 décompose sa thèse avant de l'employer : que la transaction agentique soit
 l'aboutissement financier de la pile est une **lecture d'auteur** ; qu'AGNTCY soit une couche
@@ -561,7 +602,7 @@ au socle du Vol. II, degré 3 — et « s'y refuse plutôt que d'emprunter à un
 (compendium, ch. 10 § 10.1.4).
 
 Le chapitre 10 porte le seul cas du corpus où deux volumes ne disent pas la même chose. Le
-Vol. II, gelé au 16 juillet 2026, ne documente aucun transfert de gouvernance d'AP2 ; le Vol. I, gelé
+Vol. II, gelé aux 16-17 juillet 2026, ne documente aucun transfert de gouvernance d'AP2 ; le Vol. I, gelé
 en juin 2026 — donc **antérieur** —, porte le transfert à la FIDO Alliance le 28 avril 2026, en
 **v0.2**. Le compendium refuse d'arbitrer : « le socle du Vol. II ne documente pas X » et « le Vol. I
 documente X » sont **logiquement compatibles**, le premier décrivant un corpus de sources, le second
@@ -627,7 +668,7 @@ veille du 15 août 2026, le règlement **s'applique depuis le 2 août 2026** dan
 étendue — article 50, modèles à usage général, gouvernance et sanctions —, seul le haut risque
 étant reporté, et le 2 août 2027 n'est, au compendium même, qu'une période de grâce documentaire
 pour les modèles mis sur le marché avant le 2 août 2025, non une mise en conformité générale
-(veille, § 8.1 ; compendium, ch. 30 § 30.1.1 ; ch. 4 § 4.12 pour l'instruction). ⚠ Et les sources
+(veille, § 8.1 ; compendium, ch. 30 § 30.1.1 ; ch. 4 § 4.12 de ce rapport pour l'instruction). ⚠ Et les sources
 ne documentent aucun régime de litige propre à la transaction agentique — *absence de
 documentation, R-14 degré 3*. Une preuve technique n'a de valeur que devant une procédure qui
 l'admet, et l'existence de cette procédure n'est pas établie.
@@ -697,7 +738,7 @@ l'**utilisateur** — « le porteur change, le problème reste » (veille, § 9.
 
 ---
 
-### 1.8 — Ce que le champ a réglé, ce qu'il n'a pas réglé
+### 1.8 Ce que le champ a réglé, ce qu'il n'a pas réglé
 
 **Réglé** — au sens où un contrat existe, est daté, et se vérifie. L'axe agent-outil est un fait
 accompli d'écosystème : la veille le mesure à « près d'un demi-milliard de téléchargements mensuels »
@@ -1567,9 +1608,9 @@ C'est cette lacune que le scénario C attaque, et le PRD du simulateur le désig
 
 Le second énoncé d'échelle est celui de la réplication. Le §2.1 du traité déroule le cas *k* = 3 répliques, seuil d'accusé *m* = 2, et conclut que *le nombre de disparitions auquel r₂ survit n'est pas k − 1 = 2, il est m − 1 = 1* : la borne s'écrit en fonction du seuil d'accusé, nulle part du facteur de réplication. Le scénario D ne porte aucune population d'agents : il déroule pas à pas *k* = 3 répliques, seuil d'accusé *m* = 2, temporisateur d'appartenance 30 s (`crates/sim-agents/src/scenario_d.rs`), et le dépôt ne publie pas de *n* pour cette mesure parce qu'elle n'en a pas. **Mesuré** : l'oracle R1 est violé *exactement* à t₄ avec élection d'un non-membre et *jamais* avec attente, le compteur de pannes affichant 2 au moment de la violation — donc *k* ≥ *f* + 1 respecté à l'égalité ; et `min.insync.replicas = 1` fait tomber la tolérance de *f* à 0 **sans qu'aucune erreur ne soit émise** (PRD du simulateur §7).
 
-Un troisième chiffre d'échelle n'est pas retrouvé, et le dépôt l'affiche au même rang que ceux qui le sont. La cible de débit du simulateur — NF-05, 10³ secondes simulées par seconde-cœur à *n* = 1 000 — **n'est pas atteinte** : de l'ordre de 10 à 15, l'écart étant déclaré structurel en Θ(*n*²), *chaque agent lisant ce que toute la population écrit* (`bancs/nf05-debit/VERDICT.md`). NF-05 étant une cible d'ingénierie posée sans mesure préalable, *elle est à refaire sur la mesure*. Ce n'est pas un écart au traité mais d'un document à lui-même, et le dépôt tient les deux registres séparés.
+Un troisième chiffre d'échelle n'est pas retrouvé, et le dépôt l'affiche au même rang que ceux qui le sont. La cible de débit du simulateur — NF-05, 10³ secondes simulées par seconde-cœur à *n* = 1 000 — **n'est pas atteinte** : de l'ordre de 10 à 15, l'écart étant déclaré structurel en Θ(*n*²), *chaque agent lisant ce que toute la population écrit* (`3 - Traité/docs/PRD.md`, réserve NF-05). NF-05 étant une cible d'ingénierie posée sans mesure préalable, *elle est à refaire sur la mesure*. Ce n'est pas un écart au traité mais d'un document à lui-même, et le dépôt tient les deux registres séparés.
 
-Ce verdict borne tout ce qui est rapporté ensuite, et c'est la jointure que le dépôt ne fait nulle part. Un coût par unité de temps simulé en Θ(*n*²) fixe le prix d'une campagne avant qu'elle soit conçue : le banc mesure 599 secondes simulées par seconde-cœur à *n* = 64, 61 à *n* = 256, 15,2 à *n* = 1 000, et déclare bloqué l'usage à *n* = 12 500 — celui-là même que le traité prend pour exemple d'exploitation. La borne supérieure de fait est donc *n* = 64, le défaut des scénarios A et B, où une exécution complète du scénario B tient dans une fraction de seconde ; et toutes les mesures prises sur le journal partagé sont en dessous — *n* = 16 pour les trois premiers points de la phase 1, *n* = 24 pour Φ_c. Les *n* plus grands rapportés ici appartiennent tous à des mécanismes que ce banc ne mesure pas et qui ne lisent pas le journal : les 4 000 agents de la rumeur et les 256 du seuil de quorum au § 6.4 de ce chapitre, et les 512 unités du scénario C, qui sont les entrées d'une formule. Conséquence pour le tableau du § 6.5 de ce chapitre : sa colonne « Ce que la mesure donne » est une colonne **petit-*n***. Aucun des cinq écarts n'y est établi au-delà de *n* = 100, et celui que le § 6.5 de ce chapitre tient pour le plus lourd l'est à *n* = 24 — ce que le § 6.6 de ce chapitre rappellera en droit, vérifier à un *n* ne disant formellement rien d'un autre, le plafond de débit l'impose ici en fait.
+Ce verdict borne tout ce qui est rapporté ensuite, et c'est la jointure que le dépôt ne fait nulle part. Un coût par unité de temps simulé en Θ(*n*²) fixe le prix d'une campagne avant qu'elle soit conçue : le banc mesure 599 secondes simulées par seconde-cœur à *n* = 64, 61 à *n* = 256, 15,2 à *n* = 1 000, et déclare bloqué l'usage à *n* = 12 500 — celui-là même que le traité prend pour exemple d'exploitation. ⚠ *Ces quatre chiffres sont les seuls de ce chapitre dont la source ait quitté le dépôt* : le verdict qui les portait est sorti de `3 - Traité/` le 17 août 2026 avec tout son dossier de bancs, et le PRD qui lui survit ne retient que l'ordre de grandeur — *dix à quinze*. Ils ne sont pas devenus faux ; ils sont devenus invérifiables autrement que par l'historique `git`, et c'est un état différent qui doit se dire. La borne supérieure de fait est donc *n* = 64, le défaut des scénarios A et B, où une exécution complète du scénario B tient dans une fraction de seconde ; et toutes les mesures prises sur le journal partagé sont en dessous — *n* = 16 pour les trois premiers points de la phase 1, *n* = 24 pour Φ_c. Les *n* plus grands rapportés ici appartiennent tous à des mécanismes que ce banc ne mesure pas et qui ne lisent pas le journal : les 4 000 agents de la rumeur et les 256 du seuil de quorum au § 6.4 de ce chapitre, et les 512 unités du scénario C, qui sont les entrées d'une formule. Conséquence pour le tableau 6.1 : sa colonne « Ce que la mesure donne » est une colonne **petit-*n***. Aucun des cinq écarts n'y est établi au-delà de *n* = 100, et celui que le § 6.5 de ce chapitre tient pour le plus lourd l'est à *n* = 24 — ce que le § 6.6 de ce chapitre rappellera en droit, vérifier à un *n* ne disant formellement rien d'un autre, le plafond de débit l'impose ici en fait.
 
 ### 6.4 Propager, converger, s'accorder ; puis la cascade et la gouvernance
 
@@ -1593,7 +1634,7 @@ NF-15 pose la règle : *un écart est un défaut du simulateur ou une erreur du 
 | Contrôleur d'élasticité (traité, §2.2) | Convergence attendue aux valeurs documentées | Il tourne autour de sa cible : gain unitaire, temps mort de deux périodes | **Non** — le §2.2 du traité le décrit déjà comme mesurant « l'effet d'une décision qu'il n'a pas fini d'appliquer » |
 | `mul_add` (parité natif/WASM) | Attendu identique entre cibles | Verdict **dépendant de la machine de construction** : changé entre deux passages, après installation de mingw | **Non** — il porte sur la machine de construction |
 
-: Les cinq écarts consignés au registre des décisions ; les deux premiers sont repris au §0 du PRD du simulateur, le troisième au §0.1.
+: Tableau 6.1 — Les cinq écarts consignés au registre des décisions ; les deux premiers sont repris au §0 du PRD du simulateur, le troisième au §0.1.
 
 Le premier écart appelle une observation que le dépôt ne fait nulle part, faite ici sur les deux fichiers. Le §3.1 du traité de la **troisième** édition du traité porte désormais *à n = 100, 7,933 × 10⁻³*, et ajoute que l'arrondi de π/(4*n*) donnerait 7,9 × 10⁻³, *que la borne réellement écrite dépasse de 0,42 % : un arrondi présenté comme une borne stricte est un énoncé faux, non une imprécision*. L'écart a été porté dans le texte qui l'avait causé, et le registre continue de le compter — il enregistre ce qui a été trouvé, non ce qui subsiste.
 
@@ -1648,11 +1689,11 @@ Les six chapitres qui précèdent suivent les Livres du compendium. Celui-ci ne 
 
 Le relevé qui fondait ce chapitre avait été fait au sigle, et le sigle ne suffit pas sur ce livrable-là. Le compendium nomme ses objets par description autant que par nom : sa convention de désambiguïsation proscrit le sigle nu et impose le qualificatif complet à chaque emploi (compendium, ch. 7 § 7.5), et sa parade de péremption retire du corps les dénominations commerciales et les numéros de version (compendium, ch. 9 § 9.6, note de statut). Son propre appareil en tire la règle et l'écrit : un décompte d'occurrences y porte sur le **marqueur littéral de l'identifiant**, jamais sur l'objet (compendium, ch. 10, en-tête, *Garde-fous balayés*). Le § 7.9 de ce chapitre en donne le cas d'école : « UCP » rend zéro et l'objet est instruit. Le contrôle a donc été refait **par objet**, périphrases comprises, sur les cinquante chapitres et l'annexe bibliographique. Il donne trois résultats au lieu d'un.
 
-**Sept des dix termes sont absents des deux façons.** *XES*, *IEEE 1849*, *OCEL*, *fouille de processus*, *process mining*, *BOAT* — sigle développé — et *Step Functions* ne rendent rien, ni sous leur nom, ni sous « format ou journal d'événements normalisé », « journal centré objet », « découverte de modèle de processus », « analyse ou reconstitution des journaux d'exécution », « vérification de conformité », « technologies d'orchestration et d'automatisation », « service géré d'orchestration ». Deux voisins existent, et ce ne sont pas ces objets-là : la **trace distribuée normalisée** du ch. 3 § 3.4.5 et les conventions sémantiques du ch. 38 suivent un appel, elles ne reconstituent pas un processus ; le contrôle de conformité des ch. 3 § 3.4.3 et 9 § 9.5 vise l'adéquation d'une implémentation à une spécification, non celle d'une trace à un modèle.
+**Sept des dix termes sont absents des deux façons.** *XES*, *IEEE 1849*, *OCEL*, *fouille de processus*, *process mining*, *BOAT* — sigle développé — et *Step Functions* ne rendent rien, ni sous leur nom, ni sous « format ou journal d'événements normalisé », « journal centré objet », « découverte de modèle de processus », « analyse ou reconstitution des journaux d'exécution », « vérification de conformité », « technologies d'orchestration et d'automatisation », « service géré d'orchestration ». Deux voisins existent, et ce ne sont pas ces objets-là : la **trace distribuée normalisée** du compendium, ch. 3 § 3.4.5, et ses conventions sémantiques du ch. 38 suivent un appel, elles ne reconstituent pas un processus ; son contrôle de conformité des ch. 3 § 3.4.3 et 9 § 9.5 vise l'adéquation d'une implémentation à une spécification, non celle d'une trace à un modèle.
 
-**Deux termes désignent un objet que le compendium instruit sous périphrase.** *RPA* et *robotisation* ne s'y écrivent pas ; **le pilotage d'interface** y est instruit trois fois. L'ouverture en bêta publique du 22 octobre 2024 et sa reprise du 23 janvier 2025 y sont datées (compendium, ch. 4 § 4.0.1). L'ancrage, le jeu de marques et la fragilité des sélecteurs des agents de navigateur y sont décrits (ch. 4 § 4.4.3). Le banc **OSWorld** y porte sa trajectoire, « autour de 20 % en 2024 » puis l'approche du plafond humain (ch. 6 § 6.3.3). Ce que le § 7.6 tient du seul relevé de la veille n'est donc pas le déplacement de la main du robot vers le modèle : c'est le marché de la robotisation, ses éditeurs et leur reconversion en orchestrateurs, qui n'ont, eux, aucune ligne.
+**Deux termes désignent un objet que le compendium instruit sous périphrase.** *RPA* et *robotisation* ne s'y écrivent pas ; **le pilotage d'interface** y est instruit trois fois. L'ouverture en bêta publique du 22 octobre 2024 et sa reprise du 23 janvier 2025 y sont datées (compendium, ch. 4 § 4.0.1). L'ancrage, le jeu de marques et la fragilité des sélecteurs des agents de navigateur y sont décrits (compendium, ch. 4 § 4.4.3). Le banc **OSWorld** y porte sa trajectoire, « autour de 20 % en 2024 » puis l'approche du plafond humain (compendium, ch. 6 § 6.3.3). Ce que le § 7.6 tient du seul relevé de la veille n'est donc pas le déplacement de la main du robot vers le modèle : c'est le marché de la robotisation, ses éditeurs et leur reconversion en orchestrateurs, qui n'ont, eux, aucune ligne.
 
-**Un décompte était faux au marqueur même.** *TCK* figure à l'annexe bibliographique, à l'entrée du kit de compatibilité du protocole agent-agent — « suite de conformance pytest, 3 transports, filtrage RFC 2119 » —, et l'objet est instruit au corps sous « une **trousse de compatibilité** » qui « filtre les exigences selon leur force normative » (compendium, ch. 9 § 9.5.2). Il y arrive après la distinction conformité/interopérabilité du ch. 3 § 3.4.3 et devant l'absence de certification par un tiers du ch. 9 § 9.5.3. Ce que le § 7.5 apporte n'est donc pas l'instrument, que le compendium tient : c'est le seul kit adossé à une norme *de jure*, celui de DMN, et le contraste qu'il ouvre.
+**Un décompte était faux au marqueur même.** *TCK* figure à l'annexe bibliographique, à l'entrée du kit de compatibilité du protocole agent-agent — « suite de conformance pytest, 3 transports, filtrage RFC 2119 » —, et l'objet est instruit au corps sous « une **trousse de compatibilité** » qui « filtre les exigences selon leur force normative » (compendium, ch. 9 § 9.5.2). Il y arrive après la distinction conformité/interopérabilité du compendium, ch. 3 § 3.4.3, et devant l'absence de certification par un tiers de son ch. 9 § 9.5.3. Ce que le § 7.5 apporte n'est donc pas l'instrument, que le compendium tient : c'est le seul kit adossé à une norme *de jure*, celui de DMN, et le contraste qu'il ouvre.
 
 Le reste du relevé tient. Camunda, UiPath, Zeebe, Restate et DBOS ne figurent qu'à l'annexe bibliographique, cités par aucun chapitre. **Temporal** est la seule exception, et son régime est explicite : le ch. 23 du compendium le classe *repéré, non extrait*, en **[C]**, « ne porte aucun fait central », et refuse de lui assigner un positionnement au motif que son niveau de preuve ne le permet pas (compendium, ch. 23 § 23.4). Le constat qui fonde ce chapitre en sort réduit, non renversé : le compendium a instruit la fonction de pilotage d'interface et l'instrument de conformité sur leur seul versant agentique ; il n'a instruit ni la discipline de la fouille, ni ses normes, ni le marché de la robotisation, ni les substrats d'exécution durable au-delà d'un repérage sans fait.
 
@@ -1780,7 +1821,7 @@ Trois chaînons manquants sont nommés sans artefact, et la veille les range au 
 
 ⚠ Quatre ignorances sont enfin des ignorances d'accès, et elles se déclarent au même rang que le reste (veille, annexe, *Ce qui n'a pas pu être vérifié*). Les normes du périmètre orchestration n'ont pas été rouvertes au 15 août 2026, `iso.org` ayant refusé la consultation — le socle *de jure* de ce chapitre est **reporté du gel**. Dix-neuf numéros du même périmètre n'ont été rouverts à aucun des deux tours d'août, pour dix-sept références déclarées, l'écart n'étant pas résolu. Les décomptes d'éditeurs des deux *Magic Quadrant* n'ont jamais été vérifiés sur le rapport, celui-ci restant payant. Et la documentation d'un éditeur de la couche, comme celle du maillage événementiel d'un autre, est servie en rendu côté client, non restituée : les fonctionnalités décrites au gel sont **reportées sans revérification**.
 
-Reste l'ignorance qui appartient en propre à ce rapport, et le contrôle par objet du § 7.1 en a réduit le périmètre. Ce que le compendium n'a pas instruit, c'est la **fouille de processus** et ses deux formats, le **marché de la robotisation** et ses éditeurs, les **trois portées commerciales** de l'*exactly-once*, le **kit de conformité adossé à une norme *de jure*** et le **statut daté des projets** qui portent l'enveloppe et le tissu événementiels. Ce qu'il a instruit, et que ce chapitre ne porte donc pas seul : le **pilotage d'interface** (compendium, ch. 4 § 4.4.3 et ch. 6 § 6.3.3), la **trousse de compatibilité** du protocole agent-agent (ch. 9 § 9.5.2), et les **trois sémantiques de livraison** dont l'*exactly-once* est la troisième (ch. 1 § 1.5.2). Sur ces trois-là, deux voix existent et ce rapport les a opposées ; sur tout le reste, **il n'y a qu'une voix, et elle est datée du 15 août 2026**. Le régime de ce chapitre n'est donc pas plus faible que celui des autres : il est plus étroit, et il l'est sur moins de matière que le § 7.1 ne l'écrivait d'abord — une seule source de fond, vérifiée sous le régime le plus fort du livrable pour son socle de juillet, reportée sans revérification pour la part que l'accès a fermée. Ce qu'un second livrable en aurait dit ne le sera pas, le dépôt étant clos.
+Reste l'ignorance qui appartient en propre à ce rapport, et le contrôle par objet du § 7.1 en a réduit le périmètre. Ce que le compendium n'a pas instruit, c'est la **fouille de processus** et ses deux formats, le **marché de la robotisation** et ses éditeurs, les **trois portées commerciales** de l'*exactly-once*, le **kit de conformité adossé à une norme *de jure*** et le **statut daté des projets** qui portent l'enveloppe et le tissu événementiels. Ce qu'il a instruit, et que ce chapitre ne porte donc pas seul : le **pilotage d'interface** (compendium, ch. 4 § 4.4.3 et ch. 6 § 6.3.3), la **trousse de compatibilité** du protocole agent-agent (compendium, ch. 9 § 9.5.2), et les **trois sémantiques de livraison** dont l'*exactly-once* est la troisième (compendium, ch. 1 § 1.5.2). Sur ces trois-là, deux voix existent et ce rapport les a opposées ; sur tout le reste, **il n'y a qu'une voix, et elle est datée du 15 août 2026**. Le régime de ce chapitre n'est donc pas plus faible que celui des autres : il est plus étroit, et il l'est sur moins de matière que le § 7.1 ne l'écrivait d'abord — une seule source de fond, vérifiée sous le régime le plus fort du livrable pour son socle de juillet, reportée sans revérification pour la part que l'accès a fermée. Ce qu'un second livrable en aurait dit ne le sera pas, le dépôt étant clos.
 
 ---
 
@@ -1851,7 +1892,7 @@ portées dont une n'est pas énoncée : **la frontière du savoir n'est pas cell
 
 Hors des deux impossibilités, tout ce que ce rapport porte est **daté**, et sa date n'est pas la
 sienne : sept livrables portent sept gels, dix semaines séparent le plus ancien du plus récent, et
-chaque énoncé vaut à son gel et pas au-delà (ch. 0 § 3, tableau 0.2). La question utile n'est pas
+chaque énoncé vaut à son gel et pas au-delà (ch. 0 § 3, tableau 0.1). La question utile n'est pas
 *est-ce vrai* mais *depuis quand, et pour combien de temps encore*.
 
 Le rapport mesure quatre fois la vitesse de péremption, et c'est ce qui donne son échelle à la
@@ -2079,7 +2120,7 @@ rapport est donc démenti sur deux points par les chapitres qu'il ouvre, et il l
 ### 8.8 L'angle mort de l'instrument
 
 Un seul contrepoids interne existe dans tout le dépôt, et il couvre **un livrable sur sept** (ch. 0
-§ 3, tableau 0.2). Le ch. 6 en tire ce qu'il donne et ce qu'il ne donne pas : il donne cinq écarts,
+§ 3, tableau 0.1). Le ch. 6 en tire ce qu'il donne et ce qu'il ne donne pas : il donne cinq écarts,
 dont trois contre le texte ; il ne donne ni la performance réelle, ni la vivacité, ni aucun *n* au-delà
 du sien, et son dépôt déclare que **quatre de ses quinze oracles ne sont armés par aucune exécution**
 (ch. 6 § 6.6).
@@ -2180,8 +2221,8 @@ branche, un manque qui change de régime entre deux gels (§ 8.3). ⚠ **La seul
 péremption se compte en années est celle qui n'est pas agentique.**
 
 *Ce qui n'est pas su l'est majoritairement faute d'adoption ou faute d'avoir regardé, non faute de
-pouvoir savoir.* Cinq des six déplacements possibles ne demandent aucune découverte (§ 8.9, § 8.10) ; un
-seul bute sur une impossibilité, et elle est antérieure à son objet.
+pouvoir savoir.* Six des sept déplacements possibles ne demandent aucune découverte (§ 8.9, § 8.10) ;
+le septième bute sur une impossibilité, et elle est antérieure à son objet.
 
 *Et ce que ce rapport ne peut pas dire, c'est combien il reste de trous.* Deux lectures indépendantes en
 ont trouvé deux ; aucun instrument du dépôt n'en chercherait un troisième, et le dépôt est clos
@@ -2212,8 +2253,8 @@ qui attend le standard attend un événement dont rien ne date l'arrivée.
 
 **2. Révocation absente.** L'identité d'un agent ne porte ni péremption ni révocation. La carte signée compte **quatorze
 champs, aucun temporel** ; l'emploi d'une clé révoquée est interdit au niveau MUST NOT **sans aucun
-moyen de l'établir** ; et sur soixante-trois attributs du registre d'identité, *aucun ne décrit une
-chaîne de délégation, un mandat ou une autorisation* (ch. 2 § 2.5, ch. 3 § 3.6, ch. 3 § 3.9). La
+moyen de l'établir** ; et sur soixante-trois attributs du registre d'observabilité, *aucun ne décrit
+une chaîne de délégation, un mandat ou une autorisation* (ch. 2 § 2.5, ch. 3 § 3.6, ch. 3 § 3.9). La
 révocation en cascade au-delà de deux sauts est un désaccord de conception non arbitré, pour zéro
 adoption (ch. 8 § 8.6). → **Conséquence.** Le contrôle d'identité et de mandat se pose **au
 périmètre** — passerelle, plan de contrôle, point d'application — et ne s'attend pas de la couche
@@ -2271,7 +2312,7 @@ jours* (ch. 5 § 5.2, ch. 3 § 3.9).
   invoqué, jamais du protocole qui l'invoque (ch. 5 § 5.8).
 - **Les métriques d'éditeurs.** Toutes auto-déclarées ; les décomptes d'éditeurs de deux panoramas de
   marché **n'ont jamais été vérifiés**, les rapports étant payants, et un chiffre de marché largement
-  cité est déclaré **inattribuable** (ch. 7 § 7.10).
+  cité est déclaré **inattribuable** (ch. 7 § 7.3, § 7.11).
 - **La conformité attestée.** Une suite agentique vérifie l'adéquation à un dépôt *que nul
   organisme ne rend opposable*, là où le kit de la couche voisine vérifie une norme *de jure* — 3 391
   cas de test en 79 catégories (ch. 7 § 7.5, ch. 1 § 1.4).
@@ -2313,7 +2354,7 @@ n = 5 000* (ch. 6 § 6.3, § 6.6). *Coût : un banc inter-fournisseurs, qui rest
 
 Quatre réserves le bornent, et elles sont structurelles. Ce rapport est **dérivé** : il n'ouvre aucune
 source primaire et ne verse aucun fait neuf. Ses sept sources portent **sept gels étalés sur dix
-semaines** (ch. 0 § 3, tableau 0.2). Les passes d'août 2026 de ses deux livrables les plus récents
+semaines** (ch. 0 § 3, tableau 0.1). Les passes d'août 2026 de ses deux livrables les plus récents
 n'ont **aucune ronde adverse** à plusieurs votants ; le meilleur régime de vérification par lecture
 vient d'une passe de juillet, et il ne couvre qu'un chapitre (ch. 7 § 7.1). Et le seul contrepoids
 exécutable du dépôt couvre **un livrable sur sept**, avec la réserve la plus lourde du rapport :

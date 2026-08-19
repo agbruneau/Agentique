@@ -160,8 +160,14 @@ def main():
         (tmp / "recension.md").write_text(texte, encoding="utf-8")
         shutil.copytree(FIGURES, tmp / "figures",
                         ignore=shutil.ignore_patterns("*.py", "__pycache__"))
+        # ⚠ `-superscript-subscript` N'EST PAS DÉCORATIF : sans lui, Pandoc apparie
+        # deux `^` d'une même ligne et compose en exposant tout ce qui les sépare.
+        # Une borne du ch. 6 — `(φ_min/φ_max)^α·(η_min/η_max)^β` — rendait ainsi
+        # « α·(η_min/η_max) » en exposant, β sur la ligne : une formule fausse au
+        # PDF, exacte à la source. Le corpus n'emploie le caret qu'en notation.
         subprocess.run(
-            ["pandoc", str(tmp / "recension.md"), "-f", "markdown-raw_html",
+            ["pandoc", str(tmp / "recension.md"),
+             "-f", "markdown-raw_html-superscript-subscript",
              f"--template={GABARIT}", f"--lua-filter={FILTRE}",
              "-t", "typst", "-o", str(tmp / "doc.typ")],
             check=True)

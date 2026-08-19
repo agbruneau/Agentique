@@ -38,7 +38,7 @@ f("0.1", "f-00-1-echelle",
   "Ouverture § 1 du présent rapport.",
   "pile",
   "Cette échelle est l'appareil de lecture de ce rapport et rien d'autre : aucun livrable ne "
-  "l'énonce, aucun ne s'y situe lui-même, et le placement des sept livrables au tableau 0.2 est "
+  "l'énonce, aucun ne s'y situe lui-même, et le placement des sept livrables au tableau 0.1 est "
   "une lecture. Ses quatre premiers paliers sont les quatre couches du NEIF telles que le Vol. I "
   "les expose, mais numérotées en sens inverse ; les paliers 5 et 6 sont des ajouts qu'aucun "
   "livrable ne nomme sous ces titres.",

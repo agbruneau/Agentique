@@ -467,7 +467,7 @@
     set par(justify: true)
     text(font: SERIF, size: 15pt, style: "italic", fill: GRIS)[
       État détaillé du champ, établi sur le seul contenu du dépôt
-      #emph[Agentique] : sept livrables, quatre gels qui ne coïncident pas,
+      #emph[Agentique] : sept livrables, sept gels qui ne coïncident pas,
       un régime de preuve qui s'hérite et ne s'améliore jamais
     ]
   })
