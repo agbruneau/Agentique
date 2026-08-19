@@ -21,7 +21,8 @@ et ne franchit aucune porte — *synthétiser n'est ni réviser ni publier*.
 > au bit près*) : `Rapport de l'art.md / .pdf` en `État de l'art.md / .pdf` — ⚠ *`État de Art`, sans
 > l'élision, au commit `292a0f9`, repris le jour même* —, `OnePager.html` en
 > `NiveauMaturité.html`. ☑ **Le cachet de la page de titre a suivi** — **RECENSIO · ÉTAT DE L'ART**
-> —, et la chaîne de rendu avec lui : le PDF est recomposé, **127 pages** inchangées.
+> —, et la chaîne de rendu avec lui : le PDF est recomposé, **127 pages** inchangées *à cette
+> date* — il en fait **128** depuis la passe d'audit du 19 août 2026.
 > ⚠ *Le nom d'origine est conservé en clair partout où il date un constat.*
 > ⚠ **La page est repartie à la racine du dépôt le même jour** (commit `148863a`, *inchangée au bit
 > près*) : [`NiveauMaturité.html`](../NiveauMaturit%C3%A9.html) **n'est plus dans ce dossier** — elle y
