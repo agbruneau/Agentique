@@ -195,9 +195,10 @@ vérificateurs indépendants chargés de *réfuter* — couvre ses sections de f
 — contre-vérification individuelle sur source primaire, **sans ronde adverse** — couvre le reste.
 ⚠ **Les passes d'août 2026 n'ont aucune ronde adverse à plusieurs votants**, et l'édition du 15 août
 écrit d'elle-même que son régime le plus fort *reste plus faible* que celui des rondes à trois
-votants de juillet 2026. Une seule région y échappe, et le chapitre qui en vit le déclare : le socle
-de la couche installée vient de la passe du 15 juillet, portée adverse à trois votants (ch. 7
-§ 7.1).
+votants de juillet 2026. Une seule région y échappe, et le chapitre qui en vit la déclare avec sa
+réserve : le socle de la couche installée vient de la passe du 15 juillet, que le tableau des quinze
+passes porte **adverse à trois votants** — ⚠ *rang que la prose du même livrable ne confirme pas, et
+dont ce rapport ne se réclame donc pas* (ch. 7 § 7.1).
 
 **La revue mesure son corpus** avant d'en rapporter le contenu. Sur **189 pièces déposées sur
 arXiv** — 192 entrées au total —, **douze** portent une attestation de publication en notice,
