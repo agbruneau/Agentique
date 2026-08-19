@@ -73,7 +73,7 @@ l'échange réussit techniquement et se trompe métier, en silence. Exemple : ha
 assurantielle par modèle canonique (BIAN, ACORD, ISO 20022) validé en registre de schémas (Avro,
 Protobuf).
 
-**Niveau 3 — Organisationnel.** *La question : qui fait quoi, dans quel ordre, et jusqu'où va sa
+**Niveau 3 — Chorégraphique.** *La question : qui fait quoi, dans quel ordre, et jusqu'où va sa
 responsabilité ?* L'alignement des processus d'affaires, des frontières de responsabilité et de
 l'ordonnancement des flux de valeur entre unités et partenaires. En clair, deux systèmes qui se
 comprennent peuvent encore agir à contretemps, ou faire deux fois le même geste. Sans ce palier,

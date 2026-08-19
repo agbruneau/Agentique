@@ -47,7 +47,7 @@ univoque des structures échangées, par ontologies de domaine, dictionnaires et
 Exemple : harmonisation bancaire et assurantielle par modèle canonique (BIAN, ACORD, ISO 20022)
 validé en registre de schémas (Avro, Protobuf).
 
-**Niveau 3 — Organisationnel.** *Processus métier et chorégraphie événementielle.* L'alignement des
+**Niveau 3 — Chorégraphique.** *Processus métier et chorégraphie événementielle.* L'alignement des
 processus d'affaires, des frontières de responsabilité et de l'ordonnancement des flux de valeur
 entre unités et partenaires. Exemple : chorégraphie Saga en architecture événementielle sur le
 règlement d'un sinistre.

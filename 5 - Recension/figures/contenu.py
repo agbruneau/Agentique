@@ -50,7 +50,7 @@ f("0.1", "f-00-1-echelle",
            ("2", "Sémantique",
             "« Le même mot a-t-il le même sens des deux côtés ? » — modèles canoniques, "
             "registres de schémas. BIAN, ISO 20022."),
-           ("3", "Organisationnel",
+           ("3", "Chorégraphique",
             "« Qui fait quoi, dans quel ordre, jusqu'où ? » — processus et chorégraphie "
             "événementielle. Patron Saga."),
            ("4", "Juridique",
