@@ -28,7 +28,9 @@ pas, et c'est l'intérêt.*
 > ⚠⚠ **Un dossier du même nom est rentré le 20 août 2026, et ce n'est pas un retour** (commit
 > `25e4ea0`, **12 fichiers, 46 970 lignes ajoutées, aucune supprimée**). Ce que
 > [`5 - Recension/`](../5%20-%20Recension/) porte aujourd'hui n'a rien du rapport détruit : un *État
-> de l'art* de **185 p.** et **312 références en sources primaires** — AMF, BSIF, OCRI, Paiements
+> de l'art* de **185 p.** et **312 références**, ouvertes en sources primaires ⚠ *sauf neuf qu'il
+> déclare : cinq auto-citations « Corpus de l'auteur — auto-publié, non arbitré » et quatre notices
+> données pour analyse secondaire* — AMF, BSIF, OCRI, Paiements
 > Canada, Loi 25, spécifications MCP / A2A / ANP / AP2 —, sur le périmètre d'une **coopérative
 > financière canadienne régie**, accompagné d'une planche de synthèse de **7 p.** qui explique ses
 > **cinq figures**. *Le dossier détruit le 19 ne se relit toujours qu'à l'historique git, et celui-ci
@@ -36,12 +38,16 @@ pas, et c'est l'intérêt.*
 > ☑ **recomptés sur l'arbre au commit `25e4ea0` — cinq dossiers numérotés, quinze `README.md`.**
 > ⚠ *Le cardinal des `README.md` n'a pas bougé parce que `5 - Recension/` n'en porte aucun à ce
 > commit ; le dépôt en compterait seize dès qu'il en recevrait un, et le seizième a déjà vécu —
-> c'était le sien, du 17 au 19 août.* ⚠⚠ **Le compte des livrables n'est pas tranché ici, et il faut
-> le dire** : le motif qui écartait le rapport détruit — *dérivé du dépôt, pas un huitième* — ne vaut
-> plus pour celui-ci, qui **ouvre ses propres sources et ne descend d'aucun livrable**, cite les
-> travaux de l'auteur comme sources externes et renvoie à un autre dépôt que celui-ci. *Faute de
-> décision d'auteur, ce README continue d'écrire **sept**, et l'écrit comme une réserve, non comme un
-> verdict.*
+> c'était le sien, du 17 au 19 août.* ⚠⚠ **Le compte des livrables passe de sept à HUIT, et c'est un
+> constat de passe** : le motif qui écartait le rapport détruit — *dérivé du dépôt, pas un huitième* —
+> ne vaut plus pour celui-ci, qui **ouvre ses propres sources primaires et ne descend d'aucun
+> livrable**, cite les travaux de l'auteur comme sources externes et renvoie à un autre dépôt que
+> celui-ci. ⚠⚠ **Ce n'est pas une instruction d'auteur** : le PRD ne porte aucune décision sur ce
+> document ; ce README l'y range sur pièce, en donnant son motif, **et le compte se renverse d'un mot
+> de l'auteur.** ⚠ **Un indice joue contre le huitième, et il est déclaré** : le document ne se
+> présente jamais comme une pièce de ce dépôt. ⚠ **Les occurrences de « sept livrables » qui
+> subsistent ci-dessus datent un état révolu** et ne sont pas des erreurs : *le dépôt écrit sa
+> chronique en couches, jamais en écrasant.*
 >
 > ⚠ **Le dépôt est clos depuis le 8 août 2026** — décision d'auteur **D-13**
 > ([`2 - Compendium/PRD/PRD.md`](../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). *Ces deux livrables
@@ -55,8 +61,10 @@ pas, et c'est l'intérêt.*
 > consigné, pièce en main, dans l'[annexe de traçabilité](Veille%20Technologique.md) de la veille —
 > énoncés réfutés, désaccords entre vérificateurs, et ce qui n'a pas pu être vérifié.*
 > ⚠ **Le journal de la boucle du 15 août n'est plus dans ce dossier** : `gauntlet-log.md` n'y
-> existe pas, et ce README y renvoyait par un lien mort jusqu'au 17 août 2026. *Le seul journal du
-> dépôt qui porte ce nom est celui du traité, et il ne couvre pas cette boucle-ci.*
+> existe pas, et ce README y renvoyait par un lien mort jusqu'au 17 août 2026. ⚠⚠ **Et la réserve
+> qui dénonçait ce lien mort se closait elle-même sur un fichier absent** : *aucun `gauntlet-log.md`
+> n'est au dépôt, nulle part* — celui du traité, le dernier, **a été supprimé le 17 août 2026 au
+> commit `20cc1ae`**. La boucle du 15 août ne se relit qu'à l'historique git.
 >
 > ⚠ **Passe du 17 août 2026 — mise en page, et une panne de rendu que trois éditions n'avaient pas
 > vue.** Les deux pages de titre ont été reprises et uniformisées : titre commun, description du
@@ -70,9 +78,16 @@ pas, et c'est l'intérêt.*
 > n'existait que dans sa propre lecture de la source.*
 >
 > ☑ **Les 534 références ont été confrontées à leur dépôt le 17 août 2026** — 189 identifiants
-> arXiv, 16 DOI et 508 URL distinctes, interrogés à l'API arXiv, à Crossref et par résolution HTTP.
-> **189/189 arXiv et 16/16 DOI résolvent ; aucun écart de titre ni de date de dépôt sur les 239
-> notices arXiv des deux documents.** ☑ *Le résultat central de la revue — 12 attestées, 32
+> arXiv, **17 DOI distincts** et 508 URL distinctes, interrogés à l'API arXiv, à Crossref et par
+> résolution HTTP. **189/189 arXiv et 17/17 DOI résolvent ; aucun écart de titre ni de date de dépôt
+> sur les 239 notices arXiv des deux documents.** ⚠⚠ **Ce README a écrit « 16 » jusqu'au 20 août
+> 2026, et le recompte en donne dix-sept** : `grep -roh '10\.[0-9]\{4,9\}/[^ )>,;"]*'` sur les deux
+> sources, dédoublonné, en relève **17**. ⚠⚠ **Et deux d'entre eux visent le même article, à un
+> chiffre près** — Garcia-Molina et Salem, « Sagas », SIGMOD 1987, notice **[175]** des deux
+> documents : `10.1145/38713.38742` à la veille, `10.1145/38714.38742` à la revue. *Le contrôle du
+> 17 août mesurait la **résolution** de chaque identifiant, jamais la **cohérence croisée** des deux
+> bibliographies : deux DOI qui résolvent l'un et l'autre ne disent rien de ce qu'ils désignent, et
+> lequel des deux est le bon n'est pas tranché ici.* ☑ *Le résultat central de la revue — 12 attestées, 32
 > autodéclarées, 145 sans signe de revue — a été recalculé indépendamment sur les métadonnées
 > canoniques : les trois cardinaux tombent juste, et la revue est plus stricte que le contrôle qui
 > l'éprouvait, écartant des 32 une pièce dont le commentaire n'annonce qu'une soumission.*
@@ -312,7 +327,9 @@ compose.
 2026 — `Python/` y avait lui-même été créé le 10 août, les trois scripts vivant à la racine
 auparavant.)* ⚠ **Le dossier ne porte rien d'autre**, et il en portait moins que ce README ne
 disait : l'arborescence y a listé un `gauntlet-log.md` **qui n'a jamais existé ici** jusqu'au
-17 août 2026. *Le seul fichier de ce nom au dépôt est celui du traité.*
+17 août 2026. ⚠ *Et il n'en existe plus nulle part au dépôt* : le dernier, celui du traité, **a été
+supprimé le 17 août 2026 au commit `20cc1ae`** — la formule antérieure, « le seul fichier de ce nom
+au dépôt est celui du traité », est fausse depuis ce jour-là.
 
 ---
 

@@ -16,11 +16,14 @@ les figures des deux : corriger un fait se fait à un seul endroit.*
 > 46 970 lignes ajoutées**) est **un autre document sous le même nom**.
 > ⚠ **La rupture porte sur le régime de preuve, pas sur le sujet.** Le rapport détruit était
 > **dérivé** : sa seule matière était le contenu des sept livrables du dépôt, régime de preuve
-> hérité, aucune source primaire ouverte. Celui-ci **ouvre 312 références en sources primaires** —
-> lignes directrices AMF, BSIF (B-10, B-13, E-21, E-23), OCRI, Paiements Canada, Loi 25, LPRPDE,
-> spécifications MCP / A2A / ANP, arXiv, *Journal officiel de l'Union européenne* — et **ne descend
-> d'aucun livrable** : il cite les autres travaux du même auteur comme des **sources externes**, sous
-> la mention *« Corpus de l'auteur — auto-publié, non arbitré »*. ☑ *Rien de ce que le README détruit
+> hérité, aucune source primaire ouverte. Celui-ci **ouvre ses propres sources primaires** sur
+> **312 références** — lignes directrices AMF, BSIF (B-10, B-13, E-21, E-23), OCRI, Paiements Canada,
+> Loi 25, LPRPDE, spécifications MCP / A2A / ANP, arXiv, *Journal officiel de l'Union européenne* — et
+> **ne descend d'aucun livrable** : il cite les autres travaux du même auteur comme des **sources
+> externes**, sous la mention *« Corpus de l'auteur — auto-publié, non arbitré »*. ⚠ **Les 312 ne sont
+> pas toutes primaires, et le document le déclare notice par notice** : *cinq portent cette mention
+> d'auto-citation, quatre sont données pour analyse secondaire — les notices **[33]**, **[284]**,
+> **[303]** et **[311]**.* **Neuf sur 312**, recomptées sur la source le 20 août 2026. ☑ *Rien de ce que le README détruit
 > affirmait ne vaut pour ce dossier-ci, et rien n'en est repris.*
 > ⚠⚠ **Et il ne renvoie pas à ce dépôt-ci.** Ses cinq notices d'auto-citation **[1]-[5]** pointent le
 > dépôt public **`agbruneau/Prospection`** : quatre par une URL `github.com`, la cinquième sans
@@ -61,7 +64,7 @@ les figures des deux : corriger un fait se fait à un seul endroit.*
 | **Fichiers** | [`.md`](%C3%89tat%20de%20l%27art%20%E2%80%94%20services%20financiers.md) → [`.pdf`](%C3%89tat%20de%20l%27art%20%E2%80%94%20services%20financiers.pdf) · [`.html`](%C3%89tat%20de%20l%27art%20%E2%80%94%20services%20financiers.html) | [`.md`](Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.md) → [`.pdf`](Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.pdf) · [`.html`](Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.html) |
 | **Titre** | *Interopérabilité et Orchestration Agentiques* — sous-titre *état de l'art en services financiers*. ⚠ **Même radical que le Vol. IV, la veille et la revue** ; l'homonymie **exacte** que portait le rapport détruit ne revient pas, le sous-titre la lève | *Lire l'état de l'art en cinq schémas* — sous-titre *interopérabilité et orchestration agentiques en services financiers* |
 | **Source** | 1 986 lignes, 599 109 octets | 110 lignes, 11 278 octets |
-| **Rendu** | **185 p.** — **15 sections numérotées** *(17 titres de rang 1, dont `Sommaire exécutif` et `Références` non numérotés)*, 77 de rang 2, 26 de rang 3 ; **312 références**, 11 tableaux, 5 figures, 14 questions ouvertes ; **77 432 mots de corps**, dont **53 141 hors bibliographie** | **7 p.** — 6 titres de rang 1 *(cinq sections numérotées **à la main dans le titre**, faute de `section-numbering` au YAML, plus « Où lire la suite »)* ; 0 référence, 0 tableau, 5 figures, **1 388 mots** |
+| **Rendu** | **185 p.** — **15 sections numérotées** *(17 titres de rang 1, dont `Sommaire exécutif` et `Références` non numérotés)*, 77 de rang 2, 26 de rang 3 ; **312 références**, 11 tableaux, 5 figures, 14 questions ouvertes ; **77 432 mots de corps**, dont **53 141 hors bibliographie** | **7 p.** — 6 titres de rang 1 *(cinq sections numérotées **à la main dans le titre**, faute de `section-numbering` au YAML, plus « Où lire la suite »)* ; 0 référence, 0 tableau, 5 figures, **1 304 mots** |
 | **Gel** | **20 août 2026** | **20 août 2026** |
 | **Périmètre** | Coopérative financière canadienne régie — 198 caisses, la Caisse Desjardins Ontario Credit Union Inc., la Fédération, ses filiales et le Fonds de sécurité | Le même, déclaré en chapeau |
 | **Thèse** | « Le débat porte sur la pile protocolaire ; dans une coopérative régie, la pile n'est pas ce qui décide » | « Rien ici n'est démontré, tout y est résumé » |
@@ -72,7 +75,9 @@ les figures des deux : corriger un fait se fait à un seul endroit.*
 mais **sa délimitation de corps ne s'applique pas ici** : elle ouvre au premier `---`, qui est la
 ligne 1 du YAML, et compterait donc les **348 lignes** de réglage typographique de l'en-tête. Le
 corps est délimité au **premier titre**, et le chiffre publié est celui-là. *`wc -w` sur le même
-corps rend 79 818 : les deux nombres mesurent deux choses.*
+corps rend 79 818 : les deux nombres mesurent deux choses.* ⚠ **Le décompte de la planche était faux
+ici** : ce README a écrit **1 388 mots** jusqu'au 20 août 2026 ; la même commande sur le même corps
+rend **1 304** — *le chiffre que le [README du dépôt](../README.md) publiait déjà.*
 
 ---
 
@@ -133,9 +138,12 @@ au hasard l'étiquette de chaque sous-ensemble de fonte.* ☑ **Le HTML de la pl
 l'octet près** (même SHA-256), **et celui du document long aussi**, une fois les deux réglages
 ci-dessous fournis.
 
-⚠⚠ **`<feuille>` n'est versionnée nulle part au dépôt.** La feuille de style de 4 797 octets qui
+⚠⚠ **`<feuille>` n'est versionnée nulle part au dépôt.** La feuille de style de **4 801 octets** qui
 habille les deux HTML **n'existe qu'inlinée dans les deux HTML eux-mêmes** — `--embed-resources` l'y
-a fondue. *La commande HTML n'est donc pas rejouable depuis le dépôt seul* : elle a été rejouée en
+a fondue. ⚠ *Ce README a écrit **4 797 octets** jusqu'au 20 août 2026, et 4 797 est un compte de
+**caractères** : la feuille porte **quatre « é »**, qui font chacun deux octets en UTF-8. Un octet
+n'est pas un signe — c'est exactement la confusion que ce README reproche ailleurs.*
+*La commande HTML n'est pas rejouable depuis le dépôt seul* : elle a été rejouée en
 **réextrayant la feuille du HTML livré**, ce qui prouve la forme de la commande et rien de plus. ⚠ *Le
 jour où l'un des deux HTML doit être recomposé, la seule copie de sa feuille est dans le fichier
 qu'on s'apprête à écraser.*
@@ -238,9 +246,12 @@ entre 928 et 2 341, les deux autres 51 et 14. ☑ **Le contrôle passe sur la
 planche parce qu'il n'y a rien à contrôler**, et non parce que quelque chose a été vérifié.
 
 ⚠ **Ce que rien ne contrôle ici.** Aucune pagination n'est opposée à une cible : **185 p.** et
-**7 p.** sont des constats de rendu. Aucun appariement cité ↔ défini n'est rejoué — *les 312 notices
-sont numérotées 1 à 312 sans trou, ce README l'a vérifié, mais que chaque renvoi du texte tombe sur
-la bonne notice n'est établi par rien.* Aucun contrôle ne résout un lien markdown. Aucun ne lit le
+**7 p.** sont des constats de rendu. ☑ **L'appariement cité ↔ défini est clos dans les deux sens, et
+ce README l'a mesuré le 20 août 2026** : *les 312 notices sont numérotées 1 à 312 sans trou, **les
+312 sont citées au moins une fois** et **aucun renvoi du texte ne sort de la plage 1-312**.*
+⚠ **Ce que cela n'établit pas** : que chaque renvoi tombe sur **la bonne** notice — *un numéro juste
+au mauvais endroit ne se voit qu'en lisant, et rien ici ne le rejouera.* ⚠ *Le relevé est une mesure
+de ce README, faite une fois, hors de tout contrôle versionné.* Aucun contrôle ne résout un lien markdown. Aucun ne lit le
 PDF au-delà de sa page 1 — *c'est ce qui a laissé les deux passages composés en
 mathématiques se rendre sans que rien ne bronche, aux pages 5 et 120 des 185.*
 
