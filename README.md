@@ -148,7 +148,7 @@ Agentique/
 l'index, point 8. *Il a grossi de 58 fichiers le même jour, et ce sont des restaurations* : 25 sous
 `3 - Traité/bancs/`, 30 sous `3 - EntrepriseAgentique/verification/`, plus la licence, les trois
 chaînes, le `README` de `0 - Références/` et `.gitattributes`.
-Hors `git` mais sur le disque : `3 - Traité/target/` (**3,3 Go**), les deux artefacts `wasm-bindgen`
+Hors `git` mais sur le disque : `3 - Traité/target/` — ⚠ *vidé le 21 août 2026 par `cargo clean`, **12 060 fichiers et 3,4 Gio**, en éprouvant sans succès la piste du cache vieilli ; il se refait à la première construction* —, les deux artefacts `wasm-bindgen`
 de `web/`, les cinq PDF de tiers, et les `__pycache__`.
 
 **Seize `README.md` versionnés, dix-sept avec celui-ci** — un par dossier, un par Livre du
@@ -200,7 +200,7 @@ les trois seules :* les `title:` de trois en-têtes YAML (point 9), l'ancre du V
    • `check-compendium-mutations.py` s'arrêtait en `AssertionError` à M6, dont l'ancre littérale
    « | 11 000 | 10 724 | » a péri quand le ch. 1 s'est re-mesuré à 10 859 mots — *et les huit
    mutations suivantes ne tournaient plus.* Réancrée sur la **colonne**, non sur la valeur : 17 sur 17.
-5. ☑ **Aucun renvoi relatif mort dans aucun `.md` du dépôt — **1 886 résolus, zéro rompu**.** *Le
+5. ☑ **Aucun renvoi relatif mort dans aucun `.md` du dépôt — **1 885 résolus, zéro rompu**.** *Le
    diagnostic n'en comptait seize que parce qu'il ne regardait que les `README.md` ; le balayage
    complet en a trouvé **243**.* Ils tenaient à quatre causes, et trois sont des **suppressions par
    accident**, chaque fois sous un commit qui annonçait autre chose :
@@ -254,8 +254,14 @@ laisser la plate-forme les réécrire au passage.*
 
 ### Le workspace Rust : ce qui bloquait, et ce qui reste
 
-☑ **`cargo build --workspace`, `cargo test --workspace` et `cargo clippy --workspace --all-targets`
-passent — 467 tests au vert, clippy 0**, mesuré le 21 août 2026.
+☑ **Les trois commandes d'avant-commit de `docs/DEVELOPPEMENT.md` sortent 0**, mesuré le
+21 août 2026 : `cargo test --workspace --release` — **467 tests, 0 échec, 0 ignoré** —,
+`cargo clippy --workspace --all-targets --release`, et `cargo doc --workspace --no-deps`.
+*S'y ajoutent, rejoués le même jour et tous à 0* : le **banc DT1** de parité flottante
+(NF-02 tenue sur 8 groupes à parité exigée, 10⁶ itérations ; les 6 divergences de la
+bibliothèque de plateforme sont son résultat, pas une régression), le **banc EX-V12** (6 cas
+identiques natif/WASM), les **quatre exemples de diagnostic**, le binaire **`campagne`**, et
+l'**empaquetage WASM**, qui reproduit `web/sim_viz.js` et `web/sim_viz_bg.wasm` **à l'octet**.
 
 *Ce qui bloquait :* [`3 - Traité/Cargo.toml`](<3%20-%20Trait%C3%A9/Cargo.toml>) déclare six membres,
 et **deux étaient absents du disque et de l'index** — `bancs/dt1-flottant` et `bancs/parite-wasm`,
@@ -282,16 +288,19 @@ parce que six donnent des bits différents en natif et en WASM, **et `HashMap` /
 de PD1, dont l'itération non ordonnée contaminerait tout chemin d'ordonnancement. *Le code est
 conforme : clippy sort 0 sur les six membres et toutes les cibles.*
 
-⚠ **Ce qui reste, et ce n'est pas un défaut du dépôt** : l'édition de liens échoue dans le `target/`
-**tel qu'il est, sous OneDrive** — `ld.exe` ne trouve pas des `.o` que `rustc` vient d'écrire et que
-`ls` montre. ✎ *Le motif « le chemin contient un « é » », écrit à `docs/DEVELOPPEMENT.md` jusqu'au
-21 août 2026, est faux et le corriger change ce qu'on peut tenter* : un workspace d'essai placé sous
-`…/3 - Traité/` — même accent, même espace — s'édite sans un mot hors de OneDrive. **Renommer le
-dossier ne réparerait rien ; sortir le `target/` de OneDrive répare tout**, et c'est ainsi que les
-mesures ci-dessus ont été prises :
+⚠ **Ce qui reste, et ce n'est pas un défaut du dépôt** : l'édition de liens échoue dans un `target/`
+**synchronisé par OneDrive** — `ld.exe` déclare introuvables des `.o` que `rustc` vient d'écrire et
+que `ls` montre à leur taille. ✎ *Le motif « le chemin contient un « é » », écrit à
+`docs/DEVELOPPEMENT.md` jusqu'au 21 août 2026, est faux, et deux autres pistes ont été éprouvées puis
+écartées le même jour* : le **cache vieilli** — `cargo clean` a retiré 12 060 fichiers et 3,4 Gio, et
+la suite a échoué de la même façon sur une arborescence neuve — et la **longueur du chemin**, la
+cible qui fonctionne étant deux fois plus longue que celle qui échoue. **La seule variable qui change
+le verdict est la synchronisation** : renommer le dossier ou vider le cache ne répare rien, sortir le
+`target/` de OneDrive répare tout. *Le mécanisme exact n'est pas établi ; le remède l'est*, et c'est
+ainsi que les mesures ci-dessus ont été prises :
 
 ```bash
-CARGO_TARGET_DIR=/c/Users/<vous>/AppData/Local/Temp/cargo-agentique cargo test --workspace
+CARGO_TARGET_DIR=/c/Users/<vous>/AppData/Local/Temp/cargo-agentique cargo test --workspace --release
 ```
 
 ☑ **Rien de `bancs/` n'a jamais été perdu, et c'est ce qui a permis de le rendre.**

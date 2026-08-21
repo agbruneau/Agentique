@@ -51,7 +51,21 @@ s'édite sans un mot, hors OneDrive. Ce qui échoue est l'édition de liens dans
 un `target/` **synchronisé par OneDrive** : `ld.exe` ne trouve pas des `.o` que
 `rustc` vient d'écrire et que `ls` montre. *Renommer le dossier ne réparerait
 donc rien ; sortir le `target/` de OneDrive répare tout* — et c'est ce que fait
-la seconde ligne ci-dessous. Les mesures de cette page ont été prises ainsi :
+la seconde ligne ci-dessous.
+
+⚠ **Trois pistes ont été éprouvées le 21 août 2026 et ÉCARTÉES ; les redire ici
+évite de les refaire.** *(a)* **L'accent** : un workspace d'essai sous
+`…/3 - Traité/`, même accent et même espace, s'édite sans un mot hors OneDrive.
+*(b)* **Le cache vieilli** : `cargo clean` a retiré 12 060 fichiers et 3,4 Gio,
+et la suite a **échoué de la même façon** sur une arborescence neuve — l'état du
+`target/` n'y est pour rien. *(c)* **La longueur du chemin** : la cible hors
+OneDrive qui fonctionne est **deux fois plus longue** que celle du dépôt qui
+échoue. ☑ *Ce qui reste, mesuré et non supposé* : `ld.exe` déclare introuvables
+des `.o` que `rustc` vient d'écrire dans un dossier synchronisé, `ls` les
+montrant à leur taille, et **la seule variable qui change le verdict est la
+synchronisation**. Le mécanisme exact n'est pas établi ici ; le remède l'est.
+
+Les mesures de cette page ont été prises ainsi :
 
 ```powershell
 $env:PATH = "$env:USERPROFILE\.cargo\bin;$env:LOCALAPPDATA\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin;$env:PATH"

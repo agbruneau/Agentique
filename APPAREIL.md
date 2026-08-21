@@ -54,7 +54,10 @@ tous par un script versionné** — ils n'étaient que quatre à le pouvoir.
 | `bash build/build-pdf.sh` | `3 - Traité/` | ☑ **143 pages**, pagination inchangée. ⚠ *Chaîne **écrite** le 21 août 2026 : sa commande n'était nulle part au dépôt, et il a fallu la reconstituer. Elle se lance de ce dossier depuis que les figures y sont* |
 | `bash build/build-pdf.sh [veille\|revue]` | `4 - Veille/` | ☑ **144 et 59 pages**, pagination inchangée après le changement de titre. *Inscrit au dépôt les deux commandes qui n'y vivaient qu'en prose ; enchaîne `check-resume.py`* |
 | `bash build/build-pdf.sh [etat\|planche]` | `5 - Recension/` | ☑ **185 et 7 pages**, pagination inchangée. ⚠ *Il ne couvre PAS les deux `.html`, et le dit : leur commande prend `--css <feuille>`, et aucune feuille de style n'est versionnée* |
-| `cargo build --workspace` · `cargo test --workspace` · `cargo clippy --workspace --all-targets` | `3 - Traité/` | ☑ **0 — 467 tests au vert, clippy 0.** ⚠⚠ *Sortait **101 à l'instant** jusqu'au 21 août 2026 : deux membres du workspace manquaient au disque. Voir « Le workspace Rust » au [`README.md`](README.md)* |
+| `cargo test --workspace --release` · `cargo clippy --workspace --all-targets --release` · `cargo doc --workspace --no-deps` | `3 - Traité/` | ☑ **0 aux trois** — **467 tests, 0 échec, 0 ignoré**, aucun `#[ignore]` au code ; clippy 0 sur les six membres et toutes les cibles ; rustdoc 0. *Ce sont les trois commandes d'avant-commit de `docs/DEVELOPPEMENT.md`, et la troisième existe parce que les deux premières sont restées vertes pendant que rustdoc sortait 101.* ⚠⚠ *L'ensemble sortait **101 à l'instant** jusqu'au 21 août 2026 : deux membres du workspace manquaient au disque* |
+| `bancs/dt1-flottant/banc.mjs` · `bancs/parite-wasm/banc.mjs` | `3 - Traité/` | ☑ **0 aux deux**, sous Node 24. **DT1** : NF-02 tenue sur 8 groupes à parité exigée, 10⁶ itérations chacun — *les 6 divergences de la bibliothèque de plateforme sont le **résultat** du banc, non une régression, et `mul_add` coïncide sur cette machine*. **EX-V12** : 6 cas identiques natif/WASM |
+| `cargo run -p sim-agents --example …` (×4) · `--bin campagne` | `3 - Traité/` | ☑ **0 aux cinq**. *`banc_nf05` affiche ✗ NF-05 et sort 0 : la cible de 10³ s simulées/s-cœur n'est pas atteinte — c'est un écart consigné au registre, pas un échec de banc.* `diagnostic_conformite` reproduit le constat qui a réfuté le premier point du critère de sortie de la phase 6 |
+| `wasm-bindgen --target web` sur `sim_viz.wasm` | `3 - Traité/` | ☑ **reproduit `web/sim_viz.js` et `web/sim_viz_bg.wasm` à l'octet** — 68 213 et 3 669 337 octets, et 1 447 624 en `gzip -9`. *Les deux chiffres du `README.md` du dossier, datés du 17 août 2026, sont donc encore valides ; ils ne l'étaient que jusqu'à la prochaine édition de `crates/sim-viz/`* |
 
 ⚠ **Points d'entrée qui n'ont pas été rejoués** : `2 - Compendium/build/assemble-bibliographie.py`,
 `build/echantillon.py` (maquette Springer, avec `echantillon.template` et `springer.template`), les
@@ -63,7 +66,7 @@ III et du Compendium.
 
 **d. « Les renvois tiennent-ils ? » — mesuré ici, non tenu là-bas**
 
-☑ **1 886 renvois relatifs résolus dans les 228 `.md` du dépôt, zéro rompu**, au 21 août 2026 —
+☑ **1 885 renvois relatifs résolus dans les 228 `.md` du dépôt, zéro rompu**, au 21 août 2026 —
 *ils étaient 243 à viser le vide*. ⚠ **Aucun contrôle du dépôt ne résout un lien markdown** : c'est
 une mesure faite pour ce relevé, pas une garantie que le dépôt tient. La commande est une résolution
 de chaque cible relative contre le système de fichiers, blocs et *spans* de code exclus — un
