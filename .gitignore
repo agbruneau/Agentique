@@ -1,2 +1,13 @@
 __pycache__/
 *.pyc
+
+# ⚠ Œuvres de TIERS, sorties de l'index le 21 août 2026 — jamais détruites : elles
+# restent sur le disque et dans l'historique git. Le motif est au `LICENSE` de la
+# racine et au README de `1 - Collection/0 - Références/` : la licence CC BY 4.0
+# posée ce jour-là couvre nominalement tout ce que l'arbre porte, et l'auteur ne
+# peut pas concéder ce qui n'est pas à lui. Aucun document du dépôt ne les cite —
+# ce qui sort est la copie, jamais la citation.
+1 - Collection/0 - Références/2003 - Enterprise Integration Patterns.pdf
+1 - Collection/0 - Références/2007 - Distributed Systems.pdf
+1 - Collection/0 - Références/2026 - SystemEngineeringBoK.pdf
+1 - Collection/2 - OrchestrationAgentique/prd/arxiv - *.pdf

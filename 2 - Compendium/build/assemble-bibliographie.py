@@ -30,7 +30,7 @@ import unicodedata
 from collections import OrderedDict
 
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CORPUS = os.path.join(os.path.dirname(RACINE), "1 - Corpus")
+CORPUS = os.path.join(os.path.dirname(RACINE), "1 - Collection")
 SORTIE = os.path.join(RACINE, "annexe-bibliographie.md")
 
 VOL1 = os.path.join(CORPUS, "1 - InteroperabiliteAgentique", "Chapitres")

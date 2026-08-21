@@ -1,0 +1,70 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Œuvre : le dépôt « Agentique » dans son entier — les huit documents et leurs
+rendus, le simulateur en Rust de « 3 - Traité/ », les chaînes de fabrication,
+les figures, les scripts de contrôle et les README.
+
+Auteur / titulaire des droits : André-Guy Bruneau, M.Sc. IT, 2026.
+
+Cette œuvre est mise à disposition selon les termes de la licence
+Creative Commons Attribution 4.0 International.
+
+Vous êtes libre de :
+  - Partager — copier, distribuer et communiquer l'œuvre par tous moyens et
+    sous tous formats ;
+  - Adapter — remixer, transformer et créer à partir de l'œuvre pour toute
+    utilisation, y compris commerciale.
+
+Selon les conditions suivantes :
+  - Attribution — Vous devez créditer l'œuvre, intégrer un lien vers la
+    licence et indiquer si des modifications ont été effectuées. Vous devez
+    indiquer ces informations par tous les moyens raisonnables, sans toutefois
+    suggérer que l'auteur vous soutient ou soutient la façon dont vous avez
+    utilisé son œuvre.
+
+Aucune restriction complémentaire — Vous n'êtes pas autorisé à appliquer des
+conditions légales ou des mesures techniques qui restreindraient légalement
+autrui à utiliser l'œuvre dans les conditions décrites par la licence.
+
+
+CE QUE CETTE LICENCE NE COUVRE PAS
+
+  1. Les œuvres de tiers citées dans les documents. Les citations, extraits,
+     tableaux repris et captures de texte réglementaire ou normatif restent la
+     propriété de leurs titulaires et sont repris au titre de la citation.
+     Chaque reprise porte sa source à sa notice ; c'est là qu'il faut la lire
+     avant d'en faire quoi que ce soit.
+
+  2. Les noms, marques et logos de tiers, qui ne sont pas concédés.
+
+  ⚠ Trois ouvrages de tiers ont été versionnés dans ce dépôt du 8 août 2026
+  au 21 août 2026 — « Enterprise Integration Patterns » (2003), « Distributed
+  Systems » (2007) et le « Systems Engineering Body of Knowledge » (2026) —,
+  ainsi que deux articles arXiv sous « 1 - Collection/2 - OrchestrationAgentique/
+  prd/ ». Ils sont sortis de l'arbre le 21 août 2026, avant que la présente
+  licence ne soit posée, précisément parce qu'elle ne pouvait pas les couvrir.
+  Ils restent dans l'historique git, où ils demeurent la propriété de leurs
+  titulaires : la présente licence ne s'y étend pas, et n'y a jamais été
+  applicable. Leurs renvois sont à « 1 - Collection/0 - Références/README.md ».
+
+
+PORTÉE ET ANTÉRIORITÉ
+
+Le « 1 - Collection/1 - InteroperabiliteAgentique/LICENSE » porte les mêmes
+termes pour le seul Vol. I depuis 2026 ; il est conservé et n'est pas
+contredit. Jusqu'au 21 août 2026 il était la seule licence du dépôt, et le
+reste du dépôt relevait du droit d'auteur par défaut.
+
+Le mémoire de maîtrise de l'auteur (1997), sous « 0 - Références/ », est son
+œuvre et relève de la présente licence.
+
+Attribution suggérée :
+  Bruneau, A.-G. (2026). Agentique — corpus de recherche sur l'interopérabilité
+  et l'orchestration agentiques en services financiers. Sous licence CC BY 4.0.
+  https://github.com/agbruneau/Agentique
+
+Résumé de la licence (Acte) : https://creativecommons.org/licenses/by/4.0/deed.fr
+Texte juridique complet (Code) : https://creativecommons.org/licenses/by/4.0/legalcode.fr
+
+Le texte juridique intégral de la licence, à l'adresse ci-dessus, fait foi et
+régit l'utilisation de la présente œuvre.

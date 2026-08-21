@@ -49,22 +49,30 @@ corps_compendium() {
 verifier() {
 	ecarts=0
 
-	vol1=$(jetons < "$RACINE/1 - Corpus/1 - InteroperabiliteAgentique/Monographie.md")
-	brut1=$(wc -w < "$RACINE/1 - Corpus/1 - InteroperabiliteAgentique/Monographie.md" | tr -d ' ')
+	vol1=$(jetons < "$RACINE/1 - Collection/1 - InteroperabiliteAgentique/Monographie.md")
+	brut1=$(wc -w < "$RACINE/1 - Collection/1 - InteroperabiliteAgentique/Monographie.md" | tr -d ' ')
 
-	vol2=$(find "$RACINE/1 - Corpus/2 - OrchestrationAgentique/monographie" -name '*.md' \
+	vol2=$(find "$RACINE/1 - Collection/2 - OrchestrationAgentique/monographie" -name '*.md' \
 		! -name 'README.md' ! -name '99-registre-gel.md' | sort |
 		while IFS= read -r f; do corps_monographie "$f"; done | jetons)
 
-	vol3=$(find "$RACINE/1 - Corpus/3 - EntrepriseAgentique/monographie" -name '*.md' \
+	vol3=$(find "$RACINE/1 - Collection/3 - EntrepriseAgentique/monographie" -name '*.md' \
 		! -name 'README.md' ! -name '99-registre-gel.md' | sort |
 		while IFS= read -r f; do corps_monographie "$f"; done | jetons)
 
 	# Attendus constatés le 27 juillet 2026. Chacun est un point d'ancrage :
 	# s'il bouge, c'est le corpus qui a bougé, et le chiffre publié qui se redate.
+	#
+	# ⚠ Vol. II REDATÉ le 21 août 2026 : 93 242 → 93 239. Le corpus a bougé, et
+	# le script avait raison de le dire. Le commit `659241b` (8 août 2026) a
+	# récrit dans trois pièces — § 6.2, § 13.2, glossaire de l'annexe D — les
+	# formules qui appelaient l'autonomie encadrée le *titre* de l'ouvrage pour
+	# en faire sa *thèse* : trois jetons sont tombés du corps. La correction est
+	# éditoriale et juste ; c'est l'ancre qui était périmée, non la prose. Le
+	# chiffre d'avant renommage reste lisible à `377f8ca`.
 	controle "Vol. I  — Monographie.md, commande de référence" "$vol1" 225258 || ecarts=1
 	controle "Vol. I  — Monographie.md, wc -w brut (chiffre publié)" "$brut1" 233257 || ecarts=1
-	controle "Vol. II — 29 pièces, commande de référence" "$vol2" 93242 || ecarts=1
+	controle "Vol. II — 29 pièces, commande de référence" "$vol2" 93239 || ecarts=1
 	controle "Vol. III— 34 pièces, commande de référence" "$vol3" 160890 || ecarts=1
 
 	total=$((vol1 + vol2 + vol3))

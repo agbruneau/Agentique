@@ -9,9 +9,12 @@ Simulateur déterministe d'essaims d'agents logiciels coordonnés par le milieu.
 > *(a)* ⚠ **`Traité.md` / `.pdf` sont à la racine de ce dossier, PAS sous
 > `docs/`** — c'est là que la fusion les a posés, et les renvois qui visaient
 > `docs/Traité.pdf` sont corrigés en conséquence, `CLAUDE.md` compris depuis
-> l'audit du 17 août 2026. *(b)* ⚠ **Les 19 figures du traité sont restées à
-> `../figures/`**, et le traité les cite en chemin relatif : sa chaîne de rendu
-> Pandoc **ne se lance que depuis la racine du dépôt**, jamais d'ici. *Rien de
+> l'audit du 17 août 2026. *(b)* ☑ **Les 19 figures du traité sont ici depuis le
+> 21 août 2026**, à [`figures/`](figures/) : elles étaient restées à la racine du
+> dépôt quand le traité y est entré, et le traité les cite en chemin relatif —
+> sa chaîne de rendu ne se lançait donc que de là-bas. *Elle se lance d'ici, et
+> elle est écrite* : [`build/build-pdf.sh`](build/build-pdf.sh), versionné le
+> même jour, la commande n'existant jusque-là nulle part au dépôt. *Rien de
 > tout cela ne concerne le code : `cargo` se lance bien d'ici.*
 
 Le dossier transpose un traité — [`Traité.pdf`](Traité.pdf), **troisième
@@ -276,6 +279,7 @@ détecteur                              └── binaire campagne (sans dépend
 | [`CLAUDE.md`](CLAUDE.md) | Contraintes et conventions, pour un agent qui reprend le code. |
 | `bancs/*/VERDICT.md` | Les décisions tranchées par la mesure plutôt que par le raisonnement. |
 | [`gauntlet-log.md`](gauntlet-log.md) | ⚠ **Pas un document de gouvernance** — le journal de la boucle bâtisseur/critique de l'audit du code, 17 août 2026, avec ses rapports par morceau sous `bancs/audit-2026-08/`. Rien n'y est exigé ni garanti, et aucun énoncé des six documents ci-dessus ne s'y adosse. *Trois autres journaux du dépôt ont porté ce nom et n'existent plus ; celui-ci ne couvre aucune de leurs boucles.* |
+| [`build/build-pdf.sh`](build/build-pdf.sh) | La composition de `Traité.pdf`, versionnée le 21 août 2026 — elle n'existait nulle part au dépôt. Se lance **de ce dossier**, les 19 planches de [`figures/`](figures/) y étant depuis le même jour. |
 
 La documentation d'interface est **dans le code**, en rustdoc — les quatre
 crates déclarent `#![deny(missing_docs)]` :

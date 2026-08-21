@@ -1,6 +1,6 @@
 ---
-title: "Interopérabilité et Orchestration Agentiques"
-subtitle: "revue de la littérature académique"
+title: "Revue de la littérature académique"
+subtitle: "Interopérabilité et Orchestration Agentiques"
 author:
   - "André-Guy Bruneau, M.Sc. IT · agbruneau@gmail.com · 15 août 2026"
 lang: fr

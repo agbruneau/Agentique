@@ -1,6 +1,6 @@
 ---
-title: "Interopérabilité et Orchestration Agentiques"
-subtitle: "veille technologique en entreprise"
+title: "Veille technologique en entreprise"
+subtitle: "Interopérabilité et Orchestration Agentiques"
 author:
   - "André-Guy Bruneau, M.Sc. IT · agbruneau@gmail.com · 15 août 2026"
 lang: fr

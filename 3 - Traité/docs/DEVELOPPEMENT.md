@@ -44,8 +44,14 @@ plusieurs agents écrivant en parallèle : un compte gravé dans un document se
 périme sans que rien ne le signale, la ligne de commande ne se périme pas.
 
 ⚠ **`cargo` n'est pas dans le `PATH`, et l'édition de liens échoue dans le
-`target/` du dépôt** parce que le chemin contient un « é ». Les mesures
-ci-dessus ont été prises ainsi :
+`target/` du dépôt.** ✎ *Le motif « le chemin contient un « é » » écrit ici
+jusqu'au 21 août 2026 est faux, et le corriger change ce qu'on peut tenter* :
+un workspace d'essai placé sous `…/3 - Traité/` — même accent, même espace —
+s'édite sans un mot, hors OneDrive. Ce qui échoue est l'édition de liens dans
+un `target/` **synchronisé par OneDrive** : `ld.exe` ne trouve pas des `.o` que
+`rustc` vient d'écrire et que `ls` montre. *Renommer le dossier ne réparerait
+donc rien ; sortir le `target/` de OneDrive répare tout* — et c'est ce que fait
+la seconde ligne ci-dessous. Les mesures de cette page ont été prises ainsi :
 
 ```powershell
 $env:PATH = "$env:USERPROFILE\.cargo\bin;$env:LOCALAPPDATA\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin;$env:PATH"

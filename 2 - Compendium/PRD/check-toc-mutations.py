@@ -100,11 +100,20 @@ MUTATIONS = [
     ("M12", "TOC.md", "*Fusion : Vol. III ch. 12 + Vol. I* Monographie",
      "*Fusion : Vol. III *TOC* §12.1 + Vol. I* Monographie", "C12"),
     ("M13", "TOC.md", "d'un ouvrage à 50 chapitres", "d'un ouvrage à 54 chapitres", "C13"),
-    # ⚠ Ancre réancrée à la v0.28 : la précédente citait la v0.23, périmée depuis cinq
-    # passes. **Cette ancre se réancre à CHAQUE passe** — c'est une faiblesse de
-    # conception connue, consignée plutôt que corrigée ici : la corriger demanderait
-    # un motif au lieu d'un littéral, donc une modification du harnais à valider.
-    ("M14", "README.md", "**v0.28** (27 juillet 2026)", "**v0.10** (21 juillet 2026)", "C14"),
+    # ⚠ Ancre réancrée le 21 août 2026, et le défaut qu'elle corrigeait n'était pas
+    # la péremption : l'ancre citait « **v0.28** (27 juillet 2026) », qui EXISTE
+    # toujours au conspectus — mais dans la CHAÎNE HISTORIQUE de la rangée Source,
+    # non à sa tête. C14 ne lit que la PREMIÈRE version de cette rangée ; la
+    # mutation réécrivait donc une entrée d'historique que le contrôle ne regarde
+    # pas, et M14 échappait sans que le motif soit absent — le harnais ne pouvait
+    # pas le dire, `old not in content` étant vrai.
+    # ⚠ Règle : ancrer sur le PRÉFIXE DE RANGÉE + la version de tête, jamais sur une
+    # version seule. Le préfixe garantit que la substitution (`replace(..., 1)`)
+    # frappe la valeur active. **La version de tête reste à réancrer à chaque passe**
+    # — faiblesse de conception connue, qu'un motif au lieu d'un littéral corrigerait.
+    ("M14", "README.md",
+     "| Source | [`TOC.md`](PRD/TOC.md) **v0.33** (8 août 2026)",
+     "| Source | [`TOC.md`](PRD/TOC.md) **v0.10** (21 juillet 2026)", "C14"),
     # M15 — plafond dur (décision 13a) : un chapitre de plus doit être refusé.
     ("M15", "TOC.md", "### Chapitre 50 — Péremption",
      "### Chapitre 51 — Chapitre de test du plafond\n\n### Chapitre 50 — Péremption", "C15"),

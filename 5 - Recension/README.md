@@ -42,7 +42,7 @@ les figures des deux : corriger un fait se fait à un seul endroit.*
 > `4 - Veille/Veille Technologique.md` — **1 932 lignes, 436 221 octets**, *la notice écrivait
 > « 424 Ko »* —, `4 - Veille/Revue de littérature.md` (1 052 l., 199 311 o.),
 > `3 - Traité/Traité.md` (1 875 l., 457 859 o.), `2 - Compendium/Compendium.pdf` (13 163 513 o.) et
-> `1 - Corpus/2 - OrchestrationAgentique/Monographie.md` (3 306 l., 874 335 o.).
+> `1 - Collection/2 - OrchestrationAgentique/Monographie.md` (3 306 l., 874 335 o.).
 > ⚠⚠ **La correction la plus lourde est celle de [5]**, et elle change un régime de preuve : *la
 > monographie n'est pas dans un dépôt privé inaccessible — elle est à deux dossiers d'ici, sous un
 > titre que la notice donnait faux. Le fait négatif qu'elle porte seule — quinze croisements, aucun
@@ -81,9 +81,9 @@ les figures des deux : corriger un fait se fait à un seul endroit.*
 | | **État de l'art** | **Planche de synthèse** |
 |---|---|---|
 | **Fichiers** | [`.md`](%C3%89tat%20de%20l%27art%20%E2%80%94%20services%20financiers.md) → [`.pdf`](%C3%89tat%20de%20l%27art%20%E2%80%94%20services%20financiers.pdf) · ⚠⚠ `.html` **détruit le 21 août 2026** | [`.md`](Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.md) → [`.pdf`](Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.pdf) · [`.html`](Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.html) |
-| **Titre** | *Interopérabilité et Orchestration Agentiques* — sous-titre *état de l'art en services financiers*. ⚠ **Même radical que le Vol. IV, la veille et la revue** ; l'homonymie **exacte** que portait le rapport détruit ne revient pas, le sous-titre la lève | *Lire l'état de l'art en cinq schémas* — sous-titre *interopérabilité et orchestration agentiques en services financiers* |
+| **Titre** | *État de l'art en services financiers* — sous-titre *Interopérabilité et Orchestration Agentiques*. ☑ **Les deux champs ont été échangés le 21 août 2026**, sur instruction d'auteur : le titre était jusque-là **identique mot pour mot** à ceux de la veille et de la revue, `/Title` du PDF compris. *Le radical commun reste — les trois documents sont d'une même série —, mais le titre les distingue seul* | *Lire l'état de l'art en cinq schémas* — sous-titre *interopérabilité et orchestration agentiques en services financiers* |
 | **Source** | **1 984 lignes, 602 042 octets**, relevé le 21 août 2026 à 7 h 25 — ⚠ *1 986 l. et 599 109 o. au gel du 20 ; la correction des notices a ajouté des octets à la bibliographie, et une **édition concurrente** a retiré deux lignes du résumé le même jour (voir « Les rendus », plus bas)* | 110 lignes, 11 278 octets |
-| **Rendu** | **185 p.** — **15 sections numérotées** *(17 titres de rang 1, dont `Sommaire exécutif` et `Références` non numérotés)*, 77 de rang 2, 26 de rang 3 ; **312 références**, 11 tableaux, 5 figures, 14 questions ouvertes ; **77 961 mots de corps**, dont **53 216 hors bibliographie** — ⚠ *les pages sont celles du PDF livré, qui **ne porte pas** la correction du 21 août 2026 ; les mots sont ceux de la source corrigée. 77 432 et 53 141 jusque-là* | **7 p.** — 6 titres de rang 1 *(cinq sections numérotées **à la main dans le titre**, faute de `section-numbering` au YAML, plus « Où lire la suite »)* ; 0 référence, 0 tableau, 5 figures, **1 304 mots** |
+| **Rendu** | **185 p.** — **15 sections numérotées** *(17 titres de rang 1, dont `Sommaire exécutif` et `Références` non numérotés)*, 77 de rang 2, 26 de rang 3 ; **312 références**, 11 tableaux, 5 figures, 14 questions ouvertes ; **77 961 mots de corps**, dont **53 216 hors bibliographie** — ⚠ *☑ le PDF a été **recomposé le 21 août 2026** par [`build/build-pdf.sh`](build/build-pdf.sh) sur la source corrigée, titre échangé compris, **à pagination inchangée** — 185 p. *Les pages et les mots portent donc le même état. Cette rangée a écrit le contraire, et elle avait tort deux fois : le PDF portait déjà la correction des notices, et il porte maintenant celle du titre.* 77 432 et 53 141 jusque-là* | **7 p.** — 6 titres de rang 1 *(cinq sections numérotées **à la main dans le titre**, faute de `section-numbering` au YAML, plus « Où lire la suite »)* ; 0 référence, 0 tableau, 5 figures, **1 304 mots** |
 | **Gel** | **20 août 2026** | **20 août 2026** |
 | **Périmètre** | Coopérative financière canadienne régie — 198 caisses, la Caisse Desjardins Ontario Credit Union Inc., la Fédération, ses filiales et le Fonds de sécurité | Le même, déclaré en chapeau |
 | **Thèse** | « Le débat porte sur la pile protocolaire ; dans une coopérative régie, la pile n'est pas ce qui décide » | « Rien ici n'est démontré, tout y est résumé » |
@@ -130,7 +130,20 @@ absence n'établit pas l'inexistence.*
 
 ## Composer les rendus
 
-**Aucune chaîne n'est versionnée dans ce dossier** — ni script, ni gabarit, ni filtre : tout le
+☑ **Les deux commandes de PDF sont versionnées depuis le 21 août 2026** —
+[`build/build-pdf.sh`](build/build-pdf.sh), qui ne fait que les inscrire au dépôt, sans en changer un
+signe, et qui enchaîne le contrôle de résumé sur chaque rendu. ⚠ **Il ne couvre pas les deux `.html`,
+et le dit** : leur commande prend `--css <feuille>`, et **aucune feuille de style n'est versionnée** —
+celle de la planche ne survit qu'embarquée dans son `.html`. *Un rendu dont une entrée manque au dépôt
+ne se rejoue pas.*
+
+```bash
+bash build/build-pdf.sh            # les deux PDF
+bash build/build-pdf.sh planche    # un seul
+SUFFIXE=-essai bash build/build-pdf.sh    # sans toucher aux rendus livrés
+```
+
+**Aucun gabarit ni filtre n'est versionné pour autant** : tout le
 réglage vit dans l'en-tête YAML des deux sources, et l'appel de Pandoc est direct. ☑ **Les quatre
 commandes ci-dessous ont été exécutées le 20 août 2026**, depuis ce dossier, avec **pandoc 3.10.2** et
 **typst 0.15.1**, en écrivant hors du dossier pour ne pas recouvrir les fichiers livrés.
@@ -157,8 +170,8 @@ pandoc "Cinq schémas — état de l'art en services financiers.md" \
 
 | Fichier | État au 21 août 2026 | Porte les notices corrigées ? |
 |---|---|---|
-| `.md` | 1 984 l., 602 042 o. | ☑ **oui** — c'est la source, et elle seule fait foi |
-| `.pdf` | 2 060 704 o., **185 p.**, recomposé le 21 | ☑ **oui** — établi en rejouant la composition : même taille **à l'octet** |
+| `.md` | 1 984 l., **602 046 o.** | ☑ **oui** — c'est la source, et elle seule fait foi. *602 042 o. avant l'échange titre ↔ sous-titre du 21 août 2026 : quatre octets, et pas un mot* |
+| `.pdf` | **2 061 609 o.**, **185 p.**, recomposé **deux fois** le 21 | ☑ **oui** — d'abord sur les notices corrigées (2 060 704 o., taille établie à l'octet en rejouant la composition), puis sur le titre échangé, par [`build/build-pdf.sh`](build/build-pdf.sh). *La pagination n'a bougé ni l'une ni l'autre fois* |
 | `.html` | ⚠⚠⚠ **DÉTRUIT LE 21 AOÛT 2026** | sans objet — *le dossier ne le porte plus* |
 
 **Trois changements ont touché ce dossier le 21 août 2026, et un seul relève de la passe de
@@ -413,5 +426,7 @@ nom, pas une reprise de contenu.*
   adverse à plusieurs votants comme en ont eu la veille et la revue, aucun contrôle qui rejoue un
   énoncé. *Ce README mesure l'appareil — fichiers, cardinaux, rendus, chaîne —, jamais la vérité d'un
   énoncé du document.*
-- ⚠ **Le dépôt ne porte aucune licence, et c'est une décision** : droit d'auteur par défaut, tous
-  droits réservés. Seul le Vol. I porte un `LICENSE` propre, qui ne vaut que pour lui.
+- ☑ **Le dépôt porte une licence à sa racine depuis le 21 août 2026** : [`LICENSE`](../LICENSE),
+  **CC BY 4.0**, sur instruction d'auteur, et elle couvre le dépôt entier. *Jusque-là il n'en portait
+  aucune — droit d'auteur par défaut —, et seul le Vol. I avait la sienne, mêmes termes, pour lui
+  seul.* ⚠ Elle ne couvre pas les œuvres de tiers citées, qui restent à leurs titulaires.

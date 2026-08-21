@@ -106,7 +106,7 @@ pas, et c'est l'intérêt.*
 | | **Veille technologique** | **Revue de littérature** |
 |---|---|---|
 | **Fichiers** | [`Veille Technologique.md`](Veille%20Technologique.md) → [`.pdf`](Veille%20Technologique.pdf) | [`Revue de littérature.md`](Revue%20de%20litt%C3%A9rature.md) → [`.pdf`](Revue%20de%20litt%C3%A9rature.pdf) |
-| **Titre** | *Interopérabilité et Orchestration Agentiques : veille technologique en entreprise* — ⚠ **même radical que le Vol. IV** ; l'homonymie exacte, ouverte le 9 août 2026, est levée le 17 par le sous-titre | *Interopérabilité et Orchestration Agentiques : revue de la littérature académique* — ⚠ **même radical**, aligné le 9 août 2026 |
+| **Titre** | *Veille technologique en entreprise* — sous-titre *Interopérabilité et Orchestration Agentiques*. ☑ **Les deux champs ont été échangés le 21 août 2026** : le discriminant fait le titre, le nom commun fait le sous-titre de série. *Aucun mot n'est ajouté ni retiré* | *Revue de la littérature académique* — sous-titre *Interopérabilité et Orchestration Agentiques*. ☑ Même échange, le même jour |
 | **Rendu** | **144 p.**, 14 sections numérotées, **342 références**, 24 tableaux, 25 questions ouvertes *(42 142 mots hors bibliographie)* | **59 p.**, 18 sections numérotées, **192 références**, 8 tableaux, dix fronts *(18 491 mots hors bibliographie)* |
 | **Gel de l'information** | **15 août 2026** — les sections antérieures gardent leur date d'état | **15 août 2026** |
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Les trois quarts du champ n'ont franchi aucun comité » |
@@ -131,6 +131,20 @@ deux jusqu'au 19 août. ⚠ *Une cinquième porte le radical sans commencer par 
 synthèse, qui l'a en sous-titre sous le titre `Lire l'état de l'art en cinq schémas`. ☑ *C'est
 toujours par le genre que les fichiers se nomment, et non par le titre* : la convention du dépôt
 tient ici sans exception.
+
+☑⚠ **ET LA COLLISION EST LEVÉE LE 21 AOÛT 2026, PAR ÉCHANGE DES DEUX CHAMPS.** Sur instruction
+d'auteur : le **discriminant devient le titre** — `Veille technologique en entreprise`,
+`Revue de la littérature académique`, `État de l'art en services financiers` — et le **nom commun
+devient le sous-titre**, ce qu'il est en fait, *un nom de série*. ☑ **Aucun mot n'est ajouté ni
+retiré : les deux champs sont échangés, et rien d'autre.** Les trois PDF ont été recomposés le même
+jour par [`build/build-pdf.sh`](build/build-pdf.sh) et par celui de `5 - Recension/`, **à pagination
+inchangée** — 144, 59 et 185 pages. ⚠ *Ce que l'échange règle, et c'est plus qu'une gêne de lecture* :
+le champ `/Title` des trois PDF était **identique aux trois**, ce qui les rendait indiscernables à
+tout outil qui lit des métadonnées — catalogue, gestionnaire de références, moteur de recherche
+documentaire. *Les six PDF de tête portent désormais six `/Title` distincts.* ⚠ **Ce qu'il ne règle
+pas** : le **radical commun** reste, et il le doit — les trois documents sont bien d'une même série.
+Un renvoi qui les cite par leur seul sous-titre ne désigne toujours rien ; c'est le titre qu'il faut
+citer, et il suffit désormais.
 
 ---
 
@@ -173,7 +187,20 @@ vivant dans l'en-tête YAML de chaque source. ⚠ **Le gabarit n'est plus pris t
 17 août 2026** : le bloc `header-includes`, commun aux deux sources, **redéfinit sa fonction `conf`**
 pour composer lui-même le bloc de titre — le gabarit y laissait deux lignes vides sous l'auteur et
 n'en laissait aucune au-dessus. *Aucun fichier de gabarit n'est pour autant versionné : la
-redéfinition vit dans l'en-tête, avec tout le reste.* **Depuis ce dossier :**
+redéfinition vit dans l'en-tête, avec tout le reste.*
+
+☑ **Ces deux commandes sont versionnées depuis le 21 août 2026** —
+[`build/build-pdf.sh`](build/build-pdf.sh), qui ne fait que les inscrire au dépôt, sans en changer un
+signe, et qui enchaîne le contrôle de résumé sur chaque rendu. *Elles restaient jusque-là à recopier
+d'ici à la main.*
+
+```bash
+bash build/build-pdf.sh            # les deux
+bash build/build-pdf.sh veille     # un seul
+SUFFIXE=-essai bash build/build-pdf.sh    # sans toucher aux rendus livrés
+```
+
+**Les commandes qu'il porte, depuis ce dossier :**
 
 ```bash
 pandoc "Veille Technologique.md" --pdf-engine=typst --toc -o "Veille Technologique.pdf"
@@ -365,5 +392,7 @@ au dépôt est celui du traité », est fausse depuis ce jour-là.
 - ⚠ **Les deux documents décrivent l'état de leurs sources à leur date de gel**, et cela ne se
   corrige pas après coup. Trois écarts connus entre la veille et l'arbre courant sont consignés au
   [README du dépôt](../README.md) — *signalés là-bas, non corrigés ici*.
-- ⚠ **Le dépôt ne porte aucune licence, et c'est une décision** : droit d'auteur par défaut, tous
-  droits réservés. Seul le Vol. I porte un `LICENSE` propre, qui ne vaut que pour lui.
+- ☑ **Le dépôt porte une licence à sa racine depuis le 21 août 2026** : [`LICENSE`](../LICENSE),
+  **CC BY 4.0**, sur instruction d'auteur, et elle couvre le dépôt entier. *Jusque-là il n'en portait
+  aucune — droit d'auteur par défaut —, et seul le Vol. I avait la sienne, mêmes termes, pour lui
+  seul.* ⚠ Elle ne couvre pas les œuvres de tiers citées, qui restent à leurs titulaires.

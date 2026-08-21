@@ -1,0 +1,20 @@
+# Fins de ligne : LF partout, à la sortie de l'index comme à l'entrée.
+#
+# ⚠ Sans cette règle, `core.autocrlf=true` — le réglage par défaut de Git pour
+# Windows, et celui de la machine d'auteur — rend les fichiers texte en CRLF au
+# clone. Deux conséquences, mesurées le 21 août 2026, et aucune n'est cosmétique :
+#
+#   1. Les sept `*.sh` du dépôt cessent de se lancer. `bash` lit le `\r` comme
+#      un caractère du nom de commande et sort `$'\r': command not found` — les
+#      quatre `build-pdf.sh` des volumes et `PRD/decompte.sh` compris.
+#   2. Toutes les comparaisons À L'OCTET du dépôt deviennent fausses : les 118
+#      figures `.svg` regravées « identiques à l'octet », le `Monographie.md`
+#      que `build/assemble.py` reproduit à l'octet près, et les trois empreintes
+#      SHA-256 du registre `ANTERIEURES` de `2 - Compendium/figures/genere.py`.
+#
+# *Un dépôt qui atteste des octets ne peut pas laisser la plate-forme les
+# réécrire au passage.*
+* text=auto eol=lf
+
+*.pdf binary
+*.wasm binary

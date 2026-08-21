@@ -18,6 +18,7 @@ legende, qui elle change.
 rang. Les cinq sections qui en portent deux (11.1, 16.1, 30.2, 31.1, 36.2) les
 distinguent par un suffixe de lettre — « Figure 31.1a », « Figure 31.1b ».
 """
+import hashlib
 import re
 import sys
 from pathlib import Path
@@ -45,6 +46,46 @@ def piece(ch):
 def dessine_une(f):
     corps, haut = PRIMITIVES[f["type"]](**f["data"])
     D.rendu(f["nom"], corps, haut, f["alt"], f["source"], f["reserve"])
+
+
+# ⚠ TROIS FIGURES DU VOLUME NE SE GRAVENT PAS ICI, ET C'EST DÉFINITIF.
+# Le volume porte 118 figures ; ce programme en dessine 115. Les trois autres
+# sont ANTÉRIEURES au programme : dessinées à la main, avant que `dessine.py`
+# n'existe, et aucune des huit primitives ne les rend. Les réexprimer dans le
+# langage du graveur produirait trois figures DIFFÉRENTES, pas les mêmes —
+# ce serait perdre l'original, non l'automatiser.
+#
+# ☑ Ce qui manquait, et que ce registre ajoute le 21 août 2026 : les COMPTER et
+# les VÉRIFIER. Elles pouvaient jusqu'ici disparaître du dossier ou changer d'un
+# octet sans qu'aucun contrôle du dépôt le voie — le graveur ne les connaissait
+# pas, et son bilan disait « 115 figures » sur un volume qui en porte 118.
+# ⚠ Ce registre n'est PAS une chaîne de rendu : il gèle, il ne regrave pas.
+# Retoucher l'une des trois oblige à reporter son empreinte ici, à la main.
+ANTERIEURES = {
+    "f-01-00-invariant":      ("Livre I/01-interoperabilite-integration-entreprise.md",
+                               "e82d87c7412aa3f6a652ff56ef0435ae7256be68c191cd65e029eda1a98eb22a"),
+    "f-01-01-pile-canonique": ("Livre I/01-interoperabilite-integration-entreprise.md",
+                               "7bc70d30bcee994e5fbdac69ceef03804385366b1a2f9fde499cce3725f01171"),
+    "f-08-01-n-fois-m":       ("Livre I/08-anatomie-mcp-a2a.md",
+                               "6b51f826a50b6cd509275391522aa0a86da721467f7e04db8e5c6ba211773037"),
+}
+
+
+def verifie_anterieures():
+    """Rend la liste des défauts : figure absente, empreinte changée, appel perdu."""
+    defauts = []
+    for nom, (piece_rel, empreinte) in sorted(ANTERIEURES.items()):
+        svg = FIGURES / f"{nom}.svg"
+        if not svg.exists():
+            defauts.append(f"{nom} : absente du dossier")
+            continue
+        vue = hashlib.sha256(svg.read_bytes()).hexdigest()
+        if vue != empreinte:
+            defauts.append(f"{nom} : empreinte {vue[:12]}… au lieu de {empreinte[:12]}…")
+        p = RACINE / piece_rel
+        if not p.exists() or f"../figures/{nom}.svg" not in p.read_text(encoding="utf-8"):
+            defauts.append(f"{nom} : plus appelée par {piece_rel}")
+    return defauts
 
 
 def appel(f):
@@ -92,13 +133,20 @@ def main():
             chemin.write_text(texte, encoding="utf-8")
 
     manques = [n for n, e in etats if e != "posée"]
-    print(f"[figures] {len(C.FIGURES)} figures, {len(par_piece)} pièces"
+    anterieures = verifie_anterieures()
+    total = len(C.FIGURES) + len(ANTERIEURES)
+    print(f"[figures] {total} figures du volume : {len(C.FIGURES)} gravées sur "
+          f"{len(par_piece)} pièces, {len(ANTERIEURES)} antérieures au programme "
+          f"vérifiées à l'empreinte"
           + (" — VÉRIFICATION SEULE" if verif else ""))
     for n, e in etats:
         if e != "posée":
             print(f"   ⚠ {n} : {e}")
-    if manques:
-        sys.exit(f"[figures] {len(manques)} ancre(s) introuvable(s)")
+    for d in anterieures:
+        print(f"   ⚠ {d}")
+    if manques or anterieures:
+        sys.exit(f"[figures] {len(manques)} ancre(s) introuvable(s), "
+                 f"{len(anterieures)} défaut(s) aux figures antérieures")
 
 
 if __name__ == "__main__":

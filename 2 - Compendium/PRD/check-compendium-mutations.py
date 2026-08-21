@@ -244,12 +244,29 @@ def m5_cardinal_fausse(tmp):
 
 
 def m6_registre_desaligne(tmp):
-    """P6 — la volumétrie du registre ne concorde plus avec l'en-tête de la pièce."""
+    """P6 — la volumétrie du registre ne concorde plus avec l'en-tête de la pièce.
+
+    ⚠ Réancrée le 21 août 2026. L'ancre d'avant était le couple littéral
+    « | 11 000 | 10 724 | » : elle a péri quand le ch. 1 s'est re-mesuré à
+    10 859 mots, et le harnais s'arrêtait en `AssertionError` — il le disait,
+    mais les huit mutations suivantes ne tournaient plus. La faute n'était pas
+    la valeur, c'était de l'ancrer : ce que la mutation vise est la COLONNE
+    « réel » de la ligne du ch. 1, quel que soit le nombre qui l'occupe.
+    """
     p = tmp / REGISTRE
-    texte = p.read_text(encoding="utf-8")
-    neuf = texte.replace("| 11 000 | 10 724 |", "| 11 000 | 12 000 |")
-    assert neuf != texte, "la ligne du ch. 1 a changé de forme au registre"
-    p.write_text(neuf, encoding="utf-8")
+    lignes = p.read_text(encoding="utf-8").splitlines(keepends=True)
+    for i, l in enumerate(lignes):
+        if l.startswith("| 1 |"):
+            champs = l.split("|")
+            # La ligne se termine par : cible | reel | ecart | coche |
+            # La cesure finale de `split` donnant un champ vide, « reel »
+            # est l'avant-avant-avant-dernier champ.
+            champs[-4] = " 12 000 "
+            lignes[i] = "|".join(champs)
+            break
+    else:
+        raise AssertionError("ligne du ch. 1 introuvable au registre")
+    p.write_text("".join(lignes), encoding="utf-8")
 
 
 def m6b_ligne_manquante(tmp):

@@ -47,7 +47,7 @@ D'ICI — le constat est du 8 août 2026.** *Quatre passes de révision du fran�
 cinquante pièces depuis* (commits `982ef3a` et `1535aa5` du 31 juillet, `c5a51b3` du 1ᵉʳ août,
 `c2a1258`, `e0f799a` et `4355a41` du 3 août). **Re-mesure du 8 août 2026, par une invocation unique de
 `bash PRD/decompte.sh` sur les cinquante pièces : 331 791 mots de corps** — **72 483 / 68 752 / 99 875 /
-59 962 / 30 719** par Livre, chiffres que le colophon de [`Compendium.html`](../Compendium.html) publie
+59 962 / 30 719** par Livre, chiffres que le colophon de `Compendium.html` ⚠ *parti du dépôt le 19 août 2026, commit `4f98d6d`* publie
 déjà à l'identique. ⚠ **La colonne ci-dessous n'est pas réécrite, et le motif est opposable** : le
 contrôle **P6** de [`check-compendium.py`](check-compendium.py) oppose chaque `Réel` du registre au
 `Réel` déclaré dans l'**en-tête de la pièce**, pour les vingt-six pièces qui le publient — *y porter la

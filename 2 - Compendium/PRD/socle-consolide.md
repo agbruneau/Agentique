@@ -187,7 +187,7 @@ qu'il cite. La réserve 23 les borne comme elle borne tout le reste.
 SOC agentique est en préversion plus qu'en production** ».
 
 **Ce que le rapport de lot soutient.** Le §E du rapport
-[`lot-L-10-soc-agentique.md`](../../1%20-%20Corpus/3%20-%20EntrepriseAgentique/verification/lot-L-10-soc-agentique.md)
+[`lot-L-10-soc-agentique.md`](../../1%20-%20Collection/3%20-%20EntrepriseAgentique/verification/lot-L-10-soc-agentique.md)
 pose en toutes lettres, à son point 3, que le panorama versé se limite à **trois éditeurs** — six
 autres, plus deux offres supplémentaires d'un éditeur déjà relevé, n'ont pas été instruits faute de
 budget de passe — et qu'il « ne soutient donc **aucun** énoncé de forme "le marché", "les offres",
@@ -712,7 +712,7 @@ chaque occurrence**.
 N'EN RELÈVE, et l'absence de recoupement est un résultat, non un silence.**
 
 Le recoupement a été mené **le 28 juillet 2026 sur le chapitre source lui-même**, non depuis
-l'extraction — `1 - Corpus/1 - InteroperabiliteAgentique/Chapitres/Chapitre 5 - Interoperabilite Agentique dans le domaine financier.md`.
+l'extraction — `1 - Collection/1 - InteroperabiliteAgentique/Chapitres/Chapitre 5 - Interoperabilite Agentique dans le domaine financier.md`.
 
 - **Où le marqueur se trouve.** Le marqueur « hors corpus bibliographique du chapitre » apparaît sur
   **dix lignes** du chapitre (onze occurrences de la chaîne, deux lignes en portant deux), plus **une

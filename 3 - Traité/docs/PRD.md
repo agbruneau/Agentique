@@ -8,7 +8,7 @@
 | Version | 3.0 |
 | Date | 13 août 2026 |
 | Auteur | André-Guy Bruneau |
-| Source normative | `Traité.pdf`, **à la racine du dossier et non sous `docs/`** — *Traité sur les systèmes multiagents en essaim*, **troisième édition, revue sur sa propre mesure, 15 août 2026** — 8 chapitres, 24 sections, 123 notices, **143 pages**. *La révision 3.0 de ce document a été écrite contre la deuxième édition, du 13 août 2026 ; l'édition normative est passée à la troisième le 17 août 2026 (F2, DT5), et **ses renvois de page y ont tous été migrés le même jour**, un par un et par ancre textuelle — voir F2, §0.2 et [`bancs/audit-2026-08/FINITION-prd.md`](../bancs/audit-2026-08/FINITION-prd.md). **Une page de ce document ne se cite plus sans son édition** : la forme est `p. N, Xᵉ éd.`, et une seule ligne le vérifie.* |
+| Source normative | `Traité.pdf`, **à la racine du dossier et non sous `docs/`** — *Traité sur les systèmes multiagents en essaim*, **troisième édition, revue sur sa propre mesure, 15 août 2026** — 8 chapitres, 24 sections, 123 notices, **143 pages**. *La révision 3.0 de ce document a été écrite contre la deuxième édition, du 13 août 2026 ; l'édition normative est passée à la troisième le 17 août 2026 (F2, DT5), et **ses renvois de page y ont tous été migrés le même jour**, un par un et par ancre textuelle — voir F2, §0.2 et `bancs/audit-2026-08/FINITION-prd.md`. **Une page de ce document ne se cite plus sans son édition** : la forme est `p. N, Xᵉ éd.`, et une seule ligne le vérifie.* |
 | Statut | Réalisé — **six phases livrées**. Le critère de sortie de la phase 6 est **atteint sur trois de ses quatre points et refait sur la mesure pour le quatrième** ; réserves et écarts au §0. Révisé par l'audit du dépôt du 13 août 2026, dont les corrections sont marquées **(audit)**, puis par l'audit du 17 août 2026, consigné au §0.2. **Le compte de tests est une mesure et ne se cite pas** : `cargo test --workspace --release` rend **467 tests, 0 échec** au 17 août 2026 à 11 h 14 |
 
 ---
@@ -377,10 +377,13 @@ transcrites dans `sim-viz`, et `Proprietes` qui ne tient pas PD12 par le type.
 n'a été prise, les correctifs d'interface sont établis par le code et par
 `cargo test`, pas par un œil. **La migration des renvois de page de
 ce document a en revanche été faite le même jour**, par une passe de finition distincte
-([`bancs/audit-2026-08/FINITION-prd.md`](../bancs/audit-2026-08/FINITION-prd.md)) : 23 justes,
+(`bancs/audit-2026-08/FINITION-prd.md`) : 23 justes,
 41 corrigées, 10 citant sciemment une édition antérieure, 1 introuvable dans la troisième
 édition et consignée au [registre](decisions.md). Ce qu'elle ne couvre pas : les renvois du
-**code** et ceux de `docs/README.md`, hors de son périmètre. Rien sur l'empaquetage WASM après 09 h 09 — les
+**code** et ceux de `docs/README.md`, hors de son périmètre. ⚠ **Le rapport de cette passe
+n'a jamais été versé au dépôt** — constat du 21 août 2026 : les six renvois qui le citaient
+visaient le vide et sont depuis de simples mentions. *Ses chiffres ne se relisent qu'ici ;
+c'est un manque définitif, non une dette.* Rien sur l'empaquetage WASM après 09 h 09 — les
 deux chiffres du `README.md` datent d'une construction que l'édition de
 `crates/sim-viz/` a périmée ; ce qui se cite est la ligne de commande.
 
@@ -449,7 +452,7 @@ Le produit est une transposition d'un texte qui se veut rigoureux ; la fidélit�
 
   **Clause corrigée le 17 août 2026, en l'appliquant à elle-même.** La version 3.0 écrivait « la page s'entend de la **deuxième** édition ». Le seul traité que le dépôt contienne est la **troisième**, du 15 août 2026, `Traité.pdf` à la racine, **143 pages** — mesuré par `python -c "import pymupdf; print(pymupdf.open('Traité.pdf').page_count)"`. La page s'entend donc de la troisième, et le renvoi qui la nomme (`(3ᵉ éd.)`) est le seul qui se relise sans être refait.
 
-  **La migration des renvois est faite depuis la passe de finition du 17 août 2026** ([`bancs/audit-2026-08/FINITION-prd.md`](../bancs/audit-2026-08/FINITION-prd.md)), qui a repris les soixante-quinze `p. N` de ce document un par un, par ancre textuelle et non par arithmétique sur l'ancienne pagination. Résultat : **23 justes, 41 corrigées, 10 citant délibérément une édition antérieure et le disant, 1 introuvable** dans la troisième édition et consignée au [registre](decisions.md). **Aucun décalage constant n'existe entre les deux éditions**, et cinq mesures suffisent à le montrer — le §3.3 est p. 50-55, 3ᵉ éd., et non p. 42-43, 2ᵉ éd. ; le tableau 14 est p. 77, 3ᵉ éd., et non p. 58, 2ᵉ éd. ; la conclusion est p. 128-129, 3ᵉ éd., et non p. 96, 2ᵉ éd. ; les Références ouvrent p. 130, 3ᵉ éd. ; la thèse du scénario M est p. 5, 3ᵉ éd., **et** p. 127, 3ᵉ éd., jamais p. 94, 2ᵉ éd. **Une page se cite désormais avec son édition ou elle ne se cite pas** — la ligne qui le vérifie est en tête du tableau de finition. Le protocole de remesure :
+  **La migration des renvois est faite depuis la passe de finition du 17 août 2026** (`bancs/audit-2026-08/FINITION-prd.md`), qui a repris les soixante-quinze `p. N` de ce document un par un, par ancre textuelle et non par arithmétique sur l'ancienne pagination. Résultat : **23 justes, 41 corrigées, 10 citant délibérément une édition antérieure et le disant, 1 introuvable** dans la troisième édition et consignée au [registre](decisions.md). **Aucun décalage constant n'existe entre les deux éditions**, et cinq mesures suffisent à le montrer — le §3.3 est p. 50-55, 3ᵉ éd., et non p. 42-43, 2ᵉ éd. ; le tableau 14 est p. 77, 3ᵉ éd., et non p. 58, 2ᵉ éd. ; la conclusion est p. 128-129, 3ᵉ éd., et non p. 96, 2ᵉ éd. ; les Références ouvrent p. 130, 3ᵉ éd. ; la thèse du scénario M est p. 5, 3ᵉ éd., **et** p. 127, 3ᵉ éd., jamais p. 94, 2ᵉ éd. **Une page se cite désormais avec son édition ou elle ne se cite pas** — la ligne qui le vérifie est en tête du tableau de finition. Le protocole de remesure :
 
   ```python
   import pymupdf, re
@@ -1196,7 +1199,7 @@ Chaque mécanisme affiche en permanence que ses verdicts sont **conditionnels au
 
 ## 7. Scénarios
 
-Treize scénarios, un par thèse (§2.4) — douze livrés, le treizième spécifié en phase 6. Chacun expose, dans cet ordre et sans exception (PD8) : la **thèse**, citée avec sa section et sa page ; sa **source** ; ses **paramètres** ; le **mécanisme visible** — quel réglage produit quel effet observable, et par quel chemin ; ce que la **visualisation** montre ; son **critère d'acceptation** ; et ce qu'il **ne** démontre **pas**. Les pages citées sont celles de la **troisième édition** du traité, la seule que le dépôt contienne (F2, DT5). Elles ont toutes été migrées le 17 août 2026, ancre par ancre, et portent leur édition. Une **thèse est une citation**, donc sa provenance est vérifiable à la ligne : les treize l'ont été contre le PDF livré ([`bancs/audit-2026-08/FINITION-prd.md`](../bancs/audit-2026-08/FINITION-prd.md)), et **la thèse du scénario H change de page de deux chapitres** — « Le résultat n'est pas en retard, il est faux » est p. 58, 3ᵉ éd., non p. 44, 2ᵉ éd.
+Treize scénarios, un par thèse (§2.4) — douze livrés, le treizième spécifié en phase 6. Chacun expose, dans cet ordre et sans exception (PD8) : la **thèse**, citée avec sa section et sa page ; sa **source** ; ses **paramètres** ; le **mécanisme visible** — quel réglage produit quel effet observable, et par quel chemin ; ce que la **visualisation** montre ; son **critère d'acceptation** ; et ce qu'il **ne** démontre **pas**. Les pages citées sont celles de la **troisième édition** du traité, la seule que le dépôt contienne (F2, DT5). Elles ont toutes été migrées le 17 août 2026, ancre par ancre, et portent leur édition. Une **thèse est une citation**, donc sa provenance est vérifiable à la ligne : les treize l'ont été contre le PDF livré (`bancs/audit-2026-08/FINITION-prd.md`), et **la thèse du scénario H change de page de deux chapitres** — « Le résultat n'est pas en retard, il est faux » est p. 58, 3ᵉ éd., non p. 44, 2ᵉ éd.
 
 ### Scénario A — Les deux régimes
 
@@ -1965,7 +1968,7 @@ Préfixe **DT**, pour la raison donnée au §10.
 *introduit* la ligne, jamais où la lire.** Les dix-huit ont été confrontées une à
 une au sommaire de la troisième édition le 17 août 2026
 (`pymupdf`, `d.get_toc()` — voir
-[`bancs/audit-2026-08/FINITION-prd.md`](../bancs/audit-2026-08/FINITION-prd.md)) :
+`bancs/audit-2026-08/FINITION-prd.md`) :
 **dix-sept tiennent telles quelles**, chaque objet se retrouvant dans la section
 que la ligne nomme ; la page mesurée de chacun est au tableau de finition. La
 dix-huitième — la ligne « Conclusion » — ne tient plus, et sa correction est

@@ -34,7 +34,9 @@ Monographie en **sept parties** (PRD §6), rédigée en français soutenu (PRD �
 AgentMesh/
 ├── PRD.md, CLAUDE.md, PRDPlan.md          # gouvernance
 ├── TOC.md                                  # livrable J-2 : titre, abstract, TdM commentée
-├── arxiv - *.pdf                           # sources F-36, F-37 (ne pas supprimer)
+│   ⚠ arxiv - *.pdf                          # sources F-36, F-37 — SORTIES DE L'INDEX le 21 août 2026,
+│                                           #   non détruites : disque + historique git. Motif au
+│                                           #   `LICENSE` de la racine et à `0 - Références/README.md`
 ├── monographie/
 │   ├── 00-avant-propos.md                  # avant-propos et note méthodologique
 │   ├── 01-partie-I/  … 07-partie-VII/      # un fichier .md par chapitre (gabarits en place)
