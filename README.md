@@ -390,8 +390,10 @@ son motif, et **le compte se renverse d'un mot de l'auteur.** *Partout ailleurs 
 > ☑ **Ce que le document est, mesuré sur l'arbre le 20 août 2026** : **185 pages** (`/Count`,
 > Typst 0.15.1), **312 références** numérotées **1 à 312 sans trou ni doublon**, **15 sections
 > numérotées** — 17 titres de rang 1, dont `Sommaire exécutif` et `Références` hors numérotation —,
-> **77 de rang 2**, **26 de rang 3**, **11 tableaux**, **5 figures**, **77 432 mots** au tokéniseur
-> du dépôt, dont **53 141 hors bibliographie**. La planche fait **7 pages**, **5 sections numérotées**
+> **77 de rang 2**, **26 de rang 3**, **11 tableaux**, **5 figures**, **77 961 mots** au tokéniseur
+> du dépôt, dont **53 216 hors bibliographie** — ⚠ *77 432 et 53 141 jusqu'au 21 août 2026, où la
+> correction des six notices d'auto-citation a ajouté environ 530 mots à la bibliographie ; les
+> pages, elles, restent celles du PDF du 20 août, qui n'a pas été recomposé.* La planche fait **7 pages**, **5 sections numérotées**
 > et **1 304 mots**, et **reprend les cinq mêmes figures**.
 >
 > ⚠⚠ **Ce qu'il faut trancher, et que ce fichier tranche : le compte des livrables passe à HUIT.**
@@ -406,22 +408,31 @@ son motif, et **le compte se renverse d'un mot de l'auteur.** *Partout ailleurs 
 > document — cinq schémas et un « où lire la suite » —, comme
 > `Compendium.html` l'a été du Vol. IV jusqu'à sa suppression le 19 août 2026.
 >
-> ⚠ **Deux faits sont portés ici sans être corrigés, parce que les corriger toucherait un livrable.**
-> *(a)* **Ses références [1] à [5] renvoient à un autre dépôt** — `agbruneau/Prospection` —, pour
-> cinq pièces qui vivent ici : la veille, la revue, le traité, le compendium et le Vol. II. Les
-> **quatre premières portent une URL vers la racine de ce dépôt-là** (`Veille Technologique.md`,
-> `Revue de littérature.md`, `Traité.md`, `Compendium.pdf`), quand les quatre fichiers vivent ici
-> **sous des dossiers numérotés** ; la **cinquième ne porte aucune URL** et déclare un dépôt privé
-> nommé `Monographies`. *Le lecteur de ce dépôt-ci est envoyé ailleurs pour lire ce qu'il a sous la
-> main, et ce fichier n'a pas vérifié que les quatre adresses résolvent.* ☑ Le régime, lui, est
-> déclaré à chaque entrée : **« Corpus de l'auteur — auto-publié, non arbitré »**. *(b)* ⚠⚠ **Le dossier ne porte aucun
+> ⚠ **Deux faits étaient portés ici sans être corrigés. Le premier a été corrigé le 21 août 2026,
+> dans le livrable ; le second demeure.**
+> *(a)* ☑ **CORRIGÉ LE 21 AOÛT 2026.** *État jusque-là :* **ses références [1] à [5] renvoyaient à un
+> autre dépôt** — `agbruneau/Prospection` —, pour cinq pièces qui vivent ici : la veille, la revue, le
+> traité, le compendium et le Vol. II ; les **quatre premières portaient une URL vers la racine de ce
+> dépôt-là**, quand les quatre fichiers vivent ici **sous des dossiers numérotés**, et la **cinquième
+> ne portait aucune URL**, déclarant un dépôt privé nommé `Monographies`. ☑ **Les six notices
+> d'auto-citation portent désormais le chemin de leur pièce dans ce dépôt-ci**, mesuré fichier par
+> fichier ; l'adresse `Prospection` reste en second localisateur dans quatre d'entre elles, **toujours
+> non vérifiée**. ⚠⚠ **La correction a mis au jour une sixième auto-citation** : *la notice **[198]**
+> est **le même document que [1]** — la veille — sous un autre titre et sous un régime faux, « non
+> ouvrable par le lecteur » ; **elle porte neuf renvois**, et le doublon est déclaré, non résorbé.*
+> ⚠ *Trois renvois qui portaient [198] visaient la revue et ont été redirigés vers [2].*
+> ☑ Le régime, lui, était déjà déclaré à chaque entrée : **« Corpus de l'auteur — auto-publié, non
+> arbitré »**. *(b)* ⚠⚠ **Le dossier ne porte aucun
 > contrôle exécutable** — ni `check-*.py`, ni porte de pagination, ni contrôle de bibliographie :
 > *c'est exactement le grief que le tableau des reliquats portait déjà contre la version détruite, et
 > il se prolonge sans interruption.* ☑ **Un seul contrôle du dépôt s'y applique, et il vient
 > d'ailleurs** : [`check-resume.py`](4%20-%20Veille/Python/check-resume.py) **sort 0 sur les deux
-> PDF** — page de titre à **y = 96,1 pt** pour l'état de l'art, **+24,1 pt** de dégagement ; **84,6 pt**
-> et **+12,6 pt** pour la planche. ⚠ *Il ne mesure que la page 1, et les 185 pages ne sont opposées à
-> aucune cible.*
+> PDF** — au 20 août, page de titre à **y = 96,1 pt** pour l'état de l'art, **+24,1 pt** de
+> dégagement ; **84,6 pt** et **+12,6 pt** pour la planche. ⚠⚠ **Rejoué le 21 août 2026, l'état de
+> l'art rend `y = 84,6 pt` et `+12,6 pt`** : *son résumé ayant perdu un paragraphe, le
+> `Sommaire exécutif` remonte sur la page de titre et occupe la place libérée — le contrôle passe
+> toujours, mais il ne mesure plus la dérogation à 9,5 pt qu'il surveillait.* ⚠ *Il ne mesure que la
+> page 1, et les 185 pages ne sont opposées à aucune cible.*
 >
 > ☑ **Le document déclare lui-même deux faits négatifs, et c'est ce que ce fichier retient de sa
 > méthode.** *De méthode* : le domaine du régulateur principal **refuse la consultation automatisée
@@ -1442,7 +1453,7 @@ re-mesurer les trois corpus par une commande de référence unique.
 
 [`5 - Recension/État de l'art — services financiers.md`](5%20-%20Recension/%C3%89tat%20de%20l%27art%20%E2%80%94%20services%20financiers.md)
 → [`.pdf`](5%20-%20Recension/%C3%89tat%20de%20l%27art%20%E2%80%94%20services%20financiers.pdf)
-· [`.html`](5%20-%20Recension/%C3%89tat%20de%20l%27art%20%E2%80%94%20services%20financiers.html), entré
+· ⚠⚠ `.html` **détruit le 21 août 2026 — décision d'auteur**, entré
 le **20 août 2026** (commit `25e4ea0`). ⚠ **Il partage son nom de dossier avec le rapport dérivé
 détruit la veille, et rien d'autre** : *ce n'est pas une restauration, c'est un autre document sous
 le même intitulé de dossier.*
@@ -1461,8 +1472,17 @@ chaque énoncé y héritait du régime de preuve de sa source. **Celui-ci ouvre 
 primaires** — lignes directrices de l'AMF, du BSIF (B-10, B-13, E-21, E-23), règles de l'OCRI, règlement
 administratif de Paiements Canada, Loi 25, LPRPDE, LCPC, spécifications MCP / A2A / ANP / AP2,
 prépublications arXiv —, **il ne descend d'aucun livrable**, et **aucun livrable ne le cite**.
-⚠ **Ses 312 notices ne sont pas toutes primaires, et il le déclare** : *cinq sont des auto-citations
-sous « Corpus de l'auteur — auto-publié, non arbitré », quatre sont données pour analyse secondaire.*
+⚠ **Ses 312 notices ne sont pas toutes primaires, et il le déclare** : *six sont des auto-citations
+sous « Corpus de l'auteur — auto-publié, non arbitré » — **[1]** à **[5]** et **[198]** —, quatre sont
+données pour analyse secondaire.* ⚠⚠ **La sixième n'a été vue que le 21 août 2026, et elle tempère la
+phrase qui précède** : *la notice **[198]** désigne **le même document que [1]**, la veille, sous le
+titre « état de l'art en entreprise » et sous un régime faux — « non ouvrable par le lecteur ». Les
+deux numéros portent ensemble **dix-sept renvois**, et les six auto-citations **trente-trois**,
+recomptés sur la source corrigée. Le doublon est déclaré dans les deux notices, **non résorbé** — le
+résorber imposerait de renuméroter les cent quatorze notices suivantes.* ☑ *Cela ne renverse pas le
+motif du compte à huit — le document ouvre bien ses propres sources primaires sur le droit sectoriel,
+que nul livrable ne portait —, mais **« il ne descend d'aucun livrable » se lit désormais avec ce
+chiffre sous les yeux** : sa couche protocolaire, elle, cite la veille.*
 ⚠ *Ce fichier le compte pour un huitième livrable **par constat de passe** ; aucune instruction
 d'auteur ne l'y a rangé, et le compte se renverse d'un mot.*
 
@@ -1470,13 +1490,13 @@ d'auteur ne l'y a rangé, et le compte se renverse d'un mot.*
 
 | | **État de l'art — services financiers** | **Planche — Cinq schémas** |
 |---|---|---|
-| **Fichiers** | [`.md`](5%20-%20Recension/%C3%89tat%20de%20l%27art%20%E2%80%94%20services%20financiers.md) → [`.pdf`](5%20-%20Recension/%C3%89tat%20de%20l%27art%20%E2%80%94%20services%20financiers.pdf) · [`.html`](5%20-%20Recension/%C3%89tat%20de%20l%27art%20%E2%80%94%20services%20financiers.html) | [`.md`](5%20-%20Recension/Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.md) → [`.pdf`](5%20-%20Recension/Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.pdf) · [`.html`](5%20-%20Recension/Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.html) |
+| **Fichiers** | [`.md`](5%20-%20Recension/%C3%89tat%20de%20l%27art%20%E2%80%94%20services%20financiers.md) → [`.pdf`](5%20-%20Recension/%C3%89tat%20de%20l%27art%20%E2%80%94%20services%20financiers.pdf) · ⚠⚠ `.html` **détruit le 21 août 2026** | [`.md`](5%20-%20Recension/Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.md) → [`.pdf`](5%20-%20Recension/Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.pdf) · [`.html`](5%20-%20Recension/Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.html) |
 | **Titre** | *Interopérabilité et Orchestration Agentiques* / sous-titre *état de l'art en services financiers* — ⚠ **`title:` mot pour mot celui de la veille et de la revue** ; le sous-titre distingue | *Lire l'état de l'art en cinq schémas* / *interopérabilité et orchestration agentiques en services financiers* |
 | **Rendu** | **185 p.** (`/Count`), **312 références** numérotées **1 à 312, sans trou ni doublon** | **7 p.**, **aucune référence** |
 | **Structure** | **15 sections numérotées** *(17 titres de rang 1, dont `Sommaire exécutif` et `Références` hors numérotation)*, **77** de rang 2, **26** de rang 3, **11 tableaux**, **5 figures**, **14 questions ouvertes** | **5 sections numérotées** + un « Où lire la suite », **0 tableau**, **les 5 mêmes figures** |
-| **Source** | **1 986 lignes**, 585 Kio ; **77 432 mots** au tokéniseur du dépôt, dont **53 141 hors bibliographie** | **110 lignes**, 11 Kio ; **1 304 mots** |
+| **Source** | **1 984 lignes**, 588 Kio ; **77 961 mots** au tokéniseur du dépôt, dont **53 216 hors bibliographie** — ⚠ *1 986 l., 585 Kio, 77 432 et 53 141 au gel du 20 août 2026 ; relevé du 21 à 7 h 25* | **110 lignes**, 11 Kio ; **1 304 mots** |
 | **Gel de l'information** | **20 août 2026** — *le gel le plus récent du dépôt* | **20 août 2026** |
-| **Régime de preuve** | **sources primaires**, chaque affirmation confrontée à sa source et datée ; ⚠ **cinq entrées renvoient au corpus de l'auteur**, déclarées « auto-publié, non arbitré » | dérivée du document, **aucune source propre** |
+| **Régime de preuve** | **sources primaires**, chaque affirmation confrontée à sa source et datée ; ⚠ **six entrées renvoient au corpus de l'auteur**, déclarées « auto-publié, non arbitré » — *[1] à [5] et [198], cette dernière doublant [1]* | dérivée du document, **aucune source propre** |
 
 ⚠ **Le tokéniseur est celui de [`2 - Compendium/PRD/decompte.sh`](2%20-%20Compendium/PRD/decompte.sh)**
 — jeton portant au moins une lettre ou un chiffre, `LC_ALL=C.UTF-8` —, appliqué au corps délimité
@@ -1498,22 +1518,38 @@ canadienne**, *le lien restant une inférence d'architecture signalée comme tel
 est posée.* ⚠ *Un état de l'art dont le résultat le plus solide est un manque de source est
 exactement ce que la veille et la revue disent du champ, par deux autres voies.*
 
-⚠⚠ **Ses références [1] à [5] envoient le lecteur dans un autre dépôt.** Elles citent la veille, la
-revue, le traité, le compendium et le Vol. II **comme sources externes**, sous la mention **« Corpus
-de l'auteur — auto-publié, non arbitré »**, et les quatre qui portent une URL visent
-**`agbruneau/Prospection`**, non `agbruneau/Agentique` — *les quatre fichiers vivent pourtant ici,
-sous des dossiers numérotés.* La cinquième **ne porte aucune URL** et déclare un dépôt privé nommé
-`Monographies` ; ☑ *elle le dit en toutes lettres — « le lecteur ne peut pas l'ouvrir » —, et le
-document précise qu'aucune affirmation opposable ne repose sur elle.* ⚠ **Ce fichier n'a pas vérifié
-que les quatre adresses résolvent**, et **la correction toucherait un livrable** : *constat porté,
-correction non faite.*
+☑⚠ **Ses références [1] à [5] envoyaient le lecteur dans un autre dépôt ; elles renvoient ici depuis
+le 21 août 2026.** Elles citent la veille, la revue, le traité, le compendium et le Vol. II **comme
+sources externes**, sous la mention **« Corpus de l'auteur — auto-publié, non arbitré »** — *et c'est
+le régime qui, lui, ne change pas.* ⚠ *État jusqu'au 21 août :* les quatre qui portaient une URL
+visaient **`agbruneau/Prospection`**, non `agbruneau/Agentique`, quand les quatre fichiers vivent ici
+sous des dossiers numérotés ; la cinquième **ne portait aucune URL** et déclarait un dépôt privé nommé
+`Monographies`, en écrivant en toutes lettres que « le lecteur ne peut pas l'ouvrir ».
+☑ **Les six notices portent désormais le chemin de leur pièce dans ce dépôt**, relevé fichier par
+fichier le 21 août 2026 : `4 - Veille/Veille Technologique.md` — **1 932 lignes, 436 221 octets**,
+*là où la notice écrivait « 424 Ko »* —, `4 - Veille/Revue de littérature.md` (1 052 l., 199 311 o.),
+`3 - Traité/Traité.md` (1 875 l., 457 859 o.), `2 - Compendium/Compendium.pdf` (13 163 513 o.) et
+`1 - Corpus/2 - OrchestrationAgentique/Monographie.md` (3 306 l., 874 335 o.).
+⚠⚠ **Trois notices donnaient en outre un titre qui n'est pas celui de l'ouvrage.** *[5] titrait le
+Vol. II « L'autonomie encadrée », qui est un morceau du sous-titre du compendium ; [3] titrait le
+traité « traité des essaims d'agents » et le donnait pour une **deuxième** édition, quand sa page de
+titre porte « Traité sur les systèmes multiagents en essaim » et « **troisième** édition » ; [198]
+titrait la veille « état de l'art en entreprise ».* ☑ **Le gain n'est pas seulement d'adressage** :
+le Vol. II n'étant pas dans un dépôt privé mais à deux dossiers d'ici, **le fait négatif qu'il porte
+seul — quinze croisements, aucun lien documenté — cesse de reposer sur la seule parole de l'auteur**
+et se vérifie à son chapitre 18. ⚠ *L'adresse `Prospection`, conservée en second localisateur dans
+quatre notices, n'a toujours pas été vérifiée par ce fichier.*
 
 **Rendre les deux documents.** ⚠⚠ **Le dossier ne porte aucune chaîne**, et c'est le fait de
 construction qui compte ici : *pas de `build/`, pas de script de rendu, pas une commande écrite dans
-le dépôt.* ☑ **Ce que le rendu permet d'établir, en le lisant** : les PDF sont composés par
+le dépôt.* ☑ **Ce que le rendu permettait d'établir, en le lisant** : les PDF sont composés par
 **Typst 0.15.1** (`/Creator`), les HTML par **Pandoc 3.10.2** (`<meta name="generator">`), avec les
 cinq SVG **incorporés en `data:image/svg+xml;base64`** — donc `--embed-resources --standalone` — et
-une table des matières dans le seul état de l'art. **Les commandes ci-dessous sont reconstituées de
+une table des matières dans le seul état de l'art. ⚠⚠ **Le HTML du document long ayant été détruit le
+21 août 2026, ces indices ne se relisent plus que sur trois fichiers**, et *la table des matières à
+94 entrées qu'il portait n'a pas d'équivalent au PDF : **le document long n'en a plus aucune**.*
+☑ *Sa feuille de style n'est pas perdue pour autant : elle survit, **sans différer d'une seule
+ligne**, dans le HTML de la planche.* **Les commandes ci-dessous sont reconstituées de
 ces indices, non relevées d'un script, et ce fichier ne les a pas rejouées** ; **depuis
 [`5 - Recension/`](5%20-%20Recension/)** — *les figures étant citées en chemin relatif
 `figures/*.svg`, et le dossier `figures/` étant ici sous le document, l'exception du traité ne joue
@@ -1521,6 +1557,7 @@ pas* :
 
 ```bash
 pandoc "État de l'art — services financiers.md" --pdf-engine=typst --toc -o "État de l'art — services financiers.pdf"
+# ⚠ la commande ci-dessous a produit un fichier DÉTRUIT le 21 août 2026 : elle date un état, elle ne se rejoue pas
 pandoc "État de l'art — services financiers.md" --embed-resources --standalone --toc -o "État de l'art — services financiers.html"
 python figures/dessine.py                                    # → les 5 SVG
 ```
@@ -1569,16 +1606,38 @@ date.*
 - ☑ **Un seul contrôle du dépôt s'y applique, et il vient d'ailleurs.**
   [`check-resume.py`](4%20-%20Veille/Python/check-resume.py), rejoué le 20 août 2026 sur les deux
   PDF, **sort 0** : état de l'art, dernière ligne de la page de titre à **y = 96,1 pt**, dégagement
-  **+24,1 pt** ; planche, **y = 84,6 pt**, **+12,6 pt**. ⚠ **Il ne lit que la page 1** — *c'est
-  précisément ce que la dérogation à 9,5 pt vient de sauver, et rien au-delà n'est mesuré.*
+  **+24,1 pt** ; planche, **y = 84,6 pt**, **+12,6 pt**. ⚠⚠ **Rejoué le 21 août, l'état de l'art rend
+  `y = 84,6 pt` et `+12,6 pt`, et le contrôle a changé d'objet** : *le résumé ayant perdu un
+  paragraphe, le `Sommaire exécutif` remonte sur la page de titre ; le dégagement fond de moitié sans
+  qu'aucun débordement ne se produise, et la dérogation à 9,5 pt n'est plus ce que le contrôle
+  mesure.* ⚠ **Il ne lit que la page 1** — *c'est précisément ce que la dérogation à 9,5 pt venait de
+  sauver, et rien au-delà n'est mesuré.*
   ⚠ *Sur la planche, il compte 1 093 « lignes de texte » en page 1 : il relève chaque fragment de
   texte de la figure incorporée. Le verdict vaut, le décompte ne veut rien dire ici.*
 - ⚠ **Les 185 pages sont un constat, jamais une cible** — comme la veille, la revue et le traité
   depuis que leurs formats fermes ont été levés. *Seule la chaîne du compendium oppose encore une
   porte de pagination à son rendu.*
-- ⚠ **La séquence 1 → 312 des références a été vérifiée par ce fichier, à la main, une fois.** *Rien
-  ne la rejouera : l'appariement cité ↔ défini, que `check-veille.py` oppose à la veille et
-  `check-revue.py` à la revue, n'a pas d'équivalent ici.*
+- ⚠ **La séquence 1 → 312 des références a été vérifiée par ce fichier, à la main, une fois**, puis
+  **re-mesurée le 21 août 2026** après la correction des notices : *312 notices, aucun trou, aucun
+  doublon de numéro, toutes citées au moins une fois, aucun renvoi hors de la plage.* ⚠ *Rien ne la
+  rejouera : l'appariement cité ↔ défini, que `check-veille.py` oppose à la veille et
+  `check-revue.py` à la revue, n'a pas d'équivalent ici, et le script du 21 août n'a pas été versé.*
+- ⚠⚠⚠ **LE HTML DU DOCUMENT LONG A ÉTÉ DÉTRUIT LE 21 AOÛT 2026 — décision d'auteur.** *Le dossier
+  passe de treize fichiers à douze, et le document long n'a plus que sa source et son PDF.*
+  ☑ **Ce que la destruction coûte, mesuré** : *rien du texte, la source portant tout ; rien de la
+  feuille de style, qui survit **sans différer d'une ligne** dans le HTML de la planche ; **mais la
+  table des matières à 94 entrées, que le PDF n'a pas** — le document long n'en a donc plus aucune —,
+  et **le seul rendu où la notice [19] n'était pas brouillée**.* ☑ *Le fichier reste dans l'historique
+  `git`, 759 612 octets.*
+- ☑ **Les deux fichiers qui restent sont d'accord, et c'est établi en rejouant la composition le
+  21 août 2026.** *Le `.md` corrigé fait foi ; le `.pdf` en est le rendu — la commande relancée sur la
+  source rend **185 pages et 2 060 704 octets, la taille du fichier livré à l'octet près**, les deux
+  rendus ne différant que des soixante octets d'étiquettes de fontes que Typst tire au hasard.*
+  ⚠⚠ **Ce fichier avait d'abord écrit que le PDF ne portait pas les notices corrigées : c'était faux**,
+  et l'erreur venait de l'instrument — *`pdftotext` perd les accents de ce rendu, et les chaînes
+  cherchées en portaient toutes.* ⚠ *Le retrait du paragraphe du résumé et la recomposition du PDF
+  restent constatés sur l'arbre et **non attribués** ; seule la destruction du HTML est déclarée par
+  l'auteur.* ☑ *La planche n'est pas touchée : ses trois fichiers restent concordants.*
 - ⚠ **Le dossier est entré sans `README.md`** — *12 fichiers au commit `25e4ea0`* — et
   [**l'a reçu dans la journée**](5%20-%20Recension/README.md) : le dépôt repasse de **quinze à
   seize**, et **les cinq dossiers numérotés en portent de nouveau tous un**. ⚠ *Un `README.md` n'est
@@ -1834,8 +1893,8 @@ le Vol. II sur ces deux points cite un énoncé que la veille a réfuté.*
     │                                          SEIZIÈME du dépôt, comme celui qui a été détruit le 19 août
     ├── État de l'art — services financiers.md / .pdf / .html
     │                                        185 p., 312 réf. (1 à 312, sans trou), 15 sections numérotées, 11 tableaux
-    │                                        gel du 20 août 2026 — LE PLUS RÉCENT DU DÉPÔT ; 1 986 lignes, 77 432 mots
-    │                                        ⚠ ses réf. [1]-[5] renvoient au dépôt `agbruneau/Prospection`, PAS à celui-ci
+    │                                        gel du 20 août 2026 — LE PLUS RÉCENT DU DÉPÔT ; 1 984 lignes, 77 961 mots
+    │                                        ☑ ses réf. [1]-[5] et [198] renvoient à CE dépôt depuis le 21 août 2026 ; ⚠⚠ .html DÉTRUIT le 21
     │                                        ⚠ son résumé DÉROGE : 9,5 pt dans 1 em, quand les trois autres gardent 10 pt
     ├── Cinq schémas — état de l'art en services financiers.md / .pdf / .html
     │                                        7 p., planche de synthèse — les 5 MÊMES figures, aucune référence propre
@@ -3585,8 +3644,9 @@ modifié.**
   dossier détruit le 19 août en portait dix-neuf, et **pas un seul ne revient**.*
 - ☑ **L'état de l'art fait 185 pages** (`/Count`, Typst 0.15.1) et porte **312 références**,
   numérotées **1 à 312 sans trou ni doublon** — *séquence vérifiée à la main par ce fichier, une
-  fois, et rien ne la rejouera.* Sa source fait **1 986 lignes** et **77 432 mots** au tokéniseur de
-  [`decompte.sh`](2%20-%20Compendium/PRD/decompte.sh), dont **53 141 hors bibliographie** ; elle porte
+  fois, et rien ne la rejouera.* Sa source fait **1 984 lignes** et **77 961 mots** au tokéniseur de
+  [`decompte.sh`](2%20-%20Compendium/PRD/decompte.sh), dont **53 216 hors bibliographie** — ⚠ *77 432
+  et 53 141 avant la correction des notices du 21 août 2026* ; elle porte
   **15 sections numérotées**, **77** sous-sections, **26** sous-sous-sections, **11 tableaux** — ⚠ *dix
   avec légende, un sans* — et **5 figures**.
 - ☑ **La planche fait 7 pages**, **110 lignes**, **1 304 mots**, **5 sections numérotées** et **reprend
@@ -3653,18 +3713,31 @@ modifié.**
   laissées à leur date** — *corriger l'arborescence du traité déborde une passe qui reprend le
   cinquième dossier.*
 - ☑ **`check-resume.py`, seul contrôle du dépôt applicable ici, a été rejoué sur les deux PDF et sort
-  0** — état de l'art à **y = 96,1 pt**, dégagement **+24,1 pt** ; planche à **y = 84,6 pt**,
-  **+12,6 pt**. ⚠ *Il ne lit que la page 1, et sur la planche il compte 1 093 « lignes de texte » —
+  0** — au 20 août, état de l'art à **y = 96,1 pt**, dégagement **+24,1 pt** ; planche à
+  **y = 84,6 pt**, **+12,6 pt**. ⚠⚠ *Au 21 août, l'état de l'art rend lui aussi **84,6 pt** et
+  **+12,6 pt** : le `Sommaire exécutif` a remonté sur sa page de titre, et le contrôle n'y mesure
+  plus la dérogation à 9,5 pt.* ⚠ *Il ne lit que la page 1, et sur la planche il compte 1 093 « lignes de texte » —
   chaque fragment de la figure incorporée. Le verdict vaut ; le décompte ne veut rien dire là.*
 
-**Deux faits portés sans être corrigés, parce que les corriger toucherait un livrable.**
+**Deux faits étaient portés sans être corrigés. Le premier l'a été le 21 août 2026, dans le livrable ;
+le second demeure.**
 
-- ⚠⚠ **Les références [1] à [5] du document renvoient à un autre dépôt** — `agbruneau/Prospection` —
-  pour la veille, la revue, le traité, le compendium et le Vol. II, **cinq pièces qui vivent ici**.
-  Les quatre qui portent une URL visent la racine de ce dépôt-là ; la cinquième n'en porte aucune et
-  déclare un dépôt privé. ☑ *Le régime est déclaré à chaque entrée — « Corpus de l'auteur —
-  auto-publié, non arbitré » —, et le document précise qu'aucune affirmation opposable ne repose sur
-  la cinquième.* ⚠ **Ce fichier n'a pas vérifié que les quatre adresses résolvent.**
+- ☑ **CORRIGÉ LE 21 AOÛT 2026.** *État jusque-là :* **les références [1] à [5] du document renvoyaient
+  à un autre dépôt** — `agbruneau/Prospection` — pour la veille, la revue, le traité, le compendium et
+  le Vol. II, **cinq pièces qui vivent ici** ; les quatre qui portaient une URL visaient la racine de
+  ce dépôt-là, la cinquième n'en portait aucune et déclarait un dépôt privé. ☑ **Les six notices
+  d'auto-citation portent désormais le chemin de leur pièce dans ce dépôt**, et **trois titres faux
+  ont été rectifiés** — [3], [5] et [198]. ⚠⚠ **La passe a mis au jour une sixième auto-citation** :
+  *[198] est le même document que [1], la veille, sous un titre distinct et un régime faux — doublon
+  déclaré, non résorbé, neuf renvois.* ⚠ **Ce fichier n'a toujours pas vérifié que les adresses
+  `Prospection`, conservées en second localisateur dans quatre notices, résolvent.**
+- ⚠⚠⚠ **Et le `.html` du document long a été DÉTRUIT le 21 août 2026, décision d'auteur** : *le
+  dossier passe à douze fichiers, et le document long n'a plus que sa source et son PDF.* ☑ *Ces deux fichiers
+  sont d'accord : la composition, rejouée le 21 août sur la source corrigée, rend la taille du PDF
+  livré **à l'octet près**.* ⚠⚠ *Ce fichier avait écrit l'inverse — le PDF « sans les notices
+  corrigées » —, sur un test `pdftotext` qui perd les accents : l'affirmation est retirée.* ☑ *La feuille de style du HTML détruit n'est pas perdue — elle est
+  intacte dans le HTML de la planche —, mais **sa table des matières à 94 entrées n'a pas
+  d'équivalent au PDF**.*
 - ⚠⚠ **Le dossier ne porte aucun contrôle exécutable** — ni `check-*.py`, ni porte de pagination, ni
   contrôle de bibliographie. ☑ **Recompté le 20 août 2026 : dix `check-*.py` au dépôt**, six sous
   `2 - Compendium/PRD/`, un sous `3 - Traité/Python/`, trois sous `4 - Veille/Python/`, **aucun sous
