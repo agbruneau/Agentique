@@ -66,25 +66,40 @@ III et du Compendium.
 
 **d. « Les renvois tiennent-ils ? » — mesuré ici, non tenu là-bas**
 
-☑ **1 885 renvois relatifs résolus dans les 228 `.md` du dépôt, zéro rompu**, au 21 août 2026 —
-*ils étaient 243 à viser le vide*. ⚠ **Aucun contrôle du dépôt ne résout un lien markdown** : c'est
+⚠ **1 879 renvois relatifs résolus dans les 227 `.md` du dépôt, et DEUX ROMPUS**, au 22 août 2026 —
+*ils étaient 243 à viser le vide avant la passe du 21, zéro après elle, et deux le lendemain.*
+⚠⚠ **Les deux morts ont la même cause, et c'est une suppression du 22 août** : `gauntlet-log.md` est
+sorti de l'index, et deux `README.md` de `3 - Traité/` le citent encore en lien — celui du dossier en
+tête d'une rangée de tableau, celui de `docs/` au corps, où il l'oppose au journal de la revue par
+les pairs. *Restaurer la pièce ou retirer les renvois est une décision d'auteur, pas d'appareil :
+elle n'est pas prise ici.* ⚠ **Aucun contrôle du dépôt ne résout un lien markdown** : c'est
 une mesure faite pour ce relevé, pas une garantie que le dépôt tient. La commande est une résolution
 de chaque cible relative contre le système de fichiers, blocs et *spans* de code exclus — un
 `` `[…](cible)` `` cité en prose n'est pas un lien.
 
 ## D'où viennent les chiffres du `README.md`
 
-Tous relevés le **21 août 2026**, sur l'arbre de travail, par ces commandes et par elles seules :
+Relevés le **21 août 2026** sur l'arbre de travail, par ces commandes et par elles seules — ⚠ *trois
+exceptés, redatés du **22 août 2026** et marqués comme tels au fil du texte : les titres et auteurs,
+le décompte d'octets avec deux de ses cardinaux, et les renvois du point d ci-dessus.*
 
 - **Pages** — `pypdf`, `len(PdfReader(f).pages)` sur les 10 PDF versionnés. Aucun nombre de pages
   n'est repris d'un autre `README.md`.
 - **Titres et auteurs** — champs `/Title` et `/Author` des PDF, et en-têtes YAML des sources.
   *Les six PDF de tête portent six `/Title` distincts depuis l'échange titre ↔ sous-titre du
-  21 août 2026 ; ils n'en portaient que quatre.*
+  21 août 2026 ; ils n'en portaient que quatre.* ⚠ **Le champ ne vaut pas la source, et l'écart se
+  mesure des deux côtés — relevé du 22 août 2026.** *(a)* `/Title` : le PDF d'état de l'art lit
+  `État de lart en services financiers`, **apostrophe tombée à la composition Typst du 21 août**,
+  quand sa source YAML l'écrit bien. *(b)* `/Author` : **le nom est sur les neuf, la mention
+  « M.Sc. IT » sur six seulement** — les Vol. I, II et III portent `André-Guy Bruneau` seul. *Citer
+  l'en-tête YAML pour le champ du PDF, ou l'inverse, est le piège de cette ligne.*
 - **Lignes, octets, cardinaux de fichiers** — `wc -l` / `wc -c` / `git ls-files`. *Les tailles sont
-  décimales : 1 Mo = 10⁶ octets.* ⚠ **Le décompte d'octets est le seul chiffre du `README.md` qui
-  ne date pas du 21 : il a été remesuré le 22 août 2026 à 75 116 966**, les **seize** autres
-  cardinaux de la même ligne tombant juste tels quels. *Il était déjà faux avant, et sa fausseté a
+  décimales : 1 Mo = 10⁶ octets.* ⚠⚠ **Le décompte d'octets s'est périmé DEUX FOIS le 22 août
+  2026** : remesuré à 75 116 966 en début de passe, il est retombé le jour même avec la suppression
+  de `3 - Traité/gauntlet-log.md`, et il vaut **75 096 625** au dernier relevé — *trois passes
+  concordantes, `cat | wc -c` deux fois et la somme des `stat` une fois.* ⚠ **Deux cardinaux de la
+  même ligne sont tombés avec la pièce** — le total, **575 → 574**, et les `.md`, **228 → 227** ;
+  *les quinze autres extensions tiennent tels quels.* *Il était déjà faux avant, et sa fausseté a
   survécu à deux causes distinctes : la suppression puis la restauration d'`APPAREIL.md` — 11 306
   octets qui sortent et rentrent —, et les éditions du 22 août à `3 - Traité/README.md`,
   `CLAUDE.md` et `docs/DEVELOPPEMENT.md`. **Ce nombre se périme à chaque commit**, y compris celui
@@ -95,6 +110,28 @@ Tous relevés le **21 août 2026**, sur l'arbre de travail, par ces commandes et
   ```bash
   git ls-files -z | xargs -0 cat | wc -c
   ```
+
+  ⚠⚠ **Un relevé unique ne se vérifie pas, et cette commande ne signale rien quand il est faux.**
+  Le 22 août 2026, un relevé pris juste après cinq éditions a rendu **75 116 696** — *270 octets de
+  moins* que les trois passes concordantes prises ensuite, et que la somme des tailles fichier par
+  fichier, qui donnent toutes **75 116 966**. La commande sort 0 dans les deux cas et les deux
+  nombres sont plausibles : rien ne distingue le bon du mauvais sans une seconde mesure.
+  ⚠ **La cause de ces 270 octets n'est pas établie**, et elle n'a pas été cherchée — *une piste
+  OneDrive a été écrite ici puis retirée le jour même, faute de mesure : le dossier est synchronisé,
+  ce qui suffit à casser l'édition de liens dans `target/`
+  ([`docs/DEVELOPPEMENT.md`](<3 - Traité/docs/DEVELOPPEMENT.md>)), mais rien ne montre que ce soit
+  ce qui s'est passé ici.* Ce qui est établi est la règle, pas le mécanisme : **mesurer par deux
+  passes qui doivent concorder**, la seconde méthode servant de contrôle croisé puisqu'elle n'ouvre
+  pas les fichiers en flux.
+
+  ```bash
+  git ls-files -z | xargs -0 stat -c%s | awk '{s+=$1} END {print s}'
+  ```
+
+  ☑ *Ce que la règle a effectivement attrapé, le même jour* : un écart de **23 538** octets entre
+  deux relevés, qui n'était pas une erreur de mesure du tout — `3 - Traité/gauntlet-log.md`,
+  24 566 octets au disque, avait été supprimé par un commit entre les deux. Une mesure qui ne
+  concorde pas est d'abord une question sur l'arbre, pas sur la commande.
 - **Historique** — `git log --format='%an'`, `git log --merges` (quatre fusions, et
   `git log --all --grep='#4'` ne rend rien), `git tag`, `git branch -r`, et
   `git log --all --diff-filter=A --name-only` pour ce que l'arbre ne porte plus. *C'est cette

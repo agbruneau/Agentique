@@ -9,14 +9,15 @@ mesure, ou l'écart consigné*. **Cinq écarts** le sont, **dont trois contredis
 ([`3 - Traité/docs/decisions.md`](<3%20-%20Trait%C3%A9/docs/decisions.md>)) — *et c'est la règle qui
 tient, non un défaut : un écart consigné est ce que le dispositif produit quand il marche.*
 
-**Les textes sont d'une seule main** : André-Guy Bruneau, M.Sc. IT, champ `/Author` des neuf PDF
-livrés. ⚠ *Le dépôt, lui, ne l'est pas* : `git log` comptait, **au relevé du 21 août 2026 et avant
+**Les textes sont d'une seule main** : André-Guy Bruneau, champ `/Author` des neuf PDF livrés —
+⚠ *la mention « M.Sc. IT » n'accompagne le nom que sur six ; les Vol. I, II et III le portent seul.*
+⚠ *Le dépôt, lui, ne l'est pas* : `git log` comptait, **au relevé du 21 août 2026 et avant
 la passe de réparation que décrit cette page**, **280 commits — 260 signés André-Guy
 Bruneau, 18 `Claude <noreply@anthropic.com>`, 2 `agbruneau`** — et **quatre fusions de *pull
 requests* GitHub** ; deux branches `origin/claude/*` subsistent au distant. *La numérotation GitHub
 monte à #5, mais une PR ne se compte pas par son numéro : la #4 n'a laissé aucune trace au dépôt, ni
-fusion ni écrasement.* **Historique du 24 juin au 21 août 2026**, bornes du premier et du dernier
-commit.
+fusion ni écrasement.* **Historique du 24 juin au 22 août 2026**, bornes du premier et du dernier
+commit — **290 commits au 22 août**, les dix derniers pris depuis le relevé ci-dessus.
 
 ⚠ **Le dépôt est déclaré clos et final depuis le 8 août 2026** — décision d'auteur **D-13**,
 [`2 - Compendium/PRD/PRD.md`](<2%20-%20Compendium/PRD/PRD.md>) §16 ; l'unique étiquette du dépôt,
@@ -71,7 +72,11 @@ Le discriminant devient le titre — « Veille technologique en entreprise », �
 académique », « État de l'art en services financiers » — et le nom commun devient le sous-titre, ce
 qu'il est en fait : **un nom de série**. Les trois PDF ont été recomposés le même jour par les
 chaînes versionnées ce jour-là, **à pagination inchangée** — 144, 59 et 185 pages. *Les six PDF de
-tête portent désormais six `/Title` distincts.*
+tête portent désormais six `/Title` distincts.* ⚠ **Une apostrophe est tombée à la composition du
+troisième** : son `/Title` lit `État de lart en services financiers`, quand sa source YAML écrit bien
+« État de l'art en services financiers ». *Le titre cité ci-dessus est celui de la source ; le PDF
+livré ne le porte pas. Relevé le 22 août 2026, non corrigé — la correction demande une
+recomposition.*
 
 ## Carte du dépôt
 
@@ -122,8 +127,10 @@ Agentique/
 │   │                                     du 14 au 21 août 2026, où elles clouaient son rendu → point 3
 │   ├── build/build-pdf.sh              ⭑ la commande de composition, écrite le 21 août 2026 — elle
 │   │                                     n'existait nulle part au dépôt → point 1
-│   ├── bancs/ · gauntlet-log.md        ⚠ supprimés par accident le 17 août 2026, restaurés le 21 :
-│   │                                     c'est ce qui empêchait `cargo` de démarrer → point 2
+│   ├── bancs/                          ⚠ ses 24 pièces, supprimées par accident le 17 août 2026,
+│   │                                     restaurées le 21 : c'est ce qui empêchait `cargo` de
+│   │                                     démarrer → point 2. ⚠ `gauntlet-log.md`, restauré avec
+│   │                                     elles à la racine du dossier, en est ressorti le 22
 │   ├── docs/                           ⭑ `decisions.md` : les cinq écarts et les verdicts de banc
 │   ├── clippy.toml                     ⭑ ses interdictions sont des contrats, pas du style
 │   └── web/                            ⚠ `index.html` seul est du source
@@ -139,19 +146,22 @@ Agentique/
                                        feuille de style versionnée
 ```
 
-**575 fichiers versionnés, 75,1 Mo** (75 116 966 octets) : 228 `.md`, 142 `.svg`, 76 `.rs`,
+**574 fichiers versionnés, 75,1 Mo** (75 096 625 octets) : 227 `.md`, 142 `.svg`, 76 `.rs`,
 53 `.html`, 31 `.py`, 10 `.pdf`, 9 `.toml`, 8 `.sh`, 6 gabarits Typst, 4 `.gitignore`, 2 `.mjs`,
 2 `LICENSE`, 1 `.lua`, 1 `Cargo.lock`, 1 `launch.json`, 1 `.gitattributes`. *Les **10 PDF** sont les
 **9 rendus des livrables** et le mémoire de maîtrise de l'auteur ; les **8 `.sh`** sont les
 **7 `build-pdf.sh`** — un par dossier de livrable, les neuf PDF couverts — et `PRD/decompte.sh`.*
-⚠ **Le dépôt a maigri de 36,4 Mo le 21 août 2026** : ce sont les cinq œuvres de tiers sorties de
-l'index, point 8. *Il a grossi de 58 fichiers le même jour, et ce sont des restaurations* : 25 sous
-`3 - Traité/bancs/`, 30 sous `3 - EntrepriseAgentique/verification/`, plus la licence, les trois
-chaînes, le `README` de `0 - Références/` et `.gitattributes`.
+⚠ **Le dépôt a maigri de 37,2 Mo le 21 août 2026**, et c'est un solde, non une pièce : les cinq
+œuvres de tiers sorties de l'index en pèsent **38,3 Mo** à elles seules (point 8), l'`.html` de
+l'état de l'art 0,77 Mo de plus, et ce qui rentre le même jour n'en rend que 1,8. *Il a gagné
+**62 fichiers**, pour un solde de **+56** — 519 au 20 août, 575 au 21.* **Cinquante-cinq sont des
+restaurations** : 24 sous `3 - Traité/bancs/` et `gauntlet-log.md` à la racine du dossier, 30 sous
+`3 - EntrepriseAgentique/verification/`. **Les sept autres sont neufs** : la licence, les trois
+chaînes, le `README` de `0 - Références/`, `.gitattributes` et `APPAREIL.md`.
 Hors `git` mais sur le disque : `3 - Traité/target/` — ⚠ *vidé le 21 août 2026 par `cargo clean`, **12 060 fichiers et 3,4 Gio**, en éprouvant sans succès la piste du cache vieilli ; il se refait à la première construction* —, les deux artefacts `wasm-bindgen`
 de `web/`, les cinq PDF de tiers, et les `__pycache__`.
 
-**Seize `README.md` versionnés, dix-sept avec celui-ci** — un par dossier, un par Livre du
+**Dix-sept `README.md` versionnés, celui-ci compris** — un par dossier, un par Livre du
 compendium, plus `1 - Collection/2 -…/monographie/README.md`, `3 - Traité/docs/README.md` et
 `0 - Références/README.md`, écrit le 21 août 2026 pour un dossier qui n'en avait pas. **C'est là que vit ce
 que cette page ne porte pas** : régimes de preuve, gels, dérogations, réserves, et l'historique des
