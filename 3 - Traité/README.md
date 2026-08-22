@@ -14,8 +14,12 @@ Simulateur déterministe d'essaims d'agents logiciels coordonnés par le milieu.
 > dépôt quand le traité y est entré, et le traité les cite en chemin relatif —
 > sa chaîne de rendu ne se lançait donc que de là-bas. *Elle se lance d'ici, et
 > elle est écrite* : [`build/build-pdf.sh`](build/build-pdf.sh), versionné le
-> même jour, la commande n'existant jusque-là nulle part au dépôt. *Rien de
-> tout cela ne concerne le code : `cargo` se lance bien d'ici.*
+> même jour, la commande n'existant jusque-là nulle part au dépôt. ✎ *Cette page
+> a écrit « rien de tout cela ne concerne le code : `cargo` se lance bien d'ici »
+> jusqu'au 22 août 2026, et c'était trompeur : le déplacement des figures ne
+> touche effectivement pas au code, mais `cargo` ne se lance **pas** d'ici sans
+> `CARGO_TARGET_DIR` dérouté hors de OneDrive — c'est le premier des
+> [prérequis](#prérequis).*
 
 Le dossier transpose un traité — [`Traité.pdf`](Traité.pdf), **troisième
 édition du 15 août 2026 : 8 chapitres, 24 sections, 123 notices** — en logiciel exécutable,
@@ -43,14 +47,38 @@ Une méthode de validation se définit autant par ce qu'elle ne réfute pas.
 |---|---|---|
 | Rust | stable, cible `x86_64-pc-windows-gnu` | Fixée par `rust-toolchain.toml`. Le linker MSVC n'est pas requis. |
 | mingw-w64 | WinLibs POSIX/UCRT | `dlltool.exe`, exigé par `eframe`. **L'interface seule en a besoin.** |
+| `CARGO_TARGET_DIR` | tout chemin hors de OneDrive | ⚠ **Exigé par toute commande `cargo` lancée d'ici** — pas seulement par l'interface. |
 | `wasm-bindgen-cli` | 0.2.127 | Interface web seulement. `cargo install wasm-bindgen-cli --version 0.2.127` |
 | Node | 24 | Bancs de parité seulement. |
 
-`dlltool.exe` doit être dans le `PATH` pour construire l'interface :
+⚠ **L'édition de liens échoue dans le `target/` du dépôt, et le message ne
+nomme pas sa cause.** `ld.exe` déclare introuvables des `.o` que `rustc` vient
+d'écrire et que `ls` montre à leur taille ; le crate nommé dans l'erreur est
+celui qui passait là, pas le coupable. **La seule variable qui change le verdict
+est la synchronisation OneDrive** — l'accent du chemin, le cache vieilli et la
+longueur du chemin ont été éprouvés puis écartés le 21 août 2026, mesure à
+l'appui, à [`docs/DEVELOPPEMENT.md`](docs/DEVELOPPEMENT.md). Sortir `target/` de
+OneDrive répare tout ; renommer le dossier ne répare rien.
+
+Les deux lignes à poser avant tout `cargo`, dans chaque terminal — la première
+met `dlltool.exe` dans le `PATH` pour l'interface, la seconde sort `target/` de
+OneDrive :
+
+```powershell
+$env:PATH = "$env:LOCALAPPDATA\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin;$env:PATH"
+$env:CARGO_TARGET_DIR = "C:\Users\agbru\AppData\Local\Temp\cargo-conso"
+```
 
 ```bash
 export PATH="$LOCALAPPDATA/Microsoft/WinGet/Packages/BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/mingw64/bin:$PATH"
+export CARGO_TARGET_DIR="C:/Users/agbru/AppData/Local/Temp/cargo-conso"
 ```
+
+⚠ **`CARGO_TARGET_DIR` ne survit pas à la fermeture du terminal**, et un
+`%TEMP%` peut être vidé par Windows — pour un réglage permanent, viser un chemin
+stable, `C:\cargo-conso` par exemple. **Les commandes de cette page lisent
+l'artefact par cette variable, jamais par `./target/`** : les deux se
+contredisent dès qu'elle est posée, et c'est la variable qui a raison.
 
 ## Exécuter les simulations
 
@@ -94,14 +122,14 @@ c'est de la prose du produit, et elle le dit.
 ### 2. L'interface web — même code, même chiffres
 
 ```bash
-cargo build -p sim-viz --release --lib --target wasm32-unknown-unknown && wasm-bindgen --target web --no-typescript --out-dir web target/wasm32-unknown-unknown/release/sim_viz.wasm
+cargo build -p sim-viz --release --lib --target wasm32-unknown-unknown && wasm-bindgen --target web --no-typescript --out-dir web "$CARGO_TARGET_DIR/wasm32-unknown-unknown/release/sim_viz.wasm"
 ```
 
 Windows PowerShell 5.1 n'a pas `&&` — l'équivalent, qui n'enchaîne que si la
 construction réussit :
 
 ```powershell
-cargo build -p sim-viz --release --lib --target wasm32-unknown-unknown; if ($?) { wasm-bindgen --target web --no-typescript --out-dir web target/wasm32-unknown-unknown/release/sim_viz.wasm }
+cargo build -p sim-viz --release --lib --target wasm32-unknown-unknown; if ($?) { wasm-bindgen --target web --no-typescript --out-dir web "$env:CARGO_TARGET_DIR\wasm32-unknown-unknown\release\sim_viz.wasm" }
 ```
 
 ```bash
@@ -125,7 +153,7 @@ se refont par ces deux lignes et ces deux-là seulement :
 ```bash
 cargo build -p sim-viz --release --lib --target wasm32-unknown-unknown \
   && wasm-bindgen --target web --no-typescript --out-dir web \
-     target/wasm32-unknown-unknown/release/sim_viz.wasm
+     "$CARGO_TARGET_DIR/wasm32-unknown-unknown/release/sim_viz.wasm"
 printf "brut=%s gz9=%s\n" "$(stat -c%s web/sim_viz_bg.wasm)" \
                           "$(gzip -9 -c web/sim_viz_bg.wasm | wc -c)"
 ```

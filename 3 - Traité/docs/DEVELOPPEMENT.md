@@ -65,12 +65,20 @@ des `.o` que `rustc` vient d'écrire dans un dossier synchronisé, `ls` les
 montrant à leur taille, et **la seule variable qui change le verdict est la
 synchronisation**. Le mécanisme exact n'est pas établi ici ; le remède l'est.
 
-Les mesures de cette page ont été prises ainsi :
+Les mesures de cette page ont été prises ainsi, et **toute commande de cette
+page suppose ces deux lignes posées** — elles ne survivent pas à la fermeture du
+terminal :
 
 ```powershell
 $env:PATH = "$env:USERPROFILE\.cargo\bin;$env:LOCALAPPDATA\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin;$env:PATH"
 $env:CARGO_TARGET_DIR = "C:\Users\agbru\AppData\Local\Temp\cargo-conso"
 ```
+
+⚠ **Les commandes ci-dessous lisent l'artefact par `$CARGO_TARGET_DIR`, jamais
+par `./target/`.** Les deux se contredisent dès que la variable est posée, et
+c'est la variable qui a raison : `./target/` désigne alors un dossier que rien
+n'écrit. *Cette page écrivait les six chemins en relatif jusqu'au 22 août 2026,
+tout en posant la variable douze lignes plus haut.*
 
 Un seul test, ou un module :
 
@@ -94,7 +102,7 @@ cargo run -p sim-viz --release
 Interface web — construction, puis service local (DT4 : pages statiques) :
 
 ```bash
-cargo build -p sim-viz --release --lib --target wasm32-unknown-unknown && wasm-bindgen --target web --no-typescript --out-dir web target/wasm32-unknown-unknown/release/sim_viz.wasm
+cargo build -p sim-viz --release --lib --target wasm32-unknown-unknown && wasm-bindgen --target web --no-typescript --out-dir web "$CARGO_TARGET_DIR/wasm32-unknown-unknown/release/sim_viz.wasm"
 ```
 
 ```bash
@@ -115,13 +123,13 @@ correctif. Non câblé ; voir `clippy.toml`.
 Banc DT1 — parité flottante natif/WASM, test permanent de NF-02 :
 
 ```bash
-cargo build --release --bin dt1-natif && cargo build --release --lib --target wasm32-unknown-unknown && ./target/release/dt1-natif 1000000 > bancs/dt1-flottant/natif.tsv && node bancs/dt1-flottant/banc.mjs target/wasm32-unknown-unknown/release/banc_dt1.wasm bancs/dt1-flottant/natif.tsv 1000000
+cargo build --release --bin dt1-natif && cargo build --release --lib --target wasm32-unknown-unknown && "$CARGO_TARGET_DIR/release/dt1-natif" 1000000 > bancs/dt1-flottant/natif.tsv && node bancs/dt1-flottant/banc.mjs "$CARGO_TARGET_DIR/wasm32-unknown-unknown/release/banc_dt1.wasm" bancs/dt1-flottant/natif.tsv 1000000
 ```
 
 Banc EX-V12 — parité de sortie natif/WASM d'un mécanisme complet :
 
 ```bash
-cargo build --release --bin parite-natif && cargo build --release -p banc-parite --lib --target wasm32-unknown-unknown && ./target/release/parite-natif 1 20000 > bancs/parite-wasm/natif.tsv && node bancs/parite-wasm/banc.mjs target/wasm32-unknown-unknown/release/banc_parite.wasm bancs/parite-wasm/natif.tsv 1 20000
+cargo build --release --bin parite-natif && cargo build --release -p banc-parite --lib --target wasm32-unknown-unknown && "$CARGO_TARGET_DIR/release/parite-natif" 1 20000 > bancs/parite-wasm/natif.tsv && node bancs/parite-wasm/banc.mjs "$CARGO_TARGET_DIR/wasm32-unknown-unknown/release/banc_parite.wasm" bancs/parite-wasm/natif.tsv 1 20000
 ```
 
 Campagne sans interface — scénario C, CSV et rapport JSON :
