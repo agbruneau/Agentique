@@ -53,7 +53,12 @@ Les deux qui changent un résultat numérique :
 **Trouvaille d'environnement, hors code** : `cargo test` échoue à l'édition de
 liens dans le `target/` du dépôt — `ld.exe` ne retrouve aucun des `.o` qu'il
 vient de produire, parce que le chemin contient un « é » (`3 - Traité`). Toutes
-les mesures ont donc été prises avec `CARGO_TARGET_DIR` sur un chemin ASCII. La
+les mesures ont donc été prises avec `CARGO_TARGET_DIR` sur un chemin ASCII. ✎ *Motif faux, corrigé le
+22 août 2026 : ce n'est pas l'accent du chemin mais la **synchronisation OneDrive** du
+`target/` qui casse l'édition de liens — un workspace d'essai sous `…/3 - Traité/`, même
+accent et même espace, s'édite sans un mot hors de OneDrive. Le déroutement reste le bon
+remède ; seul son motif était mal attribué. Mesure à l'appui à
+[`docs/DEVELOPPEMENT.md`](docs/DEVELOPPEMENT.md).* La
 commande que `CLAUDE.md` donne comme *la* commande de suite complète ne passe
 pas telle quelle sur cette machine.
 

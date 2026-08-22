@@ -83,7 +83,7 @@ Tous relevés le **21 août 2026**, sur l'arbre de travail, par ces commandes et
   21 août 2026 ; ils n'en portaient que quatre.*
 - **Lignes, octets, cardinaux de fichiers** — `wc -l` / `wc -c` / `git ls-files`. *Les tailles sont
   décimales : 1 Mo = 10⁶ octets.* ⚠ **Le décompte d'octets est le seul chiffre du `README.md` qui
-  ne date pas du 21 : il a été remesuré le 22 août 2026 à 75 114 381**, les **seize** autres
+  ne date pas du 21 : il a été remesuré le 22 août 2026 à 75 116 966**, les **seize** autres
   cardinaux de la même ligne tombant juste tels quels. *Il était déjà faux avant, et sa fausseté a
   survécu à deux causes distinctes : la suppression puis la restauration d'`APPAREIL.md` — 11 306
   octets qui sortent et rentrent —, et les éditions du 22 août à `3 - Traité/README.md`,

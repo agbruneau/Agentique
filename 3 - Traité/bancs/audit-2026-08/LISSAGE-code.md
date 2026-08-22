@@ -408,7 +408,12 @@ Rien n'a été édité dans `docs/`, `CLAUDE.md` ni `README.md`. À porter :
 
 Commandes lancées à la racine du dépôt, `CARGO_TARGET_DIR` dérouté vers un chemin
 ASCII : l'éditeur de liens de mingw échoue dans le `target/` du dépôt, dont le
-chemin porte un « é ».
+chemin porte un « é ». ✎ *Motif faux, corrigé le
+22 août 2026 : ce n'est pas l'accent du chemin mais la **synchronisation OneDrive** du
+`target/` qui casse l'édition de liens — un workspace d'essai sous `…/3 - Traité/`, même
+accent et même espace, s'édite sans un mot hors de OneDrive. Le déroutement reste le bon
+remède ; seul son motif était mal attribué. Mesure à l'appui à
+[`docs/DEVELOPPEMENT.md`](../../docs/DEVELOPPEMENT.md).*
 
 ```
 $ cargo clippy --workspace --all-targets --release

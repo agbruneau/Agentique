@@ -139,7 +139,7 @@ Agentique/
                                        feuille de style versionnée
 ```
 
-**575 fichiers versionnés, 75,1 Mo** (75 114 381 octets) : 228 `.md`, 142 `.svg`, 76 `.rs`,
+**575 fichiers versionnés, 75,1 Mo** (75 116 966 octets) : 228 `.md`, 142 `.svg`, 76 `.rs`,
 53 `.html`, 31 `.py`, 10 `.pdf`, 9 `.toml`, 8 `.sh`, 6 gabarits Typst, 4 `.gitignore`, 2 `.mjs`,
 2 `LICENSE`, 1 `.lua`, 1 `Cargo.lock`, 1 `launch.json`, 1 `.gitattributes`. *Les **10 PDF** sont les
 **9 rendus des livrables** et le mémoire de maîtrise de l'auteur ; les **8 `.sh`** sont les

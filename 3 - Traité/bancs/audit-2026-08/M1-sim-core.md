@@ -45,7 +45,12 @@ l'édition de liens dans le `target/` du dépôt, `ld.exe` de mingw 16.1.0 ne
 retrouvant aucun des `.o` qu'il vient de produire — le chemin du dépôt porte un
 « é » (`3 - Traité`) et l'éditeur de liens lit son `argv` dans la page de codes
 ANSI. Toutes les mesures de ce rapport sont prises avec
-`CARGO_TARGET_DIR` pointé sur un chemin ASCII ; rien d'autre n'est changé.
+`CARGO_TARGET_DIR` pointé sur un chemin ASCII ; rien d'autre n'est changé. ✎ *Motif faux, corrigé le
+22 août 2026 : ce n'est pas l'accent du chemin mais la **synchronisation OneDrive** du
+`target/` qui casse l'édition de liens — un workspace d'essai sous `…/3 - Traité/`, même
+accent et même espace, s'édite sans un mot hors de OneDrive. Le déroutement reste le bon
+remède ; seul son motif était mal attribué. Mesure à l'appui à
+[`docs/DEVELOPPEMENT.md`](../../docs/DEVELOPPEMENT.md).*
 
 ---
 
@@ -421,6 +426,7 @@ prises en défaut (D1, D2) et les six anomalies (C1 à C6). Chaque preuve a ét�
 `sim-core` en dépendance par chemin, `CARGO_TARGET_DIR` hors du chemin
 accentué — de sorte que ce qui est mesuré est bien ce qu'un consommateur de la
 crate voit. Rien hors de `crates/sim-core/` n'est modifié.
+✎ *Motif faux — voir la note du 22 août 2026 en tête de rapport.*
 
 ## État livré
 
@@ -873,3 +879,4 @@ consignés ici et **rien n'a été édité** dans `docs/PRD.md` ni
 *Mesures du tour 2 prises depuis une crate hors arbre dépendant de `sim-core` par
 chemin, `CARGO_TARGET_DIR` sur un chemin ASCII. Aucun fichier hors de
 `crates/sim-core/` et de ce rapport n'est modifié.*
+✎ *Motif faux — voir la note du 22 août 2026 en tête de rapport.*

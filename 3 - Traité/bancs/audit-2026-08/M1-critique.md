@@ -127,4 +127,9 @@ explicitement de donner, sous un nom qui affirme le contraire (F2, NF-15).
 ---
 
 *Le critique n'a rien modifié dans le dépôt : mesures faites sur copies sous
-`%TEMP%`, `CARGO_TARGET_DIR` hors du chemin accentué.*
+`%TEMP%`, `CARGO_TARGET_DIR` hors du chemin accentué.* ✎ *Motif faux, corrigé le
+22 août 2026 : ce n'est pas l'accent du chemin mais la **synchronisation OneDrive** du
+`target/` qui casse l'édition de liens — un workspace d'essai sous `…/3 - Traité/`, même
+accent et même espace, s'édite sans un mot hors de OneDrive. Le déroutement reste le bon
+remède ; seul son motif était mal attribué. Mesure à l'appui à
+[`docs/DEVELOPPEMENT.md`](../../docs/DEVELOPPEMENT.md).*
