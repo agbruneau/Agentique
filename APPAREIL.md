@@ -7,8 +7,8 @@ le `README.md` : c'était faux dans les deux cas — `git ls-files` les rend tou
 
 ## Les onze contrôles
 
-**Onze contrôles, onze à 0.** *Trois sortaient 1 jusqu'au 21 août 2026 ; le point 4 de « Ce qui
-accrochait » au [`README.md`](README.md) dit ce que chacun avait trouvé et ce qui a été fait.* Rien
+**Onze contrôles, onze à 0.** *Trois sortaient 1 jusqu'au 21 août 2026 ; la note ⚠ de leur ligne
+ci-dessous dit ce que chacun avait trouvé et ce qui a été fait.* Rien
 n'est câblé en intégration continue — pas de `.github/` —, et chacun se lance seul, depuis le dossier
 indiqué. *Relevé du 21 août 2026 ; toutes les commandes ci-dessous ont été rejouées pour ce relevé,
 sauf mention contraire.*

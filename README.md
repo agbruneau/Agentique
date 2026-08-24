@@ -17,7 +17,7 @@ Bruneau, 18 `Claude <noreply@anthropic.com>`, 2 `agbruneau`** — et **quatre fu
 requests* GitHub** ; deux branches `origin/claude/*` subsistent au distant. *La numérotation GitHub
 monte à #5, mais une PR ne se compte pas par son numéro : la #4 n'a laissé aucune trace au dépôt, ni
 fusion ni écrasement.* **Historique du 24 juin au 22 août 2026**, bornes du premier et du dernier
-commit — **290 commits au 22 août**, les dix derniers pris depuis le relevé ci-dessus.
+commit — **291 commits au 22 août**, les onze derniers pris depuis le relevé ci-dessus.
 
 ⚠ **Le dépôt est déclaré clos et final depuis le 8 août 2026** — décision d'auteur **D-13**,
 [`2 - Compendium/PRD/PRD.md`](<2%20-%20Compendium/PRD/PRD.md>) §16 ; l'unique étiquette du dépôt,
@@ -100,12 +100,12 @@ Agentique/
 ├── 1 - Collection/                  Vol. I, II, III
 │   ├── README.md                       ⭑ à ouvrir avant le reste : la chronique datée
 │   ├── 0 - Références/                 `README.md` + le mémoire de maîtrise de l'auteur (1997) ;
-│   │                                     les 3 ouvrages de tiers sont sortis de l'index → point 8
+│   │                                     les 3 ouvrages de tiers sont sortis de l'index → son `README`
 │   ├── 1 - InteroperabiliteAgentique/  `LICENSE` propre au Vol. I — mêmes termes que celle de la racine
 │   ├── 2 - OrchestrationAgentique/     ⭑ `verification/` : revalidations et grille de conformité
 │   ├── 3 - EntrepriseAgentique/        ⭑ `monographie/99-registre-gel.md` : ce qui est gelé, et depuis
 │   │                                     quand. ⚠ Son `verification/` — 30 pièces — avait été supprimé
-│   │                                     par accident le 8 août 2026 ; restauré le 21 → point 5
+│   │                                     par accident le 8 août 2026 ; restauré le 21 août 2026
 │   └──  ⤷ les trois build/ portent la même chaîne FESP : build-pdf.sh · fesp.template ·
 │          inject-pagination.py (+ assemble.py aux Vol. II et III)
 │
@@ -113,7 +113,7 @@ Agentique/
 │   ├── Livre I … Livre V/              ⚠ chaque chapitre existe deux fois, en .md et en .html ;
 │   │                                     `.claude/launch.json` les sert sur le port 8731
 │   ├── figures/                        ⭑ `programme.md` : pourquoi trois figures ne se regravent
-│   │                                     pas, et comment le graveur les tient tout de même → point 6
+│   │                                     pas, et comment le graveur les tient tout de même → `APPAREIL.md`
 │   ├── PRD/                            la spécification et ses sept contrôles au même endroit —
 │   │                                     leurs commandes sont aux tableaux plus bas
 │   ├── build/                          quatre points d'entrée ; deux seulement figurent aux tableaux
@@ -124,13 +124,13 @@ Agentique/
 │   ├── Traité.md / .pdf                ⚠ à la racine du dossier, PAS sous docs/ : la fusion du
 │   │                                     14 août 2026 les y a posés, et les renvois ont suivi
 │   ├── figures/                        les 19 planches du traité — ⚠ restées à la RACINE DU DÉPÔT
-│   │                                     du 14 au 21 août 2026, où elles clouaient son rendu → point 3
+│   │                                     du 14 au 21 août 2026, où elles clouaient son rendu → `APPAREIL.md`
 │   ├── build/build-pdf.sh              ⭑ la commande de composition, écrite le 21 août 2026 — elle
-│   │                                     n'existait nulle part au dépôt → point 1
+│   │                                     n'existait nulle part au dépôt → `APPAREIL.md`
 │   ├── bancs/                          ⚠ ses 24 pièces, supprimées par accident le 17 août 2026,
 │   │                                     restaurées le 21 : c'est ce qui empêchait `cargo` de
-│   │                                     démarrer → point 2. ⚠ `gauntlet-log.md`, restauré avec
-│   │                                     elles à la racine du dossier, en est ressorti le 22
+│   │                                     démarrer → `APPAREIL.md`. ⚠ `gauntlet-log.md`, restauré
+│   │                                     avec elles à la racine du dossier, en est ressorti le 22
 │   ├── docs/                           ⭑ `decisions.md` : les cinq écarts et les verdicts de banc
 │   ├── clippy.toml                     ⭑ ses interdictions sont des contrats, pas du style
 │   └── web/                            ⚠ `index.html` seul est du source
@@ -146,18 +146,19 @@ Agentique/
                                        feuille de style versionnée
 ```
 
-**574 fichiers versionnés, 75,1 Mo** (75 096 625 octets) : 227 `.md`, 142 `.svg`, 76 `.rs`,
+**574 fichiers versionnés, 75,1 Mo** (75 098 088 octets) : 227 `.md`, 142 `.svg`, 76 `.rs`,
 53 `.html`, 31 `.py`, 10 `.pdf`, 9 `.toml`, 8 `.sh`, 6 gabarits Typst, 4 `.gitignore`, 2 `.mjs`,
 2 `LICENSE`, 1 `.lua`, 1 `Cargo.lock`, 1 `launch.json`, 1 `.gitattributes`. *Les **10 PDF** sont les
 **9 rendus des livrables** et le mémoire de maîtrise de l'auteur ; les **8 `.sh`** sont les
 **7 `build-pdf.sh`** — un par dossier de livrable, les neuf PDF couverts — et `PRD/decompte.sh`.*
-⚠ **Le dépôt a maigri de 37,2 Mo le 21 août 2026**, et c'est un solde, non une pièce : les cinq
-œuvres de tiers sorties de l'index en pèsent **38,3 Mo** à elles seules (point 8), l'`.html` de
-l'état de l'art 0,77 Mo de plus, et ce qui rentre le même jour n'en rend que 1,8. *Il a gagné
-**62 fichiers**, pour un solde de **+56** — 519 au 20 août, 575 au 21.* **Cinquante-cinq sont des
-restaurations** : 24 sous `3 - Traité/bancs/` et `gauntlet-log.md` à la racine du dossier, 30 sous
-`3 - EntrepriseAgentique/verification/`. **Les sept autres sont neufs** : la licence, les trois
-chaînes, le `README` de `0 - Références/`, `.gitattributes` et `APPAREIL.md`.
+⚠ **Le dépôt a maigri de 37,5 Mo le 21 août 2026**, et c'est un solde, non une pièce : les cinq
+œuvres de tiers sorties de l'index en pèsent **38,3 Mo** à elles seules, l'`.html` de l'état de
+l'art 0,76 Mo de plus, les pièces retouchées en place 0,28 de plus — et ce qui rentre le même jour
+n'en rend que 1,8. *Il a gagné **62 fichiers**, pour un solde de **+56** — 519 au 20 août, 575 au
+21.* **Cinquante-cinq sont des restaurations** : 24 sous `3 - Traité/bancs/` et `gauntlet-log.md` à
+la racine du dossier, 30 sous `3 - EntrepriseAgentique/verification/`. **Les sept autres sont
+neufs** : la licence, les trois chaînes, le `README` de `0 - Références/`, `.gitattributes` et
+`APPAREIL.md`.
 Hors `git` mais sur le disque : `3 - Traité/target/` — ⚠ *vidé le 21 août 2026 par `cargo clean`, **12 060 fichiers et 3,4 Gio**, en éprouvant sans succès la piste du cache vieilli ; il se refait à la première construction* —, les deux artefacts `wasm-bindgen`
 de `web/`, les cinq PDF de tiers, et les `__pycache__`.
 

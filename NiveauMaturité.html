@@ -326,7 +326,9 @@
   .scale-foot {
     margin-top: auto;
     display: flex;
-    align-items: center;
+    /* flex-start, non center : le bloc de gauche porte deux lignes depuis la
+       déclaration d'homonymie, et l'invariant doit rester sur la première. */
+    align-items: flex-start;
     justify-content: space-between;
     gap: 1em;
     border-top: 1px solid var(--line);
@@ -334,6 +336,11 @@
     font-size: 0.7em;
     color: var(--text-2);
   }
+
+  /* Déclaration d'homonymie : la présentation numérote six paliers à elle, la pile
+     canonique du corpus en numérote quatre. Sans cette ligne, « palier 1 » se lit
+     comme le niveau 1 d'une échelle qui en compte deux à cet endroit. */
+  .homonymie { margin: 0.4em 0 0; font-size: 0.85em; color: var(--text-3); }
 
   .invariant {
     font-size: 0.62em;
@@ -345,9 +352,11 @@
   }
 
   /* ---------------- 4 à 9. Un niveau par diapositive ---------------- */
-  /* La colonne de gauche est MESURÉE sur le plus long titre de palier —
-     « Chorégraphique ». Une colonne trop étroite ne rétrécit pas le mot :
-     elle le laisse chevaucher la question. */
+  /* La colonne de gauche est MESURÉE sur le plus long titre de palier tenant
+     sur une ligne — « Chorégraphique ». Une colonne trop étroite ne rétrécit
+     pas le mot : elle le laisse chevaucher la question. « TechnicoSyntaxique »
+     la dépasse et porte donc un &shy; entre ses deux moitiés : il coupe au
+     seul endroit lisible, ici et dans la liste de la diapositive 3. */
   .level-grid {
     display: grid;
     grid-template-columns: 11.5em 1fr;
@@ -651,7 +660,7 @@
     <h2>Six paliers, six questions</h2>
     <hr class="rule">
     <ol class="scale">
-      <li data-lvl="1"><span class="n">1</span><span class="nm">Technique</span><span class="q">Le message arrive-t-il intact, et au bon destinataire ?</span></li>
+      <li data-lvl="1"><span class="n">1</span><span class="nm">Technico&shy;Syntaxique</span><span class="q">Le message arrive-t-il intact, au bon destinataire, et sous une forme qui se décode ?</span></li>
       <li data-lvl="2"><span class="n">2</span><span class="nm">Sémantique</span><span class="q">Le même mot désigne-t-il la même chose des deux côtés ?</span></li>
       <li data-lvl="3"><span class="n">3</span><span class="nm">Chorégraphique</span><span class="q">Qui fait quoi, dans quel ordre, jusqu'où ?</span></li>
       <li data-lvl="4"><span class="n">4</span><span class="nm">Juridique</span><span class="q">Qui répond de l'acte, et devant quel texte ?</span></li>
@@ -664,36 +673,39 @@
       <span>6 · laisser décider</span>
     </div>
     <div class="scale-foot">
-      <p style="margin:0">On lit l'échelle <strong>vers le bas</strong> quand quelque chose casse : la panne est toujours au palier qu'on croyait acquis.</p>
+      <div>
+        <p style="margin:0">On lit l'échelle <strong>vers le bas</strong> quand quelque chose casse : la panne est toujours au palier qu'on croyait acquis.</p>
+        <p class="homonymie">⚠ <strong>Échelle propre à ce document.</strong> Son palier 1 fusionne les niveaux 1 (<em>technique</em>) et 2 (<em>syntaxique</em>) de la pile canonique ; un rang ne se cite pas d'une échelle à l'autre.</p>
+      </div>
       <span class="invariant">Données ── Décisions ── Responsabilité</span>
     </div>
   </section>
 
   <!-- 4 ------------------------------------------------------------ -->
-  <section class="slide" aria-label="Niveau 1 — Technique">
+  <section class="slide" aria-label="Niveau 1 — TechnicoSyntaxique">
     <div class="watermark" aria-hidden="true">1</div>
     <div class="level-grid">
       <div class="level-side">
         <span class="badge">Palier 1</span>
-        <h2>Technique</h2>
-        <p class="level-scope">Transport et connectivité — la tuyauterie</p>
+        <h2>Technico&shy;Syntaxique</h2>
+        <p class="level-scope">La tuyauterie et la grammaire — transport et forme du message</p>
         <div class="meter" aria-hidden="true"><i class="here"></i><i></i><i></i><i></i><i></i><i></i></div>
         <p class="meter-cap">Palier 1 sur 6</p>
       </div>
       <div class="level-main">
-        <p class="question">Le message arrive-t-il intact, et au bon destinataire ?</p>
+        <p class="question">Le message arrive-t-il intact, au bon destinataire, et sous une forme qui se décode ?</p>
         <div class="blocks">
           <div class="block">
             <span class="label">En clair</span>
-            <p>La tuyauterie sait livrer une enveloppe ; elle ne sait pas la lire. Elle garantit l'acheminement, l'intégrité et le chiffrement — <strong>rien sur le contenu</strong>.</p>
+            <p>Une marche, deux exigences. La tuyauterie garantit l'acheminement, l'intégrité et le chiffrement ; la forme garantit que l'enveloppe <em>s'ouvre et s'analyse</em> — encodage annoncé, structure valide, champs obligatoires présents. <strong>Rien sur ce que ça veut dire.</strong></p>
           </div>
           <div class="block risk">
             <span class="label">Ce qui casse sans lui</span>
-            <p>Rien ne circule du tout. Et quand ce palier est le <em>seul</em> qui tienne : tout circule, et rien ne se comprend — l'illusion la plus fréquente en intégration.</p>
+            <p>Sans le technique, rien ne circule. Sans le syntaxique, ça circule et <strong>se rejette à l'analyse</strong> — au moins la panne est bruyante. Et quand ce palier est le <em>seul</em> qui tienne : tout se décode, et rien ne se comprend — l'illusion la plus fréquente en intégration.</p>
           </div>
           <div class="block usecase">
             <span class="label">Chez nous, concrètement</span>
-            <p>Passerelle entre les files transactionnelles (IBM MQ) et la dorsale d'événements (Apache Kafka, gRPC sous mTLS).</p>
+            <p>Passerelle files transactionnelles (IBM MQ) ↔ dorsale d'événements (Apache Kafka, gRPC sous mTLS), charge utile contrainte à la forme : UTF-8, JSON ou Protobuf bien formé, types et cardinalités vérifiés à l'entrée.</p>
           </div>
         </div>
       </div>
