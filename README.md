@@ -16,8 +16,8 @@ la passe de réparation que décrit cette page**, **280 commits — 260 signés 
 Bruneau, 18 `Claude <noreply@anthropic.com>`, 2 `agbruneau`** — et **quatre fusions de *pull
 requests* GitHub** ; deux branches `origin/claude/*` subsistent au distant. *La numérotation GitHub
 monte à #5, mais une PR ne se compte pas par son numéro : la #4 n'a laissé aucune trace au dépôt, ni
-fusion ni écrasement.* **Historique du 24 juin au 22 août 2026**, bornes du premier et du dernier
-commit — **291 commits au 22 août**, les onze derniers pris depuis le relevé ci-dessus.
+fusion ni écrasement.* **Historique du 24 juin au 24 août 2026**, bornes du premier et du dernier
+commit — **293 commits au 24 août**, les treize derniers pris depuis le relevé ci-dessus.
 
 ⚠ **Le dépôt est déclaré clos et final depuis le 8 août 2026** — décision d'auteur **D-13**,
 [`2 - Compendium/PRD/PRD.md`](<2%20-%20Compendium/PRD/PRD.md>) §16 ; l'unique étiquette du dépôt,
@@ -146,7 +146,7 @@ Agentique/
                                        feuille de style versionnée
 ```
 
-**574 fichiers versionnés, 75,1 Mo** (75 098 088 octets) : 227 `.md`, 142 `.svg`, 76 `.rs`,
+**574 fichiers versionnés, 75,1 Mo** (75 098 214 octets) : 227 `.md`, 142 `.svg`, 76 `.rs`,
 53 `.html`, 31 `.py`, 10 `.pdf`, 9 `.toml`, 8 `.sh`, 6 gabarits Typst, 4 `.gitignore`, 2 `.mjs`,
 2 `LICENSE`, 1 `.lua`, 1 `Cargo.lock`, 1 `launch.json`, 1 `.gitattributes`. *Les **10 PDF** sont les
 **9 rendus des livrables** et le mémoire de maîtrise de l'auteur ; les **8 `.sh`** sont les
