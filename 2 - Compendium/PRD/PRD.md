@@ -1,4 +1,4 @@
-# PRD — Compendium « Interopérabilité et Orchestration Agentiques en Entreprise » (Vol. IV)
+# PRD — Compendium « Interopérabilité et Orchestration en Entreprise Agentique » (Vol. IV)
 
 | Champ | Valeur |
 |---|---|

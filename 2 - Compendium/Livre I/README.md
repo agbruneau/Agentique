@@ -1,6 +1,6 @@
 # Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique
 
-Répertoire de rédaction du **Livre I** du compendium *Interopérabilité et Orchestration Agentiques en Entreprise* (Vol. IV). Il ne porte
+Répertoire de rédaction du **Livre I** du compendium *Interopérabilité et Orchestration en Entreprise Agentique* (Vol. IV). Il ne porte
 aucune décision, aucun socle et aucun garde-fou propre : la spécification de contenu est le
 [`PRD/TOC.md`](../PRD/TOC.md), la gouvernance de la rédaction le [`PRD/PRD.md`](../PRD/PRD.md).
 ⚠ **Versions courantes relevées en tête des deux fichiers le 8 août 2026 : TOC v0.33, PRD v0.17** ;

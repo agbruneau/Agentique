@@ -1,6 +1,6 @@
 # Livre V — Livrer et clore : l'agent comme livrable logiciel, horizon et frontière
 
-Répertoire de rédaction du **Livre V** du compendium *Interopérabilité et Orchestration Agentiques en Entreprise* (Vol. IV) — le **dernier**
+Répertoire de rédaction du **Livre V** du compendium *Interopérabilité et Orchestration en Entreprise Agentique* (Vol. IV) — le **dernier**
 du plan. Il ne porte aucune décision, aucun socle et aucun garde-fou propre : la spécification de
 contenu est le [`PRD/TOC.md`](../PRD/TOC.md) — ⚠ **les quatre pièces citent leurs thèses depuis la
 v0.26**, celle de l'arbitrage de ce Livre ; **le fichier est passé en v0.27 le même jour**, par

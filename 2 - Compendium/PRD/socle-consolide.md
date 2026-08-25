@@ -1,4 +1,4 @@
-# Annexe B — Socle consolidé du Vol. IV, *Interopérabilité et Orchestration Agentiques en Entreprise*
+# Annexe B — Socle consolidé du Vol. IV, *Interopérabilité et Orchestration en Entreprise Agentique*
 
 | Champ | Valeur |
 |---|---|

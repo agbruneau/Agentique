@@ -44,7 +44,7 @@
 //       `svgraybox` de la classe svmono — fond gris, aucun filet.
 
 #set document(
-  title: "Interopérabilité et Orchestration Agentiques en Entreprise",
+  title: "Interopérabilité et Orchestration en Entreprise Agentique",
   author: "André-Guy Bruneau, M.Sc. IT",
   keywords: ("interopérabilité agentique", "identité", "orchestration",
              "services financiers", "Canada"),
@@ -322,7 +322,7 @@
   v(0.6em)
   line(length: 100%, stroke: 0.8pt + black)
   v(1.1em)
-  text(font: SERIF, size: 26pt, weight: "bold")[Interopérabilité et Orchestration Agentiques en Entreprise]
+  text(font: SERIF, size: 26pt, weight: "bold")[Interopérabilité et Orchestration en Entreprise Agentique]
   v(1.0em)
   text(font: SERIF, size: 13pt, style: "italic")[
     Autonomie encadrée et fabrique de confiance :
@@ -362,12 +362,13 @@
   v(0.9em)
   // `hyphenate: false` : la maxime se replie au mot, jamais par césure.
   align(center, block(width: 90%, text(size: 9pt, style: "italic", hyphenate: false)[
-    L'interopérabilité agentique est une propriété à maintenir, non un état
-    atteint : elle suppose un contrat protocolaire découplé de ses mises en
-    œuvre, une identité et une délégation vérifiables au point d'application,
-    un contrôle de finalité opposable, une provenance attestée de l'artefact et
-    une mesure du comportement en exploitation — cinq termes dont aucun ne
-    supplée l'absence d'un autre.
+    En entreprise agentique, l'interopérabilité et l'orchestration ne sont pas
+    des états atteints mais des propriétés à maintenir : elles supposent un
+    contrat protocolaire découplé de ses mises en œuvre, une identité et une
+    délégation vérifiables au point d'application, un contrôle de finalité
+    opposable, une mesure du comportement en exploitation et une provenance
+    attestée de l'artefact livré — cinq termes dont aucun ne supplée l'absence
+    d'un autre.
   ]))
   v(0.9em)
   // ⚠ LE COLOPHON NE PORTE NI LE STATUT NI LES RÉSERVES, ET C'EST UNE
@@ -382,7 +383,6 @@
   //   Ne pas « rétablir » ce bloc en croyant réparer un défaut : le rétablir
   // rouvrirait l'instruction. Et si le PDF devait sortir de la bibliothèque
   // personnelle, c'est cette absence qu'il faudrait d'abord reprendre.
-  [© André-Guy Bruneau, M.Sc. IT. Tous droits réservés.]
 })
 #pagebreak(weak: false)
 

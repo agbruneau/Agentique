@@ -43,7 +43,7 @@
 // verticale se compte de ligne de base à ligne de base.
 
 #set document(
-  title: "Interopérabilité et Orchestration Agentiques en Entreprise",
+  title: "Interopérabilité et Orchestration en Entreprise Agentique",
   author: "André-Guy Bruneau, M.Sc. IT",
   keywords: ("interopérabilité agentique", "identité", "orchestration",
              "services financiers", "Canada"),
@@ -454,7 +454,7 @@
   v(10pt)
   line(length: 100%, stroke: 1.6pt + ENCRE)
   v(24pt)
-  text(font: SANS, size: 34pt, weight: "bold", fill: ENCRE)[Interopérabilité et Orchestration Agentiques en Entreprise]
+  text(font: SANS, size: 34pt, weight: "bold", fill: ENCRE)[Interopérabilité et Orchestration en Entreprise Agentique]
   v(20pt)
   // ⚠ La justification est posée ICI et non sur le bloc entier : le titre tient
   // sur deux lignes, et justifié, sa première ligne — « La somme » — serait
@@ -495,19 +495,18 @@
   // `hyphenate: false` : la maxime se replie au mot, jamais par césure.
   block(width: 92%, text(font: SERIF, size: 10pt, style: "italic",
                          fill: ENCRE, hyphenate: false)[
-    L'interopérabilité agentique est une propriété à maintenir, non un état
-    atteint : elle suppose un contrat protocolaire découplé de ses mises en
-    œuvre, une identité et une délégation vérifiables au point d'application,
-    un contrôle de finalité opposable, une provenance attestée de l'artefact et
-    une mesure du comportement en exploitation — cinq termes dont aucun ne
-    supplée l'absence d'un autre.
+    En entreprise agentique, l'interopérabilité et l'orchestration ne sont pas
+    des états atteints mais des propriétés à maintenir : elles supposent un
+    contrat protocolaire découplé de ses mises en œuvre, une identité et une
+    délégation vérifiables au point d'application, un contrôle de finalité
+    opposable, une mesure du comportement en exploitation et une provenance
+    attestée de l'artefact livré — cinq termes dont aucun ne supplée l'absence
+    d'un autre.
   ])
-  v(10pt)
   // ⚠ LE COLOPHON NE PORTE NI LE STATUT NI LES RÉSERVES, ET C'EST UNE
   // INSTRUCTION D'AUTEUR DU 30 JUILLET 2026, non un oubli. Le régime de
   // diffusion de D-10 vit AU DÉPÔT SEUL. Ne pas « rétablir » ce bloc en croyant
   // réparer un défaut : le rétablir rouvrirait l'instruction.
-  text(size: 8pt)[© André-Guy Bruneau, M.Sc. IT. Tous droits réservés.]
 })
 ]
 

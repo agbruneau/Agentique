@@ -1,4 +1,4 @@
-# Registre de gel par pièce — Vol. IV, *Interopérabilité et Orchestration Agentiques en Entreprise*
+# Registre de gel par pièce — Vol. IV, *Interopérabilité et Orchestration en Entreprise Agentique*
 
 | Champ | Valeur |
 |---|---|

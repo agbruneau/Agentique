@@ -177,59 +177,7 @@
   em { color: var(--o-300); font-style: italic; }
   strong { color: var(--text); font-weight: 700; }
 
-  /* ---------------- 1. Couverture ---------------- */
-  /* `margin: auto 0` centre le bloc de titre dans l'espace restant et laisse le
-     pied collé au bas — sans position absolue, donc valable aussi en colonne
-     mobile et à l'impression, où les diapositives redeviennent statiques. */
-  .cover-body { margin: auto 0; }
-
-  .cover .kicker {
-    font-size: 0.62em;
-    font-weight: 800;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--o-400);
-    margin-bottom: 1em;
-  }
-
-  /* Titre d'une seule ligne : la taille est MESURÉE sur la largeur utile de la
-     scène — 46em moins 2 × 2.2em de marge, soit 41.6em, pour un titre qui
-     demande 26.3 fois sa propre taille. Rallonger le titre exige de la
-     rebaisser, sinon il repasse à deux lignes. */
-  .cover h1 {
-    font-size: 1.5em;
-    font-weight: 800;
-    letter-spacing: -0.028em;
-    line-height: 1.04;
-    margin: 0 0 0.55em;
-    white-space: nowrap;
-  }
-
-  .cover .kicker + h1 { margin-top: 0; }
-
-  .cover .cover-sub {
-    font-size: 1em;
-    color: var(--text-2);
-    margin: 0;
-    max-width: 46ch;
-  }
-
-  .cover-foot {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: end;
-    gap: 1.5em;
-    border-top: 1px solid var(--line);
-    padding-top: 0.8em;
-    font-size: 0.58em;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--text-3);
-  }
-
-  .cover-foot strong { display: block; color: var(--o-300); font-weight: 800; margin-bottom: 0.25em; }
-
-  /* ---------------- 2. L'échelle d'un coup d'œil ---------------- */
+  /* ---------------- 1. L'échelle d'un coup d'œil ---------------- */
   .scale {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -318,7 +266,7 @@
     white-space: nowrap;
   }
 
-  /* ---------------- 3 à 8. Un niveau par diapositive ---------------- */
+  /* ---------------- 2 à 7. Un niveau par diapositive ---------------- */
   /* La colonne de gauche est MESURÉE sur le plus long titre de palier tenant
      sur une ligne — « Chorégraphique ». Une colonne trop étroite ne rétrécit
      pas le mot : elle le laisse chevaucher la question. « TechnicoSyntaxique »
@@ -434,47 +382,8 @@
 
   .block.usecase { background: var(--surface-2); border-left-color: var(--o-700); }
 
-  /* ---------------- 9. Ce qu'il faut retenir ---------------- */
-  /* Trois constats de même poids : trois colonnes égales, pas de hiérarchie
-     entre elles — le comité doit repartir avec les trois, pas avec un classement. */
-  .takeaways {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.7em;
-    margin: 0.2em 0 0.5em;
-  }
-
-  .take {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-top: 3px solid var(--o-500);
-    border-radius: 0.3em;
-    padding: 0.6em 0.8em 0.65em;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3em;
-  }
-
-  .take .label { color: var(--o-400); margin: 0; }
-  .take h3 { font-size: 0.88em; font-weight: 750; line-height: 1.25; margin: 0; color: var(--text); }
-  .take p  { font-size: 0.75em; line-height: 1.34; color: var(--text-2); margin: 0; }
-
-  .punch {
-    border-left: 3px solid var(--o-500);
-    padding: 0.15em 0 0.15em 0.9em;
-    font-size: 1em;
-    color: var(--o-200);
-    margin: 0;
-  }
-
-  .footnote {
-    margin: 0.55em 0 0;
-    font-size: 0.68em;
-    color: var(--text-3);
-  }
-
   /* ---------------- Sommaire, superposé à la scène (touche S) ---------------- */
-  /* Neuf diapositives nommées : une liste de titres rend le même service qu'une
+  /* Sept diapositives nommées : une liste de titres rend le même service qu'une
      grille de vignettes, sans remettre en cause les gabarits mesurés. */
   .toc {
     position: absolute;
@@ -632,13 +541,9 @@
     }
     .slide { position: static; padding: 1.6em 1.4em; }
     .slide[aria-current="true"] { min-height: 100%; }
-    /* Une seule ligne ne tient plus sous 720 px : le titre se remet à passer à la ligne */
-    .cover h1 { white-space: normal; }
-    .cover-body { margin: 0 0 2em; }
-    .cover-foot { grid-template-columns: 1fr; gap: 0.9em; }
     .level-grid { grid-template-columns: 1fr; gap: 1em; }
     .level-side { border-right: 0; border-bottom: 1px solid var(--line); padding: 0 0 0.9em; margin: 0; }
-    .takeaways, .bands { grid-template-columns: 1fr; }
+    .bands { grid-template-columns: 1fr; }
     .scale { grid-template-columns: repeat(2, 1fr); }
     .watermark { display: none; }
     .meter { margin-top: 1em; }
@@ -690,24 +595,9 @@
   <div class="progress" aria-hidden="true"><span id="bar"></span></div>
 
   <!-- 1 ------------------------------------------------------------ -->
-  <section class="slide cover" aria-label="Couverture">
-    <div class="cover-body">
-      <div class="kicker">Cadre de référence unifié · Architecture d'entreprise</div>
-      <h1>Interopérabilité et orchestration en entreprise agentique</h1>
-      <hr class="rule">
-      <p class="cover-sub">De la tuyauterie qui livre un message à l'agent qui décide de la marche à suivre : à quel palier ça cède, qui en répond, et où l'échelle change de nature.</p>
-    </div>
-    <div class="cover-foot">
-      <div><strong>Comité de direction</strong> Services financiers &amp; assurance</div>
-      <div><strong>Sommaire exécutif</strong> 9 diapositives</div>
-      <div><strong>Navigation</strong> ← → · S sommaire · F plein écran</div>
-    </div>
-  </section>
-
-  <!-- 2 ------------------------------------------------------------ -->
   <section class="slide" aria-label="L'échelle d'un coup d'œil">
     <p class="eyebrow">L'échelle d'un coup d'œil</p>
-    <h2>Six paliers, six questions</h2>
+    <h2>Interopérabilité et orchestration en entreprise agentique</h2>
     <hr class="rule">
     <ol class="scale">
       <li data-lvl="1"><span class="n">1</span><span class="nm">Technico&shy;Syntaxique</span><span class="q">Le message arrive-t-il intact, au bon destinataire, et sous une forme qui se décode&nbsp;?</span></li>
@@ -731,7 +621,7 @@
     </div>
   </section>
 
-  <!-- 3 ------------------------------------------------------------ -->
+  <!-- 2 ------------------------------------------------------------ -->
   <section class="slide" aria-label="Palier 1 — TechnicoSyntaxique">
     <div class="level-grid">
       <div class="level-side">
@@ -762,7 +652,7 @@
     </div>
   </section>
 
-  <!-- 4 ------------------------------------------------------------ -->
+  <!-- 3 ------------------------------------------------------------ -->
   <section class="slide" aria-label="Palier 2 — Sémantique">
     <div class="level-grid">
       <div class="level-side">
@@ -793,7 +683,7 @@
     </div>
   </section>
 
-  <!-- 5 ------------------------------------------------------------ -->
+  <!-- 4 ------------------------------------------------------------ -->
   <section class="slide" aria-label="Palier 3 — Chorégraphique">
     <div class="level-grid">
       <div class="level-side">
@@ -824,7 +714,7 @@
     </div>
   </section>
 
-  <!-- 6 ------------------------------------------------------------ -->
+  <!-- 5 ------------------------------------------------------------ -->
   <section class="slide" aria-label="Palier 4 — Politique">
     <div class="level-grid">
       <div class="level-side">
@@ -855,7 +745,7 @@
     </div>
   </section>
 
-  <!-- 7 ------------------------------------------------------------ -->
+  <!-- 6 ------------------------------------------------------------ -->
   <section class="slide" aria-label="Palier 5 — Juridique">
     <div class="level-grid">
       <div class="level-side">
@@ -886,7 +776,7 @@
     </div>
   </section>
 
-  <!-- 8 ------------------------------------------------------------ -->
+  <!-- 7 ------------------------------------------------------------ -->
   <section class="slide" aria-label="Palier 6 — Agentique">
     <div class="level-grid">
       <div class="level-side">
@@ -915,32 +805,6 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- 9 ------------------------------------------------------------ -->
-  <section class="slide" aria-label="Ce qu'il faut retenir">
-    <p class="eyebrow">Ce qu'il faut retenir</p>
-    <h2>Jusqu'ici, on validait un plan. Désormais, on encadre une intention.</h2>
-    <hr class="rule">
-    <div class="takeaways">
-      <div class="take">
-        <span class="label">Aucun raccourci</span>
-        <h3>Le palier 6 s'appuie sur les cinq autres, il ne les remplace pas.</h3>
-        <p>Un agent qui choisit lui-même sa marche à suivre hérite de tout ce qui est mal réglé en dessous — et <strong>l'amplifie au lieu de le signaler</strong>.</p>
-      </div>
-      <div class="take">
-        <span class="label">Le contrôle se déplace</span>
-        <h3>On ne vérifie plus avant, on surveille pendant.</h3>
-        <p>Un contrat se relit avant la mise en service ; une intention ne se juge qu'en marche. La qualité passe <strong>de la conception à l'exploitation</strong>.</p>
-      </div>
-      <div class="take">
-        <span class="label">La preuve change de forme</span>
-        <h3>Un document hier, une trace demain.</h3>
-        <p>Deux exécutions du même mandat peuvent différer <em>sans qu'aucune soit fautive</em>. Ce qu'on présente à un vérificateur n'est plus de même nature.</p>
-      </div>
-    </div>
-    <p class="punch">Le comité ne tranche pas sur une technologie : il tranche sur <strong>qui répond du résultat</strong> quand personne n'a écrit le chemin.</p>
-    <p class="footnote">Formulé pour l'architecture : les paliers 1 à 5 sont déterministes — le chemin est écrit et se vérifie avant ; le palier 6 est probabiliste — seul le but l'est. D'où la règle : les paliers 4 et 5 conditionnent l'entrée au palier 6, ils ne s'ajoutent pas après.</p>
   </section>
 
   <!-- Sommaire, superposé à la scène -->

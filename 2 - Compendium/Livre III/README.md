@@ -1,6 +1,6 @@
 # Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier
 
-Répertoire de rédaction du **Livre III** du compendium *Interopérabilité et Orchestration Agentiques en Entreprise* (Vol. IV). Il ne porte
+Répertoire de rédaction du **Livre III** du compendium *Interopérabilité et Orchestration en Entreprise Agentique* (Vol. IV). Il ne porte
 aucune décision, aucun socle et aucun garde-fou propre : la spécification de contenu est le
 [`PRD/TOC.md`](../PRD/TOC.md), la gouvernance de la rédaction le [`PRD/PRD.md`](../PRD/PRD.md). En cas
 d'écart entre une pièce de ce dossier et le TOC, **le TOC prime** — sauf déviation fondée, qui se
