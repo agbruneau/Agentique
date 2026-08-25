@@ -2,6 +2,8 @@
 
 *Dossier de **pièces déposées**, non de sources instruites : **aucun document du dépôt ne cite
 aucune de ces quatre pièces**. Le régime a longtemps manqué ; il est écrit ici, le 21 août 2026.*
+⚠ *Le dossier en portait quatre à cette date ; **il n'en porte plus qu'une depuis le 25 août 2026** —
+le mémoire de l'auteur.*
 
 ## Ce qui reste au dépôt
 
@@ -18,9 +20,16 @@ aucune licence : le droit d'auteur par défaut s'appliquait, et l'anomalie resta
 une licence CC BY 4.0 à la racine l'a rendue opposable** — cette licence couvre nominalement tout ce
 que l'arbre porte, et l'auteur ne peut pas concéder ce qui n'est pas à lui.
 
-☑ **Les cinq fichiers sont donc sortis de l'index git, non détruits.** Ils restent sur le disque de
-l'auteur, ignorés par [`.gitignore`](../../.gitignore), et **restent dans l'historique git** — où
-la licence de la racine ne s'étend pas et n'a jamais été applicable. Pour les relire :
+☑ **Les cinq fichiers sont donc sortis de l'index git, non détruits.** Ils sont restés sur le disque
+de l'auteur, ignorés par [`.gitignore`](../../.gitignore), et **restent dans l'historique git** — où
+la licence de la racine ne s'étend pas et n'a jamais été applicable.
+
+⚠⚠ **ET LES COPIES AU DISQUE ONT ÉTÉ EFFACÉES LE 25 AOÛT 2026, SUR INSTRUCTION D'AUTEUR** — les
+trois ouvrages d'ici et les deux articles arXiv de `2 - OrchestrationAgentique/prd/`, **38 281 125
+octets**. ☑ *L'historique git est désormais **la seule copie**, et la commande ci-dessous la seule
+façon de les relire.* ⚠ **Ce que l'effacement ne change pas** : ni le régime de licence, ni les
+faits **F-36** et **F-37**, ni un seul renvoi du corps — *ce qui disparaît est une copie de
+travail, jamais une citation.* Pour les relire :
 
 ```bash
 git show 'd786adb:1 - Collection/0 - Références/2003 - Enterprise Integration Patterns.pdf' > eip.pdf

@@ -31,8 +31,11 @@ figures. *Jusque-là, seul le Vol. I portait la sienne — mêmes termes, pour l
 reste relevait du droit d'auteur par défaut.* ⚠ **Ce qu'elle ne couvre pas est écrit dans son texte** :
 les œuvres de tiers citées, qui restent à leurs titulaires. **Trois ouvrages de tiers et deux articles
 arXiv ont quitté l'index le même jour**, *avant* qu'elle ne soit posée et précisément parce qu'elle
-n'aurait pas pu les couvrir — ni détruits ni perdus, disque et historique git les gardent, et leurs
-renvois sont au
+n'aurait pas pu les couvrir — ni détruits ni perdus alors, *le disque et l'historique git les
+gardant tous deux*. ⚠⚠ **Les cinq copies au disque ont été effacées le 25 août 2026, sur
+instruction d'auteur** : **l'historique git est désormais la seule copie**, et c'est par lui seul
+qu'elles se relisent — *sortir de l'index n'était pas détruire ; effacer le disque ne l'est pas
+davantage, tant que l'arbre ancien tient*. Leurs renvois sont au
 [`README` de `0 - Références/`](<1%20-%20Collection/0%20-%20R%C3%A9f%C3%A9rences/README.md>).
 
 ## Par où entrer, selon le temps qu'on a
@@ -121,8 +124,9 @@ Agentique/
 │
 ├── 1 - Collection/                  Vol. I, II, III
 │   ├── README.md                       ⭑ à ouvrir avant le reste : la chronique datée
-│   ├── 0 - Références/                 `README.md` + le mémoire de maîtrise de l'auteur (1997) ;
-│   │                                     les 3 ouvrages de tiers sont sortis de l'index → son `README`
+│   ├── 0 - Références/                 `README.md` + le mémoire de maîtrise de l'auteur (1997),
+│   │                                     seule pièce qui y reste : les 3 ouvrages de tiers ont quitté
+│   │                                     l'index le 21 août 2026, le disque le 25 → son `README`
 │   ├── 1 - InteroperabiliteAgentique/  `LICENSE` propre au Vol. I — mêmes termes que celle de la racine
 │   ├── 2 - OrchestrationAgentique/     ⭑ `verification/` : revalidations et grille de conformité
 │   ├── 3 - EntrepriseAgentique/        ⭑ `monographie/99-registre-gel.md` : ce qui est gelé, et depuis
@@ -185,8 +189,14 @@ n'en rend que 1,8. *Il a gagné **62 fichiers**, pour un solde de **+56** — 51
 la racine du dossier, 30 sous `3 - EntrepriseAgentique/verification/`. **Les sept autres sont
 neufs** : la licence, les trois chaînes, le `README` de `0 - Références/`, `.gitattributes` et
 `APPAREIL.md`.
-Hors `git` mais sur le disque : `3 - Traité/target/` — ⚠ *vidé le 21 août 2026 par `cargo clean`, **12 060 fichiers et 3,4 Gio**, en éprouvant sans succès la piste du cache vieilli ; il se refait à la première construction* —, les deux artefacts `wasm-bindgen`
-de `web/`, les cinq PDF de tiers, et les `__pycache__`.
+Hors `git` mais sur le disque, il ne reste que **les deux artefacts `wasm-bindgen` de `web/`** —
+3,6 Mo, que [`web/index.html`](<3%20-%20Trait%C3%A9/web/index.html>) importe et que `wasm-pack`
+refait. ☑ **Tout le reste a été effacé le 25 août 2026** : `3 - Traité/target/` par `cargo clean`
+— **1 083 fichiers, 333,5 Mio** —, les **quatre `__pycache__`**, les **cinq PDF de tiers**
+(38 281 125 octets, que l'historique git garde seul désormais) et les **deux `natif.tsv`** de
+bancs, que la commande inscrite au `VERDICT.md` de chaque banc régénère. ⚠ *`target/` avait déjà
+été vidé le 21 août 2026 — **12 060 fichiers et 3,4 Gio**, en éprouvant sans succès la piste du
+cache vieilli —, et il se refait à la première construction.*
 
 **Dix-sept `README.md` versionnés, celui-ci compris** — un par dossier, un par Livre du
 compendium, plus `1 - Collection/2 -…/monographie/README.md`, `3 - Traité/docs/README.md` et
