@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Échelle de maturité de l'interopérabilité et orchestration agentiques d'entreprise</title>
+<title>Interopérabilité et Orchestration en Entreprise Agentique</title>
 <style>
   /* ================================================================
      Thème : noir profond, accent orange. Présentation exécutive 16:9.
@@ -31,6 +31,8 @@
     --o-700: #c2410c;
     --o-glow: rgba(249, 115, 22, 0.13);
     --o-dim:  rgba(249, 115, 22, 0.30);
+
+    --ease: cubic-bezier(0.2, 0.7, 0.3, 1);
   }
 
   *, *::before, *::after { box-sizing: border-box; }
@@ -91,13 +93,13 @@
     padding: 1.7em 2.2em 1.5em;
     display: none;
     flex-direction: column;
-    overflow: hidden;   /* le filigrane saigne volontairement hors cadre : on le clippe ici,
-                           sinon il déborde sur la page suivante à l'impression */
+    overflow: hidden;   /* garde-fou : rien ne doit franchir le cadre, sinon ça déborde
+                           sur la page suivante à l'impression */
   }
 
   .slide[aria-current="true"] {
     display: flex;
-    animation: enter 0.3s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+    animation: enter 0.3s var(--ease) both;
   }
 
   @keyframes enter {
@@ -105,16 +107,26 @@
     to   { opacity: 1; transform: none; }
   }
 
-  /* Chiffre en filigrane, repère visuel de position dans l'échelle */
+  /* Chiffre en filigrane, repère visuel de position dans l'échelle.
+     Il est EN FLUX dans la colonne de gauche, entre la portée du palier et la
+     jauge : `flex: 1` lui donne tout le creux restant et il s'y centre. C'est ce
+     qui le tient à la bonne hauteur d'une diapositive à l'autre — la légende du
+     palier 6 tient sur deux lignes et remonte sa jauge, un calage absolu au bas
+     du cadre ne l'aurait pas suivie.
+     `line-height: 0.75` colle la boîte au dessin du chiffre ; `min-height: 0` et
+     `overflow: hidden` garantissent qu'un creux plus court que le chiffre le
+     rogne au lieu de pousser la jauge hors cadre. */
   .watermark {
-    position: absolute;
-    right: 1.2em;
-    bottom: -0.28em;
-    font-size: 11em;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    font-size: 8.6em;
     font-weight: 800;
-    line-height: 1;
+    line-height: 0.75;
     letter-spacing: -0.04em;
-    color: rgba(249, 115, 22, 0.07);
+    color: rgba(249, 115, 22, 0.11);
     pointer-events: none;
     user-select: none;
   }
@@ -166,7 +178,10 @@
   strong { color: var(--text); font-weight: 700; }
 
   /* ---------------- 1. Couverture ---------------- */
-  .cover { justify-content: center; }
+  /* `margin: auto 0` centre le bloc de titre dans l'espace restant et laisse le
+     pied collé au bas — sans position absolue, donc valable aussi en colonne
+     mobile et à l'impression, où les diapositives redeviennent statiques. */
+  .cover-body { margin: auto 0; }
 
   .cover .kicker {
     font-size: 0.62em;
@@ -174,16 +189,20 @@
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--o-400);
-    margin-bottom: 1.1em;
+    margin-bottom: 1em;
   }
 
+  /* Titre d'une seule ligne : la taille est MESURÉE sur la largeur utile de la
+     scène — 46em moins 2 × 2.2em de marge, soit 41.6em, pour un titre qui
+     demande 26.3 fois sa propre taille. Rallonger le titre exige de la
+     rebaisser, sinon il repasse à deux lignes. */
   .cover h1 {
-    font-size: 2.5em;
+    font-size: 1.5em;
     font-weight: 800;
     letter-spacing: -0.028em;
     line-height: 1.04;
-    margin: 0 0 0.5em;
-    max-width: 26ch;
+    margin: 0 0 0.55em;
+    white-space: nowrap;
   }
 
   .cover .kicker + h1 { margin-top: 0; }
@@ -192,14 +211,13 @@
     font-size: 1em;
     color: var(--text-2);
     margin: 0;
-    max-width: 44ch;
+    max-width: 46ch;
   }
 
   .cover-foot {
-    margin-top: auto;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: end;
     gap: 1.5em;
     border-top: 1px solid var(--line);
     padding-top: 0.8em;
@@ -209,7 +227,7 @@
     color: var(--text-3);
   }
 
-  .cover-foot strong { display: block; color: var(--o-300); font-weight: 800; }
+  .cover-foot strong { display: block; color: var(--o-300); font-weight: 800; margin-bottom: 0.25em; }
 
   /* ---------------- 2. L'échelle d'un coup d'œil ---------------- */
   .scale {
@@ -314,7 +332,16 @@
     min-height: 0;
   }
 
-  .level-side { display: flex; flex-direction: column; min-width: 0; }
+  /* Le filet vertical sépare l'identité du palier de son contenu. La marge
+     négative le ramène au milieu de la gouttière sans toucher aux 11.5em mesurés. */
+  .level-side {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    border-right: 1px solid var(--line);
+    padding-right: 1.2em;
+    margin-right: -0.4em;
+  }
 
   .badge {
     display: inline-block;
@@ -341,8 +368,10 @@
     line-height: 1.35;
   }
 
-  /* Où l'on se trouve dans l'échelle — six segments, celui-ci allumé */
-  .meter { display: flex; gap: 0.22em; margin-top: auto; }
+  /* Où l'on se trouve dans l'échelle — six segments, celui-ci allumé.
+     Pas de `margin-top: auto` : c'est le filigrane, au-dessus, qui absorbe le
+     creux de la colonne. Le repli mobile le remet, le filigrane y étant masqué. */
+  .meter { display: flex; gap: 0.22em; }
 
   .meter i {
     height: 0.42em;
@@ -376,72 +405,59 @@
     max-width: 40ch;
   }
 
-  .blocks { display: grid; gap: 0.5em; }
+  .blocks { display: grid; gap: 0.42em; }
 
+  /* Trois registres, trois intensités d'accent au filet de gauche : neutre pour
+     l'exposé, orange vif pour le risque, orange sourd pour l'exemple. Se
+     distingue du fond de la salle, sans deuxième teinte dans la palette. */
   .block {
     background: var(--surface);
     border: 1px solid var(--line);
+    border-left: 3px solid var(--line-2);
     border-radius: 0.3em;
-    padding: 0.5em 0.8em 0.55em;
+    padding: 0.45em 0.8em 0.5em;
   }
 
-  .block p { margin: 0; font-size: 0.8em; color: var(--text-2); }
+  /* Interligne resserré sur un corps de 0.8em : la diapositive la plus dense
+     — le palier 1, deux exigences à exposer — rentrait sinon dans sa marge basse. */
+  .block p { margin: 0; font-size: 0.8em; line-height: 1.38; color: var(--text-2); }
+  .block .label { color: var(--text-3); }
 
   .block.risk {
     background: linear-gradient(90deg, var(--o-glow), transparent 60%), var(--surface);
     border-color: var(--o-dim);
+    border-left-color: var(--o-500);
   }
 
   .block.risk .label { color: var(--o-400); }
   .block.risk p { color: var(--text); }
 
-  .block.usecase { background: var(--surface-2); }
-  .block.usecase .label { color: var(--text-3); }
+  .block.usecase { background: var(--surface-2); border-left-color: var(--o-700); }
 
-  /* ---------------- 9. La rupture ---------------- */
-  .split {
+  /* ---------------- 9. Ce qu'il faut retenir ---------------- */
+  /* Trois constats de même poids : trois colonnes égales, pas de hiérarchie
+     entre elles — le comité doit repartir avec les trois, pas avec un classement. */
+  .takeaways {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: stretch;
-    gap: 1em;
-    margin: 0.3em 0 1em;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.7em;
+    margin: 0.2em 0 0.5em;
   }
 
-  .panel {
-    border: 1px solid var(--line);
-    border-radius: 0.35em;
-    padding: 0.7em 0.9em 0.8em;
+  .take {
     background: var(--surface);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--o-500);
+    border-radius: 0.3em;
+    padding: 0.6em 0.8em 0.65em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
   }
 
-  .panel h3 {
-    font-size: 0.62em;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin: 0 0 0.6em;
-    color: var(--text-3);
-  }
-
-  .panel ul { margin: 0; padding-left: 1.1em; }
-  .panel li { font-size: 0.76em; color: var(--text-2); margin-bottom: 0.3em; }
-  .panel li:last-child { margin-bottom: 0; }
-
-  .panel.now { border-top: 2px solid var(--line-2); }
-  .panel.next {
-    border-top: 2px solid var(--o-500);
-    background: linear-gradient(180deg, var(--o-glow), transparent 60%), var(--surface);
-  }
-  .panel.next h3 { color: var(--o-300); }
-  .panel.next li { color: var(--text); }
-
-  .arrow {
-    align-self: center;
-    font-size: 1.5em;
-    font-weight: 800;
-    color: var(--o-500);
-    letter-spacing: -0.02em;
-  }
+  .take .label { color: var(--o-400); margin: 0; }
+  .take h3 { font-size: 0.88em; font-weight: 750; line-height: 1.25; margin: 0; color: var(--text); }
+  .take p  { font-size: 0.75em; line-height: 1.34; color: var(--text-2); margin: 0; }
 
   .punch {
     border-left: 3px solid var(--o-500);
@@ -452,21 +468,104 @@
   }
 
   .footnote {
-    margin: 0.9em 0 0;
+    margin: 0.55em 0 0;
     font-size: 0.68em;
     color: var(--text-3);
   }
 
+  /* ---------------- Sommaire, superposé à la scène (touche S) ---------------- */
+  /* Neuf diapositives nommées : une liste de titres rend le même service qu'une
+     grille de vignettes, sans remettre en cause les gabarits mesurés. */
+  .toc {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    background: rgba(8, 8, 10, 0.94);
+    backdrop-filter: blur(6px);
+    padding: 1.7em 2.2em 1.5em;
+    display: flex;
+    flex-direction: column;
+    animation: enter 0.2s var(--ease) both;
+  }
+
+  .toc[hidden] { display: none; }
+
+  .toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-auto-flow: column;
+    gap: 0.1em 1.8em;
+    flex: 1;
+    align-content: center;
+  }
+
+  .toc button {
+    font: inherit;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    gap: 0.8em;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--text-2);
+    padding: 0.55em 0.4em;
+    font-size: 0.78em;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .toc button:hover { color: var(--o-200); border-color: var(--o-dim); }
+  .toc button[aria-current="true"] { color: var(--o-300); font-weight: 700; border-color: var(--o-500); }
+
+  .toc .tn {
+    font-variant-numeric: tabular-nums;
+    font-weight: 800;
+    color: var(--text-3);
+    min-width: 1.4em;
+  }
+
+  .toc button[aria-current="true"] .tn { color: var(--o-500); }
+
+  .toc-hint {
+    margin: 0.6em 0 0;
+    font-size: 0.6em;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-3);
+  }
+
   /* ---------------- Barre de contrôle ---------------- */
+  /* Trois colonnes : le groupe central reste centré sous la scène quelle que
+     soit la longueur du titre courant, à gauche. */
   .hud {
     flex: none;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: center;
-    gap: 0.9rem;
-    padding: 0.85rem 1rem 1.1rem;
+    gap: 1rem;
+    padding: 0.8rem 1.25rem 1rem;
     font-size: 0.75rem;
   }
+
+  .hud-title {
+    justify-self: start;
+    color: var(--text-3);
+    letter-spacing: 0.06em;
+    max-width: 22rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .hud-nav { display: flex; align-items: center; gap: 0.9rem; }
+
+  .hud-tools { justify-self: end; display: flex; align-items: center; gap: 0.5rem; }
 
   .hud button {
     font: inherit;
@@ -474,32 +573,40 @@
     background: var(--surface);
     border: 1px solid var(--line);
     border-radius: 999px;
-    width: 2rem;
     height: 2rem;
+    min-width: 2rem;
+    padding: 0 0.7rem;
     display: grid;
     place-items: center;
     cursor: pointer;
     transition: color 0.15s, border-color 0.15s, background 0.15s;
   }
 
+  .hud button.icon { padding: 0; width: 2rem; }
+
   .hud button:hover:not(:disabled) { color: var(--o-300); border-color: var(--o-dim); background: var(--surface-2); }
   .hud button:disabled { opacity: 0.35; cursor: default; }
+  .hud button[aria-expanded="true"] { color: var(--o-300); border-color: var(--o-dim); background: var(--surface-2); }
+
   .hud button:focus-visible,
-  .dots button:focus-visible { outline: 2px solid var(--o-400); outline-offset: 2px; }
+  .dots button:focus-visible,
+  .toc button:focus-visible { outline: 2px solid var(--o-400); outline-offset: 2px; }
 
   .dots { display: flex; align-items: center; gap: 0.35rem; margin: 0; padding: 0; list-style: none; }
 
   .dots button {
     width: 0.5rem;
     height: 0.5rem;
+    min-width: 0;
     padding: 0;
     border-radius: 999px;
     border: 1px solid var(--line-2);
     background: transparent;
     cursor: pointer;
+    transition: width 0.2s var(--ease), background 0.15s, border-color 0.15s;
   }
 
-  .dots button:hover { border-color: var(--o-400); }
+  .dots button:hover { border-color: var(--o-400); background: var(--o-dim); }
   .dots button[aria-current="true"] { background: var(--o-500); border-color: var(--o-500); width: 1.15rem; }
 
   .counter {
@@ -511,8 +618,8 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .slide[aria-current="true"] { animation: none; }
-    .progress > span { transition: none; }
+    .slide[aria-current="true"], .toc { animation: none; }
+    .progress > span, .dots button { transition: none; }
   }
 
   /* ---------------- Petits écrans : la scène cesse d'être un 16:9 ---------------- */
@@ -525,12 +632,23 @@
     }
     .slide { position: static; padding: 1.6em 1.4em; }
     .slide[aria-current="true"] { min-height: 100%; }
+    /* Une seule ligne ne tient plus sous 720 px : le titre se remet à passer à la ligne */
+    .cover h1 { white-space: normal; }
+    .cover-body { margin: 0 0 2em; }
+    .cover-foot { grid-template-columns: 1fr; gap: 0.9em; }
     .level-grid { grid-template-columns: 1fr; gap: 1em; }
-    .split, .bands { grid-template-columns: 1fr; }
+    .level-side { border-right: 0; border-bottom: 1px solid var(--line); padding: 0 0 0.9em; margin: 0; }
+    .takeaways, .bands { grid-template-columns: 1fr; }
     .scale { grid-template-columns: repeat(2, 1fr); }
-    .arrow { transform: rotate(90deg); text-align: center; }
     .watermark { display: none; }
     .meter { margin-top: 1em; }
+    /* La scène défile sous 720 px : le sommaire s'ancre à la fenêtre, pas à la scène */
+    .toc { position: fixed; padding: 1.4em; }
+    .toc ol { grid-auto-flow: row; grid-template-columns: 1fr; grid-template-rows: none; }
+    .hud { grid-template-columns: 1fr auto; gap: 0.5rem; padding: 0.6rem 0.75rem 0.8rem; }
+    .hud-title { display: none; }
+    .hud-nav { justify-self: start; gap: 0.5rem; }
+    .counter { min-width: 0; }
   }
 
   /* ---------------- Impression : une diapositive par page ---------------- */
@@ -538,7 +656,7 @@
 
   @media print {
     body { background: #fff; }
-    .hud { display: none !important; }
+    .hud, .toc { display: none !important; }
     .stage {
       --w: 281mm;
       width: 281mm;
@@ -573,13 +691,16 @@
 
   <!-- 1 ------------------------------------------------------------ -->
   <section class="slide cover" aria-label="Couverture">
-    <div class="kicker">Cadre de référence unifié · Architecture d'entreprise</div>
-    <h1>Échelle de Maturité<br>Interopérabilité et Orchestration Agentiques</h1>
-    <p class="cover-sub">De la tuyauterie qui livre un message à l'agent qui décide de la marche à suivre : à quel palier ça cède, qui en répond, et où l'échelle change de nature.</p>
+    <div class="cover-body">
+      <div class="kicker">Cadre de référence unifié · Architecture d'entreprise</div>
+      <h1>Interopérabilité et orchestration en entreprise agentique</h1>
+      <hr class="rule">
+      <p class="cover-sub">De la tuyauterie qui livre un message à l'agent qui décide de la marche à suivre : à quel palier ça cède, qui en répond, et où l'échelle change de nature.</p>
+    </div>
     <div class="cover-foot">
       <div><strong>Comité de direction</strong> Services financiers &amp; assurance</div>
       <div><strong>Sommaire exécutif</strong> 9 diapositives</div>
-      <div><strong>Navigation</strong> Flèches ← → ou clic</div>
+      <div><strong>Navigation</strong> ← → · S sommaire · F plein écran</div>
     </div>
   </section>
 
@@ -589,12 +710,12 @@
     <h2>Six paliers, six questions</h2>
     <hr class="rule">
     <ol class="scale">
-      <li data-lvl="1"><span class="n">1</span><span class="nm">Technico&shy;Syntaxique</span><span class="q">Le message arrive-t-il intact, au bon destinataire, et sous une forme qui se décode ?</span></li>
-      <li data-lvl="2"><span class="n">2</span><span class="nm">Sémantique</span><span class="q">Le même mot désigne-t-il la même chose des deux côtés ?</span></li>
-      <li data-lvl="3"><span class="n">3</span><span class="nm">Chorégraphique</span><span class="q">Qui fait quoi, dans quel ordre, jusqu'où ?</span></li>
-      <li data-lvl="4"><span class="n">4</span><span class="nm">Politique</span><span class="q">Qui décide de la règle, qui l'arbitre, qui paie ?</span></li>
-      <li data-lvl="5"><span class="n">5</span><span class="nm">Juridique</span><span class="q">Qui répond de l'acte, et devant quel texte ?</span></li>
-      <li data-lvl="6"><span class="n">6</span><span class="nm">Agentique</span><span class="q">Que reste-t-il du contrat quand l'exécutant décide ?</span></li>
+      <li data-lvl="1"><span class="n">1</span><span class="nm">Technico&shy;Syntaxique</span><span class="q">Le message arrive-t-il intact, au bon destinataire, et sous une forme qui se décode&nbsp;?</span></li>
+      <li data-lvl="2"><span class="n">2</span><span class="nm">Sémantique</span><span class="q">Le même mot désigne-t-il la même chose des deux côtés&nbsp;?</span></li>
+      <li data-lvl="3"><span class="n">3</span><span class="nm">Chorégraphique</span><span class="q">Qui fait quoi, dans quel ordre, jusqu'où&nbsp;?</span></li>
+      <li data-lvl="4"><span class="n">4</span><span class="nm">Politique</span><span class="q">Qui décide de la règle, qui l'arbitre, qui paie&nbsp;?</span></li>
+      <li data-lvl="5"><span class="n">5</span><span class="nm">Juridique</span><span class="q">Qui répond de l'acte, et devant quel texte&nbsp;?</span></li>
+      <li data-lvl="6"><span class="n">6</span><span class="nm">Agentique</span><span class="q">Que reste-t-il du contrat quand l'exécutant décide&nbsp;?</span></li>
     </ol>
     <div class="bands" aria-hidden="true">
       <span>1 à 3 · faire circuler et faire fonctionner</span>
@@ -611,18 +732,18 @@
   </section>
 
   <!-- 3 ------------------------------------------------------------ -->
-  <section class="slide" aria-label="Niveau 1 — TechnicoSyntaxique">
-    <div class="watermark" aria-hidden="true">1</div>
+  <section class="slide" aria-label="Palier 1 — TechnicoSyntaxique">
     <div class="level-grid">
       <div class="level-side">
         <span class="badge">Palier 1</span>
         <h2>Technico&shy;Syntaxique</h2>
         <p class="level-scope">La tuyauterie et la grammaire — transport et forme du message</p>
+        <div class="watermark" aria-hidden="true">1</div>
         <div class="meter" aria-hidden="true"><i class="here"></i><i></i><i></i><i></i><i></i><i></i></div>
         <p class="meter-cap">Palier 1 sur 6</p>
       </div>
       <div class="level-main">
-        <p class="question">Le message arrive-t-il intact, au bon destinataire, et sous une forme qui se décode ?</p>
+        <p class="question">Le message arrive-t-il intact, au bon destinataire, et sous une forme qui se décode&nbsp;?</p>
         <div class="blocks">
           <div class="block">
             <span class="label">En clair</span>
@@ -642,18 +763,18 @@
   </section>
 
   <!-- 4 ------------------------------------------------------------ -->
-  <section class="slide" aria-label="Niveau 2 — Sémantique">
-    <div class="watermark" aria-hidden="true">2</div>
+  <section class="slide" aria-label="Palier 2 — Sémantique">
     <div class="level-grid">
       <div class="level-side">
         <span class="badge">Palier 2</span>
         <h2>Sémantique</h2>
         <p class="level-scope">Le sens des mots — modèles canoniques</p>
+        <div class="watermark" aria-hidden="true">2</div>
         <div class="meter" aria-hidden="true"><i class="done"></i><i class="here"></i><i></i><i></i><i></i><i></i></div>
         <p class="meter-cap">Palier 2 sur 6</p>
       </div>
       <div class="level-main">
-        <p class="question">Le même mot désigne-t-il la même chose des deux côtés ?</p>
+        <p class="question">Le même mot désigne-t-il la même chose des deux côtés&nbsp;?</p>
         <div class="blocks">
           <div class="block">
             <span class="label">En clair</span>
@@ -673,18 +794,18 @@
   </section>
 
   <!-- 5 ------------------------------------------------------------ -->
-  <section class="slide" aria-label="Niveau 3 — Chorégraphique">
-    <div class="watermark" aria-hidden="true">3</div>
+  <section class="slide" aria-label="Palier 3 — Chorégraphique">
     <div class="level-grid">
       <div class="level-side">
         <span class="badge">Palier 3</span>
         <h2>Chorégraphique</h2>
         <p class="level-scope">Processus et frontières de responsabilité</p>
+        <div class="watermark" aria-hidden="true">3</div>
         <div class="meter" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="here"></i><i></i><i></i><i></i></div>
         <p class="meter-cap">Palier 3 sur 6</p>
       </div>
       <div class="level-main">
-        <p class="question">Qui fait quoi, dans quel ordre, et jusqu'où va sa responsabilité ?</p>
+        <p class="question">Qui fait quoi, dans quel ordre, et jusqu'où va sa responsabilité&nbsp;?</p>
         <div class="blocks">
           <div class="block">
             <span class="label">En clair</span>
@@ -704,18 +825,18 @@
   </section>
 
   <!-- 6 ------------------------------------------------------------ -->
-  <section class="slide" aria-label="Niveau 4 — Politique">
-    <div class="watermark" aria-hidden="true">4</div>
+  <section class="slide" aria-label="Palier 4 — Politique">
     <div class="level-grid">
       <div class="level-side">
         <span class="badge">Palier 4</span>
         <h2>Politique</h2>
         <p class="level-scope">Gouvernance, contrats de données, arbitrage</p>
+        <div class="watermark" aria-hidden="true">4</div>
         <div class="meter" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i class="here"></i><i></i><i></i></div>
         <p class="meter-cap">Palier 4 sur 6</p>
       </div>
       <div class="level-main">
-        <p class="question">Qui décide de la règle, qui l'arbitre, et qui paie quand elle cède ?</p>
+        <p class="question">Qui décide de la règle, qui l'arbitre, et qui paie quand elle cède&nbsp;?</p>
         <div class="blocks">
           <div class="block">
             <span class="label">En clair</span>
@@ -735,18 +856,18 @@
   </section>
 
   <!-- 7 ------------------------------------------------------------ -->
-  <section class="slide" aria-label="Niveau 5 — Juridique">
-    <div class="watermark" aria-hidden="true">5</div>
+  <section class="slide" aria-label="Palier 5 — Juridique">
     <div class="level-grid">
       <div class="level-side">
         <span class="badge">Palier 5</span>
         <h2>Juridique</h2>
         <p class="level-scope">Preuve, souveraineté et conformité</p>
+        <div class="watermark" aria-hidden="true">5</div>
         <div class="meter" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="here"></i><i></i></div>
         <p class="meter-cap">Palier 5 sur 6</p>
       </div>
       <div class="level-main">
-        <p class="question">Qui répond de l'acte, et devant quel texte ?</p>
+        <p class="question">Qui répond de l'acte, et devant quel texte&nbsp;?</p>
         <div class="blocks">
           <div class="block">
             <span class="label">En clair</span>
@@ -766,18 +887,18 @@
   </section>
 
   <!-- 8 ------------------------------------------------------------ -->
-  <section class="slide" aria-label="Niveau 6 — Agentique">
-    <div class="watermark" aria-hidden="true">6</div>
+  <section class="slide" aria-label="Palier 6 — Agentique">
     <div class="level-grid">
       <div class="level-side">
         <span class="badge">Palier 6</span>
         <h2>Agentique</h2>
         <p class="level-scope">Intention déclarée, coordination entre agents</p>
+        <div class="watermark" aria-hidden="true">6</div>
         <div class="meter" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="here"></i></div>
         <p class="meter-cap">Palier 6 sur 6 — changement de nature</p>
       </div>
       <div class="level-main">
-        <p class="question">Que reste-t-il du contrat quand l'exécutant décide lui-même de la marche à suivre ?</p>
+        <p class="question">Que reste-t-il du contrat quand l'exécutant décide lui-même de la marche à suivre&nbsp;?</p>
         <div class="blocks">
           <div class="block">
             <span class="label">En clair</span>
@@ -797,42 +918,52 @@
   </section>
 
   <!-- 9 ------------------------------------------------------------ -->
-  <section class="slide" aria-label="La rupture entre le palier 5 et le palier 6">
-    <p class="eyebrow">Le seul vrai saut de l'échelle</p>
-    <h2>Le palier 6 ne change pas de degré, il change de nature</h2>
+  <section class="slide" aria-label="Ce qu'il faut retenir">
+    <p class="eyebrow">Ce qu'il faut retenir</p>
+    <h2>Jusqu'ici, on validait un plan. Désormais, on encadre une intention.</h2>
     <hr class="rule">
-    <div class="split">
-      <div class="panel now">
-        <h3>Paliers 1 à 5 — déterministe</h3>
-        <ul>
-          <li>Le contrat est <strong>écrit d'avance</strong> et statique.</li>
-          <li>Il se <strong>vérifie avant</strong> la mise en service.</li>
-          <li>Un écart est un défaut : il se reproduit, donc il se corrige.</li>
-          <li>La preuve est un document.</li>
-        </ul>
+    <div class="takeaways">
+      <div class="take">
+        <span class="label">Aucun raccourci</span>
+        <h3>Le palier 6 s'appuie sur les cinq autres, il ne les remplace pas.</h3>
+        <p>Un agent qui choisit lui-même sa marche à suivre hérite de tout ce qui est mal réglé en dessous — et <strong>l'amplifie au lieu de le signaler</strong>.</p>
       </div>
-      <div class="arrow" aria-hidden="true">→</div>
-      <div class="panel next">
-        <h3>Palier 6 — probabiliste</h3>
-        <ul>
-          <li>L'objectif est énoncé, <strong>le chemin est négocié</strong>.</li>
-          <li>Il ne s'observe que <strong>pendant</strong> l'exécution.</li>
-          <li>Deux exécutions identiques peuvent différer sans qu'aucune soit fautive.</li>
-          <li>La preuve est une trace.</li>
-        </ul>
+      <div class="take">
+        <span class="label">Le contrôle se déplace</span>
+        <h3>On ne vérifie plus avant, on surveille pendant.</h3>
+        <p>Un contrat se relit avant la mise en service ; une intention ne se juge qu'en marche. La qualité passe <strong>de la conception à l'exploitation</strong>.</p>
+      </div>
+      <div class="take">
+        <span class="label">La preuve change de forme</span>
+        <h3>Un document hier, une trace demain.</h3>
+        <p>Deux exécutions du même mandat peuvent différer <em>sans qu'aucune soit fautive</em>. Ce qu'on présente à un vérificateur n'est plus de même nature.</p>
       </div>
     </div>
-    <p class="punch">Un contrat de palier 5 se vérifie avant l'exécution ; une intention de palier 6 ne s'observe que pendant.</p>
-    <p class="footnote">Conséquence de gestion : les contrôles d'avant-mise-en-service ne suffisent plus, et l'assurance qualité se déplace de la conception vers l'exploitation.</p>
+    <p class="punch">Le comité ne tranche pas sur une technologie : il tranche sur <strong>qui répond du résultat</strong> quand personne n'a écrit le chemin.</p>
+    <p class="footnote">Formulé pour l'architecture : les paliers 1 à 5 sont déterministes — le chemin est écrit et se vérifie avant ; le palier 6 est probabiliste — seul le but l'est. D'où la règle : les paliers 4 et 5 conditionnent l'entrée au palier 6, ils ne s'ajoutent pas après.</p>
   </section>
+
+  <!-- Sommaire, superposé à la scène -->
+  <div class="toc" id="toc" role="dialog" aria-modal="true" aria-label="Sommaire" hidden>
+    <p class="eyebrow">Sommaire</p>
+    <ol id="toc-list"></ol>
+    <p class="toc-hint">Entrée pour ouvrir · Échap pour fermer</p>
+  </div>
 
 </main>
 
 <nav class="hud" aria-label="Navigation du diaporama">
-  <button id="prev" type="button" aria-label="Diapositive précédente">‹</button>
-  <ol class="dots" id="dots"></ol>
-  <span class="counter" id="counter" aria-live="polite"></span>
-  <button id="next" type="button" aria-label="Diapositive suivante">›</button>
+  <span class="hud-title" id="hud-title"></span>
+  <div class="hud-nav">
+    <button id="prev" class="icon" type="button" aria-label="Diapositive précédente">‹</button>
+    <ol class="dots" id="dots"></ol>
+    <span class="counter" id="counter" aria-live="polite"></span>
+    <button id="next" class="icon" type="button" aria-label="Diapositive suivante">›</button>
+  </div>
+  <div class="hud-tools">
+    <button id="toc-btn" type="button" aria-expanded="false" aria-controls="toc" aria-label="Sommaire (S)">Sommaire</button>
+    <button id="fs-btn" class="icon" type="button" aria-label="Plein écran (F)">⛶</button>
+  </div>
 </nav>
 
 <script>
@@ -843,18 +974,38 @@
   const bar     = document.getElementById('bar');
   const prev    = document.getElementById('prev');
   const next    = document.getElementById('next');
+  const hudTtl  = document.getElementById('hud-title');
+  const toc     = document.getElementById('toc');
+  const tocList = document.getElementById('toc-list');
+  const tocBtn  = document.getElementById('toc-btn');
+  const fsBtn   = document.getElementById('fs-btn');
+  const name    = s => s.getAttribute('aria-label') || '';
   let i = 0;
 
   slides.forEach((s, k) => {
     const li = document.createElement('li');
     const b  = document.createElement('button');
     b.type = 'button';
-    b.setAttribute('aria-label', 'Diapositive ' + (k + 1) + ' — ' + (s.getAttribute('aria-label') || ''));
+    b.title = (k + 1) + ' — ' + name(s);
+    b.setAttribute('aria-label', 'Diapositive ' + (k + 1) + ' — ' + name(s));
     b.addEventListener('click', () => go(k));
     li.appendChild(b);
     dots.appendChild(li);
+
+    const tli = document.createElement('li');
+    const tb  = document.createElement('button');
+    tb.type = 'button';
+    const tn = document.createElement('span');
+    tn.className = 'tn';
+    tn.textContent = k + 1;
+    tb.appendChild(tn);
+    tb.appendChild(document.createTextNode(name(s)));
+    tb.addEventListener('click', () => { setToc(false); go(k); });
+    tli.appendChild(tb);
+    tocList.appendChild(tli);
   });
   const dotBtns = [...dots.querySelectorAll('button')];
+  const tocBtns = [...tocList.querySelectorAll('button')];
 
   function go(n) {
     i = Math.max(0, Math.min(slides.length - 1, n));
@@ -863,27 +1014,62 @@
       s.setAttribute('aria-hidden', k !== i);
     });
     dotBtns.forEach((b, k) => b.setAttribute('aria-current', k === i));
+    tocBtns.forEach((b, k) => b.setAttribute('aria-current', k === i));
     counter.textContent = (i + 1) + ' / ' + slides.length;
+    hudTtl.textContent = name(slides[i]);
     bar.style.width = ((i + 1) / slides.length * 100) + '%';
     prev.disabled = i === 0;
     next.disabled = i === slides.length - 1;
     if (location.hash !== '#' + (i + 1)) history.replaceState(null, '', '#' + (i + 1));
   }
 
+  function setToc(open) {
+    toc.hidden = !open;
+    tocBtn.setAttribute('aria-expanded', String(open));
+    if (open) tocBtns[i].focus(); else tocBtn.focus();
+  }
+
   prev.addEventListener('click', () => go(i - 1));
   next.addEventListener('click', () => go(i + 1));
+  tocBtn.addEventListener('click', () => setToc(toc.hidden));
+
+  fsBtn.addEventListener('click', () => {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else document.documentElement.requestFullscreen().catch(() => {});
+  });
+  document.addEventListener('fullscreenchange', () => {
+    fsBtn.setAttribute('aria-label',
+      document.fullscreenElement ? 'Quitter le plein écran (F)' : 'Plein écran (F)');
+  });
 
   document.addEventListener('keydown', e => {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     const k = e.key;
-    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ' || k === 'Enter') { go(i + 1); e.preventDefault(); }
-    else if (k === 'ArrowLeft' || k === 'PageUp')                            { go(i - 1); e.preventDefault(); }
-    else if (k === 'Home')                                                   { go(0); e.preventDefault(); }
-    else if (k === 'End')                                                    { go(slides.length - 1); e.preventDefault(); }
+
+    if (k === 'Escape') { if (!toc.hidden) { setToc(false); e.preventDefault(); } return; }
+    // Sommaire ouvert : Tab et Entrée appartiennent aux boutons de la liste
+    if (!toc.hidden) return;
+    // Idem pour la barre d'espace et Entrée sur un bouton de la barre de contrôle,
+    // sinon un appui avance deux fois : une par le bouton, une par le diaporama.
+    if (e.target.closest && e.target.closest('button') && (k === ' ' || k === 'Enter')) return;
+
+    if      (k === 'ArrowRight' || k === 'PageDown' || k === ' ' || k === 'Enter') { go(i + 1); e.preventDefault(); }
+    else if (k === 'ArrowLeft'  || k === 'PageUp')                                { go(i - 1); e.preventDefault(); }
+    else if (k === 'Home')                                                        { go(0); e.preventDefault(); }
+    else if (k === 'End')                                                         { go(slides.length - 1); e.preventDefault(); }
+    else if (k === 's' || k === 'S')                                              { setToc(true); e.preventDefault(); }
+    else if (k === 'f' || k === 'F')                                              { fsBtn.click(); e.preventDefault(); }
   });
 
-  // Clic dans la moitié droite / gauche de la scène — pratique au projecteur
+  // Clic dans la moitié droite / gauche de la scène — pratique au projecteur.
+  // On s'efface devant tout ce qui n'est pas un clic de navigation : un élément
+  // interactif, ou une sélection de texte en cours — sinon la présentation saute
+  // dès qu'on tente de copier une ligne, et le texte devient insélectionnable.
   document.getElementById('stage').addEventListener('click', e => {
+    if (!toc.hidden) return;
+    if (e.target.closest('a, button, input, select, textarea')) return;
+    const sel = window.getSelection();
+    if (sel && !sel.isCollapsed) return;
     const r = e.currentTarget.getBoundingClientRect();
     go(e.clientX - r.left > r.width / 2 ? i + 1 : i - 1);
   });
