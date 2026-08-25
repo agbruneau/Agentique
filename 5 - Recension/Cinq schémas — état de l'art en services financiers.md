@@ -46,7 +46,7 @@ include-before: |
   ```
 ---
 
-Cette planche est un abrégé. Elle reprend les cinq figures de l'état de l'art *Interopérabilité et Orchestration Agentiques — état de l'art en services financiers* (20 août 2026, 185 pages) et les explique pour qui n'a pas lu le document. Chaque section renvoie à l'endroit où l'argument est établi sur ses sources ; **rien ici n'est démontré, tout y est résumé**. Les faits sont gelés au 20 août 2026 et le périmètre est celui d'une coopérative financière canadienne régie — caisses, fédération, filiales d'assurance et de courtage.
+Cette planche est un abrégé. Elle reprend les cinq figures de l'état de l'art *Interopérabilité et Orchestration Agentiques — état de l'art en services financiers* (20 août 2026, 186 pages) et les explique pour qui n'a pas lu le document. Chaque section renvoie à l'endroit où l'argument est établi sur ses sources ; **rien ici n'est démontré, tout y est résumé**. Les faits sont gelés au 20 août 2026 et le périmètre est celui d'une coopérative financière canadienne régie — caisses, fédération, filiales d'assurance et de courtage.
 
 # 1. Ce qui oblige ne nomme pas l'agent
 
@@ -54,7 +54,7 @@ Cette planche est un abrégé. Elle reprend les cinq figures de l'état de l'art
 
 Trois familles de textes se partagent le sujet et aucune ne le couvre.
 
-**Ce qui oblige** — E-23 du BSIF, la ligne directrice de l'AMF sur l'utilisation de l'IA, B-10, E-21, B-13 — porte sur les *modèles* et les *systèmes d'IA*. Le mot « agent » n'y figure pas ; le mot « orchestration » non plus. **Ce qui nomme l'agent** — le bulletin du BSIF de juillet 2026, la directive conjointe des *Five Eyes* — décrit précisément l'architecture attendue : identités non humaines uniques, chaînage d'outils, points d'approbation. Ces textes sont publiés au registre des saines pratiques : ils n'obligent à rien. **Ce qui exécute l'agent** — MCP, A2A, ANP — a résolu l'appel : quel agent invoque quel outil, avec quels arguments, sous quelle version. Aucun n'exprime le mandat.
+**Ce qui oblige** — E-23 du BSIF, la ligne directrice de l'AMF sur l'utilisation de l'IA, B-10, E-21, B-13 — porte sur les *modèles* et les *systèmes d'IA*, non sur l'agent ni sur l'orchestration : les deux mots sont absents d'E-23, et la ligne directrice de l'AMF ne retient de l'un que l'« agent conversationnel », au titre du traitement équitable. **Ce qui nomme l'agent** — le bulletin du BSIF de juillet 2026, la directive conjointe des *Five Eyes* — décrit précisément l'architecture attendue : identités non humaines uniques, chaînage d'outils, points d'approbation. Ces textes sont publiés au registre des saines pratiques : ils n'obligent à rien. **Ce qui exécute l'agent** — MCP, A2A, ANP — a résolu l'appel : quel agent invoque quel outil, avec quels arguments, sous quelle version. Aucun n'exprime le mandat.
 
 Le mandat, c'est-à-dire les quatre questions que le droit pose — pour le compte de qui, sous quelle autorisation, jusqu'à quelle limite, révocable comment —, n'a donc **aucun porteur normatif identifiable**.
 
@@ -72,7 +72,7 @@ Or aucun des protocoles examinés ne transporte l'entité juridique appelante da
 
 # 3. Ce que la délégation doit prouver, et ce qu'aucun mécanisme ne donne
 
-![Cinq exigences, aucun mécanisme complet — §7.5.](figures/f3-cinq-exigences.svg)
+![Cinq exigences, aucun mécanisme complet — §7.8.](figures/f3-cinq-exigences.svg)
 
 Une institution assujettie a besoin de cinq choses d'une chaîne de délégation : savoir **qui** est l'agent, **pour qui** il agit, que chaque **saut** a été autorisé et la vérification prouvée, **comment révoquer**, et pouvoir en **faire la preuve cinq ans plus tard**.
 
@@ -94,13 +94,13 @@ Cette forme n'est pas une invention d'auteur : c'est ce que le bulletin du BSIF 
 
 # 5. La fenêtre, et l'ordre où elle se referme
 
-Quatre échéances bornent la période, dans un ordre inverse de celui qu'on suppose, **et la plus proche ne vient pas d'un régulateur prudentiel** : c'est le règlement administratif du rail de paiement, le 24 août 2026, quatre jours après le gel de ce document. Vient ensuite E-21, au 1er septembre 2026 — onze jours après le gel — avec la cartographie de bout en bout des opérations critiques. Puis la ligne directrice de l'AMF sur les tiers, au 1er avril 2027. Puis E-23 et la ligne directrice de l'AMF sur l'IA, **qui entrent en vigueur le même jour, le 1er mai 2027**.
+Quatre échéances bornent la période, dans un ordre inverse de celui qu'on suppose, **et la plus proche ne vient pas d'un régulateur prudentiel** : c'est le règlement administratif du rail de paiement, le 24 août 2026, quatre jours après le gel de ce document. Vient ensuite E-21, au 1er septembre 2026 — douze jours après le gel — avec la cartographie de bout en bout des opérations critiques. Puis la ligne directrice de l'AMF sur les tiers, au 1er avril 2027. Puis E-23 et la ligne directrice de l'AMF sur l'IA, **qui entrent en vigueur le même jour, le 1er mai 2027**.
 
 **Aucune de ces quatre échéances n'exige quoi que ce soit au sujet des agents ; toutes les quatre s'appliqueront à eux.** La continuité oblige donc avant l'inventaire, et l'agent n'entre pas dans un cadre à construire : il entre dans un cadre en vigueur.
 
 Face à ces dates, sept arbitrages datés. Quatre d'ici le 31 décembre 2026 — la passerelle d'outils, l'identité d'agent, le journal probatoire, l'agilité cryptographique —, parce que leur coût de report est asymétrique : ils conditionnent la valeur probatoire de tout ce qui s'exécutera ensuite. Trois en 2027, chacun attendant un intrant que l'institution produit elle-même, non un signal extérieur. Et cinq arbitrages suspendus, dont chacun nomme le signal qui le rouvrira — car sans signal nommé, « on verra » n'est pas une position d'architecture, c'est une dette.
 
-![La fenêtre 2026-2030 — §9.10, §11.2 et §11.3.](figures/f5-fenetre-2026-2030.svg)
+![La fenêtre 2026-2030 — §9.12, §11.2 et §11.3.](figures/f5-fenetre-2026-2030.svg)
 
 
 # Où lire la suite

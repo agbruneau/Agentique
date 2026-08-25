@@ -223,7 +223,7 @@ def f1():
              items=[("E-23 — BSIF", ["1er mai 2027 · inventaire", "d'entreprise des modèles"]),
                     ("LD utilisation de l'IA — AMF", ["1er mai 2027 · imputabilité", "nominative d'un dirigeant"]),
                     ("B-10 · E-21 · B-13 — BSIF", ["tiers, continuité, technologie"])],
-             pied=["« agent » et « orchestration »", "n'y figurent pas"]),
+             pied=["portent le modèle et le SIA,", "non l'agent ni l'orchestration"]),
         dict(x=160, col="ambre", picto=picto_bulle,
              tete="CE QUI NOMME L'AGENT", sous="descriptions sans force exécutoire",
              items=[("Bulletin IA générative", ["et agentique — BSIF, juillet 2026",
@@ -295,9 +295,9 @@ def f2():
     reg = [
         dict(x=8, col="bleu", sigle="AMF",
              nom="Autorité des marchés financiers · Québec",
-             ent=["198 caisses (Québec)", "Caisse Desjardins Ontario CU",
-                  "Fédération des caisses", "Fonds de sécurité Desjardins",
-                  "filiales d'assurance de personnes"],
+             ent=["198 caisses (Québec)", "Fédération des caisses",
+                  "Fonds de sécurité Desjardins", "filiale d'assurance de personnes",
+                  "assurance de dommages (Québec)"],
              pied="actif de 510,2 G$ au 31 déc. 2025"),
         dict(x=160, col="vert", sigle="BSIF",
              nom="Bureau du surintendant · Canada",
@@ -381,7 +381,7 @@ def f2():
 
 F3_ROWS = [
     ("20 août 2026", "gel", "Faits arrêtés", [
-        "Point de gel du document. Onze jours avant la première échéance prudentielle."]),
+        "Point de gel du document. Douze jours avant la première échéance prudentielle."]),
     ("24 août 2026", "impose", "DORS/2026-133 — rail de paiement en temps réel", [
         "Un message ne peut être ni modifié ni révoqué après émission.",
         "Le point d'approbation précède donc l'effet ; la compensation après coup n'existe pas.",
