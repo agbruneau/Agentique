@@ -28,6 +28,13 @@ satisfaits**. *(3)* ⚠ **Ce qui était dû devient un manque définitif, non un
 dette qu'on cesse de suivre reste une dette ; elle change seulement de nom.* Le domaine non exécuté
 est nommé ligne à ligne au [PRD §16.2](../PRD/PRD.md). ⚠ **Le volume a été renommé le même jour**
 (décision 20 du TOC) : il s'est appelé *« La somme agentique »* du 23 juillet au 8 août 2026.
+⚠ **Une seconde révision de titre a suivi le 25 août 2026** (commit `8b25090`) : le titre du 8 août
+— *« Interopérabilité et Orchestration Agentiques en Entreprise »* — devient **« Interopérabilité et
+Orchestration en Entreprise Agentique »**. *Aucun mot du corps n'est touché.* ☑ **La passe est
+datée** — **D-14** ([PRD §17](../PRD/PRD.md), v0.18) et **décision 21** ([TOC](../PRD/TOC.md)
+v0.34) —, ⚠ *mais après son exécution* : la substitution avait précédé la décision, jusque dans le
+libellé de la décision 20, depuis rétabli. ⚠ **La clôture est rouverte pour le titre seul**, dans
+les termes du PRD §16.4.5.
 
 ## ⚠ Le volume est ARRÊTÉ depuis le 29 juillet 2026 — et « arrêté » n'est ni « terminé » ni « publiable »
 

@@ -43,6 +43,14 @@ les figures des deux : corriger un fait se fait à un seul endroit.*
 > « 424 Ko »* —, `4 - Veille/Revue de littérature.md` (1 052 l., 199 311 o.),
 > `3 - Traité/Traité.md` (1 875 l., 457 859 o.), `2 - Compendium/Compendium.pdf` (13 163 513 o.) et
 > `1 - Collection/2 - OrchestrationAgentique/Monographie.md` (3 306 l., 874 335 o.).
+> ⚠ *Un de ces cinq relevés a bougé depuis* : `Compendium.pdf` a été **recomposé le 25 août 2026**
+> avec le titre révisé du Vol. IV — *« Interopérabilité et Orchestration en Entreprise Agentique »* —
+> et mesure **13 162 484 octets**, à pagination inchangée. **La notice [4] porte toujours
+> 13 163 513, relevé du 21 août** ; *une revue publiée décrit l'état de ses sources à sa date, et le chiffre
+> n'est pas corrigé — il est daté.* ⚠ **Son titre, lui, l'a été le 25 août** : la notice porte le
+> titre courant du Vol. IV, non celui qu'il avait au gel du 20. *C'est la même exception nommée que
+> la veille consigne pour un renvoi renuméroté — elle vaut pour un **identifiant**, jamais pour un
+> **fait daté**, et un décompte d'octets est un fait daté.*
 > ⚠⚠ **La correction la plus lourde est celle de [5]**, et elle change un régime de preuve : *la
 > monographie n'est pas dans un dépôt privé inaccessible — elle est à deux dossiers d'ici, sous un
 > titre que la notice donnait faux. Le fait négatif qu'elle porte seule — quinze croisements, aucun

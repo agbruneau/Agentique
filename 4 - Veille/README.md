@@ -123,13 +123,17 @@ exacte tombe avec le rapport détruit le 19 août, et c'est la seule chose que s
 
 ⚠⚠ **Elle ne revient pas le 20 août, et la collision a changé de nature.** Le nouvel état de l'art
 porte `title: "Interopérabilité et Orchestration Agentiques"` et `subtitle: "état de l'art en
-services financiers"` : **il ne reprend pas le titre du Vol. IV**, qui est le seul des quatre à
-ajouter « en Entreprise » au sien. ⚠ *Ce qu'il rejoint, c'est la collision d'ici* : les champs
+services financiers"` : **il ne reprend pas le titre du Vol. IV**, seul des quatre à ajouter alors
+« en Entreprise » au sien — ⚠ *et il ne l'ajoute plus : la révision du 25 août 2026 le porte à
+« Interopérabilité et Orchestration en Entreprise Agentique », voir plus bas.* ⚠ *Ce qu'il
+rejoint, c'est la collision d'ici* : les champs
 `title:` de la veille, de la revue et de l'état de l'art sont **identiques mot pour mot**, et seuls
 leurs `subtitle:` les séparent — **trois pièces, un titre, trois sous-titres**, là où elles étaient
 deux jusqu'au 19 août. ⚠ *Une cinquième porte le radical sans commencer par lui* : la planche de
-synthèse, qui l'a en sous-titre sous le titre `Lire l'état de l'art en cinq schémas`. ☑ *C'est
-toujours par le genre que les fichiers se nomment, et non par le titre* : la convention du dépôt
+synthèse, qui l'a en sous-titre sous le titre `Lire l'état de l'art en cinq schémas` — ⚠ *son titre
+jusqu'au 25 août 2026 ; elle porte depuis celui de son fichier,
+`Cinq schémas — état de l'art en services financiers`.* ☑ *C'est toujours par le genre que les
+fichiers se nomment, et non par le titre* : la convention du dépôt
 tient ici sans exception.
 
 ☑⚠ **ET LA COLLISION EST LEVÉE LE 21 AOÛT 2026, PAR ÉCHANGE DES DEUX CHAMPS.** Sur instruction
@@ -146,6 +150,17 @@ pas** : le **radical commun** reste, et il le doit — les trois documents sont 
 Un renvoi qui les cite par leur seul sous-titre ne désigne toujours rien ; c'est le titre qu'il faut
 citer, et il suffit désormais.
 
+☑ **Deux marches suivent le 25 août 2026, et aucune ne touche ces deux livrables-ci.** *(1)* La
+**planche de synthèse** de [`5 - Recension/`](../5%20-%20Recension/) est alignée sur la convention
+de série : son `title` devient celui de son fichier — `Cinq schémas — état de l'art en services
+financiers` — et son `subtitle` redevient le nom commun. *(2)* Le **Vol. IV** est renommé
+*« Interopérabilité et Orchestration en Entreprise Agentique »* (commit `8b25090`). ☑ **Le radical
+n'est donc plus partagé que par quatre pièces, toutes en sous-titre** — la veille, la revue,
+l'état de l'art et sa planche —, et **quatre titres les distinguent**. ⚠ *Ce que la seconde marche
+ne règle pas d'emblée* : la substitution du titre a **précédé** la décision qui la porte — le PRD
+et le TOC ne l'ont datée qu'après coup, par **D-14** (PRD v0.18 §17) et la **décision 21**
+(TOC v0.34), la décision 20 ayant entre-temps énoncé un titre que l'instruction du 8 août n'avait
+pas donné.
 ---
 
 ## Ce que chacun rend à l'autre, et au corpus

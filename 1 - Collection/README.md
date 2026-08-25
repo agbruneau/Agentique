@@ -448,7 +448,7 @@ passer `/Type/PageLabel`, dont il existe **un objet par page**. Et un motif corr
 pagination juste du premier coup : `grep -aoP '/Type/Page(?![sL])' | wc -l` donne **569, 387 et 427**.
 
 ⚠ **Ce document ne couvre pas le Vol. IV**, et c'est délibéré : la synthèse porte sur le **triptyque**.
-Le compendium — *Interopérabilité et Orchestration en Entreprise Agentique* (titre du 8 août 2026 ; *« La somme agentique »* jusque-là), **arrêté en révision finale le 29 juillet 2026, arrêt rouvert le 30, puis clos le 8 août 2026 sans que la passe de révision ait été exécutée — non publiable** —
+Le compendium — *Interopérabilité et Orchestration en Entreprise Agentique* (titre du 25 août 2026 ; *« Interopérabilité et Orchestration Agentiques en Entreprise »* du 8 au 25 août 2026, *« La somme agentique »* jusque-là), **arrêté en révision finale le 29 juillet 2026, arrêt rouvert le 30, puis clos le 8 août 2026 sans que la passe de révision ait été exécutée — non publiable** —
 se situe au [README du dépôt](../README.md) et vit sous
 [`2 - Compendium/`](../2%20-%20Compendium/). **Il ne se substitue pas à ces trois volumes tant qu'il
 n'est pas recevable, et il ne l'est pas — ni ne le deviendra, le dépôt étant clos** : les trois

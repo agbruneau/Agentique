@@ -8,8 +8,13 @@ page de présentation ni de publication GitHub Pages — voir « Structure du do
 > l'**autonomie encadrée** (*framed autonomy*) reste la thèse centrale de l'ouvrage, exposée au
 > chapitre 6 et instruite au chapitre 13 — elle cesse seulement d'en être l'intitulé. Le nouveau
 > titre est celui du dossier depuis l'origine. ⚠ *La proximité de dénomination signalée ici visait le
-> **Vol. IV**, dont le titre est, depuis le 9 août 2026, **exactement** celui de la veille
-> technologique : citer l'un des deux par son seul intitulé ne désigne plus rien.*
+> **Vol. IV**, dont le titre a été, du 9 au 21 août 2026, **exactement** celui de la veille
+> technologique : citer l'un des deux par son seul intitulé ne désignait alors rien.* ☑ **L'homonymie
+> est levée en deux temps, et aucun des deux ne touche ce volume-ci** : l'**échange titre/sous-titre
+> du 21 août 2026** donne à la veille « Veille technologique en entreprise » pour titre et renvoie le
+> nom commun au sous-titre de série ; la **révision du 25 août 2026** porte le Vol. IV à
+> « Interopérabilité et Orchestration en Entreprise Agentique ». *Les deux se citent désormais par
+> leur seul intitulé.*
 
 > ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13**
 > ([`2 - Compendium/PRD/PRD.md`](../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe
