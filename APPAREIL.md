@@ -68,11 +68,12 @@ III et du Compendium.
 
 ⚠ **1 879 renvois relatifs résolus dans les 227 `.md` du dépôt, et DEUX ROMPUS**, au 22 août 2026 —
 *ils étaient 243 à viser le vide avant la passe du 21, zéro après elle, et deux le lendemain.*
-⚠⚠ **Les deux morts ont la même cause, et c'est une suppression du 22 août** : `gauntlet-log.md` est
-sorti de l'index, et deux `README.md` de `3 - Traité/` le citent encore en lien — celui du dossier en
-tête d'une rangée de tableau, celui de `docs/` au corps, où il l'oppose au journal de la revue par
-les pairs. *Restaurer la pièce ou retirer les renvois est une décision d'auteur, pas d'appareil :
-elle n'est pas prise ici.* ⚠ **Aucun contrôle du dépôt ne résout un lien markdown** : c'est
+⚠⚠ **Les deux morts avaient la même cause, une suppression du 22 août** : un journal de boucle est
+sorti de l'index, et deux `README.md` de `3 - Traité/` le citaient encore en lien — celui du dossier
+en tête d'une rangée de tableau, celui de `docs/` au corps, où il l'opposait au journal de la revue
+par les pairs. ☑ **La décision d'auteur que ce relevé laissait ouverte est prise le 25 août 2026** :
+les deux renvois sont retirés, la pièce n'est pas restaurée, et son nom est effacé du dépôt entier —
+*ce qu'elle a produit de durable est sous `3 - Traité/bancs/audit-2026-08/`, non dans le journal.* ⚠ **Aucun contrôle du dépôt ne résout un lien markdown** : c'est
 une mesure faite pour ce relevé, pas une garantie que le dépôt tient. La commande est une résolution
 de chaque cible relative contre le système de fichiers, blocs et *spans* de code exclus — un
 `` `[…](cible)` `` cité en prose n'est pas un lien.
@@ -96,7 +97,7 @@ le décompte d'octets avec deux de ses cardinaux, et les renvois du point d ci-d
 - **Lignes, octets, cardinaux de fichiers** — `wc -l` / `wc -c` / `git ls-files`. *Les tailles sont
   décimales : 1 Mo = 10⁶ octets.* ⚠⚠ **Le décompte d'octets s'est périmé DEUX FOIS le 22 août
   2026** : remesuré à 75 116 966 en début de passe, il est retombé le jour même avec la suppression
-  de `3 - Traité/gauntlet-log.md`, et il vaut **75 096 625** au dernier relevé — *trois passes
+  d'un journal de boucle de `3 - Traité/`, et il vaut **75 096 625** au dernier relevé — *trois passes
   concordantes, `cat | wc -c` deux fois et la somme des `stat` une fois.* ⚠ **Deux cardinaux de la
   même ligne sont tombés avec la pièce** — le total, **575 → 574**, et les `.md`, **228 → 227** ;
   *les quinze autres extensions tiennent tels quels.* *Il était déjà faux avant, et sa fausseté a
@@ -129,8 +130,8 @@ le décompte d'octets avec deux de ses cardinaux, et les renvois du point d ci-d
   ```
 
   ☑ *Ce que la règle a effectivement attrapé, le même jour* : un écart de **23 538** octets entre
-  deux relevés, qui n'était pas une erreur de mesure du tout — `3 - Traité/gauntlet-log.md`,
-  24 566 octets au disque, avait été supprimé par un commit entre les deux. Une mesure qui ne
+  deux relevés, qui n'était pas une erreur de mesure du tout — un journal de boucle de
+  `3 - Traité/`, 24 566 octets au disque, avait été supprimé par un commit entre les deux. Une mesure qui ne
   concorde pas est d'abord une question sur l'arbre, pas sur la commande.
 - **Historique** — `git log --format='%an'`, `git log --merges` (quatre fusions, et
   `git log --all --grep='#4'` ne rend rien), `git tag`, `git branch -r`, et

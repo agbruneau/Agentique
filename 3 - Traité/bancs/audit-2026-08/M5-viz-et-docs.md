@@ -38,7 +38,7 @@ défaut du dépôt ; c'est une condition de mesure, et elle est nommée.
 | 14 | `docs/SPEC.md:682` | « zéro texte du traité » — faux tant que `SOURCE_BORNES` existe | oui |
 | 15 | 4 documents | 428 tests / 385 unitaires / 4 dans `sim-viz` — la mesure rend 447 / 404 / 5 | oui |
 | 16 | `clippy.toml:8-10` | Le motif d'interdiction de `mul_add` contredit `bancs/dt1-flottant/VERDICT.md` | **non** |
-| 17 | `docs/README.md:145` | « `gauntlet-log.md` … retiré du dépôt » — un fichier de ce nom est à la racine | **non** |
+| 17 | `docs/README.md:145` | « le journal … retiré du dépôt » — une pièce homonyme est à la racine | **non** |
 | 18 | `crates/sim-agents`, `crates/sim-milieu` | Quatre pages différentes pour le seul §1.2 | **non** |
 
 ---
@@ -456,20 +456,16 @@ lignes, sans effet sur le lint.
 
 ### 17 — `docs/README.md:145` déclare disparu un fichier présent
 
-> **Ce qui a existé et n'existe plus** : `gauntlet-log.md`, journal de la revue
-> adversariale qui avait produit la version 2.0 du PRD, retiré du dépôt.
+> **Ce qui a existé et n'existe plus** : le journal de la revue adversariale qui
+> avait produit la version 2.0 du PRD, retiré du dépôt.
 
-```
-$ git log --oneline -1 -- gauntlet-log.md
-4dfc0dc menage                     ← le fichier de la revue 2.0 a bien été retiré
-$ git status --short | grep gauntlet
-?? gauntlet-log.md                 ← et un fichier de ce nom est à la racine
-$ head -1 gauntlet-log.md
-# Journal de la boucle — audit complet du code
-```
-
-L'énoncé est vrai de l'histoire git et faux du répertoire : le fichier présent
-est le journal **de cet audit-ci**, non suivi, homonyme.
+L'historique git donne ce retrait au commit `4dfc0dc`, et `git status` donne à la
+racine une pièce homonyme non suivie, dont la première ligne l'annonce comme le
+journal de la boucle de l'audit complet du code. L'énoncé est donc vrai de
+l'histoire git et faux du répertoire : la pièce présente est le journal **de cet
+audit-ci**, non suivi, homonyme. ⚠ *Les trois commandes reproduites ici la
+nommaient : elles sont retirées le 25 août 2026, avec son nom, sur instruction
+d'auteur — la pièce est sortie du dépôt le 22 août.*
 
 **Motif du non-correctif** : le fichier est nommé document normatif dans le
 mandat de ce morceau, donc hors d'atteinte ; et décrire dans un index permanent
@@ -591,8 +587,8 @@ ajouté.
   chapitre 8. Les trente-neuf autres `p. N` du dépôt ne l'ont pas été, et la
   mesure du § 6-7 ne dit pas qu'ils sont faux : elle dit que le dépôt en donne
   plusieurs pour une même section, ce qui suffit à établir qu'au moins un l'est.
-- **Rien sur les documents non attribués.** `docs/PRD.md`, `docs/decisions.md` et
-  `gauntlet-log.md` n'ont pas été audités et n'ont pas été touchés. Deux
+- **Rien sur les documents non attribués.** `docs/PRD.md`, `docs/decisions.md` et le
+  journal de boucle n'ont pas été audités et n'ont pas été touchés. Deux
   affirmations du PRD ont servi de preuve contre le code (§0, lignes 151 et 166) ;
   c'est le code qui a été mis en accord, jamais l'inverse.
 

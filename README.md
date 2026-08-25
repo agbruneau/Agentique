@@ -155,7 +155,7 @@ Agentique/
 │   │                                     n'existait nulle part au dépôt → `APPAREIL.md`
 │   ├── bancs/                          ⚠ ses 24 pièces, supprimées par accident le 17 août 2026,
 │   │                                     restaurées le 21 : c'est ce qui empêchait `cargo` de
-│   │                                     démarrer → `APPAREIL.md`. ⚠ `gauntlet-log.md`, restauré
+│   │                                     démarrer → `APPAREIL.md`. ⚠ un journal de boucle, restauré
 │   │                                     avec elles à la racine du dossier, en est ressorti le 22
 │   ├── docs/                           ⭑ `decisions.md` : les cinq écarts et les verdicts de banc
 │   ├── clippy.toml                     ⭑ ses interdictions sont des contrats, pas du style
@@ -185,8 +185,8 @@ relevé est celui du disque de l'auteur, que l'arrivée de `.gitattributes` n'a 
 œuvres de tiers sorties de l'index en pèsent **38,3 Mo** à elles seules, l'`.html` de l'état de
 l'art 0,76 Mo de plus, les pièces retouchées en place 0,28 de plus — et ce qui rentre le même jour
 n'en rend que 1,8. *Il a gagné **62 fichiers**, pour un solde de **+56** — 519 au 20 août, 575 au
-21.* **Cinquante-cinq sont des restaurations** : 24 sous `3 - Traité/bancs/` et `gauntlet-log.md` à
-la racine du dossier, 30 sous `3 - EntrepriseAgentique/verification/`. **Les sept autres sont
+21.* **Cinquante-cinq sont des restaurations** : 24 sous `3 - Traité/bancs/` et un journal de boucle
+à la racine du dossier, 30 sous `3 - EntrepriseAgentique/verification/`. **Les sept autres sont
 neufs** : la licence, les trois chaînes, le `README` de `0 - Références/`, `.gitattributes` et
 `APPAREIL.md`.
 Hors `git` mais sur le disque, il ne reste que **les deux artefacts `wasm-bindgen` de `web/`** —

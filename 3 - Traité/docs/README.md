@@ -143,25 +143,22 @@ au §9 du PRD, où chaque mécanisme est rangé est à la dernière section
 d'[`architecture.md`](architecture.md), et ce que son arrivée a changé au contrat
 est au §13 de [`SPEC.md`](SPEC.md).
 
-**Ce qui a existé et n'existe plus** : le `gauntlet-log.md` de la revue
-adversariale qui avait produit la version 2.0 du PRD, retiré du dépôt. Ce qu'il
+**Ce qui a existé et n'existe plus** : le **journal de la revue adversariale** qui
+avait produit la version 2.0 du PRD, retiré du dépôt. Ce qu'il
 portait de durable est dans le PRD lui-même — les réserves du §0, les tensions du
 §2.5 et les risques du §10 sont ce que cette revue a produit.
 
-⚠ **Un fichier de ce nom est revenu à la racine du dossier le 17 août 2026, et ce
-n'est pas celui-là** : [`../gauntlet-log.md`](../gauntlet-log.md) est le journal de
-la boucle bâtisseur/critique de l'**audit complet du code** — cinq morceaux disjoints
-par crate, barre tenue sur
+⚠ **Un second journal a vécu à la racine du dossier du 17 au 22 août 2026, et il
+n'y est plus non plus** : celui de la boucle bâtisseur/critique de l'**audit complet
+du code** — cinq morceaux disjoints par crate, barre tenue sur
 [`bancs/dt1-flottant/VERDICT.md`](../bancs/dt1-flottant/VERDICT.md), rapports par
-morceau sous `bancs/audit-2026-08/`. *Il ne couvre ni la revue du PRD, ni les boucles
-de la veille, de la revue de littérature ou de l'état de l'art, dont les journaux
-homonymes ont vécu ailleurs dans le dépôt et n'y sont plus.* ⚠ **Il n'est pas un
-document de gouvernance** : rien n'y est exigé ni garanti, et aucun énoncé de ce
-dossier ne s'y adosse. **Les deux fichiers n'ont jamais coexisté**, et c'est ce
-qui lève l'ambiguïté : `git log --oneline -- gauntlet-log.md` montre le premier
-retiré par le commit `4dfc0dc`, puis le second ajouté par l'audit du 17 août
-2026. L'énoncé du paragraphe précédent est donc vrai de l'histoire, et il ne dit
-rien du répertoire d'aujourd'hui. Ce que la campagne a produit de **durable**
+morceau sous `bancs/audit-2026-08/`. *Il ne couvrait ni la revue du PRD, ni les
+boucles de la veille, de la revue de littérature ou de l'état de l'art, dont les
+journaux ont vécu ailleurs dans le dépôt et n'y sont plus.* ⚠ **Aucun des deux
+n'était un document de gouvernance** : rien n'y était exigé ni garanti, et aucun
+énoncé de ce dossier ne s'y adosse. **Les deux n'ont jamais coexisté**, et aucun
+n'est plus au dépôt : le premier en est sorti par le commit `4dfc0dc`, le second
+le 22 août 2026. Ce que la campagne a produit de **durable**
 n'est de toute façon pas là : c'est
 [`bancs/audit-2026-08/`](../bancs/audit-2026-08/) — **dix rapports**, cinq de
 morceau et cinq de critique, plus la

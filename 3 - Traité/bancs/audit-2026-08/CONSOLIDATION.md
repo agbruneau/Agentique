@@ -267,13 +267,15 @@ trancher seul.
    **ajouté** par l'audit hérite de la réserve. Ligne ajoutée aux réserves du §0.
 4. **Ouvrir ou non `sim_core::hors_perimetre()`** — voir le point 4 ci-dessus.
 
-### 9 — `docs/README.md` et `gauntlet-log.md`
+### 9 — `docs/README.md` et le journal de boucle
 
-**Vérifié.** `git log --oneline -1 -- gauntlet-log.md` → `4dfc0dc menage` : le
-journal de la revue 2.0 a bien été retiré. `git ls-files gauntlet-log.md` ne rend
-**rien** et `git status --short` porte `?? gauntlet-log.md` : le fichier présent
-à la racine n'est pas suivi, et `head -1` le donne pour « Journal de la boucle —
-audit complet du code ». Les deux énoncés sont vrais, chacun sur son objet.
+**Vérifié.** L'historique git montre que le journal de la revue 2.0 a bien été
+retiré par le commit `4dfc0dc`, et que la pièce alors présente à la racine — non
+suivie par git — était le journal de la boucle de l'audit complet du code, un
+homonyme. Les deux énoncés sont vrais, chacun sur son objet. ⚠ *Les trois commandes
+qui l'établissaient nommaient la pièce : elles sont retirées de ce rapport le
+25 août 2026, avec son nom, sur instruction d'auteur — la pièce elle-même est sortie
+du dépôt le 22 août.*
 
 **Écrit.** L'entrée porte le commit du retrait, et l'avertissement ⚠ qui la suit
 — déjà posé par l'audit — gagne la différence de statut qui lève réellement

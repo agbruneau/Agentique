@@ -60,11 +60,11 @@ pas, et c'est l'intérêt.*
 > re-vérification a produit plus de corrections que d'ajouts**. ☑ *Ce que le gel disait de faux est
 > consigné, pièce en main, dans l'[annexe de traçabilité](Veille%20Technologique.md) de la veille —
 > énoncés réfutés, désaccords entre vérificateurs, et ce qui n'a pas pu être vérifié.*
-> ⚠ **Le journal de la boucle du 15 août n'est plus dans ce dossier** : `gauntlet-log.md` n'y
-> existe pas, et ce README y renvoyait par un lien mort jusqu'au 17 août 2026. ⚠⚠ **Et la réserve
-> qui dénonçait ce lien mort se closait elle-même sur un fichier absent** : *aucun `gauntlet-log.md`
-> n'est au dépôt, nulle part* — celui du traité, le dernier, **a été supprimé le 17 août 2026 au
-> commit `20cc1ae`**. La boucle du 15 août ne se relit qu'à l'historique git.
+> ⚠ **Le journal de la boucle du 15 août n'est plus dans ce dossier** : il n'y existe pas, et ce
+> README y renvoyait par un lien mort jusqu'au 17 août 2026. ⚠⚠ **Et la réserve qui dénonçait ce
+> lien mort se closait elle-même sur un fichier absent** : *aucun journal de ce genre n'est au
+> dépôt, nulle part* — celui du traité, le dernier, **a été supprimé le 17 août 2026 au commit
+> `20cc1ae`**. La boucle du 15 août ne se relit qu'à l'historique git.
 >
 > ⚠ **Passe du 17 août 2026 — mise en page, et une panne de rendu que trois éditions n'avaient pas
 > vue.** Les deux pages de titre ont été reprises et uniformisées : titre commun, description du
@@ -292,7 +292,7 @@ tapé.*
 
 ⚠ **Ce que ces contrôles ne voient pas.** **Aucun ne résout un lien markdown** — c'est le défaut que
 le [README du dépôt](../README.md) porte à son tableau des reliquats, et *un déplacement de fichier
-ne lève donc aucune erreur ; ce README-ci en portait un vers un `gauntlet-log.md` absent, et il a
+ne lève donc aucune erreur ; ce README-ci en portait un vers un journal de boucle absent, et il a
 fallu le chercher à la main*. **Aucun ne vérifie la pagination** : les **144 pages** de la veille et
 les **59** de la revue sont **constatées à chaque build, jamais opposées à une cible** — les deux
 cibles ont été levées le 15 août 2026, et seule la chaîne du compendium oppose encore une porte de
@@ -368,7 +368,7 @@ compose.
 *(Les quatre fichiers de livrable et le dossier `Python/` venaient de la racine du dépôt, le 15 août
 2026 — `Python/` y avait lui-même été créé le 10 août, les trois scripts vivant à la racine
 auparavant.)* ⚠ **Le dossier ne porte rien d'autre**, et il en portait moins que ce README ne
-disait : l'arborescence y a listé un `gauntlet-log.md` **qui n'a jamais existé ici** jusqu'au
+disait : l'arborescence y a listé un journal de boucle **qui n'a jamais existé ici** jusqu'au
 17 août 2026. ⚠ *Et il n'en existe plus nulle part au dépôt* : le dernier, celui du traité, **a été
 supprimé le 17 août 2026 au commit `20cc1ae`** — la formule antérieure, « le seul fichier de ce nom
 au dépôt est celui du traité », est fausse depuis ce jour-là.
@@ -394,7 +394,7 @@ au dépôt est celui du traité », est fausse depuis ce jour-là.
   plancher est bas : ni PMLR ni OpenReview ne sont indexés là où la contre-épreuve a cherché.
   *Le chiffre reste exact de ce qu'il mesure — la notice — et faux de ce qu'on lui faisait dire.*
 - ⚠ **Aucun contrôle ne résout un lien** — défaut commun à tout l'appareil du dépôt, et *ce README
-  en a porté un mort vers `gauntlet-log.md` jusqu'au 17 août 2026*.
+  en a porté un mort vers un journal de boucle jusqu'au 17 août 2026*.
 - ⚠ **`check-resume.py` ne mesure que la page 1**, et sa marge basse est une constante qui suit le
   YAML à la main : elle vaut 72 pt et se relit à chaque changement de géométrie. *Le contrôle vaut
   pour les **cinq** documents du dépôt qui composent à ces marges — les deux d'ici, le traité et les

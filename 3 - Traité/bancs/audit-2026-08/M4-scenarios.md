@@ -373,7 +373,7 @@ du mécanisme est hors périmètre.
 
 # Écarts qui obligent à corriger un document normatif
 
-Je n'ai modifié ni `docs/PRD.md`, ni `docs/decisions.md`, ni `gauntlet-log.md`.
+Je n'ai modifié ni `docs/PRD.md`, ni `docs/decisions.md`, ni le journal de boucle.
 
 1. **`docs/PRD.md:11` et `:346` et `:1083` — l'édition normative.** Le PRD désigne
    la *« deuxième édition, revue et augmentée, 13 août 2026 »* et pose que les

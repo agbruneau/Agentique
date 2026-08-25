@@ -306,7 +306,6 @@ détecteur                              └── binaire campagne (sans dépend
 | [`docs/DEVELOPPEMENT.md`](docs/DEVELOPPEMENT.md) | Chaîne d'outils et commandes de banc. |
 | [`CLAUDE.md`](CLAUDE.md) | Contraintes et conventions, pour un agent qui reprend le code. |
 | `bancs/*/VERDICT.md` | Les décisions tranchées par la mesure plutôt que par le raisonnement. |
-| [`gauntlet-log.md`](gauntlet-log.md) | ⚠ **Pas un document de gouvernance** — le journal de la boucle bâtisseur/critique de l'audit du code, 17 août 2026, avec ses rapports par morceau sous `bancs/audit-2026-08/`. Rien n'y est exigé ni garanti, et aucun énoncé des six documents ci-dessus ne s'y adosse. *Trois autres journaux du dépôt ont porté ce nom et n'existent plus ; celui-ci ne couvre aucune de leurs boucles.* |
 | [`build/build-pdf.sh`](build/build-pdf.sh) | La composition de `Traité.pdf`, versionnée le 21 août 2026 — elle n'existait nulle part au dépôt. Se lance **de ce dossier**, les 19 planches de [`figures/`](figures/) y étant depuis le même jour. |
 
 La documentation d'interface est **dans le code**, en rustdoc — les quatre
