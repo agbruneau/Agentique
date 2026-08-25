@@ -48,7 +48,7 @@ reviendrait à figer une version de `rustc` et de `wasm-bindgen` dans un fichier
 que rien ne met à jour, et le banc DT1 a déjà montré ce que valent les verdicts
 qui dépendent de la machine de construction.
 
-## Un défaut trouvé par l'audit, et corrigé
+## Un défaut trouvé par le banc, et corrigé
 
 Le banc rendait `0` quand `scenario_b` échouait. Un échec **symétrique** — un
 paramètre refusé sur les deux cibles — produisait donc deux fois

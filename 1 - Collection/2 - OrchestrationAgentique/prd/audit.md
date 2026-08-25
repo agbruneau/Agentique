@@ -151,7 +151,7 @@ S'y ajoute la paire d'attestations en conflit : `verification/relecture-CA.md` (
 
 ## 6. Ce qui tient — contrôles passés sans écart
 
-Pour que cet audit ne soit pas lu comme un procès : l'essentiel du dispositif tient, et il a été **contrôlé**, pas présumé.
+Pour que cette vérification ne soit pas lu comme un procès : l'essentiel du dispositif tient, et il a été **contrôlé**, pas présumé.
 
 - **CA-2 (zéro réfuté)** : balayage des motifs §4.3 sur les 29 pièces — aucune violation de fond de R-1 à R-8. Une seule entorse de **forme** (m-04, sigle nu désambiguïsé à la phrase suivante). Les 121 occurrences de « ACP » ont été inspectées une à une.
 - **CA-3 (attribution)** : tenue à chaque occurrence contrôlée — TD, Scotia, RBC (fourchette complète 700 M$–1 G$ partout), Manuvie, CIBC (jamais surqualifiée d'agentique), Intact (aucune terminologie agentique), BMO (~8 000 = employés, sources séparées), consortium, LangGraph, CrewAI, AP2/AGNTCY/A2A (« soutien ≠ production »), projection 70 % (toujours projection), Forrester TEI (commanditaire nommé à chaque citation). Exceptions : m-01, m-03.
@@ -173,7 +173,7 @@ Pour que cet audit ne soit pas lu comme un procès : l'essentiel du dispositif t
 
 ---
 
-## 8. Méthode et limites de cet audit
+## 8. Méthode et limites de cette vérification
 
 **Exécution.** Sept relecteurs adversariaux indépendants (avant-propos + Partie I ; Partie II ; Partie III ; Parties IV-V ; Partie VI ; Partie VII + annexe B ; annexes A/C/D + README + registre + transversal), chacun ayant lu le PRD en entier et les pièces cibles intégralement, avec balayages mécaniques (motifs §4.3, notes, F-xx). En parallèle : contrôles mécaniques centraux (ensemble des F-xx cités vs socle ; intégrité des notes ; dates de gel ; commande de volumétrie ; motifs interdits ; liens ; étiquette git). **Chacun des 15 constats majeurs a ensuite été contre-vérifié par l'auditeur principal — passage relu dans le fichier, référence relue dans le PRD —, sauf M-07** (retenu sur la preuve textuelle du relecteur ; sa racine, un gabarit amendé post-gel, est à arbitrer). Deux faux positifs du balayage brut (notes « orphelines » du ch. 18 et de l'annexe B ; « F-2 ») ont été éliminés par cette contre-vérification.
 
@@ -183,13 +183,13 @@ Pour que cet audit ne soit pas lu comme un procès : l'essentiel du dispositif t
 - Les balayages négatifs (« zéro occurrence ») valent pour les motifs balayés ; un balayage ne prouve pas l'absence de formulations fautives non anticipées.
 - Les vérifications CA-5 (bilinguisme) et une partie des vérifications d'exactitude interne reposent sur échantillonnage, non sur exhaustivité.
 - La question de fait « les relectures P4 ont-elles réellement eu lieu ? » (M-15) est tranchée ici sur les traces internes des fichiers (constats énumérés et appliqués) — c'est le seul témoin disponible dans le dépôt.
-- Hypothèse de mission (tâche autonome) : l'audit a été mené en lecture seule, par relecteurs parallèles avec contre-vérification, sans le moteur de workflow multi-agents (mot-clé non fourni) — l'option la plus réversible.
+- Hypothèse de mission (tâche autonome) : la vérification a été mené en lecture seule, par relecteurs parallèles avec contre-vérification, sans le moteur de workflow multi-agents (mot-clé non fourni) — l'option la plus réversible.
 
 ---
 
 ## 9. Exécution (17 juillet 2026)
 
-L'audit ci-dessus a été **exécuté en totalité** le jour de sa rédaction, à la demande de l'auteur. Non pas lu et classé : appliqué, dans l'ordre que son §7 prescrivait — les racines de gouvernance d'abord, puis les pièces, puis les attestations, puis une relecture adversariale par des relecteurs distincts. Ce qui suit est le compte rendu fidèle de cette exécution, y compris de ce qu'elle a coûté et de ce qu'elle a trouvé au-delà de l'audit.
+La vérification ci-dessus a été **exécuté en totalité** le jour de sa rédaction, à la demande de l'auteur. Non pas lu et classé : appliqué, dans l'ordre que son §7 prescrivait — les racines de gouvernance d'abord, puis les pièces, puis les attestations, puis une relecture adversariale par des relecteurs distincts. Ce qui suit est le compte rendu fidèle de cette exécution, y compris de ce qu'elle a coûté et de ce qu'elle a trouvé au-delà de la vérification.
 
 ### 9.1 Ce qui a été fait
 
@@ -197,17 +197,17 @@ L'audit ci-dessus a été **exécuté en totalité** le jour de sa rédaction, �
 
 **Phase B — les pièces.** Les 24 chapitres, l'avant-propos et les annexes A/B/D corrigés par huit rédacteurs sur fichiers disjoints, chacun tenu de contre-vérifier chaque constat à la source et de refuser d'appliquer un constat qu'il jugerait infondé. Les 15 majeurs et les 44 mineurs traités ; aucune date de gel modifiée (aucune information nouvelle n'entre — ce sont des corrections de conformité, et regeler aurait fait mentir tous les décomptes « douze jours avant la révision MCP »).
 
-**Phase C — les attestations.** Registre de gel réaligné sur l'état vrai (M-15) ; grille CA dotée d'un addendum qui reconnaît ce que l'audit a démenti ; volumétrie re-mesurée sur les 29 pièces et propagée aux cinq documents qui l'annoncent.
+**Phase C — les attestations.** Registre de gel réaligné sur l'état vrai (M-15) ; grille CA dotée d'un addendum qui reconnaît ce que la vérification a démenti ; volumétrie re-mesurée sur les 29 pièces et propagée aux cinq documents qui l'annoncent.
 
 **Phase D — la relecture adversariale (PRDPlan §7), par trois relecteurs distincts des rédacteurs.** Verdict : **prose entièrement publiable, aucun bloquant de contenu.** Un seul bloquant, dans un document de gouvernance, trouvé et corrigé (§9.3).
 
-### 9.2 Ce que l'audit avait manqué — et que l'exécution a trouvé
+### 9.2 Ce que la vérification avait manqué — et que l'exécution a trouvé
 
-L'audit avait déclaré sa propre limite : « un balayage ne prouve pas l'absence de formulations fautives non anticipées ». L'exécution l'a vérifiée à ses dépens. **Cinq classes de fautes réelles lui avaient échappé :**
+La vérification avait déclaré sa propre limite : « un balayage ne prouve pas l'absence de formulations fautives non anticipées ». L'exécution l'a vérifiée à ses dépens. **Cinq classes de fautes réelles lui avaient échappé :**
 
 1. **La cascade des gloses était triple, non simple.** Le glossaire avait retiré trois gloses le 17 juillet (empoisonnement d'outils, injection d'invites, empoisonnement de mémoire) ; M-04 n'en couvrait qu'une. Le chapitre 4 portait encore les deux autres, sous une note les déclarant « définitions imposées » par un glossaire qui ne les portait plus.
-2. **Seize des vingt-neuf pièces** portaient un statut « Commit + registre de gel : À FAIRE » sur des pièces fusionnées, enregistrées et étiquetées `mono-v1.0`. L'audit en avait relevé quatre.
-3. **Deux notes** (ch. 10, ch. 11) déclaraient « ne mobilise que la strate [A] » dans la phrase même qui énonçait un fait de strate [B] — le défaut M-06, sur des notes que l'audit n'avait pas ouvertes.
+2. **Seize des vingt-neuf pièces** portaient un statut « Commit + registre de gel : À FAIRE » sur des pièces fusionnées, enregistrées et étiquetées `mono-v1.0`. La vérification en avait relevé quatre.
+3. **Deux notes** (ch. 10, ch. 11) déclaraient « ne mobilise que la strate [A] » dans la phrase même qui énonçait un fait de strate [B] — le défaut M-06, sur des notes que la vérification n'avait pas ouvertes.
 4. **La commande de référence de volumétrie ne compte pas le mot « à »** — `[[:alnum:]]` en locale C ignore les accents, soit 1 158 occurrences et ~1,3 % de sous-comptage sur tout l'ouvrage. Aucun décompte publié n'était donc exact, et personne ne l'avait vu. Défaut documenté, **non corrigé** : tous les décomptes publiés en dérivent, et le changer au milieu d'une passe les aurait tous falsifiés d'un coup, pour un gain de 1,3 % sur une métrique déclarée indicative.
 5. **La racine de M-14 n'était pas le README** mais PRDPlan §1.4, qui portait « 88 021 » dix lignes au-dessus de son propre « 90 362 ». Le README recopiait le document d'exécution.
 
@@ -219,13 +219,13 @@ L'exécution n'a pas été exempte de la faute qu'elle corrigeait. Elle l'a mêm
 - **Un décompte bloquant** : en propageant la nouvelle volumétrie, l'auteur a mis à jour le total (92 059) et le bloc-somme des annexes (8 761), mais a laissé deux attestations de détail de l'annexe D à sa valeur d'avant la passe (2 596 pour 2 901 mesuré) — rendant le tableau du TOC contradictoire avec lui-même. Trouvé, et prouvé arithmétiquement, par le relecteur du groupe 3.
 - **Un pointeur de version périmé** dans CLAUDE.md, introduit en mettant à jour la ligne voisine. Trouvé par le groupe 3 avant qu'une erreur réseau ne l'interrompe.
 
-C'est le résultat le plus solide de toute l'opération, et il vaut d'être énoncé sans détour. L'audit avait écrit, aux dépens de la grille CA : « un contrôle ne vérifie pas ce qu'il croit avoir contrôlé ». L'exécution en fournit le dernier étage : **une passe de correction ne corrige pas ce qu'elle croit avoir corrigé** — elle introduit ses propres mensonges de statut, et seul un relecteur qui refait le travail sans le croire les voit. À chaque strate — la monographie, l'audit, la passe corrective —, le même défaut a reparu, et à chaque strate il a fallu un œil distinct pour le trouver. Ce n'est pas un échec du dispositif : c'est sa justification.
+C'est le résultat le plus solide de toute l'opération, et il vaut d'être énoncé sans détour. La vérification avait écrit, aux dépens de la grille CA : « un contrôle ne vérifie pas ce qu'il croit avoir contrôlé ». L'exécution en fournit le dernier étage : **une passe de correction ne corrige pas ce qu'elle croit avoir corrigé** — elle introduit ses propres mensonges de statut, et seul un relecteur qui refait le travail sans le croire les voit. À chaque strate — la monographie, la vérification, la passe corrective —, le même défaut a reparu, et à chaque strate il a fallu un œil distinct pour le trouver. Ce n'est pas un échec du dispositif : c'est sa justification.
 
 ### 9.4 État à la clôture
 
 | Objet | État |
 |---|---|
-| Constats de l'audit (0 bloquant, 15 majeurs, 44 mineurs) | Traités ; les observations consignées pour reprise future |
+| Constats de la vérification (0 bloquant, 15 majeurs, 44 mineurs) | Traités ; les observations consignées pour reprise future |
 | Racines de gouvernance (G-1 à G-4) | Tranchées — PRD v1.10, PRDPlan v1.4, TOC v1.5 |
 | Fautes hors audit (§9.2) | Corrigées, sauf le défaut de la commande de volumétrie — **documenté, non corrigé**, arbitrage laissé au projet |
 | Volumétrie | Re-mesurée : **92 059 mots** (90 362 avant la passe ; +1 697, intégralement des réserves) |

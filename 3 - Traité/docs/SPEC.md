@@ -27,7 +27,7 @@ l'exigence à la place de la réalité.
 exit 0 ; clippy à 0 et rustdoc à 0 à 11 h 15 (`cargo clippy --workspace
 --all-targets --release`, `cargo doc --workspace --no-deps`). Le §0
 du PRD enregistre 348 à la clôture de la phase 5 ; la phase 6 a porté le compte à
-419, l'audit du 13 août à 428, et celui du 17 août à 447, puis 465, 466, 467 — des
+419, le banc du 13 août à 428, et celui du 17 août à 447, puis 465, 466, 467 — des
 tests ajoutés pour fermer des trous que ces révisions ont ouverts, aucun affaibli.
 **Ce compte est une mesure, pas une constante** : il ne se cite pas, il se refait
 par la ligne ci-dessus — cinq valeurs en trois heures le même jour, plusieurs
@@ -674,7 +674,7 @@ pub fn scenario_l(/* … */);
 `Result` plutôt que `panic!` : une configuration invalide est un refus rendu à
 l'appelant, jamais un abandon (EX-C11, EX-A52, EX-A53).
 
-**La clause s'applique aussi aux constructeurs, et ne le faisait pas.** L'audit
+**La clause s'applique aussi aux constructeurs, et ne le faisait pas.** Le banc
 du 17 août 2026 a trouvé la dérivation 21–31 s du §7.3 implantée **trois fois**
 avec **trois** arbitrages différents du seuil nul — un `assert!` dans
 `sim-core::detecteur`, un `Result` dans `sim-agents::soupcon`, un `Result` sans
@@ -698,16 +698,16 @@ négatif :
 
 | Elle contient | Elle ne contient pas |
 |---|---|
-| `Application`, les deux points d'entrée `lancer_natif` et `lancer_web`, l'échelle typographique `poser_le_style` posée à l'identique sur les deux cibles | **Zéro** logique de simulation, à **une** exception nommée : `scenario_b.rs::situe_la_tranche` réimplante l'hypothèse que le budget d'événements est découpé en tranches de largeur égale — c'est ce que fait `Fourragement::traiter`, mais `sim-agents` ne rend pas la tranche de bascule, et le jour où le découpage cesserait d'être uniforme l'étiquette « avant / après la bascule » mentirait sans erreur de compilation. Déclarée dans son rustdoc **et** dans l'onglet « Limites » depuis l'audit du 17 août 2026 |
-| `scenario_a.rs`, `scenario_b.rs` — les deux vues livrées | **Zéro** définition de scénario, à **deux** exceptions nommées : les critères d'acceptation viennent tous de `sim-agents`, mais **les valeurs d'ouverture des deux vues sont écrites ici** — six dans `VueA::default` (n, p, ℓ₉₉, aller simple, degré de dépôt, taux d'omission) et trois dans `VueB::default` (n, budget, graine). Ce sont les défauts des tableaux du §7 du PRD, transcrits faute d'accesseur : `sim_agents::scenario_a` est une fonction à sept paramètres sans constructeur de défaut, et `Params::scenario_b()` pose n = 64 là où la vue ouvre à 16 (Θ(n²)). Rien ne tient ces transcriptions en accord avec le PRD. **Les plages de curseur, elles aussi, sont écrites ici** — quinze littéraux dans les deux vues, dont quatre qu'aucun tableau du §7 du PRD ne fixe. Les neuf valeurs d'ouverture sont déclarées dans l'onglet « Limites » depuis l'audit du 17 août 2026 |
-| Les onglets « Limites » et « Repères » | **Zéro** texte du traité, à **une** exception nommée : le glossaire vient de `sim_agents::glossaire`, les reformulations de `Bloc::en_clair`, trois des **six** listes de l'onglet venant des `hors_perimetre()` — mais la provenance des deux bornes est recopiée dans `scenario_b.rs::SOURCE_BORNES`, faute d'accesseur dans `sim-agents`. La copie a déjà divergé de `Bornes::LEGENDE`, affichée quatre lignes plus bas dans le même cadre ; depuis l'audit du 17 août 2026 le test `la_provenance_des_bornes_suit_encore_sim_agents` échoue à la place de l'écran |
+| `Application`, les deux points d'entrée `lancer_natif` et `lancer_web`, l'échelle typographique `poser_le_style` posée à l'identique sur les deux cibles | **Zéro** logique de simulation, à **une** exception nommée : `scenario_b.rs::situe_la_tranche` réimplante l'hypothèse que le budget d'événements est découpé en tranches de largeur égale — c'est ce que fait `Fourragement::traiter`, mais `sim-agents` ne rend pas la tranche de bascule, et le jour où le découpage cesserait d'être uniforme l'étiquette « avant / après la bascule » mentirait sans erreur de compilation. Déclarée dans son rustdoc **et** dans l'onglet « Limites » depuis le banc du 17 août 2026 |
+| `scenario_a.rs`, `scenario_b.rs` — les deux vues livrées | **Zéro** définition de scénario, à **deux** exceptions nommées : les critères d'acceptation viennent tous de `sim-agents`, mais **les valeurs d'ouverture des deux vues sont écrites ici** — six dans `VueA::default` (n, p, ℓ₉₉, aller simple, degré de dépôt, taux d'omission) et trois dans `VueB::default` (n, budget, graine). Ce sont les défauts des tableaux du §7 du PRD, transcrits faute d'accesseur : `sim_agents::scenario_a` est une fonction à sept paramètres sans constructeur de défaut, et `Params::scenario_b()` pose n = 64 là où la vue ouvre à 16 (Θ(n²)). Rien ne tient ces transcriptions en accord avec le PRD. **Les plages de curseur, elles aussi, sont écrites ici** — quinze littéraux dans les deux vues, dont quatre qu'aucun tableau du §7 du PRD ne fixe. Les neuf valeurs d'ouverture sont déclarées dans l'onglet « Limites » depuis le banc du 17 août 2026 |
+| Les onglets « Limites » et « Repères » | **Zéro** texte du traité, à **une** exception nommée : le glossaire vient de `sim_agents::glossaire`, les reformulations de `Bloc::en_clair`, trois des **six** listes de l'onglet venant des `hors_perimetre()` — mais la provenance des deux bornes est recopiée dans `scenario_b.rs::SOURCE_BORNES`, faute d'accesseur dans `sim-agents`. La copie a déjà divergé de `Bornes::LEGENDE`, affichée quatre lignes plus bas dans le même cadre ; depuis le banc du 17 août 2026 le test `la_provenance_des_bornes_suit_encore_sim_agents` échoue à la place de l'écran |
 | Trois rangs de cadre — `cadre` découpe une section numérotée, `encart` accompagne sans découper, `bloc_pd8` pose le sien | Ni export CSV, ni parcours « le fil » : **O6 n'est pas livré** |
 
 **Les listes d'absences ne portent aucun balisage Markdown.** `sim-viz` les rend
 par un `egui::RichText`, et egui n'a **pas** d'analyseur Markdown : un accent
 grave ou une paire d'astérisques sort littéralement à l'écran. La convention est
 les guillemets, celle qu'EX-V09 avait déjà posée. La règle n'est pas tenue par un
-commentaire — l'audit du 17 août l'a vue être écrite dans une crate et violée
+commentaire — le banc du 17 août l'a vue être écrite dans une crate et violée
 dans une autre le même jour — mais par deux tests, l'un dans `sim-viz` sur les
 trois listes, l'autre local à `sim-milieu` ; 71 paires d'accents graves ont été
 retirées à cette occasion.
@@ -796,7 +796,7 @@ seulement sur toute l'interface.
 
 **Les trois commandes à passer avant de committer**, et non deux : `cargo test`,
 `cargo clippy` et `cargo doc`. La troisième manquait à la procédure, et c'est
-elle qui a laissé passer les deux renvois rustdoc cassés que l'audit a trouvés —
+elle qui a laissé passer les deux renvois rustdoc cassés que le banc a trouvés —
 la procédure était structurellement incapable de voir le seul défaut mécanique
 que le dépôt portait en cours.
 
@@ -810,17 +810,17 @@ de `cargo test --workspace` lancé à la main.
 
 La phase 6 est **livrée**. Quatre clauses de ce document ont changé, une
 cinquième a été ajoutée par la mesure plutôt que par la spécification, et une
-sixième par l'audit du dépôt.
+sixième par le banc de vérification du dépôt.
 
 | Clause d'avant | Ce qu'elle est devenue |
 |---|---|
 | L'aléa de décision vient du `Alea` unique, un tirage par agent | `famille::TirageDeDecision` : deux agents d'une même famille consomment le **même** tirage pour une même décision **au même tour de leur boucle**. Le déterminisme tient — le tirage partagé descend du même générateur semé, et le rejeu est vérifié par `le_partage_de_tirage_ne_casse_pas_le_rejeu` |
 | `Enregistrement` n'avait pas d'auteur | `Enregistrement::auteur: Identite`, **apposé par le milieu** à la réception. `Milieu::ecrire` prend l'identité en paramètre ; la charge utile est un `f64`, donc il n'y a structurellement aucune place pour un auteur déclaré. `Milieu::sessions_partagees()` **constate** la condition d'échec sans pouvoir l'empêcher |
 | `ModeleFaute::hors_modele()` avait 4 entrées | Cinq : l'adversité endogène du §8.3 **du traité**, avec la distinction explicite d'avec DT8 — l'agent menteur est *injecté*, ce régime-ci est *produit* |
-| Trois hypothèses nommées conditionnaient les bornes | Six. `Params::bornes_applicables` rend une `Err` portant son motif sur γ, sur le couple φ, sur le couple η, sur `m = 0`, sur un exposant négatif, et dès que la part de conformité est non nulle : la borne est **absente**, pas grisée. L'audit a trouvé que seul le couple φ était gardé, de sorte que le portail rendait `Ok` sur des planchers de probabilité valant `NaN`, `inf` ou `−0,00125` |
+| Trois hypothèses nommées conditionnaient les bornes | Six. `Params::bornes_applicables` rend une `Err` portant son motif sur γ, sur le couple φ, sur le couple η, sur `m = 0`, sur un exposant négatif, et dès que la part de conformité est non nulle : la borne est **absente**, pas grisée. Le banc a trouvé que seul le couple φ était gardé, de sorte que le portail rendait `Ok` sur des planchers de probabilité valant `NaN`, `inf` ou `−0,00125` |
 | *(clause nouvelle)* | **L'effacement d'une borne suit le réglage, jamais la mesure.** `dettes::verdicts` prend une `&Familles`, non une `&Conformite` |
-| *(clause nouvelle, relevée par l'audit)* | **Effacer une borne n'efface pas une mesure.** `Fourragement::verifier_bornes` relève `plancher_observe` et `hors_dominante_observee` **avant** de consulter le portail, et non à l'intérieur de la branche qui s'arrête quand la borne est effacée. L'ordre inverse faisait disparaître la mesure au moment précis où elle devenait la seule chose à regarder |
-| *(clause nouvelle, relevée par l'audit du 17 août 2026)* | **`Politique::PrixCroissant` facture le k-ième preneur distinct `1 + pente × (k − 1)`, le soumissionnaire compris.** Le **deuxième** preneur distinct paie donc déjà la pente. Le code facturait sur l'état *d'avant* la soumission, de sorte que le deuxième payait encore le prix nominal et que le prix ne croissait pas « avec le nombre de preneurs » (§8.1) : la documentation du champ avait raison contre le code, et c'est le code qui a été corrigé. Le PRD ne chiffre pas cette grandeur — il exige « prix croissant avec le nombre de preneurs » (EX-M26) —, donc la formule est ici et nulle part ailleurs, tenue par `le_prix_monte_des_le_deuxieme_preneur` : à pente 1 et quatre preneurs distincts, le prix cumulé vaut **10**, non 7 |
+| *(clause nouvelle, relevée par le banc)* | **Effacer une borne n'efface pas une mesure.** `Fourragement::verifier_bornes` relève `plancher_observe` et `hors_dominante_observee` **avant** de consulter le portail, et non à l'intérieur de la branche qui s'arrête quand la borne est effacée. L'ordre inverse faisait disparaître la mesure au moment précis où elle devenait la seule chose à regarder |
+| *(clause nouvelle, relevée par le banc du 17 août 2026)* | **`Politique::PrixCroissant` facture le k-ième preneur distinct `1 + pente × (k − 1)`, le soumissionnaire compris.** Le **deuxième** preneur distinct paie donc déjà la pente. Le code facturait sur l'état *d'avant* la soumission, de sorte que le deuxième payait encore le prix nominal et que le prix ne croissait pas « avec le nombre de preneurs » (§8.1) : la documentation du champ avait raison contre le code, et c'est le code qui a été corrigé. Le PRD ne chiffre pas cette grandeur — il exige « prix croissant avec le nombre de preneurs » (EX-M26) —, donc la formule est ici et nulle part ailleurs, tenue par `le_prix_monte_des_le_deuxieme_preneur` : à pente 1 et quatre preneurs distincts, le prix cumulé vaut **10**, non 7 |
 
 **Pourquoi la clause nouvelle, et c'est le résultat le plus important de la
 phase.** Le premier point du critère de sortie annonçait un Φ_c passant de ≈ 0 à

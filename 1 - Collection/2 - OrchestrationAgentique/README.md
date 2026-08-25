@@ -60,7 +60,7 @@ ci-dessus porte la réserve qui subsiste — *elle marque l'arbre clos, non celu
 |---|---|
 | `README.md` | ce fichier — présentation du volume |
 | `monographie/` | Les 29 pièces, un fichier par chapitre (parties I-VII, annexes `90-annexes/`, registre des gels `99-registre-gel.md`) + son [index de lecture](monographie/README.md) |
-| `prd/` | Documents de gouvernance et sources — [`PRD.md`](prd/PRD.md), [`PRDPlan.md`](prd/PRDPlan.md), [`TOC.md`](prd/TOC.md), [`audit.md`](prd/audit.md), et les deux PDF académiques du socle (F-36, F-37) |
+| `prd/` | Documents de gouvernance et sources — [`PRD.md`](prd/PRD.md), [`PRDPlan.md`](prd/PRDPlan.md), [`TOC.md`](prd/TOC.md), [le rapport de vérification globale](prd/audit.md), et les deux PDF académiques du socle (F-36, F-37) |
 | `verification/` | Rapports de revalidation ([16](verification/revalidation-2026-07-16.md), [17](verification/revalidation-2026-07-17.md) juillet 2026) et grille de conformité [CA-1..CA-8](verification/relecture-CA.md) |
 | `build/` | Pipeline de rendu PDF (assemblage + Pandoc → Typst) |
 | `Monographie.md` / `Monographie.pdf` | Assemblage versionné des 29 pièces et son rendu (387 p.) |

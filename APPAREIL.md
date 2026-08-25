@@ -73,7 +73,7 @@ sorti de l'index, et deux `README.md` de `3 - Traité/` le citaient encore en li
 en tête d'une rangée de tableau, celui de `docs/` au corps, où il l'opposait au journal de la revue
 par les pairs. ☑ **La décision d'auteur que ce relevé laissait ouverte est prise le 25 août 2026** :
 les deux renvois sont retirés, la pièce n'est pas restaurée, et son nom est effacé du dépôt entier —
-*ce qu'elle a produit de durable est sous `3 - Traité/bancs/audit-2026-08/`, non dans le journal.* ⚠ **Aucun contrôle du dépôt ne résout un lien markdown** : c'est
+*ce qu'elle a produit de durable est au §0.2 du PRD du traité et à son registre, non dans le journal — le dossier de banc qui en portait les dix rapports est lui-même sorti du dépôt le 25 août 2026.* ⚠ **Aucun contrôle du dépôt ne résout un lien markdown** : c'est
 une mesure faite pour ce relevé, pas une garantie que le dépôt tient. La commande est une résolution
 de chaque cible relative contre le système de fichiers, blocs et *spans* de code exclus — un
 `` `[…](cible)` `` cité en prose n'est pas un lien.

@@ -34,7 +34,7 @@ Le compte se répartit en 424 tests unitaires dans les modules — 254 dans
 `sim-agents`, 96 dans `sim-core`, 68 dans `sim-milieu`, 6 dans `sim-viz` — et 43
 tests d'intégration, qui sont les critères de sortie de phase. Le §0 du PRD
 enregistre 348 à la clôture de la phase 5 ; la phase 6 a porté le compte à 419,
-l'audit du 13 août à 428, et celui du 17 août à 447, puis 465, 466, 467 — des
+le banc du 13 août à 428, et celui du 17 août à 447, puis 465, 466, 467 — des
 tests ajoutés pour fermer des trous que la révision a ouverts, aucun affaibli.
 **Le compte est une mesure et se refait ; c'est la répartition, elle, qui dit où
 le filet est lâche** — 43 tests d'intégration pour 424 unitaires, et six seulement
@@ -205,7 +205,7 @@ ces tests** — ce sont les preuves du tableau du §0 du PRD.
   dont l'itération n'est pas ordonnée (PD1). **Ces neuf interdictions sont `deny`**, par le
   `[workspace.lints.clippy]` du `Cargo.toml` racine que les six membres héritent
   — sans quoi elles restent au niveau `warn` de leur groupe `style` et `cargo
-  clippy` sort **0 sur du code interdit**, ce qui était le cas jusqu'à l'audit.
+  clippy` sort **0 sur du code interdit**, ce qui était le cas jusqu'à le banc.
 - Le banc DT1 échoue si une opération à parité exigée diverge. La divergence des
   transcendantes de plateforme est son **résultat**, pas une régression, et ne
   le fait pas échouer.

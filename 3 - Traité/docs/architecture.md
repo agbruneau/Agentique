@@ -240,7 +240,7 @@ que rien ne tient à jour. C'est ce qui a laissé passer un compte faux à l'éc
 pendant toute la phase 6, et de nouveau EX-V23 pendant tout l'après-phase 6 :
 le §0 du PRD écrivait que l'onglet déclarait la file d'arbitrage, il ne la
 déclarait pas, et la liste ne comptait que quinze des seize `EX-V*` sans point
-d'appel. L'audit du 17 août 2026 a ajouté la ligne manquante, puis la sixième
+d'appel. Le banc du 17 août 2026 a ajouté la ligne manquante, puis la sixième
 liste — « ce que cette interface décide à la place de `sim-agents` », trois
 énoncés —, parce que PD6 vaut aussi dans l'autre sens : ce que la vue tient et
 qu'elle affirme ailleurs ne pas tenir s'affiche au même rang que ce qu'elle n'a

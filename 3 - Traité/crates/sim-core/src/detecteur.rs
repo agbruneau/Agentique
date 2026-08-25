@@ -75,7 +75,7 @@ impl Etat {
 /// Le tenir *par le type* demanderait des champs privés et quatre accesseurs,
 /// ce qui casse un appelant hors crate (`crates/sim-agents/src/pair_a_pair.rs`,
 /// qui lit `p.suspicions` et `p.fausses_suspicions`) : changement d'interface,
-/// hors du périmètre de l'audit de `sim-core`.
+/// hors du périmètre du banc de `sim-core`.
 #[derive(Clone, Copy, Debug)]
 #[non_exhaustive]
 pub struct Proprietes {
@@ -155,7 +155,7 @@ impl Detecteur {
     /// intervalles —, et une `expiration` qui n'est pas strictement plus courte
     /// que `periode`, auquel cas deux sondes se chevauchent et le compte
     /// d'échecs consécutifs cesse de vouloir dire quoi que ce soit (§4.3 du
-    /// traité). C'était un `assert!` jusqu'à l'audit ; la clause 4 du §7 de
+    /// traité). C'était un `assert!` jusqu'au banc ; la clause 4 du §7 de
     /// `docs/SPEC.md` — « une configuration invalide est un refus rendu à
     /// l'appelant, jamais un abandon » — est la même que celle sous laquelle
     /// `sim_agents::soupcon::DetecteurInfectieux::completude` et
@@ -448,7 +448,7 @@ mod tests {
     /// PD6 dans les deux sens : « inactif » quand le réglage est nul, la valeur
     /// réelle quand il ne l'est pas. Afficher « inactif » sur un champ réglé
     /// est le mensonge symétrique de celui que PD6 vise, et c'est celui que
-    /// l'audit a trouvé installé.
+    /// le banc a trouvé installé.
     #[test]
     fn le_resume_suit_le_reglage_au_lieu_de_le_taire() {
         let ligne = |d: &Detecteur, cle: &str| {

@@ -9,7 +9,7 @@ charge de la machine**, soit presque deux ordres de grandeur en dessous.
 dépendent que de la graine et du budget, et se retrouvent au chiffre près à tout
 rejeu. Le débit, lui, se divise par une durée murale ; il varie d'un passage à
 l'autre sur la même machine, et le verdict ne repose pas dessus. Un rejeu de
-l'audit a rendu 12,9 et 10,8 là où le tableau ci-dessous porte 15,2 et 13,2, avec
+le banc a rendu 12,9 et 10,8 là où le tableau ci-dessous porte 15,2 et 13,2, avec
 `s simulées` et `retard max` identiques — c'est exactement la distinction que le
 verdict DT1 impose pour un chiffre qui dépend de la machine de construction.
 

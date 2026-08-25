@@ -66,9 +66,9 @@ du PRD §6**, qui plaçait son second mouvement après les Livres I et III.
 | **Volet résiduel de G-1** | ⚠ **dû, et il l'est plus lourdement ici qu'ailleurs** — **aucun fait périssable des dix pièces n'a été repris à la source primaire** |
 | **Socle consolidé** | ⚠ **zéro entrée** — **G-3 n'est pas entamée** |
 | **Énoncés centraux au sens de CA-IV-01** | ⚠ **aucun**, dans aucune des dix pièces |
-| **Sièges posés** | ⚠ **CINQ, et non trois** — *le décompte publié en était faux* : trois versés à l'appareil le 27 juillet 2026, **deux découverts par l'audit du 28** (voir plus bas) |
+| **Sièges posés** | ⚠ **CINQ, et non trois** — *le décompte publié en était faux* : trois versés à l'appareil le 27 juillet 2026, **deux découverts par la vérification du 28** (voir plus bas) |
 | **Statut des pièces** | **brouillon non publiable** — inchangé |
-| **Passe de correction du 28 juillet 2026** | ⚠ **douze constats d'audit soldés dans les dix pièces**, dont **dix thèses re-citées par copie** et **les dix champs « Garde-fous balayés » re-mesurés** sous la décision 16 — *aucune porte franchie, aucun statut changé* |
+| **Passe de correction du 28 juillet 2026** | ⚠ **douze constats de vérification soldés dans les dix pièces**, dont **dix thèses re-citées par copie** et **les dix champs « Garde-fous balayés » re-mesurés** sous la décision 16 — *aucune porte franchie, aucun statut changé* |
 
 ⚠ **Ce tableau est un constat daté et deux de ses lignes ont été DÉPASSÉES depuis — le rappel est du
 8 août 2026, il ne réécrit rien.** ☑ **La porte G-3 est franchie le 28 juillet 2026** et le socle
@@ -142,7 +142,7 @@ non 55 249.* ⚠ ***Une mesure se prend sur le corpus que le commit produit***, 
 cet écart d'un mot enfreignait. *(2)* **Les 775 mots restants sont ceux de la passe de correction du
 28 juillet 2026** — thèses re-citées sous leur forme réalignée, blocs de désalignement reformulés au
 passé, identifiants de corpus portés aux cinq lots du ch. 41, renvois de siège écrits. ⚠ **Aucun n'est
-du gonflement** : *ils sont tous dans des sections que l'audit a nommées, et **D-4 interdit autant le
+du gonflement** : *ils sont tous dans des sections que la vérification a nommées, et **D-4 interdit autant le
 gonflement que l'amputation***.
 
 ⚠ **La leçon du Livre I a de nouveau été appliquée, et de nouveau elle n'a pas suffi — mais l'écart a
@@ -234,7 +234,7 @@ assigné**. *Ne pas le lire au même régime de preuve que ses voisins.*
 | ⚠ **La collision « fabrique »** (décision 12c du TOC) | **ch. 43 § 43.1** | ☑ **versé** — *par la passe de gouvernance du 28 juill. 2026 ; présence relevée sur le script le 8 août 2026* | la désambiguïsation des quatre emplois du mot ; le **ch. 41 § 41.1** y renvoie |
 | ⚠ **La conformité traçable** | **ch. 44 § 44.6** | ☑ **versé** — *par la passe de gouvernance du 28 juill. 2026 ; présence relevée sur le script le 8 août 2026* | la chaîne *pilote → évaluation → exigence → réalisation → élément exécutable* et son critère d'auditabilité ; les **ch. 45 § 45.14** et **ch. 46 § 46.2.3** y renvoient |
 
-: Les cinq sièges du Livre IV. ⚠ **Le décompte publié le 27 juillet 2026 — « trois » — était faux, et c'est l'audit du 28 qui l'a établi** (constat IV.1).
+: Les cinq sièges du Livre IV. ⚠ **Le décompte publié le 27 juillet 2026 — « trois » — était faux, et c'est la vérification du 28 qui l'a établi** (constat IV.1).
 
 ⚠ **Les deux sièges découverts portaient déjà la forme pleine du marqueur, et c'est ce qui rend
 l'omission coûteuse.** *La règle du dossier est que **les trois gestes vont ensemble — la table,
@@ -262,7 +262,7 @@ Chacune a été **portée là où elle fait foi**, jamais déclarée close sur p
 un réalignement de plan, à l'appareil pour une dette d'outillage. ☑ **Le détail de chaque clôture vit
 désormais dans la note de statut de la pièce qui l'avait ouverte**, sous la forme d'une ligne
 « ☑ **Issue, 27 juillet 2026 —** … » appendue à chaque remontée. ⚠ **Cette affirmation était FAUSSE
-avant le 28 juillet 2026, et l'audit l'a établi** (constat IV.2) : *les dix notes ne consignaient que
+avant le 28 juillet 2026, et la vérification l'a établi** (constat IV.2) : *les dix notes ne consignaient que
 les **ouvertures**, jamais les issues, et le seul lieu où elles vivaient était le tableau ci-dessous.*
 **Les trente-deux issues ont été portées aux pièces**, une par une, et le décompte a été re-mesuré
 — **trente-deux lignes insérées pour trente-deux remontées**.
@@ -290,7 +290,7 @@ les **ouvertures**, jamais les issues, et le seul lieu où elles vivaient était
 | **R-IV-56** | ch. 42 | ☑ **TOC, Annexe C + PRD, domaine de G-1** — la divergence de date sur la ligne directrice de l'AMF est **maintenue au registre avec sa réserve**, ⚠ *l'arbitrage du cadrage n'ayant aucune autorité tant que la somme n'est pas rédigée* |
 | **R-IV-57** | ch. 43 | ☑ **TOC, décisions 8 et 14** — « **et la fabrique d'identité** imposée sous exigence réglementaire stricte » : ⚠ **l'extension est déclarée construction d'auteur à la ligne Fusion**, *aucune des deux sources ne la portant, et « imposé » étant une formule d'obligation que R-06 borne* |
 | **R-IV-58** | ch. 43 | ☑ **PRD, domaine de G-4** — le couple « le Vol. I écrit *réglementairement exigé* / le Vol. II établit une **attente** » entre au domaine ; ⚠ **ce n'est pas une contradiction** : *lacune de couverture apparente, et le volume le plus ancien ne se corrige pas* |
-| **R-IV-59** | ch. 43 | ☑ **appareil** — les **trois sièges alors comptés** versés à la table `SIEGES`, **harnais de mutation rejoué** ; ⚠ **deux défauts réels trouvés au premier passage**, dont *un chapitre qui touchait la matière d'un siège sans y renvoyer*. ⚠ **Ce que la clôture avait manqué, et que l'audit du 28 juillet 2026 a établi** : *le Livre pose **cinq** sièges, non trois — la collision « fabrique » (ch. 43 § 43.1) et la conformité traçable (ch. 44 § 44.6) portaient leur marqueur sans entrée de table* ; ☐ **leur versement est dû au commit du 28** |
+| **R-IV-59** | ch. 43 | ☑ **appareil** — les **trois sièges alors comptés** versés à la table `SIEGES`, **harnais de mutation rejoué** ; ⚠ **deux défauts réels trouvés au premier passage**, dont *un chapitre qui touchait la matière d'un siège sans y renvoyer*. ⚠ **Ce que la clôture avait manqué, et que la vérification du 28 juillet 2026 a établi** : *le Livre pose **cinq** sièges, non trois — la collision « fabrique » (ch. 43 § 43.1) et la conformité traçable (ch. 44 § 44.6) portaient leur marqueur sans entrée de table* ; ☐ **leur versement est dû au commit du 28** |
 | **R-IV-100** | ch. 44 | ☑ **TOC, décision 8** — les **neuf sous-sections numérotées « 43.1.x » sous le chapitre 44** et la **table de couverture dirigeant vers « § 43 »** sont réalignées ; ⚠ **classe de défaut déjà consignée pour trois passes de structure consécutives** — *aucun des quinze contrôles ne lit les tables détaillées* |
 | **R-IV-101** | ch. 44 | ☑ **PRD, volet résiduel de G-1, DOMAINE DÉCLARÉ** — la **re-vérification du mécanisme d'extension sur le document normatif** est inscrite avec son domaine : *liste des éléments retirés ou renommés, mécanisme d'extension, état du support d'outillage*. ⚠ **Le blocage tient pour la publication du § 44.1.9 et, par dépendance, du ch. 45** : *le registre reste publié sous réserve* |
 | **R-IV-102** | ch. 44 | ☑ **PRD, G-3** — la **voie d'élévation** est déclarée pour ce chapitre : *lecture des sources primaires que le Vol. I cite*, ⚠ **avec sa borne** — *une entrée sans source primaire tierce reste une thèse attribuée et ne porte jamais un fait central* |
@@ -341,9 +341,9 @@ les **ouvertures**, jamais les issues, et le seul lieu où elles vivaient était
    ⚠ ***Un arbitrage postérieur solde une remontée ; il n'efface pas l'ordre dans lequel les gestes ont
    été faits.***
 
-## ⚠ La passe de correction du 28 juillet 2026 — douze constats d'audit soldés dans les pièces
+## ⚠ La passe de correction du 28 juillet 2026 — douze constats de vérification soldés dans les pièces
 
-**Sur instruction d'auteur, en réponse à l'audit du 28 juillet 2026, §7 et §3.** La
+**Sur instruction d'auteur, en réponse à la vérification du 28 juillet 2026, §7 et §3.** La
 passe **corrige, elle ne réédite pas** : aucune section n'est ajoutée, aucun fait n'est versé, aucune
 thèse n'est réécrite. ⚠ **Elle ne franchit aucune porte et ne change aucun statut** — *le socle
 consolidé compte toujours zéro entrée, G-3 n'est pas entamée, CA-IV-13 reste insatisfaite, et les dix
@@ -364,7 +364,7 @@ pièces restent un brouillon non publiable.*
 | **III.C.3** *étendu* | **Le renvoi au siège du tri prospectif (ch. 49 § 49.0) est écrit** au **ch. 37 § 37.7** et au **ch. 46 § 46.3** — *les deux seules pièces du Livre qui écrivent « tri prospectif », balayage exhaustif* |
 | **T-4** *(décision 15)* | **Les cinq lots du ch. 41 portent les identifiants de leur corpus** — *un critère de clôture qui ne nomme pas ses sources est inexécutable* —, et **le cinquième (§ 41.7) reçoit le corpus et le critère qu'il n'avait pas** |
 
-: Les douze constats d'audit soldés par la passe du 28 juillet 2026, et le geste de chacun. ⚠ **Domaine du balayage des décomptes, déclaré plutôt que chiffré** : *les **dix champs « Garde-fous balayés »** et les **dix attestations de clôture** ont été re-mesurés entrée par entrée ; le cardinal des entrées n'est pas publié ici, faute d'être re-mesurable autrement qu'en les recomptant* — **c'est la décision 16 appliquée à ce README même.**
+: Les douze constats de vérification soldés par la passe du 28 juillet 2026, et le geste de chacun. ⚠ **Domaine du balayage des décomptes, déclaré plutôt que chiffré** : *les **dix champs « Garde-fous balayés »** et les **dix attestations de clôture** ont été re-mesurés entrée par entrée ; le cardinal des entrées n'est pas publié ici, faute d'être re-mesurable autrement qu'en les recomptant* — **c'est la décision 16 appliquée à ce README même.**
 
 ⚠ **Trois choses que cette passe n'a PAS faites, et qui se déclarent.** *(1)* **Elle n'a touché ni le
 TOC, ni le PRD, ni le conspectus du volume** — *un rédacteur ne les corrige jamais, il remonte.*

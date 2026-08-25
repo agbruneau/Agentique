@@ -1512,7 +1512,7 @@ TOC (version++), PRD §6.2, en-têtes et corps des six pièces, registre de gel 
 | **ch. 10 §10.2** | « limites **démontrées** » | Le socle porte des statuts et des périmètres ; **R-02 proscrit le verbe** pour les mécanismes, et l'employer pour leurs limites entretient la même confusion |
 | **ch. 11 §11.2** | « le point de contact entre identité et **gouvernance des frontières** » | Le lot L-07 n'a instruit aucune source sur la gouvernance des frontières ; la section est composée depuis L-03, L-05 et L-13, dont les sièges sont ailleurs |
 | **ch. 14** (titre) | Superlatif — « le mécanisme **le moins spécifié** de la pile » | Le socle ne documente **aucun balayage comparatif** des mécanismes de la pile. Repris mot pour mot du TOC v0.6 |
-| **ch. 17 §17.2** | « audit des mécanismes de la **Partie II** » | L'audit exige le mandat AP2, qui est en **Partie III** |
+| **ch. 17 §17.2** | « audit des mécanismes de la **Partie II** » | La vérification exige le mandat AP2, qui est en **Partie III** |
 | **ch. 20** (titre) | Nomme le **RGPD** | Absent du socle **et du programme de constitution** (PRD §7.6, quinze lots) — même forme que R-G-09 pour OIDC |
 | **ch. 21 §21.3** | Nomme **ISO/IEC SC 42** et **CEN-CENELEC** | Le socle ne documente ni l'une ni l'autre instance |
 

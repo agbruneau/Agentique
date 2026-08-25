@@ -1040,8 +1040,8 @@ mod tests {
     /// astérisque d'emphase s'affiche telle quelle et un retour à la ligne coupe
     /// la puce. La contrainte appartient donc au rendu, c'est-à-dire à cette
     /// crate — et il y a **trois** listes, écrites dans trois crates par trois
-    /// morceaux d'audit séparés. Les trois se vérifient ici plutôt qu'à trois
-    /// exemplaires : `sim-milieu` en garde un local, hérité de l'audit, et
+    /// morceaux de banc séparés. Les trois se vérifient ici plutôt qu'à trois
+    /// exemplaires : `sim-milieu` en garde un local, hérité du banc, et
     /// `sim-agents` comme `sim-core` n'en avaient aucun — c'est côté `sim-core`
     /// que les astérisques étaient revenues.
     ///

@@ -12,7 +12,7 @@
 //! celle du **§8.3 du traité, p. 127**, où la proposition, elle, s'écrit « la mesure ajoute
 //! qu'il rend tout aussi bon marché ». Troisième édition dans les deux cas. Le
 //! §9 du PRD portait la même épissure sous la seule mention « §8.3, p. 94 » —
-//! deux provenances pour une, et la page d'une édition antérieure ; l'audit du
+//! deux provenances pour une, et la page d'une édition antérieure ; le banc du
 //! 17 août 2026 l'y a démontée en même temps qu'ici.
 //!
 //! **Ce scénario ne montre rien de neuf, et c'est sa forme.** Il rejoue le

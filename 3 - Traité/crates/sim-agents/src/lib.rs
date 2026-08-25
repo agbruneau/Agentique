@@ -68,7 +68,7 @@ pub use stigmergie::{Bornes, Evt, Fourragement, Mesures, MomentTrace, Params};
 /// **Cette liste est un livrable, pas un commentaire.** Un mécanisme absent a,
 /// dans tout résultat, une probabilité de faute nulle, et c'est un mensonge
 /// silencieux ; mais une liste qui déclare absent un mécanisme livré est le
-/// mensonge symétrique, et l'audit du dépôt a montré qu'il est le plus facile
+/// mensonge symétrique, et le banc de vérification du dépôt a montré qu'il est le plus facile
 /// des deux à laisser s'installer. Toute entrée retirée d'ici doit l'être parce
 /// que le mécanisme est **branché**, jamais parce qu'il est écrit quelque part.
 ///

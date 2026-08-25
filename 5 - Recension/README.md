@@ -388,7 +388,7 @@ nu, là où ses dix voisins portent une légende.*
 ```
 
 ☑ **Douze fichiers versés le 20 août 2026, ce README compris treize, et rien d'autre** : ni `build/`,
-ni `chapitres/`, ni `audit.md`, ni `check-*.py`. ⚠⚠ **Ils sont douze depuis le 21 août 2026** : *le `.html` du document long a été **détruit** ce
+ni `chapitres/`, ni le rapport de vérification, ni `check-*.py`. ⚠⚠ **Ils sont douze depuis le 21 août 2026** : *le `.html` du document long a été **détruit** ce
 jour-là — **décision d'auteur** —, et ce dossier ne porte donc plus qu'un seul HTML, celui de la
 planche.* ☑ *Le fichier reste intact dans l'historique `git`, **759 612 octets**, et sa feuille de
 style survit dans le HTML de la planche : **rien de ce qu'il portait n'est perdu, hors sa table des

@@ -309,14 +309,14 @@ la pièce** qui l'avait ouverte.
 
 ## ⚠ La passe de correction du 28 juillet 2026 — ce qui a été corrigé, ce qui a été remonté
 
-Sur instruction d'auteur, en réponse à l'audit du 28 juillet 2026. ⚠ **Cette passe
+Sur instruction d'auteur, en réponse à la vérification du 28 juillet 2026. ⚠ **Cette passe
 corrige ; elle ne réédite pas, et elle ne franchit aucune porte** : le socle consolidé compte toujours
 **zéro entrée**, **G-3 n'est pas entamée**, **CA-IV-11 et CA-IV-13 restent insatisfaites**, et les dix
 pièces demeurent un **brouillon non publiable**. *Corriger une citation n'est pas la vérifier ; aligner
 un cardinal n'est pas relire.* Le périmètre est **`Livre II/` seul** — ni le TOC, ni le PRD, ni le
 conspectus du volume n'ont été touchés depuis ici.
 
-| Constat de l'audit | Correction, et où |
+| Constat de la vérification | Correction, et où |
 |---|---|
 | **II.1 — bloquant** : trois thèses de second mouvement non verbatim | ☑ **Corrigées par copie littérale** depuis l'entrée courante du TOC, ch. 12, 20 et 21. ⚠ Le ch. 21 avait **retranché une clause entière** — « — le quatrième, l'exploitation, est refermé au Livre IV » —, les ch. 12 et 20 une **ponctuation**. ☑ **Les treize thèses du Livre ont ensuite été re-collationnées mot à mot contre le TOC v0.28, par comparaison de chaînes** : les dix autres étaient exactes |
 | **II.2** : cinq introductions commentent la forme antérieure de leur thèse | ☑ **Réécrites au passé et à l'état réel** — ch. 14 (§ 14.0), ch. 15 (§ 15.3), ch. 16 (§ 16.4), ch. 17 (§ 17.0), ch. 19 (§ 19.0). *Chacune nomme désormais la forme que la source avait bornée, sa date, et la remontée qui a soldé l'écart* — l'information historique est conservée, la contradiction avec la tête est levée |

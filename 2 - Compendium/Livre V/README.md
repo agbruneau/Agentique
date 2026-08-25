@@ -157,7 +157,7 @@ dérivation ni d'un oubli d'addition — il vient de ce que la matière neuve n'
 | [Ch. 50](50-peremption-protocole-revalidation.md) — péremption et revalidation | 4 200 | 3 440 | **3 532** | −15,9 % |
 | **Livre V** | **34 000** | 25 017 | **26 474** | **−22,1 %** |
 
-: Tableau — Volumétrie du Livre V, cible dérivée et mesures réelles au commit de rédaction (27 juillet 2026) et au commit de correction (28 juillet 2026). ⚠ **Constat daté et dépassé — ce tableau et les paragraphes d'analyse qui l'entourent** — *ces valeurs sont inférieures aux cardinaux que les quatre pièces portent en tête ; voir l'avertissement ci-dessus, et la mesure du 10 août 2026.* ⚠ **Les deux dérivations ne suivent pas la même règle, et c'est délibéré** : le premier mouvement dérive **par front** — 14 000 mots pour les *trois* fronts que l'audit v0.3 avait chiffrés, dont deux au ch. 47 —, le second **au prorata des sections**. *Dériver le premier mouvement par section aurait produit un chiffre sans rapport avec l'estimation d'origine.* ⚠ **Le ch. 49 porte le plus faible écart des quatre, le ch. 50 venant au second rang** — *le superlatif que l'en-tête du ch. 50 s'attribuait était faux dès la rédaction, et il est corrigé.*
+: Tableau — Volumétrie du Livre V, cible dérivée et mesures réelles au commit de rédaction (27 juillet 2026) et au commit de correction (28 juillet 2026). ⚠ **Constat daté et dépassé — ce tableau et les paragraphes d'analyse qui l'entourent** — *ces valeurs sont inférieures aux cardinaux que les quatre pièces portent en tête ; voir l'avertissement ci-dessus, et la mesure du 10 août 2026.* ⚠ **Les deux dérivations ne suivent pas la même règle, et c'est délibéré** : le premier mouvement dérive **par front** — 14 000 mots pour les *trois* fronts que la vérification v0.3 avait chiffrés, dont deux au ch. 47 —, le second **au prorata des sections**. *Dériver le premier mouvement par section aurait produit un chiffre sans rapport avec l'estimation d'origine.* ⚠ **Le ch. 49 porte le plus faible écart des quatre, le ch. 50 venant au second rang** — *le superlatif que l'en-tête du ch. 50 s'attribuait était faux dès la rédaction, et il est corrigé.*
 
 ## Les quatre pièces
 
@@ -186,7 +186,7 @@ ch. 37 du Livre IV). *Activer S5 aujourd'hui produirait six échecs sur des piè
 et un contrôle bruyant est un contrôle ignoré.* **La réactivation est due après alignement des six.**
 
 ⚠ **Le troisième était marqué au texte et absent de l'appareil, sans dette déclarée — et c'est le
-défaut que l'audit du 28 juillet 2026 a nommé.** Le **siège du verrou sémantique et pragmatique**
+défaut que la vérification du 28 juillet 2026 a nommé.** Le **siège du verrou sémantique et pragmatique**
 (ch. 49 § 49.6) portait son marqueur, l'en-tête le déclarait, le TOC le désignait et trois chapitres
 consommateurs étaient nommés — **ch. 2, ch. 9, ch. 43** —, mais la table des sièges ne le contenait
 pas. *La règle des trois gestes — un siège s'ajoute à la table, la pièce écrit son marqueur, le
@@ -263,8 +263,8 @@ personne s'en aperçoive.*
 
 ## ⚠ Passe de correction du 28 juillet 2026 — onze constats corrigés, trois notes sans action
 
-Sur instruction d'auteur, en réponse à l'`audit.md` du 28 juillet 2026 (§ 8, Livre V ;
-§ 3, transversaux). ⚠ **`audit.md` n'est pas au dépôt** : il n'y a jamais été versé, et *le nom date
+Sur instruction d'auteur, en réponse à la vérification du 28 juillet 2026 (§ 8, Livre V ;
+§ 3, transversaux). ⚠ **ce rapport n'est pas au dépôt** : il n'y a jamais été versé, et *le nom date
 le constat, il ne désigne aucun fichier qu'on puisse ouvrir ici.* **Domaine déclaré : les quatorze constats V.1 à V.14 de son § 8** — **onze sont
 corrigés ici** (V.1 à V.11), **trois sont des notes qui n'appellent aucune action** : V.12 (relevés
 horodatés dépassés par les passes concurrentes, *exacts à leur date* — sauf le cardinal des sièges du

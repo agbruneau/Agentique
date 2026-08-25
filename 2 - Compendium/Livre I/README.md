@@ -118,7 +118,7 @@ par les pièces de ce dossier. Trois écarts, qui se déclarent séparément.**
    barème A ont été posées dans les pièces le 31 juillet 2026** et la légende de chacune entre au
    corps que la commande mesure ; *les onze pièces de ce Livre en portent au moins une.*
 
-⚠ **Les chiffres publiés hors de ce dossier — audit du 28 juillet 2026 (§2 et §4.2), et tout décompte
+⚠ **Les chiffres publiés hors de ce dossier — vérification du 28 juillet 2026 (§2 et §4.2), et tout décompte
 agrégé du compendium — sont périmés d'autant** : l'écart est **remonté**, il n'est pas corrigé depuis
 ici.
 
@@ -246,12 +246,12 @@ Trois constats méritent d'être retenus avant d'ouvrir le Livre suivant.
 ## La passe de correction du 28 juillet 2026 — huit constats soldés, un partiel, quatre écarts remontés
 
 ⚠ **Sur instruction d'auteur, les onze pièces ont été corrigées le 28 juillet 2026 en réponse à
-l'audit des cinq Livres** (`audit.md`, section 4 pour le Livre I ; constats transversaux T-1, T-2 et
-T-4). ⚠ **`audit.md` n'est pas au dépôt** : il n'y a jamais été versé, et *le nom est conservé parce
+la vérification des cinq Livres** (rapport du 28 juillet 2026, section 4 pour le Livre I ; constats transversaux T-1, T-2 et
+T-4). ⚠ **ce rapport n'est pas au dépôt** : il n'y a jamais été versé, et *le nom est conservé parce
 qu'il date le constat, non parce qu'il désigne un fichier qu'on puisse ouvrir ici.* ⚠ **Rien de ce qui suit ne requalifie le Livre** : les portes n'ont pas bougé, le socle
 consolidé compte toujours **zéro entrée**, **CA-IV-13 reste insatisfaite** — *une passe de correction
 n'est pas une relecture adversariale, et se corriger soi-même n'est pas être relu.* Les onze pièces
-demeurent des **brouillons non publiables**, et l'audit qui les a relevées **ne fait pas autorité** :
+demeurent des **brouillons non publiables**, et la vérification qui les a relevées **ne fait pas autorité** :
 c'est un constat daté, dont les issues appartiennent à l'auteur.
 
 **Trois arbitrages d'auteur commandent la passe, et ils ne se rediscutent pas.**
@@ -337,7 +337,7 @@ relèvent d'eux et sont laissés intacts :
 2. ⚠ **La volumétrie du Livre est périmée partout où elle a été publiée.** ⚠ *Le couple « 64 611 →
    64 750 » qui figurait ici est **retiré** : les onze en-têtes somment à **71 980**, et la mesure du
    10 août 2026 donne **72 483** (volumétrie ci-dessus).* Les chiffres publiés hors de ce dossier —
-   audit §2 et §4.2, agrégat du compendium — sont périmés d'autant, et **ne se corrigent pas depuis
+   vérification §2 et §4.2, agrégat du compendium — sont périmés d'autant, et **ne se corrigent pas depuis
    ici**.
 3. ⚠ **La date de l'instrument repris au ch. 3 § 3.1.2 n'est pas portée** : le référentiel OWASP est
    désormais nommé, mais **aucune version datée ne figure au corpus de la pièce**, et *ce qui n'a pas

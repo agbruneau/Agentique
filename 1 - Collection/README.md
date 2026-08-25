@@ -401,7 +401,7 @@ l'abri.*
 │   ├── README.md                              présentation du volume
 │   ├── monographie/                           29 pièces (parties I-VII, annexes, registre des gels)
 │   │                                          + README.md, l'index de lecture des 29 pièces
-│   ├── prd/                                   PRD, PRDPlan, TOC, audit — gouvernance ; ⚠ les 2 PDF arXiv
+│   ├── prd/                                   PRD, PRDPlan, TOC, rapport de vérification — gouvernance ; ⚠ les 2 PDF arXiv
 │                                              qui y dormaient sont sortis de l'index le 21 août 2026
 │   ├── verification/                          revalidations et grille de conformité
 │   ├── build/                                 assemblage + pipeline Pandoc → Typst

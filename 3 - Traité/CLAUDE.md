@@ -49,7 +49,7 @@ les **verdicts de banc**, les **réserves** et les **écarts au traité relevés
 la mesure**. Il se met à jour à la fin de chaque banc, pas en cours de route. Son
 **§0.0** dit ce que la deuxième édition du traité a changé, et c'est ce qu'il faut
 lire avant de toucher à un mécanisme existant — **mais c'est de l'histoire, et sa
-pagination est celle de la deuxième**. Son **§0.2** enregistre le banc d'audit du
+pagination est celle de la deuxième**. Son **§0.2** enregistre le banc de vérification du
 17 août 2026 : l'état mesuré du dépôt avec la ligne qui refait chaque compte, ce
 que la troisième édition change (deux écarts qu'elle absorbe, un qu'elle
 retourne, trois citations qu'elle retire), et ce que la campagne laisse ouvert.
@@ -61,7 +61,7 @@ deux côtés — §2.1, §2.2, §2.3, §3.1, §3.2, §5.1, §5.2, §5.3, §6.1, 
 Les deux qui trompent le plus : le §8.3 du **PRD** est « ce que le produit ne
 mesure pas », celui du **traité** « buts incompatibles » (ch. 8) ; le §5.1 du
 **PRD** est le découpage en crates, celui du **traité** « mécanismes de
-consensus ». Un renvoi qui peut se lire des deux côtés se qualifie — l'audit du
+consensus ». Un renvoi qui peut se lire des deux côtés se qualifie — le banc du
 17 août a qualifié les 219 sites nus du code, dont 33 visaient le PRD.
 
 ## Commandes
@@ -78,7 +78,7 @@ pas sans lui (les trois autres crates n'en ont pas besoin).
 Suite complète — **467 tests, 0 échec**, mesurés le 17 août 2026 à 11 h 14, exit 0
 — 424 unitaires (254 `sim-agents`, 96 `sim-core`, 68 `sim-milieu`, 6 `sim-viz`) et
 43 d'intégration. Le §0 du PRD enregistre 348 à la clôture de la phase 5 ; la
-phase 6 a porté le compte à 419, l'audit du 13 août à 428, celui du 17 août à 447,
+phase 6 a porté le compte à 419, le banc du 13 août à 428, celui du 17 août à 447,
 puis 465, 466, 467. **Ce compte est une mesure, pas une constante** : il ne se cite
 pas, il se refait par la ligne ci-dessous. Il a bougé **cinq** fois en trois
 heures le 17 août, plusieurs agents écrivant en parallèle. **Le `target/` du dépôt ne convient
@@ -245,7 +245,7 @@ violer casse un critère de sortie déjà atteint.
 ## Réserves ouvertes
 
 **Les principales.** La liste complète — **vingt-deux entrées** au 17 août 2026,
-quatre ajoutées par l'audit — est au §0 du PRD, et
+quatre ajoutées par le banc — est au §0 du PRD, et
 la liste vivante est dans le code : `sim_agents::hors_perimetre()` (**20**
 entrées), `sim_milieu::hors_perimetre()` (**13**), `ModeleFaute::hors_modele()`
 (**5**, dont la première en énumère neuf). Ces trois comptes se remesurent :

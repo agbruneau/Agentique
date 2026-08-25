@@ -116,9 +116,9 @@ mécaniques, conduits par la même main que la rédaction.**
 
 ## ⚠ Passe de correction du 28 juillet 2026 — ce qui a été corrigé, et ce qui a été remonté
 
-**Sur instruction d'auteur, en réponse à l'`audit.md` du 28 juillet 2026** (volets A à E
+**Sur instruction d'auteur, en réponse à la vérification du 28 juillet 2026** (volets A à E
 du §6, plus les transversaux T-1 à T-4), les **quinze `.md` et leurs quinze `.html`** ont été repris.
-⚠ **`audit.md` n'est pas au dépôt** : il n'y a jamais été versé, et *le nom date le constat, il ne
+⚠ **ce rapport n'est pas au dépôt** : il n'y a jamais été versé, et *le nom date le constat, il ne
 désigne aucun fichier qu'on puisse ouvrir ici.*
 ⚠ **Cette passe corrige ; elle ne réédite pas** : *aucune section n'a été ajoutée ni retirée, aucune
 thèse n'a été réécrite — seulement re-citée depuis le plan —, et **le propos des chapitres est
@@ -142,7 +142,7 @@ pas davantage satisfaite** — *cette passe est de la même main que la rédacti
 | **III.D.3** | **§ 34.2.2 : les deux renvois entrants promis sont écrits** — § 34.5.2 (l'opposition cœur embarqué / cœur exposé) et § 34.5.6 (le périmètre de la piste d'audit, troisième axe de la grille). ⚠ **Le marqueur du siège est conservé mot pour mot** |
 | **III.D.1, III.E.6 (T-4)** | **Attribution jamais anonymisée, sur les trois cas que la décision 15b du TOC nomme** : le **ch. 24 § 24.3.4** nomme désormais **OWASP Non-Human Identities Top 10 (2025)**, domicile de la grille des dix risques ; le **ch. 36 § 36.5** porte ses **quatre identifiants arXiv** — *2606.25876, 2605.30998, 2606.26028, 2509.10147* —, sans lesquels son propre critère de clôture était inexécutable ; le **ch. 29 tableau 29.1** nomme la série de « CA-5 ». ☑ **Le reste du Livre n'est pas re-nommé** : la parade de péremption tient pour les dénominations commerciales et les versions |
 | **III.E.3** | **Ch. 32 § 32.4 : la lacune PRD Vol. II §10.11 route désormais vers ses DEUX destinations** — *le ch. 49 pour son état final, l'**Annexe D** pour son renvoi documentaire* —, la pièce ne portant que la première |
-| **hors audit** | ⚠ **Quatre attributions de socle décalées d'un rang au ch. 35, trouvées en instruisant III.D.1** : *§ 35.2 (F-20 → **F-21**), § 35.4 (F-21 → **F-22**), § 35.5 (F-22 → **F-23b**, puis F-23b → **F-23**)*. **F-23 manquait à l'en-tête** et y entre ; **F-20**, dont le contenu propre est la gouvernance publiée du § 35.3, y est désormais attribuée. *Établi contre le `PRD.md` et la `Monographie` ch. 17 du Vol. II **ouverts à la source**, notes [^4], [^6] et [^7]* — ⚠ **le volet D de l'audit avait certifié ces entrées « nommées une à une », ce qui est vrai et ne dit rien de leur exactitude** |
+| **hors vérification** | ⚠ **Quatre attributions de socle décalées d'un rang au ch. 35, trouvées en instruisant III.D.1** : *§ 35.2 (F-20 → **F-21**), § 35.4 (F-21 → **F-22**), § 35.5 (F-22 → **F-23b**, puis F-23b → **F-23**)*. **F-23 manquait à l'en-tête** et y entre ; **F-20**, dont le contenu propre est la gouvernance publiée du § 35.3, y est désormais attribuée. *Établi contre le `PRD.md` et la `Monographie` ch. 17 du Vol. II **ouverts à la source**, notes [^4], [^6] et [^7]* — ⚠ **le volet D de la vérification avait certifié ces entrées « nommées une à une », ce qui est vrai et ne dit rien de leur exactitude** |
 
 **Ce qui a été remonté sans être corrigé** — *un rédacteur ne corrige jamais le TOC, ce PRD ni le
 conspectus : il remonte* (PRD, Annexe A) :

@@ -13,7 +13,7 @@
 | Dates de gel | 16 juillet 2026 (22 pièces) ; 17 juillet 2026 (7 pièces) — registre : [`99-registre-gel.md`](99-registre-gel.md) |
 | Volumétrie | **92 059 mots** sur 29 pièces — mesure du 17 juillet 2026, après la passe corrective de l'[audit global](../prd/audit.md) (méthode et commande de référence : [PRDPlan §4.2](../prd/PRDPlan.md), dont le défaut connu y est documenté) |
 | Socle factuel | **46 entrées** F-01 à F-48 ([PRD §7](../prd/PRD.md)) |
-| Conformité | **CA-1 à CA-8 : 8/8** — ⚠ **partiellement démenti** par l'audit du 17 juillet 2026 (CA-1 et CA-7 portaient des écarts, depuis corrigés) : voir l'addendum de [`verification/relecture-CA.md`](../verification/relecture-CA.md) |
+| Conformité | **CA-1 à CA-8 : 8/8** — ⚠ **partiellement démenti** par la vérification du 17 juillet 2026 (CA-1 et CA-7 portaient des écarts, depuis corrigés) : voir l'addendum de [`verification/relecture-CA.md`](../verification/relecture-CA.md) |
 | Revalidation | 17 juillet 2026 ([`verification/revalidation-2026-07-17.md`](../verification/revalidation-2026-07-17.md)) |
 
 **Commencer par l'[avant-propos](00-avant-propos.md).** Il expose la méthode, les niveaux de preuve, la convention de datation et les avertissements — sans lesquels les chapitres se lisent mal. Le **[chapitre 13](03-partie-III/ch-13-pont-frames.md)** est le pivot de l'ouvrage : c'est le chapitre à contester en premier.

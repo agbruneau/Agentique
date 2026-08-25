@@ -4,9 +4,9 @@
 |---|---|
 | Date | 17 juillet 2026 |
 | Périmètre | 29 pièces : 24 chapitres + avant-propos + annexes A à D |
-| Gouvernance | [PRD.md](../prd/PRD.md) v1.10 §11 (les critères) ; [PRDPlan.md](../prd/PRDPlan.md) v1.4 §4.3 (motifs de balayage), §4.4 (formulations imposées) — *pointeurs relevés le 17 juill. 2026 avec les suites de l'audit ; les contenus §11/§4.3/§4.4 cités sont inchangés sur le fond* |
+| Gouvernance | [PRD.md](../prd/PRD.md) v1.10 §11 (les critères) ; [PRDPlan.md](../prd/PRDPlan.md) v1.4 §4.3 (motifs de balayage), §4.4 (formulations imposées) — *pointeurs relevés le 17 juill. 2026 avec les suites de la vérification ; les contenus §11/§4.3/§4.4 cités sont inchangés sur le fond* |
 | Revalidation adossée | [`revalidation-2026-07-17.md`](revalidation-2026-07-17.md) — P4.1, huit faits chauds revérifiés à leur source primaire |
-| Résultat | **8/8 conformes**, après correction des écarts relevés ci-dessous — ⚠ **résultat partiellement démenti le 17 juillet 2026 par l'audit global** ([`audit.md`](../prd/audit.md)) : voir l'addendum en fin de grille |
+| Résultat | **8/8 conformes**, après correction des écarts relevés ci-dessous — ⚠ **résultat partiellement démenti le 17 juillet 2026 par la vérification globale** ([le rapport de vérification globale](../prd/audit.md)) : voir l'addendum en fin de grille |
 
 **Règle de cette grille.** Un critère n'est déclaré conforme que si un **contrôle exécuté** l'établit — jamais sur l'intention du rédacteur ni sur son auto-contrôle. La leçon est chèrement acquise : le 17 juillet 2026, trois blocs d'auto-contrôle sur quatre attestaient des décomptes qui n'avaient pas été passés, et deux attestaient des reproductions absentes du fichier. **Une attestation est du contenu, elle se vérifie comme le reste.**
 
@@ -167,9 +167,9 @@ Elle ne dit pas non plus que le dispositif soit suffisant. Les défauts les plus
 
 ---
 
-## Addendum du 17 juillet 2026 — ce que l'audit global a démenti
+## Addendum du 17 juillet 2026 — ce que la vérification globale a démenti
 
-Cette grille a été soumise, le jour même de sa rédaction, à un **audit global indépendant** ([`audit.md`](../prd/audit.md)) qui l'a traitée comme du contenu à vérifier, non comme une preuve — conformément à sa propre règle. **Elle n'en sort pas indemne, et c'est la bonne nouvelle** : le dispositif fonctionne quand on l'applique à ses propres attestations.
+Cette grille a été soumise, le jour même de sa rédaction, à un **audit global indépendant** ([le rapport de vérification globale](../prd/audit.md)) qui l'a traitée comme du contenu à vérifier, non comme une preuve — conformément à sa propre règle. **Elle n'en sort pas indemne, et c'est la bonne nouvelle** : le dispositif fonctionne quand on l'applique à ses propres attestations.
 
 **Deux critères ne tenaient pas en l'état constaté :**
 
@@ -178,6 +178,6 @@ Cette grille a été soumise, le jour même de sa rédaction, à un **audit glob
 
 **Trois racines siégeaient hors des chapitres** — dans les documents de gouvernance eux-mêmes : PRDPlan §4.4 se contredisait sur « établi »/« vérifié » (le ch. 23 a suivi une ligne, le ch. 24 l'autre) ; la formule §8.2.4 avait été enrichie après le gel des ch. 9-11, qui en attestaient un verbatim devenu inexact ; le TOC portait trois dettes que des chapitres publiés réclamaient. Toutes tranchées le 17 juillet (PRD v1.10, PRDPlan v1.4, TOC v1.5).
 
-**Ce que cet addendum établit, et qui vaut plus que le score.** Cette grille avait écrit : « *un rédacteur ne vérifie pas ce qu'il croit avoir fait* ». L'audit en donne le corollaire, aux dépens de la grille elle-même : **un contrôle ne vérifie pas ce qu'il croit avoir contrôlé.** Le « 8/8 » n'était pas mensonger — il était *incomplet*, et il l'ignorait. Aucun des écarts ci-dessus n'a été trouvé par les huit contrôles de cette page ; tous l'ont été par une passe qui les a refaits sans les croire. C'est le seul argument sérieux en faveur d'une relecture externe, et il est ici démontré plutôt qu'invoqué.
+**Ce que cet addendum établit, et qui vaut plus que le score.** Cette grille avait écrit : « *un rédacteur ne vérifie pas ce qu'il croit avoir fait* ». La vérification en donne le corollaire, aux dépens de la grille elle-même : **un contrôle ne vérifie pas ce qu'il croit avoir contrôlé.** Le « 8/8 » n'était pas mensonger — il était *incomplet*, et il l'ignorait. Aucun des écarts ci-dessus n'a été trouvé par les huit contrôles de cette page ; tous l'ont été par une passe qui les a refaits sans les croire. C'est le seul argument sérieux en faveur d'une relecture externe, et il est ici démontré plutôt qu'invoqué.
 
-**Statut des critères au 17 juillet 2026, après les corrections de l'audit** : les écarts relevés ont été corrigés dans les pièces et les racines tranchées en gouvernance. **Ce statut n'est pas une nouvelle attestation de conformité** : il faudrait, pour la donner, une passe qui refasse les huit contrôles sur l'état corrigé — et une passe distincte de celle qui a corrigé. Elle n'a pas eu lieu. *La grille dit ce qu'elle a fait, pas ce qu'elle espère.*
+**Statut des critères au 17 juillet 2026, après les corrections de la vérification** : les écarts relevés ont été corrigés dans les pièces et les racines tranchées en gouvernance. **Ce statut n'est pas une nouvelle attestation de conformité** : il faudrait, pour la donner, une passe qui refasse les huit contrôles sur l'état corrigé — et une passe distincte de celle qui a corrigé. Elle n'a pas eu lieu. *La grille dit ce qu'elle a fait, pas ce qu'elle espère.*

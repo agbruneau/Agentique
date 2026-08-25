@@ -9,7 +9,7 @@ Simulateur déterministe d'essaims d'agents logiciels coordonnés par le milieu.
 > *(a)* ⚠ **`Traité.md` / `.pdf` sont à la racine de ce dossier, PAS sous
 > `docs/`** — c'est là que la fusion les a posés, et les renvois qui visaient
 > `docs/Traité.pdf` sont corrigés en conséquence, `CLAUDE.md` compris depuis
-> l'audit du 17 août 2026. *(b)* ☑ **Les 19 figures du traité sont ici depuis le
+> le banc du 17 août 2026. *(b)* ☑ **Les 19 figures du traité sont ici depuis le
 > 21 août 2026**, à [`figures/`](figures/) : elles étaient restées à la racine du
 > dépôt quand le traité y est entré, et le traité les cite en chemin relatif —
 > sa chaîne de rendu ne se lançait donc que de là-bas. *Elle se lance d'ici, et
@@ -162,7 +162,7 @@ printf "brut=%s gz9=%s\n" "$(stat -c%s web/sim_viz_bg.wasm)" \
 que jusqu'à la prochaine édition de `crates/sim-viz/`.** `web/sim_viz.js` et
 `web/sim_viz_bg.wasm` sont produits par `wasm-bindgen` et exclus du suivi de
 version (`.gitignore`) : ils ne se remesurent que si l'on relance les deux
-lignes ci-dessus. L'audit du 17 août a trouvé l'empaquetage vieux de deux
+lignes ci-dessus. Le banc du 17 août a trouvé l'empaquetage vieux de deux
 révisions de l'interface — 3 613 854 octets bruts, un module qui ne contenait
 aucun des changements du 14 août —, puis son propre correctif périmé d'une
 révision en douze minutes, la crate ayant été éditée après la construction.
@@ -243,7 +243,7 @@ cargo test --workspace --release
 
 ⚠ **Il a bougé cinq fois dans la journée** — **428 à 08 h 10, 447 à 08 h 32,
 465 à 09 h 49, 466 à 10 h 26, 467 à 11 h 14** —, les crates ayant été éditées
-entre chaque par l'audit. `grep -r '#\[test\]' --include=*.rs crates/` rend
+entre chaque par le banc. `grep -r '#\[test\]' --include=*.rs crates/` rend
 **467** lui aussi à 11 h 14, mais *un attribut compté n'est pas un test exécuté* :
 les deux valeurs coïncident ici, et rien ne garantit qu'elles coïncideront demain.
 
