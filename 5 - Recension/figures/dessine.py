@@ -374,7 +374,7 @@ def f2():
     g.append(txt(W / 2, SY + 123,
                  "— et aucun protocole examiné ne transporte cette entité dans sa trace.",
                  size=7.2, fill=GREY, anchor="middle"))
-    return svg(SY + 132, "".join(g), "Trois surveillants, une plateforme à double qualification")
+    return svg(SY + 132, "".join(g), "Un groupe, trois surveillants, un socle")
 
 
 # ── F3 — La fenêtre 2026-2030 ──────────────────────────────────────────────

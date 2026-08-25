@@ -151,9 +151,13 @@ Agentique/
                                        feuille de style versionnée
 ```
 
-**574 fichiers versionnés, 75,1 Mo** (75 094 989 octets) : 227 `.md`, 142 `.svg`, 76 `.rs`,
+**574 fichiers versionnés, 75,1 Mo** (**75 096 189 octets**, relevé le 25 août 2026) : 227 `.md`, 142 `.svg`, 76 `.rs`,
 53 `.html`, 31 `.py`, 10 `.pdf`, 9 `.toml`, 8 `.sh`, 6 gabarits Typst, 4 `.gitignore`, 2 `.mjs`,
-2 `LICENSE`, 1 `.lua`, 1 `Cargo.lock`, 1 `launch.json`, 1 `.gitattributes`. *Les **10 PDF** sont les
+2 `LICENSE`, 1 `.lua`, 1 `Cargo.lock`, 1 `launch.json`, 1 `.gitattributes`. ☑ *75 094 989 o.
+jusque-là ; du solde de **+1 200 o.**, **+254** viennent de la synchronisation des titres de
+`5 - Recension/` le 25 août — le reste d'éditions encore au disque et non versées.* ⚠ *Le
+relevé est celui du disque de l'auteur, que l'arrivée de `.gitattributes` n'a pas renormalisé :
+**un clone rend 74 979 133 o.**, `* text=auto eol=lf` y ramenant les fichiers texte en LF.* *Les **10 PDF** sont les
 **9 rendus des livrables** et le mémoire de maîtrise de l'auteur ; les **8 `.sh`** sont les
 **7 `build-pdf.sh`** — un par dossier de livrable, les neuf PDF couverts — et `PRD/decompte.sh`.*
 ⚠ **Le dépôt a maigri de 37,5 Mo le 21 août 2026**, et c'est un solde, non une pièce : les cinq

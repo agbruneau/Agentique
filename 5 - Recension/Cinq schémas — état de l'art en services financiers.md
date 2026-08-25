@@ -1,6 +1,6 @@
 ---
-title: "Lire l'état de l'art en cinq schémas"
-subtitle: "interopérabilité et orchestration agentiques en services financiers"
+title: "Cinq schémas — état de l'art en services financiers"
+subtitle: "Interopérabilité et Orchestration Agentiques"
 author:
   - "André-Guy Bruneau, M.Sc. IT · agbruneau@gmail.com · 20 août 2026"
 lang: fr
@@ -46,7 +46,7 @@ include-before: |
   ```
 ---
 
-Cette planche est un abrégé. Elle reprend les cinq figures de l'état de l'art *Interopérabilité et Orchestration Agentiques — état de l'art en services financiers* (20 août 2026, 186 pages) et les explique pour qui n'a pas lu le document. Chaque section renvoie à l'endroit où l'argument est établi sur ses sources ; **rien ici n'est démontré, tout y est résumé**. Les faits sont gelés au 20 août 2026 et le périmètre est celui d'une coopérative financière canadienne régie — caisses, fédération, filiales d'assurance et de courtage.
+Cette planche est un abrégé. Elle reprend les cinq figures d'*État de l'art en services financiers* (20 août 2026, 186 pages) et les explique pour qui n'a pas lu le document. Chaque section renvoie à l'endroit où l'argument est établi sur ses sources ; **rien ici n'est démontré, tout y est résumé**. Les faits sont gelés au 20 août 2026 et le périmètre est celui d'une coopérative financière canadienne régie — caisses, fédération, filiales d'assurance et de courtage.
 
 # 1. Ce qui oblige ne nomme pas l'agent
 
@@ -105,6 +105,6 @@ Face à ces dates, sept arbitrages datés. Quatre d'ici le 31 décembre 2026 —
 
 # Où lire la suite
 
-Chaque affirmation de cette planche est établie, datée et sourcée dans *Interopérabilité et Orchestration Agentiques — état de l'art en services financiers*, 312 références, faits arrêtés au 20 août 2026. Deux limites y sont déclarées d'entrée et valent ici : le domaine du régulateur québécois refuse la consultation automatisée, si bien que le texte de ses lignes directrices n'a cédé qu'à un service tiers d'extraction non reproductible ; et **aucune source consultée n'établit de lien documenté entre un protocole d'agents et une exigence sectorielle canadienne** — le lien reste une inférence d'architecture, signalée comme telle chaque fois qu'elle est posée.
+Chaque affirmation de cette planche est établie, datée et sourcée dans *État de l'art en services financiers*, 312 références, faits arrêtés au 20 août 2026. Deux limites y sont déclarées d'entrée et valent ici : le domaine du régulateur québécois refuse la consultation automatisée, si bien que le texte de ses lignes directrices n'a cédé qu'à un service tiers d'extraction non reproductible ; et **aucune source consultée n'établit de lien documenté entre un protocole d'agents et une exigence sectorielle canadienne** — le lien reste une inférence d'architecture, signalée comme telle chaque fois qu'elle est posée.
 
 Les cinq planches sont gravées par `figures/dessine.py` à 468 points, la largeur que le gabarit leur rend sur la page. Elles sortent en SVG : le PDF les porte en texte vectoriel, à la même fonte que le reste, et le HTML les remet à l'échelle de sa colonne sans les tramer. La même source sert au document long et à cette planche — corriger un fait se fait à un seul endroit.
