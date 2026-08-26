@@ -452,9 +452,14 @@
   // « Interopérabilité » seul déborde des 148 mm et Typst ne le signale pas.
   set text(hyphenate: false)
   set par(justify: false, leading: 0.5em, first-line-indent: 0pt)
-  text(font: SANS, size: 10pt, fill: GRIS, tracking: 0.30em)[COMPENDIUM]
+  // ⚠ Tracking 0,24 em et non 0,30 : au renommage du 26 aout 2026, le bandeau est
+  // passe a « INFORMATIQUE ET INGENIERIE DES SYSTEMES », neuf signes de plus que
+  // « SCIENCE ET GENIE INFORMATIQUES ». A 0,30 em il sort des 148 mm et « SYSTEMES »
+  // se replie sur une seconde ligne, sans que Typst le signale. Les DEUX segments
+  // portent la meme valeur : un tracking different de part et d'autre se voit.
+  text(font: SANS, size: 10pt, fill: GRIS, tracking: 0.24em)[COMPENDIUM]
   h(0.9em)
-  text(font: SANS, size: 10pt, fill: ACCENT, tracking: 0.30em)[SCIENCE ET GÉNIE INFORMATIQUES]
+  text(font: SANS, size: 10pt, fill: ACCENT, tracking: 0.24em)[INFORMATIQUE ET INGÉNIERIE DES SYSTÈMES]
   v(10pt)
   line(length: 100%, stroke: 1.6pt + ENCRE)
   v(24pt)
