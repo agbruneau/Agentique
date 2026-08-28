@@ -1,29 +1,42 @@
 # Agentique
 
-**Un corpus de recherche** : Huit documents en français — **2 921 pages rendues**
+**Un corpus de recherche** : Huit documents en français — **2 922 pages rendues**
 sur neuf PDF — instruisent une seule question : *comment une entreprise de services financiers
 canadienne déploie, gouverne et exploite des agents d'IA autonomes sous contrainte réglementaire ?*
+⚠ *Cette page a longtemps écrit « 2 921 » : le compte datait du 21 août 2026 et n'avait pas suivi la
+recomposition du 24, qui porte l'état de l'art de 185 à 186 p.*
+☑ **Un neuvième document est entré le 28 août 2026** — la
+[note de veille SDLC](<4%20-%20Veille/Note-veille-SDLC-agentique.md>), **49 p.**, qui porte le dépôt
+à **2 971 pages sur dix PDF** —, ⚠ **et il n'est pas rangé parmi les livrables** : *lecture critique
+d'une source unique — un entretien de 4 h 26 —, bibliographie non appariée, aucun contrôle qui
+l'oppose à elle-même.* Le motif est donné au [`README` de `4 - Veille/`](<4%20-%20Veille/README.md>),
+qui la range comme **document publié et non comme neuvième livrable** — ⚠ *ce n'est pas une
+instruction d'auteur, le PRD ne porte aucune décision sur ce document, et le compte se renverse d'un
+mot de sa part, comme le huitième.*
 S'y ajoute **un simulateur en Rust** — 76 fichiers, 29 690 lignes — qui transpose l'un de ces
 documents en code exécutable sous une règle : *tout chiffre affiché doit être retrouvé par la
 mesure, ou l'écart consigné*. **Cinq écarts** le sont, **dont trois contredisent le traité**
 ([`3 - Traité/docs/decisions.md`](<3%20-%20Trait%C3%A9/docs/decisions.md>)) — *et c'est la règle qui
 tient, non un défaut : un écart consigné est ce que le dispositif produit quand il marche.*
 
-**Les textes sont d'une seule main** : André-Guy Bruneau, champ `/Author` des neuf PDF livrés —
-⚠ *la mention « M.Sc. IT » n'accompagne le nom que sur six ; les Vol. I, II et III le portent seul.*
+**Les textes sont d'une seule main** : André-Guy Bruneau, champ `/Author` des dix PDF signés —
+⚠ *la mention « M.Sc. IT » n'accompagne le nom que sur sept ; les Vol. I, II et III le portent seul.*
 ⚠ *Le dépôt, lui, ne l'est pas* : `git log` comptait, **au relevé du 21 août 2026 et avant
 la passe de réparation que décrit cette page**, **280 commits — 260 signés André-Guy
 Bruneau, 18 `Claude <noreply@anthropic.com>`, 2 `agbruneau`** — et **quatre fusions de *pull
 requests* GitHub** ; deux branches `origin/claude/*` subsistent au distant. *La numérotation GitHub
 monte à #5, mais une PR ne se compte pas par son numéro : la #4 n'a laissé aucune trace au dépôt, ni
-fusion ni écrasement.* **Historique du 24 juin au 24 août 2026**, bornes du premier et du dernier
-commit — **293 commits au 24 août**, les treize derniers pris depuis le relevé ci-dessus.
+fusion ni écrasement.* **Historique du 24 juin au 28 août 2026**, bornes du premier et du dernier
+commit — **305 commits au 28 août**, dont onze pris depuis le 24. ⚠ *Au 24 août,
+`git rev-list --count` en rend **294** et non les 293 que cette page écrivait.*
 
 ⚠ **Le dépôt est déclaré clos et final depuis le 8 août 2026** — décision d'auteur **D-13**,
 [`2 - Compendium/PRD/PRD.md`](<2%20-%20Compendium/PRD/PRD.md>) §16 ; l'unique étiquette du dépôt,
 `mono-v1.0`, est posée sur ce commit de clôture. Il a été rouvert une dizaine de fois depuis, chaque
 fois pour une pièce nommée et pour elle seule : la chronique datée est en tête de
-[`1 - Collection/README.md`](<1%20-%20Collection/README.md>).
+[`1 - Collection/README.md`](<1%20-%20Collection/README.md>). **La dernière réouverture est du
+28 août 2026, pour la note de veille SDLC** — ⚠ *et c'est la première qui fasse entrer un document
+neuf plutôt que réparer une pièce existante.*
 
 ☑ **[`LICENSE`](LICENSE) à la racine — CC BY 4.0, posée le 21 août 2026 sur instruction d'auteur**,
 et elle couvre le dépôt entier : les huit documents, leurs rendus, le simulateur, les chaînes et les
@@ -44,6 +57,7 @@ davantage, tant que l'arbre ancien tient*. Leurs renvois sont au
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **5 minutes**   | *Cinq schémas — état de l'art* : [`.pdf`](<5%20-%20Recension/Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.pdf>) 7 p. ou [`.html`](<5%20-%20Recension/Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.html>) 105 Ko autonome — cinq figures commentées et rien d'autre |
 | **20 minutes**  | [`NiveauMaturité.html`](NiveauMaturit%C3%A9.html) — **9 diapositives** 16:9, six paliers de maturité ; autonome, aucune dépendance                                                                                                                                                                                                                     |
+| **une heure**   | [`Note-veille-SDLC-agentique.pdf`](<4%20-%20Veille/Note-veille-SDLC-agentique.pdf>) — 49 p. : une source unique instruite, 18 thèses horodatées, 40 affirmations triangulées. ⚠ *Hors livrables — voir plus haut*                                                                                                             |
 | **une soirée** | [`Veille Technologique.pdf`](<4%20-%20Veille/Veille%20Technologique.pdf>) — 144 p., l'état du champ déployé, 342 références                                                                                                                                                                                                                                |
 | **le fond**     | [`Compendium.pdf`](<2%20-%20Compendium/Compendium.pdf>) — 1 000 pages, la somme dédoublonnée des trois monographies                                                                                                                                                                                                                                           |
 | **du code**     | [`3 - Traité/`](<3%20-%20Trait%C3%A9/>) — le simulateur d'essaims : quatre *crates* et deux bancs, ☑ **467 `#[test]` au vert, clippy 0**                                                                                                                                                                                                              |
@@ -65,6 +79,13 @@ davantage, tant que l'arbre ancien tient*. Leurs renvois sont au
 sept livrables ; le huitième — l'état de l'art — a été rangé parmi eux le 20 août 2026 par les
 `README.md` du dépôt, sur motif écrit, et **le PRD ne porte aucune décision sur ce document**. Un
 lecteur qui cite le compte doit dire à quelle date il le tire et d'où.
+⚠⚠ **Et le même arbitrage s'est reposé le 28 août 2026, en sens inverse.** La note de veille SDLC
+est publiée, signée, datée, rendue au gabarit de la maison et **elle ouvre sa propre source** — *le
+motif exact qui avait fait passer le compte de sept à huit.* Ce qui la retient hors du tableau :
+**une source unique, une bibliographie de trente entrées en puces qu'aucun renvoi du corps
+n'apparie, et aucun contrôle qui la mesure** — hors
+[`check-resume.py`](<4%20-%20Veille/Python/check-resume.py>), qui ne regarde que sa page de titre.
+*Le tableau reste donc à huit lignes, et le dépôt porte neuf documents publiés.*
 
 ☑ **Trois documents portaient exactement le même titre ; ils ne le portent plus depuis le
 21 août 2026.** La veille, la revue et l'état de l'art déclaraient tous
@@ -81,8 +102,17 @@ troisième** : son `/Title` lit `État de lart en services financiers`, quand sa
 livré ne le porte pas. Relevé le 22 août 2026, non corrigé — la correction demande une
 recomposition.* ⚠⚠ **Et la recomposition ne suffit pas** : l'état de l'art a été recomposé le
 **24 août 2026** par sa chaîne versionnée, et son `dc:title` lit toujours
-`État de lart en services financiers`. *La cause n'est donc pas la passe de composition du 21 ;
-elle est en amont, non identifiée.* ☑ *Cette même recomposition porte le document à **186 p.**
+`État de lart en services financiers`. ☑ **La cause a été isolée le 28 août 2026, en rendant la note
+de veille SDLC** : elle est dans le **bloc de réglage commun lui-même**. La fonction
+`content-to-string` du gabarit Pandoc — *seule voie par où le titre atteint `/Title` quand le bloc
+redéfinit `conf`* — ne connaît que `text`, `children` et `body`, et **rend vide sur une apostrophe,
+que Typst compose en `smartquote`**. ⚠ *La passe du 17 août 2026, qui a introduit ce `conf` pour
+réparer le bloc de titre, a donc cassé ce champ du même geste — et celle du 21, qui portait
+précisément sur `/Title`, ne l'a pas vu.* ⚠ *Poser l'apostrophe typographique à la source n'y change
+rien, vérifié : Pandoc la relit et réémet le signe droit.* ☑ **Corrigé au seul en-tête de la note**,
+dont le `dc:title` porte bien `à l'ère des agents` ; ⚠⚠ **l'état de l'art reste cassé** — *seul des
+onze PDF du dépôt, relevé le 28 août 2026, et la correction demande une recomposition.*
+☑ *Cette même recomposition porte le document à **186 p.**
 et **1 986 l.** — un paragraphe ajouté au §14, qui déclare la portée exclue par ligne d'affaires ;
 les « 185 pages » du paragraphe ci-dessus datent le 21 août et ne bougent pas.*
 
@@ -102,6 +132,15 @@ pour le titre seul, dans les termes que le PRD §16.4.5 exige.*
 ☑ *Ce que la révision règle par ricochet* : le titre du Vol. IV n'est plus le radical de série que
 la veille, la revue et l'état de l'art portent en sous-titre — *Interopérabilité et Orchestration
 Agentiques* —, et **le citer par son seul titre le désigne désormais sans ambiguïté**.
+
+☑ **Le Vol. IV a été recomposé une troisième fois le 26 août 2026**, au commit `56cfbfb`, et cette
+fois **rien du titre ne bouge** : c'est le **bandeau de couverture** qui change de mention —
+« SCIENCE ET GÉNIE INFORMATIQUES » devient **« INFORMATIQUE ET INGÉNIERIE DES SYSTÈMES »**. ⚠ *Neuf
+signes de plus, et le gabarit le dit lui-même* : à `tracking: 0.30em` la mention sort des 148 mm et
+« SYSTÈMES » se replie sur une seconde ligne **sans que Typst le signale** ; les deux segments du
+bandeau passent donc à **`0.24em`**, la même valeur de part et d'autre. ☑ *Le seul fichier de source
+touché est [`build/compendium.template`](<2%20-%20Compendium/build/compendium.template>), et la
+pagination ne bouge pas* — **1 000 p.**, 13 164 965 octets contre 13 162 484.
 
 ## Carte du dépôt
 
@@ -161,9 +200,14 @@ Agentique/
 │   ├── clippy.toml                     ⭑ ses interdictions sont des contrats, pas du style
 │   └── web/                            ⚠ `index.html` seul est du source
 │
-├── 4 - Veille/                      Vol. VI et VII : deux documents dans un seul dossier, aucun
-│   ├── Python/                      dossier `figures/`, et ses trois contrôles sous `Python/`
-│   └── build/build-pdf.sh              ⭑ les deux commandes, versionnées le 21 août 2026
+├── 4 - Veille/                      Vol. VI et VII, et depuis le 28 août 2026 la note SDLC : trois
+│   │                                documents dans un seul dossier, aucun dossier `figures/`
+│   ├── Note-veille-SDLC-agentique.*    ⚠ le troisième document — hors livrables, et RIEN ne l'oppose
+│   │                                     à lui-même : ni `check-veille.py` ni `check-revue.py` ne le
+│   │                                     prennent en argument → `4 - Veille/README.md`
+│   ├── Python/                         les trois contrôles ; ⚠ ils couvrent deux des trois documents
+│   └── build/build-pdf.sh              ⭑ les deux commandes des livrables, versionnées le 21 août
+│                                         2026 ; ⚠ pas celle de la note, qui se recopie à la main
 │
 └── 5 - Recension/                   Vol. VIII et sa planche
     ├── figures/                     `dessine.py` + 5 SVG, chez leur document — comme celles du
@@ -172,15 +216,21 @@ Agentique/
                                        feuille de style versionnée
 ```
 
-**574 fichiers versionnés, 75,1 Mo** (**75 096 189 octets**, relevé le 25 août 2026) : 227 `.md`, 142 `.svg`, 76 `.rs`,
-53 `.html`, 31 `.py`, 10 `.pdf`, 9 `.toml`, 8 `.sh`, 6 gabarits Typst, 4 `.gitignore`, 2 `.mjs`,
-2 `LICENSE`, 1 `.lua`, 1 `Cargo.lock`, 1 `launch.json`, 1 `.gitattributes`. ☑ *75 094 989 o.
-jusque-là ; du solde de **+1 200 o.**, **+254** viennent de la synchronisation des titres de
-`5 - Recension/` le 25 août — le reste d'éditions encore au disque et non versées.* ⚠ *Le
-relevé est celui du disque de l'auteur, que l'arrivée de `.gitattributes` n'a pas renormalisé :
-**un clone rend 74 979 133 o.**, `* text=auto eol=lf` y ramenant les fichiers texte en LF.* *Les **10 PDF** sont les
-**9 rendus des livrables** et le mémoire de maîtrise de l'auteur ; les **8 `.sh`** sont les
-**7 `build-pdf.sh`** — un par dossier de livrable, les neuf PDF couverts — et `PRD/decompte.sh`.*
+**564 fichiers versionnés, 75,6 Mo** (**75 569 777 octets**, relevé le 28 août 2026) : 216 `.md`, 142 `.svg`, 76 `.rs`,
+53 `.html`, 31 `.py`, 11 `.pdf`, 9 `.toml`, 8 `.sh`, 6 gabarits Typst, 4 `.gitignore`, 2 `.mjs`,
+2 `LICENSE`, 1 `.lua`, 1 `Cargo.lock`, 1 `launch.json`, 1 `.gitattributes`. ⚠ *Le compte a **baissé**
+depuis les **574 fichiers** du 25 août, et c'est un solde de deux mouvements de sens contraire* :
+**−12 `.md`** — les douze rapports d'audit interne de `3 - Traité/bancs/audit-2026-08/`, retirés le
+25 août 2026 au commit `7a1b7f2` sur instruction d'auteur, **−282 007 o. nets** une fois leurs 300
+mentions réécrites — et **+2 fichiers** pour la note de veille SDLC, **+750 614 o.** ; le Compendium
+recomposé le 26 en ajoute **+2 913**. ⚠ *Le relevé est celui du disque de l'auteur, que l'arrivée de
+`.gitattributes` n'a pas renormalisé : **un clone rend 75 451 341 o.**, `* text=auto eol=lf` y
+ramenant les fichiers texte en LF — **118 436 o. d'écart**, et il n'y en a plus d'autre : l'arbre de
+travail est propre au 28 août 2026, ce qu'il n'était pas au relevé précédent.* *Les **11 PDF** sont
+les **9 rendus des livrables**, la note de veille SDLC et le mémoire de maîtrise de l'auteur ; les
+**8 `.sh`** sont les **7 `build-pdf.sh`** — un par dossier de livrable, **les neuf PDF de livrable
+couverts, et eux seuls** : ni le mémoire, qui n'est pas d'ici, ni la note, dont la commande n'est pas
+au script — et `PRD/decompte.sh`.*
 ⚠ **Le dépôt a maigri de 37,5 Mo le 21 août 2026**, et c'est un solde, non une pièce : les cinq
 œuvres de tiers sorties de l'index en pèsent **38,3 Mo** à elles seules, l'`.html` de l'état de
 l'art 0,76 Mo de plus, les pièces retouchées en place 0,28 de plus — et ce qui rentre le même jour
