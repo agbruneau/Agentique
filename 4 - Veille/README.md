@@ -7,6 +7,13 @@ sur spécifications, dépôts et textes réglementaires ; la [revue de littérat
 dit **ce que la littérature académique sait, et à quel régime de preuve**. *Les deux ne coïncident
 pas, et c'est l'intérêt.*
 
+⚠ **Un troisième document est entré le 28 août 2026, et il n'est pas du même genre.** La
+[note de veille SDLC](Note-veille-SDLC-agentique.md) est une **lecture critique de source unique** —
+un entretien de 4 h 26 —, non une revue de champ : *elle ne mesure pas l'état du champ, elle instruit
+un témoignage.* ⚠ **Le titre de ce fichier ne la nomme donc pas**, comme il ne nomme déjà pas le
+dossier : il nomme les deux livrables. ☑ *Le dossier porte trois documents publiés ; deux d'entre eux
+sont des livrables.*
+
 > **Où ce dossier vit.** Il est né le **15 août 2026**, **quatrième dossier numéroté** du dépôt
 > [Agentique](../README.md). ⚠ **Les quatre fichiers de livrable venaient de la racine**, où ils
 > vivaient depuis leurs dépôts respectifs — *inchangés au bit près, `git` enregistrant quatre
@@ -98,6 +105,33 @@ pas, et c'est l'intérêt.*
 > L'édition passe à **144 p.** *Ce que cette passe ne fait pas : vérifier qu'une source dit ce que le
 > texte lui fait dire. Elle établit qu'elle existe, qu'elle est celle qu'on annonce, et qu'on la cite
 > juste.*
+>
+> ☑ **Passe du 28 août 2026 — un troisième document, et son rendu.** La
+> [note de veille SDLC](Note-veille-SDLC-agentique.md) est entrée au dépôt le matin même (commit
+> `9fcc55e`), **en Markdown seul**. ⚠ *Elle ne portait aucun en-tête YAML* — titre en `#`, sous-titre
+> en `##`, rien de la géométrie commune : **elle ne se composait pas.** ☑ **Le gabarit lui a été posé
+> le jour même**, bloc `header-includes` **repris mot pour mot de la revue**, et le rendu sort à
+> **49 p.** ⚠ **Deux postes ont dû être tranchés pour ce document, et le bloc commun dit lui-même
+> qu'ils se tranchent pièce par pièce.** *(a)* Le **fer des dix tableaux**, déclaré **à la source**
+> comme le bloc l'exige : laissé en `auto` par Pandoc — qui hérite du
+> `align(center)` dont il enveloppe tout tableau —, il les rendait **tous centrés**, fiche de source
+> comprise ; ils sont déclarés au fer à gauche. *(b)* La **table s'arrête haut** — y = 585,1 pt sur sa
+> dernière page, **57 lignes libres pour les 9 que font ses mots-clés** —, donc le saut de page qui la
+> ferme est retiré : **comme à la revue, et contre la veille.** ⚠ **La numérotation des sections reste
+> manuelle, seule dérogation au YAML commun** : `section-numbering` renommerait « T7 » en « 5.7 » et
+> « Annexe B » en « 16 », que le corps cite en clair. *Les 21 filets `---` de la source sont tombés —
+> ils doublaient le blanc que le gabarit pose au-dessus de chaque titre —, et l'annexe E est passée
+> sous le `::: {#refs}` des deux bibliographies, la justification versant tout son mou dans une ligne
+> d'URL.* ☑ **Le corps est inchangé au mot près**, recompté avant et après.
+> ⚠⚠ **Et le rendu a découvert un défaut que le bloc de réglage commun porte depuis le 17 août
+> 2026** : le champ `/Title` du PDF sortait **« à lère des agents »**, l'apostrophe perdue —
+> `content-to-string` ne la voit pas, Typst la composant en `smartquote`. ⚠⚠ **Le défaut n'est pas
+> propre à la note** : relevé sur les onze PDF du dépôt, **il frappe les trois documents qui portent
+> le wrapper `conf` et dont le titre a une apostrophe**, dont `État de l'art — services financiers.pdf`
+> — *cassé depuis le 21 août 2026, et la passe qui a rendu les six `/Title` distincts ne l'a pas vu.*
+> ☑ **Corrigé au seul en-tête de la note**, à pagination inchangée ; ⚠ *l'état de l'art est hors de ce
+> dossier et reste cassé ; le report sur les deux livrables serait sans effet, et il reste à
+> trancher.*
 
 ---
 
@@ -145,7 +179,21 @@ jour par [`build/build-pdf.sh`](build/build-pdf.sh) et par celui de `5 - Recensi
 inchangée** — 144, 59 et 185 pages. ⚠ *Ce que l'échange règle, et c'est plus qu'une gêne de lecture* :
 le champ `/Title` des trois PDF était **identique aux trois**, ce qui les rendait indiscernables à
 tout outil qui lit des métadonnées — catalogue, gestionnaire de références, moteur de recherche
-documentaire. *Les six PDF de tête portent désormais six `/Title` distincts.* ⚠ **Ce qu'il ne règle
+documentaire. *Les six PDF de tête portent désormais six `/Title` distincts.* ⚠⚠ **Et l'un de ces six
+était déjà cassé ce jour-là, ce que la passe n'a pas vu — constaté le 28 août 2026, en rendant le
+septième.** `État de l'art — services financiers.pdf` porte **`/Title` = « État de lart en services
+financiers »**, l'apostrophe perdue. ☑ **Le mécanisme est le bloc de réglage lui-même**, et il a été
+isolé : la fonction `content-to-string` du gabarit Pandoc, **seule voie par où le titre atteint
+`/Title` quand `conf` est redéfini**, ne connaît que `text`, `children` et `body` — elle rend vide
+sur une apostrophe, que Typst compose en `smartquote`. ⚠ *Relevé sur les onze PDF du dépôt : **les
+trois documents qui portent le wrapper `conf` et dont le titre a une apostrophe** sortent le champ
+mutilé ; **ceux qui ne le portent pas la gardent** — la planche de `5 - Recension/` et deux
+monographies du Vol. I.* **La passe du 17 août 2026, qui a introduit le wrapper pour réparer le bloc
+de titre, a donc cassé ce champ du même geste.** ⚠ *Poser l'apostrophe typographique à la source n'y
+change rien, vérifié : Pandoc la relit et réémet le signe droit.* ☑ **Corrigé le 28 août 2026 au seul
+en-tête de la note** ; ⚠ **l'état de l'art reste cassé** — *il est hors de ce dossier, et rien ici ne
+le rend.* ⚠ *La reprise sur les deux livrables ne changerait ni leur pagination ni leur `/Title`,
+leurs titres n'ayant pas d'apostrophe ; elle reste à trancher.* ⚠ **Ce qu'il ne règle
 pas** : le **radical commun** reste, et il le doit — les trois documents sont bien d'une même série.
 Un renvoi qui les cite par leur seul sous-titre ne désigne toujours rien ; c'est le titre qu'il faut
 citer, et il suffit désormais.
@@ -161,6 +209,43 @@ ne règle pas d'emblée* : la substitution du titre a **précédé** la décisio
 et le TOC ne l'ont datée qu'après coup, par **D-14** (PRD v0.18 §17) et la **décision 21**
 (TOC v0.34), la décision 20 ayant entre-temps énoncé un titre que l'instruction du 8 août n'avait
 pas donné.
+
+---
+
+## La note de veille SDLC — le troisième document
+
+| | **Note de veille SDLC agentique** |
+|---|---|
+| **Fichiers** | [`Note-veille-SDLC-agentique.md`](Note-veille-SDLC-agentique.md) → [`.pdf`](Note-veille-SDLC-agentique.pdf) |
+| **Titre** | *La transformation du cycle de vie du développement logiciel à l'ère des agents* — sous-titre *Note de veille technologique et stratégique — analyse critique du Lex Fridman Podcast #501 avec David Heinemeier Hansson* |
+| **Rendu** | **49 p.**, 15 sections numérotées, **18 thèses horodatées**, 10 tableaux, 5 annexes, **127 horodatages distincts** ; ⚠ *21 532 mots au corps, mots-clés et annexes compris — la note en déclare « ~20 400, annexes comprises », et les deux comptes n'ont pas été rapprochés* |
+| **Source** | **Une seule** — un entretien de 5 h 15, dont 4 h 26 retenues ; transcription officielle de l'éditeur |
+| **Date de rédaction** | **27 août 2026** ; entrée au dépôt le 28 |
+| **Thèse** | « Le facteur limitant s'est déplacé de l'implémentation vers la formulation » |
+| **Méthode** | Lecture intégrale, dix-huit thèses extraites, **quarante affirmations triangulées** contre sources externes, marqueurs épistémiques par énoncé |
+| **État** | Publiée ; **aucune cible de pagination**, aucune n'a jamais été posée |
+
+⚠ **Ce document n'est pas du genre des deux autres, et trois choses le montrent** : *(a)* il porte
+**une source primaire unique** là où la veille en ouvre 342 et la revue 192 ; *(b)* sa bibliographie
+— l'annexe E, **30 entrées en puces** — n'est ni numérotée ni appariée au corps, si bien qu'**aucun
+appariement cité ↔ défini n'y est possible** ; *(c)* il ne rend rien au corpus et le corpus ne lui
+rend rien. ⚠ *Il partage en revanche le mot « veille » avec le livrable voisin* — mais **en
+sous-titre, et comme nom de genre**, `Note de veille technologique et stratégique`. ☑ **Son `title:`
+ne porte aucun des radicaux de série que ce README traque** : ni *interopérabilité*, ni
+*orchestration*, ni *agentique*, ni *veille*, ni *état de l'art* — **il n'entre dans aucune des
+collisions du 20 août 2026**, et le seul mot plein qu'il partage avec un titre du dépôt est
+« agents », commun à la troisième monographie du Vol. I. *La convention du dépôt tient : le fichier
+se nomme par son genre.*
+
+⚠⚠ **Le compte des livrables n'est pas tranché ici, et cette fois le motif joue dans les deux
+sens.** *Pour* : le document est publié, signé, daté, rendu au gabarit de la maison, et il ouvre sa
+propre source — il ne descend d'aucun livrable, c'est le motif exact qui a fait passer le compte de
+sept à huit le 20 août 2026. *Contre* : une note de source unique, sans bibliographie appariée et
+sans contrôle qui la mesure, tient plus de l'appareil que du livrable. ⚠ **Ce README la range donc
+comme document publié et non comme neuvième livrable**, en donnant son motif — *et le compte se
+renverse d'un mot de l'auteur, comme le huitième.* ⚠ **Ce n'est pas une instruction d'auteur** : le
+PRD ne porte aucune décision sur ce document.
+
 ---
 
 ## Ce que chacun rend à l'autre, et au corpus
@@ -197,12 +282,21 @@ auto-déclarées — sont exposées en **section 10** de la veille, sous ces ter
 
 ## Construire les PDF
 
-Deux chaînes, **invocation Pandoc directe et gabarit Typst livré avec Pandoc**, tout le réglage
-vivant dans l'en-tête YAML de chaque source. ⚠ **Le gabarit n'est plus pris tel quel depuis le
-17 août 2026** : le bloc `header-includes`, commun aux deux sources, **redéfinit sa fonction `conf`**
+Trois chaînes depuis le 28 août 2026, **invocation Pandoc directe et gabarit Typst livré avec
+Pandoc**, tout le réglage vivant dans l'en-tête YAML de chaque source. ⚠ **Le gabarit n'est plus pris
+tel quel depuis le 17 août 2026** : le bloc `header-includes`, commun aux trois sources d'ici,
+**redéfinit sa fonction `conf`**
 pour composer lui-même le bloc de titre — le gabarit y laissait deux lignes vides sous l'auteur et
 n'en laissait aucune au-dessus. *Aucun fichier de gabarit n'est pour autant versionné : la
 redéfinition vit dans l'en-tête, avec tout le reste.*
+
+⚠ **« Commun » veut dire identique à trois postes près, et chacun se déclare dans le bloc lui-même** —
+*(1)* le **rang des titres**, décalé selon que les chapitres ouvrent en `#` ou en `##` ; *(2)* le
+**saut de page qui ferme la table**, gardé par la veille dont la table remplit sa dernière page,
+retiré par la revue et par la note dont elle s'arrête haut ; *(3)* depuis le 28 août 2026, la
+redéfinition de **`content-to-string`** au seul en-tête de la note, **qui ne touche que le champ
+`/Title`** — cf. plus haut. ☑ *Le reste — géométrie, seuil de gras, débord de l'appareil, drapeau des
+tableaux et des bibliographies, bloc de titre — est le même signe pour signe aux trois.*
 
 ☑ **Ces deux commandes sont versionnées depuis le 21 août 2026** —
 [`build/build-pdf.sh`](build/build-pdf.sh), qui ne fait que les inscrire au dépôt, sans en changer un
@@ -225,6 +319,17 @@ pandoc "Veille Technologique.md" --pdf-engine=typst --toc -o "Veille Technologiq
 pandoc "Revue de littérature.md" --pdf-engine=typst --toc -o "Revue de littérature.pdf"
 ```
 
+⚠ **La troisième n'est pas au script, et il faut la recopier d'ici** — c'est l'état exact où les deux
+autres étaient avant le 21 août 2026 :
+
+```bash
+pandoc "Note-veille-SDLC-agentique.md" --pdf-engine=typst --toc -o "Note-veille-SDLC-agentique.pdf"
+```
+
+⚠ *L'ajouter à [`build/build-pdf.sh`](build/build-pdf.sh) tient en une entrée de son `case`* ; le
+script ne la porte pas au 28 août 2026, et son enchaînement de [`check-resume.py`](Python/check-resume.py)
+ne s'exécute donc pas sur ce rendu — **il a été lancé à la main, et il sort 0.**
+
 ☑ **Ces deux commandes n'ont pas changé au déplacement du 15 août 2026, et c'est un fait et non une
 chance** : *ni l'une ni l'autre source ne porte une seule image*, donc aucun chemin relatif à
 résoudre. ⚠ **Le contraste avec le traité instruit** : lui cite dix-neuf figures en chemin relatif,
@@ -234,10 +339,11 @@ seul.*
 
 **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, police New Computer Modern. Marges **117 pt en x,
 72 pt en y** — 4,13 × 2,54 cm, soit un corps de 378 pt sur 648 —, corps de 11 pt, résumé sur la page
-de titre. ⚠ *Les deux marges se lisent au YAML des deux sources, où elles sont identiques ; le
+de titre. ⚠ *Les deux marges se lisent au YAML des trois sources d'ici, où elles sont identiques ; le
 traité compose sur la même géométrie depuis le 15 août 2026.* ☑ **Et les deux documents de
 [`5 - Recension/`](../5%20-%20Recension/) y composent depuis le 20 août 2026** — `margin: x: 117pt`,
-`y: 72pt`, `papersize: us-letter` aux cinq en-têtes : *cinq documents, une seule géométrie.*
+`y: 72pt`, `papersize: us-letter` aux six en-têtes depuis le 28 août : *six documents, une seule
+géométrie.*
 ⚠ **Un seul déroge, et sur un seul point** : le résumé de l'état de l'art compose à **9,5 pt dans
 une gouttière de 1 em**, quand les quatre autres tiennent 10 pt dans 2 em — *la dérogation est
 déclarée dans son en-tête, avec sa mesure ; voir plus bas ce que le contrôle en voit, et ne peut pas
@@ -247,13 +353,15 @@ en voir.*
 
 ## L'appareil de contrôle — [`Python/`](Python/)
 
-Trois contrôles, **sans dépendance externe** : la bibliothèque standard seule.
+Trois contrôles, **sans dépendance externe** : la bibliothèque standard seule. ⚠ **Ils couvrent deux
+des trois documents du dossier** — *voir plus bas ce que la note de veille n'a pas.*
 
 | Script | Ce qu'il oppose au document | Dernière exécution |
 |---|---|---|
 | [`check-veille.py`](Python/check-veille.py) | **quatre contrôles** — renvois en clair contre numérotation Pandoc *(et, depuis le 17 août 2026, titres collés au paragraphe précédent)*, cardinaux écrits en toutes lettres, doublons bibliographiques *par URL, DOI, arXiv **et titre**, les homonymies légitimes étant arbitrées nommément*, appariement cité ↔ défini | **sortie 0** — 94 sections, 24 tableaux, 25 questions ouvertes ; 342 entrées, **306 titres**, 3 homonymies arbitrées ; **342 définies, 342 citées** |
 | [`check-revue.py`](Python/check-revue.py) | **quatre contrôles** — appariement et contiguïté, légendes de tableau, doublons, **cardinaux du régime de preuve** | **sortie 0** — 192 entrées ; **12 attestées, 32 autodéclarées, 145 sans revue** sur 189 arXiv |
-| [`check-resume.py`](Python/check-resume.py) | **le budget de mise en page** : le résumé tient-il sur la page de titre du PDF rendu | **sortie 0** — veille, dernière ligne à **y = 171,2 pt**, dégagement **+99,2 pt** ; revue, **y = 223,2 pt**, **+151,2 pt** ; ⚠ *et sur les deux rendus de `5 - Recension/`, rejoué le 20 août 2026* — état de l'art, **y = 96,1 pt**, **+24,1 pt** ; planche, **y = 84,6 pt**, **+12,6 pt** — **deux sorties 0 qui ne disent pas ce qu'elles ont l'air de dire, cf. plus bas** |
+| [`check-resume.py`](Python/check-resume.py) | **le budget de mise en page** : le résumé tient-il sur la page de titre du PDF rendu | **sortie 0** — veille, dernière ligne à **y = 171,2 pt**, dégagement **+99,2 pt** ; revue, **y = 223,2 pt**, **+151,2 pt** ; ☑ *et la note de veille SDLC, rejouée le 28 août 2026* — **y = 226,8 pt**, **+154,8 pt**, le plus grand dégagement des trois ; ⚠ *sur les deux rendus de `5 - Recension/`, rejoué le 20 août 2026* — état de l'art, **y = 96,1 pt**, **+24,1 pt** ; planche, **y = 84,6 pt**, **+12,6 pt** — **deux sorties 0 qui ne disent pas ce qu'elles ont l'air de dire, cf. plus bas** |
+| — | ⚠ **rien n'oppose quoi que ce soit à la note de veille SDLC**, hors le contrôle de résumé ci-dessus | *aucun contrôle de source ; cf. plus bas* |
 
 ⚠ **Ces trois contrôles ont attrapé, le 15 août 2026, ce qu'aucun relecteur n'avait vu** : huit URL
 partagées entre une entrée héritée et une entrée neuve — les rédacteurs travaillaient sur des
@@ -274,10 +382,31 @@ cas. Le contrôle comptait donc **14 sections de rang 1 là où le PDF en compos
 lisait autrement que la chaîne qui le rend. ☑ *La leçon n'est pas qu'un contrôle mente : c'est qu'un contrôle qui
 réimplémente le comportement d'un outil hérite de chacune des règles qu'il n'a pas recopiées.*
 
+⚠⚠ **Et voici ce qu'aucun d'eux ne mesure depuis le 28 août 2026 : la note de veille SDLC.**
+`check-veille.py` et `check-revue.py` sont écrits contre **leur** source, nommément — chacun résout
+son fichier contre l'emplacement du script —, et ni l'un ni l'autre ne prend la note en argument.
+☑ *Le seul contrôle qui l'atteint est `check-resume.py`, parce que lui accepte un chemin, et il ne
+regarde que la page 1.* ⚠ **Un contrôle de source lui manquerait de peu**, et deux de ses quatre
+mécanismes n'y auraient rien à mordre : *l'appariement cité ↔ défini* suppose une bibliographie
+numérotée, que l'annexe E n'est pas ; *les cardinaux de régime de preuve* sont propres à la revue.
+Restent les **renvois en clair contre la numérotation Pandoc** — la note en porte, « section 9 »,
+« T7 », « Annexe B » — et les **titres collés au paragraphe précédent**, le défaut même qui a rendu
+sept titres de la veille en texte courant pendant trois éditions.
+
+⚠⚠ **Et voici ce qu'un tel contrôle aurait attrapé, relevé à la main le 28 août 2026** : la note
+**déclare quatre marqueurs épistémiques** en section 2 — *Confirmé, Probable, Hypothèse, À vérifier*,
+et sa fiche de source les énumère dans ces termes — mais son **tableau de triangulation en emploie
+six** : les quatre déclarés (12, 4, 3 lignes) plus **« Nuancé »** et **« Partiel »**, une ligne
+chacun sur les 21 du tableau. *Le protocole ne les définit pas ; rien ne dit où ils tombent entre
+« Probable » et « À vérifier ».* ☑ **Ce n'est pas corrigé ici** — c'est un constat de passe sur le
+document, pas une reprise de son texte —, ⚠ *et c'est exactement le genre d'écart qu'un cardinal
+écrit en toutes lettres laisse passer quand rien ne l'oppose au document.*
+
 ```bash
 python Python/check-veille.py
 python Python/check-revue.py
 python Python/check-resume.py        # ou : python Python/check-resume.py <un autre .pdf>
+python Python/check-resume.py "Note-veille-SDLC-agentique.pdf"    # le seul qui atteigne la note
 ```
 
 ☑ **Les trois se lancent de n'importe quel répertoire depuis le 15 août 2026.** ⚠ *Ce n'était pas le
@@ -356,22 +485,28 @@ compose.
 
 ```
 4 - Veille/
-├── README.md                        ← ce fichier
-├── Veille Technologique.md / .pdf    144 p., 342 réf. — édition du 15 août 2026, faits gelés à cette date
-├── Revue de littérature.md / .pdf     59 p., 192 réf. — arrêtée au 15 août 2026
-└── Python/                          ← les trois contrôles ; stdlib seule, aucune dépendance
-    ├── check-veille.py                renvois, titres collés, cardinaux, bibliographie, appariement
-    ├── check-revue.py                 appariement, tableaux, doublons, régimes de preuve
-    └── check-resume.py                budget de mise en page de la page de titre
+├── README.md                          ← ce fichier
+├── Veille Technologique.md / .pdf      144 p., 342 réf. — édition du 15 août 2026, faits gelés à cette date
+├── Revue de littérature.md / .pdf       59 p., 192 réf. — arrêtée au 15 août 2026
+├── Note-veille-SDLC-agentique.md/.pdf   49 p., source unique — rédigée le 27 août 2026, rendue le 28
+├── build/
+│   └── build-pdf.sh                   ← les deux commandes des livrables ; ⚠ pas celle de la note
+└── Python/                            ← les trois contrôles ; stdlib seule, aucune dépendance
+    ├── check-veille.py                  renvois, titres collés, cardinaux, bibliographie, appariement
+    ├── check-revue.py                   appariement, tableaux, doublons, régimes de preuve
+    └── check-resume.py                  budget de mise en page de la page de titre
 ```
 
 *(Les quatre fichiers de livrable et le dossier `Python/` venaient de la racine du dépôt, le 15 août
 2026 — `Python/` y avait lui-même été créé le 10 août, les trois scripts vivant à la racine
-auparavant.)* ⚠ **Le dossier ne porte rien d'autre**, et il en portait moins que ce README ne
-disait : l'arborescence y a listé un journal de boucle **qui n'a jamais existé ici** jusqu'au
-17 août 2026. ⚠ *Et il n'en existe plus nulle part au dépôt* : le dernier, celui du traité, **a été
-supprimé le 17 août 2026 au commit `20cc1ae`** — la formule antérieure, « le seul fichier de ce nom
-au dépôt est celui du traité », est fausse depuis ce jour-là.
+auparavant.)* ⚠ **Le dossier ne porte rien d'autre**, et cette arborescence en a longtemps dit faux
+dans les deux sens. ⚠ *Elle en portait un de trop* : un journal de boucle **qui n'a jamais existé
+ici**, listé jusqu'au 17 août 2026 — *et il n'en existe plus nulle part au dépôt*, le dernier, celui
+du traité, ayant été **supprimé le 17 août 2026 au commit `20cc1ae`** ; la formule antérieure, « le
+seul fichier de ce nom au dépôt est celui du traité », est fausse depuis ce jour-là. ⚠⚠ *Et elle en
+a longtemps omis un* : **`build/` est entré le 21 août 2026** (commit `696bcac`) et cette
+arborescence ne l'a pas listé pendant sept jours, **alors que deux passages plus haut le citaient
+nommément**. ☑ *Corrigé le 28 août 2026, du même geste que l'ajout de la note.*
 
 ---
 
@@ -379,7 +514,9 @@ au dépôt est celui du traité », est fausse depuis ce jour-là.
 
 - ⚠ **Aucune pagination n'est vérifiée** — voir plus haut. Les deux nombres de pages sont
   **constatés au rendu du 17 août 2026** — 144 et 59 —, jamais opposés à une cible : *les deux
-  cibles ont été levées le 15 août, précisément parce que rien ne les tenait.*
+  cibles ont été levées le 15 août, précisément parce que rien ne les tenait.* ⚠ **Les 49 p. de la
+  note sont constatées au rendu du 28 août 2026**, et aucune cible ne leur a jamais été posée : *le
+  cas est plus simple que celui des deux autres, il n'y a rien à lever.*
 - ⚠⚠ **Un contrôle a validé pendant trois éditions ce qu'il ne mesurait pas.** Sept titres de la
   veille se rendaient en texte courant, croisillon compris, et `check-veille.py` les comptait
   pourtant comme des sections numérotées. **Le défaut est corrigé des deux côtés le 17 août 2026** —
@@ -404,6 +541,27 @@ au dépôt est celui du traité », est fausse depuis ce jour-là.
   2026, il sort **0** sur une planche **qui n'a pas de résumé** et sur un état de l'art **dont le
   résumé déroge à 9,5 pt dans 1 em** — sorties brutes et détail plus haut. *Deux sorties 0 qui ne
   valent pas ce que valent les trois autres.*
+- ⚠⚠ **La note de veille SDLC n'a aucun contrôle de source, et elle est entrée au dossier sans en
+  recevoir un.** Seul [`check-resume.py`](Python/check-resume.py) l'atteint, parce qu'il accepte un
+  chemin en argument, **et il ne regarde que sa page 1**. ⚠ *Relevé à la main le 28 août 2026, et
+  c'est précisément ce qu'un contrôle aurait levé* : la note **déclare quatre marqueurs épistémiques
+  et son tableau de triangulation en emploie six** — « Nuancé » et « Partiel » s'ajoutent aux quatre,
+  une ligne chacun, sans définition au protocole. **Non corrigé** : c'est un constat sur le document.
+  ⚠ *Ce que cette réserve ne dit pas : combien d'autres écarts du même ordre la note porte, faute de
+  quoi que ce soit qui l'oppose à elle-même.*
+- ⚠⚠ **Le bloc de réglage commun mutile le champ `/Title` de tout titre qui porte une apostrophe, et
+  il le fait depuis le 17 août 2026.** *Constaté le 28 août 2026, sur les onze PDF du dépôt* : les
+  **trois** documents qui redéfinissent `conf` et dont le titre a une apostrophe sortent le champ
+  amputé ; ceux qui ne le redéfinissent pas la gardent. ☑ **Corrigé au seul en-tête de la note.**
+  ⚠ **`5 - Recension/État de l'art — services financiers.pdf` reste cassé** — `/Title` = « État de
+  lart en services financiers » —, *il est hors de ce dossier et rien ici ne le rend*. ⚠ *Ce que
+  cette réserve ne dit pas : aucun contrôle du dépôt ne lit les métadonnées d'un PDF, et le défaut a
+  survécu à la passe du 21 août 2026 qui portait précisément sur ce champ.*
+- ⚠ **Le rendu de la note n'est pas reproductible par le script du dépôt.**
+  [`build/build-pdf.sh`](build/build-pdf.sh) ne porte que les deux commandes des livrables ; celle de
+  la note **reste à recopier de ce README à la main**, et l'enchaînement du contrôle de résumé ne
+  s'exécute donc pas sur son rendu. *C'est l'état exact où les deux autres étaient jusqu'au 21 août
+  2026, et il se lève d'une entrée de `case`.*
 - ⚠ **Les deux documents décrivent l'état de leurs sources à leur date de gel**, et cela ne se
   corrige pas après coup. Trois écarts connus entre la veille et l'arbre courant sont consignés au
   [README du dépôt](../README.md) — *signalés là-bas, non corrigés ici*.

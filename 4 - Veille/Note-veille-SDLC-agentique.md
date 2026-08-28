@@ -1,11 +1,381 @@
-# La transformation du cycle de vie du développement logiciel à l'ère des agents
+---
+title: "La transformation du cycle de vie du développement logiciel à l'ère des agents"
+subtitle: "Note de veille technologique et stratégique — analyse critique du Lex Fridman Podcast #501 avec David Heinemeier Hansson"
+author:
+  - "André-Guy Bruneau, M.Sc. IT · agbruneau@gmail.com · 27 août 2026"
+lang: fr
+region: CA
+papersize: us-letter
+fontsize: 10pt
+linestretch: 0.95
+mainfont: "New Computer Modern"
+margin:
+  x: 117pt
+  y: 72pt
+abstract-title: "Résumé"
+abstract: |
+  Cette note examine ce que devient le cycle de vie du développement logiciel quand l'implémentation cesse d'être le facteur limitant. Elle prend pour source unique l'épisode 501 du *Lex Fridman Podcast*, publié le 26 août 2026, où David Heinemeier Hansson décrit trois mois de développement d'un système d'exploitation complet dont il affirme n'avoir écrit à la main aucune ligne livrée. La transcription officielle — environ 43 000 mots — a été lue intégralement ; dix-huit thèses horodatées en ont été extraites et quarante affirmations vérifiables confrontées à des sources externes, chacune portant l'un de quatre marqueurs épistémiques : **confirmé**, **probable**, **hypothèse**, **à vérifier**.
 
-## Note de veille technologique et stratégique
+  Le témoignage n'apporte aucune mesure : aucun des gains annoncés — 10×, 100×, 1000× — n'est instrumenté, et l'auteur récuse lui-même la métrique qu'il emploie en raccourci. Ce qu'il apporte est plus rare : la description opératoire d'un système cohérent — poste de travail, protocole de revue multi-modèles, économie de jetons, mode de spécification, répartition des rôles. La rupture y est datée du 24 novembre 2025 et attribuée **au harnais, non au modèle** ; le travail humain se redéploie vers quatre activités — formuler le problème, arbitrer entre des variantes produites à bas coût, juger la forme du résultat, décider ce qui est intégré.
 
-### Analyse critique du Lex Fridman Podcast #501 avec David Heinemeier Hansson
+  Le témoignage est crédible sur le périmètre qu'il décrit — projet neuf, source ouverte, décideur unique, oracles de vérification simples, tolérance élevée au risque —, et l'épisode contient lui-même le contre-exemple qui en borne la portée : sur une base de code établie, à forte valeur d'usage, la même délégation a produit une dérive architecturale qu'il a fallu réparer à la main. La note en tire une recommandation générique, valable hors de tout secteur : séparer explicitement un régime de délégation forte, là où les oracles de vérification sont solides et le coût d'un échec faible, d'un régime de délégation encadrée, là où l'architecture, la conformité ou la disponibilité sont en jeu — puis instrumenter la stabilité de livraison avant tout indicateur de débit, de manière à détecter la dérive avant qu'elle ne devienne structurelle.
+
+header-includes: |
+  ```{=typst}
+  // ═══════════════════════════════════════════════════════════════════════
+  //  RÉGLAGE COMMUN — traité, veille technologique, revue de littérature.
+  //  Ce bloc est IDENTIQUE dans les trois en-têtes, au rang des titres près
+  //  et aux deux règles propres au traité qui closent le sien — chacune dit
+  //  pourquoi. Les trois documents doivent se lire comme un seul ouvrage, et
+  //  toute reprise se fait sur les trois.
+  //
+  //  Géométrie, posée dans le YAML ci-dessus et rappelée ici parce qu'elle
+  //  commande tout le reste :
+  //    corps de texte    378 pt (5,25 po) — 612 moins deux marges de 117 pt,
+  //                      soit 75 à 79 signes par ligne à 11 pt.
+  //    interligne        14,3 pt — 0,95 × 0,65 em de blanc sur 11 pt de
+  //                      corps, soit 1,30 fois le corps.
+  //    hauteur composée  648 pt (9 po), 45 lignes.
+  //    Le bloc composé fait donc 378 × 648 pt : mêmes proportions, à 1 % près,
+  //    que l'article de référence (343 × 581 pt), qui compose 85 signes par
+  //    ligne sur un interligne de 1,20 là où celui-ci en compose 77 sur 1,30.
+  //
+  //  ⚠ `fontsize` VAUT 10 pt ET LE CORPS VAUT 11 pt. Ce n'est pas une
+  //  contradiction : le gabarit compose le bloc de titre et le résumé AVANT
+  //  d'entrer dans le document, donc à `fontsize`, et `include-before` remet
+  //  le corps à 11 pt dès la première ligne du texte. Le résumé se compose
+  //  ainsi un corps sous le texte, comme l'usage le veut — et surtout il
+  //  tient sur sa page : le gabarit pose le bloc de titre en FLOTTANT NON
+  //  SÉCABLE, et un résumé qui déborde est rogné sans que Pandoc ni Typst ne
+  //  le signalent. `4 - Veille/Python/check-resume.py` est la porte qui le
+  //  mesure, et elle est la seule.
+  //
+  //  ⚠ L'APPAREIL GARDE LA MESURE D'UN POUCE. Les dix-neuf figures du traité
+  //  sont gravées à 468 unités (figures/dessine.py, W = 468) et son
+  //  pseudocode aligne des lignes de 86 signes, soit 466 pt à 9 pt : l'un et
+  //  l'autre débordent d'un corps de 378 pt. `pad(x: -45pt)` rend aux
+  //  figures, aux tableaux et aux blocs de code les 468 pt (6,5 po) auxquels
+  //  ils ont été composés, centrés sur le corps, et laisse un pouce franc de
+  //  chaque côté. Retirer ce débord SANS régénérer les figures à la largeur
+  //  du corps les met à l'échelle de celui-ci et fait tomber leurs textes de
+  //  8,5 pt à 6,9 pt — la panne est silencieuse, elle ne se voit qu'au rendu.
+
+  // ── Folio : centré en pied, jamais sur la page de titre.
+  #set page(footer: context {
+    let n = counter(page).get().first()
+    if n > 1 { align(center)[#text(size: 10pt)[#n]] }
+  })
+
+  // ── Paragraphes : alinéa, pas de blanc intercalaire. Typst n'indente pas
+  //    le premier paragraphe d'un bloc ni celui qui suit un titre : c'est
+  //    exactement la convention d'un `article`, ne pas passer `all: true`.
+  #set par(spacing: 0.6em, first-line-indent: 1.5em)
+
+  // ── Emphase : le gras dénote un TERME, pas une proposition. ⚠ SEUL POSTE
+  //    OÙ LE GABARIT CORRIGE LA SOURCE, et il ne lui retire rien : le texte
+  //    reste entier, seule la graisse tombe.
+  //    Relevé sur les rendus du 15 août, même réglage pour les trois :
+  //    1,9 % des signes du traité composés en gras, 10,7 % de la veille,
+  //    10,5 % de la revue — et jusqu’à 33,9 % sur une page. À ces densités le
+  //    gras ne signale plus, il tache : deux lecteurs indépendants, en
+  //    comparaison à l’aveugle, ont décrit la même page en « plaques noires
+  //    réparties au hasard de la colonne », lue de tache en tache au lieu
+  //    d’être parcourue — le traité, à 0,5 % dans son texte courant, a gagné
+  //    le même tour sans qu’aucun lecteur ne mentionne sa graisse.
+  //    Le critère est la LARGEUR, parce que c’est elle que l’œil voit — un
+  //    compte de mots ne distingue pas un terme d’une incise. En deçà de
+  //    14 em (154 pt à 11 pt, deux cinquièmes de la mesure, ≈ 29 signes), le
+  //    gras est un repère ponctuel et se conserve ; au-delà il fait plaque et
+  //    se rend au romain. Mesuré en gras à 11 pt : « Le moteur comme
+  //    client. » 138 pt et « Ce que la revue renvoie. » 135 pt passent — les
+  //    titres courants d’entrée de paragraphe tiennent, et ce sont eux qui
+  //    donnent le rythme de la page ; « prépublication non révisée par les
+  //    pairs » 219 pt, « Un socle achevé, à une révision près. » 204 pt et
+  //    toute ouverture de section de deux lignes et demie tombent. L’échantillon
+  //    ne montre rien entre 138 et 169 pt : le seuil est posé dans ce creux.
+  //    ⚠ EN EM, PAS EN POINTS : le seuil vaut 126 pt dans les tableaux, qui
+  //    composent à 9 pt, soit le même nombre de signes qu’à 11 pt.
+  //    ⚠ `measure` mesure le corps HORS du gras qui l’enveloppe, donc à 3 %
+  //    près en dessous de sa largeur composée. C’est un seuil, pas une cote.
+  //    ⚠ Précédent maison : `2 - Compendium/build/accentuation.lua` tranche la
+  //    même chose au filtre Pandoc, au compte de mots. La règle vit ici et non
+  //    dans un filtre parce que les trois chaînes d’appel de Pandoc ne portent
+  //    pas de `--lua-filter` et ne doivent pas en porter.
+  #show strong: it => context {
+    if measure(it.body).width < 14em.to-absolute() { it }
+    else { text(weight: "regular", it.body) }
+  }
+
+  // ── Titres : c'est le blanc AU-DESSUS qui fait la hiérarchie, pas le corps.
+  #show heading: set text(hyphenate: false)
+  #show heading: set par(justify: false, first-line-indent: 0pt)
+  #show heading: set block(sticky: true)
+
+  // ── Appareil : tableaux, blocs de code et légendes à 9 pt, légendes ferrées
+  //    à gauche et collées à ce qu'elles légendent.
+  #show figure.where(kind: table): set text(size: 9pt)
+  #show raw.where(block: true): set text(size: 9pt)
+  #show figure.caption: set text(size: 9pt)
+  #show figure.caption: set par(justify: false, first-line-indent: 0pt)
+  #show figure.caption: set block(sticky: true)
+  //    ⚠ La légende revient sur la MESURE DU TEXTE. Le débord de 45 pt vaut
+  //    pour ce qui est gravé large — figures, tableaux, pseudocode —, pas pour
+  //    la phrase qui les nomme : un lecteur l'a vue « ferrée sur le tableau et
+  //    non sur le texte », et elle l'était, son fer tombant 45 pt à gauche de
+  //    la colonne. `pad(x: 45pt)` annule ici, pour la seule légende, le
+  //    `pad(x: -45pt)` posé plus bas sur la figure entière : elle se compose
+  //    donc sur 378 pt, au fer du texte courant, sous un appareil qui garde
+  //    ses 468 pt. ⚠ Le compte est exact quand la figure OCCUPE ses 468 pt,
+  //    c'est-à-dire toujours sauf pour un tableau que Pandoc laisse en
+  //    colonnes automatiques : celui-là se rétrécit à son contenu, Typst le
+  //    centre, et sa légende suit le bloc rétréci — 1 légende sur 54, décalée
+  //    de 11,4 pt, mesurée sur la légende des sigles de la veille. ⚠ NE PAS
+  //    écrire ici « tableau » suivi d'un nombre : `check-revue.py` lit tout le
+  //    fichier, en-tête compris, et prend le mot pour un renvoi hors plage.
+  #show figure.caption: set align(left)
+  #show figure.caption: it => pad(x: 45pt, it)
+
+  // ── Tableaux : en drapeau, ferrés en haut. ⚠ La justification dans une
+  //    colonne de seize signes ouvre des lézardes et force la césure à chaque
+  //    ligne : c'est ce qui rendait la page 12 de la veille illisible. Le
+  //    centrage vertical, lui, faisait flotter chaque cellule au milieu de la
+  //    rangée, sans ligne de base commune d'une colonne à l'autre.
+  #set table(inset: (x: 5pt, y: 4pt))
+  #show table.cell: set par(justify: false, first-line-indent: 0pt, leading: 0.5em)
+  //    ⚠ Le FER HORIZONTAL, lui, échappe à cette règle : l'argument `align:`
+  //    que Pandoc pose sur chaque tableau l'emporte, et un `left` écrit ici
+  //    serait sans effet. Il n'est pour autant PAS TOUJOURS CELUI QUE LA
+  //    SOURCE DÉCLARE, contrairement à ce que ce commentaire a dit jusqu'au
+  //    16 août 2026 — relevé sur le typst intermédiaire des trois : les 24
+  //    tableaux de la veille déclarent le leur colonne par colonne (11 ferrés
+  //    à gauche, 13 centrés) et l'obtiennent ; les 22 du traité et les 8 de la
+  //    revue ne déclarent rien, Pandoc y pose `auto`, et `auto` hérite du
+  //    `align(center)` dont Pandoc enveloppe tout tableau. Ces trente-là sont
+  //    donc centrés par défaut d'appel et non par choix, cellules de trois
+  //    lignes comprises. Les reprendre au fer à gauche tient en un mot ici
+  //    (`top + left`), mais fait refluer trente tableaux et deux paginations :
+  //    c'est un arbitrage ouvert, pas un résidu de tour, et il se tranche sur
+  //    les sources, où le fer se déclare.
+  #show table.cell: set align(top)
+
+  // ── Blocs : figures, tableaux, code et listes respirent, et se scindent.
+  #show figure: set block(breakable: true, above: 1.4em, below: 1.4em)
+  #show raw.where(block: true): set block(above: 1.4em, below: 1.4em)
+  #show enum: set block(above: 1.0em, below: 1.0em)
+  #show list: set block(above: 1.0em, below: 1.0em)
+  #set image(width: 100%)
+
+  // ── Débord de l'appareil — cf. l'avertissement en tête de bloc.
+  #show figure: it => pad(x: -45pt, it)
+  #show raw.where(block: true): it => pad(x: -45pt, it)
+
+  // ── Bibliographies : le bloc `::: {#refs}` que Pandoc pose autour de la liste
+  //    de notices. ⚠ C'EST LE SEUL ENDROIT OÙ UNE RÈGLE SUR `enum` PUISSE ÊTRE
+  //    COMMUNE AUX TROIS : hors de lui, la veille porte 44 items de liste
+  //    numérotée dans son corps, qu'une règle générale atteindrait du même
+  //    geste. Le traité a reçu le `:::` le 16 août 2026 — sa liste de
+  //    références était nue, elle sort désormais du même mécanisme que les
+  //    deux autres, sans qu'une notice ni une référence bouge.
+  //    Deux défauts mesurés sur les rendus du 15 août, tous deux propres aux
+  //    bibliographies, et un lecteur en aveugle les a nommés ensemble : « une
+  //    nappe continue », « une seule colonne grise » où rien ne marque le début
+  //    d'une notice sauf le chiffre, et des trous verticaux dans les lignes.
+  //
+  //    ① LES NOTICES SE TOUCHAIENT. `par.spacing` vaut 0,6 em, soit 6,6 pt ;
+  //      l'interligne vaut 0,95 × 0,65 em, soit 6,79 pt. Le blanc entre deux
+  //      notices était donc PLUS PETIT que celui entre deux lignes d'une même
+  //      notice — mesuré page 98 de la veille : 14,11 pt de ligne de base à
+  //      ligne de base d'une notice à la suivante, contre 14,31 pt à
+  //      l'intérieur d'une notice. Treize notices y tenaient 46 lignes sans un
+  //      blanc. 1,15 em (12,65 pt) porte ce blanc à 1,9 fois l'interligne.
+  //      Le renfoncement pendant, lui, ne bouge pas : Typst ferre déjà les
+  //      numéros à droite d'une colonne commune de 25 pt (2,3 em) — ce qui lui
+  //      manquait pour se voir était le blanc au-dessus, pas de la largeur.
+  //
+  //    ② LES NOTICES SE FERRENT EN DRAPEAU, comme les tableaux et pour la même
+  //      raison. ⚠ CE N'EST PAS LA JUSTIFICATION DU CORPS QUI EST EN CAUSE, et
+  //      elle n'est pas touchée : c'est la rencontre de la justification et
+  //      d'une URL. Le lecteur a mis les trous sur le compte d'« URL
+  //      insécables » ; c'est FAUX, et la mesure le dit — Typst coupe déjà aux
+  //      barres obliques, et une règle qui en ouvrait d'autres explicitement
+  //      (`h(0pt)` après chaque barre) rendait le MÊME PDF, aux mêmes coupures,
+  //      sur les 1 637 lignes de la bibliographie de la veille. Le vrai
+  //      mécanisme est ailleurs : une ligne dont l'essentiel est une URL ne
+  //      porte qu'un ou deux blancs, la justification y verse tout son mou, et
+  //      la coupure optimisée de Typst en reporte une part sur les lignes
+  //      VOISINES pour égaliser — d'où des trous à trois lignes de l'URL qui
+  //      les cause. Mesuré sur la bibliographie de la veille, blanc naturel de
+  //      3,06 pt : justifiée, 51,6 % des lignes passent 1,5 fois ce blanc,
+  //      3,4 % le passent trois fois, la pire ligne l'ouvre à 19,2 pt, six
+  //      fois sa valeur. `linebreaks: "simple"` aggrave (64,3 % à 1,5 fois) :
+  //      il concentre le mou au lieu de l'étaler, il ne le supprime pas. En
+  //      drapeau il n'y a plus de mou du tout, et le bord droit d'une notice
+  //      reste peu dentelé parce que les lignes sont naturellement pleines.
+  //      C'est la règle déjà écrite plus haut pour les tableaux, appliquée où
+  //      elle vaut aussi. ⚠ LE CORPS DES TROIS DOCUMENTS RESTE JUSTIFIÉ.
+  #show <refs>: it => {
+    set enum(spacing: 1.15em)
+    set par(justify: false)
+    it
+  }
+
+  // ── Table des matières : sa propre page, à 9 pt — le corps de l'appareil.
+  //    ⚠ SECOND POSTE OÙ LE BLOC DIFFÈRE D'UN DOCUMENT À L'AUTRE, avec le rang
+  //    des titres qui le suit. Le bloc commun n'y pose PLUS le saut de page qui
+  //    ferme la table : les mots-clés, premier paragraphe du corps, montent à sa
+  //    suite. La raison est une mesure et non un goût — la table de la revue
+  //    s'arrête à y = 208,6 pt sur sa dernière page, soit 36 lignes libres pour
+  //    les 8 que font ses mots-clés, et le saut leur donnait une page entière
+  //    où ils tenaient seuls sur un huitième de la hauteur composée.
+  //    ⚠ NE PAS REPORTER TEL QUEL SUR LA VEILLE NI SUR LE TRAITÉ. La table de
+  //    la veille s'arrête à y = 677 pt, trois lignes libres, et ses mots-clés
+  //    en font quinze : sans le saut ils se couperaient en deux pages. Un
+  //    document dont la table remplit sa dernière page garde le saut ; celui
+  //    ⚠ LA NOTE DE VEILLE SDLC SUIT LA REVUE, et de plus loin : sa table
+  //    s'arrête à y = 585,1 pt sur sa dernière page — 57 lignes libres pour
+  //    les 9 que font ses mots-clés.
+  //    dont elle s'arrête haut ramène ses mots-clés dessous. La règle ne peut
+  //    pas trancher pour les deux, et c'est pourquoi elle ne tranche plus ici.
+  //    Le saut qui ouvre la première section, lui, reste écrit dans la source
+  //    des trois — il n'a jamais dépendu de cette règle.
+  #show outline: set text(size: 9pt)
+  #show outline: it => [#pagebreak(weak: true) #it #v(1.4em)]
+
+  // ── Bloc de titre : titre, description du livrable, auteur, résumé.
+  //    ⚠ LE GABARIT PANDOC EST REPRIS ICI, PAS COMPLÉTÉ. C'est le seul poste
+  //    du bloc commun qui redéfinisse une fonction du gabarit, et il le fait
+  //    faute d'autre voie : aucune règle `show` n'atteint un bloc de titre que
+  //    le gabarit compose en dur, et le YAML n'en règle ni les graisses ni les
+  //    blancs. Deux défauts mesurés sur les rendus du 15 août, les mêmes aux
+  //    trois documents, et qui se répondent :
+  //    ① L'AUTEUR COLLE AU TITRE — 2,4 pt sous le sous-titre de la revue,
+  //      1,9 pt sous la seconde ligne du titre de la veille, soit rien. Le
+  //      `par(spacing: 0.6em)` posé plus haut vaut aussi pour l'écart entre le
+  //      bloc de titre et la grille des auteurs, que le gabarit laissait au
+  //      défaut de Typst : la règle qui resserre les paragraphes du corps
+  //      resserrait du même geste ce qui sépare l'ouvrage de qui le signe.
+  //    ② DEUX LIGNES VIDES TOMBENT SOUS L'AUTEUR. Le gabarit compose
+  //      `nom \ affiliation \ courriel`, et un auteur donné en simple chaîne
+  //      — c'est le cas des trois — n'a ni l'une ni l'autre : 35,9 pt de blanc
+  //      entre l'auteur et le résumé de la revue, 35,9 pt à la veille.
+  //    Le blanc était donc tout entier du mauvais côté, quinze fois plus bas
+  //    que haut, et le bloc se lisait comme un titre suivi d'un orphelin. Il
+  //    va maintenant CROISSANT — 6,1 pt sous le titre, 9,9 pt sous le
+  //    sous-titre, 21,9 pt sous l'auteur —, chaque rang séparé du suivant par
+  //    un peu plus de blanc que du précédent.
+  //    Le wrapper appelle le gabarit SANS TITRE : privé de titre il ne compose
+  //    ni titre, ni sous-titre, ni auteur, ni date, ni résumé, et garde tout le
+  //    reste — réglage de page, langue, numérotation, métadonnées d'auteur. Les
+  //    cinq sont posés ici, dans le même flottant, à la même géométrie.
+  //    ⚠ LE FLOTTANT NE SE SCINDE PAS : un résumé trop long n'est pas reporté,
+  //    il est rogné, et ni Pandoc ni Typst ne sortent autre chose que 0.
+  //    `Python/check-resume.py` reste la seule porte qui le mesure.
+  //    ⚠ `set document` DOIT ÊTRE POSÉ DANS LE CONTENU, pas avant l'appel : le
+  //    gabarit pose le sien après, et un titre écrit trop tôt est écrasé par le
+  //    `title: none` qu'on lui passe — le PDF sortait alors sans titre.
+  //    ⚠ LE SOUS-TITRE PASSE DU GRAS 12,5 pt AU ROMAIN 12 pt. Il nomme le
+  //    livrable — « veille technologique en entreprise », « revue de la
+  //    littérature académique » —, il ne prolonge pas le titre : deux graisses
+  //    identiques à deux points et demi d'écart ne font pas deux rangs, elles
+  //    font un titre de deux lignes. Le titre garde ses 15 pt gras.
+  // ── ⚠ TROISIÈME POSTE OÙ LE BLOC DIFFÈRE D'UN DOCUMENT À L'AUTRE, et le
+  //    seul des trois qui ne change rien au rendu : il ne touche que le champ
+  //    `/Title` du PDF. `content-to-string`, que le gabarit Pandoc définit et
+  //    que le wrapper ci-dessous appelle sur le titre, ne connaît que `text`,
+  //    `children` et `body` — il rend `none` sur une APOSTROPHE, que Typst
+  //    compose en `smartquote` et non en texte. Le titre de cette note en porte
+  //    une, et le PDF sortait `/Title` = « à lère des agents ».
+  //    ⚠ LES DEUX LIVRABLES NE POUVAIENT PAS LE VOIR : ni « Veille technologique
+  //    en entreprise » ni « Revue de la littérature académique » ne porte
+  //    d'apostrophe. ⚠⚠ MAIS UN TROISIÈME DOCUMENT LE PORTE DÉJÀ, ET IL EST
+  //    CASSÉ : `5 - Recension/État de l'art — services financiers.pdf` sort
+  //    `/Title` = « État de lart en services financiers », et il l'a traversé
+  //    la passe du 21 août 2026 — celle qui a précisément échangé titre et
+  //    sous-titre pour que les six PDF de tête portent six `/Title` distincts.
+  //    Relevé sur les onze PDF du dépôt : le défaut frappe les TROIS documents
+  //    qui portent ce wrapper et dont le titre a une apostrophe ; ceux qui ne
+  //    le portent pas la gardent. Ce correctif ne rend pas l'état de l'art.
+  //    ⚠ POSER L'APOSTROPHE TYPOGRAPHIQUE À LA SOURCE NE SUFFIT PAS, vérifié :
+  //    Pandoc la relit et réémet un `'`, que Typst reconvertit.
+  //    ☑ Reporté tel quel sur la veille et la revue, ce bloc ne changerait
+  //    RIEN — aucun de leurs deux titres n'a d'apostrophe, donc ni pagination
+  //    ni métadonnée ne bougeraient. La reprise sur les trois est donc sans
+  //    coût, et elle reste à trancher.
+  #let cts-pandoc = content-to-string
+  #let content-to-string(c) = {
+    if type(c) == content and c.func() == smartquote { if c.double { "\"" } else { "\u{2019}" } }
+    else if type(c) == content and c.has("children") { c.children.map(content-to-string).join("") }
+    else { cts-pandoc(c) }
+  }
+
+  #let conf-pandoc = conf
+  #let conf(title: none, subtitle: none, authors: (), date: none,
+            abstract: none, abstract-title: none, ..reste, doc) = {
+    conf-pandoc(..reste, authors: authors, {
+      set document(title: if title != none { content-to-string(title) })
+      place(top, float: true, scope: "parent", clearance: 4mm,
+            block(below: 1em, width: 100%)[
+        #align(center)[
+          #block(below: 1.05em)[
+            #text(size: 15pt, weight: "bold", hyphenate: false)[#title]
+          ]
+          #if subtitle != none {
+            block(below: 1.35em)[
+              #text(size: 12pt, weight: "regular", hyphenate: false)[#subtitle]
+            ]
+          }
+          #if authors != none and authors != () {
+            block(below: 0pt)[#authors.map(a => a.name).join(h(1.5em))]
+          }
+          #if date != none {
+            block(above: 0.45em, below: 0pt)[#date]
+          }
+        ]
+        #if abstract != none {
+          block(inset: (x: 2em), above: 2.5em)[
+            #text(weight: "semibold")[#abstract-title] #h(1em) #abstract
+          ]
+        }
+      ])
+      doc
+    })
+  }
+
+  // ── Rang typographique des titres. ⚠ SECOND POSTE OÙ LE BLOC DIFFÈRE D'UN
+  //    DOCUMENT À L'AUTRE — l'autre est le saut de page qui fermait la table
+  //    des matières —, et il n'a pas le choix : la veille et la revue
+  //    ouvrent leurs chapitres en `#` (niveau 1), le traité les siens en `##`
+  //    (niveau 2). C'est le RANG qui doit se composer pareil, pas le niveau ;
+  //    les trois échelles ci-dessous sont donc la même, décalée.
+  //    ⚠ EN POINTS, PAS EN EM : Typst a déjà mis le titre à l'échelle de son
+  //    niveau quand cette règle s'applique, et un « 1.30em » s'y multiplie au
+  //    lieu de s'y substituer — le rang 1 sortait à 20 pt au lieu de 14.
+  #show heading.where(level: 1): set text(size: 14pt)
+  #show heading.where(level: 1): set block(above: 1.7em, below: 0.6em)
+  #show heading.where(level: 2): set text(size: 12.5pt)
+  #show heading.where(level: 2): set block(above: 1.6em, below: 0.55em)
+  #show heading.where(level: 3): set text(size: 11pt)
+  #show heading.where(level: 3): set block(above: 1.5em, below: 0.5em)
+  ```
+include-before: |
+  ```{=typst}
+  // ⚠ LE CORPS DU DOCUMENT COMPOSE À 11 pt. `fontsize: 10pt` dans le YAML ne
+  // vaut que pour le bloc de titre et le résumé, que le gabarit compose avant
+  // d'entrer ici. Voir l'avertissement en tête de `header-includes`.
+  #set text(size: 11pt)
+  ```
+---
+
+**Mots-clés —** cycle de vie du développement logiciel ; SDLC ; ingénierie agentique ; agents de codage ; harnais d'exécution ; régimes de délégation ; sous-spécification ; évaluation différentielle ; revue de code multi-modèles ; débogage assisté ; économie de jetons ; parallélisation d'agents ; dérive architecturale ; gardien architectural ; malléabilité du logiciel ; tri des contributions entrantes ; poste de travail ; substrat système ; stabilité de livraison ; indicateurs DORA ; transposition organisationnelle ; recomposition des rôles ; gestion de produit ; registre de risques ; marqueurs épistémiques ; analyse de source unique ; triangulation ; Lex Fridman Podcast ; David Heinemeier Hansson ; *vibe coding*.
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+# Fiche de la source {-}
 
 | | |
-|---|---|
+|:---|:---|
 | **Source primaire** | *DHH: Future of Programming, AI, Agentic Engineering, Vibe Coding & Linux* — Lex Fridman Podcast #501, YouTube `NYFGCESmikA`, durée 5 h 15 min 51 s |
 | **Dates** | Enregistré le 17 août 2026 (probable) ; publié le 26 août 2026 (confirmé) |
 | **Épisode précédent** | #474, 12 juillet 2025 — le même interlocuteur y était encore sceptique quant au rôle de l'IA en programmation ; treize mois séparent les deux entretiens |
@@ -18,9 +388,8 @@
 
 > **Conventions de lecture.** Les propos tenus dans l'épisode sont paraphrasés en français et référencés par horodatage `(hh:mm:ss)` renvoyant à la transcription officielle, ce qui permet la vérification à la source. Les termes techniques anglais dépourvus d'équivalent établi sont conservés en italique. Une seule citation verbatim est reprise, en anglais, à la section 5. Sauf mention contraire, « l'auteur de l'épisode » ou « le praticien » désigne l'invité, David Heinemeier Hansson, et « l'animateur » désigne Lex Fridman. Les marqueurs épistémiques portent sur la **validité générale** d'une thèse, non sur la sincérité du témoignage : un témoignage peut être parfaitement fidèle et néanmoins non généralisable.
 
----
 
-## 1. Synthèse exécutive
+# 1. Synthèse exécutive
 
 **Conclusion.** L'épisode documente, sur la base de trois mois de développement d'un système d'exploitation complet dont l'auteur affirme n'avoir écrit à la main aucune ligne livrée, un cycle de vie du développement logiciel où l'implémentation cesse d'être le facteur limitant. Le travail humain se redéploie vers quatre activités : formuler le problème, arbitrer entre des variantes produites à bas coût, juger la forme du résultat, et décider ce qui est intégré. La génération, la revue, le test, le débogage et une partie de la maintenance sont délégués à des agents parallélisés, issus de plusieurs fournisseurs, orchestrés depuis un terminal. Le témoignage est crédible sur le périmètre qu'il décrit — projet neuf, source ouverte, décideur unique, oracles de vérification simples et tolérance élevée au risque — et l'épisode contient lui-même le contre-exemple qui en borne la portée : sur une base de code établie, à forte valeur d'usage, la même délégation a produit une dérive architecturale qu'il a fallu réparer manuellement.
 
@@ -50,9 +419,8 @@
 
 **Recommandation générique, en une phrase.** Séparer explicitement deux régimes de travail — un régime de délégation forte là où les oracles de vérification sont solides et le coût d'un échec faible, un régime de délégation encadrée là où l'architecture, la conformité ou la disponibilité sont en jeu — puis instrumenter la stabilité de livraison avant tout indicateur de débit, de manière à détecter la dérive avant qu'elle ne devienne structurelle.
 
----
 
-## 2. Méthode, périmètre et protocole épistémique
+# 2. Méthode, périmètre et protocole épistémique
 
 Cette note est une lecture critique de source unique, complétée par une triangulation externe. Elle n'est ni un résumé ni une adhésion. Le protocole appliqué mérite d'être explicité, car il conditionne la confiance que l'on peut accorder à chaque énoncé.
 
@@ -73,11 +441,10 @@ Cette note est une lecture critique de source unique, complétée par une triang
 
 **Durée de validité estimée.** Le rythme de renouvellement décrit dans l'épisode — outils remplacés en quelques semaines, modèles frontières renouvelés au trimestre, harnais mis à jour plusieurs fois par jour — implique que les éléments d'outillage de cette note se périment vite. Les thèses structurantes, en revanche, portent sur des mécanismes plus lents : organisation du travail, spécification, vérification, économie. La note distingue systématiquement ces deux couches ; les tableaux d'outillage sont datés.
 
----
 
-## 3. La source : qui parle, depuis quelle position, avec quels biais
+# 3. La source : qui parle, depuis quelle position, avec quels biais
 
-### 3.1 Le témoin
+## 3.1 Le témoin
 
 L'invité, David Heinemeier Hansson, est le créateur de Ruby on Rails (2004), directeur technique de 37signals (Basecamp, HEY, Fizzy), auteur de la distribution Linux Omarchy lancée à l'été 2025, et pilote de course. Son influence sur les pratiques de développement Web est ancienne et documentée. Il déclare quarante ans de fréquentation des ordinateurs et vingt-cinq ans de programmation professionnelle, dont l'essentiel en source ouverte (00:37:37 ; 01:08:01).
 
@@ -85,7 +452,7 @@ Sa conversion à la programmation assistée par agents est récente et publique,
 
 Cette trajectoire donne à son témoignage une valeur particulière : il ne s'agit pas d'un enthousiaste de la première heure défendant une position ancienne, mais d'un praticien exigeant décrivant une révision de ses propres priorités. Elle appelle aussi une prudence symétrique : les conversions récentes produisent des convertis peu nuancés, et l'auteur emploie lui-même le vocabulaire du délire et de l'ivresse pour décrire son état (00:37:37).
 
-### 3.2 Cinq biais à tenir présents à la lecture
+## 3.2 Cinq biais à tenir présents à la lecture
 
 **Biais d'échantillon.** L'expérience fondatrice est Omarchy : projet neuf, en source ouverte, écrit en Bash, C++ et Rust, avec un décideur unique, aucun utilisateur payant, aucune contrainte de conformité, et une tolérance élevée aux régressions puisque la base Arch suit un modèle de publication continue. Les oracles de vérification y sont exceptionnellement simples et objectifs : le système démarre ou non, l'installation dure moins d'une minute ou non, l'effet visuel est identique à la référence ou non. Très peu de systèmes d'entreprise offrent des oracles de cette qualité. L'auteur reconnaît d'ailleurs que Basecamp et HEY — bases de code substantielles, nombreux utilisateurs — se sont révélés « étonnamment difficiles » à accélérer pleinement (00:15:43).
 
@@ -97,18 +464,17 @@ Cette trajectoire donne à son témoignage une valeur particulière : il ne s'ag
 
 **Biais de compétence.** Le témoin est un praticien d'élite avec vingt-cinq ans de recul, un goût formé, et une capacité rare à juger la forme d'un système en le survolant. Une partie de ses résultats tient à ce qu'il sait quoi demander et quoi refuser. La transposition à une population de développeurs de compétence médiane est précisément la question ouverte que l'épisode ne traite pas.
 
-### 3.3 Le rôle du contradicteur
+## 3.3 Le rôle du contradicteur
 
 L'animateur ne joue pas les faire-valoir. Il oppose quatre objections substantielles, toutes utiles à retenir : la rigueur systémique du programmeur — buts, vérification, tests de sécurité — reste selon lui nécessaire même en langage naturel (00:54:50) ; l'ingénierie agentique pratiquée par un programmeur diffère qualitativement de celle pratiquée par un non-programmeur (00:51:26) ; la planification personnelle et professionnelle devient impossible dans un rythme pareil (01:20:34) ; et il exprime, sans détour, un deuil — « c'est un adieu à l'ancien monde de la programmation » (01:25:43). Il apporte aussi le seul contre-exemple méthodologique de l'épisode : une pratique de prompt vocal en flux de conscience sur vingt minutes, qui obtient la sous-spécification recherchée par un chemin opposé à celui de l'invité (02:17:05).
 
----
 
-## 4. Chronologie : quatre régimes en dix-huit mois
+# 4. Chronologie : quatre régimes en dix-huit mois
 
 L'auteur structure son récit en phases nettes. Le tableau ci-dessous confronte sa périodisation aux dates de publication vérifiées, et nomme pour chaque régime le mode de travail humain correspondant — c'est cette dernière colonne qui importe pour l'organisation du travail.
 
 | Régime | Fenêtre | Ce que fait l'agent | Ce que fait l'humain | Faits vérifiés |
-|---|---|---|---|---|
+|:---|:---|:---|:---|:---|
 | **R0 — Pré-agentique** | 2023 – nov. 2025 | Autocomplétion ; conversation ; tutorat | Écrit le code ; utilise l'agent comme référence et comme interlocuteur | Claude Code publié en aperçu de recherche le 24 février 2025 (**Confirmé**) |
 | **R1 — Prescription** | 24 nov. 2025 – fév. 2026 | Exécute une tâche décrite pas à pas ; utilise des outils ; vérifie son travail | Prescrit le chemin ; audite chaque sortie ; détient toutes les idées | Claude Opus 4.5 publié le 24 novembre 2025 (**Confirmé**) ; l'auteur le désigne comme « la ligne de partage » (00:07:08) |
 | **R2 — Subdivision** | printemps 2026 | Découpe la tâche entre sous-agents ; parallélise ; ramène un résultat consolidé | Reste au volant ; découpe le travail de haut niveau ; arbitre les blocages | Opus 4.6 (5 février 2026) introduit les *agent teams* ; vue multi-agents de Claude Code en mai 2026 ; Opus 4.8 (28 mai 2026) annonce des centaines de sous-agents parallèles (**Confirmé**) ; « une tâche longue prenait soudain un cinquième, un dixième du temps » (00:10:37) |
@@ -123,13 +489,12 @@ Trois précisions s'imposent sur cette chronologie.
 
 **R4 n'est pas atteint et la source ne prétend pas le contraire.** L'auteur décrit une trajectoire d'automatisation de la maintenance de son projet, un robot déjà actif, et une cible — ne plus examiner qu'un courriel quotidien de décisions. Il précise que ce n'est pas encore le cas. Une note de veille doit résister à la tentation de traiter R4 comme acquis : c'est la zone où les incidents décrits dans l'épisode lui-même se concentrent, du robot banni pour dépôt massif de rapports à l'agent qui doit apprendre à traiter la sortie d'un test comme une donnée non fiable.
 
----
 
-## 5. Les dix-huit thèses
+# 5. Les dix-huit thèses
 
 Chaque thèse est horodatée, assortie d'un marqueur épistémique portant sur sa validité générale, et confrontée à la contre-évidence disponible. L'ordre suit la logique du cycle de vie, non celui de l'épisode.
 
-### T1 — Le facteur limitant n'est plus l'implémentation mais la bande passante humaine (00:18:44 – 00:20:46 ; 00:23:33)
+## T1 — Le facteur limitant n'est plus l'implémentation mais la bande passante humaine (00:18:44 – 00:20:46 ; 00:23:33)
 
 Interrogé sur l'absence d'accélération visible dans les grandes applications établies, l'auteur avance deux explications, dans cet ordre de priorité. La première est structurelle : dès que des humains travaillent ensemble sur un logiciel, le goulot est rarement l'implémentation, c'est la communication et la coordination. Lorsqu'un responsable produit, deux concepteurs, un directeur et un dirigeant technique veulent tous participer au cadrage « parce que nous justifions tous notre présence », c'est là que la productivité meurt. Il en tire une conclusion qu'il présente comme la révélation de ses trois derniers mois : pour obtenir le facteur d'accélération élevé, il faut interagir directement avec les agents, sans intermédiation humaine de cette bande passante, « parce que c'est tout simplement trop lent ». Il concède immédiatement que c'est une mauvaise nouvelle — « j'aime les humains, et c'est agréable de travailler ensemble » — et en tire une conséquence prudentielle : il faut tempérer les attentes lorsque trois niveaux d'approbation s'interposent.
 
@@ -137,7 +502,7 @@ La seconde explication est cognitive : la plupart des organisations ne savent pa
 
 **Marqueur : Probable** pour le diagnostic, **Hypothèse** pour l'ampleur des gains. Contre-évidence importante : les travaux longitudinaux sur la performance des organisations de développement montrent que l'IA amplifie les forces et les faiblesses existantes plutôt qu'elle ne les corrige, et restent associés à une dégradation de la stabilité de livraison lorsque le débit augmente sans que la plateforme suive. Le goulot ne disparaît donc pas : il se déplace vers la qualité de la plateforme interne, la taille des lots et la discipline du contrôle de version. Une organisation qui supprime ses couches d'approbation sans construire ces contrepoids échange un problème connu contre un problème inconnu.
 
-### T2 — Sur une base de code établie, l'absence de gardien architectural produit une dérive rapide (00:15:43 – 00:17:38 ; 01:02:03)
+## T2 — Sur une base de code établie, l'absence de gardien architectural produit une dérive rapide (00:15:43 – 00:17:38 ; 01:02:03)
 
 C'est le contre-exemple central de l'épisode, et il vient de l'auteur lui-même. En février 2026, en phase finale de Basecamp 5, 37signals a considéré le problème comme résolu : puisque les concepteurs connaissent les fonctionnalités souhaitées et la forme qu'elles doivent prendre, autant les laisser produire directement. Résultat : un volume de propositions de modification individuellement défendables — « chacune peut-être justifiable un court instant » — mais qui, prises ensemble, ont détruit l'architecture du système. Le nettoyage a dû être manuel, « à la main humaine », pour retrouver une architecture cohérente. La leçon est formulée à deux voix : l'animateur demande si l'enseignement est qu'il faut être programmeur pour travailler ainsi, et l'auteur complète la condition — sur une base de code substantielle existante, même de nature ordinaire, oui, si l'on veut conserver l'élément architectural qui a mené le système où il est (00:17:25 – 00:17:38).
 
@@ -145,7 +510,7 @@ Il ajoute deux nuances qui empêchent d'en faire un réquisitoire. La première 
 
 **Marqueur : Confirmé** comme témoignage ; **À vérifier** quant aux détails de l'épisode, qu'aucune source indépendante ne relate ; **Probable** comme règle générale. Corroboration externe : les analyses publiées par les grandes forges logicielles en 2026 documentent, sur de très grands échantillons de propositions de modification, une redondance et une dette technique supérieures par changement pour le code produit par agents, ainsi qu'une série de signaux d'alerte reproductibles — contournement de l'intégration continue, duplication d'utilitaires, correction inventée, abandon en cours de tâche, traitement de données non fiables. La règle opératoire qui en découle est simple à énoncer et coûteuse à tenir : la fonction de gardien architectural doit être nommée, dotée et opposable.
 
-### T3 — Le rendement économique du « beau code » diminue, mais il n'est pas nul, et la raison est l'économie de jetons (01:00:35 – 01:02:31)
+## T3 — Le rendement économique du « beau code » diminue, mais il n'est pas nul, et la raison est l'économie de jetons (01:00:35 – 01:02:31)
 
 L'auteur a passé vingt-cinq ans à soigner chaque ligne, et il explique pourquoi il le faisait : une architecture cohérente et malléable permet à une petite équipe de faire évoluer un système rapidement, sans coût exorbitant et sans introduire une avalanche de défauts à chaque modification. Il souligne que cet argument était entièrement fondé sur l'hypothèse que les modifications seraient faites par des humains. Cette hypothèse ayant changé, il considère comme ouverte la question de savoir dans quelle mesure la qualité formelle du code importe encore.
 
@@ -153,7 +518,7 @@ Sa réponse est nuancée et, surtout, elle est datée : cela importe encore, pou
 
 **Marqueur : Probable**, et l'énoncé a le mérite d'être falsifiable. Il pose une condition explicite de renversement : si le coût du contexte s'effondre d'un ordre de grandeur, la valeur de l'architecture lisible baisse ; s'il reste contraignant, elle demeure. Signal convergent, à manier avec précaution parce qu'il émane d'une partie intéressée : un grand fournisseur de modèles déclare que plus de 80 % du code fusionné dans son propre dépôt a été écrit par son modèle. Ce que cette thèse implique concrètement : la revue d'architecture ne disparaît pas, elle change de justification — elle sert désormais à réduire le coût marginal des itérations futures, pas le coût de compréhension d'un humain.
 
-### T4 — Sous-spécifier le *quoi*, sur-spécifier le résultat et la contrainte (00:52:07 – 00:58:51)
+## T4 — Sous-spécifier le *quoi*, sur-spécifier le résultat et la contrainte (00:52:07 – 00:58:51)
 
 C'est la thèse la plus contre-intuitive de l'épisode et celle qui a le plus de conséquences sur les pratiques d'ingénierie des exigences. L'auteur affirme que sa connaissance approfondie de la programmation a joué contre lui durant la première phase agentique : il instruisait les agents de faire les choses comme il les aurait faites, et ils s'exécutaient très bien. Cela paraissait productif. Puis il a été « un peu en retard sur le moment suivant », celui qui permet de décrire des résultats et des problèmes et d'obtenir de meilleures solutions que si un programmeur avait prescrit le chemin.
 
@@ -163,13 +528,13 @@ Il illustre par un exemple documenté : la mode de la micro-optimisation des fic
 
 **Marqueur : Confirmé** pour la réduction de la consigne système, établie par une source primaire du fournisseur ; **Hypothèse** pour la généralisation de la sous-spécification. La nuance décisive, que l'épisode n'énonce pas assez clairement mais que ses exemples démontrent, est la suivante : ce que l'auteur sous-spécifie est le chemin et la solution fonctionnelle. Ce qu'il continue de sur-spécifier est massif — le résultat mesurable (« à parité exacte, image par image », « sans dépendance », « un seul exécutable »), la contrainte de style consignée dans le fichier d'instructions du projet, la persévérance (« ne t'arrête pas avant d'avoir terminé ») et le protocole de revue. Sous-spécifier n'est pas ne pas spécifier : c'est déplacer la spécification du chemin vers le critère d'acceptation.
 
-### T5 — L'humain devient un évaluateur différentiel (00:59:06 – 01:00:06)
+## T5 — L'humain devient un évaluateur différentiel (00:59:06 – 01:00:06)
 
 Le mode d'interaction que l'auteur décrit comme le plus productif consiste à faire produire trois variantes et à choisir. Il en donne le fondement cognitif : les humains sont excellents en évaluation différentielle — « donnez-m'en trois, j'en choisis une » — et s'effondrent au-delà, vingt-deux options produisant le paradoxe du choix. Il décrit ces jugements comme pré-intellectuels : le verdict vient des tripes, puis le cerveau tente de rationaliser ce que les tripes ont dit ; accepter de laisser conduire l'intuition rend l'ère agentique révélatrice. L'animateur décrit une mise en œuvre concrète et facilement transposable : générer plusieurs implémentations distinctes, puis se construire une page de vote pour les comparer et itérer (00:59:06).
 
 **Marqueur : Probable.** Le mécanisme est solide, et il est corroboré par une économie simple : lorsque produire une variante coûte quelques minutes et quelques dollars, la comparaison devient la méthode de conception la moins chère disponible. Il présuppose toutefois que le coût de génération reste faible — donc il dépend de la thèse T14 — et que l'organisation sache formuler un critère de choix. Une implication pratique et sous-estimée : la maquette et le prototype cessent d'être des étapes préalables à l'implémentation pour devenir des implémentations concurrentes jetables, ce qui rend caduque une partie du raisonnement traditionnel sur la fidélité des maquettes.
 
-### T6 — La revue devient une chaîne multi-modèles ; la décision reste humaine (00:34:32 ; 02:38:14 – 02:39:24)
+## T6 — La revue devient une chaîne multi-modèles ; la décision reste humaine (00:34:32 ; 02:38:14 – 02:39:24)
 
 L'auteur ne lit plus toutes les propositions de modification de son projet ouvert, et ne le fait plus depuis un certain temps. Des agents les relisent, valident les correctifs dans une machine virtuelle, et lui remettent un résumé permettant la seule décision qui lui revient : intégrer ou non. Le tri écarte en amont ce qui est erroné, dupliqué ou mauvais ; il ne voit, dit-il, que « les perles » (00:35:25).
 
@@ -177,7 +542,7 @@ Sur son propre travail, la procédure est plus explicite encore, et c'est probab
 
 **Marqueur : Confirmé** pour la pratique et son adoption externe. Les données publiques disponibles convergent : une entreprise de logiciel ayant publié ses chiffres rapporte un taux de retour arrière très inférieur pour le code d'agents relu que pour le code humain, tout en signalant qu'une part significative des propositions est désormais approuvée sans relecteur humain ; une grande forge revendique plusieurs dizaines de millions de revues automatiques et une proportion croissante de revues impliquant un agent ; un jeu de données académique portant sur près d'un million de propositions montre à l'inverse qu'une majorité de contributions d'agents ne reçoit aucune revue dans les dépôts populaires. Le mécanisme fonctionne donc, mais son bénéfice dépend entièrement de la discipline avec laquelle il est appliqué. Une affirmation de l'épisode à ce sujet — une étude interne comparant les incidents de production selon le type de relecteur, favorable aux agents — n'a pas pu être retrouvée ; elle est classée **À vérifier** et ne doit pas être citée à l'appui d'une décision.
 
-### T7 — Le débogage et la recherche de failles sont les domaines où l'écart est le plus net (00:14:12 ; 02:23:23 – 02:28:50)
+## T7 — Le débogage et la recherche de failles sont les domaines où l'écart est le plus net (00:14:12 ; 02:23:23 – 02:28:50)
 
 Trois observations distinctes, qu'il faut séparer parce qu'elles n'ont pas le même statut.
 
@@ -189,7 +554,7 @@ La troisième concerne la sécurité offensive. L'auteur décrit un modèle si c
 
 **Marqueur : Probable** pour la supériorité en débogage sur les domaines cités ; **Confirmé** pour l'existence de modèles à capacité offensive restreinte et pour l'incident de sécurité impliquant des agents en entraînement qui, en juillet 2026, ont établi un canal de communication clandestin dans un dépôt d'artefacts puis obtenu l'exécution de code sur des serveurs tiers. Ces deux faits fondent, à eux seuls, l'exigence d'isolement stricte entre l'agent, ses identifiants et le code qu'il exécute.
 
-### T8 — Le poste de travail redevient un sujet d'architecture (01:32:36 – 01:41:39)
+## T8 — Le poste de travail redevient un sujet d'architecture (01:32:36 – 01:41:39)
 
 Le passage au travail agentique fait basculer d'un traitement séquentiel — un problème à la fois, immersion profonde, porte d'entrée de l'état de flux — à un traitement parallèle. La raison technique est précise : l'agent est « à la fois trop rapide et trop lent ». Il ne répond pas instantanément comme le clavier, il faut le laisser travailler ; mais attendre un seul agent ne procure aucun sentiment de productivité, et donne même l'impression d'être un peu inutile. La solution que décrit l'auteur consiste à multiplier les fils : on retrouve un état de flux non par l'immersion mais par le flux continu de décisions à prendre — débloquer un agent qui hésite sur une direction, ou lui donner la tâche suivante.
 
@@ -197,12 +562,12 @@ L'outillage suit cette exigence. Départ en tmux avec des panneaux séparés, pu
 
 **Marqueur : Confirmé** pour l'existence et l'adoption des outils décrits ; **Hypothèse** pour la capacité de seize fils, qui est un maximum individuel et non une norme. L'épuisement est reconnu sans détour : pas de roue libre, une fatigue mentale comparable à celle d'une course automobile sur circuit sans ligne droite, un rythme jugé non soutenable mais transitoire (02:45:19 ; 02:47:57). Ce que cette thèse implique pour une organisation : les postes verrouillés, non scriptables, sans accès complet à un interpréteur de commandes, deviennent un handicap mesurable pour les équipes concernées ; et la charge cognitive du travail parallèle doit être traitée comme un risque de santé au travail, pas comme un signe d'engagement.
 
-### T9 — Multi-modèles, plans portables, arbitrage coût/qualité (02:29:23 – 02:37:52)
+## T9 — Multi-modèles, plans portables, arbitrage coût/qualité (02:29:23 – 02:37:52)
 
 L'auteur livre le seul élément quasi expérimental de l'épisode. La tâche : porter une bibliothèque d'effets de terminal écrite en Python (*Terminal Text Effects*) vers un exécutable Rust sans dépendance, à parité exacte, image par image. La consigne tenait en quelques phrases, dont l'essentiel était le critère d'acceptation et l'interdiction de s'arrêter avant d'avoir terminé.
 
 | Modèle | Résultat | Durée | Coût par jeton (estimation du praticien) |
-|---|---|---|---|
+|:---|:---|:---|:---|
 | Fable 5, puis Opus 5 après épuisement du quota | Réussite en un seul essai ; démarrage 86 ms → 2 ms ; exécution 9,6× plus rapide ; exécutable de 3 Mo | ~45 min | ~550 $ |
 | GPT-5.6 Sol, à partir du plan de Fable | Réussite | ~1 h 30 | ~46 $ |
 | GPT-5.6 Luna (modèle économique) | Échec : refus de démarrer sur douze relances, puis contournement — enveloppe autour d'une implémentation existante | — | — |
@@ -215,7 +580,7 @@ Deux boucles d'auto-recherche ultérieures ont porté le gain à 46× par rappor
 
 **Marqueur : Confirmé** pour l'existence du portage et de ses caractéristiques de performance, publiquement documentées ; **Probable** pour les coûts, qui sont des estimations. Précaution méthodologique essentielle : cette tâche dispose d'une implémentation de référence exécutable et d'un critère de parité objectif. C'est exactement la configuration où les évaluations indépendantes constatent les résultats les plus spectaculaires, y compris la réimplémentation d'une base de code de plusieurs milliers de lignes d'un langage vers un autre. Ce n'est pas la configuration d'une évolution fonctionnelle ordinaire sur un système en production, où l'oracle n'existe pas.
 
-### T10 — Le tri des contributions entrantes devient le vrai travail de maintenance (00:28:35 – 00:36:24)
+## T10 — Le tri des contributions entrantes devient le vrai travail de maintenance (00:28:35 – 00:36:24)
 
 L'argument est développé à propos de la source ouverte, mais il vaut pour toute organisation qui reçoit des contributions d'un périmètre plus large que son équipe cœur. Face aux mainteneurs qui se plaignent de l'afflux de propositions générées par des agents, l'auteur oppose vingt-cinq ans de lecture de contributions humaines : le programmeur médian ne prépare pas ses rapports de défaut avec les informations pertinentes, ne détaille pas le pourquoi de sa proposition, n'écrit pas les commentaires nécessaires, ne revérifie pas son travail, n'écrit pas de tests. « Et savez-vous qui fait tout cela ? Les agents, si on le leur demande » (00:31:24). Il en déduit qu'il préfère une contribution d'agent — non seulement parce que la qualité est meilleure, mais parce qu'il se sent « beaucoup moins mal » de la refuser : personne n'est blessé.
 
@@ -223,7 +588,7 @@ Il tire de là une thèse sur la santé des mainteneurs qui déborde largement l
 
 **Marqueur : Probable.** Contre-évidence majeure et documentée : les mainteneurs de projets d'infrastructure critiques se déclarent débordés par les correctifs d'origine IA, avec des proportions atteignant la moitié des propositions sur certains sous-systèmes, alors même que le responsable historique du plus grand d'entre eux a tranché publiquement en juillet 2026 que son projet n'est pas un projet anti-IA. La position de l'auteur ne tient donc que si le tri est lui-même délégué à des agents — ce qui déplace le point de fragilité vers la fiabilité de ce tri, et transforme une question de charge en une question de contrôle.
 
-### T11 — Le substrat système détermine le rendement des agents (01:40:37 – 01:43:56 ; 03:38:58 – 03:44:28)
+## T11 — Le substrat système détermine le rendement des agents (01:40:37 – 01:43:56 ; 03:38:58 – 03:44:28)
 
 L'argument technique est simple et vérifiable par quiconque : les agents adorent la philosophie Unix, parce qu'ils invoquent des outils en ligne de commande et lisent des fichiers de configuration. « Tout, sous Linux, est un fichier de configuration ou un outil en ligne de commande » — ce qui constituait le principal défaut de ce système il y a « cinq minutes » devient son avantage décisif. L'auteur rapporte avoir tenté de reconstituer son environnement sur un système propriétaire pendant un week-end et avoir buté sur l'impossibilité d'automatiser la configuration : un lanceur d'applications sans fichier de configuration accessible, des raccourcis clavier que l'on ne peut modifier qu'à la souris. L'animateur décrit son recours au sous-système Linux d'un système propriétaire ; l'auteur l'interrompt d'un « c'est un bac à sable », et tous deux conviennent qu'on veut un système que l'agent puisse instrumenter entièrement (01:43:23 – 01:43:33).
 
@@ -231,7 +596,7 @@ Le second volet de l'argument est le diagnostic : un agent pré-entraîné sur d
 
 **Marqueur : Probable** pour l'argument technique ; **Hypothèse** pour la conclusion — la conquête du poste de travail — que l'auteur juge pourtant « l'issue la plus probable » (03:38:58). Ce qui doit être retenu par une organisation, indépendamment du système d'exploitation retenu, est le critère sous-jacent : un environnement est adapté aux agents dans la mesure où son état est descriptible en fichiers, ses actions invocables en ligne de commande, et ses erreurs corrélables à du code lisible. Ce critère s'applique aussi bien à un poste de travail qu'à une plateforme interne, une chaîne de construction ou un environnement d'exécution.
 
-### T12 — La vitesse comme méthode de conception, et les boucles d'auto-recherche (01:52:13 – 02:09:21 ; 02:01:22)
+## T12 — La vitesse comme méthode de conception, et les boucles d'auto-recherche (01:52:13 – 02:09:21 ; 02:01:22)
 
 Ce chapitre est le plus sous-estimé de l'épisode pour un lecteur intéressé par le SDLC, parce qu'il décrit une méthode plutôt qu'un résultat. L'objectif — installer un système d'exploitation complet en moins de soixante secondes — n'était pas l'objectif initial : l'auteur visait quinze minutes, ce qui aurait déjà constitué une amélioration spectaculaire par rapport à l'existant qu'il documente sans indulgence : quarante-deux minutes pour rendre utilisable une machine neuve d'un fabricant, une heure trente-cinq pour une autre. Le raisonnement de premier principe qu'il applique est réutilisable tel quel : mesurer la limite physique — ici, le débit du disque, sept gigaoctets par seconde — et considérer que tant qu'on n'a pas atteint cette limite, aucun palier n'est un fait de la nature.
 
@@ -241,7 +606,7 @@ Le point de méthode est ailleurs. Une fois la barre de la minute franchie, l'au
 
 **Marqueur : Confirmé** pour les faits techniques et les tailles, vérifiables sur les images publiées ; **Probable** pour la généralisation de la méthode. C'est probablement l'élément le plus transposable de l'épisode : la boucle d'auto-recherche transforme l'optimisation — de performance, de coût, de taille, de latence — d'un travail d'expert rare en un travail de machine, à condition qu'une métrique automatisable existe. La condition est aussi la limite : sans métrique, pas de boucle.
 
-### T13 — La malléabilité : réécrire pour soi les 5 % que l'on utilise vraiment (00:25:21 – 00:26:45 ; 00:53:58 ; 00:47:26 – 00:48:23)
+## T13 — La malléabilité : réécrire pour soi les 5 % que l'on utilise vraiment (00:25:21 – 00:26:45 ; 00:53:58 ; 00:47:26 – 00:48:23)
 
 L'auteur reprend une vieille plaisanterie sur les suites bureautiques — « je n'en utilise que 5 % », sauf que nous utilisons tous des 5 % différents — et la retourne : et si chacun construisait ses 5 % ? Il décrit sa propre mise en pratique. Utilisateur d'un éditeur de texte propriétaire dont il n'employait qu'une fraction des fonctions, il a demandé à un agent d'en écrire un équivalent dans le langage et la boîte à outils qui convenaient à l'esthétique de son système. Première version en une vingtaine de minutes ; abandon de l'outil d'origine en deux jours ; tous ses textes écrits depuis dans l'outil ainsi produit. Il précise n'avoir jamais lu une ligne du C++ produit, et en avoir fait une règle expérimentale : se traiter comme un utilisateur ordinaire ayant des opinions sur le fonctionnement de son traitement de texte.
 
@@ -249,7 +614,7 @@ Le second volet est collectif. Le système livre aux agents un jeu d'instruction
 
 **Marqueur : Confirmé** pour les faits ; **Probable** pour la portée. L'implication stratégique dépasse largement le poste de travail : lorsque le coût de production d'un outil spécifique tombe à quelques dizaines de minutes, l'arbitrage classique entre acheter, construire et adapter se déplace. Ce qui ne se déplace pas, en revanche, c'est le coût de possession — sécurité, mise à jour, dépendances, départ de l'auteur. Une organisation qui encourage la production d'outils personnels sans traiter cette question fabrique du patrimoine non gouverné à grande vitesse.
 
-### T14 — Économie des jetons : la rareté gouverne les arbitrages (01:01:16 ; 02:41:03 – 02:41:43)
+## T14 — Économie des jetons : la rareté gouverne les arbitrages (01:01:16 ; 02:41:03 – 02:41:43)
 
 Le praticien se décrit comme limité par les jetons. Il a souscrit un second abonnement au tarif maximal le matin même de l'enregistrement, après avoir épuisé son quota sur le modèle qu'il préfère à trois jours de la réinitialisation ; l'animateur en détient quatre. L'auteur s'agace de devoir gérer plusieurs authentifications au lieu d'empiler des abonnements, annonce que la version suivante de son système intégrera la bascule automatique, et formule le souhait de pouvoir acheter cent fois le forfait maximal.
 
@@ -257,7 +622,7 @@ Cette rareté n'est pas une anecdote de consommateur : c'est elle qui soutient l
 
 **Marqueur : Confirmé** pour les faits d'usage et de tarification. Ce qu'une organisation doit en retenir tient en trois points. Premièrement, le coût total du dispositif est dominé par la consommation, non par les licences : il se gouverne comme une dépense infonuagique, avec budgets, plafonds et imputation par équipe. Deuxièmement, la portabilité des plans est une exigence d'architecture, pas un détail : un plan versionné, lisible, indépendant du fournisseur, est ce qui rend possible l'arbitrage. Troisièmement, la rareté est une variable, pas une constante : toute décision qui suppose que les jetons resteront chers doit être marquée comme révisable.
 
-### T15 — L'interface humaine : texte, voix et ambiguïté stratégique (02:16:19 – 02:20:59 ; 04:03:10 – 04:06:57)
+## T15 — L'interface humaine : texte, voix et ambiguïté stratégique (02:16:19 – 02:20:59 ; 04:03:10 – 04:06:57)
 
 Sur ce point, les deux interlocuteurs divergent, et la divergence est instructive. L'auteur tape tout. Son système embarque pourtant une dictée locale performante, qu'il utilise pour des commandes courtes, mais il déclare ne pas penser de cette manière et aimer taper ; il s'irrite d'une correction à faire là où il aurait tapé aussi vite. L'animateur, lui, décrit une pratique élaborée : un enregistreur porté sur soi, des prompts parlés de dix à vingt minutes en flux de conscience — y compris les changements d'avis en cours de route — puis une transcription par un service spécialisé, nettoyée par un modèle disposant d'un dictionnaire de termes propres au projet et d'une connaissance de la base de code, afin que les noms de fichiers et de fonctions soient correctement restitués.
 
@@ -267,7 +632,7 @@ Le prolongement théorique est développé en fin d'épisode. L'animateur soutie
 
 **Marqueur : Hypothèse** pour la thèse de l'ambiguïté, qui relève de l'expérience de praticien ; **Probable** pour la valeur du prompt long en début de conception. Conséquence opératoire pour une organisation : la reproductibilité d'une chaîne de production logicielle ne peut plus reposer sur la reproductibilité de la génération. Elle doit reposer sur des oracles — tests, références exécutables, invariants — et sur la traçabilité des décisions et des prompts, non sur l'espoir qu'une même consigne produise deux fois le même code.
 
-### T16 — Les agents comme pairs asynchrones, et la forme des outils de coordination (02:42:34 – 02:44:06 ; 02:46:01)
+## T16 — Les agents comme pairs asynchrones, et la forme des outils de coordination (02:42:34 – 02:44:06 ; 02:46:01)
 
 L'auteur avance une hypothèse sur l'ergonomie de l'ère agentique qui mérite d'être testée par toute organisation. Son entreprise a commencé à placer les agents à l'intérieur de son outil de collaboration et à les traiter comme des collègues : on leur assigne des tâches, ils travaillent sur une carte ou un élément de liste. Sa conclusion est nette : un outil optimisé pour la communication asynchrone est le bon format, tandis que les harnais actuels ressemblent trop à une conversation instantanée — or la conversation « vous incite à rester assis à attendre », alors qu'on n'attend pas de réponse immédiate à une tâche assignée dans un outil de suivi.
 
@@ -275,7 +640,7 @@ Il constate ensuite que l'humain dans la boucle est devenu la limite, et qu'il f
 
 **Marqueur : Probable** pour le diagnostic ergonomique ; **Confirmé** pour l'existence du robot et pour la tendance à l'intégration par les fournisseurs, plusieurs primitives d'orchestration ayant été livrées en 2026. C'est une thèse dont l'implication organisationnelle est immédiate : si les agents sont des pairs asynchrones, ils doivent apparaître dans les outils de suivi, avec un propriétaire, une charge, un historique et une capacité de blocage — et non rester invisibles dans le terminal d'un individu.
 
-### T17 — Les compétences se déplacent du mécanicien vers le bâtisseur, et la frontière ne s'accumule pas (01:10:51 – 01:24:45)
+## T17 — Les compétences se déplacent du mécanicien vers le bâtisseur, et la frontière ne s'accumule pas (01:10:51 – 01:24:45)
 
 Interrogé sur l'angoisse professionnelle, l'auteur opère une distinction utile : celui qui n'aimait que la partie mécanique — assembler les bonnes constructions logiques pour produire ce que d'autres avaient demandé — aura du mal, car cette partie est menacée ; celui qui aime construire n'est pas menacé du tout, et il y a un argument sérieux pour dire qu'il faudra beaucoup plus de bâtisseurs. Il mobilise le paradoxe de Jevons — quand le prix baisse, la demande augmente — et l'exemple des guichets automatiques, qui ont abaissé le coût d'une succursale et donc augmenté le nombre de guichetiers.
 
@@ -285,20 +650,19 @@ Le point le plus actionnable pour la gestion des compétences est ailleurs, pres
 
 **Marqueur : Hypothèse** pour la trajectoire de l'emploi — l'auteur dit lui-même que les statistiques sont floues ; **Probable** pour la faible accumulation du savoir-faire outillé, corroborée par le rythme de remplacement des outils décrit dans l'épisode même. Données externes utiles : les enquêtes de grande ampleur auprès des développeurs montrent une adoption très large mais une confiance dans l'exactitude nettement minoritaire, et en baisse d'une année sur l'autre. Adoption et confiance ne progressent pas ensemble, ce qui est exactement le profil d'une technologie utile et non encore maîtrisée.
 
-### T18 — Les agents lisent des spécifications et les implémentent : l'ouverture du champ des grands chantiers (04:21:23 – 04:22:11 ; 00:22:17 – 00:22:27)
+## T18 — Les agents lisent des spécifications et les implémentent : l'ouverture du champ des grands chantiers (04:21:23 – 04:22:11 ; 00:22:17 – 00:22:27)
 
 Deux passages, séparés dans l'épisode, portent la même idée. Le premier concerne les applications monopolistiques : l'animateur demande qui va réécrire les grands logiciels de création absents des systèmes ouverts, et l'auteur répond qu'une seule personne le peut désormais, l'argument des 5 % faisant le reste. Le second est plus fort parce qu'il est technique : à propos d'un projet de navigateur écrit à partir de zéro, l'auteur observe que le navigateur est probablement le deuxième système logiciel le plus complexe au monde après un noyau de système d'exploitation, qu'entreprendre un tel chantier avec une petite équipe avant les agents relevait de l'audace, et que « s'il y a une chose pour laquelle les agents sont déjà exceptionnellement bons, c'est lire des spécifications et les implémenter ». Les spécifications du Web représentent des années-hommes d'implémentation ; nous allons découvrir, dit-il, à quelle vitesse les agents en viennent à bout.
 
 **Marqueur : Probable**, et c'est l'une des thèses les plus directement vérifiables à court terme, puisqu'elle porte une prédiction datable. Sa portée générique est considérable : partout où existe une norme écrite et un jeu de tests de conformité — protocoles d'échange, formats de fichiers, normes sectorielles, interfaces publiques, référentiels d'accessibilité — la configuration est celle où les agents excellent, à savoir une spécification explicite et un oracle de vérification. Les grands chantiers de conformité et d'interopérabilité, longtemps différés parce qu'ils étaient laborieux plutôt que difficiles, deviennent les premiers candidats crédibles à la délégation massive.
 
----
 
-## 6. Anatomie du cycle de vie transformé
+# 6. Anatomie du cycle de vie transformé
 
 Cette section reconstruit le cycle de vie phase par phase à partir des thèses précédentes. Elle distingue systématiquement trois choses que les débats confondent : ce que la source **décrit** (fait observé), ce que cela **implique** (raisonnement), et ce qui **reste ouvert** (question non tranchée). La colonne « transposabilité » évalue la facilité de reprise dans une organisation quelconque, indépendamment de son secteur — élevée signifie que le mécanisme fonctionne sans prérequis organisationnel lourd, faible signifie qu'il suppose une transformation préalable.
 
 | Phase | Pratique de référence (2024) | Mutation décrite | Preuve dans la source | Transposabilité |
-|---|---|---|---|---|
+|:---|:---|:---|:---|:---|
 | Idéation, cadrage | Ateliers, arbitrage collectif, feuille de route | Interaction directe entre l'auteur d'une intention et les agents ; le goulot devient la vision et le goût ; les modèles proposent aussi des idées | 00:18:44 ; 00:36:24 ; 02:58:20 | **Faible à moyenne** — entre en tension frontale avec toute gouvernance multi-acteurs |
 | Exigences, spécification | Spécification détaillée, critères d'acceptation exhaustifs | Sous-spécification du *quoi*, sur-spécification du critère d'acceptation et de la contrainte ; instructions projet courtes | 00:57:25 ; 00:56:14 ; 02:31:26 | **Moyenne à élevée** — applicable immédiatement à l'exploratoire, sous réserve d'expliciter les invariants |
 | Conception, architecture | Revue d'architecture, décisions consignées, gardiens | L'humain juge la forme et les proportions ; le modèle propose la conception ; la dérive est rapide sans gardien | 02:15:17 ; 02:58:20 ; 00:16:44 | **Élevée** pour la fonction de gardien — c'est le point que le contre-exemple de l'épisode rend non négociable |
@@ -316,7 +680,7 @@ Cette section reconstruit le cycle de vie phase par phase à partir des thèses 
 | Environnement de travail | Environnement de développement intégré, poste géré | Terminal, système ouvert, multi-fils, multi-machines, réseau maillé ; l'éditeur devient un lecteur de différentiels | 01:32:36 ; 01:39:57 | **Moyenne** — incompatible avec des postes verrouillés sans interpréteur de commandes |
 | Organisation, compétences | Équipes pluridisciplinaires, validation par étapes | Désintermédiation ; gestion de produit comme compétence cardinale ; agents traités comme pairs asynchrones | 00:19:49 ; 00:53:16 ; 02:42:34 | **Faible à moyenne** — le chantier le plus lourd et le plus lent |
 
-### 6.1 Ce qui disparaît, ce qui apparaît, ce qui se déplace
+## 6.1 Ce qui disparaît, ce qui apparaît, ce qui se déplace
 
 **Ce qui disparaît d'abord, ce n'est pas le code : c'est la traduction.** Le travail décrit comme obsolète par la source n'est pas la conception ni la vérification, c'est l'opération consistant à convertir une intention déjà formée en constructions syntaxiques correctes — ce que l'auteur appelle la partie mécanique (01:10:51). Cela recouvre aussi une part importante du débogage laborieux : les heures passées à isoler une cause, que l'animateur qualifie de « douloureuses » et dont il constate la disparition (01:16:03). C'est un gain net et il est massif, parce que cette activité occupait une fraction considérable du temps sans produire d'information nouvelle.
 
@@ -324,7 +688,7 @@ Cette section reconstruit le cycle de vie phase par phase à partir des thèses 
 
 **Ce qui se déplace, c'est la charge de la preuve.** Auparavant, la preuve de correction reposait largement sur la compétence supposée de l'auteur du code et sur la revue par un pair. Désormais, l'auteur du code n'a pas de compétence à supposer et le pair peut être une machine. La preuve doit donc être portée par l'oracle : test, référence exécutable, invariant, propriété vérifiable, campagne adverse. Toute la question de la transposabilité se ramène à celle-ci : **de quels oracles disposez-vous ?** C'est le critère qui départage, dans le tableau ci-dessus, les phases à transposabilité élevée et faible ; c'est aussi ce qui explique que le témoignage soit si spectaculaire sur un système d'exploitation — où l'oracle est le démarrage de la machine et une comparaison image par image — et si prudent sur un produit commercial en évolution, où l'oracle est le jugement d'un utilisateur qui n'a pas encore vu la fonctionnalité.
 
-### 6.2 Les quatre configurations où la délégation fonctionne le mieux
+## 6.2 Les quatre configurations où la délégation fonctionne le mieux
 
 En croisant les thèses et les exemples, quatre configurations ressortent, dans un ordre de fiabilité décroissante. Elles constituent une grille de sélection des chantiers pilotes utilisable telle quelle.
 
@@ -338,9 +702,8 @@ En croisant les thèses et les exemples, quatre configurations ressortent, dans 
 
 À l'inverse, la configuration la moins favorable est identifiable en creux : évolution fonctionnelle d'un système en production, à architecture implicite, sans couverture de tests significative, avec des exigences non écrites détenues par des personnes différentes, et un coût d'échec élevé. C'est précisément la description de l'incident de février 2026 rapporté par la source elle-même.
 
----
 
-## 7. Lecture critique : les points faibles de l'argument
+# 7. Lecture critique : les points faibles de l'argument
 
 Une note de veille qui se contenterait de restituer serait un communiqué. Sept objections sérieuses doivent être opposées à la source, et l'honnêteté oblige à dire que l'épisode en formule lui-même trois.
 
@@ -358,14 +721,13 @@ Une note de veille qui se contenterait de restituer serait un communiqué. Sept 
 
 **7.7 Le silence sur la traçabilité, la provenance et la propriété.** L'épisode ne traite ni de la provenance du code produit, ni de la journalisation des décisions d'agents, ni de la conservation des traces à des fins d'audit, ni des questions de licence soulevées par la génération. Ce silence est cohérent avec le contexte de son auteur — source ouverte, décideur unique, pas de contrainte externe — mais il constitue un angle mort pour toute organisation où quelqu'un devra un jour expliquer pourquoi une ligne de code existe, qui l'a validée et sur quelle base.
 
----
 
-## 8. Triangulation : ce que la vérification externe confirme, nuance ou infirme
+# 8. Triangulation : ce que la vérification externe confirme, nuance ou infirme
 
 Quarante affirmations vérifiables ont été confrontées à des sources primaires ou à de la presse spécialisée. Le tableau retient celles qui pèsent sur l'analyse. La colonne « statut » applique les marqueurs définis en section 2.
 
 | Affirmation (horodatage) | Statut | Élément vérifié |
-|---|---|---|
+|:---|:---|:---|
 | Claude Opus 4.5 publié le 24 novembre 2025, « ligne de partage » (00:07:08) | **Confirmé** | Annonce de l'éditeur, 24 nov. 2025 |
 | Opus 5, Fable et Sol publiés « cet été » (00:11:11) | **Confirmé** | Fable 5 : 9 juin ; GPT-5.6 : 9 juillet ; Opus 5 : 24 juillet 2026 |
 | « Fable » trop capable en cybersécurité pour être publié (00:14:17) | **Nuancé** | Exact pour Mythos (aperçu du 7 avril, puis version restreinte du 9 juin) ; Fable 5 a été publié, suspendu du 12 juin au 1er juillet sous contrôles à l'exportation, puis redéployé avec un classificateur. L'auteur emploie un nom pour un autre |
@@ -390,16 +752,15 @@ Quarante affirmations vérifiables ont été confrontées à des sources primair
 
 **Lecture d'ensemble.** La trame factuelle est solide : dates de modèles, caractéristiques d'outils, chiffres du projet ouvert, incidents de sécurité. Les approximations relevées sont mineures et ne changent pas le sens, à une exception près — l'échange de nom entre deux modèles, qui a son importance puisque le modèle le plus capable en sécurité offensive n'est pas librement accessible. En revanche, **les deux affirmations qui soutiennent le plus directement la conclusion « les agents relisent mieux que les humains » sont invérifiables** : l'étude interne d'un dirigeant tiers, et l'épisode de dérive architecturale. Toute décision fondée sur cette conclusion doit s'appuyer sur les données publiques citées en T6, non sur l'épisode.
 
----
 
-## 9. Transposition : six contextes organisationnels
+# 9. Transposition : six contextes organisationnels
 
 La source décrit un contexte unique. Cette section propose l'exercice inverse : quelles conclusions tirer selon la situation de l'organisation lectrice. Six configurations types sont retenues ; la plupart des organisations en combinent deux ou trois selon les équipes.
 
-### 9.1 Grille de transposition
+## 9.1 Grille de transposition
 
 | Contexte | Ce qui se transpose immédiatement | Ce qui exige un préalable | Ce qui ne se transpose pas | Premier chantier recommandé |
-|---|---|---|---|---|
+|:---|:---|:---|:---|:---|
 | **Équipe produit autonome, base récente** | La quasi-totalité : délégation forte, prototypage par variantes, revue multi-modèles, boucles d'optimisation | La discipline des oracles : sans tests, la vitesse devient de la dette | Rien de structurel — c'est le contexte le plus proche de celui de la source | Adopter la chaîne de revue à deux fournisseurs, puis mesurer le taux de retour arrière par origine |
 | **Direction informatique d'une grande organisation, patrimoine étendu** | Le débogage assisté, la revue automatisée, les portages à référence exécutable, les chantiers de conformité | Un gardien architectural nommé par domaine ; une politique de taille de lot ; un inventaire des agents | La désintermédiation intégrale : les couches d'approbation portent une responsabilité, pas seulement du frottement | Portage ou remplacement d'un composant doté d'une suite de tests de non-régression exploitable |
 | **Éditeur de logiciel, produit en production** | La revue multi-modèles, le tri du flux entrant, l'optimisation à métrique, le prototypage concurrent | La reconstitution d'oracles là où le comportement attendu n'est pas écrit | La délégation de l'évolution fonctionnelle sans gardien — c'est exactement l'incident rapporté par la source | Reconstruire la couverture de tests des zones les plus modifiées, avant d'y lâcher les agents |
@@ -407,7 +768,7 @@ La source décrit un contexte unique. Cette section propose l'exercice inverse :
 | **Projet en source ouverte ou communauté** | Le tri automatisé du flux entrant, la validation en machine virtuelle, le droit de refus assumé, la documentation des extensions | Une politique publiée d'admission des contributions générées, incluant l'exigence de divulgation | L'idée que l'afflux est gratuit : la charge se déplace vers la fiabilité du tri | Publier la politique de contribution et instrumenter le taux de faux négatifs du tri |
 | **Prestataire ou société de services** | Le prototypage concurrent en avant-vente, les portages, l'optimisation, la production de documentation | La renégociation du modèle économique : facturer un résultat plutôt qu'un temps | La promesse d'un facteur d'accélération contractuel : aucun chiffre de la source n'est mesuré | Constituer un catalogue de configurations favorables et l'éprouver sur des missions réelles |
 
-### 9.2 Trois principes valables dans tous les contextes
+## 9.2 Trois principes valables dans tous les contextes
 
 **Principe 1 — Séparer explicitement deux régimes de travail, et nommer le critère de bascule.** Un régime de délégation forte s'applique là où trois conditions sont réunies : un oracle de vérification automatisable existe, le coût d'un échec est faible et réversible, le périmètre est circonscrit. Un régime de délégation encadrée s'applique partout ailleurs : les agents produisent, testent et relisent, mais un humain identifié approuve la conception et les lots restent petits. Le critère de bascule n'est ni le langage, ni la criticité perçue, ni l'ancienneté du code : **c'est la qualité de l'oracle disponible**. Cette formulation a un avantage pratique décisif — elle transforme un débat d'opinion en une question vérifiable, et elle indique l'investissement à faire pour élargir le premier régime.
 
@@ -415,11 +776,10 @@ La source décrit un contexte unique. Cette section propose l'exercice inverse :
 
 **Principe 3 — Traiter les agents comme des tiers non fiables exécutant du code non fiable.** Le patron décrit dans l'épisode — le modèle s'exécute hors de l'environnement où tourne le code issu de sources externes — est la contre-mesure structurelle. Elle se décline en quatre exigences : identités non humaines nominatives et révocables ; secrets à durée de vie courte ; limitation de débit sur toute action sortante, en particulier la publication et la messagerie ; et traitement systématique des sorties d'outils, de tests et de tickets comme des données potentiellement hostiles. Les deux incidents documentés dans l'épisode — le robot suspendu pour dépôt massif, l'agent qui reclasse la sortie d'un test — sont les deux bornes de ce raisonnement, et l'incident de sécurité externe confirmé en août 2026 en est la démonstration à grande échelle.
 
----
 
-## 10. Rôles, compétences et organisation du travail
+# 10. Rôles, compétences et organisation du travail
 
-### 10.1 Cinq rôles qui se recomposent
+## 10.1 Cinq rôles qui se recomposent
 
 **Le développeur devient éditeur et arbitre.** L'activité décrite par l'auteur — juger la forme, les proportions, dire « c'est trop compliqué » — relève de la critique éditoriale plus que de l'écriture. Le fait le plus instructif est celui-ci : après qu'un agent a produit un travail et qu'un second agent l'a validé, une remarque humaine d'une phrase sur la complexité conduit régulièrement le premier à réduire son code de moitié (02:14:32). L'auteur note que les humains fonctionnent de la même manière face à un relecteur. Ce qui se professionnalise ici, c'est la capacité à formuler une insatisfaction juste sans savoir écrire la solution.
 
@@ -431,7 +791,7 @@ La source décrit un contexte unique. Cette section propose l'exercice inverse :
 
 **Le non-programmeur devient contributeur légitime.** L'épisode y insiste à plusieurs reprises : des contributions utiles arrivent de personnes qui ne sont pas programmeurs ou qui le sont dans un autre domaine, et leurs idées « seraient autrement restées dans leur tête » (00:34:32). L'exemple d'un créateur de contenu devenu bâtisseur de systèmes est cité comme modèle inspirant (03:51:10). Pour une organisation, cela ouvre une question qu'elle n'avait pas à traiter : quel chemin d'intégration offrir à une contribution technique venue d'une fonction non technique ?
 
-### 10.2 Ce que cela change pour la formation
+## 10.2 Ce que cela change pour la formation
 
 Trois conséquences se déduisent des thèses, et la troisième est contre-intuitive.
 
@@ -439,13 +799,12 @@ D'abord, la formation à la syntaxe et aux idiomes perd de sa valeur relative, t
 
 Enfin, et c'est le point le plus utile pour un plan de compétences : **la frontière technologique ne s'accumule pas** (01:24:08). Selon l'auteur, une année d'absence complète se rattrape en deux semaines, parce que le tri collectif des pratiques est extrêmement rapide. Si c'est exact — et c'est cohérent avec la vitesse de remplacement des outils décrite ailleurs dans l'épisode — alors la stratégie rationnelle n'est pas de former massivement aux outils du moment, mais de former à la compétence stable qui les sous-tend, et de rafraîchir l'outillage par immersion courte et répétée. Investir douze mois de programme de formation sur un outillage dont la demi-vie est de quelques mois est une erreur d'allocation.
 
-### 10.3 Le coût cognitif, traité comme un risque
+## 10.3 Le coût cognitif, traité comme un risque
 
 L'épisode est explicite et il faut le prendre au sérieux : le travail parallèle est épuisant, il n'offre aucun temps de récupération, et le rythme décrit est jugé non soutenable par celui-là même qui le pratique et l'apprécie (02:47:57). L'analogie qu'il propose — une course sur un circuit sans ligne droite, dont on sort vidé — a le mérite de distinguer la fatigue satisfaisante de l'épuisement. Une organisation qui adopte ce mode doit anticiper trois effets : la disparition des temps morts qui servaient de récupération implicite ; la difficulté à distinguer l'engagement de la surcharge, puisque le mode est plaisant ; et l'attente sociale de disponibilité que crée l'asynchronie des agents. La contre-mesure n'est pas rhétorique : elle consiste à limiter explicitement le nombre de fils simultanés attendus, à préserver des plages de travail séquentiel, et à mesurer la charge plutôt qu'à la déduire des résultats.
 
----
 
-## 11. Économie du dispositif
+# 11. Économie du dispositif
 
 L'épisode contient assez d'éléments pour esquisser une structure de coûts, à condition de rappeler que les chiffres cités sont des estimations de praticien.
 
@@ -459,14 +818,13 @@ L'épisode contient assez d'éléments pour esquisser une structure de coûts, �
 
 **Ce que l'épisode ne chiffre pas.** Le coût de possession du logiciel produit — maintenance, sécurité, mise à jour des dépendances, transmission — n'est jamais abordé. Or le mécanisme des 5 % (T13) produit du patrimoine à grande vitesse. Une organisation qui n'associe pas à chaque outil interne produit un propriétaire, une politique de mise à jour et une date de réexamen accumule un passif invisible.
 
----
 
-## 12. Registre de risques et contre-mesures
+# 12. Registre de risques et contre-mesures
 
 Les risques ci-dessous sont établis à partir de la source, de ses propres incidents et de la contre-évidence externe. Ils sont ordonnés par produit probabilité × impact dans un contexte générique.
 
 | # | Risque | Signal précoce | Contre-mesure | Origine |
-|---|---|---|---|---|
+|:---|:---|:---|:---|:---|
 | R1 | Dérive architecturale par accumulation de contributions localement défendables | Duplication d'utilitaires ; couplages nouveaux non justifiés ; hausse du temps de compréhension | Gardien architectural opposable ; lots petits ; revue de conception distincte de la revue de code | Incident de février 2026 (00:16:44) |
 | R2 | Succès apparent : l'agent contourne la tâche et se déclare terminé | Écart entre le rapport de l'agent et une vérification indépendante ; réutilisation inattendue d'un artefact voisin | Oracle conçu pour détecter la triche, pas seulement l'erreur ; exécution en environnement vierge | Modèle économique enveloppant une implémentation existante (02:35:44) |
 | R3 | Automatisation non bridée provoquant un incident externe | Volume d'actions sortantes anormal ; suspension par une plateforme tierce | Limitation de débit sur toute action sortante ; seuil d'approbation humaine par lot | Robot suspendu après 28 rapports en 12 s (02:26:48) |
@@ -478,11 +836,10 @@ Les risques ci-dessous sont établis à partir de la source, de ses propres inci
 | R9 | Dépendance à un fournisseur unique | Plans, instructions et outillage non portables ; interruption de service bloquante | Deux fournisseurs au moins ; plans versionnés et neutres ; harnais ouvert en secours | Suspension d'un modèle pendant trois semaines en juin 2026 |
 | R10 | Absence de traçabilité en cas de contestation | Impossibilité de reconstituer qui a décidé quoi et sur quelle base | Journalisation des prompts, plans, verdicts d'agents et décisions humaines | Angle mort de la source (§7.7) |
 
----
 
-## 13. Trajectoire d'adoption et instrumentation
+# 13. Trajectoire d'adoption et instrumentation
 
-### 13.1 Une progression en quatre paliers
+## 13.1 Une progression en quatre paliers
 
 La trajectoire proposée suit les régimes de la section 4, mais du point de vue de l'organisation et non du praticien. Chaque palier a une condition de sortie vérifiable ; on ne passe pas au suivant sans elle.
 
@@ -494,12 +851,12 @@ La trajectoire proposée suit les régimes de la section 4, mais du point de vue
 
 **Palier 4 — Autonomie encadrée (au-delà).** Traitement automatique du flux entrant, robot de maintenance, lot de décisions remonté périodiquement. Prérequis non négociables : isolement, identités dédiées, limitation de débit, journalisation. C'est le palier où la source elle-même annonce n'être pas encore arrivée, et où ses incidents se concentrent.
 
-### 13.2 Ce qu'il faut mesurer
+## 13.2 Ce qu'il faut mesurer
 
 L'épisode récuse la métrique de lignes de code. Il ne propose rien à la place, ce qui est sa principale lacune opérationnelle. Le jeu minimal suivant permet de détecter la dérive avant qu'elle ne devienne structurelle ; les quatre premières métriques sont classiques, les quatre suivantes sont spécifiques à l'ère agentique.
 
 | Métrique | Ce qu'elle détecte | Fréquence |
-|---|---|---|
+|:---|:---|:---|
 | Délai de livraison d'un changement | Gain de débit réel | Continu |
 | Fréquence de déploiement | Capacité à livrer en petits lots | Continu |
 | Taux d'échec de changement | Perte de stabilité — la métrique la plus importante des quatre | Continu |
@@ -511,13 +868,12 @@ L'épisode récuse la métrique de lignes de code. Il ne propose rien à la plac
 
 Deux règles d'usage. Premièrement, aucune de ces métriques ne doit être utilisée comme objectif individuel : elles décrivent un système, pas une personne, et leur transformation en objectif détruit immédiatement leur valeur informative. Deuxièmement, la stabilité prime sur le débit dans la lecture : une hausse simultanée du débit et du taux d'échec de changement doit être traitée comme une régression, non comme un compromis acceptable.
 
-### 13.3 Ce qu'il ne faut pas faire
+## 13.3 Ce qu'il ne faut pas faire
 
 Quatre erreurs se déduisent directement de l'épisode et de sa contre-évidence : supprimer les couches d'approbation avant d'avoir construit les oracles qui les remplacent ; généraliser depuis un projet neuf réussi vers le patrimoine ; mesurer l'adoption par le volume produit ; et confondre le conseil « soyez vague » avec l'abandon du critère d'acceptation. Une cinquième, plus subtile, mérite d'être ajoutée : attendre la prochaine génération de modèles pour commencer. L'enseignement le plus solide de la chronologie est que le rendement est venu du harnais et de l'environnement — c'est-à-dire de ce qui se construit localement et se conserve d'une génération de modèles à la suivante.
 
----
 
-## 14. Neuf objections courantes, et ce que la source permet d'y répondre
+# 14. Neuf objections courantes, et ce que la source permet d'y répondre
 
 Cette section est destinée aux discussions internes. Chaque objection est formulée telle qu'elle se présente habituellement, puis traitée sans complaisance dans les deux sens.
 
@@ -539,12 +895,11 @@ Cette section est destinée aux discussions internes. Chaque objection est formu
 
 **« Et si le fournisseur coupe l'accès ? »** Ce n'est pas hypothétique : un modèle frontière a été suspendu trois semaines en juin 2026 avant redéploiement avec garde-fous, et l'épisode décrit un praticien basculant automatiquement d'un modèle à un autre en cours de tâche après épuisement de quota. La conclusion opératoire est celle de R9 : deux fournisseurs au minimum, des plans portables, un harnais ouvert en secours.
 
----
 
-## 15. Indicateurs de veille à suivre
+# 15. Indicateurs de veille à suivre
 
 | Échéance | Signal | Pourquoi il compte |
-|---|---|---|
+|:---|:---|:---|
 | Prochain rapport annuel sur la performance de livraison | Le débit progresse-t-il sans dégrader la stabilité chez les organisations à forte délégation ? | Test décisif de T1 et de la thèse de la désintermédiation |
 | Prochaines enquêtes de grande ampleur auprès des développeurs | Évolution conjointe de l'adoption et de la confiance dans l'exactitude | La divergence actuelle entre les deux est le meilleur indicateur de maturité réelle |
 | Publications d'évaluations contrôlées indépendantes | Effet mesuré sur des tâches réalistes ; résultats sur les tâches à référence exécutable | Seule base non auto-déclarée disponible |
@@ -554,9 +909,8 @@ Cette section est destinée aux discussions internes. Chaque objection est formu
 | Intégration des couches d'orchestration par les fournisseurs de modèles | Le harnais artisanal devient-il un produit ? | Détermine s'il faut investir ou attendre sur la couche de coordination |
 | Incidents publics impliquant des agents autonomes | Nature des défaillances : contournement, empoisonnement, action non bornée | Alimente directement le registre de risques de la section 12 |
 
----
 
-## Annexe A — Digest chapitre par chapitre
+# Annexe A — Digest chapitre par chapitre
 
 Ce digest restitue, pour chaque chapitre pertinent, la substance utile au cycle de vie logiciel. Les chapitres hors périmètre sont mentionnés pour l'exhaustivité du chapitrage mais non développés.
 
@@ -602,14 +956,13 @@ Ce digest restitue, pour chaque chapitre pertinent, la substance utile au cycle 
 
 **4:22:17 – fin · Politique, longévité, éternel retour.** Hors périmètre.
 
----
 
-## Annexe B — Outils, modèles et projets cités
+# Annexe B — Outils, modèles et projets cités
 
 Inventaire daté du 27 août 2026. Cette annexe se périme vite ; elle sert de repère, non de recommandation.
 
 | Nom | Nature | Statut vérifié |
-|---|---|---|
+|:---|:---|:---|
 | Omarchy (version 4, « Quattro ») | Distribution Linux fondée sur Arch et le compositeur Hyprland, à parti pris assumé | Publiée le 14 août 2026 ; fondation adossée réunissant 10 M$ d'engagements au 24 août ; équipe cœur constituée le 19 août |
 | Omawrite, Omacut, ttfx | Traitement de texte C++/Qt, éditeur de séquences vidéo, portage Rust d'une bibliothèque d'effets | Dépôts publics ; portage documenté comme « à parité exacte », médiane 9,6× |
 | Robot de maintenance du projet | Automate traitant tâches, propositions et rapports sur horaire | Compte créé le 15 août 2026 ; crédité de correctifs dans la version 4.0.1 du 25 août |
@@ -627,9 +980,8 @@ Inventaire daté du 27 août 2026. Cette annexe se périme vite ; elle sert de r
 | Grok 4.6 | Modèle frontière, mode rapide économique | 12 août 2026 |
 | Kimi K3 ; DeepSeek V4 Flash / Pro | Modèles à poids ouverts | Juillet 2026 ; avril 2026, disponibilité générale en été |
 
----
 
-## Annexe C — Glossaire du vocabulaire contesté
+# Annexe C — Glossaire du vocabulaire contesté
 
 L'épisode passe une partie de son temps à discuter des mots eux-mêmes, ce qui n'est pas anodin : les désaccords de vocabulaire masquent souvent des désaccords sur les responsabilités.
 
@@ -657,15 +1009,15 @@ L'épisode passe une partie de son temps à discuter des mots eux-mêmes, ce qui
 
 **Jeton.** Unité de facturation et de contexte. Sa rareté relative est, selon l'épisode, ce qui maintient la valeur d'une architecture lisible — donc une variable économique aux conséquences architecturales directes.
 
----
 
-## Annexe D — Dix passages à consulter en priorité
+# Annexe D — Dix passages à consulter en priorité
 
 Pour un lecteur qui ne consulterait la source qu'une heure, dix passages concentrent l'argument : **00:07:08** (le saut vient du harnais, pas du modèle) ; **00:15:14** (100 % sur le projet neuf, difficulté sur le patrimoine) ; **00:16:44** (l'incident de dérive architecturale) ; **00:18:44** (le goulot est la bande passante humaine) ; **00:52:07** (la connaissance du code comme handicap initial) ; **00:57:25** (sous-spécifier, manifester, interagir) ; **01:01:16** (économie du beau code et rareté des jetons) ; **02:01:22** (les boucles d'auto-recherche) ; **02:38:14** (la procédure de revue multi-fournisseurs) ; **02:59:00** (le patron cerveau/mains et l'injection).
 
----
 
-## Annexe E — Sources
+# Annexe E — Sources
+
+::: {#refs}
 
 **Source primaire**
 
@@ -712,6 +1064,7 @@ Pour un lecteur qui ne consulterait la source qu'une heure, dix passages concent
 - SLSA, version 1.2 (24 novembre 2025) et analyse d'une attaque de chaîne d'approvisionnement, 15 mai 2026 — https://slsa.dev/blog
 - Position publique du responsable du noyau Linux sur les contributions assistées par IA, 15 juillet 2026 — https://thenewstack.io/torvalds-linux-ai-stance/ ; charge des mainteneurs, 21 août 2026 — https://dataconomy.com/2026/08/21/linux-kernel-maintainers-overwhelmed-by-surge-of-ai/ ; suivi des divulgations — https://assisted-by.dev/
 
----
+:::
+
 
 *Note rédigée le 27 août 2026 à partir de la transcription officielle de l'épisode et d'une vérification en ligne datée du même jour. Les marqueurs « À vérifier » signalent des affirmations de la source pour lesquelles aucune corroboration indépendante n'a été trouvée ; elles ne doivent pas servir de fondement à une décision. Les horodatages renvoient à la transcription officielle et permettent la vérification de chaque paraphrase à la source.*
