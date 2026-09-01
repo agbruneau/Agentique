@@ -5,10 +5,13 @@ sert à personne qui vient **lire** les huit documents : tout y est déjà rendu
 **refaire**, ou à vérifier qu'ils tiennent encore.* ✎ *Ce fichier s'est dit « non versionné », comme
 le `README.md` : c'était faux dans les deux cas — `git ls-files` les rend tous les deux.*
 
-## Les onze contrôles
+## Les douze contrôles
 
-**Onze contrôles, onze à 0.** *Trois sortaient 1 jusqu'au 21 août 2026 ; la note ⚠ de leur ligne
-ci-dessous dit ce que chacun avait trouvé et ce qui a été fait.* Rien
+**Douze contrôles, douze à 0.** *Trois sortaient 1 jusqu'au 21 août 2026 ; la note ⚠ de leur ligne
+ci-dessous dit ce que chacun avait trouvé et ce qui a été fait.* ☑ *Le douzième est entré le
+1er septembre 2026 avec l'article de `6 - Article/` — `rejeu-politique.py` —, et il ne fait pas ce
+que les onze autres font : **il exécute une condition de réfutation du document au lieu de mesurer
+sa forme.*** Rien
 n'est câblé en intégration continue — pas de `.github/` —, et chacun se lance seul, depuis le dossier
 indiqué. *Relevé du 21 août 2026 ; toutes les commandes ci-dessous ont été rejouées pour ce relevé,
 sauf mention contraire.*
@@ -22,9 +25,21 @@ sauf mention contraire.*
 | `python Python/check-traite.py` | `3 - Traité/` | ☑ **0** — 143 pages, recomptées à **deux sources du PDF qui doivent concorder** ; 123 notices citées nommément ; 72 110 mots |
 | `python PRD/check-compendium.py` | `2 - Compendium/` | ☑ **0** — les 50 pièces tiennent (P1-P8), 3 rapports déclaratifs |
 | `python PRD/check-toc.py` · `PRD/check-sieges.py` | `2 - Compendium/` | ☑ **0** — C1-C15 ; 26 sièges sur 50 pièces (S1-S5) |
-| `python "4 - Veille/Python/check-resume.py" <fichier.pdf>` | racine | ☑ **0 sur les neuf rendus livrés**, essayés un par un pour ce relevé — il mesure la **géométrie** de la page de titre : le gabarit compose le résumé dans un bloc qui ne se scinde pas, donc un résumé trop long se fait rogner sous la marge basse sans que Pandoc sorte autre chose que 0. ☑ *Il est désormais **enchaîné** aux chaînes de rendu de `4 - Veille/` et `5 - Recension/`, qui échouent s'il échoue* |
+| `python "4 - Veille/Python/check-resume.py" <fichier.pdf>` | racine | ☑ **0 sur les neuf rendus livrés**, essayés un par un pour ce relevé — il mesure la **géométrie** de la page de titre : le gabarit compose le résumé dans un bloc qui ne se scinde pas, donc un résumé trop long se fait rogner sous la marge basse sans que Pandoc sorte autre chose que 0. ☑ *Il est désormais **enchaîné** aux chaînes de rendu de `4 - Veille/` et `5 - Recension/`, qui échouent s'il échoue.* ⚠⚠ *Il sort **1** sur le douzième PDF, celui de `6 - Article/`, et **ce verdict est faux** — voir le bloc sous ce tableau. Ne pas l'enchaîner à cette chaîne-là* |
 | `bash PRD/decompte.sh --verifier` | `2 - Compendium/` | ☑ **0** — les quatre points d'ancrage tenus : Vol. I 225 258 / 233 257, Vol. II **93 239**, Vol. III 160 890. ⚠ *L'ancre du Vol. II a été **redatée** de 93 242 à 93 239 le 21 août 2026 : trois jetons étaient tombés du corps le 8 août avec le renommage du volume, et le script avait raison de le dire — le motif est en tête de son bloc d'attendus* |
+| `python rejeu-politique.py` | `6 - Article/` | ☑ **0** — déroulés A et B du § 7.5, sensibilité du § 7.5.1, **table de transitions totale 36/36** (4 états × 9 événements), gardes de sortie de `hors_service`. *Seul contrôle du dépôt qui **exécute** une condition de réfutation — RÉF-6 — plutôt que de mesurer une forme : une divergence fait échouer une assertion, et réfute la contribution. Ajouté le 1er septembre 2026 ; ⚠ l'article n'est pas un livrable, ce contrôle n'en est pas moins le plus mordant du lot* |
 | ⚠ *Le Vol. I n'a aucun contrôle propre.* | | |
+
+⚠⚠ **`check-resume.py` sort 1 sur `6 - Article/article-hpc-qpu.pdf`, et le verdict est faux — ne
+pas l'enchaîner à cette chaîne.** Il rend **44,3 pt** pour une marge basse de 72 pt, soit −27,7 pt.
+*Ses deux prémisses tombent avec le gabarit arXiv* : **(a)** le gabarit FESP ne numérote pas sa page
+de titre, celui d'arXiv y pose un folio en pied — et un pied vit **sous** la marge par construction ;
+c'est ce numéro de page, et rien d'autre, que le contrôle prend pour un débordement, puisqu'il
+mesure le `min` des ordonnées de tout `BT` de la page 1 ; **(b)** le gabarit FESP compose le résumé
+dans un bloc **qui ne se scinde pas** — d'où le rognage silencieux que le contrôle existe pour
+attraper —, quand celui-ci le compose en `pad()` de texte courant, que Typst **reporte** à la page
+suivante. *Le risque surveillé n'existe pas dans ce gabarit.* **Contrôle inapplicable, pas contrôle
+en échec** — et il reste ☑ 0 sur les neuf rendus livrés et sur la note SDLC.
 
 **b. « Les contrôles tiennent-ils ? » — validation par mutation**
 
@@ -41,7 +56,9 @@ le contrôle les attrape. À lancer après toute retouche du contrôle correspon
 
 Ordre réel de fabrication : **graver les figures → assembler la source → composer le PDF.**
 ☑ **Les trois étapes ont été rejouées le 21 août 2026, et les neuf PDF livrés se refont désormais
-tous par un script versionné** — ils n'étaient que quatre à le pouvoir.
+tous par un script versionné** — ils n'étaient que quatre à le pouvoir. ⚠ *Deux PDF entrés depuis
+échappent à cette phrase : la note de veille SDLC, dont la commande se recopie à la main, et
+l'article, dont la chaîne tient en une ligne mais n'est écrite nulle part ailleurs qu'ici.*
 
 | Commande | Depuis | Verdict |
 |---|---|---|
@@ -54,6 +71,7 @@ tous par un script versionné** — ils n'étaient que quatre à le pouvoir.
 | `bash build/build-pdf.sh` | `3 - Traité/` | ☑ **143 pages**, pagination inchangée. ⚠ *Chaîne **écrite** le 21 août 2026 : sa commande n'était nulle part au dépôt, et il a fallu la reconstituer. Elle se lance de ce dossier depuis que les figures y sont* |
 | `bash build/build-pdf.sh [veille\|revue]` | `4 - Veille/` | ☑ **144 et 59 pages**, pagination inchangée après le changement de titre. *Inscrit au dépôt les deux commandes qui n'y vivaient qu'en prose ; enchaîne `check-resume.py`* |
 | `bash build/build-pdf.sh [etat\|planche]` | `5 - Recension/` | ☑ **185 et 7 pages**, pagination inchangée. ⚠ *Il ne couvre PAS les deux `.html`, et le dit : leur commande prend `--css <feuille>`, et aucune feuille de style n'est versionnée* |
+| `typst compile article-hpc-qpu.typ` | `6 - Article/` | ☑ **38 pages**, et la recomposition rend **exactement 750 902 octets** — la taille du PDF livré —, **60 octets d'écart en cinq endroits, tous d'horodatage** : `ModDate`, `CreationDate`, `xmp:ModifyDate`, `xmp:CreateDate`, `xmpMM:InstanceID`. *Le `xmpMM:DocumentID`, dérivé du contenu, ne bouge pas, et c'est ce qui rend la comparaison concluante.* Rejoué le 1er septembre 2026, **Typst 0.15.1** — la version du `/Creator` livré —, polices New Computer Modern et DejaVu Sans Mono. ⚠ *Seule chaîne du dépôt **sans script versionné**, et la seule **sans Pandoc** : il n'y a rien à scripter d'autre que cette ligne — pas d'assemblage, pas d'injection de pagination, pas de gravure de figures, qui se dessinent à la composition.* ⚠ *`SOURCE_DATE_EPOCH` ne rend pas l'octet et **empire** : Typst compose alors en UTC — `D:20260901100946Z` au lieu de `D:20260901060946-04'00` —, six caractères de moins qui décalent tout ce qui suit, et l'écart passe de 60 à **45 342** octets* |
 | `cargo test --workspace --release` · `cargo clippy --workspace --all-targets --release` · `cargo doc --workspace --no-deps` | `3 - Traité/` | ☑ **0 aux trois** — **467 tests, 0 échec, 0 ignoré**, aucun `#[ignore]` au code ; clippy 0 sur les six membres et toutes les cibles ; rustdoc 0. *Ce sont les trois commandes d'avant-commit de `docs/DEVELOPPEMENT.md`, et la troisième existe parce que les deux premières sont restées vertes pendant que rustdoc sortait 101.* ⚠⚠ *L'ensemble sortait **101 à l'instant** jusqu'au 21 août 2026 : deux membres du workspace manquaient au disque* |
 | `bancs/dt1-flottant/banc.mjs` · `bancs/parite-wasm/banc.mjs` | `3 - Traité/` | ☑ **0 aux deux**, sous Node 24. **DT1** : NF-02 tenue sur 8 groupes à parité exigée, 10⁶ itérations chacun — *les 6 divergences de la bibliothèque de plateforme sont le **résultat** du banc, non une régression, et `mul_add` coïncide sur cette machine*. **EX-V12** : 6 cas identiques natif/WASM |
 | `cargo run -p sim-agents --example …` (×4) · `--bin campagne` | `3 - Traité/` | ☑ **0 aux cinq**. *`banc_nf05` affiche ✗ NF-05 et sort 0 : la cible de 10³ s simulées/s-cœur n'est pas atteinte — c'est un écart consigné au registre, pas un échec de banc.* `diagnostic_conformite` reproduit le constat qui a réfuté le premier point du critère de sortie de la phase 6 |
@@ -84,8 +102,12 @@ Relevés le **21 août 2026** sur l'arbre de travail, par ces commandes et par e
 exceptés, redatés du **22 août 2026** et marqués comme tels au fil du texte : les titres et auteurs,
 le décompte d'octets avec deux de ses cardinaux, et les renvois du point d ci-dessus.*
 
-- **Pages** — `pypdf`, `len(PdfReader(f).pages)` sur les 10 PDF versionnés. Aucun nombre de pages
-  n'est repris d'un autre `README.md`.
+- **Pages** — `pypdf`, `len(PdfReader(f).pages)` sur les PDF versionnés — **10 au relevé du
+  21 août 2026, 12 depuis le 1er septembre** : la note de veille SDLC et l'article s'y sont ajoutés.
+  Aucun nombre de pages n'est repris d'un autre `README.md`. ⚠ *`pypdf` n'est pas installé sur la
+  machine de la passe du 1er septembre ; les deux derniers comptes sont pris au champ
+  `xmpTPg:NPages` du XMP, qui concorde avec le `/Count` de l'arbre des pages sur les onze PDF
+  composés par Typst — le mémoire de 1997, sorti d'Acrobat, ne porte pas ce champ.*
 - **Titres et auteurs** — champs `/Title` et `/Author` des PDF, et en-têtes YAML des sources.
   *Les six PDF de tête portent six `/Title` distincts depuis l'échange titre ↔ sous-titre du
   21 août 2026 ; ils n'en portaient que quatre.* ⚠ **Le champ ne vaut pas la source, et l'écart se

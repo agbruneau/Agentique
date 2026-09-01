@@ -13,14 +13,34 @@ l'oppose à elle-même.* Le motif est donné au [`README` de `4 - Veille/`](<4%2
 qui la range comme **document publié et non comme neuvième livrable** — ⚠ *ce n'est pas une
 instruction d'auteur, le PRD ne porte aucune décision sur ce document, et le compte se renverse d'un
 mot de sa part, comme le huitième.*
+☑ **Un dixième document est entré le 1er septembre 2026**, au commit `da6255b`, dans un
+**sixième dossier numéroté** — [`6 - Article/`](<6%20-%20Article/>) : *Projection de l'état de
+ressource et délégation multicritère dans une plateforme HPC à processeurs quantiques*, **38 p.**,
+une prépublication au gabarit arXiv qui porte le dépôt à **3 009 pages sur onze PDF**.
+⚠⚠ **Lui non plus n'est pas rangé parmi les livrables, et son motif est neuf : il n'instruit pas la
+question ci-dessus.** *Le corpus porte sur l'entreprise agentique en services financiers ; celui-ci
+porte sur l'intégration de processeurs quantiques dans une plateforme de calcul haute performance.*
+La note de veille SDLC est tenue hors des huit pour **ce qui lui manque** ; celui-ci l'est pour
+**ce dont il traite** — *et ce que la note n'a pas, l'article l'a* : bibliographie close dans les
+deux sens — **77 entrées, 77 citées** — et **un contrôle qui l'oppose à lui-même**,
+[`rejeu-politique.py`](<6%20-%20Article/rejeu-politique.py>), ☑ **0**, seul contrôle du dépôt qui
+**exécute une condition de réfutation** d'un document au lieu de mesurer sa forme. ☑ *Le voisinage
+avec le corpus est déclaré par l'article lui-même* : son § 2.8 fait de l'agent scientifique autonome
+le consommateur le plus exigeant de la chaîne qu'il spécifie. Le motif complet est au
+[`README` de `6 - Article/`](<6%20-%20Article/README.md>) — ⚠ *et, comme les deux précédents,
+ce n'est pas une instruction d'auteur : le PRD ne porte aucune décision sur ce document.*
 S'y ajoute **un simulateur en Rust** — 76 fichiers, 29 690 lignes — qui transpose l'un de ces
 documents en code exécutable sous une règle : *tout chiffre affiché doit être retrouvé par la
 mesure, ou l'écart consigné*. **Cinq écarts** le sont, **dont trois contredisent le traité**
 ([`3 - Traité/docs/decisions.md`](<3%20-%20Trait%C3%A9/docs/decisions.md>)) — *et c'est la règle qui
 tient, non un défaut : un écart consigné est ce que le dispositif produit quand il marche.*
 
-**Les textes sont d'une seule main** : André-Guy Bruneau, champ `/Author` des dix PDF signés —
+**Les textes sont d'une seule main** : André-Guy Bruneau, champ `/Author` des onze PDF signés —
 ⚠ *la mention « M.Sc. IT » n'accompagne le nom que sur sept ; les Vol. I, II et III le portent seul.*
+⚠⚠ **Et le onzième l'écrit autrement** : l'article de `6 - Article/` porte `André-Guy Bruneau,
+M.Sc IT`, **sans le point après « Sc »** — *huitième PDF à porter la mention, seul des huit à
+l'écrire ainsi.* **Relevé le 1er septembre 2026, non corrigé** — la correction tient en un point à
+la source et demande une recomposition.
 ⚠ *Le dépôt, lui, ne l'est pas* : `git log` comptait, **au relevé du 21 août 2026 et avant
 la passe de réparation que décrit cette page**, **280 commits — 260 signés André-Guy
 Bruneau, 18 `Claude <noreply@anthropic.com>`, 2 `agbruneau`** — et **quatre fusions de *pull
@@ -34,13 +54,17 @@ commit — **305 commits au 28 août**, dont onze pris depuis le 24. ⚠ *Au 24 
 [`2 - Compendium/PRD/PRD.md`](<2%20-%20Compendium/PRD/PRD.md>) §16 ; l'unique étiquette du dépôt,
 `mono-v1.0`, est posée sur ce commit de clôture. Il a été rouvert une dizaine de fois depuis, chaque
 fois pour une pièce nommée et pour elle seule : la chronique datée est en tête de
-[`1 - Collection/README.md`](<1%20-%20Collection/README.md>). **La dernière réouverture est du
-28 août 2026, pour la note de veille SDLC** — ⚠ *et c'est la première qui fasse entrer un document
-neuf plutôt que réparer une pièce existante.*
+[`1 - Collection/README.md`](<1%20-%20Collection/README.md>) — ⚠ *qui s'arrête à la onzième
+réouverture, celle du 21 août 2026, et ne porte aucune des passes du 22 août au 1er septembre : la
+compter là revient à compter court.* **La dernière réouverture est du 1er septembre 2026, pour
+l'article de `6 - Article/`** — ⚠ *c'est la deuxième d'affilée qui fasse entrer un document neuf
+plutôt que réparer une pièce existante, la première étant celle du 28 août, et la première depuis le
+20 août 2026 qui crée un dossier numéroté.*
 
 ☑ **[`LICENSE`](LICENSE) à la racine — CC BY 4.0, posée le 21 août 2026 sur instruction d'auteur**,
 et elle couvre le dépôt entier : les huit documents, leurs rendus, le simulateur, les chaînes et les
-figures. *Jusque-là, seul le Vol. I portait la sienne — mêmes termes, pour lui seul — et tout le
+figures — *et, sans qu'un geste soit nécessaire, les deux documents entrés depuis, la note de veille
+SDLC et l'article.* *Jusque-là, seul le Vol. I portait la sienne — mêmes termes, pour lui seul — et tout le
 reste relevait du droit d'auteur par défaut.* ⚠ **Ce qu'elle ne couvre pas est écrit dans son texte** :
 les œuvres de tiers citées, qui restent à leurs titulaires. **Trois ouvrages de tiers et deux articles
 arXiv ont quitté l'index le même jour**, *avant* qu'elle ne soit posée et précisément parce qu'elle
@@ -57,6 +81,7 @@ davantage, tant que l'arbre ancien tient*. Leurs renvois sont au
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **5 minutes**   | *Cinq schémas — état de l'art* : [`.pdf`](<5%20-%20Recension/Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.pdf>) 7 p. ou [`.html`](<5%20-%20Recension/Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.html>) 105 Ko autonome — cinq figures commentées et rien d'autre |
 | **20 minutes**  | [`NiveauMaturité.html`](NiveauMaturit%C3%A9.html) — **9 diapositives** 16:9, six paliers de maturité ; autonome, aucune dépendance                                                                                                                                                                                                                     |
+| **une demi-heure** | [`article-hpc-qpu.pdf`](<6%20-%20Article/article-hpc-qpu.pdf>) — 38 p. : une prépublication arXiv, 77 références toutes citées, 26 figures, 8 conditions de réfutation. ⚠ *Hors livrables, et hors sujet du corpus — voir plus haut* |
 | **une heure**   | [`Note-veille-SDLC-agentique.pdf`](<4%20-%20Veille/Note-veille-SDLC-agentique.pdf>) — 49 p. : une source unique instruite, 18 thèses horodatées, 40 affirmations triangulées. ⚠ *Hors livrables — voir plus haut*                                                                                                             |
 | **une soirée** | [`Veille Technologique.pdf`](<4%20-%20Veille/Veille%20Technologique.pdf>) — 144 p., l'état du champ déployé, 342 références                                                                                                                                                                                                                                |
 | **le fond**     | [`Compendium.pdf`](<2%20-%20Compendium/Compendium.pdf>) — 1 000 pages, la somme dédoublonnée des trois monographies                                                                                                                                                                                                                                           |
@@ -86,6 +111,17 @@ motif exact qui avait fait passer le compte de sept à huit.* Ce qui la retient 
 n'apparie, et aucun contrôle qui la mesure** — hors
 [`check-resume.py`](<4%20-%20Veille/Python/check-resume.py>), qui ne regarde que sa page de titre.
 *Le tableau reste donc à huit lignes, et le dépôt porte neuf documents publiés.*
+⚠⚠⚠ **Et l'arbitrage s'est reposé une troisième fois le 1er septembre 2026, sur un motif que les
+deux précédents n'avaient pas eu à formuler.** L'article de `6 - Article/` a tout ce qui manquait à
+la note — **bibliographie close dans les deux sens, 77 entrées et 77 citées**, et un contrôle
+versionné qui l'oppose à lui-même. *Le critère méthodologique qui a fait passer le compte de sept à
+huit, puis retenu la note hors du tableau, le rangerait donc parmi les livrables.* **Ce qui l'en
+tient dehors est autre chose : il n'instruit pas la question du dépôt** — il porte sur
+l'intégration de processeurs quantiques dans une plateforme HPC, non sur les agents autonomes en
+services financiers sous contrainte réglementaire. ⚠ *Un critère thématique n'avait jamais servi
+ici, et il ne se déduit d'aucun des deux arbitrages antérieurs : c'est cette page qui le pose, sur
+pièce, et le PRD ne porte aucune décision sur ce document.*
+*Le tableau reste à huit lignes, et le dépôt porte **dix documents publiés**.*
 
 ☑ **Trois documents portaient exactement le même titre ; ils ne le portent plus depuis le
 21 août 2026.** La veille, la revue et l'état de l'art déclaraient tous
@@ -111,7 +147,12 @@ réparer le bloc de titre, a donc cassé ce champ du même geste — et celle du
 précisément sur `/Title`, ne l'a pas vu.* ⚠ *Poser l'apostrophe typographique à la source n'y change
 rien, vérifié : Pandoc la relit et réémet le signe droit.* ☑ **Corrigé au seul en-tête de la note**,
 dont le `dc:title` porte bien `à l'ère des agents` ; ⚠⚠ **l'état de l'art reste cassé** — *seul des
-onze PDF du dépôt, relevé le 28 août 2026, et la correction demande une recomposition.*
+douze PDF du dépôt, relevé le 1er septembre 2026, et la correction demande une recomposition.*
+☑☑ **Le diagnostic a reçu sa corroboration la plus nette le 1er septembre 2026, et par un document
+qui ne visait pas cela** : l'article de `6 - Article/` porte un titre à apostrophe — *Projection de
+l'état de ressource…* — et **son `dc:title` la traverse intacte**. *C'est le seul PDF du dépôt
+composé **sans Pandoc**, en Typst direct : la variable qui distingue son cas de celui de l'état de
+l'art est exactement celle que le diagnostic accuse.*
 ☑ *Cette même recomposition porte le document à **186 p.**
 et **1 986 l.** — un paragraphe ajouté au §14, qui déclare la portée exclue par ligne d'affaires ;
 les « 185 pages » du paragraphe ci-dessus datent le 21 août et ne bougent pas.*
@@ -154,7 +195,7 @@ développe.*
 Agentique/
 ├── README.md                        cette page. ⚠ Elle s'est dite « non versionnée » : c'était faux
 │                                      — `git ls-files` la rend, et `APPAREIL.md` avec elle
-├── APPAREIL.md                      ⭑ les onze contrôles avec leur verdict, la chaîne de
+├── APPAREIL.md                      ⭑ les douze contrôles avec leur verdict, la chaîne de
 │                                      fabrication, et la commande derrière chaque chiffre d'ici
 ├── LICENSE                          ⭑ CC BY 4.0, 21 août 2026 — elle couvre le dépôt entier
 ├── .gitattributes                   `* text=auto eol=lf` : sans quoi un clone Windows rend les
@@ -209,28 +250,64 @@ Agentique/
 │   └── build/build-pdf.sh              ⭑ les deux commandes des livrables, versionnées le 21 août
 │                                         2026 ; ⚠ pas celle de la note, qui se recopie à la main
 │
-└── 5 - Recension/                   Vol. VIII et sa planche
-    ├── figures/                     `dessine.py` + 5 SVG, chez leur document — comme celles du
-    │                                traité depuis le 21 août 2026
-    └── build/build-pdf.sh           ⭑ les deux commandes de PDF ; ⚠ pas les `.html`, faute d'une
-                                       feuille de style versionnée
+├── 5 - Recension/                   Vol. VIII et sa planche
+│   ├── figures/                     `dessine.py` + 5 SVG, chez leur document — comme celles du
+│   │                                traité depuis le 21 août 2026
+│   └── build/build-pdf.sh           ⭑ les deux commandes de PDF ; ⚠ pas les `.html`, faute d'une
+│                                      feuille de style versionnée
+│
+└── 6 - Article/                     la prépublication HPC-QPU, 1er septembre 2026 — hors livrables,
+    │                                et le seul dossier de document dont la source ne soit pas du
+    │                                Markdown : Typst direct, sans Pandoc
+    ├── README.md                    ⭑ pourquoi ce document n'est pas le neuvième livrable, et
+    │                                  pourquoi le motif n'est pas celui de la note SDLC
+    ├── article-hpc-qpu.typ/.pdf     la source et son rendu — 1 979 l. → 38 p.
+    ├── references.bib               77 entrées, ⭑ toutes citées ; ⚠ aucun script du dépôt ne le
+    │                                  vérifie — c'est une mesure de passe, pas une garantie
+    ├── rejeu-politique.py           ⭑ le seul contrôle du dépôt qui EXÉCUTE une condition de
+    │                                  réfutation (RÉF-6) au lieu de mesurer une forme
+    └──  ⚠ pas de build/ : le PDF se fait par `typst compile`, la seule chaîne non scriptée du
+           dépôt. ⚠ et deux des sept fichiers sont des points — `.gabarit-arxiv.typ`,
+           `.figures.typ` —, invisibles à un `ls` sans `-a`, indispensables à la composition
 ```
 
-**564 fichiers versionnés, 75,6 Mo** (**75 569 777 octets**, relevé le 28 août 2026) : 216 `.md`, 142 `.svg`, 76 `.rs`,
-53 `.html`, 31 `.py`, 11 `.pdf`, 9 `.toml`, 8 `.sh`, 6 gabarits Typst, 4 `.gitignore`, 2 `.mjs`,
-2 `LICENSE`, 1 `.lua`, 1 `Cargo.lock`, 1 `launch.json`, 1 `.gitattributes`. ⚠ *Le compte a **baissé**
-depuis les **574 fichiers** du 25 août, et c'est un solde de deux mouvements de sens contraire* :
-**−12 `.md`** — les douze rapports d'audit interne de `3 - Traité/bancs/audit-2026-08/`, retirés le
-25 août 2026 au commit `7a1b7f2` sur instruction d'auteur, **−282 007 o. nets** une fois leurs 300
-mentions réécrites — et **+2 fichiers** pour la note de veille SDLC, **+750 614 o.** ; le Compendium
-recomposé le 26 en ajoute **+2 913**. ⚠ *Le relevé est celui du disque de l'auteur, que l'arrivée de
-`.gitattributes` n'a pas renormalisé : **un clone rend 75 451 341 o.**, `* text=auto eol=lf` y
-ramenant les fichiers texte en LF — **118 436 o. d'écart**, et il n'y en a plus d'autre : l'arbre de
-travail est propre au 28 août 2026, ce qu'il n'était pas au relevé précédent.* *Les **11 PDF** sont
-les **9 rendus des livrables**, la note de veille SDLC et le mémoire de maîtrise de l'auteur ; les
-**8 `.sh`** sont les **7 `build-pdf.sh`** — un par dossier de livrable, **les neuf PDF de livrable
-couverts, et eux seuls** : ni le mémoire, qui n'est pas d'ici, ni la note, dont la commande n'est pas
-au script — et `PRD/decompte.sh`.*
+**571 fichiers versionnés, 76,4 Mo** (**76 423 624 octets**, relevé le 1er septembre 2026) : 217 `.md`, 142 `.svg`,
+76 `.rs`, 53 `.html`, 32 `.py`, 12 `.pdf`, 9 `.toml`, 8 `.sh`, 6 gabarits Pandoc, 4 `.gitignore`,
+3 `.typ`, 2 `.mjs`, 2 `LICENSE`, 1 `.lua`, 1 `Cargo.lock`, 1 `launch.json`, 1 `.gitattributes`,
+1 `.bib`. ⚠ *Les « 6 gabarits Typst » de la rédaction précédente étaient les six `.template`, qui
+sont des gabarits **Pandoc** écrits en Typst ; les trois `.typ` de `6 - Article/` sont du Typst
+propre, sans Pandoc — la distinction n'avait pas lieu d'être avant le 1er septembre 2026.*
+**Les sept fichiers entrés depuis le 28 août sont ceux de l'article** — six au commit `da6255b`,
+plus le `README.md` du dossier —, **+943 850 o. mesurés au format de l'index** pour les six.
+⚠⚠ **Les deux nombres du relevé du 28 août 2026 étaient chacun 4 931 octets trop bas**, vérifié au
+commit `90ef7d1` : le dépôt y pesait **75 456 272 o. en blobs** quand la page écrivait 75 451 341
+pour un clone, et **75 574 708 o. au disque** quand elle écrivait 75 569 777. *Le même écart des
+deux côtés, et l'écart LF ↔ disque de 118 436 o., lui, était juste.* ⚠ **La cause n'est pas
+établie** — *mais elle n'est pas un ajout de lignes dans un fichier CRLF : cela aurait creusé
+l'écart LF ↔ disque, qui n'a pas bougé.* **C'est exactement le piège que la ligne suivante
+annonce**, et il s'est refermé sur la passe qui l'écrivait.
+☑☑ **Le relevé de tête a changé de méthode le 1er septembre 2026, et c'est un durcissement** : il
+n'est plus celui du disque de l'auteur mais celui de l'**index** — la somme des tailles de blobs,
+LF, *ce qu'un clone rend*. **C'est le seul des deux qu'un tiers puisse reproduire**, et il ne dépend
+ni de la plateforme ni de l'éditeur qui a écrit la dernière ligne. Le disque, lui, rend
+**76 545 402 o.** au même moment — deux passes concordantes, `cat` en flux et somme des `stat` —,
+soit **121 778 o. d'écart**, le `* text=auto eol=lf` de `.gitattributes` ramenant les fichiers texte
+en LF. ⚠ *Cet écart ne se décompose plus comme la veille* : il valait 121 756 o. au commit
+`da6255b` — les 118 436 du 28 août **plus les 3 320 lignes des cinq fichiers texte de l'article**,
+un retour chariot chacune —, et **cette passe-ci l'a bougé de +22 en réécrivant sur le disque, en
+LF, une partie des `.md` qu'elle éditait**. *La composition du solde n'a pas été cherchée, et le
+commit n'en dépend pas : git normalise à l'entrée, le diff indexé ne porte aucune de ces lignes.*
+Au 1er septembre 2026 l'arbre ne porte rien d'autre que les éditions de cette passe.
+*Les **12 PDF** sont les **9 rendus des livrables**, la note de
+veille SDLC, l'article et le mémoire de maîtrise de l'auteur ; les **8 `.sh`** sont les
+**7 `build-pdf.sh`** — un par dossier de livrable, **les neuf PDF de livrable couverts, et eux
+seuls** : ni le mémoire, qui n'est pas d'ici, ni la note, dont la commande n'est pas au script, ni
+l'article, dont la chaîne tient en un `typst compile` que rien ne versionne — et `PRD/decompte.sh`.*
+⚠ *Le compte avait **baissé** entre le 25 et le 28 août — **574 puis 564 fichiers** —, solde de deux
+mouvements de sens contraire : **−12 `.md`**, les douze rapports d'audit interne de
+`3 - Traité/bancs/audit-2026-08/` retirés le 25 août 2026 au commit `7a1b7f2` sur instruction
+d'auteur, **−282 007 o. nets** une fois leurs 300 mentions réécrites, et **+2 fichiers** pour la note
+de veille SDLC, **+750 614 o.** ; le Compendium recomposé le 26 en ajoute **+2 913**.*
 ⚠ **Le dépôt a maigri de 37,5 Mo le 21 août 2026**, et c'est un solde, non une pièce : les cinq
 œuvres de tiers sorties de l'index en pèsent **38,3 Mo** à elles seules, l'`.html` de l'état de
 l'art 0,76 Mo de plus, les pièces retouchées en place 0,28 de plus — et ce qui rentre le même jour
@@ -248,8 +325,10 @@ bancs, que la commande inscrite au `VERDICT.md` de chaque banc régénère. ⚠ 
 été vidé le 21 août 2026 — **12 060 fichiers et 3,4 Gio**, en éprouvant sans succès la piste du
 cache vieilli —, et il se refait à la première construction.*
 
-**Dix-sept `README.md` versionnés, celui-ci compris** — un par dossier, un par Livre du
+**Dix-huit `README.md` versionnés, celui-ci compris** — un par dossier, un par Livre du
 compendium, plus `1 - Collection/2 -…/monographie/README.md`, `3 - Traité/docs/README.md` et
-`0 - Références/README.md`, écrit le 21 août 2026 pour un dossier qui n'en avait pas. **C'est là que vit ce
+`0 - Références/README.md`, écrit le 21 août 2026 pour un dossier qui n'en avait pas. *Le
+dix-huitième est celui de [`6 - Article/`](<6%20-%20Article/README.md>), écrit le 1er septembre 2026
+pour la même raison.* **C'est là que vit ce
 que cette page ne porte pas** : régimes de preuve, gels, dérogations, réserves, et l'historique des
 passes. Cette page dit *ce qu'il y a* ; ils disent *ce que ça vaut*.
