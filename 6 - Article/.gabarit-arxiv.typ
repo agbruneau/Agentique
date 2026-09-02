@@ -1,4 +1,12 @@
 // Gabarit « arXiv preprint » (d'après arxiv.sty, G. Kour) porté en Typst.
+//
+// Provenance : github.com/kourgeorge/arxiv-style, fichier `arxiv.sty`, sous
+// « MIT License — Copyright (c) 2020 George Kour » (License.txt du dépôt, lu le
+// 2 septembre 2026). Ce fichier en est une transposition en Typst, non une
+// copie : la géométrie, le bandeau de résumé et le titre courant sont repris,
+// le code ne l'est pas. La mention est portée ici parce qu'une œuvre dérivée
+// d'un original sous MIT en conserve la notice, et que ce dépôt atteste ses
+// provenances plutôt que de les laisser deviner.
 // Colonne unique, New Computer Modern, bandeau de résumé encadré de filets,
 // titre courant « PRÉPUBLICATION — <date> » à partir de la page 2.
 

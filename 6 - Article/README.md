@@ -52,17 +52,20 @@ tiers** sont énoncées. *Seule la politique dispose d'une implémentation de r�
 
 ## Ce que le dossier porte
 
-⚠ **Deux des sept fichiers sont des points** : `ls` sans `-a` en montre cinq sur sept, et les deux
+⚠ **Deux des dix fichiers sont des points** : `ls` sans `-a` en montre huit sur dix, et les deux
 manquants sont le gabarit et les figures — *sans eux la source ne compile pas.*
 
 | Fichier | | |
 | --- | --- | --- |
-| `article-hpc-qpu.typ` | **1 979 l. / 134 947 o.** | la source, en Typst direct — 11 sections de niveau 1, 39 de niveau 2, **26 figures**, ~19 200 mots |
-| `article-hpc-qpu.pdf` | **38 p. / 750 902 o.** | le rendu livré |
-| `references.bib` | **77 entrées / 676 l.** | ⭑ close dans les deux sens — voir plus bas |
-| `rejeu-politique.py` | **163 l.** | ⭑ l'implémentation de référence de la politique (§ 7.2) et de la machine d'états (§ 6.4) |
+| `article-hpc-qpu.typ` | **1 979 l. / 132 969 o.** | la source, en Typst direct — 11 sections de niveau 1, 39 de niveau 2, **8 planches** et **20 tableaux** légendés, ~19 200 mots. ⚠ *Ce README a écrit « 26 figures » et « 134 947 o. » jusqu'au 2 septembre 2026 : le premier nombre comptait les flottants `#figure(` sans distinguer l'illustration du tableau — le PDF rend `Fig. 1-8` et `Tableau 1-20` —, le second comptait la source en CRLF, soit exactement 1 979 octets de trop, un par ligne.* |
+| `article-hpc-qpu.pdf` | **38 p. / 752 159 o.** | le rendu livré — *750 902 o. jusqu'au 2 septembre 2026 : les treize auteurs posés au `.bib` s'impriment dans les références, et le point de `M.Sc. IT` dans les métadonnées* |
+| `references.bib` | **77 entrées / 689 l.** | ⭑ close dans les deux sens, **et gardée** — voir plus bas. *Treize entrées `@misc` n'avaient pas de champ `author` et se rendaient sans auteur ; les auteurs ont été lus à la source arXiv le 2 septembre 2026, verbatim, jamais par inférence* |
+| `rejeu-politique.py` | **170 l.** | ⭑ l'implémentation de référence de la politique (§ 7.2) et de la machine d'états (§ 6.4) |
+| `check-article.py` | ⭑ | **les cinq contrôles de forme** : bibliographie close, parité source/rendu à l'octet, renvois « § » résolus, cardinaux de ce README, scores du rejeu opposés à l'article |
+| `check-article-mutations.py` | ⭑ | le harnais : une faute par classe, vue ; et une qui ne doit pas l'être |
+| `audit.md` | | l'audit du 2 septembre 2026, son plan et son journal d'exécution |
 | `.gabarit-arxiv.typ` | 100 l. | le gabarit *arXiv preprint* d'après `arxiv.sty` (G. Kour), porté en Typst |
-| `.figures.typ` | 402 l. | les primitives de dessin des 26 planches — aucun `#figure` n'y vit, elles sont toutes appelées du corps |
+| `.figures.typ` | 402 l. | les primitives de dessin des **8 planches** — aucun `#figure` n'y vit, elles sont toutes appelées du corps |
 
 ## Refaire le PDF
 
@@ -77,9 +80,14 @@ ligne ci-dessus — pas d'assemblage, pas d'injection de pagination, pas de grav
 se dessinent à la composition.* Prérequis : **Typst 0.15.1** (la version du champ `/Creator` du PDF
 livré), polices **New Computer Modern** et **DejaVu Sans Mono**.
 
-☑ **Vérifié le 1er septembre 2026 : la recomposition rend exactement 750 902 octets**, la taille du
-PDF livré, et **60 octets diffèrent, en cinq endroits, tous d'horodatage** — `ModDate`,
-`CreationDate`, `xmp:ModifyDate`, `xmp:CreateDate` et `xmpMM:InstanceID`. *Le `xmpMM:DocumentID`,
+☑ **Vérifié le 1er septembre 2026, puis à chaque passage de `check-article.py` : la recomposition
+rend exactement la taille du PDF livré** — 750 902 octets alors, 752 159 depuis le 2 septembre —,
+et **une cinquantaine d'octets diffèrent, dans six champs, tous d'horodatage** — `ModDate`,
+`CreationDate`, `xmp:ModifyDate`, `xmp:CreateDate`, `xmpMM:InstanceID` **et le `/ID` du trailer**.
+⚠ *Le relevé du 1er septembre disait « 60 octets, cinq endroits » : il comptait tous les octets
+mais ne nommait que cinq champs, et c'est sur le sixième que `check-article.py` a échoué à son
+premier passage, à 51 octets de la fin du fichier. Le nombre d'octets suit les chiffres des
+horodatages — 62 un jour, 56 le lendemain — ; ce qui ne bouge pas est la liste des six champs.* *Le `xmpMM:DocumentID`,
 lui, ne bouge pas : il est dérivé du contenu, et c'est ce qui rend la comparaison concluante.*
 ⚠ *`SOURCE_DATE_EPOCH` ne rend pas l'octet et ne sert à rien ici : Typst compose alors l'horodatage
 en UTC — `D:20260901100946Z` au lieu de `D:20260901060946-04'00` —, six caractères de moins qui
@@ -109,17 +117,19 @@ verdict n'y mesure que le numéro de page.* **Contrôle inapplicable, pas contr�
 
 **☑ La bibliographie est close dans les deux sens — 77 entrées, 77 citées, et toute clé `@…` du
 corps est définie.** *C'est exactement la propriété que `check-veille.py` vérifie pour la veille et
-que la note de veille SDLC n'a pas.* ⚠ **Mais c'est une mesure faite pour cette passe, par aucun
-script du dépôt** : rien ne la garde, et une entrée qui sortirait du corps à la prochaine révision
-ne serait signalée par rien. *Deux faux positifs sont à écarter à la mesure — `fig:chrono`, qui est
+que la note de veille SDLC n'a pas.* ☑ **Et c'est gardé depuis le 2 septembre 2026** : le contrôle [1] de `check-article.py` refait
+l'appariement à chaque passage, et son harnais prouve qu'il voit une entrée orpheline comme une
+citation pendante. *Ce paragraphe disait « une mesure faite pour cette passe, par aucun script du
+dépôt : rien ne la garde » — c'était vrai, et c'est ce que l'audit a corrigé en premier.* *Deux faux positifs sont à écarter à la mesure — `fig:chrono`, qui est
 une étiquette de figure, et `gmail`, pris dans l'adresse de l'auteur.*
 
 ## Deux relevés de métadonnées
 
 ⚠ **Le champ `/Author` lit `André-Guy Bruneau, M.Sc IT` — sans le point après « Sc ».** *Huitième
 PDF du dépôt à porter la mention, huitième graphie possible et la seule qui l'écrive ainsi* : sept
-PDF portent `M.Sc. IT`, les Vol. I, II et III portent le nom seul. **Relevé le 1er septembre 2026,
-non corrigé** — la correction demande une recomposition, et elle tient en un point à la source.
+PDF portent `M.Sc. IT`, les Vol. I, II et III portent le nom seul. **Relevé le 1er septembre 2026, corrigé le 2** — un point à la ligne 9 de la source, et une
+recomposition dont la parité est vérifiée par `check-article.py`. *Le PDF livré porte désormais
+`M.Sc. IT`, comme les sept autres.*
 
 ☑ **Le `dc:title` porte bien l'apostrophe** — *Projection de l'état de ressource…* — là où celui de
 l'état de l'art de `5 - Recension/` perd la sienne. **C'est une corroboration directe du diagnostic

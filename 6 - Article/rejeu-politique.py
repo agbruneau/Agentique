@@ -66,7 +66,14 @@ TABLE = {
     ("disponible", "E8"): None,
     ("disponible", "E9"): lambda c: ("degrade", c),
     ("etalonnage", "E1"): None,
-    ("etalonnage", "E2"): lambda c: ("disponible", c),  # « si conforme »; sinon degrade
+    # ⚠ La table publiée (§ 6.4) écrit « → D si conforme, sinon → G ». Ce script
+    # n'a PAS d'entrée de conformité : il n'implante que la branche conforme,
+    # et la branche « sinon → G » n'est exercée par aucune assertion. Sur les
+    # trente-six cases, trente-cinq sont rejouées entières ; celle-ci l'est à
+    # moitié, et RÉF-6 ne porte donc pas sur la requalification en échec.
+    # Relevé par l'audit du 2 septembre 2026 ; à lever en donnant au rejeu un
+    # verdict d'étalonnage en entrée.
+    ("etalonnage", "E2"): lambda c: ("disponible", c),
     ("etalonnage", "E3"): None,
     ("etalonnage", "E4"): None,
     ("etalonnage", "E5"): lambda c: ("hors_service", "perte_contact"),

@@ -6,7 +6,7 @@
     dans une plateforme HPC à processeurs quantiques],
   auteurs: (
     (
-      nom: "André-Guy Bruneau, M.Sc IT",
+      nom: "André-Guy Bruneau, M.Sc. IT",
       courriel: "agbruneau@gmail.com",
     ),
   ),
