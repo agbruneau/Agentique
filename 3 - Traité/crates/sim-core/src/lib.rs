@@ -57,7 +57,7 @@ pub const VERSION: &str = env!("CARGO_PKG_VERSION");
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Debug, Default, Serialize, Deserialize)]
 pub struct ActeurId(pub u32);
 
-/// Configuration d'une exécution, journalisée dès l'étape 1 de l'algorithme 3
+/// Configuration d'une exécution, journalisée dès l'étape 1 de l'algorithme 3.3
 /// du §3.3 : avec la graine, elle suffit au rejeu à l'identique.
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Config {

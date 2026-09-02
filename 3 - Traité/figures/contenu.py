@@ -97,7 +97,26 @@ f("1.3", "f-01-3-diametre",
   "diametre")
 
 # ================================================================= Chapitre 2
-f("2.1a", "f-02-1a-calm",
+f("2.1a", "f-02-1a-usl",
+  "La loi universelle de scalabilité : pourquoi un essaim qui entretient une vue commune n'a pas un rendement décroissant, mais un maximum.",
+  "Deux courbes de capacite relative en fonction du nombre d'agents, l'une plafonnant, "
+  "l'autre passant par un maximum puis decroissante.",
+  "§ 2.1, chapitre 2 — d'après [3].", "courbe",
+  "Ces deux valeurs de σ et de κ sont une illustration arithmétique de la formule citée [3], "
+  "et non une mesure : le protocole qui les tirerait d'un journal de messages réel n'est pas "
+  "écrit, et la conclusion de l'ouvrage en fait son premier reste. Ce qu'elles établissent tient "
+  "néanmoins — dès que κ > 0, dépasser u* est une régression, pas un plafond.",
+  dict(titre="C(n) = n ⁄ (1 + σ(n − 1) + κ·n(n − 1))", xmax=100, ymax=20, hcadre=138,
+       xlab="nombre d'agents n", ylab="C",
+       series=[
+           ("σ = 0,05, κ = 0 — cas de la loi d'Amdahl : asymptote horizontale à σ⁻¹ = 20 ×, "
+            "jamais dépassée, jamais retrouvée en arrière", "pointille"),
+           ("σ = 0,05, κ = 10⁻³ — vue commune entretenue : maximum en "
+            "u* = √((1 − σ)/κ), puis débit rétrograde", "plein"),
+       ],
+       reperes=[(30.8, 9.04, "u* ≈ 30,8")]))
+
+f("2.1b", "f-02-1b-calm",
   "Le critère qui décide de ce qui est décentralisable : le théorème CALM, tranché au niveau du programme et non du stockage.",
   "Arbre de decision fonde sur le theoreme CALM : programme monotone ou non.",
   "§ 2.1, chapitre 2 — d'après [6].", "arbre",
@@ -118,25 +137,6 @@ f("2.1a", "f-02-1a-calm",
             "unique. L'invariant doit tenir à tout instant, et le substrat événementiel ne "
             "suffit pas : le prix est celui du chapitre 4."),
        ]))
-
-f("2.1b", "f-02-1b-usl",
-  "La loi universelle de scalabilité : pourquoi un essaim qui entretient une vue commune n'a pas un rendement décroissant, mais un maximum.",
-  "Deux courbes de capacite relative en fonction du nombre d'agents, l'une plafonnant, "
-  "l'autre passant par un maximum puis decroissante.",
-  "§ 2.1, chapitre 2 — d'après [3].", "courbe",
-  "Ces deux valeurs de σ et de κ sont une illustration arithmétique de la formule citée [3], "
-  "et non une mesure : le protocole qui les tirerait d'un journal de messages réel n'est pas "
-  "écrit, et la conclusion de l'ouvrage en fait son premier reste. Ce qu'elles établissent tient "
-  "néanmoins — dès que κ > 0, dépasser u* est une régression, pas un plafond.",
-  dict(titre="C(n) = n ⁄ (1 + σ(n − 1) + κ·n(n − 1))", xmax=100, ymax=20, hcadre=138,
-       xlab="nombre d'agents n", ylab="C",
-       series=[
-           ("σ = 0,05, κ = 0 — cas de la loi d'Amdahl : asymptote horizontale à σ⁻¹ = 20 ×, "
-            "jamais dépassée, jamais retrouvée en arrière", "pointille"),
-           ("σ = 0,05, κ = 10⁻³ — vue commune entretenue : maximum en "
-            "u* = √((1 − σ)/κ), puis débit rétrograde", "plein"),
-       ],
-       reperes=[(30.8, 9.04, "u* ≈ 30,8")]))
 
 f("2.1c", "f-02-1c-isr",
   "Où la garantie de l'ensemble synchronisé tombe : le déroulé complet à k = 3 répliques et seuil d'accusé m = 2.",

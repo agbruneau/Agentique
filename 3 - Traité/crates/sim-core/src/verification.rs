@@ -1,6 +1,6 @@
 //! Vérification statistique bornée (§8.4, EX-C18).
 //!
-//! Le mode vérification implante l'algorithme 2 du §3.2 du traité :
+//! Le mode vérification implante l'algorithme 3.2 du §3.2 du traité :
 //!
 //! ```text
 //! N = ⌈ ln(2/δ) / (2ε²) ⌉

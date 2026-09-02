@@ -646,18 +646,44 @@ Mesuré le 17 août 2026 à 08 h 32 par
 grep -rhoE '§[0-9]+(\.[0-9]+)?, p\. [0-9]+' crates/ | sort | uniq -c | sort -rn
 ```
 
-les 43 renvois `§X.Y, p. N` des quatre crates donnent **quatre** pages
-différentes pour le seul §1.2 — `p. 16` dix fois, `p. 13` quatre fois, `p. 14`
-deux fois, `p. 12` une fois. **L'édition de référence est tranchée depuis le
-17 août 2026** — c'est la **troisième**, 143 pages, la seule que le dépôt
-contienne, et F2 comme DT5 portent la clause. Ce que le constat ci-dessus établit
-n'est donc plus une ambiguïté d'édition mais une **migration inachevée** : le
-`Traité.pdf` du dépôt ouvre le §1.2 à la page 12 avec l'énoncé des bornes à la
-page 16, `p. 13` ne correspond à ni l'un ni l'autre, et le compte ci-dessus a
-bougé d'une heure à l'autre pendant la campagne. Le code n'en tient pas une seule,
-ce que F2 qualifie de provenance fausse et non d'imprécision, et seuls les renvois
-portant `(3ᵉ éd.)` se relisent sans refaire la vérification. **Huit d'entre eux — D, E,
-F, G, J, K, L, M — n'ont aucun point d'affichage** : `sim-viz` ne lit que `BLOC_A`
+le §1.2 recevait **quatre** pages différentes des quatre crates. ⚠ **Le compte
+précis qui figurait ici est retiré le 2 septembre 2026, et son retrait est le
+geste utile** : il datait du 17 août à 08 h 32, il avait bougé d'une heure à
+l'autre pendant la campagne même, et il avait encore bougé depuis — *un compte
+écrit sans la commande qui le produit se périme sans que rien ne le signale*,
+et celui-ci était écrit à côté de sa commande sans qu'on refasse l'une en
+relisant l'autre. **Ce qui se cite d'ici est la ligne ci-dessus, jamais le
+nombre.**
+
+**L'édition de référence est tranchée depuis le 17 août 2026** — c'est la
+**troisième**, 143 pages, la seule que le dépôt contienne, et F2 comme DT5
+portent la clause. Le `Traité.pdf` du dépôt ouvre le §1.2 à la page 12, l'énoncé
+des bornes étant à la page 16 : `p. 13` ne correspond à ni l'un ni l'autre, ce
+que F2 qualifie de provenance fausse et non d'imprécision.
+
+☑ **La migration est FINIE au code, et c'est une mesure du 2 septembre 2026, pas
+une déclaration** — *refaite après le passage à la **quatrième** édition, qui a porté
+les 141 marqueurs de `(3ᵉ éd.)` à `(4ᵉ éd.)` sur la mesure que la pagination est
+préservée* : sur les **63** renvois `§X.Y … p. N` des quatre crates,
+**50 nomment leur édition sur leur propre ligne** et **2 dans les deux lignes qui
+les encadrent**. ⚠ **Aucun renvoi VIVANT n'est nu** — c'est-à-dire aucun de ceux
+qu'un lecteur suivrait pour retrouver une thèse.
+
+La ligne ci-dessous en rend **treize**, et **aucune n'est un défaut** : elles
+vivent toutes dans une prose qui porte sur la question d'édition elle-même — la
+table d'histoire de `scenario.rs` (l. 617-634), qui énumère les pages **fausses**
+en regard de leur remplaçante ; les commentaires qui expliquent pourquoi le champ
+`source` voisin porte `(4ᵉ éd.)` ; la continuation d'un champ dont la première
+ligne le porte (`scenario_m.rs`) ; et une phrase de `scenario_d.rs` qui parle
+d'intervalles de pages sans citer de thèse. *Une ligne de mesure qui rend douze
+résultats dont zéro défaut doit dire lequel des deux nombres compte, sans quoi le
+premier lecteur ouvrira douze fichiers pour rien.*
+
+```bash
+grep -rn '§' crates/ --include='*.rs' | grep 'p\. [0-9]' | grep -v 'éd\.' | grep -vi 'quatrième édition'
+```
+
+**Huit d'entre eux — D, E, F, G, J, K, L, M — n'ont aucun point d'affichage** : `sim-viz` ne lit que `BLOC_A`
 et `BLOC_B`, et le réexport de `BLOC_D` et `BLOC_M` par `lib.rs` n'en est pas un.
 La liste d'absences le dit, et l'onglet « Limites » affiche le même compte.
 

@@ -20,7 +20,7 @@ pub enum Etat {
     Retire,
 }
 
-/// **EX-A19** — algorithme 2 du ch. 4, rumeur push-pull avec retrait par
+/// **EX-A19** — algorithme 4.2 du ch. 4, rumeur push-pull avec retrait par
 /// compteur.
 ///
 /// `cpt` est incrémenté sur **rencontre redondante** — un pair qui connaît déjà

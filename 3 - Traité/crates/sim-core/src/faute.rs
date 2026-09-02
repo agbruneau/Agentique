@@ -1,7 +1,7 @@
 //! Le modèle de faute, objet de première classe (PD6).
 //!
 //! > Les fautes qu'il sait produire sont exactement les fautes que la campagne
-//! > pourra trouver. (§3.3, p. 50, 3ᵉ éd.)
+//! > pourra trouver. (§3.3, p. 50, 4ᵉ éd.)
 //!
 //! Conséquence tenue ici : le modèle s'affiche (EX-C06), se versionne, et
 //! nomme ce qu'il ne sait pas produire. Un mécanisme absent du modèle a, dans
@@ -59,7 +59,7 @@ pub struct Panne {
 
 /// La partition réseau, **processus à deux états** et non tirage par message.
 ///
-/// §3.2 du traité, algorithme 2 : le PRD (EX-C05) écrit « faute de quoi elle n'est jamais
+/// §3.2 du traité, algorithme 3.2 : le PRD (EX-C05) écrit « faute de quoi elle n'est jamais
 /// tirée ». Un tirage indépendant par message produit des pertes éparses, pas
 /// une coupure durable : la scission silencieuse et la décision divisée que les
 /// scénarios doivent provoquer ne surviennent jamais sous ce modèle-là.

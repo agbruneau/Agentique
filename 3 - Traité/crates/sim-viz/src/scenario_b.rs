@@ -71,7 +71,7 @@ const ETROIT: f32 = 640.0;
 /// Le test `la_provenance_des_bornes_suit_encore_sim_agents` échoue dès que les
 /// deux divergent de nouveau. Le correctif de fond est un accesseur de
 /// provenance dans `sim-agents`, hors de la portée de la vue.
-const SOURCE_BORNES: &str = "§1.2, p. 16, 3ᵉ éd.";
+const SOURCE_BORNES: &str = "§1.2, p. 16, 4ᵉ éd.";
 
 /// Réglage complet d'une exécution : paramètres, graine, budget.
 ///

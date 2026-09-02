@@ -5,6 +5,8 @@ partage voit-il **exactement** la même figure que son émetteur ?
 
 **Réponse.** Oui, sur les six cas du scénario B, bits des flottants compris.
 
+☑ **Rejoué le 2 septembre 2026** sur un module reconstruit, et **tenu** : six cas, six paires d'empreintes identiques, sortie 0. *Le module reconstruit est lui-même identique à l'octet à celui du 17 août 2026* — la construction WASM est reproductible, ce que ce banc n'avait pas eu à mesurer jusqu'ici. ⚠ **Ce rejeu ne périme pas la mesure d'origine, il la reconduit** : *un verdict de parité vaut pour la construction sur laquelle il a été pris, et celle-ci est la même.*
+
 ## Le montage
 
 Le banc calcule une empreinte de `ResultatB` — mesures, trace d'entrelacement,

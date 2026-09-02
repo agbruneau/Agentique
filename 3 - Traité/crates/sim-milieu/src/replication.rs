@@ -4,7 +4,7 @@
 //! dans [`crate::groupe`].
 //!
 //! > Le nombre de disparitions auquel r₂ survit n'est pas k − 1 = 2, il est
-//! > m − 1 = 1. (§2.1 du traité, p. 26, 3ᵉ éd.)
+//! > m − 1 = 1. (§2.1 du traité, p. 26, 4ᵉ éd.)
 //!
 //! Deux invariants **distincts**, et le produit ne les confond jamais :
 //!
@@ -178,7 +178,7 @@ impl Isr {
     /// la même situation que M2 et M3 côté journal — l'oracle reste armé pour
     /// que sa ligne figure au catalogue, non pour qu'il se déclenche.
     pub fn armer_oracles(&self, registre: &mut Registre) {
-        registre.armer(Oracle::surete(R1, "§2.1, p. 26, 3ᵉ éd. ; §6.1"));
+        registre.armer(Oracle::surete(R1, "§2.1, p. 26, 4ᵉ éd. ; §6.1"));
         registre.armer(Oracle::surete(R2, "§6.1"));
     }
 

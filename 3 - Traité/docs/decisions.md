@@ -148,8 +148,7 @@ qui porte sur la machine de construction et non sur le traité.
 **Reclassement du 17 août 2026, contre la troisième édition livrée.** Le compte
 reste à cinq et la troisième édition le confirme : sa conclusion écrit *« Cinq
 écarts entre le livre et sa transposition y sont consignés, dont trois contre
-l'ouvrage »* et cite ce dépôt en notice 120 (`Traité.md:1743`, `Traité.pdf`
-p. 129). Ce qui change est le statut de trois lignes du tableau, et il faut le
+l'ouvrage »* et cite ce dépôt en notice 120 — ⚠ *l'**énoncé** qui la cite est à `Traité.md:1743`, `Traité.pdf` p. 129 ; la **notice** elle-même est à `Traité.md:1871`, p. 143. Les deux lignes ne disent pas la même chose, et ce renvoi les confondait jusqu'au 2 septembre 2026.* Ce qui change est le statut de trois lignes du tableau, et il faut le
 dire parce qu'un écart absorbé par la source cesse d'être une contradiction sans
 cesser d'être un fait.
 
@@ -159,8 +158,7 @@ cesser d'être un fait.
   (`Traité.md:981`, p. 58) écrit « Sans relance, l'erreur ne croît pas sans
   borne : **elle se fige** », puis « La relance de la ligne 11 **ne plafonne donc
   pas** l'erreur ». Les deux mesures sont retrouvées par la source, mot pour mot.
-  Ils restent des écarts contre la **deuxième** édition et contre le PRD, qui écrit
-  encore « moins de 7,9 × 10⁻³ » au §0 et « elle dérive sans borne ».
+  Ils restent des écarts contre la **deuxième** édition. ⚠ **Et contre le PRD, l'énoncé était trop étroit : il écrivait « moins de 7,9 × 10⁻³ » et « elle dérive sans borne » au §0 *et à trois sites du corps* — l'exigence EX-A43 du §6, le scénario du §7 et la correspondance du §12 A**, c'est-à-dire là où le code va chercher ce qu'il doit tenir. ☑ **Les trois sont alignés sur la 3ᵉ édition le 2 septembre 2026**, l'ancienne forme conservée à côté et datée ; le tableau du §0 reste tel quel, *étant le constat de la phase 3 et non une exigence*.
 - **Le contrôleur d'élasticité change de camp, et n'est pas tranché.** Le registre
   le classait « ne contredit pas le traité » sur la foi du §2.2. Le §7.3 de la
   troisième édition (`Traité.md:1576`, p. 114) conclut le contraire du constat que
@@ -200,11 +198,11 @@ attribuée — c'est le seul des soixante-quinze renvois du PRD qui reste sans p
 mesurée. Ce que la troisième édition écrit à la place, au même endroit, la
 contredit sur son point de fond : « ce n'est plus le seul endroit du livre où un
 théorème manque : le deuxième reste en est un autre, et la décomposition de Φ_c
-plus bas un troisième » (p. 129, 3ᵉ éd.), et sa conclusion générale retourne
+plus bas un troisième » (p. 129, 4ᵉ éd.), et sa conclusion générale retourne
 l'opposition — « ce que le livre laisse ouvert n'est donc pas une théorie
-manquante mais une métrologie manquante » (p. 130, 3ᵉ éd.). Le PRD porte désormais
+manquante mais une métrologie manquante » (p. 130, 4ᵉ éd.). Le PRD porte désormais
 la citation qui existe — « transporter mécaniquement les bornes donne des chiffres
-faux ; la forme correcte du résultat reste à écrire » (p. 129, 3ᵉ éd.) — et le §8.3
+faux ; la forme correcte du résultat reste à écrire » (p. 129, 4ᵉ éd.) — et le §8.3
 du PRD ne dit plus « le seul endroit ». **Aucune mesure n'est en cause, donc le
 compte de cinq écarts NF-15 est inchangé** ; ce qui l'est, c'est une provenance.
 Une **cinquième**, plus étroite, est corrigée au passage : la citation du
@@ -243,6 +241,51 @@ deuxième édition établit que **six des sept énoncés du tableau 21 sont livr
 mesurés dans ce dépôt sous une hypothèse d'indépendance qu'aucun réglage ne met
 en défaut.** Ce n'est pas une décision à trancher, c'est une réserve — elle est au
 §0.0 du PRD, exigence par exigence, et EX-A58 est ce qui la lèvera.
+
+## Ce que la quatrième édition rouvre, et ce qu'elle ne rouvre pas
+
+**[C] La quatrième édition, du 2 septembre 2026, unifie la numérotation — et rien d'autre.**
+`Traité.pdf` à la racine, **143 pages**, en-tête « 2 septembre 2026 — quatrième édition,
+numérotation unifiée » (`head -6 Traité.md`). Elle est née de la **phase 3 du plan d'audit**
+([`../audit.md`](../audit.md)), qui l'avait nommée sans l'exécuter : *le dossier ne corrige pas sa
+source normative, il remonte* — et l'auteur a tranché.
+
+**Ce qu'elle change, et pourquoi c'est une édition et non une réimpression.**
+
+| Ce qui bouge | Avant | Après |
+|---|---|---|
+| **Algorithmes** | « Algorithme 1, 2, 3 » **trois fois** — chapitres 1, 3 et 4 — quand le chapitre 8 écrivait déjà « 8.1 » | **`N.k` partout** : 1.1-1.3, 2.1-2.3, 3.1-3.3, 4.1-4.3, 8.1 |
+| **Chapitre 2** | trois blocs **cités comme des algorithmes sans porter de nom** | trois légendes posées, au même schéma |
+| **Chapitre 5** | trois blocs cités « l'algorithme 1/2/3 » alors qu'ils portent des **procédures nommées** | la prose les nomme — `DÉCISION-PAR-SEUIL`, `MOYENNE-LOCALE`, `ENCHÈRE-ε` |
+| **Tableaux** | numérotés **par le rendu**, jamais dans le texte | numérotés **dans la source**, comme les figures ; la numérotation automatique de Typst est coupée |
+| **Figures §2.1** | 2.1b précédait 2.1a — les lettres suivaient l'ordre des fichiers | les lettres suivent l'**ordre de lecture** |
+| **Conclusion** | « cinq écarts, dont trois contre l'ouvrage », sans date | la répartition porte sa date, et nomme le reclassement qui l'a portée à deux |
+
+⚠ **Le motif de l'édition tient en une phrase : le nom des objets citables a changé.** *Qui citait
+« Algorithme 2 » de la troisième édition ne trouve plus rien ; « Algorithme 1.2 » est neuf.* Une
+réimpression n'aurait pas suffi — **renuméroter ce qui se cite est précisément ce qu'un numéro
+d'édition dénote**, et garder « troisième » eût été la provenance fausse que **F2** proscrit.
+
+☑ **Ce qu'elle NE rouvre pas, et c'est le plus important.** *Aucune thèse, aucun chapitre, aucune
+mesure, aucun énoncé de fond.* Les cinq écarts de **NF-15** restent cinq et gardent leur
+classement ; les vingt-deux réserves du §0 du PRD restent vingt-deux ; les six phases restent
+closes. **Rien de ce que le simulateur transpose n'a bougé** — les 467 tests passent sans qu'une
+ligne de logique ait été touchée.
+
+☑ **La pagination est PRÉSERVÉE, et c'est une mesure, non une intention.** 143 pages avant, 143
+après ; les vingt-quatre sections ouvrent aux mêmes pages, à une exception près — le **§2.3 passe de
+la p. 34 à la p. 35**, les trois légendes neuves du chapitre 2 l'ayant repoussé d'une page. ⚠ *C'est
+cette mesure, et elle seule, qui a autorisé la migration des **141 marqueurs** de `(3ᵉ éd.)` à
+`(4ᵉ éd.)`* : sans elle, chaque page citée aurait dû être revérifiée une à une. Les treize renvois
+que la ligne de contrôle rend encore sont de la prose sur la question d'édition, non des défauts —
+voir le §3.5 de [`SPEC.md`](SPEC.md).
+
+⚠ **Une conséquence n'était pas prévue et vaut d'être écrite** : l'empaquetage WASM a dû être refait.
+*Les marqueurs d'édition ne vivent pas seulement dans les commentaires — ils vivent dans les chaînes
+`source:` que l'interface affiche —, donc le module a changé de contenu.* **1 447 704 octets
+compressés contre 1 447 624**, soit +80. C'est `check-empaquetage.py` qui l'a exigé, en comparant
+des octets et non des dates ; le banc `bancs/parite-wasm` a été rejoué sur la construction neuve et
+**tient sur ses six cas**.
 
 ## Ce que la troisième édition rouvre, et ce qu'elle ne rouvre pas
 

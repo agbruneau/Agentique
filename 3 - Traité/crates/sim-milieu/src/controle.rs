@@ -1,7 +1,7 @@
 //! Plan de contrôle — **modèle de coût**, jamais protocole (EX-M21, DT7).
 //!
 //! > Le plan de données évite l'accord ; le plan de contrôle le paie pour tout
-//! > le monde. (§4.2, p. 65, 3ᵉ éd.)
+//! > le monde. (§4.2, p. 65, 4ᵉ éd.)
 //!
 //! DT7 tranche : implanter Raft ferait du produit un simulateur de protocole
 //! d'accord, ce que le traité refuse d'être. Ce qui est simulé, c'est le

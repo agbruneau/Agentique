@@ -20,7 +20,7 @@ pub const BLOC_K: Bloc = Bloc {
          réparti a une durée pendant laquelle la règle qu'il protège est fausse — l'honnêteté \
          consiste à borner cette durée, pas à prétendre qu'elle n'existe pas.",
     these: "Le budget est un plafond, pas une garantie.",
-    source: "§5.3, tableau 16, p. 84 (3ᵉ éd.)",
+    source: "§5.3, tableau 16, p. 84 (4ᵉ éd.)",
     mecanisme_visible:
         "activer le budget de reprise borne l'amplification par client à 1,1 fois la charge \
          nominale ; la dépendance saturée reçoit alors 1,1 × la charge nominale de chacun des \

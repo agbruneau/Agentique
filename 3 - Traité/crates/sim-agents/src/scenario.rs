@@ -55,7 +55,7 @@ pub const BLOC_A: Bloc = Bloc {
     // renvoi précédent, « §1.3, p. 21 », pointait sur une page de la bonne
     // section qui ne contient pas la phrase citée. F2 traite ce cas comme une
     // provenance fausse et non imprécise, d'où l'édition dans le champ.
-    source: "§2.1, p. 25 (3ᵉ éd.) — comptes comparés : tableau 3, p. 18, et figure 0, p. 4",
+    source: "§2.1, p. 25 (4ᵉ éd.) — comptes comparés : tableau 3, p. 18, et figure 0, p. 4",
     mecanisme_visible:
         "augmenter n fait croître en n² le compteur d'entretien de vue à gauche, sans toucher au \
          compte de lectures à droite ; augmenter ℓ₉₉ allonge les deux tours de journal à droite, \
@@ -143,7 +143,7 @@ impl Comparaison {
     /// maille ; l'interface affiche l'absence au lieu de combler (F1).
     pub fn diametres() -> (&'static str, &'static str) {
         (
-            "journal : 2 en permanence (§1.3, p. 18, 3ᵉ éd.)",
+            "journal : 2 en permanence (§1.3, p. 18, 4ᵉ éd.)",
             Maille::DIAMETRE,
         )
     }
@@ -215,7 +215,7 @@ pub const BLOC_B: Bloc = Bloc {
          soutient qu'il ne trouvera jamais exactement le mieux, mais qu'il en restera à une \
          distance qu'on sait calculer d'avance.",
     these: "Un essaim stigmergique n'atteint pas l'optimum, il campe à distance bornée de lui.",
-    source: "§1.2, p. 16 (3ᵉ éd.) — algorithme 2, p. 14 ; définition d'essaim, §1.1",
+    source: "§1.2, p. 16 (4ᵉ éd.) — algorithme 1.2, p. 14 ; définition d'essaim, §1.1",
     mecanisme_visible:
         "porter γ à 1 supprime le terme de décroissance dans le calcul de φ ; la trace devient une \
          somme cumulée, le rapport φ_max/φ_min croît sans borne, la probabilité de tirage de la \
@@ -624,14 +624,14 @@ mod tests {
     /// | bloc | page citée | ce qu'on y trouve | page réelle dans le traité |
     /// |---|---|---|---|
     /// | A | §1.3, p. 21 | §1.3, mais pas la thèse | §2.1, p. 25 |
-    /// | B | §1.2, p. 13 | §1.2, ni la thèse ni l'algorithme 2 | p. 16 ; algo 2 p. 14 |
+    /// | B | §1.2, p. 13 | §1.2, ni la thèse ni l'algorithme 1.2 | p. 16 ; algo 2 p. 14 |
     /// | D | §2.1, p. 22 | §1.3 — hors de la section citée | p. 26 ; fig. 2.1c p. 28 |
     /// | K | §5.3, p. 63 | §4.2 — hors de la section citée | tableau 16, p. 84 |
     /// | M | §8.3, p. 94 | §6.2 — hors de la section citée | p. 127 |
     ///
     /// La clause porte sur **les dix**, et non sur les cinq ci-dessus. Les blocs
     /// E, F, G, J et L citaient déjà des pages qui résolvent dans la troisième
-    /// édition — algorithme 3 p. 21, figure 5.2 p. 80, tableau 15 p. 81, §7.1
+    /// édition — algorithme 1.3 p. 21, figure 5.2 p. 80, tableau 15 p. 81, §7.1
     /// p. 104, figure 6.1 p. 91, tableau 13 p. 72, figure 7.2 p. 107, tableau 19
     /// p. 110, toutes retrouvées —, mais ils ne la nommaient pas : leurs pages
     /// se relisaient donc comme celles d'une édition inconnue, ce qui est
@@ -652,7 +652,7 @@ mod tests {
     fn les_dix_blocs_nomment_leur_edition() {
         for (nom, b) in tous_les_blocs() {
             assert!(
-                b.source.contains("3ᵉ éd."),
+                b.source.contains("4ᵉ éd."),
                 "bloc {nom} : page citée sans son édition — {}",
                 b.source
             );

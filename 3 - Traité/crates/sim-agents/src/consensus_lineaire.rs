@@ -1,4 +1,4 @@
-//! **§3.1 du traité, algorithme 1 du ch. 3** — itération de consensus linéaire sur digraphe
+//! **§3.1 du traité, algorithme 3.1 du ch. 3** — itération de consensus linéaire sur digraphe
 //! (EX-A13), et ses quatre modes de défaillance (EX-A43).
 //!
 //! `x_i(k+1) = x_i(k) + α Σ_j a_ij (x_j(k) − x_i(k))`, avec `0 < α < 1/Δ(G)`.
@@ -89,7 +89,7 @@ impl Mode {
                  π/(4(n−1)) décroît en 1/n — 7,933 × 10⁻³ unité de temps du protocole à n = \
                  100. L'arrondi de π/(4n) donnerait 7,9 × 10⁻³, que la borne réellement écrite \
                  dépasse de 0,42 % : un arrondi présenté comme une borne stricte est un énoncé \
-                 faux, non une imprécision (§3.1 du traité, p. 42, 3ᵉ éd.). Le milieu offre \
+                 faux, non une imprécision (§3.1 du traité, p. 42, 4ᵉ éd.). Le milieu offre \
                  gratuitement l'échange non local qui accélère la convergence, et du même \
                  geste la topologie que la source déconseille.",
             ),
@@ -378,7 +378,7 @@ mod tests {
     /// EX-A43 (c) — le budget de retard décroît avec Δ(G), et le mode « moyeu »
     /// le rend minuscule : **7,933 × 10⁻³** à n = 100.
     ///
-    /// NF-15 — c'est la valeur que le §3.1 du traité (p. 42, 3ᵉ éd.) écrit désormais, après avoir
+    /// NF-15 — c'est la valeur que le §3.1 du traité (p. 42, 4ᵉ éd.) écrit désormais, après avoir
     /// tranché l'écart que ce test avait relevé : « l'arrondi de π/(4n) donnerait
     /// 7,9 × 10⁻³, que la borne réellement écrite dépasse de 0,42 % : un arrondi
     /// présenté comme une borne stricte est un énoncé faux, non une

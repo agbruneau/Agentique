@@ -93,7 +93,7 @@ pub fn hors_perimetre() -> &'static [&'static str] {
         "file d'attente et arriéré par agent — la cascade calcule un ℓ₉₉ agrégé par \
          formule fermée ; ses générations viennent d'un décalage de phase posé à la \
          main, pas de la saturation (EX-C15, scénario J)",
-        "mode (c) « retard » de l'algorithme 1 du ch. 3 — déclaré comme préréglage, \
+        "mode (c) « retard » de l'algorithme 3.1 du ch. 3 — déclaré comme préréglage, \
          sans effet sur l'itération (EX-A43)",
         "mode asynchrone pur et son refus des configurations terminantes (scénario I, \
          critère 7) ; point de croisement en n (critère 11)",

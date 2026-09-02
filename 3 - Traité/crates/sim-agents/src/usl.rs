@@ -1,6 +1,6 @@
 //! Loi d'échelle universelle : mesure de σ et κ (scénario C).
 //!
-//! > L'ouvrage n'a pas dit comment. (conclusion, p. 130, 3ᵉ éd.)
+//! > L'ouvrage n'a pas dit comment. (conclusion, p. 130, 4ᵉ éd.)
 //!
 //! C'est la contribution du projet au traité : le §2.1 pose
 //! `C(n) = n / (1 + σ(n − 1) + κn(n − 1))` et `u* = √((1 − σ)/κ)`, mais ne

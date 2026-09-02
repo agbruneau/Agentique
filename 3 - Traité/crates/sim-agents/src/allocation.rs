@@ -19,7 +19,7 @@ pub const BLOC_F: Bloc = Bloc {
          enchère comprise, doit d'abord battre celle-là.",
     these: "Deux sondes, 2d messages, un tour, zéro état partagé : c'est la borne à battre avant \
             de proposer une enchère.",
-    source: "§5.2, figure 5.2 p. 80, tableau 15 p. 81 (3ᵉ éd.)",
+    source: "§5.2, figure 5.2 p. 80, tableau 15 p. 81 (4ᵉ éd.)",
     mecanisme_visible:
         "arrêter un agent qui détient un objet pendant une enchère ε ; le mécanisme cesse de \
          terminer, et le compteur de tours croît sans que la qualité bouge. Corréler les sondes \
@@ -114,7 +114,7 @@ pub const HYPOTHESES_GLOUTON: &[&str] = &[
 pub const LIBELLE_GLOUTON: &str =
     "sans modèle des arrivées futures et sans réaffectation, aucun allocateur — par enchère ou \
      non — ne fait mieux que trois fois l'optimum hors ligne ; qui promet mieux achète l'écart \
-     contre l'une des deux hypothèses (§5.2 du traité, p. 78, 3ᵉ éd.)";
+     contre l'une des deux hypothèses (§5.2 du traité, p. 78, 4ᵉ éd.)";
 
 /// Temps de séjour du supermarché à `d` sondes, à charge `lambda`.
 ///
@@ -210,7 +210,7 @@ pub fn verifier_usage_champ_moyen(decide_quel_agent: bool) -> Result<(), String>
              Savoir que 40 % des agents sont en traitement ne dit pas si la partition 17 a un \
              propriétaire, et c'est cette information-là qui décide de la vivacité du sujet. Le \
              mécanisme par taux décide **combien** d'agents viser, jamais **lequel** possède une \
-             partition donnée (§7.3, p. 116, 3ᵉ éd. ; EX-A53)."
+             partition donnée (§7.3, p. 116, 4ᵉ éd. ; EX-A53)."
                 .to_string(),
         );
     }

@@ -21,13 +21,13 @@ Simulateur déterministe d'essaims d'agents logiciels coordonnés par le milieu.
 > `CARGO_TARGET_DIR` dérouté hors de OneDrive — c'est le premier des
 > [prérequis](#prérequis).*
 
-Le dossier transpose un traité — [`Traité.pdf`](Traité.pdf), **troisième
-édition du 15 août 2026 : 8 chapitres, 24 sections, 123 notices** — en logiciel exécutable,
+Le dossier transpose un traité — [`Traité.pdf`](Traité.pdf), **quatrième
+édition du 2 septembre 2026 : 8 chapitres, 24 sections, 123 notices** — en logiciel exécutable,
 sous une contrainte : **tout chiffre affiché doit être retrouvé par la mesure, ou
 l'écart doit être consigné**. Un écart est un défaut du simulateur ou une erreur
 du traité, et les deux méritent d'être trouvés (NF-15). **Cinq** écarts ont été
 trouvés à ce jour, tous au [registre des décisions](docs/decisions.md), et la
-troisième édition du traité confirme le compte en citant ce dépôt. Leur
+troisième édition du traité confirme le compte en citant ce dépôt. ⚠ **La confirmation porte sur le CARDINAL, non sur la répartition** : la conclusion écrit *« Cinq écarts entre le livre et sa transposition y sont consignés, dont trois contre l'ouvrage »* (l. 1743, p. 129), et le reclassement du 17 août 2026 en compte **deux** contre le traité, deux absorbés par la 3ᵉ édition et un hors traité. *La 3ᵉ édition a été écrite avant le reclassement qu'elle a elle-même rendu possible en absorbant deux mesures* : sa répartition ne peut donc pas être corrigée ici, seulement datée. Précisé le 2 septembre 2026. Leur
 classement a été refait le 17 août 2026 contre l'édition livrée : **deux sont
 absorbés par la source** — la troisième édition écrit désormais ce que la mesure
 avait rendu, sur le budget de retard du mode « moyeu » et sur la dérive de la
@@ -142,7 +142,7 @@ WebGL 2 est requis — `eframe` n'a pas de repli logiciel.
 
 Le déploiement est un dépôt de fichiers statiques : `index.html`, `sim_viz.js`,
 `sim_viz_bg.wasm` côte à côte, aucune dépendance serveur (DT4). Module compressé :
-**1 447 624 octets** — 1,381 Mio, ou 1,45 Mo en unités SI — pour une cible de
+**1 447 704 octets compressés** — *1 447 624 au 17 août ; les 80 octets de plus sont les marqueurs d'édition passés à « 4ᵉ éd. » dans les chaînes que l'interface affiche* — pour une cible de
 8 Mo (NF-08), sur **3 669 337 octets bruts**. La cible reste tenue d'un facteur
 cinq et demi.
 
@@ -157,6 +157,8 @@ cargo build -p sim-viz --release --lib --target wasm32-unknown-unknown \
 printf "brut=%s gz9=%s\n" "$(stat -c%s web/sim_viz_bg.wasm)" \
                           "$(gzip -9 -c web/sim_viz_bg.wasm | wc -c)"
 ```
+
+⚠  ☑ **Re-mesuré DEUX FOIS le 2 septembre 2026.** *Au premier passage, avant toute édition du code : **3 669 337** octets bruts, **1 447 624** compressés, **inchangés**, le module refait étant **identique à l'octet** à celui du 17 août — la construction WASM est donc reproductible, ce que le dossier n'avait jamais mesuré.* ☑ **Au second, après la quatrième édition du traité** : **3 669 337** bruts et **1 447 704** compressés, soit **+80 octets** — *les marqueurs d'édition, qui vivent dans les chaînes que l'interface affiche, sont passés de « 3ᵉ éd. » à « 4ᵉ éd. ».* ⚠ **Et c'est le contrôle `check-empaquetage.py` qui l'a exigé** : il a refusé le module de la veille, sur comparaison d'octets et non de dates — *la construction WASM est donc reproductible, ce que le dossier n'avait jamais mesuré*, et l'unique commit qui a touché `sim-viz` depuis, `7a1b7f2`, ne portait que **deux lignes de commentaire de documentation**. **La règle de péremption reste juste ; elle n'était pas encore enfreinte.** ☑ Le banc `bancs/parite-wasm` est rejoué sur cette construction : **six cas, six empreintes identiques**, EX-V12 tenue.
 
 ⚠ **Ce chiffre suit la construction, pas la révision, et il n'est donc valide
 que jusqu'à la prochaine édition de `crates/sim-viz/`.** `web/sim_viz.js` et

@@ -5,8 +5,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Ce qu'est ce dépôt
 
 **stigmergie-lab** — simulateur déterministe d'essaims d'agents logiciels. Le
-dépôt transpose un traité (`Traité.pdf`, **troisième édition du 15 août
-2026 — 8 chapitres, 24 sections, 123 notices**) en logiciel exécutable. **Toute la
+dépôt transpose un traité (`Traité.pdf`, **quatrième édition du 2 septembre
+2026 — 8 chapitres, 24 sections, 123 notices, 13 algorithmes et 22 tableaux numérotés
+dans la source**) en logiciel exécutable. **Toute la
 documentation vit dans [`docs/`](docs/)**, dont
 [`docs/README.md`](docs/README.md) est l'index ; ce fichier et le `README.md`
 restent à la racine par convention d'outil, et **`Traité.md` / `Traité.pdf` y
@@ -18,8 +19,12 @@ Deux documents font autorité, dans cet ordre :
 1. **`Traité.pdf`** — source normative, à la racine du dossier et non sous
    `docs/`. Les algorithmes, les hypothèses et
    les chiffres viennent de là, et de nulle part ailleurs. **La pagination est
-   celle de la troisième édition — 143 pages**, mesurées sur le PDF du dépôt le
-   17 août 2026 : le format ferme de cent pages a
+   celle de la quatrième édition — 143 pages**, mesurées sur le PDF du dépôt le
+   **2 septembre 2026**. ☑ *La quatrième PRÉSERVE la pagination de la troisième,
+   mesuré section par section : une seule frontière bouge, le §2.3 passant de la
+   p. 34 à la p. 35 — les trois légendes neuves du chapitre 2. **Tous les renvois
+   de page restent donc valides**, et les 141 marqueurs d'édition ont été migrés
+   en `(4ᵉ éd.)` sur cette mesure, non sur une supposition.* : le format ferme de cent pages a
    été levé le 15 août 2026, de sorte qu'elle ne coïncide ni avec la deuxième
    édition ni avec aucun renvoi antérieur à la révision 3.0 du PRD, et qu'une
    page citée sans son édition est une provenance fausse, pas imprécise (F2).
@@ -29,13 +34,23 @@ Deux documents font autorité, dans cet ordre :
    grep -rhoE '§[0-9]+(\.[0-9]+)?, p\. [0-9]+' crates/ | sort | uniq -c | sort -rn
    ```
 
-   Au 17 août 2026 à 08 h 32, cette ligne rend quatre pages différentes pour le
-   seul §1.2 — `p. 16` dix fois, `p. 13` quatre fois, `p. 14` deux fois, `p. 12`
-   une fois —, et le compte bouge d'une heure à l'autre pendant la migration.
-   Dans la troisième édition, le §1.2 ouvre à la page 12 et l'énoncé des bornes
-   est à la page 16. Chaque `p. N` est donc à revérifier contre le PDF avant
-   d'être cru, et un renvoi qui porte son édition (`(3ᵉ éd.)`) est le seul qui
-   se relise sans le refaire.
+   Cette ligne rend plusieurs pages pour le seul §1.2 : dans la troisième
+   édition, le §1.2 **ouvre à la page 12** et l'**énoncé des bornes est à la
+   page 16**, et les deux se citent selon ce qu'on vise. ⚠ **La ventilation
+   chiffrée qui figurait ici est retirée le 2 septembre 2026** : elle datait du
+   17 août à 08 h 32, elle avait bougé d'une heure à l'autre pendant la campagne
+   qui l'écrivait, et elle avait encore bougé depuis. *Ce qui se cite d'ici est
+   la ligne ci-dessus, jamais le nombre* — c'est la règle que le §0.2 du PRD
+   tire de sa propre campagne, appliquée à l'endroit qui l'enfreignait.
+
+   ☑ **Et la migration est finie au code, mesuré le 2 septembre 2026** : sur
+   **63** renvois `§X.Y … p. N`, **52** nomment leur édition sur leur ligne ou
+   dans les deux qui l'encadrent, et **les autres vivent dans une prose qui
+   porte sur l'édition elle-même** — la table d'histoire de `scenario.rs`, qui
+   énumère les pages fausses avec leur remplaçante. **Aucun renvoi vivant n'est
+   nu.** Un renvoi qui porte son édition (`(4ᵉ éd.)`) reste le seul qui se
+   relise sans refaire la vérification ; le détail est au §3.5 de
+   [`docs/SPEC.md`](docs/SPEC.md).
 2. **`docs/PRD.md`** — la spécification, environ 2 340 lignes. Toute exigence porte un
    code (`EX-C01`, `EX-M09`, `EX-A31`, `EX-V12`, `NF-02`, `PD1`, `DT1`, `RQ3`…)
    que le code cite en commentaire. Chercher le code dans `docs/PRD.md` donne la
@@ -117,6 +132,21 @@ d'autre n'attrape un renvoi cassé.
 cargo doc --workspace --no-deps
 ```
 
+☑ **Deux contrôles s'ajoutent aux trois, depuis le 2 septembre 2026**, et ils
+couvrent deux postes que `cargo` ne voit pas :
+
+```bash
+python Python/check-traite.py        # le document : pagination, croissance, notices, PARITÉ du rendu
+python Python/check-empaquetage.py   # le module WASM est-il postérieur aux sources de sim-viz ?
+```
+
+⚠ **Le contrôle [4] de `check-traite.py` est celui qui manquait.** Il **refait le
+rendu** et compare les octets, là où le [1] qui existait ne comparait que des
+horodatages — *qu'un `git clone` égalise*. La mutation qui l'a éprouvé montre
+**[1] au vert pendant que [4] mord**. Il coûte trente secondes et la chaîne
+`pandoc` + `typst` ; sans elle il se déclare **non mesuré**, jamais vert.
+`--sans-parite` le saute, pour l'itération et rien d'autre.
+
 Interface native, campagne sans interface, bancs et diagnostics : voir
 [docs/DEVELOPPEMENT.md](docs/DEVELOPPEMENT.md), qui donne la ligne exacte de chacun.
 
@@ -191,7 +221,7 @@ violer casse un critère de sortie déjà atteint.
   écart est un défaut du simulateur **ou** une erreur du traité, et les deux se
   consignent. **Cinq** sont consignés, tous au registre
   [`docs/decisions.md`](docs/decisions.md), et la conclusion de la troisième
-  édition confirme le compte en citant ce dépôt (notice 120). **Leur classement a
+  édition confirme le compte en citant ce dépôt (notice 120). ⚠ **La confirmation porte sur le CARDINAL, non sur la répartition** : la conclusion écrit *« Cinq écarts entre le livre et sa transposition y sont consignés, dont trois contre l'ouvrage »* (l. 1743, p. 129), et le reclassement du 17 août 2026 en compte **deux** contre le traité, deux absorbés par la 3ᵉ édition et un hors traité. *La 3ᵉ édition a été écrite avant le reclassement qu'elle a elle-même rendu possible en absorbant deux mesures* : sa répartition ne peut donc pas être corrigée ici, seulement datée. Précisé le 2 septembre 2026. **Leur classement a
   été refait le 17 août 2026 contre l'édition livrée** ; ne pas reprendre
   l'ancien :
   - **Deux sont absorbés par la source.** Le §3.1 de la 3ᵉ édition écrit
@@ -293,11 +323,13 @@ awk '/pub fn hors_perimetre/,/^}/' crates/sim-agents/src/lib.rs | grep -cE '^\s*
   refaire sur la mesure, comme DT1 l'a été.
 - **NF-07 n'est pas mesurée** — 30 images/s à n ≤ 2 000 en WASM demande un
   navigateur en avant-plan avec une horloge d'images. L'empaquetage web, lui,
-  est fait et NF-08 est tenue : **1 447 624 octets compressés** — 1,381 Mio, ou
-  1,45 Mo en unités SI — sur 3 669 337 octets bruts, contre une cible de 8 Mo.
+  est fait et NF-08 est tenue : **1 447 704 octets compressés** — *1 447 624 au 17 août ; les 80 octets de plus sont les marqueurs d'édition passés à « 4ᵉ éd. » dans les chaînes que l'interface affiche* — sur 3 669 337 octets bruts, contre une cible de 8 Mo.
   **Ce couple est une mesure d'une construction précise, pas une constante** :
-  celle du 17 août 2026 à 11 h 14, et il se périme à la première édition de
-  `crates/sim-viz/`. Il se refait par les deux lignes du `README.md` (§ « 2.
+  celle du **2 septembre 2026**, et il se périme à la première édition de
+  `crates/sim-viz/`. ☑ *Re-mesuré ce jour-là : **inchangé** depuis le 17 août à 11 h 14, le module
+  refait étant **identique à l'octet** — le seul commit qui a touché `sim-viz` depuis ne portait
+  que deux lignes de commentaire.* ⚠ **Et `python Python/check-empaquetage.py` le tient désormais**,
+  en refaisant le module et en comparant les octets, non les dates. Il se refait par les deux lignes du `README.md` (§ « 2.
   L'interface web »), qui sont ce qui se cite ici, jamais le nombre.
 - **EX-V09 n'est pas câblée dans l'interface** — `sim_agents::partage` encode et
   décode le lien avec ses tests, mais `sim-viz` ne lit pas le fragment d'URL.

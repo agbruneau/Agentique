@@ -3,7 +3,7 @@
 //!
 //! > L'espace de recherche étant effectivement infini, exécuter davantage de
 //! > tests couvre davantage de code et trouve davantage de défauts, sans
-//! > qu'aucun critère de complétude existe. (§3.3, algorithme 3, étape 7)
+//! > qu'aucun critère de complétude existe. (§3.3, algorithme 3.3, étape 7)
 //!
 //! Ce qui se mesure est donc : combien d'**exécutions distinctes** ont atteint
 //! une condition donnée. Ce qui ne se calcule pas, et n'apparaît nulle part

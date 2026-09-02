@@ -4,7 +4,7 @@
 //! > mort peut revenir avec son état d'avant et écrire. (§4.3)
 //!
 //! C'est l'écart entre arrêt franc et arrêt-reprise qui impose l'époque et le
-//! bail : les lignes 7 à 10 de l'algorithme 3 n'ont **aucun équivalent** dans
+//! bail : les lignes 7 à 10 de l'algorithme 4.3 n'ont **aucun équivalent** dans
 //! les protocoles robotiques dont elles descendent.
 
 use sim_core::alea::Alea;
@@ -181,10 +181,10 @@ impl DetecteurInfectieux {
         }
     }
 
-    /// Complétude dérivée (§7.3, p. 112, 3ᵉ éd.) : détection entre `(seuil−1)·période +
+    /// Complétude dérivée (§7.3, p. 112, 4ᵉ éd.) : détection entre `(seuil−1)·période +
     /// expiration` et une période de plus.
     ///
-    /// C'est **le §7.3 qui dérive cet encadrement**, et non le §4.3 (p. 70, 3ᵉ éd.), qui
+    /// C'est **le §7.3 qui dérive cet encadrement**, et non le §4.3 (p. 70, 4ᵉ éd.), qui
     /// ne donne que le majorant de 30 s : « un arrêt survenu juste après une sonde
     /// réussie n'est observé qu'au sondage suivant, entre 0 et 10 s plus tard,
     /// puis exige deux échecs supplémentaires à 10 s d'intervalle, plus 1 s de
@@ -447,7 +447,7 @@ impl Bail {
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
 pub enum ArbitrageDepoque {
     /// Le milieu détient l'époque du bail et rejette les écritures d'époque
-    /// inférieure. La ligne 10 de l'algorithme 3 est **opérante**.
+    /// inférieure. La ligne 10 de l'algorithme 4.3 est **opérante**.
     LeMilieuArbitre,
     /// La sûreté repose alors entièrement sur l'exactitude du détecteur —
     /// hypothèse que le produit refuse. La seule issue restante est de payer un
@@ -618,7 +618,7 @@ mod tests {
     use super::*;
 
     /// NF-15 — la complétude retrouve **21 à 31 s** aux défauts documentés
-    /// (§7.3, p. 112, 3ᵉ éd.).
+    /// (§7.3, p. 112, 4ᵉ éd.).
     #[test]
     fn la_completude_retrouve_les_21_a_31_secondes() {
         let (min, max) = DetecteurInfectieux::completude(10, 1, 3).expect("réglage documenté");

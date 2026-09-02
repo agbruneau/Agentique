@@ -9,30 +9,41 @@ page avec la veille et la revue — marges de 117 x 72 pt, corps de 11 pt sur
 14,3 pt, appareil a 9 pt debordant a 468 pt —, et l'etalonnage mots -> pages a
 ete refait sur cette geometrie.
 
-Trois pieges, dans cet ordre :
+Quatre pieges, dans cet ordre :
   1. la PAGINATION du rendu — le PDF decrit-il encore la source, ou a-t-il ete
      depasse par une reprise du `.md` ? Et l'arbre de pages est-il coherent ?
   2. le BUDGET de la source — combien de mots-equivalents restent avant que le
      prochain rendu ne franchisse la cible ? C'est la seule mesure qui serve
      AVANT de rendre, et c'est celle que le budget nul reclame ;
-  3. l'APPARIEMENT bibliographique — les 119 notices sont-elles contigues, toutes
+  3. l'APPARIEMENT bibliographique — les 123 notices sont-elles contigues, toutes
      citees nommement, et aucune citation ne pointe-t-elle hors liste ?
+  4. la PARITE du rendu — le PDF versionne est-il CELUI que la source rend
+     aujourd'hui ? [1] ne compare que des horodatages, et un `git clone` les
+     egalise ; celui-ci refait le rendu et compare les octets.
 
-Usage : python check-traite.py [Traité.pdf] [Traité.md]  -> sortie 0 si le rendu
+Usage : python check-traite.py [Traité.pdf] [Traité.md] [--sans-parite]
+        -> sortie 0 si le rendu
 tient sa cible, 1 sinon. Se lance de n'importe quel repertoire.
 
 Regle des chemins, reprise de `4 - Veille/Python/` : les defauts se resolvent
 contre l'emplacement du script, jamais contre le repertoire courant ; un chemin
 donne en argument, lui, reste relatif au repertoire courant.
 """
-import io, re, sys, zlib
+import io, re, shutil, subprocess, sys, tempfile, zlib
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
 PDF = RACINE / 'Traité.pdf'
 SRC = RACINE / 'Traité.md'
 
-REFS = 119           # notices de la section « Références », declarees par l'en-tete
+# ⚠ REPLI SEULEMENT, et il a menti. Le compte se LIT au front-matter (voir
+# `appariement`) ; cette constante ne sert que si la ligne qui l'annonce
+# devient illisible. Figee a 119 jusqu'au 2 septembre 2026 alors que le
+# document en porte 123 depuis le 15 aout, elle aurait fait echouer le
+# controle a tort le jour ou le front-matter aurait change de forme —
+# c'est-a-dire au premier moment ou l'on aurait eu besoin d'un repli.
+# *Un repli qui ne suit pas ce qu'il replace est un piege differe.*
+REFS = 123           # notices de la section « Références », mesure du 2 septembre 2026
 
 # ⚠ ETALONNAGE REFAIT LE 15 AOUT 2026, APRES RECOMPOSITION, mesure par RENDU et
 # non estime : variantes de `Traité.md` rendues par la chaine canonique depuis la
@@ -71,7 +82,22 @@ REFS = 119           # notices de la section « Références », declarees par l
 # produisent aucune page. La page gagnee — 142 -> 143 — vient d'ailleurs, du
 # blanc de 1,15 em rendu aux 123 notices, que le compte de mots ne voit pas.
 # Recaler MOTS_REF sans recaler le « 142 p. » ci-dessous ferait mentir les deux.
-MOTS_REF = 71744     # mots du `.md` entier — front-matter compris — qui rend 143 p.
+# ⚠ RECALE LE 2 SEPTEMBRE 2026, de 71744 a 72110, SUR UN `.md` DONT LE PDF
+# VIENT D'ETRE OPPOSE AU RENDU — c'est la condition que le commentaire
+# ci-dessus pose, et le controle [4] la rend verifiable au lieu de la
+# laisser a la bonne foi. La reference portait l'etat du 15 aout au matin
+# quand le document livre le meme jour en compte 366 de plus : la
+# projection annoncait donc « +0,6 page » a jamais, sur un rendu qui fait
+# 143 pages et n'en fera pas 144 pour autant. *Une ligne de base qui
+# derive d'un demi-jour rapporte une croissance qui n'existe pas.*
+MOTS_REF = 72511     # mots du `.md` entier — front-matter compris — qui rend 143 p.
+# ⚠ RECALE UNE SECONDE FOIS LE 2 SEPTEMBRE 2026, de 72110 a 72511, apres la
+# QUATRIEME edition : treize legendes d'algorithme renumerotees, trois posees
+# au chapitre 2, vingt-deux tableaux numerotes dans la source, et la conclusion
+# datee. **Le rendu fait toujours 143 pages** — la pagination est preservee,
+# mesuree section par section, une seule frontiere bougeant (§2.3, p. 34 -> 35).
+# *Quatre cents mots d'appareil ne font pas une page quand ils se repartissent
+# sur vingt-deux legendes et treize titres.*
 FIGS_REF = 19
 MOTS_PAR_PAGE = 630
 MOTS_PAR_FIGURE = 285
@@ -156,7 +182,7 @@ def budget(s: str):
     # MEMES figures rendent 100 et 101 pages, mesure du 15 aout 2026. Il ne
     # pouvait donc pas porter un jugement au mot pres, et il ne le porte plus.
     print(f'  [2] croissance  : {mots} mots, {figs} figures -> {surplus:+d} mots-equivalents '
-          f'depuis la reference du 15 aout 2026 (~{surplus / MOTS_PAR_PAGE:+.1f} page)')
+          f'depuis la reference du 2 septembre 2026 (~{surplus / MOTS_PAR_PAGE:+.1f} page)')
     print(f'      ordre de grandeur : 1 page ~ {MOTS_PAR_PAGE} mots '
           f'~ {MOTS_PAR_PAGE // MOTS_PAR_FIGURE} figures, mesure a la recomposition du 15 aout')
     return ok
@@ -211,9 +237,90 @@ def appariement(s: str):
     return ok
 
 
+# ⚠ CE QUE LA CHAINE REND EST REPRODUCTIBLE A L'OCTET, et c'est ce qui rend le
+# controle [4] possible sous cette forme. Mesure du 2 septembre 2026 : deux
+# rendus de la meme source par la meme chaine donnent des fichiers de MEME
+# taille dont seuls quatre champs different, tous volatils par construction —
+# les deux dates du trailer, l'identifiant de fichier, les dates XMP et
+# l'identifiant d'instance XMP. Neutralises, les octets coincident.
+#
+# Comparer les OCTETS plutot que le texte extrait n'est pas un exces de zele :
+# un extracteur ne voit ni les figures, ni la geometrie, ni les fontes, et
+# l'audit du 2 septembre 2026 a mesure que deux extracteurs du depot lisent
+# differemment le meme PDF — l'un d'eux ne rendait AUCUN libelle « Tableau N »
+# la ou l'autre les lit tous. Un controle de parite fonde sur l'extraction
+# heriterait de cette cecite ; fonde sur les octets, il ne herite de rien.
+VOLATILS = [
+    (rb'/(Creation|Mod)Date\s*\([^)]*\)', rb'/\1Date()'),
+    (rb'/ID\s*\[[^\]]*\]', rb'/ID[]'),
+    (rb'<xmp:(ModifyDate|CreateDate|MetadataDate)>[^<]*</xmp:\1>', rb'<xmp:\1></xmp:\1>'),
+    (rb'<xmpMM:InstanceID>[^<]*</xmpMM:InstanceID>', rb'<xmpMM:InstanceID></xmpMM:InstanceID>'),
+]
+
+
+def sans_horodatage(octets: bytes) -> bytes:
+    """Le PDF prive des seuls champs qui changent d'un rendu a l'autre."""
+    for motif, remplacement in VOLATILS:
+        octets = re.sub(motif, remplacement, octets)
+    return octets
+
+
+def parite(pdf: Path, src: Path):
+    """[4] — le PDF versionne est-il CELUI que la source rend aujourd'hui ?
+
+    ⚠ C'EST LE CONTROLE QUE [1] NE FAIT PAS, ET LE PIEGE QU'IL LAISSE PASSER
+    EST GRAND. [1] compare deux HORODATAGES ; or un `git clone` les pose tous
+    deux a la date du checkout, et [1] devient aveugle sur un depot frais —
+    exactement l'etat dans lequel un tiers lit le depot. Il est aveugle aussi
+    quand la source est reprise dans la meme seconde que le rendu, et quand le
+    rendu est refait apres une regression du gabarit sans que la source bouge.
+    Celui-ci REFAIT le rendu et compare, ce qui ne suppose aucune date.
+
+    Le prix est une chaine et une trentaine de secondes. Quand la chaine
+    manque, le controle se DECLARE non mesure plutot que de passer en silence :
+    PD6 du dossier — ce qui est absent s'affiche au meme rang que ce qui est
+    present —, et un controle qui se tait quand il ne peut pas mesurer finit
+    par etre cru quand il ne mesure rien.
+    """
+    if shutil.which('pandoc') is None or shutil.which('typst') is None:
+        print('  [4] parite      : chaine absente (pandoc et/ou typst) -> NON MESURE')
+        print('      Le rendu versionne n\'est donc PAS oppose a sa source. Pour le faire :')
+        print('      OUT_PDF=/tmp/essai.pdf bash build/build-pdf.sh, puis relancer ce controle')
+        return True
+
+    with tempfile.TemporaryDirectory(prefix='parite-traite-') as tmp:
+        essai = Path(tmp) / 'essai.pdf'
+        # ⚠ `cwd=RACINE` n'est pas decoratif : les dix-neuf figures sont citees
+        # en chemin relatif par la source, et la chaine ne se lance que de la.
+        r = subprocess.run(['pandoc', src.name, '--pdf-engine=typst', '--toc', '-o', str(essai)],
+                           cwd=RACINE, capture_output=True, text=True, encoding='utf-8',
+                           errors='replace')
+        if r.returncode != 0 or not essai.exists():
+            fail.append(f'le rendu d\'essai a echoue — la chaine ne compose plus la source : '
+                        f'{(r.stderr or "").strip()[:300]}')
+            print('  [4] parite      : rendu impossible -> ECHEC')
+            return False
+        a = sans_horodatage(pdf.read_bytes())
+        b = sans_horodatage(essai.read_bytes())
+
+    if a == b:
+        print(f'  [4] parite      : {len(a)} octets hors horodatage, refait a l\'identique -> OK')
+        return True
+
+    # Localiser la divergence : un octet suffit a la nommer, et l'ecart de
+    # taille dit s'il s'agit d'un ajout ou d'une retouche en place.
+    i = next((k for k in range(min(len(a), len(b))) if a[k] != b[k]), min(len(a), len(b)))
+    fail.append(f'{pdf.name} n\'est PAS le rendu de {src.name} : premiere divergence a l\'octet '
+                f'{i} ({len(a)} octets versionnes contre {len(b)} refaits). Le rendu versionne '
+                f'decrit un autre etat de la source — rendre avant de conclure')
+    print('  [4] parite      : le PDF versionne n\'est pas celui que la source rend -> ECHEC')
+    return False
+
+
 def main():
-    pdf = Path(sys.argv[1]) if len(sys.argv) > 1 else PDF
-    src = Path(sys.argv[2]) if len(sys.argv) > 2 else SRC
+    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    pdf = Path(args[0]) if args else PDF
+    src = Path(args[1]) if len(args) > 1 else SRC
     for p in (pdf, src):
         if not p.exists():
             print(f'introuvable : {p}')
@@ -221,6 +328,14 @@ def main():
     s = io.open(src, encoding='utf-8').read()
     print(f'Porte de pagination — {pdf.name} / {src.name}')
     res = [pagination(pdf, src), budget(s), appariement(s)]
+    # ⚠ `--sans-parite` existe pour l'iteration rapide sur la source, et pour
+    # RIEN D'AUTRE : le controle [4] est le seul qui oppose le rendu a ce
+    # qu'il pretend rendre. Le sauter en passe de cloture reviendrait a
+    # publier un PDF que personne n'a compare a sa source.
+    if '--sans-parite' in sys.argv:
+        print('  [4] parite      : SAUTE sur demande (--sans-parite) -> NON MESURE')
+    else:
+        res.append(parite(pdf, src))
     if fail:
         print('\nECHEC :')
         for f in fail:

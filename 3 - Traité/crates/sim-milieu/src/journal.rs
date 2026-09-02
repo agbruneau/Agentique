@@ -79,7 +79,7 @@ pub struct Enregistrement {
     /// milieu n'évalue toujours pas le **contenu** : il garantit seulement qui a
     /// déposé. Une trace dont l'auteur serait déclaré par l'écrivain ne serait
     /// pas incomplète, elle serait fausse, et ni EX-A08 ni l'échantillonnage ne
-    /// la corrigent (§6.2 du traité, p. 96, 3ᵉ éd. — la page porte la fin du §6.2 et le
+    /// la corrigent (§6.2 du traité, p. 96, 4ᵉ éd. — la page porte la fin du §6.2 et le
     /// titre du §6.3).
     pub auteur: Identite,
 }
@@ -697,10 +697,10 @@ impl Milieu {
         // Les quatre invariants sont énoncés p. 14 du traité livré — troisième
         // édition, 143 pages —, et non p. 13 : mesuré par recherche verbatim de
         // chacun des quatre énoncés dans le PDF du dépôt.
-        registre.armer(Oracle::surete(M1, "§1.2, p. 14, 3ᵉ éd."));
-        registre.armer(Oracle::surete(M2, "§1.2, p. 14, 3ᵉ éd."));
-        registre.armer(Oracle::surete(M3, "§1.2, p. 14, 3ᵉ éd."));
-        registre.armer(Oracle::surete(M4, "§1.2, p. 14, 3ᵉ éd."));
+        registre.armer(Oracle::surete(M1, "§1.2, p. 14, 4ᵉ éd."));
+        registre.armer(Oracle::surete(M2, "§1.2, p. 14, 4ᵉ éd."));
+        registre.armer(Oracle::surete(M3, "§1.2, p. 14, 4ᵉ éd."));
+        registre.armer(Oracle::surete(M4, "§1.2, p. 14, 4ᵉ éd."));
         registre.armer(Oracle::surete(M10, "§6.1, tableau 17"));
     }
 

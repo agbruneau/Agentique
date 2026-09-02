@@ -169,7 +169,7 @@ cargo run -p sim-agents --example diagnostic_conformite --release
 
 Il n'y a pas d'intégration continue dans ce dépôt — NF-13 et NF-16 nomment un
 mécanisme d'application qu'il ne contient pas. Ce que ces exigences obtiennent
-vient donc de ces **trois** commandes, lancées à la main, dans cet ordre :
+vient donc de ces **cinq** commandes, lancées à la main, dans cet ordre :
 
 ```bash
 cargo test --workspace --release
@@ -183,11 +183,41 @@ cargo clippy --workspace --all-targets --release
 cargo doc --workspace --no-deps
 ```
 
+```bash
+python Python/check-traite.py
+```
+
+```bash
+python Python/check-empaquetage.py
+```
+
 **La troisième manquait, et son absence a coûté.** `cargo test` et `cargo clippy`
 sont restés verts pendant que `cargo doc` sortait en 101 sur deux renvois
 rustdoc cassés : la procédure d'avant commit était structurellement incapable de
 voir le seul défaut mécanique que le dépôt portait en cours. Les trois sortent
 non nulles à la première violation.
+
+☑ **Les deux dernières ont été ajoutées le 2 septembre 2026, et pour le même
+motif : elles couvrent deux postes que les trois premières ne voient pas.**
+
+- `check-traite.py` porte quatre contrôles sur le document lui-même, dont le
+  **[4] parité**, neuf : il **refait le rendu** et compare les octets au PDF
+  versionné, hors des quatre champs qui changent d'un rendu à l'autre — les
+  deux dates du trailer, l'identifiant de fichier, les dates XMP et
+  l'identifiant d'instance. ⚠ *Le contrôle [1] qui existait ne compare que des
+  **horodatages**, et un `git clone` les égalise : sur un dépôt frais, il est
+  aveugle.* La mutation qui l'a éprouvé le 2 septembre 2026 est exactement
+  celle-là — source reprise, horodatages égalisés — et **[1] passe au vert
+  pendant que [4] mord**. Il coûte une trentaine de secondes et la chaîne
+  `pandoc` + `typst` ; sans elle, il se déclare **non mesuré** plutôt que de
+  passer en silence. `--sans-parite` le saute, pour l'itération et rien d'autre.
+- `check-empaquetage.py` compare la date du module WASM à celles des sources de
+  `crates/sim-viz/`. ⚠ **Le défaut qu'il attrape s'est produit deux fois** : le
+  banc du 17 août 2026 a trouvé l'empaquetage vieux de deux révisions, puis son
+  propre correctif périmé d'une révision en douze minutes ; l'audit du
+  2 septembre l'a retrouvé périmé du commit `7a1b7f2`. *La règle « ce couple de
+  chiffres n'est valide que jusqu'à la prochaine édition de `crates/sim-viz/` »
+  était écrite au `README` et tenue par personne.*
 
 Si le changement touche `sim-viz` ou une transcendante, ajouter le banc de parité
 correspondant ci-dessus. Si le changement touche un critère de sortie de phase,

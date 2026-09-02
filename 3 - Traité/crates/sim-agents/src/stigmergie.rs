@@ -1,10 +1,10 @@
-//! **Algorithme 2 du ch. 1** — renforcement stigmergique borné sur journal
+//! **Algorithme 1.2 du ch. 1** — renforcement stigmergique borné sur journal
 //! (EX-A01), ses quatre modes de défaillance (EX-A10) et les deux seules bornes
 //! que le traité démontre (EX-A11a/b/c).
 //!
 //! > Un essaim stigmergique n'atteint pas l'optimum, il campe à distance bornée
 //! > de lui, et cette distance est un réglage et non un défaut à corriger.
-//! > (§1.2, p. 16, 3ᵉ éd.)
+//! > (§1.2, p. 16, 4ᵉ éd.)
 //!
 //! Ce que ce mécanisme **ne** démontre **pas**, et que l'interface ne doit
 //! jamais laisser croire (F3) : la convergence. Le traité écrit que l'énoncé du
@@ -428,7 +428,7 @@ impl Bornes {
     /// chaîne dans `SOURCE_BORNES` et tient la copie accordée par un test.
     pub const LEGENDE: &'static str =
         "un essaim stigmergique n'atteint pas l'optimum, il campe à distance bornée de lui, et \
-         cette distance est un réglage et non un défaut à corriger (§1.2, p. 16, 3ᵉ éd.)";
+         cette distance est un réglage et non un défaut à corriger (§1.2, p. 16, 4ᵉ éd.)";
 }
 
 /// Une ressource à exploiter.
@@ -690,8 +690,8 @@ impl Fourragement {
 
     /// Arme les oracles du mécanisme (EX-A11b, NF-11).
     pub fn armer_oracles(&self, registre: &mut Registre) {
-        registre.armer(Oracle::surete(PLANCHER, "§1.2, p. 16, 3ᵉ éd."));
-        registre.armer(Oracle::surete(HORS_DOMINANTE, "§1.2, p. 16, 3ᵉ éd."));
+        registre.armer(Oracle::surete(PLANCHER, "§1.2, p. 16, 4ᵉ éd."));
+        registre.armer(Oracle::surete(HORS_DOMINANTE, "§1.2, p. 16, 4ᵉ éd."));
         self.milieu.armer_oracles(registre);
     }
 
@@ -720,7 +720,7 @@ impl Fourragement {
         }
     }
 
-    /// Un cycle de l'algorithme 2 : lecture d'intervalle, calcul de φ,
+    /// Un cycle de l'algorithme 1.2 : lecture d'intervalle, calcul de φ,
     /// écrêtage, tirage α/β, action, écriture.
     fn cycle(&mut self, moteur: &mut Moteur<Evt>, cible: ActeurId) {
         let i = cible.0 as usize;
@@ -953,7 +953,7 @@ impl Fourragement {
                 moteur.maintenant(),
                 format!(
                     "probabilité de tirage minimale {p_min:.9} sous le plancher \
-                     {:.9} — défaut d'implantation ou erreur du traité (§1.2, p. 16, 3ᵉ éd.)",
+                     {:.9} — défaut d'implantation ou erreur du traité (§1.2, p. 16, 4ᵉ éd.)",
                     bornes.plancher_tirage
                 ),
             );

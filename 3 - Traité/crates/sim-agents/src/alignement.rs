@@ -1,4 +1,4 @@
-//! **Algorithme 1 du ch. 1** — alignement par règle de plus proche voisin
+//! **Algorithme 1.1 du ch. 1** — alignement par règle de plus proche voisin
 //! (EX-A02), sous les hypothèses exactes du traité.
 //!
 //! Hypothèses, affichées en permanence parce qu'elles sont l'inverse de celles
@@ -9,7 +9,7 @@
 //! Ce qu'il ne fournit pas, et qu'aucun affichage ne doit suggérer (PD5) : ni
 //! paramètre d'ordre, ni transition de phase. Le traité écrit que le bruit nul
 //! retire précisément la transition de phase ; Φ, η_c et β ≈ 0,45 appartiennent
-//! au modèle de Vicsek **avec bruit** (§1.2, p. 12, 3ᵉ éd.), qu'aucun mécanisme du
+//! au modèle de Vicsek **avec bruit** (§1.2, p. 12, 4ᵉ éd.), qu'aucun mécanisme du
 //! périmètre actuel ne fournit.
 
 use sim_core::alea::Alea;

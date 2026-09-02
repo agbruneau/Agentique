@@ -1,6 +1,6 @@
 //! Scénario J — la cascade de l'agent saturé, et AUTO-GUÉRIR (EX-A36, EX-V16).
 //!
-//! > Aucun agent n'est tombé, et l'essaim s'effondre. (§6.1 du traité, figure 6.1, p. 91, 3ᵉ éd.)
+//! > Aucun agent n'est tombé, et l'essaim s'effondre. (§6.1 du traité, figure 6.1, p. 91, 4ᵉ éd.)
 //!
 //! **Aucune faute n'est injectée : c'est la condition de démonstration.** La
 //! charge franchit la capacité de service, la file de chaque agent croît, sa
@@ -22,7 +22,7 @@ pub const BLOC_J: Bloc = Bloc {
          n'est tombé en panne, et la population s'écroule quand même, par l'action du dispositif \
          censé la protéger.",
     these: "Aucun agent n'est tombé, et l'essaim s'effondre.",
-    source: "§6.1, p. 90 (3ᵉ éd.) — figure 6.1, p. 91 ; §4.3 tableau 13 ; §7.3 ; §2.3",
+    source: "§6.1, p. 90 (4ᵉ éd.) — figure 6.1, p. 91 ; §4.3 tableau 13 ; §7.3 ; §2.3",
     mecanisme_visible:
         "la charge offerte franchit la capacité de service ; la file de chaque agent croît, sa \
          latence de réponse dépasse timeoutSeconds, trois sondes consécutives échouent, l'agent \
@@ -471,7 +471,7 @@ mod tests {
     /// `timeoutSeconds` n'est franchie plus tard qu'une autre. La cascade est
     /// bit pour bit la même. Ce que l'expiration allonge est ailleurs — dans la
     /// détection **vraie** d'un agent réellement arrêté, dont la complétude
-    /// croît avec elle (§7.3, p. 112, 3ᵉ éd.) —, et c'est exactement le mauvais échange :
+    /// croît avec elle (§7.3, p. 112, 4ᵉ éd.) —, et c'est exactement le mauvais échange :
     /// on paie en détection sans rien acheter en fausses suspicions.
     #[test]
     fn critere_2b_un_timeout_plus_genereux_ne_supprime_pas_la_cascade() {

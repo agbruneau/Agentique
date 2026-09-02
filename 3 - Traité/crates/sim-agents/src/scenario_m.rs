@@ -47,7 +47,7 @@ pub const BLOC_M: Bloc = Bloc {
             le concepteur ne veut pas — la conformité, puisque tous lisent la même trace ; la \
             collusion, puisqu'un tableau public suffit à s'aligner au sou près ; la tromperie, \
             puisque déposer coûte le même prix qu'on dise vrai ou faux.",
-    source: "épissure de deux endroits, et c'est la thèse (3ᵉ éd.) : la proposition principale — \
+    source: "épissure de deux endroits, et c'est la thèse (4ᵉ éd.) : la proposition principale — \
              jusqu'à « ce que le concepteur ne veut pas » — est celle de l'introduction, p. 5, mot \
              pour mot ; l'énumération des trois est celle du §8.3, p. 127, où la proposition, \
              elle, s'écrit « la mesure ajoute qu'il rend tout aussi bon marché »",
